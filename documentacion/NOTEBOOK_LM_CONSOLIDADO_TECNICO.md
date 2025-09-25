@@ -6,7 +6,7 @@
 ## ARQUITECTURA TÉCNICA GENERAL
 
 ### Resumen del Sistema
-EVARISIS Gestor H.U.V es un sistema especializado de procesamiento OCR para informes médicos oncológicos que automatiza la extracción, normalización y persistencia de datos clínicos críticos. El sistema procesa PDFs de patología del Hospital Universitario del Valle, extrae biomarcadores oncológicos específicos (HER2, Ki-67, RE/RP, PD-L1) y almacena resultados en base de datos SQLite para análisis clínico inmediato.
+EVARISIS Gestor H.U.V es un sistema especializado de procesamiento OCR para informes médicos oncológicos que automatiza la extracción, normalización y persistencia de datos clínicos críticos para crear la "Base de Datos de la Verdad" oncológica del HUV. El sistema procesa PDFs de patología del Hospital Universitario del Valle, extrae biomarcadores oncológicos específicos (HER2, Ki-67, RE/RP, PD-L1) y almacena resultados en base de datos SQLite para análisis clínico y estratégico, habilitando identificación de patrones de riesgo, determinación de costos de tratamiento y optimización de recursos hospitalarios.
 
 ### Pipeline Técnico Principal
 ```
@@ -266,7 +266,7 @@ BIOMARKERS_VOCABULARY = {
 1. **Plugin system**: Arquitectura modular para nuevos tipos informe médico
 2. **Configuration management**: External config para vocabulario médico actualizable
 3. **Error monitoring**: Sistema centralizado logging y alertas
-4. **API layer**: REST API para integración externa (Power BI, PACS, HIS)
+4. **API layer**: REST API para integración con sistemas hospitalarios (lectura/auditoría) y herramientas de visualización internas
 5. **Containerization**: Docker para deployment reproducible multiplataforma
 
 ### Extensibilidad Médica
@@ -374,7 +374,7 @@ debug_mode = false        # Production setting
 
 ### Puntos Integración Actuales
 1. **SQLite Database**: Interface estándar SQL para external tools
-2. **Excel Export**: Formato compatible Power BI y análisis estadísticos
+2. **Excel Export**: Formato estándar para análisis estadísticos y reportes gerenciales
 3. **Portal HUV**: Web scraping automatizado institucional
 4. **File System**: Standard file I/O para PDFs y configuración
 
@@ -389,9 +389,9 @@ PUT /api/v1/configuracion/vocabulario
 ```
 
 ### Integración Sistemas Hospitalarios
-- **HIS (Hospital Information System)**: Sincronización datos pacientes
-- **LIS (Laboratory Information System)**: Cross-reference resultados lab
-- **PACS (Picture Archive System)**: Correlación con imágenes radiológicas  
-- **EMR (Electronic Medical Records)**: Integración historia clínica completa
+- **HIS (Hospital Information System)**: Cross-referencia y auditoría futura usando la base de datos como estándar autoritativo
+- **LIS (Laboratory Information System)**: Verificación cruzada resultados lab contra base de datos de la verdad
+- **PACS (Picture Archive System)**: Correlación con imágenes radiológicas para validación integral  
+- **EMR/SERVINTE**: Futura integración de auditoría para corrección de información existente usando datos autoritativos del proyecto
 
 Este documento consolida todos los aspectos técnicos críticos del sistema EVARISIS Gestor H.U.V v2.5 para análisis por sistemas IA externos como NotebookLM, proporcionando una visión completa desde arquitectura hasta implementación, riesgos y oportunidades de evolución.

@@ -11,7 +11,7 @@ EVARISIS Dashboard
     │   └── python huv_ocr_sistema_definitivo.py [argumentos]
     │
     └── EVARISIS Gestor H.U.V
-        ├── Entrada: PDFs patología (IHQ, Biopsia, Autopsia)
+        ├── Entrada: PDFs patología (IHQ, Patologías/Biopsias)
         ├── Procesamiento: OCR + Extracción + Normalización  
         ├── Persistencia: SQLite (huv_oncologia.db)
         └── Salida: Dashboard + Exportaciones + Automatización web
@@ -248,7 +248,7 @@ Hoja de ruta
 - Fase 1 – Fundacion (completa, v1.0).
 - Fase 2 – Enriquecimiento IHQ (completa, v1.1).
 - Fase 3 – Centralizacion y visualizacion (en curso, v2.5 entrega dashboard y SQLite).
-- Fase 4 – Integracion SERVINTE (planeada: API o CSV y colas de reenvio).
+- Fase 3 – Interoperabilidad de Auditoría SERVINTE (planeado: cross-referencia y corrección de datos autoritativos).
 - Fase 5 – Inteligencia aumentada (planeada: modelos predictivos y asistente).
 
 Arquitectura y analisis

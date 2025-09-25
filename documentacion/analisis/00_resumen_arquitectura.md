@@ -3,10 +3,10 @@
 Este documento resume como esta organizado el proyecto, el flujo de datos y la relacion entre componentes en la version 3.5 (24/09/2025).
 
 ## Objetivo del sistema
-- Extraer texto de informes PDF de patologia (enfoque IHQ) mediante OCR hibrido.
-- Normalizar datos clinicos y biomarcadores usando reglas especificas del HUV.
-- Persistir la informacion en una base SQLite unificada y habilitar analitica inmediata.
-- Ofrecer una interfaz moderna TTKBootstrap con navegación floating para procesamiento, exploración y automatización web.
+- Crear la "Base de Datos de la Verdad" para datos oncológicos del HUV a partir de informes PDF de patología (IHQ y Patologías/Biopsias) mediante OCR híbrido.
+- Normalizar datos clínicos y biomarcadores usando reglas específicas del HUV para análisis clínico-estratégico.
+- Persistir la información en una base de datos unificada que sirva como fuente de la verdad y habilite identificación de patrones de riesgo, costos de tratamiento y optimización de recursos.
+- Ofrecer una interfaz moderna TTKBootstrap con navegación floating para procesamiento, exploración y automatización web, excluyendo Autopsias del alcance a corto-mediano plazo.
 
 ## Flujo de datos (alto nivel) - v3.5
 1) El usuario ingresa al módulo Welcome de `ui.App(ttk.Window)` con navegación floating.
@@ -49,6 +49,7 @@ Este documento resume como esta organizado el proyecto, el flujo de datos y la r
 - UI: el procesamiento se ejecuta en hilos para no bloquear la interfaz; logs reflejan el avance.
 
 ## Proximos pasos sugeridos
-- Incorporar plantillas de Biopsia/Autopsia al pipeline persistente.
-- Habilitar exportacion incremental hacia Power BI y data warehouse.
-- Fortalecer pruebas automatizadas (unitarias para regex y integracion para dashboards).
+- Fortalecer y perfeccionar el procesador de IHQ hasta alcanzar una precisión clínica (>98%) - Fase 1.
+- Desarrollar e integrar el procesador para Patologías (Biopsias), excluyendo Autopsias del alcance - Fase 1.
+- Implementar el dashboard analítico avanzado (Fase 2) con cálculos estadísticos complejos y KPIs estratégicos.
+- Preparar arquitectura de cross-referencia con SERVINTE para futura auditoría e interoperabilidad - Fase 3.

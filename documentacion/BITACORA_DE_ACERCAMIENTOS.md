@@ -44,7 +44,7 @@ Version del Proyecto Presentada: v1.0 - Funcionalidad base
 5. Nuevos Requerimientos (v1.1)
 - Enriquecimiento IHQ: HER2, KI67, RE, RP, PDL-1, Estudios Solicitados, P16 (Estado/Porcentaje).
 - Diseno de modulo de adquisicion automatizada (scraper institucional) para `huvpatologia.qhorte.com`.
-- Plan tecnico de migracion a base de datos y alineacion con Power BI.
+- Plan técnico de migración a base de datos y alineación con sistemas hospitalarios para análisis estratégico.
 
 ### Reunion de Seguimiento - 10 de septiembre, 2025
 Version del Proyecto Presentada: v1.1 - Analisis Avanzado IHQ
@@ -58,7 +58,7 @@ Version del Proyecto Presentada: v1.1 - Analisis Avanzado IHQ
 3. Estado de Requerimientos Anteriores (05/09/2025)
 - Enriquecimiento IHQ: completado (v1.1 con extractor dedicado y boton en UI).
 - Modulo de adquisicion automatizada: en proceso (definicion de flujos y autenticacion).
-- Plan tecnico de migracion a BD y Power BI: en proceso.
+- Plan técnico de migración a BD y sistemas de análisis: en proceso.
 
 4. Feedback y Nuevas Ideas
 - Mantener extractor IHQ independiente para aislar riesgos operativos.
@@ -81,16 +81,16 @@ Version del Proyecto Presentada: v2.5 - Plataforma Persistente y Dashboard Integ
 3. Estado de Requerimientos Anteriores (10/09/2025)
 - Scraper institucional: entregado como modulo de automatizacion web (login, filtros, ejecucion guiada).
 - Modelo de datos relacional: primera entrega implementada en `huv_oncologia.db` (tabla informes_ihq).
-- Integracion Power BI: pendiente (requiere conectores y datasets ampliados).
+- Integración sistemas hospitalarios: pendiente (requiere definición de arquitectura de auditoría).
 
 4. Feedback y Nuevas Ideas
-- Priorizar incorporacion de Biopsia y Autopsia al pipeline persistente.
-- Habilitar exportacion directa a CSV o Power Query para acelerar informes estadisticos.
+- Priorizar incorporación de Patologías/Biopsias al pipeline persistente (Autopsias fuera de alcance).
+- Habilitar exportación directa a CSV y formatos estándar para acelerar informes estadísticos.
 - Explorar paneles clinicos personalizados por servicio (mastologia, ginecologia, etc.).
 
 5. Nuevos Requerimientos (v2.6)
-- Unificar procesadores de Biopsia y Autopsia sobre la base SQLite con indicadores de calidad.
-- Definir flujo de publicacion a Power BI (dataset incremental + dataflows).
+- Unificar procesadores de Patologías/Biopsias sobre la base SQLite con indicadores de calidad (Autopsias fuera de alcance a corto-mediano plazo).
+- Definir flujo de interoperabilidad con sistemas hospitalarios (dataset incremental + validación cruzada).
 - Incorporar pruebas automatizadas para patrones de extraccion y graficos clave.
 
 ### Sesión de Análisis Técnico - 22 de septiembre, 2025
@@ -108,8 +108,8 @@ Metodología Aplicada: SYSTEMPROMPT - Análisis Técnico Modular Exhaustivo
 - **Precisión biomarcadores crítica**: HER2, Ki-67, RE/RP, PD-L1 extraction con multi-report segmentation documentada línea por línea.
 
 3. Estado de Requerimientos Anteriores (15/09/2025)
-- Unificar procesadores Biopsia/Autopsia: análisis técnico completado - arquitectura preparada para extensión.
-- Power BI integration: dependencias y flujos técnicos clarificados en documentación.
+- Unificar procesadores Patologías/Biopsias: análisis técnico completado - arquitectura preparada para extensión (Autopsias excluidas).
+- Sistemas hospitalarios integration: dependencias y flujos técnicos clarificados en documentación.
 - Pruebas automatizadas: `test_sistema.py` documentado con estrategias fixtures médicas y precision benchmarks.
 
 4. Feedback y Nuevas Ideas (Técnicas)

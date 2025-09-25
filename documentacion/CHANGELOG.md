@@ -39,8 +39,8 @@ Este proyecto sigue versionamiento semantico.
 - **REPORTE_CHATGPT.md completo**: Mapa navegable proyecto con rutas absolutas Drive, componentes principales, flujos pipeline y comandos navegación.
 - **28 Plantillas NotebookLM**: Contenido especializado para 4 audiencias (Médico oncológico, Desarrollo, Dirección, Investigadores) en formatos audio, video y cuestionarios.
 - **Navegación IA Externa**: Estructura optimizada para ChatGPT con referencias exactas archivo:línea y flujos consulta típicos por dominio técnico/médico.
-- Integracion completa de Biopsia/Autopsia al flujo persistente y dashboards.
-- Sincronizacion incremental con Power BI y agendas clinicas.
+- Integración completa de Patologías/Biopsias al flujo persistente y dashboards (Autopsias fuera de alcance).
+- Sincronizacion incremental con sistemas hospitalarios y agendas clinicas.
 - Hardening de pruebas automaticas de extraccion y visualizacion.
 
 ---
@@ -191,7 +191,7 @@ MALIGNIDAD_KEYWORDS_IHQ = [
 
 2025-09-05 – v1.0.0
 - Fundacion y validacion: motor OCR + app de escritorio.
-- Procesadores especializados: Autopsia, IHQ, Biopsia, Revision.
+- Procesadores especializados: IHQ, Patologías/Biopsias, Revisión (Autopsias excluidas del alcance).
 - Exportacion validada a Excel (55 columnas) con formato profesional.
 
 2025-08-20 – v0.1.0

@@ -2,7 +2,7 @@
 
 ## Estado actual
 - IHQ esta integrado al flujo moderno (SQLite + dashboard).
-- Biopsia, Autopsia y Revision operan solo en la ruta legacy (Excel).
+- Patologías/Biopsias y Revisión operan solo en la ruta legacy (Excel). Autopsias están fuera del alcance actual.
 
 ## Estrategia de integracion
 1. Revisar patrones y campos obligatorios de cada procesador legacy.
@@ -11,7 +11,7 @@
 4. Actualizar la UI para permitir filtros por tipo de informe y graficos adicionales.
 
 ## Dependencias
-- `procesador_ihq_biomarcadores` ya reusa logica de `procesador_ihq`; se espera seguir la misma linea con Biopsia/Autopsia/Revision.
+- `procesador_ihq_biomarcadores` ya reusa lógica de `procesador_ihq`; se espera seguir la misma línea con Patologías/Biopsias y Revisión (Autopsias excluidas del roadmap).
 - Se requiere actualizar `huv_constants.py` cuando se agreguen nuevos codigos o patrones.
 
 ## Consideraciones
@@ -22,4 +22,4 @@
 ## Proximos pasos sugeridos
 - Diseñar un mapeo maestro que indique para cada tipo de informe que columnas se poblan.
 - Implementar pruebas cruzadas (legacy vs nuevo pipeline) antes de habilitar la vista en produccion.
-- Coordinar con BI/Power BI para asegurar que los cambios de esquema se reflejen en los reportes.
+- Coordinar con sistemas de análisis hospitalarios para asegurar que los cambios de esquema se reflejen en los reportes estratégicos.
