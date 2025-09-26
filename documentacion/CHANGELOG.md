@@ -2,6 +2,21 @@ Changelog
 
 Este proyecto sigue versionamiento semantico.
 
+## [3.2.1] - 2025-09-25
+
+### ADDED
+- **ℹ️ Sistema de Información de Versión Completo**: Nueva funcionalidad integrada con 5 tabs informativos
+  - Tab General: Información del proyecto, versión, build, licencia y repositorio
+  - Tab Sistema: Detalles técnicos del entorno (Python, plataforma, arquitectura)
+  - Tab Dependencias: Estado y versiones de todas las librerías con indicadores visuales
+  - Tab Características: Lista de features y métricas de rendimiento comparativo
+  - Tab Roadmap: Próximas versiones planificadas con descripción de mejoras
+- **Acceso Dual a Información**: Botón rápido `v3.2` en header + opción `ℹ️ Acerca de` en menú flotante
+- **Diagnóstico Técnico Integrado**: Verificación automática del estado de dependencias
+- **Función Copiar al Portapapeles**: Reporte completo del sistema para soporte técnico
+- **Archivo `version_info.py`**: Módulo centralizado con toda la información de versión
+- **Documentación Especializada**: Guía completa en `documentacion/VERSION_INFO_GUIDE.md`
+
 ## [3.2] - 2025-09-25
 
 ### ADDED

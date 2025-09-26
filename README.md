@@ -49,6 +49,7 @@ python ui.py --lanzado-por-evarisis --nombre="Tu Nombre" --cargo="Tu Cargo" --te
 - **🤖 Automatización Web**: Bot Selenium para consultas automatizadas en portal HUV
 - **💾 Base de Datos Inteligente**: SQLite con esquema de 167 campos y control de duplicados
 - **🎨 Interfaz Moderna**: TTKBootstrap con navegación flotante y temas adaptativos
+- **ℹ️ Sistema de Información de Versión**: Diagnóstico completo del sistema con 5 tabs de información detallada
 
 ## 🏗️ Arquitectura
 
@@ -134,12 +135,24 @@ backup_enabled = true
 | **Automatización Web** | ⚠️ Beta | 80% |
 | **Exportaciones** | ✅ Producción | 100% |
 
+## ℹ️ Información de Versión
+
+El sistema incluye una funcionalidad completa de información de versión accesible desde la interfaz:
+
+- **Acceso rápido**: Botón `v3.2` en el header o menú flotante → `ℹ️ Acerca de`
+- **5 tabs informativos**: General, Sistema, Dependencias, Características, Roadmap
+- **Diagnóstico técnico**: Estado completo de dependencias y configuración
+- **Soporte**: Función copiar al portapapeles para troubleshooting
+
+Ver guía completa en: **[documentacion/VERSION_INFO_GUIDE.md](documentacion/VERSION_INFO_GUIDE.md)**
+
 ## 📚 Documentación
 
 - 📖 **[Documentación Completa](documentacion/README.md)**: Guías técnicas y de usuario
 - 🔧 **[Análisis Técnico](documentacion/analisis/)**: Arquitectura y componentes
 - 📋 **[Changelog](documentacion/CHANGELOG.md)**: Historial de versiones
 - 🚀 **[Inicio Rápido](documentacion/INICIO_RAPIDO.md)**: Guía de instalación y uso
+- ℹ️ **[Información de Versión](documentacion/VERSION_INFO_GUIDE.md)**: Sistema de información integrado
 
 ## 🤝 Contribución
 

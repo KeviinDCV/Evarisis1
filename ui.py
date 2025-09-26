@@ -36,6 +36,7 @@ from pathlib import Path
 
 from calendario import CalendarioInteligente
 from huv_web_automation import automatizar_entrega_resultados, Credenciales
+from version_info import get_version_string, get_build_info, get_full_version_info, get_dependencies_actual
 
 # =========================
 # Configuración de Tesseract OCR
@@ -240,9 +241,19 @@ class App(ttk.Window):
         ttk.Label(datos, text=self.info_usuario.get("nombre", "Invitado"), font=self.FONT_NOMBRE_PERFIL).pack(anchor=W)
         ttk.Label(datos, text=self.info_usuario.get("cargo", "N/A"), font=self.FONT_SUBTITULO, bootstyle=INFO).pack(anchor=W)
         
+        # Botón de información de versión
+        version_btn = ttk.Button(
+            right,
+            text=f"v{get_version_string().split('-')[0].replace('v', '')}",
+            command=self._show_version_info,
+            bootstyle="info-outline",
+            width=8
+        )
+        version_btn.pack(side=RIGHT, padx=(10, 10))
+        
         # Logo derecho
         if self.iconos.get("logo3"):
-            ttk.Label(right, image=self.iconos["logo3"]).pack(side=RIGHT, padx=(20, 0))
+            ttk.Label(right, image=self.iconos["logo3"]).pack(side=RIGHT, padx=(10, 0))
 
     def _create_main_content(self, parent):
         """Crear el contenido principal sin sidebar tradicional"""
@@ -301,6 +312,7 @@ class App(ttk.Window):
             ("📊 Visualizar Datos", "informes", "info", self._nav_to_visualizar),
             ("📈 Dashboard", "dashboard", "warning", self._nav_to_dashboard),
             ("🔄 Procesador PDF", "web", "secondary", self._nav_to_web_auto),
+            ("ℹ️ Acerca de", "about", "info-outline", self._show_version_info),
         ]
         
         for text, icon_key, style, callback in nav_items:
@@ -568,7 +580,7 @@ class App(ttk.Window):
         self._hide_floating_menu()
         self.current_view = "welcome"
         self._show_header()  # Mostrar header solo en bienvenida
-        self._show_welcome_screen()
+        self.show_welcome_screen()
 
     def _nav_to_database(self):
         """Navegar a la sección de base de datos"""
@@ -596,6 +608,404 @@ class App(ttk.Window):
         self._hide_floating_menu()
         self._hide_header_if_not_welcome()
         messagebox.showinfo("Web Automation", "Función de automatización web - En desarrollo")
+
+    def _show_version_info(self):
+        """Mostrar información detallada de la versión del sistema"""
+        self._hide_floating_menu()
+        
+        try:
+            version_info = get_full_version_info()
+            actual_deps = get_dependencies_actual()
+            
+            # Crear ventana modal
+            version_window = ttk.Toplevel(self)
+            version_window.title(f"Acerca de - {version_info['project']['name']}")
+            version_window.geometry("900x800")
+            version_window.resizable(True, True)
+            version_window.transient(self)
+            version_window.grab_set()
+            
+            # Configurar estilo de ventana
+            version_window.configure(bg='white')
+            
+            # Centrar la ventana
+            version_window.update_idletasks()
+            x = (version_window.winfo_screenwidth() // 2) - (900 // 2)
+            y = (version_window.winfo_screenheight() // 2) - (800 // 2)
+            version_window.geometry(f"900x800+{x}+{y}")
+            
+            # Frame principal
+            main_frame = ttk.Frame(version_window, padding=10)
+            main_frame.pack(fill=BOTH, expand=True)
+            
+            # Header con información principal
+            header_frame = ttk.Frame(main_frame, bootstyle="primary", padding=15)
+            header_frame.pack(fill=X, pady=(0, 10))
+            
+            ttk.Label(
+                header_frame,
+                text=version_info['project']['name'],
+                font=("Arial", 18, "bold"),
+                bootstyle="inverse-primary"
+            ).pack()
+            
+            ttk.Label(
+                header_frame,
+                text=f"{get_version_string()} | {get_build_info()}",
+                font=("Arial", 12),
+                bootstyle="inverse-primary"
+            ).pack(pady=(5, 0))
+            
+            ttk.Label(
+                header_frame,
+                text=version_info['project']['description'],
+                font=("Arial", 10),
+                bootstyle="inverse-primary"
+            ).pack(pady=(5, 0))
+            
+            # Notebook para las diferentes secciones
+            notebook = ttk.Notebook(main_frame)
+            notebook.pack(fill=BOTH, expand=True, pady=10)
+            
+            # Tab 1: Información General
+            info_frame = ttk.Frame(notebook, padding=10)
+            notebook.add(info_frame, text="📋 General")
+            
+            # Crear scroll para info_frame
+            info_canvas = tk.Canvas(info_frame)
+            info_scrollbar = ttk.Scrollbar(info_frame, orient="vertical", command=info_canvas.yview)
+            info_scrollable = ttk.Frame(info_canvas)
+            
+            info_scrollable.bind(
+                "<Configure>",
+                lambda e: info_canvas.configure(scrollregion=info_canvas.bbox("all"))
+            )
+            
+            info_canvas.create_window((0, 0), window=info_scrollable, anchor="nw")
+            info_canvas.configure(yscrollcommand=info_scrollbar.set)
+            
+            info_canvas.pack(side="left", fill="both", expand=True)
+            info_scrollbar.pack(side="right", fill="y")
+            
+            self._create_info_section(info_scrollable, "Información del Proyecto", [
+                ("Nombre Completo", version_info['project']['full_name']),
+                ("Organización", version_info['project']['organization']),
+                ("Versión", version_info['version']['version']),
+                ("Nombre de Versión", version_info['version']['version_name']),
+                ("Tipo de Release", version_info['version']['release_type']),
+                ("Código", version_info['version']['codename']),
+                ("Fecha de Build", version_info['version']['build_date']),
+                ("Número de Build", version_info['version']['build_number']),
+                ("Licencia", version_info['project']['license']),
+                ("Repositorio", version_info['project']['repository'])
+            ])
+            
+            # Tab 2: Sistema
+            system_frame = ttk.Frame(notebook, padding=10)
+            notebook.add(system_frame, text="💻 Sistema")
+            
+            # Crear scroll para system_frame
+            system_canvas = tk.Canvas(system_frame)
+            system_scrollbar = ttk.Scrollbar(system_frame, orient="vertical", command=system_canvas.yview)
+            system_scrollable = ttk.Frame(system_canvas)
+            
+            system_scrollable.bind(
+                "<Configure>",
+                lambda e: system_canvas.configure(scrollregion=system_canvas.bbox("all"))
+            )
+            
+            system_canvas.create_window((0, 0), window=system_scrollable, anchor="nw")
+            system_canvas.configure(yscrollcommand=system_scrollbar.set)
+            
+            system_canvas.pack(side="left", fill="both", expand=True)
+            system_scrollbar.pack(side="right", fill="y")
+            
+            # Información básica del sistema
+            basic_system_info = [
+                ("Versión Python", version_info['system']['python_version'].split()[0]),
+                ("Plataforma", version_info['system']['platform']),
+                ("Sistema", version_info['system'].get('system', 'No disponible')),
+                ("Release", version_info['system'].get('release', 'No disponible')),
+                ("Arquitectura", version_info['system']['architecture']),
+                ("Máquina", version_info['system'].get('machine', 'No disponible')),
+                ("Nodo", version_info['system'].get('node', 'No disponible')),
+                ("Procesador", version_info['system']['processor'] or "No disponible")
+            ]
+            
+            self._create_info_section(system_scrollable, "Información Básica", basic_system_info)
+            
+            # Información de memoria si está disponible
+            if 'memoria_total' in version_info['system']:
+                memory_info = [
+                    ("Memoria Total", version_info['system']['memoria_total']),
+                    ("Memoria Disponible", version_info['system']['memoria_disponible']),
+                    ("Memoria Usada", version_info['system']['memoria_usada']),
+                    ("Porcentaje Usado", version_info['system']['memoria_porcentaje'])
+                ]
+                self._create_info_section(system_scrollable, "Información de Memoria", memory_info)
+            
+            # Información de CPU si está disponible
+            if 'cpu_cores' in version_info['system']:
+                cpu_info = [
+                    ("Núcleos Físicos", str(version_info['system']['cpu_cores'])),
+                    ("Hilos Lógicos", str(version_info['system']['cpu_threads'])),
+                    ("Frecuencia Máxima", version_info['system']['cpu_frecuencia'])
+                ]
+                self._create_info_section(system_scrollable, "Información del Procesador", cpu_info)
+            
+            # Información de hardware adicional
+            hardware_info = []
+            if 'tarjeta_grafica' in version_info['system']:
+                gpus = version_info['system']['tarjeta_grafica']
+                if isinstance(gpus, list):
+                    for i, gpu in enumerate(gpus):
+                        hardware_info.append((f"Tarjeta Gráfica {i+1}", gpu))
+                else:
+                    hardware_info.append(("Tarjeta Gráfica", str(gpus)))
+            
+            if 'placa_madre' in version_info['system']:
+                hardware_info.append(("Placa Madre", version_info['system']['placa_madre']))
+            
+            if hardware_info:
+                self._create_info_section(system_scrollable, "Hardware", hardware_info)
+            
+            # Información de discos si está disponible
+            if 'discos' in version_info['system'] and isinstance(version_info['system']['discos'], list):
+                for i, disco in enumerate(version_info['system']['discos']):
+                    if isinstance(disco, dict):
+                        disk_info = [
+                            ("Dispositivo", disco.get('dispositivo', 'No disponible')),
+                            ("Punto de Montaje", disco.get('punto_montaje', 'No disponible')),
+                            ("Sistema de Archivos", disco.get('sistema_archivos', 'No disponible')),
+                            ("Espacio Total", disco.get('total', 'No disponible')),
+                            ("Espacio Usado", disco.get('usado', 'No disponible')),
+                            ("Espacio Libre", disco.get('libre', 'No disponible')),
+                            ("Porcentaje Usado", disco.get('porcentaje', 'No disponible'))
+                        ]
+                        self._create_info_section(system_scrollable, f"Disco {i+1}", disk_info)
+            
+            # Tab 3: Dependencias
+            deps_frame = ttk.Frame(notebook, padding=10)
+            notebook.add(deps_frame, text="📦 Dependencias")
+            
+            # Crear tabla de dependencias
+            deps_tree_frame = ttk.Frame(deps_frame)
+            deps_tree_frame.pack(fill=BOTH, expand=True)
+            
+            deps_tree = ttk.Treeview(
+                deps_tree_frame,
+                columns=("esperada", "actual", "estado"),
+                show="tree headings",
+                selectmode="extended"
+            )
+            
+            # Configurar columnas
+            deps_tree.heading("#0", text="Paquete")
+            deps_tree.heading("esperada", text="Versión Esperada")
+            deps_tree.heading("actual", text="Versión Actual")
+            deps_tree.heading("estado", text="Estado")
+            
+            deps_tree.column("#0", width=150, minwidth=100)
+            deps_tree.column("esperada", width=150, minwidth=100)
+            deps_tree.column("actual", width=150, minwidth=100)
+            deps_tree.column("estado", width=100, minwidth=80)
+            
+            # Llenar dependencias
+            for package, expected_version in version_info['dependencies'].items():
+                actual_version = actual_deps.get(package, "❌ No instalado")
+                
+                if actual_version.startswith("❌"):
+                    status = "❌ No instalado"
+                elif actual_version.startswith("⚠️"):
+                    status = "⚠️ Error"
+                elif actual_version.startswith("✅"):
+                    status = "✅ Instalado"
+                else:
+                    status = "✅ OK"
+                
+                deps_tree.insert(
+                    "",
+                    "end",
+                    text=package,
+                    values=(expected_version, actual_version, status)
+                )
+            
+            deps_tree.pack(fill=BOTH, expand=True)
+            
+            # Scrollbar para el treeview
+            deps_scrollbar = ttk.Scrollbar(deps_tree_frame, orient="vertical", command=deps_tree.yview)
+            deps_tree.configure(yscrollcommand=deps_scrollbar.set)
+            deps_scrollbar.pack(side="right", fill="y")
+            
+            # Tab 4: Equipo de Desarrollo
+            team_frame = ttk.Frame(notebook, padding=10)
+            notebook.add(team_frame, text="👥 Equipo")
+            
+            # Crear scroll para team_frame
+            team_canvas = tk.Canvas(team_frame)
+            team_scrollbar = ttk.Scrollbar(team_frame, orient="vertical", command=team_canvas.yview)
+            team_scrollable = ttk.Frame(team_canvas)
+            
+            team_scrollable.bind(
+                "<Configure>",
+                lambda e: team_canvas.configure(scrollregion=team_canvas.bbox("all"))
+            )
+            
+            team_canvas.create_window((0, 0), window=team_scrollable, anchor="nw")
+            team_canvas.configure(yscrollcommand=team_scrollbar.set)
+            
+            team_canvas.pack(side="left", fill="both", expand=True)
+            team_scrollbar.pack(side="right", fill="y")
+            
+            # Información del equipo
+            role_titles = {
+                'desarrollador': '👨‍💻 Desarrollador',
+                'lider_investigacion': '👨‍⚕️ Líder de Investigación y Proyección Oncológica',
+                'jefe_gestion_informacion': '👨‍💼 Jefe de Gestión de la Información'
+            }
+            
+            for role_key, role_info in version_info['team'].items():
+                role_data = [
+                    ("Nombre", role_info['nombre']),
+                    ("Cargo", role_info['cargo']),
+                    ("Departamento", role_info['departamento']),
+                    ("Correo", role_info['correo'])
+                ]
+                title = role_titles.get(role_key, role_info['cargo'])
+                self._create_info_section(team_scrollable, title, role_data)
+            
+            # Tab 5: Características
+            features_frame = ttk.Frame(notebook, padding=10)
+            notebook.add(features_frame, text="✨ Características")
+            
+            features_text = ttk.Text(features_frame, wrap=WORD, height=15, font=("Consolas", 10))
+            features_text.pack(fill=BOTH, expand=True)
+            
+            features_content = "🔥 CARACTERÍSTICAS DE LA VERSIÓN ACTUAL:\n\n"
+            for feature in version_info['features']:
+                features_content += f"{feature}\n"
+            
+            features_content += "\n\n📊 MÉTRICAS DE RENDIMIENTO:\n\n"
+            for metric, value in version_info['performance'].items():
+                features_content += f"• {metric.replace('_', ' ').title()}: {value}\n"
+            
+            features_content += "\n\n👥 AUDIENCIAS OBJETIVO:\n\n"
+            for audience, benefit in version_info['audiences'].items():
+                features_content += f"• {audience}: {benefit}\n"
+            
+            features_text.insert("1.0", features_content)
+            features_text.configure(state="disabled")
+            
+            # Tab 6: Roadmap
+            roadmap_frame = ttk.Frame(notebook, padding=10)
+            notebook.add(roadmap_frame, text="🗺️ Roadmap")
+            
+            roadmap_text = ttk.Text(roadmap_frame, wrap=WORD, height=15, font=("Consolas", 10))
+            roadmap_text.pack(fill=BOTH, expand=True)
+            
+            roadmap_content = "🚀 PRÓXIMAS VERSIONES:\n\n"
+            for version, description in version_info['roadmap'].items():
+                roadmap_content += f"{version}: {description}\n\n"
+            
+            roadmap_text.insert("1.0", roadmap_content)
+            roadmap_text.configure(state="disabled")
+            
+            # Frame de botones
+            buttons_frame = ttk.Frame(main_frame, padding=10)
+            buttons_frame.pack(fill=X, pady=10)
+            
+            ttk.Button(
+                buttons_frame,
+                text="📋 Copiar Info Sistema",
+                command=lambda: self._copy_system_info_to_clipboard(version_info),
+                bootstyle="info"
+            ).pack(side=LEFT, padx=(0, 10))
+            
+            ttk.Button(
+                buttons_frame,
+                text="✅ Cerrar",
+                command=version_window.destroy,
+                bootstyle="success"
+            ).pack(side=RIGHT)
+            
+            # Bind mouse wheel para scroll en cada canvas
+            def _on_mousewheel(event):
+                try:
+                    # Determinar qué canvas está activo basado en el widget con focus
+                    widget = event.widget
+                    while widget:
+                        if isinstance(widget, tk.Canvas):
+                            widget.yview_scroll(int(-1*(event.delta/120)), "units")
+                            break
+                        widget = widget.master
+                except:
+                    pass
+            
+            # Bind a la ventana completa
+            version_window.bind_all("<MouseWheel>", _on_mousewheel)
+            
+            # Cleanup al cerrar
+            def on_closing():
+                try:
+                    version_window.unbind_all("<MouseWheel>")
+                except:
+                    pass
+                version_window.destroy()
+            
+            version_window.protocol("WM_DELETE_WINDOW", on_closing)
+            
+        except Exception as e:
+            messagebox.showerror(
+                "Error",
+                f"Error al mostrar información de versión:\n{str(e)}"
+            )
+
+    def _create_info_section(self, parent, title, info_items):
+        """Crear una sección de información con título y elementos"""
+        # Frame para la sección
+        section_frame = ttk.LabelFrame(parent, text=title, padding=10)
+        section_frame.pack(fill=X, pady=(0, 10))
+        
+        # Grid de información
+        for i, (label, value) in enumerate(info_items):
+            ttk.Label(
+                section_frame,
+                text=f"{label}:",
+                font=("Arial", 9, "bold")
+            ).grid(row=i, column=0, sticky=W, padx=(0, 10), pady=2)
+            
+            ttk.Label(
+                section_frame,
+                text=str(value),
+                font=("Arial", 9)
+            ).grid(row=i, column=1, sticky=W, pady=2)
+    
+    def _copy_system_info_to_clipboard(self, version_info):
+        """Copiar información del sistema al clipboard"""
+        try:
+            info_text = f"""EVARISIS Gestor H.U.V - Información del Sistema
+=====================================
+Versión: {get_version_string()}
+Build: {get_build_info()}
+Python: {version_info['system']['python_version'].split()[0]}
+Plataforma: {version_info['system']['platform']}
+Arquitectura: {version_info['system']['architecture']}
+
+Dependencias:
+"""
+            actual_deps = get_dependencies_actual()
+            for package, expected in version_info['dependencies'].items():
+                actual = actual_deps.get(package, "No instalado")
+                info_text += f"- {package}: {actual} (esperado: {expected})\n"
+            
+            self.clipboard_clear()
+            self.clipboard_append(info_text)
+            self.update()  # Actualizar para que el clipboard se procese
+            
+            messagebox.showinfo("Copiado", "Información del sistema copiada al portapapeles")
+            
+        except Exception as e:
+            messagebox.showerror("Error", f"Error al copiar al portapapeles:\n{str(e)}")
 
     def _hide_header_if_not_welcome(self):
         """Ocultar header si no estamos en la pantalla de bienvenida"""
@@ -1239,7 +1649,7 @@ class App(ttk.Window):
                     if col in df.columns:
                         try:
                             # Convertir a datetime con formato día/mes/año
-                            fechas = pd.to_datetime(df[col], errors='coerce', dayfirst=True)
+                            fechas = pd.to_datetime(df[col], errors='coerce', format='%d/%m/%Y')
                             fechas_validas = fechas.dropna()
                             
                             if not fechas_validas.empty:

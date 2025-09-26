@@ -63,18 +63,32 @@ def build_executable(main_script: str) -> bool:
     if not os.path.exists(main_script):
         _err(f"No se encuentra {main_script}")
         return False
-    if not os.path.exists("huv_ocr_sistema_definitivo.py"):
-        _err("No se encuentra huv_ocr_sistema_definitivo.py en el directorio actual")
-        return False
+    
+    # Determinar nombre del ejecutable basado en el script
+    if main_script == "ui.py":
+        exe_name = "Gestiononcologia"
+    else:
+        exe_name = "OCR_Medico"
 
-    # PyInstaller básico; agregar banderas si fuese necesario (hidden-imports matplot/ttkbootstrap)
+    # PyInstaller con dependencias específicas para el sistema de gestión oncológica
     command = " ".join([
         "pyinstaller",
         "--noconfirm",
         "--onefile",
         "--windowed",
-        "--name=OCR_Medico",
+        f"--name={exe_name}",
         "--clean",
+        "--hidden-import=ttkbootstrap",
+        "--hidden-import=matplotlib",
+        "--hidden-import=pandas",
+        "--hidden-import=openpyxl",
+        "--hidden-import=sqlite3",
+        "--hidden-import=PIL",
+        "--hidden-import=requests",
+        "--hidden-import=selenium",
+        "--hidden-import=pytesseract",
+        "--add-data=version_info.py;.",
+        "--add-data=huv_constants.py;.",
         main_script,
     ])
 
@@ -88,13 +102,16 @@ def main() -> int:
     parser.add_argument(
         "script",
         nargs="?",
-        default="huv_ocr_sistema_definitivo.py",
+        default="ui.py",
         help="Script principal de la aplicación",
     )
     args = parser.parse_args()
 
+    script_name = args.script
+    app_title = "Gestión Oncológica HUV" if script_name == "ui.py" else "OCR Medico"
+    
     print("=" * 60)
-    print("Constructor de Ejecutable - OCR Medico")
+    print(f"Constructor de Ejecutable - {app_title}")
     print("=" * 60)
 
     if not check_dependencies():
@@ -107,7 +124,8 @@ def main() -> int:
 
     dist_dir = Path("dist")
     if dist_dir.exists():
-        executables = list(dist_dir.glob("OCR_Medico*"))
+        # Buscar tanto OCR_Medico como Gestiononcologia
+        executables = list(dist_dir.glob("OCR_Medico*")) + list(dist_dir.glob("Gestiononcologia*"))
         if executables:
             exe_path = executables[0]
             exe_size = exe_path.stat().st_size / (1024 * 1024)
@@ -115,9 +133,16 @@ def main() -> int:
             _ok("Ejecutable creado exitosamente")
             print(f"Ubicación: {exe_path}")
             print(f"Tamaño: {exe_size:.1f} MB")
-            print("Notas:")
-            print("  - Requiere Tesseract OCR instalado en el sistema")
-            print("  - Chrome debe estar instalado para funciones Selenium")
+            
+            if "Gestiononcologia" in str(exe_path):
+                print("Notas para Gestión Oncológica:")
+                print("  - Sistema completo de gestión médica")
+                print("  - Incluye procesamiento OCR y análisis IHQ")
+                print("  - Compatible con base de datos SQLite")
+            else:
+                print("Notas para OCR Medico:")
+                print("  - Requiere Tesseract OCR instalado en el sistema")
+                print("  - Chrome debe estar instalado para funciones Selenium")
             return 0
         else:
             _err("No se encontró el ejecutable en dist/")

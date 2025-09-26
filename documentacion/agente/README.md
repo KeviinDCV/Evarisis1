@@ -36,10 +36,46 @@
 | **[03_PROMPT_GESTION_Y_TRAZABILIDAD.md](03_PROMPT_GESTION_Y_TRAZABILIDAD.md)** | Gestión y trazabilidad | `CHANGELOG.md`, `BITACORA.md`, `README.md` | Gestores de proyecto |
 | **[04_PROMPT_COMUNICACION_STAKEHOLDERS.md](04_PROMPT_COMUNICACION_STAKEHOLDERS.md)** | Comunicación diferenciada | Cuestionarios, reportes ejecutivos | Múltiples audiencias |
 | **[05_PROMPT_DOCUMENTACION_TECNICA_ESPECIALIZADA.md](05_PROMPT_DOCUMENTACION_TECNICA_ESPECIALIZADA.md)** | Documentación técnica profunda | Manuales técnicos, APIs | Equipos técnicos avanzados |
+| **🚨 [06_PROMPT_SISTEMA_VERSIONADO_OBLIGATORIO.md](06_PROMPT_SISTEMA_VERSIONADO_OBLIGATORIO.md)** | **Sistema de versionado estándar OBLIGATORIO** | **`version_info.py`, ventana de versión, docs** | **TODOS los proyectos** |
 
 ---
 
-## 🚀 CÓMO USAR ESTE SISTEMA
+## � SISTEMA DE VERSIONADO OBLIGATORIO
+
+### ⚡ NUEVO ESTÁNDAR PROFESIONAL
+**TODOS los proyectos DEBEN implementar el sistema de versionado completo usando:**
+
+**[06_PROMPT_SISTEMA_VERSIONADO_OBLIGATORIO.md](06_PROMPT_SISTEMA_VERSIONADO_OBLIGATORIO.md)**
+
+**🎯 Este prompt es OBLIGATORIO y debe ejecutarse en TODOS los proyectos sin excepción.**
+
+### ✅ Funcionalidades que OBLIGA a implementar:
+- **Módulo `version_info.py`** con información completa del sistema
+- **Ventana de versión con 6 pestañas** (General, Sistema, Dependencias, Equipo, Características, Roadmap)  
+- **Información del equipo de desarrollo** (desarrollador, supervisores, contactos)
+- **Detección completa del hardware** (RAM, CPU, GPU, discos duros)
+- **Estado de dependencias** con iconos claros (✅ OK, ❌ No instalado, ⚠️ Error)
+- **Funcionalidad de copia al portapapeles** para soporte técnico
+- **Documentación completa** del sistema implementado
+
+### 🔧 Beneficios del Estándar:
+- **Diagnóstico técnico instantáneo** para troubleshooting
+- **Información centralizada del equipo** para contactos y soporte
+- **Profesionalismo** en todos los proyectos
+- **Facilita mantenimiento** y actualizaciones futuras
+- **Experiencia de usuario consistente** entre proyectos
+
+### 🏆 Modelo de Referencia:
+La implementación de **EVARISIS Gestor H.U.V v3.2.1** es el modelo gold standard que incluye:
+- ✅ 6 pestañas completamente funcionales sin espacios negros
+- ✅ Detección de 6 núcleos CPU, 12 hilos, 15.93 GB RAM, 8 discos
+- ✅ Información completa del equipo (Ing. Daniel, Dr. Bayona, Ing. Diego)
+- ✅ Estados claros de 10 dependencias principales
+- ✅ Roadmap hasta v4.1 documentado
+
+---
+
+## �🚀 CÓMO USAR ESTE SISTEMA
 
 ### ⚡ MODO AUTOMÁTICO (RECOMENDADO)
 Los prompts ahora son **completamente adaptativos**. Solo necesitas:
@@ -103,24 +139,54 @@ Los prompts ahora son **completamente adaptativos**. Solo necesitas:
 
 ## 🔄 FLUJO DE TRABAJO RECOMENDADO
 
-### Para Proyecto Nuevo
+### 🚨 FLUJO OBLIGATORIO PARA CUALQUIER PROYECTO
+
+**PASO 1 (OBLIGATORIO)**: Sistema de Versionado
 ```mermaid
 graph TD
-    A[Análisis del proyecto] --> B[Prompt 01: Informe Global]
+    A[🚨 INICIAR PROYECTO] --> B[🔴 Prompt 06: Sistema Versionado OBLIGATORIO]
+    B --> C{¿Sistema de versionado implementado?}
+    C -->|NO| D[🚫 DETENER - Implementar obligatoriamente]
+    C -->|SÍ| E[✅ Continuar con documentación]
+```
+
+**PASO 2**: Documentación Completa
+```mermaid
+graph TD
+    A[✅ Sistema de versionado OK] --> B[Prompt 01: Informe Global]
     B --> C[Prompt 02: Análisis Técnico Modular]
     C --> D[Prompt 03: Gestión y Trazabilidad]
     D --> E[Prompt 04: Comunicación]
     E --> F[Prompt 05: Documentación Técnica]
-    F --> G[Revisión y validación completa]
+    F --> G[🎯 Proyecto completo y profesional]
 ```
+
+### 📋 ORDEN DE PRIORIDAD DE PROMPTS
+
+**🔴 PRIORIDAD CRÍTICA** (No negociable):
+1. **06_SISTEMA_VERSIONADO_OBLIGATORIO** - SIEMPRE primero
+
+**🟡 PRIORIDAD ALTA** (Recomendado para todos):
+2. **01_ANALISIS_GLOBAL** - Vista estratégica
+3. **03_GESTION_Y_TRAZABILIDAD** - Control de cambios
+
+**🟢 PRIORIDAD MEDIA** (Según necesidad):
+4. **02_ANALISIS_TECNICO_MODULAR** - Para equipos técnicos
+5. **04_COMUNICACION_STAKEHOLDERS** - Para múltiples audiencias
+
+**🔵 PRIORIDAD BAJA** (Proyectos avanzados):
+6. **05_DOCUMENTACION_TECNICA_ESPECIALIZADA** - APIs y manuales técnicos
 
 ### Para Actualización de Documentación
 ```mermaid
 graph TD
-    A[Identificar documentos desactualizados] --> B[Seleccionar prompt específico]
-    B --> C[Ejecutar prompt con contexto actualizado]
-    C --> D[Validar cambios]
-    D --> E[Actualizar versiones]
+    A[Actualización necesaria] --> B{¿Sistema de versionado actualizado?}
+    B -->|NO| C[🔴 Actualizar sistema de versionado PRIMERO]
+    B -->|SÍ| D[Seleccionar prompt específico]
+    C --> D
+    D --> E[Ejecutar prompt con contexto actualizado]
+    E --> F[Validar cambios]
+    F --> G[Actualizar número de versión]
 ```
 
 ---
