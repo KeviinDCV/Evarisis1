@@ -1,12 +1,13 @@
 # EVARISIS Gestor H.U.V — Informe Global del Proyecto
 
-**Versión**: v2.5 (15/09/2025)  
-**Fecha de actualización documental**: 22/09/2025  
-**Ruta raíz Drive**: `DEBERES HUV\HUV_ONCOLOGIA\HUV_ONCOLOGIA`
+**Versión**: v3.2 (25/09/2025)  
+**Fecha de actualización documental**: 25/09/2025  
+**Punto de entrada**: `huv_ocr_sistema_definitivo.py`
+**Ruta raíz Drive**: `DEBERES HUV\ProyectoHUV9GESTOR_ONCOLOGIA`
 
 ## Resumen ejecutivo
 
-**EVARISIS Gestor H.U.V** es un módulo estratégico del ecosistema EVARISIS diseñado para crear la **"Base de Datos de la Verdad"** de los datos oncológicos del Hospital Universitario del Valle. La versión 2.5 consolida un motor de inteligencia estratégica y clínica que transforma informes de patología (PDFs) en información estructurada de alta confiabilidad para la toma de decisiones estratégicas y la futura auditoría de sistemas hospitalarios, eliminando las discrepancias y baja confiabilidad de los datos ingresados manualmente en sistemas existentes como SERVINTE. El sistema ha procesado cientos de informes IHQ generando una base de datos autoritativa que habilita análisis avanzados para identificar patrones de riesgo, determinar órganos y patologías más recurrentes, estimar costos de tratamiento por paciente y tipo de cáncer, y proveer a la gerencia hospitalaria datos sólidos para crear estrategias comerciales con farmacéuticas y optimizar la asignación de recursos.
+**EVARISIS Gestor H.U.V** es un módulo estratégico del ecosistema EVARISIS diseñado para crear la **"Base de Datos de la Verdad"** de los datos oncológicos del Hospital Universitario del Valle. La versión 3.2 consolida un motor de inteligencia estratégica y clínica que transforma informes de patología (PDFs) en información estructurada de alta confiabilidad para la toma de decisiones estratégicas y la futura auditoría de sistemas hospitalarios, eliminando las discrepancias y baja confiabilidad de los datos ingresados manualmente en sistemas existentes como SERVINTE. El sistema ha procesado cientos de informes IHQ generando una base de datos autoritativa que habilita análisis avanzados para identificar patrones de riesgo, determinar órganos y patologías más recurrentes, estimar costos de tratamiento por paciente y tipo de cáncer, y proveer a la gerencia hospitalaria datos sólidos para crear estrategias comerciales con farmacéuticas y optimizar la asignación de recursos.
 
 ## Visión y objetivos
 
@@ -20,7 +21,7 @@
 4. **Automatización de procesos**: Eliminar la interpretación manual y las hojas de cálculo intermedias, estableciendo una fuente única de verdad que reemplace datos ingresados manualmente
 5. **Fundación para IA**: Establecer dataset de calidad productiva que sirva como base para el futuro desarrollo de un Auditor IA (Fase 4) capaz de mantener proactivamente la integridad de datos oncológicos
 
-## Alcance actual (v2.5)
+## Alcance actual (v3.2)
 
 ### Qué SÍ hace
 - **OCR híbrido avanzado**: Extrae texto nativo de PDFs y aplica Tesseract OCR para documentos escaneados con configuración optimizada
@@ -28,7 +29,8 @@
 - **Persistencia inteligente**: Almacena datos en SQLite con esquema de 167 campos y control automático de duplicados por número de petición
 - **Dashboard analítico integrado**: Visualizaciones dinámicas con filtros contextuales, KPIs en tiempo real y modo pantalla completa
 - **Automatización portal web**: Bot Selenium para consultas automatizadas en `huvpatologia.qhorte.com` con calendario inteligente
-- **Interfaz moderna**: UI CustomTkinter con navegación por pestañas, tema claro/oscuro y experiencia no-bloqueante
+- **Interfaz moderna**: UI TTKBootstrap con sistema de navegación flotante, tema litera/darkly adaptativos y experiencia de usuario optimizada
+- **Arquitectura modular**: Sistema App(ttk.Window) con componentes reutilizables y gestión de estado centralizada
 
 ### Qué NO hace (límites actuales)
 - **Soporte completo para Patologías (Biopsias)**: El procesamiento de Autopsias está fuera del alcance actual y de los planes a corto-mediano plazo
@@ -65,7 +67,8 @@ Investigación + Gestión Clínica
 - **Motor OCR**: `ocr_processing.py` con estrategia híbrida (texto nativo + Tesseract configurable)
 - **Extractor especializado**: `procesador_ihq_biomarcadores.py` reutiliza lógica de `procesador_ihq.py` (LEGACY) 
 - **Gestor de datos**: `database_manager.py` maneja SQLite con transacciones seguras
-- **Interfaz unificada**: `ui.py` coordina todos los componentes en CustomTkinter
+- **Sistema principal**: `huv_ocr_sistema_definitivo.py` punto de entrada y coordinador de módulos
+- **Interfaz unificada**: `ui.py` implementa App(ttk.Window) con TTKBootstrap y navegación flotante
 - **Automatización web**: `huv_web_automation.py` con ChromeDriver management automático
 
 ## Valor por audiencia
