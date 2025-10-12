@@ -1,0 +1,292 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Corrector ortográfico para términos médicos y biomarcadores
+Versión: 4.1.0
+Fecha: 4 de octubre de 2025
+"""
+
+import re
+from typing import Dict, List
+
+# ─────────────────────────── DICCIONARIO DE CORRECCIONES ─────────────────────────────
+
+# Términos médicos con errores comunes del OCR
+MEDICAL_TERMS_CORRECTIONS: Dict[str, str] = {
+    # Neuroendocrino y variantes
+    'NUEROENDOCRINO': 'NEUROENDOCRINO',
+    'NEUROENDOCRINO': 'NEUROENDOCRINO',  # Normalización
+    'NUERO-ENDOCRINO': 'NEUROENDOCRINO',
+    'NEURO-ENDOCRINO': 'NEUROENDOCRINO',
+    'NUEROENDOCRINA': 'NEUROENDOCRINA',
+    'NEUROENDOCRINA': 'NEUROENDOCRINA',
+
+    # Inmunohistoquímica y variantes
+    'INMUNO-HISTOQUIMICA': 'INMUNOHISTOQUIMICA',
+    'INMUNO HISTOQUIMICA': 'INMUNOHISTOQUIMICA',
+    'INMUNOHISTOQU1MICA': 'INMUNOHISTOQUIMICA',
+    'INMUN0HISTOQUIMICA': 'INMUNOHISTOQUIMICA',
+
+    # Carcinoma y variantes
+    'CARCIN0MA': 'CARCINOMA',
+    'CARCINOMA': 'CARCINOMA',
+    'CARCIN0MAS': 'CARCINOMAS',
+    'CARC1NOMA': 'CARCINOMA',
+
+    # Adenocarcinoma
+    'ADENOCARCIN0MA': 'ADENOCARCINOMA',
+    'ADENOCARCINOMA': 'ADENOCARCINOMA',
+    'ADEN0CARCINOMA': 'ADENOCARCINOMA',
+
+    # Neoplasia
+    'NE0PLASIA': 'NEOPLASIA',
+    'NEOPLASIA': 'NEOPLASIA',
+    'NE0PLASIAS': 'NEOPLASIAS',
+
+    # Diagnóstico
+    'DIAGN0STICO': 'DIAGNOSTICO',
+    'DIAGN0ST1CO': 'DIAGNOSTICO',
+    'D1AGNOSTICO': 'DIAGNOSTICO',
+
+    # Microscópica
+    'MICROSC0PICA': 'MICROSCOPICA',
+    'MICROSC0P1CA': 'MICROSCOPICA',
+    'M1CROSCOPICA': 'MICROSCOPICA',
+
+    # Macroscópica
+    'MACROSC0PICA': 'MACROSCOPICA',
+    'MACROSC0P1CA': 'MACROSCOPICA',
+    'M1ACROSCOPICA': 'MACROSCOPICA',
+
+    # Sinaptofisina (común en IHQ)
+    'SINAPTOFISINA': 'SYNAPTOPHYSIN',
+    'SYNAPTOPH1SIN': 'SYNAPTOPHYSIN',
+    'SYNAPTOFISINA': 'SYNAPTOPHYSIN',
+    'S1NAPTOPHYSIN': 'SYNAPTOPHYSIN',
+
+    # Cromogranina
+    'CR0MOGRANINA': 'CROMOGRANINA',
+    'CROM0GRANINA': 'CROMOGRANINA',
+    'CHR0M0GRANIN': 'CHROMOGRANIN',
+
+    # Positivo/Negativo
+    'P0SITIVO': 'POSITIVO',
+    'P0SIT1VO': 'POSITIVO',
+    'NEGAT1VO': 'NEGATIVO',
+    'NEGAT1V0': 'NEGATIVO',
+
+    # Receptor
+    'RECEPT0R': 'RECEPTOR',
+    'RECEPT0RES': 'RECEPTORES',
+    'RECEPT1R': 'RECEPTOR',
+
+    # Estrógen o
+    'ESTR0GENO': 'ESTROGENO',
+    'ESTR0GEN0': 'ESTROGENO',
+    'ESTROGEN0': 'ESTROGENO',
+
+    # Progesterona
+    'PR0GESTERONA': 'PROGESTERONA',
+    'PR0GESTER0NA': 'PROGESTERONA',
+    'PROGESTERON1': 'PROGESTERONA',
+}
+
+# Patrones para normalizar biomarcadores (preservar mayúsculas/guiones)
+BIOMARKER_PATTERNS: Dict[str, str] = {
+    r'\bKI[\s-]?67\b': 'KI-67',
+    r'\bKI[\s-]?6[7O]\b': 'KI-67',
+    r'\bK1[\s-]?67\b': 'KI-67',
+    r'\bP[\s]?40\b': 'P40',
+    r'\bP[\s]?4O\b': 'P40',
+    r'\bP[\s]?16\b': 'P16',
+    r'\bP[\s]?1[6G]\b': 'P16',
+    r'\bP[\s]?63\b': 'P63',
+    r'\bP[\s]?6[3B]\b': 'P63',
+    r'\bCK[\s]?7\b': 'CK7',
+    r'\bCK[\s]?2[0O]\b': 'CK20',
+    r'\bCK[\s]?5[\s/]?6\b': 'CK5/6',
+    r'\bTTF[\s-]?1\b': 'TTF1',
+    r'\bTTF[\s-]?[1I]\b': 'TTF1',
+}
+
+
+# ─────────────────────────── FUNCIONES DE CORRECCIÓN ─────────────────────────────
+
+def correct_spelling(text: str, case_sensitive: bool = False) -> str:
+    """
+    Corrige errores ortográficos en términos médicos
+
+    Args:
+        text: Texto a corregir
+        case_sensitive: Si debe respetar mayúsculas/minúsculas
+
+    Returns:
+        Texto corregido
+    """
+    if not text:
+        return text
+
+    corrected = text
+
+    # 1. Correcciones de términos médicos (case-insensitive por defecto)
+    for wrong, correct in MEDICAL_TERMS_CORRECTIONS.items():
+        if case_sensitive:
+            corrected = corrected.replace(wrong, correct)
+        else:
+            # Reemplazar ignorando mayúsculas/minúsculas pero preservando el case del texto
+            pattern = re.compile(re.escape(wrong), re.IGNORECASE)
+
+            def replace_preserving_case(match):
+                original = match.group(0)
+                # Si el original está todo en mayúsculas, devolver corrección en mayúsculas
+                if original.isupper():
+                    return correct.upper()
+                # Si el original está en minúsculas, devolver corrección en minúsculas
+                elif original.islower():
+                    return correct.lower()
+                # Si es capitalizado, capitalizar la corrección
+                elif original[0].isupper() and original[1:].islower():
+                    return correct.capitalize()
+                # Por defecto, devolver la corrección tal cual
+                return correct
+
+            corrected = pattern.sub(replace_preserving_case, corrected)
+
+    # 2. Normalización de biomarcadores (preservar formato estándar)
+    for pattern, normalized in BIOMARKER_PATTERNS.items():
+        corrected = re.sub(pattern, normalized, corrected, flags=re.IGNORECASE)
+
+    return corrected
+
+
+def correct_medical_field(field_value: str, field_type: str = 'general') -> str:
+    """
+    Corrige un campo médico específico
+
+    Args:
+        field_value: Valor del campo a corregir
+        field_type: Tipo de campo ('diagnosis', 'biomarker', 'organ', 'general')
+
+    Returns:
+        Valor corregido
+    """
+    if not field_value:
+        return field_value
+
+    # Aplicar corrección general
+    corrected = correct_spelling(field_value)
+
+    # Correcciones específicas por tipo de campo
+    if field_type == 'biomarker':
+        # Normalizar nombres de biomarcadores
+        corrected = corrected.strip().upper()
+
+        # Corregir espacios en biomarcadores compuestos
+        corrected = re.sub(r'CK\s+AE\s*1\s*/\s*AE\s*3', 'CKAE1/AE3', corrected)
+        corrected = re.sub(r'AE\s*1\s*/\s*AE\s*3', 'AE1/AE3', corrected)
+
+    elif field_type == 'diagnosis':
+        # Correcciones específicas para diagnósticos
+        # Normalizar espacios múltiples
+        corrected = re.sub(r'\s+', ' ', corrected).strip()
+
+    elif field_type == 'organ':
+        # Normalizar órganos a mayúsculas
+        corrected = corrected.strip().upper()
+
+    return corrected
+
+
+def correct_extracted_data(extracted_data: Dict[str, any]) -> Dict[str, any]:
+    """
+    Corrige todos los campos de un diccionario de datos extraídos
+
+    Args:
+        extracted_data: Diccionario con datos extraídos
+
+    Returns:
+        Diccionario con datos corregidos
+    """
+    if not extracted_data:
+        return extracted_data
+
+    corrected_data = extracted_data.copy()
+
+    # Campos de diagnóstico
+    diagnosis_fields = [
+        'diagnostico_final_ihq', 'diagnostico', 'ihq_diagnostico',
+        'descripcion_macroscopica', 'descripcion_microscopica',
+        'comentarios', 'observaciones'
+    ]
+
+    for field in diagnosis_fields:
+        if field in corrected_data and corrected_data[field]:
+            corrected_data[field] = correct_medical_field(
+                corrected_data[field],
+                field_type='diagnosis'
+            )
+
+    # Campos de órgano
+    organ_fields = ['organo', 'ihq_organo', 'organo_medical']
+
+    for field in organ_fields:
+        if field in corrected_data and corrected_data[field]:
+            corrected_data[field] = correct_medical_field(
+                corrected_data[field],
+                field_type='organ'
+            )
+
+    # Campos de biomarcadores (estado y valores)
+    biomarker_fields = [k for k in corrected_data.keys() if '_ESTADO' in k or '_VALOR' in k]
+
+    for field in biomarker_fields:
+        if corrected_data[field]:
+            # Para estados, corregir como texto general
+            if '_ESTADO' in field:
+                corrected_data[field] = correct_medical_field(
+                    corrected_data[field],
+                    field_type='general'
+                )
+            # Para valores numéricos, no modificar
+            elif '_VALOR' in field and isinstance(corrected_data[field], str):
+                corrected_data[field] = correct_medical_field(
+                    corrected_data[field],
+                    field_type='general'
+                )
+
+    return corrected_data
+
+
+def get_corrections_report(original: str, corrected: str) -> List[str]:
+    """
+    Genera un reporte de las correcciones realizadas
+
+    Args:
+        original: Texto original
+        corrected: Texto corregido
+
+    Returns:
+        Lista de correcciones en formato 'original → corregido'
+    """
+    if original == corrected:
+        return []
+
+    corrections = []
+
+    # Detectar cambios palabra por palabra
+    original_words = set(re.findall(r'\b\w+\b', original.upper()))
+    corrected_words = set(re.findall(r'\b\w+\b', corrected.upper()))
+
+    changed_words = original_words - corrected_words
+
+    for wrong_word in changed_words:
+        # Buscar la palabra corregida correspondiente
+        for correct_word in corrected_words:
+            if correct_word not in original_words:
+                # Verificar si es una corrección conocida
+                if wrong_word in MEDICAL_TERMS_CORRECTIONS:
+                    if MEDICAL_TERMS_CORRECTIONS[wrong_word].upper() == correct_word:
+                        corrections.append(f"{wrong_word} -> {correct_word}")
+                        break
+
+    return corrections

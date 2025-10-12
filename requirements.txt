@@ -1,14 +1,42 @@
-pytesseract
-PyMuPDF
-pillow
-pandas
-openpyxl
-python-dateutil
-customtkinter
-matplotlib
-seaborn
-selenium
-webdriver-manager
-ttkbootstrap
-Babel
-holidays
+# === DEPENDENCIAS BÁSICAS DE PYTHON ===
+numpy>=1.24.0
+pandas>=2.0.0
+
+# === PROCESAMIENTO OCR Y PDFs ===
+pytesseract>=0.3.10
+PyMuPDF>=1.23.0
+pillow>=10.0.0
+
+# === INTERFAZ GRÁFICA MODERNA ===
+ttkbootstrap==1.10.1
+# tkinter - Incluido con Python, no instalar via pip
+# Nota: Versión 1.10.1 es estable. Versiones 1.14+ tienen bugs con RAISED
+
+# === VISUALIZACIÓN Y GRÁFICOS ===
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# === AUTOMATIZACIÓN WEB ===
+selenium>=4.15.0
+webdriver-manager>=4.0.0
+
+# === MANEJO DE ARCHIVOS EXCEL ===
+openpyxl>=3.1.0
+
+# === FECHAS Y LOCALIZACIÓN ===
+python-dateutil>=2.8.0
+Babel>=2.12.0
+holidays>=0.34
+
+# === SEGURIDAD ===
+cryptography>=41.0.0
+
+# === INFORMACIÓN DEL SISTEMA ===
+psutil>=5.9.0
+
+# === COMPILACIÓN ===
+pyinstaller>=6.0.0
+
+# === TESTING ===
+pytest>=7.0.0
+pytest-cov>=4.0.0

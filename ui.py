@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-EVARISIS Gestor HUV - Sistema de Oncología
+EVARISIS CIRUGÍA ONCOLÓGICA - Sistema de Oncología
 Punto de entrada principal de la aplicación - Migrado completamente a TTKBootstrap
 
 Este script se encarga de:
@@ -34,9 +34,40 @@ import configparser
 import pytesseract
 from pathlib import Path
 
-from calendario import CalendarioInteligente
-from huv_web_automation import automatizar_entrega_resultados, Credenciales
-from version_info import get_version_string, get_build_info, get_full_version_info, get_dependencies_actual
+from core.calendario import CalendarioInteligente
+from core.huv_web_automation import automatizar_entrega_resultados, Credenciales
+from core.enhanced_export_system import EnhancedExportSystem
+from config.version_info import get_version_string, get_build_info, get_full_version_info, get_dependencies_actual
+
+# === IMPORTS PARA SISTEMA DE AUDITORÍA IA ===
+from core.debug_mapper import DebugMapper
+from core.ventana_auditoria_ia import mostrar_ventana_auditoria
+from core.database_manager import get_registro_by_peticion
+
+# === IMPORTS DE UI HELPERS ===
+from ui_helpers import ocr_helpers, database_helpers, export_helpers, chart_helpers
+
+# ======================== CONSTANTES UI ========================
+# Movido desde: config/huv_constants.py
+
+# Meses en español para formateo de fechas
+MESES_ES = {
+    1: 'Enero', 2: 'Febrero', 3: 'Marzo', 4: 'Abril',
+    5: 'Mayo', 6: 'Junio', 7: 'Julio', 8: 'Agosto',
+    9: 'Septiembre', 10: 'Octubre', 11: 'Noviembre', 12: 'Diciembre'
+}
+
+# Configuración para detección de duplicados
+DUPLICATE_DETECTION = {
+    'COLORS': {
+        'duplicado': '#ff4444',      # Rojo para archivos duplicados
+        'nuevo': '#44ff44',          # Verde para archivos nuevos
+        'procesando': '#ffaa44',     # Naranja para en proceso
+        'error': '#ff0000'           # Rojo intenso para errores
+    },
+    'SCROLL_SPEED_MULTIPLIER': 4,    # 4x más rápido que el scroll normal
+    'HORIZONTAL_SCROLL_UNITS': 3     # Unidades por scroll
+}
 
 # =========================
 # Configuración de Tesseract OCR
@@ -49,7 +80,16 @@ def configure_tesseract():
     """
     try:
         config = configparser.ConfigParser(interpolation=None)
-        config_path = Path(__file__).resolve().parent / 'config.ini'
+
+        # CORREGIDO: Detectar si estamos en un ejecutable empaquetado
+        if getattr(sys, 'frozen', False):
+            # Estamos ejecutando como .exe - buscar config.ini junto al .exe
+            base_path = Path(sys.executable).parent
+        else:
+            # Estamos ejecutando como script Python
+            base_path = Path(__file__).resolve().parent
+
+        config_path = base_path / 'config' / 'config.ini'
         config.read(config_path, encoding='utf-8')
 
         tesseract_cmd = None
@@ -83,7 +123,26 @@ THEME_MAP = {
     "professional": "litera",
     "medical": "pulse",
     "modern": "superhero",
-    "classic": "journal"
+    "classic": "journal",
+    # Agregar más temas TTKBootstrap compatibles
+    "darkly": "darkly",
+    "flatly": "flatly",
+    "cosmo": "cosmo",
+    "litera": "litera",
+    "pulse": "pulse",
+    "superhero": "superhero",
+    "journal": "journal",
+    "cyborg": "cyborg",
+    "solar": "solar",
+    "minty": "minty",
+    "sandstone": "sandstone",
+    "united": "united",
+    "morph": "morph",
+    "vapor": "vapor",
+    "yeti": "yeti",
+    "lumen": "lumen",
+    "simplex": "simplex",
+    "zephyr": "zephyr"
 }
 
 # Paleta de colores base (se ajustará según el tema)
@@ -111,8 +170,9 @@ sns.set_theme(
 )
 
 # Módulos del proyecto
-import procesador_ihq_biomarcadores
-import database_manager
+# Importar módulo unificado de extractores refactorizados
+import core.unified_extractor as procesador_ihq_biomarcadores
+import core.database_manager as database_manager
 
 
 class App(ttk.Window):
@@ -120,7 +180,7 @@ class App(ttk.Window):
         # Inicializar TTKBootstrap Window con el tema
         super().__init__(themename=tema)
         
-        self.title("EVARISIS Gestor HUV - Oncología")
+        self.title("EVARISIS CIRUGÍA ONCOLÓGICA - Oncología")
         self.state('zoomed')  # Maximizar ventana
 
         # Información del usuario
@@ -151,7 +211,11 @@ class App(ttk.Window):
         self.floating_menu_visible = False
         self.welcome_screen_active = True
         self.current_view = "welcome"  # welcome, database, visualizar, dashboard
-        
+
+        # NUEVO: Variables para tracking de importación y auditoría IA
+        self._ultimos_registros_procesados = []  # Lista de IDs recién importados
+        self.ultimos_resultados_ia = None  # Resultados de última auditoría IA
+
         # Crear la interfaz
         self._create_layout()
 
@@ -167,12 +231,19 @@ class App(ttk.Window):
         # Variables necesarias ANTES de crear la interfaz
         self.master_df = pd.DataFrame()  # DataFrame maestro (fuente única de verdad)
         self._compare_controls = {}
-        
+
         # Inicializar componentes que serán referenciados (para evitar AttributeError)
         self.cmb_servicio = None
         self.cmb_malig = None
         self.cmb_resp = None
         self.tree = None
+
+        # Inicializar sistema de exportación mejorado
+        self.export_system = EnhancedExportSystem(self)
+
+        # Variables para paneles flotantes
+        self.details_panel = None
+        self.filters_panel = None
 
         # ===== Separador =====
         ttk.Separator(main_frame, orient=HORIZONTAL).pack(fill=X, padx=20, pady=5)
@@ -210,7 +281,7 @@ class App(ttk.Window):
         
         ttk.Label(
             center,
-            text="EVARISIS Gestor HUV - Oncología",
+            text="EVARISIS CIRUGÍA ONCOLÓGICA - Oncología",
             font=self.FONT_TITULO,
             anchor=W
         ).pack(fill=X)
@@ -311,8 +382,8 @@ class App(ttk.Window):
             ("🗄️ Base de Datos", "database", "primary", self._nav_to_database),
             ("📊 Visualizar Datos", "informes", "info", self._nav_to_visualizar),
             ("📈 Dashboard", "dashboard", "warning", self._nav_to_dashboard),
-            ("🔄 Procesador PDF", "web", "secondary", self._nav_to_web_auto),
-            ("ℹ️ Acerca de", "about", "info-outline", self._show_version_info),
+            ("📋 Análisis IA", "analisis", "danger-outline", self._nav_to_analisis_ia),
+            ("🔗 Interoperabilidad QHORTE", "web", "secondary", self._nav_to_web_auto),
         ]
         
         for text, icon_key, style, callback in nav_items:
@@ -603,11 +674,253 @@ class App(ttk.Window):
         self.current_view = "dashboard"
         self._show_panel(self.dashboard_frame)
 
+        # CORREGIDO: Auto-cargar datos si están vacíos y cargar dashboard
+        try:
+            if self.master_df.empty:
+                from core.database_manager import init_db, get_all_records_as_dataframe
+                init_db()
+                self.master_df = get_all_records_as_dataframe()
+            self.cargar_dashboard()
+        except Exception as e:
+            print(f"Error auto-cargando dashboard: {e}")
+            # Aún cargar dashboard vacío para mostrar interfaz
+            self.cargar_dashboard()
+
     def _nav_to_web_auto(self):
         """Navegar a la sección de automatización web"""
         self._hide_floating_menu()
         self._hide_header_if_not_welcome()
         messagebox.showinfo("Web Automation", "Función de automatización web - En desarrollo")
+
+    def _nav_to_analisis_ia(self):
+        """Navegar a sección de Análisis con IA"""
+        self._hide_floating_menu()
+        self._hide_header_if_not_welcome()
+        self.current_view = "analisis_ia"
+        self._show_panel(self.analisis_ia_frame)
+
+    def _mostrar_selector_tipo_auditoria(self, tipo_auditoria, registros_incompletos=None):
+        """
+        Muestra ventana para seleccionar tipo de auditoría (Parcial o Completa)
+
+        Args:
+            tipo_auditoria: 'parcial' (valor predefinido desde ventana de resultados)
+            registros_incompletos: Lista de registros incompletos
+        """
+        # Guardar registros incompletos para usar después
+        self._registros_incompletos_temp = registros_incompletos
+
+        from core.ventana_selector_auditoria import mostrar_selector_auditoria
+
+        # Mostrar selector
+        mostrar_selector_auditoria(
+            parent=self,
+            callback_seleccion=self._iniciar_auditoria_ia
+        )
+
+    def _iniciar_auditoria_ia(self, tipo_auditoria):
+        """
+        Callback cuando usuario elige auditar con IA
+
+        Args:
+            tipo_auditoria: 'parcial' o 'completa'
+        """
+        print(f"🤖 Iniciando auditoría IA - Tipo: {tipo_auditoria}")
+
+        # Guardar tipo de auditoría para usar en el callback de resultados
+        self._tipo_auditoria_actual = tipo_auditoria
+
+        # Recuperar registros incompletos guardados
+        registros_incompletos = getattr(self, '_registros_incompletos_temp', None)
+
+        if tipo_auditoria == 'parcial' and registros_incompletos:
+            # Auditoría solo de registros incompletos
+            try:
+                from core.auditoria_parcial import auditar_registros_incompletos
+
+                numeros_peticion = [r['numero_peticion'] for r in registros_incompletos]
+                print(f"   📋 Auditando {len(numeros_peticion)} registros incompletos")
+
+                # Esto mostrará VentanaAuditoriaIA automáticamente
+                auditar_registros_incompletos(
+                    numeros_peticion=numeros_peticion,
+                    parent=self,
+                    callback_completado=self._mostrar_resultados_auditoria
+                )
+            except ImportError:
+                # Fallback: usar auditoría completa si la parcial no está implementada
+                print(f"   ⚠️ Auditoría parcial no disponible, usando auditoría completa")
+                from core.ventana_auditoria_ia import mostrar_ventana_auditoria
+
+                mostrar_ventana_auditoria(
+                    parent=self,
+                    callback_completado=self._mostrar_resultados_auditoria
+                )
+
+        elif tipo_auditoria == 'completa':
+            # Auditoría COMPLETA - Solo registros recién importados (igual que PARCIAL)
+            print(f"   📊 Auditando registros recién importados con análisis profundo")
+
+            # Obtener registros recién importados
+            ultimos_registros = getattr(self, '_ultimos_registros_procesados', [])
+
+            if not ultimos_registros:
+                messagebox.showwarning(
+                    "Sin registros para auditar",
+                    "No hay registros recién importados para auditar.\n\n"
+                    "La auditoría COMPLETA solo procesa los casos que acabas de importar.\n\n"
+                    "Para auditar casos específicos:\n"
+                    "1. Ve a 'Visualizar datos'\n"
+                    "2. Selecciona los casos que deseas auditar\n"
+                    "3. (Funcionalidad en desarrollo)"
+                )
+                return
+
+            print(f"   📋 Registros recién importados: {len(ultimos_registros)}")
+
+            try:
+                from pathlib import Path
+                import glob
+                from core.debug_mapper import DebugMapper
+                from core.database_manager import get_registro_by_peticion
+
+                # Preparar casos para auditoría COMPLETA
+                project_root = Path(__file__).parent
+                casos_preparados = []
+
+                for numero in ultimos_registros:
+                    try:
+                        # Obtener datos del registro de BD
+                        registro_bd = get_registro_by_peticion(numero)
+                        if not registro_bd:
+                            print(f"   ⚠️ No se encontró registro en BD para {numero}")
+                            continue
+
+                        # Cargar debug_map para tener el PDF completo
+                        debug_maps_dir = project_root / "data" / "debug_maps"
+                        pattern = str(debug_maps_dir / f"debug_map_{numero}_*.json")
+                        debug_map_files = glob.glob(pattern)
+
+                        if debug_map_files:
+                            # Usar el más reciente
+                            debug_map_path = Path(sorted(debug_map_files)[-1])
+                            try:
+                                debug_map = DebugMapper.cargar_mapa(debug_map_path)
+                            except Exception as e:
+                                print(f"   ⚠️ Error cargando debug_map para {numero}: {e}")
+                                debug_map = {}
+                        else:
+                            print(f"   ⚠️ No se encontró debug_map para {numero}")
+                            debug_map = {}
+
+                        # Preparar caso para auditoría COMPLETA
+                        caso = {
+                            'numero_peticion': numero,
+                            'datos_bd': registro_bd,
+                            'debug_map': debug_map,
+                            'modo': 'completa'
+                        }
+
+                        casos_preparados.append(caso)
+
+                    except Exception as e:
+                        print(f"   ❌ Error preparando {numero}: {e}")
+                        continue
+
+                if not casos_preparados:
+                    print(f"   ❌ No se pudieron preparar casos para auditoría")
+                    messagebox.showerror(
+                        "Error",
+                        "No se pudieron preparar los casos para auditoría.\n"
+                        "Verifique que existan debug_maps en data/debug_maps/"
+                    )
+                    return
+
+                print(f"   ✅ {len(casos_preparados)} casos preparados para auditoría COMPLETA")
+
+                # Mostrar ventana de auditoría con casos recién importados
+                from core.ventana_auditoria_ia import mostrar_ventana_auditoria
+
+                mostrar_ventana_auditoria(
+                    parent=self,
+                    casos=casos_preparados,
+                    modo='completa',
+                    callback_completado=self._mostrar_resultados_auditoria
+                )
+
+            except Exception as e:
+                print(f"   ❌ Error preparando auditoría completa: {e}")
+                import traceback
+                traceback.print_exc()
+                messagebox.showerror(
+                    "Error",
+                    f"Error preparando auditoría completa:\n{str(e)}"
+                )
+
+    def _mostrar_resultados_auditoria(self, resultados):
+        """
+        Callback cuando termina la auditoría IA
+        Genera reporte Markdown y navega a la sección de Análisis IA
+
+        Args:
+            resultados: Dict con resultados de auditoría
+        """
+        print(f"✅ Auditoría completada - Mostrando resultados")
+
+        # Guardar resultados en variable de instancia
+        self.ultimos_resultados_ia = resultados
+
+        # Actualizar BD
+        self.refresh_data_and_table()
+
+        # Determinar tipo de auditoría (parcial/completa)
+        tipo_auditoria = getattr(self, '_tipo_auditoria_actual', 'completa')
+
+        # Generar reporte Markdown
+        print(f"   📝 Generando reporte Markdown...")
+        ruta_reporte = self._generar_reporte_ia(resultados, tipo_auditoria)
+
+        if ruta_reporte:
+            print(f"   ✅ Reporte generado exitosamente: {ruta_reporte}")
+
+            # Navegar a la sección de Análisis IA
+            print(f"   🔄 Navegando a sección Análisis IA...")
+            try:
+                self._nav_to_analisis_ia()
+                print(f"   ✅ Navegación exitosa")
+            except Exception as e:
+                print(f"   ❌ Error navegando: {e}")
+                import traceback
+                traceback.print_exc()
+
+            # Actualizar lista de reportes
+            try:
+                self._actualizar_lista_reportes()
+                print(f"   ✅ Lista de reportes actualizada")
+            except Exception as e:
+                print(f"   ⚠️ Error actualizando lista de reportes: {e}")
+                # Continuar sin fallar
+
+            # Seleccionar automáticamente el reporte recién generado
+            try:
+                self._seleccionar_ultimo_reporte()
+                print(f"   ✅ Reporte seleccionado automáticamente")
+            except Exception as e:
+                print(f"   ⚠️ Error seleccionando reporte: {e}")
+                # Continuar sin fallar
+
+            # V2.1.6: No mostrar mensaje automáticamente
+            # El mensaje se mostrará cuando el usuario haga clic en "Ver Resultados"
+            # Guardar ruta para mostrar después
+            self._ruta_ultimo_reporte = ruta_reporte
+        else:
+            print(f"   ❌ Error generando reporte")
+            messagebox.showerror(
+                "Error",
+                "La auditoría se completó pero hubo un error al generar el reporte."
+            )
+            # Navegar al visualizador como fallback
+            self._nav_to_visualizar()
 
     def _show_version_info(self):
         """Mostrar información detallada de la versión del sistema"""
@@ -620,19 +933,26 @@ class App(ttk.Window):
             # Crear ventana modal
             version_window = ttk.Toplevel(self)
             version_window.title(f"Acerca de - {version_info['project']['name']}")
-            version_window.geometry("900x800")
             version_window.resizable(True, True)
+
+            # Configurar fondo gris claro
+            version_window.configure(bg='#f0f0f0')
+
+            # IMPORTANTE: Maximizar ANTES de transient y grab_set
+            try:
+                version_window.state('zoomed')  # Windows
+            except:
+                try:
+                    version_window.attributes('-zoomed', True)  # Linux
+                except:
+                    # Fallback: tamaño muy grande
+                    screen_width = version_window.winfo_screenwidth()
+                    screen_height = version_window.winfo_screenheight()
+                    version_window.geometry(f"{screen_width-100}x{screen_height-100}+50+50")
+
+            # Después de maximizar, configurar modal
             version_window.transient(self)
             version_window.grab_set()
-            
-            # Configurar estilo de ventana
-            version_window.configure(bg='white')
-            
-            # Centrar la ventana
-            version_window.update_idletasks()
-            x = (version_window.winfo_screenwidth() // 2) - (900 // 2)
-            y = (version_window.winfo_screenheight() // 2) - (800 // 2)
-            version_window.geometry(f"900x800+{x}+{y}")
             
             # Frame principal
             main_frame = ttk.Frame(version_window, padding=10)
@@ -667,59 +987,61 @@ class App(ttk.Window):
             notebook = ttk.Notebook(main_frame)
             notebook.pack(fill=BOTH, expand=True, pady=10)
             
-            # Tab 1: Información General
-            info_frame = ttk.Frame(notebook, padding=10)
+            # Tab 1: Información General - Compacta, sin scroll
+            info_frame = ttk.Frame(notebook, padding=15)
             notebook.add(info_frame, text="📋 General")
+
+            # Frame para centrar el contenido
+            info_center = ttk.Frame(info_frame)
+            info_center.pack(expand=True)
             
-            # Crear scroll para info_frame
-            info_canvas = tk.Canvas(info_frame)
-            info_scrollbar = ttk.Scrollbar(info_frame, orient="vertical", command=info_canvas.yview)
-            info_scrollable = ttk.Frame(info_canvas)
-            
-            info_scrollable.bind(
-                "<Configure>",
-                lambda e: info_canvas.configure(scrollregion=info_canvas.bbox("all"))
-            )
-            
-            info_canvas.create_window((0, 0), window=info_scrollable, anchor="nw")
-            info_canvas.configure(yscrollcommand=info_scrollbar.set)
-            
-            info_canvas.pack(side="left", fill="both", expand=True)
-            info_scrollbar.pack(side="right", fill="y")
-            
-            self._create_info_section(info_scrollable, "Información del Proyecto", [
+            # Traducir tipo de release a español
+            release_type_es = {
+                'stable': 'Estable',
+                'beta': 'Beta',
+                'alpha': 'Alfa',
+                'rc': 'Release Candidate'
+            }.get(version_info['version']['release_type'].lower(), version_info['version']['release_type'])
+
+            self._create_info_section(info_center, "Información del Proyecto", [
                 ("Nombre Completo", version_info['project']['full_name']),
                 ("Organización", version_info['project']['organization']),
                 ("Versión", version_info['version']['version']),
                 ("Nombre de Versión", version_info['version']['version_name']),
-                ("Tipo de Release", version_info['version']['release_type']),
-                ("Código", version_info['version']['codename']),
+                ("Tipo de Release", release_type_es),
                 ("Fecha de Build", version_info['version']['build_date']),
-                ("Número de Build", version_info['version']['build_number']),
-                ("Licencia", version_info['project']['license']),
-                ("Repositorio", version_info['project']['repository'])
+                ("Número de Build", version_info['version']['build_number'])
             ])
             
-            # Tab 2: Sistema
+            # Tab 2: Sistema - Con scroll habilitado
             system_frame = ttk.Frame(notebook, padding=10)
             notebook.add(system_frame, text="💻 Sistema")
-            
-            # Crear scroll para system_frame
-            system_canvas = tk.Canvas(system_frame)
+
+            # Crear canvas y scrollbar para permitir scroll
+            system_canvas = tk.Canvas(system_frame, bg='#f0f0f0', highlightthickness=0)
             system_scrollbar = ttk.Scrollbar(system_frame, orient="vertical", command=system_canvas.yview)
             system_scrollable = ttk.Frame(system_canvas)
-            
+
             system_scrollable.bind(
                 "<Configure>",
                 lambda e: system_canvas.configure(scrollregion=system_canvas.bbox("all"))
             )
-            
+
             system_canvas.create_window((0, 0), window=system_scrollable, anchor="nw")
             system_canvas.configure(yscrollcommand=system_scrollbar.set)
-            
+
             system_canvas.pack(side="left", fill="both", expand=True)
             system_scrollbar.pack(side="right", fill="y")
-            
+
+            # Configurar columnas para distribución 50/50
+            system_scrollable.columnconfigure(0, weight=1)
+            system_scrollable.columnconfigure(1, weight=1)
+
+            # Variables para trackear filas
+            left_row = 0
+            right_row = 0
+
+            # COLUMNA IZQUIERDA
             # Información básica del sistema
             basic_system_info = [
                 ("Versión Python", version_info['system']['python_version'].split()[0]),
@@ -731,10 +1053,11 @@ class App(ttk.Window):
                 ("Nodo", version_info['system'].get('node', 'No disponible')),
                 ("Procesador", version_info['system']['processor'] or "No disponible")
             ]
-            
-            self._create_info_section(system_scrollable, "Información Básica", basic_system_info)
-            
-            # Información de memoria si está disponible
+            self._create_info_section_grid(system_scrollable, "Información Básica", basic_system_info, row=left_row, column=0)
+            left_row += 1
+
+            # COLUMNA DERECHA
+            # Información de memoria
             if 'memoria_total' in version_info['system']:
                 memory_info = [
                     ("Memoria Total", version_info['system']['memoria_total']),
@@ -742,17 +1065,19 @@ class App(ttk.Window):
                     ("Memoria Usada", version_info['system']['memoria_usada']),
                     ("Porcentaje Usado", version_info['system']['memoria_porcentaje'])
                 ]
-                self._create_info_section(system_scrollable, "Información de Memoria", memory_info)
-            
-            # Información de CPU si está disponible
+                self._create_info_section_grid(system_scrollable, "Información de Memoria", memory_info, row=right_row, column=1)
+                right_row += 1
+
+            # Información de CPU
             if 'cpu_cores' in version_info['system']:
                 cpu_info = [
                     ("Núcleos Físicos", str(version_info['system']['cpu_cores'])),
                     ("Hilos Lógicos", str(version_info['system']['cpu_threads'])),
                     ("Frecuencia Máxima", version_info['system']['cpu_frecuencia'])
                 ]
-                self._create_info_section(system_scrollable, "Información del Procesador", cpu_info)
-            
+                self._create_info_section_grid(system_scrollable, "Información del Procesador", cpu_info, row=right_row, column=1)
+                right_row += 1
+
             # Información de hardware adicional
             hardware_info = []
             if 'tarjeta_grafica' in version_info['system']:
@@ -762,14 +1087,16 @@ class App(ttk.Window):
                         hardware_info.append((f"Tarjeta Gráfica {i+1}", gpu))
                 else:
                     hardware_info.append(("Tarjeta Gráfica", str(gpus)))
-            
+
             if 'placa_madre' in version_info['system']:
                 hardware_info.append(("Placa Madre", version_info['system']['placa_madre']))
-            
+
             if hardware_info:
-                self._create_info_section(system_scrollable, "Hardware", hardware_info)
-            
-            # Información de discos si está disponible
+                self._create_info_section_grid(system_scrollable, "Hardware", hardware_info, row=right_row, column=1)
+                right_row += 1
+
+            # Información de discos - ANCHO COMPLETO (debajo de ambas columnas)
+            disk_row = max(left_row, right_row)  # Empezar después de la columna más larga
             if 'discos' in version_info['system'] and isinstance(version_info['system']['discos'], list):
                 for i, disco in enumerate(version_info['system']['discos']):
                     if isinstance(disco, dict):
@@ -782,80 +1109,15 @@ class App(ttk.Window):
                             ("Espacio Libre", disco.get('libre', 'No disponible')),
                             ("Porcentaje Usado", disco.get('porcentaje', 'No disponible'))
                         ]
-                        self._create_info_section(system_scrollable, f"Disco {i+1}", disk_info)
+                        self._create_info_section_grid(system_scrollable, f"Disco {i+1}", disk_info, row=disk_row+i, column=0, columnspan=2)
             
-            # Tab 3: Dependencias
-            deps_frame = ttk.Frame(notebook, padding=10)
-            notebook.add(deps_frame, text="📦 Dependencias")
-            
-            # Crear tabla de dependencias
-            deps_tree_frame = ttk.Frame(deps_frame)
-            deps_tree_frame.pack(fill=BOTH, expand=True)
-            
-            deps_tree = ttk.Treeview(
-                deps_tree_frame,
-                columns=("esperada", "actual", "estado"),
-                show="tree headings",
-                selectmode="extended"
-            )
-            
-            # Configurar columnas
-            deps_tree.heading("#0", text="Paquete")
-            deps_tree.heading("esperada", text="Versión Esperada")
-            deps_tree.heading("actual", text="Versión Actual")
-            deps_tree.heading("estado", text="Estado")
-            
-            deps_tree.column("#0", width=150, minwidth=100)
-            deps_tree.column("esperada", width=150, minwidth=100)
-            deps_tree.column("actual", width=150, minwidth=100)
-            deps_tree.column("estado", width=100, minwidth=80)
-            
-            # Llenar dependencias
-            for package, expected_version in version_info['dependencies'].items():
-                actual_version = actual_deps.get(package, "❌ No instalado")
-                
-                if actual_version.startswith("❌"):
-                    status = "❌ No instalado"
-                elif actual_version.startswith("⚠️"):
-                    status = "⚠️ Error"
-                elif actual_version.startswith("✅"):
-                    status = "✅ Instalado"
-                else:
-                    status = "✅ OK"
-                
-                deps_tree.insert(
-                    "",
-                    "end",
-                    text=package,
-                    values=(expected_version, actual_version, status)
-                )
-            
-            deps_tree.pack(fill=BOTH, expand=True)
-            
-            # Scrollbar para el treeview
-            deps_scrollbar = ttk.Scrollbar(deps_tree_frame, orient="vertical", command=deps_tree.yview)
-            deps_tree.configure(yscrollcommand=deps_scrollbar.set)
-            deps_scrollbar.pack(side="right", fill="y")
-            
-            # Tab 4: Equipo de Desarrollo
-            team_frame = ttk.Frame(notebook, padding=10)
+            # Tab 3: Equipo de Desarrollo - Centrado, sin espacios en blanco
+            team_frame = ttk.Frame(notebook, padding=20)
             notebook.add(team_frame, text="👥 Equipo")
-            
-            # Crear scroll para team_frame
-            team_canvas = tk.Canvas(team_frame)
-            team_scrollbar = ttk.Scrollbar(team_frame, orient="vertical", command=team_canvas.yview)
-            team_scrollable = ttk.Frame(team_canvas)
-            
-            team_scrollable.bind(
-                "<Configure>",
-                lambda e: team_canvas.configure(scrollregion=team_canvas.bbox("all"))
-            )
-            
-            team_canvas.create_window((0, 0), window=team_scrollable, anchor="nw")
-            team_canvas.configure(yscrollcommand=team_scrollbar.set)
-            
-            team_canvas.pack(side="left", fill="both", expand=True)
-            team_scrollbar.pack(side="right", fill="y")
+
+            # Frame para centrar el contenido
+            team_center = ttk.Frame(team_frame)
+            team_center.pack(expand=True)
             
             # Información del equipo
             role_titles = {
@@ -863,7 +1125,7 @@ class App(ttk.Window):
                 'lider_investigacion': '👨‍⚕️ Líder de Investigación y Proyección Oncológica',
                 'jefe_gestion_informacion': '👨‍💼 Jefe de Gestión de la Información'
             }
-            
+
             for role_key, role_info in version_info['team'].items():
                 role_data = [
                     ("Nombre", role_info['nombre']),
@@ -872,55 +1134,52 @@ class App(ttk.Window):
                     ("Correo", role_info['correo'])
                 ]
                 title = role_titles.get(role_key, role_info['cargo'])
-                self._create_info_section(team_scrollable, title, role_data)
-            
-            # Tab 5: Características
-            features_frame = ttk.Frame(notebook, padding=10)
-            notebook.add(features_frame, text="✨ Características")
-            
-            features_text = ttk.Text(features_frame, wrap=WORD, height=15, font=("Consolas", 10))
-            features_text.pack(fill=BOTH, expand=True)
-            
-            features_content = "🔥 CARACTERÍSTICAS DE LA VERSIÓN ACTUAL:\n\n"
-            for feature in version_info['features']:
-                features_content += f"{feature}\n"
-            
-            features_content += "\n\n📊 MÉTRICAS DE RENDIMIENTO:\n\n"
-            for metric, value in version_info['performance'].items():
-                features_content += f"• {metric.replace('_', ' ').title()}: {value}\n"
-            
-            features_content += "\n\n👥 AUDIENCIAS OBJETIVO:\n\n"
-            for audience, benefit in version_info['audiences'].items():
-                features_content += f"• {audience}: {benefit}\n"
-            
-            features_text.insert("1.0", features_content)
-            features_text.configure(state="disabled")
-            
-            # Tab 6: Roadmap
-            roadmap_frame = ttk.Frame(notebook, padding=10)
-            notebook.add(roadmap_frame, text="🗺️ Roadmap")
-            
-            roadmap_text = ttk.Text(roadmap_frame, wrap=WORD, height=15, font=("Consolas", 10))
-            roadmap_text.pack(fill=BOTH, expand=True)
-            
-            roadmap_content = "🚀 PRÓXIMAS VERSIONES:\n\n"
-            for version, description in version_info['roadmap'].items():
-                roadmap_content += f"{version}: {description}\n\n"
-            
-            roadmap_text.insert("1.0", roadmap_content)
-            roadmap_text.configure(state="disabled")
-            
+                self._create_info_section(team_center, title, role_data)
+
             # Frame de botones
             buttons_frame = ttk.Frame(main_frame, padding=10)
             buttons_frame.pack(fill=X, pady=10)
-            
-            ttk.Button(
+
+            # Botón dinámico que cambia según la pestaña
+            copy_button = ttk.Button(
                 buttons_frame,
-                text="📋 Copiar Info Sistema",
-                command=lambda: self._copy_system_info_to_clipboard(version_info),
+                text="📋 Copiar Información",
                 bootstyle="info"
-            ).pack(side=LEFT, padx=(0, 10))
-            
+            )
+            copy_button.pack(side=LEFT, padx=(0, 10))
+
+            # Función para actualizar el botón según la pestaña activa
+            def update_copy_button():
+                current_tab = notebook.index(notebook.select())
+                if current_tab == 0:  # General
+                    copy_button.configure(
+                        text="📋 Copiar Info General",
+                        command=lambda: self._copy_general_info(version_info),
+                        state="normal"
+                    )
+                elif current_tab == 1:  # Sistema
+                    copy_button.configure(
+                        text="📋 Copiar Info Sistema",
+                        command=lambda: self._copy_system_info(version_info),
+                        state="normal"
+                    )
+                elif current_tab == 2:  # Equipo
+                    # Ocultar el botón en la pestaña Equipo
+                    copy_button.pack_forget()
+                    return
+                else:
+                    copy_button.configure(state="disabled")
+
+                # Asegurar que el botón esté visible si no es la pestaña Equipo
+                if not copy_button.winfo_ismapped():
+                    copy_button.pack(side=LEFT, padx=(0, 10))
+
+            # Bind para actualizar cuando cambie de pestaña
+            notebook.bind("<<NotebookTabChanged>>", lambda e: update_copy_button())
+
+            # Inicializar el botón
+            update_copy_button()
+
             ttk.Button(
                 buttons_frame,
                 text="✅ Cerrar",
@@ -928,22 +1187,21 @@ class App(ttk.Window):
                 bootstyle="success"
             ).pack(side=RIGHT)
             
-            # Bind mouse wheel para scroll en cada canvas
+            # Habilitar scroll con la rueda del mouse en la pestaña Sistema
             def _on_mousewheel(event):
                 try:
-                    # Determinar qué canvas está activo basado en el widget con focus
-                    widget = event.widget
-                    while widget:
-                        if isinstance(widget, tk.Canvas):
-                            widget.yview_scroll(int(-1*(event.delta/120)), "units")
-                            break
-                        widget = widget.master
+                    # Obtener el notebook tab actual
+                    current_tab = notebook.index(notebook.select())
+
+                    # Scroll solo en pestaña Sistema (tab 1)
+                    if current_tab == 1:
+                        system_canvas.yview_scroll(int(-1*(event.delta/120)), "units")
                 except:
                     pass
-            
+
             # Bind a la ventana completa
             version_window.bind_all("<MouseWheel>", _on_mousewheel)
-            
+
             # Cleanup al cerrar
             def on_closing():
                 try:
@@ -951,7 +1209,7 @@ class App(ttk.Window):
                 except:
                     pass
                 version_window.destroy()
-            
+
             version_window.protocol("WM_DELETE_WINDOW", on_closing)
             
         except Exception as e:
@@ -961,11 +1219,11 @@ class App(ttk.Window):
             )
 
     def _create_info_section(self, parent, title, info_items):
-        """Crear una sección de información con título y elementos"""
+        """Crear una sección de información con título y elementos usando pack"""
         # Frame para la sección
         section_frame = ttk.LabelFrame(parent, text=title, padding=10)
         section_frame.pack(fill=X, pady=(0, 10))
-        
+
         # Grid de información
         for i, (label, value) in enumerate(info_items):
             ttk.Label(
@@ -973,39 +1231,121 @@ class App(ttk.Window):
                 text=f"{label}:",
                 font=("Arial", 9, "bold")
             ).grid(row=i, column=0, sticky=W, padx=(0, 10), pady=2)
-            
+
+            ttk.Label(
+                section_frame,
+                text=str(value),
+                font=("Arial", 9)
+            ).grid(row=i, column=1, sticky=W, pady=2)
+
+    def _create_info_section_grid(self, parent, title, info_items, row=0, column=0, columnspan=1):
+        """Crear una sección de información con título y elementos usando grid layout"""
+        # Frame para la sección
+        section_frame = ttk.LabelFrame(parent, text=title, padding=10)
+        section_frame.grid(row=row, column=column, columnspan=columnspan, sticky=(N, S, E, W), padx=5, pady=5)
+
+        # Grid de información dentro del frame
+        for i, (label, value) in enumerate(info_items):
+            ttk.Label(
+                section_frame,
+                text=f"{label}:",
+                font=("Arial", 9, "bold")
+            ).grid(row=i, column=0, sticky=W, padx=(0, 10), pady=2)
+
             ttk.Label(
                 section_frame,
                 text=str(value),
                 font=("Arial", 9)
             ).grid(row=i, column=1, sticky=W, pady=2)
     
-    def _copy_system_info_to_clipboard(self, version_info):
-        """Copiar información del sistema al clipboard"""
+    def _copy_general_info(self, version_info):
+        """Copiar información de la pestaña General al clipboard"""
+        try:
+            release_type_es = {
+                'stable': 'Estable',
+                'beta': 'Beta',
+                'alpha': 'Alfa',
+                'rc': 'Release Candidate'
+            }.get(version_info['version']['release_type'].lower(), version_info['version']['release_type'])
+
+            info_text = f"""EVARISIS Gestor H.U.V - Información General
+=====================================
+Nombre Completo: {version_info['project']['full_name']}
+Organización: {version_info['project']['organization']}
+Versión: {version_info['version']['version']}
+Nombre de Versión: {version_info['version']['version_name']}
+Tipo de Release: {release_type_es}
+Fecha de Build: {version_info['version']['build_date']}
+Número de Build: {version_info['version']['build_number']}
+"""
+
+            self.clipboard_clear()
+            self.clipboard_append(info_text)
+            self.update()
+
+            messagebox.showinfo("Copiado", "Información general copiada al portapapeles")
+
+        except Exception as e:
+            messagebox.showerror("Error", f"Error al copiar:\n{str(e)}")
+
+    def _copy_system_info(self, version_info):
+        """Copiar información de la pestaña Sistema al clipboard"""
         try:
             info_text = f"""EVARISIS Gestor H.U.V - Información del Sistema
 =====================================
-Versión: {get_version_string()}
-Build: {get_build_info()}
-Python: {version_info['system']['python_version'].split()[0]}
+Versión Python: {version_info['system']['python_version'].split()[0]}
 Plataforma: {version_info['system']['platform']}
+Sistema: {version_info['system'].get('system', 'No disponible')}
+Release: {version_info['system'].get('release', 'No disponible')}
 Arquitectura: {version_info['system']['architecture']}
-
-Dependencias:
+Máquina: {version_info['system'].get('machine', 'No disponible')}
+Nodo: {version_info['system'].get('node', 'No disponible')}
+Procesador: {version_info['system']['processor'] or 'No disponible'}
 """
-            actual_deps = get_dependencies_actual()
-            for package, expected in version_info['dependencies'].items():
-                actual = actual_deps.get(package, "No instalado")
-                info_text += f"- {package}: {actual} (esperado: {expected})\n"
-            
+
+            # Memoria
+            if 'memoria_total' in version_info['system']:
+                info_text += f"""
+Memoria:
+- Total: {version_info['system']['memoria_total']}
+- Disponible: {version_info['system']['memoria_disponible']}
+- Usada: {version_info['system']['memoria_usada']}
+- Porcentaje Usado: {version_info['system']['memoria_porcentaje']}
+"""
+
+            # CPU
+            if 'cpu_cores' in version_info['system']:
+                info_text += f"""
+Procesador:
+- Núcleos Físicos: {version_info['system']['cpu_cores']}
+- Hilos Lógicos: {version_info['system']['cpu_threads']}
+- Frecuencia Máxima: {version_info['system']['cpu_frecuencia']}
+"""
+
+            # Discos
+            if 'discos' in version_info['system']:
+                info_text += "\nDiscos:\n"
+                for i, disco in enumerate(version_info['system']['discos'], 1):
+                    if isinstance(disco, dict):
+                        info_text += f"""
+Disco {i}:
+- Dispositivo: {disco.get('dispositivo', 'No disponible')}
+- Punto de Montaje: {disco.get('punto_montaje', 'No disponible')}
+- Sistema de Archivos: {disco.get('sistema_archivos', 'No disponible')}
+- Espacio Total: {disco.get('total', 'No disponible')}
+- Espacio Usado: {disco.get('usado', 'No disponible')}
+- Espacio Libre: {disco.get('libre', 'No disponible')}
+- Porcentaje Usado: {disco.get('porcentaje', 'No disponible')}
+"""
+
             self.clipboard_clear()
             self.clipboard_append(info_text)
-            self.update()  # Actualizar para que el clipboard se procese
-            
+            self.update()
+
             messagebox.showinfo("Copiado", "Información del sistema copiada al portapapeles")
-            
+
         except Exception as e:
-            messagebox.showerror("Error", f"Error al copiar al portapapeles:\n{str(e)}")
+            messagebox.showerror("Error", f"Error al copiar:\n{str(e)}")
 
     def _hide_header_if_not_welcome(self):
         """Ocultar header si no estamos en la pantalla de bienvenida"""
@@ -1057,7 +1397,7 @@ Dependencias:
             ("🗄️ Base de Datos", "database", "primary", self.show_database_frame),
             ("📊 Visualizar Datos", "informes", "success", self.show_visualizar_frame),
             ("📈 Análisis Gráfico", "dashboard", "info", self.show_dashboard_frame),
-            ("🔄 Automatizador Fuente PDF\n(Experimental)", "web", "warning", self.open_web_auto_modal),
+            ("🔗 Interoperabilidad QHORTE\n(Sistema de Entrega)", "web", "warning", self.open_web_auto_modal),
         ]
 
         for text, icon_key, style, callback in nav_items:
@@ -1123,6 +1463,10 @@ Dependencias:
         self.dashboard_frame = self._create_scrollable_frame(self.content_container)
         self._create_dashboard_content()
 
+        # Panel de análisis IA con scroll
+        self.analisis_ia_frame = self._create_scrollable_frame(self.content_container)
+        self._crear_analisis_ia_content()
+
         # Panel activo actual
         self.panel_activo = None
 
@@ -1153,20 +1497,47 @@ Dependencias:
         canvas.bind('<Configure>', _configure_canvas)
         canvas.configure(yscrollcommand=scrollbar.set)
         
-        # Scroll con rueda del mouse - vinculado específicamente al canvas y sus hijos
+        # Variable para trackear el último widget con focus para scroll anidado
+        container.last_scroll_target = None
+
+        # Scroll con rueda del mouse mejorado - maneja scroll anidado
         def _on_mousewheel(event):
+            # Obtener el widget bajo el cursor
+            widget = event.widget
+
+            # Buscar si el widget o algún padre tiene un canvas con scroll
+            current = widget
+            scrollable_canvas = None
+
+            while current and current != container:
+                if hasattr(current, 'master') and isinstance(current.master, tk.Canvas):
+                    # Este widget está dentro de un canvas scrollable
+                    scrollable_canvas = current.master
+                    break
+                current = current.master if hasattr(current, 'master') else None
+
+            # Si encontramos un canvas scrollable anidado, hacer scroll en ese
+            if scrollable_canvas and scrollable_canvas != canvas:
+                try:
+                    scrollable_canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+                    return "break"
+                except:
+                    pass
+
+            # Si no, hacer scroll en el canvas principal
             canvas.yview_scroll(int(-1*(event.delta/120)), "units")
-        
+            return "break"
+
         # Vincular el evento al canvas específico
         canvas.bind("<MouseWheel>", _on_mousewheel)
-        
+
         # También vincular a todos los widgets hijos del scrollable_frame
         def _bind_to_mousewheel(widget):
             # No vincular scroll a widgets que ya manejan su propio scroll
             widget_type = widget.winfo_class()
             if widget_type not in ['Listbox', 'Treeview', 'Text']:
                 widget.bind("<MouseWheel>", _on_mousewheel)
-            
+
             for child in widget.winfo_children():
                 _bind_to_mousewheel(child)
         
@@ -1192,143 +1563,136 @@ Dependencias:
         return container
 
     def _create_database_content(self):
-        """Crear contenido del panel de base de datos"""
+        """Crear contenido del panel de base de datos con dashboard mejorado de ancho completo"""
         # Usar el frame scrollable
         frame = self.database_frame.scrollable_frame
-        
-        # Título principal
-        ttk.Label(
-            frame, 
-            text="🗄️ Estado de la Base de Datos", 
-            font=self.FONT_TITULO
-        ).pack(pady=(0, 20), anchor=W)
 
-        # Dashboard de estadísticas
-        stats_container = ttk.Frame(frame)
-        stats_container.pack(expand=True, fill=BOTH)
-        stats_container.grid_columnconfigure(0, weight=1)
-        stats_container.grid_columnconfigure(1, weight=1)
-        stats_container.grid_rowconfigure(0, weight=1)
-        
-        # Panel izquierdo - Estadísticas generales
-        left_panel = ttk.Frame(stats_container, padding=20)
-        left_panel.grid(row=0, column=0, sticky="nsew", padx=(0, 10))
-        
-        # Crear cards de estadísticas
-        self._create_stats_cards(left_panel)
-        
-        # Panel derecho - Importación y procesamiento
-        right_panel = ttk.Frame(stats_container, padding=20)
-        right_panel.grid(row=0, column=1, sticky="nsew", padx=(10, 0))
-        
-        # Sección de importación
-        import_section = ttk.LabelFrame(right_panel, text="📥 Importar Nuevos Datos", padding=15)
-        import_section.pack(fill=X, pady=(0, 20))
-        
-        ttk.Button(
-            import_section, 
-            text="📄 Agregar Archivo PDF", 
-            command=self._select_pdf_file,
-            bootstyle="primary",
-            width=25
-        ).pack(fill=X, pady=5)
-        
-        ttk.Button(
-            import_section, 
-            text="📁 Importar Carpeta de PDFs", 
-            command=self._select_pdf_folder,
-            bootstyle="primary",
-            width=25
-        ).pack(fill=X, pady=5)
-        
-        # Sección de archivos disponibles
-        files_section = ttk.LabelFrame(right_panel, text="📂 Archivos Disponibles", padding=15)
-        files_section.pack(expand=True, fill=BOTH)
-        
-        # Lista de archivos con scrollbar
-        list_frame = ttk.Frame(files_section)
-        list_frame.pack(expand=True, fill=BOTH, pady=(0, 10))
-        
-        self.files_listbox = tk.Listbox(
-            list_frame,
-            selectmode=tk.EXTENDED,
-            font=("Segoe UI", 9),
-            height=8
-        )
-        self.files_listbox.pack(side=LEFT, expand=True, fill=BOTH)
-        
-        files_scrollbar = ttk.Scrollbar(list_frame, orient="vertical", command=self.files_listbox.yview)
-        files_scrollbar.pack(side=RIGHT, fill=Y)
-        self.files_listbox.configure(yscrollcommand=files_scrollbar.set)
-        
-        # Botones de control
-        control_frame = ttk.Frame(files_section)
-        control_frame.pack(fill=X)
-        control_frame.grid_columnconfigure(0, weight=1)
-        control_frame.grid_columnconfigure(1, weight=1)
-        
-        ttk.Button(
-            control_frame, 
-            text="🔄 Actualizar", 
-            command=self._refresh_files_list,
-            bootstyle="secondary"
-        ).grid(row=0, column=0, sticky="ew", padx=(0, 5))
-        
-        ttk.Button(
-            control_frame, 
-            text="⚡ Procesar Seleccionados", 
-            command=self._process_selected_files,
-            bootstyle="success"
-        ).grid(row=0, column=1, sticky="ew", padx=(5, 0))
+        # ELIMINADO: Título duplicado (el dashboard ya tiene su propio título)
+        # ttk.Label(
+        #     frame,
+        #     text="🏥 Dashboard Base de Datos EVARISIS CIRUGÍA ONCOLÓGICA",
+        #     font=self.FONT_TITULO
+        # ).pack(pady=(0, 20), anchor=W)
 
-        # Inicializar datos
-        self._refresh_files_list()
-        self._refresh_database_stats()
+        # Dashboard mejorado que usa todo el ancho disponible
+        dashboard_container = ttk.Frame(frame, padding=0)
+        dashboard_container.pack(expand=True, fill=BOTH)
+
+        # Crear dashboard mejorado con funcionalidad de importación integrada
+        try:
+            from core.enhanced_database_dashboard import EnhancedDatabaseDashboard
+            self.enhanced_dashboard = EnhancedDatabaseDashboard(dashboard_container)
+
+            # Conectar métodos de importación del dashboard con la UI principal
+            self._connect_import_functionality()
+
+        except ImportError as e:
+            # Fallback en caso de error
+            ttk.Label(
+                dashboard_container,
+                text=f"Error: No se pudo cargar el dashboard mejorado: {e}",
+                font=("Segoe UI", 12)
+            ).pack(pady=50)
+
+    def _connect_import_functionality(self):
+        """Conectar la funcionalidad de importación del dashboard con los métodos de la UI principal"""
+        if hasattr(self, 'enhanced_dashboard'):
+            # Conectar los métodos de importación
+            dashboard = self.enhanced_dashboard
+
+            # Reasignar los métodos del dashboard a los de la UI principal
+            dashboard.select_pdf_file = self._select_pdf_file
+            dashboard.select_pdf_folder = self._select_pdf_folder
+            dashboard.process_selected_files = self._process_selected_files
+
+            # Crear referencia al listbox del dashboard para que los métodos antiguos funcionen
+            if hasattr(dashboard, 'import_files_listbox'):
+                self.files_listbox = dashboard.import_files_listbox
+                dashboard.refresh_files_list = self._refresh_files_list
+
+                # Actualizar la lista de archivos después de conectar
+                try:
+                    self._refresh_files_list()
+                except Exception as e:
+                    print(f"Error al actualizar lista de archivos inicial: {e}")
+
+    def _refresh_files_list_for_dashboard(self):
+        """Actualizar lista de archivos específicamente para el dashboard con detección de estado"""
+        if hasattr(self, 'enhanced_dashboard') and hasattr(self.enhanced_dashboard, 'import_files_listbox'):
+            # Usar la nueva función de actualización con estado
+            self.files_listbox = self.enhanced_dashboard.import_files_listbox
+            self._actualizar_lista_archivos_con_estado()
 
     def _create_visualizar_content(self):
-        """Crear contenido del panel de visualización mejorado"""
-        # Usar el frame scrollable
-        frame = self.visualizar_frame.scrollable_frame
-        
-        # Título principal
+        """Crear contenido del panel de visualización mejorado - FULL SCREEN"""
+        # Usar el frame principal directamente (sin scroll externo)
+        frame = self.visualizar_frame
+
+        # Limpiar cualquier contenido previo
+        for widget in frame.winfo_children():
+            widget.destroy()
+
+        # Título principal compacto
         title_frame = ttk.Frame(frame)
-        title_frame.pack(fill=X, pady=(0, 15))
-        
+        title_frame.pack(fill=X, padx=10, pady=5)
+
         ttk.Label(
-            title_frame, 
-            text="📊 Visualizador de Datos", 
+            title_frame,
+            text="📊 Visualizador de Datos",
             font=self.FONT_TITULO
         ).pack(side=LEFT)
-        
+
         # Botones de acción en el header
         actions_frame = ttk.Frame(title_frame)
         actions_frame.pack(side=RIGHT)
-        
-        ttk.Button(
-            actions_frame, 
-            text="📤 Exportar Selección", 
+
+        # Botón de filtros avanzados
+        self.filter_btn = ttk.Button(
+            actions_frame,
+            text="🔍 Filtros",
+            command=self._toggle_advanced_filters,
+            bootstyle="info"
+        )
+        self.filter_btn.pack(side=RIGHT, padx=(0, 5))
+
+        # Botón de detalles flotante
+        self.details_btn = ttk.Button(
+            actions_frame,
+            text="📋 Detalles",
+            command=self._toggle_details_panel,
+            bootstyle="secondary"
+        )
+        self.details_btn.pack(side=RIGHT, padx=(0, 5))
+
+        # Botón exportar selección (inicialmente deshabilitado)
+        self.export_selection_btn = ttk.Button(
+            actions_frame,
+            text="📤 Exportar Selección",
             command=self._export_selected_data,
-            bootstyle="success"
-        ).pack(side=RIGHT, padx=(10, 0))
-        
+            bootstyle="success",
+            state="disabled"
+        )
+        self.export_selection_btn.pack(side=RIGHT, padx=(0, 5))
+
+        # Botón exportar toda la base de datos
         ttk.Button(
-            actions_frame, 
-            text="🔄 Actualizar Datos", 
+            actions_frame,
+            text="💾 Exportar Todo",
+            command=self._export_full_database,
+            bootstyle="warning"
+        ).pack(side=RIGHT, padx=(0, 5))
+
+        ttk.Button(
+            actions_frame,
+            text="🔄 Actualizar Datos",
             command=self.refresh_data_and_table,
             bootstyle="primary"
-        ).pack(side=RIGHT)
-        
-        # Container principal con layout en grid
-        main_container = ttk.Frame(frame)
-        main_container.pack(expand=True, fill=BOTH)
-        main_container.grid_columnconfigure(0, weight=1)  # tabla selector (más pequeña)
-        main_container.grid_columnconfigure(1, weight=2)  # tabla detalles (más grande)
-        main_container.grid_rowconfigure(1, weight=1)
+        ).pack(side=RIGHT, padx=(0, 5))
 
-        # Frame para tabla (lado izquierdo)
-        table_frame = ttk.Frame(main_container)
-        table_frame.grid(row=0, column=0, rowspan=2, sticky="nsew", padx=(0, 10))
-        table_frame.grid_rowconfigure(1, weight=1)
+        # Frame para tabla - FULL SCREEN
+        table_frame = ttk.Frame(frame)
+        table_frame.pack(expand=True, fill=BOTH, padx=10, pady=5)
+        table_frame.grid_rowconfigure(1, weight=1)  # Treeview
         table_frame.grid_columnconfigure(0, weight=1)
 
         # Campo de búsqueda
@@ -1350,40 +1714,52 @@ Dependencias:
         self.tree.grid(row=1, column=0, sticky="nsew", padx=10, pady=(0, 10))
         self.tree.bind("<<TreeviewSelect>>", self.mostrar_detalle_registro)
 
-        # Scrollbar para el Treeview
-        scrollbar = ttk.Scrollbar(table_frame, orient="vertical", command=self.tree.yview)
-        scrollbar.grid(row=1, column=1, sticky="ns", pady=(0, 10))
-        self.tree.configure(yscrollcommand=scrollbar.set)
+        # Configurar selección múltiple
+        self.tree.configure(selectmode="extended")
 
-        # Frame para detalles (lado derecho)
-        self.detail_frame = ttk.Frame(main_container, padding=10)
-        self.detail_frame.grid(row=0, column=1, rowspan=2, sticky="nsew")
-        self.detail_frame.grid_columnconfigure(0, weight=1)
-        self.detail_frame.grid_rowconfigure(1, weight=1)
+        # Scrollbar vertical para el Treeview
+        scrollbar_y = ttk.Scrollbar(table_frame, orient="vertical", command=self.tree.yview)
+        scrollbar_y.grid(row=1, column=1, sticky="ns", pady=(0, 10))
+        self.tree.configure(yscrollcommand=scrollbar_y.set)
 
-        # Título del panel de detalles
-        ttk.Label(
-            self.detail_frame, 
-            text="Detalles del Registro", 
-            font=("Segoe UI", 16, "bold")
-        ).grid(row=0, column=0, pady=(0, 10), sticky="w")
+        # Scrollbar horizontal para el Treeview
+        scrollbar_x = ttk.Scrollbar(table_frame, orient="horizontal", command=self.tree.xview)
+        scrollbar_x.grid(row=2, column=0, sticky="ew", padx=10)
+        self.tree.configure(xscrollcommand=scrollbar_x.set)
+
+        # ULTRA-OPTIMIZADO: Scroll MUCHO más rápido y fluido
+        def _on_treeview_mousewheel(event):
+            if event.state & 0x1:  # Shift presionado - SCROLL HORIZONTAL ULTRA RÁPIDO
+                # Multiplicador MASIVO para scroll horizontal instantáneo
+                scroll_amount = int(-1 * (event.delta / 120)) * 15  # Aumentado de 8 a 15
+                self.tree.xview_scroll(scroll_amount, "units")
+                return "break"
+            else:  # Scroll vertical MÁS RÁPIDO
+                # Aumentado de 3 a 6 para scroll vertical ultra rápido
+                scroll_amount = int(-1 * (event.delta / 120)) * 6
+                self.tree.yview_scroll(scroll_amount, "units")
+                return "break"
+
+        self.tree.bind("<MouseWheel>", _on_treeview_mousewheel)
         
-        # Área de texto para detalles
-        self.detail_textbox = tk.Text(
-            self.detail_frame, 
-            state="disabled", 
-            wrap="word", 
-            font=("Calibri", 14),
-            relief="flat",
-            padx=10,
-            pady=10
-        )
-        self.detail_textbox.grid(row=1, column=0, sticky="nsew")
+        # NUEVO: Optimización adicional - deshabilitar redibujado durante scroll
+        self.tree.configure(selectmode="extended")
         
-        # Scrollbar para el área de texto
-        detail_scrollbar = ttk.Scrollbar(self.detail_frame, orient="vertical", command=self.detail_textbox.yview)
-        detail_scrollbar.grid(row=1, column=1, sticky="ns")
-        self.detail_textbox.configure(yscrollcommand=detail_scrollbar.set)
+        # NUEVO: Agregar tooltips al pasar mouse sobre celdas
+        self._setup_cell_tooltips()
+
+        # Habilitar/deshabilitar botón de exportar selección según selección
+        def _update_export_selection_button(event=None):
+            selection = self.tree.selection()
+            if hasattr(self, 'export_selection_btn'):
+                self.export_selection_btn.configure(state="normal" if selection else "disabled")
+
+        self.tree.bind("<<TreeviewSelect>>", _update_export_selection_button)
+
+        # Cargar datos automáticamente al inicializar el visualizador
+        self.after(100, lambda: self.refresh_data_and_table() if hasattr(self, 'refresh_data_and_table') else None)
+
+        # El panel de detalles ahora será flotante (se crea en demanda)
 
     def _create_dashboard_content(self):
         """Crear contenido del panel de dashboard"""
@@ -1486,6 +1862,451 @@ Dependencias:
 
         self._dash_canvases = []
 
+    def _crear_analisis_ia_content(self):
+        """Crear contenido completo de la sección de Análisis IA"""
+        # Usar el frame scrollable
+        frame = self.analisis_ia_frame.scrollable_frame
+
+        # Variables de instancia
+        self.tipo_reporte_var = tk.StringVar(value="parcial")
+        self.reporte_seleccionado = None
+
+        # HEADER
+        header_frame = ttk.Frame(frame, bootstyle="primary", padding=15)
+        header_frame.pack(fill=X, pady=(0, 20))
+
+        ttk.Label(
+            header_frame,
+            text="🤖 EVARISIS CIRUGÍA ONCOLÓGICA - Análisis con IA",
+            font=("Arial", 20, "bold"),
+            bootstyle="inverse-primary"
+        ).pack()
+
+        # PANEL SELECTOR DE TIPO DE REPORTE
+        selector_frame = ttk.LabelFrame(frame, text="Tipo de Reporte", padding=15, bootstyle="info")
+        selector_frame.pack(fill=X, pady=(0, 10))
+
+        radio_frame = ttk.Frame(selector_frame)
+        radio_frame.pack(fill=X)
+
+        ttk.Radiobutton(
+            radio_frame,
+            text="Análisis Parcial",
+            variable=self.tipo_reporte_var,
+            value="parcial",
+            command=self._actualizar_lista_reportes,
+            bootstyle="info"
+        ).pack(side=LEFT, padx=10)
+
+        ttk.Radiobutton(
+            radio_frame,
+            text="Análisis Completo",
+            variable=self.tipo_reporte_var,
+            value="completo",
+            command=self._actualizar_lista_reportes,
+            bootstyle="info"
+        ).pack(side=LEFT, padx=10)
+
+        # LISTA DE REPORTES DISPONIBLES
+        reportes_frame = ttk.LabelFrame(frame, text="Reportes Disponibles", padding=15, bootstyle="success")
+        reportes_frame.pack(fill=BOTH, expand=True, pady=(0, 10))
+
+        # Treeview con scrollbar
+        tree_container = ttk.Frame(reportes_frame)
+        tree_container.pack(fill=BOTH, expand=True)
+
+        scrollbar = ttk.Scrollbar(tree_container, orient="vertical")
+        scrollbar.pack(side=RIGHT, fill=Y)
+
+        self.reportes_tree = ttk.Treeview(
+            tree_container,
+            columns=("Fecha", "Tipo", "Casos", "Archivo"),
+            show="headings",
+            yscrollcommand=scrollbar.set,
+            bootstyle="success"
+        )
+        scrollbar.config(command=self.reportes_tree.yview)
+
+        # Configurar columnas
+        self.reportes_tree.heading("Fecha", text="Fecha")
+        self.reportes_tree.heading("Tipo", text="Tipo")
+        self.reportes_tree.heading("Casos", text="Casos")
+        self.reportes_tree.heading("Archivo", text="Archivo")
+
+        self.reportes_tree.column("Fecha", width=150, anchor=W)
+        self.reportes_tree.column("Tipo", width=120, anchor=CENTER)
+        self.reportes_tree.column("Casos", width=200, anchor=W)
+        self.reportes_tree.column("Archivo", width=400, anchor=W)
+
+        self.reportes_tree.pack(fill=BOTH, expand=True)
+
+        # Bind de selección
+        self.reportes_tree.bind("<<TreeviewSelect>>", self._cargar_reporte_seleccionado)
+
+        # VISUALIZADOR MARKDOWN
+        visualizador_frame = ttk.LabelFrame(frame, text="Contenido del Reporte", padding=15, bootstyle="warning")
+        visualizador_frame.pack(fill=BOTH, expand=True, pady=(0, 10))
+
+        # Frame para el text widget con scrollbar
+        text_container = ttk.Frame(visualizador_frame)
+        text_container.pack(fill=BOTH, expand=True)
+
+        text_scrollbar = ttk.Scrollbar(text_container, orient="vertical")
+        text_scrollbar.pack(side=RIGHT, fill=Y)
+
+        self.markdown_text = tk.Text(
+            text_container,
+            wrap=WORD,
+            font=("Consolas", 10),
+            yscrollcommand=text_scrollbar.set,
+            state=DISABLED
+        )
+        text_scrollbar.config(command=self.markdown_text.yview)
+        self.markdown_text.pack(fill=BOTH, expand=True)
+
+        # Configurar tags para formato Markdown
+        self.markdown_text.tag_config("h1", font=("Arial", 18, "bold"), foreground="#2c3e50")
+        self.markdown_text.tag_config("h2", font=("Arial", 15, "bold"), foreground="#34495e")
+        self.markdown_text.tag_config("h3", font=("Arial", 13, "bold"), foreground="#7f8c8d")
+        self.markdown_text.tag_config("bold", font=("Arial", 10, "bold"))
+        self.markdown_text.tag_config("italic", font=("Arial", 10, "italic"))
+        self.markdown_text.tag_config("code", font=("Consolas", 9), background="#ecf0f1")
+        self.markdown_text.tag_config("list", lmargin1=20, lmargin2=40)
+
+        # Botón copiar
+        btn_frame = ttk.Frame(visualizador_frame)
+        btn_frame.pack(fill=X, pady=(10, 0))
+
+        ttk.Button(
+            btn_frame,
+            text="📋 Copiar Contenido",
+            command=self._copiar_contenido_reporte,
+            bootstyle="warning"
+        ).pack(side=LEFT)
+
+        # Cargar reportes inicialmente
+        self._actualizar_lista_reportes()
+
+    def _actualizar_lista_reportes(self):
+        """Actualizar la lista de reportes según el tipo seleccionado"""
+        print(f"🔄 Actualizando lista de reportes - Tipo: {self.tipo_reporte_var.get()}")
+
+        # Limpiar treeview
+        for item in self.reportes_tree.get_children():
+            self.reportes_tree.delete(item)
+
+        # Directorio de reportes
+        reportes_dir = Path("data/reportes_ia")
+        if not reportes_dir.exists():
+            print(f"⚠️ Directorio {reportes_dir} no existe, creándolo...")
+            reportes_dir.mkdir(parents=True, exist_ok=True)
+            return
+
+        # Obtener tipo seleccionado
+        tipo = self.tipo_reporte_var.get()
+        patron = "PARCIAL" if tipo == "parcial" else "COMPLETA"
+
+        # Buscar archivos
+        reportes = []
+        for archivo in reportes_dir.glob("*.md"):
+            if patron in archivo.name:
+                # Parsear nombre: YYYYMMDD_HHMMSS_TIPO_casos.md
+                partes = archivo.name.split("_")
+                if len(partes) >= 3:
+                    fecha_str = partes[0]
+                    hora_str = partes[1]
+
+                    # Formatear fecha
+                    try:
+                        fecha_obj = datetime.strptime(f"{fecha_str} {hora_str}", "%Y%m%d %H%M%S")
+                        fecha_display = fecha_obj.strftime("%d/%m/%Y %H:%M:%S")
+                    except:
+                        fecha_display = f"{fecha_str} {hora_str}"
+
+                    # Extraer casos
+                    casos_str = "_".join(partes[3:]).replace(".md", "")
+
+                    reportes.append({
+                        "fecha": fecha_obj if 'fecha_obj' in locals() else datetime.now(),
+                        "fecha_display": fecha_display,
+                        "tipo": "Parcial" if patron == "PARCIAL" else "Completo",
+                        "casos": casos_str,
+                        "archivo": archivo.name,
+                        "ruta": str(archivo)
+                    })
+
+        # Ordenar por fecha (más recientes primero)
+        reportes.sort(key=lambda x: x["fecha"], reverse=True)
+
+        # Agregar a treeview
+        for rep in reportes:
+            self.reportes_tree.insert("", "end", values=(
+                rep["fecha_display"],
+                rep["tipo"],
+                rep["casos"],
+                rep["archivo"]
+            ), tags=(rep["ruta"],))
+
+        print(f"✅ {len(reportes)} reportes cargados")
+
+    def _cargar_reporte_seleccionado(self, event):
+        """Cargar y mostrar el reporte seleccionado"""
+        selection = self.reportes_tree.selection()
+        if not selection:
+            return
+
+        # Obtener ruta del archivo
+        item = selection[0]
+        tags = self.reportes_tree.item(item, "tags")
+        if not tags:
+            return
+
+        ruta_archivo = tags[0]
+        print(f"📖 Cargando reporte: {ruta_archivo}")
+
+        try:
+            # Leer contenido
+            with open(ruta_archivo, 'r', encoding='utf-8') as f:
+                contenido = f.read()
+
+            # Renderizar en el text widget
+            self._renderizar_markdown(contenido)
+            self.reporte_seleccionado = ruta_archivo
+
+        except Exception as e:
+            print(f"❌ Error cargando reporte: {e}")
+            messagebox.showerror("Error", f"No se pudo cargar el reporte:\n{e}")
+
+    def _renderizar_markdown(self, contenido):
+        """Renderizar contenido Markdown con formato en el Text widget"""
+        self.markdown_text.config(state=NORMAL)
+        self.markdown_text.delete(1.0, END)
+
+        lineas = contenido.split('\n')
+
+        for linea in lineas:
+            # Headers
+            if linea.startswith('# '):
+                self.markdown_text.insert(END, linea[2:] + '\n', "h1")
+            elif linea.startswith('## '):
+                self.markdown_text.insert(END, linea[3:] + '\n', "h2")
+            elif linea.startswith('### '):
+                self.markdown_text.insert(END, linea[4:] + '\n', "h3")
+            # Listas
+            elif linea.strip().startswith(('-', '*', '•')):
+                self.markdown_text.insert(END, linea + '\n', "list")
+            # Línea normal - procesar bold, italic, code
+            else:
+                self._procesar_linea_con_formato(linea)
+
+        self.markdown_text.config(state=DISABLED)
+
+    def _procesar_linea_con_formato(self, linea):
+        """Procesar una línea aplicando formato inline (bold, italic, code)"""
+        pos = 0
+        while pos < len(linea):
+            # Bold **texto**
+            if linea[pos:pos+2] == '**':
+                cierre = linea.find('**', pos+2)
+                if cierre != -1:
+                    self.markdown_text.insert(END, linea[pos+2:cierre], "bold")
+                    pos = cierre + 2
+                    continue
+
+            # Italic *texto*
+            if linea[pos] == '*' and (pos == 0 or linea[pos-1] != '*'):
+                cierre = linea.find('*', pos+1)
+                if cierre != -1 and (cierre+1 >= len(linea) or linea[cierre+1] != '*'):
+                    self.markdown_text.insert(END, linea[pos+1:cierre], "italic")
+                    pos = cierre + 1
+                    continue
+
+            # Code `texto`
+            if linea[pos] == '`':
+                cierre = linea.find('`', pos+1)
+                if cierre != -1:
+                    self.markdown_text.insert(END, linea[pos+1:cierre], "code")
+                    pos = cierre + 1
+                    continue
+
+            # Carácter normal
+            self.markdown_text.insert(END, linea[pos])
+            pos += 1
+
+        self.markdown_text.insert(END, '\n')
+
+    def _copiar_contenido_reporte(self):
+        """Copiar el contenido del reporte al portapapeles"""
+        contenido = self.markdown_text.get(1.0, END)
+        self.clipboard_clear()
+        self.clipboard_append(contenido)
+        messagebox.showinfo("Copiado", "Contenido copiado al portapapeles")
+
+    def _seleccionar_ultimo_reporte(self):
+        """Seleccionar automáticamente el primer reporte (más reciente) en la lista"""
+        # Obtener primer item del treeview
+        items = self.reportes_tree.get_children()
+        if items:
+            # Seleccionar y hacer focus en el primer item
+            primer_item = items[0]
+            self.reportes_tree.selection_set(primer_item)
+            self.reportes_tree.focus(primer_item)
+            self.reportes_tree.see(primer_item)
+
+            # Cargar el reporte manualmente
+            tags = self.reportes_tree.item(primer_item, "tags")
+            if tags:
+                ruta_archivo = tags[0]
+                print(f"📖 Auto-cargando reporte: {ruta_archivo}")
+
+                try:
+                    with open(ruta_archivo, 'r', encoding='utf-8') as f:
+                        contenido = f.read()
+                    self._renderizar_markdown(contenido)
+                    self.reporte_seleccionado = ruta_archivo
+                except Exception as e:
+                    print(f"❌ Error auto-cargando reporte: {e}")
+
+    def _generar_reporte_ia(self, resultados, tipo):
+        """
+        Generar un archivo de reporte Markdown a partir de los resultados de auditoría
+
+        Args:
+            resultados: Dict con resultados de auditoría IA O lista de resultados
+            tipo: 'parcial' o 'completa'
+
+        Returns:
+            str: Ruta al archivo generado
+        """
+        print(f"📝 Generando reporte IA tipo: {tipo}")
+
+        # Crear directorio si no existe
+        reportes_dir = Path("data/reportes_ia")
+        reportes_dir.mkdir(parents=True, exist_ok=True)
+
+        # V2.1.6: Detectar formato de entrada (dict o lista)
+        if isinstance(resultados, list):
+            # Formato nuevo: lista plana de resultados
+            registros = resultados
+            casos_procesados = len(registros)
+            casos_exitosos = sum(1 for r in registros if r.get("exito", False))
+            casos_errores = casos_procesados - casos_exitosos
+            total_correcciones = sum(r.get("correcciones_aplicadas", 0) for r in registros)
+        else:
+            # Formato viejo: dict con "registros"
+            registros = resultados.get("registros", [])
+            casos_procesados = len(registros)
+            casos_exitosos = sum(1 for r in registros if r.get("estado") == "exitoso")
+            casos_errores = casos_procesados - casos_exitosos
+            total_correcciones = sum(len(r.get("correcciones", [])) for r in registros)
+
+        # Determinar rango de IHQ (compatible con ambos formatos)
+        ihq_numeros = []
+        for r in registros:
+            # V2.1.6: Soportar ambos formatos
+            ihq = r.get("ihq_numero") or r.get("numero_peticion", "")
+            if ihq and ihq.startswith("IHQ"):
+                try:
+                    num = int(ihq.replace("IHQ", ""))
+                    ihq_numeros.append(num)
+                except:
+                    pass
+
+        if ihq_numeros:
+            ihq_min = min(ihq_numeros)
+            ihq_max = max(ihq_numeros)
+            casos_str = f"IHQ{ihq_min:05d}_IHQ{ihq_max:05d}" if ihq_min != ihq_max else f"IHQ{ihq_min:05d}"
+        else:
+            casos_str = f"{casos_procesados}_casos"
+
+        # Generar nombre de archivo
+        timestamp = datetime.now()
+        fecha_str = timestamp.strftime("%Y%m%d")
+        hora_str = timestamp.strftime("%H%M%S")
+        tipo_str = "PARCIAL" if tipo == "parcial" else "COMPLETA"
+        nombre_archivo = f"{fecha_str}_{hora_str}_{tipo_str}_{casos_str}.md"
+        ruta_archivo = reportes_dir / nombre_archivo
+
+        # Generar contenido Markdown
+        contenido = f"""# 📊 Reporte de Auditoría {tipo_str.title()} - EVARISIS CIRUGÍA ONCOLÓGICA
+
+**Fecha**: {timestamp.strftime("%d/%m/%Y %H:%M:%S")}
+**Tipo**: {"Parcial" if tipo == "parcial" else "Completa"}
+**Casos procesados**: {casos_procesados}
+
+## 📋 Resumen Ejecutivo
+
+- ✅ Casos exitosos: {casos_exitosos}
+- ❌ Casos con errores: {casos_errores}
+- 🔧 Total correcciones: {total_correcciones}
+
+## 📝 Detalle por Caso
+
+"""
+
+        # V2.1.6: Agregar detalles de cada caso (compatible con ambos formatos)
+        for registro in registros:
+            # Formato nuevo vs viejo
+            if isinstance(resultados, list):
+                # Formato nuevo
+                ihq = registro.get("numero_peticion", "N/A")
+                estado = "EXITOSO" if registro.get("exito", False) else "ERROR"
+                num_correcciones = registro.get("correcciones_aplicadas", 0)
+                detalles = registro.get("detalles", [])
+                error = registro.get("error", "")
+            else:
+                # Formato viejo
+                ihq = registro.get("ihq_numero", "N/A")
+                estado = registro.get("estado", "desconocido").upper()
+                detalles = registro.get("correcciones", [])
+                num_correcciones = len(detalles)
+                error = registro.get("errores", [])
+
+            contenido += f"### Caso: {ihq}\n\n"
+            contenido += f"**Estado**: {estado}  \n"
+            contenido += f"**Correcciones aplicadas**: {num_correcciones}\n\n"
+
+            if detalles:
+                contenido += "**Correcciones:**\n\n"
+                for i, detalle in enumerate(detalles, 1):
+                    campo = detalle.get("campo", "N/A")
+                    valor_anterior = detalle.get("valor_anterior", "")
+                    valor_nuevo = detalle.get("valor_nuevo", "")
+                    razon = detalle.get("razon", "")
+
+                    contenido += f"{i}. **Campo**: `{campo}`\n"
+                    contenido += f"   - *Valor anterior*: {valor_anterior or '(vacío)'}\n"
+                    contenido += f"   - *Valor nuevo*: {valor_nuevo}\n"
+                    contenido += f"   - *Razón*: {razon}\n\n"
+
+            if error:
+                contenido += "**Errores encontrados:**\n\n"
+                if isinstance(error, list):
+                    for e in error:
+                        contenido += f"- {e}\n"
+                else:
+                    contenido += f"- {error}\n"
+                contenido += "\n"
+
+            contenido += "---\n\n"
+
+        # Footer
+        contenido += f"""
+---
+*Generated by EVARISIS CIRUGÍA ONCOLÓGICA*
+*{timestamp.strftime("%d/%m/%Y %H:%M:%S")}*
+"""
+
+        # Guardar archivo
+        try:
+            with open(ruta_archivo, 'w', encoding='utf-8') as f:
+                f.write(contenido)
+            print(f"✅ Reporte generado: {ruta_archivo}")
+            return str(ruta_archivo)
+        except Exception as e:
+            print(f"❌ Error guardando reporte: {e}")
+            return None
+
     def _create_kpi_card(self, parent, title, value):
         """Crear una tarjeta KPI usando TTKBootstrap"""
         card = ttk.Frame(parent, padding=10, relief="solid", borderwidth=1)
@@ -1501,7 +2322,7 @@ Dependencias:
     def _create_welcome_screen(self):
         """Crear la pantalla de bienvenida inicial"""
         self.welcome_frame = ttk.Frame(self.content_container, padding=40)
-        
+
         # Contenedor central
         center_container = ttk.Frame(self.welcome_frame)
         center_container.pack(expand=True, fill=BOTH)
@@ -1509,25 +2330,25 @@ Dependencias:
         center_container.grid_rowconfigure(1, weight=0)
         center_container.grid_rowconfigure(2, weight=1)
         center_container.grid_columnconfigure(0, weight=1)
-        
+
         # Espaciador superior
         ttk.Frame(center_container).grid(row=0, column=0)
-        
+
         # Contenido principal
         main_content = ttk.Frame(center_container)
         main_content.grid(row=1, column=0, pady=50)
-        
+
         # Título principal con emojis
         title_frame = ttk.Frame(main_content)
         title_frame.pack(pady=(0, 30))
-        
+
         ttk.Label(
             title_frame,
             text="🏥 Bienvenido al Gestor Oncológico 🔬",
             font=("Segoe UI", 28, "bold"),
             anchor="center"
         ).pack()
-        
+
         # Subtítulo descriptivo
         subtitle_text = ("Enfocado en la investigación y mejora del área de oncología\n"
                         "del Hospital Universitario del Valle")
@@ -1538,11 +2359,11 @@ Dependencias:
             anchor="center",
             justify="center"
         ).pack(pady=(0, 40))
-        
+
         # Iconos representativos
         icons_frame = ttk.Frame(main_content)
         icons_frame.pack(pady=(0, 40))
-        
+
         # Crear una fila de iconos descriptivos
         icons_text = "📊  📈  🧬  💡  📋  🔍  ⚕️"
         ttk.Label(
@@ -1551,180 +2372,86 @@ Dependencias:
             font=("Segoe UI", 24),
             anchor="center"
         ).pack()
-        
-        # Mensaje de instrucción
-        instruction_text = ("Selecciona una opción del menú lateral para comenzar\n"
-                           "a trabajar con los datos oncológicos")
-        ttk.Label(
-            main_content,
-            text=instruction_text,
-            font=("Segoe UI", 14),
-            anchor="center",
-            justify="center",
-            foreground="gray"
-        ).pack()
-        
+
+        # NUEVO: Verificar si hay datos, si no, mostrar botón de agregar información
+        try:
+            from core.database_manager import get_all_records_as_dataframe
+            df_check = get_all_records_as_dataframe()
+
+            if df_check.empty:
+                # Mensaje cuando no hay datos
+                no_data_msg = "No hay información en la base de datos"
+                ttk.Label(
+                    main_content,
+                    text=no_data_msg,
+                    font=("Segoe UI", 14),
+                    anchor="center",
+                    foreground="gray"
+                ).pack(pady=(0, 20))
+
+                # Botón para agregar información
+                add_btn = ttk.Button(
+                    main_content,
+                    text="📥 Agregar Información a la Base de Datos",
+                    command=self._goto_import_data_tab,
+                    bootstyle="success",
+                    width=40
+                )
+                add_btn.pack(pady=10)
+            else:
+                # Mensaje de instrucción normal cuando hay datos
+                instruction_text = ("Selecciona una opción del menú flotante para comenzar\n"
+                                   "a trabajar con los datos oncológicos")
+                ttk.Label(
+                    main_content,
+                    text=instruction_text,
+                    font=("Segoe UI", 14),
+                    anchor="center",
+                    justify="center",
+                    foreground="gray"
+                ).pack()
+        except Exception as e:
+            print(f"Error verificando datos: {e}")
+            # Mensaje de instrucción por defecto
+            instruction_text = ("Selecciona una opción del menú flotante para comenzar\n"
+                               "a trabajar con los datos oncológicos")
+            ttk.Label(
+                main_content,
+                text=instruction_text,
+                font=("Segoe UI", 14),
+                anchor="center",
+                justify="center",
+                foreground="gray"
+            ).pack()
+
         # Espaciador inferior
         ttk.Frame(center_container).grid(row=2, column=0)
 
-    def _create_stats_cards(self, parent):
-        """Crear las tarjetas de estadísticas de la base de datos"""
-        # Grid para las cards
-        parent.grid_columnconfigure(0, weight=1)
-        
-        # Cards de estadísticas principales
-        stats_data = [
-            ("📊", "Total Registros", "0", "Número total de informes en la base de datos"),
-            ("📅", "Rango Temporal", "—", "Fechas de los informes más antiguos y recientes"),
-            ("🕒", "Última Importación", "—", "Fecha de la última importación de datos"),
-            ("🏥", "Servicios Únicos", "0", "Cantidad de servicios médicos diferentes"),
-            ("⚠️", "Casos Malignos", "0", "Informes con diagnóstico de malignidad"),
-            ("🔬", "Biomarcadores", "0", "Informes con análisis de biomarcadores")
-        ]
-        
-        for i, (icon, title, value, description) in enumerate(stats_data):
-            card = ttk.Frame(parent, padding=15, relief="solid", borderwidth=1)
-            card.grid(row=i//2, column=i%2, padx=10, pady=10, sticky="ew")
-            
-            # Header con icono y título
-            header = ttk.Frame(card)
-            header.pack(fill=X, pady=(0, 5))
-            
-            ttk.Label(header, text=icon, font=("Segoe UI", 20)).pack(side=LEFT, padx=(0, 10))
-            ttk.Label(header, text=title, font=("Segoe UI", 12, "bold")).pack(side=LEFT)
-            
-            # Valor principal
-            value_label = ttk.Label(card, text=value, font=("Segoe UI", 24, "bold"))
-            value_label.pack(anchor=W, pady=(0, 5))
-            
-            # Descripción
-            ttk.Label(
-                card, 
-                text=description, 
-                font=("Segoe UI", 9), 
-                foreground="gray",
-                wraplength=200
-            ).pack(anchor=W)
-            
-            # Guardar referencia para actualización
-            setattr(self, f"stats_card_{i}", value_label)
-        
-        # Botón para actualizar estadísticas
-        update_btn = ttk.Button(
-            parent,
-            text="🔄 Actualizar Estadísticas",
-            command=self._refresh_database_stats,
-            bootstyle="info",
-            width=25
-        )
-        update_btn.grid(row=3, column=0, columnspan=2, pady=(20, 0), sticky="ew")
+    def _goto_import_data_tab(self):
+        """Navegar directamente a la pestaña de importar datos del dashboard"""
+        # Navegar a base de datos
+        self._nav_to_database()
+        # Esperar un poco para que se cargue el dashboard
+        self.after(100, self._select_import_tab)
 
-    def _refresh_database_stats(self):
-        """Actualizar las estadísticas de la base de datos"""
+    def _select_import_tab(self):
+        """Seleccionar la pestaña de importar datos en el dashboard mejorado"""
         try:
-            # Consultar datos reales de la base de datos
-            from database_manager import get_all_records_as_dataframe
-            
-            # Obtener todos los registros
-            df = get_all_records_as_dataframe()
-            
-            if df is None or df.empty:
-                stats = {
-                    'total_records': 0,
-                    'date_range': '—',
-                    'last_import': '—',
-                    'unique_services': 0,
-                    'malignant_count': 0,
-                    'biomarker_count': 0
-                }
-            else:
-                # Calcular estadísticas reales
-                total_records = len(df)
-                
-                # Buscar columnas de fecha
-                fecha_cols = [col for col in df.columns if 'fecha' in col.lower()]
-                fecha_min, fecha_max = None, None
-                
-                for col in fecha_cols:
-                    if col in df.columns:
-                        try:
-                            # Convertir a datetime con formato día/mes/año
-                            fechas = pd.to_datetime(df[col], errors='coerce', format='%d/%m/%Y')
-                            fechas_validas = fechas.dropna()
-                            
-                            if not fechas_validas.empty:
-                                col_min = fechas_validas.min()
-                                col_max = fechas_validas.max()
-                                
-                                if fecha_min is None or col_min < fecha_min:
-                                    fecha_min = col_min
-                                if fecha_max is None or col_max > fecha_max:
-                                    fecha_max = col_max
-                        except:
-                            continue
-                
-                # Formatear rango de fechas
-                if fecha_min and fecha_max:
-                    date_range = f"{fecha_min.strftime('%d/%m/%Y')} - {fecha_max.strftime('%d/%m/%Y')}"
-                    last_import = fecha_max.strftime('%d/%m/%Y')
-                else:
-                    date_range = '—'
-                    last_import = '—'
-                
-                # Servicios únicos
-                servicio_cols = [col for col in df.columns if 'servicio' in col.lower()]
-                unique_services = 0
-                if servicio_cols:
-                    unique_services = df[servicio_cols[0]].nunique() if not df[servicio_cols[0]].isna().all() else 0
-                
-                # Casos malignos
-                malignant_count = 0
-                malignidad_cols = [col for col in df.columns if 'malign' in col.lower()]
-                if malignidad_cols:
-                    malignant_count = (df[malignidad_cols[0]].str.contains('PRESENTE', case=False, na=False)).sum()
-                
-                # Biomarcadores (buscar columnas con biomarcadores)
-                biomarker_cols = [col for col in df.columns if any(bio in col.lower() for bio in ['ki67', 'her2', 're ', 'rp ', 'pdl1'])]
-                biomarker_count = 0
-                for col in biomarker_cols:
-                    biomarker_count += df[col].notna().sum()
-                # Evitar doble conteo - usar registros únicos con al menos un biomarcador
-                if biomarker_cols:
-                    biomarker_count = df[biomarker_cols].notna().any(axis=1).sum()
-                
-                stats = {
-                    'total_records': total_records,
-                    'date_range': date_range,
-                    'last_import': last_import,
-                    'unique_services': unique_services,
-                    'malignant_count': malignant_count,
-                    'biomarker_count': biomarker_count
-                }
-            
-            # Actualizar las cards si existen
-            values = [
-                str(stats['total_records']),
-                stats['date_range'],
-                stats['last_import'], 
-                str(stats['unique_services']),
-                str(stats['malignant_count']),
-                str(stats['biomarker_count'])
-            ]
-            
-            for i, value in enumerate(values):
-                card_attr = f"stats_card_{i}"
-                if hasattr(self, card_attr):
-                    getattr(self, card_attr).configure(text=value)
-                    
+            if hasattr(self, 'enhanced_dashboard') and hasattr(self.enhanced_dashboard, 'notebook'):
+                # La pestaña de importar es la número 4 (índice 4)
+                self.enhanced_dashboard.notebook.select(4)
         except Exception as e:
-            print(f"Error actualizando estadísticas: {e}")
+            print(f"Error seleccionando pestaña de importar: {e}")
+
+
 
     # Métodos de navegación actualizados
     def show_database_frame(self):
         """Mostrar panel de base de datos (función compatibilidad)"""
         self._nav_to_database()
-        # Actualizar estadísticas cuando se muestre el panel
-        self._refresh_database_stats()
+        # Actualizar dashboard mejorado cuando se muestre el panel
+        if hasattr(self, 'enhanced_dashboard'):
+            self.enhanced_dashboard.refresh_dashboard()
 
     def show_visualizar_frame(self):
         """Mostrar panel de visualización (función compatibilidad)"""
@@ -1733,8 +2460,20 @@ Dependencias:
     def show_dashboard_frame(self):
         """Mostrar panel de análisis gráfico (función compatibilidad)"""
         self._nav_to_dashboard()
-        # Cargar el dashboard cuando se muestre
-        self.cargar_dashboard()
+        # CORREGIDO: Asegurar que los datos estén cargados antes de mostrar el dashboard
+        try:
+            # Si master_df está vacío, cargar datos de la base de datos
+            if self.master_df.empty:
+                from core.database_manager import init_db, get_all_records_as_dataframe
+                init_db()
+                self.master_df = get_all_records_as_dataframe()
+
+            # Ahora cargar el dashboard con datos disponibles
+            self.cargar_dashboard()
+        except Exception as e:
+            print(f"Error cargando datos para dashboard: {e}")
+            # Cargar dashboard vacío para mostrar mensaje apropiado
+            self.cargar_dashboard()
         
     def show_welcome_screen(self):
         """Mostrar pantalla de bienvenida con header visible y menú flotante oculto"""
@@ -1783,35 +2522,35 @@ Dependencias:
         self.nav_toggle_btn.configure(text="▶ Mostrar Menús")
 
     def _animate_header_hide(self):
-        """Animar ocultamiento del header hacia arriba"""
+        """Animar ocultamiento del header hacia arriba - ULTRA RÁPIDO"""
         def slide_up(steps_remaining):
             if steps_remaining > 0:
                 current_height = self.header.winfo_height()
-                new_height = max(0, current_height - 10)
+                new_height = max(0, current_height - 20)  # Aumentado de 10 a 20
                 if new_height > 0:
-                    self.after(20, lambda: slide_up(steps_remaining - 1))
+                    self.after(5, lambda: slide_up(steps_remaining - 1))  # Reducido de 20ms a 5ms
                 else:
                     self.header.pack_forget()
                     self.header_visible = False
             
         if self.header_visible:
-            slide_up(10)
+            slide_up(5)  # Reducido de 10 a 5 pasos
 
     def _animate_sidebar_hide(self):
-        """Animar ocultamiento del sidebar hacia la izquierda"""
+        """Animar ocultamiento del sidebar hacia la izquierda - ULTRA RÁPIDO"""
         def slide_left(steps_remaining):
             if steps_remaining > 0:
                 current_width = self.sidebar.winfo_width()
-                new_width = max(0, current_width - 30)
+                new_width = max(0, current_width - 50)  # Aumentado de 30 a 50
                 self.sidebar.config(width=new_width)
                 if new_width > 0:
-                    self.after(20, lambda: slide_left(steps_remaining - 1))
+                    self.after(5, lambda: slide_left(steps_remaining - 1))  # Reducido de 20ms a 5ms
                 else:
                     self.sidebar.pack_forget()
                     self.sidebar_visible = False
             
         if self.sidebar_visible:
-            slide_left(8)
+            slide_left(4)  # Reducido de 8 a 4 pasos
 
     def _toggle_navigation_visibility(self):
         """Alternar visibilidad de header y sidebar con animación"""
@@ -1925,7 +2664,7 @@ Dependencias:
 
         # Rango de fechas: fecha mínima y máxima
         fecha_cols = [
-            "Fecha finalizacion (3. Fecha del informe)",
+            "Fecha Informe",
             "Fecha de informe",
             "Fecha de ingreso",
         ]
@@ -2292,11 +3031,8 @@ Dependencias:
         s = pd.to_numeric(numeric_data, errors="coerce").dropna()
         
         if s.empty: 
-            print("DEBUG: No hay datos numéricos válidos para Ki-67")
             return None
             
-        print(f"DEBUG: Ki-67 datos válidos encontrados: {len(s)} valores, rango: {s.min()}-{s.max()}")
-        
         fig = Figure(figsize=(5.6, 3.2), dpi=100)
         ax = fig.add_subplot(111)
         ax.hist(s.values, bins=min(12, len(s.unique())))  # Ajustar bins si hay pocos datos únicos
@@ -2364,7 +3100,7 @@ Dependencias:
 
     def _g_box_tiempo_proceso(self, df):
         f_ing = pd.to_datetime(df.get("Fecha de ingreso (2. Fecha de la muestra)", ""), dayfirst=True, errors="coerce")
-        f_inf = pd.to_datetime(df.get("Fecha finalizacion (3. Fecha del informe)", df.get("Fecha de informe", "")), dayfirst=True, errors="coerce")
+        f_inf = pd.to_datetime(df.get("Fecha Informe", df.get("Fecha de informe", "")), dayfirst=True, errors="coerce")
         dias = (f_inf - f_ing).dt.days.dropna()
         if dias.empty: return None
         fig = Figure(figsize=(5.6, 3.2), dpi=100); ax = fig.add_subplot(111)
@@ -2398,11 +3134,8 @@ Dependencias:
             
         m = x.notna() & y.notna()
         if not m.any(): 
-            print("DEBUG: No hay datos válidos para scatter Edad vs Ki-67")
             return None
             
-        print(f"DEBUG: Scatter Edad vs Ki-67 - {m.sum()} puntos válidos")
-        
         fig = Figure(figsize=(5.6, 3.2), dpi=100); ax = fig.add_subplot(111)
         ax.scatter(x[m], y[m], alpha=0.6)
         ax.set_title("Edad vs Ki-67")
@@ -2510,10 +3243,21 @@ Dependencias:
     # Funcionalidad
     # =========================
     def log_to_widget(self, message):
-        self.log_textbox.configure(state="normal")
-        self.log_textbox.insert("end", f"[{datetime.now().strftime('%H:%M:%S')}] {message}\n")
-        self.log_textbox.see("end")
-        self.log_textbox.configure(state="disabled")
+        """Log seguro que funciona con y sin log_textbox"""
+        try:
+            if hasattr(self, 'log_textbox') and self.log_textbox:
+                self.log_textbox.configure(state="normal")
+                self.log_textbox.insert("end", f"[{datetime.now().strftime('%H:%M:%S')}] {message}\n")
+                self.log_textbox.see("end")
+                self.log_textbox.configure(state="disabled")
+            else:
+                # Fallback a logging normal si no hay widget
+                import logging
+                logging.info(message)
+        except Exception as e:
+            # Si falla, usar logging como último recurso
+            import logging
+            logging.info(f"{message} (log_to_widget error: {e})")
 
     def select_files(self):
         self.pdf_files = filedialog.askopenfilenames(title="Seleccione archivos PDF", filetypes=[("PDF", "*.pdf")])
@@ -2541,13 +3285,53 @@ Dependencias:
 
     def processing_thread(self):
         try:
+            # FORZAR RECARGA DEL MÓDULO para asegurar que tenemos las últimas modificaciones
+            import importlib
+            import core.unified_extractor
+            importlib.reload(core.unified_extractor)
+
+            # === USAR PROCESAMIENTO CON AUDITORÍA IA INTEGRADA ===
+            self.log_to_widget("\n" + "="*60)
+            self.log_to_widget("🔄 CARGANDO SISTEMA DE AUDITORÍA IA...")
+            self.log_to_widget("="*60)
+
+            from core.process_with_audit import process_ihq_paths_with_audit, crear_callback_auditoria_para_ui
+
+            self.log_to_widget("✅ Módulos de auditoría importados correctamente")
+
             output_dir = os.path.dirname(self.pdf_files[0])
-            num_records = procesador_ihq_biomarcadores.process_ihq_paths(self.pdf_files, output_dir)
-            self.log_to_widget(f"PROCESO COMPLETADO. Se guardaron {num_records} registros en la base de datos.")
-            messagebox.showinfo("Éxito", f"Proceso finalizado. Se guardaron {num_records} registros.")
-            self.set_status("Completado ✔  |  " + datetime.now().strftime("%d/%m/%Y %H:%M"))
+
+            # Crear callback para auditoría IA
+            self.log_to_widget("🔧 Configurando callback de auditoría IA...")
+            callback_auditoria = crear_callback_auditoria_para_ui(self)
+            self.log_to_widget("✅ Callback configurado")
+
+            # Procesar con auditoría integrada
+            self.log_to_widget("\n🚀 INICIANDO PROCESAMIENTO CON AUDITORÍA INTEGRADA...")
+            self.log_to_widget("="*60)
+
+            num_records = process_ihq_paths_with_audit(
+                pdf_paths=self.pdf_files,
+                output_dir=output_dir,
+                ui_callback_auditoria=callback_auditoria,
+                log_callback=self.log_to_widget
+            )
+
+            # Nota: El mensaje de éxito y el refresh se manejan en el callback de auditoría
+            # Solo mostramos mensaje si no hay casos para auditar
+            if num_records == 0:
+                self.log_to_widget(f"⚠️ No se procesaron registros.")
+                messagebox.showwarning("Advertencia", "No se encontraron casos IHQ válidos en los PDFs seleccionados.")
+                self.set_status("Sin datos procesados")
+            else:
+                # El mensaje final se mostrará después de la auditoría
+                self.log_to_widget(f"\n✅ Procesamiento completado: {num_records} registros")
+                self.set_status("Procesamiento completado - Auditando con IA...")
+
         except Exception as e:
-            self.log_to_widget(f"ERROR: {e}")
+            import traceback
+            error_msg = f"ERROR: {e}\n{traceback.format_exc()}"
+            self.log_to_widget(error_msg)
             messagebox.showerror("Error", f"Ocurrió un error durante el procesamiento:\n{e}")
             self.set_status("Error en el procesamiento.")
         finally:
@@ -2555,57 +3339,223 @@ Dependencias:
             self.select_files_button.configure(state="normal")
 
     def refresh_data_and_table(self):
+        """Actualizar datos y tabla desde la base de datos"""
         try:
-            from database_manager import init_db, get_all_records_as_dataframe
+            print("🔄 Iniciando refresh de datos...")
+
+            from core.database_manager import init_db, get_all_records_as_dataframe
+
+            # Inicializar BD
             init_db()
+
+            # Cargar datos
             self.master_df = get_all_records_as_dataframe()
-            self._populate_treeview(self.master_df)
-            self._render_kpis(self.master_df)
+
+            if self.master_df is not None and not self.master_df.empty:
+                print(f"📊 Datos cargados: {len(self.master_df)} registros")
+
+                # Actualizar tabla solo si existe
+                if hasattr(self, 'tree') and self.tree is not None:
+                    self._populate_treeview(self.master_df)
+                    print("🗂️ Tabla actualizada")
+
+                # Actualizar KPIs si existe el método
+                try:
+                    self._render_kpis(self.master_df)
+                    print("📈 KPIs actualizados")
+                except:
+                    pass
+
+                # Actualizar estado con información inteligente
+                footer_info = self._crear_footer_inteligente()
+                self.set_status(footer_info)
+                print("✅ Refresh completado exitosamente")
+
+            else:
+                print("⚠️ No hay datos en la base de datos")
+                self.set_status("⚠️ No hay datos en la base de datos")
+
         except Exception as e:
-            messagebox.showerror("Error de Base de Datos", f"No se pudieron cargar los datos: {e}")
-            self.set_status("Error al cargar datos.")
+            error_msg = f"No se pudieron cargar los datos: {e}"
+            print(f"❌ Error en refresh: {error_msg}")
+
+            # Solo mostrar error si no es un problema de UI
+            try:
+                if hasattr(self, 'tree'):  # Solo mostrar error si la UI está inicializada
+                    messagebox.showerror("Error de Base de Datos", error_msg)
+                self.set_status("❌ Error al cargar datos")
+            except:
+                print("❌ Error mostrando mensaje de error")
 
     def _populate_treeview(self, df_to_display):
         # Verificar que el tree exista antes de usar
         if self.tree is None:
             return
-            
-        for item in self.tree.get_children():
-            self.tree.delete(item)
+        
+        # OPTIMIZACIÓN CRÍTICA: Deshabilitar redibujado durante la carga
+        self.tree.configure(selectmode="none")  # Deshabilitar selección temporalmente
+        
+        # Limpiar tree existente de forma más eficiente
+        children = self.tree.get_children()
+        if children:
+            self.tree.delete(*children)  # Más rápido que un bucle
 
         if df_to_display.empty:
+            self.tree.configure(selectmode="extended")  # Restaurar selección
             return
 
+        # Crear columna de Nombre Completo si no existe
+        if all(col in df_to_display.columns for col in ["Primer nombre", "Segundo nombre", "Primer apellido", "Segundo apellido"]):
+            df_to_display["Nombre Completo"] = (
+                df_to_display["Primer nombre"].fillna("") + " " +
+                df_to_display["Segundo nombre"].fillna("") + " " +
+                df_to_display["Primer apellido"].fillna("") + " " +
+                df_to_display["Segundo apellido"].fillna("")
+            ).str.strip().str.replace(r'\s+', ' ', regex=True)
+
+        # Columnas reorganizadas según nuevo requerimiento - TODOS los biomarcadores v5.0
         cols_to_show = [
             "N. peticion (0. Numero de biopsia)",
-            "Primer nombre",
-            "Primer apellido",
-            "Fecha finalizacion (3. Fecha del informe)",
-            "Malignidad",
+            "N. de identificación",
+            "Nombre Completo",
+            "EPS",
+            "Procedimiento (11. Tipo de estudio para el diagnóstico)",
             "Organo (1. Muestra enviada a patología)",
+            "Malignidad",
+            "Diagnostico Principal",
+            "Factor pronostico",
+            "Descripcion macroscopica",
+            "Descripcion microscopica (8,9, 10,12,. Invasión linfovascular y perineural, indice mitótico/Ki67, Inmunohistoquímica, tamaño tumoral)",
+            "Congelaciones /Otros estudios",
+            "Liquidos (5 Tipo histologico)",
+            "Citometria de flujo (5 Tipo histologico)",
+            # Biomarcadores principales
+            "IHQ_HER2",
+            "IHQ_KI-67",
+            "IHQ_RECEPTOR_ESTROGENO",
+            "IHQ_RECEPTOR_PROGESTERONOS",
+            "IHQ_PDL-1",
+            "IHQ_P16_ESTADO",
+            "IHQ_P16_PORCENTAJE",
+            "IHQ_P40_ESTADO",
+            # Biomarcadores adicionales v4.0/v4.1
+            "IHQ_CK7",
+            "IHQ_CK20",
+            "IHQ_CDX2",
+            "IHQ_EMA",
+            "IHQ_GATA3",
+            "IHQ_SOX10",
+            "IHQ_P53",
+            "IHQ_TTF1",
+            "IHQ_S100",
+            "IHQ_VIMENTINA",
+            "IHQ_CHROMOGRANINA",
+            "IHQ_SYNAPTOPHYSIN",
+            "IHQ_MELAN_A",
+            # Marcadores CD
+            "IHQ_CD3",
+            "IHQ_CD5",
+            "IHQ_CD10",
+            "IHQ_CD20",
+            "IHQ_CD30",
+            "IHQ_CD34",
+            "IHQ_CD38",
+            "IHQ_CD45",
+            "IHQ_CD56",
+            "IHQ_CD61",
+            "IHQ_CD68",
+            "IHQ_CD117",
+            "IHQ_CD138",
+            # NUEVOS BIOMARCADORES v5.0 - CRÍTICOS PARA CASOS COMPLEJOS
+            "IHQ_ACTH",
+            "IHQ_GH",
+            "IHQ_PROLACTINA",
+            "IHQ_TSH",
+            "IHQ_LH",
+            "IHQ_FSH",
+            "IHQ_CKAE1AE3",
+            "IHQ_NAPSIN",
+            "IHQ_CDK4",
+            "IHQ_MDM2",
+            "IHQ_BCL2",
+            "IHQ_BCL6",
+            "IHQ_MUM1",
+            "IHQ_PAX5",
+            "IHQ_CD79A",
+            "IHQ_CD15",
+            "IHQ_ALK",
+            "IHQ_DESMIN",
+            "IHQ_ACTIN",
+            "IHQ_MYOGENIN",
+            "IHQ_MYOD1",
+            "IHQ_SMA",
+            "IHQ_MSA",
+            "IHQ_CALRETININ",
+            # Campos de metadata
+            "IHQ_ESTUDIOS_SOLICITADOS",
+            "IHQ_ORGANO",
+            "Fecha Ingreso Base de Datos",
         ]
-        df_display = df_to_display[[c for c in cols_to_show if c in df_to_display.columns]].copy()
+
+        # Filtrar solo las columnas que existen en el DataFrame
+        available_cols = [c for c in cols_to_show if c in df_to_display.columns]
+        df_display = df_to_display[available_cols].copy()
 
         self.tree["columns"] = list(df_display.columns)
         for col in df_display.columns:
             header = col.split("(")[0].strip()
             # Ordenamiento al clic
             self.tree.heading(col, text=header, command=lambda c=col: self._sort_treeview(c, False))
-            # Auto-ancho (acorde a datos y encabezado, con límites)
-            try:
-                max_len = max(df_display[col].astype(str).str.len().max(), len(header))
-            except Exception:
-                max_len = len(header)
-            width = max(120, min(280, int(max_len * 7)))
-            self.tree.column(col, width=width, anchor="w", stretch=True)
 
-        # Filas cebra
-        self.tree.tag_configure("oddrow", background="#2a2d2e")
-        self.tree.tag_configure("evenrow", background="#232629")
+            # Anchos específicos para mejor visualización
+            if "N. peticion" in col:
+                width = 120
+            elif "Nombre Completo" in col:
+                width = 250
+            elif "N. de identificación" in col:
+                width = 120
+            elif "Fecha" in col:
+                width = 120
+            elif "Procedimiento" in col:
+                width = 200
+            elif "Organo" in col:
+                width = 200
+            elif "Malignidad" in col:
+                width = 100
+            elif "Diagnostico Principal" in col:
+                width = 300
+            elif "Factor pronostico" in col:
+                width = 200
+            elif "Descripcion" in col:
+                width = 350
+            elif col.startswith("IHQ_"):
+                width = 150
+            elif "Fecha Ingreso" in col:
+                width = 180
+            else:
+                # Ancho automático para otras columnas
+                try:
+                    max_len = max(df_display[col].astype(str).str.len().max(), len(header))
+                except Exception:
+                    max_len = len(header)
+                width = max(100, min(250, int(max_len * 8)))
 
-        for idx, (_, row) in enumerate(df_display.iterrows()):
-            tag = "evenrow" if idx % 2 == 0 else "oddrow"
-            self.tree.insert("", "end", values=list(row), iid=idx, tags=(tag,))
+            # stretch=False para que el scroll horizontal funcione correctamente
+            self.tree.column(col, width=width, anchor="w", stretch=False, minwidth=width)
+
+        # OPTIMIZACIÓN ULTRA-CRÍTICA: Insertar filas en lotes SIN redibujado
+        # Convertir DataFrame a lista de tuplas (mucho más rápido)
+        rows_data = [tuple(row) for row in df_display.values]
+        
+        # Insertar en lotes grandes para mejor rendimiento
+        batch_size = 500  # Lotes grandes para minimizar llamadas
+        for i in range(0, len(rows_data), batch_size):
+            batch = rows_data[i:i+batch_size]
+            for idx, row_values in enumerate(batch, start=i):
+                self.tree.insert("", "end", values=row_values, iid=idx)
+        
+        # Restaurar selección múltiple
+        self.tree.configure(selectmode="extended")
 
         # Actualizar KPIs en base a lo mostrado
         try:
@@ -2670,25 +3620,233 @@ Dependencias:
         self._populate_treeview(df[mask])
 
     def mostrar_detalle_registro(self, event):
-        selected_item = self.tree.focus()
-        if not selected_item:
-            return
+        # Actualizar estado del botón de exportar selección
+        self._update_export_button_state()
 
-        item_index = int(selected_item)
-        if item_index not in self.master_df.index:
-            return
-        record = self.master_df.loc[item_index]
+        # El panel de detalles ahora es flotante y se maneja en el export_system
+        # Aquí solo manejamos la selección
 
-        self.detail_textbox.configure(state="normal")
-        self.detail_textbox.delete("1.0", "end")
+    def _export_full_database(self):
+        """Exportar toda la base de datos usando el sistema mejorado"""
+        try:
+            self.export_system.export_full_database()
+        except Exception as e:
+            messagebox.showerror("Error de Exportación", f"Error al exportar la base de datos:\n{str(e)}")
 
-        details_text = ""
-        for key, value in record.items():
-            if pd.notna(value) and str(value).strip():
-                details_text += f"{key.split('(')[0].strip()}:\n{value}\n{'-'*30}\n"
+    def _export_selected_data(self):
+        """Exportar datos seleccionados usando el sistema mejorado"""
+        try:
+            # Obtener elementos seleccionados del treeview
+            selected_items = self.tree.selection()
+            if not selected_items:
+                messagebox.showwarning("Sin Selección", "No hay elementos seleccionados para exportar")
+                return
 
-        self.detail_textbox.insert("1.0", details_text)
-        self.detail_textbox.configure(state="disabled")
+            # CORREGIDO: Obtener los datos usando el mismo método que usa la tabla
+            selected_rows_data = []
+            
+            # Opción 1: Intentar usar el DataFrame de la tabla actual
+            try:
+                if hasattr(self, 'current_df') and self.current_df is not None and not self.current_df.empty:
+                    for item in selected_items:
+                        # Obtener índice de la fila en el treeview
+                        tree_index = self.tree.index(item)
+                        if tree_index < len(self.current_df):
+                            selected_rows_data.append(self.current_df.iloc[tree_index])
+
+                elif hasattr(self, 'master_df') and self.master_df is not None and not self.master_df.empty:
+
+                    # CORREGIDO: Buscar la columna correcta de número de petición
+                    peticion_col = None
+                    for col in self.master_df.columns:
+                        if 'peticion' in col.lower() or 'biopsia' in col.lower():
+                            peticion_col = col
+                            break
+
+                    if not peticion_col:
+                        # Si no se encuentra, usar la primera columna visible del treeview
+                        peticion_col = self.master_df.columns[0]
+
+                    for item in selected_items:
+                        values = self.tree.item(item)['values']
+                        if values:
+                            # CORREGIDO: Buscar por número de petición usando la columna correcta
+                            numero_peticion = values[0]
+                            matching_row = self.master_df[self.master_df[peticion_col] == numero_peticion]
+                            if not matching_row.empty:
+                                selected_rows_data.append(matching_row.iloc[0])
+                else:
+                    # Opción de respaldo: cargar datos directamente desde la base
+                    from core.database_manager import get_all_records_as_dataframe
+                    df_all = get_all_records_as_dataframe()
+                    
+                    if df_all is not None and not df_all.empty:
+                        for item in selected_items:
+                            values = self.tree.item(item)['values']
+                            if values:
+                                numero_peticion = values[0]
+                                matching_row = df_all[df_all.iloc[:, 0] == numero_peticion]
+                                if not matching_row.empty:
+                                    selected_rows_data.append(matching_row.iloc[0])
+                                    
+            except Exception as e:
+                print(f"Error obteniendo datos seleccionados: {e}")
+                messagebox.showerror("Error", f"Error al obtener los datos seleccionados: {e}")
+                return
+
+            if not selected_rows_data:
+                print("ERROR: selected_rows_data está vacío")
+                messagebox.showwarning("Sin Datos", "No se pudieron obtener los datos de la selección")
+                return
+
+            # Crear DataFrame con solo los registros seleccionados
+            import pandas as pd
+            selected_df = pd.DataFrame(selected_rows_data)
+
+            # Exportar usando el sistema mejorado
+            self.export_system.export_selected_data(selected_df)
+            
+        except Exception as e:
+            print(f"Error en _export_selected_data: {e}")
+            messagebox.showerror("Error de Exportación", f"Error al exportar la selección:\n{str(e)}")
+
+    def _toggle_details_panel(self):
+        """Mostrar/ocultar panel flotante de detalles"""
+        try:
+            self.export_system.toggle_floating_details_panel()
+        except Exception as e:
+            messagebox.showerror("Error", f"Error al mostrar panel de detalles:\n{str(e)}")
+
+    def _toggle_advanced_filters(self):
+        """Mostrar/ocultar panel de filtros avanzados"""
+        try:
+            self.export_system.toggle_advanced_filters_panel()
+        except Exception as e:
+            messagebox.showerror("Error", f"Error al mostrar filtros avanzados:\n{str(e)}")
+
+    def _update_export_button_state(self):
+        """Actualizar estado del botón de exportar selección según la selección"""
+        try:
+            if hasattr(self, 'export_selection_btn'):
+                selected_items = self.tree.selection()
+                if selected_items:
+                    self.export_selection_btn.configure(state="normal")
+                else:
+                    self.export_selection_btn.configure(state="disabled")
+        except Exception as e:
+            print(f"Error actualizando estado del botón: {e}")
+    
+    def _setup_cell_tooltips(self):
+        """Configurar tooltips emergentes al pasar el mouse sobre celdas del Treeview"""
+        # Crear tooltip widget (inicialmente oculto)
+        self.tooltip = None
+        self.tooltip_job = None
+        
+        def show_tooltip(event):
+            """Mostrar tooltip con el contenido completo de la celda"""
+            # Cancelar tooltip anterior si existe
+            if self.tooltip_job:
+                self.after_cancel(self.tooltip_job)
+                self.tooltip_job = None
+            
+            # Destruir tooltip anterior
+            if self.tooltip:
+                self.tooltip.destroy()
+                self.tooltip = None
+            
+            # Identificar celda bajo el cursor
+            region = self.tree.identify("region", event.x, event.y)
+            if region != "cell":
+                return
+            
+            column = self.tree.identify_column(event.x)
+            row = self.tree.identify_row(event.y)
+            
+            if not column or not row:
+                return
+            
+            # Obtener valor de la celda
+            col_index = int(column.replace('#', '')) - 1
+            values = self.tree.item(row)['values']
+            
+            if col_index >= len(values):
+                return
+            
+            cell_value = str(values[col_index])
+            
+            # Solo mostrar tooltip si el valor no está vacío y es suficientemente largo
+            if not cell_value or cell_value in ['', 'N/A', 'nan', 'None'] or len(cell_value) < 20:
+                return
+            
+            # Crear tooltip después de un pequeño delay
+            def create_tooltip():
+                self.tooltip = tk.Toplevel(self.tree)
+                self.tooltip.wm_overrideredirect(True)
+                self.tooltip.wm_geometry(f"+{event.x_root + 15}+{event.y_root + 10}")
+                
+                # Frame con borde
+                frame = ttk.Frame(self.tooltip, relief="solid", borderwidth=1, padding=5)
+                frame.pack()
+                
+                # Texto del tooltip (máximo 500 caracteres)
+                display_text = cell_value[:500] + "..." if len(cell_value) > 500 else cell_value
+                label = ttk.Label(
+                    frame,
+                    text=display_text,
+                    background="#ffffcc",
+                    foreground="#000000",
+                    font=("Segoe UI", 9),
+                    wraplength=400,
+                    justify=tk.LEFT
+                )
+                label.pack()
+            
+            self.tooltip_job = self.after(500, create_tooltip)  # 500ms delay
+        
+        def hide_tooltip(event):
+            """Ocultar tooltip"""
+            if self.tooltip_job:
+                self.after_cancel(self.tooltip_job)
+                self.tooltip_job = None
+            
+            if self.tooltip:
+                self.tooltip.destroy()
+                self.tooltip = None
+        
+        # Vincular eventos
+        self.tree.bind("<Motion>", show_tooltip)
+        self.tree.bind("<Leave>", hide_tooltip)
+        self.tree.bind("<Button-1>", hide_tooltip)  # Ocultar al hacer clic
+
+    def _delayed_refresh_after_processing(self):
+        """Refresh retardado después del procesamiento para asegurar actualización"""
+        try:
+            print("🔄 Ejecutando refresh automático después del procesamiento...")
+
+            # Forzar refresh de datos
+            self.refresh_data_and_table()
+
+            # Si estamos en otra vista, cambiar automáticamente al visualizador
+            if hasattr(self, 'current_view') and self.current_view != "visualizar":
+                print("📊 Cambiando automáticamente al Visualizador de Datos...")
+                self.show_visualizar_frame()
+
+            # Actualizar estado de los botones de exportación
+            self._update_export_button_state()
+
+            print("✅ Refresh automático completado")
+
+        except Exception as e:
+            print(f"❌ Error en refresh automático: {e}")
+            # Mostrar mensaje al usuario si falla
+            try:
+                messagebox.showwarning(
+                    "Actualización automática",
+                    f"Los datos se procesaron correctamente, pero no se pudo actualizar la vista automáticamente.\n\n"
+                    f"Por favor, ve al Visualizador y haz clic en 'Actualizar Datos'.\n\nError: {e}"
+                )
+            except:
+                pass
 
     def cargar_dashboard(self):
         # 1) Preparar DF y combos de filtros
@@ -2700,7 +3858,7 @@ Dependencias:
 
         # Normaliza fechas (varias columnas posibles)
         df["_fecha_informe"] = pd.to_datetime(
-            df.get("Fecha finalizacion (3. Fecha del informe)", df.get("Fecha de informe", df.get("Fecha de ingreso", ""))),
+            df.get("Fecha Informe", df.get("Fecha de informe", df.get("Fecha de ingreso", ""))),
             dayfirst=True, errors="coerce"
         )
 
@@ -2763,36 +3921,54 @@ Dependencias:
         style = ttk_std.Style()
         style.theme_use("clam")  # look & feel moderno y estable en Windows
 
-        # Cuerpo de la tabla
+        # Cuerpo de la tabla - Estilo profesional mejorado
         style.configure(
             "Custom.Treeview",
-            background="#1f2124",
-            fieldbackground="#1f2124",
-            foreground="#e9ecef",
-            rowheight=30,
-            borderwidth=0,
-        )
-        style.map(
-            "Custom.Treeview",
-            background=[("selected", "#2b6cb0")],
-            foreground=[("selected", "white")],
+            background="#ffffff",        # Fondo blanco para mejor legibilidad
+            fieldbackground="#ffffff",   # Fondo de campos blanco
+            foreground="#2c3e50",        # Texto azul oscuro para mayor contraste
+            rowheight=35,                # Filas más altas para mejor espaciado
+            borderwidth=1,               # Borde sutil
+            relief="solid",              # Borde sólido
+            font=("Segoe UI", 10),       # Fuente más legible
         )
 
-        # Encabezados
+        # Configurar colores alternados para filas
+        style.map(
+            "Custom.Treeview",
+            background=[
+                ("selected", "#0078d4"),     # Azul Microsoft para selección
+                ("!selected", "#ffffff")     # Blanco para filas no seleccionadas
+            ],
+            foreground=[
+                ("selected", "white"),       # Texto blanco en selección
+                ("!selected", "#2c3e50")     # Texto azul oscuro normal
+            ]
+        )
+
+        # Encabezados profesionales
         style.configure(
             "Custom.Treeview.Heading",
-            background="#262a2e",
-            foreground="#e9ecef",
-            font=("Segoe UI", 11, "bold"),
-            relief="flat",
+            background="#f8f9fa",           # Gris muy claro para encabezados
+            foreground="#495057",           # Gris oscuro para texto
+            font=("Segoe UI", 11, "bold"),  # Fuente en negrita
+            relief="ridge",                 # Relieve elevado
+            borderwidth=1,                  # Borde definido
         )
-        style.map("Custom.Treeview.Heading", background=[("active", "#2d3136")])
+
+        # Efectos hover en encabezados
+        style.map(
+            "Custom.Treeview.Heading",
+            background=[("active", "#e9ecef")],  # Gris claro en hover
+            foreground=[("active", "#212529")]   # Texto más oscuro en hover
+        )
+
         return style
     # ---------- Automatización Web (modal + ejecución) ----------
 
     def open_web_auto_modal(self):
         top = tk.Toplevel(self)
-        top.title("Automatizar Entrega de Resultados")
+        top.title("Interoperabilidad QHORTE - Sistema de Entrega")
         top.geometry("460x360")
         top.grab_set()
 
@@ -2935,7 +4111,7 @@ Dependencias:
         
         # Obtener información de la base de datos
         try:
-            from database_manager import get_all_records_as_dataframe
+            from core.database_manager import get_all_records_as_dataframe
             df = get_all_records_as_dataframe()
             
             if df.empty:
@@ -2972,83 +4148,323 @@ Informes con malignidad: {malignant_count}"""
         ttk.Button(frame, text="Cerrar", command=top.destroy, bootstyle="primary").pack()
 
     def _select_pdf_file(self):
-        """Seleccionar un archivo PDF individual"""
+        """Seleccionar un archivo PDF individual con flujo completo de análisis"""
         file_path = filedialog.askopenfilename(
             title="Seleccionar archivo PDF",
             filetypes=[("Archivos PDF", "*.pdf")],
             initialdir=os.path.join(os.getcwd(), "pdfs_patologia") if os.path.exists("pdfs_patologia") else os.getcwd()
         )
         if file_path:
+            # NUEVO: Limpiar lista de registros procesados y obtener peticiones existentes antes del procesamiento
+            self._ultimos_registros_procesados = []
+            peticiones_antes = set()
+            try:
+                import sqlite3
+                from core.database_manager import DB_FILE
+                conn = sqlite3.connect(DB_FILE)
+                cursor = conn.cursor()
+                cursor.execute('SELECT "N. peticion (0. Numero de biopsia)" FROM informes_ihq')
+                peticiones_antes = set(row[0] for row in cursor.fetchall() if row[0])
+                conn.close()
+            except Exception as e:
+                print(f"⚠️ Error obteniendo peticiones existentes: {e}")
+
             try:
                 records = self._process_file(file_path)
-                messagebox.showinfo("Procesamiento", f"✅ Archivo procesado exitosamente:\n{records} registros extraídos")
-                
-                # Actualizar la vista de datos y estadísticas
-                self.refresh_data_and_table()
-                self._refresh_database_stats()
-                self._refresh_files_list()
-                
+
+                # NUEVO: Obtener los números de petición de los registros recién procesados
+                try:
+                    import sqlite3
+                    from core.database_manager import DB_FILE
+                    conn = sqlite3.connect(DB_FILE)
+                    cursor = conn.cursor()
+                    cursor.execute('SELECT "N. peticion (0. Numero de biopsia)" FROM informes_ihq')
+                    peticiones_despues = set(row[0] for row in cursor.fetchall() if row[0])
+                    conn.close()
+
+                    # Calcular la diferencia: nuevos registros = después - antes
+                    nuevas_peticiones = list(peticiones_despues - peticiones_antes)
+                    self._ultimos_registros_procesados = nuevas_peticiones
+                    print(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
+                    if nuevas_peticiones:
+                        print(f"   IDs: {', '.join(nuevas_peticiones[:5])}" + (" ..." if len(nuevas_peticiones) > 5 else ""))
+                except Exception as e:
+                    print(f"⚠️ Error capturando nuevos registros: {e}")
+                    self._ultimos_registros_procesados = []
+
+                # NUEVO: Analizar completitud de registros
+                try:
+                    from core.validation_checker import analizar_batch_registros
+
+                    numeros_peticion_procesados = self._ultimos_registros_procesados
+                    print(f"🔍 Analizando completitud de {len(numeros_peticion_procesados)} registros...")
+                    analisis = analizar_batch_registros(numeros_peticion_procesados)
+
+                    print(f"✅ Análisis completado:")
+                    print(f"   • Completos: {analisis['resumen']['completos']}")
+                    print(f"   • Incompletos: {analisis['resumen']['incompletos']}")
+
+                    # Actualizar vista antes de mostrar ventana
+                    try:
+                        self.refresh_data_and_table()
+                        self.after(500, self._delayed_refresh_after_processing)
+
+                        if hasattr(self, 'enhanced_dashboard'):
+                            self.enhanced_dashboard.refresh_all_data()
+                    except Exception as e:
+                        print(f"⚠️ Error en refresh: {e}")
+
+                    # Actualizar lista de archivos
+                    self._refresh_files_list()
+
+                    # Mostrar ventana de resultados con análisis de completitud
+                    from core.ventana_resultados_importacion import mostrar_ventana_resultados
+
+                    mostrar_ventana_resultados(
+                        parent=self,
+                        completos=analisis['completos'],
+                        incompletos=analisis['incompletos'],
+                        resumen=analisis['resumen'],
+                        callback_auditar=self._mostrar_selector_tipo_auditoria,
+                        callback_continuar=self._nav_to_visualizar
+                    )
+
+                except Exception as e:
+                    # Fallback al flujo original si hay error en el análisis
+                    print(f"⚠️ Error en análisis de completitud: {e}")
+                    print(f"   Usando flujo de importación original")
+
+                    messagebox.showinfo("Procesamiento", f"✅ Archivo procesado exitosamente:\n{records} registros extraídos")
+
+                    # Actualizar la vista de datos y el dashboard
+                    self.refresh_data_and_table()
+
+                    # Actualizar el dashboard si existe
+                    if hasattr(self, 'enhanced_dashboard'):
+                        try:
+                            self.enhanced_dashboard.refresh_all_data()
+                        except Exception as e:
+                            print(f"Error actualizando dashboard: {e}")
+
+                    # Actualizar lista de archivos
+                    self._refresh_files_list()
+
+                    # Redirigir a visualizar datos
+                    self._nav_to_visualizar()
+
             except Exception as e:
                 messagebox.showerror("Error", f"❌ Error procesando el archivo:\n{str(e)}")
 
     def _select_pdf_folder(self):
-        """Seleccionar una carpeta con archivos PDF"""
+        """Seleccionar una carpeta con archivos PDF con flujo completo de análisis"""
         folder_path = filedialog.askdirectory(
             title="Seleccionar carpeta con PDFs",
             initialdir=os.path.join(os.getcwd(), "pdfs_patologia") if os.path.exists("pdfs_patologia") else os.getcwd()
         )
         if folder_path:
-            pdf_files = [f for f in os.listdir(folder_path) if f.lower().endswith('.pdf')]
+            # Usar helper para obtener PDFs (retorna rutas completas)
+            pdf_files = ocr_helpers.obtener_pdfs_en_carpeta(folder_path)
             if pdf_files:
-                for pdf_file in pdf_files:
-                    self._process_file(os.path.join(folder_path, pdf_file))
-                messagebox.showinfo("Procesamiento", f"Se procesaron {len(pdf_files)} archivos PDF.")
+                # NUEVO: Limpiar lista de registros procesados y obtener peticiones existentes antes del procesamiento
+                self._ultimos_registros_procesados = []
+                peticiones_antes = set()
+                try:
+                    import sqlite3
+                    from core.database_manager import DB_FILE
+                    conn = sqlite3.connect(DB_FILE)
+                    cursor = conn.cursor()
+                    cursor.execute('SELECT "N. peticion (0. Numero de biopsia)" FROM informes_ihq')
+                    peticiones_antes = set(row[0] for row in cursor.fetchall() if row[0])
+                    conn.close()
+                except Exception as e:
+                    print(f"⚠️ Error obteniendo peticiones existentes: {e}")
+
+                processed_count = 0
+                total_records = 0
+                errors = []
+
+                for pdf_path in pdf_files:
+                    try:
+                        records = self._process_file(pdf_path)
+                        processed_count += 1
+                        total_records += records
+                    except Exception as e:
+                        pdf_name = os.path.basename(pdf_path)
+                        errors.append(f"{pdf_name}: {str(e)}")
+
+                # NUEVO: Obtener los números de petición de los registros recién procesados
+                if processed_count > 0:
+                    try:
+                        import sqlite3
+                        from core.database_manager import DB_FILE
+                        conn = sqlite3.connect(DB_FILE)
+                        cursor = conn.cursor()
+                        cursor.execute('SELECT "N. peticion (0. Numero de biopsia)" FROM informes_ihq')
+                        peticiones_despues = set(row[0] for row in cursor.fetchall() if row[0])
+                        conn.close()
+
+                        # Calcular la diferencia: nuevos registros = después - antes
+                        nuevas_peticiones = list(peticiones_despues - peticiones_antes)
+                        self._ultimos_registros_procesados = nuevas_peticiones
+                        print(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
+                        if nuevas_peticiones:
+                            print(f"   IDs: {', '.join(nuevas_peticiones[:5])}" + (" ..." if len(nuevas_peticiones) > 5 else ""))
+                    except Exception as e:
+                        print(f"⚠️ Error capturando nuevos registros: {e}")
+                        self._ultimos_registros_procesados = []
+
+                    # NUEVO: Analizar completitud de registros
+                    try:
+                        from core.validation_checker import analizar_batch_registros
+
+                        numeros_peticion_procesados = self._ultimos_registros_procesados
+                        print(f"🔍 Analizando completitud de {len(numeros_peticion_procesados)} registros...")
+                        analisis = analizar_batch_registros(numeros_peticion_procesados)
+
+                        print(f"✅ Análisis completado:")
+                        print(f"   • Completos: {analisis['resumen']['completos']}")
+                        print(f"   • Incompletos: {analisis['resumen']['incompletos']}")
+
+                        # Actualizar vista antes de mostrar ventana
+                        try:
+                            self.refresh_data_and_table()
+                            self.after(500, self._delayed_refresh_after_processing)
+
+                            if hasattr(self, 'enhanced_dashboard'):
+                                self.enhanced_dashboard.refresh_all_data()
+                        except Exception as e:
+                            print(f"⚠️ Error en refresh: {e}")
+
+                        # Actualizar lista de archivos
+                        self._refresh_files_list()
+
+                        # Mostrar ventana de resultados con análisis de completitud
+                        from core.ventana_resultados_importacion import mostrar_ventana_resultados
+
+                        mostrar_ventana_resultados(
+                            parent=self,
+                            completos=analisis['completos'],
+                            incompletos=analisis['incompletos'],
+                            resumen=analisis['resumen'],
+                            callback_auditar=self._mostrar_selector_tipo_auditoria,
+                            callback_continuar=self._nav_to_visualizar
+                        )
+
+                    except Exception as e:
+                        # Fallback al flujo original si hay error en el análisis
+                        print(f"⚠️ Error en análisis de completitud: {e}")
+                        print(f"   Usando flujo de importación original")
+
+                        # Mostrar resultado tradicional
+                        msg = f"✅ Procesados {processed_count} de {len(pdf_files)} archivos\n"
+                        msg += f"Total de registros: {total_records}"
+                        if errors:
+                            msg += f"\n\n❌ Errores en {len(errors)} archivos:\n" + "\n".join(errors[:3])
+                            if len(errors) > 3:
+                                msg += f"\n... y {len(errors) - 3} más"
+
+                        messagebox.showinfo("Procesamiento completado", msg)
+
+                        # Actualizar vistas
+                        self.refresh_data_and_table()
+                        if hasattr(self, 'enhanced_dashboard'):
+                            try:
+                                self.enhanced_dashboard.refresh_all_data()
+                            except Exception as e:
+                                print(f"Error actualizando dashboard: {e}")
+                        self._refresh_files_list()
+                else:
+                    # No se procesó ningún archivo
+                    error_msg = "❌ No se pudo procesar ningún archivo.\n\nErrores encontrados:\n"
+                    error_msg += "\n".join(errors[:5])  # Mostrar los primeros 5 errores
+                    messagebox.showerror("Error de procesamiento", error_msg)
             else:
                 messagebox.showwarning("Sin archivos", "No se encontraron archivos PDF en la carpeta seleccionada.")
 
     def _refresh_files_list(self):
         """Actualizar la lista de archivos en la carpeta pdfs_patologia"""
+        # Verificar que existe el listbox
+        if not hasattr(self, 'files_listbox') or self.files_listbox is None:
+            print("Advertencia: files_listbox no está disponible")
+            return
+
         pdfs_path = os.path.join(os.getcwd(), "pdfs_patologia")
-        
+
         # Crear la carpeta si no existe
         if not os.path.exists(pdfs_path):
             os.makedirs(pdfs_path)
-        
+
         # Limpiar la lista actual
         self.files_listbox.delete(0, tk.END)
-        
-        # Obtener archivos PDF
+
+        # Obtener archivos PDF usando helper
         try:
-            pdf_files = [f for f in os.listdir(pdfs_path) if f.lower().endswith('.pdf')]
+            pdf_paths = ocr_helpers.obtener_pdfs_en_carpeta(pdfs_path)
+            pdf_files = [os.path.basename(p) for p in pdf_paths]
             pdf_files.sort()
-            
+
             for pdf_file in pdf_files:
                 self.files_listbox.insert(tk.END, pdf_file)
-                
+
             if not pdf_files:
                 self.files_listbox.insert(tk.END, "(No hay archivos PDF)")
-                
+
         except Exception as e:
             self.files_listbox.insert(tk.END, f"Error: {str(e)}")
 
     def _process_selected_files(self):
         """Procesar los archivos seleccionados de la lista"""
+        # Verificar que existe el listbox
+        if not hasattr(self, 'files_listbox') or self.files_listbox is None:
+            messagebox.showerror("Error", "El visor de archivos no está disponible.")
+            return
+
         selected_indices = self.files_listbox.curselection()
         if not selected_indices:
             messagebox.showwarning("Sin selección", "Por favor seleccione uno o más archivos para procesar.")
             return
-        
+
         pdfs_path = os.path.join(os.getcwd(), "pdfs_patologia")
         processed_count = 0
         total_records = 0
         errors = []
-        
+
+        # NUEVO: Limpiar lista de registros procesados y obtener peticiones existentes antes del procesamiento
+        self._ultimos_registros_procesados = []
+        peticiones_antes = set()
+        try:
+            import sqlite3
+            from core.database_manager import DB_FILE
+            conn = sqlite3.connect(DB_FILE)
+            cursor = conn.cursor()
+            cursor.execute('SELECT "N. peticion (0. Numero de biopsia)" FROM informes_ihq')
+            peticiones_antes = set(row[0] for row in cursor.fetchall() if row[0])
+            conn.close()
+        except Exception as e:
+            print(f"⚠️ Error obteniendo peticiones existentes: {e}")
+
         # Procesar cada archivo seleccionado
         for index in selected_indices:
             filename = self.files_listbox.get(index)
             if filename != "(No hay archivos PDF)" and not filename.startswith("Error:"):
                 file_path = os.path.join(pdfs_path, filename)
                 if os.path.exists(file_path):
+                    # NUEVA FUNCIONALIDAD: Verificar si ya está importado
+                    duplicado_info = self._verificar_archivo_duplicado(file_path, filename)
+                    if duplicado_info["es_duplicado"]:
+                        # Archivo ya importado - redirigir al visualizador
+                        respuesta = messagebox.askyesno(
+                            "Archivo ya importado",
+                            f"El archivo '{filename}' ya ha sido importado.\n\n"
+                            f"Número de petición: {duplicado_info['numero_peticion']}\n"
+                            f"Fecha del informe (PDF): {duplicado_info['fecha_informe']}\n"
+                            f"Fecha de importación al sistema: {duplicado_info['fecha_importacion']}\n\n"
+                            f"¿Desea ir al visualizador para ver el registro existente?"
+                        )
+                        if respuesta:
+                            self._redirigir_a_visualizador_con_filtro(duplicado_info['numero_peticion'])
+                        continue
+                    
                     try:
                         records = self._process_file(file_path)
                         processed_count += 1
@@ -3057,27 +4473,88 @@ Informes con malignidad: {malignant_count}"""
                         error_msg = f"{filename}: {str(e)}"
                         errors.append(error_msg)
                         print(f"❌ Error procesando {filename}: {e}")
-        
+
         # Mostrar resultado final
         if processed_count > 0:
-            success_msg = f"✅ Procesamiento completado:\n"
-            success_msg += f"• {processed_count} archivos procesados\n"
-            success_msg += f"• {total_records} registros extraídos y guardados en BD"
-            
-            if errors:
-                success_msg += f"\n\n⚠️ Errores en {len(errors)} archivos:\n"
-                success_msg += "\n".join(errors[:3])  # Mostrar solo los primeros 3 errores
-                if len(errors) > 3:
-                    success_msg += f"\n... y {len(errors) - 3} errores más."
-            
-            messagebox.showinfo("Procesamiento completado", success_msg)
-            
-            # Actualizar la vista de datos y estadísticas
+            # NUEVO: Obtener los números de petición de los registros recién procesados
             try:
-                self.refresh_data_and_table()
-                self._refresh_database_stats()  # Actualizar estadísticas de la BD
+                import sqlite3
+                from core.database_manager import DB_FILE
+                conn = sqlite3.connect(DB_FILE)
+                cursor = conn.cursor()
+                cursor.execute('SELECT "N. peticion (0. Numero de biopsia)" FROM informes_ihq')
+                peticiones_despues = set(row[0] for row in cursor.fetchall() if row[0])
+                conn.close()
+
+                # Calcular la diferencia: nuevos registros = después - antes
+                nuevas_peticiones = list(peticiones_despues - peticiones_antes)
+                self._ultimos_registros_procesados = nuevas_peticiones
+                print(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
+                if nuevas_peticiones:
+                    print(f"   IDs: {', '.join(nuevas_peticiones[:5])}" + (" ..." if len(nuevas_peticiones) > 5 else ""))
             except Exception as e:
-                print(f"Error actualizando vista: {e}")
+                print(f"⚠️ Error capturando nuevos registros: {e}")
+                self._ultimos_registros_procesados = []
+
+            # Capturar números de petición de registros procesados
+            numeros_peticion_procesados = self._ultimos_registros_procesados
+
+            # NUEVO: Analizar completitud de registros
+            try:
+                from core.validation_checker import analizar_batch_registros
+
+                print(f"🔍 Analizando completitud de {len(numeros_peticion_procesados)} registros...")
+                analisis = analizar_batch_registros(numeros_peticion_procesados)
+
+                print(f"✅ Análisis completado:")
+                print(f"   • Completos: {analisis['resumen']['completos']}")
+                print(f"   • Incompletos: {analisis['resumen']['incompletos']}")
+
+                # Actualizar vista antes de mostrar ventana
+                try:
+                    self.refresh_data_and_table()
+                    self.after(500, self._delayed_refresh_after_processing)
+
+                    if hasattr(self, 'enhanced_dashboard'):
+                        self.enhanced_dashboard.refresh_all_data()
+                except Exception as e:
+                    print(f"⚠️ Error en refresh: {e}")
+
+                # Mostrar ventana de resultados (permanece en pestaña Importación)
+                from core.ventana_resultados_importacion import mostrar_ventana_resultados
+
+                mostrar_ventana_resultados(
+                    parent=self,
+                    completos=analisis['completos'],
+                    incompletos=analisis['incompletos'],
+                    resumen=analisis['resumen'],
+                    callback_auditar=self._mostrar_selector_tipo_auditoria,
+                    callback_continuar=self._nav_to_visualizar
+                )
+
+            except Exception as e:
+                # Fallback al flujo original si hay error
+                print(f"⚠️ Error en análisis de completitud: {e}")
+                print(f"   Usando flujo de importación original")
+
+                success_msg = f"✅ Procesamiento completado:\n"
+                success_msg += f"• {processed_count} archivos procesados\n"
+                success_msg += f"• {total_records} registros extraídos y guardados en BD"
+
+                if errors:
+                    success_msg += f"\n\n⚠️ Errores en {len(errors)} archivos:\n"
+                    success_msg += "\n".join(errors[:3])
+                    if len(errors) > 3:
+                        success_msg += f"\n... y {len(errors) - 3} errores más."
+
+                messagebox.showinfo("Procesamiento completado", success_msg)
+
+                # Flujo original
+                self.refresh_data_and_table()
+                self.after(1000, self._delayed_refresh_after_processing)
+                if hasattr(self, 'enhanced_dashboard'):
+                    self.enhanced_dashboard.refresh_all_data()
+                self._nav_to_visualizar()
                 
         else:
             error_msg = "❌ No se pudo procesar ningún archivo.\n\nErrores encontrados:\n"
@@ -3116,7 +4593,7 @@ Informes con malignidad: {malignant_count}"""
         
         # Criterio 2: Revisar contenido del archivo (muestra)
         try:
-            from ocr_processing import pdf_to_text_enhanced
+            from core.processors.ocr_processor import pdf_to_text_enhanced
             # Solo leer una página para determinar el tipo
             import fitz
             doc = fitz.open(file_path)
@@ -3132,28 +4609,24 @@ Informes con malignidad: {malignant_count}"""
         return False
 
     def _process_ihq_file(self, file_path):
-        """Procesar archivo IHQ usando el procesador especializado"""
-        try:
-            from procesador_ihq_biomarcadores import process_ihq_paths
-            
-            # Crear directorio de salida temporal si no existe
-            output_dir = os.path.join(os.getcwd(), "EXCEL")
-            os.makedirs(output_dir, exist_ok=True)
-            
-            # Procesar el archivo IHQ
-            records_count = process_ihq_paths([file_path], output_dir)
-            return records_count
-            
-        except Exception as e:
-            raise Exception(f"Error en procesamiento IHQ: {str(e)}")
+        """Procesar archivo IHQ - LÓGICA MOVIDA A core/ihq_processor.py"""
+        from core.ihq_processor import process_ihq_file
+
+        # Crear función de log que use el widget de UI
+        def log_callback(msg):
+            if hasattr(self, 'log_to_widget'):
+                self.log_to_widget(msg)
+
+        # Delegar procesamiento a módulo core
+        return process_ihq_file(file_path, log_callback)
 
     def _process_general_file(self, file_path):
         """Procesar archivo general usando el procesador estándar"""
         try:
             # Importar los módulos necesarios
-            from ocr_processing import pdf_to_text_enhanced
-            import procesador_ihq as ihq
-            import database_manager
+            from core.processors.ocr_processor import pdf_to_text_enhanced
+            from core import unified_extractor as ihq
+            from core import database_manager
             
             # Extraer texto del PDF
             full_text = pdf_to_text_enhanced(file_path)
@@ -3183,14 +4656,79 @@ Informes con malignidad: {malignant_count}"""
                 raise RuntimeError("No se pudo extraer información del PDF.")
             
             # Guardar en base de datos
-            from database_manager import init_db, save_records
+            from core.database_manager import init_db, save_records, update_incomplete_records_with_debug_data
             init_db()
-            save_records(records)
+            saved_count = save_records(records)
             
-            return len(records)
+            # REACTIVADO: Actualización automática mejorada para completar datos faltantes
+            try:
+                print("🔄 Ejecutando actualización automática de registros incompletos...")
+                
+                # CORREGIDO: Usar el texto OCR del archivo recién procesado para completar datos
+                # Crear archivo DEBUG temporal para este archivo específico
+                debug_file_path = self._create_debug_file_for_current_pdf(file_path, full_text)
+                
+                # Actualizar usando el DEBUG específico de este archivo
+                updated_count = update_incomplete_records_with_debug_data(debug_file_path)
+                if updated_count > 0:
+                    print(f"✅ Se actualizaron {updated_count} registros con datos completos del archivo actual")
+                    messagebox.showinfo("Actualización automática", 
+                                      f"✅ Se actualizaron {updated_count} registros adicionales con datos completos.")
+                                      
+                # NUEVO: Ahora aplicar mapeo específico de órganos usando parse_estudios_table_for_organo
+                print("🔄 Aplicando mapeo avanzado de órganos...")
+                organ_updated_count = self._update_organs_with_advanced_parsing(full_text, records)
+                if organ_updated_count > 0:
+                    print(f"✅ Se mapearon {organ_updated_count} órganos adicionales")
+                    
+            except Exception as e:
+                # No fallar el proceso principal si la actualización automática falla
+                print(f"⚠️ Advertencia en actualización automática: {str(e)}")
+                messagebox.showwarning("Actualización automática", 
+                                     f"Advertencia: No se pudo completar la actualización automática: {str(e)}")
+            
+            return saved_count
             
         except Exception as e:
             raise Exception(f"Error en procesamiento general: {str(e)}")
+
+    def _create_debug_file_for_current_pdf(self, file_path, full_text):
+        """Crear archivo DEBUG temporal para el PDF actual"""
+        try:
+            # Crear nombre de archivo DEBUG basado en el PDF actual
+            pdf_name = os.path.basename(file_path)
+            debug_filename = f"DEBUG_OCR_OUTPUT_{pdf_name}.txt"
+            debug_path = os.path.join("EXCEL", debug_filename)
+            
+            # Asegurar que el directorio existe
+            os.makedirs("EXCEL", exist_ok=True)
+            
+            # Guardar el texto OCR en formato DEBUG
+            with open(debug_path, 'w', encoding='utf-8') as f:
+                f.write(f"=== DEBUG OCR OUTPUT PARA {pdf_name} ===\n")
+                f.write(f"Generado automáticamente el {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
+                f.write(full_text)
+            
+            print(f"📄 Archivo DEBUG creado: {debug_path}")
+            return debug_path
+            
+        except Exception as e:
+            print(f"⚠️ Error creando archivo DEBUG: {e}")
+            # Fallback al archivo DEBUG global si falla
+            return None
+
+    def _find_available_debug_files(self):
+        """Buscar todos los archivos DEBUG disponibles en el directorio EXCEL"""
+        debug_files = []
+        excel_dir = "EXCEL"
+        
+        if os.path.exists(excel_dir):
+            for filename in os.listdir(excel_dir):
+                if filename.startswith("DEBUG_OCR_OUTPUT_") and filename.endswith(".txt"):
+                    debug_path = os.path.join(excel_dir, filename)
+                    debug_files.append(debug_path)
+                    
+        return debug_files
 
     def _segment_general_reports(self, text):
         """Segmentar texto en informes individuales para archivos generales"""
@@ -3224,11 +4762,14 @@ Informes con malignidad: {malignant_count}"""
         
         return segments
 
-    def _export_selected_data(self):
-        """Exportar todos los datos completos de la base de datos a Excel con presentación profesional"""
+    def _export_full_database_professional(self):
+        """Exportar toda la base de datos a Excel con presentación profesional y diálogo de ubicación"""
         try:
+            import pandas as pd
+            from datetime import datetime
+            
             # Obtener todos los datos de la base de datos
-            from database_manager import get_all_records_as_dataframe
+            from core.database_manager import get_all_records_as_dataframe
             df_complete = get_all_records_as_dataframe()
             
             if df_complete.empty:
@@ -3243,154 +4784,263 @@ Informes con malignidad: {malignant_count}"""
             )
             
             if file_path:
-                # Crear el archivo Excel con múltiples hojas
-                with pd.ExcelWriter(file_path, engine='openpyxl') as writer:
-                    
-                    # ========== HOJA 1: PRESENTACIÓN ==========
-                    # Crear DataFrame para la presentación
-                    presentation_data = [
-                        ["EVARISIS Gestor HUV - Oncología", ""],
-                        ["Exportación de Base de Datos", ""],
-                        ["", ""],
-                        ["Información del Reporte", ""],
-                        ["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", ""],
-                        ["Fecha y Hora de Exportación:", datetime.now().strftime("%d/%m/%Y %H:%M:%S")],
-                        ["Usuario:", self.info_usuario.get("nombre", "Sistema")],
-                        ["Cargo:", self.info_usuario.get("cargo", "N/A")],
-                        ["", ""],
-                        ["Estadísticas de la Base de Datos", ""],
-                        ["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", ""],
-                        ["Total de Registros:", len(df_complete)],
-                        ["Número de Campos:", len(df_complete.columns)],
-                        ["", ""],
-                    ]
-                    
-                    # Calcular estadísticas adicionales
-                    fecha_cols = [col for col in df_complete.columns if 'fecha' in col.lower()]
-                    if fecha_cols:
-                        try:
-                            for col in fecha_cols:
-                                fechas = pd.to_datetime(df_complete[col], errors='coerce')
-                                fechas_validas = fechas.dropna()
-                                if not fechas_validas.empty:
-                                    fecha_min = fechas_validas.min().strftime("%d/%m/%Y")
-                                    fecha_max = fechas_validas.max().strftime("%d/%m/%Y")
-                                    presentation_data.extend([
-                                        [f"Rango de Fechas ({col}):", f"{fecha_min} - {fecha_max}"],
-                                    ])
-                                    break
-                        except:
-                            pass
-                    
-                    # Servicios únicos
-                    servicio_cols = [col for col in df_complete.columns if 'servicio' in col.lower()]
-                    if servicio_cols:
-                        unique_services = df_complete[servicio_cols[0]].nunique()
-                        presentation_data.append(["Servicios Únicos:", unique_services])
-                    
-                    # Casos malignos
-                    malignidad_cols = [col for col in df_complete.columns if 'malign' in col.lower()]
-                    if malignidad_cols:
-                        malignant_count = (df_complete[malignidad_cols[0]].str.contains('PRESENTE', case=False, na=False)).sum()
-                        presentation_data.append(["Casos con Malignidad:", malignant_count])
-                    
-                    presentation_data.extend([
-                        ["", ""],
-                        ["Descripción", ""],
-                        ["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", ""],
-                        ["Este archivo contiene la exportación completa", ""],
-                        ["de la base de datos del sistema EVARISIS", ""],
-                        ["Gestor HUV - Oncología.", ""],
-                        ["", ""],
-                        ["La información incluye todos los campos", ""],
-                        ["almacenados para cada informe médico:", ""],
-                        ["- Datos del paciente", ""],
-                        ["- Información clínica", ""],
-                        ["- Resultados de laboratorio", ""],
-                        ["- Análisis histopatológicos", ""],
-                        ["- Biomarcadores (IHQ)", ""],
-                        ["- Fechas y responsables", ""],
-                        ["", ""],
-                        ["Hospital Universitario del Valle", ""],
-                        ["Sistema EVARISIS © 2025", ""],
-                    ])
-                    
-                    df_presentation = pd.DataFrame(presentation_data, columns=["Campo", "Valor"])
-                    df_presentation.to_excel(writer, sheet_name='Presentación', index=False)
-                    
-                    # ========== HOJA 2: DATOS COMPLETOS ==========
-                    df_complete.to_excel(writer, sheet_name='Datos_Completos', index=False)
-                    
-                    # ========== FORMATO ==========
-                    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-                    
-                    # Formatear hoja de presentación
-                    ws_pres = writer.sheets['Presentación']
-                    
-                    # Título principal
-                    ws_pres['A1'].font = Font(size=18, bold=True, color="FFFFFF")
-                    ws_pres['A1'].fill = PatternFill(start_color="1B4F72", end_color="1B4F72", fill_type="solid")
-                    ws_pres['A1'].alignment = Alignment(horizontal="center", vertical="center")
-                    ws_pres.merge_cells('A1:B1')
-                    
-                    # Subtítulo
-                    ws_pres['A2'].font = Font(size=14, bold=True, color="FFFFFF")
-                    ws_pres['A2'].fill = PatternFill(start_color="2E86AB", end_color="2E86AB", fill_type="solid")
-                    ws_pres['A2'].alignment = Alignment(horizontal="center", vertical="center")
-                    ws_pres.merge_cells('A2:B2')
-                    
-                    # Secciones
-                    section_font = Font(size=12, bold=True, color="1B4F72")
-                    for row in range(1, len(presentation_data) + 2):
-                        cell_value = ws_pres[f'A{row}'].value
-                        if cell_value and ("Información" in str(cell_value) or "Estadísticas" in str(cell_value) or "Descripción" in str(cell_value)):
-                            ws_pres[f'A{row}'].font = section_font
-                            ws_pres.merge_cells(f'A{row}:B{row}')
-                    
-                    # Ajustar ancho de columnas
-                    ws_pres.column_dimensions['A'].width = 40
-                    ws_pres.column_dimensions['B'].width = 30
-                    
-                    # Formatear hoja de datos
-                    ws_data = writer.sheets['Datos_Completos']
-                    
-                    # Headers
-                    header_font = Font(bold=True, color="FFFFFF")
-                    header_fill = PatternFill(start_color="2E86AB", end_color="2E86AB", fill_type="solid")
-                    header_alignment = Alignment(horizontal="center", vertical="center")
-                    
-                    for cell in ws_data[1]:
-                        cell.font = header_font
-                        cell.fill = header_fill
-                        cell.alignment = header_alignment
-                    
-                    # Ajustar ancho de columnas automáticamente
-                    for column in ws_data.columns:
-                        max_length = 0
-                        column_letter = column[0].column_letter
-                        for cell in column:
-                            try:
-                                if len(str(cell.value)) > max_length:
-                                    max_length = len(str(cell.value))
-                            except:
-                                pass
-                        adjusted_width = min(max_length + 2, 50)  # Máximo 50 caracteres
-                        ws_data.column_dimensions[column_letter].width = adjusted_width
+                self._create_professional_excel_export(df_complete, file_path, "completa")
                 
-                messagebox.showinfo(
-                    "Exportación Exitosa", 
-                    f"✅ Base de datos exportada exitosamente!\n\n"
-                    f"📊 {len(df_complete)} registros exportados\n"
-                    f"📋 {len(df_complete.columns)} campos por registro\n"
-                    f"📁 Archivo: {os.path.basename(file_path)}\n\n"
-                    f"El archivo incluye:\n"
-                    f"• Hoja de presentación con estadísticas\n"
-                    f"• Datos completos de todos los registros"
-                )
+                # Redirigir a pestaña de exportaciones
+                if hasattr(self, 'notebook'):
+                    self.notebook.select(5)  # Pestaña de Exportaciones
                 
         except Exception as e:
             messagebox.showerror("Error", f"❌ Error al exportar:\n{str(e)}")
             print(f"Error detallado: {e}")
+
+    def _export_full_database_direct(self):
+        """Exportar toda la base de datos directamente a la carpeta de Documentos sin diálogo"""
+        try:
+            import pandas as pd
+            from datetime import datetime
+            import os
+            
+            # Obtener todos los datos de la base de datos
+            from core.database_manager import get_all_records_as_dataframe
+            df_complete = get_all_records_as_dataframe()
+            
+            if df_complete.empty:
+                messagebox.showwarning("Advertencia", "No hay datos en la base de datos para exportar.")
+                return
+            
+            # Generar nombre automático usando helper
+            filename = export_helpers.generar_nombre_archivo_export(
+                prefijo="BD_Completa_HUV",
+                tipo="xlsx",
+                incluir_timestamp=True
+            )
+            
+            # Ruta automática a Documentos
+            export_base_path = os.path.join(os.path.expanduser("~"), "Documents", "EVARISIS CIRUGÍA ONCOLÓGICA", "Exportaciones Base de datos")
+            excel_dir = os.path.join(export_base_path, "Excel")
+            os.makedirs(excel_dir, exist_ok=True)
+            
+            file_path = os.path.join(excel_dir, filename)
+            
+            self._create_professional_excel_export(df_complete, file_path, "completa")
+            
+            # Redirigir a pestaña de exportaciones
+            if hasattr(self, 'notebook'):
+                self.notebook.select(5)  # Pestaña de Exportaciones
+                
+        except Exception as e:
+            messagebox.showerror("Error", f"❌ Error al exportar:\n{str(e)}")
+            print(f"Error detallado: {e}")
+
+    def _export_selected_data_professional(self):
+        """Exportar solo datos seleccionados a Excel con presentación profesional y diálogo de ubicación"""
+        try:
+            import pandas as pd
+            from datetime import datetime
+            
+            # Obtener elementos seleccionados del treeview
+            selected_items = self.tree.selection()
+            if not selected_items:
+                messagebox.showwarning("Sin Selección", "No hay elementos seleccionados para exportar")
+                return
+
+            # CORREGIDO: Obtener los datos reales de las filas seleccionadas
+            selected_rows_data = []
+            for item in selected_items:
+                # Obtener los valores de la fila
+                values = self.tree.item(item)['values']
+                if values:
+                    # Buscar el registro correspondiente en master_df usando el número de petición
+                    numero_peticion = values[0]  # Asumiendo que la primera columna es número de petición
+                    matching_row = self.master_df[self.master_df.iloc[:, 0] == numero_peticion]
+                    if not matching_row.empty:
+                        selected_rows_data.append(matching_row.iloc[0])
+
+            if not selected_rows_data:
+                messagebox.showwarning("Sin Datos", "No se pudieron obtener los datos de la selección")
+                return
+
+            # Crear DataFrame con solo los registros seleccionados
+            selected_df = pd.DataFrame(selected_rows_data)
+            
+            # Diálogo para guardar archivo
+            file_path = filedialog.asksaveasfilename(
+                title=f"Exportar Selección ({len(selected_df)} registros) - EVARISIS",
+                defaultextension=".xlsx",
+                filetypes=[("Excel files", "*.xlsx"), ("All files", "*.*")]
+            )
+            
+            if file_path:
+                self._create_professional_excel_export(selected_df, file_path, "seleccion")
+                
+                # Redirigir a pestaña de exportaciones si el archivo está en la carpeta estándar
+                documents_path = os.path.join(os.path.expanduser("~"), "Documents")
+                if file_path.startswith(documents_path) and hasattr(self, 'notebook'):
+                    self.notebook.select(5)  # Pestaña de Exportaciones
+                
+        except Exception as e:
+            messagebox.showerror("Error", f"❌ Error al exportar:\n{str(e)}")
+            print(f"Error detallado: {e}")
+
+    def _create_professional_excel_export(self, df_data, file_path, export_type):
+        """Crear archivo Excel con formato profesional (función común)"""
+        try:
+            import pandas as pd
+            from datetime import datetime
+            import os
+            # Crear el archivo Excel con múltiples hojas
+            with pd.ExcelWriter(file_path, engine='openpyxl') as writer:
+                
+                # ========== HOJA 1: PRESENTACIÓN ==========
+                # Crear DataFrame para la presentación
+                export_title = "Exportación Completa" if export_type == "completa" else "Exportación de Selección"
+                
+                presentation_data = [
+                    ["EVARISIS CIRUGÍA ONCOLÓGICA - Oncología", ""],
+                    [export_title, ""],
+                    ["", ""],
+                    ["Información del Reporte", ""],
+                    ["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", ""],
+                    ["Fecha y Hora de Exportación:", datetime.now().strftime("%d/%m/%Y %H:%M:%S")],
+                    ["Usuario:", self.info_usuario.get("nombre", "Sistema")],
+                    ["Cargo:", self.info_usuario.get("cargo", "N/A")],
+                    ["", ""],
+                    ["Estadísticas de la Exportación", ""],
+                    ["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", ""],
+                    ["Total de Registros:", len(df_data)],
+                    ["Número de Campos:", len(df_data.columns)],
+                    ["", ""],
+                ]
+                
+                # Calcular estadísticas adicionales
+                fecha_cols = [col for col in df_data.columns if 'fecha' in col.lower()]
+                if fecha_cols:
+                    try:
+                        for col in fecha_cols:
+                            fechas = pd.to_datetime(df_data[col], errors='coerce')
+                            fechas_validas = fechas.dropna()
+                            if not fechas_validas.empty:
+                                fecha_min = fechas_validas.min().strftime("%d/%m/%Y")
+                                fecha_max = fechas_validas.max().strftime("%d/%m/%Y")
+                                presentation_data.extend([
+                                    [f"Rango de Fechas ({col}):", f"{fecha_min} - {fecha_max}"],
+                                ])
+                                break
+                    except:
+                        pass
+                
+                # Servicios únicos
+                servicio_cols = [col for col in df_data.columns if 'servicio' in col.lower()]
+                if servicio_cols:
+                    unique_services = df_data[servicio_cols[0]].nunique()
+                    presentation_data.append(["Servicios Únicos:", unique_services])
+                
+                # Casos malignos
+                malignidad_cols = [col for col in df_data.columns if 'malign' in col.lower()]
+                if malignidad_cols:
+                    malignant_count = (df_data[malignidad_cols[0]].str.contains('PRESENTE', case=False, na=False)).sum()
+                    presentation_data.append(["Casos con Malignidad:", malignant_count])
+                
+                presentation_data.extend([
+                    ["", ""],
+                    ["Descripción", ""],
+                    ["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", ""],
+                    ["Este archivo contiene la exportación", ""],
+                    ["de la base de datos del sistema EVARISIS", ""],
+                    ["Gestor HUV - Oncología.", ""],
+                    ["", ""],
+                    ["La información incluye todos los campos", ""],
+                    ["almacenados para cada informe médico:", ""],
+                    ["- Datos del paciente", ""],
+                    ["- Información clínica", ""],
+                    ["- Resultados de laboratorio", ""],
+                    ["- Análisis histopatológicos", ""],
+                    ["- Biomarcadores (IHQ)", ""],
+                    ["- Fechas y responsables", ""],
+                    ["", ""],
+                    ["Hospital Universitario del Valle", ""],
+                    ["Sistema EVARISIS © 2025", ""],
+                ])
+                
+                df_presentation = pd.DataFrame(presentation_data, columns=["Campo", "Valor"])
+                df_presentation.to_excel(writer, sheet_name='Presentación', index=False)
+                
+                # ========== HOJA 2: DATOS COMPLETOS ==========
+                sheet_name = 'Datos_Completos' if export_type == "completa" else 'Datos_Seleccionados'
+                df_data.to_excel(writer, sheet_name=sheet_name, index=False)
+                
+                # ========== FORMATO ==========
+                from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+                
+                # Formatear hoja de presentación
+                ws_pres = writer.sheets['Presentación']
+                
+                # Título principal
+                ws_pres['A1'].font = Font(size=18, bold=True, color="FFFFFF")
+                ws_pres['A1'].fill = PatternFill(start_color="1B4F72", end_color="1B4F72", fill_type="solid")
+                ws_pres['A1'].alignment = Alignment(horizontal="center", vertical="center")
+                ws_pres.merge_cells('A1:B1')
+                
+                # Subtítulo
+                ws_pres['A2'].font = Font(size=14, bold=True, color="FFFFFF")
+                ws_pres['A2'].fill = PatternFill(start_color="2E86AB", end_color="2E86AB", fill_type="solid")
+                ws_pres['A2'].alignment = Alignment(horizontal="center", vertical="center")
+                ws_pres.merge_cells('A2:B2')
+                
+                # Secciones
+                section_font = Font(size=12, bold=True, color="1B4F72")
+                for row in range(1, len(presentation_data) + 2):
+                    cell_value = ws_pres[f'A{row}'].value
+                    if cell_value and ("Información" in str(cell_value) or "Estadísticas" in str(cell_value) or "Descripción" in str(cell_value)):
+                        ws_pres[f'A{row}'].font = section_font
+                        ws_pres.merge_cells(f'A{row}:B{row}')
+                
+                # Ajustar ancho de columnas
+                ws_pres.column_dimensions['A'].width = 40
+                ws_pres.column_dimensions['B'].width = 30
+                
+                # Formatear hoja de datos
+                ws_data = writer.sheets[sheet_name]
+                
+                # Headers
+                header_font = Font(bold=True, color="FFFFFF")
+                header_fill = PatternFill(start_color="2E86AB", end_color="2E86AB", fill_type="solid")
+                header_alignment = Alignment(horizontal="center", vertical="center")
+                
+                for cell in ws_data[1]:
+                    cell.font = header_font
+                    cell.fill = header_fill
+                    cell.alignment = header_alignment
+                
+                # Ajustar ancho de columnas automáticamente
+                for column in ws_data.columns:
+                    max_length = 0
+                    column_letter = column[0].column_letter
+                    for cell in column:
+                        try:
+                            if len(str(cell.value)) > max_length:
+                                max_length = len(str(cell.value))
+                        except:
+                            pass
+                    adjusted_width = min(max_length + 2, 50)  # Máximo 50 caracteres
+                    ws_data.column_dimensions[column_letter].width = adjusted_width
+            
+            # Mensaje de confirmación
+            record_text = "completos" if export_type == "completa" else "seleccionados"
+            messagebox.showinfo(
+                "Exportación Exitosa", 
+                f"✅ Base de datos exportada exitosamente!\n\n"
+                f"📊 {len(df_data)} registros {record_text} exportados\n"
+                f"📋 {len(df_data.columns)} campos por registro\n"
+                f"📁 Archivo: {os.path.basename(file_path)}\n\n"
+                f"El archivo incluye:\n"
+                f"• Hoja de presentación con estadísticas\n"
+                f"• Datos {record_text} de los registros"
+            )
+            
+        except Exception as e:
+            raise e
 
     def _export_current_record(self):
         """Exportar el registro actualmente seleccionado"""
@@ -3402,7 +5052,7 @@ Informes con malignidad: {malignant_count}"""
                 
             # Tomar solo el primer registro seleccionado
             item = selection[0]
-            self._export_selected_data()
+            self._export_selected_data_professional()
             
         except Exception as e:
             messagebox.showerror("Error", f"Error al exportar registro: {str(e)}")
@@ -3471,13 +5121,14 @@ def main():
     print("Iniciando EVARISIS Gestor H.U.V...")
     
     # Configurar el parser de argumentos
-    parser = argparse.ArgumentParser(description="EVARISIS Gestor HUV - Oncología")
+    parser = argparse.ArgumentParser(description="EVARISIS CIRUGÍA ONCOLÓGICA - Oncología")
     
     parser.add_argument("--nombre", type=str, default="Usuario Sistema", help="Nombre del usuario logueado.")
     parser.add_argument("--cargo", type=str, default="Administrador", help="Cargo del usuario logueado.")
     parser.add_argument("--foto", type=str, default="SIN_FOTO", help="Ruta a la foto de perfil del usuario.")
     parser.add_argument("--tema", type=str, default="dark", help="Tema visual de la aplicación.")
     parser.add_argument("--ruta-fotos", type=str, default="", help="Ruta al directorio base de fotos de usuarios.")
+    parser.add_argument("--ruta-datos", type=str, default="", help="Ruta a datos de EVARISIS.")
     parser.add_argument(
         "--lanzado-por-evarisis",
         action='store_true',
@@ -3490,19 +5141,6 @@ def main():
     )
     
     args = parser.parse_args()
-
-    # Verificación de seguridad (permite modo independiente)
-    if not args.lanzado_por_evarisis and not args.modo_independiente:
-        import tkinter as tk
-        root_error = tk.Tk()
-        root_error.withdraw()
-        messagebox.showerror(
-            "Acceso no autorizado",
-            "Esta aplicación no puede ejecutarse directamente.\n\n"
-            "Para uso independiente, use: python ui.py --modo-independiente\n"
-            "Para integración EVARISIS, use la bandera --lanzado-por-evarisis"
-        )
-        sys.exit("Ejecución no autorizada. Terminando proceso.")
 
     # 1. Configuramos Tesseract antes de que cualquier otra cosa lo necesite
     configure_tesseract()
@@ -3526,6 +5164,254 @@ def main():
     app.mainloop()
     
     print("Aplicación cerrada. ¡Hasta luego!")
+
+
+# === NUEVAS FUNCIONES PARA DETECCIÓN DE DUPLICADOS ===
+def _verificar_archivo_duplicado(self, file_path, filename):
+    """
+    Verifica si un archivo ya ha sido importado basándose en contenido y número de petición
+    """
+    try:
+        # Extraer número de petición del archivo
+        from core.processors.ocr_processor import pdf_to_text_enhanced
+        from core.extractors.patient_extractor import PATIENT_PATTERNS
+        import re
+        
+        # Obtener texto del PDF
+        texto = pdf_to_text_enhanced(file_path)
+
+        # Buscar número de petición
+        match = re.search(PATIENT_PATTERNS['numero_peticion']['patrones'][0], texto, re.IGNORECASE)
+        if not match:
+            return {"es_duplicado": False, "razon": "No se pudo extraer número de petición"}
+        
+        numero_peticion = match.group(1).strip()
+        
+        # Verificar en base de datos
+        from core.database_manager import verificar_duplicado_por_peticion
+        resultado = verificar_duplicado_por_peticion(numero_peticion)
+        
+        if resultado.get("existe", False):
+            registro = resultado.get("registro", {})
+            return {
+                "es_duplicado": True,
+                "numero_peticion": numero_peticion,
+                "fecha_informe": registro.get("Fecha Informe", "N/A"),
+                "fecha_importacion": registro.get("Fecha Ingreso Base de Datos", "N/A"),  # FECHA REAL DE IMPORTACIÓN
+                "registro": registro
+            }
+        else:
+            return {"es_duplicado": False}
+            
+    except Exception as e:
+        print(f"Error verificando duplicado para {filename}: {e}")
+        return {"es_duplicado": False, "error": str(e)}
+
+# Agregar estas funciones como métodos de la clase App
+App._verificar_archivo_duplicado = _verificar_archivo_duplicado
+
+def _redirigir_a_visualizador_con_filtro(self, numero_peticion):
+    """
+    Redirige al visualizador de datos y resalta el registro específico
+    """
+    try:
+        # Navegar a visualizador
+        self._nav_to_visualizar()
+        
+        # Aplicar filtro para mostrar solo ese registro
+        if hasattr(self, 'tree') and self.tree:
+            # Limpiar filtros existentes
+            self._clear_filters()
+            
+            # Aplicar filtro por número de petición
+            for item in self.tree.get_children():
+                values = self.tree.item(item)['values']
+                if values and len(values) > 0:
+                    # Buscar la columna del número de petición
+                    if numero_peticion in str(values[0]):  # Asumiendo que está en la primera columna
+                        self.tree.selection_set(item)
+                        self.tree.focus(item)
+                        self.tree.see(item)
+                        break
+                        
+        messagebox.showinfo(
+            "Registro encontrado",
+            f"Se ha localizado y resaltado el registro con número de petición: {numero_peticion}"
+        )
+        
+    except Exception as e:
+        print(f"Error redirigiendo al visualizador: {e}")
+
+App._redirigir_a_visualizador_con_filtro = _redirigir_a_visualizador_con_filtro
+
+def _actualizar_lista_archivos_con_estado(self):
+    """
+    Actualiza la lista de archivos mostrando en ROJO los ya importados
+    """
+    try:
+        if not hasattr(self, 'files_listbox') or self.files_listbox is None:
+            return
+            
+        # Limpiar lista actual
+        self.files_listbox.delete(0, tk.END)
+        
+        pdfs_path = os.path.join(os.getcwd(), "pdfs_patologia")
+        if not os.path.exists(pdfs_path):
+            self.files_listbox.insert(tk.END, "(No existe la carpeta pdfs_patologia)")
+            return
+        
+        # Usar helper para obtener PDFs
+        pdf_paths = ocr_helpers.obtener_pdfs_en_carpeta(pdfs_path)
+
+        if not pdf_paths:
+            self.files_listbox.insert(tk.END, "(No hay archivos PDF)")
+            return
+
+        # Procesar cada archivo para verificar estado
+        for file_path in sorted(pdf_paths):
+            archivo = os.path.basename(file_path)
+            duplicado_info = self._verificar_archivo_duplicado(file_path, archivo)
+            
+            if duplicado_info.get("es_duplicado", False):
+                # Marcar como duplicado en rojo
+                display_text = f"🔴 {archivo} (YA IMPORTADO)"
+                self.files_listbox.insert(tk.END, display_text)
+            else:
+                # Archivo nuevo en verde
+                display_text = f"🟢 {archivo}"
+                self.files_listbox.insert(tk.END, display_text)
+                
+    except Exception as e:
+        print(f"Error actualizando lista de archivos: {e}")
+
+App._actualizar_lista_archivos_con_estado = _actualizar_lista_archivos_con_estado
+
+def _clear_filters(self):
+    """
+    Limpia todos los filtros activos en el visualizador
+    """
+    try:
+        # Limpiar combos de filtro si existen
+        if hasattr(self, 'cmb_servicio') and self.cmb_servicio:
+            self.cmb_servicio.set("")
+        if hasattr(self, 'cmb_malig') and self.cmb_malig:
+            self.cmb_malig.set("")
+        if hasattr(self, 'cmb_resp') and self.cmb_resp:
+            self.cmb_resp.set("")
+            
+        # Refrescar datos
+        self.refresh_data()
+        
+    except Exception as e:
+        print(f"Error limpiando filtros: {e}")
+
+App._clear_filters = _clear_filters
+
+def _crear_footer_inteligente(self):
+    """
+    Crea un footer inteligente con información de rangos de fechas y distribución mensual
+    """
+    try:
+        if self.master_df.empty:
+            return "📂 Base de datos vacía - Importa archivos para comenzar"
+        
+        # Obtener información de fechas y distribución
+        from core.database_manager import get_fecha_range_registros, get_distribucion_mensual
+        # MESES_ES está definido al inicio del archivo
+        from datetime import datetime
+        
+        fecha_info = get_fecha_range_registros()
+        distribucion = get_distribucion_mensual()
+        
+        if fecha_info.get("error") or not fecha_info.get("fecha_min"):
+            return f"💾 Base de datos cargada: {len(self.master_df)} registros (fechas no disponibles)"
+        
+        # Formatear fechas - Ya vienen en formato DD/MM/YYYY desde database_manager
+        fecha_min = fecha_info["fecha_min"]
+        fecha_max = fecha_info["fecha_max"]
+
+        # Crear distribución legible - CORREGIDO: Mostrar TODOS los meses
+        if distribucion and not distribucion.get("error"):
+            dist_texto = []
+            for mes_ano, cantidad in sorted(distribucion.items()):
+                try:
+                    año, mes = mes_ano.split('-')
+                    mes_nombre = MESES_ES.get(int(mes), f"Mes {mes}")
+                    # Formato compacto: Ene 25: 1
+                    dist_texto.append(f"{mes_nombre[:3]} {año[2:]}: {cantidad}")
+                except:
+                    dist_texto.append(f"{mes_ano}: {cantidad}")
+
+            # Mostrar TODOS los meses
+            dist_resumen = " | ".join(dist_texto)
+        else:
+            dist_resumen = "Distribución no disponible"
+        
+        footer_text = f"💾 Base de datos cargada desde {fecha_min} hasta {fecha_max} | "
+        footer_text += f"📊 Total: {len(self.master_df)} registros | "
+        footer_text += f"📅 Distribución: {dist_resumen}"
+        
+        return footer_text
+        
+    except Exception as e:
+        print(f"Error creando footer inteligente: {e}")
+        return f"💾 Base de datos cargada: {len(self.master_df)} registros"
+
+App._crear_footer_inteligente = _crear_footer_inteligente
+
+def _update_organs_with_advanced_parsing(self, full_text, records):
+    """
+    Aplica mapeo avanzado de órganos usando parse_estudios_table_for_organo
+    """
+    try:
+        from core.unified_extractor import parse_estudios_table_for_organo
+        from core.database_manager import get_connection
+        
+        # Extraer órganos usando el parser avanzado
+        organos_mapeados = parse_estudios_table_for_organo(full_text)
+        
+        if not organos_mapeados:
+            return 0
+            
+        print(f"🔍 Órganos detectados por parser avanzado: {organos_mapeados}")
+        
+        # Actualizar registros que no tienen órgano o tienen órgano incompleto
+        updated_count = 0
+        
+        # Obtener números de petición de los registros recién procesados
+        numeros_peticion = []
+        for record in records:
+            if isinstance(record, dict) and 'N. peticion (0. Numero de biopsia)' in record:
+                numeros_peticion.append(record['N. peticion (0. Numero de biopsia)'])
+        
+        if numeros_peticion:
+            with get_connection() as conn:
+                cursor = conn.cursor()
+                
+                # Actualizar solo registros recién procesados que no tienen órgano completo
+                for numero_peticion in numeros_peticion:
+                    cursor.execute("""
+                        UPDATE informes_ihq 
+                        SET "Organo (1. Muestra enviada a patología)" = ?
+                        WHERE "N. peticion (0. Numero de biopsia)" = ? 
+                        AND ("Organo (1. Muestra enviada a patología)" IS NULL 
+                             OR "Organo (1. Muestra enviada a patología)" = '' 
+                             OR "Organo (1. Muestra enviada a patología)" = 'NO ENCONTRADO')
+                    """, (organos_mapeados, numero_peticion))
+                    
+                    if cursor.rowcount > 0:
+                        updated_count += cursor.rowcount
+                
+                conn.commit()
+        
+        return updated_count
+        
+    except Exception as e:
+        print(f"Error en mapeo avanzado de órganos: {e}")
+        return 0
+
+App._update_organs_with_advanced_parsing = _update_organs_with_advanced_parsing
+
 
 if __name__ == "__main__":
     main()
