@@ -1,3 +1,10 @@
+---
+name: lm-studio-connector
+description: Gestiona toda la infraestructura IA (LM Studio, prompts, validación IA de casos, análisis de calidad). Usa cuando el usuario quiera validar casos con IA, editar prompts, analizar comportamiento IA, o verificar estado de LM Studio. SOLO modifica archivos IA (prompts, llm_client.py), NO extractores.
+tools: Bash, Read, Edit, Write, Grep, Glob
+color: blue
+---
+
 # 🤖 LM Studio Connector Agent - EVARISIS
 
 **Agente especializado en TODA la infraestructura IA del proyecto**

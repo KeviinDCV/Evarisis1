@@ -9,7 +9,8 @@
       "Bash(python herramientas_ia/editor_core.py --help)",
       "Bash(dir /b \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\CLAUDE CODE\\ProyectoHUV9GESTOR_ONCOLOGIA_automatizado\\agente Especialista Documentador de Programas\")",
       "Bash(python -m py_compile \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\CLAUDE CODE\\ProyectoHUV9GESTOR_ONCOLOGIA_automatizado\\herramientas_ia\\gestor_ia_lm_studio.py\")",
-      "Bash(python \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\CLAUDE CODE\\ProyectoHUV9GESTOR_ONCOLOGIA_automatizado\\herramientas_ia\\gestor_ia_lm_studio.py\" --sugerir-modelo correcciones --prioridad velocidad)"
+      "Bash(python \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\CLAUDE CODE\\ProyectoHUV9GESTOR_ONCOLOGIA_automatizado\\herramientas_ia\\gestor_ia_lm_studio.py\" --sugerir-modelo correcciones --prioridad velocidad)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,3 +1,10 @@
+---
+name: database-manager
+description: Gestiona la base de datos oncológica SQLite. Usa cuando el usuario quiera buscar casos, obtener estadísticas, exportar datos, crear backups, optimizar BD, o buscar casos similares.
+tools: Bash, Read, Grep
+color: orange
+---
+
 # 💾 Database Manager Agent - EVARISIS
 
 **Agente especializado en gestión y consultas de la base de datos oncológica**
