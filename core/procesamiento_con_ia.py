@@ -15,6 +15,7 @@ Fecha: 5 de octubre de 2025
 """
 
 import sys
+import logging
 import time
 from pathlib import Path
 from typing import Dict, Any, Optional, Tuple, List
@@ -70,10 +71,10 @@ class ProcesadorConIA:
         if validar_con_ia:
             try:
                 self.llm_client = LMStudioClient(endpoint=llm_endpoint)
-                print("✅ Cliente LLM inicializado correctamente")
+                logging.info("✅ Cliente LLM inicializado correctamente")
             except Exception as e:
-                print(f"⚠️ No se pudo inicializar LLM: {e}")
-                print("  Continuando sin validación IA...")
+                logging.info(f"⚠️ No se pudo inicializar LLM: {e}")
+                logging.info("  Continuando sin validación IA...")
                 self.validar_con_ia = False
 
     def procesar_pdf(
@@ -91,8 +92,8 @@ class ProcesadorConIA:
         Returns:
             Lista de resultados por cada caso IHQ procesado
         """
-        print(f"\n🔄 PROCESANDO PDF CON IA: {Path(pdf_path).name}")
-        print("=" * 80)
+        logging.info(f"\n🔄 PROCESANDO PDF CON IA: {Path(pdf_path).name}")
+        logging.info("=" * 80)
 
         tiempo_inicio = time.time()
 
@@ -100,21 +101,21 @@ class ProcesadorConIA:
         if progress_callback:
             progress_callback("Extrayendo texto del PDF...")
 
-        print("📄 Paso 1/5: Extracción OCR...")
+        logging.info("📄 Paso 1/5: Extracción OCR...")
         tiempo_ocr_inicio = time.time()
         texto_ocr_completo = pdf_to_text_enhanced(pdf_path)
         tiempo_ocr = time.time() - tiempo_ocr_inicio
 
-        print(f"  ✅ Extraídos {len(texto_ocr_completo)} caracteres en {tiempo_ocr:.2f}s")
+        logging.info(f"  ✅ Extraídos {len(texto_ocr_completo)} caracteres en {tiempo_ocr:.2f}s")
 
         # 2. Consolidación y segmentación
         if progress_callback:
             progress_callback("Consolidando y segmentando casos IHQ...")
 
-        print("🔀 Paso 2/5: Consolidación y segmentación...")
+        logging.info("🔀 Paso 2/5: Consolidación y segmentación...")
         segmentos_ihq = consolidate_text_by_ihq(texto_ocr_completo)
 
-        print(f"  ✅ Encontrados {len(segmentos_ihq)} casos IHQ")
+        logging.info(f"  ✅ Encontrados {len(segmentos_ihq)} casos IHQ")
 
         # 3. Procesar cada caso
         resultados = []
@@ -123,7 +124,7 @@ class ProcesadorConIA:
             if progress_callback:
                 progress_callback(f"Procesando caso {idx}/{len(segmentos_ihq)}: {numero_ihq}")
 
-            print(f"\n📋 Paso 3/5: Procesando caso {numero_ihq} ({idx}/{len(segmentos_ihq)})...")
+            logging.info(f"\n📋 Paso 3/5: Procesando caso {numero_ihq} ({idx}/{len(segmentos_ihq)})...")
 
             resultado_caso = self._procesar_caso_ihq(
                 numero_ihq=numero_ihq,
@@ -137,10 +138,10 @@ class ProcesadorConIA:
 
         tiempo_total = time.time() - tiempo_inicio
 
-        print(f"\n✅ PROCESAMIENTO COMPLETO")
-        print(f"  📊 Casos procesados: {len(resultados)}")
-        print(f"  ⏱️ Tiempo total: {tiempo_total:.2f}s")
-        print("=" * 80)
+        logging.info(f"\n✅ PROCESAMIENTO COMPLETO")
+        logging.info(f"  📊 Casos procesados: {len(resultados)}")
+        logging.info(f"  ⏱️ Tiempo total: {tiempo_total:.2f}s")
+        logging.info("=" * 80)
 
         return resultados
 
@@ -185,7 +186,7 @@ class ProcesadorConIA:
             )
 
         # 4. Extracción de datos
-        print(f"  🔍 Extrayendo datos...")
+        logging.info(f"  🔍 Extrayendo datos...")
         tiempo_extraccion_inicio = time.time()
 
         # Extraer con cada extractor
@@ -210,7 +211,7 @@ class ProcesadorConIA:
         correcciones_aplicadas = []
 
         if self.validar_con_ia and self.llm_client:
-            print(f"  🤖 Validando con IA...")
+            logging.info(f"  🤖 Validando con IA...")
 
             try:
                 # Validar campos críticos
@@ -227,22 +228,22 @@ class ProcesadorConIA:
 
                 # Aplicar correcciones si está habilitado
                 if self.aplicar_correcciones:
-                    print(f"  🔧 Aplicando correcciones IA...")
+                    logging.info(f"  🔧 Aplicando correcciones IA...")
                     correcciones_aplicadas = self._aplicar_correcciones_ia(
                         datos_unified=datos_unified,
                         validacion_ia=validacion_ia,
                         mapper=mapper
                     )
 
-                print(f"  ✅ Validación IA completada")
+                logging.info(f"  ✅ Validación IA completada")
 
             except Exception as e:
-                print(f"  ⚠️ Error en validación IA: {e}")
+                logging.info(f"  ⚠️ Error en validación IA: {e}")
                 if mapper:
                     mapper.agregar_error(f"Error validación IA: {str(e)}")
 
         # 6. Guardar en base de datos
-        print(f"  💾 Guardando en base de datos...")
+        logging.info(f"  💾 Guardando en base de datos...")
 
         try:
             # Usar datos corregidos si hay correcciones aplicadas
@@ -262,10 +263,10 @@ class ProcesadorConIA:
                     columnas_mapeadas={}  # TODO: Agregar mapeo real
                 )
 
-            print(f"  ✅ {'Actualizado' if exito_bd else 'Insertado'} en BD")
+            logging.info(f"  ✅ {'Actualizado' if exito_bd else 'Insertado'} en BD")
 
         except Exception as e:
-            print(f"  ❌ Error guardando en BD: {e}")
+            logging.info(f"  ❌ Error guardando en BD: {e}")
             if mapper:
                 mapper.agregar_error(f"Error BD: {str(e)}")
 
@@ -282,9 +283,9 @@ class ProcesadorConIA:
 
             try:
                 debug_map_path = mapper.guardar_mapa()
-                print(f"  📁 Debug map guardado: {debug_map_path.name}")
+                logging.info(f"  📁 Debug map guardado: {debug_map_path.name}")
             except Exception as e:
-                print(f"  ⚠️ Error guardando debug map: {e}")
+                logging.info(f"  ⚠️ Error guardando debug map: {e}")
 
         # Resultado del caso
         return {
@@ -429,25 +430,25 @@ if __name__ == "__main__":
     resultados = procesador.procesar_pdf(args.pdf)
 
     # Mostrar resumen
-    print("\n" + "=" * 80)
-    print("📊 RESUMEN DE PROCESAMIENTO")
-    print("=" * 80)
+    logging.info("\n" + "=" * 80)
+    logging.info("📊 RESUMEN DE PROCESAMIENTO")
+    logging.info("=" * 80)
 
     for resultado in resultados:
-        print(f"\n📋 {resultado['numero_ihq']}")
-        print(f"  ✅ Extraído correctamente")
+        logging.info(f"\n📋 {resultado['numero_ihq']}")
+        logging.info(f"  ✅ Extraído correctamente")
 
         if resultado.get("validacion_ia"):
             val_ia = resultado["validacion_ia"]
-            print(f"  🤖 Validación IA: {val_ia.get('campos_validados', 0)} campos")
+            logging.info(f"  🤖 Validación IA: {val_ia.get('campos_validados', 0)} campos")
 
         if resultado.get("correcciones_aplicadas"):
-            print(f"  🔧 Correcciones aplicadas: {len(resultado['correcciones_aplicadas'])}")
+            logging.info(f"  🔧 Correcciones aplicadas: {len(resultado['correcciones_aplicadas'])}")
 
         if resultado.get("debug_map_path"):
-            print(f"  📁 Debug map: {Path(resultado['debug_map_path']).name}")
+            logging.info(f"  📁 Debug map: {Path(resultado['debug_map_path']).name}")
 
         metricas = resultado.get("metricas", {})
-        print(f"  ⏱️ Tiempo: {metricas.get('tiempo_total', 0):.2f}s")
+        logging.info(f"  ⏱️ Tiempo: {metricas.get('tiempo_total', 0):.2f}s")
 
-    print("\n" + "=" * 80)
+    logging.info("\n" + "=" * 80)

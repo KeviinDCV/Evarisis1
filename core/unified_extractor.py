@@ -80,6 +80,101 @@ except ImportError as e:
             return text if text else ''
         raise
 
+def extract_diagnostico_principal(diagnostico_completo: str) -> str:
+    """
+    Extrae el diagnóstico principal del texto completo de diagnóstico.
+
+    ESTRATEGIA PRINCIPAL: Capturar la primera línea DESPUÉS de:
+    - "Estudios de inmunohistoquímica."
+    - "Biopsia con aguja gruesa."
+    - O similar marcador de inicio de resultados
+
+    Args:
+        diagnostico_completo: Texto completo del diagnóstico
+
+    Returns:
+        str: Diagnóstico principal extraído o cadena vacía
+
+    Ejemplo:
+        Input: "Mama izquierda. Masa. Biopsia con aguja gruesa. Estudios de inmunohistoquímica. - CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). - RECEPTORES..."
+        Output: "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)"
+    """
+    if not diagnostico_completo or diagnostico_completo in ['N/A', '']:
+        return ''
+
+    # Limpiar texto
+    texto = diagnostico_completo.strip()
+
+    # ESTRATEGIA 1 (PRIORITARIA): Buscar después de marcadores clave
+    # Marcadores que indican el inicio de los resultados de diagnóstico
+    marcadores = [
+        r'Estudios de inmunohistoqu[ií]mica\.',
+        r'Biopsia con aguja gruesa\.',
+        r'Estudio de inmunohistoqu[ií]mica\.',
+        r'Biopsia\.',
+        r'Muestra\.',
+    ]
+
+    for marcador in marcadores:
+        # Buscar el marcador en el texto
+        match_marcador = re.search(marcador, texto, re.IGNORECASE)
+        if match_marcador:
+            # Extraer el texto DESPUÉS del marcador
+            texto_despues = texto[match_marcador.end():].strip()
+
+            # La primera línea después del marcador (hasta el primer salto de línea o punto seguido de guión)
+            # Patrón: capturar desde el inicio hasta el primer punto seguido de guión o salto de línea
+            patron_primera_linea = r'^[^\n]*?-\s*([^.\n]+?)(?:\.|$)'
+            match_linea = re.search(patron_primera_linea, texto_despues)
+
+            if match_linea:
+                diagnostico = match_linea.group(1).strip()
+                # Limpiar guiones adicionales
+                diagnostico = diagnostico.rstrip('-.').strip()
+                # Convertir a mayúsculas si tiene suficiente contenido en mayúsculas
+                palabras_mayus = sum(1 for p in diagnostico.split() if p.isupper())
+                if palabras_mayus >= 2:
+                    return diagnostico.upper()
+                return diagnostico
+
+    # ESTRATEGIA 2: Buscar texto entre guiones (- DIAGNÓSTICO -)
+    patron_guiones = r'-\s*([A-ZÁÉÍÓÚÑ][^-.]+?)(?:\s*-|\.)'
+    matches_guiones = re.findall(patron_guiones, texto)
+
+    if matches_guiones:
+        # Tomar el primer match que NO sea descriptor de biomarcadores
+        for diagnostico in matches_guiones:
+            diagnostico = diagnostico.strip().rstrip('.')
+            # Saltar si es descripción de receptores/biomarcadores
+            if not any(kw in diagnostico.upper() for kw in ['RECEPTOR', 'ESTUDIO', 'BIOPSIA', 'MUESTRA', 'POSITIVO', 'NEGATIVO']):
+                return diagnostico
+
+    # ESTRATEGIA 3: Buscar diagnósticos patológicos al inicio
+    patron_inicio = r'^\s*((?:CARCINOMA|ADENOCARCINOMA|LINFOMA|SARCOMA|MELANOMA|GLIOMA|MENINGIOMA|METASTASIS|TUMOR|NEOPLASIA)[^.]+?)(?:\.|$)'
+    match_inicio = re.search(patron_inicio, texto, re.IGNORECASE)
+    if match_inicio:
+        diagnostico = match_inicio.group(1).strip().upper()
+        if not any(kw in diagnostico for kw in ['RECEPTOR', 'POSITIVO', 'NEGATIVO', 'HER', 'KI-67', 'ESTUDI']):
+            return diagnostico
+
+    # ESTRATEGIA 4: Buscar patrones comunes de diagnóstico
+    patrones_diagnostico = [
+        r'((?:CARCINOMA|ADENOCARCINOMA|LINFOMA|SARCOMA|MELANOMA|GLIOMA|MENINGIOMA|METASTASIS)[^.]+?)(?:\.|$)',
+        r'((?:TUMOR|NEOPLASIA|LESION)[^.]+?(?:MALIGNO|BENIGNO|INVASIVO)[^.]*?)(?:\.|$)',
+    ]
+
+    for patron in patrones_diagnostico:
+        match = re.search(patron, texto, re.IGNORECASE)
+        if match:
+            diagnostico = match.group(1).strip().lstrip('-').strip()
+            if not diagnostico.isupper():
+                diagnostico = diagnostico.upper()
+            if not any(kw in diagnostico for kw in ['RECEPTOR', 'POSITIVO', 'NEGATIVO', 'HER', 'KI-67']):
+                return diagnostico
+
+    # Si no se puede extraer nada específico, devolver vacío
+    return ''
+
 
 def extract_ihq_data(text: str) -> Dict[str, Any]:
     """Extrae datos IHQ de texto usando extractores refactorizados
@@ -151,30 +246,28 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
             # Campos procesados adicionales
             if 'nombres' in patient_data:
                 combined_data['nombres'] = patient_data['nombres']
-                # CORREGIDO: Dividir nombres en campos individuales para BD
+                # v5.3.2: CORREGIDO - Segundo nombre debe incluir TODOS los nombres restantes
                 nombres_split = patient_data['nombres'].split() if patient_data['nombres'] else []
                 combined_data['Primer nombre'] = nombres_split[0] if len(nombres_split) > 0 else ''
-                combined_data['Segundo nombre'] = nombres_split[1] if len(nombres_split) > 1 else ''
+                combined_data['Segundo nombre'] = ' '.join(nombres_split[1:]) if len(nombres_split) > 1 else ''
             else:
                 combined_data['Primer nombre'] = ''
                 combined_data['Segundo nombre'] = ''
-                
+
             if 'apellidos' in patient_data:
                 combined_data['apellidos'] = patient_data['apellidos']
-                # CORREGIDO: Dividir apellidos en campos individuales para BD
+                # v5.3.2: CORREGIDO - Segundo apellido debe incluir TODOS los apellidos restantes
                 apellidos_split = patient_data['apellidos'].split() if patient_data['apellidos'] else []
                 combined_data['Primer apellido'] = apellidos_split[0] if len(apellidos_split) > 0 else ''
-                combined_data['Segundo apellido'] = apellidos_split[1] if len(apellidos_split) > 1 else ''
+                combined_data['Segundo apellido'] = ' '.join(apellidos_split[1:]) if len(apellidos_split) > 1 else ''
             else:
                 combined_data['Primer apellido'] = ''
                 combined_data['Segundo apellido'] = ''
                 
             if 'nombre_formal' in patient_data:
                 combined_data['nombre_formal'] = patient_data['nombre_formal']
-            if 'edad_años' in patient_data:
-                combined_data['edad_años'] = patient_data['edad_años']
-            if 'fecha_nacimiento_calculada' in patient_data:
-                combined_data['fecha_nacimiento'] = patient_data['fecha_nacimiento_calculada']
+            # V2.0: ELIMINADO - edad_años (redundante con 'Edad', causa duplicados en debug_map)
+            # v5.3.1: ELIMINADO - fecha_nacimiento (no requerido)
         
         # === DATOS MÉDICOS ===
         if medical_data:
@@ -206,22 +299,25 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'tipo_informe': medical_data.get('tipo_informe', ''),
                 'hospitalizado': medical_data.get('hospitalizado', ''),
                 # ELIMINADO: 'n_autorizacion' - campo no utilizado que genera NaN
-                'estudios_solicitados': medical_data.get('estudios_solicitados', ''),
+                'estudios_solicitados_tabla': medical_data.get('estudios_solicitados', ''),  # Biomarcadores de tabla PDF (fallback)
                 'procedimiento': patient_data.get('procedimiento', '') if patient_data else '',  # Nuevo campo
                 'factor_pronostico': medical_data.get('factor_pronostico', ''),  # AGREGADO
+                'comentarios': medical_data.get('comentarios', ''),  # V5.1.2: NUEVO - Comentarios extraídos
             })
             
             # NUEVO: Mapeo adicional a nombres de columnas de BD
-            combined_data['Diagnostico Principal'] = medical_data.get('diagnostico_final', '') or medical_data.get('diagnostico_final_ihq', '')
-            combined_data['Descripcion microscopica (8,9, 10,12,. Invasión linfovascular y perineural, indice mitótico/Ki67, Inmunohistoquímica, tamaño tumoral)'] = medical_data.get('descripcion_microscopica', '') or medical_data.get('descripcion_microscopica_final', '')
+            # v5.3.5: Campo 'Diagnostico Principal' eliminado
+            combined_data['Descripcion microscopica'] = medical_data.get('descripcion_microscopica', '') or medical_data.get('descripcion_microscopica_final', '')
             combined_data['Descripcion macroscopica'] = medical_data.get('descripcion_macroscopica', '') or medical_data.get('descripcion_macroscopica_final', '')
-            combined_data['Organo (1. Muestra enviada a patología)'] = organo_final
+            combined_data['Organo'] = organo_final
             combined_data['IHQ_ORGANO'] = ihq_organo
             combined_data['Malignidad'] = medical_data.get('malignancy_status', '') or medical_data.get('malignidad', '')
             combined_data['Fecha de toma (1. Fecha de la toma)'] = medical_data.get('fecha_toma', '')
-            combined_data['Usuario finalizacion'] = medical_data.get('responsable_final', '')
+            combined_data['Patologo'] = medical_data.get('responsable_final', '')
             combined_data['Factor pronostico'] = medical_data.get('factor_pronostico', '')
-            combined_data['IHQ_ESTUDIOS_SOLICITADOS'] = medical_data.get('estudios_solicitados', '')
+            # V5.2 FIX: NO pre-llenar IHQ_ESTUDIOS_SOLICITADOS aquí
+            # Se construirá automáticamente en map_to_database_format() desde columnas con datos
+            # combined_data['IHQ_ESTUDIOS_SOLICITADOS'] = medical_data.get('estudios_solicitados', '')
             
             # Si no hay diagnóstico específico, intentar extraer de texto libre
             if not combined_data['diagnostico']:
@@ -265,8 +361,8 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
             biomarker_mapping = {
                 'HER2': 'IHQ_HER2',
                 'KI67': 'IHQ_KI-67', 
-                'ER': 'IHQ_RECEPTOR_ESTROGENO',
-                'PR': 'IHQ_RECEPTOR_PROGESTERONOS',
+                'ER': 'IHQ_RECEPTOR_ESTROGENOS',
+                'PR': 'IHQ_RECEPTOR_PROGESTERONA',
                 'PDL1': 'IHQ_PDL-1',
                 'P16': 'IHQ_P16_ESTADO',
                 'P40': 'IHQ_P40_ESTADO',
@@ -318,19 +414,37 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'SMA': 'IHQ_SMA',
                 'MSA': 'IHQ_MSA',
                 'CALRETININ': 'IHQ_CALRETININ',
-                # NUEVOS BIOMARCADORES HORMONALES DEL CASO 2 - CRÍTICOS
-                'ACTH': 'IHQ_ACTH',
-                'GH': 'IHQ_GH',
-                'PROLACTINA': 'IHQ_PROLACTINA',
-                'TSH': 'IHQ_TSH',
-                'LH': 'IHQ_LH',
-                'FSH': 'IHQ_FSH',
+                # HORMONAS ENDOCRINAS ELIMINADAS v5.2 - NO SON BIOMARCADORES IHQ
+                # 'ACTH', 'GH', 'PROLACTINA', 'TSH', 'LH', 'FSH' → Filtrados antes
                 'WT1': 'IHQ_WT1',
                 'CD31': 'IHQ_CD31',
                 'FACTOR_VIII': 'IHQ_FACTOR_VIII',
                 'MELANOMA': 'IHQ_MELANOMA',
                 'HMB45': 'IHQ_HMB45',
-                'TYROSINASE': 'IHQ_TYROSINASE'
+                'TYROSINASE': 'IHQ_TYROSINASE',
+                # V5.3: NUEVOS BIOMARCADORES (28 adicionales detectados en producción)
+                'CD23': 'IHQ_CD23',
+                'CD4': 'IHQ_CD4',
+                'CD8': 'IHQ_CD8',
+                'CD99': 'IHQ_CD99',
+                'CD1A': 'IHQ_CD1A',
+                'C4D': 'IHQ_C4D',
+                'LMP1': 'IHQ_LMP1',
+                'CITOMEGALOVIRUS': 'IHQ_CITOMEGALOVIRUS',
+                'CMV': 'IHQ_CITOMEGALOVIRUS',
+                'SV40': 'IHQ_SV40',
+                'CEA': 'IHQ_CEA',
+                'CA19_9': 'IHQ_CA19_9',
+                'CALRETININA': 'IHQ_CALRETININA',
+                'CK34BE12': 'IHQ_CK34BE12',
+                'CK5_6': 'IHQ_CK5_6',
+                'HEPAR': 'IHQ_HEPAR',
+                'GLIPICAN': 'IHQ_GLIPICAN',
+                'ARGINASA': 'IHQ_ARGINASA',
+                'PSA': 'IHQ_PSA',
+                'RACEMASA': 'IHQ_RACEMASA',
+                '34BETA': 'IHQ_34BETA',
+                'B2': 'IHQ_B2'
             }
             
             # PRIORIDAD 1: Sistema avanzado (narrative_biomarkers) - MÁS PRECISO
@@ -355,16 +469,45 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 if new_name in biomarker_data and biomarker_data[new_name]:
                     combined_data[old_field] = biomarker_data[new_name]
         
-        # === CORRECCIÓN ORTOGRÁFICA ===
-        # Aplicar corrección ortográfica a todos los campos extraídos
-        combined_data = correct_extracted_data(combined_data)
-        logger.info("✅ Corrección ortográfica aplicada a datos extraídos")
+        # === V5.3.9: SISTEMA UNIFICADO DE CORRECCIONES ===
+        from core.correction_tracker import CorrectionTracker
+
+        # Crear tracker para acumular todas las correcciones
+        tracker = CorrectionTracker()
+
+        # Obtener número de caso para tracking
+        numero_caso = combined_data.get('numero_peticion', combined_data.get('N. peticion (0. Numero de biopsia)', ''))
+
+        # 1. CORRECCIONES ORTOGRÁFICAS
+        combined_data, correcciones_orto = correct_extracted_data(combined_data, numero_caso)
+        for corr in correcciones_orto:
+            tracker.add_correction(**corr)
+        logger.info(f"✅ Correcciones ortográficas aplicadas: {len(correcciones_orto)}")
+
+        # 2. VALIDACIÓN MÉDICO-SERVICIO
+        try:
+            from core.validador_medico_servicio import validar_y_obtener_correccion
+
+            corr_medico = validar_y_obtener_correccion(combined_data)
+            if corr_medico:
+                # Aplicar la corrección a los datos
+                combined_data[corr_medico["campo"]] = corr_medico["valor_corregido"]
+                tracker.add_correction(**corr_medico)
+                logger.info(f"✅ Validación médico-servicio: {corr_medico['valor_original']} → {corr_medico['valor_corregido']}")
+        except Exception as e:
+            logger.warning(f"⚠️ Error en validación médico-servicio: {e}")
+
+        # 3. ALMACENAR CORRECCIONES EN METADATA
+        # Las correcciones se almacenarán en debug_map y se usarán en ventana de resultados
+        combined_data['_correcciones_aplicadas'] = tracker.get_all_corrections()
+
+        logger.info(f"🔧 Total correcciones aplicadas: {tracker.count_corrections()}")
 
         # === CAMPOS DE METADATA ===
         combined_data.update({
             'extraction_timestamp': datetime.now().isoformat(),
-            'extractor_version': '4.0.0_refactored',
-            'processing_method': 'modular_extractors'
+            'extractor_version': '5.3.9_unified_corrections',
+            'processing_method': 'modular_extractors_with_corrections'
         })
 
         logger.info(f"✅ Extraídos {len(combined_data)} campos con extractores refactorizados")
@@ -698,40 +841,25 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
     db_record = {}
     
     # === DATOS BÁSICOS DE IDENTIFICACIÓN ===
-    db_record["N. peticion (0. Numero de biopsia)"] = extracted_data.get('numero_peticion', '')
+    # v5.3.6: CORREGIDO - Renombrado a "Numero de caso"
+    db_record["Numero de caso"] = extracted_data.get('numero_peticion', '')
     db_record["N. de identificación"] = extracted_data.get('identificacion', '')
     db_record["Tipo de documento"] = extracted_data.get('tipo_documento', 'CC')
     
     # === NOMBRES Y APELLIDOS ===
-    # Priorizar nombres separados si están disponibles
-    nombres_split = extracted_data.get('nombres', '').split() if extracted_data.get('nombres') else []
-    apellidos_split = extracted_data.get('apellidos', '').split() if extracted_data.get('apellidos') else []
-    
-    # Si no hay nombres separados, intentar desde nombre_completo
-    if not nombres_split and not apellidos_split and extracted_data.get('nombre_completo'):
-        nombre_completo = extracted_data['nombre_completo']
-        # Dividir por última palabra como apellido
-        parts = nombre_completo.strip().split()
-        if len(parts) >= 2:
-            nombres_split = parts[:-1]
-            apellidos_split = [parts[-1]]
-        elif len(parts) == 1:
-            nombres_split = parts
-    
-    primer_nom = nombres_split[0] if len(nombres_split) > 0 else ""
-    segundo_nom = nombres_split[1] if len(nombres_split) > 1 else ""
-    primer_ape = apellidos_split[0] if len(apellidos_split) > 0 else ""
-    segundo_ape = apellidos_split[1] if len(apellidos_split) > 1 else ""
-    
-    db_record["Primer nombre"] = primer_nom if primer_nom else "N/A"
-    db_record["Segundo nombre"] = segundo_nom if segundo_nom else "N/A"
-    db_record["Primer apellido"] = primer_ape if primer_ape else "N/A"
-    db_record["Segundo apellido"] = segundo_ape if segundo_ape else "N/A"
+    # v5.3.2: SIMPLIFICADO - Usar campos ya calculados por extract_ihq_data()
+    # extract_ihq_data() ya divide correctamente los nombres en líneas 152-170
+    # NO re-calcular aquí para evitar duplicación de lógica
+
+    db_record["Primer nombre"] = extracted_data.get('Primer nombre', 'N/A')
+    db_record["Segundo nombre"] = extracted_data.get('Segundo nombre', 'N/A')
+    db_record["Primer apellido"] = extracted_data.get('Primer apellido', 'N/A')
+    db_record["Segundo apellido"] = extracted_data.get('Segundo apellido', 'N/A')
     
     # === DATOS DEMOGRÁFICOS ===
     db_record["Edad"] = extracted_data.get('edad', 'N/A')
     db_record["Genero"] = extracted_data.get('genero', 'N/A')
-    db_record["Fecha de nacimiento"] = extracted_data.get('fecha_nacimiento', 'N/A')
+    # v5.3.1: ELIMINADO - "Fecha de nacimiento" (no requerido)
     
     # === DATOS CLÍNICOS ===
     db_record["EPS"] = extracted_data.get('eps', 'N/A')
@@ -752,82 +880,54 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
     db_record["Fecha de toma (1. Fecha de la toma)"] = extracted_data.get('fecha_toma', 'N/A')
     db_record["Fecha de ingreso (2. Fecha de la muestra)"] = extracted_data.get('fecha_ingreso', 'N/A')
     db_record["Fecha Informe"] = extracted_data.get('fecha_informe', 'N/A')
-    # CORREGIDO: El campo se llama 'responsable_final' en los extractores
-    db_record["Usuario finalizacion"] = extracted_data.get('responsable_final', '') or 'N/A'
-    
+    # v5.3.6: CORREGIDO - Renombrado a "Patologo"
+    db_record["Patologo"] = extracted_data.get('responsable_final', '') or 'N/A'
+
     # === INFORMACIÓN MÉDICA ===
     # CORREGIDO: Priorizar organo (de tabla) sobre ihq_organo (diagnóstico), con fallback a N/A
     organo_db = extracted_data.get('organo', '') or extracted_data.get('ihq_organo', '')
     if not organo_db or organo_db == 'ORGANO_NO_ESPECIFICADO':
         organo_db = 'N/A'
 
-    db_record["Organo (1. Muestra enviada a patología)"] = organo_db
+    # v5.3.6: CORREGIDO - Simplificado a "Organo"
+    db_record["Organo"] = organo_db
 
     db_record["Malignidad"] = extracted_data.get('malignidad', 'N/A')
 
-    # CORREGIDO v4.2.4: Extraer diagnóstico con múltiples fuentes y limpieza
-    # Prioridad 1: Campo 'diagnostico' (diagnóstico extraído directamente)
+    # v5.3.2: SIMPLIFICADO - Usar campos ya calculados por extract_ihq_data()
+    # extract_ihq_data() ya extrae y limpia el diagnóstico en líneas 195-244
+    # NO re-procesar aquí para evitar duplicación de lógica
+
+    # v5.3.6: Extraer diagnóstico completo y principal
     diagnostico_completo = extracted_data.get('diagnostico', '')
-    
-    # Prioridad 2: Si está vacío, usar 'Diagnostico Principal' que viene de medical_data
-    if not diagnostico_completo or diagnostico_completo in ['', 'N/A']:
-        diagnostico_completo = extracted_data.get('Diagnostico Principal', '')
-    
-    # Prioridad 3: Buscar en descripción macroscópica (diagnóstico referenciado)
-    if not diagnostico_completo or diagnostico_completo in ['', 'N/A']:
-        desc_macro = extracted_data.get('descripcion_macroscopica', '')
-        if desc_macro and len(desc_macro) > 20:
-            # Buscar patrón de diagnóstico entre comillas
-            match_quoted = re.search(r'diagnósticos?\s+de\s+"([^"]+)"', desc_macro, re.IGNORECASE)
-            if match_quoted:
-                diagnostico_completo = match_quoted.group(1).strip()
-    
-    # Prioridad 4: Si aún vacío, extraer de descripción microscópica
-    if not diagnostico_completo or diagnostico_completo in ['', 'N/A']:
-        desc_micro = extracted_data.get('descripcion_microscopica', '')
-        if desc_micro and len(desc_micro) > 20:
-            # Solo si tiene keywords diagnósticas
-            keywords_diag = ['CARCINOMA', 'ADENOCARCINOMA', 'SARCOMA', 'TUMOR', 'NEOPLASIA', 'MELANOMA', 'LINFOMA']
-            if any(kw in desc_micro.upper() for kw in keywords_diag):
-                diagnostico_completo = desc_micro
+    if not diagnostico_completo or diagnostico_completo == 'N/A':
+        diagnostico_completo = extracted_data.get('Diagnostico Principal', 'N/A')
 
-    # Si no hay nada, marcar como N/A
-    if not diagnostico_completo or diagnostico_completo in ['', 'N/A']:
-        diagnostico_completo = 'N/A'
-    
-    # Usar función especializada para extraer solo el diagnóstico principal (sin texto adicional)
-    diagnostico_principal = extract_principal_diagnosis(diagnostico_completo) if diagnostico_completo and diagnostico_completo != 'N/A' else 'N/A'
-    
-    # NUEVO v4.2.4: Limpiar texto explicativo del diagnóstico
-    if diagnostico_principal and diagnostico_principal != 'N/A':
-        diagnostico_principal = clean_diagnosis_text(diagnostico_principal)
+    db_record["Descripcion Diagnostico"] = diagnostico_completo
 
-    db_record["Diagnostico Principal"] = diagnostico_principal
-    db_record["Descripcion Diagnostico (5,6,7 Tipo histológico, subtipo histológico, margenes tumorales)"] = diagnostico_completo
-    db_record["Descripcion microscopica (8,9, 10,12,. Invasión linfovascular y perineural, indice mitótico/Ki67, Inmunohistoquímica, tamaño tumoral)"] = extracted_data.get('descripcion_microscopica', 'N/A')
+    # v5.3.6: NUEVO - Extraer diagnóstico principal específico del diagnóstico completo
+    # Ejemplo: "Mama. Biopsia. - CARCINOMA INVASIVO -" → "CARCINOMA INVASIVO"
+    diagnostico_principal = extract_diagnostico_principal(diagnostico_completo)
+    db_record["Diagnostico Principal"] = diagnostico_principal if diagnostico_principal else 'N/A'
 
-    # DEBUG: verificar valor de descripcion_macroscopica
-    macro_value = extracted_data.get('descripcion_macroscopica', 'N/A')
+    # v5.3.5: CORREGIDO - Usar nombres de columnas simplificados
+    db_record["Descripcion microscopica"] = extracted_data.get('Descripcion microscopica', 'N/A')
+    db_record["Descripcion macroscopica"] = extracted_data.get('Descripcion macroscopica', 'N/A')
 
-    db_record["Descripcion macroscopica"] = macro_value
-
-    # CORREGIDO: Priorizar factor_pronostico del extractor, luego extraer del diagnóstico
-    factor_pronostico = extracted_data.get('factor_pronostico', '')
-
-    # Si no viene en extracted_data, intentar extraer del diagnóstico completo
-    if not factor_pronostico and diagnostico_completo and diagnostico_completo != 'N/A':
-        factor_pronostico = extract_factor_pronostico(diagnostico_completo)
-
-    db_record["Factor pronostico"] = factor_pronostico if factor_pronostico else 'N/A'
+    # Factor pronóstico ya calculado por extract_ihq_data()
+    db_record["Factor pronostico"] = extracted_data.get('factor_pronostico', 'N/A') or extracted_data.get('Factor pronostico', 'N/A')
     
     # === INFORMACIÓN DE MUESTRA ===
     # ELIMINADO v4.2: "N. muestra" - campo duplicado con N. petición
-    db_record["CUPS"] = '90201'  # Código IHQ
-    db_record["Tipo de examen (4, 12, Metodo de obtención de la muestra, factor de certeza para el diagnóstico)"] = "ESTUDIO DE INMUNOHISTOQUIMICA"
+    # v5.3.1: CORREGIDO - Código CUPS correcto para IHQ
+    db_record["CUPS"] = '898807'  # 898807 - Estudio anatomopatológico de marcación inmunohistoquímica básica (específico)
+    # v5.3.6: CORREGIDO - Simplificado a "Tipo de examen"
+    db_record["Tipo de examen"] = "ESTUDIO DE INMUNOHISTOQUIMICA"
 
     # Usar procedimiento extraído (CIRUGÍA o BIOPSIA) o default a INMUNOHISTOQUIMICA
     procedimiento_tipo = extracted_data.get('procedimiento', 'INMUNOHISTOQUIMICA')
-    db_record["Procedimiento (11. Tipo de estudio para el diagnóstico)"] = procedimiento_tipo if procedimiento_tipo else "INMUNOHISTOQUIMICA"
+    # v5.3.6: CORREGIDO - Simplificado a "Procedimiento"
+    db_record["Procedimiento"] = procedimiento_tipo if procedimiento_tipo else "INMUNOHISTOQUIMICA"
     
     # === CAMPOS ADICIONALES QUE NO APLICAN ===
     empty_fields = [
@@ -842,9 +942,10 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
     all_biomarker_mapping = {
         # Biomarcadores principales
         'HER2': 'IHQ_HER2', 'her2': 'IHQ_HER2', 'IHQ_HER2': 'IHQ_HER2',
-        'KI67': 'IHQ_KI-67', 'ki67': 'IHQ_KI-67', 'ki-67': 'IHQ_KI-67', 'IHQ_KI-67': 'IHQ_KI-67',  # CORREGIDO: agregar variantes
-        'ER': 'IHQ_RECEPTOR_ESTROGENO', 'er': 'IHQ_RECEPTOR_ESTROGENO', 'IHQ_RECEPTOR_ESTROGENO': 'IHQ_RECEPTOR_ESTROGENO',  # CORREGIDO
-        'PR': 'IHQ_RECEPTOR_PROGESTERONOS', 'pr': 'IHQ_RECEPTOR_PROGESTERONOS', 'IHQ_RECEPTOR_PROGESTERONOS': 'IHQ_RECEPTOR_PROGESTERONOS',  # CORREGIDO
+        'KI67': 'IHQ_KI-67', 'ki67': 'IHQ_KI-67', 'ki-67': 'IHQ_KI-67', 'IHQ_KI-67': 'IHQ_KI-67',
+        # v5.3.6: CORREGIDO - Renombrados a ESTROGENOS/PROGESTERONA
+        'ER': 'IHQ_RECEPTOR_ESTROGENOS', 'er': 'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_ESTROGENOS': 'IHQ_RECEPTOR_ESTROGENOS',
+        'PR': 'IHQ_RECEPTOR_PROGESTERONA', 'pr': 'IHQ_RECEPTOR_PROGESTERONA', 'IHQ_RECEPTOR_PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',
         'PDL1': 'IHQ_PDL-1', 'pdl1': 'IHQ_PDL-1',
         'P16': 'IHQ_P16_ESTADO', 'p16': 'IHQ_P16_ESTADO',
         'P40': 'IHQ_P40_ESTADO', 'p40': 'IHQ_P40_ESTADO',
@@ -882,12 +983,8 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'CD138': 'IHQ_CD138', 'cd138': 'IHQ_CD138',
         
         # NUEVOS BIOMARCADORES v5.0 - CRÍTICOS PARA CASO 2 Y OTROS
-        'ACTH': 'IHQ_ACTH', 'acth': 'IHQ_ACTH',
-        'GH': 'IHQ_GH', 'gh': 'IHQ_GH',
-        'PROLACTINA': 'IHQ_PROLACTINA', 'prolactina': 'IHQ_PROLACTINA',
-        'TSH': 'IHQ_TSH', 'tsh': 'IHQ_TSH',
-        'LH': 'IHQ_LH', 'lh': 'IHQ_LH',
-        'FSH': 'IHQ_FSH', 'fsh': 'IHQ_FSH',
+        # HORMONAS ENDOCRINAS ELIMINADAS v5.2 - NO SON BIOMARCADORES IHQ
+        # 'ACTH', 'GH', 'PROLACTINA', 'TSH', 'LH', 'FSH' → Filtrados antes
         'CKAE1AE3': 'IHQ_CKAE1AE3', 'ckae1ae3': 'IHQ_CKAE1AE3',
         'CKAE1_AE3': 'IHQ_CKAE1AE3', 'ckae1_ae3': 'IHQ_CKAE1AE3',
         'NAPSIN': 'IHQ_NAPSIN', 'napsin': 'IHQ_NAPSIN',
@@ -907,16 +1004,41 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'SMA': 'IHQ_SMA', 'sma': 'IHQ_SMA',
         'MSA': 'IHQ_MSA', 'msa': 'IHQ_MSA',
         'CALRETININ': 'IHQ_CALRETININ', 'calretinin': 'IHQ_CALRETININ',
+
+        # V5.3: NUEVOS BIOMARCADORES (28 adicionales detectados en producción)
+        'CD23': 'IHQ_CD23', 'cd23': 'IHQ_CD23',
+        'CD4': 'IHQ_CD4', 'cd4': 'IHQ_CD4',
+        'CD8': 'IHQ_CD8', 'cd8': 'IHQ_CD8',
+        'CD99': 'IHQ_CD99', 'cd99': 'IHQ_CD99',
+        'CD1A': 'IHQ_CD1A', 'cd1a': 'IHQ_CD1A',
+        'C4D': 'IHQ_C4D', 'c4d': 'IHQ_C4D',
+        'LMP1': 'IHQ_LMP1', 'lmp1': 'IHQ_LMP1',
+        'CITOMEGALOVIRUS': 'IHQ_CITOMEGALOVIRUS', 'citomegalovirus': 'IHQ_CITOMEGALOVIRUS',
+        'CMV': 'IHQ_CITOMEGALOVIRUS', 'cmv': 'IHQ_CITOMEGALOVIRUS',
+        'SV40': 'IHQ_SV40', 'sv40': 'IHQ_SV40',
+        'CEA': 'IHQ_CEA', 'cea': 'IHQ_CEA',
+        'CA19_9': 'IHQ_CA19_9', 'ca19_9': 'IHQ_CA19_9',
+        'CALRETININA': 'IHQ_CALRETININA', 'calretinina': 'IHQ_CALRETININA',
+        'CK34BE12': 'IHQ_CK34BE12', 'ck34be12': 'IHQ_CK34BE12',
+        'CK5_6': 'IHQ_CK5_6', 'ck5_6': 'IHQ_CK5_6',
+        'HEPAR': 'IHQ_HEPAR', 'hepar': 'IHQ_HEPAR',
+        'GLIPICAN': 'IHQ_GLIPICAN', 'glipican': 'IHQ_GLIPICAN',
+        'ARGINASA': 'IHQ_ARGINASA', 'arginasa': 'IHQ_ARGINASA',
+        'HMB45': 'IHQ_HMB45', 'hmb45': 'IHQ_HMB45',
+        'PSA': 'IHQ_PSA', 'psa': 'IHQ_PSA',
+        'RACEMASA': 'IHQ_RACEMASA', 'racemasa': 'IHQ_RACEMASA',
+        '34BETA': 'IHQ_34BETA', '34beta': 'IHQ_34BETA',
+        'B2': 'IHQ_B2', 'b2': 'IHQ_B2',
     }
     
     # Aplicar mapeos de biomarcadores
     found_biomarkers = []
-    
+
     # Primero inicializar todos los campos de biomarcadores a vacío
     all_biomarker_columns = set(all_biomarker_mapping.values())
     for db_col in all_biomarker_columns:
         db_record[db_col] = ''
-    
+
     # Luego aplicar los valores encontrados (sin sobreescribir)
     for bio_key, db_col in all_biomarker_mapping.items():
         if bio_key in extracted_data and extracted_data[bio_key]:
@@ -925,9 +1047,120 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
             if not db_record.get(db_col):
                 db_record[db_col] = value
                 found_biomarkers.append(bio_key.upper())
-    
+
     # === CAMPOS ADICIONALES DE IHQ ===
-    db_record["IHQ_ESTUDIOS_SOLICITADOS"] = ', '.join(found_biomarkers) if found_biomarkers else ''
+    # V5.2: CONSTRUCCIÓN AUTOMÁTICA DE IHQ_ESTUDIOS_SOLICITADOS
+    # Construir lista de biomarcadores basándose en cuáles campos tienen datos
+    # Esto asegura que la IA sepa qué biomarcadores revisar
+
+    biomarcadores_encontrados = []
+
+    # Mapeo inverso: de campo BD a nombre común del biomarcador
+    biomarker_display_names = {
+        'IHQ_HER2': 'HER2',
+        'IHQ_KI-67': 'Ki-67',
+        'IHQ_RECEPTOR_ESTROGENOS': 'Receptor de Estrógeno',
+        'IHQ_RECEPTOR_PROGESTERONA': 'Receptor de Progesterona',
+        'IHQ_PDL-1': 'PDL-1',
+        'IHQ_P16_ESTADO': 'P16',
+        'IHQ_P40_ESTADO': 'P40',
+        'IHQ_P53': 'P53',
+        'IHQ_CD3': 'CD3',
+        'IHQ_CD5': 'CD5',
+        'IHQ_CD10': 'CD10',
+        'IHQ_CD20': 'CD20',
+        'IHQ_CD30': 'CD30',
+        'IHQ_CD34': 'CD34',
+        'IHQ_CD38': 'CD38',
+        'IHQ_CD45': 'CD45',
+        'IHQ_CD56': 'CD56',
+        'IHQ_CD61': 'CD61',
+        'IHQ_CD68': 'CD68',
+        'IHQ_CD117': 'CD117',
+        'IHQ_CD138': 'CD138',
+        'IHQ_CK7': 'CK7',
+        'IHQ_CK20': 'CK20',
+        'IHQ_CKAE1AE3': 'CKAE1AE3',
+        'IHQ_CAM52': 'CAM5.2',
+        'IHQ_TTF1': 'TTF1',
+        'IHQ_PAX5': 'PAX5',
+        'IHQ_PAX8': 'PAX8',
+        'IHQ_GATA3': 'GATA3',
+        'IHQ_SOX10': 'SOX10',
+        'IHQ_S100': 'S100',
+        'IHQ_EMA': 'EMA',
+        'IHQ_VIMENTINA': 'VIMENTINA',
+        'IHQ_CHROMOGRANINA': 'CHROMOGRANINA',
+        'IHQ_SYNAPTOPHYSIN': 'SYNAPTOPHYSIN',
+        'IHQ_MELAN_A': 'MELAN-A',
+        'IHQ_CDX2': 'CDX2',
+        'IHQ_NAPSIN': 'NAPSIN',
+        'IHQ_MLH1': 'MLH1',
+        'IHQ_MSH2': 'MSH2',
+        'IHQ_MSH6': 'MSH6',
+        'IHQ_PMS2': 'PMS2',
+        'IHQ_GFAP': 'GFAP',
+        'IHQ_NEUN': 'NEUN',
+        'IHQ_DOG1': 'DOG1',
+        'IHQ_HHV8': 'HHV8',
+        'IHQ_WT1': 'WT1',
+        'IHQ_P63': 'P63',
+        'IHQ_ACTIN': 'ACTIN',
+        # HORMONAS ENDOCRINAS ELIMINADAS v5.2 - NO SON BIOMARCADORES IHQ
+        # 'IHQ_ACTH', 'IHQ_GH', 'IHQ_PROLACTINA', 'IHQ_TSH', 'IHQ_LH', 'IHQ_FSH'
+        'IHQ_CDK4': 'CDK4',
+        'IHQ_MDM2': 'MDM2',
+        'IHQ_BCL2': 'BCL2',
+        'IHQ_BCL6': 'BCL6',
+        'IHQ_MUM1': 'MUM1',
+        'IHQ_CD79A': 'CD79A',
+        'IHQ_CD15': 'CD15',
+        'IHQ_ALK': 'ALK',
+        'IHQ_DESMIN': 'DESMIN',
+        'IHQ_MYOGENIN': 'MYOGENIN',
+        'IHQ_MYOD1': 'MYOD1',
+        'IHQ_SMA': 'SMA',
+        'IHQ_MSA': 'MSA',
+        'IHQ_CALRETININ': 'CALRETININ',
+        # V5.3: NUEVOS BIOMARCADORES
+        'IHQ_CD23': 'CD23',
+        'IHQ_CD4': 'CD4',
+        'IHQ_CD8': 'CD8',
+        'IHQ_CD99': 'CD99',
+        'IHQ_CD1A': 'CD1A',
+        'IHQ_C4D': 'C4D',
+        'IHQ_LMP1': 'LMP-1',
+        'IHQ_CITOMEGALOVIRUS': 'CITOMEGALOVIRUS',
+        'IHQ_SV40': 'SV40',
+        'IHQ_CEA': 'CEA',
+        'IHQ_CA19_9': 'CA19-9',
+        'IHQ_CALRETININA': 'CALRETININA',
+        'IHQ_CK34BE12': 'CK34BE12',
+        'IHQ_CK5_6': 'CK5/6',
+        'IHQ_HEPAR': 'HEPAR',
+        'IHQ_GLIPICAN': 'GLIPICAN',
+        'IHQ_ARGINASA': 'ARGINASA',
+        'IHQ_HMB45': 'HMB45',
+        'IHQ_PSA': 'PSA',
+        'IHQ_RACEMASA': 'RACEMASA',
+        'IHQ_34BETA': '34BETA',
+        'IHQ_B2': 'B2',
+    }
+
+    # Revisar cada campo IHQ_* para ver si tiene datos
+    for campo_bd, nombre_display in biomarker_display_names.items():
+        valor = db_record.get(campo_bd, '')
+        if valor and valor.strip() and valor not in ['N/A', 'nan', 'None', 'NULL']:
+            biomarcadores_encontrados.append(nombre_display)
+
+    # Construir string de estudios solicitados
+    if biomarcadores_encontrados:
+        estudios_solicitados_str = ', '.join(sorted(biomarcadores_encontrados))
+    else:
+        # Fallback: usar el valor del extractor (tabla del PDF) si existe
+        estudios_solicitados_str = extracted_data.get('estudios_solicitados_tabla', '')
+
+    db_record["IHQ_ESTUDIOS_SOLICITADOS"] = estudios_solicitados_str if estudios_solicitados_str else ''
 
     # CORREGIDO: Usar la misma lógica de priorización para IHQ_ORGANO
     ihq_organo_value = extracted_data.get('ihq_organo', '') or extracted_data.get('organo', '')
@@ -967,13 +1200,13 @@ __all__ = [
 
 if __name__ == "__main__":
     # Test del módulo unificado
-    print("=== Test del Módulo de Integración Unificado ===")
+    logging.info("=== Test del Módulo de Integración Unificado ===")
     
     # Verificar estado
     status = get_extractor_status()
-    print(f"\n📊 Estado de extractores:")
+    logging.info(f"\n📊 Estado de extractores:")
     for key, value in status.items():
-        print(f"  {key}: {value}")
+        logging.info(f"  {key}: {value}")
     
     # Test de extracción
     texto_test = """
@@ -991,16 +1224,16 @@ if __name__ == "__main__":
     PR: 85% (POSITIVO)
     """
     
-    print(f"\n🧪 Probando extract_ihq_data...")
+    logging.info(f"\n🧪 Probando extract_ihq_data...")
     resultado = extract_ihq_data(texto_test)
     
-    print(f"\n📋 Resultados ({len(resultado)} campos):")
+    logging.info(f"\n📋 Resultados ({len(resultado)} campos):")
     for campo, valor in sorted(resultado.items()):
         if valor:  # Solo mostrar campos con valor
-            print(f"  {campo}: {valor}")
+            logging.info(f"  {campo}: {valor}")
     
     # Validar resultado
     es_valido = validate_extraction_result(resultado)
-    print(f"\n✅ Validación: {'EXITOSA' if es_valido else 'FALLIDA'}")
+    logging.info(f"\n✅ Validación: {'EXITOSA' if es_valido else 'FALLIDA'}")
     
-    print(f"\n🎉 Módulo unificado funcionando correctamente!")
+    logging.info(f"\n🎉 Módulo unificado funcionando correctamente!")

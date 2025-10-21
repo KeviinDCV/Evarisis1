@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-10-21T00:50:10.676195",
+  "numero_peticion": "IHQ251037",
+  "campo": "IHQ_Ki67",
+  "valor_esperado": null,
+  "problemas_detectados": [
+    "Prompt no tiene ejemplos de Ki67"
+  ],
+  "hipotesis": [
+    "IA no está entrenada específicamente para este biomarcador"
+  ],
+  "soluciones_sugeridas": [
+    "Agregar ejemplos de extracción de Ki67 al prompt"
+  ],
+  "ocr_tiene_dato": true,
+  "fragmento_ocr": "Ki67: anti-Ki67",
+  "modelo_adecuado": true
+}

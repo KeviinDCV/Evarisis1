@@ -29,6 +29,7 @@ Fecha: 7 de octubre de 2025
 """
 
 import sys
+import logging
 from pathlib import Path
 from typing import List, Dict, Any, Callable, Optional
 import glob
@@ -84,12 +85,12 @@ def auditar_registros_incompletos(
     try:
         from core.ventana_auditoria_ia import mostrar_ventana_auditoria
 
-        print(f"[AUDITORIA] Iniciando auditoria PARCIAL de {len(numeros_peticion)} registros incompletos")
-        print(f"[LOTES] Procesamiento por LOTES: {batch_size} casos simultaneos")
+        logging.info(f"[AUDITORIA] Iniciando auditoria PARCIAL de {len(numeros_peticion)} registros incompletos")
+        logging.info(f"[LOTES] Procesamiento por LOTES: {batch_size} casos simultaneos")
 
         # Dividir casos en lotes
         total_lotes = (len(numeros_peticion) + batch_size - 1) // batch_size
-        print(f"[INFO] Se procesaran {total_lotes} lotes de ~{batch_size} casos cada uno")
+        logging.info(f"[INFO] Se procesaran {total_lotes} lotes de ~{batch_size} casos cada uno")
 
         todos_casos_preparados = []
 
@@ -99,7 +100,7 @@ def auditar_registros_incompletos(
                 analisis = verificar_completitud_registro(numero)
 
                 if analisis.get('error'):
-                    print(f"   [!] Error analizando {numero}: {analisis['error']}")
+                    logging.warning(f"   [!] Error analizando {numero}: {analisis['error']}")
                     continue
 
                 # Obtener campos faltantes
@@ -109,13 +110,13 @@ def auditar_registros_incompletos(
                 )
 
                 if not campos_faltantes:
-                    print(f"   [INFO] {numero} no tiene campos faltantes, omitiendo")
+                    logging.info(f"   [INFO] {numero} no tiene campos faltantes, omitiendo")
                     continue
 
                 # Obtener datos del registro de BD
                 registro_bd = get_registro_by_peticion(numero)
                 if not registro_bd:
-                    print(f"   [!] No se encontro registro en BD para {numero}")
+                    logging.warning(f"   [!] No se encontro registro en BD para {numero}")
                     continue
 
                 # Cargar debug_map para tener el PDF completo
@@ -128,12 +129,12 @@ def auditar_registros_incompletos(
                     debug_map_path = Path(sorted(debug_map_files)[-1])
                     try:
                         debug_map = DebugMapper.cargar_mapa(debug_map_path)
-                        print(f"   [OK] {numero} preparado - {len(campos_faltantes)} campos faltantes")
+                        logging.info(f"   [OK] {numero} preparado - {len(campos_faltantes)} campos faltantes")
                     except Exception as e:
-                        print(f"   [!] Error cargando debug_map para {numero}: {e}")
+                        logging.warning(f"   [!] Error cargando debug_map para {numero}: {e}")
                         debug_map = {}
                 else:
-                    print(f"   [!] No se encontro debug_map para {numero}")
+                    logging.warning(f"   [!] No se encontro debug_map para {numero}")
                     debug_map = {}
 
                 # Preparar caso para auditoria
@@ -151,11 +152,11 @@ def auditar_registros_incompletos(
                 todos_casos_preparados.append(caso)
 
             except Exception as e:
-                print(f"   [X] Error preparando {numero}: {e}")
+                logging.error(f"   [X] Error preparando {numero}: {e}", exc_info=True)
                 continue
 
         if not todos_casos_preparados:
-            print("   [!] No hay casos validos para auditar")
+            logging.warning("   [!] No hay casos validos para auditar")
             if callback_completado:
                 callback_completado({
                     'tipo': 'parcial',
@@ -170,11 +171,11 @@ def auditar_registros_incompletos(
         num_lotes_reales = (len(todos_casos_preparados) + batch_size - 1) // batch_size
         tiempo_estimado_seg = num_lotes_reales * 30  # ~30 seg por lote de 5 casos
 
-        print(f"\n[IA] Iniciando auditoria IA para {len(todos_casos_preparados)} casos")
-        print(f"   Modo: PARCIAL (solo campos faltantes)")
-        print(f"   Lotes: {num_lotes_reales} lotes de ~{batch_size} casos")
-        print(f"   Tiempo estimado: {tiempo_estimado_seg // 60}m {tiempo_estimado_seg % 60}s")
-        print(f"   Ahorro vs individual: ~{(len(todos_casos_preparados) * 15 - tiempo_estimado_seg) // 60}m\n")
+        logging.info(f"\n[IA] Iniciando auditoria IA para {len(todos_casos_preparados)} casos")
+        logging.info(f"   Modo: PARCIAL (solo campos faltantes)")
+        logging.info(f"   Lotes: {num_lotes_reales} lotes de ~{batch_size} casos")
+        logging.info(f"   Tiempo estimado: {tiempo_estimado_seg // 60}m {tiempo_estimado_seg % 60}s")
+        logging.info(f"   Ahorro vs individual: ~{(len(todos_casos_preparados) * 15 - tiempo_estimado_seg) // 60}m\n")
 
         # Llamar a ventana de auditoria con modo parcial y lotes
         mostrar_ventana_auditoria(
@@ -185,8 +186,8 @@ def auditar_registros_incompletos(
         )
 
     except ImportError as e:
-        print(f"[X] Error de importacion: {e}")
-        print("   Verifique que core/ventana_auditoria_ia.py este disponible")
+        logging.error(f"[X] Error de importacion: {e}", exc_info=True)
+        logging.error("   Verifique que core/ventana_auditoria_ia.py este disponible")
 
         if callback_completado:
             callback_completado({
@@ -199,7 +200,7 @@ def auditar_registros_incompletos(
             })
 
     except Exception as e:
-        print(f"[X] Error en auditoria parcial: {e}")
+        logging.error(f"[X] Error en auditoria parcial: {e}", exc_info=True)
 
         if callback_completado:
             callback_completado({
@@ -331,69 +332,136 @@ FORMATO DE RESPUESTA (JSON ESTRICTO):
 
 def preparar_prompt_parcial_lote(casos: List[Dict[str, Any]]) -> str:
     """
-    Preparar prompt ULTRA-OPTIMIZADO para auditoria parcial RAPIDA
+    Preparar prompt para auditoria parcial en LOTES (3 casos)
 
-    V2.1.4 OPTIMIZACION CRÍTICA:
-    - Solo envia campos faltantes RELEVANTES (Diagnostico Principal + Biomarcadores)
-    - Texto PDF reducido a 2000 chars/caso (vs 12000 anterior)
-    - Prompt compacto sin instrucciones largas
-    - Objetivo: <2000 tokens totales para 3 casos
+    V5.1.2: UNIFICADO con auditoría COMPLETA
+    - Usa los MISMOS 4 campos extraídos del PDF que COMPLETA
+    - Solo envía campos FALTANTES según validation_checker
+    - Procesa 3 casos en una sola inferencia
 
     Args:
         casos: Lista de diccionarios con datos de cada caso
 
     Returns:
-        Prompt ultra-optimizado para velocidad maxima
+        Prompt optimizado con campos extraídos estructurados
     """
     num_casos = len(casos)
 
-    # Construir descripcion COMPACTA de cada caso
+    # Construir descripcion de cada caso
     descripciones_casos = []
     for idx, caso in enumerate(casos, 1):
         numero = caso.get('numero_peticion', 'Desconocido')
         campos_faltantes = caso.get('campos_a_buscar', [])
         datos_bd = caso.get('datos_bd', {})
+        debug_map = caso.get('debug_map', {})
 
-        # V2.1.4: FILTRAR solo campos MEDICOS relevantes (ignorar administrativos)
-        campos_relevantes = []
+        # V3.3.0: Obtener estudios solicitados del registro
+        estudios_solicitados_raw = datos_bd.get('IHQ_ESTUDIOS_SOLICITADOS', '')
+
+        # Contexto de estudios solicitados
+        contexto_estudios = ""
+        if estudios_solicitados_raw and estudios_solicitados_raw not in ['', 'N/A', 'NO ENCONTRADO']:
+            from core.validation_checker import parsear_estudios_solicitados
+            estudios_info = parsear_estudios_solicitados(estudios_solicitados_raw)
+            if estudios_info['tiene_estudios']:
+                biomarcadores_str = ', '.join(estudios_info['biomarcadores_raw'])
+                contexto_estudios = f"\n📋 Estudios SOLICITADOS: {biomarcadores_str}"
+
+        # Formatear campos faltantes de forma legible
+        campos_legibles = []
         for campo in campos_faltantes:
-            # Solo incluir Diagnostico Principal, Factor Pronostico y Biomarcadores IHQ
-            if any(keyword in campo for keyword in [
-                'Diagnostico Principal',
-                'Factor pronostico',
-                'IHQ_',
-                'Organo'
-            ]):
-                nombre = campo.split('(')[0].strip()
-                campos_relevantes.append(f"  - {nombre}")
+            nombre = campo.split('(')[0].strip()
+            campos_legibles.append(f"  - {nombre}")
 
-        # Si no hay campos médicos relevantes, skip
-        if not campos_relevantes:
+        # Si no hay campos faltantes, skip
+        if not campos_legibles:
             continue
 
-        # V2.1.4: Extraer MINIMO texto necesario (2000 chars max)
-        debug_map = caso.get('debug_map', {})
-        texto_relevante = _extraer_texto_minimo(debug_map, campos_faltantes)
+        # V5.1.2: NUEVO - Extraer campos estructurados del PDF (igual que COMPLETA)
+        extraccion = debug_map.get("extraccion", {})
+        unified_extractor = extraccion.get("unified_extractor", {})
+
+        campos_pdf = {
+            "DESCRIPCIÓN MACROSCÓPICA": unified_extractor.get("descripcion_macroscopica", "N/A"),
+            "DESCRIPCIÓN MICROSCÓPICA": unified_extractor.get("descripcion_microscopica", "N/A"),
+            "DIAGNÓSTICO": unified_extractor.get("diagnostico", "N/A"),
+            "COMENTARIOS": unified_extractor.get("comentarios", "N/A")
+        }
+
+        # Construir texto del PDF estructurado
+        texto_pdf_parts = []
+        for seccion, contenido in campos_pdf.items():
+            if contenido and contenido != "N/A" and str(contenido).strip():
+                # Limitar cada sección para no exceder tokens
+                contenido_limitado = contenido[:1500] if len(contenido) > 1500 else contenido
+                texto_pdf_parts.append(f"═══ {seccion} ═══")
+                texto_pdf_parts.append(contenido_limitado)
+                texto_pdf_parts.append("")
+
+        texto_pdf = "\n".join(texto_pdf_parts) if texto_pdf_parts else "(No hay datos extraídos del PDF)"
 
         descripcion = f"""
-CASO {idx}: {numero}
+CASO {idx}: {numero}{contexto_estudios}
 Campos faltantes:
-{chr(10).join(campos_relevantes)}
+{chr(10).join(campos_legibles)}
 
-PDF (secciones clave):
-{texto_relevante}
+CAMPOS EXTRAÍDOS DEL PDF:
+{texto_pdf}
 """
         descripciones_casos.append(descripcion)
 
-    # V2.1.4: Prompt ULTRA-COMPACTO para velocidad maxima
-    prompt = f"""Extrae datos faltantes de {num_casos} informes IHQ.
+    # V5.1.2: Prompt unificado con estructura similar a COMPLETA
+    prompt = f"""Eres un asistente de extracción de datos médicos para el Hospital Universitario del Valle.
+
+TAREA: Completar ÚNICAMENTE los campos FALTANTES de {num_casos} informes IHQ.
 
 {''.join(descripciones_casos)}
 
-INSTRUCCIONES:
-1. Diagnostico Principal: Extrae del PDF, incluyendo tipo histologico
-2. Factor Pronostico: Construye resumen de biomarcadores presentes (Ki-67, P53, P16, HER2, RE, RP, etc). Formato: "Ki-67: 15%, HER2: NEGATIVO"
-3. Biomarcadores IHQ: Extrae valores exactos (POSITIVO/NEGATIVO/FOCAL para estado, XX% para porcentaje)
+INSTRUCCIONES ESTRICTAS:
+
+1. **Para cada campo faltante**: Busca el dato en los CAMPOS EXTRAÍDOS DEL PDF
+   - Si lo encuentras, extráelo TEXTUALMENTE como aparece
+   - Si NO lo encuentras, agrégalo a "no_encontrados"
+
+2. **Para "Factor pronostico"** (si está en campos faltantes):
+   [!] NO busques "Factor Pronóstico" literal. DEBES CONSTRUIRLO de los biomarcadores:
+   - Busca: Ki-67, P53, HER2, ER (Receptor Estrógeno), PR (Receptor Progesterona), P16, P40
+   - Formato: "Ki-67: X%, HER2: NEGATIVO, ER: 90% POSITIVO"
+   - Ejemplo: "Ki-67: 18%, P53: POSITIVO"
+
+3. **Biomarcadores IHQ - REGLAS CRÍTICAS**:
+
+   ⚠️ SOLO BUSCAR BIOMARCADORES SOLICITADOS:
+   - Si el caso muestra "📋 Estudios SOLICITADOS: HER2, Ki-67"
+   - SOLO busca esos 2 en el PDF
+   - NO busques P16, P40, PDL-1 ni otros no solicitados
+   - Objetivo: Evitar falsos positivos
+
+   ⚠️ DISTINCIÓN ESTADO vs PORCENTAJE:
+   - CAMPO _ESTADO: Solo POSITIVO/NEGATIVO/FOCAL/DÉBIL/FUERTE
+   - CAMPO _PORCENTAJE o KI-67: Solo números con % (ej: 15%, 80%)
+   - PDF "P16 POSITIVO" → IHQ_P16_ESTADO = "POSITIVO" (NO porcentaje)
+   - PDF "P16: 70%" → IHQ_P16_PORCENTAJE = "70%" (NO estado)
+
+4. **Para Diagnóstico Principal**:
+   - Busca en sección DIAGNÓSTICO del PDF
+   - Extrae tipo histológico principal
+   - Ejemplo: "CARCINOMA DUCTAL INFILTRANTE GRADO 2"
+
+5. **MAPEO DE VARIANTES** - Biomarcadores pueden aparecer con espacios, puntos, barras, guiones:
+   ⚡ CRÍTICO: Busca TODAS las variantes posibles:
+   - "CAM 5.2" o "CAM5.2" o "CAM52" → IHQ_CAM52
+   - "CKAE1/AE3" o "CKAE1 AE3" o "CKAE1AE3" → IHQ_CKAE1AE3
+   - "KI 67" o "Ki-67" o "KI67" → IHQ_KI-67
+   - "HER 2" o "HER-2" o "HER2" → IHQ_HER2
+   - "P 53" o "P53" → IHQ_P53
+   - "PDL 1" o "PDL-1" → IHQ_PDL-1
+   - "PAX 8" o "PAX8" → IHQ_PAX8
+   - "MSH 6" o "MSH6" → IHQ_MSH6
+
+   Si buscas IHQ_CAM52 y el PDF dice "CAM 5.2", ¡ESO ES UNA COINCIDENCIA! Extráelo.
+
+6. **NO inventes datos** que no estén en el PDF
 
 JSON de respuesta:
 {{
@@ -599,9 +667,9 @@ def _extraer_texto_relevante(debug_map: Dict[str, Any], campos_buscados: List[st
 
 # Test rapido
 if __name__ == "__main__":
-    print("[TEST] Test del modulo de auditoria parcial")
-    print("\nEste modulo requiere integracion con UI para ejecutarse.")
-    print("Usa desde ui.py con: _iniciar_auditoria_ia('parcial', registros_incompletos)")
+    logging.info("[TEST] Test del modulo de auditoria parcial")
+    logging.info("\nEste modulo requiere integracion con UI para ejecutarse.")
+    logging.info("Usa desde ui.py con: _iniciar_auditoria_ia('parcial', registros_incompletos)")
 
     # Test de preparacion de prompt
     caso_test = {
@@ -614,7 +682,7 @@ if __name__ == "__main__":
     }
 
     prompt = preparar_prompt_parcial(caso_test)
-    print("\n[PROMPT] Ejemplo de prompt generado:")
-    print("=" * 70)
-    print(prompt[:300] + "...")
-    print("=" * 70)
+    logging.info("\n[PROMPT] Ejemplo de prompt generado:")
+    logging.info("=" * 70)
+    logging.info(prompt[:300] + "...")
+    logging.info("=" * 70)

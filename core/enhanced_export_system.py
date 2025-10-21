@@ -13,6 +13,11 @@ from tkinter import messagebox, filedialog
 import pandas as pd
 import sqlite3
 from datetime import datetime
+import logging
+
+# Configurar logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 class EnhancedExportSystem:
     """Sistema de exportación robusto y completo"""
@@ -22,7 +27,7 @@ class EnhancedExportSystem:
         self.export_base_path = os.path.join(
             os.path.expanduser("~"),
             "Documents",
-            "EVARISIS Gestor Oncologico",
+            "EVARISIS Cirug\u00eda Oncol\u00f3gica",
             "Exportaciones Base de datos"
         )
         self.ensure_export_directories()
@@ -37,7 +42,7 @@ class EnhancedExportSystem:
             os.makedirs(db_path, exist_ok=True)
 
         except Exception as e:
-            print(f"Error creando directorios de exportación: {e}")
+            logging.error(f"Error creando directorios de exportación: {e}")
 
     def export_full_database(self):
         """Exportar toda la base de datos directamente sin mostrar diálogo de formato"""
@@ -50,14 +55,14 @@ class EnhancedExportSystem:
                 messagebox.showwarning("Sin datos", "No hay datos para exportar")
                 return
 
-            print(f"DEBUG: Exportando directamente {len(df)} registros completos sin diálogo")
+            logging.debug(f"DEBUG: Exportando directamente {len(df)} registros completos sin diálogo")
 
             # CORREGIDO: Mostrar diálogo de selección de formato para base de datos completa
             # La función 'Exportar Todo' debe mostrar opciones pero guardar en ubicaciones predefinidas
             self.show_export_format_dialog(df, "completa")
 
         except Exception as e:
-            print(f"Error en export_full_database: {e}")
+            logging.error(f"Error en export_full_database: {e}")
             messagebox.showerror("Error", f"Error exportando base de datos: {e}")
 
     def export_full_database_direct(self):
@@ -71,13 +76,13 @@ class EnhancedExportSystem:
                 messagebox.showwarning("Sin datos", "No hay datos para exportar")
                 return
 
-            print(f"DEBUG: Exportando directamente {len(df)} registros a Excel y Base de Datos")
+            logging.debug(f"DEBUG: Exportando directamente {len(df)} registros a Excel y Base de Datos")
 
             # Mostrar diálogo simple de selección de formato sin opción de ubicación
             self.show_quick_export_dialog(df, "completa")
 
         except Exception as e:
-            print(f"Error en export_full_database_direct: {e}")
+            logging.error(f"Error en export_full_database_direct: {e}")
             messagebox.showerror("Error", f"Error exportando base de datos: {e}")
 
     def export_selected_data(self, selected_df):
@@ -87,13 +92,13 @@ class EnhancedExportSystem:
                 messagebox.showwarning("Sin selección", "No hay elementos seleccionados para exportar")
                 return
 
-            print(f"DEBUG: Exportando directamente {len(selected_df)} registros seleccionados a Excel")
+            logging.debug(f"DEBUG: Exportando directamente {len(selected_df)} registros seleccionados a Excel")
 
             # CORREGIDO: Exportar directamente a Excel en ubicación estándar sin mostrar diálogo
             self.execute_export(selected_df, "seleccion", "excel", None)
 
         except Exception as e:
-            print(f"Error en export_selected_data: {e}")
+            logging.error(f"Error en export_selected_data: {e}")
             messagebox.showerror("Error", f"Error exportando selección: {e}")
 
     def show_export_format_dialog(self, df, export_type):
@@ -323,7 +328,7 @@ class EnhancedExportSystem:
                 success = self.export_to_database(df, filepath)
 
             if success:
-                print(f"✅ Exportación exitosa: {filepath}")
+                logging.info(f"✅ Exportación exitosa: {filepath}")
 
                 # CORREGIDO: Mostrar confirmación con información correcta
                 messagebox.showinfo(
@@ -351,15 +356,15 @@ class EnhancedExportSystem:
                     try:
                         # Primero navegar al dashboard de base de datos
                         self.parent_app._nav_to_database()
-                        print("✅ Navegado a dashboard de base de datos")
+                        logging.info("✅ Navegado a dashboard de base de datos")
 
                         # Esperar un momento para que se cargue el dashboard
                         self.parent_app.after(200, lambda: self._delayed_redirect_to_exports())
                     except Exception as e:
-                        print(f"⚠️ No se pudo cambiar a pestaña Exportaciones: {e}")
+                        logging.warning(f"⚠️ No se pudo cambiar a pestaña Exportaciones: {e}")
 
         except Exception as e:
-            print(f"❌ Error durante exportación: {e}")
+            logging.error(f"❌ Error durante exportación: {e}")
             messagebox.showerror("Error", f"Error durante la exportación: {e}")
 
     def _delayed_redirect_to_exports(self):
@@ -369,9 +374,9 @@ class EnhancedExportSystem:
                 self.parent_app.enhanced_dashboard.refresh_exports_list()
                 # Cambiar automáticamente a la pestaña de Exportaciones (índice 5)
                 self.parent_app.enhanced_dashboard.notebook.select(5)
-                print("✅ Redirigido a pestaña de Exportaciones")
+                logging.info("✅ Redirigido a pestaña de Exportaciones")
         except Exception as e:
-            print(f"⚠️ Error en redirección diferida: {e}")
+            logging.warning(f"⚠️ Error en redirección diferida: {e}")
 
     def generate_filename(self, df, export_type, format_type):
         """Generar nombre de archivo con fechas"""
@@ -606,7 +611,7 @@ class EnhancedExportSystem:
         """Exportar DataFrame a Excel"""
         try:
             # CORREGIDO: Usar la ruta completa que se pasa como parámetro
-            print(f"DEBUG: Exportando a Excel: {filepath}")
+            logging.debug(f"DEBUG: Exportando a Excel: {filepath}")
 
             # Crear directorio padre si no existe
             os.makedirs(os.path.dirname(filepath), exist_ok=True)
@@ -632,18 +637,18 @@ class EnhancedExportSystem:
                     adjusted_width = min(max_length + 2, 50)
                     worksheet.column_dimensions[column[0].column_letter].width = adjusted_width
 
-            print(f"✅ Excel exportado exitosamente: {filepath}")
+            logging.info(f"✅ Excel exportado exitosamente: {filepath}")
             return True
 
         except Exception as e:
-            print(f"❌ Error exportando a Excel: {e}")
+            logging.error(f"❌ Error exportando a Excel: {e}")
             return False
 
     def export_to_database(self, df, filepath):
         """Exportar DataFrame a base de datos SQLite"""
         try:
             # CORREGIDO: Usar filepath completo que ya incluye la subcarpeta correcta
-            print(f"DEBUG: Exportando a base de datos: {filepath}")
+            logging.debug(f"DEBUG: Exportando a base de datos: {filepath}")
 
             # Crear directorio padre si no existe
             os.makedirs(os.path.dirname(filepath), exist_ok=True)
@@ -676,11 +681,11 @@ class EnhancedExportSystem:
                 df.to_sql('informes_ihq', conn, if_exists='replace', index=False)
                 conn.close()
 
-            print(f"✅ Base de datos exportada exitosamente: {filepath}")
+            logging.info(f"✅ Base de datos exportada exitosamente: {filepath}")
             return True
 
         except Exception as e:
-            print(f"Error exportando base de datos: {e}")
+            logging.error(f"Error exportando base de datos: {e}")
             return False
 
 # Métodos adicionales para integrar con la UI principal

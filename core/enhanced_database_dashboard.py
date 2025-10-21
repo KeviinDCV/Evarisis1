@@ -8,6 +8,7 @@ Panel super robusto con estadísticas profundas de biomarcadores
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 import tkinter as tk
+from tksheet import Sheet  # V5.3.8: Tabla virtualizada tipo Excel
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
@@ -17,6 +18,15 @@ from matplotlib.figure import Figure
 import seaborn as sns
 from collections import defaultdict
 import re
+import os
+import subprocess
+import platform
+import logging
+import traceback
+
+# Configurar logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 class EnhancedDatabaseDashboard:
     """Dashboard avanzado para análisis completo de la base de datos"""
@@ -30,6 +40,17 @@ class EnhancedDatabaseDashboard:
         # Configurar estilo de gráficos
         plt.style.use('default')
         sns.set_palette("husl")
+
+        # Diccionario de nombres amigables para biomarcadores
+        self.BIOMARKER_LABELS = {
+            'RECEPTOR PROGESTERONOS': 'RECEPTOR DE PROGESTERONA',
+            'RECEPTOR ESTROGENO': 'RECEPTOR DE ESTRÓGENO',
+            'KI-67': 'Ki-67',
+            'HER2': 'HER2',
+            'PDL-1': 'PDL-1',
+            'P16 ESTADO': 'P16',
+            'P16 PORCENTAJE': 'P16 %'
+        }
 
         self.create_dashboard()
 
@@ -106,7 +127,7 @@ class EnhancedDatabaseDashboard:
                     height = scrollable_frame.winfo_reqheight()
                     canvas.configure(scrollregion=(0, 0, width, height))
             except Exception as e:
-                print(f"Error configurando scroll region: {e}")
+                logging.error(f"Error configurando scroll region: {e}")
 
         scrollable_frame.bind("<Configure>", configure_scroll_region)
 
@@ -201,7 +222,7 @@ class EnhancedDatabaseDashboard:
                     height = scrollable_frame.winfo_reqheight()
                     canvas.configure(scrollregion=(0, 0, width, height))
             except Exception as e:
-                print(f"Error configurando scroll region: {e}")
+                logging.error(f"Error configurando scroll region: {e}")
 
         scrollable_frame.bind("<Configure>", configure_scroll_region)
 
@@ -278,6 +299,32 @@ class EnhancedDatabaseDashboard:
 
         self.biomarker_stats_tree.pack(fill=X, padx=10, pady=10)
 
+        # Nota informativa sobre interpretación de HER2
+        her2_info_frame = ttk.Frame(advanced_stats_section, style="info.TFrame")
+        her2_info_frame.pack(fill=X, padx=10, pady=(15, 10))
+
+        ttk.Label(
+            her2_info_frame,
+            text="ℹ️ Interpretación de HER2:",
+            font=("Segoe UI", 10, "bold"),
+            foreground="#2196F3"
+        ).pack(anchor="w", padx=10, pady=(5, 2))
+
+        ttk.Label(
+            her2_info_frame,
+            text="• 0 y 1+ = NEGATIVO    • 2+ = INDETERMINADO    • 3+ = POSITIVO",
+            font=("Segoe UI", 9),
+            foreground="#555555"
+        ).pack(anchor="w", padx=25, pady=(0, 5))
+
+        # Sección 5: Distribución de RE/RP por Rangos de Positividad
+        er_pr_distribution_section = ttk.LabelFrame(main_frame, text="🎯 Distribución de RE/RP por % de Positividad", padding=20)
+        er_pr_distribution_section.pack(fill=X, padx=20, pady=10)
+
+        # Frame para gráfico de distribución RE/RP
+        self.er_pr_chart_frame = ttk.Frame(er_pr_distribution_section)
+        self.er_pr_chart_frame.pack(fill=X, pady=10)
+
     def create_temporal_analysis_tab(self):
         """Crear pestaña de análisis temporal"""
 
@@ -299,7 +346,7 @@ class EnhancedDatabaseDashboard:
                     height = scrollable_frame.winfo_reqheight()
                     canvas.configure(scrollregion=(0, 0, width, height))
             except Exception as e:
-                print(f"Error configurando scroll region: {e}")
+                logging.error(f"Error configurando scroll region: {e}")
 
         scrollable_frame.bind("<Configure>", configure_scroll_region)
 
@@ -368,7 +415,7 @@ class EnhancedDatabaseDashboard:
                     height = scrollable_frame.winfo_reqheight()
                     canvas.configure(scrollregion=(0, 0, width, height))
             except Exception as e:
-                print(f"Error configurando scroll region: {e}")
+                logging.error(f"Error configurando scroll region: {e}")
 
         scrollable_frame.bind("<Configure>", configure_scroll_region)
 
@@ -494,7 +541,7 @@ class EnhancedDatabaseDashboard:
             self.update_malignancy_analysis()
 
         except Exception as e:
-            print(f"Error actualizando dashboard: {e}")
+            logging.error(f"Error actualizando dashboard: {e}")
             self.show_error_message(str(e))
 
     def update_general_stats(self):
@@ -581,6 +628,7 @@ class EnhancedDatabaseDashboard:
         # Actualizar gráficos y tablas de biomarcadores
         self.update_biomarker_charts()
         self.update_biomarker_stats_table()
+        self.update_er_pr_distribution()
 
     def _count_valid_biomarkers(self, keywords):
         """Contar registros que realmente contienen biomarcadores válidos"""
@@ -676,7 +724,7 @@ class EnhancedDatabaseDashboard:
             self.update_monthly_stats_table(df_with_dates)
 
         except Exception as e:
-            print(f"Error en análisis temporal: {e}")
+            logging.error(f"Error en análisis temporal: {e}")
 
     def update_malignancy_analysis(self):
         """Actualizar análisis de malignidad"""
@@ -781,7 +829,7 @@ class EnhancedDatabaseDashboard:
             canvas.get_tk_widget().pack(fill=X, expand=True)
 
         except Exception as e:
-            print(f"Error creando gráfico de diagnósticos: {e}")
+            logging.error(f"Error creando gráfico de diagnósticos: {e}")
 
     def update_top_diagnosis_table(self):
         """Actualizar tabla de top diagnósticos"""
@@ -814,7 +862,7 @@ class EnhancedDatabaseDashboard:
                 )
 
         except Exception as e:
-            print(f"Error actualizando tabla de diagnósticos: {e}")
+            logging.error(f"Error actualizando tabla de diagnósticos: {e}")
 
     def update_biomarker_charts(self):
         """Actualizar gráficos de biomarcadores"""
@@ -845,6 +893,8 @@ class EnhancedDatabaseDashboard:
             positivity_data = {}
             for col in biomarker_cols[:6]:  # Limitar a 6 principales
                 col_name = col.replace('IHQ_', '').replace('_', ' ')
+                # Aplicar mapeo de nombre amigable
+                col_name = self.BIOMARKER_LABELS.get(col_name, col_name)
 
                 # Contar casos con datos
                 non_empty = self.df[col].notna() & (self.df[col].astype(str).str.strip() != '')
@@ -860,7 +910,7 @@ class EnhancedDatabaseDashboard:
                 values = list(positivity_data.values())
 
                 bars = ax1.bar(labels, values, color=['#ff6b6b', '#ffa726', '#66bb6a', '#42a5f5', '#ab47bc', '#ec407a'])
-                ax1.set_title('% Positividad por Biomarcador', fontsize=12, fontweight='bold')
+                ax1.set_title('Distribución de biomarcadores', fontsize=12, fontweight='bold')
                 ax1.set_ylabel('% Positividad')
                 ax1.tick_params(axis='x', rotation=45)
                 ax1.grid(axis='y', alpha=0.3)
@@ -876,6 +926,8 @@ class EnhancedDatabaseDashboard:
             completeness_data = {}
             for col in biomarker_cols[:6]:
                 col_name = col.replace('IHQ_', '').replace('_', ' ')
+                # Aplicar mapeo de nombre amigable
+                col_name = self.BIOMARKER_LABELS.get(col_name, col_name)
                 non_empty = self.df[col].notna() & (self.df[col].astype(str).str.strip() != '')
                 completeness = (non_empty.sum() / len(self.df)) * 100
                 completeness_data[col_name] = completeness
@@ -903,12 +955,60 @@ class EnhancedDatabaseDashboard:
             canvas.get_tk_widget().pack(fill=BOTH, expand=True)
 
         except Exception as e:
-            print(f"Error creando gráficos de biomarcadores: {e}")
+            logging.error(f"Error creando gráficos de biomarcadores: {e}")
             ttk.Label(
                 self.biomarker_charts_frame,
                 text=f"Error al generar gráficos: {str(e)}",
                 font=("Segoe UI", 10)
             ).pack(pady=20)
+
+    def _calcular_her2_scores(self):
+        """
+        Calcular scores de HER2 según interpretación médica:
+        - 0 y 1+ = NEGATIVO
+        - 2+ = INDETERMINADO
+        - 3+ = POSITIVO
+
+        Returns:
+            tuple: (positivos, negativos, indeterminados)
+        """
+        positivos = 0
+        negativos = 0
+        indeterminados = 0
+
+        if 'IHQ_HER2' not in self.df.columns:
+            return (0, 0, 0)
+
+        for valor in self.df['IHQ_HER2'].dropna():
+            valor_str = str(valor).upper()
+
+            # Buscar puntuación explícita (0, 1+, 2+, 3+)
+            if '3+' in valor_str or '3 +' in valor_str:
+                # 3+ = POSITIVO
+                positivos += 1
+            elif '2+' in valor_str or '2 +' in valor_str:
+                # 2+ = INDETERMINADO
+                indeterminados += 1
+            elif '1+' in valor_str or '1 +' in valor_str:
+                # 1+ = NEGATIVO
+                negativos += 1
+            elif ': 0' in valor_str or ' 0 ' in valor_str or valor_str.endswith(' 0') or valor_str.strip() == '0' or 'CERO' in valor_str or 'SCORE 0' in valor_str or 'SCORE: 0' in valor_str:
+                # 0 = NEGATIVO (múltiples formatos: "HER2: 0", "HER2 0", "0", etc.)
+                negativos += 1
+            else:
+                # Fallback: usar texto si no hay puntuación
+                # (para valores actuales en BD: "NEGATIVO", "EQUIVOCO", etc.)
+                if 'POSITIV' in valor_str:
+                    positivos += 1
+                elif 'NEGATIV' in valor_str:
+                    negativos += 1
+                elif 'EQUIVOCO' in valor_str or 'INDETERMINADO' in valor_str:
+                    indeterminados += 1
+                else:
+                    # Valor no reconocido - contar como indeterminado
+                    indeterminados += 1
+
+        return (positivos, negativos, indeterminados)
 
     def update_biomarker_stats_table(self):
         """Actualizar tabla de estadísticas de biomarcadores"""
@@ -922,6 +1022,8 @@ class EnhancedDatabaseDashboard:
 
             for col in biomarker_cols:
                 col_name = col.replace('IHQ_', '').replace('_', ' ')
+                # Aplicar mapeo de nombre amigable
+                col_name = self.BIOMARKER_LABELS.get(col_name, col_name)
 
                 # Calcular estadísticas
                 total = self.df[col].notna().sum()
@@ -929,9 +1031,16 @@ class EnhancedDatabaseDashboard:
                 if total == 0:
                     continue
 
-                positivos = self.df[col].str.contains('POSITIV', case=False, na=False).sum()
-                negativos = self.df[col].str.contains('NEGATIV', case=False, na=False).sum()
-                porcentaje_pos = (positivos / total * 100) if total > 0 else 0
+                # ⚕️ LÓGICA ESPECÍFICA PARA HER2 (según interpretación médica)
+                if col == 'IHQ_HER2':
+                    positivos, negativos, indeterminados = self._calcular_her2_scores()
+                    # Para HER2: solo 3+ cuenta como positivo
+                    porcentaje_pos = (positivos / total * 100) if total > 0 else 0
+                else:
+                    # Lógica estándar para otros biomarcadores
+                    positivos = self.df[col].str.contains('POSITIV', case=False, na=False).sum()
+                    negativos = self.df[col].str.contains('NEGATIV', case=False, na=False).sum()
+                    porcentaje_pos = (positivos / total * 100) if total > 0 else 0
 
                 # Intentar calcular media y desviación para valores numéricos
                 media = "N/A"
@@ -959,7 +1068,165 @@ class EnhancedDatabaseDashboard:
                 )
 
         except Exception as e:
-            print(f"Error actualizando tabla de estadísticas de biomarcadores: {e}")
+            logging.error(f"Error actualizando tabla de estadísticas de biomarcadores: {e}")
+
+    def update_er_pr_distribution(self):
+        """Actualizar gráfico de distribución de RE/RP por rangos de porcentaje"""
+        try:
+            # Limpiar frame anterior
+            for widget in self.er_pr_chart_frame.winfo_children():
+                widget.destroy()
+
+            # Verificar si existen las columnas
+            if 'IHQ_RECEPTOR_ESTROGENOS' not in self.df.columns and 'IHQ_RECEPTOR_PROGESTERONA' not in self.df.columns:
+                ttk.Label(
+                    self.er_pr_chart_frame,
+                    text="No hay datos de RE/RP disponibles",
+                    font=("Segoe UI", 10),
+                    foreground="gray"
+                ).pack(pady=20)
+                return
+
+            # Definir rangos de positividad (0-10%, 11-20%, etc.)
+            rangos = [
+                ('0-10%', 0, 10),
+                ('11-20%', 11, 20),
+                ('21-30%', 21, 30),
+                ('31-40%', 31, 40),
+                ('41-50%', 41, 50),
+                ('51-60%', 51, 60),
+                ('61-70%', 61, 70),
+                ('71-80%', 71, 80),
+                ('81-90%', 81, 90),
+                ('91-100%', 91, 100)
+            ]
+
+            # Extraer porcentajes de RE y RP
+            re_percentages = []
+            rp_percentages = []
+
+            # Procesar RE
+            if 'IHQ_RECEPTOR_ESTROGENOS' in self.df.columns:
+                for valor in self.df['IHQ_RECEPTOR_ESTROGENOS'].dropna():
+                    valor_str = str(valor)
+                    # Buscar porcentajes en el texto (ej: "90%", "85% positivo", etc.)
+                    matches = re.findall(r'(\d+(?:\.\d+)?)\s*%', valor_str)
+                    if matches:
+                        try:
+                            pct = float(matches[0])
+                            if 0 <= pct <= 100:
+                                re_percentages.append(pct)
+                        except:
+                            pass
+
+            # Procesar RP
+            if 'IHQ_RECEPTOR_PROGESTERONA' in self.df.columns:
+                for valor in self.df['IHQ_RECEPTOR_PROGESTERONA'].dropna():
+                    valor_str = str(valor)
+                    matches = re.findall(r'(\d+(?:\.\d+)?)\s*%', valor_str)
+                    if matches:
+                        try:
+                            pct = float(matches[0])
+                            if 0 <= pct <= 100:
+                                rp_percentages.append(pct)
+                        except:
+                            pass
+
+            # Si no hay datos, mostrar mensaje
+            if not re_percentages and not rp_percentages:
+                ttk.Label(
+                    self.er_pr_chart_frame,
+                    text="No se encontraron valores porcentuales en RE/RP",
+                    font=("Segoe UI", 10),
+                    foreground="gray"
+                ).pack(pady=20)
+                return
+
+            # Clasificar en rangos
+            re_counts = {rango[0]: 0 for rango in rangos}
+            rp_counts = {rango[0]: 0 for rango in rangos}
+
+            for pct in re_percentages:
+                for rango_label, min_val, max_val in rangos:
+                    if min_val <= pct <= max_val:
+                        re_counts[rango_label] += 1
+                        break
+
+            for pct in rp_percentages:
+                for rango_label, min_val, max_val in rangos:
+                    if min_val <= pct <= max_val:
+                        rp_counts[rango_label] += 1
+                        break
+
+            # Crear gráfico de barras agrupadas
+            fig = Figure(figsize=(14, 6), dpi=100)
+            ax = fig.add_subplot(111)
+
+            # Preparar datos
+            labels = [rango[0] for rango in rangos]
+            re_values = [re_counts[label] for label in labels]
+            rp_values = [rp_counts[label] for label in labels]
+
+            # Posiciones de las barras
+            x = np.arange(len(labels))
+            width = 0.35
+
+            # Crear barras
+            bars1 = ax.bar(x - width/2, re_values, width, label='RE (Receptor de Estrógeno)', color='#ff6b6b')
+            bars2 = ax.bar(x + width/2, rp_values, width, label='RP (Receptor de Progesterona)', color='#4ecdc4')
+
+            # Configurar gráfico
+            ax.set_xlabel('% de Positividad', fontsize=11, fontweight='bold')
+            ax.set_ylabel('# de Casos', fontsize=11, fontweight='bold')
+            ax.set_title('Distribución de RE/RP por Rangos de Positividad', fontsize=13, fontweight='bold')
+            ax.set_xticks(x)
+            ax.set_xticklabels(labels, rotation=45, ha='right')
+            ax.legend()
+            ax.grid(axis='y', alpha=0.3)
+
+            # Agregar valores sobre las barras
+            def add_value_labels(bars):
+                for bar in bars:
+                    height = bar.get_height()
+                    if height > 0:  # Solo mostrar si hay casos
+                        ax.text(bar.get_x() + bar.get_width()/2., height + 0.1,
+                               f'{int(height)}', ha='center', va='bottom', fontsize=9)
+
+            add_value_labels(bars1)
+            add_value_labels(bars2)
+
+            fig.tight_layout()
+
+            # Mostrar en la interfaz
+            canvas = FigureCanvasTkAgg(fig, self.er_pr_chart_frame)
+            canvas.draw()
+            canvas.get_tk_widget().pack(fill=BOTH, expand=True)
+
+            # Agregar resumen estadístico
+            summary_frame = ttk.Frame(self.er_pr_chart_frame)
+            summary_frame.pack(fill=X, pady=(10, 0), padx=10)
+
+            summary_text = f"📊 Total casos RE: {len(re_percentages)}    |    Total casos RP: {len(rp_percentages)}"
+            if re_percentages:
+                summary_text += f"    |    Promedio RE: {np.mean(re_percentages):.1f}%"
+            if rp_percentages:
+                summary_text += f"    |    Promedio RP: {np.mean(rp_percentages):.1f}%"
+
+            ttk.Label(
+                summary_frame,
+                text=summary_text,
+                font=("Segoe UI", 9),
+                foreground="#555555"
+            ).pack()
+
+        except Exception as e:
+            logging.error(f"Error creando gráfico de distribución RE/RP: {e}")
+            ttk.Label(
+                self.er_pr_chart_frame,
+                text=f"Error al generar gráfico: {str(e)}",
+                font=("Segoe UI", 10),
+                foreground="red"
+            ).pack(pady=20)
 
     def update_temporal_charts(self, df_with_dates):
         """Actualizar gráficos temporales"""
@@ -1021,7 +1288,7 @@ class EnhancedDatabaseDashboard:
             canvas2.get_tk_widget().pack(fill=X, expand=True)
 
         except Exception as e:
-            print(f"Error creando gráficos temporales: {e}")
+            logging.error(f"Error creando gráficos temporales: {e}")
 
     def update_monthly_stats_table(self, df_with_dates):
         """Actualizar tabla de estadísticas mensuales"""
@@ -1060,7 +1327,7 @@ class EnhancedDatabaseDashboard:
                 )
 
         except Exception as e:
-            print(f"Error actualizando tabla de estadísticas mensuales: {e}")
+            logging.error(f"Error actualizando tabla de estadísticas mensuales: {e}")
 
     def update_malignancy_charts(self):
         """Actualizar gráficos de malignidad"""
@@ -1106,7 +1373,7 @@ class EnhancedDatabaseDashboard:
             canvas.get_tk_widget().pack(fill=X, expand=True)
 
         except Exception as e:
-            print(f"Error creando gráfico de malignidad: {e}")
+            logging.error(f"Error creando gráfico de malignidad: {e}")
 
     def update_malignancy_biomarker_table(self):
         """Actualizar tabla de correlación malignidad-biomarcadores"""
@@ -1131,6 +1398,8 @@ class EnhancedDatabaseDashboard:
             # Analizar cada biomarcador
             for col in biomarker_cols:
                 col_name = col.replace('IHQ_', '').replace('_', ' ')
+                # Aplicar mapeo de nombre amigable
+                col_name = self.BIOMARKER_LABELS.get(col_name, col_name)
 
                 # Crear máscara para biomarcador positivo
                 bio_positivo_mask = self.df[col].str.contains('POSITIV', case=False, na=False)
@@ -1149,7 +1418,7 @@ class EnhancedDatabaseDashboard:
                 )
 
         except Exception as e:
-            print(f"Error actualizando tabla de correlación malignidad-biomarcadores: {e}")
+            logging.error(f"Error actualizando tabla de correlación malignidad-biomarcadores: {e}")
 
     def show_no_data_message(self):
         """Mostrar mensaje cuando no hay datos"""
@@ -1280,24 +1549,24 @@ class EnhancedDatabaseDashboard:
     # Estos métodos serán reasignados por la UI principal en _connect_import_functionality()
     def select_pdf_file(self):
         """Método placeholder - será reasignado por la UI principal"""
-        print("DEBUG: Dashboard.select_pdf_file() llamado (PLACEHOLDER - NO DEBERÍA VERSE)")
+        logging.debug("DEBUG: Dashboard.select_pdf_file() llamado (PLACEHOLDER - NO DEBERÍA VERSE)")
         import tkinter.messagebox as mb
         mb.showwarning("No conectado", "El método select_pdf_file no fue reasignado correctamente")
 
     def select_pdf_folder(self):
         """Método placeholder - será reasignado por la UI principal"""
-        print("DEBUG: Dashboard.select_pdf_folder() llamado (PLACEHOLDER - NO DEBERÍA VERSE)")
+        logging.debug("DEBUG: Dashboard.select_pdf_folder() llamado (PLACEHOLDER - NO DEBERÍA VERSE)")
         import tkinter.messagebox as mb
         mb.showwarning("No conectado", "El método select_pdf_folder no fue reasignado correctamente")
 
     def refresh_files_list(self):
         """Método placeholder - será reasignado por la UI principal"""
-        print("DEBUG: Dashboard.refresh_files_list() llamado (PLACEHOLDER)")
+        logging.debug("DEBUG: Dashboard.refresh_files_list() llamado (PLACEHOLDER)")
         pass
 
     def process_selected_files(self):
         """Método placeholder - será reasignado por la UI principal"""
-        print("DEBUG: Dashboard.process_selected_files() llamado (PLACEHOLDER - NO DEBERÍA VERSE)")
+        logging.debug("DEBUG: Dashboard.process_selected_files() llamado (PLACEHOLDER - NO DEBERÍA VERSE)")
         import tkinter.messagebox as mb
         mb.showwarning("No conectado", "El método process_selected_files no fue reasignado correctamente")
 
@@ -1395,11 +1664,19 @@ class EnhancedDatabaseDashboard:
             bootstyle="secondary"
         )
 
-        # Botón Editar (inicialmente oculto)
-        self.edit_button = ttk.Button(
+        # V5.3.8: Botón Abrir en Excel (inicialmente oculto)
+        self.open_excel_button = ttk.Button(
             self.viewer_buttons_frame,
-            text="✏️ Editar",
-            command=self.edit_current_export,
+            text="📊 Abrir en Excel",
+            command=self.open_in_excel,
+            bootstyle="success"
+        )
+
+        # V5.3.8: Botón Abrir Carpeta (inicialmente oculto)
+        self.open_folder_button = ttk.Button(
+            self.viewer_buttons_frame,
+            text="📂 Abrir Carpeta",
+            command=self.open_file_location,
             bootstyle="info"
         )
 
@@ -1437,7 +1714,7 @@ class EnhancedDatabaseDashboard:
         """Cargar contenido del archivo de exportación"""
         try:
             import os
-            export_base_path = os.path.join(os.path.expanduser("~"), "Documents", "EVARISIS Gestor Oncologico", "Exportaciones Base de datos")
+            export_base_path = os.path.join(os.path.expanduser("~"), "Documents", "EVARISIS Cirugía Oncológica", "Exportaciones Base de datos")
 
             if filename.endswith('.xlsx'):
                 file_path = os.path.join(export_base_path, "Excel", filename)
@@ -1450,7 +1727,10 @@ class EnhancedDatabaseDashboard:
             self.file_info_label.config(text=f"Error cargando archivo: {e}")
 
     def load_excel_content(self, file_path, filename):
-        """Cargar contenido de archivo Excel"""
+        """
+        V5.3.8: Cargar contenido de archivo Excel con Sheet virtualizado
+        RENDIMIENTO: Carga instantánea de archivos grandes (1000+ filas)
+        """
         try:
             import pandas as pd
 
@@ -1461,53 +1741,95 @@ class EnhancedDatabaseDashboard:
             # Guardar archivo actual
             self.current_export_file = file_path
 
-            # Actualizar etiqueta de información
-            self.file_info_label.config(text=f"📊 Excel: {filename}")
+            # Actualizar etiqueta de información con detalles del archivo
+            file_size = os.path.getsize(file_path) / 1024  # KB
+            self.file_info_label.config(
+                text=f"📊 Excel: {filename} ({file_size:.1f} KB)"
+            )
 
             # Mostrar botones de control
             self.back_button.pack(side=tk.LEFT, padx=(0, 10))
-            self.edit_button.pack(side=tk.LEFT)
+            self.open_excel_button.pack(side=tk.LEFT, padx=(0, 10))
+            self.open_folder_button.pack(side=tk.LEFT)
 
             # Leer Excel
+            logging.info(f"📖 Cargando Excel: {filename}...")
             df = pd.read_excel(file_path)
+            logging.info(f"✅ Excel cargado: {len(df)} filas × {len(df.columns)} columnas")
 
-            # Crear Treeview para mostrar datos - OPTIMIZADO para mejor rendimiento
-            tree = ttk.Treeview(self.content_frame, show="headings")
-            tree.grid(row=0, column=0, sticky="nsew")
+            # V5.3.8: Crear Sheet virtualizado (ultra rápido)
+            sheet = Sheet(
+                self.content_frame,
+                page_up_down_select_row=True,
+                expand_sheet_if_paste_too_big=False,
+                column_width=120,
+                startup_select=(0, 0, "rows"),
+                headers_height=28,
+                default_row_height=22,
+                show_horizontal_grid=True,
+                show_vertical_grid=True,
+                show_top_left=False,
+                show_row_index=True,
+                show_header=True,
+                empty_horizontal=0,
+                empty_vertical=0,
+                header_font=("Segoe UI", 9, "bold"),
+                font=("Segoe UI", 9, "normal"),
+                header_bg="#E3F2FD",  # Azul muy claro
+                header_fg="#0D47A1",  # Azul oscuro
+                table_bg="white",
+                table_fg="black",
+                table_selected_cells_bg="#BBDEFB",
+                table_selected_cells_fg="black",
+                table_selected_rows_bg="#E3F2FD",
+                table_selected_rows_fg="black",
+                index_bg="#F5F5F5",
+                index_fg="#424242"
+            )
+            sheet.grid(row=0, column=0, sticky="nsew")
 
-            # Configurar columnas
-            tree["columns"] = list(df.columns)
-            for col in df.columns:
-                tree.heading(col, text=col)
-                tree.column(col, width=100, minwidth=50, stretch=False)  # stretch=False para mejor scroll
+            # Habilitar funcionalidades tipo Excel
+            sheet.enable_bindings(
+                "all",
+                "copy",  # Ctrl+C
+                "row_select",
+                "column_select",
+                "drag_select",
+                "select_all",
+                "arrowkeys",
+                "single_select",
+                "drag_and_drop"
+            )
 
-            # OPTIMIZADO: Insertar datos en lotes para mejor rendimiento
-            batch_size = 100
-            for i in range(0, len(df), batch_size):
-                batch = df.iloc[i:i+batch_size]
-                for index, row in batch.iterrows():
-                    tree.insert('', 'end', values=list(row), iid=index)
+            # Deshabilitar edición (solo lectura)
+            sheet.disable_bindings("edit_cell", "cut", "paste", "delete", "undo")
 
-            # Scrollbars OPTIMIZADAS con mejor velocidad
-            v_scrollbar = ttk.Scrollbar(self.content_frame, orient="vertical", command=tree.yview)
-            v_scrollbar.grid(row=0, column=1, sticky="ns")
-            tree.configure(yscrollcommand=v_scrollbar.set)
+            # Preparar datos
+            headers = list(df.columns)
+            sheet_data = df.fillna("").astype(str).values.tolist()
 
-            h_scrollbar = ttk.Scrollbar(self.content_frame, orient="horizontal", command=tree.xview)
-            h_scrollbar.grid(row=1, column=0, sticky="ew")
-            tree.configure(xscrollcommand=h_scrollbar.set)
-            
-            # NUEVO: Scroll más rápido con mousewheel
-            def _on_mousewheel(event):
-                tree.yview_scroll(int(-1 * (event.delta / 120)) * 3, "units")  # 3x más rápido
-                return "break"
-            
-            tree.bind("<MouseWheel>", _on_mousewheel)
-            
-            # NUEVO: Agregar tooltips en celdas
-            self._add_tooltips_to_tree(tree)
+            # Cargar datos (mega rápido con virtualización)
+            sheet.set_sheet_data(data=sheet_data, reset_col_positions=True, reset_row_positions=True, redraw=False)
+            sheet.headers(newheaders=headers, index=None, reset_col_positions=False, show_headers_if_not_sheet=True, redraw=False)
+
+            # Configurar anchos de columnas inteligentemente
+            for idx, col in enumerate(df.columns):
+                # Calcular ancho óptimo basado en el contenido
+                try:
+                    max_len = max(df[col].astype(str).str.len().max(), len(col))
+                    width = min(250, max(80, int(max_len * 8)))
+                except:
+                    width = 120  # Default
+
+                sheet.column_width(column=idx, width=width, only_set_if_too_small=False, redraw=False)
+
+            # Redibuja UNA SOLA VEZ (mega optimización)
+            sheet.refresh()
+
+            logging.info(f"✅ Visualizador Sheet cargado exitosamente")
 
         except Exception as e:
+            logging.error(f"❌ Error cargando Excel: {e}")
             self.file_info_label.config(text=f"Error cargando Excel: {e}")
 
     def load_database_content(self, file_path, filename):
@@ -1664,7 +1986,7 @@ class EnhancedDatabaseDashboard:
             # Limpiar lista
             self.exports_listbox.delete(0, tk.END)
 
-            export_base_path = os.path.join(os.path.expanduser("~"), "Documents", "EVARISIS Gestor Oncologico", "Exportaciones Base de datos")
+            export_base_path = os.path.join(os.path.expanduser("~"), "Documents", "EVARISIS Cirugía Oncológica", "Exportaciones Base de datos")
 
             files_found = False
 
@@ -1697,15 +2019,72 @@ class EnhancedDatabaseDashboard:
             import os
             import subprocess
 
-            export_path = os.path.join(os.path.expanduser("~"), "Documents", "EVARISIS Gestor Oncologico", "Exportaciones Base de datos")
+            export_path = os.path.join(os.path.expanduser("~"), "Documents", "EVARISIS Cirugía Oncológica", "Exportaciones Base de datos")
 
             if os.path.exists(export_path):
                 subprocess.Popen(f'explorer "{export_path}"')
             else:
-                print("La carpeta de exportaciones no existe aún")
+                logging.warning("La carpeta de exportaciones no existe aún")
 
         except Exception as e:
-            print(f"Error abriendo carpeta: {e}")
+            logging.error(f"Error abriendo carpeta: {e}")
+
+    def open_in_excel(self):
+        """V5.3.8: Abrir el archivo actual en Excel"""
+        try:
+            if not hasattr(self, 'current_export_file') or not self.current_export_file:
+                logging.warning("No hay ningún archivo seleccionado")
+                return
+
+            if not os.path.exists(self.current_export_file):
+                logging.warning(f"El archivo no existe: {self.current_export_file}")
+                return
+
+            # Cross-platform file opening
+            system = platform.system()
+
+            if system == "Windows":
+                os.startfile(self.current_export_file)
+            elif system == "Darwin":  # macOS
+                subprocess.call(['open', self.current_export_file])
+            else:  # Linux
+                subprocess.call(['xdg-open', self.current_export_file])
+
+            logging.info(f"✅ Abriendo en Excel: {os.path.basename(self.current_export_file)}")
+
+        except Exception as e:
+            logging.error(f"❌ Error abriendo archivo en Excel: {e}")
+
+    def open_file_location(self):
+        """V5.3.8: Abrir la carpeta contenedora del archivo actual"""
+        try:
+            if not hasattr(self, 'current_export_file') or not self.current_export_file:
+                logging.warning("No hay ningún archivo seleccionado")
+                return
+
+            folder_path = os.path.dirname(self.current_export_file)
+
+            if not os.path.exists(folder_path):
+                logging.warning(f"La carpeta no existe: {folder_path}")
+                return
+
+            # Cross-platform folder opening
+            system = platform.system()
+
+            if system == "Windows":
+                # Select the file in Windows Explorer
+                subprocess.run(['explorer', '/select,', os.path.normpath(self.current_export_file)])
+            elif system == "Darwin":  # macOS
+                # Reveal file in Finder
+                subprocess.call(['open', '-R', self.current_export_file])
+            else:  # Linux
+                # Open folder (most file managers don't support file selection)
+                subprocess.call(['xdg-open', folder_path])
+
+            logging.info(f"✅ Abriendo ubicación: {folder_path}")
+
+        except Exception as e:
+            logging.error(f"❌ Error abriendo ubicación del archivo: {e}")
 
     def clear_export_viewer(self):
         """Limpiar el visor y ocultar botones (función Atrás) - CORREGIDO"""
@@ -1745,11 +2124,10 @@ class EnhancedDatabaseDashboard:
             # CORREGIDO: Re-vincular el evento después de limpiar
             self.exports_listbox.bind("<<ListboxSelect>>", self.on_export_file_select)
 
-            print("✅ Visor limpiado correctamente y restaurado a estado inicial")
+            logging.info("✅ Visor limpiado correctamente y restaurado a estado inicial")
 
         except Exception as e:
-            print(f"Error limpiando visor: {e}")
-            import traceback
+            logging.error(f"Error limpiando visor: {e}")
             traceback.print_exc()
             # Asegurar que el evento se re-vincule incluso si hay error
             try:

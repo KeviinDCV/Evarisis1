@@ -10,6 +10,7 @@ Migrado de: core/procesador_ihq.py (función fix_broken_utf8)
 """
 
 import unicodedata
+import logging
 from typing import Dict, Set
 from core.utils.patient_mappings import BROKEN_UTF_MAP
 
@@ -279,7 +280,7 @@ def get_text_statistics(text: str) -> Dict[str, any]:
 
 def test_utf8_fixer():
     """Función de prueba para validar el corrector UTF-8"""
-    print("=== Test del Corrector UTF-8 ===")
+    logging.info("=== Test del Corrector UTF-8 ===")
     
     # Ejemplos de texto con problemas
     test_texts = [
@@ -291,16 +292,16 @@ def test_utf8_fixer():
         "Tumor NUEROENDOCRINO",
     ]
     
-    print("\n--- Test Corrección UTF-8 ---")
+    logging.info("\n--- Test Corrección UTF-8 ---")
     for text in test_texts:
         cleaned = clean_text_comprehensive(text)
         issues = detect_encoding_issues(text)
         
-        print(f"Original: {text}")
-        print(f"Limpio:   {cleaned}")
-        print(f"Problemas: {issues['issues']}")
-        print(f"Confianza: {issues['confidence']:.2f}")
-        print("-" * 50)
+        logging.info(f"Original: {text}")
+        logging.info(f"Limpio:   {cleaned}")
+        logging.info(f"Problemas: {issues['issues']}")
+        logging.info(f"Confianza: {issues['confidence']:.2f}")
+        logging.info("-" * 50)
 
 
 if __name__ == "__main__":

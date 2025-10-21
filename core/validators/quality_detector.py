@@ -10,6 +10,7 @@ Versión: 4.2.4
 Fecha: 5 de octubre de 2025
 """
 import re
+import logging
 from typing import Dict, List, Any, Tuple
 
 
@@ -99,7 +100,7 @@ def evaluate_record_quality(record: Dict[str, Any]) -> Dict[str, Any]:
             # No marcar needs_ia automáticamente, es opcional
     
     # === CRITERIO 7: Biomarcadores Todos Vacíos ===
-    biomarcadores_campos = ['IHQ_HER2', 'IHQ_KI-67', 'IHQ_RECEPTOR_ESTROGENO', 'IHQ_RECEPTOR_PROGESTERONOS']
+    biomarcadores_campos = ['IHQ_HER2', 'IHQ_KI-67', 'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA']
     biomarcadores_vacios = all(not record.get(campo) or record.get(campo) in ['N/A', '', 'None'] for campo in biomarcadores_campos)
     
     if biomarcadores_vacios and descripcion_micro:
@@ -158,7 +159,7 @@ def calculate_quality_score(record: Dict[str, Any], problems: List[Dict]) -> flo
     
     # Campos críticos (peso 40%)
     campos_criticos = {
-        'N. peticion (0. Numero de biopsia)': record.get('N. peticion (0. Numero de biopsia)'),
+        'Numero de caso': record.get('Numero de caso'),
         'Primer nombre': record.get('Primer nombre'),
         'Edad': record.get('Edad'),
         'Genero': record.get('Genero'),
@@ -172,7 +173,7 @@ def calculate_quality_score(record: Dict[str, Any], problems: List[Dict]) -> flo
     # Campos importantes (peso 30%)
     campos_importantes = {
         'EPS': record.get('EPS'),
-        'Organo (1. Muestra enviada a patología)': record.get('Organo (1. Muestra enviada a patología)'),
+        'Organo': record.get('Organo'),
         'Descripcion Diagnostico (5,6,7 Tipo histológico, subtipo histológico, margenes tumorales)': record.get('Descripcion Diagnostico (5,6,7 Tipo histológico, subtipo histológico, margenes tumorales)'),
         'Descripcion microscopica (8,9, 10,12,. Invasión linfovascular y perineural, indice mitótico/Ki67, Inmunohistoquímica, tamaño tumoral)': record.get('Descripcion microscopica (8,9, 10,12,. Invasión linfovascular y perineural, indice mitótico/Ki67, Inmunohistoquímica, tamaño tumoral)'),
         'Descripcion macroscopica': record.get('Descripcion macroscopica')
@@ -185,8 +186,8 @@ def calculate_quality_score(record: Dict[str, Any], problems: List[Dict]) -> flo
     campos_biomarcadores = {
         'IHQ_HER2': record.get('IHQ_HER2'),
         'IHQ_KI-67': record.get('IHQ_KI-67'),
-        'IHQ_RECEPTOR_ESTROGENO': record.get('IHQ_RECEPTOR_ESTROGENO'),
-        'IHQ_RECEPTOR_PROGESTERONOS': record.get('IHQ_RECEPTOR_PROGESTERONOS'),
+        'IHQ_RECEPTOR_ESTROGENOS': record.get('IHQ_RECEPTOR_ESTROGENOS'),
+        'IHQ_RECEPTOR_PROGESTERONA': record.get('IHQ_RECEPTOR_PROGESTERONA'),
         'Factor pronostico': record.get('Factor pronostico')
     }
     
@@ -222,7 +223,7 @@ def prepare_ia_payload(record: Dict[str, Any], evaluation: Dict[str, Any]) -> Di
     """
     
     return {
-        'numero_peticion': record.get('N. peticion (0. Numero de biopsia)', ''),
+        'numero_peticion': record.get('Numero de caso', ''),
         'score_calidad': evaluation['score_total'],
         'problemas_detectados': [p['tipo'] for p in evaluation['problems']],
         'confianza': evaluation['confidence'],
@@ -242,8 +243,8 @@ def prepare_ia_payload(record: Dict[str, Any], evaluation: Dict[str, Any]) -> Di
         'biomarcadores_actuales': {
             'HER2': record.get('IHQ_HER2', ''),
             'Ki67': record.get('IHQ_KI-67', ''),
-            'RE': record.get('IHQ_RECEPTOR_ESTROGENO', ''),
-            'RP': record.get('IHQ_RECEPTOR_PROGESTERONOS', ''),
+            'RE': record.get('IHQ_RECEPTOR_ESTROGENOS', ''),
+            'RP': record.get('IHQ_RECEPTOR_PROGESTERONA', ''),
             'P16': record.get('IHQ_P16_ESTADO', ''),
             'P40': record.get('IHQ_P40_ESTADO', ''),
             'PDL1': record.get('IHQ_PDL-1', ''),
@@ -282,7 +283,7 @@ def prepare_ia_payload(record: Dict[str, Any], evaluation: Dict[str, Any]) -> Di
 if __name__ == '__main__':
     # Test básico
     test_record = {
-        'N. peticion (0. Numero de biopsia)': 'IHQ250001',
+        'Numero de caso': 'IHQ250001',
         'Primer nombre': 'TEST',
         'Edad': '50',
         'Genero': 'FEMENINO',
@@ -292,8 +293,8 @@ if __name__ == '__main__':
     }
     
     evaluation = evaluate_record_quality(test_record)
-    print(f"Score: {evaluation['score_total']}")
-    print(f"Needs IA: {evaluation['needs_ia_review']}")
-    print(f"Problems: {len(evaluation['problems'])}")
+    logging.info(f"Score: {evaluation['score_total']}")
+    logging.info(f"Needs IA: {evaluation['needs_ia_review']}")
+    logging.info(f"Problems: {len(evaluation['problems'])}")
     for problem in evaluation['problems']:
-        print(f"  - {problem['tipo']}: {problem['descripcion']}")
+        logging.info(f"  - {problem['tipo']}: {problem['descripcion']}")

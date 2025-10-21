@@ -318,12 +318,12 @@ def crear_callback_auditoria_para_ui(app_instance):
 
 if __name__ == "__main__":
     # Test básico
-    print("🔄 Procesamiento con Auditoría - Test")
+    logging.info("🔄 Procesamiento con Auditoría - Test")
 
     import tempfile
 
     def log_test(msg):
-        print(f"  {msg}")
+        logging.info(f"  {msg}")
 
     # Simular procesamiento (requeriría PDFs reales)
     # count = process_ihq_paths_with_audit(
@@ -333,4 +333,4 @@ if __name__ == "__main__":
     #     log_callback=log_test
     # )
 
-    print("✅ Módulo listo para usar")
+    logging.info("✅ Módulo listo para usar")

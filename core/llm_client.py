@@ -19,6 +19,7 @@ Fecha: 10 de octubre de 2025
 """
 
 import json
+import logging
 import sys
 import requests
 from pathlib import Path
@@ -96,24 +97,24 @@ class LMStudioClient:
                     self.model = modelos_disponibles[0]
 
                     if "gpt-oss" in self.model.lower():
-                        print(f"✅ Modelo detectado: {self.model}")
-                        print(f"   ℹ️  Control de reasoning via reasoning_effort (low/high)")
+                        logging.info(f"✅ Modelo detectado: {self.model}")
+                        logging.info(f"   ℹ️  Control de reasoning via reasoning_effort (low/high)")
                     else:
-                        print(f"✅ Modelo detectado: {self.model}")
+                        logging.info(f"✅ Modelo detectado: {self.model}")
                 else:
-                    print("⚠️ No hay modelos cargados en LM Studio")
-                    print("   → Carga un modelo en LM Studio y reinicia el servidor")
+                    logging.info("⚠️ No hay modelos cargados en LM Studio")
+                    logging.info("   → Carga un modelo en LM Studio y reinicia el servidor")
             else:
-                print(f"⚠️ Error detectando modelo: HTTP {response.status_code}")
-                print(f"   → Respuesta: {response.text[:200]}")
+                logging.info(f"⚠️ Error detectando modelo: HTTP {response.status_code}")
+                logging.info(f"   → Respuesta: {response.text[:200]}")
 
         except requests.exceptions.ConnectionError as e:
-            print(f"❌ No se puede conectar a LM Studio en {self.endpoint}")
-            print(f"   → Verifica que LM Studio esté corriendo")
-            print(f"   → Verifica que el servidor esté activo en puerto 1234")
+            logging.info(f"❌ No se puede conectar a LM Studio en {self.endpoint}")
+            logging.info(f"   → Verifica que LM Studio esté corriendo")
+            logging.info(f"   → Verifica que el servidor esté activo en puerto 1234")
         except Exception as e:
-            print(f"⚠️ Error inesperado: {type(e).__name__}")
-            print(f"   → Detalle: {str(e)}")
+            logging.info(f"⚠️ Error inesperado: {type(e).__name__}")
+            logging.info(f"   → Detalle: {str(e)}")
 
     def completar(
         self,
@@ -165,12 +166,12 @@ class LMStudioClient:
             # Modo análisis profundo
             payload["reasoning_level"] = "medium"  # Análisis profundo
             payload["skip_thinking"] = False       # Permitir thinking completo
-            print(f"   🧠 Modo análisis profundo (reasoning=medium, thinking=activado)")
+            logging.info(f"   🧠 Modo análisis profundo (reasoning=medium, thinking=activado)")
         else:
             # Modo respuesta rápida (optimizado)
             payload["reasoning_level"] = "low"     # Análisis ligero
             payload["skip_thinking"] = True        # Desactivar thinking completamente
-            print(f"   ⚡ Modo respuesta rápida (reasoning=low, skip_thinking=True)")
+            logging.info(f"   ⚡ Modo respuesta rápida (reasoning=low, skip_thinking=True)")
             
         # Nota: Esta configuración doble garantiza compatibilidad con todas las versiones
         # de LM Studio, ya que algunas reconocen reasoning_level y otras skip_thinking
@@ -189,13 +190,13 @@ class LMStudioClient:
 
                     LMStudioClient._last_request_time = time.time()
 
-                    print(f"   🔄 Enviando request a LLM (timeout={self.timeout}s)...")
+                    logging.info(f"   🔄 Enviando request a LLM (timeout={self.timeout}s)...")
                     response = requests.post(
                         f"{self.endpoint}/v1/chat/completions",
                         json=payload,
                         timeout=self.timeout
                     )
-                    print(f"   ✅ Respuesta recibida (status={response.status_code})")
+                    logging.info(f"   ✅ Respuesta recibida (status={response.status_code})")
 
                 # Éxito - procesar respuesta
                 if response.status_code == 200:
@@ -210,7 +211,7 @@ class LMStudioClient:
                     if not respuesta and "reasoning" in message:
                         respuesta = message.get("reasoning", "")
                         if respuesta:
-                            print(f"ℹ️ Modelo usa 'reasoning' en lugar de 'content'")
+                            logging.info(f"ℹ️ Modelo usa 'reasoning' en lugar de 'content'")
 
                     # Si finish_reason es "length", el modelo alcanzó el límite de tokens
                     # PERO solo es error si la respuesta es muy corta (< 20 chars) Y no es un test
@@ -240,7 +241,7 @@ class LMStudioClient:
                         try:
                             contenido = json.loads(respuesta)
                         except json.JSONDecodeError:
-                            print("⚠️ La respuesta no es JSON válido, devolviendo texto plano")
+                            logging.info("⚠️ La respuesta no es JSON válido, devolviendo texto plano")
 
                     return {
                         "exito": True,
@@ -267,7 +268,7 @@ class LMStudioClient:
                     if "Channel Error" in response.text or response.status_code >= 500:
                         wait_time = (2 ** intento) * 0.5  # Backoff: 0.5s, 1s, 2s
                         if intento < self.max_retries - 1:
-                            print(f"⚠️ Channel Error - Reintentando en {wait_time:.1f}s... ({intento+1}/{self.max_retries})")
+                            logging.info(f"⚠️ Channel Error - Reintentando en {wait_time:.1f}s... ({intento+1}/{self.max_retries})")
                             time.sleep(wait_time)
                             continue
 
@@ -280,7 +281,7 @@ class LMStudioClient:
                     "timestamp": datetime.now().isoformat()
                 }
                 if intento < self.max_retries - 1:
-                    print(f"⚠️ Timeout - Reintentando... ({intento+1}/{self.max_retries})")
+                    logging.info(f"⚠️ Timeout - Reintentando... ({intento+1}/{self.max_retries})")
                     time.sleep(1)
                     continue
                 return last_error
@@ -293,7 +294,7 @@ class LMStudioClient:
                     "timestamp": datetime.now().isoformat()
                 }
                 if intento < self.max_retries - 1:
-                    print(f"⚠️ Error de conexión - Reintentando... ({intento+1}/{self.max_retries})")
+                    logging.info(f"⚠️ Error de conexión - Reintentando... ({intento+1}/{self.max_retries})")
                     time.sleep(1)
                     continue
                 return last_error
@@ -305,8 +306,8 @@ class LMStudioClient:
                     "timestamp": datetime.now().isoformat()
                 }
                 if intento < self.max_retries - 1:
-                    print(f"⚠️ Error inesperado - Reintentando... ({intento+1}/{self.max_retries})")
-                    print(f"   Detalle: {str(e)}")
+                    logging.info(f"⚠️ Error inesperado - Reintentando... ({intento+1}/{self.max_retries})")
+                    logging.info(f"   Detalle: {str(e)}")
                     time.sleep(1)
                     continue
                 return last_error
@@ -581,13 +582,13 @@ Extrae el valor del campo solicitado."""
 
 if __name__ == "__main__":
     # Ejemplo de uso
-    print("🤖 CLIENTE LLM - Ejemplo de uso")
-    print("=" * 80)
+    logging.info("🤖 CLIENTE LLM - Ejemplo de uso")
+    logging.info("=" * 80)
 
     client = LMStudioClient()
 
     # Ejemplo 1: Completación simple
-    print("\n📝 Ejemplo 1: Completación simple")
+    logging.info("\n📝 Ejemplo 1: Completación simple")
     resultado = client.completar(
         "¿Qué es la inmunohistoquímica?",
         temperature=0.3,
@@ -595,11 +596,11 @@ if __name__ == "__main__":
     )
 
     if resultado["exito"]:
-        print(f"✅ Respuesta: {resultado['respuesta'][:200]}...")
-        print(f"📊 Tokens: {resultado['tokens_usados']['total']}")
+        logging.info(f"✅ Respuesta: {resultado['respuesta'][:200]}...")
+        logging.info(f"📊 Tokens: {resultado['tokens_usados']['total']}")
 
     # Ejemplo 2: Validación de campo
-    print("\n\n🔍 Ejemplo 2: Validación de campo médico")
+    logging.info("\n\n🔍 Ejemplo 2: Validación de campo médico")
     texto_ejemplo = """
     INFORME DE INMUNOHISTOQUÍMICA
     N. petición: IHQ250001
@@ -615,5 +616,5 @@ if __name__ == "__main__":
     )
 
     if validacion["exito"]:
-        print(f"✅ Validación:")
-        print(json.dumps(validacion["validacion"], indent=2, ensure_ascii=False))
+        logging.info(f"✅ Validación:")
+        logging.info(json.dumps(validacion["validacion"], indent=2, ensure_ascii=False))

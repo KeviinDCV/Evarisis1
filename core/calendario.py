@@ -1,6 +1,7 @@
 # calendario.py (Versión Final y 100% Funcional)
 
 import calendar
+import logging
 import datetime
 import tkinter as tk
 from tkinter import ttk
@@ -27,9 +28,9 @@ except ImportError:
     # Caso de versiones antiguas de la librería.
     from ttkbootstrap.tooltip import Tooltip as tooltip
 except Exception as e:
-    print(f"Error inesperado al importar Tooltip: {e}")
+    logging.info(f"Error inesperado al importar Tooltip: {e}")
     def tooltip(*args, **kwargs):
-        print("ADVERTENCIA: Tooltips desactivados por un error.")
+        logging.info("ADVERTENCIA: Tooltips desactivados por un error.")
         return None
 # =========================================================================
 
@@ -114,7 +115,7 @@ class CalendarioInteligente(ttk.Toplevel):
                 }
                 self.mapa_de_datos_interno.update(mapa_festivos)
             except Exception as e:
-                print(f"No se pudieron cargar los festivos para '{self.codigo_pais_festivos}' año {anio}: {e}")
+                logging.info(f"No se pudieron cargar los festivos para '{self.codigo_pais_festivos}' año {anio}: {e}")
         
         self.mapa_de_datos_interno.update(self.mapa_de_datos_usuario)
 

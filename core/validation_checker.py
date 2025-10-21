@@ -4,8 +4,8 @@
 Sistema de Verificación de Completitud de Registros
 Verifica si los registros importados tienen todos los campos requeridos
 
-Versión: 1.0.1
-Fecha: 5 de octubre de 2025
+Versión: 1.0.2 - Fix stdout closed issue
+Fecha: 19 de octubre de 2025
 Autor: Sistema EVARISIS
 """
 
@@ -13,6 +13,11 @@ from typing import Dict, List, Any
 import sqlite3
 import sys
 import os
+import logging
+
+# Configurar logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 # Permitir imports cuando se ejecuta como script
 if __name__ == "__main__":
@@ -41,18 +46,18 @@ CAMPOS_REQUERIDOS = {
 
     # Datos médicos (CRÍTICOS - MÁXIMA PRIORIDAD)
     'medicos': [
-        'N. peticion (0. Numero de biopsia)',
+        'Numero de caso',
         'Fecha Informe',
         'Diagnostico Principal',
         'Factor pronostico',
-        'Organo (1. Muestra enviada a patología)',
+        'Organo',
         'Malignidad'
     ],
 
     # Biomarcadores (IMPORTANTE - mínimo 2)
     'biomarcadores': [
-        'IHQ_RECEPTOR_ESTROGENO',
-        'IHQ_RECEPTOR_PROGESTERONOS',
+        'IHQ_RECEPTOR_ESTROGENOS',  # v5.3.6: Renombrado
+        'IHQ_RECEPTOR_PROGESTERONA',  # v5.3.6: Renombrado
         'IHQ_HER2',
         'IHQ_KI-67',
         'IHQ_P53',
@@ -65,16 +70,31 @@ PORCENTAJE_COMPLETO = 100  # SOLO 100% = completo (CRÍTICO)
 BIOMARCADORES_MINIMOS = 2  # Mínimo 2 biomarcadores detectados (HER2 + Ki-67 mínimo)
 
 # Mapeo de biomarcadores en IHQ_ESTUDIOS_SOLICITADOS a columnas de BD
+# V3.2.5.2: Agregadas variantes con "DE" y con acentos
+# V5.3.6: Renombrados a ESTROGENOS/PROGESTERONA
 MAPEO_BIOMARCADORES = {
-    'RE': 'IHQ_RECEPTOR_ESTROGENO',
-    'RECEPTOR ESTROGENICO': 'IHQ_RECEPTOR_ESTROGENO',
-    'RECEPTOR ESTROGENO': 'IHQ_RECEPTOR_ESTROGENO',
-    'IHQ_RECEPTOR_ESTROGENO': 'IHQ_RECEPTOR_ESTROGENO',
+    'RE': 'IHQ_RECEPTOR_ESTROGENOS',
+    'RECEPTOR ESTROGENICO': 'IHQ_RECEPTOR_ESTROGENOS',
+    'RECEPTOR ESTROGENO': 'IHQ_RECEPTOR_ESTROGENOS',
+    'RECEPTORES ESTROGENO': 'IHQ_RECEPTOR_ESTROGENOS',  # Plural
+    'RECEPTORES ESTROGENOS': 'IHQ_RECEPTOR_ESTROGENOS',  # Plural + S
+    'RECEPTOR DE ESTROGENO': 'IHQ_RECEPTOR_ESTROGENOS',  # V3.2.5.2: Con "DE"
+    'RECEPTOR DE ESTROGENOS': 'IHQ_RECEPTOR_ESTROGENOS',  # V3.2.5.2: Con "DE"
+    'RECEPTORES DE ESTROGENO': 'IHQ_RECEPTOR_ESTROGENOS',  # V3.2.5.2: Con "DE"
+    'RECEPTORES DE ESTROGENOS': 'IHQ_RECEPTOR_ESTROGENOS',  # V3.2.5.2: Con "DE"
+    'RECEPTOR DE ESTRÓGENO': 'IHQ_RECEPTOR_ESTROGENOS',  # V3.2.5.2: Con acento
+    'RECEPTOR DE ESTRÓGENOS': 'IHQ_RECEPTOR_ESTROGENOS',  # V3.2.5.2: Con acento
+    'RECEPTORES DE ESTRÓGENO': 'IHQ_RECEPTOR_ESTROGENOS',  # V3.2.5.2: Con acento
+    'RECEPTORES DE ESTRÓGENOS': 'IHQ_RECEPTOR_ESTROGENOS',  # V3.2.5.2: Con acento
+    'IHQ_RECEPTOR_ESTROGENOS': 'IHQ_RECEPTOR_ESTROGENOS',
 
-    'RP': 'IHQ_RECEPTOR_PROGESTERONOS',
-    'RECEPTOR PROGESTACIONAL': 'IHQ_RECEPTOR_PROGESTERONOS',
-    'RECEPTOR PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONOS',
-    'IHQ_RECEPTOR_PROGESTERONOS': 'IHQ_RECEPTOR_PROGESTERONOS',
+    'RP': 'IHQ_RECEPTOR_PROGESTERONA',
+    'RECEPTOR PROGESTACIONAL': 'IHQ_RECEPTOR_PROGESTERONA',
+    'RECEPTOR PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',
+    'RECEPTOR DE PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',  # V3.2.5.2: Con "DE"
+    'RECEPTORES PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',  # Plural
+    'RECEPTORES DE PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',  # V3.2.5.2: Con "DE"
+    'IHQ_RECEPTOR_PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',
 
     'HER2': 'IHQ_HER2',
     'HER-2': 'IHQ_HER2',
@@ -138,19 +158,301 @@ MAPEO_BIOMARCADORES = {
     'IHQ_MELAN_A': 'IHQ_MELAN_A',
 
     'CD3': 'IHQ_CD3',
+    'IHQ_CD3': 'IHQ_CD3',
     'CD5': 'IHQ_CD5',
+    'IHQ_CD5': 'IHQ_CD5',
     'CD10': 'IHQ_CD10',
+    'IHQ_CD10': 'IHQ_CD10',
     'CD20': 'IHQ_CD20',
+    'IHQ_CD20': 'IHQ_CD20',
     'CD30': 'IHQ_CD30',
+    'IHQ_CD30': 'IHQ_CD30',
     'CD34': 'IHQ_CD34',
+    'IHQ_CD34': 'IHQ_CD34',
     'CD38': 'IHQ_CD38',
+    'IHQ_CD38': 'IHQ_CD38',
     'CD45': 'IHQ_CD45',
+    'IHQ_CD45': 'IHQ_CD45',
     'CD56': 'IHQ_CD56',
+    'IHQ_CD56': 'IHQ_CD56',
     'CD61': 'IHQ_CD61',
+    'IHQ_CD61': 'IHQ_CD61',
     'CD68': 'IHQ_CD68',
+    'IHQ_CD68': 'IHQ_CD68',  # V5.2: Agregado con prefijo
     'CD117': 'IHQ_CD117',
+    'IHQ_CD117': 'IHQ_CD117',
     'CD138': 'IHQ_CD138',
+    'IHQ_CD138': 'IHQ_CD138',
+
+    # V3.2.5.1: Biomarcadores adicionales
+    'PAX8': 'IHQ_PAX8',
+    'PAX-8': 'IHQ_PAX8',
+    'PAX 8': 'IHQ_PAX8',  # V5.1: Con espacio
+    'IHQ_PAX8': 'IHQ_PAX8',
+
+    # V5.1: MAPEOS COMPLETOS - TODOS LOS BIOMARCADORES
+    # Citoqueratinas y marcadores epiteliales
+    'CAM5.2': 'IHQ_CAM52',
+    'CAM 5.2': 'IHQ_CAM52',
+    'CKAE1AE3': 'IHQ_CKAE1AE3',
+    'CKAE1E3': 'IHQ_CKAE1AE3',  # Variante común
+    'CKAE1 AE3': 'IHQ_CKAE1AE3',
+    'CKAE1/AE3': 'IHQ_CKAE1AE3',
+
+    # Marcadores de proliferación y supresores tumorales
+    'CDK4': 'IHQ_CDK4',
+    'IHQ_CDK4': 'IHQ_CDK4',  # V5.2: Agregado con prefijo
+    'MDM2': 'IHQ_MDM2',
+    'IHQ_MDM2': 'IHQ_MDM2',  # V5.2: Agregado con prefijo
+    'P63': 'IHQ_P63',
+    'IHQ_P63': 'IHQ_P63',  # V5.2: Agregado con prefijo
+
+    # Marcadores MMR (Mismatch Repair) - CRÍTICOS para síndrome de Lynch
+    'MLH1': 'IHQ_MLH1',
+    'IHQ_MLH1': 'IHQ_MLH1',  # V5.2: Agregado con prefijo
+    'MSH2': 'IHQ_MSH2',
+    'IHQ_MSH2': 'IHQ_MSH2',  # V5.2: Agregado con prefijo
+    'MSH6': 'IHQ_MSH6',
+    'IHQ_MSH6': 'IHQ_MSH6',  # V5.2: Agregado con prefijo
+    'MSH6 Y': 'IHQ_MSH6',  # "Y" al final por OCR
+    'PMS2': 'IHQ_PMS2',
+    'IHQ_PMS2': 'IHQ_PMS2',  # V5.2: Agregado con prefijo
+
+    # Marcadores de GIST y tumores neuroendocrinos
+    'DOG1': 'IHQ_DOG1',
+    'DOG-1': 'IHQ_DOG1',
+    'IHQ_DOG1': 'IHQ_DOG1',  # V5.2: Agregado con prefijo
+
+    # Marcadores neurales y gliales
+    'GFAP': 'IHQ_GFAP',
+    'IHQ_GFAP': 'IHQ_GFAP',  # V5.2: Agregado con prefijo
+    'NAPSIN': 'IHQ_NAPSIN',
+    'IHQ_NAPSIN': 'IHQ_NAPSIN',  # V5.2: Agregado con prefijo
+    'NAPSIN A': 'IHQ_NAPSIN',
+    'NAPSINA': 'IHQ_NAPSIN',
+    'NAPSINA A': 'IHQ_NAPSIN',
+
+    # Marcadores de linfoma
+    'PAX5': 'IHQ_PAX5',
+    'PAX-5': 'IHQ_PAX5',
+    'IHQ_PAX5': 'IHQ_PAX5',  # V5.2: Agregado con prefijo
+
+    # Marcadores virales
+    'HHV8': 'IHQ_HHV8',
+    'HHV-8': 'IHQ_HHV8',
+    'IHQ_HHV8': 'IHQ_HHV8',  # V5.2: Agregado con prefijo
+
+    # Marcadores renales y mesotelioma
+    'WT1': 'IHQ_WT1',
+    'WT-1': 'IHQ_WT1',
+    'IHQ_WT1': 'IHQ_WT1',  # V5.2: Agregado con prefijo
+
+    # Marcadores de músculo
+    'ACTINA': 'IHQ_ACTIN',
+    'ACTIN': 'IHQ_ACTIN',
+    'IHQ_ACTIN': 'IHQ_ACTIN',  # V5.2: Agregado con prefijo
+    'ACTINA DE MUSCULO LISO': 'IHQ_ACTIN',
+    'ACTINA MUSCULO LISO': 'IHQ_ACTIN',
+
+    # Variantes con espacios (errores comunes de OCR)
+    'HER 2': 'IHQ_HER2',
+    'HER  2': 'IHQ_HER2',
+    'CD56 Y': 'IHQ_CD56',  # "Y" al final
+
+    # Error de tipeo común: CK56 cuando debe ser CD56
+    'CK56': 'IHQ_CD56',
+
+    # V5.1.1: Marcadores adicionales que pueden aparecer
+    'NEUN': 'IHQ_NEUN',
+    'NEU-N': 'IHQ_NEUN',
+    'NEUN NEURONAL': 'IHQ_NEUN',
+    'IHQ_NEUN': 'IHQ_NEUN',  # V5.2: Agregado con prefijo
+
+    # P16 porcentaje (algunos PDFs lo reportan separado)
+    'P16 PORCENTAJE': 'IHQ_P16_PORCENTAJE',
+    'P16%': 'IHQ_P16_PORCENTAJE',
+
+    # V5.3: NUEVOS BIOMARCADORES (28 adicionales detectados en producción)
+    # Oncogenes y marcadores de linfoma
+    'ALK': 'IHQ_ALK',
+    'IHQ_ALK': 'IHQ_ALK',
+    'BCL2': 'IHQ_BCL2',
+    'BCL-2': 'IHQ_BCL2',
+    'IHQ_BCL2': 'IHQ_BCL2',
+    'BCL6': 'IHQ_BCL6',
+    'BCL-6': 'IHQ_BCL6',
+    'IHQ_BCL6': 'IHQ_BCL6',
+    'CD23': 'IHQ_CD23',
+    'IHQ_CD23': 'IHQ_CD23',
+    'CD4': 'IHQ_CD4',
+    'IHQ_CD4': 'IHQ_CD4',
+    'CD8': 'IHQ_CD8',
+    'IHQ_CD8': 'IHQ_CD8',
+    'CD99': 'IHQ_CD99',
+    'IHQ_CD99': 'IHQ_CD99',
+    'CD1A': 'IHQ_CD1A',
+    'CD1 A': 'IHQ_CD1A',
+    'IHQ_CD1A': 'IHQ_CD1A',
+
+    # Marcadores virales
+    'C4D': 'IHQ_C4D',
+    'IHQ_C4D': 'IHQ_C4D',
+    'HHV 8': 'IHQ_HHV8',  # Variante con espacio
+    'LMP 1': 'IHQ_LMP1',
+    'LMP-1': 'IHQ_LMP1',
+    'LMP1': 'IHQ_LMP1',
+    'IHQ_LMP1': 'IHQ_LMP1',
+    'CITOMEGALOVIRUS': 'IHQ_CITOMEGALOVIRUS',
+    'CMV': 'IHQ_CITOMEGALOVIRUS',
+    'IHQ_CITOMEGALOVIRUS': 'IHQ_CITOMEGALOVIRUS',
+    'SV40': 'IHQ_SV40',
+    'IHQ_SV40': 'IHQ_SV40',
+
+    # Marcadores epiteliales y glandulares
+    'CEA': 'IHQ_CEA',
+    'IHQ_CEA': 'IHQ_CEA',
+    'CA19 9': 'IHQ_CA19_9',
+    'CA19-9': 'IHQ_CA19_9',
+    'CA 19-9': 'IHQ_CA19_9',
+    'IHQ_CA19_9': 'IHQ_CA19_9',
+    'CALRETININA': 'IHQ_CALRETININA',
+    'CALRRETININA': 'IHQ_CALRETININA',  # Typo común
+    'IHQ_CALRETININA': 'IHQ_CALRETININA',
+
+    # Citoqueratinas adicionales
+    'CK34 B E12': 'IHQ_CK34BE12',
+    'CK34BE12': 'IHQ_CK34BE12',
+    'CK34 BE12': 'IHQ_CK34BE12',
+    'IHQ_CK34BE12': 'IHQ_CK34BE12',
+    'CK5 6': 'IHQ_CK5_6',
+    'CK5/6': 'IHQ_CK5_6',
+    'IHQ_CK5_6': 'IHQ_CK5_6',
+
+    # Marcadores hepáticos y metabólicos
+    'HEPAR': 'IHQ_HEPAR',
+    'HEPAR-1': 'IHQ_HEPAR',
+    'HEPAR 1': 'IHQ_HEPAR',
+    'IHQ_HEPAR': 'IHQ_HEPAR',
+    'GLIPICAN': 'IHQ_GLIPICAN',
+    'GLIPICAN 3': 'IHQ_GLIPICAN',
+    'GLIPICAN-3': 'IHQ_GLIPICAN',
+    'IHQ_GLIPICAN': 'IHQ_GLIPICAN',
+    'ARGINASA': 'IHQ_ARGINASA',
+    'ARGINASA 1': 'IHQ_ARGINASA',
+    'IHQ_ARGINASA': 'IHQ_ARGINASA',
+
+    # Marcadores de melanoma
+    'HMB45': 'IHQ_HMB45',
+    'HMB-45': 'IHQ_HMB45',
+    'HMB 45': 'IHQ_HMB45',
+    'IHQ_HMB45': 'IHQ_HMB45',
+    'SOX 10': 'IHQ_SOX10',  # Variante con espacio
+
+    # Marcadores prostáticos
+    'PSA': 'IHQ_PSA',
+    'IHQ_PSA': 'IHQ_PSA',
+    'RACEMASA': 'IHQ_RACEMASA',
+    'AMACR': 'IHQ_RACEMASA',  # Alias
+    'P504S': 'IHQ_RACEMASA',  # Alias
+    'IHQ_RACEMASA': 'IHQ_RACEMASA',
+
+    # Marcadores hormonales esteroideos
+    '34BETA': 'IHQ_34BETA',
+    '34-BETA': 'IHQ_34BETA',
+    'BETA E12': 'IHQ_34BETA',
+    'IHQ_34BETA': 'IHQ_34BETA',
+    'B2': 'IHQ_B2',
+    'IHQ_B2': 'IHQ_B2',
 }
+
+
+def parsear_estudios_solicitados(estudios_solicitados_raw: str) -> Dict[str, Any]:
+    """
+    Parsea el campo IHQ_ESTUDIOS_SOLICITADOS y mapea a columnas de BD
+
+    V3.3.0: Nueva función para optimizar auditorías parciales
+
+    Args:
+        estudios_solicitados_raw: Contenido del campo IHQ_ESTUDIOS_SOLICITADOS
+                                  Ejemplo: "HER2, Ki-67, Receptor de Estrógeno, P16"
+
+    Returns:
+        {
+            'tiene_estudios': bool,  # True si hay al menos 1 biomarcador especificado
+            'biomarcadores_raw': list,  # Lista de nombres como aparecen en BD
+            'biomarcadores_normalizados': list,  # Nombres en mayúsculas limpios
+            'columnas_bd_mapeadas': list,  # Columnas BD correspondientes (ej: IHQ_HER2)
+            'columnas_bd_estado': list,  # Columnas *_ESTADO si aplica (ej: IHQ_P16_ESTADO)
+            'columnas_bd_porcentaje': list,  # Columnas *_PORCENTAJE si aplica
+            'no_mapeados': list,  # Biomarcadores sin columna en BD
+            'total_solicitados': int,  # Total de biomarcadores solicitados
+            'total_mapeados': int  # Total de biomarcadores con columna en BD
+        }
+    """
+    resultado = {
+        'tiene_estudios': False,
+        'biomarcadores_raw': [],
+        'biomarcadores_normalizados': [],
+        'columnas_bd_mapeadas': [],
+        'columnas_bd_estado': [],
+        'columnas_bd_porcentaje': [],
+        'no_mapeados': [],
+        'total_solicitados': 0,
+        'total_mapeados': 0
+    }
+
+    if not estudios_solicitados_raw or estudios_solicitados_raw in ['', 'N/A', 'NO ENCONTRADO', None]:
+        return resultado
+
+    # Separar por comas
+    estudios_lista = [e.strip() for e in estudios_solicitados_raw.split(',')]
+    estudios_lista = [e for e in estudios_lista if e and e != 'N/A']
+
+    if not estudios_lista:
+        return resultado
+
+    resultado['tiene_estudios'] = True
+    resultado['biomarcadores_raw'] = estudios_lista
+    resultado['total_solicitados'] = len(estudios_lista)
+
+    # Procesar cada biomarcador
+    for estudio in estudios_lista:
+        # Normalizar nombre (mayúsculas)
+        estudio_upper = estudio.upper()
+        resultado['biomarcadores_normalizados'].append(estudio_upper)
+
+        # Buscar columna correspondiente en MAPEO_BIOMARCADORES
+        columna_bd = MAPEO_BIOMARCADORES.get(estudio_upper)
+
+        if columna_bd:
+            # Mapeado exitosamente
+            resultado['columnas_bd_mapeadas'].append(columna_bd)
+            resultado['total_mapeados'] += 1
+
+            # V3.3.0: Detectar si tiene campos duales ESTADO/PORCENTAJE
+            # Ej: P16 → IHQ_P16_ESTADO + IHQ_P16_PORCENTAJE
+            if '_ESTADO' in columna_bd:
+                # Tiene campo ESTADO
+                resultado['columnas_bd_estado'].append(columna_bd)
+
+                # Buscar si también tiene campo PORCENTAJE
+                base_name = columna_bd.replace('_ESTADO', '')
+                columna_porcentaje = f"{base_name}_PORCENTAJE"
+                # Verificar que la columna porcentaje existe en la BD
+                # (simplificado: asumir que P16 y P40 tienen _PORCENTAJE)
+                if 'P16' in base_name or 'P40' in base_name:
+                    resultado['columnas_bd_porcentaje'].append(columna_porcentaje)
+                    # V5.1.2: FIX - NO agregar _PORCENTAJE a columnas_bd_mapeadas (campos requeridos)
+                    # Los campos _PORCENTAJE son OPCIONALES y solo se llenan si el PDF reporta
+                    # porcentaje explícitamente (ej: "P16: 70%"). Si el PDF solo dice "P16 POSITIVO",
+                    # el campo _PORCENTAJE debe quedar vacío y el caso debe considerarse COMPLETO.
+                    # Solo el campo _ESTADO es requerido para completitud.
+                    # resultado['columnas_bd_mapeadas'].append(columna_porcentaje)  # ELIMINADO
+        else:
+            # No mapeado
+            resultado['no_mapeados'].append(estudio)
+
+    return resultado
 
 
 def verificar_completitud_registro(numero_peticion: str) -> Dict[str, Any]:
@@ -181,7 +483,7 @@ def verificar_completitud_registro(numero_peticion: str) -> Dict[str, Any]:
         # Obtener registro completo
         cursor.execute("""
             SELECT * FROM informes_ihq
-            WHERE "N. peticion (0. Numero de biopsia)" = ?
+            WHERE "Numero de caso" = ?
         """, (numero_peticion,))
 
         row = cursor.fetchone()
@@ -248,33 +550,34 @@ def verificar_completitud_registro(numero_peticion: str) -> Dict[str, Any]:
         biomarcadores_detectados = 0
         biomarcadores_faltantes = []
         biomarcadores_solicitados = []
+        tiene_estudios_solicitados = False  # V3.2.4.2: FIX 14.1 - Flag para saber si hay estudios especificados
 
-        # Obtener estudios solicitados
+        # V3.3.0: Obtener estudios solicitados usando nueva función de parseo
         estudios_solicitados_raw = registro.get('IHQ_ESTUDIOS_SOLICITADOS', '')
+        estudios_info = parsear_estudios_solicitados(estudios_solicitados_raw)
 
-        if estudios_solicitados_raw and estudios_solicitados_raw not in ['', 'N/A', 'NO ENCONTRADO', None]:
-            # Parsear la lista de biomarcadores (separados por comas)
-            estudios_lista = [e.strip().upper() for e in estudios_solicitados_raw.split(',')]
+        tiene_estudios_solicitados = estudios_info['tiene_estudios']
 
-            # Para cada biomarcador solicitado, verificar si está mapeado
-            for estudio in estudios_lista:
-                if not estudio or estudio == 'N/A':
-                    continue
+        if tiene_estudios_solicitados:
+            # Usar solo columnas mapeadas de los estudios solicitados
+            for columna_bd in estudios_info['columnas_bd_mapeadas']:
+                # Verificar si tiene valor en la BD
+                valor = registro.get(columna_bd, '')
+                if valor and valor not in ['', 'NO ENCONTRADO', 'nan', None, 'NO APLICA', 'N/A']:
+                    biomarcadores_detectados += 1
+                else:
+                    # Agregar a faltantes
+                    biomarcadores_faltantes.append(columna_bd)
 
-                # Buscar la columna correspondiente
-                columna_bd = MAPEO_BIOMARCADORES.get(estudio)
+            # Agregar biomarcadores no mapeados a faltantes
+            for no_mapeado in estudios_info['no_mapeados']:
+                biomarcadores_faltantes.append(f"{no_mapeado} (NO MAPEADO)")
 
-                if columna_bd:
-                    biomarcadores_solicitados.append(estudio)
-                    # Verificar si tiene valor en la BD
-                    valor = registro.get(columna_bd, '')
-                    if valor and valor not in ['', 'NO ENCONTRADO', 'nan', None, 'NO APLICA', 'N/A']:
-                        biomarcadores_detectados += 1
-                    else:
-                        biomarcadores_faltantes.append(f"{estudio} ({columna_bd})")
+            # Para cálculo de completitud
+            biomarcadores_solicitados = estudios_info['biomarcadores_normalizados']
 
         # Si no hay estudios solicitados, usar la lista básica de biomarcadores
-        if not biomarcadores_solicitados:
+        if not tiene_estudios_solicitados:
             for campo in CAMPOS_REQUERIDOS['biomarcadores']:
                 valor = registro.get(campo, '')
                 if valor and valor not in ['', 'NO ENCONTRADO', 'nan', None, 'NO APLICA', 'N/A']:
@@ -292,28 +595,53 @@ def verificar_completitud_registro(numero_peticion: str) -> Dict[str, Any]:
         porcentaje_biomarcadores = (biomarcadores_detectados / total_biomarcadores_esperados) * 30 if total_biomarcadores_esperados > 0 else 0
         porcentaje_total = porcentaje_campos + porcentaje_biomarcadores
 
-        # Determinar nivel
-        # CRITERIO ESTRICTO: Solo 100% + mínimo 1 biomarcador = completo
-        # (Si hay biomarcadores solicitados, TODOS deben estar completos)
-        if porcentaje_total == 100.0 and biomarcadores_detectados >= 1:
-            nivel = 'completo'
-            completo = True
+        # V3.2.4.2: FIX 14.1 - Criterio CORRECTO de completitud
+        # Si hay IHQ_ESTUDIOS_SOLICITADOS específicos, TODOS los MAPEADOS deben estar completos
+        # Si no hay estudios solicitados, al menos 1 biomarcador genérico
+        if tiene_estudios_solicitados:
+            # V3.2.4.2: FIX 14.1 - Hay estudios solicitados especificados
+            # CRITERIO ESTRICTO: TODOS los biomarcadores mapeados deben estar completos
+            # Si hay biomarcadores NO MAPEADOS, se marcan como faltantes
+            if biomarcadores_solicitados:
+                # Hay al menos 1 biomarcador mapeado: verificar que TODOS estén completos
+                if porcentaje_total == 100.0 and biomarcadores_detectados == len(biomarcadores_solicitados):
+                    # Si NO hay biomarcadores faltantes (ni mapeados ni no mapeados), es completo
+                    if not biomarcadores_faltantes:
+                        nivel = 'completo'
+                        completo = True
+                    else:
+                        # Hay biomarcadores faltantes (probablemente NO MAPEADOS)
+                        nivel = 'incompleto'
+                        completo = False
+                else:
+                    nivel = 'incompleto'
+                    completo = False
+            else:
+                # TODOS los biomarcadores solicitados NO están mapeados
+                # Marcar como INCOMPLETO porque no podemos verificar
+                nivel = 'incompleto'
+                completo = False
         else:
-            nivel = 'incompleto'
-            completo = False
+            # No hay estudios solicitados: al menos 1 biomarcador de la lista genérica
+            if porcentaje_total == 100.0 and biomarcadores_detectados >= 1:
+                nivel = 'completo'
+                completo = True
+            else:
+                nivel = 'incompleto'
+                completo = False
 
-        # Construir nombre completo para display
-        nombre_display = ""
-        if primer_nombre:
-            nombre_display += primer_nombre + " "
-        if segundo_nombre:
-            nombre_display += segundo_nombre + " "
-        if primer_apellido:
-            nombre_display += primer_apellido + " "
-        if segundo_apellido:
-            nombre_display += segundo_apellido
+        # V5.3.9.3: Construir nombre completo SIN N/A para display
+        from core.unified_extractor import build_clean_full_name
 
-        nombre_display = nombre_display.strip() or "Sin nombre completo"
+        nombre_display = build_clean_full_name(
+            primer_nombre,
+            segundo_nombre,
+            primer_apellido,
+            segundo_apellido
+        )
+
+        if not nombre_display or nombre_display == "N/A":
+            nombre_display = "Sin nombre completo"
 
         # Formatear campos faltantes para mostrar - MOSTRAR TODOS, NO USAR "..."
         detalles_faltantes = []
@@ -340,11 +668,15 @@ def verificar_completitud_registro(numero_peticion: str) -> Dict[str, Any]:
             'campos_faltantes_detalle': campos_faltantes_detalle,
             'biomarcadores_detectados': biomarcadores_detectados,
             'biomarcadores_faltantes': biomarcadores_faltantes,
-            'paciente_nombre': nombre_display
+            'paciente_nombre': nombre_display,
+            # V3.3.0: Agregar contexto de estudios solicitados para optimizar auditoría
+            'estudios_solicitados': estudios_info,
+            'tiene_estudios_solicitados': tiene_estudios_solicitados
         }
 
     except Exception as e:
-        print(f"ERROR verificando completitud de {numero_peticion}: {e}")
+        # V5.3.9: Usar logging en lugar de print (stdout puede estar cerrado)
+        logger.error(f"ERROR verificando completitud de {numero_peticion}: {e}")
         return {
             'numero_peticion': numero_peticion,
             'completo': False,
@@ -374,31 +706,32 @@ def analizar_batch_registros(numeros_peticion: List[str]) -> Dict[str, List[Dict
     completos = []
     incompletos = []
 
-    print(f"Analizando completitud de {len(numeros_peticion)} registros...")
+    # V5.3.9: Usar logging en lugar de print (stdout puede estar cerrado)
+    logger.info(f"Analizando completitud de {len(numeros_peticion)} registros...")
 
     for numero in numeros_peticion:
         resultado = verificar_completitud_registro(numero)
 
         if 'error' in resultado:
-            print(f"   ERROR en {numero}: {resultado['error']}")
+            logger.error(f"   ERROR en {numero}: {resultado['error']}")
             incompletos.append(resultado)
             continue
 
         if resultado.get('completo', False):
             completos.append(resultado)
-            print(f"   OK {numero} - COMPLETO ({resultado['porcentaje_completitud']}%)")
+            logger.info(f"   OK {numero} - COMPLETO ({resultado['porcentaje_completitud']}%)")
         else:
             incompletos.append(resultado)
-            print(f"   WARN {numero} - INCOMPLETO ({resultado['porcentaje_completitud']}%) - Faltan {len(resultado['campos_faltantes'])} campos y {len(resultado['biomarcadores_faltantes'])} biomarcadores")
+            logger.warning(f"   WARN {numero} - INCOMPLETO ({resultado['porcentaje_completitud']}%) - Faltan {len(resultado['campos_faltantes'])} campos y {len(resultado['biomarcadores_faltantes'])} biomarcadores")
 
     total = len(numeros_peticion)
     num_completos = len(completos)
     porcentaje_exito = (num_completos / total * 100) if total > 0 else 0
 
-    print(f"\nResumen:")
-    print(f"   Total: {total}")
-    print(f"   Completos: {num_completos} ({porcentaje_exito:.1f}%)")
-    print(f"   Incompletos: {len(incompletos)} ({100-porcentaje_exito:.1f}%)")
+    logger.info(f"\nResumen:")
+    logger.info(f"   Total: {total}")
+    logger.info(f"   Completos: {num_completos} ({porcentaje_exito:.1f}%)")
+    logger.info(f"   Incompletos: {len(incompletos)} ({100-porcentaje_exito:.1f}%)")
 
     return {
         'completos': completos,
@@ -414,9 +747,9 @@ def analizar_batch_registros(numeros_peticion: List[str]) -> Dict[str, List[Dict
 
 # Test rápido
 if __name__ == "__main__":
-    print("=" * 70)
-    print("TEST DEL VERIFICADOR DE COMPLETITUD")
-    print("=" * 70)
+    logging.info("=" * 70)
+    logging.info("TEST DEL VERIFICADOR DE COMPLETITUD")
+    logging.info("=" * 70)
 
     # Obtener algunos registros de la BD para probar
     try:
@@ -431,48 +764,48 @@ if __name__ == "__main__":
         conn.close()
 
         if registros:
-            print(f"\nEncontrados {len(registros)} registros para probar\n")
+            logging.info(f"\nEncontrados {len(registros)} registros para probar\n")
 
             # Test individual
-            print("-" * 70)
-            print("TEST 1: Verificacion individual")
-            print("-" * 70)
+            logging.info("-" * 70)
+            logging.info("TEST 1: Verificacion individual")
+            logging.info("-" * 70)
             resultado = verificar_completitud_registro(registros[0])
-            print(f"\nRegistro: {resultado['numero_peticion']}")
-            print(f"   Paciente: {resultado.get('paciente_nombre', 'N/A')}")
-            print(f"   Nivel: {resultado.get('nivel', 'desconocido').upper()}")
-            print(f"   Completitud: {resultado.get('porcentaje_completitud', 0)}%")
-            print(f"   Campos completos: {resultado.get('campos_completos', 0)}/{resultado.get('campos_totales', 0)}")
-            print(f"   Biomarcadores: {resultado.get('biomarcadores_detectados', 0)}/{len(CAMPOS_REQUERIDOS['biomarcadores'])}")
+            logging.info(f"\nRegistro: {resultado['numero_peticion']}")
+            logging.info(f"   Paciente: {resultado.get('paciente_nombre', 'N/A')}")
+            logging.info(f"   Nivel: {resultado.get('nivel', 'desconocido').upper()}")
+            logging.info(f"   Completitud: {resultado.get('porcentaje_completitud', 0)}%")
+            logging.info(f"   Campos completos: {resultado.get('campos_completos', 0)}/{resultado.get('campos_totales', 0)}")
+            logging.info(f"   Biomarcadores: {resultado.get('biomarcadores_detectados', 0)}/{len(CAMPOS_REQUERIDOS['biomarcadores'])}")
 
             if resultado.get('campos_faltantes'):
-                print(f"\n   WARN Campos faltantes ({len(resultado['campos_faltantes'])}):")
+                logging.info(f"\n   WARN Campos faltantes ({len(resultado['campos_faltantes'])}):")
                 for campo in resultado['campos_faltantes'][:3]:
-                    print(f"      - {campo}")
+                    logging.info(f"      - {campo}")
                 if len(resultado['campos_faltantes']) > 3:
-                    print(f"      ... y {len(resultado['campos_faltantes']) - 3} mas")
+                    logging.info(f"      ... y {len(resultado['campos_faltantes']) - 3} mas")
 
             if resultado.get('biomarcadores_faltantes'):
-                print(f"\n   WARN Biomarcadores faltantes ({len(resultado['biomarcadores_faltantes'])}):")
+                logging.info(f"\n   WARN Biomarcadores faltantes ({len(resultado['biomarcadores_faltantes'])}):")
                 for bio in resultado['biomarcadores_faltantes'][:3]:
-                    print(f"      - {bio}")
+                    logging.info(f"      - {bio}")
                 if len(resultado['biomarcadores_faltantes']) > 3:
-                    print(f"      ... y {len(resultado['biomarcadores_faltantes']) - 3} mas")
+                    logging.info(f"      ... y {len(resultado['biomarcadores_faltantes']) - 3} mas")
 
             # Test batch
-            print(f"\n{'-' * 70}")
-            print("TEST 2: Analisis batch")
-            print("-" * 70)
+            logging.info(f"\n{'-' * 70}")
+            logging.info("TEST 2: Analisis batch")
+            logging.info("-" * 70)
             analisis = analizar_batch_registros(registros)
 
-            print(f"\nTEST COMPLETADO EXITOSAMENTE")
+            logging.info(f"\nTEST COMPLETADO EXITOSAMENTE")
 
         else:
-            print("WARN No hay registros en la base de datos para probar")
+            logging.info("WARN No hay registros en la base de datos para probar")
 
     except Exception as e:
-        print(f"ERROR en test: {e}")
+        logging.info(f"ERROR en test: {e}")
         import traceback
         traceback.print_exc()
 
-    print("\n" + "=" * 70)
+    logging.info("\n" + "=" * 70)

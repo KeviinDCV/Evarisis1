@@ -16,6 +16,7 @@ import tkinter.ttk as ttk_std
 from PIL import Image, ImageTk
 from tkinter import filedialog, messagebox
 import tkinter as tk
+from tksheet import Sheet  # V5.3.8: Tabla virtualizada tipo Excel
 import threading
 import os
 import re
@@ -102,14 +103,14 @@ def configure_tesseract():
 
         if tesseract_cmd and Path(tesseract_cmd).exists():
             pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
-            print(f"Tesseract OCR configurado en: {tesseract_cmd}")
+            logging.info(f"Tesseract OCR configurado en: {tesseract_cmd}")
         else:
-            print("ADVERTENCIA: No se encontró la ruta de Tesseract en config.ini o la ruta no es válida.")
-            print("El sistema intentará usar la variable de entorno PATH.")
+            logging.warning("No se encontro la ruta de Tesseract en config.ini o la ruta no es valida.")
+            logging.warning("El sistema intentara usar la variable de entorno PATH.")
 
     except Exception as e:
-        print(f"Error al configurar Tesseract desde config.ini: {e}")
-        print("Se continuará usando la configuración por defecto de Pytesseract.")
+        logging.error(f"Error al configurar Tesseract desde config.ini: {e}")
+        logging.warning("Se continuara usando la configuracion por defecto de Pytesseract.")
 
 # =========================
 # Configuración de temas TTKBootstrap
@@ -180,7 +181,7 @@ class App(ttk.Window):
         # Inicializar TTKBootstrap Window con el tema
         super().__init__(themename=tema)
         
-        self.title("EVARISIS CIRUGÍA ONCOLÓGICA - Oncología")
+        self.title("EVARISIS CIRUGÍA ONCOLÓGICA")
         self.state('zoomed')  # Maximizar ventana
 
         # Información del usuario
@@ -281,7 +282,7 @@ class App(ttk.Window):
         
         ttk.Label(
             center,
-            text="EVARISIS CIRUGÍA ONCOLÓGICA - Oncología",
+            text="EVARISIS CIRUGÍA ONCOLÓGICA",
             font=self.FONT_TITULO,
             anchor=W
         ).pack(fill=X)
@@ -682,7 +683,7 @@ class App(ttk.Window):
                 self.master_df = get_all_records_as_dataframe()
             self.cargar_dashboard()
         except Exception as e:
-            print(f"Error auto-cargando dashboard: {e}")
+            logging.error(f"Error auto-cargando dashboard: {e}")
             # Aún cargar dashboard vacío para mostrar interfaz
             self.cargar_dashboard()
 
@@ -725,7 +726,7 @@ class App(ttk.Window):
         Args:
             tipo_auditoria: 'parcial' o 'completa'
         """
-        print(f"🤖 Iniciando auditoría IA - Tipo: {tipo_auditoria}")
+        logging.info(f"Iniciando auditoria IA - Tipo: {tipo_auditoria}")
 
         # Guardar tipo de auditoría para usar en el callback de resultados
         self._tipo_auditoria_actual = tipo_auditoria
@@ -739,7 +740,7 @@ class App(ttk.Window):
                 from core.auditoria_parcial import auditar_registros_incompletos
 
                 numeros_peticion = [r['numero_peticion'] for r in registros_incompletos]
-                print(f"   📋 Auditando {len(numeros_peticion)} registros incompletos")
+                logging.info(f"Auditando {len(numeros_peticion)} registros incompletos")
 
                 # Esto mostrará VentanaAuditoriaIA automáticamente
                 auditar_registros_incompletos(
@@ -749,7 +750,7 @@ class App(ttk.Window):
                 )
             except ImportError:
                 # Fallback: usar auditoría completa si la parcial no está implementada
-                print(f"   ⚠️ Auditoría parcial no disponible, usando auditoría completa")
+                logging.warning("Auditoria parcial no disponible, usando auditoria completa")
                 from core.ventana_auditoria_ia import mostrar_ventana_auditoria
 
                 mostrar_ventana_auditoria(
@@ -759,7 +760,7 @@ class App(ttk.Window):
 
         elif tipo_auditoria == 'completa':
             # Auditoría COMPLETA - Solo registros recién importados (igual que PARCIAL)
-            print(f"   📊 Auditando registros recién importados con análisis profundo")
+            logging.info("Auditando registros recien importados con analisis profundo")
 
             # Obtener registros recién importados
             ultimos_registros = getattr(self, '_ultimos_registros_procesados', [])
@@ -776,7 +777,7 @@ class App(ttk.Window):
                 )
                 return
 
-            print(f"   📋 Registros recién importados: {len(ultimos_registros)}")
+            logging.info(f"Registros recien importados: {len(ultimos_registros)}")
 
             try:
                 from pathlib import Path
@@ -793,7 +794,7 @@ class App(ttk.Window):
                         # Obtener datos del registro de BD
                         registro_bd = get_registro_by_peticion(numero)
                         if not registro_bd:
-                            print(f"   ⚠️ No se encontró registro en BD para {numero}")
+                            logging.warning(f"No se encontro registro en BD para {numero}")
                             continue
 
                         # Cargar debug_map para tener el PDF completo
@@ -807,10 +808,10 @@ class App(ttk.Window):
                             try:
                                 debug_map = DebugMapper.cargar_mapa(debug_map_path)
                             except Exception as e:
-                                print(f"   ⚠️ Error cargando debug_map para {numero}: {e}")
+                                logging.warning(f"Error cargando debug_map para {numero}: {e}")
                                 debug_map = {}
                         else:
-                            print(f"   ⚠️ No se encontró debug_map para {numero}")
+                            logging.warning(f"No se encontro debug_map para {numero}")
                             debug_map = {}
 
                         # Preparar caso para auditoría COMPLETA
@@ -824,11 +825,11 @@ class App(ttk.Window):
                         casos_preparados.append(caso)
 
                     except Exception as e:
-                        print(f"   ❌ Error preparando {numero}: {e}")
+                        logging.error(f"Error preparando {numero}: {e}")
                         continue
 
                 if not casos_preparados:
-                    print(f"   ❌ No se pudieron preparar casos para auditoría")
+                    logging.error("No se pudieron preparar casos para auditoria")
                     messagebox.showerror(
                         "Error",
                         "No se pudieron preparar los casos para auditoría.\n"
@@ -836,7 +837,7 @@ class App(ttk.Window):
                     )
                     return
 
-                print(f"   ✅ {len(casos_preparados)} casos preparados para auditoría COMPLETA")
+                logging.info(f"{len(casos_preparados)} casos preparados para auditoria COMPLETA")
 
                 # Mostrar ventana de auditoría con casos recién importados
                 from core.ventana_auditoria_ia import mostrar_ventana_auditoria
@@ -849,13 +850,313 @@ class App(ttk.Window):
                 )
 
             except Exception as e:
-                print(f"   ❌ Error preparando auditoría completa: {e}")
-                import traceback
-                traceback.print_exc()
+                logging.error(f"Error preparando auditoria completa: {e}", exc_info=True)
                 messagebox.showerror(
                     "Error",
                     f"Error preparando auditoría completa:\n{str(e)}"
                 )
+
+    def _auditar_seleccion_parcial(self):
+        """V3.2.4: Auditar el item seleccionado en modo PARCIAL"""
+        self._auditar_item_seleccionado(modo='parcial')
+
+    def _auditar_seleccion_completa(self):
+        """V3.2.4: Auditar el item seleccionado en modo COMPLETA"""
+        self._auditar_item_seleccionado(modo='completa')
+
+    def _auditar_item_seleccionado(self, modo='completa'):
+        """
+        V3.2.4.2: Audita los items seleccionados en la tabla (1 o múltiples)
+
+        Comportamiento inteligente:
+        - 1 item seleccionado: Auditar individualmente
+        - Múltiples items + COMPLETA: Auditar 1 por 1
+        - Múltiples items + PARCIAL: Auditar en lotes de 3 (como auditoría masiva)
+
+        Args:
+            modo: 'parcial' o 'completa'
+        """
+        # Obtener selección
+        selection = self.tree.selection()
+        if not selection:
+            messagebox.showwarning(
+                "Seleccionar registro",
+                "Por favor selecciona al menos UN registro para auditar."
+            )
+            return
+
+        num_seleccionados = len(selection)
+        logging.info(f"Auditando {num_seleccionados} caso(s) seleccionado(s) (modo: {modo.upper()})")
+
+        # V3.2.4.2: FIX 10 - Filtrado inteligente según estado de auditoría
+        from core.database_manager import get_estado_auditoria
+
+        # Extraer números de petición y filtrar según estado
+        col_idx = list(self.tree["columns"]).index("Numero de caso")
+
+        numeros_peticion = []
+        casos_omitidos_info = {
+            'ya_parcial': [],
+            'ya_completa': [],
+            'error': []
+        }
+
+        for item_id in selection:
+            values = self.tree.item(item_id, 'values')
+            try:
+                numero = values[col_idx]
+                estado = get_estado_auditoria(numero)
+
+                # Lógica de filtrado inteligente
+                if modo == 'parcial':
+                    # AUDITORÍA PARCIAL: Solo procesar casos SIN auditoría
+                    if estado == "PARCIAL":
+                        casos_omitidos_info['ya_parcial'].append(numero)
+                        logging.info(f"Omitiendo {numero}: Ya tiene auditoria PARCIAL")
+                        continue
+                    elif estado == "COMPLETA":
+                        casos_omitidos_info['ya_completa'].append(numero)
+                        logging.info(f"Omitiendo {numero}: Ya tiene auditoria COMPLETA")
+                        continue
+                    else:
+                        # NULL o sin auditar → Procesar
+                        numeros_peticion.append(numero)
+
+                elif modo == 'completa':
+                    # AUDITORÍA COMPLETA: Procesar NULL y PARCIAL, omitir COMPLETA
+                    if estado == "COMPLETA":
+                        casos_omitidos_info['ya_completa'].append(numero)
+                        logging.info(f"Omitiendo {numero}: Ya tiene auditoria COMPLETA")
+                        continue
+                    else:
+                        # NULL o PARCIAL → Procesar (PARCIAL se upgrade a COMPLETA)
+                        numeros_peticion.append(numero)
+                        if estado == "PARCIAL":
+                            logging.info(f"{numero}: Upgrade de PARCIAL a COMPLETA")
+
+            except (ValueError, IndexError) as e:
+                casos_omitidos_info['error'].append(numero if 'numero' in locals() else 'desconocido')
+                logging.warning(f"Error obteniendo numero de peticion de item {item_id}: {e}")
+                continue
+
+        # Mostrar resumen de omisiones si hay
+        total_omitidos = len(casos_omitidos_info['ya_parcial']) + len(casos_omitidos_info['ya_completa']) + len(casos_omitidos_info['error'])
+
+        if total_omitidos > 0:
+            mensaje_omisiones = f"De {num_seleccionados} casos seleccionados:\n\n"
+            mensaje_omisiones += f"✅ Se procesarán: {len(numeros_peticion)}\n"
+            mensaje_omisiones += f"⏭️ Se omitirán: {total_omitidos}\n\n"
+
+            if casos_omitidos_info['ya_parcial']:
+                mensaje_omisiones += f"• {len(casos_omitidos_info['ya_parcial'])} ya tienen PARCIAL\n"
+            if casos_omitidos_info['ya_completa']:
+                mensaje_omisiones += f"• {len(casos_omitidos_info['ya_completa'])} ya tienen COMPLETA\n"
+            if casos_omitidos_info['error']:
+                mensaje_omisiones += f"• {len(casos_omitidos_info['error'])} con errores\n"
+
+            logging.info(f"Resumen de filtrado:")
+            logging.info(f"A procesar: {len(numeros_peticion)}")
+            logging.info(f"Omitidos: {total_omitidos}")
+
+            # Mostrar mensaje informativo al usuario
+            if len(numeros_peticion) > 0:
+                # Hay casos para procesar, informar omisiones
+                messagebox.showinfo(
+                    "Filtrado Inteligente",
+                    mensaje_omisiones + f"\n¿Deseas continuar con los {len(numeros_peticion)} casos?"
+                )
+
+        # Verificar si quedan casos para procesar
+        if not numeros_peticion:
+            # Mensaje personalizado según el motivo
+            if casos_omitidos_info['ya_completa'] and modo == 'completa':
+                messagebox.showinfo(
+                    "Nada que procesar",
+                    f"Todos los {num_seleccionados} caso(s) seleccionado(s) ya tienen auditoría COMPLETA.\n\n"
+                    f"✅ No es necesario volver a auditarlos."
+                )
+            elif casos_omitidos_info['ya_parcial'] and casos_omitidos_info['ya_completa'] and modo == 'parcial':
+                messagebox.showinfo(
+                    "Nada que procesar",
+                    f"Todos los {num_seleccionados} caso(s) seleccionado(s) ya tienen auditoría.\n\n"
+                    f"• {len(casos_omitidos_info['ya_parcial'])} con PARCIAL\n"
+                    f"• {len(casos_omitidos_info['ya_completa'])} con COMPLETA\n\n"
+                    f"💡 Selecciona casos sin auditar para procesarlos."
+                )
+            else:
+                messagebox.showerror(
+                    "Error",
+                    f"No se pudo obtener los números de petición de los registros seleccionados.\n\n"
+                    f"Casos con error: {len(casos_omitidos_info['error'])}"
+                )
+            return
+
+        # V3.2.4.2: Lógica inteligente según número de items a procesar
+        try:
+            from pathlib import Path
+            import glob
+            from core.debug_mapper import DebugMapper
+            from core.database_manager import get_registro_by_peticion
+            from core.ventana_auditoria_ia import mostrar_ventana_auditoria
+
+            project_root = Path(__file__).parent
+            debug_maps_dir = project_root / "data" / "debug_maps"
+
+            # Campos protegidos (no auditar)
+            CAMPOS_PROTEGIDOS = [
+                "Primer nombre", "Segundo nombre", "Primer apellido", "Segundo apellido",
+                "N. de identificación", "Edad", "Genero",
+                "Fecha de ingreso (2. Fecha de la muestra)", "Tipo de documento",
+                "Numero de caso"
+            ]
+
+            # Preparar TODOS los casos seleccionados
+            casos_preparados = []
+            casos_omitidos = 0
+
+            for numero_peticion in numeros_peticion:
+                logging.info(f"Preparando caso: {numero_peticion}")
+
+                # Obtener datos del registro de BD
+                registro_bd = get_registro_by_peticion(numero_peticion)
+                if not registro_bd:
+                    logging.warning(f"No se encontro en BD, omitiendo {numero_peticion}")
+                    casos_omitidos += 1
+                    continue
+
+                # Cargar debug_map
+                pattern = str(debug_maps_dir / f"debug_map_{numero_peticion}_*.json")
+                debug_map_files = glob.glob(pattern)
+
+                if debug_map_files:
+                    debug_map_path = Path(sorted(debug_map_files)[-1])
+                    try:
+                        debug_map = DebugMapper.cargar_mapa(debug_map_path)
+                        logging.info(f"Debug map cargado para {numero_peticion}")
+                    except Exception as e:
+                        logging.warning(f"Error cargando debug_map para {numero_peticion}: {e}")
+                        debug_map = {}
+                else:
+                    logging.warning(f"No se encontro debug_map para {numero_peticion}")
+                    debug_map = {}
+
+                # Pre-check para modo PARCIAL (V5.1.2: Usar validation_checker)
+                campos_vacios = []
+                if modo == 'parcial':
+                    # V5.1.2: FIX - Usar validation_checker en lugar de chequeo manual
+                    # Esto filtra solo los campos REALMENTE faltantes (basándose en ESTUDIOS SOLICITADOS)
+                    from core.validation_checker import verificar_completitud_registro
+
+                    analisis = verificar_completitud_registro(numero_peticion)
+                    campos_vacios = (
+                        analisis.get('campos_faltantes', []) +
+                        analisis.get('biomarcadores_faltantes', [])
+                    )
+
+                    logging.info(f"Campos realmente faltantes en {numero_peticion}: {len(campos_vacios)}")
+
+                    # Si no hay campos faltantes, omitir este caso en modo PARCIAL
+                    if len(campos_vacios) == 0:
+                        logging.info(f"Caso {numero_peticion} completo, omitiendo en modo PARCIAL")
+                        casos_omitidos += 1
+                        continue
+
+                # Preparar caso
+                caso = {
+                    'numero_peticion': numero_peticion,
+                    'datos_bd': registro_bd,
+                    'debug_map': debug_map
+                }
+
+                # Agregar campos_a_buscar en modo PARCIAL
+                if modo == 'parcial':
+                    caso['campos_a_buscar'] = campos_vacios
+                    # V3.2.4.2: FIX 8 - Agregar batch_size para procesamiento por lotes
+                    caso['batch_size'] = 3  # Lotes de 3 casos simultáneos
+
+                casos_preparados.append(caso)
+
+            # Verificar si hay casos para procesar
+            if not casos_preparados:
+                if modo == 'parcial' and casos_omitidos > 0:
+                    messagebox.showinfo(
+                        "Nada que auditar",
+                        f"Los {casos_omitidos} caso(s) seleccionado(s) ya están completos.\n\n"
+                        f"✅ No hay campos vacíos que completar en modo PARCIAL.\n\n"
+                        f"💡 Si deseas verificar la calidad de los datos existentes,\n"
+                        f"   usa 'Auditoría COMPLETA' en su lugar."
+                    )
+                else:
+                    messagebox.showerror(
+                        "Error",
+                        "No se pudo preparar ningún caso para auditar"
+                    )
+                return
+
+            num_casos = len(casos_preparados)
+            logging.info(f"{num_casos} caso(s) preparado(s) para auditoria {modo.upper()}")
+            if casos_omitidos > 0:
+                logging.info(f"{casos_omitidos} caso(s) omitido(s)")
+
+            # Guardar el modo para el callback
+            self._modo_auditoria_seleccion = modo
+
+            # DECISIÓN INTELIGENTE: ¿Procesamiento individual o por lotes?
+            if num_casos == 1:
+                # UN SOLO CASO: Procesar individualmente (más info en UI)
+                logging.info(f"Procesamiento INDIVIDUAL (1 caso)")
+                mostrar_ventana_auditoria(
+                    parent=self,
+                    casos=casos_preparados,
+                    modo=modo,
+                    callback_completado=self._callback_auditoria_seleccion
+                )
+
+            elif modo == 'completa':
+                # MÚLTIPLES + COMPLETA: Procesar 1 por 1 (análisis profundo)
+                logging.info(f"Procesamiento SECUENCIAL (modo COMPLETA, 1 por 1)")
+                mostrar_ventana_auditoria(
+                    parent=self,
+                    casos=casos_preparados,
+                    modo='completa',
+                    callback_completado=self._callback_auditoria_seleccion
+                )
+
+            else:  # modo == 'parcial' and num_casos > 1
+                # MÚLTIPLES + PARCIAL: Procesar en LOTES de 3 (como auditoría masiva)
+                num_lotes = (num_casos + 2) // 3  # Redondear hacia arriba
+                logging.info(f"Procesamiento POR LOTES (modo PARCIAL)")
+                logging.info(f"{num_casos} casos = {num_lotes} lote(s) de 3")
+                logging.info(f"Tiempo estimado: ~{num_lotes * 30}s")
+
+                mostrar_ventana_auditoria(
+                    parent=self,
+                    casos=casos_preparados,
+                    modo='parcial',
+                    callback_completado=self._callback_auditoria_seleccion
+                )
+
+        except Exception as e:
+            logging.error(f"Error preparando auditoria: {e}", exc_info=True)
+            messagebox.showerror(
+                "Error",
+                f"Error preparando auditoría:\n{str(e)}"
+            )
+
+    def _callback_auditoria_seleccion(self, resultados):
+        """
+        V3.2.4: Callback específico para auditoría de selección
+        V3.2.4.2: Simplificado - La actualización de estados ahora se hace en _mostrar_resultados_auditoria()
+        """
+        logging.info(f"Auditoria de seleccion completada")
+
+        if not resultados:
+            logging.warning(f"No hay resultados")
+            return
+
+        # V3.2.4.2: FIX 7 - La actualización de estados ahora es centralizada
+        # _mostrar_resultados_auditoria() se encarga de actualizar BD y refrescar UI
+        self._mostrar_resultados_auditoria(resultados)
 
     def _mostrar_resultados_auditoria(self, resultados):
         """
@@ -865,48 +1166,69 @@ class App(ttk.Window):
         Args:
             resultados: Dict con resultados de auditoría
         """
-        print(f"✅ Auditoría completada - Mostrando resultados")
+        logging.info(f"Auditoria completada - Mostrando resultados")
 
         # Guardar resultados en variable de instancia
         self.ultimos_resultados_ia = resultados
 
-        # Actualizar BD
+        # V3.2.4.2: FIX 7 - Actualizar estados de auditoría en BD ANTES de refrescar UI
+        # Determinar tipo de auditoría (intentar ambas variables para soportar ambos flujos)
+        tipo_auditoria = getattr(self, '_modo_auditoria_seleccion', None) or getattr(self, '_tipo_auditoria_actual', 'completa')
+
+        # Actualizar estado en BD para cada caso auditado exitosamente
+        from core.database_manager import set_estado_auditoria
+
+        if isinstance(resultados, list):
+            # Formato: lista de resultados individuales
+            for resultado in resultados:
+                if resultado.get('exito'):
+                    numero_peticion = resultado.get('numero_peticion')
+                    if numero_peticion:
+                        estado = "PARCIAL" if tipo_auditoria == 'parcial' else "COMPLETA"
+                        set_estado_auditoria(numero_peticion, estado)
+                        logging.info(f"Estado actualizado: {numero_peticion} -> {estado}")
+        elif isinstance(resultados, dict) and 'resultados' in resultados:
+            # Formato: dict con clave 'resultados'
+            for resultado in resultados.get('resultados', []):
+                if resultado.get('exito'):
+                    numero_peticion = resultado.get('numero_peticion')
+                    if numero_peticion:
+                        estado = "PARCIAL" if tipo_auditoria == 'parcial' else "COMPLETA"
+                        set_estado_auditoria(numero_peticion, estado)
+                        logging.info(f"Estado actualizado: {numero_peticion} -> {estado}")
+
+        # Refrescar tabla DESPUÉS de actualizar BD
         self.refresh_data_and_table()
 
-        # Determinar tipo de auditoría (parcial/completa)
-        tipo_auditoria = getattr(self, '_tipo_auditoria_actual', 'completa')
-
         # Generar reporte Markdown
-        print(f"   📝 Generando reporte Markdown...")
+        logging.info(f"Generando reporte Markdown...")
         ruta_reporte = self._generar_reporte_ia(resultados, tipo_auditoria)
 
         if ruta_reporte:
-            print(f"   ✅ Reporte generado exitosamente: {ruta_reporte}")
+            logging.info(f"Reporte generado exitosamente: {ruta_reporte}")
 
             # Navegar a la sección de Análisis IA
-            print(f"   🔄 Navegando a sección Análisis IA...")
+            logging.info(f"Navegando a seccion Analisis IA...")
             try:
                 self._nav_to_analisis_ia()
-                print(f"   ✅ Navegación exitosa")
+                logging.info(f"Navegacion exitosa")
             except Exception as e:
-                print(f"   ❌ Error navegando: {e}")
-                import traceback
-                traceback.print_exc()
+                logging.error(f"Error navegando: {e}", exc_info=True)
 
             # Actualizar lista de reportes
             try:
                 self._actualizar_lista_reportes()
-                print(f"   ✅ Lista de reportes actualizada")
+                logging.info(f"Lista de reportes actualizada")
             except Exception as e:
-                print(f"   ⚠️ Error actualizando lista de reportes: {e}")
+                logging.warning(f"Error actualizando lista de reportes: {e}")
                 # Continuar sin fallar
 
             # Seleccionar automáticamente el reporte recién generado
             try:
                 self._seleccionar_ultimo_reporte()
-                print(f"   ✅ Reporte seleccionado automáticamente")
+                logging.info(f"Reporte seleccionado automaticamente")
             except Exception as e:
-                print(f"   ⚠️ Error seleccionando reporte: {e}")
+                logging.warning(f"Error seleccionando reporte: {e}")
                 # Continuar sin fallar
 
             # V2.1.6: No mostrar mensaje automáticamente
@@ -914,7 +1236,7 @@ class App(ttk.Window):
             # Guardar ruta para mostrar después
             self._ruta_ultimo_reporte = ruta_reporte
         else:
-            print(f"   ❌ Error generando reporte")
+            logging.error(f"Error generando reporte")
             messagebox.showerror(
                 "Error",
                 "La auditoría se completó pero hubo un error al generar el reporte."
@@ -1268,7 +1590,7 @@ class App(ttk.Window):
                 'rc': 'Release Candidate'
             }.get(version_info['version']['release_type'].lower(), version_info['version']['release_type'])
 
-            info_text = f"""EVARISIS Gestor H.U.V - Información General
+            info_text = f"""EVARISIS CIRUGÍA ONCOLÓGICA - Información General
 =====================================
 Nombre Completo: {version_info['project']['full_name']}
 Organización: {version_info['project']['organization']}
@@ -1291,7 +1613,7 @@ Número de Build: {version_info['version']['build_number']}
     def _copy_system_info(self, version_info):
         """Copiar información de la pestaña Sistema al clipboard"""
         try:
-            info_text = f"""EVARISIS Gestor H.U.V - Información del Sistema
+            info_text = f"""EVARISIS CIRUGÍA ONCOLÓGICA - Información del Sistema
 =====================================
 Versión Python: {version_info['system']['python_version'].split()[0]}
 Plataforma: {version_info['system']['platform']}
@@ -1614,7 +1936,7 @@ Disco {i}:
                 try:
                     self._refresh_files_list()
                 except Exception as e:
-                    print(f"Error al actualizar lista de archivos inicial: {e}")
+                    logging.error(f"Error al actualizar lista de archivos inicial: {e}")
 
     def _refresh_files_list_for_dashboard(self):
         """Actualizar lista de archivos específicamente para el dashboard con detección de estado"""
@@ -1689,6 +2011,25 @@ Disco {i}:
             bootstyle="primary"
         ).pack(side=RIGHT, padx=(0, 5))
 
+        # V3.2.4: Botones de auditoría IA
+        self.audit_parcial_btn = ttk.Button(
+            actions_frame,
+            text="🔍 Auditoría PARCIAL",
+            command=self._auditar_seleccion_parcial,
+            bootstyle="info-outline",
+            state="disabled"
+        )
+        self.audit_parcial_btn.pack(side=RIGHT, padx=(0, 5))
+
+        self.audit_completa_btn = ttk.Button(
+            actions_frame,
+            text="✅ Auditoría COMPLETA",
+            command=self._auditar_seleccion_completa,
+            bootstyle="success-outline",
+            state="disabled"
+        )
+        self.audit_completa_btn.pack(side=RIGHT, padx=(0, 5))
+
         # Frame para tabla - FULL SCREEN
         table_frame = ttk.Frame(frame)
         table_frame.pack(expand=True, fill=BOTH, padx=10, pady=5)
@@ -1706,55 +2047,214 @@ Disco {i}:
         search_entry.grid(row=0, column=0, sticky="ew", padx=10, pady=10)
         search_entry.insert(0, "Buscar por N° Petición, Nombre o Apellido...")
 
-        # Configurar el estilo del Treeview
-        style = self.setup_treeview_style()
-        
-        # Treeview para mostrar datos
-        self.tree = ttk.Treeview(table_frame, show="headings", style="Custom.Treeview")
-        self.tree.grid(row=1, column=0, sticky="nsew", padx=10, pady=(0, 10))
-        self.tree.bind("<<TreeviewSelect>>", self.mostrar_detalle_registro)
+        # V5.3.8: Sheet virtualizado tipo Excel (reemplaza Treeview)
+        # VENTAJAS: Virtualización nativa, rendimiento profesional, comportamiento Excel
 
-        # Configurar selección múltiple
-        self.tree.configure(selectmode="extended")
+        # Crear Sheet con scrollbars integrados
+        self.sheet = Sheet(
+            table_frame,
+            page_up_down_select_row=True,
+            expand_sheet_if_paste_too_big=False,
+            column_width=150,
+            startup_select=(0, 0, "rows"),
+            headers_height=30,
+            default_row_height=25,
+            show_horizontal_grid=True,
+            show_vertical_grid=True,
+            show_top_left=False,
+            show_row_index=True,
+            show_header=True,
+            empty_horizontal=0,
+            empty_vertical=0,
+            header_font=("Segoe UI", 10, "bold"),
+            font=("Segoe UI", 10, "normal"),  # FIX: Agregar estilo "normal" (3 elementos)
+            header_bg="#E8F5E9",  # Verde muy claro (profesional)
+            header_fg="#1B5E20",  # Verde oscuro
+            table_bg="white",
+            table_fg="black",
+            table_selected_cells_bg="#BBDEFB",  # Azul claro
+            table_selected_cells_fg="black",
+            table_selected_rows_bg="#E3F2FD",  # Azul muy claro
+            table_selected_rows_fg="black",
+            top_left_bg="#E8F5E9",
+            index_bg="#F5F5F5",
+            index_fg="#424242",
+            index_selected_cells_bg="#CFD8DC",
+            index_selected_rows_bg="#B0BEC5"
+        )
+        self.sheet.grid(row=1, column=0, columnspan=2, sticky="nsew", padx=10, pady=(0, 10))
 
-        # Scrollbar vertical para el Treeview
-        scrollbar_y = ttk.Scrollbar(table_frame, orient="vertical", command=self.tree.yview)
-        scrollbar_y.grid(row=1, column=1, sticky="ns", pady=(0, 10))
-        self.tree.configure(yscrollcommand=scrollbar_y.set)
+        # Habilitar funcionalidades tipo Excel
+        self.sheet.enable_bindings(
+            "all",  # Habilitar todos los bindings
+            "edit_cell",  # Permitir edición
+            "copy",  # Ctrl+C
+            "cut",  # Ctrl+X
+            "paste",  # Ctrl+V
+            "delete",  # Suprimir
+            "undo",  # Ctrl+Z
+            "row_select",  # Selección de filas
+            "column_select",  # Selección de columnas
+            "drag_select",  # Arrastrar para seleccionar
+            "select_all",  # Ctrl+A
+            "rc_select",  # Click derecho
+            "arrowkeys",  # Navegación con flechas
+            "column_width_resize",  # Redimensionar columnas
+            "double_click_column_resize",  # Doble click para ajustar
+            "row_width_resize",  # Redimensionar filas
+            "column_height_resize",  # Altura de encabezados
+            "single_select",  # Click simple
+            "drag_and_drop",  # Arrastrar y soltar
+            "move_columns"  # Mover columnas
+        )
 
-        # Scrollbar horizontal para el Treeview
-        scrollbar_x = ttk.Scrollbar(table_frame, orient="horizontal", command=self.tree.xview)
-        scrollbar_x.grid(row=2, column=0, sticky="ew", padx=10)
-        self.tree.configure(xscrollcommand=scrollbar_x.set)
+        # Deshabilitar edición de celdas (solo lectura)
+        self.sheet.disable_bindings("edit_cell", "cut", "paste", "delete", "undo")
 
-        # ULTRA-OPTIMIZADO: Scroll MUCHO más rápido y fluido
-        def _on_treeview_mousewheel(event):
-            if event.state & 0x1:  # Shift presionado - SCROLL HORIZONTAL ULTRA RÁPIDO
-                # Multiplicador MASIVO para scroll horizontal instantáneo
-                scroll_amount = int(-1 * (event.delta / 120)) * 15  # Aumentado de 8 a 15
-                self.tree.xview_scroll(scroll_amount, "units")
-                return "break"
-            else:  # Scroll vertical MÁS RÁPIDO
-                # Aumentado de 3 a 6 para scroll vertical ultra rápido
-                scroll_amount = int(-1 * (event.delta / 120)) * 6
-                self.tree.yview_scroll(scroll_amount, "units")
-                return "break"
+        # V5.3.8: Deshabilitar redimensionamiento de columnas/filas (evita errores)
+        self.sheet.disable_bindings(
+            "column_width_resize",
+            "double_click_column_resize",
+            "row_width_resize",
+            "column_height_resize"
+        )
 
-        self.tree.bind("<MouseWheel>", _on_treeview_mousewheel)
-        
-        # NUEVO: Optimización adicional - deshabilitar redibujado durante scroll
-        self.tree.configure(selectmode="extended")
-        
+        # Evento de selección
+        self.sheet.bind("<<SheetSelect>>", self.mostrar_detalle_registro)
+
+        # V5.3.8: CAPA DE COMPATIBILIDAD TREEVIEW → SHEET
+        # =================================================
+        # Agregar métodos a Sheet para que se comporte como Treeview
+
+        def _sheet_selection():
+            """Emula tree.selection() - Retorna lista de índices de filas seleccionadas"""
+            try:
+                selected = self.sheet.get_currently_selected()
+                if not selected:
+                    return []
+
+                # Manejo robusto de diferentes formatos de Selected
+                rows = set()
+
+                # Intentar acceder a los atributos de forma segura
+                if hasattr(selected, 'rows') and selected.rows:
+                    # Formato: selected.rows es una lista o set de índices
+                    rows.update(selected.rows)
+                elif hasattr(selected, 'row'):
+                    # Formato: selected tiene row, y posiblemente num_rows
+                    start_row = selected.row if hasattr(selected, 'row') else 0
+                    num_rows = getattr(selected, 'num_rows', 1) if hasattr(selected, 'num_rows') else 1
+                    rows.update(range(start_row, start_row + num_rows))
+                else:
+                    # Fallback: usar get_selected_rows() si existe
+                    if hasattr(self.sheet, 'get_selected_rows'):
+                        rows.update(self.sheet.get_selected_rows())
+
+                return list(rows)
+            except Exception as e:
+                logging.warning(f"Error obteniendo seleccion: {e}")
+                return []
+
+        def _sheet_item(row_idx, option=None):
+            """Emula tree.item(item_id, option) - Retorna datos de la fila"""
+            if option == 'values' or option is None:
+                try:
+                    row_data = self.sheet.get_row_data(row_idx, return_copy=True)
+                    return {'values': row_data} if option is None else row_data
+                except:
+                    return {'values': []} if option is None else []
+            return {}
+
+        def _sheet_get_children(item=""):
+            """Emula tree.get_children() - Retorna lista de todos los índices de filas"""
+            total_rows = self.sheet.get_total_rows()
+            return list(range(total_rows))
+
+        def _sheet_index(item_id):
+            """Emula tree.index(item_id) - Retorna el índice de la fila"""
+            return item_id  # En Sheet, item_id YA ES el índice
+
+        # Agregar métodos de compatibilidad al objeto sheet
+        self.sheet.selection = _sheet_selection
+        self.sheet.item = _sheet_item
+        self.sheet.get_children = _sheet_get_children
+        self.sheet.index = _sheet_index
+
+        # COMPATIBILIDAD: Mantener alias 'tree' para código legacy
+        self.tree = self.sheet  # Ahora funciona como Treeview
+
         # NUEVO: Agregar tooltips al pasar mouse sobre celdas
         self._setup_cell_tooltips()
 
-        # Habilitar/deshabilitar botón de exportar selección según selección
-        def _update_export_selection_button(event=None):
+        # Habilitar/deshabilitar botones según selección (V3.2.4: incluye botones de auditoría)
+        def _update_selection_buttons(event=None):
             selection = self.tree.selection()
-            if hasattr(self, 'export_selection_btn'):
-                self.export_selection_btn.configure(state="normal" if selection else "disabled")
+            has_selection = bool(selection)
 
-        self.tree.bind("<<TreeviewSelect>>", _update_export_selection_button)
+            # Botón de exportar selección
+            if hasattr(self, 'export_selection_btn'):
+                self.export_selection_btn.configure(state="normal" if has_selection else "disabled")
+
+            # V3.2.4.2: Botones de auditoría - habilitar con 1 o múltiples items
+            if not has_selection:
+                # Sin selección → deshabilitar botones
+                if hasattr(self, 'audit_parcial_btn'):
+                    self.audit_parcial_btn.configure(state="disabled")
+                if hasattr(self, 'audit_completa_btn'):
+                    self.audit_completa_btn.configure(state="disabled")
+            else:
+                # Hay selección (1 o múltiples) → determinar estados de todos los items
+                from core.database_manager import get_estado_auditoria
+
+                try:
+                    col_idx = list(self.tree["columns"]).index("Numero de caso")
+
+                    # Obtener estados de todos los items seleccionados
+                    estados = []
+                    for item_id in selection:
+                        values = self.tree.item(item_id, 'values')
+                        if values:
+                            numero_peticion = values[col_idx]
+                            estado = get_estado_auditoria(numero_peticion)
+                            estados.append(estado)
+
+                    # Lógica de habilitación basada en estados
+                    if all(e == "COMPLETA" for e in estados):
+                        # TODOS tienen auditoría COMPLETA → Bloquear ambos
+                        if hasattr(self, 'audit_parcial_btn'):
+                            self.audit_parcial_btn.configure(state="disabled")
+                        if hasattr(self, 'audit_completa_btn'):
+                            self.audit_completa_btn.configure(state="disabled")
+
+                    elif all(e == "PARCIAL" for e in estados):
+                        # TODOS tienen auditoría PARCIAL → Solo permitir COMPLETA
+                        if hasattr(self, 'audit_parcial_btn'):
+                            self.audit_parcial_btn.configure(state="disabled")
+                        if hasattr(self, 'audit_completa_btn'):
+                            self.audit_completa_btn.configure(state="normal")
+
+                    elif all(e in [None, "NULL", ""] for e in estados):
+                        # TODOS sin auditoría → Permitir ambas
+                        if hasattr(self, 'audit_parcial_btn'):
+                            self.audit_parcial_btn.configure(state="normal")
+                        if hasattr(self, 'audit_completa_btn'):
+                            self.audit_completa_btn.configure(state="normal")
+
+                    else:
+                        # Mezcla de estados → Permitir ambas (el usuario decide)
+                        if hasattr(self, 'audit_parcial_btn'):
+                            self.audit_parcial_btn.configure(state="normal")
+                        if hasattr(self, 'audit_completa_btn'):
+                            self.audit_completa_btn.configure(state="normal")
+
+                except (ValueError, IndexError) as e:
+                    # Si hay error, deshabilitar botones
+                    if hasattr(self, 'audit_parcial_btn'):
+                        self.audit_parcial_btn.configure(state="disabled")
+                    if hasattr(self, 'audit_completa_btn'):
+                        self.audit_completa_btn.configure(state="disabled")
+
+        self.tree.bind("<<TreeviewSelect>>", _update_selection_buttons)
 
         # Cargar datos automáticamente al inicializar el visualizador
         self.after(100, lambda: self.refresh_data_and_table() if hasattr(self, 'refresh_data_and_table') else None)
@@ -1989,7 +2489,7 @@ Disco {i}:
 
     def _actualizar_lista_reportes(self):
         """Actualizar la lista de reportes según el tipo seleccionado"""
-        print(f"🔄 Actualizando lista de reportes - Tipo: {self.tipo_reporte_var.get()}")
+        logging.info(f"Actualizando lista de reportes - Tipo: {self.tipo_reporte_var.get()}")
 
         # Limpiar treeview
         for item in self.reportes_tree.get_children():
@@ -1998,7 +2498,7 @@ Disco {i}:
         # Directorio de reportes
         reportes_dir = Path("data/reportes_ia")
         if not reportes_dir.exists():
-            print(f"⚠️ Directorio {reportes_dir} no existe, creándolo...")
+            logging.warning(f"Directorio {reportes_dir} no existe, creandolo...")
             reportes_dir.mkdir(parents=True, exist_ok=True)
             return
 
@@ -2047,7 +2547,7 @@ Disco {i}:
                 rep["archivo"]
             ), tags=(rep["ruta"],))
 
-        print(f"✅ {len(reportes)} reportes cargados")
+        logging.info(f"{len(reportes)} reportes cargados")
 
     def _cargar_reporte_seleccionado(self, event):
         """Cargar y mostrar el reporte seleccionado"""
@@ -2062,7 +2562,7 @@ Disco {i}:
             return
 
         ruta_archivo = tags[0]
-        print(f"📖 Cargando reporte: {ruta_archivo}")
+        logging.info(f"Cargando reporte: {ruta_archivo}")
 
         try:
             # Leer contenido
@@ -2074,7 +2574,7 @@ Disco {i}:
             self.reporte_seleccionado = ruta_archivo
 
         except Exception as e:
-            print(f"❌ Error cargando reporte: {e}")
+            logging.error(f"Error cargando reporte: {e}")
             messagebox.showerror("Error", f"No se pudo cargar el reporte:\n{e}")
 
     def _renderizar_markdown(self, contenido):
@@ -2157,7 +2657,7 @@ Disco {i}:
             tags = self.reportes_tree.item(primer_item, "tags")
             if tags:
                 ruta_archivo = tags[0]
-                print(f"📖 Auto-cargando reporte: {ruta_archivo}")
+                logging.info(f"Auto-cargando reporte: {ruta_archivo}")
 
                 try:
                     with open(ruta_archivo, 'r', encoding='utf-8') as f:
@@ -2165,7 +2665,7 @@ Disco {i}:
                     self._renderizar_markdown(contenido)
                     self.reporte_seleccionado = ruta_archivo
                 except Exception as e:
-                    print(f"❌ Error auto-cargando reporte: {e}")
+                    logging.error(f"Error auto-cargando reporte: {e}")
 
     def _generar_reporte_ia(self, resultados, tipo):
         """
@@ -2178,7 +2678,7 @@ Disco {i}:
         Returns:
             str: Ruta al archivo generado
         """
-        print(f"📝 Generando reporte IA tipo: {tipo}")
+        logging.info(f"Generando reporte IA tipo: {tipo}")
 
         # Crear directorio si no existe
         reportes_dir = Path("data/reportes_ia")
@@ -2244,7 +2744,7 @@ Disco {i}:
 
 """
 
-        # V2.1.6: Agregar detalles de cada caso (compatible con ambos formatos)
+        # V3.2.4.2: Agregar detalles de cada caso CON DIFERENCIAS según tipo
         for registro in registros:
             # Formato nuevo vs viejo
             if isinstance(resultados, list):
@@ -2254,6 +2754,9 @@ Disco {i}:
                 num_correcciones = registro.get("correcciones_aplicadas", 0)
                 detalles = registro.get("detalles", [])
                 error = registro.get("error", "")
+                # V3.2.4.2: Nuevos campos
+                analisis_profundo = registro.get("analisis_profundo", {})
+                no_encontrados = registro.get("no_encontrados", [])
             else:
                 # Formato viejo
                 ihq = registro.get("ihq_numero", "N/A")
@@ -2261,14 +2764,19 @@ Disco {i}:
                 detalles = registro.get("correcciones", [])
                 num_correcciones = len(detalles)
                 error = registro.get("errores", [])
+                analisis_profundo = {}
+                no_encontrados = []
 
             contenido += f"### Caso: {ihq}\n\n"
             contenido += f"**Estado**: {estado}  \n"
             contenido += f"**Correcciones aplicadas**: {num_correcciones}\n\n"
 
-            if detalles:
-                contenido += "**Correcciones:**\n\n"
+            # Correcciones aplicadas
+            if detalles and any(d.get("aplicada") for d in detalles):
+                contenido += "**Correcciones aplicadas:**\n\n"
                 for i, detalle in enumerate(detalles, 1):
+                    if not detalle.get("aplicada"):
+                        continue
                     campo = detalle.get("campo", "N/A")
                     valor_anterior = detalle.get("valor_anterior", "")
                     valor_nuevo = detalle.get("valor_nuevo", "")
@@ -2279,6 +2787,54 @@ Disco {i}:
                     contenido += f"   - *Valor nuevo*: {valor_nuevo}\n"
                     contenido += f"   - *Razón*: {razon}\n\n"
 
+            # V3.2.4.2: AUDITORÍA PARCIAL - Mostrar campos no encontrados
+            if tipo == 'parcial' and no_encontrados:
+                contenido += f"**Campos no encontrados en el PDF** ({len(no_encontrados)}):\n\n"
+                contenido += "> Estos campos están vacíos en BD y no se encontraron datos en el PDF para completarlos.\n\n"
+                for campo in no_encontrados[:10]:  # Mostrar máximo 10
+                    if isinstance(campo, dict):
+                        campo_nombre = campo.get("campo", str(campo))
+                    else:
+                        campo_nombre = str(campo)
+                    contenido += f"- {campo_nombre}\n"
+                if len(no_encontrados) > 10:
+                    contenido += f"\n... y {len(no_encontrados) - 10} campos más.\n"
+                contenido += "\n"
+
+            # V3.2.4.2: AUDITORÍA COMPLETA - Mostrar análisis profundo
+            if tipo == 'completa' and analisis_profundo:
+                contenido += "## 📊 Análisis Profundo\n\n"
+
+                # Veracidad
+                veracidad = analisis_profundo.get("veracidad_porcentaje")
+                if veracidad is not None:
+                    contenido += f"**Veracidad**: {veracidad}% de coincidencia entre PDF y BD\n\n"
+
+                # Problemas detectados
+                problemas = analisis_profundo.get("problemas_detectados", [])
+                if problemas:
+                    contenido += f"**⚠️ Problemas detectados** ({len(problemas)}):\n\n"
+                    for problema in problemas:
+                        contenido += f"- {problema}\n"
+                    contenido += "\n"
+
+                # Sugerencias
+                sugerencias = analisis_profundo.get("sugerencias", [])
+                if sugerencias:
+                    contenido += f"**💡 Sugerencias de mejora** ({len(sugerencias)}):\n\n"
+                    for sugerencia in sugerencias:
+                        contenido += f"- {sugerencia}\n"
+                    contenido += "\n"
+
+                # Biomarcadores no mapeados
+                bio_no_mapeados = analisis_profundo.get("biomarcadores_no_mapeados", [])
+                if bio_no_mapeados:
+                    contenido += f"**🧬 Biomarcadores sin columna** ({len(bio_no_mapeados)}):\n\n"
+                    for bio in bio_no_mapeados:
+                        contenido += f"- {bio}\n"
+                    contenido += "\n"
+
+            # Errores
             if error:
                 contenido += "**Errores encontrados:**\n\n"
                 if isinstance(error, list):
@@ -2301,10 +2857,10 @@ Disco {i}:
         try:
             with open(ruta_archivo, 'w', encoding='utf-8') as f:
                 f.write(contenido)
-            print(f"✅ Reporte generado: {ruta_archivo}")
+            logging.info(f"Reporte generado: {ruta_archivo}")
             return str(ruta_archivo)
         except Exception as e:
-            print(f"❌ Error guardando reporte: {e}")
+            logging.error(f"Error guardando reporte: {e}")
             return None
 
     def _create_kpi_card(self, parent, title, value):
@@ -2411,7 +2967,7 @@ Disco {i}:
                     foreground="gray"
                 ).pack()
         except Exception as e:
-            print(f"Error verificando datos: {e}")
+            logging.error(f"Error verificando datos: {e}")
             # Mensaje de instrucción por defecto
             instruction_text = ("Selecciona una opción del menú flotante para comenzar\n"
                                "a trabajar con los datos oncológicos")
@@ -2441,7 +2997,7 @@ Disco {i}:
                 # La pestaña de importar es la número 4 (índice 4)
                 self.enhanced_dashboard.notebook.select(4)
         except Exception as e:
-            print(f"Error seleccionando pestaña de importar: {e}")
+            logging.error(f"Error seleccionando pestana de importar: {e}")
 
 
 
@@ -2471,7 +3027,7 @@ Disco {i}:
             # Ahora cargar el dashboard con datos disponibles
             self.cargar_dashboard()
         except Exception as e:
-            print(f"Error cargando datos para dashboard: {e}")
+            logging.error(f"Error cargando datos para dashboard: {e}")
             # Cargar dashboard vacío para mostrar mensaje apropiado
             self.cargar_dashboard()
         
@@ -2717,7 +3273,7 @@ Disco {i}:
                 self.status_label.configure(text=text)
         except Exception as e:
             logging.error(f"Error al actualizar status: {e}")
-            print(f"[STATUS] {text}")  # Fallback al console
+            logging.info(f"[STATUS] {text}")  # Fallback al console
 
     # =========================
     # Métodos de carga de recursos (conservados)
@@ -2766,7 +3322,7 @@ Disco {i}:
             dff = dff[dff.get("Malignidad", "").astype(str).str.upper().eq(mal)]
         rsp = self.db_filters["responsable"].get().strip()
         if rsp:
-            dff = dff[dff.get("Usuario finalizacion", "").astype(str).eq(rsp)]
+            dff = dff[dff.get("Patologo", "").astype(str).eq(rsp)]
         return dff
 
     def _clear_dash_area(self):
@@ -2945,8 +3501,8 @@ Disco {i}:
                 ttk.Label(rowtxt, text=f"{k}").pack(side="left")
                 ttk.Label(rowtxt, text=str(v)).pack(side="right")
 
-        if "Organo (1. Muestra enviada a patología)" in dff.columns:
-            top_org = dff["Organo (1. Muestra enviada a patología)"].astype(str).replace({"": "No especificado"}).value_counts().head(8)
+        if "Organo" in dff.columns:
+            top_org = dff["Organo"].astype(str).replace({"": "No especificado"}).value_counts().head(8)
         elif "IHQ_ORGANO" in dff.columns:
             top_org = dff["IHQ_ORGANO"].astype(str).replace({"": "No especificado"}).value_counts().head(8)
         else:
@@ -3003,7 +3559,7 @@ Disco {i}:
 
     def _g_bar_top_organo(self, df, top=12):
         # soporta tanto columna Excel como IHQ_ORGANO
-        col = "Organo (1. Muestra enviada a patología)" if "Organo (1. Muestra enviada a patología)" in df.columns else ("IHQ_ORGANO" if "IHQ_ORGANO" in df.columns else None)
+        col = "Organo" if "Organo" in df.columns else ("IHQ_ORGANO" if "IHQ_ORGANO" in df.columns else None)
         if not col: return None
         ser = df[col].astype(str).replace({"": "No especificado"}).value_counts().head(top)
         if ser.empty: return None
@@ -3057,7 +3613,7 @@ Disco {i}:
         return fig
 
     def _g_bar_re_rp(self, df):
-        cols = [c for c in ["IHQ_RECEPTOR_ESTROGENO", "IHQ_RECEPTOR_PROGESTAGENOS"] if c in df.columns]
+        cols = [c for c in ["IHQ_RECEPTOR_ESTROGENOS", "IHQ_RECEPTOR_PROGESTERONA"] if c in df.columns]
         if not cols: return None
         fig = Figure(figsize=(5.6, 3.2), dpi=100); ax = fig.add_subplot(111)
         data = []
@@ -3148,8 +3704,8 @@ Disco {i}:
 
     def _g_bar_missingness(self, df):
         cols = [
-            "Servicio", "Malignidad", "Usuario finalizacion",
-            "Organo (1. Muestra enviada a patología)", "IHQ_HER2", "IHQ_KI-67"
+            "Servicio", "Malignidad", "Patologo",
+            "Organo", "IHQ_HER2", "IHQ_KI-67"
         ]
         present = [c for c in cols if c in df.columns]
         if not present: return None
@@ -3163,7 +3719,7 @@ Disco {i}:
         return fig
 
     def _g_bar_top_responsables(self, df, top=10):
-        col = "Usuario finalizacion"
+        col = "Patologo"
         if col not in df.columns: return None
         ser = df[col].astype(str).value_counts().head(top)
         fig = Figure(figsize=(5.6, 3.2), dpi=100); ax = fig.add_subplot(111)
@@ -3194,7 +3750,7 @@ Disco {i}:
         ctrl = ttk.Frame(tab)
         ctrl.grid(row=0, column=0, columnspan=2, padx=10, pady=(10,0), sticky="ew")
 
-        dims = [c for c in ["Servicio", "Usuario finalizacion", "Malignidad", "Organo (1. Muestra enviada a patología)"] if c in df.columns]
+        dims = [c for c in ["Servicio", "Patologo", "Malignidad", "Organo"] if c in df.columns]
         mets = [c for c in ["IHQ_KI-67"] if c in df.columns]  # se pueden añadir más numéricas
 
         self._compare_controls["dim"] = tk.StringVar(value=dims[0] if dims else "")
@@ -3341,7 +3897,8 @@ Disco {i}:
     def refresh_data_and_table(self):
         """Actualizar datos y tabla desde la base de datos"""
         try:
-            print("🔄 Iniciando refresh de datos...")
+            # V5.3.9.3: Usar logging en lugar de print (stdout puede estar cerrado)
+            logging.info("🔄 Iniciando refresh de datos...")
 
             from core.database_manager import init_db, get_all_records_as_dataframe
 
@@ -3352,32 +3909,32 @@ Disco {i}:
             self.master_df = get_all_records_as_dataframe()
 
             if self.master_df is not None and not self.master_df.empty:
-                print(f"📊 Datos cargados: {len(self.master_df)} registros")
+                logging.info(f"📊 Datos cargados: {len(self.master_df)} registros")
 
                 # Actualizar tabla solo si existe
                 if hasattr(self, 'tree') and self.tree is not None:
                     self._populate_treeview(self.master_df)
-                    print("🗂️ Tabla actualizada")
+                    logging.info("🗂️ Tabla actualizada")
 
                 # Actualizar KPIs si existe el método
                 try:
                     self._render_kpis(self.master_df)
-                    print("📈 KPIs actualizados")
+                    logging.info("📈 KPIs actualizados")
                 except:
                     pass
 
                 # Actualizar estado con información inteligente
                 footer_info = self._crear_footer_inteligente()
                 self.set_status(footer_info)
-                print("✅ Refresh completado exitosamente")
+                logging.info("✅ Refresh completado exitosamente")
 
             else:
-                print("⚠️ No hay datos en la base de datos")
+                logging.warning("⚠️ No hay datos en la base de datos")
                 self.set_status("⚠️ No hay datos en la base de datos")
 
         except Exception as e:
             error_msg = f"No se pudieron cargar los datos: {e}"
-            print(f"❌ Error en refresh: {error_msg}")
+            logging.error(f"❌ Error en refresh: {error_msg}")
 
             # Solo mostrar error si no es un problema de UI
             try:
@@ -3385,55 +3942,64 @@ Disco {i}:
                     messagebox.showerror("Error de Base de Datos", error_msg)
                 self.set_status("❌ Error al cargar datos")
             except:
-                print("❌ Error mostrando mensaje de error")
+                logging.error("❌ Error mostrando mensaje de error")
 
     def _populate_treeview(self, df_to_display):
-        # Verificar que el tree exista antes de usar
-        if self.tree is None:
+        """
+        V5.3.8: Población de Sheet virtualizado (antes era Treeview)
+        VENTAJA: Carga COMPLETA en <100ms para 1000+ filas × 88 columnas
+        """
+        # Verificar que el sheet exista
+        if not hasattr(self, 'sheet') or self.sheet is None:
             return
-        
-        # OPTIMIZACIÓN CRÍTICA: Deshabilitar redibujado durante la carga
-        self.tree.configure(selectmode="none")  # Deshabilitar selección temporalmente
-        
-        # Limpiar tree existente de forma más eficiente
-        children = self.tree.get_children()
-        if children:
-            self.tree.delete(*children)  # Más rápido que un bucle
 
         if df_to_display.empty:
-            self.tree.configure(selectmode="extended")  # Restaurar selección
+            self.sheet.set_sheet_data([[]])  # Limpiar sheet
+            self.sheet.headers([])
             return
 
-        # Crear columna de Nombre Completo si no existe
-        if all(col in df_to_display.columns for col in ["Primer nombre", "Segundo nombre", "Primer apellido", "Segundo apellido"]):
-            df_to_display["Nombre Completo"] = (
-                df_to_display["Primer nombre"].fillna("") + " " +
-                df_to_display["Segundo nombre"].fillna("") + " " +
-                df_to_display["Primer apellido"].fillna("") + " " +
-                df_to_display["Segundo apellido"].fillna("")
-            ).str.strip().str.replace(r'\s+', ' ', regex=True)
+        # V5.3.9.3: NO sobrescribir "Nombre Completo" si ya existe (creada en database_manager.py sin N/A)
+        # Crear columna de Nombre Completo solo si NO existe
+        if "Nombre Completo" not in df_to_display.columns and all(col in df_to_display.columns for col in ["Primer nombre", "Segundo nombre", "Primer apellido", "Segundo apellido"]):
+            # Fallback: Si por alguna razón no existe, crearla (pero normalmente ya existe)
+            from core.unified_extractor import build_clean_full_name
 
-        # Columnas reorganizadas según nuevo requerimiento - TODOS los biomarcadores v5.0
+            def crear_nombre_limpio_ui(row):
+                try:
+                    return build_clean_full_name(
+                        str(row.get("Primer nombre", "")),
+                        str(row.get("Segundo nombre", "")),
+                        str(row.get("Primer apellido", "")),
+                        str(row.get("Segundo apellido", ""))
+                    )
+                except:
+                    return "N/A"
+
+            df_to_display["Nombre Completo"] = df_to_display.apply(crear_nombre_limpio_ui, axis=1)
+
+        # V5.3.7: Columnas reorganizadas para mejor rendimiento y visualización
+        # Eliminadas: EPS (innecesaria), columnas duplicadas
+        # Reordenadas: IHQ_ORGANO e IHQ_ESTUDIOS_SOLICITADOS antes de biomarcadores
         cols_to_show = [
-            "N. peticion (0. Numero de biopsia)",
+            "Numero de caso",
             "N. de identificación",
             "Nombre Completo",
-            "EPS",
-            "Procedimiento (11. Tipo de estudio para el diagnóstico)",
-            "Organo (1. Muestra enviada a patología)",
+            # "EPS",  # ELIMINADA - No relevante para investigación
+            "Procedimiento",
+            "Organo",
             "Malignidad",
             "Diagnostico Principal",
             "Factor pronostico",
-            "Descripcion macroscopica",
-            "Descripcion microscopica (8,9, 10,12,. Invasión linfovascular y perineural, indice mitótico/Ki67, Inmunohistoquímica, tamaño tumoral)",
-            "Congelaciones /Otros estudios",
-            "Liquidos (5 Tipo histologico)",
-            "Citometria de flujo (5 Tipo histologico)",
+            # "Descripcion macroscopica",  # V5.3.8: ELIMINADA - Texto muy largo, poco útil en tabla
+            # "Descripcion microscopica",  # V5.3.8: ELIMINADA - Texto muy largo, poco útil en tabla
+            # V5.3.7: IHQ_ORGANO e IHQ_ESTUDIOS_SOLICITADOS ANTES de biomarcadores
+            "IHQ_ORGANO",
+            "IHQ_ESTUDIOS_SOLICITADOS",
             # Biomarcadores principales
             "IHQ_HER2",
             "IHQ_KI-67",
-            "IHQ_RECEPTOR_ESTROGENO",
-            "IHQ_RECEPTOR_PROGESTERONOS",
+            "IHQ_RECEPTOR_ESTROGENOS",
+            "IHQ_RECEPTOR_PROGESTERONA",
             "IHQ_PDL-1",
             "IHQ_P16_ESTADO",
             "IHQ_P16_PORCENTAJE",
@@ -3467,33 +4033,51 @@ Disco {i}:
             "IHQ_CD117",
             "IHQ_CD138",
             # NUEVOS BIOMARCADORES v5.0 - CRÍTICOS PARA CASOS COMPLEJOS
-            "IHQ_ACTH",
-            "IHQ_GH",
-            "IHQ_PROLACTINA",
-            "IHQ_TSH",
-            "IHQ_LH",
-            "IHQ_FSH",
             "IHQ_CKAE1AE3",
             "IHQ_NAPSIN",
             "IHQ_CDK4",
             "IHQ_MDM2",
-            "IHQ_BCL2",
-            "IHQ_BCL6",
-            "IHQ_MUM1",
             "IHQ_PAX5",
-            "IHQ_CD79A",
-            "IHQ_CD15",
-            "IHQ_ALK",
-            "IHQ_DESMIN",
             "IHQ_ACTIN",
-            "IHQ_MYOGENIN",
-            "IHQ_MYOD1",
-            "IHQ_SMA",
-            "IHQ_MSA",
-            "IHQ_CALRETININ",
-            # Campos de metadata
-            "IHQ_ESTUDIOS_SOLICITADOS",
-            "IHQ_ORGANO",
+            # BIOMARCADORES ADICIONALES v5.1 - COMPLETAR CON TODAS LAS COLUMNAS DE BD
+            "IHQ_PAX8",
+            "IHQ_GFAP",
+            "IHQ_CAM52",
+            "IHQ_DOG1",
+            "IHQ_HHV8",
+            "IHQ_NEUN",
+            "IHQ_P63",
+            "IHQ_WT1",
+            # MARCADORES MMR (Mismatch Repair) - CRÍTICOS PARA CÁNCER COLORRECTAL
+            "IHQ_MLH1",
+            "IHQ_MSH2",
+            "IHQ_MSH6",
+            "IHQ_PMS2",
+            # V5.3 - NUEVOS BIOMARCADORES (28 adicionales detectados en producción)
+            "IHQ_CD23",
+            "IHQ_CD4",
+            "IHQ_CD8",
+            "IHQ_CD99",
+            "IHQ_CD1A",
+            "IHQ_C4D",
+            "IHQ_LMP1",
+            "IHQ_CITOMEGALOVIRUS",
+            "IHQ_SV40",
+            "IHQ_CEA",
+            "IHQ_CA19_9",
+            "IHQ_CALRETININA",
+            "IHQ_CK34BE12",
+            "IHQ_CK5_6",
+            "IHQ_HEPAR",
+            "IHQ_GLIPICAN",
+            "IHQ_ARGINASA",
+            "IHQ_HMB45",
+            "IHQ_PSA",
+            "IHQ_RACEMASA",
+            "IHQ_34BETA",
+            "IHQ_B2",
+            # V5.3.7: Columnas de sistema al final
+            "Estado Auditoria IA",  # V3.2.4
             "Fecha Ingreso Base de Datos",
         ]
 
@@ -3501,14 +4085,45 @@ Disco {i}:
         available_cols = [c for c in cols_to_show if c in df_to_display.columns]
         df_display = df_to_display[available_cols].copy()
 
-        self.tree["columns"] = list(df_display.columns)
-        for col in df_display.columns:
-            header = col.split("(")[0].strip()
-            # Ordenamiento al clic
-            self.tree.heading(col, text=header, command=lambda c=col: self._sort_treeview(c, False))
+        # Guardar DataFrame actual para ordenamiento
+        self.current_displayed_df = df_display.copy()
 
-            # Anchos específicos para mejor visualización
-            if "N. peticion" in col:
+        # V5.3.8: CONFIGURACIÓN DE SHEET - Una sola carga, virtualización automática
+        # =========================================================================
+
+        # Preparar encabezados (simplificados para mejor visualización)
+        headers = [col.split("(")[0].strip() for col in df_display.columns]
+
+        # Convertir DataFrame a lista de listas (formato Sheet)
+        sheet_data = df_display.fillna("").astype(str).values.tolist()
+
+        # PASO 1: Cargar TODOS los datos de una sola vez (ultra rápido)
+        self.sheet.set_sheet_data(data=sheet_data, reset_col_positions=True, reset_row_positions=True, redraw=False)
+        self.sheet.headers(newheaders=headers, index=None, reset_col_positions=False, show_headers_if_not_sheet=True, redraw=False)
+
+        # PASO 1.5: Configurar ordenamiento con clic en encabezados
+        def _on_header_click(event):
+            """Callback cuando se hace clic en un encabezado"""
+            if event.region != "header":
+                return
+            col_idx = event.column
+            if col_idx is not None and col_idx < len(df_display.columns):
+                col_name = df_display.columns[col_idx]
+                # Alternar orden ascendente/descendente
+                if not hasattr(self, '_last_sorted_col') or self._last_sorted_col != col_name:
+                    self._last_sorted_col = col_name
+                    self._last_sorted_reverse = False
+                else:
+                    self._last_sorted_reverse = not self._last_sorted_reverse
+                self._sort_treeview(col_name, self._last_sorted_reverse)
+
+        # Bind clic en encabezado
+        self.sheet.bind("<ButtonRelease-1>", _on_header_click, add="+")
+
+        # PASO 2: Configurar anchos de columnas
+        column_widths = {}
+        for idx, col in enumerate(df_display.columns):
+            if "Numero de caso" in col:
                 width = 120
             elif "Nombre Completo" in col:
                 width = 250
@@ -3530,32 +4145,83 @@ Disco {i}:
                 width = 350
             elif col.startswith("IHQ_"):
                 width = 150
+            elif "Estado Auditoria IA" in col:
+                width = 150
             elif "Fecha Ingreso" in col:
                 width = 180
             else:
-                # Ancho automático para otras columnas
-                try:
-                    max_len = max(df_display[col].astype(str).str.len().max(), len(header))
-                except Exception:
-                    max_len = len(header)
-                width = max(100, min(250, int(max_len * 8)))
+                width = 150  # Default
 
-            # stretch=False para que el scroll horizontal funcione correctamente
-            self.tree.column(col, width=width, anchor="w", stretch=False, minwidth=width)
+            self.sheet.column_width(column=idx, width=width, only_set_if_too_small=False, redraw=False)
 
-        # OPTIMIZACIÓN ULTRA-CRÍTICA: Insertar filas en lotes SIN redibujado
-        # Convertir DataFrame a lista de tuplas (mucho más rápido)
-        rows_data = [tuple(row) for row in df_display.values]
-        
-        # Insertar en lotes grandes para mejor rendimiento
-        batch_size = 500  # Lotes grandes para minimizar llamadas
-        for i in range(0, len(rows_data), batch_size):
-            batch = rows_data[i:i+batch_size]
-            for idx, row_values in enumerate(batch, start=i):
-                self.tree.insert("", "end", values=row_values, iid=idx)
-        
-        # Restaurar selección múltiple
-        self.tree.configure(selectmode="extended")
+        # PASO 3: Obtener índices de columnas relevantes para colores
+        estado_col_idx = None
+        peticion_col_idx = None
+        if "Estado Auditoria IA" in df_display.columns:
+            estado_col_idx = list(df_display.columns).index("Estado Auditoria IA")
+        if "Numero de caso" in df_display.columns:
+            peticion_col_idx = list(df_display.columns).index("Numero de caso")
+
+        # PASO 4: Calcular completitud en batch (optimizado)
+        completitud_cache = {}
+        if peticion_col_idx is not None:
+            try:
+                from core.validation_checker import verificar_completitud_registro
+
+                # Extraer números de petición
+                numeros_peticion = df_display["Numero de caso"].dropna().unique()
+
+                # Calcular completitud
+                for numero in numeros_peticion:
+                    try:
+                        analisis = verificar_completitud_registro(numero)
+                        campos_faltantes = analisis.get('campos_faltantes', [])
+                        biomarcadores_faltantes = analisis.get('biomarcadores_faltantes', [])
+                        completitud_cache[numero] = (len(campos_faltantes) == 0 and len(biomarcadores_faltantes) == 0)
+                    except Exception:
+                        completitud_cache[numero] = False
+            except Exception as e:
+                logging.warning(f"Error calculando completitud: {e}")
+
+        # PASO 5: Aplicar colores de filas según estado
+        # ============================================
+        # V5.3.8: Sheet usa highlight_rows() en lugar de tags
+
+        rows_auditoria_parcial = []
+        rows_auditoria_completa = []
+        rows_incompletos = []
+
+        for row_idx, row_data in df_display.iterrows():
+            # Índice de fila en Sheet (0-based)
+            sheet_row_idx = df_display.index.get_loc(row_idx)
+
+            # PRIORIDAD 1: Auditoría IA
+            if estado_col_idx is not None:
+                estado = row_data.iloc[estado_col_idx]
+                if estado == "PARCIAL":
+                    rows_auditoria_parcial.append(sheet_row_idx)
+                    continue
+                elif estado == "COMPLETA":
+                    rows_auditoria_completa.append(sheet_row_idx)
+                    continue
+
+            # PRIORIDAD 2: Completitud
+            if peticion_col_idx is not None:
+                numero_peticion = row_data.iloc[peticion_col_idx]
+                if numero_peticion in completitud_cache:
+                    if not completitud_cache[numero_peticion]:  # Incompleto
+                        rows_incompletos.append(sheet_row_idx)
+
+        # Aplicar highlighting por grupos
+        if rows_auditoria_parcial:
+            self.sheet.highlight_rows(rows=rows_auditoria_parcial, bg="#FFF3CD", fg="#856404", redraw=False)
+        if rows_auditoria_completa:
+            self.sheet.highlight_rows(rows=rows_auditoria_completa, bg="#D4EDDA", fg="#155724", redraw=False)
+        if rows_incompletos:
+            self.sheet.highlight_rows(rows=rows_incompletos, bg="#FFE5E5", fg="#721C24", redraw=False)
+
+        # PASO 6: Redibuja UNA SOLA VEZ (mega optimización)
+        self.sheet.refresh()
 
         # Actualizar KPIs en base a lo mostrado
         try:
@@ -3564,32 +4230,44 @@ Disco {i}:
             pass
 
     def _sort_treeview(self, col, reverse):
-        items = self.tree.get_children("")
-        data = [(self.tree.set(it, col), it) for it in items]
+        """
+        V5.3.8: Ordenamiento optimizado para Sheet
+        Ordena el DataFrame y recarga el Sheet (mega rápido con virtualización)
+        """
+        if not hasattr(self, 'current_displayed_df') or self.current_displayed_df is None:
+            return
 
         from datetime import datetime as _dt
 
-        def _key(v):
-            s = str(v).strip()
-            # número
+        def _sort_key(val):
+            """Función de ordenamiento inteligente"""
+            s = str(val).strip()
+            # Intentar número
             try:
-                return float(s.replace(",", "."))
-            except Exception:
+                return (0, float(s.replace(",", ".")))
+            except:
                 pass
-            # fecha
+            # Intentar fecha
             for fmt in ("%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y"):
                 try:
-                    return _dt.strptime(s, fmt)
-                except Exception:
+                    return (1, _dt.strptime(s, fmt))
+                except:
                     pass
-            return s.lower()
+            # Texto
+            return (2, s.lower())
 
-        data.sort(key=lambda x: _key(x[0]), reverse=reverse)
-
-        for idx, (_, item) in enumerate(data):
-            self.tree.move(item, "", idx)
-
-        self.tree.heading(col, command=lambda: self._sort_treeview(col, not reverse))
+        # Ordenar DataFrame
+        try:
+            df_sorted = self.current_displayed_df.sort_values(
+                by=col,
+                ascending=not reverse,
+                key=lambda x: x.map(_sort_key),
+                na_position='last'
+            )
+            # Recargar Sheet con datos ordenados
+            self._populate_treeview(df_sorted)
+        except Exception as e:
+            logging.warning(f"Error ordenando por {col}: {e}")
 
     def filter_tabla(self, *args):
         query = self.search_var.get().lower()
@@ -3602,7 +4280,7 @@ Disco {i}:
             self._populate_treeview(df)
             return
             
-        search_cols = ["N. peticion (0. Numero de biopsia)", "Primer nombre", "Primer apellido"]
+        search_cols = ["Numero de caso", "Primer nombre", "Primer apellido"]
         for col in search_cols:
             if col in df.columns:
                 df[col] = df[col].astype(str)
@@ -3636,78 +4314,72 @@ Disco {i}:
     def _export_selected_data(self):
         """Exportar datos seleccionados usando el sistema mejorado"""
         try:
+            import pandas as pd
+
             # Obtener elementos seleccionados del treeview
             selected_items = self.tree.selection()
             if not selected_items:
                 messagebox.showwarning("Sin Selección", "No hay elementos seleccionados para exportar")
                 return
 
-            # CORREGIDO: Obtener los datos usando el mismo método que usa la tabla
-            selected_rows_data = []
-            
-            # Opción 1: Intentar usar el DataFrame de la tabla actual
-            try:
-                if hasattr(self, 'current_df') and self.current_df is not None and not self.current_df.empty:
-                    for item in selected_items:
-                        # Obtener índice de la fila en el treeview
-                        tree_index = self.tree.index(item)
-                        if tree_index < len(self.current_df):
-                            selected_rows_data.append(self.current_df.iloc[tree_index])
+            logging.info(f"Exportar Seleccion: {len(selected_items)} elementos seleccionados")
 
-                elif hasattr(self, 'master_df') and self.master_df is not None and not self.master_df.empty:
-
-                    # CORREGIDO: Buscar la columna correcta de número de petición
-                    peticion_col = None
-                    for col in self.master_df.columns:
-                        if 'peticion' in col.lower() or 'biopsia' in col.lower():
-                            peticion_col = col
-                            break
-
-                    if not peticion_col:
-                        # Si no se encuentra, usar la primera columna visible del treeview
-                        peticion_col = self.master_df.columns[0]
-
-                    for item in selected_items:
-                        values = self.tree.item(item)['values']
-                        if values:
-                            # CORREGIDO: Buscar por número de petición usando la columna correcta
-                            numero_peticion = values[0]
-                            matching_row = self.master_df[self.master_df[peticion_col] == numero_peticion]
-                            if not matching_row.empty:
-                                selected_rows_data.append(matching_row.iloc[0])
-                else:
-                    # Opción de respaldo: cargar datos directamente desde la base
-                    from core.database_manager import get_all_records_as_dataframe
-                    df_all = get_all_records_as_dataframe()
-                    
-                    if df_all is not None and not df_all.empty:
-                        for item in selected_items:
-                            values = self.tree.item(item)['values']
-                            if values:
-                                numero_peticion = values[0]
-                                matching_row = df_all[df_all.iloc[:, 0] == numero_peticion]
-                                if not matching_row.empty:
-                                    selected_rows_data.append(matching_row.iloc[0])
-                                    
-            except Exception as e:
-                print(f"Error obteniendo datos seleccionados: {e}")
-                messagebox.showerror("Error", f"Error al obtener los datos seleccionados: {e}")
+            # Validar que master_df existe
+            if not hasattr(self, 'master_df') or self.master_df is None or self.master_df.empty:
+                logging.error("master_df no existe o esta vacio")
+                messagebox.showerror(
+                    "Error",
+                    "Los datos no están cargados en memoria.\n"
+                    "Recarga la base de datos e intenta de nuevo."
+                )
                 return
+
+            # Obtener datos de las filas seleccionadas (enfoque simple que funciona)
+            selected_rows_data = []
+            for item in selected_items:
+                # DEBUG: Ver qué contiene el item completo
+                tree_item_dict = self.tree.item(item)
+                logging.info(f"DEBUG item={item}: {tree_item_dict}")
+
+                # Obtener los valores de la fila desde el treeview
+                values = tree_item_dict.get('values', [])
+                logging.info(f"DEBUG values para item {item}: {values}")
+
+                if values:
+                    # El primer valor es el número de petición/caso
+                    numero_peticion = values[0]
+
+                    # Buscar el registro correspondiente en master_df usando la primera columna
+                    # (esto es lo que funciona en _export_selected_data_professional)
+                    matching_row = self.master_df[self.master_df.iloc[:, 0] == numero_peticion]
+
+                    if not matching_row.empty:
+                        selected_rows_data.append(matching_row.iloc[0])
+                        logging.info(f"Fila '{numero_peticion}' encontrada y agregada")
+                    else:
+                        logging.warning(f"No se encontro la fila '{numero_peticion}' en master_df")
+                else:
+                    logging.warning(f"Item sin valores: {item}")
 
             if not selected_rows_data:
-                print("ERROR: selected_rows_data está vacío")
-                messagebox.showwarning("Sin Datos", "No se pudieron obtener los datos de la selección")
+                logging.error("No se pudieron obtener datos de la seleccion")
+                messagebox.showwarning(
+                    "Sin Datos",
+                    "No se pudieron obtener los datos de la selección.\n"
+                    "Intenta recargar la base de datos."
+                )
                 return
 
-            # Crear DataFrame con solo los registros seleccionados
-            import pandas as pd
+            logging.info(f"Filas obtenidas exitosamente: {len(selected_rows_data)}")
+
+            # Crear DataFrame con los registros seleccionados
             selected_df = pd.DataFrame(selected_rows_data)
 
             # Exportar usando el sistema mejorado
             self.export_system.export_selected_data(selected_df)
-            
+
         except Exception as e:
-            print(f"Error en _export_selected_data: {e}")
+            logging.error(f"Error en _export_selected_data: {e}", exc_info=True)
             messagebox.showerror("Error de Exportación", f"Error al exportar la selección:\n{str(e)}")
 
     def _toggle_details_panel(self):
@@ -3734,110 +4406,206 @@ Disco {i}:
                 else:
                     self.export_selection_btn.configure(state="disabled")
         except Exception as e:
-            print(f"Error actualizando estado del botón: {e}")
+            logging.error(f"Error actualizando estado del boton: {e}")
     
     def _setup_cell_tooltips(self):
-        """Configurar tooltips emergentes al pasar el mouse sobre celdas del Treeview"""
+        """
+        V5.3.8: Configurar tooltips emergentes al pasar el mouse sobre celdas del Sheet
+        Muestra el contenido COMPLETO de la celda cuando es muy largo
+        """
         # Crear tooltip widget (inicialmente oculto)
         self.tooltip = None
         self.tooltip_job = None
-        
+        self._last_tooltip_cell = None  # Rastrear última celda con tooltip
+
         def show_tooltip(event):
             """Mostrar tooltip con el contenido completo de la celda"""
             # Cancelar tooltip anterior si existe
             if self.tooltip_job:
                 self.after_cancel(self.tooltip_job)
                 self.tooltip_job = None
-            
-            # Destruir tooltip anterior
-            if self.tooltip:
-                self.tooltip.destroy()
-                self.tooltip = None
-            
-            # Identificar celda bajo el cursor
-            region = self.tree.identify("region", event.x, event.y)
-            if region != "cell":
-                return
-            
-            column = self.tree.identify_column(event.x)
-            row = self.tree.identify_row(event.y)
-            
-            if not column or not row:
-                return
-            
-            # Obtener valor de la celda
-            col_index = int(column.replace('#', '')) - 1
-            values = self.tree.item(row)['values']
-            
-            if col_index >= len(values):
-                return
-            
-            cell_value = str(values[col_index])
-            
-            # Solo mostrar tooltip si el valor no está vacío y es suficientemente largo
-            if not cell_value or cell_value in ['', 'N/A', 'nan', 'None'] or len(cell_value) < 20:
-                return
-            
-            # Crear tooltip después de un pequeño delay
-            def create_tooltip():
-                self.tooltip = tk.Toplevel(self.tree)
-                self.tooltip.wm_overrideredirect(True)
-                self.tooltip.wm_geometry(f"+{event.x_root + 15}+{event.y_root + 10}")
-                
-                # Frame con borde
-                frame = ttk.Frame(self.tooltip, relief="solid", borderwidth=1, padding=5)
-                frame.pack()
-                
-                # Texto del tooltip (máximo 500 caracteres)
-                display_text = cell_value[:500] + "..." if len(cell_value) > 500 else cell_value
-                label = ttk.Label(
-                    frame,
-                    text=display_text,
-                    background="#ffffcc",
-                    foreground="#000000",
-                    font=("Segoe UI", 9),
-                    wraplength=400,
-                    justify=tk.LEFT
-                )
-                label.pack()
-            
-            self.tooltip_job = self.after(500, create_tooltip)  # 500ms delay
-        
-        def hide_tooltip(event):
+
+            try:
+                # V5.3.8: Obtener celda bajo el cursor usando métodos correctos de Sheet
+                # Método 1: get_cell_at_position
+                cell_info = None
+                try:
+                    # Convertir coordenadas de evento a coordenadas del canvas
+                    x = self.sheet.canvasx(event.x)
+                    y = self.sheet.canvasy(event.y)
+
+                    # Intentar obtener la celda en esa posición
+                    # tksheet usa diferentes métodos dependiendo de la versión
+                    if hasattr(self.sheet, 'get_cell_at_position'):
+                        cell_info = self.sheet.get_cell_at_position(x, y)
+                    elif hasattr(self.sheet.MT, 'identify_row') and hasattr(self.sheet.MT, 'identify_col'):
+                        # Acceder al MainTable interno
+                        row = self.sheet.MT.identify_row(y=event.y)
+                        col = self.sheet.MT.identify_col(x=event.x)
+                        if row is not None and col is not None:
+                            cell_info = {'row': row, 'column': col}
+                except:
+                    pass
+
+                # Si no se pudo obtener la celda, salir
+                if not cell_info:
+                    if self.tooltip:
+                        self.tooltip.destroy()
+                        self.tooltip = None
+                        self._last_tooltip_cell = None
+                    return
+
+                # Extraer fila y columna del resultado
+                row = cell_info.get('row') if isinstance(cell_info, dict) else getattr(cell_info, 'row', None)
+                col = cell_info.get('column') if isinstance(cell_info, dict) else getattr(cell_info, 'column', None)
+
+                if row is None or col is None:
+                    return
+
+                # Evitar recrear tooltip para la misma celda
+                if self._last_tooltip_cell == (row, col):
+                    return
+
+                # Destruir tooltip anterior
+                if self.tooltip:
+                    self.tooltip.destroy()
+                    self.tooltip = None
+
+                # Obtener valor de la celda
+                try:
+                    cell_value = self.sheet.get_cell_data(row, col, return_copy=True)
+                except:
+                    return
+
+                if not cell_value:
+                    return
+
+                cell_value = str(cell_value).strip()
+
+                # Solo mostrar tooltip si el valor es suficientemente largo (>30 chars)
+                # o contiene saltos de línea
+                if len(cell_value) < 30 and '\n' not in cell_value:
+                    return
+
+                # Evitar tooltips para valores vacíos o inútiles
+                if cell_value in ['', 'N/A', 'nan', 'None', 'null']:
+                    return
+
+                # Crear tooltip después de un pequeño delay
+                def create_tooltip():
+                    try:
+                        self.tooltip = tk.Toplevel(self.sheet)
+                        self.tooltip.wm_overrideredirect(True)
+
+                        # Posicionar tooltip cerca del cursor
+                        x_pos = event.x_root + 15
+                        y_pos = event.y_root + 10
+
+                        # Ajustar si está muy cerca del borde derecho
+                        screen_width = self.tooltip.winfo_screenwidth()
+                        if x_pos + 450 > screen_width:
+                            x_pos = screen_width - 460
+
+                        self.tooltip.wm_geometry(f"+{x_pos}+{y_pos}")
+
+                        # Frame con borde y sombra
+                        frame = tk.Frame(
+                            self.tooltip,
+                            relief="solid",
+                            borderwidth=2,
+                            background="#2C3E50",  # Borde azul oscuro profesional
+                            padx=1,
+                            pady=1
+                        )
+                        frame.pack()
+
+                        inner_frame = tk.Frame(
+                            frame,
+                            background="#FFFEF0",  # Fondo crema claro
+                            padx=10,
+                            pady=8
+                        )
+                        inner_frame.pack()
+
+                        # Texto del tooltip (máximo 1000 caracteres para auditoría)
+                        display_text = cell_value[:1000] + "..." if len(cell_value) > 1000 else cell_value
+
+                        label = tk.Label(
+                            inner_frame,
+                            text=display_text,
+                            background="#FFFEF0",
+                            foreground="#1A1A1A",
+                            font=("Segoe UI", 9),
+                            wraplength=450,  # Ancho máximo del tooltip
+                            justify=tk.LEFT,
+                            anchor="w"
+                        )
+                        label.pack()
+
+                        # Agregar longitud del texto si es muy largo
+                        if len(cell_value) > 100:
+                            length_label = tk.Label(
+                                inner_frame,
+                                text=f"({len(cell_value)} caracteres)",
+                                background="#FFFEF0",
+                                foreground="#7F8C8D",
+                                font=("Segoe UI", 8, "italic")
+                            )
+                            length_label.pack(anchor="e", pady=(5, 0))
+
+                        # Guardar celda actual
+                        self._last_tooltip_cell = (row, col)
+
+                    except Exception as e:
+                        logging.warning(f"Error creando tooltip: {e}")
+                        if self.tooltip:
+                            self.tooltip.destroy()
+                            self.tooltip = None
+
+                self.tooltip_job = self.after(400, create_tooltip)  # 400ms delay (más rápido)
+
+            except Exception as e:
+                # Silenciar errores de tooltips para no interrumpir la UI
+                pass
+
+        def hide_tooltip(event=None):
             """Ocultar tooltip"""
             if self.tooltip_job:
                 self.after_cancel(self.tooltip_job)
                 self.tooltip_job = None
-            
+
             if self.tooltip:
                 self.tooltip.destroy()
                 self.tooltip = None
-        
-        # Vincular eventos
-        self.tree.bind("<Motion>", show_tooltip)
-        self.tree.bind("<Leave>", hide_tooltip)
-        self.tree.bind("<Button-1>", hide_tooltip)  # Ocultar al hacer clic
+
+            self._last_tooltip_cell = None
+
+        # Vincular eventos al Sheet
+        self.sheet.bind("<Motion>", show_tooltip, add="+")
+        self.sheet.bind("<Leave>", hide_tooltip, add="+")
+        self.sheet.bind("<Button-1>", hide_tooltip, add="+")  # Ocultar al hacer clic
 
     def _delayed_refresh_after_processing(self):
         """Refresh retardado después del procesamiento para asegurar actualización"""
         try:
-            print("🔄 Ejecutando refresh automático después del procesamiento...")
+            # V5.3.9.3: Usar logging en lugar de print (stdout puede estar cerrado)
+            logging.info("🔄 Ejecutando refresh automático después del procesamiento...")
 
             # Forzar refresh de datos
             self.refresh_data_and_table()
 
             # Si estamos en otra vista, cambiar automáticamente al visualizador
             if hasattr(self, 'current_view') and self.current_view != "visualizar":
-                print("📊 Cambiando automáticamente al Visualizador de Datos...")
+                logging.info("📊 Cambiando automáticamente al Visualizador de Datos...")
                 self.show_visualizar_frame()
 
             # Actualizar estado de los botones de exportación
             self._update_export_button_state()
 
-            print("✅ Refresh automático completado")
+            logging.info("✅ Refresh automático completado")
 
         except Exception as e:
-            print(f"❌ Error en refresh automático: {e}")
+            logging.error(f"❌ Error en refresh automático: {e}")
             # Mostrar mensaje al usuario si falla
             try:
                 messagebox.showwarning(
@@ -3864,7 +4632,7 @@ Disco {i}:
 
         # Llenar combos dinámicos (servicios / responsables)
         srv_vals = sorted([s for s in df.get("Servicio", pd.Series(dtype=str)).dropna().astype(str).unique() if s.strip()])
-        rsp_vals = sorted([s for s in df.get("Usuario finalizacion", pd.Series(dtype=str)).dropna().astype(str).unique() if s.strip()])
+        rsp_vals = sorted([s for s in df.get("Patologo", pd.Series(dtype=str)).dropna().astype(str).unique() if s.strip()])
         
         # Solo configurar si los componentes existen
         if self.cmb_servicio is not None:
@@ -4163,14 +4931,15 @@ Informes con malignidad: {malignant_count}"""
                 from core.database_manager import DB_FILE
                 conn = sqlite3.connect(DB_FILE)
                 cursor = conn.cursor()
-                cursor.execute('SELECT "N. peticion (0. Numero de biopsia)" FROM informes_ihq')
+                cursor.execute('SELECT "Numero de caso" FROM informes_ihq')
                 peticiones_antes = set(row[0] for row in cursor.fetchall() if row[0])
                 conn.close()
             except Exception as e:
-                print(f"⚠️ Error obteniendo peticiones existentes: {e}")
+                logging.warning(f"Error obteniendo peticiones existentes: {e}")
 
             try:
-                records = self._process_file(file_path)
+                # V5.3.9: _process_file ahora retorna (records_count, correcciones)
+                records, correcciones = self._process_file(file_path)
 
                 # NUEVO: Obtener los números de petición de los registros recién procesados
                 try:
@@ -4178,18 +4947,19 @@ Informes con malignidad: {malignant_count}"""
                     from core.database_manager import DB_FILE
                     conn = sqlite3.connect(DB_FILE)
                     cursor = conn.cursor()
-                    cursor.execute('SELECT "N. peticion (0. Numero de biopsia)" FROM informes_ihq')
+                    cursor.execute('SELECT "Numero de caso" FROM informes_ihq')
                     peticiones_despues = set(row[0] for row in cursor.fetchall() if row[0])
                     conn.close()
 
                     # Calcular la diferencia: nuevos registros = después - antes
                     nuevas_peticiones = list(peticiones_despues - peticiones_antes)
                     self._ultimos_registros_procesados = nuevas_peticiones
-                    print(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
+                    # V5.3.9.3: Usar logging en lugar de print (stdout puede estar cerrado)
+                    logging.info(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
                     if nuevas_peticiones:
-                        print(f"   IDs: {', '.join(nuevas_peticiones[:5])}" + (" ..." if len(nuevas_peticiones) > 5 else ""))
+                        logging.info(f"   IDs: {', '.join(nuevas_peticiones[:5])}" + (" ..." if len(nuevas_peticiones) > 5 else ""))
                 except Exception as e:
-                    print(f"⚠️ Error capturando nuevos registros: {e}")
+                    logging.warning(f"⚠️ Error capturando nuevos registros: {e}")
                     self._ultimos_registros_procesados = []
 
                 # NUEVO: Analizar completitud de registros
@@ -4197,12 +4967,12 @@ Informes con malignidad: {malignant_count}"""
                     from core.validation_checker import analizar_batch_registros
 
                     numeros_peticion_procesados = self._ultimos_registros_procesados
-                    print(f"🔍 Analizando completitud de {len(numeros_peticion_procesados)} registros...")
+                    logging.info(f"🔍 Analizando completitud de {len(numeros_peticion_procesados)} registros...")
                     analisis = analizar_batch_registros(numeros_peticion_procesados)
 
-                    print(f"✅ Análisis completado:")
-                    print(f"   • Completos: {analisis['resumen']['completos']}")
-                    print(f"   • Incompletos: {analisis['resumen']['incompletos']}")
+                    logging.info(f"✅ Análisis completado:")
+                    logging.info(f"   • Completos: {analisis['resumen']['completos']}")
+                    logging.info(f"   • Incompletos: {analisis['resumen']['incompletos']}")
 
                     # Actualizar vista antes de mostrar ventana
                     try:
@@ -4212,7 +4982,7 @@ Informes con malignidad: {malignant_count}"""
                         if hasattr(self, 'enhanced_dashboard'):
                             self.enhanced_dashboard.refresh_all_data()
                     except Exception as e:
-                        print(f"⚠️ Error en refresh: {e}")
+                        logging.warning(f"⚠️ Error en refresh: {e}")
 
                     # Actualizar lista de archivos
                     self._refresh_files_list()
@@ -4231,8 +5001,8 @@ Informes con malignidad: {malignant_count}"""
 
                 except Exception as e:
                     # Fallback al flujo original si hay error en el análisis
-                    print(f"⚠️ Error en análisis de completitud: {e}")
-                    print(f"   Usando flujo de importación original")
+                    logging.warning(f"⚠️ Error en análisis de completitud: {e}")
+                    logging.info(f"   Usando flujo de importación original")
 
                     messagebox.showinfo("Procesamiento", f"✅ Archivo procesado exitosamente:\n{records} registros extraídos")
 
@@ -4244,7 +5014,7 @@ Informes con malignidad: {malignant_count}"""
                         try:
                             self.enhanced_dashboard.refresh_all_data()
                         except Exception as e:
-                            print(f"Error actualizando dashboard: {e}")
+                            logging.error(f"Error actualizando dashboard: {e}")
 
                     # Actualizar lista de archivos
                     self._refresh_files_list()
@@ -4273,11 +5043,11 @@ Informes con malignidad: {malignant_count}"""
                     from core.database_manager import DB_FILE
                     conn = sqlite3.connect(DB_FILE)
                     cursor = conn.cursor()
-                    cursor.execute('SELECT "N. peticion (0. Numero de biopsia)" FROM informes_ihq')
+                    cursor.execute('SELECT "Numero de caso" FROM informes_ihq')
                     peticiones_antes = set(row[0] for row in cursor.fetchall() if row[0])
                     conn.close()
                 except Exception as e:
-                    print(f"⚠️ Error obteniendo peticiones existentes: {e}")
+                    logging.warning(f"Error obteniendo peticiones existentes: {e}")
 
                 processed_count = 0
                 total_records = 0
@@ -4285,7 +5055,8 @@ Informes con malignidad: {malignant_count}"""
 
                 for pdf_path in pdf_files:
                     try:
-                        records = self._process_file(pdf_path)
+                        # V5.3.9: _process_file ahora retorna (records_count, correcciones)
+                        records, correcciones = self._process_file(pdf_path)
                         processed_count += 1
                         total_records += records
                     except Exception as e:
@@ -4299,18 +5070,19 @@ Informes con malignidad: {malignant_count}"""
                         from core.database_manager import DB_FILE
                         conn = sqlite3.connect(DB_FILE)
                         cursor = conn.cursor()
-                        cursor.execute('SELECT "N. peticion (0. Numero de biopsia)" FROM informes_ihq')
+                        cursor.execute('SELECT "Numero de caso" FROM informes_ihq')
                         peticiones_despues = set(row[0] for row in cursor.fetchall() if row[0])
                         conn.close()
 
                         # Calcular la diferencia: nuevos registros = después - antes
                         nuevas_peticiones = list(peticiones_despues - peticiones_antes)
                         self._ultimos_registros_procesados = nuevas_peticiones
-                        print(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
+                        # V5.3.9.3: Usar logging en lugar de print (stdout puede estar cerrado)
+                        logging.info(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
                         if nuevas_peticiones:
-                            print(f"   IDs: {', '.join(nuevas_peticiones[:5])}" + (" ..." if len(nuevas_peticiones) > 5 else ""))
+                            logging.info(f"   IDs: {', '.join(nuevas_peticiones[:5])}" + (" ..." if len(nuevas_peticiones) > 5 else ""))
                     except Exception as e:
-                        print(f"⚠️ Error capturando nuevos registros: {e}")
+                        logging.warning(f"⚠️ Error capturando nuevos registros: {e}")
                         self._ultimos_registros_procesados = []
 
                     # NUEVO: Analizar completitud de registros
@@ -4318,12 +5090,12 @@ Informes con malignidad: {malignant_count}"""
                         from core.validation_checker import analizar_batch_registros
 
                         numeros_peticion_procesados = self._ultimos_registros_procesados
-                        print(f"🔍 Analizando completitud de {len(numeros_peticion_procesados)} registros...")
+                        logging.info(f"🔍 Analizando completitud de {len(numeros_peticion_procesados)} registros...")
                         analisis = analizar_batch_registros(numeros_peticion_procesados)
 
-                        print(f"✅ Análisis completado:")
-                        print(f"   • Completos: {analisis['resumen']['completos']}")
-                        print(f"   • Incompletos: {analisis['resumen']['incompletos']}")
+                        logging.info(f"✅ Análisis completado:")
+                        logging.info(f"   • Completos: {analisis['resumen']['completos']}")
+                        logging.info(f"   • Incompletos: {analisis['resumen']['incompletos']}")
 
                         # Actualizar vista antes de mostrar ventana
                         try:
@@ -4333,7 +5105,7 @@ Informes con malignidad: {malignant_count}"""
                             if hasattr(self, 'enhanced_dashboard'):
                                 self.enhanced_dashboard.refresh_all_data()
                         except Exception as e:
-                            print(f"⚠️ Error en refresh: {e}")
+                            logging.warning(f"⚠️ Error en refresh: {e}")
 
                         # Actualizar lista de archivos
                         self._refresh_files_list()
@@ -4352,8 +5124,8 @@ Informes con malignidad: {malignant_count}"""
 
                     except Exception as e:
                         # Fallback al flujo original si hay error en el análisis
-                        print(f"⚠️ Error en análisis de completitud: {e}")
-                        print(f"   Usando flujo de importación original")
+                        logging.warning(f"⚠️ Error en análisis de completitud: {e}")
+                        logging.info(f"   Usando flujo de importación original")
 
                         # Mostrar resultado tradicional
                         msg = f"✅ Procesados {processed_count} de {len(pdf_files)} archivos\n"
@@ -4371,7 +5143,7 @@ Informes con malignidad: {malignant_count}"""
                             try:
                                 self.enhanced_dashboard.refresh_all_data()
                             except Exception as e:
-                                print(f"Error actualizando dashboard: {e}")
+                                logging.error(f"Error actualizando dashboard: {e}")
                         self._refresh_files_list()
                 else:
                     # No se procesó ningún archivo
@@ -4385,7 +5157,7 @@ Informes con malignidad: {malignant_count}"""
         """Actualizar la lista de archivos en la carpeta pdfs_patologia"""
         # Verificar que existe el listbox
         if not hasattr(self, 'files_listbox') or self.files_listbox is None:
-            print("Advertencia: files_listbox no está disponible")
+            logging.warning("Advertencia: files_listbox no está disponible")
             return
 
         pdfs_path = os.path.join(os.getcwd(), "pdfs_patologia")
@@ -4429,6 +5201,9 @@ Informes con malignidad: {malignant_count}"""
         total_records = 0
         errors = []
 
+        # V5.3.9: Acumulador de correcciones del sistema
+        todas_las_correcciones = []
+
         # NUEVO: Limpiar lista de registros procesados y obtener peticiones existentes antes del procesamiento
         self._ultimos_registros_procesados = []
         peticiones_antes = set()
@@ -4437,11 +5212,11 @@ Informes con malignidad: {malignant_count}"""
             from core.database_manager import DB_FILE
             conn = sqlite3.connect(DB_FILE)
             cursor = conn.cursor()
-            cursor.execute('SELECT "N. peticion (0. Numero de biopsia)" FROM informes_ihq')
+            cursor.execute('SELECT "Numero de caso" FROM informes_ihq')
             peticiones_antes = set(row[0] for row in cursor.fetchall() if row[0])
             conn.close()
         except Exception as e:
-            print(f"⚠️ Error obteniendo peticiones existentes: {e}")
+            logging.warning(f"⚠️ Error obteniendo peticiones existentes: {e}")
 
         # Procesar cada archivo seleccionado
         for index in selected_indices:
@@ -4464,15 +5239,21 @@ Informes con malignidad: {malignant_count}"""
                         if respuesta:
                             self._redirigir_a_visualizador_con_filtro(duplicado_info['numero_peticion'])
                         continue
-                    
+
                     try:
-                        records = self._process_file(file_path)
+                        # V5.3.9: _process_file ahora retorna (records_count, correcciones)
+                        records_count, correcciones = self._process_file(file_path)
                         processed_count += 1
-                        total_records += records
+                        total_records += records_count
+
+                        # V5.3.9: Acumular correcciones de este archivo
+                        if correcciones:
+                            todas_las_correcciones.extend(correcciones)
                     except Exception as e:
                         error_msg = f"{filename}: {str(e)}"
                         errors.append(error_msg)
-                        print(f"❌ Error procesando {filename}: {e}")
+                        # V5.3.9: Usar logging en lugar de print (stdout puede estar cerrado)
+                        logging.error(f"❌ Error procesando {filename}: {e}")
 
         # Mostrar resultado final
         if processed_count > 0:
@@ -4482,18 +5263,18 @@ Informes con malignidad: {malignant_count}"""
                 from core.database_manager import DB_FILE
                 conn = sqlite3.connect(DB_FILE)
                 cursor = conn.cursor()
-                cursor.execute('SELECT "N. peticion (0. Numero de biopsia)" FROM informes_ihq')
+                cursor.execute('SELECT "Numero de caso" FROM informes_ihq')
                 peticiones_despues = set(row[0] for row in cursor.fetchall() if row[0])
                 conn.close()
 
                 # Calcular la diferencia: nuevos registros = después - antes
                 nuevas_peticiones = list(peticiones_despues - peticiones_antes)
                 self._ultimos_registros_procesados = nuevas_peticiones
-                print(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
+                logging.info(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
                 if nuevas_peticiones:
-                    print(f"   IDs: {', '.join(nuevas_peticiones[:5])}" + (" ..." if len(nuevas_peticiones) > 5 else ""))
+                    logging.info(f"   IDs: {', '.join(nuevas_peticiones[:5])}" + (" ..." if len(nuevas_peticiones) > 5 else ""))
             except Exception as e:
-                print(f"⚠️ Error capturando nuevos registros: {e}")
+                logging.warning(f"⚠️ Error capturando nuevos registros: {e}")
                 self._ultimos_registros_procesados = []
 
             # Capturar números de petición de registros procesados
@@ -4503,12 +5284,12 @@ Informes con malignidad: {malignant_count}"""
             try:
                 from core.validation_checker import analizar_batch_registros
 
-                print(f"🔍 Analizando completitud de {len(numeros_peticion_procesados)} registros...")
+                logging.info(f"🔍 Analizando completitud de {len(numeros_peticion_procesados)} registros...")
                 analisis = analizar_batch_registros(numeros_peticion_procesados)
 
-                print(f"✅ Análisis completado:")
-                print(f"   • Completos: {analisis['resumen']['completos']}")
-                print(f"   • Incompletos: {analisis['resumen']['incompletos']}")
+                logging.info(f"✅ Análisis completado:")
+                logging.info(f"   • Completos: {analisis['resumen']['completos']}")
+                logging.info(f"   • Incompletos: {analisis['resumen']['incompletos']}")
 
                 # Actualizar vista antes de mostrar ventana
                 try:
@@ -4518,7 +5299,7 @@ Informes con malignidad: {malignant_count}"""
                     if hasattr(self, 'enhanced_dashboard'):
                         self.enhanced_dashboard.refresh_all_data()
                 except Exception as e:
-                    print(f"⚠️ Error en refresh: {e}")
+                    logging.warning(f"⚠️ Error en refresh: {e}")
 
                 # Mostrar ventana de resultados (permanece en pestaña Importación)
                 from core.ventana_resultados_importacion import mostrar_ventana_resultados
@@ -4530,12 +5311,14 @@ Informes con malignidad: {malignant_count}"""
                     resumen=analisis['resumen'],
                     callback_auditar=self._mostrar_selector_tipo_auditoria,
                     callback_continuar=self._nav_to_visualizar
+                    # V5.3.9: Correcciones ya NO se pasan - se leen desde debug_maps
                 )
 
             except Exception as e:
                 # Fallback al flujo original si hay error
-                print(f"⚠️ Error en análisis de completitud: {e}")
-                print(f"   Usando flujo de importación original")
+                # V5.3.9: Usar logging en lugar de print (stdout puede estar cerrado)
+                logging.warning(f"⚠️ Error en análisis de completitud: {e}")
+                logging.info(f"   Usando flujo de importación original")
 
                 success_msg = f"✅ Procesamiento completado:\n"
                 success_msg += f"• {processed_count} archivos procesados\n"
@@ -4562,27 +5345,34 @@ Informes con malignidad: {malignant_count}"""
             messagebox.showerror("Error de procesamiento", error_msg)
 
     def _process_file(self, file_path):
-        """Procesar un archivo PDF individual"""
+        """Procesar un archivo PDF individual
+
+        Returns:
+            tuple: (records_count, correcciones_list)
+        """
         try:
             filename = os.path.basename(file_path)
             self.set_status(f"Procesando {filename}...")
-            
+
             # Determinar el tipo de archivo y procesarlo adecuadamente
             if self._is_ihq_file(filename, file_path):
                 # Procesar como archivo IHQ (biomarcadores)
                 records_processed = self._process_ihq_file(file_path)
+                correcciones = []  # IHQ no tiene validación aún
                 self.set_status(f"✅ {filename}: {records_processed} registros IHQ procesados")
             else:
-                # Procesar como archivo general de patología
-                records_processed = self._process_general_file(file_path)
+                # Procesar como archivo general de patología (retorna tuple)
+                records_processed, correcciones = self._process_general_file(file_path)
                 self.set_status(f"✅ {filename}: {records_processed} registros generales procesados")
-            
-            print(f"✅ Procesamiento completado: {file_path} - {records_processed} registros")
-            return records_processed
-            
+
+            # V5.3.9: Usar logging en lugar de print (stdout puede estar cerrado)
+            logging.info(f"✅ Procesamiento completado: {file_path} - {records_processed} registros")
+            return records_processed, correcciones
+
         except Exception as e:
             error_msg = f"Error procesando {filename}: {str(e)}"
             self.set_status(f"❌ {error_msg}")
+            logging.error(error_msg)
             raise Exception(error_msg)
 
     def _is_ihq_file(self, filename, file_path):
@@ -4621,74 +5411,86 @@ Informes con malignidad: {malignant_count}"""
         return process_ihq_file(file_path, log_callback)
 
     def _process_general_file(self, file_path):
-        """Procesar archivo general usando el procesador estándar"""
+        """Procesar archivo general usando el procesador estándar
+
+        Returns:
+            tuple: (records_count, correcciones_list)
+        """
         try:
             # Importar los módulos necesarios
             from core.processors.ocr_processor import pdf_to_text_enhanced
             from core import unified_extractor as ihq
             from core import database_manager
-            
+
             # Extraer texto del PDF
             full_text = pdf_to_text_enhanced(file_path)
             if not isinstance(full_text, str):
                 full_text = '\n'.join(full_text)
-            
+
             # Segmentar por informes (usando lógica similar a IHQ pero más general)
             records = []
-            
+
             # Para archivos generales, puede haber múltiples informes
             # Intentar segmentar por "N. petición" o números de orden
             segments = self._segment_general_reports(full_text)
-            
+
             if not segments:
                 # Si no se puede segmentar, procesar como un solo informe
                 segments = [full_text]
-            
+
             for segment in segments:
                 # Extraer datos base usando el procesador IHQ (que maneja datos generales también)
                 base_data = ihq.extract_ihq_data(segment)
                 base_rows = ihq.map_to_excel_format(base_data)
-                
+
                 if base_rows:
                     records.extend(base_rows)
-            
+
             if not records:
                 raise RuntimeError("No se pudo extraer información del PDF.")
-            
+
             # Guardar en base de datos
             from core.database_manager import init_db, save_records, update_incomplete_records_with_debug_data
             init_db()
             saved_count = save_records(records)
-            
+
+            # V5.3.9.3: VALIDACIÓN MÉDICO-SERVICIO YA APLICADA EN ihq_processor.py
+            # Las correcciones médico-servicio ahora se aplican ANTES de crear debug_maps
+            # en ihq_processor.py líneas 119-144, por lo que NO necesitamos volver a aplicarlas aquí.
+            # Las correcciones ya están guardadas en los debug_maps y se mostrarán en la ventana.
+            correcciones_aplicadas = []
+            logging.info("✅ Validación médico-servicio aplicada durante extracción (ihq_processor.py)")
+
             # REACTIVADO: Actualización automática mejorada para completar datos faltantes
             try:
-                print("🔄 Ejecutando actualización automática de registros incompletos...")
-                
+                logging.info("🔄 Ejecutando actualización automática de registros incompletos...")
+
                 # CORREGIDO: Usar el texto OCR del archivo recién procesado para completar datos
                 # Crear archivo DEBUG temporal para este archivo específico
                 debug_file_path = self._create_debug_file_for_current_pdf(file_path, full_text)
-                
+
                 # Actualizar usando el DEBUG específico de este archivo
                 updated_count = update_incomplete_records_with_debug_data(debug_file_path)
                 if updated_count > 0:
-                    print(f"✅ Se actualizaron {updated_count} registros con datos completos del archivo actual")
-                    messagebox.showinfo("Actualización automática", 
+                    logging.info(f"✅ Se actualizaron {updated_count} registros con datos completos del archivo actual")
+                    messagebox.showinfo("Actualización automática",
                                       f"✅ Se actualizaron {updated_count} registros adicionales con datos completos.")
-                                      
+
                 # NUEVO: Ahora aplicar mapeo específico de órganos usando parse_estudios_table_for_organo
-                print("🔄 Aplicando mapeo avanzado de órganos...")
+                logging.info("🔄 Aplicando mapeo avanzado de órganos...")
                 organ_updated_count = self._update_organs_with_advanced_parsing(full_text, records)
                 if organ_updated_count > 0:
-                    print(f"✅ Se mapearon {organ_updated_count} órganos adicionales")
-                    
+                    logging.info(f"✅ Se mapearon {organ_updated_count} órganos adicionales")
+
             except Exception as e:
                 # No fallar el proceso principal si la actualización automática falla
-                print(f"⚠️ Advertencia en actualización automática: {str(e)}")
-                messagebox.showwarning("Actualización automática", 
+                logging.warning(f"⚠️ Advertencia en actualización automática: {str(e)}")
+                messagebox.showwarning("Actualización automática",
                                      f"Advertencia: No se pudo completar la actualización automática: {str(e)}")
-            
-            return saved_count
-            
+
+            # V5.3.9: Retornar tanto el conteo como las correcciones
+            return saved_count, correcciones_aplicadas
+
         except Exception as e:
             raise Exception(f"Error en procesamiento general: {str(e)}")
 
@@ -4708,12 +5510,12 @@ Informes con malignidad: {malignant_count}"""
                 f.write(f"=== DEBUG OCR OUTPUT PARA {pdf_name} ===\n")
                 f.write(f"Generado automáticamente el {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
                 f.write(full_text)
-            
-            print(f"📄 Archivo DEBUG creado: {debug_path}")
+
+            logging.info(f"📄 Archivo DEBUG creado: {debug_path}")
             return debug_path
-            
+
         except Exception as e:
-            print(f"⚠️ Error creando archivo DEBUG: {e}")
+            logging.warning(f"⚠️ Error creando archivo DEBUG: {e}")
             # Fallback al archivo DEBUG global si falla
             return None
 
@@ -4792,7 +5594,7 @@ Informes con malignidad: {malignant_count}"""
                 
         except Exception as e:
             messagebox.showerror("Error", f"❌ Error al exportar:\n{str(e)}")
-            print(f"Error detallado: {e}")
+            logging.error(f"Error detallado: {e}", exc_info=True)
 
     def _export_full_database_direct(self):
         """Exportar toda la base de datos directamente a la carpeta de Documentos sin diálogo"""
@@ -4831,7 +5633,7 @@ Informes con malignidad: {malignant_count}"""
                 
         except Exception as e:
             messagebox.showerror("Error", f"❌ Error al exportar:\n{str(e)}")
-            print(f"Error detallado: {e}")
+            logging.error(f"Error detallado: {e}", exc_info=True)
 
     def _export_selected_data_professional(self):
         """Exportar solo datos seleccionados a Excel con presentación profesional y diálogo de ubicación"""
@@ -4881,7 +5683,7 @@ Informes con malignidad: {malignant_count}"""
                 
         except Exception as e:
             messagebox.showerror("Error", f"❌ Error al exportar:\n{str(e)}")
-            print(f"Error detallado: {e}")
+            logging.error(f"Error detallado: {e}", exc_info=True)
 
     def _create_professional_excel_export(self, df_data, file_path, export_type):
         """Crear archivo Excel con formato profesional (función común)"""
@@ -4897,7 +5699,7 @@ Informes con malignidad: {malignant_count}"""
                 export_title = "Exportación Completa" if export_type == "completa" else "Exportación de Selección"
                 
                 presentation_data = [
-                    ["EVARISIS CIRUGÍA ONCOLÓGICA - Oncología", ""],
+                    ["EVARISIS CIRUGÍA ONCOLÓGICA", ""],
                     [export_title, ""],
                     ["", ""],
                     ["Información del Reporte", ""],
@@ -4948,7 +5750,7 @@ Informes con malignidad: {malignant_count}"""
                     ["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", ""],
                     ["Este archivo contiene la exportación", ""],
                     ["de la base de datos del sistema EVARISIS", ""],
-                    ["Gestor HUV - Oncología.", ""],
+                    ["Cirugía Oncológica.", ""],
                     ["", ""],
                     ["La información incluye todos los campos", ""],
                     ["almacenados para cada informe médico:", ""],
@@ -5112,16 +5914,16 @@ Informes con malignidad: {malignant_count}"""
                 padding=6,
             )
         except Exception as e:
-            print(f"[WARN] No se pudo configurar Custom.Treeview: {e}")
+            logging.warning(f"No se pudo configurar Custom.Treeview: {e}")
 
 def main():
     """
     Función principal que configura el entorno y lanza la aplicación.
     """
-    print("Iniciando EVARISIS Gestor H.U.V...")
-    
+    logging.info("Iniciando EVARISIS Gestor H.U.V...")
+
     # Configurar el parser de argumentos
-    parser = argparse.ArgumentParser(description="EVARISIS CIRUGÍA ONCOLÓGICA - Oncología")
+    parser = argparse.ArgumentParser(description="EVARISIS CIRUGÍA ONCOLÓGICA")
     
     parser.add_argument("--nombre", type=str, default="Usuario Sistema", help="Nombre del usuario logueado.")
     parser.add_argument("--cargo", type=str, default="Administrador", help="Cargo del usuario logueado.")
@@ -5162,8 +5964,8 @@ def main():
     # Crear y ejecutar la aplicación
     app = App(info_usuario=info_usuario_recibida, tema=tema_ttk)
     app.mainloop()
-    
-    print("Aplicación cerrada. ¡Hasta luego!")
+
+    logging.info("Aplicacion cerrada. Hasta luego!")
 
 
 # === NUEVAS FUNCIONES PARA DETECCIÓN DE DUPLICADOS ===
@@ -5202,9 +6004,9 @@ def _verificar_archivo_duplicado(self, file_path, filename):
             }
         else:
             return {"es_duplicado": False}
-            
+
     except Exception as e:
-        print(f"Error verificando duplicado para {filename}: {e}")
+        logging.error(f"Error verificando duplicado para {filename}: {e}")
         return {"es_duplicado": False, "error": str(e)}
 
 # Agregar estas funciones como métodos de la clase App
@@ -5240,7 +6042,7 @@ def _redirigir_a_visualizador_con_filtro(self, numero_peticion):
         )
         
     except Exception as e:
-        print(f"Error redirigiendo al visualizador: {e}")
+        logging.error(f"Error redirigiendo al visualizador: {e}")
 
 App._redirigir_a_visualizador_con_filtro = _redirigir_a_visualizador_con_filtro
 
@@ -5282,7 +6084,7 @@ def _actualizar_lista_archivos_con_estado(self):
                 self.files_listbox.insert(tk.END, display_text)
                 
     except Exception as e:
-        print(f"Error actualizando lista de archivos: {e}")
+        logging.error(f"Error actualizando lista de archivos: {e}")
 
 App._actualizar_lista_archivos_con_estado = _actualizar_lista_archivos_con_estado
 
@@ -5301,9 +6103,9 @@ def _clear_filters(self):
             
         # Refrescar datos
         self.refresh_data()
-        
+
     except Exception as e:
-        print(f"Error limpiando filtros: {e}")
+        logging.error(f"Error limpiando filtros: {e}")
 
 App._clear_filters = _clear_filters
 
@@ -5352,9 +6154,9 @@ def _crear_footer_inteligente(self):
         footer_text += f"📅 Distribución: {dist_resumen}"
         
         return footer_text
-        
+
     except Exception as e:
-        print(f"Error creando footer inteligente: {e}")
+        logging.error(f"Error creando footer inteligente: {e}")
         return f"💾 Base de datos cargada: {len(self.master_df)} registros"
 
 App._crear_footer_inteligente = _crear_footer_inteligente
@@ -5372,8 +6174,8 @@ def _update_organs_with_advanced_parsing(self, full_text, records):
         
         if not organos_mapeados:
             return 0
-            
-        print(f"🔍 Órganos detectados por parser avanzado: {organos_mapeados}")
+
+        logging.info(f"Organos detectados por parser avanzado: {organos_mapeados}")
         
         # Actualizar registros que no tienen órgano o tienen órgano incompleto
         updated_count = 0
@@ -5381,8 +6183,8 @@ def _update_organs_with_advanced_parsing(self, full_text, records):
         # Obtener números de petición de los registros recién procesados
         numeros_peticion = []
         for record in records:
-            if isinstance(record, dict) and 'N. peticion (0. Numero de biopsia)' in record:
-                numeros_peticion.append(record['N. peticion (0. Numero de biopsia)'])
+            if isinstance(record, dict) and 'Numero de caso' in record:
+                numeros_peticion.append(record['Numero de caso'])
         
         if numeros_peticion:
             with get_connection() as conn:
@@ -5392,11 +6194,11 @@ def _update_organs_with_advanced_parsing(self, full_text, records):
                 for numero_peticion in numeros_peticion:
                     cursor.execute("""
                         UPDATE informes_ihq 
-                        SET "Organo (1. Muestra enviada a patología)" = ?
-                        WHERE "N. peticion (0. Numero de biopsia)" = ? 
-                        AND ("Organo (1. Muestra enviada a patología)" IS NULL 
-                             OR "Organo (1. Muestra enviada a patología)" = '' 
-                             OR "Organo (1. Muestra enviada a patología)" = 'NO ENCONTRADO')
+                        SET "Organo" = ?
+                        WHERE "Numero de caso" = ? 
+                        AND ("Organo" IS NULL 
+                             OR "Organo" = '' 
+                             OR "Organo" = 'NO ENCONTRADO')
                     """, (organos_mapeados, numero_peticion))
                     
                     if cursor.rowcount > 0:
@@ -5405,9 +6207,9 @@ def _update_organs_with_advanced_parsing(self, full_text, records):
                 conn.commit()
         
         return updated_count
-        
+
     except Exception as e:
-        print(f"Error en mapeo avanzado de órganos: {e}")
+        logging.error(f"Error en mapeo avanzado de organos: {e}")
         return 0
 
 App._update_organs_with_advanced_parsing = _update_organs_with_advanced_parsing

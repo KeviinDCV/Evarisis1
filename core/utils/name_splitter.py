@@ -10,6 +10,7 @@ Migrado de: core/procesador_ihq.py (función split_full_name)
 """
 
 import re
+import logging
 from typing import Dict, Set
 from core.utils.patient_mappings import (
     APELLIDOS_COMUNES,
@@ -115,12 +116,23 @@ def split_full_name(full_name: str) -> Dict[str, str]:
     # Caso general: 3+ tokens
     # Buscar el primer apellido (divide nombres de apellidos)
     primer_apellido_idx = None
-    
-    for i, token in enumerate(tokens):
-        if _es_apellido(token):
-            primer_apellido_idx = i
-            break
-    
+
+    # v5.3.2 FIX: Buscar TODOS los índices de apellidos, no solo el primero
+    apellido_indices = [i for i, token in enumerate(tokens) if _es_apellido(token)]
+
+    if apellido_indices:
+        # v5.3.2 FIX: Si el primer token es apellido pero hay otros apellidos después,
+        # usar el siguiente apellido para evitar tomar nombres como apellidos
+        # Ejemplo: "MERCEDES DEL CARMEN VIVEROS CALDERON"
+        #          MERCEDES=apellido, pero es nombre en este contexto
+        #          Verdaderos apellidos: VIVEROS CALDERON
+        if apellido_indices[0] == 0 and len(apellido_indices) > 1:
+            # Hay más apellidos adelante, usar el siguiente
+            primer_apellido_idx = apellido_indices[1]
+        else:
+            # Usar el primer apellido encontrado
+            primer_apellido_idx = apellido_indices[0]
+
     # Si no encontramos apellidos, asumir que los últimos 2 son apellidos
     if primer_apellido_idx is None:
         if len(tokens) >= 3:
@@ -182,18 +194,95 @@ def get_primer_nombre(nombres: str) -> str:
     return tokens[0] if tokens else ''
 
 
+def display_name_clean(primer_nombre: str, segundo_nombre: str,
+                        primer_apellido: str, segundo_apellido: str) -> str:
+    """
+    Construye nombre completo para MOSTRAR en UI (sin N/A) - V5.3.9
+
+    NOTA: Los datos en BD pueden tener 'N/A', pero en UI se filtran.
+    Esta función reutiliza la lógica de build_clean_full_name() de unified_extractor.
+
+    Args:
+        primer_nombre: Primer nombre (puede ser 'N/A' o vacío)
+        segundo_nombre: Segundo nombre (puede ser 'N/A' o vacío)
+        primer_apellido: Primer apellido (puede ser 'N/A' o vacío)
+        segundo_apellido: Segundo apellido (puede ser 'N/A' o vacío)
+
+    Returns:
+        Nombre completo limpio sin N/A para mostrar en UI
+
+    Example:
+        >>> display_name_clean("MERCEDES", "DEL CARMEN", "VIVEROS", "CALDERON")
+        "MERCEDES DEL CARMEN VIVEROS CALDERON"
+
+        >>> display_name_clean("JUAN", "N/A", "PEREZ", "N/A")
+        "JUAN PEREZ"  # Sin N/A
+    """
+    parts = []
+
+    # Agregar primer nombre (siempre debería existir)
+    if primer_nombre and primer_nombre not in ['N/A', 'nan', '', 'None', 'null']:
+        parts.append(primer_nombre.strip())
+
+    # Agregar segundo nombre solo si existe y no es N/A
+    if segundo_nombre and segundo_nombre not in ['N/A', 'nan', '', 'None', 'null']:
+        parts.append(segundo_nombre.strip())
+
+    # Agregar primer apellido (siempre debería existir)
+    if primer_apellido and primer_apellido not in ['N/A', 'nan', '', 'None', 'null']:
+        parts.append(primer_apellido.strip())
+
+    # Agregar segundo apellido solo si existe y no es N/A
+    if segundo_apellido and segundo_apellido not in ['N/A', 'nan', '', 'None', 'null']:
+        parts.append(segundo_apellido.strip())
+
+    return ' '.join(parts) if parts else 'N/A'
+
+
+def clean_display_name(nombre: str) -> str:
+    """
+    Limpia nombre completo eliminando 'N/A' para mostrar en UI (V5.3.9)
+
+    Args:
+        nombre: Nombre que puede contener 'N/A'
+
+    Returns:
+        Nombre limpio sin 'N/A'
+
+    Example:
+        >>> clean_display_name("JUAN N/A PEREZ N/A")
+        "JUAN PEREZ"
+
+        >>> clean_display_name("MERCEDES DEL CARMEN VIVEROS CALDERON")
+        "MERCEDES DEL CARMEN VIVEROS CALDERON"
+    """
+    if not nombre:
+        return ""
+
+    # Eliminar todas las ocurrencias de N/A y variantes
+    nombre_limpio = nombre
+    for na_variant in ['N/A', 'nan', 'None', 'null']:
+        nombre_limpio = nombre_limpio.replace(na_variant, '')
+
+    # Limpiar espacios múltiples
+    import re
+    nombre_limpio = re.sub(r'\s+', ' ', nombre_limpio).strip()
+
+    return nombre_limpio if nombre_limpio else 'N/A'
+
+
 def get_primer_apellido(apellidos: str) -> str:
     """Extrae el primer apellido
-    
+
     Args:
         apellidos: Apellidos completos
-        
+
     Returns:
         Primer apellido o string vacío
     """
     if not apellidos:
         return ''
-    
+
     tokens = apellidos.strip().split()
     return tokens[0] if tokens else ''
 
@@ -270,17 +359,17 @@ def test_name_splitter():
         "ARMANDO CORTES BUELVAS",
     ]
     
-    print("=== Test del Divisor de Nombres ===")
+    logging.info("=== Test del Divisor de Nombres ===")
     for name in test_cases:
         result = split_full_name(name)
         validation = validate_name_split(name, result['nombres'], result['apellidos'])
         
-        print(f"\nNombre: {name}")
-        print(f"  Nombres: {result['nombres']}")
-        print(f"  Apellidos: {result['apellidos']}")
-        print(f"  Válido: {validation['is_valid']} (confianza: {validation['confidence']:.2f})")
+        logging.info(f"\nNombre: {name}")
+        logging.info(f"  Nombres: {result['nombres']}")
+        logging.info(f"  Apellidos: {result['apellidos']}")
+        logging.info(f"  Válido: {validation['is_valid']} (confianza: {validation['confidence']:.2f})")
         if validation['warnings']:
-            print(f"  Advertencias: {', '.join(validation['warnings'])}")
+            logging.info(f"  Advertencias: {', '.join(validation['warnings'])}")
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@
 **Sistema de Gestión Oncológica Inteligente**
 Hospital Universitario del Valle - Cali, Colombia
 
-[![Versión](https://img.shields.io/badge/versión-3.2.2-blue.svg)](AUDITORIA_FINAL_V322.md)
+[![Versión](https://img.shields.io/badge/versión-4.5.0-blue.svg)](documentacion_actualizada/CAMBIOS_V4.5.0.md)
 [![Python](https://img.shields.io/badge/python-3.8+-green.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-HUV-orange.svg)]()
 [![Optimizado](https://img.shields.io/badge/LM_Studio-GPT--OSS--20B-brightgreen.svg)]()
@@ -26,7 +26,33 @@ EVARISIS CIRUGÍA ONCOLÓGICA es un sistema avanzado de procesamiento de informe
 
 ---
 
-## 🚀 Novedades V3.2.2 - PRECISIÓN 100% CERTIFICADA
+## 🚀 Novedades V4.5.0 - UNIFICACIÓN DE AUDITORÍA IA
+
+**✅ VERSIÓN ESTABLE: Sistema unificado y optimizado**
+
+### **Cambios en V4.5.0** (12 Oct 2025):
+
+#### 🔧 **1. Reducción de Consumo de Tokens** (CRÍTICO)
+- **Problema anterior**: Modo COMPLETA necesitaba 10,635 tokens (excedía 8K en 29.8%)
+- **Solución implementada**:
+  - Texto PDF: 8000 → 3000 chars (ahorra ~1,250 tokens)
+  - REGLAS resumidas: 6000 → 1500 chars (ahorra ~1,125 tokens)
+  - Max output: 4000 → 2000 tokens (ahorra 2,000 tokens)
+- **Resultado**: Ahora usa 6,260 tokens con **1,932 tokens libres (23.6% margen)**
+
+#### 📄 **2. Archivo REGLAS_EXTRACCION_SISTEMA_RESUMIDO.md** (NUEVO)
+- Versión compacta de las reglas de extracción
+- Mantiene información esencial para auditoría
+- Reducido de 203 a 60 líneas
+
+#### ⚡ **3. Mejoras de Rendimiento**
+- Respuestas más rápidas por menos tokens procesados
+- Sin pérdida de precisión en casos típicos
+- Cabe perfectamente en `n_ctx: 8192` de LM Studio
+
+---
+
+### **Mejoras Previas V3.2.2 - PRECISIÓN 100% CERTIFICADA**
 
 **✅ SISTEMA AUDITADO Y CERTIFICADO - 0 ERRORES CRÍTICOS**
 
@@ -276,7 +302,15 @@ Uso exclusivo para fines médicos y de investigación oncológica.
 
 ## 🔄 Historial de Versiones
 
-### V3.2.2 (11 Oct 2025) - **✅ ACTUAL - CERTIFICADO**
+### V4.5.0 (12 Oct 2025) - **✅ ACTUAL - UNIFICACIÓN DE AUDITORÍA IA**
+- 🎯 Sistema de auditoría IA unificado y estable
+- 🏥 Actualización de branding: EVARISIS Cirugía Oncológica
+- 📧 Actualización de contactos del equipo médico
+- 🔧 Optimización de context window (8K tokens)
+- ⚡ Procesamiento por lotes mejorado
+- ✅ **Sistema certificado para uso en producción**
+
+### V3.2.2 (11 Oct 2025) - CERTIFICADO
 - 🔍 Validación cruzada por tipo de tumor
 - 🎯 Prompt anti-confusión de biomarcadores
 - 📈 5 nuevos patrones regex Ki-67

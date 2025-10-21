@@ -286,7 +286,7 @@ def generar_resumen_registro(registro: Dict[str, Any]) -> str:
     Returns:
         String con resumen del registro
     """
-    numero_peticion = registro.get("N. peticion (0. Numero de biopsia)", "N/A")
+    numero_peticion = registro.get("Numero de caso", "N/A")
     nombre = registro.get("Primer nombre", "")
     apellido = registro.get("Primer apellido", "")
     edad = registro.get("Edad", "N/A")

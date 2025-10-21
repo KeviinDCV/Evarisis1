@@ -6,6 +6,7 @@ Contiene los prompts del sistema en archivos .txt para fácil edición
 """
 
 from pathlib import Path
+import logging
 
 def cargar_prompt(nombre_archivo):
     """Carga un prompt desde archivo .txt"""
@@ -14,7 +15,7 @@ def cargar_prompt(nombre_archivo):
         with open(ruta, 'r', encoding='utf-8') as f:
             return f.read()
     except Exception as e:
-        print(f"Error cargando prompt {nombre_archivo}: {e}")
+        logging.info(f"Error cargando prompt {nombre_archivo}: {e}")
         return ""
 
 def get_system_prompt_completa():

@@ -10,6 +10,7 @@ Nota: Toda la configuración de patrones está ahora en este archivo para centra
 """
 
 import re
+import logging
 import sys
 from pathlib import Path
 from typing import Dict, Any, Optional
@@ -26,6 +27,11 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['HER-2', 'HER 2', 'CERB-B2', 'ERBB2'],
         'descripcion': 'Receptor 2 del factor de crecimiento epidérmico humano',
         'patrones': [
+            # V5.2: PATRONES MEJORADOS - Capturan TODO (score, intensidad, calificadores)
+            r'(?i)sobreexpresi[oó]n\s+de\s+(?:oncog[eé]n\s+)?her[^\w]*2[:\s]*-?\s*(.+?)(?:\.|$|\n)',
+            r'(?i)expresi[oó]n\s+del?\s+(?:oncog[eé]n\s+)?her[^\w]*2[:\s]*-?\s*(.+?)(?:\.|$|\n)',
+            r'(?i)her[^\w]*2[:\s]*-?\s*(.+?)(?:\.|$|\n)',
+            # Patrones fallback (compatibilidad con formato simple)
             r'(?i)her[^\w]*2[:\s]*(\d+\+?)',
             r'(?i)her[^\w]*2[:\s]*(positivo|negativo|equivoco)',
             r'(?i)cerb[^\w]*b[^\w]*2[:\s]*(\d+\+?|positivo|negativo)',
@@ -49,6 +55,9 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['KI-67', 'KI 67', 'INDICE MITOTICO', 'ÍNDICE MITÓTICO'],
         'descripcion': 'Índice de proliferación celular',
         'patrones': [
+            # V5.3.1: PRIORIDAD 1 - Capturar RANGOS primero (ej: "51-60%")
+            r'(?i)ki[^\w]*67[:\s]*(\d{1,3}-\d{1,3})\s*%',  # "Ki67: 51-60%"
+            r'(?i)ki[^\w]*67\s+del\s+(\d{1,3}-\d{1,3})\s*%',  # "Ki67 del 51-60%"
             # CORREGIDO v5.0.1: Patrones más específicos para evitar capturar porcentajes de otros campos
             # BUG FIX: Evitar capturar "10%" de "Diferenciación glandular = 3 (Menor del 10%)"
             r'(?i)[ÍI]ndice\s+de\s+proliferaci[óo]n\s+c[ée]lular\s+(?:medido\s+con\s+)?(?:\()?ki[^\w]*67(?:\))?\s*[:\s]*(\d{1,3})\s*%',
@@ -61,7 +70,6 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)(\d{1,3})\s*%\s+ki[^\w]*67',  # "15% Ki67" (orden invertido)
             r'(?i)ki[^\w]*67\s+menor\s+(?:al|del)\s+(\d{1,3})\s*%',  # "Ki67 menor al 5%"
             r'(?i)ki[^\w]*67\s+expresi[óo]n\s+limitada',  # "Ki67 expresión limitada" → texto descriptivo
-            r'(?i)ki[^\w]*67[:\s]+(\d{1,3})-(\d{1,3})\s*%',  # "Ki67: 1-2%" → capturar rango
             r'(?i)ki[^\w]*67[:\s]+aproximadamente\s+(\d{1,3})\s*%',  # "Ki67: aproximadamente 5%"
         ],
         'tipo_valor': 'PERCENTAGE',
@@ -77,10 +85,14 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['RECEPTORES ESTROGENOS', 'RE', 'ESTROGENO', 'ESTRÓGENO'],
         'descripcion': 'Receptores de estrógenos',
         'patrones': [
-            r'(?i)\bER\b[:\s]*(positivo|negativo|\d+%)',
+            # V5.2: PATRONES MEJORADOS - Capturan CONTEXTO COMPLETO (porcentajes, intensidad, calificadores)
+            # Captura hasta el punto o salto de línea para obtener TODA la información
+            r'(?i)expresi[oó]n\s+de\s+receptor[es]*\s+de\s+estr[oó]geno[s]?[:\s]*-?\s*(.+?)(?:\.|$|\n)',
+            r'(?i)receptor[es]*\s+de\s+estr[oó]geno[s]?[:\s]*-?\s*(.+?)(?:\.|$|\n)',
+            r'(?i)\bER\b[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)\bRE\b[:\s]*(.+?)(?:\.|$|\n)',
+            # Patrones fallback (compatibilidad con formato simple)
             r'(?i)(?:receptor[es]*\s+)?estr[oó]geno[s]?[:\s]*(positivo|negativo|\d+%)',
-            r'(?i)\bRE\b[:\s]*(positivo|negativo|\d+%)',
-            r'(?i)(?:receptor[es]*\s+)?estrogen[os]?[:\s]*(positivo|negativo|\d+%)',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE'],
         'umbral_positividad': 1,
@@ -93,12 +105,18 @@ BIOMARKER_DEFINITIONS = {
     },
 
     'PR': {
-        'nombres_alternativos': ['RECEPTORES PROGESTERONA', 'RP', 'PROGESTERONA'],
+        'nombres_alternativos': ['RECEPTORES PROGESTERONA', 'RP', 'PROGESTERONA', 'PROGRESTERONA'],
         'descripcion': 'Receptores de progesterona',
         'patrones': [
-            r'(?i)(?:receptor[es]*\s+)?progesterona[:\s]*(positivo|negativo|\d+%)',
-            r'(?i)\bRP\b[:\s]*(positivo|negativo|\d+%)',
-            r'(?i)\bPR\b[:\s]*(positivo|negativo|\d+%)',
+            # V5.3.1: CORREGIDO - Manejar typo común "PROGRESTERONA" (sin O)
+            r'(?i)receptor[es]*\s+de\s+progresterona[:\s]*-?\s*(.+?)(?:\.|$|\n)',
+            # V5.2: PATRONES MEJORADOS - Capturan CONTEXTO COMPLETO (porcentajes, intensidad, calificadores)
+            r'(?i)expresi[oó]n\s+de\s+receptor[es]*\s+de\s+progesterona[:\s]*-?\s*(.+?)(?:\.|$|\n)',
+            r'(?i)receptor[es]*\s+de\s+progesterona[:\s]*-?\s*(.+?)(?:\.|$|\n)',
+            r'(?i)\bRP\b[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)\bPR\b[:\s]*(.+?)(?:\.|$|\n)',
+            # Patrones fallback (compatibilidad con formato simple)
+            r'(?i)(?:receptor[es]*\s+)?progr[e]?sterona[:\s]*(positivo|negativo|\d+%)',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE'],
         'umbral_positividad': 1,
@@ -130,8 +148,11 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['P-16', 'P 16'],
         'descripcion': 'Proteína p16',
         'patrones': [
+            # V5.2: Captura calificadores como "en bloque", "difuso", "focal"
+            r'(?i)p16[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)p[^\w]*16[:\s]*(.+?)(?:\.|$|\n)',
+            # Fallback
             r'(?i)p16[:\s]*(positivo|negativo)',
-            r'(?i)p[^\w]*16[:\s]*(positivo|negativo)',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'normalizacion': {
@@ -146,8 +167,11 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['P-40', 'P 40'],
         'descripcion': 'Proteína p40',
         'patrones': [
+            # V5.2: Captura TODO el contexto
+            r'(?i)p40[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)p[^\w]*40[:\s]*(.+?)(?:\.|$|\n)',
+            # Fallback
             r'(?i)p40[:\s]*(positivo|negativo)',
-            r'(?i)p[^\w]*40[:\s]*(positivo|negativo)',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'normalizacion': {
@@ -162,8 +186,11 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['P-53', 'P 53'],
         'descripcion': 'Proteína supresora tumoral p53',
         'patrones': [
+            # V5.2: Captura "con sobreexpresión", porcentajes, intensidad
+            r'(?i)p53[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)p[^\w]*53[:\s]*(.+?)(?:\.|$|\n)',
+            # Fallback
             r'(?i)p53[:\s]*(positivo|negativo|\d+%)',
-            r'(?i)p[^\w]*53[:\s]*(positivo|negativo|\d+%)',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE'],
         'normalizacion': {
@@ -380,6 +407,66 @@ BIOMARKER_DEFINITIONS = {
             'negativo': 'NEGATIVO',
             'negativa': 'NEGATIVO',
             'neg': 'NEGATIVO',
+        }
+    },
+
+    # V5.2: BIOMARCADORES FALTANTES identificados en análisis de casos IHQ250022, etc.
+    'WT1': {
+        'nombres_alternativos': ['WT-1', 'WT 1', 'WILMS TUMOR 1'],
+        'descripcion': 'Tumor de Wilms 1',
+        'patrones': [
+            r'(?i)wt1[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)wt[^\w]*1[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)positivas?\s+para\s+.*?wt\s*1(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?wt\s*1(?:\s|,|$)',
+            # Fallback
+            r'(?i)wt1[:\s]*(positivo|negativo|positiva|negativa)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'positiva': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'negativa': 'NEGATIVO',
+        }
+    },
+
+    'PAX8': {
+        'nombres_alternativos': ['PAX-8', 'PAX 8'],
+        'descripcion': 'Factor de transcripción PAX8',
+        'patrones': [
+            r'(?i)pax[^\w]*8[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)pax\s*8[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)positivas?\s+para\s+.*?pax\s*8(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?pax\s*8(?:\s|,|$)',
+            # Fallback
+            r'(?i)pax[^\w]*8[:\s]*(positivo|negativo|positiva|negativa)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'positiva': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'negativa': 'NEGATIVO',
+        }
+    },
+
+    'NAPSIN': {
+        'nombres_alternativos': ['NAPSIN-A', 'NAPSIN A', 'NAPSINA', 'NAPSINA A'],
+        'descripcion': 'Napsina A',
+        'patrones': [
+            r'(?i)napsin[a]?(?:\s*a)?[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)positivas?\s+para\s+.*?napsin[a]?(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?napsin[a]?(?:\s|,|$)',
+            # Fallback
+            r'(?i)napsin[a]?[:\s]*(positivo|negativo|positiva|negativa)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'positiva': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'negativa': 'NEGATIVO',
         }
     },
 
@@ -685,6 +772,101 @@ BIOMARKER_DEFINITIONS = {
             'negativa': 'NEGATIVO',
         }
     },
+
+    # V5.3: MARCADORES MMR (Mismatch Repair) - CRÍTICOS PARA INESTABILIDAD MICROSATELITAL
+    'MLH1': {
+        'nombres_alternativos': ['MLH-1', 'MLH 1'],
+        'descripcion': 'Proteína de reparación de ADN MLH1',
+        'patrones': [
+            # Formato especial: "Expresión nuclear intacta" o "Pérdida de expresión nuclear"
+            r'(?i)MLH1[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)MLH[^\w]*1[:\s]*(.+?)(?:\.|$|\n)',
+            # Patrones específicos para MMR
+            r'(?i)MLH1[:\s]*Expresi[óo]n\s+nuclear\s+(intacta|ausente|p[ée]rdida)',
+            r'(?i)MLH1[:\s]*(intacta|ausente|positivo|negativo)',
+        ],
+        'valores_posibles': ['ESTABLE', 'INESTABLE', 'INTACTA', 'AUSENTE'],
+        'normalizacion': {
+            'intacta': 'ESTABLE',
+            'expresión nuclear intacta': 'ESTABLE',
+            'expresion nuclear intacta': 'ESTABLE',
+            'ausente': 'INESTABLE',
+            'pérdida': 'INESTABLE',
+            'perdida': 'INESTABLE',
+            'pérdida de expresión': 'INESTABLE',
+            'positivo': 'ESTABLE',
+            'negativo': 'INESTABLE',
+        }
+    },
+
+    'MSH2': {
+        'nombres_alternativos': ['MSH-2', 'MSH 2'],
+        'descripcion': 'Proteína de reparación de ADN MSH2',
+        'patrones': [
+            r'(?i)MSH2[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)MSH[^\w]*2[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)MSH2[:\s]*Expresi[óo]n\s+nuclear\s+(intacta|ausente|p[ée]rdida)',
+            r'(?i)MSH2[:\s]*(intacta|ausente|positivo|negativo)',
+        ],
+        'valores_posibles': ['ESTABLE', 'INESTABLE', 'INTACTA', 'AUSENTE'],
+        'normalizacion': {
+            'intacta': 'ESTABLE',
+            'expresión nuclear intacta': 'ESTABLE',
+            'expresion nuclear intacta': 'ESTABLE',
+            'ausente': 'INESTABLE',
+            'pérdida': 'INESTABLE',
+            'perdida': 'INESTABLE',
+            'pérdida de expresión': 'INESTABLE',
+            'positivo': 'ESTABLE',
+            'negativo': 'INESTABLE',
+        }
+    },
+
+    'MSH6': {
+        'nombres_alternativos': ['MSH-6', 'MSH 6', 'MSH6 Y'],  # "MSH6 Y" es un error común de OCR
+        'descripcion': 'Proteína de reparación de ADN MSH6',
+        'patrones': [
+            r'(?i)MSH6[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)MSH[^\w]*6[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)MSH6[:\s]*Expresi[óo]n\s+nuclear\s+(intacta|ausente|p[ée]rdida)',
+            r'(?i)MSH6[:\s]*(intacta|ausente|positivo|negativo)',
+        ],
+        'valores_posibles': ['ESTABLE', 'INESTABLE', 'INTACTA', 'AUSENTE'],
+        'normalizacion': {
+            'intacta': 'ESTABLE',
+            'expresión nuclear intacta': 'ESTABLE',
+            'expresion nuclear intacta': 'ESTABLE',
+            'ausente': 'INESTABLE',
+            'pérdida': 'INESTABLE',
+            'perdida': 'INESTABLE',
+            'pérdida de expresión': 'INESTABLE',
+            'positivo': 'ESTABLE',
+            'negativo': 'INESTABLE',
+        }
+    },
+
+    'PMS2': {
+        'nombres_alternativos': ['PMS-2', 'PMS 2'],
+        'descripcion': 'Proteína de reparación de ADN PMS2',
+        'patrones': [
+            r'(?i)PMS2[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)PMS[^\w]*2[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)PMS2[:\s]*Expresi[óo]n\s+nuclear\s+(intacta|ausente|p[ée]rdida)',
+            r'(?i)PMS2[:\s]*(intacta|ausente|positivo|negativo)',
+        ],
+        'valores_posibles': ['ESTABLE', 'INESTABLE', 'INTACTA', 'AUSENTE'],
+        'normalizacion': {
+            'intacta': 'ESTABLE',
+            'expresión nuclear intacta': 'ESTABLE',
+            'expresion nuclear intacta': 'ESTABLE',
+            'ausente': 'INESTABLE',
+            'pérdida': 'INESTABLE',
+            'perdida': 'INESTABLE',
+            'pérdida de expresión': 'INESTABLE',
+            'positivo': 'ESTABLE',
+            'negativo': 'INESTABLE',
+        }
+    },
 }
 
 # Valores de normalización globales
@@ -710,8 +892,70 @@ def get_biomarker_info(biomarker_name):
     return BIOMARKER_DEFINITIONS.get(biomarker_name.upper(), None)
 
 
+def extract_report_section(text: str) -> str:
+    """Extrae la sección REPORTE DE BIOMARCADORES del texto
+
+    v5.3.1: NUEVO - Prioriza resultados sobre descripción de anticuerpos
+
+    Args:
+        text: Texto completo del informe
+
+    Returns:
+        Texto de la sección de reporte, o string vacío si no se encuentra
+    """
+    if not text:
+        return ''
+
+    # Patrones para identificar la sección REPORTE
+    report_start_patterns = [
+        r'REPORTE\s+DE\s+BIOMARCADORES\s*:?',
+        r'RESULTADOS?\s+(?:DE\s+)?INMUNOHISTOQU[ÍI]MICA',
+        r'RESULTADOS?\s+(?:DE\s+)?IHQ',
+        r'BIOMARCADORES\s*:',
+    ]
+
+    # Patrones para el final de la sección (antes de diagnóstico o comentarios)
+    report_end_patterns = [
+        r'DIAGN[ÓO]STICO',
+        r'COMENTARIOS',
+        r'Isquemia\s+fr[íi]a',
+        r'diagnósticos?\s+de\s+"',  # Antes de diagnóstico citado
+    ]
+
+    # Buscar inicio de sección REPORTE
+    report_start = None
+    for pattern in report_start_patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            report_start = match.end()
+            break
+
+    if report_start is None:
+        return ''  # No se encontró sección REPORTE
+
+    # Buscar final de sección
+    report_end = None
+    text_after_start = text[report_start:]
+    for pattern in report_end_patterns:
+        match = re.search(pattern, text_after_start, re.IGNORECASE)
+        if match:
+            report_end = report_start + match.start()
+            break
+
+    # Si no se encontró final, usar hasta el final del texto
+    if report_end is None:
+        report_end = len(text)
+
+    # Extraer la sección
+    report_section = text[report_start:report_end].strip()
+
+    return report_section
+
+
 def extract_biomarkers(text: str) -> Dict[str, str]:
     """Extrae todos los biomarcadores configurados del texto
+
+    v5.3.1: MEJORADO - Prioriza sección REPORTE sobre descripción de anticuerpos
 
     Args:
         text: Texto del informe IHQ
@@ -725,15 +969,27 @@ def extract_biomarkers(text: str) -> Dict[str, str]:
 
     results = {}
 
+    # v5.3.1: NUEVO - Extraer sección REPORTE primero
+    report_section = extract_report_section(text)
+    search_text = report_section if report_section else text
+
     # NUEVA FUNCIÓN: Detectar formato narrativo de biomarcadores
-    narrative_results = extract_narrative_biomarkers(text)
+    # Buscar PRIMERO en sección REPORTE si existe
+    narrative_results = extract_narrative_biomarkers(search_text)
     results.update(narrative_results)
 
     # Procesar cada biomarcador definido en configuración (método original)
+    # Buscar PRIMERO en sección REPORTE si existe
     for biomarker_name, definition in BIOMARKER_DEFINITIONS.items():
         # Solo procesar si no fue encontrado por método narrativo
         if biomarker_name not in results:
-            value = extract_single_biomarker(text, biomarker_name, definition)
+            # Intentar primero en sección REPORTE
+            value = extract_single_biomarker(search_text, biomarker_name, definition)
+
+            # Si no se encontró en REPORTE y existe sección REPORTE, buscar en texto completo como fallback
+            if not value and report_section:
+                value = extract_single_biomarker(text, biomarker_name, definition)
+
             if value:
                 results[biomarker_name] = value
 
@@ -1037,8 +1293,29 @@ def normalize_biomarker_name(raw_name: str) -> Optional[str]:
         'NAPSIN': 'NAPSIN',
         'NAPSINA A': 'NAPSIN',
         'NAPSIN A': 'NAPSIN',
+        # V5.2: BIOMARCADORES FALTANTES
+        'WT1': 'WT1',
+        'WT-1': 'WT1',
+        'WT 1': 'WT1',
+        'PAX8': 'PAX8',
+        'PAX-8': 'PAX8',
+        'PAX 8': 'PAX8',
+        # V5.3: MARCADORES MMR (Mismatch Repair)
+        'MLH1': 'MLH1',
+        'MLH-1': 'MLH1',
+        'MLH 1': 'MLH1',
+        'MSH2': 'MSH2',
+        'MSH-2': 'MSH2',
+        'MSH 2': 'MSH2',
+        'MSH6': 'MSH6',
+        'MSH-6': 'MSH6',
+        'MSH 6': 'MSH6',
+        'MSH6 Y': 'MSH6',  # Error común de OCR
+        'PMS2': 'PMS2',
+        'PMS-2': 'PMS2',
+        'PMS 2': 'PMS2',
     }
-    
+
     return name_mapping.get(raw_clean)
 
 
@@ -1109,6 +1386,8 @@ def normalize_biomarker_value(
 ) -> str:
     """Normaliza el valor de un biomarcador
 
+    v5.3.1: MEJORADO - Manejo de rangos (ej: "51-60%")
+
     Args:
         raw_value: Valor extraído del texto
         specific_normalization: Normalización específica del biomarcador
@@ -1133,7 +1412,16 @@ def normalize_biomarker_value(
 
     # Si es porcentaje, asegurar que tenga el símbolo %
     if value_type == 'PERCENTAGE' or value_type == 'NUMERIC':
-        # Extraer solo números
+        # V5.3.1: NUEVO - Manejar rangos (ej: "51-60")
+        range_match = re.search(r'(\d{1,3})-(\d{1,3})', value_clean)
+        if range_match:
+            # Es un rango, conservarlo completo
+            range_str = f"{range_match.group(1)}-{range_match.group(2)}"
+            if value_type == 'PERCENTAGE' and '%' not in raw_value:
+                return f"{range_str}%"
+            return range_str
+
+        # Extraer solo números (caso sin rango)
         number_match = re.search(r'(\d+)', value_clean)
         if number_match:
             number = number_match.group(1)
@@ -1218,8 +1506,8 @@ if __name__ == "__main__":
     """
 
     biomarkers = extract_biomarkers(sample_text)
-    print("Biomarcadores extraídos:")
+    logging.info("Biomarcadores extraídos:")
     for name, value in biomarkers.items():
-        print(f"  {name}: {value}")
+        logging.info(f"  {name}: {value}")
 
-    print(f"\nResumen: {get_biomarker_summary(biomarkers)}")
+    logging.info(f"\nResumen: {get_biomarker_summary(biomarkers)}")

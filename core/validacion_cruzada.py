@@ -14,6 +14,7 @@ Fecha: 11 de octubre de 2025
 """
 
 import re
+import logging
 import sys
 import io
 from typing import Dict, List, Tuple, Optional
@@ -38,13 +39,13 @@ PERFILES_TUMORALES = {
     "meningioma": PerfilTumor(
         nombre="Meningioma",
         biomarcadores_esperados=[
-            "IHQ_RECEPTOR_PROGESTERONOS",
+            "IHQ_RECEPTOR_PROGESTERONA",
             "IHQ_EMA",
             "IHQ_KI-67",
             "IHQ_VIMENTINA"
         ],
         biomarcadores_inesperados=[
-            "IHQ_RECEPTOR_ESTROGENO",  # NO debería tener ER
+            "IHQ_RECEPTOR_ESTROGENOS",  # NO debería tener ER
             "IHQ_HER2",  # NO es cáncer de mama
             "IHQ_CDX2",  # NO es intestinal
             "IHQ_TTF1"   # NO es pulmonar
@@ -65,8 +66,8 @@ PERFILES_TUMORALES = {
     "cancer_mama": PerfilTumor(
         nombre="Cáncer de mama",
         biomarcadores_esperados=[
-            "IHQ_RECEPTOR_ESTROGENO",
-            "IHQ_RECEPTOR_PROGESTERONOS",
+            "IHQ_RECEPTOR_ESTROGENOS",
+            "IHQ_RECEPTOR_PROGESTERONA",
             "IHQ_HER2",
             "IHQ_KI-67"
         ],
@@ -100,8 +101,8 @@ PERFILES_TUMORALES = {
             "IHQ_KI-67"
         ],
         biomarcadores_inesperados=[
-            "IHQ_RECEPTOR_ESTROGENO",
-            "IHQ_RECEPTOR_PROGESTERONOS",
+            "IHQ_RECEPTOR_ESTROGENOS",
+            "IHQ_RECEPTOR_PROGESTERONA",
             "IHQ_HER2",
             "IHQ_CDX2",
             "IHQ_TTF1"
@@ -129,8 +130,8 @@ PERFILES_TUMORALES = {
             "IHQ_PDL-1"
         ],
         biomarcadores_inesperados=[
-            "IHQ_RECEPTOR_ESTROGENO",
-            "IHQ_RECEPTOR_PROGESTERONOS",
+            "IHQ_RECEPTOR_ESTROGENOS",
+            "IHQ_RECEPTOR_PROGESTERONA",
             "IHQ_HER2",
             "IHQ_CDX2",
             "IHQ_CD20",
@@ -156,8 +157,8 @@ PERFILES_TUMORALES = {
             "IHQ_KI-67"
         ],
         biomarcadores_inesperados=[
-            "IHQ_RECEPTOR_ESTROGENO",
-            "IHQ_RECEPTOR_PROGESTERONOS",
+            "IHQ_RECEPTOR_ESTROGENOS",
+            "IHQ_RECEPTOR_PROGESTERONA",
             "IHQ_HER2",
             "IHQ_TTF1",
             "IHQ_P40",
@@ -183,8 +184,8 @@ PERFILES_TUMORALES = {
             "IHQ_KI-67"
         ],
         biomarcadores_inesperados=[
-            "IHQ_RECEPTOR_ESTROGENO",
-            "IHQ_RECEPTOR_PROGESTERONOS",
+            "IHQ_RECEPTOR_ESTROGENOS",
+            "IHQ_RECEPTOR_PROGESTERONA",
             "IHQ_HER2",
             "IHQ_CDX2",
             "IHQ_TTF1",
@@ -208,8 +209,8 @@ PERFILES_TUMORALES = {
             "IHQ_KI-67"
         ],
         biomarcadores_inesperados=[
-            "IHQ_RECEPTOR_ESTROGENO",
-            "IHQ_RECEPTOR_PROGESTERONOS",
+            "IHQ_RECEPTOR_ESTROGENOS",
+            "IHQ_RECEPTOR_PROGESTERONA",
             "IHQ_HER2",
             "IHQ_CD20",
             "IHQ_CD3"
@@ -232,8 +233,8 @@ PERFILES_TUMORALES = {
             "IHQ_GFAP"  # No está en BD actual pero es esperado
         ],
         biomarcadores_inesperados=[
-            "IHQ_RECEPTOR_ESTROGENO",
-            "IHQ_RECEPTOR_PROGESTERONOS",
+            "IHQ_RECEPTOR_ESTROGENOS",
+            "IHQ_RECEPTOR_PROGESTERONA",
             "IHQ_HER2",
             "IHQ_CDX2",
             "IHQ_TTF1",
@@ -430,30 +431,30 @@ def generar_reporte_validacion(casos_validados: List[Dict]) -> str:
 
 if __name__ == "__main__":
     # Test con caso IHQ250010 (el error real detectado)
-    print("🔍 Test de Validación Cruzada")
-    print("=" * 80)
+    logging.info("🔍 Test de Validación Cruzada")
+    logging.info("=" * 80)
 
     # Caso de prueba: Meningioma con ER incorrecto
     caso_test = {
-        "N. peticion (0. Numero de biopsia)": "IHQ250010",
+        "Numero de caso": "IHQ250010",
         "Diagnostico Principal": "MENINGIOMA MENINGOTELIAL, WHO 1",
-        "IHQ_RECEPTOR_ESTROGENO": "POSITIVO",  # ERROR: No debería estar
-        "IHQ_RECEPTOR_PROGESTERONOS": "POSITIVO",  # CORRECTO
+        "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",  # ERROR: No debería estar
+        "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",  # CORRECTO
         "IHQ_EMA": "POSITIVO",  # CORRECTO
         "IHQ_KI-67": "1-2%"  # CORRECTO
     }
 
     resultado = validar_caso_completo(caso_test)
 
-    print(f"\nCaso: {caso_test['N. peticion (0. Numero de biopsia)']}")
-    print(f"Diagnóstico: {caso_test['Diagnostico Principal']}")
-    print(f"Tipo de tumor detectado: {resultado['tipo_tumor_detectado']}")
-    print(f"¿Válido?: {'✅ SÍ' if resultado['valido'] else '❌ NO'}")
-    print(f"Biomarcadores validados: {resultado['biomarcadores_validados']}")
-    print(f"Inconsistencias críticas: {resultado['inconsistencias_criticas']}")
-    print("\nAdvertencias:")
+    logging.info(f"\nCaso: {caso_test['N. peticion (0. Numero de biopsia)']}")
+    logging.info(f"Diagnóstico: {caso_test['Diagnostico Principal']}")
+    logging.info(f"Tipo de tumor detectado: {resultado['tipo_tumor_detectado']}")
+    logging.info(f"¿Válido?: {'✅ SÍ' if resultado['valido'] else '❌ NO'}")
+    logging.info(f"Biomarcadores validados: {resultado['biomarcadores_validados']}")
+    logging.info(f"Inconsistencias críticas: {resultado['inconsistencias_criticas']}")
+    logging.info("\nAdvertencias:")
     for adv in resultado["advertencias"]:
-        print(f"  {adv}")
+        logging.info(f"  {adv}")
 
-    print("\n" + "=" * 80)
-    print("✅ Test completado")
+    logging.info("\n" + "=" * 80)
+    logging.info("✅ Test completado")

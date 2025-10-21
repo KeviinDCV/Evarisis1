@@ -1,0 +1,28 @@
+{
+  "numero_peticion": "IHQ251037",
+  "timestamp": "2025-10-21T00:32:12.677347",
+  "resumen": {
+    "total_campos_validados": 1,
+    "campos_correctos": 1,
+    "total_discrepancias": 0,
+    "total_correcciones_sugeridas": 0,
+    "correcciones_criticas": 0,
+    "correcciones_importantes": 0,
+    "correcciones_opcionales": 0,
+    "tokens_usados": 3895
+  },
+  "discrepancias": [],
+  "correcciones_sugeridas": {
+    "criticas": [],
+    "importantes": [],
+    "opcionales": []
+  },
+  "campos_correctos": [
+    "nombre_completo"
+  ],
+  "debug_map_usado": "IHQ251037_20251020_205917",
+  "metadata": {
+    "caracteres_procesados": 193865,
+    "tiempo_total_extraccion": 0
+  }
+}

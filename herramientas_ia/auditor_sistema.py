@@ -1,0 +1,934 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+🔍 AUDITOR DE SISTEMA - Herramienta Consolidada EVARISIS
+==========================================================
+
+Consolida 4 herramientas en una sola:
+1. Auditor_bd_pdf.py - Auditoría PDF vs BD
+2. leer_texto_caso.py - Lectura OCR
+3. verificar_mapeo_biomarcadores.py - Validación mapeo
+4. limpiar_encabezados_estudios.py - Limpieza headers
+
+Autor: Sistema EVARISIS
+Versión: 1.0.0
+Fecha: 20 de octubre de 2025
+"""
+
+import sys
+import os
+import json
+import sqlite3
+import argparse
+import re
+from pathlib import Path
+from typing import Dict, List, Tuple, Optional, Any, Set
+from datetime import datetime
+
+# Configurar salida UTF-8 en Windows
+if sys.platform.startswith('win'):
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+
+# Agregar path del proyecto
+PROJECT_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
+from core.database_manager import DB_FILE, TABLE_NAME
+
+
+class AuditorSistema:
+    """Auditor consolidado: Auditoría, OCR, Mapeo, Limpieza"""
+
+    # Headers de tabla que NO son biomarcadores
+    ENCABEZADOS_TABLA = {
+        'N. ESTUDIO', 'N.ESTUDIO', 'N ESTUDIO', 'ESTUDIO',
+        'TIPO ESTUDIO', 'TIPO DE ESTUDIO', 'ALMACENAMIENTO',
+        'ORGANO', 'ÓRGANO', 'FECHA TOMA', 'BLOQUES Y LAMINAS', 'BLOQUES Y LÁMINAS',
+    }
+
+    # Mapeo completo de biomarcadores conocidos
+    BIOMARCADORES = {
+        'KI-67': 'IHQ_KI-67', 'KI67': 'IHQ_KI-67',
+        'HER2': 'IHQ_HER2', 'HER-2': 'IHQ_HER2',
+        'RECEPTOR DE ESTRÓGENO': 'IHQ_RECEPTOR_ESTROGENOS',
+        'RECEPTORES DE ESTRÓGENO': 'IHQ_RECEPTOR_ESTROGENOS',
+        'RE': 'IHQ_RECEPTOR_ESTROGENOS', 'ER': 'IHQ_RECEPTOR_ESTROGENOS',
+        'RECEPTOR DE PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',
+        'RECEPTORES DE PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',
+        'RP': 'IHQ_RECEPTOR_PROGESTERONA', 'PR': 'IHQ_RECEPTOR_PROGESTERONA',
+        'P53': 'IHQ_P53', 'PDL-1': 'IHQ_PDL-1', 'PDL1': 'IHQ_PDL-1',
+        'P16': 'IHQ_P16_ESTADO', 'P40': 'IHQ_P40_ESTADO', 'P63': 'IHQ_P63',
+        'CK7': 'IHQ_CK7', 'CK20': 'IHQ_CK20', 'CDX2': 'IHQ_CDX2',
+        'TTF1': 'IHQ_TTF1', 'TTF-1': 'IHQ_TTF1',
+        'CHROMOGRANINA': 'IHQ_CHROMOGRANINA', 'SYNAPTOPHYSIN': 'IHQ_SYNAPTOPHYSIN',
+        'CD3': 'IHQ_CD3', 'CD5': 'IHQ_CD5', 'CD10': 'IHQ_CD10',
+        'CD20': 'IHQ_CD20', 'CD23': 'IHQ_CD23', 'CD30': 'IHQ_CD30',
+        'CD34': 'IHQ_CD34', 'CD45': 'IHQ_CD45', 'CD56': 'IHQ_CD56',
+        'CD68': 'IHQ_CD68', 'CD117': 'IHQ_CD117', 'CD138': 'IHQ_CD138',
+        'MLH1': 'IHQ_MLH1', 'MSH2': 'IHQ_MSH2',
+        'MSH6': 'IHQ_MSH6', 'PMS2': 'IHQ_PMS2',
+        'S100': 'IHQ_S100', 'VIMENTINA': 'IHQ_VIMENTINA',
+        'EMA': 'IHQ_EMA', 'PAX5': 'IHQ_PAX5', 'PAX8': 'IHQ_PAX8',
+        'GATA3': 'IHQ_GATA3', 'SOX10': 'IHQ_SOX10',
+    }
+
+    def __init__(self):
+        self.db_path = DB_FILE
+        self.table_name = TABLE_NAME
+        self.debug_maps_dir = PROJECT_ROOT / "data" / "debug_maps"
+
+        if not os.path.exists(self.db_path):
+            raise FileNotFoundError(f"Base de datos no encontrada: {self.db_path}")
+        if not self.debug_maps_dir.exists():
+            raise FileNotFoundError(f"Debug_maps no encontrado: {self.debug_maps_dir}")
+
+    # ========== AUDITORÍA PDF vs BD ==========
+
+    def auditar_caso(self, numero_caso: str, json_export: bool = False) -> Dict:
+        """Audita un caso: PDF vs BD"""
+        print(f"\n{'='*80}")
+        print(f"🔍 AUDITANDO CASO: {numero_caso}")
+        print(f"{'='*80}\n")
+
+        debug_map = self._obtener_debug_map(numero_caso)
+        if not debug_map:
+            print(f"❌ No se encontró debug_map para {numero_caso}")
+            return {}
+
+        datos_bd = debug_map.get('base_datos', {}).get('datos_guardados', {})
+        descripciones = self._extraer_descripciones(debug_map)
+
+        # Identificar biomarcadores mencionados en PDF
+        biomarcadores_en_pdf = self._identificar_biomarcadores_en_pdf(descripciones)
+
+        # Validar IHQ_ESTUDIOS_SOLICITADOS
+        resultado_estudios = self._validar_estudios_solicitados(datos_bd, biomarcadores_en_pdf)
+
+        # Validar cada biomarcador individual
+        resultados_biomarcadores = {}
+        errores = []
+        warnings = []
+        correctos = []
+
+        for columna_bd in biomarcadores_en_pdf:
+            mencionado = True
+            resultado = self._validar_biomarcador(columna_bd, datos_bd, mencionado)
+            resultados_biomarcadores[columna_bd] = resultado
+
+            if resultado['estado'] == 'ERROR':
+                errores.append(columna_bd)
+            elif resultado['estado'] == 'WARNING':
+                warnings.append(columna_bd)
+            elif resultado['estado'] == 'CORRECTO':
+                correctos.append(columna_bd)
+
+        # Calcular precisión
+        total_biomarcadores = len(biomarcadores_en_pdf)
+        total_correctos = len(correctos)
+        precision = (total_correctos / total_biomarcadores * 100) if total_biomarcadores > 0 else 100.0
+
+        # Mostrar resultados
+        print(f"📊 RESULTADO:")
+        print(f"   Precisión: {precision:.1f}% ({total_correctos}/{total_biomarcadores})")
+        print(f"   Completitud IHQ_ESTUDIOS: {resultado_estudios['porcentaje_captura']:.1f}%")
+
+        if errores:
+            print(f"   ❌ {len(errores)} biomarcador(es) mencionados sin valor en BD")
+        if warnings:
+            print(f"   ⚠️  {len(warnings)} valor(es) inferido(s)")
+
+        resultado = {
+            'numero_caso': numero_caso,
+            'precision': precision,
+            'biomarcadores_en_pdf': list(biomarcadores_en_pdf),
+            'errores': errores,
+            'warnings': warnings,
+            'correctos': correctos,
+            'resultado_estudios': resultado_estudios
+        }
+
+        if json_export:
+            self._exportar_json(resultado, numero_caso)
+
+        return resultado
+
+    def auditar_todos(self, limite: Optional[int] = None, json_export: bool = False):
+        """Audita todos los casos disponibles"""
+        casos = self.listar_casos_disponibles()
+
+        if limite:
+            casos = casos[:limite]
+
+        print(f"\n{'='*120}")
+        print(f"🔍 AUDITORÍA INTELIGENTE COMPLETA V4.0")
+        print(f"{'='*120}\n")
+        print(f"📊 Total de casos a auditar: {len(casos)}\n")
+        print(f"{'='*120}\n")
+
+        resultados_globales = []
+        total_biomarcadores = 0
+        total_correctos = 0
+        total_errores = 0
+        total_warnings = 0
+
+        for i, caso in enumerate(casos, 1):
+            print(f"[{i}/{len(casos)}] Validando {caso}...")
+            resultado = self.auditar_caso(caso, json_export=False)
+
+            if resultado:
+                resultados_globales.append(resultado)
+                total_biomarcadores += len(resultado['biomarcadores_en_pdf'])
+                total_correctos += len(resultado['correctos'])
+                total_errores += len(resultado['errores'])
+                total_warnings += len(resultado['warnings'])
+
+        # Resumen global
+        precision_global = (total_correctos / total_biomarcadores * 100) if total_biomarcadores > 0 else 100.0
+
+        print(f"\n{'='*120}")
+        print(f"📈 RESUMEN GLOBAL DE AUDITORÍA V4.0")
+        print(f"{'='*120}")
+        print(f"   Total casos en BD:                         {len(casos)}")
+        print(f"   ✅ Casos validados:                         {len(resultados_globales)}")
+        print(f"\n   📊 Total biomarcadores mencionados en PDFs: {total_biomarcadores}")
+        print(f"   ✅ Biomarcadores con valor en BD:           {total_correctos}")
+        print(f"   ❌ Biomarcadores sin valor en BD:           {total_errores}")
+        print(f"   ⚠️  Valores inferidos (no en PDF):          {total_warnings}")
+        print(f"\n   🎯 PRECISIÓN PROMEDIO:                     {precision_global:.1f}%")
+        print(f"{'='*120}\n")
+
+        if json_export:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"auditoria_v4_{timestamp}.json"
+            self._exportar_json({'resumen': {
+                'precision_global': precision_global,
+                'total_casos': len(casos),
+                'total_biomarcadores': total_biomarcadores,
+                'total_correctos': total_correctos,
+                'total_errores': total_errores
+            }, 'casos': resultados_globales}, filename)
+
+    # ========== LECTURA OCR ==========
+
+    def leer_ocr(self, numero_caso: str, seccion: Optional[str] = None, buscar: Optional[str] = None):
+        """Lee texto OCR de un caso"""
+        numero_caso = self._normalizar_numero_ihq(numero_caso)
+        debug_map = self._obtener_debug_map(numero_caso)
+
+        if not debug_map or 'ocr' not in debug_map:
+            print(f"❌ No se encontró OCR para {numero_caso}")
+            return
+
+        texto = debug_map['ocr'].get('texto_consolidado', '')
+
+        print(f"\n📄 TEXTO REAL DEL CASO: {numero_caso}")
+        print(f"{'='*80}")
+        print(f"📊 Longitud: {len(texto):,} caracteres\n")
+
+        if buscar:
+            self._buscar_en_ocr(texto, buscar)
+        elif seccion:
+            self._extraer_seccion_ocr(texto, seccion)
+        else:
+            print(texto)
+            print(f"\n{'='*80}")
+            print(f"📊 Total: {len(texto):,} caracteres, {texto.count(chr(10)) + 1} líneas")
+
+    def _buscar_en_ocr(self, texto: str, patron: str):
+        """Busca patrón en OCR con contexto"""
+        print(f"🔍 BÚSQUEDA: '{patron}'")
+        print(f"{'='*80}\n")
+
+        try:
+            matches = list(re.finditer(patron, texto, re.IGNORECASE))
+            if not matches:
+                print(f"⚠️  No se encontraron ocurrencias")
+                return
+
+            print(f"✅ {len(matches)} ocurrencia(s) encontrada(s)\n")
+            for i, match in enumerate(matches, 1):
+                inicio = max(0, match.start() - 60)
+                fin = min(len(texto), match.end() + 60)
+                print(f"[{i}] ...{texto[inicio:match.start()]}[{match.group()}]{texto[match.end():fin]}...")
+                print()
+        except re.error as e:
+            print(f"❌ Error en regex: {e}")
+
+    def _extraer_seccion_ocr(self, texto: str, seccion: str):
+        """Extrae sección específica del OCR"""
+        patrones = {
+            'estudios': r'ESTUDIOS?\s+SOLICITADOS?.*?(?=\n\n+|ORGANO|DIAGNOSTICO|$)',
+            'diagnostico': r'DIAGNOSTICO.*?(?=\n\n+|DESCRIPCI[OÓ]N|$)',
+            'microscopica': r'DESCRIPCI[OÓ]N\s+MICROSC[OÓ]PICA.*?(?=\n\n+|COMENTARIOS|$)',
+            'macroscopica': r'DESCRIPCI[OÓ]N\s+MACROSC[OÓ]PICA.*?(?=\n\n+|DESCRIPCI[OÓ]N\s+MICROSC|$)',
+            'comentarios': r'COMENTARIOS.*?(?=\n\n+|---|$)',
+        }
+
+        patron = patrones.get(seccion.lower())
+        if not patron:
+            print(f"❌ Sección '{seccion}' no reconocida")
+            print(f"Secciones disponibles: {', '.join(patrones.keys())}")
+            return
+
+        match = re.search(patron, texto, re.DOTALL | re.IGNORECASE)
+        if match:
+            print(f"📌 SECCIÓN: {seccion.upper()}")
+            print(f"{'='*80}\n")
+            print(match.group(0).strip())
+            print(f"\n{'='*80}")
+            print(f"📊 Longitud: {len(match.group(0))} caracteres")
+        else:
+            print(f"⚠️  No se encontró la sección '{seccion}'")
+
+    # ========== VALIDACIÓN DE MAPEO ==========
+
+    def verificar_mapeo_biomarcadores(self):
+        """Verifica cobertura de mapeo de biomarcadores"""
+        print(f"\n{'='*80}")
+        print("🔍 VERIFICACIÓN DE MAPEO DE BIOMARCADORES")
+        print(f"{'='*80}\n")
+
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+
+        cursor.execute(f"""
+            SELECT IHQ_ESTUDIOS_SOLICITADOS
+            FROM {self.table_name}
+            WHERE IHQ_ESTUDIOS_SOLICITADOS IS NOT NULL
+              AND IHQ_ESTUDIOS_SOLICITADOS != ''
+        """)
+
+        biomarcadores_unicos = set()
+        for (estudios,) in cursor.fetchall():
+            for bio in estudios.split(','):
+                bio = bio.strip().upper()
+                if bio and bio not in self.ENCABEZADOS_TABLA:
+                    biomarcadores_unicos.add(bio)
+
+        conn.close()
+
+        # Verificar mapeo
+        mapeados = set()
+        no_mapeados = set()
+
+        for bio in biomarcadores_unicos:
+            if bio in self.BIOMARCADORES:
+                mapeados.add(bio)
+            else:
+                no_mapeados.add(bio)
+
+        total = len(biomarcadores_unicos)
+        porcentaje = (len(mapeados) / total * 100) if total > 0 else 100.0
+
+        print(f"📊 Total biomarcadores únicos: {total}")
+        print(f"✅ Correctamente mapeados: {len(mapeados)} ({porcentaje:.1f}%)")
+        print(f"❌ No mapeados: {len(no_mapeados)}")
+
+        if no_mapeados:
+            print(f"\n{'='*80}")
+            print("BIOMARCADORES NO MAPEADOS:")
+            for bio in sorted(no_mapeados):
+                print(f"   - {bio}")
+            print(f"\n⚠️  Agregue estos biomarcadores a MAPEO_BIOMARCADORES")
+        else:
+            print(f"\n✅ Todos los biomarcadores están correctamente mapeados")
+
+    # ========== LIMPIEZA DE HEADERS ==========
+
+    def limpiar_headers_tabla(self):
+        """Elimina headers de tabla de IHQ_ESTUDIOS_SOLICITADOS"""
+        print(f"\n{'='*80}")
+        print("LIMPIEZA DE ENCABEZADOS EN IHQ_ESTUDIOS_SOLICITADOS")
+        print(f"{'='*80}\n")
+
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+
+        cursor.execute(f"""
+            SELECT "Numero de caso", IHQ_ESTUDIOS_SOLICITADOS
+            FROM {self.table_name}
+            WHERE IHQ_ESTUDIOS_SOLICITADOS IS NOT NULL
+              AND IHQ_ESTUDIOS_SOLICITADOS != ''
+        """)
+
+        registros = cursor.fetchall()
+        modificados = 0
+
+        for numero, estudios_raw in registros:
+            estudios_limpios = self._limpiar_estudios(estudios_raw)
+
+            if estudios_limpios != estudios_raw:
+                cursor.execute(f"""
+                    UPDATE {self.table_name}
+                    SET IHQ_ESTUDIOS_SOLICITADOS = ?
+                    WHERE "Numero de caso" = ?
+                """, (estudios_limpios, numero))
+                modificados += 1
+                print(f"   {numero}: '{estudios_raw}' -> '{estudios_limpios}'")
+
+        if modificados > 0:
+            conn.commit()
+            print(f"\n✅ {modificados} registro(s) limpiado(s)")
+        else:
+            print("✅ No se encontraron headers para limpiar")
+
+        conn.close()
+
+    def _limpiar_estudios(self, estudios_raw: str) -> str:
+        """Limpia headers de una cadena de estudios"""
+        if not estudios_raw:
+            return ''
+
+        estudios = [e.strip() for e in estudios_raw.split(',')]
+        limpios = [e for e in estudios if e.upper() not in self.ENCABEZADOS_TABLA and e.strip()]
+        return ', '.join(limpios)
+
+    # ========== LISTADO ==========
+
+    def listar_casos_disponibles(self) -> List[str]:
+        """Lista todos los casos con debug_map"""
+        archivos = list(self.debug_maps_dir.glob("debug_map_IHQ*.json"))
+        casos = []
+        for archivo in archivos:
+            match = re.search(r'IHQ\d{6}', archivo.name)
+            if match:
+                casos.append(match.group())
+        return sorted(set(casos))
+
+    # ========== HELPERS INTERNOS ==========
+
+    def _normalizar_numero_ihq(self, numero: str) -> str:
+        """Normaliza número IHQ"""
+        if not numero.upper().startswith("IHQ"):
+            numero = f"IHQ{numero}"
+        return numero.upper()
+
+    def _obtener_debug_map(self, numero_caso: str) -> Optional[Dict]:
+        """Obtiene el debug_map más reciente de un caso"""
+        patron = f"debug_map_{numero_caso}_*.json"
+        archivos = list(self.debug_maps_dir.glob(patron))
+
+        if not archivos:
+            return None
+
+        archivo_mas_reciente = max(archivos, key=lambda p: p.stat().st_mtime)
+
+        try:
+            with open(archivo_mas_reciente, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except:
+            return None
+
+    def _extraer_descripciones(self, debug_map: Dict) -> Dict[str, str]:
+        """Extrae descripciones del debug_map"""
+        datos_bd = debug_map.get('base_datos', {}).get('datos_guardados', {})
+        return {
+            'macroscopica': datos_bd.get('Descripcion macroscopica', ''),
+            'microscopica': datos_bd.get('Descripcion microscopica', ''),
+            'diagnostico': datos_bd.get('Diagnostico Principal', '')
+        }
+
+    def _identificar_biomarcadores_en_pdf(self, descripciones: Dict) -> Set[str]:
+        """Identifica biomarcadores mencionados en las descripciones"""
+        texto_completo = f"{descripciones['macroscopica']}\n{descripciones['microscopica']}\n{descripciones['diagnostico']}".upper()
+        biomarcadores_encontrados = set()
+
+        for nombre_bio, columna_bd in self.BIOMARCADORES.items():
+            if re.search(rf'\b{re.escape(nombre_bio)}\b', texto_completo):
+                biomarcadores_encontrados.add(columna_bd)
+
+        return biomarcadores_encontrados
+
+    def _validar_biomarcador(self, columna_bd: str, datos_bd: Dict, mencionado: bool) -> Dict:
+        """Valida un biomarcador individual"""
+        valor_bd = datos_bd.get(columna_bd, '')
+        tiene_valor = valor_bd and str(valor_bd).strip() and str(valor_bd) not in ['N/A', 'nan', 'None', '']
+
+        if mencionado and tiene_valor:
+            return {'estado': 'CORRECTO', 'valor_bd': valor_bd}
+        elif mencionado and not tiene_valor:
+            return {'estado': 'ERROR', 'valor_bd': 'VACÍO'}
+        elif not mencionado and tiene_valor:
+            return {'estado': 'WARNING', 'valor_bd': valor_bd}
+        else:
+            return {'estado': 'OK', 'valor_bd': 'VACÍO'}
+
+    def _validar_estudios_solicitados(self, datos_bd: Dict, biomarcadores_en_pdf: Set[str]) -> Dict:
+        """Valida completitud de IHQ_ESTUDIOS_SOLICITADOS"""
+        estudios_bd = datos_bd.get('IHQ_ESTUDIOS_SOLICITADOS', '').upper()
+
+        capturados = []
+        faltantes = []
+
+        for columna_bd in biomarcadores_en_pdf:
+            nombre_bio = columna_bd.replace('IHQ_', '').replace('_', '-')
+            if re.search(rf'\b{re.escape(nombre_bio)}\b', estudios_bd):
+                capturados.append(nombre_bio)
+            else:
+                faltantes.append(nombre_bio)
+
+        total = len(biomarcadores_en_pdf)
+        porcentaje = (len(capturados) / total * 100) if total > 0 else 100.0
+
+        return {
+            'capturados': capturados,
+            'faltantes': faltantes,
+            'completitud': len(faltantes) == 0,
+            'porcentaje_captura': porcentaje
+        }
+
+    def _exportar_json(self, datos: Dict, nombre_archivo: str):
+        """Exporta resultados a JSON"""
+        output_dir = PROJECT_ROOT / "herramientas_ia" / "resultados"
+        output_dir.mkdir(exist_ok=True)
+
+        if not nombre_archivo.endswith('.json'):
+            nombre_archivo = f"{nombre_archivo}.json"
+
+        output_path = output_dir / nombre_archivo
+
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(datos, f, ensure_ascii=False, indent=2)
+
+        print(f"\n💾 Resultados guardados en: {output_path}")
+
+    # ========== FUNCIONALIDADES EXTENDIDAS ==========
+
+    def auditar_con_nivel(self, numero_caso: str, nivel: str = 'basico') -> Dict:
+        """Audita con diferentes niveles de detalle"""
+        print(f"\n🔍 Auditoría nivel: {nivel.upper()}")
+
+        resultado_base = self.auditar_caso(numero_caso, json_export=False)
+
+        if nivel == 'medio':
+            # Agregar análisis de campos vacíos
+            debug_map = self._obtener_debug_map(numero_caso)
+            if debug_map:
+                datos_bd = debug_map.get('base_datos', {}).get('datos_guardados', {})
+                campos_vacios = [k for k, v in datos_bd.items() if not v or str(v).strip() == '']
+                resultado_base['campos_vacios'] = campos_vacios[:10]  # Top 10
+                print(f"\n📊 Campos vacíos detectados: {len(campos_vacios)}")
+
+        elif nivel == 'profundo':
+            # Análisis exhaustivo + sugerencias
+            debug_map = self._obtener_debug_map(numero_caso)
+            if debug_map:
+                # Analizar cada biomarcador en detalle
+                print(f"\n🔬 Análisis profundo de biomarcadores...")
+                resultado_base['sugerencias'] = self._generar_sugerencias_automaticas(resultado_base)
+
+        return resultado_base
+
+    def _generar_sugerencias_automaticas(self, resultado: Dict) -> List[str]:
+        """Genera sugerencias automáticas basadas en errores"""
+        sugerencias = []
+
+        for error in resultado.get('errores', []):
+            biomarcador = error.replace('IHQ_', '').replace('_', '-')
+            sugerencias.append(f"Agregar patrón para {biomarcador} en biomarker_extractor.py")
+
+        return sugerencias
+
+    def comparar_precision_historica(self, fecha_inicio: str, fecha_fin: str):
+        """Compara precisión entre dos periodos"""
+        print(f"\n📊 COMPARACIÓN HISTÓRICA DE PRECISIÓN")
+        print(f"{'='*80}\n")
+        print(f"Periodo: {fecha_inicio} → {fecha_fin}\n")
+
+        debug_maps_dir = PROJECT_ROOT / "data" / "debug_maps"
+        if not debug_maps_dir.exists():
+            print(f"❌ No existe directorio debug_maps")
+            return
+
+        # Recolectar todos los debug_maps en el periodo
+        archivos = sorted(debug_maps_dir.glob("debug_map_*.json"))
+
+        if not archivos:
+            print(f"❌ No se encontraron debug_maps")
+            return
+
+        # Agrupar por caso
+        casos_data = {}
+        for archivo in archivos:
+            try:
+                # Extraer número de caso
+                partes = archivo.stem.split('_')
+                if len(partes) < 4:
+                    continue
+
+                numero_caso = partes[2]
+                timestamp_str = partes[3] + (f"_{partes[4]}" if len(partes) > 4 else "")
+
+                # Filtrar por fecha si se especifica
+                if fecha_inicio and timestamp_str < fecha_inicio:
+                    continue
+                if fecha_fin and timestamp_str > fecha_fin:
+                    continue
+
+                with open(archivo, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+
+                bd_data = data.get('base_datos', {}).get('datos_guardados', {})
+
+                # Calcular precisión
+                total_campos = len([k for k in bd_data.keys() if not k.startswith('IHQ_')])
+                campos_llenos = len([v for k, v in bd_data.items()
+                                   if not k.startswith('IHQ_') and v and str(v).strip()
+                                   and str(v) not in ['N/A', 'nan', 'None', '']])
+
+                biomarcadores = len([k for k, v in bd_data.items()
+                                   if k.startswith('IHQ_') and v and str(v).strip()
+                                   and str(v) not in ['N/A', 'nan', 'None', '']])
+
+                precision = (campos_llenos / total_campos * 100) if total_campos > 0 else 0
+
+                if numero_caso not in casos_data:
+                    casos_data[numero_caso] = []
+
+                casos_data[numero_caso].append({
+                    'timestamp': timestamp_str,
+                    'precision': precision,
+                    'biomarcadores': biomarcadores
+                })
+
+            except Exception as e:
+                continue
+
+        if not casos_data:
+            print(f"❌ No se encontraron casos en el periodo especificado")
+            return
+
+        # Análisis estadístico
+        todas_precisiones = []
+        for caso, versiones in casos_data.items():
+            for v in versiones:
+                todas_precisiones.append(v['precision'])
+
+        promedio = sum(todas_precisiones) / len(todas_precisiones) if todas_precisiones else 0
+        maximo = max(todas_precisiones) if todas_precisiones else 0
+        minimo = min(todas_precisiones) if todas_precisiones else 0
+
+        print(f"📊 ESTADÍSTICAS DEL PERIODO:")
+        print(f"   Casos únicos: {len(casos_data)}")
+        print(f"   Total versiones: {len(todas_precisiones)}")
+        print(f"   Precisión promedio: {promedio:.1f}%")
+        print(f"   Rango: {minimo:.1f}% - {maximo:.1f}%")
+
+        # Top 5 casos con mejor precisión
+        print(f"\n🏆 TOP 5 CASOS CON MEJOR PRECISIÓN:")
+        casos_ordenados = []
+        for caso, versiones in casos_data.items():
+            precision_max = max([v['precision'] for v in versiones])
+            casos_ordenados.append((caso, precision_max))
+
+        casos_ordenados.sort(key=lambda x: x[1], reverse=True)
+        for i, (caso, prec) in enumerate(casos_ordenados[:5], 1):
+            print(f"   {i}. {caso}: {prec:.1f}%")
+
+        # Casos con problemas
+        casos_problematicos = [(caso, prec) for caso, prec in casos_ordenados if prec < 80]
+        if casos_problematicos:
+            print(f"\n⚠️  CASOS CON PRECISIÓN < 80%: {len(casos_problematicos)}")
+            for caso, prec in casos_problematicos[:5]:
+                print(f"   • {caso}: {prec:.1f}%")
+
+    def analizar_tendencias_errores(self, periodo: str = 'mes'):
+        """Analiza tendencias de errores en el tiempo"""
+        print(f"\n📈 ANÁLISIS DE TENDENCIAS DE ERRORES - {periodo.upper()}")
+        print(f"{'='*80}\n")
+
+        debug_maps_dir = PROJECT_ROOT / "data" / "debug_maps"
+        if not debug_maps_dir.exists():
+            print(f"❌ No existe directorio debug_maps")
+            return
+
+        archivos = sorted(debug_maps_dir.glob("debug_map_*.json"))
+        if not archivos:
+            print(f"❌ No se encontraron debug_maps")
+            return
+
+        # Recolectar errores por tipo
+        errores_por_campo = {}
+        errores_por_biomarcador = {}
+        casos_analizados = 0
+
+        for archivo in archivos:
+            try:
+                with open(archivo, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+
+                numero_caso = archivo.stem.split('_')[2]
+                bd_data = data.get('base_datos', {}).get('datos_guardados', {})
+
+                # Analizar campos vacíos (errores)
+                for campo, valor in bd_data.items():
+                    if campo.startswith('IHQ_'):
+                        # Biomarcador
+                        if not valor or str(valor).strip() in ['N/A', 'nan', 'None', '']:
+                            if campo not in errores_por_biomarcador:
+                                errores_por_biomarcador[campo] = []
+                            errores_por_biomarcador[campo].append(numero_caso)
+                    else:
+                        # Campo normal
+                        if not valor or str(valor).strip() in ['N/A', 'nan', 'None', '']:
+                            if campo not in errores_por_campo:
+                                errores_por_campo[campo] = []
+                            errores_por_campo[campo].append(numero_caso)
+
+                casos_analizados += 1
+
+            except Exception as e:
+                continue
+
+        if casos_analizados == 0:
+            print(f"❌ No se pudo analizar ningún caso")
+            return
+
+        print(f"📊 Casos analizados: {casos_analizados}\n")
+
+        # TOP campos con más errores
+        if errores_por_campo:
+            campos_ordenados = sorted(errores_por_campo.items(), key=lambda x: len(x[1]), reverse=True)
+            print(f"🔴 TOP 10 CAMPOS CON MÁS ERRORES:")
+            for i, (campo, casos) in enumerate(campos_ordenados[:10], 1):
+                tasa_error = (len(casos) / casos_analizados * 100)
+                print(f"   {i}. {campo[:50]:<50} {len(casos):>3} casos ({tasa_error:.1f}%)")
+
+        # TOP biomarcadores con más errores
+        if errores_por_biomarcador:
+            bio_ordenados = sorted(errores_por_biomarcador.items(), key=lambda x: len(x[1]), reverse=True)
+            print(f"\n🔴 TOP 10 BIOMARCADORES CON MÁS ERRORES:")
+            for i, (bio, casos) in enumerate(bio_ordenados[:10], 1):
+                tasa_error = (len(casos) / casos_analizados * 100)
+                bio_nombre = bio.replace('IHQ_', '')
+                print(f"   {i}. {bio_nombre[:50]:<50} {len(casos):>3} casos ({tasa_error:.1f}%)")
+
+        # Análisis de patrones
+        print(f"\n💡 RECOMENDACIONES:")
+
+        if errores_por_campo:
+            campo_mas_problematico = campos_ordenados[0]
+            tasa = (len(campo_mas_problematico[1]) / casos_analizados * 100)
+            if tasa > 50:
+                print(f"   ⚠️  '{campo_mas_problematico[0]}' falla en {tasa:.0f}% de casos")
+                print(f"      → Revisar extractor de este campo")
+
+        if errores_por_biomarcador:
+            bio_mas_problematico = bio_ordenados[0]
+            tasa = (len(bio_mas_problematico[1]) / casos_analizados * 100)
+            if tasa > 30:
+                print(f"   ⚠️  '{bio_mas_problematico[0]}' falla en {tasa:.0f}% de casos")
+                print(f"      → Agregar más patrones de extracción para este biomarcador")
+
+        # Estadísticas generales
+        total_errores_campos = sum(len(casos) for casos in errores_por_campo.values())
+        total_errores_bio = sum(len(casos) for casos in errores_por_biomarcador.values())
+
+        print(f"\n📊 RESUMEN:")
+        print(f"   Total errores en campos: {total_errores_campos}")
+        print(f"   Total errores en biomarcadores: {total_errores_bio}")
+        print(f"   Promedio errores/caso: {(total_errores_campos + total_errores_bio) / casos_analizados:.1f}")
+
+    def validar_correcciones_ia(self, numero_caso: str):
+        """Valida que las correcciones IA fueron aplicadas correctamente"""
+        print(f"\n🤖 VALIDANDO CORRECCIONES IA: {numero_caso}")
+        print(f"{'='*80}\n")
+
+        debug_map = self._obtener_debug_map(numero_caso)
+        if not debug_map:
+            print(f"❌ No se encontró debug_map")
+            return
+
+        correcciones = debug_map.get('correcciones_ia', [])
+
+        if not correcciones:
+            print(f"ℹ️  No hay correcciones IA registradas para este caso")
+            return
+
+        print(f"📊 Correcciones IA aplicadas: {len(correcciones)}\n")
+
+        for i, corr in enumerate(correcciones, 1):
+            print(f"{i}. Campo: {corr.get('campo', 'N/A')}")
+            print(f"   Valor original: {corr.get('valor_original', 'N/A')}")
+            print(f"   Valor corregido: {corr.get('valor_corregido', 'N/A')}")
+            print(f"   Confianza: {corr.get('confianza', 0):.2f}")
+            print()
+
+    def exportar_excel_formateado(self, datos: Dict, nombre_archivo: str):
+        """Exporta a Excel con formato"""
+        try:
+            import pandas as pd
+            from openpyxl import load_workbook
+            from openpyxl.styles import Font, PatternFill
+
+            output_dir = PROJECT_ROOT / "herramientas_ia" / "resultados"
+            output_dir.mkdir(exist_ok=True)
+
+            if not nombre_archivo.endswith('.xlsx'):
+                nombre_archivo = f"{nombre_archivo}.xlsx"
+
+            output_path = output_dir / nombre_archivo
+
+            # Convertir a DataFrame
+            df = pd.DataFrame([datos])
+
+            # Guardar
+            df.to_excel(output_path, index=False, engine='openpyxl')
+
+            # Formatear
+            wb = load_workbook(output_path)
+            ws = wb.active
+
+            # Header con color
+            for cell in ws[1]:
+                cell.font = Font(bold=True, color="FFFFFF")
+                cell.fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+
+            wb.save(output_path)
+            print(f"\n💾 Excel formateado guardado en: {output_path}")
+
+        except ImportError:
+            print(f"\n⚠️  Requiere: pip install openpyxl pandas")
+        except Exception as e:
+            print(f"\n❌ Error exportando Excel: {e}")
+
+    def generar_dashboard_precision(self):
+        """Genera dashboard visual de precisión"""
+        print(f"\n📊 DASHBOARD DE PRECISIÓN")
+        print(f"{'='*80}\n")
+
+        casos = self.listar_casos_disponibles()
+        if not casos:
+            print("❌ No hay casos para analizar")
+            return
+
+        print(f"Analizando {len(casos)} casos...\n")
+
+        precisiones = []
+        for caso in casos[:10]:  # Limitar para demo
+            resultado = self.auditar_caso(caso, json_export=False)
+            if resultado:
+                precisiones.append(resultado.get('precision', 0))
+
+        if precisiones:
+            promedio = sum(precisiones) / len(precisiones)
+            print(f"📊 Precisión promedio: {promedio:.1f}%")
+            print(f"📊 Casos analizados: {len(precisiones)}")
+            print(f"📊 Rango: {min(precisiones):.1f}% - {max(precisiones):.1f}%")
+
+
+def main():
+    """CLI principal"""
+    parser = argparse.ArgumentParser(
+        description="🔍 Auditor de Sistema EVARISIS - Herramienta Consolidada",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Ejemplos de uso:
+
+AUDITORÍA:
+  python auditor_sistema.py IHQ250001                          # Auditar caso
+  python auditor_sistema.py IHQ250001 --nivel profundo         # Auditoría detallada
+  python auditor_sistema.py --todos                            # Auditar todos
+  python auditor_sistema.py --todos --limite 10                # Primeros 10
+  python auditor_sistema.py --listar                           # Listar casos
+
+LECTURA OCR:
+  python auditor_sistema.py IHQ250001 --leer-ocr               # Texto completo
+  python auditor_sistema.py IHQ250001 --buscar "Ki-67"         # Buscar patrón
+  python auditor_sistema.py IHQ250001 --seccion diagnostico    # Sección específica
+
+VALIDACIÓN IA:
+  python auditor_sistema.py IHQ250001 --validar-ia             # Validar correcciones IA
+
+ANÁLISIS HISTÓRICO:
+  python auditor_sistema.py --dashboard                        # Dashboard precisión
+  python auditor_sistema.py --comparar-historico 20251001 20251020  # Comparar periodos
+  python auditor_sistema.py --analizar-tendencias              # Tendencias de errores
+
+VERIFICACIÓN SISTEMA:
+  python auditor_sistema.py --verificar-mapeo                  # Mapeo biomarcadores
+  python auditor_sistema.py --limpiar-headers                  # Limpiar headers
+
+EXPORTACIÓN:
+  python auditor_sistema.py IHQ250001 --json                   # Export JSON
+  python auditor_sistema.py IHQ250001 --excel auditoria_caso   # Export Excel
+  python auditor_sistema.py --todos --json                     # Export global
+        """
+    )
+
+    parser.add_argument("caso", nargs='?', help="Número IHQ (ej: IHQ250001)")
+    parser.add_argument("--todos", action="store_true", help="Auditar todos los casos")
+    parser.add_argument("--limite", type=int, help="Limitar número de casos")
+    parser.add_argument("--nivel", choices=['basico', 'medio', 'profundo'], default='basico', help="Nivel de auditoría")
+    parser.add_argument("--listar", action="store_true", help="Listar casos disponibles")
+    parser.add_argument("--leer-ocr", action="store_true", help="Leer texto OCR")
+    parser.add_argument("--buscar", help="Buscar patrón en OCR")
+    parser.add_argument("--seccion", choices=['estudios', 'diagnostico', 'microscopica', 'macroscopica', 'comentarios'], help="Extraer sección OCR")
+    parser.add_argument("--verificar-mapeo", action="store_true", help="Verificar mapeo biomarcadores")
+    parser.add_argument("--limpiar-headers", action="store_true", help="Limpiar headers de tabla")
+    parser.add_argument("--validar-ia", action="store_true", help="Validar correcciones IA")
+    parser.add_argument("--dashboard", action="store_true", help="Generar dashboard de precisión")
+    parser.add_argument("--comparar-historico", nargs=2, metavar=('INICIO', 'FIN'), help="Comparar precisión entre fechas (ej: 20251001 20251020)")
+    parser.add_argument("--analizar-tendencias", action="store_true", help="Analizar tendencias de errores")
+    parser.add_argument("--json", action="store_true", help="Exportar a JSON")
+    parser.add_argument("--excel", help="Exportar a Excel formateado")
+
+    args = parser.parse_args()
+
+    try:
+        auditor = AuditorSistema()
+
+        if args.listar:
+            casos = auditor.listar_casos_disponibles()
+            print(f"\n📋 Casos disponibles: {len(casos)}\n")
+            for caso in casos:
+                print(f"  - {caso}")
+
+        elif args.todos:
+            auditor.auditar_todos(limite=args.limite, json_export=args.json)
+
+        elif args.verificar_mapeo:
+            auditor.verificar_mapeo_biomarcadores()
+
+        elif args.limpiar_headers:
+            auditor.limpiar_headers_tabla()
+
+        elif args.dashboard:
+            auditor.generar_dashboard_precision()
+
+        elif args.comparar_historico:
+            fecha_inicio, fecha_fin = args.comparar_historico
+            auditor.comparar_precision_historica(fecha_inicio, fecha_fin)
+
+        elif args.analizar_tendencias:
+            auditor.analizar_tendencias_errores()
+
+        elif args.caso:
+            if args.leer_ocr or args.buscar or args.seccion:
+                auditor.leer_ocr(args.caso, seccion=args.seccion, buscar=args.buscar)
+            elif args.validar_ia:
+                auditor.validar_correcciones_ia(args.caso)
+            else:
+                resultado = auditor.auditar_caso(args.caso, json_export=args.json)
+
+                # Exportar a Excel si se especifica
+                if args.excel and resultado:
+                    auditor.exportar_excel_formateado(resultado, args.excel)
+
+        else:
+            parser.print_help()
+
+    except KeyboardInterrupt:
+        print("\n\n⚠️  Operación cancelada")
+        sys.exit(130)
+    except Exception as e:
+        print(f"\n❌ Error: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

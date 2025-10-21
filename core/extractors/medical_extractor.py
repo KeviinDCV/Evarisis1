@@ -49,11 +49,16 @@ PATTERNS_IHQ = {
     'descripcion_macroscopica_ihq': r'(?:DESCRIPCI\w+N\s+MACROSC\w+PICA)[:\s]+(.*?)(?=\s*(?:^|\n)\s*DESCRIPCI\w+N\s+MICROSC\w+PICA|fin\s+del\s+informe|$)',
     'descripcion_macroscopica_se_realiza': r'(Se\s+realizan?\s+estudios?\s+de\s+inmunohistoqu[ií]mica.*?)(?=\s*(?:^|\n)\s*DESCRIPCI\w+N\s+MICROSC\w+PICA|fin\s+del\s+informe|$)',
     'descripcion_macroscopica_se_recibe': r'(Se\s+recibe\s+orden\s+para\s+realización\s+de\s+(?:estudio\s+de\s+)?inmunohistoqu[ií]mica.*?)(?=\s*(?:^|\n)\s*DESCRIPCI\w+N\s+MICROSC\w+PICA|fin\s+del\s+informe|$)',
-    # CORREGIDO v4.2: Solo detener en DIAGNÓSTICO al inicio de línea
-    'descripcion_microscopica_final': r'(?:DESCRIPCI\w+N\s+MICROSC\w+PICA)[:\s]+(.*?)(?=\s*(?:^|\n)\s*DIAGN\w+STICO|fin\s+del\s+informe|$)',
-    # CORREGIDO: Solo capturar DIAGNOSTICO al inicio de línea (evitar "con diagnóstico de")
-    'diagnostico_final_ihq': r'(?:^|\n)\s*(?:DIAGNOSTICO|DIAGN\w+STICO)[:\s]+(.*?)(?=\s*(?:observaciones|responsable|fecha|FACTOR\s+PRONOSTICO|FACTOR\s+PRON\w+STICO|EXPRESI\w+N\s+HORMONAL|fin\s+del\s+informe)|$)',
-    'factor_pronostico': r'(?:FACTOR\s+PRONOSTICO|FACTOR\s+PRON\w+STICO)[:\s]+(.*?)(?=\s*(?:observaciones|responsable|fecha|fin\s+del\s+informe)|$)',
+    # v5.3.3: CORREGIDO - Solo detener en DIAGNÓSTICO en MAYÚSCULAS al inicio de línea
+    # Patrón: requiere newline + DIAGNÓSTICO (SOLO mayúsculas) + newline
+    # NO coincide con "diagnóstico de" (minúsculas en medio de texto)
+    # Se aplica SIN re.IGNORECASE para detectar solo mayúsculas
+    'descripcion_microscopica_final': r'(?i:DESCRIPCI\w+N\s+MICROSC\w+PICA)[:\s]+(.*?)(?=\nDIAGN[ÓO]STICO\s*\n|fin\s+del\s+informe|$)',
+    # v5.3.1: CORREGIDO - Solo capturar DIAGNÓSTICO de sección (uppercase), NO "diagnóstico de" inline
+    'diagnostico_final_ihq': r'(?:^|\n)\s*DIAGN[OÓ]STICO\s*\n(.*?)(?=\s*(?:observaciones|responsable|fecha|FACTOR\s+PRONOSTICO|FACTOR\s+PRON\w+STICO|EXPRESI\w+N\s+HORMONAL|COMENTARIOS|fin\s+del\s+informe)|$)',
+    'factor_pronostico': r'(?:FACTOR\s+PRONOSTICO|FACTOR\s+PRON\w+STICO)[:\s]+(.*?)(?=\s*(?:observaciones|responsable|fecha|COMENTARIOS|fin\s+del\s+informe)|$)',
+    # V5.1.2: NUEVO - Extracción de sección COMENTARIOS
+    'comentarios': r'(?:^|\n)\s*COMENTARIOS[:\s]+(.*?)(?=\s*(?:[A-ZÁÉÍÓÚÑ\s]{15,60}?\s*\n\s*(?:Responsable|M[ÉE]DIC[OA]\s+PAT[ÓO]LOG[OA]|RM:))|$)',
     'fecha_toma_raw': r'(?:fecha\s+de?\s+toma|fecha\s+toma)[:\s]*(\d{1,2}[/.-]\d{1,2}[/.-]\d{2,4}|\d{1,2}\s+de\s+\w+\s+de\s+\d{4})',
     # CORREGIDO: El nombre del responsable está ANTES de "Responsable del análisis"
     # Puede haber líneas como "COMENTARIOS" o líneas vacías entre el nombre y "Responsable"
@@ -62,7 +67,8 @@ PATTERNS_IHQ = {
     'responsable_alt1': r'([A-ZÁÉÍÓÚÑ\s]{15,60}?)\s*\n\s*(?:M[ÉE]DIC[OA]\s+PAT[ÓO]LOG[OA]|PAT[ÓO]LOG[OA])',
     'responsable_alt2': r'([A-ZÁÉÍÓÚÑ\s]{15,60}?)\s*\n\s*RM:?\s*\d+',  # Nombre antes de RM: (registro médico)
     'responsable_alt3': r'(NANCY\s+MEJIA\s+VARGAS|ARMANDO\s+CORTES\s+BUELVAS|CARLOS\s+CAICEDO\s+ESTRADA|NATALIA\s+AGUIRRE\s+VASQUEZ|JOSE\s+BRAVO\s+BONILLA)',  # Nombres conocidos
-    'estudios_solicitados': r'(?:ESTUDIOS\s+SOLICITADOS|estudios)[:\s]+(.*?)(?=\s*(?:ORGANO|órgano|responsable|fecha|descripción|fin\s+del\s+informe)|$)',
+    # V4.2.6: ELIMINADO patrón antiguo 'estudios_solicitados' - usamos extract_biomarcadores_solicitados_robust() en su lugar
+    # PROBLEMA: El patrón antiguo capturaba encabezados de tabla como "N. ESTUDIO", "TIPO ESTUDIO", "ALMACENAMIENTO"
     'organo_raw': r'(?:ORGANO|órgano)[:\s]+(.*?)(?=\s*(?:descripción|responsable|fecha|estudios|fin\s+del\s+informe)|$)',
 }
 
@@ -116,6 +122,146 @@ ORGAN_KEYWORDS = {
     'MUSLO': ['muslo', 'muslo derecho', 'muslo izquierdo', 'biopsia de muslo', 'lesión muslo', 'lesion muslo'],
     'REGION PARIETO OCCIPITAL': ['region parieto occipital', 'región parieto occipital', 'parieto occipital', 'region parieto', 'región parieto', 'tumor extra axial', 'meningioma']
 }
+
+
+def clean_diagnostico_multipage(diagnostico_text: str) -> str:
+    """Limpia el diagnóstico capturado de PDFs multipage
+
+    v5.3.1: Maneja pie de página, separadores de página y metadatos repetidos
+
+    Args:
+        diagnostico_text: Texto del diagnóstico capturado
+
+    Returns:
+        Diagnóstico limpio sin residuos de cambio de página
+    """
+    if not diagnostico_text:
+        return ''
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 1: Eliminar PIE DE PÁGINA estándar ISO/CAP/RCPAQAP
+    # ═══════════════════════════════════════════════════════════════════════════
+    pie_pagina_patterns = [
+        # v5.3.2: AGREGADO - Pie de página "Patólogos (CAP), The Royal College..."
+        r'Pat[óo]logos?\s*\(CAP\).*?(?:Oneworld\s+Accuracy|1WA)[^\n]*',
+        r'Todos\s+los\s+an[aá]lisis\s+son\s+avalados.*?(?:ISO\s+17043|Oneworld\s+Accuracy|1WA)[^\n]*',
+        r'Todos\s+los\s+an[aá]lisis\s+son\s+avalados.*?(?=\n---|\nIHQ\d+|$)',
+        # v5.3.2: AGREGADO - Patrones adicionales para certificaciones
+        r'The\s+Royal\s+College\s+of\s+Pathologists.*?(?:Oneworld|1WA)[^\n]*',
+        r'Quality\s+Assurance\s+Programs.*?(?:Oneworld|1WA)[^\n]*',
+    ]
+
+    for pattern in pie_pagina_patterns:
+        diagnostico_text = re.sub(pattern, '', diagnostico_text, flags=re.IGNORECASE | re.DOTALL)
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 2: Eliminar SEPARADORES de página
+    # ═══════════════════════════════════════════════════════════════════════════
+    diagnostico_text = re.sub(r'-{3,}\s*P[ÁA]GINA\s+\d+\s*-{3,}', '', diagnostico_text, flags=re.IGNORECASE)
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 3: Eliminar BLOQUES DE METADATOS repetidos (después de separador)
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Patrón: IHQ######\nCopia Pag...\nNombre...\n...\nFecha Informe...
+    # MEJORADO v5.3.1: Capturar TODO hasta después de "Servicio" o "Fecha Informe"
+    # v5.3.1.1: También captura fragmentos pegados sin newline (ej: ".Copia Pag.")
+    metadatos_patterns = [
+        # Patrón completo: desde IHQ hasta Servicio (última línea de metadatos)
+        r'[\n\.]?\s*IHQ\d{6}\s*[\n\s]*Copia\s+Pag\..*?Servicio\s*:\s*[A-ZÁÉÍÓÚÑ\s]+',
+        # Patrón alternativo: desde IHQ hasta Fecha Informe
+        r'[\n\.]?\s*IHQ\d{6}\s*[\n\s]*Copia\s+Pag\..*?Fecha\s+Informe\s*:\s*[\d/]+',
+        # Patrón más simple: cualquier IHQ seguido de 6 dígitos
+        r'[\n\.]?\s*IHQ\d{6}\s*',
+        # Eliminar "Copia Pag." restantes (con o sin newline)
+        r'[\n\.]?\s*Copia\s+Pag\.\s*\d+\s+de\s+\d+',
+    ]
+
+    for pattern in metadatos_patterns:
+        diagnostico_text = re.sub(pattern, '', diagnostico_text, flags=re.IGNORECASE | re.DOTALL)
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 3.5: Eliminar campos de metadatos individuales que puedan quedar
+    # ═══════════════════════════════════════════════════════════════════════════
+    # v5.3.1.1: También captura fragmentos pegados (ej: ". peticion : IHQ250980")
+    campos_metadatos = [
+        r'[\n\.]?\s*Nombre\s*:\s*[A-ZÁÉÍÓÚÑ\s]+(?:\n[A-ZÁÉÍÓÚÑ\s]+)?',  # Nombre (puede ser multilinea)
+        r'[\n\.]?\s*N\.\s*peticion\s*:\s*IHQ\d+',
+        r'[\n\.]?\s*peticion\s*:\s*IHQ\d+',  # Sin "N." (fragmento)
+        r'[\n\.]?\s*N\.Identificaci[óo]n\s*:\s*[A-Z]{2}\.\s*\d+',
+        r'[\n\.]?\s*Genero\s*:\s*[A-ZÁÉÍÓÚÑ]+',
+        r'[\n\.]?\s*Edad\s*:\s*[\d\s]+a[ñn]os?.*?',
+        r'[\n\.]?\s*EPS\s*:\s*[A-ZÁÉÍÓÚÑ\s]+',
+        r'[\n\.]?\s*M[ée]dico\s+tratante\s*:\s*[A-ZÁÉÍÓÚÑ\s]+',
+        r'[\n\.]?\s*Servicio\s*:\s*[A-ZÁÉÍÓÚÑ\s]+',
+        r'[\n\.]?\s*Fecha\s+Ingreso\s*:\s*[\d/]+',
+        r'[\n\.]?\s*Fecha\s+Informe\s*:\s*[\d/]+',
+    ]
+
+    for pattern in campos_metadatos:
+        diagnostico_text = re.sub(pattern, '', diagnostico_text, flags=re.IGNORECASE)
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 4: Eliminar NOMBRE DEL PATÓLOGO al final
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Nombres conocidos: NANCY MEJIA VARGAS, ARMANDO CORTES BUELVAS, etc.
+    nombres_patologos = [
+        'NANCY\\s+MEJIA\\s+VARGAS',
+        'ARMANDO\\s+CORTES\\s+BUELVAS',
+        'CARLOS\\s+CAICEDO\\s+ESTRADA',
+        'NATALIA\\s+AGUIRRE\\s+VASQUEZ',
+        'JOSE\\s+BRAVO\\s+BONILLA',
+    ]
+
+    for nombre in nombres_patologos:
+        # Eliminar nombre + cualquier línea posterior (Médica Patóloga, RM:, etc.)
+        pattern = f'{nombre}.*?(?=\\n\\n|$)'
+        diagnostico_text = re.sub(pattern, '', diagnostico_text, flags=re.IGNORECASE | re.DOTALL)
+
+    # Patrón genérico: nombre en mayúsculas seguido de "Médica Patóloga" o "RM:"
+    diagnostico_text = re.sub(
+        r'\n\s*([A-ZÁÉÍÓÚÑ\s]{15,60}?)\s*\n\s*(?:M[ÉE]DIC[OA]\s+PAT[ÓO]LOG[OA]|RM:\s*\d+).*?$',
+        '',
+        diagnostico_text,
+        flags=re.DOTALL
+    )
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 5: Eliminar líneas de NOTA y DISCLAIMER al final
+    # ═══════════════════════════════════════════════════════════════════════════
+    diagnostico_text = re.sub(
+        r'Nota:\s+Este\s+informe.*?especialidadillas\.',
+        '',
+        diagnostico_text,
+        flags=re.IGNORECASE | re.DOTALL
+    )
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 6: Eliminar fragmentos residuales pegados al final
+    # ═══════════════════════════════════════════════════════════════════════════
+    # v5.3.1.1: Captura fragmentos como ". peticion :" que quedan pegados
+    fragmentos_residuales = [
+        r'\.\s*peticion\s*:.*?$',  # ". peticion : ..."
+        r'\.\s*N\.\s*peticion.*?$',  # ". N. peticion ..."
+        r'\.\s*Copia\s+Pag\..*?$',  # ". Copia Pag. ..."
+        r'\.\s*[A-Z][a-z]+\s*:.*?$',  # ". Campo : ..." (genérico)
+    ]
+
+    for pattern in fragmentos_residuales:
+        diagnostico_text = re.sub(pattern, '.', diagnostico_text, flags=re.IGNORECASE)
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 7: Normalizar espacios y saltos de línea
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Eliminar líneas vacías múltiples
+    diagnostico_text = re.sub(r'\n\s*\n\s*\n+', '\n\n', diagnostico_text)
+    # Normalizar espacios múltiples en la misma línea
+    diagnostico_text = re.sub(r' {2,}', ' ', diagnostico_text)
+    # Eliminar puntos finales duplicados
+    diagnostico_text = re.sub(r'\.\.+', '.', diagnostico_text)
+    # Limpiar inicio y fin
+    diagnostico_text = diagnostico_text.strip()
+
+    return diagnostico_text
 
 
 def extract_factor_pronostico(diagnostico_completo: str) -> str:
@@ -255,6 +401,572 @@ def extract_factor_pronostico(diagnostico_completo: str) -> str:
     return ''
 
 
+def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
+    """Extrae TODOS los biomarcadores solicitados del PDF con alta precisión.
+
+    Versión: 3.2.5 - Extractor robusto para IHQ_ESTUDIOS_SOLICITADOS
+
+    Busca patrones en DESCRIPCION MACROSCOPICA como:
+    - "para tinción con [lista]"
+    - "para los siguientes marcadores: [lista]"
+    - "se solicitan los siguiente biomarcadores: [lista]"
+    - "se realizan niveles histológicos para tinción con [lista]"
+
+    Args:
+        text: Texto completo del informe IHQ
+
+    Returns:
+        Lista de biomarcadores solicitados (normalizados y sin duplicados)
+    """
+    if not text:
+        return []
+
+    biomarcadores_encontrados = []
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 1: Extraer sección DESCRIPCION MACROSCOPICA
+    # ═══════════════════════════════════════════════════════════════════════════
+    desc_macro_match = re.search(
+        r'DESCRIPCI[OÓ]N\s+MACROSC[OÓ]PICA(.*?)(?:DESCRIPCI[OÓ]N\s+MICROSC[OÓ]PICA|$)',
+        text,
+        re.IGNORECASE | re.DOTALL
+    )
+
+    if not desc_macro_match:
+        return []
+
+    desc_macro_text = desc_macro_match.group(1)
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 2: Buscar patrones de listas de biomarcadores
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    # Patrones ordenados por especificidad (más específico primero)
+    patrones_biomarcadores = [
+        # Patrón 1: "para los siguientes marcadores:" (IHQ250002, IHQ250006)
+        r'para\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|\n\s*DESCRIPCI)',
+
+        # Patrón 2: "se solicitan los siguiente biomarcadores:" (IHQ250005)
+        r'se\s+solicitan?\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|\n\s*DESCRIPCI)',
+
+        # Patrón 3: "para tinción con" (IHQ250001, IHQ250003)
+        r'para\s+tinci[óo]n\s+con\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|\n)',
+
+        # Patrón 4: "se realizan niveles histológicos para tinción con"
+        r'se\s+realizan?\s+(?:cortes?|niveles?)\s+histol[óo]gicos?\s+.*?para\s+tinci[óo]n\s+con\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|\n)',
+
+        # Patrón 5: "para tinción de la siguiente manera:" seguido de lista con guiones
+        r'para\s+tinci[óo]n\s+de\s+la\s+siguiente\s+manera:\s*((?:-\s*Bloque[^\n]+\n?)+)',
+
+        # Patrón 6: V5.3.2 - "se solicita(n) marcador(es) X" (IHQ250050)
+        # Captura todo después de "marcador(es)" hasta el punto o salto de línea
+        r'se\s+solicitan?\s+marcador(?:es)?\s+([^.\n]+)',
+
+        # Patrón 7: V5.3.2 - "para X Y Y" (IHQ250021, IHQ250042)
+        # Captura lista de biomarcadores separados por "Y" o "y"
+        r'(?:de\s+)?inmunohistoqu[íi]mica\s+para\s+([A-Z0-9\s]+(?:\s+[Yy]\s+[A-Z0-9\s]+)+)',
+
+        # Patrón 8: V5.3.2 - "con X - Y - Z" (IHQ250043)
+        # Captura lista de biomarcadores separados por guiones
+        r'inmunohistoqu[íi]mica\s+con\s+([A-Z0-9\s]+(?:\s*-\s*[A-Z0-9\s]+)+)',
+
+        # Patrón 9: V5.3.2 - "para marcar con X" (IHQ250048)
+        # Captura biomarcador después de "para marcar con"
+        r'para\s+marcar\s+con\s+([^.\n]+)',
+    ]
+
+    for patron in patrones_biomarcadores:
+        match = re.search(patron, desc_macro_text, re.IGNORECASE | re.DOTALL)
+        if match:
+            lista_texto = match.group(1).strip()
+
+            # CASO ESPECIAL: Lista con formato "- Bloque A: X, Y, Z"
+            if '- Bloque' in lista_texto or '-Bloque' in lista_texto:
+                # Extraer biomarcadores de cada línea de bloque
+                lineas_bloque = re.findall(r'-\s*Bloque\s+[A-Z0-9]+:\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+)', lista_texto, re.IGNORECASE)
+                for linea in lineas_bloque:
+                    biomarcadores_linea = parse_biomarker_list(linea)
+                    biomarcadores_encontrados.extend(biomarcadores_linea)
+            else:
+                # CASO NORMAL: Lista separada por comas/y
+                biomarcadores = parse_biomarker_list(lista_texto)
+                biomarcadores_encontrados.extend(biomarcadores)
+
+            # Si encontramos algo, no seguir buscando con otros patrones
+            if biomarcadores_encontrados:
+                break
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 3: Normalizar y eliminar duplicados
+    # ═══════════════════════════════════════════════════════════════════════════
+    biomarcadores_normalizados = []
+    vistos = set()
+
+    # V5.2: Lista de valores no válidos que deben ser filtrados DESPUÉS de normalización
+    valores_invalidos = {
+        'IHQ_NA', 'IHQ_N/A', 'IHQ_N / A', 'IHQ_NO APLICA',  # N/A normalizados
+        'IHQ_ACTH', 'IHQ_FSH', 'IHQ_GH', 'IHQ_LH', 'IHQ_PROLACTINA', 'IHQ_TSH',  # Hormonas
+        'IHQ_CORTISOL', 'IHQ_INSULINA', 'IHQ_GLUCAGON', 'IHQ_T3', 'IHQ_T4'
+    }
+
+    for bio in biomarcadores_encontrados:
+        # V5.3: CORRECCIÓN - Usar normalize_biomarker_name_simple() sin prefijo IHQ_
+        # La columna IHQ_ESTUDIOS_SOLICITADOS debe contener nombres simples: "MLH1, MSH2, Ki-67"
+        # NO debe contener "IHQ_MLH1, IHQ_MSH2, IHQ_Ki-67" (eso es para columnas BD)
+        bio_norm = normalize_biomarker_name_simple(bio)
+
+        # V5.2: Filtrar valores no válidos DESPUÉS de normalización
+        if bio_norm.upper() in valores_invalidos:
+            continue
+
+        if bio_norm and bio_norm.upper() not in vistos:
+            biomarcadores_normalizados.append(bio_norm)
+            vistos.add(bio_norm.upper())
+
+    return biomarcadores_normalizados
+
+
+def parse_biomarker_list(text: str) -> List[str]:
+    """Parsea una lista de biomarcadores de texto con separadores variados.
+
+    Maneja separadores como:
+    - Comas: "CK7, CK20, TTF-1"
+    - "y": "p16 y p40"
+    - "/": "CKAE1/AE3"
+    - Espacios múltiples
+
+    Args:
+        text: Texto conteniendo lista de biomarcadores
+
+    Returns:
+        Lista de biomarcadores individuales
+    """
+    if not text:
+        return []
+
+    # Limpiar texto
+    text = text.strip()
+
+    # Eliminar texto explicativo común
+    text = re.sub(r'(?:Previa\s+valoraci[óo]n|se\s+realizan?|niveles?\s+histol[óo]gicos?|cortes?\s+histol[óo]gicos?).*?(?=(?:[A-Z]{2,}|$))', '', text, flags=re.IGNORECASE)
+
+    # Reemplazar separadores por comas
+    # "y" final → ","
+    text = re.sub(r'\s+y\s+', ', ', text, flags=re.IGNORECASE)
+
+    # Dividir por comas
+    biomarcadores = [b.strip() for b in text.split(',')]
+
+    # Filtrar vacíos y texto no-biomarcador
+    biomarcadores_filtrados = []
+    for bio in biomarcadores:
+        # Ignorar si es muy corto o contiene palabras no-biomarcador
+        if len(bio) < 2:
+            continue
+
+        # V3.2.5.1: FILTRO MEJORADO - Detectar encabezados de tabla
+        bio_upper = bio.upper().strip()
+
+        # V5.2: FILTRO DE N/A - Ignorar entradas "N/A"
+        if bio_upper in ['N/A', 'NA', 'N / A', 'NO APLICA']:
+            continue
+
+        # V5.2: FILTRO DE HORMONAS - No son biomarcadores IHQ, son hormonas endocrinas
+        hormonas_endocrinas = [
+            'ACTH', 'FSH', 'GH', 'LH', 'PROLACTINA', 'TSH',
+            'CORTISOL', 'INSULINA', 'GLUCAGON', 'T3', 'T4'
+        ]
+        if bio_upper in hormonas_endocrinas:
+            continue
+
+        # Filtrar encabezados de tabla EXACTOS o con prefijos
+        encabezados_tabla = [
+            r'^N\.?\s*ESTUDIO$',  # "N. ESTUDIO" o "N ESTUDIO"
+            r'^TIPO\s+ESTUDIO$',  # "TIPO ESTUDIO"
+            r'^TIPO\s+DE\s+ESTUDIO$',  # "TIPO DE ESTUDIO"
+            r'^ESTUDIO$',  # "ESTUDIO" solo
+            r'^ORGANO$',  # "ORGANO" solo
+            r'^ÓRGANO$',  # "ÓRGANO" solo
+            r'^FECHA\s+TOMA$',  # "FECHA TOMA"
+            r'^BLOQUES?\s+Y\s+LAMINAS?$',  # "BLOQUES Y LAMINAS"
+            r'^ALMACENAMIENTO$',  # "ALMACENAMIENTO"
+        ]
+
+        if any(re.match(patron, bio_upper) for patron in encabezados_tabla):
+            continue
+
+        # Filtrar palabras no-biomarcador en texto
+        if re.search(r'(?:bloque|laminas?|para|con|los|siguiente|almacenamiento)', bio, re.IGNORECASE):
+            continue
+
+        biomarcadores_filtrados.append(bio)
+
+    return biomarcadores_filtrados
+
+
+def normalize_biomarker_name_simple(name: str) -> str:
+    """Normaliza el nombre de un biomarcador SIN prefijo IHQ_.
+
+    V5.3: Para uso en IHQ_ESTUDIOS_SOLICITADOS (sin prefijo)
+
+    Ejemplos:
+    - "CKAE1/AE3" → "CKAE1AE3"
+    - "Ki 67" → "Ki-67"
+    - "RECEPTOR DE ESTROGENOS" → "Receptor de Estrógeno"
+    - "CD68" → "CD68"
+    - "MLH1" → "MLH1"
+
+    Args:
+        name: Nombre del biomarcador
+
+    Returns:
+        Nombre normalizado SIN prefijo IHQ_
+    """
+    if not name:
+        return ''
+
+    # Limpiar espacios extras
+    name = re.sub(r'\s+', ' ', name.strip())
+    nombre_upper = name.upper()
+
+    # Mapeo directo para casos especiales (SIN prefijo IHQ_)
+    simple_mapping = {
+        'CKAE1/AE3': 'CKAE1AE3',
+        'CKAE1 / AE3': 'CKAE1AE3',
+        'CK AE1/AE3': 'CKAE1AE3',
+        'CAM 5.2': 'CAM5.2',
+        'CAM5.2': 'CAM5.2',
+    }
+
+    for pattern, result in simple_mapping.items():
+        if pattern in nombre_upper:
+            return result
+
+    # Normalizar espacios y caracteres especiales
+    # Eliminar palabras intermedias comunes (DE, DEL, LOS, LAS)
+    nombre_clean = re.sub(r'\b(DE|DEL|LOS|LAS|LA|EL)\b', '', nombre_upper)
+    nombre_clean = re.sub(r'\s+', ' ', nombre_clean).strip()
+
+    # Receptores: mantener formato legible
+    if 'RECEPTOR' in nombre_clean:
+        if any(v in nombre_clean for v in ['ESTROGENO', 'ESTROGENOS', 'ESTRÓGENO', 'ESTRÓGENOS']):
+            return 'Receptor de Estrógeno'
+        if any(v in nombre_clean for v in ['PROGESTERONA', 'PROGESTERON', 'PROGESTERONOS']):
+            return 'Receptor de Progesterona'
+
+    # Ki-67: mantener guión
+    if re.match(r'KI[\s-]?67', nombre_upper):
+        return 'Ki-67'
+
+    # TTF-1: mantener guión
+    if re.match(r'TTF[\s-]?1', nombre_upper):
+        return 'TTF-1'
+
+    # PDL-1: mantener guión
+    if 'PDL' in nombre_upper or 'PD-L' in nombre_upper or 'PD L' in nombre_upper:
+        return 'PDL-1'
+
+    # HER2: normalizar espacios
+    if 'HER2' in nombre_upper or 'HER-2' in nombre_upper or 'HER 2' in nombre_upper:
+        return 'HER2'
+
+    # MMR markers: mantener nombre simple
+    if 'MLH1' in nombre_upper:
+        return 'MLH1'
+    if 'MSH2' in nombre_upper:
+        return 'MSH2'
+    if 'MSH6' in nombre_upper:
+        return 'MSH6'
+    if 'PMS2' in nombre_upper:
+        return 'PMS2'
+
+    # Marcadores CD: mantener formato
+    if re.match(r'^CD\d+$', nombre_upper):
+        return nombre_upper
+
+    # Para otros: limpiar y devolver en mayúsculas
+    name_clean = name.replace('/', '').replace('-', ' ')
+    name_clean = re.sub(r'\s+', ' ', name_clean).strip()
+    return name_clean.upper()
+
+
+def normalize_biomarker_name(name: str) -> str:
+    """Normaliza el nombre de un biomarcador CON prefijo IHQ_.
+
+    V5.2: SIEMPRE retorna nombres con prefijo IHQ_ para consistencia con columnas BD.
+    V5.3: SOLO usar para columnas BD, NO para IHQ_ESTUDIOS_SOLICITADOS
+
+    Ejemplos:
+    - "CKAE1/AE3" → "IHQ_CKAE1AE3"
+    - "Ki 67" → "IHQ_KI-67"
+    - "RECEPTOR DE ESTROGENOS" → "IHQ_RECEPTOR_ESTROGENOS"
+    - "CD68" → "IHQ_CD68"
+    - "P16" → "IHQ_P16_ESTADO"
+
+    Args:
+        name: Nombre del biomarcador
+
+    Returns:
+        Nombre normalizado con prefijo IHQ_
+    """
+    if not name:
+        return ''
+
+    # Limpiar espacios extras
+    name = re.sub(r'\s+', ' ', name.strip())
+
+    # Mapeo de nombres especiales
+    nombre_upper = name.upper()
+
+    # CORREGIDO v3.2.5.1: Eliminar palabras intermedias comunes (DE, DEL, LOS, LAS)
+    nombre_clean = re.sub(r'\b(DE|DEL|LOS|LAS|LA|EL)\b', '', nombre_upper)
+    nombre_clean = re.sub(r'\s+', ' ', nombre_clean).strip()
+
+    # Receptores hormonales (buscar en texto limpio con y sin acentos)
+    # V3.2.5.2: FIX - Agregar variantes con acentos (ESTRÓGENO, ESTRÓGENOS)
+    if 'RECEPTOR' in nombre_clean:
+        # Buscar variantes de estrógeno (con y sin acento, singular y plural)
+        if any(variant in nombre_clean for variant in ['ESTROGENO', 'ESTROGENOS', 'ESTRÓGENO', 'ESTRÓGENOS']):
+            return 'IHQ_RECEPTOR_ESTROGENOS'
+        # Buscar variantes de progesterona (con y sin acento, singular y plural)
+        if any(variant in nombre_clean for variant in ['PROGESTERONA', 'PROGESTERON', 'PROGESTERONOS']):
+            return 'IHQ_RECEPTOR_PROGESTERONA'
+
+    # Citoqueratinas con barra
+    if 'CKAE1/AE3' in nombre_upper or 'CKAE1 / AE3' in nombre_upper or 'CK AE1/AE3' in nombre_upper:
+        return 'IHQ_CKAE1AE3'
+
+    # Ki-67 variantes - V5.2: CON prefijo IHQ_
+    if re.match(r'KI[\s-]?67', nombre_upper):
+        return 'IHQ_KI-67'
+
+    # TTF-1 variantes - V5.2: CON prefijo IHQ_
+    if re.match(r'TTF[\s-]?1', nombre_upper):
+        return 'IHQ_TTF1'
+
+    # Napsina - V5.2: CON prefijo IHQ_
+    if 'NAPSIN' in nombre_upper:
+        return 'IHQ_NAPSIN'
+
+    # CAM 5.2 - V5.2: CON prefijo IHQ_
+    if 'CAM' in nombre_upper and '5' in nombre_upper:
+        return 'IHQ_CAM52'
+
+    # Chromogranina - V5.2: CON prefijo IHQ_
+    if 'CHROMO' in nombre_upper:
+        return 'IHQ_CHROMOGRANINA'
+
+    # Synaptofisina - V5.2: CON prefijo IHQ_
+    if 'SINAPTO' in nombre_upper or 'SYNAPTO' in nombre_upper:
+        return 'IHQ_SYNAPTOPHYSIN'
+
+    # HER2 - V5.2: CON prefijo IHQ_
+    if 'HER2' in nombre_upper or 'HER-2' in nombre_upper or 'HER 2' in nombre_upper:
+        return 'IHQ_HER2'
+
+    # P16 - V5.2: CON prefijo IHQ_
+    if nombre_upper == 'P16':
+        return 'IHQ_P16_ESTADO'
+
+    # P40 - V5.2: CON prefijo IHQ_
+    if nombre_upper == 'P40':
+        return 'IHQ_P40_ESTADO'
+
+    # P53 - V5.2: CON prefijo IHQ_
+    if nombre_upper == 'P53':
+        return 'IHQ_P53'
+
+    # P63 - V5.2: CON prefijo IHQ_
+    if nombre_upper == 'P63':
+        return 'IHQ_P63'
+
+    # PDL-1 - V5.2: CON prefijo IHQ_
+    if 'PDL' in nombre_upper or 'PD-L' in nombre_upper or 'PD L' in nombre_upper:
+        return 'IHQ_PDL-1'
+
+    # S100 - V5.2: CON prefijo IHQ_
+    if nombre_upper == 'S100':
+        return 'IHQ_S100'
+
+    # VIMENTINA - V5.2: CON prefijo IHQ_
+    if 'VIMENT' in nombre_upper:
+        return 'IHQ_VIMENTINA'
+
+    # EMA - V5.2: CON prefijo IHQ_
+    if nombre_upper == 'EMA':
+        return 'IHQ_EMA'
+
+    # GATA3 - V5.2: CON prefijo IHQ_
+    if 'GATA3' in nombre_upper:
+        return 'IHQ_GATA3'
+
+    # SOX10 - V5.2: CON prefijo IHQ_
+    if 'SOX10' in nombre_upper:
+        return 'IHQ_SOX10'
+
+    # CK7 - V5.2: CON prefijo IHQ_
+    if nombre_upper == 'CK7':
+        return 'IHQ_CK7'
+
+    # CK20 - V5.2: CON prefijo IHQ_
+    if nombre_upper == 'CK20':
+        return 'IHQ_CK20'
+
+    # CDX2 - V5.2: CON prefijo IHQ_
+    if 'CDX2' in nombre_upper:
+        return 'IHQ_CDX2'
+
+    # MMR markers - V5.2: CON prefijo IHQ_
+    if 'MLH1' in nombre_upper:
+        return 'IHQ_MLH1'
+    if 'MSH2' in nombre_upper:
+        return 'IHQ_MSH2'
+    if 'MSH6' in nombre_upper:
+        return 'IHQ_MSH6'
+    if 'PMS2' in nombre_upper:
+        return 'IHQ_PMS2'
+
+    # PAX8 - V5.2: CON prefijo IHQ_
+    if 'PAX8' in nombre_upper or 'PAX-8' in nombre_upper or 'PAX 8' in nombre_upper:
+        return 'IHQ_PAX8'
+
+    # PAX5 - V5.2: CON prefijo IHQ_
+    if 'PAX5' in nombre_upper or 'PAX-5' in nombre_upper:
+        return 'IHQ_PAX5'
+
+    # GFAP - V5.2: CON prefijo IHQ_
+    if 'GFAP' in nombre_upper:
+        return 'IHQ_GFAP'
+
+    # MELAN-A - V5.2: CON prefijo IHQ_
+    if 'MELAN' in nombre_upper:
+        return 'IHQ_MELAN_A'
+
+    # CDK4 - V5.2: CON prefijo IHQ_
+    if 'CDK4' in nombre_upper:
+        return 'IHQ_CDK4'
+
+    # MDM2 - V5.2: CON prefijo IHQ_
+    if 'MDM2' in nombre_upper:
+        return 'IHQ_MDM2'
+
+    # DOG1 - V5.2: CON prefijo IHQ_
+    if 'DOG1' in nombre_upper or 'DOG-1' in nombre_upper:
+        return 'IHQ_DOG1'
+
+    # HHV8 - V5.2: CON prefijo IHQ_
+    if 'HHV8' in nombre_upper or 'HHV-8' in nombre_upper:
+        return 'IHQ_HHV8'
+
+    # WT1 - V5.2: CON prefijo IHQ_
+    if 'WT1' in nombre_upper or 'WT-1' in nombre_upper:
+        return 'IHQ_WT1'
+
+    # NEUN - V5.2: CON prefijo IHQ_
+    if 'NEUN' in nombre_upper or 'NEU-N' in nombre_upper:
+        return 'IHQ_NEUN'
+
+    # ACTIN - V5.2: CON prefijo IHQ_
+    if 'ACTIN' in nombre_upper or ('MUSCULO' in nombre_upper and 'LISO' in nombre_upper):
+        return 'IHQ_ACTIN'
+
+    # Biomarcadores CD - V5.2: CON prefijo IHQ_
+    if re.match(r'^CD\d+$', nombre_upper):
+        return f'IHQ_{nombre_upper}'  # "CD68" → "IHQ_CD68"
+
+    # CORREGIDO v3.2.5.1: No eliminar TODOS los espacios, solo normalizar múltiples
+    # Eliminar barras y guiones, normalizar espacios múltiples a uno solo
+    name_clean = name.replace('/', '').replace('-', '')
+    name_clean = re.sub(r'\s+', ' ', name_clean).strip()
+
+    # V5.2: SIEMPRE agregar prefijo IHQ_ si no lo tiene
+    normalized = name_clean.upper()
+    if not normalized.startswith('IHQ_'):
+        normalized = f'IHQ_{normalized}'
+
+    return normalized
+
+
+def _preprocess_multipage_diagnosis(text: str) -> str:
+    """Preprocesa texto para unir diagnóstico que está dividido en múltiples páginas
+
+    v5.3.2: Detecta cuando el DIAGNÓSTICO continúa después de separador de página
+    y metadatos, y une las partes en un solo bloque antes de la extracción.
+
+    Ejemplo:
+        Página 1:
+            DIAGNÓSTICO
+             - CARCINOMA...
+             - RECEPTORES DE ESTRÓGENO...
+            [pie de página]
+            --- PÁGINA 2 ---
+            [metadatos repetidos]
+            - RECEPTORES DE PROGESTERONA...  ← CONTINUACIÓN
+            - HER2...
+            - KI-67...
+
+    Args:
+        text: Texto OCR completo con múltiples páginas
+
+    Returns:
+        Texto con diagnóstico unificado
+    """
+    if not text or '---' not in text:
+        # No hay separadores de página, retornar sin cambios
+        return text
+
+    # Buscar patrón: DIAGNÓSTICO seguido de contenido, luego separador de página
+    # Patrón: DIAGNÓSTICO\n (contenido) \n (pie de página) \n --- PÁGINA X --- \n (metadatos) \n (continuación con "- ")
+
+    # Paso 1: Encontrar la sección DIAGNÓSTICO en página 1
+    match_diag = re.search(
+        r'(DIAGN[OÓ]STICO\s*\n.*?)(?=Todos\s+los\s+an[aá]lisis\s+son\s+avalados|Pat[óo]logos?\s*\(CAP\)|---\s*P[ÁA]GINA)',
+        text,
+        re.DOTALL | re.IGNORECASE
+    )
+
+    if not match_diag:
+        return text
+
+    diagnostico_pag1 = match_diag.group(1)
+
+    # Paso 2: Buscar continuación después de separador de página
+    # Patrón: --- PÁGINA X --- ... (metadatos) ... líneas que empiezan con "- " (continuación del diagnóstico)
+    match_continuation = re.search(
+        r'---\s*P[ÁA]GINA\s+\d+\s*---.*?(?:Fecha\s+Informe\s*:.*?\n)((?:\s*-\s+[^\n]+\n)+)',
+        text,
+        re.DOTALL | re.IGNORECASE
+    )
+
+    if not match_continuation:
+        return text
+
+    continuacion_pag2 = match_continuation.group(1).strip()
+
+    # Paso 3: Unir diagnóstico completo
+    diagnostico_completo = diagnostico_pag1.rstrip() + '\n' + continuacion_pag2
+
+    # Paso 4: Reemplazar en el texto original
+    # Eliminar la parte original del diagnóstico en pag 1 (hasta pie de página)
+    text = re.sub(
+        r'DIAGN[OÓ]STICO\s*\n.*?(?=Todos\s+los\s+an[aá]lisis\s+son\s+avalados|Pat[óo]logos?\s*\(CAP\)|---\s*P[ÁA]GINA)',
+        diagnostico_completo + '\n',
+        text,
+        count=1,
+        flags=re.DOTALL | re.IGNORECASE
+    )
+
+    # Eliminar la continuación de pag 2 (ya está unida arriba)
+    text = re.sub(
+        r'(---\s*P[ÁA]GINA\s+\d+\s*---.*?Fecha\s+Informe\s*:.*?\n)((?:\s*-\s+[^\n]+\n)+)',
+        r'\1',  # Mantener separador y metadatos, eliminar continuación
+        text,
+        flags=re.DOTALL | re.IGNORECASE
+    )
+
+    return text
+
+
 def extract_medical_data(text: str) -> Dict[str, Any]:
     """Extrae todos los datos médicos del texto IHQ
 
@@ -270,23 +982,38 @@ def extract_medical_data(text: str) -> Dict[str, Any]:
     # CORREGIDO: clean_text_comprehensive rompe los patrones, usar texto original
     clean_text = text  # clean_text_comprehensive(text)
 
+    # v5.3.2: PREPROCESAR - Unir diagnóstico multipágina ANTES de extracción
+    clean_text = _preprocess_multipage_diagnosis(clean_text)
+
     results = {}
 
     # === EXTRAER CAMPOS MÉDICOS BÁSICOS ===
     for key, pattern in PATTERNS_IHQ.items():
-        match = re.search(pattern, clean_text, re.IGNORECASE | re.DOTALL)
+        # v5.3.3: Para descripcion_microscopica_final, NO usar re.IGNORECASE
+        # para que solo detecte "DIAGNÓSTICO" en mayúsculas
+        if key == 'descripcion_microscopica_final':
+            match = re.search(pattern, clean_text, re.DOTALL)  # Sin re.IGNORECASE
+        else:
+            match = re.search(pattern, clean_text, re.IGNORECASE | re.DOTALL)
+
         if key == 'fecha_toma_raw':
             val = match.group(1).strip() if match else ''
             results['fecha_toma'] = convert_date_format(val) if val else 'SIN DATO'
         else:
             results[key] = match.group(1).strip() if match else ''
 
+    # === LIMPIEZA ESPECIAL: DIAGNÓSTICO MULTIPAGE ===
+    # v5.3.1: Limpiar diagnóstico de residuos de página (footer, separadores, metadatos repetidos)
+    if results.get('diagnostico_final_ihq'):
+        diagnostico_raw = results['diagnostico_final_ihq']
+        diagnostico_clean = clean_diagnostico_multipage(diagnostico_raw)
+        results['diagnostico_final_ihq'] = diagnostico_clean
+
     # === EXTRAER DATOS ADICIONALES CON PATRONES GENÉRICOS ===
-    # Información de estudios y procedimientos
-    estudios_match = re.search(r'(?:estudios?\s+solicitados?)[:\s]+(.*?)(?=\s*(?:órgano|organo|responsable|fecha|descripción)|$)',
-                              clean_text, re.IGNORECASE | re.DOTALL)
-    if estudios_match:
-        results['estudios_solicitados'] = estudios_match.group(1).strip()
+    # Información de estudios y procedimientos - VERSIÓN ROBUSTA v3.2.5
+    # CORREGIDO v4.2.6: Siempre sobrescribir (incluso si vacío) para eliminar encabezados de tabla capturados por patrón antiguo
+    biomarcadores_solicitados = extract_biomarcadores_solicitados_robust(clean_text)
+    results['estudios_solicitados'] = ', '.join(biomarcadores_solicitados) if biomarcadores_solicitados else ''
 
     # Información del órgano (múltiples patrones)
     organo_value = extract_organ_information(clean_text)
@@ -340,6 +1067,7 @@ def extract_medical_data(text: str) -> Dict[str, Any]:
 
     # ═══════════════════════════════════════════════════════════════════════
     # NUEVO v4.2.2: Si no hay diagnóstico principal, extraer de descripción
+    # v5.3.6: CORREGIDO - Guardar texto COMPLETO, no solo diagnóstico principal
     # ═══════════════════════════════════════════════════════════════════════
     if not results.get('diagnostico_final_ihq') or results.get('diagnostico_final_ihq') in ['', 'N/A']:
         # Buscar descripción diagnóstico en el texto
@@ -351,10 +1079,9 @@ def extract_medical_data(text: str) -> Dict[str, Any]:
         if desc_diag_match:
             desc_diag_text = desc_diag_match.group(1).strip()
             if desc_diag_text and len(desc_diag_text) > 20:
-                # Extraer diagnóstico principal de la descripción
-                diagnostico_extraido = extract_principal_diagnosis(desc_diag_text)
-                if diagnostico_extraido and diagnostico_extraido not in ['', 'N/A']:
-                    results['diagnostico_final_ihq'] = diagnostico_extraido
+                # v5.3.6: Guardar el texto COMPLETO (no extraer solo principal)
+                # La extracción del diagnóstico principal se hace después en extract_diagnostico_principal()
+                results['diagnostico_final_ihq'] = desc_diag_text
 
     # Mapear campos para compatibilidad con base de datos
     results = map_medical_fields_to_database(results)
@@ -698,35 +1425,37 @@ def extract_responsible_physician(results: Dict[str, Any], text: str) -> Dict[st
     """
 
     resp_name = ''
-    
+
+    # v5.3.5: PRIORIDAD REORGANIZADA - Buscar primero nombres conocidos (más confiables)
     # ═══════════════════════════════════════════════════════════════════════
-    # ESTRATEGIA 1: Patrón principal (nombre antes de "Responsable del análisis")
+    # ESTRATEGIA 1: Nombres conocidos de patólogos (búsqueda directa) - MÁS CONFIABLE
     # ═══════════════════════════════════════════════════════════════════════
-    resp_match = re.search(PATTERNS_IHQ['responsable_ihq'], text, re.IGNORECASE | re.DOTALL)
-    if resp_match:
-        resp_name = resp_match.group(1).strip()
-    
-    # ═══════════════════════════════════════════════════════════════════════
-    # ESTRATEGIA 2: Patrón alternativo 1 (nombre antes de "MÉDICO PATÓLOGO")
-    # ═══════════════════════════════════════════════════════════════════════
-    if not resp_name and 'responsable_alt1' in PATTERNS_IHQ:
-        resp_match = re.search(PATTERNS_IHQ['responsable_alt1'], text, re.IGNORECASE)
+    if 'responsable_alt3' in PATTERNS_IHQ:
+        resp_match = re.search(PATTERNS_IHQ['responsable_alt3'], text, re.IGNORECASE)
         if resp_match:
             resp_name = resp_match.group(1).strip()
-    
+
     # ═══════════════════════════════════════════════════════════════════════
-    # ESTRATEGIA 3: Patrón alternativo 2 (nombre antes de "RM:")
+    # ESTRATEGIA 2: Patrón antes de "RM:" (registro médico)
     # ═══════════════════════════════════════════════════════════════════════
     if not resp_name and 'responsable_alt2' in PATTERNS_IHQ:
         resp_match = re.search(PATTERNS_IHQ['responsable_alt2'], text, re.IGNORECASE)
         if resp_match:
             resp_name = resp_match.group(1).strip()
-    
+
     # ═══════════════════════════════════════════════════════════════════════
-    # ESTRATEGIA 4: Nombres conocidos de patólogos (búsqueda directa)
+    # ESTRATEGIA 3: Patrón antes de "MÉDICO PATÓLOGO"
     # ═══════════════════════════════════════════════════════════════════════
-    if not resp_name and 'responsable_alt3' in PATTERNS_IHQ:
-        resp_match = re.search(PATTERNS_IHQ['responsable_alt3'], text, re.IGNORECASE)
+    if not resp_name and 'responsable_alt1' in PATTERNS_IHQ:
+        resp_match = re.search(PATTERNS_IHQ['responsable_alt1'], text, re.IGNORECASE)
+        if resp_match:
+            resp_name = resp_match.group(1).strip()
+
+    # ═══════════════════════════════════════════════════════════════════════
+    # ESTRATEGIA 4: Patrón principal (nombre antes de "Responsable del análisis")
+    # ═══════════════════════════════════════════════════════════════════════
+    if not resp_name:
+        resp_match = re.search(PATTERNS_IHQ['responsable_ihq'], text, re.IGNORECASE | re.DOTALL)
         if resp_match:
             resp_name = resp_match.group(1).strip()
 
@@ -738,8 +1467,13 @@ def extract_responsible_physician(results: Dict[str, Any], text: str) -> Dict[st
 
         for line in lines:
             line_upper = line.upper()
-            # Ignorar líneas que son claramente no nombres
-            if any(keyword in line_upper for keyword in ['COMENTARIOS', 'POSITIVO', 'NEGATIVO', 'FOCAL', 'DIFUSO', 'MD', 'PATOLOGO', '%', 'RESPONSABLE']):
+            # v5.3.5: Ignorar líneas que claramente no son nombres de patólogos
+            keywords_to_exclude = [
+                'COMENTARIOS', 'POSITIVO', 'NEGATIVO', 'FOCAL', 'DIFUSO', 'MD', 'PATOLOGO', '%', 'RESPONSABLE',
+                'COLEGIO', 'AMERICANO', 'HOSPITAL', 'ANALISIS', 'AVALADOS', 'PROGRAMA', 'CALIDAD',
+                'RECEPTOR', 'HER', 'KI-67', 'ESTUDIOS', 'ISO', 'ONEWORLD', 'ACCURACY', 'AUSTRALASIA'
+            ]
+            if any(keyword in line_upper for keyword in keywords_to_exclude):
                 continue
             # Ignorar líneas vacías
             if not line.strip():
@@ -747,7 +1481,11 @@ def extract_responsible_physician(results: Dict[str, Any], text: str) -> Dict[st
             # Ignorar líneas con RM:
             if 'RM:' in line or 'RM ' in line:
                 continue
-            clean_lines.append(line)
+            # v5.3.5: Solo aceptar líneas con formato de nombre (2-4 palabras en mayúsculas)
+            # Ejemplo válido: "NANCY MEJIA VARGAS"
+            words = line.split()
+            if 2 <= len(words) <= 4 and all(word.isupper() for word in words):
+                clean_lines.append(line)
 
         # Tomar la última línea limpia (el nombre del responsable suele ser la última línea)
         resp_name = clean_lines[-1] if clean_lines else ''
@@ -1065,21 +1803,24 @@ def extract_principal_diagnosis(full_text: str) -> str:
 
 def clean_diagnosis_text(diagnosis: str) -> str:
     """Limpia texto explicativo del diagnóstico principal
-    
+
     Elimina comentarios, sugerencias y texto explicativo que no es parte
     del diagnóstico en sí.
-    
-    Versión: 4.2.4
-    
+
+    Versión: 5.3.1 - MEJORADO: Integra limpieza de multipágina
+
     Args:
         diagnosis: Diagnóstico extraído que puede contener texto adicional
-        
+
     Returns:
         Diagnóstico limpio sin texto explicativo
     """
     if not diagnosis or diagnosis in ['', 'N/A']:
         return diagnosis
-    
+
+    # v5.3.1: PRIMERO aplicar limpieza de multipágina
+    diagnosis = clean_diagnostico_multipage(diagnosis)
+
     # Patrones de texto explicativo a eliminar (después de coma o punto y coma)
     cutoff_patterns = [
         r',?\s+SIN EMBARGO.*',
@@ -1093,14 +1834,14 @@ def clean_diagnosis_text(diagnosis: str) -> str:
         r',?\s+NO DESCARTA.*',
         r';\s+.*'  # Todo después de punto y coma
     ]
-    
+
     cleaned = diagnosis
     for pattern in cutoff_patterns:
         cleaned = re.sub(pattern, '', cleaned, flags=re.IGNORECASE)
-    
+
     # Limpiar espacios múltiples y caracteres finales
     cleaned = re.sub(r'\s+', ' ', cleaned).strip(' .,:;')
-    
+
     return cleaned if cleaned else diagnosis  # Retornar original si queda vacío
 
 

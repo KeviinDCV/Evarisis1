@@ -116,8 +116,34 @@ def process_ihq_file(file_path: str, log_callback: Optional[Callable] = None) ->
                     logging.warning(f"extract_ihq_data retornó vacío para {numero_ihq}")
                     continue
 
+                # V5.3.9.3: VALIDAR Y CORREGIR MÉDICO-SERVICIO ANTES DE MAPEAR
+                from core.validador_medico_servicio import validar_y_corregir_datos_extraidos
+
+                datos_corregidos, correccion_medico_servicio = validar_y_corregir_datos_extraidos(datos_extraidos)
+
+                if correccion_medico_servicio:
+                    safe_log(f"      🩺 Corrección médico-servicio aplicada:")
+                    safe_log(f"         {correccion_medico_servicio['valor_original']} → {correccion_medico_servicio['valor_corregido']}")
+                    safe_log(f"         Razón: {correccion_medico_servicio['razon']}")
+
+                # Usar datos corregidos de ahora en adelante
+                datos_extraidos = datos_corregidos
+
                 # Registrar extracción
                 mapper.registrar_extractor("unified", datos_extraidos)
+
+                # V5.3.9: Extraer y registrar correcciones aplicadas
+                correcciones = datos_extraidos.pop('_correcciones_aplicadas', [])
+
+                # Agregar corrección médico-servicio si existe
+                if correccion_medico_servicio:
+                    # V5.3.9.3: Agregar número de caso para agrupación en ventana de resultados
+                    correccion_medico_servicio['numero_caso'] = numero_ihq
+                    correcciones.append(correccion_medico_servicio)
+
+                if correcciones:
+                    mapper.registrar_correcciones(correcciones)
+                    safe_log(f"      🔧 Correcciones totales aplicadas: {len(correcciones)}")
 
                 # CRÍTICO: Mapear al formato de BD
                 safe_log(f"      🗺️ Mapeando a formato BD...")
@@ -127,6 +153,9 @@ def process_ihq_file(file_path: str, log_callback: Optional[Callable] = None) ->
                     safe_log(f"      ⚠️ El mapeo retornó vacío para {numero_ihq}")
                     logging.warning(f"map_to_database_format retornó vacío para {numero_ihq}")
                     continue
+
+                # V2.0: Registrar datos completos de BD (incluyendo IHQ_ESTUDIOS_SOLICITADOS)
+                mapper.registrar_base_datos(datos_mapeados)
 
                 # Guardar debug map
                 try:

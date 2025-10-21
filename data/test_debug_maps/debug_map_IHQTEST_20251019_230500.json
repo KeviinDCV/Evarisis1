@@ -1,0 +1,28 @@
+{
+  "numero_peticion": "IHQ TEST",
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "CARCIN0MA",
+      "valor_corregido": "CARCINOMA",
+      "razon": "OCR: 0->O",
+      "numero_caso": "IHQTEST"
+    },
+    {
+      "tipo": "medico_servicio",
+      "campo": "Servicio",
+      "valor_original": "NEUROCIRUGIA",
+      "valor_corregido": "UNIDAD DE ONCOLOGIA COEX",
+      "razon": "Validacion medico-servicio",
+      "numero_caso": "IHQTEST"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 1,
+      "medico_servicio": 1
+    }
+  }
+}
