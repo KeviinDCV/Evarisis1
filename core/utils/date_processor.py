@@ -10,6 +10,7 @@ Migrado de: core/procesador_ihq.py (función calculate_birth_date y similares)
 """
 
 import re
+import logging
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from typing import Optional, Dict, Tuple, Union
@@ -355,7 +356,7 @@ def convert_date_format(date_str: str) -> str:
 
 def test_date_processor():
     """Función de prueba para validar el procesador de fechas"""
-    print("=== Test del Procesador de Fechas ===")
+    logging.info("=== Test del Procesador de Fechas ===")
     
     # Test parsing de fechas
     test_dates = [
@@ -365,10 +366,10 @@ def test_date_processor():
         "15.01.2025",
     ]
     
-    print("\n--- Test Parsing Fechas ---")
+    logging.info("\n--- Test Parsing Fechas ---")
     for date_str in test_dates:
         parsed = parse_date(date_str)
-        print(f"{date_str} -> {parsed}")
+        logging.info(f"{date_str} -> {parsed}")
     
     # Test parsing de edades
     test_ages = [
@@ -379,18 +380,18 @@ def test_date_processor():
         "2 años 6 meses",
     ]
     
-    print("\n--- Test Parsing Edades ---")
+    logging.info("\n--- Test Parsing Edades ---")
     for age_str in test_ages:
         parsed = parse_age_text(age_str)
         formatted = format_age(parsed['años'], parsed['meses'], parsed['días'])
-        print(f"{age_str} -> {parsed} -> {formatted}")
+        logging.info(f"{age_str} -> {parsed} -> {formatted}")
     
     # Test cálculo de fecha de nacimiento
-    print("\n--- Test Cálculo Fecha Nacimiento ---")
+    logging.info("\n--- Test Cálculo Fecha Nacimiento ---")
     ref_date = date(2025, 1, 15)
     for age_str in test_ages[:3]:
         birth_date = calculate_birth_date(ref_date, age_str)
-        print(f"Ref: {ref_date}, Edad: {age_str} -> Nacimiento: {birth_date}")
+        logging.info(f"Ref: {ref_date}, Edad: {age_str} -> Nacimiento: {birth_date}")
 
 
 if __name__ == "__main__":

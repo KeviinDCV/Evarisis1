@@ -13,6 +13,7 @@ Fecha: 5 de octubre de 2025
 """
 
 import tkinter as tk
+import logging
 from tkinter import ttk
 import ttkbootstrap as ttkb
 from ttkbootstrap.constants import *
@@ -82,7 +83,7 @@ class VentanaAuditoriaIA(tk.Toplevel):
         # Si la ventana está en estado iconic (minimizada), restaurarla automáticamente
         # durante el procesamiento
         if self.state() == 'iconic' and self.resultados == []:
-            print(f"   ⚠️ Ventana minimizada durante procesamiento, restaurando...")
+            logging.info(f"   ⚠️ Ventana minimizada durante procesamiento, restaurando...")
             self.after(500, self._forzar_restauracion)
 
     def _on_restaurar(self, event=None):
@@ -97,9 +98,9 @@ class VentanaAuditoriaIA(tk.Toplevel):
                 self.state('zoomed')  # Volver a maximizar
                 self.lift()  # Traer al frente
                 self.focus_force()  # Forzar foco
-                print(f"   ✅ Ventana restaurada automáticamente")
+                logging.info(f"   ✅ Ventana restaurada automáticamente")
         except Exception as e:
-            print(f"   ⚠️ No se pudo restaurar ventana: {e}")
+            logging.info(f"   ⚠️ No se pudo restaurar ventana: {e}")
 
     def _crear_ui(self):
         """Crea la interfaz de la ventana"""
@@ -119,7 +120,7 @@ class VentanaAuditoriaIA(tk.Toplevel):
         # Título
         titulo = ttkb.Label(
             main_frame,
-            text="Realizando auditoría con EVARISIS Gestor Oncológico",
+            text="Realizando auditoría con EVARISIS Cirugía Oncológica",
             font=("Segoe UI", 16, "bold"),
             bootstyle="primary"
         )
@@ -300,7 +301,7 @@ class VentanaAuditoriaIA(tk.Toplevel):
 
             if respuesta:
                 # Guardar reporte antes de cerrar
-                print(f"   💾 Guardando reporte antes de cerrar ventana...")
+                logging.info(f"   💾 Guardando reporte antes de cerrar ventana...")
                 if self.callback_completado:
                     self.callback_completado(self.resultados)
 
@@ -333,7 +334,7 @@ class VentanaAuditoriaIA(tk.Toplevel):
             casos_procesados: Número de casos procesados
             correcciones_totales: Total de correcciones aplicadas
         """
-        print(f"      📊 Actualizando stats: {casos_procesados}/{len(self.casos_a_auditar)} casos, {correcciones_totales} correcciones")
+        logging.info(f"      📊 Actualizando stats: {casos_procesados}/{len(self.casos_a_auditar)} casos, {correcciones_totales} correcciones")
 
         self.label_casos.config(
             text=f"📋 Casos procesados: {casos_procesados} / {len(self.casos_a_auditar)}"
@@ -353,7 +354,7 @@ class VentanaAuditoriaIA(tk.Toplevel):
             campo: Nombre del campo corregido
             valor: Valor asignado
         """
-        print(f"      ✓ Agregando corrección: {numero_caso} - {campo} = {valor[:50]}")
+        logging.info(f"      ✓ Agregando corrección: {numero_caso} - {campo} = {valor[:50]}")
 
         # Habilitar edición temporalmente
         self.text_correcciones.config(state=tk.NORMAL)
@@ -383,7 +384,7 @@ class VentanaAuditoriaIA(tk.Toplevel):
             lote_num: Número del lote (1, 2, 3...)
             tiempo_str: Tiempo formateado (ej: "0 min 45 seg" o "procesando...")
         """
-        print(f"   📦 Header LOTE {lote_num} - {tiempo_str}")
+        logging.info(f"   📦 Header LOTE {lote_num} - {tiempo_str}")
 
         self.text_correcciones.config(state=tk.NORMAL)
 
@@ -417,10 +418,10 @@ class VentanaAuditoriaIA(tk.Toplevel):
             lote_num: Número del lote (1, 2, 3...)
             tiempo_str: Tiempo final formateado (ej: "2 min 15 seg")
         """
-        print(f"   🔄 Actualizando tiempo LOTE {lote_num} -> {tiempo_str}")
+        logging.info(f"   🔄 Actualizando tiempo LOTE {lote_num} -> {tiempo_str}")
 
         if not hasattr(self, '_header_ranges') or lote_num not in self._header_ranges:
-            print(f"   ⚠️ No se encontró header para LOTE {lote_num}")
+            logging.info(f"   ⚠️ No se encontró header para LOTE {lote_num}")
             return
 
         start_pos, end_pos, tag_name = self._header_ranges[lote_num]
@@ -438,9 +439,9 @@ class VentanaAuditoriaIA(tk.Toplevel):
             self.text_correcciones.delete(start, end)
             self.text_correcciones.insert(start, nuevo_header, ("lote_header", tag_name))
 
-            print(f"   ✅ Header actualizado exitosamente")
+            logging.info(f"   ✅ Header actualizado exitosamente")
         else:
-            print(f"   ⚠️ No se encontraron tags para el header")
+            logging.info(f"   ⚠️ No se encontraron tags para el header")
 
         self.text_correcciones.config(state=tk.DISABLED)
         self.update_idletasks()
@@ -458,7 +459,7 @@ class VentanaAuditoriaIA(tk.Toplevel):
             valor: Valor asignado
             razon: Razón de la corrección
         """
-        print(f"      ✓ {numero_caso} - {campo}: {razon[:60]}")
+        logging.info(f"      ✓ {numero_caso} - {campo}: {razon[:60]}")
 
         self.text_correcciones.config(state=tk.NORMAL)
 
@@ -495,10 +496,10 @@ class VentanaAuditoriaIA(tk.Toplevel):
             return
 
         correcciones_totales = 0
-        
+
         # NUEVO: Detectar si usar procesamiento por lotes
         usar_lotes = self.modo == 'parcial' and len(self.casos_a_auditar) > 1
-        
+
         if usar_lotes:
             # Obtener tamaño de lote del primer caso (configurado en auditoria_parcial.py)
             batch_size = self.casos_a_auditar[0].get('batch_size', 3)
@@ -509,10 +510,10 @@ class VentanaAuditoriaIA(tk.Toplevel):
                 lote = self.casos_a_auditar[i:i + batch_size]
                 lotes.append(lote)
             
-            print(f"\n📦 Procesamiento por LOTES activado")
-            print(f"   Total casos: {len(self.casos_a_auditar)}")
-            print(f"   Tamaño lote: {batch_size} casos")
-            print(f"   Total lotes: {len(lotes)}\n")
+            logging.info(f"\n📦 Procesamiento por LOTES activado")
+            logging.info(f"   Total casos: {len(self.casos_a_auditar)}")
+            logging.info(f"   Tamaño lote: {batch_size} casos")
+            logging.info(f"   Total lotes: {len(lotes)}\n")
             
             # Procesar cada lote
             casos_procesados = 0
@@ -531,11 +532,11 @@ class VentanaAuditoriaIA(tk.Toplevel):
                     p
                 ))
 
-                print(f"🔄 Procesando lote {idx_lote+1}/{len(lotes)}: {len(lote)} casos")
+                logging.info(f"🔄 Procesando lote {idx_lote+1}/{len(lotes)}: {len(lote)} casos")
 
                 # Procesar lote completo
                 try:
-                    print(f"   📤 Enviando lote a IA...")
+                    logging.info(f"   📤 Enviando lote a IA...")
 
                     # Definir callback para actualizar UI en tiempo real
                     # V2.1.0: Soporta formato de LOTES con tiempo y razones
@@ -544,14 +545,14 @@ class VentanaAuditoriaIA(tk.Toplevel):
                         Callback que se ejecuta después de cada caso procesado
                         V2.1.0: Muestra formato LOTE X (tiempo) con razones
                         """
-                        print(f"   🔔 UI callback recibido: {resultado.get('numero_peticion', 'N/A')}")
+                        logging.info(f"   🔔 UI callback recibido: {resultado.get('numero_peticion', 'N/A')}")
 
                         def _actualizar():
                             numero_peticion = resultado.get('numero_peticion', 'Desconocido')
                             casos_proc = resultado.get('casos_procesados', 0)
                             total = resultado.get('total_casos', 1)
 
-                            print(f"      🔄 Actualizando UI: {numero_peticion} - {casos_proc}/{total}")
+                            logging.info(f"      🔄 Actualizando UI: {numero_peticion} - {casos_proc}/{total}")
 
                             # Actualizar estadísticas
                             nonlocal correcciones_totales, casos_procesados, lote_iniciado
@@ -576,18 +577,18 @@ class VentanaAuditoriaIA(tk.Toplevel):
                                 es_primer_caso = resultado.get('es_primer_caso_lote', False)
 
                                 # DEBUG V2.1.6: Ver qué recibimos
-                                print(f"      [UI] Recibido: lote={lote_num}, primer={es_primer_caso}, tiempo={tiempo_lote}, lote_iniciado={lote_iniciado}")
+                                logging.info(f"      [UI] Recibido: lote={lote_num}, primer={es_primer_caso}, tiempo={tiempo_lote}, lote_iniciado={lote_iniciado}")
 
                                 if lote_num is not None:
 
                                     # Mostrar header solo en el PRIMER caso del lote
                                     if es_primer_caso and lote_num not in lote_iniciado:
-                                        print(f"      [UI] ✅ Creando header LOTE {lote_num}")
+                                        logging.info(f"      [UI] ✅ Creando header LOTE {lote_num}")
                                         lote_iniciado[lote_num] = "procesando"  # Marcar como en proceso
                                         # Agregar header SIN tiempo (todavía no terminó el lote)
                                         self._agregar_header_lote(lote_num, "procesando...")
                                     else:
-                                        print(f"      [UI] ⏭️  NO crear header (primer={es_primer_caso}, existe={lote_num in lote_iniciado})")
+                                        logging.info(f"      [UI] ⏭️  NO crear header (primer={es_primer_caso}, existe={lote_num in lote_iniciado})")
 
                                     # Actualizar header con tiempo FINAL solo en último caso
                                     if tiempo_lote is not None and lote_iniciado.get(lote_num) == "procesando":
@@ -650,14 +651,14 @@ class VentanaAuditoriaIA(tk.Toplevel):
                         total_casos_global=len(self.casos_a_auditar)  # V2.1.6: Total de casos en toda la auditoría
                     )
                     
-                    print(f"   ✅ Lote {idx_lote+1} procesado completamente")
+                    logging.info(f"   ✅ Lote {idx_lote+1} procesado completamente")
 
                     # Guardar resultados para reporte final
                     for resultado in resultados_lote:
                         self.resultados.append(resultado)
                     
                 except Exception as e:
-                    print(f"   ❌ Error crítico procesando lote {idx_lote+1}: {e}")
+                    logging.info(f"   ❌ Error crítico procesando lote {idx_lote+1}: {e}")
                     import traceback
                     traceback.print_exc()
 
@@ -674,15 +675,15 @@ class VentanaAuditoriaIA(tk.Toplevel):
                             self.agregar_correccion_tiempo_real(n, "ERROR CRÍTICO", err)
                         self.after(0, mostrar_error_critico)
             
-            print(f"\n✅ Procesamiento por lotes completado")
-            print(f"   Casos procesados: {casos_procesados}")
-            print(f"   Correcciones totales: {correcciones_totales}\n")
+            logging.info(f"\n✅ Procesamiento por lotes completado")
+            logging.info(f"   Casos procesados: {casos_procesados}")
+            logging.info(f"   Correcciones totales: {correcciones_totales}\n")
         
         else:
             # Procesamiento individual (modo completa o un solo caso)
-            print(f"\n🔍 Procesamiento INDIVIDUAL activado")
-            print(f"   Modo: {self.modo.upper()}")
-            print(f"   Total casos: {len(self.casos_a_auditar)}\n")
+            logging.info(f"\n🔍 Procesamiento INDIVIDUAL activado")
+            logging.info(f"   Modo: {self.modo.upper()}")
+            logging.info(f"   Total casos: {len(self.casos_a_auditar)}\n")
             
             for idx, caso in enumerate(self.casos_a_auditar):
                 if self.auditoria_cancelada:
@@ -792,14 +793,14 @@ class VentanaAuditoriaIA(tk.Toplevel):
 
         # CRÍTICO: Generar reporte AUTOMÁTICAMENTE antes de mostrar botón
         # Esto garantiza que el reporte se guarde incluso si la ventana se cierra
-        print(f"\n💾 Guardando reporte automáticamente...")
+        logging.info(f"\n💾 Guardando reporte automáticamente...")
         if self.callback_completado:
             try:
                 # Llamar callback para generar el reporte
                 self.callback_completado(self.resultados)
-                print(f"✅ Reporte guardado correctamente")
+                logging.info(f"✅ Reporte guardado correctamente")
             except Exception as e:
-                print(f"❌ Error guardando reporte: {e}")
+                logging.info(f"❌ Error guardando reporte: {e}")
                 import traceback
                 traceback.print_exc()
 
@@ -821,7 +822,7 @@ class VentanaAuditoriaIA(tk.Toplevel):
         # NOTA: El callback ya fue llamado en _finalizar_auditoria()
         # Solo necesitamos navegar a la sección de Análisis IA y cerrar la ventana
 
-        print(f"   👁️ Usuario solicitó ver resultados")
+        logging.info(f"   👁️ Usuario solicitó ver resultados")
 
         # Cerrar ventana
         self.grab_release()
@@ -842,7 +843,7 @@ class VentanaAuditoriaIA(tk.Toplevel):
                     f"La sección 'Análisis IA' ha sido abierta automáticamente."
                 )
         except Exception as e:
-            print(f"   ⚠️ No se pudo mostrar mensaje de completado: {e}")
+            logging.info(f"   ⚠️ No se pudo mostrar mensaje de completado: {e}")
 
 
 def mostrar_ventana_auditoria(
@@ -898,7 +899,7 @@ if __name__ == "__main__":
     ]
 
     def on_completado(resultados):
-        print(f"✅ Auditoría completada: {len(resultados)} casos")
+        logging.info(f"✅ Auditoría completada: {len(resultados)} casos")
         root.quit()
 
     btn = ttkb.Button(

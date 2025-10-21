@@ -19,7 +19,7 @@ VERSION 2.1.2 - Control Dinámico de Reasoning (7 Oct 2025):
 - Reasoning controlado via prompt engineering (no API)
 - PARCIAL: Sin reasoning (rápido, directo) - "NO pienses, responde YA"
 - COMPLETA: Con reasoning (profundo, analítico) - "PIENSA, ANALIZA, VALIDA"
-- Timeouts aumentados: 120 → 300 seg (5 minutos)
+- Timeouts: 600 seg (10 minutos) - FIX 11: Aumentado para lotes grandes
 - Max tokens aumentados: 2000/4000/6000 según modo
 - Dual system prompts para control preciso
 
@@ -29,6 +29,7 @@ Fecha: 7 de octubre de 2025
 """
 
 import json
+import logging
 import sys
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
@@ -60,6 +61,7 @@ from core.llm_client import LMStudioClient
 from core.debug_mapper import DebugMapper
 from core.database_manager import update_campo_registro, get_registro_by_peticion
 from core.prompts import get_system_prompt_completa, get_system_prompt_parcial, get_system_prompt_comun
+import re
 
 
 # MAPEO DE CAMPOS LEGIBLES A NOMBRES DE COLUMNAS BD
@@ -82,9 +84,9 @@ MAPEO_CAMPOS_BD = {
     "tipo de documento": "Tipo de documento",
 
     # Datos médicos
-    "organo": "Organo (1. Muestra enviada a patología)",
-    "órgano": "Organo (1. Muestra enviada a patología)",
-    "muestra": "Organo (1. Muestra enviada a patología)",
+    "organo": "Organo",
+    "órgano": "Organo",
+    "muestra": "Organo",
     "factor pronostico": "Factor pronostico",
     "factor pronóstico": "Factor pronostico",
     "diagnostico principal": "Diagnostico Principal",
@@ -112,11 +114,11 @@ MAPEO_CAMPOS_BD = {
     "ihq_ki-67": "IHQ_KI-67",
     "ihq ki-67": "IHQ_KI-67",
     "ihq_ki67": "IHQ_KI-67",
-    "receptor estrogeno": "IHQ_RECEPTOR_ESTROGENO",
-    "receptor estrógeno": "IHQ_RECEPTOR_ESTROGENO",
-    "ihq_receptor_estrogeno": "IHQ_RECEPTOR_ESTROGENO",
-    "receptor progesterona": "IHQ_RECEPTOR_PROGESTERONOS",
-    "ihq_receptor_progesteronos": "IHQ_RECEPTOR_PROGESTERONOS",
+    "receptor estrogeno": "IHQ_RECEPTOR_ESTROGENOS",
+    "receptor estrógeno": "IHQ_RECEPTOR_ESTROGENOS",
+    "ihq_receptor_estrogeno": "IHQ_RECEPTOR_ESTROGENOS",
+    "receptor progesterona": "IHQ_RECEPTOR_PROGESTERONA",
+    "ihq_receptor_progesteronos": "IHQ_RECEPTOR_PROGESTERONA",
     "pdl-1": "IHQ_PDL-1",
     "pdl1": "IHQ_PDL-1",
     "ihq_pdl-1": "IHQ_PDL-1",
@@ -214,59 +216,120 @@ def normalizar_nombre_campo(nombre_campo: str) -> str:
     return nombre_campo
 
 
+def extraer_texto_relevante_pdf(texto_completo: str, modo: str = 'parcial') -> str:
+    """
+    Extrae solo la parte médica relevante del texto OCR del PDF.
+
+    V3.2.4.2: FIX 15 - Optimización de texto para auditoría PARCIAL y COMPLETA
+
+    Args:
+        texto_completo: Texto consolidado completo del OCR
+        modo: 'parcial' o 'completa'
+            - 'parcial': Extrae desde "INFORME DE ANATOMÍA PATOLÓGICA"
+            - 'completa': Extrae desde "Estudios solicitados" (incluye tabla de estudios + órgano)
+
+    Returns:
+        Texto optimizado solo con contenido médico relevante
+    """
+    if not texto_completo or len(texto_completo) < 100:
+        return texto_completo
+
+    # V3.2.4.2: FIX 15 - Buscar inicio según modo
+    if modo == 'completa':
+        # COMPLETA: Desde "Estudios solicitados" (incluye tabla + órgano hacia adelante)
+        # Elimina nombre, identificación, género, edad, EPS, médico, servicio, fechas
+        patrones_inicio = [
+            r'ESTUDIOS? SOLICITADOS?',
+            r'N\.\s*ESTUDIO',
+            r'ESTUDIO\s+TIPO ESTUDIO',
+            r'ORGANO'  # Fallback si no encuentra "Estudios solicitados"
+        ]
+    else:
+        # PARCIAL: Desde "INFORME DE ANATOMÍA PATOLÓGICA"
+        patrones_inicio = [
+            r'INFORME DE ANATOM[IÍ]A PATOL[OÓ]GICA',
+            r'INFORME ANATOMOPATOL[OÓ]GICO',
+            r'ESTUDIO DE INMUNOHISTOQU[IÍ]MICA',
+            r'DESCRIPCI[OÓ]N MACROSC[OÓ]PICA'
+        ]
+
+    inicio_idx = None
+    for patron in patrones_inicio:
+        match = re.search(patron, texto_completo, re.IGNORECASE)
+        if match:
+            inicio_idx = match.start()
+            break
+
+    # Si no encuentra el patrón de inicio, usar todo el texto
+    if inicio_idx is None:
+        texto_relevante = texto_completo
+    else:
+        texto_relevante = texto_completo[inicio_idx:]
+
+    # V3.2.4.2: FIX 15 - Buscar fin: nombre del patólogo
+    # Patrón: Nombre en MAYÚSCULAS al final del documento (después de COMENTARIOS o al final)
+    # Ejemplos: "CARLOS CAICEDO ESTRADA", "MARIA LOPEZ GOMEZ"
+
+    # Buscar primero después de "COMENTARIOS" si existe
+    comentarios_match = re.search(r'COMENTARIOS?[:\s]', texto_relevante, re.IGNORECASE)
+
+    if comentarios_match:
+        # Buscar nombre del patólogo después de COMENTARIOS
+        # Patrón: 2-4 palabras en MAYÚSCULAS (nombre completo)
+        texto_post_comentarios = texto_relevante[comentarios_match.end():]
+
+        # Buscar línea con nombre completo en mayúsculas (típicamente al final)
+        patron_nombre = r'\n([A-ZÁÉÍÓÚÑ]+(?:\s+[A-ZÁÉÍÓÚÑ]+){1,3})\s*\n'
+        nombres_encontrados = re.findall(patron_nombre, texto_post_comentarios)
+
+        if nombres_encontrados:
+            # Usar el último nombre encontrado (típicamente el patólogo)
+            nombre_patologo = nombres_encontrados[-1]
+            fin_idx = texto_relevante.rfind(nombre_patologo)
+
+            if fin_idx != -1:
+                # Cortar justo antes del nombre del patólogo
+                texto_relevante = texto_relevante[:fin_idx].rstrip()
+
+    return texto_relevante.strip()
+
+
 class AuditoriaIA:
     """Sistema de auditoría automática con IA"""
 
     def __init__(
         self,
         llm_endpoint: str = "http://127.0.0.1:1234",
-        timeout: int = 300  # V2.1.2: Aumentado para lotes grandes (120 → 300 seg = 5 min)
+        timeout: int = 600  # V3.2.4.2: FIX 11 - Aumentado para lotes de casos con muchos campos vacíos (300 → 600 seg = 10 min)
     ):
         """
         Inicializar sistema de auditoría
 
         Args:
             llm_endpoint: Endpoint del servidor LM Studio
-            timeout: Timeout para peticiones LLM en segundos (default 300seg = 5min)
+            timeout: Timeout para peticiones LLM en segundos (default 600seg = 10min)
         """
         self.llm_client = None
         self.llm_activo = False
 
         # Intentar conectar con LLM
         try:
-            print(f"🔍 Conectando con LM Studio en {llm_endpoint}...")
+            logging.info(f"Conectando con LM Studio en {llm_endpoint}...")
             self.llm_client = LMStudioClient(endpoint=llm_endpoint, timeout=timeout)
 
-            # Verificar que esté funcionando con un test simple
-            print(f"🔍 Verificando funcionamiento con test simple...")
-            test = self.llm_client.completar("Hi", max_tokens=100, temperature=0.1)
-
-            if test.get("exito"):
-                self.llm_activo = True
-                print(f"✅ LM Studio activo y funcionando")
-                print(f"   Modelo: {test.get('modelo', 'Desconocido')}")
-            else:
-                self.llm_activo = False
-                error_msg = test.get('error', 'Error desconocido')
-                print(f"❌ LM Studio respondió pero con error:")
-                print(f"   {error_msg}")
-
-                # Mostrar detalle completo del error
-                if 'detalle' in test:
-                    print(f"   Detalle: {test['detalle']}")
-
-                # Si el error es por max_tokens bajo o reasoning, considerar activo de todas formas
-                if "max_tokens" in error_msg.lower() or "reasoning" in error_msg.lower() or "content vacío" in error_msg.lower():
-                    print(f"   💡 Error conocido del modelo, marcando como activo de todas formas")
-                    self.llm_activo = True
+            # V3.2.4.2: FIX 5 - Eliminar warmup innecesario "Hi"
+            # Simplemente marcar como activo si el cliente se inicializó
+            # El verdadero test será al enviar la primera auditoría
+            self.llm_activo = True
+            logging.info(f"LM Studio client inicializado")
 
         except Exception as e:
-            print(f"❌ No se pudo conectar con LM Studio:")
-            print(f"   Error: {type(e).__name__}: {str(e)}")
-            print(f"   Endpoint: {llm_endpoint}")
-            print(f"   → Verifica que LM Studio esté ejecutándose")
-            print(f"   → Verifica que el servidor esté activo en puerto 1234")
-            print(f"   → Verifica que un modelo esté cargado")
+            logging.error(f"No se pudo conectar con LM Studio:")
+            logging.error(f"   Error: {type(e).__name__}: {str(e)}")
+            logging.error(f"   Endpoint: {llm_endpoint}")
+            logging.info(f"    Verifica que LM Studio esté ejecutándose")
+            logging.info(f"    Verifica que el servidor esté activo en puerto 1234")
+            logging.info(f"    Verifica que un modelo esté cargado")
             self.llm_activo = False
 
         self.resultados_dir = project_root / "data" / "auditorias_ia"
@@ -312,10 +375,10 @@ class AuditoriaIA:
 
         if modo == 'parcial':
             prompt = self._preparar_prompt_parcial(debug_map, datos_bd, campos_a_buscar or [])
-            max_tokens = 2000  # V2.1.2: Aumentado (1000 → 2000) para reasoning + JSON
+            max_tokens = 5000  # V3.2.4.2: FIX 15 - Aumentado (2000 → 5000) para texto completo sin límite
         else:
             prompt = self._preparar_prompt_auditoria(debug_map, datos_bd)
-            max_tokens = 4000  # V2.1.2: Aumentado (3000 → 4000) para análisis completo
+            max_tokens = 5000  # V3.2.4.2: FIX 15 - Aumentado (4000 → 5000) para texto optimizado (8000 chars)
 
         # 2. Enviar a LLM
         if progress_callback:
@@ -420,6 +483,8 @@ class AuditoriaIA:
                 "correcciones_aplicadas": resultado_aplicacion["correcciones_aplicadas"],
                 "correcciones_fallidas": resultado_aplicacion["correcciones_fallidas"],
                 "resumen": correcciones_json.get("resumen", {}),
+                "analisis_profundo": correcciones_json.get("analisis_profundo", {}),  # V3.2.4.2: Para reportes COMPLETA
+                "no_encontrados": correcciones_json.get("no_encontrados", []),  # V3.2.4.2: Para reportes PARCIAL
                 "tokens_usados": respuesta_llm.get("tokens_usados", {}),
                 "detalles": resultado_aplicacion["detalles"],
                 "cambios": cambios  # NUEVO: Para mostrar en tiempo real en UI
@@ -476,15 +541,34 @@ class AuditoriaIA:
         lotes = [casos[i:i+BATCH_SIZE] for i in range(0, len(casos), BATCH_SIZE)]
         num_lotes = len(lotes)
 
-        print(f"\n📦 PROCESAMIENTO POR LOTES ACTIVADO")
-        print(f"   Total casos: {num_casos}")
-        print(f"   Tamaño de lote: {BATCH_SIZE}")
-        print(f"   Total lotes: {num_lotes}")
-        print(f"   Tiempo estimado: {num_lotes * 30}s (~30s por lote)\n")
+        logging.info(f"\n📦 PROCESAMIENTO POR LOTES ACTIVADO")
+        logging.info(f"   Total casos: {num_casos}")
+        logging.info(f"   Tamaño de lote: {BATCH_SIZE}")
+        logging.info(f"   Total lotes: {num_lotes}")
+        logging.info(f"   Tiempo estimado: {num_lotes * 30}s (~30s por lote)\n")
+
+        # V3.2.5: FIX - Detectar si TODOS los casos tienen campos_a_buscar vacíos
+        # Esto ocurre cuando se auditan casos ya completos (100% completitud)
+        todos_vacios = all(
+            not caso.get('campos_a_buscar') or len(caso.get('campos_a_buscar', [])) == 0
+            for caso in casos
+        )
+
+        if todos_vacios:
+            logging.info(f"⚠️ TODOS los casos tienen campos_a_buscar vacíos (casos completos)")
+            logging.info(f"   No se requiere auditoría. Retornando sin cambios.\n")
+            return [{
+                "exito": True,
+                "numero_peticion": caso.get('numero_peticion', 'Desconocido'),
+                "correcciones_aplicadas": 0,
+                "correcciones_fallidas": 0,
+                "detalles": [],
+                "mensaje": "Caso ya completo, no se requieren correcciones"
+            } for caso in casos]
 
         # V2.1.3: Warmup del modelo para evitar lentitud en primer lote
         if num_lotes > 1:
-            print(f"🔥 Precalentando modelo LLM...")
+            logging.info(f"🔥 Precalentando modelo LLM...")
             import time
             warmup_start = time.time()
             warmup_response = self.llm_client.completar(
@@ -495,9 +579,9 @@ class AuditoriaIA:
             )
             warmup_time = time.time() - warmup_start
             if warmup_response.get("exito"):
-                print(f"   ✅ Modelo precalentado en {warmup_time:.1f}s")
+                logging.info(f"   ✅ Modelo precalentado en {warmup_time:.1f}s")
             else:
-                print(f"   ⚠️ Warmup falló (continuando anyway): {warmup_response.get('error', 'N/A')}")
+                logging.info(f"   ⚠️ Warmup falló (continuando anyway): {warmup_response.get('error', 'N/A')}")
 
         if progress_callback:
             progress_callback(f"Procesando {num_casos} casos en {num_lotes} lotes...", 0)
@@ -518,9 +602,52 @@ class AuditoriaIA:
                 if progress_callback:
                     progress_callback(f"🔄 LOTE {idx_lote+1}/{num_lotes} ({len(lote)} casos)...", progreso_base)
 
-                print(f"\n═══════════════════════════════════════════════════════════════")
-                print(f"📦 LOTE {idx_lote+1}/{num_lotes}: {', '.join(numeros_lote)}")
-                print(f"═══════════════════════════════════════════════════════════════\n")
+                logging.info(f"\n═══════════════════════════════════════════════════════════════")
+                logging.info(f"📦 LOTE {idx_lote+1}/{num_lotes}: {', '.join(numeros_lote)}")
+                logging.info(f"═══════════════════════════════════════════════════════════════\n")
+
+                # V3.2.5: FIX - Verificar si este lote específico tiene todos campos vacíos
+                lote_vacio = all(
+                    not caso.get('campos_a_buscar') or len(caso.get('campos_a_buscar', [])) == 0
+                    for caso in lote
+                )
+
+                if lote_vacio:
+                    logging.info(f"   ⚠️ Este lote tiene todos los campos vacíos (casos completos)")
+                    logging.info(f"   Omitiendo auditoría para estos {len(lote)} casos\n")
+
+                    # Agregar resultados sin correcciones
+                    for caso in lote:
+                        numero_peticion = caso.get('numero_peticion', 'Desconocido')
+                        resultados.append({
+                            "exito": True,
+                            "numero_peticion": numero_peticion,
+                            "correcciones_aplicadas": 0,
+                            "correcciones_fallidas": 0,
+                            "detalles": []
+                        })
+
+                        # Notificar a UI si hay callback
+                        if ui_callback:
+                            lote_num_real = lote_offset + idx_lote + 1
+                            casos_proc_actuales = lote_offset * BATCH_SIZE + len([r for r in resultados if r.get("exito")])
+                            total_global = total_casos_global if total_casos_global else num_casos
+
+                            ui_callback({
+                                "exito": True,
+                                "numero_peticion": numero_peticion,
+                                "correcciones_aplicadas": 0,
+                                "detalles": [],
+                                "lote": lote_num_real,
+                                "total_lotes": num_lotes,
+                                "casos_en_lote": len(lote),
+                                "tiempo_lote": 0.1,  # Tiempo instantáneo
+                                "es_primer_caso_lote": caso == lote[0],
+                                "casos_procesados": casos_proc_actuales,
+                                "total_casos": total_global
+                            })
+
+                    continue  # Saltar al siguiente lote
 
                 # 1. Preparar prompt para LOTE COMPLETO
                 if progress_callback:
@@ -532,7 +659,7 @@ class AuditoriaIA:
                 if progress_callback:
                     progress_callback(f"🤖 LOTE {idx_lote+1}: Analizando {len(lote)} casos simultáneamente...", progreso_base + 5)
 
-                print(f"   🤖 Enviando lote a IA (puede tardar 30-60s con reasoning activo)...")
+                logging.info(f"   🤖 Enviando lote a IA (puede tardar 30-60s con reasoning activo)...")
                 import time
                 tiempo_inicio = time.time()
 
@@ -546,11 +673,11 @@ class AuditoriaIA:
                 )
 
                 tiempo_transcurrido = time.time() - tiempo_inicio
-                print(f"   ⏱️ Respuesta LLM recibida en {tiempo_transcurrido:.1f}s")
+                logging.info(f"   ⏱️ Respuesta LLM recibida en {tiempo_transcurrido:.1f}s")
 
                 if not respuesta_llm.get("exito"):
                     error_msg = respuesta_llm.get('error', 'Error desconocido')
-                    print(f"   ❌ Error en LLM para lote {idx_lote+1}: {error_msg}")
+                    logging.info(f"   ❌ Error en LLM para lote {idx_lote+1}: {error_msg}")
 
                     # Marcar todos los casos del lote como fallidos
                     for caso in lote:
@@ -562,11 +689,11 @@ class AuditoriaIA:
                     continue
 
                 # 3. Parsear respuesta JSON del LOTE
-                print(f"   📦 Procesando respuesta JSON...")
+                logging.info(f"   📦 Procesando respuesta JSON...")
                 respuesta_json = respuesta_llm["respuesta"]
-                print(f"      Tipo de respuesta: {type(respuesta_json)}")
+                logging.info(f"      Tipo de respuesta: {type(respuesta_json)}")
                 if isinstance(respuesta_json, str):
-                    print(f"      Longitud: {len(respuesta_json)} caracteres")
+                    logging.info(f"      Longitud: {len(respuesta_json)} caracteres")
 
                 if isinstance(respuesta_json, str):
                     # Limpiar markdown si existe
@@ -581,9 +708,9 @@ class AuditoriaIA:
                         respuesta_json = json.loads(respuesta_limpia)
                     except json.JSONDecodeError as e:
                         # V2.1.3: NUEVO - Intentar reparar JSON truncado
-                        print(f"   ⚠️ Respuesta JSON truncada, intentando reparar...")
-                        print(f"   📄 Primeros 500 chars: {respuesta_limpia[:500]}")
-                        print(f"   📄 Últimos 200 chars: ...{respuesta_limpia[-200:]}")
+                        logging.info(f"   ⚠️ Respuesta JSON truncada, intentando reparar...")
+                        logging.info(f"   📄 Primeros 500 chars: {respuesta_limpia[:500]}")
+                        logging.info(f"   📄 Últimos 200 chars: ...{respuesta_limpia[-200:]}")
 
                         # Intentar cerrar el JSON incompleto
                         respuesta_reparada = respuesta_limpia.rstrip()
@@ -601,9 +728,9 @@ class AuditoriaIA:
 
                         try:
                             respuesta_json = json.loads(respuesta_reparada)
-                            print(f"   ✅ JSON reparado exitosamente")
+                            logging.info(f"   ✅ JSON reparado exitosamente")
                         except json.JSONDecodeError as e2:
-                            print(f"   ❌ No se pudo reparar JSON: {e2}")
+                            logging.info(f"   ❌ No se pudo reparar JSON: {e2}")
                             for caso in lote:
                                 resultados.append({
                                     "exito": False,
@@ -614,8 +741,8 @@ class AuditoriaIA:
 
                 # 4. Procesar cada caso del lote
                 if "casos" not in respuesta_json:
-                    print(f"   ❌ Respuesta no contiene array 'casos'")
-                    print(f"      Keys recibidas: {list(respuesta_json.keys())}")
+                    logging.info(f"   ❌ Respuesta no contiene array 'casos'")
+                    logging.info(f"      Keys recibidas: {list(respuesta_json.keys())}")
                     for caso in lote:
                         resultados.append({
                             "exito": False,
@@ -625,7 +752,7 @@ class AuditoriaIA:
                     continue
 
                 casos_respuesta = respuesta_json["casos"]
-                print(f"   📋 IA retornó {len(casos_respuesta)} casos (esperados: {len(lote)})")
+                logging.info(f"   📋 IA retornó {len(casos_respuesta)} casos (esperados: {len(lote)})")
 
                 # Procesar cada caso de la respuesta
                 for idx_caso, caso_resp in enumerate(casos_respuesta):
@@ -647,7 +774,7 @@ class AuditoriaIA:
                             nombre_campo_legible = corr["campo"]
                             nombre_campo_bd = normalizar_nombre_campo(nombre_campo_legible)
                             corr["campo_bd"] = nombre_campo_bd
-                            print(f"      🔄 Mapeado '{nombre_campo_legible}' → '{nombre_campo_bd}'")
+                            logging.info(f"      🔄 Mapeado '{nombre_campo_legible}' → '{nombre_campo_bd}'")
 
                         if "valor_nuevo" in corr and "valor_corregido" not in corr:
                             corr["valor_corregido"] = corr.pop("valor_nuevo")
@@ -668,7 +795,7 @@ class AuditoriaIA:
                         )
 
                         num_corr = resultado_aplicacion['correcciones_aplicadas']
-                        print(f"   ✅ {numero_peticion}: {num_corr} correcciones aplicadas")
+                        logging.info(f"   ✅ {numero_peticion}: {num_corr} correcciones aplicadas")
 
                         resultados.append({
                             "exito": True,
@@ -687,7 +814,7 @@ class AuditoriaIA:
 
                             # DEBUG V2.1.6: Ver qué enviamos al callback
                             lote_num_real = lote_offset + idx_lote + 1  # V2.1.6: Ajustar por offset
-                            print(f"   [CALLBACK] {numero_peticion}: lote={lote_num_real}, primer={es_primer_caso_lote}, ultimo={es_ultimo_caso_lote}, tiempo={tiempo_a_enviar}")
+                            logging.info(f"   [CALLBACK] {numero_peticion}: lote={lote_num_real}, primer={es_primer_caso_lote}, ultimo={es_ultimo_caso_lote}, tiempo={tiempo_a_enviar}")
 
                             # V2.1.6: Calcular casos procesados correctamente
                             casos_proc_actuales = lote_offset * BATCH_SIZE + len([r for r in resultados if r.get("exito")])
@@ -708,7 +835,7 @@ class AuditoriaIA:
                             })
 
                     except Exception as e:
-                        print(f"   ❌ Error aplicando correcciones para {numero_peticion}: {e}")
+                        logging.info(f"   ❌ Error aplicando correcciones para {numero_peticion}: {e}")
                         resultados.append({
                             "exito": False,
                             "error": f"Error aplicando correcciones: {e}",
@@ -719,7 +846,7 @@ class AuditoriaIA:
                 tiempo_lote = time.time() - tiempo_inicio_lote
                 minutos = int(tiempo_lote // 60)
                 segundos = int(tiempo_lote % 60)
-                print(f"\n   ⏱️ LOTE {idx_lote+1} completado en: {minutos} min {segundos} seg")
+                logging.info(f"\n   ⏱️ LOTE {idx_lote+1} completado en: {minutos} min {segundos} seg")
 
                 if progress_callback:
                     progress_callback(f"✅ LOTE {idx_lote+1}/{num_lotes} completado", int(((idx_lote + 1) / num_lotes) * 100))
@@ -730,7 +857,7 @@ class AuditoriaIA:
             return resultados
 
         except Exception as e:
-            print(f"❌ Error en procesamiento por lotes: {e}")
+            logging.info(f"❌ Error en procesamiento por lotes: {e}")
             return [{
                 "exito": False,
                 "error": f"Error en procesamiento de lote: {str(e)}",
@@ -748,6 +875,10 @@ class AuditoriaIA:
         NUEVO EN V2.0.1: Incluye REGLAS_EXTRACCION_SISTEMA.md para que IA entienda
         cómo el sistema automático extrae los datos
 
+        V5.1.2: Optimización - Solo envía campos relevantes al LLM:
+        - Del PDF: descripcion_macroscopica, descripcion_microscopica, diagnostico, comentarios
+        - De BD: Organo, Diagnostico Principal, Factor pronostico, todos los IHQ_*
+
         Args:
             debug_map: Debug map completo
             datos_bd: Datos de BD (todos los 76 campos)
@@ -755,28 +886,58 @@ class AuditoriaIA:
         Returns:
             Prompt formateado con análisis profundo + reglas de extracción
         """
-        # Cargar REGLAS DE EXTRACCIÓN
+        # Cargar REGLAS DE EXTRACCIÓN (versión resumida para caber en 8K context)
         import os
-        reglas_path = os.path.join(os.path.dirname(__file__), "REGLAS_EXTRACCION_SISTEMA.md")
+        reglas_path = os.path.join(os.path.dirname(__file__), "REGLAS_EXTRACCION_SISTEMA_RESUMIDO.md")  # V3.2.3: Usar versión resumida
         try:
             with open(reglas_path, 'r', encoding='utf-8') as f:
                 reglas_contenido = f.read()
         except Exception as e:
-            print(f"⚠️ No se pudo cargar REGLAS_EXTRACCION_SISTEMA.md: {e}")
+            logging.info(f"⚠️ No se pudo cargar REGLAS_EXTRACCION_SISTEMA_RESUMIDO.md: {e}")
             reglas_contenido = "(Reglas no disponibles)"
 
-        # Extraer texto COMPLETO del PDF (más extenso que en modo parcial)
-        texto_original = debug_map.get("ocr", {}).get("texto_consolidado", "")[:8000]  # Más texto para análisis profundo
+        # V5.1.2: OPTIMIZACIÓN - Extraer solo campos médicos relevantes del debug_map
+        extraccion = debug_map.get("extraccion", {})
+        unified_extractor = extraccion.get("unified_extractor", {})
 
-        # TODOS los campos de BD (76 campos) para análisis completo
-        todos_campos_bd = datos_bd.copy()
-        numero_peticion = datos_bd.get("N. peticion (0. Numero de biopsia)", "Desconocido")
+        # Campos relevantes del PDF (extraídos)
+        campos_pdf = {
+            "DESCRIPCIÓN MACROSCÓPICA": unified_extractor.get("descripcion_macroscopica", "N/A"),
+            "DESCRIPCIÓN MICROSCÓPICA": unified_extractor.get("descripcion_microscopica", "N/A"),
+            "DIAGNÓSTICO": unified_extractor.get("diagnostico", "N/A"),
+            "COMENTARIOS": unified_extractor.get("comentarios", "N/A")
+        }
+
+        # Construir texto del PDF solo con campos relevantes
+        texto_pdf_parts = []
+        for seccion, contenido in campos_pdf.items():
+            if contenido and contenido != "N/A" and str(contenido).strip():
+                texto_pdf_parts.append(f"═══ {seccion} ═══")
+                texto_pdf_parts.append(contenido)
+                texto_pdf_parts.append("")  # Línea en blanco
+
+        texto_original = "\n".join(texto_pdf_parts) if texto_pdf_parts else "(No hay datos extraídos del PDF)"
+
+        # V5.1.2: OPTIMIZACIÓN - Filtrar solo campos relevantes de BD
+        numero_peticion = datos_bd.get("Numero de caso", "Desconocido")
+
+        # Campos base relevantes
+        campos_bd_relevantes = {
+            "Organo": datos_bd.get("Organo", ""),
+            "Diagnostico Principal": datos_bd.get("Diagnostico Principal", ""),
+            "Factor pronostico": datos_bd.get("Factor pronostico", "")
+        }
+
+        # Agregar TODOS los campos IHQ_* (biomarcadores)
+        for campo, valor in datos_bd.items():
+            if campo.startswith("IHQ_"):
+                campos_bd_relevantes[campo] = valor
 
         # Separar campos vacíos vs campos con datos
         campos_vacios = {}
         campos_con_datos = {}
 
-        for campo, valor in todos_campos_bd.items():
+        for campo, valor in campos_bd_relevantes.items():
             if not valor or valor == "N/A" or str(valor).strip() == "":
                 campos_vacios[campo] = "VACÍO"
             else:
@@ -798,13 +959,16 @@ CASO: {numero_peticion}
 {reglas_contenido}
 
 ═══════════════════════════════════════════════════════════════
-📄 TEXTO COMPLETO DEL INFORME PDF (primeros 8000 caracteres):
+📄 CAMPOS MÉDICOS RELEVANTES EXTRAÍDOS DEL PDF
+   (descripcion_macroscopica, descripcion_microscopica,
+    diagnostico, comentarios)
 ═══════════════════════════════════════════════════════════════
 
 {texto_original}
 
 ═══════════════════════════════════════════════════════════════
-📊 DATOS ACTUALES EN BASE DE DATOS
+📊 DATOS RELEVANTES EN BASE DE DATOS
+   (Organo, Diagnostico Principal, Factor pronostico, IHQ_*)
 ═══════════════════════════════════════════════════════════════
 
 CAMPOS CON DATOS ({len(campos_con_datos)}):
@@ -899,8 +1063,13 @@ Debes realizar un análisis EXHAUSTIVO comparando:
         campos_a_buscar: List[str]
     ) -> str:
         """
-        Prepara prompt SIMPLE para auditoría parcial
+        Prepara prompt SIMPLE para auditoría parcial (individual, NO lotes)
         Solo busca campos específicos faltantes, no hace análisis profundo
+
+        V5.1.2: UNIFICADO con auditoría COMPLETA
+        - Usa los MISMOS 4 campos extraídos del PDF que COMPLETA
+        - Solo envía campos FALTANTES según validation_checker
+        - Procesa 1 caso a la vez
 
         Args:
             debug_map: Debug map completo
@@ -910,28 +1079,38 @@ Debes realizar un análisis EXHAUSTIVO comparando:
         Returns:
             Prompt optimizado para extracción rápida
         """
-        # Extraer texto del PDF (desde debug_map o BD)
-        texto_ocr = debug_map.get("ocr", {}).get("texto_consolidado", "") if debug_map else ""
+        numero_peticion = datos_bd.get("Numero de caso", "Desconocido")
 
-        # Si no hay debug_map, usar campos de BD con descripciones
-        if not texto_ocr or len(texto_ocr) < 100:
-            descripciones = []
-            if datos_bd.get("Descripcion macroscopica"):
-                descripciones.append(f"DESCRIPCIÓN MACROSCÓPICA:\n{datos_bd['Descripcion macroscopica']}")
-            if datos_bd.get("Descripcion microscopica (8,9, 10,12,. Invasión linfovascular y perineural, indice mitótico/Ki67, Inmunohistoquímica, tamaño tumoral)"):
-                descripciones.append(f"\nDESCRIPCIÓN MICROSCÓPICA:\n{datos_bd['Descripcion microscopica (8,9, 10,12,. Invasión linfovascular y perineural, indice mitótico/Ki67, Inmunohistoquímica, tamaño tumoral)']}")
-            if datos_bd.get("Descripcion Diagnostico (5,6,7 Tipo histológico, subtipo histológico, margenes tumorales)"):
-                descripciones.append(f"\nDESCRIPCIÓN DIAGNÓSTICO:\n{datos_bd['Descripcion Diagnostico (5,6,7 Tipo histológico, subtipo histológico, margenes tumorales)']}")
-            if datos_bd.get("Diagnostico Principal"):
-                descripciones.append(f"\nDIAGNÓSTICO PRINCIPAL:\n{datos_bd['Diagnostico Principal']}")
-            if datos_bd.get("Factor pronostico"):
-                descripciones.append(f"\nFACTOR PRONÓSTICO:\n{datos_bd['Factor pronostico']}")
+        # V5.1.2: NUEVO - Extraer campos estructurados del PDF (igual que COMPLETA)
+        extraccion = debug_map.get("extraccion", {})
+        unified_extractor = extraccion.get("unified_extractor", {})
 
-            texto_original = "\n\n".join(descripciones) if descripciones else "NO HAY TEXTO DISPONIBLE"
-        else:
-            texto_original = texto_ocr[:5000]
+        campos_pdf = {
+            "DESCRIPCIÓN MACROSCÓPICA": unified_extractor.get("descripcion_macroscopica", "N/A"),
+            "DESCRIPCIÓN MICROSCÓPICA": unified_extractor.get("descripcion_microscopica", "N/A"),
+            "DIAGNÓSTICO": unified_extractor.get("diagnostico", "N/A"),
+            "COMENTARIOS": unified_extractor.get("comentarios", "N/A")
+        }
 
-        numero_peticion = datos_bd.get("N. peticion (0. Numero de biopsia)", "Desconocido")
+        # Construir texto del PDF estructurado
+        texto_pdf_parts = []
+        for seccion, contenido in campos_pdf.items():
+            if contenido and contenido != "N/A" and str(contenido).strip():
+                texto_pdf_parts.append(f"═══ {seccion} ═══")
+                texto_pdf_parts.append(contenido)
+                texto_pdf_parts.append("")
+
+        texto_original = "\n".join(texto_pdf_parts) if texto_pdf_parts else "NO HAY TEXTO DISPONIBLE"
+
+        # V5.1.2: Agregar contexto de estudios solicitados
+        estudios_solicitados_raw = datos_bd.get('IHQ_ESTUDIOS_SOLICITADOS', '')
+        contexto_estudios = ""
+        if estudios_solicitados_raw and estudios_solicitados_raw not in ['', 'N/A', 'NO ENCONTRADO']:
+            from core.validation_checker import parsear_estudios_solicitados
+            estudios_info = parsear_estudios_solicitados(estudios_solicitados_raw)
+            if estudios_info['tiene_estudios']:
+                biomarcadores_str = ', '.join(estudios_info['biomarcadores_raw'])
+                contexto_estudios = f"\n📋 Estudios SOLICITADOS: {biomarcadores_str}\n"
         
         # Convertir campos a nombres legibles
         campos_legibles = []
@@ -944,33 +1123,56 @@ Debes realizar un análisis EXHAUSTIVO comparando:
         
         prompt = f"""Eres un asistente de extracción de datos médicos para el Hospital Universitario del Valle.
 
-TAREA ESPECÍFICA: Encontrar ÚNICAMENTE estos datos faltantes en el informe IHQ {numero_peticion}:
+CASO: {numero_peticion}{contexto_estudios}
+
+TAREA: Completar ÚNICAMENTE estos campos FALTANTES:
 
 CAMPOS A BUSCAR:
 {campos_texto}
 
-TEXTO COMPLETO DEL INFORME:
+CAMPOS EXTRAÍDOS DEL PDF:
 {texto_original}
 
 INSTRUCCIONES ESTRICTAS:
-1. Para campos normales: Busca el dato en el texto y extráelo TEXTUALMENTE como aparece
-2. Para "Factor pronostico": NO busques esas palabras literalmente. DEBES CONSTRUIR el factor pronóstico analizando:
-   - P53 (estado y porcentaje si está presente)
-   - Ki-67 o KI67 (índice de proliferación - muy importante)
-   - Sinaptofisina (si está presente)
-   - Otros marcadores relevantes según el tipo de tumor
 
-   FORMATO para Factor pronostico:
-   - Si encuentras Ki-67: "Ki-67: XX%" o "Índice de proliferación Ki-67: XX%"
-   - Si encuentras P53: agrega "P53: POSITIVO/NEGATIVO"
-   - Si encuentras Sinaptofisina: agrega "Sinaptofisina: POSITIVO/NEGATIVO"
-   - Combina todos los marcadores encontrados en una sola línea
-   - Ejemplo: "Ki-67: 15%, P53: POSITIVO" o "P40 POSITIVO / P16 POSITIVO"
+1. **Para cada campo faltante**: Busca el dato en los CAMPOS EXTRAÍDOS DEL PDF
+   - Si lo encuentras, extráelo TEXTUALMENTE como aparece
+   - Si NO lo encuentras, agrégalo a "no_encontrados"
 
-3. Si NO encuentras el dato, márcalo como "No encontrado"
-4. NO hagas análisis de calidad o coherencia
-5. NO des recomendaciones clínicas
-6. Sé RÁPIDO y PRECISO
+2. **Para "Factor pronostico"** (si está en campos faltantes):
+   [!] NO busques "Factor Pronóstico" literal. DEBES CONSTRUIRLO de los biomarcadores:
+   - Busca: Ki-67, P53, HER2, ER (Receptor Estrógeno), PR (Receptor Progesterona), P16, P40
+   - Formato: "Ki-67: X%, HER2: NEGATIVO, ER: 90% POSITIVO"
+   - Ejemplo: "Ki-67: 18%, P53: POSITIVO"
+
+3. **Biomarcadores IHQ - REGLAS CRÍTICAS**:
+
+   ⚠️ SOLO BUSCAR BIOMARCADORES SOLICITADOS:
+   - Si el caso muestra "📋 Estudios SOLICITADOS: HER2, Ki-67"
+   - SOLO busca esos 2 en el PDF
+   - NO busques P16, P40, PDL-1 ni otros no solicitados
+   - Objetivo: Evitar falsos positivos
+
+   ⚠️ DISTINCIÓN ESTADO vs PORCENTAJE:
+   - CAMPO _ESTADO: Solo POSITIVO/NEGATIVO/FOCAL/DÉBIL/FUERTE
+   - CAMPO _PORCENTAJE o KI-67: Solo números con % (ej: 15%, 80%)
+   - PDF "P16 POSITIVO" → IHQ_P16_ESTADO = "POSITIVO" (NO porcentaje)
+   - PDF "P16: 70%" → IHQ_P16_PORCENTAJE = "70%" (NO estado)
+
+4. **MAPEO DE VARIANTES** - Biomarcadores pueden aparecer con espacios, puntos, barras, guiones:
+   ⚡ CRÍTICO: Busca TODAS las variantes posibles:
+   - "CAM 5.2" o "CAM5.2" o "CAM52" → IHQ_CAM52
+   - "CKAE1/AE3" o "CKAE1 AE3" o "CKAE1AE3" → IHQ_CKAE1AE3
+   - "KI 67" o "Ki-67" o "KI67" → IHQ_KI-67
+   - "HER 2" o "HER-2" o "HER2" → IHQ_HER2
+   - "P 53" o "P53" → IHQ_P53
+   - "PDL 1" o "PDL-1" → IHQ_PDL-1
+   - "PAX 8" o "PAX8" → IHQ_PAX8
+   - "MSH 6" o "MSH6" → IHQ_MSH6
+
+   Si buscas IHQ_CAM52 y el PDF dice "CAM 5.2", ¡ESO ES UNA COINCIDENCIA! Extráelo.
+
+5. **NO inventes datos** que no estén en el PDF
 
 FORMATO DE RESPUESTA (JSON estricto):
 {{
@@ -1054,12 +1256,30 @@ IMPORTANTE:
                 fallidas += 1
                 continue
 
+            # V3.2.4.2: FIX 4 - Normalizar nombre de campo (legible → nombre exacto BD)
+            # Ejemplo: "Descripción macroscópica" → "Descripcion macroscopica"
+            campo_bd_original = campo_bd
+            campo_bd = normalizar_nombre_campo(campo_bd)
+
+            if campo_bd != campo_bd_original:
+                logging.info(f"      🔄 Normalizado '{campo_bd_original}' → '{campo_bd}'")
+
             # Solo aplicar si confianza >= 0.85
             if confianza < 0.85:
                 detalles.append({
                     "campo": campo_bd,
                     "aplicada": False,
                     "razon": f"Confianza baja ({confianza})"
+                })
+                fallidas += 1
+                continue
+
+            # V3.2.4.1: FIX 3 - Validar que valor_corregido no esté vacío
+            if not valor_corregido or str(valor_corregido).strip() in ['', 'nan', 'None', 'N/A', 'No encontrado']:
+                detalles.append({
+                    "campo": campo_bd,
+                    "aplicada": False,
+                    "razon": "Valor corregido está vacío o inválido (LLM no encontró dato)"
                 })
                 fallidas += 1
                 continue
@@ -1144,12 +1364,12 @@ IMPORTANTE:
 
 if __name__ == "__main__":
     # Test básico
-    print("🔍 Sistema de Auditoría IA - Test")
+    logging.info("🔍 Sistema de Auditoría IA - Test")
 
     auditor = AuditoriaIA()
 
     if auditor.llm_activo:
-        print("✅ LLM activo y listo")
+        logging.info("✅ LLM activo y listo")
     else:
-        print("❌ LLM no está disponible")
-        print("💡 Inicia LM Studio para usar auditoría con IA")
+        logging.info("❌ LLM no está disponible")
+        logging.info("💡 Inicia LM Studio para usar auditoría con IA")

@@ -96,72 +96,137 @@ REMOVED_COLUMNS = {
     "Ubicación", "Identificador Unico", "Número celular", "Direccion de correo electronico",
     "Direccion de correo electronico 2", "Contacto de emergencia", "Teléfono del contacto",
     "Valor", "Copago", "Descuento", "Usuario asignacion micro", "Fecha asignacion micro",
-    "Condicion", "Comentario", "Informe adicional", "Tarifa", "Comentario diagnostico"  # Tarifa eliminada y reemplazada por Fecha de toma; Comentario diagnostico retirado
+    "Condicion", "Comentario", "Informe adicional", "Tarifa", "Comentario diagnostico",
+    # v5.3.5: Columnas eliminadas por limpieza
+    "Fecha de nacimiento", "Diagnostico Principal", "Hora Desc. macro", "Responsable macro",
+    # v5.3.5: Columnas renombradas (las versiones viejas se eliminan)
+    "Descripcion microscopica (8,9, 10,12,. Invasión linfovascular y perineural, indice mitótico/Ki67, Inmunohistoquímica, tamaño tumoral)",
+    "Descripcion Diagnostico (5,6,7 Tipo histológico, subtipo histológico, margenes tumorales)",
+    # v5.3.6: Columnas renombradas y eliminadas
+    "id", "Numero de caso", "Usuario finalizacion",
+    "IHQ_RECEPTOR_ESTROGENO", "IHQ_RECEPTOR_PROGESTERONOS",
+    "Tipo de examen (4, 12, Metodo de obtención de la muestra, factor de certeza para el diagnóstico)",
+    "Procedimiento (11. Tipo de estudio para el diagnóstico)",
+    "Organo (1. Muestra enviada a patología)"
 }
 
 NEW_TABLE_COLUMNS_ORDER: List[str] = [
-    # Mantener orden lógico (id se gestiona aparte)
-    "N. peticion (0. Numero de biopsia)", "Hospitalizado", "Sede", "EPS", "Servicio",
+    # v5.3.6: "Numero de caso" es PRIMARY KEY (antes "Numero de caso")
+    "Numero de caso", "Hospitalizado", "Sede", "EPS", "Servicio",
     "Médico tratante", "Especialidad", "Datos Clinicos",
     "Tipo de documento", "N. de identificación", "Primer nombre", "Segundo nombre",
-    "Primer apellido", "Segundo apellido", "Fecha de nacimiento", "Edad", "Genero",
+    "Primer apellido", "Segundo apellido", "Edad", "Genero",  # ELIMINADO: "Fecha de nacimiento"
     "Departamento", "Municipio", "CUPS",
-    "Tipo de examen (4, 12, Metodo de obtención de la muestra, factor de certeza para el diagnóstico)",
-    "Procedimiento (11. Tipo de estudio para el diagnóstico)",
-    "Organo (1. Muestra enviada a patología)",
-    "Fecha de toma (1. Fecha de la toma)",  # Nueva columna reemplaza a Tarifa
+    "Tipo de examen",  # v5.3.6: Simplificado (antes "Tipo de examen (4, 12...)")
+    "Procedimiento",   # v5.3.6: Simplificado (antes "Procedimiento (11...)")
+    "Organo",          # v5.3.6: Simplificado (antes "Organo (1...)")
+    "Fecha de toma (1. Fecha de la toma)",
     "Fecha de ingreso (2. Fecha de la muestra)", "Fecha Informe",
-    "Usuario finalizacion", "Malignidad", "Descripcion macroscopica",
-    "Descripcion microscopica (8,9, 10,12,. Invasión linfovascular y perineural, indice mitótico/Ki67, Inmunohistoquímica, tamaño tumoral)",
-    "Descripcion Diagnostico (5,6,7 Tipo histológico, subtipo histológico, margenes tumorales)",
-    "Diagnostico Principal", "Factor pronostico", "Congelaciones /Otros estudios", "Liquidos (5 Tipo histologico)",
-    "Citometria de flujo (5 Tipo histologico)", "Hora Desc. macro", "Responsable macro",
+    "Patologo",  # v5.3.6: Renombrado (antes "Usuario finalizacion")
+    "Malignidad", "Descripcion macroscopica",
+    "Descripcion microscopica",  # v5.3.5: Simplificado
+    "Descripcion Diagnostico",   # v5.3.5: Simplificado
+    "Diagnostico Principal",     # v5.3.6: Diagnóstico principal extraído
+    "Factor pronostico",
+    # v5.3.5: Reorganización - IHQ_ESTUDIOS_SOLICITADOS e IHQ_ORGANO antes de Congelaciones
+    "IHQ_ESTUDIOS_SOLICITADOS", "IHQ_ORGANO",
+    "Congelaciones /Otros estudios", "Liquidos (5 Tipo histologico)",
+    "Citometria de flujo (5 Tipo histologico)",
     # Biomarcadores principales
-    "IHQ_HER2", "IHQ_KI-67", "IHQ_RECEPTOR_ESTROGENO", "IHQ_RECEPTOR_PROGESTERONOS", "IHQ_PDL-1",
-    "IHQ_ESTUDIOS_SOLICITADOS", "IHQ_P16_ESTADO", "IHQ_P16_PORCENTAJE", "IHQ_P40_ESTADO", "IHQ_ORGANO",
+    "IHQ_HER2", "IHQ_KI-67", "IHQ_RECEPTOR_ESTROGENOS", "IHQ_RECEPTOR_PROGESTERONA", "IHQ_PDL-1",
+    "IHQ_P16_ESTADO", "IHQ_P16_PORCENTAJE", "IHQ_P40_ESTADO",
     # Biomarcadores agregados v4.0
     "IHQ_CK7", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
     # Biomarcadores adicionales v4.1 (extracción completa)
     "IHQ_P53", "IHQ_TTF1", "IHQ_S100", "IHQ_VIMENTINA", "IHQ_CHROMOGRANINA", "IHQ_SYNAPTOPHYSIN", "IHQ_MELAN_A",
-    # Marcadores CD
+    # Marcadores CD (básicos)
     "IHQ_CD3", "IHQ_CD5", "IHQ_CD10", "IHQ_CD20", "IHQ_CD30", "IHQ_CD34", "IHQ_CD38",
-    "IHQ_CD45", "IHQ_CD56", "IHQ_CD61", "IHQ_CD68", "IHQ_CD117", "IHQ_CD138"
+    "IHQ_CD45", "IHQ_CD56", "IHQ_CD61", "IHQ_CD68", "IHQ_CD117", "IHQ_CD138",
+    # V3.2.5.1 - Biomarcadores adicionales de 50 casos iniciales
+    "IHQ_PAX8", "IHQ_PAX5", "IHQ_WT1", "IHQ_NAPSIN", "IHQ_P63",
+    "IHQ_CDK4", "IHQ_MDM2", "IHQ_MLH1", "IHQ_MSH2", "IHQ_MSH6", "IHQ_PMS2",
+    "IHQ_DOG1", "IHQ_HHV8", "IHQ_ACTIN", "IHQ_GFAP", "IHQ_CAM52", "IHQ_CKAE1AE3", "IHQ_NEUN",
+    # V5.2 - Biomarcadores adicionales detectados por sistema avanzado
+    "IHQ_CD15", "IHQ_CD79A", "IHQ_ALK", "IHQ_DESMIN", "IHQ_MYOGENIN", "IHQ_MYOD1",
+    "IHQ_SMA", "IHQ_MSA", "IHQ_CALRETININ", "IHQ_CD31", "IHQ_FACTOR_VIII",
+    "IHQ_BCL2", "IHQ_BCL6", "IHQ_MUM1", "IHQ_HMB45", "IHQ_TYROSINASE", "IHQ_MELANOMA",
+    # V5.3 - Nuevos biomarcadores detectados en producción (28 adicionales)
+    "IHQ_CD23", "IHQ_CD4", "IHQ_CD8", "IHQ_CD99", "IHQ_CD1A",
+    "IHQ_C4D", "IHQ_LMP1", "IHQ_CITOMEGALOVIRUS", "IHQ_SV40",
+    "IHQ_CEA", "IHQ_CA19_9", "IHQ_CALRETININA",
+    "IHQ_CK34BE12", "IHQ_CK5_6", "IHQ_HEPAR", "IHQ_GLIPICAN", "IHQ_ARGINASA",
+    "IHQ_PSA", "IHQ_RACEMASA", "IHQ_34BETA", "IHQ_B2",
+    # V5.3.7: Columnas de sistema al final
+    "Estado Auditoria IA",
+    "Fecha Ingreso Base de Datos"
 ]
 
 def _create_table_if_not_exists(cursor: sqlite3.Cursor):
+    """
+    Crea la tabla con TODAS las columnas de biomarcadores desde el inicio.
+    v5.3.7: Todos los biomarcadores incluidos en CREATE TABLE para evitar NULL por ALTER TABLE.
+    """
     cursor.execute(f"""
         CREATE TABLE IF NOT EXISTS {TABLE_NAME} (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            "N. peticion (0. Numero de biopsia)" TEXT UNIQUE NOT NULL,
+            "Numero de caso" TEXT PRIMARY KEY NOT NULL,
             "Hospitalizado" TEXT, "Sede" TEXT, "EPS" TEXT, "Servicio" TEXT,
             "Médico tratante" TEXT, "Especialidad" TEXT,
             "Datos Clinicos" TEXT,
             "Tipo de documento" TEXT, "N. de identificación" TEXT, "Primer nombre" TEXT,
             "Segundo nombre" TEXT, "Primer apellido" TEXT, "Segundo apellido" TEXT,
-            "Fecha de nacimiento" TEXT, "Edad" TEXT, "Genero" TEXT,
+            "Edad" TEXT, "Genero" TEXT,
             "Departamento" TEXT, "Municipio" TEXT, "CUPS" TEXT,
-            "Tipo de examen (4, 12, Metodo de obtención de la muestra, factor de certeza para el diagnóstico)" TEXT,
-            "Procedimiento (11. Tipo de estudio para el diagnóstico)" TEXT,
-            "Organo (1. Muestra enviada a patología)" TEXT,
+            "Tipo de examen" TEXT,
+            "Procedimiento" TEXT,
+            "Organo" TEXT,
             "Fecha de toma (1. Fecha de la toma)" TEXT,
             "Fecha de ingreso (2. Fecha de la muestra)" TEXT,
-            "Fecha Informe" TEXT, "Usuario finalizacion" TEXT,
+            "Fecha Informe" TEXT, "Patologo" TEXT,
             "Malignidad" TEXT, "Descripcion macroscopica" TEXT,
-            "Descripcion microscopica (8,9, 10,12,. Invasión linfovascular y perineural, indice mitótico/Ki67, Inmunohistoquímica, tamaño tumoral)" TEXT,
-            "Descripcion Diagnostico (5,6,7 Tipo histológico, subtipo histológico, margenes tumorales)" TEXT,
+            "Descripcion microscopica" TEXT,
+            "Descripcion Diagnostico" TEXT,
             "Diagnostico Principal" TEXT,
             "Factor pronostico" TEXT,
+            "IHQ_ESTUDIOS_SOLICITADOS" TEXT, "IHQ_ORGANO" TEXT,
             "Congelaciones /Otros estudios" TEXT, "Liquidos (5 Tipo histologico)" TEXT,
-            "Citometria de flujo (5 Tipo histologico)" TEXT, "Hora Desc. macro" TEXT, "Responsable macro" TEXT,
-            "IHQ_HER2" TEXT, "IHQ_KI-67" TEXT, "IHQ_RECEPTOR_ESTROGENO" TEXT,
-            "IHQ_RECEPTOR_PROGESTERONOS" TEXT, "IHQ_PDL-1" TEXT, "IHQ_ESTUDIOS_SOLICITADOS" TEXT,
-            "IHQ_P16_ESTADO" TEXT, "IHQ_P16_PORCENTAJE" TEXT, "IHQ_P40_ESTADO" TEXT, "IHQ_ORGANO" TEXT,
+            "Citometria de flujo (5 Tipo histologico)" TEXT,
+
+            -- Biomarcadores principales
+            "IHQ_HER2" TEXT, "IHQ_KI-67" TEXT, "IHQ_RECEPTOR_ESTROGENOS" TEXT,
+            "IHQ_RECEPTOR_PROGESTERONA" TEXT, "IHQ_PDL-1" TEXT,
+            "IHQ_P16_ESTADO" TEXT, "IHQ_P16_PORCENTAJE" TEXT, "IHQ_P40_ESTADO" TEXT,
+
+            -- Biomarcadores v4.0
             "IHQ_CK7" TEXT, "IHQ_CK20" TEXT, "IHQ_CDX2" TEXT, "IHQ_EMA" TEXT, "IHQ_GATA3" TEXT, "IHQ_SOX10" TEXT,
+
+            -- Biomarcadores v4.1
             "IHQ_P53" TEXT, "IHQ_TTF1" TEXT, "IHQ_S100" TEXT, "IHQ_VIMENTINA" TEXT,
             "IHQ_CHROMOGRANINA" TEXT, "IHQ_SYNAPTOPHYSIN" TEXT, "IHQ_MELAN_A" TEXT,
+
+            -- Marcadores CD (básicos)
             "IHQ_CD3" TEXT, "IHQ_CD5" TEXT, "IHQ_CD10" TEXT, "IHQ_CD20" TEXT, "IHQ_CD30" TEXT,
             "IHQ_CD34" TEXT, "IHQ_CD38" TEXT, "IHQ_CD45" TEXT, "IHQ_CD56" TEXT, "IHQ_CD61" TEXT,
             "IHQ_CD68" TEXT, "IHQ_CD117" TEXT, "IHQ_CD138" TEXT,
+
+            -- V3.2.5.1 - Biomarcadores adicionales de 50 casos iniciales
+            "IHQ_PAX8" TEXT, "IHQ_PAX5" TEXT, "IHQ_WT1" TEXT, "IHQ_NAPSIN" TEXT, "IHQ_P63" TEXT,
+            "IHQ_CDK4" TEXT, "IHQ_MDM2" TEXT, "IHQ_MLH1" TEXT, "IHQ_MSH2" TEXT, "IHQ_MSH6" TEXT, "IHQ_PMS2" TEXT,
+            "IHQ_DOG1" TEXT, "IHQ_HHV8" TEXT, "IHQ_ACTIN" TEXT, "IHQ_GFAP" TEXT, "IHQ_CAM52" TEXT, "IHQ_CKAE1AE3" TEXT, "IHQ_NEUN" TEXT,
+
+            -- V5.2 - Biomarcadores adicionales detectados por sistema avanzado
+            "IHQ_CD15" TEXT, "IHQ_CD79A" TEXT, "IHQ_ALK" TEXT, "IHQ_DESMIN" TEXT, "IHQ_MYOGENIN" TEXT, "IHQ_MYOD1" TEXT,
+            "IHQ_SMA" TEXT, "IHQ_MSA" TEXT, "IHQ_CALRETININ" TEXT, "IHQ_CD31" TEXT, "IHQ_FACTOR_VIII" TEXT,
+            "IHQ_BCL2" TEXT, "IHQ_BCL6" TEXT, "IHQ_MUM1" TEXT, "IHQ_HMB45" TEXT, "IHQ_TYROSINASE" TEXT, "IHQ_MELANOMA" TEXT,
+
+            -- V5.3 - Nuevos biomarcadores detectados en producción (28 adicionales)
+            "IHQ_CD23" TEXT, "IHQ_CD4" TEXT, "IHQ_CD8" TEXT, "IHQ_CD99" TEXT, "IHQ_CD1A" TEXT,
+            "IHQ_C4D" TEXT, "IHQ_LMP1" TEXT, "IHQ_CITOMEGALOVIRUS" TEXT, "IHQ_SV40" TEXT,
+            "IHQ_CEA" TEXT, "IHQ_CA19_9" TEXT, "IHQ_CALRETININA" TEXT,
+            "IHQ_CK34BE12" TEXT, "IHQ_CK5_6" TEXT, "IHQ_HEPAR" TEXT, "IHQ_GLIPICAN" TEXT, "IHQ_ARGINASA" TEXT,
+            "IHQ_PSA" TEXT, "IHQ_RACEMASA" TEXT, "IHQ_34BETA" TEXT, "IHQ_B2" TEXT,
+
+            -- V5.3.7: Columnas de sistema al final
+            "Estado Auditoria IA" TEXT DEFAULT NULL,
             "Fecha Ingreso Base de Datos" TIMESTAMP DEFAULT (datetime('now', 'localtime'))
         )
     """)
@@ -188,25 +253,29 @@ def _migrate_schema(conn: sqlite3.Connection, cursor: sqlite3.Cursor):
     cursor.execute(f"DROP TABLE IF EXISTS {temp_table}")
 
     # Construir definición de columnas (idéntica a _create_table_if_not_exists pero con nombre temporal)
+    # v5.3.7: "Fecha Ingreso Base de Datos" ya está en NEW_TABLE_COLUMNS_ORDER, no agregar duplicado
     col_defs: List[str] = []
     for col in NEW_TABLE_COLUMNS_ORDER:
-        # Definiciones (todas TEXT salvo clave y timestamps)
-        if col == "N. peticion (0. Numero de biopsia)":
-            col_defs.append(f'"{col}" TEXT UNIQUE NOT NULL')
+        # Definiciones especiales por tipo de columna
+        if col == "Numero de caso":
+            col_defs.append(f'"{col}" TEXT PRIMARY KEY NOT NULL')
+        elif col == "Fecha Ingreso Base de Datos":
+            col_defs.append(f'"{col}" TIMESTAMP DEFAULT (datetime(\'now\', \'localtime\'))')
+        elif col == "Estado Auditoria IA":
+            col_defs.append(f'"{col}" TEXT DEFAULT NULL')
         else:
             col_defs.append(f'"{col}" TEXT')
-    col_defs.append('"Fecha Ingreso Base de Datos" TIMESTAMP DEFAULT (datetime(\'now\', \'localtime\'))')
 
     cursor.execute(f"""
         CREATE TABLE {temp_table} (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
             {', '.join(col_defs)}
         )
     """)
 
-    # Copiar datos (id + columnas destino que existan)
-    select_cols = ["id"] + destination_cols + [c for c in ["Fecha Ingreso Base de Datos"] if c in current_cols]
-    insert_cols = ["id"] + destination_cols + ["Fecha Ingreso Base de Datos"]
+    # Copiar datos (columnas destino que existan + timestamp)
+    # v5.3.6: Eliminado 'id' - ya no existe como columna
+    select_cols = destination_cols + [c for c in ["Fecha Ingreso Base de Datos"] if c in current_cols]
+    insert_cols = destination_cols + ["Fecha Ingreso Base de Datos"]
     cursor.execute(
         f"INSERT INTO {temp_table} ({', '.join(f'"{c}"' for c in insert_cols)}) "
         f"SELECT {', '.join(f'"{c}"' for c in select_cols)} FROM {TABLE_NAME}"
@@ -217,7 +286,7 @@ def _migrate_schema(conn: sqlite3.Connection, cursor: sqlite3.Cursor):
     cursor.execute(f"ALTER TABLE {temp_table} RENAME TO {TABLE_NAME}")
 
     # Recrear índices
-    cursor.execute(f'CREATE INDEX IF NOT EXISTS idx_peticion ON {TABLE_NAME}("N. peticion (0. Numero de biopsia)")')
+    cursor.execute(f'CREATE INDEX IF NOT EXISTS idx_peticion ON {TABLE_NAME}("Numero de caso")')
     cursor.execute(f'CREATE INDEX IF NOT EXISTS idx_fecha_ingreso ON {TABLE_NAME}("Fecha Ingreso Base de Datos")')
     cursor.execute(f'CREATE INDEX IF NOT EXISTS idx_malignidad ON {TABLE_NAME}(Malignidad)')
     cursor.execute(f'CREATE INDEX IF NOT EXISTS idx_servicio ON {TABLE_NAME}(Servicio)')
@@ -226,7 +295,10 @@ def _migrate_schema(conn: sqlite3.Connection, cursor: sqlite3.Cursor):
     logger.info("Migración completada correctamente.")
 
 def _add_new_biomarker_columns(conn: sqlite3.Connection, cursor: sqlite3.Cursor):
-    """Agrega las nuevas columnas de biomarcadores si no existen."""
+    """
+    Agrega las nuevas columnas de biomarcadores si no existen.
+    v5.3.7: Rellena con 'N/A' los registros existentes para evitar NULL en UI.
+    """
     new_biomarkers = [
         # v4.0
         "IHQ_CK7", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
@@ -235,7 +307,23 @@ def _add_new_biomarker_columns(conn: sqlite3.Connection, cursor: sqlite3.Cursor)
         "IHQ_CHROMOGRANINA", "IHQ_SYNAPTOPHYSIN", "IHQ_MELAN_A",
         # Marcadores CD
         "IHQ_CD3", "IHQ_CD5", "IHQ_CD10", "IHQ_CD20", "IHQ_CD30", "IHQ_CD34",
-        "IHQ_CD38", "IHQ_CD45", "IHQ_CD56", "IHQ_CD61", "IHQ_CD68", "IHQ_CD117", "IHQ_CD138"
+        "IHQ_CD38", "IHQ_CD45", "IHQ_CD56", "IHQ_CD61", "IHQ_CD68", "IHQ_CD117", "IHQ_CD138",
+        # V3.2.5.1 - Biomarcadores adicionales de 50 casos iniciales
+        "IHQ_PAX8", "IHQ_PAX5", "IHQ_WT1", "IHQ_NAPSIN", "IHQ_P63",
+        "IHQ_CDK4", "IHQ_MDM2", "IHQ_MLH1", "IHQ_MSH2", "IHQ_MSH6", "IHQ_PMS2",
+        "IHQ_DOG1", "IHQ_HHV8", "IHQ_ACTIN", "IHQ_GFAP", "IHQ_CAM52", "IHQ_CKAE1AE3", "IHQ_NEUN",
+        # V5.2 - Biomarcadores adicionales detectados por sistema avanzado
+        "IHQ_CD15", "IHQ_CD79A", "IHQ_ALK", "IHQ_DESMIN", "IHQ_MYOGENIN", "IHQ_MYOD1",
+        "IHQ_SMA", "IHQ_MSA", "IHQ_CALRETININ", "IHQ_CD31", "IHQ_FACTOR_VIII",
+        "IHQ_BCL2", "IHQ_BCL6", "IHQ_MUM1", "IHQ_HMB45", "IHQ_TYROSINASE", "IHQ_MELANOMA",
+        # V5.3 - Nuevos biomarcadores detectados en producción (28 adicionales)
+        "IHQ_CD23", "IHQ_CD4", "IHQ_CD8", "IHQ_CD99", "IHQ_CD1A",
+        "IHQ_C4D", "IHQ_LMP1", "IHQ_CITOMEGALOVIRUS", "IHQ_SV40",
+        "IHQ_CEA", "IHQ_CA19_9", "IHQ_CALRETININA",
+        "IHQ_CK34BE12", "IHQ_CK5_6", "IHQ_HEPAR", "IHQ_GLIPICAN", "IHQ_ARGINASA",
+        "IHQ_PSA", "IHQ_RACEMASA", "IHQ_34BETA", "IHQ_B2",
+        # V3.2.4 - Estado de auditoría IA
+        "Estado Auditoria IA"
     ]
 
     # Verificar qué columnas ya existen
@@ -243,18 +331,34 @@ def _add_new_biomarker_columns(conn: sqlite3.Connection, cursor: sqlite3.Cursor)
     existing_cols = {row[1] for row in cursor.fetchall()}
 
     added_count = 0
+    columns_to_fill = []  # Columnas que necesitan relleno con N/A
+
     for biomarker in new_biomarkers:
         if biomarker not in existing_cols:
             try:
+                # Agregar columna sin valor por defecto (SQLite no permite DEFAULT en ALTER TABLE directamente)
                 cursor.execute(f'ALTER TABLE {TABLE_NAME} ADD COLUMN "{biomarker}" TEXT')
                 logger.info(f"✅ Agregada columna: {biomarker}")
                 added_count += 1
+                columns_to_fill.append(biomarker)
             except sqlite3.OperationalError as e:
                 if "duplicate column name" not in str(e).lower():
                     logger.warning(f"⚠️ Error agregando columna {biomarker}: {e}")
 
+    # V5.3.7: Rellenar columnas nuevas con 'N/A' para registros existentes
+    if columns_to_fill:
+        for biomarker in columns_to_fill:
+            # Solo rellenar si el biomarcador NO es "Estado Auditoria IA" (debe quedar NULL)
+            if biomarker != "Estado Auditoria IA":
+                try:
+                    cursor.execute(f'UPDATE {TABLE_NAME} SET "{biomarker}" = ? WHERE "{biomarker}" IS NULL', ('N/A',))
+                    logger.info(f"🔄 Rellenado '{biomarker}' con 'N/A' en registros existentes")
+                except sqlite3.OperationalError as e:
+                    logger.warning(f"⚠️ Error rellenando columna {biomarker}: {e}")
+
     if added_count > 0:
         logger.info(f"✅ Total de nuevas columnas agregadas: {added_count}")
+        logger.info(f"✅ Columnas rellenadas con 'N/A': {len([c for c in columns_to_fill if c != 'Estado Auditoria IA'])}")
 
     conn.commit()
 
@@ -302,7 +406,7 @@ def get_registro_by_peticion(numero_peticion: str) -> Optional[Dict[str, Any]]:
         cursor = conn.cursor()
 
         cursor.execute(
-            f'SELECT * FROM {TABLE_NAME} WHERE "N. peticion (0. Numero de biopsia)" = ?',
+            f'SELECT * FROM {TABLE_NAME} WHERE "Numero de caso" = ?',
             (numero_peticion,)
         )
 
@@ -348,7 +452,7 @@ def update_campo_registro(
             return False
 
         # Actualizar
-        query = f'UPDATE {TABLE_NAME} SET "{campo}" = ? WHERE "N. peticion (0. Numero de biopsia)" = ?'
+        query = f'UPDATE {TABLE_NAME} SET "{campo}" = ? WHERE "Numero de caso" = ?'
         cursor.execute(query, (valor, numero_peticion))
 
         conn.commit()
@@ -381,12 +485,13 @@ def smart_update_records(records: List[Dict[str, Any]]) -> int:
     skipped_count = 0
     
     # Campos de biomarcadores que NO deben sobrescribirse si ya tienen datos
+    # v5.3.6: Actualizados nombres de biomarcadores
     biomarcador_fields = {
-        'IHQ_P16_ESTADO', 'IHQ_P40_ESTADO', 'IHQ_HER2', 'IHQ_KI-67', 
-        'IHQ_RECEPTOR_ESTROGENO', 'IHQ_RECEPTOR_PROGESTERONOS', 'IHQ_PDL-1',
+        'IHQ_P16_ESTADO', 'IHQ_P40_ESTADO', 'IHQ_HER2', 'IHQ_KI-67',
+        'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA', 'IHQ_PDL-1',
         'IHQ_P16_PORCENTAJE', 'IHQ_ESTUDIOS_SOLICITADOS', 'IHQ_ORGANO',
         # Campos diagnósticos adicionales
-        'Congelaciones /Otros estudios', 'Liquidos (5 Tipo histologico)', 
+        'Congelaciones /Otros estudios', 'Liquidos (5 Tipo histologico)',
         'Citometria de flujo (5 Tipo histologico)'
     }
 
@@ -396,13 +501,14 @@ def smart_update_records(records: List[Dict[str, Any]]) -> int:
         cursor = conn.cursor()
 
         # Obtener columnas de la tabla
+        # v5.3.6: Eliminado 'id' del filtro (columna ya no existe)
         cursor.execute(f"PRAGMA table_info({TABLE_NAME})")
-        table_columns: List[str] = [col[1] for col in cursor.fetchall() if col[1] not in ('id', 'Fecha Ingreso Base de Datos')]
+        table_columns: List[str] = [col[1] for col in cursor.fetchall() if col[1] not in ('Fecha Ingreso Base de Datos',)]
 
         for record in records:
             peticion: str = ""
             try:
-                peticion = str(record.get("N. peticion (0. Numero de biopsia)", "") or "").strip()
+                peticion = str(record.get("Numero de caso", "") or "").strip()
                 if not peticion:
                     logger.warning("Registro sin número de petición válido, omitiendo")
                     skipped_count += 1
@@ -564,16 +670,17 @@ def save_records(records: List[Dict[str, Any]]) -> int:
         conn = sqlite3.connect(DB_FILE)
         cursor = conn.cursor()
 
-        # Obtener columnas de la tabla (excluyendo claves y timestamps gestionados automáticamente)
+        # Obtener columnas de la tabla (excluyendo timestamps gestionados automáticamente)
+        # v5.3.6: Eliminado 'id' del filtro (columna ya no existe)
         cursor.execute(f"PRAGMA table_info({TABLE_NAME})")
-        table_columns: List[str] = [col[1] for col in cursor.fetchall() if col[1] not in ('id', 'Fecha Ingreso Base de Datos')]
+        table_columns: List[str] = [col[1] for col in cursor.fetchall() if col[1] not in ('Fecha Ingreso Base de Datos',)]
 
         for record in records:
             peticion: str = ""
             try:
                 # Validar que el registro tenga al menos el número de petición
                 # FIX: Usar mapeo normalizado para encontrar el número de petición
-                peticion_col = "N. peticion (0. Numero de biopsia)"
+                peticion_col = "Numero de caso"
                 normalized_peticion_col = _normalize_column_name(peticion_col)
                 peticion = str(record.get(normalized_peticion_col, record.get(peticion_col, "")) or "").strip()
                 if not peticion:
@@ -585,7 +692,7 @@ def save_records(records: List[Dict[str, Any]]) -> int:
                 record = _apply_default_values(record)
 
                 # Verificar si ya existe (usando UPSERT)
-                cursor.execute(f"SELECT id FROM {TABLE_NAME} WHERE \"N. peticion (0. Numero de biopsia)\" = ?", (peticion,))
+                cursor.execute(f"SELECT 1 FROM {TABLE_NAME} WHERE \"Numero de caso\" = ?", (peticion,))
                 existing = cursor.fetchone()
                 
                 if existing:
@@ -659,8 +766,26 @@ def get_all_records_as_dataframe() -> pd.DataFrame:
         conn = sqlite3.connect(DB_FILE)
         df = pd.read_sql_query(f'SELECT * FROM {TABLE_NAME} ORDER BY "Fecha Ingreso Base de Datos" DESC', conn)
         logger.info(f"Cargados {len(df)} registros de la base de datos")
+
+        # V5.3.9.3: Agregar columna "Nombre Completo" sin N/A para visualización
+        if not df.empty and all(col in df.columns for col in ["Primer nombre", "Segundo nombre", "Primer apellido", "Segundo apellido"]):
+            from core.unified_extractor import build_clean_full_name
+
+            def crear_nombre_limpio(row):
+                try:
+                    return build_clean_full_name(
+                        str(row.get("Primer nombre", "")),
+                        str(row.get("Segundo nombre", "")),
+                        str(row.get("Primer apellido", "")),
+                        str(row.get("Segundo apellido", ""))
+                    )
+                except:
+                    return "N/A"
+
+            df["Nombre Completo"] = df.apply(crear_nombre_limpio, axis=1)
+
         return df
-        
+
     except sqlite3.Error as e:
         logger.error(f"Error consultando la base de datos: {e}")
         return pd.DataFrame()  # Retorna DataFrame vacío en caso de error
@@ -794,7 +919,7 @@ def update_incomplete_records_with_debug_data(debug_file_path: str = None) -> in
         from core.unified_extractor import extract_ihq_data, map_to_excel_format
         
         for _, record in incomplete_records.iterrows():
-            ihq_code = record.get("N. peticion (0. Numero de biopsia)", "")
+            ihq_code = record.get("Numero de caso", "")
             
             if not ihq_code:
                 continue
@@ -899,7 +1024,7 @@ def get_incomplete_records_summary() -> Dict[str, Any]:
             "complete_records": complete_count,
             "incomplete_records": incomplete_count,
             "completeness_percentage": round(completeness_percentage, 1),
-            "incomplete_ihq_codes": df[~complete_mask]["N. peticion (0. Numero de biopsia)"].tolist()
+            "incomplete_ihq_codes": df[~complete_mask]["Numero de caso"].tolist()
         }
         
     except Exception as e:
@@ -916,7 +1041,7 @@ def verificar_duplicado_por_peticion(numero_peticion: str) -> Dict[str, Any]:
             cursor = conn.cursor()
             cursor.execute(f"""
                 SELECT * FROM {TABLE_NAME} 
-                WHERE "N. peticion (0. Numero de biopsia)" = ?
+                WHERE "Numero de caso" = ?
             """, (numero_peticion,))
             
             result = cursor.fetchone()
@@ -1052,3 +1177,71 @@ def calcular_estadisticas_confiabilidad() -> Dict[str, Any]:
     except Exception as e:
         logger.error(f"Error calculando estadísticas de confiabilidad: {e}")
         return {"error": str(e)}
+
+
+# ======================== FUNCIONES DE AUDITORÍA IA (V3.2.4) ========================
+
+def get_estado_auditoria(numero_peticion: str) -> Optional[str]:
+    """
+    Obtiene el estado de auditoría de un registro
+
+    Args:
+        numero_peticion: Número de petición IHQ
+
+    Returns:
+        str: Estado de auditoría ("PARCIAL", "COMPLETA", o None si no auditado)
+    """
+    try:
+        conn = sqlite3.connect(DB_FILE)
+        cursor = conn.cursor()
+
+        cursor.execute(
+            f'SELECT "Estado Auditoria IA" FROM {TABLE_NAME} WHERE "Numero de caso" = ?',
+            (numero_peticion,)
+        )
+
+        result = cursor.fetchone()
+        conn.close()
+
+        if result:
+            return result[0]
+        return None
+
+    except Exception as e:
+        logger.error(f"Error obteniendo estado de auditoría de {numero_peticion}: {e}")
+        return None
+
+
+def set_estado_auditoria(numero_peticion: str, estado: str) -> bool:
+    """
+    Actualiza el estado de auditoría de un registro
+
+    Args:
+        numero_peticion: Número de petición IHQ
+        estado: Estado de auditoría ("PARCIAL" o "COMPLETA")
+
+    Returns:
+        bool: True si se actualizó correctamente
+    """
+    try:
+        if estado not in ["PARCIAL", "COMPLETA"]:
+            logger.warning(f"Estado inválido: {estado}. Debe ser 'PARCIAL' o 'COMPLETA'")
+            return False
+
+        conn = sqlite3.connect(DB_FILE)
+        cursor = conn.cursor()
+
+        cursor.execute(
+            f'UPDATE {TABLE_NAME} SET "Estado Auditoria IA" = ? WHERE "Numero de caso" = ?',
+            (estado, numero_peticion)
+        )
+
+        conn.commit()
+        conn.close()
+
+        logger.info(f"✅ Estado de auditoría actualizado para {numero_peticion}: {estado}")
+        return True
+
+    except Exception as e:
+        logger.error(f"Error actualizando estado de auditoría de {numero_peticion}: {e}")
+        return False

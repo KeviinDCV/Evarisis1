@@ -1,142 +1,68 @@
 # ===================================================================
 # .gitignore para Proyecto HUV - Gestor de Oncología
-# INCLUYE SOLO: Carpetas esenciales + archivos principales del root
+# ENFOQUE: Incluir TODO excepto lo especificado
 # ===================================================================
 
 # ===============================================
-# ENFOQUE: EXCLUIR TODO EXCEPTO LO ESPECIFICADO
+# EXCLUSIONES ESPECÍFICAS SOLICITADAS
 # ===============================================
 
-# Excluir todo por defecto
-/*
+# 1. LEGACY de bases de datos
+LEGACY/**/*.db
+LEGACY/**/*.sqlite
+LEGACY/**/*.sqlite3
+Legacy de bases de datos/
+# 2. Entorno virtual específico venv0
+venv0/
 
-# ===============================================
-# CARPETAS PERMITIDAS (INCLUIR EN GIT)
-# ===============================================
-
-# Carpetas core del proyecto
-!/config/
-!/core/
-!/data/
-!/documentacion/
-!/EXCEL/
-!/imagenes/
-!/pdfs_patologia/
-
-# Carpetas reorganizadas
-!/dev_scripts/
-!/docs/
-!/platform_specific/
-!/tests/
-!/test/
-!/test_integration/
-!/documentacion_actualizada/
-!/herramientas_ia/
-!/ui_helpers/
-!/LEGACY/
-
-# ===============================================
-# ARCHIVOS DEL ROOT PERMITIDOS (INCLUIR EN GIT)
-# ===============================================
-
-# Archivos principales del proyecto
-!ui.py
-!requirements.txt
-!README.md
-!REORGANIZATION_GUIDE.md
-!COMPILADOR.bat
-!iniciar_python.bat
-!iniciar_python_mac.sh
-!GestorOncologia.spec
-!pytest.ini
-
-# Archivos de configuración de Git
-!.gitignore
-!.gitattributes
-
-# ===============================================
-# EXCLUSIONES DENTRO DE CARPETAS PERMITIDAS
-# ===============================================
-
-# Dentro de cualquier carpeta, excluir:
+# 3. Cache de Python (__pycache__)
 **/__pycache__/
 **/*.pyc
 **/*.pyo
 
-# Archivos temporales y de salida
-**/temp_files/
-**/temp_output*/
-**/*_temp.*
-**/*_backup.*
-**/test_*.py
-**/nul
-**/*.bak
-**/prueba*/
-
-# Archivos de logs y debugging
-**/*.log
-**/debug_*
-**/*.pyd
-**/node_modules/
-**/.DS_Store
-**/Thumbs.db
-**/*.tmp
-**/*.temp
-**/*.swp
-**/*.log
-
-# Entornos virtuales en cualquier ubicación
-**/venv/
-**/venv*/
-**/env/
-**/.venv/
-**/.env/
-
-# Archivos de build en cualquier ubicación
-**/dist/
+# 4. Carpetas build (compilación)
 **/build/
 
-# ===============================================
-# EXCLUSIONES ESPECÍFICAS
-# ===============================================
+# 5. Carpetas dist (distribución)
+**/dist/
 
-# Bases de datos temporales (mantener estructura, no datos)
-data/*.db
-data/*.sqlite
-data/*.sqlite3
-data/reportes_ia/*.md
-data/auditorias_ia/*.md
-
-# Archivos sensibles en cualquier ubicación
-**/*.key
-**/*.pem
-**/*.p12
-**/credentials.json
-**/config.ini
-**/.env
+# 6. PDFs de patología (datos médicos)
+pdfs_patologia/
 
 # ===============================================
-# NOTAS DE CONFIGURACIÓN
+# EXCLUSIONES ESTÁNDAR DE PYTHON (RECOMENDADAS)
 # ===============================================
-# Este .gitignore está configurado para incluir SOLO:
-#
-# CARPETAS:
-# - config/       (configuraciones del proyecto)
-# - core/         (módulos principales)
-# - data/         (bases de datos y datos del proyecto)
-# - documentacion/ (documentación técnica)
-# - EXCEL/        (archivos Excel del proyecto)
-# - imagenes/     (recursos gráficos)
-# - pdfs_patologia/ (archivos PDF médicos)
-#
-# ARCHIVOS ROOT:
-# - ui.py                 (interfaz principal)
-# - requirements.txt      (dependencias Python)
-# - CHANGELOG.md          (historial de cambios)
-# - README.md             (documentación principal)
-# - VERSION_INFO_GUIDE.md (guía de versiones)
-# - COMPILADOR.bat        (script de compilación)
-# - iniciar_python.bat    (script de inicio)
-#
-# TODO LO DEMÁS SE EXCLUYE AUTOMÁTICAMENTE
+
+# Archivos compilados Python adicionales
+*.py[cod]
+*$py.class
+
+# Archivos de sistema (Windows/Mac)
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+
 # ===============================================
+# TODO LO DEMÁS SE INCLUYE AUTOMÁTICAMENTE
+# ===============================================
+#
+# Esto incluye:
+# ✅ Todas las carpetas (config, core, herramientas_ia, documentacion, etc.)
+# ✅ Todos los archivos Python (.py)
+# ✅ Bases de datos (.db) EXCEPTO en LEGACY/
+# ✅ Documentación completa
+# ✅ EXCEL, imagenes, data, etc.
+# ✅ requirements.txt, README.md, ui.py
+# ✅ Scripts .bat, .sh
+# ✅ Todos los archivos del proyecto
+#
+# ❌ EXCLUYE solo:
+#    - LEGACY/**/*.db (bases de datos legacy)
+#    - venv0/ (entorno virtual)
+#    - __pycache__/ (cache Python)
+#    - build/ (carpetas de compilación)
+#    - dist/ (carpetas de distribución)
+#    - pdfs_patologia/ (PDFs con datos médicos)
+#
+# ===================================================================

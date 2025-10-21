@@ -11,6 +11,7 @@ pillow>=10.0.0
 ttkbootstrap==1.10.1
 # tkinter - Incluido con Python, no instalar via pip
 # Nota: Versión 1.10.1 es estable. Versiones 1.14+ tienen bugs con RAISED
+tksheet>=7.5.0  # Tabla virtualizada tipo Excel (V5.3.8)
 
 # === VISUALIZACIÓN Y GRÁFICOS ===
 matplotlib>=3.8.0

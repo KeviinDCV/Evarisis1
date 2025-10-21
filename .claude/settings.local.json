@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /b \"C:\\Users\\USUARIO\\Desktop\\DEBURES HUV\\CLAUDE CODE\\ProyectoHUV9GESTOR_ONCOLOGIA_automatizado\\.claude\\agents\")",
+      "Bash(python herramientas_ia/editor_core.py --validar-sintaxis core/ihq_processor.py)",
+      "Bash(python herramientas_ia/detectar_lm_studio.py)",
+      "Bash(python herramientas_ia/gestor_version.py --actual)",
+      "Bash(python herramientas_ia/gestor_version.py --actualizar 6.0.0 --nombre \"Ecosistema 4+5 Consolidado\" --cambios \"Consolidación 19→6 archivos\" \"7 workflows maestros\" \"4 herramientas densas (4665 líneas)\" \"5 agentes especializados (2066 líneas)\" \"Documentación CLAUDE.md maestra\" \"Validación completa\" --dry-run)",
+      "Bash(python herramientas_ia/editor_core.py --help)",
+      "Bash(dir /b \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\CLAUDE CODE\\ProyectoHUV9GESTOR_ONCOLOGIA_automatizado\\agente Especialista Documentador de Programas\")",
+      "Bash(python -m py_compile \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\CLAUDE CODE\\ProyectoHUV9GESTOR_ONCOLOGIA_automatizado\\herramientas_ia\\gestor_ia_lm_studio.py\")",
+      "Bash(python \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\CLAUDE CODE\\ProyectoHUV9GESTOR_ONCOLOGIA_automatizado\\herramientas_ia\\gestor_ia_lm_studio.py\" --sugerir-modelo correcciones --prioridad velocidad)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

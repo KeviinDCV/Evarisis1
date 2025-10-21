@@ -10,6 +10,7 @@ Nota: Toda la configuración de patrones está ahora en este archivo para centra
 """
 
 import re
+import logging
 import sys
 from pathlib import Path
 from typing import Dict, Any, Optional, List
@@ -37,9 +38,13 @@ PATIENT_PATTERNS = {
     'nombre_completo': {
         'descripcion': 'Nombre completo del paciente',
         'patrones': [
+            # v5.3.1: CORREGIDO - Captura nombres multilínea (ej: "MERCEDES\nCALDERON")
+            r'Nombre\s*:\s*([A-ZÁÉÍÓÚÜÑ\s\n]+?)(?=N\.\s*petici[óo]n)',
+            # Fallback para casos sin salto de línea
             r'Nombre\s*:\s*([A-ZÁÉÍÓÚÜÑ\s]+?)(?=\s*N\.\s*petici[óo]n|$)',
         ],
-        'ejemplo': 'Nombre: DIEGO HERNAN RUIZ IMBACHI'
+        'ejemplo': 'Nombre: DIEGO HERNAN RUIZ IMBACHI',
+        'multilínea': True
     },
 
     'numero_peticion': {
@@ -124,6 +129,9 @@ PATIENT_PATTERNS = {
     'medico_tratante': {
         'descripcion': 'Nombre del médico tratante',
         'patrones': [
+            # v5.3.1: CORREGIDO - Patrón más robusto para capturar médico
+            r'M[ée]dico\s+tratante\s*:\s*([A-ZÁÉÍÓÚÜÑ\s]+?)(?=\s*Servicio|\s*Fecha\s+Ingreso|\n|$)',
+            # Fallback
             r'Médico tratante\s*[:\-—]*\s*:\s*([A-ZÁÉÍÓÚÜÑ\s]+?)(?:\s*Servicio|\s*Fecha Ingreso|$)',
         ],
         'ejemplo': 'Médico tratante: JUAN PEREZ'
@@ -404,25 +412,28 @@ def extract_single_field(text: str, field_name: str, field_config: Dict[str, Any
 
 def clean_extracted_value(value: str) -> str:
     """Limpia valor extraído de artefactos comunes
-    
+
     Args:
         value: Valor extraído sin procesar
-        
+
     Returns:
         Valor limpio
     """
     if not value:
         return ''
-    
+
     # Limpiar UTF-8 y normalizar
     cleaned = clean_text_comprehensive(value)
-    
+
+    # v5.3.1: NUEVO - Convertir saltos de línea a espacios (para nombres multilínea)
+    cleaned = cleaned.replace('\n', ' ').replace('\r', ' ')
+
     # Eliminar caracteres extraños al final
     cleaned = re.sub(r'[^\w\s\./\-:,áéíóúüñÁÉÍÓÚÜÑ]+$', '', cleaned)
-    
+
     # Normalizar espacios múltiples
     cleaned = re.sub(r'\s+', ' ', cleaned).strip()
-    
+
     return cleaned
 
 
@@ -527,18 +538,9 @@ def process_patient_birth_date(edad_texto: str, fecha_referencia: str) -> Dict[s
     result['edad_días'] = age_parts['días']
     result['edad_formateada'] = format_age(age_parts['años'], age_parts['meses'], age_parts['días'])
     
-    # Calcular fecha de nacimiento si tenemos fecha de referencia
-    if fecha_referencia:
-        birth_date = calculate_birth_date(fecha_referencia, edad_texto)
-        if birth_date:
-            result['fecha_nacimiento_calculada'] = birth_date.strftime('%d/%m/%Y')
-            
-            # Validar fecha de nacimiento
-            validation = validate_date(birth_date)
-            result['fecha_nacimiento_valida'] = validation['is_valid']
-            if validation['warnings']:
-                result['fecha_nacimiento_advertencias'] = validation['warnings']
-    
+    # v5.3.1: ELIMINADO - Cálculo de fecha de nacimiento (no requerido)
+    # La edad en años, meses y días es suficiente para el sistema
+
     return result
 
 
@@ -565,7 +567,7 @@ def get_patient_summary(patient_data: Dict[str, Any]) -> Dict[str, Any]:
     summary['demograficos'] = {
         'edad': patient_data.get('edad_formateada', patient_data.get('edad', '')),
         'genero': patient_data.get('genero', ''),
-        'fecha_nacimiento': patient_data.get('fecha_nacimiento_calculada', ''),
+        # v5.3.1: ELIMINADO - fecha_nacimiento (no requerido)
     }
     
     # Datos de salud
@@ -661,7 +663,7 @@ def get_missing_fields(patient_data: Dict[str, Any]) -> List[str]:
 
 def test_patient_extractor():
     """Función de prueba para validar el extractor de paciente"""
-    print("=== Test del Extractor de Paciente ===")
+    logging.info("=== Test del Extractor de Paciente ===")
     
     # Ejemplo de texto de informe
     sample_text = """
@@ -677,34 +679,34 @@ def test_patient_extractor():
     Fecha Informe: 16/01/2025
     """
     
-    print("Texto de prueba:")
-    print(sample_text)
-    print("\n" + "="*50)
+    logging.info("Texto de prueba:")
+    logging.info(sample_text)
+    logging.info("\n" + "="*50)
     
     # Extraer datos
     patient_data = extract_patient_data(sample_text)
     
-    print("\nDatos extraídos:")
+    logging.info("\nDatos extraídos:")
     for key, value in patient_data.items():
-        print(f"  {key}: {value}")
+        logging.info(f"  {key}: {value}")
     
     # Generar resumen
     summary = get_patient_summary(patient_data)
-    print(f"\nResumen:")
+    logging.info(f"\nResumen:")
     for category, data in summary.items():
-        print(f"  {category.upper()}:")
+        logging.info(f"  {category.upper()}:")
         for key, value in data.items():
-            print(f"    {key}: {value}")
+            logging.info(f"    {key}: {value}")
     
     # Validar datos
     validation = validate_patient_data(patient_data)
-    print(f"\nValidación:")
-    print(f"  Válido: {validation['is_valid']}")
-    print(f"  Confianza: {validation['confidence']:.2f}")
+    logging.info(f"\nValidación:")
+    logging.info(f"  Válido: {validation['is_valid']}")
+    logging.info(f"  Confianza: {validation['confidence']:.2f}")
     if validation['warnings']:
-        print(f"  Advertencias: {validation['warnings']}")
+        logging.info(f"  Advertencias: {validation['warnings']}")
     if validation['errors']:
-        print(f"  Errores: {validation['errors']}")
+        logging.info(f"  Errores: {validation['errors']}")
 
 
 if __name__ == "__main__":

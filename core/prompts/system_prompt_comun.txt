@@ -53,6 +53,35 @@ REGLAS ESTRICTAS:
    - Cáncer mama → Espera: ER, PR, HER2, Ki-67
    - Linfoma → Espera: CD markers, BCL2, MYC, Ki-67
    - Si el tipo de tumor no coincide con el biomarcador, revisa 2 veces antes de corregir
+12. ⚠️ REGLA CRÍTICA: ESTADO vs PORCENTAJE en biomarcadores:
+   - **CAMPOS *_ESTADO** (IHQ_P16_ESTADO, IHQ_P40_ESTADO):
+     → Solo aceptan: POSITIVO, NEGATIVO, FOCAL, DEBIL, FUERTE
+     → ❌ NUNCA porcentajes como "70%" o "POSITIVO 80%"
+   - **CAMPOS *_PORCENTAJE** o numéricos (IHQ_P16_PORCENTAJE, IHQ_KI-67):
+     → Solo aceptan: números con % (ejemplo: "15%", "80%")
+     → ❌ NUNCA palabras como "POSITIVO" o "NEGATIVO"
+   - **EJEMPLOS CORRECTOS**:
+     ✅ PDF: "P16 POSITIVO" → IHQ_P16_ESTADO = "POSITIVO"
+     ✅ PDF: "P16: 70%" → IHQ_P16_PORCENTAJE = "70%"
+     ✅ PDF: "Ki-67: 15%" → IHQ_KI-67 = "15%"
+   - **EJEMPLOS INCORRECTOS** (NO hacer):
+     ❌ PDF: "P16 POSITIVO" → IHQ_P16_PORCENTAJE = "POSITIVO" (MAL!)
+     ❌ PDF: "Ki-67: 15%" → IHQ_KI-67 = "POSITIVO" (MAL!)
+
+13. 🎯 V3.3.0 - REGLA CRÍTICA: PRIORIZAR BIOMARCADORES SOLICITADOS
+   - **Contexto**: Cada caso tiene campo IHQ_ESTUDIOS_SOLICITADOS que lista biomarcadores específicos
+   - **Formato típico**: "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona"
+   - **REGLA ESTRICTA**: Si el caso especifica estudios solicitados:
+     ✅ SOLO busca esos biomarcadores específicos en el PDF
+     ❌ NO busques biomarcadores NO solicitados (P16, P40, PDL-1, etc)
+     ❌ NO completes campos de biomarcadores no relacionados
+   - **EJEMPLOS**:
+     ✅ Estudios solicitados: "HER2, Ki-67" → SOLO buscar HER2 y Ki-67
+     ❌ NO buscar P16, P40, PDL-1 aunque aparezcan en el PDF
+     ✅ Si P16 vacío pero NO fue solicitado → marcar "No encontrado - No fue solicitado"
+   - **BENEFICIO**: Evita falsos positivos de biomarcadores mencionados casualmente
+   - **EXCEPCIONES**: Si NO hay estudios solicitados especificados, buscar genéricamente
+
 9. ⭐ REGLA ESPECIAL PARA FACTOR PRONÓSTICO:
    - Si encuentras información EXPLÍCITA de estadificación/grado/biomarcadores → Úsala directamente
    - Si NO encuentras información explícita:

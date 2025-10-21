@@ -125,9 +125,11 @@ def pdf_to_text_enhanced(pdf_path: str) -> str:
             page = doc.load_page(page_num)
 
             # 1) Intento texto nativo (mucho más limpio si el PDF no es escaneado)
+            # v5.3.3: CORREGIDO - Priorizar SIEMPRE texto nativo si tiene contenido
             native = page.get_text("text") or ""
-            native_ok = bool(re.search(r'IHQ\s*\d{5,7}', native, flags=re.IGNORECASE))
-            if native_ok and len(native) > 100:
+            # Usar texto nativo si tiene contenido razonable (más de 50 caracteres)
+            # No requerir código IHQ ya que puede estar en páginas posteriores
+            if len(native.strip()) > 50:
                 page_text = native
             else:
                 # 2) Fallback a OCR con preprocesamiento + reintento de PSM
@@ -146,18 +148,44 @@ def pdf_to_text_enhanced(pdf_path: str) -> str:
                 # Idioma por defecto: español+inglés (mejor para siglas)
                 lang = LANGUAGE if LANGUAGE else "spa+eng"
 
-                # Probamos PSM declarado y un alterno (6 y 4 cubren la mayoría de layouts)
+                # v5.3.3: Probamos múltiples PSM modes y elegimos el mejor
+                # PSM 3: Segmentación automática completa (mejor orden de lectura)
+                # PSM 6: Bloque de texto uniforme
+                # PSM 4: Columna de texto variable
                 tried_psm = []
-                candidates = [PSM_MODE] + [m for m in (6, 4) if m != PSM_MODE]
-                page_text = ""
+                candidates = [3, PSM_MODE] + [m for m in (6, 4) if m != PSM_MODE]
+                page_texts = []
+
                 for psm in candidates:
                     if psm in tried_psm:
                         continue
                     tried_psm.append(psm)
                     config_str = f"--oem 1 --psm {psm} {_extra_config}".strip()
-                    page_text = pytesseract.image_to_string(img, lang=lang, config=config_str)
-                    if re.search(r'IHQ\s*\d{5,7}', page_text, flags=re.IGNORECASE) or len(page_text) > 200:
-                        break
+                    text = pytesseract.image_to_string(img, lang=lang, config=config_str)
+
+                    # Guardar resultado con score de calidad
+                    has_ihq = bool(re.search(r'IHQ\s*\d{5,7}', text, flags=re.IGNORECASE))
+                    length_ok = len(text) > 200
+
+                    # v5.3.3: Verificar orden correcto de secciones para IHQ
+                    # El texto debe tener "DESCRIPCIÓN MACROSCÓPICA" antes de "DESCRIPCIÓN MICROSCÓPICA"
+                    macro_match = re.search(r'DESCRIPCI[ÓO]N\s+MACROSC[ÓO]PICA', text, re.IGNORECASE)
+                    micro_match = re.search(r'DESCRIPCI[ÓO]N\s+MICROSC[ÓO]PICA', text, re.IGNORECASE)
+                    correct_order = False
+                    if macro_match and micro_match:
+                        correct_order = macro_match.start() < micro_match.start()
+
+                    score = (has_ihq * 10) + (length_ok * 5) + (correct_order * 20) + len(text) / 100
+                    page_texts.append((text, score, psm))
+
+                # Elegir el texto con mejor score
+                if page_texts:
+                    page_texts.sort(key=lambda x: x[1], reverse=True)
+                    page_text = page_texts[0][0]
+                    # Debug: mostrar qué PSM se eligió
+                    # print(f"DEBUG: Elegido PSM {page_texts[0][2]} con score {page_texts[0][1]}")
+                else:
+                    page_text = ""
 
             # Limpieza post-OCR / nativo para estabilizar tokens de corte
             page_text = _post_ocr_cleanup(page_text)
@@ -289,24 +317,41 @@ def consolidate_ihq_content(text: str, ihq_code: str) -> str:
 
         # Detectar cambios de sección PRIMERO (antes de desactivar in_organ_zone)
         # CORREGIDO: Agregar todas las variantes con/sin acentos
+        # v5.3.4 FIX: Solo cambiar de sección si la línea SOLO contiene el encabezado (no hay texto adicional)
+        # Esto previene que líneas como "con\nDESCRIPCIÓN MICROSCÓPICA" corten el texto
+
+        is_section_header = False  # Flag para detectar si es solo un encabezado
+
         if ('DESCRIPCIÓN MACROSCÓPICA' in line_upper or 'DESCRIPCION MACROSCOPICA' in line_upper or
             'DESCRIPCIÓN MACROSCOPICA' in line_upper or 'DESCRIPCION MACROSCÓPICA' in line_upper):
-            current_section = 'descripcion_macroscopica'
-            in_organ_zone = False  # Desactivar al entrar a sección médica
+            # Solo cambiar de sección si la línea es SOLO el encabezado (máximo 50 chars)
+            if len(line.strip()) < 50:
+                current_section = 'descripcion_macroscopica'
+                in_organ_zone = False
+                is_section_header = True
         elif ('DESCRIPCIÓN MICROSCÓPICA' in line_upper or 'DESCRIPCION MICROSCOPICA' in line_upper or
               'DESCRIPCIÓN MICROSCOPICA' in line_upper or 'DESCRIPCION MICROSCÓPICA' in line_upper):
-            current_section = 'descripcion_microscopica'
-            in_organ_zone = False  # Desactivar al entrar a sección médica
+            # Solo cambiar de sección si la línea es SOLO el encabezado (máximo 50 chars)
+            if len(line.strip()) < 50:
+                current_section = 'descripcion_microscopica'
+                in_organ_zone = False
+                is_section_header = True
         elif line_upper.startswith('DIAGNÓSTICO') or line_upper.startswith('DIAGNOSTICO'):
-            current_section = 'diagnostico'
+            if len(line.strip()) < 50:
+                current_section = 'diagnostico'
+                is_section_header = True
         elif 'EXPRESIÓN HORMONAL' in line_upper or 'EXPRESION HORMONAL' in line_upper:
             current_section = 'expresion_hormonal'
+            is_section_header = True
         elif 'FACTORES DE TRANSCRIPCION' in line_upper:
             current_section = 'factores_transcripcion'
+            is_section_header = True
         elif 'COMENTARIOS' in line_upper:
             current_section = 'comentarios'
+            is_section_header = True
         elif 'Todos los análisis son avalados' in line or 'Todos los analisis son avalados' in line:
             current_section = 'footer'
+            is_section_header = True
 
         # Solo incluir el primer encabezado completo
         if current_section == 'header':
@@ -324,7 +369,9 @@ def consolidate_ihq_content(text: str, ihq_code: str) -> str:
             elif not seen_header or (seen_header and any(keyword in line_upper for keyword in ['NOMBRE', 'N.IDENTIFICACIÓN', 'GENERO', 'GÉNERO', 'EDAD', 'EPS', 'SALUD', 'MÉDICO TRATANTE', 'SERVICIO', 'FECHA INGRESO', 'FECHA INFORME', 'ORGANO', 'ESTUDIOS SOLICITADOS', 'BLOQUES', 'LAMINAS', 'N. ESTUDIO', 'ESTUDIO', 'TIPO ESTUDIO', 'ALMACENAMIENTO', 'FECHA TOMA'])):
                 sections[current_section].append(line)
         else:
-            # Para secciones médicas, evitar duplicación de títulos
+            # Para secciones médicas, agregar la línea (incluyendo encabezados de sección)
+            # v5.3.4 FIX: Agregar encabezados de sección también, no solo contenido
+            # Evitar duplicación de títulos solo si son exactamente iguales
             if not (sections[current_section] and line.strip() == sections[current_section][-1].strip()):
                 sections[current_section].append(line)
 

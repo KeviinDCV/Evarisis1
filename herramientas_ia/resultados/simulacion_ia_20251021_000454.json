@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-10-21T00:04:54.324960",
+  "texto_entrada": "Ki-67: 25%",
+  "biomarcador_objetivo": "Ki-67",
+  "tiempo_respuesta_segundos": 96.94983267784119,
+  "resultado": {
+    "exito": true,
+    "respuesta": {
+      "valor": "25%",
+      "confianza": 0.99
+    },
+    "tokens_usados": {
+      "prompt": 2390,
+      "completion": 39,
+      "total": 2429
+    },
+    "modelo": "openai/gpt-oss-20b",
+    "finish_reason": "stop",
+    "timestamp": "2025-10-21T00:04:54.323944"
+  }
+}

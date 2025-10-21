@@ -2,12 +2,14 @@
 # -*- coding: utf-8 -*-
 """
 Corrector ortográfico para términos médicos y biomarcadores
-Versión: 4.1.0
-Fecha: 4 de octubre de 2025
+Versión: 5.3.9
+Fecha: 19 de octubre de 2025
+
+V5.3.9: Agregado tracking de correcciones aplicadas
 """
 
 import re
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 # ─────────────────────────── DICCIONARIO DE CORRECCIONES ─────────────────────────────
 
@@ -110,6 +112,48 @@ BIOMARKER_PATTERNS: Dict[str, str] = {
 }
 
 
+# ─────────────────────────── FUNCIONES HELPER V5.3.9 ─────────────────────────────
+
+def detect_correction_pattern(original: str, corrected: str) -> str:
+    """
+    Detecta qué patrón de corrección se aplicó
+
+    Args:
+        original: Texto original
+        corrected: Texto corregido
+
+    Returns:
+        Descripción del patrón aplicado
+    """
+    if original == corrected:
+        return "Sin cambios"
+
+    original_upper = original.upper()
+    corrected_upper = corrected.upper()
+
+    # Verificar si está en el diccionario de términos médicos
+    if original_upper in MEDICAL_TERMS_CORRECTIONS:
+        if MEDICAL_TERMS_CORRECTIONS[original_upper] == corrected_upper:
+            # Identificar el tipo de error OCR
+            if '0' in original and 'O' in corrected:
+                return "Corrección OCR: 0 → O"
+            elif '1' in original and 'I' in corrected:
+                return "Corrección OCR: 1 → I"
+            elif '1' in original and 'L' in corrected:
+                return "Corrección OCR: 1 → L"
+            else:
+                return f"Corrección ortográfica: {original_upper} → {corrected_upper}"
+
+    # Verificar si es normalización de biomarcador
+    for pattern, normalized in BIOMARKER_PATTERNS.items():
+        if re.match(pattern, original, re.IGNORECASE):
+            if normalized.upper() == corrected_upper:
+                return f"Normalización biomarcador: espacios/guiones corregidos"
+
+    # Corrección general
+    return f"Corrección automática"
+
+
 # ─────────────────────────── FUNCIONES DE CORRECCIÓN ─────────────────────────────
 
 def correct_spelling(text: str, case_sensitive: bool = False) -> str:
@@ -197,64 +241,112 @@ def correct_medical_field(field_value: str, field_type: str = 'general') -> str:
     return corrected
 
 
-def correct_extracted_data(extracted_data: Dict[str, any]) -> Dict[str, any]:
+def correct_extracted_data(extracted_data: Dict[str, any], numero_caso: str = "") -> Tuple[Dict[str, any], List[Dict]]:
     """
     Corrige todos los campos de un diccionario de datos extraídos
 
+    V5.3.9: Ahora retorna también las correcciones aplicadas
+
     Args:
         extracted_data: Diccionario con datos extraídos
+        numero_caso: Número de caso IHQ (opcional, para tracking)
 
     Returns:
-        Diccionario con datos corregidos
+        Tuple con:
+        - Diccionario con datos corregidos
+        - Lista de correcciones aplicadas (cada una es un Dict con tipo, campo, antes, después, razón)
     """
     if not extracted_data:
-        return extracted_data
+        return extracted_data, []
 
     corrected_data = extracted_data.copy()
+    correcciones = []
 
     # Campos de diagnóstico
     diagnosis_fields = [
         'diagnostico_final_ihq', 'diagnostico', 'ihq_diagnostico',
         'descripcion_macroscopica', 'descripcion_microscopica',
-        'comentarios', 'observaciones'
+        'comentarios', 'observaciones', 'Diagnostico Principal'  # V5.3.9: Agregado campo BD
     ]
 
     for field in diagnosis_fields:
         if field in corrected_data and corrected_data[field]:
-            corrected_data[field] = correct_medical_field(
-                corrected_data[field],
-                field_type='diagnosis'
-            )
+            original_value = corrected_data[field]
+            corrected_value = correct_medical_field(original_value, field_type='diagnosis')
+
+            # Si hubo corrección, registrarla
+            if original_value != corrected_value:
+                razon = detect_correction_pattern(original_value, corrected_value)
+                correcciones.append({
+                    "tipo": "ortografica",
+                    "campo": field,
+                    "valor_original": original_value,
+                    "valor_corregido": corrected_value,
+                    "razon": razon,
+                    "numero_caso": numero_caso
+                })
+                corrected_data[field] = corrected_value
 
     # Campos de órgano
-    organ_fields = ['organo', 'ihq_organo', 'organo_medical']
+    organ_fields = ['organo', 'ihq_organo', 'organo_medical', 'Organo (1. Muestra enviada a patología)']
 
     for field in organ_fields:
         if field in corrected_data and corrected_data[field]:
-            corrected_data[field] = correct_medical_field(
-                corrected_data[field],
-                field_type='organ'
-            )
+            original_value = corrected_data[field]
+            corrected_value = correct_medical_field(original_value, field_type='organ')
+
+            if original_value != corrected_value:
+                razon = detect_correction_pattern(original_value, corrected_value)
+                correcciones.append({
+                    "tipo": "ortografica",
+                    "campo": field,
+                    "valor_original": original_value,
+                    "valor_corregido": corrected_value,
+                    "razon": razon,
+                    "numero_caso": numero_caso
+                })
+                corrected_data[field] = corrected_value
 
     # Campos de biomarcadores (estado y valores)
     biomarker_fields = [k for k in corrected_data.keys() if '_ESTADO' in k or '_VALOR' in k]
 
     for field in biomarker_fields:
         if corrected_data[field]:
+            original_value = corrected_data[field]
+
             # Para estados, corregir como texto general
             if '_ESTADO' in field:
-                corrected_data[field] = correct_medical_field(
-                    corrected_data[field],
-                    field_type='general'
-                )
+                corrected_value = correct_medical_field(original_value, field_type='general')
+
+                if original_value != corrected_value:
+                    razon = detect_correction_pattern(original_value, corrected_value)
+                    correcciones.append({
+                        "tipo": "ortografica",
+                        "campo": field,
+                        "valor_original": original_value,
+                        "valor_corregido": corrected_value,
+                        "razon": razon,
+                        "numero_caso": numero_caso
+                    })
+                    corrected_data[field] = corrected_value
+
             # Para valores numéricos, no modificar
             elif '_VALOR' in field and isinstance(corrected_data[field], str):
-                corrected_data[field] = correct_medical_field(
-                    corrected_data[field],
-                    field_type='general'
-                )
+                corrected_value = correct_medical_field(original_value, field_type='general')
 
-    return corrected_data
+                if original_value != corrected_value:
+                    razon = detect_correction_pattern(original_value, corrected_value)
+                    correcciones.append({
+                        "tipo": "ortografica",
+                        "campo": field,
+                        "valor_original": original_value,
+                        "valor_corregido": corrected_value,
+                        "razon": razon,
+                        "numero_caso": numero_caso
+                    })
+                    corrected_data[field] = corrected_value
+
+    return corrected_data, correcciones
 
 
 def get_corrections_report(original: str, corrected: str) -> List[str]:
