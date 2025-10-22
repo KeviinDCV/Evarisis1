@@ -1862,7 +1862,7 @@ class EnhancedDatabaseDashboard:
             tree.grid(row=0, column=0, sticky="nsew")
 
             # Configurar columnas (mostrar solo las más importantes)
-            important_cols = ['numero_peticion', 'fecha_informe', 'paciente_nombre', 'paciente_apellido', 'diagnostico_morfologico']
+            important_cols = ['numero_peticion', 'fecha_informe', 'paciente_nombre', 'paciente_apellido', 'diagnostico_coloracion', 'diagnostico_morfologico']
             available_cols = [col for col in important_cols if col in df.columns]
 
             tree["columns"] = available_cols

@@ -48,6 +48,7 @@ CAMPOS_REQUERIDOS = {
     'medicos': [
         'Numero de caso',
         'Fecha Informe',
+        'Diagnostico Coloracion',  # NUEVO - v6.1.0: Diagnóstico del Estudio M
         'Diagnostico Principal',
         'Factor pronostico',
         'Organo',

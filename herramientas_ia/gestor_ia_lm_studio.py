@@ -1991,6 +1991,937 @@ class GestorIALMStudio:
 
         return reporte
 
+    def _cargar_conocimiento_sistema(self) -> Dict[str, Any]:
+        """
+        Carga conocimiento completo del sistema EVARISIS.
+
+        Returns:
+            Dict con:
+            - extractores: Lista de extractores y su función
+            - campos_criticos: Definición de campos críticos con ejemplos
+            - flujo_datos: Flujo completo de procesamiento
+            - reglas_validacion: Reglas de validation_checker
+            - diferencia_study_m_ihq: Explicación Study M vs IHQ
+        """
+        conocimiento = {
+            "extractores": {
+                "medical_extractor.py": {
+                    "funciones": [
+                        {
+                            "nombre": "extract_diagnostico_coloracion",
+                            "version": "v6.1.0",
+                            "fuente": "DESCRIPCION_MACROSCOPICA",
+                            "componentes": 5,
+                            "descripcion": "Diagnóstico del Study M (Coloración) con Nottingham + invasiones"
+                        },
+                        {
+                            "nombre": "extract_principal_diagnosis",
+                            "fuente": "DIAGNOSTICO",
+                            "descripcion": "Diagnóstico principal del IHQ SIN Nottingham"
+                        },
+                        {
+                            "nombre": "extract_factor_pronostico",
+                            "fuente": "DESCRIPCION_MICROSCOPICA + DIAGNOSTICO",
+                            "contenido": "SOLO biomarcadores IHQ (NO Nottingham ni invasiones)",
+                            "anti_contaminacion": True
+                        },
+                        {
+                            "nombre": "extract_organo",
+                            "validacion": "semántica",
+                            "descripcion": "Órgano validado, NO texto descriptivo"
+                        }
+                    ]
+                },
+                "biomarker_extractor.py": {
+                    "funciones": "30+ extract_*() funciones",
+                    "caracteristicas": [
+                        "Búsqueda multi-sección (DESCRIPCION_MICROSCOPICA, DIAGNOSTICO, COMENTARIOS)",
+                        "Anti-confusión (Ki-67 ≠ P53, ER ≠ PR, CD5 ≠ CD56)",
+                        "Validación ESTADO vs PORCENTAJE"
+                    ]
+                },
+                "unified_extractor.py": {
+                    "funcion": "map_to_database_format",
+                    "descripcion": "Mapea extractores → BD, normaliza vacíos a 'N/A'"
+                },
+                "validation_checker.py": {
+                    "CAMPOS_REQUERIDOS": {
+                        "medicos": ["Numero de caso", "Fecha Informe", "Diagnostico Coloracion", "Diagnostico Principal", "Factor pronostico", "Organo", "Malignidad"],
+                        "biomarcadores": ["IHQ_RECEPTOR_ESTROGENOS", "IHQ_RECEPTOR_PROGESTERONA", "IHQ_HER2", "IHQ_KI-67", "IHQ_P53", "IHQ_PDL-1"]
+                    },
+                    "reglas": {
+                        "ESTRICTA": "Si IHQ_ESTUDIOS_SOLICITADOS completo → TODOS biomarcadores solicitados deben estar completos",
+                        "GENERICA": "Completitud ≥ 100%"
+                    }
+                }
+            },
+            "campos_criticos": {
+                "DIAGNOSTICO_COLORACION": {
+                    "version": "v6.1.0",
+                    "fuente": "Study M (Coloración)",
+                    "componentes": [
+                        "Diagnóstico base",
+                        "Grado Nottingham",
+                        "Invasión linfovascular",
+                        "Invasión perineural",
+                        "Carcinoma in situ"
+                    ],
+                    "ejemplo_correcto": "CARCINOMA DUCTAL INVASIVO, GRADO NOTTINGHAM 2, INVASIÓN LINFOVASCULAR: NEGATIVO",
+                    "obligatorio": True,
+                    "deteccion": "semántica (keywords: NOTTINGHAM, GRADO, INVASIÓN)"
+                },
+                "DIAGNOSTICO_PRINCIPAL": {
+                    "fuente": "Study IHQ",
+                    "contenido": "Confirmación diagnóstica SIN Nottingham ni invasiones",
+                    "ejemplo_correcto": "CARCINOMA DUCTAL INVASIVO",
+                    "ejemplo_incorrecto": "CARCINOMA DUCTAL INVASIVO, GRADO NOTTINGHAM 2",
+                    "anti_contaminacion": True
+                },
+                "FACTOR_PRONOSTICO": {
+                    "fuente": "Study IHQ",
+                    "contenido": "SOLO biomarcadores IHQ (Ki-67, HER2, ER, PR)",
+                    "ejemplo_correcto": "Ki-67: 20%, HER2: POSITIVO 3+, ER: 90%, PR: 80%",
+                    "ejemplo_incorrecto": "GRADO NOTTINGHAM 2, Ki-67: 20%",
+                    "keywords_prohibidos": ["NOTTINGHAM", "GRADO", "INVASIÓN LINFOVASCULAR", "INVASIÓN PERINEURAL", "CARCINOMA IN SITU"],
+                    "anti_contaminacion": True
+                },
+                "IHQ_ORGANO": {
+                    "validacion": "semántica",
+                    "debe_contener": "SOLO órgano válido",
+                    "no_debe_contener": ["diagnóstico", "texto descriptivo"],
+                    "ejemplo_correcto": "MAMA",
+                    "ejemplo_incorrecto": "LOS HALLAZGOS MORFOLÓGICOS..."
+                }
+            },
+            "flujo_datos": "PDF → OCR → Extractores (medical, biomarker) → Unified Extractor → Database Manager → validation_checker",
+            "diferencia_study_m_ihq": {
+                "Study M (Coloración)": {
+                    "tipo": "Biopsia inicial de patología general",
+                    "contiene": "Diagnóstico + Grado Nottingham + Invasiones",
+                    "campo_bd": "DIAGNOSTICO_COLORACION"
+                },
+                "Study IHQ (Inmunohistoquímica)": {
+                    "tipo": "Análisis molecular",
+                    "contiene": "Confirmación diagnóstica + Biomarcadores (Ki-67, HER2, ER, PR)",
+                    "campo_bd": "DIAGNOSTICO_PRINCIPAL (SIN Nottingham ni invasiones)"
+                },
+                "ANTI_CONTAMINACION": "NUNCA mezclar datos del Study M en campos IHQ"
+            }
+        }
+
+        return conocimiento
+
+    def _leer_reportes_auditor(self, numero_caso: str) -> Optional[Dict[str, Any]]:
+        """
+        Lee reportes del data-auditor para caso específico.
+
+        Busca en herramientas_ia/resultados/:
+        - auditoria_inteligente_{numero_caso}.json
+        - diagnostico_sugerencias_{numero_caso}*.md
+
+        Args:
+            numero_caso: Número de caso (ej: IHQ250980)
+
+        Returns:
+            Dict con contexto del auditor o None si no existe
+        """
+        import glob
+
+        # Buscar reporte de auditoría inteligente
+        patron_json = self.resultados_dir / f"auditoria_inteligente_{numero_caso}.json"
+
+        if not patron_json.exists():
+            return None
+
+        try:
+            with open(patron_json, 'r', encoding='utf-8') as f:
+                reporte_auditor = json.load(f)
+
+            # Buscar reportes adicionales
+            patron_md = str(self.resultados_dir / f"diagnostico_sugerencias_{numero_caso}*.md")
+            archivos_md = glob.glob(patron_md)
+
+            if archivos_md:
+                # Leer primer MD encontrado
+                with open(archivos_md[0], 'r', encoding='utf-8') as f:
+                    reporte_auditor['reporte_sugerencias_md'] = f.read()
+
+            return reporte_auditor
+
+        except Exception as e:
+            print(f"⚠️ Error leyendo reporte del auditor: {e}")
+            return None
+
+    def _interpretar_deteccion_semantica(self, reporte_auditor: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Interpreta detecciones semánticas del auditor.
+
+        Analiza:
+        - Componentes detectados de DIAGNOSTICO_COLORACION
+        - Biomarcadores encontrados con ubicación
+        - Errores de contaminación detectados
+        - Sugerencias de corrección del auditor
+
+        Args:
+            reporte_auditor: Reporte JSON del auditor
+
+        Returns:
+            Dict con interpretación para IA
+        """
+        interpretacion = {
+            "numero_caso": reporte_auditor.get("numero_caso"),
+            "tiene_study_m": False,
+            "campos_con_error": [],
+            "ubicaciones_pdf": {},
+            "reglas_anti_contaminacion": [],
+            "sugerencias_priorizadas": []
+        }
+
+        # Interpretar detecciones
+        if "detecciones" in reporte_auditor:
+            detecciones = reporte_auditor["detecciones"]
+
+            # DIAGNOSTICO_COLORACION detectado?
+            if "diagnostico_coloracion" in detecciones:
+                det_coloracion = detecciones["diagnostico_coloracion"]
+                if det_coloracion.get("encontrado"):
+                    interpretacion["tiene_study_m"] = True
+                    interpretacion["reglas_anti_contaminacion"].append(
+                        "DIAGNOSTICO_PRINCIPAL NO debe incluir Nottingham"
+                    )
+                    interpretacion["reglas_anti_contaminacion"].append(
+                        "FACTOR_PRONOSTICO NO debe incluir Nottingham ni invasiones"
+                    )
+
+        # Interpretar validaciones
+        if "validaciones" in reporte_auditor:
+            validaciones = reporte_auditor["validaciones"]
+
+            for campo, validacion in validaciones.items():
+                if validacion.get("estado") in ["WARNING", "ERROR"]:
+                    interpretacion["campos_con_error"].append({
+                        "campo": campo,
+                        "estado": validacion.get("estado"),
+                        "problema": validacion.get("problema", ""),
+                        "tiene_contaminacion": validacion.get("tiene_contaminacion", False)
+                    })
+
+        # Interpretar diagnósticos de errores
+        if "diagnosticos" in reporte_auditor:
+            diagnosticos = reporte_auditor["diagnosticos"]
+            # diagnosticos puede ser Dict o List
+            if isinstance(diagnosticos, dict):
+                for campo, diagnostico in diagnosticos.items():
+                    # Extraer ubicación en PDF si existe
+                    if isinstance(diagnostico, dict) and "ubicacion_pdf" in diagnostico:
+                        interpretacion["ubicaciones_pdf"][campo] = diagnostico["ubicacion_pdf"]
+            elif isinstance(diagnosticos, list):
+                for diagnostico in diagnosticos:
+                    if isinstance(diagnostico, dict):
+                        campo = diagnostico.get("campo")
+                        # Extraer ubicación en PDF si existe
+                        if "ubicacion_pdf" in diagnostico:
+                            interpretacion["ubicaciones_pdf"][campo] = diagnostico["ubicacion_pdf"]
+
+        # Priorizar sugerencias
+        if "sugerencias" in reporte_auditor:
+            sugerencias = reporte_auditor["sugerencias"]
+            # sugerencias puede ser Dict o List
+            if isinstance(sugerencias, dict):
+                for campo, sugerencia in sugerencias.items():
+                    if isinstance(sugerencia, dict):
+                        prioridad = sugerencia.get("prioridad", "MEDIA")
+                        interpretacion["sugerencias_priorizadas"].append({
+                            "campo": campo,
+                            "archivo": sugerencia.get("archivo"),
+                            "funcion": sugerencia.get("funcion"),
+                            "problema": sugerencia.get("problema"),
+                            "solucion": sugerencia.get("solucion"),
+                            "prioridad": prioridad,
+                            "orden": {"CRITICA": 1, "ALTA": 2, "MEDIA": 3, "BAJA": 4}.get(prioridad, 5)
+                        })
+            elif isinstance(sugerencias, list):
+                for sugerencia in sugerencias:
+                    if isinstance(sugerencia, dict):
+                        prioridad = sugerencia.get("prioridad", "MEDIA")
+                        interpretacion["sugerencias_priorizadas"].append({
+                            "campo": sugerencia.get("campo"),
+                            "archivo": sugerencia.get("archivo"),
+                            "funcion": sugerencia.get("funcion"),
+                            "problema": sugerencia.get("problema"),
+                            "solucion": sugerencia.get("solucion"),
+                            "prioridad": prioridad,
+                            "orden": {"CRITICA": 1, "ALTA": 2, "MEDIA": 3, "BAJA": 4}.get(prioridad, 5)
+                        })
+
+            # Ordenar por prioridad
+            interpretacion["sugerencias_priorizadas"].sort(key=lambda x: x["orden"])
+
+        return interpretacion
+
+    def _analizar_cobertura_prompts(self) -> Dict[str, Any]:
+        """
+        Analiza prompts actuales y detecta conocimiento faltante.
+
+        Compara prompts con conocimiento del sistema EVARISIS para detectar:
+        - Si mencionan DIAGNOSTICO_COLORACION
+        - Si explican Study M vs Study IHQ
+        - Si tienen reglas anti-contaminación
+        - Si documentan búsqueda multi-sección
+        - Si incluyen ejemplos de 5 componentes semánticos
+
+        Returns:
+            Dict con análisis de cobertura y conocimiento faltante
+        """
+        prompts_dir = self.project_root / "core" / "prompts"
+        prompt_comun = prompts_dir / "system_prompt_comun.txt"
+        prompt_parcial = prompts_dir / "system_prompt_parcial.txt"
+
+        analisis = {
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "prompts_analizados": [],
+            "cobertura": {},
+            "conocimiento_faltante": [],
+            "sugerencias": []
+        }
+
+        # Conocimiento crítico que debe estar en los prompts
+        conocimiento_esperado = {
+            "diagnostico_coloracion": {
+                "keywords": ["DIAGNOSTICO_COLORACION", "Study M", "Coloración", "Nottingham"],
+                "descripcion": "Campo DIAGNOSTICO_COLORACION con 5 componentes semánticos",
+                "critico": True
+            },
+            "study_m_vs_ihq": {
+                "keywords": ["Study M", "Study IHQ", "Inmunohistoquímica", "diferencia entre"],
+                "descripcion": "Distinción entre Study M (Coloración) y Study IHQ",
+                "critico": True
+            },
+            "anti_contaminacion": {
+                "keywords": ["anti-contaminación", "NUNCA mezclar", "Study M", "IHQ"],
+                "descripcion": "Reglas anti-contaminación Study M vs IHQ",
+                "critico": True
+            },
+            "busqueda_multiseccion": {
+                "keywords": ["DESCRIPCION_MICROSCOPICA", "prioridad", "multi-sección"],
+                "descripcion": "Búsqueda multi-sección con prioridades",
+                "critico": False
+            },
+            "componentes_semanticos": {
+                "keywords": ["5 componentes", "Grado Nottingham", "invasión linfovascular"],
+                "descripcion": "5 componentes semánticos de DIAGNOSTICO_COLORACION",
+                "critico": True
+            },
+            "deteccion_semantica": {
+                "keywords": ["detección semántica", "contenido", "keywords contextuales"],
+                "descripcion": "Enfoque de detección por contenido médico",
+                "critico": False
+            }
+        }
+
+        # Analizar cada prompt
+        for prompt_path in [prompt_comun, prompt_parcial]:
+            if not prompt_path.exists():
+                analisis["prompts_analizados"].append({
+                    "archivo": prompt_path.name,
+                    "existe": False,
+                    "error": "Archivo no encontrado"
+                })
+                continue
+
+            contenido = prompt_path.read_text(encoding='utf-8')
+            lineas_totales = len(contenido.splitlines())
+
+            cobertura_prompt = {
+                "archivo": prompt_path.name,
+                "existe": True,
+                "lineas": lineas_totales,
+                "conocimiento_presente": {},
+                "conocimiento_ausente": {}
+            }
+
+            # Verificar cada tipo de conocimiento
+            for nombre_conocimiento, info in conocimiento_esperado.items():
+                encontrado = any(kw.lower() in contenido.lower() for kw in info["keywords"])
+
+                if encontrado:
+                    cobertura_prompt["conocimiento_presente"][nombre_conocimiento] = {
+                        "descripcion": info["descripcion"],
+                        "critico": info["critico"]
+                    }
+                else:
+                    cobertura_prompt["conocimiento_ausente"][nombre_conocimiento] = {
+                        "descripcion": info["descripcion"],
+                        "critico": info["critico"],
+                        "keywords_faltantes": info["keywords"]
+                    }
+
+                    # Añadir a conocimiento faltante global si es crítico
+                    if info["critico"]:
+                        analisis["conocimiento_faltante"].append({
+                            "archivo": prompt_path.name,
+                            "conocimiento": nombre_conocimiento,
+                            "descripcion": info["descripcion"]
+                        })
+
+            analisis["prompts_analizados"].append(cobertura_prompt)
+
+        # Calcular estadísticas
+        total_esperado = len(conocimiento_esperado)
+        for prompt_data in analisis["prompts_analizados"]:
+            if prompt_data.get("existe"):
+                presente = len(prompt_data.get("conocimiento_presente", {}))
+                ausente = len(prompt_data.get("conocimiento_ausente", {}))
+                porcentaje = (presente / total_esperado) * 100
+                prompt_data["cobertura_porcentaje"] = round(porcentaje, 1)
+
+        return analisis
+
+    def _generar_sugerencias_mejoras_prompts(self, analisis_cobertura: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Genera sugerencias específicas de mejora basadas en análisis de cobertura.
+
+        Crea texto exacto a insertar en los prompts con:
+        - Sección de conocimiento médico oncológico
+        - Ejemplos de DIAGNOSTICO_COLORACION
+        - Reglas anti-contaminación
+        - Instrucciones de búsqueda multi-sección
+
+        Args:
+            analisis_cobertura: Resultado de _analizar_cobertura_prompts()
+
+        Returns:
+            Dict con sugerencias específicas por archivo
+        """
+        sugerencias = {
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "modificaciones": []
+        }
+
+        # Template para system_prompt_comun.txt
+        seccion_conocimiento_comun = """
+═══════════════════════════════════════════════════════════════
+🧠 CONOCIMIENTO MÉDICO ONCOLÓGICO - EVARISIS v6.1.0
+═══════════════════════════════════════════════════════════════
+
+IMPORTANTE: Existen DOS estudios diferentes en patología oncológica:
+
+1. **STUDY M (COLORACIÓN)**: Estudio inicial de patología
+   - Usa técnicas de coloración H&E (Hematoxilina-Eosina)
+   - Evalúa morfología celular y arquitectura tisular
+   - Proporciona: Diagnóstico base, Grado Nottingham, Invasión linfovascular, Invasión perineural
+   - Ubicación en PDF: DESCRIPCION_MACROSCOPICA o secciones específicas de coloración
+   - Campo de destino: DIAGNOSTICO_COLORACION
+
+2. **STUDY IHQ (INMUNOHISTOQUÍMICA)**: Estudio molecular posterior
+   - Usa anticuerpos para detectar proteínas específicas
+   - Evalúa expresión de biomarcadores (HER2, ER, PR, Ki-67, etc.)
+   - Proporciona: Estado y porcentaje de biomarcadores
+   - Ubicación en PDF: DESCRIPCION_MICROSCOPICA, DIAGNOSTICO, COMENTARIOS
+   - Campos de destino: IHQ_HER2, IHQ_KI-67, IHQ_ER, etc.
+
+⚠️ REGLA CRÍTICA ANTI-CONTAMINACIÓN:
+❌ NUNCA mezclar datos del Study M (Coloración) en campos IHQ
+❌ NUNCA usar información de Grado Nottingham para biomarcadores IHQ
+❌ NUNCA confundir "invasión linfovascular" (Study M) con biomarcadores (Study IHQ)
+✅ DIAGNOSTICO_COLORACION debe contener SOLO información del Study M
+✅ Campos IHQ_* deben contener SOLO información de biomarcadores moleculares
+
+---
+
+📋 CAMPO CRÍTICO: DIAGNOSTICO_COLORACION (v6.1.0 - NUEVO)
+---
+
+**5 COMPONENTES SEMÁNTICOS** (deben extraerse del Study M - Coloración):
+
+1. **Diagnóstico base**:
+   - Ejemplo: "CARCINOMA DUCTAL INVASIVO"
+   - Variantes: "CARCINOMA LOBULILLAR", "ADENOCARCINOMA", "TUMOR NEUROENDOCRINO"
+
+2. **Grado Nottingham** (si aplica para tumores mamarios):
+   - Ejemplo: "GRADO NOTTINGHAM 2 (SCORE 7: TUBULOS 3, PLEOMORFISMO 2, MITOSIS 2)"
+   - Variantes: "GRADO 1", "GRADO 2", "GRADO 3"
+   - Keywords: "Nottingham", "score", "grado histológico"
+
+3. **Invasión linfovascular**:
+   - Ejemplo: "INVASIÓN LINFOVASCULAR: NEGATIVO"
+   - Variantes: "INVASIÓN VASCULAR: POSITIVO", "No se observa invasión linfovascular"
+   - Keywords: "invasión linfovascular", "invasión vascular", "embolias vasculares"
+
+4. **Invasión perineural**:
+   - Ejemplo: "INVASIÓN PERINEURAL: NEGATIVO"
+   - Variantes: "INVASIÓN PERINEURAL: POSITIVO", "No hay invasión perineural"
+   - Keywords: "invasión perineural", "perineural"
+
+5. **Carcinoma in situ**:
+   - Ejemplo: "CARCINOMA DUCTAL IN SITU: NO"
+   - Variantes: "CARCINOMA LOBULILLAR IN SITU: PRESENTE", "Sin componente in situ"
+   - Keywords: "in situ", "CDIS", "CLIS"
+
+**EJEMPLO CORRECTO DE DIAGNOSTICO_COLORACION COMPLETO**:
+```
+CARCINOMA DUCTAL INVASIVO, GRADO NOTTINGHAM 2 (SCORE 7: TUBULOS 3, PLEOMORFISMO 2, MITOSIS 2). INVASIÓN LINFOVASCULAR: NEGATIVO. INVASIÓN PERINEURAL: NEGATIVO. CARCINOMA DUCTAL IN SITU: NO.
+```
+
+**UBICACIÓN EN PDF**: Buscar en estas secciones (en orden de prioridad):
+1. DESCRIPCION_MACROSCOPICA
+2. Secciones tituladas "COLORACIÓN", "H&E", "HISTOLOGÍA"
+3. Secciones de diagnóstico inicial (antes de IHQ)
+
+---
+
+🔍 BÚSQUEDA MULTI-SECCIÓN (PRIORIDAD PARA BIOMARCADORES IHQ)
+---
+
+Al buscar biomarcadores IHQ (HER2, Ki-67, ER, PR, etc.), usar PRIORIDAD:
+
+1. **DESCRIPCION_MICROSCOPICA** (primera prioridad)
+   - Contiene descripción detallada de expresión de marcadores
+   - Ejemplo: "Ki-67 muestra índice proliferativo del 20%"
+
+2. **DIAGNOSTICO** (segunda prioridad)
+   - Puede contener resumen de biomarcadores
+   - Ejemplo: "HER2 POSITIVO (3+)"
+
+3. **COMENTARIOS** (tercera prioridad)
+   - Puede contener aclaraciones o interpretaciones
+   - Ejemplo: "El alto índice de Ki-67 sugiere alta proliferación"
+
+⚠️ NO buscar biomarcadores IHQ en DESCRIPCION_MACROSCOPICA (es para Study M)
+
+---
+
+🎯 DETECCIÓN SEMÁNTICA (ENFOQUE INTELIGENTE)
+---
+
+El sistema EVARISIS usa detección basada en CONTENIDO, no en posiciones fijas:
+
+✅ **Buscar por keywords contextuales**:
+   - "Grado Nottingham" → DIAGNOSTICO_COLORACION (componente 2)
+   - "Ki-67:" → IHQ_KI-67
+   - "HER2:" → IHQ_HER2
+   - "invasión linfovascular" → DIAGNOSTICO_COLORACION (componente 3)
+
+✅ **Considerar variaciones de formato**:
+   - "Ki-67: 20%" = "Ki 67: 20%" = "KI67: 20%" (mismo dato)
+   - "HER2 POSITIVO" = "HER-2: POSITIVO" = "HER 2 +" (mismo dato)
+
+✅ **Contexto médico importa**:
+   - "INVASIÓN LINFOVASCULAR" en Study M → DIAGNOSTICO_COLORACION
+   - "Ki-67 del 2%" en Study IHQ → IHQ_KI-67
+   - NO confundir contextos
+
+═══════════════════════════════════════════════════════════════
+
+"""
+
+        # Template para system_prompt_parcial.txt
+        seccion_conocimiento_parcial = """
+🧠 CONOCIMIENTO RÁPIDO - STUDY M vs STUDY IHQ:
+⚡ Study M (Coloración): Grado Nottingham, invasiones → DIAGNOSTICO_COLORACION
+⚡ Study IHQ: Biomarcadores (Ki-67, HER2, ER, PR) → Campos IHQ_*
+⚡ ANTI-CONTAMINACIÓN: NO mezclar Study M con IHQ
+⚡ BÚSQUEDA MULTI-SECCIÓN: DESCRIPCION_MICROSCOPICA > DIAGNOSTICO > COMENTARIOS (para IHQ)
+
+📋 DIAGNOSTICO_COLORACION - 5 componentes del Study M:
+1. Diagnóstico base (ej: "CARCINOMA DUCTAL INVASIVO")
+2. Grado Nottingham (ej: "GRADO NOTTINGHAM 2")
+3. Invasión linfovascular (ej: "INVASIÓN LINFOVASCULAR: NEGATIVO")
+4. Invasión perineural (ej: "INVASIÓN PERINEURAL: NEGATIVO")
+5. Carcinoma in situ (ej: "CARCINOMA DUCTAL IN SITU: NO")
+
+🔍 DETECCIÓN SEMÁNTICA - Busca por CONTENIDO no por posición:
+✅ "Grado Nottingham" → DIAGNOSTICO_COLORACION
+✅ "Ki-67: 20%" → IHQ_KI-67
+✅ "invasión linfovascular" → DIAGNOSTICO_COLORACION
+✅ Contexto médico importa - NO confundir Study M con IHQ
+
+"""
+
+        # Generar sugerencias específicas por archivo
+        for prompt_data in analisis_cobertura.get("prompts_analizados", []):
+            if not prompt_data.get("existe"):
+                continue
+
+            archivo = prompt_data["archivo"]
+            ausente = prompt_data.get("conocimiento_ausente", {})
+
+            if not ausente:
+                # Prompt ya tiene todo el conocimiento necesario
+                sugerencias["modificaciones"].append({
+                    "archivo": archivo,
+                    "accion": "NINGUNA",
+                    "razon": "Prompt ya contiene todo el conocimiento necesario",
+                    "cobertura": prompt_data.get("cobertura_porcentaje", 100)
+                })
+                continue
+
+            # Determinar qué sección insertar
+            if archivo == "system_prompt_comun.txt":
+                modificacion = {
+                    "archivo": archivo,
+                    "accion": "INSERTAR_AL_INICIO",
+                    "ubicacion": "Línea 1 (antes del contenido actual)",
+                    "texto_a_insertar": seccion_conocimiento_comun.strip(),
+                    "lineas_a_insertar": len(seccion_conocimiento_comun.strip().splitlines()),
+                    "conocimiento_agregado": list(ausente.keys()),
+                    "beneficio": "IA entenderá Study M vs IHQ, evitará contaminación, detectará 5 componentes semánticos",
+                    "cobertura_antes": prompt_data.get("cobertura_porcentaje", 0),
+                    "cobertura_despues": 100.0
+                }
+            elif archivo == "system_prompt_parcial.txt":
+                modificacion = {
+                    "archivo": archivo,
+                    "accion": "INSERTAR_DESPUES_HEADER",
+                    "ubicacion": "Después de línea 2 (después del header de MODO ULTRA-RÁPIDO)",
+                    "texto_a_insertar": seccion_conocimiento_parcial.strip(),
+                    "lineas_a_insertar": len(seccion_conocimiento_parcial.strip().splitlines()),
+                    "conocimiento_agregado": list(ausente.keys()),
+                    "beneficio": "IA rápida entenderá Study M vs IHQ sin perder velocidad",
+                    "cobertura_antes": prompt_data.get("cobertura_porcentaje", 0),
+                    "cobertura_despues": 100.0
+                }
+            else:
+                modificacion = {
+                    "archivo": archivo,
+                    "accion": "DESCONOCIDO",
+                    "razon": "Archivo no reconocido"
+                }
+
+            sugerencias["modificaciones"].append(modificacion)
+
+        return sugerencias
+
+
+def comando_entender_sistema(gestor):
+    """Muestra conocimiento del sistema EVARISIS"""
+    print("\n🧠 CONOCIMIENTO DEL SISTEMA EVARISIS")
+    print("=" * 80)
+
+    conocimiento = gestor._cargar_conocimiento_sistema()
+
+    # Mostrar extractores
+    print("\n📦 EXTRACTORES:")
+    for archivo, info in conocimiento["extractores"].items():
+        print(f"\n  {archivo}:")
+        if "funciones" in info and isinstance(info["funciones"], list):
+            for func in info["funciones"]:
+                print(f"    • {func['nombre']}")
+                print(f"      Fuente: {func.get('fuente', 'N/A')}")
+                print(f"      Descripción: {func.get('descripcion', 'N/A')}")
+        else:
+            print(f"    {info.get('funciones', 'N/A')}")
+            if "caracteristicas" in info:
+                for caract in info["caracteristicas"]:
+                    print(f"      • {caract}")
+
+    # Mostrar campos críticos
+    print("\n\n🔍 CAMPOS CRÍTICOS:")
+    for campo, detalles in conocimiento["campos_criticos"].items():
+        print(f"\n  {campo}:")
+        print(f"    Fuente: {detalles.get('fuente', 'N/A')}")
+        if "componentes" in detalles:
+            print(f"    Componentes: {len(detalles['componentes'])}")
+        if "anti_contaminacion" in detalles:
+            print(f"    Anti-contaminación: ✅")
+        print(f"    Ejemplo correcto: {detalles.get('ejemplo_correcto', 'N/A')}")
+
+    # Mostrar flujo de datos
+    print(f"\n\n🔄 FLUJO DE DATOS:\n  {conocimiento['flujo_datos']}")
+
+    # Mostrar diferencia Study M vs IHQ
+    print("\n\n⚠️ DIFERENCIA STUDY M (COLORACIÓN) vs IHQ:")
+    diff = conocimiento["diferencia_study_m_ihq"]
+    for estudio, info in diff.items():
+        if estudio != "ANTI_CONTAMINACION":
+            print(f"\n  {estudio}:")
+            for key, value in info.items():
+                print(f"    {key}: {value}")
+    print(f"\n  {diff['ANTI_CONTAMINACION']}")
+
+    print("\n" + "=" * 80)
+    print("✅ Conocimiento del sistema cargado exitosamente\n")
+
+
+def comando_diagnosticar_con_auditor(gestor, numero_caso):
+    """Diagnóstico colaborativo IA + Auditor"""
+    print(f"\n📊 DIAGNÓSTICO COLABORATIVO: {numero_caso}")
+    print("=" * 80)
+
+    # PASO 1: Leer reporte del auditor
+    print("\n🔍 PASO 1: Leyendo reporte del auditor...")
+    reporte_auditor = gestor._leer_reportes_auditor(numero_caso)
+
+    if not reporte_auditor:
+        print(f"❌ No se encontró auditoría para {numero_caso}")
+        print(f"   Ejecuta primero: python herramientas_ia/auditor_sistema.py {numero_caso} --inteligente")
+        return
+
+    print("✅ Reporte del auditor encontrado")
+
+    # PASO 2: Interpretar detección semántica
+    print("\n🧠 PASO 2: Interpretando detecciones semánticas...")
+    interpretacion = gestor._interpretar_deteccion_semantica(reporte_auditor)
+
+    # Mostrar hallazgos del auditor
+    print("\n📋 HALLAZGOS DEL AUDITOR:")
+    if interpretacion["tiene_study_m"]:
+        print("  ✅ Caso con Study M (Coloración) detectado")
+
+    if interpretacion["campos_con_error"]:
+        print(f"  ⚠️ {len(interpretacion['campos_con_error'])} campo(s) con error:")
+        for error in interpretacion["campos_con_error"]:
+            print(f"     • {error['campo']}: {error['estado']} - {error['problema']}")
+
+    if interpretacion["reglas_anti_contaminacion"]:
+        print(f"\n  🛡️ Reglas anti-contaminación detectadas:")
+        for regla in interpretacion["reglas_anti_contaminacion"]:
+            print(f"     • {regla}")
+
+    if interpretacion["sugerencias_priorizadas"]:
+        print(f"\n  💡 Sugerencias del auditor ({len(interpretacion['sugerencias_priorizadas'])}):")
+        for sug in interpretacion["sugerencias_priorizadas"][:3]:  # Top 3
+            print(f"     [{sug['prioridad']}] {sug['campo']}: {sug['problema']}")
+
+    # PASO 3: Validación IA (pendiente implementación completa)
+    print("\n\n🤖 PASO 3: Validación IA con contexto...")
+    print("  ⏳ Funcionalidad completa de validación IA pendiente")
+    print("     (Requiere LM Studio activo + implementación en validador_ia)")
+
+    # Generar reporte
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    reporte_path = gestor.resultados_dir / f"diagnostico_colaborativo_{numero_caso}_{timestamp}.json"
+
+    reporte_final = {
+        "numero_caso": numero_caso,
+        "timestamp": datetime.now().isoformat(),
+        "contexto_auditor": interpretacion,
+        "validacion_ia": {"estado": "pendiente"},
+        "recomendacion_final": "Revisar hallazgos del auditor antes de validar con IA"
+    }
+
+    with open(reporte_path, 'w', encoding='utf-8') as f:
+        json.dump(reporte_final, f, indent=2, ensure_ascii=False)
+
+    print(f"\n💾 Reporte colaborativo guardado: {reporte_path.name}")
+    print("=" * 80 + "\n")
+
+
+def comando_analizar_auditorias(gestor, ultimos_n):
+    """Analiza últimas N auditorías para detectar patrones de error"""
+    import glob
+
+    print(f"\n📊 ANÁLISIS DE ÚLTIMAS {ultimos_n} AUDITORÍAS")
+    print("=" * 80)
+
+    # Buscar auditorías
+    patron = str(gestor.resultados_dir / "auditoria_inteligente_*.json")
+    archivos = sorted(glob.glob(patron), key=lambda x: Path(x).stat().st_mtime, reverse=True)
+
+    if not archivos:
+        print("❌ No se encontraron auditorías")
+        return
+
+    archivos = archivos[:ultimos_n]
+    print(f"✅ Encontradas {len(archivos)} auditorías\n")
+
+    # Analizar errores
+    errores_por_campo = {}
+    errores_por_tipo = {}
+    causas_raiz = []
+
+    for archivo in archivos:
+        try:
+            with open(archivo, 'r', encoding='utf-8') as f:
+                reporte = json.load(f)
+
+            # Contar errores por campo
+            if "diagnosticos" in reporte:
+                for diag in reporte["diagnosticos"]:
+                    campo = diag.get("campo", "Desconocido")
+                    tipo_error = diag.get("tipo_error", "DESCONOCIDO")
+                    causa = diag.get("causa", "")
+
+                    errores_por_campo[campo] = errores_por_campo.get(campo, 0) + 1
+                    errores_por_tipo[tipo_error] = errores_por_tipo.get(tipo_error, 0) + 1
+
+                    if causa and causa not in causas_raiz:
+                        causas_raiz.append(causa)
+
+        except Exception as e:
+            continue
+
+    # Mostrar resultados
+    if errores_por_campo:
+        print("🔍 ERRORES MÁS FRECUENTES (por campo):")
+        sorted_campos = sorted(errores_por_campo.items(), key=lambda x: x[1], reverse=True)
+        for campo, count in sorted_campos[:10]:
+            porcentaje = (count / len(archivos)) * 100
+            print(f"  • {campo}: {count} casos ({porcentaje:.1f}%)")
+
+    if errores_por_tipo:
+        print("\n\n📋 TIPOS DE ERROR:")
+        for tipo, count in sorted(errores_por_tipo.items(), key=lambda x: x[1], reverse=True):
+            print(f"  • {tipo}: {count} casos")
+
+    if causas_raiz:
+        print("\n\n💡 CAUSAS RAÍZ DETECTADAS:")
+        for causa in causas_raiz[:5]:
+            print(f"  • {causa}")
+
+    print("\n" + "=" * 80)
+    print("💡 TIP: Usa --diagnosticar-con-auditor para análisis detallado de caso específico\n")
+
+
+def comando_sugerir_mejoras_prompts(gestor):
+    """
+    Analiza prompts actuales y genera sugerencias específicas de mejora.
+
+    Workflow:
+    1. Analiza cobertura de conocimiento en prompts actuales
+    2. Detecta qué falta (DIAGNOSTICO_COLORACION, Study M vs IHQ, etc.)
+    3. Genera sugerencias con texto exacto a insertar
+    4. Guarda reporte detallado para que core-editor lo implemente
+    """
+    print("\n" + "="*70)
+    print("🔍 ANÁLISIS DE PROMPTS IA - EVARISIS v6.1.0")
+    print("="*70 + "\n")
+
+    # PASO 1: Analizar cobertura
+    print("📊 PASO 1: Analizando cobertura de conocimiento en prompts...")
+    analisis = gestor._analizar_cobertura_prompts()
+
+    print(f"\n✅ Prompts analizados: {len(analisis['prompts_analizados'])}")
+
+    for prompt_data in analisis["prompts_analizados"]:
+        if not prompt_data.get("existe"):
+            print(f"\n❌ {prompt_data['archivo']}: NO ENCONTRADO")
+            continue
+
+        archivo = prompt_data["archivo"]
+        cobertura = prompt_data.get("cobertura_porcentaje", 0)
+        presente = len(prompt_data.get("conocimiento_presente", {}))
+        ausente = len(prompt_data.get("conocimiento_ausente", {}))
+
+        if cobertura >= 100:
+            print(f"\n✅ {archivo}: {cobertura}% cobertura ({presente}/6 conocimientos)")
+        elif cobertura >= 50:
+            print(f"\n⚠️  {archivo}: {cobertura}% cobertura ({presente}/6 conocimientos, {ausente} faltantes)")
+        else:
+            print(f"\n❌ {archivo}: {cobertura}% cobertura ({presente}/6 conocimientos, {ausente} faltantes)")
+
+        # Mostrar conocimiento ausente CRÍTICO
+        for nombre, info in prompt_data.get("conocimiento_ausente", {}).items():
+            if info.get("critico"):
+                print(f"   🚨 CRÍTICO FALTANTE: {info['descripcion']}")
+
+    # PASO 2: Generar sugerencias
+    print("\n" + "-"*70)
+    print("💡 PASO 2: Generando sugerencias específicas de mejora...")
+    sugerencias = gestor._generar_sugerencias_mejoras_prompts(analisis)
+
+    modificaciones_necesarias = [m for m in sugerencias["modificaciones"] if m.get("accion") != "NINGUNA"]
+
+    if not modificaciones_necesarias:
+        print("\n✅ Todos los prompts ya tienen el conocimiento necesario.")
+        print("   No se requieren modificaciones.")
+        return
+
+    print(f"\n📝 Modificaciones sugeridas: {len(modificaciones_necesarias)}")
+
+    for mod in modificaciones_necesarias:
+        print(f"\n📄 {mod['archivo']}:")
+        print(f"   Acción: {mod['accion']}")
+        print(f"   Ubicación: {mod['ubicacion']}")
+        print(f"   Líneas a insertar: {mod['lineas_a_insertar']}")
+        print(f"   Cobertura: {mod['cobertura_antes']}% → {mod['cobertura_despues']}%")
+        print(f"   Beneficio: {mod['beneficio']}")
+
+    # PASO 3: Guardar reporte detallado
+    print("\n" + "-"*70)
+    print("💾 PASO 3: Guardando reporte detallado...")
+
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    reporte_path = gestor.resultados_dir / f"sugerencias_mejoras_prompts_{timestamp}.json"
+    reporte_md_path = gestor.resultados_dir / f"sugerencias_mejoras_prompts_{timestamp}.md"
+
+    # Guardar JSON con datos estructurados
+    with open(reporte_path, 'w', encoding='utf-8') as f:
+        json.dump({
+            "analisis_cobertura": analisis,
+            "sugerencias": sugerencias
+        }, f, indent=2, ensure_ascii=False)
+
+    # Guardar MD legible para humanos y core-editor
+    with open(reporte_md_path, 'w', encoding='utf-8') as f:
+        f.write("# 🔧 SUGERENCIAS DE MEJORA PARA PROMPTS IA\n\n")
+        f.write(f"**Generado**: {sugerencias['timestamp']}\n")
+        f.write(f"**Sistema**: EVARISIS v6.1.0\n\n")
+
+        f.write("---\n\n")
+        f.write("## 📊 RESUMEN DE ANÁLISIS\n\n")
+
+        for prompt_data in analisis["prompts_analizados"]:
+            if not prompt_data.get("existe"):
+                continue
+            f.write(f"### {prompt_data['archivo']}\n\n")
+            f.write(f"- **Cobertura actual**: {prompt_data.get('cobertura_porcentaje', 0)}%\n")
+            f.write(f"- **Conocimiento presente**: {len(prompt_data.get('conocimiento_presente', {}))}/6\n")
+            f.write(f"- **Conocimiento ausente**: {len(prompt_data.get('conocimiento_ausente', {}))}/6\n\n")
+
+            if prompt_data.get("conocimiento_ausente"):
+                f.write("**Conocimiento faltante CRÍTICO**:\n")
+                for nombre, info in prompt_data["conocimiento_ausente"].items():
+                    if info.get("critico"):
+                        f.write(f"- 🚨 {info['descripcion']}\n")
+                f.write("\n")
+
+        f.write("---\n\n")
+        f.write("## 💡 MODIFICACIONES SUGERIDAS\n\n")
+
+        for i, mod in enumerate(modificaciones_necesarias, 1):
+            f.write(f"### Modificación #{i}: {mod['archivo']}\n\n")
+            f.write(f"- **Acción**: {mod['accion']}\n")
+            f.write(f"- **Ubicación**: {mod['ubicacion']}\n")
+            f.write(f"- **Líneas a insertar**: {mod['lineas_a_insertar']}\n")
+            f.write(f"- **Cobertura**: {mod['cobertura_antes']}% → {mod['cobertura_despues']}%\n")
+            f.write(f"- **Beneficio**: {mod['beneficio']}\n\n")
+
+            f.write("**Conocimiento que se agregará**:\n")
+            for conocimiento in mod["conocimiento_agregado"]:
+                f.write(f"- ✅ {conocimiento}\n")
+            f.write("\n")
+
+            f.write("**Texto a insertar**:\n\n")
+            f.write("```\n")
+            f.write(mod["texto_a_insertar"])
+            f.write("\n```\n\n")
+
+            f.write("---\n\n")
+
+        f.write("## 🎯 PRÓXIMOS PASOS\n\n")
+        f.write("1. **Revisar sugerencias**: Valida que el texto propuesto es correcto\n")
+        f.write("2. **Aplicar con core-editor**: Usa el agente core-editor para aplicar modificaciones\n")
+        f.write("3. **Comando sugerido**:\n")
+        f.write("   ```bash\n")
+        f.write(f"   # Aplicar modificaciones usando este reporte\n")
+        f.write(f"   python herramientas_ia/editor_core.py --aplicar-sugerencias-prompts {reporte_path.name}\n")
+        f.write("   ```\n\n")
+        f.write("4. **Validar**: Probar validación IA después de modificar prompts\n\n")
+
+    print(f"\n✅ Reportes guardados:")
+    print(f"   📄 JSON: {reporte_path.name}")
+    print(f"   📄 MD: {reporte_md_path.name}")
+
+    print("\n" + "="*70)
+    print("🎯 PRÓXIMOS PASOS:")
+    print("="*70)
+    print("\n1. Revisar reporte MD generado")
+    print(f"2. Aplicar modificaciones con core-editor:")
+    print(f"   (El reporte contiene el texto exacto a insertar)")
+    print("3. Validar prompts modificados con caso de prueba")
+    print("\n" + "="*70 + "\n")
+
 
 def main():
     """Función principal CLI"""
@@ -2023,6 +2954,11 @@ EJEMPLOS DE USO:
 
   # EDICIÓN
   python herramientas_ia/gestor_ia_lm_studio.py --editar-prompt system_prompt_comun.txt --simular
+
+  # CONOCIMIENTO DEL SISTEMA
+  python herramientas_ia/gestor_ia_lm_studio.py --entender-sistema
+  python herramientas_ia/gestor_ia_lm_studio.py --diagnosticar-con-auditor IHQ250980
+  python herramientas_ia/gestor_ia_lm_studio.py --analizar-auditorias --ultimos 20
 
 NOTAS:
   - Todos los reportes se guardan en herramientas_ia/resultados/
@@ -2186,6 +3122,32 @@ NOTAS:
         help="Aplicar cambios (por defecto solo simula)"
     )
 
+    # CONOCIMIENTO DEL SISTEMA
+    parser.add_argument(
+        "--entender-sistema",
+        action="store_true",
+        help="Muestra conocimiento completo del sistema EVARISIS"
+    )
+
+    parser.add_argument(
+        "--diagnosticar-con-auditor",
+        type=str,
+        metavar="CASO",
+        help="Diagnóstico colaborativo IA + auditor para caso específico"
+    )
+
+    parser.add_argument(
+        "--analizar-auditorias",
+        action="store_true",
+        help="Analiza reportes de auditorías para detectar patrones de error"
+    )
+
+    parser.add_argument(
+        "--sugerir-mejoras-prompts",
+        action="store_true",
+        help="Analiza prompts y genera sugerencias específicas de mejora con texto exacto"
+    )
+
     # GENERAL
     parser.add_argument(
         "--endpoint",
@@ -2304,6 +3266,26 @@ NOTAS:
             simular_primero=not args.aplicar,
             aplicar=args.aplicar
         )
+
+    # CONOCIMIENTO DEL SISTEMA
+    elif args.entender_sistema:
+        comando_entender_sistema(gestor)
+        return
+
+    elif args.diagnosticar_con_auditor:
+        numero_caso = args.diagnosticar_con_auditor.upper()
+        if not numero_caso.startswith("IHQ"):
+            numero_caso = f"IHQ{numero_caso}"
+        comando_diagnosticar_con_auditor(gestor, numero_caso)
+        return
+
+    elif args.analizar_auditorias:
+        comando_analizar_auditorias(gestor, args.ultimos)
+        return
+
+    elif args.sugerir_mejoras_prompts:
+        comando_sugerir_mejoras_prompts(gestor)
+        return
 
     else:
         parser.print_help()

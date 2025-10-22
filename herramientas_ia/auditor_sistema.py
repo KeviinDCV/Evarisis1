@@ -87,7 +87,7 @@ class AuditorSistema:
     # ========== AUDITORÍA PDF vs BD ==========
 
     def auditar_caso(self, numero_caso: str, json_export: bool = False) -> Dict:
-        """Audita un caso: PDF vs BD"""
+        """Audita un caso: PDF vs BD con validación completa del flujo M → IHQ"""
         print(f"\n{'='*80}")
         print(f"🔍 AUDITANDO CASO: {numero_caso}")
         print(f"{'='*80}\n")
@@ -99,6 +99,18 @@ class AuditorSistema:
 
         datos_bd = debug_map.get('base_datos', {}).get('datos_guardados', {})
         descripciones = self._extraer_descripciones(debug_map)
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # NUEVO: Extraer contexto del flujo M → IHQ
+        # ═══════════════════════════════════════════════════════════════════════
+        texto_ocr = debug_map.get('ocr', {}).get('texto_consolidado', '')
+        contexto_estudio = self._extraer_contexto_estudio(texto_ocr)
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # VALIDACIONES CRÍTICAS: DIAGNOSTICO_PRINCIPAL y FACTOR_PRONOSTICO
+        # ═══════════════════════════════════════════════════════════════════════
+        resultado_diagnostico = self._validar_diagnostico_principal(datos_bd, texto_ocr)
+        resultado_factor = self._validar_factor_pronostico(datos_bd, texto_ocr)
 
         # Identificar biomarcadores mencionados en PDF
         biomarcadores_en_pdf = self._identificar_biomarcadores_en_pdf(descripciones)
@@ -129,8 +141,32 @@ class AuditorSistema:
         total_correctos = len(correctos)
         precision = (total_correctos / total_biomarcadores * 100) if total_biomarcadores > 0 else 100.0
 
-        # Mostrar resultados
-        print(f"📊 RESULTADO:")
+        # ═══════════════════════════════════════════════════════════════════════
+        # MOSTRAR RESULTADOS MEJORADOS (con contexto M → IHQ)
+        # ═══════════════════════════════════════════════════════════════════════
+        print(f"📊 CONTEXTO DEL ESTUDIO:")
+        if contexto_estudio['estudio_m_id']:
+            print(f"   Estudio M: {contexto_estudio['estudio_m_id']}")
+        if contexto_estudio['biomarcadores_ihq']:
+            print(f"   Biomarcadores IHQ solicitados: {len(contexto_estudio['biomarcadores_ihq'])}")
+
+        print(f"\n📊 VALIDACIÓN DE CAMPOS CRÍTICOS:")
+
+        # Resultado DIAGNOSTICO_PRINCIPAL
+        estado_diag_icono = {'OK': '✅', 'WARNING': '⚠️', 'ERROR': '❌'}.get(resultado_diagnostico['estado'], '❓')
+        print(f"   {estado_diag_icono} DIAGNOSTICO_PRINCIPAL: {resultado_diagnostico['estado']}")
+        print(f"      {resultado_diagnostico['mensaje']}")
+        if 'sugerencia' in resultado_diagnostico:
+            print(f"      💡 {resultado_diagnostico['sugerencia']}")
+
+        # Resultado FACTOR_PRONOSTICO
+        estado_factor_icono = {'OK': '✅', 'WARNING': '⚠️', 'ERROR': '❌'}.get(resultado_factor['estado'], '❓')
+        print(f"   {estado_factor_icono} FACTOR_PRONOSTICO: {resultado_factor['estado']}")
+        print(f"      {resultado_factor['mensaje']}")
+        if 'sugerencia' in resultado_factor:
+            print(f"      💡 {resultado_factor['sugerencia']}")
+
+        print(f"\n📊 VALIDACIÓN DE BIOMARCADORES:")
         print(f"   Precisión: {precision:.1f}% ({total_correctos}/{total_biomarcadores})")
         print(f"   Completitud IHQ_ESTUDIOS: {resultado_estudios['porcentaje_captura']:.1f}%")
 
@@ -146,7 +182,10 @@ class AuditorSistema:
             'errores': errores,
             'warnings': warnings,
             'correctos': correctos,
-            'resultado_estudios': resultado_estudios
+            'resultado_estudios': resultado_estudios,
+            'contexto_estudio': contexto_estudio,
+            'validacion_diagnostico': resultado_diagnostico,
+            'validacion_factor_pronostico': resultado_factor
         }
 
         if json_export:
@@ -455,16 +494,1293 @@ class AuditorSistema:
         else:
             return {'estado': 'OK', 'valor_bd': 'VACÍO'}
 
+    def _extraer_contexto_estudio(self, texto_ocr: str) -> Dict:
+        """Extrae contexto del flujo M → IHQ del PDF.
+
+        CONTEXTO DEL SISTEMA EVARISIS:
+        ================================
+
+        FLUJO DE ESTUDIOS ONCOLÓGICOS:
+
+        1. ESTUDIO M (Coloración/Patología General)
+           - Identificador: M25XXXXX-X (M = Coloración, 25 = año 2025)
+           - DESCRIPCIÓN MACROSCÓPICA: Describe muestra física + diagnóstico completo del estudio M
+           - Diagnóstico completo incluye: Tipo histológico + Grado Nottingham + Invasiones
+
+        2. ESTUDIO IHQ (Inmunohistoquímica)
+           - Se realiza SOBRE el estudio M para análisis molecular
+           - DESCRIPCIÓN MICROSCÓPICA: Resultados detallados de cada biomarcador
+           - DIAGNÓSTICO del IHQ:
+             * Primera línea: CONFIRMACIÓN del diagnóstico del estudio M (sin grado ni invasiones)
+             * Líneas siguientes: Resultados de biomarcadores IHQ
+
+        Returns:
+            Dict con:
+            - estudio_m_id: Identificador del estudio M (ej: M2510488-1)
+            - diagnostico_estudio_m: Diagnóstico completo del estudio de coloración
+            - diagnostico_ihq_confirmacion: Primera línea del diagnóstico IHQ (solo histología)
+            - biomarcadores_ihq: Lista de biomarcadores encontrados en descripción microscópica
+        """
+        contexto = {
+            'estudio_m_id': None,
+            'diagnostico_estudio_m': None,
+            'diagnostico_ihq_confirmacion': None,
+            'biomarcadores_ihq': []
+        }
+
+        # 1. Extraer ID del estudio M
+        patron_estudio_m = r'bloque\s+(M\d{7}-\d+)'
+        match_m = re.search(patron_estudio_m, texto_ocr, re.IGNORECASE)
+        if match_m:
+            contexto['estudio_m_id'] = match_m.group(1)
+
+        # 2. Extraer diagnóstico completo del estudio M (en DESCRIPCIÓN MACROSCÓPICA, entre comillas)
+        patron_diag_m = r'con diagn[óo]stico de\s+["\']([^"\']+)["\']'
+        match_diag_m = re.search(patron_diag_m, texto_ocr, re.IGNORECASE | re.DOTALL)
+        if match_diag_m:
+            contexto['diagnostico_estudio_m'] = match_diag_m.group(1).strip()
+
+        # 3. Extraer confirmación del diagnóstico IHQ (primera línea de DIAGNÓSTICO)
+        patron_diagnostico = r'DIAGN[ÓO]STICO\s*\n(.*?)(?=\n\s*[A-Z]{3,}:|\Z)'
+        match_diagnostico = re.search(patron_diagnostico, texto_ocr, re.DOTALL | re.IGNORECASE)
+        if match_diagnostico:
+            texto_diag = match_diagnostico.group(1).strip()
+            lineas = texto_diag.split('\n')
+            for linea in lineas:
+                linea_limpia = linea.strip()
+                if linea_limpia and linea_limpia.startswith('-'):
+                    # Primera línea con guion = confirmación del diagnóstico
+                    contexto['diagnostico_ihq_confirmacion'] = linea_limpia.lstrip('- ').strip('.').strip()
+                    break
+
+        # 4. Identificar biomarcadores de IHQ en DESCRIPCIÓN MICROSCÓPICA
+        patron_microscopica = r'DESCRIPCI[ÓO]N\s+MICROSC[ÓO]PICA\s*\n(.*?)(?=\n\s*DIAGN[ÓO]STICO|\Z)'
+        match_micro = re.search(patron_microscopica, texto_ocr, re.DOTALL | re.IGNORECASE)
+        if match_micro:
+            texto_micro = match_micro.group(1)
+            # Buscar biomarcadores mencionados
+            biomarcadores_comunes = [
+                'KI-67', 'KI67', 'HER2', 'HER-2',
+                'RECEPTOR DE ESTRÓGENO', 'RECEPTORES DE ESTRÓGENO',
+                'RECEPTOR DE PROGESTERONA', 'RECEPTORES DE PROGESTERONA',
+                'P53', 'TTF-1', 'TTF1', 'CK7', 'CK20',
+                'SINAPTOFISINA', 'SYNAPTOPHYSIN', 'CROMOGRANINA', 'CHROMOGRANINA',
+                'CD3', 'CD5', 'CD10', 'CD20', 'CD56', 'CKAE1/AE3'
+            ]
+            for bio in biomarcadores_comunes:
+                if re.search(rf'\b{re.escape(bio)}\b', texto_micro, re.IGNORECASE):
+                    if bio not in contexto['biomarcadores_ihq']:
+                        contexto['biomarcadores_ihq'].append(bio)
+
+        return contexto
+
+    def _validar_diagnostico_principal(self, datos_bd: Dict, texto_ocr: str) -> Dict:
+        """Valida DIAGNOSTICO_PRINCIPAL según flujo M → IHQ.
+
+        El diagnóstico principal debe ser la CONFIRMACIÓN del estudio IHQ,
+        que aparece en la primera línea de la sección DIAGNÓSTICO.
+
+        NO debe incluir:
+        - Grado Nottingham (es del estudio M)
+        - Invasión linfovascular (es del estudio M)
+        - Invasión perineural (es del estudio M)
+        - Carcinoma in situ (es del estudio M)
+
+        Returns:
+            Dict con estado, mensaje, valor_bd, valor_esperado, sugerencia
+        """
+        diagnostico_bd = datos_bd.get('Diagnostico Principal', '').strip()
+
+        # Extraer sección DIAGNÓSTICO del PDF
+        patron_diagnostico = r'DIAGN[ÓO]STICO\s*\n(.*?)(?=\n\s*[A-Z]{3,}:|\Z)'
+        match_diagnostico = re.search(patron_diagnostico, texto_ocr, re.DOTALL | re.IGNORECASE)
+
+        if not match_diagnostico:
+            return {
+                'estado': 'WARNING',
+                'mensaje': 'No se encontró sección DIAGNÓSTICO en el PDF',
+                'valor_bd': diagnostico_bd
+            }
+
+        texto_diagnostico = match_diagnostico.group(1).strip()
+
+        # Extraer primera línea del diagnóstico (confirmación del estudio M)
+        lineas = texto_diagnostico.split('\n')
+        primera_linea = ''
+        for linea in lineas:
+            linea_limpia = linea.strip()
+            if linea_limpia and linea_limpia.startswith('-'):
+                # Primera línea con guion = confirmación del diagnóstico
+                primera_linea = linea_limpia.lstrip('- ').strip('.').strip()
+                break
+
+        if not primera_linea:
+            return {
+                'estado': 'WARNING',
+                'mensaje': 'No se pudo extraer primera línea del DIAGNÓSTICO',
+                'valor_bd': diagnostico_bd
+            }
+
+        # Normalizar textos para comparación
+        diagnostico_bd_norm = self._normalizar_texto(diagnostico_bd)
+        primera_linea_norm = self._normalizar_texto(primera_linea)
+
+        # Validar coincidencia
+        if diagnostico_bd_norm == primera_linea_norm:
+            # Validar que NO contenga gradación ni invasiones (errores comunes)
+            keywords_estudio_m = ['NOTTINGHAM', 'GRADO', 'INVASIÓN', 'INVASION', 'IN SITU']
+            contaminacion = [kw for kw in keywords_estudio_m if kw in diagnostico_bd.upper()]
+
+            if contaminacion:
+                return {
+                    'estado': 'WARNING',
+                    'mensaje': f'DIAGNOSTICO_PRINCIPAL contaminado con datos del estudio M: {", ".join(contaminacion)}',
+                    'valor_bd': diagnostico_bd,
+                    'valor_esperado': primera_linea,
+                    'sugerencia': (
+                        'Eliminar gradación e invasiones del DIAGNOSTICO_PRINCIPAL.\n'
+                        'Solo debe tener el diagnóstico histológico básico (confirmación IHQ).\n'
+                        'Verificar extractor en medical_extractor.py::extract_principal_diagnosis()'
+                    )
+                }
+            else:
+                return {
+                    'estado': 'OK',
+                    'mensaje': 'DIAGNOSTICO_PRINCIPAL correctamente extraído (confirmación IHQ)',
+                    'valor_bd': diagnostico_bd,
+                    'ubicacion': 'Primera línea de DIAGNÓSTICO (confirmación del estudio M)'
+                }
+        else:
+            # Verificar si es substring o match parcial
+            if diagnostico_bd_norm in primera_linea_norm or primera_linea_norm in diagnostico_bd_norm:
+                return {
+                    'estado': 'WARNING',
+                    'mensaje': 'DIAGNOSTICO_PRINCIPAL es parcial, falta información completa',
+                    'valor_bd': diagnostico_bd,
+                    'valor_esperado': primera_linea,
+                    'sugerencia': f'Actualizar extractor para capturar: "{primera_linea}"'
+                }
+            else:
+                return {
+                    'estado': 'ERROR',
+                    'mensaje': 'DIAGNOSTICO_PRINCIPAL NO coincide con primera línea del DIAGNÓSTICO IHQ',
+                    'valor_bd': diagnostico_bd,
+                    'valor_esperado': primera_linea,
+                    'sugerencia': f'Verificar extractor. Debe capturar primera línea del DIAGNÓSTICO: "{primera_linea}"',
+                    'analisis_extractor': 'El extractor extract_principal_diagnosis() está extrayendo datos incorrectos'
+                }
+
+    def _validar_factor_pronostico(self, datos_bd: Dict, texto_ocr: str) -> Dict:
+        """Valida FACTOR_PRONOSTICO según flujo M → IHQ.
+
+        CONTEXTO DEL SISTEMA:
+        =====================
+
+        1. ESTUDIO M (Coloración): Diagnóstico histológico completo
+           - Contiene: Grado Nottingham, invasión linfovascular, invasión perineural
+           - Ubicación: DESCRIPCIÓN MACROSCÓPICA (texto entrecomillado)
+           - Ejemplo: "CARCINOMA... NOTTINGHAM GRADO 2... INVASIÓN LINFOVASCULAR PRESENTE"
+
+        2. ESTUDIO IHQ (Inmunohistoquímica): Análisis molecular con biomarcadores
+           - Contiene: Receptor de Estrógeno, HER2, Ki-67, p53, TTF-1, etc.
+           - Ubicación: DESCRIPCIÓN MICROSCÓPICA + DIAGNÓSTICO (líneas 2+)
+           - Ejemplo: "RECEPTORES DE ESTRÓGENO POSITIVO 80-90% / HER2 NEGATIVO / Ki-67: 51-60%"
+
+        FACTOR_PRONOSTICO debe contener SOLO biomarcadores del estudio IHQ.
+        NO debe contener información del estudio M (grado, invasiones).
+
+        Orden estándar oncológico: Ki-67 → HER2 → ER → PR → resto
+
+        El sistema extrae factor pronóstico en 4 PRIORIDADES (según medical_extractor.py):
+        1. Ki-67 / Ki67 (índice de proliferación celular) - PRIORIDAD ALTA
+        2. p53 (supresor tumoral)
+        3. Líneas de inmunorreactividad (TTF-1, CK7, Napsina A, etc.)
+        4. Otros biomarcadores en diagnóstico (p40, p16, HER2, etc.)
+
+        La IA en auditoría parcial CONSTRUYE el factor pronóstico de biomarcadores encontrados.
+
+        Esta validación:
+        - Busca biomarcadores en TODAS las secciones (DIAGNÓSTICO, DESCRIPCIÓN MICROSCÓPICA, COMENTARIOS)
+        - Si factor_bd == N/A, analiza si existen biomarcadores que el extractor debió capturar
+        - Sugiere correcciones específicas al extractor según lo encontrado
+        - DETECTA CONTAMINACIÓN con datos del estudio M (grado, invasiones)
+
+        Returns:
+            Dict con estado, mensaje, sugerencias específicas y biomarcadores encontrados
+        """
+        factor_bd = datos_bd.get('Factor pronostico', 'N/A').strip()
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # VALIDACIÓN CRÍTICA: Detectar contaminación con datos del estudio M
+        # ═══════════════════════════════════════════════════════════════════════
+        keywords_estudio_m = [
+            'NOTTINGHAM', 'GRADO HISTOLOGICO', 'GRADO 1', 'GRADO 2', 'GRADO 3',
+            'INVASIÓN LINFOVASCULAR', 'INVASION LINFOVASCULAR',
+            'INVASIÓN PERINEURAL', 'INVASION PERINEURAL',
+            'CARCINOMA DUCTAL IN SITU', 'CARCINOMA IN SITU',
+            'BIEN DIFERENCIADO', 'MODERADAMENTE DIFERENCIADO', 'POBREMENTE DIFERENCIADO'
+        ]
+
+        if factor_bd != 'N/A':
+            contaminacion_detectada = []
+            for keyword in keywords_estudio_m:
+                if keyword in factor_bd.upper():
+                    contaminacion_detectada.append(keyword)
+
+            if contaminacion_detectada:
+                return {
+                    'estado': 'ERROR',
+                    'mensaje': f'FACTOR_PRONOSTICO CONTAMINADO con datos del estudio M: {", ".join(contaminacion_detectada)}',
+                    'valor_bd': factor_bd,
+                    'contaminacion': contaminacion_detectada,
+                    'sugerencia': (
+                        'FACTOR_PRONOSTICO debe contener SOLO biomarcadores de IHQ.\n'
+                        'Información del estudio M (Grado Nottingham, invasiones, diferenciación) NO pertenece aquí.\n'
+                        'Esta información debe estar en otros campos específicos:\n'
+                        '  - Grado Nottingham → Campo específico de gradación\n'
+                        '  - Invasión linfovascular → Campo específico de invasión\n'
+                        '  - Diferenciación → Campo específico de diferenciación\n'
+                        '\nVerificar extractor en medical_extractor.py::extract_factor_pronostico()\n'
+                        'El extractor está mezclando datos del estudio M con biomarcadores IHQ'
+                    ),
+                    'analisis_extractor': 'El extractor extract_factor_pronostico() está capturando información del estudio M que NO es factor pronóstico IHQ'
+                }
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # CONTINUAR CON VALIDACIÓN NORMAL (si no hay contaminación)
+        # ═══════════════════════════════════════════════════════════════════════
+
+        # Secciones donde buscar biomarcadores (según auditoria_parcial.py)
+        secciones = {
+            'diagnostico': r'DIAGNÓSTICO.*?(?=\n\s*[A-Z]{3,}|\Z)',
+            'descripcion_microscopica': r'DESCRIPCI[ÓO]N\s+MICROSC[ÓO]PICA.*?(?=\n\s*[A-Z]{3,}|\Z)',
+            'descripcion_macroscopica': r'DESCRIPCI[ÓO]N\s+MACROSC[ÓO]PICA.*?(?=\n\s*[A-Z]{3,}|\Z)',
+            'comentarios': r'COMENTARIOS.*?(?=\n\s*[A-Z]{3,}|\Z)',
+        }
+
+        texto_secciones = {}
+        for nombre, patron in secciones.items():
+            match = re.search(patron, texto_ocr, re.IGNORECASE | re.DOTALL)
+            if match:
+                texto_secciones[nombre] = match.group(0)
+
+        # Si no hay secciones, no podemos validar
+        if not texto_secciones:
+            if factor_bd == 'N/A':
+                return {
+                    'estado': 'WARNING',
+                    'mensaje': 'No se pudieron identificar secciones médicas en el PDF',
+                    'valor_bd': factor_bd,
+                    'sugerencia': 'Verificar estructura del PDF - posible problema de OCR'
+                }
+            else:
+                return {'estado': 'OK', 'valor_bd': factor_bd}
+
+        # Buscar biomarcadores en todas las secciones
+        biomarcadores_encontrados = {}
+        texto_completo = ' '.join(texto_secciones.values())
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PRIORIDAD 1: Ki-67 / Ki67 (según medical_extractor.py líneas 294-327)
+        # ═══════════════════════════════════════════════════════════════════════
+        ki67_patterns = [
+            r'[ÍI]NDICE\s+DE\s+PROLIFERACI[ÓO]N\s+C[ÉE]LULAR\s+(?:MEDIDO\s+CON\s+)?(?:\()?Ki[\s-]?67(?:\))?\s*[:\s]+([0-9]+)\s*%',
+            r'Ki[\s-]?67\s+DEL\s+([0-9]+)\s*%',
+            r'Ki[\s-]?67\s*[:\s]+([0-9]+)\s*%',
+            r'Ki[\s-]?67\s*[:\s]+(POSITIVO|NEGATIVO|ALTO|BAJO|<\s*\d+\s*%)',
+        ]
+
+        for patron in ki67_patterns:
+            match = re.search(patron, texto_completo, re.IGNORECASE)
+            if match:
+                valor = match.group(0).strip()
+                # Validar contexto (evitar diferenciación glandular)
+                match_start = match.start()
+                context_before = texto_completo[max(0, match_start - 150):match_start].upper()
+                if 'DIFERENCIACI' not in context_before or 'GLANDULAR' not in context_before:
+                    if 'MENOR DEL' not in context_before[-30:]:
+                        biomarcadores_encontrados['Ki-67'] = {
+                            'valor': valor,
+                            'ubicacion': self._identificar_seccion(match.start(), texto_secciones)
+                        }
+                        break
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PRIORIDAD 2: p53 (según medical_extractor.py líneas 337-350)
+        # ═══════════════════════════════════════════════════════════════════════
+        p53_patterns = [
+            r'p53\s+tiene\s+expresi[ÓO]n[^.\n]+\([^)]+\)',
+            r'p53\s*[:]\s*[^.\n]+',
+            r'p53\s+(POSITIVO|NEGATIVO|MUTADO|NO\s+MUTADO)[^.\n]*',
+        ]
+
+        for patron in p53_patterns:
+            match = re.search(patron, texto_completo, re.IGNORECASE)
+            if match:
+                biomarcadores_encontrados['p53'] = {
+                    'valor': match.group(0).strip(),
+                    'ubicacion': self._identificar_seccion(match.start(), texto_secciones)
+                }
+                break
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PRIORIDAD 3: Líneas de inmunorreactividad (según medical_extractor.py líneas 359-372)
+        # ═══════════════════════════════════════════════════════════════════════
+        inmuno_patterns = [
+            r'Las\s+c[ée]lulas\s+tumorales\s+presentan\s+inmuno[^\n.]+\.',
+            r'Los\s+marcadores[^\n.]+(?:negativos?|positivos?)\.',
+        ]
+
+        for patron in inmuno_patterns:
+            match = re.search(patron, texto_completo, re.IGNORECASE)
+            if match:
+                biomarcadores_encontrados['inmunorreactividad'] = {
+                    'valor': match.group(0).strip(),
+                    'ubicacion': self._identificar_seccion(match.start(), texto_secciones)
+                }
+                break
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PRIORIDAD 4: Otros biomarcadores (HER2, ER, PR, p40, p16, etc.)
+        # ═══════════════════════════════════════════════════════════════════════
+        otros_marcadores_patterns = [
+            r'HER[\s-]?2\s*[:\s]+(POSITIVO|NEGATIVO|\d+\+)',
+            r'(?:RECEPTOR\s+DE\s+)?ESTR[ÓO]GENO[S]?\s*[:\s]+(\d+%\s+)?(?:POSITIVO|NEGATIVO)',
+            r'(?:RECEPTOR\s+DE\s+)?PROGESTERONA\s*[:\s]+(\d+%\s+)?(?:POSITIVO|NEGATIVO)',
+            r'p40\s+(POSITIVO|NEGATIVO)',
+            r'p16\s+(POSITIVO|NEGATIVO)',
+            r'TTF[\s-]?1\s+(POSITIVO|NEGATIVO)',
+            r'CK7\s+(POSITIVO|NEGATIVO)',
+            r'CK20\s+(POSITIVO|NEGATIVO)',
+            r'(?:Sinaptofisina|Synaptophysin)\s+(POSITIVO|NEGATIVO)',
+            r'Napsina\s+A\s+(POSITIVO|NEGATIVO)',
+        ]
+
+        for patron in otros_marcadores_patterns:
+            matches = re.finditer(patron, texto_completo, re.IGNORECASE)
+            for match in matches:
+                nombre_marcador = re.sub(r'\s*[:\s]+.*', '', match.group(0), flags=re.IGNORECASE).strip()
+                if nombre_marcador not in biomarcadores_encontrados:
+                    biomarcadores_encontrados[nombre_marcador] = {
+                        'valor': match.group(0).strip(),
+                        'ubicacion': self._identificar_seccion(match.start(), texto_secciones)
+                    }
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # ANÁLISIS DE RESULTADOS
+        # ═══════════════════════════════════════════════════════════════════════
+
+        if factor_bd == 'N/A':
+            if biomarcadores_encontrados:
+                # HAY biomarcadores pero el extractor NO los capturó
+                # Construir factor pronóstico como lo haría la IA
+                factor_construido = ' / '.join([v['valor'] for v in biomarcadores_encontrados.values()])
+
+                # Analizar por qué el extractor falló
+                ubicaciones = {}
+                for nombre, info in biomarcadores_encontrados.items():
+                    ubicacion = info['ubicacion']
+                    if ubicacion not in ubicaciones:
+                        ubicaciones[ubicacion] = []
+                    ubicaciones[ubicacion].append(nombre)
+
+                # Generar sugerencias específicas
+                sugerencias = []
+
+                if 'Ki-67' in biomarcadores_encontrados:
+                    ki67_info = biomarcadores_encontrados['Ki-67']
+                    sugerencias.append(
+                        f"• Ki-67 encontrado en {ki67_info['ubicacion']}: '{ki67_info['valor']}'\n"
+                        f"  → Verificar patrones en medical_extractor.py líneas 294-327\n"
+                        f"  → El extractor busca: 'ÍNDICE DE PROLIFERACIÓN CELULAR', 'Ki-67 DEL', 'Ki-67:'\n"
+                        f"  → Posible problema: formato diferente, contexto de diferenciación glandular"
+                    )
+
+                if 'p53' in biomarcadores_encontrados:
+                    p53_info = biomarcadores_encontrados['p53']
+                    sugerencias.append(
+                        f"• p53 encontrado en {p53_info['ubicacion']}: '{p53_info['valor']}'\n"
+                        f"  → Verificar patrones en medical_extractor.py líneas 337-350\n"
+                        f"  → El extractor busca: 'p53 tiene expresión', 'p53:', 'p53 POSITIVO/NEGATIVO'"
+                    )
+
+                if 'inmunorreactividad' in biomarcadores_encontrados:
+                    inmuno_info = biomarcadores_encontrados['inmunorreactividad']
+                    sugerencias.append(
+                        f"• Línea de inmunorreactividad encontrada en {inmuno_info['ubicacion']}\n"
+                        f"  → Verificar patrones en medical_extractor.py líneas 359-372\n"
+                        f"  → El extractor busca: 'Las células tumorales presentan inmuno...', 'Los marcadores...'"
+                    )
+
+                # Otros biomarcadores
+                otros = [k for k in biomarcadores_encontrados.keys() if k not in ['Ki-67', 'p53', 'inmunorreactividad']]
+                if otros:
+                    sugerencias.append(
+                        f"• Otros biomarcadores encontrados: {', '.join(otros)}\n"
+                        f"  → Verificar si están en última línea del diagnóstico (medical_extractor.py líneas 378-391)\n"
+                        f"  → Formato esperado: '- TUMOR... p40 POSITIVO / p16 POSITIVO'"
+                    )
+
+                # Verificar si está en sección no buscada por extractor
+                secciones_encontradas = list(ubicaciones.keys())
+                if 'descripcion_macroscopica' in secciones_encontradas or 'comentarios' in secciones_encontradas:
+                    sugerencias.append(
+                        f"⚠️ IMPORTANTE: Biomarcadores encontrados en {', '.join(secciones_encontradas)}\n"
+                        f"  → El extractor medical_extractor.py recibe 'diagnostico_completo' (todo el texto)\n"
+                        f"  → Pero prioriza patrones específicos que pueden no coincidir\n"
+                        f"  → Considerar ampliar patrones o buscar en secciones adicionales"
+                    )
+
+                return {
+                    'estado': 'WARNING',
+                    'mensaje': f'FACTOR_PRONOSTICO es N/A pero se encontraron {len(biomarcadores_encontrados)} biomarcadores en el PDF',
+                    'valor_bd': factor_bd,
+                    'biomarcadores_encontrados': biomarcadores_encontrados,
+                    'factor_sugerido': factor_construido,
+                    'sugerencias': '\n'.join(sugerencias),
+                    'analisis_extractor': 'El extractor extract_factor_pronostico() NO capturó estos biomarcadores. Ver sugerencias para diagnóstico.'
+                }
+            else:
+                # NO hay biomarcadores en el PDF - N/A es válido
+                return {
+                    'estado': 'OK',
+                    'mensaje': 'N/A es apropiado - No se encontraron biomarcadores (Ki-67, p53, inmunorreactividad, etc.) en el PDF',
+                    'valor_bd': factor_bd,
+                    'analisis_extractor': 'El extractor funcionó correctamente - no hay datos que extraer'
+                }
+        else:
+            # Factor pronóstico tiene valor
+            # Verificar si el valor está en el PDF
+            factor_normalizado = self._normalizar_texto(factor_bd)
+            texto_normalizado = self._normalizar_texto(texto_completo)
+
+            if factor_normalizado in texto_normalizado:
+                return {
+                    'estado': 'OK',
+                    'mensaje': 'FACTOR_PRONOSTICO correctamente extraído',
+                    'valor_bd': factor_bd,
+                    'biomarcadores_encontrados': biomarcadores_encontrados
+                }
+            else:
+                # Valor no encontrado en PDF - posible error
+                return {
+                    'estado': 'WARNING',
+                    'mensaje': 'FACTOR_PRONOSTICO tiene valor pero no se encuentra explícitamente en el PDF',
+                    'valor_bd': factor_bd,
+                    'biomarcadores_encontrados': biomarcadores_encontrados,
+                    'sugerencia': 'Verificar si el valor fue inferido incorrectamente o si está en formato diferente'
+                }
+
+    def _detectar_diagnostico_coloracion_inteligente(self, texto_ocr: str) -> Dict:
+        """
+        Detecta DIAGNOSTICO_COLORACION del estudio M de forma INTELIGENTE.
+
+        Busca por CONTENIDO SEMÁNTICO, no por posición fija.
+
+        El diagnóstico del estudio M se identifica por tener:
+        - Diagnóstico histológico base
+        - Grado Nottingham (keywords: NOTTINGHAM, GRADO)
+        - Invasiones (keywords: INVASIÓN LINFOVASCULAR, INVASIÓN PERINEURAL)
+
+        Returns:
+            Dict con:
+            - diagnostico_encontrado: str (diagnóstico completo)
+            - ubicacion: str (dónde se encontró: "Descripción Macroscópica", etc.)
+            - componentes: Dict (desglose semántico)
+            - confianza: float (0-1, qué tan seguro está)
+            - biomarcadores_solicitados: List (si los encuentra)
+        """
+        resultado = {
+            'diagnostico_encontrado': None,
+            'ubicacion': None,
+            'componentes': {
+                'diagnostico_base': None,
+                'grado_nottingham': None,
+                'invasion_linfovascular': None,
+                'invasion_perineural': None,
+                'carcinoma_in_situ': None,
+            },
+            'confianza': 0.0,
+            'biomarcadores_solicitados': []
+        }
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PASO 1: Extraer DESCRIPCIÓN MACROSCÓPICA (ubicación más probable)
+        # ═══════════════════════════════════════════════════════════════════════
+
+        # Buscar hasta encontrar DESCRIPCIÓN MICROSCÓPICA o DIAGNÓSTICO con líneas en blanco previas
+        patron_desc_macro = r'DESCRIPCI[ÓO]N\s+MACROSC[ÓO]PICA(.*?)(?=\n\n+\s*DESCRIPCI[ÓO]N\s+MICROSC|\n\n+\s*DIAGN[ÓO]STICO|\Z)'
+        match_macro = re.search(patron_desc_macro, texto_ocr, re.DOTALL | re.IGNORECASE)
+
+        if not match_macro:
+            # No hay descripción macroscópica, buscar en todo el texto
+            texto_busqueda = texto_ocr
+            ubicacion = "Texto completo"
+        else:
+            texto_busqueda = match_macro.group(1)
+            ubicacion = "Descripción Macroscópica"
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PASO 2: Buscar diagnóstico del estudio M por CONTENIDO SEMÁNTICO
+        # ═══════════════════════════════════════════════════════════════════════
+
+        # Keywords que identifican el diagnóstico del estudio M (coloración)
+        keywords_estudio_m = {
+            'grado': ['NOTTINGHAM', 'GRADO'],
+            'invasion_linfo': ['INVASIÓN LINFOVASCULAR', 'INVASIÓN VASCULAR'],
+            'invasion_peri': ['INVASIÓN PERINEURAL'],
+            'in_situ': ['IN SITU', 'CARCINOMA DUCTAL IN SITU', 'CARCINOMA LOBULILLAR IN SITU']
+        }
+
+        # Buscar diagnóstico entre comillas (variante 1)
+        # IMPORTANTE: El diagnóstico puede tener saltos de línea dentro de las comillas
+        patron_comillas = r'diagn[óo]stico\s+de\s+["\']([^"\']+?)["\']'
+        match_comillas = re.search(patron_comillas, texto_busqueda, re.IGNORECASE | re.DOTALL)
+
+        candidatos = []
+
+        if match_comillas:
+            candidato = match_comillas.group(1).strip()
+            # Verificar si contiene keywords del estudio M
+            score = 0
+            if any(kw in candidato.upper() for kw in keywords_estudio_m['grado']):
+                score += 2  # Grado es muy indicativo
+            if any(kw in candidato.upper() for kw in keywords_estudio_m['invasion_linfo']):
+                score += 1
+            if any(kw in candidato.upper() for kw in keywords_estudio_m['invasion_peri']):
+                score += 1
+            if any(kw in candidato.upper() for kw in keywords_estudio_m['in_situ']):
+                score += 1
+
+            if score >= 2:  # Al menos grado + algo más
+                candidatos.append({
+                    'texto': candidato,
+                    'score': score,
+                    'variante': 'entrecomillado'
+                })
+
+        # Buscar diagnóstico sin comillas (variante 2)
+        # Buscar párrafo que contenga keywords del estudio M
+        parrafos = texto_busqueda.split('\n\n')
+        for parrafo in parrafos:
+            parrafo_limpio = parrafo.strip()
+            if len(parrafo_limpio) < 50:  # Muy corto, probablemente no es diagnóstico
+                continue
+
+            score = 0
+            if any(kw in parrafo_limpio.upper() for kw in keywords_estudio_m['grado']):
+                score += 2
+            if any(kw in parrafo_limpio.upper() for kw in keywords_estudio_m['invasion_linfo']):
+                score += 1
+            if any(kw in parrafo_limpio.upper() for kw in keywords_estudio_m['invasion_peri']):
+                score += 1
+            if any(kw in parrafo_limpio.upper() for kw in keywords_estudio_m['in_situ']):
+                score += 1
+
+            if score >= 2:
+                candidatos.append({
+                    'texto': parrafo_limpio,
+                    'score': score,
+                    'variante': 'párrafo'
+                })
+
+        # Ordenar candidatos por score
+        candidatos.sort(key=lambda x: x['score'], reverse=True)
+
+        if not candidatos:
+            # No se encontró diagnóstico del estudio M
+            return resultado
+
+        # Tomar el mejor candidato
+        mejor_candidato = candidatos[0]
+        diagnostico_completo = mejor_candidato['texto']
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PASO 3: Extraer componentes semánticos del diagnóstico
+        # ═══════════════════════════════════════════════════════════════════════
+
+        # Extraer diagnóstico base (primera oración antes de grado/invasiones)
+        primera_oracion = diagnostico_completo.split('.')[0].strip()
+        resultado['componentes']['diagnostico_base'] = primera_oracion
+
+        # Extraer grado Nottingham
+        patron_grado = r'NOTTINGHAM\s+GRADO\s+(\d+)\s*(?:\(PUNTAJE\s+DE\s+(\d+)\))?'
+        match_grado = re.search(patron_grado, diagnostico_completo, re.IGNORECASE)
+        if match_grado:
+            grado = match_grado.group(1)
+            puntaje = match_grado.group(2) if match_grado.group(2) else None
+            if puntaje:
+                resultado['componentes']['grado_nottingham'] = f"GRADO {grado} (PUNTAJE {puntaje})"
+            else:
+                resultado['componentes']['grado_nottingham'] = f"GRADO {grado}"
+
+        # Extraer invasión linfovascular
+        patron_linfo = r'INVASI[ÓO]N\s+LINFOVASCULAR\s+(PRESENTE|NO\s+IDENTIFICAD[AO]|AUSENTE|NEGATIV[AO])'
+        match_linfo = re.search(patron_linfo, diagnostico_completo, re.IGNORECASE)
+        if match_linfo:
+            estado = match_linfo.group(1).upper()
+            resultado['componentes']['invasion_linfovascular'] = estado
+
+        # Extraer invasión perineural
+        patron_peri = r'INVASI[ÓO]N\s+PERINEURAL\s+(PRESENTE|NO\s+IDENTIFICAD[AO]|AUSENTE|NEGATIV[AO])'
+        match_peri = re.search(patron_peri, diagnostico_completo, re.IGNORECASE)
+        if match_peri:
+            estado = match_peri.group(1).upper()
+            resultado['componentes']['invasion_perineural'] = estado
+
+        # Extraer carcinoma in situ
+        patron_in_situ = r'CARCINOMA\s+(?:DUCTAL|LOBULILLAR)?\s*IN\s+SITU\s+(NO\s+IDENTIFICADO|PRESENTE|AUSENTE|NEGATIV[AO])'
+        match_in_situ = re.search(patron_in_situ, diagnostico_completo, re.IGNORECASE)
+        if match_in_situ:
+            estado = match_in_situ.group(1).upper()
+            resultado['componentes']['carcinoma_in_situ'] = estado
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PASO 4: Buscar biomarcadores solicitados
+        # ═══════════════════════════════════════════════════════════════════════
+
+        patrones_solicitud = [
+            r'se solicita\s+([^.]+)',
+            r'por lo que se solicita\s+([^.]+)',
+            r'estudios?\s+solicitados?[:\s]+([^.]+)',
+            r'para\s+estudios\s+de\s+inmunohistoqu[íi]mica[:\s]+([^.]+)',
+        ]
+
+        for patron in patrones_solicitud:
+            match_solicitud = re.search(patron, texto_busqueda, re.IGNORECASE)
+            if match_solicitud:
+                biomarcadores_texto = match_solicitud.group(1).strip()
+                # Separar por comas o 'y'
+                biomarcadores = re.split(r',\s*|\s+y\s+', biomarcadores_texto)
+                resultado['biomarcadores_solicitados'] = [b.strip() for b in biomarcadores if b.strip()]
+                break
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PASO 5: Calcular confianza
+        # ═══════════════════════════════════════════════════════════════════════
+
+        confianza = 0.0
+
+        # +0.3 si tiene grado Nottingham
+        if resultado['componentes']['grado_nottingham']:
+            confianza += 0.3
+
+        # +0.2 por cada invasión encontrada
+        if resultado['componentes']['invasion_linfovascular']:
+            confianza += 0.2
+        if resultado['componentes']['invasion_perineural']:
+            confianza += 0.2
+
+        # +0.2 si tiene carcinoma in situ
+        if resultado['componentes']['carcinoma_in_situ']:
+            confianza += 0.2
+
+        # +0.1 si encontró biomarcadores solicitados
+        if resultado['biomarcadores_solicitados']:
+            confianza += 0.1
+
+        resultado['diagnostico_encontrado'] = diagnostico_completo
+        resultado['ubicacion'] = ubicacion
+        resultado['confianza'] = min(confianza, 1.0)  # Max 1.0
+
+        return resultado
+
+    def _detectar_diagnostico_principal_inteligente(self, texto_ocr: str) -> Dict:
+        """
+        Detecta DIAGNOSTICO_PRINCIPAL (confirmación IHQ) de forma INTELIGENTE.
+
+        El diagnóstico principal NO siempre está en la segunda línea del DIAGNÓSTICO.
+        Puede estar en CUALQUIER línea.
+
+        Se identifica por:
+        - Es un diagnóstico histológico (CARCINOMA, ADENOCARCINOMA, TUMOR, etc.)
+        - NO contiene grado Nottingham
+        - NO contiene invasiones
+        - Es una confirmación/corrección del estudio M
+
+        Returns:
+            Dict con diagnostico_encontrado, ubicacion, linea_numero, confianza
+        """
+        resultado = {
+            'diagnostico_encontrado': None,
+            'ubicacion': None,
+            'linea_numero': None,
+            'confianza': 0.0
+        }
+
+        # Extraer sección DIAGNÓSTICO
+        patron_diagnostico = r'DIAGN[ÓO]STICO\s*\n(.*?)(?=\n\s*[A-Z]{3,}:|\Z)'
+        match_diagnostico = re.search(patron_diagnostico, texto_ocr, re.DOTALL | re.IGNORECASE)
+
+        if not match_diagnostico:
+            return resultado
+
+        texto_diagnostico = match_diagnostico.group(1).strip()
+        lineas = texto_diagnostico.split('\n')
+
+        # Keywords de diagnóstico histológico
+        keywords_diagnostico = ['CARCINOMA', 'ADENOCARCINOMA', 'TUMOR', 'NEOPLASIA', 'LINFOMA',
+                                'SARCOMA', 'MELANOMA', 'GLIOMA', 'METASTASIS']
+
+        # Keywords que NO deben estar (del estudio M)
+        keywords_excluir = ['NOTTINGHAM', 'GRADO', 'INVASIÓN LINFOVASCULAR', 'INVASIÓN PERINEURAL',
+                            'INVASIÓN VASCULAR', 'INVASIÓN ANGIOLINFÁTICA']
+
+        candidatos = []
+
+        for i, linea in enumerate(lineas, 1):
+            linea_limpia = linea.strip().lstrip('- ').strip()
+
+            if len(linea_limpia) < 10:
+                continue
+
+            # Verificar si tiene keyword de diagnóstico
+            tiene_diagnostico = any(kw in linea_limpia.upper() for kw in keywords_diagnostico)
+
+            # Verificar que NO tenga keywords de estudio M
+            tiene_exclusion = any(kw in linea_limpia.upper() for kw in keywords_excluir)
+
+            # Verificar que NO sea biomarcador IHQ
+            es_biomarcador = re.search(r'(RECEPTOR|HER|KI-67|P53|TTF|CK\d+|CD\d+)\s*[:\s]+(POSITIVO|NEGATIVO|\d+%)',
+                                       linea_limpia, re.IGNORECASE)
+
+            if tiene_diagnostico and not tiene_exclusion and not es_biomarcador:
+                confianza = 0.5
+
+                # +0.2 si está al inicio del diagnóstico (líneas 1-3)
+                if i <= 3:
+                    confianza += 0.2
+
+                # +0.2 si empieza con guion o número
+                if linea.strip().startswith('-') or linea.strip().startswith(('1', '2', '3')):
+                    confianza += 0.2
+
+                # +0.1 si termina con punto
+                if linea_limpia.endswith('.'):
+                    confianza += 0.1
+
+                candidatos.append({
+                    'texto': linea_limpia.rstrip('.'),
+                    'linea': i,
+                    'confianza': min(confianza, 1.0)
+                })
+
+        if candidatos:
+            # Tomar el de mayor confianza
+            mejor = max(candidatos, key=lambda x: x['confianza'])
+            resultado['diagnostico_encontrado'] = mejor['texto']
+            resultado['ubicacion'] = 'Diagnóstico'
+            resultado['linea_numero'] = mejor['linea']
+            resultado['confianza'] = mejor['confianza']
+
+        return resultado
+
+    def _detectar_biomarcadores_ihq_inteligente(self, texto_ocr: str) -> Dict:
+        """
+        Detecta biomarcadores IHQ de forma INTELIGENTE.
+
+        Busca en TODAS las secciones posibles:
+        1. DESCRIPCIÓN MICROSCÓPICA (más común)
+        2. DIAGNÓSTICO (después del diagnóstico principal)
+        3. COMENTARIOS (si existen)
+
+        No asume formato fijo. Identifica por patrón: "BIOMARCADOR: RESULTADO"
+
+        Returns:
+            Dict con biomarcadores_encontrados (List), ubicaciones (Dict), confianza global
+        """
+        resultado = {
+            'biomarcadores_encontrados': [],
+            'ubicaciones': {},
+            'confianza_global': 0.0
+        }
+
+        # Biomarcadores conocidos (actualizar según necesidad)
+        biomarcadores_conocidos = {
+            'Ki-67': [r'Ki[\s-]?67\s*[:\s]+([^.\n]+)'],
+            'HER2': [r'HER[\s-]?2\s*[:\s]+([^.\n]+)'],
+            'Receptor de Estrógeno': [r'RECEPTOR(?:ES)?\s+DE\s+ESTR[ÓO]GENO[S]?\s*[:\s]+([^.\n]+)'],
+            'Receptor de Progesterona': [r'RECEPTOR(?:ES)?\s+DE\s+PROGESTERONA\s*[:\s]+([^.\n]+)'],
+            'p53': [r'p53\s*[:\s]+([^.\n]+)'],
+            'TTF-1': [r'TTF[\s-]?1\s*[:\s]+([^.\n]+)'],
+            'CK7': [r'CK7\s*[:\s]+([^.\n]+)'],
+            'CK20': [r'CK20\s*[:\s]+([^.\n]+)'],
+            'Sinaptofisina': [r'(?:Sinaptofisina|Synaptophysin)\s*[:\s]+([^.\n]+)'],
+            'Cromogranina': [r'Cromogranina\s*[AaВ]?\s*[:\s]+([^.\n]+)'],
+            'CD56': [r'CD56\s*[:\s]+([^.\n]+)'],
+            'CKAE1/AE3': [r'CK\s*AE1[/\s]AE3\s*[:\s]+([^.\n]+)'],
+        }
+
+        # Extraer secciones
+        secciones = {
+            'Descripción Microscópica': r'DESCRIPCI[ÓO]N\s+MICROSC[ÓO]PICA\s*\n(.*?)(?=\n\s*DIAGN[ÓO]STICO|\n\s*COMENTARIOS|\Z)',
+            'Diagnóstico': r'DIAGN[ÓO]STICO\s*\n(.*?)(?=\n\s*COMENTARIOS|\n\s*NOTA|\Z)',
+            'Comentarios': r'COMENTARIOS\s*\n(.*?)(?=\n\s*[A-Z]{3,}:|\Z)',
+        }
+
+        texto_secciones = {}
+        for nombre, patron in secciones.items():
+            match = re.search(patron, texto_ocr, re.DOTALL | re.IGNORECASE)
+            if match:
+                texto_secciones[nombre] = match.group(1).strip()
+
+        # Buscar cada biomarcador en todas las secciones
+        for nombre_bio, patrones in biomarcadores_conocidos.items():
+            for nombre_seccion, texto_seccion in texto_secciones.items():
+                for patron in patrones:
+                    match = re.search(patron, texto_seccion, re.IGNORECASE)
+                    if match:
+                        valor = match.group(0).strip()
+                        # Limpiar y normalizar
+                        valor = re.sub(r'\s+', ' ', valor)
+
+                        # Evitar duplicados (si ya se encontró en otra sección)
+                        ya_existe = any(b['nombre'] == nombre_bio for b in resultado['biomarcadores_encontrados'])
+                        if not ya_existe:
+                            resultado['biomarcadores_encontrados'].append({
+                                'nombre': nombre_bio,
+                                'valor': valor,
+                                'ubicacion': nombre_seccion
+                            })
+                            resultado['ubicaciones'][nombre_bio] = nombre_seccion
+                        break
+
+        # Calcular confianza global
+        if resultado['biomarcadores_encontrados']:
+            resultado['confianza_global'] = 1.0
+
+        return resultado
+
+    def _detectar_biomarcadores_solicitados_inteligente(self, texto_ocr: str) -> Dict:
+        """
+        Detecta biomarcadores SOLICITADOS de forma INTELIGENTE.
+
+        Variantes posibles:
+        - "se solicita receptores de estrógeno, ki67..."
+        - "estudios solicitados: ER, PR, HER2"
+        - "para estudios de inmunohistoquímica: Ki-67, p53"
+        - Tabla con columna "ESTUDIO"
+
+        Returns:
+            Dict con biomarcadores_solicitados (List), formato detectado, ubicacion
+        """
+        resultado = {
+            'biomarcadores_solicitados': [],
+            'formato': None,
+            'ubicacion': None
+        }
+
+        # Extraer DESCRIPCIÓN MACROSCÓPICA (ubicación más probable)
+        patron_desc_macro = r'DESCRIPCI[ÓO]N\s+MACROSC[ÓO]PICA\s*\n(.*?)(?=\n\s*DESCRIPCI[ÓO]N\s+MICROSC|\Z)'
+        match_macro = re.search(patron_desc_macro, texto_ocr, re.DOTALL | re.IGNORECASE)
+
+        texto_busqueda = match_macro.group(1) if match_macro else texto_ocr
+
+        # Patrones de solicitud (orden de especificidad)
+        patrones_solicitud = [
+            (r'se solicita\s+([^.]+)', 'se solicita'),
+            (r'por lo que se solicita\s+([^.]+)', 'por lo que se solicita'),
+            (r'estudios?\s+solicitados?[:\s]+([^.]+)', 'estudios solicitados'),
+            (r'para\s+estudios\s+de\s+inmunohistoqu[íi]mica[:\s]*([^.]+)', 'para estudios IHQ'),
+        ]
+
+        for patron, formato in patrones_solicitud:
+            match = re.search(patron, texto_busqueda, re.IGNORECASE)
+            if match:
+                biomarcadores_texto = match.group(1).strip()
+
+                # Limpiar texto (remover saltos de línea, espacios extra)
+                biomarcadores_texto = re.sub(r'\s+', ' ', biomarcadores_texto)
+
+                # Separar por comas, 'y', 'e'
+                biomarcadores = re.split(r',\s*|\s+y\s+|\s+e\s+', biomarcadores_texto)
+
+                # Limpiar y normalizar cada biomarcador
+                biomarcadores_limpios = []
+                for bio in biomarcadores:
+                    bio_limpio = bio.strip().rstrip('.,;')
+                    if bio_limpio and len(bio_limpio) > 2:
+                        biomarcadores_limpios.append(bio_limpio)
+
+                resultado['biomarcadores_solicitados'] = biomarcadores_limpios
+                resultado['formato'] = formato
+                resultado['ubicacion'] = 'Descripción Macroscópica' if match_macro else 'Texto completo'
+                break
+
+        return resultado
+
+    def _validar_diagnostico_coloracion_inteligente(self, datos_bd: Dict, texto_ocr: str) -> Dict:
+        """
+        Valida DIAGNOSTICO_COLORACION comparando SEMÁNTICAMENTE (no textualmente).
+
+        Compara componentes individuales:
+        - Diagnóstico base
+        - Grado Nottingham
+        - Invasión linfovascular
+        - Invasión perineural
+        - Carcinoma in situ
+
+        Returns:
+            Dict con estado, componentes_validos, componentes_faltantes, sugerencias
+        """
+        # Primero detectar diagnóstico coloración en PDF
+        deteccion_pdf = self._detectar_diagnostico_coloracion_inteligente(texto_ocr)
+
+        # Obtener valor de BD (si existe, porque aún no hay columna)
+        diagnostico_coloracion_bd = datos_bd.get('DIAGNOSTICO_COLORACION', None)
+
+        resultado = {
+            'estado': 'PENDING',  # OK, WARNING, ERROR, PENDING (campo no existe en BD)
+            'valor_bd': diagnostico_coloracion_bd,
+            'valor_esperado_pdf': deteccion_pdf['diagnostico_encontrado'],
+            'componentes_pdf': deteccion_pdf['componentes'],
+            'componentes_validos': [],
+            'componentes_faltantes': [],
+            'confianza_deteccion': deteccion_pdf['confianza'],
+            'sugerencia': None
+        }
+
+        if not deteccion_pdf['diagnostico_encontrado']:
+            # No se detectó diagnóstico coloración en PDF
+            if diagnostico_coloracion_bd is None:
+                resultado['estado'] = 'PENDING'
+                resultado['sugerencia'] = 'Campo DIAGNOSTICO_COLORACION no existe en BD (se creará en FASE 2)'
+            else:
+                resultado['estado'] = 'WARNING'
+                resultado['sugerencia'] = 'BD tiene valor pero no se detectó en PDF. Verificar OCR.'
+            return resultado
+
+        # Validar componentes
+        componentes_esperados = ['diagnostico_base', 'grado_nottingham', 'invasion_linfovascular',
+                                 'invasion_perineural', 'carcinoma_in_situ']
+
+        for componente in componentes_esperados:
+            if deteccion_pdf['componentes'][componente]:
+                resultado['componentes_validos'].append(componente)
+            else:
+                resultado['componentes_faltantes'].append(componente)
+
+        # Determinar estado
+        if len(resultado['componentes_validos']) >= 3:  # Al menos 3/5 componentes
+            resultado['estado'] = 'OK'
+            resultado['sugerencia'] = f"Diagnóstico coloración detectado con {len(resultado['componentes_validos'])}/5 componentes. Crear columna DIAGNOSTICO_COLORACION en BD (FASE 2)."
+        elif len(resultado['componentes_validos']) >= 1:
+            resultado['estado'] = 'WARNING'
+            resultado['sugerencia'] = f"Diagnóstico coloración parcial ({len(resultado['componentes_validos'])}/5 componentes). Verificar PDF."
+        else:
+            resultado['estado'] = 'ERROR'
+            resultado['sugerencia'] = 'No se pudieron extraer componentes del diagnóstico coloración. Verificar OCR o estructura del PDF.'
+
+        return resultado
+
+    def _validar_diagnostico_principal_inteligente(self, datos_bd: Dict, texto_ocr: str) -> Dict:
+        """
+        Valida DIAGNOSTICO_PRINCIPAL verificando que NO tenga grado ni invasiones.
+
+        Independiente de posición: busca confirmación IHQ en CUALQUIER línea del DIAGNÓSTICO.
+
+        Returns:
+            Dict con estado, valor_bd, valor_esperado, tiene_contaminacion, sugerencias
+        """
+        diagnostico_bd = datos_bd.get('Diagnostico Principal', '').strip()
+
+        # Detectar diagnóstico principal en PDF
+        deteccion_pdf = self._detectar_diagnostico_principal_inteligente(texto_ocr)
+
+        resultado = {
+            'estado': 'PENDING',
+            'valor_bd': diagnostico_bd,
+            'valor_esperado': deteccion_pdf['diagnostico_encontrado'],
+            'tiene_contaminacion': False,
+            'contaminacion_detectada': [],
+            'confianza_deteccion': deteccion_pdf['confianza'],
+            'linea_correcta_pdf': deteccion_pdf['linea_numero'],
+            'sugerencia': None
+        }
+
+        if not diagnostico_bd:
+            resultado['estado'] = 'ERROR'
+            resultado['sugerencia'] = 'DIAGNOSTICO_PRINCIPAL vacío en BD'
+            return resultado
+
+        # Verificar contaminación con datos del estudio M
+        keywords_estudio_m = ['NOTTINGHAM', 'GRADO', 'INVASIÓN LINFOVASCULAR', 'INVASIÓN PERINEURAL', 'INVASIÓN VASCULAR']
+
+        for keyword in keywords_estudio_m:
+            if keyword in diagnostico_bd.upper():
+                resultado['tiene_contaminacion'] = True
+                resultado['contaminacion_detectada'].append(keyword)
+
+        if resultado['tiene_contaminacion']:
+            resultado['estado'] = 'ERROR'
+            resultado['sugerencia'] = (
+                f"DIAGNOSTICO_PRINCIPAL contaminado con datos del estudio M: {', '.join(resultado['contaminacion_detectada'])}.\n"
+                f"Debe contener SOLO el diagnóstico histológico sin grado ni invasiones.\n"
+                f"Valor esperado del PDF: \"{deteccion_pdf['diagnostico_encontrado']}\" (línea {deteccion_pdf['linea_numero']} del DIAGNÓSTICO)\n"
+                f"Corrección: Modificar extractor extract_principal_diagnosis() en medical_extractor.py"
+            )
+            return resultado
+
+        # Comparar con PDF (semánticamente)
+        if not deteccion_pdf['diagnostico_encontrado']:
+            resultado['estado'] = 'WARNING'
+            resultado['sugerencia'] = 'No se pudo detectar diagnóstico principal en PDF. Verificar estructura o OCR.'
+            return resultado
+
+        # Normalizar textos para comparación
+        diagnostico_bd_norm = self._normalizar_texto(diagnostico_bd)
+        diagnostico_pdf_norm = self._normalizar_texto(deteccion_pdf['diagnostico_encontrado'])
+
+        if diagnostico_bd_norm == diagnostico_pdf_norm:
+            resultado['estado'] = 'OK'
+            resultado['sugerencia'] = f"DIAGNOSTICO_PRINCIPAL correcto (línea {deteccion_pdf['linea_numero']} del DIAGNÓSTICO)"
+        else:
+            # Verificar si es coincidencia parcial
+            if diagnostico_bd_norm in diagnostico_pdf_norm or diagnostico_pdf_norm in diagnostico_bd_norm:
+                resultado['estado'] = 'WARNING'
+                resultado['sugerencia'] = (
+                    f"DIAGNOSTICO_PRINCIPAL parcialmente correcto.\n"
+                    f"BD: \"{diagnostico_bd}\"\n"
+                    f"PDF: \"{deteccion_pdf['diagnostico_encontrado']}\" (línea {deteccion_pdf['linea_numero']})\n"
+                    f"Verificar si requiere ajuste."
+                )
+            else:
+                resultado['estado'] = 'ERROR'
+                resultado['sugerencia'] = (
+                    f"DIAGNOSTICO_PRINCIPAL no coincide con PDF.\n"
+                    f"BD: \"{diagnostico_bd}\"\n"
+                    f"PDF: \"{deteccion_pdf['diagnostico_encontrado']}\" (línea {deteccion_pdf['linea_numero']} del DIAGNÓSTICO)\n"
+                    f"Corrección: Modificar extractor extract_principal_diagnosis() en medical_extractor.py"
+                )
+
+        return resultado
+
+    def _validar_factor_pronostico_inteligente(self, datos_bd: Dict, texto_ocr: str) -> Dict:
+        """
+        Valida FACTOR_PRONOSTICO verificando que sean SOLO biomarcadores IHQ.
+
+        Sin importar dónde estén en el PDF (microscópica, diagnóstico, comentarios).
+
+        Returns:
+            Dict con estado, tiene_contaminacion, biomarcadores_encontrados_pdf,
+                 biomarcadores_en_bd, cobertura, sugerencias
+        """
+        factor_bd = datos_bd.get('Factor pronostico', 'N/A').strip()
+
+        # Detectar biomarcadores en PDF
+        deteccion_biomarcadores = self._detectar_biomarcadores_ihq_inteligente(texto_ocr)
+        deteccion_solicitados = self._detectar_biomarcadores_solicitados_inteligente(texto_ocr)
+
+        resultado = {
+            'estado': 'PENDING',
+            'valor_bd': factor_bd,
+            'tiene_contaminacion': False,
+            'contaminacion_detectada': [],
+            'biomarcadores_pdf': deteccion_biomarcadores['biomarcadores_encontrados'],
+            'biomarcadores_solicitados': deteccion_solicitados['biomarcadores_solicitados'],
+            'biomarcadores_en_bd': [],
+            'cobertura': 0.0,
+            'sugerencia': None
+        }
+
+        if factor_bd == 'N/A' or not factor_bd:
+            # Factor pronóstico vacío
+            if deteccion_biomarcadores['biomarcadores_encontrados']:
+                resultado['estado'] = 'ERROR'
+                resultado['sugerencia'] = (
+                    f"FACTOR_PRONOSTICO vacío pero se detectaron {len(deteccion_biomarcadores['biomarcadores_encontrados'])} biomarcadores en PDF:\n"
+                    f"{', '.join([b['nombre'] for b in deteccion_biomarcadores['biomarcadores_encontrados']])}\n"
+                    f"Corrección: Modificar extractor extract_factor_pronostico() en medical_extractor.py"
+                )
+            else:
+                resultado['estado'] = 'OK'
+                resultado['sugerencia'] = 'FACTOR_PRONOSTICO vacío es correcto (no se detectaron biomarcadores en PDF)'
+            return resultado
+
+        # Verificar contaminación con datos del estudio M
+        keywords_estudio_m = ['NOTTINGHAM', 'GRADO', 'INVASIÓN LINFOVASCULAR', 'INVASIÓN PERINEURAL',
+                              'BIEN DIFERENCIADO', 'MODERADAMENTE DIFERENCIADO', 'POBREMENTE DIFERENCIADO']
+
+        for keyword in keywords_estudio_m:
+            if keyword in factor_bd.upper():
+                resultado['tiene_contaminacion'] = True
+                resultado['contaminacion_detectada'].append(keyword)
+
+        if resultado['tiene_contaminacion']:
+            resultado['estado'] = 'ERROR'
+            resultado['sugerencia'] = (
+                f"FACTOR_PRONOSTICO contaminado con datos del estudio M: {', '.join(resultado['contaminacion_detectada'])}.\n"
+                f"Debe contener SOLO biomarcadores de IHQ.\n"
+                f"Corrección: Modificar extractor extract_factor_pronostico() en medical_extractor.py para filtrar datos del estudio M"
+            )
+            return resultado
+
+        # Extraer biomarcadores mencionados en BD
+        # Búsqueda semántica con variantes de nomenclatura
+        biomarcadores_conocidos = ['Ki-67', 'HER2', 'Receptor de Estrógeno', 'Receptor de Progesterona',
+                                   'p53', 'TTF-1', 'CK7', 'CK20', 'Sinaptofisina', 'Cromogranina', 'CD56']
+
+        # Normalizar texto del campo FACTOR_PRONOSTICO
+        factor_bd_normalizado = self._normalizar_texto(factor_bd)
+
+        for bio in biomarcadores_conocidos:
+            # Generar variantes de búsqueda para cada biomarcador
+            variantes = [
+                bio.upper(),  # Receptor de Estrógeno
+                self._normalizar_texto(bio),  # RECEPTOR DE ESTROGENO (sin acento)
+                bio.replace(' ', '').upper(),  # RECEPTORDESTROGENO
+                bio.replace(' ', '-').upper(),  # RECEPTOR-DE-ESTROGENO
+            ]
+
+            # Variantes especiales para receptores (singular/plural)
+            if 'RECEPTOR' in bio.upper():
+                # Generar variante plural "Receptores"
+                bio_plural = bio.replace('Receptor', 'Receptores')
+                variantes.append(bio_plural.upper())
+                variantes.append(self._normalizar_texto(bio_plural))
+
+                # Generar variante singular "Receptor"
+                bio_singular = bio.replace('Receptores', 'Receptor')
+                variantes.append(bio_singular.upper())
+                variantes.append(self._normalizar_texto(bio_singular))
+
+                # Variantes de la última palabra (ESTROGENO/ESTROGENOS, PROGESTERONA/PROGESTERONAS)
+                palabras = bio.split()
+                if len(palabras) >= 2:
+                    ultima_palabra = palabras[-1]
+
+                    # Singular → Plural
+                    if ultima_palabra.endswith('o') or ultima_palabra.endswith('a'):
+                        plural = ultima_palabra + 's'
+                        variantes.append(f"RECEPTOR DE {plural.upper()}")
+                        variantes.append(f"RECEPTORES DE {plural.upper()}")
+                        variantes.append(self._normalizar_texto(f"RECEPTOR DE {plural}"))
+                        variantes.append(self._normalizar_texto(f"RECEPTORES DE {plural}"))
+
+                    # Plural → Singular (eliminar última 's')
+                    if ultima_palabra.endswith('s'):
+                        singular = ultima_palabra[:-1]
+                        variantes.append(f"RECEPTOR DE {singular.upper()}")
+                        variantes.append(f"RECEPTORES DE {singular.upper()}")
+                        variantes.append(self._normalizar_texto(f"RECEPTOR DE {singular}"))
+                        variantes.append(self._normalizar_texto(f"RECEPTORES DE {singular}"))
+
+            # Variantes especiales para Ki-67 (con/sin guión, con/sin espacio)
+            if 'KI-67' in bio.upper():
+                variantes.extend(['KI-67', 'KI67', 'KI 67', 'K67', 'KI-67%'])
+
+            # Variantes especiales para HER2 (con/sin espacio, con/sin guión)
+            if 'HER2' in bio.upper():
+                variantes.extend(['HER2', 'HER 2', 'HER-2', 'HER2+', 'HER 2+'])
+
+            # Buscar cualquier variante en el texto normalizado
+            encontrado = False
+            for variante in variantes:
+                # Búsqueda de palabra completa con límites de palabra
+                if re.search(rf'\b{re.escape(variante)}\b', factor_bd_normalizado, re.IGNORECASE):
+                    encontrado = True
+                    break
+
+            if encontrado:
+                resultado['biomarcadores_en_bd'].append(bio)
+
+        # Calcular cobertura (biomarcadores en BD vs detectados en PDF)
+        if deteccion_biomarcadores['biomarcadores_encontrados']:
+            biomarcadores_pdf_nombres = [b['nombre'] for b in deteccion_biomarcadores['biomarcadores_encontrados']]
+            biomarcadores_coincidentes = [b for b in resultado['biomarcadores_en_bd'] if b in biomarcadores_pdf_nombres]
+            resultado['cobertura'] = len(biomarcadores_coincidentes) / len(biomarcadores_pdf_nombres) * 100
+
+        # Determinar estado
+        if resultado['cobertura'] >= 80:
+            resultado['estado'] = 'OK'
+            resultado['sugerencia'] = f"FACTOR_PRONOSTICO con buena cobertura ({resultado['cobertura']:.0f}%)"
+        elif resultado['cobertura'] >= 50:
+            resultado['estado'] = 'WARNING'
+            resultado['sugerencia'] = (
+                f"FACTOR_PRONOSTICO con cobertura media ({resultado['cobertura']:.0f}%).\n"
+                f"Biomarcadores en PDF: {', '.join(biomarcadores_pdf_nombres)}\n"
+                f"Biomarcadores en BD: {', '.join(resultado['biomarcadores_en_bd']) if resultado['biomarcadores_en_bd'] else 'ninguno detectado'}\n"
+                f"Verificar extractor extract_factor_pronostico() en medical_extractor.py"
+            )
+        else:
+            resultado['estado'] = 'ERROR'
+            resultado['sugerencia'] = (
+                f"FACTOR_PRONOSTICO con cobertura baja ({resultado['cobertura']:.0f}%).\n"
+                f"Biomarcadores en PDF: {', '.join(biomarcadores_pdf_nombres)}\n"
+                f"Biomarcadores en BD: {', '.join(resultado['biomarcadores_en_bd']) if resultado['biomarcadores_en_bd'] else 'ninguno detectado'}\n"
+                f"Corrección urgente: Modificar extractor extract_factor_pronostico() en medical_extractor.py"
+            )
+
+        return resultado
+
+    def _identificar_seccion(self, posicion: int, texto_secciones: Dict[str, str]) -> str:
+        """Identifica en qué sección del PDF se encuentra una posición de texto"""
+        texto_acumulado = 0
+        for nombre_seccion, texto in texto_secciones.items():
+            if posicion < texto_acumulado + len(texto):
+                return nombre_seccion.replace('_', ' ').title()
+            texto_acumulado += len(texto)
+        return 'Desconocida'
+
+    def _normalizar_texto(self, texto: str) -> str:
+        """Normaliza texto removiendo acentos y convirtiendo a mayúsculas"""
+        import unicodedata
+        # Remover acentos
+        texto_sin_acentos = ''.join(
+            c for c in unicodedata.normalize('NFD', texto)
+            if unicodedata.category(c) != 'Mn'
+        )
+        return texto_sin_acentos.upper()
+
     def _validar_estudios_solicitados(self, datos_bd: Dict, biomarcadores_en_pdf: Set[str]) -> Dict:
-        """Valida completitud de IHQ_ESTUDIOS_SOLICITADOS"""
-        estudios_bd = datos_bd.get('IHQ_ESTUDIOS_SOLICITADOS', '').upper()
+        """Valida completitud de IHQ_ESTUDIOS_SOLICITADOS
+
+        Busca múltiples variantes de nomenclatura:
+        - RECEPTOR-ESTROGENOS / RECEPTOR-ESTROGENO
+        - RECEPTOR ESTROGENOS / RECEPTOR ESTROGENO
+        - RECEPTOR DE ESTROGENOS / RECEPTOR DE ESTROGENO
+        - ESTROGENOS / ESTROGENO (variante corta)
+
+        Normaliza acentos para evitar falsos negativos (ESTRÓGENO → ESTROGENO).
+        """
+        estudios_bd_original = datos_bd.get('IHQ_ESTUDIOS_SOLICITADOS', '')
+        estudios_bd = self._normalizar_texto(estudios_bd_original)
 
         capturados = []
         faltantes = []
 
         for columna_bd in biomarcadores_en_pdf:
             nombre_bio = columna_bd.replace('IHQ_', '').replace('_', '-')
-            if re.search(rf'\b{re.escape(nombre_bio)}\b', estudios_bd):
+
+            # Generar variantes de búsqueda
+            variantes = [
+                nombre_bio,  # RECEPTOR-ESTROGENOS
+                nombre_bio.replace('-', ' '),  # RECEPTOR ESTROGENOS
+                nombre_bio.replace('RECEPTOR-', 'RECEPTOR DE '),  # RECEPTOR DE ESTROGENOS
+                nombre_bio.split('-')[-1] if '-' in nombre_bio else nombre_bio,  # ESTROGENOS (última palabra)
+            ]
+
+            # Agregar variantes singular/plural
+            ultima_palabra = nombre_bio.split('-')[-1] if '-' in nombre_bio else nombre_bio
+            if ultima_palabra.endswith('S'):
+                # Si es plural, agregar singular
+                singular = ultima_palabra[:-1]  # ESTROGENOS → ESTROGENO
+                variantes.append(singular)
+                variantes.append(f"RECEPTOR DE {singular}")
+            else:
+                # Si es singular, agregar plural
+                plural = ultima_palabra + 'S'  # ESTROGENO → ESTROGENOS
+                variantes.append(plural)
+                variantes.append(f"RECEPTOR DE {plural}")
+
+            encontrado = False
+            for variante in variantes:
+                # Búsqueda case-insensitive
+                if re.search(rf'\b{re.escape(variante)}\b', estudios_bd, re.IGNORECASE):
+                    encontrado = True
+                    break
+
+            if encontrado:
                 capturados.append(nombre_bio)
             else:
                 faltantes.append(nombre_bio)
@@ -478,6 +1794,419 @@ class AuditorSistema:
             'completitud': len(faltantes) == 0,
             'porcentaje_captura': porcentaje
         }
+
+    def _detectar_organo_tabla(self, texto_ocr: str) -> Dict:
+        """
+        Detecta el campo ORGANO de la tabla 'Estudios solicitados' en el PDF.
+
+        IMPORTANTE:
+        - Este campo puede estar en múltiples líneas
+        - Puede contener procedimientos (MASTECTOMIA RADICAL, BIOPSIA, etc.)
+        - Es el valor "tal cual" de la tabla, NO normalizado
+        - La tabla puede tener estructura vertical (headers arriba, valores abajo)
+
+        Returns:
+            Dict con:
+                - organo_encontrado: str (valor completo, incluyendo multilínea)
+                - es_multilinea: bool
+                - lineas: List[str] (líneas individuales)
+                - ubicacion: str (número de línea en PDF)
+                - confianza: float (0-1)
+        """
+        resultado = {
+            'organo_encontrado': '',
+            'es_multilinea': False,
+            'lineas': [],
+            'ubicacion': '',
+            'confianza': 0.0
+        }
+
+        # Buscar tabla "Estudios solicitados"
+        patron_tabla = r'Estudios?\s+solicitados?.*?\n(.*?)(?=INFORME|ESTUDIO DE INMUNOHISTOQUIMICA|DESCRIPCI[OÓ]N|$)'
+        match_tabla = re.search(patron_tabla, texto_ocr, re.DOTALL | re.IGNORECASE)
+
+        if not match_tabla:
+            return resultado
+
+        tabla_texto = match_tabla.group(1)
+        lineas_tabla = tabla_texto.split('\n')
+
+        # Buscar línea con "Organo" o "Órgano" (header)
+        indice_organo = -1
+        for i, linea in enumerate(lineas_tabla):
+            if re.search(r'\b[OÓ]rgano\b', linea, re.IGNORECASE):
+                indice_organo = i
+                resultado['ubicacion'] = f"Línea {i} de tabla Estudios solicitados"
+                break
+
+        if indice_organo == -1:
+            return resultado
+
+        # CASO 1: Estructura vertical (headers arriba, valores abajo)
+        # Detectar si hay headers en las primeras líneas
+        tiene_headers = any(
+            keyword in lineas_tabla[i].upper()
+            for i in range(min(5, len(lineas_tabla)))
+            for keyword in ['N. ESTUDIO', 'TIPO ESTUDIO', 'ALMACENAMIENTO']
+        )
+
+        valores_organo = []
+
+        if tiene_headers:
+            # Tabla vertical: buscar valores después de los headers
+            # Saltar líneas que son headers
+            j = indice_organo + 1
+            while j < len(lineas_tabla):
+                linea = lineas_tabla[j].strip()
+
+                # Saltar headers
+                if linea and re.search(r'^(Fecha toma|Bloques|N\. Estudio|Estudio$|Tipo)', linea, re.IGNORECASE):
+                    j += 1
+                    continue
+
+                # Si es una línea con valores
+                if linea and not re.search(r'^(INFORME|ESTUDIO DE INMUNOHISTOQUIMICA)', linea, re.IGNORECASE):
+                    valores_organo.append(linea)
+                    j += 1
+
+                    # Capturar hasta 3 líneas
+                    if len(valores_organo) >= 3:
+                        break
+                else:
+                    j += 1
+
+                # Si ya capturamos algo y encontramos línea vacía, terminar
+                if valores_organo and not linea:
+                    break
+
+        else:
+            # CASO 2: Estructura horizontal - valor inmediato
+            j = indice_organo + 1
+            while j < len(lineas_tabla):
+                linea_valor = lineas_tabla[j].strip()
+
+                if not linea_valor:
+                    break
+
+                if re.search(r'^(Fecha toma|Bloques|ESTUDIO|N\.|Tipo)', linea_valor, re.IGNORECASE):
+                    break
+
+                valores_organo.append(linea_valor)
+                j += 1
+
+        if valores_organo:
+            resultado['lineas'] = valores_organo
+            resultado['organo_encontrado'] = ' '.join(valores_organo)
+            resultado['es_multilinea'] = len(valores_organo) > 1
+            resultado['confianza'] = 0.95 if len(valores_organo) > 0 else 0.5
+
+        return resultado
+
+    def _detectar_ihq_organo_diagnostico(self, texto_ocr: str) -> Dict:
+        """
+        Detecta IHQ_ORGANO de la primera línea de la sección DIAGNÓSTICO.
+
+        IMPORTANTE:
+        - Debe ser un órgano anatómico (MAMA, PULMON, COLON, etc.)
+        - NO debe contener procedimientos
+        - Debe estar normalizado
+
+        Returns:
+            Dict con:
+                - organo_anatomico: str
+                - es_valido: bool (si es órgano anatómico válido)
+                - contiene_procedimiento: bool
+                - requiere_normalizacion: bool
+                - ubicacion: str
+                - confianza: float (0-1)
+        """
+        resultado = {
+            'organo_anatomico': '',
+            'es_valido': False,
+            'contiene_procedimiento': False,
+            'requiere_normalizacion': False,
+            'ubicacion': '',
+            'confianza': 0.0
+        }
+
+        # Lista de órganos anatómicos válidos
+        organos_validos = [
+            'MAMA', 'PULMON', 'PULMÓN', 'COLON', 'RECTO', 'ESTOMAGO', 'ESTÓMAGO',
+            'HIGADO', 'HÍGADO', 'PANCREAS', 'PÁNCREAS', 'RIÑON', 'RIÑÓN',
+            'VEJIGA', 'PROSTATA', 'PRÓSTATA', 'UTERO', 'ÚTERO', 'OVARIO',
+            'CUELLO UTERINO', 'ENDOMETRIO', 'PIEL', 'CEREBRO', 'TIROIDES',
+            'PARATIROIDES', 'SUPRARRENAL', 'BAZO', 'GANGLIO', 'GANGLIOS',
+            'PLEURA', 'PERITONEO', 'MESENTERIO', 'OMENTO', 'EPIPLON',
+            'LARINGE', 'FARINGE', 'ESOFAGO', 'ESÓFAGO', 'DUODENO',
+            'YEYUNO', 'ILEON', 'ÍLEON', 'APENDICE', 'APÉNDICE',
+            'VESICULA', 'VESÍCULA', 'VIA BILIAR', 'CONDUCTO BILIAR'
+        ]
+
+        # Procedimientos que NO deben estar en IHQ_ORGANO
+        procedimientos_invalidos = [
+            'MASTECTOMIA', 'MASTECTOMÍA', 'BIOPSIA', 'RESECCION', 'RESECCIÓN',
+            'LOBECTOMIA', 'LOBECTOMÍA', 'GASTRECTOMIA', 'GASTRECTOMÍA',
+            'COLECTOMIA', 'COLECTOMÍA', 'HEMICOLECTOMIA', 'HEMICOLECTOMÍA',
+            'PROSTATECTOMIA', 'PROSTATECTOMÍA', 'HISTERECTOMIA', 'HISTERECTOMÍA',
+            'NEFRECTOMIA', 'NEFRECTOMÍA', 'CISTECTOMIA', 'CISTECTOMÍA'
+        ]
+
+        # Buscar sección DIAGNÓSTICO
+        patron_diagnostico = r'DIAGN[ÓO]STICO\s*\n(.*?)(?=\n\s*[A-Z]{3,}:|\Z)'
+        match_diagnostico = re.search(patron_diagnostico, texto_ocr, re.DOTALL | re.IGNORECASE)
+
+        if not match_diagnostico:
+            return resultado
+
+        diagnostico_texto = match_diagnostico.group(1).strip()
+        lineas_diagnostico = [l.strip() for l in diagnostico_texto.split('\n') if l.strip()]
+
+        if not lineas_diagnostico:
+            return resultado
+
+        # Primera línea del diagnóstico
+        primera_linea = lineas_diagnostico[0]
+        resultado['ubicacion'] = 'Primera línea de DIAGNÓSTICO'
+
+        # Extraer órgano anatómico de la primera línea
+        # Formato típico: "Mama izquierda. Lesión. Mastectomía radical izquierda."
+        # Extraer: "Mama izquierda"
+
+        # Dividir por punto para obtener primer fragmento
+        fragmentos = primera_linea.split('.')
+        if fragmentos:
+            primer_fragmento = fragmentos[0].strip().upper()
+
+            # Verificar si contiene procedimiento (inválido)
+            for procedimiento in procedimientos_invalidos:
+                if procedimiento in primer_fragmento:
+                    resultado['contiene_procedimiento'] = True
+
+            # Buscar órgano válido en el fragmento
+            for organo in organos_validos:
+                if organo in primer_fragmento:
+                    resultado['organo_anatomico'] = primer_fragmento
+                    resultado['es_valido'] = True
+                    resultado['confianza'] = 0.95
+                    break
+
+            # Si no se encontró órgano válido pero hay texto
+            if not resultado['es_valido'] and primer_fragmento:
+                resultado['organo_anatomico'] = primer_fragmento
+                resultado['requiere_normalizacion'] = True
+                resultado['confianza'] = 0.6
+
+        return resultado
+
+    def _validar_organo_tabla(self, datos_bd: Dict, texto_ocr: str) -> Dict:
+        """
+        Valida el campo ORGANO contra la tabla 'Estudios solicitados' del PDF.
+
+        IMPORTANTE:
+        - Este campo es DIFERENTE de IHQ_ORGANO
+        - NO se debe comparar con IHQ_ORGANO (son independientes)
+        - Puede contener procedimientos (es válido)
+        - Puede ser multilínea
+
+        Returns:
+            Dict con estado, valor_bd, valor_esperado, es_multilinea, sugerencia
+        """
+        organo_bd = datos_bd.get('Organo', '').strip()
+        deteccion_pdf = self._detectar_organo_tabla(texto_ocr)
+
+        resultado = {
+            'estado': 'PENDING',
+            'valor_bd': organo_bd,
+            'valor_esperado': deteccion_pdf['organo_encontrado'],
+            'es_multilinea': deteccion_pdf['es_multilinea'],
+            'lineas_pdf': deteccion_pdf['lineas'],
+            'confianza_deteccion': deteccion_pdf['confianza'],
+            'sugerencia': ''
+        }
+
+        # Si no se detectó ORGANO en PDF
+        if not deteccion_pdf['organo_encontrado']:
+            resultado['estado'] = 'PENDING'
+            resultado['sugerencia'] = 'No se pudo detectar campo ORGANO en tabla Estudios solicitados del PDF.'
+            return resultado
+
+        # Si no hay valor en BD
+        if not organo_bd or organo_bd == 'N/A':
+            resultado['estado'] = 'ERROR'
+            resultado['sugerencia'] = (
+                f"Campo ORGANO vacío en BD.\n"
+                f"PDF (tabla): \"{deteccion_pdf['organo_encontrado']}\"\n"
+                f"Líneas: {deteccion_pdf['lineas']}\n"
+                f"Corrección: Verificar extractor extract_organ_information() en patient_extractor.py"
+            )
+            return resultado
+
+        # Normalizar para comparar
+        organo_bd_norm = organo_bd.upper().strip()
+        organo_pdf_norm = deteccion_pdf['organo_encontrado'].upper().strip()
+
+        # Comparar valores
+        if organo_bd_norm == organo_pdf_norm:
+            resultado['estado'] = 'OK'
+            resultado['sugerencia'] = f"Campo ORGANO correcto: \"{organo_bd}\""
+
+        elif deteccion_pdf['es_multilinea']:
+            # Verificar si BD solo tiene parte del valor (problema multilínea)
+            if organo_bd_norm in organo_pdf_norm:
+                resultado['estado'] = 'WARNING'
+                resultado['sugerencia'] = (
+                    f"Campo ORGANO incompleto (problema multilínea).\n"
+                    f"BD: \"{organo_bd}\"\n"
+                    f"PDF (completo): \"{deteccion_pdf['organo_encontrado']}\"\n"
+                    f"Líneas del PDF: {deteccion_pdf['lineas']}\n\n"
+                    f"CAUSA: El extractor no captura valores multilínea en la tabla.\n\n"
+                    f"CORRECCIÓN:\n"
+                    f"  Archivo: core/extractors/patient_extractor.py\n"
+                    f"  Función: extract_organ_information()\n"
+                    f"  Problema: Solo captura primera línea del campo ORGANO\n"
+                    f"  Solución: Modificar para capturar líneas consecutivas no vacías después de 'Organo:'"
+                )
+            else:
+                resultado['estado'] = 'ERROR'
+                resultado['sugerencia'] = (
+                    f"Campo ORGANO no coincide con PDF.\n"
+                    f"BD: \"{organo_bd}\"\n"
+                    f"PDF: \"{deteccion_pdf['organo_encontrado']}\"\n"
+                    f"Verificar extractor extract_organ_information() en patient_extractor.py"
+                )
+        else:
+            # No multilínea, pero no coincide
+            # Verificar similitud parcial
+            if organo_bd_norm in organo_pdf_norm or organo_pdf_norm in organo_bd_norm:
+                resultado['estado'] = 'WARNING'
+                resultado['sugerencia'] = (
+                    f"Campo ORGANO parcialmente correcto.\n"
+                    f"BD: \"{organo_bd}\"\n"
+                    f"PDF: \"{deteccion_pdf['organo_encontrado']}\"\n"
+                    f"Verificar si requiere ajuste."
+                )
+            else:
+                resultado['estado'] = 'ERROR'
+                resultado['sugerencia'] = (
+                    f"Campo ORGANO no coincide con PDF.\n"
+                    f"BD: \"{organo_bd}\"\n"
+                    f"PDF: \"{deteccion_pdf['organo_encontrado']}\"\n"
+                    f"Corrección: Verificar extractor extract_organ_information() en patient_extractor.py"
+                )
+
+        return resultado
+
+    def _validar_ihq_organo_diagnostico(self, datos_bd: Dict, texto_ocr: str) -> Dict:
+        """
+        Valida el campo IHQ_ORGANO contra la sección DIAGNÓSTICO del PDF.
+
+        IMPORTANTE:
+        - Este campo es DIFERENTE de ORGANO (tabla)
+        - Debe ser un órgano anatómico válido (MAMA, PULMON, etc.)
+        - NO debe contener procedimientos
+
+        Returns:
+            Dict con estado, es_organo_valido, contiene_procedimiento, sugerencia
+        """
+        ihq_organo_bd = datos_bd.get('IHQ_ORGANO', '').strip()
+        deteccion_pdf = self._detectar_ihq_organo_diagnostico(texto_ocr)
+
+        resultado = {
+            'estado': 'PENDING',
+            'valor_bd': ihq_organo_bd,
+            'valor_esperado': deteccion_pdf['organo_anatomico'],
+            'es_organo_valido': False,
+            'contiene_procedimiento': False,
+            'confianza_deteccion': deteccion_pdf['confianza'],
+            'sugerencia': ''
+        }
+
+        # Si no se detectó órgano en PDF
+        if not deteccion_pdf['organo_anatomico']:
+            resultado['estado'] = 'PENDING'
+            resultado['sugerencia'] = 'No se pudo detectar órgano anatómico en sección DIAGNÓSTICO del PDF.'
+            return resultado
+
+        # Verificar si PDF contiene procedimiento (error en PDF o extracción)
+        if deteccion_pdf['contiene_procedimiento']:
+            resultado['contiene_procedimiento'] = True
+            resultado['sugerencia'] = (
+                f"⚠️ ADVERTENCIA: Sección DIAGNÓSTICO contiene procedimiento en lugar de órgano.\n"
+                f"PDF: \"{deteccion_pdf['organo_anatomico']}\"\n"
+                f"Ubicación: {deteccion_pdf['ubicacion']}\n"
+                f"Esto es inusual - verificar PDF."
+            )
+
+        # Si no hay valor en BD
+        if not ihq_organo_bd or ihq_organo_bd == 'N/A':
+            resultado['estado'] = 'ERROR'
+            resultado['sugerencia'] = (
+                f"Campo IHQ_ORGANO vacío en BD.\n"
+                f"PDF (diagnóstico): \"{deteccion_pdf['organo_anatomico']}\"\n"
+                f"Corrección: Verificar extractor en medical_extractor.py"
+            )
+            return resultado
+
+        # Normalizar para comparar
+        ihq_organo_bd_norm = ihq_organo_bd.upper().strip()
+        ihq_organo_pdf_norm = deteccion_pdf['organo_anatomico'].upper().strip()
+
+        # Verificar si BD contiene procedimiento (ERROR CRÍTICO)
+        procedimientos_invalidos = [
+            'MASTECTOMIA', 'MASTECTOMÍA', 'BIOPSIA', 'RESECCION', 'RESECCIÓN',
+            'LOBECTOMIA', 'LOBECTOMÍA', 'GASTRECTOMIA', 'GASTRECTOMÍA',
+            'COLECTOMIA', 'COLECTOMÍA', 'HEMICOLECTOMIA', 'HEMICOLECTOMÍA',
+            'PROSTATECTOMIA', 'PROSTATECTOMÍA', 'HISTERECTOMIA', 'HISTERECTOMÍA'
+        ]
+
+        bd_contiene_procedimiento = any(proc in ihq_organo_bd_norm for proc in procedimientos_invalidos)
+
+        if bd_contiene_procedimiento:
+            resultado['estado'] = 'ERROR'
+            resultado['es_organo_valido'] = False
+            resultado['sugerencia'] = (
+                f"❌ ERROR CRÍTICO: IHQ_ORGANO contiene procedimiento en lugar de órgano.\n"
+                f"BD: \"{ihq_organo_bd}\" (contiene procedimiento)\n"
+                f"PDF: \"{deteccion_pdf['organo_anatomico']}\"\n\n"
+                f"CAUSA: El extractor está capturando procedimiento del campo ORGANO (tabla)\n"
+                f"       en lugar del órgano anatómico del DIAGNÓSTICO.\n\n"
+                f"CORRECCIÓN:\n"
+                f"  Archivo: core/extractors/medical_extractor.py\n"
+                f"  Función: extract_organ_information() o similar\n"
+                f"  Problema: Confunde campo ORGANO (tabla) con IHQ_ORGANO (diagnóstico)\n"
+                f"  Solución: IHQ_ORGANO debe extraerse de la primera línea del DIAGNÓSTICO,\n"
+                f"            NO de la tabla Estudios solicitados."
+            )
+            return resultado
+
+        # Validar que BD sea órgano anatómico válido
+        resultado['es_organo_valido'] = deteccion_pdf['es_valido']
+
+        # Comparar valores
+        if ihq_organo_bd_norm == ihq_organo_pdf_norm:
+            resultado['estado'] = 'OK'
+            resultado['es_organo_valido'] = True
+            resultado['sugerencia'] = f"Campo IHQ_ORGANO correcto: \"{ihq_organo_bd}\""
+
+        elif ihq_organo_bd_norm in ihq_organo_pdf_norm or ihq_organo_pdf_norm in ihq_organo_bd_norm:
+            resultado['estado'] = 'WARNING'
+            resultado['sugerencia'] = (
+                f"Campo IHQ_ORGANO parcialmente correcto.\n"
+                f"BD: \"{ihq_organo_bd}\"\n"
+                f"PDF: \"{deteccion_pdf['organo_anatomico']}\"\n"
+                f"Verificar si requiere ajuste."
+            )
+        else:
+            resultado['estado'] = 'ERROR'
+            resultado['sugerencia'] = (
+                f"Campo IHQ_ORGANO no coincide con PDF.\n"
+                f"BD: \"{ihq_organo_bd}\"\n"
+                f"PDF (diagnóstico): \"{deteccion_pdf['organo_anatomico']}\"\n"
+                f"Ubicación PDF: {deteccion_pdf['ubicacion']}\n"
+                f"Corrección: Verificar extractor en medical_extractor.py"
+            )
+
+        return resultado
 
     def _exportar_json(self, datos: Dict, nombre_archivo: str):
         """Exporta resultados a JSON"""
@@ -818,6 +2547,565 @@ class AuditorSistema:
             print(f"📊 Casos analizados: {len(precisiones)}")
             print(f"📊 Rango: {min(precisiones):.1f}% - {max(precisiones):.1f}%")
 
+    # ========== DIAGNÓSTICO Y SUGERENCIAS (TAREAS 1.8 y 1.9) ==========
+
+    def _diagnosticar_error_campo(self, campo: str, valor_bd: str, valor_esperado: str,
+                                   texto_ocr: str, detalle_validacion: Dict) -> Dict:
+        """
+        Diagnostica POR QUÉ falló el extractor basándose en el PDF.
+
+        Analiza:
+        1. ¿Qué esperaba encontrar? (basado en flujo M → IHQ)
+        2. ¿Qué encontró realmente? (en el PDF)
+        3. ¿Por qué el extractor se equivocó? (análisis de patrones)
+        4. ¿Dónde está la información correcta? (ubicación exacta en PDF)
+
+        Returns:
+            Dict con causa_error, tipo_error, ubicacion_correcta, patron_fallido
+        """
+        diagnostico = {
+            'campo': campo,
+            'valor_bd': valor_bd,
+            'valor_esperado': valor_esperado,
+            'causa_error': None,
+            'tipo_error': None,  # CONTAMINACION, VACIO, INCORRECTO, PARCIAL, BD_SIN_COLUMNA
+            'ubicacion_correcta': None,
+            'patron_fallido': None,
+            'contexto_pdf': None
+        }
+
+        # ═══════════════════════════════════════════════════════════════
+        # DIAGNÓSTICO POR CAMPO
+        # ═══════════════════════════════════════════════════════════════
+
+        if campo == 'DIAGNOSTICO_COLORACION':
+            # Analizar por qué no se detectó el diagnóstico del estudio M
+            if not valor_esperado:
+                diagnostico['causa_error'] = 'No se encontró diagnóstico del estudio M en DESCRIPCIÓN MACROSCÓPICA'
+                diagnostico['tipo_error'] = 'VACIO'
+                diagnostico['patron_fallido'] = 'Búsqueda de keywords: NOTTINGHAM, GRADO, INVASIÓN'
+            else:
+                diagnostico['causa_error'] = 'Diagnóstico coloración detectado en PDF pero no existe columna en BD'
+                diagnostico['tipo_error'] = 'BD_SIN_COLUMNA'
+                diagnostico['ubicacion_correcta'] = detalle_validacion.get('ubicacion', 'Descripción Macroscópica')
+                diagnostico['contexto_pdf'] = valor_esperado[:200] + '...' if len(valor_esperado) > 200 else valor_esperado
+
+        elif campo == 'DIAGNOSTICO_PRINCIPAL':
+            # Analizar por qué el diagnóstico principal está mal
+            if detalle_validacion.get('tiene_contaminacion'):
+                diagnostico['causa_error'] = f"Contaminado con datos del estudio M: {', '.join(detalle_validacion['contaminacion_detectada'])}"
+                diagnostico['tipo_error'] = 'CONTAMINACION'
+                diagnostico['patron_fallido'] = 'Extractor no filtra grado Nottingham/invasiones'
+                diagnostico['ubicacion_correcta'] = f"Línea {detalle_validacion.get('linea_correcta_pdf', '?')} del DIAGNÓSTICO"
+            elif not valor_bd:
+                diagnostico['causa_error'] = 'Campo vacío en BD'
+                diagnostico['tipo_error'] = 'VACIO'
+                diagnostico['ubicacion_correcta'] = f"Línea {detalle_validacion.get('linea_correcta_pdf', '?')} del DIAGNÓSTICO"
+            elif valor_bd != valor_esperado:
+                diagnostico['causa_error'] = 'Diagnóstico extraído no coincide con PDF'
+                diagnostico['tipo_error'] = 'INCORRECTO'
+                diagnostico['patron_fallido'] = 'Extractor busca en posición fija (segunda línea) en lugar de buscar semánticamente'
+                diagnostico['ubicacion_correcta'] = f"Línea {detalle_validacion.get('linea_correcta_pdf', '?')} del DIAGNÓSTICO"
+
+        elif campo == 'FACTOR_PRONOSTICO':
+            # Analizar por qué el factor pronóstico está mal
+            if detalle_validacion.get('tiene_contaminacion'):
+                diagnostico['causa_error'] = f"Contaminado con datos del estudio M: {', '.join(detalle_validacion['contaminacion_detectada'])}"
+                diagnostico['tipo_error'] = 'CONTAMINACION'
+                diagnostico['patron_fallido'] = 'Extractor no filtra grado/invasiones/diferenciación'
+            elif valor_bd == 'N/A' and detalle_validacion.get('biomarcadores_pdf'):
+                diagnostico['causa_error'] = f"Factor pronóstico vacío pero se detectaron {len(detalle_validacion['biomarcadores_pdf'])} biomarcadores en PDF"
+                diagnostico['tipo_error'] = 'VACIO'
+                biomarcadores_nombres = [b['nombre'] for b in detalle_validacion['biomarcadores_pdf']]
+                ubicaciones = [b['ubicacion'] for b in detalle_validacion['biomarcadores_pdf']]
+                diagnostico['ubicacion_correcta'] = ', '.join(set(ubicaciones))
+                diagnostico['contexto_pdf'] = f"Biomarcadores: {', '.join(biomarcadores_nombres)}"
+                diagnostico['patron_fallido'] = 'Extractor solo busca en DIAGNÓSTICO, no en DESCRIPCIÓN MICROSCÓPICA'
+            elif detalle_validacion.get('cobertura', 0) < 50:
+                diagnostico['causa_error'] = f"Cobertura baja ({detalle_validacion['cobertura']:.0f}%): faltan biomarcadores"
+                diagnostico['tipo_error'] = 'PARCIAL'
+                diagnostico['patron_fallido'] = 'Extractor no busca todos los biomarcadores o busca en ubicación incorrecta'
+
+        return diagnostico
+
+    def _generar_sugerencia_correccion(self, diagnostico_error: Dict) -> Dict:
+        """
+        Genera sugerencia PRECISA de corrección basada en el diagnóstico de error.
+
+        Proporciona:
+        - Archivo a modificar
+        - Función a corregir
+        - Líneas aproximadas
+        - Patrón regex sugerido (si aplica)
+        - Explicación del problema
+        - Comando para aplicar corrección
+
+        Returns:
+            Dict con archivo, funcion, lineas, problema, solucion, patron_sugerido, comando
+        """
+        campo = diagnostico_error['campo']
+        tipo_error = diagnostico_error['tipo_error']
+
+        sugerencia = {
+            'archivo': None,
+            'funcion': None,
+            'lineas': None,
+            'problema': diagnostico_error['causa_error'],
+            'solucion': None,
+            'patron_sugerido': None,
+            'comando': None,
+            'prioridad': None  # CRITICA, ALTA, MEDIA, BAJA
+        }
+
+        # ═══════════════════════════════════════════════════════════════
+        # SUGERENCIAS POR CAMPO Y TIPO DE ERROR
+        # ═══════════════════════════════════════════════════════════════
+
+        if campo == 'DIAGNOSTICO_COLORACION':
+            if tipo_error == 'BD_SIN_COLUMNA':
+                sugerencia['archivo'] = 'FASE 2 del plan'
+                sugerencia['funcion'] = 'Migración de schema BD'
+                sugerencia['solucion'] = (
+                    'Crear columna DIAGNOSTICO_COLORACION en la base de datos.\n'
+                    'Pasos:\n'
+                    '1. Migrar schema BD: agregar columna entre Descripcion Diagnostico y Diagnostico Principal\n'
+                    '2. Crear extractor extract_diagnostico_coloracion() en medical_extractor.py\n'
+                    '3. Modificar unified_extractor.py para incluir nuevo campo\n'
+                    '4. Modificar ihq_processor.py para guardar en BD y debug_map'
+                )
+                sugerencia['comando'] = 'Pendiente FASE 2'
+                sugerencia['prioridad'] = 'ALTA'
+            elif tipo_error == 'VACIO':
+                sugerencia['archivo'] = 'core/extractors/medical_extractor.py'
+                sugerencia['funcion'] = 'extract_diagnostico_coloracion() (FASE 2 - crear)'
+                sugerencia['solucion'] = 'Crear extractor con detección semántica de grado Nottingham + invasiones'
+                sugerencia['prioridad'] = 'ALTA'
+
+        elif campo == 'DIAGNOSTICO_PRINCIPAL':
+            sugerencia['archivo'] = 'core/extractors/medical_extractor.py'
+            sugerencia['funcion'] = 'extract_principal_diagnosis()'
+            sugerencia['lineas'] = '~420-480 (aproximado)'
+
+            if tipo_error == 'CONTAMINACION':
+                sugerencia['solucion'] = (
+                    'Filtrar datos del estudio M (grado Nottingham, invasiones).\n'
+                    'Modificaciones necesarias:\n'
+                    '1. Agregar validación para excluir keywords: NOTTINGHAM, GRADO, INVASIÓN\n'
+                    '2. Extraer solo diagnóstico histológico base\n'
+                    '3. Buscar en sección DIAGNÓSTICO (confirmación IHQ), no en DESCRIPCIÓN MACROSCÓPICA'
+                )
+                sugerencia['patron_sugerido'] = (
+                    r'# Buscar diagnóstico sin grado ni invasiones\n'
+                    r'patron_diagnostico = r\'(CARCINOMA|ADENOCARCINOMA|TUMOR)[^.]+\'\n'
+                    r'# Excluir si contiene:\n'
+                    r'keywords_excluir = [\'NOTTINGHAM\', \'GRADO\', \'INVASIÓN\']\n'
+                    r'if not any(kw in diagnostico for kw in keywords_excluir):\n'
+                    r'    return diagnostico'
+                )
+                sugerencia['comando'] = 'python herramientas_ia/editor_core.py --editar-extractor DIAGNOSTICO_PRINCIPAL --simular'
+                sugerencia['prioridad'] = 'CRITICA'
+
+            elif tipo_error == 'INCORRECTO':
+                sugerencia['solucion'] = (
+                    'NO asumir posición fija (segunda línea).\n'
+                    'Modificaciones necesarias:\n'
+                    '1. Buscar SEMÁNTICAMENTE en CUALQUIER línea del DIAGNÓSTICO\n'
+                    '2. Identificar diagnóstico histológico sin grado ni invasiones\n'
+                    '3. Usar detección inteligente similar a _detectar_diagnostico_principal_inteligente()'
+                )
+                sugerencia['patron_sugerido'] = (
+                    r'# Buscar en TODAS las líneas, no solo la segunda\n'
+                    r'for linea in lineas_diagnostico:\n'
+                    r'    if tiene_diagnostico(linea) and not tiene_grado(linea):\n'
+                    r'        return linea'
+                )
+                sugerencia['comando'] = 'python herramientas_ia/editor_core.py --editar-extractor DIAGNOSTICO_PRINCIPAL --simular'
+                sugerencia['prioridad'] = 'ALTA'
+
+            elif tipo_error == 'VACIO':
+                sugerencia['solucion'] = 'Verificar que extractor busque en sección DIAGNÓSTICO correctamente'
+                sugerencia['comando'] = 'python herramientas_ia/editor_core.py --validar-sintaxis medical_extractor.py'
+                sugerencia['prioridad'] = 'ALTA'
+
+        elif campo == 'FACTOR_PRONOSTICO':
+            sugerencia['archivo'] = 'core/extractors/medical_extractor.py'
+            sugerencia['funcion'] = 'extract_factor_pronostico()'
+            sugerencia['lineas'] = '~267-430 (aproximado)'
+
+            if tipo_error == 'CONTAMINACION':
+                sugerencia['solucion'] = (
+                    'Filtrar datos del estudio M (grado, invasiones, diferenciación).\n'
+                    'Modificaciones necesarias:\n'
+                    '1. Eliminar patrones de grado Nottingham\n'
+                    '2. Eliminar patrones de invasión linfovascular/perineural\n'
+                    '3. Eliminar patrones de diferenciación glandular\n'
+                    '4. Mantener SOLO patrones de biomarcadores IHQ'
+                )
+                sugerencia['patron_sugerido'] = (
+                    r'# Validar contexto antes de agregar factor\n'
+                    r'keywords_excluir = [\'NOTTINGHAM\', \'GRADO\', \'INVASIÓN\', \'DIFERENCIADO\']\n'
+                    r'if any(kw in context for kw in keywords_excluir):\n'
+                    r'    continue  # Ignorar este patrón'
+                )
+                sugerencia['comando'] = 'python herramientas_ia/editor_core.py --editar-extractor FACTOR_PRONOSTICO --simular'
+                sugerencia['prioridad'] = 'CRITICA'
+
+            elif tipo_error == 'VACIO':
+                ubicacion = diagnostico_error.get('ubicacion_correcta', 'Descripción Microscópica')
+                sugerencia['solucion'] = (
+                    f'Extractor no busca en {ubicacion}.\n'
+                    'Modificaciones necesarias:\n'
+                    '1. Buscar biomarcadores en DESCRIPCIÓN MICROSCÓPICA (prioridad 1)\n'
+                    '2. Buscar biomarcadores en DIAGNÓSTICO (prioridad 2)\n'
+                    '3. Buscar biomarcadores en COMENTARIOS (prioridad 3)\n'
+                    '4. Usar búsqueda múltiple similar a _detectar_biomarcadores_ihq_inteligente()'
+                )
+                sugerencia['comando'] = 'python herramientas_ia/editor_core.py --editar-extractor FACTOR_PRONOSTICO --simular'
+                sugerencia['prioridad'] = 'ALTA'
+
+            elif tipo_error == 'PARCIAL':
+                sugerencia['solucion'] = (
+                    'Cobertura baja: extractor no encuentra todos los biomarcadores.\n'
+                    'Modificaciones necesarias:\n'
+                    '1. Ampliar patrones regex para cada biomarcador\n'
+                    '2. Buscar en múltiples ubicaciones (microscópica, diagnóstico, comentarios)\n'
+                    '3. Agregar variantes de nomenclatura (ej: ER vs Receptor de Estrógeno)'
+                )
+                sugerencia['patron_sugerido'] = (
+                    r'# Buscar en TODAS las secciones\n'
+                    r'for seccion in [desc_microscopica, diagnostico, comentarios]:\n'
+                    r'    biomarcadores = extraer_biomarcadores(seccion)\n'
+                    r'    factores.extend(biomarcadores)'
+                )
+                sugerencia['comando'] = 'python herramientas_ia/editor_core.py --editar-extractor FACTOR_PRONOSTICO --simular'
+                sugerencia['prioridad'] = 'MEDIA'
+
+        return sugerencia
+
+    def auditar_caso_inteligente(self, numero_caso: str, json_export: bool = False, nivel: str = 'completo') -> Dict:
+        """
+        Audita un caso con INTELIGENCIA SEMANTICA completa.
+
+        Ejecuta el flujo completo:
+        1. Deteccion semantica (DIAGNOSTICO_COLORACION, DIAGNOSTICO_PRINCIPAL, biomarcadores)
+        2. Validacion inteligente (comparacion semantica, deteccion de contaminacion)
+        3. Diagnostico de errores (causa raiz, tipo de error)
+        4. Generacion de sugerencias (archivo, funcion, patron, comando)
+
+        Args:
+            numero_caso: Numero IHQ (ej: IHQ250980)
+            json_export: Exportar resultado a JSON
+            nivel: 'basico', 'completo', 'profundo'
+
+        Returns:
+            Dict con reporte completo de auditoria inteligente
+        """
+        print(f"\n{'='*100}")
+        print(f"AI AUDITORIA INTELIGENTE - CASO {numero_caso}")
+        print(f"{'='*100}\n")
+
+        numero_caso = self._normalizar_numero_ihq(numero_caso)
+        debug_map = self._obtener_debug_map(numero_caso)
+
+        if not debug_map:
+            print(f"X No se encontro debug_map para {numero_caso}")
+            return {}
+
+        datos_bd = debug_map.get('base_datos', {}).get('datos_guardados', {})
+        texto_ocr = debug_map.get('ocr', {}).get('texto_consolidado', '')
+
+        if not texto_ocr:
+            print(f"X No se encontro OCR para {numero_caso}")
+            return {}
+
+        resultado = {
+            'numero_caso': numero_caso,
+            'timestamp': datetime.now().isoformat(),
+            'nivel': nivel,
+            'detecciones': {},
+            'validaciones': {},
+            'diagnosticos': {},
+            'sugerencias': {},
+            'metricas': {},
+            'resumen': {}
+        }
+
+        print(f"Informacion del caso:")
+        print(f"   Paciente: {datos_bd.get('Nombre del paciente', 'N/A')}")
+        print(f"   ORGANO (tabla Estudios solicitados): {datos_bd.get('Organo', 'N/A')}")
+        print(f"   IHQ_ORGANO (seccion DIAGNOSTICO): {datos_bd.get('IHQ_ORGANO', 'N/A')}")
+        print(f"   Diagnostico: {datos_bd.get('Diagnostico Principal', 'N/A')[:80]}...")
+        print()
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PASO 1: DETECCIONES SEMANTICAS
+        # ═══════════════════════════════════════════════════════════════════════
+
+        print(f"{'─'*100}")
+        print(f"PASO 1: DETECCIONES SEMANTICAS")
+        print(f"{'─'*100}\n")
+
+        # 1.1 Detectar DIAGNOSTICO_COLORACION
+        print("1.1 Detectando DIAGNOSTICO_COLORACION (estudio M)...")
+        deteccion_coloracion = self._detectar_diagnostico_coloracion_inteligente(texto_ocr)
+        resultado['detecciones']['diagnostico_coloracion'] = deteccion_coloracion
+
+        if deteccion_coloracion['diagnostico_encontrado']:
+            print(f"   OK Detectado (confianza: {deteccion_coloracion['confianza']:.2f})")
+            print(f"   Ubicacion: {deteccion_coloracion['ubicacion']}")
+            print(f"   Componentes: {len([c for c in deteccion_coloracion['componentes'].values() if c])}/5")
+        else:
+            print(f"   !  No detectado")
+        print()
+
+        # 1.2 Detectar DIAGNOSTICO_PRINCIPAL
+        print("1.2 Detectando DIAGNOSTICO_PRINCIPAL (confirmacion IHQ)...")
+        deteccion_principal = self._detectar_diagnostico_principal_inteligente(texto_ocr)
+        resultado['detecciones']['diagnostico_principal'] = deteccion_principal
+
+        if deteccion_principal['diagnostico_encontrado']:
+            print(f"   OK Detectado (confianza: {deteccion_principal['confianza']:.2f})")
+            print(f"   Linea {deteccion_principal['linea_numero']} del DIAGNOSTICO")
+            print(f"   \"{deteccion_principal['diagnostico_encontrado'][:60]}...\"")
+        else:
+            print(f"   !  No detectado")
+        print()
+
+        # 1.3 Detectar biomarcadores IHQ
+        print("1.3 Detectando biomarcadores IHQ...")
+        deteccion_biomarcadores = self._detectar_biomarcadores_ihq_inteligente(texto_ocr)
+        resultado['detecciones']['biomarcadores_ihq'] = deteccion_biomarcadores
+
+        if deteccion_biomarcadores['biomarcadores_encontrados']:
+            print(f"   OK {len(deteccion_biomarcadores['biomarcadores_encontrados'])} biomarcador(es) detectado(s)")
+            for bio in deteccion_biomarcadores['biomarcadores_encontrados']:
+                print(f"      • {bio['nombre']} ({bio['ubicacion']})")
+        else:
+            print(f"   !  No se detectaron biomarcadores")
+        print()
+
+        # 1.4 Detectar biomarcadores solicitados
+        print("1.4 Detectando biomarcadores SOLICITADOS...")
+        deteccion_solicitados = self._detectar_biomarcadores_solicitados_inteligente(texto_ocr)
+        resultado['detecciones']['biomarcadores_solicitados'] = deteccion_solicitados
+
+        if deteccion_solicitados['biomarcadores_solicitados']:
+            print(f"   OK {len(deteccion_solicitados['biomarcadores_solicitados'])} biomarcador(es) solicitado(s)")
+            print(f"   {', '.join(deteccion_solicitados['biomarcadores_solicitados'])}")
+        else:
+            print(f"   !  No se detectaron biomarcadores solicitados")
+        print()
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PASO 2: VALIDACIONES INTELIGENTES
+        # ═══════════════════════════════════════════════════════════════════════
+
+        print(f"{'─'*100}")
+        print(f"OK PASO 2: VALIDACIONES INTELIGENTES")
+        print(f"{'─'*100}\n")
+
+        # 2.1 Validar DIAGNOSTICO_COLORACION
+        print("OK 2.1 Validando DIAGNOSTICO_COLORACION...")
+        validacion_coloracion = self._validar_diagnostico_coloracion_inteligente(datos_bd, texto_ocr)
+        resultado['validaciones']['diagnostico_coloracion'] = validacion_coloracion
+
+        estado_emoji = {'OK': 'OK', 'WARNING': '!', 'ERROR': 'X', 'PENDING': 'WAIT'}[validacion_coloracion['estado']]
+        print(f"   {estado_emoji} Estado: {validacion_coloracion['estado']}")
+        if validacion_coloracion['sugerencia']:
+            print(f"   Sugerencia: {validacion_coloracion['sugerencia']}")
+        print()
+
+        # 2.2 Validar DIAGNOSTICO_PRINCIPAL
+        print("OK 2.2 Validando DIAGNOSTICO_PRINCIPAL...")
+        validacion_principal = self._validar_diagnostico_principal_inteligente(datos_bd, texto_ocr)
+        resultado['validaciones']['diagnostico_principal'] = validacion_principal
+
+        estado_emoji = {'OK': 'OK', 'WARNING': '!', 'ERROR': 'X', 'PENDING': 'WAIT'}[validacion_principal['estado']]
+        print(f"   {estado_emoji} Estado: {validacion_principal['estado']}")
+
+        if validacion_principal['tiene_contaminacion']:
+            print(f"   ALERT CONTAMINACION detectada: {', '.join(validacion_principal['contaminacion_detectada'])}")
+
+        if validacion_principal['sugerencia']:
+            print(f"   Sugerencia: {validacion_principal['sugerencia'][:150]}...")
+        print()
+
+        # 2.3 Validar FACTOR_PRONOSTICO
+        print("OK 2.3 Validando FACTOR_PRONOSTICO...")
+        validacion_factor = self._validar_factor_pronostico_inteligente(datos_bd, texto_ocr)
+        resultado['validaciones']['factor_pronostico'] = validacion_factor
+
+        estado_emoji = {'OK': 'OK', 'WARNING': '!', 'ERROR': 'X', 'PENDING': 'WAIT'}[validacion_factor['estado']]
+        print(f"   {estado_emoji} Estado: {validacion_factor['estado']}")
+
+        if validacion_factor['tiene_contaminacion']:
+            print(f"   ALERT CONTAMINACION detectada: {', '.join(validacion_factor['contaminacion_detectada'])}")
+
+        if validacion_factor.get('cobertura'):
+            print(f"   Cobertura: {validacion_factor['cobertura']:.0f}%")
+
+        if validacion_factor['sugerencia']:
+            print(f"   Sugerencia: {validacion_factor['sugerencia'][:150]}...")
+        print()
+
+        # 2.4 Validar ORGANO (tabla Estudios solicitados)
+        print("OK 2.4 Validando ORGANO (tabla Estudios solicitados)...")
+        validacion_organo = self._validar_organo_tabla(datos_bd, texto_ocr)
+        resultado['validaciones']['organo_tabla'] = validacion_organo
+
+        estado_emoji = {'OK': 'OK', 'WARNING': '!', 'ERROR': 'X', 'PENDING': 'WAIT'}[validacion_organo['estado']]
+        print(f"   {estado_emoji} Estado: {validacion_organo['estado']}")
+
+        if validacion_organo['es_multilinea']:
+            print(f"   INFO: Campo multilinea detectado en PDF")
+
+        if validacion_organo['sugerencia']:
+            print(f"   Sugerencia: {validacion_organo['sugerencia'][:150]}...")
+        print()
+
+        # 2.5 Validar IHQ_ORGANO (seccion DIAGNOSTICO)
+        print("OK 2.5 Validando IHQ_ORGANO (seccion DIAGNOSTICO)...")
+        validacion_ihq_organo = self._validar_ihq_organo_diagnostico(datos_bd, texto_ocr)
+        resultado['validaciones']['ihq_organo_diagnostico'] = validacion_ihq_organo
+
+        estado_emoji = {'OK': 'OK', 'WARNING': '!', 'ERROR': 'X', 'PENDING': 'WAIT'}[validacion_ihq_organo['estado']]
+        print(f"   {estado_emoji} Estado: {validacion_ihq_organo['estado']}")
+
+        if validacion_ihq_organo['es_organo_valido']:
+            print(f"   OK: Es organo anatomico valido")
+
+        if validacion_ihq_organo['contiene_procedimiento']:
+            print(f"   ALERT: Contiene procedimiento (no deberia)")
+
+        if validacion_ihq_organo['sugerencia']:
+            print(f"   Sugerencia: {validacion_ihq_organo['sugerencia'][:150]}...")
+        print()
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PASO 3: DIAGNOSTICO DE ERRORES (solo si hay errores)
+        # ═══════════════════════════════════════════════════════════════════════
+
+        errores_detectados = []
+
+        if validacion_coloracion['estado'] in ['ERROR', 'WARNING']:
+            errores_detectados.append(('DIAGNOSTICO_COLORACION', validacion_coloracion))
+
+        if validacion_principal['estado'] in ['ERROR', 'WARNING']:
+            errores_detectados.append(('DIAGNOSTICO_PRINCIPAL', validacion_principal))
+
+        if validacion_factor['estado'] in ['ERROR', 'WARNING']:
+            errores_detectados.append(('FACTOR_PRONOSTICO', validacion_factor))
+
+        if validacion_organo['estado'] in ['ERROR', 'WARNING']:
+            errores_detectados.append(('ORGANO_TABLA', validacion_organo))
+
+        if validacion_ihq_organo['estado'] in ['ERROR', 'WARNING']:
+            errores_detectados.append(('IHQ_ORGANO_DIAGNOSTICO', validacion_ihq_organo))
+
+        if errores_detectados:
+            print(f"{'─'*100}")
+            print(f"PASO 3: DIAGNOSTICO DE ERRORES")
+            print(f"{'─'*100}\n")
+
+            for campo, validacion in errores_detectados:
+                print(f"Diagnosticando error en {campo}...")
+
+                diagnostico = self._diagnosticar_error_campo(
+                    campo=campo,
+                    valor_bd=validacion['valor_bd'],
+                    valor_esperado=validacion.get('valor_esperado', ''),
+                    texto_ocr=texto_ocr,
+                    detalle_validacion=validacion
+                )
+
+                resultado['diagnosticos'][campo] = diagnostico
+
+                print(f"   Tipo de error: {diagnostico['tipo_error']}")
+                print(f"   Causa: {diagnostico['causa_error']}")
+
+                if diagnostico['ubicacion_correcta']:
+                    print(f"   Ubicacion correcta: {diagnostico['ubicacion_correcta']}")
+
+                print()
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PASO 4: GENERACION DE SUGERENCIAS (solo si hay diagnosticos)
+        # ═══════════════════════════════════════════════════════════════════════
+
+        if resultado['diagnosticos']:
+            print(f"{'─'*100}")
+            print(f"PASO 4: SUGERENCIAS DE CORRECCION")
+            print(f"{'─'*100}\n")
+
+            for campo, diagnostico in resultado['diagnosticos'].items():
+                print(f"Sugerencia para {campo}...")
+
+                sugerencia = self._generar_sugerencia_correccion(diagnostico)
+                resultado['sugerencias'][campo] = sugerencia
+
+                print(f"   Archivo: {sugerencia['archivo']}")
+                print(f"   Funcion: {sugerencia['funcion']}")
+                print(f"   Lineas: {sugerencia['lineas']}")
+                print(f"   Prioridad: {sugerencia['prioridad']}")
+
+                if sugerencia['comando']:
+                    print(f"   Comando: {sugerencia['comando']}")
+
+                print()
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PASO 5: METRICAS Y RESUMEN
+        # ═══════════════════════════════════════════════════════════════════════
+
+        print(f"{'─'*100}")
+        print(f"METRICAS Y RESUMEN")
+        print(f"{'─'*100}\n")
+
+        # Calcular metricas
+        total_validaciones = 3
+        validaciones_ok = sum(1 for v in resultado['validaciones'].values() if v['estado'] == 'OK')
+        validaciones_warning = sum(1 for v in resultado['validaciones'].values() if v['estado'] == 'WARNING')
+        validaciones_error = sum(1 for v in resultado['validaciones'].values() if v['estado'] == 'ERROR')
+
+        resultado['metricas'] = {
+            'total_validaciones': total_validaciones,
+            'validaciones_ok': validaciones_ok,
+            'validaciones_warning': validaciones_warning,
+            'validaciones_error': validaciones_error,
+            'score_validacion': (validaciones_ok / total_validaciones * 100) if total_validaciones > 0 else 0,
+            'total_biomarcadores_detectados': len(deteccion_biomarcadores['biomarcadores_encontrados']),
+            'total_biomarcadores_solicitados': len(deteccion_solicitados['biomarcadores_solicitados']),
+        }
+
+        print(f"OK Validaciones OK: {validaciones_ok}/{total_validaciones}")
+        print(f"!  Validaciones WARNING: {validaciones_warning}/{total_validaciones}")
+        print(f"X Validaciones ERROR: {validaciones_error}/{total_validaciones}")
+        print(f"Score de validacion: {resultado['metricas']['score_validacion']:.1f}%")
+        print()
+
+        # Resumen ejecutivo
+        if validaciones_error > 0:
+            resultado['resumen']['estado'] = 'CRITICO'
+            resultado['resumen']['mensaje'] = f"{validaciones_error} error(es) critico(s) detectado(s)"
+        elif validaciones_warning > 0:
+            resultado['resumen']['estado'] = 'ADVERTENCIA'
+            resultado['resumen']['mensaje'] = f"{validaciones_warning} advertencia(s) detectada(s)"
+        else:
+            resultado['resumen']['estado'] = 'EXCELENTE'
+            resultado['resumen']['mensaje'] = 'Todos los campos validados correctamente'
+
+        print(f"ESTADO FINAL: {resultado['resumen']['estado']}")
+        print(f"{resultado['resumen']['mensaje']}")
+        print()
+
+        print(f"{'='*100}\n")
+
+        # Exportar a JSON si se solicita
+        if json_export:
+            self._exportar_json(resultado, f"auditoria_inteligente_{numero_caso}")
+
+        return resultado
+
 
 def main():
     """CLI principal"""
@@ -830,6 +3118,8 @@ Ejemplos de uso:
 AUDITORÍA:
   python auditor_sistema.py IHQ250001                          # Auditar caso
   python auditor_sistema.py IHQ250001 --nivel profundo         # Auditoría detallada
+  python auditor_sistema.py IHQ250001 --inteligente            # Auditoría INTELIGENTE (con detección semántica)
+  python auditor_sistema.py IHQ250001 --inteligente --json     # Auditoría inteligente + exportar JSON
   python auditor_sistema.py --todos                            # Auditar todos
   python auditor_sistema.py --todos --limite 10                # Primeros 10
   python auditor_sistema.py --listar                           # Listar casos
@@ -862,6 +3152,7 @@ EXPORTACIÓN:
     parser.add_argument("--todos", action="store_true", help="Auditar todos los casos")
     parser.add_argument("--limite", type=int, help="Limitar número de casos")
     parser.add_argument("--nivel", choices=['basico', 'medio', 'profundo'], default='basico', help="Nivel de auditoría")
+    parser.add_argument("--inteligente", action="store_true", help="Auditoría inteligente con detección semántica completa")
     parser.add_argument("--listar", action="store_true", help="Listar casos disponibles")
     parser.add_argument("--leer-ocr", action="store_true", help="Leer texto OCR")
     parser.add_argument("--buscar", help="Buscar patrón en OCR")
@@ -910,6 +3201,13 @@ EXPORTACIÓN:
                 auditor.leer_ocr(args.caso, seccion=args.seccion, buscar=args.buscar)
             elif args.validar_ia:
                 auditor.validar_correcciones_ia(args.caso)
+            elif args.inteligente:
+                # Auditoría inteligente con detección semántica completa
+                resultado = auditor.auditar_caso_inteligente(args.caso, json_export=args.json, nivel=args.nivel)
+
+                # Exportar a Excel si se especifica
+                if args.excel and resultado:
+                    auditor.exportar_excel_formateado(resultado, args.excel)
             else:
                 resultado = auditor.auditar_caso(args.caso, json_export=args.json)
 

@@ -1277,9 +1277,557 @@ python herramientas_ia/gestor_ia_lm_studio.py --editar-prompt system_prompt_comu
 
 ---
 
+---
+
+## 🧠 CONOCIMIENTO DEL SISTEMA EVARISIS
+
+El agente lm-studio-connector es EXPERTO en el sistema EVARISIS y entiende profundamente su arquitectura.
+
+### Arquitectura de Extractores
+
+**Flujo de datos**: PDF → OCR → Extractores → Unified → Database
+
+1. **medical_extractor.py**: Extrae datos médicos principales
+   - `extract_diagnostico_coloracion()`: Diagnóstico del Study M (Coloración) - v6.1.0 NUEVO
+   - `extract_principal_diagnosis()`: Diagnóstico principal del IHQ
+   - `extract_organo()`: Órgano con validación semántica
+   - `extract_factor_pronostico()`: SOLO biomarcadores IHQ (anti-contaminación)
+
+2. **biomarker_extractor.py**: Extrae 30+ biomarcadores
+   - Búsqueda multi-sección (DESCRIPCION_MICROSCOPICA, DIAGNOSTICO, COMENTARIOS)
+   - Anti-confusión (Ki-67 ≠ P53, ER ≠ PR, CD5 ≠ CD56)
+   - Validación de formatos (ESTADO vs PORCENTAJE)
+
+3. **unified_extractor.py**: Orquesta todos los extractores
+   - map_to_database_format(): Mapea extractores → BD
+   - Normalización automática ("N/A" para vacíos)
+
+4. **validation_checker.py**: Valida completitud de casos
+   - CAMPOS_REQUERIDOS: Define qué campos son críticos
+   - Regla ESTRICTA: Si hay IHQ_ESTUDIOS_SOLICITADOS, TODOS deben estar completos
+   - Regla GENÉRICA: Completitud ≥ 100%
+
+### Diferencia Study M (Coloración) vs IHQ
+
+**CRITICAL UNDERSTANDING**:
+
+**Study M (Coloración)**:
+- Biopsia inicial de patología general
+- Contiene: Diagnóstico + Grado Nottingham + Invasiones
+- Campo en BD: **DIAGNOSTICO_COLORACION** (v6.1.0)
+- Ejemplo: "CARCINOMA DUCTAL INVASIVO, GRADO NOTTINGHAM 2, INVASIÓN LINFOVASCULAR: NEGATIVO"
+
+**Study IHQ (Inmunohistoquímica)**:
+- Análisis molecular con biomarcadores
+- Contiene: Confirmación diagnóstica + Biomarcadores (Ki-67, HER2, ER, PR)
+- Campo en BD: **DIAGNOSTICO_PRINCIPAL** (SIN Nottingham ni invasiones)
+- Ejemplo: "CARCINOMA DUCTAL INVASIVO"
+
+**⚠️ ANTI-CONTAMINACIÓN**:
+- NUNCA mezclar datos del Study M en campos IHQ
+- DIAGNOSTICO_PRINCIPAL = Diagnóstico limpio SIN Nottingham
+- FACTOR_PRONOSTICO = SOLO biomarcadores IHQ, NO Nottingham ni invasiones
+
+---
+
+## 🔍 CAMPOS CRÍTICOS Y SU LÓGICA
+
+El agente conoce a fondo los campos críticos del sistema:
+
+### 1. DIAGNOSTICO_COLORACION (v6.1.0 - NUEVO)
+
+**Fuente**: Study M (Coloración) - DESCRIPCION_MACROSCOPICA
+
+**5 Componentes Semánticos**:
+1. Diagnóstico base: "CARCINOMA DUCTAL INVASIVO"
+2. Grado Nottingham: "GRADO NOTTINGHAM 2 (SCORE 7)"
+3. Invasión linfovascular: "INVASIÓN LINFOVASCULAR: NEGATIVO"
+4. Invasión perineural: "INVASIÓN PERINEURAL: NEGATIVO"
+5. Carcinoma in situ: "CARCINOMA DUCTAL IN SITU: NO"
+
+**Detección Semántica**:
+- Busca keywords: NOTTINGHAM, GRADO, INVASIÓN, CARCINOMA IN SITU
+- Soporta múltiples formatos (comillas, sin comillas, párrafos)
+- Concatena componentes encontrados
+
+**Estado en BD**:
+- Columna: `Diagnostico Coloracion` TEXT
+- Obligatorio: SÍ (campo CRÍTICO en validation_checker.py)
+- Completitud: Afecta cálculo de completitud del caso
+
+### 2. DIAGNOSTICO_PRINCIPAL
+
+**Fuente**: Study IHQ - DIAGNOSTICO (segunda línea típicamente)
+
+**Características**:
+- Confirmación diagnóstica del IHQ
+- **SIN Nottingham** (eso está en DIAGNOSTICO_COLORACION)
+- **SIN invasiones** (eso está en DIAGNOSTICO_COLORACION)
+- **SIN grados** (eso está en DIAGNOSTICO_COLORACION)
+
+**Ejemplo correcto**:
+```
+DIAGNOSTICO_PRINCIPAL = "CARCINOMA DUCTAL INVASIVO"
+```
+
+**Ejemplo INCORRECTO** (contaminación):
+```
+DIAGNOSTICO_PRINCIPAL = "CARCINOMA DUCTAL INVASIVO, GRADO NOTTINGHAM 2"  ❌
+```
+
+### 3. FACTOR_PRONOSTICO
+
+**Fuente**: Study IHQ - Biomarcadores moleculares
+
+**Contenido EXCLUSIVO**:
+- Ki-67 (índice proliferativo)
+- HER2 (amplificación genética)
+- Receptor de Estrógeno (ER)
+- Receptor de Progesterona (PR)
+- Otros biomarcadores específicos
+
+**⚠️ ANTI-CONTAMINACIÓN**:
+```
+✅ CORRECTO:
+FACTOR_PRONOSTICO = "Ki-67: 20%, HER2: POSITIVO 3+, ER: 90%, PR: 80%"
+
+❌ INCORRECTO (contaminación del Study M):
+FACTOR_PRONOSTICO = "GRADO NOTTINGHAM 2, Ki-67: 20%"
+FACTOR_PRONOSTICO = "INVASIÓN LINFOVASCULAR: NEGATIVO, Ki-67: 20%"
+```
+
+### 4. IHQ_ORGANO
+
+**Fuente**: Study IHQ - Validación semántica
+
+**Validación**:
+- Debe contener SOLO órgano válido
+- NO debe contener diagnóstico
+- NO debe contener texto descriptivo
+
+**Ejemplo correcto**:
+```
+IHQ_ORGANO = "MAMA"
+IHQ_ORGANO = "MESENTERIO"
+```
+
+**Ejemplo INCORRECTO**:
+```
+IHQ_ORGANO = "LOS HALLAZGOS MORFOLÓGICOS..."  ❌
+```
+
+---
+
+## 🤝 INTEGRACIÓN CON DATA-AUDITOR
+
+El agente trabaja COLABORATIVAMENTE con data-auditor para diagnóstico completo.
+
+### Lectura de Reportes del Auditor
+
+**Ubicación**: `herramientas_ia/resultados/`
+
+**Archivos a leer**:
+1. `auditoria_inteligente_{numero_caso}.json`: Reporte completo
+2. `diagnostico_sugerencias_{numero_caso}*.md`: Sugerencias de corrección
+3. `cambios_auditor_*.md`: Cambios aplicados
+
+**Estructura del JSON**:
+```json
+{
+  "numero_caso": "IHQ250980",
+  "detecciones": {
+    "diagnostico_coloracion": {
+      "encontrado": true,
+      "componentes": {...},
+      "confianza": 0.95
+    }
+  },
+  "validaciones": {
+    "diagnostico_principal": {
+      "estado": "OK",
+      "tiene_contaminacion": false
+    },
+    "factor_pronostico": {
+      "estado": "WARNING",
+      "cobertura": 75.0
+    }
+  },
+  "diagnosticos": [
+    {
+      "campo": "IHQ_Ki67",
+      "tipo_error": "VACIO",
+      "causa": "Extractor no buscó en COMENTARIOS"
+    }
+  ],
+  "sugerencias": [
+    {
+      "archivo": "biomarker_extractor.py",
+      "funcion": "extract_ki67()",
+      "problema": "Solo busca en DESCRIPCION_MICROSCOPICA",
+      "solucion": "Agregar búsqueda en COMENTARIOS",
+      "prioridad": "ALTA"
+    }
+  ]
+}
+```
+
+### Interpretación de Detecciones Semánticas
+
+El agente interpreta las detecciones del auditor para contexto IA:
+
+1. **DIAGNOSTICO_COLORACION detectado**:
+   - IA sabe que el caso tiene Study M completo
+   - IA NO debe buscar Nottingham en DIAGNOSTICO_PRINCIPAL
+
+2. **Biomarcador en PDF pero vacío en BD**:
+   - Auditor proporciona ubicación exacta en PDF
+   - IA usa esa ubicación como contexto para corrección
+
+3. **Contaminación detectada**:
+   - Auditor identifica campo con contaminación
+   - IA sugiere limpieza basada en reglas anti-contaminación
+
+### Workflow Colaborativo: Auditor → IA
+
+```
+PASO 1: data-auditor ejecuta auditoría inteligente
+  ├─ Detección semántica de campos
+  ├─ Validación anti-contaminación
+  ├─ Cálculo de precisión REAL
+  └─ Generación de reporte JSON
+
+PASO 2: lm-studio-connector lee reporte del auditor
+  ├─ Carga auditoria_inteligente_{caso}.json
+  ├─ Interpreta detecciones y validaciones
+  └─ Extrae sugerencias de corrección
+
+PASO 3: lm-studio-connector valida con IA usando contexto
+  ├─ Usa ubicaciones exactas del auditor
+  ├─ Aplica reglas anti-contaminación
+  ├─ Prioriza correcciones según diagnóstico del auditor
+  └─ Genera correcciones con confianza alta
+
+PASO 4: Síntesis colaborativa
+  ├─ Combina hallazgos del auditor + validación IA
+  ├─ Genera reporte unificado
+  └─ Proporciona recomendación final al usuario
+```
+
+**Comando CLI**:
+```bash
+python herramientas_ia/gestor_ia_lm_studio.py --diagnosticar-con-auditor IHQ250980
+```
+
+---
+
+## 🎓 DETECCIÓN SEMÁNTICA (LÓGICA DEL AUDITOR)
+
+El agente entiende cómo el data-auditor detecta campos semánticamente.
+
+### Detección de DIAGNOSTICO_COLORACION
+
+**Estrategia de 3 niveles**:
+
+**Nivel 1**: Diagnóstico citado (entre comillas)
+```python
+patron = r'"([^"]+NOTTINGHAM[^"]+)"'
+```
+Detecta: `"CARCINOMA DUCTAL INVASIVO, GRADO NOTTINGHAM 2..."`
+
+**Nivel 2**: Líneas con keywords del Study M
+```python
+keywords = ['NOTTINGHAM', 'GRADO', 'INVASIÓN', 'IN SITU']
+```
+Detecta líneas individuales con estos keywords y concatena
+
+**Nivel 3**: Componentes dispersos
+Busca cada componente por separado y ensambla
+
+**Confianza**:
+- Nivel 1: 1.0 (citado completo)
+- Nivel 2: 0.9 (múltiples keywords)
+- Nivel 3: 0.7 (componentes individuales)
+
+### Búsqueda Multi-Sección de Biomarcadores
+
+**Prioridad de búsqueda**:
+1. DESCRIPCION_MICROSCOPICA (prioridad alta)
+2. DIAGNOSTICO (prioridad media)
+3. COMENTARIOS (prioridad baja)
+
+**Deduplicación**: Si biomarcador aparece en múltiples secciones, usa primera ocurrencia
+
+**Ejemplo**:
+```
+Ki-67 encontrado en:
+- DESCRIPCION_MICROSCOPICA línea 45: "Ki-67: 20%"
+- COMENTARIOS línea 102: "Ki-67: 20%"
+
+Resultado: Usa "Ki-67: 20%" de línea 45 (prioridad alta)
+```
+
+### Validación Anti-Contaminación
+
+**3 validaciones críticas**:
+
+1. **DIAGNOSTICO_PRINCIPAL sin contaminación**:
+   ```python
+   keywords_contaminacion = [
+       'NOTTINGHAM', 'GRADO',
+       'INVASIÓN LINFOVASCULAR', 'INVASIÓN PERINEURAL',
+       'CARCINOMA IN SITU'
+   ]
+   if any(kw in diagnostico_principal for kw in keywords_contaminacion):
+       estado = "ERROR"  # Contaminado
+   ```
+
+2. **FACTOR_PRONOSTICO sin contaminación**:
+   ```python
+   keywords_estudio_m = [
+       'NOTTINGHAM', 'GRADO',
+       'INVASIÓN LINFOVASCULAR', 'INVASIÓN PERINEURAL',
+       'CARCINOMA IN SITU', 'SCORE', 'BIEN DIFERENCIADO'
+   ]
+   if any(kw in factor_pronostico for kw in keywords_estudio_m):
+       estado = "ERROR"  # Contaminado con Study M
+   ```
+
+3. **Cobertura de biomarcadores**:
+   ```python
+   cobertura = (biomarcadores_en_bd / biomarcadores_en_pdf) * 100
+
+   if cobertura >= 80: estado = "OK"
+   elif cobertura >= 50: estado = "WARNING"
+   else: estado = "ERROR"
+   ```
+
+### Cálculo de Precisión REAL vs Reportada
+
+**Fórmula del auditor**:
+```python
+precision_reportada = completitud_sistema  # De validation_checker
+precision_real = (campos_correctos / total_campos_validados) * 100
+
+if precision_reportada == 100 and precision_real < 80:
+    # FALSA COMPLETITUD detectada
+```
+
+**Ejemplo**:
+```
+Sistema reporta: 100% completo
+Auditor valida:
+- 9 campos críticos
+- 1 campo correcto (IHQ_HER2)
+- 8 campos incorrectos (ORGANO, DIAGNOSTICO, 6 biomarcadores)
+
+Precisión REAL: 11.1% (1/9)
+Estado: CRITICO - Falsa completitud
+```
+
+---
+
+## 🔄 WORKFLOWS EXPANDIDOS
+
+### WORKFLOW 9: Diagnóstico Colaborativo con Auditor (NUEVO)
+
+```
+1. Usuario reporta: "IHQ250980 tiene errores, diagnostica con auditor + IA"
+
+2. Claude invoca: lm-studio-connector --diagnosticar-con-auditor IHQ250980
+
+3. lm-studio-connector ejecuta:
+
+   PASO 1: Verificar si existe auditoría previa
+   ├─ Busca: herramientas_ia/resultados/auditoria_inteligente_IHQ250980.json
+   ├─ Si NO existe: Ejecutar data-auditor primero
+   └─ Si SÍ existe: Leer reporte
+
+   PASO 2: Interpretar reporte del auditor
+   ├─ Extraer detecciones semánticas
+   ├─ Extraer validaciones anti-contaminación
+   ├─ Extraer diagnósticos de errores
+   └─ Extraer sugerencias de corrección
+
+   PASO 3: Validar con IA usando contexto del auditor
+   ├─ Para cada error detectado por auditor:
+   │   ├─ Leer ubicación exacta en PDF (línea N)
+   │   ├─ Enviar contexto preciso a IA
+   │   └─ Obtener corrección con confianza
+   ├─ Filtrar correcciones por confianza (≥ 0.90)
+   └─ Clasificar por criticidad (CRITICA, ALTA, MEDIA)
+
+   PASO 4: Síntesis colaborativa
+   ├─ Combinar hallazgos auditor + validación IA
+   ├─ Priorizar correcciones según diagnóstico auditor
+   └─ Generar recomendación final
+
+4. lm-studio-connector muestra:
+   "📊 DIAGNÓSTICO COLABORATIVO: IHQ250980
+
+   🔍 HALLAZGOS DEL AUDITOR:
+   ├─ Precisión REAL: 66.7% (vs 100% reportado)
+   ├─ Errores detectados: 3
+   │   ├─ IHQ_Ki67: VACIO (debería ser '20%')
+   │   ├─ DIAGNOSTICO_PRINCIPAL: Contaminación detectada
+   │   └─ FACTOR_PRONOSTICO: Cobertura 75% (falta Ki-67)
+   └─ Sugerencias: 3 correcciones propuestas
+
+   🤖 VALIDACIÓN IA CON CONTEXTO:
+   ├─ IHQ_Ki67: "20%" (confianza: 0.95)
+   │   Contexto auditor: línea 45 del PDF
+   ├─ DIAGNOSTICO_PRINCIPAL: "CARCINOMA DUCTAL INVASIVO" (confianza: 0.92)
+   │   Contexto auditor: Eliminar 'GRADO NOTTINGHAM 2'
+   └─ FACTOR_PRONOSTICO: Agregar "Ki-67: 20%" (confianza: 0.93)
+
+   💡 RECOMENDACIÓN FINAL:
+   1. Aplicar 3 correcciones IA (alta confianza)
+   2. Auditor validará post-corrección
+   3. Mejorar extractor Ki-67 (búsqueda multi-sección)
+
+   💾 Reporte: herramientas_ia/resultados/diagnostico_colaborativo_IHQ250980.md"
+
+5. Claude pregunta: "¿Aplicar correcciones IA (confianza ≥ 0.90)?"
+```
+
+### WORKFLOW 10: Validación IA Informada por Auditoría (NUEVO)
+
+```
+1. Usuario: "Valida IHQ251029 con IA, pero usa el contexto del auditor"
+
+2. Claude verifica que auditoría existe:
+   ├─ Busca: auditoria_inteligente_IHQ251029.json
+   └─ Si NO existe: Ejecutar data-auditor primero
+
+3. Claude invoca: lm-studio-connector --validar-caso IHQ251029 --con-contexto-auditor --dry-run
+
+4. lm-studio-connector ejecuta:
+
+   a. Carga reporte del auditor:
+      ├─ Campos detectados como incorrectos
+      ├─ Ubicaciones exactas en PDF
+      └─ Diagnósticos de errores
+
+   b. Para cada campo VACIO o INCORRECTO (según auditor):
+      ├─ Lee ubicación exacta del auditor
+      ├─ Envía contexto preciso a IA
+      ├─ Obtiene corrección con evidencia
+      └─ Valida que corrección cumple reglas anti-contaminación
+
+   c. Compara correcciones IA vs sugerencias auditor:
+      ├─ Si coinciden: Alta confianza (0.95+)
+      ├─ Si difieren: Marcar para revisión manual
+      └─ Si IA no corrige lo que auditor detectó: Advertencia
+
+5. lm-studio-connector muestra reporte:
+   "✅ Validación IA con contexto del auditor
+
+   📊 CONCORDANCIA AUDITOR ↔ IA:
+   ├─ 3 errores detectados por auditor
+   ├─ 3 correcciones propuestas por IA
+   └─ Concordancia: 100% (3/3 coinciden)
+
+   🎯 CORRECCIONES VALIDADAS:
+   1. IHQ_Ki67: 'NO REPORTADO' → '20%'
+      ├─ Auditor: Detectó vacío, ubicación línea 45
+      ├─ IA: Extrajo '20%' con confianza 0.96
+      └─ ✅ Concordancia: SÍ
+
+   2. DIAGNOSTICO_PRINCIPAL: Contaminación detectada
+      ├─ Auditor: Detectó 'GRADO NOTTINGHAM 2' erróneo
+      ├─ IA: Limpia a 'CARCINOMA DUCTAL INVASIVO'
+      └─ ✅ Concordancia: SÍ"
+```
+
+### WORKFLOW 11: Corrección de Prompts Basada en Errores Sistemáticos (NUEVO)
+
+```
+1. Usuario: "Analiza últimas 20 auditorías y mejora prompts basándote en errores sistemáticos"
+
+2. Claude invoca: lm-studio-connector --analizar-auditorias --ultimos 20
+
+3. lm-studio-connector ejecuta:
+
+   a. Lee últimos 20 reportes del auditor:
+      ├─ auditoria_inteligente_IHQ*.json (20 archivos)
+      └─ Extrae errores de todos los casos
+
+   b. Analiza patrones de error:
+      ├─ Errores más frecuentes (por campo)
+      ├─ Tipos de error (VACIO, CONTAMINACION, INCORRECTO)
+      ├─ Causas raíz (según diagnósticos del auditor)
+      └─ Biomarcadores problemáticos
+
+   c. Identifica gaps en prompts actuales:
+      ├─ Lee core/prompts/system_prompt_comun.txt
+      ├─ Busca si prompts mencionan campos problemáticos
+      ├─ Detecta ausencia de ejemplos específicos
+      └─ Identifica contradicciones
+
+   d. Genera recomendaciones de mejora:
+      ├─ Agregar ejemplos de biomarcadores problemáticos
+      ├─ Reforzar reglas anti-contaminación
+      ├─ Agregar instrucciones de búsqueda multi-sección
+      └─ Mejorar especificidad de DIAGNOSTICO_COLORACION
+
+4. lm-studio-connector muestra:
+   "📊 ANÁLISIS DE 20 AUDITORÍAS
+
+   🔍 ERRORES SISTEMÁTICOS DETECTADOS:
+
+   1. Ki-67 vacío (12/20 casos, 60%)
+      Causa raíz (según auditor): Extractor solo busca en DESCRIPCION_MICROSCOPICA
+      Gap en prompt: NO menciona búsqueda multi-sección
+
+   2. DIAGNOSTICO_PRINCIPAL contaminado (5/20 casos, 25%)
+      Causa raíz: IA incluye Nottingham erróneamente
+      Gap en prompt: Ejemplos de anti-contaminación insuficientes
+
+   3. FACTOR_PRONOSTICO con Study M (3/20 casos, 15%)
+      Causa raíz: IA no distingue Study M vs IHQ
+      Gap en prompt: NO explica diferencia Study M/IHQ
+
+   💡 RECOMENDACIONES DE MEJORA:
+
+   1. Agregar a system_prompt_comun.txt:
+      ✅ Sección "BÚSQUEDA MULTI-SECCIÓN DE BIOMARCADORES"
+      ✅ Ejemplos concretos de Ki-67 en COMENTARIOS
+      ✅ Regla: Prioridad DESCRIPCION_MICROSCOPICA > DIAGNOSTICO > COMENTARIOS
+
+   2. Agregar a system_prompt_comun.txt:
+      ✅ Sección "DIFERENCIA STUDY M (COLORACIÓN) vs IHQ"
+      ✅ Ejemplo correcto de DIAGNOSTICO_PRINCIPAL (sin Nottingham)
+      ✅ Ejemplo INCORRECTO de contaminación (con Nottingham)
+
+   3. Agregar a system_prompt_comun.txt:
+      ✅ Sección "ANTI-CONTAMINACIÓN EN FACTOR_PRONOSTICO"
+      ✅ Lista de keywords prohibidos (NOTTINGHAM, GRADO, INVASIÓN)
+      ✅ Validación: Si detectas keyword prohibido, NO lo incluyas
+
+   🧪 SIMULACIÓN DE MEJORAS (opcional):
+   ¿Quieres simular mejoras en prompts con casos problemáticos antes de aplicar?"
+
+5. Usuario: "Sí, simula con IHQ251029"
+
+6. lm-studio-connector simula:
+   ├─ Crea prompt mejorado (en memoria)
+   ├─ Prueba con caso IHQ251029
+   ├─ Compara resultados: Prompt actual vs Mejorado
+   └─ Muestra diferencias
+
+7. Usuario aprueba: "Aplica mejoras"
+
+8. lm-studio-connector aplica:
+   ├─ Backup de prompts en backups/
+   ├─ Edita system_prompt_comun.txt
+   ├─ Genera reporte de cambios
+   └─ Valida sintaxis
+```
+
+---
+
 ## 📊 Resumen de Capacidades Actualizadas
 
-### ✅ FUNCIONALIDADES IMPLEMENTADAS (10 categorías):
+### ✅ FUNCIONALIDADES IMPLEMENTADAS (13 categorías - 3 NUEVAS):
 
 1. **Verificación y Diagnóstico de LM Studio**
    - Estado completo del sistema IA
@@ -1354,12 +1902,12 @@ python herramientas_ia/gestor_ia_lm_studio.py --editar-prompt system_prompt_comu
 
 ---
 
-**Versión**: 2.1.0 (actualizada con 4 nuevas funcionalidades)
-**Última actualización**: 2025-10-21
-**Herramienta**: gestor_ia_lm_studio.py (~2325 líneas)
+**Versión**: 3.0.0 EXPERTO (actualizada con conocimiento completo del sistema + integración auditor)
+**Última actualización**: 2025-10-22
+**Herramienta**: gestor_ia_lm_studio.py (~2800 líneas estimadas tras FASE 2.6)
 **Modelo IA**: gpt-oss-20b (MXFP4.gguf)
-**Capacidades**: 10 categorías (4 nuevas: Análisis Completitud, Diagnóstico Fallos, Experimentación Modelos, Sugerencia Modelo)
+**Capacidades**: 13 categorías (3 NUEVAS: Conocimiento Sistema, Integración Auditor, Diagnóstico Colaborativo)
 **Archivos gestionados**: core/prompts/*.txt, core/llm_client.py, core/procesamiento_con_ia.py, core/auditoria_ia.py
 **Backups**: backups/ (raíz del proyecto)
-**Reportes**: herramientas_ia/resultados/ (8 tipos de reportes)
-**Workflows**: 7 workflows maestros documentados
+**Reportes**: herramientas_ia/resultados/ (10 tipos de reportes - 2 nuevos)
+**Workflows**: 11 workflows maestros documentados (3 nuevos workflows colaborativos)

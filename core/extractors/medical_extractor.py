@@ -264,141 +264,314 @@ def clean_diagnostico_multipage(diagnostico_text: str) -> str:
     return diagnostico_text
 
 
-def extract_factor_pronostico(diagnostico_completo: str) -> str:
-    """Extrae el factor pronóstico del diagnóstico completo.
+def extract_diagnostico_coloracion(text: str) -> str:
+    """Extrae el diagnóstico completo del Estudio M (Coloración) con detección semántica.
 
-    PRIORIDAD v4.2: Buscar SIEMPRE Ki-67 y p53 en todo el texto, ya que son los
-    marcadores de proliferación celular más importantes en oncología.
+    NUEVO v6.1.0 - Diagnóstico del Estudio M (Coloración)
+
+    Este diagnóstico incluye información del estudio de patología general (NO IHQ):
+    - Diagnóstico base histológico (ej: CARCINOMA DUCTAL INVASIVO)
+    - Grado Nottingham (ej: GRADO NOTTINGHAM 2)
+    - Invasión linfovascular (ej: INVASIÓN LINFOVASCULAR: NEGATIVO)
+    - Invasión perineural (ej: INVASIÓN PERINEURAL: NEGATIVO)
+    - Carcinoma ductal in situ (ej: CARCINOMA DUCTAL IN SITU: NO)
+
+    A diferencia de DIAGNOSTICO_PRINCIPAL (que es la confirmación del IHQ),
+    este campo captura el diagnóstico completo del estudio de coloración inicial.
+
+    Detección semántica: busca keywords (NOTTINGHAM, GRADO, INVASIÓN) para identificar
+    el diagnóstico correcto, NO se basa en posición.
 
     Args:
-        diagnostico_completo: Texto completo del informe (no solo diagnóstico)
+        text: Texto completo del informe IHQ
 
     Returns:
-        Factor pronóstico extraído
+        str: Diagnóstico completo del Estudio M o cadena vacía
+
+    Ejemplo de salida:
+        "CARCINOMA DUCTAL INVASIVO, GRADO NOTTINGHAM 2 (SCORE 7), INVASIÓN LINFOVASCULAR: NEGATIVO, INVASIÓN PERINEURAL: NEGATIVO, CARCINOMA DUCTAL IN SITU: NO"
+    """
+    if not text:
+        return ''
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 1: Buscar en DESCRIPCIÓN MACROSCÓPICA
+    # ═══════════════════════════════════════════════════════════════════════════
+    # El diagnóstico del Estudio M (Coloración) suele aparecer citado aquí
+
+    # Patrón: buscar texto entre comillas después de "diagnóstico de" o similar
+    patron_citado = r'diagn[óo]stico\s+de?\s*["\']([^"\']+)["\']'
+    match_citado = re.search(patron_citado, text, re.IGNORECASE)
+
+    if match_citado:
+        diagnostico_candidato = match_citado.group(1).strip()
+
+        # Validar que contiene keywords del Estudio M
+        keywords_estudio_m = ['NOTTINGHAM', 'GRADO', 'INVASIÓN', 'INVASIVO', 'CARCINOMA']
+        tiene_keywords = any(kw in diagnostico_candidato.upper() for kw in keywords_estudio_m)
+
+        if tiene_keywords:
+            return diagnostico_candidato
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 2: Buscar en la sección DIAGNÓSTICO
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Si no está en DESC. MACROSCÓPICA, buscar líneas con keywords en DIAGNÓSTICO
+
+    patron_diagnostico = r'DIAGN[ÓO]STICO\s*\n(.*?)(?=\n\s*[A-Z]{3,}:|\Z)'
+    match_diagnostico = re.search(patron_diagnostico, text, re.DOTALL | re.IGNORECASE)
+
+    if match_diagnostico:
+        texto_diagnostico = match_diagnostico.group(1).strip()
+        lineas = texto_diagnostico.split('\n')
+
+        # Buscar líneas que contengan keywords del Estudio M
+        candidatos = []
+        keywords_estudio_m = ['NOTTINGHAM', 'GRADO', 'INVASIÓN LINFOVASCULAR', 'INVASIÓN PERINEURAL',
+                              'CARCINOMA DUCTAL IN SITU', 'CARCINOMA IN SITU']
+
+        for linea in lineas:
+            linea_limpia = linea.strip().lstrip('- ').strip()
+
+            # Ignorar líneas cortas o que son biomarcadores IHQ
+            if len(linea_limpia) < 15:
+                continue
+
+            es_biomarcador = re.search(r'(RECEPTOR|HER|KI-67|P53|TTF|CK\d+|CD\d+)\s*[:\s]+(POSITIVO|NEGATIVO|\d+%)',
+                                       linea_limpia, re.IGNORECASE)
+            if es_biomarcador:
+                continue
+
+            # Verificar si tiene keywords del Estudio M
+            tiene_keywords = any(kw in linea_limpia.upper() for kw in keywords_estudio_m)
+
+            if tiene_keywords:
+                candidatos.append(linea_limpia)
+
+        # Concatenar todas las líneas candidatas (el diagnóstico puede ser multilinea)
+        if candidatos:
+            return ' '.join(candidatos)
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 3: Buscar patrones específicos en todo el texto
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    # Patrón 1: CARCINOMA ... GRADO NOTTINGHAM ... INVASIÓN ...
+    patron_completo = r'((?:CARCINOMA|ADENOCARCINOMA)[^.\n]*?NOTTINGHAM[^.\n]*?INVASI[ÓO]N[^.]+\.)'
+    match_completo = re.search(patron_completo, text, re.IGNORECASE | re.DOTALL)
+
+    if match_completo:
+        return match_completo.group(1).strip()
+
+    # Patrón 2: Buscar componentes individuales y concatenar
+    componentes = {}
+
+    # Diagnóstico base
+    patron_base = r'((?:CARCINOMA|ADENOCARCINOMA)[A-ZÁÉÍÓÚÑ\s]+?(?:INVASIVO|INFILTRANTE|IN SITU))'
+    match_base = re.search(patron_base, text, re.IGNORECASE)
+    if match_base:
+        componentes['base'] = match_base.group(1).strip()
+
+    # Grado Nottingham
+    patron_nottingham = r'(GRADO\s+NOTTINGHAM\s+\d+(?:\s*\(SCORE\s+\d+\))?)'
+    match_nottingham = re.search(patron_nottingham, text, re.IGNORECASE)
+    if match_nottingham:
+        componentes['nottingham'] = match_nottingham.group(1).strip()
+
+    # Invasión linfovascular
+    patron_linfovascular = r'(INVASI[ÓO]N\s+LINFOVASCULAR\s*[:\s]+(NEGATIVO|POSITIVO|NO|SI))'
+    match_linfovascular = re.search(patron_linfovascular, text, re.IGNORECASE)
+    if match_linfovascular:
+        componentes['linfovascular'] = match_linfovascular.group(1).strip()
+
+    # Invasión perineural
+    patron_perineural = r'(INVASI[ÓO]N\s+PERINEURAL\s*[:\s]+(NEGATIVO|POSITIVO|NO|SI))'
+    match_perineural = re.search(patron_perineural, text, re.IGNORECASE)
+    if match_perineural:
+        componentes['perineural'] = match_perineural.group(1).strip()
+
+    # Carcinoma in situ
+    patron_in_situ = r'(CARCINOMA\s+(?:DUCTAL\s+)?IN\s+SITU\s*[:\s]+(NO|SI|NEGATIVO|POSITIVO))'
+    match_in_situ = re.search(patron_in_situ, text, re.IGNORECASE)
+    if match_in_situ:
+        componentes['in_situ'] = match_in_situ.group(1).strip()
+
+    # Concatenar componentes en orden lógico
+    if componentes:
+        orden = ['base', 'nottingham', 'linfovascular', 'perineural', 'in_situ']
+        partes = [componentes[k] for k in orden if k in componentes]
+        return ', '.join(partes)
+
+    # Si no se encontró nada, retornar vacío
+    return ''
+
+
+def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitados: str = "") -> str:
+    """Extrae factor pronóstico de biomarcadores de IHQ ÚNICAMENTE.
+
+    CORRECCIÓN CRÍTICA v6.0.2:
+    Este extractor fue corregido para extraer SOLO biomarcadores de inmunohistoquímica (IHQ).
+
+    NO extrae información del estudio M (patología general):
+    - NO extrae: Grado Nottingham (es del estudio M)
+    - NO extrae: Invasión linfovascular (es del estudio M)
+    - NO extrae: Invasión perineural (es del estudio M)
+    - NO extrae: Carcinoma ductal in situ (es del estudio M)
+
+    SÍ extrae biomarcadores de IHQ:
+    - ER, PR, HER2, Ki-67, p53
+    - TTF-1, CK7, CK20, p40, p16
+    - Sinaptofisina, Cromogranina A, CD56
+    - Napsina A, CDX2
+    - Y otros biomarcadores específicos de IHQ
+
+    Prioridades de búsqueda:
+    1. Biomarcadores específicos (ER, PR, HER2, Ki-67, p53, TTF-1, CK7, etc.)
+    2. Líneas de inmunorreactividad (si no hay biomarcadores específicos)
+    3. Ki-67 genérico (si no hay nada más)
+
+    Args:
+        diagnostico_completo: Texto completo del informe (incluye DESCRIPCIÓN MICROSCÓPICA y DIAGNÓSTICO)
+        ihq_estudios_solicitados: Lista de biomarcadores solicitados (opcional)
+
+    Returns:
+        Factor pronóstico concatenado con " / " o cadena vacía
     """
     if not diagnostico_completo:
         return ''
 
-    factores_encontrados = []
+    factores = []
 
     # ═══════════════════════════════════════════════════════════════════════
-    # PRIORIDAD 1: Ki-67 / Ki67 (índice de proliferación celular)
+    # PRIORIDAD 1: Biomarcadores específicos de IHQ
     # ═══════════════════════════════════════════════════════════════════════
-    # Buscar patrones como:
-    # - "ÍNDICE DE PROLIFERACIÓN CELULAR MEDIDO CON Ki 67: 8%"
-    # - "Ki-67: 15%"
-    # - "Ki67 positivo"
 
-    # CORREGIDO v4.2.5: Patrones más específicos para evitar capturar porcentajes de otros campos
-    # BUG FIX: Evitar capturar "10%" de "Diferenciación glandular = 3 (Menor del 10%)"
-    ki67_patterns = [
-        # Patrón 1: Índice completo con valor inmediatamente después
-        r'[ÍI]NDICE\s+DE\s+PROLIFERACI[ÓO]N\s+C[ÉE]LULAR\s+(?:MEDIDO\s+CON\s+)?(?:\()?Ki[\s-]?67(?:\))?\s*[:\s]+([0-9]+)\s*%',
-
-        # Patrón 2: "Ki67 DEL X%" (formato de diagnóstico)
-        r'Ki[\s-]?67\s+DEL\s+([0-9]+)\s*%',
-
-        # Patrón 3: Ki67 directo con valor (requiere dos puntos o espacio inmediato)
-        r'Ki[\s-]?67\s*[:\s]+([0-9]+)\s*%',
-
-        # Patrón 4: Cualitativo (sin porcentaje)
-        r'Ki[\s-]?67\s*[:\s]+(POSITIVO|NEGATIVO|ALTO|BAJO|<\s*\d+\s*%)',
+    # V6.0.3: LISTA ORDENADA de biomarcadores (orden de impresión garantizado)
+    # Orden: Ki-67 → HER2 → Receptor Estrógeno → Receptor Progesterona → resto
+    biomarcadores_ordenados = [
+        ('Ki-67', [
+            r'Ki[\s-]?67\s*[:\s]+[0-9]+(?:-[0-9]+)?%',  # Ki-67: 51-60%
+            r'Ki[\s-]?67\s+DEL\s+[0-9]+\s*%',           # Ki-67 DEL 2%
+            r'[ÍI]NDICE\s+DE\s+PROLIFERACI[ÓO]N\s+C[ÉE]LULAR\s+(?:MEDIDO\s+CON\s+)?(?:\()?Ki[\s-]?67(?:\))?\s*[:\s]+[0-9]+(?:-[0-9]+)?\s*%',
+            r'Ki[\s-]?67\s*[:\s]+(POSITIVO|NEGATIVO|ALTO|BAJO)',
+        ]),
+        ('HER2', [
+            r'HER[\s-]?2\s*[:\s]+[^.\n]+',
+        ]),
+        ('Receptor de Estrógeno', [
+            r'RECEPTOR(?:ES)?\s+DE\s+ESTR[ÓO]GENO[S]?\s*[:\s]+[^.\n]+',
+            r'RE\s*[:\s]+[^.\n]+',
+            r'ER\s*[:\s]+[^.\n]+',
+        ]),
+        ('Receptor de Progesterona', [
+            r'RECEPTOR(?:ES)?\s+DE\s+PROGESTERONA\s*[:\s]+[^.\n]+',
+            r'RP\s*[:\s]+[^.\n]+',
+            r'PR\s*[:\s]+[^.\n]+',
+        ]),
+        ('p53', [
+            r'p53\s+tiene\s+expresi[ÓO]n[^.\n]+',
+            r'p53\s*[:\s]+[^.\n]+',
+        ]),
+        ('TTF-1', [
+            r'TTF[\s-]?1\s*[:\s]+[^.\n]+',
+        ]),
+        ('CK7', [
+            r'CK7\s*[:\s]+[^.\n]+',
+        ]),
+        ('CK20', [
+            r'CK20\s*[:\s]+[^.\n]+',
+        ]),
+        ('p40', [
+            r'p40\s+(POSITIVO|NEGATIVO|FOCAL|DIFUSO)',
+        ]),
+        ('p16', [
+            r'p16\s+(POSITIVO|NEGATIVO)',
+        ]),
+        ('Sinaptofisina', [
+            r'(?:Sinaptofisina|Synaptophysin)\s*[:\s]+[^.\n]+',
+        ]),
+        ('Cromogranina A', [
+            r'Cromogranina\s*(?:A)?\s*[:\s]+[^.\n]+',
+        ]),
+        ('CD56', [
+            r'CD56\s*[:\s]+[^.\n]+',
+        ]),
+        ('Napsina A', [
+            r'Napsina\s+A\s*[:\s]+[^.\n]+',
+        ]),
+        ('CDX2', [
+            r'CDX2\s*[:\s]+[^.\n]+',
+        ]),
+        ('CKAE1/AE3', [
+            r'(?:CKAE1/AE3|CK\s*AE1\s*/\s*AE3)\s*[:\s]+[^.\n]+',
+        ]),
     ]
 
-    for pattern in ki67_patterns:
-        match = re.search(pattern, diagnostico_completo, re.IGNORECASE)
-        if match:
-            # VALIDACIÓN ADICIONAL: Verificar que NO estemos en contexto de diferenciación glandular
-            match_start = match.start()
-            context_before = diagnostico_completo[max(0, match_start - 150):match_start].upper()
+    # Buscar cada biomarcador en el texto (en orden)
+    for nombre_bio, patrones in biomarcadores_ordenados:
+        for patron in patrones:
+            match = re.search(patron, diagnostico_completo, re.IGNORECASE)
+            if match:
+                # Extraer valor completo del match
+                valor = match.group(0).strip()
 
-            # Si "DIFERENCIACIÓN" o "GLANDULAR" aparecen en los 150 caracteres previos, descartar
-            if 'DIFERENCIACI' in context_before and 'GLANDULAR' in context_before:
-                continue
+                # Validar que NO sea del contexto de Grado Nottingham o invasiones (estudio M)
+                match_start = match.start()
+                context_before = diagnostico_completo[max(0, match_start - 100):match_start].upper()
 
-            # Si encontramos "MENOR DEL" justo antes del porcentaje, también descartar
-            if 'MENOR DEL' in context_before[-30:]:
-                continue
+                # Ignorar si está en contexto de patología general (estudio M)
+                if any(keyword in context_before for keyword in ['NOTTINGHAM', 'INVASIÓN LINFOVASCULAR', 'INVASIÓN PERINEURAL']):
+                    continue
 
-            ki67_text = match.group(0).strip()
-            # Limpiar y normalizar
-            ki67_text = re.sub(r'\s+', ' ', ki67_text)
-            factores_encontrados.append(ki67_text)
-            break
+                # Limpiar valor (remover saltos de línea innecesarios)
+                valor = re.sub(r'\s+', ' ', valor).strip()
 
-    # ═══════════════════════════════════════════════════════════════════════
-    # PRIORIDAD 2: p53 (supresor tumoral)
-    # ═══════════════════════════════════════════════════════════════════════
-    # Buscar patrones como:
-    # - "p53 tiene expresión en mosaico (no mutado)"
-    # - "p53 positivo"
-    # - "p53: negativo"
-
-    p53_patterns = [
-        r'p53\s+tiene\s+expresi[ÓO]n[^.\n]+\([^)]+\)',  # "p53 tiene expresión en mosaico (no mutado)"
-        r'p53\s*[:]\s*[^.\n]+',  # "p53: negativo"
-        r'p53\s+(POSITIVO|NEGATIVO|MUTADO|NO\s+MUTADO)[^.\n]*',
-    ]
-
-    for pattern in p53_patterns:
-        match = re.search(pattern, diagnostico_completo, re.IGNORECASE)
-        if match:
-            p53_text = match.group(0).strip()
-            # Limpiar y normalizar
-            p53_text = re.sub(r'\s+', ' ', p53_text)
-            factores_encontrados.append(p53_text)
-            break
+                # Agregar a factores si no está duplicado
+                if valor not in factores:
+                    factores.append(valor)
+                break
 
     # ═══════════════════════════════════════════════════════════════════════
-    # PRIORIDAD 3: Líneas de inmunorreactividad en descripción microscópica
+    # PRIORIDAD 2: Líneas de inmunorreactividad (si no hay biomarcadores específicos)
     # ═══════════════════════════════════════════════════════════════════════
-    # Buscar patrones como:
-    # - "Las células tumorales presentan inmunorreactividad fuerte y difusa para TTF-1 y CK7"
-    # - "Los marcadores, napsina A, p40 y CK20 son negativos"
 
-    inmuno_patterns = [
-        r'Las\s+c[ée]lulas\s+tumorales\s+presentan\s+inmuno[^\n.]+\.',  # Línea de inmunorreactividad positiva
-        r'Los\s+marcadores[^\n.]+(?:negativos?|positivos?)\.',  # Línea de marcadores negativos/positivos
-    ]
+    if not factores:
+        inmuno_patterns = [
+            r'Las\s+c[ée]lulas\s+tumorales\s+presentan\s+inmuno[^\n.]+\.',
+            r'Los\s+marcadores[^\n.]+(?:negativos?|positivos?)\.',
+        ]
 
-    for pattern in inmuno_patterns:
-        match = re.search(pattern, diagnostico_completo, re.IGNORECASE)
-        if match:
-            inmuno_text = match.group(0).strip()
-            # Limpiar y normalizar
-            inmuno_text = re.sub(r'\s+', ' ', inmuno_text)
-            # Solo agregar si no duplica información ya capturada
-            if inmuno_text.lower() not in ' '.join(factores_encontrados).lower():
-                factores_encontrados.append(inmuno_text)
+        for patron in inmuno_patterns:
+            match = re.search(patron, diagnostico_completo, re.IGNORECASE)
+            if match:
+                inmuno_text = match.group(0).strip()
+                inmuno_text = re.sub(r'\s+', ' ', inmuno_text)
+                factores.append(inmuno_text)
+                break
 
     # ═══════════════════════════════════════════════════════════════════════
-    # PRIORIDAD 4: Otros biomarcadores en diagnóstico principal
+    # PRIORIDAD 3: Otros biomarcadores en última línea del diagnóstico
     # ═══════════════════════════════════════════════════════════════════════
-    # Buscar en última línea del diagnóstico (formato: "- TUMOR... p40 POSITIVO / p16 POSITIVO")
-    # Ignorar líneas que son separadores de página ("---")
-    diag_lines = [line.strip() for line in diagnostico_completo.split('\n')
-                  if line.strip().startswith('-') and not line.strip().startswith('---')]
+    # Formato: "- TUMOR... p40 POSITIVO / p16 POSITIVO"
 
-    if diag_lines:
-        last_diag_line = diag_lines[-1]
-        marker_pattern = r'(?:CARCINOMA|ADENOCARCINOMA|SARCOMA|MELANOMA|LINFOMA|TUMOR|NEOPLASIA)\s+[A-ZÁÉÍÓÚÑ\s]+?\s+((?:[a-zA-Z0-9\-]+\s+(?:POSITIVO|NEGATIVO|FOCAL|DIFUSO)[/\s]*)+)'
-        marker_match = re.search(marker_pattern, last_diag_line, re.IGNORECASE)
+    if not factores:
+        diag_lines = [line.strip() for line in diagnostico_completo.split('\n')
+                      if line.strip().startswith('-') and not line.strip().startswith('---')]
 
-        if marker_match:
-            otros_marcadores = marker_match.group(1).strip()
-            # Solo agregar si no duplica información ya capturada
-            if otros_marcadores.lower() not in ' '.join(factores_encontrados).lower():
-                factores_encontrados.append(otros_marcadores)
+        if diag_lines:
+            last_diag_line = diag_lines[-1]
+            marker_pattern = r'(?:CARCINOMA|ADENOCARCINOMA|SARCOMA|MELANOMA|LINFOMA|TUMOR|NEOPLASIA)\s+[A-ZÁÉÍÓÚÑ\s]+?\s+((?:[a-zA-Z0-9\-]+\s+(?:POSITIVO|NEGATIVO|FOCAL|DIFUSO)[/\s]*)+)'
+            marker_match = re.search(marker_pattern, last_diag_line, re.IGNORECASE)
+
+            if marker_match:
+                otros_marcadores = marker_match.group(1).strip()
+                factores.append(otros_marcadores)
 
     # ═══════════════════════════════════════════════════════════════════════
     # RETORNAR
     # ═══════════════════════════════════════════════════════════════════════
 
-    if factores_encontrados:
-        # Unir todos los factores encontrados con " / "
-        return ' / '.join(factores_encontrados)
-
-    return ''
+    return ' / '.join(factores) if factores else ''
 
 
 def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
@@ -1052,6 +1225,11 @@ def extract_medical_data(text: str) -> Dict[str, Any]:
     factor_pronostico = extract_factor_pronostico(clean_text)
     if factor_pronostico:
         results['factor_pronostico'] = factor_pronostico
+
+    # NUEVO v6.1.0: Extraer diagnóstico del Estudio M (Coloración) con Nottingham
+    diagnostico_coloracion = extract_diagnostico_coloracion(clean_text)
+    if diagnostico_coloracion:
+        results['diagnostico_coloracion'] = diagnostico_coloracion
 
     # Especialidad deducida
     servicio = extract_service_info(clean_text)

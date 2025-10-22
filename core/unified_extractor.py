@@ -302,6 +302,7 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'estudios_solicitados_tabla': medical_data.get('estudios_solicitados', ''),  # Biomarcadores de tabla PDF (fallback)
                 'procedimiento': patient_data.get('procedimiento', '') if patient_data else '',  # Nuevo campo
                 'factor_pronostico': medical_data.get('factor_pronostico', ''),  # AGREGADO
+                'diagnostico_coloracion': medical_data.get('diagnostico_coloracion', ''),  # v6.1.0: NUEVO - Diagnóstico Estudio M
                 'comentarios': medical_data.get('comentarios', ''),  # V5.1.2: NUEVO - Comentarios extraídos
             })
             
@@ -315,6 +316,7 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
             combined_data['Fecha de toma (1. Fecha de la toma)'] = medical_data.get('fecha_toma', '')
             combined_data['Patologo'] = medical_data.get('responsable_final', '')
             combined_data['Factor pronostico'] = medical_data.get('factor_pronostico', '')
+            combined_data['Diagnostico Coloracion'] = medical_data.get('diagnostico_coloracion', '')  # v6.1.0: NUEVO
             # V5.2 FIX: NO pre-llenar IHQ_ESTUDIOS_SOLICITADOS aquí
             # Se construirá automáticamente en map_to_database_format() desde columnas con datos
             # combined_data['IHQ_ESTUDIOS_SOLICITADOS'] = medical_data.get('estudios_solicitados', '')
@@ -909,6 +911,9 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
     # Ejemplo: "Mama. Biopsia. - CARCINOMA INVASIVO -" → "CARCINOMA INVASIVO"
     diagnostico_principal = extract_diagnostico_principal(diagnostico_completo)
     db_record["Diagnostico Principal"] = diagnostico_principal if diagnostico_principal else 'N/A'
+
+    # v6.1.0: NUEVO - Diagnóstico del Estudio M (Coloración) con Nottingham
+    db_record["Diagnostico Coloracion"] = extracted_data.get('diagnostico_coloracion', 'N/A') or extracted_data.get('Diagnostico Coloracion', 'N/A')
 
     # v5.3.5: CORREGIDO - Usar nombres de columnas simplificados
     db_record["Descripcion microscopica"] = extracted_data.get('Descripcion microscopica', 'N/A')

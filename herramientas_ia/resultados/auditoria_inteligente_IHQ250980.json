@@ -1,0 +1,163 @@
+{
+  "numero_caso": "IHQ250980",
+  "timestamp": "2025-10-22T07:02:11.879676",
+  "nivel": "profundo",
+  "detecciones": {
+    "diagnostico_coloracion": {
+      "diagnostico_encontrado": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). NOTTINGHAM GRADO 2 (PUNTAJE\nDE 6). CARCINOMA DUCTAL IN SITU NO IDENTIFICADO. INVASIÓN LINFOVASCULAR PRESENTE. INVASIÓN\nPERINEURAL NO IDENTIFICADA.",
+      "ubicacion": "Descripción Macroscópica",
+      "componentes": {
+        "diagnostico_base": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+        "grado_nottingham": "GRADO 2 (PUNTAJE 6)",
+        "invasion_linfovascular": "PRESENTE",
+        "invasion_perineural": "NO IDENTIFICADA",
+        "carcinoma_in_situ": "NO IDENTIFICADO"
+      },
+      "confianza": 0.9999999999999999,
+      "biomarcadores_solicitados": [
+        "receptores\nde estrógeno",
+        "receptores de progesterona",
+        "ki67",
+        "HER2"
+      ]
+    },
+    "diagnostico_principal": {
+      "diagnostico_encontrado": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+      "ubicacion": "Diagnóstico",
+      "linea_numero": 2,
+      "confianza": 0.9999999999999999
+    },
+    "biomarcadores_ihq": {
+      "biomarcadores_encontrados": [
+        {
+          "nombre": "Ki-67",
+          "valor": "Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody",
+          "ubicacion": "Descripción Microscópica"
+        },
+        {
+          "nombre": "HER2",
+          "valor": "HER 2: NEGATIVO (Score 1+)",
+          "ubicacion": "Descripción Microscópica"
+        },
+        {
+          "nombre": "Receptor de Estrógeno",
+          "valor": "RECEPTOR DE ESTROGENOS: POSITIVO FUERTE 3+(80-90%)",
+          "ubicacion": "Descripción Microscópica"
+        },
+        {
+          "nombre": "Receptor de Progesterona",
+          "valor": "RECEPTORES DE PROGESTERONA POSITIVO MODERADO 80-90%",
+          "ubicacion": "Diagnóstico"
+        }
+      ],
+      "ubicaciones": {
+        "Ki-67": "Descripción Microscópica",
+        "HER2": "Descripción Microscópica",
+        "Receptor de Estrógeno": "Descripción Microscópica",
+        "Receptor de Progesterona": "Diagnóstico"
+      },
+      "confianza_global": 1.0
+    },
+    "biomarcadores_solicitados": {
+      "biomarcadores_solicitados": [
+        "receptores de estrógeno",
+        "receptores de progesterona",
+        "ki67",
+        "HER2"
+      ],
+      "formato": "se solicita",
+      "ubicacion": "Descripción Macroscópica"
+    }
+  },
+  "validaciones": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor_bd": null,
+      "valor_esperado_pdf": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). NOTTINGHAM GRADO 2 (PUNTAJE\nDE 6). CARCINOMA DUCTAL IN SITU NO IDENTIFICADO. INVASIÓN LINFOVASCULAR PRESENTE. INVASIÓN\nPERINEURAL NO IDENTIFICADA.",
+      "componentes_pdf": {
+        "diagnostico_base": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+        "grado_nottingham": "GRADO 2 (PUNTAJE 6)",
+        "invasion_linfovascular": "PRESENTE",
+        "invasion_perineural": "NO IDENTIFICADA",
+        "carcinoma_in_situ": "NO IDENTIFICADO"
+      },
+      "componentes_validos": [
+        "diagnostico_base",
+        "grado_nottingham",
+        "invasion_linfovascular",
+        "invasion_perineural",
+        "carcinoma_in_situ"
+      ],
+      "componentes_faltantes": [],
+      "confianza_deteccion": 0.9999999999999999,
+      "sugerencia": "Diagnóstico coloración detectado con 5/5 componentes. Crear columna DIAGNOSTICO_COLORACION en BD (FASE 2)."
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "valor_bd": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+      "valor_esperado": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+      "tiene_contaminacion": false,
+      "contaminacion_detectada": [],
+      "confianza_deteccion": 0.9999999999999999,
+      "linea_correcta_pdf": 2,
+      "sugerencia": "DIAGNOSTICO_PRINCIPAL correcto (línea 2 del DIAGNÓSTICO)"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor_bd": "Ki-67: 51-60% / HER 2: NEGATIVO (Score 1+) / RECEPTOR DE ESTROGENOS: POSITIVO FUERTE 3+(80-90%) / RECEPTORES DE PROGESTERONA POSITIVO MODERADO 80-90%",
+      "tiene_contaminacion": false,
+      "contaminacion_detectada": [],
+      "biomarcadores_pdf": [
+        {
+          "nombre": "Ki-67",
+          "valor": "Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody",
+          "ubicacion": "Descripción Microscópica"
+        },
+        {
+          "nombre": "HER2",
+          "valor": "HER 2: NEGATIVO (Score 1+)",
+          "ubicacion": "Descripción Microscópica"
+        },
+        {
+          "nombre": "Receptor de Estrógeno",
+          "valor": "RECEPTOR DE ESTROGENOS: POSITIVO FUERTE 3+(80-90%)",
+          "ubicacion": "Descripción Microscópica"
+        },
+        {
+          "nombre": "Receptor de Progesterona",
+          "valor": "RECEPTORES DE PROGESTERONA POSITIVO MODERADO 80-90%",
+          "ubicacion": "Diagnóstico"
+        }
+      ],
+      "biomarcadores_solicitados": [
+        "receptores de estrógeno",
+        "receptores de progesterona",
+        "ki67",
+        "HER2"
+      ],
+      "biomarcadores_en_bd": [
+        "Ki-67",
+        "HER2",
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona"
+      ],
+      "cobertura": 100.0,
+      "sugerencia": "FACTOR_PRONOSTICO con buena cobertura (100%)"
+    }
+  },
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "total_validaciones": 3,
+    "validaciones_ok": 3,
+    "validaciones_warning": 0,
+    "validaciones_error": 0,
+    "score_validacion": 100.0,
+    "total_biomarcadores_detectados": 4,
+    "total_biomarcadores_solicitados": 4
+  },
+  "resumen": {
+    "estado": "EXCELENTE",
+    "mensaje": "Todos los campos validados correctamente"
+  }
+}

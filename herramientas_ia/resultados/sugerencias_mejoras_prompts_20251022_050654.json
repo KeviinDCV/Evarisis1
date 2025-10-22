@@ -1,0 +1,178 @@
+{
+  "analisis_cobertura": {
+    "timestamp": "2025-10-22 05:06:54",
+    "prompts_analizados": [
+      {
+        "archivo": "system_prompt_comun.txt",
+        "existe": true,
+        "lineas": 144,
+        "conocimiento_presente": {
+          "study_m_vs_ihq": {
+            "descripcion": "Distinción entre Study M (Coloración) y Study IHQ",
+            "critico": true
+          },
+          "anti_contaminacion": {
+            "descripcion": "Reglas anti-contaminación Study M vs IHQ",
+            "critico": true
+          }
+        },
+        "conocimiento_ausente": {
+          "diagnostico_coloracion": {
+            "descripcion": "Campo DIAGNOSTICO_COLORACION con 5 componentes semánticos",
+            "critico": true,
+            "keywords_faltantes": [
+              "DIAGNOSTICO_COLORACION",
+              "Study M",
+              "Coloración",
+              "Nottingham"
+            ]
+          },
+          "busqueda_multiseccion": {
+            "descripcion": "Búsqueda multi-sección con prioridades",
+            "critico": false,
+            "keywords_faltantes": [
+              "DESCRIPCION_MICROSCOPICA",
+              "prioridad",
+              "multi-sección"
+            ]
+          },
+          "componentes_semanticos": {
+            "descripcion": "5 componentes semánticos de DIAGNOSTICO_COLORACION",
+            "critico": true,
+            "keywords_faltantes": [
+              "5 componentes",
+              "Grado Nottingham",
+              "invasión linfovascular"
+            ]
+          },
+          "deteccion_semantica": {
+            "descripcion": "Enfoque de detección por contenido médico",
+            "critico": false,
+            "keywords_faltantes": [
+              "detección semántica",
+              "contenido",
+              "keywords contextuales"
+            ]
+          }
+        },
+        "cobertura_porcentaje": 33.3
+      },
+      {
+        "archivo": "system_prompt_parcial.txt",
+        "existe": true,
+        "lineas": 41,
+        "conocimiento_presente": {
+          "study_m_vs_ihq": {
+            "descripcion": "Distinción entre Study M (Coloración) y Study IHQ",
+            "critico": true
+          },
+          "anti_contaminacion": {
+            "descripcion": "Reglas anti-contaminación Study M vs IHQ",
+            "critico": true
+          }
+        },
+        "conocimiento_ausente": {
+          "diagnostico_coloracion": {
+            "descripcion": "Campo DIAGNOSTICO_COLORACION con 5 componentes semánticos",
+            "critico": true,
+            "keywords_faltantes": [
+              "DIAGNOSTICO_COLORACION",
+              "Study M",
+              "Coloración",
+              "Nottingham"
+            ]
+          },
+          "busqueda_multiseccion": {
+            "descripcion": "Búsqueda multi-sección con prioridades",
+            "critico": false,
+            "keywords_faltantes": [
+              "DESCRIPCION_MICROSCOPICA",
+              "prioridad",
+              "multi-sección"
+            ]
+          },
+          "componentes_semanticos": {
+            "descripcion": "5 componentes semánticos de DIAGNOSTICO_COLORACION",
+            "critico": true,
+            "keywords_faltantes": [
+              "5 componentes",
+              "Grado Nottingham",
+              "invasión linfovascular"
+            ]
+          },
+          "deteccion_semantica": {
+            "descripcion": "Enfoque de detección por contenido médico",
+            "critico": false,
+            "keywords_faltantes": [
+              "detección semántica",
+              "contenido",
+              "keywords contextuales"
+            ]
+          }
+        },
+        "cobertura_porcentaje": 33.3
+      }
+    ],
+    "cobertura": {},
+    "conocimiento_faltante": [
+      {
+        "archivo": "system_prompt_comun.txt",
+        "conocimiento": "diagnostico_coloracion",
+        "descripcion": "Campo DIAGNOSTICO_COLORACION con 5 componentes semánticos"
+      },
+      {
+        "archivo": "system_prompt_comun.txt",
+        "conocimiento": "componentes_semanticos",
+        "descripcion": "5 componentes semánticos de DIAGNOSTICO_COLORACION"
+      },
+      {
+        "archivo": "system_prompt_parcial.txt",
+        "conocimiento": "diagnostico_coloracion",
+        "descripcion": "Campo DIAGNOSTICO_COLORACION con 5 componentes semánticos"
+      },
+      {
+        "archivo": "system_prompt_parcial.txt",
+        "conocimiento": "componentes_semanticos",
+        "descripcion": "5 componentes semánticos de DIAGNOSTICO_COLORACION"
+      }
+    ],
+    "sugerencias": []
+  },
+  "sugerencias": {
+    "timestamp": "2025-10-22 05:06:54",
+    "modificaciones": [
+      {
+        "archivo": "system_prompt_comun.txt",
+        "accion": "INSERTAR_AL_INICIO",
+        "ubicacion": "Línea 1 (antes del contenido actual)",
+        "texto_a_insertar": "═══════════════════════════════════════════════════════════════\n🧠 CONOCIMIENTO MÉDICO ONCOLÓGICO - EVARISIS v6.1.0\n═══════════════════════════════════════════════════════════════\n\nIMPORTANTE: Existen DOS estudios diferentes en patología oncológica:\n\n1. **STUDY M (COLORACIÓN)**: Estudio inicial de patología\n   - Usa técnicas de coloración H&E (Hematoxilina-Eosina)\n   - Evalúa morfología celular y arquitectura tisular\n   - Proporciona: Diagnóstico base, Grado Nottingham, Invasión linfovascular, Invasión perineural\n   - Ubicación en PDF: DESCRIPCION_MACROSCOPICA o secciones específicas de coloración\n   - Campo de destino: DIAGNOSTICO_COLORACION\n\n2. **STUDY IHQ (INMUNOHISTOQUÍMICA)**: Estudio molecular posterior\n   - Usa anticuerpos para detectar proteínas específicas\n   - Evalúa expresión de biomarcadores (HER2, ER, PR, Ki-67, etc.)\n   - Proporciona: Estado y porcentaje de biomarcadores\n   - Ubicación en PDF: DESCRIPCION_MICROSCOPICA, DIAGNOSTICO, COMENTARIOS\n   - Campos de destino: IHQ_HER2, IHQ_KI-67, IHQ_ER, etc.\n\n⚠️ REGLA CRÍTICA ANTI-CONTAMINACIÓN:\n❌ NUNCA mezclar datos del Study M (Coloración) en campos IHQ\n❌ NUNCA usar información de Grado Nottingham para biomarcadores IHQ\n❌ NUNCA confundir \"invasión linfovascular\" (Study M) con biomarcadores (Study IHQ)\n✅ DIAGNOSTICO_COLORACION debe contener SOLO información del Study M\n✅ Campos IHQ_* deben contener SOLO información de biomarcadores moleculares\n\n---\n\n📋 CAMPO CRÍTICO: DIAGNOSTICO_COLORACION (v6.1.0 - NUEVO)\n---\n\n**5 COMPONENTES SEMÁNTICOS** (deben extraerse del Study M - Coloración):\n\n1. **Diagnóstico base**:\n   - Ejemplo: \"CARCINOMA DUCTAL INVASIVO\"\n   - Variantes: \"CARCINOMA LOBULILLAR\", \"ADENOCARCINOMA\", \"TUMOR NEUROENDOCRINO\"\n\n2. **Grado Nottingham** (si aplica para tumores mamarios):\n   - Ejemplo: \"GRADO NOTTINGHAM 2 (SCORE 7: TUBULOS 3, PLEOMORFISMO 2, MITOSIS 2)\"\n   - Variantes: \"GRADO 1\", \"GRADO 2\", \"GRADO 3\"\n   - Keywords: \"Nottingham\", \"score\", \"grado histológico\"\n\n3. **Invasión linfovascular**:\n   - Ejemplo: \"INVASIÓN LINFOVASCULAR: NEGATIVO\"\n   - Variantes: \"INVASIÓN VASCULAR: POSITIVO\", \"No se observa invasión linfovascular\"\n   - Keywords: \"invasión linfovascular\", \"invasión vascular\", \"embolias vasculares\"\n\n4. **Invasión perineural**:\n   - Ejemplo: \"INVASIÓN PERINEURAL: NEGATIVO\"\n   - Variantes: \"INVASIÓN PERINEURAL: POSITIVO\", \"No hay invasión perineural\"\n   - Keywords: \"invasión perineural\", \"perineural\"\n\n5. **Carcinoma in situ**:\n   - Ejemplo: \"CARCINOMA DUCTAL IN SITU: NO\"\n   - Variantes: \"CARCINOMA LOBULILLAR IN SITU: PRESENTE\", \"Sin componente in situ\"\n   - Keywords: \"in situ\", \"CDIS\", \"CLIS\"\n\n**EJEMPLO CORRECTO DE DIAGNOSTICO_COLORACION COMPLETO**:\n```\nCARCINOMA DUCTAL INVASIVO, GRADO NOTTINGHAM 2 (SCORE 7: TUBULOS 3, PLEOMORFISMO 2, MITOSIS 2). INVASIÓN LINFOVASCULAR: NEGATIVO. INVASIÓN PERINEURAL: NEGATIVO. CARCINOMA DUCTAL IN SITU: NO.\n```\n\n**UBICACIÓN EN PDF**: Buscar en estas secciones (en orden de prioridad):\n1. DESCRIPCION_MACROSCOPICA\n2. Secciones tituladas \"COLORACIÓN\", \"H&E\", \"HISTOLOGÍA\"\n3. Secciones de diagnóstico inicial (antes de IHQ)\n\n---\n\n🔍 BÚSQUEDA MULTI-SECCIÓN (PRIORIDAD PARA BIOMARCADORES IHQ)\n---\n\nAl buscar biomarcadores IHQ (HER2, Ki-67, ER, PR, etc.), usar PRIORIDAD:\n\n1. **DESCRIPCION_MICROSCOPICA** (primera prioridad)\n   - Contiene descripción detallada de expresión de marcadores\n   - Ejemplo: \"Ki-67 muestra índice proliferativo del 20%\"\n\n2. **DIAGNOSTICO** (segunda prioridad)\n   - Puede contener resumen de biomarcadores\n   - Ejemplo: \"HER2 POSITIVO (3+)\"\n\n3. **COMENTARIOS** (tercera prioridad)\n   - Puede contener aclaraciones o interpretaciones\n   - Ejemplo: \"El alto índice de Ki-67 sugiere alta proliferación\"\n\n⚠️ NO buscar biomarcadores IHQ en DESCRIPCION_MACROSCOPICA (es para Study M)\n\n---\n\n🎯 DETECCIÓN SEMÁNTICA (ENFOQUE INTELIGENTE)\n---\n\nEl sistema EVARISIS usa detección basada en CONTENIDO, no en posiciones fijas:\n\n✅ **Buscar por keywords contextuales**:\n   - \"Grado Nottingham\" → DIAGNOSTICO_COLORACION (componente 2)\n   - \"Ki-67:\" → IHQ_KI-67\n   - \"HER2:\" → IHQ_HER2\n   - \"invasión linfovascular\" → DIAGNOSTICO_COLORACION (componente 3)\n\n✅ **Considerar variaciones de formato**:\n   - \"Ki-67: 20%\" = \"Ki 67: 20%\" = \"KI67: 20%\" (mismo dato)\n   - \"HER2 POSITIVO\" = \"HER-2: POSITIVO\" = \"HER 2 +\" (mismo dato)\n\n✅ **Contexto médico importa**:\n   - \"INVASIÓN LINFOVASCULAR\" en Study M → DIAGNOSTICO_COLORACION\n   - \"Ki-67 del 2%\" en Study IHQ → IHQ_KI-67\n   - NO confundir contextos\n\n═══════════════════════════════════════════════════════════════",
+        "lineas_a_insertar": 112,
+        "conocimiento_agregado": [
+          "diagnostico_coloracion",
+          "busqueda_multiseccion",
+          "componentes_semanticos",
+          "deteccion_semantica"
+        ],
+        "beneficio": "IA entenderá Study M vs IHQ, evitará contaminación, detectará 5 componentes semánticos",
+        "cobertura_antes": 33.3,
+        "cobertura_despues": 100.0
+      },
+      {
+        "archivo": "system_prompt_parcial.txt",
+        "accion": "INSERTAR_DESPUES_HEADER",
+        "ubicacion": "Después de línea 2 (después del header de MODO ULTRA-RÁPIDO)",
+        "texto_a_insertar": "🧠 CONOCIMIENTO RÁPIDO - STUDY M vs STUDY IHQ:\n⚡ Study M (Coloración): Grado Nottingham, invasiones → DIAGNOSTICO_COLORACION\n⚡ Study IHQ: Biomarcadores (Ki-67, HER2, ER, PR) → Campos IHQ_*\n⚡ ANTI-CONTAMINACIÓN: NO mezclar Study M con IHQ\n⚡ BÚSQUEDA MULTI-SECCIÓN: DESCRIPCION_MICROSCOPICA > DIAGNOSTICO > COMENTARIOS (para IHQ)\n\n📋 DIAGNOSTICO_COLORACION - 5 componentes del Study M:\n1. Diagnóstico base (ej: \"CARCINOMA DUCTAL INVASIVO\")\n2. Grado Nottingham (ej: \"GRADO NOTTINGHAM 2\")\n3. Invasión linfovascular (ej: \"INVASIÓN LINFOVASCULAR: NEGATIVO\")\n4. Invasión perineural (ej: \"INVASIÓN PERINEURAL: NEGATIVO\")\n5. Carcinoma in situ (ej: \"CARCINOMA DUCTAL IN SITU: NO\")\n\n🔍 DETECCIÓN SEMÁNTICA - Busca por CONTENIDO no por posición:\n✅ \"Grado Nottingham\" → DIAGNOSTICO_COLORACION\n✅ \"Ki-67: 20%\" → IHQ_KI-67\n✅ \"invasión linfovascular\" → DIAGNOSTICO_COLORACION\n✅ Contexto médico importa - NO confundir Study M con IHQ",
+        "lineas_a_insertar": 18,
+        "conocimiento_agregado": [
+          "diagnostico_coloracion",
+          "busqueda_multiseccion",
+          "componentes_semanticos",
+          "deteccion_semantica"
+        ],
+        "beneficio": "IA rápida entenderá Study M vs IHQ sin perder velocidad",
+        "cobertura_antes": 33.3,
+        "cobertura_despues": 100.0
+      }
+    ]
+  }
+}

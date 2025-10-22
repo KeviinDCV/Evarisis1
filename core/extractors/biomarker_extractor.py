@@ -952,6 +952,91 @@ def extract_report_section(text: str) -> str:
     return report_section
 
 
+def extraer_seccion(texto, inicio, fin):
+    """Extrae una sección del texto entre dos marcadores
+
+    V6.0.0: NUEVO - Función auxiliar para lógica de prioridad de secciones
+
+    Args:
+        texto: Texto completo del informe
+        inicio: Patrón regex del marcador de inicio de sección
+        fin: Patrón regex del marcador de fin de sección
+
+    Returns:
+        Texto de la sección extraída o None si no se encuentra
+    """
+    patron = rf'{inicio}(.*?)(?:{fin})'
+    match = re.search(patron, texto, re.DOTALL | re.IGNORECASE)
+    return match.group(1) if match else None
+
+
+def buscar_en_diagnostico(texto_completo, patron):
+    """Busca patrón en la sección DIAGNÓSTICO del PDF
+
+    V6.0.0: NUEVO - PRIORIDAD 1 para extracción de biomarcadores
+
+    Esta función implementa la lógica de prioridad:
+    - Busca PRIMERO en la sección DIAGNÓSTICO (incluye subsecciones como "Expresión molecular")
+    - La información del DIAGNÓSTICO es la final, revisada y condensada
+
+    Args:
+        texto_completo: Texto completo del informe IHQ
+        patron: Patrón regex a buscar
+
+    Returns:
+        Valor capturado por el patrón o None si no se encuentra
+    """
+    # Extraer sección DIAGNÓSTICO (incluye subsecciones como "Expresión molecular")
+    seccion_diagnostico = extraer_seccion(
+        texto_completo,
+        inicio=r"DIAGN[ÓO]STICO|EXPRESI[ÓO]N\s+MOLECULAR",
+        fin=r"COMENTARIOS|OBSERVACIONES|DESCRIPCI[ÓO]N\s+MICROSC[ÓO]PICA|RESPONSABLE|$"
+    )
+
+    if seccion_diagnostico:
+        match = re.search(patron, seccion_diagnostico, re.IGNORECASE)
+        if match:
+            # Retornar el primer grupo capturado si existe, sino el match completo
+            if match.groups():
+                return match.group(1).strip()
+            else:
+                return match.group(0).strip()
+    return None
+
+
+def buscar_en_microscopica(texto_completo, patron):
+    """Busca patrón en la sección DESCRIPCIÓN MICROSCÓPICA del PDF
+
+    V6.0.0: NUEVO - PRIORIDAD 2 (fallback) para extracción de biomarcadores
+
+    Esta función implementa la lógica de prioridad:
+    - Busca SOLO SI NO se encontró en DIAGNÓSTICO
+    - La información de DESCRIPCIÓN MICROSCÓPICA es más detallada pero preliminar
+
+    Args:
+        texto_completo: Texto completo del informe IHQ
+        patron: Patrón regex a buscar
+
+    Returns:
+        Valor capturado por el patrón o None si no se encuentra
+    """
+    seccion_microscopica = extraer_seccion(
+        texto_completo,
+        inicio=r"DESCRIPCI[ÓO]N\s+MICROSC[ÓO]PICA",
+        fin=r"DIAGN[ÓO]STICO|EXPRESI[ÓO]N\s+MOLECULAR|RESPONSABLE"
+    )
+
+    if seccion_microscopica:
+        match = re.search(patron, seccion_microscopica, re.IGNORECASE)
+        if match:
+            # Retornar el primer grupo capturado si existe, sino el match completo
+            if match.groups():
+                return match.group(1).strip()
+            else:
+                return match.group(0).strip()
+    return None
+
+
 def extract_biomarkers(text: str) -> Dict[str, str]:
     """Extrae todos los biomarcadores configurados del texto
 
