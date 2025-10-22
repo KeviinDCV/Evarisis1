@@ -1,0 +1,33 @@
+{
+  "numero_caso": "IHQ250980",
+  "timestamp": "2025-10-22T04:20:17.383879",
+  "contexto_auditor": {
+    "numero_caso": "IHQ250980",
+    "tiene_study_m": false,
+    "campos_con_error": [
+      {
+        "campo": "factor_pronostico",
+        "estado": "WARNING",
+        "problema": "",
+        "tiene_contaminacion": false
+      }
+    ],
+    "ubicaciones_pdf": {},
+    "reglas_anti_contaminacion": [],
+    "sugerencias_priorizadas": [
+      {
+        "campo": "FACTOR_PRONOSTICO",
+        "archivo": "core/extractors/medical_extractor.py",
+        "funcion": "extract_factor_pronostico()",
+        "problema": null,
+        "solucion": null,
+        "prioridad": null,
+        "orden": 5
+      }
+    ]
+  },
+  "validacion_ia": {
+    "estado": "pendiente"
+  },
+  "recomendacion_final": "Revisar hallazgos del auditor antes de validar con IA"
+}

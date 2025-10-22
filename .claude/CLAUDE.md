@@ -70,7 +70,7 @@ Puedo hacerlo manualmente, pero sería mejor crear un agente 'trend-analyzer' qu
 ## 📊 Arquitectura del Ecosistema
 
 ### 7 HERRAMIENTAS ESPECIALIZADAS (Core Tools)
-1. **auditor_sistema.py** (934 líneas) - Validación de precisión de datos
+1. **auditor_sistema.py** (934 líneas) - Validación completa de precisión: biomarcadores + campos críticos (ORGANO, DIAGNOSTICO, FACTOR_PRONOSTICO)
 2. **gestor_base_datos.py** (1074 líneas) - Gestión y consultas de BD
 3. **inspector_sistema.py** (1423 líneas) - Diagnóstico y salud del sistema
 4. **editor_core.py** (1234 líneas) - Edición inteligente de código y generación de reportes
@@ -79,7 +79,7 @@ Puedo hacerlo manualmente, pero sería mejor crear un agente 'trend-analyzer' qu
 7. **gestor_ia_lm_studio.py** (~1450 líneas) - Gestión completa de LM Studio + IA (CONSOLIDADO 2→1)
 
 ### 7 AGENTES ESPECIALIZADOS
-1. **data-auditor** → Usa auditor_sistema.py
+1. **data-auditor** → Usa auditor_sistema.py - Detecta falsa completitud, valida TODOS los campos críticos
 2. **database-manager** → Usa gestor_base_datos.py
 3. **system-diagnostician** → Usa inspector_sistema.py
 4. **core-editor** → Usa editor_core.py
@@ -93,10 +93,26 @@ Puedo hacerlo manualmente, pero sería mejor crear un agente 'trend-analyzer' qu
 
 | Necesidad del Usuario | Agente Responsable | Herramienta(s) Usada(s) |
 |------------------------|-------------------|------------------------|
+| **AUDITORÍA Y VALIDACIÓN** | | |
 | "Valida el caso IHQ250025" | data-auditor | auditor_sistema.py |
+| "Audita todos los casos" | data-auditor | auditor_sistema.py --todos |
+| "¿Por qué el ORGANO está mal en IHQ251029?" | data-auditor | auditor_sistema.py IHQ251029 --nivel profundo |
+| "Valida que el diagnóstico esté correcto" | data-auditor | auditor_sistema.py [CASO] --buscar "diagnóstico" |
+| "Verifica si el factor pronóstico está completo" | data-auditor | auditor_sistema.py [CASO] --buscar "grado\|invasión" |
+| "Detecta casos con falsa completitud" | data-auditor | auditor_sistema.py --todos --nivel profundo |
+| "¿Qué dice el PDF sobre Ki-67?" | data-auditor | auditor_sistema.py [CASO] --buscar "Ki-67" |
+| "Lee el texto completo del PDF del caso X" | data-auditor | auditor_sistema.py [CASO] --leer-ocr |
+| **GESTIÓN DE BASE DE DATOS** | | |
 | "Busca casos de mama en mujeres 40-60" | database-manager | gestor_base_datos.py |
+| "Muéstrame estadísticas de la BD" | database-manager | gestor_base_datos.py --stats |
+| **DIAGNÓSTICO DE SISTEMA** | | |
 | "¿El sistema está funcionando bien?" | system-diagnostician | inspector_sistema.py |
+| "Analiza la complejidad del código" | system-diagnostician | inspector_sistema.py --complejidad |
+| **EDICIÓN DE CÓDIGO** | | |
 | "Mejora la extracción de Ki-67" | core-editor | editor_core.py |
+| "Agrega el biomarcador BCL2" | core-editor | editor_core.py --agregar-biomarcador BCL2 |
+| "Corrige el extractor de ORGANO" | core-editor | editor_core.py --editar-extractor ORGANO --simular |
+| **INTELIGENCIA ARTIFICIAL** | | |
 | "¿Está listo LM Studio?" | lm-studio-connector | gestor_ia_lm_studio.py --estado |
 | "Valida caso IHQ250025 con IA" | lm-studio-connector | gestor_ia_lm_studio.py --validar-caso IHQ250025 --dry-run |
 | "Aplica correcciones IA a IHQ250025" | lm-studio-connector | gestor_ia_lm_studio.py --validar-caso IHQ250025 |
@@ -104,18 +120,132 @@ Puedo hacerlo manualmente, pero sería mejor crear un agente 'trend-analyzer' qu
 | "Analiza calidad de los prompts" | lm-studio-connector | gestor_ia_lm_studio.py --analizar-prompts |
 | "Simula extracción de Ki-67 de este texto" | lm-studio-connector | gestor_ia_lm_studio.py --simular "texto" --biomarcador Ki-67 |
 | "Mejora el prompt de biomarcadores" | lm-studio-connector | gestor_ia_lm_studio.py --editar-prompt system_prompt_comun.txt --aplicar |
+| **VERSIONADO** | | |
 | "Cambia la versión a 6.0.0" | version-manager | gestor_version.py --actualizar 6.0.0 |
 | "Actualiza CHANGELOG con v6.0.0" | version-manager | gestor_version.py --generar-changelog |
 | "Añade iteración a BITÁCORA" | version-manager | gestor_version.py --generar-bitacora |
 | "Copia CHANGELOG desde LEGACY" | version-manager | gestor_version.py --copiar-legacy changelog |
+| "¿Qué versión tenemos?" | version-manager | gestor_version.py --actual |
+| **DOCUMENTACIÓN** | | |
 | "Genera documentación completa del sistema" | documentation-specialist-HUV | generador_documentacion.py --completo |
 | "Genera comunicados para stakeholders" | documentation-specialist-HUV | generador_documentacion.py --generar comunicacion |
 | "Valida que CHANGELOG y BITÁCORA existan" | documentation-specialist-HUV | generador_documentacion.py --validar |
-| "Audita todos los casos" | data-auditor | auditor_sistema.py --todos |
-| "Muéstrame estadísticas de la BD" | database-manager | gestor_base_datos.py --stats |
-| "Analiza la complejidad del código" | system-diagnostician | inspector_sistema.py --complejidad |
-| "Agrega el biomarcador BCL2" | core-editor | editor_core.py --agregar-biomarcador BCL2 |
-| "¿Qué versión tenemos?" | version-manager | gestor_version.py --actual |
+
+---
+
+## 🔍 CAPACIDADES CLAVE DEL AGENTE DATA-AUDITOR
+
+El agente **data-auditor** realiza auditoría COMPLETA de casos oncológicos, validando NO SOLO biomarcadores, sino TODOS los campos críticos del sistema.
+
+### ✅ QUÉ VALIDA EL AGENTE:
+
+#### 1. **BIOMARCADORES (IHQ_*)**
+- Compara cada biomarcador mencionado en el PDF contra la BD
+- Detecta biomarcadores vacíos que deberían tener valores
+- Detecta confusiones (ej: CD5 vs CD56)
+- Valida formatos no estándar (ej: "Sinaptofisina+", "Cromogranina A+")
+
+#### 2. **IHQ_ORGANO** (validación crítica)
+- Verifica que contenga un órgano válido
+- Detecta si contiene diagnóstico u otro texto erróneo
+- Ejemplo de error: ORGANO = "LOS HALLAZGOS MORFOLOGICOS..." (debería ser "MESENTERIO")
+
+#### 3. **DIAGNOSTICO_PRINCIPAL** (validación crítica)
+- Verifica que el diagnóstico sea legible y completo
+- Detecta fragmentos incorrectos
+- Ejemplo de error: DIAGNOSTICO = "67 DEL 2%" (debería ser "TUMOR NEUROENDOCRINO BIEN DIFERENCIADO, GRADO 1")
+
+#### 4. **FACTOR_PRONOSTICO** (validación de completitud)
+- Verifica que incluya TODOS los factores pronósticos:
+  - Grado de diferenciación (BIEN DIFERENCIADO, MODERADAMENTE, etc.)
+  - Grado tumoral (GRADO 1, 2, 3)
+  - Invasión linfovascular (NEGATIVO/POSITIVO)
+  - Índice Ki-67 (si aplica)
+- Detecta si solo tiene Ki-67 (incompleto)
+- Ejemplo: "Ki-67 DEL 2%" está incompleto, falta grado e invasión
+
+#### 5. **IHQ_ESTUDIOS_SOLICITADOS** (validación de completitud)
+- Verifica que capturó TODOS los biomarcadores solicitados en el PDF
+- Calcula completitud: X% (Y/Z biomarcadores capturados)
+- Detecta biomarcadores omitidos
+
+### 🚨 DETECCIÓN DE "FALSA COMPLETITUD"
+
+El agente detecta casos donde:
+- Sistema reporta: **100% completo** ✅
+- Realidad: Campos llenos con datos **INCORRECTOS** ❌
+
+**Ejemplo real (caso IHQ251029)**:
+```
+Sistema reporta: 100% completo
+Precisión REAL: 11.1% (1/9 campos correctos)
+
+Errores detectados:
+- ORGANO: Contiene diagnóstico en lugar de "MESENTERIO"
+- DIAGNOSTICO: "67 DEL 2%" (fragmento ilegible)
+- FACTOR_PRONOSTICO: Solo Ki-67 (falta grado e invasión)
+- 4 biomarcadores vacíos (CD56, Sinaptofisina, Cromogranina A, CKAE1/AE3)
+- 1 biomarcador incorrecto (CD5="6", confusión con CD56)
+```
+
+### 📋 PROTOCOLO DE AUDITORÍA COMPLETA
+
+El agente ejecuta automáticamente:
+
+**PASO 1:** Auditoría principal con JSON (métricas)
+**PASO 2:** Lectura completa del OCR (evidencia del PDF)
+**PASO 3:** Búsqueda de cada biomarcador específico
+**PASO 3B:** Búsqueda de campos críticos (órgano, diagnóstico, grado, invasión)
+**PASO 4:** Cálculo de precisión REAL vs reportada
+**PASO 5:** Presentación de resumen completo con:
+- Comparación BD vs PDF (lado a lado)
+- Ubicación exacta en el PDF (número de línea)
+- Evidencia textual completa
+- Clasificación de errores por severidad (CRÍTICO / IMPORTANTE)
+- Sugerencias de corrección específicas (archivo + función + regex + comando)
+
+### 💡 SUGERENCIAS DE CORRECCIÓN ESPECÍFICAS
+
+Para CADA error detectado, el agente proporciona:
+```
+ERROR: Confusión CD5/CD56
+├─ Archivo: core/extractors/biomarker_extractor.py
+├─ Función: extract_cd5() y extract_cd56()
+├─ Causa: Patrón regex captura "CD56" como "CD5"
+├─ Solución regex: patron_cd5 = r'(?<!6)CD[- ]?5(?![0-9])'
+└─ Comando: python herramientas_ia/editor_core.py --editar-extractor CD5 --simular
+```
+
+### 🎯 USO RECOMENDADO
+
+**Auditar caso individual (completo):**
+```
+Usuario: "Audita el caso IHQ251029"
+Claude: [Invoca data-auditor]
+→ Ejecuta protocolo completo (5 pasos)
+→ Valida biomarcadores + ORGANO + DIAGNOSTICO + FACTOR_PRONOSTICO
+→ Calcula precisión real
+→ Detecta falsa completitud
+→ Proporciona sugerencias específicas
+```
+
+**Validar campo específico:**
+```
+Usuario: "¿Por qué el ORGANO está mal en IHQ251029?"
+Claude: [Invoca data-auditor con --buscar "órgano"]
+→ Muestra texto del PDF donde menciona el órgano
+→ Compara con valor en BD
+→ Explica discrepancia con evidencia
+```
+
+**Detectar casos con falsa completitud:**
+```
+Usuario: "Detecta casos que parecen completos pero tienen errores"
+Claude: [Invoca data-auditor --todos --nivel profundo]
+→ Audita todos los casos
+→ Identifica casos con precisión reportada > precisión real
+→ Lista casos con "falsa completitud"
+```
 
 ---
 
@@ -125,17 +255,28 @@ Puedo hacerlo manualmente, pero sería mejor crear un agente 'trend-analyzer' qu
 ```
 1. Usuario procesa PDF → Sistema EVARISIS extrae datos
 2. system-diagnostician verifica salud del sistema proactivamente
-3. data-auditor valida precisión de extracción automáticamente
-4. Si precisión < 90%:
-   a. data-auditor identifica campos problemáticos
-   b. lm-studio-connector sugiere correcciones IA (dry-run)
-   c. Usuario aprueba correcciones de alta confianza
-   d. lm-studio-connector aplica correcciones
-5. data-auditor re-valida precisión post-corrección
+3. data-auditor ejecuta auditoría completa automáticamente:
+   a. Valida TODOS los biomarcadores mencionados en PDF
+   b. Valida IHQ_ORGANO (¿es órgano correcto o texto erróneo?)
+   c. Valida DIAGNOSTICO_PRINCIPAL (¿es legible y correcto?)
+   d. Valida FACTOR_PRONOSTICO (¿está completo o solo tiene Ki-67?)
+   e. Valida IHQ_ESTUDIOS_SOLICITADOS (¿capturó todos los biomarcadores?)
+   f. Calcula precisión REAL vs precisión reportada
+   g. Detecta "falsa completitud" si el sistema reporta 100% pero hay errores
+4. Si precisión REAL < 90% o hay campos críticos incorrectos:
+   a. data-auditor identifica campos problemáticos con evidencia del PDF
+   b. data-auditor proporciona sugerencias de corrección (archivo + función + regex)
+   c. lm-studio-connector sugiere correcciones IA (dry-run)
+   d. Usuario revisa errores críticos y aprueba correcciones
+   e. lm-studio-connector aplica correcciones de alta confianza
+   f. core-editor corrige extractores si hay patrones sistemáticos
+5. data-auditor re-valida precisión post-corrección (todos los campos)
 6. database-manager almacena caso validado
 ```
 
-**Agentes involucrados**: system-diagnostician → data-auditor → lm-studio-connector → database-manager
+**Agentes involucrados**: system-diagnostician → data-auditor → lm-studio-connector → core-editor → database-manager
+
+**IMPORTANTE**: data-auditor ahora detecta errores en campos NO-biomarcadores que antes pasaban desapercibidos.
 
 ---
 
@@ -920,7 +1061,7 @@ python herramientas_ia/generador_documentacion.py --interactivo
 ## 📚 Documentación Detallada
 
 Cada agente tiene documentación completa en `.claude/agents/`:
-- **data-auditor.md** (300 líneas)
+- **data-auditor.md** (~791 líneas) - Auditoría completa + validación de campos críticos + detección de falsa completitud
 - **database-manager.md** (430 líneas)
 - **system-diagnostician.md** (456 líneas)
 - **core-editor.md** (473 líneas)

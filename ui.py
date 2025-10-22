@@ -3988,6 +3988,7 @@ Disco {i}:
             "Procedimiento",
             "Organo",
             "Malignidad",
+            "Diagnostico Coloracion",  # v6.1.0: Diagnóstico del Estudio M (Coloración)
             "Diagnostico Principal",
             "Factor pronostico",
             # "Descripcion macroscopica",  # V5.3.8: ELIMINADA - Texto muy largo, poco útil en tabla
@@ -4137,6 +4138,8 @@ Disco {i}:
                 width = 200
             elif "Malignidad" in col:
                 width = 100
+            elif "Diagnostico Coloracion" in col:
+                width = 300
             elif "Diagnostico Principal" in col:
                 width = 300
             elif "Factor pronostico" in col:

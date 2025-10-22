@@ -126,6 +126,7 @@ NEW_TABLE_COLUMNS_ORDER: List[str] = [
     "Malignidad", "Descripcion macroscopica",
     "Descripcion microscopica",  # v5.3.5: Simplificado
     "Descripcion Diagnostico",   # v5.3.5: Simplificado
+    "Diagnostico Coloracion",    # v6.1.0: NUEVO - Diagnóstico del Estudio M (Coloración) con Nottingham
     "Diagnostico Principal",     # v5.3.6: Diagnóstico principal extraído
     "Factor pronostico",
     # v5.3.5: Reorganización - IHQ_ESTUDIOS_SOLICITADOS e IHQ_ORGANO antes de Congelaciones
@@ -185,6 +186,7 @@ def _create_table_if_not_exists(cursor: sqlite3.Cursor):
             "Malignidad" TEXT, "Descripcion macroscopica" TEXT,
             "Descripcion microscopica" TEXT,
             "Descripcion Diagnostico" TEXT,
+            "Diagnostico Coloracion" TEXT,  -- v6.1.0: Diagnóstico del Estudio M (Coloración) con Nottingham
             "Diagnostico Principal" TEXT,
             "Factor pronostico" TEXT,
             "IHQ_ESTUDIOS_SOLICITADOS" TEXT, "IHQ_ORGANO" TEXT,
@@ -623,6 +625,7 @@ def _normalize_column_name(column_name: str) -> str:
         'Descripcion macroscopica': 'descripcion_macroscopica',
         'Descripcion microscopica (8,9, 10,12,. Invasión linfovascular y perineural, indice mitótico/Ki67, Inmunohistoquímica, tamaño tumoral)': 'descripcion_microscopica',
         'Descripcion Diagnostico (5,6,7 Tipo histológico, subtipo histológico, margenes tumorales)': 'diagnostico_final',
+        'Diagnostico Coloracion': 'diagnostico_coloracion',  # NUEVO - v6.1.0: Diagnóstico del Estudio M
         'N. de identificación': 'numero_identificacion',
         'N. peticion (0. Numero de biopsia)': 'numero_peticion',  # FIX: Mapeo crítico faltante
         'Médico tratante': 'medico_tratante',
