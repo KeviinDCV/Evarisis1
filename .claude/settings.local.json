@@ -14,7 +14,8 @@
       "Bash(more:*)",
       "Bash(dir /b:*)",
       "Bash(findstr:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(wait)"
     ],
     "deny": [],
     "ask": []
