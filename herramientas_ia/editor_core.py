@@ -2164,7 +2164,7 @@ AGREGAR BIOMARCADOR COMPLETO (NUEVO v2.0):
 
 MODIFICAR BIOMARCADOR (NUEVO v2.0):
   python editor_core.py --modificar-biomarcador KI67 --campo descripcion --valor "Índice de proliferación celular actualizado" --simular
-  python editor_core.py --modificar-biomarcador HER2 --campo patrones --valor "r'(?i)HER2\s+SCORE\s*:\s*(\d+)'" --agregar
+  python editor_core.py --modificar-biomarcador HER2 --campo patrones --valor "r'(?i)HER2\\s+SCORE\\s*:\\s*(\\d+)'" --agregar
   python editor_core.py --modificar-biomarcador PDL1 --campo valores_posibles --valor "['POSITIVO', 'NEGATIVO', 'ALTO', 'BAJO']"
 
 ELIMINAR BIOMARCADOR (NUEVO v2.0 - PELIGROSO):
