@@ -501,7 +501,33 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
     factores = []
 
     # ═══════════════════════════════════════════════════════════════════════
-    # PRIORIDAD 1: Biomarcadores específicos de IHQ
+    # PRIORIDAD 1: FORMATO NARRATIVO - "positivas para [LISTA]" (V6.0.5)
+    # Este formato es más robusto y aparece en DESCRIPCIÓN MICROSCÓPICA
+    # ═══════════════════════════════════════════════════════════════════════
+    # Patrón: captura hasta " y células" o salto de línea doble
+    # NO termina en punto simple porque biomarcadores como "CAM 5.2" tienen punto
+    patron_narrativo = r'(?:son\s+)?positivas?\s+para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ\n]+?)(?=\s+y\s+c[eé]lulas|\n\n|$)'
+    matches_narrativo = re.finditer(patron_narrativo, diagnostico_completo, re.IGNORECASE)
+
+    listas_encontradas = []
+    for match in matches_narrativo:
+        lista_biomarcadores = match.group(1).strip()
+        # Limpiar saltos de línea y espacios múltiples
+        lista_biomarcadores = ' '.join(lista_biomarcadores.split())
+        # Limpiar punto final si queda
+        lista_biomarcadores = lista_biomarcadores.rstrip('.')
+        if lista_biomarcadores and len(lista_biomarcadores) > 3:
+            listas_encontradas.append(lista_biomarcadores)
+
+    # Si encontramos listas narrativas, usar esas y retornar inmediatamente
+    if listas_encontradas:
+        # Combinar con " / " y agregar prefijo "positivo para:"
+        todas_listas = ' / '.join(listas_encontradas)
+        return f"positivo para: {todas_listas}"
+
+    # ═══════════════════════════════════════════════════════════════════════
+    # PRIORIDAD 2: Biomarcadores específicos de IHQ (formato estructurado)
+    # Solo si NO se encontró formato narrativo
     # ═══════════════════════════════════════════════════════════════════════
 
     # V6.0.3: LISTA ORDENADA de biomarcadores (orden de impresión garantizado)
@@ -677,19 +703,8 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
         if factor_limpio and len(factor_limpio) > 3:  # Validar que tiene contenido significativo
             factores_limpios.append(factor_limpio)
 
-    # ═══════════════════════════════════════════════════════════════════════
-    # V6.0.3: SOPORTE FORMATO NARRATIVO - "positivas para [LISTA]"
-    # ═══════════════════════════════════════════════════════════════════════
-    # Si NO encontramos biomarcadores estructurados, buscar formato narrativo
-    if not factores_limpios:
-        patron_narrativo = r'(?:son\s+)?positivas?\s+para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ]+?)(?:\sy\s|\.|,\sy\s)'
-        matches_narrativo = re.finditer(patron_narrativo, diagnostico_completo, re.IGNORECASE)
-
-        for match in matches_narrativo:
-            lista_biomarcadores = match.group(1).strip()
-            if lista_biomarcadores:
-                # Agregar "Positivo para: " para claridad
-                factores_limpios.append(f"Positivo para {lista_biomarcadores}")
+    # V6.0.5: Formato narrativo ya se procesó en PRIORIDAD 1 (arriba)
+    # Este bloque duplicado se eliminó para evitar conflictos
 
     return ' / '.join(factores_limpios)
 
@@ -1370,9 +1385,15 @@ def extract_medical_data(text: str) -> Dict[str, Any]:
         results['factor_pronostico'] = factor_pronostico
 
     # NUEVO v6.1.0: Extraer diagnóstico del Estudio M (Coloración) con Nottingham
+    # V6.0.5: Si NO encuentra coloración pero SÍ es IHQ, marcar "NO APLICA"
     diagnostico_coloracion = extract_diagnostico_coloracion(clean_text)
     if diagnostico_coloracion:
         results['diagnostico_coloracion'] = diagnostico_coloracion
+    else:
+        # Detectar si es estudio IHQ puro (sin coloración)
+        es_ihq_puro = bool(re.search(r'(?:ESTUDIOS?\s+DE\s+)?INMUNOHISTOQU[IÍ]MICA', clean_text, re.IGNORECASE))
+        if es_ihq_puro:
+            results['diagnostico_coloracion'] = 'NO APLICA'  # IHQ puro, no tiene estudio de coloración
 
     # Especialidad deducida
     servicio = extract_service_info(clean_text)

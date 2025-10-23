@@ -1,0 +1,99 @@
+{
+  "caso": "IHQ250982",
+  "timestamp": "2025-10-23T04:50:22.578197",
+  "paciente": {
+    "nombre": "ANGEL MAURICIO TENORIO CUERO",
+    "identificacion": "1111662903",
+    "edad": "20 años",
+    "genero": "MASCULINO"
+  },
+  "analisis_completitud": {
+    "completitud_reportada": "100.0%",
+    "estado_sistema": "COMPLETO",
+    "campos_criticos_evaluados": 17,
+    "campos_criticos_completos": 17,
+    "biomarcadores_solicitados": 6,
+    "biomarcadores_en_columnas_bd": 6,
+    "biomarcadores_en_factor_pronostico": 3
+  },
+  "biomarcadores_detectados_pdf": {
+    "solicitados": [
+      "CKAE1E3",
+      "CAM5.2",
+      "CK7",
+      "GFAP",
+      "SOX10",
+      "SOX100"
+    ],
+    "en_columnas_bd": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CAM52": "POSITIVO",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO"
+    },
+    "en_factor_pronostico": "positivo para: CKAE1E3, CK7 Y CAM 5.2",
+    "biomarcadores_en_fp": [
+      "CKAE1E3",
+      "CK7",
+      "CAM5.2"
+    ],
+    "biomarcadores_faltantes_en_fp": [
+      "GFAP",
+      "S100",
+      "SOX10"
+    ]
+  },
+  "analisis_criterios_completitud": {
+    "criterio_actual": "Sistema evalúa 17 campos críticos (11 datos paciente + 6 biomarcadores solicitados)",
+    "incluye_factor_pronostico_completo": false,
+    "incluye_columnas_ihq_individuales": true,
+    "explicacion": "El sistema marca el caso como 100% completo porque TODOS los biomarcadores solicitados tienen valores en sus columnas individuales (IHQ_CK7, IHQ_GFAP, etc.), independientemente de si están en el campo Factor pronostico"
+  },
+  "razon_incompletitud_usuario": {
+    "queja_usuario": "Dice que le faltan 3 biomarcadores en FACTOR_PRONOSTICO",
+    "biomarcadores_faltantes": [
+      "GFAP",
+      "S100",
+      "SOX10"
+    ],
+    "pero_estan_en_columnas": true,
+    "explicacion": "El campo Factor pronostico solo contiene CKAE1E3, CK7 y CAM5.2, pero GFAP, S100 y SOX10 SÍ están capturados en sus columnas individuales (IHQ_GFAP, IHQ_S100, IHQ_SOX10)"
+  },
+  "validacion_criterio": {
+    "criterio_es_correcto": true,
+    "justificacion": "El criterio de completitud del sistema es CORRECTO. La información crítica (valores de biomarcadores) está completa en las columnas individuales. El campo Factor pronostico es un resumen textual, no la fuente de verdad.",
+    "campo_factor_pronostico_incompleto": true,
+    "impacto_clinico": "BAJO - Los valores están disponibles en columnas individuales",
+    "impacto_exportacion": "MEDIO - Si se exporta solo Factor pronostico, faltarán 3 biomarcadores"
+  },
+  "recomendaciones": {
+    "accion_inmediata": "NINGUNA - El caso está correctamente procesado",
+    "mejora_sugerida": "Mejorar extractor de Factor pronostico para capturar TODOS los biomarcadores mencionados en PDF, no solo los primeros 3",
+    "prioridad": "MEDIA",
+    "archivo_a_modificar": "core/extractors/biomarker_extractor.py",
+    "funcion_a_modificar": "extract_prognostic_factor()",
+    "problema_detectado": "Extractor de Factor pronostico no captura todos los biomarcadores mencionados en la descripción microscópica, solo captura los mencionados en la primera oración",
+    "no_marca_como_incompleto_porque": "Los biomarcadores faltantes en Factor pronostico SÍ están en sus columnas individuales (IHQ_GFAP=POSITIVO, IHQ_S100=POSITIVO, IHQ_SOX10=POSITIVO)"
+  },
+  "evidencia_pdf": {
+    "descripcion_microscopica": "En los niveles realizados se observan fragmentos de una lesión neoplásica con celularidad bifásica, una población de células epiteliales recubriendo estructuras pseudoacinares que son positivas para CKAE1E3, CK7 Y CAM 5.2 y células mioepiteliales que se distribuyen en un estroma condromixoide, positivas para GFAP, S100 y SOX10.",
+    "estudios_solicitados": "CKAE1E3, CAM5.2, CK7, GFAP, SOX10, SOX100",
+    "todos_tienen_resultado": true
+  },
+  "conclusion": {
+    "caso_esta_completo": true,
+    "marca_100_es_correcta": true,
+    "queja_usuario_es_valida": "Parcialmente - El campo Factor pronostico sí está incompleto, pero la información crítica (valores de biomarcadores) está completa en columnas individuales",
+    "accion_requerida": "Explicar al usuario que el sistema prioriza columnas individuales sobre campo resumen. Opcionalmente mejorar extractor de Factor pronostico para completitud textual.",
+    "campo_critico_incompleto": false,
+    "campo_resumen_incompleto": true
+  },
+  "metricas": {
+    "score_validacion_auditoria": 66.7,
+    "completitud_columnas_individuales": 100.0,
+    "completitud_factor_pronostico": 50.0,
+    "cobertura_biomarcadores": "6/6 (100%)"
+  }
+}

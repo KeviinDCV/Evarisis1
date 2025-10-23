@@ -1,0 +1,64 @@
+2025-10-23 04:06:04,724 - INFO - \u2705 Extractores refactorizados cargados correctamente
+2025-10-23 04:06:04,724 - INFO - Inicializando base de datos...
+2025-10-23 04:06:04,724 - INFO - Carpeta de base de datos verificada: C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV9GESTOR_ONCOLOGIA\data
+2025-10-23 04:06:04,725 - INFO - Iniciando migración de esquema: eliminando columnas obsoletas…
+2025-10-23 04:06:04,739 - INFO - Migración completada correctamente.
+2025-10-23 04:06:04,739 - INFO - Base de datos preparada correctamente: C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV9GESTOR_ONCOLOGIA\data\huv_oncologia_NUEVO.db
+2025-10-23 04:06:04,739 - ERROR - Debug map no encontrado: data\debug_maps\debug_map_IHQ250982_20251023_013556.json
+2025-10-23 04:06:04,739 - INFO - Intentando buscar otro debug map...
+2025-10-23 04:06:04,740 - INFO - Usando debug map: data\debug_maps\debug_map_IHQ250982_20251023_035542.json
+2025-10-23 04:06:04,740 - INFO - Leyendo debug map: data\debug_maps\debug_map_IHQ250982_20251023_035542.json
+2025-10-23 04:06:04,741 - INFO - Texto del caso IHQ250982: 3885 caracteres
+2025-10-23 04:06:04,741 - INFO - Extrayendo datos con correcciones v6.0.3...
+2025-10-23 04:06:04,797 - INFO - \U0001f9ec V6.0.3: Detectados 5 biomarcadores narrativos adicionales
+2025-10-23 04:06:04,798 - DEBUG -    \u2713 IHQ_CKAE1AE3: POSITIVO (narrativo)
+2025-10-23 04:06:04,798 - DEBUG -    \u2713 IHQ_CK7: POSITIVO (narrativo)
+2025-10-23 04:06:04,798 - DEBUG -    \u2713 IHQ_CAM52: POSITIVO (narrativo)
+2025-10-23 04:06:04,798 - DEBUG -    \u2713 IHQ_GFAP: POSITIVO (narrativo)
+2025-10-23 04:06:04,798 - DEBUG -    \u2713 IHQ_S100: POSITIVO (narrativo)
+2025-10-23 04:06:04,801 - INFO - \U0001f9ec Sistema avanzado detectó 1 biomarcadores narrativos
+2025-10-23 04:06:04,801 - DEBUG - \U0001f9ec Avanzado: SOX10 -> IHQ_SOX10 = POSITIVO
+2025-10-23 04:06:04,801 - DEBUG - \U0001f52c Refactorizado: S100 -> IHQ_S100 = POSITIVO
+2025-10-23 04:06:04,801 - DEBUG - \U0001f52c Refactorizado: IHQ_CKAE1AE3 -> IHQ_CKAE1AE3 = POSITIVO
+2025-10-23 04:06:04,801 - DEBUG - \U0001f52c Refactorizado: IHQ_CAM52 -> IHQ_CAM52 = POSITIVO
+2025-10-23 04:06:04,801 - DEBUG - \U0001f52c Refactorizado: IHQ_GFAP -> IHQ_GFAP = POSITIVO
+2025-10-23 04:06:04,801 - DEBUG - \U0001f52c Refactorizado: IHQ_CK7 -> IHQ_CK7 = POSITIVO
+2025-10-23 04:06:04,805 - INFO - \u2705 Correcciones ortográficas aplicadas: 4
+2025-10-23 04:06:04,806 - INFO - \U0001f527 Total correcciones aplicadas: 4
+2025-10-23 04:06:05,084 - INFO - \u2705 Extraídos 71 campos con extractores refactorizados
+2025-10-23 04:06:05,084 - INFO - Datos extraídos: 71 campos
+2025-10-23 04:06:05,084 - INFO - 
+=== CAMPOS CRÍTICOS EXTRAÍDOS ===
+2025-10-23 04:06:05,084 - INFO - IHQ_ESTUDIOS_SOLICITADOS: N/A
+2025-10-23 04:06:05,084 - INFO - FACTOR_PRONOSTICO: positivo para: CKAE1E3, CK7 Y CAM 5.2
+2025-10-23 04:06:05,084 - INFO - DIAGNOSTICO_PRINCIPAL: N/A
+2025-10-23 04:06:05,084 - INFO - IHQ_ORGANO: REGIÓN CERVICAL
+2025-10-23 04:06:05,084 - INFO - IHQ_CK7: POSITIVO
+2025-10-23 04:06:05,084 - INFO - IHQ_CKAE1_AE3: POSITIVO
+2025-10-23 04:06:05,084 - INFO - IHQ_CAM52: POSITIVO
+2025-10-23 04:06:05,084 - INFO - IHQ_GFAP: POSITIVO
+2025-10-23 04:06:05,084 - INFO - IHQ_S100: POSITIVO
+2025-10-23 04:06:05,084 - INFO - IHQ_SOX10: POSITIVO
+2025-10-23 04:06:05,084 - INFO - 
+N°Petición detectado: IHQ250982
+2025-10-23 04:06:05,084 - INFO - factor_pronostico PRE-MAPEO: positivo para: CKAE1E3, CK7 Y CAM 5.2
+2025-10-23 04:06:05,084 - INFO - Factor pronostico PRE-MAPEO: positivo para: CKAE1E3, CK7 Y CAM 5.2
+2025-10-23 04:06:05,084 - INFO - 
+Mapeando datos a formato de BD...
+2025-10-23 04:06:05,085 - INFO - IHQ_ESTUDIOS_SOLICITADOS (post-mapeo): CKAE1E3, CAM5.2, CK7, GFAP, SOX10, SOX100
+2025-10-23 04:06:05,085 - INFO - Factor pronostico (post-mapeo): positivo para: CKAE1E3, CK7 Y CAM 5.2
+2025-10-23 04:06:05,085 - INFO - IHQ_CK7 (post-mapeo): POSITIVO
+2025-10-23 04:06:05,085 - INFO - IHQ_CKAE1AE3 (post-mapeo): POSITIVO
+2025-10-23 04:06:05,085 - INFO - 
+Claves en datos_bd (117): Numero de caso, N. de identificación, Tipo de documento, Primer nombre, Segundo nombre, Primer apellido, Segundo apellido, Edad, Genero, EPS, Servicio, Médico tratante, Especialidad, Hospitalizado, Sede, Datos Clinicos, Departamento, Municipio, Fecha de toma (1. Fecha de la toma), Fecha de ingreso (2. Fecha de la muestra)
+2025-10-23 04:06:05,085 - INFO - 
+Insertando en base de datos...
+2025-10-23 04:06:05,086 - DEBUG - DEBUG save_records - Muestras de valores: IHQ_ESTUDIOS_SOLICITADOS: CKAE1E3, CAM5.2, CK7, GFAP, SOX10, SOX100, IHQ_CK7: POSITIVO, IHQ_CKAE1AE3: POSITIVO
+2025-10-23 04:06:05,087 - INFO - Registro actualizado: IHQ250982
+2025-10-23 04:06:05,091 - INFO - Guardado completado: 1 registros guardados, 0 omitidos
+2025-10-23 04:06:05,091 - INFO - \u2705 Caso IHQ250982 reprocesado y guardado exitosamente (1 registro)
+Traceback (most recent call last):
+  File "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV9GESTOR_ONCOLOGIA\reprocesar_IHQ250982.py", line 140, in <module>
+    print("\n" + "="*80)
+    ~~~~~^^^^^^^^^^^^^^^
+ValueError: I/O operation on closed file.
