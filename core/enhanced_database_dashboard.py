@@ -44,7 +44,10 @@ class EnhancedDatabaseDashboard:
         # Diccionario de nombres amigables para biomarcadores
         self.BIOMARKER_LABELS = {
             'RECEPTOR PROGESTERONOS': 'RECEPTOR DE PROGESTERONA',
+            'RECEPTOR PROGESTERONA': 'RECEPTOR DE PROGESTERONA',
             'RECEPTOR ESTROGENO': 'RECEPTOR DE ESTRÓGENO',
+            'RECEPTOR ESTROGENOS': 'RECEPTOR DE ESTRÓGENO',
+            'E CADHERINA': 'E-Cadherina',
             'KI-67': 'Ki-67',
             'HER2': 'HER2',
             'PDL-1': 'PDL-1',

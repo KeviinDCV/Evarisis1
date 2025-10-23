@@ -1,6 +1,6 @@
 {
   "numero_caso": "IHQ250981",
-  "timestamp": "2025-10-22T07:07:53.411539",
+  "timestamp": "2025-10-23T00:53:01.027355",
   "nivel": "profundo",
   "detecciones": {
     "diagnostico_coloracion": {
@@ -27,17 +27,20 @@
         {
           "nombre": "HER2",
           "valor": "HER2: EQUIVOCO (Score 2+)",
-          "ubicacion": "Descripción Microscópica"
+          "ubicacion": "Descripción Microscópica",
+          "columna_bd": "IHQ_HER2"
         },
         {
           "nombre": "Receptor de Estrógeno",
           "valor": "receptor de estrógeno (ER) Positivos",
-          "ubicacion": "Descripción Microscópica"
+          "ubicacion": "Descripción Microscópica",
+          "columna_bd": "IHQ_RECEPTOR_ESTROGENOS"
         },
         {
           "nombre": "Receptor de Progesterona",
           "valor": "receptor de progesterona (PgR): Negativo",
-          "ubicacion": "Descripción Microscópica"
+          "ubicacion": "Descripción Microscópica",
+          "columna_bd": "IHQ_RECEPTOR_PROGESTERONA"
         }
       ],
       "ubicaciones": {
@@ -54,6 +57,44 @@
     }
   },
   "validaciones": {
+    "biomarcadores_completos": [
+      {
+        "nombre": "HER2",
+        "columna_bd": "IHQ_HER2",
+        "en_pdf": true,
+        "en_estudios_solicitados": true,
+        "columna_existe": true,
+        "tiene_datos": true,
+        "valor_capturado": "EQUIVOCO (SCORE 2+)",
+        "ubicacion_pdf": "Línea 33",
+        "estado": "OK",
+        "problemas": []
+      },
+      {
+        "nombre": "Receptor de Estrógeno",
+        "columna_bd": "IHQ_RECEPTOR_ESTROGENOS",
+        "en_pdf": true,
+        "en_estudios_solicitados": true,
+        "columna_existe": true,
+        "tiene_datos": true,
+        "valor_capturado": "POSITIVOS (90-100%)",
+        "ubicacion_pdf": "Línea 40",
+        "estado": "OK",
+        "problemas": []
+      },
+      {
+        "nombre": "Receptor de Progesterona",
+        "columna_bd": "IHQ_RECEPTOR_PROGESTERONA",
+        "en_pdf": true,
+        "en_estudios_solicitados": true,
+        "columna_existe": true,
+        "tiene_datos": true,
+        "valor_capturado": "NEGATIVOS (MENOR AL 1 %)",
+        "ubicacion_pdf": "Línea 45",
+        "estado": "OK",
+        "problemas": []
+      }
+    ],
     "diagnostico_coloracion": {
       "estado": "WARNING",
       "valor_bd": null,
@@ -79,7 +120,7 @@
     },
     "diagnostico_principal": {
       "estado": "ERROR",
-      "valor_bd": "CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9) - TAMAÑO TUMORAL MAYOR 7 X 6 X 3 CENTÍMETROS",
+      "valor_bd": "CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)",
       "valor_esperado": "TAMAÑO TUMORAL MAYOR 7 x 6 x 3 CENTÍMETROS",
       "tiene_contaminacion": true,
       "contaminacion_detectada": [
@@ -91,24 +132,27 @@
     },
     "factor_pronostico": {
       "estado": "OK",
-      "valor_bd": "Índice de proliferación celular (Ki67): 21-30% / HER2: EQUIVOCO (Score 2+) / receptor de estrógeno (ER) Positivos / receptor de progesterona (PgR): Negativo",
+      "valor_bd": "Ki-67: 21-30% / - SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+) / - RECEPTORES DE ESTRÓGENOS: POSITIVOS (90-100%) / - RECEPTORES DE PROGESTERONA: NEGATIVOS (MENOR AL 1 %)",
       "tiene_contaminacion": false,
       "contaminacion_detectada": [],
       "biomarcadores_pdf": [
         {
           "nombre": "HER2",
           "valor": "HER2: EQUIVOCO (Score 2+)",
-          "ubicacion": "Descripción Microscópica"
+          "ubicacion": "Descripción Microscópica",
+          "columna_bd": "IHQ_HER2"
         },
         {
           "nombre": "Receptor de Estrógeno",
           "valor": "receptor de estrógeno (ER) Positivos",
-          "ubicacion": "Descripción Microscópica"
+          "ubicacion": "Descripción Microscópica",
+          "columna_bd": "IHQ_RECEPTOR_ESTROGENOS"
         },
         {
           "nombre": "Receptor de Progesterona",
           "valor": "receptor de progesterona (PgR): Negativo",
-          "ubicacion": "Descripción Microscópica"
+          "ubicacion": "Descripción Microscópica",
+          "columna_bd": "IHQ_RECEPTOR_PROGESTERONA"
         }
       ],
       "biomarcadores_solicitados": [],
@@ -120,6 +164,28 @@
       ],
       "cobertura": 100.0,
       "sugerencia": "FACTOR_PRONOSTICO con buena cobertura (100%)"
+    },
+    "organo_tabla": {
+      "estado": "WARNING",
+      "valor_bd": "MASTECTOMIA RADICAL",
+      "valor_esperado": "ESTUDIO DE 898807 Estudio anatomopatologico de marcacion MASTECTOMIA RADICAL",
+      "es_multilinea": true,
+      "lineas_pdf": [
+        "ESTUDIO DE",
+        "898807 Estudio anatomopatologico de marcacion",
+        "MASTECTOMIA RADICAL"
+      ],
+      "confianza_deteccion": 0.95,
+      "sugerencia": "Campo ORGANO incompleto (problema multilínea).\nBD: \"MASTECTOMIA RADICAL\"\nPDF (completo): \"ESTUDIO DE 898807 Estudio anatomopatologico de marcacion MASTECTOMIA RADICAL\"\nLíneas del PDF: ['ESTUDIO DE', '898807 Estudio anatomopatologico de marcacion', 'MASTECTOMIA RADICAL']\n\nCAUSA: El extractor no captura valores multilínea en la tabla.\n\nCORRECCIÓN:\n  Archivo: core/extractors/patient_extractor.py\n  Función: extract_organ_information()\n  Problema: Solo captura primera línea del campo ORGANO\n  Solución: Modificar para capturar líneas consecutivas no vacías después de 'Organo:'"
+    },
+    "ihq_organo_diagnostico": {
+      "estado": "ERROR",
+      "valor_bd": "MAMA IZQUIERDA",
+      "valor_esperado": "DE “CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)”",
+      "es_organo_valido": false,
+      "contiene_procedimiento": false,
+      "confianza_deteccion": 0.6,
+      "sugerencia": "Campo IHQ_ORGANO no coincide con PDF.\nBD: \"MAMA IZQUIERDA\"\nPDF (diagnóstico): \"DE “CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)”\"\nUbicación PDF: Primera línea de DIAGNÓSTICO\nCorrección: Verificar extractor en medical_extractor.py"
     }
   },
   "diagnosticos": {
@@ -135,12 +201,32 @@
     },
     "DIAGNOSTICO_PRINCIPAL": {
       "campo": "DIAGNOSTICO_PRINCIPAL",
-      "valor_bd": "CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9) - TAMAÑO TUMORAL MAYOR 7 X 6 X 3 CENTÍMETROS",
+      "valor_bd": "CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)",
       "valor_esperado": "TAMAÑO TUMORAL MAYOR 7 x 6 x 3 CENTÍMETROS",
       "causa_error": "Contaminado con datos del estudio M: GRADO",
       "tipo_error": "CONTAMINACION",
       "ubicacion_correcta": "Línea 22 del DIAGNÓSTICO",
       "patron_fallido": "Extractor no filtra grado Nottingham/invasiones",
+      "contexto_pdf": null
+    },
+    "ORGANO_TABLA": {
+      "campo": "ORGANO_TABLA",
+      "valor_bd": "MASTECTOMIA RADICAL",
+      "valor_esperado": "ESTUDIO DE 898807 Estudio anatomopatologico de marcacion MASTECTOMIA RADICAL",
+      "causa_error": null,
+      "tipo_error": null,
+      "ubicacion_correcta": null,
+      "patron_fallido": null,
+      "contexto_pdf": null
+    },
+    "IHQ_ORGANO_DIAGNOSTICO": {
+      "campo": "IHQ_ORGANO_DIAGNOSTICO",
+      "valor_bd": "MAMA IZQUIERDA",
+      "valor_esperado": "DE “CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)”",
+      "causa_error": null,
+      "tipo_error": null,
+      "ubicacion_correcta": null,
+      "patron_fallido": null,
       "contexto_pdf": null
     }
   },
@@ -164,19 +250,39 @@
       "patron_sugerido": "# Buscar diagnóstico sin grado ni invasiones\\npatron_diagnostico = r\\'(CARCINOMA|ADENOCARCINOMA|TUMOR)[^.]+\\'\\n# Excluir si contiene:\\nkeywords_excluir = [\\'NOTTINGHAM\\', \\'GRADO\\', \\'INVASIÓN\\']\\nif not any(kw in diagnostico for kw in keywords_excluir):\\n    return diagnostico",
       "comando": "python herramientas_ia/editor_core.py --editar-extractor DIAGNOSTICO_PRINCIPAL --simular",
       "prioridad": "CRITICA"
+    },
+    "ORGANO_TABLA": {
+      "archivo": null,
+      "funcion": null,
+      "lineas": null,
+      "problema": null,
+      "solucion": null,
+      "patron_sugerido": null,
+      "comando": null,
+      "prioridad": null
+    },
+    "IHQ_ORGANO_DIAGNOSTICO": {
+      "archivo": null,
+      "funcion": null,
+      "lineas": null,
+      "problema": null,
+      "solucion": null,
+      "patron_sugerido": null,
+      "comando": null,
+      "prioridad": null
     }
   },
   "metricas": {
     "total_validaciones": 3,
     "validaciones_ok": 1,
-    "validaciones_warning": 1,
-    "validaciones_error": 1,
+    "validaciones_warning": 2,
+    "validaciones_error": 2,
     "score_validacion": 33.33333333333333,
     "total_biomarcadores_detectados": 3,
     "total_biomarcadores_solicitados": 0
   },
   "resumen": {
     "estado": "CRITICO",
-    "mensaje": "1 error(es) critico(s) detectado(s)"
+    "mensaje": "2 error(es) critico(s) detectado(s)"
   }
 }
