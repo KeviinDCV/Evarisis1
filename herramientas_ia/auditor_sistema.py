@@ -50,14 +50,26 @@ class AuditorSistema:
 
     # Mapeo completo de biomarcadores conocidos
     BIOMARCADORES = {
-        'KI-67': 'IHQ_KI-67', 'KI67': 'IHQ_KI-67',
+        # KI-67 (columna existente: IHQ_KI-67)
+        'KI-67': 'IHQ_KI-67', 'KI67': 'IHQ_KI-67', 'KI 67': 'IHQ_KI-67',
+        # HER2
         'HER2': 'IHQ_HER2', 'HER-2': 'IHQ_HER2',
+        # RECEPTOR DE ESTRÓGENOS (columna existente: IHQ_RECEPTOR_ESTROGENOS)
         'RECEPTOR DE ESTRÓGENO': 'IHQ_RECEPTOR_ESTROGENOS',
         'RECEPTORES DE ESTRÓGENO': 'IHQ_RECEPTOR_ESTROGENOS',
+        'RECEPTOR DE ESTRÓGENOS': 'IHQ_RECEPTOR_ESTROGENOS',
+        'RECEPTORES DE ESTRÓGENOS': 'IHQ_RECEPTOR_ESTROGENOS',
+        'ESTRÓGENO': 'IHQ_RECEPTOR_ESTROGENOS',
+        'ESTRÓGENOS': 'IHQ_RECEPTOR_ESTROGENOS',
+        'ESTROGENO': 'IHQ_RECEPTOR_ESTROGENOS',
+        'ESTROGENOS': 'IHQ_RECEPTOR_ESTROGENOS',
         'RE': 'IHQ_RECEPTOR_ESTROGENOS', 'ER': 'IHQ_RECEPTOR_ESTROGENOS',
+        # RECEPTOR DE PROGESTERONA (columna existente: IHQ_RECEPTOR_PROGESTERONA)
         'RECEPTOR DE PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',
         'RECEPTORES DE PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',
+        'PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',
         'RP': 'IHQ_RECEPTOR_PROGESTERONA', 'PR': 'IHQ_RECEPTOR_PROGESTERONA',
+        # Otros biomarcadores
         'P53': 'IHQ_P53', 'PDL-1': 'IHQ_PDL-1', 'PDL1': 'IHQ_PDL-1',
         'P16': 'IHQ_P16_ESTADO', 'P40': 'IHQ_P40_ESTADO', 'P63': 'IHQ_P63',
         'CK7': 'IHQ_CK7', 'CK20': 'IHQ_CK20', 'CDX2': 'IHQ_CDX2',
@@ -72,6 +84,8 @@ class AuditorSistema:
         'S100': 'IHQ_S100', 'VIMENTINA': 'IHQ_VIMENTINA',
         'EMA': 'IHQ_EMA', 'PAX5': 'IHQ_PAX5', 'PAX8': 'IHQ_PAX8',
         'GATA3': 'IHQ_GATA3', 'SOX10': 'IHQ_SOX10',
+        # E-CADHERINA (PENDIENTE: agregar columna IHQ_E_CADHERINA a BD)
+        'E-CADHERINA': 'IHQ_E_CADHERINA', 'E CADHERINA': 'IHQ_E_CADHERINA', 'ECADHERINA': 'IHQ_E_CADHERINA',
     }
 
     def __init__(self):
@@ -83,6 +97,9 @@ class AuditorSistema:
             raise FileNotFoundError(f"Base de datos no encontrada: {self.db_path}")
         if not self.debug_maps_dir.exists():
             raise FileNotFoundError(f"Debug_maps no encontrado: {self.debug_maps_dir}")
+
+        # Cargar schema de BD (columnas disponibles)
+        self.columnas_bd = self._obtener_columnas_bd()
 
     # ========== AUDITORÍA PDF vs BD ==========
 
@@ -99,23 +116,97 @@ class AuditorSistema:
 
         datos_bd = debug_map.get('base_datos', {}).get('datos_guardados', {})
         descripciones = self._extraer_descripciones(debug_map)
-
-        # ═══════════════════════════════════════════════════════════════════════
-        # NUEVO: Extraer contexto del flujo M → IHQ
-        # ═══════════════════════════════════════════════════════════════════════
         texto_ocr = debug_map.get('ocr', {}).get('texto_consolidado', '')
-        contexto_estudio = self._extraer_contexto_estudio(texto_ocr)
 
         # ═══════════════════════════════════════════════════════════════════════
-        # VALIDACIONES CRÍTICAS: DIAGNOSTICO_PRINCIPAL y FACTOR_PRONOSTICO
+        # NUEVAS VALIDACIONES SEMÁNTICAS
         # ═══════════════════════════════════════════════════════════════════════
+
+        # 1. Extraer diagnóstico de coloración del MACRO
+        texto_macro = descripciones['macroscopica']
+        diagnostico_coloracion = self._extraer_diagnostico_coloracion_de_macro(texto_macro)
+
+        # 2. Extraer biomarcadores solicitados del MACRO
+        biomarcadores_solicitados_macro = self._extraer_biomarcadores_solicitados_de_macro(texto_macro)
+
+        # 3. Obtener schema de BD para validar columnas
+        schema_bd = self._obtener_schema_bd()
+
+        # 4. Detectar biomarcadores sin columna en BD
+        biomarcadores_sin_columna = self._detectar_biomarcadores_faltantes_en_bd(
+            biomarcadores_solicitados_macro, schema_bd
+        )
+
+        # 5. Validar DIAGNOSTICO_COLORACION en BD vs esperado
+        diagnostico_coloracion_bd = datos_bd.get('DIAGNOSTICO_COLORACION', '')
+        validacion_diag_coloracion = {
+            'valor_bd': diagnostico_coloracion_bd,
+            'valor_esperado_macro': diagnostico_coloracion,
+            'estado': 'OK',
+            'ubicacion_pdf': 'Descripción Macroscópica (texto entre comillas)'
+        }
+
+        if diagnostico_coloracion:
+            if not diagnostico_coloracion_bd or diagnostico_coloracion_bd in ['N/A', '']:
+                validacion_diag_coloracion['estado'] = 'ERROR'
+                validacion_diag_coloracion['mensaje'] = 'DIAGNOSTICO_COLORACION vacío en BD pero presente en macro'
+            elif self._normalizar_texto(diagnostico_coloracion_bd) != self._normalizar_texto(diagnostico_coloracion):
+                validacion_diag_coloracion['estado'] = 'WARNING'
+                validacion_diag_coloracion['mensaje'] = 'DIAGNOSTICO_COLORACION no coincide exactamente con macro'
+            else:
+                validacion_diag_coloracion['mensaje'] = 'DIAGNOSTICO_COLORACION correctamente extraído'
+        else:
+            validacion_diag_coloracion['estado'] = 'WARNING'
+            validacion_diag_coloracion['mensaje'] = 'No se pudo extraer diagnóstico de coloración del macro'
+
+        # 6. Validar IHQ_ESTUDIOS_SOLICITADOS con biomarcadores del macro
+        estudios_solicitados_bd = datos_bd.get('IHQ_ESTUDIOS_SOLICITADOS', '')
+        biomarcadores_capturados = []
+        biomarcadores_faltantes = []
+
+        for biomarcador in biomarcadores_solicitados_macro:
+            # Buscar variantes del biomarcador en IHQ_ESTUDIOS_SOLICITADOS
+            encontrado = False
+            variantes = [
+                biomarcador,
+                biomarcador.replace('-', ' '),
+                biomarcador.replace('_', ' '),
+                biomarcador.replace('-', ''),
+                biomarcador.replace('_', '')
+            ]
+
+            for variante in variantes:
+                if re.search(rf'\b{re.escape(variante)}\b', estudios_solicitados_bd, re.IGNORECASE):
+                    encontrado = True
+                    break
+
+            if encontrado:
+                biomarcadores_capturados.append(biomarcador)
+            else:
+                biomarcadores_faltantes.append(biomarcador)
+
+        cobertura_estudios = (len(biomarcadores_capturados) / len(biomarcadores_solicitados_macro) * 100) if biomarcadores_solicitados_macro else 100.0
+
+        validacion_estudios_solicitados = {
+            'biomarcadores_macro': biomarcadores_solicitados_macro,
+            'biomarcadores_capturados': biomarcadores_capturados,
+            'biomarcadores_faltantes': biomarcadores_faltantes,
+            'biomarcadores_sin_columna_bd': biomarcadores_sin_columna,
+            'cobertura': cobertura_estudios,
+            'estado': 'OK' if cobertura_estudios == 100 and not biomarcadores_sin_columna else ('WARNING' if cobertura_estudios >= 75 else 'ERROR')
+        }
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # VALIDACIONES EXISTENTES (mejoradas)
+        # ═══════════════════════════════════════════════════════════════════════
+        contexto_estudio = self._extraer_contexto_estudio(texto_ocr)
         resultado_diagnostico = self._validar_diagnostico_principal(datos_bd, texto_ocr)
         resultado_factor = self._validar_factor_pronostico(datos_bd, texto_ocr)
 
         # Identificar biomarcadores mencionados en PDF
         biomarcadores_en_pdf = self._identificar_biomarcadores_en_pdf(descripciones)
 
-        # Validar IHQ_ESTUDIOS_SOLICITADOS
+        # Validar IHQ_ESTUDIOS_SOLICITADOS (validación antigua)
         resultado_estudios = self._validar_estudios_solicitados(datos_bd, biomarcadores_en_pdf)
 
         # Validar cada biomarcador individual
@@ -142,32 +233,77 @@ class AuditorSistema:
         precision = (total_correctos / total_biomarcadores * 100) if total_biomarcadores > 0 else 100.0
 
         # ═══════════════════════════════════════════════════════════════════════
-        # MOSTRAR RESULTADOS MEJORADOS (con contexto M → IHQ)
+        # MOSTRAR RESULTADOS MEJORADOS V2 (con validaciones semánticas profundas)
         # ═══════════════════════════════════════════════════════════════════════
-        print(f"📊 CONTEXTO DEL ESTUDIO:")
-        if contexto_estudio['estudio_m_id']:
-            print(f"   Estudio M: {contexto_estudio['estudio_m_id']}")
-        if contexto_estudio['biomarcadores_ihq']:
-            print(f"   Biomarcadores IHQ solicitados: {len(contexto_estudio['biomarcadores_ihq'])}")
 
-        print(f"\n📊 VALIDACIÓN DE CAMPOS CRÍTICOS:")
+        # SECCIÓN 1: VALIDACIÓN SEMÁNTICA DE MACRO
+        print(f"\n{'═'*80}")
+        print(f"🔬 VALIDACIÓN SEMÁNTICA - DESCRIPCIÓN MACROSCÓPICA")
+        print(f"{'═'*80}")
 
-        # Resultado DIAGNOSTICO_PRINCIPAL
+        # 1.1 DIAGNOSTICO_COLORACION
+        estado_coloracion_icono = {'OK': '✅', 'WARNING': '⚠️', 'ERROR': '❌'}.get(validacion_diag_coloracion['estado'], '❓')
+        print(f"\n{estado_coloracion_icono} DIAGNOSTICO_COLORACION: {validacion_diag_coloracion['estado']}")
+        print(f"   Valor BD: {validacion_diag_coloracion['valor_bd'][:100]}..." if len(validacion_diag_coloracion['valor_bd']) > 100 else f"   Valor BD: {validacion_diag_coloracion['valor_bd']}")
+        if validacion_diag_coloracion['valor_esperado_macro']:
+            print(f"   Esperado (macro): {validacion_diag_coloracion['valor_esperado_macro'][:100]}..." if len(validacion_diag_coloracion['valor_esperado_macro']) > 100 else f"   Esperado (macro): {validacion_diag_coloracion['valor_esperado_macro']}")
+        print(f"   📍 {validacion_diag_coloracion.get('mensaje', 'Validación completada')}")
+
+        # 1.2 BIOMARCADORES SOLICITADOS
+        print(f"\n📋 BIOMARCADORES SOLICITADOS (extraídos de macro):")
+        if biomarcadores_solicitados_macro:
+            print(f"   Total encontrados: {len(biomarcadores_solicitados_macro)}")
+            print(f"   Lista: {', '.join(biomarcadores_solicitados_macro)}")
+        else:
+            print(f"   ⚠️  No se encontraron biomarcadores solicitados al final del macro")
+
+        # 1.3 COBERTURA DE IHQ_ESTUDIOS_SOLICITADOS
+        estado_estudios_icono = {'OK': '✅', 'WARNING': '⚠️', 'ERROR': '❌'}.get(validacion_estudios_solicitados['estado'], '❓')
+        print(f"\n{estado_estudios_icono} COBERTURA DE IHQ_ESTUDIOS_SOLICITADOS:")
+        print(f"   Cobertura: {validacion_estudios_solicitados['cobertura']:.1f}%")
+        print(f"   Capturados: {len(validacion_estudios_solicitados['biomarcadores_capturados'])} de {len(validacion_estudios_solicitados['biomarcadores_macro'])}")
+
+        if validacion_estudios_solicitados['biomarcadores_faltantes']:
+            print(f"   ⚠️  Faltantes en IHQ_ESTUDIOS_SOLICITADOS: {', '.join(validacion_estudios_solicitados['biomarcadores_faltantes'])}")
+
+        if validacion_estudios_solicitados['biomarcadores_sin_columna_bd']:
+            print(f"   ❌ ERROR CRÍTICO - Biomarcadores SIN COLUMNA EN BD:")
+            for bio in validacion_estudios_solicitados['biomarcadores_sin_columna_bd']:
+                print(f"      - {bio} → Columna esperada: IHQ_{bio.replace('-', '_')}")
+            print(f"   💡 ACCIÓN REQUERIDA: Agregar columnas faltantes a la base de datos")
+
+        # SECCIÓN 2: VALIDACIÓN DE CAMPOS CRÍTICOS
+        print(f"\n{'═'*80}")
+        print(f"📊 VALIDACIÓN DE CAMPOS CRÍTICOS - DIAGNÓSTICO E IHQ")
+        print(f"{'═'*80}")
+
+        # 2.1 DIAGNOSTICO_PRINCIPAL
         estado_diag_icono = {'OK': '✅', 'WARNING': '⚠️', 'ERROR': '❌'}.get(resultado_diagnostico['estado'], '❓')
-        print(f"   {estado_diag_icono} DIAGNOSTICO_PRINCIPAL: {resultado_diagnostico['estado']}")
-        print(f"      {resultado_diagnostico['mensaje']}")
+        print(f"\n{estado_diag_icono} DIAGNOSTICO_PRINCIPAL: {resultado_diagnostico['estado']}")
+        print(f"   {resultado_diagnostico['mensaje']}")
         if 'sugerencia' in resultado_diagnostico:
-            print(f"      💡 {resultado_diagnostico['sugerencia']}")
+            print(f"   💡 {resultado_diagnostico['sugerencia']}")
 
-        # Resultado FACTOR_PRONOSTICO
+        # 2.2 FACTOR_PRONOSTICO (con biomarcadores consolidados)
         estado_factor_icono = {'OK': '✅', 'WARNING': '⚠️', 'ERROR': '❌'}.get(resultado_factor['estado'], '❓')
-        print(f"   {estado_factor_icono} FACTOR_PRONOSTICO: {resultado_factor['estado']}")
-        print(f"      {resultado_factor['mensaje']}")
-        if 'sugerencia' in resultado_factor:
-            print(f"      💡 {resultado_factor['sugerencia']}")
+        print(f"\n{estado_factor_icono} FACTOR_PRONOSTICO: {resultado_factor['estado']}")
+        print(f"   {resultado_factor['mensaje']}")
 
-        print(f"\n📊 VALIDACIÓN DE BIOMARCADORES:")
-        print(f"   Precisión: {precision:.1f}% ({total_correctos}/{total_biomarcadores})")
+        # Mostrar biomarcadores consolidados si existen
+        if 'biomarcadores_encontrados_diagnostico' in resultado_factor:
+            print(f"   📍 Biomarcadores en DIAGNÓSTICO: {', '.join(resultado_factor['biomarcadores_encontrados_diagnostico']) if resultado_factor['biomarcadores_encontrados_diagnostico'] else 'Ninguno'}")
+        if 'biomarcadores_encontrados_micro' in resultado_factor:
+            print(f"   📍 Biomarcadores en MICRO: {', '.join(resultado_factor['biomarcadores_encontrados_micro']) if resultado_factor['biomarcadores_encontrados_micro'] else 'Ninguno'}")
+        if 'factor_sugerido' in resultado_factor:
+            print(f"   💡 Factor sugerido: {resultado_factor['factor_sugerido']}")
+        if 'sugerencia' in resultado_factor:
+            print(f"   💡 {resultado_factor['sugerencia']}")
+
+        # SECCIÓN 3: RESUMEN GENERAL
+        print(f"\n{'═'*80}")
+        print(f"📊 RESUMEN GENERAL DE BIOMARCADORES")
+        print(f"{'═'*80}")
+        print(f"\n   Precisión extracción: {precision:.1f}% ({total_correctos}/{total_biomarcadores})")
         print(f"   Completitud IHQ_ESTUDIOS: {resultado_estudios['porcentaje_captura']:.1f}%")
 
         if errores:
@@ -175,6 +311,9 @@ class AuditorSistema:
         if warnings:
             print(f"   ⚠️  {len(warnings)} valor(es) inferido(s)")
 
+        print(f"\n{'='*80}\n")
+
+        # Resultado JSON completo
         resultado = {
             'numero_caso': numero_caso,
             'precision': precision,
@@ -185,7 +324,10 @@ class AuditorSistema:
             'resultado_estudios': resultado_estudios,
             'contexto_estudio': contexto_estudio,
             'validacion_diagnostico': resultado_diagnostico,
-            'validacion_factor_pronostico': resultado_factor
+            'validacion_factor_pronostico': resultado_factor,
+            # NUEVAS SECCIONES V2
+            'diagnostico_coloracion': validacion_diag_coloracion,
+            'biomarcadores_solicitados': validacion_estudios_solicitados
         }
 
         if json_export:
@@ -776,12 +918,22 @@ class AuditorSistema:
             else:
                 return {'estado': 'OK', 'valor_bd': factor_bd}
 
-        # Buscar biomarcadores en todas las secciones
+        # ═══════════════════════════════════════════════════════════════════════
+        # MEJORA V2: Buscar biomarcadores con PRIORIDAD DIAGNÓSTICO > MICRO
+        # ═══════════════════════════════════════════════════════════════════════
+        biomarcadores_encontrados_diagnostico = {}
+        biomarcadores_encontrados_micro = {}
         biomarcadores_encontrados = {}
+
+        # Separar texto por secciones
+        texto_diagnostico = texto_secciones.get('diagnostico', '')
+        texto_micro = texto_secciones.get('descripcion_microscopica', '')
+        texto_comentarios = texto_secciones.get('comentarios', '')
         texto_completo = ' '.join(texto_secciones.values())
 
         # ═══════════════════════════════════════════════════════════════════════
         # PRIORIDAD 1: Ki-67 / Ki67 (según medical_extractor.py líneas 294-327)
+        # Buscar PRIMERO en DIAGNÓSTICO, luego en MICRO
         # ═══════════════════════════════════════════════════════════════════════
         ki67_patterns = [
             r'[ÍI]NDICE\s+DE\s+PROLIFERACI[ÓO]N\s+C[ÉE]LULAR\s+(?:MEDIDO\s+CON\s+)?(?:\()?Ki[\s-]?67(?:\))?\s*[:\s]+([0-9]+)\s*%',
@@ -790,23 +942,39 @@ class AuditorSistema:
             r'Ki[\s-]?67\s*[:\s]+(POSITIVO|NEGATIVO|ALTO|BAJO|<\s*\d+\s*%)',
         ]
 
+        # Buscar Ki-67 en DIAGNÓSTICO primero
+        ki67_encontrado = False
         for patron in ki67_patterns:
-            match = re.search(patron, texto_completo, re.IGNORECASE)
+            match = re.search(patron, texto_diagnostico, re.IGNORECASE)
             if match:
                 valor = match.group(0).strip()
-                # Validar contexto (evitar diferenciación glandular)
-                match_start = match.start()
-                context_before = texto_completo[max(0, match_start - 150):match_start].upper()
-                if 'DIFERENCIACI' not in context_before or 'GLANDULAR' not in context_before:
-                    if 'MENOR DEL' not in context_before[-30:]:
-                        biomarcadores_encontrados['Ki-67'] = {
-                            'valor': valor,
-                            'ubicacion': self._identificar_seccion(match.start(), texto_secciones)
-                        }
-                        break
+                biomarcadores_encontrados_diagnostico['Ki-67'] = {
+                    'valor': valor,
+                    'ubicacion': 'diagnostico'
+                }
+                ki67_encontrado = True
+                break
+
+        # Si NO se encuentra en DIAGNÓSTICO, buscar en MICRO
+        if not ki67_encontrado:
+            for patron in ki67_patterns:
+                match = re.search(patron, texto_micro, re.IGNORECASE)
+                if match:
+                    valor = match.group(0).strip()
+                    # Validar contexto (evitar diferenciación glandular)
+                    match_start = match.start()
+                    context_before = texto_micro[max(0, match_start - 150):match_start].upper()
+                    if 'DIFERENCIACI' not in context_before or 'GLANDULAR' not in context_before:
+                        if 'MENOR DEL' not in context_before[-30:]:
+                            biomarcadores_encontrados_micro['Ki-67'] = {
+                                'valor': valor,
+                                'ubicacion': 'descripcion_microscopica'
+                            }
+                            break
 
         # ═══════════════════════════════════════════════════════════════════════
         # PRIORIDAD 2: p53 (según medical_extractor.py líneas 337-350)
+        # Buscar PRIMERO en DIAGNÓSTICO, luego en MICRO
         # ═══════════════════════════════════════════════════════════════════════
         p53_patterns = [
             r'p53\s+tiene\s+expresi[ÓO]n[^.\n]+\([^)]+\)',
@@ -814,57 +982,72 @@ class AuditorSistema:
             r'p53\s+(POSITIVO|NEGATIVO|MUTADO|NO\s+MUTADO)[^.\n]*',
         ]
 
+        p53_encontrado = False
         for patron in p53_patterns:
-            match = re.search(patron, texto_completo, re.IGNORECASE)
+            match = re.search(patron, texto_diagnostico, re.IGNORECASE)
             if match:
-                biomarcadores_encontrados['p53'] = {
+                biomarcadores_encontrados_diagnostico['p53'] = {
                     'valor': match.group(0).strip(),
-                    'ubicacion': self._identificar_seccion(match.start(), texto_secciones)
+                    'ubicacion': 'diagnostico'
                 }
+                p53_encontrado = True
                 break
 
-        # ═══════════════════════════════════════════════════════════════════════
-        # PRIORIDAD 3: Líneas de inmunorreactividad (según medical_extractor.py líneas 359-372)
-        # ═══════════════════════════════════════════════════════════════════════
-        inmuno_patterns = [
-            r'Las\s+c[ée]lulas\s+tumorales\s+presentan\s+inmuno[^\n.]+\.',
-            r'Los\s+marcadores[^\n.]+(?:negativos?|positivos?)\.',
-        ]
-
-        for patron in inmuno_patterns:
-            match = re.search(patron, texto_completo, re.IGNORECASE)
-            if match:
-                biomarcadores_encontrados['inmunorreactividad'] = {
-                    'valor': match.group(0).strip(),
-                    'ubicacion': self._identificar_seccion(match.start(), texto_secciones)
-                }
-                break
-
-        # ═══════════════════════════════════════════════════════════════════════
-        # PRIORIDAD 4: Otros biomarcadores (HER2, ER, PR, p40, p16, etc.)
-        # ═══════════════════════════════════════════════════════════════════════
-        otros_marcadores_patterns = [
-            r'HER[\s-]?2\s*[:\s]+(POSITIVO|NEGATIVO|\d+\+)',
-            r'(?:RECEPTOR\s+DE\s+)?ESTR[ÓO]GENO[S]?\s*[:\s]+(\d+%\s+)?(?:POSITIVO|NEGATIVO)',
-            r'(?:RECEPTOR\s+DE\s+)?PROGESTERONA\s*[:\s]+(\d+%\s+)?(?:POSITIVO|NEGATIVO)',
-            r'p40\s+(POSITIVO|NEGATIVO)',
-            r'p16\s+(POSITIVO|NEGATIVO)',
-            r'TTF[\s-]?1\s+(POSITIVO|NEGATIVO)',
-            r'CK7\s+(POSITIVO|NEGATIVO)',
-            r'CK20\s+(POSITIVO|NEGATIVO)',
-            r'(?:Sinaptofisina|Synaptophysin)\s+(POSITIVO|NEGATIVO)',
-            r'Napsina\s+A\s+(POSITIVO|NEGATIVO)',
-        ]
-
-        for patron in otros_marcadores_patterns:
-            matches = re.finditer(patron, texto_completo, re.IGNORECASE)
-            for match in matches:
-                nombre_marcador = re.sub(r'\s*[:\s]+.*', '', match.group(0), flags=re.IGNORECASE).strip()
-                if nombre_marcador not in biomarcadores_encontrados:
-                    biomarcadores_encontrados[nombre_marcador] = {
+        if not p53_encontrado:
+            for patron in p53_patterns:
+                match = re.search(patron, texto_micro, re.IGNORECASE)
+                if match:
+                    biomarcadores_encontrados_micro['p53'] = {
                         'valor': match.group(0).strip(),
-                        'ubicacion': self._identificar_seccion(match.start(), texto_secciones)
+                        'ubicacion': 'descripcion_microscopica'
                     }
+                    break
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # PRIORIDAD 3: Otros biomarcadores (HER2, ER, PR, p40, p16, etc.)
+        # Buscar PRIMERO en DIAGNÓSTICO, luego en MICRO
+        # ═══════════════════════════════════════════════════════════════════════
+        otros_marcadores_patterns = {
+            'HER2': r'HER[\s-]?2\s*[:\s]+(POSITIVO|NEGATIVO|\d+\+)',
+            'RECEPTOR-ESTROGENOS': r'(?:RECEPTOR(?:ES)?\s+DE\s+)?ESTR[ÓO]GENO[S]?\s*[:\s]+(\d+%\s+)?(?:POSITIVO|NEGATIVO)',
+            'RECEPTOR-PROGESTERONA': r'(?:RECEPTOR(?:ES)?\s+DE\s+)?PROGESTERONA\s*[:\s]+(\d+%\s+)?(?:POSITIVO|NEGATIVO)',
+            'p40': r'p40\s+(POSITIVO|NEGATIVO)',
+            'p16': r'p16\s+(POSITIVO|NEGATIVO)',
+            'TTF-1': r'TTF[\s-]?1\s+(POSITIVO|NEGATIVO)',
+            'CK7': r'CK7\s+(POSITIVO|NEGATIVO)',
+            'CK20': r'CK20\s+(POSITIVO|NEGATIVO)',
+            'Sinaptofisina': r'(?:Sinaptofisina|Synaptophysin)\s+(POSITIVO|NEGATIVO)',
+            'Napsina-A': r'Napsina\s+A\s+(POSITIVO|NEGATIVO)',
+        }
+
+        for nombre_bio, patron in otros_marcadores_patterns.items():
+            # Buscar primero en DIAGNÓSTICO
+            match = re.search(patron, texto_diagnostico, re.IGNORECASE)
+            if match:
+                if nombre_bio not in biomarcadores_encontrados_diagnostico:
+                    biomarcadores_encontrados_diagnostico[nombre_bio] = {
+                        'valor': match.group(0).strip(),
+                        'ubicacion': 'diagnostico'
+                    }
+            else:
+                # Si no está en DIAGNÓSTICO, buscar en MICRO
+                match = re.search(patron, texto_micro, re.IGNORECASE)
+                if match:
+                    if nombre_bio not in biomarcadores_encontrados_micro:
+                        biomarcadores_encontrados_micro[nombre_bio] = {
+                            'valor': match.group(0).strip(),
+                            'ubicacion': 'descripcion_microscopica'
+                        }
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # CONSOLIDAR: DIAGNÓSTICO tiene prioridad sobre MICRO
+        # ═══════════════════════════════════════════════════════════════════════
+        biomarcadores_encontrados = biomarcadores_encontrados_diagnostico.copy()
+
+        # Agregar los de MICRO solo si NO están en DIAGNÓSTICO
+        for nombre, info in biomarcadores_encontrados_micro.items():
+            if nombre not in biomarcadores_encontrados:
+                biomarcadores_encontrados[nombre] = info
 
         # ═══════════════════════════════════════════════════════════════════════
         # ANÁLISIS DE RESULTADOS
@@ -935,10 +1118,13 @@ class AuditorSistema:
                     'estado': 'WARNING',
                     'mensaje': f'FACTOR_PRONOSTICO es N/A pero se encontraron {len(biomarcadores_encontrados)} biomarcadores en el PDF',
                     'valor_bd': factor_bd,
-                    'biomarcadores_encontrados': biomarcadores_encontrados,
+                    'biomarcadores_encontrados_diagnostico': list(biomarcadores_encontrados_diagnostico.keys()),
+                    'biomarcadores_encontrados_micro': list(biomarcadores_encontrados_micro.keys()),
+                    'biomarcadores_consolidados': biomarcadores_encontrados,
                     'factor_sugerido': factor_construido,
                     'sugerencias': '\n'.join(sugerencias),
-                    'analisis_extractor': 'El extractor extract_factor_pronostico() NO capturó estos biomarcadores. Ver sugerencias para diagnóstico.'
+                    'analisis_extractor': 'El extractor extract_factor_pronostico() NO capturó estos biomarcadores. Ver sugerencias para diagnóstico.',
+                    'validacion': 'ERROR'
                 }
             else:
                 # NO hay biomarcadores en el PDF - N/A es válido
@@ -1337,10 +1523,17 @@ class AuditorSistema:
                         # Evitar duplicados (si ya se encontró en otra sección)
                         ya_existe = any(b['nombre'] == nombre_bio for b in resultado['biomarcadores_encontrados'])
                         if not ya_existe:
+                            # Mapear nombre a columna BD usando diccionario BIOMARCADORES
+                            columna_bd = self.BIOMARCADORES.get(nombre_bio.upper())
+                            if not columna_bd:
+                                # Fallback: generar nombre de columna
+                                columna_bd = f"IHQ_{nombre_bio.replace(' ', '_').replace('-', '_').upper()}"
+
                             resultado['biomarcadores_encontrados'].append({
                                 'nombre': nombre_bio,
                                 'valor': valor,
-                                'ubicacion': nombre_seccion
+                                'ubicacion': nombre_seccion,
+                                'columna_bd': columna_bd
                             })
                             resultado['ubicaciones'][nombre_bio] = nombre_seccion
                         break
@@ -1470,6 +1663,18 @@ class AuditorSistema:
         else:
             resultado['estado'] = 'ERROR'
             resultado['sugerencia'] = 'No se pudieron extraer componentes del diagnóstico coloración. Verificar OCR o estructura del PDF.'
+
+        # V6.0.2: NUEVO - Detectar patrón "de \"DIAGNOSTICO\"" y sugerir limpieza
+        if diagnostico_coloracion_bd and isinstance(diagnostico_coloracion_bd, str):
+            if re.match(r'^de\s+"', diagnostico_coloracion_bd, re.IGNORECASE):
+                resultado['estado'] = 'WARNING'
+                resultado['problemas_formato'] = {
+                    'patron_detectado': 'de "DIAGNOSTICO"',
+                    'valor_actual': diagnostico_coloracion_bd,
+                    'valor_sugerido': re.sub(r'^de\s+"([^"]+)"', r'\1', diagnostico_coloracion_bd),
+                    'explicacion': 'Campo comienza con "de" innecesario. Debería empezar directamente con el diagnóstico.'
+                }
+                resultado['sugerencia'] = f"LIMPIAR formato: Quitar 'de \"' inicial. Valor corregido: {resultado['problemas_formato']['valor_sugerido']}"
 
         return resultado
 
@@ -1732,6 +1937,271 @@ class AuditorSistema:
         )
         return texto_sin_acentos.upper()
 
+    def _obtener_columnas_bd(self) -> set:
+        """Obtiene el conjunto de columnas disponibles en la tabla de BD"""
+        import sqlite3
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+            cursor.execute(f"PRAGMA table_info({self.table_name})")
+            columnas = {row[1] for row in cursor.fetchall()}  # row[1] es el nombre de la columna
+            conn.close()
+            return columnas
+        except Exception as e:
+            print(f"⚠️  WARNING: No se pudieron obtener columnas de BD: {e}")
+            return set()
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # NUEVAS FUNCIONES: COMPRENSIÓN SEMÁNTICA DE INFORMES IHQ
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def _extraer_diagnostico_coloracion_de_macro(self, texto_macro: str) -> Optional[str]:
+        """
+        Extrae el diagnóstico de coloración (estudio M) del texto entre comillas en la descripción macroscópica.
+
+        CONTEXTO:
+        =========
+        En los informes IHQ, la DESCRIPCIÓN MACROSCÓPICA contiene una referencia al estudio M previo
+        con el diagnóstico completo entre comillas:
+
+        Ejemplo:
+        "con diagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). NOTTINGHAM GRADO 2...\""
+
+        Args:
+            texto_macro: Texto completo de la descripción macroscópica
+
+        Returns:
+            str: Texto del diagnóstico entre comillas, o None si no se encuentra
+
+        Ejemplo retorno:
+            "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). NOTTINGHAM GRADO 2 (PUNTAJE DE 6)..."
+        """
+        if not texto_macro:
+            return None
+
+        # Patrón 1: con diagnóstico de "..."
+        patron1 = r'con\s+diagn[óo]stico\s+de\s+["\']([^"\']+)["\']'
+        match = re.search(patron1, texto_macro, re.IGNORECASE | re.DOTALL)
+        if match:
+            return match.group(1).strip()
+
+        # Patrón 2: diagnóstico de "..." (sin "con")
+        patron2 = r'diagn[óo]stico\s+de\s+["\']([^"\']+)["\']'
+        match = re.search(patron2, texto_macro, re.IGNORECASE | re.DOTALL)
+        if match:
+            return match.group(1).strip()
+
+        # Patrón 3: y con diagnóstico "..." (variante)
+        patron3 = r'y\s+con\s+diagn[óo]stico\s+["\']([^"\']+)["\']'
+        match = re.search(patron3, texto_macro, re.IGNORECASE | re.DOTALL)
+        if match:
+            return match.group(1).strip()
+
+        return None
+
+    def _extraer_biomarcadores_solicitados_de_macro(self, texto_macro: str) -> List[str]:
+        """
+        Extrae la lista de biomarcadores solicitados mencionados al FINAL de la descripción macroscópica.
+
+        CONTEXTO:
+        =========
+        Al final de la DESCRIPCIÓN MACROSCÓPICA se listan los biomarcadores que se solicitarán
+        para el estudio de inmunohistoquímica:
+
+        Ejemplo 1:
+        "...para estudios de inmunohistoquímica por lo que se solicita receptores de estrógeno,
+        receptores de progesterona, ki67 y HER2."
+
+        Ejemplo 2:
+        "...se realizan niveles histológicos para tinción con: E-Cadherina, Progesterona,
+        Estrógenos, Her2, Ki67."
+
+        MEJORA V2: Ahora detecta correctamente biomarcadores que aparecen en listas separadas por comas
+        al FINAL del macro, aunque NO estén precedidos de "se solicita".
+
+        Args:
+            texto_macro: Texto completo de la descripción macroscópica
+
+        Returns:
+            List[str]: Lista de biomarcadores normalizados encontrados
+
+        Ejemplo retorno:
+            ['E-CADHERINA', 'RECEPTOR-PROGESTERONA', 'RECEPTOR-ESTROGENOS', 'HER2', 'KI-67']
+        """
+        biomarcadores_encontrados = []
+
+        if not texto_macro:
+            return biomarcadores_encontrados
+
+        # PASO 1: Buscar patrones explícitos
+        texto_biomarcadores = None
+
+        # Patrón 1: "se solicita [biomarcadores]"
+        patron1 = r'se\s+solicita[n]?\s+(.+?)\.?\s*$'
+        match = re.search(patron1, texto_macro, re.IGNORECASE | re.DOTALL)
+        if match:
+            texto_biomarcadores = match.group(1)
+
+        # Patrón 2: "para tinción con: [biomarcadores]"
+        if not texto_biomarcadores:
+            patron2 = r'para\s+tinci[óo]n\s+con[:\s]+(.+?)\.?\s*$'
+            match = re.search(patron2, texto_macro, re.IGNORECASE | re.DOTALL)
+            if match:
+                texto_biomarcadores = match.group(1)
+
+        # Patrón 3: "estudios de inmunohistoquímica [biomarcadores]"
+        if not texto_biomarcadores:
+            patron3 = r'estudios?\s+de\s+inmunohistoqu[íi]mica[:\s]+(.+?)\.?\s*$'
+            match = re.search(patron3, texto_macro, re.IGNORECASE | re.DOTALL)
+            if match:
+                texto_biomarcadores = match.group(1)
+
+        # PASO 2: Si no se encontró patrón explícito, buscar en la ÚLTIMA oración
+        if not texto_biomarcadores:
+            # Obtener últimas 200 caracteres del macro (donde suelen estar los biomarcadores)
+            ultimo_fragmento = texto_macro[-200:].strip()
+
+            # Buscar después del último punto
+            partes = ultimo_fragmento.split('.')
+            if len(partes) >= 2:
+                # Tomar la penúltima o última parte (la que tenga más contenido)
+                candidato = partes[-1].strip() if partes[-1].strip() else partes[-2].strip()
+
+                # Validar que parezca una lista de biomarcadores (tiene comas o "y")
+                if ',' in candidato or ' y ' in candidato.lower():
+                    texto_biomarcadores = candidato
+
+        # Si no se encontró nada, retornar vacío
+        if not texto_biomarcadores:
+            return biomarcadores_encontrados
+
+        # PASO 3: Limpiar y extraer biomarcadores
+        texto_biomarcadores = texto_biomarcadores.strip()
+
+        # Remover frases comunes al inicio
+        texto_biomarcadores = re.sub(r'^(por lo que|para|con|de)\s+', '', texto_biomarcadores, flags=re.IGNORECASE)
+
+        # Separar por comas, "y", "e"
+        items = re.split(r',|\s+y\s+|\s+e\s+', texto_biomarcadores)
+
+        # PASO 4: Procesar cada item
+        for item in items:
+            item_limpio = item.strip().upper()
+
+            # Remover palabras finales comunes
+            item_limpio = re.sub(r'\s+(Y|E|DE|PARA|CON)$', '', item_limpio)
+
+            # Filtrar ruido (palabras muy cortas o conectores)
+            if len(item_limpio) < 2:
+                continue
+            if item_limpio in ['DE', 'LA', 'EL', 'LOS', 'LAS', 'CON', 'PARA', 'POR', 'Y', 'E']:
+                continue
+
+            # PASO 5: Mapear a nombre estándar usando el diccionario de biomarcadores
+            biomarcador_normalizado = None
+
+            # Primero buscar coincidencia EXACTA
+            for nombre_bio, columna_bd in self.BIOMARCADORES.items():
+                if nombre_bio == item_limpio:
+                    biomarcador_normalizado = columna_bd.replace('IHQ_', '')
+                    break
+
+            # Si no hay coincidencia exacta, buscar coincidencia parcial
+            if not biomarcador_normalizado:
+                for nombre_bio, columna_bd in self.BIOMARCADORES.items():
+                    # Mejorar detección de variantes
+                    variantes_bio = [
+                        nombre_bio,
+                        nombre_bio.replace('-', ' '),
+                        nombre_bio.replace(' ', '-'),
+                        nombre_bio.replace(' ', '')
+                    ]
+                    variantes_item = [
+                        item_limpio,
+                        item_limpio.replace('-', ' '),
+                        item_limpio.replace(' ', '-'),
+                        item_limpio.replace(' ', '')
+                    ]
+
+                    for var_bio in variantes_bio:
+                        for var_item in variantes_item:
+                            if var_bio in var_item or var_item in var_bio:
+                                biomarcador_normalizado = columna_bd.replace('IHQ_', '')
+                                break
+                        if biomarcador_normalizado:
+                            break
+                    if biomarcador_normalizado:
+                        break
+
+            if biomarcador_normalizado:
+                if biomarcador_normalizado not in biomarcadores_encontrados:
+                    biomarcadores_encontrados.append(biomarcador_normalizado)
+            else:
+                # Si no se encuentra en el mapeo, agregar tal cual (normalizado)
+                # Esto captura biomarcadores NUEVOS que no están en el mapeo
+                item_final = item_limpio.replace(' ', '_')
+                if item_final not in biomarcadores_encontrados and len(item_final) > 2:
+                    biomarcadores_encontrados.append(item_final)
+
+        return biomarcadores_encontrados
+
+    def _detectar_biomarcadores_faltantes_en_bd(self, biomarcadores_solicitados: List[str],
+                                                 schema_bd: List[str]) -> List[str]:
+        """
+        Detecta biomarcadores solicitados que NO tienen columna correspondiente en la BD.
+
+        CONTEXTO:
+        =========
+        Este es un ERROR CRÍTICO del sistema: si un biomarcador se solicita en el informe
+        pero no existe columna en la BD para almacenarlo, los datos se pierden.
+
+        Ejemplo:
+        - Biomarcador solicitado: "E-Cadherina"
+        - Columna esperada: "IHQ_E_CADHERINA"
+        - Si la columna NO existe → ERROR CRÍTICO: "Schema BD incompleto"
+
+        Args:
+            biomarcadores_solicitados: Lista de biomarcadores extraídos de macro (sin IHQ_)
+            schema_bd: Lista de nombres de columnas disponibles en la BD
+
+        Returns:
+            List[str]: Lista de biomarcadores sin columna en BD
+
+        Ejemplo retorno:
+            ['E_CADHERINA', 'SOX11'] → Estos biomarcadores NO tienen columna en BD
+        """
+        faltantes_en_bd = []
+
+        for biomarcador in biomarcadores_solicitados:
+            # Generar nombre de columna esperado
+            columna_esperada = f'IHQ_{biomarcador.replace("-", "_")}'
+
+            # Verificar si existe en schema
+            if columna_esperada not in schema_bd:
+                faltantes_en_bd.append(biomarcador)
+
+        return faltantes_en_bd
+
+    def _obtener_schema_bd(self) -> List[str]:
+        """
+        Obtiene el listado de columnas disponibles en la tabla de informes IHQ.
+
+        Returns:
+            List[str]: Lista de nombres de columnas de la tabla
+        """
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+            cursor.execute(f'PRAGMA table_info({self.table_name})')
+            columnas = cursor.fetchall()
+            conn.close()
+
+            # Retornar solo los nombres de las columnas (índice 1)
+            return [col[1] for col in columnas]
+        except Exception as e:
+            print(f"Error obteniendo schema de BD: {e}")
+            return []
+
     def _validar_estudios_solicitados(self, datos_bd: Dict, biomarcadores_en_pdf: Set[str]) -> Dict:
         """Valida completitud de IHQ_ESTUDIOS_SOLICITADOS
 
@@ -1794,6 +2264,102 @@ class AuditorSistema:
             'completitud': len(faltantes) == 0,
             'porcentaje_captura': porcentaje
         }
+
+    def _validar_biomarcador_completo(self, nombre_biomarcador: str, columna_bd: str, datos_bd: Dict, texto_ocr: str) -> Dict:
+        """
+        Valida COMPLETAMENTE un biomarcador individual:
+        1. ¿Está mencionado en PDF?
+        2. ¿Está en IHQ_ESTUDIOS_SOLICITADOS?
+        3. ¿Existe columna en BD?
+        4. ¿Tiene datos capturados?
+
+        Args:
+            nombre_biomarcador: Nombre legible (ej: "E-Cadherina")
+            columna_bd: Nombre columna BD (ej: "IHQ_E_CADHERINA")
+            datos_bd: Datos de BD del caso
+            texto_ocr: Texto OCR del PDF
+
+        Returns:
+            Dict con validación completa del biomarcador
+        """
+        resultado = {
+            'nombre': nombre_biomarcador,
+            'columna_bd': columna_bd,
+            'en_pdf': False,
+            'en_estudios_solicitados': False,
+            'columna_existe': False,
+            'tiene_datos': False,
+            'valor_capturado': None,
+            'ubicacion_pdf': None,
+            'estado': 'ERROR',  # OK, WARNING, ERROR
+            'problemas': []
+        }
+
+        # 1. Verificar si está mencionado en PDF
+        texto_norm = self._normalizar_texto(texto_ocr)
+        nombre_norm = self._normalizar_texto(nombre_biomarcador)
+
+        # Buscar variantes del biomarcador
+        variantes = [
+            nombre_norm,
+            nombre_norm.replace('-', ' '),
+            nombre_norm.replace(' ', '-'),
+            nombre_norm.replace('-', ''),
+        ]
+
+        for variante in variantes:
+            if re.search(rf'\b{re.escape(variante)}\b', texto_norm, re.IGNORECASE):
+                resultado['en_pdf'] = True
+                # Encontrar línea donde aparece
+                lineas = texto_ocr.split('\n')
+                for i, linea in enumerate(lineas, 1):
+                    if re.search(rf'\b{re.escape(variante)}\b', self._normalizar_texto(linea), re.IGNORECASE):
+                        resultado['ubicacion_pdf'] = f"Línea {i}"
+                        break
+                break
+
+        if not resultado['en_pdf']:
+            resultado['estado'] = 'N/A'
+            resultado['problemas'].append(f"{nombre_biomarcador} NO mencionado en PDF")
+            return resultado
+
+        # 2. Verificar si está en IHQ_ESTUDIOS_SOLICITADOS
+        estudios_solicitados = datos_bd.get('IHQ_ESTUDIOS_SOLICITADOS', '')
+        estudios_norm = self._normalizar_texto(estudios_solicitados)
+
+        for variante in variantes:
+            if re.search(rf'\b{re.escape(variante)}\b', estudios_norm, re.IGNORECASE):
+                resultado['en_estudios_solicitados'] = True
+                break
+
+        if not resultado['en_estudios_solicitados']:
+            resultado['problemas'].append(f"{nombre_biomarcador} mencionado en PDF pero NO en IHQ_ESTUDIOS_SOLICITADOS")
+
+        # 3. Verificar si existe columna en BD (validar contra schema real)
+        if columna_bd in self.columnas_bd:
+            resultado['columna_existe'] = True
+        else:
+            resultado['problemas'].append(f"Columna {columna_bd} NO existe en BD")
+            resultado['estado'] = 'ERROR'
+            return resultado
+
+        # 4. Verificar si tiene datos capturados
+        valor = datos_bd.get(columna_bd, '')
+        if valor and valor not in ['', 'N/A', 'SIN DATO']:
+            resultado['tiene_datos'] = True
+            resultado['valor_capturado'] = valor
+        else:
+            resultado['problemas'].append(f"{nombre_biomarcador} en PDF pero columna {columna_bd} está VACÍA")
+
+        # Determinar estado final
+        if resultado['en_estudios_solicitados'] and resultado['tiene_datos']:
+            resultado['estado'] = 'OK'
+        elif resultado['en_estudios_solicitados'] or resultado['tiene_datos']:
+            resultado['estado'] = 'WARNING'
+        else:
+            resultado['estado'] = 'ERROR'
+
+        return resultado
 
     def _detectar_organo_tabla(self, texto_ocr: str) -> Dict:
         """
@@ -2871,17 +3437,36 @@ class AuditorSistema:
             print(f"   !  No detectado")
         print()
 
-        # 1.3 Detectar biomarcadores IHQ
-        print("1.3 Detectando biomarcadores IHQ...")
+        # 1.3 Detectar biomarcadores IHQ y validar COMPLETAMENTE
+        print("1.3 Detectando y validando biomarcadores IHQ COMPLETOS...")
         deteccion_biomarcadores = self._detectar_biomarcadores_ihq_inteligente(texto_ocr)
         resultado['detecciones']['biomarcadores_ihq'] = deteccion_biomarcadores
 
         if deteccion_biomarcadores['biomarcadores_encontrados']:
-            print(f"   OK {len(deteccion_biomarcadores['biomarcadores_encontrados'])} biomarcador(es) detectado(s)")
+            print(f"   ✓ {len(deteccion_biomarcadores['biomarcadores_encontrados'])} biomarcador(es) detectado(s) en PDF")
+
+            # NUEVO: Validación COMPLETA de cada biomarcador
+            validaciones_biomarcadores = []
             for bio in deteccion_biomarcadores['biomarcadores_encontrados']:
-                print(f"      • {bio['nombre']} ({bio['ubicacion']})")
+                nombre = bio['nombre']
+                columna = bio.get('columna_bd', f"IHQ_{nombre.replace(' ', '_').replace('-', '_').upper()}")
+
+                validacion = self._validar_biomarcador_completo(nombre, columna, datos_bd, texto_ocr)
+                validaciones_biomarcadores.append(validacion)
+
+                # Mostrar resultado de validación
+                if validacion['estado'] == 'OK':
+                    print(f"      ✓ {nombre}: PDF ✓ | Estudios ✓ | Columna ✓ | Datos ✓ ({validacion['valor_capturado']})")
+                elif validacion['estado'] == 'WARNING':
+                    print(f"      ⚠ {nombre}: {' | '.join(validacion['problemas'])}")
+                elif validacion['estado'] == 'ERROR':
+                    print(f"      ✗ {nombre}: {' | '.join(validacion['problemas'])}")
+                else:  # N/A
+                    print(f"      - {nombre}: NO mencionado en PDF (omitir)")
+
+            resultado['validaciones']['biomarcadores_completos'] = validaciones_biomarcadores
         else:
-            print(f"   !  No se detectaron biomarcadores")
+            print(f"   ! No se detectaron biomarcadores")
         print()
 
         # 1.4 Detectar biomarcadores solicitados
@@ -3063,9 +3648,12 @@ class AuditorSistema:
 
         # Calcular metricas
         total_validaciones = 3
-        validaciones_ok = sum(1 for v in resultado['validaciones'].values() if v['estado'] == 'OK')
-        validaciones_warning = sum(1 for v in resultado['validaciones'].values() if v['estado'] == 'WARNING')
-        validaciones_error = sum(1 for v in resultado['validaciones'].values() if v['estado'] == 'ERROR')
+        validaciones_ok = sum(1 for v in resultado['validaciones'].values()
+                              if isinstance(v, dict) and 'estado' in v and v['estado'] == 'OK')
+        validaciones_warning = sum(1 for v in resultado['validaciones'].values()
+                                   if isinstance(v, dict) and 'estado' in v and v['estado'] == 'WARNING')
+        validaciones_error = sum(1 for v in resultado['validaciones'].values()
+                                 if isinstance(v, dict) and 'estado' in v and v['estado'] == 'ERROR')
 
         resultado['metricas'] = {
             'total_validaciones': total_validaciones,

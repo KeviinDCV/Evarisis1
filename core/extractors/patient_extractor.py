@@ -231,19 +231,21 @@ PATIENT_PATTERNS = {
     'organo': {
         'descripcion': 'Órgano o sitio anatómico del estudio (de tabla)',
         'patrones': [
-            # Patrón 1: Órgano multilínea que termina con "+" o "BX DE" o "DE" (ej: "BX DE PLEURA + BX DE\nPULMON")
+            # V6.0.3: Patrón 1 - Captura TODAS las líneas multilínea después de "Organo:" hasta encontrar delimitador
+            r'(?:Bloques y laminas|Tejido en fresco|Organo:)\s+((?:[A-ZÁÉÍÓÚÑ0-9][^\n]*(?:\n\s*)?)+?)(?=\s*(?:INFORME|DESCRIPCI[ÓO]N|Estudios\s+solicitados|\n\s*\n))',
+            # Patrón 2: Órgano multilínea que termina con "+" o "BX DE" o "DE" (ej: "BX DE PLEURA + BX DE\nPULMON")
             r'(?:Bloques y laminas|Tejido en fresco)\s+([A-ZÁÉÍÓÚÑ][^\n]*(?:\+|BX\s+DE|DE)\s*)\n\s*([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s0-9]+?)(?=\s*(?:\n|INFORME|DESCRIPCI))',
-            # Patrón 2: TUMOR REGION/REGIÓON seguido de INTRADURAL en siguiente línea
+            # Patrón 3: TUMOR REGION/REGIÓON seguido de INTRADURAL en siguiente línea
             r'(?:Bloques y laminas|Tejido en fresco)\s+(TUMOR\s+REGI[OÓ]O?N)\s*\n\s*(INTRADURAL)',
-            # Patrón 3: Captura solo TUMOR REGION cuando no puede capturar INTRADURAL
+            # Patrón 4: Captura solo TUMOR REGION cuando no puede capturar INTRADURAL
             r'(?:Bloques y laminas|Tejido en fresco)\s+(TUMOR\s+REGI[OÓ]O?N)',
-            # Patrón 4: Órgano completo en una sola línea
+            # Patrón 5: Órgano completo en una sola línea
             r'(?:Bloques y laminas|Tejido en fresco)\s+([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s0-9+]*?)(?:\s*$|\s*\n)',
         ],
         'ejemplo': 'Bloques y laminas  BX DE PLEURA + BX DE\nPULMON',
         'multilínea': True,
         'concatenar_grupos': True,
-        'post_process': lambda x: x.replace('REGIÓON', 'REGION').replace('REGIÓN', 'REGION').strip()
+        'post_process': lambda x: x.replace('REGIÓON', 'REGION').replace('REGIÓN', 'REGION').replace('\n', ' ').strip()
     },
 
     'procedimiento': {

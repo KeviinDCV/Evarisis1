@@ -32,7 +32,11 @@ sys.path.insert(0, str(project_root))
 
 try:
     # Importar extractores nuevos refactorizados
-    from core.extractors.biomarker_extractor import extract_biomarkers
+    from core.extractors.biomarker_extractor import (
+        extract_biomarkers,
+        extract_narrative_biomarkers_list,  # V6.0.3: Biomarcadores en formato narrativo
+        BIOMARKER_DEFINITIONS
+    )
     from core.extractors.patient_extractor import extract_patient_data
     from core.extractors.medical_extractor import extract_medical_data
     from core.utils.name_splitter import split_full_name
@@ -131,6 +135,17 @@ def extract_diagnostico_principal(diagnostico_completo: str) -> str:
                 diagnostico = match_linea.group(1).strip()
                 # Limpiar guiones adicionales
                 diagnostico = diagnostico.rstrip('-.').strip()
+
+                # V6.0.2: Detener ANTES de primer guion en nueva línea (CRÍTICO IHQ250981)
+                # Buscar patrón: salto de línea seguido de guion (lista de atributos adicionales)
+                match_first_dash = re.search(r'\n\s*-', diagnostico)
+                if match_first_dash:
+                    diagnostico = diagnostico[:match_first_dash.start()].strip()
+                # Alternativamente, si hay " - " en la misma línea
+                elif ' - ' in diagnostico:
+                    parts = diagnostico.split(' - ')
+                    diagnostico = parts[0].strip()
+
                 # Convertir a mayúsculas si tiene suficiente contenido en mayúsculas
                 palabras_mayus = sum(1 for p in diagnostico.split() if p.isupper())
                 if palabras_mayus >= 2:
@@ -207,6 +222,34 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
         patient_data = extract_patient_data(clean_text)
         biomarker_data = extract_biomarkers(clean_text)
         medical_data = extract_medical_data(clean_text)  # NUEVO: Datos médicos
+
+        # ═══════════════════════════════════════════════════════════════════════
+        # V6.0.3: EXTRACCIÓN NARRATIVA COMPLEMENTARIA (IHQ250982)
+        # ═══════════════════════════════════════════════════════════════════════
+        # Extrae biomarcadores en formato narrativo que no fueron capturados
+        # por extract_biomarkers() (patrones estructurados estándar)
+        try:
+            # Extraer sección DESCRIPCIÓN MICROSCÓPICA para análisis narrativo
+            descripcion_microscopica = medical_data.get('descripcion_microscopica', '') or \
+                                       medical_data.get('descripcion_microscopica_final', '')
+
+            if descripcion_microscopica:
+                # Listas simples: "son positivas para CKAE1E3, CK7 Y CAM 5.2"
+                narrative_list = extract_narrative_biomarkers_list(descripcion_microscopica, BIOMARKER_DEFINITIONS)
+
+                if narrative_list:
+                    logger.info(f"🧬 V6.0.3: Detectados {len(narrative_list)} biomarcadores narrativos adicionales")
+
+                    # Merge (NO sobreescribir valores positivos existentes)
+                    for columna, valor in narrative_list.items():
+                        # Solo agregar si:
+                        # 1. No existe en biomarker_data, O
+                        # 2. El valor actual es 'N/A' (vacío)
+                        if columna not in biomarker_data or biomarker_data[columna] in ('N/A', '', None):
+                            biomarker_data[columna] = valor
+                            logger.debug(f"   ✓ {columna}: {valor} (narrativo)")
+        except Exception as e:
+            logger.warning(f"⚠️ Error en extracción narrativa: {e}")
 
         # Combinar y mapear al formato esperado por ui.py
         combined_data = {}
@@ -396,6 +439,7 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'CHROMOGRANINA': 'IHQ_CHROMOGRANINA',
                 'SYNAPTOPHYSIN': 'IHQ_SYNAPTOPHYSIN',
                 'MELAN_A': 'IHQ_MELAN_A',
+                'E_CADHERINA': 'IHQ_E_CADHERINA',  # v6.0.3
                 # BIOMARCADORES ADICIONALES QUE PUEDEN NO ESTAR EN DB PERO SÍ EN TEXTOS
                 'CDK4': 'IHQ_CDK4',  # CRÍTICO - RESTAURADO
                 'MDM2': 'IHQ_MDM2',  # CRÍTICO - RESTAURADO
@@ -506,9 +550,16 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
         logger.info(f"🔧 Total correcciones aplicadas: {tracker.count_corrections()}")
 
         # === CAMPOS DE METADATA ===
+        # V6.0.2: Leer versión desde config/version_info.py
+        try:
+            from config.version_info import VERSION_INFO
+            extractor_version = f"{VERSION_INFO['version']}_unified_corrections"
+        except ImportError:
+            extractor_version = '6.0.2_unified_corrections'  # Fallback
+
         combined_data.update({
             'extraction_timestamp': datetime.now().isoformat(),
-            'extractor_version': '5.3.9_unified_corrections',
+            'extractor_version': extractor_version,
             'processing_method': 'modular_extractors_with_corrections'
         })
 
@@ -1034,6 +1085,10 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'RACEMASA': 'IHQ_RACEMASA', 'racemasa': 'IHQ_RACEMASA',
         '34BETA': 'IHQ_34BETA', '34beta': 'IHQ_34BETA',
         'B2': 'IHQ_B2', 'b2': 'IHQ_B2',
+
+        # V6.0.3: E-CADHERINA (biomarcador de adhesion celular)
+        'E_CADHERINA': 'IHQ_E_CADHERINA', 'e_cadherina': 'IHQ_E_CADHERINA',
+        'IHQ_E_CADHERINA': 'IHQ_E_CADHERINA',
     }
     
     # Aplicar mapeos de biomarcadores
@@ -1054,11 +1109,9 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
                 found_biomarkers.append(bio_key.upper())
 
     # === CAMPOS ADICIONALES DE IHQ ===
-    # V5.2: CONSTRUCCIÓN AUTOMÁTICA DE IHQ_ESTUDIOS_SOLICITADOS
-    # Construir lista de biomarcadores basándose en cuáles campos tienen datos
-    # Esto asegura que la IA sepa qué biomarcadores revisar
-
-    biomarcadores_encontrados = []
+    # V6.0.3: CONSTRUCCIÓN DE IHQ_ESTUDIOS_SOLICITADOS
+    # Prioriza DESCRIPCIÓN MACROSCÓPICA (lo que el médico SOLICITÓ)
+    # Fallback: biomarcadores con datos extraídos
 
     # Mapeo inverso: de campo BD a nombre común del biomarcador
     biomarker_display_names = {
@@ -1152,20 +1205,24 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'IHQ_B2': 'B2',
     }
 
-    # Revisar cada campo IHQ_* para ver si tiene datos
-    for campo_bd, nombre_display in biomarker_display_names.items():
-        valor = db_record.get(campo_bd, '')
-        if valor and valor.strip() and valor not in ['N/A', 'nan', 'None', 'NULL']:
-            biomarcadores_encontrados.append(nombre_display)
+    # CORREGIDO v6.0.3: IHQ_ESTUDIOS_SOLICITADOS debe reflejar lo SOLICITADO, no lo extraído
+    # Prioridad 1: Biomarcadores solicitados de DESCRIPCIÓN MACROSCÓPICA (fuente autoritativa)
+    estudios_solicitados_tabla = extracted_data.get('estudios_solicitados_tabla', '')
 
-    # Construir string de estudios solicitados
-    if biomarcadores_encontrados:
-        estudios_solicitados_str = ', '.join(sorted(biomarcadores_encontrados))
+    if estudios_solicitados_tabla:
+        # Usar lista de DESCRIPCIÓN MACROSCÓPICA - refleja lo que el médico SOLICITÓ
+        estudios_solicitados_str = estudios_solicitados_tabla
     else:
-        # Fallback: usar el valor del extractor (tabla del PDF) si existe
-        estudios_solicitados_str = extracted_data.get('estudios_solicitados_tabla', '')
+        # Fallback: Si no hay descripción macroscópica, usar biomarcadores con datos
+        biomarcadores_encontrados = []
+        for campo_bd, nombre_display in biomarker_display_names.items():
+            valor = db_record.get(campo_bd, '')
+            if valor and valor.strip() and valor not in ['N/A', 'nan', 'None', 'NULL']:
+                biomarcadores_encontrados.append(nombre_display)
 
-    db_record["IHQ_ESTUDIOS_SOLICITADOS"] = estudios_solicitados_str if estudios_solicitados_str else ''
+        estudios_solicitados_str = ', '.join(sorted(biomarcadores_encontrados)) if biomarcadores_encontrados else ''
+
+    db_record["IHQ_ESTUDIOS_SOLICITADOS"] = estudios_solicitados_str
 
     # CORREGIDO: Usar la misma lógica de priorización para IHQ_ORGANO
     ihq_organo_value = extracted_data.get('ihq_organo', '') or extracted_data.get('organo', '')

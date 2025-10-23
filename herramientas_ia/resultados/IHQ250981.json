@@ -1,0 +1,54 @@
+{
+  "numero_caso": "IHQ250981",
+  "precision": 100.0,
+  "biomarcadores_en_pdf": [
+    "IHQ_HER2",
+    "IHQ_KI-67",
+    "IHQ_RECEPTOR_PROGESTERONA",
+    "IHQ_RECEPTOR_ESTROGENOS"
+  ],
+  "errores": [],
+  "warnings": [],
+  "correctos": [
+    "IHQ_HER2",
+    "IHQ_KI-67",
+    "IHQ_RECEPTOR_PROGESTERONA",
+    "IHQ_RECEPTOR_ESTROGENOS"
+  ],
+  "resultado_estudios": {
+    "capturados": [
+      "HER2",
+      "KI-67",
+      "RECEPTOR-PROGESTERONA",
+      "RECEPTOR-ESTROGENOS"
+    ],
+    "faltantes": [],
+    "completitud": true,
+    "porcentaje_captura": 100.0
+  },
+  "contexto_estudio": {
+    "estudio_m_id": null,
+    "diagnostico_estudio_m": null,
+    "diagnostico_ihq_confirmacion": "CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)",
+    "biomarcadores_ihq": [
+      "KI67",
+      "HER2",
+      "RECEPTOR DE ESTRÓGENO",
+      "RECEPTOR DE PROGESTERONA"
+    ]
+  },
+  "validacion_diagnostico": {
+    "estado": "WARNING",
+    "mensaje": "DIAGNOSTICO_PRINCIPAL es parcial, falta información completa",
+    "valor_bd": "CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9) - TAMAÑO TUMORAL MAYOR 7 X 6 X 3 CENTÍMETROS",
+    "valor_esperado": "CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)",
+    "sugerencia": "Actualizar extractor para capturar: \"CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)\""
+  },
+  "validacion_factor_pronostico": {
+    "estado": "WARNING",
+    "mensaje": "FACTOR_PRONOSTICO tiene valor pero no se encuentra explícitamente en el PDF",
+    "valor_bd": "Ki-67: 21-30% / - SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+) / - RECEPTORES DE ESTRÓGENOS: POSITIVOS (90-100%) / - RECEPTORES DE PROGESTERONA: NEGATIVOS (MENOR AL 1 %)",
+    "biomarcadores_encontrados": {},
+    "sugerencia": "Verificar si el valor fue inferido incorrectamente o si está en formato diferente"
+  }
+}

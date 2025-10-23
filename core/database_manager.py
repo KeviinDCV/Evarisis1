@@ -135,7 +135,7 @@ NEW_TABLE_COLUMNS_ORDER: List[str] = [
     "Citometria de flujo (5 Tipo histologico)",
     # Biomarcadores principales
     "IHQ_HER2", "IHQ_KI-67", "IHQ_RECEPTOR_ESTROGENOS", "IHQ_RECEPTOR_PROGESTERONA", "IHQ_PDL-1",
-    "IHQ_P16_ESTADO", "IHQ_P16_PORCENTAJE", "IHQ_P40_ESTADO",
+    "IHQ_P16_ESTADO", "IHQ_P16_PORCENTAJE", "IHQ_P40_ESTADO", "IHQ_E_CADHERINA",
     # Biomarcadores agregados v4.0
     "IHQ_CK7", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
     # Biomarcadores adicionales v4.1 (extracción completa)
@@ -196,7 +196,7 @@ def _create_table_if_not_exists(cursor: sqlite3.Cursor):
             -- Biomarcadores principales
             "IHQ_HER2" TEXT, "IHQ_KI-67" TEXT, "IHQ_RECEPTOR_ESTROGENOS" TEXT,
             "IHQ_RECEPTOR_PROGESTERONA" TEXT, "IHQ_PDL-1" TEXT,
-            "IHQ_P16_ESTADO" TEXT, "IHQ_P16_PORCENTAJE" TEXT, "IHQ_P40_ESTADO" TEXT,
+            "IHQ_P16_ESTADO" TEXT, "IHQ_P16_PORCENTAJE" TEXT, "IHQ_P40_ESTADO" TEXT, "IHQ_E_CADHERINA" TEXT,
 
             -- Biomarcadores v4.0
             "IHQ_CK7" TEXT, "IHQ_CK20" TEXT, "IHQ_CDX2" TEXT, "IHQ_EMA" TEXT, "IHQ_GATA3" TEXT, "IHQ_SOX10" TEXT,
@@ -307,6 +307,8 @@ def _add_new_biomarker_columns(conn: sqlite3.Connection, cursor: sqlite3.Cursor)
         # v4.1 - Biomarcadores adicionales
         "IHQ_P53", "IHQ_TTF1", "IHQ_S100", "IHQ_VIMENTINA",
         "IHQ_CHROMOGRANINA", "IHQ_SYNAPTOPHYSIN", "IHQ_MELAN_A",
+        # v6.0.3 - E-Cadherina
+        "IHQ_E_CADHERINA",
         # Marcadores CD
         "IHQ_CD3", "IHQ_CD5", "IHQ_CD10", "IHQ_CD20", "IHQ_CD30", "IHQ_CD34",
         "IHQ_CD38", "IHQ_CD45", "IHQ_CD56", "IHQ_CD61", "IHQ_CD68", "IHQ_CD117", "IHQ_CD138",
@@ -701,15 +703,27 @@ def save_records(records: List[Dict[str, Any]]) -> int:
                 if existing:
                     # Actualizar registro existente
                     values = []
+                    debug_samples = []  # DEBUG: Guardar muestras para logging
                     for col in table_columns:
                         # Buscar el valor correcto usando mapeo de nombres
                         normalized_col = _normalize_column_name(col)
                         value = record.get(normalized_col, record.get(col, 'N/A'))
                         values.append(value)
-                    
+
+                        # DEBUG: Guardar muestra para columnas IHQ
+                        if col.startswith('IHQ_') and col in ['IHQ_ESTUDIOS_SOLICITADOS', 'IHQ_CK7', 'IHQ_CKAE1AE3', 'FACTOR_PRONOSTICO']:
+                            value_preview = str(value)[:50] + "..." if len(str(value)) > 50 else value
+                            debug_samples.append(f"{col}: {value_preview}")
+
+                    # DEBUG: Mostrar muestras
+                    if debug_samples:
+                        logger.debug(f"DEBUG save_records - Muestras de valores: {', '.join(debug_samples)}")
+
                     set_clause = ', '.join([f'"{col}" = ?' for col in table_columns])
-                    
-                    cursor.execute(f"UPDATE {TABLE_NAME} SET {set_clause} WHERE \"N. peticion (0. Numero de biopsia)\" = ?", 
+
+                    # CORREGIDO v6.0.4.1: Usar "Numero de caso" (igual que el SELECT)
+                    # BUG: antes usaba "N. peticion (0. Numero de biopsia)" que es columna diferente
+                    cursor.execute(f"UPDATE {TABLE_NAME} SET {set_clause} WHERE \"Numero de caso\" = ?",
                                  values + [peticion])
                     logger.info(f"Registro actualizado: {peticion}")
                 else:

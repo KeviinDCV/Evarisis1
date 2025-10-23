@@ -7,9 +7,15 @@ color: red
 
 # 🔍 Data Auditor Agent - AUDITORÍA INTELIGENTE ONCOLÓGICA
 
-**Versión:** 2.1.0 - AUDITORÍA SEMÁNTICA + BÚSQUEDA SEMÁNTICA MEJORADA
+**Versión:** 2.2.0 - AUDITORÍA COMPLETA DE BIOMARCADORES + DIAGNOSTICO_COLORACION
 **Fecha:** 22 de octubre de 2025
-**Herramienta:** `auditor_sistema.py` (2,780 líneas, 136 KB)
+**Herramienta:** `auditor_sistema.py` (3,360 líneas, mejorado)
+
+**NUEVAS CAPACIDADES (v6.0.2)**:
+- ✅ Validación COMPLETA de biomarcadores en 4 niveles (PDF → IHQ_ESTUDIOS_SOLICITADOS → Columna BD → Datos)
+- ✅ Soporte para E-Cadherina y 75+ biomarcadores del sistema
+- ✅ Detección de formatos incorrectos en DIAGNOSTICO_COLORACION (patrón "de \"DIAGNOSTICO\"")
+- ✅ Reporte detallado individual por cada biomarcador con estado (OK/WARNING/ERROR/N/A)
 
 ---
 
