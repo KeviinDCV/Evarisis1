@@ -164,7 +164,17 @@ def extract_diagnostico_principal(diagnostico_completo: str) -> str:
             if not any(kw in diagnostico.upper() for kw in ['RECEPTOR', 'ESTUDIO', 'BIOPSIA', 'MUESTRA', 'POSITIVO', 'NEGATIVO']):
                 return diagnostico
 
-    # ESTRATEGIA 3: Buscar diagnósticos patológicos al inicio
+    # ESTRATEGIA 3: Buscar frases "LOS HALLAZGOS FAVORECEN..." (v6.0.5)
+    # Patrón: "LOS HALLAZGOS ... FAVORECEN UNA/UN ..."
+    patron_hallazgos = r'LOS HALLAZGOS[^.]*?FAVORECEN\s+(?:UNA|UN)\s+([^.]+?)(?:\.|VER COMENTARIO)'
+    match_hallazgos = re.search(patron_hallazgos, texto, re.IGNORECASE)
+    if match_hallazgos:
+        diagnostico = match_hallazgos.group(1).strip().upper()
+        # Limpiar "VER COMENTARIO" si quedó
+        diagnostico = re.sub(r'\s*VER COMENTARIO.*$', '', diagnostico, flags=re.IGNORECASE).strip()
+        return diagnostico
+
+    # ESTRATEGIA 4: Buscar diagnósticos patológicos al inicio
     patron_inicio = r'^\s*((?:CARCINOMA|ADENOCARCINOMA|LINFOMA|SARCOMA|MELANOMA|GLIOMA|MENINGIOMA|METASTASIS|TUMOR|NEOPLASIA)[^.]+?)(?:\.|$)'
     match_inicio = re.search(patron_inicio, texto, re.IGNORECASE)
     if match_inicio:
@@ -172,7 +182,7 @@ def extract_diagnostico_principal(diagnostico_completo: str) -> str:
         if not any(kw in diagnostico for kw in ['RECEPTOR', 'POSITIVO', 'NEGATIVO', 'HER', 'KI-67', 'ESTUDI']):
             return diagnostico
 
-    # ESTRATEGIA 4: Buscar patrones comunes de diagnóstico
+    # ESTRATEGIA 5: Buscar patrones comunes de diagnóstico
     patrones_diagnostico = [
         r'((?:CARCINOMA|ADENOCARCINOMA|LINFOMA|SARCOMA|MELANOMA|GLIOMA|MENINGIOMA|METASTASIS)[^.]+?)(?:\.|$)',
         r'((?:TUMOR|NEOPLASIA|LESION)[^.]+?(?:MALIGNO|BENIGNO|INVASIVO)[^.]*?)(?:\.|$)',
@@ -405,7 +415,7 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
             # Mapear biomarcadores al formato IHQ esperado - MAPEO COMPLETO v5.0
             biomarker_mapping = {
                 'HER2': 'IHQ_HER2',
-                'KI67': 'IHQ_KI-67', 
+                'KI67': 'IHQ_KI-67',
                 'ER': 'IHQ_RECEPTOR_ESTROGENOS',
                 'PR': 'IHQ_RECEPTOR_PROGESTERONA',
                 'PDL1': 'IHQ_PDL-1',
@@ -424,6 +434,13 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'CD45': 'IHQ_CD45',
                 'CD20': 'IHQ_CD20',
                 'CD3': 'IHQ_CD3',
+                # V6.0.5: Biomarcadores adicionales para formato narrativo
+                'IHQ_CKAE1AE3': 'IHQ_CKAE1AE3',
+                'IHQ_CAM52': 'IHQ_CAM52',
+                'IHQ_GFAP': 'IHQ_GFAP',
+                'IHQ_SOX10': 'IHQ_SOX10',
+                'IHQ_CK7': 'IHQ_CK7',  # V6.0.5: Agregar con prefijo IHQ_
+                'IHQ_S100': 'IHQ_S100',  # V6.0.5: Agregar con prefijo IHQ_
                 'CD10': 'IHQ_CD10',
                 'CD5': 'IHQ_CD5',
                 'CD30': 'IHQ_CD30',
@@ -964,7 +981,9 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
     db_record["Diagnostico Principal"] = diagnostico_principal if diagnostico_principal else 'N/A'
 
     # v6.1.0: NUEVO - Diagnóstico del Estudio M (Coloración) con Nottingham
-    db_record["Diagnostico Coloracion"] = extracted_data.get('diagnostico_coloracion', 'N/A') or extracted_data.get('Diagnostico Coloracion', 'N/A')
+    # V6.0.5: Mantener "NO APLICA" si es IHQ puro
+    diag_coloracion = extracted_data.get('diagnostico_coloracion', '') or extracted_data.get('Diagnostico Coloracion', '')
+    db_record["Diagnostico Coloracion"] = diag_coloracion if diag_coloracion else 'N/A'
 
     # v5.3.5: CORREGIDO - Usar nombres de columnas simplificados
     db_record["Descripcion microscopica"] = extracted_data.get('Descripcion microscopica', 'N/A')
@@ -1043,6 +1062,13 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         # 'ACTH', 'GH', 'PROLACTINA', 'TSH', 'LH', 'FSH' → Filtrados antes
         'CKAE1AE3': 'IHQ_CKAE1AE3', 'ckae1ae3': 'IHQ_CKAE1AE3',
         'CKAE1_AE3': 'IHQ_CKAE1AE3', 'ckae1_ae3': 'IHQ_CKAE1AE3',
+        # V6.0.5: Biomarcadores narrativos adicionales (IHQ250982)
+        'IHQ_CK7': 'IHQ_CK7', 'IHQ_CKAE1AE3': 'IHQ_CKAE1AE3',
+        'IHQ_CAM52': 'IHQ_CAM52', 'CAM52': 'IHQ_CAM52', 'cam52': 'IHQ_CAM52',
+        'CAM5.2': 'IHQ_CAM52', 'cam5.2': 'IHQ_CAM52',
+        'IHQ_GFAP': 'IHQ_GFAP', 'GFAP': 'IHQ_GFAP', 'gfap': 'IHQ_GFAP',
+        'IHQ_SOX10': 'IHQ_SOX10',
+        'IHQ_S100': 'IHQ_S100',
         'NAPSIN': 'IHQ_NAPSIN', 'napsin': 'IHQ_NAPSIN',
         'CDK4': 'IHQ_CDK4', 'cdk4': 'IHQ_CDK4',
         'MDM2': 'IHQ_MDM2', 'mdm2': 'IHQ_MDM2',

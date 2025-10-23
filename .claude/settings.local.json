@@ -10,7 +10,11 @@
       "Bash(dir /b \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\CLAUDE CODE\\ProyectoHUV9GESTOR_ONCOLOGIA_automatizado\\agente Especialista Documentador de Programas\")",
       "Bash(python -m py_compile \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\CLAUDE CODE\\ProyectoHUV9GESTOR_ONCOLOGIA_automatizado\\herramientas_ia\\gestor_ia_lm_studio.py\")",
       "Bash(python \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\CLAUDE CODE\\ProyectoHUV9GESTOR_ONCOLOGIA_automatizado\\herramientas_ia\\gestor_ia_lm_studio.py\" --sugerir-modelo correcciones --prioridad velocidad)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(more:*)",
+      "Bash(dir /b:*)",
+      "Bash(findstr:*)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []

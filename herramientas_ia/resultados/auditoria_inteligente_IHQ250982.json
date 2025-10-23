@@ -1,7 +1,7 @@
 {
   "numero_caso": "IHQ250982",
-  "timestamp": "2025-10-23T03:13:28.888145",
-  "nivel": "profundo",
+  "timestamp": "2025-10-23T05:01:56.453065",
+  "nivel": "basico",
   "detecciones": {
     "diagnostico_coloracion": {
       "diagnostico_encontrado": null,
@@ -48,16 +48,13 @@
         "nombre": "CK7",
         "columna_bd": "IHQ_CK7",
         "en_pdf": true,
-        "en_estudios_solicitados": false,
+        "en_estudios_solicitados": true,
         "columna_existe": true,
-        "tiene_datos": false,
-        "valor_capturado": null,
+        "tiene_datos": true,
+        "valor_capturado": "POSITIVO",
         "ubicacion_pdf": "Línea 30",
-        "estado": "ERROR",
-        "problemas": [
-          "CK7 mencionado en PDF pero NO en IHQ_ESTUDIOS_SOLICITADOS",
-          "CK7 en PDF pero columna IHQ_CK7 está VACÍA"
-        ]
+        "estado": "OK",
+        "problemas": []
       }
     ],
     "diagnostico_coloracion": {
@@ -78,7 +75,7 @@
     },
     "diagnostico_principal": {
       "estado": "WARNING",
-      "valor_bd": "N/A",
+      "valor_bd": "LESIÓN BIFÁSICA CON COMPONENTE CONDROMIXOIDE Y EPITELIAL SIN NECROSIS",
       "valor_esperado": null,
       "tiene_contaminacion": false,
       "contaminacion_detectada": [],
@@ -88,7 +85,7 @@
     },
     "factor_pronostico": {
       "estado": "OK",
-      "valor_bd": "re : ANGEL MAURICIO TENORIO CUERO / CK7 Y CAM 5",
+      "valor_bd": "positivo para: CKAE1E3, CK7 Y CAM 5.2",
       "tiene_contaminacion": false,
       "contaminacion_detectada": [],
       "biomarcadores_pdf": [
@@ -132,7 +129,7 @@
   "diagnosticos": {
     "DIAGNOSTICO_PRINCIPAL": {
       "campo": "DIAGNOSTICO_PRINCIPAL",
-      "valor_bd": "N/A",
+      "valor_bd": "LESIÓN BIFÁSICA CON COMPONENTE CONDROMIXOIDE Y EPITELIAL SIN NECROSIS",
       "valor_esperado": null,
       "causa_error": "Diagnóstico extraído no coincide con PDF",
       "tipo_error": "INCORRECTO",

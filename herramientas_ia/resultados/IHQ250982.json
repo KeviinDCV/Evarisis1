@@ -1,0 +1,73 @@
+{
+  "numero_caso": "IHQ250982",
+  "precision": 100.0,
+  "biomarcadores_en_pdf": [
+    "IHQ_CK7",
+    "IHQ_S100",
+    "IHQ_SOX10"
+  ],
+  "errores": [],
+  "warnings": [],
+  "correctos": [
+    "IHQ_CK7",
+    "IHQ_S100",
+    "IHQ_SOX10"
+  ],
+  "resultado_estudios": {
+    "capturados": [
+      "CK7",
+      "SOX10"
+    ],
+    "faltantes": [
+      "S100"
+    ],
+    "completitud": false,
+    "porcentaje_captura": 66.66666666666666
+  },
+  "contexto_estudio": {
+    "estudio_m_id": null,
+    "diagnostico_estudio_m": "APARENTE COMPROMISO POR NEOPLASIA\nMALIGNA METASTÁSICA",
+    "diagnostico_ihq_confirmacion": "PÁGINA 6 ---",
+    "biomarcadores_ihq": [
+      "CK7"
+    ]
+  },
+  "validacion_diagnostico": {
+    "estado": "ERROR",
+    "mensaje": "DIAGNOSTICO_PRINCIPAL NO coincide con primera línea del DIAGNÓSTICO IHQ",
+    "valor_bd": "LESIÓN BIFÁSICA CON COMPONENTE CONDROMIXOIDE Y EPITELIAL SIN NECROSIS",
+    "valor_esperado": "PÁGINA 6 ---",
+    "sugerencia": "Verificar extractor. Debe capturar primera línea del DIAGNÓSTICO: \"PÁGINA 6 ---\"",
+    "analisis_extractor": "El extractor extract_principal_diagnosis() está extrayendo datos incorrectos"
+  },
+  "validacion_factor_pronostico": {
+    "estado": "WARNING",
+    "mensaje": "FACTOR_PRONOSTICO tiene valor pero no se encuentra explícitamente en el PDF",
+    "valor_bd": "positivo para: CKAE1E3, CK7 Y CAM 5.2",
+    "biomarcadores_encontrados": {},
+    "sugerencia": "Verificar si el valor fue inferido incorrectamente o si está en formato diferente"
+  },
+  "diagnostico_coloracion": {
+    "valor_bd": "",
+    "valor_esperado_macro": "APARENTE COMPROMISO POR NEOPLASIA\nMALIGNA METASTÁSICA",
+    "estado": "ERROR",
+    "ubicacion_pdf": "Descripción Macroscópica (texto entre comillas)",
+    "mensaje": "DIAGNOSTICO_COLORACION vacío en BD pero presente en macro"
+  },
+  "biomarcadores_solicitados": {
+    "biomarcadores_macro": [
+      "CK7",
+      "GFAP",
+      "SOX10"
+    ],
+    "biomarcadores_capturados": [
+      "CK7",
+      "GFAP",
+      "SOX10"
+    ],
+    "biomarcadores_faltantes": [],
+    "biomarcadores_sin_columna_bd": [],
+    "cobertura": 100.0,
+    "estado": "OK"
+  }
+}

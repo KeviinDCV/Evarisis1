@@ -313,36 +313,115 @@ class GestorBaseDatos:
             conn.close()
 
     def calcular_completitud(self, numero_ihq: Optional[str] = None):
-        """Calcula completitud de un caso o promedio"""
+        """Calcula completitud de un caso o promedio.
+
+        V6.0.5: MEJORADO - Solo cuenta campos REQUERIDOS:
+        - Campos críticos obligatorios (diagnóstico, paciente, fechas)
+        - Biomarcadores SOLICITADOS (en IHQ_ESTUDIOS_SOLICITADOS)
+        - NO cuenta biomarcadores no solicitados como incompletos
+        """
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
 
         try:
+            # Obtener nombres de columnas
             cursor.execute(f"PRAGMA table_info({self.table_name})")
-            total_columnas = len(cursor.fetchall())
+            columnas_info = cursor.fetchall()
+            columnas_nombres = [col[1] for col in columnas_info]
+
+            # Campos críticos obligatorios (siempre se validan)
+            campos_criticos = [
+                'Numero de caso', 'N. de identificación', 'Edad', 'Genero',
+                'Fecha de ingreso (2. Fecha de la muestra)', 'Fecha Informe',
+                'Diagnostico Principal', 'Factor pronostico',
+                'Organo', 'Descripcion Diagnostico',
+                'IHQ_ESTUDIOS_SOLICITADOS'
+            ]
 
             if numero_ihq:
                 cursor.execute(f'SELECT * FROM {self.table_name} WHERE "Numero de caso" = ?', (numero_ihq,))
                 row = cursor.fetchone()
 
                 if row:
-                    campos_llenos = sum(1 for v in row if v and str(v).strip())
-                    completitud = (campos_llenos / total_columnas * 100)
-                    print(f"\nCompletitud {numero_ihq}: {completitud:.1f}% ({campos_llenos}/{total_columnas} campos)")
+                    # Crear diccionario columna -> valor
+                    row_dict = dict(zip(columnas_nombres, row))
+
+                    # Extraer biomarcadores solicitados
+                    estudios_solicitados = row_dict.get('IHQ_ESTUDIOS_SOLICITADOS', '')
+                    biomarcadores_solicitados = []
+
+                    if estudios_solicitados and estudios_solicitados != 'N/A':
+                        # Parsear lista de biomarcadores: "CKAE1E3, CAM5.2, CK7, GFAP, SOX10, SOX100"
+                        biomarcadores_raw = [b.strip().upper() for b in estudios_solicitados.split(',')]
+
+                        # Mapear a nombres de columnas IHQ
+                        mapeo_biomarcadores = {
+                            'CKAE1E3': 'IHQ_CKAE1AE3', 'CKAE1AE3': 'IHQ_CKAE1AE3',
+                            'CAM5.2': 'IHQ_CAM52', 'CAM52': 'IHQ_CAM52',
+                            'CK7': 'IHQ_CK7', 'CK20': 'IHQ_CK20',
+                            'GFAP': 'IHQ_GFAP', 'SOX10': 'IHQ_SOX10', 'SOX100': 'IHQ_SOX10',
+                            'S100': 'IHQ_S100', 'HER2': 'IHQ_HER2', 'KI-67': 'IHQ_KI-67',
+                            'ER': 'IHQ_RECEPTOR_ESTROGENOS', 'PR': 'IHQ_RECEPTOR_PROGESTERONA',
+                            'P16': 'IHQ_P16_ESTADO', 'P40': 'IHQ_P40_ESTADO',
+                            'TTF1': 'IHQ_TTF1', 'CDX2': 'IHQ_CDX2', 'EMA': 'IHQ_EMA',
+                            'GATA3': 'IHQ_GATA3', 'P53': 'IHQ_P53'
+                        }
+
+                        for bio_raw in biomarcadores_raw:
+                            if bio_raw in mapeo_biomarcadores:
+                                biomarcadores_solicitados.append(mapeo_biomarcadores[bio_raw])
+
+                    # Construir lista de campos requeridos
+                    campos_requeridos = campos_criticos + biomarcadores_solicitados
+
+                    # Contar campos llenos
+                    campos_llenos = 0
+                    campos_vacios = []
+
+                    for campo in campos_requeridos:
+                        if campo in row_dict:
+                            valor = row_dict[campo]
+                            if valor and str(valor).strip() and str(valor).strip().upper() != 'N/A':
+                                campos_llenos += 1
+                            else:
+                                campos_vacios.append(campo)
+
+                    total_requeridos = len(campos_requeridos)
+                    completitud = (campos_llenos / total_requeridos * 100) if total_requeridos > 0 else 0
+
+                    print(f"\n{'='*80}")
+                    print(f"📊 COMPLETITUD: {numero_ihq}")
+                    print(f"{'='*80}")
+                    print(f"Completitud: {completitud:.1f}% ({campos_llenos}/{total_requeridos} campos requeridos)")
+                    print(f"\nCampos críticos: {len(campos_criticos)}")
+                    print(f"Biomarcadores solicitados: {len(biomarcadores_solicitados)}")
+
+                    if campos_vacios:
+                        print(f"\n⚠️  Campos vacíos ({len(campos_vacios)}):")
+                        for campo in campos_vacios[:10]:  # Mostrar max 10
+                            print(f"   - {campo}")
+                        if len(campos_vacios) > 10:
+                            print(f"   ... y {len(campos_vacios) - 10} más")
+                    else:
+                        print(f"\n✅ Todos los campos requeridos están completos")
+
+                    print(f"{'='*80}")
                 else:
                     print(f"❌ No se encontró {numero_ihq}")
             else:
+                # Promedio de todos los casos (simplificado)
                 cursor.execute(f"SELECT * FROM {self.table_name}")
                 rows = cursor.fetchall()
 
                 completitudes = []
                 for row in rows:
-                    campos_llenos = sum(1 for v in row if v and str(v).strip())
-                    completitudes.append(campos_llenos / total_columnas * 100)
+                    campos_llenos = sum(1 for v in row if v and str(v).strip() and str(v).strip().upper() != 'N/A')
+                    completitudes.append(campos_llenos / len(columnas_nombres) * 100)
 
                 prom = sum(completitudes) / len(completitudes) if completitudes else 0
-                print(f"\nCompletitud promedio: {prom:.1f}%")
+                print(f"\nCompletitud promedio (estimada): {prom:.1f}%")
                 print(f"Casos evaluados: {len(completitudes)}")
+                print(f"\nNOTA: Para análisis detallado por caso, usar: --completitud --caso IHQxxxxxx")
 
         finally:
             conn.close()

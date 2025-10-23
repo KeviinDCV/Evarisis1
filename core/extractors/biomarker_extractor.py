@@ -295,6 +295,23 @@ BIOMARKER_DEFINITIONS = {
         }
     },
 
+    'GFAP': {
+        'nombres_alternativos': ['G FAP', 'G-FAP'],
+        'descripcion': 'Proteína ácida fibrilar glial (Glial Fibrillary Acidic Protein)',
+        'patrones': [
+            r'(?i)gfap[:\s]*(positivo|negativo|positiva|negativa)',
+            r'(?i)positivas?\s+para\s+.*?gfap(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?gfap(?:\s|,|$)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'positiva': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'negativa': 'NEGATIVO',
+        }
+    },
+
     'SOX10': {
         'nombres_alternativos': ['SOX-10', 'SOX 10', 'SOXIO'],
         'descripcion': 'Factor de transcripción SOX10',
@@ -1210,6 +1227,8 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
         # CORREGIDO: Capturar a través de saltos de línea para casos como "CKAE1/AE3 y\nSINAPTOFISINA"
         # Estrategia: Capturar hasta punto, o hasta línea que no sea biomarcador
         r'(?i)inmuno\s*marcaci[óo]n\s+positiva\s+(?:fuerte\s+y\s+)?difusa\s+para\s+((?:[^\.\n]+(?:\n[A-Z0-9/]+)?)+)',
+        # NUEVO: V6.0.6 - Inmunorreactividad en listas narrativas (IHQ250983)
+        r'(?i)inmunorreactividad\s+(?:en\s+las\s+)?(?:c[eé]lulas\s+)?(?:tumorales\s+)?para\s+([A-Z0-9,\s/\-]+(?:\s+(?:y|e)\s+[A-Z0-9]+(?:\s+heterog[eé]neo|focal|difuso)?)?)',
         r'(?i)inmunorreactividad\s+(?:fuerte\s+y\s+)?difusa\s+para\s+((?:[^\.\n]+(?:\n[A-Z0-9/]+)?)+)',
         r'(?i)presentan\s+inmuno\s*marcaci[óo]n\s+positiva\s+(?:fuerte\s+y\s+)?difusa\s+para\s+((?:[^\.\n]+(?:\n[A-Z0-9/]+)?)+)'
     ]
@@ -1282,7 +1301,22 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
                     # Para otros patrones, tomar solo el primer grupo
                     value = 'POSITIVO' if match[0].lower() == 'positivo' else 'NEGATIVO'
                     results[biomarker_name] = value
-    
+
+    # V6.0.6: NUEVO - Patrón para listas narrativas con inmunorreactividad
+    # Ej: "inmunorreactividad en las células tumorales para CKAE1AE3, S100, PAX8 y p40 heterogéneo"
+    immunoreactivity_list_pattern = r'(?i)inmunorreactividad\s+(?:en\s+las\s+)?(?:c[eé]lulas\s+)?(?:tumorales\s+)?para\s+([A-Z0-9,\s/\-]+(?:\s+(?:y|e)\s+[A-Z0-9]+(?:\s+heterog[eé]neo|focal|difuso)?)?)'
+
+    for match in re.finditer(immunoreactivity_list_pattern, text):
+        lista_biomarkers = match.group(1).strip()
+
+        # Usar post-procesador con modificadores
+        biomarkers_with_modifiers = post_process_biomarker_list_with_modifiers(lista_biomarkers)
+
+        # Agregar a resultados (NO sobreescribir)
+        for bio_name, bio_value in biomarkers_with_modifiers.items():
+            if bio_name not in results:
+                results[bio_name] = bio_value
+
     # Patrón 1: "positivas para X y Y, negativas para Z y W"
     positive_pattern = r'(?i)positivas?\s+para\s+(.+?)(?:,\s*negativas?|$|\.|;)'
     positive_match = re.search(positive_pattern, text)
@@ -1298,7 +1332,8 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
                 results[normalized_name] = 'POSITIVO'
     
     # Patrón 2: "negativas para X, Y y Z"
-    negative_pattern = r'(?i)negativas?\s+para\s+(.+?)(?:$|\.|;)'
+    # V6.0.6: Mejorado para capturar "son negativas para X, Y y Z"
+    negative_pattern = r'(?i)(?:son\s+)?negativas?\s+para\s+([A-Z0-9,\s/\-]+(?:\s+(?:y|e)\s+[A-Z0-9]+)*?)(?:\s*\.|\s*,\s+y\s+son|$)'
     negative_match = re.search(negative_pattern, text)
     
     if negative_match:
@@ -1394,6 +1429,65 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
     return results
 
 
+def post_process_biomarker_list_with_modifiers(biomarker_text: str) -> Dict[str, str]:
+    """
+    Procesa lista narrativa de biomarcadores, detectando modificadores individuales.
+
+    V6.0.6: Agregada para IHQ250983 - manejo de listas con modificadores.
+
+    Ejemplos:
+    - "CKAE1AE3, S100, PAX8 y p40 heterogéneo"
+      -> {'CKAE1AE3': 'POSITIVO', 'S100': 'POSITIVO', 'PAX8': 'POSITIVO', 'P40': 'POSITIVO HETEROGÉNEO'}
+    - "CK7, CK20 focal y TTF-1 difuso"
+      -> {'CK7': 'POSITIVO', 'CK20': 'POSITIVO FOCAL', 'TTF1': 'POSITIVO DIFUSO'}
+
+    Args:
+        biomarker_text: Texto con lista (ej: "CKAE1AE3, S100, PAX8 y p40 heterogéneo")
+
+    Returns:
+        Dict con biomarcadores y valores con modificadores
+    """
+    if not biomarker_text:
+        return {}
+
+    result = {}
+
+    # Limpiar texto
+    text_clean = biomarker_text.strip()
+
+    # Dividir por comas y "y"/"e"
+    # Usar regex para preservar modificadores
+    parts = re.split(r',\s*|\s+y\s+|\s+e\s+', text_clean, flags=re.IGNORECASE)
+
+    for part in parts:
+        part = part.strip()
+        if not part:
+            continue
+
+        # Detectar modificador al final (heterogéneo, focal, difuso)
+        modifier_match = re.search(r'^(.+?)\s+(heterog[eé]neo|focal|difuso)$', part, re.IGNORECASE)
+
+        if modifier_match:
+            # Tiene modificador
+            biomarker_raw = modifier_match.group(1).strip()
+            modifier = modifier_match.group(2).strip().upper()
+
+            # Normalizar modificador
+            if modifier in ['HETEROGÉNEO', 'HETEROGENEO']:
+                modifier = 'HETEROGÉNEO'
+
+            normalized_name = normalize_biomarker_name(biomarker_raw)
+            if normalized_name:
+                result[normalized_name] = f'POSITIVO {modifier}'
+        else:
+            # Sin modificador, solo positivo
+            normalized_name = normalize_biomarker_name(part)
+            if normalized_name:
+                result[normalized_name] = 'POSITIVO'
+
+    return result
+
+
 def normalize_biomarker_name(raw_name: str) -> Optional[str]:
     """Normaliza nombres de biomarcadores a sus equivalentes en BIOMARKER_DEFINITIONS"""
     if not raw_name:
@@ -1413,6 +1507,9 @@ def normalize_biomarker_name(raw_name: str) -> Optional[str]:
         'GATA3': 'GATA3',
         'GATA 3': 'GATA3',
         'GATA-3': 'GATA3',
+        'GFAP': 'GFAP',  # V6.0.5: Proteína ácida fibrilar glial
+        'G-FAP': 'GFAP',
+        'G FAP': 'GFAP',
         'CDX2': 'CDX2',
         'CDX-2': 'CDX2',
         'CDX 2': 'CDX2',
@@ -1471,6 +1568,10 @@ def normalize_biomarker_name(raw_name: str) -> Optional[str]:
         'SYNAPTOFISINA': 'SYNAPTOPHYSIN',  # Variante en español
         'SINAPTOFISINA': 'SYNAPTOPHYSIN',  # Variante del caso 2
         'CKAE1/AE3': 'CKAE1AE3',  # Formato del caso 2
+        # V6.0.6: Variantes adicionales IHQ250983
+        'CKAE1AE3': 'CKAE1AE3',
+        'CK AE1/AE3': 'CKAE1AE3',
+        'CKAE1 AE3': 'CKAE1AE3',
         'ACTH': 'ACTH',
         'GH': 'GH', 
         'PROLACTINA': 'PROLACTINA',
@@ -1644,6 +1745,7 @@ def normalize_biomarker_value(
     """Normaliza el valor de un biomarcador
 
     v5.3.1: MEJORADO - Manejo de rangos (ej: "51-60%")
+    v6.0.5: MEJORADO - Normalización de valores narrativos contaminados
 
     Args:
         raw_value: Valor extraído del texto
@@ -1658,6 +1760,19 @@ def normalize_biomarker_value(
 
     # Limpiar el valor
     value_clean = raw_value.strip().upper()
+
+    # V6.0.5: NUEVO - Detectar texto narrativo contaminado y normalizar
+    # Ej: "POSITIVAS PARA CKAE1E3, CK7 Y CAM 5.2..." → "POSITIVO"
+    if len(value_clean) > 20:  # Si es muy largo, probablemente sea narrativo
+        # Buscar patrones narrativos de positividad
+        if re.search(r'POSITIVAS?\s+PARA', value_clean):
+            return 'POSITIVO'
+        if re.search(r'NEGATIVAS?\s+PARA', value_clean):
+            return 'NEGATIVO'
+        # Si contiene múltiples biomarcadores (comas y "Y"), es narrativo
+        if ',' in value_clean and ' Y ' in value_clean:
+            # Probablemente sea lista narrativa, marcar como POSITIVO por defecto
+            return 'POSITIVO'
 
     # Intentar normalización específica primero
     if value_clean.lower() in specific_normalization:
@@ -1784,12 +1899,18 @@ def extract_narrative_biomarkers_list(texto_microscopica: str, biomarker_definit
 
     # Patrones de formato narrativo tipo LISTA (ordenados por especificidad)
     # V6.0.4 FIX: Cambiado terminador para capturar TODA la lista, no solo el primer elemento
-    # Termina en: " y células" (nueva cláusula), " y cé" (abreviado), punto final, o fin de texto
+    # V6.0.5 FIX: Cambiado a greedy (+) y terminadores más específicos para capturar "CAM 5.2"
+    # V6.0.5.1 FIX: Non-greedy para evitar capturar múltiples listas en una sola captura
+    # Termina SOLO en: " y células" (con espacio antes de "y"), punto final, o fin de texto
     patrones_narrativo = [
-        r'(?:son\s+)?positivas?\s+para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ]+?)(?:\s+y\s+c[eé]lulas|\s+y\s+c[eé]|\.|$)',
-        r'expresan\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ]+?)(?:\s+y\s+c[eé]lulas|\s+y\s+c[eé]|\.|$)',
-        r'muestran\s+positividad\s+para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ]+?)(?:\s+y\s+c[eé]lulas|\s+y\s+c[eé]|\.|$)',
-        r'con\s+marcaci[óo]n\s+positiva\s+para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ]+?)(?:\s+y\s+c[eé]lulas|\s+y\s+c[eé]|\.|$)',
+        r'(?:son\s+)?positivas?\s+para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ\n]+?)\s+y\s+c[eé]lulas',
+        r'(?:son\s+)?positivas?\s+para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ\n]+?)(?=\s+y\s+(?!c[eé]lulas)|\.|\n)',
+        r'expresan\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ\n]+?)\s+y\s+c[eé]lulas',
+        r'expresan\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ\n]+?)(?=\s+y\s+(?!c[eé]lulas)|\.|\n)',
+        r'muestran\s+positividad\s+para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ\n]+?)\s+y\s+c[eé]lulas',
+        r'muestran\s+positividad\s+para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ\n]+?)(?=\s+y\s+(?!c[eé]lulas)|\.|\n)',
+        r'con\s+marcaci[óo]n\s+positiva\s+para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ\n]+?)\s+y\s+c[eé]lulas',
+        r'con\s+marcaci[óo]n\s+positiva\s+para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ\n]+?)(?=\s+y\s+(?!c[eé]lulas)|\.|\n)',
     ]
 
     for patron in patrones_narrativo:
@@ -1798,18 +1919,13 @@ def extract_narrative_biomarkers_list(texto_microscopica: str, biomarker_definit
         for match in matches:
             lista_texto = match.group(1).strip()
 
-            # Separar lista por comas, "y", "e"
-            biomarcadores_raw = re.split(r',\s*|\s+y\s+|\s+e\s+', lista_texto, flags=re.IGNORECASE)
+            # V6.0.5: Usar parser inteligente para procesar la lista
+            biomarcadores_dict = parse_narrative_biomarker_list(lista_texto, biomarker_definitions)
 
-            for bio_raw in biomarcadores_raw:
-                bio_limpio = bio_raw.strip().upper()
-
-                # Normalizar a nombre de columna BD
-                columna_bd = normalize_biomarker_name(bio_limpio)
-
-                # Verificar que sea biomarcador válido
-                if columna_bd and columna_bd.startswith('IHQ_'):
-                    resultados[columna_bd] = 'POSITIVO'
+            # Agregar biomarcadores encontrados (NO sobreescribir)
+            for col, valor in biomarcadores_dict.items():
+                if col not in resultados:
+                    resultados[col] = valor
 
     return resultados
 

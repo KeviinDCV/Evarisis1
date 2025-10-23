@@ -150,6 +150,7 @@ MAPEO_BIOMARCADORES = {
 
     'S100': 'IHQ_S100',
     'IHQ_S100': 'IHQ_S100',
+    'SOX100': 'IHQ_S100',  # V6.0.3: SOX100 es variante/typo de S100
 
     'VIMENTINA': 'IHQ_VIMENTINA',
     'IHQ_VIMENTINA': 'IHQ_VIMENTINA',

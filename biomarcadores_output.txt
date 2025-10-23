@@ -1,0 +1,151 @@
+2025-10-23 05:22:07,385 - INFO - ✅ Extractores refactorizados cargados correctamente
+
+================================================================================
+📋 CASO: IHQ250983
+================================================================================
+
+PACIENTE:
+  Nombre: ADELA ROSA BENJUMEA GIRALDO
+  Identificación: 29327255
+  Edad: 69 años | Género: FEMENINO
+  EPS: NUEVA EPS
+
+DATOS MÉDICOS:
+  Órgano: BX HIGADO
+  Diagnóstico: ADENOCARCINOMA METASTASICO
+  Factor Pronóstico: N/A
+  Completitud: 100.0%
+
+================================================================================
+TODOS LOS CAMPOS:
+  Numero de caso: IHQ250983
+  Hospitalizado: NO
+  Sede: HUV
+  EPS: NUEVA EPS
+  Servicio: SALA HUMANA
+  Médico tratante: MARIA CAMILA ARTURO
+  Especialidad: PATOLOGIA
+  Datos Clinicos: SI
+  Tipo de documento: CC
+  N. de identificación: 29327255
+  Primer nombre: ADELA
+  Segundo nombre: ROSA
+  Primer apellido: BENJUMEA
+  Segundo apellido: GIRALDO
+  Edad: 69
+  Genero: FEMENINO
+  Departamento: VALLE DEL CAUCA
+  Municipio: CALI
+  CUPS: 898807
+  Tipo de examen: ESTUDIO DE INMUNOHISTOQUIMICA
+  Procedimiento: BIOPSIA
+  Organo: BX HIGADO
+  Fecha de toma (1. Fecha de la toma): SIN DATO
+  Fecha de ingreso (2. Fecha de la muestra): 08/09/2025
+  Fecha Informe: 12/09/2025
+  Patologo: CARLOS CAICEDO ESTRADA
+  Malignidad: MALIGNO
+  Descripcion macroscopica: Se recibe orden para realización de estudio de inmunohistoqu...
+  Descripcion microscopica: Previa valoración de la técnica y verificación de la adecuad...
+  Descripcion Diagnostico: Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica. - A...
+  Diagnostico Coloracion: NO APLICA
+  Diagnostico Principal: ADENOCARCINOMA METASTASICO
+  Factor pronostico: N/A
+  IHQ_ESTUDIOS_SOLICITADOS: GATA3, CDX2, PAX 8, TTF-1, P40, S100, CKAE1AE3
+  IHQ_ORGANO: HÍGADO
+  Congelaciones /Otros estudios: N/A
+  Liquidos (5 Tipo histologico): N/A
+  Citometria de flujo (5 Tipo histologico): N/A
+  IHQ_HER2: N/A
+  IHQ_KI-67: N/A
+  IHQ_RECEPTOR_ESTROGENOS: N/A
+  IHQ_RECEPTOR_PROGESTERONA: N/A
+  IHQ_PDL-1: N/A
+  IHQ_P16_ESTADO: N/A
+  IHQ_P16_PORCENTAJE: N/A
+  IHQ_P40_ESTADO: , S100 Y CKAE1AE3
+  IHQ_E_CADHERINA: N/A
+  IHQ_CK7: N/A
+  IHQ_CK20: N/A
+  IHQ_CDX2: NEGATIVO
+  IHQ_EMA: N/A
+  IHQ_GATA3: NEGATIVO
+  IHQ_SOX10: N/A
+  IHQ_P53: N/A
+  IHQ_TTF1: N/A
+  IHQ_S100: N/A
+  IHQ_VIMENTINA: N/A
+  IHQ_CHROMOGRANINA: N/A
+  IHQ_SYNAPTOPHYSIN: N/A
+  IHQ_MELAN_A: N/A
+  IHQ_CD3: N/A
+  IHQ_CD5: N/A
+  IHQ_CD10: N/A
+  IHQ_CD20: N/A
+  IHQ_CD30: N/A
+  IHQ_CD34: N/A
+  IHQ_CD38: N/A
+  IHQ_CD45: N/A
+  IHQ_CD56: N/A
+  IHQ_CD61: N/A
+  IHQ_CD68: N/A
+  IHQ_CD117: N/A
+  IHQ_CD138: N/A
+  IHQ_PAX8: N/A
+  IHQ_PAX5: N/A
+  IHQ_WT1: N/A
+  IHQ_NAPSIN: N/A
+  IHQ_P63: N/A
+  IHQ_CDK4: N/A
+  IHQ_MDM2: N/A
+  IHQ_MLH1: N/A
+  IHQ_MSH2: N/A
+  IHQ_MSH6: N/A
+  IHQ_PMS2: N/A
+  IHQ_DOG1: N/A
+  IHQ_HHV8: N/A
+  IHQ_ACTIN: N/A
+  IHQ_GFAP: N/A
+  IHQ_CAM52: N/A
+  IHQ_CKAE1AE3: N/A
+  IHQ_NEUN: N/A
+  IHQ_CD15: N/A
+  IHQ_CD79A: N/A
+  IHQ_ALK: N/A
+  IHQ_DESMIN: N/A
+  IHQ_MYOGENIN: N/A
+  IHQ_MYOD1: N/A
+  IHQ_SMA: N/A
+  IHQ_MSA: N/A
+  IHQ_CALRETININ: N/A
+  IHQ_CD31: N/A
+  IHQ_FACTOR_VIII: N/A
+  IHQ_BCL2: N/A
+  IHQ_BCL6: N/A
+  IHQ_MUM1: N/A
+  IHQ_HMB45: N/A
+  IHQ_TYROSINASE: N/A
+  IHQ_MELANOMA: N/A
+  IHQ_CD23: N/A
+  IHQ_CD4: N/A
+  IHQ_CD8: N/A
+  IHQ_CD99: N/A
+  IHQ_CD1A: N/A
+  IHQ_C4D: N/A
+  IHQ_LMP1: N/A
+  IHQ_CITOMEGALOVIRUS: N/A
+  IHQ_SV40: N/A
+  IHQ_CEA: N/A
+  IHQ_CA19_9: N/A
+  IHQ_CALRETININA: N/A
+  IHQ_CK34BE12: N/A
+  IHQ_CK5_6: N/A
+  IHQ_HEPAR: N/A
+  IHQ_GLIPICAN: N/A
+  IHQ_ARGINASA: N/A
+  IHQ_PSA: N/A
+  IHQ_RACEMASA: N/A
+  IHQ_34BETA: N/A
+  IHQ_B2: N/A
+  Estado Auditoria IA: N/A
+  Fecha Ingreso Base de Datos: 2025-10-23 05:12:27
