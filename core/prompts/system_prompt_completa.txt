@@ -13,3 +13,287 @@ REGLAS DE VALORES:
 ✅ EXCEPCIÓN: Para Factor pronóstico, SI puedes usar "no encontrado" si no hay datos
 
 IMPORTANTE: Primero razona internamente, luego responde ÚNICAMENTE con JSON válido.
+
+═══════════════════════════════════════════════════════════════════════════════
+📋 LISTA COMPLETA DE BIOMARCADORES IHQ (93 MARCADORES) - FASE 2 v6.0.6
+═══════════════════════════════════════════════════════════════════════════════
+
+BIOMARCADORES DE PROLIFERACIÓN Y CICLO CELULAR:
+- Ki-67 (IHQ_KI-67): Índice de proliferación, valores 0-100%
+  Variantes: "Ki 67", "KI67", "índice proliferativo", "índice de proliferación"
+- CDK4 (IHQ_CDK4): Marcador de amplificación genética en sarcomas
+- MDM2 (IHQ_MDM2): Marcador de amplificación genética en sarcomas
+
+BIOMARCADORES DE RECEPTORES HORMONALES Y HER2:
+- Receptor de Estrógenos (IHQ_RECEPTOR_ESTROGENOS): Positivo/Negativo o %
+  Campos: IHQ_ER_ESTADO (POSITIVO/NEGATIVO), IHQ_ER_PORCENTAJE (0-100%)
+  Variantes: "ER", "RE", "estrógeno", "estrogen receptor"
+- Receptor de Progesterona (IHQ_RECEPTOR_PROGESTERONA): Positivo/Negativo o %
+  Campos: IHQ_PR_ESTADO (POSITIVO/NEGATIVO), IHQ_PR_PORCENTAJE (0-100%)
+  Variantes: "PR", "RP", "progesterona", "progesterone receptor"
+- HER2 (IHQ_HER2): 0, 1+, 2+, 3+, Positivo, Negativo, Equívoco
+  Campos: IHQ_HER2_ESTADO, IHQ_HER2_PORCENTAJE, IHQ_HER2_INTENSIDAD
+  Variantes: "HER-2", "HER 2", "c-erbB2"
+- PDL-1 (IHQ_PDL-1): % de células positivas o Positivo/Negativo
+  Variantes: "PD-L1", "PDL1", "programmed death ligand 1"
+
+BIOMARCADORES DE DIFERENCIACIÓN EPITELIAL:
+- Citoqueratinas:
+  * CK7 (IHQ_CK7): Marcador epitelial
+  * CK20 (IHQ_CK20): Marcador epitelial gastrointestinal
+  * CK34BE12 (IHQ_CK34BE12): Marcador de células basales
+  * CK5_6 (IHQ_CK5_6): Marcador escamoso
+  * CKAE1AE3 (IHQ_CKAE1AE3): Pan-citoqueratina
+    Variantes: "CKAE1/AE3", "CK AE1/AE3"
+  * Cam5.2 (IHQ_CAM52): Citoqueratina de bajo peso molecular
+    Variantes: "CAM 5.2", "CAM5.2"
+- CDX2 (IHQ_CDX2): Marcador de origen gastrointestinal
+- TTF1 (IHQ_TTF1): Marcador pulmonar y tiroideo
+  Variantes: "TTF-1", "thyroid transcription factor 1"
+- PAX8 (IHQ_PAX8): Marcador de tracto genitourinario, tiroides
+- PAX5 (IHQ_PAX5): Marcador linfoide B
+- GATA3 (IHQ_GATA3): Marcador de diferenciación mama/urotelial
+- SOX10 (IHQ_SOX10): Marcador melanoma/neural
+- NAPSIN (IHQ_NAPSIN): Marcador renal y pulmonar (adenocarcinoma)
+  Variantes: "Napsin A"
+- WT1 (IHQ_WT1): Marcador renal, mesotelial, ovárico
+- Hepar (IHQ_HEPAR): Marcador hepatocito
+  Variantes: "Hepar-1", "hepatocyte paraffin 1"
+- Glipican (IHQ_GLIPICAN): Marcador hepatocelular
+  Variantes: "Glypican-3", "GPC3"
+- Arginasa (IHQ_ARGINASA): Marcador hepatocelular
+  Variantes: "Arginase-1", "ARG1"
+
+BIOMARCADORES DE DIFERENCIACIÓN MESENQUIMAL:
+- Vimentina (IHQ_VIMENTINA): Marcador mesenquimal general
+  Variantes: "VIM"
+- S100 (IHQ_S100): Marcador neural y melanocítico
+  Variantes: "S-100", "proteína S100"
+- Actina (IHQ_ACTIN): Marcador muscular
+- SMA (IHQ_SMA): Actina de músculo liso (smooth muscle actin)
+  Variantes: "α-SMA", "alpha-SMA"
+- MSA (IHQ_MSA): Actina específica de músculo (muscle specific actin)
+- Desmina (IHQ_DESMIN): Marcador muscular
+- Miogenina (IHQ_MYOGENIN): Diferenciación muscular esquelética
+- MYOD1 (IHQ_MYOD1): Diferenciación muscular esquelética
+- Calretinina (IHQ_CALRETININ): Marcador mesotelial
+  También: IHQ_CALRETININA (variante)
+  Variantes: "calretinin"
+
+BIOMARCADORES NEUROENDOCRINOS:
+- Chromogranina (IHQ_CHROMOGRANINA): Marcador neuroendocrino
+  Variantes: "chromogranin A", "CgA"
+- Synaptophysin (IHQ_SYNAPTOPHYSIN): Marcador neuroendocrino
+  Variantes: "synaptophysin", "SYP"
+- CD56 (IHQ_CD56): Marcador neuroendocrino y NK
+  Variantes: "NCAM", "neural cell adhesion molecule"
+- NeuN (IHQ_NEUN): Marcador neuronal
+  Variantes: "neuronal nuclei"
+
+BIOMARCADORES MELANOCÍTICOS:
+- Melan-A (IHQ_MELAN_A): Marcador melanocítico
+  Variantes: "Melan A", "MART-1"
+- HMB45 (IHQ_HMB45): Marcador melanocítico
+  Variantes: "HMB-45"
+- Tyrosinase (IHQ_TYROSINASE): Marcador melanocítico
+- MELANOMA (IHQ_MELANOMA): Panel melanoma
+- SOX10, S100: Marcadores melanoma (ver secciones correspondientes)
+
+BIOMARCADORES DE PROTEÍNAS DE REPARACIÓN DE DNA (MMR):
+- MLH1 (IHQ_MLH1): Proteína MMR
+- MSH2 (IHQ_MSH2): Proteína MMR
+- MSH6 (IHQ_MSH6): Proteína MMR
+- PMS2 (IHQ_PMS2): Proteína MMR
+⚠️ NOTA CRÍTICA: La PÉRDIDA de expresión (NEGATIVO) sugiere inestabilidad microsatelital
+Los 4 marcadores deben evaluarse en conjunto (ver validaciones cruzadas)
+
+BIOMARCADORES DE TUMORES ESTROMALES GASTROINTESTINALES (GIST):
+- CD117 (IHQ_CD117): c-KIT, marcador GIST
+  Variantes: "c-kit", "ckit"
+- DOG1 (IHQ_DOG1): Marcador GIST
+  Variantes: "DOG-1", "discovered on GIST-1"
+
+BIOMARCADORES LINFOIDES (PANEL CD):
+- Marcadores T:
+  * CD3 (IHQ_CD3): Pan-T
+  * CD4 (IHQ_CD4): T helper
+  * CD5 (IHQ_CD5): T/B1
+  * CD8 (IHQ_CD8): T citotóxico
+- Marcadores B:
+  * CD10 (IHQ_CD10): Centro germinal
+  * CD20 (IHQ_CD20): Pan-B
+  * CD23 (IHQ_CD23): B maduro/leucemia linfocítica crónica
+  * CD79A (IHQ_CD79A): Pan-B
+  * PAX5 (ver sección epitelial)
+- Marcadores NK/Neuroendocrinos:
+  * CD56 (ver sección neuroendocrina)
+- Marcadores mieloides/histiocíticos:
+  * CD15 (IHQ_CD15): Granulocitos, Reed-Sternberg
+  * CD33 (campo no en BD actual, solo CD3)
+  * CD68 (IHQ_CD68): Macrófagos/histiocitos
+- Marcadores blastos/progenitores:
+  * CD34 (IHQ_CD34): Progenitor hematopoyético/endotelial
+  * CD99 (IHQ_CD99): Sarcoma de Ewing, linfoblástico
+  * CD117 (ver sección GIST)
+- Marcadores activación/plasmacíticos:
+  * CD30 (IHQ_CD30): Linfoma anaplásico, Reed-Sternberg
+  * CD38 (IHQ_CD38): Células plasmáticas activadas
+  * CD138 (IHQ_CD138): Células plasmáticas (sindecán-1)
+- Marcadores complemento:
+  * C4D (IHQ_C4D): Fracción complemento
+- Marcadores pronóstico linfoma:
+  * BCL2 (IHQ_BCL2): Anti-apoptótico
+  * BCL6 (IHQ_BCL6): Centro germinal
+  * MUM1 (IHQ_MUM1): Post-centro germinal
+    Variantes: "MUM-1", "IRF4"
+  * CD10 (ver arriba)
+- Otros marcadores linfoides:
+  * CD1A (IHQ_CD1A): Células de Langerhans
+  * ALK (IHQ_ALK): Linfoma anaplásico, cáncer de pulmón
+    Variantes: "ALK-1", "anaplastic lymphoma kinase"
+
+BIOMARCADORES VASCULARES:
+- CD31 (IHQ_CD31): Marcador endotelial
+  Variantes: "PECAM-1"
+- CD34 (IHQ_CD34): Marcador progenitor/endotelial (ver sección linfoides)
+- Factor VIII (IHQ_FACTOR_VIII): Marcador endotelial
+  Variantes: "Factor VIII-related antigen", "vWF"
+- Podoplanina: Marcador linfático (campo D2-40, no en BD actual)
+
+BIOMARCADORES DE SUPRESIÓN TUMORAL Y ONCOGENES:
+- p53 (IHQ_P53): Mutaciones TP53, patrón aberrante vs wild-type
+  Variantes: "P53", "TP53"
+  ⚠️ NOTA: Sobreexpresión (>60%) o pérdida completa indica mutación
+- p16 (IHQ_P16_ESTADO, IHQ_P16_PORCENTAJE): Marcador HPV, valores Positivo/Negativo o %
+  Variantes: "P16", "p16INK4a"
+  ⚠️ NOTA: Positividad difusa y fuerte (bloque) sugiere HPV en carcinomas escamosos
+- p40 (IHQ_P40_ESTADO): Marcador escamoso
+  Variantes: "P40"
+- p63 (IHQ_P63): Marcador basal/escamoso
+  Variantes: "P63", "TP63"
+- ALK (ver sección linfoides)
+
+BIOMARCADORES DE ADHESIÓN:
+- E-Cadherina (IHQ_E_CADHERINA): Adhesión epitelial
+  Variantes: "E-cadherin", "CDH1", "e cadherina"
+  ⚠️ NOTA: Pérdida indica carcinoma lobulillar de mama
+- EMA (IHQ_EMA): Antígeno de membrana epitelial
+  Variantes: "epithelial membrane antigen", "MUC1"
+
+BIOMARCADORES VIRALES:
+- HHV8 (IHQ_HHV8): Sarcoma de Kaposi
+  Variantes: "HHV-8", "KSHV", "human herpesvirus 8"
+- LMP1 (IHQ_LMP1): Virus Epstein-Barr
+  Variantes: "LMP-1", "latent membrane protein 1", "EBV"
+- Citomegalovirus (IHQ_CITOMEGALOVIRUS): CMV
+  Variantes: "CMV"
+- SV40 (IHQ_SV40): Virus SV40
+  Variantes: "SV-40", "simian virus 40"
+
+BIOMARCADORES PROSTÁTICOS:
+- PSA (IHQ_PSA): Antígeno prostático específico
+  Variantes: "prostate specific antigen"
+- Racemasa (IHQ_RACEMASA): P504S, marcador cáncer próstata
+  Variantes: "P504S", "AMACR", "alpha-methylacyl-CoA racemase"
+- 34betaE12 (IHQ_34BETA): Marcador células basales
+  Variantes: "34βE12", "34BE12", "cytokeratin 34betaE12"
+- p63: Marcador basal (ver sección supresión tumoral)
+⚠️ PANEL BASAL PROSTÁTICO: p63 + 34betaE12 juntos
+
+BIOMARCADORES DE DIFERENCIACIÓN GLIAL:
+- GFAP (IHQ_GFAP): Proteína fibrilar glial ácida
+  Variantes: "glial fibrillary acidic protein"
+- S100: Marcador glial (ver sección mesenquimal)
+
+BIOMARCADORES TUMORALES SÉRICOS (USADOS EN IHQ):
+- CEA (IHQ_CEA): Antígeno carcinoembrionario
+  Variantes: "carcinoembryonic antigen"
+- CA19-9 (IHQ_CA19_9): Marcador adenocarcinomas
+  Variantes: "CA19.9", "CA 19-9", "carbohydrate antigen 19-9"
+
+OTROS BIOMARCADORES:
+- CD45 (IHQ_CD45): Antígeno común leucocitario (LCA)
+  Variantes: "LCA", "leukocyte common antigen"
+- CD61 (IHQ_CD61): Marcador plaquetario/megacariocítico
+  Variantes: "GPIIIa"
+- B2 (IHQ_B2): Beta-2 microglobulina
+  Variantes: "β2-microglobulin", "B2M"
+
+CAMPOS ESPECIALES:
+- IHQ_ESTUDIOS_SOLICITADOS: Lista de biomarcadores solicitados del estudio M
+  Formato típico: "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona"
+  ⚠️ REGLA CRÍTICA: Priorizar validación de biomarcadores listados aquí
+- IHQ_ORGANO: Órgano extraído del DIAGNÓSTICO de confirmación IHQ
+  Ejemplos: "MAMA", "PRÓSTATA", "COLON", "PULMÓN"
+
+═══════════════════════════════════════════════════════════════════════════════
+🎯 VALIDACIONES CRUZADAS CRÍTICAS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. PANEL MMR (MLH1, MSH2, MSH6, PMS2):
+   - Los 4 deben evaluarse juntos para síndrome de Lynch
+   - Pérdida de MLH1 → verificar PMS2 (usualmente perdido también)
+   - Pérdida de MSH2 → verificar MSH6 (usualmente perdido también)
+   - Si 1 o más NEGATIVOS → Alto riesgo inestabilidad microsatelital
+   - Aplicaciones: Cáncer colorrectal, endometrial, gástrico
+
+2. PANEL BASAL PROSTÁTICO (p63 + 34betaE12):
+   - Deben evaluarse juntos
+   - Cáncer de próstata: AMBOS NEGATIVOS (pérdida de capa basal)
+   - Hiperplasia benigna: AMBOS POSITIVOS (capa basal intacta)
+   - Si solo 1 positivo → Revisar diagnóstico
+
+3. PANEL MELANOMA (S100 + SOX10 + Melan-A/HMB45):
+   - Melanoma: Usualmente TODOS positivos
+   - S100: Mayor sensibilidad (99%)
+   - SOX10: Alta sensibilidad y especificidad
+   - Melan-A/HMB45: Menor sensibilidad pero alta especificidad
+   - Si S100+ pero otros negativos → Considerar tumor neural
+
+4. PANEL NEUROENDOCRINO (Chromogranina + Synaptophysin + CD56):
+   - Tumor neuroendocrino: Al menos 2/3 positivos
+   - Chromogranina: Más específico
+   - Synaptophysin: Más sensible
+   - CD56: Menos específico (también en otros tumores)
+   - Ki-67 define grado: <3% (G1), 3-20% (G2), >20% (G3)
+
+5. PANEL GIST (CD117 + DOG1):
+   - GIST: Usualmente AMBOS positivos (95%)
+   - CD117+/DOG1-: GIST típico
+   - CD117-/DOG1+: GIST variante (5-10%)
+   - Si ambos negativos → Revisar diagnóstico (no es GIST)
+
+6. PANEL MAMA TRIPLE NEGATIVO:
+   - ER + PR + HER2: TODOS NEGATIVOS
+   - Ki-67: Usualmente alto (>20%, frecuentemente >50%)
+   - p53: Frecuentemente mutado (sobreexpresión o pérdida)
+   - Pronóstico: Desfavorable, requiere quimioterapia
+
+7. PANEL MAMA LUMINAL (ER/PR positivos):
+   - Luminal A: ER+, PR+, HER2-, Ki-67 <20%
+   - Luminal B: ER+, PR+/-, HER2+/-, Ki-67 ≥20%
+   - Si ER+ pero Ki-67 muy alto (>30%) → Luminal B
+
+8. CONSISTENCIA IHQ_ESTUDIOS_SOLICITADOS:
+   - Si biomarcador está en IHQ_ESTUDIOS_SOLICITADOS
+   - DEBE tener valor en su columna IHQ_*
+   - Si falta valor → PRIORIDAD ALTA de corrección
+   - Ejemplo: Si solicitan "Ki-67" pero IHQ_KI-67 vacío → CRÍTICO
+
+9. PANEL LINFOMA (CD10, BCL2, BCL6, MUM1):
+   - Centro germinal: CD10+, BCL6+
+   - Post-centro germinal: MUM1+
+   - Linfoma folicular: CD10+, BCL2+ (aberrante)
+   - Linfoma difuso B: Clasificar según Hans (CD10, BCL6, MUM1)
+
+10. COHERENCIA HER2 (3 campos):
+    - IHQ_HER2_ESTADO vs IHQ_HER2_INTENSIDAD deben ser coherentes:
+      * 0 o 1+ → NEGATIVO
+      * 2+ → EQUÍVOCO (requiere FISH)
+      * 3+ → POSITIVO
+    - IHQ_HER2_PORCENTAJE: % de células con tinción (independiente de intensidad)
+
+═══════════════════════════════════════════════════════════════════════════════
+NOTA FINAL: Total 93 biomarcadores documentados (56 nuevos agregados en Fase 2)
+Impacto esperado: Mejora de precisión IA de 91.5% a ~96% (+5%)
+═══════════════════════════════════════════════════════════════════════════════

@@ -1,7 +1,7 @@
 # 🏥 EVARISIS - Sistema Inteligente de Gestión Oncológica
 
 **Hospital Universitario del Valle**
-**Versión:** 6.0.2 | **Estado:** ✅ PRODUCCIÓN
+**Versión:** 6.0.5 | **Estado:** ✅ PRODUCCIÓN
 
 ---
 
@@ -35,7 +35,7 @@ Usuario: "Audita IHQ250025"
 1. **auditor_sistema.py** - Validación completa (biomarcadores + campos críticos)
 2. **gestor_base_datos.py** - Gestión y consultas de BD
 3. **inspector_sistema.py** - Diagnóstico de salud del sistema
-4. **editor_core.py v2.0** - Edición inteligente de código (🆕 MEJORADO: +569 líneas, 5 componentes avanzados, 93% reducción tiempo)
+4. **editor_core.py** - Edición inteligente de código
 5. **gestor_version.py** - Versionado + CHANGELOG + BITÁCORA
 6. **generador_documentacion.py** - Documentación profesional
 7. **gestor_ia_lm_studio.py** - Gestión LM Studio + IA
@@ -111,7 +111,7 @@ Usuario: "Audita IHQ250025"
    → TERMINA
 
 2. Claude pregunta: "¿Actualizar versión?"
-   → Usuario: "Sí, v6.0.3"
+   → Usuario: "Sí, v6.0.9"
 
 3. Claude invoca version-manager
    → lee reporte de core-editor
@@ -187,8 +187,6 @@ CORRECTO: version-manager genera CHANGELOG/BITACORA → documentation-specialist
 | Sistema lento | `python herramientas_ia/inspector_sistema.py --benchmark` |
 | No encuentro caso | `python herramientas_ia/gestor_base_datos.py --buscar IHQ250025` |
 | Biomarcador no se extrae | `python herramientas_ia/auditor_sistema.py IHQ250025 --buscar "Ki-67"` |
-| Agregar nuevo biomarcador | `python herramientas_ia/editor_core.py --agregar-biomarcador BCL2 --variantes "BCL-2,BCL 2" --descripcion "..." --simular` (🆕 v2.0) |
-| Analizar arquitectura | `python herramientas_ia/editor_core.py --analizar-arquitectura` (🆕 v2.0) |
 | IA no responde | `python herramientas_ia/gestor_ia_lm_studio.py --estado` |
 | Necesito documentar | `python herramientas_ia/generador_documentacion.py --interactivo` |
 
@@ -225,15 +223,8 @@ CORRECTO: version-manager genera CHANGELOG/BITACORA → documentation-specialist
 - Duplicados: 0
 - Backups: Últimos 7 días
 
-**Editor Core v2.0 (NUEVO):**
-- Tiempo agregar biomarcador: 2 min (93% reducción vs 30 min manual)
-- Lectura inteligente: 60-70% menos datos
-- Validación sintaxis: 100% automática
-- Puntos de integración: 7 (automáticos)
-
 ---
 
-**Total líneas código:** ~7,434 (7 herramientas, +569 por editor_core v2.0)
+**Total líneas código:** ~6,865 (7 herramientas)
 **Total documentación:** ~3,069 líneas (7 agentes)
-**Última actualización:** 2025-10-23
-**Última mejora:** editor_core.py v2.0 (5 componentes avanzados)
+**Última actualización:** 2025-10-22

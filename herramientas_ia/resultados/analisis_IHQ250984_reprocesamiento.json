@@ -1,0 +1,70 @@
+{
+  "fecha": "2025-10-24 10:21:49",
+  "caso": "IHQ250984",
+  "paciente": "LETICIA ASTAIZA TACUE",
+  "estado_reprocesamiento": "COMPLETADO",
+  "resumen_ejecutivo": {
+    "estado_actual": "INCOMPLETO (Sistema reporta 100% pero con errores críticos)",
+    "completitud_reportada": "100.0%",
+    "completitud_real": "16.7% (1/6 biomarcadores correctos)",
+    "cambio_vs_anterior": "EMPEORÓ - Ahora campos críticos están VACÍOS",
+    "biomarcadores_solicitados_pdf": 6,
+    "biomarcadores_correctos_bd": 1,
+    "biomarcadores_con_errores": 5
+  },
+  "analisis_detallado": {
+    "campos_correctos": [
+      "IHQ_GATA3: POSITIVO (correcto)"
+    ],
+    "campos_con_errores_criticos": [
+      {
+        "campo": "DIAGNOSTICO_PRINCIPAL",
+        "valor_bd": "NULL",
+        "valor_pdf": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL",
+        "estado": "ERROR - Campo NULL cuando debería tener diagnóstico"
+      },
+      {
+        "campo": "FACTOR_PRONOSTICO",
+        "valor_bd": "NULL",
+        "valor_pdf": "Bloque completo con GATA3, ER, PR, HER2, Ki-67, SOX10",
+        "estado": "ERROR - Campo NULL cuando debería tener bloque estructurado"
+      },
+      {
+        "campo": "IHQ_KI_67",
+        "valor_bd": "NULL",
+        "valor_pdf": "Tinción nuclear en el 60% de las células tumorales",
+        "estado": "ERROR - Campo NULL cuando PDF indica 60%"
+      },
+      {
+        "campo": "IHQ_HER2",
+        "valor_bd": "/NEU: PATHWAY ANTI-HER-2/NEU (4B5) RABBIT MONOCLONAL ANTIBODY",
+        "valor_pdf": "Positivo (Score 3+)",
+        "estado": "ERROR - Capturó nombre del anticuerpo en lugar del resultado"
+      },
+      {
+        "campo": "IHQ_RECEPTOR_ESTROGENOS",
+        "valor_bd": ") (SP1) RABBIT MONOCLONAL PRIMARY ANTIBODY",
+        "valor_pdf": "Negativo",
+        "estado": "ERROR - Capturó nombre del anticuerpo en lugar del resultado"
+      },
+      {
+        "campo": "IHQ_RECEPTOR_PROGESTERONA",
+        "valor_bd": "N/A",
+        "valor_pdf": "Negativo",
+        "estado": "ERROR - Campo vacío cuando PDF indica Negativo"
+      },
+      {
+        "campo": "IHQ_SOX10",
+        "valor_bd": "N/A",
+        "valor_pdf": "Negativas para SXO10 [SOX10]",
+        "estado": "ERROR - Campo vacío cuando PDF indica Negativo"
+      },
+      {
+        "campo": "IHQ_ESTUDIOS_SOLICITADOS",
+        "valor_bd": "GATA3, Receptor de Estrógeno, RECEPTOR DE",
+        "valor_pdf": "GATA 3, RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA, HER 2, Ki 67, SOX10",
+        "estado": "ERROR - Lista incompleta (3/6), texto cortado"
+      }
+    ]
+  }
+}

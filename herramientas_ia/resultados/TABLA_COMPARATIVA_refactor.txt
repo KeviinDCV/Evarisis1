@@ -1,0 +1,96 @@
+===============================================================================
+                   REFACTORIZACIÓN auditor_sistema.py
+                            Fecha: 2025-10-23
+===============================================================================
+
+MÉTRICAS GENERALES
+--------------------------------------------------------------------------------
+Métrica                      | Antes           | Después      | Delta
+--------------------------------------------------------------------------------
+Líneas totales               | 3820            | 3718         | -102 (-2.7%)
+Código duplicado             | ~185 líneas     | 0 líneas     | -185 (-100%)
+Funciones refactorizadas     | 2               | 2            | 0
+Imports de extractores       | 0               | 6            | +6
+Patrones de extracción       | 3               | 10           | +7 (+233%)
+--------------------------------------------------------------------------------
+
+FUNCIONES REFACTORIZADAS
+================================================================================
+
+_extraer_diagnostico_coloracion_de_macro()
+--------------------------------------------------------------------------------
+Métrica                      | Antes           | Después      | Delta
+--------------------------------------------------------------------------------
+Líneas de código             | 42              | 12           | -30 (-71%)
+Patrones regex               | 3               | 3 (heredados)| 0
+Detección semántica          | No              | Sí           | +
+Soporte comillas Unicode     | No              | Sí           | +
+Limpieza de formato          | No              | Sí           | +
+--------------------------------------------------------------------------------
+
+_extraer_biomarcadores_solicitados_de_macro()
+--------------------------------------------------------------------------------
+Métrica                      | Antes           | Después      | Delta
+--------------------------------------------------------------------------------
+Líneas de código             | 145             | 18           | -127 (-88%)
+Patrones de extracción       | 3               | 10 (heredados)| +7
+Soporte multi-línea          | No              | Sí           | +
+Normalización automática     | Manual          | Automática   | +
+Detección "Bloque A: X,Y"    | No              | Sí           | +
+--------------------------------------------------------------------------------
+
+PATRONES DE EXTRACCIÓN HEREDADOS
+================================================================================
+Patrón                                               | Antes | Después | Casos
+--------------------------------------------------------------------------------
+"se solicita X"                                      | SI    | SI      | Común
+"para tinción con X"                                 | SI    | SI      | Común
+"estudios de inmunohistoquímica X"                   | SI    | SI      | Común
+"para los siguientes marcadores: X"                  | NO    | SI      | IHQ250002
+"se solicitan los siguiente biomarcadores: X"        | NO    | SI      | IHQ250005
+"para tinción de la siguiente manera:"               | NO    | SI      | Bloques
+"se solicita(n) marcador(es) X"                      | NO    | SI      | IHQ250050
+"para X Y Y"                                         | NO    | SI      | IHQ250042
+"con X - Y - Z"                                      | NO    | SI      | IHQ250043
+"para marcar con X"                                  | NO    | SI      | IHQ250048
+"para marcación de X, Y, Z"                          | NO    | SI      | IHQ250982
+--------------------------------------------------------------------------------
+
+BENEFICIOS OBTENIDOS
+================================================================================
++ Eliminación de 100% de duplicación de código
++ Fuente única de verdad (extractores)
++ +7 patrones de detección heredados
++ Soporte multi-línea para biomarcadores
++ Detección semántica de diagnósticos
++ Mantenibilidad mejorada (cambios se propagan automáticamente)
++ Consistencia garantizada entre auditoría y extracción
+
+ARCHIVOS GENERADOS
+================================================================================
++ herramientas_ia/auditor_sistema.py (REFACTORIZADO - 3718 líneas)
++ backups/auditor_sistema_backup_20251023_073954.py (ORIGINAL - 3820 líneas)
++ resultados/refactor_eliminacion_duplicacion_20251023_074500.md (19 KB)
++ resultados/tests_regresion_refactor_20251023.md (SUITE DE TESTS)
++ resultados/RESUMEN_EJECUTIVO_refactor_20251023.md (RESUMEN)
++ resultados/TABLA_COMPARATIVA_refactor.txt (ESTE ARCHIVO)
+
+ESTADO Y PRÓXIMOS PASOS
+================================================================================
+Estado: REFACTORIZACIÓN COMPLETADA
+        PENDIENTE: Tests de regresión
+
+Próximos pasos:
+  1. Ejecutar tests de regresión (tests_regresion_refactor_20251023.md)
+  2. Validar con casos IHQ250981, IHQ250982, IHQ251026
+  3. Comparar resultados antes/después
+  4. Obtener aprobación de QA
+  5. Deploy a producción
+
+Rollback (si necesario):
+  cp backups/auditor_sistema_backup_20251023_073954.py \
+     herramientas_ia/auditor_sistema.py
+
+===============================================================================
+RECOMENDACIÓN: APROBAR después de validar tests de regresión
+===============================================================================

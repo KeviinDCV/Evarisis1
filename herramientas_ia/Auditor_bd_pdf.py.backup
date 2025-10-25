@@ -1,0 +1,729 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+🔍 AUDITOR BD-PDF INTELIGENTE - Sistema EVARISIS
+=================================================
+
+Compara datos en la base de datos contra las DESCRIPCIONES ORIGINALES del PDF
+(no contra lo que el extractor dice que extrajo) para validar la precisión real.
+
+FLUJO DE AUDITORÍA V3.0:
+1. Lee el debug_map del caso
+2. Extrae datos guardados en BD desde debug_map['base_datos']['datos_guardados']
+3. Lee las descripciones originales del PDF desde debug_map['extraccion']['unified_extractor']
+4. Busca los valores REALES en esas descripciones usando regex
+5. Compara BD vs Descripciones reales
+6. Diagnostica DÓNDE falló el extractor (qué patrón falta)
+7. Valida exhaustivamente IHQ_ESTUDIOS_SOLICITADOS (campo crítico)
+8. Sugiere correcciones específicas
+
+CAMBIOS V3.0 (Debug Map V2.0 compatible):
+- ✅ Lee datos de BD desde debug_map (no consulta la tabla)
+- ✅ Usa estructura normalizada del debug_map
+- ✅ Validación exhaustiva de IHQ_ESTUDIOS_SOLICITADOS
+- ✅ Acceso rápido a campos críticos
+
+OBJETIVO:
+Proporcionar feedback accionable para mejorar los extractores
+con sugerencias específicas de patrones regex a agregar.
+
+Autor: Sistema EVARISIS CIRUGÍA ONCOLÓGICA
+Versión: 3.0.0 - Compatible con Debug Map V2.0
+Fecha: 20 de octubre de 2025
+"""
+
+import sys
+import os
+import json
+import sqlite3
+import argparse
+from pathlib import Path
+from typing import Dict, List, Tuple, Optional, Any
+from datetime import datetime
+import re
+
+# Configurar salida UTF-8 en Windows
+if sys.platform.startswith('win'):
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+
+# Agregar path del proyecto
+PROJECT_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
+from core.database_manager import DB_FILE, TABLE_NAME
+
+
+class AuditorInteligenteBDPDF:
+    """Auditor inteligente que diagnostica errores de extracción"""
+
+    def __init__(self):
+        self.db_path = DB_FILE
+        self.table_name = TABLE_NAME
+        self.debug_maps_dir = PROJECT_ROOT / "data" / "debug_maps"
+
+        # Verificar que existen los directorios
+        if not os.path.exists(self.db_path):
+            raise FileNotFoundError(f"Base de datos no encontrada: {self.db_path}")
+
+        if not self.debug_maps_dir.exists():
+            raise FileNotFoundError(f"Directorio debug_maps no encontrado: {self.debug_maps_dir}")
+
+    def obtener_debug_map(self, numero_caso: str) -> Optional[Dict]:
+        """Obtiene el debug map más reciente para un caso"""
+        patron = f"debug_map_{numero_caso}_*.json"
+        archivos = list(self.debug_maps_dir.glob(patron))
+
+        if not archivos:
+            return None
+
+        archivo_mas_reciente = max(archivos, key=lambda p: p.stat().st_mtime)
+
+        with open(archivo_mas_reciente, 'r', encoding='utf-8') as f:
+            return json.load(f)
+
+    def obtener_datos_bd(self, debug_map: Dict) -> Optional[Dict]:
+        """Obtiene datos de BD desde el debug_map (V3.0)
+
+        Args:
+            debug_map: Debug map del caso
+
+        Returns:
+            Diccionario con todos los datos guardados en BD
+        """
+        # V3.0: Leer desde debug_map en lugar de consultar la BD
+        base_datos = debug_map.get('base_datos', {})
+        datos_guardados = base_datos.get('datos_guardados', {})
+
+        if not datos_guardados:
+            return None
+
+        return datos_guardados
+
+    def obtener_descripciones_pdf(self, debug_map: Dict) -> Dict[str, str]:
+        """Obtiene las descripciones originales del PDF desde el debug map (V3.0)
+
+        Returns:
+            Dict con 'macroscopica', 'microscopica', 'diagnostico'
+        """
+        extraccion = debug_map.get('extraccion', {})
+        unified = extraccion.get('unified_extractor', {})
+
+        # V3.0: Nombres normalizados del debug_map V2.0
+        return {
+            'macroscopica': unified.get('descripcion_macroscopica', ''),
+            'microscopica': unified.get('descripcion_microscopica', ''),
+            'diagnostico': unified.get('diagnostico', unified.get('descripcion_diagnostico', '')),
+        }
+
+    def buscar_en_descripciones(self, descripciones: Dict[str, str], campo: str) -> Tuple[Optional[str], str, str]:
+        """Busca un valor en las descripciones usando patrones regex
+
+        Returns:
+            (valor_encontrado, patron_usado, descripcion_fuente)
+        """
+        # Concatenar todas las descripciones para búsqueda completa
+        texto_completo = f"{descripciones['macroscopica']}\n{descripciones['microscopica']}\n{descripciones['diagnostico']}"
+
+        # Patrones por campo
+        patrones_por_campo = {
+            'IHQ_KI-67': [
+                (r'KI-?67[:\s]+(\d+(?:-\d+)?)\s*%', 'KI-67: N%'),
+                (r'KI-?67[:\s]+(<\s*\d+)\s*%', 'KI-67: <N%'),
+                (r'KI-?67[:\s]+(\d+\s*-\s*\d+)\s*%', 'KI-67: N-N%'),
+                (r'índice\s+de\s+proliferación[:\s]+(\d+)\s*%', 'índice de proliferación: N%'),
+            ],
+            'IHQ_HER2': [
+                (r'HER-?2[:\s]+(POSITIVO|NEGATIVO|EQUIVOCO)', 'HER2: ESTADO'),
+                (r'HER-?2[:\s]+(SCORE\s+\d\+)', 'HER2: SCORE N+'),
+                (r'HER-?2[:\s]+(EQUIVOCO\s+\(SCORE\s+\d\+\))', 'HER2: EQUIVOCO (SCORE N+)'),
+                (r'POR\s+INMUNOHISTOQUÍMICA[:\s]+HER-?2[:\s]+(EQUIVOCO\s+\(SCORE\s+\d\+\))', 'POR INMUNOHISTOQUÍMICA: HER2: EQUIVOCO (SCORE N+)'),
+            ],
+            'IHQ_RECEPTOR_ESTROGENOS': [
+                (r'RECEPTOR(?:ES)?\s+DE\s+ESTRÓGENO[:\s]+(POSITIVO|NEGATIVO)', 'RECEPTORES DE ESTRÓGENO: ESTADO'),
+                (r'RECEPTOR(?:ES)?\s+DE\s+ESTRÓGENO[:\s]+POSITIVO[:\s]+(?:FUERTE|MODERADO|DÉBIL)?\s*(\d+-\d+%)', 'RECEPTORES DE ESTRÓGENO POSITIVO: N-N%'),
+                (r'RE[:\s]+(POSITIVO|NEGATIVO)', 'RE: ESTADO'),
+            ],
+            'IHQ_RECEPTOR_PROGESTERONA': [
+                (r'RECEPTOR(?:ES)?\s+DE\s+PROGESTERONA[:\s]+(POSITIVO|NEGATIVO)', 'RECEPTORES DE PROGESTERONA: ESTADO'),
+                (r'RECEPTOR(?:ES)?\s+DE\s+PROGESTERONA[:\s]+POSITIVO[:\s]+(?:FUERTE|MODERADO|DÉBIL)?\s*(\d+-\d+%)', 'RECEPTORES DE PROGESTERONA POSITIVO: N-N%'),
+                (r'RP[:\s]+(POSITIVO|NEGATIVO)', 'RP: ESTADO'),
+            ],
+            'IHQ_P53': [
+                (r'P53[:\s]+(POSITIVO|NEGATIVO|SOBREEXPRESIÓN|SOBREEXPRESION)', 'P53: ESTADO'),
+                (r'P53[:\s]+POSITIVO[:\s]+(\d+%)', 'P53 POSITIVO: N%'),
+            ],
+            'IHQ_PDL-1': [
+                (r'PDL-?1[:\s]+(POSITIVO|NEGATIVO)', 'PDL-1: ESTADO'),
+                (r'PDL-?1[:\s]+(\d+\s*%)', 'PDL-1: N%'),
+            ],
+            'Diagnostico Principal': [
+                (r'DIAGNÓSTICO[:\s]*[-\s]*(.+?)(?:\n|$)', 'DIAGNÓSTICO: texto'),
+                (r'CARCINOMA\s+INVASIVO\s+DE\s+TIPO\s+NO\s+ESPECIAL\s+\(DUCTAL\)', 'Patrón: CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)'),
+            ],
+            'Organo': [
+                (r'MUESTRA[:\s]+(.+?)(?:\.|$)', 'MUESTRA: órgano'),
+                (r'BX\s+DE\s+(.+?)(?:\.|$)', 'BX DE: órgano'),
+            ],
+        }
+
+        if campo not in patrones_por_campo:
+            return None, 'SIN_PATRON_DEFINIDO', ''
+
+        for patron, descripcion_patron in patrones_por_campo[campo]:
+            match = re.search(patron, texto_completo, re.IGNORECASE | re.MULTILINE)
+            if match:
+                valor = match.group(1).strip() if match.lastindex and match.lastindex >= 1 else match.group(0).strip()
+
+                # Determinar en qué descripción se encontró
+                fuente = 'desconocida'
+                if re.search(patron, descripciones['diagnostico'], re.IGNORECASE):
+                    fuente = 'Descripcion Diagnostico'
+                elif re.search(patron, descripciones['microscopica'], re.IGNORECASE):
+                    fuente = 'Descripcion microscopica'
+                elif re.search(patron, descripciones['macroscopica'], re.IGNORECASE):
+                    fuente = 'Descripcion macroscopica'
+
+                return valor.upper(), descripcion_patron, fuente
+
+        return None, 'NINGUN_PATRON_COINCIDE', ''
+
+    def normalizar_valor(self, valor: Any) -> str:
+        """Normaliza un valor para comparación"""
+        if valor is None or valor == '':
+            return "VACIO"
+
+        valor_str = str(valor).strip().upper()
+
+        # Normalizar variantes comunes
+        if 'POSITIVO' in valor_str:
+            # Si tiene porcentaje, mantenerlo
+            match = re.search(r'(\d+-\d+%|\d+%)', valor_str)
+            if match:
+                return f"POSITIVO {match.group(1)}"
+            return "POSITIVO"
+        elif 'NEGATIVO' in valor_str:
+            return "NEGATIVO"
+        elif 'EQUIVOCO' in valor_str:
+            # Mantener el score si existe
+            match = re.search(r'SCORE\s+(\d\+)', valor_str)
+            if match:
+                return f"EQUIVOCO (SCORE {match.group(1)})"
+            return "EQUIVOCO"
+        elif valor_str in ['', 'NONE', 'NULL', 'N/A']:
+            return "VACIO"
+        else:
+            return valor_str
+
+    def comparar_valores(self, valor_bd: Any, valor_pdf: Any) -> Tuple[bool, str, str, str]:
+        """Compara dos valores"""
+        bd_norm = self.normalizar_valor(valor_bd)
+        pdf_norm = self.normalizar_valor(valor_pdf)
+
+        if bd_norm == pdf_norm:
+            return True, "COINCIDE", bd_norm, pdf_norm
+
+        # PDF no tiene valor pero BD sí
+        if pdf_norm == "VACIO" and bd_norm != "VACIO":
+            return False, "FALSO_POSITIVO", bd_norm, pdf_norm
+
+        # PDF tiene valor pero BD está vacío
+        if pdf_norm != "VACIO" and bd_norm == "VACIO":
+            return False, "FALSO_NEGATIVO", bd_norm, pdf_norm
+
+        # Valores diferentes
+        return False, "VALOR_DIFERENTE", bd_norm, pdf_norm
+
+    def validar_estudios_solicitados(self, datos_bd: Dict, descripciones: Dict[str, str]) -> Dict:
+        """Validación exhaustiva del campo IHQ_ESTUDIOS_SOLICITADOS (V3.0)
+
+        Verifica que todos los biomarcadores mencionados en las descripciones
+        estén capturados en IHQ_ESTUDIOS_SOLICITADOS.
+
+        Returns:
+            Dict con resultados de validación
+        """
+        estudios_bd = datos_bd.get('IHQ_ESTUDIOS_SOLICITADOS', '')
+
+        # Lista de biomarcadores comunes a buscar
+        biomarcadores_conocidos = [
+            'KI-67', 'KI67',
+            'HER2', 'HER-2',
+            'RECEPTOR DE ESTRÓGENO', 'RECEPTORES DE ESTRÓGENO', 'RE', 'ER',
+            'RECEPTOR DE PROGESTERONA', 'RECEPTORES DE PROGESTERONA', 'RP', 'PR',
+            'P53',
+            'PDL-1', 'PDL1',
+            'P16',
+            'P40',
+            'CK7', 'CK20',
+            'CDX2',
+            'TTF1', 'TTF-1',
+            'CHROMOGRANINA', 'SYNAPTOPHYSIN',
+            'CD3', 'CD5', 'CD10', 'CD20', 'CD30', 'CD34',
+            'MLH1', 'MSH2', 'MSH6', 'PMS2',
+        ]
+
+        texto_completo = f"{descripciones['macroscopica']}\n{descripciones['microscopica']}\n{descripciones['diagnostico']}".upper()
+
+        biomarcadores_encontrados = []
+        biomarcadores_faltantes = []
+
+        for biomarcador in biomarcadores_conocidos:
+            if re.search(rf'\b{re.escape(biomarcador)}\b', texto_completo):
+                biomarcadores_encontrados.append(biomarcador)
+
+                # Verificar si está en IHQ_ESTUDIOS_SOLICITADOS
+                if biomarcador not in estudios_bd.upper():
+                    biomarcadores_faltantes.append(biomarcador)
+
+        return {
+            'estudios_bd': estudios_bd,
+            'biomarcadores_en_pdf': biomarcadores_encontrados,
+            'biomarcadores_faltantes': biomarcadores_faltantes,
+            'completitud': len(biomarcadores_faltantes) == 0,
+            'porcentaje_captura': (len(biomarcadores_encontrados) - len(biomarcadores_faltantes)) / len(biomarcadores_encontrados) * 100 if biomarcadores_encontrados else 100.0
+        }
+
+    def diagnosticar_error_extractor(self, campo: str, valor_bd: Any, valor_pdf: Any,
+                                     patron_usado: str, fuente: str) -> Dict:
+        """Diagnostica dónde falló el extractor y sugiere corrección
+
+        Returns:
+            Dict con diagnóstico y sugerencias
+        """
+        diagnostico = {
+            'campo': campo,
+            'valor_bd': valor_bd,
+            'valor_pdf_real': valor_pdf,
+            'patron_que_debio_usar': patron_usado,
+            'fuente_pdf': fuente,
+            'problema_detectado': '',
+            'archivo_extractor': '',
+            'sugerencia_correccion': '',
+        }
+
+        bd_norm = self.normalizar_valor(valor_bd)
+        pdf_norm = self.normalizar_valor(valor_pdf)
+
+        # Determinar archivo extractor responsable
+        if campo.startswith('IHQ_'):
+            diagnostico['archivo_extractor'] = 'core/extractors/biomarker_extractor.py'
+        elif campo in ['Diagnostico Principal', 'Organo']:
+            diagnostico['archivo_extractor'] = 'core/extractors/medical_extractor.py'
+        else:
+            diagnostico['archivo_extractor'] = 'core/unified_extractor.py'
+
+        # Diagnosticar problema
+        if bd_norm == "VACIO" and pdf_norm != "VACIO":
+            diagnostico['problema_detectado'] = 'PATRON_FALTANTE'
+            diagnostico['sugerencia_correccion'] = f"""
+AGREGAR PATRÓN EN {diagnostico['archivo_extractor']}:
+
+El extractor NO reconoció el valor "{valor_pdf}" en la descripción.
+Patrón que debió funcionar: {patron_usado}
+
+ACCIÓN: Agregar este patrón regex a la lista de patrones para el campo {campo}
+            """
+        elif bd_norm != pdf_norm and pdf_norm != "VACIO":
+            diagnostico['problema_detectado'] = 'EXTRACCION_INCORRECTA'
+            diagnostico['sugerencia_correccion'] = f"""
+CORREGIR LÓGICA EN {diagnostico['archivo_extractor']}:
+
+El extractor extrajo: "{valor_bd}"
+Pero el PDF real dice: "{valor_pdf}"
+Patrón correcto: {patron_usado}
+
+ACCIÓN: Verificar que el patrón regex actual no esté capturando incorrectamente.
+Posible causa: El patrón captura más de lo necesario o hay procesamiento posterior incorrecto.
+            """
+        elif bd_norm != "VACIO" and pdf_norm == "VACIO":
+            diagnostico['problema_detectado'] = 'VALOR_POR_DEFECTO_INCORRECTO'
+            diagnostico['sugerencia_correccion'] = f"""
+REVISAR VALORES POR DEFECTO EN {diagnostico['archivo_extractor']}:
+
+El PDF NO menciona este campo, pero la BD tiene: "{valor_bd}"
+
+ACCIÓN: El extractor puede estar aplicando un valor por defecto incorrecto.
+Revisar si hay lógica de inferencia o valores por defecto para {campo}.
+            """
+
+        return diagnostico
+
+    def validar_caso(self, numero_caso: str, verbose: bool = True) -> Dict:
+        """Valida un caso específico con diagnóstico inteligente (V3.0)"""
+        if verbose:
+            print("=" * 120)
+            print(f"🔍 AUDITORÍA INTELIGENTE V3.0: {numero_caso}")
+            print("=" * 120)
+
+        # 1. Obtener debug map (contiene todo: BD + descripciones)
+        debug_map = self.obtener_debug_map(numero_caso)
+        if not debug_map:
+            if verbose:
+                print(f"❌ Debug map no encontrado para {numero_caso}")
+            return {
+                'caso': numero_caso,
+                'error': 'NO_DEBUG_MAP',
+                'mensaje': 'Debug map no encontrado. El caso debe procesarse primero.'
+            }
+
+        # 2. Obtener datos de BD desde el debug_map
+        datos_bd = self.obtener_datos_bd(debug_map)
+        if not datos_bd:
+            if verbose:
+                print(f"⚠️  No hay datos de BD en el debug map")
+            return {
+                'caso': numero_caso,
+                'error': 'NO_DATOS_BD',
+                'mensaje': 'No hay datos de BD guardados en el debug map'
+            }
+
+        # 3. Obtener descripciones originales del PDF
+        descripciones = self.obtener_descripciones_pdf(debug_map)
+
+        if not any(descripciones.values()):
+            if verbose:
+                print(f"⚠️  No hay descripciones en el debug map")
+            return {
+                'caso': numero_caso,
+                'error': 'NO_DESCRIPCIONES',
+                'mensaje': 'No hay descripciones médicas en el debug map'
+            }
+
+        if verbose:
+            print(f"\n✅ Caso encontrado en BD")
+            print(f"✅ Debug map encontrado")
+            print(f"✅ Descripciones disponibles:")
+            print(f"   - Macroscópica: {len(descripciones['macroscopica'])} chars")
+            print(f"   - Microscópica: {len(descripciones['microscopica'])} chars")
+            print(f"   - Diagnóstico: {len(descripciones['diagnostico'])} chars")
+
+        # 4. VALIDACIÓN EXHAUSTIVA DE IHQ_ESTUDIOS_SOLICITADOS (V3.0)
+        validacion_estudios = self.validar_estudios_solicitados(datos_bd, descripciones)
+
+        if verbose:
+            print(f"\n🔬 VALIDACIÓN EXHAUSTIVA: IHQ_ESTUDIOS_SOLICITADOS")
+            print("=" * 120)
+            print(f"   📋 Estudios en BD: {validacion_estudios['estudios_bd']}")
+            print(f"   🔍 Biomarcadores detectados en PDF: {len(validacion_estudios['biomarcadores_en_pdf'])}")
+            if validacion_estudios['biomarcadores_en_pdf']:
+                print(f"      {', '.join(validacion_estudios['biomarcadores_en_pdf'])}")
+
+            if validacion_estudios['biomarcadores_faltantes']:
+                print(f"   ❌ Biomarcadores NO capturados: {len(validacion_estudios['biomarcadores_faltantes'])}")
+                print(f"      {', '.join(validacion_estudios['biomarcadores_faltantes'])}")
+            else:
+                print(f"   ✅ Todos los biomarcadores capturados correctamente")
+
+            print(f"   📊 Completitud: {validacion_estudios['porcentaje_captura']:.1f}%")
+            print()
+
+            print(f"\n📊 COMPARANDO CAMPOS INDIVIDUALES BD vs PDF:\n")
+
+        # 5. Comparar campos clave individuales
+        campos_a_validar = [
+            'Diagnostico Principal',
+            'Organo',
+            'IHQ_KI-67',
+            'IHQ_HER2',
+            'IHQ_RECEPTOR_ESTROGENOS',
+            'IHQ_RECEPTOR_PROGESTERONA',
+            'IHQ_P53',
+            'IHQ_PDL-1',
+        ]
+
+        resultados = {
+            'caso': numero_caso,
+            'timestamp': datetime.now().isoformat(),
+            'validacion_estudios_solicitados': validacion_estudios,  # V3.0: Validación exhaustiva
+            'campos_validados': [],
+            'diagnosticos_errores': [],
+            'total_campos': 0,
+            'coincidencias': 0,
+            'falsos_positivos': 0,
+            'falsos_negativos': 0,
+            'valores_diferentes': 0,
+        }
+
+        for campo in campos_a_validar:
+            valor_bd = datos_bd.get(campo)
+            valor_pdf, patron_usado, fuente = self.buscar_en_descripciones(descripciones, campo)
+
+            coincide, tipo, bd_norm, pdf_norm = self.comparar_valores(valor_bd, valor_pdf)
+
+            resultado_campo = {
+                'campo': campo,
+                'valor_bd': valor_bd,
+                'valor_pdf_real': valor_pdf,
+                'bd_normalizado': bd_norm,
+                'pdf_normalizado': pdf_norm,
+                'coincide': coincide,
+                'tipo': tipo,
+                'patron_usado': patron_usado,
+                'fuente_pdf': fuente,
+            }
+
+            resultados['campos_validados'].append(resultado_campo)
+            resultados['total_campos'] += 1
+
+            if coincide:
+                resultados['coincidencias'] += 1
+                if verbose:
+                    print(f"   ✅ {campo:40s} | BD: {bd_norm:35s} | PDF: {pdf_norm:35s}")
+            else:
+                # Diagnosticar error
+                diagnostico = self.diagnosticar_error_extractor(campo, valor_bd, valor_pdf, patron_usado, fuente)
+                resultados['diagnosticos_errores'].append(diagnostico)
+
+                if tipo == "FALSO_POSITIVO":
+                    resultados['falsos_positivos'] += 1
+                    if verbose:
+                        print(f"   ⚠️  {campo:40s} | BD: {bd_norm:35s} | PDF: NO ENCONTRADO")
+                        print(f"       └─ DIAGNÓSTICO: {diagnostico['problema_detectado']}")
+                elif tipo == "FALSO_NEGATIVO":
+                    resultados['falsos_negativos'] += 1
+                    if verbose:
+                        print(f"   ❌ {campo:40s} | BD: VACÍO | PDF: {pdf_norm:35s}")
+                        print(f"       └─ PATRÓN: {patron_usado} (en {fuente})")
+                        print(f"       └─ DIAGNÓSTICO: Patrón faltante en {diagnostico['archivo_extractor']}")
+                else:  # VALOR_DIFERENTE
+                    resultados['valores_diferentes'] += 1
+                    if verbose:
+                        print(f"   ❌ {campo:40s} | BD: {bd_norm:35s} | PDF: {pdf_norm:35s}")
+                        print(f"       └─ DIAGNÓSTICO: {diagnostico['problema_detectado']}")
+
+        # 5. Calcular precisión
+        if resultados['total_campos'] > 0:
+            precision = (resultados['coincidencias'] / resultados['total_campos']) * 100
+        else:
+            precision = 0.0
+
+        resultados['precision_porcentaje'] = precision
+
+        if verbose:
+            print("\n" + "=" * 120)
+            print(f"📈 RESUMEN DE VALIDACIÓN:")
+            print("=" * 120)
+            print(f"   Total campos validados:  {resultados['total_campos']}")
+            print(f"   ✅ Coincidencias:         {resultados['coincidencias']}")
+            print(f"   ⚠️  Falsos positivos:      {resultados['falsos_positivos']} (BD tiene dato que PDF no menciona)")
+            print(f"   ❌ Falsos negativos:      {resultados['falsos_negativos']} (PDF tiene dato pero BD vacío)")
+            print(f"   ❌ Valores diferentes:    {resultados['valores_diferentes']} (BD ≠ PDF)")
+            print(f"\n   🎯 PRECISIÓN: {precision:.1f}%")
+
+            if resultados['diagnosticos_errores']:
+                print("\n" + "=" * 120)
+                print("🔧 SUGERENCIAS DE CORRECCIÓN:")
+                print("=" * 120)
+                for i, diag in enumerate(resultados['diagnosticos_errores'], 1):
+                    print(f"\n{i}. {diag['campo']}")
+                    print(f"   Problema: {diag['problema_detectado']}")
+                    print(f"   Archivo: {diag['archivo_extractor']}")
+                    print(f"   Sugerencia:{diag['sugerencia_correccion']}")
+
+            print("=" * 120)
+
+        return resultados
+
+    def listar_casos_disponibles(self) -> List[str]:
+        """Lista todos los casos disponibles en la BD"""
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+
+        try:
+            cursor.execute(f'''
+                SELECT "Numero de caso" FROM {self.table_name}
+                ORDER BY "Numero de caso"
+            ''')
+
+            casos = [row[0] for row in cursor.fetchall() if row[0]]
+            return casos
+        finally:
+            conn.close()
+
+    def auditar_todos(self, limite: Optional[int] = None) -> Dict:
+        """Audita todos los casos disponibles"""
+        print("=" * 120)
+        print("🔍 AUDITORÍA INTELIGENTE COMPLETA")
+        print("=" * 120)
+
+        casos = self.listar_casos_disponibles()
+
+        if limite:
+            casos = casos[:limite]
+
+        print(f"\n📊 Total de casos a auditar: {len(casos)}")
+        print("\n" + "=" * 120)
+
+        resultados_globales = {
+            'timestamp': datetime.now().isoformat(),
+            'total_casos_bd': len(casos),
+            'casos_validados': 0,
+            'casos_sin_debug_map': 0,
+            'casos_con_errores': 0,
+            'precision_promedio': 0.0,
+            'todos_los_diagnosticos': [],
+            'resultados_por_caso': [],
+        }
+
+        total_precision = 0.0
+        casos_con_precision = 0
+
+        for i, caso in enumerate(casos, 1):
+            print(f"\n[{i}/{len(casos)}] Validando {caso}...")
+
+            resultado = self.validar_caso(caso, verbose=False)
+            resultados_globales['resultados_por_caso'].append(resultado)
+
+            if 'error' in resultado:
+                if resultado['error'] == 'NO_DEBUG_MAP':
+                    resultados_globales['casos_sin_debug_map'] += 1
+                else:
+                    resultados_globales['casos_con_errores'] += 1
+                print(f"   ⚠️  {resultado['mensaje']}")
+            else:
+                resultados_globales['casos_validados'] += 1
+                precision = resultado['precision_porcentaje']
+                total_precision += precision
+                casos_con_precision += 1
+
+                # Agregar diagnósticos al global
+                resultados_globales['todos_los_diagnosticos'].extend(resultado['diagnosticos_errores'])
+
+                print(f"   ✅ Precisión: {precision:.1f}% "
+                      f"(Coincide: {resultado['coincidencias']}/{resultado['total_campos']})")
+
+                if resultado['diagnosticos_errores']:
+                    print(f"   🔧 {len(resultado['diagnosticos_errores'])} error(es) diagnosticado(s)")
+
+        # Calcular precisión promedio
+        if casos_con_precision > 0:
+            resultados_globales['precision_promedio'] = total_precision / casos_con_precision
+
+        # Imprimir resumen final
+        print("\n" + "=" * 120)
+        print("📈 RESUMEN GLOBAL DE AUDITORÍA")
+        print("=" * 120)
+        print(f"   Total casos en BD:           {resultados_globales['total_casos_bd']}")
+        print(f"   ✅ Casos validados:           {resultados_globales['casos_validados']}")
+        print(f"   ⚠️  Casos sin debug map:       {resultados_globales['casos_sin_debug_map']}")
+        print(f"   ❌ Casos con errores:         {resultados_globales['casos_con_errores']}")
+        print(f"\n   🎯 PRECISIÓN PROMEDIO: {resultados_globales['precision_promedio']:.1f}%")
+        print(f"   🔧 Total errores encontrados: {len(resultados_globales['todos_los_diagnosticos'])}")
+        print("=" * 120)
+
+        # Agrupar diagnósticos por tipo de problema
+        if resultados_globales['todos_los_diagnosticos']:
+            print("\n" + "=" * 120)
+            print("🔧 ANÁLISIS DE ERRORES POR TIPO:")
+            print("=" * 120)
+
+            problemas_por_tipo = {}
+            for diag in resultados_globales['todos_los_diagnosticos']:
+                tipo = diag['problema_detectado']
+                if tipo not in problemas_por_tipo:
+                    problemas_por_tipo[tipo] = []
+                problemas_por_tipo[tipo].append(diag)
+
+            for tipo, diagnosticos in problemas_por_tipo.items():
+                print(f"\n📌 {tipo}: {len(diagnosticos)} caso(s)")
+                # Mostrar primeros 3 ejemplos
+                for diag in diagnosticos[:3]:
+                    print(f"   - {diag['campo']}: BD='{diag['valor_bd']}' vs PDF='{diag['valor_pdf_real']}'")
+                if len(diagnosticos) > 3:
+                    print(f"   ... y {len(diagnosticos) - 3} más")
+
+            print("=" * 120)
+
+        return resultados_globales
+
+
+def main():
+    """Función principal"""
+    parser = argparse.ArgumentParser(
+        description='Auditor Inteligente BD-PDF: Valida precisión y diagnostica errores de extracción'
+    )
+
+    parser.add_argument(
+        'caso',
+        nargs='?',
+        help='Número de caso a validar (ej: IHQ250025)'
+    )
+
+    parser.add_argument(
+        '--todos',
+        action='store_true',
+        help='Auditar todos los casos disponibles'
+    )
+
+    parser.add_argument(
+        '--limite',
+        type=int,
+        help='Limitar auditoría a N casos'
+    )
+
+    parser.add_argument(
+        '--listar',
+        action='store_true',
+        help='Listar todos los casos disponibles'
+    )
+
+    parser.add_argument(
+        '--json',
+        action='store_true',
+        help='Exportar resultados en formato JSON'
+    )
+
+    args = parser.parse_args()
+
+    try:
+        auditor = AuditorInteligenteBDPDF()
+
+        # Listar casos
+        if args.listar:
+            casos = auditor.listar_casos_disponibles()
+            print(f"\n📋 Casos disponibles en la base de datos ({len(casos)}):\n")
+            for caso in casos:
+                print(f"   - {caso}")
+            return 0
+
+        # Auditar todos
+        if args.todos:
+            resultados = auditor.auditar_todos(limite=args.limite)
+
+            if args.json:
+                archivo_json = PROJECT_ROOT / "herramientas_ia" / "resultados" / f"auditoria_inteligente_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+                archivo_json.parent.mkdir(exist_ok=True)
+                with open(archivo_json, 'w', encoding='utf-8') as f:
+                    json.dump(resultados, f, indent=2, ensure_ascii=False)
+                print(f"\n💾 Resultados guardados en: {archivo_json}")
+
+            return 0
+
+        # Validar caso específico
+        if args.caso:
+            resultado = auditor.validar_caso(args.caso, verbose=True)
+
+            if args.json:
+                archivo_json = PROJECT_ROOT / "herramientas_ia" / "resultados" / f"validacion_{args.caso}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+                archivo_json.parent.mkdir(exist_ok=True)
+                with open(archivo_json, 'w', encoding='utf-8') as f:
+                    json.dump(resultado, f, indent=2, ensure_ascii=False)
+                print(f"\n💾 Resultados guardados en: {archivo_json}")
+
+            return 0
+
+        # Si no se especificó nada, mostrar ayuda
+        parser.print_help()
+        return 0
+
+    except Exception as e:
+        print(f"\n❌ ERROR: {e}")
+        import traceback
+        traceback.print_exc()
+        return 1
+
+
+if __name__ == '__main__':
+    sys.exit(main())

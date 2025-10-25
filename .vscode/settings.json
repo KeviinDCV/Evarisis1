@@ -10,5 +10,6 @@
     "**/.mypy_cache": true
   },
   "editor.formatOnSave": true,
-  "claude-code.useTerminal": true
+  "claude-code.useTerminal": true,
+  "claudeCode.useTerminal": true
 }

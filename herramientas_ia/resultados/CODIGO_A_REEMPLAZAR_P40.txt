@@ -1,0 +1,138 @@
+================================================================================
+                    CODIGO A REEMPLAZAR EN biomarker_extractor.py
+================================================================================
+
+UBICACION: core/extractors/biomarker_extractor.py
+LINEAS: 178-195
+
+================================================================================
+                          CODIGO ACTUAL (BORRAR)
+================================================================================
+
+    'P40': {
+        'nombres_alternativos': ['P-40', 'P 40'],
+        'descripcion': 'Proteína p40',
+        'patrones': [
+            # V5.2: Captura TODO el contexto
+            r'(?i)p40[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)p[^\w]*40[:\s]*(.+?)(?:\.|$|\n)',
+            # Fallback
+            r'(?i)p40[:\s]*(positivo|negativo)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            '+': 'POSITIVO',
+            '-': 'NEGATIVO',
+        }
+    },
+
+================================================================================
+                          CODIGO NUEVO (PEGAR)
+================================================================================
+
+    'P40': {
+        'nombres_alternativos': ['P-40', 'P 40'],
+        'descripcion': 'Proteína p40',
+        'patrones': [
+            # V6.0.10: Patrones específicos con modificadores (FIX: IHQ250983)
+            # Captura: "p40 positivo heterogéneo", "p40 heterogéneo", "p40 positivo"
+            # CRÍTICO: Patrones específicos evitan captura de basura contextual
+            r'(?i)p40[:\s]+(positiv[oa](?:\s+(?:heterog[eé]neo|focal|difuso))?)',
+            r'(?i)p40[:\s]+(negativ[oa](?:\s+focal)?)',
+            r'(?i)p40[:\s]+(heterog[eé]neo)',  # Solo heterogéneo = POSITIVO HETEROGÉNEO
+            r'(?i)p40[:\s]+(focal)',  # Solo focal = POSITIVO FOCAL
+            r'(?i)p40[:\s]+(difuso)',  # Solo difuso = POSITIVO DIFUSO
+            r'(?i)p[^\w]*40[:\s]+(positiv[oa]|negativ[oa])',  # Con separador (P-40, P 40)
+            # Fallback conservador
+            r'(?i)p40[:\s]*(positivo|negativo)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO', 'POSITIVO HETEROGÉNEO', 'POSITIVO FOCAL', 'POSITIVO DIFUSO', 'NEGATIVO FOCAL'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            '+': 'POSITIVO',
+            '-': 'NEGATIVO',
+            # V6.0.10: Modificadores (FIX: IHQ250983)
+            'heterogéneo': 'POSITIVO HETEROGÉNEO',
+            'heterogeneo': 'POSITIVO HETEROGÉNEO',
+            'focal': 'POSITIVO FOCAL',
+            'difuso': 'POSITIVO DIFUSO',
+            'positivo heterogéneo': 'POSITIVO HETEROGÉNEO',
+            'positivo heterogeneo': 'POSITIVO HETEROGÉNEO',
+            'positivo focal': 'POSITIVO FOCAL',
+            'positivo difuso': 'POSITIVO DIFUSO',
+            'negativo focal': 'NEGATIVO FOCAL',
+        }
+    },
+
+================================================================================
+                          INSTRUCCIONES PASO A PASO
+================================================================================
+
+1. ABRIR ARCHIVO:
+   core/extractors/biomarker_extractor.py
+
+2. IR A LINEA 178 (Ctrl+G en la mayoria de editores)
+   O buscar: 'P40': {
+
+3. SELECCIONAR DESDE LINEA 178 HASTA LINEA 195
+   Debe incluir el cierre del diccionario: },
+
+4. BORRAR SELECCION
+
+5. PEGAR CODIGO NUEVO (ver seccion "CODIGO NUEVO (PEGAR)" arriba)
+
+6. GUARDAR ARCHIVO (Ctrl+S)
+
+7. VERIFICAR QUE NO QUEDARON ERRORES DE SINTAXIS
+   - Revisar que todas las comillas estan cerradas
+   - Revisar que todos los corchetes/llaves estan balanceados
+   - Revisar que la identacion es correcta (4 espacios)
+
+8. EJECUTAR VALIDACION:
+   python herramientas_ia/editor_core.py --validar-sintaxis biomarker_extractor.py
+
+9. SI VALIDACION OK, CONTINUAR CON REPROCESAMIENTO:
+   python herramientas_ia/editor_core.py --reprocesar IHQ250983
+
+10. VERIFICAR RESULTADO:
+    python herramientas_ia/gestor_base_datos.py --buscar IHQ250983 --detallado
+
+================================================================================
+                              QUE CAMBIO
+================================================================================
+
+PATRONES:
+- ANTES: Patron permisivo que capturaba TODO hasta el final de linea
+- AHORA: Patrones especificos que capturan solo el estado del biomarcador
+
+NORMALIZACION:
+- ANTES: Solo "positivo" y "negativo"
+- AHORA: Incluye modificadores (heterogeneo, focal, difuso)
+
+VALORES POSIBLES:
+- ANTES: ['POSITIVO', 'NEGATIVO']
+- AHORA: ['POSITIVO', 'NEGATIVO', 'POSITIVO HETEROGENEO', 'POSITIVO FOCAL',
+          'POSITIVO DIFUSO', 'NEGATIVO FOCAL']
+
+================================================================================
+                          RESULTADO ESPERADO
+================================================================================
+
+CASO IHQ250983:
+
+Texto PDF:
+"inmunorreactividad en las celulas tumorales para CKAE1AE3, S100, PAX8 y p40
+heterogeneo y son negativas para GATA3, CDX2, y TTF1"
+
+ANTES:
+IHQ_P40_ESTADO: ", S100 Y CKAE1AE3"  ❌ CORRUPTO
+
+DESPUES:
+IHQ_P40_ESTADO: "POSITIVO HETEROGENEO"  ✓ CORRECTO
+
+================================================================================
+                              FIN
+================================================================================
