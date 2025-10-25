@@ -1,0 +1,347 @@
+{
+  "numero_caso": "IHQ250984",
+  "timestamp": "2025-10-24T18:23:26.482786",
+  "nivel": "basico",
+  "detecciones": {
+    "diagnostico_coloracion": {
+      "diagnostico_encontrado": null,
+      "confianza": 0.0,
+      "ubicacion": null,
+      "componentes": {
+        "base": false,
+        "grado_nottingham": false,
+        "invasion_linfovascular": false,
+        "invasion_perineural": false,
+        "carcinoma_in_situ": false
+      },
+      "score_componentes": 0
+    },
+    "diagnostico_principal": {
+      "diagnostico_encontrado": "Inicial: CARCINOMA DUCTAL INFILTRANTE NOS, GRADO HISTOLÓGICO 3,",
+      "confianza": 0.6,
+      "linea_numero": 1,
+      "metodo_deteccion": "primera_linea_fallback",
+      "ubicacion": "Diagnóstico"
+    },
+    "biomarcadores_ihq": {
+      "biomarcadores_encontrados": [
+        {
+          "nombre": "Ki-67",
+          "valor": "Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody",
+          "ubicacion": "Descripción Microscópica",
+          "columna_bd": "IHQ_KI-67"
+        },
+        {
+          "nombre": "HER2",
+          "valor": "HER 2 POSITIVO",
+          "ubicacion": "Diagnóstico",
+          "columna_bd": "IHQ_HER2"
+        }
+      ],
+      "ubicaciones": {
+        "Ki-67": "Descripción Microscópica",
+        "HER2": "Diagnóstico"
+      },
+      "confianza_global": 1.0
+    },
+    "biomarcadores_solicitados": {
+      "biomarcadores_solicitados": [],
+      "formato": null,
+      "ubicacion": null
+    }
+  },
+  "validaciones": {
+    "biomarcadores_completos": [
+      {
+        "nombre": "Ki-67",
+        "columna_bd": "IHQ_KI-67",
+        "en_pdf": true,
+        "en_estudios_solicitados": false,
+        "columna_existe": true,
+        "tiene_datos": false,
+        "valor_capturado": null,
+        "ubicacion_pdf": "Línea 93",
+        "estado": "ERROR",
+        "problemas": [
+          "Ki-67 mencionado en PDF pero NO en IHQ_ESTUDIOS_SOLICITADOS",
+          "Ki-67 en PDF pero columna IHQ_KI-67 está VACÍA"
+        ]
+      },
+      {
+        "nombre": "HER2",
+        "columna_bd": "IHQ_HER2",
+        "en_pdf": true,
+        "en_estudios_solicitados": false,
+        "columna_existe": true,
+        "tiene_datos": true,
+        "valor_capturado": "/NEU: PATHWAY ANTI-HER-2/NEU (4B5) RABBIT MONOCLONAL ANTIBODY",
+        "ubicacion_pdf": "Línea 51",
+        "estado": "WARNING",
+        "problemas": [
+          "HER2 mencionado en PDF pero NO en IHQ_ESTUDIOS_SOLICITADOS"
+        ]
+      }
+    ],
+    "diagnostico_coloracion": {
+      "estado": "PENDING",
+      "valor_bd": null,
+      "valor_esperado_pdf": null,
+      "componentes_pdf": {
+        "base": false,
+        "grado_nottingham": false,
+        "invasion_linfovascular": false,
+        "invasion_perineural": false,
+        "carcinoma_in_situ": false
+      },
+      "componentes_validos": [],
+      "componentes_faltantes": [],
+      "confianza_deteccion": 0.0,
+      "sugerencia": "Campo DIAGNOSTICO_COLORACION no existe en BD (se creará en FASE 2)"
+    },
+    "diagnostico_principal": {
+      "estado": "ERROR",
+      "valor_bd": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL",
+      "valor_esperado": "Inicial: CARCINOMA DUCTAL INFILTRANTE NOS, GRADO HISTOLÓGICO 3,",
+      "tiene_contaminacion": false,
+      "contaminacion_detectada": [],
+      "confianza_deteccion": 0.6,
+      "linea_correcta_pdf": 1,
+      "sugerencia": "DIAGNOSTICO_PRINCIPAL no coincide con PDF.\nBD: \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL\"\nPDF: \"Inicial: CARCINOMA DUCTAL INFILTRANTE NOS, GRADO HISTOLÓGICO 3,\" (línea 1 del DIAGNÓSTICO)\nCorrección: Modificar extractor extract_principal_diagnosis() en medical_extractor.py"
+    },
+    "factor_pronostico": {
+      "estado": "ERROR",
+      "valor_bd": "positivo para: negativo para SXO10 / Positivo para GATA 3 / Negativo para SXO10",
+      "tiene_contaminacion": false,
+      "contaminacion_detectada": [],
+      "biomarcadores_pdf": [
+        {
+          "nombre": "Ki-67",
+          "valor": "Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody",
+          "ubicacion": "Descripción Microscópica",
+          "columna_bd": "IHQ_KI-67"
+        },
+        {
+          "nombre": "HER2",
+          "valor": "HER 2 POSITIVO",
+          "ubicacion": "Diagnóstico",
+          "columna_bd": "IHQ_HER2"
+        }
+      ],
+      "biomarcadores_solicitados": [],
+      "biomarcadores_en_bd": [],
+      "cobertura": 0.0,
+      "sugerencia": "FACTOR_PRONOSTICO con cobertura baja (0%).\nBiomarcadores en PDF: Ki-67, HER2\nBiomarcadores en BD: ninguno detectado\nCorrección urgente: Modificar extractor extract_factor_pronostico() en medical_extractor.py"
+    },
+    "organo_tabla": {
+      "estado": "OK",
+      "mensaje": "ORGANO correctamente extraído (24 caracteres)",
+      "valor_bd": "NODULO MAMARIO IZQUIERDO",
+      "es_multilinea": false
+    },
+    "ihq_organo_diagnostico": {
+      "estado": "WARNING",
+      "mensaje": "Inconsistencia: IHQ_ORGANO \"MAMA IZQUIERDA\" vs ORGANO tabla \"NODULO MAMARIO IZQUIERDO\"",
+      "valor_bd": "MAMA IZQUIERDA",
+      "organo_tabla": "NODULO MAMARIO IZQUIERDO",
+      "sugerencia": "Verificar si son el mismo órgano con nombres diferentes"
+    }
+  },
+  "diagnosticos": {
+    "DIAGNOSTICO_PRINCIPAL": {
+      "campo": "DIAGNOSTICO_PRINCIPAL",
+      "valor_bd": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL",
+      "valor_esperado": "Inicial: CARCINOMA DUCTAL INFILTRANTE NOS, GRADO HISTOLÓGICO 3,",
+      "causa_error": "Diagnóstico extraído no coincide con PDF",
+      "tipo_error": "INCORRECTO",
+      "ubicacion_correcta": "Línea 1 del DIAGNÓSTICO",
+      "patron_fallido": "Extractor busca en posición fija (segunda línea) en lugar de buscar semánticamente",
+      "contexto_pdf": null
+    },
+    "FACTOR_PRONOSTICO": {
+      "campo": "FACTOR_PRONOSTICO",
+      "valor_bd": "positivo para: negativo para SXO10 / Positivo para GATA 3 / Negativo para SXO10",
+      "valor_esperado": "",
+      "causa_error": "Cobertura baja (0%): faltan biomarcadores",
+      "tipo_error": "PARCIAL",
+      "ubicacion_correcta": null,
+      "patron_fallido": "Extractor no busca todos los biomarcadores o busca en ubicación incorrecta",
+      "contexto_pdf": null
+    },
+    "IHQ_ORGANO_DIAGNOSTICO": {
+      "campo": "IHQ_ORGANO_DIAGNOSTICO",
+      "valor_bd": "MAMA IZQUIERDA",
+      "valor_esperado": "",
+      "causa_error": null,
+      "tipo_error": null,
+      "ubicacion_correcta": null,
+      "patron_fallido": null,
+      "contexto_pdf": null
+    }
+  },
+  "sugerencias": {
+    "DIAGNOSTICO_PRINCIPAL": {
+      "archivo": "core/extractors/medical_extractor.py",
+      "funcion": "extract_principal_diagnosis()",
+      "lineas": "~420-480 (aproximado)",
+      "problema": "Diagnóstico extraído no coincide con PDF",
+      "solucion": "NO asumir posición fija (segunda línea).\nModificaciones necesarias:\n1. Buscar SEMÁNTICAMENTE en CUALQUIER línea del DIAGNÓSTICO\n2. Identificar diagnóstico histológico sin grado ni invasiones\n3. Usar detección inteligente similar a _detectar_diagnostico_principal_inteligente()",
+      "patron_sugerido": "# Buscar en TODAS las líneas, no solo la segunda\\nfor linea in lineas_diagnostico:\\n    if tiene_diagnostico(linea) and not tiene_grado(linea):\\n        return linea",
+      "comando": "python herramientas_ia/editor_core.py --editar-extractor DIAGNOSTICO_PRINCIPAL --simular",
+      "prioridad": "ALTA"
+    },
+    "FACTOR_PRONOSTICO": {
+      "archivo": "core/extractors/medical_extractor.py",
+      "funcion": "extract_factor_pronostico()",
+      "lineas": "~267-430 (aproximado)",
+      "problema": "Cobertura baja (0%): faltan biomarcadores",
+      "solucion": "Cobertura baja: extractor no encuentra todos los biomarcadores.\nModificaciones necesarias:\n1. Ampliar patrones regex para cada biomarcador\n2. Buscar en múltiples ubicaciones (microscópica, diagnóstico, comentarios)\n3. Agregar variantes de nomenclatura (ej: ER vs Receptor de Estrógeno)",
+      "patron_sugerido": "# Buscar en TODAS las secciones\\nfor seccion in [desc_microscopica, diagnostico, comentarios]:\\n    biomarcadores = extraer_biomarcadores(seccion)\\n    factores.extend(biomarcadores)",
+      "comando": "python herramientas_ia/editor_core.py --editar-extractor FACTOR_PRONOSTICO --simular",
+      "prioridad": "MEDIA"
+    },
+    "IHQ_ORGANO_DIAGNOSTICO": {
+      "archivo": null,
+      "funcion": null,
+      "lineas": null,
+      "problema": null,
+      "solucion": null,
+      "patron_sugerido": null,
+      "comando": null,
+      "prioridad": null
+    }
+  },
+  "metricas": {
+    "total_validaciones": 3,
+    "validaciones_ok": 1,
+    "validaciones_warning": 1,
+    "validaciones_error": 2,
+    "score_validacion": 33.33333333333333,
+    "total_biomarcadores_detectados": 2,
+    "total_biomarcadores_solicitados": 0
+  },
+  "resumen": {
+    "estado": "CRITICO",
+    "mensaje": "2 error(es) critico(s) detectado(s)"
+  },
+  "_datos_bd": {
+    "Numero de caso": "IHQ250984",
+    "N. de identificación": "25392960",
+    "Tipo de documento": "CC",
+    "Primer nombre": "LETICIA",
+    "Segundo nombre": "",
+    "Primer apellido": "ASTAIZA",
+    "Segundo apellido": "TACUE",
+    "Edad": "89",
+    "Genero": "FEMENINO",
+    "EPS": "NUEVA EPS",
+    "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+    "Médico tratante": "ALEJANDRO HIJUELOS",
+    "Especialidad": "PATOLOGIA",
+    "Hospitalizado": "NO",
+    "Sede": "HUV",
+    "Datos Clinicos": "SI",
+    "Departamento": "VALLE DEL CAUCA",
+    "Municipio": "CALI",
+    "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+    "Fecha de ingreso (2. Fecha de la muestra)": "08/09/2025",
+    "Fecha Informe": "11/09/2025",
+    "Patologo": "NANCY MEJIA VARGAS",
+    "Organo": "NODULO MAMARIO IZQUIERDO",
+    "Malignidad": "MALIGNO",
+    "Descripcion Diagnostico": "Mama izquierda. Lesión. Biopsia tru-cut. Estudio de inmunohistoquímica. CARCINOMA INVASIVO DE TIPO NO ESPECIAL. GRADO HISTOLÓGICO: GRADO 3 (NOTTINGHAM SCORE 9/9 PUNTOS) INVASIÓN LINFOVASCULAR: NO IDENTIFICADA. INVASIÓN PERINEURAL: NO IDENTIFICADA CLASIFICACIÓN MOLECULAR: HER 2 POSITIVO.",
+    "Diagnostico Principal": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL",
+    "Diagnostico Coloracion": "GRADO HISTOLÓGICO: GRADO 3 (NOTTINGHAM SCORE 9/9 PUNTOS) INVASIÓN LINFOVASCULAR: NO IDENTIFICADA. INVASIÓN PERINEURAL: NO IDENTIFICADA",
+    "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: BLOQUE 1. Las células tumorales tienen una tinción nuclear positiva fuerte y difusa para GATA 3. Son",
+    "Descripcion macroscopica": "Informe de Estudios de Inmunohistoquímica\nCaso extrainstitucional: P2501777\nLaboratorio de patología UNESPAT\nÓrgano: mama izquierda. biopsia con aguda gruesa. (dos bloques de parafina y dos\nláminas coloreadas con H&E)\nDiagnóstico Inicial: CARCINOMA DUCTAL INFILTRANTE NOS, GRADO HISTOLÓGICO 3,\nNECROSIS TUMORAL PRESENTE, SIN COMPROMISO LINFOVASCULAR NI PERINEURAL.\nINFLAMACIÓN CRONICA INTERSTICIAL MODERADA. \nFecha de diagnóstico: 24-08-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos\nal bloque 1.\nEstudios Solicitados:\nSe realizó tinción especial para GATA 3, RECEPTOR DE ESTROGENOS, RECEPTOR DE\nPROGESTERONA, HER 2, Ki 67, SOX10.",
+    "Factor pronostico": "positivo para: negativo para SXO10 / Positivo para GATA 3 / Negativo para SXO10",
+    "CUPS": "898807",
+    "Tipo de examen": "ESTUDIO DE INMUNOHISTOQUIMICA",
+    "Procedimiento": "BIOPSIA",
+    "Congelaciones /Otros estudios": "N/A",
+    "Liquidos (5 Tipo histologico)": "N/A",
+    "Citometria de flujo (5 Tipo histologico)": "N/A",
+    "Hora Desc. macro": "N/A",
+    "Responsable macro": "N/A",
+    "IHQ_HER2": "/NEU: PATHWAY ANTI-HER-2/NEU (4B5) RABBIT MONOCLONAL ANTIBODY",
+    "IHQ_PSA": "",
+    "IHQ_NAPSIN": "",
+    "IHQ_MELAN_A": "",
+    "IHQ_CD138": "",
+    "IHQ_CAM52": "",
+    "IHQ_CD79A": "",
+    "IHQ_CD4": "",
+    "IHQ_CK7": "",
+    "IHQ_GATA3": "POSITIVO",
+    "IHQ_MUM1": "",
+    "IHQ_HEPAR": "",
+    "IHQ_RECEPTOR_ESTROGENOS": ") (SP1) RABBIT MONOCLONAL PRIMARY ANTIBODY",
+    "IHQ_BCL2": "",
+    "IHQ_CK5_6": "",
+    "IHQ_CD117": "",
+    "IHQ_PAX8": "",
+    "IHQ_KI-67": "",
+    "IHQ_SOX10": "",
+    "IHQ_CD30": "",
+    "IHQ_CALRETININ": "",
+    "IHQ_CHROMOGRANINA": "",
+    "IHQ_SV40": "",
+    "IHQ_GFAP": "",
+    "IHQ_P53": "",
+    "IHQ_LMP1": "",
+    "IHQ_P40_ESTADO": "",
+    "IHQ_CD3": "",
+    "IHQ_CD61": "",
+    "IHQ_MSA": "",
+    "IHQ_CD1A": "",
+    "IHQ_CD10": "",
+    "IHQ_GLIPICAN": "",
+    "IHQ_CD99": "",
+    "IHQ_RECEPTOR_PROGESTERONA": "",
+    "IHQ_ARGINASA": "",
+    "IHQ_CD23": "",
+    "IHQ_VIMENTINA": "",
+    "IHQ_CALRETININA": "",
+    "IHQ_DESMIN": "",
+    "IHQ_RACEMASA": "",
+    "IHQ_SYNAPTOPHYSIN": "",
+    "IHQ_CEA": "",
+    "IHQ_SMA": "",
+    "IHQ_CD56": "",
+    "IHQ_CD5": "",
+    "IHQ_CD8": "",
+    "IHQ_34BETA": "",
+    "IHQ_ALK": "",
+    "IHQ_CK34BE12": "",
+    "IHQ_PAX5": "",
+    "IHQ_CDK4": "",
+    "IHQ_PDL-1": "",
+    "IHQ_MYOGENIN": "",
+    "IHQ_CA19_9": "",
+    "IHQ_CD20": "",
+    "IHQ_ACTIN": "",
+    "IHQ_E_CADHERINA": "",
+    "IHQ_MYOD1": "",
+    "IHQ_S100": "",
+    "IHQ_CD68": "",
+    "IHQ_CD45": "",
+    "IHQ_HMB45": "",
+    "IHQ_CK20": "",
+    "IHQ_CKAE1AE3": "",
+    "IHQ_TTF1": "",
+    "IHQ_EMA": "",
+    "IHQ_MDM2": "",
+    "IHQ_B2": "",
+    "IHQ_C4D": "",
+    "IHQ_CD38": "",
+    "IHQ_CD15": "",
+    "IHQ_P16_ESTADO": "",
+    "IHQ_CDX2": "",
+    "IHQ_CITOMEGALOVIRUS": "",
+    "IHQ_BCL6": "",
+    "IHQ_CD34": "",
+    "IHQ_ESTUDIOS_SOLICITADOS": "GATA3, Receptor de Estrógeno, RECEPTOR DE",
+    "IHQ_ORGANO": "MAMA IZQUIERDA",
+    "IHQ_P16_PORCENTAJE": ""
+  },
+  "_texto_ocr": "IHQ250984\nCopia Pag. 1 de 2\nNombre : LETICIA ASTAIZA TACUE\nN. peticion : IHQ250984\nN.Identificación : CC. 25392960\nGenero : FEMENINO\nEdad : 89 años 4 meses 27 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 08/09/2025\nFecha Informe : 11/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nNODULO MAMARIO\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de Inmunohistoquímica\nCaso extrainstitucional: P2501777\nLaboratorio de patología UNESPAT\nÓrgano: mama izquierda. biopsia con aguda gruesa. (dos bloques de parafina y dos\nláminas coloreadas con H&E)\nDiagnóstico Inicial: CARCINOMA DUCTAL INFILTRANTE NOS, GRADO HISTOLÓGICO 3,\nNECROSIS TUMORAL PRESENTE, SIN COMPROMISO LINFOVASCULAR NI PERINEURAL.\nINFLAMACIÓN CRONICA INTERSTICIAL MODERADA. \nFecha de diagnóstico: 24-08-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos\nal bloque 1.\nEstudios Solicitados:\nSe realizó tinción especial para GATA 3, RECEPTOR DE ESTROGENOS, RECEPTOR DE\nPROGESTERONA, HER 2, Ki 67, SOX10. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary\nAntibody. VENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nREPORTE DE BIOMARCADORES:\nBLOQUE 1.\nLas células tumorales tienen una tinción nuclear positiva fuerte y difusa para GATA 3. Son\nDIAGNÓSTICO\nMama izquierda. Lesión. Biopsia tru-cut. Estudio de inmunohistoquímica.\nCARCINOMA INVASIVO DE TIPO NO ESPECIAL.\nGRADO HISTOLÓGICO: GRADO 3 (NOTTINGHAM SCORE 9/9 PUNTOS)\nINVASIÓN LINFOVASCULAR: NO IDENTIFICADA.\nINVASIÓN PERINEURAL: NO IDENTIFICADA\nCLASIFICACIÓN MOLECULAR: HER 2 POSITIVO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---\nIHQ250984\nCopia Pag. 2 de 2\nNombre : LETICIA ASTAIZA TACUE\nN. peticion : IHQ250984\nN.Identificación : CC. 25392960\nGenero : FEMENINO\nEdad : 89 años 4 meses 27 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 08/09/2025\nFecha Informe : 11/09/2025\nnegativas para SXO10.\n-RECEPTOR DE ESTROGENOS: Negativo.\n-RECEPTOR DE PROGRESTERONA: Negativo.\n-HER 2: Positivo (Score 3+) tinción membranosa fuerte y completa en el 100 % de las células\ntumorales.\n-Ki-67: Tinción nuclear en el 60% de las células tumorales.\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado.\n- Tiempo de fijación: no determinado.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---"
+}

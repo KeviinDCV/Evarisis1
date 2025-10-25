@@ -1,0 +1,227 @@
+[
+  {
+    "numero_peticion": "IHQ250009",
+    "score_total": 68.75,
+    "problemas": [
+      "DIAGNÓSTICO_CONTIENE_DESCRIPCIÓN"
+    ],
+    "datos_para_ia": {
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410640” que corresponde a “biopsia de muslo derecho” con diagnósticos de “LESIÓN NEOPLÁSICA LIPOMATOSA CON ATIPIA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con S100, P16, CDK4 y MDM2.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. S100 positivo. P16 positivo focal. CDK4 y MDM2 negativos. - VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "descripcion_diagnostico": "Muslo derecho. Lesión. Biopsia. Estudio de inmunohistoquímica: COMENTARIOS Los hallazgos histológicos sugieren un hibernoma, sin embargo, se realizaron estudios de inmunohistoquímica para CDK4 y MDM2 que fueron negativos sin un adecuado control externo. Se sugiere la realización de estudios moleculares e inmunohistoquímica en la pieza quirurgica de resección a criterio de medico tratante. Valorado en conjunto con Dr. Carrascal (Patólogo). NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 17 --- IHQ250009 Copia Pag. 2 de 2 Nombre : GERMAN RODRIGUEZ CORTES N. peticion : IHQ250009 N.Identificación : CC. 16761187 Genero : MASCULINO Edad : 56 años 7 dias EPS : EMSSANAR S.A.S Médico tratante : JUAN CARLOS AGUIRRE Servicio : ORTOPEDIA",
+      "diagnostico_principal_actual": "HIBERNOMA, SIN EMBARGO, SE REALIZARON ESTUDIOS DE INMUNOHISTOQUÍMICA PARA CDK4 Y MDM2 QUE FUERON NEGATIVOS SIN UN ADECUADO CONTROL EXTERNO",
+      "malignidad_actual": "MALIGNO",
+      "factor_pronostico_actual": "N/A",
+      "biomarcadores": {
+        "HER2": "N/A",
+        "Ki67": "N/A",
+        "RE": "N/A",
+        "RP": "N/A",
+        "P16": "POSITIVO",
+        "P40": "N/A",
+        "PDL1": "N/A",
+        "P53": "N/A"
+      }
+    }
+  },
+  {
+    "numero_peticion": "IHQ250017",
+    "score_total": 68.75,
+    "problemas": [
+      "DIAGNÓSTICO_VACÍO_CON_DESCRIPCIÓN"
+    ],
+    "datos_para_ia": {
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410475 correspondiente a \" B: Lesión mucosa de recto\" con diagnósticos de \"ADENOCACRINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS).\". Previa revisión histológica de las láminas, se realizan niveles histológicos al bloque B 1 y 2 para inmunomarcación con: MLH1, PMS2, MSH2, MSH6, HER2.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: -MLH-1: Expresión nuclear intacta -MSH-2: Expresión nuclear intacta -MSH-6: Expresión nuclear intacta -PMS-2: Expresión nuclear intacta, tinción citoplasmática débil a moderada en el 50% de las células. Controles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. Interpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) HER2 : negativo ( score 0 ).",
+      "descripcion_diagnostico": "Mucosa de recto. Lesión. Biopsia endoscópica. Estudios de inmunohistoquímica. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 28 --- IHQ250017 Copia Pag. 2 de 2 Nombre : FLOR MARIA LERMA PINEDA N. peticion : IHQ250017 N.Identificación : CC. 36810851 Genero : FEMENINO Edad : 53 años 15 dias EPS : NUEVA EPS Médico tratante : ALEJANDRO HIJUELOS Servicio : CONSULTORIOS URGENCIAS",
+      "diagnostico_principal_actual": "N/A",
+      "malignidad_actual": "MALIGNO",
+      "factor_pronostico_actual": "N/A",
+      "biomarcadores": {
+        "HER2": "NEGATIVO",
+        "Ki67": "N/A",
+        "RE": "N/A",
+        "RP": "N/A",
+        "P16": "N/A",
+        "P40": "N/A",
+        "PDL1": "N/A",
+        "P53": "N/A"
+      }
+    }
+  },
+  {
+    "numero_peticion": "IHQ250021",
+    "score_total": 62.5,
+    "problemas": [
+      "DIAGNÓSTICO_VACÍO_CON_DESCRIPCIÓN"
+    ],
+    "datos_para_ia": {
+      "descripcion_macroscopica": "Se recibieron para su estudio en fresco 2 cilindros de tejido obtenidos mediante biopsia renal por punción percutánea. El cilindro de mayor tamaño mide 0,5 x 0,1 x 0,1 cm, y el de menor tamaño mide 0,3 x 0,1 x 0,1 cm. Son de color café claro y de consistencia blanda. Todo el material se destinó al estudio por microscopía de luz. Fue fijado en formol bufferado al 10 % y posteriormente incluido en parafina. Se realizaron cortes histológicos que fueron teñidos con Hematoxilina y Eosina, PAS, tricrómico de Masson y metenamina de Jones. Además de la realización de estudios de inmunohistoquímica para SV40 Y C4d.",
+      "descripcion_microscopica": "La muestra destinada para estudio de microscopía de luz corresponde a un fragmento de téjido fibroadiposo sin representación de parénquima renal.",
+      "descripcion_diagnostico": "RIÑÓN (BIOPSIA POR PUNCIÓN): TÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL. TÉJIDO FIBROADIPOSO DE ARQUTIECTURA USUAL. VER COMENTARIO. COMENTARIOS COMENTARIO: la muestra no evidencia parénquima renal para la adecuada clasificación, se sugiere nuevo muestreo a criterio del médico tratante. NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 35 --- IHQ250021 Copia Pag. 2 de 2 Nombre : ROBINSON ASPRILLA GUTIERREZ N. peticion : IHQ250021 N.Identificación : CC. 16480852 Genero : MASCULINO Edad : 61 años 11 meses 7 dias EPS : FIDEICOMISO PATRIM. AUTONOMOS Médico tratante : CARLOS HERNAN MEJIA Servicio : CONSULTA EXTERNA",
+      "diagnostico_principal_actual": "N/A",
+      "malignidad_actual": "MALIGNO",
+      "factor_pronostico_actual": "N/A",
+      "biomarcadores": {
+        "HER2": "N/A",
+        "Ki67": "N/A",
+        "RE": "N/A",
+        "RP": "N/A",
+        "P16": "N/A",
+        "P40": "N/A",
+        "PDL1": "N/A",
+        "P53": "N/A"
+      }
+    }
+  },
+  {
+    "numero_peticion": "IHQ250026",
+    "score_total": 68.75,
+    "problemas": [
+      "DIAGNÓSTICO_MUY_CORTO"
+    ],
+    "datos_para_ia": {
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410533” correspondiente a “biopsia de pulmón izquierda” con diagnóstico de “SARCOMA DE ALTO GRADO PATRÓN EPITELIOIDE”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: S100, SOX 10, MelanA, Actina, HMB45, CKAE1E3, DESMINA, MyoD1, CD 34, Cromogranina y synaptophysin.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para S100, SOX 10,MelanA y son negativas para Actina, HMB45, CKAE1E3, DESMINA, MyoD1, CD 34, Cromogranina y synaptophysin.",
+      "descripcion_diagnostico": "Pulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: LOS HALLAZGOS HISTOLOGIOS Y DE INMUNOHISTOQUIMICA SON COMPATIBLES CON MELANOMA . COMENTARIOS Correlacionar hallazgos con estudios imagenológicos e historia clínica NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 43 --- IHQ250026 Copia Pag. 2 de 2 Nombre : JANIER VASQUEZ CASTAÑEDA N. peticion : IHQ250026 N.Identificación : CC. 16637722 Genero : MASCULINO Edad : 54 años 16 dias EPS : S.O.S. SERV.OCCID.DE SALUD EPS Médico tratante : NATHALY PRADA Servicio : RADIOLOGIA",
+      "diagnostico_principal_actual": "MELANOMA",
+      "malignidad_actual": "MALIGNO",
+      "factor_pronostico_actual": "N/A",
+      "biomarcadores": {
+        "HER2": "N/A",
+        "Ki67": "N/A",
+        "RE": "N/A",
+        "RP": "N/A",
+        "P16": "N/A",
+        "P40": "N/A",
+        "PDL1": "N/A",
+        "P53": "N/A"
+      }
+    }
+  },
+  {
+    "numero_peticion": "IHQ250037",
+    "score_total": 62.5,
+    "problemas": [
+      "DIAGNÓSTICO_VACÍO_CON_DESCRIPCIÓN"
+    ],
+    "datos_para_ia": {
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como “F24967 1 Y 2” que corresponde a “lesión de recto bajo”. Previa revisión de la histología, se realizan niveles histológicos para tinción con HHV8 Y CD34.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Los capilares maduros presentan expresión para CD34. HHV8 negativo.",
+      "descripcion_diagnostico": "Mucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica: - HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE FAVORECEN COLITIS AGUDA Y CRÓNICA NO ESPECÍFICA. COMENTARIOS Ante la sospecha de una lesión neoplásica de mayor grado histológico se sugiere nuevo muestreo a criterio de medico tratante. NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 63 --- IHQ250037 Copia Pag. 2 de 2 Nombre : DIEGO FERNANDO TORRES CORDOBA N. peticion : IHQ250037 N.Identificación : CC. 1136059220 Genero : MASCULINO Edad : 36 años EPS : REGIONAL EN ASEGURAMIENTO DE SALUD N4 Médico tratante : ANGEL ARTURO ROBERTY Servicio : MEDICINA INTERNA COEX",
+      "diagnostico_principal_actual": "N/A",
+      "malignidad_actual": "MALIGNO",
+      "factor_pronostico_actual": "N/A",
+      "biomarcadores": {
+        "HER2": "N/A",
+        "Ki67": "N/A",
+        "RE": "N/A",
+        "RP": "N/A",
+        "P16": "N/A",
+        "P40": "N/A",
+        "PDL1": "N/A",
+        "P53": "N/A"
+      }
+    }
+  },
+  {
+    "numero_peticion": "IHQ250039",
+    "score_total": 62.5,
+    "problemas": [
+      "DIAGNÓSTICO_VACÍO_CON_DESCRIPCIÓN"
+    ],
+    "datos_para_ia": {
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M250077 que corresponde a \" cuadrantectomía de mama derecha\" , consiste en cinco bloques de parafina y cinco lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"CARCINOMA DUCTAL IN SITU DE BAJO GRADO MULTIFOCAL.BORDES LIBRES. BORDE MÁS CERCANO: ANTERIOR Y MEDIAL A 1 MILÍMETRO. LESIÓN PAPILAR. ADENOSIS ESCLEROSANTE. ECTASIA DUCTAL. METAPLASIA APOCRINA\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al bloque 2 para : P63, CK5/6, RECEPTOR DE ESTRÓGENOS",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. RESULTADOS: - Se identifican focos de carcinoma ductal in situ rodeados de células mioepiteliales ( P63 , CK5/6 ) positivas y una marcación difusa de fuerte a moderada para receptores de estrógenos en las células epiteliales. - La lesión papilar descrita presenta tinción nuclear heterogénea ( normal ) para receptores de estrógenos y se rodean en la periferia por células mioepiteliales ( P63 , CK5/6 ) positivas. - El área correspondiente adenosis esclerosante demuestra positividad periférica para células mioepiteliales ( P63 , CK5/6 ) positivas.",
+      "descripcion_diagnostico": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 67 --- IHQ250039 Copia Pag. 2 de 2 Nombre : OLGA NIDIA MONTILLA BOTINA N. peticion : IHQ250039 N.Identificación : CC. 29690709 Genero : FEMENINO Edad : 64 años 3 meses 21 dias EPS : NUEVA EPS Médico tratante : LUIS ALFONSO GONZALEZ Servicio : QUIROFANO CENTRAL",
+      "diagnostico_principal_actual": "N/A",
+      "malignidad_actual": "MALIGNO",
+      "factor_pronostico_actual": "N/A",
+      "biomarcadores": {
+        "HER2": "N/A",
+        "Ki67": "N/A",
+        "RE": "N/A",
+        "RP": "N/A",
+        "P16": "N/A",
+        "P40": "N/A",
+        "PDL1": "N/A",
+        "P53": "N/A"
+      }
+    }
+  },
+  {
+    "numero_peticion": "IHQ250042",
+    "score_total": 62.5,
+    "problemas": [
+      "DIAGNÓSTICO_VACÍO_CON_DESCRIPCIÓN"
+    ],
+    "datos_para_ia": {
+      "descripcion_macroscopica": "Se reciben para su estudio tres cilindros de tejido producto de biopsia del injerto renal por punción percutánea. Miden 1 x 0.1 x 0.1 cm y 0.4 x 0.1 x 0.1 cm respectivamente, son de color café claro, de consistencia media. El material fue valorado al momento de su recepción por transiluminación y se decidió destinarlo en su totalidad para estudio de microscopía de luz, por lo que se fijó en formol-buffer al 10%, se incluyó en parafina y se realizaron cortes que se tiñeron con Hematoxilina y Eosina, PAS, Tricrómico de Masson y Metenamina de Jones; además de inmunohistoquímica para Sv40 y c4d. No se destinó tejido para estudio de inmunofluorescencia directa por la técnica convencional por congelación.",
+      "descripcion_microscopica": "Todo el material recibido fue destinado para microscopía de luz, en los cortes histológicos se observan dos fragmentos de parénquima renal (predominantemente corteza) que cuentan en conjunto con 11 glomérulos por sección en total, ninguno de estos presenta esclerosis global. Se identifican células inflamatorias de tipo mononuclear con algunos neutrófilos dentro de las luces capilares (g2). Las membranas basales glomerulares muestran plegamiento sin la formación de dobles contornos por duplicación de estas (cg0). Hay leve ensanchamiento de la matriz mesangial (mm1). El intersticio tiene fibrosis con atrofia tubular asociada, que afectan a una superficie cortical de aproximada <5% (Grado 0), (ci0) (ct0), (i-IFTA 0). Hay infiltrado inflamatorio intersticial (i1) conformado por linfocitos, escasas células plasmáticas, moderada cantidad de neutrófilos y escasos eosinofilos, sin tubulitis dada por células mononucleares (t0) y con capilaritis peritubular (ptc3). El epitelio tubular presenta leves cambios por autolisis, además de escasos cristales de fosfato de calcio a nivel intersticial. En las luces de los túbulos se observan restos leucocitarios y hemáticos. Los vasos arteriolares preglomerulares, intersticiales y las arterias de pequeño calibre, no tienen engrosamiento hialino nodular de las paredes (ah0), sin fibrosis de la íntima (cv0). No se reconoce endotelitis, ni endarteritis (v0) en esta muestra. ESTUDIOS DE INMUNOHISTOQUÍMICA EN TEJIDO DEL BLOQUE DE PARAFINA Se efectuó marcación para C4d a través de la técnica de inmunoperoxidasa indirecta en el tejido del bloque de parafina. El resultado fue MINIMAMENTE POSITIVO EN CAPILARES PERITUBULARES (C4d 1). Además, se efectuó marcación para SV40 (Poliomavirus) a través de la misma técnica y resultó NEGATIVO. - LÉASE DESCRIPCIÓN MICROSCÓPICA Y NOTA.",
+      "descripcion_diagnostico": "BIOPSIA DEL INJERTO RENAL (12 DÍAS POSTRASPLANTE). - RECHAZO ACTIVO CON DATOS SUGERENTES DE COMPONENTE HUMORAL (g2, ptc3, v0) (SUGERENTE DE RECHAZO ACTIVO MEDIADO POR ANTICUERPOS, CATEGORIA 2 DE BANFF 2022). - FIBROSIS INTERSTICIAL Y ATROFIA TUBULAR GRADO 0 (<5%). COMENTARIOS Es importante señalar que el c4d es minimamente positivo en capilares peritubulares (c4d1) que junto con la inflamación de microvasculatura son datos que sugieren daño inmunológico de tipo humoral. Recomendamos corroborar el diagnóstico de ser posible con la determinación de ADES. NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 71 --- IHQ250042 Copia Pag. 2 de 2 Nombre : SERGIO LYNCH PATIÑO N. peticion : IHQ250042 N.Identificación : CC. 94495412 Genero : MASCULINO Edad : 48 años EPS : COMFENALCO VALLE Médico tratante : CARLOS HERNAN MEJIA Servicio : HOSPITALIZACION TRANSPLANTE HPB 4 PISO",
+      "diagnostico_principal_actual": "N/A",
+      "malignidad_actual": "MALIGNO",
+      "factor_pronostico_actual": "N/A",
+      "biomarcadores": {
+        "HER2": "N/A",
+        "Ki67": "N/A",
+        "RE": "N/A",
+        "RP": "N/A",
+        "P16": "N/A",
+        "P40": "N/A",
+        "PDL1": "N/A",
+        "P53": "N/A"
+      }
+    }
+  },
+  {
+    "numero_peticion": "IHQ250043",
+    "score_total": 62.5,
+    "problemas": [
+      "DIAGNÓSTICO_VACÍO_CON_DESCRIPCIÓN"
+    ],
+    "datos_para_ia": {
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500289” correspondientes A.“Polo temporal derecho” y B.“Hipocampo”. Previa revisión de la histología se realizan niveles histológicos para realizar inmunohistoquímica con NeuN - GFAP - CD68 en los bloques A4 Y B2.",
+      "descripcion_microscopica": "A. Se observa neocorteza con adecuada disposición laminar de los cuerpos neuronales inmunorreactivos con el NeuN. Hay zonas corticales y subcorticales con incremento de astrocitos reactivos marcados con el GFAP. No se observan cambios displásicos ni lesión neoplásica. B. Bajo la tinción de NeuN se reconoce una despoblación neuronal notable en las zonas adyacentes al giro dentado que se acompaña de una proliferación astrocitaria reactiva positiva para GFAP y de incremento en la actividad microglial CD68+. No se observan cambios displásicos ni lesión neoplásica.",
+      "descripcion_diagnostico": "A. Cerebro, temporal derecho. Lobectomía parcial. Estudio de inmunohistoquímica: - HALLAZGOS QUE FAVORECEN GLIOSIS REACTIVA. B. Hipocampo derecho. Hipocampectomía. Estudio de inmunohistoquímica: - COMPATIBLE CON ESCLEROSIS HIPOCAMPAL. - CAMBIOS REACTIVOS GLIALES Y MICROGLIALES. COMENTARIOS A pesar que en la muestra recibida se logra conservar solo una parte del hipocampo, la disminución de la población neuronal encontrada es compatible con un cuadro de esclerosis hipocampal. Sin embargo, no es posible determinar una clasificación según la ILAE por efecto de falta de conservación de la arquitectura completa. Todo lo descrito anteriormente debe ser correlacionado por el médico tratante con las imágenes diagnosticas, datos clínicos y estudios adicionales completos. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 73 --- IHQ250043 Copia Pag. 2 de 2 Nombre : NAHIDU URIBE CONDE N. peticion : IHQ250043 N.Identificación : TI. 1077231406 Genero : FEMENINO Edad : 15 años 2 dias EPS : ASOCIACION INDIGENA DEL CAUCA Médico tratante : ALEJANDRO HERRERA Servicio : QUIROFANO CENTRAL",
+      "diagnostico_principal_actual": "N/A",
+      "malignidad_actual": "MALIGNO",
+      "factor_pronostico_actual": "N/A",
+      "biomarcadores": {
+        "HER2": "N/A",
+        "Ki67": "N/A",
+        "RE": "N/A",
+        "RP": "N/A",
+        "P16": "N/A",
+        "P40": "N/A",
+        "PDL1": "N/A",
+        "P53": "N/A"
+      }
+    }
+  },
+  {
+    "numero_peticion": "IHQ250048",
+    "score_total": 62.5,
+    "problemas": [
+      "DIAGNÓSTICO_VACÍO_CON_DESCRIPCIÓN"
+    ],
+    "datos_para_ia": {
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M25000212 que corresponde a \"biopsia de recto\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina. Diagnóstico de \"CÉLULAS GANGLIONARES PRESENTES, FILETES NERVIOSOS NORMALES\". Previa valoración de la coloración básica se solicitan niveles histológicos para marcar con CALRRETININA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. CALRRETININA positiva en células ganglionares submucosas y en dendritas que ascienden a la mucosa.",
+      "descripcion_diagnostico": "Mucosa rectal. Biopsia. Estudio de inmunohistoquímica. CÉLULAS GANGLIONARES PRESENTES. FILETES NERVIOSOS NORMALES (ESPERADO HASTA 40 MICRAS). CALRRETININA POSITIVA EN LAS DENDRITAS DE LAS CÉLULAS GANGLILARES EN LA MUCOSA. NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 82 --- IHQ250048 Copia Pag. 2 de 2 Nombre : HIJO DE YOLIMA LEITON CORTES N. peticion : IHQ250048 N.Identificación : CN. 24129411253763 Genero : FEMENINO Edad : 5 dias EPS : EMSSANAR S.A.S Médico tratante : LUIS MAURICIO FIGUEROA Servicio : UCI RECIEN NACIDOS (CIRENA)",
+      "diagnostico_principal_actual": "N/A",
+      "malignidad_actual": "MALIGNO",
+      "factor_pronostico_actual": "N/A",
+      "biomarcadores": {
+        "HER2": "N/A",
+        "Ki67": "N/A",
+        "RE": "N/A",
+        "RP": "N/A",
+        "P16": "N/A",
+        "P40": "N/A",
+        "PDL1": "N/A",
+        "P53": "N/A"
+      }
+    }
+  }
+]

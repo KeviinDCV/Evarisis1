@@ -15,7 +15,22 @@
       "Bash(dir /b:*)",
       "Bash(findstr:*)",
       "Bash(dir:*)",
-      "Bash(wait)"
+      "Bash(sed:*)",
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(xcopy /Y \"herramientas_ia\\auditor_sistema.py\" \"backups\\auditor_sistema_backup_20251023_120000.py*\")",
+      "Bash(copy \"herramientas_ia\\auditor_sistema.py\" \"backups\\auditor_sistema_backup_20251023_120000.py\")",
+      "Bash(pip install:*)",
+      "Bash(xcopy \"herramientas_ia\\auditor_sistema.py\" \"backups\\auditor_sistema_pre_fase1_20251023.py*\" /Y)",
+      "Bash(copy \"herramientas_ia\\auditor_sistema.py\" \"backups\\auditor_sistema_pre_fase1_20251023.py\")",
+      "Bash(copy \"core\\prompts\\system_prompt_completa.txt\" \"backups\\system_prompt_completa_fase2_20251023.txt.bak\")",
+      "Bash(copy \"core\\prompts\\system_prompt_parcial.txt\" \"backups\\system_prompt_parcial_fase2_20251023.txt.bak\")",
+      "Bash(copy \"core\\prompts\\system_prompt_comun.txt\" \"backups\\system_prompt_comun_fase2_20251023.txt.bak\")",
+      "Bash(del \"herramientas_ia\\temp_validar_biomarkers.py\")",
+      "Bash(echo:*)",
+      "Bash(del:*)",
+      "Bash(mkdir:*)",
+      "Bash(copy:*)"
     ],
     "deny": [],
     "ask": []

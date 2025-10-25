@@ -465,6 +465,7 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'BCL6': 'IHQ_BCL6',
                 'MUM1': 'IHQ_MUM1',
                 'PAX5': 'IHQ_PAX5',
+                'PAX8': 'IHQ_PAX8',  # V6.0.10: Agregado para IHQ250983
                 'CD79A': 'IHQ_CD79A',
                 'CD15': 'IHQ_CD15',
                 'ALK': 'IHQ_ALK',
@@ -526,11 +527,15 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                         combined_data[ihq_field] = biomarker_data[new_name]
                         logger.debug(f"🔬 Refactorizado: {new_name} -> {ihq_field} = {biomarker_data[new_name]}")
             
-            # También mantener los nombres originales para compatibilidad
+            # V6.0.14: CORREGIDO - Mantener compatibilidad con nombres en minúsculas
+            # PERO usando valores CORRECTOS de combined_data (IHQ_*), NO de biomarker_data
+            # Esto evita que valores incorrectos de extractores legacy sobrescriban valores correctos
             for new_name, old_name in biomarker_mapping.items():
                 old_field = old_name.lower().replace('ihq_', '').replace('_estado', '')
-                if new_name in biomarker_data and biomarker_data[new_name]:
-                    combined_data[old_field] = biomarker_data[new_name]
+                # CRÍTICO: Usar el valor YA GUARDADO en combined_data (con prefijo IHQ_)
+                # NO usar biomarker_data[new_name] que puede tener valores legacy incorrectos
+                if old_name in combined_data and combined_data[old_name]:
+                    combined_data[old_field] = combined_data[old_name]
         
         # === V5.3.9: SISTEMA UNIFICADO DE CORRECCIONES ===
         from core.correction_tracker import CorrectionTracker
@@ -1076,6 +1081,7 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'BCL6': 'IHQ_BCL6', 'bcl6': 'IHQ_BCL6',
         'MUM1': 'IHQ_MUM1', 'mum1': 'IHQ_MUM1',
         'PAX5': 'IHQ_PAX5', 'pax5': 'IHQ_PAX5',
+        'PAX8': 'IHQ_PAX8', 'pax8': 'IHQ_PAX8',  # V6.0.10: Agregado para IHQ250983
         'CD79A': 'IHQ_CD79A', 'cd79a': 'IHQ_CD79A',
         'CD15': 'IHQ_CD15', 'cd15': 'IHQ_CD15',
         'ALK': 'IHQ_ALK', 'alk': 'IHQ_ALK',

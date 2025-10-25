@@ -179,16 +179,33 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['P-40', 'P 40'],
         'descripcion': 'Proteína p40',
         'patrones': [
-            # V5.2: Captura TODO el contexto
-            r'(?i)p40[:\s]*(.+?)(?:\.|$|\n)',
-            r'(?i)p[^\w]*40[:\s]*(.+?)(?:\.|$|\n)',
-            # Fallback
-            r'(?i)p40[:\s]*(positivo|negativo)',
+            # V6.0.10: Patrones específicos que evitan captura de basura (IHQ250983)
+            # PRIORIDAD 1: Estado + modificador
+            r'(?i)p[^\w]*40[:\s]+(positiv[oa]\s+(?:heterog[eé]neo|focal|difuso))',
+            r'(?i)p[^\w]*40[:\s]+(negativ[oa]\s+(?:heterog[eé]neo|focal|difuso))',
+            # PRIORIDAD 2: Solo modificador (implica positivo)
+            r'(?i)p[^\w]*40\s+(heterog[eé]neo|focal|difuso)',
+            # PRIORIDAD 3: Estado sin modificador
+            r'(?i)p[^\w]*40[:\s]+(positiv[oa]|negativ[oa])',
+            # PRIORIDAD 4: Símbolos
+            r'(?i)p[^\w]*40[:\s]*(\+|\-)',
         ],
-        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO', 'POSITIVO HETEROGÉNEO', 'NEGATIVO FOCAL', 'POSITIVO FOCAL', 'POSITIVO DIFUSO'],
         'normalizacion': {
             'positivo': 'POSITIVO',
             'negativo': 'NEGATIVO',
+            'positivo heterogeneo': 'POSITIVO HETEROGÉNEO',
+            'positivo heterogéneo': 'POSITIVO HETEROGÉNEO',
+            'negativo heterogeneo': 'NEGATIVO HETEROGÉNEO',
+            'negativo heterogéneo': 'NEGATIVO HETEROGÉNEO',
+            'positivo focal': 'POSITIVO FOCAL',
+            'negativo focal': 'NEGATIVO FOCAL',
+            'positivo difuso': 'POSITIVO DIFUSO',
+            'negativo difuso': 'NEGATIVO DIFUSO',
+            'heterogeneo': 'POSITIVO HETEROGÉNEO',
+            'heterogéneo': 'POSITIVO HETEROGÉNEO',
+            'focal': 'POSITIVO FOCAL',
+            'difuso': 'POSITIVO DIFUSO',
             '+': 'POSITIVO',
             '-': 'NEGATIVO',
         }
@@ -1088,6 +1105,7 @@ def buscar_en_microscopica(texto_completo, patron):
     """Busca patrón en la sección DESCRIPCIÓN MICROSCÓPICA del PDF
 
     V6.0.0: NUEVO - PRIORIDAD 2 (fallback) para extracción de biomarcadores
+    V6.0.14: MEJORADO - Excluye subsección "Anticuerpos:" para evitar capturar reactivos técnicos (IHQ250984)
 
     Esta función implementa la lógica de prioridad:
     - Busca SOLO SI NO se encontró en DIAGNÓSTICO
@@ -1107,6 +1125,19 @@ def buscar_en_microscopica(texto_completo, patron):
     )
 
     if seccion_microscopica:
+        # V6.0.14: FILTRAR subsección "Anticuerpos:" (reactivos técnicos, NO resultados)
+        # Esta subsección contiene información técnica de reactivos que NO debe ser extraída
+        anticuerpos_match = re.search(
+            r'Anticuerpos:\s*(.+?)(?=REPORTE\s+DE\s+BIOMARCADORES|BLOQUE|$)',
+            seccion_microscopica,
+            re.IGNORECASE | re.DOTALL
+        )
+        if anticuerpos_match:
+            # Eliminar la subsección de anticuerpos del texto a buscar
+            seccion_sin_anticuerpos = seccion_microscopica[:anticuerpos_match.start()] + \
+                                     seccion_microscopica[anticuerpos_match.end():]
+            seccion_microscopica = seccion_sin_anticuerpos
+
         match = re.search(patron, seccion_microscopica, re.IGNORECASE)
         if match:
             # Retornar el primer grupo capturado si existe, sino el match completo
@@ -1120,6 +1151,7 @@ def buscar_en_microscopica(texto_completo, patron):
 def extract_biomarkers(text: str) -> Dict[str, str]:
     """Extrae todos los biomarcadores configurados del texto
 
+    v6.0.11: CRÍTICO - Filtra sección "Anticuerpos:" antes de extraer (IHQ250984)
     v6.0.2: MEJORADO - Prioriza "Expresión molecular" > REPORTE > texto completo (IHQ250981)
 
     Args:
@@ -1132,9 +1164,35 @@ def extract_biomarkers(text: str) -> Dict[str, str]:
     if not text:
         return {}
 
+    # ═══════════════════════════════════════════════════════════════════════
+    # V6.0.12: ESTRATEGIA MULTI-BÚSQUEDA SIN CORTAR TEXTO (IHQ250984)
+    # ═══════════════════════════════════════════════════════════════════════
+    # LECCIÓN APRENDIDA de v6.0.11:
+    # - NO cortar el texto (elimina información necesaria en páginas posteriores)
+    # - SÍ buscar con patrones específicos que distingan entre:
+    #   * Sección técnica: "Anticuerpos: [nombres de reactivos]"
+    #   * Sección de resultados: "REPORTE DE BIOMARCADORES: [resultados]"
+    #
+    # ESTRATEGIA:
+    # 1. Buscar primero en secciones específicas (REPORTE, Expresión molecular)
+    # 2. Buscar con patrones que filtren contexto técnico
+    # 3. Usar texto completo solo como último recurso
+    # ═══════════════════════════════════════════════════════════════════════
+
     results = {}
 
-    # v6.0.2: PRIORIDAD 1 - Extraer sección "Expresión molecular" PRIMERO (caso IHQ250981)
+    # PRIORIDAD 0: Extraer sección "REPORTE DE BIOMARCADORES:" (IHQ250984)
+    # Esta sección contiene resultados en formato estructurado con guiones
+    biomarker_report_section = None
+    match_reporte = re.search(
+        r'REPORTE\s+DE\s+BIOMARCADORES?:\s*(.+?)(?=DIAGN[ÓO]STICO|$)',
+        text,
+        re.IGNORECASE | re.DOTALL
+    )
+    if match_reporte:
+        biomarker_report_section = match_reporte.group(1)
+
+    # v6.0.2: PRIORIDAD 1 - Extraer sección "Expresión molecular" (caso IHQ250981)
     molecular_section = extract_molecular_expression_section(text)
 
     # v5.3.1: PRIORIDAD 2 - Extraer sección REPORTE (descripción microscópica)
@@ -1143,18 +1201,30 @@ def extract_biomarkers(text: str) -> Dict[str, str]:
     # Definir biomarcadores que deben priorizarse de "Expresión molecular"
     molecular_priority = ['ER', 'PR', 'HER2', 'RECEPTOR_ESTROGENOS', 'RECEPTOR_PROGESTERONA']
 
-    # NUEVA FUNCIÓN: Detectar formato narrativo de biomarcadores
-    # Para ER, PR, HER2: Buscar PRIMERO en "Expresión molecular"
+    # V6.0.12: NUEVA CASCADA DE BÚSQUEDA (sin cortar texto)
+    # Buscar en orden de especificidad: REPORTE > Molecular > report_section > texto completo
+
+    # PRIORIDAD 0: Buscar en "REPORTE DE BIOMARCADORES:" (formato estructurado IHQ250984)
+    if biomarker_report_section:
+        narrative_results = extract_narrative_biomarkers(biomarker_report_section)
+        results.update(narrative_results)
+
+    # PRIORIDAD 1: Buscar en "Expresión molecular" (IHQ250981)
     if molecular_section:
         narrative_results = extract_narrative_biomarkers(molecular_section)
-        results.update(narrative_results)
+        # Solo actualizar si no encontró antes
+        for key, value in narrative_results.items():
+            if key not in results:
+                results[key] = value
 
-    # Si no encontró en "Expresión molecular", buscar en REPORTE
-    if not results and report_section:
+    # PRIORIDAD 2: Buscar en sección REPORTE (descripción microscópica)
+    if report_section:
         narrative_results = extract_narrative_biomarkers(report_section)
-        results.update(narrative_results)
+        for key, value in narrative_results.items():
+            if key not in results:
+                results[key] = value
 
-    # Si aún no encontró, buscar en texto completo
+    # PRIORIDAD 3: Buscar en texto completo (fallback)
     if not results:
         narrative_results = extract_narrative_biomarkers(text)
         results.update(narrative_results)
@@ -1165,15 +1235,20 @@ def extract_biomarkers(text: str) -> Dict[str, str]:
         if biomarker_name not in results:
             value = None
 
-            # Para biomarcadores prioritarios: buscar PRIMERO en "Expresión molecular"
-            if biomarker_name.upper() in molecular_priority and molecular_section:
+            # V6.0.12: Cascada de búsqueda específica
+            # PRIORIDAD 0: Buscar en "REPORTE DE BIOMARCADORES:"
+            if biomarker_report_section:
+                value = extract_single_biomarker(biomarker_report_section, biomarker_name, definition)
+
+            # PRIORIDAD 1: Buscar en "Expresión molecular"
+            if not value and biomarker_name.upper() in molecular_priority and molecular_section:
                 value = extract_single_biomarker(molecular_section, biomarker_name, definition)
 
-            # Si no encontró en molecular, buscar en REPORTE
+            # PRIORIDAD 2: Buscar en sección REPORTE
             if not value and report_section:
                 value = extract_single_biomarker(report_section, biomarker_name, definition)
 
-            # Si no se encontró en REPORTE, buscar en texto completo como fallback
+            # PRIORIDAD 3: Buscar en texto completo (fallback)
             if not value:
                 value = extract_single_biomarker(text, biomarker_name, definition)
 
@@ -1192,7 +1267,20 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
     
     # Patrón NUEVO: Biomarcadores complejos tipo "RECEPTOR DE ESTRÓGENOS, positivo focal"
     complex_patterns = [
-        # V6.0.2: NUEVOS PATRONES para "Expresión molecular" (IHQ250981) - PRIORIDAD MÁXIMA
+        # V6.0.13: CORREGIDO - Formato estructurado con guión SIN paréntesis (IHQ250984)
+        r'(?i)-\s*RECEPTOR(?:ES)?\s+DE\s+ESTR[ÓO]GENO[S]?\s*:\s*(POSITIV[OA]S?|NEGATIV[OA]S?)\.?',
+        # V6.0.13: CORREGIDO - Typo común "PROGRESTERONA" + formato correcto (IHQ250984)
+        r'(?i)-\s*RECEPTOR(?:ES)?\s+DE\s+PROGRESTE?RONA\s*:\s*(POSITIV[OA]S?|NEGATIV[OA]S?)\.?',
+        # V6.0.14: CORREGIDO - HER2 captura solo resultado y score, NO texto técnico ni reactivos (IHQ250984)
+        r'(?i)-\s*HER\s*-?\s*2\s*:\s*(POSITIVO|NEGATIVO|EQUIVOCO)(?:\s*\((?:Score\s+)?(\d+\+?)\))?\s*(tinción\s+[^.]+?(?=\.|$))?\.?',
+        # V6.0.13: MEJORADO - Ki-67 formato narrativo "Tinción nuclear en el X%" (IHQ250984)
+        r'(?i)-\s*Ki\s*-?\s*67\s*:\s*(?:Tinción\s+nuclear\s+en\s+el\s+)?(\d+)\s*%',
+        r'(?i)-\s*Ki\s*-?\s*67\s*:\s*(.+?)\.?$',
+        # V6.0.10: Patrones para GATA3 y SOX10 (IHQ250984)
+        r'(?i)tinción\s+nuclear\s+positiva\s+(?:fuerte\s+y\s+)?difusa\s+para\s+GATA\s*3',
+        # V6.0.12: Mejorado para capturar typos comunes de SOX10 (SXO10, SO X10, etc.)
+        r'(?i)negativas?\s+para\s+S[OX]{1,2}[OX]?\s*10',  # Captura SOX10, SXO10, SO10
+        # V6.0.2: NUEVOS PATRONES para "Expresión molecular" CON paréntesis (IHQ250981)
         r'(?i)-?\s*RECEPTORES\s+DE\s+ESTR[ÓO]GENOS\s*:\s*(POSITIVOS?|NEGATIVOS?)\s*\(([^)]+)\)',
         r'(?i)-?\s*RECEPTORES\s+DE\s+PROGESTERONA\s*:\s*(POSITIVOS?|NEGATIVOS?)\s*\(([^)]+)\)',
         r'(?i)-?\s*SOBREEXPRESI[ÓO]N\s+DE\s+HER-?2\s*:\s*(POSITIVO|NEGATIVO|EQUIVOCO)\s*\(([^)]+)\)',
@@ -1244,12 +1332,16 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
             # Mapeo específico para cada patrón
             if 'estr' in pattern.lower():
                 biomarker_name = 'ER'
-            elif 'progesterona' in pattern.lower():
+            elif 'progesterona' in pattern.lower() or 'progreste' in pattern.lower():
                 biomarker_name = 'PR'
             elif 'her' in pattern.lower():
                 biomarker_name = 'HER2'
+            elif 'ki' in pattern.lower() and '67' in pattern.lower():
+                biomarker_name = 'KI67'
             elif 'gata' in pattern.lower():
                 biomarker_name = 'GATA3'
+            elif 'sox' in pattern.lower() or 'sxo' in pattern.lower() or ('S[OX]' in pattern and '10' in pattern):
+                biomarker_name = 'SOX10'
             elif 'synaptophysin' in pattern.lower() or 'sinaptofisina' in pattern.lower():
                 biomarker_name = 'SYNAPTOPHYSIN'
             elif 'chromogranina' in pattern.lower():
@@ -1288,7 +1380,35 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
                             results[bio_name] = 'POSITIVO'
                 continue
 
-            if biomarker_name and isinstance(match, str):
+            # V6.0.10: Procesar patrones de formato estructurado con guión (IHQ250984)
+            if biomarker_name == 'GATA3' and isinstance(match, str):
+                # Caso GATA3: "tinción nuclear positiva fuerte y difusa para GATA 3"
+                results[biomarker_name] = 'POSITIVO'
+            elif biomarker_name == 'SOX10' and isinstance(match, str):
+                # Caso SOX10: "negativas para SOX10" o "negativas para SXO10"
+                results[biomarker_name] = 'NEGATIVO'
+            elif biomarker_name == 'KI67' and isinstance(match, str):
+                # V6.0.13: Caso Ki-67 mejorado para formato "Tinción nuclear en el X%" (IHQ250984)
+                # Si es solo un número (del patrón mejorado), agregar %
+                if match.strip().isdigit():
+                    results[biomarker_name] = f"{match.strip()}%"
+                else:
+                    # Descripción completa
+                    results[biomarker_name] = match.strip()
+            elif biomarker_name == 'HER2' and isinstance(match, tuple) and len(match) >= 3:
+                # V6.0.14: Caso HER2 con descripción completa: "Positivo (Score 3+) tinción membranosa..." (IHQ250984)
+                if match[2]:  # Si hay descripción adicional
+                    value = f"{match[0].upper()}"
+                    if match[1]:  # Si hay score
+                        value += f" (SCORE {match[1].upper()})"
+                    results[biomarker_name] = value
+                elif match[1]:
+                    value = f"{match[0].upper()} (SCORE {match[1].upper()})"
+                    results[biomarker_name] = value
+                else:
+                    value = match[0].upper()
+                    results[biomarker_name] = value
+            elif biomarker_name and isinstance(match, str):
                 value = 'POSITIVO' if match.lower() == 'positivo' else 'NEGATIVO'
                 results[biomarker_name] = value
             elif biomarker_name and isinstance(match, tuple):
@@ -1323,9 +1443,16 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
     
     if positive_match:
         positive_list = positive_match.group(1)
-        # Dividir por "y" y normalizar nombres
-        positive_biomarkers = [b.strip() for b in re.split(r'\s+y\s+', positive_list)]
-        
+        # V6.0.10: Mejorado para manejar listas "X, Y, y Z" correctamente (IHQ250983)
+        positive_biomarkers = []
+        for part in re.split(r',\s*', positive_list):
+            # Limpiar "y" o "e" al inicio del fragmento
+            part = re.sub(r'^\s*(?:y|e)\s+', '', part, flags=re.IGNORECASE).strip()
+            # Split por "y" o "e" internos
+            sub_parts = re.split(r'\s+(?:y|e)\s+', part, flags=re.IGNORECASE)
+            # Agregar solo partes no vacías
+            positive_biomarkers.extend([b.strip() for b in sub_parts if b.strip()])
+
         for biomarker in positive_biomarkers:
             normalized_name = normalize_biomarker_name(biomarker)
             if normalized_name:
@@ -1333,16 +1460,22 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
     
     # Patrón 2: "negativas para X, Y y Z"
     # V6.0.6: Mejorado para capturar "son negativas para X, Y y Z"
-    negative_pattern = r'(?i)(?:son\s+)?negativas?\s+para\s+([A-Z0-9,\s/\-]+(?:\s+(?:y|e)\s+[A-Z0-9]+)*?)(?:\s*\.|\s*,\s+y\s+son|$)'
+    # V6.0.10: Mejorado para capturar listas con coma antes de "y" (ej: "X, Y, y Z")
+    negative_pattern = r'(?i)(?:son\s+)?negativas?\s+para\s+([A-Z0-9,\s/\-]+(?:(?:,\s*)?(?:y|e)\s+[A-Z0-9]+)*?)(?:\s*\.|\s*,\s+y\s+son|$)'
     negative_match = re.search(negative_pattern, text)
     
     if negative_match:
         negative_list = negative_match.group(1)
-        # Dividir por "y" y "," y normalizar nombres
+        # V6.0.10: Mejorado para manejar listas "X, Y, y Z" correctamente (IHQ250983)
         negative_biomarkers = []
         for part in re.split(r',\s*', negative_list):
-            negative_biomarkers.extend([b.strip() for b in re.split(r'\s+y\s+', part)])
-        
+            # Limpiar "y" o "e" al inicio del fragmento
+            part = re.sub(r'^\s*(?:y|e)\s+', '', part, flags=re.IGNORECASE).strip()
+            # Split por "y" o "e" internos
+            sub_parts = re.split(r'\s+(?:y|e)\s+', part, flags=re.IGNORECASE)
+            # Agregar solo partes no vacías
+            negative_biomarkers.extend([b.strip() for b in sub_parts if b.strip()])
+
         for biomarker in negative_biomarkers:
             normalized_name = normalize_biomarker_name(biomarker)
             if normalized_name:
@@ -1460,6 +1593,9 @@ def post_process_biomarker_list_with_modifiers(biomarker_text: str) -> Dict[str,
     parts = re.split(r',\s*|\s+y\s+|\s+e\s+', text_clean, flags=re.IGNORECASE)
 
     for part in parts:
+        part = part.strip()
+        # V6.0.10: Limpiar caracteres especiales iniciales (comas, puntos, punto y coma)
+        part = part.lstrip(',.;')
         part = part.strip()
         if not part:
             continue

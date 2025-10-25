@@ -17,10 +17,10 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.0.0",
-    "version_name": "Ecosistema Consolidado 6+7",
-    "build_date": "20/10/2025",
-    "build_number": "202510202250",
+    "version": "6.0.9",
+    "version_name": "Limpieza de Duplicados y Corrección de Alias",
+    "build_date": "24/10/2025",
+    "build_number": "202510240711",
     "release_type": "Stable",
     "codename": "Smart Validation",
 }

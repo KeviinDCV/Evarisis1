@@ -501,6 +501,68 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
     factores = []
 
     # ═══════════════════════════════════════════════════════════════════════
+    # PRIORIDAD 0: FORMATO ESTRUCTURADO CON GUIONES (V6.0.10 - IHQ250984)
+    # Captura formato tipo:
+    # -RECEPTOR DE ESTRÓGENOS: Negativo.
+    # -RECEPTOR DE PROGESTERONA: Negativo.
+    # -HER 2: Positivo (Score 3+) [descripción]
+    # -Ki-67: Tinción nuclear en el 60%
+    # ═══════════════════════════════════════════════════════════════════════
+
+    # Buscar bloque completo de biomarcadores estructurados
+    patron_bloque_estructurado = r'(?:REPORTE\s+DE\s+BIOMARCADORES?|BIOMARCADORES?)\s*:?\s*\n\n?((?:-[A-ZÁÉÍÓÚÑ\s0-9/\-]+:.*?\n?)+)'
+    match_bloque = re.search(patron_bloque_estructurado, diagnostico_completo, re.IGNORECASE | re.MULTILINE)
+
+    if match_bloque:
+        bloque_biomarcadores = match_bloque.group(1)
+
+        # Extraer cada línea con formato "-BIOMARCADOR: Valor"
+        patron_linea_biomarcador = r'-\s*([A-ZÁÉÍÓÚÑ\s0-9/\-]+)\s*:\s*(.+?)(?=\n-|\n\n|$)'
+        matches_lineas = re.finditer(patron_linea_biomarcador, bloque_biomarcadores, re.IGNORECASE | re.DOTALL)
+
+        biomarcadores_extraidos = []
+        for match in matches_lineas:
+            nombre_bio = match.group(1).strip()
+            valor_bio = match.group(2).strip()
+
+            # Limpiar valor (quitar saltos de línea, espacios múltiples)
+            valor_bio = ' '.join(valor_bio.split())
+
+            # Agregar a lista (formato: "NOMBRE: Valor")
+            biomarcadores_extraidos.append(f"{nombre_bio}: {valor_bio}")
+
+        # Si encontramos biomarcadores estructurados, retornar inmediatamente
+        if biomarcadores_extraidos:
+            return ' / '.join(biomarcadores_extraidos)
+
+    # ═══════════════════════════════════════════════════════════════════════
+    # PRIORIDAD 0.5: BIOMARCADORES ADICIONALES EN DESCRIPCIÓN (V6.0.10)
+    # Captura formatos complementarios en la misma sección:
+    # - "tinción nuclear positiva fuerte y difusa para GATA 3"
+    # - "Son negativas para SOX10"
+    # ═══════════════════════════════════════════════════════════════════════
+
+    factores_adicionales = []
+
+    # Patrón: "tinción [tipo] positiva [adjetivos] para BIOMARCADOR"
+    patron_tincion_positiva = r'tinción\s+(?:nuclear|citoplásmica|membranosa)?\s+positiva\s+(?:fuerte|difusa|focal)?(?:\s+y\s+(?:fuerte|difusa|focal))?\s+para\s+([A-Z0-9\s]+)'
+    matches_tincion = re.finditer(patron_tincion_positiva, diagnostico_completo, re.IGNORECASE)
+
+    for match in matches_tincion:
+        biomarcador = match.group(1).strip()
+        factores_adicionales.append(f"Positivo para {biomarcador}")
+
+    # Patrón: "son negativas para BIOMARCADOR"
+    patron_negativas_simples = r'(?:son\s+)?negativas?\s+para\s+([A-Z0-9]+)'
+    matches_negativas = re.finditer(patron_negativas_simples, diagnostico_completo, re.IGNORECASE)
+
+    for match in matches_negativas:
+        biomarcador = match.group(1).strip()
+        # Evitar duplicados
+        if not any(biomarcador.lower() in f.lower() for f in factores_adicionales):
+            factores_adicionales.append(f"Negativo para {biomarcador}")
+
+    # ═══════════════════════════════════════════════════════════════════════
     # PRIORIDAD 1: FORMATO NARRATIVO - "positivas para [LISTA]" (V6.0.5)
     # Este formato es más robusto y aparece en DESCRIPCIÓN MICROSCÓPICA
     # ═══════════════════════════════════════════════════════════════════════
@@ -519,10 +581,39 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
         if lista_biomarcadores and len(lista_biomarcadores) > 3:
             listas_encontradas.append(lista_biomarcadores)
 
+    # V6.0.10: Agregar patrón de inmunorreactividad (IHQ250983)
+    # Captura: "inmunorreactividad...para X, Y y Z"
+    patron_inmuno = r'inmunorreactividad\s+(?:en\s+)?(?:las\s+)?(?:c[eé]lulas\s+)?(?:tumorales\s+)?para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ]+?)(?=\s+y\s+son|\.|$)'
+    matches_inmuno = re.finditer(patron_inmuno, diagnostico_completo, re.IGNORECASE)
+
+    for match in matches_inmuno:
+        lista_biomarcadores = match.group(1).strip()
+        lista_biomarcadores = ' '.join(lista_biomarcadores.split())
+        lista_biomarcadores = lista_biomarcadores.rstrip('.')
+        if lista_biomarcadores and len(lista_biomarcadores) > 3:
+            listas_encontradas.append(f"inmunorreactividad para {lista_biomarcadores}")
+
+    # V6.0.10: Agregar patrón de negativos (IHQ250983)
+    # Captura: "son negativas para X, Y, y Z"
+    patron_negativos = r'(?:son\s+)?negativas?\s+para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ]+?)(?:\.|$)'
+    matches_negativos = re.finditer(patron_negativos, diagnostico_completo, re.IGNORECASE)
+
+    for match in matches_negativos:
+        lista_biomarcadores = match.group(1).strip()
+        lista_biomarcadores = ' '.join(lista_biomarcadores.split())
+        lista_biomarcadores = lista_biomarcadores.rstrip('.')
+        if lista_biomarcadores and len(lista_biomarcadores) > 3:
+            listas_encontradas.append(f"negativo para {lista_biomarcadores}")
+
     # Si encontramos listas narrativas, usar esas y retornar inmediatamente
     if listas_encontradas:
         # Combinar con " / " y agregar prefijo "positivo para:"
         todas_listas = ' / '.join(listas_encontradas)
+
+        # V6.0.10: Agregar factores adicionales si existen
+        if factores_adicionales:
+            todas_listas += ' / ' + ' / '.join(factores_adicionales)
+
         return f"positivo para: {todas_listas}"
 
     # ═══════════════════════════════════════════════════════════════════════
@@ -634,6 +725,9 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
         inmuno_patterns = [
             r'Las\s+c[ée]lulas\s+tumorales\s+presentan\s+inmuno[^\n.]+\.',
             r'Los\s+marcadores[^\n.]+(?:negativos?|positivos?)\.',
+            # V6.0.10: Agregar patrón de inmunorreactividad genérico (IHQ250983)
+            r'Se\s+evidencia\s+inmunorreactividad[^\n.]+\.',
+            r'inmunorreactividad\s+(?:en\s+)?(?:las\s+)?c[ée]lulas\s+tumorales[^\n.]+\.',
         ]
 
         for patron in inmuno_patterns:
@@ -751,6 +845,10 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
 
     # Patrones ordenados por especificidad (más específico primero)
     patrones_biomarcadores = [
+        # Patrón 0: V6.0.13 - "Se realizó tinción especial para [lista]" (IHQ250984)
+        # MEJORADO: Captura lista completa incluyendo saltos de línea, termina solo en punto
+        r'[Ss]e\s+realiz[óo]\s+tinci[óo]n\s+especial\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.',
+
         # Patrón 1: "para los siguientes marcadores:" (IHQ250002, IHQ250006)
         r'para\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|\n\s*DESCRIPCI)',
 
@@ -977,6 +1075,14 @@ def normalize_biomarker_name_simple(name: str) -> str:
         return 'Receptor de Progesterona'
     if nombre_upper in ['ESTROGENOS', 'ESTRÓGENOS', 'ESTROGENO', 'ESTRÓGENO']:
         return 'Receptor de Estrógeno'
+
+    # V6.0.10: GATA3 (quitar espacio) - IHQ250984
+    if re.match(r'GATA[\s]?3', nombre_upper):
+        return 'GATA3'
+
+    # V6.0.10: SOX10 (manejar typo SXO10) - IHQ250984
+    if nombre_upper in ['SOX10', 'SXO10', 'SOX 10', 'SXO 10']:
+        return 'SOX10'
 
     # Ki-67: mantener guión (TODAS LAS VARIANTES)
     if re.match(r'KI[\s-]?67', nombre_upper):

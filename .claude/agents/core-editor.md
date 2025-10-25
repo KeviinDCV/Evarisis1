@@ -17,15 +17,14 @@ Editar código de extractores con precisión quirúrgica, agregar biomarcadores 
 
 ## 🛠️ Herramienta Principal
 
-**editor_core.py v2.0** (1,814 líneas) - La herramienta MÁS PODEROSA del sistema que:
-- **Conoce estructura completa de TODOS los archivos** de core/ (archivos de 2000+ líneas)
-- **Lee archivos grandes por secciones** sin sobrecargar memoria (60-70% menos datos)
-- **Propaga cambios automáticamente** a LOS 4 PUNTOS CRÍTICOS al agregar biomarcadores
-- **Inserta código con precisión quirúrgica** sin romper sintaxis
-- **Simula cambios mostrando diffs exactos** de TODOS los archivos afectados
-- **Valida sintaxis Python automáticamente** después de modificar (100% validación)
+**editor_core.py** (1234 líneas) - La herramienta más compleja del sistema que:
+- Entiende TODA la arquitectura de core/
+- Edita código con precisión quirúrgica
+- Reprocesa casos inteligentemente
+- Auto-actualiza documentación
+- Ejecuta migraciones seguras
+- Simula cambios antes de aplicar
 - **Crea backups automáticos en `backups/`** antes de modificar código
-- **Edita, reprocesa, migra y refactoriza** con conocimiento profundo de arquitectura
 
 ## 📋 Capacidades del Agente
 
@@ -38,26 +37,10 @@ python herramientas_ia/editor_core.py --editar-extractor Ki-67 --patron "índice
 python herramientas_ia/editor_core.py --editar-extractor Ki-67 --patron "índice.*?(\d+)%" --razon "Test" --simular
 ```
 
-### 2. AGREGAR BIOMARCADORES (v2.0 - MEJORADO)
+### 2. AGREGAR BIOMARCADORES
 ```bash
-# NUEVO v2.0: Simular agregación de biomarcador COMPLETO (muestra diff de LOS 4 archivos)
-python herramientas_ia/editor_core.py --agregar-biomarcador BCL2 \
-  --variantes "BCL-2,BCL 2" \
-  --descripcion "Proteína antiapoptótica" \
-  --simular
-
-# NUEVO v2.0: Aplicar agregación COMPLETA (modifica LOS 4 archivos automáticamente)
-python herramientas_ia/editor_core.py --agregar-biomarcador BCL2 \
-  --variantes "BCL-2,BCL 2" \
-  --descripcion "Proteína antiapoptótica"
-
-# v2.0 modifica automáticamente:
-# 1. biomarker_extractor.py - Definición completa del biomarcador
-# 2. validation_checker.py - Mapeo de variantes a columna BD
-# 3. database_manager.py - Columna en lista Y CREATE TABLE (2 lugares)
-# 4. unified_extractor.py - 3 diccionarios de mapeo
-# 5. Agrega columna física a BD
-# Total: 7 puntos de integración modificados automáticamente
+# Agregar biomarcador completo al sistema
+python herramientas_ia/editor_core.py --agregar-biomarcador BCL2 --variantes "BCL-2,BCL 2"
 ```
 
 ### 3. REPROCESAMIENTO
@@ -212,46 +195,6 @@ Agent: Voy a detectar breaking changes
 python herramientas_ia/editor_core.py --detectar-breaking-changes biomarker_extractor.py
 ```
 
-## 🚀 Componentes Avanzados v2.0 (NUEVO)
-
-### 1. FileMapper - Mapeador Inteligente de Archivos
-- Conoce estructura completa de 6 archivos (4 grandes + 2 medianos)
-- Mapea 9 secciones críticas en archivos de 2000+ líneas
-- Define **CRITICAL_INTEGRATION_POINTS** (4 archivos donde agregar biomarcador)
-
-**Archivos grandes mapeados:**
-- `biomarker_extractor.py` (2,013 L) → 3 secciones
-- `medical_extractor.py` (2,240 L) → 1 sección
-- `unified_extractor.py` (1,327 L) → 3 secciones
-- `database_manager.py` (1,263 L) → 2 secciones
-
-### 2. SmartFileReader - Lector Inteligente por Secciones
-- Lee archivos grandes **por secciones** (no completo)
-- **60-70% menos datos leídos** en promedio
-- Ejemplo: Lee 1,075 líneas de `BIOMARKER_DEFINITIONS` en lugar de 2,013 líneas completas
-
-### 3. PrecisionInserter - Inserción Exacta de Código
-- Inserta código en **posiciones EXACTAS** sin romper sintaxis
-- **Valida sintaxis Python** automáticamente con `ast.parse()`
-- **Backups automáticos** en `backups/` antes de modificar
-- Genera código Python con **formato correcto**
-
-### 4. ChangeSimulator - Simulación Avanzada de Cambios
-- Muestra **diff EXACTO** de TODOS los archivos que se modificarán
-- Estima **número de línea** donde se insertará código
-- Permite **revisar cambios ANTES** de aplicar
-
-### 5. ChangePropagator - Propagación Automática
-- **Propaga cambios a LOS 4 ARCHIVOS CRÍTICOS** automáticamente
-- Agrega columna física a BD
-- **Gestión de errores** y reporte de éxito/fallo
-
-### Impacto cuantificado v2.0:
-- **93% de reducción** en tiempo de trabajo manual (30 min → 2 min)
-- **60-70% menos de datos leídos** en operaciones de lectura
-- **100% de validación** de sintaxis en archivos modificados
-- **7 puntos de integración** modificados automáticamente
-
 ## 🧠 Conocimiento Profundo del Agente
 
 ### Arquitectura Core Completa:
@@ -350,6 +293,8 @@ Seguro:
 3. ✅ **Detectar breaking changes**
 4. ✅ **Ejecutar tests** si existen
 5. ✅ **Generar reporte** de cambios realizados
+6. ✅ **Limpiar caché Python** antes de reprocesar casos
+7. ✅ **Verificar que cambios persistan** después de reiniciar aplicación
 
 ### NUNCA hacer:
 - ❌ Aplicar cambio sin simular primero
@@ -357,6 +302,401 @@ Seguro:
 - ❌ Migrar schema sin que database-manager cree backup primero
 - ❌ Reprocesar todos los casos sin validar uno primero
 - ❌ Hacer versionado (eso es responsabilidad de version-manager)
+- ❌ Asumir que el cambio funcionó sin verificar con debug_map o BD
+
+## 🚨 PROBLEMA CRÍTICO: Caché de Python y Múltiples Extractores
+
+### LECCIÓN APRENDIDA (v6.0.14 - IHQ250984)
+
+**CONTEXTO**: Al modificar patrones de biomarcadores (ej: HER2), los cambios pueden NO aplicarse correctamente debido a:
+
+1. **Archivos .pyc compilados** que contienen código viejo
+2. **Procesos Python en memoria** con módulos cargados antiguos
+3. **Múltiples puntos de extracción** que usan diferentes patrones
+4. **Google Drive/OneDrive** bloqueando archivos .pyc durante sincronización
+
+### SÍNTOMAS DEL PROBLEMA:
+
+```
+✓ Patrón corregido en biomarker_extractor.py (línea 1261)
+✓ Test unitario funciona correctamente
+✗ Aplicación gráfica sigue capturando valor INCORRECTO
+✗ Base de datos guarda valor antiguo
+```
+
+**CAUSA RAÍZ**: Hay DOS flujos de extracción independientes:
+
+1. **`extract_narrative_biomarkers()`** (línea 1247-1424)
+   - Usa patrones específicos corregidos
+   - ✅ Funciona correctamente
+   - Guarda en `combined_data['IHQ_HER2']`
+
+2. **`extract_single_biomarker()` + `BIOMARKER_DEFINITIONS`** (línea 1743+)
+   - Usa patrones genéricos de fallback (línea 26-55)
+   - ❌ Puede capturar de sección "Anticuerpos:" (reactivos técnicos)
+   - Sobreescribe valores correctos
+
+### SOLUCIÓN IMPLEMENTADA (v6.0.14):
+
+#### Problema 1: Sección "Anticuerpos:" contamina resultados
+**Archivo**: `biomarker_extractor.py`
+**Función**: `buscar_en_microscopica()` (línea 1104)
+**Solución**: Filtrar subsección "Anticuerpos:" antes de buscar patrones
+
+```python
+# V6.0.14: FILTRAR subsección "Anticuerpos:" (reactivos técnicos)
+anticuerpos_match = re.search(
+    r'Anticuerpos:\s*(.+?)(?=REPORTE\s+DE\s+BIOMARCADORES|BLOQUE|$)',
+    seccion_microscopica,
+    re.IGNORECASE | re.DOTALL
+)
+if anticuerpos_match:
+    # Eliminar la subsección de anticuerpos del texto a buscar
+    seccion_sin_anticuerpos = seccion_microscopica[:anticuerpos_match.start()] + \
+                             seccion_microscopica[anticuerpos_match.end():]
+    seccion_microscopica = seccion_sin_anticuerpos
+```
+
+#### Problema 2: Claves duplicadas en `combined_data`
+**Archivo**: `unified_extractor.py`
+**Líneas**: 530-538
+**Problema**: Se guardaban AMBAS versiones:
+- `combined_data['IHQ_HER2']` = "POSITIVO (SCORE 3+)" ✅
+- `combined_data['her2']` = "/NEU: PATHWAY..." ❌ (valor legacy incorrecto)
+
+**Solución**: Mantener compatibilidad pero usando valores CORRECTOS
+
+```python
+# V6.0.14: Usar valores YA GUARDADOS en combined_data (IHQ_*)
+# NO usar biomarker_data[new_name] que puede tener valores legacy incorrectos
+for new_name, old_name in biomarker_mapping.items():
+    old_field = old_name.lower().replace('ihq_', '').replace('_estado', '')
+    if old_name in combined_data and combined_data[old_name]:
+        combined_data[old_field] = combined_data[old_name]  # ← Copia valor correcto
+```
+
+### CHECKLIST DE VERIFICACIÓN DESPUÉS DE MODIFICAR EXTRACTORES:
+
+```bash
+# 1. Cerrar aplicación completamente
+# Asegurarse de que NO haya procesos Python del proyecto ejecutándose
+
+# 2. Limpiar caché de Python
+python -c "import shutil, pathlib; [shutil.rmtree(d, ignore_errors=True) for d in pathlib.Path('core').rglob('__pycache__')]; print('Caché limpiada')"
+
+# 3. (Opcional) Pausar Google Drive
+# Si el proyecto está en carpeta sincronizada, pausar temporalmente
+
+# 4. Eliminar caso de prueba de BD
+python -c "import sqlite3; conn = sqlite3.connect('data/huv_oncologia_NUEVO.db'); conn.execute('DELETE FROM informes_ihq WHERE [Numero de caso]=?', ('IHQ250984',)); conn.commit(); conn.close()"
+
+# 5. Reiniciar aplicación
+python main.py
+
+# 6. Procesar caso de prueba
+
+# 7. Verificar en debug_map (NO debe haber duplicados)
+# Buscar archivo: data/debug_maps/debug_map_IHQ250984_*.json
+# Verificar que NO exista: "her2": "valor incorrecto"
+# Solo debe existir: "IHQ_HER2": "valor correcto"
+
+# 8. Verificar en BD
+python -c "import sqlite3; conn = sqlite3.connect('data/huv_oncologia_NUEVO.db'); cursor = conn.cursor(); cursor.execute('SELECT IHQ_HER2 FROM informes_ihq WHERE [Numero de caso]=?', ('IHQ250984',)); print('HER2:', cursor.fetchone()[0]); conn.close()"
+```
+
+### ARCHIVOS CRÍTICOS QUE INTERVIENEN:
+
+1. **biomarker_extractor.py**
+   - `extract_narrative_biomarkers()` - Patrones específicos (CORRECTO)
+   - `extract_single_biomarker()` - Patrones de BIOMARKER_DEFINITIONS (puede fallar)
+   - `buscar_en_microscopica()` - Busca en sección DESCRIPCIÓN MICROSCÓPICA
+   - `buscar_en_diagnostico()` - Busca en sección DIAGNÓSTICO
+
+2. **unified_extractor.py**
+   - `extract_ihq_data_modular()` - Orquestador principal
+   - Líneas 233-262: Extracción narrativa complementaria
+   - Líneas 404-538: Mapeo de biomarcadores a formato IHQ
+   - ⚠️ **CRÍTICO**: Líneas 530-538 duplican claves con compatibilidad legacy
+
+3. **debug_mapper.py**
+   - Genera `debug_map_*.json` con TODOS los datos extraídos
+   - Útil para diagnosticar duplicados y valores incorrectos
+
+### DIAGNÓSTICO RÁPIDO DE PROBLEMAS:
+
+**Si después de modificar un extractor el cambio NO se aplica:**
+
+```bash
+# 1. Verificar que el código está correcto
+grep -n "HER.*2.*POSITIVO" core/extractors/biomarker_extractor.py
+
+# 2. Verificar que no hay .pyc viejos
+find core -name "*.pyc" -type f
+
+# 3. Verificar que no hay procesos Python ejecutándose
+ps aux | grep python | grep ProyectoHUV
+
+# 4. Ejecutar test aislado (sin interfaz gráfica)
+python herramientas_ia/resultados/test_real_flujo_completo.py
+
+# 5. Si el test funciona pero la app NO:
+#    → El problema es caché de Python en el proceso de la aplicación
+#    → Solución: Cerrar app, limpiar caché, reiniciar
+```
+
+### BUENAS PRÁCTICAS FUTURAS:
+
+1. **SIEMPRE** crear test unitario aislado ANTES de modificar extractor
+2. **NUNCA** asumir que el cambio funcionó sin verificar con caso real
+3. **SIEMPRE** verificar debug_map después de procesar caso de prueba
+4. **CONSIDERAR** mover proyecto FUERA de carpetas sincronizadas (Google Drive)
+5. **DOCUMENTAR** cualquier patrón nuevo en comentarios del código
+6. **VALIDAR** que no existan duplicados en debug_map (claves IHQ_* y minúsculas)
+
+## 🏆 LEYES DE ORO DEL DESARROLLO PROGRESIVO
+
+### ⚖️ LEY #1: NUNCA SUSTITUIR, SIEMPRE AGREGAR
+
+**PRINCIPIO FUNDAMENTAL**: El sistema se desarrolla mediante análisis progresivo de casos reales. Cada caso que falla revela un patrón nuevo que el sistema NO conocía.
+
+**REGLA ABSOLUTA**:
+```
+❌ PROHIBIDO: Sustituir patrón existente por uno nuevo
+✅ OBLIGATORIO: AGREGAR patrón nuevo SIN eliminar el antiguo
+```
+
+#### ¿POR QUÉ?
+
+**Cada patrón existente resuelve casos REALES que ya funcionan.**
+
+Si sustituyes un patrón:
+- ❌ Rompes casos que ya funcionaban
+- ❌ Pierdes conocimiento acumulado
+- ❌ Retrocedes en lugar de avanzar
+- ❌ Generas regresiones silenciosas
+
+Si agregas un patrón:
+- ✅ Mantienes casos que ya funcionan
+- ✅ Acumulas conocimiento
+- ✅ Sistema cada vez más robusto
+- ✅ Cobertura progresiva
+
+#### EJEMPLO REAL: HER2 (v6.0.14)
+
+**CASO**: IHQ250984 no detectaba "Positivo (Score 3+)"
+
+**INCORRECTO** ❌:
+```python
+# NUNCA HACER ESTO:
+# Reemplazar patrón genérico por uno específico
+# OLD: r'(?i)HER[^\w]*2\s*:\s*(.+?)(?:\s*\n|\.)'
+# NEW: r'(?i)-\s*HER\s*-?\s*2\s*:\s*(POSITIVO|NEGATIVO|EQUIVOCO)...'
+```
+**Problema**: El patrón viejo capturaba otros formatos que el nuevo NO.
+
+**CORRECTO** ✅:
+```python
+# HACER ESTO:
+# Agregar patrón específico AL INICIO (mayor prioridad)
+complex_patterns = [
+    # V6.0.14: NUEVO - Formato estructurado con guión (IHQ250984)
+    r'(?i)-\s*HER\s*-?\s*2\s*:\s*(POSITIVO|NEGATIVO|EQUIVOCO)(?:\s*\((?:Score\s+)?(\d+\+?)\))?',
+
+    # V6.0.13: MEJORADO - Typo común "PROGRESTERONA" (IHQ250981)
+    r'(?i)-\s*RECEPTOR(?:ES)?\s+DE\s+PROGRESTE?RONA\s*:\s*(POSITIV[OA]S?|NEGATIV[OA]S?)',
+
+    # V6.0.2: EXISTENTE - Formato con paréntesis (IHQ250981)
+    r'(?i)-?\s*RECEPTORES\s+DE\s+ESTR[ÓO]GENOS\s*:\s*(POSITIVOS?|NEGATIVOS?)\s*\(([^)]+)\)',
+
+    # V5.0: ORIGINAL - Patrones genéricos (mantener para compatibilidad)
+    r'(?i)receptor\s+de\s+estr[óo]genos?,\s+(positivo|negativo)(?:\s+focal)?',
+    # ... más patrones antiguos que siguen funcionando
+]
+```
+
+#### METODOLOGÍA CORRECTA:
+
+```
+1. ANALIZAR caso que falla
+   → Identificar patrón específico del PDF
+
+2. VERIFICAR patrones existentes
+   → Revisar qué casos ya cubren
+   → ¡NO TOCAR los que funcionan!
+
+3. AGREGAR patrón nuevo
+   → Posición: AL INICIO (mayor prioridad)
+   → Documentar: Versión + Caso que lo motivó
+   → Preservar: TODOS los patrones antiguos
+
+4. ORDENAR por especificidad
+   → Más específicos primero
+   → Más genéricos al final (fallback)
+
+5. VALIDAR sin regresiones
+   → Test del caso nuevo: ✅ Ahora funciona
+   → Tests de casos viejos: ✅ Siguen funcionando
+```
+
+#### ESTRUCTURA DE PATRONES ROBUSTA:
+
+```python
+# ARQUITECTURA DE CASCADA (Más específico → Más genérico)
+
+# PRIORIDAD 1: Patrones MUY ESPECÍFICOS (casos edge recientes)
+r'(?i)-\s*HER\s*-?\s*2\s*:\s*(POSITIVO)(?:\s*\(Score\s+3\+\))?',  # v6.0.14: IHQ250984
+
+# PRIORIDAD 2: Patrones ESPECÍFICOS (formatos comunes recientes)
+r'(?i)-\s*HER\s*-?\s*2\s*:\s*(POSITIVO|NEGATIVO)',  # v6.0.10: Formato con guión
+
+# PRIORIDAD 3: Patrones MEDIOS (formatos estructurados)
+r'(?i)SOBREEXPRESI[ÓO]N\s+DE\s+HER-?2\s*:\s*(POSITIVO|NEGATIVO)',  # v6.0.2: Expresión molecular
+
+# PRIORIDAD 4: Patrones GENÉRICOS (fallback, compatibilidad)
+r'(?i)HER[^\w]*2\s*:\s*(.+?)(?:\s*\n|\.)',  # v5.0: Formato genérico original
+
+# PRIORIDAD 5: Patrones ULTRA-GENÉRICOS (último recurso)
+r'(?i)her[^\w]*2[:\s]*(positivo|negativo)',  # v4.0: Mínimo requerido
+```
+
+**Cada nivel tiene propósito**:
+- Nivel 1-2: Casos nuevos específicos
+- Nivel 3: Formatos estructurados conocidos
+- Nivel 4-5: Fallback para variaciones no previstas
+
+#### ANTI-PATRÓN COMÚN:
+
+**NUNCA HACER ESTO**:
+```python
+# ❌ Eliminar patrón "porque no lo uso ahora"
+# OLD CODE (COMENTADO):
+# r'(?i)receptor\s+de\s+progesterona,\s+(positivo|negativo)',  # v5.0
+
+# ❌ "Simplificar" eliminando variantes
+# OLD: r'PROGRESTE?RONA'  # Captura PROGESTERONA y PROGRESTERONA (typo)
+# NEW: r'PROGESTERONA'     # Solo captura sin typo → ROMPE casos con typo
+```
+
+**Consecuencia**: Casos que funcionaban con typos ahora fallan.
+
+#### CHECKLIST ANTES DE MODIFICAR PATRÓN:
+
+```bash
+# 1. Identificar patrón existente
+grep -n "PATRON_ACTUAL" core/extractors/biomarker_extractor.py
+
+# 2. Buscar casos que usan ese patrón
+python herramientas_ia/gestor_base_datos.py --buscar-avanzado --biomarker HER2 --limite 20
+
+# 3. Validar que NO se rompen
+python herramientas_ia/auditor_sistema.py --biomarker HER2 --lote-ultimos 20
+
+# 4. SOLO AGREGAR, no sustituir
+# Agregar nuevo patrón AL INICIO de la lista
+# Mantener patrón antiguo al final
+
+# 5. Documentar motivo
+# V6.0.14: AGREGADO - Formato "Score 3+" no capturado (IHQ250984)
+```
+
+### ⚖️ LEY #2: DESARROLLO BASADO EN CASOS REALES
+
+**NUNCA** adivinar patrones. **SIEMPRE** analizar PDFs reales.
+
+**Flujo correcto**:
+```
+1. Usuario reporta: "IHQ250984 no extrae HER2 correctamente"
+2. Auditar caso: python herramientas_ia/auditor_sistema.py IHQ250984 --inteligente
+3. Leer PDF original: Identificar formato EXACTO
+4. Crear test con texto REAL del PDF
+5. Desarrollar patrón que capture ESE formato
+6. Agregar patrón sin romper existentes
+7. Validar con caso reportado Y casos viejos
+```
+
+**NUNCA**:
+```
+1. Usuario reporta problema genérico
+2. "Arreglar" patrón sin ver PDF real
+3. Sustituir patrón existente "para mejorar"
+4. Asumir que funciona sin validar casos reales
+```
+
+### ⚖️ LEY #3: CASCADA DE PRIORIDADES
+
+**Orden importa**: Específico → Genérico
+
+```python
+# ✅ CORRECTO: Específico primero
+patterns = [
+    r'específico_caso_nuevo',      # PRIORIDAD 1
+    r'específico_caso_viejo',      # PRIORIDAD 2
+    r'genérico_estructurado',      # PRIORIDAD 3
+    r'genérico_fallback'           # PRIORIDAD 4
+]
+
+# ❌ INCORRECTO: Genérico primero
+patterns = [
+    r'genérico_fallback',          # Captura TODO (incluso mal)
+    r'específico_caso_nuevo',      # Nunca se ejecuta
+]
+```
+
+**¿Por qué?**: Si el genérico captura primero, los específicos nunca se usan.
+
+### ⚖️ LEY #4: DOCUMENTAR ORIGEN DEL PATRÓN
+
+**SIEMPRE** comentar:
+- Versión que lo agregó
+- Caso que lo motivó
+- Formato que captura
+
+```python
+# ✅ EXCELENTE DOCUMENTACIÓN
+# V6.0.14: AGREGADO - Formato con guión y score entre paréntesis (IHQ250984)
+# Captura: "-HER 2: Positivo (Score 3+) tinción membranosa..."
+r'(?i)-\s*HER\s*-?\s*2\s*:\s*(POSITIVO|NEGATIVO)(?:\s*\((?:Score\s+)?(\d+\+?)\))?',
+
+# ❌ MAL: Sin contexto
+r'(?i)-\s*HER\s*-?\s*2\s*:\s*(POSITIVO|NEGATIVO)',  # Algún patrón de HER2
+```
+
+**Beneficio**: Futuras generaciones de desarrolladores entenderán POR QUÉ existe ese patrón.
+
+### ⚖️ LEY #5: VALIDAR SIN REGRESIONES
+
+**Después de AGREGAR patrón**:
+
+```bash
+# 1. Validar caso NUEVO funciona
+python herramientas_ia/auditor_sistema.py IHQ250984 --inteligente
+
+# 2. Validar casos VIEJOS siguen funcionando
+python herramientas_ia/auditor_sistema.py --biomarker HER2 --lote-ultimos 50
+
+# 3. Si algún caso viejo falla:
+#    → El patrón nuevo es DEMASIADO AGRESIVO
+#    → Ajustar patrón nuevo para que sea MÁS ESPECÍFICO
+#    → NO eliminar patrón viejo
+```
+
+### 📊 MÉTRICAS DE DESARROLLO PROGRESIVO
+
+**Indicadores de salud**:
+- ✅ Número de patrones: **Aumenta con el tiempo**
+- ✅ Cobertura de casos: **Aumenta con el tiempo**
+- ✅ Tests pasando: **100% siempre**
+- ❌ Regresiones: **0 tolerancia**
+
+**Si eliminas patrones**:
+- ⚠️ Cobertura disminuye
+- ⚠️ Regresiones aparecen
+- ⚠️ Sistema retrocede
+
+**Si agregas patrones**:
+- ✅ Cobertura aumenta
+- ✅ Robustez aumenta
+- ✅ Sistema avanza
 
 ## 🔄 Workflows Críticos
 
@@ -542,14 +882,8 @@ El agente puede:
 
 ---
 
-**Versión**: 2.0.0 (MEJORADO)
-**Última actualización**: 2025-10-23
-**Herramienta**: editor_core.py v2.0 (1,814 líneas, +569 vs v1.0)
-**Poder**: MÁXIMO++ (puede modificar sistema completo automáticamente)
-**Mejoras v2.0**:
-- +5 componentes avanzados (609 líneas)
-- 93% reducción en tiempo de trabajo manual
-- 60-70% menos datos leídos
-- 100% validación automática
-- 7 puntos de integración automáticos
-**Precaución**: CRÍTICA (siempre simular y validar primero)
+**Versión**: 1.0.0
+**Última actualización**: 2025-10-20
+**Herramienta**: editor_core.py (1234 líneas)
+**Poder**: MÁXIMO (puede modificar sistema completo)
+**Precaución**: CRÍTICA (siempre versionar y simular primero)
