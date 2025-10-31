@@ -5,9 +5,53 @@
 Este módulo proporciona una interfaz compatible con el ui.py existente
 utilizando internamente los nuevos extractores modulares de la refactorización v4.0.
 
-Versión: 4.2.4 - Mejoras críticas en extracción y limpieza de diagnóstico
-Fecha: 5 de octubre de 2025
-Cambios: 
+Versión: 4.2.10 - FIX Normalización biomarcadores (Estrogeno/Progesterona)
+Fecha: 31 de octubre de 2025
+
+CHANGELOG v4.2.10:
+  - ✅ NORMALIZACIÓN: Mapea "Estrogeno"/"Progesterona" a receptores hormonales canónicos
+  - ✅ Función normalizar_nombre_biomarcador() con alias_map
+  - ✅ Soluciona IHQ_ESTUDIOS_SOLICITADOS faltantes (IHQ250994)
+  - ✅ Mapea: Estrogeno → RECEPTOR DE ESTROGENOS, Progesterona → RECEPTOR DE PROGESTERONA
+  - 📝 Backups: NO (cambio menor, función de normalización agregada)
+
+CHANGELOG v4.2.9:
+  - 🔴 FIX CRÍTICO: Patrón de extracción incluye "SON COMPATIBLES CON" además de "FAVORECEN"
+  - ✅ Soluciona DIAGNOSTICO_PRINCIPAL vacío en casos con "SON COMPATIBLES CON" (IHQ250992)
+  - ✅ Mantiene funcionalidad existente con "FAVORECEN" (casos anteriores)
+  - ✅ Mejora ESTRATEGIA 3 de extract_diagnostico_principal()
+  - 📝 Backups: NO (cambio menor, 1 línea modificada)
+
+CHANGELOG v4.2.8:
+  - 🔴 FIX CRÍTICO: Agregado P63 y BER_EP4 a biomarker_mapping local
+  - ✅ Soluciona extracción de P63 y BER_EP4 en casos narrativos (IHQ250991)
+  - ✅ Ahora biomarcadores narrativos se mapean correctamente a columnas BD
+  - ✅ extract_narrative_biomarkers() ya funcionaba, faltaba el mapeo
+  - 📝 Backups: NO (cambio menor, solo 2 líneas agregadas)
+
+CHANGELOG v4.2.7:
+  - 🔴 FIX CRÍTICO: Prioriza 'Factor pronostico' (actualizado por FALLBACK) sobre 'factor_pronostico'
+  - ✅ Soluciona bug donde FALLBACK generaba datos correctos pero BD guardaba "NO APLICA"
+  - ✅ Invierte orden en línea 1092: 'Factor pronostico' primero, 'factor_pronostico' segundo
+  - ✅ Caso IHQ250984 ahora guarda correctamente el FALLBACK en BD
+  - 📝 Backups: unified_extractor_backup_20251027_fix_fallback_priority.py
+
+CHANGELOG v4.2.6:
+  - ✅ FALLBACK FP: Construye FACTOR_PRONOSTICO desde columnas IHQ_* si está vacío
+  - ✅ Soluciona casos con formatos PDF no estándar (ej. IHQ250984)
+  - ✅ Usa build_factor_pronostico_from_columns() de medical_extractor
+  - ✅ Integrado automáticamente post-extracción
+  - 📝 Backups: unified_extractor_backup_20251026_fallback_fp.py
+
+CHANGELOG v4.2.5:
+  - ✅ LIMPIEZA CRÍTICA: DIAGNOSTICO_PRINCIPAL ahora NO contiene datos del estudio M
+  - ✅ Patrón mejorado: Detiene captura ANTES de GRADO, SCORE, NOTTINGHAM
+  - ✅ Elimina contaminación: INVASIÓN LINFOVASCULAR, IN SITU, etc.
+  - ✅ Aplica REGLA DE ORO #4 del sistema EVARISIS
+  - ✅ Fix IHQ250981: Diagnóstico limpio sin duplicación
+  - 📝 Backups: unified_extractor_backup_20251026_limpieza_diagnostico.py
+
+Cambios anteriores v4.2.4:
   - Búsqueda en descripción macroscópica para diagnósticos referenciados
   - Limpieza de texto explicativo en diagnósticos
   - 4 niveles de prioridad para extracción de diagnóstico
@@ -88,20 +132,28 @@ def extract_diagnostico_principal(diagnostico_completo: str) -> str:
     """
     Extrae el diagnóstico principal del texto completo de diagnóstico.
 
+    V6.0.9: LIMPIEZA CRÍTICA - Elimina datos del estudio M (GRADO, SCORE, NOTTINGHAM)
+    para mantener DIAGNOSTICO_PRINCIPAL limpio (solo IHQ).
+
     ESTRATEGIA PRINCIPAL: Capturar la primera línea DESPUÉS de:
     - "Estudios de inmunohistoquímica."
     - "Biopsia con aguja gruesa."
     - O similar marcador de inicio de resultados
 
+    IMPORTANTE: NO incluye datos del estudio M:
+    - NO captura: GRADO HISTOLÓGICO, SCORE, NOTTINGHAM
+    - NO captura: INVASIÓN LINFOVASCULAR/PERINEURAL
+    - NO captura: IN SITU, etc.
+
     Args:
         diagnostico_completo: Texto completo del diagnóstico
 
     Returns:
-        str: Diagnóstico principal extraído o cadena vacía
+        str: Diagnóstico principal extraído o cadena vacía (SIN datos del estudio M)
 
     Ejemplo:
-        Input: "Mama izquierda. Masa. Biopsia con aguja gruesa. Estudios de inmunohistoquímica. - CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). - RECEPTORES..."
-        Output: "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)"
+        Input: "Estudios de inmunohistoquímica. - CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)"
+        Output: "CARCINOMA MICROPAPILAR, INVASIVO" (sin GRADO ni SCORE)
     """
     if not diagnostico_completo or diagnostico_completo in ['N/A', '']:
         return ''
@@ -127,14 +179,34 @@ def extract_diagnostico_principal(diagnostico_completo: str) -> str:
             texto_despues = texto[match_marcador.end():].strip()
 
             # La primera línea después del marcador (hasta el primer salto de línea o punto seguido de guión)
-            # Patrón: capturar desde el inicio hasta el primer punto seguido de guión o salto de línea
-            patron_primera_linea = r'^[^\n]*?-\s*([^.\n]+?)(?:\.|$)'
-            match_linea = re.search(patron_primera_linea, texto_despues)
+            # V6.0.9: PATRÓN MEJORADO - NO capturar datos del estudio M (GRADO, SCORE, etc.)
+            # Captura hasta encontrar: punto, salto de línea, o keywords del estudio M
+            patron_primera_linea = r'^[^\n]*?-\s*([^.\n]+?)(?:GRADO|SCORE|NOTTINGHAM|\.|$)'
+            match_linea = re.search(patron_primera_linea, texto_despues, re.IGNORECASE)
 
             if match_linea:
                 diagnostico = match_linea.group(1).strip()
                 # Limpiar guiones adicionales
                 diagnostico = diagnostico.rstrip('-.').strip()
+
+                # V6.0.9: LIMPIEZA CRÍTICA - Eliminar datos del estudio M (IHQ250981)
+                # Keywords que indican datos del estudio M que NO deben estar en DIAGNOSTICO_PRINCIPAL
+                keywords_estudio_m = [
+                    'GRADO HISTOLOGICO', 'GRADO HISTOLÓGICO', 'GRADO',
+                    'SCORE', 'NOTTINGHAM',
+                    'INVASIÓN LINFOVASCULAR', 'INVASION LINFOVASCULAR',
+                    'INVASIÓN PERINEURAL', 'INVASION PERINEURAL',
+                    'IN SITU', 'DUCTAL IN SITU', 'LOBULAR IN SITU'
+                ]
+
+                # Detener diagnóstico ANTES del primer keyword del estudio M
+                for keyword in keywords_estudio_m:
+                    if keyword in diagnostico.upper():
+                        pos = diagnostico.upper().find(keyword)
+                        diagnostico = diagnostico[:pos].strip()
+                        # Limpiar trailing punctuation
+                        diagnostico = diagnostico.rstrip(',:;-').strip()
+                        break
 
                 # V6.0.2: Detener ANTES de primer guion en nueva línea (CRÍTICO IHQ250981)
                 # Buscar patrón: salto de línea seguido de guion (lista de atributos adicionales)
@@ -164,14 +236,19 @@ def extract_diagnostico_principal(diagnostico_completo: str) -> str:
             if not any(kw in diagnostico.upper() for kw in ['RECEPTOR', 'ESTUDIO', 'BIOPSIA', 'MUESTRA', 'POSITIVO', 'NEGATIVO']):
                 return diagnostico
 
-    # ESTRATEGIA 3: Buscar frases "LOS HALLAZGOS FAVORECEN..." (v6.0.5)
-    # Patrón: "LOS HALLAZGOS ... FAVORECEN UNA/UN ..."
-    patron_hallazgos = r'LOS HALLAZGOS[^.]*?FAVORECEN\s+(?:UNA|UN)\s+([^.]+?)(?:\.|VER COMENTARIO)'
+    # ESTRATEGIA 3: Buscar frases "LOS HALLAZGOS FAVORECEN/SON COMPATIBLES CON..." (v6.0.5)
+    # V6.0.12: MEJORADO - "UNA/UN" es opcional (IHQ250988: "FAVORECEN LINFOMA...")
+    # V6.0.17: MEJORADO - Incluye "SON COMPATIBLES CON" (IHQ250992: "SON COMPATIBLES CON NEOPLASIA...")
+    # Patrón: "LOS HALLAZGOS ... FAVORECEN [UNA/UN] ..." o "LOS HALLAZGOS ... SON COMPATIBLES CON ..."
+    patron_hallazgos = r'LOS HALLAZGOS[^.]*?(?:FAVORECEN\s+(?:UNA\s+|UN\s+)?|SON COMPATIBLES CON\s+(?:UNA\s+|UN\s+)?)([^.]+?)(?:\.|VER COMENTARIO|$)'
     match_hallazgos = re.search(patron_hallazgos, texto, re.IGNORECASE)
     if match_hallazgos:
         diagnostico = match_hallazgos.group(1).strip().upper()
         # Limpiar "VER COMENTARIO" si quedó
         diagnostico = re.sub(r'\s*VER COMENTARIO.*$', '', diagnostico, flags=re.IGNORECASE).strip()
+        # V6.0.12: Limpiar calificadores adicionales que contaminan (IHQ250988)
+        # Eliminar "SOBREEXPRESIÓN DE P53 (MUTADO)" y similares
+        diagnostico = re.sub(r'\s*SOBREEXPRESI[ÓO]N\s+DE\s+P\d+.*$', '', diagnostico, flags=re.IGNORECASE).strip()
         return diagnostico
 
     # ESTRATEGIA 4: Buscar diagnósticos patológicos al inicio
@@ -421,9 +498,14 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'PDL1': 'IHQ_PDL-1',
                 'P16': 'IHQ_P16_ESTADO',
                 'P40': 'IHQ_P40_ESTADO',
+                'P63': 'IHQ_P63',  # V6.0.12.1: FIX IHQ250991
+                'BER_EP4': 'IHQ_BER_EP4',  # V6.0.12.1: FIX IHQ250991
                 'P53': 'IHQ_P53',
                 'CDX2': 'IHQ_CDX2',
                 'CK7': 'IHQ_CK7',
+                'LAMBDA': 'IHQ_LAMBDA',  # V6.0.16: Auto-agregado
+                'KAPPA': 'IHQ_KAPPA',  # V6.0.16: Auto-agregado
+                'CK19': 'IHQ_CK19',  # V6.0.16: Agregado para IHQ250987
                 'CK20': 'IHQ_CK20',
                 'TTF1': 'IHQ_TTF1',
                 # BIOMARCADORES QUE REALMENTE EXISTEN EN LA BASE DE DATOS
@@ -433,7 +515,9 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'CD68': 'IHQ_CD68',
                 'CD45': 'IHQ_CD45',
                 'CD20': 'IHQ_CD20',
+                'CD2': 'IHQ_CD2',
                 'CD3': 'IHQ_CD3',
+                'CD4': 'IHQ_CD4',
                 # V6.0.5: Biomarcadores adicionales para formato narrativo
                 'IHQ_CKAE1AE3': 'IHQ_CKAE1AE3',
                 'IHQ_CAM52': 'IHQ_CAM52',
@@ -441,7 +525,9 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'IHQ_SOX10': 'IHQ_SOX10',
                 'IHQ_CK7': 'IHQ_CK7',  # V6.0.5: Agregar con prefijo IHQ_
                 'IHQ_S100': 'IHQ_S100',  # V6.0.5: Agregar con prefijo IHQ_
+                'CD8': 'IHQ_CD8',
                 'CD10': 'IHQ_CD10',
+                'CD15': 'IHQ_CD15',
                 'CD5': 'IHQ_CD5',
                 'CD30': 'IHQ_CD30',
                 'CD34': 'IHQ_CD34',
@@ -508,7 +594,10 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'PSA': 'IHQ_PSA',
                 'RACEMASA': 'IHQ_RACEMASA',
                 '34BETA': 'IHQ_34BETA',
-                'B2': 'IHQ_B2'
+                'B2': 'IHQ_B2',
+                # V6.0.16: Biomarcadores para linfomas (IHQ250988)
+                'SALL4': 'IHQ_SALL4',
+                'ALK1': 'IHQ_ALK1'
             }
             
             # PRIORIDAD 1: Sistema avanzado (narrative_biomarkers) - MÁS PRECISO
@@ -536,7 +625,83 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 # NO usar biomarker_data[new_name] que puede tener valores legacy incorrectos
                 if old_name in combined_data and combined_data[old_name]:
                     combined_data[old_field] = combined_data[old_name]
-        
+
+            # V6.0.10: FALLBACK - Construir Factor Pronóstico desde columnas individuales si está vacío
+            # V6.0.12: MEJORADO - También detecta si está INCOMPLETO (le faltan biomarcadores)
+            # Solución para casos donde biomarcadores se extrajeron a columnas IHQ_* pero Factor Pronóstico
+            # quedó vacío/NO APLICA/INCOMPLETO por problemas de formato en PDF
+            factor_actual = combined_data.get('Factor pronostico', '').strip()
+            
+            # Detectar si Factor Pronóstico está incompleto
+            # (le faltan biomarcadores que SÍ están en columnas individuales)
+            factor_incompleto = False
+            if factor_actual and factor_actual not in ['NO APLICA', 'N/A', 'SIN DATO']:
+                # Verificar si hay biomarcadores en columnas que NO están en Factor Pronóstico
+                biomarcadores_en_columnas = {
+                    'HER2': combined_data.get('IHQ_HER2', '').strip(),
+                    'Ki-67': combined_data.get('IHQ_KI-67', '').strip(),
+                    'Receptor de Estrógeno': combined_data.get('IHQ_RECEPTOR_ESTROGENOS', '').strip(),
+                    'Receptor de Progesterona': combined_data.get('IHQ_RECEPTOR_PROGESTERONA', '').strip()
+                }
+                
+                for nombre_bio, valor in biomarcadores_en_columnas.items():
+                    if valor and valor not in ['', 'SIN DATO', 'NO ENCONTRADO']:
+                        # Biomarcador tiene valor en columna, verificar si está en Factor Pronóstico
+                        if nombre_bio.upper() not in factor_actual.upper():
+                            factor_incompleto = True
+                            logger.info(f"🔍 FALLBACK FP: {nombre_bio} existe en columna ('{valor}') pero NO en Factor Pronóstico")
+            
+            if not factor_actual or factor_actual in ['NO APLICA', 'N/A', 'SIN DATO'] or factor_incompleto:
+                try:
+                    from core.extractors.medical_extractor import build_factor_pronostico_from_columns
+
+                    factor_desde_columnas = build_factor_pronostico_from_columns(combined_data)
+
+                    if factor_desde_columnas and factor_desde_columnas != 'NO APLICA':
+                        if factor_incompleto:
+                            logger.info(
+                                f"🔄 FALLBACK FP: Factor Pronóstico INCOMPLETO, reconstruyendo desde columnas individuales"
+                            )
+                        else:
+                            logger.info(
+                                f"🔄 FALLBACK FP: Factor Pronóstico vacío, construyendo desde columnas individuales"
+                            )
+                        combined_data['Factor pronostico'] = factor_desde_columnas
+                        logger.info(f"✅ FALLBACK FP: Factor Pronóstico = '{factor_desde_columnas}'")
+
+                except Exception as e:
+                    logger.warning(f"⚠️ FALLBACK FP: Error al construir Factor Pronóstico desde columnas: {e}")
+
+            # V6.0.19: REGLA 2 - Sincronizar columnas individuales con Factor Pronóstico
+            # Parsear biomarcadores desde Factor Pronóstico (fuente de verdad)
+            # y sobrescribir valores simplificados en columnas IHQ_*
+            if combined_data.get('Factor pronostico'):
+                try:
+                    from core.extractors.medical_extractor import parse_biomarkers_from_factor_pronostico
+
+                    biomarkers_from_fp = parse_biomarkers_from_factor_pronostico(
+                        combined_data['Factor pronostico']
+                    )
+
+                    # SOBRESCRIBIR valores simplificados con valores completos
+                    for col_name, valor_completo in biomarkers_from_fp.items():
+                        if valor_completo:
+                            # Log si estamos sobrescribiendo
+                            if col_name in combined_data and combined_data[col_name] != valor_completo:
+                                logger.info(
+                                    f"REGLA 2: Sincronizando {col_name}: "
+                                    f"'{combined_data[col_name]}' → '{valor_completo}'"
+                                )
+                            else:
+                                logger.debug(f"REGLA 2: Estableciendo {col_name} = '{valor_completo}'")
+                            combined_data[col_name] = valor_completo
+
+                    if biomarkers_from_fp:
+                        logger.info(f"✅ REGLA 2: {len(biomarkers_from_fp)} biomarcadores sincronizados desde Factor Pronóstico")
+
+                except Exception as e:
+                    logger.warning(f"⚠️ REGLA 2: Error al parsear biomarcadores desde Factor Pronóstico: {e}")
+
         # === V5.3.9: SISTEMA UNIFICADO DE CORRECCIONES ===
         from core.correction_tracker import CorrectionTracker
 
@@ -995,7 +1160,9 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
     db_record["Descripcion macroscopica"] = extracted_data.get('Descripcion macroscopica', 'N/A')
 
     # Factor pronóstico ya calculado por extract_ihq_data()
-    db_record["Factor pronostico"] = extracted_data.get('factor_pronostico', 'N/A') or extracted_data.get('Factor pronostico', 'N/A')
+    # V6.0.12 FIX CRÍTICO: Priorizar 'Factor pronostico' (título case) que es actualizado por FALLBACK
+    # sobre 'factor_pronostico' (minúsculas) que puede quedarse con "NO APLICA"
+    db_record["Factor pronostico"] = extracted_data.get('Factor pronostico', 'N/A') or extracted_data.get('factor_pronostico', 'N/A')
     
     # === INFORMACIÓN DE MUESTRA ===
     # ELIMINADO v4.2: "N. muestra" - campo duplicado con N. petición
@@ -1029,9 +1196,13 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'PDL1': 'IHQ_PDL-1', 'pdl1': 'IHQ_PDL-1',
         'P16': 'IHQ_P16_ESTADO', 'p16': 'IHQ_P16_ESTADO',
         'P40': 'IHQ_P40_ESTADO', 'p40': 'IHQ_P40_ESTADO',
+        'P63': 'IHQ_P63', 'p63': 'IHQ_P63',  # V6.0.12: Agregado para IHQ250991
 
         # Biomarcadores v4.0
         'CK7': 'IHQ_CK7', 'ck7': 'IHQ_CK7',
+        'LAMBDA': 'IHQ_LAMBDA', 'lambda': 'IHQ_LAMBDA',  # V6.0.16: Auto-agregado
+        'KAPPA': 'IHQ_KAPPA', 'kappa': 'IHQ_KAPPA',  # V6.0.16: Auto-agregado
+        'CK19': 'IHQ_CK19', 'ck19': 'IHQ_CK19',  # V6.0.16: Agregado para IHQ250987
         'CK20': 'IHQ_CK20', 'ck20': 'IHQ_CK20',
         'CDX2': 'IHQ_CDX2', 'cdx2': 'IHQ_CDX2',
         'EMA': 'IHQ_EMA', 'ema': 'IHQ_EMA',
@@ -1048,9 +1219,13 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'MELAN_A': 'IHQ_MELAN_A', 'melan_a': 'IHQ_MELAN_A',
 
         # Marcadores CD
+        'CD2': 'IHQ_CD2', 'cd2': 'IHQ_CD2',
         'CD3': 'IHQ_CD3', 'cd3': 'IHQ_CD3',
+        'CD4': 'IHQ_CD4', 'cd4': 'IHQ_CD4',
         'CD5': 'IHQ_CD5', 'cd5': 'IHQ_CD5',
+        'CD8': 'IHQ_CD8', 'cd8': 'IHQ_CD8',
         'CD10': 'IHQ_CD10', 'cd10': 'IHQ_CD10',
+        'CD15': 'IHQ_CD15', 'cd15': 'IHQ_CD15',
         'CD20': 'IHQ_CD20', 'cd20': 'IHQ_CD20',
         'CD30': 'IHQ_CD30', 'cd30': 'IHQ_CD30',
         'CD34': 'IHQ_CD34', 'cd34': 'IHQ_CD34',
@@ -1079,6 +1254,7 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'MDM2': 'IHQ_MDM2', 'mdm2': 'IHQ_MDM2',
         'BCL2': 'IHQ_BCL2', 'bcl2': 'IHQ_BCL2',
         'BCL6': 'IHQ_BCL6', 'bcl6': 'IHQ_BCL6',
+        'BER_EP4': 'IHQ_BER_EP4', 'ber_ep4': 'IHQ_BER_EP4',
         'MUM1': 'IHQ_MUM1', 'mum1': 'IHQ_MUM1',
         'PAX5': 'IHQ_PAX5', 'pax5': 'IHQ_PAX5',
         'PAX8': 'IHQ_PAX8', 'pax8': 'IHQ_PAX8',  # V6.0.10: Agregado para IHQ250983
@@ -1121,6 +1297,10 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         # V6.0.3: E-CADHERINA (biomarcador de adhesion celular)
         'E_CADHERINA': 'IHQ_E_CADHERINA', 'e_cadherina': 'IHQ_E_CADHERINA',
         'IHQ_E_CADHERINA': 'IHQ_E_CADHERINA',
+
+        # V6.0.16: Biomarcadores para linfomas (IHQ250988)
+        'SALL4': 'IHQ_SALL4', 'sall4': 'IHQ_SALL4',
+        'ALK1': 'IHQ_ALK1', 'alk1': 'IHQ_ALK1',
     }
     
     # Aplicar mapeos de biomarcadores
@@ -1154,10 +1334,15 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'IHQ_PDL-1': 'PDL-1',
         'IHQ_P16_ESTADO': 'P16',
         'IHQ_P40_ESTADO': 'P40',
+        'IHQ_P63': 'P63',  # V6.0.12: Agregado para IHQ250991
         'IHQ_P53': 'P53',
+        'IHQ_CD2': 'CD2',
         'IHQ_CD3': 'CD3',
+        'IHQ_CD4': 'CD4',
         'IHQ_CD5': 'CD5',
+        'IHQ_CD8': 'CD8',
         'IHQ_CD10': 'CD10',
+        'IHQ_CD15': 'CD15',
         'IHQ_CD20': 'CD20',
         'IHQ_CD30': 'CD30',
         'IHQ_CD34': 'CD34',
@@ -1202,6 +1387,7 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'IHQ_MDM2': 'MDM2',
         'IHQ_BCL2': 'BCL2',
         'IHQ_BCL6': 'BCL6',
+        'IHQ_BER_EP4': 'BER-EP4',  # V6.0.12: Agregado para IHQ250991
         'IHQ_MUM1': 'MUM1',
         'IHQ_CD79A': 'CD79A',
         'IHQ_CD15': 'CD15',
@@ -1235,15 +1421,39 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'IHQ_RACEMASA': 'RACEMASA',
         'IHQ_34BETA': '34BETA',
         'IHQ_B2': 'B2',
+        # V6.0.16: Biomarcadores para linfomas (IHQ250988)
+        'IHQ_SALL4': 'SALL4',
+        'IHQ_ALK1': 'ALK1',
     }
 
     # CORREGIDO v6.0.3: IHQ_ESTUDIOS_SOLICITADOS debe reflejar lo SOLICITADO, no lo extraído
     # Prioridad 1: Biomarcadores solicitados de DESCRIPCIÓN MACROSCÓPICA (fuente autoritativa)
     estudios_solicitados_tabla = extracted_data.get('estudios_solicitados_tabla', '')
 
+    # V4.2.8: Normalizar nombres de biomarcadores a sus nombres canónicos
+    # Mapea "Estrogeno" → "RECEPTOR DE ESTROGENOS", "Progesterona" → "RECEPTOR DE PROGESTERONA"
+    def normalizar_nombre_biomarcador(nombre: str) -> str:
+        """Normaliza nombre de biomarcador a su nombre canónico en BD"""
+        nombre_upper = nombre.upper().strip()
+
+        # Mapeo de alias a nombres canónicos
+        alias_map = {
+            'ESTROGENO': 'RECEPTOR DE ESTROGENOS',
+            'ESTRÓGENO': 'RECEPTOR DE ESTROGENOS',
+            'PROGESTERONA': 'RECEPTOR DE PROGESTERONA',
+            'PROGRESTERONA': 'RECEPTOR DE PROGESTERONA',
+            'RE': 'RECEPTOR DE ESTROGENOS',
+            'RP': 'RECEPTOR DE PROGESTERONA',
+        }
+
+        return alias_map.get(nombre_upper, nombre)
+
     if estudios_solicitados_tabla:
         # Usar lista de DESCRIPCIÓN MACROSCÓPICA - refleja lo que el médico SOLICITÓ
-        estudios_solicitados_str = estudios_solicitados_tabla
+        # Normalizar nombres de biomarcadores
+        biomarcadores_lista = [b.strip() for b in estudios_solicitados_tabla.split(',') if b.strip()]
+        biomarcadores_normalizados = [normalizar_nombre_biomarcador(b) for b in biomarcadores_lista]
+        estudios_solicitados_str = ', '.join(biomarcadores_normalizados)
     else:
         # Fallback: Si no hay descripción macroscópica, usar biomarcadores con datos
         biomarcadores_encontrados = []

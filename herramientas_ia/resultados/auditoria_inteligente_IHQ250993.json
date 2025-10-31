@@ -1,0 +1,81 @@
+{
+  "numero_caso": "IHQ250993",
+  "caso_num": 13,
+  "total_casos": 47,
+  "timestamp": "2025-10-31T14:48:32.573061",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 4,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "LESIÓN NEOPLÁSICA DE ORIGEN GLIAL A CLASIFICAR",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "TUMOR GLIAL DIFUSO DE BAJO GRADO (TIPO PEDIÁTRICO)"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "biomarcadores_fp": 1,
+      "total_solicitado": 3,
+      "cobertura_fp": "1/4",
+      "mensaje": "Factor pronostico con 1 biomarcadores"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 3,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "CKAE1AE3",
+        "Ki-67",
+        "P53"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "CKAE1AE3",
+        "Ki-67",
+        "P53"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK"
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "validaciones_ok": 5,
+    "total_validaciones": 5,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

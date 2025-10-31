@@ -137,12 +137,13 @@ NEW_TABLE_COLUMNS_ORDER: List[str] = [
     "IHQ_HER2", "IHQ_KI-67", "IHQ_RECEPTOR_ESTROGENOS", "IHQ_RECEPTOR_PROGESTERONA", "IHQ_PDL-1",
     "IHQ_P16_ESTADO", "IHQ_P16_PORCENTAJE", "IHQ_P40_ESTADO", "IHQ_E_CADHERINA",
     # Biomarcadores agregados v4.0
-    "IHQ_CK7", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
+    "IHQ_CK7", "IHQ_CK19", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
     # Biomarcadores adicionales v4.1 (extracción completa)
     "IHQ_P53", "IHQ_TTF1", "IHQ_S100", "IHQ_VIMENTINA", "IHQ_CHROMOGRANINA", "IHQ_SYNAPTOPHYSIN", "IHQ_MELAN_A",
     # Marcadores CD (básicos)
-    "IHQ_CD3", "IHQ_CD5", "IHQ_CD10", "IHQ_CD20", "IHQ_CD30", "IHQ_CD34", "IHQ_CD38",
+    "IHQ_CD2", "IHQ_CD3", "IHQ_CD5", "IHQ_CD10", "IHQ_CD20", "IHQ_CD30", "IHQ_CD34", "IHQ_CD38",
     "IHQ_CD45", "IHQ_CD56", "IHQ_CD61", "IHQ_CD68", "IHQ_CD117", "IHQ_CD138",
+    "IHQ_KAPPA", "IHQ_LAMBDA",
     # V3.2.5.1 - Biomarcadores adicionales de 50 casos iniciales
     "IHQ_PAX8", "IHQ_PAX5", "IHQ_WT1", "IHQ_NAPSIN", "IHQ_P63",
     "IHQ_CDK4", "IHQ_MDM2", "IHQ_MLH1", "IHQ_MSH2", "IHQ_MSH6", "IHQ_PMS2",
@@ -150,13 +151,15 @@ NEW_TABLE_COLUMNS_ORDER: List[str] = [
     # V5.2 - Biomarcadores adicionales detectados por sistema avanzado
     "IHQ_CD15", "IHQ_CD79A", "IHQ_ALK", "IHQ_DESMIN", "IHQ_MYOGENIN", "IHQ_MYOD1",
     "IHQ_SMA", "IHQ_MSA", "IHQ_CALRETININ", "IHQ_CD31", "IHQ_FACTOR_VIII",
-    "IHQ_BCL2", "IHQ_BCL6", "IHQ_MUM1", "IHQ_HMB45", "IHQ_TYROSINASE", "IHQ_MELANOMA",
+    "IHQ_BCL2", "IHQ_BCL6", "IHQ_MUM1", "IHQ_HMB45", "IHQ_TYROSINASE", "IHQ_MELANOMA", "IHQ_BER_EP4",
     # V5.3 - Nuevos biomarcadores detectados en producción (28 adicionales)
     "IHQ_CD23", "IHQ_CD4", "IHQ_CD8", "IHQ_CD99", "IHQ_CD1A",
     "IHQ_C4D", "IHQ_LMP1", "IHQ_CITOMEGALOVIRUS", "IHQ_SV40",
     "IHQ_CEA", "IHQ_CA19_9", "IHQ_CALRETININA",
     "IHQ_CK34BE12", "IHQ_CK5_6", "IHQ_HEPAR", "IHQ_GLIPICAN", "IHQ_ARGINASA",
     "IHQ_PSA", "IHQ_RACEMASA", "IHQ_34BETA", "IHQ_B2",
+    # V6.0.16 - Biomarcadores para linfomas (IHQ250988)
+    "IHQ_SALL4", "IHQ_ALK1",
     # V5.3.7: Columnas de sistema al final
     "Estado Auditoria IA",
     "Fecha Ingreso Base de Datos"
@@ -199,16 +202,17 @@ def _create_table_if_not_exists(cursor: sqlite3.Cursor):
             "IHQ_P16_ESTADO" TEXT, "IHQ_P16_PORCENTAJE" TEXT, "IHQ_P40_ESTADO" TEXT, "IHQ_E_CADHERINA" TEXT,
 
             -- Biomarcadores v4.0
-            "IHQ_CK7" TEXT, "IHQ_CK20" TEXT, "IHQ_CDX2" TEXT, "IHQ_EMA" TEXT, "IHQ_GATA3" TEXT, "IHQ_SOX10" TEXT,
+            "IHQ_CK7" TEXT, "IHQ_CK19" TEXT, "IHQ_CK20" TEXT, "IHQ_CDX2" TEXT, "IHQ_EMA" TEXT, "IHQ_GATA3" TEXT, "IHQ_SOX10" TEXT,
 
             -- Biomarcadores v4.1
             "IHQ_P53" TEXT, "IHQ_TTF1" TEXT, "IHQ_S100" TEXT, "IHQ_VIMENTINA" TEXT,
             "IHQ_CHROMOGRANINA" TEXT, "IHQ_SYNAPTOPHYSIN" TEXT, "IHQ_MELAN_A" TEXT,
 
             -- Marcadores CD (básicos)
-            "IHQ_CD3" TEXT, "IHQ_CD5" TEXT, "IHQ_CD10" TEXT, "IHQ_CD20" TEXT, "IHQ_CD30" TEXT,
+            "IHQ_CD2" TEXT, "IHQ_CD3" TEXT, "IHQ_CD5" TEXT, "IHQ_CD10" TEXT, "IHQ_CD20" TEXT, "IHQ_CD30" TEXT,
             "IHQ_CD34" TEXT, "IHQ_CD38" TEXT, "IHQ_CD45" TEXT, "IHQ_CD56" TEXT, "IHQ_CD61" TEXT,
             "IHQ_CD68" TEXT, "IHQ_CD117" TEXT, "IHQ_CD138" TEXT,
+            "IHQ_KAPPA" TEXT, "IHQ_LAMBDA" TEXT,
 
             -- V3.2.5.1 - Biomarcadores adicionales de 50 casos iniciales
             "IHQ_PAX8" TEXT, "IHQ_PAX5" TEXT, "IHQ_WT1" TEXT, "IHQ_NAPSIN" TEXT, "IHQ_P63" TEXT,
@@ -219,6 +223,7 @@ def _create_table_if_not_exists(cursor: sqlite3.Cursor):
             "IHQ_CD15" TEXT, "IHQ_CD79A" TEXT, "IHQ_ALK" TEXT, "IHQ_DESMIN" TEXT, "IHQ_MYOGENIN" TEXT, "IHQ_MYOD1" TEXT,
             "IHQ_SMA" TEXT, "IHQ_MSA" TEXT, "IHQ_CALRETININ" TEXT, "IHQ_CD31" TEXT, "IHQ_FACTOR_VIII" TEXT,
             "IHQ_BCL2" TEXT, "IHQ_BCL6" TEXT, "IHQ_MUM1" TEXT, "IHQ_HMB45" TEXT, "IHQ_TYROSINASE" TEXT, "IHQ_MELANOMA" TEXT,
+            "IHQ_BER_EP4" TEXT,
 
             -- V5.3 - Nuevos biomarcadores detectados en producción (28 adicionales)
             "IHQ_CD23" TEXT, "IHQ_CD4" TEXT, "IHQ_CD8" TEXT, "IHQ_CD99" TEXT, "IHQ_CD1A" TEXT,
@@ -226,6 +231,9 @@ def _create_table_if_not_exists(cursor: sqlite3.Cursor):
             "IHQ_CEA" TEXT, "IHQ_CA19_9" TEXT, "IHQ_CALRETININA" TEXT,
             "IHQ_CK34BE12" TEXT, "IHQ_CK5_6" TEXT, "IHQ_HEPAR" TEXT, "IHQ_GLIPICAN" TEXT, "IHQ_ARGINASA" TEXT,
             "IHQ_PSA" TEXT, "IHQ_RACEMASA" TEXT, "IHQ_34BETA" TEXT, "IHQ_B2" TEXT,
+
+            -- V6.0.16 - Biomarcadores para linfomas (IHQ250988)
+            "IHQ_SALL4" TEXT, "IHQ_ALK1" TEXT,
 
             -- V5.3.7: Columnas de sistema al final
             "Estado Auditoria IA" TEXT DEFAULT NULL,
@@ -303,15 +311,18 @@ def _add_new_biomarker_columns(conn: sqlite3.Connection, cursor: sqlite3.Cursor)
     """
     new_biomarkers = [
         # v4.0
-        "IHQ_CK7", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
+        "IHQ_CK7", "IHQ_CK19", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
+        "IHQ_KAPPA",  # V6.0.16: Auto-agregado
+        "IHQ_LAMBDA",  # V6.0.16: Auto-agregado
         # v4.1 - Biomarcadores adicionales
         "IHQ_P53", "IHQ_TTF1", "IHQ_S100", "IHQ_VIMENTINA",
         "IHQ_CHROMOGRANINA", "IHQ_SYNAPTOPHYSIN", "IHQ_MELAN_A",
         # v6.0.3 - E-Cadherina
         "IHQ_E_CADHERINA",
         # Marcadores CD
-        "IHQ_CD3", "IHQ_CD5", "IHQ_CD10", "IHQ_CD20", "IHQ_CD30", "IHQ_CD34",
+        "IHQ_CD2", "IHQ_CD3", "IHQ_CD5", "IHQ_CD10", "IHQ_CD20", "IHQ_CD30", "IHQ_CD34",
         "IHQ_CD38", "IHQ_CD45", "IHQ_CD56", "IHQ_CD61", "IHQ_CD68", "IHQ_CD117", "IHQ_CD138",
+        "IHQ_KAPPA", "IHQ_LAMBDA",
         # V3.2.5.1 - Biomarcadores adicionales de 50 casos iniciales
         "IHQ_PAX8", "IHQ_PAX5", "IHQ_WT1", "IHQ_NAPSIN", "IHQ_P63",
         "IHQ_CDK4", "IHQ_MDM2", "IHQ_MLH1", "IHQ_MSH2", "IHQ_MSH6", "IHQ_PMS2",
@@ -319,13 +330,15 @@ def _add_new_biomarker_columns(conn: sqlite3.Connection, cursor: sqlite3.Cursor)
         # V5.2 - Biomarcadores adicionales detectados por sistema avanzado
         "IHQ_CD15", "IHQ_CD79A", "IHQ_ALK", "IHQ_DESMIN", "IHQ_MYOGENIN", "IHQ_MYOD1",
         "IHQ_SMA", "IHQ_MSA", "IHQ_CALRETININ", "IHQ_CD31", "IHQ_FACTOR_VIII",
-        "IHQ_BCL2", "IHQ_BCL6", "IHQ_MUM1", "IHQ_HMB45", "IHQ_TYROSINASE", "IHQ_MELANOMA",
+        "IHQ_BCL2", "IHQ_BCL6", "IHQ_MUM1", "IHQ_HMB45", "IHQ_TYROSINASE", "IHQ_MELANOMA", "IHQ_BER_EP4",
         # V5.3 - Nuevos biomarcadores detectados en producción (28 adicionales)
         "IHQ_CD23", "IHQ_CD4", "IHQ_CD8", "IHQ_CD99", "IHQ_CD1A",
         "IHQ_C4D", "IHQ_LMP1", "IHQ_CITOMEGALOVIRUS", "IHQ_SV40",
         "IHQ_CEA", "IHQ_CA19_9", "IHQ_CALRETININA",
         "IHQ_CK34BE12", "IHQ_CK5_6", "IHQ_HEPAR", "IHQ_GLIPICAN", "IHQ_ARGINASA",
         "IHQ_PSA", "IHQ_RACEMASA", "IHQ_34BETA", "IHQ_B2",
+        # V6.0.16 - Biomarcadores para linfomas (IHQ250988)
+        "IHQ_SALL4", "IHQ_ALK1",
         # V3.2.4 - Estado de auditoría IA
         "Estado Auditoria IA"
     ]

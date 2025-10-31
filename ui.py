@@ -29,6 +29,7 @@ import numpy as np
 import argparse
 import sys
 import logging
+import traceback
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment
 import configparser
@@ -381,7 +382,6 @@ class App(ttk.Window):
         nav_items = [
             ("🏠 Inicio", "home", "success-outline", self._nav_to_welcome),
             ("🗄️ Base de Datos", "database", "primary", self._nav_to_database),
-            ("📊 Visualizar Datos", "informes", "info", self._nav_to_visualizar),
             ("📈 Dashboard", "dashboard", "warning", self._nav_to_dashboard),
             ("📋 Análisis IA", "analisis", "danger-outline", self._nav_to_analisis_ia),
             ("🔗 Interoperabilidad QHORTE", "web", "secondary", self._nav_to_web_auto),
@@ -662,11 +662,19 @@ class App(ttk.Window):
         self._show_panel(self.database_frame)
 
     def _nav_to_visualizar(self):
-        """Navegar a la sección de visualización de datos"""
+        """Navegar a la pestaña Visualizador de Datos dentro de Base de Datos"""
         self._hide_floating_menu()
         self._hide_header_if_not_welcome()
-        self.current_view = "visualizar"
-        self._show_panel(self.visualizar_frame)
+        self.current_view = "database"
+        self._show_panel(self.database_frame)
+
+        # Seleccionar la pestaña del visualizador (índice 1)
+        if hasattr(self, 'enhanced_dashboard') and hasattr(self.enhanced_dashboard, 'notebook'):
+            try:
+                self.enhanced_dashboard.notebook.select(1)  # Pestaña "Visualizador de Datos"
+                logging.info("📊 Navegando a pestaña Visualizador de Datos en Base de Datos")
+            except Exception as e:
+                logging.error(f"Error seleccionando pestaña visualizador: {e}")
 
     def _nav_to_dashboard(self):
         """Navegar a la sección de dashboard"""
@@ -892,7 +900,12 @@ class App(ttk.Window):
         from core.database_manager import get_estado_auditoria
 
         # Extraer números de petición y filtrar según estado
-        col_idx = list(self.tree["columns"]).index("Numero de caso")
+        # v6.0.12: CORREGIDO - Sheet no tiene atributo ["columns"], usar método alternativo
+        try:
+            headers = self.sheet.headers() if hasattr(self.sheet, 'headers') else []
+            col_idx = headers.index("Numero de caso") if "Numero de caso" in headers else 0
+        except:
+            col_idx = 0  # Fallback: primera columna es "Numero de caso"
 
         numeros_peticion = []
         casos_omitidos_info = {
@@ -902,8 +915,12 @@ class App(ttk.Window):
         }
 
         for item_id in selection:
-            values = self.tree.item(item_id, 'values')
+            # tksheet: Usar get_row_data() en lugar de .item()
+            values = self.sheet.get_row_data(item_id)
             try:
+                if not values or len(values) <= col_idx:
+                    logging.warning(f"No se pudieron obtener valores para item_id={item_id}")
+                    continue
                 numero = values[col_idx]
                 estado = get_estado_auditoria(numero)
 
@@ -1717,7 +1734,6 @@ Disco {i}:
         nav_items = [
             ("🏠 Inicio", "home", "light", self.show_welcome_screen),
             ("🗄️ Base de Datos", "database", "primary", self.show_database_frame),
-            ("📊 Visualizar Datos", "informes", "success", self.show_visualizar_frame),
             ("📈 Análisis Gráfico", "dashboard", "info", self.show_dashboard_frame),
             ("🔗 Interoperabilidad QHORTE\n(Sistema de Entrega)", "web", "warning", self.open_web_auto_modal),
         ]
@@ -1908,6 +1924,9 @@ Disco {i}:
             # Conectar métodos de importación del dashboard con la UI principal
             self._connect_import_functionality()
 
+            # Poblar la pestaña de visualizador en el dashboard
+            self._populate_visualizar_tab_in_dashboard()
+
         except ImportError as e:
             # Fallback en caso de error
             ttk.Label(
@@ -1937,6 +1956,207 @@ Disco {i}:
                     self._refresh_files_list()
                 except Exception as e:
                     logging.error(f"Error al actualizar lista de archivos inicial: {e}")
+
+            # v6.0.12: Cargar datos del dashboard inmediatamente al inicializar
+            try:
+                dashboard.refresh_all_data()
+                logging.info("✅ Dashboard inicializado con datos de la base de datos")
+            except Exception as e:
+                logging.error(f"❌ Error al cargar datos iniciales del dashboard: {e}")
+                logging.error(f"Traceback: {traceback.format_exc()}")
+
+    def _populate_visualizar_tab_in_dashboard(self):
+        """Poblar la pestaña de visualizador en el dashboard con el contenido completo IGUAL al visualizador original"""
+        if not hasattr(self, 'enhanced_dashboard'):
+            return
+
+        dashboard = self.enhanced_dashboard
+
+        # Verificar que existe el tab
+        if not hasattr(dashboard, 'visualizar_tab'):
+            logging.warning("Dashboard no tiene visualizar_tab")
+            return
+
+        # Usar el visualizar_tab directamente como frame
+        frame = dashboard.visualizar_tab
+
+        # Limpiar todo el contenido previo
+        for widget in frame.winfo_children():
+            widget.destroy()
+
+        # ===== CREAR EL MISMO CONTENIDO QUE _create_visualizar_content() =====
+
+        # Título principal compacto
+        title_frame = ttk.Frame(frame)
+        title_frame.pack(fill=X, padx=10, pady=5)
+
+        ttk.Label(
+            title_frame,
+            text="📊 Visualizador de Datos",
+            font=self.FONT_TITULO
+        ).pack(side=LEFT)
+
+        # Botones de acción en el header
+        actions_frame = ttk.Frame(title_frame)
+        actions_frame.pack(side=RIGHT)
+
+        # Botón de filtros avanzados
+        self.filter_btn_dashboard = ttk.Button(
+            actions_frame,
+            text="🔍 Filtros",
+            command=self._toggle_advanced_filters,
+            bootstyle="info"
+        )
+        self.filter_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
+
+        # Botón de detalles flotante
+        self.details_btn_dashboard = ttk.Button(
+            actions_frame,
+            text="📋 Detalles",
+            command=self._toggle_details_panel,
+            bootstyle="secondary"
+        )
+        self.details_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
+
+        # Botón exportar selección (inicialmente deshabilitado)
+        self.export_selection_btn_dashboard = ttk.Button(
+            actions_frame,
+            text="📤 Exportar Selección",
+            command=self._export_selected_data,
+            bootstyle="success",
+            state="disabled"
+        )
+        self.export_selection_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
+
+        # Botón exportar toda la base de datos
+        ttk.Button(
+            actions_frame,
+            text="💾 Exportar Todo",
+            command=self._export_full_database,
+            bootstyle="warning"
+        ).pack(side=RIGHT, padx=(0, 5))
+
+        ttk.Button(
+            actions_frame,
+            text="🔄 Actualizar Datos",
+            command=self.refresh_data_and_table,
+            bootstyle="primary"
+        ).pack(side=RIGHT, padx=(0, 5))
+
+        # V3.2.4: Botones de auditoría IA
+        self.audit_parcial_btn_dashboard = ttk.Button(
+            actions_frame,
+            text="🔍 Auditoría PARCIAL",
+            command=self._auditar_seleccion_parcial,
+            bootstyle="info-outline",
+            state="disabled"
+        )
+        self.audit_parcial_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
+
+        self.audit_completa_btn_dashboard = ttk.Button(
+            actions_frame,
+            text="✅ Auditoría COMPLETA",
+            command=self._auditar_seleccion_completa,
+            bootstyle="success-outline",
+            state="disabled"
+        )
+        self.audit_completa_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
+
+        # Frame para tabla - FULL SCREEN
+        table_frame = ttk.Frame(frame)
+        table_frame.pack(expand=True, fill=BOTH, padx=10, pady=5)
+        table_frame.grid_rowconfigure(1, weight=1)
+        table_frame.grid_columnconfigure(0, weight=1)
+
+        # Campo de búsqueda
+        self.search_var_dashboard = tk.StringVar()
+        self.search_var_dashboard.trace_add("write", self.filter_tabla)
+        search_entry = ttk.Entry(
+            table_frame,
+            textvariable=self.search_var_dashboard,
+            font=("Segoe UI", 11)
+        )
+        search_entry.grid(row=0, column=0, sticky="ew", padx=10, pady=10)
+        search_entry.insert(0, "Buscar por N° Petición, Nombre o Apellido...")
+
+        # Crear Sheet en el dashboard (compartiremos la misma instancia para sincronización)
+        # IMPORTANTE: Usamos self.sheet para que sea la MISMA instancia que el visualizador original
+        from tksheet import Sheet
+
+        self.sheet_dashboard = Sheet(
+            table_frame,
+            page_up_down_select_row=True,
+            expand_sheet_if_paste_too_big=False,
+            column_width=150,
+            startup_select=(0, 0, "rows"),
+            headers_height=30,
+            default_row_height=25,
+            show_horizontal_grid=True,
+            show_vertical_grid=True,
+            show_top_left=False,
+            show_row_index=True,
+            show_header=True,
+            empty_horizontal=0,
+            empty_vertical=0,
+            header_font=("Segoe UI", 10, "bold"),
+            font=("Segoe UI", 10, "normal"),
+            header_bg="#E8F5E9",
+            header_fg="#1B5E20",
+            table_bg="white",
+            table_fg="black",
+            table_selected_cells_bg="#BBDEFB",
+            table_selected_cells_fg="black",
+            table_selected_rows_bg="#E3F2FD",
+            table_selected_rows_fg="black",
+            top_left_bg="#E8F5E9",
+            index_bg="#F5F5F5",
+            index_fg="#424242",
+            index_selected_cells_bg="#CFD8DC",
+            index_selected_rows_bg="#B0BEC5"
+        )
+        self.sheet_dashboard.grid(row=1, column=0, columnspan=2, sticky="nsew", padx=10, pady=(0, 10))
+
+        # Habilitar funcionalidades tipo Excel
+        self.sheet_dashboard.enable_bindings(
+            "all", "copy", "row_select", "column_select", "drag_select",
+            "select_all", "rc_select", "arrowkeys", "single_select", "drag_and_drop", "move_columns"
+        )
+
+        # Deshabilitar edición
+        self.sheet_dashboard.disable_bindings(
+            "edit_cell", "cut", "paste", "delete", "undo",
+            "column_width_resize", "double_click_column_resize",
+            "row_width_resize", "column_height_resize"
+        )
+
+        # Evento de selección
+        self.sheet_dashboard.bind("<<SheetSelect>>", self.mostrar_detalle_registro)
+
+        # Agregar métodos de compatibilidad Treeview → Sheet
+        def _sheet_selection_dashboard():
+            try:
+                rows = set()
+                selected_rows = self.sheet_dashboard.get_selected_rows()
+                if selected_rows:
+                    rows.update(selected_rows)
+                selected_cells = self.sheet_dashboard.get_selected_cells()
+                if selected_cells:
+                    rows.update([cell[0] for cell in selected_cells])
+                return list(rows)
+            except Exception as e:
+                logging.error(f"Error en _sheet_selection_dashboard: {e}")
+                return []
+
+        self.sheet_dashboard.selection = _sheet_selection_dashboard
+
+        # Marcar que el dashboard tiene sheet
+        dashboard.has_sheet = True
+        dashboard.sheet_dashboard = self.sheet_dashboard
+
+        # Cargar datos iniciales
+        self.refresh_data_and_table()
+
+        logging.info("✅ Pestaña de visualizador COMPLETA poblada en el dashboard con tabla Sheet")
 
     def _refresh_files_list_for_dashboard(self):
         """Actualizar lista de archivos específicamente para el dashboard con detección de estado"""
@@ -2127,32 +2347,51 @@ Disco {i}:
         # Agregar métodos a Sheet para que se comporte como Treeview
 
         def _sheet_selection():
-            """Emula tree.selection() - Retorna lista de índices de filas seleccionadas"""
-            try:
-                selected = self.sheet.get_currently_selected()
-                if not selected:
-                    return []
+            """Emula tree.selection() - Retorna lista de índices de filas seleccionadas
 
-                # Manejo robusto de diferentes formatos de Selected
+            v6.0.14: Enfoque híbrido que captura CUALQUIER tipo de selección:
+            - Filas completas (clic en índice de fila)
+            - Celdas individuales (clic en celda)
+            - Rangos (arrastrar selección)
+            """
+            try:
+                logging.debug("_sheet_selection: Llamado")
                 rows = set()
 
-                # Intentar acceder a los atributos de forma segura
-                if hasattr(selected, 'rows') and selected.rows:
-                    # Formato: selected.rows es una lista o set de índices
-                    rows.update(selected.rows)
-                elif hasattr(selected, 'row'):
-                    # Formato: selected tiene row, y posiblemente num_rows
-                    start_row = selected.row if hasattr(selected, 'row') else 0
-                    num_rows = getattr(selected, 'num_rows', 1) if hasattr(selected, 'num_rows') else 1
-                    rows.update(range(start_row, start_row + num_rows))
-                else:
-                    # Fallback: usar get_selected_rows() si existe
-                    if hasattr(self.sheet, 'get_selected_rows'):
-                        rows.update(self.sheet.get_selected_rows())
+                # ESTRATEGIA 1: Intentar obtener filas completas seleccionadas
+                selected_rows = self.sheet.get_selected_rows()
+                if selected_rows:
+                    rows.update(selected_rows)
+                    logging.debug(f"_sheet_selection: Estrategia 1 (filas completas): {selected_rows}")
 
-                return list(rows)
+                # ESTRATEGIA 2: Obtener celdas seleccionadas y extraer filas únicas
+                # Esto captura cuando el usuario hace clic en una CELDA individual
+                selected_cells = self.sheet.get_selected_cells()
+                if selected_cells:
+                    # Cada celda es una tupla (row, col), extraer solo las filas
+                    cell_rows = set(row for row, col in selected_cells)
+                    rows.update(cell_rows)
+                    logging.debug(f"_sheet_selection: Estrategia 2 (celdas): {len(cell_rows)} fila(s) desde {len(selected_cells)} celda(s)")
+
+                # ESTRATEGIA 3: Fallback usando get_currently_selected()
+                # Para capturar casos especiales que las estrategias 1 y 2 no cubran
+                if not rows:
+                    selected = self.sheet.get_currently_selected()
+                    if selected and hasattr(selected, 'row') and selected.row is not None:
+                        rows.add(selected.row)
+                        logging.debug(f"_sheet_selection: Estrategia 3 (fallback): fila {selected.row}")
+
+                # Convertir set a lista para compatibilidad con Treeview
+                if rows:
+                    result = list(rows)
+                    logging.debug(f"_sheet_selection: retornando {len(result)} fila(s): {result}")
+                    return result
+                else:
+                    logging.debug("_sheet_selection: sin selección, retornando []")
+                    return []
+
             except Exception as e:
-                logging.warning(f"Error obteniendo seleccion: {e}")
+                logging.error(f"_sheet_selection: Error obteniendo selección: {e}", exc_info=True)
                 return []
 
         def _sheet_item(row_idx, option=None):
@@ -2187,74 +2426,21 @@ Disco {i}:
         self._setup_cell_tooltips()
 
         # Habilitar/deshabilitar botones según selección (V3.2.4: incluye botones de auditoría)
+        # v6.0.12: SIMPLIFICADO - Delegar a métodos de clase
         def _update_selection_buttons(event=None):
-            selection = self.tree.selection()
-            has_selection = bool(selection)
+            logging.debug(f"_update_selection_buttons: Llamado con evento={event}")
+            # Llamar a métodos de clase que contienen toda la lógica
+            self._update_export_button_state()
+            self._update_audit_buttons_state()
 
-            # Botón de exportar selección
-            if hasattr(self, 'export_selection_btn'):
-                self.export_selection_btn.configure(state="normal" if has_selection else "disabled")
+        # v6.0.12: CORREGIDO - Sheet NO emite <<TreeviewSelect>>, usar eventos nativos de Sheet
+        # IMPORTANTE: Usar add="+" para NO reemplazar el bind existente de mostrar_detalle_registro
+        self.sheet.bind("<<SheetSelect>>", _update_selection_buttons, add="+")  # Evento nativo de tksheet
+        self.sheet.bind("<ButtonRelease-1>", _update_selection_buttons, add="+")  # Click del mouse
+        self.sheet.bind("<KeyRelease-Up>", _update_selection_buttons, add="+")  # Navegación con flechas
+        self.sheet.bind("<KeyRelease-Down>", _update_selection_buttons, add="+")  # Navegación con flechas
 
-            # V3.2.4.2: Botones de auditoría - habilitar con 1 o múltiples items
-            if not has_selection:
-                # Sin selección → deshabilitar botones
-                if hasattr(self, 'audit_parcial_btn'):
-                    self.audit_parcial_btn.configure(state="disabled")
-                if hasattr(self, 'audit_completa_btn'):
-                    self.audit_completa_btn.configure(state="disabled")
-            else:
-                # Hay selección (1 o múltiples) → determinar estados de todos los items
-                from core.database_manager import get_estado_auditoria
-
-                try:
-                    col_idx = list(self.tree["columns"]).index("Numero de caso")
-
-                    # Obtener estados de todos los items seleccionados
-                    estados = []
-                    for item_id in selection:
-                        values = self.tree.item(item_id, 'values')
-                        if values:
-                            numero_peticion = values[col_idx]
-                            estado = get_estado_auditoria(numero_peticion)
-                            estados.append(estado)
-
-                    # Lógica de habilitación basada en estados
-                    if all(e == "COMPLETA" for e in estados):
-                        # TODOS tienen auditoría COMPLETA → Bloquear ambos
-                        if hasattr(self, 'audit_parcial_btn'):
-                            self.audit_parcial_btn.configure(state="disabled")
-                        if hasattr(self, 'audit_completa_btn'):
-                            self.audit_completa_btn.configure(state="disabled")
-
-                    elif all(e == "PARCIAL" for e in estados):
-                        # TODOS tienen auditoría PARCIAL → Solo permitir COMPLETA
-                        if hasattr(self, 'audit_parcial_btn'):
-                            self.audit_parcial_btn.configure(state="disabled")
-                        if hasattr(self, 'audit_completa_btn'):
-                            self.audit_completa_btn.configure(state="normal")
-
-                    elif all(e in [None, "NULL", ""] for e in estados):
-                        # TODOS sin auditoría → Permitir ambas
-                        if hasattr(self, 'audit_parcial_btn'):
-                            self.audit_parcial_btn.configure(state="normal")
-                        if hasattr(self, 'audit_completa_btn'):
-                            self.audit_completa_btn.configure(state="normal")
-
-                    else:
-                        # Mezcla de estados → Permitir ambas (el usuario decide)
-                        if hasattr(self, 'audit_parcial_btn'):
-                            self.audit_parcial_btn.configure(state="normal")
-                        if hasattr(self, 'audit_completa_btn'):
-                            self.audit_completa_btn.configure(state="normal")
-
-                except (ValueError, IndexError) as e:
-                    # Si hay error, deshabilitar botones
-                    if hasattr(self, 'audit_parcial_btn'):
-                        self.audit_parcial_btn.configure(state="disabled")
-                    if hasattr(self, 'audit_completa_btn'):
-                        self.audit_completa_btn.configure(state="disabled")
-
-        self.tree.bind("<<TreeviewSelect>>", _update_selection_buttons)
+        logging.info("Eventos de selección bindeados correctamente a Sheet")
 
         # Cargar datos automáticamente al inicializar el visualizador
         self.after(100, lambda: self.refresh_data_and_table() if hasattr(self, 'refresh_data_and_table') else None)
@@ -3980,10 +4166,11 @@ Disco {i}:
         # V5.3.7: Columnas reorganizadas para mejor rendimiento y visualización
         # Eliminadas: EPS (innecesaria), columnas duplicadas
         # Reordenadas: IHQ_ORGANO e IHQ_ESTUDIOS_SOLICITADOS antes de biomarcadores
+        # V6.0.12: ELIMINADAS columnas sensibles (N. de identificación, Nombre Completo) por privacidad
         cols_to_show = [
             "Numero de caso",
-            "N. de identificación",
-            "Nombre Completo",
+            # "N. de identificación",  # ELIMINADA - Datos sensibles (privacidad)
+            # "Nombre Completo",  # ELIMINADA - Datos sensibles (privacidad)
             # "EPS",  # ELIMINADA - No relevante para investigación
             "Procedimiento",
             "Organo",
@@ -4008,6 +4195,9 @@ Disco {i}:
             "IHQ_E_CADHERINA",  # v6.0.3 - E-Cadherina
             # Biomarcadores adicionales v4.0/v4.1
             "IHQ_CK7",
+            "IHQ_LAMBDA",  # V6.0.16: Auto-agregado
+            "IHQ_KAPPA",  # V6.0.16: Auto-agregado
+            "IHQ_CK19",
             "IHQ_CK20",
             "IHQ_CDX2",
             "IHQ_EMA",
@@ -4021,6 +4211,7 @@ Disco {i}:
             "IHQ_SYNAPTOPHYSIN",
             "IHQ_MELAN_A",
             # Marcadores CD
+            "IHQ_CD2",
             "IHQ_CD3",
             "IHQ_CD5",
             "IHQ_CD10",
@@ -4034,6 +4225,15 @@ Disco {i}:
             "IHQ_CD68",
             "IHQ_CD117",
             "IHQ_CD138",
+            "IHQ_KAPPA",
+            "IHQ_LAMBDA",
+            # V6.0.13: Biomarcadores para linfomas y mielomas
+            "IHQ_BCL2",
+            "IHQ_BCL6",
+            "IHQ_MUM1",
+            "IHQ_CD15",
+            "IHQ_CD79A",
+            "IHQ_ALK",
             # NUEVOS BIOMARCADORES v5.0 - CRÍTICOS PARA CASOS COMPLEJOS
             "IHQ_CKAE1AE3",
             "IHQ_NAPSIN",
@@ -4049,6 +4249,7 @@ Disco {i}:
             "IHQ_HHV8",
             "IHQ_NEUN",
             "IHQ_P63",
+            "IHQ_BER_EP4",  # V6.0.12.1: Agregado BER-EP4 (Ep-CAM) - FIX IHQ250991
             "IHQ_WT1",
             # MARCADORES MMR (Mismatch Repair) - CRÍTICOS PARA CÁNCER COLORRECTAL
             "IHQ_MLH1",
@@ -4078,6 +4279,9 @@ Disco {i}:
             "IHQ_RACEMASA",
             "IHQ_34BETA",
             "IHQ_B2",
+            # V6.0.16 - Biomarcadores para linfomas (IHQ250988)
+            "IHQ_SALL4",
+            "IHQ_ALK1",
             # V5.3.7: Columnas de sistema al final
             "Estado Auditoria IA",  # V3.2.4
             "Fecha Ingreso Base de Datos",
@@ -4127,10 +4331,11 @@ Disco {i}:
         for idx, col in enumerate(df_display.columns):
             if "Numero de caso" in col:
                 width = 120
-            elif "Nombre Completo" in col:
-                width = 250
-            elif "N. de identificación" in col:
-                width = 120
+            # V6.0.12: Columnas eliminadas (privacidad)
+            # elif "Nombre Completo" in col:
+            #     width = 250
+            # elif "N. de identificación" in col:
+            #     width = 120
             elif "Fecha" in col:
                 width = 120
             elif "Procedimiento" in col:
@@ -4227,6 +4432,25 @@ Disco {i}:
         # PASO 6: Redibuja UNA SOLA VEZ (mega optimización)
         self.sheet.refresh()
 
+        # PASO 7: Actualizar también sheet_dashboard si existe
+        if hasattr(self, 'sheet_dashboard') and self.sheet_dashboard is not None:
+            try:
+                self.sheet_dashboard.set_sheet_data(data=sheet_data, reset_col_positions=True, reset_row_positions=True, redraw=False)
+                self.sheet_dashboard.headers(newheaders=headers, index=None, reset_col_positions=False, show_headers_if_not_sheet=True, redraw=False)
+
+                # Aplicar anchos de columna
+                for col_idx, width in column_widths.items():
+                    self.sheet_dashboard.column_width(column=col_idx, width=width, only_set_if_too_small=False, redraw=False)
+
+                # Aplicar resaltado de incompletos
+                if rows_incompletos:
+                    self.sheet_dashboard.highlight_rows(rows=rows_incompletos, bg="#FFE5E5", fg="#721C24", redraw=False)
+
+                self.sheet_dashboard.refresh()
+                logging.debug("✅ sheet_dashboard actualizado")
+            except Exception as e:
+                logging.error(f"Error actualizando sheet_dashboard: {e}")
+
         # Actualizar KPIs en base a lo mostrado
         try:
             self._render_kpis(df_display)
@@ -4302,8 +4526,27 @@ Disco {i}:
         self._populate_treeview(df[mask])
 
     def mostrar_detalle_registro(self, event):
-        # Actualizar estado del botón de exportar selección
+        # v6.0.14: DEBUG - Logging exhaustivo para diagnosticar problema
+        logging.info("=" * 60)
+        logging.info("mostrar_detalle_registro: EVENTO DISPARADO")
+        logging.info(f"Evento: {event}")
+
+        # Probar la función selection()
+        try:
+            selection = self.tree.selection()
+            logging.info(f"self.tree.selection() retornó: {selection}")
+            logging.info(f"Tipo: {type(selection)}, Longitud: {len(selection) if selection else 0}")
+        except Exception as e:
+            logging.error(f"ERROR al llamar self.tree.selection(): {e}", exc_info=True)
+
+        # v6.0.12: Actualizar estado de TODOS los botones cuando hay selección
+        logging.info("Llamando a _update_export_button_state()...")
         self._update_export_button_state()
+
+        logging.info("Llamando a _update_audit_buttons_state()...")
+        self._update_audit_buttons_state()
+
+        logging.info("=" * 60)
 
         # El panel de detalles ahora es flotante y se maneja en el export_system
         # Aquí solo manejamos la selección
@@ -4316,13 +4559,19 @@ Disco {i}:
             messagebox.showerror("Error de Exportación", f"Error al exportar la base de datos:\n{str(e)}")
 
     def _export_selected_data(self):
-        """Exportar datos seleccionados usando el sistema mejorado"""
+        """Exportar datos seleccionados usando el sistema mejorado (v6.0.12: con logging mejorado)"""
         try:
             import pandas as pd
 
+            # v6.0.12: Logging inicial para debugging
+            logging.debug("_export_selected_data: Iniciando exportación de selección")
+
             # Obtener elementos seleccionados del treeview
             selected_items = self.tree.selection()
+            logging.debug(f"_export_selected_data: selection() retornó {len(selected_items) if selected_items else 0} items")
+
             if not selected_items:
+                logging.warning("_export_selected_data: No hay selección para exportar")
                 messagebox.showwarning("Sin Selección", "No hay elementos seleccionados para exportar")
                 return
 
@@ -4341,13 +4590,9 @@ Disco {i}:
             # Obtener datos de las filas seleccionadas (enfoque simple que funciona)
             selected_rows_data = []
             for item in selected_items:
-                # DEBUG: Ver qué contiene el item completo
-                tree_item_dict = self.tree.item(item)
-                logging.info(f"DEBUG item={item}: {tree_item_dict}")
-
-                # Obtener los valores de la fila desde el treeview
-                values = tree_item_dict.get('values', [])
-                logging.info(f"DEBUG values para item {item}: {values}")
+                # tksheet: Usar get_row_data() en lugar de .item()
+                values = self.sheet.get_row_data(item)
+                logging.info(f"DEBUG item={item}: values={values}")
 
                 if values:
                     # El primer valor es el número de petición/caso
@@ -4403,14 +4648,206 @@ Disco {i}:
     def _update_export_button_state(self):
         """Actualizar estado del botón de exportar selección según la selección"""
         try:
-            if hasattr(self, 'export_selection_btn'):
+            logging.info("_update_export_button_state: INICIANDO")
+
+            # Obtener selección del sheet apropiado
+            selected_items = []
+            if hasattr(self, 'sheet') and self.sheet is not None:
+                try:
+                    selected_items = self.sheet.selection()
+                except:
+                    pass
+            elif hasattr(self, 'sheet_dashboard') and self.sheet_dashboard is not None:
+                try:
+                    selected_items = self.sheet_dashboard.selection()
+                except:
+                    pass
+            elif hasattr(self, 'tree') and self.tree is not None:
                 selected_items = self.tree.selection()
-                if selected_items:
+
+            logging.info(f"_update_export_button_state: selection() = {selected_items}")
+            has_selection = bool(selected_items)
+
+            # Actualizar botón original
+            if hasattr(self, 'export_selection_btn'):
+                logging.info("_update_export_button_state: export_selection_btn existe")
+                if has_selection:
+                    logging.info("_update_export_button_state: HAY SELECCIÓN -> Habilitando botón")
                     self.export_selection_btn.configure(state="normal")
                 else:
+                    logging.info("_update_export_button_state: SIN SELECCIÓN -> Deshabilitando botón")
                     self.export_selection_btn.configure(state="disabled")
+
+            # Actualizar botón del dashboard
+            if hasattr(self, 'export_selection_btn_dashboard'):
+                if has_selection:
+                    self.export_selection_btn_dashboard.configure(state="normal")
+                else:
+                    self.export_selection_btn_dashboard.configure(state="disabled")
+
         except Exception as e:
-            logging.error(f"Error actualizando estado del boton: {e}")
+            logging.error(f"Error actualizando estado del boton: {e}", exc_info=True)
+
+    def _update_audit_buttons_state(self):
+        """v6.0.14: Actualizar estado de botones de auditoría según la selección"""
+        try:
+            logging.info("_update_audit_buttons_state: INICIANDO")
+
+            # Obtener selección del sheet apropiado
+            selection = []
+            if hasattr(self, 'sheet') and self.sheet is not None:
+                try:
+                    selection = self.sheet.selection()
+                except:
+                    pass
+            elif hasattr(self, 'sheet_dashboard') and self.sheet_dashboard is not None:
+                try:
+                    selection = self.sheet_dashboard.selection()
+                except:
+                    pass
+            elif hasattr(self, 'tree') and self.tree is not None:
+                selection = self.tree.selection()
+
+            logging.info(f"_update_audit_buttons_state: selection() = {selection}")
+            has_selection = bool(selection)
+            logging.info(f"_update_audit_buttons_state: has_selection = {has_selection}")
+            logging.info(f"_update_audit_buttons_state: CHECKPOINT 1 - Antes del if")
+
+            if not has_selection:
+                logging.info(f"_update_audit_buttons_state: CHECKPOINT 2 - Dentro del if not has_selection")
+                # Sin selección → deshabilitar botones
+                logging.info("_update_audit_buttons_state: SIN SELECCIÓN -> Deshabilitando botones")
+
+                # Deshabilitar botones originales
+                if hasattr(self, 'audit_parcial_btn'):
+                    logging.info("  -> Deshabilitando audit_parcial_btn")
+                    self.audit_parcial_btn.configure(state="disabled")
+                if hasattr(self, 'audit_completa_btn'):
+                    logging.info("  -> Deshabilitando audit_completa_btn")
+                    self.audit_completa_btn.configure(state="disabled")
+
+                # Deshabilitar botones del dashboard
+                if hasattr(self, 'audit_parcial_btn_dashboard'):
+                    self.audit_parcial_btn_dashboard.configure(state="disabled")
+                if hasattr(self, 'audit_completa_btn_dashboard'):
+                    self.audit_completa_btn_dashboard.configure(state="disabled")
+            else:
+                # Hay selección → determinar estados
+                logging.info("_update_audit_buttons_state: CHECKPOINT 3 - Dentro del else (HAY SELECCIÓN)")
+                logging.info("_update_audit_buttons_state: HAY SELECCIÓN -> Determinando estados...")
+                from core.database_manager import get_estado_auditoria
+
+                try:
+                    # Obtener el sheet correcto (dashboard o original)
+                    active_sheet = None
+                    if hasattr(self, 'sheet_dashboard') and self.sheet_dashboard is not None:
+                        try:
+                            if self.sheet_dashboard.selection():
+                                active_sheet = self.sheet_dashboard
+                        except:
+                            pass
+                    if active_sheet is None and hasattr(self, 'sheet') and self.sheet is not None:
+                        active_sheet = self.sheet
+
+                    if active_sheet is None:
+                        logging.error("No hay sheet activo disponible")
+                        return
+
+                    # Obtener índice de columna "Numero de caso"
+                    try:
+                        headers = active_sheet.headers() if hasattr(active_sheet, 'headers') else []
+                        logging.info(f"_update_audit_buttons_state: headers = {headers}")
+                        col_idx = headers.index("Numero de caso") if "Numero de caso" in headers else 0
+                        logging.info(f"_update_audit_buttons_state: col_idx = {col_idx}")
+                    except Exception as e:
+                        logging.error(f"_update_audit_buttons_state: ERROR obteniendo col_idx: {e}")
+                        col_idx = 0
+
+                    # Obtener estados de todos los items seleccionados
+                    estados = []
+                    logging.info(f"_update_audit_buttons_state: Obteniendo estados para {len(selection)} items...")
+                    for item_id in selection:
+                        # tksheet: Usar get_row_data() en lugar de .item()
+                        values = active_sheet.get_row_data(item_id)
+                        logging.info(f"_update_audit_buttons_state: item_id={item_id}, values={values}")
+                        if values and len(values) > col_idx:
+                            numero_peticion = values[col_idx]
+                            logging.info(f"_update_audit_buttons_state: numero_peticion={numero_peticion}")
+                            estado = get_estado_auditoria(numero_peticion)
+                            logging.info(f"_update_audit_buttons_state: estado={estado}")
+                            estados.append(estado)
+                        else:
+                            logging.warning(f"_update_audit_buttons_state: No se pudieron obtener valores para item_id={item_id}")
+
+                    # Lógica de habilitación basada en estados
+                    logging.info(f"_update_audit_buttons_state: estados recolectados = {estados}")
+
+                    if all(e == "COMPLETA" for e in estados):
+                        # TODOS tienen auditoría COMPLETA → Bloquear ambos
+                        logging.info("_update_audit_buttons_state: TODOS COMPLETA -> Bloqueando ambos")
+                        if hasattr(self, 'audit_parcial_btn'):
+                            self.audit_parcial_btn.configure(state="disabled")
+                        if hasattr(self, 'audit_completa_btn'):
+                            self.audit_completa_btn.configure(state="disabled")
+                        if hasattr(self, 'audit_parcial_btn_dashboard'):
+                            self.audit_parcial_btn_dashboard.configure(state="disabled")
+                        if hasattr(self, 'audit_completa_btn_dashboard'):
+                            self.audit_completa_btn_dashboard.configure(state="disabled")
+
+                    elif all(e == "PARCIAL" for e in estados):
+                        # TODOS tienen auditoría PARCIAL → Solo permitir COMPLETA
+                        logging.info("_update_audit_buttons_state: TODOS PARCIAL -> Solo COMPLETA habilitada")
+                        if hasattr(self, 'audit_parcial_btn'):
+                            self.audit_parcial_btn.configure(state="disabled")
+                        if hasattr(self, 'audit_completa_btn'):
+                            self.audit_completa_btn.configure(state="normal")
+                        if hasattr(self, 'audit_parcial_btn_dashboard'):
+                            self.audit_parcial_btn_dashboard.configure(state="disabled")
+                        if hasattr(self, 'audit_completa_btn_dashboard'):
+                            self.audit_completa_btn_dashboard.configure(state="normal")
+
+                    elif all(e in [None, "NULL", ""] for e in estados):
+                        # TODOS sin auditoría → Permitir ambas
+                        logging.info("_update_audit_buttons_state: TODOS SIN AUDITORIA -> Habilitando ambos")
+                        if hasattr(self, 'audit_parcial_btn'):
+                            logging.info("  -> Habilitando audit_parcial_btn")
+                            self.audit_parcial_btn.configure(state="normal")
+                        if hasattr(self, 'audit_completa_btn'):
+                            logging.info("  -> Habilitando audit_completa_btn")
+                            self.audit_completa_btn.configure(state="normal")
+                        if hasattr(self, 'audit_parcial_btn_dashboard'):
+                            self.audit_parcial_btn_dashboard.configure(state="normal")
+                        if hasattr(self, 'audit_completa_btn_dashboard'):
+                            self.audit_completa_btn_dashboard.configure(state="normal")
+
+                    else:
+                        # Mezcla de estados → Permitir ambas
+                        logging.info("_update_audit_buttons_state: MEZCLA DE ESTADOS -> Habilitando ambos")
+                        if hasattr(self, 'audit_parcial_btn'):
+                            logging.info("  -> Habilitando audit_parcial_btn")
+                            self.audit_parcial_btn.configure(state="normal")
+                        if hasattr(self, 'audit_completa_btn'):
+                            logging.info("  -> Habilitando audit_completa_btn")
+                            self.audit_completa_btn.configure(state="normal")
+                        if hasattr(self, 'audit_parcial_btn_dashboard'):
+                            self.audit_parcial_btn_dashboard.configure(state="normal")
+                        if hasattr(self, 'audit_completa_btn_dashboard'):
+                            self.audit_completa_btn_dashboard.configure(state="normal")
+
+                except Exception as e:
+                    logging.error(f"Error en lógica de auditoría: {e}")
+                    # Si hay error, deshabilitar botones
+                    if hasattr(self, 'audit_parcial_btn'):
+                        self.audit_parcial_btn.configure(state="disabled")
+                    if hasattr(self, 'audit_completa_btn'):
+                        self.audit_completa_btn.configure(state="disabled")
+                    if hasattr(self, 'audit_parcial_btn_dashboard'):
+                        self.audit_parcial_btn_dashboard.configure(state="disabled")
+                    if hasattr(self, 'audit_completa_btn_dashboard'):
+                        self.audit_completa_btn_dashboard.configure(state="disabled")
+
+        except Exception as e:
+            logging.error(f"Error actualizando botones de auditoría: {e}", exc_info=True)
     
     def _setup_cell_tooltips(self):
         """
@@ -5654,8 +6091,8 @@ Informes con malignidad: {malignant_count}"""
             # CORREGIDO: Obtener los datos reales de las filas seleccionadas
             selected_rows_data = []
             for item in selected_items:
-                # Obtener los valores de la fila
-                values = self.tree.item(item)['values']
+                # tksheet: Usar get_row_data() en lugar de .item()
+                values = self.sheet.get_row_data(item)
                 if values:
                     # Buscar el registro correspondiente en master_df usando el número de petición
                     numero_peticion = values[0]  # Asumiendo que la primera columna es número de petición
