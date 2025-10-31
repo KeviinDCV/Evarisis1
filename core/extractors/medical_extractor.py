@@ -9,9 +9,63 @@ Extrae información médica específica de los informes IHQ:
 - Fechas médicas
 - Malignidad
 - Información clínica
-- Factor pronóstico con sistema de prioridades
+- Factor pronóstico con sistema de prioridades y NORMALIZACIÓN automática
 
-Versión: 4.2.0 - Sistema robusto de factor pronóstico
+Versión: 4.2.8 - Correcciones IHQ250994 (IHQ_ORGANO + TUMOR BIFÁSICO)
+Fecha: 31 de octubre de 2025
+
+CHANGELOG v4.2.8:
+- ✅ FIX IHQ_ORGANO: Elimina etiquetas de sección (A., B., C.) al inicio del diagnóstico
+- ✅ Resuelve: IHQ250994 "A.Cervix" → "CERVIX" (antes extraía solo "A")
+- ✅ NUEVO PATRÓN: Detecta "TUMOR BIFÁSICO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA"
+- ✅ Prioridad -2.5 en extract_diagnostico_coloracion()
+- 📝 Backups: medical_extractor_backup_20251031_pre_tumores_gliales.py
+
+CHANGELOG v4.2.7:
+- ✅ NUEVO PATRÓN: Detecta tumores gliales con formato "LESIÓN NEOPLÁSICA DE ORIGEN [tipo] A CLASIFICAR"
+- ✅ Resuelve: IHQ250993 (tumor glial) ahora extrae DIAGNOSTICO_COLORACION correctamente
+- ✅ Prioridad -3 en extract_diagnostico_coloracion() (antes de otros patrones)
+- ✅ Normaliza a mayúsculas para consistencia con otros diagnósticos
+- 📝 Backups: medical_extractor_backup_20251031_pre_tumores_gliales.py
+
+CHANGELOG v4.2.6:
+- ✅ FIX CRÍTICO: parse_biomarker_list() convierte a mayúsculas antes de aplicar regex
+- ✅ Resuelve: "p63 p40" (minúsculas OCR) → "P63, P40" (separado correctamente)
+- ✅ Texto OCR viene en minúsculas pero regex buscaba solo mayúsculas [A-Z]
+- ✅ Solución: text.upper() antes de aplicar patrones de separación
+
+CHANGELOG v4.2.5:
+- ✅ FIX IHQ250991: Separación de biomarcadores consecutivos sin coma ("P63 P40" → "P63, P40")
+- ✅ Nuevo regex en parse_biomarker_list() para detectar patrones tipo "P63 P40"
+- ✅ Resuelve error "NO MAPEADO" en validador cuando biomarcadores no tienen separador
+- ✅ Patrón aplicado: \b([A-Z]{1,2}[0-9]{1,3}...) \s+ ([A-Z]{1,2}[0-9]{1,3}...)
+
+CHANGELOG v4.2.4:
+- ✅ FALLBACK FP: Nueva función build_factor_pronostico_from_columns()
+- ✅ Construye FACTOR_PRONOSTICO desde columnas IHQ_* si extracción directa falla
+- ✅ Soluciona casos con formatos de PDF no estándar (ej. IHQ250984)
+- ✅ Integrado en unified_extractor como fallback automático
+- 📝 Backups: medical_extractor_backup_20251026_fallback_fp_final.py
+
+CHANGELOG v4.2.3:
+- ✅ FIX CRÍTICO: Filtrado aplicado a TODOS los formatos (estructurado, narrativo, específico)
+- ✅ Elimina biomarcadores de tipificación en TODAS las rutas de extracción
+- ✅ Validado con 3 casos: IHQ250981 (OK), IHQ250980 (OK), IHQ250983 (NO APLICA)
+
+CHANGELOG v4.2.2:
+- ✅ FIX CRÍTICO: FACTOR_PRONOSTICO filtra SOLO 4 biomarcadores de pronóstico
+- ✅ Si NO hay HER2, Ki-67, Estrógenos, Progesterona → retorna "NO APLICA"
+- ✅ Elimina biomarcadores de tipificación (CKAE1AE3, S100, GATA3, TTF-1, etc.)
+- ✅ Aplica REGLA DE ORO #1 estrictamente (vs filosofía antigua "poner lo que haya")
+- 📝 Backups: medical_extractor_backup_20251026_pre_filtro_fp.py
+
+CHANGELOG v4.2.1:
+- ✅ NORMALIZACIÓN Ki-67: Elimina "Índice de proliferación celular" automáticamente
+- ✅ NORMALIZACIÓN HER2: Elimina "SOBREEXPRESIÓN DE" y estandariza a "HER2" (sin guión)
+- ✅ NORMALIZACIÓN Receptores: Elimina guiones iniciales, formato estándar "Receptores de..."
+- ✅ Aplica REGLAS DE ORO #1 y #2 del sistema EVARISIS
+- 📝 Backups: medical_extractor_backup_20251026_normalizacion_fp.py
+
 Migrado de: core/procesador_ihq.py (funciones extract_ihq_data, patrones PATTERNS_IHQ)
 """
 
@@ -312,6 +366,119 @@ def extract_diagnostico_coloracion(text: str) -> str:
         text = text.strip()
 
     # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -3: V4.2.7 - Tumores gliales con patrón "LESIÓN NEOPLÁSICA... A CLASIFICAR" (IHQ250993)
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Tumores cerebrales/gliales con diagnóstico en formato "LESIÓN NEOPLÁSICA DE ORIGEN [tipo] A CLASIFICAR"
+    # Patrón: "LESIÓN NEOPLÁSICA DE ORIGEN GLIAL A CLASIFICAR" o similar
+    # Este patrón se encuentra típicamente en la descripción microscópica o diagnóstico del estudio M
+
+    patron_tumor_glial = r'LESI[ÓO]N\s+NEOPL[ÁA]SICA\s+DE\s+ORIGEN\s+(\w+)\s+A\s+CLASIFICAR'
+    match_tumor_glial = re.search(patron_tumor_glial, text, re.IGNORECASE)
+
+    if match_tumor_glial:
+        # Capturar todo el patrón completo
+        diagnostico_glial = match_tumor_glial.group(0).strip()
+        # Normalizar espacios
+        diagnostico_glial = ' '.join(diagnostico_glial.split())
+        # Convertir a mayúsculas para consistencia
+        diagnostico_glial = diagnostico_glial.upper()
+        return diagnostico_glial
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -2.5: V4.2.8 - Tumor bifásico a clasificar (IHQ250994)
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Descripción macroscópica con "con diagnostico de \"TUMOR BIFASICO A CLASIFICAR...\""
+    # Patrón: "con diagnostico de" + comillas + texto + "A CLASIFICAR"
+
+    patron_tumor_bifasico = r'con\s+diagn[óo]stico\s+de\s+["\']([^"\']+A\s+CLASIFICAR[^"\']*)["\']'
+    match_tumor_bifasico = re.search(patron_tumor_bifasico, text, re.IGNORECASE)
+
+    if match_tumor_bifasico:
+        diagnostico_bifasico = match_tumor_bifasico.group(1).strip()
+        # Normalizar espacios
+        diagnostico_bifasico = ' '.join(diagnostico_bifasico.split())
+        # Convertir a mayúsculas para consistencia
+        diagnostico_bifasico = diagnostico_bifasico.upper()
+        return diagnostico_bifasico
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -2: V6.0.12 - Biopsia de hueso/médula ósea con diagnóstico previo (IHQ250992)
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Descripción macroscópica cita el diagnóstico del estudio previo (sin comillas)
+    # Patrón: "con diagnóstico de MUESTRA SUBÓPTIMA PARA..." o similar (sin comillas)
+    # Captura desde "con diagnóstico de" hasta encontrar "por lo que se realiza"
+
+    patron_biopsia_hueso = r'con\s+diagn[óo]stico\s+de\s+"([^"]+)"\s*por\s+lo\s+que\s+se\s+realiza'
+    match_biopsia_hueso = re.search(patron_biopsia_hueso, text, re.IGNORECASE | re.DOTALL)
+
+    if match_biopsia_hueso:
+        diagnostico_previo = match_biopsia_hueso.group(1).strip()
+        # Normalizar espacios y saltos de línea
+        diagnostico_previo = ' '.join(diagnostico_previo.split())
+        # Validar que es diagnóstico significativo (no solo ruido OCR)
+        if len(diagnostico_previo) > 20:
+            return diagnostico_previo
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -1: V6.0.12 - Material extra-institucional con diagnóstico previo (IHQ250991)
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Material externo con diagnóstico que requiere estudios complementarios
+    # Patrón: "con diagnóstico de \"PROLIFERACIÓN DE...QUE REQUIERE ESTUDIOS COMPLEMENTARIO"
+
+    patron_material_externo = r'diagn[óo]stico\s+de\s*["\'"\']([^"\'"\']+ A ESTUDIO QUE REQUIERE ESTUDIOS COMPLEMENTARIO[S]?)'
+    match_material_externo = re.search(patron_material_externo, text, re.IGNORECASE | re.DOTALL)
+
+    if match_material_externo:
+        diagnostico_previo = match_material_externo.group(1).strip()
+        # Validar que es diagnóstico significativo (no solo ruido OCR)
+        if len(diagnostico_previo) > 20:
+            return diagnostico_previo
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -0.5: V4.2.6 - Material extrainstitucional con diagnóstico metastásico (IHQ250982)
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Material externo con diagnóstico de neoplasia maligna/metastásica
+    # Patrón: "con diagnóstico de \"APARENTE COMPROMISO POR NEOPLASIA MALIGNA METASTÁSICA\""
+    # Este patrón captura diagnósticos entre comillas que contienen keywords de malignidad
+    
+    patron_neoplasia_maligna = r'diagn[óo]stico\s+de\s*["\'"\'\u201c\u201d]([^"\'\u201c\u201d]{15,})["\'"\'\u201c\u201d]'
+    match_neoplasia = re.search(patron_neoplasia_maligna, text, re.IGNORECASE)
+    
+    if match_neoplasia:
+        diagnostico_candidato = match_neoplasia.group(1).strip()
+        
+        # Validar que contiene keywords de neoplasia/malignidad
+        keywords_malignidad = [
+            'NEOPLASIA', 'MALIGNA', 'METAST[AÁ]SICA', 'CARCINOMA', 'ADENOCARCINOMA',
+            'MELANOMA', 'SARCOMA', 'LINFOMA', 'TUMOR MALIGNO', 'C[AÁ]NCER',
+            'COMPROMISO.*NEOPLASIA', 'APARENTE COMPROMISO'
+        ]
+        
+        # Usar regex para validar keywords (permite variaciones ortográficas)
+        tiene_malignidad = any(re.search(kw, diagnostico_candidato, re.IGNORECASE) for kw in keywords_malignidad)
+        
+        # Validar longitud mínima (evitar ruido)
+        if tiene_malignidad and len(diagnostico_candidato) > 15:
+            return diagnostico_candidato
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD 0: V6.0.15 - Buscar "Diagnóstico Inicial:" en DESCRIPCIÓN MACROSCÓPICA (IHQ250984)
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso específico: el diagnóstico del Estudio M aparece con label "Diagnóstico Inicial:"
+    # Captura COMPLETO hasta el siguiente encabezado o final
+
+    patron_diagnostico_inicial = r'Diagn[óo]stico\s+Inicial:\s*(.+?)(?=\n\n[A-ZÁÉÍÓÚÑ\s]+:|DESCRIPCI[ÓO]N\s+MICROSC[ÓO]PICA|DIAGN[ÓO]STICO|BLOQUE|$)'
+    match_diagnostico_inicial = re.search(patron_diagnostico_inicial, text, re.IGNORECASE | re.DOTALL)
+
+    if match_diagnostico_inicial:
+        diagnostico_inicial = match_diagnostico_inicial.group(1).strip()
+        # Limpiar saltos de línea múltiples, unir en una sola línea
+        diagnostico_inicial = ' '.join(diagnostico_inicial.split())
+        # Validar que tiene contenido significativo (no solo espacios/puntos)
+        if len(diagnostico_inicial) > 20:
+            return diagnostico_inicial
+
+    # ═══════════════════════════════════════════════════════════════════════════
     # PASO 1: Buscar en DESCRIPCIÓN MACROSCÓPICA
     # ═══════════════════════════════════════════════════════════════════════════
     # El diagnóstico del Estudio M (Coloración) suele aparecer citado aquí
@@ -466,6 +633,28 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
                                nombre_paciente: str = "") -> str:
     """Extrae factor pronóstico de biomarcadores de IHQ ÚNICAMENTE.
 
+    V6.0.10: Lista completa de biomarcadores de tipificación (NO deben ir en FACTOR_PRONOSTICO)
+    """
+
+    # ═══════════════════════════════════════════════════════════════════════
+    # LISTAS DE BIOMARCADORES - DEFINIDAS AL INICIO PARA USO EN TODA LA FUNCIÓN
+    # ═══════════════════════════════════════════════════════════════════════
+
+    # Biomarcadores de PRONÓSTICO permitidos en FACTOR_PRONOSTICO
+    BIOMARCADORES_PRONOSTICO = ['HER2', 'HER-2', 'KI-67', 'KI67',
+                                'ESTRÓGENO', 'ESTROGENO', 'ESTRÓGENOS', 'ESTROGENOS',
+                                'RECEPTOR', 'PROGESTERONA']
+
+    # Biomarcadores de TIPIFICACIÓN que NO deben ir en FACTOR_PRONOSTICO
+    BIOMARCADORES_TIPIFICACION = ['CKAE1AE3', 'CK AE1', 'CKAE1/AE3', 'CKAE1E3',
+                                   'S100', 'GATA3', 'TTF', 'PAX8', 'CDX2',
+                                   'P40', 'P53', 'P16', 'P63', 'CK7', 'CK20', 'CK5',
+                                   'CROMOGRANINA', 'SINAPTOFISINA', 'CD56', 'CD10',
+                                   'VIMENTINA', 'ACTINA', 'DESMINA', 'CALRETININA',
+                                   'CAM 5', 'CAM5', 'NAPSIN', 'WT1', 'SOX10', 'MELAN', 'HMB']
+
+    """DOCUMENTACIÓN ORIGINAL:
+
     CORRECCIÓN CRÍTICA v6.0.4:
     Este extractor fue corregido para extraer SOLO biomarcadores de inmunohistoquímica (IHQ).
 
@@ -509,15 +698,24 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
     # -Ki-67: Tinción nuclear en el 60%
     # ═══════════════════════════════════════════════════════════════════════
 
-    # Buscar bloque completo de biomarcadores estructurados
-    patron_bloque_estructurado = r'(?:REPORTE\s+DE\s+BIOMARCADORES?|BIOMARCADORES?)\s*:?\s*\n\n?((?:-[A-ZÁÉÍÓÚÑ\s0-9/\-]+:.*?\n?)+)'
-    match_bloque = re.search(patron_bloque_estructurado, diagnostico_completo, re.IGNORECASE | re.MULTILINE)
+    # ═══════════════════════════════════════════════════════════════════════
+    # V6.0.16 - SOLUCIÓN DOS PASOS (IHQ250984)
+    # PROBLEMA RESUELTO: Biomarcadores divididos entre páginas con texto intermedio
+    # ═══════════════════════════════════════════════════════════════════════
+
+    # PASO 1: Capturar TODO el bloque de biomarcadores (permite texto intermedio)
+    # Usa re.DOTALL para que .+? capture a través de saltos de línea y páginas
+    # V6.0.17: CORREGIDO - "Todos los análisis" termina ANTES de líneas con guión (IHQ250984)
+    # Termina en marcadores claros: "Isquemia fría" (aparece DESPUÉS de biomarcadores), "DIAGNÓSTICO", "FIRMA", "PATOLOGO"
+    patron_bloque_amplio = r'(?:REPORTE\s+DE\s+BIOMARCADORES?|BIOMARCADORES?)\s*:?\s*(.+?)(?=\n\s*Isquemia\s+fría|DIAGN[ÓO]STICO|FIRMA|PATOLOGO|\Z)'
+    match_bloque = re.search(patron_bloque_amplio, diagnostico_completo, re.IGNORECASE | re.DOTALL)
 
     if match_bloque:
         bloque_biomarcadores = match_bloque.group(1)
 
-        # Extraer cada línea con formato "-BIOMARCADOR: Valor"
-        patron_linea_biomarcador = r'-\s*([A-ZÁÉÍÓÚÑ\s0-9/\-]+)\s*:\s*(.+?)(?=\n-|\n\n|$)'
+        # PASO 2: Buscar TODAS las líneas con formato -BIOMARCADOR: Valor DENTRO del bloque
+        # Esto permite que "BLOQUE 1" y descripciones narrativas estén entre biomarcadores
+        patron_linea_biomarcador = r'-\s*([A-ZÁÉÍÓÚÑ\s0-9/\-]+?)\s*:\s*(.+?)(?=\n-|\n\n|$)'
         matches_lineas = re.finditer(patron_linea_biomarcador, bloque_biomarcadores, re.IGNORECASE | re.DOTALL)
 
         biomarcadores_extraidos = []
@@ -528,12 +726,56 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
             # Limpiar valor (quitar saltos de línea, espacios múltiples)
             valor_bio = ' '.join(valor_bio.split())
 
+            # V6.0.18: CORRECCIÓN - NO normalizar nombres, mantener formato completo (IHQ250980)
+            # REGLA 1: Cada biomarcador debe usar nombre completo + intensidad + grado + porcentaje
+            nombre_normalizado = nombre_bio.upper()
+
+            # Normalizar variaciones de escritura pero mantener nombres completos
+            if 'RECEPTOR' in nombre_normalizado and 'ESTROGEN' in nombre_normalizado:
+                nombre_bio = 'RECEPTOR DE ESTRÓGENO'  # Nombre completo estandarizado
+            elif 'RECEPTOR' in nombre_normalizado and 'PROGEST' in nombre_normalizado:
+                nombre_bio = 'RECEPTOR DE PROGESTERONA'  # Nombre completo estandarizado
+            elif 'HER' in nombre_normalizado and ('2' in nombre_normalizado or '-' in nombre_normalizado):
+                nombre_bio = 'HER2'  # OK: Abreviatura estándar aceptada
+            elif 'KI' in nombre_normalizado and '67' in nombre_normalizado:
+                nombre_bio = 'Ki-67'  # OK: Abreviatura estándar aceptada
+
+            # V6.0.15: Extraer información clave del valor (score, porcentaje)
+            # Para HER2: capturar "Positivo (Score 3+)" en lugar de descripción completa
+            if nombre_bio == 'HER2':
+                # Buscar patrón: POSITIVO/NEGATIVO/EQUIVOCO (Score X+)
+                patron_her2 = r'(POSITIVO|NEGATIVO|EQUIVOCO)(?:\s*\((?:Score\s+)?(\d\+?)\))?'
+                match_her2 = re.search(patron_her2, valor_bio, re.IGNORECASE)
+                if match_her2:
+                    estado = match_her2.group(1).upper()
+                    score = match_her2.group(2) if match_her2.group(2) else None
+                    if score:
+                        valor_bio = f"{estado} (Score {score})"
+                    else:
+                        valor_bio = estado
+
+            # Para Ki-67: capturar rango completo (51-60% o valor único 60%)
+            elif nombre_bio == 'Ki-67':
+                patron_ki67 = r'(\d+(?:-\d+)?)\s*%'  # V6.0.18: Captura rangos (IHQ250980)
+                match_ki67 = re.search(patron_ki67, valor_bio)
+                if match_ki67:
+                    valor_bio = f"{match_ki67.group(1)}%"
+
+            # Para Receptores Hormonales: mantener valor completo (intensidad + grado + porcentaje)
+            # V6.0.18: CORRECCIÓN CRÍTICA - NO simplificar (IHQ250980)
+            # Ejemplo: "POSITIVO FUERTE 3+ (80-90%)" debe mantenerse completo
+            elif nombre_bio in ['RECEPTOR DE ESTRÓGENO', 'RECEPTOR DE PROGESTERONA']:
+                # NO simplificar, mantener valor completo del OCR
+                # Solo limpiar espacios múltiples
+                valor_bio = ' '.join(valor_bio.split())
+
             # Agregar a lista (formato: "NOMBRE: Valor")
             biomarcadores_extraidos.append(f"{nombre_bio}: {valor_bio}")
 
-        # Si encontramos biomarcadores estructurados, retornar inmediatamente
+        # V6.0.16: NO retornar inmediatamente, combinar con biomarcadores narrativos
+        # Esto permite capturar tanto estructurados como complementarios
         if biomarcadores_extraidos:
-            return ' / '.join(biomarcadores_extraidos)
+            factor_estructurado = ', '.join(biomarcadores_extraidos)
 
     # ═══════════════════════════════════════════════════════════════════════
     # PRIORIDAD 0.5: BIOMARCADORES ADICIONALES EN DESCRIPCIÓN (V6.0.10)
@@ -605,8 +847,51 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
         if lista_biomarcadores and len(lista_biomarcadores) > 3:
             listas_encontradas.append(f"negativo para {lista_biomarcadores}")
 
-    # Si encontramos listas narrativas, usar esas y retornar inmediatamente
+    # V6.0.16: Combinar biomarcadores estructurados con narrativos (IHQ250984)
+    # PRIMERO verificar si tenemos biomarcadores estructurados (PRIORIDAD 0)
+    if 'factor_estructurado' in locals() and factor_estructurado:
+        # Tenemos biomarcadores estructurados con formato -BIOMARCADOR: Valor
+        # Combinar con narrativos si existen
+        if listas_encontradas:
+            todas_listas = ' / '.join(listas_encontradas)
+            if factores_adicionales:
+                todas_listas += ' / ' + ' / '.join(factores_adicionales)
+            return f"{factor_estructurado} / positivo para: {todas_listas}"
+        elif factores_adicionales:
+            return f"{factor_estructurado} / {' / '.join(factores_adicionales)}"
+        else:
+            return factor_estructurado
+
+    # Si NO hay estructurados pero SÍ hay narrativos, usar esos
     if listas_encontradas:
+        # V6.0.10: Filtrar biomarcadores de tipificación de listas narrativas
+        listas_filtradas = []
+        for lista in listas_encontradas:
+            lista_upper = lista.upper()
+
+            # Verificar si contiene biomarcadores de pronóstico
+            tiene_pronostico = any(bio in lista_upper for bio in BIOMARCADORES_PRONOSTICO)
+
+            # Verificar si contiene biomarcadores de tipificación
+            tiene_tipificacion = any(bio in lista_upper for bio in BIOMARCADORES_TIPIFICACION)
+
+            if tiene_pronostico:
+                # Contiene al menos 1 biomarcador de pronóstico → INCLUIR
+                listas_filtradas.append(lista)
+            elif tiene_tipificacion:
+                # Contiene SOLO biomarcadores de tipificación → EXCLUIR
+                continue
+            else:
+                # No identificado (no contiene biomarcadores conocidos) → EXCLUIR por seguridad
+                continue
+
+        # Si después de filtrar no quedan listas, retornar "NO APLICA"
+        if not listas_filtradas:
+            return "NO APLICA"
+
+        # Actualizar listas_encontradas con las filtradas
+        listas_encontradas = listas_filtradas
+
         # Combinar con " / " y agregar prefijo "positivo para:"
         todas_listas = ' / '.join(listas_encontradas)
 
@@ -712,6 +997,40 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
                 # Limpiar valor (remover saltos de línea innecesarios)
                 valor = re.sub(r'\s+', ' ', valor).strip()
 
+                # ═══════════════════════════════════════════════════════════════════════
+                # V6.0.9: NORMALIZACIÓN OBLIGATORIA - REGLAS DE ORO
+                # Aplicar normalizaciones específicas para cada biomarcador
+                # ═══════════════════════════════════════════════════════════════════════
+
+                # NORMALIZACIÓN Ki-67: Eliminar "Índice de proliferación celular"
+                # Antes: "Índice de proliferación celular (Ki67): 21-30%"
+                # Después: "Ki-67: 21-30%"
+                if nombre_bio == 'Ki-67':
+                    valor = re.sub(r'[ÍI]ndice\s+de\s+proliferaci[óo]n\s+celular\s+\(', '', valor, flags=re.IGNORECASE)
+                    valor = re.sub(r'Ki[\s-]?67', 'Ki-67', valor, flags=re.IGNORECASE)  # Estandarizar formato
+                    valor = valor.replace('(', '').strip()
+                    # Si quedó solo "Ki-67):", limpiar paréntesis extra
+                    valor = re.sub(r'\)+\s*:', ':', valor)
+
+                # NORMALIZACIÓN HER2: Eliminar "- SOBREEXPRESIÓN DE"
+                # Antes: "- SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+)"
+                # Después: "HER2: EQUIVOCO (SCORE 2+)"
+                elif nombre_bio == 'HER2':
+                    valor = re.sub(r'^-?\s*SOBREEXPRESI[ÓO]N\s+DE\s+', '', valor, flags=re.IGNORECASE)
+                    valor = re.sub(r'HER-?2', 'HER2', valor, flags=re.IGNORECASE)  # Estandarizar sin guión
+                    valor = re.sub(r'^HER2', 'HER2', valor, flags=re.IGNORECASE)  # Normalizar mayúsculas
+
+                # NORMALIZACIÓN Receptores: Eliminar guión inicial
+                # Antes: "- RECEPTORES DE ESTRÓGENOS: POSITIVOS (90-100%)"
+                # Después: "Receptores de Estrógenos: POSITIVOS (90-100%)"
+                elif nombre_bio == 'Receptor de Estrógeno':
+                    valor = re.sub(r'^-?\s*', '', valor)  # Eliminar guión inicial
+                    valor = re.sub(r'RECEPTORES\s+DE\s+ESTR[ÓO]GENOS', 'Receptores de Estrógenos', valor, flags=re.IGNORECASE)
+
+                elif nombre_bio == 'Receptor de Progesterona':
+                    valor = re.sub(r'^-?\s*', '', valor)  # Eliminar guión inicial
+                    valor = re.sub(r'RECEPTORES\s+DE\s+PROGESTERONA', 'Receptores de Progesterona', valor, flags=re.IGNORECASE)
+
                 # Agregar a factores si no está duplicado
                 if valor not in factores:
                     factores.append(valor)
@@ -763,26 +1082,26 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
     # V6.0.1: Normalizar términos largos de Ki-67 (AMPLIADO para IHQ250981)
     factor_pronostico_texto = ' / '.join(factores)
 
-    # Normalizar "Índice de proliferación celular (Ki67)" → "Ki-67"
+    # REGLA DE ORO #2: Ki-67 debe normalizarse sin "Índice de proliferación celular"
+    # Normalizar "Índice de proliferación celular (Ki67): 21-30%" → "Ki-67: 21-30%"
+
+    # Patrón regex mejorado para capturar el prefijo completo + valor
+    # Captura: "Índice de proliferación celular (Ki67): 21-30%"
+    # Resultado: "Ki-67: 21-30%"
+    patron_ki67_largo = r'Índice\s+de\s+proliferación\s+celular\s+\((Ki-?67)\)'
+    factor_pronostico_texto = re.sub(patron_ki67_largo, r'\1', factor_pronostico_texto, flags=re.IGNORECASE)
+
+    # Normalizaciones adicionales (mantener para compatibilidad)
     normalizaciones = [
-        ("Índice de proliferación celular (Ki67)", "Ki-67"),
-        ("Índice de proliferación celular (Ki-67)", "Ki-67"),
-        ("índice de proliferación celular (Ki67)", "Ki-67"),
-        ("índice de proliferación celular (Ki-67)", "Ki-67"),
-        ("ÍNDICE DE PROLIFERACIÓN CELULAR (KI67)", "Ki-67"),
-        ("ÍNDICE DE PROLIFERACIÓN CELULAR (KI-67)", "Ki-67"),
-        # V6.0.1: Variantes con múltiples espacios (OCR puede introducir espacios extra)
-        ("Índice  de  proliferación  celular  (Ki67)", "Ki-67"),
-        ("Índice  de  proliferación  celular  (Ki-67)", "Ki-67"),
-        # V6.0.1: Normalizar otras variantes verbosas
-        ("receptor de estrógeno (ER)", "ER"),
-        ("receptor de progesterona (PgR)", "PR"),
-        ("receptor de progesterona (PR)", "PR"),
-        ("Receptor de estrógeno", "ER"),
-        ("Receptor de progesterona", "PR"),
+        # V6.0.20: ELIMINADO - Ya no simplificar "Receptor de estrógeno" → "ER"
+        # REGLA 1: Nombres completos OBLIGATORIOS
+        # ("receptor de estrógeno (ER)", "ER"),  # ❌ ELIMINADO
+        # ("Receptor de estrógeno", "ER"),  # ❌ ELIMINADO
+        # ("receptor de progesterona (PgR)", "PR"),  # ❌ ELIMINADO
+        # ("Receptor de progesterona", "PR"),  # ❌ ELIMINADO
     ]
 
-    # V6.0.1: Aplicar normalizaciones (case-insensitive)
+    # V6.0.1: Aplicar normalizaciones restantes (case-insensitive)
     for original, reemplazo in normalizaciones:
         # Buscar case-insensitive
         factor_pronostico_texto = re.sub(re.escape(original), reemplazo, factor_pronostico_texto, flags=re.IGNORECASE)
@@ -800,7 +1119,211 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
     # V6.0.5: Formato narrativo ya se procesó en PRIORIDAD 1 (arriba)
     # Este bloque duplicado se eliminó para evitar conflictos
 
-    return ' / '.join(factores_limpios)
+    # ═══════════════════════════════════════════════════════════════════════
+    # V6.0.10: REGLA DE ORO #1 - SOLO 4 BIOMARCADORES DE PRONÓSTICO
+    # FACTOR_PRONOSTICO debe contener EXCLUSIVAMENTE:
+    # 1. HER2 (o HER-2)
+    # 2. Ki-67 (o Ki67, KI-67)
+    # 3. Receptor de Estrógenos (ER, Estrogeno, Estrogenos)
+    # 4. Receptor de Progesterona (PR, Progesterona)
+    #
+    # FILTRADO: Elimina biomarcadores de TIPIFICACIÓN (CKAE1AE3, S100, GATA3, etc.)
+    # → Estos van en columnas individuales IHQ_*
+    # ═══════════════════════════════════================================================================
+
+    # Lista de biomarcadores de PRONÓSTICO permitidos
+    BIOMARCADORES_PRONOSTICO = ['HER2', 'HER-2', 'KI-67', 'KI67',
+                                'ESTRÓGENO', 'ESTROGENO', 'ESTRÓGENOS', 'ESTROGENOS',
+                                'RECEPTOR', 'PROGESTERONA']
+
+    # Lista de biomarcadores de TIPIFICACIÓN que NO deben ir en FACTOR_PRONOSTICO
+    BIOMARCADORES_TIPIFICACION = ['CKAE1AE3', 'CK AE1', 'S100', 'GATA3', 'TTF', 'PAX8', 'CDX2',
+                                   'P40', 'P53', 'P16', 'P63', 'CK7', 'CK20', 'CK5',
+                                   'CROMOGRANINA', 'SINAPTOFISINA', 'CD56', 'CD10',
+                                   'VIMENTINA', 'ACTINA', 'DESMINA', 'CALRETININA',
+                                   'NAPSIN', 'WT1', 'SOX10', 'MELAN', 'HMB']
+
+    # Filtrar factores_limpios:
+    # 1. INCLUIR si contiene biomarcadores de pronóstico
+    # 2. EXCLUIR si contiene SOLO biomarcadores de tipificación
+    factores_fp_final = []
+    for factor in factores_limpios:
+        factor_upper = factor.upper()
+
+        # Verificar si contiene biomarcadores de pronóstico
+        tiene_pronostico = any(bio in factor_upper for bio in BIOMARCADORES_PRONOSTICO)
+
+        # Verificar si contiene biomarcadores de tipificación
+        tiene_tipificacion = any(bio in factor_upper for bio in BIOMARCADORES_TIPIFICACION)
+
+        if tiene_pronostico:
+            # Contiene al menos 1 biomarcador de pronóstico → INCLUIR
+            factores_fp_final.append(factor)
+        elif tiene_tipificacion:
+            # Contiene biomarcadores de tipificación sin pronóstico → EXCLUIR
+            continue
+        else:
+            # No identificado (puede ser narrativa genérica sin biomarcadores específicos)
+            # EXCLUIR por seguridad (si no menciona biomarcadores conocidos, probablemente no es FP)
+            continue
+
+    if not factores_fp_final:
+        # Ningún biomarcador extraído o todos eran de tipificación → NO APLICA
+        return "NO APLICA"
+
+    return ' / '.join(factores_fp_final)
+
+
+def parse_biomarkers_from_factor_pronostico(factor_pronostico: str) -> Dict[str, str]:
+    """
+    Parsea biomarcadores individuales desde Factor Pronóstico.
+
+    V6.0.19: REGLA 2 - Sincronizar columnas individuales con fuente de verdad
+    Garantiza que las columnas IHQ_* tengan el mismo nivel de detalle que Factor Pronóstico.
+
+    Args:
+        factor_pronostico: String con formato "NOMBRE: VALOR, NOMBRE: VALOR, ..."
+
+    Returns:
+        Dict con mapeo {'IHQ_NOMBRE': 'VALOR_COMPLETO'}
+
+    Ejemplo:
+        Input: "RECEPTOR DE ESTRÓGENO: POSITIVO FUERTE 3+(80-90%), HER2: NEGATIVO (SCORE 1+)"
+        Output: {
+            'IHQ_RECEPTOR_ESTROGENOS': 'POSITIVO FUERTE 3+(80-90%)',
+            'IHQ_HER2': 'NEGATIVO (SCORE 1+)'
+        }
+    """
+    import re
+    import logging
+
+    logger = logging.getLogger(__name__)
+
+    if not factor_pronostico or factor_pronostico in ['NO APLICA', 'N/A', '']:
+        return {}
+
+    biomarcadores_map = {}
+
+    # Dividir por comas, pero respetar comas dentro de paréntesis
+    # Método manual: iterar carácter por carácter
+    pares = []
+    nivel_parentesis = 0
+    segmento_actual = ""
+
+    for char in factor_pronostico:
+        if char == '(':
+            nivel_parentesis += 1
+            segmento_actual += char
+        elif char == ')':
+            nivel_parentesis -= 1
+            segmento_actual += char
+        elif char == ',' and nivel_parentesis == 0:
+            # Coma fuera de paréntesis = separador de biomarcadores
+            if segmento_actual.strip():
+                pares.append(segmento_actual.strip())
+            segmento_actual = ""
+        else:
+            segmento_actual += char
+
+    # Agregar último segmento
+    if segmento_actual.strip():
+        pares.append(segmento_actual.strip())
+
+    # Procesar cada par NOMBRE: VALOR
+    for par in pares:
+        if ':' not in par:
+            continue
+
+        partes = par.split(':', 1)
+        if len(partes) != 2:
+            continue
+
+        nombre = partes[0].strip()
+        valor = partes[1].strip()
+
+        # Mapear nombre a columna BD
+        nombre_upper = nombre.upper()
+
+        # Mapeo de biomarcadores a columnas BD
+        columna = None
+
+        if 'RECEPTOR' in nombre_upper and 'ESTROGEN' in nombre_upper:
+            columna = 'IHQ_RECEPTOR_ESTROGENOS'
+        elif 'RECEPTOR' in nombre_upper and 'PROGR' in nombre_upper:
+            # Captura: PROGRESTERONA, PROGESTERONA, PROGEST, etc.
+            columna = 'IHQ_RECEPTOR_PROGESTERONA'
+        elif 'HER' in nombre_upper and '2' in nombre_upper:
+            columna = 'IHQ_HER2'
+        elif 'KI' in nombre_upper and '67' in nombre_upper:
+            columna = 'IHQ_KI-67'
+        else:
+            # Biomarcador no estándar de factor pronóstico, omitir
+            logger.debug(f"REGLA 2: Biomarcador '{nombre}' no mapeado, omitiendo")
+            continue
+
+        # Limpiar valor (quitar puntos finales, espacios extras)
+        valor = valor.rstrip('.').strip()
+
+        if valor:
+            biomarcadores_map[columna] = valor
+            logger.debug(f"REGLA 2: Parseado {columna} = '{valor}' desde Factor Pronóstico")
+
+    return biomarcadores_map
+
+
+def build_factor_pronostico_from_columns(combined_data: Dict[str, Any]) -> str:
+    """
+    Construye FACTOR_PRONOSTICO desde columnas individuales si está vacío.
+
+    V6.0.10: SOLUCIÓN FALLBACK para casos donde los biomarcadores se extrajeron
+    a columnas individuales pero FACTOR_PRONOSTICO quedó vacío por problemas
+    de formato en el PDF.
+
+    Args:
+        combined_data: Dict con datos extraídos (incluye columnas IHQ_*)
+
+    Returns:
+        String con FACTOR_PRONOSTICO construido, o cadena vacía si no aplica
+
+    Ejemplo:
+        Input: {
+            'IHQ_HER2': 'POSITIVO (SCORE 3+)',
+            'IHQ_KI-67': '60%',
+            'IHQ_RECEPTOR_ESTROGENOS': 'NEGATIVO',
+            'IHQ_RECEPTOR_PROGESTERONA': 'NEGATIVO'
+        }
+        Output: "HER2: POSITIVO (SCORE 3+), Ki-67: 60%, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO"
+    """
+    import logging
+    logger = logging.getLogger(__name__)
+
+    # Mapeo de columnas BD → Nombre para FACTOR_PRONOSTICO
+    COLUMNAS_FP = {
+        'IHQ_HER2': 'HER2',
+        'IHQ_KI-67': 'Ki-67',
+        'IHQ_RECEPTOR_ESTROGENOS': 'Receptor de Estrógeno',
+        'IHQ_RECEPTOR_PROGESTERONA': 'Receptor de Progesterona'
+    }
+
+    biomarcadores_encontrados = []
+
+    for columna, nombre_fp in COLUMNAS_FP.items():
+        valor = combined_data.get(columna, '').strip()
+        if valor and valor not in ['', 'SIN DATO', 'NO ENCONTRADO']:
+            # Formatear como "NOMBRE: VALOR"
+            biomarcadores_encontrados.append(f"{nombre_fp}: {valor}")
+            logger.debug(f"FALLBACK FP: {nombre_fp} = '{valor}'")
+
+    if not biomarcadores_encontrados:
+        # Ningún biomarcador de pronóstico encontrado
+        logger.debug("FALLBACK FP: No hay biomarcadores de pronóstico en columnas individuales")
+        return "NO APLICA"
+
+    # Construir string final
+    factor_pronostico = ', '.join(biomarcadores_encontrados)
+    logger.info(f"✅ FALLBACK FP: Construido desde {len(biomarcadores_encontrados)} columnas individuales")
+
+    return factor_pronostico
 
 
 def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
@@ -845,11 +1368,24 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
 
     # Patrones ordenados por especificidad (más específico primero)
     patrones_biomarcadores = [
-        # Patrón 0: V6.0.13 - "Se realizó tinción especial para [lista]" (IHQ250984)
+        # Patrón -2: V6.0.12 - "se realiza marcación para [lista]" (IHQ250992)
+        # Captura lista de biomarcadores incluyendo "kappa y lambda" (minúsculas permitidas)
+        # Termina en punto seguido de "por lo que" o similar
+        r'se\s+realiza\s+marcaci[óo]n\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍkappa lambda]+?)(?:\.\s*$|\s+por\s+lo\s+que)',
+
+        # Patrón -1: V6.0.12 - "realizar marcadores para: [lista]" (IHQ250991)
+        # Específico para material extra-institucional con decisión de marcadores
+        r'(?:Previa\s+valoraci[óo]n.*?)?se\s+decide\s+realizar\s+marcadores?\s+para:\s*([A-Z0-9\s,./\-\(\)pPyYóÓúÚáÁéÉíÍ]+?)(?:\.|$)',
+
+        # Patrón 0: V6.0.12 - "coloraciones inmunohistoquímicas con los anticuerpos para [lista]" (IHQ250985)
+        # ESPECÍFICO: Captura formato narrativo en descripción macroscópica
+        r'coloraciones\s+inmunohistoqu[íi]micas\s+con\s+los\s+anticuerpos\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\s+en\s+el\s+Bloque|\.|$)',
+        
+        # Patrón 1: V6.0.13 - "Se realizó tinción especial para [lista]" (IHQ250984)
         # MEJORADO: Captura lista completa incluyendo saltos de línea, termina solo en punto
         r'[Ss]e\s+realiz[óo]\s+tinci[óo]n\s+especial\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.',
 
-        # Patrón 1: "para los siguientes marcadores:" (IHQ250002, IHQ250006)
+        # Patrón 2: "para los siguientes marcadores:" (IHQ250002, IHQ250006)
         r'para\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|\n\s*DESCRIPCI)',
 
         # Patrón 2: "se solicitan los siguiente biomarcadores:" (IHQ250005)
@@ -950,6 +1486,7 @@ def parse_biomarker_list(text: str) -> List[str]:
     - "y": "p16 y p40"
     - "/": "CKAE1/AE3"
     - Espacios múltiples
+    - V6.0.12: Expansión de agrupaciones: "RECEPTORES HORMONALES (RE, RP)" → "RE, RP"
 
     Args:
         text: Texto conteniendo lista de biomarcadores
@@ -963,12 +1500,50 @@ def parse_biomarker_list(text: str) -> List[str]:
     # Limpiar texto
     text = text.strip()
 
+    # V6.0.12: EXPANSIÓN DE AGRUPACIONES - "RECEPTORES HORMONALES (RE, RP)" → "RE, RP"
+    # Esto normaliza listas que tienen biomarcadores agrupados entre paréntesis
+    # Ejemplos:
+    #   "RECEPTORES HORMONALES (RE, RP), Ki-67, HER2" → "RE, RP, Ki-67, HER2"
+    #   "PROTEINAS (MLH1, MSH2), p53" → "MLH1, MSH2, p53"
+    text = re.sub(
+        r'[A-ZÁÉÍÓÚÑ\s]+\(([A-Z0-9\s,\-/]+)\)',  # Captura: PALABRA(contenido)
+        r'\1',  # Reemplaza con solo el contenido de paréntesis
+        text,
+        flags=re.IGNORECASE
+    )
+
     # Eliminar texto explicativo común
     text = re.sub(r'(?:Previa\s+valoraci[óo]n|se\s+realizan?|niveles?\s+histol[óo]gicos?|cortes?\s+histol[óo]gicos?).*?(?=(?:[A-Z]{2,}|$))', '', text, flags=re.IGNORECASE)
 
     # Reemplazar separadores por comas
     # "y" final → ","
     text = re.sub(r'\s+y\s+', ', ', text, flags=re.IGNORECASE)
+
+    # V6.0.12.1: FIX - Separar biomarcadores consecutivos sin coma (ej: "P63 P40" → "P63, P40")
+    # CONVERTIR A MAYÚSCULAS para que los patrones funcionen con texto OCR en minúsculas
+    text_upper = text.upper()
+    
+    # ENFOQUE DUAL: Aplicar ambos patrones para máxima compatibilidad
+    
+    # PATRÓN 1 (ORIGINAL): Biomarcadores cortos con números (más conservador)
+    # Captura: P63 P40, CD3 CD5, BCL2 P16, etc.
+    # NO captura: Ki-67 (tiene guión), RE RP (solo letras)
+    patron_numeros = r'\b([A-Z]{1,2}[0-9]{1,3}(?:-?[A-Z0-9]{1,3})?)\s+([A-Z]{1,2}[0-9]{1,3}(?:-?[A-Z0-9]{1,3})?)\b'
+    text_upper = re.sub(patron_numeros, r'\1, \2', text_upper)
+    
+    # PATRÓN 2 (MEJORADO): Biomarcadores alfanuméricos cortos (letras + números opcionales)
+    # Captura: RE RP, MLH1 MSH2, PAX8 GATA3, etc.
+    # NO captura: biomarcadores con guión en medio (Ki-67, HER-2)
+    patron_alfanum = r'\b([A-Z]{2,6}[0-9]{0,2})\s+([A-Z]{2,6}[0-9]{0,2})\b'
+    for i in range(3):  # Hasta 3 iteraciones para listas largas
+        text_nuevo = re.sub(patron_alfanum, r'\1, \2', text_upper)
+        if text_nuevo == text_upper:  # No hay más cambios
+            break
+        text_upper = text_nuevo
+    
+    # Restaurar a case original mezclando con texto original
+    # Estrategia: usar text_upper para estructura pero preservar case original donde sea posible
+    text = text_upper  # Por ahora usar mayúsculas procesadas
 
     # Dividir por comas
     biomarcadores = [b.strip() for b in text.split(',')]
@@ -2022,6 +2597,10 @@ def extract_ihq_organ_from_diagnosis(diagnostico: str) -> str:
     # Limpiar texto
     text = diagnostico.strip()
 
+    # V4.2.8: Eliminar etiquetas de sección (A., B., C., etc.) al inicio
+    # Ejemplo: "A.Cervix. Lesión." → "Cervix. Lesión."
+    text = re.sub(r'^[A-Z]\.\s*', '', text)
+
     # Estrategia 1: Capturar primera frase antes de punto (puede contener paréntesis)
     # Patrón: captura todo hasta el primer punto, incluyendo paréntesis
     match = re.match(r'^([^.]+(?:\([^)]+\))?[^.]*?)\.', text)
@@ -2134,8 +2713,19 @@ def extract_principal_diagnosis(full_text: str) -> str:
     # ═══════════════════════════════════════════════════════════════════════════
     
     full_text_upper = full_text.upper()
-    
-    # Patrón 1: "HALLAZGOS... COMPATIBLES CON [diagnóstico]"
+
+    # Patrón 1A: "LOS HALLAZGOS... SON COMPATIBLES CON [diagnóstico]" (v6.0.12 - IHQ250992)
+    pattern_los_hallazgos = r'LOS\s+HALLAZGOS\s+(?:MORFOL[ÓO]GICOS?\s+)?(?:Y\s+)?(?:DE\s+)?(?:INMUNOHISTOQU[ÍI]MICA\s+)?(?:SON\s+)?COMPATIBLES?\s+CON\s+([A-ZÁÉÍÓÚÑ\s]{10,200}?)(?:\.||NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO|COMENTARIOS)'
+    match_los_hallazgos = re.search(pattern_los_hallazgos, full_text_upper)
+    if match_los_hallazgos:
+        diag = match_los_hallazgos.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)  # Normalizar espacios
+        # Recortar en punto final o médico
+        diag = re.split(r'(?:\.|\s+(?:NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO|COMENTARIOS))', diag)[0].strip()
+        if len(diag) > 10:  # Mínimo razonable
+            return diag
+
+    # Patrón 1B: "HALLAZGOS... COMPATIBLES CON [diagnóstico]" (patrón original)
     pattern_hallazgos = r'HALLAZGOS\s+(?:HIST[ÓO]L[ÓO]GICOS\s+)?(?:DE\s+)?(?:MORFOLOG[ÍI]A\s+E\s+)?(?:INMUNOHISTOQU[ÍI]MICA\s+)?COMPATIBLES?\s+CON\s+([A-ZÁÉÍÓÚÑ\s]{10,150}?)(?:\.||NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO)'
     match_hallazgos = re.search(pattern_hallazgos, full_text_upper)
     if match_hallazgos:
@@ -2269,25 +2859,35 @@ def extract_principal_diagnosis(full_text: str) -> str:
 
     # V6.0.2: LIMPIEZA FINAL - Eliminar contaminación del estudio M (IHQ250981)
     # El diagnóstico principal NO debe contener grado Nottingham, invasiones, ni score
+    # REGLA DE ORO #4: DIAGNOSTICO_PRINCIPAL debe estar LIMPIO (sin datos estudio M)
     resultado = best['principal']
     if resultado:
-        # Eliminar desde ", INVASIVO" hasta el final (incluye todo: grado, score, etc.)
-        # Patrón: ", INVASIVO GRADO HISTOLOGICO: X (SCORE X/X)"
+        # PATRÓN 1: Eliminar " GRADO HISTOLOGICO:" y todo lo que sigue
+        # Cubre: "CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)"
+        # Resultado: "CARCINOMA MICROPAPILAR, INVASIVO"
+        resultado = re.sub(r'\s+GRADO\s+HISTOL[ÓO]GICO.*$', '', resultado, flags=re.IGNORECASE)
+
+        # PATRÓN 2: Eliminar ", INVASIVO" hasta el final SI contiene GRADO después
+        # Cubre: ", INVASIVO GRADO..."
         resultado = re.sub(r',\s*INVASIVO\s+GRADO\s+HISTOL[ÓO]GICO.*$', '', resultado, flags=re.IGNORECASE)
 
-        # Eliminar desde ", GRADO NOTTINGHAM" hasta el final
-        resultado = re.sub(r',\s*GRADO\s+NOTTINGHAM.*$', '', resultado, flags=re.IGNORECASE)
-        resultado = re.sub(r',\s*NOTTINGHAM\s+GRADO.*$', '', resultado, flags=re.IGNORECASE)
+        # PATRÓN 3: Eliminar desde ", GRADO NOTTINGHAM" hasta el final
+        resultado = re.sub(r',?\s*GRADO\s+NOTTINGHAM.*$', '', resultado, flags=re.IGNORECASE)
+        resultado = re.sub(r',?\s*NOTTINGHAM\s+GRADO.*$', '', resultado, flags=re.IGNORECASE)
 
-        # Eliminar desde ", GRADO X" hasta el final (para casos sin Nottingham)
-        resultado = re.sub(r',\s*GRADO\s+[I1-3].*$', '', resultado, flags=re.IGNORECASE)
+        # PATRÓN 4: Eliminar desde " GRADO [número/romano]" hasta el final
+        # Cubre: " GRADO 1", " GRADO I", " GRADO 2", etc.
+        resultado = re.sub(r'\s+GRADO\s+[I1-3IVX].*$', '', resultado, flags=re.IGNORECASE)
 
-        # Eliminar invasiones en cualquier posición
+        # PATRÓN 5: Eliminar " (SCORE X/X)" en cualquier posición
+        resultado = re.sub(r'\s*\(SCORE\s+\d+[/-]\d+\)', '', resultado, flags=re.IGNORECASE)
+        resultado = re.sub(r'\s*SCORE\s+\d+[/-]\d+', '', resultado, flags=re.IGNORECASE)
+
+        # PATRÓN 6: Eliminar invasiones en cualquier posición
         resultado = re.sub(r',?\s*INVASI[ÓO]N\s+(LINFOVASCULAR|PERINEURAL)[^,]*', '', resultado, flags=re.IGNORECASE)
 
-        # Eliminar score en cualquier posición
-        resultado = re.sub(r',?\s*\(SCORE\s+\d+(/\d+)?\)', '', resultado, flags=re.IGNORECASE)
-        resultado = re.sub(r',?\s*SCORE\s+\d+(/\d+)?[^,]*', '', resultado, flags=re.IGNORECASE)
+        # PATRÓN 7: Eliminar "IN SITU" si está solo al final
+        resultado = re.sub(r',?\s*IN\s+SITU\s*$', '', resultado, flags=re.IGNORECASE)
 
         # Limpiar comas/espacios múltiples resultantes
         resultado = re.sub(r'\s*,\s*,\s*', ', ', resultado)  # Comas duplicadas

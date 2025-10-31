@@ -1045,12 +1045,17 @@ if __name__ == '__main__':
         print(f"Valor default: {valor_default}\n")
 
         try:
-            # Backup de BD primero
-            from herramientas_ia.gestor_base_datos import GestorBaseDatos
-            gestor = GestorBaseDatos()
+            # Backup de BD primero (función nativa sin dependencias)
+            backup_dir = self.project_root / "backups"
+            backup_dir.mkdir(exist_ok=True)
+
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            backup_name = f"antes_migracion_{nueva_columna}_{timestamp}.db"
+            backup_path = backup_dir / backup_name
 
             print("Creando backup de base de datos...")
-            gestor.backup_bd(f"antes_migracion_{nueva_columna}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.db")
+            shutil.copy2(self.db_path, backup_path)
+            print(f"Backup creado: {backup_path}")
 
             # Conectar a BD
             conn = sqlite3.connect(self.db_path)

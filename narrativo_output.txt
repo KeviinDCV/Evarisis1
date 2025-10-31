@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV9GESTOR_ONCOLOGIA\analizar_narrativo.py", line 10, in <module>
-    with open(debug_map_path, 'r', encoding='utf-8') as f:
-         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'data\\debug_maps\\debug_map_IHQ250982_20251023_013556.json'

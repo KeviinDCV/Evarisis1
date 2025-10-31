@@ -4,9 +4,13 @@
 
 Extrae biomarcadores con configuración integrada (antes en config/patterns/biomarker_patterns.py)
 
-Versión: 5.0.0 - CONSOLIDADO
+Versión: 5.0.1 - FIX IHQ250991 (P63, BER-EP4)
 Autor: Sistema HUV Refactorizado
 Nota: Toda la configuración de patrones está ahora en este archivo para centralización
+Cambios v5.0.1:
+  - Corregido split por "/" en extract_narrative_biomarkers
+  - "/" ahora se usa solo para variantes del mismo biomarcador (EBERP4/Ep-CAM)
+  - Mejora captura de P63 y BER-EP4 en listas narrativas
 """
 
 import re
@@ -27,6 +31,9 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['HER-2', 'HER 2', 'CERB-B2', 'ERBB2'],
         'descripcion': 'Receptor 2 del factor de crecimiento epidérmico humano',
         'patrones': [
+            # V6.0.12: PRIORIDAD 0 - Formato narrativo en descripción microscópica (IHQ250985)
+            # Captura completa: "HER2/Neu: NEGATIVO (Score 0)" → captura TODO hasta KI-67 o fin
+            r'(?i)HER\s*-?\s*2\s*/\s*Neu\s*:\s*([^K]+?)(?=\s*KI-67|$)',
             # V6.0.0: PRIORIDAD 1 - DIAGNÓSTICO/Expresión molecular
             r'(?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?:\s*\n|\.)',
             # V5.2: PATRONES MEJORADOS - Capturan TODO (score, intensidad, calificadores)
@@ -58,6 +65,10 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['KI-67', 'KI 67', 'INDICE MITOTICO', 'ÍNDICE MITÓTICO'],
         'descripcion': 'Índice de proliferación celular',
         'patrones': [
+            # V6.0.12: PRIORIDAD 0 - Formato narrativo en descripción microscópica (IHQ250985)
+            # Captura: "KI-67: Tasa de proliferación celuar estimada en el 2%"
+            # Nota: [la]+ acepta "celuar" (typo común) o "celular"
+            r'(?i)K[I1]\s*-?\s*67\s*:\s*Tasa\s+de\s+proliferaci[óo]n\s+celu[la]+r?\s+estimada\s+en\s+el\s+(\d{1,3})\s*%',
             # V6.0.0: PRIORIDAD 1 - Formato DIAGNÓSTICO/Expresión molecular con rangos
             r'(?i)[ÍI]ndice\s+de\s+proliferaci[óo]n\s+c[ée]lular\s*(?:\()?Ki[^\w]*67(?:\))?\s*[:\s]*(\d{1,3}(?:-\d{1,3})?)\s*%',
             # V5.3.1: PRIORIDAD 2 - Capturar RANGOS primero (ej: "51-60%")
@@ -179,6 +190,10 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['P-40', 'P 40'],
         'descripcion': 'Proteína p40',
         'patrones': [
+            # V6.0.12: PRIORIDAD 0 - Formato narrativo "marcación positiva para: p40" (IHQ250991)
+            r'(?i)marcaci[óo]n\s+positiva\s+para[:\s]+.*?[pP][\s-]?40(?:\s|,|\.)',
+            r'(?i)positiv[ao]s?\s+para[:\s]+.*?[pP][\s-]?40(?:\s|,|\.)',
+            r'(?i)negativ[ao]s?\s+para[:\s]+.*?[pP][\s-]?40(?:\s|,|\.)',
             # V6.0.10: Patrones específicos que evitan captura de basura (IHQ250983)
             # PRIORIDAD 1: Estado + modificador
             r'(?i)p[^\w]*40[:\s]+(positiv[oa]\s+(?:heterog[eé]neo|focal|difuso))',
@@ -215,16 +230,19 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['P-53', 'P 53'],
         'descripcion': 'Proteína supresora tumoral p53',
         'patrones': [
+            # V6.0.12: PRIORIDAD 0 - "sobreexpresión de p53" (IHQ250988)
+            r'(?i)sobreexpresi[óo]n\s+de\s+p53',
             # V5.2: Captura "con sobreexpresión", porcentajes, intensidad
-            r'(?i)p53[:\s]*(.+?)(?:\.|$|\n)',
-            r'(?i)p[^\w]*53[:\s]*(.+?)(?:\.|$|\n)',
+            r'(?i)p53[:\s]*([^.]+?)(?:\.|$|\n)',  # Modificado: [^.] evita capturar solo el punto
+            r'(?i)p[^\w]*53[:\s]*([^.]+?)(?:\.|$|\n)',
             # Fallback
             r'(?i)p53[:\s]*(positivo|negativo|\d+%)',
         ],
-        'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE'],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE', 'SOBREEXPRESIÓN'],
         'normalizacion': {
             'positivo': 'POSITIVO',
             'negativo': 'NEGATIVO',
+            'sobreexpresión': 'POSITIVO (SOBREEXPRESIÓN)',  # V6.0.12
         }
     },
 
@@ -232,6 +250,8 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['CDX-2', 'CDX 2'],
         'descripcion': 'Factor de transcripción CDX2',
         'patrones': [
+            # V6.0.15: PRIORIDAD 0 - "sin marcación para CDX2" (IHQ250987)
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*CDX\s*2(?:\s|,|\.)',
             r'(?i)cdx2[:\s]*(positivo|negativo)',
             r'(?i)cdx[^\w]*2[:\s]*(positivo|negativo)',
         ],
@@ -239,6 +259,7 @@ BIOMARKER_DEFINITIONS = {
         'normalizacion': {
             'positivo': 'POSITIVO',
             'negativo': 'NEGATIVO',
+            'sin marcación': 'NEGATIVO',  # V6.0.15
         }
     },
 
@@ -256,6 +277,28 @@ BIOMARKER_DEFINITIONS = {
             'positiva': 'POSITIVO',
             'negativo': 'NEGATIVO',
             'negativa': 'NEGATIVO',
+        }
+    },
+
+    'CK19': {
+        'nombres_alternativos': ['CK-19', 'CK 19', 'CITOKERATINA 19', 'CYTOKERATIN 19'],
+        'descripcion': 'Citoqueratina 19 - Marcador de carcinomas (tiroides, mama)',
+        'patrones': [
+            # V6.0.15: Agregado para IHQ250987 (carcinoma metastásico de tiroides)
+            # PRIORIDAD 0: Listas tipo "positivas para CK7, CK19 y TTF1"
+            r'(?i)positivas?\s+para\s+[^.]*?ck[^\w]*19(?:\s+y|\s*,|\s*\.)',
+            r'(?i)negativas?\s+para\s+[^.]*?ck[^\w]*19(?:\s+y|\s*,|\s*\.)',
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+[^.]*?CK\s*19(?:\s+y|\s*,|\s*\.)',
+            # Patrones simples
+            r'(?i)ck[^\w]*19[:\s]*(positivo|negativo|positiva|negativa)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'positiva': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'negativa': 'NEGATIVO',
+            'sin marcación': 'NEGATIVO',
         }
     },
 
@@ -429,6 +472,67 @@ BIOMARKER_DEFINITIONS = {
         }
     },
 
+    'BER_EP4': {
+        'nombres_alternativos': ['BER-EP4', 'BER EP4', 'BERRP4', 'EBERP4', 'BerEP4', 'Ber-EP4', 'EP-CAM', 'EPCAM', 'Ep-CAM'],
+        'descripcion': 'Antígeno epitelial BER-EP4 / Ep-CAM - Marcador de células epiteliales',
+        'patrones': [
+            r'(?i)(?:EBERP4|BER[\s-]?EP4|Ep[\s-]?CAM)[\s/]*(?:Ep[\s-]?CAM)?[:\s]*(positiv[ao]s?|negativ[ao]s?)',
+            r'(?i)marcaci[óo]n\s+positiva\s+para[:\s]+.*?(?:EBERP4|BER[\s-]?EP4)',
+            r'(?i)positiv[ao]s?\s+para[:\s]+.*?(?:EBERP4|BER[\s-]?EP4)',
+            r'(?i)(?:BER[\s-]?EP4|BERRP4|EBERP4)[:\s]*(positiv[ao]s?|negativ[ao]s?)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'positiva': 'POSITIVO',
+            'positivos': 'POSITIVO',
+            'positivas': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'negativa': 'NEGATIVO',
+        }
+    },
+
+    'BCL2': {
+        'nombres_alternativos': ['BCL-2', 'BCL 2'],
+        'descripcion': 'Proteína anti-apoptótica BCL2',
+        'patrones': [
+            r'(?i)marcaci[óo]n\s+positiva\s+para[:\s]+.*?BCL[\s-]?2',
+            r'(?i)positiv[ao]s?\s+para[:\s]+.*?BCL[\s-]?2',
+            r'(?i)BCL[\s-]?2[:\s]*(positiv[ao]s?|negativ[ao]s?)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'positiva': 'POSITIVO',
+            'positivos': 'POSITIVO',
+            'positivas': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'negativa': 'NEGATIVO',
+        }
+    },
+
+    'P63': {
+        'nombres_alternativos': ['P-63', 'P 63'],
+        'descripcion': 'Proteína p63 - Marcador de células basales/mioepiteliales',
+        'patrones': [
+            # V6.0.12: PRIORIDAD 0 - Formato narrativo "marcación positiva para: p63" (IHQ250991)
+            r'(?i)marcaci[óo]n\s+positiva\s+para[:\s]+.*?[pP][\s-]?63(?:\s|,|\.)',
+            r'(?i)positiv[ao]s?\s+para[:\s]+.*?[pP][\s-]?63(?:\s|,|\.)',
+            r'(?i)negativ[ao]s?\s+para[:\s]+.*?[pP][\s-]?63(?:\s|,|\.)',
+            # V6.0.12: PRIORIDAD 1 - Formato directo "p63: positivo"
+            r'(?i)[pP][\s-]?63[:\s]*(positiv[ao]s?|negativ[ao]s?)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'positiva': 'POSITIVO',
+            'positivos': 'POSITIVO',
+            'positivas': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'negativa': 'NEGATIVO',
+        }
+    },
+
     'CHROMOGRANINA': {
         'nombres_alternativos': ['CHROMOGRANIN', 'CROMOGRANINA', 'CHROMOGRANIN A'],
         'descripcion': 'Cromogranina A',
@@ -544,18 +648,56 @@ BIOMARKER_DEFINITIONS = {
     },
 
     # Marcadores CD
+    'CD2': {
+        'nombres_alternativos': ['CD-2'],
+        'descripcion': 'Cluster de diferenciación 2 (marcador de linfocitos T)',
+        'patrones': [
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*CD\s*2(?:\s|,|\.)',
+            r'(?i)cd[^\w]*2[:\s]*(positivo|negativo)',
+            r'(?i)positivas?\s+para\s+.*?cd\s*2(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?cd\s*2(?:\s|,|$)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'sin marcación': 'NEGATIVO',
+        }
+    },
+
     'CD3': {
         'nombres_alternativos': ['CD-3'],
         'descripcion': 'Cluster de diferenciación 3',
         'patrones': [
-            r'(?i)cd[^\w]*3[:\s]*(positivo|negativo|\d+%?)',
+            # V6.0.12: PRIORIDAD 0 - "sin marcación para CD2, CD3, CD5..." (IHQ250988)
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*CD\s*3(?:\s|,|\.)',
+            # V6.0.13: ELIMINADO \d+%? - CD3 solo POSITIVO/NEGATIVO (no porcentaje)
+            r'(?i)cd[^\w]*3[:\s]*(positivo|negativo)',
             r'(?i)positivas?\s+para\s+.*?cd\s*3(?:\s|,|$)',
             r'(?i)negativas?\s+para\s+.*?cd\s*3(?:\s|,|$)',
         ],
-        'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE'],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'normalizacion': {
             'positivo': 'POSITIVO',
             'negativo': 'NEGATIVO',
+            'sin marcación': 'NEGATIVO',  # V6.0.12
+        }
+    },
+
+    'CD4': {
+        'nombres_alternativos': ['CD-4'],
+        'descripcion': 'Cluster de diferenciación 4 (linfocitos T helper)',
+        'patrones': [
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*CD\s*4(?:\s|,|\.)',
+            r'(?i)cd[^\w]*4[:\s]*(positivo|negativo)',
+            r'(?i)positivas?\s+para\s+.*?cd\s*4(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?cd\s*4(?:\s|,|$)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'sin marcación': 'NEGATIVO',
         }
     },
 
@@ -563,6 +705,9 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['CD-5'],
         'descripcion': 'Cluster de diferenciación 5',
         'patrones': [
+            # V6.0.12: PRIORIDAD 0 - "sin marcación para CD2, CD3, CD5..." (IHQ250988)
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*CD\s*5(?:\s|,|\.)',
+            # Patrones existentes
             r'(?i)cd[^\w]*5[:\s]*(positivo|negativo|\d+%?)',
             r'(?i)positivas?\s+para\s+.*?cd\s*5(?:\s|,|$)',
             r'(?i)negativas?\s+para\s+.*?cd\s*5(?:\s|,|$)',
@@ -571,6 +716,24 @@ BIOMARKER_DEFINITIONS = {
         'normalizacion': {
             'positivo': 'POSITIVO',
             'negativo': 'NEGATIVO',
+            'sin marcación': 'NEGATIVO',  # V6.0.12
+        }
+    },
+
+    'CD8': {
+        'nombres_alternativos': ['CD-8'],
+        'descripcion': 'Cluster de diferenciación 8 (linfocitos T citotóxicos)',
+        'patrones': [
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*CD\s*8(?:\s|,|\.)',
+            r'(?i)cd[^\w]*8[:\s]*(positivo|negativo)',
+            r'(?i)positivas?\s+para\s+.*?cd\s*8(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?cd\s*8(?:\s|,|$)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'sin marcación': 'NEGATIVO',
         }
     },
 
@@ -589,10 +752,33 @@ BIOMARKER_DEFINITIONS = {
         }
     },
 
+    'CD15': {
+        'nombres_alternativos': ['CD-15'],
+        'descripcion': 'Cluster de diferenciación 15 (Linfoma de Hodgkin)',
+        'patrones': [
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*CD\s*15(?:\s|,|\.)',
+            r'(?i)cd[^\w]*15[:\s]*(positivo|negativo)',
+            r'(?i)positivas?\s+para\s+.*?cd\s*15(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?cd\s*15(?:\s|,|$)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'sin marcación': 'NEGATIVO',
+        }
+    },
+
     'CD20': {
         'nombres_alternativos': ['CD-20'],
-        'descripcion': 'Cluster de diferenciación 20',
+        'descripcion': 'Cluster de diferenciación 20 (marcador de células B)',
         'patrones': [
+            # V6.0.13: Formato "CD20+" → POSITIVO (IHQ250989)
+            r'(?i)linfocitos\s+B\s*\(CD\s*20\s*\+\)',
+            r'(?i)cd\s*20\s*\+',
+            # V6.0.12: PRIORIDAD 0 - "sin marcación para CD2, CD3, CD5..." (IHQ250988)
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*CD\s*20(?:\s|,|\.)',
+            # Patrones existentes
             r'(?i)cd[^\w]*20[:\s]*(positivo|negativo|\d+%?)',
             r'(?i)positivas?\s+para\s+.*?cd\s*20(?:\s|,|$)',
             r'(?i)negativas?\s+para\s+.*?cd\s*20(?:\s|,|$)',
@@ -601,6 +787,7 @@ BIOMARKER_DEFINITIONS = {
         'normalizacion': {
             'positivo': 'POSITIVO',
             'negativo': 'NEGATIVO',
+            '+': 'POSITIVO',
         }
     },
 
@@ -638,7 +825,10 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['CD-38'],
         'descripcion': 'Cluster de diferenciación 38',
         'patrones': [
+            # V6.0.12: "expresión de CD38" → POSITIVO (IHQ250992)
+            r'(?i)expresi[óo]n\s+de\s+cd\s*38',
             r'(?i)cd[^\w]*38[:\s]*(positivo|negativo|\d+%?)',
+            r'(?i)cd\s*38\s*\+',  # CD38+
             r'(?i)positivas?\s+para\s+.*?cd\s*38(?:\s|,|$)',
             r'(?i)negativas?\s+para\s+.*?cd\s*38(?:\s|,|$)',
         ],
@@ -646,6 +836,7 @@ BIOMARKER_DEFINITIONS = {
         'normalizacion': {
             'positivo': 'POSITIVO',
             'negativo': 'NEGATIVO',
+            '+': 'POSITIVO',
         }
     },
 
@@ -668,14 +859,17 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['CD-56'],
         'descripcion': 'Cluster de diferenciación 56',
         'patrones': [
+            # V6.0.12: "expresión aberrante para CD56" → POSITIVO ABERRANTE (IHQ250992)
+            r'(?i)expresi[óo]n\s+aberrante\s+para\s+cd\s*56',
             r'(?i)cd[^\w]*56[:\s]*(positivo|negativo|\d+%?)',
             r'(?i)positivas?\s+para\s+.*?cd\s*56(?:\s|,|$)',
             r'(?i)negativas?\s+para\s+.*?cd\s*56(?:\s|,|$)',
         ],
-        'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE'],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE', 'POSITIVO ABERRANTE'],
         'normalizacion': {
             'positivo': 'POSITIVO',
             'negativo': 'NEGATIVO',
+            'aberrante': 'POSITIVO ABERRANTE',
         }
     },
 
@@ -713,24 +907,38 @@ BIOMARKER_DEFINITIONS = {
         'nombres_alternativos': ['CD-117', 'C-KIT'],
         'descripcion': 'Cluster de diferenciación 117 (c-KIT)',
         'patrones': [
+            # V6.0.12: "expresión débil para CD117" → POSITIVO DÉBIL (IHQ250992)
+            r'(?i)expresi[óo]n\s+(d[ée]bil|debil)\s+para\s+cd\s*117',
             r'(?i)cd[^\w]*117[:\s]*(positivo|negativo|\d+%?)',
             r'(?i)c[^\w]*kit[:\s]*(positivo|negativo)',
             r'(?i)positivas?\s+para\s+.*?cd\s*117(?:\s|,|$)',
             r'(?i)negativas?\s+para\s+.*?cd\s*117(?:\s|,|$)',
         ],
-        'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE'],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE', 'POSITIVO DÉBIL'],
         'normalizacion': {
             'positivo': 'POSITIVO',
             'negativo': 'NEGATIVO',
+            'débil': 'POSITIVO DÉBIL',
+            'debil': 'POSITIVO DÉBIL',
         }
     },
 
     'CD138': {
-        'nombres_alternativos': ['CD-138', 'SYNDECAN-1'],
-        'descripcion': 'Cluster de diferenciación 138',
+        'nombres_alternativos': ['CD-138', 'SYNDECAN-1', 'CD38'],
+        'descripcion': 'Cluster de diferenciación 138 (marcador de células plasmáticas)',
         'patrones': [
+            # V6.0.13: Formato "CD38+" o "CD138+" → POSITIVO (IHQ250989)
+            r'(?i)cd\s*38\s*\+',
+            r'(?i)cd\s*138\s*\+',
+            # V6.0.12: "expresión de CD138" → POSITIVO (IHQ250992)
+            r'(?i)expresi[óo]n\s+de\s+cd\s*138',
+            r'(?i)expresi[óo]n\s+de\s+.*?\s+cd\s*138',
+            # Formatos estándar
             r'(?i)cd[^\w]*138[:\s]*(positivo|negativo|\d+%?)',
+            r'(?i)cd[^\w]*38[:\s]*(positivo|negativo|\d+%?)',
             r'(?i)syndecan[^\w]*1[:\s]*(positivo|negativo)',
+            # Formatos narrativos
+            r'(?i)células\s+plasmáticas\s*\(cd\s*38\s*\+\)',
             r'(?i)positivas?\s+para\s+.*?cd\s*138(?:\s|,|$)',
             r'(?i)negativas?\s+para\s+.*?cd\s*138(?:\s|,|$)',
         ],
@@ -738,6 +946,157 @@ BIOMARKER_DEFINITIONS = {
         'normalizacion': {
             'positivo': 'POSITIVO',
             'negativo': 'NEGATIVO',
+            '+': 'POSITIVO',
+        }
+    },
+
+    # V6.0.13: Biomarcadores para linfomas y mielomas (IHQ250989)
+    'BCL6': {
+        'nombres_alternativos': ['BCL-6', 'B-CELL LYMPHOMA 6'],
+        'descripcion': 'B-cell lymphoma 6 (oncogén, linfomas de células B)',
+        'patrones': [
+            # Formato "BCL6 Negativo" o "BCL-6 Positivo"
+            r'(?i)bcl\s*-?\s*6\s+(positivo|negativo)',
+            r'(?i)bcl\s*-?\s*6\s*:\s*(positivo|negativo)',
+            # Formato narrativo
+            r'(?i)positivas?\s+para\s+.*?bcl\s*-?\s*6(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?bcl\s*-?\s*6(?:\s|,|$)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+        }
+    },
+
+    'MUM1': {
+        'nombres_alternativos': ['MUM-1', 'MUM 1', 'IRF4', 'MULTIPLE MYELOMA ONCOGENE 1'],
+        'descripcion': 'Multiple Myeloma Oncogene 1 (marcador de mieloma múltiple)',
+        'patrones': [
+            # Formato "MUM-1 negativo" o "MUM 1 positivo"
+            r'(?i)mum\s*-?\s*1\s+(positivo|negativo)',
+            r'(?i)mum\s*-?\s*1\s*:\s*(positivo|negativo)',
+            # Formato narrativo
+            r'(?i)marcadores?\s+mum\s*-?\s*1\s+(positivo|negativo)',
+            r'(?i)positivas?\s+para\s+.*?mum\s*-?\s*1(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?mum\s*-?\s*1(?:\s|,|$)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+        }
+    },
+
+    # V6.0.12: Cadenas livianas para mieloma múltiple/plasmocitoma (IHQ250992)
+    'KAPPA': {
+        'nombres_alternativos': ['K', 'KAPPA LIGHT CHAIN', 'CADENA LIGERA KAPPA'],
+        'descripcion': 'Cadena ligera Kappa (mieloma múltiple/plasmocitoma)',
+        'patrones': [
+            # V6.0.12: "restricción de cadenas livianas kappa" → POSITIVO (IHQ250992)
+            r'(?i)restricci[óo]n\s+de\s+cadenas?\s+livianas?\s+kappa',
+            # Formato "kappa positivo" o "kappa negativo" (sensible a minúsculas)
+            r'(?i)\bkappa\b\s*:?\s*(positivo|negativo)',
+            # Formato narrativo
+            r'(?i)positivas?\s+para\s+.*?kappa(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?kappa(?:\s|,|$)',
+            # Formato "expresión de kappa"
+            r'(?i)expresi[óo]n\s+de\s+.*?kappa',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO', 'RESTRICCION'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'restricción': 'POSITIVO (RESTRICCIÓN)',
+            'restriccion': 'POSITIVO (RESTRICCIÓN)',
+        }
+    },
+
+    'LAMBDA': {
+        'nombres_alternativos': ['L', 'LAMBDA LIGHT CHAIN', 'CADENA LIGERA LAMBDA'],
+        'descripcion': 'Cadena ligera Lambda (mieloma múltiple/plasmocitoma)',
+        'patrones': [
+            # V6.0.12: "lambda negativo" → NEGATIVO (IHQ250992)
+            r'(?i)\blambda\b\s+(negativo|positivo)',
+            # Formato "lambda: positivo" o "lambda: negativo"
+            r'(?i)\blambda\b\s*:?\s*(positivo|negativo)',
+            # Formato narrativo
+            r'(?i)positivas?\s+para\s+.*?lambda(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?lambda(?:\s|,|$)',
+            # Formato "restricción de cadenas livianas lambda"
+            r'(?i)restricci[óo]n\s+de\s+cadenas?\s+livianas?\s+lambda',
+            # Formato "expresión de lambda"
+            r'(?i)expresi[óo]n\s+de\s+.*?lambda',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO', 'RESTRICCION'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'restricción': 'POSITIVO (RESTRICCIÓN)',
+            'restriccion': 'POSITIVO (RESTRICCIÓN)',
+        }
+    },
+
+    # V6.0.16: Biomarcadores para linfomas (IHQ250988)
+    'LMP1': {
+        'nombres_alternativos': ['LMP-1', 'LMP 1', 'EBV LMP1'],
+        'descripcion': 'Latent Membrane Protein 1 (Virus Epstein-Barr)',
+        'patrones': [
+            # V6.0.16: "No tienen expresión de ALK1 ni de LMP1" (IHQ250988)
+            r'(?i)no\s+tienen?\s+expresi[óo]n\s+de\s+.*?LMP\s*1',
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*LMP\s*1(?:\s|,|\.)',
+            r'(?i)lmp[^\w]*1[:\s]*(positivo|negativo)',
+            r'(?i)positivas?\s+para\s+.*?lmp\s*1(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?lmp\s*1(?:\s|,|$)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'sin marcación': 'NEGATIVO',
+            'no tienen expresión': 'NEGATIVO',
+        }
+    },
+
+    'SALL4': {
+        'nombres_alternativos': ['SALL-4', 'SALL 4'],
+        'descripcion': 'Sal-like protein 4 (marcador células germinales/hematológicas)',
+        'patrones': [
+            # V6.0.16: "sin marcación para... ni SALL4" o "no SALL4" (IHQ250988)
+            r'(?i)\bni\s+SALL\s*4\b',
+            r'(?i)\bno\s+SALL\s*4\b',
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*SALL\s*4(?:\s|,|\.)',
+            r'(?i)sall[^\w]*4[:\s]*(positivo|negativo)',
+            r'(?i)positivas?\s+para\s+.*?sall\s*4(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?sall\s*4(?:\s|,|$)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'sin marcación': 'NEGATIVO',
+            'ni sall4': 'NEGATIVO',
+            'no sall4': 'NEGATIVO',
+        }
+    },
+
+    'ALK1': {
+        'nombres_alternativos': ['ALK-1', 'ALK 1'],
+        'descripcion': 'Anaplastic Lymphoma Kinase 1 (linfoma anaplásico)',
+        'patrones': [
+            # V6.0.16: "No tienen expresión de ALK1" (IHQ250988)
+            r'(?i)no\s+tienen?\s+expresi[óo]n\s+de\s+ALK\s*1',
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*ALK\s*1(?:\s|,|\.)',
+            r'(?i)alk[^\w]*1[:\s]*(positivo|negativo)',
+            r'(?i)positivas?\s+para\s+.*?alk\s*1(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+.*?alk\s*1(?:\s|,|$)',
+        ],
+        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
+        'normalizacion': {
+            'positivo': 'POSITIVO',
+            'negativo': 'NEGATIVO',
+            'sin marcación': 'NEGATIVO',
+            'no tienen expresión': 'NEGATIVO',
         }
     },
 
@@ -1265,6 +1624,47 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
     """
     results = {}
     
+    # V6.0.12.1: FIX - Patrón para "marcación positiva/negativa para: lista, de, biomarcadores" (IHQ250991)
+    # Ej: "Las células tumorales basaloides presentan marcación positiva para: p40, p63, EBERP4/Ep-CAM, BCL2."
+    logging.info("🔍 [V6.0.12.1] Ejecutando extract_narrative_biomarkers con FIX para P63/BER-EP4")
+    marcacion_list_pattern = r'(?i)(?:presentan\s+)?marcaci[óo]n\s+(positiva|negativa)\s+para[:\s]+([^\.]+)'
+    for match in re.finditer(marcacion_list_pattern, text):
+        estado = 'POSITIVO' if 'positiva' in match.group(1).lower() else 'NEGATIVO'
+        lista_biomarkers_raw = match.group(2).strip()
+        
+        logging.info(f"🔍 Lista detectada: '{lista_biomarkers_raw}' → Estado: {estado}")
+        
+        # Limpiar saltos de línea y normalizar espacios
+        lista_biomarkers_raw = re.sub(r'\s*\n\s*', ' ', lista_biomarkers_raw)
+        
+        # V6.0.12.1 FIX: Separar por comas Y "y", pero NO por "/" 
+        # "/" se usa para variantes del MISMO biomarcador (EBERP4/Ep-CAM son el mismo: BER_EP4)
+        biomarcadores_encontrados = re.split(r'[,;]\s*|\s+y\s+', lista_biomarkers_raw)
+        
+        logging.info(f"🔍 Biomarcadores separados: {biomarcadores_encontrados}")
+        
+        for bio_raw in biomarcadores_encontrados:
+            bio_raw = bio_raw.strip().rstrip('.')
+            if not bio_raw:
+                continue
+            
+            # V6.0.12.1: Si contiene "/" (variantes del mismo biomarcador), tomar solo la primera parte
+            # Ej: "EBERP4/Ep-CAM" → "EBERP4", "p63 p40" → "p63 p40" (sin cambios)
+            if '/' in bio_raw:
+                bio_raw_original = bio_raw
+                bio_raw = bio_raw.split('/')[0].strip()
+                logging.info(f"🔍 Split por '/': '{bio_raw_original}' → '{bio_raw}'")
+            
+            # Normalizar nombre del biomarcador
+            normalized_name = normalize_biomarker_name(bio_raw)
+            if normalized_name and normalized_name not in results:
+                results[normalized_name] = estado
+                logging.info(f"✅ [extract_narrative] Extraído: '{bio_raw}' → {normalized_name} = {estado}")
+            elif normalized_name in results:
+                logging.info(f"⚠️ [extract_narrative] YA existe: '{bio_raw}' → {normalized_name}")
+            else:
+                logging.warning(f"❌ [extract_narrative] NO normalizado: '{bio_raw}'")
+    
     # Patrón NUEVO: Biomarcadores complejos tipo "RECEPTOR DE ESTRÓGENOS, positivo focal"
     complex_patterns = [
         # V6.0.13: CORREGIDO - Formato estructurado con guión SIN paréntesis (IHQ250984)
@@ -1299,6 +1699,13 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
         r'(?i)cd45,\s+(positivo|negativo)(?:\s+focal)?',
         r'(?i)cd20,\s+(positivo|negativo)(?:\s+focal)?',
         r'(?i)cd3,\s+(positivo|negativo)(?:\s+focal)?',
+        # V6.0.13: BCL6 y MUM1 (IHQ250989)
+        r'(?i)bcl\s*-?\s*6\s+(positivo|negativo)',
+        r'(?i)marcadores?\s+mum\s*-?\s*1\s+(positivo|negativo)',
+        r'(?i)mum\s*-?\s*1\s+(positivo|negativo)',
+        # V6.0.13: Formato "(CD20+)" o "CD38+" (IHQ250989)
+        r'(?i)linfocitos\s+B\s*\(CD\s*20\s*\+\)',
+        r'(?i)células\s+plasmáticas\s*\(CD\s*(?:38|138)\s*\+\)',
         r'(?i)ckae1/ae3,\s+(positivo|negativo)(?:\s+focal)?',
         r'(?i)sinaptofisina,\s+(positivo|negativo)(?:\s+focal)?',
         # NUEVOS PATRONES PARA CASO 2 - BIOMARCADORES HORMONALES
@@ -1366,6 +1773,16 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
                 biomarker_name = 'CD20'
             elif 'cd3' in pattern.lower():
                 biomarker_name = 'CD3'
+            # V6.0.13: BCL6 y MUM1 (IHQ250989)
+            elif 'bcl' in pattern.lower() and '6' in pattern.lower():
+                biomarker_name = 'BCL6'
+            elif 'mum' in pattern.lower():
+                biomarker_name = 'MUM1'
+            # V6.0.13: CD20+ o CD38+ (IHQ250989)
+            elif 'linfocitos' in pattern.lower() and 'cd' in pattern.lower() and '20' in pattern.lower():
+                biomarker_name = 'CD20'
+            elif 'plasmáticas' in pattern.lower() and 'cd' in pattern.lower():
+                biomarker_name = 'CD138'
             elif 'inmuno' in pattern.lower():
                 # Patrón especial para "inmunomarcación positiva para X y Y"
                 biomarkers_text = match if isinstance(match, str) else match[0] if match else ""
@@ -1387,6 +1804,11 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
             elif biomarker_name == 'SOX10' and isinstance(match, str):
                 # Caso SOX10: "negativas para SOX10" o "negativas para SXO10"
                 results[biomarker_name] = 'NEGATIVO'
+            # V6.0.13: CD20+ y CD138/CD38+ son POSITIVO automáticamente (IHQ250989)
+            elif biomarker_name == 'CD20' and ('linfocitos' in pattern.lower() or '+' in str(match)):
+                results[biomarker_name] = 'POSITIVO'
+            elif biomarker_name == 'CD138' and ('plasmáticas' in pattern.lower() or '+' in str(match)):
+                results[biomarker_name] = 'POSITIVO'
             elif biomarker_name == 'KI67' and isinstance(match, str):
                 # V6.0.13: Caso Ki-67 mejorado para formato "Tinción nuclear en el X%" (IHQ250984)
                 # Si es solo un número (del patrón mejorado), agregar %
@@ -1523,15 +1945,15 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
     
     # Patrón 4: Biomarcadores individuales "X positivo", "Y negativo" - AMPLIADO PARA TODOS LOS BIOMARCADORES
     individual_patterns = [
-        r'(?i)(p16|p40|s100|her2|her-2|ki67|ki-67|ck7|ck20|ttf1|ttf-1|cdx2|ema|gata3|cdk4|mdm2|er|pr|cd3|cd5|cd10|cd20|cd30|cd34|cd38|cd45|cd56|cd61|cd68|cd117|cd138|sox10|vimentina|chromogranina|synaptophysin|melan-a)\s+(positivo|negativo|focal)',
-        r'(?i)(p16|p40|s100|her2|her-2|ki67|ki-67|ck7|ck20|ttf1|ttf-1|cdx2|ema|gata3|cdk4|mdm2|er|pr|cd3|cd5|cd10|cd20|cd30|cd34|cd38|cd45|cd56|cd61|cd68|cd117|cd138|sox10|vimentina|chromogranina|synaptophysin|melan-a)\s*:\s*(positivo|negativo|focal)',
+        r'(?i)(p16|p40|s100|her2|her-2|ki67|ki-67|ck7|lambda|kappa|ck19|ck20|ttf1|ttf-1|cdx2|ema|gata3|cdk4|mdm2|er|pr|cd3|cd5|cd10|cd20|cd30|cd34|cd38|cd45|cd56|cd61|cd68|cd117|cd138|sox10|vimentina|chromogranina|synaptophysin|melan-a)\s+(positivo|negativo|focal)',
+        r'(?i)(p16|p40|s100|her2|her-2|ki67|ki-67|ck7|ck19|ck20|ttf1|ttf-1|cdx2|ema|gata3|cdk4|mdm2|er|pr|cd3|cd5|cd10|cd20|cd30|cd34|cd38|cd45|cd56|cd61|cd68|cd117|cd138|sox10|vimentina|chromogranina|synaptophysin|melan-a)\s*:\s*(positivo|negativo|focal)',
         r'(?i)(pl6)\s+(positivo|negativo|focal)',  # Variante pl6 en lugar de p16
     ]
 
     # Patrón 4B: "El marcador X es positivo/negativo" - CRÍTICO PARA CASO IHQ250009
     single_marker_patterns = [
-        r'(?i)el\s+marcador\s+(p16|p40|s100|her2|her-2|ki67|ki-67|ck7|ck20|ttf1|ttf-1|cdx2|ema|gata3|cdk4|mdm2)\s+es\s+(positivo|negativo|focal)',
-        r'(?i)marcador\s+(p16|p40|s100|her2|her-2|ki67|ki-67|ck7|ck20|ttf1|ttf-1|cdx2|ema|gata3|cdk4|mdm2)\s+es\s+(positivo|negativo|focal)',
+        r'(?i)el\s+marcador\s+(p16|p40|s100|her2|her-2|ki67|ki-67|ck7|lambda|kappa|ck19|ck20|ttf1|ttf-1|cdx2|ema|gata3|cdk4|mdm2)\s+es\s+(positivo|negativo|focal)',
+        r'(?i)marcador\s+(p16|p40|s100|her2|her-2|ki67|ki-67|ck7|ck19|ck20|ttf1|ttf-1|cdx2|ema|gata3|cdk4|mdm2)\s+es\s+(positivo|negativo|focal)',
     ]
     
     # Procesar patrones individuales
@@ -1548,7 +1970,7 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
                 results[normalized_name] = value
     
     # Patrón 5: "X y Y negativos"
-    compound_negative_pattern = r'(?i)((?:p16|p40|s100|her2|her-2|ki67|ki-67|ck7|ck20|ttf1|ttf-1|cdx2|ema|gata3|cdk4|mdm2)(?:\s+y\s+(?:p16|p40|s100|her2|her-2|ki67|ki-67|ck7|ck20|ttf1|ttf-1|cdx2|ema|gata3|cdk4|mdm2))*)\s+negativos'
+    compound_negative_pattern = r'(?i)((?:p16|p40|s100|her2|her-2|ki67|ki-67|ck7|lambda|kappa|ck19|ck20|ttf1|ttf-1|cdx2|ema|gata3|cdk4|mdm2)(?:\s+y\s+(?:p16|p40|s100|her2|her-2|ki67|ki-67|ck7|ck19|ck20|ttf1|ttf-1|cdx2|ema|gata3|cdk4|mdm2))*)\s+negativos'
     
     for match in re.finditer(compound_negative_pattern, text):
         compound = match.group(1)
@@ -1634,8 +2056,17 @@ def normalize_biomarker_name(raw_name: str) -> Optional[str]:
     # Mapeo directo - EXPANDIDO PARA TODOS LOS BIOMARCADORES DETECTADOS
     name_mapping = {
         'CK7': 'CK7',
-        'CK-7': 'CK7', 
+        'CK-7': 'CK7',
         'CK 7': 'CK7',
+        'LAMBDA': 'LAMBDA',  # V6.0.16: Auto-agregado
+        'LAMBDA': 'LAMBDA',
+        'LAMBDA': 'LAMBDA',
+        'KAPPA': 'KAPPA',  # V6.0.16: Auto-agregado
+        'KAPPA': 'KAPPA',
+        'KAPPA': 'KAPPA',
+        'CK19': 'CK19',  # V6.0.16: Agregado para IHQ250987
+        'CK-19': 'CK19',
+        'CK 19': 'CK19',
         'CK20': 'CK20',
         'CK-20': 'CK20',
         'CK 20': 'CK20',
@@ -1676,6 +2107,9 @@ def normalize_biomarker_name(raw_name: str) -> Optional[str]:
         'P16': 'P16',
         'PL6': 'P16',  # pl6 es variante de p16
         'P40': 'P40',
+        'P63': 'P63',
+        'P-63': 'P63',
+        'P 63': 'P63',
         'S100': 'S100',
         'TTF1': 'TTF1',
         'TTF-1': 'TTF1',
@@ -1696,9 +2130,25 @@ def normalize_biomarker_name(raw_name: str) -> Optional[str]:
         'CD68': 'CD68',
         'CD117': 'CD117',
         'CD138': 'CD138',
+        # V6.0.13: BCL6 y MUM1 para linfomas/mielomas (IHQ250989)
+        'BCL6': 'BCL6',
+        'BCL-6': 'BCL6',
+        'BCL 6': 'BCL6',
+        'MUM1': 'MUM1',
+        'MUM-1': 'MUM1',
+        'MUM 1': 'MUM1',
         # Otros biomarcadores
         'VIMENTINA': 'VIMENTINA',
         'VIMENTIN': 'VIMENTINA',
+        'BER-EP4': 'BER_EP4',
+        'BER EP4': 'BER_EP4',
+        'BERRP4': 'BER_EP4',
+        'EBERP4': 'BER_EP4',
+        'EP-CAM': 'BER_EP4',
+        'EPCAM': 'BER_EP4',
+        'BCL2': 'BCL2',
+        'BCL-2': 'BCL2',
+        'BCL 2': 'BCL2',
         'CHROMOGRANINA': 'CHROMOGRANINA',
         'SYNAPTOPHYSIN': 'SYNAPTOPHYSIN',
         'SYNAPTOFISINA': 'SYNAPTOPHYSIN',  # Variante en español
@@ -1897,6 +2347,13 @@ def normalize_biomarker_value(
     # Limpiar el valor
     value_clean = raw_value.strip().upper()
 
+    # V6.0.13: NUEVO - Símbolo "+" al final → POSITIVO (IHQ250989: "CD20+", "CD38+")
+    if value_clean.endswith('+'):
+        return 'POSITIVO'
+    # Símbolo "-" al final → NEGATIVO (raro pero posible)
+    if value_clean.endswith('-') and not any(char.isdigit() for char in value_clean):
+        return 'NEGATIVO'
+
     # V6.0.5: NUEVO - Detectar texto narrativo contaminado y normalizar
     # Ej: "POSITIVAS PARA CKAE1E3, CK7 Y CAM 5.2..." → "POSITIVO"
     if len(value_clean) > 20:  # Si es muy largo, probablemente sea narrativo
@@ -1905,6 +2362,12 @@ def normalize_biomarker_value(
             return 'POSITIVO'
         if re.search(r'NEGATIVAS?\s+PARA', value_clean):
             return 'NEGATIVO'
+        # V6.0.12: NUEVO - "sin marcación para..." → NEGATIVO (IHQ250988)
+        if re.search(r'SIN\s+MARCACI[ÓO]N\s+PARA', value_clean):
+            return 'NEGATIVO'
+        # V6.0.12: NUEVO - "sobreexpresión de..." → POSITIVO (IHQ250988)
+        if re.search(r'SOBREEXPRESI[ÓO]N\s+DE', value_clean):
+            return 'POSITIVO (SOBREEXPRESIÓN)'
         # Si contiene múltiples biomarcadores (comas y "Y"), es narrativo
         if ',' in value_clean and ' Y ' in value_clean:
             # Probablemente sea lista narrativa, marcar como POSITIVO por defecto

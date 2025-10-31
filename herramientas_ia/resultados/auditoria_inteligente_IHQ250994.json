@@ -1,0 +1,97 @@
+{
+  "numero_caso": "IHQ250994",
+  "caso_num": 14,
+  "total_casos": 47,
+  "timestamp": "2025-10-31T16:20:37.419792",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 7,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "TUMOR BIFASICO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA.",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "CARCINOMA DE ENDOMETRIO DE TIPO ENDOMETRIOIDE CON DIFERENCIACIÓN ESCAMOSA"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "3 biomarcadores faltantes en BD; 3 biomarcadores sin mapeo/vacíos; 1 biomarcadores extras en BD",
+      "total_solicitado_ocr": 8,
+      "total_solicitado_bd": 6,
+      "estudios_ocr": [
+        "POR LO QUE SE REVISA MARCACIÓN PARA P16",
+        "P40",
+        "CKAE1AE3",
+        "PAX-8",
+        "ESTROGENO",
+        "PROGESTERONA",
+        "VIMENTINA",
+        "P53"
+      ],
+      "estudios_bd": [
+        "CKAE1AE3",
+        "P16",
+        "P40",
+        "P53",
+        "PAX8",
+        "VIMENTINA"
+      ],
+      "faltantes_en_bd": [
+        "POR LO QUE SE REVISA MARCACIÓN PARA P16",
+        "ESTROGENO",
+        "PROGESTERONA"
+      ],
+      "extras_en_bd": [
+        "P16"
+      ],
+      "mapeados": 5,
+      "no_mapeados": [
+        "POR LO QUE SE REVISA MARCACIÓN PARA P16 (sin columna)",
+        "ESTROGENO (sin columna)",
+        "PROGESTERONA (sin columna)"
+      ],
+      "cobertura": 62.5
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK"
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 80.0,
+    "validaciones_ok": 4,
+    "total_validaciones": 5,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

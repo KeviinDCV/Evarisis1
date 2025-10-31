@@ -37,6 +37,10 @@ class EnhancedDatabaseDashboard:
         self.biomarker_stats = {}
         self.charts = {}
 
+        # v6.0.12: Variables para mensajes dinámicos
+        self.no_data_label = None
+        self.error_label = None
+
         # Configurar estilo de gráficos
         plt.style.use('default')
         sns.set_palette("husl")
@@ -66,7 +70,7 @@ class EnhancedDatabaseDashboard:
 
         ttk.Label(
             title_frame,
-            text="🗄️ Dashboard Avanzado - Base de Datos EVARISIS",
+            text="🗄️ Gestión de la Base de Datos",
             font=("Segoe UI", 18, "bold")
         ).pack(side=LEFT)
 
@@ -78,13 +82,13 @@ class EnhancedDatabaseDashboard:
         self.general_tab = ttk.Frame(self.notebook)
         self.notebook.add(self.general_tab, text="📊 Estadísticas Generales")
 
-        # Pestaña 2: Análisis de Biomarcadores
+        # Pestaña 2: Visualizador de Datos
+        self.visualizar_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.visualizar_tab, text="📊 Visualizador de Datos")
+
+        # Pestaña 3: Análisis de Biomarcadores
         self.biomarker_tab = ttk.Frame(self.notebook)
         self.notebook.add(self.biomarker_tab, text="🧬 Biomarcadores")
-
-        # Pestaña 3: Análisis Temporal
-        self.temporal_tab = ttk.Frame(self.notebook)
-        self.notebook.add(self.temporal_tab, text="📅 Análisis Temporal")
 
         # Pestaña 4: Análisis de Malignidad
         self.malignancy_tab = ttk.Frame(self.notebook)
@@ -100,8 +104,8 @@ class EnhancedDatabaseDashboard:
 
         # Crear contenido de cada pestaña
         self.create_general_stats_tab()
+        self.create_visualizar_tab()
         self.create_biomarker_analysis_tab()
-        self.create_temporal_analysis_tab()
         self.create_malignancy_analysis_tab()
         self.create_import_tab()
         self.create_export_tab()
@@ -177,23 +181,23 @@ class EnhancedDatabaseDashboard:
         self.diagnosis_chart_frame = ttk.Frame(diagnosis_section)
         self.diagnosis_chart_frame.pack(fill=X, pady=10)
 
-        # Sección 3: Top Diagnósticos
-        top_diagnosis_section = ttk.LabelFrame(main_frame, text="🔝 Top 10 Diagnósticos", padding=20)
+        # Sección 3: Top Diagnósticos Principales
+        top_diagnosis_section = ttk.LabelFrame(main_frame, text="🔝 Top 10 Diagnósticos Principales", padding=20)
         top_diagnosis_section.pack(fill=X, padx=20, pady=10)
 
-        # Treeview para top diagnósticos
+        # Treeview para top diagnósticos principales
         self.top_diagnosis_tree = ttk.Treeview(
             top_diagnosis_section,
-            columns=("Diagnóstico", "Frecuencia", "Porcentaje"),
+            columns=("Diagnóstico Principal", "Frecuencia", "Porcentaje"),
             show="headings",
             height=10
         )
 
-        self.top_diagnosis_tree.heading("Diagnóstico", text="Diagnóstico")
+        self.top_diagnosis_tree.heading("Diagnóstico Principal", text="Diagnóstico Principal")
         self.top_diagnosis_tree.heading("Frecuencia", text="Frecuencia")
         self.top_diagnosis_tree.heading("Porcentaje", text="% del Total")
 
-        self.top_diagnosis_tree.column("Diagnóstico", width=400)
+        self.top_diagnosis_tree.column("Diagnóstico Principal", width=400)
         self.top_diagnosis_tree.column("Frecuencia", width=100, anchor="center")
         self.top_diagnosis_tree.column("Porcentaje", width=100, anchor="center")
 
@@ -203,6 +207,44 @@ class EnhancedDatabaseDashboard:
         diagnosis_scrollbar = ttk.Scrollbar(top_diagnosis_section, orient="vertical", command=self.top_diagnosis_tree.yview)
         diagnosis_scrollbar.pack(side="right", fill="y")
         self.top_diagnosis_tree.configure(yscrollcommand=diagnosis_scrollbar.set)
+
+    def create_visualizar_tab(self):
+        """Crear pestaña de visualizador de datos completo
+
+        Esta pestaña contiene un visualizador completo con tabla, búsqueda y exportación.
+        Nota: El contenido real (tabla Sheet) se inyecta desde ui.py después de la inicialización
+        porque necesita acceso a los métodos de la UI principal.
+        """
+        # Frame principal para el visualizador
+        self.visualizar_main_frame = ttk.Frame(self.visualizar_tab)
+        self.visualizar_main_frame.pack(fill=BOTH, expand=True)
+
+        # Título y controles superiores
+        title_frame = ttk.Frame(self.visualizar_main_frame)
+        title_frame.pack(fill=X, padx=10, pady=5)
+
+        ttk.Label(
+            title_frame,
+            text="📊 Visualizador de Datos",
+            font=("Segoe UI", 14, "bold")
+        ).pack(side=LEFT)
+
+        # Mensaje temporal (se reemplazará con controles reales desde ui.py)
+        temp_label = ttk.Label(
+            self.visualizar_main_frame,
+            text="⏳ Inicializando visualizador...\n\nLa tabla de datos se cargará automáticamente.",
+            font=("Segoe UI", 11),
+            justify="center",
+            foreground="#666"
+        )
+        temp_label.pack(expand=True, pady=50)
+
+        # Frame para la tabla (se poblará desde ui.py)
+        self.visualizar_table_container = ttk.Frame(self.visualizar_main_frame)
+        self.visualizar_table_container.pack(fill=BOTH, expand=True, padx=10, pady=10)
+
+        # Marcar que este tab necesita ser poblado
+        self.visualizar_tab_needs_content = True
 
     def create_biomarker_analysis_tab(self):
         """Crear pestaña de análisis profundo de biomarcadores"""
@@ -327,75 +369,6 @@ class EnhancedDatabaseDashboard:
         # Frame para gráfico de distribución RE/RP
         self.er_pr_chart_frame = ttk.Frame(er_pr_distribution_section)
         self.er_pr_chart_frame.pack(fill=X, pady=10)
-
-    def create_temporal_analysis_tab(self):
-        """Crear pestaña de análisis temporal"""
-
-        # Frame scrollable
-        canvas = tk.Canvas(self.temporal_tab)
-        scrollbar = ttk.Scrollbar(self.temporal_tab, orient="vertical", command=canvas.yview)
-        scrollable_frame = ttk.Frame(canvas)
-
-        def configure_scroll_region(event=None):
-            try:
-                # Obtener el tamaño requerido del frame
-                scrollable_frame.update_idletasks()
-                bbox = canvas.bbox("all")
-                if bbox:
-                    canvas.configure(scrollregion=bbox)
-                else:
-                    # Fallback: usar el tamaño del frame scrollable
-                    width = scrollable_frame.winfo_reqwidth()
-                    height = scrollable_frame.winfo_reqheight()
-                    canvas.configure(scrollregion=(0, 0, width, height))
-            except Exception as e:
-                logging.error(f"Error configurando scroll region: {e}")
-
-        scrollable_frame.bind("<Configure>", configure_scroll_region)
-
-        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-        canvas.configure(yscrollcommand=scrollbar.set)
-
-        canvas.pack(side="left", fill="both", expand=True)
-        scrollbar.pack(side="right", fill="y")
-
-        # Contenedor principal
-        main_frame = scrollable_frame
-
-        # Sección 1: Tendencias Temporales
-        trends_section = ttk.LabelFrame(main_frame, text="📈 Tendencias Temporales", padding=20)
-        trends_section.pack(fill=X, padx=20, pady=10)
-
-        # Frame para gráfico de tendencias
-        self.trends_chart_frame = ttk.Frame(trends_section)
-        self.trends_chart_frame.pack(fill=X, pady=10)
-
-        # Sección 2: Distribución por Períodos
-        periods_section = ttk.LabelFrame(main_frame, text="📅 Distribución por Períodos", padding=20)
-        periods_section.pack(fill=X, padx=20, pady=10)
-
-        # Frame para gráfico de períodos
-        self.periods_chart_frame = ttk.Frame(periods_section)
-        self.periods_chart_frame.pack(fill=X, pady=10)
-
-        # Sección 3: Estadísticas por Mes/Año
-        monthly_stats_section = ttk.LabelFrame(main_frame, text="📊 Estadísticas Mensuales", padding=20)
-        monthly_stats_section.pack(fill=X, padx=20, pady=10)
-
-        # Treeview para estadísticas mensuales
-        self.monthly_stats_tree = ttk.Treeview(
-            monthly_stats_section,
-            columns=("Período", "Total Casos", "Con Biomarcadores", "Malignos", "% Malignidad"),
-            show="headings",
-            height=12
-        )
-
-        headers = ["Período", "Total Casos", "Con Biomarcadores", "Malignos", "% Malignidad"]
-        for header in headers:
-            self.monthly_stats_tree.heading(header, text=header)
-            self.monthly_stats_tree.column(header, width=150, anchor="center")
-
-        self.monthly_stats_tree.pack(fill=X, padx=10, pady=10)
 
     def create_malignancy_analysis_tab(self):
         """Crear pestaña de análisis de malignidad"""
@@ -527,8 +500,11 @@ class EnhancedDatabaseDashboard:
         return card
 
     def refresh_all_data(self):
-        """Actualizar todos los datos del dashboard"""
+        """Actualizar todos los datos del dashboard (v6.0.12: con limpieza de mensajes)"""
         try:
+            # v6.0.12: Limpiar mensajes de estado antes de cargar datos
+            self.clear_status_messages()
+
             # Cargar datos de la base de datos
             from core.database_manager import get_all_records_as_dataframe
             self.df = get_all_records_as_dataframe()
@@ -540,11 +516,11 @@ class EnhancedDatabaseDashboard:
             # Actualizar cada pestaña
             self.update_general_stats()
             self.update_biomarker_analysis()
-            self.update_temporal_analysis()
             self.update_malignancy_analysis()
 
         except Exception as e:
             logging.error(f"Error actualizando dashboard: {e}")
+            logging.error(f"Traceback completo: {traceback.format_exc()}")
             self.show_error_message(str(e))
 
     def update_general_stats(self):
@@ -559,23 +535,99 @@ class EnhancedDatabaseDashboard:
         all_biomarker_keywords = ['her2', 'ki67', 'ki-67', 'er', 'pr', 'pdl1', 'p16', 'gata', 's100', 'cd', 'cromogranina', 'sinaptofisina']
         with_biomarkers = self._count_valid_biomarkers(all_biomarker_keywords)
 
-        # Contar casos malignos
+        # Contar casos malignos (v6.0.12: Con validación robusta de tipos + valores correctos)
         malignant_count = 0
         malignidad_cols = [col for col in self.df.columns if 'malign' in col.lower()]
         if malignidad_cols:
-            malignant_count = (self.df[malignidad_cols[0]].str.contains('PRESENTE', case=False, na=False)).sum()
+            try:
+                # Convertir a string antes de usar .str.contains() para evitar errores
+                # v6.0.12: CORREGIDO - Buscar 'MALIGNO' en lugar de 'PRESENTE'
+                malignant_count = (self.df[malignidad_cols[0]].astype(str).str.contains('MALIGNO', case=False, na=False)).sum()
+            except Exception as e:
+                logger.warning(f"Error contando casos malignos: {e}")
+                malignant_count = 0
 
-        # Calcular días de datos
+        # Calcular días de datos (v6.0.12: CORREGIDO - Múltiples intentos con diferentes formatos)
         fecha_cols = [col for col in self.df.columns if 'fecha' in col.lower() and 'nacimiento' not in col.lower()]
         days_of_data = 0
+
         if fecha_cols:
+            logging.info(f"Columnas de fecha encontradas: {fecha_cols}")
+
+            # Intentar con múltiples columnas de fecha (prioridad: toma > ingreso > informe)
+            fecha_priority = [
+                'Fecha de toma (1. Fecha de la toma)',
+                'Fecha de ingreso (2. Fecha de la muestra)',
+                'Fecha Informe',
+                'fecha_toma',
+                'fecha_ingreso',
+                'fecha_informe'
+            ]
+
+            # Buscar primera columna disponible según prioridad
+            fecha_col = None
+            for priority_col in fecha_priority:
+                if priority_col in self.df.columns:
+                    fecha_col = priority_col
+                    logging.info(f"Usando columna de fecha prioritaria: {fecha_col}")
+                    break
+
+            # Si no encuentra columna prioritaria, usar la primera encontrada
+            if not fecha_col:
+                fecha_col = fecha_cols[0]
+                logging.info(f"Usando primera columna de fecha encontrada: {fecha_col}")
+
             try:
-                fechas = pd.to_datetime(self.df[fecha_cols[0]], errors='coerce', format='%d/%m/%Y')
-                fechas_validas = fechas.dropna()
-                if not fechas_validas.empty:
-                    days_of_data = (fechas_validas.max() - fechas_validas.min()).days
-            except:
-                pass
+                # Intentar múltiples formatos de fecha comunes
+                fechas = None
+                formatos = [
+                    '%d/%m/%Y',      # 25/10/2025
+                    '%Y-%m-%d',      # 2025-10-25
+                    '%d-%m-%Y',      # 25-10-2025
+                    '%m/%d/%Y',      # 10/25/2025
+                    'mixed'          # Inferir automáticamente (pandas moderno)
+                ]
+
+                for formato in formatos:
+                    try:
+                        if formato == 'mixed':
+                            # Para pandas moderno: usar format='mixed' o dejar None
+                            try:
+                                fechas = pd.to_datetime(self.df[fecha_col], errors='coerce', format='mixed')
+                            except:
+                                # Fallback para pandas antiguo
+                                fechas = pd.to_datetime(self.df[fecha_col], errors='coerce')
+                        else:
+                            fechas = pd.to_datetime(self.df[fecha_col], errors='coerce', format=formato)
+
+                        fechas_validas = fechas.dropna()
+                        logging.info(f"Formato {formato}: {len(fechas_validas)} fechas válidas de {len(fechas)} totales")
+
+                        if not fechas_validas.empty and len(fechas_validas) > 0:
+                            fecha_min = fechas_validas.min()
+                            fecha_max = fechas_validas.max()
+                            days_of_data = (fecha_max - fecha_min).days
+                            logging.info(f"Rango de fechas: {fecha_min} a {fecha_max} = {days_of_data} días")
+
+                            if days_of_data >= 0:  # Aceptar incluso 0 días si hay fechas válidas
+                                break
+                    except Exception as e:
+                        logging.debug(f"Formato {formato} falló: {e}")
+                        continue
+
+                if days_of_data == 0 and len(fechas_validas) == 0:
+                    logger.warning(f"No se pudieron parsear fechas de columna '{fecha_col}'")
+                    # Intentar mostrar algunas muestras de datos para debugging
+                    muestras = self.df[fecha_col].head(5).tolist()
+                    logger.warning(f"Muestras de datos en '{fecha_col}': {muestras}")
+
+            except Exception as e:
+                logger.error(f"Error calculando días de datos: {e}")
+                import traceback
+                logger.error(f"Traceback: {traceback.format_exc()}")
+                days_of_data = 0
+        else:
+            logging.warning("No se encontraron columnas de fecha en el DataFrame")
 
         # Actualizar cards
         metrics_values = [
@@ -693,42 +745,6 @@ class EnhancedDatabaseDashboard:
 
         return False
 
-    def update_temporal_analysis(self):
-        """Actualizar análisis temporal"""
-        if self.df is None or self.df.empty:
-            return
-
-        # Encontrar columnas de fecha
-        fecha_cols = [col for col in self.df.columns if 'fecha' in col.lower() and 'nacimiento' not in col.lower()]
-
-        if not fecha_cols:
-            return
-
-        try:
-            # Convertir fechas
-            fecha_col = fecha_cols[0]
-            self.df['fecha_parsed'] = pd.to_datetime(self.df[fecha_col], errors='coerce', format='%d/%m/%Y')
-
-            # Filtrar fechas válidas
-            df_with_dates = self.df[self.df['fecha_parsed'].notna()].copy()
-
-            if df_with_dates.empty:
-                return
-
-            # Agregar columnas de período
-            df_with_dates['año_mes'] = df_with_dates['fecha_parsed'].dt.to_period('M')
-            df_with_dates['año'] = df_with_dates['fecha_parsed'].dt.year
-            df_with_dates['mes'] = df_with_dates['fecha_parsed'].dt.month
-
-            # Actualizar gráficos temporales
-            self.update_temporal_charts(df_with_dates)
-
-            # Actualizar tabla de estadísticas mensuales
-            self.update_monthly_stats_table(df_with_dates)
-
-        except Exception as e:
-            logging.error(f"Error en análisis temporal: {e}")
-
     def update_malignancy_analysis(self):
         """Actualizar análisis de malignidad"""
         if self.df is None or self.df.empty:
@@ -742,10 +758,15 @@ class EnhancedDatabaseDashboard:
 
         malignidad_col = malignidad_cols[0]
 
-        # Analizar malignidad
-        malignos = (self.df[malignidad_col].str.contains('PRESENTE', case=False, na=False)).sum()
-        benignos = (self.df[malignidad_col].str.contains('AUSENTE', case=False, na=False)).sum()
-        indeterminados = len(self.df) - malignos - benignos
+        # Analizar malignidad (v6.0.12: Con validación robusta de tipos + valores correctos)
+        try:
+            # v6.0.12: CORREGIDO - Buscar 'MALIGNO'/'BENIGNO' en lugar de 'PRESENTE'/'AUSENTE'
+            malignos = (self.df[malignidad_col].astype(str).str.contains('MALIGNO', case=False, na=False)).sum()
+            benignos = (self.df[malignidad_col].astype(str).str.contains('BENIGNO', case=False, na=False)).sum()
+            indeterminados = len(self.df) - malignos - benignos
+        except Exception as e:
+            logger.warning(f"Error analizando malignidad: {e}")
+            malignos = benignos = indeterminados = 0
 
         porcentaje_malignidad = (malignos / len(self.df) * 100) if len(self.df) > 0 else 0
 
@@ -835,29 +856,48 @@ class EnhancedDatabaseDashboard:
             logging.error(f"Error creando gráfico de diagnósticos: {e}")
 
     def update_top_diagnosis_table(self):
-        """Actualizar tabla de top diagnósticos"""
+        """Actualizar tabla de top diagnósticos principales"""
         try:
             # Limpiar tabla
             for item in self.top_diagnosis_tree.get_children():
                 self.top_diagnosis_tree.delete(item)
 
-            # Encontrar columna de diagnóstico
-            diag_cols = [col for col in self.df.columns if 'diagnostico' in col.lower()]
-            if not diag_cols:
+            # Buscar específicamente la columna "Diagnostico Principal"
+            diag_col = None
+            for col in self.df.columns:
+                if col.lower() == 'diagnostico principal':
+                    diag_col = col
+                    break
+
+            if diag_col is None:
+                logging.warning("No se encontró la columna 'Diagnostico Principal'")
+                # Mostrar mensaje en la tabla
+                self.top_diagnosis_tree.insert(
+                    '', 'end',
+                    values=("No se encontró la columna 'Diagnostico Principal'", "-", "-")
+                )
                 return
 
-            diag_col = diag_cols[0]
+            # Filtrar valores vacíos o N/A
+            df_filtered = self.df[self.df[diag_col].notna() & (self.df[diag_col] != '') & (self.df[diag_col] != 'N/A')]
 
-            # Contar diagnósticos
-            diag_counts = self.df[diag_col].value_counts().head(10)
-            total = len(self.df)
+            if df_filtered.empty:
+                self.top_diagnosis_tree.insert(
+                    '', 'end',
+                    values=("No hay diagnósticos principales registrados", "-", "-")
+                )
+                return
+
+            # Contar diagnósticos principales
+            diag_counts = df_filtered[diag_col].value_counts().head(10)
+            total = len(df_filtered)
 
             # Agregar a la tabla
             for i, (diag, count) in enumerate(diag_counts.items()):
                 percentage = (count / total * 100) if total > 0 else 0
 
-                # Truncar diagnóstico si es muy largo
-                diag_truncated = (diag[:60] + '...') if len(str(diag)) > 60 else str(diag)
+                # Truncar diagnóstico si es muy largo (mostrar más caracteres)
+                diag_truncated = (diag[:80] + '...') if len(str(diag)) > 80 else str(diag)
 
                 self.top_diagnosis_tree.insert(
                     '', 'end',
@@ -865,7 +905,7 @@ class EnhancedDatabaseDashboard:
                 )
 
         except Exception as e:
-            logging.error(f"Error actualizando tabla de diagnósticos: {e}")
+            logging.error(f"Error actualizando tabla de diagnósticos principales: {e}")
 
     def update_biomarker_charts(self):
         """Actualizar gráficos de biomarcadores"""
@@ -1231,107 +1271,6 @@ class EnhancedDatabaseDashboard:
                 foreground="red"
             ).pack(pady=20)
 
-    def update_temporal_charts(self, df_with_dates):
-        """Actualizar gráficos temporales"""
-        try:
-            # Limpiar frames anteriores
-            for widget in self.trends_chart_frame.winfo_children():
-                widget.destroy()
-            for widget in self.periods_chart_frame.winfo_children():
-                widget.destroy()
-
-            # Crear gráfico de tendencias
-            fig1 = Figure(figsize=(12, 6), dpi=100)
-            ax1 = fig1.add_subplot(111)
-
-            # Agrupar por mes
-            monthly_counts = df_with_dates.groupby('año_mes').size()
-
-            # Convertir a fechas para el gráfico
-            dates = [period.start_time for period in monthly_counts.index]
-            counts = monthly_counts.values
-
-            ax1.plot(dates, counts, marker='o', linewidth=2, markersize=6, color='#2196F3')
-            ax1.set_title('Tendencia de Casos por Mes', fontsize=14, fontweight='bold')
-            ax1.set_ylabel('Número de Casos')
-            ax1.grid(True, alpha=0.3)
-
-            # Rotar etiquetas del eje x
-            fig1.autofmt_xdate()
-            fig1.tight_layout()
-
-            # Mostrar gráfico de tendencias
-            canvas1 = FigureCanvasTkAgg(fig1, self.trends_chart_frame)
-            canvas1.draw()
-            canvas1.get_tk_widget().pack(fill=X, expand=True)
-
-            # Crear gráfico de distribución por año
-            fig2 = Figure(figsize=(10, 6), dpi=100)
-            ax2 = fig2.add_subplot(111)
-
-            yearly_counts = df_with_dates.groupby('año').size()
-            years = yearly_counts.index.astype(str)
-            counts = yearly_counts.values
-
-            bars = ax2.bar(years, counts, color='#4CAF50')
-            ax2.set_title('Distribución de Casos por Año', fontsize=14, fontweight='bold')
-            ax2.set_ylabel('Número de Casos')
-
-            # Agregar valores en las barras
-            for bar, count in zip(bars, counts):
-                height = bar.get_height()
-                ax2.text(bar.get_x() + bar.get_width()/2., height + 0.5,
-                       f'{count}', ha='center', va='bottom')
-
-            fig2.tight_layout()
-
-            # Mostrar gráfico de períodos
-            canvas2 = FigureCanvasTkAgg(fig2, self.periods_chart_frame)
-            canvas2.draw()
-            canvas2.get_tk_widget().pack(fill=X, expand=True)
-
-        except Exception as e:
-            logging.error(f"Error creando gráficos temporales: {e}")
-
-    def update_monthly_stats_table(self, df_with_dates):
-        """Actualizar tabla de estadísticas mensuales"""
-        try:
-            # Limpiar tabla
-            for item in self.monthly_stats_tree.get_children():
-                self.monthly_stats_tree.delete(item)
-
-            # Agrupar por mes y calcular estadísticas
-            grouped = df_with_dates.groupby('año_mes')
-
-            # Encontrar columnas relevantes
-            biomarker_cols = [col for col in df_with_dates.columns if any(bio in col.lower() for bio in ['her2', 'ki67', 'er', 'pr'])]
-            malignidad_cols = [col for col in df_with_dates.columns if 'malign' in col.lower()]
-
-            for period, group in grouped:
-                total_casos = len(group)
-
-                # Contar casos con biomarcadores
-                con_biomarcadores = 0
-                if biomarker_cols:
-                    con_biomarcadores = group[biomarker_cols].notna().any(axis=1).sum()
-
-                # Contar casos malignos
-                malignos = 0
-                if malignidad_cols:
-                    malignos = group[malignidad_cols[0]].str.contains('PRESENTE', case=False, na=False).sum()
-
-                # Calcular porcentaje de malignidad
-                porcentaje_malignidad = (malignos / total_casos * 100) if total_casos > 0 else 0
-
-                # Agregar a la tabla
-                self.monthly_stats_tree.insert(
-                    '', 'end',
-                    values=(str(period), total_casos, con_biomarcadores, malignos, f"{porcentaje_malignidad:.1f}%")
-                )
-
-        except Exception as e:
-            logging.error(f"Error actualizando tabla de estadísticas mensuales: {e}")
-
     def update_malignancy_charts(self):
         """Actualizar gráficos de malignidad"""
         try:
@@ -1350,9 +1289,10 @@ class EnhancedDatabaseDashboard:
             fig = Figure(figsize=(12, 6), dpi=100)
             ax = fig.add_subplot(111)
 
-            # Contar tipos de malignidad
-            malignos = (self.df[malignidad_col].str.contains('PRESENTE', case=False, na=False)).sum()
-            benignos = (self.df[malignidad_col].str.contains('AUSENTE', case=False, na=False)).sum()
+            # Contar tipos de malignidad (v6.0.12: CORREGIDO - valores correctos + validación robusta)
+            # v6.0.12: CORREGIDO - Buscar 'MALIGNO'/'BENIGNO' en lugar de 'PRESENTE'/'AUSENTE'
+            malignos = (self.df[malignidad_col].astype(str).str.contains('MALIGNO', case=False, na=False)).sum()
+            benignos = (self.df[malignidad_col].astype(str).str.contains('BENIGNO', case=False, na=False)).sum()
             indeterminados = len(self.df) - malignos - benignos
 
             # Crear gráfico de pie
@@ -1394,9 +1334,10 @@ class EnhancedDatabaseDashboard:
 
             malignidad_col = malignidad_cols[0]
 
-            # Crear máscaras para malignidad
-            malignos_mask = self.df[malignidad_col].str.contains('PRESENTE', case=False, na=False)
-            benignos_mask = self.df[malignidad_col].str.contains('AUSENTE', case=False, na=False)
+            # Crear máscaras para malignidad (v6.0.12: CORREGIDO - valores correctos + validación robusta)
+            # v6.0.12: CORREGIDO - Buscar 'MALIGNO'/'BENIGNO' en lugar de 'PRESENTE'/'AUSENTE'
+            malignos_mask = self.df[malignidad_col].astype(str).str.contains('MALIGNO', case=False, na=False)
+            benignos_mask = self.df[malignidad_col].astype(str).str.contains('BENIGNO', case=False, na=False)
 
             # Analizar cada biomarcador
             for col in biomarker_cols:
@@ -1424,22 +1365,46 @@ class EnhancedDatabaseDashboard:
             logging.error(f"Error actualizando tabla de correlación malignidad-biomarcadores: {e}")
 
     def show_no_data_message(self):
-        """Mostrar mensaje cuando no hay datos"""
-        ttk.Label(
+        """Mostrar mensaje cuando no hay datos (v6.0.12: con limpieza automática)"""
+        # Eliminar mensaje anterior si existe
+        self.clear_status_messages()
+
+        self.no_data_label = ttk.Label(
             self.parent_frame,
             text="No hay datos disponibles en la base de datos",
             font=("Segoe UI", 14),
             foreground="gray"
-        ).pack(expand=True)
+        )
+        self.no_data_label.pack(expand=True)
 
     def show_error_message(self, error):
-        """Mostrar mensaje de error"""
-        ttk.Label(
+        """Mostrar mensaje de error (v6.0.12: con limpieza automática)"""
+        # Eliminar mensaje anterior si existe
+        self.clear_status_messages()
+
+        self.error_label = ttk.Label(
             self.parent_frame,
             text=f"Error cargando datos: {error}",
             font=("Segoe UI", 12),
             foreground="red"
-        ).pack(expand=True)
+        )
+        self.error_label.pack(expand=True)
+
+    def clear_status_messages(self):
+        """Eliminar mensajes de estado (v6.0.12: nueva función)"""
+        if self.no_data_label is not None:
+            try:
+                self.no_data_label.destroy()
+                self.no_data_label = None
+            except:
+                pass
+
+        if self.error_label is not None:
+            try:
+                self.error_label.destroy()
+                self.error_label = None
+            except:
+                pass
 
     def create_import_tab(self):
         """Crear pestaña de importación de datos"""
@@ -1534,16 +1499,16 @@ class EnhancedDatabaseDashboard:
             bootstyle="success"
         ).grid(row=0, column=1, sticky="ew", padx=(10, 0))
 
-        # Información de progreso
-        self.progress_section = ttk.LabelFrame(button_container, text="📊 Estado del Procesamiento", padding=20)
-        self.progress_section.grid(row=3, column=0, pady=20, padx=50, sticky="ew")
-
-        self.progress_label = ttk.Label(
-            self.progress_section,
-            text="Listo para procesar archivos",
-            font=("Segoe UI", 10)
-        )
-        self.progress_label.pack()
+        # v6.0.12: ELIMINADO - Sección "Estado del Procesamiento" (innecesaria, redundante con logs)
+        # self.progress_section = ttk.LabelFrame(button_container, text="📊 Estado del Procesamiento", padding=20)
+        # self.progress_section.grid(row=3, column=0, pady=20, padx=50, sticky="ew")
+        #
+        # self.progress_label = ttk.Label(
+        #     self.progress_section,
+        #     text="Listo para procesar archivos",
+        #     font=("Segoe UI", 10)
+        # )
+        # self.progress_label.pack()
 
         # Nota: No llamamos a refresh_files_list() aquí porque se llamará
         # después de que la UI principal conecte los métodos en _connect_import_functionality()

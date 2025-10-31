@@ -43,7 +43,7 @@ TEAM_INFO = {
         "nombre": "Ing. Diego Peña",
         "cargo": "Jefe de Gestión de la Información",
         "departamento": "Gestión de la Información",
-        "correo": "gestiondelainformacion@correohuv.gov.co"
+        "correo": "gestiondeinformacion@correohuv.gov.co"
     }
 }
 

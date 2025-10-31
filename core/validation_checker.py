@@ -4,8 +4,8 @@
 Sistema de Verificación de Completitud de Registros
 Verifica si los registros importados tienen todos los campos requeridos
 
-Versión: 1.0.2 - Fix stdout closed issue
-Fecha: 19 de octubre de 2025
+Versión: 1.0.3 - Agregado BER_EP4 al validador (FIX IHQ250991)
+Fecha: 27 de octubre de 2025
 Autor: Sistema EVARISIS
 """
 
@@ -129,6 +129,15 @@ MAPEO_BIOMARCADORES = {
     'CK7': 'IHQ_CK7',
     'IHQ_CK7': 'IHQ_CK7',
 
+    'LAMBDA': 'IHQ_LAMBDA',  # V6.0.16: Auto-agregado
+    'IHQ_LAMBDA': 'IHQ_LAMBDA',
+
+    'KAPPA': 'IHQ_KAPPA',  # V6.0.16: Auto-agregado
+    'IHQ_KAPPA': 'IHQ_KAPPA',
+
+    'CK19': 'IHQ_CK19',  # V6.0.16: Agregado para IHQ250987
+    'IHQ_CK19': 'IHQ_CK19',
+
     'CK20': 'IHQ_CK20',
     'IHQ_CK20': 'IHQ_CK20',
 
@@ -166,6 +175,8 @@ MAPEO_BIOMARCADORES = {
     'MELAN-A': 'IHQ_MELAN_A',
     'IHQ_MELAN_A': 'IHQ_MELAN_A',
 
+    'CD2': 'IHQ_CD2',
+    'IHQ_CD2': 'IHQ_CD2',
     'CD3': 'IHQ_CD3',
     'IHQ_CD3': 'IHQ_CD3',
     'CD5': 'IHQ_CD5',
@@ -290,7 +301,35 @@ MAPEO_BIOMARCADORES = {
     'IHQ_BCL2': 'IHQ_BCL2',
     'BCL6': 'IHQ_BCL6',
     'BCL-6': 'IHQ_BCL6',
+    'BCL 6': 'IHQ_BCL6',
     'IHQ_BCL6': 'IHQ_BCL6',
+    
+    # V6.0.12.1: BER-EP4 / Ep-CAM (marcador epitelial - FIX IHQ250991)
+    'BER_EP4': 'IHQ_BER_EP4',
+    'BER-EP4': 'IHQ_BER_EP4',
+    'BEREP4': 'IHQ_BER_EP4',
+    'BER EP4': 'IHQ_BER_EP4',
+    'BERRP4': 'IHQ_BER_EP4',  # Typo común en OCR
+    'EBERP4': 'IHQ_BER_EP4',  # Variante con E
+    'EP-CAM': 'IHQ_BER_EP4',  # Sinónimo
+    'EPCAM': 'IHQ_BER_EP4',
+    'EP CAM': 'IHQ_BER_EP4',
+    'IHQ_BER_EP4': 'IHQ_BER_EP4',
+    
+    # V6.0.13: MUM1 (marcador importante en linfomas)
+    'MUM1': 'IHQ_MUM1',
+    'MUM-1': 'IHQ_MUM1',
+    'MUM 1': 'IHQ_MUM1',
+    'IRF4': 'IHQ_MUM1',  # Sinónimo
+    'IHQ_MUM1': 'IHQ_MUM1',
+    
+    # V6.0.13: CD15 y CD79A (marcadores linfocíticos)
+    'CD15': 'IHQ_CD15',
+    'IHQ_CD15': 'IHQ_CD15',
+    'CD79A': 'IHQ_CD79A',
+    'CD79 A': 'IHQ_CD79A',
+    'IHQ_CD79A': 'IHQ_CD79A',
+    
     'CD23': 'IHQ_CD23',
     'IHQ_CD23': 'IHQ_CD23',
     'CD4': 'IHQ_CD4',
@@ -316,6 +355,16 @@ MAPEO_BIOMARCADORES = {
     'IHQ_CITOMEGALOVIRUS': 'IHQ_CITOMEGALOVIRUS',
     'SV40': 'IHQ_SV40',
     'IHQ_SV40': 'IHQ_SV40',
+
+    # V6.0.16: Biomarcadores para linfomas (IHQ250988)
+    'SALL4': 'IHQ_SALL4',
+    'SALL 4': 'IHQ_SALL4',
+    'SALL-4': 'IHQ_SALL4',
+    'IHQ_SALL4': 'IHQ_SALL4',
+    'ALK1': 'IHQ_ALK1',
+    'ALK 1': 'IHQ_ALK1',
+    'ALK-1': 'IHQ_ALK1',
+    'IHQ_ALK1': 'IHQ_ALK1',
 
     # Marcadores epiteliales y glandulares
     'CEA': 'IHQ_CEA',
