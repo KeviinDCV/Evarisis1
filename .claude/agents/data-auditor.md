@@ -1,76 +1,26 @@
 ---
 name: data-auditor
-description: Valida y CORRIGE automáticamente datos médicos oncológicos con AUDITORÍA SEMÁNTICA INTELIGENTE + CORRECCIÓN ITERATIVA + GESTIÓN AUTOMÁTICA BIOMARCADORES. **ORIGEN DE DATOS: SOLO debug_maps** (NUNCA consulta BD directamente). FUNC-01 audita, FUNC-02 corrige, FUNC-03 agrega biomarcadores, FUNC-05 workflow completitud automática. Usa cuando usuario mencione 'auditar', 'validar', 'verificar', 'corregir', 'agregar biomarcador'. **PROHIBIDO: Consultas BD, OCR en tiempo real, lectura directa PDFs.**
+description: Valida datos médicos oncológicos y gestiona biomarcadores con AUDITORÍA SEMÁNTICA INTELIGENTE + GESTIÓN AUTOMÁTICA BIOMARCADORES. **ORIGEN DE DATOS: SOLO debug_maps** (NUNCA consulta BD directamente). FUNC-01 audita, FUNC-03 agrega biomarcadores, FUNC-05 workflow completitud automática. **FUNC-02 (corrección automática) NO implementada - en ROADMAP**. Usa cuando usuario mencione 'auditar', 'validar', 'verificar', 'agregar biomarcador'. **PROHIBIDO: Consultas BD, OCR en tiempo real, lectura directa PDFs.**
 tools: Bash, Read
 color: red
 ---
 
-# 🔍 Data Auditor Agent - AUDITORÍA INTELIGENTE + CORRECCIÓN AUTOMÁTICA
+# 🔍 Data Auditor Agent - API y Capacidades
 
-**Versión:** 3.3.0 - FUNC-03 + FUNC-05: GESTIÓN AUTOMÁTICA BIOMARCADORES
-**Fecha:** 30 de octubre de 2025
-**Herramientas:**
-- `auditor_sistema.py` v3.3.0 (FUNC-01 + FUNC-02 + FUNC-03 + FUNC-05) - Gestión automática biomarcadores
-- `medical_extractor.py` v4.2.4 - Filtrado estricto + FALLBACK desde columnas
-- `unified_extractor.py` v4.2.6 - Integración FALLBACK automático
+**Este archivo define la API del agente data-auditor.**
 
-**🆕 MEJORAS v3.3.0:**
-- ✅ **FUNC-03 IMPLEMENTADA:** `agregar_biomarcador()` modifica automáticamente 6 archivos
-- ✅ **FUNC-05 IMPLEMENTADA:** `corregir_completitud_automatica()` workflow inteligente completo
-- ✅ **Modificación automática:** Detecta biomarcadores "NO MAPEADO" → agrega al sistema completo
-- ✅ **6 archivos sincronizados:** database_manager, auditor_sistema, ui, validation_checker, biomarker_extractor, unified_extractor
-- ✅ **Generación de variantes:** Crea automáticamente alias de biomarcadores (CK19 → CK-19, CK 19)
-- ✅ **Reportes detallados:** Trazabilidad completa de modificaciones en cada archivo
-- 🔧 **Workflow end-to-end:** Desde reporte de completitud → detección → corrección → validación
-- 📚 **Documentación completa:** Ejemplos de uso, estados, parámetros, flujos
+**Para versiones e historial:** Ver `documentacion/CHANGELOG_CLAUDE.md`
 
-**MEJORAS v3.2.1:**
-- 🧹 **LIMPIEZA DIAGNOSTICO_PRINCIPAL:** Nueva función `_limpiar_diagnostico_principal()` remueve metadatos
-- ✅ **EXTRACCIÓN PRECISA:** Extrae SOLO el diagnóstico sin órgano, tipo de muestra, tipo de estudio
-- 🎯 **FRASES INTRODUCTORIAS:** Remueve "LOS HALLAZGOS MORFOLÓGICOS Y DE... SON COMPATIBLES CON"
-- ✅ **VALIDADO:** IHQ250992 extrae "NEOPLASIA DE CÉLULAS PLASMÁTICAS CON RESTRICCIÓN..." (correcto)
-- 📚 **DOCUMENTACIÓN:** Agregada sección completa sobre lógica de DIAGNOSTICO_PRINCIPAL y DIAGNOSTICO_COLORACION
+**Herramientas principales:**
+- `auditor_sistema.py` - Auditoría + Gestión biomarcadores
+- `medical_extractor.py` - Extracción médica
+- `unified_extractor.py` - Extractor unificado
 
-**MEJORAS v3.2.0:**
-- 📚 **DOCUMENTACIÓN COMPLETA:** Workflow detallado para agregar biomarcadores nuevos
-- ⚠️ **REGLA DE ORO SUPREMA:** Prohibición EXPLÍCITA de modificar BD directamente
-- ✅ **CHECKLIST 5 PASOS:** database_manager.py → auditor_sistema.py → ui.py → enhanced_export_system.py → (opcional) enhanced_database_dashboard.py
-- 🔍 **DETECCIÓN AUTOMÁTICA:** Cómo identificar biomarcadores no mapeados desde debug_map
-- ⚡ **WORKFLOW EJEMPLO:** Caso completo CD38 (desde detección hasta validación)
-- 📋 **UBICACIONES EXACTAS:** Líneas, funciones y secciones específicas en cada archivo
-
-**MEJORAS v3.1.5:**
-- 📝 **LOGGING MEJORADO:** _obtener_debug_map() ahora muestra ruta completa y estado de búsqueda
-- ✅ **Mensajes claros:** Emojis visuales (🔍, ✅, ❌, 📁) para mejor legibilidad
-- ✅ **Validación estructura:** Verifica que debug_map tenga OCR + BD antes de continuar
-- 🔍 **Diagnóstico mejorado:** Muestra directorio de búsqueda cuando falla
-- 📁 **Transparencia total:** Reporta patrón de búsqueda y archivo encontrado
-
-**MEJORAS v3.1.4:**
-- ✅ **FALLBACK AUTOMÁTICO:** Si FACTOR_PRONOSTICO vacío → construye desde IHQ_HER2, IHQ_KI-67, IHQ_RECEPTOR_ESTROGENOS, IHQ_RECEPTOR_PROGESTERONA
-- ✅ **Soluciona formatos PDF no estándar:** Casos donde biomarcadores están fuera del bloque estándar (ej. IHQ250984)
-- ✅ **Función nueva:** `build_factor_pronostico_from_columns()` en medical_extractor
-- ✅ **Integración automática:** unified_extractor ejecuta fallback post-extracción (líneas 577-595)
-- ✅ **Validación mejorada:** Detecta cuando FP se construye via FALLBACK vs extracción directa
-
-**MEJORAS v3.1.3:**
-- ✅ **FIX CRÍTICO - Validación biomarcadores:** Búsqueda flexible con sufijos (_ESTADO, _PORCENTAJE)
-- ✅ **FIX CRÍTICO - FACTOR_PRONOSTICO:** Filtrado ESTRICTO de solo 4 biomarcadores de pronóstico
-- ✅ **Filosofía corregida:** Si NO hay HER2/Ki-67/Estrógenos/Progesterona → "NO APLICA" (no "poner lo que haya")
-- ✅ **Elimina tipificación de FP:** CKAE1AE3, S100, GATA3, TTF-1 → van SOLO en columnas IHQ_*
-- ✅ **Soluciona falsos negativos:** P40 → IHQ_P40_ESTADO ahora se detecta correctamente
-
-**MEJORAS v3.1.2:**
-- ✅ **Normalización automática en extractor:** Ki-67, HER2 y Receptores se normalizan DURANTE la extracción
-- ✅ **Regla #2 IMPLEMENTADA:** Ki-67 sin "Índice de proliferación celular" (automático)
-- ✅ **HER2 estandarizado:** Elimina "SOBREEXPRESIÓN DE", formato "HER2" (sin guión)
-- ✅ **Receptores limpios:** Sin guiones iniciales, formato estándar "Receptores de..."
-
-**🔄 MEJORAS v3.1.1:**
-- ✅ **Validación DIAGNOSTICO_COLORACION robusta:** 3 estrategias de búsqueda (exacta, componentes, patrón)
-- ✅ **Normalización avanzada:** Elimina falsos positivos por formato (uppercase, espacios, comillas)
-- ✅ **Regla #1 clarificada:** FACTOR_PRONOSTICO SOLO 4 biomarcadores principales (NO E-Cadherina, NO P53, etc.)
-- ✅ **Documentación mejorada:** Destino correcto para biomarcadores adicionales (columnas IHQ_*)
+**Funcionalidades:**
+- ✅ **FUNC-01:** Auditoría Inteligente (validación semántica completa)
+- 🚧 **FUNC-02:** Corrección Automática (ROADMAP - no implementada)
+- ✅ **FUNC-03:** Agregar biomarcador automáticamente (6 archivos)
+- ✅ **FUNC-05:** Workflow completitud automática (detección + corrección)
 
 ---
 
@@ -689,11 +639,16 @@ python herramientas_ia/auditor_sistema.py IHQ250980 --inteligente
 
 ---
 
-### FUNC-02: CORRECCIÓN AUTOMÁTICA ITERATIVA
+### FUNC-02: CORRECCIÓN AUTOMÁTICA ITERATIVA [🚧 ROADMAP]
 
+**⚠️ ESTADO:** **NO IMPLEMENTADA** en `auditor_sistema.py v3.1.1`
+
+Esta funcionalidad está documentada pero **NO existe en el código actual**. Está planificada para versiones futuras.
+
+**Objetivo (Cuando se implemente):**
 Corrige errores detectados por FUNC-01 mediante virtualización, validación y reprocesamiento.
 
-**Comando:**
+**Comando Planificado:**
 ```bash
 # Interactivo (pregunta antes de aplicar)
 python herramientas_ia/auditor_sistema.py IHQ250980 --corregir
@@ -703,64 +658,26 @@ python herramientas_ia/auditor_sistema.py IHQ250980 --corregir --auto-aprobar
 
 # Con límite de iteraciones
 python herramientas_ia/auditor_sistema.py IHQ250980 --corregir --max-iteraciones 5
-
-# ✨ OPTIMIZADO: Usar reporte JSON existente de FUNC-01 (sin re-auditar)
-python herramientas_ia/auditor_sistema.py IHQ250980 --corregir --usar-reporte-existente
 ```
 
-**Flujo de Corrección ACTUAL (v6.0.8):**
-
-**ESTADO ACTUAL:** FUNC-02 está FUNCIONAL pero en modo BÁSICO (Fase 1).
-
-**Modo Normal (5 pasos):**
+**Flujo de Corrección Planificado (FASE 1):**
 1. **Audita con FUNC-01** → Detecta errores
 2. **Aplica correcciones en BD** → Backup + corrige datos (parche temporal)
 3. **Reprocesa PDF** → Limpia debug_maps + procesa con unified_extractor
 4. **Re-audita con FUNC-01** → Valida datos desde nuevo debug_map
 5. **Itera si necesario** → Máximo 3 iteraciones (configurable)
 
-**Modo Optimizado con --usar-reporte-existente (4 pasos):**
-1. **Lee reporte JSON existente** → `herramientas_ia/resultados/auditoria_inteligente_[CASO].json`
-2. **Aplica correcciones en BD** → Backup + corrige datos (parche temporal)
-3. **Reprocesa PDF** → Limpia debug_maps + procesa con unified_extractor
-4. **Re-audita con FUNC-01** → Valida datos desde nuevo debug_map
-5. **Itera si necesario** → Máximo 3 iteraciones (configurable)
+**Características Planificadas (FASE 2):**
+- 🚧 **Modificación de extractores**: Corregir patrones en medical_extractor.py (causa raíz)
+- 🚧 **Virtualización de código**: Simular cambios antes de aplicar
+- 🚧 **Rollback de código**: Restaurar código si falla validación sintáctica
+- 🚧 **Corrección permanente**: Casos futuros se procesan correctamente desde origen
+- 🚧 **Reportes MD/JSON**: Trazabilidad completa
 
-**Ventajas Modo Optimizado:**
-- ✅ **Ahorra tiempo:** No duplica auditoría inicial (98% más rápido en paso 1)
-- ✅ **Ahorra recursos:** Reutiliza análisis semántico ya realizado
-- ✅ **Más rápido:** Inicia corrección inmediatamente
-- ✅ **Coherente:** Usa mismos errores detectados en auditoría previa
-- ⚠️ **Requisito:** Debe existir reporte JSON reciente (mismo día recomendado)
+**ETA:** v3.2.0 (Fecha por definir)
 
-**Características Clave (IMPLEMENTADAS v6.0.8):**
-- ✅ **Backup automático**: Siempre crea backup de BD antes de modificar
-- ✅ **Reprocesamiento funcional**: Usa unified_extractor.process_ihq_paths()
-- ✅ **Re-auditoría automática**: Valida correcciones con FUNC-01
-- ✅ **Iteración controlada**: Máximo 3 intentos (configurable)
-- ⚠️ **Corrección en BD**: Corrige datos (no código) - parche temporal
-
-**Características Pendientes (FASE 2 - v6.1.0):**
-- ❌ **Modificación de extractores**: Corregir patrones en medical_extractor.py (causa raíz)
-- ❌ **Virtualización de código**: Simular cambios antes de aplicar
-- ❌ **Rollback de código**: Restaurar código si falla validación sintáctica
-- ❌ **Corrección permanente**: Casos futuros se procesan correctamente desde origen
-- ✅ **Reportes MD/JSON**: Trazabilidad completa
-
-**Ejemplo de Resultado (v6.0.8 - Corrección en BD):**
-```
-Score inicial: 60.0% (2 errores detectados)
-Iteraciones: 2
-Correcciones BD: 2 (DIAGNOSTICO_COLORACION, FACTOR_PRONOSTICO)
-Reprocesamiento: EXITOSO (debug_map regenerado)
-Score final: 100.0% (estimado - validación manual requerida)
-Estado: EXITO
-Backup BD: bd_backup_IHQ250982_20251026_190335.db
-
-⚠️ NOTA: Correcciones aplicadas en BD, NO en código.
-          Casos futuros similares pueden fallar igual.
-          Fase 2 implementará corrección de extractores.
-```
+**Alternativa Actual:**
+Por ahora, las correcciones deben hacerse manualmente editando los extractores en `core/extractors/` y reprocesando los casos.
 
 ---
 

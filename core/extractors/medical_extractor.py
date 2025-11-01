@@ -11,8 +11,15 @@ Extrae información médica específica de los informes IHQ:
 - Información clínica
 - Factor pronóstico con sistema de prioridades y NORMALIZACIÓN automática
 
-Versión: 4.2.8 - Correcciones IHQ250994 (IHQ_ORGANO + TUMOR BIFÁSICO)
+Versión: 4.2.9 - FIX IHQ250994 (Extracción de biomarcadores solicitados)
 Fecha: 31 de octubre de 2025
+
+CHANGELOG v4.2.9:
+- ✅ FIX CRÍTICO: Patrón faltante "se revisa marcación para" en extract_biomarcadores_solicitados_robust()
+- ✅ Resuelve: IHQ250994 no extraía Estrogeno/Progesterona (patrón "revisa" vs "realiza")
+- ✅ Nuevo patrón -3 con soporte para "se revisa marcación para [lista]"
+- ✅ Normalización automática: "Estrogeno" → "Receptor de Estrógeno", "Progesterona" → "Receptor de Progesterona"
+- 📝 Backups: NO (cambio menor, 1 patrón agregado)
 
 CHANGELOG v4.2.8:
 - ✅ FIX IHQ_ORGANO: Elimina etiquetas de sección (A., B., C.) al inicio del diagnóstico
@@ -1368,10 +1375,16 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
 
     # Patrones ordenados por especificidad (más específico primero)
     patrones_biomarcadores = [
+        # Patrón -3: V6.0.17 - "se revisa marcación para [lista]" (IHQ250994)
+        # NUEVO: Soporte para variante "REVISA" además de "REALIZA"
+        # Captura lista de biomarcadores incluyendo formas cortas de receptores (Estrogeno, Progesterona)
+        # Termina en punto o fin de texto
+        r'se\s+revisa\s+marcaci[óo]n\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍkappa lambda]+?)(?:\.\s*$|\s+por\s+lo\s+que|$)',
+
         # Patrón -2: V6.0.12 - "se realiza marcación para [lista]" (IHQ250992)
         # Captura lista de biomarcadores incluyendo "kappa y lambda" (minúsculas permitidas)
         # Termina en punto seguido de "por lo que" o similar
-        r'se\s+realiza\s+marcaci[óo]n\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍkappa lambda]+?)(?:\.\s*$|\s+por\s+lo\s+que)',
+        r'se\s+realiza\s+marcaci[óo]n\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁeÉíÍkappa lambda]+?)(?:\.\s*$|\s+por\s+lo\s+que)',
 
         # Patrón -1: V6.0.12 - "realizar marcadores para: [lista]" (IHQ250991)
         # Específico para material extra-institucional con decisión de marcadores
@@ -1500,6 +1513,12 @@ def parse_biomarker_list(text: str) -> List[str]:
     # Limpiar texto
     text = text.strip()
 
+    # V6.1.1: FIX IHQ250995 - Limpiar contexto ANTES de procesar
+    # Eliminar frases contextuales que no son biomarcadores
+    text = re.sub(r'\s+en\s+las?\s+(?:tres|dos|cuatro|una)?\s*(?:l[aá]minas?|bloques?)', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'^.*?para\s+tinci[óo]n\s+con\s+', '', text, flags=re.IGNORECASE)  # Eliminar todo hasta "para tinción con"
+    text = re.sub(r'\s+en\s+el\s+bloque\s+[A-Z0-9]+', '', text, flags=re.IGNORECASE)
+
     # V6.0.12: EXPANSIÓN DE AGRUPACIONES - "RECEPTORES HORMONALES (RE, RP)" → "RE, RP"
     # Esto normaliza listas que tienen biomarcadores agrupados entre paréntesis
     # Ejemplos:
@@ -1557,6 +1576,10 @@ def parse_biomarker_list(text: str) -> List[str]:
 
         # V3.2.5.1: FILTRO MEJORADO - Detectar encabezados de tabla
         bio_upper = bio.upper().strip()
+
+        # V6.1.1: FIX IHQ250995 - Filtrar palabras residuales que no son biomarcadores
+        if bio_upper in ['EN', 'LAS', 'LOS', 'CON', 'PARA', 'DE', 'DEL', 'LA', 'EL']:
+            continue
 
         # V5.2: FILTRO DE N/A - Ignorar entradas "N/A"
         if bio_upper in ['N/A', 'NA', 'N / A', 'NO APLICA']:
@@ -1627,6 +1650,14 @@ def normalize_biomarker_name_simple(name: str) -> str:
         'CK AE1/AE3': 'CKAE1AE3',
         'CAM 5.2': 'CAM5.2',
         'CAM5.2': 'CAM5.2',
+        # V6.1.1: FIX IHQ250995 - Normalizar 34BETA → 34BE12
+        '34BETA': '34BE12',
+        '34 BETA': '34BE12',
+        'CK34BETA': '34BE12',
+        'CK34 BETA': '34BE12',
+        'CK34BETAE12': '34BE12',
+        'CK34 BETA E12': '34BE12',
+        'CK34BETA E12': '34BE12',
     }
 
     for pattern, result in simple_mapping.items():

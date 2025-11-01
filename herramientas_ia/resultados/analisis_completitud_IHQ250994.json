@@ -1,0 +1,88 @@
+{
+  "caso": "IHQ250994",
+  "paciente": "MARLENY CEBALLOS ESCOBAR",
+  "estado_completitud": "INCOMPLETO",
+  "porcentaje_completitud": 92.5,
+  "razon_incompleto": "Receptores hormonales detectados en IHQ_ESTUDIOS_SOLICITADOS pero NO extraídos a columnas individuales",
+  "biomarcadores_solicitados": {
+    "total": 8,
+    "lista": [
+      "P16",
+      "P40",
+      "CKAE1AE3",
+      "PAX 8",
+      "Receptor de Estrógeno",
+      "Receptor de Progesterona",
+      "VIMENTINA",
+      "P53"
+    ]
+  },
+  "biomarcadores_extraidos": {
+    "total": 6,
+    "lista": [
+      "P16 (parcial: solo \",\")",
+      "P40 (POSITIVO)",
+      "CKAE1AE3 (POSITIVO)",
+      "PAX 8 (POSITIVO)",
+      "VIMENTINA (POSITIVO)",
+      "P53 (DE EXPRESIÓN USUAL)"
+    ]
+  },
+  "biomarcadores_faltantes": {
+    "total": 2,
+    "lista": [
+      "IHQ_RECEPTOR_ESTROGENOS (N/A)",
+      "IHQ_RECEPTOR_PROGESTERONA (N/A)"
+    ]
+  },
+  "diagnostico": {
+    "tipo_problema": "EXTRACCION",
+    "descripcion": "Los receptores hormonales (Estrógeno, Progesterona) están DETECTADOS en IHQ_ESTUDIOS_SOLICITADOS pero NO se extrajeron a sus columnas individuales",
+    "evidencia": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40, CKAE1AE3, PAX 8, Receptor de Estrógeno, Receptor de Progesterona, VIMENTINA, P53",
+      "IHQ_RECEPTOR_ESTROGENOS": "N/A (DEBERIA TENER VALOR)",
+      "IHQ_RECEPTOR_PROGESTERONA": "N/A (DEBERIA TENER VALOR)"
+    }
+  },
+  "analisis_detallado": {
+    "problema_principal": "EXTRACCIÓN FALLIDA DE RECEPTORES HORMONALES",
+    "causa_probable": [
+      "1. El extractor no encontró los valores de los receptores en el PDF",
+      "2. El formato del PDF es diferente al esperado por los patrones de extracción",
+      "3. Los receptores están mencionados en IHQ_ESTUDIOS_SOLICITADOS pero sus VALORES no están en el bloque \"REPORTE DE BIOMARCADORES\"",
+      "4. Este caso es de CERVIX/ENDOMETRIO y los receptores pueden estar en ubicación no estándar"
+    ],
+    "NO_es_problema_de_mapeo": "Las columnas IHQ_RECEPTOR_ESTROGENOS e IHQ_RECEPTOR_PROGESTERONA SÍ existen en BD",
+    "es_problema_de_extraccion": "Los valores no se extrajeron del PDF a pesar de que los biomarcadores están solicitados"
+  },
+  "recomendacion": {
+    "accion": "REVISAR EXTRACTOR medical_extractor.py",
+    "no_usar_FUNC03": "NO NECESARIO - Las columnas ya existen",
+    "necesita": [
+      "1. Verificar el PDF original de IHQ250994",
+      "2. Buscar dónde están los valores de Receptor de Estrógeno y Receptor de Progesterona en el texto",
+      "3. Verificar si el extractor tiene patrones para detectarlos en casos de CERVIX/ENDOMETRIO",
+      "4. Posiblemente los receptores NO tienen valores reportados en este tipo de tumor (bifásico endometrial)",
+      "5. Verificar si FACTOR_PRONOSTICO debería construirse desde estos receptores"
+    ],
+    "posible_caso_especial": "Tumor bifásico endometrial - Los receptores hormonales pueden NO APLICAR para este tipo de tumor"
+  },
+  "verificaciones_adicionales": {
+    "IHQ_P16_ESTADO": "PROBLEMA: Solo contiene \",\" (valor incorrecto)",
+    "FACTOR_PRONOSTICO": "None (debería ser \"NO APLICA\" si no hay receptores de pronóstico)",
+    "campos_criticos_ok": [
+      "IHQ_ORGANO: CERVIX",
+      "DIAGNOSTICO_PRINCIPAL: Extraído",
+      "DIAGNOSTICO_COLORACION: Extraído"
+    ]
+  },
+  "conclusion": {
+    "tipo_error": "EXTRACCIÓN FALLIDA (NO mapeo)",
+    "severidad": "MEDIA",
+    "impacto_completitud": "92.5% (7.5% faltante por 2 biomarcadores)",
+    "requiere_FUNC03": false,
+    "requiere_correccion_extractor": true,
+    "requiere_verificacion_PDF": true,
+    "nota_importante": "Este puede ser un caso donde los receptores hormonales NO APLICAN para el tipo de tumor (bifásico endometrial). Verificar con médico patólogo si estos biomarcadores son relevantes para este diagnóstico."
+  }
+}

@@ -24,8 +24,17 @@ Salida:
   herramientas_ia/resultados/auditoria_inteligente_IHQ250980.json
 
 Autor: Sistema EVARISIS
-Versión: 3.1.0 (VALIDACIÓN INDEPENDIENTE)
-Fecha: 29 de octubre de 2025
+Versión: 3.1.1 - FIX Mapeo P16/P40 (IHQ250994)
+Fecha: 31 de octubre de 2025
+
+CHANGELOG v3.1.1:
+- ✅ FIX CRÍTICO: Mapeo P16/P40 corregido a columnas _ESTADO
+- ✅ Antes: 'P16' → 'IHQ_P16' (columna inexistente)
+- ✅ Ahora: 'P16' → 'IHQ_P16_ESTADO' (columna real en BD)
+- ✅ Antes: 'P40' → 'IHQ_P40' (columna inexistente)
+- ✅ Ahora: 'P40' → 'IHQ_P40_ESTADO' (columna real en BD)
+- ✅ Resuelve: IHQ250994 y otros casos con P16/P40 no detectados como completos
+- 📝 Backups: NO (cambio menor, corrección de mapeo)
 
 CHANGELOG v3.1.0 - VALIDACIÓN INDEPENDIENTE:
 - 🎯 NUEVA ESTRATEGIA: Extracción independiente desde OCR (sin validación circular)
@@ -189,9 +198,9 @@ class AuditorSistema:
     'GATA3': 'IHQ_GATA3', 'GATA-3': 'IHQ_GATA3', 'GATA 3': 'IHQ_GATA3',
     'WT1': 'IHQ_WT1', 'WT-1': 'IHQ_WT1', 'WT 1': 'IHQ_WT1',
     'NAPSIN A': 'IHQ_NAPSIN', 'NAPSIN-A': 'IHQ_NAPSIN', 'NAPSINA': 'IHQ_NAPSIN',
-    'P40': 'IHQ_P40', 'P-40': 'IHQ_P40',
+    'P40': 'IHQ_P40_ESTADO', 'P-40': 'IHQ_P40_ESTADO',  # V6.0.17: Corregido a _ESTADO (IHQ250994)
     'P63': 'IHQ_P63', 'P-63': 'IHQ_P63',
-    'P16': 'IHQ_P16', 'P-16': 'IHQ_P16',
+    'P16': 'IHQ_P16_ESTADO', 'P-16': 'IHQ_P16_ESTADO',  # V6.0.17: Corregido a _ESTADO (IHQ250994)
     'EMA': 'IHQ_EMA', 'ANTÍGENO DE MEMBRANA EPITELIAL': 'IHQ_EMA', 'ANTIGENO DE MEMBRANA EPITELIAL': 'IHQ_EMA',
     
     # ---------- Citoqueratinas (12 biomarcadores) ----------

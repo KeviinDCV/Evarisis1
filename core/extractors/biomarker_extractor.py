@@ -4,9 +4,18 @@
 
 Extrae biomarcadores con configuración integrada (antes en config/patterns/biomarker_patterns.py)
 
-Versión: 5.0.1 - FIX IHQ250991 (P63, BER-EP4)
+Versión: 5.0.2 - FIX IHQ250994 (Receptores abreviados con salto de línea)
 Autor: Sistema HUV Refactorizado
 Nota: Toda la configuración de patrones está ahora en este archivo para centralización
+
+Cambios v5.0.2:
+  - ✅ NUEVO PATRÓN ER/PR: "R. Estrogenos" y "R. Progesterona" con salto de línea
+  - ✅ PATRÓN NARRATIVO MEJORADO: Captura multilínea con lookahead (ignora "R." como fin de lista)
+  - ✅ Resuelve: IHQ250994 donde "R.\nEstrogenos" no se detectaba
+  - ✅ Patrones agregados en ER y PR con soporte para \n entre "R." y nombre
+  - ✅ extract_narrative_biomarkers() ahora captura "marcación positiva para P40, R.\nEstrogenos además"
+  - ✅ Estado POSITIVO/NEGATIVO se asigna correctamente desde contexto de lista narrativa
+
 Cambios v5.0.1:
   - Corregido split por "/" en extract_narrative_biomarkers
   - "/" ahora se usa solo para variantes del mismo biomarcador (EBERP4/Ep-CAM)
@@ -99,9 +108,11 @@ BIOMARKER_DEFINITIONS = {
     },
 
     'ER': {
-        'nombres_alternativos': ['RECEPTORES ESTROGENOS', 'RE', 'ESTROGENO', 'ESTRÓGENO'],
+        'nombres_alternativos': ['RECEPTORES ESTROGENOS', 'RE', 'ESTROGENO', 'ESTRÓGENO', 'R. ESTROGENOS', 'R.ESTROGENOS'],
         'descripcion': 'Receptores de estrógenos',
         'patrones': [
+            # V6.0.17: NUEVO - Formato abreviado "R. Estrogenos" con salto de línea (IHQ250994)
+            r'(?i)R\.\s*\n?\s*ESTR[ÓO]GENOS?',  # Retorna match vacío, se interpreta como POSITIVO
             # V6.0.0: PRIORIDAD 1 - DIAGNÓSTICO/Expresión molecular
             r'(?i)RECEPTORES?\s+DE\s+ESTR[ÓO]GENOS?\s*:\s*(.+?)(?:\s*\n|\.)',
             # V5.2: PATRONES MEJORADOS - Capturan CONTEXTO COMPLETO (porcentajes, intensidad, calificadores)
@@ -125,9 +136,11 @@ BIOMARKER_DEFINITIONS = {
     },
 
     'PR': {
-        'nombres_alternativos': ['RECEPTORES PROGESTERONA', 'RP', 'PROGESTERONA', 'PROGRESTERONA'],
+        'nombres_alternativos': ['RECEPTORES PROGESTERONA', 'RP', 'PROGESTERONA', 'PROGRESTERONA', 'R. PROGESTERONA', 'R.PROGESTERONA'],
         'descripcion': 'Receptores de progesterona',
         'patrones': [
+            # V6.0.17: NUEVO - Formato abreviado "R. Progesterona" con salto de línea (IHQ250994)
+            r'(?i)R\.\s*\n?\s*PROGR?E?STERONA',  # Retorna match vacío, se interpreta como POSITIVO (maneja typo PROGRESTERONA)
             # V6.0.0: PRIORIDAD 1 - DIAGNÓSTICO/Expresión molecular
             r'(?i)RECEPTORES?\s+DE\s+PROGESTERONA\s*:\s*(.+?)(?:\s*\n|\.)',
             # V5.3.1: CORREGIDO - Manejar typo común "PROGRESTERONA" (sin O)
@@ -1625,10 +1638,13 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
     results = {}
     
     # V6.0.12.1: FIX - Patrón para "marcación positiva/negativa para: lista, de, biomarcadores" (IHQ250991)
+    # V6.0.17: MEJORADO - Captura multilínea incluyendo "R.\nEstrogenos" (IHQ250994)
     # Ej: "Las células tumorales basaloides presentan marcación positiva para: p40, p63, EBERP4/Ep-CAM, BCL2."
-    logging.info("🔍 [V6.0.12.1] Ejecutando extract_narrative_biomarkers con FIX para P63/BER-EP4")
-    marcacion_list_pattern = r'(?i)(?:presentan\s+)?marcaci[óo]n\s+(positiva|negativa)\s+para[:\s]+([^\.]+)'
-    for match in re.finditer(marcacion_list_pattern, text):
+    # Ej: "marcación positiva para P40, R.\nEstrogenos además" (captura todo incluyendo saltos de línea)
+    logging.info("🔍 [V6.0.17] Ejecutando extract_narrative_biomarkers con soporte para R. Estrogenos")
+    # Captura hasta palabras clave que indican fin de lista: "además", inicio de oración, secciones, punto + mayúscula
+    marcacion_list_pattern = r'(?i)(?:presentan\s+)?marcaci[óo]n\s+(positiva|negativa)\s+para[:\s]+(.+?)(?=\s+además|\.\s*(?:En|A\d+\.)|$)'
+    for match in re.finditer(marcacion_list_pattern, text, re.DOTALL):
         estado = 'POSITIVO' if 'positiva' in match.group(1).lower() else 'NEGATIVO'
         lista_biomarkers_raw = match.group(2).strip()
         
@@ -1654,7 +1670,12 @@ def extract_narrative_biomarkers(text: str) -> Dict[str, str]:
                 bio_raw_original = bio_raw
                 bio_raw = bio_raw.split('/')[0].strip()
                 logging.info(f"🔍 Split por '/': '{bio_raw_original}' → '{bio_raw}'")
-            
+
+            # V6.0.17: Limpiar texto descriptivo antes de normalizar (IHQ250994)
+            # Ej: "P16 de forma parcheada" → "P16", "P53 de expresión usual (Wild Type)" → "P53"
+            bio_raw = re.sub(r'\s+de\s+(forma|expresi[óo]n)\s+\w+.*', '', bio_raw, flags=re.IGNORECASE).strip()
+            bio_raw = re.sub(r'\s*\([^)]+\).*', '', bio_raw).strip()  # Eliminar paréntesis y todo después
+
             # Normalizar nombre del biomarcador
             normalized_name = normalize_biomarker_name(bio_raw)
             if normalized_name and normalized_name not in results:
@@ -2103,6 +2124,14 @@ def normalize_biomarker_name(raw_name: str) -> Optional[str]:
         'RECEPTORES DE ESTRÓGENOS': 'ER',
         'RECEPTORES DE ESTROGENOS': 'ER',
         'RECEPTORES DE PROGESTERONA': 'PR',
+        # V6.0.17: Formas abreviadas "R. Estrogenos" (IHQ250994)
+        'R. ESTROGENOS': 'ER',
+        'R. ESTRÓGENOS': 'ER',
+        'R.ESTROGENOS': 'ER',
+        'R ESTROGENOS': 'ER',
+        'R. PROGESTERONA': 'PR',
+        'R.PROGESTERONA': 'PR',
+        'R PROGESTERONA': 'PR',
         # Biomarcadores P
         'P16': 'P16',
         'PL6': 'P16',  # pl6 es variante de p16
