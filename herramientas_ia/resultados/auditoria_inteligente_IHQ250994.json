@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250994",
   "caso_num": 14,
   "total_casos": 47,
-  "timestamp": "2025-10-31T16:20:37.419792",
+  "timestamp": "2025-10-31T18:23:55.179668",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -37,9 +37,9 @@
     },
     "biomarcadores": {
       "estado": "ERROR",
-      "mensaje": "3 biomarcadores faltantes en BD; 3 biomarcadores sin mapeo/vacíos; 1 biomarcadores extras en BD",
+      "mensaje": "3 biomarcadores faltantes en BD; 3 biomarcadores sin mapeo/vacíos; 3 biomarcadores extras en BD",
       "total_solicitado_ocr": 8,
-      "total_solicitado_bd": 6,
+      "total_solicitado_bd": 8,
       "estudios_ocr": [
         "POR LO QUE SE REVISA MARCACIÓN PARA P16",
         "P40",
@@ -51,12 +51,14 @@
         "P53"
       ],
       "estudios_bd": [
-        "CKAE1AE3",
         "P16",
         "P40",
-        "P53",
-        "PAX8",
-        "VIMENTINA"
+        "CKAE1AE3",
+        "PAX 8",
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona",
+        "VIMENTINA",
+        "P53"
       ],
       "faltantes_en_bd": [
         "POR LO QUE SE REVISA MARCACIÓN PARA P16",
@@ -64,7 +66,9 @@
         "PROGESTERONA"
       ],
       "extras_en_bd": [
-        "P16"
+        "P16",
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona"
       ],
       "mapeados": 5,
       "no_mapeados": [

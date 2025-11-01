@@ -1513,12 +1513,6 @@ def parse_biomarker_list(text: str) -> List[str]:
     # Limpiar texto
     text = text.strip()
 
-    # V6.1.1: FIX IHQ250995 - Limpiar contexto ANTES de procesar
-    # Eliminar frases contextuales que no son biomarcadores
-    text = re.sub(r'\s+en\s+las?\s+(?:tres|dos|cuatro|una)?\s*(?:l[aá]minas?|bloques?)', '', text, flags=re.IGNORECASE)
-    text = re.sub(r'^.*?para\s+tinci[óo]n\s+con\s+', '', text, flags=re.IGNORECASE)  # Eliminar todo hasta "para tinción con"
-    text = re.sub(r'\s+en\s+el\s+bloque\s+[A-Z0-9]+', '', text, flags=re.IGNORECASE)
-
     # V6.0.12: EXPANSIÓN DE AGRUPACIONES - "RECEPTORES HORMONALES (RE, RP)" → "RE, RP"
     # Esto normaliza listas que tienen biomarcadores agrupados entre paréntesis
     # Ejemplos:
@@ -1576,10 +1570,6 @@ def parse_biomarker_list(text: str) -> List[str]:
 
         # V3.2.5.1: FILTRO MEJORADO - Detectar encabezados de tabla
         bio_upper = bio.upper().strip()
-
-        # V6.1.1: FIX IHQ250995 - Filtrar palabras residuales que no son biomarcadores
-        if bio_upper in ['EN', 'LAS', 'LOS', 'CON', 'PARA', 'DE', 'DEL', 'LA', 'EL']:
-            continue
 
         # V5.2: FILTRO DE N/A - Ignorar entradas "N/A"
         if bio_upper in ['N/A', 'NA', 'N / A', 'NO APLICA']:
@@ -1650,14 +1640,6 @@ def normalize_biomarker_name_simple(name: str) -> str:
         'CK AE1/AE3': 'CKAE1AE3',
         'CAM 5.2': 'CAM5.2',
         'CAM5.2': 'CAM5.2',
-        # V6.1.1: FIX IHQ250995 - Normalizar 34BETA → 34BE12
-        '34BETA': '34BE12',
-        '34 BETA': '34BE12',
-        'CK34BETA': '34BE12',
-        'CK34 BETA': '34BE12',
-        'CK34BETAE12': '34BE12',
-        'CK34 BETA E12': '34BE12',
-        'CK34BETA E12': '34BE12',
     }
 
     for pattern, result in simple_mapping.items():
