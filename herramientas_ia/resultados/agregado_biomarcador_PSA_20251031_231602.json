@@ -1,0 +1,94 @@
+{
+  "operacion": "FUNC-03: Agregar Biomarcador Automáticamente",
+  "fecha": "2025-10-31 23:12:05",
+  "biomarcador": "PSA",
+  "columna_bd": "IHQ_PSA",
+  "alias_agregados": [
+    "PSA",
+    "ANTÍGENO PROSTÁTICO ESPECÍFICO",
+    "ANTIGENO PROSTATICO",
+    "ANTÍGENO PROSTÁTICO"
+  ],
+  "archivos_modificados": {
+    "total": 7,
+    "detalles": [
+      {
+        "archivo": "core/database_manager.py",
+        "cambios": [
+          "Agregada columna IHQ_PSA en CREATE TABLE (línea ~205)",
+          "Agregada IHQ_PSA en lista new_biomarkers (línea ~315)"
+        ]
+      },
+      {
+        "archivo": "herramientas_ia/auditor_sistema.py",
+        "cambios": [
+          "Agregados 4 alias en BIOMARKER_ALIAS_MAP (líneas 217-220, 261)"
+        ]
+      },
+      {
+        "archivo": "ui.py",
+        "cambios": [
+          "Agregada columna IHQ_PSA en lista de columnas visibles (líneas 4198, 4279)"
+        ]
+      },
+      {
+        "archivo": "core/validation_checker.py",
+        "cambios": [
+          "Agregado mapeo PSA → IHQ_PSA en all_biomarker_mapping (líneas 132-133, 413-414)"
+        ]
+      },
+      {
+        "archivo": "core/extractors/biomarker_extractor.py",
+        "cambios": [
+          "Agregados patrones de extracción PSA (líneas ~2173-2175)"
+        ]
+      },
+      {
+        "archivo": "core/unified_extractor.py",
+        "cambios": [
+          "Agregado mapeo bidireccional PSA ↔ IHQ_PSA (líneas 508, 597, 1206, 1296, 1424)"
+        ]
+      },
+      {
+        "archivo": "core/extractors/medical_extractor.py",
+        "cambios": [
+          "Modificaciones automáticas de mapeo"
+        ]
+      }
+    ]
+  },
+  "validacion_sintaxis": {
+    "estado": "OK",
+    "advertencias": [
+      "SyntaxWarning menor en medical_extractor.py línea 56 (escape sequence en comentario)"
+    ]
+  },
+  "patrones_extraccion": {
+    "nombres_normalizados": ["PSA"],
+    "variantes_reconocidas": [
+      "PSA",
+      "ANTÍGENO PROSTÁTICO ESPECÍFICO",
+      "ANTIGENO PROSTATICO",
+      "ANTÍGENO PROSTÁTICO"
+    ],
+    "columna_destino": "IHQ_PSA",
+    "tipo_dato": "TEXT"
+  },
+  "siguiente_paso": {
+    "accion": "Regenerar base de datos y reprocesar casos",
+    "comandos": [
+      "rm data/huv_oncologia_NUEVO.db",
+      "python ui.py",
+      "Reprocesar casos que contengan PSA en el PDF"
+    ],
+    "razon": "La columna IHQ_PSA solo se creará en la BD después de borrarla y regenerarla. Los casos con PSA deberán reprocesarse para extraer el valor."
+  },
+  "estado": "EXITOSO",
+  "errores": [],
+  "observaciones": [
+    "Se detectaron duplicaciones en biomarker_extractor.py (normal, son múltiples patrones de extracción)",
+    "Todos los archivos pasan validación de sintaxis Python",
+    "Los mapeos están consistentes entre auditor_sistema, validation_checker y unified_extractor",
+    "La columna IHQ_PSA está agregada tanto en CREATE TABLE como en new_biomarkers"
+  ]
+}

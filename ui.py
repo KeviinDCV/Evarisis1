@@ -687,7 +687,9 @@ class App(ttk.Window):
         try:
             if self.master_df.empty:
                 from core.database_manager import init_db, get_all_records_as_dataframe
-                init_db()
+                # V6.2.0: Comentado - init_db() ya se llama en ihq_processor antes del guardado
+                # Llamarlo aquí causa que el UPDATE de relleno sobrescriba valores recién insertados
+                # init_db()
                 self.master_df = get_all_records_as_dataframe()
             self.cargar_dashboard()
         except Exception as e:
@@ -3207,7 +3209,9 @@ Disco {i}:
             # Si master_df está vacío, cargar datos de la base de datos
             if self.master_df.empty:
                 from core.database_manager import init_db, get_all_records_as_dataframe
-                init_db()
+                # V6.2.0: Comentado - init_db() ya se llama en ihq_processor antes del guardado
+                # Llamarlo aquí causa que el UPDATE de relleno sobrescriba valores recién insertados
+                # init_db()
                 self.master_df = get_all_records_as_dataframe()
 
             # Ahora cargar el dashboard con datos disponibles
@@ -4088,8 +4092,10 @@ Disco {i}:
 
             from core.database_manager import init_db, get_all_records_as_dataframe
 
-            # Inicializar BD
-            init_db()
+            # V6.2.0: Comentado - init_db() ya se llama en ihq_processor antes del guardado
+            # Llamarlo aquí (en refresh_data) causa que el UPDATE de relleno sobrescriba
+            # valores recién insertados con N/A
+            # init_db()
 
             # Cargar datos
             self.master_df = get_all_records_as_dataframe()
@@ -4195,8 +4201,7 @@ Disco {i}:
             "IHQ_E_CADHERINA",  # v6.0.3 - E-Cadherina
             # Biomarcadores adicionales v4.0/v4.1
             "IHQ_CK7",
-            "IHQ_LAMBDA",  # V6.0.16: Auto-agregado
-            "IHQ_KAPPA",  # V6.0.16: Auto-agregado
+            "IHQ_HEPATOCITO",  # V6.0.16: Auto-agregado
             "IHQ_CK19",
             "IHQ_CK20",
             "IHQ_CDX2",
@@ -4246,9 +4251,13 @@ Disco {i}:
             "IHQ_GFAP",
             "IHQ_CAM52",
             "IHQ_DOG1",
+            "IHQ_H_CALDESMON",  # V6.1.2: Biomarcador IHQ250997 (tumor maligno indiferenciado)
+            "IHQ_AML",  # V6.1.2: Biomarcador IHQ250997 (tumor maligno indiferenciado)
             "IHQ_HHV8",
             "IHQ_NEUN",
             "IHQ_P63",
+            # V6.1.3: Biomarcador celulas mioepiteliales (IHQ250999) - CK5_6 ya existe en V5.3
+            "IHQ_CALPONINA",
             "IHQ_BER_EP4",  # V6.0.12.1: Agregado BER-EP4 (Ep-CAM) - FIX IHQ250991
             "IHQ_WT1",
             # MARCADORES MMR (Mismatch Repair) - CRÍTICOS PARA CÁNCER COLORRECTAL
@@ -4384,9 +4393,9 @@ Disco {i}:
                 for numero in numeros_peticion:
                     try:
                         analisis = verificar_completitud_registro(numero)
-                        campos_faltantes = analisis.get('campos_faltantes', [])
-                        biomarcadores_faltantes = analisis.get('biomarcadores_faltantes', [])
-                        completitud_cache[numero] = (len(campos_faltantes) == 0 and len(biomarcadores_faltantes) == 0)
+                        # V6.1.2: FIX - Usar campo 'completo' del análisis en lugar de recalcular
+                        # La lógica correcta está en validation_checker.py que considera biomarcadores NO MAPEADOS
+                        completitud_cache[numero] = analisis.get('completo', False)
                     except Exception:
                         completitud_cache[numero] = False
             except Exception as e:
