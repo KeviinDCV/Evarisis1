@@ -5,7 +5,11 @@
       "Bash(sqlite3:*)",
       "Bash(python -m py_compile:*)",
       "Bash(python herramientas_ia/auditor_sistema.py:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(del \"data\\debug_maps\\debug_map_IHQ250995_20251031_204258.json\")",
+      "Bash(dir:*)",
+      "Bash(nul)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250995",
   "caso_num": 15,
   "total_casos": 47,
-  "timestamp": "2025-10-31T19:30:59.679922",
+  "timestamp": "2025-10-31T21:36:05.681510",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 2,
+      "total_detectado": 4,
       "estado": "OK"
     },
     "estado": "OK"
@@ -29,11 +29,9 @@
       "sugerencia": "Verificar medical_extractor.extract_diagnostico_coloracion()"
     },
     "diagnostico_principal": {
-      "estado": "ERROR",
-      "mensaje": "DIAGNOSTICO_PRINCIPAL está vacío/placeholder pero existe en OCR",
-      "valor_bd": "N/A",
-      "valor_ocr": "Próstata, lóbulo derecho. Biopsia. Estudios de inmunohistoquímica: PROLIFERACIÓN ACINAR ATIPICA (ASAP) VER COMENTARIO.",
-      "sugerencia": "Verificar mapeo diagnostico → Diagnostico Principal en database_manager"
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "PROLIFERACIÓN ACINAR ATIPICA (ASAP)"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -42,26 +40,24 @@
     },
     "biomarcadores": {
       "estado": "ERROR",
-      "mensaje": "1 biomarcadores faltantes en BD; 1 biomarcadores sin mapeo/vacíos; 4 biomarcadores extras en BD",
+      "mensaje": "1 biomarcadores faltantes en BD; 1 biomarcadores sin mapeo/vacíos; 3 biomarcadores extras en BD",
       "total_solicitado_ocr": 1,
-      "total_solicitado_bd": 4,
+      "total_solicitado_bd": 3,
       "estudios_ocr": [
         "EN LA PLATAFORMA AUTOMATIZADA ROCHE VENTANA®"
       ],
       "estudios_bd": [
         "P63",
-        "34BETA",
-        "RACEMASA EN",
-        "LAS"
+        "CK34BE12",
+        "RACEMASA"
       ],
       "faltantes_en_bd": [
         "EN LA PLATAFORMA AUTOMATIZADA ROCHE VENTANA®"
       ],
       "extras_en_bd": [
         "P63",
-        "34BETA",
-        "RACEMASA EN",
-        "LAS"
+        "CK34BE12",
+        "RACEMASA"
       ],
       "mapeados": 0,
       "no_mapeados": [
@@ -74,8 +70,7 @@
     },
     "warnings": [],
     "errores": [
-      "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
-      "DIAGNOSTICO_PRINCIPAL está vacío/placeholder pero existe en OCR"
+      "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR"
     ],
     "estado": "ERROR"
   },
@@ -84,11 +79,11 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 40.0,
-    "validaciones_ok": 2,
+    "score_validacion": 60.0,
+    "validaciones_ok": 3,
     "total_validaciones": 5,
     "warnings": 0,
-    "errores": 2
+    "errores": 1
   },
   "resumen": {},
   "estado_final": "ERROR"

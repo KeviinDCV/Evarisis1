@@ -67,7 +67,16 @@ import pandas as pd
 from datetime import datetime
 
 # Configuración de logging
-logging.basicConfig(level=logging.INFO)
+# V6.0.18: Debug PSA - escribir logs a archivo
+log_file = Path(__file__).parent.parent / 'debug_psa.log'
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file, mode='a', encoding='utf-8'),
+        logging.StreamHandler()  # También mostrar en consola
+    ]
+)
 logger = logging.getLogger(__name__)
 
 # Agregar path del proyecto para imports
@@ -161,12 +170,25 @@ def extract_diagnostico_principal(diagnostico_completo: str) -> str:
     # Limpiar texto
     texto = diagnostico_completo.strip()
 
+    # ESTRATEGIA 0 (MÁXIMA PRIORIDAD): V6.1.2 - Tumores malignos indiferenciados (IHQ250997)
+    # Formato: "TUMOR MALIGNO INDIFERENCIADO A CARACTERIZAR MEDIANTE... NECROSIS TUMORAL PRESENTE"
+    # DEBE ejecutarse ANTES de ESTRATEGIA 1 para evitar capturar "Reporte preliminar"
+    patron_tumor_indiferenciado = r'(?i)(TUMOR\s+MALIGNO\s+INDIFERENCIADO\s+A\s+CARACTERIZAR.+?NECROSIS\s+TUMORAL\s+PRESENTE)'
+    match_indiferenciado = re.search(patron_tumor_indiferenciado, texto, re.IGNORECASE | re.DOTALL)
+    if match_indiferenciado:
+        diagnostico = match_indiferenciado.group(1).strip()
+        # Limpiar saltos de línea múltiples
+        diagnostico = ' '.join(diagnostico.split())
+        diagnostico = diagnostico.upper().rstrip('.')
+        return diagnostico
+
     # ESTRATEGIA 1 (PRIORITARIA): Buscar después de marcadores clave
     # Marcadores que indican el inicio de los resultados de diagnóstico
+    # V4.2.10: Soportar ":" además de "." (IHQ250995: "Estudios de inmunohistoquímica:")
     marcadores = [
-        r'Estudios de inmunohistoqu[ií]mica\.',
+        r'Estudios de inmunohistoqu[ií]mica[\.:]\s*',
         r'Biopsia con aguja gruesa\.',
-        r'Estudio de inmunohistoqu[ií]mica\.',
+        r'Estudio de inmunohistoqu[ií]mica[\.:]\s*',
         r'Biopsia\.',
         r'Muestra\.',
     ]
@@ -181,13 +203,25 @@ def extract_diagnostico_principal(diagnostico_completo: str) -> str:
             # La primera línea después del marcador (hasta el primer salto de línea o punto seguido de guión)
             # V6.0.9: PATRÓN MEJORADO - NO capturar datos del estudio M (GRADO, SCORE, etc.)
             # Captura hasta encontrar: punto, salto de línea, o keywords del estudio M
-            patron_primera_linea = r'^[^\n]*?-\s*([^.\n]+?)(?:GRADO|SCORE|NOTTINGHAM|\.|$)'
+            # V4.2.10: Soportar líneas SIN guión inicial (IHQ250995: "PROLIFERACIÓN ACINAR ATÍPICA...")
+            patron_primera_linea = r'^[^\n]*?-?\s*([^.\n]+?)(?:GRADO|SCORE|NOTTINGHAM|VER COMENTARIO|\.|$)'
             match_linea = re.search(patron_primera_linea, texto_despues, re.IGNORECASE)
 
             if match_linea:
                 diagnostico = match_linea.group(1).strip()
                 # Limpiar guiones adicionales
                 diagnostico = diagnostico.rstrip('-.').strip()
+
+                # V6.1.2: Descartar "Reporte preliminar" y buscar en líneas siguientes (IHQ250997)
+                if 'REPORTE PRELIMINAR' in diagnostico.upper():
+                    # Buscar la siguiente línea significativa
+                    lineas = texto_despues.split('\n')
+                    for linea in lineas[1:]:  # Saltar primera línea (Reporte preliminar)
+                        linea = linea.strip()
+                        if linea and len(linea) > 20 and not linea.startswith('-'):
+                            # Verificar que no sea descripción
+                            if not any(kw in linea.upper() for kw in ['RECEPTOR', 'POSITIVO', 'NEGATIVO']):
+                                return linea.upper()
 
                 # V6.0.9: LIMPIEZA CRÍTICA - Eliminar datos del estudio M (IHQ250981)
                 # Keywords que indican datos del estudio M que NO deben estar en DIAGNOSTICO_PRINCIPAL
@@ -478,16 +512,18 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 combined_data['fecha_ingreso'] = medical_data['fecha_ingreso']
         
         # === BIOMARCADORES ===
-        if biomarker_data:
-            # SISTEMA AVANZADO v5.0: Integrar extract_narrative_biomarkers
-            narrative_biomarkers = {}
-            try:
-                from core.extractors.biomarker_extractor import extract_narrative_biomarkers
-                narrative_biomarkers = extract_narrative_biomarkers(clean_text) or {}
-                if narrative_biomarkers:
-                    logger.info(f"🧬 Sistema avanzado detectó {len(narrative_biomarkers)} biomarcadores narrativos")
-            except ImportError:
-                logger.warning("⚠️ Sistema avanzado de biomarcadores no disponible")
+        # V6.1.4: CRÍTICO - Ejecutar extract_narrative_biomarkers SIEMPRE (no solo si biomarker_data tiene contenido)
+        # Casos como IHQ251000 tienen biomarcadores SOLO en formato narrativo, sin tabla estructurada
+        narrative_biomarkers = {}
+        try:
+            from core.extractors.biomarker_extractor import extract_narrative_biomarkers
+            narrative_biomarkers = extract_narrative_biomarkers(clean_text) or {}
+            if narrative_biomarkers:
+                logger.info(f"🧬 Sistema avanzado detectó {len(narrative_biomarkers)} biomarcadores narrativos")
+        except ImportError:
+            logger.warning("⚠️ Sistema avanzado de biomarcadores no disponible")
+
+        if biomarker_data or narrative_biomarkers:
 
             # Mapear biomarcadores al formato IHQ esperado - MAPEO COMPLETO v5.0
             biomarker_mapping = {
@@ -503,6 +539,8 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'P53': 'IHQ_P53',
                 'CDX2': 'IHQ_CDX2',
                 'CK7': 'IHQ_CK7',
+                'HEPATOCITO': 'IHQ_HEPATOCITO',  # V6.0.16: Auto-agregado
+                'PSA': 'IHQ_PSA',  # V6.0.16: Auto-agregado
                 'LAMBDA': 'IHQ_LAMBDA',  # V6.0.16: Auto-agregado
                 'KAPPA': 'IHQ_KAPPA',  # V6.0.16: Auto-agregado
                 'CK19': 'IHQ_CK19',  # V6.0.16: Agregado para IHQ250987
@@ -588,6 +626,7 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'CALRETININA': 'IHQ_CALRETININA',
                 'CK34BE12': 'IHQ_CK34BE12',
                 'CK5_6': 'IHQ_CK5_6',
+                'CALPONINA': 'IHQ_CALPONINA',  # V6.1.3: Biomarcador celulas mioepiteliales (IHQ250999)
                 'HEPAR': 'IHQ_HEPAR',
                 'GLIPICAN': 'IHQ_GLIPICAN',
                 'ARGINASA': 'IHQ_ARGINASA',
@@ -597,16 +636,29 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'B2': 'IHQ_B2',
                 # V6.0.16: Biomarcadores para linfomas (IHQ250988)
                 'SALL4': 'IHQ_SALL4',
-                'ALK1': 'IHQ_ALK1'
+                'ALK1': 'IHQ_ALK1',
+                # V6.1.2: Biomarcadores IHQ250997 (tumor maligno indiferenciado)
+                'DOG1': 'IHQ_DOG1',
+                'H_CALDESMON': 'IHQ_H_CALDESMON',
+                'AML': 'IHQ_AML',
+                # V6.X.X: Biomarcadores MMR (Mismatch Repair) para inestabilidad microsatelital
+                'MSH2': 'IHQ_MSH2',
+                'MSH6': 'IHQ_MSH6',
+                'MLH1': 'IHQ_MLH1',
+                'PMS2': 'IHQ_PMS2'
             }
             
             # PRIORIDAD 1: Sistema avanzado (narrative_biomarkers) - MÁS PRECISO
             for biomarker_name, result in narrative_biomarkers.items():
                 biomarker_upper = biomarker_name.upper()
+                # V6.1.4: DEBUG - Logging para HEPATOCITO
+                if 'HEPAT' in biomarker_upper or 'ARGI' in biomarker_upper:
+                    logger.info(f"🔍 [V6.1.4] Procesando narrative: {biomarker_name} (upper: {biomarker_upper})")
+                    logger.info(f"🔍 [V6.1.4] ¿Está en biomarker_mapping? {biomarker_upper in biomarker_mapping}")
                 if biomarker_upper in biomarker_mapping:
                     ihq_field = biomarker_mapping[biomarker_upper]
                     combined_data[ihq_field] = result
-                    logger.debug(f"🧬 Avanzado: {biomarker_upper} -> {ihq_field} = {result}")
+                    logger.info(f"🧬 Avanzado: {biomarker_upper} -> {ihq_field} = {result}")
             
             # PRIORIDAD 2: Sistema refactorizado (biomarker_data) - SOLO SI NO EXISTE
             for new_name, ihq_field in biomarker_mapping.items():
@@ -1200,8 +1252,10 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
 
         # Biomarcadores v4.0
         'CK7': 'IHQ_CK7', 'ck7': 'IHQ_CK7',
-        'LAMBDA': 'IHQ_LAMBDA', 'lambda': 'IHQ_LAMBDA',  # V6.0.16: Auto-agregado
-        'KAPPA': 'IHQ_KAPPA', 'kappa': 'IHQ_KAPPA',  # V6.0.16: Auto-agregado
+        'HEPATOCITO': 'IHQ_HEPATOCITO', 'hepatocito': 'IHQ_HEPATOCITO',  # V6.0.16: Auto-agregado
+        'PSA': 'IHQ_PSA', 'psa': 'IHQ_PSA', 'IHQ_PSA': 'IHQ_PSA',  # V6.0.17: Corregido mapeo autorreferenciado
+        'LAMBDA': 'IHQ_LAMBDA', 'lambda': 'IHQ_LAMBDA', 'IHQ_LAMBDA': 'IHQ_LAMBDA',  # V6.0.17: Corregido mapeo autorreferenciado
+        'KAPPA': 'IHQ_KAPPA', 'kappa': 'IHQ_KAPPA', 'IHQ_KAPPA': 'IHQ_KAPPA',  # V6.0.17: Corregido mapeo autorreferenciado
         'CK19': 'IHQ_CK19', 'ck19': 'IHQ_CK19',  # V6.0.16: Agregado para IHQ250987
         'CK20': 'IHQ_CK20', 'ck20': 'IHQ_CK20',
         'CDX2': 'IHQ_CDX2', 'cdx2': 'IHQ_CDX2',
@@ -1285,6 +1339,7 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'CALRETININA': 'IHQ_CALRETININA', 'calretinina': 'IHQ_CALRETININA',
         'CK34BE12': 'IHQ_CK34BE12', 'ck34be12': 'IHQ_CK34BE12',
         'CK5_6': 'IHQ_CK5_6', 'ck5_6': 'IHQ_CK5_6',
+        'CALPONINA': 'IHQ_CALPONINA', 'calponina': 'IHQ_CALPONINA', 'IHQ_CALPONINA': 'IHQ_CALPONINA',  # V6.1.3: Biomarcador celulas mioepiteliales (IHQ250999)
         'HEPAR': 'IHQ_HEPAR', 'hepar': 'IHQ_HEPAR',
         'GLIPICAN': 'IHQ_GLIPICAN', 'glipican': 'IHQ_GLIPICAN',
         'ARGINASA': 'IHQ_ARGINASA', 'arginasa': 'IHQ_ARGINASA',
@@ -1301,6 +1356,17 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         # V6.0.16: Biomarcadores para linfomas (IHQ250988)
         'SALL4': 'IHQ_SALL4', 'sall4': 'IHQ_SALL4',
         'ALK1': 'IHQ_ALK1', 'alk1': 'IHQ_ALK1',
+
+        # V6.1.2: Biomarcadores IHQ250997 (tumor maligno indiferenciado)
+        'DOG1': 'IHQ_DOG1', 'dog1': 'IHQ_DOG1', 'IHQ_DOG1': 'IHQ_DOG1',
+        'H_CALDESMON': 'IHQ_H_CALDESMON', 'h_caldesmon': 'IHQ_H_CALDESMON', 'IHQ_H_CALDESMON': 'IHQ_H_CALDESMON',
+        'AML': 'IHQ_AML', 'aml': 'IHQ_AML', 'IHQ_AML': 'IHQ_AML',
+
+        # V6.X.X: Biomarcadores MMR (Mismatch Repair) para inestabilidad microsatelital
+        'MSH2': 'IHQ_MSH2', 'msh2': 'IHQ_MSH2', 'IHQ_MSH2': 'IHQ_MSH2',
+        'MSH6': 'IHQ_MSH6', 'msh6': 'IHQ_MSH6', 'IHQ_MSH6': 'IHQ_MSH6',
+        'MLH1': 'IHQ_MLH1', 'mlh1': 'IHQ_MLH1', 'IHQ_MLH1': 'IHQ_MLH1',
+        'PMS2': 'IHQ_PMS2', 'pms2': 'IHQ_PMS2', 'IHQ_PMS2': 'IHQ_PMS2',
     }
     
     # Aplicar mapeos de biomarcadores
@@ -1311,11 +1377,28 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
     for db_col in all_biomarker_columns:
         db_record[db_col] = ''
 
-    # Luego aplicar los valores encontrados (sin sobreescribir)
+    # V6.0.17: MEJORADO - Buscar PRIMERO directamente por columnas IHQ_* en extracted_data
+    # Esto garantiza que si extracted_data tiene 'IHQ_PSA', se mapee correctamente
+
+    # DEBUG V6.0.18: Log para PSA
+    peticion = extracted_data.get('numero_peticion', '')
+    if peticion == 'IHQ250996' and 'IHQ_PSA' in extracted_data:
+        logger.info(f"🔍 DEBUG IHQ250996: 'IHQ_PSA' encontrado en extracted_data = '{extracted_data['IHQ_PSA']}'")
+
+    for ihq_col in all_biomarker_columns:
+        if ihq_col in extracted_data and extracted_data[ihq_col]:
+            db_record[ihq_col] = str(extracted_data[ihq_col]).upper()
+            found_biomarkers.append(ihq_col)
+
+            # DEBUG V6.0.18: Log para PSA
+            if peticion == 'IHQ250996' and ihq_col == 'IHQ_PSA':
+                logger.info(f"✅ DEBUG IHQ250996: IHQ_PSA mapeado a db_record = '{db_record[ihq_col]}'")
+
+    # Luego aplicar mapeos alternativos (psa, PSA, CKAE1AE3, etc.)
     for bio_key, db_col in all_biomarker_mapping.items():
         if bio_key in extracted_data and extracted_data[bio_key]:
             value = str(extracted_data[bio_key]).upper()
-            # Solo asignar si el campo no ha sido llenado ya
+            # Solo asignar si el campo NO ha sido llenado ya
             if not db_record.get(db_col):
                 db_record[db_col] = value
                 found_biomarkers.append(bio_key.upper())
@@ -1355,6 +1438,9 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'IHQ_CD138': 'CD138',
         'IHQ_CK7': 'CK7',
         'IHQ_CK20': 'CK20',
+        'IHQ_PSA': 'PSA',  # V6.0.17: Agregado para IHQ250996
+        'IHQ_LAMBDA': 'Lambda',  # V6.0.17: Agregado
+        'IHQ_KAPPA': 'Kappa',  # V6.0.17: Agregado
         'IHQ_CKAE1AE3': 'CKAE1AE3',
         'IHQ_CAM52': 'CAM5.2',
         'IHQ_TTF1': 'TTF1',
@@ -1377,6 +1463,9 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'IHQ_GFAP': 'GFAP',
         'IHQ_NEUN': 'NEUN',
         'IHQ_DOG1': 'DOG1',
+        # V6.1.2: Biomarcadores IHQ250997 (tumor maligno indiferenciado)
+        'IHQ_H_CALDESMON': 'H_CALDESMON',
+        'IHQ_AML': 'AML',
         'IHQ_HHV8': 'HHV8',
         'IHQ_WT1': 'WT1',
         'IHQ_P63': 'P63',
@@ -1413,6 +1502,8 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'IHQ_CALRETININA': 'CALRETININA',
         'IHQ_CK34BE12': 'CK34BE12',
         'IHQ_CK5_6': 'CK5/6',
+        'IHQ_CALPONINA': 'Calponina',  # V6.1.3: Biomarcador celulas mioepiteliales (IHQ250999)
+        'IHQ_HEPATOCITO': 'HEPATOCITO',  # V6.1.4: Biomarcador hepático agregado por FUNC-03
         'IHQ_HEPAR': 'HEPAR',
         'IHQ_GLIPICAN': 'GLIPICAN',
         'IHQ_ARGINASA': 'ARGINASA',
@@ -1473,7 +1564,11 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
 
     db_record["IHQ_ORGANO"] = ihq_organo_value
     db_record["IHQ_P16_PORCENTAJE"] = ''  # Campo específico
-    
+
+    # DEBUG V6.0.18: Log final para PSA
+    if peticion == 'IHQ250996':
+        logger.info(f"🏁 DEBUG IHQ250996 FINAL: db_record['IHQ_PSA'] = '{db_record.get('IHQ_PSA', 'NO EXISTE')}'")
+
     return db_record
 
 

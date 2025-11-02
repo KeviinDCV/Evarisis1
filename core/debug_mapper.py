@@ -1,19 +1,35 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🗺️ SISTEMA DE DEBUG Y MAPEO COMPLETO
-======================================
+🗺️ SISTEMA DE DEBUG Y MAPEO OPTIMIZADO
+========================================
 
-Genera archivos JSON con el mapeo completo de todo el procesamiento:
-- Texto OCR original
-- Texto consolidado
-- Datos extraídos por cada extractor
-- Datos finales guardados en BD
+Genera archivos JSON con el mapeo del procesamiento de forma OPTIMIZADA:
+- Texto OCR consolidado (NO guarda texto_original completo - ahorro 95%)
+- Datos extraídos por extractor unificado
+- Solo campos críticos de BD (NO duplica SQLite - ahorro 87%)
+- Estadísticas y contadores (NO listas completas - ahorro 97%)
 - Metadata del proceso
 
+V3.0 OPTIMIZACIÓN NIVEL 1:
+- Eliminado: ocr.texto_original (193KB → 0KB)
+- Eliminado: base_datos.datos_guardados completo (40KB → 5KB críticos)
+- Eliminado: validacion.campos_vacios/con_valor listas (150 items → 5 top críticos)
+- Resultado: 87KB → 10KB por debug_map (88% reducción)
+
+V3.1 MEJORA DINÁMICA:
+- Campos críticos ahora incluyen AUTOMÁTICAMENTE los biomarcadores en IHQ_ESTUDIOS_SOLICITADOS
+- Ejemplo: Si ESTUDIOS_SOLICITADOS = "HEPATOCITO, CD34, CK7", se agregan IHQ_HEPATOCITO, IHQ_CD34, IHQ_CK7
+- Auditoría más precisa: muestra valores reales de los biomarcadores solicitados
+
+V3.1.1 CORRECCIÓN DUPLICADOS:
+- Eliminada duplicación de biomarcadores (IHQ_KI-67 + ki-67)
+- Solo se guardan versiones con prefijo IHQ_ (se descartan minúsculas sin prefijo)
+- Ejemplo: Antes guardaba "IHQ_KI-67: 50%" Y "ki-67: 50%", ahora solo "IHQ_KI-67: 50%"
+
 Autor: Sistema EVARISIS
-Versión: 1.0.0
-Fecha: 5 de octubre de 2025
+Versión: 3.1.1 (Sin duplicados)
+Fecha: 1 de noviembre de 2025
 """
 
 import json
@@ -77,8 +93,15 @@ class DebugMapper:
             "timestamp": timestamp.isoformat(),
             "pdf_path": str(pdf_path) if pdf_path else None,
             "ocr": {
-                "texto_original": None,
+                # V3.0 OPTIMIZACIÓN: No guardar texto_original completo (redundancia 193KB → 0KB)
+                # Solo conservar texto_consolidado (lo que realmente se usa)
                 "texto_consolidado": None,
+                "hash_original": None,  # Hash MD5 del texto original para verificación
+                "estadisticas": {
+                    "caracteres_totales": 0,
+                    "caracteres_consolidados": 0,
+                    "reduccion_porcentaje": 0
+                },
                 "metadata": {}
             },
             "extraccion": {
@@ -86,13 +109,25 @@ class DebugMapper:
                 "unified_extractor": {}
             },
             "base_datos": {
-                "datos_guardados": {},  # V2.0: Contiene TODOS los campos incluyendo IHQ_ESTUDIOS_SOLICITADOS
-                "campos_criticos": {},  # V2.0: Acceso rápido a campos críticos
+                # V3.0 OPTIMIZACIÓN: Solo campos críticos (no duplicar todo de SQLite)
+                # Ahorro: ~40KB → ~5KB (87% reducción)
+                "campos_criticos": {},  # Solo campos esenciales para auditoría
+                "estadisticas": {
+                    "total_campos_guardados": 0,
+                    "campos_vacios": 0,
+                    "campos_completos": 0,
+                    "biomarcadores_encontrados": 0
+                },
                 "columnas_mapeadas": {}
             },
             "validacion": {
-                "campos_vacios": [],
-                "campos_con_valor": [],
+                # V3.0 OPTIMIZACIÓN: Contadores + top críticos en lugar de listas completas
+                # Ahorro: 150 items → 5 items (97% reducción)
+                "estadisticas": {
+                    "total_campos_vacios": 0,
+                    "total_campos_completos": 0
+                },
+                "top_campos_criticos_vacios": [],  # Solo top 5 campos críticos que faltan
                 "warnings": [],
                 "errores": []
             },
@@ -120,26 +155,39 @@ class DebugMapper:
     ):
         """
         Registra resultados del proceso OCR
+        V3.0 OPTIMIZACIÓN: No guarda texto_original completo (ahorra ~95% de espacio en OCR)
 
         Args:
-            texto_original: Texto crudo extraído del PDF
-            texto_consolidado: Texto después de limpieza y consolidación
+            texto_original: Texto crudo extraído del PDF (solo para calcular estadísticas)
+            texto_consolidado: Texto después de limpieza y consolidación (SE GUARDA)
             metadata: Metadata adicional del proceso OCR
         """
         if not self.current_map:
             raise RuntimeError("Debe iniciar una sesión primero con iniciar_sesion()")
 
-        self.current_map["ocr"]["texto_original"] = texto_original
+        # V3.0: NO guardar texto_original completo (redundancia eliminada)
+        # Solo guardar texto_consolidado (lo que realmente se usa para extracción)
         self.current_map["ocr"]["texto_consolidado"] = texto_consolidado
         self.current_map["ocr"]["metadata"] = metadata or {}
 
-        # Calcular hash para verificación de integridad
+        # Calcular hash del original para verificación de integridad (sin guardarlo)
         self.current_map["ocr"]["hash_original"] = hashlib.md5(
             texto_original.encode('utf-8')
         ).hexdigest()
 
+        # V3.0: Estadísticas en lugar de texto completo
+        chars_original = len(texto_original)
+        chars_consolidado = len(texto_consolidado)
+        reduccion = ((chars_original - chars_consolidado) / chars_original * 100) if chars_original > 0 else 0
+
+        self.current_map["ocr"]["estadisticas"] = {
+            "caracteres_totales": chars_original,
+            "caracteres_consolidados": chars_consolidado,
+            "reduccion_porcentaje": round(reduccion, 2)
+        }
+
         # Métricas
-        self.current_map["metricas"]["caracteres_procesados"] = len(texto_original)
+        self.current_map["metricas"]["caracteres_procesados"] = chars_original
 
     def registrar_extractor(
         self,
@@ -160,16 +208,33 @@ class DebugMapper:
         # V2.0: Solo guardar el extractor unificado para evitar redundancias
         # Los extractores individuales (patient, medical, biomarker) se fusionan en unified
         if nombre_extractor == "unified" or nombre_extractor == "unified_extractor":
-            # V2.0.1: Limpiar datos extraídos para evitar duplicación
+            # V3.1.1: Limpiar datos extraídos para evitar duplicación (especialmente biomarcadores)
             datos_limpios = {}
             campos_guardados = set()
 
-            # Prioridad: usar nombre con mayúscula inicial (formato BD) si existe
-            # Mapeo de normalizaciones
+            # PASO 1: Identificar biomarcadores con prefijo IHQ_
+            biomarcadores_con_prefijo = set()
+            for campo in datos_extraidos.keys():
+                if campo.startswith('IHQ_'):
+                    # Guardar el nombre del biomarcador sin prefijo para comparación
+                    nombre_sin_prefijo = campo[4:].lower().replace('_', '-')  # IHQ_KI-67 -> ki-67
+                    biomarcadores_con_prefijo.add(nombre_sin_prefijo)
+
+            # PASO 2: Normalizar campos
             normalizaciones = {}
 
             for campo in datos_extraidos.keys():
                 campo_lower = campo.lower()
+
+                # V3.1.1: FILTRAR biomarcadores sin prefijo si existe versión con IHQ_
+                # Ejemplo: si existe "IHQ_KI-67", descartar "ki-67"
+                if not campo.startswith('IHQ_'):
+                    # Verificar si este campo es un biomarcador sin prefijo
+                    nombre_normalizado = campo_lower.replace('_', '-')
+                    if nombre_normalizado in biomarcadores_con_prefijo:
+                        # Ya existe versión con IHQ_, SALTAR este campo
+                        normalizaciones[campo] = None  # Marcar para ignorar
+                        continue
 
                 # Normalizar descripciones
                 if 'descripcion' in campo_lower or 'diagnostico' in campo_lower:
@@ -198,9 +263,13 @@ class DebugMapper:
 
                 normalizaciones[campo] = campo_norm
 
-            # Aplicar normalizaciones y eliminar duplicados
+            # PASO 3: Aplicar normalizaciones y eliminar duplicados
             for campo, valor in datos_extraidos.items():
-                campo_norm = normalizaciones[campo]
+                campo_norm = normalizaciones.get(campo)
+
+                # V3.1.1: Ignorar campos marcados como None (biomarcadores duplicados)
+                if campo_norm is None:
+                    continue
 
                 # Solo guardar si no existe ya este campo normalizado
                 if campo_norm not in campos_guardados:
@@ -231,8 +300,9 @@ class DebugMapper:
         columnas_mapeadas: Optional[Dict[str, str]] = None
     ):
         """
-        Registra TODOS los datos guardados en la base de datos
-        V2.0: Guarda absolutamente todo incluyendo IHQ_ESTUDIOS_SOLICITADOS y todos los biomarcadores
+        Registra solo campos críticos de la base de datos
+        V3.0 OPTIMIZACIÓN: No duplicar TODO (datos ya están en SQLite)
+        Solo guarda campos esenciales para auditoría (ahorra ~87% de espacio)
 
         Args:
             datos_guardados: Diccionario COMPLETO con TODOS los datos guardados en BD
@@ -241,27 +311,116 @@ class DebugMapper:
         if not self.current_map:
             raise RuntimeError("Debe iniciar una sesión primero con iniciar_sesion()")
 
-        # V2.0: Guardar TODO sin filtros
-        self.current_map["base_datos"]["datos_guardados"] = datos_guardados
-        self.current_map["base_datos"]["columnas_mapeadas"] = columnas_mapeadas or {}
+        # V3.0: Lista de campos críticos para auditoría (solo estos se guardan)
+        CAMPOS_CRITICOS_AUDITORIA = [
+            # Identificación mínima
+            'N. peticion', 'Numero de peticion IHQ',
+            'Nombre Completo', 'Nombre',
 
-        # Estadísticas especiales para campos críticos
-        campos_criticos = {
-            'IHQ_ESTUDIOS_SOLICITADOS': datos_guardados.get('IHQ_ESTUDIOS_SOLICITADOS'),
-            'IHQ_KI-67': datos_guardados.get('IHQ_KI-67'),
-            'IHQ_HER2': datos_guardados.get('IHQ_HER2'),
-            'IHQ_RECEPTOR_ESTROGENOS': datos_guardados.get('IHQ_RECEPTOR_ESTROGENOS'),
-            'IHQ_RECEPTOR_PROGESTERONA': datos_guardados.get('IHQ_RECEPTOR_PROGESTERONA'),
-        }
+            # Campo CRÍTICO para auditoría
+            'IHQ_ESTUDIOS_SOLICITADOS',
+
+            # Biomarcadores oncológicos principales
+            'IHQ_KI-67', 'IHQ_HER2',
+            'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA',
+            'IHQ_P53', 'IHQ_P16', 'IHQ_CD20', 'IHQ_CD3',
+            'IHQ_MLH1', 'IHQ_MSH2', 'IHQ_MSH6', 'IHQ_PMS2',  # MMR
+            'IHQ_CITOQUERATINA_7', 'IHQ_CITOQUERATINA_20',
+            'IHQ_TTF1', 'IHQ_NAPSIN_A', 'IHQ_CDX2',
+
+            # Descripciones (importantes para validación semántica)
+            'Descripcion macroscopica', 'Descripcion microscopica',
+            'Descripcion diagnostico', 'Diagnostico'
+        ]
+
+        # V3.0: Filtrar solo campos críticos
+        campos_criticos = {}
+        biomarcadores_count = 0
+
+        for campo in CAMPOS_CRITICOS_AUDITORIA:
+            if campo in datos_guardados:
+                valor = datos_guardados[campo]
+                campos_criticos[campo] = valor
+
+                # Contar biomarcadores encontrados
+                if campo.startswith('IHQ_') and campo != 'IHQ_ESTUDIOS_SOLICITADOS':
+                    if valor and str(valor).strip() and str(valor) not in ['N/A', 'None', '']:
+                        biomarcadores_count += 1
+
+        # V3.1 MEJORA: Agregar dinámicamente biomarcadores de IHQ_ESTUDIOS_SOLICITADOS
+        # Si IHQ_ESTUDIOS_SOLICITADOS = "HEPATOCITO, CD34, CK7", agregar IHQ_HEPATOCITO, IHQ_CD34, IHQ_CK7
+        estudios_solicitados = datos_guardados.get('IHQ_ESTUDIOS_SOLICITADOS', '')
+        if estudios_solicitados and str(estudios_solicitados).strip():
+            # Parsear biomarcadores del string (separados por comas)
+            biomarcadores_solicitados = [
+                b.strip().upper() for b in str(estudios_solicitados).split(',')
+                if b.strip()
+            ]
+
+            # Agregar cada biomarcador solicitado a campos críticos
+            for biomarcador in biomarcadores_solicitados:
+                # Buscar en datos_guardados con diferentes variaciones del nombre
+                posibles_nombres = [
+                    f'IHQ_{biomarcador}',
+                    f'IHQ_{biomarcador.replace(" ", "_")}',
+                    f'IHQ_{biomarcador.replace("-", "_")}',
+                ]
+
+                for nombre_campo in posibles_nombres:
+                    if nombre_campo in datos_guardados and nombre_campo not in campos_criticos:
+                        valor_biomarcador = datos_guardados[nombre_campo]
+                        campos_criticos[nombre_campo] = valor_biomarcador
+
+                        # Contar si tiene valor
+                        if valor_biomarcador and str(valor_biomarcador).strip() and str(valor_biomarcador) not in ['N/A', 'None', '']:
+                            biomarcadores_count += 1
+                        break  # Ya encontramos el campo, no seguir buscando variaciones
 
         self.current_map["base_datos"]["campos_criticos"] = campos_criticos
+        self.current_map["base_datos"]["columnas_mapeadas"] = columnas_mapeadas or {}
 
-        # Validar campos
-        for campo, valor in datos_guardados.items():
-            if not valor or str(valor).strip() in ['', 'N/A', 'None']:
-                self.current_map["validacion"]["campos_vacios"].append(campo)
-            else:
-                self.current_map["validacion"]["campos_con_valor"].append(campo)
+        # V3.0: Estadísticas en lugar de listas completas
+        total_campos = len(datos_guardados)
+        campos_vacios = sum(
+            1 for v in datos_guardados.values()
+            if not v or str(v).strip() in ['', 'N/A', 'None']
+        )
+        campos_completos = total_campos - campos_vacios
+
+        self.current_map["base_datos"]["estadisticas"] = {
+            "total_campos_guardados": total_campos,
+            "campos_vacios": campos_vacios,
+            "campos_completos": campos_completos,
+            "biomarcadores_encontrados": biomarcadores_count,
+            "completitud_porcentaje": round((campos_completos / total_campos * 100) if total_campos > 0 else 0, 2)
+        }
+
+        # V3.0 OPTIMIZACIÓN: Solo guardar contadores + top campos críticos vacíos
+        # NO guardar listas completas de 150+ items
+
+        # Prioridad de campos críticos (más importante = más arriba)
+        CAMPOS_MUY_CRITICOS = [
+            'IHQ_ESTUDIOS_SOLICITADOS',
+            'Descripcion microscopica', 'Descripcion diagnostico',
+            'IHQ_KI-67', 'IHQ_HER2',
+            'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA',
+            'Nombre Completo', 'N. peticion'
+        ]
+
+        # Detectar campos críticos vacíos
+        campos_criticos_vacios = []
+        for campo in CAMPOS_MUY_CRITICOS:
+            if campo in datos_guardados:
+                valor = datos_guardados[campo]
+                if not valor or str(valor).strip() in ['', 'N/A', 'None']:
+                    campos_criticos_vacios.append(campo)
+
+        # Guardar solo top 5 campos críticos vacíos
+        self.current_map["validacion"]["top_campos_criticos_vacios"] = campos_criticos_vacios[:5]
+
+        # Actualizar contadores
+        self.current_map["validacion"]["estadisticas"]["total_campos_vacios"] = campos_vacios
+        self.current_map["validacion"]["estadisticas"]["total_campos_completos"] = campos_completos
 
     def agregar_warning(self, mensaje: str, contexto: Optional[Dict[str, Any]] = None):
         """
@@ -365,6 +524,7 @@ class DebugMapper:
     def generar_resumen(self) -> Dict[str, Any]:
         """
         Genera un resumen ejecutivo del mapa de debug
+        V3.0: Actualizado para usar estadísticas en lugar de listas
 
         Returns:
             Dict con resumen ejecutivo
@@ -372,21 +532,23 @@ class DebugMapper:
         if not self.current_map:
             return {}
 
-        total_campos = len(self.current_map["validacion"]["campos_vacios"]) + \
-                      len(self.current_map["validacion"]["campos_con_valor"])
+        # V3.0: Usar estadísticas de base_datos
+        stats_bd = self.current_map["base_datos"]["estadisticas"]
+        stats_validacion = self.current_map["validacion"]["estadisticas"]
 
-        completitud = (
-            len(self.current_map["validacion"]["campos_con_valor"]) / total_campos * 100
-            if total_campos > 0 else 0
-        )
+        total_campos = stats_bd.get("total_campos_guardados", 0)
+        campos_completos = stats_bd.get("campos_completos", 0)
+        campos_vacios = stats_bd.get("campos_vacios", 0)
+        completitud = stats_bd.get("completitud_porcentaje", 0)
 
         resumen = {
             "numero_peticion": self.current_map["numero_peticion"],
             "timestamp": self.current_map["timestamp"],
-            "completitud_porcentaje": round(completitud, 2),
+            "completitud_porcentaje": completitud,
             "campos_totales": total_campos,
-            "campos_completos": len(self.current_map["validacion"]["campos_con_valor"]),
-            "campos_vacios": len(self.current_map["validacion"]["campos_vacios"]),
+            "campos_completos": campos_completos,
+            "campos_vacios": campos_vacios,
+            "biomarcadores_encontrados": stats_bd.get("biomarcadores_encontrados", 0),
             "warnings": len(self.current_map["validacion"]["warnings"]),
             "errores": len(self.current_map["validacion"]["errores"]),
             "tiempo_total_segundos": self.current_map["metricas"]["tiempo_total_segundos"],
@@ -398,6 +560,7 @@ class DebugMapper:
     def exportar_para_llm(self) -> Dict[str, Any]:
         """
         Exporta el mapa en un formato optimizado para envío a LLM
+        V3.0: Actualizado para estructura optimizada
 
         Returns:
             Dict con datos formateados para LLM
@@ -405,13 +568,14 @@ class DebugMapper:
         if not self.current_map:
             return {}
 
-        # Formato condensado para LLM
+        # V3.0: Formato condensado para LLM con campos críticos
         llm_data = {
             "numero_peticion": self.current_map["numero_peticion"],
             "texto_procesado": self.current_map["ocr"]["texto_consolidado"],
             "datos_extraidos": self.current_map["extraccion"]["unified_extractor"],
-            "datos_guardados_bd": self.current_map["base_datos"]["datos_guardados"],
-            "campos_vacios": self.current_map["validacion"]["campos_vacios"],
+            "campos_criticos_bd": self.current_map["base_datos"]["campos_criticos"],  # V3.0: Solo críticos
+            "campos_criticos_vacios": self.current_map["validacion"]["top_campos_criticos_vacios"],  # V3.0: Top 5
+            "estadisticas": self.current_map["base_datos"]["estadisticas"],  # V3.0: Estadísticas
             "warnings": [w["mensaje"] for w in self.current_map["validacion"]["warnings"]],
             "errores": [e["mensaje"] for e in self.current_map["validacion"]["errores"]],
             "resumen": self.generar_resumen()

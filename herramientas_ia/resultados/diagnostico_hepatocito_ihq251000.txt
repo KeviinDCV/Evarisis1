@@ -1,0 +1,61 @@
+================================================================================
+DIAGNOSTICO: IHQ_HEPATOCITO NO SE GUARDA EN BD
+CASO: IHQ251000
+================================================================================
+
+1. LECTURA DE DEBUG_MAP
+--------------------------------------------------------------------------------
+Valores en unified_extractor:
+  IHQ_HEPATOCITO: 'POSITIVO'
+  hepatocito: 'POSITIVO'
+  IHQ_ARGINASA: 'POSITIVO'
+  arginasa: 'POSITIVO'
+
+Valores en base_datos.datos_guardados (lo que dice debug_map que se guardó):
+  IHQ_HEPATOCITO: 'POSITIVO'
+  IHQ_ARGINASA: 'POSITIVO'
+
+
+2. VERIFICACION EN BD REAL
+--------------------------------------------------------------------------------
+Valores REALES en BD:
+  IHQ_HEPATOCITO: 'N/A'
+  IHQ_ARGINASA: 'POSITIVO'
+
+
+3. SIMULACION DE save_records()
+--------------------------------------------------------------------------------
+Columna en BD: 'IHQ_HEPATOCITO'
+Normalizada: 'ihq_hepatocito'
+
+Linea 773 de save_records:
+  value = record.get('ihq_hepatocito', record.get('IHQ_HEPATOCITO', "N/A"))
+
+  Paso 1: record.get('ihq_hepatocito') = None
+    -> NO EXISTE, usar fallback
+  Paso 2: record.get('IHQ_HEPATOCITO', "N/A") = 'POSITIVO'
+  RESULTADO FINAL: value = 'POSITIVO'
+
+
+4. COMPARACION Y DISCREPANCIA
+--------------------------------------------------------------------------------
+unified_extractor.IHQ_HEPATOCITO: 'POSITIVO'
+base_datos.datos_guardados.IHQ_HEPATOCITO: 'POSITIVO'
+BD REAL IHQ_HEPATOCITO: 'N/A'
+
+DISCREPANCIA DETECTADA:
+  - unified_extractor tiene POSITIVO
+  - base_datos.datos_guardados dice que se guardo POSITIVO
+  - Pero BD REAL tiene N/A
+
+POSIBLES CAUSAS:
+  1. debug_map.json NO REFLEJA EL GUARDADO REAL
+     -> base_datos.datos_guardados se genera ANTES de save_records()
+     -> O se genera con datos DIFERENTES a los que realmente se guardan
+
+  2. PROBLEMA EN save_records() NO DETECTADO POR SIMULACION
+     -> Tal vez hay un problema con el ORDER de las columnas
+     -> O hay un problema con el metodo de UPDATE vs INSERT
+
+  3. CASO SE GUARDO ANTES DE QUE IHQ_HEPATOCITO EXISTIERA
+     -> Y NO SE ACTUALIZO POSTERIORMENTE

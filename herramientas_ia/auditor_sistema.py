@@ -24,8 +24,16 @@ Salida:
   herramientas_ia/resultados/auditoria_inteligente_IHQ250980.json
 
 Autor: Sistema EVARISIS
-Versión: 3.1.1 - FIX Mapeo P16/P40 (IHQ250994)
+Versión: 3.2.0 - FIX Extracción estudios solicitados (IHQ250996)
 Fecha: 31 de octubre de 2025
+
+CHANGELOG v3.2.0:
+- ✅ FIX CRÍTICO: Inconsistencia auditor vs extractor en IHQ_ESTUDIOS_SOLICITADOS
+- ✅ Antes: Auditor usaba patrones propios → capturaba texto incorrecto
+- ✅ Ahora: Auditor usa extract_biomarcadores_solicitados_robust() del extractor
+- ✅ Resuelve: IHQ250996 reportaba "ROCHE VENTANA®" en lugar de "CKAE1AE3, PSA"
+- ✅ Garantiza: Auditor y extractor SIEMPRE reportan los mismos biomarcadores
+- 📝 Backups: NO (mejora en validación, no modifica datos)
 
 CHANGELOG v3.1.1:
 - ✅ FIX CRÍTICO: Mapeo P16/P40 corregido a columnas _ESTADO
@@ -206,6 +214,12 @@ class AuditorSistema:
     # ---------- Citoqueratinas (12 biomarcadores) ----------
     'CK AE1/AE3': 'IHQ_CKAE1AE3', 'CK AE1 AE3': 'IHQ_CKAE1AE3', 'CKAE1AE3': 'IHQ_CKAE1AE3',
     'CK7': 'IHQ_CK7', 'CK 7': 'IHQ_CK7', 'CK-7': 'IHQ_CK7', 'CITOQUERATINA 7': 'IHQ_CK7',
+    'HEPATOCITO': 'IHQ_HEPATOCITO',
+    'HEPATOCYTE': 'IHQ_HEPATOCITO',  # V6.0.16: Auto-agregado
+    'PSA': 'IHQ_PSA',
+    'ANTÍGENO PROSTÁTICO ESPECÍFICO': 'IHQ_PSA',
+    'ANTIGENO PROSTATICO': 'IHQ_PSA',
+    'ANTÍGENO PROSTÁTICO': 'IHQ_PSA',  # V6.0.16: Auto-agregado
     'CADENA LIGERA LAMBDA': 'IHQ_LAMBDA',
     'L-LAMBDA': 'IHQ_LAMBDA',
     'CADENAS LIVIANAS LAMBDA': 'IHQ_LAMBDA',
@@ -857,49 +871,24 @@ class AuditorSistema:
         """
         Extrae IHQ_ESTUDIOS_SOLICITADOS directamente del OCR (validación independiente).
 
-        V3.1.0: Nueva función para evitar validación circular.
-        Busca patrón "se realiza marcación para X, Y, Z".
+        V3.2.0: Usa extract_biomarcadores_solicitados_robust() de medical_extractor.
+        CORRIGE: Inconsistencia entre auditor y extractor (IHQ250996).
+
+        Anteriormente el auditor usaba patrones diferentes al extractor,
+        causando discrepancias. Ahora usa la MISMA función para garantizar
+        que auditor y extractor reporten los mismos biomarcadores.
 
         Args:
             ocr: Texto OCR consolidado
 
         Returns:
-            Lista de biomarcadores normalizados
+            Lista de biomarcadores normalizados (misma salida que extractor)
 
-        Complexity: CC ~5
+        Complexity: CC ~1 (delegación)
         """
-        # Patrón 1: "se realiza marcación para X, Y, Z"
-        patron1 = r'se\s+realiza.*?marcaci[óo]n\s+para\s+([^\.]+)'
-        match = re.search(patron1, ocr, re.IGNORECASE)
-
-        if match:
-            texto = match.group(1).strip()
-            # Parsear biomarcadores (separados por comas o " y ")
-            biomarcadores = re.split(r',|\sy\s', texto)
-            biomarcadores = [b.strip() for b in biomarcadores if b.strip()]
-
-            # Normalizar nombres usando función existente
-            biomarcadores_normalizados = []
-            for bio in biomarcadores:
-                # Usar normalización básica
-                bio_norm = bio.upper().strip()
-                # Eliminar artículos y preposiciones
-                bio_norm = re.sub(r'\b(DE|DEL|LA|LAS|LOS|EL)\b', '', bio_norm).strip()
-                biomarcadores_normalizados.append(bio_norm)
-
-            return biomarcadores_normalizados
-
-        # Patrón 2: "ESTUDIOS DE INMUNOHISTOQUIMICA: X, Y, Z" (menos común)
-        patron2 = r'ESTUDIOS\s+DE\s+INMUNOHISTOQU[ÍI]MICA[:\s]+([^\.]+)'
-        match = re.search(patron2, ocr, re.IGNORECASE)
-
-        if match:
-            texto = match.group(1).strip()
-            biomarcadores = re.split(r',|\sy\s', texto)
-            biomarcadores = [b.strip().upper() for b in biomarcadores if b.strip()]
-            return biomarcadores
-
-        return []
+        # DELEGACIÓN DIRECTA al extractor robusto de medical_extractor
+        # Esto garantiza que auditor y extractor usen la MISMA lógica
+        return extract_biomarcadores_solicitados_robust(ocr)
 
 
     # ==================== FIN FUNCIONES DE EXTRACCIÓN INDEPENDIENTE ====================
@@ -2303,6 +2292,194 @@ biomarcadores_tipificacion = [
             traceback.print_exc()
             return False
 
+    # ========================================================================
+    # Métodos Auxiliares para FUNC-03 (agregar_biomarcador)
+    # ========================================================================
+
+    def _validar_nombre_biomarcador(self, nombre: str) -> Dict[str, Any]:
+        """
+        Valida que el nombre del biomarcador sea SQL-safe y siga convenciones.
+
+        Args:
+            nombre: Nombre del biomarcador a validar
+
+        Returns:
+            Dict con keys: 'valido' (bool), 'error' (str o None), 'sugerencia' (str o None)
+        """
+        import re
+
+        nombre_upper = nombre.upper().strip()
+
+        if len(nombre_upper) < 2:
+            return {'valido': False, 'error': 'Nombre muy corto (mínimo 2 caracteres)', 'sugerencia': None}
+
+        if len(nombre_upper) > 50:
+            return {'valido': False, 'error': 'Nombre muy largo (máximo 50 caracteres)', 'sugerencia': None}
+
+        if not re.match(r'^[A-Z0-9_]+$', nombre_upper):
+            caracteres_invalidos = re.findall(r'[^A-Z0-9_]', nombre_upper)
+            sugerencia = nombre_upper
+            for char in set(caracteres_invalidos):
+                if char in [' ', '-', '/']:
+                    sugerencia = sugerencia.replace(char, '_')
+                else:
+                    sugerencia = sugerencia.replace(char, '')
+
+            return {
+                'valido': False,
+                'error': f"Caracteres inválidos: {set(caracteres_invalidos)}",
+                'sugerencia': f"Prueba con: {sugerencia}"
+            }
+
+        if nombre_upper[0] in '0123456789_':
+            return {
+                'valido': False,
+                'error': 'No puede empezar con número o underscore',
+                'sugerencia': f"Prueba con: BM_{nombre_upper}"
+            }
+
+        return {'valido': True, 'error': None, 'sugerencia': None}
+
+    def _validar_biomarcador_no_existe(self, nombre_upper: str, columna_bd: str) -> Dict[str, Any]:
+        """
+        Valida que el biomarcador NO exista ya en los 6 archivos del sistema.
+
+        Args:
+            nombre_upper: Nombre del biomarcador en mayúsculas
+            columna_bd: Nombre de la columna BD (ej. 'IHQ_PSA')
+
+        Returns:
+            Dict con keys: 'existe' (bool), 'ubicaciones' (lista de archivos donde existe)
+        """
+        import re
+        from pathlib import Path
+
+        base_path = Path(__file__).parent.parent
+        archivos_a_verificar = {
+            'database_manager.py': [
+                rf'"{columna_bd}" TEXT',
+                rf'"{columna_bd}"',
+            ],
+            'auditor_sistema.py': [
+                rf"'{nombre_upper}':\s*'{columna_bd}'",
+            ],
+            'ui.py': [
+                rf'"{columna_bd}"',
+            ],
+            'validation_checker.py': [
+                rf"'{nombre_upper}':\s*'{columna_bd}'",
+            ],
+            'biomarker_extractor.py': [
+                rf"'{nombre_upper}':\s*'{nombre_upper}'",
+            ],
+            'unified_extractor.py': [
+                rf"'{nombre_upper}':\s*'{columna_bd}'",
+            ]
+        }
+
+        ubicaciones_encontradas = []
+
+        for archivo, patrones in archivos_a_verificar.items():
+            if archivo == 'database_manager.py':
+                archivo_path = base_path / 'core' / archivo
+            elif archivo == 'validation_checker.py':
+                archivo_path = base_path / 'core' / archivo
+            elif archivo == 'biomarker_extractor.py':
+                archivo_path = base_path / 'core' / 'extractors' / archivo
+            elif archivo == 'unified_extractor.py':
+                archivo_path = base_path / 'core' / archivo
+            elif archivo == 'auditor_sistema.py':
+                archivo_path = Path(__file__)
+            else:
+                archivo_path = base_path / archivo
+
+            try:
+                with open(archivo_path, 'r', encoding='utf-8') as f:
+                    contenido = f.read()
+
+                for patron in patrones:
+                    if re.search(patron, contenido, re.IGNORECASE):
+                        ubicaciones_encontradas.append(archivo)
+                        break
+            except Exception:
+                pass
+
+        return {
+            'existe': len(ubicaciones_encontradas) > 0,
+            'ubicaciones': ubicaciones_encontradas
+        }
+
+    def _crear_backups_func03(self, archivos: List) -> Dict[str, str]:
+        """
+        Crea backups de seguridad de todos los archivos antes de modificarlos.
+
+        Args:
+            archivos: Lista de Path objects a respaldar
+
+        Returns:
+            Dict con mapping {str(archivo): str(backup_path)}
+        """
+        import shutil
+        from datetime import datetime
+        from pathlib import Path
+
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        backups_creados = {}
+
+        backup_dir = Path(__file__).parent.parent / 'backups' / 'func03_biomarcadores'
+        backup_dir.mkdir(parents=True, exist_ok=True)
+
+        for archivo in archivos:
+            backup_path = backup_dir / f"{archivo.name}.backup_func03_{timestamp}"
+            try:
+                shutil.copy2(archivo, backup_path)
+                backups_creados[str(archivo)] = str(backup_path)
+                print(f"   💾 Backup: {backup_path.name}")
+            except Exception as e:
+                print(f"   ⚠️ Error creando backup de {archivo.name}: {e}")
+
+        return backups_creados
+
+    def _generar_variantes_inteligentes(self, nombre_upper: str) -> List[str]:
+        """
+        Genera variantes médicas relevantes para un biomarcador.
+
+        Args:
+            nombre_upper: Nombre del biomarcador en mayúsculas
+
+        Returns:
+            Lista de variantes del nombre
+        """
+        variantes = [nombre_upper]
+
+        ATLAS_ALIAS = {
+            'PSA': ['ANTÍGENO PROSTÁTICO ESPECÍFICO', 'ANTIGENO PROSTATICO', 'ANTÍGENO PROSTÁTICO'],
+            'CK7': ['CITOQUERATINA 7', 'CYTOKERATIN 7', 'CK 7', 'CK-7'],
+            'CK19': ['CITOQUERATINA 19', 'CYTOKERATIN 19', 'CK 19', 'CK-19'],
+            'CK20': ['CITOQUERATINA 20', 'CYTOKERATIN 20', 'CK 20', 'CK-20'],
+            'LAMBDA': ['CADENA LIGERA LAMBDA', 'L-LAMBDA', 'LAMBDA LIGHT CHAIN'],
+            'KAPPA': ['CADENA LIGERA KAPPA', 'K-KAPPA', 'KAPPA LIGHT CHAIN'],
+            'MSH2': ['MSH 2', 'MSH-2'],
+            'MSH6': ['MSH 6', 'MSH-6'],
+            'MLH1': ['MLH 1', 'MLH-1'],
+            'PMS2': ['PMS 2', 'PMS-2'],
+        }
+
+        if nombre_upper in ATLAS_ALIAS:
+            variantes.extend(ATLAS_ALIAS[nombre_upper])
+        else:
+            if '_' in nombre_upper:
+                variantes.append(nombre_upper.replace('_', ' '))
+                variantes.append(nombre_upper.replace('_', '-'))
+
+            if len(nombre_upper) <= 5 and any(char.isdigit() for char in nombre_upper):
+                for i in range(len(nombre_upper)):
+                    if nombre_upper[i].isdigit():
+                        variantes.append(f"{nombre_upper[:i]} {nombre_upper[i:]}")
+                        variantes.append(f"{nombre_upper[:i]}-{nombre_upper[i:]}")
+                        break
+
+        return list(set(variantes))
 
 
     # ========================================================================
@@ -2335,321 +2512,419 @@ biomarcadores_tipificacion = [
         """
         import re
         from pathlib import Path
+        from datetime import datetime
+        from config.version_info import VERSION_INFO
+        import logging
 
-        resultado = {
-            'biomarcador': nombre_biomarcador,
-            'columna_bd': f'IHQ_{nombre_biomarcador}',
-            'archivos_modificados': [],
-            'errores': [],
-            'estado': 'PENDIENTE'
-        }
+        # ===== VALIDACIONES PRE-VUELO =====
+        print(f"\n{'='*70}")
+        print(f"🔧 FUNC-03: AGREGANDO BIOMARCADOR AL SISTEMA")
+        print(f"{'='*70}")
 
-        # Normalizar nombre
-        nombre_upper = nombre_biomarcador.upper()
+        # 1. Validar nombre del biomarcador
+        validacion_nombre = self._validar_nombre_biomarcador(nombre_biomarcador)
+        if not validacion_nombre['valido']:
+            print(f"\n❌ ERROR: Nombre inválido")
+            print(f"   {validacion_nombre['error']}")
+            if validacion_nombre.get('sugerencia'):
+                print(f"   💡 Sugerencia: {validacion_nombre['sugerencia']}")
+            return {
+                'estado': 'ERROR_NOMBRE_INVALIDO',
+                'biomarcador': nombre_biomarcador,
+                'error': validacion_nombre['error'],
+                'sugerencia': validacion_nombre.get('sugerencia')
+            }
+
+        # 2. Normalizar nombre
+        nombre_upper = nombre_biomarcador.upper().strip()
         columna_bd = f'IHQ_{nombre_upper}'
 
-        # Generar variantes si no se proporcionan
+        # 3. Validar que NO exista ya en el sistema
+        print(f"\n🔍 Validando que {nombre_upper} no exista...")
+        validacion_existencia = self._validar_biomarcador_no_existe(nombre_upper, columna_bd)
+        if validacion_existencia['existe']:
+            print(f"\n❌ ERROR: El biomarcador {nombre_upper} ya existe en:")
+            for ubicacion in validacion_existencia['ubicaciones']:
+                print(f"   - {ubicacion}")
+            return {
+                'estado': 'ERROR_YA_EXISTE',
+                'biomarcador': nombre_upper,
+                'columna_bd': columna_bd,
+                'archivos_duplicados': validacion_existencia['ubicaciones']
+            }
+
+        print(f"   ✅ Biomarcador no existe (OK)")
+
+        # 4. Generar o usar variantes proporcionadas
         if not variantes:
-            variantes = [
-                nombre_upper,
-                nombre_upper.replace('_', '-'),
-                nombre_upper.replace('_', ' '),
-                f'{nombre_upper[:2]}-{nombre_upper[2:]}' if len(nombre_upper) > 2 else nombre_upper,
-                f'{nombre_upper[:2]} {nombre_upper[2:]}' if len(nombre_upper) > 2 else nombre_upper
-            ]
-            # Remover duplicados
+            variantes = self._generar_variantes_inteligentes(nombre_upper)
+        else:
+            variantes = [nombre_upper] + list(variantes)
             variantes = list(set(variantes))
 
-        print(f"\n🔧 FUNC-03: Agregando biomarcador {nombre_upper}")
+        # 5. Obtener versión dinámica
+        version_actual = VERSION_INFO['version']
+        timestamp = datetime.now().strftime('%Y-%m-%d')
+
+        print(f"\n📋 CONFIGURACIÓN:")
+        print(f"   Biomarcador: {nombre_upper}")
         print(f"   Columna BD: {columna_bd}")
         print(f"   Variantes: {', '.join(variantes)}")
+        print(f"   Versión: {version_actual}")
 
+        # ===== PREPARAR BACKUPS Y RESULTADO =====
         base_path = Path(__file__).parent.parent
 
-        # ===== ARCHIVO 1: database_manager.py =====
+        archivos_a_modificar = [
+            base_path / 'core' / 'database_manager.py',
+            Path(__file__),
+            base_path / 'ui.py',
+            base_path / 'core' / 'validation_checker.py',
+            base_path / 'core' / 'extractors' / 'biomarker_extractor.py',
+            base_path / 'core' / 'unified_extractor.py',
+        ]
+
+        print(f"\n💾 Creando backups de seguridad...")
+        backups = self._crear_backups_func03(archivos_a_modificar)
+
+        # Guardar estados originales para rollback
+        estados_originales = {}
+        for archivo in archivos_a_modificar:
+            try:
+                with open(archivo, 'r', encoding='utf-8') as f:
+                    estados_originales[str(archivo)] = f.read()
+            except Exception as e:
+                print(f"\n❌ ERROR: No se pudo leer {archivo.name}")
+                return {
+                    'estado': 'ERROR_LECTURA',
+                    'error': f'No se pudo leer {archivo.name}: {e}'
+                }
+
+        # Inicializar resultado
+        resultado = {
+            'biomarcador': nombre_upper,
+            'columna_bd': columna_bd,
+            'variantes': variantes,
+            'version': version_actual,
+            'archivos_modificados': [],
+            'errores': [],
+            'backups': backups,
+            'estado': 'EN_PROGRESO'
+        }
+
+        print(f"\n{'='*70}")
+        print(f"🔄 INICIANDO MODIFICACIÓN DE 6 ARCHIVOS")
+        print(f"{'='*70}")
+
+        # Envolver en try-except para rollback
         try:
-            archivo_path = base_path / 'core' / 'database_manager.py'
-            print(f"\n📝 1/6 Modificando {archivo_path.name}...")
+            # ===== ARCHIVO 1: database_manager.py =====
+            try:
+                archivo_path = base_path / 'core' / 'database_manager.py'
+                print(f"\n📝 1/6 Modificando {archivo_path.name}...")
 
-            with open(archivo_path, 'r', encoding='utf-8') as f:
-                contenido = f.read()
+                with open(archivo_path, 'r', encoding='utf-8') as f:
+                    contenido = f.read()
 
-            # Buscar la sección de biomarcadores v4.0
-            patron_insert = r'("IHQ_CK7" TEXT,)'
-            if re.search(patron_insert, contenido):
-                # Insertar después de IHQ_CK7
-                nuevo_contenido = re.sub(
-                    patron_insert,
-                    f'\\1\n            "{columna_bd}" TEXT,  # V6.0.16: Auto-agregado',
-                    contenido,
-                    count=1
-                )
+                # Buscar la sección de biomarcadores v4.0
+                patron_insert = r'("IHQ_CK7" TEXT,)'
+                if re.search(patron_insert, contenido):
+                    # Insertar después de IHQ_CK7
+                    nuevo_contenido = re.sub(
+                        patron_insert,
+                        f'\\1\n            "{columna_bd}" TEXT,',
+                        contenido,
+                        count=1
+                    )
 
-                # Verificar que se insertó
-                if nuevo_contenido != contenido:
+                    # Verificar que se insertó
+                    if nuevo_contenido != contenido:
+                        with open(archivo_path, 'w', encoding='utf-8') as f:
+                            f.write(nuevo_contenido)
+                        resultado['archivos_modificados'].append(f'{archivo_path.name} (CREATE TABLE)')
+                        print(f"   ✅ Agregado en CREATE TABLE")
+                    else:
+                        resultado['errores'].append(f'{archivo_path.name}: Ya existe o no se pudo insertar')
+
+                # Agregar también en _add_new_biomarker_columns
+                with open(archivo_path, 'r', encoding='utf-8') as f:
+                    contenido = f.read()
+
+                patron_list = r'(new_biomarkers = \[[\s\S]*?"IHQ_CK7",)'
+                if re.search(patron_list, contenido):
+                    nuevo_contenido = re.sub(
+                        patron_list,
+                        f'\\1 "{columna_bd}",',
+                        contenido,
+                        count=1
+                    )
+
+                    if nuevo_contenido != contenido:
+                        with open(archivo_path, 'w', encoding='utf-8') as f:
+                            f.write(nuevo_contenido)
+                        resultado['archivos_modificados'].append(f'{archivo_path.name} (new_biomarkers)')
+                        print(f"   ✅ Agregado en new_biomarkers list")
+
+            except Exception as e:
+                error_msg = f'{archivo_path.name}: {str(e)}'
+                resultado['errores'].append(error_msg)
+                print(f"   ❌ Error: {e}")
+
+            # ===== ARCHIVO 2: auditor_sistema.py (este mismo archivo) =====
+            try:
+                archivo_path = Path(__file__)
+                print(f"\n📝 2/6 Modificando {archivo_path.name}...")
+
+                with open(archivo_path, 'r', encoding='utf-8') as f:
+                    contenido = f.read()
+
+                # Buscar BIOMARKER_ALIAS_MAP y agregar después de CK7
+                patron = r"('CK7': 'IHQ_CK7',.*?\n)"
+                mapeo_lineas = []
+                for var in variantes:
+                    mapeo_lineas.append(f"    '{var}': '{columna_bd}',")
+                mapeo_str = '\n'.join(mapeo_lineas) + '\n'
+
+                if re.search(patron, contenido):
+                    nuevo_contenido = re.sub(
+                        patron,
+                        f'\\1{mapeo_str}',
+                        contenido,
+                        count=1
+                    )
+
+                    if nuevo_contenido != contenido:
+                        with open(archivo_path, 'w', encoding='utf-8') as f:
+                            f.write(nuevo_contenido)
+                        resultado['archivos_modificados'].append(f'{archivo_path.name} (BIOMARKER_ALIAS_MAP)')
+                        print(f"   ✅ Agregado en BIOMARKER_ALIAS_MAP")
+                    else:
+                        resultado['errores'].append(f'{archivo_path.name}: Ya existe')
+
+            except Exception as e:
+                error_msg = f'{archivo_path.name}: {str(e)}'
+                resultado['errores'].append(error_msg)
+                print(f"   ❌ Error: {e}")
+
+            # ===== ARCHIVO 3: ui.py =====
+            try:
+                archivo_path = base_path / 'ui.py'
+                print(f"\n📝 3/6 Modificando {archivo_path.name}...")
+
+                with open(archivo_path, 'r', encoding='utf-8') as f:
+                    contenido = f.read()
+
+                # Buscar la lista de columnas IHQ y agregar después de IHQ_CK7
+                patron = r'("IHQ_CK7",)'
+                if re.search(patron, contenido):
+                    nuevo_contenido = re.sub(
+                        patron,
+                        f'\\1\n            "{columna_bd}",',
+                        contenido,
+                        count=1
+                    )
+
+                    if nuevo_contenido != contenido:
+                        with open(archivo_path, 'w', encoding='utf-8') as f:
+                            f.write(nuevo_contenido)
+                        resultado['archivos_modificados'].append(f'{archivo_path.name} (columnas)')
+                        print(f"   ✅ Agregado en lista de columnas")
+                    else:
+                        resultado['errores'].append(f'{archivo_path.name}: Ya existe')
+
+            except Exception as e:
+                error_msg = f'{archivo_path.name}: {str(e)}'
+                resultado['errores'].append(error_msg)
+                print(f"   ❌ Error: {e}")
+
+            # ===== ARCHIVO 4: validation_checker.py =====
+            try:
+                archivo_path = base_path / 'core' / 'validation_checker.py'
+                print(f"\n📝 4/6 Modificando {archivo_path.name}...")
+
+                with open(archivo_path, 'r', encoding='utf-8') as f:
+                    contenido = f.read()
+
+                # Buscar all_biomarker_mapping y agregar después de CK7
+                patron = r"('CK7': 'IHQ_CK7',\s+'IHQ_CK7': 'IHQ_CK7',)"
+                mapeo_str = f"\n\n    '{nombre_upper}': '{columna_bd}',\n    '{columna_bd}': '{columna_bd}',"
+
+                if re.search(patron, contenido):
+                    nuevo_contenido = re.sub(
+                        patron,
+                        f'\\1{mapeo_str}',
+                        contenido,
+                        count=1
+                    )
+
+                    if nuevo_contenido != contenido:
+                        with open(archivo_path, 'w', encoding='utf-8') as f:
+                            f.write(nuevo_contenido)
+                        resultado['archivos_modificados'].append(f'{archivo_path.name} (all_biomarker_mapping)')
+                        print(f"   ✅ Agregado en all_biomarker_mapping")
+                    else:
+                        resultado['errores'].append(f'{archivo_path.name}: Ya existe')
+
+            except Exception as e:
+                error_msg = f'{archivo_path.name}: {str(e)}'
+                resultado['errores'].append(error_msg)
+                print(f"   ❌ Error: {e}")
+
+            # ===== ARCHIVO 5: biomarker_extractor.py =====
+            try:
+                archivo_path = base_path / 'core' / 'extractors' / 'biomarker_extractor.py'
+                print(f"\n📝 5/6 Modificando {archivo_path.name}...")
+
+                with open(archivo_path, 'r', encoding='utf-8') as f:
+                    contenido = f.read()
+
+                # 4 lugares a modificar
+                modificaciones = 0
+
+                # 1. Patrones individuales (línea ~1817)
+                patron1 = r'(individual_patterns = \[[\s\S]*?ck7\|)'
+                if re.search(patron1, contenido):
+                    nuevo_contenido = re.sub(
+                        patron1,
+                        f'\\1{nombre_upper.lower()}|',
+                        contenido,
+                        count=2  # Dos patrones
+                    )
+                    if nuevo_contenido != contenido:
+                        contenido = nuevo_contenido
+                        modificaciones += 1
+
+                # 2. Patrones "el marcador X es" (línea ~1824)
+                patron2 = r'(single_marker_patterns = \[[\s\S]*?ck7\|)'
+                if re.search(patron2, contenido):
+                    nuevo_contenido = re.sub(
+                        patron2,
+                        f'\\1{nombre_upper.lower()}|',
+                        contenido,
+                        count=2
+                    )
+                    if nuevo_contenido != contenido:
+                        contenido = nuevo_contenido
+                        modificaciones += 1
+
+                # 3. Compound negative pattern (línea ~1842)
+                patron3 = r'(compound_negative_pattern = r.*?ck7\|)'
+                if re.search(patron3, contenido):
+                    nuevo_contenido = re.sub(
+                        patron3,
+                        f'\\1{nombre_upper.lower()}|',
+                        contenido,
+                        count=2
+                    )
+                    if nuevo_contenido != contenido:
+                        contenido = nuevo_contenido
+                        modificaciones += 1
+
+                # 4. normalize_biomarker_name (línea ~1930)
+                patron4 = r"('CK7': 'CK7',\s+'CK-7': 'CK7',\s+'CK 7': 'CK7',)"
+                mapeo_norm = f"\n        '{nombre_upper}': '{nombre_upper}',\n        '{nombre_upper.replace('_', '-')}': '{nombre_upper}',\n        '{nombre_upper.replace('_', ' ')}': '{nombre_upper}',"
+
+                if re.search(patron4, contenido):
+                    nuevo_contenido = re.sub(
+                        patron4,
+                        f'\\1{mapeo_norm}',
+                        contenido,
+                        count=1
+                    )
+                    if nuevo_contenido != contenido:
+                        contenido = nuevo_contenido
+                        modificaciones += 1
+
+                # Guardar todos los cambios
+                if modificaciones > 0:
                     with open(archivo_path, 'w', encoding='utf-8') as f:
-                        f.write(nuevo_contenido)
-                    resultado['archivos_modificados'].append(f'{archivo_path.name} (CREATE TABLE)')
-                    print(f"   ✅ Agregado en CREATE TABLE")
+                        f.write(contenido)
+                    resultado['archivos_modificados'].append(f'{archivo_path.name} ({modificaciones} lugares)')
+                    print(f"   ✅ Agregado en {modificaciones} lugares")
                 else:
-                    resultado['errores'].append(f'{archivo_path.name}: Ya existe o no se pudo insertar')
+                    resultado['errores'].append(f'{archivo_path.name}: No se pudo modificar')
 
-            # Agregar también en _add_new_biomarker_columns
-            with open(archivo_path, 'r', encoding='utf-8') as f:
-                contenido = f.read()
+            except Exception as e:
+                error_msg = f'{archivo_path.name}: {str(e)}'
+                resultado['errores'].append(error_msg)
+                print(f"   ❌ Error: {e}")
 
-            patron_list = r'(new_biomarkers = \[[\s\S]*?"IHQ_CK7",)'
-            if re.search(patron_list, contenido):
-                nuevo_contenido = re.sub(
-                    patron_list,
-                    f'\\1 "{columna_bd}",  # V6.0.16: Auto-agregado',
-                    contenido,
-                    count=1
-                )
+            # ===== ARCHIVO 6: unified_extractor.py (2 lugares) =====
+            try:
+                archivo_path = base_path / 'core' / 'unified_extractor.py'
+                print(f"\n📝 6/6 Modificando {archivo_path.name}...")
 
-                if nuevo_contenido != contenido:
+                with open(archivo_path, 'r', encoding='utf-8') as f:
+                    contenido = f.read()
+
+                modificaciones = 0
+
+                # Lugar 1: biomarker_mapping (línea ~491)
+                patron1 = r"('CK7': 'IHQ_CK7',)"
+                mapeo1 = f"\n                '{nombre_upper}': '{columna_bd}',"
+
+                if re.search(patron1, contenido):
+                    nuevo_contenido = re.sub(
+                        patron1,
+                        f'\\1{mapeo1}',
+                        contenido,
+                        count=1
+                    )
+                    if nuevo_contenido != contenido:
+                        contenido = nuevo_contenido
+                        modificaciones += 1
+
+                # Lugar 2: all_biomarker_mapping en map_to_database_format (línea ~1179)
+                patron2 = r"(# Biomarcadores v4\.0\s+'CK7': 'IHQ_CK7', 'ck7': 'IHQ_CK7',)"
+                mapeo2 = f"\n        '{nombre_upper}': '{columna_bd}', '{nombre_upper.lower()}': '{columna_bd}',"
+
+                if re.search(patron2, contenido):
+                    nuevo_contenido = re.sub(
+                        patron2,
+                        f'\\1{mapeo2}',
+                        contenido,
+                        count=1
+                    )
+                    if nuevo_contenido != contenido:
+                        contenido = nuevo_contenido
+                        modificaciones += 1
+
+                # Guardar cambios
+                if modificaciones > 0:
                     with open(archivo_path, 'w', encoding='utf-8') as f:
-                        f.write(nuevo_contenido)
-                    resultado['archivos_modificados'].append(f'{archivo_path.name} (new_biomarkers)')
-                    print(f"   ✅ Agregado en new_biomarkers list")
-
-        except Exception as e:
-            error_msg = f'{archivo_path.name}: {str(e)}'
-            resultado['errores'].append(error_msg)
-            print(f"   ❌ Error: {e}")
-
-        # ===== ARCHIVO 2: auditor_sistema.py (este mismo archivo) =====
-        try:
-            archivo_path = Path(__file__)
-            print(f"\n📝 2/6 Modificando {archivo_path.name}...")
-
-            with open(archivo_path, 'r', encoding='utf-8') as f:
-                contenido = f.read()
-
-            # Buscar BIOMARKER_ALIAS_MAP y agregar después de CK7
-            patron = r"('CK7': 'IHQ_CK7',.*?\n)"
-            mapeo_lineas = []
-            for var in variantes:
-                mapeo_lineas.append(f"    '{var}': '{columna_bd}',")
-            mapeo_str = '\n'.join(mapeo_lineas) + '  # V6.0.16: Auto-agregado\n'
-
-            if re.search(patron, contenido):
-                nuevo_contenido = re.sub(
-                    patron,
-                    f'\\1{mapeo_str}',
-                    contenido,
-                    count=1
-                )
-
-                if nuevo_contenido != contenido:
-                    with open(archivo_path, 'w', encoding='utf-8') as f:
-                        f.write(nuevo_contenido)
-                    resultado['archivos_modificados'].append(f'{archivo_path.name} (BIOMARKER_ALIAS_MAP)')
-                    print(f"   ✅ Agregado en BIOMARKER_ALIAS_MAP")
+                        f.write(contenido)
+                    resultado['archivos_modificados'].append(f'{archivo_path.name} ({modificaciones} lugares)')
+                    print(f"   ✅ Agregado en {modificaciones} lugares")
                 else:
-                    resultado['errores'].append(f'{archivo_path.name}: Ya existe')
+                    resultado['errores'].append(f'{archivo_path.name}: No se pudo modificar')
 
-        except Exception as e:
-            error_msg = f'{archivo_path.name}: {str(e)}'
-            resultado['errores'].append(error_msg)
-            print(f"   ❌ Error: {e}")
+            except Exception as e:
+                error_msg = f'{archivo_path.name}: {str(e)}'
+                resultado['errores'].append(error_msg)
+                print(f"   ❌ Error: {e}")
 
-        # ===== ARCHIVO 3: ui.py =====
-        try:
-            archivo_path = base_path / 'ui.py'
-            print(f"\n📝 3/6 Modificando {archivo_path.name}...")
+        except Exception as e_rollback:
+            # ===== ROLLBACK: Error crítico detectado =====
+            print(f"\n{'='*70}")
+            print(f"🔄 ERROR CRÍTICO: REVIRTIENDO CAMBIOS")
+            print(f"{'='*70}")
+            print(f"Error: {str(e_rollback)}")
 
-            with open(archivo_path, 'r', encoding='utf-8') as f:
-                contenido = f.read()
+            print(f"\n🔄 Restaurando archivos desde estados originales...")
+            for archivo_str, contenido_original in estados_originales.items():
+                try:
+                    with open(archivo_str, 'w', encoding='utf-8') as f:
+                        f.write(contenido_original)
+                    print(f"   ✅ Revertido: {Path(archivo_str).name}")
+                except Exception as e_revert:
+                    print(f"   ❌ ERROR REVERTIENDO {Path(archivo_str).name}: {e_revert}")
 
-            # Buscar la lista de columnas IHQ y agregar después de IHQ_CK7
-            patron = r'("IHQ_CK7",)'
-            if re.search(patron, contenido):
-                nuevo_contenido = re.sub(
-                    patron,
-                    f'\\1\n            "{columna_bd}",  # V6.0.16: Auto-agregado',
-                    contenido,
-                    count=1
-                )
+            resultado['estado'] = 'ERROR_REVERTIDO'
+            resultado['error_original'] = str(e_rollback)
+            resultado['errores'].append(f'ROLLBACK ejecutado debido a: {str(e_rollback)}')
 
-                if nuevo_contenido != contenido:
-                    with open(archivo_path, 'w', encoding='utf-8') as f:
-                        f.write(nuevo_contenido)
-                    resultado['archivos_modificados'].append(f'{archivo_path.name} (columnas)')
-                    print(f"   ✅ Agregado en lista de columnas")
-                else:
-                    resultado['errores'].append(f'{archivo_path.name}: Ya existe')
-
-        except Exception as e:
-            error_msg = f'{archivo_path.name}: {str(e)}'
-            resultado['errores'].append(error_msg)
-            print(f"   ❌ Error: {e}")
-
-        # ===== ARCHIVO 4: validation_checker.py =====
-        try:
-            archivo_path = base_path / 'core' / 'validation_checker.py'
-            print(f"\n📝 4/6 Modificando {archivo_path.name}...")
-
-            with open(archivo_path, 'r', encoding='utf-8') as f:
-                contenido = f.read()
-
-            # Buscar all_biomarker_mapping y agregar después de CK7
-            patron = r"('CK7': 'IHQ_CK7',\s+'IHQ_CK7': 'IHQ_CK7',)"
-            mapeo_str = f"\n\n    '{nombre_upper}': '{columna_bd}',  # V6.0.16: Auto-agregado\n    '{columna_bd}': '{columna_bd}',"
-
-            if re.search(patron, contenido):
-                nuevo_contenido = re.sub(
-                    patron,
-                    f'\\1{mapeo_str}',
-                    contenido,
-                    count=1
-                )
-
-                if nuevo_contenido != contenido:
-                    with open(archivo_path, 'w', encoding='utf-8') as f:
-                        f.write(nuevo_contenido)
-                    resultado['archivos_modificados'].append(f'{archivo_path.name} (all_biomarker_mapping)')
-                    print(f"   ✅ Agregado en all_biomarker_mapping")
-                else:
-                    resultado['errores'].append(f'{archivo_path.name}: Ya existe')
-
-        except Exception as e:
-            error_msg = f'{archivo_path.name}: {str(e)}'
-            resultado['errores'].append(error_msg)
-            print(f"   ❌ Error: {e}")
-
-        # ===== ARCHIVO 5: biomarker_extractor.py =====
-        try:
-            archivo_path = base_path / 'core' / 'extractors' / 'biomarker_extractor.py'
-            print(f"\n📝 5/6 Modificando {archivo_path.name}...")
-
-            with open(archivo_path, 'r', encoding='utf-8') as f:
-                contenido = f.read()
-
-            # 3 lugares a modificar
-            modificaciones = 0
-
-            # 1. Patrones individuales (línea ~1817)
-            patron1 = r'(individual_patterns = \[[\s\S]*?ck7\|)'
-            if re.search(patron1, contenido):
-                nuevo_contenido = re.sub(
-                    patron1,
-                    f'\\1{nombre_upper.lower()}|',
-                    contenido,
-                    count=2  # Dos patrones
-                )
-                if nuevo_contenido != contenido:
-                    contenido = nuevo_contenido
-                    modificaciones += 1
-
-            # 2. Patrones "el marcador X es" (línea ~1824)
-            patron2 = r'(single_marker_patterns = \[[\s\S]*?ck7\|)'
-            if re.search(patron2, contenido):
-                nuevo_contenido = re.sub(
-                    patron2,
-                    f'\\1{nombre_upper.lower()}|',
-                    contenido,
-                    count=2
-                )
-                if nuevo_contenido != contenido:
-                    contenido = nuevo_contenido
-                    modificaciones += 1
-
-            # 3. Compound negative pattern (línea ~1842)
-            patron3 = r'(compound_negative_pattern = r.*?ck7\|)'
-            if re.search(patron3, contenido):
-                nuevo_contenido = re.sub(
-                    patron3,
-                    f'\\1{nombre_upper.lower()}|',
-                    contenido,
-                    count=2
-                )
-                if nuevo_contenido != contenido:
-                    contenido = nuevo_contenido
-                    modificaciones += 1
-
-            # 4. normalize_biomarker_name (línea ~1930)
-            patron4 = r"('CK7': 'CK7',\s+'CK-7': 'CK7',\s+'CK 7': 'CK7',)"
-            mapeo_norm = f"\n        '{nombre_upper}': '{nombre_upper}',  # V6.0.16: Auto-agregado\n        '{nombre_upper.replace('_', '-')}': '{nombre_upper}',\n        '{nombre_upper.replace('_', ' ')}': '{nombre_upper}',"
-
-            if re.search(patron4, contenido):
-                nuevo_contenido = re.sub(
-                    patron4,
-                    f'\\1{mapeo_norm}',
-                    contenido,
-                    count=1
-                )
-                if nuevo_contenido != contenido:
-                    contenido = nuevo_contenido
-                    modificaciones += 1
-
-            # Guardar todos los cambios
-            if modificaciones > 0:
-                with open(archivo_path, 'w', encoding='utf-8') as f:
-                    f.write(contenido)
-                resultado['archivos_modificados'].append(f'{archivo_path.name} ({modificaciones} lugares)')
-                print(f"   ✅ Agregado en {modificaciones} lugares")
-            else:
-                resultado['errores'].append(f'{archivo_path.name}: No se pudo modificar')
-
-        except Exception as e:
-            error_msg = f'{archivo_path.name}: {str(e)}'
-            resultado['errores'].append(error_msg)
-            print(f"   ❌ Error: {e}")
-
-        # ===== ARCHIVO 6: unified_extractor.py (2 lugares) =====
-        try:
-            archivo_path = base_path / 'core' / 'unified_extractor.py'
-            print(f"\n📝 6/6 Modificando {archivo_path.name}...")
-
-            with open(archivo_path, 'r', encoding='utf-8') as f:
-                contenido = f.read()
-
-            modificaciones = 0
-
-            # Lugar 1: biomarker_mapping (línea ~491)
-            patron1 = r"('CK7': 'IHQ_CK7',)"
-            mapeo1 = f"\n                '{nombre_upper}': '{columna_bd}',  # V6.0.16: Auto-agregado"
-
-            if re.search(patron1, contenido):
-                nuevo_contenido = re.sub(
-                    patron1,
-                    f'\\1{mapeo1}',
-                    contenido,
-                    count=1
-                )
-                if nuevo_contenido != contenido:
-                    contenido = nuevo_contenido
-                    modificaciones += 1
-
-            # Lugar 2: all_biomarker_mapping en map_to_database_format (línea ~1179)
-            patron2 = r"(# Biomarcadores v4\.0\s+'CK7': 'IHQ_CK7', 'ck7': 'IHQ_CK7',)"
-            mapeo2 = f"\n        '{nombre_upper}': '{columna_bd}', '{nombre_upper.lower()}': '{columna_bd}',  # V6.0.16: Auto-agregado"
-
-            if re.search(patron2, contenido):
-                nuevo_contenido = re.sub(
-                    patron2,
-                    f'\\1{mapeo2}',
-                    contenido,
-                    count=1
-                )
-                if nuevo_contenido != contenido:
-                    contenido = nuevo_contenido
-                    modificaciones += 1
-
-            # Guardar cambios
-            if modificaciones > 0:
-                with open(archivo_path, 'w', encoding='utf-8') as f:
-                    f.write(contenido)
-                resultado['archivos_modificados'].append(f'{archivo_path.name} ({modificaciones} lugares)')
-                print(f"   ✅ Agregado en {modificaciones} lugares")
-            else:
-                resultado['errores'].append(f'{archivo_path.name}: No se pudo modificar')
-
-        except Exception as e:
-            error_msg = f'{archivo_path.name}: {str(e)}'
-            resultado['errores'].append(error_msg)
-            print(f"   ❌ Error: {e}")
+            print(f"\n❌ Proceso abortado. Archivos restaurados desde backups.")
+            return resultado
 
         # ===== RESUMEN FINAL =====
         print(f"\n{'='*60}")

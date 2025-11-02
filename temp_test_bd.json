@@ -1,0 +1,27 @@
+{
+  "numero_caso_extraido": "IHQ251001",
+  "keys_en_datos": [
+    "nombre_completo",
+    "numero_peticion",
+    "identificacion",
+    "tipo_documento",
+    "genero",
+    "edad",
+    "eps",
+    "medico_tratante",
+    "servicio",
+    "fecha_ingreso",
+    "fecha_informe",
+    "procedencia",
+    "historia_clinica",
+    "N. peticion (0. Numero de biopsia)",
+    "N. de identificación",
+    "Tipo de documento",
+    "Edad",
+    "Genero",
+    "EPS",
+    "Servicio"
+  ],
+  "tiene_IHQ_MSH2": true,
+  "valor_IHQ_MSH2": "EXPRESIÓN NUCLEAR INTACTA"
+}

@@ -129,6 +129,12 @@ MAPEO_BIOMARCADORES = {
     'CK7': 'IHQ_CK7',
     'IHQ_CK7': 'IHQ_CK7',
 
+    'HEPATOCITO': 'IHQ_HEPATOCITO',  # V6.0.16: Auto-agregado
+    'IHQ_HEPATOCITO': 'IHQ_HEPATOCITO',
+
+    'PSA': 'IHQ_PSA',  # V6.0.16: Auto-agregado
+    'IHQ_PSA': 'IHQ_PSA',
+
     'LAMBDA': 'IHQ_LAMBDA',  # V6.0.16: Auto-agregado
     'IHQ_LAMBDA': 'IHQ_LAMBDA',
 
@@ -227,6 +233,15 @@ MAPEO_BIOMARCADORES = {
     'P63': 'IHQ_P63',
     'IHQ_P63': 'IHQ_P63',  # V5.2: Agregado con prefijo
 
+    # V6.1.3: Biomarcadores celulas mioepiteliales (IHQ250999)
+    'CK5/6': 'IHQ_CK5_6',
+    'CK5 / 6': 'IHQ_CK5_6',
+    'CK5 6': 'IHQ_CK5_6',
+    'CK56': 'IHQ_CK5_6',
+    'IHQ_CK5_6': 'IHQ_CK5_6',
+    'CALPONINA': 'IHQ_CALPONINA',
+    'IHQ_CALPONINA': 'IHQ_CALPONINA',
+
     # Marcadores MMR (Mismatch Repair) - CRÍTICOS para síndrome de Lynch
     'MLH1': 'IHQ_MLH1',
     'IHQ_MLH1': 'IHQ_MLH1',  # V5.2: Agregado con prefijo
@@ -241,7 +256,24 @@ MAPEO_BIOMARCADORES = {
     # Marcadores de GIST y tumores neuroendocrinos
     'DOG1': 'IHQ_DOG1',
     'DOG-1': 'IHQ_DOG1',
+    'DOG 1': 'IHQ_DOG1',  # V6.1.2: Variante con espacio (IHQ250997)
     'IHQ_DOG1': 'IHQ_DOG1',  # V5.2: Agregado con prefijo
+
+    # V6.1.2: Biomarcadores IHQ250997 (tumor maligno indiferenciado)
+    'H-CALDESMON': 'IHQ_H_CALDESMON',
+    'H CALDESMON': 'IHQ_H_CALDESMON',
+    'H_CALDESMON': 'IHQ_H_CALDESMON',
+    'HCALDESMON': 'IHQ_H_CALDESMON',
+    'H-CALDESMÓN': 'IHQ_H_CALDESMON',
+    'H CALDESMÓN': 'IHQ_H_CALDESMON',
+    'CALDESMON': 'IHQ_H_CALDESMON',
+    'AML': 'IHQ_AML',
+    'ACTINA DE MÚSCULO LISO': 'IHQ_AML',
+    'ACTINA DE MUSCULO LISO': 'IHQ_AML',
+    'ACTINA MÚSCULO LISO': 'IHQ_AML',
+    'ACTINA MUSCULO LISO': 'IHQ_AML',
+    'SMA': 'IHQ_AML',
+    'IHQ_AML': 'IHQ_AML',
 
     # Marcadores neurales y gliales
     'GFAP': 'IHQ_GFAP',

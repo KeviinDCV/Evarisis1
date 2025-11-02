@@ -1,0 +1,90 @@
+{
+  "numero_caso": "IHQ251001",
+  "caso_num": 21,
+  "total_casos": 47,
+  "timestamp": "2025-11-01T19:02:06.280289",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 2,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "ADENOCARCINOMA TUBULAR. ULCERACIÓN POR TUMOR PRESENTE. GRADO HISTOLÓGICO G2 (MODERADAMENTE DIFERENCIADO). TAMAÑO TUMORAL DE 7 X 5 X 3 CM. INVASIÓN LINFOVASCULAR PRESENTE. INVASIÓN PERINEURAL PRESENTE. GANGLIOS LINFÁTICOS NEGATIVOS PARA METÁSTASIS (0/20)",
+      "mensaje": "Correcto (validacion por componentes: 7/7)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "ADENOCARCINOMA DE TIPO INTESTINAL CON PATRÓN MICROSATELITAL ESTABLE"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "biomarcadores_fp": 1,
+      "total_solicitado": 5,
+      "cobertura_fp": "1/4",
+      "mensaje": "Factor pronostico con 1 biomarcadores"
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "4 biomarcadores sin mapeo/vacíos",
+      "total_solicitado_ocr": 5,
+      "total_solicitado_bd": 5,
+      "estudios_ocr": [
+        "HER2",
+        "MSH2",
+        "MSH6",
+        "MLH1",
+        "PMS2"
+      ],
+      "estudios_bd": [
+        "HER2",
+        "MSH2",
+        "MSH6",
+        "MLH1",
+        "PMS2"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 1,
+      "no_mapeados": [
+        "MSH2 (sin columna)",
+        "MSH6 (sin columna)",
+        "MLH1 (sin columna)",
+        "PMS2 (sin columna)"
+      ],
+      "cobertura": 20.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK"
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 80.0,
+    "validaciones_ok": 4,
+    "total_validaciones": 5,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

@@ -1,0 +1,87 @@
+{
+  "numero_caso": "IHQ250998",
+  "caso_num": 18,
+  "total_casos": 47,
+  "timestamp": "2025-11-01T11:59:58.666286",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 5,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "CARCINOMA LOBULILLAR INVASOR, PATRON ALVEOLAR",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL) -RECEPTOR DE ESTROGENOS: POSITIVO (91-100%)"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "biomarcadores_fp": 3,
+      "total_solicitado": 5,
+      "cobertura_fp": "3/4",
+      "mensaje": "Factor pronostico con 3 biomarcadores"
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 biomarcadores sin mapeo/vacíos",
+      "total_solicitado_ocr": 5,
+      "total_solicitado_bd": 5,
+      "estudios_ocr": [
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona",
+        "E-Cadherina",
+        "HER2",
+        "Ki-67"
+      ],
+      "estudios_bd": [
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona",
+        "E-Cadherina",
+        "HER2",
+        "Ki-67"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 4,
+      "no_mapeados": [
+        "E-Cadherina (sin columna)"
+      ],
+      "cobertura": 80.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK"
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 80.0,
+    "validaciones_ok": 4,
+    "total_validaciones": 5,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

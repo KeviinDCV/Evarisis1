@@ -1,0 +1,79 @@
+{
+  "caso": "IHQ251000",
+  "timestamp": "2025-11-01T14:20:04.281215",
+  "version_extractores": "V6.1.4",
+  "auditoria_post_correcciones": {
+    "score_validacion": "60.0%",
+    "estado_final": "ERROR",
+    "errores": 1,
+    "warnings": 0
+  },
+  "biomarcadores": {
+    "solicitados_en_ocr": [
+      "HEPATOCITO",
+      "CD34",
+      "CK7",
+      "CK19",
+      "ARGINASA"
+    ],
+    "estado_en_bd": {
+      "IHQ_HEPATOCITO": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_ARGINASA": "VACIO (string vacio)"
+    },
+    "mapeados": 4,
+    "no_mapeados": 1,
+    "cobertura": "80.0%"
+  },
+  "diagnostico_coloracion": {
+    "estado": "ERROR",
+    "valor_bd": "NO APLICA",
+    "valor_ocr_detectado": "LOS HALLAZGOS MORFOLOGICOS PUDIERAN FAVORECEN UNA HIPERPLASA NODULAR FOCAL",
+    "patron_ocr": "bloque M2510100 con diagnostico de",
+    "problema": "Extractor marca como NO APLICA pero existe en OCR"
+  },
+  "diagnostico_principal": {
+    "estado": "OK",
+    "valor_bd": "LOS HALLAZGOS HISTOLOGICOS Y DE INMUNOHISTOQUIMICA PUDIERAN FAVORECEN UNA HIPERPLASIA NODULAR FOCAL"
+  },
+  "analisis_arginasa": {
+    "patron_en_ocr": "presenta marcacion usual para arginasa y Hepatocito",
+    "patron_v614_deberia_capturar": true,
+    "normalizacion_funciona": true,
+    "mapeo_en_bd": "IHQ_ARGINASA TEXT (existe)",
+    "mapeo_en_auditor": "ARGINASA -> IHQ_ARGINASA (existe)",
+    "resultado_actual": "VACIO en BD",
+    "hipotesis": [
+      "1. El extractor V6.1.4 no esta siendo ejecutado (cache?)",
+      "2. Hay un problema en la funcion normalize_biomarker_name()",
+      "3. El patron no esta capturando correctamente el texto con acentos",
+      "4. El resultado se esta perdiendo en el pipeline de guardado"
+    ]
+  },
+  "comparacion_con_auditoria_anterior": {
+    "anterior": {
+      "score": "60%",
+      "biomarcadores_vacios": 5,
+      "problema": "Todos los biomarcadores vacios"
+    },
+    "actual": {
+      "score": "60%",
+      "biomarcadores_vacios": 1,
+      "problema": "Solo ARGINASA vacio",
+      "mejoria": "4 biomarcadores ahora se extraen correctamente"
+    }
+  },
+  "conclusiones": {
+    "mejoria_parcial": "Los patrones V6.1.4 SI funcionan para HEPATOCITO, CK7, CK19, CD34",
+    "problema_restante": "ARGINASA no se extrae a pesar de que el patron deberia capturarla",
+    "diagnostico_coloracion": "Extractor NO detecta correctamente el diagnostico del estudio M",
+    "recomendaciones": [
+      "Verificar que el codigo V6.1.4 realmente se este ejecutando (no cache)",
+      "Agregar logging detallado en extract_narrative_biomarkers()",
+      "Verificar funcion normalize_biomarker_name() con arginasa minuscula",
+      "Revisar extractor de DIAGNOSTICO_COLORACION"
+    ]
+  }
+}
