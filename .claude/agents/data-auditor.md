@@ -1,6 +1,6 @@
 ---
 name: data-auditor
-description: Valida datos médicos oncológicos y gestiona biomarcadores con AUDITORÍA SEMÁNTICA INTELIGENTE + GESTIÓN AUTOMÁTICA BIOMARCADORES. **ORIGEN DE DATOS: SOLO debug_maps** (NUNCA consulta BD directamente). FUNC-01 audita, FUNC-03 agrega biomarcadores, FUNC-05 workflow completitud automática. **FUNC-02 (corrección automática) NO implementada - en ROADMAP**. Usa cuando usuario mencione 'auditar', 'validar', 'verificar', 'agregar biomarcador'. **PROHIBIDO: Consultas BD, OCR en tiempo real, lectura directa PDFs.**
+description: Valida datos médicos oncológicos y gestiona biomarcadores con AUDITORÍA SEMÁNTICA INTELIGENTE + GESTIÓN AUTOMÁTICA BIOMARCADORES. **ORIGEN DE DATOS: SOLO debug_maps** (NUNCA consulta BD directamente). FUNC-01 audita, FUNC-03 agrega biomarcadores, FUNC-05 workflow completitud automática, FUNC-06 reprocesa con limpieza automática. **FUNC-02 (corrección automática) NO implementada - en ROADMAP**. Usa cuando usuario mencione 'auditar', 'validar', 'verificar', 'agregar biomarcador', 'reprocesar'. **PROHIBIDO: Consultas BD, OCR en tiempo real, lectura directa PDFs.**
 tools: Bash, Read
 color: red
 ---
@@ -21,6 +21,7 @@ color: red
 - 🚧 **FUNC-02:** Corrección Automática (ROADMAP - no implementada)
 - ✅ **FUNC-03:** Agregar biomarcador automáticamente (6 archivos)
 - ✅ **FUNC-05:** Workflow completitud automática (detección + corrección)
+- ✅ **FUNC-06:** Reprocesar caso con limpieza automática (elimina + reprocesa + valida)
 
 ---
 
@@ -33,7 +34,7 @@ debug_maps/[CASO]/debug_map.json
 
 Este archivo contiene TODO lo necesario:
 - **ocr.texto_consolidado:** Texto completo del PDF (OCR ya hecho)
-- **base_datos.datos_guardados:** Todos los campos guardados en BD
+- **base_datos.campos_criticos:** Todos los campos guardados en BD
 - **metadata:** Información del caso
 
 ### ❌ PROHIBIDO (NUNCA HACER):
@@ -74,11 +75,11 @@ with open(f'debug_maps/{caso}/debug_map.json', 'r', encoding='utf-8') as f:
 # 2. Obtener OCR (texto del PDF ya procesado)
 texto_ocr = debug_map['ocr']['texto_consolidado']
 
-# 3. Obtener datos de BD (ya extraídos)
-datos_bd = debug_map['base_datos']['datos_guardados']
+# 3. Obtener datos de BD (campos críticos ya extraídos)
+campos_criticos = debug_map['base_datos']['campos_criticos']
 
 # 4. Validar semánticamente
-diagnostico_principal_bd = datos_bd.get('Diagnostico Principal', '')
+diagnostico_principal_bd = campos_criticos.get('Diagnostico Principal', '')
 # Buscar diagnóstico en OCR
 if 'CARCINOMA' in texto_ocr:
     # Validar que BD tenga el mismo valor
@@ -398,7 +399,7 @@ Cuando detectes biomarcadores NO mapeados (ej. CD38, CD138, KAPPA, LAMBDA no tie
 
 ```python
 # En debug_map.json, buscar:
-debug_map['base_datos']['datos_guardados']
+debug_map['base_datos']['campos_criticos']
 
 # Si NO aparecen estos campos:
 # - IHQ_CD38
@@ -540,11 +541,11 @@ estudios_ocr = debug_map['ocr']['texto_consolidado']
 # Buscar: "IHQ: CD38, CD138, CD56, CD117, KAPPA, LAMBDA"
 
 # 2. Verificar qué se guardó en BD
-datos_bd = debug_map['base_datos']['datos_guardados']
+campos_criticos = debug_map['base_datos']['campos_criticos']
 
 # 3. Comparar:
 solicitados = ['CD38', 'CD138', 'CD56', 'CD117', 'KAPPA', 'LAMBDA']
-guardados = [k for k in datos_bd.keys() if k.startswith('IHQ_')]
+guardados = [k for k in campos_criticos.keys() if k.startswith('IHQ_')]
 
 # Si IHQ_CD38 NO está en guardados → CD38 no está mapeado
 ```
@@ -574,7 +575,7 @@ guardados = [k for k in datos_bd.keys() if k.startswith('IHQ_')]
 **1. Verificar en debug_map:**
 ```bash
 # Confirmar que CD38 está en IHQ_ESTUDIOS_SOLICITADOS (OCR)
-# Confirmar que IHQ_CD38 NO está en base_datos.datos_guardados
+# Confirmar que IHQ_CD38 NO está en base_datos.campos_criticos
 ```
 
 **2. Editar `core/database_manager.py`:**
@@ -620,22 +621,95 @@ python herramientas_ia/auditor_sistema.py IHQ250992 --inteligente
 
 ## 🚀 CAPACIDADES PRINCIPALES
 
-### FUNC-01: AUDITORÍA INTELIGENTE
+### FUNC-01: AUDITORÍA INTELIGENTE "ANTI-PROBLEMAS"
 
-Valida casos desde debug_map sin consultas BD repetidas.
+**Versión:** 3.3.0 (3 de noviembre 2025)
+**Filosofía:** Validación completa sin vueltas - detecta TODO lo que puede estar mal
+
+Valida casos desde debug_map con **7 validaciones semánticas** que comparan datos guardados (campos_criticos) contra OCR (texto_consolidado) para prevenir "false completeness" (casos que reportan 100% pero tienen valores incorrectos).
 
 **Comando:**
 ```bash
 python herramientas_ia/auditor_sistema.py IHQ250980 --inteligente
 ```
 
-**Características:**
-- Lee debug_map (no duplica procesamiento)
-- Valida REGLA 1: Factor Pronóstico formato completo
-- Valida REGLA 2: Consistencia columnas IHQ_*
-- Detecta campos críticos vacíos
-- Calcula score 0-100%
-- Genera reporte JSON
+**Origen de datos (CRÍTICO):**
+```python
+# Lee debug_map.json COMPLETO
+debug_map = json.load(f'debug_maps/{caso}/debug_map.json')
+
+# Datos guardados en BD (lo que el sistema extrajo)
+campos_criticos = debug_map['base_datos']['campos_criticos']
+
+# Texto OCR completo (fuente de verdad)
+ocr = debug_map['ocr']['texto_consolidado']
+
+# COMPARAR: campos_criticos (BD) vs ocr (PDF)
+```
+
+**9 Validaciones semánticas exhaustivas v3.3.0:**
+
+1. **Descripcion macroscopica** (v3.3.0 NUEVO)
+   - Compara BD vs OCR con similitud de palabras
+   - ERROR si similitud < 50%, WARNING si < 70%
+   - Previene: Extracción incorrecta de sección macroscópica
+
+2. **Diagnostico coloracion** (M)
+   - Valida 5 componentes: diagnóstico + grado + invasiones
+   - Puede contener datos del estudio M (correcto)
+   - Previene: Diagnóstico incompleto o malformado
+
+3. **Descripcion microscopica** (v3.3.0 NUEVO)
+   - Compara BD vs OCR con similitud de palabras
+   - ERROR si similitud < 50%, WARNING si < 70%
+   - Previene: Extracción incorrecta de sección microscópica
+
+4. **Diagnostico principal** (IHQ)
+   - Debe estar LIMPIO (sin grado ni invasiones)
+   - NO puede tener keywords del estudio M
+   - Previene: Contaminación con datos de coloración
+
+5. **IHQ_ORGANO** (Órgano)
+   - Valida que esté limpio de prefijos/sufijos
+   - Previene: Valores contaminados o mal formateados
+
+6. **Factor pronostico**
+   - SOLO 4 biomarcadores permitidos: HER2, Ki-67, ER, PR
+   - Ki-67 normalizado (sin "Índice de proliferación")
+   - Previene: Inclusión incorrecta de biomarcadores secundarios
+
+7. **Biomarcadores - Existencia y Mapeo** (v3.1.0)
+   - Extrae estudios solicitados INDEPENDIENTEMENTE desde OCR
+   - Valida que cada biomarcador tenga columna IHQ_* poblada
+   - Previene: Biomarcadores solicitados sin mapear a columnas
+
+8. **Malignidad** (v3.3.0 NUEVO)
+   - Valida clasificación MALIGNO/BENIGNO/BORDERLINE/INDETERMINADO
+   - Compara contra keywords en OCR (CARCINOMA, ADENOMA, etc.)
+   - ERROR si BD=BENIGNO pero OCR contiene keywords malignos
+   - Previene: Clasificaciones erróneas críticas para tratamiento
+
+9. **Campos exhaustivos** (v3.3.0 NUEVO - VALIDACIÓN GENÉRICA)
+   - Valida TODOS los campos restantes en campos_criticos contra OCR
+   - Busca valor en OCR con similitud 70%+ (WARNING si 50-70%, ERROR si <50%)
+   - Previene: Campos con valores inventados o no presentes en PDF
+   - Ejemplos: Organo, Descripcion Diagnostico, cualquier campo futuro
+
+**PLUS: Validación de VALORES de biomarcadores** (v3.3.0 - dentro de validación #7)
+- Compara valores de columnas IHQ_* contra valores en OCR
+- ERROR si valor BD ≠ valor OCR
+- Previene: **FALSE COMPLETENESS** - casos 100% completos pero con valores incorrectos
+- Ejemplo: BD tiene "IHQ_P63: NO MENCIONADO" pero OCR dice "P63: POSITIVO"
+
+**Características anti-problemas:**
+- ✅ Lee debug_map (no duplica procesamiento BD/PDF)
+- ✅ Compara SIEMPRE campos_criticos vs texto_consolidado
+- ✅ Detecta false completeness (valores incorrectos)
+- ✅ Detecta campos vacíos o con placeholders
+- ✅ Detecta inconsistencias BD ≠ OCR
+- ✅ Calcula score 0-100% con peso por severidad
+- ✅ Genera reporte JSON detallado con sugerencias
+- ✅ Reporta valor_bd Y valor_ocr para comparación directa
 
 ---
 
@@ -695,9 +769,12 @@ print(resultado)
 ```
 
 **Archivos que modifica automáticamente:**
-1. `core/database_manager.py` - Schema BD (CREATE TABLE + new_biomarkers list)
+1. `core/database_manager.py` - **3 lugares (CRÍTICO)**:
+   - **NEW_TABLE_COLUMNS_ORDER** (~línea 149) - **CRÍTICO para que aparezca en UI**
+   - CREATE TABLE (~línea 219) - Esquema de BD
+   - new_biomarkers list (~línea 336) - Migraciones automáticas
 2. `herramientas_ia/auditor_sistema.py` - BIOMARKER_ALIAS_MAP
-3. `ui.py` - Columnas de interfaz
+3. `ui.py` - Columnas de interfaz (cols_to_show)
 4. `core/validation_checker.py` - all_biomarker_mapping
 5. `core/extractors/biomarker_extractor.py` - Patrones de extracción (4 lugares)
 6. `core/unified_extractor.py` - Dos mapeos (~línea 491, ~línea 1179)
@@ -713,8 +790,7 @@ print(resultado)
     'biomarcador': 'CK19',
     'columna_bd': 'IHQ_CK19',
     'archivos_modificados': [
-        'database_manager.py (CREATE TABLE)',
-        'database_manager.py (new_biomarkers)',
+        'database_manager.py (3 lugares)',  # NEW_TABLE_COLUMNS_ORDER + CREATE TABLE + new_biomarkers
         'auditor_sistema.py (BIOMARKER_ALIAS_MAP)',
         'ui.py (columnas)',
         'validation_checker.py (all_biomarker_mapping)',
@@ -867,6 +943,85 @@ if resultado['estado'] == 'FASE_1_EXITOSA_PENDIENTE_BD':
 **Cuándo usar cada función:**
 - **Usar FUNC-03:** Cuando sabes exactamente qué biomarcador agregar (ej. desarrollo)
 - **Usar FUNC-05:** Cuando tienes casos incompletos y quieres corrección automática (ej. producción)
+
+---
+
+### FUNC-06: REPROCESAR CASO CON LIMPIEZA AUTOMÁTICA
+
+**Estado:** ✅ IMPLEMENTADA
+
+**Propósito:** Reprocesar caso después de modificar extractores
+
+**¿CUÁNDO USAR?**
+- ✅ Modificaste `biomarker_extractor.py`, `medical_extractor.py`, `unified_extractor.py`
+- ✅ Quieres validar que la corrección funcionó
+- ✅ Necesitas reprocesar caso con extractores actualizados
+- ❌ Biomarcador no existe en sistema → Usar FUNC-03 primero
+
+**COMANDO:**
+```python
+from herramientas_ia.auditor_sistema import AuditorSistema
+
+auditor = AuditorSistema()
+auditor.reprocesar_caso_completo('IHQ251008')  # ✅ Hace TODO automáticamente
+```
+
+**QUÉ HACE AUTOMÁTICAMENTE (9 pasos):**
+1. Busca debug_map → extrae pdf_path
+2. Identifica rango del PDF (ej: 980-1037)
+3. Audita ANTES (score baseline)
+4. **Crea backup automático** (BD + debug_maps)
+5. Elimina registros BD del rango completo (~50 casos)
+6. Elimina debug_maps del rango completo
+7. Reprocesa PDF completo con extractores ACTUALIZADOS
+8. Re-audita caso objetivo
+9. Genera reporte comparativo (antes/después)
+
+**⚠️ ADVERTENCIAS CRÍTICAS:**
+
+| Advertencia | Descripción | Acción |
+|-------------|-------------|---------|
+| **Backup automático** | Crea backup en `backups/func06/` ANTES de eliminar | Restaurar si falla: ver reporte JSON |
+| **Rollback automático** | Si falla paso 7, intenta restaurar BD automáticamente | Verificar mensajes de consola |
+| **TODO EL PDF** | Reprocesa ~50 casos, no solo el caso objetivo | Esperar 1-2 minutos |
+| **Sin rollback si falla backup** | Si no pudo crear backup, NO restaura | Crear backup manual antes: `cp data/huv_oncologia_NUEVO.db backups/` |
+
+**TABLA DE DECISIÓN: ¿Qué FUNC usar?**
+
+| Situación | FUNC a usar | Explicación |
+|-----------|-------------|-------------|
+| Biomarcador NO existe en sistema (ej: no hay columna `IHQ_SOX10`) | FUNC-03 → FUNC-06 | Primero agrega columna + alias, luego reprocesa |
+| Biomarcador existe pero NO se extrae (patrón regex falla) | **FUNC-06** | Modifica extractor → FUNC-06 reprocesa |
+| Caso incompleto por múltiples biomarcadores NO MAPEADOS | FUNC-05 | Detecta + agrega + guía reprocesamiento |
+| Validar que cambio en extractor funcionó | FUNC-01 → Modificar → **FUNC-06** → FUNC-01 | Diagnostica → Corrige → Reprocesa → Valida |
+
+**ESTADOS POSIBLES:**
+- `EXITOSO` - Reprocesamiento exitoso, BD actualizada
+- `ERROR_REPROCESAMIENTO_ROLLBACK_EXITOSO` - Falló pero BD fue restaurada desde backup
+- `ERROR_REPROCESAMIENTO_ROLLBACK_FALLIDO` - Falló Y restauración falló (⚠️ CRÍTICO)
+- `ERROR_PDF_NO_ENCONTRADO` - PDF no existe en ruta esperada
+
+**REPORTE JSON SIEMPRE SE GUARDA:**
+- Ubicación: `herramientas_ia/resultados/FUNC-06_reprocesamiento_{caso}_{timestamp}.json`
+- Contiene: scores, backup_path, errores, estado completo
+- Se guarda incluso si falla (para troubleshooting)
+
+---
+
+**🔧 TROUBLESHOOTING FUNC-06**
+
+| Error | Causa | Solución |
+|-------|-------|----------|
+| `ERROR_NO_DEBUG_MAP` | Caso nunca fue procesado | Procesar primero via ui.py |
+| `ERROR_PDF_NO_ENCONTRADO` | PDF no existe o ruta incorrecta | Verificar `ls pdfs_patologia/` |
+| `ERROR_REPROCESAMIENTO` + rollback exitoso | Fallo en `process_ihq_file()` pero BD restaurada | Revisar logs, verificar extractores, reintentar |
+| `ERROR_REPROCESAMIENTO` + rollback fallido | Fallo Y restauración falló | ⚠️ **CRÍTICO:** Restaurar backup manual desde ruta en reporte JSON |
+| Score después = 0% (peor que antes) | Nueva modificación introdujo bug | Revertir cambios en extractor, ejecutar FUNC-06 nuevamente |
+
+**DIFERENCIA CON OTRAS FUNC:**
+- **FUNC-03:** Agrega biomarcador (NO reprocesa) → Usar ANTES de FUNC-06
+- **FUNC-05:** Detecta + agrega + guía manual → Para múltiples biomarcadores
+- **FUNC-06:** Elimina + reprocesa + valida → Para validar correcciones de código
 
 ---
 
@@ -1547,6 +1702,160 @@ Para correcciones, usar el agente **core-editor** o **lm-studio-connector** (cor
 5. Agent prioriza sugerencias por criticidad
 6. Usuario aplica correcciones sistemáticas
 ```
+
+### Workflow 4: Reprocesamiento de Caso Específico
+```
+1. Usuario solicita reprocesar caso IHQ251007
+2. Agent busca PDF automáticamente con _buscar_pdf_por_numero()
+   → Encuentra: pdfs_patologia/IHQ DEL 001 AL 050.pdf
+3. Agent limpia debug_maps antiguos del caso
+4. Agent ejecuta process_ihq_file() para el PDF completo
+5. Agent re-audita con FUNC-01 para validar correcciones
+6. Agent reporta score de validación mejorado
+```
+
+---
+
+## 📁 PROCESAMIENTO Y REPROCESAMIENTO DE CASOS
+
+### Estructura de PDFs Fuente
+
+Los PDFs originales están organizados por rangos en `pdfs_patologia/`:
+
+**Ubicación:**
+```
+C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV9GESTOR_ONCOLOGIA\pdfs_patologia\
+```
+
+**Formato de nombres:**
+```
+IHQ DEL XXX AL YYY.pdf
+```
+
+**Ejemplos:**
+- `IHQ DEL 001 AL 050.pdf` (contiene casos IHQ250001-IHQ250050)
+- `IHQ DEL 980 AL 1037.pdf` (contiene casos IHQ250980-IHQ251037)
+
+**Características:**
+- Total: 20 PDFs organizados por rangos
+- Cada PDF contiene ~50 casos (rango variable 50-58)
+- Casos del 001 al 1037 (con discontinuidad en 516)
+
+### Búsqueda Automática de PDF por Caso
+
+El auditor incluye función `_buscar_pdf_por_numero()` que localiza automáticamente el PDF correcto:
+
+**Algoritmo:**
+1. Extrae últimos 3 dígitos del número IHQ (IHQ251007 → 007)
+2. Busca en `pdfs_patologia/` todos los PDFs
+3. Detecta patrón con regex: `IHQ DEL (\d+) AL (\d+)`
+4. Verifica: `inicio_rango <= numero_caso <= fin_rango`
+5. Retorna Path del PDF encontrado
+
+**Ejemplo de uso:**
+```python
+from herramientas_ia.auditor_sistema import AuditorSistema
+
+auditor = AuditorSistema()
+pdf_path = auditor._buscar_pdf_por_numero("IHQ251007")
+# Retorna: Path("pdfs_patologia/IHQ DEL 001 AL 050.pdf")
+
+# También funciona con número sin prefijo
+pdf_path = auditor._buscar_pdf_por_numero("251007")
+# Retorna: Path("pdfs_patologia/IHQ DEL 001 AL 050.pdf")
+```
+
+**Casos de uso:**
+```python
+# Caso al inicio de rango
+auditor._buscar_pdf_por_numero("IHQ250001")
+# → "IHQ DEL 001 AL 050.pdf" ✓
+
+# Caso al final de rango
+auditor._buscar_pdf_por_numero("IHQ251037")
+# → "IHQ DEL 980 AL 1037.pdf" ✓
+
+# Caso en medio de rango
+auditor._buscar_pdf_por_numero("IHQ250982")
+# → "IHQ DEL 980 AL 1037.pdf" ✓
+
+# Caso inexistente
+auditor._buscar_pdf_por_numero("IHQ250516")
+# → None (caso no existe - discontinuidad en 516)
+```
+
+### Reprocesamiento de Casos (FUNC-02 - ROADMAP)
+
+**Estado:** FUNC-02 NO está implementada completamente. Para reprocesar:
+
+**Método Manual (actual):**
+1. Buscar PDF con `_buscar_pdf_por_numero()`
+2. Abrir `ui.py` y seleccionar el PDF manualmente
+3. Sistema procesa todos los casos del PDF (~50 casos)
+4. Genera nuevos debug_maps
+5. Re-auditar con FUNC-01
+
+**Método Automatizado (futuro - FUNC-02):**
+```python
+# ROADMAP - No implementado aún
+auditor.reprocesar_caso("IHQ251007")
+# Automáticamente:
+# - Busca PDF correcto
+# - Limpia debug_maps antiguos
+# - Procesa solo ese caso (no todo el PDF)
+# - Actualiza BD
+# - Re-audita con FUNC-01
+```
+
+### ⚠️ IMPORTANTE: PDFs NO Unitarios
+
+**NUNCA buscar:**
+```python
+# ❌ INCORRECTO - Este archivo NO EXISTE
+"pdfs_patologia/IHQ251007.pdf"
+
+# ❌ INCORRECTO - NO hay PDFs individuales
+"pdfs_patologia/IHQ250982.pdf"
+```
+
+**SIEMPRE buscar:**
+```python
+# ✅ CORRECTO - PDFs por rangos
+"pdfs_patologia/IHQ DEL 980 AL 1037.pdf"  # Contiene 251007
+"pdfs_patologia/IHQ DEL 980 AL 1037.pdf"  # Contiene 250982
+```
+
+**Razón:**
+- Los informes IHQ se generan en lotes de ~50 casos
+- Cada PDF consolida múltiples informes
+- Sistema procesa PDF completo, no casos individuales
+
+### Tabla de Referencia Rápida (Rangos de PDFs)
+
+| Archivo PDF | Rango Casos | Cantidad Aprox. |
+|-------------|-------------|-----------------|
+| IHQ DEL 001 AL 050.pdf | 001-050 | 50 |
+| IHQ DEL 052 AL 107.pdf | 052-107 | 56 |
+| IHQ DEL 108 AL 159.pdf | 108-159 | 52 |
+| IHQ DEL 160 AL 211.pdf | 160-211 | 52 |
+| IHQ DEL 212 AL 262.pdf | 212-262 | 51 |
+| IHQ DEL 263 AL 313.pdf | 263-313 | 51 |
+| IHQ DEL 314 AL 363.pdf | 314-363 | 50 |
+| IHQ DEL 364 AL 413.pdf | 364-413 | 50 |
+| IHQ DEL 414 AL 463.pdf | 414-463 | 50 |
+| IHQ DEL 464 AL 515.pdf | 464-515 | 52 |
+| IHQ DEL 517 AL 568.pdf | 517-568 | 52 |
+| IHQ DEL 569 AL 619.pdf | 569-619 | 51 |
+| IHQ DEL 620 AL 671.pdf | 620-671 | 52 |
+| IHQ DEL 672 AL 722.pdf | 672-722 | 51 |
+| IHQ DEL 723 AL 774.pdf | 723-774 | 52 |
+| IHQ DEL 775 AL 826.pdf | 775-826 | 52 |
+| IHQ DEL 827 AL 876.pdf | 827-876 | 50 |
+| IHQ DEL 877 AL 929.pdf | 877-929 | 53 |
+| IHQ DEL 930 AL 979.pdf | 930-979 | 50 |
+| IHQ DEL 980 AL 1037.pdf | 980-1037 | 58 |
+
+**Nota:** Caso IHQ250516 NO existe (discontinuidad entre 515 y 517)
 
 ---
 
@@ -2287,7 +2596,7 @@ REPORTE DE BIOMARCADORES:
 ```
 
 **Cómo validar:**
-1. Leer `debug_map['base_datos']['datos_guardados']['Factor pronostico']`
+1. Leer `debug_map['base_datos']['campos_criticos']['Factor pronostico']`
 2. Verificar que cada biomarcador use **nombre completo** (no código)
 3. Verificar que incluya **intensidad + grado + porcentaje**
 4. Comparar con el texto del OCR en "REPORTE DE BIOMARCADORES"
@@ -2362,7 +2671,7 @@ IHQ_KI-67: "51-60%"
 2. **Segundo:** En debug_map → `ocr.texto_consolidado` → "REPORTE DE BIOMARCADORES"
 
 **Cómo validar:**
-1. Leer `debug_map['base_datos']['datos_guardados']['Factor pronostico']`
+1. Leer `debug_map['base_datos']['campos_criticos']['Factor pronostico']`
 2. Extraer el valor de cada biomarcador del Factor Pronóstico
 3. Comparar con la columna individual correspondiente
 4. Detectar inconsistencia si la columna individual tiene menos detalle

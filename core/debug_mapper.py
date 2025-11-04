@@ -311,44 +311,39 @@ class DebugMapper:
         if not self.current_map:
             raise RuntimeError("Debe iniciar una sesión primero con iniciar_sesion()")
 
-        # V3.0: Lista de campos críticos para auditoría (solo estos se guardan)
-        CAMPOS_CRITICOS_AUDITORIA = [
-            # Identificación mínima
-            'N. peticion', 'Numero de peticion IHQ',
-            'Nombre Completo', 'Nombre',
-
-            # Campo CRÍTICO para auditoría
+        # V3.1: Lista de campos base críticos (SIEMPRE se guardan)
+        # NO incluye identificación de paciente (N. peticion, Nombre)
+        # Solo incluye campos clínicos esenciales para auditoría
+        CAMPOS_BASE_CRITICOS = [
+            # Campo maestro con lista de estudios solicitados
             'IHQ_ESTUDIOS_SOLICITADOS',
 
-            # Biomarcadores oncológicos principales
-            'IHQ_KI-67', 'IHQ_HER2',
-            'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA',
-            'IHQ_P53', 'IHQ_P16', 'IHQ_CD20', 'IHQ_CD3',
-            'IHQ_MLH1', 'IHQ_MSH2', 'IHQ_MSH6', 'IHQ_PMS2',  # MMR
-            'IHQ_CITOQUERATINA_7', 'IHQ_CITOQUERATINA_20',
-            'IHQ_TTF1', 'IHQ_NAPSIN_A', 'IHQ_CDX2',
+            # Descripciones críticas para validación semántica
+            'Descripcion macroscopica',
+            'Descripcion microscopica',
+            'Descripcion Diagnostico',
 
-            # Descripciones (importantes para validación semántica)
-            'Descripcion macroscopica', 'Descripcion microscopica',
-            'Descripcion diagnostico', 'Diagnostico'
+            # Información de órgano y diagnóstico
+            'IHQ_ORGANO',
+            'Organo',
+            'Diagnostico Coloracion',
+            'Diagnostico Principal',
+
+            # Características oncológicas
+            'Malignidad',
+            'Factor pronostico'
         ]
 
-        # V3.0: Filtrar solo campos críticos
+        # V3.1: Construir campos_criticos dinámicamente
         campos_criticos = {}
         biomarcadores_count = 0
 
-        for campo in CAMPOS_CRITICOS_AUDITORIA:
+        # PASO 1: Agregar campos base (SIEMPRE se incluyen)
+        for campo in CAMPOS_BASE_CRITICOS:
             if campo in datos_guardados:
-                valor = datos_guardados[campo]
-                campos_criticos[campo] = valor
+                campos_criticos[campo] = datos_guardados[campo]
 
-                # Contar biomarcadores encontrados
-                if campo.startswith('IHQ_') and campo != 'IHQ_ESTUDIOS_SOLICITADOS':
-                    if valor and str(valor).strip() and str(valor) not in ['N/A', 'None', '']:
-                        biomarcadores_count += 1
-
-        # V3.1 MEJORA: Agregar dinámicamente biomarcadores de IHQ_ESTUDIOS_SOLICITADOS
-        # Si IHQ_ESTUDIOS_SOLICITADOS = "HEPATOCITO, CD34, CK7", agregar IHQ_HEPATOCITO, IHQ_CD34, IHQ_CK7
+        # PASO 2: Parsear IHQ_ESTUDIOS_SOLICITADOS y agregar solo biomarcadores solicitados
         estudios_solicitados = datos_guardados.get('IHQ_ESTUDIOS_SOLICITADOS', '')
         if estudios_solicitados and str(estudios_solicitados).strip():
             # Parsear biomarcadores del string (separados por comas)
@@ -358,16 +353,33 @@ class DebugMapper:
             ]
 
             # Agregar cada biomarcador solicitado a campos críticos
+            # IMPORTANTE: Se incluyen INCLUSO si están vacíos (permite detectar campos faltantes)
             for biomarcador in biomarcadores_solicitados:
                 # Buscar en datos_guardados con diferentes variaciones del nombre
+                # Ejemplos: "CD34" -> "IHQ_CD34", "Ki-67" -> "IHQ_KI-67", "CKAE1AE3" -> "IHQ_CKAE1AE3"
                 posibles_nombres = [
                     f'IHQ_{biomarcador}',
                     f'IHQ_{biomarcador.replace(" ", "_")}',
                     f'IHQ_{biomarcador.replace("-", "_")}',
+                    f'IHQ_{biomarcador.replace(".", "_")}',
+                    f'IHQ_{biomarcador.replace("/", "_")}',  # CK5/6 → IHQ_CK5_6
+                    # Remover "DE" y espacios para receptores
+                    f'IHQ_{biomarcador.replace(" DE ", "_").replace(" ", "_")}',  # Receptor de Estrógeno → IHQ_RECEPTOR_ESTRÓGENO
+                    # Variante con plural
+                    f'IHQ_{biomarcador.replace(" DE ", "_").replace(" ", "_")}S',  # IHQ_RECEPTOR_ESTROGENOS
+                    # Combinación: remover DE + normalizar caracteres especiales
+                    f'IHQ_{biomarcador.replace(" DE ", "_").replace(" ", "_").replace("Ó", "O").replace("É", "E")}',
+                    f'IHQ_{biomarcador.replace(" DE ", "_").replace(" ", "_").replace("Ó", "O").replace("É", "E")}S',
                 ]
 
+                # Casos especiales para receptores hormonales
+                if 'RECEPTOR' in biomarcador and 'ESTROGEN' in biomarcador.replace('Ó', 'O').replace('É', 'E'):
+                    posibles_nombres.extend(['IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTORES_ESTROGENOS'])
+                if 'RECEPTOR' in biomarcador and 'PROGEST' in biomarcador:
+                    posibles_nombres.extend(['IHQ_RECEPTOR_PROGESTERONA', 'IHQ_RECEPTORES_PROGESTERONA'])
+
                 for nombre_campo in posibles_nombres:
-                    if nombre_campo in datos_guardados and nombre_campo not in campos_criticos:
+                    if nombre_campo in datos_guardados:
                         valor_biomarcador = datos_guardados[nombre_campo]
                         campos_criticos[nombre_campo] = valor_biomarcador
 
@@ -398,18 +410,10 @@ class DebugMapper:
         # V3.0 OPTIMIZACIÓN: Solo guardar contadores + top campos críticos vacíos
         # NO guardar listas completas de 150+ items
 
-        # Prioridad de campos críticos (más importante = más arriba)
-        CAMPOS_MUY_CRITICOS = [
-            'IHQ_ESTUDIOS_SOLICITADOS',
-            'Descripcion microscopica', 'Descripcion diagnostico',
-            'IHQ_KI-67', 'IHQ_HER2',
-            'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA',
-            'Nombre Completo', 'N. peticion'
-        ]
-
-        # Detectar campos críticos vacíos
+        # V3.1: Detectar campos críticos vacíos usando CAMPOS_BASE_CRITICOS
+        # Solo revisamos campos base, no biomarcadores específicos hardcodeados
         campos_criticos_vacios = []
-        for campo in CAMPOS_MUY_CRITICOS:
+        for campo in CAMPOS_BASE_CRITICOS:
             if campo in datos_guardados:
                 valor = datos_guardados[campo]
                 if not valor or str(valor).strip() in ['', 'N/A', 'None']:

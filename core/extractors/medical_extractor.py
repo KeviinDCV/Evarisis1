@@ -11,8 +11,36 @@ Extrae información médica específica de los informes IHQ:
 - Información clínica
 - Factor pronóstico con sistema de prioridades y NORMALIZACIÓN automática
 
-Versión: 4.2.10 - FIX IHQ250995 (Diagnóstico de bloque M previo)
-Fecha: 31 de octubre de 2025
+Versión: 4.2.13 - FIX CRÍTICO IHQ251007 (Patrón inmunorreactividad corregido)
+Fecha: 3 de noviembre de 2025
+
+CHANGELOG v4.2.13:
+- ✅ FIX CRÍTICO: Patrón inmunorreactividad corregido (línea 937)
+- ✅ Problema: Opcionales independientes (?:moderada\s+)?(?:y\s+)? NO matcheaban "moderada y fuerte"
+- ✅ Solución: Unificar como (?:(?:moderada\s+y\s+fuerte)|moderada|fuerte)? (unidad atómica)
+- ✅ Problema 2: Clase [A-Z0-9...] NO incluía minúsculas → "receptores" no capturaba
+- ✅ Solución: Cambiar a [A-Za-z0-9...] para incluir minúsculas
+- ✅ Problema 3: Terminador (?=\s+Hay) demasiado restrictivo
+- ✅ Solución: Simplificar a (?=\.|\n|$)
+- ✅ Resuelve: IHQ251007 Factor Pronóstico NO se capturaba (0 matches)
+- ✅ Impacto: Ahora captura "inmunorreactividad moderada y fuerte a receptores de estrogeno"
+- 📝 Backups: NO (corrección de patrón existente)
+
+CHANGELOG v4.2.12:
+- ✅ FIX CRÍTICO: Nuevo patrón "se realizan los siguientes marcadores:" (línea 1521)
+- ✅ Resuelve: IHQ251007 solo capturaba último biomarcador en lugar de lista completa
+- ✅ FIX CRÍTICO: Patrón inmunorreactividad soporta "a" además de "para" (línea 927)
+- ✅ Resuelve: IHQ251007 FACTOR_PRONOSTICO malformado "Receptor de Estrógeno: ."
+- ✅ Nuevo: Captura calificadores "moderada y fuerte" en inmunorreactividad
+- ✅ Impacto: IHQ_ESTUDIOS_SOLICITADOS completo + FACTOR_PRONOSTICO correcto
+- 📝 Backups: NO (cambios menores, 2 patrones mejorados)
+
+CHANGELOG v4.2.11:
+- ✅ FIX: Normaliza saltos de línea en DIAGNOSTICO_COLORACION (línea 583)
+- ✅ Resuelve: IHQ251006 guardaba "COMPROMISO...\nINDIFERENCIADA" con salto de línea
+- ✅ Solución: ' '.join(diagnostico_candidato.split()) elimina \n, \t, espacios múltiples
+- ✅ Consistente con otros patrones de la función que ya normalizaban
+- 📝 Backups: NO (cambio menor, 1 línea agregada)
 
 CHANGELOG v4.2.10:
 - ✅ FIX CRÍTICO: Nuevo patrón para diagnóstico del estudio M previo (bloque M + diagnóstico)
@@ -579,6 +607,9 @@ def extract_diagnostico_coloracion(text: str) -> str:
     if match_citado:
         diagnostico_candidato = match_citado.group(1).strip()
 
+        # Normalizar espacios y saltos de línea (IHQ251006)
+        diagnostico_candidato = ' '.join(diagnostico_candidato.split())
+
         # Validar que contiene keywords del Estudio M
         keywords_estudio_m = ['NOTTINGHAM', 'GRADO', 'INVASIÓN', 'INVASIVO', 'CARCINOMA']
         tiene_keywords = any(kw in diagnostico_candidato.upper() for kw in keywords_estudio_m)
@@ -715,6 +746,67 @@ def limpiar_factor_pronostico(texto: str, nombre_paciente: str = "") -> str:
     texto = re.sub(r'\s{2,}', ' ', texto)
 
     return texto.strip()
+
+
+def normalizar_inmunorreactividad_narrativa(texto: str) -> str:
+    """Normaliza formato narrativo de inmunorreactividad a formato estructurado.
+
+    V6.1.7: FIX IHQ251007 - Normalizar "inmunorreactividad moderada y fuerte a receptores de estrogeno"
+    a formato estándar: "Receptores de Estrógeno: Positivo (moderada y fuerte)"
+
+    Args:
+        texto: Texto con formato narrativo (ej: "positivo para: inmunorreactividad moderada y fuerte a receptores de estrogeno")
+
+    Returns:
+        Texto normalizado en formato estructurado
+    """
+
+    # Patrón: "inmunorreactividad [intensidad] a/para [biomarcador]"
+    patron = r'inmunor?r?eactividad\s+((?:moderada\s+y\s+fuerte)|moderada|fuerte|difusa|focal)?\s*(?:a|para)\s+(.+?)(?:\s*$|\.|\s*\/)'
+
+    # Buscar todas las ocurrencias
+    resultado_partes = []
+    texto_original = texto
+
+    # Remover prefijos comunes
+    texto_limpio = re.sub(r'^positivo\s+para:\s*', '', texto, flags=re.IGNORECASE)
+
+    matches = list(re.finditer(patron, texto_limpio, re.IGNORECASE))
+
+    if matches:
+        for match in matches:
+            intensidad = match.group(1).strip() if match.group(1) else ""
+            biomarcador = match.group(2).strip()
+
+            # Normalizar nombre del biomarcador
+            biomarcador_normalizado = biomarcador.title()
+
+            # Mapear nombres comunes a formato estándar
+            mapeo_nombres = {
+                r'receptores?\s+de\s+estr[oó]genos?': 'Receptores de Estrógeno',
+                r'receptores?\s+de\s+progesterona': 'Receptores de Progesterona',
+                r'her[\s-]?2': 'HER2',
+                r'ki[\s-]?67': 'Ki-67',
+                r'receptor\s+estr[oó]geno': 'Receptores de Estrógeno',
+                r'receptor\s+progesterona': 'Receptores de Progesterona',
+            }
+
+            for patron_map, reemplazo in mapeo_nombres.items():
+                if re.search(patron_map, biomarcador_normalizado, re.IGNORECASE):
+                    biomarcador_normalizado = reemplazo
+                    break
+
+            # Construir salida normalizada
+            if intensidad:
+                resultado_partes.append(f"{biomarcador_normalizado}: Positivo ({intensidad.lower()})")
+            else:
+                resultado_partes.append(f"{biomarcador_normalizado}: Positivo")
+
+    if resultado_partes:
+        return ' / '.join(resultado_partes)
+
+    # Si no matcheó, retornar original
+    return texto_original
 
 
 def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitados: str = "",
@@ -912,8 +1004,10 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
             listas_encontradas.append(lista_biomarcadores)
 
     # V6.0.10: Agregar patrón de inmunorreactividad (IHQ250983)
-    # Captura: "inmunorreactividad...para X, Y y Z"
-    patron_inmuno = r'inmunorreactividad\s+(?:en\s+)?(?:las\s+)?(?:c[eé]lulas\s+)?(?:tumorales\s+)?para\s+([A-Z0-9\s,./\-\(\)yYeÉóÓ]+?)(?=\s+y\s+son|\.|$)'
+    # V6.1.5: FIX IHQ251007 - Soportar "a" además de "para" + calificadores "moderada y fuerte"
+    # V6.1.6: FIX CRÍTICO IHQ251007 - Corregido patrón opcionales + clase caracteres minúsculas
+    # Captura: "inmunorreactividad...para X, Y y Z" O "inmunorreactividad moderada y fuerte a X"
+    patron_inmuno = r'inmunor?r?eactividad\s+(?:(?:moderada\s+y\s+fuerte)|moderada|fuerte)?\s*(?:para|a)\s+([A-Za-z0-9\s,./\-\(\)yYeÉóÓáÁéÉíÍñÑüÜ]+?)(?=\.|\n|$)'
     matches_inmuno = re.finditer(patron_inmuno, diagnostico_completo, re.IGNORECASE)
 
     for match in matches_inmuno:
@@ -921,7 +1015,19 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
         lista_biomarcadores = ' '.join(lista_biomarcadores.split())
         lista_biomarcadores = lista_biomarcadores.rstrip('.')
         if lista_biomarcadores and len(lista_biomarcadores) > 3:
-            listas_encontradas.append(f"inmunorreactividad para {lista_biomarcadores}")
+            # V6.1.5: Capturar el calificador completo del match original
+            match_text = match.group(0)
+            if 'moderada' in match_text.lower() or 'fuerte' in match_text.lower():
+                # Extraer calificador completo
+                # V6.1.7: FIX IHQ251007 - Capturar "moderada y fuerte" como unidad completa
+                calificador_match = re.search(r'inmunorreactividad\s+((?:moderada\s+y\s+fuerte)|moderada|fuerte)', match_text, re.IGNORECASE)
+                if calificador_match:
+                    calificador = calificador_match.group(1).strip()
+                    listas_encontradas.append(f"inmunorreactividad {calificador} a {lista_biomarcadores}")
+                else:
+                    listas_encontradas.append(f"inmunorreactividad para {lista_biomarcadores}")
+            else:
+                listas_encontradas.append(f"inmunorreactividad para {lista_biomarcadores}")
 
     # V6.0.10: Agregar patrón de negativos (IHQ250983)
     # Captura: "son negativas para X, Y, y Z"
@@ -944,7 +1050,11 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
             todas_listas = ' / '.join(listas_encontradas)
             if factores_adicionales:
                 todas_listas += ' / ' + ' / '.join(factores_adicionales)
-            return f"{factor_estructurado} / positivo para: {todas_listas}"
+            # V6.1.7: Normalizar parte narrativa
+            resultado_temp = f"{factor_estructurado} / positivo para: {todas_listas}"
+            parte_narrativa = f"positivo para: {todas_listas}"
+            parte_normalizada = normalizar_inmunorreactividad_narrativa(parte_narrativa)
+            return f"{factor_estructurado} / {parte_normalizada}"
         elif factores_adicionales:
             return f"{factor_estructurado} / {' / '.join(factores_adicionales)}"
         else:
@@ -987,7 +1097,11 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
         if factores_adicionales:
             todas_listas += ' / ' + ' / '.join(factores_adicionales)
 
-        return f"positivo para: {todas_listas}"
+        # V6.1.7: FIX IHQ251007 - Normalizar formato narrativo a estructurado
+        factor_pronostico_texto = f"positivo para: {todas_listas}"
+        factor_pronostico_normalizado = normalizar_inmunorreactividad_narrativa(factor_pronostico_texto)
+
+        return factor_pronostico_normalizado
 
     # ═══════════════════════════════════════════════════════════════════════
     # PRIORIDAD 2: Biomarcadores específicos de IHQ (formato estructurado)
@@ -1259,23 +1373,39 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
         # Ningún biomarcador extraído o todos eran de tipificación → NO APLICA
         return "NO APLICA"
 
-    return ' / '.join(factores_fp_final)
+    # V6.1.7: FIX IHQ251007 - Normalizar resultado final
+    resultado_fp = ' / '.join(factores_fp_final)
+    resultado_normalizado = normalizar_inmunorreactividad_narrativa(resultado_fp)
+    return resultado_normalizado
 
 
 def parse_biomarkers_from_factor_pronostico(factor_pronostico: str) -> Dict[str, str]:
     """
     Parsea biomarcadores individuales desde Factor Pronóstico.
 
+    V6.0.20: FIX IHQ251008 - Extracción precisa de biomarcadores individuales
+    - Ki-67: Extrae SOLO el valor porcentual (ej: "11-20%"), no todo lo que sigue
+    - HER2: Extrae valor COMPLETO con score (ej: "NEGATIVO (SCORE 0)")
+    - Receptores: Extrae valor COMPLETO con intensidad y porcentaje
+    - Soporta separadores: "/" y ","
+
     V6.0.19: REGLA 2 - Sincronizar columnas individuales con fuente de verdad
     Garantiza que las columnas IHQ_* tengan el mismo nivel de detalle que Factor Pronóstico.
 
     Args:
         factor_pronostico: String con formato "NOMBRE: VALOR, NOMBRE: VALOR, ..."
+                          o "NOMBRE: VALOR / NOMBRE: VALOR / ..."
 
     Returns:
         Dict con mapeo {'IHQ_NOMBRE': 'VALOR_COMPLETO'}
 
-    Ejemplo:
+    Ejemplos:
+        Input: "Ki-67: 11-20% / HER2: NEGATIVO (SCORE 0)"
+        Output: {
+            'IHQ_KI-67': '11-20%',
+            'IHQ_HER2': 'NEGATIVO (SCORE 0)'
+        }
+
         Input: "RECEPTOR DE ESTRÓGENO: POSITIVO FUERTE 3+(80-90%), HER2: NEGATIVO (SCORE 1+)"
         Output: {
             'IHQ_RECEPTOR_ESTROGENOS': 'POSITIVO FUERTE 3+(80-90%)',
@@ -1292,13 +1422,17 @@ def parse_biomarkers_from_factor_pronostico(factor_pronostico: str) -> Dict[str,
 
     biomarcadores_map = {}
 
+    # V6.0.20: Soportar tanto "/" como "," como separadores
+    # Primero normalizar: reemplazar " / " por ", " para procesamiento uniforme
+    factor_normalizado = factor_pronostico.replace(' / ', ', ')
+
     # Dividir por comas, pero respetar comas dentro de paréntesis
     # Método manual: iterar carácter por carácter
     pares = []
     nivel_parentesis = 0
     segmento_actual = ""
 
-    for char in factor_pronostico:
+    for char in factor_normalizado:
         if char == '(':
             nivel_parentesis += 1
             segmento_actual += char
@@ -1342,8 +1476,21 @@ def parse_biomarkers_from_factor_pronostico(factor_pronostico: str) -> Dict[str,
             columna = 'IHQ_RECEPTOR_PROGESTERONA'
         elif 'HER' in nombre_upper and '2' in nombre_upper:
             columna = 'IHQ_HER2'
+            # V6.0.20: FIX IHQ251008 - HER2 debe capturar valor COMPLETO con score
+            # Buscar patrón: POSITIVO/NEGATIVO/EQUIVOCO (SCORE X) o (SCORE X+)
+            match_her2 = re.search(r'(POSITIVO|NEGATIVO|EQUIVOCO)\s*(?:\(SCORE\s+\d\+?\))?', valor, re.IGNORECASE)
+            if match_her2:
+                valor = match_her2.group(0).upper()
         elif 'KI' in nombre_upper and '67' in nombre_upper:
             columna = 'IHQ_KI-67'
+            # V6.0.20: FIX IHQ251008 - Ki-67 debe capturar SOLO el valor porcentual
+            # Buscar patrón: XX% o XX-YY%
+            match_ki67 = re.search(r'(\d+(?:-\d+)?)\s*%', valor)
+            if match_ki67:
+                valor = f"{match_ki67.group(1)}%"
+            else:
+                # Si no encuentra porcentaje, tomar solo hasta el primer "/" o ","
+                valor = valor.split('/')[0].split(',')[0].strip()
         else:
             # Biomarcador no estándar de factor pronóstico, omitir
             logger.debug(f"REGLA 2: Biomarcador '{nombre}' no mapeado, omitiendo")
@@ -1437,18 +1584,33 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
     biomarcadores_encontrados = []
 
     # ═══════════════════════════════════════════════════════════════════════════
-    # PASO 1: Extraer sección DESCRIPCION MACROSCOPICA
+    # PASO 1: Extraer sección DESCRIPCION MACROSCOPICA y MICROSCOPICA
     # ═══════════════════════════════════════════════════════════════════════════
+    # V6.1.4: FIX IHQ251003 - Buscar en AMBAS secciones (algunos casos tienen estudios en microscopica)
     desc_macro_match = re.search(
         r'DESCRIPCI[OÓ]N\s+MACROSC[OÓ]PICA(.*?)(?:DESCRIPCI[OÓ]N\s+MICROSC[OÓ]PICA|$)',
         text,
         re.IGNORECASE | re.DOTALL
     )
 
-    if not desc_macro_match:
-        return []
+    # V6.1.4: FIX IHQ251003 - Incluir "Estudios Solicitados" que puede estar justo antes de DIAGNÓSTICO
+    # Buscar todo desde DESCRIPCION MICROSCOPICA hasta (pero incluyendo) "Estudios Solicitados:"
+    # Esto captura casos donde "Estudios Solicitados" está entre MICROSCOPICA y DIAGNOSTICO
+    desc_micro_match = re.search(
+        r'DESCRIPCI[OÓ]N\s+MICROSC[OÓ]PICA(.*?)(?=\s*DIAGN[OÓ]STICO\s*\n[A-Z]|$)',
+        text,
+        re.IGNORECASE | re.DOTALL
+    )
 
-    desc_macro_text = desc_macro_match.group(1)
+    # Combinar ambas secciones (prioridad a macroscópica)
+    desc_macro_text = ""
+    if desc_macro_match:
+        desc_macro_text = desc_macro_match.group(1)
+    if desc_micro_match:
+        desc_macro_text += "\n" + desc_micro_match.group(1)
+
+    if not desc_macro_text:
+        return []
 
     # ═══════════════════════════════════════════════════════════════════════════
     # PASO 2: Buscar patrones de listas de biomarcadores
@@ -1456,6 +1618,17 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
 
     # Patrones ordenados por especificidad (más específico primero)
     patrones_biomarcadores = [
+        # Patrón -5: V6.0.21 - "se revisa marcación para [lista]." (IHQ251009)
+        # NUEVO: Variante greedy de "revisa marcación" que captura lista completa hasta punto
+        # Captura listas largas con múltiples biomarcadores (CD3, CD5, CD10, CD15, etc.)
+        # No usa lazy (+?) sino greedy (+) para capturar toda la lista
+        r'se\s+revisa\s+marcaci[óo]n\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍkappa lambda]+)\.',
+
+        # Patrón -4: V6.X.X - "se solicitan tinciones con los anticuerpos para [lista] en todos los bloques" (IHQ251005)
+        # ESPECÍFICO: Captura cuando la lista termina con "en todos los bloques" o "en el bloque"
+        # Soporta listas multi-línea
+        r'se\s+solicitan?\s+tinciones?\s+con\s+los?\s+anticuerpos?\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\s+en\s+(?:todos\s+los\s+bloques?|el\s+bloque)',
+
         # Patrón -3: V6.0.17 - "se revisa marcación para [lista]" (IHQ250994)
         # NUEVO: Soporte para variante "REVISA" además de "REALIZA"
         # Captura lista de biomarcadores incluyendo formas cortas de receptores (Estrogeno, Progesterona)
@@ -1475,19 +1648,26 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
         # ESPECÍFICO: Captura formato narrativo en descripción macroscópica
         r'coloraciones\s+inmunohistoqu[íi]micas\s+con\s+los\s+anticuerpos\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\s+en\s+el\s+Bloque|\.|$)',
 
-        # Patrón 0.5: V6.1.2 - "Se realizó inmunotincion especial para : [lista]" (IHQ250997)
-        # ESPECÍFICO: Variante con typo "inmunotincion" (sin acento) y dos puntos después de "para"
-        r'[Ss]e\s+realiz[óo]\s+inmunotinci[óo]n\s+especial\s+para\s*:\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.',
+        # Patrón 0.5: V6.1.4 - "Se realizó inmuno(tincion|tinción| tinción) especial para : [lista]" (IHQ250997, IHQ251003)
+        # ESPECÍFICO: Variante con/sin acento y con/sin espacio entre "inmuno" y "tinción"
+        # FIX IHQ251003: Agregado soporte para "inmuno tinción" (con espacio)
+        # Captura TODA la lista (greedy) hasta encontrar coma/punto seguido de salto de línea o fin
+        r'[Ss]e\s+realiz[óo]\s+inmuno\s?tinci[óo]n\s+especial\s+para\s*:\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+)[,\.]',
 
         # Patrón 1: V6.0.13 - "Se realizó tinción especial para [lista]" (IHQ250984)
         # MEJORADO: Captura lista completa incluyendo saltos de línea, termina solo en punto
         r'[Ss]e\s+realiz[óo]\s+tinci[óo]n\s+especial\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.',
 
+        # Patrón 1.5: "se realizan los siguientes marcadores:" (IHQ251007)
+        # V6.1.5: NUEVO - Variante "se realizan" además de "se solicitan" y "para"
+        # Captura: "se realizan los siguientes marcadores: P63, CK5/6, Receptores de estrógeno."
+        r'se\s+realizan?\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|\n\s*DESCRIPCI|$)',
+
         # Patrón 2: "para los siguientes marcadores:" (IHQ250002, IHQ250006)
         # V6.1.3: FIX IHQ250999 - Permitir terminación sin punto (agregar $)
         r'para\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|\n\s*DESCRIPCI|$)',
 
-        # Patrón 2: "se solicitan los siguiente biomarcadores:" (IHQ250005, IHQ250999)
+        # Patrón 2.5: "se solicitan los siguiente biomarcadores:" (IHQ250005, IHQ250999)
         # V6.1.3: FIX IHQ250999 - Permitir terminación sin punto (agregar $)
         r'se\s+solicitan?\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|\n\s*DESCRIPCI|$)',
 
@@ -1742,6 +1922,11 @@ def normalize_biomarker_name_simple(name: str) -> str:
         'CK5 / 6': 'CK5/6',
         'CK5 6': 'CK5/6',
         'CK56': 'CK5/6',
+        # V6.1.5: FIX IHQ251007 - Error OCR común CK5/5 → CK5/6
+        'CK5/5': 'CK5/6',
+        'CK5 / 5': 'CK5/6',
+        'CK5 5': 'CK5/6',
+        'CK55': 'CK5/6',
         'CALPONINA': 'Calponina',
         # V6.1.1: FIX IHQ250995 - Normalizar 34BETA → CK34BE12
         # NOTA: La columna en BD es IHQ_CK34BE12 (con CK)
@@ -2752,12 +2937,16 @@ def extract_ihq_organ_from_diagnosis(diagnostico: str) -> str:
         # Si hay "INFORME PRELIMINAR", usar solo lo que viene después de eso
         preliminar_split = re.split(r'INFORME\s+PRELIMINAR', text, flags=re.IGNORECASE)
         if len(preliminar_split) > 1:
-            # Tomar lo que está ANTES del informe preliminar (primera sección)
-            text = preliminar_split[0].strip()
+            # V6.0.10: FIX CRÍTICO - Tomar lo que está DESPUÉS del informe preliminar
+            # CORRIGE: IHQ251002 capturaba diagnóstico preliminar en lugar del órgano del informe
+            text = preliminar_split[1].strip()
 
     # V4.2.8: Eliminar etiquetas de sección (A., B., C., etc.) al inicio
     # Ejemplo: "A.Cervix. Lesión." → "Cervix. Lesión."
+    # V6.X.X: Mejorado para eliminar patrones múltiples como "A,B Y C :"
+    # Ejemplo: "A,B Y C :GLÁNDULA LAGRIMAL" → "GLÁNDULA LAGRIMAL"
     text = re.sub(r'^[A-Z]\.\s*', '', text)
+    text = re.sub(r'^[A-Z](?:\s*,\s*[A-Z])*(?:\s+[Yy]\s+[A-Z])?\s*:\s*', '', text)
 
     # V6.2.1: Eliminar términos de contexto al final que no son parte del órgano
     # Ejemplo: "Fémur derecho. Tumor. Biopsia por curetaje. Estudio de inmunohistoquímica."

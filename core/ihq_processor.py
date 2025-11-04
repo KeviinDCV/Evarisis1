@@ -129,10 +129,8 @@ def process_ihq_file(file_path: str, log_callback: Optional[Callable] = None) ->
                 # Usar datos corregidos de ahora en adelante
                 datos_extraidos = datos_corregidos
 
-                # Registrar extracción
-                mapper.registrar_extractor("unified", datos_extraidos)
-
-                # V5.3.9: Extraer y registrar correcciones aplicadas
+                # V6.0.13: Extraer correcciones ANTES de registrar extractor para evitar duplicación
+                # El .pop() debe ir primero para que datos_extraidos NO contenga '_correcciones_aplicadas'
                 correcciones = datos_extraidos.pop('_correcciones_aplicadas', [])
 
                 # Agregar corrección médico-servicio si existe
@@ -141,9 +139,13 @@ def process_ihq_file(file_path: str, log_callback: Optional[Callable] = None) ->
                     correccion_medico_servicio['numero_caso'] = numero_ihq
                     correcciones.append(correccion_medico_servicio)
 
+                # Registrar correcciones en debug_mapper (nivel raíz)
                 if correcciones:
                     mapper.registrar_correcciones(correcciones)
                     safe_log(f"      🔧 Correcciones totales aplicadas: {len(correcciones)}")
+
+                # Registrar extracción (ahora sin '_correcciones_aplicadas')
+                mapper.registrar_extractor("unified", datos_extraidos)
 
                 # CRÍTICO: Mapear al formato de BD
                 safe_log(f"      🗺️ Mapeando a formato BD...")

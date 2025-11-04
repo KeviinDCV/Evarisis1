@@ -4201,6 +4201,10 @@ Disco {i}:
             "IHQ_E_CADHERINA",  # v6.0.3 - E-Cadherina
             # Biomarcadores adicionales v4.0/v4.1
             "IHQ_CK7",
+            "IHQ_CMYC",
+            "IHQ_IGG4",
+            "IHQ_IGG",
+            "IHQ_MAMOGLOBINA",
             "IHQ_HEPATOCITO",  # V6.0.16: Auto-agregado
             "IHQ_CK19",
             "IHQ_CK20",
