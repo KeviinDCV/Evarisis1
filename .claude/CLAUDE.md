@@ -72,6 +72,7 @@ _Nota: editor_core.py e inspector_sistema.py están disponibles pero pendientes 
 | Corregir caso automáticamente | **Manual** (FUNC-02 en ROADMAP) | Editar extractores manualmente |
 | Agregar biomarcador al sistema | **data-auditor** (FUNC-03) | `auditor.agregar_biomarcador('CK19', ['CK-19', 'CK 19'])` |
 | Corregir completitud automática | **data-auditor** (FUNC-05) | `auditor.corregir_completitud_automatica('IHQ250987')` |
+| Reprocesar caso con limpieza automática | **data-auditor** (FUNC-06) | `auditor.reprocesar_caso_completo('IHQ251007')` |
 | Validar campos críticos | **data-auditor** (FUNC-01) | Lee `debug_maps/IHQ250025/debug_map.json` |
 | Validar con IA, editar prompts | **lm-studio-connector** | `python herramientas_ia/gestor_ia_lm_studio.py --validar IHQ250025` |
 | Cambiar versión, generar CHANGELOG | **documentation-specialist-HUV** | `python herramientas_ia/gestor_version.py --actualizar` |
@@ -185,7 +186,11 @@ debug_map.json contiene:
 | Biomarcador "NO MAPEADO" | **data-auditor** FUNC-03: `auditor.agregar_biomarcador('CK19')` |
 | Caso incompleto por biomarcadores | **data-auditor** FUNC-05: `auditor.corregir_completitud_automatica('IHQ250987')` |
 | Necesito agregar biomarcador al sistema | **data-auditor** FUNC-03 (modifica 6 archivos automáticamente) |
-| Biomarcador no se extrae | **data-auditor** (FUNC-01 detecta + FUNC-03 agrega + reprocesar manualmente) |
+| Biomarcador no se extrae | **data-auditor** (FUNC-01 detecta + FUNC-03 agrega si no existe + FUNC-06 reprocesa) |
+| Modifiqué extractores, necesito reprocesar caso | **data-auditor** FUNC-06: `auditor.reprocesar_caso_completo('IHQ251007')` ✅ (elimina datos + reprocesa automáticamente + valida) |
+| Reprocesar caso SIN modificar extractores | **Manual via ui.py** (si caso nunca fue procesado) o **FUNC-06** (si ya existe y quieres regenerar con extractores actuales) |
+| ¿Qué PDF contiene caso IHQ251007? | **Ubicación:** `pdfs_patologia/IHQ DEL 001 AL 050.pdf` (rango 001-050). Los PDFs están organizados por rangos de ~50 casos |
+| No encuentro PDF "IHQ251007.pdf" | **No existe.** Los PDFs son por rangos (ej: `IHQ DEL 980 AL 1037.pdf`). Usar `_buscar_pdf_por_numero()` para localizar |
 | IA no responde | **lm-studio-connector** o `python herramientas_ia/gestor_ia_lm_studio.py --estado` |
 | Necesito documentar | **documentation-specialist-HUV** o `python herramientas_ia/generador_documentacion.py --interactivo` |
 | Necesito actualizar versión | **documentation-specialist-HUV** o `python herramientas_ia/gestor_version.py --actualizar` |

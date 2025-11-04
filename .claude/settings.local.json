@@ -1,15 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(awk:*)",
-      "Bash(sqlite3:*)",
-      "Bash(python -m py_compile:*)",
-      "Bash(python herramientas_ia/auditor_sistema.py:*)",
+      "Bash(del \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\data\\debug_maps\\debug_map_IHQ251007_20251103_211013.json\")",
       "Bash(python:*)",
-      "Bash(del \"data\\debug_maps\\debug_map_IHQ250995_20251031_204258.json\")",
-      "Bash(dir:*)",
-      "Bash(nul)",
-      "Bash(cat:*)"
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []

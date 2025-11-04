@@ -129,6 +129,18 @@ MAPEO_BIOMARCADORES = {
     'CK7': 'IHQ_CK7',
     'IHQ_CK7': 'IHQ_CK7',
 
+    'CMYC': 'IHQ_CMYC',
+    'IHQ_CMYC': 'IHQ_CMYC',
+
+    'IGG4': 'IHQ_IGG4',
+    'IHQ_IGG4': 'IHQ_IGG4',
+
+    'IGG': 'IHQ_IGG',
+    'IHQ_IGG': 'IHQ_IGG',
+
+    'MAMOGLOBINA': 'IHQ_MAMOGLOBINA',
+    'IHQ_MAMOGLOBINA': 'IHQ_MAMOGLOBINA',
+
     'HEPATOCITO': 'IHQ_HEPATOCITO',  # V6.0.16: Auto-agregado
     'IHQ_HEPATOCITO': 'IHQ_HEPATOCITO',
 
@@ -239,6 +251,8 @@ MAPEO_BIOMARCADORES = {
     'CK5 6': 'IHQ_CK5_6',
     'CK56': 'IHQ_CK5_6',
     'IHQ_CK5_6': 'IHQ_CK5_6',
+    'CK5/5': 'IHQ_CK5_6',  # Error OCR común
+    'CK55': 'IHQ_CK5_6',   # Variante sin barra
     'CALPONINA': 'IHQ_CALPONINA',
     'IHQ_CALPONINA': 'IHQ_CALPONINA',
 
@@ -416,6 +430,11 @@ MAPEO_BIOMARCADORES = {
     'IHQ_CK34BE12': 'IHQ_CK34BE12',
     'CK5 6': 'IHQ_CK5_6',
     'CK5/6': 'IHQ_CK5_6',
+    'CK5/5': 'IHQ_CK5_6',  # Error OCR común
+    'CK55': 'IHQ_CK5_6',   # Variante sin barra
+    'CK56': 'IHQ_CK5_6',   # Variante sin barra ni espacio
+    'CK 5/6': 'IHQ_CK5_6', # Con espacio
+    'CK 5 / 6': 'IHQ_CK5_6', # Con espacios
     'IHQ_CK5_6': 'IHQ_CK5_6',
 
     # Marcadores hepáticos y metabólicos

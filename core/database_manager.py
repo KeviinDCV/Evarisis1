@@ -146,7 +146,7 @@ NEW_TABLE_COLUMNS_ORDER: List[str] = [
     "IHQ_HER2", "IHQ_KI-67", "IHQ_RECEPTOR_ESTROGENOS", "IHQ_RECEPTOR_PROGESTERONA", "IHQ_PDL-1",
     "IHQ_P16_ESTADO", "IHQ_P16_PORCENTAJE", "IHQ_P40_ESTADO", "IHQ_E_CADHERINA",
     # Biomarcadores agregados v4.0
-    "IHQ_CK7", "IHQ_HEPATOCITO", "IHQ_PSA", "IHQ_CK19", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
+    "IHQ_CK7", "IHQ_MAMOGLOBINA", "IHQ_CMYC", "IHQ_IGG4", "IHQ_IGG", "IHQ_HEPATOCITO", "IHQ_PSA", "IHQ_CK19", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
     # Biomarcadores adicionales v4.1 (extracción completa)
     "IHQ_P53", "IHQ_TTF1", "IHQ_S100", "IHQ_VIMENTINA", "IHQ_CHROMOGRANINA", "IHQ_SYNAPTOPHYSIN", "IHQ_MELAN_A",
     # Marcadores CD (básicos)
@@ -216,6 +216,10 @@ def _create_table_if_not_exists(cursor: sqlite3.Cursor):
 
             -- Biomarcadores v4.0
             "IHQ_CK7" TEXT,
+            "IHQ_CMYC" TEXT,
+            "IHQ_IGG4" TEXT,
+            "IHQ_IGG" TEXT,
+            "IHQ_MAMOGLOBINA" TEXT,
             "IHQ_HEPATOCITO" TEXT,  -- V6.1.4: Auto-agregado por FUNC-03
             "IHQ_PSA" TEXT,  -- V6.0.16: Auto-agregado
             "IHQ_CK19" TEXT, "IHQ_CK20" TEXT, "IHQ_CDX2" TEXT, "IHQ_EMA" TEXT, "IHQ_GATA3" TEXT, "IHQ_SOX10" TEXT,
@@ -332,7 +336,7 @@ def _add_new_biomarker_columns(conn: sqlite3.Connection, cursor: sqlite3.Cursor)
     """
     new_biomarkers = [
         # v4.0
-        "IHQ_CK7", "IHQ_HEPATOCITO", "IHQ_PSA", "IHQ_CK19", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
+        "IHQ_CK7", "IHQ_CMYC", "IHQ_IGG4", "IHQ_IGG", "IHQ_MAMOGLOBINA", "IHQ_HEPATOCITO", "IHQ_PSA", "IHQ_CK19", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
         "IHQ_KAPPA",
         "IHQ_LAMBDA",
         # v4.1 - Biomarcadores adicionales
@@ -654,19 +658,24 @@ def smart_update_records(records: List[Dict[str, Any]]) -> int:
 
 def _apply_default_values(record: Dict[str, Any]) -> Dict[str, Any]:
     """Aplica valores por defecto 'N/A' a campos vacíos o nulos.
-    
+
+    V6.1.5: FIX - NO sobrescribir valores válidos de biomarcadores extraídos
+
     Args:
         record: Diccionario con los datos del registro
-        
+
     Returns:
         Dict[str, Any]: Registro con valores por defecto aplicados
     """
     cleaned_record = {}
     for key, value in record.items():
-        # Aplicar N/A si el valor está vacío, es None, o solo tiene espacios
+        # V6.1.5: NO aplicar N/A si el valor ya es válido
+        # Valores válidos: POSITIVO, NEGATIVO, cualquier porcentaje, etc.
+        # Solo aplicar N/A si está realmente vacío
         if value is None or str(value).strip() == '':
             cleaned_record[key] = 'N/A'
         else:
+            # Preservar el valor original (ya procesado por extractores)
             cleaned_record[key] = value
     return cleaned_record
 
@@ -792,35 +801,53 @@ def save_records(records: List[Dict[str, Any]]) -> int:
                 existing = cursor.fetchone()
                 
                 if existing:
-                    # Actualizar registro existente
+                    # V6.1.5: Actualizar registro existente - SOLO campos presentes en record
+                    # Esto preserva valores existentes en BD para campos no procesados
                     values = []
+                    columns_to_update = []
                     debug_samples = []  # DEBUG: Guardar muestras para logging
+
                     for col in table_columns:
-                        # Buscar el valor correcto usando mapeo de nombres
+                        # V6.1.5: Buscar valor con lógica mejorada
                         normalized_col = _normalize_column_name(col)
-                        value = record.get(normalized_col, record.get(col, 'N/A'))
-                        values.append(value)
 
-                        # DEBUG V6.1.4: IHQ251000 - Diagnosticar HEPATOCITO
-                        if peticion == 'IHQ251000' and col in ['IHQ_HEPATOCITO', 'IHQ_ARGINASA', 'IHQ_CK19', 'IHQ_CK7', 'IHQ_CD34']:
-                            logger.info(f"[IHQ251000] {col} (idx {len(values)-1}): normalized='{normalized_col}', record.get(normalized)={repr(record.get(normalized_col, 'KEY_NOT_FOUND'))}, record.get(col)={repr(record.get(col, 'KEY_NOT_FOUND'))}, final_value={repr(value)}")
+                        # Intentar obtener valor del record
+                        value = None
+                        if normalized_col in record:
+                            value = record[normalized_col]
+                        elif col in record:
+                            value = record[col]
 
-                        # DEBUG: Guardar muestra para columnas IHQ
-                        if col.startswith('IHQ_') and col in ['IHQ_ESTUDIOS_SOLICITADOS', 'IHQ_CK7', 'IHQ_CKAE1AE3', 'IHQ_PSA', 'FACTOR_PRONOSTICO', 'IHQ_HEPATOCITO', 'IHQ_ARGINASA']:
-                            value_preview = str(value)[:50] + "..." if len(str(value)) > 50 else value
-                            debug_samples.append(f"{col}: {value_preview}")
+                        # Solo incluir en UPDATE si el valor existe en record
+                        if value is not None and str(value).strip() != '':
+                            columns_to_update.append(col)
+                            values.append(value)
+
+                            # DEBUG V6.1.5: IHQ251003 - Diagnosticar MAMOGLOBINA
+                            if peticion == 'IHQ251003' and col in ['IHQ_MAMOGLOBINA', 'IHQ_CKAE1AE3', 'IHQ_GATA3', 'IHQ_ESTUDIOS_SOLICITADOS']:
+                                logger.info(f"[IHQ251003] UPDATE {col}: normalized='{normalized_col}', final_value={repr(value)}")
+
+                            # DEBUG V6.1.4: IHQ251000 - Diagnosticar HEPATOCITO
+                            if peticion == 'IHQ251000' and col in ['IHQ_HEPATOCITO', 'IHQ_ARGINASA', 'IHQ_CK19', 'IHQ_CK7', 'IHQ_CD34']:
+                                logger.info(f"[IHQ251000] UPDATE {col}: normalized='{normalized_col}', final_value={repr(value)}")
+
+                            # DEBUG: Guardar muestra para columnas IHQ
+                            if col.startswith('IHQ_') and col in ['IHQ_ESTUDIOS_SOLICITADOS', 'IHQ_CK7', 'IHQ_CKAE1AE3', 'IHQ_PSA', 'FACTOR_PRONOSTICO', 'IHQ_HEPATOCITO', 'IHQ_ARGINASA', 'IHQ_MAMOGLOBINA']:
+                                value_preview = str(value)[:50] + "..." if len(str(value)) > 50 else value
+                                debug_samples.append(f"{col}: {value_preview}")
 
                     # DEBUG: Mostrar muestras
                     if debug_samples:
-                        logger.debug(f"DEBUG save_records - Muestras de valores: {', '.join(debug_samples)}")
+                        logger.debug(f"DEBUG save_records - Muestras de valores a actualizar: {', '.join(debug_samples)}")
 
-                    set_clause = ', '.join([f'"{col}" = ?' for col in table_columns])
-
-                    # CORREGIDO v6.0.4.1: Usar "Numero de caso" (igual que el SELECT)
-                    # BUG: antes usaba "N. peticion (0. Numero de biopsia)" que es columna diferente
-                    cursor.execute(f"UPDATE {TABLE_NAME} SET {set_clause} WHERE \"Numero de caso\" = ?",
-                                 values + [peticion])
-                    logger.info(f"Registro actualizado: {peticion}")
+                    # Solo hacer UPDATE si hay columnas para actualizar
+                    if columns_to_update:
+                        set_clause = ', '.join([f'"{col}" = ?' for col in columns_to_update])
+                        cursor.execute(f"UPDATE {TABLE_NAME} SET {set_clause} WHERE \"Numero de caso\" = ?",
+                                     values + [peticion])
+                        logger.info(f"Registro actualizado: {peticion} ({len(columns_to_update)} columnas)")
+                    else:
+                        logger.warning(f"No hay columnas para actualizar en: {peticion}")
                 else:
                     # Insertar nuevo registro
                     values = []

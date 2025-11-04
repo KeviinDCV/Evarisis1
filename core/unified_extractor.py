@@ -5,8 +5,41 @@
 Este módulo proporciona una interfaz compatible con el ui.py existente
 utilizando internamente los nuevos extractores modulares de la refactorización v4.0.
 
-Versión: 4.2.10 - FIX Normalización biomarcadores (Estrogeno/Progesterona)
-Fecha: 31 de octubre de 2025
+Versión: 4.2.13 - FIX CRÍTICO IHQ251007 (Bug combined_data no inicializado)
+Fecha: 3 de noviembre de 2025
+
+CHANGELOG v4.2.13:
+  - 🔴 FIX CRÍTICO: combined_data se inicializa ANTES de usarlo en guardado narrativo (línea 386)
+  - 🔴 Bug encontrado: combined_data definido en línea 427 pero usado en línea 418
+  - 🔴 Error resultante: "cannot access local variable 'combined_data' where it is not associated with a value"
+  - ✅ Solución: Mover inicialización a línea 386 (después de extract_medical_data, antes de narrative_list)
+  - ✅ Comentado línea 427 para evitar sobrescribir valores narrativos guardados
+  - ✅ Resuelve: P63 y CK5/6 ahora SÍ se guardan en combined_data correctamente
+  - 📝 Impacto: Bug crítico que impedía guardado de TODOS los biomarcadores narrativos
+  - 📝 Backups: NO (corrección de bug de inicialización)
+
+CHANGELOG v4.2.12:
+  - ✅ LOGGING DIAGNÓSTICO: Agregado logging extendido en guardado de biomarcadores narrativos (líneas 402-421)
+  - ✅ Propósito: Diagnosticar por qué P63 y CK5/6 no se guardan aunque se extraen correctamente
+  - ✅ Logs agregados:
+    - narrative_list recibido completo
+    - Cada guardado en biomarker_data
+    - Cada guardado en combined_data (o razón de NO guardado)
+  - ✅ Permite identificar en logs:
+    - Si narrative_list tiene los valores
+    - Si se guardan en biomarker_data
+    - Si se guardan en combined_data
+    - Si hay sobrescritura o valores preexistentes
+  - 📝 Backups: NO (solo logging, sin cambios de lógica)
+
+CHANGELOG v4.2.11:
+  - ✅ FIX CRÍTICO: Biomarcadores narrativos se guardan directamente en combined_data (línea 386-390)
+  - ✅ Resuelve: P63 y CK5/6 aparecían como "NO MENCIONADO" por error de mapeo prefijo IHQ_
+  - ✅ FIX CRÍTICO: FALLBACK NO sobrescribe valores narrativos válidos de Factor Pronóstico (línea 710-717)
+  - ✅ Resuelve: Factor Pronóstico con "inmunorreactividad..." se sobrescribía con "NO APLICA"
+  - ✅ Detecta keywords narrativo: inmunorreactividad, positividad, marcación, tinción
+  - ✅ Ignora valores malformados "." en detección de incompletitud (línea 732)
+  - 📝 Backups: NO (cambios menores, lógica mejorada)
 
 CHANGELOG v4.2.10:
   - ✅ NORMALIZACIÓN: Mapea "Estrogeno"/"Progesterona" a receptores hormonales canónicos
@@ -182,6 +215,21 @@ def extract_diagnostico_principal(diagnostico_completo: str) -> str:
         diagnostico = diagnostico.upper().rstrip('.')
         return diagnostico
 
+    # ESTRATEGIA 0.5 (ALTA PRIORIDAD): V6.0.10 - Diagnóstico FINAL después de "Expansión" (IHQ251002)
+    # Formato: "DIAGNÓSTICO\nFémur derecho. Tumor. Biopsia... Expansión.\nSARCOMA FUSOCELULAR INDIFERENCIADO."
+    # Este patrón detecta el diagnóstico DEFINITIVO que viene después de la sección "Expansión"
+    # DEBE ejecutarse ANTES de ESTRATEGIA 1 para tener prioridad sobre diagnósticos preliminares
+    patron_expansion = r'Expansi[óo]n\.\s*([A-ZÁÉÍÓÚÑ][^.]+?)\.'
+    match_expansion = re.search(patron_expansion, texto, re.IGNORECASE)
+    if match_expansion:
+        diagnostico = match_expansion.group(1).strip()
+        # Verificar que no sea texto descriptivo (debe ser diagnóstico real)
+        if not any(kw in diagnostico.upper() for kw in ['RECEPTOR', 'POSITIVO', 'NEGATIVO', 'COMENTARIO', 'ESTUDIO']):
+            # Limpiar y normalizar
+            diagnostico = ' '.join(diagnostico.split())
+            diagnostico = diagnostico.upper().rstrip('.')
+            return diagnostico
+
     # ESTRATEGIA 1 (PRIORITARIA): Buscar después de marcadores clave
     # Marcadores que indican el inicio de los resultados de diagnóstico
     # V4.2.10: Soportar ":" además de "." (IHQ250995: "Estudios de inmunohistoquímica:")
@@ -344,6 +392,9 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
         biomarker_data = extract_biomarkers(clean_text)
         medical_data = extract_medical_data(clean_text)  # NUEVO: Datos médicos
 
+        # V6.1.6 FIX CRÍTICO: Inicializar combined_data ANTES de usarlo en narrative_list
+        combined_data = {}
+
         # ═══════════════════════════════════════════════════════════════════════
         # V6.0.3: EXTRACCIÓN NARRATIVA COMPLEMENTARIA (IHQ250982)
         # ═══════════════════════════════════════════════════════════════════════
@@ -360,21 +411,31 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
 
                 if narrative_list:
                     logger.info(f"🧬 V6.0.3: Detectados {len(narrative_list)} biomarcadores narrativos adicionales")
+                    # V6.1.6: DEBUG IHQ251007 - Log completo de narrative_list recibido
+                    logger.info(f"📋 narrative_list recibido: {narrative_list}")
 
-                    # Merge (NO sobreescribir valores positivos existentes)
+                    # V6.X.X FIX IHQ251007: Guardar directamente en combined_data
+                    # narrative_list ya tiene prefijo IHQ_, guardar directo evita problemas de mapeo
                     for columna, valor in narrative_list.items():
-                        # Solo agregar si:
-                        # 1. No existe en biomarker_data, O
-                        # 2. El valor actual es 'N/A' (vacío)
+                        # Guardar en biomarker_data (para compatibilidad con código existente)
                         if columna not in biomarker_data or biomarker_data[columna] in ('N/A', '', None):
                             biomarker_data[columna] = valor
-                            logger.debug(f"   ✓ {columna}: {valor} (narrativo)")
+                            logger.info(f"   ✓ Guardado en biomarker_data: {columna} = {valor}")
+
+                        # V6.X.X FIX: También guardar directamente en combined_data
+                        # Esto resuelve el problema de P63 y CK5/6 que no se guardaban por error de mapeo
+                        if columna not in combined_data or combined_data[columna] in ('N/A', '', None, 'NO MENCIONADO'):
+                            combined_data[columna] = valor
+                            logger.info(f"   ✅ Guardado en combined_data: {columna} = {valor} (narrativo directo)")
+                        else:
+                            logger.warning(f"   ⚠️ NO guardado (ya existe): {columna} = {combined_data[columna]} (querido: {valor})")
         except Exception as e:
             logger.warning(f"⚠️ Error en extracción narrativa: {e}")
 
         # Combinar y mapear al formato esperado por ui.py
-        combined_data = {}
-        
+        # V6.1.6 FIX: combined_data ya está inicializado en línea 386, NO sobrescribir
+        # combined_data = {}  # REMOVIDO: sobrescribía valores narrativos guardados
+
         # === DATOS DE PACIENTE ===
         if patient_data:
             # Campos básicos de identificación
@@ -465,7 +526,7 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 # ELIMINADO: 'n_autorizacion' - campo no utilizado que genera NaN
                 'estudios_solicitados_tabla': medical_data.get('estudios_solicitados', ''),  # Biomarcadores de tabla PDF (fallback)
                 'procedimiento': patient_data.get('procedimiento', '') if patient_data else '',  # Nuevo campo
-                'factor_pronostico': medical_data.get('factor_pronostico', ''),  # AGREGADO
+                # ELIMINADO: 'factor_pronostico' - Duplicado de 'Factor pronostico' (Title Case usado en BD)
                 'diagnostico_coloracion': medical_data.get('diagnostico_coloracion', ''),  # v6.1.0: NUEVO - Diagnóstico Estudio M
                 'comentarios': medical_data.get('comentarios', ''),  # V5.1.2: NUEVO - Comentarios extraídos
             })
@@ -539,6 +600,10 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'P53': 'IHQ_P53',
                 'CDX2': 'IHQ_CDX2',
                 'CK7': 'IHQ_CK7',
+                'CMYC': 'IHQ_CMYC',
+                'IGG4': 'IHQ_IGG4',
+                'IGG': 'IHQ_IGG',
+                'MAMOGLOBINA': 'IHQ_MAMOGLOBINA',
                 'HEPATOCITO': 'IHQ_HEPATOCITO',  # V6.0.16: Auto-agregado
                 'PSA': 'IHQ_PSA',  # V6.0.16: Auto-agregado
                 'LAMBDA': 'IHQ_LAMBDA',  # V6.0.16: Auto-agregado
@@ -680,14 +745,24 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
 
             # V6.0.10: FALLBACK - Construir Factor Pronóstico desde columnas individuales si está vacío
             # V6.0.12: MEJORADO - También detecta si está INCOMPLETO (le faltan biomarcadores)
+            # V6.X.X FIX IHQ251007: NO ejecutar FALLBACK si Factor Pronóstico tiene valor narrativo válido
             # Solución para casos donde biomarcadores se extrajeron a columnas IHQ_* pero Factor Pronóstico
             # quedó vacío/NO APLICA/INCOMPLETO por problemas de formato en PDF
             factor_actual = combined_data.get('Factor pronostico', '').strip()
-            
+
+            # V6.X.X FIX IHQ251007: Detectar valores narrativos válidos
+            # Estos NO deben ser considerados incompletos ni sobrescritos
+            es_narrativo_valido = False
+            if factor_actual:
+                keywords_narrativo = ['inmunorreactividad', 'positividad', 'marcación', 'tinción']
+                es_narrativo_valido = any(kw in factor_actual.lower() for kw in keywords_narrativo)
+                if es_narrativo_valido:
+                    logger.info(f"✓ Factor Pronóstico narrativo válido detectado: '{factor_actual[:50]}...'")
+
             # Detectar si Factor Pronóstico está incompleto
             # (le faltan biomarcadores que SÍ están en columnas individuales)
             factor_incompleto = False
-            if factor_actual and factor_actual not in ['NO APLICA', 'N/A', 'SIN DATO']:
+            if factor_actual and factor_actual not in ['NO APLICA', 'N/A', 'SIN DATO'] and not es_narrativo_valido:
                 # Verificar si hay biomarcadores en columnas que NO están en Factor Pronóstico
                 biomarcadores_en_columnas = {
                     'HER2': combined_data.get('IHQ_HER2', '').strip(),
@@ -695,9 +770,9 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                     'Receptor de Estrógeno': combined_data.get('IHQ_RECEPTOR_ESTROGENOS', '').strip(),
                     'Receptor de Progesterona': combined_data.get('IHQ_RECEPTOR_PROGESTERONA', '').strip()
                 }
-                
+
                 for nombre_bio, valor in biomarcadores_en_columnas.items():
-                    if valor and valor not in ['', 'SIN DATO', 'NO ENCONTRADO']:
+                    if valor and valor not in ['', 'SIN DATO', 'NO ENCONTRADO', '.']:
                         # Biomarcador tiene valor en columna, verificar si está en Factor Pronóstico
                         if nombre_bio.upper() not in factor_actual.upper():
                             factor_incompleto = True
@@ -784,6 +859,9 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
 
         # 3. ALMACENAR CORRECCIONES EN METADATA
         # Las correcciones se almacenarán en debug_map y se usarán en ventana de resultados
+        # NOTA: Esta clave temporal permite que ihq_processor.py extraiga las correcciones
+        # y las pase a debug_mapper.registrar_correcciones(). Aunque parezca duplicación,
+        # es el mecanismo de transporte necesario. ihq_processor hace .pop() para removerla.
         combined_data['_correcciones_aplicadas'] = tracker.get_all_corrections()
 
         logger.info(f"🔧 Total correcciones aplicadas: {tracker.count_corrections()}")
@@ -1212,9 +1290,9 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
     db_record["Descripcion macroscopica"] = extracted_data.get('Descripcion macroscopica', 'N/A')
 
     # Factor pronóstico ya calculado por extract_ihq_data()
-    # V6.0.12 FIX CRÍTICO: Priorizar 'Factor pronostico' (título case) que es actualizado por FALLBACK
-    # sobre 'factor_pronostico' (minúsculas) que puede quedarse con "NO APLICA"
-    db_record["Factor pronostico"] = extracted_data.get('Factor pronostico', 'N/A') or extracted_data.get('factor_pronostico', 'N/A')
+    # V6.0.13 SIMPLIFICADO: Usar solo 'Factor pronostico' (Title Case)
+    # 'factor_pronostico' (minúsculas) fue eliminado para evitar duplicación
+    db_record["Factor pronostico"] = extracted_data.get('Factor pronostico', 'N/A')
     
     # === INFORMACIÓN DE MUESTRA ===
     # ELIMINADO v4.2: "N. muestra" - campo duplicado con N. petición
@@ -1252,6 +1330,10 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
 
         # Biomarcadores v4.0
         'CK7': 'IHQ_CK7', 'ck7': 'IHQ_CK7',
+        'CMYC': 'IHQ_CMYC', 'cmyc': 'IHQ_CMYC',
+        'IGG4': 'IHQ_IGG4', 'igg4': 'IHQ_IGG4',
+        'IGG': 'IHQ_IGG', 'igg': 'IHQ_IGG',
+        'MAMOGLOBINA': 'IHQ_MAMOGLOBINA', 'mamoglobina': 'IHQ_MAMOGLOBINA',
         'HEPATOCITO': 'IHQ_HEPATOCITO', 'hepatocito': 'IHQ_HEPATOCITO',  # V6.0.16: Auto-agregado
         'PSA': 'IHQ_PSA', 'psa': 'IHQ_PSA', 'IHQ_PSA': 'IHQ_PSA',  # V6.0.17: Corregido mapeo autorreferenciado
         'LAMBDA': 'IHQ_LAMBDA', 'lambda': 'IHQ_LAMBDA', 'IHQ_LAMBDA': 'IHQ_LAMBDA',  # V6.0.17: Corregido mapeo autorreferenciado
@@ -1564,6 +1646,27 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
 
     db_record["IHQ_ORGANO"] = ihq_organo_value
     db_record["IHQ_P16_PORCENTAJE"] = ''  # Campo específico
+
+    # V6.X.X: NUEVA LÓGICA - Completar biomarcadores solicitados sin valor con "NO MENCIONADO"
+    # Si un biomarcador está en IHQ_ESTUDIOS_SOLICITADOS pero no tiene valor, marcar como "NO MENCIONADO"
+    if estudios_solicitados_str:
+        # Obtener lista de biomarcadores solicitados
+        biomarcadores_solicitados = [b.strip() for b in estudios_solicitados_str.split(',')]
+
+        for bio_solicitado in biomarcadores_solicitados:
+            # Mapear nombre a columna IHQ_* (usar biomarker_display_names inverso)
+            columna_bd = None
+            for campo, nombre_display in biomarker_display_names.items():
+                if nombre_display.upper() == bio_solicitado.upper():
+                    columna_bd = campo
+                    break
+
+            # Si encontramos la columna y está vacía, asignar "NO MENCIONADO"
+            if columna_bd:
+                valor_actual = db_record.get(columna_bd, '').strip()
+                if not valor_actual or valor_actual in ['N/A', 'nan', 'None', 'NULL', '']:
+                    db_record[columna_bd] = 'NO MENCIONADO'
+                    logger.info(f"✅ [{peticion}] {columna_bd}: Solicitado pero sin valor → 'NO MENCIONADO'")
 
     # DEBUG V6.0.18: Log final para PSA
     if peticion == 'IHQ250996':

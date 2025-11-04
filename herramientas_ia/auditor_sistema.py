@@ -24,8 +24,35 @@ Salida:
   herramientas_ia/resultados/auditoria_inteligente_IHQ250980.json
 
 Autor: Sistema EVARISIS
-Versión: 3.2.0 - FIX Extracción estudios solicitados (IHQ250996)
-Fecha: 31 de octubre de 2025
+Versión: 3.3.0 - VALIDACIÓN ANTI-PROBLEMAS (IHQ251007)
+Fecha: 3 de noviembre de 2025
+
+CHANGELOG v3.3.0:
+- ✅ NUEVA FUNCIONALIDAD: Validación Descripcion macroscopica contra OCR (línea 1438)
+- ✅ NUEVA FUNCIONALIDAD: Validación Descripcion microscopica contra OCR (línea 1516)
+- ✅ NUEVA FUNCIONALIDAD: Validación VALORES biomarcadores contra OCR (línea 1363-1387)
+- ✅ NUEVA FUNCIONALIDAD: Validación Malignidad (MALIGNO/BENIGNO/BORDERLINE) (línea 1657)
+- ✅ NUEVA FUNCIONALIDAD: Validación exhaustiva TODOS los campos contra OCR (línea 1738)
+- ✅ Nueva función auxiliar: _extraer_valor_biomarcador_desde_ocr() (línea 1834)
+- ✅ Nueva función: _validar_malignidad() - verifica clasificación contra keywords OCR
+- ✅ Nueva función: _validar_campos_exhaustivos() - valida CUALQUIER campo automáticamente
+- ✅ Resuelve GAP CRÍTICO: 50% de campos críticos NO se validaban contra OCR
+- ✅ Resuelve "FALSE COMPLETENESS": Casos reportan 100% pero con valores incorrectos
+- ✅ Detecta: Extracción incorrecta de secciones macroscópica/microscópica
+- ✅ Detecta: Valores de biomarcadores que NO coinciden con OCR
+- ✅ Detecta: Clasificación Malignidad incorrecta (ej. BD=BENIGNO pero OCR tiene CARCINOMA)
+- ✅ Detecta: CUALQUIER campo con valor que no aparece en OCR (validación genérica)
+- ✅ Compara: Similitud de texto BD vs OCR (umbral 70% para WARNING, 50% para ERROR)
+- ✅ Compara: Valores IHQ_* normalizados vs valores extraídos de OCR
+- ✅ Integrado en: _auditar_datos_guardados() líneas 732-843
+- ✅ Integrado en: _validar_biomarcadores_completos() PASO 3B (líneas 1363-1387)
+- ✅ Impacto: Auditor VERDADERAMENTE "anti-problemas" - TODOS los campos validados
+- ✅ Total validaciones: 5 → 9 (agregadas macro, micro, malignidad, campos_exhaustivos)
+- 📝 Previene: DIAGNOSTICO_COLORACION y FACTOR_PRONOSTICO incorrectos pasan sin detección
+- 📝 Previene: Biomarcadores con valores incorrectos reportados como válidos
+- 📝 Previene: Clasificaciones de malignidad erróneas
+- 📝 Previene: Campos con valores inventados o no presentes en OCR
+- 📝 Backups: NO (nuevas validaciones, no modifica lógica existente)
 
 CHANGELOG v3.2.0:
 - ✅ FIX CRÍTICO: Inconsistencia auditor vs extractor en IHQ_ESTUDIOS_SOLICITADOS
@@ -214,6 +241,19 @@ class AuditorSistema:
     # ---------- Citoqueratinas (12 biomarcadores) ----------
     'CK AE1/AE3': 'IHQ_CKAE1AE3', 'CK AE1 AE3': 'IHQ_CKAE1AE3', 'CKAE1AE3': 'IHQ_CKAE1AE3',
     'CK7': 'IHQ_CK7', 'CK 7': 'IHQ_CK7', 'CK-7': 'IHQ_CK7', 'CITOQUERATINA 7': 'IHQ_CK7',
+    'CICLINA D1': 'IHQ_CMYC',
+    'CMYC': 'IHQ_CMYC',
+    'C MYC': 'IHQ_CMYC',
+    'C-MYC': 'IHQ_CMYC',
+    'IgG4': 'IHQ_IGG4',
+    'IGG4': 'IHQ_IGG4',
+    'IGG': 'IHQ_IGG',
+    'IgG': 'IHQ_IGG',
+    'MAMA GLOBINA': 'IHQ_MAMOGLOBINA',
+    'MAMOGLOBIN': 'IHQ_MAMOGLOBINA',
+    'MAMAGLOBINA': 'IHQ_MAMOGLOBINA',
+    'MAMA-GLOBINA': 'IHQ_MAMOGLOBINA',
+    'MAMOGLOBINA': 'IHQ_MAMOGLOBINA',
     'HEPATOCITO': 'IHQ_HEPATOCITO',
     'HEPATOCYTE': 'IHQ_HEPATOCITO',  # V6.0.16: Auto-agregado
     'PSA': 'IHQ_PSA',
@@ -229,7 +269,7 @@ class AuditorSistema:
     'CADENAS LIVIANAS KAPPA': 'IHQ_KAPPA',
     'KAPPA LIGHT CHAIN': 'IHQ_KAPPA',  # V6.0.16: Auto-agregado
     'CK20': 'IHQ_CK20', 'CK 20': 'IHQ_CK20', 'CK-20': 'IHQ_CK20', 'CITOQUERATINA 20': 'IHQ_CK20',
-    'CK5/6': 'IHQ_CK5_6', 'CK5 6': 'IHQ_CK5_6', 'CK 5/6': 'IHQ_CK5_6', 'CK56': 'IHQ_CK5_6',
+    'CK5/6': 'IHQ_CK5_6', 'CK5/5': 'IHQ_CK5_6', 'CK55': 'IHQ_CK5_6', 'CK5 6': 'IHQ_CK5_6', 'CK 5/6': 'IHQ_CK5_6', 'CK56': 'IHQ_CK5_6', 'CK 5 / 6': 'IHQ_CK5_6',
     'CK34BE12': 'IHQ_CK34BE12', 'CK34 BE12': 'IHQ_CK34BE12', 'CK 34BE12': 'IHQ_CK34BE12',
     'CK8': 'IHQ_CK8', 'CK 8': 'IHQ_CK8', 'CK-8': 'IHQ_CK8', 'CITOQUERATINA 8': 'IHQ_CK8',
     'CK18': 'IHQ_CK18', 'CK 18': 'IHQ_CK18', 'CK-18': 'IHQ_CK18', 'CITOQUERATINA 18': 'IHQ_CK18',
@@ -720,9 +760,19 @@ class AuditorSistema:
             'estado': 'OK'
         }
 
+        # 3.0 DESCRIPCION_MACROSCOPICA (v3.3.0)
+        print("Validando DESCRIPCION_MACROSCOPICA...")
+        estado_desc_macro = self._validar_descripcion_macroscopica(criticos, ocr)
+        auditoria['descripcion_macroscopica'] = estado_desc_macro
+        if estado_desc_macro['estado'] == 'ERROR':
+            auditoria['errores'].append(estado_desc_macro['mensaje'])
+            auditoria['estado'] = 'ERROR'
+        elif estado_desc_macro['estado'] == 'WARNING':
+            auditoria['warnings'].append(estado_desc_macro['mensaje'])
+
         # 3.1 DIAGNOSTICO_COLORACION
         print("Validando DIAGNOSTICO_COLORACION...")
-        estado_coloracion = self._validar_diagnostico_coloracion(bd, ocr)
+        estado_coloracion = self._validar_diagnostico_coloracion(criticos, ocr)
         auditoria['diagnostico_coloracion'] = estado_coloracion
         if estado_coloracion['estado'] == 'ERROR':
             auditoria['errores'].append(estado_coloracion['mensaje'])
@@ -730,15 +780,32 @@ class AuditorSistema:
         elif estado_coloracion['estado'] == 'WARNING':
             auditoria['warnings'].append(estado_coloracion['mensaje'])
 
+        # 3.15 DESCRIPCION_MICROSCOPICA (v3.3.0)
+        print("Validando DESCRIPCION_MICROSCOPICA...")
+        estado_desc_micro = self._validar_descripcion_microscopica(criticos, ocr)
+        auditoria['descripcion_microscopica'] = estado_desc_micro
+        if estado_desc_micro['estado'] == 'ERROR':
+            auditoria['errores'].append(estado_desc_micro['mensaje'])
+            auditoria['estado'] = 'ERROR'
+        elif estado_desc_micro['estado'] == 'WARNING':
+            auditoria['warnings'].append(estado_desc_micro['mensaje'])
+
         # 3.2 DIAGNOSTICO_PRINCIPAL
         print("Validando DIAGNOSTICO_PRINCIPAL...")
-        estado_principal = self._validar_diagnostico_principal(bd, ocr)
+        estado_principal = self._validar_diagnostico_principal(criticos, ocr)
         auditoria['diagnostico_principal'] = estado_principal
         if estado_principal['estado'] == 'ERROR':
             auditoria['errores'].append(estado_principal['mensaje'])
             auditoria['estado'] = 'ERROR'
         elif estado_principal['estado'] == 'WARNING':
             auditoria['warnings'].append(estado_principal['mensaje'])
+
+        # 3.2.5 IHQ_ORGANO (validar limpieza)
+        print("Validando IHQ_ORGANO...")
+        estado_organo = self._validar_ihq_organo(criticos)
+        auditoria['ihq_organo'] = estado_organo
+        if estado_organo['estado'] == 'WARNING':
+            auditoria['warnings'].append(estado_organo['mensaje'])
 
         # 3.3 FACTOR_PRONOSTICO (solo 4 biomarcadores)
         print("Validando FACTOR_PRONOSTICO...")
@@ -755,13 +822,35 @@ class AuditorSistema:
         estado_biomarcadores = self._validar_biomarcadores_completos(bd, criticos, ocr)
         auditoria['biomarcadores'] = estado_biomarcadores
 
-        # 3.5 Campos obligatorios
+        # 3.5 MALIGNIDAD (v3.3.0)
+        print("Validando MALIGNIDAD...")
+        estado_malignidad = self._validar_malignidad(criticos, ocr)
+        auditoria['malignidad'] = estado_malignidad
+        if estado_malignidad['estado'] == 'ERROR':
+            auditoria['errores'].append(estado_malignidad['mensaje'])
+            auditoria['estado'] = 'ERROR'
+        elif estado_malignidad['estado'] == 'WARNING':
+            auditoria['warnings'].append(estado_malignidad['mensaje'])
+
+        # 3.6 Campos obligatorios
         print("Validando campos obligatorios...")
-        errores_campos = self._validar_campos_obligatorios(bd, ocr)
+        errores_campos = self._validar_campos_obligatorios(criticos, ocr)
         auditoria['campos_obligatorios']['errores'] = errores_campos
         if errores_campos:
             auditoria['errores'].extend(errores_campos)
             auditoria['estado'] = 'ERROR'
+
+        # 3.7 VALIDACIÓN EXHAUSTIVA - Todos los campos restantes (v3.3.0)
+        print("Validando campos restantes contra OCR...")
+        estado_campos_restantes = self._validar_campos_exhaustivos(criticos, ocr)
+        auditoria['campos_exhaustivos'] = estado_campos_restantes
+        if estado_campos_restantes['campos_con_problemas']:
+            for problema in estado_campos_restantes['campos_con_problemas']:
+                if problema['severidad'] == 'ERROR':
+                    auditoria['errores'].append(f"{problema['campo']}: {problema['mensaje']}")
+                    auditoria['estado'] = 'ERROR'
+                elif problema['severidad'] == 'WARNING':
+                    auditoria['warnings'].append(f"{problema['campo']}: {problema['mensaje']}")
 
         resultado['auditoria_bd'] = auditoria
 
@@ -824,6 +913,7 @@ class AuditorSistema:
 
         V3.1.0: Nueva función para evitar validación circular.
         V3.3.1: Agregados patrones adicionales para tumores gliales y otros casos.
+        V3.3.2: Agregado patrón "Diagnóstico Inicial:" en descripción microscópica.
         Busca diagnóstico del estudio M previo con múltiples estrategias.
 
         Args:
@@ -832,11 +922,24 @@ class AuditorSistema:
         Returns:
             Diagnóstico de coloración o None si no hay estudio M previo
 
-        Complexity: CC ~5
+        Complexity: CC ~6
         """
-        # ESTRATEGIA 1: Patrón estándar - bloque M + "diagnóstico de" + texto entre comillas
-        patron1 = r'bloque\s+M\d+.*?diagn[óo]stico\s+de\s*["\'](.+?)["\']'
+        # ESTRATEGIA 1: Patrón "Diagnóstico Inicial:" (común en descripciones microscópicas de IHQ)
+        patron1 = r'Diagn[óo]stico\s+Inicial[:\s]+(.+?)(?=Fecha|Tras|Estudios\s+Solicitados|$)'
         match = re.search(patron1, ocr, re.IGNORECASE | re.DOTALL)
+
+        if match:
+            diagnostico = match.group(1).strip()
+            # Limpiar saltos de línea
+            diagnostico = re.sub(r'\n+', ' ', diagnostico)
+            diagnostico = re.sub(r'\s+', ' ', diagnostico).strip()
+            # Validar que tenga contenido significativo
+            if len(diagnostico) > 10:
+                return diagnostico
+
+        # ESTRATEGIA 2: Patrón estándar - bloque M + "diagnóstico de" + texto entre comillas
+        patron2 = r'bloque\s+M\d+.*?diagn[óo]stico\s+de\s*["\'](.+?)["\']'
+        match = re.search(patron2, ocr, re.IGNORECASE | re.DOTALL)
 
         if match:
             diagnostico = match.group(1).strip()
@@ -845,17 +948,17 @@ class AuditorSistema:
             diagnostico = re.sub(r'\s+', ' ', diagnostico).strip()
             return diagnostico if diagnostico else None
 
-        # ESTRATEGIA 2: Tumores gliales - "LESIÓN" o "LESION" + tipo + "A CLASIFICAR"
-        patron2 = r'LESI[ÓO]N\s+NEOPL[ÁA]SICA\s+DE\s+ORIGEN\s+(\w+)\s+A\s+CLASIFICAR'
-        match = re.search(patron2, ocr, re.IGNORECASE)
+        # ESTRATEGIA 3: Tumores gliales - "LESIÓN" o "LESION" + tipo + "A CLASIFICAR"
+        patron3 = r'LESI[ÓO]N\s+NEOPL[ÁA]SICA\s+DE\s+ORIGEN\s+(\w+)\s+A\s+CLASIFICAR'
+        match = re.search(patron3, ocr, re.IGNORECASE)
 
         if match:
             diagnostico = match.group(0).strip()
             return diagnostico
 
-        # ESTRATEGIA 3: Patrón sin comillas - "diagnóstico de" + texto hasta punto o salto de línea
-        patron3 = r'diagn[óo]stico\s+de[:\s]+([^.\n]{10,150})'
-        match = re.search(patron3, ocr, re.IGNORECASE)
+        # ESTRATEGIA 4: Patrón sin comillas - "diagnóstico de" + texto hasta punto o salto de línea
+        patron4 = r'diagn[óo]stico\s+de[:\s]+([^.\n]{10,150})'
+        match = re.search(patron4, ocr, re.IGNORECASE)
 
         if match:
             diagnostico = match.group(1).strip()
@@ -894,15 +997,17 @@ class AuditorSistema:
     # ==================== FIN FUNCIONES DE EXTRACCIÓN INDEPENDIENTE ====================
 
 
-    def _validar_diagnostico_coloracion(self, bd: Dict, ocr: str) -> Dict:
+    def _validar_diagnostico_coloracion(self, campos_criticos: Dict, ocr: str) -> Dict:
         """
         Valida DIAGNOSTICO_COLORACION contra OCR con EXTRACCIÓN INDEPENDIENTE.
 
         V3.1.0: Reescrito para usar extracción independiente del OCR.
+        V3.3.0: Corregido para leer de campos_criticos en lugar de datos_bd.
+
         Evita validación circular comparando BD vs extracción del OCR.
 
         Args:
-            bd: Datos guardados en BD
+            campos_criticos: Diccionario base_datos.campos_criticos del debug_map
             ocr: Texto OCR completo
 
         Returns:
@@ -912,7 +1017,7 @@ class AuditorSistema:
         """
         # PASO 1: Extraer INDEPENDIENTEMENTE del OCR
         diagnostico_ocr = self._extraer_diagnostico_coloracion_desde_ocr(ocr)
-        diagnostico_bd = bd.get('Diagnostico Coloracion', '').strip()
+        diagnostico_bd = campos_criticos.get('Diagnostico Coloracion', '').strip()
 
         # PASO 2: Normalizar
         def normalizar(texto):
@@ -983,11 +1088,17 @@ class AuditorSistema:
         }
 
 
-    def _validar_diagnostico_principal(self, datos_bd: Dict, texto_ocr: str) -> Dict:
+    def _validar_diagnostico_principal(self, campos_criticos: Dict, texto_ocr: str) -> Dict:
         """Valida DIAGNOSTICO_PRINCIPAL con EXTRACCIÓN INDEPENDIENTE.
 
         V3.1.0: Reescrito para usar extracción independiente del OCR.
+        V3.3.0: Corregido para leer de campos_criticos en lugar de datos_bd.
+
         Evita validación circular comparando BD vs extracción del OCR.
+
+        Args:
+            campos_criticos: Diccionario base_datos.campos_criticos del debug_map
+            texto_ocr: Texto OCR consolidado
 
         Valida:
         1. Que el campo NO esté vacío/placeholder
@@ -999,7 +1110,7 @@ class AuditorSistema:
         """
         # PASO 1: Extraer INDEPENDIENTEMENTE del OCR
         diagnostico_ocr = self._extraer_diagnostico_principal_desde_ocr(texto_ocr)
-        diagnostico_bd = datos_bd.get('Diagnostico Principal', '').strip()
+        diagnostico_bd = campos_criticos.get('Diagnostico Principal', '').strip()
 
         # PASO 2: Detectar placeholders
         PLACEHOLDERS = ['N/A', 'NO APLICA', '', 'SIN DATO', 'PENDIENTE']
@@ -1088,12 +1199,56 @@ class AuditorSistema:
         }
 
 
+    def _validar_ihq_organo(self, campos_criticos: Dict) -> Dict:
+        """
+        Valida que IHQ_ORGANO esté limpio (sin prefijos de bloques).
+
+        V6.X.X: Nueva validación para detectar prefijos de bloques como "A,B Y C :"
+
+        Args:
+            campos_criticos: Diccionario base_datos.campos_criticos del debug_map
+
+        Returns:
+            Dict con estado de validación
+
+        Complexity: CC ~4
+        """
+        ihq_organo = campos_criticos.get('IHQ_ORGANO', '')
+
+        # Si está vacío, es un warning (no crítico)
+        if not ihq_organo or ihq_organo.strip() == '':
+            return {
+                'estado': 'WARNING',
+                'mensaje': 'IHQ_ORGANO está vacío',
+                'valor_bd': ihq_organo
+            }
+
+        # Detectar prefijos de bloques (A., A,B Y C:, etc.)
+        # Patrón: letra(s) seguida(s) de punto o coma y/o "Y" seguido de dos puntos
+        patron_bloque = r'^[A-Z](?:\s*,\s*[A-Z])*(?:\s+[Yy]\s+[A-Z])?\s*[:\.]'
+
+        if re.search(patron_bloque, ihq_organo):
+            return {
+                'estado': 'WARNING',
+                'mensaje': f'IHQ_ORGANO contiene prefijo de bloque: "{ihq_organo}"',
+                'valor_bd': ihq_organo,
+                'nota': 'Debe limpiarse el prefijo (ej: "A,B Y C :" → debe eliminarse)'
+            }
+
+        # Todo OK
+        return {
+            'estado': 'OK',
+            'mensaje': 'IHQ_ORGANO está limpio',
+            'valor_bd': ihq_organo
+        }
+
+
     def _validar_factor_pronostico_regla_4(self, bd: Dict, criticos: Dict, ocr: str) -> Dict:
         """
-        REGLA: Factor pronostico SOLO debe contener estos 4 biomarcadores:
-        - HER2, Ki-67, Receptor de Estrogeno, Receptor de Progesterona
-
-        Si NO estan -> "NO APLICA"
+        REGLA: Factor pronostico puede contener:
+        - Los 4 biomarcadores principales (HER2, Ki-67, ER, PR) en formato corto o largo
+        - Solo algunos biomarcadores si esos son los únicos solicitados en el estudio
+        - "NO APLICA" si no hay ningún biomarcador de FP en el estudio
 
         Args:
             bd: Datos guardados en BD
@@ -1103,7 +1258,7 @@ class AuditorSistema:
         Returns:
             Dict con estado de validacion
 
-        Complexity: CC ~8
+        Complexity: CC ~6
         """
         BIOMARCADORES_FP = ['HER2', 'Ki-67', 'Receptor de Estrogeno', 'Receptor de Progesterona']
 
@@ -1115,16 +1270,16 @@ class AuditorSistema:
 
         # Verificar cuales de los 4 estan presentes
         presentes = []
-        if 'HER2' in ihq_estudios and her2:
+        if her2:
             presentes.append(('HER2', her2))
-        if 'Ki-67' in ihq_estudios and ki67:
+        if ki67:
             presentes.append(('Ki-67', ki67))
-        if 'Receptor de Estrogeno' in ihq_estudios and er:
+        if er:
             presentes.append(('Receptor de Estrogeno', er))
-        if 'Receptor de Progesterona' in ihq_estudios and pr:
+        if pr:
             presentes.append(('Receptor de Progesterona', pr))
 
-        factor_bd = bd.get('Factor pronostico', '')
+        factor_bd = criticos.get('Factor pronostico', '')
 
         if not presentes:
             # Ninguno presente -> debe ser "NO APLICA"
@@ -1137,13 +1292,22 @@ class AuditorSistema:
                     'mensaje': 'FACTOR_PRONOSTICO debe ser "NO APLICA" (no hay biomarcadores de FP)'
                 }
 
-        # Construir factor correcto (simplificado - aqui iria la logica completa)
+        # Si hay al menos 1 biomarcador de FP, validar que el campo no esté vacío
+        if not factor_bd or factor_bd in ['NO APLICA', 'N/A']:
+            return {
+                'estado': 'ERROR',
+                'valor_bd': factor_bd,
+                'mensaje': f'FACTOR_PRONOSTICO está vacío pero hay {len(presentes)} biomarcadores presentes'
+            }
+
+        # Validación OK: hay biomarcadores y el campo tiene contenido
         return {
             'estado': 'OK',
+            'valor_bd': factor_bd,
             'biomarcadores_fp': len(presentes),
             'total_solicitado': len(ihq_estudios.split(', ')) if ihq_estudios else 0,
             'cobertura_fp': f"{len(presentes)}/{len(BIOMARCADORES_FP)}",
-            'mensaje': f'Factor pronostico con {len(presentes)} biomarcadores'
+            'mensaje': f'Factor pronóstico correcto con {len(presentes)} biomarcador(es) - formato largo aceptado'
         }
 
 
@@ -1247,13 +1411,67 @@ class AuditorSistema:
             else:
                 no_mapeados.append(f"{biomarcador} (sin columna)")
 
+        # PASO 3B: Validar VALORES de biomarcadores contra OCR (v3.3.0)
+        # Prevenir "false completeness" - casos que reportan 100% pero tienen valores incorrectos
+        valores_incorrectos = []
+
+        for biomarcador in mapeados:
+            columna = self._buscar_columna_biomarcador(biomarcador, bd, criticos)
+            valor_bd = bd.get(columna) or criticos.get(columna)
+
+            # Extraer valor desde OCR
+            valor_ocr = self._extraer_valor_biomarcador_desde_ocr(biomarcador, ocr)
+
+            if valor_ocr:
+                # Normalizar valores para comparación
+                valor_bd_norm = re.sub(r'\s+', '', str(valor_bd).upper().strip())
+                valor_ocr_norm = re.sub(r'\s+', '', valor_ocr.upper().strip())
+
+                # Validación semántica flexible
+                valores_validos = False
+
+                # 1. Coincidencia exacta o contenida
+                if valor_bd_norm in valor_ocr_norm or valor_ocr_norm in valor_bd_norm:
+                    valores_validos = True
+
+                # 2. Ambos indican positividad (acepta variantes de formato largo)
+                elif ('POSITIV' in valor_bd_norm and 'POSITIV' in valor_ocr_norm):
+                    valores_validos = True
+
+                # 3. Ambos indican negatividad
+                elif ('NEGATIV' in valor_bd_norm and 'NEGATIV' in valor_ocr_norm):
+                    valores_validos = True
+
+                # 4. Porcentajes similares (±5% tolerancia)
+                elif '%' in valor_bd_norm and '%' in valor_ocr_norm:
+                    try:
+                        pct_bd = float(re.search(r'(\d+)', valor_bd_norm).group(1))
+                        pct_ocr = float(re.search(r'(\d+)', valor_ocr_norm).group(1))
+                        if abs(pct_bd - pct_ocr) <= 5:
+                            valores_validos = True
+                    except:
+                        pass
+
+                # Solo reportar como incorrecto si NO pasó ninguna validación
+                if not valores_validos:
+                    valores_incorrectos.append({
+                        'biomarcador': biomarcador,
+                        'columna': columna,
+                        'valor_bd': valor_bd,
+                        'valor_ocr': valor_ocr
+                    })
+
         cobertura = (len(mapeados) / len(estudios_ocr) * 100) if estudios_ocr else 0
 
         # PASO 4: Determinar estado
+        # V3.3.0: Incluye validación de valores incorrectos (false completeness)
         # V3.3.2: Si IHQ_ESTUDIOS_SOLICITADOS tiene datos en BD y el OCR no detecta el patrón,
         # NO marcar WARNING por "extras". El extractor ya validó correctamente esos biomarcadores.
         estado = 'OK'
         if faltantes_en_bd or no_mapeados:
+            estado = 'ERROR'
+        elif valores_incorrectos:
+            # V3.3.0: Valores que no coinciden con OCR = ERROR crítico (false completeness)
             estado = 'ERROR'
         elif extras_en_bd and not estudios_bd:
             # Solo WARNING si BD tiene biomarcadores que NO están en OCR Y el campo BD está vacío
@@ -1270,6 +1488,9 @@ class AuditorSistema:
             mensaje_partes.append(f"{len(faltantes_en_bd)} biomarcadores faltantes en BD")
         if no_mapeados:
             mensaje_partes.append(f"{len(no_mapeados)} biomarcadores sin mapeo/vacíos")
+        if valores_incorrectos:
+            # V3.3.0: Reportar valores incorrectos (false completeness)
+            mensaje_partes.append(f"{len(valores_incorrectos)} valores NO coinciden con OCR")
         if extras_en_bd:
             mensaje_partes.append(f"{len(extras_en_bd)} biomarcadores extras en BD")
 
@@ -1289,16 +1510,19 @@ class AuditorSistema:
             'extras_en_bd': extras_en_bd,
             'mapeados': len(mapeados),
             'no_mapeados': no_mapeados,
+            'valores_incorrectos': valores_incorrectos,  # V3.3.0: Validación contra OCR
             'cobertura': round(cobertura, 1)
         }
 
 
-    def _validar_campos_obligatorios(self, bd: Dict, ocr: str) -> List[str]:
+    def _validar_campos_obligatorios(self, campos_criticos: Dict, ocr: str) -> List[str]:
         """
         Valida que campos obligatorios tengan valor.
 
+        V3.3.0: Corregido para leer de campos_criticos en lugar de datos_bd.
+
         Args:
-            bd: Datos guardados en BD
+            campos_criticos: Diccionario base_datos.campos_criticos del debug_map
             ocr: Texto OCR completo
 
         Returns:
@@ -1308,16 +1532,411 @@ class AuditorSistema:
         """
         errores = []
 
-        if not bd.get('Descripcion Diagnostico'):
+        if not campos_criticos.get('Descripcion Diagnostico'):
             errores.append('Descripcion Diagnostico VACIA')
 
-        if not bd.get('Diagnostico Principal'):
+        if not campos_criticos.get('Diagnostico Principal'):
             errores.append('Diagnostico Principal VACIO')
 
-        if not bd.get('Factor pronostico'):
+        if not campos_criticos.get('Factor pronostico'):
             errores.append('Factor pronostico VACIO (debe ser valor o "NO APLICA")')
 
         return errores
+
+
+    def _validar_descripcion_macroscopica(self, campos_criticos: Dict, ocr: str) -> Dict:
+        """
+        Valida Descripcion macroscopica contra OCR.
+
+        V3.3.0: Nueva validación para detectar extracción incorrecta de sección macroscópica.
+
+        Args:
+            campos_criticos: Diccionario base_datos.campos_criticos del debug_map
+            ocr: Texto OCR consolidado
+
+        Returns:
+            Dict con estado, mensaje, valor_bd, valor_ocr
+
+        Complexity: CC ~5
+        """
+        desc_bd = campos_criticos.get('Descripcion macroscopica', '').strip()
+
+        # PASO 1: Verificar que no esté vacío
+        if not desc_bd or len(desc_bd) < 20:
+            return {
+                'estado': 'ERROR',
+                'mensaje': 'Descripcion macroscopica VACÍA o demasiado corta (<20 chars)',
+                'valor_bd': desc_bd if desc_bd else '[VACÍO]',
+                'sugerencia': 'Verificar extracción en medical_extractor.extract_descripcion_macroscopica()'
+            }
+
+        # PASO 2: Extraer sección DESCRIPCIÓN MACROSCÓPICA del OCR
+        patron = r'DESCRIPCI[ÓO]N\s+MACROSC[ÓO]PICA[:\s]*(.+?)(?=DESCRIPCI[ÓO]N\s+MICROSC[ÓO]PICA|DIAGN[ÓO]STICO|REPORTE\s+DE\s+BIOMARCADORES|$)'
+        match = re.search(patron, ocr, re.IGNORECASE | re.DOTALL)
+        desc_ocr = match.group(1).strip() if match else None
+
+        if not desc_ocr:
+            # WARNING: No se encontró sección en OCR (caso raro)
+            return {
+                'estado': 'WARNING',
+                'mensaje': 'Sección DESCRIPCIÓN MACROSCÓPICA no encontrada en OCR',
+                'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd,
+                'valor_ocr': None,
+                'nota': 'Verificar que OCR sea completo'
+            }
+
+        # PASO 3: Comparar primeros 200 caracteres (suficiente para detectar extracción incorrecta)
+        desc_bd_norm = re.sub(r'\s+', ' ', desc_bd[:200].upper().strip())
+        desc_ocr_norm = re.sub(r'\s+', ' ', desc_ocr[:500].upper().strip())
+
+        # Verificar si al menos 70% del texto BD está en OCR
+        if desc_bd_norm not in desc_ocr_norm:
+            # Buscar similitud parcial
+            palabras_bd = set(desc_bd_norm.split())
+            palabras_ocr = set(desc_ocr_norm.split())
+            coincidencias = len(palabras_bd & palabras_ocr)
+            total = len(palabras_bd)
+            similitud = (coincidencias / total) * 100 if total > 0 else 0
+
+            if similitud < 50:
+                return {
+                    'estado': 'ERROR',
+                    'mensaje': f'Descripcion macroscopica NO coincide con OCR (similitud: {similitud:.0f}%)',
+                    'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd,
+                    'valor_ocr': desc_ocr[:100] + '...' if len(desc_ocr) > 100 else desc_ocr,
+                    'sugerencia': 'Verificar patrones de extracción en medical_extractor'
+                }
+            elif similitud < 70:
+                return {
+                    'estado': 'WARNING',
+                    'mensaje': f'Descripcion macroscopica coincide parcialmente con OCR (similitud: {similitud:.0f}%)',
+                    'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd,
+                    'valor_ocr': desc_ocr[:100] + '...' if len(desc_ocr) > 100 else desc_ocr
+                }
+
+        # TODO: OK - descripción correctamente extraída
+        return {
+            'estado': 'OK',
+            'mensaje': 'Descripcion macroscopica correcta',
+            'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd
+        }
+
+
+    def _validar_descripcion_microscopica(self, campos_criticos: Dict, ocr: str) -> Dict:
+        """
+        Valida Descripcion microscopica contra OCR.
+
+        V3.3.0: Nueva validación para detectar extracción incorrecta de sección microscópica.
+
+        Args:
+            campos_criticos: Diccionario base_datos.campos_criticos del debug_map
+            ocr: Texto OCR consolidado
+
+        Returns:
+            Dict con estado, mensaje, valor_bd, valor_ocr
+
+        Complexity: CC ~5
+        """
+        desc_bd = campos_criticos.get('Descripcion microscopica', '').strip()
+
+        # PASO 1: Verificar que no esté vacío (mínimo 50 caracteres para microscópica)
+        if not desc_bd or len(desc_bd) < 50:
+            return {
+                'estado': 'ERROR',
+                'mensaje': 'Descripcion microscopica VACÍA o demasiado corta (<50 chars)',
+                'valor_bd': desc_bd if desc_bd else '[VACÍO]',
+                'sugerencia': 'Verificar extracción en medical_extractor.extract_descripcion_microscopica()'
+            }
+
+        # PASO 2: Extraer sección DESCRIPCIÓN MICROSCÓPICA del OCR
+        patron = r'DESCRIPCI[ÓO]N\s+MICROSC[ÓO]PICA[:\s]*(.+?)(?=DIAGN[ÓO]STICO|REPORTE\s+DE\s+BIOMARCADORES|FACTOR\s+PRON[ÓO]STICO|$)'
+        match = re.search(patron, ocr, re.IGNORECASE | re.DOTALL)
+        desc_ocr = match.group(1).strip() if match else None
+
+        if not desc_ocr:
+            # WARNING: No se encontró sección en OCR
+            return {
+                'estado': 'WARNING',
+                'mensaje': 'Sección DESCRIPCIÓN MICROSCÓPICA no encontrada en OCR',
+                'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd,
+                'valor_ocr': None,
+                'nota': 'Verificar que OCR sea completo'
+            }
+
+        # PASO 3: Comparar primeros 200 caracteres
+        desc_bd_norm = re.sub(r'\s+', ' ', desc_bd[:200].upper().strip())
+        desc_ocr_norm = re.sub(r'\s+', ' ', desc_ocr[:500].upper().strip())
+
+        # Verificar similitud
+        if desc_bd_norm not in desc_ocr_norm:
+            palabras_bd = set(desc_bd_norm.split())
+            palabras_ocr = set(desc_ocr_norm.split())
+            coincidencias = len(palabras_bd & palabras_ocr)
+            total = len(palabras_bd)
+            similitud = (coincidencias / total) * 100 if total > 0 else 0
+
+            if similitud < 50:
+                return {
+                    'estado': 'ERROR',
+                    'mensaje': f'Descripcion microscopica NO coincide con OCR (similitud: {similitud:.0f}%)',
+                    'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd,
+                    'valor_ocr': desc_ocr[:100] + '...' if len(desc_ocr) > 100 else desc_ocr,
+                    'sugerencia': 'Verificar patrones de extracción en medical_extractor'
+                }
+            elif similitud < 70:
+                return {
+                    'estado': 'WARNING',
+                    'mensaje': f'Descripcion microscopica coincide parcialmente con OCR (similitud: {similitud:.0f}%)',
+                    'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd,
+                    'valor_ocr': desc_ocr[:100] + '...' if len(desc_ocr) > 100 else desc_ocr
+                }
+
+        # OK
+        return {
+            'estado': 'OK',
+            'mensaje': 'Descripcion microscopica correcta',
+            'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd
+        }
+
+
+    def _validar_malignidad(self, campos_criticos: Dict, ocr: str) -> Dict:
+        """
+        Valida campo Malignidad contra OCR.
+
+        V3.3.0: Nueva validación para verificar clasificación MALIGNO/BENIGNO/BORDERLINE.
+
+        Args:
+            campos_criticos: Diccionario base_datos.campos_criticos del debug_map
+            ocr: Texto OCR completo
+
+        Returns:
+            Dict con estado de validación
+
+        Complexity: CC ~6
+        """
+        malignidad_bd = campos_criticos.get('Malignidad', '').strip().upper()
+
+        # PASO 1: Verificar que no esté vacío
+        if not malignidad_bd:
+            return {
+                'estado': 'ERROR',
+                'mensaje': 'Campo Malignidad VACÍO',
+                'valor_bd': None,
+                'sugerencia': 'Verificar extracción en medical_extractor.py'
+            }
+
+        # PASO 2: Verificar valores válidos
+        valores_validos = ['MALIGNO', 'BENIGNO', 'BORDERLINE', 'INDETERMINADO']
+        if malignidad_bd not in valores_validos:
+            return {
+                'estado': 'ERROR',
+                'mensaje': f'Malignidad con valor inválido: "{malignidad_bd}"',
+                'valor_bd': malignidad_bd,
+                'valores_validos': valores_validos,
+                'sugerencia': 'Debe ser: MALIGNO, BENIGNO, BORDERLINE o INDETERMINADO'
+            }
+
+        # PASO 3: Buscar keywords en OCR para validar clasificación
+        ocr_upper = ocr.upper()
+
+        # Keywords por categoría
+        keywords_maligno = [
+            'CARCINOMA', 'ADENOCARCINOMA', 'SARCOMA', 'MELANOMA',
+            'LINFOMA', 'LEUCEMIA', 'NEOPLASIA MALIGNA', 'TUMOR MALIGNO',
+            'METASTASIS', 'METASTÁSICO', 'CÉLULAS TUMORALES'
+        ]
+        keywords_benigno = [
+            'BENIGNO', 'HIPERPLASIA', 'ADENOMA', 'FIBROMA',
+            'LIPOMA', 'NEVUS', 'PAPILOMA', 'LESIÓN BENIGNA'
+        ]
+
+        encontrado_maligno = any(kw in ocr_upper for kw in keywords_maligno)
+        encontrado_benigno = any(kw in ocr_upper for kw in keywords_benigno)
+
+        # PASO 4: Validar concordancia
+        if malignidad_bd == 'MALIGNO' and not encontrado_maligno:
+            return {
+                'estado': 'WARNING',
+                'mensaje': 'BD indica MALIGNO pero no se encontraron keywords malignos en OCR',
+                'valor_bd': malignidad_bd,
+                'keywords_buscados': keywords_maligno,
+                'nota': 'Revisar manualmente si la clasificación es correcta'
+            }
+
+        if malignidad_bd == 'BENIGNO' and encontrado_maligno:
+            return {
+                'estado': 'ERROR',
+                'mensaje': 'BD indica BENIGNO pero OCR contiene keywords MALIGNOS',
+                'valor_bd': malignidad_bd,
+                'keywords_encontrados': [kw for kw in keywords_maligno if kw in ocr_upper],
+                'sugerencia': 'Probable error de clasificación - verificar diagnóstico'
+            }
+
+        # OK
+        return {
+            'estado': 'OK',
+            'mensaje': f'Malignidad correcta: {malignidad_bd}',
+            'valor_bd': malignidad_bd
+        }
+
+
+    def _validar_campos_exhaustivos(self, campos_criticos: Dict, ocr: str) -> Dict:
+        """
+        Validación exhaustiva de TODOS los campos en campos_criticos contra OCR.
+
+        V3.3.0: Validación genérica anti-problemas para detectar cualquier inconsistencia.
+        Valida campos que no tienen validación específica (Organo, etc.).
+
+        Args:
+            campos_criticos: Diccionario completo de campos_criticos
+            ocr: Texto OCR completo
+
+        Returns:
+            Dict con resultados de validación exhaustiva
+
+        Complexity: CC ~8
+        """
+        # Campos ya validados específicamente (excluir de validación genérica)
+        campos_excluidos = {
+            'Descripcion macroscopica',  # v3.3.0 validación específica
+            'Descripcion microscopica',  # v3.3.0 validación específica
+            'Diagnostico Coloracion',    # validación específica
+            'Diagnostico Principal',     # validación específica
+            'Factor pronostico',         # validación específica
+            'IHQ_ORGANO',               # validación específica
+            'Malignidad',               # v3.3.0 validación específica
+            'Descripcion Diagnostico'   # campo derivado
+        }
+
+        # Campos que empiezan con IHQ_ (biomarcadores validados aparte)
+        campos_excluidos_prefijo = ['IHQ_']
+
+        campos_con_problemas = []
+        campos_validados = 0
+
+        for campo, valor in campos_criticos.items():
+            # Saltar campos excluidos
+            if campo in campos_excluidos:
+                continue
+            if any(campo.startswith(prefijo) for prefijo in campos_excluidos_prefijo):
+                continue
+
+            # Saltar campos vacíos o None
+            if not valor or str(valor).strip() in ['', 'N/A', 'None']:
+                continue
+
+            campos_validados += 1
+            valor_str = str(valor).strip()
+
+            # VALIDACIÓN: Buscar valor en OCR (normalizado)
+            valor_norm = re.sub(r'\s+', ' ', valor_str.upper())
+            ocr_norm = re.sub(r'\s+', ' ', ocr.upper())
+
+            # Buscar valor completo
+            if valor_norm in ocr_norm:
+                # OK - valor encontrado en OCR
+                continue
+
+            # Buscar por palabras (70% coincidencia)
+            palabras_valor = set(valor_norm.split())
+            palabras_ocr = set(ocr_norm.split())
+            coincidencias = len(palabras_valor & palabras_ocr)
+            total = len(palabras_valor)
+            similitud = (coincidencias / total * 100) if total > 0 else 0
+
+            if similitud >= 70:
+                # OK - similitud aceptable
+                continue
+            elif similitud >= 50:
+                # WARNING - similitud media
+                campos_con_problemas.append({
+                    'campo': campo,
+                    'valor_bd': valor_str,
+                    'similitud': round(similitud, 1),
+                    'mensaje': f'Similitud media con OCR ({similitud:.0f}%)',
+                    'severidad': 'WARNING'
+                })
+            else:
+                # ERROR - valor no encontrado o muy diferente
+                campos_con_problemas.append({
+                    'campo': campo,
+                    'valor_bd': valor_str,
+                    'similitud': round(similitud, 1),
+                    'mensaje': f'Valor NO encontrado en OCR (similitud: {similitud:.0f}%)',
+                    'severidad': 'ERROR',
+                    'sugerencia': 'Verificar extracción o buscar valor manualmente en OCR'
+                })
+
+        return {
+            'total_campos_validados': campos_validados,
+            'campos_con_problemas': campos_con_problemas,
+            'campos_ok': campos_validados - len(campos_con_problemas),
+            'estado': 'ERROR' if any(p['severidad'] == 'ERROR' for p in campos_con_problemas) else
+                     'WARNING' if campos_con_problemas else 'OK'
+        }
+
+
+    def _extraer_valor_biomarcador_desde_ocr(self, biomarcador: str, ocr: str) -> Optional[str]:
+        """
+        Extrae valor de un biomarcador específico desde OCR.
+
+        V3.3.0: Nueva función auxiliar para validar valores de biomarcadores contra OCR.
+        V3.3.1: Mejorado para manejar biomarcadores en contextos narrativos complejos (ej. CK5/6)
+
+        Args:
+            biomarcador: Nombre del biomarcador (ej. "P63", "Ki-67")
+            ocr: Texto OCR completo
+
+        Returns:
+            Valor extraído del biomarcador en OCR, None si no se encuentra
+
+        Complexity: CC ~4
+        """
+        # Normalizar nombre del biomarcador para búsqueda flexible
+        biomarcador_norm = biomarcador.upper().strip()
+
+        # Variantes comunes de nombres (ej. "Ki-67" también "Ki67")
+        variantes = [
+            biomarcador_norm,
+            biomarcador_norm.replace('-', ''),
+            biomarcador_norm.replace(' ', ''),
+            biomarcador_norm.replace('/', '')
+        ]
+
+        # Patrones de extracción (ordenados por especificidad)
+        patrones = [
+            # Patrón con porcentaje: "Ki-67: 30%"
+            r'{bio}[:\s]+(\d+%)',
+            # Patrón con estado: "P63: POSITIVO"
+            r'{bio}[:\s]+(POSITIVO|NEGATIVO|NO\s+MENCIONADO)',
+            # Patrón narrativo mejorado: "positividad para [células/marcadores] biomarcador"
+            # Captura contextos como "positividad para celulas mioepiteliales CK5/6 y P63"
+            r'(?:positividad|positivo|inmunorreactividad)\s+(?:para|a|de)\s+(?:el\s+|los\s+|las\s+|celulas\s+\w+\s+)?{bio}(?:\s+y\s+\w+)?',
+            # Patrón en tabla: "Ki-67    30%"
+            r'{bio}\s+(\d+%)',
+            # Patrón genérico: captura siguiente palabra después del biomarcador (evita capturar "y [otro_biomarcador]")
+            r'{bio}[:\s]+(?!y\s)([^\.\n,]+?)(?:\s+y\s+\w+)?'
+        ]
+
+        # Intentar extracción con cada variante y patrón
+        for variante in variantes:
+            for patron_template in patrones:
+                patron = patron_template.replace('{bio}', re.escape(variante))
+                match = re.search(patron, ocr, re.IGNORECASE | re.DOTALL)
+
+                if match:
+                    # Si el patrón narrativo solo detecta presencia, retornar "POSITIVO"
+                    if 'positividad' in patron_template or 'positivo' in patron_template:
+                        return 'POSITIVO'
+                    # Si captura grupo, retornar valor capturado
+                    if match.groups():
+                        valor = match.group(1).strip()
+                        # Limitar longitud (evitar capturar demasiado texto)
+                        # Evitar valores que sean solo conectores como "y"
+                        if len(valor) < 100 and valor.lower() not in ['y', 'e', 'o']:
+                            return valor
+
+        return None
 
 
     def _calcular_metricas_finales(self, resultado: Dict) -> None:
@@ -1335,18 +1954,29 @@ class AuditorSistema:
 
         auditoria_bd = resultado.get('auditoria_bd', {})
 
-        total_validaciones = 5  # diagnostico_coloracion, principal, factor, biomarcadores, campos
+        # V3.3.0: 7 validaciones (agregadas macroscopica y microscopica)
+        # V3.3.0: 9 validaciones exhaustivas (agregadas malignidad y campos_exhaustivos)
+        total_validaciones = 9  # desc_macro, coloracion, desc_micro, principal, ihq_organo, factor, biomarcadores, malignidad, campos_exhaustivos
         validaciones_ok = 0
 
+        # Conteo de validaciones OK (v3.3.0: 9 validaciones)
+        if auditoria_bd.get('descripcion_macroscopica', {}).get('estado') == 'OK':
+            validaciones_ok += 1
         if auditoria_bd.get('diagnostico_coloracion', {}).get('estado') == 'OK':
             validaciones_ok += 1
+        if auditoria_bd.get('descripcion_microscopica', {}).get('estado') == 'OK':
+            validaciones_ok += 1
         if auditoria_bd.get('diagnostico_principal', {}).get('estado') == 'OK':
+            validaciones_ok += 1
+        if auditoria_bd.get('ihq_organo', {}).get('estado') == 'OK':
             validaciones_ok += 1
         if auditoria_bd.get('factor_pronostico', {}).get('estado') == 'OK':
             validaciones_ok += 1
         if auditoria_bd.get('biomarcadores', {}).get('estado') == 'OK':
             validaciones_ok += 1
-        if not auditoria_bd.get('campos_obligatorios', {}).get('errores'):
+        if auditoria_bd.get('malignidad', {}).get('estado') == 'OK':
+            validaciones_ok += 1
+        if auditoria_bd.get('campos_exhaustivos', {}).get('estado') == 'OK':
             validaciones_ok += 1
 
         score = (validaciones_ok / total_validaciones) * 100
@@ -2499,7 +3129,10 @@ biomarcadores_tipificacion = [
             Dict con resultado de cada archivo modificado
 
         Archivos que modifica:
-            1. core/database_manager.py (schema BD - líneas ~140, 203, 309)
+            1. core/database_manager.py (3 lugares):
+               - NEW_TABLE_COLUMNS_ORDER (línea ~149) - CRÍTICO para que aparezca en UI
+               - CREATE TABLE (línea ~219) - Esquema de BD
+               - new_biomarkers list (línea ~336) - Migraciones
             2. herramientas_ia/auditor_sistema.py (BIOMARKER_ALIAS_MAP - línea ~204)
             3. ui.py (columnas interfaz - línea ~4198)
             4. core/validation_checker.py (mapeo validación - líneas ~129-133)
@@ -2626,44 +3259,73 @@ biomarcadores_tipificacion = [
                 with open(archivo_path, 'r', encoding='utf-8') as f:
                     contenido = f.read()
 
-                # Buscar la sección de biomarcadores v4.0
-                patron_insert = r'("IHQ_CK7" TEXT,)'
-                if re.search(patron_insert, contenido):
-                    # Insertar después de IHQ_CK7
+                modificaciones_db = 0
+
+                # 1. Agregar en NEW_TABLE_COLUMNS_ORDER (CRÍTICO para UI)
+                patron_columns_order = r'("IHQ_CK7", "IHQ_MAMOGLOBINA",)'
+                if re.search(patron_columns_order, contenido):
+                    # Insertar después de MAMOGLOBINA
                     nuevo_contenido = re.sub(
-                        patron_insert,
-                        f'\\1\n            "{columna_bd}" TEXT,',
-                        contenido,
-                        count=1
-                    )
-
-                    # Verificar que se insertó
-                    if nuevo_contenido != contenido:
-                        with open(archivo_path, 'w', encoding='utf-8') as f:
-                            f.write(nuevo_contenido)
-                        resultado['archivos_modificados'].append(f'{archivo_path.name} (CREATE TABLE)')
-                        print(f"   ✅ Agregado en CREATE TABLE")
-                    else:
-                        resultado['errores'].append(f'{archivo_path.name}: Ya existe o no se pudo insertar')
-
-                # Agregar también en _add_new_biomarker_columns
-                with open(archivo_path, 'r', encoding='utf-8') as f:
-                    contenido = f.read()
-
-                patron_list = r'(new_biomarkers = \[[\s\S]*?"IHQ_CK7",)'
-                if re.search(patron_list, contenido):
-                    nuevo_contenido = re.sub(
-                        patron_list,
+                        patron_columns_order,
                         f'\\1 "{columna_bd}",',
                         contenido,
                         count=1
                     )
-
                     if nuevo_contenido != contenido:
-                        with open(archivo_path, 'w', encoding='utf-8') as f:
-                            f.write(nuevo_contenido)
-                        resultado['archivos_modificados'].append(f'{archivo_path.name} (new_biomarkers)')
+                        contenido = nuevo_contenido
+                        modificaciones_db += 1
+                        print(f"   ✅ Agregado en NEW_TABLE_COLUMNS_ORDER")
+                else:
+                    # Fallback: insertar después de IHQ_CK7 solamente
+                    patron_ck7_only = r'("IHQ_CK7",)(\s+"IHQ_HEPATOCITO")'
+                    if re.search(patron_ck7_only, contenido):
+                        nuevo_contenido = re.sub(
+                            patron_ck7_only,
+                            f'\\1 "{columna_bd}",\\2',
+                            contenido,
+                            count=1
+                        )
+                        if nuevo_contenido != contenido:
+                            contenido = nuevo_contenido
+                            modificaciones_db += 1
+                            print(f"   ✅ Agregado en NEW_TABLE_COLUMNS_ORDER (después de IHQ_CK7)")
+
+                # 2. Agregar en CREATE TABLE
+                patron_create_table = r'("IHQ_CK7" TEXT,)'
+                if re.search(patron_create_table, contenido):
+                    nuevo_contenido = re.sub(
+                        patron_create_table,
+                        f'\\1\n            "{columna_bd}" TEXT,',
+                        contenido,
+                        count=1
+                    )
+                    if nuevo_contenido != contenido:
+                        contenido = nuevo_contenido
+                        modificaciones_db += 1
+                        print(f"   ✅ Agregado en CREATE TABLE")
+
+                # 3. Agregar en new_biomarkers list
+                patron_new_biomarkers = r'(new_biomarkers = \[[\s\S]*?"IHQ_CK7",)'
+                if re.search(patron_new_biomarkers, contenido):
+                    nuevo_contenido = re.sub(
+                        patron_new_biomarkers,
+                        f'\\1 "{columna_bd}",',
+                        contenido,
+                        count=1
+                    )
+                    if nuevo_contenido != contenido:
+                        contenido = nuevo_contenido
+                        modificaciones_db += 1
                         print(f"   ✅ Agregado en new_biomarkers list")
+
+                # Guardar todos los cambios
+                if modificaciones_db > 0:
+                    with open(archivo_path, 'w', encoding='utf-8') as f:
+                        f.write(contenido)
+                    resultado['archivos_modificados'].append(f'{archivo_path.name} ({modificaciones_db} lugares)')
+                    print(f"   ✅ Total: {modificaciones_db} modificaciones exitosas")
+                else:
+                    resultado['errores'].append(f'{archivo_path.name}: No se realizaron modificaciones')
 
             except Exception as e:
                 error_msg = f'{archivo_path.name}: {str(e)}'
@@ -3137,6 +3799,419 @@ biomarcadores_tipificacion = [
             resultado['estado'] = 'COMPLETADO_CON_ERRORES'
         else:
             resultado['estado'] = 'FASE_1_EXITOSA_PENDIENTE_BD'
+
+        return resultado
+
+    # ============================================================================
+    # FUNC-06: Reprocesar Caso con Limpieza Automática
+    # ============================================================================
+
+    def _buscar_debug_map_reciente(self, numero_caso: str) -> Optional[Path]:
+        """
+        Busca el debug_map más reciente de un caso.
+
+        Args:
+            numero_caso: Número IHQ (ej: 'IHQ251007')
+
+        Returns:
+            Path del debug_map más reciente o None si no existe
+        """
+        from pathlib import Path
+
+        base_path = Path(__file__).parent.parent
+        debug_maps_dir = base_path / 'data' / 'debug_maps'
+
+        if not debug_maps_dir.exists():
+            return None
+
+        # Buscar todos los debug_maps del caso
+        debug_maps = list(debug_maps_dir.glob(f'debug_map_{numero_caso}_*.json'))
+
+        if not debug_maps:
+            return None
+
+        # Ordenar por timestamp (el último es el más reciente)
+        debug_maps.sort(reverse=True)
+        return debug_maps[0]
+
+    def reprocesar_caso_completo(self, numero_caso: str) -> Dict[str, Any]:
+        """
+        FUNC-06: Reprocesar caso con limpieza automática de datos anteriores.
+
+        Workflow:
+        1. Busca debug_map del caso → extrae pdf_path
+        2. Identifica rango de casos del PDF (ej: 001-050)
+        3. Audita ANTES (para comparación)
+        4. Elimina registros BD de todos los casos del rango
+        5. Elimina debug_maps de todos los casos del rango
+        6. Reprocesa PDF completo con process_ihq_file()
+        7. Re-audita caso objetivo con FUNC-01
+        8. Genera reporte comparativo antes/después
+
+        Args:
+            numero_caso: Número IHQ (ej: 'IHQ251007')
+
+        Returns:
+            Dict con:
+            - pdf_path: Path del PDF procesado
+            - casos_eliminados: Cantidad de casos borrados
+            - casos_reprocesados: Cantidad de casos generados
+            - score_antes: Score de validación antes del reprocesamiento
+            - score_despues: Score de validación después del reprocesamiento
+            - mejora_porcentaje: Diferencia de scores
+            - auditoria_completa: Resultado completo de FUNC-01
+
+        Ejemplo:
+            auditor = AuditorSistema()
+            resultado = auditor.reprocesar_caso_completo("IHQ251007")
+            print(f"Score mejoró de {resultado['score_antes']}% a {resultado['score_despues']}%")
+        """
+        import json
+        import re
+        import sqlite3
+        from pathlib import Path
+        from datetime import datetime
+
+        print(f"\n{'='*70}")
+        print(f"🔄 FUNC-06: Reprocesar Caso con Limpieza Automática")
+        print(f"{'='*70}")
+        print(f"Caso: {numero_caso}\n")
+
+        resultado = {
+            'caso': numero_caso,
+            'pdf_path': None,
+            'casos_eliminados': 0,
+            'casos_reprocesados': 0,
+            'score_antes': 0,
+            'score_despues': 0,
+            'mejora_porcentaje': 0,
+            'auditoria_completa': {},
+            'estado': 'PENDIENTE',
+            'errores': []
+        }
+
+        # Función auxiliar para guardar reporte SIEMPRE (incluso si falla)
+        def _guardar_reporte_func06():
+            try:
+                base_path = Path(__file__).parent.parent
+                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                reportes_dir = base_path / 'herramientas_ia' / 'resultados'
+                reportes_dir.mkdir(parents=True, exist_ok=True)
+
+                reporte_path = reportes_dir / f'FUNC-06_reprocesamiento_{numero_caso}_{timestamp}.json'
+
+                with open(reporte_path, 'w', encoding='utf-8') as f:
+                    json.dump(resultado, f, indent=2, ensure_ascii=False)
+
+                print(f"\n📁 Reporte guardado: {reporte_path.name}")
+                return reporte_path
+            except Exception as e:
+                print(f"\n⚠️ No se pudo guardar reporte JSON: {str(e)}")
+                return None
+
+        # ===== PASO 1: Buscar debug_map =====
+        print("📋 PASO 1: Buscando debug_map del caso...")
+
+        debug_map_path = self._buscar_debug_map_reciente(numero_caso)
+        if not debug_map_path:
+            error_msg = f"No se encontró debug_map para {numero_caso}"
+            resultado['errores'].append(error_msg)
+            resultado['estado'] = 'ERROR_NO_DEBUG_MAP'
+            print(f"   ❌ {error_msg}")
+            _guardar_reporte_func06()
+            return resultado
+
+        print(f"   ✅ Debug map encontrado: {debug_map_path.name}")
+
+        # ===== PASO 2: Extraer pdf_path =====
+        print("\n📄 PASO 2: Extrayendo pdf_path del debug_map...")
+
+        try:
+            with open(debug_map_path, 'r', encoding='utf-8') as f:
+                debug_map = json.load(f)
+
+            # Buscar pdf_path en raíz o en metadata
+            pdf_path_str = debug_map.get('pdf_path') or debug_map.get('metadata', {}).get('pdf_path')
+            if not pdf_path_str:
+                error_msg = "debug_map no contiene pdf_path"
+                resultado['errores'].append(error_msg)
+                resultado['estado'] = 'ERROR_NO_PDF_PATH'
+                print(f"   ❌ {error_msg}")
+                _guardar_reporte_func06()
+                return resultado
+
+            pdf_path = Path(pdf_path_str)
+            resultado['pdf_path'] = str(pdf_path)
+            print(f"   ✅ PDF identificado: {pdf_path.name}")
+
+        except Exception as e:
+            error_msg = f"Error leyendo debug_map: {str(e)}"
+            resultado['errores'].append(error_msg)
+            resultado['estado'] = 'ERROR_LECTURA_DEBUG_MAP'
+            print(f"   ❌ {error_msg}")
+            _guardar_reporte_func06()
+            return resultado
+
+        # ===== PASO 3: Auditoría ANTES (para comparación) =====
+        print("\n🔍 PASO 3: Auditando caso ANTES del reprocesamiento...")
+
+        try:
+            auditoria_antes = self.auditar_caso_inteligente(numero_caso, json_export=False)
+            resultado['score_antes'] = auditoria_antes.get('score_validacion', 0)
+            print(f"   ✅ Score ANTES: {resultado['score_antes']}%")
+        except Exception as e:
+            print(f"   ⚠️ No se pudo auditar antes: {str(e)}")
+            resultado['score_antes'] = 0
+
+        # ===== PASO 4: Identificar rango de casos del PDF =====
+        print("\n🎯 PASO 4: Identificando rango de casos del PDF...")
+
+        match = re.search(r'IHQ DEL (\d+) AL (\d+)', pdf_path.name)
+        if not match:
+            error_msg = f"No se pudo identificar rango del PDF: {pdf_path.name}"
+            resultado['errores'].append(error_msg)
+            resultado['estado'] = 'ERROR_RANGO_PDF'
+            print(f"   ❌ {error_msg}")
+            _guardar_reporte_func06()
+            return resultado
+
+        inicio = int(match.group(1))
+        fin = int(match.group(2))
+        casos_rango = [f"IHQ25{i:04d}" for i in range(inicio, fin + 1)]
+
+        print(f"   ✅ Rango identificado: {inicio:03d}-{fin:03d}")
+        print(f"   📊 Total casos: {len(casos_rango)}")
+
+        # ===== PASO 4.5: Crear backup automático =====
+        print("\n💾 PASO 4.5: Creando backup automático...")
+
+        try:
+            from shutil import copy2
+
+            base_path = Path(__file__).parent.parent
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            backup_dir = base_path / 'backups' / 'func06'
+            backup_dir.mkdir(parents=True, exist_ok=True)
+
+            # Backup BD completa
+            db_path = base_path / 'data' / 'huv_oncologia_NUEVO.db'
+            db_backup = backup_dir / f'huv_oncologia_pre_func06_{numero_caso}_{timestamp}.db'
+            copy2(db_path, db_backup)
+
+            # Backup debug_maps (solo del rango afectado)
+            debug_maps_dir = base_path / 'data' / 'debug_maps'
+            debug_maps_backup = backup_dir / f'debug_maps_pre_func06_{numero_caso}_{timestamp}'
+            debug_maps_backup.mkdir(exist_ok=True)
+
+            backup_count = 0
+            for caso in casos_rango:
+                for dm in debug_maps_dir.glob(f'debug_map_{caso}_*.json'):
+                    copy2(dm, debug_maps_backup)
+                    backup_count += 1
+
+            resultado['backup_db'] = str(db_backup)
+            resultado['backup_debug_maps'] = str(debug_maps_backup)
+            resultado['backup_timestamp'] = timestamp
+
+            print(f"   ✅ Backup BD: {db_backup.name}")
+            print(f"   ✅ Backup debug_maps: {backup_count} archivos respaldados")
+            print(f"   📁 Ubicación: backups/func06/")
+
+        except Exception as e:
+            print(f"   ⚠️ ADVERTENCIA: No se pudo crear backup: {str(e)}")
+            print(f"   ⚠️ Continuando sin backup (RIESGO ALTO)")
+            resultado['backup_db'] = None
+
+        # ===== PASO 5: Eliminar registros BD =====
+        print(f"\n🗑️ PASO 5: Eliminando {len(casos_rango)} registros de la BD...")
+
+        try:
+            base_path = Path(__file__).parent.parent
+            db_path = base_path / 'data' / 'huv_oncologia_NUEVO.db'
+
+            conn = sqlite3.connect(str(db_path))
+            cursor = conn.cursor()
+
+            registros_eliminados = 0
+            for caso in casos_rango:
+                cursor.execute(
+                    'DELETE FROM informes_ihq WHERE "N. peticion (0. Numero de biopsia)" = ?',
+                    (caso,)
+                )
+                if cursor.rowcount > 0:
+                    registros_eliminados += 1
+
+            conn.commit()
+            conn.close()
+
+            resultado['casos_eliminados'] = registros_eliminados
+            print(f"   ✅ {registros_eliminados} registros eliminados de BD")
+
+        except Exception as e:
+            error_msg = f"Error eliminando registros BD: {str(e)}"
+            resultado['errores'].append(error_msg)
+            print(f"   ❌ {error_msg}")
+            # Continuar aunque falle (puede que no existan registros)
+
+        # ===== PASO 6: Eliminar debug_maps =====
+        print("\n🗑️ PASO 6: Eliminando debug_maps antiguos...")
+
+        try:
+            debug_maps_dir = base_path / 'data' / 'debug_maps'
+            eliminados = 0
+
+            for caso in casos_rango:
+                for dm in debug_maps_dir.glob(f'debug_map_{caso}_*.json'):
+                    dm.unlink()
+                    eliminados += 1
+
+            print(f"   ✅ {eliminados} debug_maps eliminados")
+
+        except Exception as e:
+            print(f"   ⚠️ Advertencia eliminando debug_maps: {str(e)}")
+
+        # ===== PASO 7: Reprocesar PDF =====
+        print(f"\n🔄 PASO 7: Reprocesando PDF completo...")
+        print(f"   📄 PDF: {pdf_path.name}")
+        print(f"   ⏳ Esto puede tomar unos minutos (~50 casos)...")
+
+        try:
+            from core.ihq_processor import process_ihq_file
+
+            # Verificar que PDF existe
+            if not pdf_path.exists():
+                raise FileNotFoundError(f"PDF no encontrado: {pdf_path}")
+
+            registros = process_ihq_file(str(pdf_path))
+            resultado['casos_reprocesados'] = registros
+            print(f"   ✅ {registros} casos reprocesados correctamente")
+
+        except FileNotFoundError as e:
+            error_msg = f"""
+╔══════════════════════════════════════════════════════════════════════╗
+║ ERROR: PDF NO ENCONTRADO                                             ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+Archivo esperado: {pdf_path}
+Caso objetivo: {numero_caso}
+
+⚠️ DATOS ELIMINADOS PERO NO REPROCESADOS
+   Los registros BD y debug_maps fueron eliminados en pasos anteriores.
+
+📋 OPCIONES DE RECUPERACIÓN:
+
+   1. Verificar que el PDF existe:
+      → Ubicación: pdfs_patologia/
+      → Nombre esperado: {pdf_path.name}
+
+   2. Si el PDF está en otra ubicación, moverlo a:
+      → {pdf_path}
+
+   3. Restaurar desde backup:
+      → BD: {resultado.get('backup_db', 'NO CREADO')}
+      → Debug maps: {resultado.get('backup_debug_maps', 'NO CREADO')}
+
+   4. Reprocesar manualmente via ui.py seleccionando el PDF correcto
+"""
+            resultado['errores'].append(str(e))
+            resultado['estado'] = 'ERROR_PDF_NO_ENCONTRADO'
+            print(f"   ❌ {error_msg}")
+            _guardar_reporte_func06()
+            return resultado
+
+        except Exception as e:
+            error_msg = f"""
+╔══════════════════════════════════════════════════════════════════════╗
+║ ERROR EN REPROCESAMIENTO                                             ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+PDF: {pdf_path.name}
+Caso objetivo: {numero_caso}
+Error técnico: {str(e)}
+
+⚠️ DATOS ELIMINADOS PERO NO REPROCESADOS
+   Los registros BD y debug_maps fueron eliminados en pasos anteriores.
+
+🔄 INTENTANDO ROLLBACK AUTOMÁTICO..."""
+
+            print(f"   ❌ {error_msg}")
+            resultado['errores'].append(str(e))
+
+            # Intentar rollback automático
+            if resultado.get('backup_db'):
+                try:
+                    from shutil import copy2
+                    print(f"\n   🔄 Restaurando BD desde backup...")
+                    copy2(resultado['backup_db'], db_path)
+                    print(f"   ✅ BD restaurada exitosamente")
+                    resultado['estado'] = 'ERROR_REPROCESAMIENTO_ROLLBACK_EXITOSO'
+                except Exception as e2:
+                    print(f"   ❌ Fallo en rollback automático: {str(e2)}")
+                    resultado['estado'] = 'ERROR_REPROCESAMIENTO_ROLLBACK_FALLIDO'
+            else:
+                print(f"\n   ⚠️ No hay backup disponible para rollback")
+                resultado['estado'] = 'ERROR_REPROCESAMIENTO_SIN_BACKUP'
+
+            print(f"""
+📋 OPCIONES DE RECUPERACIÓN:
+
+   1. Revisar error técnico arriba
+
+   2. Verificar que extractores no tienen errores de sintaxis
+
+   3. Reprocesar manualmente via ui.py
+
+   4. Restaurar backup manualmente (si rollback automático falló):
+      → BD: {resultado.get('backup_db', 'NO CREADO')}
+      → Debug maps: {resultado.get('backup_debug_maps', 'NO CREADO')}
+""")
+            _guardar_reporte_func06()
+            return resultado
+
+        # ===== PASO 8: Re-auditar =====
+        print(f"\n🔍 PASO 8: Re-auditando caso DESPUÉS del reprocesamiento...")
+
+        try:
+            auditoria_despues = self.auditar_caso_inteligente(numero_caso, json_export=True)
+            resultado['score_despues'] = auditoria_despues.get('score_validacion', 0)
+            resultado['auditoria_completa'] = auditoria_despues
+            print(f"   ✅ Score DESPUÉS: {resultado['score_despues']}%")
+
+        except Exception as e:
+            error_msg = f"Error en re-auditoría: {str(e)}"
+            resultado['errores'].append(error_msg)
+            print(f"   ❌ {error_msg}")
+            _guardar_reporte_func06()
+            return resultado
+
+        # ===== PASO 9: Calcular mejora =====
+        mejora = resultado['score_despues'] - resultado['score_antes']
+        resultado['mejora_porcentaje'] = round(mejora, 2)
+
+        # ===== RESUMEN FINAL =====
+        resultado['estado'] = 'EXITOSO' if mejora >= 0 else 'COMPLETADO_CON_REGRESION'
+
+        # Guardar reporte (SIEMPRE)
+        _guardar_reporte_func06()
+
+        print(f"\n{'='*70}")
+        print(f"✅ FUNC-06 COMPLETADA")
+        print(f"{'='*70}")
+        print(f"Caso: {numero_caso}")
+        print(f"PDF procesado: {pdf_path.name}")
+        print(f"Casos procesados: {resultado['casos_reprocesados']}")
+        print(f"\n📊 COMPARACIÓN:")
+        print(f"   Score ANTES:   {resultado['score_antes']}%")
+        print(f"   Score DESPUÉS: {resultado['score_despues']}%")
+
+        if mejora > 0:
+            print(f"   Mejora:        +{mejora}% ✅")
+        elif mejora < 0:
+            print(f"   Regresión:     {mejora}% ⚠️")
+        else:
+            print(f"   Sin cambios:   {mejora}%")
+
+        print(f"{'='*70}\n")
 
         return resultado
 

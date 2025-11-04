@@ -10,13 +10,52 @@
 
 **Objetivo:** Procesar PDF de caso IHQ + auditar + corregir si es necesario
 
-### Paso 1: Procesamiento Automático
+### Contexto: Estructura de PDFs Fuente
+
+Los PDFs están organizados por rangos en `pdfs_patologia/`:
+- **Ubicación:** `C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV9GESTOR_ONCOLOGIA\pdfs_patologia\`
+- **Formato:** `IHQ DEL XXX AL YYY.pdf` (ej: `IHQ DEL 980 AL 1037.pdf`)
+- **Contenido:** Cada PDF contiene ~50 casos consolidados
+- **Total:** 20 PDFs con casos del 001 al 1037
+
+**Ejemplo:**
+- Caso IHQ251007 está en → `IHQ DEL 001 AL 050.pdf` (rango 001-050, contiene casos 001-050)
+- Caso IHQ250982 está en → `IHQ DEL 980 AL 1037.pdf` (rango 980-1037)
+
+**Búsqueda Automática:**
+```python
+# auditor_sistema.py incluye función para localizar PDF correcto
+auditor._buscar_pdf_por_numero("IHQ251007")
+# → Retorna: Path("pdfs_patologia/IHQ DEL 001 AL 050.pdf")
 ```
-Usuario procesa PDF → Sistema EVARISIS extrae datos automáticamente
-- unified_extractor procesa PDF completo
-- Aplica reglas de extracción y normalización
-- Guarda en BD
-- Genera debug_map.json con OCR + datos extraídos
+
+**⚠️ IMPORTANTE:**
+- **NO existen** PDFs individuales por caso (no hay "IHQ251007.pdf")
+- **Reprocesar un caso = procesar el PDF completo** (~50 casos)
+- Sistema NO puede procesar casos individuales de forma aislada
+
+---
+
+### Paso 1: Procesamiento Automático
+
+**Opción A: Selección Manual (ui.py)**
+```
+1. Usuario abre ui.py
+2. Usuario selecciona PDF desde diálogo de archivos (pdfs_patologia/)
+3. Sistema EVARISIS procesa:
+   - unified_extractor procesa PDF completo (~50 casos)
+   - Aplica reglas de extracción y normalización
+   - Guarda en BD
+   - Genera debug_map.json para cada caso con OCR + datos extraídos
+```
+
+**Opción B: Búsqueda Automática (auditor_sistema.py)**
+```
+1. Usuario/agente necesita procesar caso específico IHQ251007
+2. auditor._buscar_pdf_por_numero("IHQ251007")
+   → Encuentra automáticamente: pdfs_patologia/IHQ DEL 001 AL 050.pdf
+3. Usuario procesa el PDF manualmente (contiene 50 casos incluyendo IHQ251007)
+4. Sistema genera debug_maps para todos los casos del PDF
 ```
 
 ### Paso 2: Auditoría Automática (FUNC-01)
@@ -78,6 +117,24 @@ python herramientas_ia/auditor_sistema.py IHQ250980 --inteligente
 3. lm-studio-connector aplica correcciones
 4. data-auditor re-valida
 ```
+
+**OPCIÓN D: Reprocesamiento Automático** (FUNC-06 - NUEVO)
+```
+1. Usuario ejecuta: auditor.reprocesar_caso_completo("IHQ251007")
+2. data-auditor lee debug_map → identifica pdf_path automáticamente
+3. data-auditor audita ANTES (para comparación)
+4. data-auditor elimina registros BD + debug_maps del PDF completo (~50 casos)
+5. data-auditor reprocesa PDF automáticamente con extractores actualizados
+6. data-auditor re-audita DESPUÉS
+7. data-auditor muestra comparación antes/después
+8. data-auditor genera reporte JSON con métricas
+```
+
+**Cuándo usar cada opción:**
+- **Opción A (Manual):** Cuando necesitas control fino sobre los cambios
+- **Opción B (FUNC-02):** Cuando quieres corrección automática sin perder datos (ROADMAP)
+- **Opción C (IA):** Cuando necesitas sugerencias inteligentes de corrección
+- **Opción D (FUNC-06):** Después de modificar extractores o agregar biomarcadores (FUNC-03)
 
 ---
 
@@ -193,7 +250,199 @@ Usuario completa manualmente:
 
 ---
 
-## WORKFLOW 4: Actualización de Versión + Documentación
+## WORKFLOW 4: Reprocesar Caso Después de Corregir Extractor
+
+**Objetivo:** Workflow completo para validar correcciones en extractores
+
+**Caso de uso:** Modificaste código de extracción (ej: biomarker_extractor.py) y quieres validar que la corrección funcionó correctamente.
+
+**Ejemplo real:** E-Cadherina no se extraía → Modificaste patrón regex → Quieres verificar que ahora se extrae "POSITIVO".
+
+### Paso 1: Diagnóstico Inicial (FUNC-01)
+
+```python
+from herramientas_ia.auditor_sistema import AuditorSistema
+
+auditor = AuditorSistema()
+auditor.auditar_caso_inteligente('IHQ251008', json_export=True)
+```
+
+**Resultado esperado:**
+- Identifica el problema (ej: "E-Cadherina NO MAPEADO")
+- Score de validación: 88.9% (8/9)
+- Cobertura de biomarcadores: 80% (4/5)
+
+### Paso 2: Investigar Causa Raíz
+
+```
+data-auditor genera diagnóstico:
+1. Lee debug_map.json del caso
+2. Busca texto del biomarcador en OCR
+3. Identifica por qué NO se extrajo:
+   - ¿Patrón regex no coincide?
+   - ¿Sección prioritaria incorrecta?
+   - ¿Falta fallback al texto completo?
+```
+
+**Ubicaciones de investigación:**
+- `data/debug_maps/debug_map_IHQ251008_[timestamp].json` → Ver OCR completo
+- `core/extractors/biomarker_extractor.py` → Revisar patrones del biomarcador
+- `core/extractors/medical_extractor.py` → Si es campo médico
+- `core/unified_extractor.py` → Si es campo general
+
+### Paso 3: Corregir Código del Extractor
+
+**Usuario modifica el extractor directamente:**
+
+```python
+# Ejemplo en biomarker_extractor.py línea 499
+# ANTES:
+r'(?i)marcaci[óo]n\s+(positiva|negativa)\s+para[:\s]+E[\s-]?CADHERINA'
+
+# DESPUÉS (permite guion pegado):
+r'(?i)marcaci[óo]n\s+(positiva|negativa)\s+para[:\s-]+E[\s-]?CADHERINA'
+```
+
+**Tipos de correcciones comunes:**
+- Ajustar patrón regex (capturar variantes del texto)
+- Agregar fallback al texto completo (si `usa_prioridad_seccion = True`)
+- Normalizar valores extraídos
+- Agregar alias de biomarcadores
+
+### Paso 4: Reprocesar Automáticamente (FUNC-06)
+
+```python
+auditor.reprocesar_caso_completo('IHQ251008')
+```
+
+**Qué hace FUNC-06 automáticamente:**
+1. Busca debug_map → extrae pdf_path
+2. Identifica rango del PDF (ej: 980-1037)
+3. Audita ANTES (para comparación)
+4. **Crea backup automático** (BD + debug_maps en `backups/func06/`)
+5. Elimina registros BD del rango completo (~50 casos)
+6. Elimina debug_maps del rango completo
+7. **Reprocesa PDF completo con extractores ACTUALIZADOS**
+8. Re-audita caso objetivo
+9. Genera reporte comparativo (antes/después)
+
+**Resultado esperado:**
+```
+💾 PASO 4.5: Creando backup automático...
+   ✅ Backup BD: huv_oncologia_pre_func06_IHQ251008_20251103_223015.db
+   ✅ Backup debug_maps: 47 archivos respaldados
+
+🔄 PASO 7: Reprocesando PDF completo...
+   ✅ 47 casos reprocesados correctamente
+
+📊 COMPARACIÓN:
+   Score ANTES:   88.9%
+   Score DESPUÉS: 100.0%
+   Mejora:        +11.1% ✅
+```
+
+### Paso 5: Validar Corrección (FUNC-01)
+
+```python
+auditor.auditar_caso_inteligente('IHQ251008', json_export=True)
+```
+
+**Resultado esperado:**
+- E-Cadherina: POSITIVO ✅
+- Score de validación: 100.0% (9/9)
+- Cobertura de biomarcadores: 100% (5/5)
+
+**Verificaciones específicas:**
+- Campo `IHQ_E_CADHERINA` contiene "POSITIVO"
+- Sin biomarcadores "NO MAPEADO"
+- Sin warnings ni errores en reporte
+- Cobertura de biomarcadores = 100%
+
+---
+
+### Manejo de Errores en FUNC-06
+
+**Error: PDF no encontrado**
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║ ERROR: PDF NO ENCONTRADO                                             ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+Archivo esperado: pdfs_patologia/IHQ DEL 980 AL 1037.pdf
+
+📋 OPCIONES DE RECUPERACIÓN:
+   1. Verificar que el PDF existe: ls pdfs_patologia/
+   2. Restaurar backup: backups/func06/huv_oncologia_pre_func06_IHQ251008_[timestamp].db
+```
+
+**Error: Fallo en reprocesamiento**
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║ ERROR EN REPROCESAMIENTO                                             ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+PDF: IHQ DEL 980 AL 1037.pdf
+Error técnico: SyntaxError in biomarker_extractor.py line 505
+
+🔄 INTENTANDO ROLLBACK AUTOMÁTICO...
+   ✅ BD restaurada exitosamente
+
+📋 OPCIONES DE RECUPERACIÓN:
+   1. Revisar error de sintaxis en extractor
+   2. Corregir código y ejecutar FUNC-06 nuevamente
+```
+
+### Cuándo Usar FUNC-06 vs Otras Opciones
+
+| Situación | Solución | Razón |
+|-----------|----------|-------|
+| Modificaste patrón regex de biomarcador | **FUNC-06** | Necesitas reprocesar con extractor actualizado |
+| Biomarcador NO existe en sistema (no hay columna BD) | FUNC-03 → FUNC-06 | Primero agrega columna, luego reprocesa |
+| Caso incompleto por múltiples biomarcadores NO MAPEADOS | FUNC-05 | Workflow especializado para completitud |
+| Solo quieres validar sin reprocesar | FUNC-01 | Auditoría sin modificar datos |
+| Modificaste normalización de valores | **FUNC-06** | Necesitas reprocesar para aplicar nueva normalización |
+
+### Reporte JSON Generado
+
+**Ubicación:** `herramientas_ia/resultados/FUNC-06_reprocesamiento_IHQ251008_[timestamp].json`
+
+**Contenido:**
+```json
+{
+  "caso": "IHQ251008",
+  "pdf_path": "pdfs_patologia/IHQ DEL 980 AL 1037.pdf",
+  "casos_eliminados": 47,
+  "casos_reprocesados": 47,
+  "score_antes": 88.9,
+  "score_despues": 100.0,
+  "mejora_porcentaje": 11.1,
+  "backup_db": "backups/func06/huv_oncologia_pre_func06_IHQ251008_20251103_223015.db",
+  "backup_debug_maps": "backups/func06/debug_maps_pre_func06_IHQ251008_20251103_223015",
+  "estado": "EXITOSO",
+  "errores": []
+}
+```
+
+**Uso del reporte:**
+- Verificar que backup se creó (`backup_db`)
+- Comparar scores (antes/después)
+- Troubleshooting si falló (`errores`)
+- Auditoría de cambios
+
+---
+
+### Ventajas de FUNC-06
+
+✅ **Todo automático:** NO necesitas borrar BD, NO necesitas abrir ui.py, NO necesitas buscar PDF
+✅ **Backups automáticos:** Crea backup antes de eliminar datos
+✅ **Rollback automático:** Restaura BD si falla el reprocesamiento
+✅ **Comparación integrada:** Muestra mejora de score antes/después
+✅ **Trazabilidad completa:** Reporte JSON con todas las métricas
+✅ **Reporte siempre se guarda:** Incluso si falla (para troubleshooting)
+
+---
+
+## WORKFLOW 5: Actualización de Versión + Documentación
 
 **Objetivo:** Actualizar versión del sistema y generar documentación completa
 
@@ -290,7 +539,7 @@ Claude invoca documentation-specialist-HUV
 
 ---
 
-## WORKFLOW 6: Validación con IA (LM Studio)
+## WORKFLOW 7: Validación con IA (LM Studio)
 
 **Objetivo:** Usar IA local para validar casos complejos
 
