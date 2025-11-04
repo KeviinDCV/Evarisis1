@@ -14,7 +14,7 @@ LEGACY/**/*.sqlite3
 Legacy de bases de datos/
 # 2. Entorno virtual específico venv0
 venv0/
-
+.claude/
 # 3. Cache de Python (__pycache__)
 **/__pycache__/
 **/*.pyc
