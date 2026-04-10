@@ -1,0 +1,144 @@
+====================================================================================================
+DIAGNÓSTICO: Problema CAM5.2 en IHQ250272
+====================================================================================================
+
+FECHA: 2026-02-03
+CASO: IHQ250272
+VERSIÓN: v6.5.77
+
+====================================================================================================
+RESUMEN EJECUTIVO
+====================================================================================================
+
+EL SISTEMA FUNCIONA CORRECTAMENTE:
+  - El extractor SÍ detecta "CAM 5.2" como NEGATIVO
+  - El valor SÍ se guarda en la columna correcta IHQ_CAM5
+  - El patrón "Son negativas para" funciona perfectamente
+
+PROBLEMA DETECTADO (ESTRUCTURA BD):
+  - Existen 2 columnas separadas: IHQ_CAM5 y IHQ_CAM52
+  - La columna IHQ_CAM52 es OBSOLETA y causa reportes incorrectos
+  - Hay mapeos INCONSISTENTES en validation_checker.py
+
+====================================================================================================
+EVIDENCIA
+====================================================================================================
+
+OCR (texto del PDF):
+  "Son negativas para GH, FSH, prolactina, ACTH y CAM 5.2."
+
+EXTRACCIÓN (unified_extractor):
+  IHQ_CAM5 = "NEGATIVO"  ← CORRECTO
+
+BASE DE DATOS:
+  IHQ_CAM5 = "NEGATIVO"        ← CORRECTO (valor aquí)
+  IHQ_CAM52 = "NO MENCIONADO"  ← COLUMNA OBSOLETA (vacía)
+
+====================================================================================================
+CAUSA RAÍZ
+====================================================================================================
+
+1. PATRÓN DE EXTRACCIÓN (FUNCIONA):
+   - Patrón: "Son negativas para [lista]" (línea 6879 biomarker_extractor.py)
+   - Captura: "GH, FSH, prolactina, ACTH y CAM 5.2"
+   - Normaliza: "CAM 5.2" → normalize_biomarker_name() → 'IHQ_CAM5'
+   - Guarda: IHQ_CAM5 = "NEGATIVO"  ✅
+
+2. NORMALIZACIÓN CAM 5.2 → IHQ_CAM5 (FUNCIONA):
+   - BIOMARKER_DEFINITIONS['CAM5'] reconoce: 'CAM 5.2', 'CAM5.2', 'CAM 5', 'CAM-5'
+   - Columna BD: 'IHQ_CAM5'
+   - CHANGELOG v6.2.3: IHQ_CAM52 marcada como obsoleta
+
+3. VALIDATION_CHECKER.PY (PROBLEMA):
+   - Línea 307: 'CAM5.2': 'IHQ_CAM5'   ← CORRECTO
+   - Línea 471: 'CAM5.2': 'IHQ_CAM52'  ← OBSOLETO (mapeo duplicado)
+   - Python usa el último (línea 471) → mapeo incorrecto
+
+4. DATABASE_MANAGER.PY (PROBLEMA):
+   - Línea 149: "IHQ_CAM5"   ← Columna correcta
+   - Línea 163: "IHQ_CAM52"  ← Columna obsoleta (no debería existir)
+   - Línea 247: "IHQ_CAM5" TEXT
+   - Línea 278: "IHQ_CAM52" TEXT  ← Columna redundante
+
+====================================================================================================
+VALIDACIÓN DE BIOMARCADORES NEGATIVOS
+====================================================================================================
+
+Biomarcador      OCR         Columna BD        Valor BD           Estado
+---------------------------------------------------------------------------
+GH               NEGATIVO    IHQ_GH            NEGATIVO           ✅ CORRECTO
+FSH              NEGATIVO    IHQ_FSH           NEGATIVO           ✅ CORRECTO
+PROLACTINA       NEGATIVO    IHQ_PROLACTINA    NEGATIVO           ✅ CORRECTO
+ACTH             NEGATIVO    IHQ_ACTH          NEGATIVO           ✅ CORRECTO
+CAM 5.2          NEGATIVO    IHQ_CAM5          NEGATIVO           ✅ CORRECTO
+CAM 5.2          -           IHQ_CAM52         NO MENCIONADO      ⚠️ COLUMNA OBSOLETA
+
+====================================================================================================
+DIAGNÓSTICO FINAL
+====================================================================================================
+
+¿El extractor funciona?
+  ✅ SÍ, FUNCIONA PERFECTAMENTE
+  - Patrón capturó lista completa correctamente
+  - CAM 5.2 normalizado a IHQ_CAM5
+  - Valor guardado correctamente
+
+¿Hay un problema?
+  ⚠️ SÍ, PROBLEMA DE ESTRUCTURA BD (NO DE EXTRACCIÓN)
+  - IHQ_CAM52 NO debería existir (obsoleta desde v6.2.3)
+  - Mapeos duplicados en validation_checker.py (líneas 307 vs 471)
+  - Reportes que consultan IHQ_CAM52 muestran "NO MENCIONADO"
+
+¿Por qué el usuario vio "NO MENCIONADO"?
+  El usuario consultó la columna INCORRECTA (IHQ_CAM52 obsoleta)
+  El valor correcto está en IHQ_CAM5 = "NEGATIVO" ✅
+
+====================================================================================================
+SOLUCIONES
+====================================================================================================
+
+PRIORIDAD ALTA (Inmediata):
+
+  1. ELIMINAR mapeos obsoletos en validation_checker.py (líneas 471-472):
+     # 'CAM5.2': 'IHQ_CAM52',   ← ELIMINAR
+     # 'CAM 5.2': 'IHQ_CAM52',  ← ELIMINAR
+
+  2. DOCUMENTAR en CHANGELOG:
+     - IHQ_CAM52 obsoleta desde v6.2.3 (IHQ251026)
+     - Usar solo IHQ_CAM5 (columna única válida)
+
+PRIORIDAD MEDIA (Después de procesar lotes):
+
+  3. ELIMINAR columna obsoleta de database_manager.py:
+     - NEW_TABLE_COLUMNS_ORDER (línea 163): "IHQ_CAM52"
+     - CREATE TABLE (línea 278): "IHQ_CAM52" TEXT
+
+  4. REGENERAR BD: Borrar y reprocesar (sin IHQ_CAM52)
+
+PRIORIDAD BAJA (Preventiva):
+
+  5. TEST DE REGRESIÓN: Verificar mapeos consistentes
+  6. ACTUALIZAR DASHBOARDS: Usar IHQ_CAM5 (no IHQ_CAM52)
+
+====================================================================================================
+CONCLUSIÓN
+====================================================================================================
+
+NO REPROCESAR IHQ250272 - El caso está CORRECTO.
+
+El valor está en IHQ_CAM5 = "NEGATIVO" ✅
+La columna IHQ_CAM52 está vacía (obsoleta)
+
+El problema NO es de extracción, es de estructura BD.
+
+====================================================================================================
+RECOMENDACIÓN INMEDIATA
+====================================================================================================
+
+Eliminar líneas 471-472 de validation_checker.py AHORA.
+Evitar consultar IHQ_CAM52 (usar solo IHQ_CAM5).
+
+====================================================================================================
+
+Analista: Claude (data-auditor agent)
+Fecha: 2026-02-03

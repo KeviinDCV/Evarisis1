@@ -1,0 +1,178 @@
+============================================================
+DIAGNÓSTICO CRÍTICO: INHIBINA IHQ250270
+============================================================
+
+CASO: IHQ250270
+VERSIÓN: v6.5.77_unified_corrections
+FECHA: 2026-02-03
+SEVERIDAD: CRÍTICA
+
+============================================================
+1. PROBLEMA DETECTADO
+============================================================
+
+OCR DICE:
+"Las células tumorales presentan positividad heterogénea 
+para CKAE1AE3, inhibina y calretinina."
+
+BD TIENE:
+IHQ_INHIBINA = "NEGATIVO"
+
+VALOR CORRECTO:
+IHQ_INHIBINA = "POSITIVO HETEROGÉNEO"
+
+AUDITOR REPORTÓ:
+Score: 100%
+Estado: OK
+valores_incorrectos: []
+
+============================================================
+2. CAUSA RAÍZ - ERROR DE EXTRACCIÓN
+============================================================
+
+PROBLEMA 1: NO existe patrón para "positividad heterogénea"
+- biomarker_extractor.py NO tiene patrón específico
+- grep "positividad.*heterog" → Sin resultados
+
+PROBLEMA 2: Patrones INHIBINA son muy específicos
+Ubicación: línea 3577
+Patrones existentes:
+  - INHIBINA: POSITIVO
+  - INHIBINA: NEGATIVO
+  
+NO captura formato narrativo:
+  - "positividad heterogénea para...inhibina"
+
+PROBLEMA 3: Por qué se guardó NEGATIVO
+Hipótesis: La frase siguiente tiene negativos
+"Son negativas para EMA, CK-7 y PAX-8"
+
+Posible que:
+  - INHIBINA no se extrajo (valor default: NEGATIVO)
+  - O se procesó después y valor se sobrescribió
+
+============================================================
+3. CAUSA RAÍZ - ERROR DE AUDITORÍA
+============================================================
+
+EL AUDITOR NO VALIDA VALORES
+Solo valida:
+  ✅ IHQ_INHIBINA existe
+  ✅ IHQ_INHIBINA != ""
+
+NO valida:
+  ❌ IHQ_INHIBINA == valor_en_OCR
+
+Código actual (auditor_sistema.py):
+  - Verifica mapeo (6/6 estudios mapeados) ✅
+  - NO compara valor BD vs valor OCR ❌
+
+============================================================
+4. OTROS CASOS EN ESTE IHQ250270
+============================================================
+
+EXTRACTORES EXITOSOS:
+  ✅ CKAE1AE3: POSITIVO (correcto)
+  ✅ CALRETININA: POSITIVO HETEROGÉNEO (correcto)
+  ✅ EMA: NEGATIVO (correcto)
+  ✅ CK7: NEGATIVO (correcto)
+  ✅ PAX8: NEGATIVO (correcto)
+
+POR QUÉ CALRETININA FUNCIONÓ:
+  - Posiblemente tiene patrón específico para "heterogénea"
+  - O fue procesado correctamente por patrón genérico
+  - Verificar línea ~2900-3000 en biomarker_extractor.py
+
+============================================================
+5. IMPACTO EN EL SISTEMA
+============================================================
+
+FALSOS POSITIVOS DE CALIDAD:
+  - Casos con score 100% pueden tener errores críticos
+  - Usuario confía en sistema cuando falla silenciosamente
+  - NO HAY FORMA de detectar sin revisión manual
+
+CASOS POTENCIALMENTE AFECTADOS:
+  - Todos con formato: "positividad heterogénea para [lista]"
+  - Estimación: 5-10% de casos
+  - Biomarcadores en listas narrativas
+
+BIOMARCADORES EN RIESGO:
+  - INHIBINA (verificado que falla)
+  - CD38, CD138, KAPPA, LAMBDA (pueden fallar)
+  - Otros con patrones específicos limitados
+
+============================================================
+6. SOLUCIÓN PROPUESTA
+============================================================
+
+FIX 1: biomarker_extractor.py
+Ubicación: extract_narrative_biomarkers_list() línea ~9255
+Agregar ANTES de línea 9313:
+
+# V6.5.78 FIX IHQ250270: NUEVO patrón
+r'(?i)positividad\s+heterog[eé]nea\s+para\s+([\w\s,]+?)(?:\.\s|Son\s+negativ)'
+
+Procesamiento:
+  - Captura lista completa
+  - Split por comas y "y"
+  - Asignar estado "POSITIVO HETEROGÉNEO" a cada item
+
+FIX 2: auditor_sistema.py
+Ubicación: función _validar_biomarcadores()
+Agregar validación semántica:
+
+  for biomarcador in estudios_solicitados:
+      valor_bd = campos_criticos[col]
+      
+      # Buscar en OCR
+      patron_positivo = f'positividad.*{biomarcador}'
+      patron_negativo = f'negativ.*{biomarcador}'
+      
+      if patron_positivo in OCR and "NEGATIVO" in valor_bd:
+          ERROR("Valor incorrecto")
+
+============================================================
+7. PLAN DE VALIDACIÓN
+============================================================
+
+PASO 1: ANTES de modificar
+  python herramientas_ia/auditor_sistema.py IHQ250270 --inteligente
+  → Score: 100% (falso positivo)
+
+PASO 2: Aplicar FIX en biomarker_extractor.py
+
+PASO 3: Reprocesar caso
+  python herramientas_ia/auditor_sistema.py IHQ250270 --func-06
+
+PASO 4: Validar DESPUÉS
+  python herramientas_ia/auditor_sistema.py IHQ250270 --inteligente
+  → IHQ_INHIBINA: "POSITIVO HETEROGÉNEO" ✅
+
+PASO 5: Validar casos de referencia (anti-regresión)
+  IHQ250133, IHQ250159
+  → Verificar que NO hay regresión
+
+============================================================
+8. CONCLUSIONES
+============================================================
+
+PROBLEMAS CRÍTICOS:
+  1. biomarker_extractor.py NO tiene patrón "positividad heterogénea"
+  2. auditor_sistema.py NO valida VALORES, solo EXISTENCIA
+  3. Sistema reporta falsos positivos (score 100% con errores)
+
+IMPACTO:
+  - Severidad: CRÍTICA
+  - Alcance: 5-10% de casos
+  - Confianza del sistema: Comprometida
+
+ACCIONES REQUERIDAS:
+  1. Implementar FIX v6.5.78 en biomarker_extractor.py
+  2. Implementar FIX v6.5.78 en auditor_sistema.py
+  3. Validar casos de referencia
+  4. Auditoría masiva de casos con score 100%
+
+============================================================
+FIN DEL DIAGNÓSTICO
+============================================================

@@ -1,0 +1,59 @@
+{
+  "caso": "IHQ250218",
+  "timestamp": "2026-01-19T01:23:57.440182",
+  "version_extractores": "6.4.85",
+  "resultado_func06": "EXITOSO - 50 casos reprocesados",
+  "problemas_detectados": {
+    "1_ki67": {
+      "biomarcador": "Ki-67",
+      "columna": "IHQ_KI-67",
+      "valor_bd": "NO MENCIONADO",
+      "valor_esperado": "90%",
+      "texto_ocr": "presentan un indice mitotico alto dado por un Ki67o es de 90%",
+      "estado": "ERROR - No se extrajo",
+      "causa_raiz": "OCR tiene error tipografico: Ki67o en lugar de Ki67 o Ki-67",
+      "patron_actual": "Probablemente busca Ki-?67 pero no Ki67o",
+      "solucion": "Agregar variante Ki67o al patron de extraccion en biomarker_extractor.py"
+    },
+    "2_mum1": {
+      "biomarcador": "MUM1",
+      "columna": "IHQ_MUM1",
+      "valor_bd": "NO MENCIONADO",
+      "valor_esperado": "30%",
+      "texto_ocr": "el MUM1 es del 30%",
+      "estado": "ERROR - No se extrajo",
+      "causa_raiz": "Patron de extraccion no reconoce formato el MUM1 es del X%",
+      "patron_actual": "Probablemente busca MUM1: X% pero no el MUM1 es del X%",
+      "solucion": "Agregar patron alternativo para MUM1 narrativo"
+    },
+    "3_cd3": {
+      "biomarcador": "CD3",
+      "columna": "IHQ_CD3",
+      "valor_bd": "POSITIVO",
+      "valor_esperado": "NEGATIVO (es de celulas acompanantes, NO tumorales)",
+      "texto_ocr_correcto": "Son negativas para CD38, cMYC y CD30",
+      "texto_ocr_incorrecto": "Hay linfocitos T acompanantes CD3+, BCL2+",
+      "estado": "WARNING - Valor incorrecto por contaminacion",
+      "causa_raiz": "Extractor captura CD3+ de celulas ACOMPANANTES (linfocitos T) en lugar del valor tumoral",
+      "contexto": "El OCR dice que celulas tumorales son NEGATIVAS para CD3 (implicito: NO mencionado en lista de negativos), pero hay linfocitos T acompanantes CD3+",
+      "solucion": "Agregar filtro para IGNORAR menciones de biomarcadores en contexto de linfocitos acompanantes, celulas acompanantes, microambiente"
+    },
+    "4_bcl2": {
+      "biomarcador": "BCL2",
+      "columna": "IHQ_BCL2",
+      "valor_bd": "NO MENCIONADO",
+      "valor_esperado": "NO MENCIONADO (correcto - es de celulas acompanantes)",
+      "texto_ocr": "Hay linfocitos T acompanantes CD3+, BCL2+",
+      "estado": "CORRECTO - Extractor ya ignora este contexto",
+      "nota": "BCL2+ en celulas acompanantes fue correctamente ignorado. Este es el comportamiento esperado."
+    }
+  },
+  "resumen_validacion": {
+    "score_auditoria": "55.6%",
+    "total_biomarcadores_solicitados": 11,
+    "correctamente_extraidos": 8,
+    "no_extraidos": 2,
+    "extraidos_incorrectamente": 1,
+    "problemas_criticos": 3
+  }
+}

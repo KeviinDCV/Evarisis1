@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-11-04T21:38:50.543616",
+  "funcion": "FUNC-06 (reprocesar_caso_completo)",
+  "caso_objetivo": "IHQ251011",
+  "rango_reprocesado": "IHQ250980 - IHQ251037",
+  "total_casos_reprocesados": 47,
+  "resultados": {
+    "limpieza_caracteres_especiales": {
+      "casos_limpios": 47,
+      "casos_con_problemas": 0,
+      "porcentaje_exito": 100.0
+    },
+    "estandarizacion_formatos": {
+      "biomarcadores_estandarizados": 3,
+      "descripciones_limpias": 47,
+      "descripcion": "Formatos narrativos estandarizados (NO CONTRIBUTIVA -> no contributiva, MUTADO -> mutado)"
+    },
+    "caso_objetivo_IHQ251011": {
+      "P53": "NEGATIVO (NO CONTRIBUTIVA)",
+      "ATRX": "NEGATIVO (MUTADO)",
+      "IDH1": "POSITIVO",
+      "sin_saltos_linea": true,
+      "formato_estandarizado": true
+    }
+  },
+  "cambios_implementados": [
+    "Limpieza de \n, \r, \t en valores de biomarcadores",
+    "Estandarización de formatos narrativos NO ES CONTRIBUTIVA -> NEGATIVO (no contributiva)",
+    "Estandarización de AUSENCIA DE EXPRESION PARA X (MUTADO) -> NEGATIVO (mutado)",
+    "Estandarización de EXPRESION POSITIVA (MUTADO) -> POSITIVO (mutado)",
+    "Limpieza de descripciones macroscópica/microscópica"
+  ],
+  "validacion_auditoria": {
+    "archivo": "herramientas_ia/resultados/auditoria_inteligente_IHQ251011.json",
+    "score": 88.9,
+    "estado": "ADVERTENCIA",
+    "warnings": 1,
+    "errores": 0
+  },
+  "conclusion": "EXITOSO - Limpieza y estandarización aplicadas correctamente",
+  "casos_con_problemas": []
+}

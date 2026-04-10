@@ -1,0 +1,106 @@
+{
+  "numero_caso": "IHQ250099",
+  "caso_num": 43,
+  "total_casos": 50,
+  "timestamp": "2025-12-20T00:27:38.994729",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 2,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "ADENOCARCINOMA DIFUSO (POBREMENTE COHESIVO) CON CELULAS EN ANILLO DE SELLO",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
+      "valor_bd": "ADENOCARCINOMA DIFUSO (POBREMENTE"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "HER2: . NEGATIVO (SCORE 0)",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "HER2"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 1,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "HER2"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "HER2"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realizan niveles a bloque extrainstitucional con rotulo \"Q-151173-24\" que corresponde a biopsia d..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MUCOSA GÁSTRICA DE INCISURA ANGULAR"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

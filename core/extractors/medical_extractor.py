@@ -11,8 +11,225 @@ Extrae información médica específica de los informes IHQ:
 - Información clínica
 - Factor pronóstico con sistema de prioridades y NORMALIZACIÓN automática
 
-Versión: 4.2.13 - FIX CRÍTICO IHQ251007 (Patrón inmunorreactividad corregido)
-Fecha: 3 de noviembre de 2025
+Versión: 6.5.59 - FIX: IHQ250254 - "para tinción en el especimen [X]: [lista]"
+Fecha: 28 de enero de 2026
+
+CHANGELOG v6.5.59:
+- ✅ FIX IHQ250254: Nuevo patrón para "para tinción en el especimen [X]: [lista]" (línea ~2277)
+- 📊 Problema: "para tinción en el especimen A2: EMA, DESMINA, SALL-4, ..." no se capturaba
+- 🔍 Root Cause: Patrones existentes requerían "tinción con" pero PDF tiene "tinción en el especimen"
+- 💡 Solución: Patrón específico con captura de múltiples especímenes (A2, B1, etc.)
+- 📈 Impacto: Casos con formato "en el especimen" ahora extraen biomarcadores solicitados
+- 🎯 Terminador especial: "y en el especimen" para capturar cada lista por separado
+- ✅ Validación: IHQ250254 debe incluir SALL-4 y EMA en IHQ_ESTUDIOS_SOLICITADOS
+
+CHANGELOG v6.5.52:
+- ✅ FIX IHQ250250: Nuevo patrón -7 en extract_biomarcadores_solicitados_robust (línea 2269)
+- 📊 Problema: "se realizan cortes histológicos para p16 y Ki-67" no se detectaba
+- 🔍 Root Cause: Todos los patrones requerían "tinción" o "marcación" después de "para"
+- 💡 Solución: Patrón directo `se realizan cortes histológicos para [lista].`
+- 📈 Impacto: Casos con formato simplificado ahora extraen IHQ_ESTUDIOS_SOLICITADOS correctamente
+- ✅ Validación pendiente: IHQ250250 debe detectar "P16, Ki-67" en estudios solicitados
+
+CHANGELOG v6.4.94:
+- ✅ FIX IHQ250224: Simplificado patrón fallback en _preprocess_multipage_diagnosis (línea ~3084, ~3118)
+- 📊 Problema v6.4.92: Lookahead demasiado ambiguo `[A-Z\s]+\n` no capturaba correctamente
+- 🔍 Root Cause: Patrón requería secuencia de A-Z antes de "Médico Patólogo" que podía fallar en algunos casos
+- 💡 Solución: Lookahead más específico: `\n[A-Z][A-Z\s]+\nMédico Patólogo` (requiere newline + mayúscula inicial)
+- 📝 Terminadores agregados: `_{10,}` (línea de guiones bajos), `Todos los análisis` (pie de página)
+- 📈 Impacto: Captura más robusta de diagnósticos multipágina sin viñetas
+- ✅ Validación pendiente: IHQ250224 debe mostrar diagnóstico completo con Gleason
+
+CHANGELOG v6.4.92:
+- ✅ FIX IHQ250224: _preprocess_multipage_diagnosis ahora captura contenido SIN guiones (línea ~3064-3102)
+- 📊 Problema: Diagnósticos de próstata con score Gleason continúan en página 2 SIN viñetas (-)
+- 🔍 Ejemplo OCR página 2: "ADENOCARCINOMA GLEASON SCORE 3+3 = 6 (GRUPO 1)\nPRESENTE EN EL 1%..."
+- 🔍 Root Cause: Patrón original solo capturaba líneas con "- " (guiones de viñetas)
+- 💡 Solución: Patrón fallback captura TODO el contenido hasta firma del patólogo
+- 📝 Patrón A (existente): `((?:\s*-\s+[^\n]+\n)+)` - continuación con viñetas
+- 📝 Patrón B (nuevo): `(.*?)(?=[A-Z\s]+\nMédic[oa] Patólog[oa]...)` - continuación sin viñetas
+- 📈 Impacto: Casos de próstata ahora capturan diagnóstico completo con score Gleason detallado
+- ✅ Validación pendiente: IHQ250224 debe mostrar "ADENOCARCINOMA GLEASON SCORE 3+3 = 6 (GRUPO 1) PRESENTE EN EL 1%"
+
+CHANGELOG v6.4.83:
+- ✅ FIX IHQ250214 FALLBACK: Patrón para cuando OCR no captura comilla de cierre (línea 899)
+- 📊 Problema v6.4.82: OCR capturó `"ADENOCARCINOMA...` pero SIN comilla de cierre al final
+- 🔍 Root Cause: Patrón v6.4.82 requiere `"` al final, pero OCR tiene solo comilla de apertura
+- 💡 Solución v6.4.83: Patrón fallback `.{10,300}?\.` captura hasta primer punto (sin req comilla cierre)
+- 🎯 Estrategia: Primero intenta patrón con comillas completas (v6.4.82), luego fallback (v6.4.83)
+- 📈 Impacto: Casos con OCR incompleto ahora capturan diagnóstico completo
+- ✅ Validación pendiente: Score IHQ250214 debe mejorar de 88.9% → 100%
+
+CHANGELOG v6.4.11:
+- ✅ FIX IHQ250148: Agregado patrón para casos externos en extract_diagnostico_coloracion (línea 739)
+- 📊 Problema: Material externo (SYNLAB, etc.) con diagnóstico previo no se capturaba
+- 🔍 Formato: "correspondientes a [DESCRIPCIÓN] y con diagnóstico de [DIAGNÓSTICO]"
+- 💡 Ejemplo: "correspondientes a 'A. Próstata lado derecho' y con diagnóstico de 'cambios de hiperplasia...'"
+- 🎯 Solución: Nuevo patrón regex en prioridad -3.89 que captura diagnóstico de institución de origen
+- 📈 Impacto: Casos externos ahora extraen correctamente DIAGNOSTICO_COLORACION del estudio M previo
+
+CHANGELOG v6.3.75:
+- ✅ FIX IHQ250103: IHQ_ORGANO capturaba diagnóstico en lugar de órgano
+  - Problema: IHQ_ORGANO = "ADENOCARCINOMA BIEN DIFERENCIADO..." (diagnóstico, no órgano)
+  - Causa: extract_ihq_organ_from_diagnosis no detectaba términos de diagnóstico al inicio
+  - Solución: Dos filtros en extract_ihq_organ_from_diagnosis:
+    1. Detectar prefijo "de \"" + diagnóstico → retornar vacío
+    2. Detectar texto que EMPIEZA con término de diagnóstico → retornar vacío
+  - Términos detectados: ADENOCARCINOMA, CARCINOMA, METASTASIS, LINFOMA, MELANOMA, etc.
+  - Impacto: IHQ_ORGANO usa fallback a campo "Organo" (MUCOSA GASTRICA DE CUERPO)
+- ✅ FIX IHQ250103: Limpiar prefijo "de \"" y comillas residuales en Descripcion Diagnostico
+  - Problema 1: Diagnóstico empezaba con "de \"ADENOCARCINOMA..."
+  - Problema 2: Comillas residuales: REPRESENTADO". → REPRESENTADO.
+  - Solución: Regex para eliminar prefijo + comillas antes de punto/espacio (líneas 2915-2923)
+  - Impacto: Diagnóstico limpio sin comillas sueltas
+
+CHANGELOG v6.3.54:
+- ✅ FIX IHQ250062: Nuevo patrón 0C3 para "Estudio de inmunohistoquímica: - DIAGNÓSTICO"
+  - Problema: Patrón 0C2 no capturaba porque hay guión después de dos puntos
+  - Formato: "Estudio de inmunohistoquímica: - CARCINOMA DE CÉLULAS NO PEQUEÑAS, NOS."
+  - Solución: Patrón específico que maneja `:[\s]*-\s*` antes del diagnóstico
+  - Captura hasta: punto, coma seguida de NOS, o "(VER COMENTARIO)"
+
+CHANGELOG v6.3.22:
+- ✅ FIX IHQ250017: Patrón regex captura "( score 0 )" con espacios variables (línea 1807)
+  - Problema: Patrón `\(SCORE\s+\d\+?\)` no capturaba `( score 0 )` por espacios después de paréntesis
+  - Causa: OCR tiene formato "( score 0 )" con espacios, no "(score 0)" o "(SCORE 0)"
+  - Solución: Patrón actualizado a `\(\s*score\s+\d\+?\s*\)` con `\s*` para espacios opcionales
+  - Impacto: HER2 ahora captura score completo en parse_biomarkers_from_factor_pronostico
+  - Relacionado: v6.3.21 (removido .upper()), v6.3.20 (HER2 excluido de narrativos)
+
+CHANGELOG v6.3.21:
+- ✅ FIX IHQ250017: parse_biomarkers_from_factor_pronostico preserva capitalización original (línea 1809)
+  - Problema: REGLA 2 sobrescribía IHQ_HER2 con valor normalizado a mayúsculas "NEGATIVO"
+  - Causa: .upper() aplicado convertía "negativo ( score 0 )" → "NEGATIVO ( SCORE 0 )"
+  - Solución: Removido .upper() para preservar formato exacto del PDF
+  - Impacto: IHQ_HER2 preserva capitalización original del OCR
+  - Relacionado: biomarker_extractor.py v6.3.20 (HER2 excluido de patrones narrativos)
+
+CHANGELOG v6.3.13:
+- ✅ FIX CRÍTICO IHQ250014: Orden de extracción sobrescribía valor correcto (líneas 2741-2756)
+  - Problema: diagnostico_coloracion se extraía de clean_text DESPUÉS de process_medical_descriptions
+  - Secuencia INCORRECTA: process_medical_descriptions extrae correctamente → luego se sobrescribe con "NO APLICA"
+  - Causa: Extracción duplicada ejecutándose en orden invertido
+  - Solución: Mover extracción inicial ANTES de process_medical_descriptions (líneas 2746-2753)
+  - Impacto: DIAGNOSTICO_COLORACION ahora retiene valor correcto extraído de macro_final reconstruido
+
+CHANGELOG v6.3.12:
+- ✅ FIX CRÍTICO IHQ250014: Descripción macroscópica cortada, texto mal ubicado en microscópica (líneas 3169 + 3200)
+- ✅ Problema 1: "con diagnósticos de 'CAMBIOS REACTIVOS...'. Previa revisión... se realizan niveles"
+  - Anterior (v6.2.14): Fix recupera texto mal ubicado SOLO si usa "diagnóstico" (singular)
+  - Causa: Patrón `diagn[óo]stico\s+` no soportaba plural "diagnósticos"
+  - Solución: Agregar `s?` → `diagn[óo]sticos?\s+` para soportar singular/plural (línea 3169)
+- ✅ Problema 2: DIAGNOSTICO_COLORACION no se extraía porque se ejecutaba ANTES del FIX V6.2.14
+  - Anterior: extract_diagnostico_coloracion usaba texto original (descripción macroscópica incompleta)
+  - Solución: Re-extraer DIAGNOSTICO_COLORACION DESPUÉS del FIX V6.2.14 usando macro_final (línea 3200)
+- ✅ Impacto: Descripción macroscópica completa + DIAGNOSTICO_COLORACION extraído correctamente
+
+CHANGELOG v6.3.11:
+- ✅ FIX CRÍTICO IHQ250012: Diagnóstico de coloración no capturado (línea 673)
+- ✅ Problema: "M2410350\" corresponde aspirado biopsia de medula ósea con diagnóstico de \"HIPERPLASIA MIELOIDE\""
+- ✅ Anterior (v6.3.10): Patrón con comillas opcionales no capturaba texto sin comillas
+- ✅ Causa: Patrón `(?:["\'\u201c\u201d])?[^"\'\u201c\u201d]*?(?:["\'\u201c\u201d])?` requería estructura específica
+- ✅ Solución: Patrón simplificado `.+?` captura CUALQUIER texto entre "corresponde" y "con diagnóstico"
+- ✅ Patrón actualizado: `corresponden?\s+(?:a\s+)?.+?\s+con\s+diagn[óo]stico\s+de`
+- ✅ Impacto: Todos los casos de médula ósea y formatos similares ahora capturan diagnóstico correctamente
+
+CHANGELOG v6.3.10:
+- ❌ REVERTIDO: Intento fallido de hacer opcional "a" después de "corresponde"
+- ✅ Problema identificado pero solución incorrecta (patrón comillas demasiado restrictivo)
+
+CHANGELOG v6.3.9:
+- ✅ FIX CRÍTICO IHQ250011: Patrón endometriosis movido a PRIORIDAD 1 (línea 2980)
+- ✅ Problema: Patrón en línea 3026 se ejecutaba DESPUÉS del scoring de keywords malignos
+- ✅ Solución: Patrón movido al INICIO de PRIORIDAD 1 (antes de scoring y checks malignos)
+- ✅ Patrón: r'TEJIDO\s+ENDOMETRIAL\s+ECT[ÓO]PIC[OA]|ENDOMETRIOSIS' → BENIGNO
+- ✅ Impacto: Endometriosis se detecta PRIMERO, garantizando clasificación BENIGNO
+
+CHANGELOG v6.3.8:
+- ✅ FIX CRÍTICO IHQ250011: Tejido endometrial ectópico clasificado incorrectamente como MALIGNO
+- ✅ Problema: "TEJIDO ENDOMETRIAL ECTÓPICO DECIDUALIZADO" (endometriosis) es BENIGNO
+- ✅ Solución: Agregado patrón para detectar endometriosis (línea 3020 - luego movido en v6.3.9)
+- ✅ Patrón: r'TEJIDO\s+ENDOMETRIAL\s+ECT[ÓO]PICO|ENDOMETRIOSIS' → BENIGNO
+
+CHANGELOG v6.3.7:
+- ✅ FIX CRÍTICO IHQ250011: Corrección de patrones "HALLAZGOS COMPATIBLES CON" (líneas 3611, 3625)
+- ✅ Problema: "HALLAZGOS DE IHQ COMPATIBLES CON TEJIDO ENDOMETRIAL ECTÓPICO DECIDUALIZADO"
+- ✅ Anterior: Capturaba solo "ENDOMETRIAL DECIDUALIZADO ES" (fragmento erróneo)
+- ✅ Causa 1: Lookahead incorrecto (?:\.||NANCY|...) con doble || creaba OR vacío
+- ✅ Causa 2: Charset [A-ZÁÉÍÓÚÑ\s] no incluía guión para "ECTÓPICO"
+- ✅ Solución: Lookahead positivo (?=\.|NANCY|...) y charset ampliado a [A-ZÁÉÍÓÚÑ\-\s]
+- ✅ Resuelve: Captura completa del diagnóstico hasta punto final
+- ✅ Impacto: Casos con diagnósticos que incluyen "ECTÓPICO", "IN-SITU", etc.
+
+CHANGELOG v6.3.6:
+- ✅ FIX CRÍTICO: Casos marcados como MALIGNO cuando diagnóstico dice "NEGATIVO PARA MALIGNIDAD"
+- ✅ Problema: determine_malignancy() detectaba keyword "MALIGNIDAD" y clasificaba como MALIGNO
+- ✅ Causa: No existía patrón de prioridad alta para "NEGATIVO PARA MALIGNIDAD"
+- ✅ Solución: Agregados 2 patrones PRIORIDAD 0 antes del scoring (líneas 2764-2772)
+- ✅ Patrón 1: "NEGATIVO PARA MALIGNIDAD" → BENIGNO
+- ✅ Patrón 2: "SIN EVIDENCIA DE MALIGNIDAD" → BENIGNO
+- ✅ Resuelve: IHQ251026 (SINOSOPATIA) ahora se marca como BENIGNO correctamente
+- ✅ Impacto: Previene clasificaciones incorrectas en casos inflamatorios/benignos
+
+CHANGELOG v6.3.5:
+- ✅ FIX: parse_biomarker_list() capturaba frases descriptivas como biomarcadores
+- ✅ Problema: "SE ENCUENTRAN PENDIENTES OTROS MARCADORES" se interpretaba como biomarcador
+- ✅ Causa: Falta de filtro para texto narrativo/notas del patólogo
+- ✅ Solución: Agregados 6 patrones de frases narrativas para filtrar (línea 1982-1989)
+- ✅ Patrones: PENDIENTE, NO SE REALIZÓ, OTROS MARCADORES, EN PROCESO, etc.
+- ✅ Resuelve: IHQ250997 ahora no marca como incompleto por notas descriptivas
+- ✅ Impacto: Reduce falsos positivos en completitud de biomarcadores
+
+CHANGELOG v6.3.4:
+- ✅ FIX CRÍTICO: Orden de patrones causaba que patrón genérico ejecutara primero
+- ✅ Problema: Patrón 3 "para tinción con" (genérico) antes de Patrón 4 "se realizan niveles" (específico)
+- ✅ Causa: Patrón genérico coincide primero, trunca en primer punto, Patrón específico nunca se ejecuta
+- ✅ Solución: Invertido orden - Patrón específico "se realizan niveles" ahora es Patrón 3 (línea 1756)
+- ✅ Solución: Patrón genérico "para tinción con" ahora es Patrón 4 (línea 1762)
+- ✅ Principio: Patrones específicos SIEMPRE antes que genéricos en lista de coincidencias
+- ✅ Resuelve: IHQ251026 ahora ejecuta patrón correcto con lookahead y captura lista completa
+- ✅ Coordinado con v6.3.3 (lookahead), v6.3.2 (puntos internos)
+
+CHANGELOG v6.3.3:
+- ✅ FIX CRÍTICO: Patrón 4 usaba non-greedy (+?) truncando en primer punto (línea 1749)
+- ✅ Problema: "p16, p40, CAM 5.2." → capturaba solo "p16, p40, CAM 5" (se detenía en punto)
+- ✅ Causa: +? (non-greedy) busca coincidencia mínima → se detiene en primer punto posible
+- ✅ Solución: Cambiado a + (greedy) para capturar toda la lista hasta el delimitador final
+- ✅ Delimitador: ". DESCRIPCIÓN", ". Previa", ". Se recibe", o fin de texto
+- ✅ Resuelve: IHQ251026 ahora extrae lista completa: P16, P40, CAM 5.2, BCL2, BCL6, CD20, CD5, CK 5/6, CK7, CKAE1/AE3
+- ✅ Coordinado con v6.3.2 (parse_biomarker_list puntos internos)
+
+CHANGELOG v6.3.2:
+- ✅ FIX CRÍTICO: parse_biomarker_list() no manejaba puntos internos en listas
+- ✅ Problema: "CAM 5.2. BCL2" se capturaba como un solo biomarcador inválido
+- ✅ Causa: División solo por comas, punto en "5.2." se interpretaba como parte del nombre
+- ✅ Solución: Reemplazar ". " (punto+espacio+mayúscula) por ", " antes de dividir (línea 1896)
+- ✅ Preserva: Puntos válidos como "CAM 5.2" (punto seguido de dígito, sin espacio+mayúscula)
+- ✅ Resuelve: IHQ251026 ahora extrae 10 biomarcadores en IHQ_ESTUDIOS_SOLICITADOS
+- ✅ Coordinado con v6.3.1 (patrón regex mejorado) y biomarker_extractor v6.2.6
+
+CHANGELOG v6.3.1:
+- ✅ FIX CRÍTICO: Patrón 4 en extract_biomarcadores_solicitados_robust() (línea 1726)
+- ✅ Problema: Terminaba en primer punto (.) capturando solo "p16, p40, CAM 5.2."
+- ✅ Perdía: "BCL2, BCL6, CD20, CD5, CK 5/6, CK7, CKAE1/AE3" después del punto
+- ✅ Causa: Biomarcador "CAM 5.2" contiene punto interno → patrón terminaba prematuramente
+- ✅ Solución: Termina en punto seguido de espacio + mayúscula (nueva oración) o fin de texto
+- ✅ Patrón nuevo: \.(?:\s+[A-ZÁÉÍÓÚÑ]|$) en lugar de solo \.
+- ✅ Permite: "CAM 5.2. BCL2" (punto interno) pero termina en ". Previa" (nueva oración)
+- ✅ Resuelve: IHQ251026 ahora captura lista completa de 11 biomarcadores
+- ✅ Impacto: Casos con biomarcadores que contienen punto (CAM 5.2, CD 45.1, etc.)
+- 📝 Backups: NO (mejora de patrón regex)
+
+CHANGELOG v6.3.0:
+- ✅ FIX CRÍTICO: PASO 2 en extract_diagnostico_coloracion() capturaba diagnóstico IHQ en lugar de estudio M
+- ✅ Problema: PASO 2 buscaba keywords (NOTTINGHAM, GRADO, CARCINOMA IN SITU) en sección DIAGNÓSTICO completa
+- ✅ Esto capturaba resultados del IHQ actual en lugar del diagnóstico del estudio M previo
+- ✅ Casos afectados: IHQ251020 (confirmado), IHQ250985 (sospechoso), ~20% de casos con Diagnostico Coloracion
+- ✅ Solución PASO 2: Buscar SOLO en DESCRIPCIÓN MACROSCÓPICA (donde se cita el diagnóstico M)
+- ✅ Solución PASO 3: ELIMINADO completamente (buscaba patrones en todo el texto, causaba contaminación)
+- ✅ Impacto: IHQ251020 ANTES: "GRADO NOTTINGHAM: 1..." DESPUÉS: "" (vacío - correcto, no hay estudio M previo)
+- ✅ Casos preservados: 29/35 (82.9%) no afectados, usan patrones de PRIORIDAD correctamente
+- 📝 Backups: medical_extractor.py.backup_bug_paso2_20251108_202733
 
 CHANGELOG v4.2.13:
 - ✅ FIX CRÍTICO: Patrón inmunorreactividad corregido (línea 937)
@@ -115,6 +332,7 @@ Migrado de: core/procesador_ihq.py (funciones extract_ihq_data, patrones PATTERN
 import re
 import os
 import sys
+import logging
 from pathlib import Path
 from typing import Dict, Any, Optional, List
 
@@ -143,9 +361,15 @@ PATTERNS_HUV = {
 # Patrones específicos para datos médicos IHQ
 PATTERNS_IHQ = {
     # CORREGIDO v4.2: Solo detener en encabezados de sección (DESCRIPCIÓN MICROSCÓPICA al inicio de línea)
-    'descripcion_macroscopica_ihq': r'(?:DESCRIPCI\w+N\s+MACROSC\w+PICA)[:\s]+(.*?)(?=\s*(?:^|\n)\s*DESCRIPCI\w+N\s+MICROSC\w+PICA|fin\s+del\s+informe|$)',
-    'descripcion_macroscopica_se_realiza': r'(Se\s+realizan?\s+estudios?\s+de\s+inmunohistoqu[ií]mica.*?)(?=\s*(?:^|\n)\s*DESCRIPCI\w+N\s+MICROSC\w+PICA|fin\s+del\s+informe|$)',
-    'descripcion_macroscopica_se_recibe': r'(Se\s+recibe\s+orden\s+para\s+realización\s+de\s+(?:estudio\s+de\s+)?inmunohistoqu[ií]mica.*?)(?=\s*(?:^|\n)\s*DESCRIPCI\w+N\s+MICROSC\w+PICA|fin\s+del\s+informe|$)',
+    # V6.2.10: FIX IHQ251029 - Cambiar .*? (non-greedy) a .* (greedy) para capturar hasta DESCRIPCIÓN MICROSCÓPICA
+    # V6.2.11: FIX CRÍTICO IHQ251029 - El patrón anterior no funcionaba correctamente
+    # Problema: "Se recibe orden...rotulado \"M2510813\" y\nDESCRIPCIÓN MICROSCÓPICA"
+    # El texto OCR tiene "y" en línea separada, seguido de la palabra "diagnóstico" en otra línea
+    # SOLUCIÓN: Usar lookahead negativo (?!DESCRIPCI\w+N\s+MICROSC\w+PICA) con .+? (lazy)
+    # Esto captura TODO excepto cuando encuentra el título exacto de la siguiente sección
+    'descripcion_macroscopica_ihq': r'(?:DESCRIPCI\w+N\s+MACROSC\w+PICA)[:\s]+(.+?)(?=\s*DESCRIPCI\w+N\s+MICROSC\w+PICA|fin\s+del\s+informe|$)',
+    'descripcion_macroscopica_se_realiza': r'(Se\s+realizan?\s+estudios?\s+de\s+inmunohistoqu[ií]mica.+?)(?=\s*DESCRIPCI\w+N\s+MICROSC\w+PICA|fin\s+del\s+informe|$)',
+    'descripcion_macroscopica_se_recibe': r'(Se\s+recibe\s+orden\s+para\s+(?:realizar|realización\s+de)\s+(?:estudios?\s+de\s+)?inmunohistoqu[ií]mica.+?)(?=\s*DESCRIPCI\w+N\s+MICROSC\w+PICA|fin\s+del\s+informe|$)',
     # v5.3.3: CORREGIDO - Solo detener en DIAGNÓSTICO en MAYÚSCULAS al inicio de línea
     # Patrón: requiere newline + DIAGNÓSTICO (SOLO mayúsculas) + newline
     # NO coincide con "diagnóstico de" (minúsculas en medio de texto)
@@ -170,18 +394,22 @@ PATTERNS_IHQ = {
 }
 
 # Palabras clave de malignidad específicas para IHQ
+# V6.3.77 FIX IHQ250095: Agregar LINFOMA, LEUCEMIA y otras neoplasias hematológicas
 MALIGNIDAD_KEYWORDS_IHQ = [
-    'CARCINOMA', 'ADENOCARCINOMA', 'ADENOCACRINOMA',
+    'CARCINOMA', 'ADENOCARCINOMA', 'ADENOCACRINOMA', 'CARICNOMA',
     'CARCINOIDE', 'CARCINOSARCOMA', 'CORIOCARCINOMA',
     'SARCOMA', 'OSTEOSARCOMA', 'CONDROSARCOMA', 'LIPOSARCOMA',
     'MELANOMA', 'CARCINOMATOSIS', 'METÁSTASIS', 'METASTASIS',
-    'TUMOR MALIGNO', 'NEOPLASIA MALIGNA', 'MALIGNO', 'MALIGNIDAD',
-    'INVASIVO', 'INVASIÓN', 'INFILTRANTE', 'ANAPLÁSICO',
-    'PLEOMÓRFICO', 'ATÍPICO', 'DISPLÁSICO', 'DISPLASIA SEVERA',
+    'TUMOR MALIGNO', 'NEOPLASIA MALIGNA', 'MALIGNO', 'MALIGNIDAD', 'NEOPLASIA',
+    'INVASIVO', 'INVASIÓN', 'INFILTRANTE', 'INFILTRACIÓN',
+    'ANAPLÁSICO',
+    'PLEOMÓRFICO', 'ATÍPICO', 'ATIPIA', 'DISPLÁSICO', 'DISPLASIA SEVERA',
     'ANEUPLOIDE', 'ANEUPLOIDIA', 'CARCINOMA IN SITU', 'CIS',
-    'NEOPLASIA INTRAEPITELIAL', 'NIE', 'NIC', 'LESIÓN INTRAEPITELIAL',
+    'NEOPLASIA INTRAEPITELIAL', 'NIE', r'\bNIC\b', 'LESIÓN INTRAEPITELIAL',
     'GRADO III', 'GRADO 3', 'ALTO GRADO', 'POORLY DIFFERENTIATED',
-    'UNDIFFERENTIATED', 'DEDIFFERENTIATED'
+    'UNDIFFERENTIATED', 'DEDIFFERENTIATED',
+    # V6.3.77: Neoplasias hematológicas
+    'LINFOMA', 'LEUCEMIA', 'MIELOMA', 'PLASMOCITOMA', 'HODGKIN',
 ]
 
 # Palabras clave de benignidad
@@ -192,7 +420,33 @@ BENIGNIDAD_KEYWORDS_IHQ = [
     'CICATRIZ', 'FIBROSIS', 'QUISTE', 'HAMARTOMA',
     'CONDROMA', 'OSTEOMA', 'HEMANGIOMA', 'LEIOMIOMA',
     'FIBROTECOMA', 'TERATOMA MADURO', 'GRADO I', 'GRADO 1',
-    'BAJO GRADO', 'WELL DIFFERENTIATED', 'REACTIVE'
+    'BAJO GRADO', 'WELL DIFFERENTIATED', 'REACTIVE',
+    # V6.2.6: Keywords específicas para casos hematológicos benignos (IHQ251017)
+    'SIN INCREMENTO DE BLASTOS', 'SIN AUMENTO DE BLASTOS',
+    'CELULAS MADURAS', 'CELULARIDAD MADURAS', 'LINFOCITOS MADUROS',
+    'SIN EXPRESION DE INMUNOFENOTIPO ABERRANTE', 'SIN INMUNOFENOTIPO ABERRANTE',
+    'SIN CUMULOS', 'SIN FORMAR ACUMULOS', 'SIN ACUMULOS',
+    'CELULAS PLASMATICAS MADURAS', 'MELANONIQUIA', 'LENTIGOSIS'
+]
+
+# FIX IHQ251018: Patrones de exclusión para casos NO oncológicos
+# Estos casos deben clasificarse como BENIGNO en malignidad
+NON_ONCOLOGICAL_PATTERNS = [
+    r'BIOPSIA\s+DE\s+INJERTO\s+RENAL',
+    r'BIOPSIA\s+RENAL\s+DE\s+TRASPLANTE',
+    r'TRASPLANTE\s+RENAL',
+    r'RECHAZO\s+(?:AGUDO|CR[ÓO]NICO|ACTIVO|HUMORAL)',
+    r'INJURIA\s+TUBULAR\s+AGUDA',
+    r'NEFROPAT[ÍI]A\s+POR\s+(?:BK|CMV|POLIOMAVIRUS)',
+    r'CRISTALES\s+DE\s+OXALATO',
+    r'GLOMERULONEFRITIS',
+    r'NEFRITIS\s+INTERSTICIAL',
+    r'NECROSIS\s+TUBULAR\s+AGUDA',
+    # V6.2.15: FIX IHQ251033 - Enfermedad de Hirsprung (estudio de células ganglionares)
+    r'ENFERMEDAD\s+DE\s+HIRSPRUNG',
+    r'NEGATIV[OA]\s+PARA\s+(?:PRESENCIA\s+DE\s+)?C[EÉ]LULAS\s+GANGLIONARES',
+    r'AUSENCIA\s+DE\s+C[EÉ]LULAS\s+GANGLIONARES',
+    r'SIN\s+C[EÉ]LULAS\s+GANGLIONARES'
 ]
 
 # Mapeo de órganos específicos
@@ -404,9 +658,62 @@ def extract_diagnostico_coloracion(text: str) -> str:
         # Patrón 3: de "DIAGNOSTICO" (sin punto)
         text = re.sub(r'^de\s+"([^"]+)"', r'\1', text, flags=re.IGNORECASE)
 
+        # V6.3.61 FIX IHQ250075: Limpiar "DE \"" al inicio (mayúsculas)
+        # Caso: 'DE "PERITONITIS AGUDA Y CRONICA, GRUPOS...' → 'PERITONITIS AGUDA Y CRÓNICA'
+        text = re.sub(r'^DE\s+"', '', text)
+
+        # V6.3.61 FIX IHQ250075: Extraer solo diagnóstico principal (hasta primera coma con contexto extra)
+        # "PERITONITIS AGUDA Y CRONICA, GRUPOS DE CELULAS..." → "PERITONITIS AGUDA Y CRÓNICA"
+        match_peritonitis = re.match(r'(PERITONITIS\s+AGUDA\s+Y\s+CR[ÓO]NICA)(?:,|\s+GRUPOS)', text)
+        if match_peritonitis:
+            text = match_peritonitis.group(1)
+
         # Eliminar espacios múltiples resultantes
         text = re.sub(r'\s{2,}', ' ', text)
         text = text.strip()
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -3.75: V6.2.9 - Diagnóstico morfológico en DESCRIPCION_MICROSCOPICA (IHQ251029)
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Diagnóstico morfológico (coloración H&E) antes de solicitar IHQ
+    # Formato: diagnóstico "LOS HALLAZGOS MORFOLOGICOS FAVORECEN UN TUMOR NEUROENDOCRINO". Previa revisión...se solicitan coloraciones
+    # Este es el diagnóstico del estudio de coloración (NO el de IHQ)
+
+    patron_diagnostico_morfologico = r'diagn[óo]stico\s+"([^"]+)"\.\s*Previa\s+revisi[óo]n.*?se\s+solicitan?\s+coloraciones?\s+inmunohistoqu[íi]micas?'
+    match_diagnostico_morfologico = re.search(patron_diagnostico_morfologico, text, re.IGNORECASE | re.DOTALL)
+
+    if match_diagnostico_morfologico:
+        diagnostico_morfologico = match_diagnostico_morfologico.group(1).strip()
+        # Normalizar espacios y saltos de línea
+        diagnostico_morfologico = ' '.join(diagnostico_morfologico.split())
+        # Convertir a mayúsculas para consistencia
+        diagnostico_morfologico = diagnostico_morfologico.upper()
+        # Validar que tiene contenido significativo
+        if len(diagnostico_morfologico) > 10:
+            return diagnostico_morfologico
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -3.76: V6.4.45 - FIX IHQ250182: Diagnósticos de estudio M previo citado directamente
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Médula ósea con diagnóstico del estudio M previo citado en descripción microscópica
+    # Formato: diagnósticos de "CELULARIDAD DEL 50%, MADURACION NORMAL DE LAS TRES LINEAS CELULARES..."
+    # Este es el diagnóstico del estudio de coloración H&E de médula ósea que motiva el IHQ
+    # NOTA: Puede ser "diagnóstico" (singular) o "diagnósticos" (plural)
+
+    patron_diagnosticos_de = r'diagn[óo]sticos?\s+de\s+["\'\u201c\u201d]([^"\'\u201c\u201d]+)["\'\u201c\u201d]'
+    match_diagnosticos_de = re.search(patron_diagnosticos_de, text, re.IGNORECASE | re.DOTALL)
+
+    if match_diagnosticos_de:
+        diagnostico_de = match_diagnosticos_de.group(1).strip()
+        # Normalizar espacios y saltos de línea
+        diagnostico_de = ' '.join(diagnostico_de.split())
+        # Convertir a mayúsculas para consistencia
+        diagnostico_de = diagnostico_de.upper()
+        # Limpiar puntos y comas finales
+        diagnostico_de = diagnostico_de.rstrip('.,').strip()
+        # Validar que tiene contenido significativo
+        if len(diagnostico_de) > 10:
+            return diagnostico_de
 
     # ═══════════════════════════════════════════════════════════════════════════
     # PRIORIDAD -3.5: V6.2.1 - Diagnóstico del estudio M entre comillas ANTES de INFORME PRELIMINAR (IHQ251002)
@@ -430,6 +737,134 @@ def extract_diagnostico_coloracion(text: str) -> str:
             return diagnostico_previo
 
     # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -3.85: V6.4.0 - Diagnóstico con preposición "con" (IHQ250013)
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Bloque M con diagnóstico usando "con" en lugar de "de"
+    # Formato: con diagnóstico con "LESIÓN FUSOCELULAR BIEN DIFERENCIADA"
+    # Variante del patrón estándar donde hay doble "con" en lugar de "con... de"
+
+    patron_diagnostico_con_con = r'con\s+diagn[óo]stico\s+con\s+["\'\u201c\u201d]([^"\'\u201c\u201d]+)["\'\u201c\u201d]'
+    match_diagnostico_con = re.search(patron_diagnostico_con_con, text, re.IGNORECASE | re.DOTALL)
+
+    if match_diagnostico_con:
+        diagnostico_con = match_diagnostico_con.group(1).strip()
+        # Normalizar espacios y saltos de línea
+        diagnostico_con = ' '.join(diagnostico_con.split())
+        # Convertir a mayúsculas para consistencia
+        diagnostico_con = diagnostico_con.upper()
+        # Limpiar puntos y comas finales
+        diagnostico_con = diagnostico_con.rstrip('.,').strip()
+        # Validar que tiene contenido significativo
+        if len(diagnostico_con) > 10:
+            return diagnostico_con
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -3.95: V6.3.23 - FIX IHQ250022: Diagnóstico con "se ordenan estudios"
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Biopsia con diagnóstico del estudio M previo que motiva orden de IHQ
+    # Formato: biopsia de [órgano] con diagnóstico de "DIAGNOSTICO", se ordenan estudios
+    # Ejemplo: biopsia de endometrio con diagnóstico de "HIPERPLASIA GLANDULA ATÍPICA", se ordenan estudios
+    # NO requiere código M, es el diagnóstico que motivó la orden de IHQ
+
+    patron_diagnostico_se_ordenan = r'biopsia\s+de\s+\w+\s+con\s+diagn[óo]stico\s+de\s+["\'\u201c\u201d]([^"\'\u201c\u201d]+)["\'\u201c\u201d]\s*,\s*se\s+ordenan?\s+estudios?'
+    match_diagnostico_ordenan = re.search(patron_diagnostico_se_ordenan, text, re.IGNORECASE | re.DOTALL)
+
+    if match_diagnostico_ordenan:
+        diagnostico_ordenan = match_diagnostico_ordenan.group(1).strip()
+        # Normalizar espacios y saltos de línea
+        diagnostico_ordenan = ' '.join(diagnostico_ordenan.split())
+        # Convertir a mayúsculas para consistencia
+        diagnostico_ordenan = diagnostico_ordenan.upper()
+        # Limpiar puntos y comas finales
+        diagnostico_ordenan = diagnostico_ordenan.rstrip('.,').strip()
+        # Validar que tiene contenido significativo
+        if len(diagnostico_ordenan) > 10:
+            return diagnostico_ordenan
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -3.9: V6.2.15 - Diagnóstico sin código M (IHQ251033)
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Material externo/revisión sin código M pero con diagnóstico previo
+    # Formato: "Biopsia rectal" con diagnóstico de "CAMBIOS INFLAMATORIOS Y REACTIVOS"
+    # Formato: "Biopsia pleura y pulmón" con diagnósticos de "NEOPLASIA..." (plural)
+    # Patrón simple: "[DESCRIPCIÓN]" con diagnóstico(s) de "[DIAGNÓSTICO]"
+    # NO requiere código M, captura casos con códigos alternativos (JIU-XXX, etc.)
+    # V6.X.X: Soporta plural "diagnósticos" (IHQ250003)
+
+    patron_diagnostico_sin_codigo_m = r'["\'\u201c\u201d]([^"\'\u201c\u201d]+)["\'\u201c\u201d]\s+con\s+diagn[óo]sticos?\s+de\s+["\'\u201c\u201d]([^"\'\u201c\u201d]+)["\'\u201c\u201d]'
+    match_diagnostico_sin_m = re.search(patron_diagnostico_sin_codigo_m, text, re.IGNORECASE | re.DOTALL)
+
+    if match_diagnostico_sin_m:
+        diagnostico_sin_m = match_diagnostico_sin_m.group(2).strip()
+        # Normalizar espacios y saltos de línea
+        diagnostico_sin_m = ' '.join(diagnostico_sin_m.split())
+        # Convertir a mayúsculas para consistencia
+        diagnostico_sin_m = diagnostico_sin_m.upper()
+        # Limpiar puntos y comas finales
+        diagnostico_sin_m = diagnostico_sin_m.rstrip('.,').strip()
+        # Validar que tiene contenido significativo
+        if len(diagnostico_sin_m) > 10:
+            return diagnostico_sin_m
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -3.89: V6.4.11 - FIX IHQ250148: Casos externos con "correspondientes a... y con diagnóstico de"
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Material externo de otra institución con diagnóstico previo
+    # Formato: correspondientes a "A. Próstata lado derecho y B. Próstata lado izquierdo" y con diagnóstico de "cambios de hiperplasia..."
+    # Patrón: correspondientes a "[DESCRIPCIÓN]" y con diagnóstico de "[DIAGNÓSTICO]"
+    # Este patrón captura casos externos donde se cita el diagnóstico previo de la institución de origen
+
+    patron_casos_externos = r'correspondientes?\s+a\s+["\'\u201c\u201d]([^"\'\u201c\u201d]+)["\'\u201c\u201d]\s+y\s+con\s+diagn[óo]stico\s+de\s+["\'\u201c\u201d]([^"\'\u201c\u201d]+)["\'\u201c\u201d]'
+    match_casos_externos = re.search(patron_casos_externos, text, re.IGNORECASE | re.DOTALL)
+
+    if match_casos_externos:
+        diagnostico_externo = match_casos_externos.group(2).strip()
+        # Normalizar espacios y saltos de línea
+        diagnostico_externo = ' '.join(diagnostico_externo.split())
+        # Convertir a mayúsculas para consistencia
+        diagnostico_externo = diagnostico_externo.upper()
+        # Limpiar puntos y comas finales
+        diagnostico_externo = diagnostico_externo.rstrip('.,').strip()
+        # Validar que tiene contenido significativo
+        if len(diagnostico_externo) > 10:
+            return diagnostico_externo
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -3.88: V6.3.51 - FIX IHQ250055/IHQ250056: Diagnóstico con código rótulo + "diagnóstico de"
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Estudio previo citado con formato completo (código M o Q o cualquier otro)
+    # Formato IHQ250055: M2500429... diagnóstico de "HIPERPLASIA SINUSOIDAL"
+    # Formato IHQ250056: Q24-3525... diagnóstico de "HIPERPLASIA"
+    # Patrón: rótulo [CODIGO] + ... + diagnóstico de "DIAGNOSTICO"
+
+    # Patrón 1: Código M + 7 dígitos (formato interno HUV)
+    # V6.4.11: FIX IHQ250121 - Comillas de cierre opcionales (OCR a veces las omite)
+    # Captura hasta comilla, punto o salto de línea (lo que ocurra primero)
+    patron_m_diagnostico_de = r'M\d{7}.*?diagn[óo]stico\s+de\s+["\'\u201c\u201d]([^"\'\u201c\u201d.]+)["\'\u201c\u201d]?'
+    match_m_diagnostico = re.search(patron_m_diagnostico_de, text, re.IGNORECASE | re.DOTALL)
+
+    if match_m_diagnostico:
+        diagnostico_m = match_m_diagnostico.group(1).strip()
+        diagnostico_m = ' '.join(diagnostico_m.split())
+        diagnostico_m = diagnostico_m.upper()
+        diagnostico_m = diagnostico_m.rstrip('.,').strip()
+        if len(diagnostico_m) > 5:  # V6.3.51: reducido de 10 a 5 para capturar "HIPERPLASIA"
+            return diagnostico_m
+
+    # Patrón 2: V6.3.51 FIX IHQ250056 - Código genérico (Q24-3525, etc.)
+    # Busca: rótulo [cualquier_codigo]... diagnóstico de "..."
+    patron_rotulo_diagnostico = r'r[óo]tulo\s+[A-Z0-9\-]+.*?diagn[óo]stico\s+de\s+["\'\u201c\u201d]([^"\'\u201c\u201d]+)["\'\u201c\u201d]'
+    match_rotulo = re.search(patron_rotulo_diagnostico, text, re.IGNORECASE | re.DOTALL)
+
+    if match_rotulo:
+        diagnostico_rotulo = match_rotulo.group(1).strip()
+        diagnostico_rotulo = ' '.join(diagnostico_rotulo.split())
+        diagnostico_rotulo = diagnostico_rotulo.upper()
+        diagnostico_rotulo = diagnostico_rotulo.rstrip('.,').strip()
+        if len(diagnostico_rotulo) > 5:
+            return diagnostico_rotulo
+
+    # ═══════════════════════════════════════════════════════════════════════════
     # PRIORIDAD -3: V4.2.7 - Tumores gliales con patrón "LESIÓN NEOPLÁSICA... A CLASIFICAR" (IHQ250993)
     # ═══════════════════════════════════════════════════════════════════════════
     # Caso: Tumores cerebrales/gliales con diagnóstico en formato "LESIÓN NEOPLÁSICA DE ORIGEN [tipo] A CLASIFICAR"
@@ -449,21 +884,138 @@ def extract_diagnostico_coloracion(text: str) -> str:
         return diagnostico_glial
 
     # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -2.75: V6.2.8 - Bloque con comillas separadas (IHQ251026)
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Bloque M con comillas DESPUÉS del código de bloque
+    # Formato: bloque A" que corresponde a "biopsia..." y con diagnóstico de "DIAGNOSTICO"
+    # Ejemplo: "M2511122 bloque A" que corresponde a "biopsia de lesión en esfenoides" y con diagnóstico de "SINOSOPATIA..."
+
+    patron_bloque_comillas_separadas = r'bloque\s+[A-Z0-9]+["\'\u201c\u201d]\s+que\s+corresponden?\s+a\s+["\'\u201c\u201d][^"\'\u201c\u201d]+["\'\u201c\u201d]\s+y\s+con\s+diagn[óo]stico\s+de\s+["\'\u201c\u201d\s]+(.*?)["\'\u201c\u201d]'
+    match_comillas_separadas = re.search(patron_bloque_comillas_separadas, text, re.IGNORECASE | re.DOTALL)
+
+    if match_comillas_separadas:
+        diagnostico_m = match_comillas_separadas.group(1).strip()
+        # Normalizar espacios y saltos de línea
+        diagnostico_m = ' '.join(diagnostico_m.split())
+        # Convertir a mayúsculas para consistencia
+        diagnostico_m = diagnostico_m.upper()
+        # Limpiar puntos finales
+        diagnostico_m = diagnostico_m.rstrip('.').strip()
+        # Validar que tiene contenido significativo
+        if len(diagnostico_m) > 10:
+            return diagnostico_m
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -2.64: V6.5.14 - FIX IHQ250235: Código M entre comillas + que corresponde a "[DESCRIPCIÓN]"
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Material con código M ENTRE COMILLAS seguido de descripción en comillas
+    # Formato: rotulado como "M[número]" que corresponde a "[DESCRIPCIÓN/DIAGNÓSTICO]"
+    # Ejemplo: rotulado como "M2502235" que corresponde a "biopsia de medula ósea"
+    # Diferencia con -2.65: Este patrón captura casos donde el código M ESTÁ entre comillas
+    # Captura descripciones de tipo de muestra (biopsia, aspirado) o diagnósticos directos
+    # Mínimo 5 caracteres para capturar descripciones cortas pero válidas
+
+    patron_m_entrecomillado = r"rotulado\s+como\s+[\"'“”]M[\dA-Z-]+[\"'“”]\s+que\s+corresponden?\s+a\s+[\"'“”]([^\"'“”]{5,300})[\"'“”]"
+    match_m_entrecomillado = re.search(patron_m_entrecomillado, text, re.IGNORECASE | re.DOTALL)
+
+    if match_m_entrecomillado:
+        descripcion_m = match_m_entrecomillado.group(1).strip()
+        # Normalizar espacios y saltos de línea
+        descripcion_m = ' '.join(descripcion_m.split())
+        # Convertir a mayúsculas para consistencia
+        descripcion_m = descripcion_m.upper()
+        # Validar que tiene contenido significativo (mínimo 5 caracteres)
+        if len(descripcion_m) >= 5:
+            return descripcion_m
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -2.65: V6.4.80 - FIX IHQ250214: Diagnóstico directo sin "con diagnóstico de"
+    # V6.4.81 - REFINADO: Limitar captura a 300 caracteres para evitar capturar secciones completas
+    # V6.4.82 - FIX FINAL: Capturar hasta comilla de cierre, no requiere punto específico
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Bloque M con diagnóstico directamente entre comillas, sin "con diagnóstico de"
+    # Formato: M[número] que corresponde a "[DIAGNOSTICO]"
+    # Ejemplo: M2501390 que corresponde a "ADENOCARCINOMA MUCINOSO INVASIVO CON COMPROMISO DEL\nPERITONEO VISCERAL"
+    # CRÍTICO: [^"] captura TODO entre comillas (permite \n y puntos), se detiene en comilla de cierre
+    # Diferencia con -2.7: Este NO requiere "con diagnóstico de", captura diagnóstico directo en comillas
+
+    patron_m_directo = r'M[\dA-Z-]+\s+que\s+corresponden?\s+a\s+"([^"]{10,300})"'
+    match_m_directo = re.search(patron_m_directo, text, re.IGNORECASE | re.DOTALL)
+
+    if match_m_directo:
+        diagnostico_directo = match_m_directo.group(1).strip()
+        # Normalizar espacios y saltos de línea
+        diagnostico_directo = ' '.join(diagnostico_directo.split())
+        # Convertir a mayúsculas para consistencia
+        diagnostico_directo = diagnostico_directo.upper()
+        # Validar que tiene contenido significativo
+        if len(diagnostico_directo) > 10:
+            return diagnostico_directo
+
+    # V6.4.83 FIX IHQ250214: Fallback para diagnóstico sin comilla de cierre
+    # Caso: OCR no capturó comilla de cierre después del diagnóstico
+    # Formato: M[número] que corresponde a "[DIAGNOSTICO]. (sin comilla de cierre)
+    # Capturar hasta primer punto después de comilla de apertura, máximo 300 caracteres
+    patron_m_sin_cierre = r'M[\dA-Z-]+\s+que\s+corresponden?\s+a\s+"(.{10,300}?)\.'
+    match_m_sin_cierre = re.search(patron_m_sin_cierre, text, re.IGNORECASE | re.DOTALL)
+
+    if match_m_sin_cierre:
+        diagnostico_directo = match_m_sin_cierre.group(1).strip()
+        # Normalizar espacios y saltos de línea
+        diagnostico_directo = ' '.join(diagnostico_directo.split())
+        # Convertir a mayúsculas para consistencia
+        diagnostico_directo = diagnostico_directo.upper()
+        # Validar que tiene contenido significativo
+        if len(diagnostico_directo) > 10:
+            return diagnostico_directo
+
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -2.66: V6.5.15 - FIX IHQ250235: M code SIN comillas + descripción SIN comillas
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Material con código M SIN COMILLAS seguido de descripción SIN COMILLAS
+    # Formato: rotulado como M[número] que corresponde a [DESCRIPCIÓN]
+    # Ejemplo: rotulado como M2502235 que corresponde a biopsia de medula ósea
+    # Diferencia con v6.5.14: Ni el código M ni la descripción tienen comillas
+    # Captura hasta punto o salto de línea, mínimo 5 caracteres
+    # IMPORTANTE: Este patrón viene ANTES de -2.7 para evitar que capture demasiado texto
+
+    patron_m_sin_comillas = r'rotulado\s+como\s+M[\dA-Z-]+\s+que\s+corresponden?\s+a\s+(.+?)\\.'
+    match_m_sin_comillas = re.search(patron_m_sin_comillas, text, re.IGNORECASE)
+
+    if match_m_sin_comillas:
+        descripcion_m = match_m_sin_comillas.group(1).strip()
+        # Limpiar hasta el primer punto o salto de línea
+        descripcion_m = descripcion_m.split('.')[0].strip()
+        # Normalizar espacios
+        descripcion_m = ' '.join(descripcion_m.split())
+        # Convertir a mayúsculas para consistencia
+        descripcion_m = descripcion_m.upper()
+        # Validar longitud mínima (5 caracteres)
+        if len(descripcion_m) >= 5:
+            return descripcion_m
+    # ═══════════════════════════════════════════════════════════════════════════
     # PRIORIDAD -2.7: V4.2.10 - Diagnóstico del bloque M previo (IHQ250995, IHQ250999)
     # ═══════════════════════════════════════════════════════════════════════════
     # Caso: Descripción macroscópica cita diagnóstico del estudio M previo con formato específico
     # Patrón: "como/rotulado como M[NUMERO]" ... "con diagnóstico de " [DIAGNOSTICO]""
     # Ejemplo 1: 'como "M250332" que corresponde a "biopsia de próstata" con diagnóstico de " PROLIFERACIÓN ACINAR ATÍPICA (ASAP)"'
     # Ejemplo 2: 'rotulado M2510623-A3, el cual corresponde a "Biopsia de mama derecha", con diagnostico de " LESIÓN NEOPLÁSICA..."'
+    # Ejemplo 3: 'bloque M2510185-6 y M2510185-10, que corresponden a "tumor mediastinal" con diagnóstico de "TUMOR FUSOCELULAR..."' (IHQ251012)
     # Soporta comillas Unicode y ASCII
     # V6.1.1: Patrón más flexible para soportar variaciones (IHQ250999)
+    # V6.2.2: Soporta bloques múltiples separados por "y" (IHQ251012)
 
     # Patrón flexible: capturar todo hasta comilla de cierre, incluyendo saltos de línea y paréntesis
-    # Soporta: "rotulado como M123", "rotulado M123", "como M123"
-    # Soporta: "que corresponde", "el cual corresponde"
+    # Soporta: "rotulado como M123", "rotulado M123", "como M123", "bloque M123"
+    # Soporta: "que corresponde", "el cual corresponde", "que corresponden" (plural)
     # Soporta: números con guiones y letras (M2510623-A3)
+    # Soporta: múltiples bloques separados por "y" (M123-6 y M123-10)
     # Soporta: espacios antes de coma (M123 ,)
-    patron_bloque_m = r'(?:rotulado\s+)?(?:como\s+)?["\'\u201c\u201d]?M[\dA-Z-]+["\'\u201c\u201d]?\s*[,\s]+(?:el\s+cual\s+|que\s+)?corresponde\s+a\s+["\'\u201c\u201d][^"\'\u201c\u201d]+["\'\u201c\u201d]\s*,?\s*con\s+diagn[óo]stico\s+de\s+["\'\u201c\u201d\s]+(.*?)["\'\u201c\u201d]'
+    # V6.2.8: Soporta "y con diagnóstico" (IHQ251026)
+    # V6.3.10: Soporta "corresponde aspirado biopsia" sin "a" después de corresponde (IHQ250012)
+    # V6.3.11: Patrón simplificado para capturar cualquier texto entre "corresponde" y "con diagnóstico" (IHQ250012)
+    patron_bloque_m = r'(?:rotulado\s+)?(?:como\s+)?(?:bloque\s+)?["\'\u201c\u201d]?M[\dA-Z-]+(?:\s+y\s+M[\dA-Z-]+)?["\'\u201c\u201d]?\s*[,\s]+(?:el\s+cual\s+|que\s+)?corresponden?\s+(?:a\s+)?.+?\s+con\s+diagn[óo]stico\s+de\s+["\'\u201c\u201d\s]+(.*?)["\'\u201c\u201d]'
     match_bloque_m = re.search(patron_bloque_m, text, re.IGNORECASE | re.DOTALL)
 
     if match_bloque_m:
@@ -473,6 +1025,30 @@ def extract_diagnostico_coloracion(text: str) -> str:
         # Convertir a mayúsculas para consistencia
         diagnostico_m = diagnostico_m.upper()
         # Limpiar SOLO comillas y puntos finales, NO paréntesis (necesarios para ASAP)
+        diagnostico_m = diagnostico_m.rstrip('."\'\u201d\u201c').strip()
+        # Validar que tiene contenido significativo
+        if len(diagnostico_m) > 10:
+            return diagnostico_m
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -2.65: V6.2.6 - Diagnóstico bloque M con formato flexible (IHQ251017)
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: Biopsias de médula ósea y otros casos donde el diagnóstico del bloque M
+    # puede tener comillas de cierre o estar entre comillas completas
+    # Patrón: "bloque M[NUM]" ... "y con diagnóstico de \"CELULARIDAD...\""
+    # Soporta "y con diagnóstico" y "con diagnóstico"
+    # Captura hasta comilla de cierre
+
+    patron_bloque_m_sin_cierre = r'(?:rotulado\s+)?(?:como\s+)?(?:bloque\s+)?["\'\u201c\u201d]?M[\dA-Z-]+(?:\s+y\s+M[\dA-Z-]+)?["\'\u201c\u201d]?\s*[,\s]+(?:el\s+cual\s+|que\s+)?corresponden?\s+a\s+["\'\u201c\u201d][^"\'\u201c\u201d]+["\'\u201c\u201d]\s*,?\s*y?\s*con\s+diagn[óo]stico\s+de\s+["\'\u201c\u201d](.*?)["\'\u201c\u201d]'
+    match_bloque_m_sin_cierre = re.search(patron_bloque_m_sin_cierre, text, re.IGNORECASE | re.DOTALL)
+
+    if match_bloque_m_sin_cierre:
+        diagnostico_m = match_bloque_m_sin_cierre.group(1).strip()
+        # Normalizar espacios y saltos de línea
+        diagnostico_m = ' '.join(diagnostico_m.split())
+        # Convertir a mayúsculas para consistencia
+        diagnostico_m = diagnostico_m.upper()
+        # Limpiar comillas y puntos finales
         diagnostico_m = diagnostico_m.rstrip('."\'\u201d\u201c').strip()
         # Validar que tiene contenido significativo
         if len(diagnostico_m) > 10:
@@ -574,6 +1150,23 @@ def extract_diagnostico_coloracion(text: str) -> str:
             return diagnostico_candidato
 
     # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -0.4: V6.3.63 FIX IHQ250083 - Diagnóstico SIN comillas seguido de ". Se selecciona/ordenan"
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Caso: diagnóstico de ADENOCARCINOMA METASTASICO. Se selecciona el bloque 1,
+    # Formato: diagnóstico de [DIAGNOSTICO]. Se selecciona/ordenan
+    # Sin comillas, terminado por punto + "Se selecciona" o "Se ordenan"
+    patron_sin_comillas_se = r'diagn[óo]stico\s+de\s+([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s]+?)[\.\,]\s*(?:Se\s+selecciona|Se\s+ordenan)'
+    match_sin_comillas = re.search(patron_sin_comillas_se, text, re.IGNORECASE)
+
+    if match_sin_comillas:
+        diagnostico_candidato = match_sin_comillas.group(1).strip()
+        # Normalizar espacios
+        diagnostico_candidato = ' '.join(diagnostico_candidato.split())
+        # Validar longitud mínima
+        if len(diagnostico_candidato) > 10:
+            return diagnostico_candidato
+
+    # ═══════════════════════════════════════════════════════════════════════════
     # PRIORIDAD 0: V6.0.15 - Buscar "Diagnóstico Inicial:" en DESCRIPCIÓN MACROSCÓPICA (IHQ250984)
     # ═══════════════════════════════════════════════════════════════════════════
     # Caso específico: el diagnóstico del Estudio M aparece con label "Diagnóstico Inicial:"
@@ -618,32 +1211,46 @@ def extract_diagnostico_coloracion(text: str) -> str:
             return diagnostico_candidato
 
     # ═══════════════════════════════════════════════════════════════════════════
-    # PASO 2: Buscar en la sección DIAGNÓSTICO
+    # PASO 2: Buscar en DESCRIPCIÓN MACROSCÓPICA (sin comillas pero con keywords)
     # ═══════════════════════════════════════════════════════════════════════════
-    # Si no está en DESC. MACROSCÓPICA, buscar líneas con keywords en DIAGNÓSTICO
+    # V6.3.0 FIX BUG CRÍTICO: PASO 2 anterior buscaba en sección DIAGNÓSTICO completa,
+    # capturando información del resultado IHQ en lugar del diagnóstico del estudio M previo.
+    #
+    # Bug identificado: IHQ251020, IHQ250985 (y posiblemente 5 casos más)
+    # 20% de casos con Diagnostico Coloracion estaban afectados
+    #
+    # Solución: Buscar SOLO en DESCRIPCIÓN MACROSCÓPICA (donde se cita el diagnóstico M)
+    # NO buscar en sección DIAGNÓSTICO (que contiene el resultado IHQ)
+    #
+    # Casos afectados conocidos:
+    # - IHQ251020: Material extrainstitucional sin estudio M previo
+    #   ANTES: "GRADO HISTOLÓGICO NOTTINGHAM: 1 (5 PUNTOS) Carcinoma ductal in situ..."
+    #   DESPUÉS: "" (vacío - correcto, no hay estudio M previo)
 
-    patron_diagnostico = r'DIAGN[ÓO]STICO\s*\n(.*?)(?=\n\s*[A-Z]{3,}:|\Z)'
-    match_diagnostico = re.search(patron_diagnostico, text, re.DOTALL | re.IGNORECASE)
+    # Extraer solo la sección DESCRIPCIÓN MACROSCÓPICA
+    patron_desc_macro = r'DESCRIPCI[ÓO]N\s+MACROSC[ÓO]PICA\s*\n(.*?)(?=DESCRIPCI[ÓO]N\s+MICROSC[ÓO]PICA|DIAGN[ÓO]STICO|$)'
+    match_desc_macro = re.search(patron_desc_macro, text, re.DOTALL | re.IGNORECASE)
 
-    if match_diagnostico:
-        texto_diagnostico = match_diagnostico.group(1).strip()
-        lineas = texto_diagnostico.split('\n')
+    if match_desc_macro:
+        texto_desc_macro = match_desc_macro.group(1).strip()
+        lineas = texto_desc_macro.split('\n')
 
         # Buscar líneas que contengan keywords del Estudio M
         candidatos = []
         keywords_estudio_m = ['NOTTINGHAM', 'GRADO', 'INVASIÓN LINFOVASCULAR', 'INVASIÓN PERINEURAL',
-                              'CARCINOMA DUCTAL IN SITU', 'CARCINOMA IN SITU']
+                              'CARCINOMA DUCTAL IN SITU', 'CARCINOMA IN SITU', 'INVASIVO', 'INFILTRANTE']
 
         for linea in lineas:
             linea_limpia = linea.strip().lstrip('- ').strip()
 
-            # Ignorar líneas cortas o que son biomarcadores IHQ
-            if len(linea_limpia) < 15:
+            # Ignorar líneas muy cortas
+            if len(linea_limpia) < 20:
                 continue
 
-            es_biomarcador = re.search(r'(RECEPTOR|HER|KI-67|P53|TTF|CK\d+|CD\d+)\s*[:\s]+(POSITIVO|NEGATIVO|\d+%)',
-                                       linea_limpia, re.IGNORECASE)
-            if es_biomarcador:
+            # Ignorar líneas que son solo metadata o procedimientos
+            es_metadata = re.search(r'^(Se\s+recibe|Previa\s+revisi[óo]n|todo\s+se\s+destin[óo]|se\s+realiz)',
+                                    linea_limpia, re.IGNORECASE)
+            if es_metadata:
                 continue
 
             # Verificar si tiene keywords del Estudio M
@@ -654,60 +1261,74 @@ def extract_diagnostico_coloracion(text: str) -> str:
 
         # Concatenar todas las líneas candidatas (el diagnóstico puede ser multilinea)
         if candidatos:
-            return ' '.join(candidatos)
+            resultado = ' '.join(candidatos)
+            # Validar que no es solo un fragmento pequeño (evitar falsos positivos)
+            if len(resultado) > 30:
+                return resultado
 
     # ═══════════════════════════════════════════════════════════════════════════
-    # PASO 3: Buscar patrones específicos en todo el texto
+    # PASO 3: ELIMINADO (v6.3.0)
     # ═══════════════════════════════════════════════════════════════════════════
-
-    # Patrón 1: CARCINOMA ... GRADO NOTTINGHAM ... INVASIÓN ...
-    patron_completo = r'((?:CARCINOMA|ADENOCARCINOMA)[^.\n]*?NOTTINGHAM[^.\n]*?INVASI[ÓO]N[^.]+\.)'
-    match_completo = re.search(patron_completo, text, re.IGNORECASE | re.DOTALL)
-
-    if match_completo:
-        return match_completo.group(1).strip()
-
-    # Patrón 2: Buscar componentes individuales y concatenar
-    componentes = {}
-
-    # Diagnóstico base
-    patron_base = r'((?:CARCINOMA|ADENOCARCINOMA)[A-ZÁÉÍÓÚÑ\s]+?(?:INVASIVO|INFILTRANTE|IN SITU))'
-    match_base = re.search(patron_base, text, re.IGNORECASE)
-    if match_base:
-        componentes['base'] = match_base.group(1).strip()
-
-    # Grado Nottingham
-    patron_nottingham = r'(GRADO\s+NOTTINGHAM\s+\d+(?:\s*\(SCORE\s+\d+\))?)'
-    match_nottingham = re.search(patron_nottingham, text, re.IGNORECASE)
-    if match_nottingham:
-        componentes['nottingham'] = match_nottingham.group(1).strip()
-
-    # Invasión linfovascular
-    patron_linfovascular = r'(INVASI[ÓO]N\s+LINFOVASCULAR\s*[:\s]+(NEGATIVO|POSITIVO|NO|SI))'
-    match_linfovascular = re.search(patron_linfovascular, text, re.IGNORECASE)
-    if match_linfovascular:
-        componentes['linfovascular'] = match_linfovascular.group(1).strip()
-
-    # Invasión perineural
-    patron_perineural = r'(INVASI[ÓO]N\s+PERINEURAL\s*[:\s]+(NEGATIVO|POSITIVO|NO|SI))'
-    match_perineural = re.search(patron_perineural, text, re.IGNORECASE)
-    if match_perineural:
-        componentes['perineural'] = match_perineural.group(1).strip()
-
-    # Carcinoma in situ
-    patron_in_situ = r'(CARCINOMA\s+(?:DUCTAL\s+)?IN\s+SITU\s*[:\s]+(NO|SI|NEGATIVO|POSITIVO))'
-    match_in_situ = re.search(patron_in_situ, text, re.IGNORECASE)
-    if match_in_situ:
-        componentes['in_situ'] = match_in_situ.group(1).strip()
-
-    # Concatenar componentes en orden lógico
-    if componentes:
-        orden = ['base', 'nottingham', 'linfovascular', 'perineural', 'in_situ']
-        partes = [componentes[k] for k in orden if k in componentes]
-        return ', '.join(partes)
+    # Bug: Este paso buscaba patrones genéricos (NOTTINGHAM, INVASIÓN, etc.) en TODO el texto,
+    # capturando información del diagnóstico IHQ en lugar del diagnóstico del estudio M.
+    #
+    # Casos afectados: IHQ251020, IHQ250985, posiblemente otros
+    #
+    # Solución: Eliminar este paso. Si el diagnóstico M no está en desc. macroscópica
+    # mediante patrones de PRIORIDAD o PASO 1/2, entonces retornar vacío.
+    #
+    # Justificación:
+    # - El diagnóstico del estudio M SIEMPRE debe estar citado en DESCRIPCIÓN MACROSCÓPICA
+    # - Si no está ahí, NO existe estudio M previo (ej: material extrainstitucional directo a IHQ)
+    # - Buscar en todo el texto causa contaminación con resultados del IHQ actual
 
     # Si no se encontró nada, retornar vacío
     return ''
+
+
+# V6.2.13: Wrapper para asegurar normalización FINAL de diagnostico_coloracion
+def extract_diagnostico_coloracion_wrapper(text: str) -> str:
+    """Wrapper que asegura normalización final del diagnóstico de coloración
+
+    V6.2.13: FIX IHQ251030 - Algunos patrones retornan sin normalizar saltos de línea
+    V6.3.2: FIX IHQ250005 - Elimina frases introductorias "LOS HALLAZGOS... SON COMPATIBLES CON"
+    V6.3.17: FIX IHQ250017 - Corrección ortográfica "ADENOCACRINOMA" → "ADENOCARCINOMA"
+    Este wrapper garantiza que SIEMPRE se normalicen saltos de línea antes de retornar
+    """
+    resultado = extract_diagnostico_coloracion(text)
+
+    if resultado and resultado != "NO APLICA":
+        # Normalizar saltos de línea y espacios múltiples
+        resultado = ' '.join(resultado.split())
+
+        # V6.3.17: FIX IHQ250017 - Corrección ortográfica común en OCR
+        # "ADENOCACRINOMA" (error OCR) -> "ADENOCARCINOMA" (correcto)
+        resultado = resultado.replace('ADENOCACRINOMA', 'ADENOCARCINOMA')
+        resultado = resultado.replace('adenocacrinoma', 'adenocarcinoma')
+        resultado = resultado.replace('Adenocacrinoma', 'Adenocarcinoma')
+
+        # V6.3.2: FIX IHQ250005 - Eliminar frases introductorias comunes
+        # "LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON ADENOCARCINOMA..."
+        # -> "ADENOCARCINOMA..."
+        # V6.5.74 FIX IHQ250263: Agregar patrón "LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN:"
+        frases_introductorias = [
+            r'^LOS\s+HALLAZGOS\s+MORFOL[ÓO]GICOS\s+E\s+INMUNOHISTOQU[ÍI]MICOS\s+FAVORECEN\s*:\s*',
+            r'^LOS\s+HALLAZGOS\s+HISTOL[ÓO]GICOS\s+SON\s+COMPATIBLES\s+CON\s+',
+            r'^LOS\s+HALLAZGOS\s+SON\s+COMPATIBLES\s+CON\s+',
+            r'^LOS\s+HALLAZGOS\s+MORFOL[ÓO]GICOS\s+(?:SON\s+)?COMPATIBLES\s+CON\s+',
+            r'^LOS\s+HALLAZGOS\s+FAVORECEN\s+(?:UN\s+)?',
+            r'^HALLAZGOS\s+COMPATIBLES\s+CON\s+',
+            r'^COMPATIBLE\s+CON\s+',
+            r'^COMPATIBLES\s+CON\s+',
+        ]
+
+        for patron in frases_introductorias:
+            resultado_limpio = re.sub(patron, '', resultado, flags=re.IGNORECASE)
+            if resultado_limpio != resultado:
+                resultado = resultado_limpio.strip()
+                break
+
+    return resultado
 
 
 def limpiar_factor_pronostico(texto: str, nombre_paciente: str = "") -> str:
@@ -826,11 +1447,11 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
                                 'RECEPTOR', 'PROGESTERONA']
 
     # Biomarcadores de TIPIFICACIÓN que NO deben ir en FACTOR_PRONOSTICO
-    BIOMARCADORES_TIPIFICACION = ['CKAE1AE3', 'CK AE1', 'CKAE1/AE3', 'CKAE1E3',
+    BIOMARCADORES_TIPIFICACION = ['CKAE1AE3', 'CK AE1', 'CKAE1/AE3', 'CKAE1E3', 'AE3', 'AE1',
                                    'S100', 'GATA3', 'TTF', 'PAX8', 'CDX2',
                                    'P40', 'P53', 'P16', 'P63', 'CK7', 'CK20', 'CK5',
-                                   'CROMOGRANINA', 'SINAPTOFISINA', 'CD56', 'CD10',
-                                   'VIMENTINA', 'ACTINA', 'DESMINA', 'CALRETININA',
+                                   'CROMOGRANINA', 'CHROMOGRANINA', 'SINAPTOFISINA', 'SYNAPTOPHYSIN', 'CD56', 'CD10',
+                                   'VIMENTINA', 'ACTINA', 'DESMINA', 'CALRETININA', 'CALRRETININA',  # V6.3.53 FIX IHQ250061: variante doble R
                                    'CAM 5', 'CAM5', 'NAPSIN', 'WT1', 'SOX10', 'MELAN', 'HMB']
 
     """DOCUMENTACIÓN ORIGINAL:
@@ -895,7 +1516,9 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
 
         # PASO 2: Buscar TODAS las líneas con formato -BIOMARCADOR: Valor DENTRO del bloque
         # Esto permite que "BLOQUE 1" y descripciones narrativas estén entre biomarcadores
-        patron_linea_biomarcador = r'-\s*([A-ZÁÉÍÓÚÑ\s0-9/\-]+?)\s*:\s*(.+?)(?=\n-|\n\n|$)'
+        # V6.3.53 FIX IHQ250061: Nombre biomarcador DEBE empezar con letra (no número)
+        # Evita capturar "3-4 y 5: Calrretinina" donde "4 y 5" se interpretaba como nombre
+        patron_linea_biomarcador = r'-\s*([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s0-9/\-]*?)\s*:\s*(.+?)(?=\n-|\n\n|$)'
         matches_lineas = re.finditer(patron_linea_biomarcador, bloque_biomarcadores, re.IGNORECASE | re.DOTALL)
 
         biomarcadores_extraidos = []
@@ -924,7 +1547,7 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
             # Para HER2: capturar "Positivo (Score 3+)" en lugar de descripción completa
             if nombre_bio == 'HER2':
                 # Buscar patrón: POSITIVO/NEGATIVO/EQUIVOCO (Score X+)
-                patron_her2 = r'(POSITIVO|NEGATIVO|EQUIVOCO)(?:\s*\((?:Score\s+)?(\d\+?)\))?'
+                patron_her2 = r'(POSITIVO|NEGATIVO|EQUIVOCO)(?:\s*\(\s*(?:Score\s+)?(\d\+?)\s*\))?'  # V6.4.68 FIX IHQ250204: Tolerante a espacios alrededor de Score
                 match_her2 = re.search(patron_her2, valor_bio, re.IGNORECASE)
                 if match_her2:
                     estado = match_her2.group(1).upper()
@@ -1339,35 +1962,49 @@ def extract_factor_pronostico(diagnostico_completo: str, ihq_estudios_solicitado
                                 'RECEPTOR', 'PROGESTERONA']
 
     # Lista de biomarcadores de TIPIFICACIÓN que NO deben ir en FACTOR_PRONOSTICO
-    BIOMARCADORES_TIPIFICACION = ['CKAE1AE3', 'CK AE1', 'S100', 'GATA3', 'TTF', 'PAX8', 'CDX2',
+    BIOMARCADORES_TIPIFICACION = ['CKAE1AE3', 'CK AE1', 'CKAE1/AE3', 'AE3', 'AE1', 'S100', 'GATA3', 'TTF', 'PAX8', 'CDX2',
                                    'P40', 'P53', 'P16', 'P63', 'CK7', 'CK20', 'CK5',
-                                   'CROMOGRANINA', 'SINAPTOFISINA', 'CD56', 'CD10',
+                                   'CROMOGRANINA', 'CHROMOGRANINA', 'SINAPTOFISINA', 'SYNAPTOPHYSIN', 'CD56', 'CD10',
                                    'VIMENTINA', 'ACTINA', 'DESMINA', 'CALRETININA',
-                                   'NAPSIN', 'WT1', 'SOX10', 'MELAN', 'HMB']
+                                   'NAPSIN', 'WT1', 'SOX10', 'MELAN', 'HMB', 'CAM5', 'CAM 5']
 
     # Filtrar factores_limpios:
     # 1. INCLUIR si contiene biomarcadores de pronóstico
     # 2. EXCLUIR si contiene SOLO biomarcadores de tipificación
+    # V6.2.9: FIX IHQ251029 - Dividir por " / " primero para filtrar partes independientes
     factores_fp_final = []
     for factor in factores_limpios:
-        factor_upper = factor.upper()
+        # Dividir por " / " para tratar cada parte independientemente
+        # Ejemplo: "Ki-67 DEL 2% / AE3 y Ki-67" → ["Ki-67 DEL 2%", "AE3 y Ki-67"]
+        partes = factor.split(' / ')
 
-        # Verificar si contiene biomarcadores de pronóstico
-        tiene_pronostico = any(bio in factor_upper for bio in BIOMARCADORES_PRONOSTICO)
+        for parte in partes:
+            parte = parte.strip()
+            if not parte:
+                continue
 
-        # Verificar si contiene biomarcadores de tipificación
-        tiene_tipificacion = any(bio in factor_upper for bio in BIOMARCADORES_TIPIFICACION)
+            parte_upper = parte.upper()
 
-        if tiene_pronostico:
-            # Contiene al menos 1 biomarcador de pronóstico → INCLUIR
-            factores_fp_final.append(factor)
-        elif tiene_tipificacion:
-            # Contiene biomarcadores de tipificación sin pronóstico → EXCLUIR
-            continue
-        else:
-            # No identificado (puede ser narrativa genérica sin biomarcadores específicos)
-            # EXCLUIR por seguridad (si no menciona biomarcadores conocidos, probablemente no es FP)
-            continue
+            # Verificar si contiene biomarcadores de pronóstico
+            tiene_pronostico = any(bio in parte_upper for bio in BIOMARCADORES_PRONOSTICO)
+
+            # Verificar si contiene biomarcadores de tipificación
+            tiene_tipificacion = any(bio in parte_upper for bio in BIOMARCADORES_TIPIFICACION)
+
+            if tiene_pronostico and not tiene_tipificacion:
+                # Contiene pronóstico y NO tipificación → INCLUIR
+                factores_fp_final.append(parte)
+            elif tiene_pronostico and tiene_tipificacion:
+                # Contiene AMBOS → Verificar cuál es más específico
+                # Si menciona tipificación Y pronóstico, excluir por seguridad
+                # (probablemente es de lista de estudios solicitados)
+                continue
+            elif tiene_tipificacion:
+                # Contiene SOLO tipificación → EXCLUIR
+                continue
+            else:
+                # No identificado → EXCLUIR
+                continue
 
     if not factores_fp_final:
         # Ningún biomarcador extraído o todos eran de tipificación → NO APLICA
@@ -1477,17 +2114,27 @@ def parse_biomarkers_from_factor_pronostico(factor_pronostico: str) -> Dict[str,
         elif 'HER' in nombre_upper and '2' in nombre_upper:
             columna = 'IHQ_HER2'
             # V6.0.20: FIX IHQ251008 - HER2 debe capturar valor COMPLETO con score
-            # Buscar patrón: POSITIVO/NEGATIVO/EQUIVOCO (SCORE X) o (SCORE X+)
-            match_her2 = re.search(r'(POSITIVO|NEGATIVO|EQUIVOCO)\s*(?:\(SCORE\s+\d\+?\))?', valor, re.IGNORECASE)
+            # V6.3.21 FIX IHQ250017: NO convertir a mayúsculas - preservar formato original del PDF
+            # V6.3.22 FIX IHQ250017: Patrón flexible para capturar "( score 0 )" con espacios variables
+            # Buscar patrón: POSITIVO/NEGATIVO/EQUIVOCO ( score X ) o (SCORE X+) con espacios opcionales
+            match_her2 = re.search(r'(POSITIVO|NEGATIVO|EQUIVOCO)\s*(?:\(\s*(?:score\s+)?(\d\+?)\s*\))?', valor, re.IGNORECASE)
             if match_her2:
-                valor = match_her2.group(0).upper()
+                estado = match_her2.group(1).upper()
+                score = match_her2.group(2) if match_her2.group(2) else None
+                if score:
+                    valor = f"{estado} ({score})"  # V6.3.21: Preservar formato (X+) sin requerir palabra 'score'
+                else:
+                    valor = estado
         elif 'KI' in nombre_upper and '67' in nombre_upper:
             columna = 'IHQ_KI-67'
             # V6.0.20: FIX IHQ251008 - Ki-67 debe capturar SOLO el valor porcentual
-            # Buscar patrón: XX% o XX-YY%
-            match_ki67 = re.search(r'(\d+(?:-\d+)?)\s*%', valor)
+            # V6.3.36: FIX IHQ250029 - Incluir prefijo < o > si existe
+            # Buscar patrón: [<>]XX% o XX-YY%
+            match_ki67 = re.search(r'([<>]?\s*\d+(?:-\d+)?)\s*%', valor)
             if match_ki67:
-                valor = f"{match_ki67.group(1)}%"
+                # Limpiar espacios entre < y número
+                valor_limpio = re.sub(r'([<>])\s+', r'\1', match_ki67.group(1))
+                valor = f"{valor_limpio}%"
             else:
                 # Si no encuentra porcentaje, tomar solo hasta el primer "/" o ","
                 valor = valor.split('/')[0].split(',')[0].strip()
@@ -1564,7 +2211,11 @@ def build_factor_pronostico_from_columns(combined_data: Dict[str, Any]) -> str:
 def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
     """Extrae TODOS los biomarcadores solicitados del PDF con alta precisión.
 
-    Versión: 3.2.5 - Extractor robusto para IHQ_ESTUDIOS_SOLICITADOS
+    Versión: 3.2.7 - V6.4.22 FIX IHQ250034 (completo)
+    - Deshabilitado Pattern 12 (demasiado greedy, capturaba texto narrativo)
+    - Agregado filtrado de prefijos "EN [bloque]." (ubicación, no biomarcadores)
+    - Agregado filtrado de "y en [bloque] con" dentro de listas
+    - Agregado filtrado final de "EN A1", "EN B1", etc. en PASO 3 (no son biomarcadores)
 
     Busca patrones en DESCRIPCION MACROSCOPICA como:
     - "para tinción con [lista]"
@@ -1583,6 +2234,7 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
 
     biomarcadores_encontrados = []
 
+
     # ═══════════════════════════════════════════════════════════════════════════
     # PASO 1: Extraer sección DESCRIPCION MACROSCOPICA y MICROSCOPICA
     # ═══════════════════════════════════════════════════════════════════════════
@@ -1596,8 +2248,9 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
     # V6.1.4: FIX IHQ251003 - Incluir "Estudios Solicitados" que puede estar justo antes de DIAGNÓSTICO
     # Buscar todo desde DESCRIPCION MICROSCOPICA hasta (pero incluyendo) "Estudios Solicitados:"
     # Esto captura casos donde "Estudios Solicitados" está entre MICROSCOPICA y DIAGNOSTICO
+    # V6.3.49 FIX IHQ250050: Permitir espacios opcionales después del salto de línea (\s* en lugar de solo \n[A-Z])
     desc_micro_match = re.search(
-        r'DESCRIPCI[OÓ]N\s+MICROSC[OÓ]PICA(.*?)(?=\s*DIAGN[OÓ]STICO\s*\n[A-Z]|$)',
+        r'DESCRIPCI[OÓ]N\s+MICROSC[OÓ]PICA(.+)(?=\nDIAGNÓSTICO)',
         text,
         re.IGNORECASE | re.DOTALL
     )
@@ -1609,15 +2262,47 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
     if desc_micro_match:
         desc_macro_text += "\n" + desc_micro_match.group(1)
 
+
     if not desc_macro_text:
         return []
 
     # ═══════════════════════════════════════════════════════════════════════════
-    # PASO 2: Buscar patrones de listas de biomarcadores
+    # PASO 1.5: V6.3.68 FIX IHQ250089 - Detección especial formato "Bloque X:"
+    # Este formato requiere findall() en lugar de search() para capturar TODOS los bloques
     # ═══════════════════════════════════════════════════════════════════════════
+    if re.search(r'Bloque\s+[\d\syY]+:', desc_macro_text, re.IGNORECASE):
+        # Usar findall para capturar CADA bloque por separado
+        patron_bloque = r'Bloque\s+[\d\syY]+:\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|$|\n|(?=Bloque))'
+        bloques_matches = re.findall(patron_bloque, desc_macro_text, re.IGNORECASE)
+        if bloques_matches:
+            for bloque_lista in bloques_matches:
+                biomarcadores_bloque = parse_biomarker_list(bloque_lista)
+                biomarcadores_encontrados.extend(biomarcadores_bloque)
 
-    # Patrones ordenados por especificidad (más específico primero)
-    patrones_biomarcadores = [
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PASO 2: Buscar patrones de listas de biomarcadores (solo si PASO 1.5 no encontró nada)
+    # ═══════════════════════════════════════════════════════════════════════════
+    if not biomarcadores_encontrados:
+        # Patrones ordenados por especificidad (más específico primero)
+        patrones_biomarcadores = [
+            # Patrón -8: V6.5.59 FIX IHQ250254 - "para tinción en el especimen [X]: [lista]"
+            # NUEVO: Captura formato con "en el especimen" en lugar de "con"
+            # Captura: "se realizan niveles histológicos para tinción en el especimen A2: EMA, DESMINA, SALL-4, ..."
+            # Terminador especial: "y en el especimen" (múltiples listas por especimen)
+            # Soporta variantes: especimen/espécimen/bloque
+            r'se\s+realizan?\s+(?:cortes?|niveles?)\s+histol[óo]gicos?\s+para\s+(?:la\s+)?tinci[óo]n\s+en\s+(?:el\s+)?(?:especimen|espec[íi]men|bloque)\s+[A-Z0-9]+:\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)(?:\.|$|(?=\s+y\s+en\s+el\s+(?:especimen|espec[íi]men|bloque)))',
+
+            # Patrón -7: V6.5.52 FIX IHQ250250 - "se realizan cortes histológicos para [lista]" (sin "tinción")
+            # NUEVO: Captura formato directo sin palabras intermedias
+            # Captura: "se realizan cortes histológicos para p16 y Ki-67"
+            # Termina en punto o salto de línea antes de nueva sección
+            r'se\s+realizan?\s+cortes?\s+histol[óo]gicos?\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)\.(?=\s|$|\n)',
+
+            # Patrón -6: V6.2.15 - "corresponden a marcadores de [lista]" (IHQ251033)
+            # NUEVO: Material externo/revisión con láminas IHQ previas
+            # Captura: "6 laminas de IHQ que corresponden a marcadores de S100 y Calretinina"
+            r'(?:laminas?|l[áa]minas?)\s+de\s+IHQ\s+que\s+corresponden?\s+a\s+marcadores?\s+de\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\s+y\s+que|\.|$)',
+
         # Patrón -5: V6.0.21 - "se revisa marcación para [lista]." (IHQ251009)
         # NUEVO: Variante greedy de "revisa marcación" que captura lista completa hasta punto
         # Captura listas largas con múltiples biomarcadores (CD3, CD5, CD10, CD15, etc.)
@@ -1644,6 +2329,12 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
         # Específico para material extra-institucional con decisión de marcadores
         r'(?:Previa\s+valoraci[óo]n.*?)?se\s+decide\s+realizar\s+marcadores?\s+para:\s*([A-Z0-9\s,./\-\(\)pPyYóÓúÚáÁéÉíÍ]+?)(?:\.|$)',
 
+        # Patrón -0.5: V6.2.9 - "se solicitan coloraciones inmunohistoquímica con [lista]" (IHQ251029)
+        # ESPECÍFICO: Captura "solicitan coloraciones...con" (sin "anticuerpos para")
+        # Formato: "se solicitan coloraciones inmunohistoquímica con CD56, Cromogranina-A, Sinaptofisina, CKAE1/AE3 y Ki-67"
+        # V6.2.9.1: Usar greedy (+) en lugar de lazy (+?) para capturar lista completa multi-línea
+        r'se\s+solicitan?\s+coloraciones?\s+inmunohistoqu[íi]micas?\s+con\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+)\.',
+
         # Patrón 0: V6.0.12 - "coloraciones inmunohistoquímicas con los anticuerpos para [lista]" (IHQ250985)
         # ESPECÍFICO: Captura formato narrativo en descripción macroscópica
         r'coloraciones\s+inmunohistoqu[íi]micas\s+con\s+los\s+anticuerpos\s+para\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\s+en\s+el\s+Bloque|\.|$)',
@@ -1661,25 +2352,56 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
         # Patrón 1.5: "se realizan los siguientes marcadores:" (IHQ251007)
         # V6.1.5: NUEVO - Variante "se realizan" además de "se solicitan" y "para"
         # Captura: "se realizan los siguientes marcadores: P63, CK5/6, Receptores de estrógeno."
-        r'se\s+realizan?\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|\n\s*DESCRIPCI|$)',
+        # V6.X.X: FIX - Termina en punto seguido de espacio/salto (no punto decimal)
+        r'se\s+realizan?\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.(?=\s|$|\n\s*DESCRIPCI)',
 
         # Patrón 2: "para los siguientes marcadores:" (IHQ250002, IHQ250006)
         # V6.1.3: FIX IHQ250999 - Permitir terminación sin punto (agregar $)
-        r'para\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|\n\s*DESCRIPCI|$)',
+        # V6.X.X: FIX IHQ250002 - Usar greedy (+) en lugar de lazy (+?) para capturar lista completa
+        #         Termina en punto seguido de espacio/salto o nueva sección (no punto decimal como "5.2")
+        r'para\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.(?=\s|$|\n\s*DESCRIPCI)',
 
         # Patrón 2.5: "se solicitan los siguiente biomarcadores:" (IHQ250005, IHQ250999)
         # V6.1.3: FIX IHQ250999 - Permitir terminación sin punto (agregar $)
-        r'se\s+solicitan?\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|\n\s*DESCRIPCI|$)',
+        # V6.X.X: FIX - Termina en punto seguido de espacio/salto (no punto decimal)
+        r'se\s+solicitan?\s+los?\s+siguientes?\s+(?:biomarcadores?|marcadores?):\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.(?=\s|$|\n\s*DESCRIPCI)',
 
-        # Patrón 3: "para tinción con" O "para tinción con:" (IHQ250001, IHQ250003, IHQ250981)
+        # Patrón 2.6: V6.3.59 FIX IHQ250071 - "Se ordenan los siguientes marcadores:"
+        # Formato: "Se ordenan los siguientes marcadores: p63, CD117 y KI-67."
+        # Captura lista de biomarcadores después de "Se ordenan"
+        r'[Ss]e\s+ordenan?\s+los?\s+siguientes?\s+marcadores?:?\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.(?=\s|$|\n)',
+
+        # Patrón 3 MOVIDO A 4: "se realizan niveles histológicos para tinción con" (MÁS ESPECÍFICO)
+        # v6.3.4 - FIX IHQ251026: Movido ANTES de patrón genérico "para tinción con"
+        #          para que coincida primero cuando existe contexto completo
         # v6.0.3 - Agregado soporte para dos puntos opcionales después de "con"
         # v6.0.3 - CORREGIDO: Termina solo en punto (.) para permitir saltos de línea en lista
-        r'para\s+tinci[óo]n\s+con:?\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.',
+        # v6.2.6 - FIX IHQ251026: Termina en punto seguido de espacio y mayúscula (nueva oración)
+        # v6.2.7 - FIX IHQ251026: Greedy (+) en lugar de non-greedy para capturar todo
+        # v6.3.3 - FIX CRÍTICO IHQ251026: Cambiado +? a + (greedy) para capturar lista completa
+        #          Termina en: punto+nueva_oración, nueva_sección (DESCRIPCIÓN/MICROSCOPICA), o fin
+        #          Lookahead (?=) para no capturar el delimitador
+        # V6.3.89 FIX IHQ250113: Soporta "para la tinción con los marcadores" y similares
+        r'se\s+realizan?\s+(?:cortes?|niveles?)\s+histol[óo]gicos?\s+.*?para\s+(?:la\s+)?tinci[óo]n\s+con(?:s|\s+(?:los?|estos?|sus?)\s+(?:bio)?marcadores?)?:?\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.(?=\s*(?:Previa|Se\s+recibe|DESCRIPCI[ÓO]N|MICROSC[ÓO]PICA|DIAGN[ÓO]STICO|$))',
 
-        # Patrón 4: "se realizan niveles histológicos para tinción con" O "para tinción con:"
+        # Patrón 3B: V6.4.9 FIX IHQ250139 - Variante SIN punto final cuando sigue DIAGNÓSTICO
+        # Para casos donde lista termina sin punto y va directo a nueva sección
+        r'se\s+realizan?\s+(?:cortes?|niveles?)\s+histol[óo]gicos?\s+.*?para\s+(?:la\s+)?tinci[óo]n\s+con(?:s|\s+(?:los?|estos?|sus?)\s+(?:bio)?marcadores?)?:?\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)(?=\s*(?:DIAGN[ÓO]STICO|DESCRIPCI[ÓO]N\s+DIAGN[ÓO]STICA|COMENTARIOS))',
+
+        # Patrón 3.5: V6.4.1 FIX IHQ250116 - "para estudios de inmunohistoquímica con:"
+        # Formato: "se realizan niveles histológicos para estudios de inmunohistoquímica con: CK5/6, Cromogranina, ..."
+        r'para\s+estudios\s+de\s+inmunohistoqu[íi]mica\s+con:\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.(?=\s*(?:Previa|Se\s+recibe|DESCRIPCI[ÓO]N|MICROSC[ÓO]PICA|DIAGN[ÓO]STICO|$))',
+
+        # Patrón 4: "para tinción con" genérico (IHQ250001, IHQ250003, IHQ250981)
+        # v6.3.4 - FIX IHQ251026: Movido DESPUÉS del patrón específico "se realizan niveles"
         # v6.0.3 - Agregado soporte para dos puntos opcionales después de "con"
         # v6.0.3 - CORREGIDO: Termina solo en punto (.) para permitir saltos de línea en lista
-        r'se\s+realizan?\s+(?:cortes?|niveles?)\s+histol[óo]gicos?\s+.*?para\s+tinci[óo]n\s+con:?\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.',
+        # Patrón 4: "para tinción con" genérico (IHQ250001, IHQ250003, IHQ250981)
+        # v6.3.4 - FIX IHQ251026: Movido DESPUÉS del patrón específico "se realizan niveles"
+        # v6.0.3 - Agregado soporte para dos puntos opcionales después de "con"
+        # v6.0.3 - CORREGIDO: Termina solo en punto (.) para permitir saltos de línea en lista
+        # V6.3.89 FIX IHQ250113: Soporta "para la tinción con los marcadores" y similares
+        r'para\s+(?:la\s+)?tinci[óo]n\s+con(?:s|\s+(?:los?|estos?|sus?)\s+(?:bio)?marcadores?)?:?\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ\n]+?)\.',
 
         # Patrón 5: "para tinción de la siguiente manera:" seguido de lista con guiones
         r'para\s+tinci[óo]n\s+de\s+la\s+siguiente\s+manera:\s*((?:-\s*Bloque[^\n]+\n?)+)',
@@ -1694,7 +2416,8 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
 
         # Patrón 8: V5.3.2 - "con X - Y - Z" (IHQ250043)
         # Captura lista de biomarcadores separados por guiones
-        r'inmunohistoqu[íi]mica\s+con\s+([A-Z0-9\s]+(?:\s*-\s*[A-Z0-9\s]+)+)',
+        # V6.3.47 FIX IHQ250043: Sin \s en clase de caracteres para evitar capturar "en los bloques A4 Y B2"
+        r'inmunohistoqu[íi]mica\s+con\s+([A-Za-z0-9]+(?:\s*-\s*[A-Za-z0-9]+)+)',
 
         # Patrón 9: V5.3.2 - "para marcar con X" (IHQ250048)
         # Captura biomarcador después de "para marcar con"
@@ -1705,28 +2428,68 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
         # FIX ADICIONAL v6.0.4.1: Agregado \n a clase de caracteres (listas multi-línea)
         # Captura: "Se revisan placas para marcación de CKAE1E3, CAM 5.2, CK7, GFAP, SOX10 y\nSOX100."
         r'para\s+marcaci[óo]n\s+de\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁeÉíÍ\n]+)\.',
-    ]
 
-    for patron in patrones_biomarcadores:
-        match = re.search(patron, desc_macro_text, re.IGNORECASE | re.DOTALL)
-        if match:
-            lista_texto = match.group(1).strip()
+        # Patrón 11: V6.4.0 - "para marcación con" (IHQ250012)
+        # FIX IHQ250012: Variante "para marcación con" (en lugar de "de")
+        # Captura: "Se realizan niveles al bloque de parafina para marcación con Glicoforina, Mieloperoxidasa..."
+        # Incluye soporte para "Kappa" y "Lambda" en minúsculas/mayúsculas
+            r'para\s+marcaci[óo]n\s+con\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁeÉíÍkKaAppLlMmBbDd\n]+)\.',
 
-            # CASO ESPECIAL: Lista con formato "- Bloque A: X, Y, Z"
-            if '- Bloque' in lista_texto or '-Bloque' in lista_texto:
-                # Extraer biomarcadores de cada línea de bloque
-                lineas_bloque = re.findall(r'-\s*Bloque\s+[A-Z0-9]+:\s*([A-Z0-9\s,./\-\(\)yYóÓúÚáÁéÉíÍ]+)', lista_texto, re.IGNORECASE)
-                for linea in lineas_bloque:
-                    biomarcadores_linea = parse_biomarker_list(linea)
-                    biomarcadores_encontrados.extend(biomarcadores_linea)
-            else:
-                # CASO NORMAL: Lista separada por comas/y
-                biomarcadores = parse_biomarker_list(lista_texto)
-                biomarcadores_encontrados.extend(biomarcadores)
+        # Patrón 12: V6.4.3 FIX IHQ250127 - Lista de biomarcadores sin encabezado al inicio de sección
+        # V6.4.22 FIX IHQ250049: Patrón muy greedy que capturaba texto narrativo
+        # DESHABILITADO: Causaba falsos positivos (capturaba "Se realizan niveles al..." como biomarkers)
+        # Si IHQ250127 falla, reactivar con restricciones adicionales
+        # r'^\s*([A-Z0-9\s,/-]{10,}(?:,\s*[A-Z0-9\s/-]{2,})+)',
 
-            # Si encontramos algo, no seguir buscando con otros patrones
-            if biomarcadores_encontrados:
-                break
+        # Patrón 13: V6.4.4 FIX IHQ250128 - "para marcación [lista]" al final de descripción
+        # Captura: "Se revisan placas para marcación RE, RP, HER2, ki67 y E-cadherina."
+        # No requiere "de" ni "con" después de marcación.
+        r'para\s+marcaci[óo]n\s+([A-Z0-9\s,./\-\(\)yYóÓúÚáÁeÉíÍ]+?)(?:\.|$)',
+        ]
+
+        for patron in patrones_biomarcadores:
+            match = re.search(patron, desc_macro_text, re.IGNORECASE | re.DOTALL)
+            if match:
+                lista_texto = match.group(1).strip()
+
+                # V6.4.22 FIX IHQ250034: Filtrar prefijos/sufijos de ubicación de bloques
+                # Ejemplo: "EN A1. HER2, PROGESTERONA" → "HER2, PROGESTERONA"
+                # Ejemplo: "Ki-67 y en B1 con CKAE1E3" → "Ki-67, CKAE1E3"
+                lista_texto_original = lista_texto
+                lista_texto = re.sub(r'^EN\s+[A-Z0-9]+\.\s*', '', lista_texto, flags=re.IGNORECASE)  # Prefijo "EN A1. "
+                lista_texto = re.sub(r'\s+y\s+en\s+[A-Z0-9]+\s+con\s+', ', ', lista_texto, flags=re.IGNORECASE)  # " y en B1 con "
+                if lista_texto != lista_texto_original:
+                    logging.info(f"[V6.4.22] Filtrado aplicado:\n  ANTES: {lista_texto_original[:100]}\n  DESPUES: {lista_texto[:100]}")
+
+                # CASO ESPECIAL: Lista con formato "- Bloque A: X, Y, Z" (con guión)
+                if '- Bloque' in lista_texto or '-Bloque' in lista_texto:
+                    # Extraer biomarcadores de cada línea de bloque
+                    # V6.3.5 FIX IHQ250004: Corregido regex para detenerse en punto o salto de línea
+                    # Antes: capturaba hasta el siguiente "Bloque" por incluir . y \n
+                    # Ahora: captura solo hasta punto o newline (sin incluirlos)
+                    lineas_bloque = re.findall(r'-\s*Bloque\s+[A-Z0-9]+:\s*([A-Za-z0-9\s,/\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|$|\n)', lista_texto, re.IGNORECASE)
+                    for linea in lineas_bloque:
+                        biomarcadores_linea = parse_biomarker_list(linea)
+                        biomarcadores_encontrados.extend(biomarcadores_linea)
+                # V6.3.68 FIX IHQ250089: CASO ESPECIAL - Formato "Bloque X: biomarcadores" (SIN guión)
+                # Captura: "Bloque 1 y 2: CD45, CD20, CD5" y "Bloque 2: CD10, CD30, PAX 5..."
+                elif 'Bloque' in lista_texto and ':' in lista_texto:
+                    # Extraer biomarcadores de cada línea "Bloque X: lista"
+                    lineas_bloque = re.findall(
+                        r'Bloque\s+[\d\syY]+:\s*([A-Za-z0-9\s,/\-\(\)yYóÓúÚáÁéÉíÍ]+?)(?:\.|$|\n|(?=Bloque))',
+                        lista_texto, re.IGNORECASE
+                    )
+                    for linea in lineas_bloque:
+                        biomarcadores_linea = parse_biomarker_list(linea)
+                        biomarcadores_encontrados.extend(biomarcadores_linea)
+                else:
+                    # CASO NORMAL: Lista separada por comas/y
+                    biomarcadores = parse_biomarker_list(lista_texto)
+                    biomarcadores_encontrados.extend(biomarcadores)
+
+                # Si encontramos algo, no seguir buscando con otros patrones
+                if biomarcadores_encontrados:
+                    break
 
     # ═══════════════════════════════════════════════════════════════════════════
     # PASO 3: Normalizar y eliminar duplicados
@@ -1742,6 +2505,12 @@ def extract_biomarcadores_solicitados_robust(text: str) -> List[str]:
     }
 
     for bio in biomarcadores_encontrados:
+        # V6.4.22 FIX IHQ250034: Filtrar referencias a bloques (EN A1, EN B1, etc.)
+        # Estas son ubicaciones de muestras, NO biomarcadores
+        if re.match(r'^EN\s+[A-Z0-9]+$', bio.strip(), re.IGNORECASE):
+            logging.info(f"[V6.4.22] Filtrado referencia de bloque: '{bio}' (no es biomarcador)")
+            continue
+
         # V5.3: CORRECCIÓN - Usar normalize_biomarker_name_simple() sin prefijo IHQ_
         # La columna IHQ_ESTUDIOS_SOLICITADOS debe contener nombres simples: "MLH1, MSH2, Ki-67"
         # NO debe contener "IHQ_MLH1, IHQ_MSH2, IHQ_Ki-67" (eso es para columnas BD)
@@ -1785,6 +2554,9 @@ def parse_biomarker_list(text: str) -> List[str]:
     text = re.sub(r'\s+en\s+las?\s+(?:tres|dos|cuatro|una)?\s*(?:l[aá]minas?|bloques?)', '', text, flags=re.IGNORECASE)
     text = re.sub(r'^.*?para\s+tinci[óo]n\s+con\s+', '', text, flags=re.IGNORECASE)  # Eliminar todo hasta "para tinción con"
     text = re.sub(r'\s+en\s+el\s+bloque\s+[A-Z0-9]+', '', text, flags=re.IGNORECASE)
+    # V6.4.12: FIX IHQ250108 - Filtrar listas de códigos de bloques (A2,A3, B2 Y B3)
+    # Patrón: "en bloques [lista de códigos]" donde códigos son A2, B3, etc.
+    text = re.sub(r'\s+en\s+bloques?\s+[A-Z0-9,\s]+(?:[yY]\s+[A-Z0-9]+)+', '', text, flags=re.IGNORECASE)
 
     # V6.0.12: EXPANSIÓN DE AGRUPACIONES - "RECEPTORES HORMONALES (RE, RP)" → "RE, RP"
     # Esto normaliza listas que tienen biomarcadores agrupados entre paréntesis
@@ -1804,19 +2576,42 @@ def parse_biomarker_list(text: str) -> List[str]:
     # Reemplazar separadores por comas
     # "y" final → ","
     text = re.sub(r'\s+y\s+', ', ', text, flags=re.IGNORECASE)
+    # V6.3.47 FIX IHQ250043: " - " (guion con espacios) → "," para listas como "NeuN - GFAP - CD68"
+    text = re.sub(r'\s+-\s+', ', ', text)
 
     # V6.0.12.1: FIX - Separar biomarcadores consecutivos sin coma (ej: "P63 P40" → "P63, P40")
     # CONVERTIR A MAYÚSCULAS para que los patrones funcionen con texto OCR en minúsculas
     text_upper = text.upper()
-    
+
+    # V6.3.13: FIX IHQ250018 - Proteger biomarcadores compuestos ANTES de separar
+    # "ACTINA DE MUSCULO LISO" NO debe dividirse en "ACTINA, DE, MUSCULO, LISO"
+    # V6.4.14: FIX IHQ250140 - Agregadas variantes de ACTINA MÚSCULO ESPECÍFICA
+    # Usamos un placeholder temporal para protegerlo
+    placeholders = {
+        'ACTINA DE MUSCULO LISO': '__ACTINA_MUSCULO_LISO__',
+        'ACTINA DE MÚSCULO LISO': '__ACTINA_MUSCULO_LISO__',
+        'ACTINA MUSCULO LISO': '__ACTINA_MUSCULO_LISO__',
+        'ACTINA MÚSCULO LISO': '__ACTINA_MUSCULO_LISO__',  # V6.4.14
+        'ACTINA MÚSCULO ESPECÍFICA': '__ACTINA_MUSCULO_ESPECIFICA__',  # V6.4.14
+        'ACTINA MUSCULO ESPECÍFICA': '__ACTINA_MUSCULO_ESPECIFICA__',  # V6.4.14
+        'ACTINA MÚSCULO ESPECIFICA': '__ACTINA_MUSCULO_ESPECIFICA__',  # V6.4.14
+        'ACTINA MUSCULO ESPECIFICA': '__ACTINA_MUSCULO_ESPECIFICA__',  # V6.4.14
+        'ACTINA DE MÚSCULO ESPECÍFICA': '__ACTINA_MUSCULO_ESPECIFICA__',  # V6.4.14
+        'ACTINA DE MUSCULO ESPECÍFICA': '__ACTINA_MUSCULO_ESPECIFICA__',  # V6.4.14
+        'ACTINA DE MÚSCULO ESPECIFICA': '__ACTINA_MUSCULO_ESPECIFICA__',  # V6.4.14
+        'ACTINA DE MUSCULO ESPECIFICA': '__ACTINA_MUSCULO_ESPECIFICA__',  # V6.4.14
+    }
+    for original, placeholder in placeholders.items():
+        text_upper = text_upper.replace(original, placeholder)
+
     # ENFOQUE DUAL: Aplicar ambos patrones para máxima compatibilidad
-    
+
     # PATRÓN 1 (ORIGINAL): Biomarcadores cortos con números (más conservador)
     # Captura: P63 P40, CD3 CD5, BCL2 P16, etc.
     # NO captura: Ki-67 (tiene guión), RE RP (solo letras)
     patron_numeros = r'\b([A-Z]{1,2}[0-9]{1,3}(?:-?[A-Z0-9]{1,3})?)\s+([A-Z]{1,2}[0-9]{1,3}(?:-?[A-Z0-9]{1,3})?)\b'
     text_upper = re.sub(patron_numeros, r'\1, \2', text_upper)
-    
+
     # PATRÓN 2 (MEJORADO): Biomarcadores alfanuméricos cortos (letras + números opcionales)
     # Captura: RE RP, MLH1 MSH2, PAX8 GATA3, etc.
     # NO captura: biomarcadores con guión en medio (Ki-67, HER-2)
@@ -1826,10 +2621,21 @@ def parse_biomarker_list(text: str) -> List[str]:
         if text_nuevo == text_upper:  # No hay más cambios
             break
         text_upper = text_nuevo
+
+    # V6.3.13: Restaurar biomarcadores compuestos protegidos
+    for original, placeholder in placeholders.items():
+        text_upper = text_upper.replace(placeholder, original)
     
     # Restaurar a case original mezclando con texto original
     # Estrategia: usar text_upper para estructura pero preservar case original donde sea posible
     text = text_upper  # Por ahora usar mayúsculas procesadas
+
+    # V6.3.2: FIX IHQ251026 - Dividir por puntos cuando NO son parte de biomarcadores
+    # Problema: "CAM 5.2. BCL2" captura punto como parte del nombre
+    # Solución: Reemplazar ". " (punto + espacio + mayúscula) por ", " EXCEPTO en casos conocidos
+    # Casos conocidos: "CAM 5.2", "CD45.1", etc. (punto seguido de dígito)
+    # Reemplazar: ". " seguido de letra mayúscula → ", "
+    text = re.sub(r'\.\s+([A-Z])', r', \1', text)
 
     # Dividir por comas
     biomarcadores = [b.strip() for b in text.split(',')]
@@ -1860,6 +2666,20 @@ def parse_biomarker_list(text: str) -> List[str]:
         if bio_upper in hormonas_endocrinas:
             continue
 
+        # V6.4.65: FIX IHQ250198 - FILTRO DE PATRONES DE TINCIÓN
+        # No son biomarcadores, son adjetivos que describen intensidad/distribución
+        # Ejemplos: "marcación fuerte y difusa para CD3" → "DIFUSA" NO es biomarcador
+        patrones_tincion = [
+            'DIFUSA', 'DIFUSO',  # Patrón de distribución
+            'FOCAL',  # Patrón de distribución
+            'FUERTE', 'INTENSA', 'INTENSO',  # Intensidad fuerte
+            'DÉBIL', 'DEBIL', 'LEVE',  # Intensidad débil
+            'MODERADA', 'MODERADO',  # Intensidad moderada
+            'Y',  # Conjunción residual
+        ]
+        if bio_upper in patrones_tincion:
+            continue
+
         # Filtrar encabezados de tabla EXACTOS o con prefijos
         encabezados_tabla = [
             r'^N\.?\s*ESTUDIO$',  # "N. ESTUDIO" o "N ESTUDIO"
@@ -1878,6 +2698,25 @@ def parse_biomarker_list(text: str) -> List[str]:
 
         # Filtrar palabras no-biomarcador en texto
         if re.search(r'(?:bloque|laminas?|para|con|los|siguiente|almacenamiento)', bio, re.IGNORECASE):
+            continue
+
+        # V6.4.12: FIX IHQ250108 - Filtrar códigos de bloques (A2, B3, etc.)
+        # Patrón: Una sola letra seguida de 1-2 dígitos (A2, B3, C10)
+        # Excepción: Permitir "P" + número (P16, P40, P53, P63 son biomarcadores válidos)
+        if re.match(r'^[A-OQ-Z]\d{1,2}$', bio_upper):  # No incluye P
+            continue
+
+        # V6.3.5: FIX IHQ250997 - Filtrar frases descriptivas/narrativas (NO son biomarcadores)
+        # Ejemplos: "SE ENCUENTRAN PENDIENTES OTROS MARCADORES", "NO SE REALIZAN ESTUDIOS"
+        frases_narrativas = [
+            r'SE\s+ENCUENTRAN?\s+PENDIENTE',
+            r'NO\s+SE\s+REALIZ[AÓ]',
+            r'OTROS?\s+MARCADORES?',
+            r'PENDIENTE',
+            r'EN\s+PROCESO',
+            r'A\s+LA\s+ESPERA',
+        ]
+        if any(re.search(patron, bio_upper) for patron in frases_narrativas):
             continue
 
         biomarcadores_filtrados.append(bio)
@@ -1917,15 +2756,19 @@ def normalize_biomarker_name_simple(name: str) -> str:
         'CK AE1/AE3': 'CKAE1AE3',
         'CAM 5.2': 'CAM5.2',
         'CAM5.2': 'CAM5.2',
+        'CAM 5.2': 'CAM5.2',
         # V6.1.3: Biomarcadores celulas mioepiteliales (IHQ250999)
         'CK5/6': 'CK5/6',
         'CK5 / 6': 'CK5/6',
-        'CK5 6': 'CK5/6',
-        'CK56': 'CK5/6',
+        'CK 5/6': 'CK5/6',  # V6.2.8: Preservar barra en "CK 5/6"
+        # V6.2.8: FIX IHQ251026 - CK56 es CD56/NCAM (neural), NO CK5/6 (mioepitelial)
+        # 'CK56': 'CK5/6',  # REMOVIDO - causaba confusión con CD56
+        'CK56': 'CK56',  # Mantener como CK56 (será mapeado a CD56 en biomarker_extractor)
+        'CK 56': 'CK 56',  # V6.2.8: Si aparece "CK 56" es probablemente error OCR, mantener espacios
         # V6.1.5: FIX IHQ251007 - Error OCR común CK5/5 → CK5/6
         'CK5/5': 'CK5/6',
         'CK5 / 5': 'CK5/6',
-        'CK5 5': 'CK5/6',
+        'CK5 5': 'CK5/6',  # SOLO sin espacio después de CK
         'CK55': 'CK5/6',
         'CALPONINA': 'Calponina',
         # V6.1.1: FIX IHQ250995 - Normalizar 34BETA → CK34BE12
@@ -1941,11 +2784,40 @@ def normalize_biomarker_name_simple(name: str) -> str:
         'CK34 BETA E12': 'CK34BE12',
         'CK34BETA E12': 'CK34BE12',
         'CK34BE12': 'CK34BE12',
+        # V6.3.68 FIX IHQ250089: CMYC (linfomas, Burkitt)
+        'CMYC': 'CMYC',
+        'C-MYC': 'CMYC',
+        'C MYC': 'CMYC',
+        'MYC': 'CMYC',
+        # V6.4.10 FIX IHQ250139: CD variants con espacios (OCR error)
+        'CD 20': 'CD20',
+        'CD 34': 'CD34',
+        'CD 23': 'CD23',
+        'CD 99': 'CD99',
+        'CD 5': 'CD5',
+        'CD 3': 'CD3',
+        'CD 10': 'CD10',
+        'CD79 A': 'CD79A',
+        'CD 79A': 'CD79A',
+        'CD 79 A': 'CD79A',
+        'PAX 5': 'PAX5',
+        'PAX5': 'PAX5',
     }
 
     for pattern, result in simple_mapping.items():
         if pattern in nombre_upper:
             return result
+
+    # V6.3.13: FIX IHQ250018 - Proteger biomarcadores compuestos ANTES de eliminar palabras
+    # "ACTINA DE MUSCULO LISO" debe mantenerse completo, no dividirse
+    biomarcadores_compuestos = {
+        'ACTINA DE MUSCULO LISO': 'ACTINA DE MUSCULO LISO',
+        'ACTINA DE MÚSCULO LISO': 'ACTINA DE MUSCULO LISO',
+        'ACTINA MUSCULO LISO': 'ACTINA DE MUSCULO LISO',
+        'ACTINA MÚSCULO LISO': 'ACTINA DE MUSCULO LISO',
+    }
+    if nombre_upper in biomarcadores_compuestos:
+        return biomarcadores_compuestos[nombre_upper]
 
     # Normalizar espacios y caracteres especiales
     # Eliminar palabras intermedias comunes (DE, DEL, LOS, LAS)
@@ -1960,9 +2832,9 @@ def normalize_biomarker_name_simple(name: str) -> str:
             return 'Receptor de Progesterona'
 
     # V6.0.1: Normalizar nombres cortos de receptores (CORRIGE IHQ250981)
-    if nombre_upper in ['PROGESTERONA', 'PROGRESTERONA']:
+    if nombre_upper in ['PROGESTERONA', 'PROGRESTERONA', 'RP', 'PR']:
         return 'Receptor de Progesterona'
-    if nombre_upper in ['ESTROGENOS', 'ESTRÓGENOS', 'ESTROGENO', 'ESTRÓGENO']:
+    if nombre_upper in ['ESTROGENOS', 'ESTRÓGENOS', 'ESTROGENO', 'ESTRÓGENO', 'RE', 'ER']:
         return 'Receptor de Estrógeno'
 
     # V6.0.10: GATA3 (quitar espacio) - IHQ250984
@@ -1972,6 +2844,11 @@ def normalize_biomarker_name_simple(name: str) -> str:
     # V6.0.10: SOX10 (manejar typo SXO10) - IHQ250984
     if nombre_upper in ['SOX10', 'SXO10', 'SOX 10', 'SXO 10']:
         return 'SOX10'
+
+    # V6.4.12: FIX IHQ250121 - CA19-9 (manejar variantes con punto/espacio)
+    # OCR a veces lee "CA19.9", "CA 19-9", "CA19 9" o "CA19 19" (error OCR: 9 → 19)
+    if re.match(r'CA[\s]?19[\s.\-]?(?:19|9)$', nombre_upper):
+        return 'CA19-9'
 
     # Ki-67: mantener guión (TODAS LAS VARIANTES)
     if re.match(r'KI[\s-]?67', nombre_upper):
@@ -2003,9 +2880,29 @@ def normalize_biomarker_name_simple(name: str) -> str:
     if 'PMS2' in nombre_upper:
         return 'PMS2'
 
+    # V6.3.5 FIX IHQ250004: NeuN (marcador neuronal)
+    if 'NEUN' in nombre_upper or 'NEU-N' in nombre_upper or 'NEU N' in nombre_upper:
+        return 'NeuN'
+
+    # V6.3.5 FIX IHQ250004: EMA (Antígeno de membrana epitelial)
+    if nombre_upper == 'EMA' or 'EPITHELIAL MEMBRANE' in nombre_upper:
+        return 'EMA'
+
+    # V6.4.13: FIX IHQ250121 - SYNAPTOFISINA (normalizar variantes ortográficas)
+    # SINAPTOFISINA es variante con "I", SYNAPTOFISINA con "Y" (ambas correctas)
+    if 'SYNAPTOFISINA' in nombre_upper or 'SINAPTOFISINA' in nombre_upper:
+        return 'SYNAPTOFISINA'
+
+    # V6.4.13: FIX IHQ250121 - NAPSIN (normalizar formas cortas)
+    # NAPSINA A es forma completa, NAPSIN es abreviatura
+    if 'NAPSIN' in nombre_upper:
+        return 'NAPSIN'
+
     # Marcadores CD: mantener formato
-    if re.match(r'^CD\d+$', nombre_upper):
-        return nombre_upper
+    # V6.4.10 FIX IHQ250139: Normalizar espacios en CD markers (CD 20 -> CD20)
+    nombre_cd_normalized = re.sub(r'\s+', '', nombre_upper)  # Elimina todos los espacios
+    if re.match(r'^CD\d+$', nombre_cd_normalized):
+        return nombre_cd_normalized  # Devolver sin espacios
 
     # Para otros: limpiar y devolver en mayúsculas
     name_clean = name.replace('/', '').replace('-', ' ')
@@ -2078,17 +2975,17 @@ def normalize_biomarker_name(name: str) -> str:
     if 'NAPSIN' in nombre_upper:
         return 'IHQ_NAPSIN'
 
-    # CAM 5.2 - V5.2: CON prefijo IHQ_
+    # CAM 5.2 - V6.5.83: Migrado de IHQ_CAM52 a IHQ_CAM5
     if 'CAM' in nombre_upper and '5' in nombre_upper:
-        return 'IHQ_CAM52'
+        return 'IHQ_CAM5'
 
-    # Chromogranina - V5.2: CON prefijo IHQ_
-    if 'CHROMO' in nombre_upper:
-        return 'IHQ_CHROMOGRANINA'
+    # Chromogranina - V5.2: CON prefijo IHQ_ (ESPAÑOL UNIFICADO)
+    if 'CHROMO' in nombre_upper or 'CROMO' in nombre_upper:
+        return 'IHQ_CROMOGRANINA'
 
-    # Synaptofisina - V5.2: CON prefijo IHQ_
+    # Synaptofisina - V5.2: CON prefijo IHQ_ (ESPAÑOL UNIFICADO)
     if 'SINAPTO' in nombre_upper or 'SYNAPTO' in nombre_upper:
-        return 'IHQ_SYNAPTOPHYSIN'
+        return 'IHQ_SINAPTOFISINA'
 
     # HER2 - V5.2: CON prefijo IHQ_
     if 'HER2' in nombre_upper or 'HER-2' in nombre_upper or 'HER 2' in nombre_upper:
@@ -2197,7 +3094,8 @@ def normalize_biomarker_name(name: str) -> str:
         return 'IHQ_NEUN'
 
     # ACTIN - V5.2: CON prefijo IHQ_
-    if 'ACTIN' in nombre_upper or ('MUSCULO' in nombre_upper and 'LISO' in nombre_upper):
+    # V6.4.14: FIX IHQ250140 - Ser más específico, no capturar "MÚSCULO LISO" ni "MÚSCULO ESPECÍFICA"
+    if nombre_upper == 'ACTIN' or nombre_upper == 'ACTINA':
         return 'IHQ_ACTIN'
 
     # Biomarcadores CD - V5.2: CON prefijo IHQ_
@@ -2223,6 +3121,9 @@ def _preprocess_multipage_diagnosis(text: str) -> str:
     v5.3.2: Detecta cuando el DIAGNÓSTICO continúa después de separador de página
     y metadatos, y une las partes en un solo bloque antes de la extracción.
 
+    V6.5.10 FIX IHQ250231: PROTECCIÓN - NO procesar si hay secciones críticas
+    (DESCRIPCIÓN MICROSCÓPICA/MACROSCÓPICA) que podrían ser eliminadas por error
+
     Ejemplo:
         Página 1:
             DIAGNÓSTICO
@@ -2245,6 +3146,14 @@ def _preprocess_multipage_diagnosis(text: str) -> str:
         # No hay separadores de página, retornar sin cambios
         return text
 
+    # V6.5.10 FIX IHQ250231: PROTECCIÓN CRÍTICA
+    # Si el texto contiene DESCRIPCIÓN MICROSCÓPICA o MACROSCÓPICA,
+    # NO procesar porque podríamos eliminar estas secciones por error
+    # Problema: En IHQ250231, toda la descripción microscópica se eliminaba
+    if 'DESCRIPCI' in text.upper() and ('MICROSC' in text.upper() or 'MACROSC' in text.upper()):
+        # Hay secciones críticas de descripción, NO modificar el texto
+        return text
+
     # Buscar patrón: DIAGNÓSTICO seguido de contenido, luego separador de página
     # Patrón: DIAGNÓSTICO\n (contenido) \n (pie de página) \n --- PÁGINA X --- \n (metadatos) \n (continuación con "- ")
 
@@ -2252,8 +3161,9 @@ def _preprocess_multipage_diagnosis(text: str) -> str:
     match_diag = re.search(
         r'(DIAGN[OÓ]STICO\s*\n.*?)(?=Todos\s+los\s+an[aá]lisis\s+son\s+avalados|Pat[óo]logos?\s*\(CAP\)|---\s*P[ÁA]GINA)',
         text,
-        re.DOTALL | re.IGNORECASE
+        re.DOTALL  # CORREGIDO: Sin re.IGNORECASE para evitar falsos positivos con "diagnóstico"
     )
+
 
     if not match_diag:
         return text
@@ -2261,12 +3171,22 @@ def _preprocess_multipage_diagnosis(text: str) -> str:
     diagnostico_pag1 = match_diag.group(1)
 
     # Paso 2: Buscar continuación después de separador de página
-    # Patrón: --- PÁGINA X --- ... (metadatos) ... líneas que empiezan con "- " (continuación del diagnóstico)
+    # Patrón A: líneas que empiezan con "- " (continuación del diagnóstico con viñetas)
     match_continuation = re.search(
         r'---\s*P[ÁA]GINA\s+\d+\s*---.*?(?:Fecha\s+Informe\s*:.*?\n)((?:\s*-\s+[^\n]+\n)+)',
         text,
         re.DOTALL | re.IGNORECASE
     )
+
+    # V6.4.92 FIX IHQ250224: Si no hay viñetas, buscar contenido sin guiones (casos de próstata con Gleason)
+    # V6.4.94 FIX: Simplificar patrón fallback - captura hasta línea de guiones bajos o nombre del patólogo
+    # Patrón B: captura TODO hasta firma del patólogo, línea de separación o fin de documento
+    if not match_continuation:
+        match_continuation = re.search(
+            r'---\s*P[ÁA]GINA\s+\d+\s*---.*?(?:Fecha\s+Informe\s*:.*?\n)(.*?)(?=\n[A-Z][A-Z\s]+\nM[eé]dic[oa]\s+Pat[óo]log[oa]|_{10,}|Nota:\s+Este\s+informe|Todos\s+los\s+an[aá]lisis\s+son\s+avalados|$)',
+            text,
+            re.DOTALL | re.IGNORECASE
+        )
 
     if not match_continuation:
         return text
@@ -2287,10 +3207,21 @@ def _preprocess_multipage_diagnosis(text: str) -> str:
     )
 
     # Eliminar la continuación de pag 2 (ya está unida arriba)
+    # V6.4.92: Primero intenta eliminar con viñetas (guiones)
     text = re.sub(
         r'(---\s*P[ÁA]GINA\s+\d+\s*---.*?Fecha\s+Informe\s*:.*?\n)((?:\s*-\s+[^\n]+\n)+)',
         r'\1',  # Mantener separador y metadatos, eliminar continuación
         text,
+        flags=re.DOTALL | re.IGNORECASE
+    )
+
+    # V6.4.92 FIX IHQ250224: Si no hay viñetas, eliminar contenido sin guiones hasta firma
+    # V6.4.94 FIX: Simplificar patrón - coincide con el patrón de captura arriba
+    text = re.sub(
+        r'(---\s*P[ÁA]GINA\s+\d+\s*---.*?Fecha\s+Informe\s*:.*?\n)(.*?)(?=\n[A-Z][A-Z\s]+\nM[eé]dic[oa]\s+Pat[óo]log[oa]|_{10,}|Nota:\s+Este\s+informe|Todos\s+los\s+an[aá]lisis\s+son\s+avalados)',
+        r'\1',  # Mantener separador y metadatos, eliminar continuación
+        text,
+        count=1,  # Solo primera ocurrencia
         flags=re.DOTALL | re.IGNORECASE
     )
 
@@ -2321,10 +3252,11 @@ def extract_medical_data(text: str) -> Dict[str, Any]:
     for key, pattern in PATTERNS_IHQ.items():
         # v5.3.3: Para descripcion_microscopica_final, NO usar re.IGNORECASE
         # para que solo detecte "DIAGNÓSTICO" en mayúsculas
-        if key == 'descripcion_microscopica_final':
+        if key == 'descripcion_microscopica_final' or key == 'diagnostico_final_ihq':
             match = re.search(pattern, clean_text, re.DOTALL)  # Sin re.IGNORECASE
         else:
             match = re.search(pattern, clean_text, re.IGNORECASE | re.DOTALL)
+
 
         if key == 'fecha_toma_raw':
             val = match.group(1).strip() if match else ''
@@ -2337,13 +3269,42 @@ def extract_medical_data(text: str) -> Dict[str, Any]:
     if results.get('diagnostico_final_ihq'):
         diagnostico_raw = results['diagnostico_final_ihq']
         diagnostico_clean = clean_diagnostico_multipage(diagnostico_raw)
+
+        # V6.3.75 FIX IHQ250103: Limpiar prefijo "de \"" o "de '" al inicio del diagnóstico
+        # Ejemplo: de "ADENOCARCINOMA... → ADENOCARCINOMA...
+        diagnostico_clean = re.sub(r'^de\s*["\'\u201c\u201d]\s*', '', diagnostico_clean, flags=re.IGNORECASE)
+
+        # V6.3.75 FIX IHQ250103: Limpiar comillas residuales
+        # Ejemplo: REPRESENTADO". Se revisa → REPRESENTADO. Se revisa
+        # Ejemplo: REPRESENTADO" → REPRESENTADO
+        diagnostico_clean = re.sub(r'["\'\u201c\u201d]\.', '.', diagnostico_clean)  # comilla antes de punto
+        diagnostico_clean = re.sub(r'["\'\u201c\u201d](?=\s|$)', '', diagnostico_clean)  # comilla antes de espacio o fin
+
+        # V6.3.89 FIX IHQ250113: No limpiar prefijos para mantener "Mama derecha..." en Descripcion Diagnostico
+        # El Diagnostico Principal se encargará de extraer solo la patología
+        # diagnostico_clean = re.sub(r'^.*?(?:Estudio\s+de\s+inmunohistoqu[ií]mica:|:)\s*', '', diagnostico_clean, flags=re.IGNORECASE | re.DOTALL).strip()
+
         results['diagnostico_final_ihq'] = diagnostico_clean
 
     # === EXTRAER DATOS ADICIONALES CON PATRONES GENÉRICOS ===
+
     # Información de estudios y procedimientos - VERSIÓN ROBUSTA v3.2.5
     # CORREGIDO v4.2.6: Siempre sobrescribir (incluso si vacío) para eliminar encabezados de tabla capturados por patrón antiguo
     biomarcadores_solicitados = extract_biomarcadores_solicitados_robust(clean_text)
-    results['estudios_solicitados'] = ', '.join(biomarcadores_solicitados) if biomarcadores_solicitados else ''
+
+    # V6.4.60 FIX IHQ250195: Normalizar errores comunes de OCR en biomarcadores solicitados
+    # Ej: KI65 → KI-67, CD 177 → CD117, etc.
+    biomarcadores_normalizados = []
+    for bio in biomarcadores_solicitados:
+        # Normalizar errores comunes de OCR
+        bio_normalizado = bio
+        if bio.upper() == 'KI65':
+            bio_normalizado = 'KI-67'
+        elif bio.upper() == 'CD 177':
+            bio_normalizado = 'CD117'
+        biomarcadores_normalizados.append(bio_normalizado)
+
+    results['estudios_solicitados'] = ', '.join(biomarcadores_normalizados) if biomarcadores_normalizados else ''
 
     # Información del órgano (múltiples patrones)
     organo_value = extract_organ_information(clean_text)
@@ -2367,7 +3328,21 @@ def extract_medical_data(text: str) -> Dict[str, Any]:
     )
     results['malignidad'] = malignidad
 
-    # Procesar descripciones finales
+    # V6.3.13: Extraer DIAGNOSTICO_COLORACION ANTES de process_medical_descriptions
+    # para que process_medical_descriptions pueda sobrescribirlo con macro_final si es necesario
+    # NUEVO v6.1.0: Extraer diagnóstico del Estudio M (Coloración) con Nottingham
+    # V6.0.5: Si NO encuentra coloración pero SÍ es IHQ, marcar "NO APLICA"
+    # V6.2.13: Usar wrapper que garantiza normalización de saltos de línea
+    diagnostico_coloracion = extract_diagnostico_coloracion_wrapper(clean_text)
+    if diagnostico_coloracion:
+        results['diagnostico_coloracion'] = diagnostico_coloracion
+    else:
+        # Detectar si es estudio IHQ puro (sin coloración)
+        es_ihq_puro = bool(re.search(r'(?:ESTUDIOS?\s+DE\s+)?INMUNOHISTOQU[IÍ]MICA', clean_text, re.IGNORECASE))
+        if es_ihq_puro:
+            results['diagnostico_coloracion'] = 'NO APLICA'  # IHQ puro, no tiene estudio de coloración
+
+    # Procesar descripciones finales (puede sobrescribir diagnostico_coloracion con macro_final reconstruido)
     results = process_medical_descriptions(results, clean_text)
 
     # EXTRAER FECHAS ADICIONALES Y COMBINAR RESULTADOS
@@ -2385,17 +3360,6 @@ def extract_medical_data(text: str) -> Dict[str, Any]:
     factor_pronostico = extract_factor_pronostico(clean_text, nombre_paciente=nombre_paciente)
     if factor_pronostico:
         results['factor_pronostico'] = factor_pronostico
-
-    # NUEVO v6.1.0: Extraer diagnóstico del Estudio M (Coloración) con Nottingham
-    # V6.0.5: Si NO encuentra coloración pero SÍ es IHQ, marcar "NO APLICA"
-    diagnostico_coloracion = extract_diagnostico_coloracion(clean_text)
-    if diagnostico_coloracion:
-        results['diagnostico_coloracion'] = diagnostico_coloracion
-    else:
-        # Detectar si es estudio IHQ puro (sin coloración)
-        es_ihq_puro = bool(re.search(r'(?:ESTUDIOS?\s+DE\s+)?INMUNOHISTOQU[IÍ]MICA', clean_text, re.IGNORECASE))
-        if es_ihq_puro:
-            results['diagnostico_coloracion'] = 'NO APLICA'  # IHQ puro, no tiene estudio de coloración
 
     # Especialidad deducida
     servicio = extract_service_info(clean_text)
@@ -2437,6 +3401,7 @@ def map_medical_fields_to_database(results: Dict[str, Any]) -> Dict[str, Any]:
     """Mapea campos médicos a formato de base de datos"""
 
     # Mapeo de campos con nombres alternativos
+    # V6.2.14: Priorizar campos _final que han sido post-procesados
     field_mapping = {
         'malignidad': 'malignancy_status',
         'diagnostico_final_ihq': 'diagnostico_final',
@@ -2445,9 +3410,10 @@ def map_medical_fields_to_database(results: Dict[str, Any]) -> Dict[str, Any]:
     }
 
     # Aplicar mapeo
+    # V6.2.14: Sobrescribir SIEMPRE si existe el campo _final (post-procesado)
     for old_key, new_key in field_mapping.items():
         if old_key in results and results[old_key]:
-            results[new_key] = results[old_key]
+            results[new_key] = results[old_key]  # Sobrescribe sin condiciones
 
     return results
 
@@ -2487,22 +3453,34 @@ def extract_organ_information(text: str) -> str:
                 return normalized
 
     # Estrategia 2: Buscar en tabla de estudios solicitados (patrón general)
-    estudios_table_pattern = r'estudios\s+solicitados.*?(?:organo|órgano)\s+fecha\s+toma.*?(?:bloques\s+y\s+laminas\s+|almacenamiento.*?)([A-Z\s]+)(?:\s+INFORME|\s+ESTUDIO|\n|$)'
+    # V6.2.10: FIX IHQ251029 - Modificar para capturar multi-línea (ej: "BIOPSIA MASA\nINTRAABDOMINAL")
+    # Problema: Lookahead con \n detenía captura en primera línea
+    # Solución: Capturar incluyendo \n hasta encontrar "INFORME" o "ESTUDIO DE" como palabras completas
+    estudios_table_pattern = r'estudios\s+solicitados.*?(?:organo|órgano)\s+fecha\s+toma.*?(?:bloques\s+y\s+laminas\s+|almacenamiento.*?)([A-Z\s\n]+?)(?=\s+INFORME\s+DE|\s+ESTUDIO\s+DE|$)'
     estudios_match = re.search(estudios_table_pattern, text, re.IGNORECASE | re.DOTALL)
     if estudios_match:
         organo_from_table = estudios_match.group(1).strip()
+        # V6.2.10: Limpiar saltos de línea internos (convertir a espacios)
+        organo_from_table = re.sub(r'\s*\n\s*', ' ', organo_from_table).strip()
         if organo_from_table and len(organo_from_table) > 3:
             normalized = normalize_organ_name(organo_from_table)
             if normalized != 'ORGANO_NO_ESPECIFICADO':
                 return normalized
 
     # Estrategia 3: Buscar patrón específico "Bloques y laminas ÓRGANO"
-    # CORREGIDO: Capturar órgano en múltiples líneas después de "Bloques y laminas"
-    bloques_pattern = r'bloques\s+y\s+laminas\s*\n?\s*([A-Z\s]+?(?:\n[A-Z\s]+?)?)(?:\s+INFORME|\s+ESTUDIO|\n\s*INFORME|\n\s*ESTUDIO|$)'
+    # CORREGIDO v6.2.4: Limitar captura a UNA SOLA LÍNEA para evitar captura de múltiples filas de tabla
+    # FIX IHQ251017: El PDF tiene tabla con 2 filas (IHQ251017 e IHQ251017-B), el regex anterior
+    # capturaba a través de ambas filas. Ahora se detiene en el primer salto de línea.
+    # Cambio: Detener en \n (fin de línea) en lugar de buscar IHQ/ESTUDIO (que están en líneas siguientes)
+    # V6.2.9: FIX IHQ251029 - Capturar también línea siguiente si es continuación (ej: "BIOPSIA MASA\nINTRAABDOMINAL")
+    # V6.2.10: FIX IHQ251029 - Cambiar {2,80}? a {2,120} (greedy, más largo) y lookahead más específico
+    # Problema: Lookahead con "INFORME" se detenía antes de "INTRAABDOMINAL" porque "INFORME DE ANATOMÍA" aparece después
+    # Solución: Lookahead solo con "IHQ\d+" o "ESTUDIO DE" (más específicos), aumentar límite a 120 caracteres
+    bloques_pattern = r'bloques\s+y\s+laminas\s+([A-Z][A-Z \n]{2,120})\s*(?=IHQ\d+|ESTUDIO DE|$)'
     bloques_match = re.search(bloques_pattern, text, re.IGNORECASE | re.MULTILINE)
     if bloques_match:
         organo_from_bloques = bloques_match.group(1).strip()
-        # Limpiar saltos de línea internos
+        # Limpiar saltos de línea internos (convertir a espacios)
         organo_from_bloques = re.sub(r'\s*\n\s*', ' ', organo_from_bloques).strip()
         if organo_from_bloques and len(organo_from_bloques) > 3:
             normalized = normalize_organ_name(organo_from_bloques)
@@ -2553,9 +3531,48 @@ def normalize_organ_name(organ_text: str) -> str:
 
     CORREGIDO: Siempre retorna el nombre normalizado, nunca 'ORGANO_NO_ESPECIFICADO'
     para permitir que el sistema de priorización funcione correctamente
+
+    v6.2.3 (FIX IHQ251017): Limpieza adicional de códigos IHQ y texto administrativo
     """
     if not organ_text:
         return 'ORGANO_NO_ESPECIFICADO'
+
+    # NUEVO v6.2.3: Detectar órgano duplicado con texto administrativo en medio
+    # Patrón: "BIOPSIA DE MEDULA OSEA [texto administrativo] BIOPSIA DE MEDULA OSEA"
+    # Si detectamos duplicación, quedarnos solo con la primera ocurrencia
+
+    # Normalizar espacios múltiples primero
+    organ_text_normalized = re.sub(r'\s+', ' ', organ_text).strip()
+
+    # Dividir el texto en palabras para analizar
+    words = organ_text_normalized.split()
+
+    # Buscar si hay un patrón duplicado (mismo órgano al inicio y al final)
+    # Ejemplo: ["BIOPSIA", "DE", "MEDULA", "OSEA", "IHQ251017-B", ..., "BIOPSIA", "DE", "MEDULA", "OSEA"]
+    if len(words) >= 6:  # Mínimo para tener duplicación significativa
+        # Probar ventanas de 2-5 palabras para detectar duplicación
+        for window_size in range(2, 6):
+            if window_size <= len(words) // 2:  # Solo si la ventana cabe 2 veces
+                # Comparar inicio y final
+                inicio = ' '.join(words[:window_size])
+                final = ' '.join(words[-window_size:])
+
+                # Si inicio y final son iguales (mismo órgano duplicado)
+                if inicio.upper() == final.upper():
+                    # Verificar que hay texto administrativo en medio
+                    texto_medio = ' '.join(words[window_size:-window_size])
+                    if any(keyword in texto_medio.upper() for keyword in ['IHQ', 'ESTUDIO', 'INMUNOHISTOQUIMICA', 'ANATOMOPATOLOGICO']):
+                        # Quedarnos solo con la primera ocurrencia
+                        organ_text = inicio
+                        break
+
+    # NUEVO v6.2.3: Limpiar códigos IHQ y texto administrativo ANTES de procesar
+    # Detener antes de códigos IHQ (ej: IHQ251017-B)
+    organ_text = re.split(r'\s+IHQ\d+', organ_text)[0]
+    # Detener antes de "ESTUDIO DE" (texto administrativo)
+    organ_text = re.split(r'\s+ESTUDIO\s+DE', organ_text, flags=re.IGNORECASE)[0]
+    # Detener antes de números largos de 5+ dígitos (códigos administrativos)
+    organ_text = re.split(r'\s+\d{5,}', organ_text)[0]
 
     organ_lower = organ_text.lower().strip()
 
@@ -2579,51 +3596,204 @@ def normalize_organ_name(organ_text: str) -> str:
 
 def determine_malignancy(diagnostico: str, macroscopica: str, microscopica: str, full_text: str) -> str:
     """Determina malignidad basada en múltiples fuentes con lógica mejorada.
-    
+
     v4.2.2: Lógica mejorada que considera:
     - Patrones específicos de alta prioridad (WHO grados, GIST, mielomas)
     - Contexto (ej: "MENINGIOMA WHO GRADO 1" → BENIGNO)
     - Scoring ponderado
+
+    v6.2.0 (FIX IHQ251018): Detecta casos no oncológicos (biopsias de trasplante)
     """
 
     # Combinar todos los textos para análisis
     combined_text = f"{diagnostico} {macroscopica} {microscopica} {full_text}".upper()
 
     # ════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -1: Casos con MÚLTIPLES muestras (una BENIGNA, otra MALIGNA)
+    # ════════════════════════════════════════════════════════════════════════
+    # V6.4.42 FIX IHQ250178: Detectar keywords malignos ANTES de evaluar "NEGATIVO PARA MALIGNIDAD"
+    # Caso: Próstata con 2 muestras: C="NEGATIVO PARA MALIGNIDAD", F="ADENOCARCINOMA ACINAR 3+3"
+    # Regla médica: SI UNA muestra es maligna → CASO completo es MALIGNO
+    # Debe prevalecer el ADENOCARCINOMA sobre el "NEGATIVO PARA MALIGNIDAD" de otra muestra
+    keywords_malignos_alta_certeza = [
+        'ADENOCARCINOMA', 'CARCINOMA', 'SARCOMA', 'MELANOMA',
+        'LINFOMA', 'LEUCEMIA', 'MIELOMA', 'METÁSTASIS', 'METASTASIS'
+    ]
+    for kw in keywords_malignos_alta_certeza:
+        if kw in combined_text:
+            return 'MALIGNO'
+
+    # ════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD 0: Casos NO oncológicos → BENIGNO
+    # ════════════════════════════════════════════════════════════════════════
+    # FIX IHQ251018: Biopsias de trasplante renal, glomerulonefritis, etc.
+    # NO son casos oncológicos, deben clasificarse como BENIGNO (no hay tumor)
+    for pattern in NON_ONCOLOGICAL_PATTERNS:
+        if re.search(pattern, combined_text):
+            return 'BENIGNO'
+
+    # V6.2.7: FIX IHQ251026 - Detectar "NEGATIVO PARA MALIGNIDAD" explícitamente
+    # Patrón: "NEGATIVO PARA MALIGNIDAD" o "BENIGNO PARA MALIGNIDAD"
+    # Caso: Diagnóstico dice "NEGATIVO PARA MALIGNIDAD" pero se marcaba como MALIGNO
+    if re.search(r'NEGATIV[OA]\s+PARA\s+MALIGNIDAD', combined_text):
+        return 'BENIGNO'
+
+    # V6.2.7: FIX - Detectar "SIN EVIDENCIA DE MALIGNIDAD"
+    if re.search(r'SIN\s+(?:EVIDENCIA|SIGNOS|DATOS)\s+DE\s+MALIGNIDAD', combined_text):
+        return 'BENIGNO'
+
+    # V6.3.61 FIX IHQ250075: "SIN EVIDENCIA DE CELULARIDAD DE ASPECTO NEOPLÁSICO" → BENIGNO
+    if re.search(r'SIN\s+EVIDENCIA\s+DE\s+(?:CELULARIDAD\s+DE\s+ASPECTO\s+)?NEOPL[ÁA]SIC[OA]', combined_text):
+        return 'BENIGNO'
+
+    # V6.3.15: FIX IHQ250014 - Detectar "NEGATIVO PARA ... INVASIVA/INVASIVO"
+    # Caso: "NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA/INVASIVA" se marcaba como MALIGNO
+    # porque contenía "INVASIVA" (keyword de malignidad)
+    # Contexto completo indica AUSENCIA de lesión invasiva → BENIGNO
+    if re.search(r'NEGATIV[OA]\s+PARA\s+.*?(?:PREINVASIV[OA]|INVASIV[OA])', combined_text):
+        return 'BENIGNO'
+
+    # V6.3.15: Detectar "SIN ... INVASION/INVASIVO"
+    if re.search(r'SIN\s+(?:EVIDENCIA\s+DE\s+)?(?:INVASI[ÓO]N|LESIONES?\s+INVASIV[OA]S?)', combined_text):
+        return 'BENIGNO'
+
+    # V6.3.56 FIX IHQ250065: "NEGATIVO/SIN COMPROMISO POR LINFOMA" → BENIGNO
+    # Casos de ganglio linfático con HIPERPLASIA sin compromiso neoplásico
+    # La palabra LINFOMA aparece pero en contexto de AUSENCIA
+    if re.search(r'(?:NEGATIV[OA]\s+PARA|SIN)\s+COMPROMISO\s+(?:POR\s+)?LINFOMA', combined_text):
+        return 'BENIGNO'
+
+    # V6.4.4 FIX IHQ250120: "NEGATIVO PARA PROLIFERACIÓN MELANOCÍTICA" → BENIGNO
+    # Es el diagnóstico clave para descartar melanoma en melanoniquia
+    if re.search(r'NEGATIV[OA]\s+PARA\s+PROLIFERACI[ÓO]N\s+MELANOC[ÍI]TICA', combined_text):
+        return 'BENIGNO'
+        
+    # V6.4.4: "NEGATIVO PARA MELANOMA" o "NO HAY EVIDENCIA DE MELANOMA"
+    if re.search(r'(?:NEGATIV[OA]\s+PARA|SIN\s+EVIDENCIA\s+DE|NO\s+SE\s+OBSERVA)\s+MELANOMA', combined_text):
+        return 'BENIGNO'
+
+    # V6.3.56 FIX IHQ250065: HIPERPLASIA FOLICULAR/PARACORTICAL → BENIGNO
+    # V6.4.75 FIX IHQ250208: Corregido lookbehind de ancho variable (causaba PatternError)
+    # Hiperplasia ganglionar reactiva (no neoplásica)
+    if re.search(r'HIPERPLASIA\s+(?:FOLICULAR|PARACORTICAL|SINUSOIDAL|LINFOIDE|MIELOIDE)', combined_text):
+        # Solo si NO hay evidencia de linfoma positivo (sin "NEGATIVO PARA" o "SIN")
+        # Buscar linfoma positivo (sin contextos negativos)
+        tiene_linfoma_positivo = False
+        if re.search(r'COMPROMISO\s+POR\s+LINFOMA', combined_text):
+            # Verificar que NO sea "NEGATIVO PARA COMPROMISO" o "SIN COMPROMISO"
+            if not re.search(r'(?:NEGATIV[OA]\s+PARA|SIN)\s+COMPROMISO\s+POR\s+LINFOMA', combined_text):
+                tiene_linfoma_positivo = True
+        if re.search(r'LINFOMA', combined_text):
+            # Excluir "EN ESTA MUESTRA" o contextos negativos
+            if not re.search(r'(?:NEGATIV[OA]\s+PARA|SIN)\s+.*?LINFOMA|LINFOMA\s+EN\s+ESTA', combined_text):
+                tiene_linfoma_positivo = True
+
+        if not tiene_linfoma_positivo:
+            return 'BENIGNO'
+
+    # ════════════════════════════════════════════════════════════════════════
     # PRIORIDAD 1: Patrones específicos de alta confianza
     # ════════════════════════════════════════════════════════════════════════
-    
-    # WHO GRADO 1 → BENIGNO (meningiomas, astrocitomas de bajo grado)
-    if re.search(r'WHO\s+GRADO\s+1|WHO\s+1|GRADO\s+I\b', combined_text):
+
+    # V6.4.0 FIX IHQ250013: Fibromatosis desmoide → BENIGNO
+    # DEBE IR PRIMERO en PRIORIDAD 1 para evitar que scoring de keywords marque MALIGNO
+    # La fibromatosis desmoide es una neoplasia fibroblástica LOCALMENTE AGRESIVA
+    # pero NO es maligna (no metastatiza), se clasifica como BENIGNO
+    # Sinónimos: tumor desmoide, fibromatosis agresiva
+    if re.search(r'FIBROMATOSIS\s+(?:DE\s+TIPO\s+)?DESMOIDE|TUMOR\s+DESMOIDE|FIBROMATOSIS\s+AGRESIVA', combined_text):
         return 'BENIGNO'
-    
-    # WHO GRADO 3, 4 → MALIGNO
-    if re.search(r'WHO\s+GRADO\s+[34]|WHO\s+[34]|GRADO\s+(?:III|IV)\b', combined_text):
+
+    # V6.3.76 FIX IHQ250094: Inflamación crónica/granulomatosa → BENIGNO
+    # Las inflamaciones son patologías NO neoplásicas, siempre BENIGNO
+    # Patrones: "INFLAMACIÓN CRÓNICA", "INFLAMACIÓN GRANULOMATOSA", "GRANULOMA"
+    if re.search(r'INFLAMACI[ÓO]N\s+(?:CR[ÓO]NICA|GRANULOMATOSA|AGUDA)|GRANULOMA(?:S)?\b', combined_text):
+        return 'BENIGNO'
+
+    # V6.3.9 FIX IHQ250011: Tejido endometrial ectópico (endometriosis) → BENIGNO
+    # DEBE IR PRIMERO en PRIORIDAD 1 para evitar que scoring de keywords marque MALIGNO
+    # Patrón: "TEJIDO ENDOMETRIAL ECTÓPICO" o "ENDOMETRIOSIS"
+    if re.search(r'TEJIDO\s+ENDOMETRIAL\s+ECT[ÓO]PIC[OA]|ENDOMETRIOSIS', combined_text):
+        return 'BENIGNO'
+
+    # V6.2.6: Médula ósea SIN neoplasia → BENIGNO (IHQ251017)
+    # Casos de médula ósea sin evidencia de neoplasia hematológica
+    # Indicadores: "SIN INCREMENTO DE BLASTOS", "CELULAS MADURAS", "SIN INMUNOFENOTIPO ABERRANTE"
+    if re.search(r'MEDULA\s+OSEA|BIOPSIA\s+DE\s+MEDULA', combined_text):
+        # Si hay evidencia clara de ausencia de neoplasia
+        indicadores_benignos = [
+            r'SIN\s+(?:INCREMENTO|AUMENTO).*?BLASTOS',
+            r'(?:CELULAS?|CELULARIDAD)\s+(?:PLASMATICAS?\s+)?MADURAS',
+            r'SIN\s+(?:EXPRESION\s+DE\s+)?INMUNOFENOTIPO\s+ABERRANTE',
+            r'LINFOCITOS\s+(?:T\s+Y\s+B\s+)?MADUROS',
+            r'SIN\s+(?:FORMAR\s+)?(?:ACUMULOS|CUMULOS)'
+        ]
+        matches_benignos = sum(1 for p in indicadores_benignos if re.search(p, combined_text))
+
+        # Si hay 2 o más indicadores benignos Y NO hay keywords de neoplasia maligna
+        if matches_benignos >= 2:
+            keywords_malignos_hematologicos = ['MIELOMA', 'LEUCEMIA', 'LINFOMA', 'PLASMOCITOMA', 'NEOPLASIA']
+            tiene_maligno = any(kw in combined_text for kw in keywords_malignos_hematologicos)
+            if not tiene_maligno:
+                return 'BENIGNO'
+
+    # V6.4.5 FIX IHQ250131: Tumores neuroendocrinos son MALIGNOS (incluso G1)
+    if re.search(r'TUMOR\s+NEUROENDOCRINO|NEOPLASIA\s+NEUROENDOCRINA|\bNET\b', combined_text):
         return 'MALIGNO'
-    
+
+    # WHO GRADO 1 → BENIGNO (meningiomas, astrocitomas de bajo grado)
+    # V6.4.5 FIX IHQ250129: No aplicar si es CARCINOMA/ADENOCARCINOMA (Grado I = bien diferenciado, sigue siendo maligno)
+    # V6.4.60 FIX IHQ250197: Usar negative lookahead en GRADO I para evitar match con GRADO IV/III/II
+    if re.search(r'WHO\s+GRADO\s+1|WHO\s+1|GRADO\s+I\b(?!V|I)', combined_text):
+        if not any(kw in combined_text for kw in ['CARCINOMA', 'ADENOCARCINOMA', 'SARCOMA', 'MELANOMA', 'LINFOMA']):
+            return 'BENIGNO'
+
+    # WHO GRADO 3, 4 → MALIGNO
+    # V6.4.60 FIX IHQ250197: Agregar WHO III/IV (notación romana sin palabra "GRADO")
+    if re.search(r'WHO\s+GRADO\s+[34]|WHO\s+[34]|WHO\s+(?:III|IV)\b|GRADO\s+(?:III|IV)\b', combined_text):
+        return 'MALIGNO'
+
     # GIST (Tumor del estroma gastrointestinal) → Siempre potencialmente MALIGNO
     # Incluso de "bajo grado" tienen potencial metastásico
-    if 'TUMOR DEL ESTROMA GASTROINTESTINAL' in combined_text or 'GIST' in combined_text:
+    # V6.3.62 FIX IHQ250082: Usar word boundary para GIST (evita falso positivo con "Pathologists")
+    if 'TUMOR DEL ESTROMA GASTROINTESTINAL' in combined_text or re.search(r'\bGIST\b', combined_text):
         return 'MALIGNO'
-    
+
     # Neoplasias hematológicas específicas
     if 'NEOPLASIA DE CELULAS PLASMATICAS' in combined_text or 'PLASMOCITOMA' in combined_text:
         return 'MALIGNO'
-    
+
     if 'MIELOMA' in combined_text or 'LEUCEMIA' in combined_text:
         return 'MALIGNO'
-    
+
     # Tumores específicos típicamente benignos
     hibernoma_benign = ['HIBERNOMA', 'NEUROFIBROMA', 'SCHWANNOMA BENIGNO']
     for tumor in hibernoma_benign:
         if tumor in combined_text:
             return 'BENIGNO'
-    
+
     # MENINGIOMA sin alto grado → BENIGNO (mayoría son WHO grado 1)
     if 'MENINGIOMA' in combined_text:
         if not any(x in combined_text for x in ['GRADO 2', 'GRADO 3', 'GRADO II', 'GRADO III', 'ATIPICO', 'ANAPLASICO']):
             return 'BENIGNO'
-    
+
+    # V6.3.60 FIX IHQ250072: ADENOMA HIPOFISIARIO → BENIGNO
+    # Los adenomas hipofisiarios son tumores benignos (no carcinomas hipofisiarios)
+    if 'ADENOMA HIPOFISIARIO' in combined_text or 'ADENOMA PITUITARIO' in combined_text:
+        return 'BENIGNO'
+
+    # V6.3.60: Otros adenomas comunes sin contexto maligno → BENIGNO
+    # ADENOMA + órgano específico sin keywords malignos
+    if re.search(r'ADENOMA\s+(?:DE\s+)?(?:TIROIDES|PARATIROIDES|SUPRARRENAL|ADRENAL|HEPAT|COLON|RECT)', combined_text):
+        # Verificar que no haya keywords de malignidad cercanos
+        if not any(x in combined_text for x in ['CARCINOMA', 'INVASIVO', 'METASTA', 'MALIGNO']):
+            return 'BENIGNO'
+
+    # V6.3.64 FIX IHQ250082: ADENOMA genérico sin contexto maligno → BENIGNO
+    # Los adenomas son tumores benignos por definición (si fueran malignos serían adenocarcinomas)
+    if 'ADENOMA' in combined_text and 'ADENOCARCINOMA' not in combined_text:
+        if not any(x in combined_text for x in ['CARCINOMA', 'INVASIVO', 'METASTA', 'MALIGNO', 'INDIFERENCIADO']):
+            return 'BENIGNO'
+
     # Lesiones fusiformes bien diferenciadas → BENIGNO
     if 'LESION FUSOCELULAR BIEN DIFERENCIADA' in combined_text or 'FUSIFORME BIEN DIFERENCIADA' in combined_text:
         return 'BENIGNO'
@@ -2631,14 +3801,35 @@ def determine_malignancy(diagnostico: str, macroscopica: str, microscopica: str,
     # ════════════════════════════════════════════════════════════════════════
     # PRIORIDAD 2: Scoring ponderado con keywords
     # ════════════════════════════════════════════════════════════════════════
-    
+
+    # V6.1.18 FIX IHQ250116: Normalizar texto para búsqueda accent-insensitive
+    def strip_accents_upper(text):
+        if not text: return ""
+        text = text.upper()
+        # Normalización simple de acentos españoles
+        accents = {'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U', 'Ü': 'U', 'Ñ': 'N'}
+        for a, b in accents.items():
+            text = text.replace(a, b)
+        return text
+
+    text_norm = strip_accents_upper(combined_text)
+
     # Verificar malignidad con ponderación
     malignidad_score = 0
     for keyword in MALIGNIDAD_KEYWORDS_IHQ:
-        if keyword in combined_text:
+        kw_norm = strip_accents_upper(keyword)
+        # Usar regex con word boundaries para keywords cortas (<=4 chars)
+        if len(kw_norm) <= 4:
+            if re.search(rf'\b{re.escape(kw_norm)}\b', text_norm):
+                if kw_norm in ['CARCINOMA', 'ADENOCARCINOMA', 'SARCOMA', 'MELANOMA',
+                              'METASTASIS', 'INVASIVO', 'LINFOMA', 'NEOPLASIA']:
+                    malignidad_score += 3
+                else:
+                    malignidad_score += 1
+        elif kw_norm in text_norm:
             # Palabras de alta certeza valen más
-            if keyword in ['CARCINOMA', 'ADENOCARCINOMA', 'SARCOMA', 'MELANOMA', 
-                          'METASTASIS', 'METÁSTASIS', 'INVASIVO', 'LINFOMA']:
+            if kw_norm in ['CARCINOMA', 'ADENOCARCINOMA', 'SARCOMA', 'MELANOMA',
+                          'METASTASIS', 'INVASIVO', 'LINFOMA', 'NEOPLASIA']:
                 malignidad_score += 3
             else:
                 malignidad_score += 1
@@ -2646,9 +3837,18 @@ def determine_malignancy(diagnostico: str, macroscopica: str, microscopica: str,
     # Verificar benignidad
     benignidad_score = 0
     for keyword in BENIGNIDAD_KEYWORDS_IHQ:
-        if keyword in combined_text:
+        kw_norm = strip_accents_upper(keyword)
+        # V6.3.76: Usar word boundaries para keywords cortas
+        if len(kw_norm) <= 4:
+            if re.search(rf'\b{re.escape(kw_norm)}\b', text_norm):
+                if kw_norm in ['BENIGNO', 'BENIGNIDAD', 'ADENOMA', 'FIBROMA',
+                              'LIPOMA', 'HIBERNOMA', 'GRADO 1', 'WHO 1']:
+                    benignidad_score += 3
+                else:
+                    benignidad_score += 1
+        elif kw_norm in text_norm:
             # Palabras de alta certeza valen más
-            if keyword in ['BENIGNO', 'BENIGNIDAD', 'ADENOMA', 'FIBROMA', 
+            if kw_norm in ['BENIGNO', 'BENIGNIDAD', 'ADENOMA', 'FIBROMA',
                           'LIPOMA', 'HIBERNOMA', 'GRADO 1', 'WHO 1']:
                 benignidad_score += 3
             else:
@@ -2659,6 +3859,12 @@ def determine_malignancy(diagnostico: str, macroscopica: str, microscopica: str,
     # ════════════════════════════════════════════════════════════════════════
     
     # Decisión con umbral más claro
+    # V6.1.18: Si hay evidencia clara de uno y nada del otro, ser decisivo
+    if malignidad_score > 0 and benignidad_score == 0:
+        return 'MALIGNO'
+    if benignidad_score > 0 and malignidad_score == 0:
+        return 'BENIGNO'
+
     if malignidad_score > benignidad_score and malignidad_score >= 2:
         return 'MALIGNO'
     elif benignidad_score > malignidad_score and benignidad_score >= 2:
@@ -2668,31 +3874,157 @@ def determine_malignancy(diagnostico: str, macroscopica: str, microscopica: str,
     elif benignidad_score > 0:
         return 'BENIGNO'
     else:
-        # Si realmente no hay información, dejar NO_DETERMINADO
-        # pero esto debería ser rarísimo con las mejoras
-        return 'NO_DETERMINADO'
+        # V6.4.0: NUNCA retornar NO_DETERMINADO
+        # Si no hay información, asumir BENIGNO (estudios IHQ sin señales de malignidad)
+        return 'BENIGNO'
 
 def process_medical_descriptions(results: Dict[str, Any], text: str) -> Dict[str, Any]:
-    """Procesa y mejora las descripciones médicas"""
+    """Procesa y mejora las descripciones médicas
 
-    # CORREGIDO: Priorizar descripcion_macroscopica_ihq (la del encabezado)
-    macro_body = results.get('descripcion_macroscopica_ihq', '').lstrip(': ').strip()
-    se_recibe_body = results.get('descripcion_macroscopica_se_recibe', '').strip()
+    V6.2.14: FIX IHQ251029 + IHQ251030 - Corrige descripción macroscópica incompleta que termina
+    en palabra(s) conectora(s). Detecta combinaciones como "y", "y con", "y de", etc.
 
-    # CORREGIDO: Priorizar texto completo capturado del patrón principal
-    if macro_body:
-        results['descripcion_macroscopica_final'] = macro_body
-    elif se_recibe_body:
-        results['descripcion_macroscopica_final'] = se_recibe_body
-    else:
-        results['descripcion_macroscopica_final'] = ''
+    Soporta comillas Unicode (", ") además de ASCII (", ')
+    """
 
-    # Limpiar descripción microscópica
-    microscopica = results.get('descripcion_microscopica_final', '').strip()
-    if microscopica:
-        # Limpiar caracteres especiales y normalizar espacios
-        microscopica = re.sub(r'\s+', ' ', microscopica).strip()
-        results['descripcion_microscopica_final'] = microscopica
+    # V6.2.14: Trabajar directamente sobre los campos que se extraen de PATTERNS_IHQ
+    # Los campos extraídos son: descripcion_macroscopica_ihq, descripcion_macroscopica_se_recibe, descripcion_microscopica_final
+
+    # Obtener campos base
+    macro_ihq = results.get('descripcion_macroscopica_ihq', '').strip()
+    macro_se_recibe = results.get('descripcion_macroscopica_se_recibe', '').strip()
+    micro_final = results.get('descripcion_microscopica_final', '').strip()
+
+    # Determinar qué campo macro usar (prioridad: se_recibe > ihq)
+    macro_final = macro_se_recibe if macro_se_recibe else macro_ihq
+
+    # Si tenemos macro y micro, aplicar fix V6.2.14
+    if macro_final and micro_final:
+        # Detectar si macroscópica termina incompleta
+        continuation_pattern = r'\b(?:y\s+)?(?:y|de|del|con|para|en|a|por|se)\s*$'
+        continuation_match = re.search(continuation_pattern, macro_final, re.IGNORECASE)
+
+        if continuation_match:
+            # Buscar texto mal ubicado en microscópica
+            # V6.2.14: Usar patrón con soporte para comillas Unicode (U+201C, U+201D)
+            # Este patrón cubre tanto ASCII ("') como Unicode ("")
+            # V6.4.10: FIX IHQ250121 - Hacer comillas de cierre opcionales (OCR a veces las omite)
+            misplaced_pattern = r'(diagn[óo]sticos?\s+(?:de\s+)?["\'"\u201c\u201d].*?["\'"\u201c\u201d]?.*?\.\s*Previa\s+.*?(?:se\s+(?:solicitan?|realizan?)|coloraciones?)\s+.*?\.)'
+            misplaced_match = re.search(misplaced_pattern, micro_final, re.IGNORECASE | re.DOTALL)
+
+            if misplaced_match:
+                texto_recuperado = misplaced_match.group(1).strip()
+                texto_recuperado = re.sub(r'\s+', ' ', texto_recuperado)
+
+                # Aplicar corrección: mover texto de micro a macro
+                macro_final = macro_final + " " + texto_recuperado
+                micro_final = micro_final.replace(misplaced_match.group(1), '', 1).strip()
+                micro_final = re.sub(r'\s+', ' ', micro_final)
+
+    # ════════════════════════════════════════════════════════════════════════════
+    # V6.3.40 FIX IHQ250034: Capturar continuación de descripción microscópica en página 2
+    # ════════════════════════════════════════════════════════════════════════════
+    # Problema: En informes de 2 páginas, la descripción microscópica puede continuar
+    # después del encabezado de página 2 (después del bloque DIAGNÓSTICO/RESPONSABLE)
+    # Formato típico:
+    #   --- PÁGINA X ---
+    #   [encabezado repetido: IHQ..., Nombre, etc.]
+    #   Las células tumorales son positivas para CKAE1E3 y MAMAGLOBINA...
+    # Solución: Buscar este patrón y concatenar a micro_final
+
+    # Patrón para detectar continuación en página 2
+    # Busca: después de "--- PÁGINA X ---" + encabezado + contenido que parece descripción microscópica
+    patron_pagina2_micro = r'---\s*P[ÁA]GINA\s+\d+\s*---.*?(?:Fecha\s+Informe\s*:\s*\d{2}/\d{2}/\d{4})\s*((?:Las\s+c[ée]lulas|Los\s+cortes|El\s+tumor|Se\s+observa|Expresi[óo]n|Positividad|Negatividad)[^─]+?)(?:Todos\s+los\s+an[áa]lisis|---\s*P[ÁA]GINA|$)'
+    match_pagina2 = re.search(patron_pagina2_micro, text, re.IGNORECASE | re.DOTALL)
+    if match_pagina2:
+        contenido_pagina2 = match_pagina2.group(1).strip()
+        # Limpiar saltos de línea y espacios múltiples
+        contenido_pagina2 = re.sub(r'\s+', ' ', contenido_pagina2)
+        # Verificar que no sea duplicado (a veces el mismo texto ya está en micro_final)
+        if contenido_pagina2 and contenido_pagina2 not in micro_final:
+            # Solo agregar si tiene contenido significativo (> 50 chars)
+            if len(contenido_pagina2) > 50:
+                micro_final = micro_final + " " + contenido_pagina2
+                micro_final = re.sub(r'\s+', ' ', micro_final).strip()
+
+    # V6.3.61 FIX IHQ250075: Limpiar backslashes de las descripciones
+    # Problema: A veces el OCR captura "\" que contaminan el texto
+    if macro_final:
+        macro_final = macro_final.replace('\\', '')
+        macro_final = re.sub(r'\s+', ' ', macro_final).strip()
+    if micro_final:
+        micro_final = micro_final.replace('\\', '')
+        micro_final = re.sub(r'\s+', ' ', micro_final).strip()
+
+    # Guardar en los campos finales
+    results['descripcion_macroscopica_final'] = macro_final
+    results['descripcion_microscopica_final'] = micro_final
+
+    # ════════════════════════════════════════════════════════════════════════════
+    # V6.3.12 FIX IHQ250014: Re-extraer DIAGNOSTICO_COLORACION usando macro_final reconstruido
+    # ════════════════════════════════════════════════════════════════════════════
+    # Problema: DIAGNOSTICO_COLORACION se extraía ANTES del FIX V6.2.14, usando texto
+    # donde descripción macroscópica estaba incompleta (terminaba en "con")
+    # Solución: Re-extraer usando macro_final que ya tiene el texto completo recuperado
+    # Si encuentra diagnóstico, sobrescribe "NO APLICA" porque ahora tiene información completa
+    if macro_final:
+        diagnostico_coloracion_previo = results.get('diagnostico_coloracion', '')
+        # Re-extraer SIEMPRE (incluso si ya tiene "NO APLICA")
+        diagnostico_coloracion_reextraccion = extract_diagnostico_coloracion_wrapper(macro_final)
+        if diagnostico_coloracion_reextraccion:
+            # Sobrescribir, incluso si era "NO APLICA" (ahora tenemos texto completo)
+            results['diagnostico_coloracion'] = diagnostico_coloracion_reextraccion
+
+    # ════════════════════════════════════════════════════════════════════════════
+    # V6.3.2 FIX IHQ250002: Enriquecer descripción microscópica con secciones adicionales
+    # El PDF puede tener información microscópica en múltiples secciones:
+    # - EXPRESIÓN HORMONAL (hormonas hipofisiarias)
+    # - FACTORES DE TRANSCRIPCIÓN (Tpit, Pit1, SF1, GATA3, etc.)
+    # - Página 2: EXPRESIÓN DE CITOQUERATINA, ÍNDICE DE PROLIFERACIÓN, p53
+    # ════════════════════════════════════════════════════════════════════════════
+
+    if micro_final:
+        secciones_adicionales = []
+
+        # 1. Buscar EXPRESIÓN HORMONAL
+        patron_hormonal = r'EXPRESI[ÓO]N\s+HORMONAL\s*\n((?:(?:ACTH|GH|PROLACTINA|TSH|LH|FSH)[,:\s]+(?:positivo|negativo|no\s+disponible)(?:\s+focal)?\s*\n?)+)'
+        match_hormonal = re.search(patron_hormonal, text, re.IGNORECASE | re.DOTALL)
+        if match_hormonal:
+            contenido = match_hormonal.group(1).strip()
+            contenido = re.sub(r'\s*\n\s*', ', ', contenido)  # Convertir saltos de línea a comas
+            secciones_adicionales.append(f"EXPRESIÓN HORMONAL: {contenido}")
+
+        # 2. Buscar FACTORES DE TRANSCRIPCIÓN
+        patron_factores = r'FACTORES\s+DE\s+TRANSCRIPCI[ÓO]N\s*\n((?:(?:Tpit|Pit1|SF1|GATA\s*3|RECEPTOR\s+DE\s+ESTR[ÓO]GENOS)[,:\s]+(?:positivo|negativo|no\s+disponible)(?:\s+focal)?\s*\n?)+)'
+        match_factores = re.search(patron_factores, text, re.IGNORECASE | re.DOTALL)
+        if match_factores:
+            contenido = match_factores.group(1).strip()
+            contenido = re.sub(r'\s*\n\s*', ', ', contenido)
+            secciones_adicionales.append(f"FACTORES DE TRANSCRIPCIÓN: {contenido}")
+
+        # 3. Buscar información de página 2 (expresión de citoqueratina, índice Ki-67, p53)
+        # Patrón para EXPRESIÓN DE CITOQUERATINA CAM 5.2
+        patron_cam52 = r'EXPRESI[ÓO]N\s+DE\s+CITOQUERATINA\s+CAM\s*5\.?2[:\s]+([^.\n]+\.?)'
+        match_cam52 = re.search(patron_cam52, text, re.IGNORECASE)
+        if match_cam52:
+            secciones_adicionales.append(f"EXPRESIÓN DE CITOQUERATINA CAM 5.2: {match_cam52.group(1).strip()}")
+
+        # Patrón para ÍNDICE DE PROLIFERACIÓN CELULAR (Ki-67)
+        patron_ki67 = r'[ÍI]NDICE\s+DE\s+PROLIFERAIC?[ÓO]N\s+C[ÉE]LULAR\s+(?:MEDIDO\s+CON\s+)?Ki[\s-]*67[:\s]+(\d+%?)'
+        match_ki67 = re.search(patron_ki67, text, re.IGNORECASE)
+        if match_ki67:
+            secciones_adicionales.append(f"ÍNDICE DE PROLIFERACIÓN CELULAR (Ki-67): {match_ki67.group(1).strip()}")
+
+        # Patrón para p53
+        patron_p53 = r'p53\s+tiene\s+expresi[óo]n\s+([^.\n]+\.?)'
+        match_p53 = re.search(patron_p53, text, re.IGNORECASE)
+        if match_p53:
+            secciones_adicionales.append(f"p53: expresión {match_p53.group(1).strip()}")
+
+        # Concatenar secciones adicionales a la descripción microscópica
+        if secciones_adicionales:
+            micro_enriquecida = micro_final + " | " + " | ".join(secciones_adicionales)
+            results['descripcion_microscopica_final'] = micro_enriquecida
 
     return results
 
@@ -2922,6 +4254,31 @@ def extract_ihq_organ_from_diagnosis(diagnostico: str) -> str:
     # Limpiar texto
     text = diagnostico.strip()
 
+    # V6.3.62 FIX IHQ250079: Limpiar saltos de línea y espacios múltiples
+    text = re.sub(r'[\n\r\t]+', ' ', text)
+    text = re.sub(r'\s+', ' ', text)
+
+    # V6.3.75 FIX IHQ250103: Detectar si el texto es un diagnóstico (no un órgano)
+    # Términos que indican diagnóstico en lugar de órgano
+    terminos_diagnostico = [
+        'ADENOCARCINOMA', 'CARCINOMA', 'METASTASIS', 'MICROMETASTASIS',
+        'LINFOMA', 'MELANOMA', 'SARCOMA', 'NEOPLASIA',
+        'HIPERPLASIA', 'DISPLASIA', 'CAMBIOS', 'HALLAZGOS'
+    ]
+
+    # Caso 1: Empieza con "de \"" o "de '" seguido de diagnóstico
+    if re.match(r'^de\s*["\'\u201c\u201d]', text, re.IGNORECASE):
+        for termino in terminos_diagnostico:
+            if termino in text.upper():
+                return ''  # No es un órgano, es un diagnóstico contaminado
+
+    # Caso 2: Empieza directamente con término de diagnóstico (después de limpiar prefijos)
+    # Ejemplo: "ADENOCARCINOMA BIEN DIFERENCIADO..." → NO es un órgano
+    text_upper = text.upper().lstrip('"\'')  # Quitar comillas iniciales
+    for termino in terminos_diagnostico:
+        if text_upper.startswith(termino):
+            return ''  # No es un órgano, empieza con término de diagnóstico
+
     # V6.2.1: ESTRATEGIA 0 - Detectar diagnóstico FINAL vs preliminar
     # Buscar sección "DIAGNÓSTICO (FINAL)" o "Expansión"
     diagnostico_final_match = re.search(
@@ -2934,19 +4291,38 @@ def extract_ihq_organ_from_diagnosis(diagnostico: str) -> str:
         # Usar solo el bloque del diagnóstico FINAL
         text = diagnostico_final_match.group(1).strip()
     else:
-        # Si hay "INFORME PRELIMINAR", usar solo lo que viene después de eso
-        preliminar_split = re.split(r'INFORME\s+PRELIMINAR', text, flags=re.IGNORECASE)
-        if len(preliminar_split) > 1:
-            # V6.0.10: FIX CRÍTICO - Tomar lo que está DESPUÉS del informe preliminar
-            # CORRIGE: IHQ251002 capturaba diagnóstico preliminar en lugar del órgano del informe
-            text = preliminar_split[1].strip()
+        # V6.2.9: FIX IHQ251029 - Buscar sección "DIAGNÓSTICO" simple (sin (FINAL))
+        # Formato: "DIAGNÓSTICO\nMesenterio. Tumor. Biopsia. Estudio de inmunohistoquímica."
+        diagnostico_simple_match = re.search(
+            r'DIAGN[ÓO]STICO\s*\n([^\n]+\.)',
+            text,
+            re.IGNORECASE
+        )
+        if diagnostico_simple_match:
+            text = diagnostico_simple_match.group(1).strip()
+        else:
+            # Si hay "INFORME PRELIMINAR", usar solo lo que viene después de eso
+            preliminar_split = re.split(r'INFORME\s+PRELIMINAR', text, flags=re.IGNORECASE)
+            if len(preliminar_split) > 1:
+                # V6.0.10: FIX CRÍTICO - Tomar lo que está DESPUÉS del informe preliminar
+                # CORRIGE: IHQ251002 capturaba diagnóstico preliminar en lugar del órgano del informe
+                text = preliminar_split[1].strip()
+
+    # V6.4.4: FIX IHQ250128 - Eliminar prefijos de fecha (ej: "898807 : 05/02/2025 ")
+    # que pueden aparecer por ruido OCR o metadatos de página inyectados.
+    # Se expande para incluir posibles IDs numéricos antes de la fecha.
+    text = re.sub(r'^[\s\d:]*\d{1,2}/\d{1,2}/\d{2,4}\s*', '', text)
 
     # V4.2.8: Eliminar etiquetas de sección (A., B., C., etc.) al inicio
     # Ejemplo: "A.Cervix. Lesión." → "Cervix. Lesión."
     # V6.X.X: Mejorado para eliminar patrones múltiples como "A,B Y C :"
     # Ejemplo: "A,B Y C :GLÁNDULA LAGRIMAL" → "GLÁNDULA LAGRIMAL"
+    # V6.3.5 FIX IHQ250004: Mejorado para eliminar "A y B." con punto
+    # Ejemplo: "A y B. Cerebro, polo temporal" → "Cerebro, polo temporal"
     text = re.sub(r'^[A-Z]\.\s*', '', text)
     text = re.sub(r'^[A-Z](?:\s*,\s*[A-Z])*(?:\s+[Yy]\s+[A-Z])?\s*:\s*', '', text)
+    # V6.3.5: Patrón para "A y B." o "A, B y C." seguido de punto
+    text = re.sub(r'^[A-Z](?:\s*[,y]\s*[A-Z])+\.\s*', '', text, flags=re.IGNORECASE)
 
     # V6.2.1: Eliminar términos de contexto al final que no son parte del órgano
     # Ejemplo: "Fémur derecho. Tumor. Biopsia por curetaje. Estudio de inmunohistoquímica."
@@ -2957,6 +4333,19 @@ def extract_ihq_organ_from_diagnosis(diagnostico: str) -> str:
         text,
         flags=re.IGNORECASE
     )
+
+    # V6.3.51 FIX IHQ250054: Estrategia 0.5 - Formato "ÓRGANO, BIOPSIA (CONTEXTO): DIAGNÓSTICO"
+    # Ejemplo: "RIÑÓN TRASPLANTADO, BIOPSIA (5 MESES POSTRASPLANTE): NEFROPATÍA..."
+    # → Capturar "RIÑÓN TRASPLANTADO" (antes de la coma seguida de BIOPSIA)
+    match_comma_biopsia = re.match(
+        r'^([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s]+?)\s*,\s*(?:BIOPSIA|BIOPSIAS|RESECCIÓN|MUESTRA)',
+        text,
+        re.IGNORECASE
+    )
+    if match_comma_biopsia:
+        candidato = match_comma_biopsia.group(1).strip()
+        if 3 <= len(candidato) <= 80:
+            return candidato.upper()
 
     # Estrategia 1: Capturar primera frase antes de punto (puede contener paréntesis)
     # Patrón: captura todo hasta el primer punto, incluyendo paréntesis
@@ -3071,31 +4460,300 @@ def extract_principal_diagnosis(full_text: str) -> str:
     # NUEVO v4.2.2: Detectar patrones especiales PRIMERO
     # Estos patrones tienen prioridad sobre el scoring normal
     # ═══════════════════════════════════════════════════════════════════════════
-    
+
     full_text_upper = full_text.upper()
 
+    # ═══════════════════════════════════════════════════════════════════════════
+    # V6.3.57 FIX IHQ250066: PATRÓN 0-ULTRA-SECTION - MÁXIMA PRIORIDAD ABSOLUTA
+    # Captura diagnóstico desde sección DIAGNÓSTICO con formato:
+    #   DIAGNÓSTICO
+    #   [órgano]. [procedimiento]. Estudio de inmunohistoquimica
+    #   LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3)...
+    #   POSITIVO PARA P16
+    # DEBE ejecutarse PRIMERO porque la sección DIAGNÓSTICO es la fuente definitiva
+    # Evita capturar "diagnóstico de" que aparece en DESCRIPCIÓN MICROSCÓPICA
+    # ═══════════════════════════════════════════════════════════════════════════
+    pattern_diagnostico_section_ihq = r'DIAGN[ÓO]STICO\s+[A-Za-záéíóúñÁÉÍÓÚÑ]+\.\s+(?:Biopsia|Citolog[íi]a)[^.]*?\.\s+[Ee]studio\s+de\s+inmunohistoqu[íi]mica\s+([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s\(\)\d]+?)(?:\s+(?:POSITIVO|NEGATIVO)\s+PARA|NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO)'
+    match_diagnostico_section_ihq = re.search(pattern_diagnostico_section_ihq, full_text, re.IGNORECASE | re.DOTALL)
+    if match_diagnostico_section_ihq:
+        diag = match_diagnostico_section_ihq.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)  # Normalizar espacios y saltos de línea
+        diag = diag.upper().rstrip('.,;:-')
+        if len(diag) > 15 and not any(skip in diag for skip in ['REPORTE', 'PROTOCOLO', 'CONTROLES']):
+            return diag
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # V6.5.74 FIX IHQ250263: PATRÓN 0-ULTRA-A - MÁXIMA PRIORIDAD ABSOLUTA
+    # "LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN: [diagnóstico]"
+    # Captura cuando los dos puntos están DIRECTAMENTE después de FAVORECEN
+    # Diferente del patrón v6.3.52 que captura "[diagnóstico] CON:"
+    # ═══════════════════════════════════════════════════════════════════════════
+    pattern_morfologicos_e_ihq_directo = r'(?:LOS\s+)?HALLAZGOS\s+MORFOL[ÓO]GICOS\s+E\s+INMUNOHISTOQU[ÍI]MICOS\s+FAVORECEN\s*:\s*([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s\-]{10,200})(?=\s*(?:POSITIVO|NEGATIVO|NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO|COMENTARIOS|---\s+P[ÁA]GINA|\.|$))'
+    match_morfologicos_e_ihq_directo = re.search(pattern_morfologicos_e_ihq_directo, full_text_upper)
+    if match_morfologicos_e_ihq_directo:
+        diag = match_morfologicos_e_ihq_directo.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)  # Normalizar espacios y saltos de línea
+
+        # V6.5.75 FIX IHQ250263: Limpiar nombres de médicos al final del diagnóstico
+        # Remueve patrones como "CARLOS CAICEDO ESTRADA", "NANCY GOMEZ", etc.
+        diag = re.sub(r'\s+[A-Z]{4,}\s+[A-Z]{4,}(?:\s+[A-Z]{4,})?$', '', diag)
+
+        diag = diag.rstrip('.,;:-')
+        if len(diag) > 10:  # Mínimo razonable
+            return diag
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # V6.3.52 FIX IHQ250059: PATRÓN 0-ULTRA - MÁXIMA PRIORIDAD ABSOLUTA
+    # "LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN [diagnóstico] CON:"
+    # Este patrón captura el diagnóstico DEFINITIVO de la sección DIAGNÓSTICO (página 2)
+    # DEBE ejecutarse ANTES de todos los demás patrones porque:
+    # - Es el diagnóstico del estudio IHQ actual (no el del estudio M referenciado)
+    # - El diagnóstico termina ANTES de "CON:" que introduce biomarcadores
+    # NOTA: Usa [\s\S]+? para capturar saltos de línea (OCR puede dividir el texto)
+    # ═══════════════════════════════════════════════════════════════════════════
+    pattern_morfologicos_e_ihq_ultra = r'HALLAZGOS\s+MORFOL[ÓO]GICOS\s+E\s+INMUNOHISTOQU[ÍI]MICOS\s+FAVORECEN\s+([\s\S]+?)\s+CON\s*:'
+    match_morfologicos_e_ihq_ultra = re.search(pattern_morfologicos_e_ihq_ultra, full_text_upper)
+    if match_morfologicos_e_ihq_ultra:
+        diag = match_morfologicos_e_ihq_ultra.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)  # Normalizar espacios y saltos de línea
+        diag = diag.rstrip('.,;:-')
+        if len(diag) > 10:  # Mínimo razonable
+            return diag
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # FIX IHQ250006 (v6.3.4): PATRÓN 0 - MÁXIMA PRIORIDAD
+    # Captura diagnóstico IHQ después de sección DIAGNÓSTICO con formato:
+    # "DIAGNÓSTICO\n[descripción muestra]\n- ADENOCARCINOMA INVASIVO..."
+    # IMPORTANTE: Este patrón tiene PRIORIDAD sobre todos los demás porque
+    # captura el diagnóstico del estudio IHQ actual, NO del estudio M (coloración)
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    # Patrón 0A: Buscar sección DIAGNÓSTICO seguida de descripción de muestra y luego guión con diagnóstico
+    # Formato típico:
+    #   DIAGNÓSTICO
+    #   Mucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica.
+    #   - ⁠ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO.
+    # NOTA: El texto puede tener \u2060 (WORD JOINER) antes del guión o del diagnóstico
+    # NOTA: El guión puede ser - (U+002D), – (U+2013), o ⁠ (U+2060) seguido de guión
+    pattern_diagnostico_ihq = r'DIAGN[ÓO]STICO\s+(?:Mucosa|Piel|Tejido|Ganglio|Pulm[óo]n|H[íi]gado|Ri[ñn][óo]n|Mama|Pr[óo]stata|Colon|Est[óo]mago|[A-Za-záéíóúñÁÉÍÓÚÑ]+)[^-–\u2060]*?[\u2060]?[-–]\s*[\u2060]?([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s]+(?:DIFERENCIADO|INDIFERENCIADO|CARCINOMA|MELANOMA|LINFOMA|SARCOMA|ADENOMA|TUMOR)[A-ZÁÉÍÓÚÑ\s]*?)(?:\.|\s*[\u2060]?[-–])'
+    match_diag_ihq = re.search(pattern_diagnostico_ihq, full_text, re.IGNORECASE | re.DOTALL)
+    if match_diag_ihq:
+        diag = match_diag_ihq.group(1).strip()
+        # Limpiar caracteres especiales como WORD JOINER y normalizar
+        diag = diag.replace('\u2060', '')  # Eliminar WORD JOINER
+        diag = re.sub(r'\s+', ' ', diag)
+        diag = diag.upper().rstrip('.')
+        # Verificar que sea un diagnóstico válido (mínimo 15 caracteres)
+        if len(diag) > 15 and not any(skip in diag for skip in ['REPORTE', 'PROTOCOLO', 'CONTROLES', 'VALORACIÓN']):
+            return diag
+
+    # Patrón 0B: Alternativo - Buscar línea con guión después de "Estudio de inmunohistoquímica"
+    # y ANTES de COMENTARIOS (evita capturar diagnóstico del estudio M)
+    # NOTA: Soporta \u2060 (WORD JOINER) antes/después del guión
+    pattern_post_ihq = r'(?:Estudio\s+de\s+inmunohistoqu[íi]mica|ESTUDIO\s+DE\s+INMUNOHISTOQU[ÍI]MICA)[.\s]+[\u2060]?[-–]\s*[\u2060]?([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s]+(?:DIFERENCIADO|INDIFERENCIADO|CARCINOMA|MELANOMA|LINFOMA|SARCOMA)[A-ZÁÉÍÓÚÑ\s]*?)(?:\.|\s*[\u2060]?[-–])'
+    match_post_ihq = re.search(pattern_post_ihq, full_text, re.IGNORECASE | re.DOTALL)
+    if match_post_ihq:
+        diag = match_post_ihq.group(1).strip()
+        diag = diag.replace('\u2060', '')  # Eliminar WORD JOINER
+        diag = re.sub(r'\s+', ' ', diag)
+        diag = diag.upper().rstrip('.')
+        if len(diag) > 15:
+            return diag
+
+    # Patrón 0C: V6.3.21 - FIX IHQ250019: Capturar diagnóstico SIN guión después de "Estudio de inmunohistoquímica."
+    # Formato: "Estudio de inmunohistoquímica.\nADENOSIS ESCLEROSANTE CON ABUNDANTES MICROCALCIFICACIONES."
+    # DEBE capturar diagnósticos benignos también (ADENOSIS, FIBROADENOMA, etc.)
+    pattern_post_ihq_no_dash = r'(?:Estudio\s+de\s+inmunohistoqu[íi]mica|ESTUDIO\s+DE\s+INMUNOHISTOQU[ÍI]MICA)\.\s*([A-ZÁÉÍÓÚÑ][^.]+?)(?:\.)'
+    match_post_ihq_no_dash = re.search(pattern_post_ihq_no_dash, full_text, re.IGNORECASE)
+    if match_post_ihq_no_dash:
+        diag = match_post_ihq_no_dash.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)
+        diag = diag.upper().rstrip('.')
+        # Verificar que sea un diagnóstico válido (> 15 caracteres y sin palabras de control)
+        if len(diag) > 15 and not any(skip in diag for skip in ['REPORTE', 'PROTOCOLO', 'CONTROLES', 'VALORACIÓN', 'VER COMENTARIO']):
+            return diag
+
+    # Patrón 0C2: V6.3.50 - FIX IHQ250052: Capturar diagnóstico después de "Estudio de inmunohistoquimica:"
+    # Formato: "Estudio de inmunohistoquimica:\nCARCINOMA RENAL DE CELULAS CLARAS"
+    # Nota: Dos puntos (:) en lugar de punto (.) - común en informes de patología renal
+    pattern_post_ihq_colon = r'(?:Estudio\s+de\s+inmunohistoqu[íi]mica|ESTUDIO\s+DE\s+INMUNOHISTOQU[ÍI]MICA):\s*([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s]+?)(?:\n[A-Z]{3,}|\.\s*$|NANCY|ARMANDO|CARLOS|M[ÉE]DIC[OA]|RESPONSABLE)'
+    match_post_ihq_colon = re.search(pattern_post_ihq_colon, full_text, re.IGNORECASE)
+    if match_post_ihq_colon:
+        diag = match_post_ihq_colon.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)
+        diag = diag.upper().rstrip('.')
+        # Verificar que sea un diagnóstico válido (> 15 caracteres)
+        if len(diag) > 15 and not any(skip in diag for skip in ['REPORTE', 'PROTOCOLO', 'CONTROLES', 'VALORACIÓN']):
+            return diag
+
+    # Patrón 0C3: V6.3.54 - FIX IHQ250062/IHQ250063: Capturar diagnóstico después de "Estudio de inmunohistoquímica: -"
+    # Formato: "Estudio de inmunohistoquímica: - CARCINOMA DE CÉLULAS NO PEQUEÑAS, NOS. (VER COMENTARIO)."
+    # Formato: "Estudio de inmunohistoquímica: - CARCINOMA ESCAMOCELULAR INFILTRANTE, SIN EXPRESIÓN DE p16."
+    # Nota: Guión después de dos puntos - común en informes de pulmón/cabeza-cuello
+    # Captura: Desde guión hasta punto, ", NOS", ", SIN", ", CON" o "(VER COMENTARIO)"
+    # V6.3.54b: Agregado ", SIN" y ", CON" como terminadores para IHQ250063
+    pattern_post_ihq_colon_dash = r'(?:Estudio\s+de\s+inmunohistoqu[íi]mica|ESTUDIO\s+DE\s+INMUNOHISTOQU[ÍI]MICA):\s*[-–]\s*([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s]+?)(?:,\s*(?:NOS|SIN|CON)|\.\s*\(|\.)'
+    match_post_ihq_colon_dash = re.search(pattern_post_ihq_colon_dash, full_text, re.IGNORECASE)
+    if match_post_ihq_colon_dash:
+        diag = match_post_ihq_colon_dash.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)
+        diag = diag.upper().rstrip('.,;:-')
+        # Verificar que sea un diagnóstico válido (> 10 caracteres)
+        if len(diag) > 10 and not any(skip in diag for skip in ['REPORTE', 'PROTOCOLO', 'CONTROLES', 'VALORACIÓN']):
+            return diag
+
+    # Patrón 0E: V6.3.37 - FIX IHQ250031: Capturar diagnóstico desde "Historia de [enfermedad]"
+    # Formato: "Historia de adenocarcinoma gástrico" → extrae "ADENOCARCINOMA GÁSTRICO"
+    # Este patrón tiene PRIORIDAD porque "Historia de X" indica diagnóstico conocido/confirmado
+    # Debe ejecutarse ANTES del patrón 0D genérico para evitar capturar todo el bloque
+    pattern_historia_de = r'(?i)Historia\s+de\s+([A-Za-záéíóúñÁÉÍÓÚÑ\s]+?(?:carcinoma|adenocarcinoma|linfoma|melanoma|sarcoma|tumor|neoplasia)[A-Za-záéíóúñÁÉÍÓÚÑ\s]*?)(?:\.|Biopsia|Estudio)'
+    match_historia_de = re.search(pattern_historia_de, full_text)
+    if match_historia_de:
+        diag = match_historia_de.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)
+        diag = diag.upper().rstrip('.')
+        if len(diag) > 5:  # Mínimo razonable
+            return diag
+
+    # Patrón 0D: V6.3.22 - FIX IHQ250021: Capturar diagnóstico descriptivo desde sección DIAGNÓSTICO
+    # Formato multilinea:
+    #   DIAGNÓSTICO
+    #   RIÑÓN (BIOPSIA POR PUNCIÓN):
+    #   TÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL.
+    #   TÉJIDO FIBROADIPOSO DE ARQUTIECTURA USUAL.
+    #   VER COMENTARIO.
+    # Captura desde DIAGNÓSTICO hasta "VER COMENTARIO" o "COMENTARIOS"
+    # DEBE manejar casos benignos/descriptivos sin palabras clave (CARCINOMA, etc.)
+    pattern_diagnostico_descriptivo = r'DIAGN[ÓO]STICO\s+((?:(?!COMENTARIOS|COMENTARIO:).)+?)(?:VER\s+COMENTARIO|COMENTARIOS|COMENTARIO:|RESPONSABLE|M[ÉE]DICO|NANCY|ARMANDO|CARLOS)'
+    match_diagnostico_descriptivo = re.search(pattern_diagnostico_descriptivo, full_text, re.IGNORECASE | re.DOTALL)
+    if match_diagnostico_descriptivo:
+        diag = match_diagnostico_descriptivo.group(1).strip()
+        # Limpiar saltos de línea múltiples
+        diag = re.sub(r'\s+', ' ', diag)
+        diag = diag.upper().rstrip('.')
+        # Verificar que sea un diagnóstico válido (> 30 caracteres para evitar falsos positivos)
+        # NO validar palabras clave porque pueden ser diagnósticos descriptivos
+        if len(diag) > 30 and not any(skip in diag for skip in ['REPORTE', 'PROTOCOLO', 'CONTROLES', 'DESCRIPCIÓN MACROSCÓPICA', 'DESCRIPCIÓN MICROSCÓPICA']):
+            # V6.3.44 FIX IHQ250037: Limpiar prefijo cuando contiene "QUE FAVORECEN"
+            # Si el diagnóstico capturado contiene "QUE FAVORECEN", extraer solo la conclusión
+            if 'QUE FAVORECEN' in diag:
+                diag = re.sub(r'^.*?QUE\s+FAVORECEN\s+', '', diag, flags=re.IGNORECASE)
+            return diag
+
+    # FIX IHQ251018: Patrón 1A0: "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA:" seguido de lista
+    # Captura formato: "LOS HALLAZGOS... :\nSIN EVIDENCIA...\nINJURIA...\nCRISTALES..."
+    pattern_hallazgos_lista = r'LOS\s+HALLAZGOS\s+MORFOL[ÓO]GICOS?\s+Y\s+DE\s+INMUNOHISTOQU[ÍI]MICA\s*:\s*(.{20,800}?)(?:COMENTARIOS|RESPONSABLE|M[ÉE]DICO|NANCY|ARMANDO|CARLOS|TODOS\s+LOS\s+AN[ÁA]LISIS|---\s+P[ÁA]GINA|NOTA:|VER\s+DESCRIPCI[ÓO]N)'
+    match_hallazgos_lista = re.search(pattern_hallazgos_lista, full_text_upper, re.DOTALL)
+    if match_hallazgos_lista:
+        diag_block = match_hallazgos_lista.group(1).strip()
+        # Limpiar saltos de línea y múltiples espacios
+        diag_block = re.sub(r'\s+', ' ', diag_block)
+        # Eliminar viñetas residuales al inicio
+        diag_block = re.sub(r'^\s*[-•]\s*', '', diag_block)
+        # Limpiar texto al final que pueda haber capturado
+        diag_block = re.sub(r'\s*(?:TODOS|COMENTARIOS|RESPONSABLE).*$', '', diag_block, flags=re.IGNORECASE)
+        # Si es muy largo, tomar hasta 400 caracteres (suficiente para 4-5 líneas de diagnóstico)
+        if len(diag_block) > 400:
+            # Cortar en el último punto antes de 400 caracteres
+            diag_block = diag_block[:400].rsplit('.', 1)[0] + '.'
+        if len(diag_block) > 20:
+            return diag_block.strip()
+
+    # Patrón 1A1: V6.3.25 - FIX IHQ250023: "LOS HALLAZGOS SON SUGESTIVOS DE [diagnóstico]"
+    # Formato: "LOS HALLAZGOS SON SUGESTIVOS DE UNA NEOPLASIA EN PATRON ACINAR..."
+    # Similar a 1A pero con "SUGESTIVOS DE" en lugar de "COMPATIBLES CON"
+    pattern_los_hallazgos_sugestivos = r'LOS\s+HALLAZGOS\s+(?:MORFOL[ÓO]GICOS?\s+)?(?:Y\s+)?(?:DE\s+)?(?:INMUNOHISTOQU[ÍI]MICA\s+)?(?:SON\s+)?SUGESTIVOS?\s+DE\s+(?:UNA?\s+)?([A-ZÁÉÍÓÚÑ\-\s]{10,200})(?=\.|NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO|COMENTARIOS)'
+    match_los_hallazgos_sugestivos = re.search(pattern_los_hallazgos_sugestivos, full_text_upper)
+    if match_los_hallazgos_sugestivos:
+        diag = match_los_hallazgos_sugestivos.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)  # Normalizar espacios
+        # Recortar en punto final o médico
+        diag = re.split(r'(?:\.|\s+(?:NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO|COMENTARIOS))', diag)[0].strip()
+        # Limpiar caracteres finales no deseados
+        diag = diag.rstrip('.,;:-')
+        if len(diag) > 10:  # Mínimo razonable
+            return diag
+
     # Patrón 1A: "LOS HALLAZGOS... SON COMPATIBLES CON [diagnóstico]" (v6.0.12 - IHQ250992)
-    pattern_los_hallazgos = r'LOS\s+HALLAZGOS\s+(?:MORFOL[ÓO]GICOS?\s+)?(?:Y\s+)?(?:DE\s+)?(?:INMUNOHISTOQU[ÍI]MICA\s+)?(?:SON\s+)?COMPATIBLES?\s+CON\s+([A-ZÁÉÍÓÚÑ\s]{10,200}?)(?:\.||NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO|COMENTARIOS)'
+    # V6.2.8 FIX IHQ250011: Corregido lookahead (|| → |) y ampliado charset
+    pattern_los_hallazgos = r'LOS\s+HALLAZGOS\s+(?:MORFOL[ÓO]GICOS?\s+)?(?:Y\s+)?(?:DE\s+)?(?:INMUNOHISTOQU[ÍI]MICA\s+)?(?:SON\s+)?COMPATIBLES?\s+CON\s+([A-ZÁÉÍÓÚÑ\-\s]{10,200})(?=\.|NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO|COMENTARIOS)'
     match_los_hallazgos = re.search(pattern_los_hallazgos, full_text_upper)
     if match_los_hallazgos:
         diag = match_los_hallazgos.group(1).strip()
         diag = re.sub(r'\s+', ' ', diag)  # Normalizar espacios
         # Recortar en punto final o médico
         diag = re.split(r'(?:\.|\s+(?:NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO|COMENTARIOS))', diag)[0].strip()
+        # Limpiar caracteres finales no deseados
+        diag = diag.rstrip('.,;:-')
         if len(diag) > 10:  # Mínimo razonable
             return diag
 
     # Patrón 1B: "HALLAZGOS... COMPATIBLES CON [diagnóstico]" (patrón original)
-    pattern_hallazgos = r'HALLAZGOS\s+(?:HIST[ÓO]L[ÓO]GICOS\s+)?(?:DE\s+)?(?:MORFOLOG[ÍI]A\s+E\s+)?(?:INMUNOHISTOQU[ÍI]MICA\s+)?COMPATIBLES?\s+CON\s+([A-ZÁÉÍÓÚÑ\s]{10,150}?)(?:\.||NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO)'
+    # V6.2.8 FIX IHQ250011: Corregido lookahead (|| → |) y ampliado charset para capturar ECTÓPICO
+    pattern_hallazgos = r'HALLAZGOS\s+(?:HIST[ÓO]L[ÓO]GICOS\s+)?(?:DE\s+)?(?:MORFOLOG[ÍI]A\s+E\s+)?(?:INMUNOHISTOQU[ÍI]MICA\s+)?COMPATIBLES?\s+CON\s+([A-ZÁÉÍÓÚÑ\-\s]{10,200})(?=\.|NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO)'
     match_hallazgos = re.search(pattern_hallazgos, full_text_upper)
     if match_hallazgos:
         diag = match_hallazgos.group(1).strip()
         diag = re.sub(r'\s+', ' ', diag)  # Normalizar espacios
         # Recortar en punto final o médico
         diag = re.split(r'(?:\.|\s+(?:NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO))', diag)[0].strip()
+        # Limpiar caracteres finales no deseados
+        diag = diag.rstrip('.,;:-')
+        if len(diag) > 10:  # Mínimo razonable
+            return diag
+
+    # Patrón 1B2: V6.3.52 FIX IHQ250059 - "HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN [diagnóstico] CON:"
+    # Formato: "LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL) CON:"
+    # El diagnóstico termina ANTES de "CON:" que introduce la lista de biomarcadores
+    # DEBE IR ANTES de patrón 1C (más específico)
+    pattern_morfologicos_e_ihq = r'HALLAZGOS\s+MORFOL[ÓO]GICOS\s+E\s+INMUNOHISTOQU[ÍI]MICOS\s+FAVORECEN\s+(.+?)\s+CON\s*:'
+    match_morfologicos_e_ihq = re.search(pattern_morfologicos_e_ihq, full_text_upper)
+    if match_morfologicos_e_ihq:
+        diag = match_morfologicos_e_ihq.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)  # Normalizar espacios
+        # Limpiar caracteres finales no deseados
+        diag = diag.rstrip('.,;:-')
+        if len(diag) > 10:  # Mínimo razonable
+            return diag
+
+    # Patrón 1C: V6.2.8 - "HALLAZGOS... FAVORECEN [A] [diagnóstico]" (IHQ251027)
+    # Formato: "LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO"
+    # V6.2.9: FIX - Simplificar patrón sin Unicode (problemas de encoding)
+    pattern_favorecen = r'HALLAZGOS\s+INMUNOHISTOQUIMICOS\s+FAVORECEN\s+A\s+(.+)'
+    match_favorecen = re.search(pattern_favorecen, full_text_upper)
+    if match_favorecen:
+        diag = match_favorecen.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)  # Normalizar espacios
+        # Recortar en punto final o médico
+        diag = re.split(r'(?:\.|\s+(?:NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO|COMENTARIOS))', diag)[0].strip()
+        if len(diag) > 10:  # Mínimo razonable
+            return diag
+
+    # Patrón 1D: V6.3.44 FIX IHQ250037 - "HALLAZGOS... QUE FAVORECEN [diagnóstico]"
+    # Formato: "HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE FAVORECEN COLITIS AGUDA Y CRÓNICA NO ESPECÍFICA"
+    # Similar a 1C pero con "QUE FAVORECEN" en lugar de "FAVORECEN A"
+    pattern_que_favorecen = r'HALLAZGOS\s+(?:MORFOL[ÓO]GICOS?\s+)?(?:Y\s+)?(?:DE\s+)?INMUNOHISTOQU[ÍI]MICA\s+QUE\s+FAVORECEN\s+(.+)'
+    match_que_favorecen = re.search(pattern_que_favorecen, full_text_upper)
+    if match_que_favorecen:
+        diag = match_que_favorecen.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)  # Normalizar espacios
+        # Recortar en punto final o médico
+        diag = re.split(r'(?:\.|\s+(?:NANCY|ARMANDO|CARLOS|RESPONSABLE|M[ÉE]DICO|COMENTARIOS))', diag)[0].strip()
         if len(diag) > 10:  # Mínimo razonable
             return diag
     
+    # Patrón 1E: V6.3.55 FIX IHQ250064 - "FAVORECE [diagnóstico]" (singular, sin HALLAZGOS)
+    # Formato: "FAVORECE CARCINOMA ESCAMOCELULAR INVASIVO p16 POSITIVO."
+    # El diagnóstico termina ANTES de un biomarcador (p16, P40, etc.) o punto
+    pattern_favorece_simple = r'FAVORECE\s+([A-ZÁÉÍÓÚÑ\s]+?)(?:\s+(?:P16|P40|KI67|KI-67|HER2|TTF1|TTF-1|RE|RP|GATA3|CD\d+|CK\d+)\s|\.|$)'
+    match_favorece_simple = re.search(pattern_favorece_simple, full_text_upper)
+    if match_favorece_simple:
+        diag = match_favorece_simple.group(1).strip()
+        diag = re.sub(r'\s+', ' ', diag)
+        diag = diag.rstrip('.,;:-')
+        if len(diag) > 10 and not any(skip in diag for skip in ['REPORTE', 'PROTOCOLO']):
+            return diag
+
     # Patrón 2: "NEGATIVO PARA [condición]"
     pattern_negativo = r'NEGATIVO\s+PARA\s+([A-ZÁÉÍÓÚÑ\s/]{10,100}?)(?:\.||NANCY|ARMANDO|CARLOS)'
     match_negativo = re.search(pattern_negativo, full_text_upper)
@@ -3116,7 +4774,16 @@ def extract_principal_diagnosis(full_text: str) -> str:
         if len(marcadores) < 60:  # Evitar capturas demasiado largas
             return f"EXPRESIÓN DE {marcadores} {estado}"
 
+    # V6.3.21: FIX IHQ250019 - Eliminar sección COMENTARIOS antes de procesar
+    # Evita capturar texto como "adenosis esclerosante no descarta" de comentarios
     text = full_text.replace('\r', '\n')
+
+    # Eliminar todo después de la palabra "COMENTARIOS" en mayúsculas (inicio de sección)
+    # Formato típico: "\nCOMENTARIOS\nLas lesiones de mama..."
+    match_comentarios = re.search(r'\n\s*COMENTARIOS\s*\n', text, re.IGNORECASE)
+    if match_comentarios:
+        text = text[:match_comentarios.start()]
+
     raw_segments: List[str] = []
 
     for ln in text.split('\n'):
@@ -3124,7 +4791,7 @@ def extract_principal_diagnosis(full_text: str) -> str:
         if not ln:
             continue
         ln = re.sub(r'^[-•]\s*', '', ln)
-        parts = re.split(r'(?<=[.;:])\s+', ln)
+        parts = re.split(r'[.;:]\s+', ln)
         for p in parts:
             sp = p.strip()
             if sp:
@@ -3159,6 +4826,10 @@ def extract_principal_diagnosis(full_text: str) -> str:
 
         for w in words:
             clean = w.strip('.,;:()')
+            # V6.3.21: FIX IHQ250019 - Detener en palabras que indican fin de sección diagnóstico
+            # Evita capturar texto de COMENTARIOS ("adenosis esclerosante no descarta")
+            if clean.upper() in {"COMENTARIOS", "COMENTARIO", "VER", "NOTA", "OBSERVACIONES"}:
+                break
             if _IMMUNO_MARKER_PATTERN.match(clean) or clean.upper() in {"POSITIVO","NEGATIVO","POS","NEG"} or re.fullmatch(r"\d+%", clean):
                 break
             if _IMMUNO_MARKER_PATTERN.match(clean):
@@ -3295,6 +4966,9 @@ def clean_diagnosis_text(diagnosis: str) -> str:
     cleaned = diagnosis
     for pattern in cutoff_patterns:
         cleaned = re.sub(pattern, '', cleaned, flags=re.IGNORECASE)
+
+    # V6.5.75 FIX IHQ250263: Eliminar prefijo "LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN:"
+    cleaned = re.sub(r'^LOS\s+HALLAZGOS\s+MORFOL[ÓO]GICOS\s+E\s+INMUNOHISTOQU[ÍI]MICOS\s+FAVORECEN\s*:\s*', '', cleaned, flags=re.IGNORECASE)
 
     # Limpiar espacios múltiples y caracteres finales
     cleaned = re.sub(r'\s+', ' ', cleaned).strip(' .,:;')

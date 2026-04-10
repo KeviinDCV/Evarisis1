@@ -1,0 +1,110 @@
+
+================================================================================
+ANALISIS DETALLADO: COLUMNAS DUPLICADAS IHQ250190 v6.4.59
+================================================================================
+Fecha: 2026-01-09 03:09:14
+Caso analizado: IHQ250190
+Version: 6.4.59
+
+PROBLEMA DETECTADO
+================================================================================
+
+Durante la validacion del reprocesamiento de IHQ250190, se detectaron columnas
+duplicadas que deberian haber sido eliminadas pero aun existen en el sistema.
+
+COLUMNAS PROBLEMATICAS ENCONTRADAS:
+================================================================================
+
+1. IHQ_CKAE1E3 (DUPLICADO INCORRECTO)
+   - Estado en database_manager.py: EXISTE (lineas 149, 234, 369)
+   - Estado en schema BD: EXISTE (columna activa)
+   - Estado en debug_map: EXISTE (se esta poblando)
+   - Columna correcta: IHQ_CKAE1AE3
+   - Impacto: ALTO - Datos se estan guardando en columna incorrecta
+
+2. IHQ_SYNAPTOFISINA (DUPLICADO INCORRECTO)
+   - Estado en database_manager.py: COMENTARIOS SOLO (linea 368)
+   - Estado en schema BD: NO EXISTE
+   - Estado en debug_map: EXISTE (se esta intentando poblar)
+   - Columna correcta: IHQ_SINAPTOFISINA
+   - Impacto: MEDIO - No se guarda en BD pero aparece en debug_map
+
+3. IHQ_SYNAPTOPHYSIN (DUPLICADO INCORRECTO)
+   - Estado en database_manager.py: COMENTARIOS SOLO (lineas 150, 254, 372)
+   - Estado en schema BD: NO EXISTE
+   - Estado en debug_map: EXISTE (se esta intentando poblar)
+   - Columna correcta: IHQ_SINAPTOFISINA
+   - Impacto: MEDIO - No se guarda en BD pero aparece en debug_map
+
+RESULTADOS ACTUALES IHQ250190:
+================================================================================
+
+VALORES EN BASE DE DATOS:
+- IHQ_DESMIN: POSITIVO (fuerte) [OK]
+- IHQ_MYOGENIN: POSITIVO (fuerte) [OK]
+- IHQ_MYOD1: POSITIVO (fuerte) [OK]
+- IHQ_SINAPTOFISINA: NEGATIVO [OK - columna correcta]
+- IHQ_CKAE1AE3: NEGATIVO [OK - columna correcta]
+- IHQ_CKAE1E3: NEGATIVO [ERROR - columna duplicada activa]
+
+VALORES EN DEBUG_MAP (campos_criticos):
+- IHQ_DESMIN: POSITIVO (fuerte)
+- IHQ_MYOGENIN: POSITIVO (fuerte)
+- IHQ_MYOD1: POSITIVO (fuerte)
+- IHQ_SINAPTOFISINA: NEGATIVO [columna correcta]
+- IHQ_SYNAPTOFISINA: NEGATIVO [columna duplicada]
+- IHQ_SYNAPTOPHYSIN: NEGATIVO [columna duplicada]
+- IHQ_CKAE1AE3: NEGATIVO [columna correcta]
+- IHQ_CKAE1E3: NEGATIVO [columna duplicada]
+
+IMPACTO:
+================================================================================
+
+CRITICO - IHQ_CKAE1E3:
+- Esta columna EXISTE en database_manager.py
+- Esta columna EXISTE en el schema de BD
+- Los datos se estan guardando en AMBAS columnas (IHQ_CKAE1AE3 e IHQ_CKAE1E3)
+- Esto causa duplicacion de datos y confusion
+
+MEDIO - IHQ_SYNAPTOFISINA/IHQ_SYNAPTOPHYSIN:
+- Estas columnas NO existen en BD (correctamente eliminadas)
+- PERO se estan generando en debug_map durante la extraccion
+- Los datos solo se guardan en IHQ_SINAPTOFISINA (correcto)
+- Causa confusion en debug_map pero no afecta BD
+
+ACCIONES REQUERIDAS:
+================================================================================
+
+CRITICO - ELIMINAR IHQ_CKAE1E3 de database_manager.py:
+1. Linea 149 (NEW_TABLE_COLUMNS_ORDER): Reemplazar "IHQ_CKAE1E3" por "IHQ_CKAE1AE3"
+2. Linea 234 (CREATE TABLE): Cambiar "IHQ_CKAE1E3" TEXT, por "IHQ_CKAE1AE3" TEXT,
+3. Linea 369 (get_column_order): Reemplazar "IHQ_CKAE1E3" por "IHQ_CKAE1AE3"
+
+MEDIO - LIMPIAR generacion de columnas duplicadas en extractores:
+1. Verificar core/extractors/biomarker_extractor.py
+2. Verificar que solo se generen alias que mapean a columnas correctas
+3. Asegurar que SYNAPTOFISINA/SYNAPTOPHYSIN mapean a IHQ_SINAPTOFISINA
+
+ESTADO v6.4.59:
+================================================================================
+
+Score validacion: 100% (caso funciona correctamente)
+Biomarcadores criticos: CORRECTOS (DESMIN/MYOGENIN/MYOD1 = POSITIVO fuerte)
+Columnas duplicadas: DETECTADAS (IHQ_CKAE1E3 activa, debe eliminarse)
+
+CONCLUSION:
+- El caso IHQ250190 se proceso correctamente
+- Los valores son correctos en las columnas principales
+- PERO existe duplicacion en IHQ_CKAE1E3 que debe corregirse
+- Se requiere migracion de datos de IHQ_CKAE1E3 a IHQ_CKAE1AE3
+
+RECOMENDACION:
+================================================================================
+
+1. Corregir database_manager.py (3 ubicaciones)
+2. Regenerar schema de BD (eliminar IHQ_CKAE1E3, consolidar en IHQ_CKAE1AE3)
+3. Migrar datos existentes de IHQ_CKAE1E3 a IHQ_CKAE1AE3
+4. Reprocesar casos afectados
+5. Validar con FUNC-01 todos los casos reprocesados
+
+================================================================================

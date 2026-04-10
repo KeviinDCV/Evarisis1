@@ -1,0 +1,116 @@
+{
+  "numero_caso": "IHQ250153",
+  "caso_num": 43,
+  "total_casos": 49,
+  "timestamp": "2026-01-07T07:52:47.614831",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 8,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "CELULARIDAD GLOBAL DEL 10%, APLASIA",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
+      "valor_bd": "CELULARIDAD GLOBAL DEL 10%, APLASIA"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (6/6)",
+      "total_solicitado_ocr": 6,
+      "total_solicitado_bd": 6,
+      "estudios_ocr": [
+        "MIELOPEROXIDASA",
+        "CD34",
+        "CD20",
+        "CD117",
+        "CD3",
+        "GLICOFORINA"
+      ],
+      "estudios_bd": [
+        "MIELOPEROXIDASA",
+        "CD34",
+        "CD20",
+        "CD117",
+        "CD3",
+        "GLICOFORINA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 6,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "Descripcion macroscopica coincide parcialmente con OCR (similitud: 59%)"
+    ],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "WARNING",
+      "mensaje": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 59%)",
+      "valor_bd": "Se realizan niveles histológicos al bloque M2500708, el cual corresponde a biopsia de médula ósea co...",
+      "valor_ocr": "Se realizan niveles histológicos al bloque M2500708, el cual corresponde a biopsia de médula ósea co..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MÉDULA ÓSEA"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 1,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "ADVERTENCIA"
+}

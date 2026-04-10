@@ -1,0 +1,108 @@
+{
+  "numero_caso": "IHQ250231",
+  "caso_num": 20,
+  "total_casos": 50,
+  "timestamp": "2026-01-28T06:21:20.102421",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 5,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "CARCINOMA DE CÉLULAS NO PEQUEÑAS",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS SUGIEREN UN ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR CON PATRON SOLIDO NEGATIVO PARA INVASIÓN LINFATICA"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "WARNING",
+      "mensaje": "1 biomarcadores extras en BD",
+      "total_solicitado_ocr": 2,
+      "total_solicitado_bd": 3,
+      "estudios_ocr": [
+        "P40",
+        "TTF-1"
+      ],
+      "estudios_bd": [
+        "P40",
+        "TTF-1",
+        "SYNAPTOFISINA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "SYNAPTOFISINA"
+      ],
+      "mapeados": 2,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "PULMÓN IZQUIERDO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

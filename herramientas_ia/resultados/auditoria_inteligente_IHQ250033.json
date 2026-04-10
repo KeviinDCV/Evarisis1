@@ -1,0 +1,127 @@
+{
+  "numero_caso": "IHQ250033",
+  "caso_num": 33,
+  "total_casos": 50,
+  "timestamp": "2025-12-16T02:21:35.908236",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 9,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "No hay estudio M previo"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "PULMÓN IZQUIERDO. LESIÓN. RESECCIÓN. ESTUDIO DE INMUNOHISTOQUÍMICA: - TUMOR NEUROENDOCRINO BIEN DIFERENCIADO (CARCINOIDE TÍPICO). NATALIA AGUIRRE VASQUEZ"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 1%",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 8,
+      "total_solicitado_bd": 8,
+      "estudios_ocr": [
+        "TTF-1",
+        "GATA 3",
+        "CKAE1E3",
+        "NAPSINA A",
+        "Ki-67",
+        "P40",
+        "CHROMOGRANINA",
+        "SYNAPTOFISINA"
+      ],
+      "estudios_bd": [
+        "TTF-1",
+        "GATA 3",
+        "CKAE1E3",
+        "NAPSINA A",
+        "Ki-67",
+        "P40",
+        "CHROMOGRANINA",
+        "SYNAPTOFISINA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 8,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "Ki-67",
+          "columna": "IHQ_KI-67",
+          "valor_bd": "1%",
+          "valor_ocr": "d"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "PULMÓN IZQUIERDO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

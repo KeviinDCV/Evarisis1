@@ -1,0 +1,69 @@
+{
+  "biomarcador": "INHIBINA",
+  "columna_bd": "IHQ_INHIBINA",
+  "fecha": "2026-01-09 04:55:30",
+  "version": "V6.4.60",
+  "alias": [
+    "INHIBINA",
+    "INHIBIN",
+    "INHIBINA-A",
+    "INHIBIN A"
+  ],
+  "estado": "EXITOSO",
+  "archivos_modificados": [
+    {
+      "archivo": "core/database_manager.py",
+      "lugares": 3,
+      "detalles": [
+        "NEW_TABLE_COLUMNS_ORDER (línea ~171)",
+        "CREATE TABLE (línea ~281)",
+        "new_biomarkers list (línea ~387)"
+      ]
+    },
+    {
+      "archivo": "herramientas_ia/auditor_sistema.py",
+      "lugares": 1,
+      "detalles": [
+        "BIOMARKER_ALIAS_MAP (ya existía línea 498)"
+      ]
+    },
+    {
+      "archivo": "ui.py",
+      "lugares": 1,
+      "detalles": [
+        "cols_to_show (después de IHQ_PSA, línea ~4389)"
+      ]
+    },
+    {
+      "archivo": "core/validation_checker.py",
+      "lugares": 1,
+      "detalles": [
+        "MAPEO_BIOMARCADORES (después de TSH, línea ~735)"
+      ]
+    },
+    {
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "lugares": 1,
+      "detalles": [
+        "BIOMARKER_CONFIG (después de FSH, línea ~3001)"
+      ]
+    },
+    {
+      "archivo": "core/unified_extractor.py",
+      "lugares": 2,
+      "detalles": [
+        "Mapeo 1 (línea ~886)",
+        "Mapeo 2 (línea ~1820)"
+      ]
+    }
+  ],
+  "validacion_sintaxis": {
+    "database_manager.py": "OK",
+    "auditor_sistema.py": "OK (ya existía)",
+    "ui.py": "OK",
+    "validation_checker.py": "OK",
+    "biomarker_extractor.py": "OK (warning pre-existente)",
+    "unified_extractor.py": "OK"
+  },
+  "siguiente_paso": "Borrar BD y reprocesar casos para aplicar cambios"
+}

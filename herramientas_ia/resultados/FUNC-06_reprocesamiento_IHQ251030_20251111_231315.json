@@ -1,0 +1,14 @@
+{
+  "caso": "IHQ251030",
+  "pdf_path": null,
+  "casos_eliminados": 0,
+  "casos_reprocesados": 0,
+  "score_antes": 0,
+  "score_despues": 0,
+  "mejora_porcentaje": 0,
+  "auditoria_completa": {},
+  "estado": "ERROR_NO_DEBUG_MAP",
+  "errores": [
+    "No se encontró debug_map para IHQ251030"
+  ]
+}

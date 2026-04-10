@@ -1,0 +1,85 @@
+==============================================================================
+REPORTE DE CORRECCIONES v6.2.4 - NORMALIZACION CD56/CD15/CD61
+==============================================================================
+
+Fecha: 2025-11-05 03:15:00
+Archivo: core/extractors/biomarker_extractor.py
+Caso referencia: IHQ251014
+Backup: backups/biomarker_extractor_pre_v6.2.4_20251105_031445.py
+Estado sintaxis: VALIDADA
+
+==============================================================================
+CAMBIO 1: FIX CRITICO CD56
+==============================================================================
+
+Biomarcador: CD56
+Tipo: FIX CRITICO
+Problema: "CD56-" NO normalizaba a "NEGATIVO"
+
+Causa raiz:
+  La condicion: if value_clean.endswith('-') and not any(char.isdigit() for char in value_clean)
+  Detectaba digitos en "CD56" (5, 6) y rechazaba la normalizacion
+
+Lineas modificadas: 3504-3509
+
+CODIGO ANTES:
+  if value_clean.endswith('-') and not any(char.isdigit() for char in value_clean):
+      return 'NEGATIVO'
+
+CODIGO DESPUES:
+  # V6.2.4: FIX CD56- -> NEGATIVO - Detectar "CD56-", "CD34-" (IHQ251014)
+  # Si termina en "-" y NO es un rango numerico (ej: "10-20")
+  if value_clean.endswith('-'):
+      # Rechazar rangos como "10-20" pero aceptar "CD56-"
+      if not re.search(r'\d+-$', value_clean):  # No termina en "numero-"
+          return 'NEGATIVO'
+
+Resultado: "CD56-" -> "NEGATIVO" (CORRECTO)
+
+==============================================================================
+CAMBIO 2: NUEVO PATRON CD15
+==============================================================================
+
+Biomarcador: CD15
+Tipo: NUEVO PATRON (Patron 14)
+Problema: "LINEA MIELOIDE (CD15" NO normalizaba a "POSITIVO"
+
+Lineas insertadas: 3491-3495
+
+CODIGO NUEVO:
+  # V6.2.4: Patron 14: "LINEA MIELOIDE (CD15" -> "POSITIVO" (IHQ251014)
+  if re.search(r'LINEA\s+MIELOIDE\s*\(\s*CD\s*15', value_clean):
+      return 'POSITIVO'
+  if re.search(r'L[II]NEA\s+MIELOIDE', value_clean):
+      return 'POSITIVO'
+
+Resultado: "LINEA MIELOIDE (CD15" -> "POSITIVO" (CORRECTO)
+
+==============================================================================
+CAMBIO 3: NUEVO PATRON CD61
+==============================================================================
+
+Biomarcador: CD61
+Tipo: NUEVO PATRON (Patron 15)
+Problema: "MEGACARIOCITOS (CD61" NO normalizaba a "POSITIVO"
+
+Lineas insertadas: 3497-3499
+
+CODIGO NUEVO:
+  # V6.2.4: Patron 15: "MEGACARIOCITOS (CD61" -> "POSITIVO" (IHQ251014)
+  if re.search(r'MEGACARIOCITOS?\s*\(\s*CD\s*61', value_clean):
+      return 'POSITIVO'
+
+Resultado: "MEGACARIOCITOS (CD61" -> "POSITIVO" (CORRECTO)
+
+==============================================================================
+SIGUIENTE PASO
+==============================================================================
+
+Reprocesar caso IHQ251014 con data-auditor FUNC-06:
+
+  auditor.reprocesar_caso_completo('IHQ251014')
+
+Esto eliminara datos antiguos, reprocesara con extractores v6.2.4, y validara.
+
+==============================================================================

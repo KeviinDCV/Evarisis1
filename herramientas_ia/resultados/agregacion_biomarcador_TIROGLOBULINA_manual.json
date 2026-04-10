@@ -1,0 +1,85 @@
+{
+  "fecha": "2026-01-28T11:45:34.632809",
+  "operacion": "FUNC-03: Agregar biomarcador",
+  "biomarcador": "TIROGLOBULINA",
+  "columna_bd": "IHQ_TIROGLOBULINA",
+  "alias_agregados": [
+    "TIROGLOBULINA",
+    "THYROGLOBULIN",
+    "TG"
+  ],
+  "caso_origen": "IHQ250241",
+  "contexto": "Las células tumorales son positivas para CK7, CKAE1E3, PAX-8, TTF-1, Tiroglobulina",
+  "estado": "EXITOSO",
+  "archivos_modificados": [
+    {
+      "archivo": "database_manager.py",
+      "modificaciones": 3,
+      "lugares": [
+        "NEW_TABLE_COLUMNS_ORDER",
+        "CREATE TABLE",
+        "new_biomarkers"
+      ]
+    },
+    {
+      "archivo": "auditor_sistema.py",
+      "modificaciones": 1,
+      "lugares": [
+        "BIOMARCADORES"
+      ]
+    },
+    {
+      "archivo": "ui.py",
+      "modificaciones": 1,
+      "lugares": [
+        "columnas visibles"
+      ]
+    },
+    {
+      "archivo": "validation_checker.py",
+      "modificaciones": 1,
+      "lugares": [
+        "MAPEO_BIOMARCADORES"
+      ]
+    },
+    {
+      "archivo": "biomarker_extractor.py",
+      "modificaciones": 4,
+      "lugares": [
+        "individual_patterns",
+        "single_marker_patterns",
+        "compound_negative_pattern",
+        "normalize_marker_name"
+      ]
+    },
+    {
+      "archivo": "unified_extractor.py",
+      "modificaciones": 2,
+      "lugares": [
+        "biomarker_map",
+        "all_biomarker_mapping"
+      ]
+    }
+  ],
+  "backups_creados": [
+    "database_manager.py.backup_func03_20260128_114446",
+    "auditor_sistema.py.backup_func03_20260128_114446",
+    "ui.py.backup_func03_20260128_114446",
+    "validation_checker.py.backup_func03_20260128_114446",
+    "biomarker_extractor.py.backup_func03_20260128_114446",
+    "unified_extractor.py.backup_func03_20260128_114446"
+  ],
+  "proximos_pasos": [
+    "1. Borrar BD actual: rm data/huv_oncologia_NUEVO.db",
+    "2. Reprocesar archivo PDF: IHQ DEL 212 AL 262.pdf (contiene IHQ250241)",
+    "3. Validar extraccion: python herramientas_ia/auditor_sistema.py IHQ250241 --inteligente"
+  ],
+  "validacion_post_agregacion": {
+    "auditor_sistema.py": "OK (3 alias)",
+    "database_manager.py": "OK (3 lugares)",
+    "validation_checker.py": "OK (2 alias)",
+    "biomarker_extractor.py": "OK (9 menciones)",
+    "unified_extractor.py": "OK (6 menciones)",
+    "ui.py": "OK (columna incluida)"
+  }
+}

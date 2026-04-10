@@ -1,0 +1,64 @@
+{
+  "caso": "IHQ250238",
+  "fecha": "2026-01-28T10:32:50.022497",
+  "version": "v6.5.29",
+  "cambio_implementado": "Unificado mapeo IHQ_CK34BE12 a IHQ_CK34BETAE12 en validation_checker.py",
+  "problema_reportado": {
+    "descripcion": "CK34BE12 aparecia como NO MENCIONADO a pesar de estar en OCR",
+    "valor_esperado": "POSITIVO (igual que P63)",
+    "valor_antes": "NO MENCIONADO"
+  },
+  "analisis_ocr": {
+    "estudios_solicitados": "RACEMASA, p63, CK5/6, CK34 B E12",
+    "texto_microscopico": "marcador de celulas basales (p63, CK5/6, CK34 B E12) [...] positiva y difusa",
+    "valor_real": "POSITIVO (difusa)",
+    "confirmacion": "El OCR contiene CK34 B E12 con valor positivo difuso"
+  },
+  "resultado_extraccion": {
+    "score_final": "100%",
+    "estado": "OK",
+    "IHQ_CK34BETAE12": "POSITIVO (difusa)",
+    "IHQ_RACEMASA": "NEGATIVO",
+    "IHQ_P63": "POSITIVO (difusa)",
+    "IHQ_CK5_6": "POSITIVO",
+    "coherencia": "P63, CK5/6 y CK34BETAE12 todos POSITIVOS (panel de celulas basales completo)"
+  },
+  "auditoria_biomarcadores": {
+    "total_solicitado_ocr": 4,
+    "total_mapeado_bd": 4,
+    "cobertura": "100%",
+    "estudios_ocr": [
+      "RACEMASA",
+      "P63",
+      "CK5/6",
+      "CK34 B E12"
+    ],
+    "estudios_bd": [
+      "RACEMASA",
+      "P63",
+      "CK5/6",
+      "CK34 B E12",
+      "CK34BETAE12"
+    ],
+    "nota": "El auditor reconoce ambas variantes (CK34 B E12 y CK34BETAE12) como mapeadas"
+  },
+  "validacion_regresion": {
+    "casos_referencia": [],
+    "nota": "Solo se unifico mapeo en validation_checker.py, NO se modificaron extractores",
+    "riesgo_regresion": "BAJO (cambio solo afecta validacion de completitud, no extraccion)"
+  },
+  "conclusion": {
+    "estado": "RESUELTO",
+    "score_final": "100%",
+    "problema": "CK34BE12 NO MENCIONADO",
+    "solucion": "Unificacion de alias IHQ_CK34BE12 a IHQ_CK34BETAE12",
+    "extraccion": "El biomarker_extractor YA extraia correctamente con alias 34BETAE12",
+    "problema_real": "El validation_checker tenia dos mapeos separados causando confusion",
+    "observaciones": [
+      "biomarker_extractor.py usa alias 34BETAE12 (linea 703)",
+      "database_manager.py tiene columna IHQ_CK34BETAE12",
+      "validation_checker.py tenia ambos mapeos (CK34BE12 y CK34BETAE12)",
+      "Unificacion consolida todo bajo IHQ_CK34BETAE12"
+    ]
+  }
+}

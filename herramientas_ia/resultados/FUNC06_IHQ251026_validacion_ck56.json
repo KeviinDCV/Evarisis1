@@ -1,0 +1,56 @@
+{
+  "caso": "IHQ251026",
+  "timestamp": "2025-11-10T09:19:50.728117",
+  "func06_status": "COMPLETADO_CON_ADVERTENCIAS",
+  "nota": "Reprocesamiento exitoso (47 casos) pero error en manejo stdout al final",
+  "func01_validacion": {
+    "score_validacion": 77.8,
+    "estado": "ERROR",
+    "biomarcadores_mapeados": "10/10",
+    "completitud_biomarcadores": 100.0
+  },
+  "extraccion_bd": {
+    "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40, CAM5.2, BCL2, BCL6, CD20, CD5, CK5/6, CK7, CKAE1AE3",
+    "IHQ_CK5_6": "POSITIVO",
+    "IHQ_CAM5": "POSITIVO",
+    "IHQ_CAM52": "NO MENCIONADO",
+    "IHQ_BCL2": "NEGATIVO",
+    "IHQ_BCL6": "NEGATIVO",
+    "IHQ_CD20": "NEGATIVO",
+    "IHQ_CD5": "POSITIVO",
+    "IHQ_CK7": "POSITIVO",
+    "IHQ_CKAE1AE3": "POSITIVO"
+  },
+  "analisis_critico": {
+    "ck56": {
+      "estado": "EXITO",
+      "valor_bd": "POSITIVO",
+      "patron_aplicado": "son CK 5/6 positivas",
+      "patron_codigo": "r(?i)(?:son|estan|presentan|muestran)\\s+CK[\\s\\-]?5[\\s/\\-]6\\s+(positiv[ao]s?|negativ[ao]s?)",
+      "ubicacion_patron": "biomarker_extractor.py linea 843",
+      "confirmacion": "Patron funciona correctamente"
+    },
+    "cam5": {
+      "estado": "EXITO",
+      "valor_bd_cam5": "POSITIVO",
+      "valor_bd_cam52": "NO MENCIONADO",
+      "confirmacion": "CAM5.2 extraido correctamente en IHQ_CAM5"
+    }
+  },
+  "resumen_final": {
+    "total_solicitados": 10,
+    "total_mapeados": 10,
+    "completitud": 100.0,
+    "errores_func01": 1,
+    "error_descripcion": "DIAGNOSTICO_COLORACION marcado como NO APLICA pero existe en OCR",
+    "objetivo_cumplido": true,
+    "patron_ck56_validado": true
+  },
+  "conclusion": {
+    "objetivo": "Validar patron CK5/6 agregado en biomarker_extractor.py",
+    "resultado": "EXITO",
+    "evidencia": "IHQ_CK5_6 = POSITIVO extraido correctamente",
+    "completitud_biomarcadores": "100% (10/10 mapeados)",
+    "nota": "Error residual DIAGNOSTICO_COLORACION no afecta objetivo"
+  }
+}

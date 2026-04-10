@@ -1,0 +1,65 @@
+{
+  "lote_id": "lote_1_casos_20251203_023240",
+  "timestamp_inicio": "2025-12-03T02:32:40.495303",
+  "timestamp_fin": "2025-12-03T02:32:48.001554",
+  "usuario": "USUARIO",
+  "descripcion": "Auditoria de 1 casos",
+  "casos": [
+    {
+      "numero": "IHQ250013",
+      "estado": "FALLIDO",
+      "score": 77.8,
+      "timestamp_inicio": "2025-12-03T02:32:47.453447",
+      "timestamp_fin": "2025-12-03T02:32:48.000712",
+      "duracion_segundos": 0.543446,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250013.json",
+      "errores_criticos": 0,
+      "warnings": 2,
+      "errores_detectados": [
+        {
+          "tipo": "MALIGNIDAD_WARNING",
+          "severidad": "WARNING",
+          "campo": "Malignidad",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar clasificacion manualmente o ajustar keywords en medical_extractor.py",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "determine_malignancy()"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 67%)",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    }
+  ],
+  "resumen": {
+    "total": 1,
+    "completados": 0,
+    "en_proceso": 0,
+    "pendientes": 0,
+    "fallidos": 1,
+    "progreso_porcentaje": 0.0,
+    "tiempo_promedio_caso": null,
+    "tiempo_estimado_restante": null,
+    "promedio_score": null,
+    "casos_criticos": []
+  },
+  "interrupciones": [],
+  "version_herramienta": "2.0.0"
+}

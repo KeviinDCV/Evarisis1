@@ -1,0 +1,119 @@
+{
+  "numero_caso": "IHQ250213",
+  "caso_num": 2,
+  "total_casos": 50,
+  "timestamp": "2026-01-28T17:08:59.177810",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 10,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "INFILTRADO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO. CELULARIDAD ATÍPICA FOCAL",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "PROCESO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (9/9)",
+      "total_solicitado_ocr": 9,
+      "total_solicitado_bd": 9,
+      "estudios_ocr": [
+        "CK7",
+        "CK20",
+        "TTF-1",
+        "GATA 3",
+        "CDX2",
+        "HEPATOCITO",
+        "PAX 8",
+        "CKAE1E3",
+        "CD68"
+      ],
+      "estudios_bd": [
+        "CK7",
+        "CK20",
+        "TTF-1",
+        "GATA 3",
+        "CDX2",
+        "HEPATOCITO",
+        "PAX 8",
+        "CKAE1AE3",
+        "CD68"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 9,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realizan niveles histológicos al bloque M2502037, el cual corresponde a biopsia de ganglio linfát..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

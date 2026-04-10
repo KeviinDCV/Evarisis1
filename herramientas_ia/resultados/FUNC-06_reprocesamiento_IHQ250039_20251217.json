@@ -1,0 +1,60 @@
+{
+  "caso": "IHQ250039",
+  "fecha_reprocesamiento": "2025-12-17T02:40:22.533280",
+  "version_extractores": "v6.3.45",
+  "estado_final": "EXITOSO",
+  "score_validacion": "100.0%",
+  "correcciones_aplicadas": {
+    "1": {
+      "objetivo": "Capturar marcacion difusa de fuerte a moderada para receptores de estrogenos",
+      "campo": "IHQ_RECEPTOR_ESTROGENOS",
+      "valor_esperado": "POSITIVO",
+      "valor_obtenido": "MARCACION DIFUSA DE FUERTE A MODERADA PARA RECEPTORES DE ESTROGENOS",
+      "estado": "CAPTURADO (pero falta normalizar a POSITIVO)"
+    },
+    "2": {
+      "objetivo": "Capturar (p63, CK 5/6) positivas",
+      "campos": [
+        "IHQ_P63",
+        "IHQ_CK5_6"
+      ],
+      "valor_esperado": "POSITIVO",
+      "valores_obtenidos": {
+        "IHQ_P63": "POSITIVO",
+        "IHQ_CK5_6": "POSITIVO"
+      },
+      "estado": "CORRECTO"
+    }
+  },
+  "contexto_ocr": {
+    "linea_37": "bloque 2 para : p63, CK5/6, RECEPTOR DE ESTROGENOS",
+    "linea_46-47": "Se identifican focos de carcinoma ductal in situ rodeados de celulas mioepiteliales ( p63 , CK 5/6 ) positivas y una marcacion difusa de fuerte a moderada para receptores de estrogenos",
+    "linea_51": "estrogenos y se rodean en la periferia por celulas mioepiteliales ( p63 , CK 5/6 ) positivas.",
+    "linea_54": "mioepiteliales ( p63 , CK 5/6 ) positivas."
+  },
+  "valores_en_bd": {
+    "IHQ_RECEPTOR_ESTROGENOS": "MARCACION DIFUSA DE FUERTE A MODERADA PARA RECEPTORES DE ESTROGENOS",
+    "IHQ_P63": "POSITIVO",
+    "IHQ_CK5_6": "POSITIVO",
+    "Factor_pronostico": "RECEPTOR DE ESTROGENOS DESCRIPCION MICROSCOPICA"
+  },
+  "analisis": {
+    "logros": [
+      "P63 capturado correctamente como POSITIVO",
+      "CK5_6 capturado correctamente como POSITIVO",
+      "Receptor de Estrogenos capturado (texto descriptivo completo)"
+    ],
+    "pendientes": [
+      "IHQ_RECEPTOR_ESTROGENOS debe normalizarse a POSITIVO (actualmente tiene texto descriptivo)",
+      "Factor_pronostico contiene texto incorrecto DESCRIPCION MICROSCOPICA"
+    ]
+  },
+  "metricas": {
+    "score_validacion": "100.0%",
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "siguiente_paso": "Normalizar IHQ_RECEPTOR_ESTROGENOS: Extraer estado (POSITIVO) en lugar del texto descriptivo completo"
+}

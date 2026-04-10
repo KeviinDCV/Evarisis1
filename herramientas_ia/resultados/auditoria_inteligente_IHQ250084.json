@@ -1,0 +1,329 @@
+{
+  "numero_caso": "IHQ250084",
+  "caso_num": 31,
+  "total_casos": 50,
+  "timestamp": "2025-12-19T04:50:11.910919",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 5,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NEOPLASIA FUSOCELULAR DE BAJO GRADO",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
+      "valor_bd": "SCHWANNOMA"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 1%",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 3,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "Ki-67",
+        "S100",
+        "SOX10"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "Ki-67",
+        "S100",
+        "SOX10"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realizan niveles al bloque M2409494 que corresponde a resección de lesión en ángulo pontocerebelo..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "CRÁNEO, ÁNGULO PONTOCEREBELOSO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "_datos_bd": {},
+  "_campos_criticos": {
+    "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, S100, SOX10",
+    "Descripcion macroscopica": "Se realizan niveles al bloque M2409494 que corresponde a resección de lesión en ángulo pontocerebeloso, con diagnóstico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\". Se ordenan estudios de inmunohistoquímica.",
+    "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Neoplasia fusocelular con inmunorreactividad para S100, SOX10, siendo negativa para SMA y GFAP. Índice de proliferación celular Ki-67 del 1%.",
+    "Descripcion Diagnostico": "Cráneo, ángulo pontocerebeloso. Lesión. Resección. Estudios de inmunohistoquímica: COMPATIBLE CON SCHWANNOMA",
+    "IHQ_ORGANO": "CRÁNEO, ÁNGULO PONTOCEREBELOSO",
+    "Organo": "TUMOR ANGULO PONTOCEREBELOSOS IZQ",
+    "Diagnostico Coloracion": "NEOPLASIA FUSOCELULAR DE BAJO GRADO",
+    "Diagnostico Principal": "SCHWANNOMA",
+    "Malignidad": "MALIGNO",
+    "Factor pronostico": "Ki-67: 1%",
+    "IHQ_KI-67": "1%",
+    "IHQ_S100": "POSITIVO",
+    "IHQ_SOX10": "POSITIVO"
+  },
+  "_texto_ocr": "IHQ250084\nCopia Pag. 1 de 1\nNombre : GINA PATRICIA TORRES MURCIA\nN. peticion : IHQ250084\nN.Identificación : CC. 36297367\nGenero : FEMENINO\nEdad : 38 años 1 mes 25 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UCI 5\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR ANGULO\nPONTOCEREBELOSOS IZQ\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2409494 que corresponde a resección de lesión en ángulo\npontocerebeloso, con diagnóstico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\". Se ordenan estudios\nde inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nNeoplasia fusocelular con inmunorreactividad para S100, SOX10, siendo negativa para SMA y GFAP.\nÍndice de proliferación celular Ki-67 del 1%.\nDIAGNÓSTICO\nCráneo, ángulo pontocerebeloso. Lesión. Resección. Estudios de inmunohistoquímica:\nCOMPATIBLE CON SCHWANNOMA\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---",
+  "_unified": {
+    "nombre_completo": "GINA PATRICIA TORRES MURCIA",
+    "numero_peticion": "IHQ250084",
+    "identificacion": "36297367",
+    "tipo_documento": "CC",
+    "Genero": "FEMENINO",
+    "Edad": "38",
+    "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+    "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+    "servicio": "",
+    "fecha_ingreso": "24/01/2025",
+    "fecha_informe": "04/02/2025",
+    "procedencia": "",
+    "historia_clinica": "",
+    "N. peticion (0. Numero de biopsia)": "IHQ250084",
+    "N. de identificación": "36297367",
+    "Tipo de documento": "CC",
+    "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+    "Servicio": "",
+    "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+    "Fecha de ingreso (2. Fecha de la muestra)": "24/01/2025",
+    "Fecha Informe": "04/02/2025",
+    "nombres": "GINA PATRICIA",
+    "Primer nombre": "GINA",
+    "Segundo nombre": "PATRICIA",
+    "apellidos": "TORRES MURCIA",
+    "Primer apellido": "TORRES",
+    "Segundo apellido": "MURCIA",
+    "nombre_formal": "TORRES MURCIA, GINA PATRICIA",
+    "diagnostico": "Cráneo, ángulo pontocerebeloso. Lesión. Resección. Estudios de inmunohistoquímica: COMPATIBLE CON SCHWANNOMA",
+    "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Neoplasia fusocelular con inmunorreactividad para S100, SOX10, siendo negativa para SMA y GFAP. Índice de proliferación celular KI-67 del 1%.",
+    "descripcion_macroscopica": "Se realizan niveles al bloque M2409494 que corresponde a resección de lesión en ángulo pontocerebeloso, con diagnóstico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\". Se ordenan estudios de inmunohistoquímica.",
+    "ihq_organo": "CRÁNEO, ÁNGULO PONTOCEREBELOSO",
+    "malignidad": "MALIGNO",
+    "fecha_toma": "SIN DATO",
+    "responsable_final": "ARMANDO CORTES BUELVAS",
+    "especialidad_deducida": "",
+    "tipo_informe": "INMUNOHISTOQUIMICA",
+    "hospitalizado": "NO",
+    "estudios_solicitados_tabla": "",
+    "procedimiento": "CIRUGÍA",
+    "comentarios": "",
+    "IHQ_ORGANO": "CRÁNEO, ÁNGULO PONTOCEREBELOSO",
+    "Malignidad": "MALIGNO",
+    "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+    "Patologo": "ARMANDO CORTES BUELVAS",
+    "Factor pronostico": "Ki-67: 1%",
+    "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+    "IHQ_S100": "POSITIVO",
+    "IHQ_SOX10": "POSITIVO",
+    "IHQ_KI-67": "1%",
+    "extraction_timestamp": "2025-12-19T04:49:02.970767",
+    "extractor_version": "6.0.9_unified_corrections",
+    "processing_method": "modular_extractors_with_corrections",
+    "_full_text": "IHQ250084\nCopia Pag. 1 de 1\nNombre : GINA PATRICIA TORRES MURCIA\nN. peticion : IHQ250084\nN.Identificación : CC. 36297367\nGenero : FEMENINO\nEdad : 38 años 1 mes 25 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UCI 5\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR ANGULO\nPONTOCEREBELOSOS IZQ\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2409494 que corresponde a resección de lesión en ángulo\npontocerebeloso, con diagnóstico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\". Se ordenan estudios\nde inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nNeoplasia fusocelular con inmunorreactividad para S100, SOX10, siendo negativa para SMA y GFAP.\nÍndice de proliferación celular Ki-67 del 1%.\nDIAGNÓSTICO\nCráneo, ángulo pontocerebeloso. Lesión. Resección. Estudios de inmunohistoquímica:\nCOMPATIBLE CON SCHWANNOMA\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---"
+  },
+  "_debug_map": {
+    "session_id": "IHQ250084_20251219_044902",
+    "numero_peticion": "IHQ250084",
+    "timestamp": "2025-12-19T04:49:02.834929",
+    "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+    "ocr": {
+      "texto_consolidado": "IHQ250084\nCopia Pag. 1 de 1\nNombre : GINA PATRICIA TORRES MURCIA\nN. peticion : IHQ250084\nN.Identificación : CC. 36297367\nGenero : FEMENINO\nEdad : 38 años 1 mes 25 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UCI 5\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR ANGULO\nPONTOCEREBELOSOS IZQ\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2409494 que corresponde a resección de lesión en ángulo\npontocerebeloso, con diagnóstico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\". Se ordenan estudios\nde inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nNeoplasia fusocelular con inmunorreactividad para S100, SOX10, siendo negativa para SMA y GFAP.\nÍndice de proliferación celular Ki-67 del 1%.\nDIAGNÓSTICO\nCráneo, ángulo pontocerebeloso. Lesión. Resección. Estudios de inmunohistoquímica:\nCOMPATIBLE CON SCHWANNOMA\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---",
+      "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+      "estadisticas": {
+        "caracteres_totales": 187103,
+        "caracteres_consolidados": 2342,
+        "reduccion_porcentaje": 98.75
+      },
+      "metadata": {
+        "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+        "numero_ihq": "IHQ250084",
+        "caso_num": 31,
+        "total_casos": 50
+      }
+    },
+    "extraccion": {
+      "unified_extractor": {
+        "nombre_completo": "GINA PATRICIA TORRES MURCIA",
+        "numero_peticion": "IHQ250084",
+        "identificacion": "36297367",
+        "tipo_documento": "CC",
+        "Genero": "FEMENINO",
+        "Edad": "38",
+        "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+        "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+        "servicio": "",
+        "fecha_ingreso": "24/01/2025",
+        "fecha_informe": "04/02/2025",
+        "procedencia": "",
+        "historia_clinica": "",
+        "N. peticion (0. Numero de biopsia)": "IHQ250084",
+        "N. de identificación": "36297367",
+        "Tipo de documento": "CC",
+        "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+        "Servicio": "",
+        "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+        "Fecha de ingreso (2. Fecha de la muestra)": "24/01/2025",
+        "Fecha Informe": "04/02/2025",
+        "nombres": "GINA PATRICIA",
+        "Primer nombre": "GINA",
+        "Segundo nombre": "PATRICIA",
+        "apellidos": "TORRES MURCIA",
+        "Primer apellido": "TORRES",
+        "Segundo apellido": "MURCIA",
+        "nombre_formal": "TORRES MURCIA, GINA PATRICIA",
+        "diagnostico": "Cráneo, ángulo pontocerebeloso. Lesión. Resección. Estudios de inmunohistoquímica: COMPATIBLE CON SCHWANNOMA",
+        "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Neoplasia fusocelular con inmunorreactividad para S100, SOX10, siendo negativa para SMA y GFAP. Índice de proliferación celular KI-67 del 1%.",
+        "descripcion_macroscopica": "Se realizan niveles al bloque M2409494 que corresponde a resección de lesión en ángulo pontocerebeloso, con diagnóstico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\". Se ordenan estudios de inmunohistoquímica.",
+        "ihq_organo": "CRÁNEO, ÁNGULO PONTOCEREBELOSO",
+        "malignidad": "MALIGNO",
+        "fecha_toma": "SIN DATO",
+        "responsable_final": "ARMANDO CORTES BUELVAS",
+        "especialidad_deducida": "",
+        "tipo_informe": "INMUNOHISTOQUIMICA",
+        "hospitalizado": "NO",
+        "estudios_solicitados_tabla": "",
+        "procedimiento": "CIRUGÍA",
+        "comentarios": "",
+        "IHQ_ORGANO": "CRÁNEO, ÁNGULO PONTOCEREBELOSO",
+        "Malignidad": "MALIGNO",
+        "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+        "Patologo": "ARMANDO CORTES BUELVAS",
+        "Factor pronostico": "Ki-67: 1%",
+        "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+        "IHQ_S100": "POSITIVO",
+        "IHQ_SOX10": "POSITIVO",
+        "IHQ_KI-67": "1%",
+        "extraction_timestamp": "2025-12-19T04:49:02.970767",
+        "extractor_version": "6.0.9_unified_corrections",
+        "processing_method": "modular_extractors_with_corrections",
+        "_full_text": "IHQ250084\nCopia Pag. 1 de 1\nNombre : GINA PATRICIA TORRES MURCIA\nN. peticion : IHQ250084\nN.Identificación : CC. 36297367\nGenero : FEMENINO\nEdad : 38 años 1 mes 25 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UCI 5\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR ANGULO\nPONTOCEREBELOSOS IZQ\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2409494 que corresponde a resección de lesión en ángulo\npontocerebeloso, con diagnóstico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\". Se ordenan estudios\nde inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nNeoplasia fusocelular con inmunorreactividad para S100, SOX10, siendo negativa para SMA y GFAP.\nÍndice de proliferación celular Ki-67 del 1%.\nDIAGNÓSTICO\nCráneo, ángulo pontocerebeloso. Lesión. Resección. Estudios de inmunohistoquímica:\nCOMPATIBLE CON SCHWANNOMA\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---"
+      }
+    },
+    "base_datos": {
+      "campos_criticos": {
+        "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, S100, SOX10",
+        "Descripcion macroscopica": "Se realizan niveles al bloque M2409494 que corresponde a resección de lesión en ángulo pontocerebeloso, con diagnóstico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\". Se ordenan estudios de inmunohistoquímica.",
+        "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Neoplasia fusocelular con inmunorreactividad para S100, SOX10, siendo negativa para SMA y GFAP. Índice de proliferación celular Ki-67 del 1%.",
+        "Descripcion Diagnostico": "Cráneo, ángulo pontocerebeloso. Lesión. Resección. Estudios de inmunohistoquímica: COMPATIBLE CON SCHWANNOMA",
+        "IHQ_ORGANO": "CRÁNEO, ÁNGULO PONTOCEREBELOSO",
+        "Organo": "TUMOR ANGULO PONTOCEREBELOSOS IZQ",
+        "Diagnostico Coloracion": "NEOPLASIA FUSOCELULAR DE BAJO GRADO",
+        "Diagnostico Principal": "SCHWANNOMA",
+        "Malignidad": "MALIGNO",
+        "Factor pronostico": "Ki-67: 1%",
+        "IHQ_KI-67": "1%",
+        "IHQ_S100": "POSITIVO",
+        "IHQ_SOX10": "POSITIVO"
+      },
+      "estadisticas": {
+        "total_campos_guardados": 157,
+        "campos_vacios": 119,
+        "campos_completos": 38,
+        "biomarcadores_encontrados": 3,
+        "completitud_porcentaje": 24.2
+      },
+      "columnas_mapeadas": {}
+    },
+    "validacion": {
+      "estadisticas": {
+        "total_campos_vacios": 119,
+        "total_campos_completos": 38
+      },
+      "top_campos_criticos_vacios": [],
+      "warnings": [],
+      "errores": []
+    },
+    "correcciones_aplicadas": [
+      {
+        "tipo": "ortografica",
+        "campo": "diagnostico",
+        "valor_original": "Cráneo, ángulo pontocerebeloso. Lesión. Resección. Estudios de inmunohistoquímica:\nCOMPATIBLE CON SCHWANNOMA",
+        "valor_corregido": "Cráneo, ángulo pontocerebeloso. Lesión. Resección. Estudios de inmunohistoquímica: COMPATIBLE CON SCHWANNOMA",
+        "razon": "Corrección automática",
+        "numero_caso": "IHQ250084",
+        "timestamp": "2025-12-19T04:49:02.970599"
+      },
+      {
+        "tipo": "ortografica",
+        "campo": "descripcion_microscopica",
+        "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Neoplasia fusocelular con inmunorreactividad para S100, SOX10, siendo negativa para SMA y GFAP. Índice de proliferación celular Ki-67 del 1%.",
+        "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Neoplasia fusocelular con inmunorreactividad para S100, SOX10, siendo negativa para SMA y GFAP. Índice de proliferación celular KI-67 del 1%.",
+        "razon": "Corrección automática",
+        "numero_caso": "IHQ250084",
+        "timestamp": "2025-12-19T04:49:02.970606"
+      }
+    ],
+    "metadata": {
+      "correcciones_totales": 2,
+      "correcciones_por_tipo": {
+        "ortografica": 2
+      }
+    },
+    "metricas": {
+      "tiempo_ocr_segundos": 0,
+      "tiempo_extraccion_segundos": 0,
+      "tiempo_total_segundos": 0,
+      "caracteres_procesados": 187103,
+      "campos_extraidos": 47
+    }
+  },
+  "estado_final": "OK"
+}

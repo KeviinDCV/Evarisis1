@@ -1,0 +1,118 @@
+======================================================================
+RESUMEN EJECUTIVO - FIX v6.5.13
+======================================================================
+Caso: IHQ250235
+Fecha: 2026-01-28
+Autor: Claude (data-auditor agent)
+
+======================================================================
+PROBLEMA DETECTADO
+======================================================================
+
+Patrón v6.5.12 (línea 8671 de biomarker_extractor.py) NO captura
+listas completas de biomarcadores negativos.
+
+TEXTO OCR (IHQ250235):
+"No se observan células inmunorreactivas para desmina, myogenina y MyoD1."
+
+RESULTADO ACTUAL (v6.5.12):
+- Captura solo: "desmina"
+- Ignora: "myogenina y MyoD1"
+
+VALORES EN BD:
+- IHQ_MYOD1: "NO MENCIONADO" (❌ Esperado: "NEGATIVO")
+- IHQ_DESMIN: "POSITIVO" (❌ Esperado: "NEGATIVO")
+
+======================================================================
+CAUSA RAÍZ
+======================================================================
+
+Patrón actual (línea 8671):
+r'(?i)No\s+se\s+observan?\s+c[eé]lulas\s+inmunorreactivas\s+para\s+([A-Za-z0-9\s,./\-\(\)+yYeÉóÓ\n]+?)\.?(?:\s|$)'
+
+PROBLEMA:
+El cuantificador NO-GREEDY (+?) hace match MÍNIMO y se detiene
+en la primera coma debido al lookahead (?:\s|$) que acepta espacio.
+
+Flujo de captura:
+1. Match: "No se observan células inmunorreactivas para "
+2. Grupo 1 captura: "desmina" (hasta coma)
+3. Match continúa: ","+espacio → cumple lookahead (?:\s|$)
+4. Finaliza sin capturar "myogenina y MyoD1"
+
+======================================================================
+SOLUCIÓN v6.5.13
+======================================================================
+
+CAMBIAR línea 8671:
+❌ INCORRECTO (v6.5.12):
+r'(?i)No\s+se\s+observan?\s+c[eé]lulas\s+inmunorreactivas\s+para\s+([A-Za-z0-9\s,./\-\(\)+yYeÉóÓ\n]+?)\.?(?:\s|$)'
+
+✅ CORRECTO (v6.5.13):
+r'(?i)No\s+se\s+observan?\s+c[eé]lulas\s+inmunorreactivas\s+para\s+([A-Za-z0-9\s,./\-\(\)+yYeÉóÓ\n]+)\.(?:\s|$)'
+
+CAMBIOS:
+1. Cuantificador: +? → + (greedy para capturar TODO)
+2. Punto: \.? → \. (obligatorio, no opcional)
+3. Lookahead: mantener (?:\s|$) para terminar en espacio o fin
+
+Esto captura TODA la lista "desmina, myogenina y MyoD1"
+hasta el punto final obligatorio.
+
+======================================================================
+VALIDACIÓN REQUERIDA
+======================================================================
+
+PASO 1: Modificar biomarker_extractor.py línea 8671
+
+PASO 2: Reprocesar IHQ250235 con FUNC-06
+python herramientas_ia/auditor_sistema.py IHQ250235 --func-06
+
+PASO 3: Verificar valores esperados en BD:
+- IHQ_MYOD1: "NEGATIVO" ✅
+- IHQ_DESMIN: "NEGATIVO" ✅
+- IHQ_MYOGENINA: Agregar columna si no existe (usar FUNC-03)
+
+PASO 4: Auditar con FUNC-01
+python herramientas_ia/auditor_sistema.py IHQ250235 --inteligente
+
+RESULTADO ESPERADO:
+Score: 100% (si DIAGNOSTICO_COLORACION también se corrige)
+Biomarcadores: 10/10 correctos
+
+======================================================================
+IMPACTO
+======================================================================
+
+CASOS AFECTADOS:
+- IHQ250235 (confirmado)
+- Cualquier caso con formato "No se observan células inmunorreactivas para [lista]"
+
+BIOMARCADORES IMPACTADOS:
+- MYOD1, DESMIN, MYOGENINA (caso IHQ250235)
+- Potencialmente cualquier biomarcador en listas negativas similares
+
+PRIORIDAD: ALTA
+Afecta extracción de biomarcadores negativos en formato narrativo.
+
+======================================================================
+NOTAS ADICIONALES
+======================================================================
+
+1. DIAGNOSTICO_COLORACION también tiene ERROR en IHQ250235:
+   - Marcado como "NO APLICA"
+   - OCR contiene: "BIOPSIA DE MEDULA ÓSEA"
+   - Patrón "bloque M + diagnóstico de..." NO encontró match
+   - Requiere investigación separada
+
+2. MYOGENINA no tiene columna en BD:
+   - Usar FUNC-03 para agregar: auditor.agregar_biomarcador('MYOGENINA')
+
+3. Validar regresión en casos de referencia:
+   - Buscar casos con score 100% que usen patrón v6.5.12
+   - Reprocesar y comparar scores antes/después
+   - Si algún caso baja score → revertir cambio
+
+======================================================================
+FIN DEL REPORTE
+======================================================================

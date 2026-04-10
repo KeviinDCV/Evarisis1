@@ -1,0 +1,25 @@
+{
+  "caso": "IHQ250170",
+  "objetivo_correccion": "Capturar EMA y PROGESTERONA desde patron negativo",
+  "resultados": {
+    "IHQ_EMA": {
+      "valor": "NEGATIVO",
+      "estado": "EXTRAIDO"
+    },
+    "IHQ_RECEPTOR_PROGESTERONA": {
+      "valor": "NEGATIVO",
+      "estado": "EXTRAIDO"
+    },
+    "Factor_pronostico": {
+      "valor": "Ki-67: POSITIVO, Receptor de Progesterona: NEGATIVO",
+      "incluye_progesterona": true
+    }
+  },
+  "scores": {
+    "anterior": 88.9,
+    "actual": 88.9,
+    "diferencia": 0.0,
+    "estado": "SIN_REGRESION"
+  },
+  "timestamp": "20260108_052634"
+}

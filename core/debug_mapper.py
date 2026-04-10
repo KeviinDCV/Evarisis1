@@ -27,9 +27,36 @@ V3.1.1 CORRECCIÓN DUPLICADOS:
 - Solo se guardan versiones con prefijo IHQ_ (se descartan minúsculas sin prefijo)
 - Ejemplo: Antes guardaba "IHQ_KI-67: 50%" Y "ki-67: 50%", ahora solo "IHQ_KI-67: 50%"
 
+V3.1.2 FIX MAPEO P16/P40 (IHQ251010):
+- Agregadas variaciones con _ESTADO para biomarcadores P16 y P40
+- Ahora detecta IHQ_P16_ESTADO cuando ESTUDIOS_SOLICITADOS contiene "P16"
+- Ahora detecta IHQ_P40_ESTADO cuando ESTUDIOS_SOLICITADOS contiene "P40"
+- Fix: P16 y P40 ahora aparecen en campos_criticos del debug_map
+
+V6.4.21 FIX MAPEO P40 CON ESPACIO (IHQ250025):
+- Problema: "P 40" (con espacio) en ESTUDIOS_SOLICITADOS no mapeaba a IHQ_P40_ESTADO
+- Causa: Las variaciones generadas ('IHQ_P 40_ESTADO', 'IHQ_P_40_ESTADO') no coincidían con columna real
+- Solución: Casos especiales explícitos para P 40/P-40/P40 → IHQ_P40_ESTADO (línea 415)
+- Solución: Casos especiales explícitos para P 16/P-16/P16 → IHQ_P16_ESTADO (línea 419)
+- Efecto: P40 y P16 ahora aparecen en campos_criticos con TODAS sus variantes de escritura
+
+V6.4.40 FIX MAPEO IDH (IHQ250175):
+- Problema: "IDH" en ESTUDIOS_SOLICITADOS no mapeaba a IHQ_IDH1
+- Causa: Las variaciones generadas ('IHQ_IDH', 'IHQ_IDH_ESTADO') no incluían IHQ_IDH1
+- Solución: Caso especial explícito para IDH/IDH1/IDH-1 → IHQ_IDH1 (línea 429-432)
+- Efecto: IDH ahora aparece en campos_criticos correctamente
+
+V3.2.0 FIX BIOMARCADORES NARRATIVOS (IHQ250188):
+- Problema: Biomarcadores narrativos (GPC3, AFP) NO aparecían en campos_criticos
+- Causa: Solo se agregaban biomarcadores en IHQ_ESTUDIOS_SOLICITADOS (PASO 2)
+- Causa raíz: Biomarcadores detectados por extract_narrative_biomarkers NO están en estudios_solicitados
+- Solución: Agregado PASO 3 que incluye TODOS los biomarcadores IHQ_* con valores válidos
+- Efecto: GPC3, AFP, HEPAR ahora aparecen en campos_criticos aunque no estén solicitados formalmente
+- Nota: Esto permite auditar biomarcadores incidentales detectados en descripción microscópica
+
 Autor: Sistema EVARISIS
-Versión: 3.1.1 (Sin duplicados)
-Fecha: 1 de noviembre de 2025
+Versión: 3.2.0 (Biomarcadores narrativos incluidos en campos_criticos)
+Fecha: 8 de enero de 2026
 """
 
 import json
@@ -363,13 +390,21 @@ class DebugMapper:
                     f'IHQ_{biomarcador.replace("-", "_")}',
                     f'IHQ_{biomarcador.replace(".", "_")}',
                     f'IHQ_{biomarcador.replace("/", "_")}',  # CK5/6 → IHQ_CK5_6
+                    # V6.5.83: CAM5.2 → IHQ_CAM5 (IHQ_CAM52 obsoleto, eliminado)
+                    f'IHQ_{biomarcador.replace(".", "").replace(" ", "")}',  # CAM5.2 → IHQ_CAM52 (histórico), CAM 5.2 → IHQ_CAM52
+                    f'IHQ_{biomarcador.replace(".", "").replace(" ", "")[:-1]}',  # CAM5.2 → IHQ_CAM5 (preferido desde v6.2.3)
+                    # V6.1.3: Variantes con _ESTADO para P16, P40 (IHQ251010)
+                    f'IHQ_{biomarcador}_ESTADO',
+                    f'IHQ_{biomarcador.replace(" ", "_")}_ESTADO',
+                    f'IHQ_{biomarcador.replace("-", "_")}_ESTADO',
                     # Remover "DE" y espacios para receptores
                     f'IHQ_{biomarcador.replace(" DE ", "_").replace(" ", "_")}',  # Receptor de Estrógeno → IHQ_RECEPTOR_ESTRÓGENO
                     # Variante con plural
                     f'IHQ_{biomarcador.replace(" DE ", "_").replace(" ", "_")}S',  # IHQ_RECEPTOR_ESTROGENOS
                     # Combinación: remover DE + normalizar caracteres especiales
-                    f'IHQ_{biomarcador.replace(" DE ", "_").replace(" ", "_").replace("Ó", "O").replace("É", "E")}',
                     f'IHQ_{biomarcador.replace(" DE ", "_").replace(" ", "_").replace("Ó", "O").replace("É", "E")}S',
+                    # V6.4.1: FIX IHQ250115 - CYCLINA -> CICLINA (subs Y por I)
+                    f'IHQ_{biomarcador.replace("CYCLIN", "CICLIN").replace(" ", "_")}',
                 ]
 
                 # Casos especiales para receptores hormonales
@@ -377,6 +412,36 @@ class DebugMapper:
                     posibles_nombres.extend(['IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTORES_ESTROGENOS'])
                 if 'RECEPTOR' in biomarcador and 'PROGEST' in biomarcador:
                     posibles_nombres.extend(['IHQ_RECEPTOR_PROGESTERONA', 'IHQ_RECEPTORES_PROGESTERONA'])
+
+                # V6.5.83: CAM5.2 → IHQ_CAM5 (IHQ_CAM52 eliminado, obsoleto desde v6.2.3)
+                if 'CAM5' in biomarcador or 'CAM 5' in biomarcador:
+                    posibles_nombres.insert(0, 'IHQ_CAM5')  # Prioridad: IHQ_CAM5
+
+                # V6.X.X: Caso especial TTF-1 → IHQ_TTF1 (sin guión/guión bajo)
+                if 'TTF' in biomarcador:
+                    posibles_nombres.insert(0, 'IHQ_TTF1')  # Prioridad: IHQ_TTF1 primero
+
+                # V6.X.X: Caso especial NAPSINA A → IHQ_NAPSIN (sin A final)
+                if 'NAPSIN' in biomarcador or 'NAPSINA' in biomarcador:
+                    posibles_nombres.insert(0, 'IHQ_NAPSIN')  # Prioridad: IHQ_NAPSIN primero
+
+                # V6.3.89 FIX IHQ250113: CD34 explícito en campos críticos (solicitado por usuario)
+                if 'CD34' in biomarcador or 'CD 34' in biomarcador:
+                    posibles_nombres.insert(0, 'IHQ_CD34')
+
+                # V6.4.21 FIX IHQ250025: P 40 → IHQ_P40_ESTADO (sin espacio ni underscore)
+                # Problema: "P 40" en ESTUDIOS_SOLICITADOS no mapeaba a IHQ_P40_ESTADO
+                if biomarcador in ['P 40', 'P-40', 'P40']:
+                    posibles_nombres.insert(0, 'IHQ_P40_ESTADO')
+
+                # V6.4.21: P 16 → IHQ_P16_ESTADO (consistencia con P40)
+                if biomarcador in ['P 16', 'P-16', 'P16']:
+                    posibles_nombres.insert(0, 'IHQ_P16_ESTADO')
+
+                # V6.4.40 FIX IHQ250175: IDH → IHQ_IDH1 (casos de glioma)
+                # IDH aparece en estudios solicitados pero la columna real es IHQ_IDH1
+                if biomarcador in ['IDH', 'IDH1', 'IDH-1']:
+                    posibles_nombres.insert(0, 'IHQ_IDH1')
 
                 for nombre_campo in posibles_nombres:
                     if nombre_campo in datos_guardados:
@@ -387,6 +452,20 @@ class DebugMapper:
                         if valor_biomarcador and str(valor_biomarcador).strip() and str(valor_biomarcador) not in ['N/A', 'None', '']:
                             biomarcadores_count += 1
                         break  # Ya encontramos el campo, no seguir buscando variaciones
+
+        # PASO 3: V3.2.0 - Agregar biomarcadores narrativos detectados (aunque NO estén en estudios_solicitados)
+        # Contexto: extract_narrative_biomarkers puede detectar biomarcadores incidentales en descripción microscópica
+        # Ejemplo: "con positividad para Glypican-3..." → IHQ_GPC3 se extrae pero NO está en estudios_solicitados
+        # Solución: Incluir TODOS los biomarcadores IHQ_* con valores válidos (no N/A, no vacío)
+        for campo, valor in datos_guardados.items():
+            # Filtrar: solo campos IHQ_* que NO sean ESTUDIOS_SOLICITADOS u ORGANO
+            if campo.startswith('IHQ_') and campo not in ['IHQ_ESTUDIOS_SOLICITADOS', 'IHQ_ORGANO']:
+                # Filtrar: solo valores válidos (no N/A, no vacío, no None)
+                if valor and str(valor).strip() and str(valor) not in ['N/A', 'None', '']:
+                    # Si NO está ya en campos_criticos, agregarlo
+                    if campo not in campos_criticos:
+                        campos_criticos[campo] = valor
+                        biomarcadores_count += 1
 
         self.current_map["base_datos"]["campos_criticos"] = campos_criticos
         self.current_map["base_datos"]["columnas_mapeadas"] = columnas_mapeadas or {}
@@ -399,12 +478,24 @@ class DebugMapper:
         )
         campos_completos = total_campos - campos_vacios
 
+        # V6.4.9: FIX IHQ250108/IHQ250121 - Calcular completitud SOLO sobre campos críticos
+        # NO sobre todas las 168 columnas de la BD (la mayoría son biomarcadores no aplicables)
+        total_campos_criticos = len(CAMPOS_BASE_CRITICOS)
+        campos_criticos_completos = sum(
+            1 for campo in CAMPOS_BASE_CRITICOS
+            if campo in datos_guardados
+            and datos_guardados[campo]
+            and str(datos_guardados[campo]).strip() not in ['', 'N/A', 'None', 'SIN DATO']
+        )
+
         self.current_map["base_datos"]["estadisticas"] = {
             "total_campos_guardados": total_campos,
             "campos_vacios": campos_vacios,
             "campos_completos": campos_completos,
             "biomarcadores_encontrados": biomarcadores_count,
-            "completitud_porcentaje": round((campos_completos / total_campos * 100) if total_campos > 0 else 0, 2)
+            "campos_criticos_total": total_campos_criticos,  # V6.4.9: Nuevo
+            "campos_criticos_completos": campos_criticos_completos,  # V6.4.9: Nuevo
+            "completitud_porcentaje": round((campos_criticos_completos / total_campos_criticos * 100) if total_campos_criticos > 0 else 0, 2)  # V6.4.9: FIX - usar campos críticos
         }
 
         # V3.0 OPTIMIZACIÓN: Solo guardar contadores + top campos críticos vacíos

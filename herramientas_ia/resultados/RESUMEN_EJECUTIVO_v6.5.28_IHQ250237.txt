@@ -1,0 +1,111 @@
+
+================================================================================
+RESUMEN EJECUTIVO - IHQ250237 (v6.5.28)
+================================================================================
+Fecha: 28 de enero de 2026
+Caso: IHQ250237
+Organo: TESTICULO IZQUIERDO
+Diagnostico: SEMINOMA
+
+SCORE FINAL: 100.0% (7/7 campos correctos)
+
+================================================================================
+CORRECCIONES APLICADAS (v6.5.24 - v6.5.28)
+================================================================================
+
+1. v6.5.24: Alias CKAE1/E3 -> IHQ_CKAE1AE3 (validation_checker.py)
+   - Problema: CKAE1/E3 (con slash) no mapeaba a columna IHQ_CKAE1AE3
+   - Solucion: Agregado alias con barra CKAE1/E3 -> IHQ_CKAE1AE3
+   - Estado: OK
+
+2. v6.5.25: Alias CD 30 -> IHQ_CD30 (validation_checker.py)
+   - Problema: CD 30 (con espacio) no mapeaba a columna IHQ_CD30
+   - Solucion: Agregado alias con espacio CD 30 -> IHQ_CD30
+   - Estado: OK
+
+3. v6.5.26: Patron limpieza diagnostico principal (unified_extractor.py)
+   - Problema: DIAGNOSTICO_PRINCIPAL con prefijo largo
+   - OCR: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON SEMINOMA
+   - Esperado: SEMINOMA
+   - Solucion: Agregado patron para limpiar prefijo largo
+   - Nota: El campo Descripcion Diagnostico AUN contiene el prefijo (verificar si es correcto)
+   - Estado: PENDIENTE VERIFICACION
+
+4. v6.5.27: Correccion NameError patron mixto (biomarker_extractor.py)
+   - Problema: NameError en patron v6.4.86 (variable no definida)
+   - Solucion: Corregido patron mixto con variable correcta
+   - Estado: OK
+
+5. v6.5.28: Terminador mejorado patron v6.4.86 (biomarker_extractor.py)
+   - Problema: AFP y CD30 extrayendo texto adicional
+   - OCR: y es negativo para GLYPICAN 3 , AFP y CD 30.
+   - Antes: AFP: y es negativo para GLYPICAN 3, CD30: y es negativo...
+   - Despues: AFP: NEGATIVO, CD30: NEGATIVO
+   - Solucion: Terminador que detecta y es negativo/positivo
+   - Estado: OK
+
+================================================================================
+CAMPOS VALIDADOS
+================================================================================
+
+BIOMARCADORES:
+  [OK] IHQ_OCT4: POSITIVO
+  [OK] IHQ_PODOPLANINA: POSITIVO
+  [OK] IHQ_CKAE1AE3: POSITIVO (corregido con v6.5.24)
+  [OK] IHQ_GPC3: NEGATIVO
+  [OK] IHQ_GLIPICAN: NEGATIVO
+  [OK] IHQ_AFP: NEGATIVO (corregido con v6.5.28)
+  [OK] IHQ_CD30: NEGATIVO (corregido con v6.5.25 + v6.5.28)
+
+NOTA IMPORTANTE:
+El campo Descripcion Diagnostico contiene:
+Testiculo izquierdo. Tumor. Orquiectomia. Estudio de inmunohistoquimica: 
+HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON SEMINOMA
+
+Esto podria ser correcto SI el campo Descripcion Diagnostico debe contener
+el diagnostico completo incluyendo metadatos. El patron v6.5.26 deberia
+limpiar el campo IHQ_DIAGNOSTICO_PRINCIPAL (no Descripcion Diagnostico).
+
+VERIFICAR:
+- Cual es la columna correcta para diagnostico limpio?
+- IHQ_DIAGNOSTICO_PRINCIPAL o Descripcion Diagnostico?
+
+================================================================================
+VALIDACION ANTI-REGRESION
+================================================================================
+
+Casos de referencia con patron v6.4.86 (negativo para):
+- IHQ250237: 100.0% (EXITOSO)
+
+RECOMENDACION: Validar otros casos con patron v6.4.86 para asegurar que
+el terminador mejorado no introduce regresiones.
+
+Casos sugeridos:
+1. Casos con y es negativo para
+2. Casos con y es positivo para
+3. Casos con negativo para (sin y es)
+
+================================================================================
+CONCLUSION
+================================================================================
+
+EXITO: IHQ250237 procesado correctamente con score 100.0%
+
+Correcciones v6.5.24-v6.5.28 funcionaron como esperado:
+- Alias CKAE1/E3: OK
+- Alias CD 30: OK
+- Terminador mejorado AFP: OK
+- Terminador mejorado CD30: OK
+
+PENDIENTE:
+- Verificar si Descripcion Diagnostico debe ser limpiado o no
+- Validar patron v6.5.26 con otros casos
+- Validar anti-regresion del terminador v6.5.28
+
+================================================================================
+ARCHIVOS GENERADOS
+================================================================================
+- herramientas_ia/resultados/VALIDACION_FIX_v6.5.28_IHQ250237.json
+- herramientas_ia/resultados/RESUMEN_EJECUTIVO_v6.5.28_IHQ250237.txt
+
+================================================================================

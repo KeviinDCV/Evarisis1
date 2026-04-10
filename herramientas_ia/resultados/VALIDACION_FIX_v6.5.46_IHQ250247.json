@@ -1,0 +1,48 @@
+{
+  "caso": "IHQ250247",
+  "version": "v6.5.46",
+  "timestamp": "2026-01-28T13:33:51.153271",
+  "estado": "PARCIALMENTE_CORRECTO",
+  "problemas_detectados": {
+    "IHQ_RECEPTOR_ESTROGENOS": {
+      "esperado": "POSITIVO (90%)",
+      "actual": "POSITIVO",
+      "ocr": "Marcación nuclear positiva fuerte del 90%",
+      "estado": "INCOMPLETO",
+      "problema": "Falta el porcentaje (90%)"
+    },
+    "IHQ_RECEPTOR_PROGESTERONA": {
+      "esperado": "POSITIVO (90%)",
+      "actual": "POSITIVO",
+      "ocr": "Marcación nuclear positiva fuerte del 90%",
+      "estado": "INCOMPLETO",
+      "problema": "Falta el porcentaje (90%)"
+    },
+    "IHQ_HER2": {
+      "esperado": "NEGATIVO (score 0)",
+      "actual": "NEGATIVO",
+      "ocr": "Negativo (score 0)",
+      "estado": "INCOMPLETO",
+      "problema": "Falta el score"
+    },
+    "IHQ_CK5_6": {
+      "esperado": "NEGATIVO",
+      "actual": "POSITIVO",
+      "ocr": "Negativa para mioepitelio (CK5-6 y P63)",
+      "estado": "INCORRECTO",
+      "problema": "Extractor interpretó POSITIVO cuando el OCR dice NEGATIVA"
+    },
+    "IHQ_SINAPTOFISINA": {
+      "esperado": "NEGATIVO",
+      "actual": "POSITIVO",
+      "ocr": "Negativa... Sinaptofisina",
+      "estado": "INCORRECTO",
+      "problema": "Extractor interpretó POSITIVO cuando el OCR dice NEGATIVA"
+    }
+  },
+  "causa_raiz": {
+    "receptores_incompletos": "Los extractores están capturando solo POSITIVO/NEGATIVO sin el detalle numérico",
+    "ck5_6_sinaptofisina": "Los extractores NO están interpretando correctamente la frase \"Negativa para mioepitelio (CK5-6 y P63) y Sinaptofisina\""
+  },
+  "accion_requerida": "Revisar patrones de extracción para CK5/6 y Sinaptofisina en biomarker_extractor.py"
+}

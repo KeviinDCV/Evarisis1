@@ -1,0 +1,114 @@
+{
+  "numero_caso": "IHQ250236",
+  "caso_num": 25,
+  "total_casos": 50,
+  "timestamp": "2026-01-28T09:10:48.905806",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 7,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "ADENOCARCINOMA MUCINOSO INVASIVO CON EXTENSIÓN HASTA EL PERITONEO VISCERAL",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
+      "valor_bd": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "HER2 , MSH6 , MSH2 , MLH1 , PMS2",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "HER2"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (5/5)",
+      "total_solicitado_ocr": 5,
+      "total_solicitado_bd": 5,
+      "estudios_ocr": [
+        "HER2",
+        "MSH6",
+        "MSH2",
+        "MLH1",
+        "PMS2"
+      ],
+      "estudios_bd": [
+        "HER2",
+        "MSH6",
+        "MSH2",
+        "MLH1",
+        "PMS2"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 5,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501392 qu..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "COLON TRANSVERSO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

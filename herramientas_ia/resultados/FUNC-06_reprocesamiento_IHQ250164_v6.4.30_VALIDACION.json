@@ -1,0 +1,54 @@
+{
+  "caso": "IHQ250164",
+  "timestamp": "2026-01-08T02:48:30.947368",
+  "version": "v6.4.30",
+  "objetivo": "Validar correcciones de extractores para SOX11 y CICLINA_D1",
+  "correcciones_aplicadas": [
+    "SOX11: Normalización de \"SOX -11\" (con espacio) → SOX11",
+    "CICLINA_D1: Normalización de \"Ciclyna D1\" (con y) → CICLINA_D1"
+  ],
+  "contexto_ocr": "La proliferación linfoide atípica descrita es positiva para CD20, PAX-5 Y BCL-2, y\nnegativa con el CD5,\nCD10, BCL6, IgD, SOX -11 y Ciclyna D1; hay importante participación de células plasmáticas CD38+.",
+  "validacion": {
+    "SOX11": {
+      "ocr_original": "SOX -11 (con espacio)",
+      "valor_esperado": "NEGATIVO",
+      "valor_bd": "N/A",
+      "estado": "❌ INCORRECTO",
+      "problema": "Extractor no detecta \"SOX -11\" con espacio"
+    },
+    "CICLINA_D1": {
+      "ocr_original": "Ciclyna D1 (con y)",
+      "valor_esperado": "NEGATIVO",
+      "valor_bd": "POSITIVO",
+      "estado": "❌ INCORRECTO",
+      "problema": "Extractor no normaliza \"Ciclyna\" → \"CICLINA\""
+    },
+    "BCL6": {
+      "ocr_original": "BCL6",
+      "valor_esperado": "NEGATIVO",
+      "valor_bd": "NEGATIVO",
+      "estado": "✅ CORRECTO"
+    },
+    "CD10": {
+      "ocr_original": "CD10",
+      "valor_esperado": "NEGATIVO",
+      "valor_bd": "NEGATIVO",
+      "estado": "✅ CORRECTO"
+    },
+    "CD5": {
+      "ocr_original": "CD5",
+      "valor_esperado": "NEGATIVO",
+      "valor_bd": "NEGATIVO",
+      "estado": "✅ CORRECTO"
+    }
+  },
+  "resultado_final": {
+    "correcciones_exitosas": 3,
+    "correcciones_pendientes": [
+      "SOX11",
+      "CICLINA_D1"
+    ],
+    "total_biomarcadores": 5,
+    "porcentaje_exito": 60.0
+  }
+}

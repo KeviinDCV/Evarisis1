@@ -1,0 +1,138 @@
+{
+  "numero_caso": "IHQ250138",
+  "caso_num": 29,
+  "total_casos": 49,
+  "timestamp": "2026-01-05T19:18:03.866095",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 12,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "No hay estudio M previo"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "CELULARIDAD GLOBAL ENTRE 30-70%"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "2 biomarcadores sin mapeo/vacíos; 1 valores NO coinciden con OCR; 4 biomarcadores extras en BD",
+      "total_solicitado_ocr": 9,
+      "total_solicitado_bd": 13,
+      "estudios_ocr": [
+        "CD138",
+        "CD20",
+        "CD3",
+        "CD34",
+        "CD56",
+        "CD61",
+        "CD117 GLICOFORINA",
+        "MPX",
+        "CYCLINA"
+      ],
+      "estudios_bd": [
+        "CD138",
+        "CD20",
+        "CD3",
+        "CD34",
+        "CD56",
+        "CD61",
+        "CD117 GLICOFORINA",
+        "MPX",
+        "CYCLINA",
+        "CD117",
+        "GLICOFORINA",
+        "MIELOPEROXIDASA",
+        "CICLINA D1"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "CD117",
+        "GLICOFORINA",
+        "MIELOPEROXIDASA",
+        "CICLINA D1"
+      ],
+      "mapeados": 7,
+      "no_mapeados": [
+        "CD117 GLICOFORINA (sin columna)",
+        "CYCLINA (sin columna)"
+      ],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "CD34",
+          "columna": "IHQ_CD34",
+          "valor_bd": "POSITIVO",
+          "valor_ocr": "+"
+        }
+      ],
+      "cobertura": 77.8
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MEDULA ÓSEA"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

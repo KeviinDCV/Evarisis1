@@ -1,0 +1,42 @@
+{
+  "caso": "IHQ251029",
+  "fecha_validacion": "2025-11-11 22:37:06",
+  "fix_aplicado": "V6.2.12",
+  "descripcion_fix": "Deteccion palabra conectora final + movimiento texto macro/micro",
+  "archivo_modificado": "core/extractors/medical_extractor.py",
+  "lineas_modificadas": "2995-3031",
+  "resultado": {
+    "estado": "EXITOSO",
+    "tasa_exito": "100.0%",
+    "validaciones_totales": 10,
+    "validaciones_exitosas": 10
+  },
+  "validaciones_macroscopica": {
+    "no_termina_en_y": true,
+    "contiene_previa_revision": true,
+    "contiene_ki67": true,
+    "contiene_hallazgos_morfologicos": true,
+    "contiene_tumor_neuroendocrino": true,
+    "contiene_se_solicitan": true
+  },
+  "validaciones_microscopica": {
+    "no_contiene_texto_duplicado": true,
+    "no_contiene_hallazgos": true,
+    "no_contiene_solicitan": true,
+    "no_contiene_tumor_neuroendocrino": true
+  },
+  "descripcion_macroscopica_longitud": 323,
+  "descripcion_microscopica_longitud": 646,
+  "problema_original": [
+    "Macroscopica terminaba en palabra conectora (y)",
+    "Texto mal ubicado: diagnostico...Previa revision...se solicitan...Ki-67",
+    "Texto estaba en microscopica en lugar de macroscopica"
+  ],
+  "solucion_implementada": [
+    "Detectar si macro termina en palabra conectora",
+    "Buscar patron diagnostico...Previa revision en microscopica",
+    "Mover texto completo a macroscopica",
+    "Eliminar texto duplicado de microscopica"
+  ],
+  "conclusion": "FIX V6.2.12 EXITOSO - Separacion macro/micro correcta"
+}

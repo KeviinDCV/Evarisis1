@@ -1,0 +1,92 @@
+{
+  "caso": "IHQ250217",
+  "version": "v6.4.87",
+  "timestamp": "2026-01-19T00:24:20.043067",
+  "fix_aplicado": "PAX8 extracción con separador Y case-insensitive",
+  "resultado": "FALLIDO",
+  "score_final": 100.0,
+  "problema_critico": {
+    "sintoma": "IHQ_PAX8 = NO MENCIONADO (debería ser NEGATIVO)",
+    "evidencia_ocr": "Son negativas para CK20, CDX2, TTF-1 y PAX-8",
+    "campo_afectado": "IHQ_PAX8",
+    "valor_esperado": "NEGATIVO",
+    "valor_obtenido": "NO MENCIONADO"
+  },
+  "validacion_patron": {
+    "patron_v6_4_87": "(?i)negativ[oa]s?\\s+para\\s+(?:para\\s+)?([A-Za-z0-9\\s,.\\-/]+?)(?=\\s+Linfocitos|\\s+células|\\s+acompañantes|\\.\\s|,\\s+diagn[oó]stico|$)",
+    "split_regex": "\\s+[Yy]\\s+|[,]\\s*",
+    "test_simulado": "EXITOSO",
+    "resultado_simulacion": {
+      "CK20": "NEGATIVO",
+      "CDX2": "NEGATIVO",
+      "TTF1": "NEGATIVO",
+      "PAX8": "NEGATIVO"
+    },
+    "conclusion_patron": "El patrón regex funciona CORRECTAMENTE en simulación"
+  },
+  "diagnostico": {
+    "causa_raiz": "PROBLEMA EN UNIFIED_EXTRACTOR (NO en biomarker_extractor)",
+    "evidencia": [
+      "debug_map NO contiene PAX8 en extraccion.unified_extractor",
+      "biomarker_extractor.py patrón v6.4.87 funciona en simulación",
+      "normalize_biomarker_name mapea PAX-8 -> PAX8 correctamente",
+      "Otros biomarcadores de la misma lista SÍ se extrajeron (CK20, CDX2, TTF1)"
+    ],
+    "hipotesis": [
+      "unified_extractor NO está llamando a extract_narrative_biomarkers",
+      "unified_extractor está llamando pero descartando el resultado",
+      "Hay un filtro posterior que elimina PAX8",
+      "El resultado se extrae pero NO se mapea a la columna IHQ_PAX8"
+    ],
+    "componente_afectado": "core/unified_extractor.py",
+    "funcion_sospechosa": "Integración de biomarker_extractor con unified_extractor"
+  },
+  "biomarcadores_comparados": {
+    "extraidos_correctamente": [
+      {
+        "nombre": "CK20",
+        "patron": "Son negativas para...",
+        "valor": "NEGATIVO"
+      },
+      {
+        "nombre": "CDX2",
+        "patron": "Son negativas para...",
+        "valor": "NEGATIVO"
+      },
+      {
+        "nombre": "TTF1",
+        "patron": "Son negativas para...",
+        "valor": "NEGATIVO"
+      }
+    ],
+    "fallo_extraccion": [
+      {
+        "nombre": "PAX8",
+        "patron": "Son negativas para... y PAX-8",
+        "valor": "NO MENCIONADO",
+        "posicion_lista": "última (después de Y)"
+      }
+    ]
+  },
+  "siguiente_paso": {
+    "accion": "Investigar unified_extractor.py",
+    "archivos_revisar": [
+      "core/unified_extractor.py (integración con biomarker_extractor)",
+      "core/extractors/biomarker_extractor.py (línea 5470-5498 - patrón v6.4.87)"
+    ],
+    "puntos_verificar": [
+      "¿Se está llamando a extract_narrative_biomarkers?",
+      "¿El resultado de biomarker_extractor se está mapeando correctamente?",
+      "¿Hay algún filtro que descarte PAX8?",
+      "¿La columna IHQ_PAX8 está en el mapeo de unified_extractor?"
+    ],
+    "comando_debug": "Agregar logging en unified_extractor para ver si biomarker_extractor devuelve PAX8"
+  },
+  "regresion_check": {
+    "casos_validar": [
+      "IHQ250217 (PAX8 NEGATIVO después de \"y\")",
+      "Otros casos con PAX8 en formato \"negativas para A, B, C y PAX8\""
+    ],
+    "status": "PENDIENTE (no hay regresión porque nunca funcionó)"
+  }
+}

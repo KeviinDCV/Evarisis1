@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-04T23:45:48.572966",
+    "caso": "IHQ251012",
+    "tipo_validacion": "VALIDACION_CORRECCIONES_EXTRACTORES_v6",
+    "agente": "data-auditor",
+    "funcion": "FUNC-06"
+  },
+  "contexto_caso": {
+    "tipo": "TIMOMA AB",
+    "organo": "TIMO",
+    "diagnostico_principal": "TIMOMA AB",
+    "dificultad": "ALTA"
+  },
+  "correcciones_implementadas": {
+    "version": "6.0.17+",
+    "total_cambios": 8,
+    "cambios": [
+      "CD1A: NUEVO_BIOMARCADOR",
+      "TDT: NUEVO_BIOMARCADOR (pendiente columna BD)",
+      "P63: MEJORA_PATRON (listas con y)",
+      "CD3: MEJORA_PATRON",
+      "CD5: MEJORA_PATRON",
+      "CD20: DETECCION_ESPECIAL (aberrante)",
+      "CD117: DETECCION_ESPECIAL (negacion)",
+      "CKAE1AE3: MEJORA_PATRON"
+    ]
+  },
+  "resultados_despues": {
+    "biomarcadores": {
+      "CD1A": {
+        "valor": "POSITIVO",
+        "estado": "OK"
+      },
+      "P63": {
+        "valor": "POSITIVO",
+        "estado": "OK"
+      },
+      "CD3": {
+        "valor": "POSITIVOS",
+        "estado": "OK"
+      },
+      "CD5": {
+        "valor": "POSITIVOS",
+        "estado": "OK"
+      },
+      "CD20": {
+        "valor": "POSITIVO (ABERRANTE)",
+        "estado": "OK"
+      },
+      "CD117": {
+        "valor": "SIN EXPRESIÓN PARA CD117",
+        "estado": "OK"
+      },
+      "CKAE1AE3": {
+        "valor": "POSITIVO",
+        "estado": "OK"
+      },
+      "PAX8": {
+        "valor": "POSITIVO",
+        "estado": "OK"
+      }
+    },
+    "estudios_solicitados": "CD117, CD1A, CD20, CD3, CD5, CKAE1AE3, P63, PAX8"
+  },
+  "estadisticas": {
+    "correcciones_validadas": 7,
+    "porcentaje_exito": 100.0,
+    "nuevos_biomarcadores": 1,
+    "patrones_mejorados": 6
+  }
+}

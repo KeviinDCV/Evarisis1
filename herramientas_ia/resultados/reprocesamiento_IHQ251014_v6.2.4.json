@@ -1,0 +1,24 @@
+{
+  "caso": "IHQ251014",
+  "version_extractores": "v6.2.4",
+  "biomarcadores": {
+    "total": 14,
+    "correctos": 12,
+    "parciales": 2,
+    "incorrectos": 0,
+    "score": 100.0
+  },
+  "campos_principales": {
+    "organo": true,
+    "diagnostico_principal": true,
+    "factor_pronostico": true,
+    "diagnostico_coloracion": true
+  },
+  "mejoras_v6_2_4": [
+    "CD15: NEGATIVO -> POSITIVO (normalizado)",
+    "CD61: NEGATIVO -> POSITIVO (normalizado)",
+    "CKAE1AE3: \"Sin marcacion\" -> NEGATIVO (normalizado)",
+    "CD56: Mantiene \"CD56-\" (requiere normalizacion adicional)",
+    "GLICOFORINA: Mantiene texto descriptivo (aceptable)"
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "numero_caso": "IHQ250266",
+  "caso_num": 4,
+  "total_casos": 49,
+  "timestamp": "2026-01-29T21:53:29.879803",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 11,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "BIOPSIA DE MASA EN CÉRVIX",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO DE ALTO GRADO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 80%, Receptor de Estrógeno: POSITIVO",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67",
+        "RE"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (10/10)",
+      "total_solicitado_ocr": 10,
+      "total_solicitado_bd": 10,
+      "estudios_ocr": [
+        "P16",
+        "P63",
+        "P40",
+        "P53",
+        "SOX 10",
+        "CKAE1E3",
+        "Ki-67",
+        "PAX 8",
+        "Receptor de Estrógeno",
+        "VIMENTINA"
+      ],
+      "estudios_bd": [
+        "P16",
+        "P63",
+        "P40",
+        "P53",
+        "SOX 10",
+        "CKAE1AE3",
+        "Ki-67",
+        "PAX 8",
+        "Receptor de Estrógeno",
+        "VIMENTINA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 10,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "CÉRVIX"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

@@ -1,0 +1,116 @@
+{
+  "caso": "IHQ251026",
+  "fecha_validacion": "2025-11-09T09:16:16.979060",
+  "correcciones_aplicadas": [
+    {
+      "version": "v3.4.1",
+      "archivo": "auditor_sistema.py",
+      "descripcion": "Ajuste validación"
+    },
+    {
+      "version": "v6.2.5",
+      "archivo": "biomarker_extractor.py",
+      "descripcion": "Fix P16/P40"
+    },
+    {
+      "version": "v6.2.6",
+      "archivo": "biomarker_extractor.py",
+      "descripcion": "Mejorar patrón CAM5"
+    },
+    {
+      "version": "v6.3.1",
+      "archivo": "medical_extractor.py",
+      "descripcion": "Pattern balanceado"
+    },
+    {
+      "version": "v6.3.2",
+      "archivo": "medical_extractor.py",
+      "descripcion": "Greedy fix"
+    },
+    {
+      "version": "v6.3.3",
+      "archivo": "medical_extractor.py",
+      "descripcion": "Lookahead fix"
+    }
+  ],
+  "objetivo_1": {
+    "descripcion": "IHQ_ESTUDIOS_SOLICITADOS completo (~10 biomarcadores)",
+    "estado": "PARCIALMENTE CUMPLIDO",
+    "valor_esperado": "P16, P40, CAM 5.2, BCL2, BCL6, CD20, CD5, CK 5/6, CK7, CKAE1/AE3",
+    "valor_obtenido": "P16, P40, CAM 5",
+    "biomarcadores_esperados": 10,
+    "biomarcadores_obtenidos": 3,
+    "completitud": "30%",
+    "problema": "Patrón de extracción termina prematuramente. Solo captura primeros 3 biomarcadores.",
+    "evidencia": "Las columnas individuales SÍ tienen valores: BCL2=POSITIVO, BCL6=POSITIVO, CD20=POSITIVO, CD5=POSITIVO, CKAE1AE3=POSITIVO"
+  },
+  "objetivo_2": {
+    "descripcion": "IHQ_CAM5 = POSITIVO",
+    "estado": "NO CUMPLIDO",
+    "valor_esperado": "POSITIVO",
+    "valor_obtenido": "N/A",
+    "problema": "Columna IHQ_CAM5 no fue poblada por biomarker_extractor",
+    "evidencia": "Columnas alternativas existen pero vacías: IHQ_CAM5 (vacío), pero se menciona \"CAM 5\" en IHQ_ESTUDIOS_SOLICITADOS"
+  },
+  "biomarcadores_individuales": {
+    "poblados": [
+      "BCL2",
+      "BCL6",
+      "CD20",
+      "CD5",
+      "CKAE1AE3"
+    ],
+    "vacios": [
+      "CAM5",
+      "CK5",
+      "CK7"
+    ],
+    "total_poblados": 5,
+    "total_esperados": 10,
+    "completitud": "50%"
+  },
+  "diagnostico_tecnico": {
+    "causa_raiz_objetivo1": {
+      "archivo": "core/extractors/medical_extractor.py",
+      "funcion": "extract_ihq_estudios_solicitados",
+      "linea": 1759,
+      "patron_problematico": "r'se\\s+realizan?\\s+(?:cortes?|niveles?)\\s+histol[óo]gicos?\\s+.*?para\\s+tinci[óo]n\\s+con:?\\s+([A-Z0-9\\s,./\\-\\(\\)yYóÓúÚáÁéÉíÍ\n]+?)\\. (?=\\s*(?:Previa|Se\\s+recibe|DESCRIPCI[ÓO]N|MICROSC[ÓO]PICA|$))'",
+      "problema": "El patrón termina en punto seguido de lookahead restrictivo. Si el PDF tiene texto diferente después del punto (ej: \"Previa autorización...\"), el patrón falla y solo captura hasta el primer punto.",
+      "solucion_propuesta": "Ampliar lookahead o cambiar estrategia: capturar hasta doble salto de línea o nueva sección con mayúsculas"
+    },
+    "causa_raiz_objetivo2": {
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "funcion": "extract_biomarkers",
+      "problema": "CAM 5.2 o CAM5.2 no tiene patrón de extracción específico en biomarker_extractor",
+      "evidencia": "Se menciona \"CAM 5\" en IHQ_ESTUDIOS pero no se extrae el valor POSITIVO",
+      "solucion_propuesta": "Agregar patrón específico para CAM5 / CAM 5.2 en biomarker_extractor.py"
+    }
+  },
+  "resultado_final": {
+    "estado": "CORRECCIÓN PARCIAL",
+    "objetivo_1": "PARCIALMENTE CUMPLIDO (30%)",
+    "objetivo_2": "NO CUMPLIDO",
+    "score_global": "15%",
+    "recomendacion": "Requiere correcciones adicionales en medical_extractor.py (patrón IHQ_ESTUDIOS) y biomarker_extractor.py (agregar CAM5)"
+  },
+  "proximos_pasos": [
+    {
+      "paso": 1,
+      "accion": "Modificar patrón en medical_extractor.py línea 1759",
+      "objetivo": "Capturar lista completa de biomarcadores",
+      "estrategia": "Cambiar lookahead a algo más flexible, o capturar hasta doble salto de línea"
+    },
+    {
+      "paso": 2,
+      "accion": "Agregar patrón CAM5 en biomarker_extractor.py",
+      "objetivo": "Poblar columna IHQ_CAM5",
+      "estrategia": "Crear patrón similar a otros biomarcadores: CAM\\s*5\\.?2?\\s*:?\\s*(POSITIVO|NEGATIVO)"
+    },
+    {
+      "paso": 3,
+      "accion": "Ejecutar FUNC-06 nuevamente",
+      "objetivo": "Validar ambas correcciones",
+      "comando": "auditor.reprocesar_caso_completo(\"IHQ251026\")"
+    }
+  ]
+}

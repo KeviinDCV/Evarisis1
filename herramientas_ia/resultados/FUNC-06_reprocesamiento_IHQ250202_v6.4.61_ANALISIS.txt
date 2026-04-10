@@ -1,0 +1,165 @@
+======================================================================
+FUNC-06: REPROCESAMIENTO IHQ250202 - ANÁLISIS FIX v6.4.61
+======================================================================
+Fecha: 2026-01-09
+Caso: IHQ250202
+Fix evaluado: v6.4.61 (TTF-1 negativo)
+
+======================================================================
+PROBLEMA DETECTADO
+======================================================================
+
+ESTADO ACTUAL:
+- Score: 88.9% (no mejoró de la auditoría anterior)
+- TTF-1 en BD: "POSITIVO" (INCORRECTO)
+- TTF-1 en OCR: "-" (negativo)
+- NAPSIN en BD: "NEGATIVO" (CORRECTO)
+
+TEXTO OCR RELEVANTE:
+"Los marcadores napsina y TTF-1 - son negativos."
+
+======================================================================
+CAUSA RAÍZ IDENTIFICADA
+======================================================================
+
+El patrón v6.4.61 está implementado CORRECTAMENTE:
+
+Ubicación: core/extractors/biomarker_extractor.py línea 5578
+Patrón: r'(?i)Los?\s+marcadores?\s+([^-]+?)\s+-\s+(?:son|es)\s+(negativos?|positivos?)\s*\.'
+Funcionalidad:
+  1. Captura "napsina y TTF-1" correctamente
+  2. Separa por "y" correctamente
+  3. Asigna "NEGATIVO" a ambos
+
+PROBLEMA: **ORDEN DE EJECUCIÓN**
+
+El patrón v6.4.61 se ejecuta en la línea 5578, pero DESPUÉS se ejecutan
+patrones genéricos (líneas 7700-7900) que SOBRESCRIBEN el valor.
+
+Patrones sospechosos que ejecutan DESPUÉS de v6.4.61:
+- r'positiv[oa]s?(?:\s+\w+){0,10}\s+para\s+...' (línea ~7850)
+- r'positividad(?:\s+\w+){0,10}\s+para\s+...' (línea ~7860)
+- r'expresi[óo]n[^.]*?de\s+manera\s+... para\s+...' (línea ~7870)
+
+Estos patrones asignan POSITIVO por defecto y NO verifican si ya hay
+un valor asignado en 'results' dict.
+
+======================================================================
+POR QUÉ EL FIX NO FUNCIONA
+======================================================================
+
+1. V6.4.61 detecta correctamente:
+   results['TTF1'] = 'NEGATIVO'  # ✅ Línea 5578
+   results['NAPSIN'] = 'NEGATIVO'  # ✅ Línea 5578
+
+2. Patrón genérico ejecuta DESPUÉS:
+   # Encuentra "TTF-1" en descripción macroscópica:
+   # "se realizan cortes histológicos para los siguientes marcadores: TTF-1 y napsina"
+   results['TTF1'] = 'POSITIVO'  # ❌ Sobrescribe NEGATIVO (línea ~7850)
+
+3. Resultado final:
+   - TTF1: "POSITIVO" (sobrescrito)
+   - NAPSIN: "NEGATIVO" (se mantiene, no sobrescrito)
+
+======================================================================
+ANÁLISIS ADICIONAL
+======================================================================
+
+¿Por qué NAPSIN no se sobrescribe pero TTF-1 sí?
+
+Hipótesis: Puede haber un patrón específico que captura "TTF-1" en la
+descripción macroscópica y lo interpreta como solicitud de estudio
+(asumiendo POSITIVO por defecto).
+
+El texto en descripción macroscópica:
+"se realizan cortes histológicos para los siguientes marcadores:
+TTF-1 y napsina."
+
+Este texto NO debería procesarse como resultado de biomarcador, solo
+como lista de estudios solicitados.
+
+======================================================================
+SOLUCIÓN PROPUESTA
+======================================================================
+
+OPCIÓN 1: Mover v6.4.61 al INICIO de la función (RECOMENDADO)
+
+Ubicación actual: Línea 5578
+Ubicación propuesta: Después de línea 4050 (con HER2, MUC, Ki-67 de alta prioridad)
+
+Justificación:
+- Los comentarios YA dicen "PRIORIDAD MÁXIMA"
+- Debería ejecutarse ANTES que patrones genéricos
+- Formato muy específico: "Los marcadores X - son negativos"
+- Alta confianza, debe prevalecer sobre patrones genéricos
+
+Pseudocódigo:
+```python
+def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[str, str]:
+    results = {}
+    
+    # HER2 (línea 4020)
+    ...
+    
+    # MUC (línea 4040)
+    ...
+    
+    # V6.4.61 FIX IHQ250202: MOVER AQUÍ (después línea 4050)
+    # PRIORIDAD MÁXIMA - "Los marcadores [lista] - son negativos/positivos"
+    marcadores_con_guion_pattern = r'(?i)Los?\s+marcadores?\s+([^-]+?)\s+-\s+(?:son|es)\s+(negativos?|positivos?)\s*\.'
+    for match in re.finditer(marcadores_con_guion_pattern, text):
+        ... (código existente sin cambios)
+    
+    # Resto de patrones (mixto, inmunorreactividad, etc.)
+    ...
+```
+
+OPCIÓN 2: Agregar verificación en patrones genéricos (NO RECOMENDADO)
+
+Modificar TODOS los patrones genéricos para verificar:
+```python
+if normalized_name not in results:
+    results[normalized_name] = 'POSITIVO'
+```
+
+Desventaja:
+- Requiere modificar 50+ patrones
+- Propenso a errores
+- Dificulta mantenimiento
+
+OPCIÓN 3: Usar flag de "locked" para valores de alta confianza (COMPLEJO)
+
+Crear diccionario paralelo:
+```python
+results_locked = {}  # Valores que NO deben sobrescribirse
+```
+
+Desventaja:
+- Requiere refactorización grande
+- Complejidad innecesaria
+
+======================================================================
+RECOMENDACIÓN FINAL
+======================================================================
+
+✅ **OPCIÓN 1: Mover v6.4.61 al inicio (después línea 4050)**
+
+PASOS:
+1. Cortar bloque v6.4.61 (líneas 5578-5610)
+2. Pegar después de línea 4050 (después de Ki-67 cualitativo)
+3. Actualizar comentario para indicar "EJECUTADO EN PRIORIDAD MÁXIMA"
+4. Reprocesar IHQ250202 con FUNC-06
+5. Validar Score mejora de 88.9% → 100%
+
+VALIDACIÓN:
+- Auditar IHQ250202 ANTES de mover patrón
+- Auditar IHQ250202 DESPUÉS de mover patrón
+- Verificar TTF1 = "NEGATIVO" en BD
+- Verificar Score = 100%
+
+CASOS DE REGRESIÓN (VALIDAR NO SE ROMPAN):
+- IHQ250133 (MMR 4 marcadores) - Score 100%
+- IHQ250159 (MMR 4 marcadores) - Score 100%
+- IHQ250035 (HER2 con score) - Score 100%
+
+======================================================================

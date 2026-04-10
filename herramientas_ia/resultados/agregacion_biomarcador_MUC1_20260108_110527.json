@@ -1,0 +1,8 @@
+{
+  "estado": "ERROR_YA_EXISTE",
+  "biomarcador": "MUC1",
+  "columna_bd": "IHQ_MUC1",
+  "archivos_duplicados": [
+    "biomarker_extractor.py"
+  ]
+}

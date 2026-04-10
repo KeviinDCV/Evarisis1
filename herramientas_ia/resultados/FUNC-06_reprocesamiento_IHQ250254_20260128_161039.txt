@@ -1,0 +1,174 @@
+====================================================================================================
+REPORTE DE REPROCESAMIENTO FUNC-06 - CASO IHQ250254
+====================================================================================================
+Fecha: 2026-01-28 16:10:39
+Caso: IHQ250254 (caso 42/50)
+Paciente: BEATRIZ ELENA MOLINA
+Diagnostico: CARCINOSARCOMA DEL OVARIO
+
+====================================================================================================
+CONTEXTO DEL PROBLEMA
+====================================================================================================
+
+Problema Original Detectado:
+- SALL-4 y EMA NO se estaban capturando como biomarcadores individuales
+- Descripcion microscopica mencionaba: SALL 4 (focal), P53, EMA (focal)
+- Descripcion macroscopica listaba: EMA, DESMINA, SALL-4, ESTROGENO, WT1...
+
+Causa Raiz:
+- Los extractores NO tenian patrones para SALL-4 ni EMA
+- Estos biomarcadores NO estaban en el sistema
+
+Correcciones Aplicadas (ANTES del reprocesamiento):
+1. Agregado SALL4 al sistema con FUNC-03 (columnas + alias + patrones)
+2. Agregado EMA al sistema con FUNC-03 (columnas + alias + patrones)
+3. Reprocesamiento con FUNC-06 para validar correcciones
+
+====================================================================================================
+RESULTADO DESPUES DEL REPROCESAMIENTO (FUNC-06)
+====================================================================================================
+
+PROBLEMA DETECTADO: SALL-4 y EMA AUN NO SE CAPTURAN
+
+Biomarcadores Capturados en unified_extractor:
+   OK IHQ_DESMIN: POSITIVO
+   OK IHQ_WT1: POSITIVO
+   OK IHQ_RECEPTOR_ESTROGENOS: POSITIVO
+   OK IHQ_CKAE1AE3: POSITIVO
+   OK IHQ_S100: POSITIVO
+   OK IHQ_PAX8: POSITIVO
+   OK IHQ_P53: POSITIVO
+   OK IHQ_KI-67: 80%
+
+Biomarcadores NO Capturados:
+   ERROR IHQ_SALL4: NO aparece en extraccion.unified_extractor
+   ERROR IHQ_EMA: NO aparece en extraccion.unified_extractor
+
+====================================================================================================
+ANALISIS DE IHQ_ESTUDIOS_SOLICITADOS
+====================================================================================================
+
+Valor en BD (campos_criticos):
+   CKAE1AE3, DESMIN, Ki-67, P53, PAX8, Receptor de Estrogeno, S100, WT1
+
+Comparacion con OCR (descripcion macroscopica):
+   EMA, DESMINA, SALL-4, ESTROGENO, WT1, PAX- 8, Ki67, S100, CKAE1E3, p53
+
+Biomarcadores Faltantes en IHQ_ESTUDIOS_SOLICITADOS:
+   ERROR SALL-4 NO esta en la lista
+   ERROR EMA NO esta en la lista
+
+====================================================================================================
+DIAGNOSTICO DEL PROBLEMA
+====================================================================================================
+
+Problema Raiz:
+   Los extractores NO estan capturando SALL-4 y EMA durante la extraccion narrativa
+
+Ubicacion del Problema:
+   - biomarker_extractor.py: extract_narrative_biomarkers()
+   - biomarker_extractor.py: extract_ihq_studies_solicitud()
+
+Causa Probable:
+   1. Los patrones de extraccion narrativa NO incluyen SALL-4 ni EMA
+   2. O los patrones estan presentes pero en orden incorrecto
+   3. O hay conflictos con otros patrones que capturan primero
+
+====================================================================================================
+COMPARACION ANTES vs DESPUES (FUNC-06)
+====================================================================================================
+
+NO HAY MEJORA: Score 100% -> 100% (pero incompleto)
+
+Razon:
+   - El auditor NO detecta el problema porque validation_checker.py 
+     NO esta comparando contra el texto del PDF
+   - El auditor solo valida que los biomarcadores extraidos esten completos
+   - Como SALL-4 y EMA NO se extraen, el auditor NO sabe que deberian estar
+
+Score de Validacion:
+   ANTES: No disponible
+   DESPUES: 100% ERROR (FALSO POSITIVO - falta SALL-4 y EMA)
+
+Completitud Real vs Reportada:
+   REPORTADA: 100% (8/8 biomarcadores extraidos estan completos)
+   REAL: ~80% (8/10 biomarcadores del PDF, faltan SALL-4 y EMA)
+
+====================================================================================================
+VERIFICACION DE EXTRACCION NARRATIVA
+====================================================================================================
+
+Texto en Descripcion Microscopica:
+   un componente epitelial positivo para CKAE1/AE3, PAX 8, SALL 4 (focal), 
+   P53, EMA (focal)
+
+Patron Esperado para Capturar:
+   - SALL 4 (focal) -> deberia extraerse como IHQ_SALL4: POSITIVO FOCAL
+   - EMA (focal) -> deberia extraerse como IHQ_EMA: POSITIVO FOCAL
+
+Extraccion Actual:
+   - SALL 4: NO extraido ERROR
+   - EMA: NO extraido ERROR
+
+====================================================================================================
+RESUMEN EJECUTIVO
+====================================================================================================
+
+Estado Actual del Caso:
+   Score Auditoria: 100% WARNING (FALSO POSITIVO)
+   Completitud Real: ~80%
+   Biomarcadores Extraidos: 8/10
+
+Problemas Detectados:
+   1. ERROR IHQ_SALL4 NO se extrae (aunque esta en el PDF)
+   2. ERROR IHQ_EMA NO se extrae (aunque esta en el PDF)
+   3. ERROR IHQ_ESTUDIOS_SOLICITADOS NO incluye SALL-4 ni EMA
+   4. WARNING validation_checker.py NO detecta el problema
+
+Impacto:
+   - CRITICO: Datos clinicos incompletos
+   - CRITICO: Auditoria reporta 100% pero falta informacion critica
+
+====================================================================================================
+PROXIMOS PASOS REQUERIDOS
+====================================================================================================
+
+PASO 1: Investigar biomarker_extractor.py
+   - Verificar si existen patrones para SALL-4 y EMA
+   - Revisar extract_narrative_biomarkers() linea por linea
+   - Verificar extract_ihq_studies_solicitud()
+
+PASO 2: Agregar/Corregir Patrones de Extraccion
+   - Agregar patron especifico para SALL 4 (con espacio)
+   - Agregar patron especifico para SALL-4 (con guion)
+   - Agregar patron especifico para EMA
+   - Asegurar captura con modificadores (focal, debil, fuerte)
+
+PASO 3: Re-Reprocesar IHQ250254 (FUNC-06)
+   - Validar que ahora capture IHQ_SALL4 e IHQ_EMA
+   - Validar que IHQ_ESTUDIOS_SOLICITADOS incluya ambos
+
+PASO 4: Auditar Despues de Correccion
+   - Ejecutar FUNC-01 (auditoria inteligente)
+   - Verificar score 100% con 10/10 biomarcadores
+   - Confirmar completitud real = completitud reportada
+
+====================================================================================================
+CONCLUSION
+====================================================================================================
+
+FUNC-06 ejecutado exitosamente:
+   OK PDF reprocesado
+   OK 50 casos regenerados en BD
+   OK Debug_maps actualizados
+   OK Score auditoria: 100%
+
+PERO: Problema NO resuelto porque:
+   ERROR Los extractores AUN NO capturan SALL-4 y EMA
+   ERROR Requiere modificacion de biomarker_extractor.py
+   ERROR Requiere segundo reprocesamiento despues de corregir extractores
+
+Proxima Accion Recomendada:
+   Investigar biomarker_extractor.py para entender por que SALL-4 y EMA no se extraen
+   
+====================================================================================================

@@ -1,0 +1,57 @@
+{
+  "caso": "IHQ250190",
+  "timestamp": "2026-01-09T03:17:02.105412",
+  "tipo": "FUNC-06_validacion_columnas_duplicadas",
+  "estado": "EXITOSO",
+  "schema_bd": {
+    "total_columnas_ihq": 136,
+    "sinaptofisina": {
+      "columnas_encontradas": [
+        "IHQ_SINAPTOFISINA"
+      ],
+      "validacion": "OK - Columna unica",
+      "columnas_duplicadas_eliminadas": [
+        "IHQ_SYNAPTOFISINA",
+        "IHQ_SYNAPTOPHYSIN"
+      ]
+    },
+    "ckae1ae3": {
+      "columnas_encontradas": [
+        "IHQ_CKAE1AE3"
+      ],
+      "validacion": "OK - Columna unica",
+      "columnas_duplicadas_eliminadas": [
+        "IHQ_CKAE1E3"
+      ]
+    }
+  },
+  "validaciones": {
+    "IHQ_DESMIN": {
+      "valor": "POSITIVO (fuerte)",
+      "esperado": "POSITIVO (fuerte)",
+      "estado": "OK"
+    },
+    "IHQ_MYOGENIN": {
+      "valor": "POSITIVO (fuerte)",
+      "esperado": "POSITIVO (fuerte)",
+      "estado": "OK"
+    },
+    "IHQ_MYOD1": {
+      "valor": "POSITIVO (fuerte)",
+      "esperado": "POSITIVO (fuerte)",
+      "estado": "OK"
+    },
+    "IHQ_SINAPTOFISINA": {
+      "valor": "NEGATIVO",
+      "validacion_columna": "OK - Solo existe IHQ_SINAPTOFISINA",
+      "estado": "OK"
+    },
+    "IHQ_CKAE1AE3": {
+      "valor": "NEGATIVO",
+      "validacion_columna": "OK - Solo existe IHQ_CKAE1AE3",
+      "estado": "OK"
+    }
+  },
+  "auditoria_score": 100.0,
+  "resultado_final": "TODAS LAS VALIDACIONES CORRECTAS"
+}

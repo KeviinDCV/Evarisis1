@@ -1,0 +1,129 @@
+{
+  "numero_caso": "IHQ250156",
+  "caso_num": 46,
+  "total_casos": 49,
+  "timestamp": "2026-01-07T11:56:58.869000",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 16,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "ADENOCARCINOMA INVASIVO EN PATRÓN MICROPAPILAR Y SÓLIDO",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "CARCINOMA METASTÁSICO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (14/14)",
+      "total_solicitado_ocr": 14,
+      "total_solicitado_bd": 14,
+      "estudios_ocr": [
+        "TTF-1",
+        "NAPSIN",
+        "P40",
+        "CKAE1E3",
+        "CK7",
+        "CK20",
+        "CK19",
+        "CA19-9",
+        "CDX2",
+        "SYNAPTOFISINA",
+        "GATA 3",
+        "PAX8",
+        "PSA",
+        "HEPATOCITO"
+      ],
+      "estudios_bd": [
+        "TTF-1",
+        "NAPSIN",
+        "P40",
+        "CKAE1AE3",
+        "CK7",
+        "CK20",
+        "CK19",
+        "CA19-9",
+        "CDX2",
+        "SYNAPTOFISINA",
+        "GATA 3",
+        "PAX8",
+        "PSA",
+        "HEPATOCITO"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 14,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realizan niveles histológicos al bloque M2501080, el cual corresponde a lobectomía superior de pu..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "PULMÓN"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

@@ -1,0 +1,64 @@
+{
+  "operacion": "AGREGAR_ALIAS_CYCLINA",
+  "timestamp": "2026-01-08T10:20:38.861170",
+  "biomarcador_base": "CICLINA_D1",
+  "columna_bd": "IHQ_CICLINA_D1",
+  "alias_agregados": [
+    "CYCLINA",
+    "CYCLINA D1"
+  ],
+  "archivos_modificados": [
+    {
+      "archivo": "herramientas_ia/auditor_sistema.py",
+      "lineas_modificadas": [
+        "620-623",
+        "3104"
+      ],
+      "cambios": [
+        "Agregado CYCLINA y CYCLINA D1 al diccionario BIOMARCADORES",
+        "Agregado CYCLINA y CYCLINA D1 a lista de variantes EXPECTED_BIOMARKER_VARIANTS"
+      ],
+      "backup": "auditor_sistema.py.backup_cyclina"
+    }
+  ],
+  "archivos_ya_existentes": [
+    {
+      "archivo": "core/validation_checker.py",
+      "lineas": [
+        "294-295"
+      ],
+      "estado": "YA_EXISTIA"
+    },
+    {
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "lineas": [
+        "3081",
+        "6423"
+      ],
+      "estado": "YA_EXISTIA"
+    },
+    {
+      "archivo": "core/unified_extractor.py",
+      "lineas": [
+        "1767-1768"
+      ],
+      "estado": "YA_EXISTIA"
+    }
+  ],
+  "tests_funcionales": {
+    "test_1_diccionario": "OK - CYCLINA reconocido",
+    "test_2_diccionario_espacio": "OK - CYCLINA D1 reconocido",
+    "test_3_mapeo": "OK - CYCLINA -> IHQ_CICLINA_D1"
+  },
+  "impacto": {
+    "regenerar_bd": false,
+    "reprocesar_casos": false,
+    "afecta_validacion": true,
+    "afecta_extraccion": false
+  },
+  "siguientes_pasos": [
+    "Casos futuros con CYCLINA se validaran automaticamente",
+    "Casos ya procesados: auditar con --inteligente para verificar",
+    "No es necesario reprocesar casos existentes"
+  ]
+}

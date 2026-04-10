@@ -1,0 +1,142 @@
+{
+  "numero_caso": "IHQ251017",
+  "caso_num": 36,
+  "total_casos": 47,
+  "timestamp": "2025-11-08T16:34:37.881012",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 12,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "ERROR",
+      "mensaje": "DIAGNOSTICO_COLORACION difiere entre BD y OCR",
+      "valor_bd": "CELULARIDAD GLOBAL DEL 20 %. DISMINUIDA PARA LA EDAD; RELACIÓN MIELOIDE ERITROIDE 4:1; HAY ADECUADA MADURACIÓN DE LAS TRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 3 POR CAMPO DE ALTO PODER; SIN INCREMENTO MORFOLÓGICO DE BLASTOS; CELULARIDAD PLASMOCITOIDE ALREDEDOR DEL 10%",
+      "valor_ocr": "“CELULARIDAD"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "CELULARIDAD GLOBAL DEL 20%"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (11/11)",
+      "total_solicitado_ocr": 11,
+      "total_solicitado_bd": 11,
+      "estudios_ocr": [
+        "CD138",
+        "CD38",
+        "CD56",
+        "CD117",
+        "CD5",
+        "CD3",
+        "CD20",
+        "CD15",
+        "CD61",
+        "CD34",
+        "GLICOFORINA"
+      ],
+      "estudios_bd": [
+        "CD138",
+        "CD38",
+        "CD56",
+        "CD117",
+        "CD5",
+        "CD3",
+        "CD20",
+        "CD15",
+        "CD61",
+        "CD34",
+        "GLICOFORINA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 11,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [
+      "DIAGNOSTICO_COLORACION difiere entre BD y OCR"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M251..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MEDULA ÓSEA"
+    },
+    "organo": {
+      "estado": "OK",
+      "mensaje": "Campo Organo está limpio",
+      "valor_bd": "BIOPSIA DE MEDULA OSEA"
+    },
+    "formatos_biomarcadores": {
+      "estado": "OK",
+      "total_biomarcadores": 11,
+      "biomarcadores_con_problemas": 0,
+      "porcentaje_problemas": 0.0,
+      "problemas": [],
+      "mensaje": "Todos los biomarcadores tienen formato estandarizado"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 1,
+    "biomarcadores_solicitados": 11,
+    "biomarcadores_mapeados": 11,
+    "biomarcadores_no_mapeados": 0,
+    "completitud_biomarcadores": 100.0
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

@@ -1,0 +1,108 @@
+{
+  "numero_caso": "IHQ250178",
+  "caso_num": 18,
+  "total_casos": 50,
+  "timestamp": "2026-01-08T10:25:42.945668",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 5,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "PROLIFERACION ACINAR ATIPICA",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "ADENOCARCINOMA ACINAR 3+3 (GRUPO 1) EN MENOS DE 1 MILIMETRO DE TEJIDO PROSTÁTICO (TAMAÑO DE LOS CORES: 22 MILIMETROS) PORCENTAJE DE COMPROMISO DEL TEJIDO: 4"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "WARNING",
+      "mensaje": "2 biomarcadores extras en BD",
+      "total_solicitado_ocr": 1,
+      "total_solicitado_bd": 3,
+      "estudios_ocr": [
+        "CK34BE12"
+      ],
+      "estudios_bd": [
+        "CK34BE12",
+        "P63",
+        "RACEMASA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "P63",
+        "RACEMASA"
+      ],
+      "mapeados": 1,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se realizan niveles al bloque M2501245-C y F, que corresponde a biopsia de próstata en ápex de lóbul..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "PRÓSTATA"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

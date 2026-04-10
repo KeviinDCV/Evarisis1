@@ -60,193 +60,167 @@ class VentanaAuditoriaIA(tk.Toplevel):
         # Configurar UI primero
         self._crear_ui()
 
-        # V2.1.7: Mejorar manejo de estado de ventana
-        # Maximizar ventana DESPUÉS de crear UI
+        # Centrar ventana con tamaño razonable (no maximizado)
         self.update_idletasks()
-        try:
-            # Intentar maximizar (Windows)
-            self.state('zoomed')
-        except:
-            # Fallback para otros sistemas
-            self.geometry(f"{self.winfo_screenwidth()}x{self.winfo_screenheight()}+0+0")
-
-        # V2.1.7: Mantener ventana siempre visible y restaurable
-        # Bind para detectar cuando se minimiza y forzar restauración
-        self.bind("<Unmap>", self._on_minimizar)
-        self.bind("<Map>", self._on_restaurar)
+        win_w, win_h = 700, 550
+        scr_w = self.winfo_screenwidth()
+        scr_h = self.winfo_screenheight()
+        x = (scr_w - win_w) // 2
+        y = (scr_h - win_h) // 2
+        self.geometry(f"{win_w}x{win_h}+{x}+{y}")
+        self.minsize(500, 400)
 
         # Evitar cierre con X
         self.protocol("WM_DELETE_WINDOW", self._on_cerrar)
 
     def _on_minimizar(self, event=None):
         """Detecta cuando la ventana se minimiza"""
-        # Si la ventana está en estado iconic (minimizada), restaurarla automáticamente
-        # durante el procesamiento
-        if self.state() == 'iconic' and self.resultados == []:
-            logging.info(f"   ⚠️ Ventana minimizada durante procesamiento, restaurando...")
-            self.after(500, self._forzar_restauracion)
+        pass  # Permitir minimizar libremente
 
     def _on_restaurar(self, event=None):
         """Detecta cuando la ventana se restaura"""
-        pass  # No necesitamos hacer nada especial
+        pass
 
     def _forzar_restauracion(self):
-        """Fuerza la restauración de la ventana si está minimizada"""
+        """Restaura la ventana si está minimizada"""
         try:
             if self.state() == 'iconic':
-                self.deiconify()  # Restaurar de minimizado
-                self.state('zoomed')  # Volver a maximizar
-                self.lift()  # Traer al frente
-                self.focus_force()  # Forzar foco
-                logging.info(f"   ✅ Ventana restaurada automáticamente")
+                self.deiconify()
+                self.lift()
         except Exception as e:
             logging.info(f"   ⚠️ No se pudo restaurar ventana: {e}")
 
     def _crear_ui(self):
         """Crea la interfaz de la ventana"""
 
-        # Frame principal
-        main_frame = ttkb.Frame(self, padding=30)
+        # Frame principal con grid layout para control preciso de espacio
+        main_frame = ttkb.Frame(self, padding=(30, 20, 30, 10))
         main_frame.pack(fill=BOTH, expand=YES)
+        main_frame.columnconfigure(0, weight=1)
+        # Filas: 0=header, 1=progress, 2=separator, 3=stats, 4=separator2, 5=correcciones_label, 6=correcciones_text, 7=btn_area
+        main_frame.rowconfigure(6, weight=1)  # Solo la fila del text widget se expande
 
-        # Logo/Icono (simulado con texto)
+        # === FILA 0: Header (logo + título + subtítulo + tiempo) ===
+        header_frame = ttkb.Frame(main_frame)
+        header_frame.grid(row=0, column=0, sticky="ew", pady=(0, 10))
+
         logo_label = ttkb.Label(
-            main_frame,
+            header_frame,
             text="🤖",
-            font=("Segoe UI", 48)
+            font=("Segoe UI", 36)
         )
-        logo_label.pack(pady=(0, 10))
+        logo_label.pack(pady=(0, 5))
 
-        # Título
         titulo = ttkb.Label(
-            main_frame,
+            header_frame,
             text="Realizando auditoría con EVARISIS Cirugía Oncológica",
-            font=("Segoe UI", 16, "bold"),
+            font=("Segoe UI", 14, "bold"),
             bootstyle="primary"
         )
-        titulo.pack(pady=(0, 5))
+        titulo.pack(pady=(0, 3))
 
-        # Subtítulo (ajustado según modo)
         if self.modo == 'parcial':
             texto_modo = f"Auditoría PARCIAL: Completando campos faltantes en {len(self.casos_a_auditar)} caso(s)"
-            estimado = len(self.casos_a_auditar) * 15  # 15 seg por caso en modo parcial
+            estimado = len(self.casos_a_auditar) * 15
         else:
             texto_modo = f"Auditoría COMPLETA: Validación profunda de {len(self.casos_a_auditar)} caso(s)"
-            estimado = len(self.casos_a_auditar) * 50  # 50 seg por caso en modo completa
-        
+            estimado = len(self.casos_a_auditar) * 50
+
         self.subtitulo = ttkb.Label(
-            main_frame,
+            header_frame,
             text=texto_modo,
-            font=("Segoe UI", 10),
+            font=("Segoe UI", 9),
             bootstyle="secondary"
         )
-        self.subtitulo.pack(pady=(0, 5))
-        
-        # Tiempo estimado
+        self.subtitulo.pack(pady=(0, 2))
+
         min_estimado = estimado // 60
         seg_estimado = estimado % 60
         tiempo_texto = f"Tiempo estimado: {min_estimado}m {seg_estimado}s" if min_estimado > 0 else f"Tiempo estimado: {seg_estimado}s"
-        
+
         self.tiempo_label = ttkb.Label(
-            main_frame,
+            header_frame,
             text=tiempo_texto,
-            font=("Segoe UI", 9),
+            font=("Segoe UI", 8),
             bootstyle="info"
         )
-        self.tiempo_label.pack(pady=(0, 20))
+        self.tiempo_label.pack()
 
-        # Frame de progreso
+        # === FILA 1: Progreso ===
         progress_frame = ttkb.Frame(main_frame)
-        progress_frame.pack(fill=X, pady=10)
+        progress_frame.grid(row=1, column=0, sticky="ew", pady=(5, 5))
 
-        # Label de estado
         self.label_estado = ttkb.Label(
             progress_frame,
             text="Inicializando auditoría...",
-            font=("Segoe UI", 10)
+            font=("Segoe UI", 9)
         )
-        self.label_estado.pack(anchor=W, pady=(0, 5))
+        self.label_estado.pack(anchor=W, pady=(0, 3))
 
-        # Barra de progreso
         self.progressbar = ttkb.Progressbar(
             progress_frame,
             mode='determinate',
             bootstyle="success-striped",
-            length=640
         )
         self.progressbar.pack(fill=X)
 
-        # Label de porcentaje
         self.label_porcentaje = ttkb.Label(
             progress_frame,
             text="0%",
-            font=("Segoe UI", 9),
+            font=("Segoe UI", 8),
             bootstyle="secondary"
         )
-        self.label_porcentaje.pack(anchor=E, pady=(5, 0))
+        self.label_porcentaje.pack(anchor=E, pady=(2, 0))
 
-        # Separador
-        ttk.Separator(main_frame, orient=HORIZONTAL).pack(fill=X, pady=20)
+        # === FILA 2: Separator ===
+        ttk.Separator(main_frame, orient=HORIZONTAL).grid(row=2, column=0, sticky="ew", pady=8)
 
-        # Frame de estadísticas
+        # === FILA 3: Estadísticas (una línea compacta) ===
         stats_frame = ttkb.Frame(main_frame)
-        stats_frame.pack(fill=X)
+        stats_frame.grid(row=3, column=0, sticky="ew")
 
-        # Labels de estadísticas
-        stats_left = ttkb.Frame(stats_frame)
-        stats_left.pack(side=LEFT, fill=X, expand=YES)
-
-        stats_right = ttkb.Frame(stats_frame)
-        stats_right.pack(side=RIGHT, fill=X, expand=YES)
-
-        # Casos procesados
         self.label_casos = ttkb.Label(
-            stats_left,
+            stats_frame,
             text=f"📋 Casos procesados: 0 / {len(self.casos_a_auditar)}",
             font=("Segoe UI", 9)
         )
-        self.label_casos.pack(anchor=W)
+        self.label_casos.pack(side=LEFT)
 
-        # V2.1.6: Caso actual en proceso
         self.label_caso_actual = ttkb.Label(
-            stats_left,
+            stats_frame,
             text="🔍 Caso actual: -",
             font=("Segoe UI", 9),
             bootstyle="info"
         )
-        self.label_caso_actual.pack(anchor=W, pady=(5, 0))
+        self.label_caso_actual.pack(side=LEFT, padx=(20, 0))
 
-        # Correcciones aplicadas
         self.label_correcciones = ttkb.Label(
-            stats_right,
+            stats_frame,
             text="🔧 Correcciones aplicadas: 0",
             font=("Segoe UI", 9)
         )
-        self.label_correcciones.pack(anchor=E)
+        self.label_correcciones.pack(side=RIGHT)
 
-        # NUEVO: Frame de correcciones en tiempo real
-        ttk.Separator(main_frame, orient=HORIZONTAL).pack(fill=X, pady=15)
+        # === FILA 4: Separator ===
+        ttk.Separator(main_frame, orient=HORIZONTAL).grid(row=4, column=0, sticky="ew", pady=8)
 
+        # === FILA 5: Label correcciones ===
         correcciones_label = ttkb.Label(
             main_frame,
             text="📝 Correcciones en Tiempo Real:",
             font=("Segoe UI", 10, "bold")
         )
-        correcciones_label.pack(anchor=W, pady=(0, 5))
+        correcciones_label.grid(row=5, column=0, sticky="w", pady=(0, 3))
 
-        # Frame scrollable para correcciones
+        # === FILA 6: Text widget (esta fila se expande) ===
         correcciones_frame = ttkb.Frame(main_frame)
-        correcciones_frame.pack(fill=BOTH, expand=YES)
+        correcciones_frame.grid(row=6, column=0, sticky="nsew")
 
-        # Scrollbar
         scrollbar = ttkb.Scrollbar(correcciones_frame, orient="vertical")
         scrollbar.pack(side=RIGHT, fill=Y)
 
-        # Text widget para mostrar correcciones
         self.text_correcciones = tk.Text(
             correcciones_frame,
-            height=8,
-            width=80,
             wrap=tk.WORD,
             yscrollcommand=scrollbar.set,
             font=("Consolas", 9),
@@ -259,23 +233,22 @@ class VentanaAuditoriaIA(tk.Toplevel):
         self.text_correcciones.pack(side=LEFT, fill=BOTH, expand=YES)
         scrollbar.config(command=self.text_correcciones.yview)
 
-        # V2.1.0: Configurar tags para estilos de texto
         self.text_correcciones.tag_configure("lote_header", font=("Consolas", 10, "bold"), foreground="#0066cc")
         self.text_correcciones.tag_configure("razon", foreground="#666666", font=("Consolas", 8, "italic"))
-
-        # Deshabilitar edición
         self.text_correcciones.config(state=tk.DISABLED)
 
-        # Botón cancelar (oculto inicialmente)
+        # === FILA 7: Área de botones (siempre visible en la parte inferior) ===
+        self.btn_frame = ttkb.Frame(main_frame)
+        self.btn_frame.grid(row=7, column=0, sticky="ew", pady=(12, 5))
+
+        # Botón cancelar (oculto por ahora)
         self.btn_cancelar = ttkb.Button(
-            main_frame,
+            self.btn_frame,
             text="Cancelar",
             bootstyle="danger-outline",
             command=self._on_cancelar,
             width=15
         )
-        # No lo mostramos por ahora para evitar interrupciones
-        # self.btn_cancelar.pack(pady=(20, 0))
 
     def _on_cancelar(self):
         """Maneja el evento de cancelar auditoría"""
@@ -722,6 +695,15 @@ class VentanaAuditoriaIA(tk.Toplevel):
 
                 self.resultados.append(resultado)
 
+                # Si la API alcanzó su límite de gasto, detener toda la auditoría
+                if resultado.get('fatal_api'):
+                    logging.error("🛑 LÍMITE DE API AGOTADO - Deteniendo auditoría para no perder tiempo")
+                    self.after(0, lambda: self.actualizar_progreso(
+                        "🛑 Límite de API agotado. Auditoría detenida.",
+                        int((idx + 1) / len(self.casos_a_auditar) * 100)
+                    ))
+                    break
+
                 if resultado.get('exito'):
                     correcciones_totales += resultado.get('correcciones_aplicadas', 0)
 
@@ -779,6 +761,11 @@ class VentanaAuditoriaIA(tk.Toplevel):
             if r.get('exito') and r.get('correcciones_aplicadas', 0) == 0
         )
 
+        casos_fallidos = sum(
+            1 for r in self.resultados
+            if not r.get('exito')
+        )
+
         # Agregar resumen al área de correcciones
         self.text_correcciones.config(state=tk.NORMAL)
         self.text_correcciones.insert(tk.END, f"\n{'='*60}\n")
@@ -788,6 +775,15 @@ class VentanaAuditoriaIA(tk.Toplevel):
         self.text_correcciones.insert(tk.END, f"✓ Sin errores: {casos_sin_errores}\n")
         self.text_correcciones.insert(tk.END, f"🔧 Con correcciones: {casos_con_correcciones}\n")
         self.text_correcciones.insert(tk.END, f"📝 Total correcciones: {correcciones_totales}\n")
+
+        if casos_fallidos > 0:
+            self.text_correcciones.insert(tk.END, f"\n⚠️ Casos con FALLO de IA: {casos_fallidos}\n")
+            for r in self.resultados:
+                if not r.get('exito'):
+                    num = r.get('numero_peticion', '?')
+                    err = r.get('error', 'Error desconocido')
+                    self.text_correcciones.insert(tk.END, f"  ❌ {num}: {err}\n")
+
         self.text_correcciones.see(tk.END)
         self.text_correcciones.config(state=tk.DISABLED)
 
@@ -805,17 +801,14 @@ class VentanaAuditoriaIA(tk.Toplevel):
                 traceback.print_exc()
 
         # Buscar el main_frame y agregar botón "Ver Resultados"
-        for widget in self.winfo_children():
-            if isinstance(widget, ttkb.Frame):
-                self.btn_ver_resultados = ttkb.Button(
-                    widget,
-                    text="👁️ Ver Resultados Detallados",
-                    command=self._ver_resultados,
-                    bootstyle="success",
-                    width=30
-                )
-                self.btn_ver_resultados.pack(pady=(15, 0))
-                break
+        self.btn_ver_resultados = ttkb.Button(
+            self.btn_frame,
+            text="✅  Ver Resultados Detallados",
+            command=self._ver_resultados,
+            bootstyle="success",
+            width=30
+        )
+        self.btn_ver_resultados.pack(pady=(0, 5))
 
     def _ver_resultados(self):
         """Usuario hace clic en Ver Resultados - cerrar ventana y navegar"""

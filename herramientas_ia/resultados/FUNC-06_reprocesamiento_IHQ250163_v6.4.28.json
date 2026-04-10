@@ -1,0 +1,55 @@
+{
+  "caso": "IHQ250163",
+  "version_extractor": "v6.4.28",
+  "timestamp": "2026-01-08T01:51:48.383161",
+  "mejora_aplicada": {
+    "patron": "P53 expresion en mosaico (patron salvaje)",
+    "ubicacion": "biomarker_extractor.py linea 899",
+    "normalizacion": "linea 6681",
+    "descripcion": "Nuevo patron para detectar \"La expresion de p53 es en mosaico (patron salvaje)\""
+  },
+  "resultados": {
+    "antes": {
+      "score": 100.0,
+      "ihq_p53": "DESCONOCIDO (necesita verificacion manual)",
+      "estado": "Posiblemente no extraido o mal extraido"
+    },
+    "despues": {
+      "score": 100.0,
+      "ihq_p53": "POSITIVO (EN MOSAICO (PATRON SALVAJE))",
+      "estado": "OK - Extraccion exitosa",
+      "validacion": "Campo IHQ_P53 correctamente poblado en debug_map"
+    }
+  },
+  "validacion_ocr": {
+    "texto_original": "La expresion de p53 es en mosaico (patron salvaje).",
+    "valor_extraido": "POSITIVO (EN MOSAICO (PATRON SALVAJE))",
+    "normalizacion_aplicada": "PATRON SALVAJE (mosaico)",
+    "estado": "CORRECTO - Patron detectado y normalizado exitosamente"
+  },
+  "debug_map_verificacion": {
+    "linea_80": "IHQ_P53: POSITIVO (EN MOSAICO (PATRON SALVAJE))",
+    "linea_115": "IHQ_P53: POSITIVO (EN MOSAICO (PATRON SALVAJE))",
+    "confirmacion": "Campo poblado en extraccion.unified_extractor y base_datos.campos_criticos"
+  },
+  "impacto": {
+    "score_mantenido": true,
+    "regresion_detectada": false,
+    "mejora_confirmada": true,
+    "descripcion": "El patron v6.4.28 extrae correctamente P53 en mosaico sin afectar score 100%"
+  },
+  "conclusiones": [
+    "OK P53 ahora se extrae correctamente del texto \"La expresion de p53 es en mosaico (patron salvaje)\"",
+    "OK Valor normalizado correctamente: \"POSITIVO (EN MOSAICO (PATRON SALVAJE))\"",
+    "OK Campo IHQ_P53 poblado en debug_map (lineas 80 y 115)",
+    "OK Score se mantiene en 100% (sin regresion)",
+    "OK Auditoria inteligente confirma estado OK",
+    "OK Caso procesado exitosamente: 49 registros guardados en BD",
+    "NOTA: Error menor en FUNC-06 (I/O operation on closed file) - NO afecta el reprocesamiento"
+  ],
+  "recomendaciones": [
+    "Validar el patron P53 v6.4.28 en otros casos con \"patron salvaje\"",
+    "Corregir error I/O en auditor_sistema.py linea 4342 y 4392",
+    "Considerar agregar mas variantes del patron P53 (wild-type, mosaico, etc.)"
+  ]
+}

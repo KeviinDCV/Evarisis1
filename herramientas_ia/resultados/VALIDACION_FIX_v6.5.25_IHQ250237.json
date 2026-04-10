@@ -1,0 +1,49 @@
+{
+  "caso": "IHQ250237",
+  "fecha_validacion": "2026-01-28 09:23:31",
+  "extractores_aplicados": [
+    "v6.5.24: Alias CKAE1/E3 -> CKAE1AE3",
+    "v6.5.25: Alias CD 30 -> CD30",
+    "v6.5.20-22: Patrón mixto positivo focal + negativos",
+    "v6.5.23: Prioridad extractor narrativo"
+  ],
+  "valores_esperados": {
+    "IHQ_OCT4": "POSITIVO",
+    "IHQ_PODOPLANINA": "POSITIVO",
+    "IHQ_CKAE1AE3": "POSITIVO FOCAL",
+    "IHQ_GPC3": "NEGATIVO",
+    "IHQ_GLIPICAN": "NEGATIVO",
+    "IHQ_AFP": "NEGATIVO",
+    "IHQ_CD30": "NEGATIVO"
+  },
+  "valores_extraidos": {
+    "IHQ_OCT4": "POSITIVO",
+    "IHQ_PODOPLANINA": "POSITIVO",
+    "IHQ_CKAE1AE3": "N/A",
+    "IHQ_GPC3": "NEGATIVO",
+    "IHQ_GLIPICAN": "NEGATIVO",
+    "IHQ_AFP": "POSITIVO",
+    "IHQ_CD30": "N/A"
+  },
+  "resultados": {
+    "IHQ_OCT4": "OK",
+    "IHQ_PODOPLANINA": "OK",
+    "IHQ_CKAE1AE3": "ERROR - No extraído (esperado: POSITIVO FOCAL)",
+    "IHQ_GPC3": "OK",
+    "IHQ_GLIPICAN": "OK",
+    "IHQ_AFP": "ERROR - Extraído POSITIVO (esperado: NEGATIVO)",
+    "IHQ_CD30": "ERROR - No extraído (esperado: NEGATIVO)"
+  },
+  "score": {
+    "correctos": 4,
+    "total": 7,
+    "porcentaje": 57.1
+  },
+  "ocr_fuente": "La celularidad tumoral tiene marcación positiva y fuerte para OCT 4, PODOPLANINA, es positivo focal para CKAE1/E3 y es negativo para GLYPICAN 3, AFP y CD 30.",
+  "problema_detectado": {
+    "CKAE1AE3": "Alias CKAE1/E3 no se mapeo correctamente a CKAE1AE3",
+    "AFP": "Extracción incorrecta - se marcó como POSITIVO cuando debería ser NEGATIVO",
+    "CD30": "Alias CD 30 no se mapeo correctamente a CD30"
+  },
+  "conclusion": "Los aliases agregados (v6.5.24 y v6.5.25) NO están funcionando. El patrón mixto (v6.5.20-22) también falló al extraer POSITIVO FOCAL y los negativos correctamente."
+}

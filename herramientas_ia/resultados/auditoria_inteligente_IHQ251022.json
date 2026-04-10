@@ -1,0 +1,170 @@
+{
+  "numero_caso": "IHQ251022",
+  "caso_num": 39,
+  "total_casos": 47,
+  "timestamp": "2025-11-08T20:46:38.549593",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 12,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "ERROR",
+      "mensaje": "DIAGNOSTICO_COLORACION difiere entre BD y OCR",
+      "valor_bd": "CELULARIDAD GLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS TRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN INCREMENTO MORFOLOGICO DE BLASTOS",
+      "valor_ocr": "“CELULARIDAD"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "CELULARIDAD GLOBAL DEL 50%"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "2 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 9,
+      "total_solicitado_bd": 9,
+      "estudios_ocr": [
+        "CD38",
+        "CD56",
+        "CD117",
+        "CD5",
+        "CD3",
+        "CD20",
+        "CD61",
+        "CD34",
+        "GLICOFORINA"
+      ],
+      "estudios_bd": [
+        "CD38",
+        "CD56",
+        "CD117",
+        "CD5",
+        "CD3",
+        "CD20",
+        "CD61",
+        "CD34",
+        "GLICOFORINA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 9,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "CD117",
+          "columna": "IHQ_CD117",
+          "valor_bd": "POSITIVO",
+          "valor_ocr": "+"
+        },
+        {
+          "biomarcador": "CD34",
+          "columna": "IHQ_CD34",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "-"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "BD indica MALIGNO pero no se encontraron keywords malignos en OCR"
+    ],
+    "errores": [
+      "DIAGNOSTICO_COLORACION difiere entre BD y OCR"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M251..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MEDULA ÓSEA"
+    },
+    "organo": {
+      "estado": "OK",
+      "mensaje": "Campo Organo está limpio",
+      "valor_bd": "BIOPSIA DE HUESO"
+    },
+    "formatos_biomarcadores": {
+      "estado": "OK",
+      "total_biomarcadores": 9,
+      "biomarcadores_con_problemas": 0,
+      "porcentaje_problemas": 0.0,
+      "problemas": [],
+      "mensaje": "Todos los biomarcadores tienen formato estandarizado"
+    },
+    "malignidad": {
+      "estado": "WARNING",
+      "mensaje": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+      "valor_bd": "MALIGNO",
+      "keywords_buscados": [
+        "CARCINOMA",
+        "ADENOCARCINOMA",
+        "SARCOMA",
+        "MELANOMA",
+        "LINFOMA",
+        "LEUCEMIA",
+        "NEOPLASIA MALIGNA",
+        "TUMOR MALIGNO",
+        "METASTASIS",
+        "METASTÁSICO",
+        "CÉLULAS TUMORALES",
+        "TIMOMA",
+        "TIMOMA AB",
+        "TIMOMA TIPO B"
+      ],
+      "nota": "Revisar manualmente si la clasificación es correcta"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 66.7,
+    "validaciones_ok": 6,
+    "total_validaciones": 9,
+    "warnings": 1,
+    "errores": 1,
+    "biomarcadores_solicitados": 9,
+    "biomarcadores_mapeados": 9,
+    "biomarcadores_no_mapeados": 0,
+    "completitud_biomarcadores": 100.0
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

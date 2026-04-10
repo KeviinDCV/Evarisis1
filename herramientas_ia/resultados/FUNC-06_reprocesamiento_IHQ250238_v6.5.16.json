@@ -1,0 +1,62 @@
+{
+  "caso": "IHQ250238",
+  "timestamp": "2026-01-28T08:07:40.781716",
+  "version_extractor": "v6.5.16",
+  "modificacion": "Patron para inmunomarcacion positiva...para [contexto] ([LISTA])",
+  "resultado_reprocesamiento": {
+    "estado": "EXITOSO",
+    "pdf_reprocesado": "IHQ DEL 212 AL 262.pdf",
+    "casos_afectados": 50,
+    "caso_objetivo": "IHQ250238"
+  },
+  "comparacion_extraccion": {
+    "antes": {
+      "IHQ_P63": "NO MENCIONADO",
+      "IHQ_CK5_6": "NO MENCIONADO",
+      "IHQ_RACEMASA": "NO MENCIONADO",
+      "IHQ_CK34BE12": "NO MENCIONADO"
+    },
+    "despues": {
+      "IHQ_P63": "POSITIVO (difusa)",
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_RACEMASA": "NEGATIVO",
+      "IHQ_CK34BE12": "NO MENCIONADO"
+    }
+  },
+  "analisis_ocr": {
+    "formato_detectado": "inmunomarcacion positiva y difusa para marcador de celulas basales (p63, CK5/6, CK34 B E12) y son negativas para RACEMASA",
+    "patron_aplicado": "inmunomarcacion positiva para [contexto] (LISTA)",
+    "biomarcadores_en_lista": [
+      "p63",
+      "CK5/6",
+      "CK34 B E12"
+    ],
+    "resultado_esperado": {
+      "P63": "POSITIVO (difusa)",
+      "CK5_6": "POSITIVO (difusa)",
+      "CK34BE12": "POSITIVO (difusa)"
+    }
+  },
+  "metricas": {
+    "score_antes": "N/A (no auditado antes)",
+    "score_despues": 88.9,
+    "biomarcadores_extraidos": "3/4 (75%)",
+    "mejora_p63": "NO MENCIONADO -> POSITIVO (difusa) [OK]",
+    "mejora_ck5_6": "NO MENCIONADO -> POSITIVO [OK]",
+    "mejora_racemasa": "NO MENCIONADO -> NEGATIVO [OK]",
+    "pendiente_ck34be12": "NO MENCIONADO (sin columna en BD)"
+  },
+  "problema_residual": {
+    "biomarcador": "CK34 B E12",
+    "causa": "No tiene columna IHQ_CK34BE12 en BD o alias no mapeado",
+    "solucion_propuesta": "FUNC-03: Agregar biomarcador CK34BE12 al sistema"
+  },
+  "conclusion": {
+    "estado": "PARCIALMENTE_EXITOSO",
+    "objetivo_principal": "CUMPLIDO - P63 ahora se extrae correctamente",
+    "extraccion_p63": "POSITIVO (difusa) [OK]",
+    "patron_funciona": "SI - Extrae biomarcadores de lista entre parentesis",
+    "casos_beneficiados": "Todos los casos con formato: inmunomarcacion positiva...para [contexto] ([LISTA])",
+    "siguiente_paso": "Agregar CK34BE12 con FUNC-03 para alcanzar 100%"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-01-08 11:14:43",
+  "biomarcador": "MUC1",
+  "columna_bd": "IHQ_MUC1",
+  "aliases": [
+    "MUC1",
+    "MUC-1",
+    "MUC 1",
+    "MUCINA 1"
+  ],
+  "estado": "COMPLETADO_MANUAL",
+  "metodo": "MANUAL (FUNC-03 bloqueado porque MUC1 ya existía en biomarker_extractor.py)",
+  "archivos_modificados": [
+    {
+      "archivo": "core/database_manager.py",
+      "modificaciones": [
+        "NEW_TABLE_COLUMNS_ORDER: Agregado \"IHQ_MUC1\" (línea ~166)",
+        "CREATE TABLE: Agregado \"IHQ_MUC1 TEXT\" (línea ~271)",
+        "new_biomarkers: Agregado \"IHQ_MUC1\" (línea ~389)"
+      ],
+      "total_lugares": 3
+    },
+    {
+      "archivo": "herramientas_ia/auditor_sistema.py",
+      "modificaciones": [
+        "BIOMARKER_ALIAS_MAP: Agregados 4 alias de MUC1 (líneas 477-480)"
+      ],
+      "total_lugares": 1
+    },
+    {
+      "archivo": "core/validation_checker.py",
+      "modificaciones": [
+        "all_biomarker_mapping: Agregados 5 mapeos de MUC1 (líneas 563-568)"
+      ],
+      "total_lugares": 1
+    },
+    {
+      "archivo": "core/unified_extractor.py",
+      "modificaciones": [
+        "biomarker_cols: Agregado MUC1 (línea ~863)",
+        "biomarker_mapping: Agregado MUC1 con variante lowercase (línea ~1839)"
+      ],
+      "total_lugares": 2
+    },
+    {
+      "archivo": "ui.py",
+      "modificaciones": [
+        "cols_to_show: Agregado \"IHQ_MUC1\" (línea 4338)"
+      ],
+      "total_lugares": 1
+    },
+    {
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "modificaciones": [
+        "YA EXISTÍA: Agregado manualmente en V6.4.43 FIX IHQ250179",
+        "biomarker_display_names: 4 patrones de extracción",
+        "biomarker_display_names (mapeo): 4 alias"
+      ],
+      "total_lugares": "Completo (preexistente)"
+    }
+  ],
+  "total_archivos": 6,
+  "total_modificaciones": 14,
+  "proximos_pasos": [
+    "1. Borrar base de datos para aplicar nuevo schema:",
+    "   rm data/huv_oncologia_NUEVO.db",
+    "",
+    "2. Iniciar interfaz (recreará BD con columna IHQ_MUC1):",
+    "   python ui.py",
+    "",
+    "3. Reprocesar PDF que contiene el caso con MUC1 (IHQ250179):",
+    "   - Caso: IHQ250179",
+    "   - PDF: IHQ DEL 160 AL 211.pdf",
+    "   - Procesar en interfaz: Botón \"Procesar IHQ\"",
+    "",
+    "4. Validar extracción con data-auditor:",
+    "   python herramientas_ia/auditor_sistema.py IHQ250179 --inteligente",
+    "",
+    "5. Verificar que IHQ_MUC1 contenga el valor correcto"
+  ],
+  "validacion": {
+    "schema_bd": "IHQ_MUC1 agregado en 3 lugares (NEW_TABLE_COLUMNS_ORDER + CREATE TABLE + new_biomarkers)",
+    "alias_auditor": "4 alias mapeados en BIOMARKER_ALIAS_MAP",
+    "alias_validator": "5 mapeos en all_biomarker_mapping",
+    "unified_extractor": "2 mapeos (biomarker_cols + biomarker_mapping)",
+    "interfaz_grafica": "1 columna visible en cols_to_show",
+    "extractor": "Preexistente (V6.4.43) con 4 patrones de extracción"
+  },
+  "version": "V6.4.43",
+  "caso_referencia": "IHQ250179",
+  "notas": [
+    "FUNC-03 automático fue bloqueado porque MUC1 ya existía en biomarker_extractor.py",
+    "Las modificaciones fueron realizadas manualmente en 5 archivos adicionales",
+    "biomarker_extractor.py ya tenía patrones completos de MUC1 (V6.4.43)",
+    "Es necesario borrar y regenerar la BD para que la columna IHQ_MUC1 sea creada",
+    "Después de regenerar BD, reprocesar caso IHQ250179 para validar"
+  ]
+}

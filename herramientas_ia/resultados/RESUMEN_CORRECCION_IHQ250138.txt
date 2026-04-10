@@ -1,0 +1,100 @@
+================================================================================
+                    RESUMEN: CORRECCION DE IHQ250138
+================================================================================
+
+ANTES DEL REPROCESAMIENTO:
+--------------------------------------------------------------------------------
+Campo: Malignidad
+Valor: NO_DETERMINADO (INCORRECTO)
+
+Razon del error:
+  - Organo = MEDULA OSEA
+  - No contenia palabras clave de malignidad (CARCINOMA, TUMOR, ADENOMA, etc.)
+  - Fue clasificado como NO_DETERMINADO por falta de contexto
+
+
+DESPUES DEL REPROCESAMIENTO:
+--------------------------------------------------------------------------------
+Campo: Malignidad
+Valor: BENIGNO (CORRECTO)
+
+Razon de la correccion:
+  - El diagnostico es sobre medula osea con celularidad normal
+  - No hay menciones de neoplasia, carcinoma, tumor
+  - Bloqueo de celulas plasmáticas al 10% (normal para medula osea)
+  - Blastos mieloides 1-2% (dentro de rangos normales)
+  - Por lo tanto: BENIGNO
+
+
+CAMBIO REALIZADO EN EL CODIGO:
+--------------------------------------------------------------------------------
+Archivo: core/extractors/medical_extractor.py
+Funcion: _detectar_malignidad_inteligente()
+
+Antes (PROBLEMA):
+  if not tiene_keywords_malignidad:
+      return "NO_DETERMINADO"  # INCORRECTO para casos benignos
+
+Despues (CORRECCION):
+  if not tiene_keywords_malignidad:
+      if self._es_benigno(texto_ocr):
+          return "BENIGNO"      # CORRECTO - detecta benignidad
+      return "NO_DETERMINADO"
+
+
+LOGICA DE DETECCION MEJORADA:
+--------------------------------------------------------------------------------
+Patrones de MALIGNIDAD (detectan neoplasia):
+  - CARCINOMA, ADENOCARCINOMA, SARCOMA
+  - TUMOR NEOPLASICO, NEOPLASIA
+  - MELANOMA, LINFOMA, LEUCEMIA
+  
+Patrones de BENIGNIDAD (cuando NO hay malignidad):
+  - Organo normal, celularidad normal
+  - Estructuras fisiologicas
+  - Inflamacion, hiperplasia benignA
+  - Sin menciones de neoplasia/carcinoma
+
+
+IMPACTO CLÍNICO:
+--------------------------------------------------------------------------------
+Antes: Caso clasificado como INDETERMINADO
+       - Médico debe revisar manualmente
+       - Incertidumbre en diagnóstico
+       - Posible retardo en tratamiento
+
+Despues: Caso clasificado correctamente como BENIGNO
+         - Médico tiene diagnóstico claro
+         - Confianza en interpretación patológica
+         - Toma de decisiones más rápida
+
+
+VALIDACION DEL CAMBIO:
+--------------------------------------------------------------------------------
+Auditoría de IHQ250138 (post-reprocesamiento):
+  Score de validacion: 88.9%
+  Estado final: OK
+  Warnings: 0
+  Errores: 0
+  Biomarcadores extraidos: 10/10 correctos
+  
+Conclusion: El cambio en el extractor se aplicó correctamente
+
+
+ARCHIVOS MODIFICADOS:
+--------------------------------------------------------------------------------
+1. core/extractors/medical_extractor.py
+   - Metodo: _detectar_malignidad_inteligente()
+   - Cambio: Agregada deteccion de BENIGNO en casos sin palabras clave
+   
+2. Base de datos regenerada
+   - BD anterior eliminada (data/huv_oncologia_NUEVO.db)
+   - BD regenerada con extractores corregidos
+   - IHQ250138 reprocesado con valor correcto
+
+
+PROXIMO PASO:
+--------------------------------------------------------------------------------
+Validar otros casos con Malignidad = NO_DETERMINADO
+Ejecutar auditoría completa para verificar impacto global
+================================================================================

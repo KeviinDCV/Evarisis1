@@ -1,0 +1,100 @@
+================================================================================
+VALIDACIÓN FINAL - CASO IHQ250224 (v6.4.93-96)
+================================================================================
+Fecha: 28 de enero de 2026
+Score: 100.0%
+Estado: OK
+Warnings: 0
+Errores: 0
+
+================================================================================
+MODIFICACIONES APLICADAS
+================================================================================
+
+1. **biomarker_extractor.py v6.4.93** (Mapeo CK34BETA12)
+   - Problema: IHQ_ESTUDIOS_SOLICITADOS contenía "CK34BETA12" (sin mapeo)
+   - Columna existente: IHQ_CK34BE12
+   - Solución: Agregar alias "CK34BETA12" -> "IHQ_CK34BE12" en BIOMARKER_ALIAS_MAP
+   - Ubicación: Línea ~95
+   - Resultado: CK34BETA12 ahora se mapea correctamente
+
+2. **medical_extractor.py v6.4.94** (Diagnóstico multipágina)
+   - Problema: Diagnóstico cortado cuando span múltiples líneas con saltos de página
+   - Solución: Patrón fallback que captura hasta "COMENTARIO" o fin de texto
+   - Ubicación: Línea 589
+   - Resultado: Diagnósticos multipágina extraídos completamente
+
+3. **unified_extractor.py v6.4.96** (Limpieza metadatos IHQ)
+   - Problema: DIAGNOSTICO_PRINCIPAL contenía "ESTUDIO DE INMUNOHISTOQUIMICA (LÁMINA A)"
+   - v6.4.95: Solo limpiaba cuando había fecha (": DD/MM/AAAA")
+   - v6.4.96: Limpia CON o SIN fecha
+   - Patrón anterior: r'^ESTUDIO\s+...\):\s*\d{1,2}/\d{1,2}/\d{4}\s+' (fecha obligatoria)
+   - Patrón nuevo: r'^ESTUDIO\s+...\)(?::\s*(?:\d{1,2}/\d{1,2}/\d{4})?)?\s+' (fecha opcional)
+   - Ubicación: Línea 448-453
+   - Resultado: DIAGNOSTICO_PRINCIPAL limpio (sin metadatos)
+
+================================================================================
+RESULTADOS VALIDADOS
+================================================================================
+
+DIAGNOSTICO_PRINCIPAL:
+  ✅ Valor BD: "ADENOCARCINOMA GLEASON" (limpio, sin metadatos)
+  ✅ Estado: OK
+  ❌ Antes: "ESTUDIO DE INMUNOHISTOQUIMICA (LÁMINA A) ADENOCARCINOMA GLEASON"
+  ✅ Después: "ADENOCARCINOMA GLEASON"
+
+IHQ_CK34BE12:
+  ✅ Mapeado correctamente desde "CK34BETA12"
+  ✅ Presente en estudios solicitados
+
+IHQ_ESTUDIOS_SOLICITADOS:
+  ✅ Contiene: P63, RACEMASA, CK34BE12
+
+================================================================================
+REGRESIÓN VALIDADA
+================================================================================
+
+Casos de referencia (Score 100% previo):
+  - IHQ250002: 100% → 100% ✅ (no afectado)
+  - IHQ250003: 100% → 100% ✅ (no afectado)
+
+Casos con diagnóstico similar (formato con fecha):
+  - Pendiente: Auditar otros casos con "ESTUDIO DE INMUNOHISTOQUIMICA" para validar
+    que v6.4.96 funciona correctamente CON fecha también
+
+================================================================================
+PRÓXIMOS PASOS RECOMENDADOS
+================================================================================
+
+1. ✅ COMPLETADO: Validar IHQ250224 (Score 100%)
+2. 🔄 PENDIENTE: Auditar casos con formato "ESTUDIO DE... (LÁMINA X): DD/MM/AAAA DIAGNOSTICO"
+   para validar que v6.4.96 NO rompe casos con fecha
+3. 🔄 PENDIENTE: Auditar lote completo IHQ212-262 (50 casos) para detectar regresiones
+
+================================================================================
+COMANDOS PARA VALIDACIÓN ANTI-REGRESIÓN
+================================================================================
+
+# Auditar otros casos del mismo rango
+python herramientas_ia/auditor_sistema.py IHQ250212 --inteligente
+python herramientas_ia/auditor_sistema.py IHQ250213 --inteligente
+...
+python herramientas_ia/auditor_sistema.py IHQ250262 --inteligente
+
+# Auditar casos de referencia globales
+python herramientas_ia/auditor_sistema.py IHQ250002 --inteligente
+python herramientas_ia/auditor_sistema.py IHQ250003 --inteligente
+python herramientas_ia/auditor_sistema.py IHQ250140 --inteligente
+
+================================================================================
+VERSIONES FINALES
+================================================================================
+
+- biomarker_extractor.py: v6.4.93
+- medical_extractor.py: v6.4.94
+- unified_extractor.py: v6.4.96
+- auditor_sistema.py: v3.6.0 (sin cambios)
+
+================================================================================
+FIN DEL REPORTE
+================================================================================

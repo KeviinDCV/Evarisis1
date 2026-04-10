@@ -1,0 +1,114 @@
+{
+  "numero_caso": "IHQ250035",
+  "caso_num": 35,
+  "total_casos": 50,
+  "timestamp": "2025-12-16T03:38:29.179437",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 6,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO CON INVASIÓN DE TEJIDO PERICÓLICO SIN COMPROMISO DE SEROSA",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
+      "valor_bd": "DE “ADENOCARCINOMA MODERADAMENTE DIFERENCIADO CON INVASIÓN DE TEJIDO PERICÓLICO SIN COMPROMISO DE SEROSA”. PREVIA REVISIÓN DE LA HISTOLOGÍA SE REALIZAN NIVELES HISTOLÓGICOS EN LA LÁMINA NUMERO 3 PARA TINCIÓN CON LOS MARCADORES: MSH2, MSH6, HER2, MLH1, PMS2 DIAGNÓSTICO SIGMOIDES. TUMOR. SIGMOIDECTOMIA. ESTUDIO DE INMUNOHISTOQUIMICA ADENOCARCINOMA MODERADAMENTE DIFERENCIADO CON INVASIÓN DE TEJIDO PERICÓLICO SIN COMPROMISO DE SEROSA: TODOS LOS ANÁLISIS SON AVALADOS FRENTE A LOS PROGRAMAS DE CONTROL DE CALIDAD EXTERNO ACREDITADOS POR LA ISO 17043:2010; COLEGIO AMERICANO DE PATÓLOGOS (CAP), THE ROYAL COLLEGE OF PATHOLOGISTS OF AUSTRALASIA QUALITY ASSURANCE PROGRAMS (RCPAQAP), ONEWORLD ACCURACY (1WA) --- PÁGINA 59 --- IHQ250035 COPIA PAG. 2 DE 2 NOMBRE : GENIX BARRERO PINTO N. PETICION : IHQ250035 N.IDENTIFICACIÓN : CC. 11316696 GENERO : MASCULINO EDAD : 55 AÑOS 1 MES 1 DIA EPS : COOSALUD ENTIDAD PROMOTORA DE"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "HER2: negativo (score 0)",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "HER2"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 5,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "HER2",
+        "MLH1",
+        "MSH2",
+        "MSH6",
+        "PMS2"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "HER2",
+        "MLH1",
+        "MSH2",
+        "MSH6",
+        "PMS2"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M241..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "SIGMOIDES"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

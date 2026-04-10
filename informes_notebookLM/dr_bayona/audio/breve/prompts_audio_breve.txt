@@ -1,0 +1,11 @@
+### Prompts para formato: audio_breve (Audiencia: Dr_bayona)
+
+--- FORMATO DE AUDIO (Format para Audio Overview) ---
+Breve
+
+--- CONFIGURACIÓN ---
+Idioma: español
+Duración: Corto (2-3 minutos)
+
+--- PROMPT DE ENFOQUE (Steering Prompt) ---
+Genera un resumen ejecutivo breve y directo. En 2-3 minutos debe explicar: qué es el proyecto, cuál es su beneficio principal, qué lo hace único y cuál es el próximo paso recomendado. Debe ser conciso, claro y enfocado en las ideas principales. Enfócate exclusivamente en el **impacto económico y estratégico** del proyecto. Dirígete a un **Gerente** que valora el ROI, la eficiencia financiera y la ventaja competitiva. Usa los datos sobre la predicción de tendencias para justificar la **negociación estratégica con farmacéuticas**. Sé directo, profesional y basado en datos. Omite detalles técnicos de bajo nivel (código, librerías).

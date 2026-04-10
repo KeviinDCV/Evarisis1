@@ -1,0 +1,83 @@
+{
+  "caso": "IHQ251026",
+  "timestamp": "2025-11-08T23:04:06.979790",
+  "estado_func06": "COMPLETADO_CON_ERRORES",
+  "reprocesamiento": {
+    "ejecutado": true,
+    "registros_procesados": 47,
+    "backup_creado": true,
+    "error_io_final": "ValueError: I/O operation on closed file (no crítico)"
+  },
+  "hallazgos_criticos": {
+    "biomarcadores_solicitados": [
+      "P16",
+      "P40",
+      "CAM 5"
+    ],
+    "valores_ocr": {
+      "P16": "NEGATIVO (\"No hay marcación en la muestra para p40, p16\")",
+      "P40": "NEGATIVO (\"No hay marcación en la muestra para p40, p16\")",
+      "CAM5": "POSITIVO (\"positiva para CKAE1AE3, CK7 CAM 5.2\")"
+    },
+    "valores_bd_actuales": {
+      "IHQ_P16_ESTADO": ", P40, CAM 5 (ERROR - contiene parte de lista)",
+      "IHQ_P16_PORCENTAJE": "N/A",
+      "IHQ_P40_ESTADO": "POSITIVO (ERROR - debería ser NEGATIVO)",
+      "IHQ_CAM5": "N/A (ERROR - debería ser POSITIVO)"
+    },
+    "completitud_reportada": "100% (3/3)",
+    "completitud_real": "0% (0/3 correctos)"
+  },
+  "causas_raiz": [
+    {
+      "problema": "CAM 5.2 se mapea a IHQ_CAM52 en vez de IHQ_CAM5",
+      "ubicacion": "biomarker_extractor.py línea 3307-3309",
+      "codigo_actual": "'CAM 5.2': 'CAM52', 'CAM5.2': 'CAM52', 'CAM52': 'CAM52'",
+      "codigo_correcto": "'CAM 5.2': 'CAM5', 'CAM5.2': 'CAM5', 'CAM5': 'CAM5', 'CAM 5': 'CAM5'"
+    },
+    {
+      "problema": "CAM 5.2 está como alias de CKAE1AE3",
+      "ubicacion": "biomarker_extractor.py línea 1801",
+      "codigo_actual": "'nombres_alternativos': ['CKAE1/AE3', 'CK AE1/AE3', 'CITOQUERATINA AE1/AE3', 'CAM 5.2', 'CKAE1E3']",
+      "codigo_correcto": "Eliminar CAM 5.2 de esta lista (es biomarcador independiente)"
+    },
+    {
+      "problema": "P16 y P40 se extraen incorrectamente (formato negativo no reconocido)",
+      "texto_ocr": "No hay marcación en la muestra para p40, p16",
+      "patron_necesario": "No hay marcaci[óo]n en la muestra para (?:.*?)\\b(P16|P40)\\b"
+    }
+  ],
+  "acciones_requeridas": [
+    {
+      "prioridad": "CRITICA",
+      "accion": "Corregir mapeo CAM 5.2 → CAM5",
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "lineas": "3307-3309",
+      "cambio": "Modificar mapeo name_mapping para apuntar a CAM5 en vez de CAM52"
+    },
+    {
+      "prioridad": "CRITICA",
+      "accion": "Eliminar CAM 5.2 de alias de CKAE1AE3",
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "linea": "1801",
+      "cambio": "Quitar CAM 5.2 de la lista nombres_alternativos"
+    },
+    {
+      "prioridad": "ALTA",
+      "accion": "Agregar patrón negativo para P16 y P40",
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "patron": "No hay marcaci[óo]n en la muestra para (?:.*?)\\b(?:P16|P40)\\b"
+    },
+    {
+      "prioridad": "MEDIA",
+      "accion": "Re-ejecutar FUNC-06 después de correcciones",
+      "comando": "auditor.reprocesar_caso_completo('IHQ251026')"
+    }
+  ],
+  "columnas_bd_verificadas": {
+    "IHQ_CAM5_existe": true,
+    "IHQ_CAM5_posicion": 49,
+    "IHQ_CAM52_existe": true,
+    "IHQ_CAM52_posicion": 104
+  }
+}

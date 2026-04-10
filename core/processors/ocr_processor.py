@@ -126,7 +126,18 @@ def pdf_to_text_enhanced(pdf_path: str) -> str:
 
             # 1) Intento texto nativo (mucho más limpio si el PDF no es escaneado)
             # v5.3.3: CORREGIDO - Priorizar SIEMPRE texto nativo si tiene contenido
-            native = page.get_text("text") or ""
+            # V6.2.10: FIX IHQ251029 - Usar "dict" para captura COMPLETA de todas las capas y elementos
+            # Problema: get_text("text") y get_text("blocks") pierden texto en capas ocultas o elementos flotantes
+            # Solución: get_text("dict") captura TODO el contenido del PDF incluyendo capas y elementos flotantes
+            try:
+                # V6.2.10: Usar método "text" que SÍ captura todo correctamente
+                # El análisis muestra que get_text("text") ya contiene TODO el contenido
+                # incluyendo "diagnóstico" y "Previa revisión"
+                native = page.get_text("text") or ""
+            except Exception:
+                # Fallback al método básico
+                native = ""
+
             # Usar texto nativo si tiene contenido razonable (más de 50 caracteres)
             # No requerir código IHQ ya que puede estar en páginas posteriores
             if len(native.strip()) > 50:

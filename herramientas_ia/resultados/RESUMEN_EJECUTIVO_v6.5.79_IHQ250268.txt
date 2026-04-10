@@ -1,0 +1,128 @@
+════════════════════════════════════════════════════════════════════════════════
+                    ✅ VALIDACIÓN EXITOSA v6.5.79
+                         Caso IHQ250268
+════════════════════════════════════════════════════════════════════════════════
+
+📋 INFORMACIÓN DEL CASO:
+   Caso: IHQ250268
+   Paciente: JAIRO BARONA LOPEZ (62 años, Masculino)
+   Diagnóstico: ADENOCARCINOMA ACINAR PRÓSTATA (Gleason 3+3=6)
+   PDF: IHQ DEL 263 AL 313.pdf (caso 6/49)
+
+════════════════════════════════════════════════════════════════════════════════
+
+🎯 OBJETIVO DE LAS CORRECCIONES:
+
+Problema detectado (pre v6.5.79):
+   - IHQ_CK34BETAE12: NO EXTRAÍDO
+   - IHQ_P63: "NO MENCIONADO"
+   - Score: 88.9% (8/9 campos OK)
+
+Causa raíz:
+   Formato AGRUPADO en OCR no soportado:
+   "(p63 y CK34BETA negativos)"
+
+Corrección v6.5.79:
+   - CK34BETAE12: 3 nuevos patrones para formato agrupado
+   - P63: 2 nuevos patrones para formato agrupado
+
+════════════════════════════════════════════════════════════════════════════════
+
+✅ RESULTADOS DESPUÉS DE v6.5.79:
+
+╔══════════════════════╦═══════════════════╦════════════╗
+║ Campo                ║ Valor             ║ Estado     ║
+╠══════════════════════╬═══════════════════╬════════════╣
+║ IHQ_P63              ║ "NEGATIVOS"       ║ ✅ OK      ║
+║ IHQ_CK34BETAE12      ║ "NEGATIVOS"       ║ ✅ OK      ║
+║ IHQ_RACEMASA         ║ "POSITIVO"        ║ ✅ OK      ║
+║ Score de validación  ║ 100.0%            ║ ✅ OK      ║
+║ Completitud          ║ 3/3 (100%)        ║ ✅ OK      ║
+╚══════════════════════╩═══════════════════╩════════════╝
+
+════════════════════════════════════════════════════════════════════════════════
+
+📊 VALIDACIÓN DE OBJETIVOS:
+
+   ✅ Objetivo 1: IHQ_CK34BETAE12
+      Meta: NO EXTRAÍDO → "NEGATIVO"
+      Resultado: "NEGATIVOS" ✅
+
+   ✅ Objetivo 2: IHQ_P63
+      Meta: "NO MENCIONADO" → "NEGATIVO"
+      Resultado: "NEGATIVOS" ✅
+
+   ✅ Objetivo 3: Score
+      Meta: 88.9% → 100%
+      Resultado: 100.0% ✅
+
+════════════════════════════════════════════════════════════════════════════════
+
+🔍 EVIDENCIA DEL OCR:
+
+Formato agrupado encontrado (línea 31-32):
+   "...glándulas atípicas que pierden expresión de células basales 
+    (p63 y CK34BETA negativos), y son positivas para racemasa."
+
+Patrón v6.5.79 que capturó:
+   r'\(p63\s+y\s+CK34BETA\s+(negativos?)\)'
+
+Extracción:
+   IHQ_P63 = "NEGATIVOS" ✅
+   IHQ_CK34BETAE12 = "NEGATIVOS" ✅
+
+════════════════════════════════════════════════════════════════════════════════
+
+📈 MÉTRICAS FINALES:
+
+Auditoría Inteligente (FUNC-01):
+   ✅ Validaciones OK: 9/9
+   ✅ Warnings: 0
+   ✅ Errores: 0
+   ✅ Score: 100.0%
+   ✅ Estado: OK
+
+Biomarcadores:
+   ✅ Solicitados: 3 (P63, CK34BE12, RACEMASA)
+   ✅ Extraídos: 3/3 (100% cobertura)
+   ✅ No mapeados: 0
+   ✅ Valores incorrectos: 0
+
+════════════════════════════════════════════════════════════════════════════════
+
+🚨 RECOMENDACIONES:
+
+   ⚠️ CRÍTICO: Validación Anti-Regresión
+      Validar casos de referencia con formatos INDIVIDUALES
+      para asegurar que nuevos patrones no rompieron casos existentes.
+
+   📝 Actualizar documentación:
+      - Agregar v6.5.79 al CHANGELOG
+      - Documentar formato agrupado como caso de uso soportado
+
+   🔄 Reprocesar casos similares:
+      Identificar casos previos con score < 100% por formato agrupado
+      y reprocesarlos con v6.5.79.
+
+════════════════════════════════════════════════════════════════════════════════
+
+✅ CONCLUSIÓN:
+
+   CORRECCIÓN EXITOSA ✅
+   - Todos los objetivos cumplidos al 100%
+   - Score de validación: 100.0%
+   - Sin warnings ni errores
+   - Formato agrupado ahora soportado
+
+   PRÓXIMO PASO:
+   Validar casos de referencia (anti-regresión) antes de considerar
+   la corrección como permanente.
+
+════════════════════════════════════════════════════════════════════════════════
+
+Generado: 2026-02-03 00:36:56
+Reporte completo: VALIDACION_FIX_v6.5.79_IHQ250268.md
+Auditoría JSON: auditoria_inteligente_IHQ250268.json
+Debug map: debug_map_IHQ250268_20260203_003641.json
+
+════════════════════════════════════════════════════════════════════════════════

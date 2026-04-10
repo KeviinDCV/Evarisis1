@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "titulo": "FUNC-05B: Análisis de Casos Problemáticos - Mejora de FUNC-05",
+    "fecha_creacion": "2025-11-18 01:58:59",
+    "version": "1.0.0",
+    "autor": "Sistema EVARISIS - data-auditor agent",
+    "archivo_destino": "herramientas_ia/auditor_sistema.py",
+    "linea_insercion": "Después de línea 3112 (return resultado de FUNC-05)",
+    "backup_creado": "auditor_sistema.py.backup_func05_mejora_*"
+  },
+  "resumen_ejecutivo": {
+    "que_hace": "Analiza casos problemáticos (incompletos + mal validados) y genera TODO-LIST consolidado",
+    "que_mejora": "FUNC-05 actual solo analiza casos incompletos. FUNC-05B añade análisis de validación semántica",
+    "complementa_no_reemplaza": true,
+    "func_05_actual": "corregir_completitud_automatica() - se mantiene sin cambios",
+    "func_05b_nueva": "analizar_casos_problematicos() - nueva funcionalidad adicional"
+  },
+  "funcionalidades": {
+    "modo_incompletos": {
+      "descripcion": "Analiza casos con biomarcadores NO MAPEADO",
+      "fuente_datos": "data/reportes_importacion/reporte_importacion_*.json",
+      "output": "Lista de casos con biomarcadores sin columna BD"
+    },
+    "modo_validacion": {
+      "descripcion": "Analiza casos 'completos' pero con errores de validación",
+      "fuente_datos": "data/debug_maps/debug_map_IHQ*.json",
+      "validaciones": [
+        "DIAGNOSTICO_PRINCIPAL contaminado (keywords prohibidos)",
+        "IHQ_ORGANO vacío o contaminado",
+        "FACTOR_PRONOSTICO contaminado o incompleto"
+      ],
+      "output": "Lista de casos con problemas de validación semántica"
+    },
+    "modo_ambos": {
+      "descripcion": "Ejecuta ambos análisis (por defecto)",
+      "output": "TODO-LIST consolidado con prioridades"
+    }
+  },
+  "parametros": {
+    "tipo": {
+      "tipo_dato": "str",
+      "default": "ambos",
+      "opciones": [
+        "incompletos",
+        "validacion",
+        "ambos"
+      ],
+      "descripcion": "Tipo de análisis a realizar"
+    },
+    "generar_reporte": {
+      "tipo_dato": "bool",
+      "default": true,
+      "descripcion": "Si True, genera JSON en herramientas_ia/resultados/"
+    },
+    "limite": {
+      "tipo_dato": "Optional[int]",
+      "default": null,
+      "descripcion": "Límite de casos a analizar (para validación masiva)"
+    }
+  },
+  "output": {
+    "estructura_dict": {
+      "tipo_analisis": "str - tipo de análisis ejecutado",
+      "casos_incompletos": "List[Dict] - casos con biomarcadores no mapeados",
+      "casos_mal_validados": "List[Dict] - casos con errores de validación",
+      "todo_list": "List[Dict] - acciones priorizadas",
+      "estadisticas": "Dict - resumen agregado",
+      "errores": "List[str] - errores durante ejecución"
+    },
+    "archivo_json": "herramientas_ia/resultados/FUNC-05B_analisis_YYYYMMDD_HHMMSS.json",
+    "presentacion_consola": "Resumen compacto (10-15 líneas)"
+  },
+  "ejemplos_uso": [
+    {
+      "caso": "Analizar solo casos incompletos",
+      "codigo": "auditor = AuditorSistema()\nresultado = auditor.analizar_casos_problematicos(tipo='incompletos')"
+    },
+    {
+      "caso": "Analizar solo errores de validación (limitado a 50)",
+      "codigo": "resultado = auditor.analizar_casos_problematicos(tipo='validacion', limite=50)"
+    },
+    {
+      "caso": "Análisis completo (incompletos + validación)",
+      "codigo": "resultado = auditor.analizar_casos_problematicos()"
+    }
+  ],
+  "funciones_nuevas": [
+    {
+      "nombre": "analizar_casos_problematicos",
+      "lineas_codigo": "~200",
+      "descripcion": "Función principal - orquesta análisis completo"
+    },
+    {
+      "nombre": "_generar_accion_para_problema",
+      "lineas_codigo": "~30",
+      "descripcion": "Helper - genera acción sugerida por tipo de problema"
+    }
+  ],
+  "validaciones_implementadas": [
+    "CONTAMINACION_DIAGNOSTICO - Diagnostico principal con keywords del estudio M",
+    "ORGANO_INVALIDO - Organo vacío o demasiado largo (>100 chars)",
+    "CONTAMINACION_FACTOR - Factor pronóstico con keywords prohibidos",
+    "NO_MAPEADO - Biomarcadores sin columna IHQ_* en BD"
+  ],
+  "prioridades": {
+    "CRITICA": "Contaminación de diagnóstico principal",
+    "ALTA": "Biomarcadores no mapeados, órgano inválido, contaminación de factor",
+    "MEDIA": "Otros faltantes sin mapeo",
+    "BAJA": "Warnings menores"
+  },
+  "integracion": {
+    "func_01": "Usa debug_maps generados por FUNC-01 para análisis de validación",
+    "func_03": "Sugiere usar FUNC-03 para agregar biomarcadores no mapeados",
+    "func_06": "Sugiere usar FUNC-06 para reprocesar casos con extractores corregidos",
+    "reportes_importacion": "Lee reportes JSON generados por sistema de importación"
+  },
+  "instrucciones_implementacion": [
+    "1. BACKUP creado: auditor_sistema.py.backup_func05_mejora_YYYYMMDD_HHMMSS",
+    "2. Abrir auditor_sistema.py en VS Code o editor preferido",
+    "3. Ubicar línea 3112 (return resultado de FUNC-05)",
+    "4. Insertar línea en blanco (nueva línea 3113)",
+    "5. Copiar código completo desde func05b_codigo_completo.txt",
+    "6. Pegar en línea 3113",
+    "7. Verificar indentación (debe ser 4 espacios = nivel de método de clase)",
+    "8. Guardar archivo",
+    "9. Validar sintaxis: python -m py_compile herramientas_ia/auditor_sistema.py",
+    "10. Si OK, probar: python -c 'from herramientas_ia.auditor_sistema import AuditorSistema; print(\"OK\")'",
+    "11. Actualizar documentación en .claude/agents/data-auditor.md"
+  ],
+  "notas_importantes": [
+    "FUNC-05 actual (corregir_completitud_automatica) NO se modifica ni elimina",
+    "FUNC-05B es ADICIONAL, no reemplazo",
+    "Ambas funciones coexisten y sirven propósitos complementarios",
+    "FUNC-05: Workflow automático para UN caso específico",
+    "FUNC-05B: Análisis masivo de TODOS los casos problemáticos"
+  ]
+}

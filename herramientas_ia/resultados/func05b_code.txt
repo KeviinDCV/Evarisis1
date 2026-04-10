@@ -1,0 +1,154 @@
+    # ============================================================================
+    # FUNC-05B: Análisis de Casos Problemáticos (NUEVA VERSIÓN MEJORADA)
+    # ============================================================================
+
+    def analizar_casos_problematicos(
+        self, 
+        tipo: str = 'ambos',
+        generar_reporte: bool = True,
+        limite: Optional[int] = None
+    ) -> Dict[str, Any]:
+        """
+        FUNC-05B MEJORADA: Analiza casos con problemas y genera TODO-LIST consolidado.
+        
+        Esta función COMPLEMENTA (no reemplaza) a corregir_completitud_automatica.
+        
+        Modos de análisis:
+        - 'incompletos': Solo casos con biomarcadores NO MAPEADO
+        - 'validacion': Solo casos "completos" con errores de validación (score < 100%)
+        - 'ambos': Ambos tipos (por defecto)
+        
+        Proceso:
+        1. Lee reporte_importacion.json para casos incompletos
+        2. Audita casos marcados como "completos" con FUNC-01 para detectar errores de validación
+        3. Detecta patrones comunes de error
+        4. Genera TODO-LIST consolidado con prioridades
+        
+        Args:
+            tipo: Tipo de análisis ('incompletos', 'validacion', 'ambos')
+            generar_reporte: Si True, genera JSON en herramientas_ia/resultados/
+            limite: Límite de casos a analizar (para validación masiva)
+        
+        Returns:
+            Dict con:
+            - casos_incompletos: Lista de casos con biomarcadores no mapeados
+            - casos_mal_validados: Lista de casos con errores de validación
+            - todo_list: Lista priorizada de acciones
+            - estadisticas: Resumen agregado
+            
+        Ejemplo:
+            auditor = AuditorSistema()
+            
+            # Analizar solo incompletos
+            resultado = auditor.analizar_casos_problematicos(tipo='incompletos')
+            
+            # Analizar solo casos con errores de validación
+            resultado = auditor.analizar_casos_problematicos(tipo='validacion', limite=50)
+            
+            # Analizar ambos
+            resultado = auditor.analizar_casos_problematicos()
+        """
+        import json
+        import glob
+        from pathlib import Path
+        from datetime import datetime
+        
+        print(f"\n{'='*80}")
+        print(f"FUNC-05B: Analisis de Casos Problematicos")
+        print(f"{'='*80}")
+        print(f"Modo: {tipo}")
+        if limite:
+            print(f"Limite: {limite} casos")
+        
+        resultado = {
+            'tipo_analisis': tipo,
+            'casos_incompletos': [],
+            'casos_mal_validados': [],
+            'todo_list': [],
+            'estadisticas': {
+                'total_casos_incompletos': 0,
+                'total_casos_mal_validados': 0,
+                'total_problemas': 0,
+                'biomarcadores_no_mapeados': {},
+                'tipos_error_validacion': {}
+            },
+            'errores': []
+        }
+        
+        # ===== ANÁLISIS DE CASOS INCOMPLETOS =====
+        if tipo in ['incompletos', 'ambos']:
+            print(f"\nAnalizando casos incompletos (biomarcadores NO MAPEADO)...")
+            
+            try:
+                base_path = Path(__file__).parent.parent
+                reportes_dir = base_path / 'data' / 'reportes_importacion'
+                
+                # Buscar reporte más reciente
+                reportes = glob.glob(str(reportes_dir / 'reporte_importacion_*.json'))
+                if not reportes:
+                    print(f"   No se encontraron reportes de importacion")
+                else:
+                    reporte_path = max(reportes, key=lambda x: Path(x).stat().st_mtime)
+                    print(f"   Leyendo: {Path(reporte_path).name}")
+                    
+                    with open(reporte_path, 'r', encoding='utf-8') as f:
+                        reporte_data = json.load(f)
+                    
+                    # Analizar casos incompletos
+                    for caso_data in reporte_data.get('incompletos', []):
+                        numero_caso = caso_data.get('numero_caso', 'N/A')
+                        biomarcadores_faltantes = caso_data.get('biomarcadores_faltantes', [])
+                        
+                        # Extraer biomarcadores NO MAPEADO
+                        biomarcadores_no_mapeados = []
+                        otros_faltantes = []
+                        
+                        for bio in biomarcadores_faltantes:
+                            if "(NO MAPEADO)" in bio:
+                                nombre = bio.replace("(NO MAPEADO)", "").strip()
+                                biomarcadores_no_mapeados.append(nombre)
+                                
+                                # Estadísticas
+                                if nombre not in resultado['estadisticas']['biomarcadores_no_mapeados']:
+                                    resultado['estadisticas']['biomarcadores_no_mapeados'][nombre] = 0
+                                resultado['estadisticas']['biomarcadores_no_mapeados'][nombre] += 1
+                            else:
+                                otros_faltantes.append(bio)
+                        
+                        if biomarcadores_no_mapeados or otros_faltantes:
+                            caso_info = {
+                                'numero_caso': numero_caso,
+                                'biomarcadores_no_mapeados': biomarcadores_no_mapeados,
+                                'otros_faltantes': otros_faltantes,
+                                'completitud': caso_data.get('completitud', 0.0),
+                                'prioridad': 'ALTA' if biomarcadores_no_mapeados else 'MEDIA',
+                                'accion_sugerida': 'FUNC-03' if biomarcadores_no_mapeados else 'MANUAL'
+                            }
+                            resultado['casos_incompletos'].append(caso_info)
+                            
+                            # Agregar a TODO-LIST
+                            for bio in biomarcadores_no_mapeados:
+                                resultado['todo_list'].append({
+                                    'caso': numero_caso,
+                                    'problema': f"Biomarcador {bio} no mapeado",
+                                    'tipo': 'NO_MAPEADO',
+                                    'prioridad': 'ALTA',
+                                    'accion': f"FUNC-03: agregar_biomarcador('{bio}')",
+                                    'comando': f"auditor.agregar_biomarcador('{bio}')"
+                                })
+                    
+                    resultado['estadisticas']['total_casos_incompletos'] = len(resultado['casos_incompletos'])
+                    print(f"   {len(resultado['casos_incompletos'])} casos incompletos encontrados")
+                    
+            except Exception as e:
+                error_msg = f"Error analizando casos incompletos: {str(e)}"
+                resultado['errores'].append(error_msg)
+                print(f"   {error_msg}")
+        
+        # ===== ANÁLISIS DE CASOS CON ERRORES DE VALIDACIÓN =====
+        if tipo in ['validacion', 'ambos']:
+            print(f"\nAnalizando casos con errores de validacion (score < 100%)...")
+            
+            try:
+                base_path = Path(__file__).parent.parent
+                debug_maps_dir = base_path / 

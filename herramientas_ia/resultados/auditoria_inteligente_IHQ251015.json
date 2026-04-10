@@ -1,0 +1,139 @@
+{
+  "numero_caso": "IHQ251015",
+  "caso_num": 34,
+  "total_casos": 47,
+  "timestamp": "2025-11-05T16:27:54.812815",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 6,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "No hay estudio M previo"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "Rotulado masa retroareolar izquierda"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor_bd": "HER2: NEGATIVO, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "biomarcadores_fp": 3,
+      "total_solicitado": 6,
+      "cobertura_fp": "3/4",
+      "mensaje": "Factor pronóstico correcto con 3 biomarcador(es) - formato largo aceptado"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (6/6)",
+      "total_solicitado_ocr": 6,
+      "total_solicitado_bd": 6,
+      "estudios_ocr": [
+        "CK5 6",
+        "P63",
+        "GATA3",
+        "HER2",
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona"
+      ],
+      "estudios_bd": [
+        "CK5 6",
+        "P63",
+        "GATA3",
+        "HER2",
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 6,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [
+      "Campo Organo contiene problemas: texto duplicado: \"MAMA IZQUIERDA\""
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra institucional de..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "A-ROTULADO MASA RETROAREOLAR IZQUIERDA"
+    },
+    "organo": {
+      "estado": "ERROR",
+      "mensaje": "Campo Organo contiene problemas: texto duplicado: \"MAMA IZQUIERDA\"",
+      "valor_bd": "MASA RETROAEROLAL MAMA IZQUIERDA + CONDUCTOS TERMINALES MAMA IZQUIERDA",
+      "valor_sugerido": "MAMA IZQUIERDA",
+      "nota": "Debe limpiarse: \"MASA RETROAEROLAL MAMA IZQUIERDA + CONDUCTOS TERMINALES MAMA IZQUIERDA\" → \"MAMA IZQUIERDA\"",
+      "problemas_detectados": [
+        "texto duplicado: \"MAMA IZQUIERDA\""
+      ]
+    },
+    "formatos_biomarcadores": {
+      "estado": "OK",
+      "total_biomarcadores": 6,
+      "biomarcadores_con_problemas": 0,
+      "porcentaje_problemas": 0.0,
+      "problemas": [],
+      "mensaje": "Todos los biomarcadores tienen formato estandarizado"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 1,
+    "biomarcadores_solicitados": 6,
+    "biomarcadores_mapeados": 6,
+    "biomarcadores_no_mapeados": 0,
+    "completitud_biomarcadores": 100.0
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

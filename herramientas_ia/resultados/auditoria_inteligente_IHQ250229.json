@@ -1,0 +1,138 @@
+{
+  "numero_caso": "IHQ250229",
+  "caso_num": 18,
+  "total_casos": 50,
+  "timestamp": "2026-01-28T04:53:30.968306",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 4,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "ERROR",
+      "mensaje": "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
+      "valor_bd": "NO APLICA",
+      "valor_ocr": "EXOCÉRVIX\" CON DIAGNÓSTICO PRINCIPAL DE “SUGESTIVA DE LESIÓN ESCAMOSA INTRAEPITELIAL CERVICAL DE BAJO GRADO ”",
+      "patron_encontrado": "bloque M + diagnóstico de \"...\"",
+      "sugerencia": "Verificar medical_extractor.extract_diagnostico_coloracion()"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "CERVICITIS AGUDA"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: POSITIVO (KI67 PRESENTA MARCACIÓN DE CELULARIDAD DE MEMBRANA BASAL (MARCACIÓN USUAL))",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (2/2)",
+      "total_solicitado_ocr": 2,
+      "total_solicitado_bd": 2,
+      "estudios_ocr": [
+        "P16",
+        "Ki-67"
+      ],
+      "estudios_bd": [
+        "P16",
+        "Ki-67"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 2,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "BD indica MALIGNO pero no se encontraron keywords malignos en OCR"
+    ],
+    "errores": [
+      "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material proveniente de Hospita..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "ENDOCÉRVIX"
+    },
+    "malignidad": {
+      "estado": "WARNING",
+      "mensaje": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+      "valor_bd": "MALIGNO",
+      "keywords_buscados": [
+        "CARCINOMA",
+        "ADENOCARCINOMA",
+        "SARCOMA",
+        "MELANOMA",
+        "LINFOMA",
+        "LEUCEMIA",
+        "NEOPLASIA MALIGNA",
+        "TUMOR MALIGNO",
+        "METASTASIS",
+        "METASTÁSICO",
+        "INVASIVO",
+        "INFILTRANTE",
+        "NEOPLASIA",
+        "MIELOMA",
+        "PLASMOCITOMA",
+        "TUMOR DEL ESTROMA GASTROINTESTINAL",
+        "LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO",
+        "NIC 3",
+        "CIN 3",
+        "GLIOMA"
+      ],
+      "nota": "Revisar manualmente si la clasificación es correcta"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 77.8,
+    "score_final": 77.8,
+    "validaciones_ok": 7,
+    "total_validaciones": 9,
+    "warnings": 1,
+    "errores": 1
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

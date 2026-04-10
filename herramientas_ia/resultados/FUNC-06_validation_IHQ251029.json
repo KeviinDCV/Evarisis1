@@ -1,0 +1,71 @@
+{
+  "caso": "IHQ251029",
+  "timestamp": "2025-11-10T22:55:09.823133",
+  "func06_execution": {
+    "status": "COMPLETED_WITH_ISSUES",
+    "cases_reprocessed": 47,
+    "database_regenerated": true
+  },
+  "biomarkers_validation": {
+    "newly_added_via_func03": {
+      "IHQ_CROMOGRANINA": {
+        "column_exists": true,
+        "value_extracted": false,
+        "value_in_db": "N/A",
+        "status": "NOT_EXTRACTED"
+      },
+      "IHQ_SINAPTOFISINA": {
+        "column_exists": true,
+        "value_extracted": false,
+        "value_in_db": "N/A",
+        "status": "NOT_EXTRACTED"
+      }
+    },
+    "previously_corrected": {
+      "IHQ_CKAE1AE3": {
+        "column_exists": true,
+        "value_extracted": true,
+        "value_in_db": "POSITIVO",
+        "status": "MAINTAINED"
+      }
+    },
+    "other_biomarkers": {
+      "IHQ_CD56": {
+        "value_in_db": "POSITIVO",
+        "status": "OK"
+      },
+      "IHQ_KI-67": {
+        "value_in_db": "2%",
+        "status": "OK"
+      }
+    }
+  },
+  "ihq_estudios_solicitados": {
+    "value": "CD56, CROMOGRANINA A, SINAPTOFISINA, CKAE1AE3, Ki-67",
+    "biomarkers_listed": [
+      "CD56",
+      "CROMOGRANINA A",
+      "SINAPTOFISINA",
+      "CKAE1AE3",
+      "Ki-67"
+    ],
+    "total_count": 5
+  },
+  "diagnostico_principal": "TUMOR NEUROENDOCRINO BIEN DIFERENCIADO,",
+  "overall_assessment": {
+    "func03_columns_added": "SUCCESS",
+    "database_regenerated": "SUCCESS",
+    "reprocessing_completed": "SUCCESS",
+    "extraction_working": "FAILED - Values not extracted from PDF"
+  },
+  "issue_identified": {
+    "root_cause": "Extraction patterns in biomarker_extractor.py not matching PDF text format",
+    "evidence": "IHQ_ESTUDIOS_SOLICITADOS shows biomarkers are detected, but individual columns remain N/A",
+    "next_steps": [
+      "1. Check actual text format in PDF for CROMOGRANINA and SINAPTOFISINA",
+      "2. Verify extraction patterns in biomarker_extractor.py match the format",
+      "3. Update patterns if needed",
+      "4. Re-run FUNC-06 to reprocess with updated patterns"
+    ]
+  }
+}

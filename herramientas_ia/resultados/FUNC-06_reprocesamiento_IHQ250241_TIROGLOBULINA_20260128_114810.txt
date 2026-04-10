@@ -1,0 +1,55 @@
+================================================================================
+REPORTE DE REPROCESAMIENTO FUNC-06 - IHQ250241
+================================================================================
+Caso: IHQ250241
+Timestamp: 2026-01-28 11:48:10
+Version: v6.5.36 (TIROGLOBULINA agregada)
+
+CONTEXTO:
+- TIROGLOBULINA recien agregada al sistema
+- Caso IHQ250241 reprocesado con FUNC-06
+- Objetivo: Validar extraccion de TIROGLOBULINA
+
+================================================================================
+RESULTADOS DE EXTRACCION
+================================================================================
+Total biomarcadores extraidos: 6/6
+
+BIOMARCADORES DETECTADOS:
+  [OK] CK20: "NEGATIVO"
+  [OK] CK7: "POSITIVO"
+  [OK] CKAE1AE3: "POSITIVO"
+  [OK] PAX8: "POSITIVO"
+  [OK] TIROGLOBULINA: "POSITIVO"
+  [OK] TTF1: "POSITIVO"
+
+VALIDACION ESPERADA vs REAL:
+  [OK] IHQ_TIROGLOBULINA: "POSITIVO" (ESPERADO) -> "POSITIVO" (EXTRAIDO)
+  [OK] IHQ_CK7: "POSITIVO" (ESPERADO) -> "POSITIVO" (EXTRAIDO)
+  [OK] IHQ_CK20: "NEGATIVO" (ESPERADO) -> "NEGATIVO" (EXTRAIDO)
+  [OK] IHQ_CKAE1AE3: "POSITIVO" (ESPERADO) -> "POSITIVO" (EXTRAIDO)
+  [OK] IHQ_PAX8: "POSITIVO" (ESPERADO) -> "POSITIVO" (EXTRAIDO)
+  [OK] IHQ_TTF1: "POSITIVO" (ESPERADO) -> "POSITIVO" (EXTRAIDO)
+
+EVIDENCIA DEL PDF (OCR):
+  Estudios solicitados: "CK7, CK20, CKAE1E3, TTF-1, Tiroglobulina, PAX-8"
+  Resultado: "Las celulas tumorales son positivas para CK7, CKAE1E3, PAX-8, TTF-1, Tiroglobulina"
+
+================================================================================
+METRICAS FINALES
+================================================================================
+Score de validacion: 100%
+Estado final: OK
+Biomarcadores: 6/6 (100%)
+Errores: 0
+Warnings: 0
+
+================================================================================
+CONCLUSION
+================================================================================
+[OK] TIROGLOBULINA extraida correctamente como "POSITIVO"
+[OK] Todos los 6 biomarcadores esperados fueron extraidos
+[OK] Los valores extraidos coinciden 100% con el OCR del PDF
+[OK] No hay regresion en biomarcadores previos (CK7, CK20, CKAE1AE3, PAX8, TTF1)
+[OK] Caso IHQ250241 validado exitosamente con score 100%
+================================================================================

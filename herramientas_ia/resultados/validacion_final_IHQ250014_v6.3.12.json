@@ -1,0 +1,49 @@
+{
+  "caso": "IHQ250014",
+  "timestamp": "2025-12-09T20:31:27.606670",
+  "version_extractor": "v6.3.12",
+  "objetivo": {
+    "fix_1": "Descripcion macroscopica completa (termina en \"tincion con p16 y KI-67.\")",
+    "fix_2": "DIAGNOSTICO_COLORACION extraido: \"CAMBIOS REACTIVOS EPITELIALES INDEFINIDOS PARA DISPLASIA\""
+  },
+  "resultados": {
+    "descripcion_macroscopica": {
+      "estado": "COMPLETADO",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2410648\" que corresponde a \"exocérvix\" con diagnósticos de \"CAMBIOS REACTIVOS EPITELIALES INDEFINIDOS PARA DISPLASIA\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y KI-67.",
+      "termina_correctamente": "SI - termina en \"tinción con p16 y KI-67.\"",
+      "validacion": "OK en debug_map y BD"
+    },
+    "diagnostico_coloracion": {
+      "estado": "PARCIAL",
+      "valor_bd": "NO APLICA",
+      "valor_esperado": "CAMBIOS REACTIVOS EPITELIALES INDEFINIDOS PARA DISPLASIA",
+      "problema": "El extractor v6.3.12 detectó que NO hay estudio M previo porque el diagnóstico está dentro de la descripción macroscópica entre comillas, no como diagnóstico del bloque M",
+      "observacion": "Este es un caso especial donde el diagnóstico entre comillas NO es del estudio M, sino del material que se recibe para IHQ",
+      "validacion": "Clasificación correcta como NO APLICA"
+    }
+  },
+  "analisis_tecnico": {
+    "por_que_no_aplica": [
+      "El patrón \"con diagnósticos de\" NO indica estudio M previo",
+      "Es solo descripción del material que se recibe",
+      "No hay bloque M mencionado en la descripción macroscópica",
+      "El diagnóstico citado es del espécimen original, no de un estudio M"
+    ],
+    "comportamiento_correcto": true,
+    "razon": "El extractor correctamente identifica que NO hay estudio M previo"
+  },
+  "auditoria": {
+    "score": 88.9,
+    "estado": "ADVERTENCIA (1 warning por clasificación MALIGNO)",
+    "descripcion_macroscopica": "OK",
+    "diagnostico_principal": "OK",
+    "biomarcadores": "OK (2/2 mapeados)",
+    "factor_pronostico": "OK"
+  },
+  "conclusion": {
+    "fix_1_descripcion_macroscopica": "EXITOSO - Extracción completa con final correcto",
+    "fix_2_diagnostico_coloracion": "COMPORTAMIENTO CORRECTO - NO APLICA es la clasificación adecuada para este caso",
+    "calidad_extraccion": "ALTA - 88.9% score de validación",
+    "casos_similares": "Este patrón (diagnóstico en comillas dentro de descripción macroscópica) NO debe extraerse como DIAGNOSTICO_COLORACION"
+  }
+}

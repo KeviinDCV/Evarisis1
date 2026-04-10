@@ -1,0 +1,38 @@
+{
+  "caso": "IHQ250239",
+  "version": "v6.5.32",
+  "problema": "Patrones MMR capturan texto incorrecto",
+  "patron_actual": "(?i)[\\+]?\\s*Resultado\\s+de\\s+MLH1[:\\s]*(.+?)(?:\\n|$)",
+  "texto_ocr": {
+    "formato": "Resultado de MLH1: expresión nuclear intacta | Resultado de MLH2: ...",
+    "caracteristica": "TODO EN UNA LÍNEA separado por |",
+    "problema": "Patrón captura desde MLH1 hasta fin de línea (incluye todos los demás marcadores)"
+  },
+  "valores_extraidos_actuales": {
+    "IHQ_MLH1": ", MLH2, MSH6 Y PMS2)",
+    "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+    "IHQ_MSH6": "Y PMS2",
+    "IHQ_PMS2": ")"
+  },
+  "valores_esperados": {
+    "IHQ_MLH1": "POSITIVO",
+    "IHQ_MSH2": "POSITIVO",
+    "IHQ_MSH6": "POSITIVO",
+    "IHQ_PMS2": "POSITIVO"
+  },
+  "causa_raiz": "Patrón (.+?) es no-greedy pero captura hasta \n. En texto con | separadores, captura TODO.",
+  "solucion_propuesta": {
+    "patron_nuevo": "(?i)Resultado\\s+de\\s+MLH1[:\\s]*([^|]+?)(?:\\s*\\||\\n|$)",
+    "explicacion": "Capturar hasta | o salto de línea, lo que ocurra primero",
+    "mejoras": [
+      "Usar [^|]+ para NO capturar el separador |",
+      "Lookahead (?=\\s*\\|) para detenerse antes del siguiente resultado",
+      "Normalización automática: expresión nuclear intacta → POSITIVO"
+    ]
+  },
+  "warning_sintaxis": {
+    "linea": "r\"(?i)[\\+]?\\s*Resultado...\"",
+    "problema": "\\+ debe ser \\+ en raw string",
+    "fix": "Cambiar [\\+] por [+] (no necesita escape en character class)"
+  }
+}

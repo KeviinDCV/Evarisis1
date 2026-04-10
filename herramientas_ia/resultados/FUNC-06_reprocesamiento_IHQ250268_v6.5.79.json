@@ -1,0 +1,146 @@
+{
+  "caso": "IHQ250268",
+  "timestamp": "2026-02-03T00:36:56",
+  "version_extractor": "6.5.79",
+  "pdf_path": "pdfs_patologia/IHQ DEL 263 AL 313.pdf",
+  "caso_num": 6,
+  "total_casos_pdf": 49,
+  
+  "objetivo_correcciones": {
+    "version": "v6.5.79",
+    "cambios_implementados": [
+      {
+        "archivo": "core/extractors/biomarker_extractor.py",
+        "biomarcador": "CK34BETAE12",
+        "lineas": "1923-1937",
+        "patrones_agregados": 3,
+        "descripcion": "Patrones para formato agrupado: '(p63 y CK34BETA negativos)'"
+      },
+      {
+        "archivo": "core/extractors/biomarker_extractor.py",
+        "biomarcador": "P63",
+        "lineas": "1487-1503",
+        "patrones_agregados": 2,
+        "descripcion": "Patrones para formato agrupado con CK34BETA"
+      }
+    ],
+    "causa_raiz": "Formato AGRUPADO en OCR no soportado por patrones individuales previos",
+    "formato_problematico": "(p63 y CK34BETA negativos)"
+  },
+  
+  "estado_anterior": {
+    "nota": "Este caso IHQ250268 fue procesado por PRIMERA VEZ en el lote del 2026-02-02",
+    "explicacion": "No existe estado 'ANTES' porque el caso NO había sido procesado previamente",
+    "backup_consultado": "backups/func06/huv_oncologia_pre_func06_IHQ250268_20260203_003638.db",
+    "resultado_backup": "Caso no encontrado (primera vez procesado)",
+    "score_anterior": "N/A (no existía auditoría previa)"
+  },
+  
+  "estado_actual": {
+    "IHQ_P63": "NEGATIVOS",
+    "IHQ_CK34BETAE12": "NEGATIVOS",
+    "IHQ_RACEMASA": "POSITIVO",
+    "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK34BE12, RACEMASA, CK34BETAE12",
+    "score_validacion": 100.0,
+    "completitud_biomarcadores": "3/3 (100%)",
+    "warnings": 0,
+    "errores": 0,
+    "estado_final": "OK"
+  },
+  
+  "validacion_objetivos": {
+    "objetivo_1": {
+      "campo": "IHQ_CK34BETAE12",
+      "meta": "Extraer valor 'NEGATIVO' (antes NO EXTRAÍDO)",
+      "resultado": "NEGATIVOS",
+      "estado": "CUMPLIDO"
+    },
+    "objetivo_2": {
+      "campo": "IHQ_P63",
+      "meta": "Extraer valor 'NEGATIVO' (antes 'NO MENCIONADO')",
+      "resultado": "NEGATIVOS",
+      "estado": "CUMPLIDO"
+    },
+    "objetivo_3": {
+      "campo": "Score",
+      "meta": "Subir a 100% (antes 88.9%)",
+      "resultado": 100.0,
+      "estado": "CUMPLIDO"
+    }
+  },
+  
+  "evidencia_ocr": {
+    "formato_detectado": "AGRUPADO",
+    "texto_original": "glándulas atípicas que pierden expresión de células basales (p63 y CK34BETA negativos), y son positivas para racemasa",
+    "patron_capturado": "\(p63\s+y\s+CK34BETA\s+(negativos?)\)",
+    "match": "(p63 y CK34BETA negativos)",
+    "extraccion": {
+      "IHQ_P63": "NEGATIVOS",
+      "IHQ_CK34BETAE12": "NEGATIVOS"
+    }
+  },
+  
+  "metricas_finales": {
+    "auditoria_inteligente": {
+      "score_validacion": 100.0,
+      "validaciones_ok": 9,
+      "total_validaciones": 9,
+      "warnings": 0,
+      "errores": 0,
+      "estado": "OK"
+    },
+    "biomarcadores": {
+      "solicitados_ocr": 3,
+      "extraidos": 3,
+      "mapeados": 3,
+      "no_mapeados": 0,
+      "valores_incorrectos": 0,
+      "cobertura_porcentaje": 100.0
+    }
+  },
+  
+  "recomendaciones": {
+    "critica": {
+      "tipo": "VALIDACION_ANTI_REGRESION",
+      "prioridad": "ALTA",
+      "descripcion": "Validar casos de referencia con formatos INDIVIDUALES para asegurar que nuevos patrones no rompieron casos existentes",
+      "casos_sugeridos": [
+        "Casos con P63 individual (formato estándar)",
+        "Casos con CK34BETAE12 individual",
+        "Casos con formato agrupado similar"
+      ]
+    },
+    "documentacion": {
+      "tipo": "ACTUALIZAR_CHANGELOG",
+      "prioridad": "MEDIA",
+      "acciones": [
+        "Agregar v6.5.79 al CHANGELOG con cambios de CK34BETAE12 y P63",
+        "Documentar formato agrupado como caso de uso soportado"
+      ]
+    },
+    "reprocesamiento": {
+      "tipo": "CASOS_SIMILARES",
+      "prioridad": "BAJA",
+      "descripcion": "Identificar casos previos con score < 100% por formato agrupado y reprocesarlos con v6.5.79"
+    }
+  },
+  
+  "conclusion": {
+    "estado": "CORRECCION_EXITOSA",
+    "objetivos_cumplidos": 3,
+    "objetivos_totales": 3,
+    "score_final": 100.0,
+    "sin_errores": true,
+    "sin_warnings": true,
+    "formato_agrupado_soportado": true,
+    "proximo_paso": "Validación anti-regresión en casos de referencia"
+  },
+  
+  "archivos_generados": {
+    "reporte_completo": "herramientas_ia/resultados/VALIDACION_FIX_v6.5.79_IHQ250268.md",
+    "resumen_ejecutivo": "herramientas_ia/resultados/RESUMEN_EJECUTIVO_v6.5.79_IHQ250268.txt",
+    "auditoria_json": "herramientas_ia/resultados/auditoria_inteligente_IHQ250268.json",
+    "debug_map": "data/debug_maps/debug_map_IHQ250268_20260203_003641.json",
+    "reporte_func06": "herramientas_ia/resultados/FUNC-06_reprocesamiento_IHQ250268_v6.5.79.json"
+  }
+}

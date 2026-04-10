@@ -1,0 +1,149 @@
+
+================================================================================
+REPORTE FINAL: FUNC-06 VALIDACION COMPLETA - CASO IHQ251029
+================================================================================
+Fecha: 2025-11-10 23:37:08
+Correcciones aplicadas: 4
+PDF origen: pdfs_patologia/IHQ DEL 980 AL 1037.pdf
+
+================================================================================
+RESULTADOS DE CORRECCIONES (ANTES vs DESPUES)
+================================================================================
+
+CORRECCION 1: Sincronizacion Cromogranina/Sinaptofisina (unified_extractor.py:933-939)
+------------------------------------------------------------------------------
+Campo: IHQ_CROMOGRANINA
+   ANTES:   "N/A"
+   DESPUES: "POSITIVO"
+   Status:  EXITO - Sincronizado desde columna inglesa
+
+Campo: IHQ_SINAPTOFISINA
+   ANTES:   "N/A"
+   DESPUES: "POSITIVO"
+   Status:  EXITO - Sincronizado desde columna inglesa
+
+
+CORRECCION 2: Filtro AE3 en Factor Pronostico (medical_extractor.py:973, 1486)
+------------------------------------------------------------------------------
+Campo: Factor pronostico
+   ANTES:   "Ki-67 DEL 2% / AE3 y Ki-67"
+   DESPUES: "Ki-67 DEL 2% / AE3 y Ki-67"
+   Status:  FALLO - AE3 aun presente en Factor Pronostico
+   
+   ANALISIS:
+   - Valor esperado: "Ki-67: 2%"
+   - Valor actual: "Ki-67 DEL 2% / AE3 y Ki-67"
+   - AE3 NO fue filtrado correctamente
+   - Requiere revision adicional del filtro
+
+
+CORRECCION 3: Extraccion IHQ_ORGANO desde DIAGNOSTICO (medical_extractor.py:3205-3211)
+------------------------------------------------------------------------------
+Campo: IHQ_ORGANO
+   ANTES:   "LOS HALLAZGOS MORFOLOGICOS FAVORECEN UN TUMOR NEUROENDOCRINO"
+   DESPUES: "MESENTERIO"
+   Status:  EXITO - Extraido correctamente desde seccion DIAGNOSTICO
+
+
+CORRECCION 4: Captura multi-linea en Organo (medical_extractor.py:2687)
+------------------------------------------------------------------------------
+Campo: Organo
+   ANTES:   "BIOPSIA MASA"
+   DESPUES: "BIOPSIA MASA"
+   Status:  SIN CAMBIO - Ya era correcto (no requeria multi-linea en este caso)
+   
+   NOTA: El campo Organo ya tenia el valor correcto. La correccion de captura
+         multi-linea funcionara para casos donde el organo este dividido en
+         multiples lineas (ej: "BIOPSIA MASA
+INTRAABDOMINAL").
+
+
+================================================================================
+VALIDACION FUNC-01 (AUDITORIA INTELIGENTE POST-REPROCESAMIENTO)
+================================================================================
+
+Score de validacion: 66.7% (6/9 validaciones OK)
+Estado final: INCOMPLETO
+
+CAMPOS VALIDADOS:
+   IHQ_ORGANO:                   OK - "MESENTERIO"
+   Organo:                       OK - "BIOPSIA MASA"
+   DIAGNOSTICO_PRINCIPAL:        OK - "TUMOR NEUROENDOCRINO BIEN DIFERENCIADO,"
+   DESCRIPCION_MACROSCOPICA:     OK - Extraida correctamente
+   DESCRIPCION_MICROSCOPICA:     OK - Extraida correctamente
+   FORMATOS_BIOMARCADORES:       OK - Todos con formato estandarizado
+
+WARNINGS (2):
+   1. DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR
+   2. BD indica MALIGNO pero no se encontraron keywords malignos en OCR
+
+BIOMARCADORES:
+   Total solicitado (OCR): 5
+   Mapeados en BD: 4 (80%)
+   NO mapeados: 1 (CROMOGRANINA A - sin columna)
+   
+   Lista de biomarcadores:
+   - CD56: OK (mapeado)
+   - CROMOGRANINA A: NO MAPEADO (requiere agregar columna IHQ_CROMOGRANINA_A)
+   - SINAPTOFISINA: OK (mapeado)
+   - CKAE1AE3: OK (mapeado)
+   - Ki-67: OK (mapeado)
+
+
+================================================================================
+RESUMEN EJECUTIVO
+================================================================================
+
+CORRECCIONES EXITOSAS: 2/4 (50%)
+   EXITO: IHQ_CROMOGRANINA sincronizacion
+   EXITO: IHQ_SINAPTOFISINA sincronizacion
+   EXITO: IHQ_ORGANO extraccion desde DIAGNOSTICO
+   N/A:   Organo multi-linea (no aplicable en este caso)
+
+CORRECCIONES FALLIDAS: 1/4 (25%)
+   FALLO: Factor pronostico - Filtro AE3 no funciono
+
+PUNTOS PENDIENTES:
+   1. Factor pronostico aun contiene "AE3" cuando deberia ser solo "Ki-67: 2%"
+      - Verificar que 'AE3' este en lista BIOMARCADORES_TIPIFICACION
+      - Verificar logica de filtrado en extract_prognostic_factor()
+      - Posible causa: patron regex no captura "/ AE3 y Ki-67"
+   
+   2. Biomarcador "CROMOGRANINA A" sin columna en BD
+      - Requiere ejecutar FUNC-03 para agregar IHQ_CROMOGRANINA_A
+   
+   3. Warning de MALIGNIDAD requiere revision manual
+      - OCR no contiene keywords malignos estandar
+      - Clasificacion como MALIGNO puede ser correcta para tumores neuroendocrinos
+
+
+================================================================================
+RECOMENDACIONES
+================================================================================
+
+1. PRIORIDAD ALTA: Revisar filtro AE3 en medical_extractor.py
+   - Lineas: 973, 1486
+   - Verificar lista BIOMARCADORES_TIPIFICACION contiene 'AE3'
+   - Verificar logica de filtrado captura patron "/ AE3 y Ki-67"
+   - Probar con patron: r'/\s*(?:AE3|AE1|CKAE1/AE3)\s+y\s+Ki-67'
+
+2. PRIORIDAD MEDIA: Agregar columna IHQ_CROMOGRANINA_A
+   - Ejecutar: auditor.agregar_biomarcador('CROMOGRANINA A', ['CROMOGRANINA_A'])
+   - Reprocesar caso con FUNC-06
+
+3. PRIORIDAD BAJA: Revisar clasificacion MALIGNIDAD
+   - Caso IHQ251029 clasificado como MALIGNO
+   - OCR no contiene keywords malignos estandar
+   - Verificar manualmente si tumor neuroendocrino es maligno
+
+
+================================================================================
+ARCHIVOS GENERADOS
+================================================================================
+
+Backup BD (antes):  backups/func06/huv_oncologia_pre_func06_IHQ251029_20251110_233708.db
+Reporte comparacion: herramientas_ia/resultados/FUNC06_reporte_IHQ251029_20251110_233708.json
+Auditoria FUNC-01:  herramientas_ia/resultados/auditoria_inteligente_IHQ251029.json
+Reporte final:      herramientas_ia/resultados/FUNC06_validacion_completa_IHQ251029.txt
+
+================================================================================

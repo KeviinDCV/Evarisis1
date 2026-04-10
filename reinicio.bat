@@ -65,28 +65,138 @@ if %contador_pyc% GTR 0 (
 )
 
 :: ============================================================================
+:: PASO 2.5: LIMPIEZA DE CACHÉS ADICIONALES DE PYTHON
+:: ============================================================================
+echo.
+echo ════════════════════════════════════════════════════════════════════════
+echo [PASO 2.5/5] 🧹 LIMPIANDO CACHÉS ADICIONALES (.pyo, pytest, mypy, etc.)
+echo ════════════════════════════════════════════════════════════════════════
+echo.
+
+set "contador_pyo=0"
+set "contador_cache_dirs=0"
+
+:: Eliminar archivos .pyo (Python optimized bytecode)
+echo   🔍 Buscando archivos .pyo...
+for /r "%~dp0" %%i in (*.pyo) do (
+    if exist "%%i" (
+        echo   [ELIMINANDO] %%i
+        del /f /q "%%i" 2>nul
+        set /a contador_pyo+=1
+    )
+)
+
+if %contador_pyo% GTR 0 (
+    echo   ✅ %contador_pyo% archivo^(s^) .pyo eliminado^(s^)
+) else (
+    echo   ℹ️ No se encontraron archivos .pyo
+)
+
+:: Eliminar carpetas de caché de herramientas
+echo.
+echo   🔍 Buscando carpetas de caché de herramientas...
+
+:: .pytest_cache
+for /d /r "%~dp0" %%i in (.pytest_cache) do (
+    if exist "%%i" (
+        echo   [ELIMINANDO] %%i
+        rmdir /s /q "%%i" 2>nul
+        set /a contador_cache_dirs+=1
+    )
+)
+
+:: .mypy_cache
+for /d /r "%~dp0" %%i in (.mypy_cache) do (
+    if exist "%%i" (
+        echo   [ELIMINANDO] %%i
+        rmdir /s /q "%%i" 2>nul
+        set /a contador_cache_dirs+=1
+    )
+)
+
+:: .ruff_cache
+for /d /r "%~dp0" %%i in (.ruff_cache) do (
+    if exist "%%i" (
+        echo   [ELIMINANDO] %%i
+        rmdir /s /q "%%i" 2>nul
+        set /a contador_cache_dirs+=1
+    )
+)
+
+:: .tox
+for /d /r "%~dp0" %%i in (.tox) do (
+    if exist "%%i" (
+        echo   [ELIMINANDO] %%i
+        rmdir /s /q "%%i" 2>nul
+        set /a contador_cache_dirs+=1
+    )
+)
+
+:: .eggs
+for /d /r "%~dp0" %%i in (.eggs) do (
+    if exist "%%i" (
+        echo   [ELIMINANDO] %%i
+        rmdir /s /q "%%i" 2>nul
+        set /a contador_cache_dirs+=1
+    )
+)
+
+:: .cache (carpeta genérica de caché)
+for /d /r "%~dp0" %%i in (.cache) do (
+    if exist "%%i" (
+        echo   [ELIMINANDO] %%i
+        rmdir /s /q "%%i" 2>nul
+        set /a contador_cache_dirs+=1
+    )
+)
+
+:: .hypothesis (caché de hypothesis testing)
+for /d /r "%~dp0" %%i in (.hypothesis) do (
+    if exist "%%i" (
+        echo   [ELIMINANDO] %%i
+        rmdir /s /q "%%i" 2>nul
+        set /a contador_cache_dirs+=1
+    )
+)
+
+:: .coverage (archivos de cobertura)
+for /r "%~dp0" %%i in (.coverage) do (
+    if exist "%%i" (
+        echo   [ELIMINANDO] %%i
+        del /f /q "%%i" 2>nul
+    )
+)
+
+if %contador_cache_dirs% GTR 0 (
+    echo   ✅ %contador_cache_dirs% carpeta^(s^) de caché eliminada^(s^)
+) else (
+    echo   ℹ️ No se encontraron carpetas de caché adicionales
+)
+
+:: ============================================================================
 :: PASO 3: LIMPIEZA DE CARPETA DATA
 :: ============================================================================
 echo.
 echo ════════════════════════════════════════════════════════════════════════
-echo [PASO 3/5] 🗑️ LIMPIANDO CARPETA DATA (BASE DE DATOS Y ARCHIVOS TEMPORALES)
+echo [PASO 3/5] 🗑️ ELIMINANDO COMPLETAMENTE LA CARPETA DATA
 echo ════════════════════════════════════════════════════════════════════════
 echo.
 
 set "DATA_DIR=%~dp0data"
 
 if exist "%DATA_DIR%\" (
-    echo   ⚠️ ADVERTENCIA: Se eliminarán TODOS los datos de:
+    echo   ⚠️ ADVERTENCIA: Se eliminará COMPLETAMENTE:
     echo   📁 %DATA_DIR%
     echo.
-    echo   Esto incluye:
+    echo   Esto incluye TODO su contenido:
     echo     • Base de datos (huv_oncologia_NUEVO.db)
     echo     • Debug maps (debug_maps/)
     echo     • Auditorías IA (auditorias_ia/)
     echo     • Exportaciones (exports/)
+    echo     • Cualquier otro archivo o carpeta dentro de data/
     echo.
 
-    choice /C SN /M "¿Deseas continuar con la eliminación de datos (S/N)?"
+    choice /C SN /M "¿Deseas continuar con la eliminación COMPLETA de data (S/N)?"
 
     if errorlevel 2 (
         echo.
@@ -97,33 +207,26 @@ if exist "%DATA_DIR%\" (
     )
 
     echo.
-    echo   🗑️ Eliminando contenido de data/...
+    echo   🗑️ Eliminando TODA la carpeta data/...
 
-    :: Eliminar contenido preservando la estructura de carpetas principales
-    if exist "%DATA_DIR%\huv_oncologia_NUEVO.db" (
-        echo   [ELIMINANDO] Base de datos: huv_oncologia_NUEVO.db
-        del /f /q "%DATA_DIR%\huv_oncologia_NUEVO.db" 2>nul
+    rmdir /s /q "%DATA_DIR%" 2>nul
+
+    if %ERRORLEVEL% equ 0 (
+        echo   ✅ Carpeta data eliminada completamente
+    ) else (
+        echo   ⚠️ Advertencia: Hubo problemas al eliminar algunos archivos
+        echo   ℹ️ Algunos archivos podrían estar en uso
     )
 
-    if exist "%DATA_DIR%\debug_maps\" (
-        echo   [ELIMINANDO] Debug maps: debug_maps\*
-        rmdir /s /q "%DATA_DIR%\debug_maps" 2>nul
-        mkdir "%DATA_DIR%\debug_maps" 2>nul
-    )
+    echo   📁 Recreando carpeta data vacía...
+    mkdir "%DATA_DIR%" 2>nul
 
-    if exist "%DATA_DIR%\auditorias_ia\" (
-        echo   [ELIMINANDO] Auditorías IA: auditorias_ia\*
-        rmdir /s /q "%DATA_DIR%\auditorias_ia" 2>nul
-        mkdir "%DATA_DIR%\auditorias_ia" 2>nul
+    if exist "%DATA_DIR%\" (
+        echo   ✅ Carpeta data recreada (vacía y lista para uso)
+    ) else (
+        echo   ⚠️ No se pudo recrear la carpeta data
+        echo   ℹ️ Se creará automáticamente al iniciar la aplicación
     )
-
-    if exist "%DATA_DIR%\exports\" (
-        echo   [ELIMINANDO] Exportaciones: exports\*
-        rmdir /s /q "%DATA_DIR%\exports" 2>nul
-        mkdir "%DATA_DIR%\exports" 2>nul
-    )
-
-    echo   ✅ Carpeta data limpiada (estructura preservada)
 ) else (
     echo   ℹ️ Carpeta data no existe (se creará al iniciar la app)
 )
@@ -213,8 +316,10 @@ echo                    ✅ APLICACIÓN CERRADA CORRECTAMENTE
 echo ════════════════════════════════════════════════════════════════════════
 echo.
 echo   💡 Resumen de limpieza:
-echo     • Caché Python: %contador_cache% carpeta(s) eliminada(s)
-echo     • Archivos .pyc: %contador_pyc% archivo(s) eliminado(s)
+echo     • Carpetas __pycache__: %contador_cache% eliminada(s)
+echo     • Archivos .pyc: %contador_pyc% eliminado(s)
+echo     • Archivos .pyo: %contador_pyo% eliminado(s)
+echo     • Cachés adicionales (pytest, mypy, etc.): %contador_cache_dirs% eliminada(s)
 echo     • Carpeta data: Limpiada y lista para uso
 echo.
 echo   🔄 Para reiniciar nuevamente, ejecuta: reinicio.bat

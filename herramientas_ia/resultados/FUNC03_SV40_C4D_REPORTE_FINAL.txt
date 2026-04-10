@@ -1,0 +1,98 @@
+====================================================================================================
+REPORTE DE EJECUCION: FUNC-03 - AGREGAR BIOMARCADORES SV40 Y C4D
+====================================================================================================
+Fecha: 2025-11-05 20:22:29
+
+1. RESULTADO DE EJECUCION
+----------------------------------------------------------------------------------------------------
+
+ESTADO: DETECCION CORRECTA - BIOMARCADORES YA EXISTEN
+
+FUNC-03 ejecuto dos llamadas:
+  - auditor.agregar_biomarcador("SV40", ["SV-40", "SV 40", "sv40", "SIMIAN VIRUS 40"])
+  - auditor.agregar_biomarcador("C4D", ["C4d", "C-4D", "C 4D", "c4d", "COMPLEMENT C4D"])
+
+RESULTADO:
+  - SV40: ERROR_YA_EXISTE (biomarcador ya integrado en el sistema)
+  - C4D:  ERROR_YA_EXISTE (biomarcador ya integrado en el sistema)
+
+INTERPRETACION:
+  FUNC-03 detecto correctamente que SV40 y C4D ya fueron agregados previamente.
+  Los patrones de extraccion ya estan implementados en biomarker_extractor.py.
+  No es necesario realizar modificaciones adicionales en los archivos.
+
+2. VERIFICACION DE INTEGRACION COMPLETA
+----------------------------------------------------------------------------------------------------
+
+Los biomarcadores SV40 y C4D estan COMPLETAMENTE integrados en 6 archivos:
+
+1. database_manager.py (core/database_manager.py)
+  Integracion:
+    [OK] IHQ_SV40 y IHQ_C4D en NEW_TABLE_COLUMNS_ORDER (linea ~170)
+    [OK] IHQ_SV40 y IHQ_C4D en CREATE TABLE (linea ~259)
+    [OK] IHQ_SV40 y IHQ_C4D en new_biomarkers list (linea ~369)
+
+2. auditor_sistema.py (herramientas_ia/auditor_sistema.py)
+  Integracion:
+    [OK] 'SV40': 'IHQ_SV40' en BIOMARKER_ALIAS_MAP (linea ~486)
+    [OK] 'C4D': 'IHQ_C4D' en BIOMARKER_ALIAS_MAP (linea ~473)
+
+3. ui.py (ui.py)
+  Integracion:
+    [OK] IHQ_SV40 en cols_to_show (linea ~4285)
+    [OK] IHQ_C4D en cols_to_show (linea ~4282)
+
+4. validation_checker.py (core/validation_checker.py)
+  Integracion:
+    [OK] 'SV40': 'IHQ_SV40' en all_biomarker_mapping (linea ~414)
+    [OK] 'C4D': 'IHQ_C4D' en all_biomarker_mapping (linea ~404)
+
+5. biomarker_extractor.py (core/extractors/biomarker_extractor.py)
+  Integracion:
+    [OK] 'SV40': {...} con patrones de extraccion (linea ~1549-1570)
+    [OK] 'C4D': {...} con patrones de extraccion (linea ~1574-1595)
+    [OK] Patrones especiales para formato "negativo para ambas" (IHQ251018)
+
+6. unified_extractor.py (core/unified_extractor.py)
+  Integracion:
+    [OK] 'SV40': 'IHQ_SV40' en mapeo principal (linea ~712)
+    [OK] 'C4D': 'IHQ_C4D' en mapeo principal (linea ~708)
+    [OK] 'SV40': 'IHQ_SV40' en mapeo secundario (lineas ~1455, 1480, 1623, 1643)
+    [OK] 'C4D': 'IHQ_C4D' en mapeo secundario (lineas ~1451, 1481, 1620, 1644)
+
+3. BACKUPS AUTOMATICOS
+----------------------------------------------------------------------------------------------------
+
+FUNC-03 NO creo backups en esta ejecucion porque detecto duplicados.
+
+Backups PREVIOS creados por FUNC-03:
+  Ubicacion: backups/func03_biomarcadores/
+  Fecha: 2025-11-04 y 2025-11-05 (3 versiones)
+  Total archivos: 18 backups (6 archivos x 3 versiones)
+
+4. SIGUIENTE PASO OBLIGATORIO
+----------------------------------------------------------------------------------------------------
+
+ADVERTENCIA: Los biomarcadores estan integrados pero NO aplicados en casos existentes.
+
+Para que SV40 y C4D se extraigan del caso IHQ251018:
+
+RECOMENDADO: Reprocesar con FUNC-06
+  Ejecutar: auditor.reprocesar_caso_completo("IHQ251018")
+
+5. ESTADO DEL SISTEMA
+----------------------------------------------------------------------------------------------------
+
+ESTADO ACTUAL:
+  [OK] SV40: Integracion completa en 6 archivos
+  [OK] C4D: Integracion completa en 6 archivos
+  [OK] Patrones de extraccion implementados
+  [OK] Schema de BD actualizado
+  [OK] Interfaz actualizada
+
+PENDIENTE:
+  [PENDIENTE] Reprocesar caso IHQ251018 con FUNC-06
+
+====================================================================================================
+FIN DEL REPORTE
+====================================================================================================

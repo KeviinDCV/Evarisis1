@@ -1,0 +1,117 @@
+{
+  "numero_caso": "IHQ250139",
+  "caso_num": 30,
+  "total_casos": 49,
+  "timestamp": "2026-01-05T19:50:12.132383",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 9,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "PROLIFERACIÓN HEMATOLINFOIDE QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 8,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "CD10",
+        "CD117",
+        "CD20",
+        "CD34",
+        "CD79A",
+        "GLICOFORINA",
+        "PAX5",
+        "TDT"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "CD10",
+        "CD117",
+        "CD20",
+        "CD34",
+        "CD79A",
+        "GLICOFORINA",
+        "PAX5",
+        "TDT"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M250..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MEDULA ÓSEA"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

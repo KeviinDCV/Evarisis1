@@ -1,0 +1,172 @@
+================================================================================
+FUNC-06: REPROCESAMIENTO IHQ250034
+================================================================================
+
+Fecha: 2026-01-07 18:40:37
+Extractor: v6.4.22
+Objetivo: Eliminar filtrado incorrecto de "EN A1" en IHQ_ESTUDIOS_SOLICITADOS
+
+================================================================================
+PROBLEMA IDENTIFICADO (ANTES)
+================================================================================
+
+Campo: IHQ_ESTUDIOS_SOLICITADOS
+Contenido incorrecto:
+  - EN A1 (referencia de bloque de parafina, NO es biomarcador)
+  - CKAE1AE3
+  - GATA3
+  - Ki-67
+  - Receptor de Estrógeno
+  - Receptor de Progesterona
+
+Total: 6 elementos (1 INCORRECTO)
+
+Causa raíz:
+  El extractor capturaba "EN A1" como si fuera un biomarcador, cuando
+  realmente es una referencia al bloque de parafina donde se procesó
+  la muestra (similar a "bloque M2510141").
+
+================================================================================
+SOLUCIÓN IMPLEMENTADA (v6.4.22)
+================================================================================
+
+Archivo modificado:
+  core/extractors/medical_extractor.py
+
+Cambio aplicado:
+  Línea ~890: Agregado filtro para referencias de bloque
+
+  Patrón regex: r"EN\s+[A-Z]\d+"
+  
+  Este patrón detecta y elimina:
+    - EN A1, EN A2, EN A3, ...
+    - EN B1, EN B2, EN B3, ...
+    - EN C1, EN C2, EN C3, ...
+    - etc.
+
+Lógica del filtro:
+  1. Extrae biomarcadores de DESCRIPCIÓN MACROSCÓPICA
+  2. Normaliza cada biomarcador
+  3. Aplica filtro de referencias de bloque
+  4. Solo guarda biomarcadores reales
+
+================================================================================
+RESULTADO (DESPUÉS DEL REPROCESAMIENTO)
+================================================================================
+
+Campo: IHQ_ESTUDIOS_SOLICITADOS
+Contenido corregido:
+  1. CKAE1AE3
+  2. GATA3
+  3. Ki-67
+  4. Receptor de Estrógeno
+  5. Receptor de Progesterona
+
+Total: 5 biomarcadores (TODOS CORRECTOS)
+
+Validación FUNC-01:
+  - Score: 100.0%
+  - Estado: OK
+  - Warnings: 0
+  - Errores: 0
+
+Confirmación:
+  ✓ "EN A1" eliminado completamente
+  ✓ Solo biomarcadores reales preservados
+  ✓ Sin pérdida de biomarcadores legítimos
+
+================================================================================
+IMPACTO EN BD
+================================================================================
+
+Casos afectados:
+  Se reprocesaron 49 casos del rango IHQ250001-IHQ250050
+
+Cambios aplicados:
+  - IHQ250034: IHQ_ESTUDIOS_SOLICITADOS corregido (6 → 5 biomarcadores)
+  - Otros casos del rango: Validados con mismo filtro
+
+Debug map actualizado:
+  data/debug_maps/debug_map_IHQ250034_20260107_184050.json
+
+Backup BD (antes de reprocesamiento):
+  backups/huv_oncologia_NUEVO_backup_20260107_184037.db
+
+================================================================================
+VALIDACIÓN POST-REPROCESAMIENTO
+================================================================================
+
+Auditoría FUNC-01 ejecutada:
+  Comando: python herramientas_ia/auditor_sistema.py IHQ250034 --inteligente
+  
+  Resultados:
+    ✓ DESCRIPCION_MACROSCOPICA: OK
+    ✓ DIAGNOSTICO_COLORACION: OK
+    ✓ DESCRIPCION_MICROSCOPICA: OK
+    ✓ DIAGNOSTICO_PRINCIPAL: OK
+    ✓ IHQ_ORGANO: OK
+    ✓ FACTOR_PRONOSTICO: OK
+    ✓ Biomarcadores: OK (5/5 mapeados)
+    ✓ MALIGNIDAD: OK
+    ✓ Campos obligatorios: OK
+
+  Score final: 100.0%
+  Estado: OK
+
+================================================================================
+RECOMENDACIONES
+================================================================================
+
+1. VALIDAR OTROS CASOS DEL RANGO 001-050:
+   Revisar si otros casos tenían referencias similares (EN B1, EN C1, etc.)
+   
+   Comando sugerido:
+   python -c "
+   import json, glob
+   for f in glob.glob('data/debug_maps/debug_map_IHQ2500*_*.json'):
+       with open(f, 'r', encoding='utf-8') as fp:
+           d = json.load(fp)
+           estudios = d.get('base_datos', {}).get('campos_criticos', {}).get('IHQ_ESTUDIOS_SOLICITADOS', '')
+           if 'EN' in estudios.upper():
+               print(f'REVISAR: {f.split(\"/\")[-1].split(\"_\")[2]} -> {estudios}')
+   "
+
+2. MONITOREAR PRÓXIMOS RANGOS:
+   El filtro v6.4.22 debería prevenir el problema en futuros procesamientos,
+   pero validar los primeros casos de cada rango nuevo (052-107, 108-159, etc.)
+
+3. DOCUMENTAR EN CHANGELOG:
+   Registrar esta corrección en documentacion/CHANGELOG.md bajo v6.4.22
+
+================================================================================
+CONCLUSIÓN
+================================================================================
+
+Estado: ✓ EXITOSO
+
+Corrección v6.4.22 funcionó correctamente:
+  ✓ Referencias de bloque (EN A1, EN B2, etc.) filtradas automáticamente
+  ✓ Solo biomarcadores reales en IHQ_ESTUDIOS_SOLICITADOS
+  ✓ Score validación: 100%
+  ✓ Sin warnings ni errores
+  ✓ Sin pérdida de biomarcadores legítimos
+
+El caso IHQ250034 ahora tiene datos correctos y puede considerarse validado.
+
+================================================================================
+ARCHIVOS GENERADOS
+================================================================================
+
+1. Auditoría post-reprocesamiento:
+   herramientas_ia/resultados/auditoria_inteligente_IHQ250034.json
+
+2. Debug map actualizado:
+   data/debug_maps/debug_map_IHQ250034_20260107_184050.json
+
+3. Este reporte:
+   herramientas_ia/resultados/FUNC-06_reprocesamiento_IHQ250034_v6.4.22.txt
+
+4. Backup BD (restaurar si necesario):
+   backups/huv_oncologia_NUEVO_backup_20260107_184037.db
+
+================================================================================

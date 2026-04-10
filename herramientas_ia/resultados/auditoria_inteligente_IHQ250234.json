@@ -1,0 +1,129 @@
+{
+  "numero_caso": "IHQ250234",
+  "caso_num": 23,
+  "total_casos": 50,
+  "timestamp": "2026-01-28T06:35:27.387750",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 12,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NEOPLASIA INVASIVA EN PATRÓN SÓLIDO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN CARCINOMA HEPATOCELULAR MODERADAMENTE DIFERENCIADO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 biomarcadores faltantes en BD; 1 biomarcadores sin mapeo/vacíos; 2 biomarcadores extras en BD",
+      "total_solicitado_ocr": 10,
+      "total_solicitado_bd": 11,
+      "estudios_ocr": [
+        "CKE1E3",
+        "CK7",
+        "CK19",
+        "CK20",
+        "CA19-9",
+        "CDX2",
+        "TTF-1",
+        "ARGINASA",
+        "HEPATOCITO",
+        "GLYPICAN 3"
+      ],
+      "estudios_bd": [
+        "CKAE1AE3",
+        "CK7",
+        "CK19",
+        "CK20",
+        "CA19-9",
+        "CDX2",
+        "TTF-1",
+        "ARGINASA",
+        "HEPATOCITO",
+        "GLYPICAN 3",
+        "GPC3"
+      ],
+      "faltantes_en_bd": [
+        "CKE1E3"
+      ],
+      "extras_en_bd": [
+        "CKAE1AE3",
+        "GPC3"
+      ],
+      "mapeados": 9,
+      "no_mapeados": [
+        "CKE1E3 (sin columna)"
+      ],
+      "valores_incorrectos": [],
+      "cobertura": 90.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se realizan niveles al bloque M2501410-2 que corresponden a biopsia de hígado con diagnóstico de \"NE..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "HIGADO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

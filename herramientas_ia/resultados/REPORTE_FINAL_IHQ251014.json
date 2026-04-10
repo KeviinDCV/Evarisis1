@@ -1,0 +1,64 @@
+{
+  "caso": "IHQ251014",
+  "timestamp": "2025-11-05T02:24:01.709423",
+  "auditoria_final": {
+    "estado": "NO_EJECUTADA",
+    "razon": "Caso no procesado - debug_map no existe",
+    "accion_requerida": "Procesar caso en ui.py primero"
+  },
+  "comparativa": {
+    "auditoria_inicial": {
+      "score": 66.7,
+      "biomarcadores_no_mapeados": 2,
+      "valores_incorrectos": 2,
+      "estado": "INCOMPLETO"
+    },
+    "auditoria_final": {
+      "score": "N/A",
+      "nota": "No se puede ejecutar sin debug_map",
+      "estado": "PENDIENTE_PROCESAMIENTO"
+    }
+  },
+  "correcciones_aplicadas": {
+    "sistema": [
+      "Agregada columna IHQ_TDT a database_manager.py",
+      "Agregado mapeo TDT en auditor_sistema.py",
+      "Agregado TDT en ui.py",
+      "Agregado TDT en validation_checker.py",
+      "Agregados patrones TDT en biomarker_extractor.py (4 lugares)",
+      "Agregado mapeo TDT en unified_extractor.py (2 lugares)"
+    ],
+    "nota": "GLICOFORINA NO fue agregado (pendiente de usuario)"
+  },
+  "pasos_siguientes": [
+    "1. Borrar BD: rm data/huv_oncologia_NUEVO.db",
+    "2. Abrir interfaz: python ui.py",
+    "3. Procesar PDF del caso IHQ251014 (rango 980-1037)",
+    "4. Ejecutar auditoria final: python herramientas_ia/auditor_sistema.py IHQ251014 --inteligente"
+  ],
+  "biomarcadores_validados": {
+    "TDT": {
+      "estado": "AGREGADO_AL_SISTEMA",
+      "archivos_modificados": 6,
+      "columna_bd": "IHQ_TDT",
+      "patrones": [
+        "TDT",
+        "T-DT",
+        "TERMINAL DEOXYNUCLEOTIDYL TRANSFERASE"
+      ]
+    },
+    "GLICOFORINA": {
+      "estado": "PENDIENTE",
+      "razon": "Usuario decidio no agregar",
+      "nota": "Puede agregarse despues si se requiere"
+    },
+    "CD117": {
+      "estado": "YA_EXISTE",
+      "nota": "Columna IHQ_CD117 ya existia en el sistema"
+    },
+    "CD34": {
+      "estado": "YA_EXISTE",
+      "nota": "Columna IHQ_CD34 ya existia en el sistema"
+    }
+  }
+}

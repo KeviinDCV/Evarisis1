@@ -1,0 +1,137 @@
+{
+  "numero_caso": "IHQ250162",
+  "caso_num": 2,
+  "total_casos": 50,
+  "timestamp": "2026-01-08T21:56:26.314948",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 15,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NEOPLASIA FUSOCELULAR DE BAJO GRADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
+      "valor_bd": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN SCHWANNOMA DE TIPO CELULAR"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 20%, Receptor de Progesterona: NEGATIVO",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67",
+        "RP"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 12,
+      "total_solicitado_bd": 13,
+      "estudios_ocr": [
+        "BETACATENINA",
+        "Ki-67",
+        "SMA",
+        "EMA",
+        "Receptor de Progesterona",
+        "CD34",
+        "SOX10",
+        "S100",
+        "GFAP",
+        "DESMINA",
+        "P53",
+        "CALRETININA"
+      ],
+      "estudios_bd": [
+        "BETACATENINA",
+        "Ki-67",
+        "SMA",
+        "EMA",
+        "Receptor de Progesterona",
+        "CD34",
+        "SOX10",
+        "S100",
+        "GFAP",
+        "DESMINA",
+        "P53",
+        "CALRETININA",
+        "DESMIN"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 12,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "Ki-67",
+          "columna": "IHQ_KI-67",
+          "valor_bd": "20%",
+          "valor_ocr": "d"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se realizan niveles al bloque M2501397-B1 que corresponden a \"tumor infratemporal\" con diagnostico d..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "FOSA INFRATEMPORAL"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

@@ -1,0 +1,190 @@
+{
+  "funcion": "FUNC-06 (Reprocesar caso completo - VERSION MANUAL)",
+  "caso": "IHQ251014",
+  "timestamp": "2025-11-05T01:17:42.576230",
+  "version_sistema": "6.0.17",
+  "pasos_ejecutados": {
+    "paso_1": {
+      "nombre": "Localizacion de PDF",
+      "estado": "EXITOSO",
+      "pdf_path": "pdfs_patologia/IHQ DEL 980 AL 1037.pdf",
+      "rango_casos": "980-1037"
+    },
+    "paso_2": {
+      "nombre": "Eliminacion de BD anterior",
+      "estado": "EXITOSO (BD fue eliminada por usuario)",
+      "metodo": "Manual (rm data/huv_oncologia_NUEVO.db)"
+    },
+    "paso_3": {
+      "nombre": "Regeneracion de BD con nuevas columnas",
+      "estado": "EXITOSO",
+      "columnas_agregadas": [
+        "IHQ_TDT",
+        "IHQ_GLICOFORINA"
+      ],
+      "total_columnas": 150
+    },
+    "paso_4": {
+      "nombre": "Procesamiento completo del PDF",
+      "estado": "EXITOSO",
+      "casos_procesados": 48,
+      "pdf_procesado": "IHQ DEL 980 AL 1037.pdf"
+    },
+    "paso_5": {
+      "nombre": "Guardado en BD",
+      "estado": "EXITOSO",
+      "caso_guardado": "IHQ251014"
+    },
+    "paso_6": {
+      "nombre": "Generacion de debug_map",
+      "estado": "NO REALIZADO",
+      "razon": "Procesamiento batch no genera debug_maps individuales"
+    }
+  },
+  "resultados_extraccion": {
+    "biomarcadores_solicitados": {
+      "capturado": true,
+      "valor": "CKAE1AE3, TDT, CD138, CD38, CD56, CD117, CD5, CD3, CD5, CD10, CD20, CD34, GLICOFORINA A, MUM-1",
+      "total": 14
+    },
+    "biomarcadores_extraidos": {
+      "total": 6,
+      "con_valor": [
+        {
+          "columna": "IHQ_CD138",
+          "valor": "POSITIVO"
+        },
+        {
+          "columna": "IHQ_CD20",
+          "valor": "POSITIVO"
+        },
+        {
+          "columna": "IHQ_CD38",
+          "valor": "POSITIVO"
+        },
+        {
+          "columna": "IHQ_CD68",
+          "valor": "POSITIVO"
+        },
+        {
+          "columna": "IHQ_ESTUDIOS_SOLICITADOS",
+          "valor": "CKAE1AE3, TDT, CD138, CD38, CD56, CD117, CD5, CD3,..."
+        },
+        {
+          "columna": "IHQ_ORGANO",
+          "valor": "MEDULA OSEA"
+        }
+      ]
+    },
+    "biomarcadores_objetivo": {
+      "IHQ_TDT": {
+        "estado": "ERROR",
+        "valor": "N/A",
+        "esperado": "POSITIVO o NEGATIVO",
+        "razon": "Sin patron de extraccion en biomarker_extractor.py"
+      },
+      "IHQ_GLICOFORINA": {
+        "estado": "ERROR",
+        "valor": "N/A",
+        "esperado": "POSITIVO o NEGATIVO",
+        "razon": "Sin patron de extraccion en biomarker_extractor.py"
+      },
+      "IHQ_CD117": {
+        "estado": "WARNING",
+        "valor": "NO MENCIONADO",
+        "esperado": "POSITIVO o NEGATIVO",
+        "razon": "Patron existe pero no se detecto en PDF"
+      },
+      "IHQ_CD34": {
+        "estado": "WARNING",
+        "valor": "NO MENCIONADO",
+        "esperado": "POSITIVO o NEGATIVO",
+        "razon": "Patron existe pero no se detecto en PDF"
+      }
+    },
+    "diagnosticos": {
+      "DIAGNOSTICO_PRINCIPAL": {
+        "estado": "DESCONOCIDO",
+        "valor": "NEOPLASIA DE CELULAS PLASMATICAS (o similar)",
+        "necesita_verificacion": true
+      },
+      "DIAGNOSTICO_COLORACION": {
+        "estado": "NO CAPTURADO",
+        "valor": "NO ENCONTRADO",
+        "razon": "Caso IHQ (no tiene estudio M previo o formato diferente)"
+      }
+    }
+  },
+  "validacion_bd": {
+    "bd_existe": true,
+    "bd_path": "data/huv_oncologia_NUEVO.db",
+    "caso_en_bd": true,
+    "total_registros_bd": 97,
+    "columnas_nuevas": {
+      "IHQ_TDT": true,
+      "IHQ_GLICOFORINA": true
+    }
+  },
+  "estado_final": "PARCIALMENTE_EXITOSO",
+  "resumen": {
+    "exitoso": [
+      "BD regenerada con nuevas columnas IHQ_TDT e IHQ_GLICOFORINA",
+      "Caso IHQ251014 procesado y guardado en BD",
+      "6 biomarcadores extraidos correctamente (CD138, CD20, CD38, CD68, etc.)"
+    ],
+    "fallido": [
+      "TDT NO extraido (sin patron en biomarker_extractor.py)",
+      "GLICOFORINA NO extraido (sin patron en biomarker_extractor.py)",
+      "CD117 NO detectado en PDF (patron existe pero fallo)",
+      "CD34 NO detectado en PDF (patron existe pero fallo)",
+      "DIAGNOSTICO_COLORACION NO capturado",
+      "debug_map NO generado (limitacion de procesamiento batch)"
+    ]
+  },
+  "acciones_requeridas": [
+    {
+      "prioridad": "ALTA",
+      "accion": "Agregar patrones de extraccion para TDT y GLICOFORINA en biomarker_extractor.py",
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "funcion": "extract_biomarkers()",
+      "codigo_sugerido": "Agregar patrones tipo: r'TDT[:\\s]+(POSITIVO|NEGATIVO)' y r'GLICOFORINA\\s*A?[:\\s]+(POSITIVO|NEGATIVO)'"
+    },
+    {
+      "prioridad": "MEDIA",
+      "accion": "Verificar patrones de CD117 y CD34 (existen pero no detectan)",
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "investigar": "Por que CD117 y CD34 no se detectaron si estan en IHQ_ESTUDIOS_SOLICITADOS"
+    },
+    {
+      "prioridad": "BAJA",
+      "accion": "Generar debug_map manualmente para IHQ251014",
+      "razon": "Permitir ejecutar FUNC-01 (auditoria inteligente) que requiere debug_map"
+    },
+    {
+      "prioridad": "BAJA",
+      "accion": "Reprocesar caso nuevamente despues de corregir extractores",
+      "comando": "Ejecutar FUNC-06 nuevamente tras modificar biomarker_extractor.py"
+    }
+  ],
+  "comparativa_antes_despues": {
+    "antes": {
+      "columnas_ihq_totales": 103,
+      "biomarcadores_mapeados": 103,
+      "tiene_TDT": false,
+      "tiene_GLICOFORINA": false
+    },
+    "despues": {
+      "columnas_ihq_totales": 105,
+      "biomarcadores_mapeados": 105,
+      "tiene_TDT": true,
+      "tiene_GLICOFORINA": true,
+      "tdt_extraido": false,
+      "glicoforina_extraido": false
+    },
+    "mejora": {
+      "columnas_agregadas": 2,
+      "extraccion_mejorada": false,
+      "razon": "Columnas agregadas pero patrones de extraccion faltantes"
+    }
+  }
+}

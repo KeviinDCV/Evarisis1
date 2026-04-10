@@ -1,0 +1,154 @@
+{
+  "numero_caso": "IHQ251029",
+  "caso_num": 43,
+  "total_casos": 47,
+  "timestamp": "2025-11-11T01:42:46.613103",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 8,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "WARNING",
+      "mensaje": "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
+      "valor_bd": "LOS HALLAZGOS MORFOLOGICOS FAVORECEN UN TUMOR NEUROENDOCRINO",
+      "valor_ocr": null,
+      "nota": "Verificar manualmente si el diagnóstico está en un formato no estándar"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "TUMOR NEUROENDOCRINO BIEN DIFERENCIADO,"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor_bd": "Ki-67 DEL 2%",
+      "biomarcadores_fp": 1,
+      "total_solicitado": 5,
+      "cobertura_fp": "1/4",
+      "mensaje": "Factor pronóstico correcto con 1 biomarcador(es) - formato largo aceptado"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (5/5)",
+      "total_solicitado_ocr": 5,
+      "total_solicitado_bd": 5,
+      "estudios_ocr": [
+        "CD56",
+        "CROMOGRANINA A",
+        "SINAPTOFISINA",
+        "CKAE1AE3",
+        "Ki-67"
+      ],
+      "estudios_bd": [
+        "CD56",
+        "CROMOGRANINA A",
+        "SINAPTOFISINA",
+        "CKAE1AE3",
+        "Ki-67"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 5,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "Descripcion macroscopica coincide parcialmente con OCR (similitud: 67%)",
+      "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
+      "BD indica MALIGNO pero no se encontraron keywords malignos en OCR"
+    ],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "WARNING",
+      "mensaje": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 67%)",
+      "valor_bd": "Se recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado \"M2...",
+      "valor_ocr": "Se recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado\n\"M2..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTAN..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MESENTERIO"
+    },
+    "organo": {
+      "estado": "OK",
+      "mensaje": "Campo Organo está limpio",
+      "valor_bd": "BIOPSIA MASA INTRAABDOMINAL"
+    },
+    "formatos_biomarcadores": {
+      "estado": "OK",
+      "total_biomarcadores": 5,
+      "biomarcadores_con_problemas": 0,
+      "porcentaje_problemas": 0.0,
+      "problemas": [],
+      "mensaje": "Todos los biomarcadores tienen formato estandarizado"
+    },
+    "malignidad": {
+      "estado": "WARNING",
+      "mensaje": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+      "valor_bd": "MALIGNO",
+      "keywords_buscados": [
+        "CARCINOMA",
+        "ADENOCARCINOMA",
+        "SARCOMA",
+        "MELANOMA",
+        "LINFOMA",
+        "LEUCEMIA",
+        "NEOPLASIA MALIGNA",
+        "TUMOR MALIGNO",
+        "METASTASIS",
+        "METASTÁSICO",
+        "CÉLULAS TUMORALES",
+        "TIMOMA",
+        "TIMOMA AB",
+        "TIMOMA TIPO B"
+      ],
+      "nota": "Revisar manualmente si la clasificación es correcta"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 66.7,
+    "validaciones_ok": 6,
+    "total_validaciones": 9,
+    "warnings": 3,
+    "errores": 0,
+    "biomarcadores_solicitados": 5,
+    "biomarcadores_mapeados": 5,
+    "biomarcadores_no_mapeados": 0,
+    "completitud_biomarcadores": 100.0
+  },
+  "resumen": {},
+  "estado_final": "ADVERTENCIA"
+}

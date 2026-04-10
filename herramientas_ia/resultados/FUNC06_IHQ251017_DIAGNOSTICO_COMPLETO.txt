@@ -1,0 +1,180 @@
+
+================================================================================
+INFORME FINAL FUNC-06: CASO IHQ251017
+================================================================================
+
+FECHA: 2025-11-07 20:40:02
+VERSION EXTRACTORES: v6.2.3
+TAREA: Reprocesar caso con correccion de organos duplicados
+
+================================================================================
+RESUMEN EJECUTIVO
+================================================================================
+
+RESULTADO: ERROR - Correccion v6.2.3 NO funciono
+
+VALOR ESPERADO:
+  Campo Organo: "BIOPSIA DE MEDULA OSEA"
+  Campo IHQ_ORGANO: "MEDULA OSEA"
+
+VALOR OBTENIDO:
+  Campo Organo: "BIOPSIA DE MEDULA OSEA IHQ251017-B ESTUDIO DE INMUNOHISTOQUIMICA 898807 ESTUDIO ANATOMOPATOLOGICO DE MARCACION INMUNOHISTOQUIMICA BASICA (ESPECIFICO) BLOQUES Y LAMINAS BIOPSIA DE MEDULA OSEA"
+  Campo IHQ_ORGANO: "MEDULA OSEA" (con encoding corrupto)
+
+LONGITUD CAMPO ORGANO: 190 caracteres (esperado: 22)
+
+================================================================================
+DIAGNOSTICO TECNICO
+================================================================================
+
+PROBLEMA #1: PATRON DE DUPLICACION NO SE APLICÓ
+  - La funcion normalize_organ_name() CONTIENE la logica de deteccion
+  - La logica FUNCIONA correctamente en pruebas aisladas
+  - PERO el texto administrativo se captura ANTES de normalizar
+
+PROBLEMA #2: ORDEN DE EJECUCION INCORRECTO
+  - extract_organ_information() captura texto COMPLETO (con admin)
+  - normalize_organ_name() se ejecuta DESPUES
+  - Pero la captura YA incluyo todo el texto no deseado
+
+PROBLEMA #3: REGEX DE CAPTURA DEMASIADO INCLUSIVO
+  Ubicacion: medical_extractor.py, linea ~2520 (Estrategia 3)
+  
+  Patron actual:
+    bloques_pattern = r'bloques\s+y\s+laminas\s*
+?\s*([A-Z\s]+?)(?:\s+IHQ|\s+ESTUDIO|...)'
+  
+  Problema:
+    - Captura TODO hasta encontrar "\s+IHQ" (espacio + IHQ)
+    - Pero el texto real es "OSEA IHQ251017-B" (sin espacio suficiente)
+    - El grupo ([A-Z\s]+?) es demasiado inclusivo
+  
+  Texto capturado:
+    "BIOPSIA DE MEDULA OSEA IHQ251017-B ESTUDIO DE ... BIOPSIA DE MEDULA OSEA"
+
+PROBLEMA #4: NORMALIZE SE EJECUTA TARDE
+  - normalize_organ_name() se llama DESPUES de la captura
+  - Pero la captura ya incluyo el patron duplicado COMPLETO
+  - normalize_organ_name() recibe el texto ya contaminado
+
+================================================================================
+CAUSA RAIZ
+================================================================================
+
+FLUJO ACTUAL (INCORRECTO):
+  1. extract_organ_information() ejecuta Estrategia 3
+  2. bloques_pattern captura TODO el texto (incluyendo duplicado)
+  3. organo_completo = "BIOPSIA ... BIOPSIA" (190 caracteres)
+  4. normalize_organ_name(organo_completo)
+  5. normalize detecta duplicacion
+  6. PERO ya es tarde, el texto ya contamino otros campos
+
+FLUJO ESPERADO (CORRECTO):
+  1. extract_organ_information() ejecuta Estrategia 3
+  2. bloques_pattern captura SOLO hasta primer delimitador
+  3. organo_completo = "BIOPSIA DE MEDULA OSEA" (22 caracteres)
+  4. normalize_organ_name(organo_completo)
+  5. normalize valida y retorna texto limpio
+
+================================================================================
+SOLUCION PROPUESTA
+================================================================================
+
+CAMBIO #1: Mejorar regex de Estrategia 3 (CRITICO)
+
+Archivo: core/extractors/medical_extractor.py
+Funcion: extract_organ_information()
+Linea aproximada: ~2520
+
+CODIGO ACTUAL:
+    bloques_pattern = r'bloques\s+y\s+laminas\s*
+?\s*([A-Z\s]+?)(?:\s+IHQ|\s+ESTUDIO|...)'
+
+CODIGO PROPUESTO:
+    bloques_pattern = r'bloques\s+y\s+laminas\s*
+?\s*([A-Z\s]{5,50}?)(?=\s+IHQ|\s+ESTUDIO|\s+\d{5,}|
+)'
+    
+    Cambios:
+    - Cambiar [A-Z\s]+? por [A-Z\s]{5,50}? (limitar longitud maxima)
+    - Usar lookahead (?=...) en lugar de captura (mas estricto)
+    - Agregar patron \d{5,} para detectar numeros largos (898807)
+
+CAMBIO #2: Ejecutar normalize_organ_name() MAS TEMPRANO (ALTA PRIORIDAD)
+
+Aplicar normalize en CADA estrategia ANTES de validar longitud:
+
+    if bloques_match:
+        organo_from_bloques = bloques_match.group(1).strip()
+        # NUEVO: Normalizar INMEDIATAMENTE
+        organo_from_bloques = normalize_organ_name(organo_from_bloques)
+        if organo_from_bloques and len(organo_from_bloques) > 3:
+            # Ahora organo_from_bloques esta limpio
+            return organo_from_bloques
+
+CAMBIO #3: Agregar logging detallado (MEDIA PRIORIDAD)
+
+Para debug futuro:
+
+    if bloques_match:
+        organo_raw = bloques_match.group(1).strip()
+        print(f"DEBUG: Organo raw capturado: {organo_raw[:100]}")
+        organo_from_bloques = normalize_organ_name(organo_raw)
+        print(f"DEBUG: Organo normalizado: {organo_from_bloques}")
+
+================================================================================
+CASOS DE PRUEBA
+================================================================================
+
+CASO 1: IHQ251017 (FALLA ACTUAL)
+  Input: "BIOPSIA DE MEDULA OSEA IHQ251017-B ESTUDIO DE ... BIOPSIA DE MEDULA OSEA"
+  Output esperado: "BIOPSIA DE MEDULA OSEA"
+  Output actual: (texto completo sin limpiar)
+
+CASO 2: Organo simple
+  Input: "MAMA DERECHA"
+  Output esperado: "MAMA DERECHA"
+  Output actual: (probablemente OK)
+
+CASO 3: Organo con descripcion
+  Input: "BIOPSIA DE PIEL. BRAZO DERECHO"
+  Output esperado: "BIOPSIA DE PIEL"
+  Output actual: (verificar)
+
+================================================================================
+IMPACTO DE LA SOLUCION
+================================================================================
+
+BENEFICIOS:
+  1. Campo Organo limpio de texto administrativo
+  2. Campos mas legibles en reportes y exportaciones
+  3. normalize_organ_name() funcionara correctamente
+  4. Reduccion de longitud promedio del campo (190 -> 22 caracteres)
+
+RIESGOS:
+  1. Regex mas estricto puede NO capturar algunos casos edge
+  2. Requiere pruebas extensivas con casos reales
+  3. Puede afectar otros casos que funcionan actualmente
+
+MITIGACION:
+  1. Probar con lote de 100 casos representativos
+  2. Mantener fallbacks a otras estrategias
+  3. Logging detallado para detectar regresiones
+
+================================================================================
+SIGUIENTE PASO INMEDIATO
+================================================================================
+
+ACCION RECOMENDADA:
+  1. Modificar bloques_pattern en medical_extractor.py (linea ~2520)
+  2. Agregar normalize_organ_name() inmediatamente despues de captura
+  3. Probar con caso IHQ251017 en ambiente de desarrollo
+  4. Ejecutar FUNC-06 nuevamente para validar correccion
+  5. Si funciona, aplicar a produccion
+
+COMANDO PARA VALIDAR:
+  python herramientas_ia/auditor_sistema.py IHQ251017 --inteligente
+
+TIEMPO ESTIMADO: 15-30 minutos
+
+================================================================================

@@ -1,0 +1,35 @@
+{
+  "caso": "IHQ251017",
+  "fecha": "2025-11-07T21:41:49.369523",
+  "version_extractores": "v6.2.6",
+  "correccion_aplicada": "Patron 1 patient_extractor.py linea 237",
+  "descripcion_correccion": "Ahora se detiene en primer salto de linea usando lookahead",
+  "patron_corregido": "(?:Bloques y laminas...)\\s+([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\\s0-9]{2,60}?)(?=\\s*\\n|\\s*$)",
+  "resultado": {
+    "estado": "EXITOSO",
+    "campo_organo": {
+      "valor": "BIOPSIA DE MEDULA OSEA",
+      "longitud": 22,
+      "validaciones": {
+        "sin_codigo_ihq251017b": true,
+        "sin_frase_estudio_inmunohistoquimica": true,
+        "sin_codigo_898807": true,
+        "longitud_apropiada": true,
+        "palabras_clave_presentes": true
+      }
+    },
+    "campo_ihq_organo": {
+      "valor": "MEDULA OSEA",
+      "longitud": 11
+    }
+  },
+  "validacion_final": {
+    "todas_validaciones": "PASS",
+    "errores_detectados": 0,
+    "advertencias": 0
+  },
+  "impacto": {
+    "casos_afectados_por_patron": "IHQ251017, IHQ251017-B (duplicado eliminado)",
+    "otros_casos_beneficiados": "Cualquier caso con tabla de material multiple"
+  }
+}

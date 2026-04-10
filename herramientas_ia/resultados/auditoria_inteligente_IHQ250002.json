@@ -1,0 +1,134 @@
+{
+  "numero_caso": "IHQ250002",
+  "caso_num": 2,
+  "total_casos": 50,
+  "timestamp": "2026-01-07T17:03:47.453472",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 14,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NEOPLASIA EN PATRON ORGANOIDE",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "WARNING",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+      "valor_bd": "TUMOR NEUROENDOCRINO HIPOFISIARIO",
+      "valor_ocr": "HIPÓFISIS. LESIÓN. RESECCIÓN. ESTUDIO DE INMUNOHISTOQUIMICA: TUMOR NUEROENDOCRINO HIPOFISIARIO. EXPRESIÓN HORMONAL ACTH, NEGATIVO GH, NEGATIVO PROLACTINA, NEGATIVO TSH, POSITIVO LH, NEGATIVO FSH, POSI",
+      "nota": "Puede ser válido si es una versión resumida del diagnóstico completo"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 8%, Receptor de Estrógeno: POSITIVO",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67",
+        "RE"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "WARNING",
+      "mensaje": "6 biomarcadores extras en BD",
+      "total_solicitado_ocr": 6,
+      "total_solicitado_bd": 12,
+      "estudios_ocr": [
+        "CKAE1AE3",
+        "CAM5.2",
+        "GATA3",
+        "Receptor de Estrógeno",
+        "SYNAPTOFISINA",
+        "Ki-67"
+      ],
+      "estudios_bd": [
+        "CKAE1AE3",
+        "CAM5.2",
+        "GATA3",
+        "Receptor de Estrógeno",
+        "SYNAPTOFISINA",
+        "Ki-67",
+        "ACTH",
+        "GH",
+        "PROLACTINA",
+        "TSH",
+        "LH",
+        "FSH"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "ACTH",
+        "GH",
+        "PROLACTINA",
+        "TSH",
+        "LH",
+        "FSH"
+      ],
+      "mapeados": 6,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)"
+    ],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realiza estudio de inmunohistoquimica al caso institucional con rotulo M2410489 que corresponde a..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "HIPÓFISIS"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 77.8,
+    "score_final": 77.8,
+    "validaciones_ok": 7,
+    "total_validaciones": 9,
+    "warnings": 1,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "ADVERTENCIA"
+}

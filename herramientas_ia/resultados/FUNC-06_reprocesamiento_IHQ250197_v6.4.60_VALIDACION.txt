@@ -1,0 +1,139 @@
+
+================================================================================
+VALIDACION COMPLETA: IHQ250197 - Correcciones v6.4.60
+================================================================================
+Fecha: 2026-01-09 05:32:45
+Reprocesado con FUNC-06 (reprocesar_caso_completo)
+
+1. BIOMARCADORES EXTRAIDOS:
+--------------------------------------------------------------------------------
+[OK] IHQ_IDH: POSITIVO
+     Patron: "expresion fuerte y difusa para IDH"
+     Extractor: biomarker_extractor.py (patron narrativo positivo)
+     
+[OK] IHQ_P53: POSITIVO  
+     Patron: "marcacion positiva de P53"
+     Extractor: biomarker_extractor.py (patron narrativo positivo)
+     
+[OK] IHQ_GFAP: POSITIVO
+     Patron: "marcacion positiva de... GFAP"
+     Extractor: biomarker_extractor.py (patron narrativo positivo)
+     
+[OK] IHQ_SINAPTOFISINA: NEGATIVO
+     Patron: "Sinaptofisina negativo"
+     Extractor: biomarker_extractor.py (patron narrativo negativo)
+     
+[OK] IHQ_KI-67: 50%
+     Patron: "KI-67 Indice proliferativo del 50 %"
+     Extractor: biomarker_extractor.py (patron Ki-67 con porcentaje)
+
+2. DIAGNOSTICOS:
+--------------------------------------------------------------------------------
+[OK] DIAGNOSTICO_PRINCIPAL: ASTROCITOMA IDH MUTADO WHO IV
+     Ubicacion: Seccion DIAGNOSTICO del PDF
+     Extractor: medical_extractor.py
+     Limpieza: Correcto (sin contaminacion de estudio M)
+     
+[OK] DIAGNOSTICO_COLORACION: GLIOMA DIFUSO WHO IV
+     Ubicacion: DESCRIPCION MACROSCOPICA
+     Patron: "...con diagnosticos de GLIOMA DIFUSO WHO IV"
+     Extractor: medical_extractor.py
+
+3. MALIGNIDAD:
+--------------------------------------------------------------------------------
+[OK] MALIGNIDAD: MALIGNO
+     Razon: WHO IV detectado en DIAGNOSTICO_PRINCIPAL
+     Patron aplicado: V6.4.60 - Clasificacion WHO IV → MALIGNO
+     Extractor: medical_extractor.py
+     Fix: Correccion de patron para WHO IV (antes no detectaba)
+
+4. FACTOR PRONOSTICO:
+--------------------------------------------------------------------------------
+[OK] Factor pronostico: Ki-67: 50%
+     Contiene solo biomarcadores de pronostico (Ki-67)
+     Sin contaminacion de estudio M
+
+5. IHQ_ESTUDIOS_SOLICITADOS:
+--------------------------------------------------------------------------------
+[OK] Estudios solicitados: GFAP, Ki-67, P53, SYNAPTOFISINA
+     Cobertura: 4/4 biomarcadores mapeados correctamente
+     Todos los estudios solicitados tienen valores extraidos
+
+================================================================================
+METRICAS FINALES:
+================================================================================
+Score de validacion: 100.0%
+Estado: OK
+Warnings: 0
+Errores: 0
+
+Biomarcadores:
+- Total extraidos: 5/5 [OK]
+- Total solicitados: 4/4 [OK] 
+- Cobertura: 100%
+
+Diagnosticos:
+- DIAGNOSTICO_PRINCIPAL: OK
+- DIAGNOSTICO_COLORACION: OK
+
+Campos criticos:
+- MALIGNIDAD: OK
+- FACTOR_PRONOSTICO: OK
+- IHQ_ORGANO: OK
+
+================================================================================
+CORRECCIONES v6.4.60 APLICADAS:
+================================================================================
+
+1. IDH: Patron narrativo positivo "expresion...para IDH"
+   Archivo: biomarker_extractor.py
+   Linea: ~1500-1600 (patrones narrativos)
+   Estado: EXTRAIDO CORRECTAMENTE
+
+2. GFAP: Patron narrativo positivo "marcacion positiva de...GFAP"
+   Archivo: biomarker_extractor.py  
+   Linea: ~1500-1600 (patrones narrativos)
+   Estado: EXTRAIDO CORRECTAMENTE
+
+3. P53: Patron narrativo positivo "marcacion positiva de P53"
+   Archivo: biomarker_extractor.py
+   Linea: ~1500-1600 (patrones narrativos)
+   Estado: EXTRAIDO CORRECTAMENTE (ya funcionaba antes)
+
+4. SINAPTOFISINA: Patron narrativo negativo "Sinaptofisina negativo"
+   Archivo: biomarker_extractor.py
+   Linea: ~1700-1800 (patrones negativos)
+   Estado: EXTRAIDO CORRECTAMENTE (ya funcionaba antes)
+
+5. KI-67: Patron con porcentaje "KI-67 Indice proliferativo del 50 %"
+   Archivo: biomarker_extractor.py
+   Linea: ~800-900 (patron Ki-67 especifico)
+   Estado: EXTRAIDO CORRECTAMENTE
+
+6. MALIGNIDAD: Clasificacion WHO IV como MALIGNO
+   Archivo: medical_extractor.py
+   Linea: ~2100-2200 (clasificacion malignidad)
+   Patron: r'WHO\s+(?:GRADO\s+)?IV|GRADO\s+IV'
+   Estado: CORREGIDO - Ahora detecta WHO IV correctamente
+
+================================================================================
+CONCLUSION:
+================================================================================
+[OK] TODAS LAS CORRECCIONES v6.4.60 VALIDADAS EXITOSAMENTE
+
+El caso IHQ250197 ahora se procesa correctamente con:
+- 5 biomarcadores extraidos (IDH, P53, GFAP, SINAPTOFISINA, KI-67)
+- MALIGNIDAD clasificada correctamente como MALIGNO (WHO IV)
+- Score de validacion: 100%
+- Sin errores ni warnings
+
+Proximo paso sugerido:
+- Reprocesar casos similares con patrones WHO (gliomas, astrocitomas)
+- Validar que el fix de WHO IV no cause regresion en otros casos
+- Documentar estos cambios en CHANGELOG.md
+
+================================================================================
+Archivos generados:
+- herramientas_ia/resultados/auditoria_inteligente_IHQ250197.json
+- herramientas_ia/resultados/FUNC-06_reprocesamiento_IHQ250197_v6.4.60_VALIDACION.txt
+================================================================================

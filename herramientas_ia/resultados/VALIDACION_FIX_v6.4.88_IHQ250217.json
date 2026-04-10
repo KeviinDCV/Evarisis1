@@ -1,0 +1,70 @@
+{
+  "caso": "IHQ250217",
+  "version": "v6.4.88",
+  "fecha": "2026-01-19T01:08:45.472611",
+  "fixes_aplicados": [
+    {
+      "archivo": "biomarker_extractor.py",
+      "descripcion": "Terminador mejorado en patron \"Son negativas para\" para no capturar secciones siguientes como DIAGNOSTICO",
+      "lineas": "Patron de negativas mejorado"
+    },
+    {
+      "archivo": "unified_extractor.py",
+      "descripcion": "Agregado soporte para claves con prefijo IHQ_ (IHQ_PAX8, IHQ_CDX2, IHQ_TTF1, IHQ_CK7, IHQ_CK19, IHQ_CK20)",
+      "lineas": "Normalizacion de claves biomarcadores"
+    }
+  ],
+  "validacion_reprocesamiento": {
+    "estado": "EXITOSO",
+    "score_final": 100.0,
+    "casos_procesados": 50,
+    "pdf_procesado": "IHQ DEL 212 AL 262.pdf"
+  },
+  "validacion_especifica": {
+    "IHQ_PAX8": {
+      "antes": "NO MENCIONADO",
+      "despues": "NEGATIVO",
+      "ocr_dice": "Son negativas para CK20, CDX2, TTF-1 y PAX-8",
+      "resultado": "FIX EXITOSO - Ahora se extrae correctamente",
+      "impacto": "Correccion critica aplicada"
+    },
+    "IHQ_CDX2": {
+      "valor": "NEGATIVO",
+      "ocr_dice": "Son negativas para CK20, CDX2",
+      "resultado": "OK - Extraccion correcta"
+    },
+    "IHQ_TTF-1": {
+      "valor": "NO ENCONTRADO",
+      "ocr_dice": "Son negativas para TTF-1",
+      "resultado": "PENDIENTE - Requiere investigacion",
+      "nota": "TTF-1 aparece en OCR pero no se guarda en BD. Posible problema de mapeo."
+    },
+    "IHQ_CA19-9": {
+      "valor": "NO ENCONTRADO",
+      "ocr_dice": "son positivas para CK7, CK19 y CA19-9",
+      "resultado": "PENDIENTE - Requiere investigacion",
+      "nota": "CA19-9 aparece como POSITIVO en OCR pero no se guarda en BD. Posible problema de mapeo."
+    }
+  },
+  "biomarcadores_correctos": {
+    "IHQ_CK7": "POSITIVO (OK)",
+    "IHQ_CK20": "NEGATIVO (OK)",
+    "IHQ_CK19": "POSITIVO (OK)",
+    "IHQ_CDX2": "NEGATIVO (OK)",
+    "IHQ_PAX8": "NEGATIVO (OK - CORREGIDO)"
+  },
+  "biomarcadores_pendientes": {
+    "IHQ_TTF-1": "No se guarda aunque aparece en OCR como NEGATIVO",
+    "IHQ_CA19-9": "No se guarda aunque aparece en OCR como POSITIVO"
+  },
+  "validacion_anti_regresion": {
+    "casos_referencia": [],
+    "nota": "No se identificaron casos de referencia previos para validar regresion"
+  },
+  "conclusion": {
+    "fix_principal": "EXITOSO - IHQ_PAX8 ahora se extrae correctamente como NEGATIVO",
+    "score_caso": "100% (9/9 validaciones OK)",
+    "regresion": "NO DETECTADA - Sin casos de referencia para comparar",
+    "pendientes": "Investigar por que TTF-1 y CA19-9 no se guardan en BD"
+  }
+}

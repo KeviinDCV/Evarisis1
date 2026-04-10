@@ -1,0 +1,53 @@
+======================================================================
+REPORTE: PROBLEMA CON PATRON v6.5.90-93
+======================================================================
+
+CASO: IHQ250277
+SCORE: 80.0% (baja desde 84.6%)
+
+PROBLEMA PRINCIPAL:
+  Patron "no presentan inmunorreactividad" agregado en v6.5.90-93
+  pero NO se procesa como lista en extract_narrative_biomarkers()
+
+EVIDENCIA:
+  OCR contiene: "Las células tumorales no presentan inmunorreactividad
+                 para: SOX10, S100, MELAN A, CROMOGRAMINA, SINAPTOFISINA,
+                 CD99, p40, P16, CKAE1/AE3, EMA, ALK 01, CD1a, Actina de
+                 musculo liso, LCA, p63, Desmina, Calretinina, CD68."
+
+  BD tiene:
+    - SOX10: "NO MENCIONADO" (debería ser NEGATIVO)
+    - S100: "NO MENCIONADO" (debería ser NEGATIVO)
+    - EMA: "NO MENCIONADO" (debería ser NEGATIVO)
+    - MELAN_A: "NO MENCIONADO" (debería ser NEGATIVO)
+    - CD68: "NO MENCIONADO" (debería ser NEGATIVO)
+    - LCA: NO EXISTE (columna no mapeada)
+    - CROMOGRAMINA: NO EXISTE (columna no mapeada)
+
+CAUSA RAIZ:
+  1. Patron agregado en BIOMARKER_CONFIG pero no en
+     extract_narrative_biomarkers()
+  2. Patrones en BIOMARKER_CONFIG se usan para busquedas
+     individuales biomarcador por biomarcador
+  3. Patron de lista "no presentan inmunorreactividad para: [LISTA]"
+     necesita codigo especifico para parsear la lista completa
+
+SOLUCION REQUERIDA:
+  1. Agregar patron de lista en extract_narrative_biomarkers():
+     - Capturar lista completa despues de "para:"
+     - Parsear lista (separar por comas)
+     - Marcar TODOS como NEGATIVO
+  2. Agregar columnas faltantes (FUNC-03):
+     - LCA (IHQ_LCA)
+     - CROMOGRAMINA (IHQ_CROMOGRANINA)
+
+CODIGO FALTANTE (pseudocodigo):
+  no_inmuno_pattern = r"no presenta.*inmunorreactividad.*para[:\s]+(.+?)[\.\?]"
+  for match in re.finditer(no_inmuno_pattern, text):
+      lista = match.group(1).strip()
+      biomarcadores = re.split(r"[,;]\s*|\s+y\s+", lista)
+      for bio in biomarcadores:
+          normalized = normalize_biomarker_name(bio)
+          results[normalized] = "NEGATIVO"
+
+======================================================================

@@ -1,0 +1,143 @@
+{
+  "numero_caso": "IHQ251018",
+  "caso_num": 37,
+  "total_casos": 47,
+  "timestamp": "2025-11-08T18:34:36.281314",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 3,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "No hay estudio M previo"
+    },
+    "diagnostico_principal": {
+      "estado": "WARNING",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+      "valor_bd": "SIN EVIDENCIA DE RECHAZO ACTIVO (CATEGORIA 1; BANFF 2022). INJURIA TUBULAR AGUDA CON CAMBIOS REGENERATIVOS LEVES DEL EPITELIO. CRISTALES DE OXALATO DE CALCIO. ARTERIOPATIA CRÓNICA MODERADA",
+      "valor_ocr": "BIOPSIA DE INJERTO RENAL:",
+      "nota": "Puede ser válido si es una versión resumida del diagnóstico completo"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 2,
+      "total_solicitado_bd": 2,
+      "estudios_ocr": [
+        "SV40",
+        "C4D"
+      ],
+      "estudios_bd": [
+        "SV40",
+        "C4D"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 2,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "C4D",
+          "columna": "IHQ_C4D",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "("
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)"
+    ],
+    "errores": [
+      "Organo: Valor NO encontrado en OCR (similitud: 0%)"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe para su estudio producto de biopsia del injerto renal por punción percutánea, dos cilindro..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "La muestra destinada para estudio de microscopía de luz corresponde a un cilindro de parénquima rena..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "RIÑON"
+    },
+    "organo": {
+      "estado": "OK",
+      "mensaje": "Campo Organo está limpio",
+      "valor_bd": "RIÑON"
+    },
+    "formatos_biomarcadores": {
+      "estado": "OK",
+      "total_biomarcadores": 2,
+      "biomarcadores_con_problemas": 0,
+      "porcentaje_problemas": 0.0,
+      "problemas": [],
+      "mensaje": "Todos los biomarcadores tienen formato estandarizado"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [
+        {
+          "campo": "Organo",
+          "valor_bd": "RIÑON",
+          "similitud": 0.0,
+          "mensaje": "Valor NO encontrado en OCR (similitud: 0%)",
+          "severidad": "ERROR",
+          "sugerencia": "Verificar extracción o buscar valor manualmente en OCR"
+        }
+      ],
+      "campos_ok": 0,
+      "estado": "ERROR"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 66.7,
+    "validaciones_ok": 6,
+    "total_validaciones": 9,
+    "warnings": 1,
+    "errores": 1,
+    "biomarcadores_solicitados": 2,
+    "biomarcadores_mapeados": 2,
+    "biomarcadores_no_mapeados": 0,
+    "completitud_biomarcadores": 100.0
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

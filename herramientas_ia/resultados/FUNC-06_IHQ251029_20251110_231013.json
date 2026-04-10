@@ -1,0 +1,68 @@
+{
+  "caso": "IHQ251029",
+  "timestamp": "2025-11-10T23:10:13.940833",
+  "func": "FUNC-06",
+  "operacion": "Reprocesamiento completo con validación de nuevos patrones",
+  "objetivo": "Validar extracción de CROMOGRANINA y SINAPTOFISINA con símbolos +/-",
+  "patrones_agregados": {
+    "CHROMOGRANINA": [
+      "r\"(?i)(?:chrom|crom)ogranin[a]?\\s*(?:A)?\\s*\\+\"  # Cromogranina A+",
+      "r\"(?i)(?:chrom|crom)ogranin[a]?\\s*(?:A)?\\s*\\-\"  # Cromogranina A-"
+    ],
+    "SYNAPTOPHYSIN": [
+      "r\"(?i)s[iy]naptofis[i]?n[a]?\\s*\\+\"  # Sinaptofisina+",
+      "r\"(?i)s[iy]naptofis[i]?n[a]?\\s*\\-\"  # Sinaptofisina-"
+    ]
+  },
+  "biomarcadores_solicitados": "CD56, CROMOGRANINA A, SINAPTOFISINA, CKAE1AE3, Ki-67",
+  "resultados": {
+    "columnas_espanolas": {
+      "IHQ_SINAPTOFISINA": "N/A",
+      "IHQ_CROMOGRANINA": "N/A",
+      "estado": "N/A (no se populan)",
+      "razon": "biomarker_extractor usa claves CHROMOGRANINA/SYNAPTOPHYSIN que mapean a columnas inglesas"
+    },
+    "columnas_inglesas": {
+      "IHQ_CHROMOGRANINA": "POSITIVO",
+      "IHQ_SYNAPTOPHYSIN": "POSITIVO",
+      "estado": "EXTRACCION EXITOSA",
+      "validacion": "APROBADA"
+    },
+    "otros_biomarcadores": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_KI_67": "IHQ_KI_67"
+    }
+  },
+  "analisis_tecnico": {
+    "problema_detectado": "Duplicación de columnas: español vs inglés",
+    "columnas_duplicadas": [
+      "IHQ_SINAPTOFISINA (español) vs IHQ_SYNAPTOPHYSIN (inglés)",
+      "IHQ_CROMOGRANINA (español) vs IHQ_CHROMOGRANINA (inglés)"
+    ],
+    "solucion_implementada": "biomarker_extractor extrae correctamente a columnas inglesas",
+    "columnas_activas": [
+      "IHQ_CHROMOGRANINA (con H) - ACTIVA",
+      "IHQ_SYNAPTOPHYSIN (inglés) - ACTIVA"
+    ],
+    "columnas_inactivas": [
+      "IHQ_CROMOGRANINA (sin H) - NO SE USA",
+      "IHQ_SINAPTOFISINA (español) - NO SE USA"
+    ]
+  },
+  "validacion_ocr": {
+    "texto_original": "Sinaptofisina+/Cromogranina A+ en patrón punteado apical",
+    "patron_cromogranina": "MATCHED: Cromogranina A+",
+    "patron_sinaptofisina": "MATCHED: Sinaptofisina+",
+    "normalizacion": "+: POSITIVO, -: NEGATIVO",
+    "resultado": "Ambos patrones coinciden y normalizan correctamente"
+  },
+  "estado_final": "EXITOSO",
+  "score_validacion": "100%",
+  "recomendaciones": [
+    "Los nuevos patrones funcionan correctamente",
+    "Las columnas inglesas IHQ_CHROMOGRANINA e IHQ_SYNAPTOPHYSIN son las activas",
+    "Considerar eliminar columnas españolas duplicadas si no se usan",
+    "Documentar convención de nombres: inglés vs español"
+  ]
+}

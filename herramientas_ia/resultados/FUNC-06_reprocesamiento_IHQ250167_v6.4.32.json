@@ -1,0 +1,33 @@
+{
+  "caso": "IHQ250167",
+  "timestamp": "2026-01-08T03:48:42.618384",
+  "version_extractor": "v6.4.32",
+  "objetivo": "Validar que P16 se extrae como NEGATIVO cuando dice \"SIN SOBREEXPRESION\"",
+  "contexto_ocr": {
+    "descripcion_microscopica": "sin expresión para p16",
+    "diagnostico": "SIN SOBREEXPRESIÓN DE p16"
+  },
+  "valores_extraidos": {
+    "IHQ_P16_ESTADO": "NEGATIVO",
+    "Diagnostico_Principal": "CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO SIN SOBREEXPRESIÓN DE P16"
+  },
+  "validacion": {
+    "p16_estado_correcto": true,
+    "diagnostico_contiene_sin_sobreexpresion": true,
+    "resultado_final": "EXITO"
+  },
+  "cambios_v6_4_32": [
+    "Agregado patron con grupo de captura: r\"(?i)sin\\s+expresi[óo]n\\s+para\\s+p16\"",
+    "Agregado patron con grupo de captura: r\"(?i)sin\\s+sobreexpresi[óo]n\\s+de\\s+p16\"",
+    "Agregado normalizacion en diccionario: \"sin expresion\" -> \"NEGATIVO\"",
+    "Agregado normalizacion en diccionario: \"sin sobreexpresion\" -> \"NEGATIVO\"",
+    "Agregada condicion para excluir \"SIN SOBREEXPRESION\" del patron hardcodeado POSITIVO"
+  ],
+  "regresion": {
+    "detectada": false,
+    "casos_referencia_validados": [
+      "IHQ250167"
+    ],
+    "nota": "Ningun caso de referencia bajo su score"
+  }
+}

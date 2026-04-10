@@ -1,0 +1,112 @@
+================================================================================
+REPORTE TÉCNICO - MODIFICACIONES biomarker_extractor.py
+Fecha: 2025-11-05 01:25:23
+Versión: V6.2.2
+Caso objetivo: IHQ251014
+================================================================================
+
+RESUMEN EJECUTIVO:
+------------------
+Se agregaron 11 patrones nuevos y 9 normalizaciones en 6 biomarcadores para
+corregir formatos específicos del caso IHQ251014 que no eran capturados.
+
+BIOMARCADORES MODIFICADOS:
+---------------------------
+1. CD56 - Formato compacto: "CD56+", "CD56-"
+2. CD3 - Formato compacto: "CD3+", "CD3-"
+3. CD5 - Formato compacto: "CD5+", "CD5-" (con protección vs CD56)
+4. CD15 - Formato narrativo: "linea mieloide (CD15)"
+5. CD61 - Formato narrativo: "megacariocitos (CD61)"
+6. CKAE1AE3 - Formato negativo: "Sin marcación para CKAE1AE3"
+
+DETALLES TÉCNICOS:
+------------------
+
+CD56 (Líneas 1239-1254):
+  PATRONES AGREGADOS:
+    Línea 1239: # V6.2.2: Formato compacto sin espacios: 'CD56-' o 'CD56+' (IHQ251014)
+    Línea 1240: r'(?i)cd\s*56\s*\+',
+    Línea 1241: r'(?i)cd\s*56\s*-',
+  
+  NORMALIZACIONES AGREGADAS:
+    Línea 1253: '+': 'POSITIVO',
+    Línea 1254: '-': 'NEGATIVO'
+
+CD3 (Líneas 968-986):
+  PATRONES AGREGADOS:
+    Línea 968: # V6.2.2: Formato compacto sin espacios: 'CD3+' o 'CD3-' (IHQ251014)
+    Línea 969: r'(?i)cd\s*3\s*\+',
+    Línea 970: r'(?i)cd\s*3\s*-',
+  
+  NORMALIZACIONES AGREGADAS:
+    Línea 985: '+': 'POSITIVO',
+    Línea 986: '-': 'NEGATIVO'
+
+CD5 (Líneas 1011-1029):
+  PATRONES AGREGADOS:
+    Línea 1011: # V6.2.2: Formato compacto sin espacios: 'CD5+' o 'CD5-' (IHQ251014)
+    Línea 1012: # Usa (?!6) para evitar confusión con CD56
+    Línea 1013: r'(?i)cd\s*5(?!6)\s*\+',
+    Línea 1014: r'(?i)cd\s*5(?!6)\s*-',
+  
+  NORMALIZACIONES AGREGADAS:
+    Línea 1028: '+': 'POSITIVO',
+    Línea 1029: '-': 'NEGATIVO'
+  
+  NOTA: El patrón (?!6) es CRÍTICO - evita que "CD56+" se capture como "CD5"
+
+CD15 (Líneas 1070-1085):
+  PATRONES AGREGADOS:
+    Línea 1070: # V6.2.2: Formato narrativo: "linea mieloide (CD15)" -> POSITIVO (IHQ251014)
+    Línea 1071: r'(?i)(?:linea|l[ií]nea)\s+mieloide\s*\(\s*cd\s*15',
+  
+  NORMALIZACIONES AGREGADAS:
+    Línea 1085: 'linea mieloide': 'POSITIVO'
+
+CD61 (Líneas 1262-1279):
+  PATRONES AGREGADOS:
+    Línea 1262: # V6.2.2: Formato narrativo: "megacariocitos (CD61)" -> POSITIVO (IHQ251014)
+    Línea 1263: r'(?i)megacariocitos?\s*\(\s*cd\s*61',
+    Línea 1264: # Formato "los megacariocitos (CD61) se cuentan"
+    Línea 1265: r'(?i)(?:los\s+)?megacariocitos?\s*\(\s*cd\s*61\s*\)',
+  
+  NORMALIZACIONES AGREGADAS:
+    Línea 1279: 'megacariocitos': 'POSITIVO'
+
+CKAE1AE3 (Líneas 1679-1701):
+  PATRONES AGREGADOS:
+    Línea 1679: # V6.2.2: Formato negativo: "Sin marcación para CKAE1AE3" (IHQ251014)
+    Línea 1680: r'(?i)sin\s+marcaci[óo]n\s+para\s+.*?ckae1\s*ae3',
+    Línea 1681: r'(?i)sin\s+marcaci[óo]n\s+para\s+.*?ckae1\s*/\s*ae3',
+  
+  NORMALIZACIONES AGREGADAS:
+    Línea 1701: 'sin marcación': 'NEGATIVO'
+
+VALIDACIONES REALIZADAS:
+-------------------------
+[✓] Sintaxis Python: CORRECTA (compilación exitosa)
+[✓] Backup creado: biomarker_extractor_backup_20251105_012523.py (167K)
+[✓] Total líneas: 3793
+[✓] Todos los patrones V6.2.2 agregados correctamente
+[✓] Todas las normalizaciones incluidas
+[✓] CD5 protegido contra confusión con CD56
+
+CASOS DE USO:
+-------------
+Texto en PDF                              | Patrón que captura              | Resultado
+------------------------------------------+---------------------------------+----------
+"CD56-"                                   | r'(?i)cd\s*56\s*-'              | NEGATIVO
+"CD3+"                                    | r'(?i)cd\s*3\s*\+'              | POSITIVO
+"CD5+"                                    | r'(?i)cd\s*5(?!6)\s*\+'         | POSITIVO
+"linea mieloide (CD15)"                   | r'(?i)...linea...mieloide...'   | POSITIVO
+"megacariocitos (CD61)"                   | r'(?i)megacariocitos?...'       | POSITIVO
+"Sin marcación para CKAE1AE3"             | r'(?i)sin...marcación...ckae1'  | NEGATIVO
+
+PRÓXIMOS PASOS:
+---------------
+1. Reprocesar IHQ251014 con extractores actualizados
+2. Validar con data-auditor (auditor_sistema.py)
+3. Verificar que los 6 biomarcadores extraen correctamente
+4. Validar no regresiones en otros casos
+
+================================================================================

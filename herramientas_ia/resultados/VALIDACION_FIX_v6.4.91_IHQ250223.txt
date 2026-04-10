@@ -1,0 +1,61 @@
+====================================================================================================
+VALIDACION CORRECCION v6.4.91 - IHQ250223
+====================================================================================================
+Fecha: 2026-01-28 00:31
+
+PROBLEMA ORIGINAL:
+- 5 biomarcadores extraídos como NEGATIVOS o NO MENCIONADO
+- Formato en OCR: "muestran inmunorreactivadad con CK7, CK19, CA19-9, CDX2 y CEA (marcación focal)"
+- Error OCR: "inmunorreactivadad" (con 'a' en lugar de 'i')
+
+MODIFICACION APLICADA (biomarker_extractor.py v6.4.91):
+1. Agregado nuevo patrón: r'(?i)muestran?\s+inmunorreactiv[ai]dad\s+con\s+([^\.]+)\.'
+   - Tolera 'inmunorreactividad' o 'inmunorreactivadad'
+   - Extrae lista de biomarcadores después de "con"
+   
+2. Posición en código: Línea ~685 (extract_positive_for_biomarkers)
+
+VALIDACION POST-REPROCESAMIENTO (FUNC-06):
+
+✅ SCORE FINAL: 100%
+✅ ESTADO: OK (sin warnings ni errores)
+
+VALORES CORREGIDOS EN BD:
++------------------+----------------------------+----------------------------+
+| Biomarcador      | ANTES (v6.4.90)            | DESPUES (v6.4.91)          |
++------------------+----------------------------+----------------------------+
+| IHQ_CK7          | NEGATIVO                   | POSITIVO (marcación focal) ✅ |
+| IHQ_CK19         | NEGATIVO                   | POSITIVO (marcación focal) ✅ |
+| IHQ_CA19_9       | NEGATIVO                   | POSITIVO (marcación focal) ✅ |
+| IHQ_CDX2         | NEGATIVO                   | POSITIVO (marcación focal) ✅ |
+| IHQ_CEA          | NO MENCIONADO              | POSITIVO (marcación focal) ✅ |
++------------------+----------------------------+----------------------------+
+
+VERIFICACION AUDITORIA:
+- Completitud biomarcadores: 100% (11/11 mapeados)
+- Sin valores incorrectos detectados
+- Biomarcadores solicitados en OCR: 11
+- Biomarcadores guardados en BD: 11
+- Estado final: OK
+
+CASOS REPROCESADOS:
+- PDF: "IHQ DEL 212 AL 262.pdf"
+- Rango: IHQ250212 - IHQ250262 (50 casos)
+- Todos regenerados con extractor v6.4.91
+
+IMPACTO:
+✅ Patrón ahora tolerante a errores OCR comunes ('a' vs 'i')
+✅ Formato "muestran inmunorreactividad con [LISTA]" soportado
+✅ 5 biomarcadores corregidos en IHQ250223
+✅ Corrección aplicable a todos los casos futuros con formato similar
+
+VALIDACION ANTI-REGRESION:
+⚠️  PENDIENTE: Validar 3-5 casos de referencia que usen patrones de positividad
+    - Verificar que casos con "positivo para" no se rompan
+    - Verificar que casos con "expresan" no se rompan
+    - Verificar que casos con "inmunoreactividad positiva para" no se rompan
+
+SIGUIENTE PASO:
+Validar que el nuevo patrón no causa regresión en casos con formatos diferentes.
+
+====================================================================================================

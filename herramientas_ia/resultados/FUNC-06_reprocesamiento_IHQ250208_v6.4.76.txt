@@ -1,0 +1,192 @@
+======================================================================
+FUNC-06: REPROCESAMIENTO IHQ250208 - VALIDACION FIX v6.4.76
+======================================================================
+Fecha: 2026-01-12 18:57:05
+Caso: IHQ250208
+Version extractor: 6.4.76
+PDF: pdfs_patologia\IHQ DEL 160 AL 211.pdf
+
+======================================================================
+1. OBJETIVO DEL FIX v6.4.76
+======================================================================
+Patron agregado: "marcacion esperada de [lista] acompanantes" -> POSITIVO
+
+Target esperado:
+- CD20: POSITIVO (ya se extraia)
+- BCL6: POSITIVO (NUEVO - "BCL 6" con espacio)
+- CD3: POSITIVO (NUEVO - "CD 3" con espacio)
+- BCL2: POSITIVO (NUEVO - "BLC2" error OCR)
+
+Texto OCR:
+"Mucosa anal con presencia en la submucosa de folículo linfoide con 
+marcación esperada de CD 20, BCL 6, CD 3, BLC2 acompañantes."
+
+======================================================================
+2. RESULTADOS POST-REPROCESAMIENTO
+======================================================================
+
+Biomarcadores extraidos:
+----------------------------------------------------------------------
+[OK]   IHQ_CD20:  POSITIVO       (ya funcionaba antes del fix)
+[OK]   IHQ_BCL6:  POSITIVO       (NUEVO - fix v6.4.76 exitoso)
+[OK]   IHQ_CD3:   POSITIVO       (NUEVO - fix v6.4.76 exitoso)
+[FAIL] IHQ_BCL2:  NO MENCIONADO  (esperado: POSITIVO - fix fallido)
+[OK]   IHQ_CD5:   NO MENCIONADO  (correcto - no en la lista)
+[OK]   IHQ_KI-67: NO MENCIONADO  (correcto - es indice proliferativo)
+
+IHQ_ESTUDIOS_SOLICITADOS:
+"BCL2, BCL 6, CD5, CD3, CD20, Ki-67"
+
+======================================================================
+3. METRICAS DE VALIDACION
+======================================================================
+
+Score auditoria: 100.0%
+Biomarcadores mapeados: 6/6 (100%)
+Estado final: OK
+Warnings: 0
+Errores: 0
+
+Campos criticos validados:
+- Descripcion macroscopica: OK
+- Descripcion microscopica: OK
+- Diagnostico Principal: OK
+- Diagnostico Coloracion: OK
+- IHQ_ORGANO: OK (CANAL ANAL)
+- Factor pronostico: OK (NO APLICA - caso benigno)
+- Malignidad: OK (BENIGNO)
+
+======================================================================
+4. ANALISIS DEL FIX v6.4.76
+======================================================================
+
+Resultado: PARCIALMENTE EXITOSO (3/4 biomarcadores)
+
+Exitos:
+  [OK] CD20: Ya se extraia antes del fix (patron anterior)
+  [OK] BCL6: Extraido correctamente con el nuevo patron v6.4.76
+           - Maneja correctamente el espacio en "BCL 6"
+  [OK] CD3: Extraido correctamente con el nuevo patron v6.4.76
+           - Maneja correctamente el espacio en "CD 3"
+
+Pendiente:
+  [FAIL] BCL2: NO extraido
+         - Razon: El patron v6.4.76 NO maneja el error OCR "BLC2"
+         - El patron busca "BCL2" pero el OCR tiene "BLC2"
+         - Necesita normalizacion de errores OCR comunes
+
+======================================================================
+5. CAUSA RAIZ DEL PROBLEMA BCL2
+======================================================================
+
+El patron v6.4.76 extrae correctamente biomarcadores de la lista
+"marcacion esperada de [lista] acompanantes" PERO:
+
+1. Patron actual (linea ~3580 biomarker_extractor.py):
+   r'marcaci[óo]n\s+esperada\s+de\s+([A-Za-z0-9\s,]+)\s+acompa[ñn]antes'
+
+2. Lista extraida: "CD 20, BCL 6, CD 3, BLC2"
+
+3. Normalizacion actual:
+   - "CD 20" -> normaliza a "CD20" -> busca en MAPEO -> encuentra -> OK
+   - "BCL 6" -> normaliza a "BCL6" -> busca en MAPEO -> encuentra -> OK
+   - "CD 3" -> normaliza a "CD3" -> busca en MAPEO -> encuentra -> OK
+   - "BLC2" -> normaliza a "BLC2" -> busca en MAPEO -> NO encuentra -> FAIL
+
+4. Problema: 
+   - El MAPEO tiene 'BCL2': 'IHQ_BCL2'
+   - El OCR tiene "BLC2" (L y C intercambiadas)
+   - La normalizacion NO corrige este error OCR
+
+======================================================================
+6. SIGUIENTE PASO RECOMENDADO
+======================================================================
+
+OPCION A: Agregar alias en MAPEO (rapido, especifico)
+----------------------------------------------------------------------
+Archivo: core/extractors/biomarker_extractor.py
+Linea: ~180-250 (BIOMARKER_MAPPING)
+
+Agregar:
+'BLC2': 'IHQ_BCL2',  # V6.4.77 FIX IHQ250208: Error OCR comun
+
+Pros: Rapido, quirurgico, no afecta otros patrones
+Contras: Solo cubre este error especifico
+
+OPCION B: Agregar normalizacion OCR (robusto, generico)
+----------------------------------------------------------------------
+Archivo: core/extractors/biomarker_extractor.py
+Linea: ~3590-3610 (despues de extraer lista)
+
+Agregar funcion de correccion OCR:
+def _corregir_errores_ocr_biomarkers(nombre):
+    # Errores OCR comunes
+    correcciones = {
+        'BLC2': 'BCL2',  # L y C intercambiadas
+        'BLC6': 'BCL6',  # L y C intercambiadas
+        # Agregar otros errores comunes
+    }
+    return correcciones.get(nombre, nombre)
+
+# Aplicar antes de buscar en MAPEO:
+for bio in lista_biomarkers:
+    bio_normalizado = _corregir_errores_ocr_biomarkers(bio.strip())
+    # Continuar con busqueda en MAPEO...
+
+Pros: Robusto, maneja multiples errores OCR
+Contras: Mas complejo, requiere pruebas exhaustivas
+
+======================================================================
+7. RECOMENDACION FINAL
+======================================================================
+
+USAR OPCION A (alias en MAPEO) por las siguientes razones:
+
+1. Solucion quirurgica y rapida
+2. No afecta otros patrones (sin riesgo de regresion)
+3. El error "BLC2" es muy especifico de este caso
+4. Bajo riesgo, alta precision
+
+Implementacion recomendada:
+1. Agregar alias 'BLC2': 'IHQ_BCL2' en BIOMARKER_MAPPING
+2. Incrementar version a v6.4.77
+3. Reprocesar IHQ250208 con FUNC-06
+4. Validar que BCL2 = POSITIVO
+5. Documentar en CHANGELOG
+
+Si se detectan mas errores OCR similares en otros casos,
+considerar OPCION B (normalizacion generica).
+
+======================================================================
+8. VALIDACION ANTI-REGRESION
+======================================================================
+
+Casos de referencia a validar despues de aplicar fix:
+- IHQ250208: BCL2 debe cambiar de NO MENCIONADO -> POSITIVO
+- IHQ250XXX: (buscar otros casos con BCL2 en descripcion microscopica)
+
+NO debe afectar:
+- Casos con BCL2 correctamente escrito (deben seguir siendo POSITIVO/NEGATIVO)
+- Casos sin BCL2 (deben seguir siendo NO MENCIONADO)
+
+======================================================================
+RESUMEN EJECUTIVO
+======================================================================
+
+Fix v6.4.76: PARCIALMENTE EXITOSO (75% exitoso)
+- 3/4 biomarcadores extraidos correctamente
+- BCL6 y CD3 ahora se extraen (antes NO MENCIONADO)
+- BCL2 sigue siendo NO MENCIONADO (requiere fix adicional)
+
+Prioridad siguiente: MEDIA
+Complejidad fix: BAJA (agregar 1 alias)
+Riesgo regresion: MINIMO
+
+Proxima accion:
+[ ] Agregar alias 'BLC2': 'IHQ_BCL2' en biomarker_extractor.py
+[ ] Reprocesar IHQ250208 con FUNC-06
+[ ] Validar BCL2 = POSITIVO
+[ ] Incrementar version a v6.4.77
+[ ] Documentar en CHANGELOG
+
+======================================================================

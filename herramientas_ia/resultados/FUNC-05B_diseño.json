@@ -1,0 +1,38 @@
+{
+  "titulo": "MEJORA FUNC-05: Analisis de Casos Problematicos",
+  "fecha": "2025-11-18 01:48:41",
+  "version_propuesta": "FUNC-05B",
+  "archivo_destino": "herramientas_ia/auditor_sistema.py",
+  "linea_insercion": 3113,
+  "descripcion": "Nueva funcion que complementa FUNC-05 actual para analizar casos con problemas y generar TODO-LIST consolidado",
+  "modos_analisis": {
+    "incompletos": "Casos con biomarcadores NO MAPEADO",
+    "validacion": "Casos completos pero con errores de validacion (score < 100%)",
+    "ambos": "Ambos tipos (por defecto)"
+  },
+  "proceso": [
+    "Lee reporte_importacion.json para casos incompletos",
+    "Audita casos con FUNC-01 para detectar errores de validacion",
+    "Detecta patrones comunes de error",
+    "Genera TODO-LIST consolidado con prioridades"
+  ],
+  "retorna": {
+    "casos_incompletos": "Lista de casos con biomarcadores no mapeados",
+    "casos_mal_validados": "Lista de casos con errores de validacion",
+    "todo_list": "Lista priorizada de acciones",
+    "estadisticas": "Resumen agregado"
+  },
+  "ejemplos_uso": [
+    "auditor.analizar_casos_problematicos(tipo='incompletos')",
+    "auditor.analizar_casos_problematicos(tipo='validacion', limite=50)",
+    "auditor.analizar_casos_problematicos()"
+  ],
+  "ubicacion_codigo": "C:/Users/USUARIO/Desktop/DEBERES HUV/ProyectoHUV9GESTOR_ONCOLOGIA/herramientas_ia/resultados/func05b_implementacion_completa.txt",
+  "instrucciones": [
+    "1. Abrir auditor_sistema.py en editor",
+    "2. Buscar línea 3113 (después de return resultado de FUNC-05)",
+    "3. Insertar las 2 nuevas funciones desde func05b_implementacion_completa.txt",
+    "4. Verificar indentación (4 espacios por nivel)",
+    "5. Guardar y validar sintaxis con: python -m py_compile herramientas_ia/auditor_sistema.py"
+  ]
+}

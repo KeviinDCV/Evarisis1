@@ -1,0 +1,59 @@
+{
+  "caso": "IHQ250061",
+  "fecha_validacion": "2025-12-19T00:46:27.212171",
+  "version_medical_extractor": "v6.3.53",
+  "correcciones_implementadas": {
+    "1": {
+      "descripcion": "CALRRETININA agregada a BIOMARCADORES_TIPIFICACION",
+      "archivo": "core/extractors/medical_extractor.py",
+      "linea": "~1046",
+      "estado": "IMPLEMENTADO"
+    },
+    "2": {
+      "descripcion": "Patron regex corregido: nombre de biomarcador debe empezar con letra",
+      "archivo": "core/extractors/medical_extractor.py",
+      "linea": "~2064",
+      "estado": "IMPLEMENTADO"
+    }
+  },
+  "validacion_extraccion": {
+    "ihq_calrretinina": {
+      "esperado": "NEGATIVO",
+      "extraido": "NEGATIVO",
+      "guardado_bd": "NEGATIVO",
+      "estado": "CORRECTO"
+    },
+    "factor_pronostico": {
+      "esperado": "NO APLICA",
+      "extraido": "NO APLICA",
+      "guardado_bd": "NO APLICA",
+      "estado": "CORRECTO",
+      "razon": "CALRRETININA es biomarcador de tipificacion, no de pronostico"
+    }
+  },
+  "validacion_ocr": {
+    "menciones_calrretinina": 4,
+    "contextos": [
+      "SE REQUIERE ESTUDIO DE INMUNOHISTOQUIMICA (CALRRETININA)",
+      "se solicitan los siguiente biomarcadores al bloque 3-4 y 5: Calrretinina",
+      "No se identifican celulas ganglionares en la coloracion basica, la calrretinina es",
+      "la calrretinina es negativa para celulas ganglionares y dendritas en la mucosa"
+    ]
+  },
+  "auditoria_func01": {
+    "score": 88.9,
+    "estado": "ERROR",
+    "errores": [
+      "BD indica BENIGNO pero OCR contiene keywords MALIGNOS (GIST)"
+    ],
+    "nota": "El error de MALIGNIDAD no esta relacionado con las correcciones de CALRRETININA"
+  },
+  "resultado_final": {
+    "estado": "EXITOSO",
+    "correcciones_validadas": "2/2",
+    "biomarcador_extraido": true,
+    "biomarcador_guardado": true,
+    "factor_pronostico_correcto": true,
+    "mensaje": "Todas las correcciones de v6.3.53 funcionaron correctamente. CALRRETININA ahora se excluye de Factor pronostico y se guarda en columna IHQ_CALRRETININA."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "estado": "ERROR_YA_EXISTE",
+  "biomarcador": "CAM5",
+  "columna_bd": "IHQ_CAM5",
+  "archivos_duplicados": [
+    "database_manager.py",
+    "auditor_sistema.py",
+    "ui.py",
+    "validation_checker.py",
+    "biomarker_extractor.py",
+    "unified_extractor.py"
+  ]
+}

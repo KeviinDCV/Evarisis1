@@ -1,0 +1,82 @@
+{
+  "caso": "IHQ251026",
+  "timestamp": "2025-11-08T23:47:56.447523",
+  "estado_final": "EXTRACCION_INCOMPLETA",
+  "cambios_aplicados": [
+    {
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "cambio": "BIOMARKER_ALIAS_MAP: CAM 5.2 -> CAM5.2 (antes: CAM5)",
+      "lineas": [
+        3344,
+        3345
+      ],
+      "estado": "APLICADO"
+    },
+    {
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "cambio": "BIOMARKER_DEFINITIONS: Agregada definicion CAM5.2",
+      "linea": "~1524",
+      "estado": "APLICADO"
+    },
+    {
+      "archivo": "core/unified_extractor.py",
+      "cambio": "Mapeo CAM5.2 -> IHQ_CAM52 (ya existia)",
+      "linea": 1444,
+      "estado": "YA_EXISTENTE"
+    }
+  ],
+  "valores_actuales_bd": {
+    "P16": "NO HAY MARCACION EN LA MUESTRA PARA P40, P16",
+    "P40": "NEGATIVO",
+    "CAM52": "N/A",
+    "estudios_solicitados": "P16, P40, CAM 5"
+  },
+  "valores_esperados": {
+    "P16": "NEGATIVO",
+    "P40": "NEGATIVO",
+    "CAM52": "POSITIVO"
+  },
+  "completitud": {
+    "extraidos": 2,
+    "total": 3,
+    "porcentaje": 66.7,
+    "correctos": 2,
+    "incorrectos": 1,
+    "precision": 66.7
+  },
+  "problema_detectado": {
+    "descripcion": "FUNC-06 falla al reprocesar debido a conflicto stdout",
+    "error": "AttributeError: _io.StringIO object has no attribute buffer",
+    "ubicacion": "core/correction_tracker.py:29",
+    "causa_raiz": [
+      "FUNC-06 redirige stdout a StringIO para capturar salida",
+      "correction_tracker.py intenta forzar UTF-8 con sys.stdout.buffer",
+      "StringIO no tiene atributo buffer (solo file objects reales)",
+      "Esto previene que unified_extractor complete la extraccion"
+    ],
+    "solucion_propuesta": [
+      "OPCION 1: Modificar correction_tracker.py para verificar si stdout tiene buffer antes de intentar",
+      "OPCION 2: Modificar FUNC-06 para NO redirigir stdout (capturar de otra manera)",
+      "OPCION 3: Usar NULL stdout en lugar de StringIO en FUNC-06"
+    ]
+  },
+  "extraccion_cam52": {
+    "problema": "No se puede validar si CAM5.2 se extrae correctamente debido a fallo en unified_extractor",
+    "estado_logs": "Logs muestran que IHQ_CAM5.2 se detecta narrativamente pero luego unified_extractor falla",
+    "log_ejemplo": "IHQ_CAM5.2: POSITIVO (narrativo directo) - pero luego error I/O"
+  },
+  "logs_detectados": [
+    "IHQ251026 log muestra: Guardado en biomarker_data: IHQ_CAM5.2 = POSITIVO",
+    "IHQ251026 log muestra: Guardado en combined_data: IHQ_CAM5.2 = POSITIVO (narrativo directo)",
+    "Pero luego: Error en extractores refactorizados: StringIO has no attribute buffer",
+    "Resultado: extract_ihq_data retorna vacio para IHQ251026"
+  ],
+  "siguiente_paso": "Corregir correction_tracker.py para manejar stdout redirigido",
+  "recomendacion": [
+    "1. Modificar core/correction_tracker.py linea 29",
+    "2. Agregar verificacion: if hasattr(sys.stdout, \"buffer\")",
+    "3. Solo aplicar UTF-8 wrapper si stdout es file real",
+    "4. Reprocesar caso IHQ251026 nuevamente",
+    "5. Validar que CAM52 se extraiga correctamente"
+  ]
+}

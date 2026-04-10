@@ -1,0 +1,57 @@
+
+================================================================================
+REPORTE DE VALIDACION v6.4.59 - IHQ250190
+================================================================================
+Fecha: 2026-01-09 03:07:10
+Caso: IHQ250190
+Version: 6.4.59
+
+RESULTADO FUNC-06: REPROCESAMIENTO EXITOSO
+================================================================================
+
+1. SCORE DE VALIDACION
+   - Score actual: 100.0%
+   - Estado: OK
+   - Validaciones OK: 9/9
+   - Warnings: 0
+   - Errores: 0
+
+2. BIOMARCADORES CRITICOS VALIDADOS (v6.4.59)
+   
+   A. DESMIN, MYOGENIN, MYOD1 (Diferenciacion miogenica)
+      - IHQ_DESMIN: POSITIVO (fuerte) [OK]
+      - IHQ_MYOGENIN: POSITIVO (fuerte) [OK]
+      - IHQ_MYOD1: POSITIVO (fuerte) [OK]
+      
+   B. SINAPTOFISINA (Marcador neuroendocrino)
+      - IHQ_SINAPTOFISINA: NEGATIVO [OK]
+      - IHQ_SYNAPTOFISINA: NO EXISTE (eliminada correctamente) [OK]
+      - IHQ_SYNAPTOPHYSIN: NO EXISTE (eliminada correctamente) [OK]
+      
+   C. CITOQUERATINA
+      - IHQ_CKAE1AE3: NEGATIVO [OK]
+      - IHQ_CKAE1E3: NO EXISTE (nunca se creo) [OK]
+
+3. BIOMARCADORES EXTRAIDOS (Total: 17)
+   CD20, CD3, CD34, CD56, CD99, CKAE1AE3, CROMOGRANINA, DESMIN, Ki-67, MYOD1, MYOGENIN, S100, SALL4, SMA, SOX10, SYNAPTOFISINA, WT1
+
+4. DIAGNOSTICO PRINCIPAL
+   LOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN SARCOMA DE ALTO GRADO DE MORFOLOGÍA DE CÉLULA PEQUEÑA DE ALTO GRADO CON DIFERENCIACIÓN MIOGÉNICA (RABDOMIOSARCOMA NOS)
+
+5. FACTOR PRONOSTICO
+   Ki-67: 80%
+
+================================================================================
+CONCLUSION
+================================================================================
+
+[OK] Reprocesamiento EXITOSO
+[OK] Score: 100%
+[OK] Correcciones v6.4.59 VALIDADAS:
+  1. DESMIN/MYOGENIN/MYOD1 extraidos correctamente como POSITIVO (fuerte)
+  2. SINAPTOFISINA: Solo columna IHQ_SINAPTOFISINA existe (variantes eliminadas)
+  3. CKAE1AE3: Solo columna IHQ_CKAE1AE3 existe (variante IHQ_CKAE1E3 nunca creada)
+
+ESTADO: CASO VALIDADO - LISTO PARA PRODUCCION
+
+================================================================================

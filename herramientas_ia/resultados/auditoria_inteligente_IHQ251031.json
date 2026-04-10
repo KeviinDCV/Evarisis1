@@ -1,0 +1,133 @@
+{
+  "numero_caso": "IHQ251031",
+  "caso_num": 45,
+  "total_casos": 47,
+  "timestamp": "2025-11-12T00:21:56.550285",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 6,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "ERROR",
+      "mensaje": "DIAGNOSTICO_COLORACION difiere entre BD y OCR",
+      "valor_bd": "ADENOCARCINOMA INVASIVO",
+      "valor_ocr": "\"ADENOCARCINOMA"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "ADENOCARCINOMA INVASIVO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor_bd": "HER2 , MSH6",
+      "biomarcadores_fp": 1,
+      "total_solicitado": 5,
+      "cobertura_fp": "1/4",
+      "mensaje": "Factor pronóstico correcto con 1 biomarcador(es) - formato largo aceptado"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (5/5)",
+      "total_solicitado_ocr": 5,
+      "total_solicitado_bd": 5,
+      "estudios_ocr": [
+        "HER2",
+        "MSH6",
+        "MSH2",
+        "MLH1",
+        "PMS2"
+      ],
+      "estudios_bd": [
+        "HER2",
+        "MSH6",
+        "MSH2",
+        "MLH1",
+        "PMS2"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 5,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [
+      "DIAGNOSTICO_COLORACION difiere entre BD y OCR"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MUCOSA DE COLON TRANSVERSO"
+    },
+    "organo": {
+      "estado": "OK",
+      "mensaje": "Campo Organo está limpio",
+      "valor_bd": "TUMOR COLON TRANSVERSO"
+    },
+    "formatos_biomarcadores": {
+      "estado": "OK",
+      "total_biomarcadores": 5,
+      "biomarcadores_con_problemas": 0,
+      "porcentaje_problemas": 0.0,
+      "problemas": [],
+      "mensaje": "Todos los biomarcadores tienen formato estandarizado"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 1,
+    "biomarcadores_solicitados": 5,
+    "biomarcadores_mapeados": 5,
+    "biomarcadores_no_mapeados": 0,
+    "completitud_biomarcadores": 100.0
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

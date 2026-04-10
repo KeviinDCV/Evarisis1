@@ -1,0 +1,108 @@
+================================================================================
+REPORTE FINAL - CASO IHQ250218 v6.4.89
+POST-FILTRO CENTRALIZADO + FILTROS MEJORADOS
+================================================================================
+
+CAMBIOS IMPLEMENTADOS v6.4.89:
+1. Ki-67: Patron para "Ki67o es de 90%" (biomarker_extractor.py)
+2. MUM1: Patron para "el MUM1 es del 30%" (biomarker_extractor.py) 
+3. POST-FILTRO CENTRALIZADO en unified_extractor.py (lineas 1286-1305)
+   - Detecta patron "linfocitos T acompanantes CD3/BCL2"
+   - Remueve IHQ_CD3 y IHQ_BCL2 de combined_data
+4. FILTRO v6.4.72 en biomarker_extractor.py
+   - Filtra "CD3+" en contexto de microambiente
+
+================================================================================
+RESULTADOS DESPUES DEL REPROCESAMIENTO
+================================================================================
+
+VALORES EN BD (debug_map 20260119_071750):
+   Ki-67: 90%              ✅ CORRECTO
+   MUM1: 30%               ✅ CORRECTO  
+   CD3: POSITIVO           ❌ INCORRECTO (deberia estar VACIO o NEGATIVO)
+   BCL2: NO MENCIONADO     ✅ CORRECTO
+   CD20: POSITIVO          ✅ CORRECTO
+   Factor Pronostico: Ki-67: 90%  ✅ CORRECTO
+
+EVIDENCIA DE LOGS:
+   ✅ FILTRO v6.4.72 DETECTADO:
+      "[V6.3.51 EXCLUIDO v6.4.72] 'CD3+' en contexto de microambiente"
+      Contexto: "dado por un Ki67o es de 90%. Hay linfocitos T acompanantes CD3+, BCL2+"
+
+   ✅ POST-FILTRO CENTRALIZADO EJECUTADO:
+      "[V6.4.89 POST-FILTRO DEBUG] Patron 'linfocitos T acompanantes': ENCONTRADO"
+      "[V6.4.89 POST-FILTRO DEBUG] Match: 'Hay linfocitos T acompanantes CD3'"
+      "[V6.4.89 POST-FILTRO DEBUG] Claves CD3 en combined_data: ['IHQ_CD3']"
+      "[V6.4.89 POST-FILTRO CENTRALIZADO] IHQ_CD3 removido: 'POSITIVO'"
+
+AUDITORIA FUNC-01:
+   Score: 66.7% (sin cambio)
+   Estado: ERROR
+   Error persistente: CD3: BD="POSITIVO" vs OCR="NEGATIVO"
+
+================================================================================
+ANALISIS DEL PROBLEMA
+================================================================================
+
+CONFIRMADO: El POST-FILTRO v6.4.89 SE EJECUTA CORRECTAMENTE
+
+1. El patron regex coincide con el texto OCR
+2. El filtro encuentra IHQ_CD3 en combined_data con valor "POSITIVO"
+3. El filtro REMUEVE IHQ_CD3 de combined_data exitosamente
+4. Log confirma: "IHQ_CD3 removido: 'POSITIVO'"
+
+PROBLEMA IDENTIFICADO: CD3 se REAGREGA despues del post-filtro
+
+El valor CD3="POSITIVO" aparece en el debug_map final a pesar de ser removido.
+
+CAUSA RAIZ PROBABLE:
+
+Flujo de datos:
+   1. unified_extractor.py genera combined_data (con CD3="POSITIVO")
+   2. POST-FILTRO remueve IHQ_CD3 de combined_data ✅
+   3. combined_data retorna a ihq_processor.py SIN IHQ_CD3 ✅
+   4. ihq_processor.py llama map_to_database_format(combined_data)
+   5. map_to_database_format() REAGREGA CD3 por alguna razon ❌
+
+HIPOTESIS: map_to_database_format tiene logica que detecta CD3 en 
+IHQ_ESTUDIOS_SOLICITADOS y lo marca como "NO MENCIONADO" cuando no 
+existe en combined_data.
+
+PERO el valor aparece como "POSITIVO", NO como "NO MENCIONADO".
+Esto sugiere que hay OTRA fuente agregando CD3 con valor "POSITIVO".
+
+POSIBLES CAUSAS:
+   a) map_to_database_format lee OTRO lugar ademas de combined_data
+   b) Hay logica de "fallback" que extrae CD3 directamente del texto
+   c) Los datos se copian de extracted_data ANTES del post-filtro
+
+================================================================================
+EXITO PARCIAL
+================================================================================
+
+✅ Ki-67: 90% extraido correctamente (patron mejorado funciono)
+✅ MUM1: 30% extraido correctamente (patron mejorado funciono)
+✅ POST-FILTRO ejecuta y remueve CD3 de combined_data
+❌ CD3 aparece nuevamente en BD con valor "POSITIVO"
+
+MEJORA: 2/3 objetivos logrados (66.7%)
+PENDIENTE: Identificar y corregir fuente que reagrega CD3
+
+================================================================================
+RECOMENDACION
+================================================================================
+
+PROXIMO PASO: Investigar map_to_database_format()
+
+1. Revisar como map_to_database_format() procesa combined_data
+2. Buscar logica que pueda estar reagregando biomarcadores
+3. Verificar si hay copia directa de todos los campos IHQ_*
+4. Confirmar que map_to_database_format() SOLO lee de combined_data
+
+CODIGO A REVISAR:
+   - core/unified_extractor.py lineas 1646-2339 (map_to_database_format)
+   - Buscar: for key in combined_data / extracted_data.items()
+   - Buscar: db_record[IHQ_*] = 
+   - Buscar: logica de "NO MENCIONADO" para biomarcadores solicitados
+
+================================================================================

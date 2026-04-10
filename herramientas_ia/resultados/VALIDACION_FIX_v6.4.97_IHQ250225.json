@@ -1,0 +1,50 @@
+{
+  "caso": "IHQ250225",
+  "version_extractor": "biomarker_extractor.py v6.4.97",
+  "fecha_reprocesamiento": "2026-01-28T02:49:55.762552",
+  "modificacion_aplicada": "Patrones narrativos complejos para HMB45 y Ki-67",
+  "resultados": {
+    "score_antes": "N/A (caso nuevo reprocesado)",
+    "score_despues": "100.0%",
+    "mejora": "EXITOSO",
+    "biomarcadores_corregidos": [
+      {
+        "biomarcador": "IHQ_HMB45",
+        "estado_antes": "(NO EXTRAIDO)",
+        "estado_despues": "POSITIVO (desde la superficie hacia la base)",
+        "estado": "CORREGIDO ✅"
+      },
+      {
+        "biomarcador": "IHQ_KI-67",
+        "estado_antes": "(NO EXTRAIDO)",
+        "estado_despues": "NEGATIVO (sin positividad en los melanocitos dérmicos)",
+        "estado": "CORREGIDO ✅"
+      }
+    ],
+    "factor_pronostico": {
+      "valor": "Ki-67: NEGATIVO (sin positividad en los melanocitos dérmicos)",
+      "estado": "OK - Incluye Ki-67 correctamente"
+    },
+    "ihq_estudios_solicitados": {
+      "valor": "HMB45, Ki-67, MELAN-A, S100, SOX10",
+      "total_solicitado": 5,
+      "total_extraido": 5,
+      "cobertura": "100%"
+    }
+  },
+  "validacion": {
+    "formato_hmb45": {
+      "esperado": "POSITIVO (detalles clínicos)",
+      "obtenido": "POSITIVO (desde la superficie hacia la base)",
+      "estado": "OK ✅"
+    },
+    "formato_ki67": {
+      "esperado": "NEGATIVO (detalles clínicos)",
+      "obtenido": "NEGATIVO (sin positividad en los melanocitos dérmicos)",
+      "estado": "OK ✅"
+    }
+  },
+  "conclusion": "Los patrones narrativos v6.4.97 extraen correctamente biomarcadores con descripciones complejas",
+  "casos_reprocesados": 50,
+  "archivo_pdf": "IHQ DEL 212 AL 262.pdf"
+}

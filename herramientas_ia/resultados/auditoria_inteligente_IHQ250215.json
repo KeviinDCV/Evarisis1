@@ -1,0 +1,126 @@
+{
+  "numero_caso": "IHQ250215",
+  "caso_num": 4,
+  "total_casos": 50,
+  "timestamp": "2026-01-18T23:51:53.393937",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 10,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "TUMOR MALIGNO MAL DIFERENCIADO",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "CARCINOMA DE CÉLULAS PEQUEÑAS"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67 del 100%",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 7,
+      "total_solicitado_bd": 8,
+      "estudios_ocr": [
+        "CKAE1E3",
+        "P40",
+        "TTF-1",
+        "CD56",
+        "SYNAPTOFISINA",
+        "CROMOGRANINA A",
+        "Ki-67"
+      ],
+      "estudios_bd": [
+        "CKAE1AE3",
+        "P40",
+        "TTF-1",
+        "CD56",
+        "SYNAPTOFISINA",
+        "CROMOGRANINA A",
+        "Ki-67",
+        "CROMOGRANINA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 7,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "Ki-67",
+          "columna": "IHQ_KI-67",
+          "valor_bd": "100%",
+          "valor_ocr": "d"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "PULMÓN IZQUIERDO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

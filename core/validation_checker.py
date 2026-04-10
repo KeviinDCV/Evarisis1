@@ -4,9 +4,60 @@
 Sistema de Verificación de Completitud de Registros
 Verifica si los registros importados tienen todos los campos requeridos
 
-Versión: 1.0.3 - Agregado BER_EP4 al validador (FIX IHQ250991)
-Fecha: 27 de octubre de 2025
+Versión: 1.0.10 - FIX IHQ250221: Agregado alias ESTROGÉNOS → IHQ_RECEPTOR_ESTROGENOS
+Fecha: 19 de enero de 2026
 Autor: Sistema EVARISIS
+
+CHANGELOG v1.0.10 (19 enero 2026):
+- FIX IHQ250221: Agregado alias ESTROGÉNOS → IHQ_RECEPTOR_ESTROGENOS
+- Problema: Estudios solicitados con ESTROGÉNOS (error ortográfico con acento, sin RECEPTOR DE) no se mapeaban
+- Solución: Agregada variante ortográfica específica al MAPEO_BIOMARCADORES
+- Impacto: Casos con error ortográfico ESTROGÉNOS ahora se marcan como completos correctamente
+- Nota: Complementa aliases existentes con acento (RECEPTOR DE ESTRÓGENOS)
+- Sincronizado con: auditor_sistema.py v3.5.0 (FUNC-08)
+
+CHANGELOG v1.0.9 (9 enero 2026):
+- ✅ FIX IHQ250190: Eliminadas entradas duplicadas 'CKAE1E3' → 'IHQ_CKAE1E3' (líneas 245-246)
+- 📊 Problema: Mapeo duplicado y contradictorio causaba confusión (línea 245 → IHQ_CKAE1E3, línea 427 → IHQ_CKAE1AE3)
+- 🎯 Solución: Mantener SOLO las entradas correctas que mapean a IHQ_CKAE1AE3 (líneas 426-437)
+- 🔧 Impacto: Todos los alias de CKAE1E3 ahora mapean consistentemente a IHQ_CKAE1AE3
+- 📝 Nota: Sincronizado con biomarker_extractor.py v6.4.59 (eliminación de duplicados en name_mapping)
+- 🔄 Sincronizado con: biomarker_extractor.py v6.4.59
+
+CHANGELOG v1.0.8 (8 enero 2026):
+- ✅ FIX IHQ250185: Agregados aliases 'CAM 5', 'CAM5.2', 'CAM 5.2' → 'IHQ_CAM5' (líneas 242-244)
+- 📊 Problema: Estudios solicitados con "CAM 5" o "CAM 5.2" no se mapeaban a columna IHQ_CAM5
+- 🎯 Solución: Agregadas todas las variantes ortográficas de CAM5 al MAPEO_BIOMARCADORES
+- 🔧 Impacto: Casos con CAM 5.2 (variante con espacio/punto) ahora se marcan como completos correctamente
+- 📝 Nota: CAM 5 y CAM 5.2 son el mismo anticuerpo (citoqueratinas 8/18), se guardan en IHQ_CAM5
+- 🔄 Sincronizado con: biomarker_extractor.py v6.4.47/48
+
+CHANGELOG v1.0.7 (7 enero 2026):
+- ✅ FIX IHQ250160: Agregado mapping 'GLYCOFORINA' → 'IHQ_GLICOFORINA' (línea 227)
+- 📊 Problema: Estudios solicitados con "GLYCOFORINA" (con Y) no se mapeaban a columna IHQ_GLICOFORINA (con I)
+- 🎯 Solución: Agregado alias ortográfico al MAPEO_BIOMARCADORES
+- 🔧 Impacto: Módulo de completitud ahora reconoce ambas variantes ortográficas (GLYCOFORINA/GLICOFORINA)
+- 🔄 Sincronizado con: auditor_sistema.py v3.4.2, biomarker_extractor.py v6.4.22
+
+CHANGELOG v1.0.6 (7 enero 2026):
+- ✅ FIX IHQ250025: Agregados mappings 'P 40', 'P-40' → 'IHQ_P40_ESTADO' (líneas 146-147)
+- ✅ FIX: Agregados mappings 'P 16', 'P-16' → 'IHQ_P16_ESTADO' (líneas 141-142)
+- 📊 Problema: Estudios solicitados con "P 40" (con espacio) no se mapeaban, marcaban biomarcador como ausente
+- 🎯 Solución: Agregadas variantes con espacio y guión al MAPEO_BIOMARCADORES
+- 🔧 Impacto: Módulo de completitud reconoce TODAS las variantes de escritura de P40 y P16
+- 🔄 Sincronizado con: auditor_sistema.py v6.4.21, debug_mapper.py v6.4.21, biomarker_extractor.py v6.4.21
+
+CHANGELOG v1.0.5:
+- ✅ FIX IHQ250154: Agregados mappings 'CKA E1E2' → 'IHQ_CKAE1AE3' y 'CKA E1/E2' → 'IHQ_CKAE1AE3' (líneas 369-370)
+- 📊 Problema: Estudios solicitados con "CKA E1E2" (error OCR con E1E2 en vez de AE1AE3) no se mapeaban
+- 🎯 Solución: Agregadas variantes al MAPEO_BIOMARCADORES (sincronizado con auditor_sistema.py v3.4.0)
+- 🔧 Impacto: Módulo de completitud ahora reconoce correctamente estas variantes OCR comunes
+
+CHANGELOG v1.0.4:
+- ✅ FIX IHQ250144: Agregado mapping 'IDH 1' → 'IHQ_IDH1' (línea 219)
+- 📊 Problema: Estudios solicitados con "IDH 1" (con espacio) no se mapeaban, marcaban biomarcador como ausente
+- 🎯 Solución: Agregada variante 'IDH 1' al MAPEO_BIOMARCADORES junto con 'IDH1' e 'IDH-1'
+- 🔧 Impacto: Casos de gliomas con IDH mutante ahora detectan correctamente completitud de IDH1
 """
 
 from typing import Dict, List, Any
@@ -62,7 +113,11 @@ CAMPOS_REQUERIDOS = {
         'IHQ_HER2',
         'IHQ_KI-67',
         'IHQ_P53',
-        'IHQ_PDL-1'
+        'IHQ_PDL-1',
+        'IHQ_CD5',
+        'IHQ_CD23',
+        'IHQ_CICLINA_D1',
+        'IHQ_SOX11'
     ]
 }
 
@@ -87,6 +142,7 @@ MAPEO_BIOMARCADORES = {
     'RECEPTOR DE ESTRÓGENOS': 'IHQ_RECEPTOR_ESTROGENOS',  # V3.2.5.2: Con acento
     'RECEPTORES DE ESTRÓGENO': 'IHQ_RECEPTOR_ESTROGENOS',  # V3.2.5.2: Con acento
     'RECEPTORES DE ESTRÓGENOS': 'IHQ_RECEPTOR_ESTROGENOS',  # V3.2.5.2: Con acento
+    'ESTROGÉNOS': 'IHQ_RECEPTOR_ESTROGENOS',  # V1.0.10 FIX IHQ250221: Error ortográfico sin RECEPTOR DE
     'IHQ_RECEPTOR_ESTROGENOS': 'IHQ_RECEPTOR_ESTROGENOS',
 
     'RP': 'IHQ_RECEPTOR_PROGESTERONA',
@@ -110,6 +166,7 @@ MAPEO_BIOMARCADORES = {
 
     'KI-67': 'IHQ_KI-67',
     'KI67': 'IHQ_KI-67',
+    'KI 67': 'IHQ_KI-67',
     'IHQ_KI-67': 'IHQ_KI-67',
 
     'P53': 'IHQ_P53',
@@ -121,15 +178,159 @@ MAPEO_BIOMARCADORES = {
     'IHQ_PDL-1': 'IHQ_PDL-1',
 
     'P16': 'IHQ_P16_ESTADO',
+    'P-16': 'IHQ_P16_ESTADO',  # V6.4.21: Alias con guión
+    'P 16': 'IHQ_P16_ESTADO',  # V6.4.21: Alias con espacio
     'IHQ_P16_ESTADO': 'IHQ_P16_ESTADO',
 
     'P40': 'IHQ_P40_ESTADO',
+    'P-40': 'IHQ_P40_ESTADO',  # V6.4.21: Alias con guión
+    'P 40': 'IHQ_P40_ESTADO',  # V6.4.21 FIX IHQ250025: Alias con espacio
     'IHQ_P40_ESTADO': 'IHQ_P40_ESTADO',
 
     'CK7': 'IHQ_CK7',
     'IHQ_CK7': 'IHQ_CK7',
 
+    'DESMINA': 'IHQ_DESMINA',
+    'IHQ_DESMINA': 'IHQ_DESMINA',
+
+    'CD11': 'IHQ_CD11',
+    'IHQ_CD11': 'IHQ_CD11',
+
+    'MIOGENINA': 'IHQ_MIOGENINA',
+    'IHQ_MIOGENINA': 'IHQ_MIOGENINA',
+
+    'MAMAGLOBINA': 'IHQ_MAMAGLOBINA',
+    'IHQ_MAMAGLOBINA': 'IHQ_MAMAGLOBINA',
+
+    'TIROGLOBULINA': 'IHQ_TIROGLOBULINA',
+    'IHQ_TIROGLOBULINA': 'IHQ_TIROGLOBULINA',
+
+    'CK34BETAE12': 'IHQ_CK34BETAE12',
+    'IHQ_CK34BETAE12': 'IHQ_CK34BETAE12',
+
+    'CK34BETA12': 'IHQ_CK34BETA12',
+    'IHQ_CK34BETA12': 'IHQ_CK34BETA12',
+
+    'OCT4': 'IHQ_OCT4',
+    'IHQ_OCT4': 'IHQ_OCT4',
+
+    'PODOPLANINA': 'IHQ_PODOPLANINA',
+    'IHQ_PODOPLANINA': 'IHQ_PODOPLANINA',
+
+    'IDH': 'IHQ_IDH',
+    'IHQ_IDH': 'IHQ_IDH',
+
+    'GPC3': 'IHQ_GPC3',
+    'GLYPICAN3': 'IHQ_GPC3',  # Variante sin espacios
+    'Glypican 3': 'IHQ_GPC3',  # Variante con espacio y capitalización mixta
+    'GLYPICAN 3': 'IHQ_GPC3',  # V6.4.52 FIX IHQ250189: Variante con espacio mayúsculas
+    'GLYPICAN-3': 'IHQ_GPC3',  # Variante con guion mayúsculas
+    'Glypican-3': 'IHQ_GPC3',  # V6.4.49: Variante con guion original
+    'GPC-3': 'IHQ_GPC3',  # Variante abreviada con guion
+    'IHQ_GPC3': 'IHQ_GPC3',
+
+    'AFP': 'IHQ_AFP',
+    'IHQ_AFP': 'IHQ_AFP',
+
+    'IGD': 'IHQ_IGD',
+    'IGD ': 'IHQ_IGD',  # V6.4.32: Con espacio al final
+    'IG-D': 'IHQ_IGD',  # V6.4.32: Variante con guión
+    'IG D': 'IHQ_IGD',  # V6.4.32: Variante con espacio
+    'INMUNOGLOBULINA D': 'IHQ_IGD',  # V6.4.32: Nombre completo
+    'IHQ_IGD': 'IHQ_IGD',
+
+    'BETACATENINA': 'IHQ_BETACATENINA',
+    'IHQ_BETACATENINA': 'IHQ_BETACATENINA',
+
+    'ACTINA_MUSCULO_ESPECIFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',
+    'IHQ_ACTINA_MUSCULO_ESPECIFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',
+
+    'MIELOPEROXIDASA': 'IHQ_MIELOPEROXIDASA',
+    'IHQ_MIELOPEROXIDASA': 'IHQ_MIELOPEROXIDASA',
+
+    'CD7': 'IHQ_CD7',
+    'IHQ_CD7': 'IHQ_CD7',
+
+    'HCG': 'IHQ_HCG',
+    'IHQ_HCG': 'IHQ_HCG',
+
+    'ACTINA_MUSCULO_LISO': 'IHQ_ACTINA_MUSCULO_LISO',
+    'ACTINA DE MUSCULO LISO': 'IHQ_ACTINA_MUSCULO_LISO',
+    'ACTINA DE MÚSCULO LISO': 'IHQ_ACTINA_MUSCULO_LISO',  # V6.4.14: FIX IHQ250140 - Variante con Ú
+    'DE MUSCULO LISO': 'IHQ_ACTINA_MUSCULO_LISO',
+    'DE MÚSCULO LISO': 'IHQ_ACTINA_MUSCULO_LISO',  # V6.4.14: FIX IHQ250140 - Variante con Ú
+    'IHQ_ACTINA_MUSCULO_LISO': 'IHQ_ACTINA_MUSCULO_LISO',
+    'ACTIN': 'IHQ_ACTIN',
+    'ACTINA MUSCULO ESPECÍFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',  # V6.4.14: FIX IHQ250140 - Corregir mapeo
+    'ACTINA MUSCULO ESPECIFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',  # V6.4.14: FIX IHQ250140 - Corregir mapeo
+    'ACTINA MÚSCULO ESPECÍFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',  # V6.4.14: FIX IHQ250140 - Variante con Ú e Í
+    'ACTINA MÚSCULO ESPECIFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',  # V6.4.14: FIX IHQ250140 - Variante con Ú
+    'ACTINA DE MÚSCULO ESPECÍFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',  # V6.4.14: FIX IHQ250140 - Variante con DE, Ú e Í
+    'ACTINA DE MÚSCULO ESPECIFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',  # V6.4.14: FIX IHQ250140 - Variante con DE y Ú
+    'ACTINA ESPECIFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',  # V6.4.14: FIX IHQ250140 - Corregir mapeo
+    'IHQ_ACTIN': 'IHQ_ACTIN',
+
+    'MYOGENIN': 'IHQ_MYOGENIN',
+    'MYOGENINA': 'IHQ_MYOGENIN',
+    'IHQ_MYOGENIN': 'IHQ_MYOGENIN',
+
+    'MYOD1': 'IHQ_MYOD1',
+    'MYO D1': 'IHQ_MYOD1',
+    'IHQ_MYOD1': 'IHQ_MYOD1',
+
+    'EBER': 'IHQ_EBER',
+    'IHQ_EBER': 'IHQ_EBER',
+
+    # V6.4.25: FIX IHQ250162 - Mapear a columna correcta IHQ_CALRETININA (v5.3, sin doble R)
+    'CALRRETININA': 'IHQ_CALRETININA',  # Variante OCR typo → columna correcta
+    'IHQ_CALRRETININA': 'IHQ_CALRETININA',  # Alias typo v4.0 → columna correcta v5.3
+
+    'SYNAPTOFISINA': 'IHQ_SINAPTOFISINA',
+    'SYNAPTOPHYSIN': 'IHQ_SINAPTOFISINA',  # V6.3.40: Variante inglés → español
+    'IHQ_SYNAPTOFISINA': 'IHQ_SINAPTOFISINA',
+
+    # V6.4.59 FIX IHQ250190: Eliminadas entradas duplicadas CKAE1E3 → IHQ_CKAE1E3
+    # Las entradas correctas que mapean a IHQ_CKAE1AE3 están en líneas 426-437
+
+    'SINAPTOFISINA': 'IHQ_SINAPTOFISINA',
+    'IHQ_SINAPTOFISINA': 'IHQ_SINAPTOFISINA',
+
+    'CROMOGRANINA': 'IHQ_CROMOGRANINA',
+    'CROMOGRANINA A': 'IHQ_CROMOGRANINA',
+    'CROMOGRANINA-A': 'IHQ_CROMOGRANINA',
+    'CHROMOGRANINA': 'IHQ_CROMOGRANINA',  # V6.3.40: Variante inglés → español
+    'CHROMOGRANINA A': 'IHQ_CROMOGRANINA',
+    'CROMOGRAMINA': 'IHQ_CROMOGRANINA',  # V6.5.94 FIX IHQ250277: Typo OCR común (G→M)
+    'IHQ_CROMOGRANINA': 'IHQ_CROMOGRANINA',
+
+    'CK56': 'IHQ_CK56',
+    'IHQ_CK56': 'IHQ_CK56',
+
+    'CAM5': 'IHQ_CAM5',
+    'CAM 5': 'IHQ_CAM5',  # V1.0.8: FIX IHQ250185 - Variante con espacio
+    'CAM5.2': 'IHQ_CAM5',  # V1.0.8: FIX IHQ250185 - Variante con punto (mismo anticuerpo)
+    'CAM 5.2': 'IHQ_CAM5',  # V1.0.8: FIX IHQ250185 - Variante con espacio y punto
+    'IHQ_CAM5': 'IHQ_CAM5',
+
+    'GLICOFORINA': 'IHQ_GLICOFORINA',
+    'GLYCOFORINA': 'IHQ_GLICOFORINA',  # V1.0.7: Alias ortográfico GLYCOFORINA → GLICOFORINA
+    'IHQ_GLICOFORINA': 'IHQ_GLICOFORINA',
+
+    'TDT': 'IHQ_TDT',
+    'IHQ_TDT': 'IHQ_TDT',
+
+    'ATRX': 'IHQ_ATRX',
+    'IHQ_ATRX': 'IHQ_ATRX',
+
+    'IDH1': 'IHQ_IDH1',
+    'IDH-1': 'IHQ_IDH1',
+    'IDH 1': 'IHQ_IDH1',  # V6.4.10: FIX IHQ250144 - Variante con espacio en estudios solicitados
+    'IDH': 'IHQ_IDH1',
+    'IHQ_IDH1': 'IHQ_IDH1',
+
     'CMYC': 'IHQ_CMYC',
+    'C-MYC': 'IHQ_CMYC',  # V6.3.5 FIX IHQ250008: Variante con guión
+    'C MYC': 'IHQ_CMYC',  # V6.3.5 FIX IHQ250008: Variante con espacio
     'IHQ_CMYC': 'IHQ_CMYC',
 
     'IGG4': 'IHQ_IGG4',
@@ -144,7 +345,8 @@ MAPEO_BIOMARCADORES = {
     'HEPATOCITO': 'IHQ_HEPATOCITO',  # V6.0.16: Auto-agregado
     'IHQ_HEPATOCITO': 'IHQ_HEPATOCITO',
 
-    'PSA': 'IHQ_PSA',  # V6.0.16: Auto-agregado
+    'PSA': 'IHQ_PSA',
+        'RCC': 'IHQ_RCC',  # V6.0.16: Auto-agregado
     'IHQ_PSA': 'IHQ_PSA',
 
     'LAMBDA': 'IHQ_LAMBDA',  # V6.0.16: Auto-agregado
@@ -152,6 +354,22 @@ MAPEO_BIOMARCADORES = {
 
     'KAPPA': 'IHQ_KAPPA',  # V6.0.16: Auto-agregado
     'IHQ_KAPPA': 'IHQ_KAPPA',
+
+    # V6.4.0: Biomarcadores para estudios de médula ósea/hematológicos (IHQ250012)
+    # V6.4.1: Corregido mapeo a IHQ_MIELOPEROXIDASA (columna estándar)
+    'MPO': 'IHQ_MIELOPEROXIDASA',
+    'MPX': 'IHQ_MIELOPEROXIDASA',  # Alias común
+
+    'CICLINA_D1': 'IHQ_CICLINA_D1',
+    'CICLINA D1': 'IHQ_CICLINA_D1',
+    'CYCLINA D1': 'IHQ_CICLINA_D1',
+    'CYCLINA': 'IHQ_CICLINA_D1',
+    'CICLYNA-D1': 'IHQ_CICLINA_D1',
+    'CICLYNA D1': 'IHQ_CICLINA_D1',
+    'CYCLIN D1': 'IHQ_CICLINA_D1',
+    'CYCLIN-D1': 'IHQ_CICLINA_D1',
+    'CCND1': 'IHQ_CICLINA_D1',
+    'IHQ_CICLINA_D1': 'IHQ_CICLINA_D1',
 
     'CK19': 'IHQ_CK19',  # V6.0.16: Agregado para IHQ250987
     'IHQ_CK19': 'IHQ_CK19',
@@ -166,13 +384,22 @@ MAPEO_BIOMARCADORES = {
     'IHQ_EMA': 'IHQ_EMA',
 
     'GATA3': 'IHQ_GATA3',
+    'GATA-3': 'IHQ_GATA3',
+    'GATA 3': 'IHQ_GATA3',
     'IHQ_GATA3': 'IHQ_GATA3',
 
     'SOX10': 'IHQ_SOX10',
+    'SOX 10': 'IHQ_SOX10',
+    'SOX-10': 'IHQ_SOX10',
     'IHQ_SOX10': 'IHQ_SOX10',
+    'SOX11': 'IHQ_SOX11',
+    'SOX 11': 'IHQ_SOX11',
+    'IHQ_SOX11': 'IHQ_SOX11',
 
     'TTF1': 'IHQ_TTF1',
     'TTF-1': 'IHQ_TTF1',
+    'TTF 1': 'IHQ_TTF1',  # V1.0.9 FIX IHQ250231: Variante con espacio (TTF 1)
+    'TTF- 1': 'IHQ_TTF1',  # V1.0.9 FIX IHQ250231: Variante con espacio después de guión (TTF- 1)
     'IHQ_TTF1': 'IHQ_TTF1',
 
     'S100': 'IHQ_S100',
@@ -182,34 +409,56 @@ MAPEO_BIOMARCADORES = {
     'VIMENTINA': 'IHQ_VIMENTINA',
     'IHQ_VIMENTINA': 'IHQ_VIMENTINA',
 
-    'CHROMOGRANINA': 'IHQ_CHROMOGRANINA',
-    'IHQ_CHROMOGRANINA': 'IHQ_CHROMOGRANINA',
 
-    'SYNAPTOPHYSIN': 'IHQ_SYNAPTOPHYSIN',
-    'SINAPTOFISINA': 'IHQ_SYNAPTOPHYSIN',
-    'IHQ_SYNAPTOPHYSIN': 'IHQ_SYNAPTOPHYSIN',
+    # V6.3.40: UNIFICADO EN ESPAÑOL - todas las variantes → IHQ_SINAPTOFISINA
+    'SYNAPTOPHYSIN': 'IHQ_SINAPTOFISINA',
+    'SYNAPTOFISINA': 'IHQ_SINAPTOFISINA',
+    'SINAPTOFISINA': 'IHQ_SINAPTOFISINA',
+    'IHQ_SYNAPTOPHYSIN': 'IHQ_SINAPTOFISINA',
+    'IHQ_SINAPTOFISINA': 'IHQ_SINAPTOFISINA',
 
     'MELAN A': 'IHQ_MELAN_A',
     'MELAN-A': 'IHQ_MELAN_A',
+    'MELANA': 'IHQ_MELAN_A',
+    'MART-1': 'IHQ_MELAN_A',
+    'MART 1': 'IHQ_MELAN_A',
+    'MART1': 'IHQ_MELAN_A',
+    'MATR-1': 'IHQ_MELAN_A',
+    'MATR 1': 'IHQ_MELAN_A',
+    'MATR1': 'IHQ_MELAN_A',
     'IHQ_MELAN_A': 'IHQ_MELAN_A',
 
     'CD2': 'IHQ_CD2',
+    'CD 2': 'IHQ_CD2',
     'IHQ_CD2': 'IHQ_CD2',
     'CD3': 'IHQ_CD3',
+    'CD 3': 'IHQ_CD3',
     'IHQ_CD3': 'IHQ_CD3',
     'CD5': 'IHQ_CD5',
+    'CD 5': 'IHQ_CD5',
     'IHQ_CD5': 'IHQ_CD5',
     'CD10': 'IHQ_CD10',
+    'CD 10': 'IHQ_CD10',
     'IHQ_CD10': 'IHQ_CD10',
     'CD20': 'IHQ_CD20',
+    'CD 20': 'IHQ_CD20',
     'IHQ_CD20': 'IHQ_CD20',
     'CD30': 'IHQ_CD30',
+    'CD 30': 'IHQ_CD30',  # V6.5.25 FIX IHQ250237: OCR incluye espacio
     'IHQ_CD30': 'IHQ_CD30',
+    'CD31': 'IHQ_CD31',  # V6.5.94 FIX IHQ250277: PECAM-1 marcador endotelial
+    'CD 31': 'IHQ_CD31',
+    'CD-31': 'IHQ_CD31',
+    'PECAM': 'IHQ_CD31',
+    'PECAM-1': 'IHQ_CD31',
+    'PECAM 1': 'IHQ_CD31',
+    'IHQ_CD31': 'IHQ_CD31',
     'CD34': 'IHQ_CD34',
     'IHQ_CD34': 'IHQ_CD34',
     'CD38': 'IHQ_CD38',
     'IHQ_CD38': 'IHQ_CD38',
     'CD45': 'IHQ_CD45',
+    'LCA': 'IHQ_CD45',
     'IHQ_CD45': 'IHQ_CD45',
     'CD56': 'IHQ_CD56',
     'IHQ_CD56': 'IHQ_CD56',
@@ -230,12 +479,20 @@ MAPEO_BIOMARCADORES = {
 
     # V5.1: MAPEOS COMPLETOS - TODOS LOS BIOMARCADORES
     # Citoqueratinas y marcadores epiteliales
-    'CAM5.2': 'IHQ_CAM52',
-    'CAM 5.2': 'IHQ_CAM52',
+    # V6.5.82: CAM5.2/CAM 5.2 eliminados - Mapeos obsoletos desde v6.2.3 (usar solo IHQ_CAM5, ver línea 307)
     'CKAE1AE3': 'IHQ_CKAE1AE3',
     'CKAE1E3': 'IHQ_CKAE1AE3',  # Variante común
     'CKAE1 AE3': 'IHQ_CKAE1AE3',
     'CKAE1/AE3': 'IHQ_CKAE1AE3',
+    'CKAE1/E3': 'IHQ_CKAE1AE3',  # V6.5.24 FIX IHQ250237: OCR escribe E3 en lugar de AE3
+    'CKA E1E2': 'IHQ_CKAE1AE3',  # V6.4.16: FIX IHQ250154 - Error OCR común (E1E2 en vez de AE1AE3)
+    'CKA E1/E2': 'IHQ_CKAE1AE3',  # V6.4.16: FIX IHQ250154 - Variante con barra
+    'CKEA1EA3': 'IHQ_CKAE1AE3',  # V6.4.32: FIX IHQ250169 - Orden letras invertido (EA antes de 1)
+    'CKEA1/EA3': 'IHQ_CKAE1AE3',  # V6.4.32: FIX IHQ250169 - Orden invertido con barra
+    'CK AE1/AE2': 'IHQ_CKAE1AE3',  # V6.4.32: FIX IHQ250170 - CK con espacio antes de AE1/AE2
+    'AE1AE2': 'IHQ_CKAE1AE3',  # V6.4.32: FIX IHQ250170 - Solo AE1AE2 sin CK
+    'AE1/AE2': 'IHQ_CKAE1AE3',  # V6.4.32: FIX IHQ250170 - AE1/AE2 con barra
+    'CK': 'IHQ_CKAE1AE3',  # V6.4.32: FIX IHQ250170 - CK genérico (contexto citoqueratina)
 
     # Marcadores de proliferación y supresores tumorales
     'CDK4': 'IHQ_CDK4',
@@ -257,15 +514,24 @@ MAPEO_BIOMARCADORES = {
     'IHQ_CALPONINA': 'IHQ_CALPONINA',
 
     # Marcadores MMR (Mismatch Repair) - CRÍTICOS para síndrome de Lynch
+    # V6.3.4 FIX IHQ250006: Agregar variantes con espacio y guión
     'MLH1': 'IHQ_MLH1',
-    'IHQ_MLH1': 'IHQ_MLH1',  # V5.2: Agregado con prefijo
+    'MLH 1': 'IHQ_MLH1',  # V6.3.4: Con espacio
+    'MLH-1': 'IHQ_MLH1',  # V6.3.4: Con guión
+    'IHQ_MLH1': 'IHQ_MLH1',
     'MSH2': 'IHQ_MSH2',
-    'IHQ_MSH2': 'IHQ_MSH2',  # V5.2: Agregado con prefijo
+    'MSH 2': 'IHQ_MSH2',  # V6.3.4: Con espacio
+    'MSH-2': 'IHQ_MSH2',  # V6.3.4: Con guión
+    'IHQ_MSH2': 'IHQ_MSH2',
     'MSH6': 'IHQ_MSH6',
-    'IHQ_MSH6': 'IHQ_MSH6',  # V5.2: Agregado con prefijo
+    'MSH 6': 'IHQ_MSH6',  # V6.3.4: Con espacio
+    'MSH-6': 'IHQ_MSH6',  # V6.3.4: Con guión
     'MSH6 Y': 'IHQ_MSH6',  # "Y" al final por OCR
+    'IHQ_MSH6': 'IHQ_MSH6',
     'PMS2': 'IHQ_PMS2',
-    'IHQ_PMS2': 'IHQ_PMS2',  # V5.2: Agregado con prefijo
+    'PMS 2': 'IHQ_PMS2',  # V6.3.4: Con espacio
+    'PMS-2': 'IHQ_PMS2',  # V6.3.4: Con guión
+    'IHQ_PMS2': 'IHQ_PMS2',
 
     # Marcadores de GIST y tumores neuroendocrinos
     'DOG1': 'IHQ_DOG1',
@@ -281,6 +547,9 @@ MAPEO_BIOMARCADORES = {
     'H-CALDESMÓN': 'IHQ_H_CALDESMON',
     'H CALDESMÓN': 'IHQ_H_CALDESMON',
     'CALDESMON': 'IHQ_H_CALDESMON',
+    'DESMINA': 'IHQ_DESMIN',
+    'DESMIN': 'IHQ_DESMIN',
+    'IHQ_DESMIN': 'IHQ_DESMIN',
     'AML': 'IHQ_AML',
     'ACTINA DE MÚSCULO LISO': 'IHQ_AML',
     'ACTINA DE MUSCULO LISO': 'IHQ_AML',
@@ -288,6 +557,8 @@ MAPEO_BIOMARCADORES = {
     'ACTINA MUSCULO LISO': 'IHQ_AML',
     'SMA': 'IHQ_AML',
     'IHQ_AML': 'IHQ_AML',
+    'DESMINA': 'IHQ_DESMIN',
+    'MIOGENINA': 'IHQ_MYOGENIN',
 
     # Marcadores neurales y gliales
     'GFAP': 'IHQ_GFAP',
@@ -301,6 +572,7 @@ MAPEO_BIOMARCADORES = {
     # Marcadores de linfoma
     'PAX5': 'IHQ_PAX5',
     'PAX-5': 'IHQ_PAX5',
+    'PAX 5': 'IHQ_PAX5',  # V6.3.5 FIX IHQ250008: Variante con espacio
     'IHQ_PAX5': 'IHQ_PAX5',  # V5.2: Agregado con prefijo
 
     # Marcadores virales
@@ -317,8 +589,8 @@ MAPEO_BIOMARCADORES = {
     'ACTINA': 'IHQ_ACTIN',
     'ACTIN': 'IHQ_ACTIN',
     'IHQ_ACTIN': 'IHQ_ACTIN',  # V5.2: Agregado con prefijo
-    'ACTINA DE MUSCULO LISO': 'IHQ_ACTIN',
-    'ACTINA MUSCULO LISO': 'IHQ_ACTIN',
+    'ACTINA DE MUSCULO LISO': 'IHQ_ACTINA_MUSCULO_LISO',  # V6.4.14: FIX IHQ250140 - Corregir mapeo
+    'ACTINA MUSCULO LISO': 'IHQ_ACTINA_MUSCULO_LISO',  # V6.4.14: FIX IHQ250140 - Corregir mapeo
 
     # Variantes con espacios (errores comunes de OCR)
     'HER 2': 'IHQ_HER2',
@@ -341,8 +613,12 @@ MAPEO_BIOMARCADORES = {
     # V5.3: NUEVOS BIOMARCADORES (28 adicionales detectados en producción)
     # Oncogenes y marcadores de linfoma
     'ALK': 'IHQ_ALK',
+    'ALK 01': 'IHQ_ALK',  # V6.5.94 FIX IHQ250277: Variante con espacio y número
+    'ALK-01': 'IHQ_ALK',
+    'ALK 1': 'IHQ_ALK',
     'IHQ_ALK': 'IHQ_ALK',
     'BCL2': 'IHQ_BCL2',
+    'BCL 2': 'IHQ_BCL2',
     'BCL-2': 'IHQ_BCL2',
     'IHQ_BCL2': 'IHQ_BCL2',
     'BCL6': 'IHQ_BCL6',
@@ -368,6 +644,18 @@ MAPEO_BIOMARCADORES = {
     'MUM 1': 'IHQ_MUM1',
     'IRF4': 'IHQ_MUM1',  # Sinónimo
     'IHQ_MUM1': 'IHQ_MUM1',
+    # V6.4.43: MUC1 (mucina gástrica foveolar)
+    'MUC1': 'IHQ_MUC1',
+    'MUC-1': 'IHQ_MUC1',
+    'MUC 1': 'IHQ_MUC1',
+    'MUCINA 1': 'IHQ_MUC1',
+    'IHQ_MUC1': 'IHQ_MUC1',
+    # V6.0.19: MUC2 (mucina gastrointestinal)
+    'MUC2': 'IHQ_MUC2',
+    'MUC-2': 'IHQ_MUC2',
+    'MUC 2': 'IHQ_MUC2',
+    'MUCINA 2': 'IHQ_MUC2',
+    'IHQ_MUC2': 'IHQ_MUC2',
     
     # V6.0.13: CD15 y CD79A (marcadores linfocíticos)
     'CD15': 'IHQ_CD15',
@@ -377,6 +665,8 @@ MAPEO_BIOMARCADORES = {
     'IHQ_CD79A': 'IHQ_CD79A',
     
     'CD23': 'IHQ_CD23',
+    'CD 23': 'IHQ_CD23',
+    'D 23': 'IHQ_CD23',  # Error OCR común
     'IHQ_CD23': 'IHQ_CD23',
     'CD4': 'IHQ_CD4',
     'IHQ_CD4': 'IHQ_CD4',
@@ -390,6 +680,10 @@ MAPEO_BIOMARCADORES = {
 
     # Marcadores virales
     'C4D': 'IHQ_C4D',
+    'C 4D': 'IHQ_C4D',
+    'C-4D': 'IHQ_C4D',
+    'C4D1': 'IHQ_C4D',
+    'C4-D': 'IHQ_C4D',
     'IHQ_C4D': 'IHQ_C4D',
     'HHV 8': 'IHQ_HHV8',  # Variante con espacio
     'LMP 1': 'IHQ_LMP1',
@@ -400,6 +694,10 @@ MAPEO_BIOMARCADORES = {
     'CMV': 'IHQ_CITOMEGALOVIRUS',
     'IHQ_CITOMEGALOVIRUS': 'IHQ_CITOMEGALOVIRUS',
     'SV40': 'IHQ_SV40',
+    'SV 40': 'IHQ_SV40',
+    'SV-40': 'IHQ_SV40',
+    'POLIOMAVIRUS': 'IHQ_SV40',
+    'POLYOMAVIRUS': 'IHQ_SV40',
     'IHQ_SV40': 'IHQ_SV40',
 
     # V6.0.16: Biomarcadores para linfomas (IHQ250988)
@@ -424,10 +722,11 @@ MAPEO_BIOMARCADORES = {
     'IHQ_CALRETININA': 'IHQ_CALRETININA',
 
     # Citoqueratinas adicionales
-    'CK34 B E12': 'IHQ_CK34BE12',
-    'CK34BE12': 'IHQ_CK34BE12',
-    'CK34 BE12': 'IHQ_CK34BE12',
-    'IHQ_CK34BE12': 'IHQ_CK34BE12',
+    'CK34 B E12': 'IHQ_CK34BETAE12',
+    'CK34BE12': 'IHQ_CK34BETAE12',
+    'CK34 BE12': 'IHQ_CK34BETAE12',
+    'IHQ_CK34BE12': 'IHQ_CK34BETAE12',  # V6.5.29 FIX IHQ250238: Unificar a IHQ_CK34BETAE12
+    '34BETAE12': 'IHQ_CK34BETAE12',  # V6.5.29 FIX IHQ250238: Alias corto sin CK
     'CK5 6': 'IHQ_CK5_6',
     'CK5/6': 'IHQ_CK5_6',
     'CK5/5': 'IHQ_CK5_6',  # Error OCR común
@@ -459,6 +758,7 @@ MAPEO_BIOMARCADORES = {
 
     # Marcadores prostáticos
     'PSA': 'IHQ_PSA',
+        'RCC': 'IHQ_RCC',
     'IHQ_PSA': 'IHQ_PSA',
     'RACEMASA': 'IHQ_RACEMASA',
     'AMACR': 'IHQ_RACEMASA',  # Alias
@@ -472,6 +772,27 @@ MAPEO_BIOMARCADORES = {
     'IHQ_34BETA': 'IHQ_34BETA',
     'B2': 'IHQ_B2',
     'IHQ_B2': 'IHQ_B2',
+
+    # V6.3.71 - Biomarcadores hormonales hipofisarios (IHQ250097, IHQ250072)
+    'PROLACTINA': 'IHQ_PROLACTINA',
+    'IHQ_PROLACTINA': 'IHQ_PROLACTINA',
+    'ACTH': 'IHQ_ACTH',
+    'IHQ_ACTH': 'IHQ_ACTH',
+    'GH': 'IHQ_GH',
+    'IHQ_GH': 'IHQ_GH',
+    'SOMATOTROFINA': 'IHQ_GH',
+    'FSH': 'IHQ_FSH',
+    'IHQ_FSH': 'IHQ_FSH',
+    'LH': 'IHQ_LH',
+    'IHQ_LH': 'IHQ_LH',
+    'TSH': 'IHQ_TSH',
+    'IHQ_TSH': 'IHQ_TSH',
+    # V6.4.60 - INHIBINA (tumor ovárico de células de la granulosa)
+    'INHIBINA': 'IHQ_INHIBINA',
+    'INHIBIN': 'IHQ_INHIBINA',
+    'INHIBINA-A': 'IHQ_INHIBINA',
+    'INHIBIN A': 'IHQ_INHIBINA',
+    'IHQ_INHIBINA': 'IHQ_INHIBINA',
 }
 
 
@@ -515,7 +836,28 @@ def parsear_estudios_solicitados(estudios_solicitados_raw: str) -> Dict[str, Any
 
     # Separar por comas
     estudios_lista = [e.strip() for e in estudios_solicitados_raw.split(',')]
-    estudios_lista = [e for e in estudios_lista if e and e != 'N/A']
+    
+    # V6.4.5: FIX - Re-unir fragmentos que fueron separados pero son parte del mismo biomarcador
+    # Ej: "ACTINA, DE MUSCULO LISO" -> "ACTINA DE MUSCULO LISO"
+    estudios_corregidos = []
+    i = 0
+    while i < len(estudios_lista):
+        actual = estudios_lista[i]
+        if not actual or actual == 'N/A':
+            i += 1
+            continue
+            
+        proximo = estudios_lista[i+1] if i+1 < len(estudios_lista) else None
+        
+        # Si el próximo fragmento empieza con "DE ", probablemente pertenece al actual
+        if proximo and proximo.upper().startswith('DE '):
+            estudios_corregidos.append(f"{actual} {proximo}")
+            i += 2
+        else:
+            estudios_corregidos.append(actual)
+            i += 1
+            
+    estudios_lista = estudios_corregidos
 
     if not estudios_lista:
         return resultado
@@ -558,8 +900,25 @@ def parsear_estudios_solicitados(estudios_solicitados_raw: str) -> Dict[str, Any
                     # Solo el campo _ESTADO es requerido para completitud.
                     # resultado['columnas_bd_mapeadas'].append(columna_porcentaje)  # ELIMINADO
         else:
-            # No mapeado
-            resultado['no_mapeados'].append(estudio)
+            # V6.4.2: FIX IHQ250138 - Detectar campos compuestos (ej: "CD117 GLICOFORINA")
+            # Intentar separar por espacios y buscar cada token individualmente
+            tokens = [t.strip() for t in estudio_upper.split() if t.strip()]
+            columnas_encontradas = []
+
+            for token in tokens:
+                columna_token = MAPEO_BIOMARCADORES.get(token)
+                if columna_token and columna_token not in columnas_encontradas:
+                    columnas_encontradas.append(columna_token)
+
+            if len(columnas_encontradas) == len(tokens) and len(columnas_encontradas) > 0:
+                # Todos los tokens tienen mapeo - campo compuesto válido
+                for col in columnas_encontradas:
+                    if col not in resultado['columnas_bd_mapeadas']:
+                        resultado['columnas_bd_mapeadas'].append(col)
+                resultado['total_mapeados'] += 1
+            else:
+                # No mapeado (ni directo ni como compuesto)
+                resultado['no_mapeados'].append(estudio)
 
     return resultado
 
@@ -672,10 +1031,17 @@ def verificar_completitud_registro(numero_peticion: str) -> Dict[str, Any]:
             for columna_bd in estudios_info['columnas_bd_mapeadas']:
                 # Verificar si tiene valor en la BD
                 valor = registro.get(columna_bd, '')
-                if valor and valor not in ['', 'NO ENCONTRADO', 'nan', None, 'NO APLICA', 'N/A']:
+                # V6.3.5 FIX IHQ250007: 'NO MENCIONADO', 'N/A' y 'NO VALORABLE' son resultados válidos
+                # Significa que el PDF no reportó el resultado o hubo problema técnico
+                # No debe considerarse como faltante, ya que el sistema intentó extraerlo
+                valores_validos_especiales = ['NO MENCIONADO', 'N/A', 'NO VALORABLE']
+                valores_invalidos = ['', 'NO ENCONTRADO', 'nan', None, 'NO APLICA']
+
+                if valor and valor not in valores_invalidos:
+                    # Tiene un valor (incluyendo 'NO MENCIONADO', 'N/A' o 'NO VALORABLE')
                     biomarcadores_detectados += 1
                 else:
-                    # Agregar a faltantes
+                    # Agregar a faltantes (solo si está vacío o es inválido)
                     biomarcadores_faltantes.append(columna_bd)
 
             # Agregar biomarcadores no mapeados a faltantes
@@ -713,7 +1079,9 @@ def verificar_completitud_registro(numero_peticion: str) -> Dict[str, Any]:
             # Si hay biomarcadores NO MAPEADOS, se marcan como faltantes
             if biomarcadores_solicitados:
                 # Hay al menos 1 biomarcador mapeado: verificar que TODOS estén completos
-                if porcentaje_total == 100.0 and biomarcadores_detectados == len(biomarcadores_solicitados):
+                # V6.4.3: FIX IHQ250138 - Usar >= para permitir casos con campos compuestos
+                # que se expanden (ej: "CD117 GLICOFORINA" → CD117 + GLICOFORINA = 2 detecciones)
+                if porcentaje_total >= 100.0 and biomarcadores_detectados >= len(biomarcadores_solicitados):
                     # Si NO hay biomarcadores faltantes (ni mapeados ni no mapeados), es completo
                     if not biomarcadores_faltantes:
                         nivel = 'completo'
@@ -732,7 +1100,8 @@ def verificar_completitud_registro(numero_peticion: str) -> Dict[str, Any]:
                 completo = False
         else:
             # No hay estudios solicitados: al menos 1 biomarcador de la lista genérica
-            if porcentaje_total == 100.0 and biomarcadores_detectados >= 1:
+            # V6.4.3: Usar >= para consistencia
+            if porcentaje_total >= 100.0 and biomarcadores_detectados >= 1:
                 nivel = 'completo'
                 completo = True
             else:

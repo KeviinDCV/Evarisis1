@@ -1,0 +1,124 @@
+{
+  "numero_caso": "IHQ250107",
+  "caso_num": 50,
+  "total_casos": 50,
+  "timestamp": "2025-12-20T06:40:53.224615",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 11,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "CARCINOMA METASTASICO",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
+      "valor_bd": "CARCINOMA METASTASICO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: NO VALORABLE",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 10,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "CD34",
+        "CD45",
+        "CK20",
+        "CK7",
+        "CKAE1AE3",
+        "CROMOGRANINA",
+        "DESMIN",
+        "Ki-67",
+        "SINAPTOFISINA",
+        "SOX10"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "CD34",
+        "CD45",
+        "CK20",
+        "CK7",
+        "CKAE1AE3",
+        "CROMOGRANINA",
+        "DESMIN",
+        "Ki-67",
+        "SINAPTOFISINA",
+        "SOX10"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe material proveniente de laboratorio de patologia del Hospital Tomas Uribe de Tulua que cor..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "En los cortes teñidos con hematoxilina y eosina (H&E) se observa tejido con alteraciones atribuibles..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "FOSA ILIACA DERECHA"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

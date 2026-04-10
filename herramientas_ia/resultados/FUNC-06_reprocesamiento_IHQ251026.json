@@ -1,0 +1,34 @@
+{
+  "caso": "IHQ251026",
+  "timestamp": "2025-11-08T23:30:56.692932",
+  "func_ejecutada": "FUNC-06",
+  "estado_reprocesamiento": "COMPLETADO CON ERRORES PARCIALES",
+  "paso_1_limpieza": {
+    "estado": "EXITOSO",
+    "accion": "Eliminados 47 registros del rango IHQ250980-IHQ251037"
+  },
+  "paso_2_reprocesamiento": {
+    "estado": "EXITOSO",
+    "accion": "Reprocesados 47 casos del PDF",
+    "confirmacion": "47 registros guardados en BD"
+  },
+  "valores_esperados_segun_pdf": {
+    "P16": "NEGATIVO",
+    "P40": "NEGATIVO",
+    "CAM5": "POSITIVO"
+  },
+  "valores_extraidos": {
+    "P16_ESTADO": "NO HAY MARCACION EN LA MUESTRA PARA P40, P16",
+    "P40_ESTADO": "NEGATIVO",
+    "CAM5": "N/A",
+    "CKAE1AE3": "POSITIVO"
+  },
+  "validacion": {
+    "P16": "OK - Extraido correctamente",
+    "P40": "OK - Extraido correctamente",
+    "CAM5": "ERROR - No se extrajo (CAM5 no definido en BIOMARKER_PATTERNS)"
+  },
+  "completitud_real": "66.67% (2/3 biomarcadores)",
+  "problema_detectado": "CAM5 NO está definido en BIOMARKER_PATTERNS",
+  "solucion": "Agregar definicion de CAM5 en biomarker_extractor.py"
+}

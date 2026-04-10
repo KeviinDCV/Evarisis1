@@ -1,0 +1,132 @@
+{
+  "numero_caso": "IHQ250065",
+  "caso_num": 12,
+  "total_casos": 50,
+  "timestamp": "2025-12-19T01:58:26.734841",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 8,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "HIPERPLASIA FOLICULAR Y PARACORTICAL",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA COMPATIBLES CON HIPERPLASIA FOLICULAR Y PARACORTICAL"
+    },
+    "factor_pronostico": {
+      "estado": "ERROR",
+      "valor_bd": "NO APLICA",
+      "mensaje": "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 biomarcadores sin mapeo/vacíos; 1 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 10,
+      "total_solicitado_bd": 10,
+      "estudios_ocr": [
+        "CD3",
+        "CD20",
+        "CD10",
+        "CD5",
+        "BCL2",
+        "BCL6",
+        "Ki-67",
+        "CD38",
+        "PAX 8",
+        "CD23"
+      ],
+      "estudios_bd": [
+        "CD3",
+        "CD20",
+        "CD10",
+        "CD5",
+        "BCL2",
+        "BCL6",
+        "Ki-67",
+        "CD38",
+        "PAX 8",
+        "CD23"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 9,
+      "no_mapeados": [
+        "PAX 8 (sin columna)"
+      ],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "CD23",
+          "columna": "IHQ_CD23",
+          "valor_bd": "POSITIVO",
+          "valor_ocr": "m"
+        }
+      ],
+      "cobertura": 90.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [
+      "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "GANGLIO LINFÁTICO CERVICAL DERECHO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 77.8,
+    "score_final": 77.8,
+    "validaciones_ok": 7,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 1
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

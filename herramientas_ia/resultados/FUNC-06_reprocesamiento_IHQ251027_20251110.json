@@ -1,0 +1,90 @@
+{
+  "caso": "IHQ251027",
+  "timestamp": "2025-11-10T11:40:04.560674",
+  "correcciones_aplicadas": [
+    {
+      "archivo": "medical_extractor.py",
+      "linea": 3360,
+      "descripcion": "Agregado patrón \"FAVORECEN\" para DIAGNOSTICO_PRINCIPAL"
+    },
+    {
+      "archivo": "biomarker_extractor.py",
+      "linea": 324,
+      "descripcion": "Agregado patrón \"NO presentan inmunoreactividad a P16\""
+    },
+    {
+      "archivo": "biomarker_extractor.py",
+      "linea": "348-349",
+      "descripcion": "Agregada normalización P16 NEGATIVO"
+    },
+    {
+      "archivo": "biomarker_extractor.py",
+      "linea": 175,
+      "descripcion": "Agregado patrón \"kI67 positivo esperado\""
+    },
+    {
+      "archivo": "biomarker_extractor.py",
+      "linea": "214-215",
+      "descripcion": "Agregada normalización Ki-67 POSITIVO"
+    }
+  ],
+  "resultados": {
+    "valores_extraidos": {
+      "DIAGNOSTICO_PRINCIPAL": "DISPLASIA \", SE SOLICITAN LOS SIGUIENTES MARCADORES",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "POSITIVO",
+      "FACTOR_PRONOSTICO": "Ki-67: POSITIVO"
+    },
+    "valores_esperados_ocr": {
+      "DIAGNOSTICO_PRINCIPAL": "LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO (NO presentan inmunoreactividad a P16)",
+      "IHQ_KI-67": "POSITIVO (kI67 positivo esperado en la membrana basal)",
+      "FACTOR_PRONOSTICO": "Ki-67: POSITIVO"
+    },
+    "validacion": {
+      "IHQ_P16_ESTADO": {
+        "extraido": "NEGATIVO",
+        "esperado": "NEGATIVO",
+        "estado": "CORRECTO",
+        "nota": "Patrón \"NO presentan inmunoreactividad\" funcionó correctamente"
+      },
+      "IHQ_KI-67": {
+        "extraido": "POSITIVO",
+        "esperado": "POSITIVO",
+        "estado": "CORRECTO",
+        "nota": "Patrón \"kI67 positivo esperado\" funcionó correctamente"
+      },
+      "DIAGNOSTICO_PRINCIPAL": {
+        "extraido": "DISPLASIA \", SE SOLICITAN LOS SIGUIENTES MARCADORES",
+        "esperado": "LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO",
+        "estado": "ERROR",
+        "nota": "Patrón \"FAVORECEN\" NO funcionó. Extrae texto incorrecto de sección anterior"
+      }
+    }
+  },
+  "metricas": {
+    "score_validacion_actual": 66.7,
+    "campos_correctos": 2,
+    "campos_incorrectos": 1,
+    "biomarcadores_correctos": "2/2 (100%)",
+    "mejora_p16": "CORRECTO (antes: no extraía)",
+    "mejora_ki67": "CORRECTO (antes: no extraía)",
+    "mejora_diagnostico": "ERROR (extrae texto incorrecto)"
+  },
+  "problemas_restantes": [
+    {
+      "campo": "DIAGNOSTICO_PRINCIPAL",
+      "problema": "Extrae texto de sección DESCRIPCIÓN MACROSCÓPICA en lugar de DIAGNÓSTICO",
+      "texto_extraido": "DISPLASIA \", SE SOLICITAN LOS SIGUIENTES MARCADORES",
+      "texto_esperado": "LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO",
+      "causa": "Patrón en medical_extractor.py línea 3360 busca \"FAVORECEN\" pero captura contexto incorrecto",
+      "solucion_sugerida": "Verificar que el patrón capture texto DESPUÉS de \"- LOS HALLAZGOS\" y ANTES del médico firmante"
+    }
+  ],
+  "conclusion": {
+    "exito_parcial": true,
+    "biomarcadores": "CORRECTO (2/2 extraídos)",
+    "diagnostico_principal": "ERROR (necesita ajuste adicional)",
+    "siguiente_paso": "Ajustar patrón FAVORECEN para capturar diagnóstico correcto desde sección DIAGNÓSTICO"
+  }
+}

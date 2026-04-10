@@ -1,0 +1,84 @@
+{
+  "caso": "IHQ251029",
+  "fecha_validacion": "2025-11-10T23:45:06.306751",
+  "tipo_validacion": "FUNC-06: Reprocesamiento completo con filtro AE3 corregido",
+  "objetivo": {
+    "descripcion": "Validar corrección de filtro AE3 en Factor Pronóstico",
+    "problema_original": "Factor Pronóstico contenía \"Ki-67 DEL 2% / AE3 y Ki-67\" (AE3 no debe estar)",
+    "corrección_aplicada": "Filtro en medical_extractor.py líneas 1495-1528: split por \" / \" + filtro independiente",
+    "logica_filtro": "Si parte contiene biomarcador pronóstico Y tipificación → EXCLUIR (ambos presentes)"
+  },
+  "resultado_validacion": {
+    "estado": "EXITOSO",
+    "factor_pronostico": {
+      "antes": "Ki-67 DEL 2% / AE3 y Ki-67",
+      "despues": "Ki-67 DEL 2%",
+      "ae3_eliminado": true,
+      "ki67_preservado": true,
+      "evaluacion": "CORRECTO - AE3 eliminado exitosamente"
+    }
+  },
+  "campos_validados": {
+    "IHQ_CROMOGRANINA": {
+      "valor": "POSITIVO",
+      "esperado": "POSITIVO",
+      "estado": "OK"
+    },
+    "IHQ_SINAPTOFISINA": {
+      "valor": "POSITIVO",
+      "esperado": "POSITIVO",
+      "estado": "OK"
+    },
+    "IHQ_ORGANO": {
+      "valor": "MESENTERIO",
+      "esperado": "MESENTERIO",
+      "estado": "OK"
+    },
+    "Organo": {
+      "valor": "BIOPSIA MASA",
+      "nota": "Campo de descripción del origen de la muestra"
+    },
+    "IHQ_ESTUDIOS_SOLICITADOS": {
+      "valor": "CD56, CROMOGRANINA A, SINAPTOFISINA, CKAE1AE3, Ki-67",
+      "biomarcadores_esperados": [
+        "CD56",
+        "CROMOGRANINA A",
+        "SINAPTOFISINA",
+        "CKAE1AE3",
+        "Ki-67"
+      ],
+      "estado": "OK"
+    },
+    "IHQ_KI-67": {
+      "valor": "2%",
+      "esperado": "2%",
+      "estado": "OK"
+    },
+    "IHQ_CKAE1AE3": {
+      "valor": "POSITIVO",
+      "nota": "Biomarcador de tipificación (NO debe estar en Factor Pronóstico)"
+    },
+    "IHQ_CD56": {
+      "valor": "POSITIVO",
+      "nota": "Biomarcador neuroendocrino"
+    },
+    "Diagnostico_Principal": {
+      "valor": "TUMOR NEUROENDOCRINO BIEN DIFERENCIADO,",
+      "nota": "Diagnóstico oncológico principal"
+    }
+  },
+  "resumen": {
+    "reprocesamiento_completado": true,
+    "casos_reprocesados": 47,
+    "pdf_origen": "IHQ DEL 980 AL 1037.pdf",
+    "correccion_factor_pronostico": "EXITOSA",
+    "ae3_eliminado": true,
+    "ki67_preservado": true,
+    "otros_campos_preservados": true
+  },
+  "proximos_pasos": [
+    "Verificar que otros casos del mismo PDF mantienen corrección",
+    "Validar que casos con biomarcadores pronósticos reales no fueron afectados",
+    "Confirmar que filtro funciona en casos edge: \"HER2 / Ki-67\", \"ER / PR / HER2\""
+  ]
+}

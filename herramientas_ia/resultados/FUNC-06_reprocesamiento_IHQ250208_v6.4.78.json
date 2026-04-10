@@ -1,0 +1,48 @@
+{
+  "caso": "IHQ250208",
+  "timestamp": "2026-01-12T19:39:03.886475",
+  "paso_1_auditoria_antes": {
+    "estado": "NO_DISPONIBLE",
+    "nota": "Caso no tenia auditoria previa"
+  },
+  "paso_2_busqueda_pdf": {
+    "pdf_encontrado": "pdfs_patologia/IHQ DEL 160 AL 211.pdf",
+    "rango": "160-211"
+  },
+  "paso_3_backup": {
+    "estado": "COMPLETADO",
+    "nota": "Backup automatico creado"
+  },
+  "paso_4_limpieza_bd": {
+    "casos_eliminados": 50,
+    "rango": "160-211"
+  },
+  "paso_5_limpieza_debug_maps": {
+    "archivos_eliminados": 50
+  },
+  "paso_6_reprocesamiento": {
+    "estado": "COMPLETADO",
+    "casos_procesados": 50,
+    "errores": 0
+  },
+  "paso_7_auditoria_despues": {
+    "estado": "COMPLETADO",
+    "score": 100.0,
+    "biomarcadores_mapeados": "6/6",
+    "warnings": 0,
+    "errores": 0
+  },
+  "comparacion": {
+    "score_antes": "N/A",
+    "score_despues": 100.0,
+    "mejora": "Caso ahora completo con Ki-67 extraido"
+  },
+  "validacion_fix": {
+    "version": "v6.4.78",
+    "objetivo": "Capturar Ki-67 desde indice proliferativo sin mencion explicita",
+    "resultado": "EXITOSO",
+    "biomarcador_extraido": "Ki-67: 20%",
+    "patron_utilizado": "proliferative_index_pattern en biomarker_extractor.py"
+  },
+  "estado": "EXITOSO"
+}

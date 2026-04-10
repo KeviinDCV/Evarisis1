@@ -1,0 +1,45 @@
+{
+  "lote_id": "lote_2_casos_20251118_021743",
+  "timestamp_inicio": "2025-11-18T02:17:43.611552",
+  "timestamp_fin": null,
+  "usuario": "USUARIO",
+  "descripcion": "Auditoria de 2 casos",
+  "casos": [
+    {
+      "numero": "IHQ251014",
+      "estado": "PENDIENTE",
+      "score": null,
+      "timestamp_inicio": null,
+      "timestamp_fin": null,
+      "duracion_segundos": null,
+      "reporte_path": null,
+      "errores_criticos": null,
+      "warnings": null
+    },
+    {
+      "numero": "IHQ251015",
+      "estado": "PENDIENTE",
+      "score": null,
+      "timestamp_inicio": null,
+      "timestamp_fin": null,
+      "duracion_segundos": null,
+      "reporte_path": null,
+      "errores_criticos": null,
+      "warnings": null
+    }
+  ],
+  "resumen": {
+    "total": 2,
+    "completados": 0,
+    "en_proceso": 0,
+    "pendientes": 2,
+    "fallidos": 0,
+    "progreso_porcentaje": 0.0,
+    "tiempo_promedio_caso": null,
+    "tiempo_estimado_restante": null,
+    "promedio_score": null,
+    "casos_criticos": []
+  },
+  "interrupciones": [],
+  "version_herramienta": "1.0.0"
+}

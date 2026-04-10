@@ -1,0 +1,136 @@
+{
+  "numero_caso": "IHQ250195",
+  "caso_num": 35,
+  "total_casos": 50,
+  "timestamp": "2026-01-09T05:08:45.603588",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 11,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NEOPLASIA FUSOCELULAR A CLASIFICAR POR INMUNOHISTOQUIMICA",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "SCHWANNOMA"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 4%, Receptor de Progesterona: NEGATIVO",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67",
+        "RP"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 biomarcadores faltantes en BD; 1 biomarcadores sin mapeo/vacíos; 1 valores NO coinciden con OCR; 1 biomarcadores extras en BD",
+      "total_solicitado_ocr": 9,
+      "total_solicitado_bd": 9,
+      "estudios_ocr": [
+        "S100",
+        "SOX10",
+        "GFAP",
+        "KI65",
+        "Receptor de Progesterona",
+        "EMA",
+        "IDH",
+        "INHIBINA",
+        "CD34"
+      ],
+      "estudios_bd": [
+        "S100",
+        "SOX10",
+        "GFAP",
+        "KI-67",
+        "Receptor de Progesterona",
+        "EMA",
+        "IDH",
+        "INHIBINA",
+        "CD34"
+      ],
+      "faltantes_en_bd": [
+        "KI65"
+      ],
+      "extras_en_bd": [
+        "KI-67"
+      ],
+      "mapeados": 8,
+      "no_mapeados": [
+        "KI65 (sin columna)"
+      ],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "CD34",
+          "columna": "IHQ_CD34",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "r"
+        }
+      ],
+      "cobertura": 88.9
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "FOSA POSTERIOR"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

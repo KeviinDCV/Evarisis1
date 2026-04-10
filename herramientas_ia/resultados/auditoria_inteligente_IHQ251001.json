@@ -1,0 +1,119 @@
+{
+  "numero_caso": "IHQ251001",
+  "caso_num": 21,
+  "total_casos": 47,
+  "timestamp": "2025-11-27T08:15:41.843605",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 6,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "ADENOCARCINOMA TUBULAR. ULCERACIÓN POR TUMOR PRESENTE. GRADO HISTOLÓGICO G2 (MODERADAMENTE DIFERENCIADO). TAMAÑO TUMORAL DE 7 X 5 X 3 CM. INVASIÓN LINFOVASCULAR PRESENTE. INVASIÓN PERINEURAL PRESENTE. GANGLIOS LINFÁTICOS NEGATIVOS PARA METÁSTASIS (0/20)",
+      "mensaje": "Correcto (validacion por componentes: 7/7)"
+    },
+    "diagnostico_principal": {
+      "estado": "WARNING",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+      "valor_bd": "ADENOCARCINOMA TUBULAR",
+      "valor_ocr": "Mucosa gástrica antral. Lesión. Biopsia endoscópica. Estudios de inmunohistoquímica. ADENOCARCINOMA DE TIPO INTESTINAL CON PATRÓN MICROSATELITAL ESTABLE.",
+      "nota": "Puede ser válido si es una versión resumida del diagnóstico completo"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor_bd": "HER2 negativo (score 0)",
+      "biomarcadores_fp": 1,
+      "total_solicitado": 5,
+      "cobertura_fp": "1/4",
+      "mensaje": "Factor pronóstico correcto con 1 biomarcador(es) - formato largo aceptado"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (5/5)",
+      "total_solicitado_ocr": 5,
+      "total_solicitado_bd": 5,
+      "estudios_ocr": [
+        "HER2",
+        "MSH2",
+        "MSH6",
+        "MLH1",
+        "PMS2"
+      ],
+      "estudios_bd": [
+        "HER2",
+        "MSH2",
+        "MSH6",
+        "MLH1",
+        "PMS2"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 5,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "Descripcion macroscopica coincide parcialmente con OCR (similitud: 50%)",
+      "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)"
+    ],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "WARNING",
+      "mensaje": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 50%)",
+      "valor_bd": "Se realizan niveles al bloque M2510517-A7 el cual corresponde a \"gastrectomía total\" con diagnóstico...",
+      "valor_ocr": "Se realizan niveles al bloque M2510517-A7 el cual corresponde a \"gastrectomía total\" con"
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MUCOSA GÁSTRICA ANTRAL"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 77.8,
+    "validaciones_ok": 7,
+    "total_validaciones": 9,
+    "warnings": 2,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "ADVERTENCIA"
+}

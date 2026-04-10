@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-11-10T23:14:27.436305",
+  "caso": "IHQ251029",
+  "problema": "MAPEO DUPLICADO DE BIOMARCADORES EN auditor_sistema.py",
+  "severidad": "CRITICA",
+  "evidencia_bd": {
+    "IHQ_CHROMOGRANINA": "POSITIVO",
+    "IHQ_SYNAPTOPHYSIN": "POSITIVO",
+    "IHQ_CROMOGRANINA": "N/A",
+    "IHQ_SINAPTOFISINA": "N/A"
+  },
+  "causa_raiz": {
+    "archivo": "herramientas_ia/auditor_sistema.py",
+    "lineas_correctas": "199-204: CHROMOGRANINA/SYNAPTOPHYSIN -> columnas inglés (CORRECTO)",
+    "lineas_duplicadas": "267-277: SINAPTOFISINA/CROMOGRANINA -> columnas español (INCORRECTO)"
+  },
+  "solucion": {
+    "accion": "ELIMINAR líneas 267-277",
+    "lineas_mantener": "199-204",
+    "comando_validacion": "python herramientas_ia/auditor_sistema.py IHQ251029 --inteligente"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "titulo": "REPORTE DE EJECUCION FUNC-03: AGREGAR BIOMARCADOR CAM5",
+  "fecha_ejecucion": "2025-11-08 22:58:18",
+  "biomarcador": {
+    "nombre": "CAM5",
+    "nombre_completo": "Citoqueratina CAM 5.2",
+    "tipo": "Marcador epitelial - Citoqueratina de bajo peso molecular",
+    "funcion": "Detectar celulas epiteliales y carcinomas",
+    "valores_posibles": [
+      "POSITIVO",
+      "NEGATIVO"
+    ],
+    "columna_bd": "IHQ_CAM5",
+    "variantes_agregadas": [
+      "CAM5",
+      "CAM 5",
+      "CAM-5",
+      "CITOQUERATINA CAM 5",
+      "CYTOKERATIN CAM 5"
+    ]
+  },
+  "resultado_func03": {
+    "estado": "EXITOSO",
+    "archivos_modificados": 6,
+    "backups_creados": 6,
+    "version": "6.0.9"
+  },
+  "archivos_modificados": [
+    {
+      "archivo": "core/database_manager.py",
+      "modificaciones": 3,
+      "ubicaciones": [
+        "NEW_TABLE_COLUMNS_ORDER (~linea 149) - CRITICO para UI",
+        "CREATE TABLE (~linea 219) - Schema de BD",
+        "new_biomarkers list (~linea 336) - Migraciones automaticas"
+      ],
+      "backup": "backups/func03_biomarcadores/database_manager.py.backup_func03_20251108_225649"
+    },
+    {
+      "archivo": "herramientas_ia/auditor_sistema.py",
+      "modificaciones": 1,
+      "ubicaciones": [
+        "BIOMARKER_ALIAS_MAP - Mapeo nombre -> columna BD"
+      ],
+      "backup": "backups/func03_biomarcadores/auditor_sistema.py.backup_func03_20251108_225649"
+    },
+    {
+      "archivo": "ui.py",
+      "modificaciones": 1,
+      "ubicaciones": [
+        "cols_to_show - Columnas visibles en interfaz"
+      ],
+      "backup": "backups/func03_biomarcadores/ui.py.backup_func03_20251108_225649"
+    },
+    {
+      "archivo": "core/validation_checker.py",
+      "modificaciones": 1,
+      "ubicaciones": [
+        "all_biomarker_mapping - Validacion de completitud"
+      ],
+      "backup": "backups/func03_biomarcadores/validation_checker.py.backup_func03_20251108_225649"
+    },
+    {
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "modificaciones": 4,
+      "ubicaciones": [
+        "Seccion 1: Normalizacion de alias",
+        "Seccion 2: Patrones de extraccion de descripcion microscopica",
+        "Seccion 3: Patrones de extraccion de texto biomarcador",
+        "Seccion 4: Mapeo de variantes"
+      ],
+      "backup": "backups/func03_biomarcadores/biomarker_extractor.py.backup_func03_20251108_225649"
+    },
+    {
+      "archivo": "core/unified_extractor.py",
+      "modificaciones": 2,
+      "ubicaciones": [
+        "Mapeo biomarcador -> columna BD (~linea 491)",
+        "Mapeo biomarcador -> columna BD (~linea 1179)"
+      ],
+      "backup": "backups/func03_biomarcadores/unified_extractor.py.backup_func03_20251108_225649"
+    }
+  ],
+  "siguiente_pasos": {
+    "paso_1": {
+      "descripcion": "Borrar base de datos existente",
+      "comando": "rm data/huv_oncologia_NUEVO.db",
+      "razon": "Aplicar nuevo schema con columna IHQ_CAM5"
+    },
+    "paso_2": {
+      "descripcion": "Reprocesar casos que contengan CAM5",
+      "comando": "python ui.py",
+      "accion": "Procesar PDFs que mencionen CAM5 en sus estudios"
+    },
+    "paso_3": {
+      "descripcion": "Validar extraccion de CAM5",
+      "comando": "python herramientas_ia/auditor_sistema.py [CASO] --inteligente",
+      "verificar": [
+        "IHQ_CAM5 aparece en columnas BD",
+        "Valor se extrae correctamente del PDF",
+        "Biomarcador se mapea en IHQ_ESTUDIOS_SOLICITADOS"
+      ]
+    }
+  },
+  "impacto_sistema": {
+    "base_datos": "Nueva columna IHQ_CAM5 se creara automaticamente",
+    "interfaz": "Columna CAM5 visible en dashboard principal",
+    "extraccion": "Sistema reconoce 5 variantes del nombre",
+    "validacion": "Auditor valida completitud de CAM5",
+    "exportacion": "CAM5 incluido en exportaciones Excel"
+  },
+  "notas_tecnicas": {
+    "nota_1": "CAM5 vs CAM52: Son biomarcadores DIFERENTES",
+    "nota_2": "CAM5 = Citoqueratina CAM 5.2 (citoqueratina de bajo peso molecular)",
+    "nota_3": "CAM52 = Ya existia en sistema (IHQ_CAM52)",
+    "nota_4": "Ambos pueden coexistir en el mismo caso",
+    "nota_5": "Sistema diferencia automaticamente CAM 5 vs CAM 5.2"
+  }
+}

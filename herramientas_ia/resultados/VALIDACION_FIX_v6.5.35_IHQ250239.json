@@ -1,0 +1,21 @@
+{
+  "caso": "IHQ250239",
+  "version_extractor": "6.5.35",
+  "fecha_reprocesamiento": "2026-01-28T11:27:02",
+  "marcadores_mmr_extraidos": {
+    "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+    "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+    "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+    "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)"
+  },
+  "estudios_solicitados": "MLH1, MSH2, MSH6, PMS2",
+  "diagnostico_principal": "ADENOCARCINOMA MUCINOSO BIEN DIFERENCIADO EXPRESIÓN NUCLEAR INTACTA PARA LAS PROTEÍNAS MMR (MLH1, MLH2, MSH6 Y PMS2)",
+  "completitud": 100.0,
+  "score_validacion": 100.0,
+  "fuente_datos_ocr": {
+    "MLH1": "Resultado de MLH1: expresión nuclear intacta",
+    "MSH2": "Resultado de MLH2: expresión nuclear intacta",
+    "MSH6": "Resultado de MSH6: expresión nuclear intacta",
+    "PMS2": "Resultado de PMS2: expresión nuclear intacta"
+  }
+}

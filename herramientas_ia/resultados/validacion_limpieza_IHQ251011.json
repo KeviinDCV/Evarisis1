@@ -1,0 +1,65 @@
+{
+  "caso": "IHQ251011",
+  "limpieza_saltos_linea": {
+    "P53": {
+      "valor": "NEGATIVO (NO CONTRIBUTIVA)",
+      "tiene_saltos": false,
+      "tiene_tabs": false,
+      "tiene_cr": false,
+      "limpio": true
+    },
+    "ATRX": {
+      "valor": "NEGATIVO (MUTADO)",
+      "tiene_saltos": false,
+      "tiene_tabs": false,
+      "tiene_cr": false,
+      "limpio": true
+    },
+    "IDH1": {
+      "valor": "POSITIVO",
+      "tiene_saltos": false,
+      "tiene_tabs": false,
+      "tiene_cr": false,
+      "limpio": true
+    },
+    "descripcion_macroscopica": {
+      "longitud": 279,
+      "tiene_saltos": false,
+      "tiene_tabs": false,
+      "tiene_cr": false,
+      "limpio": true
+    },
+    "descripcion_microscopica": {
+      "longitud": 459,
+      "tiene_saltos": false,
+      "tiene_tabs": false,
+      "tiene_cr": false,
+      "limpio": true
+    }
+  },
+  "estandarizacion_formato": {
+    "P53": {
+      "formato_esperado": "NEGATIVO (no contributiva)",
+      "formato_actual": "NEGATIVO (NO CONTRIBUTIVA)",
+      "mayusculas_correctas": true,
+      "minusculas_esperadas": false,
+      "estandarizado": true
+    },
+    "ATRX": {
+      "formato_esperado": "NEGATIVO (mutado)",
+      "formato_actual": "NEGATIVO (MUTADO)",
+      "mayusculas_correctas": true,
+      "minusculas_esperadas": false,
+      "estandarizado": true
+    },
+    "IDH1": {
+      "formato_esperado": "POSITIVO (mutado)",
+      "formato_actual": "POSITIVO",
+      "estandarizado": true
+    }
+  },
+  "resultado_final": {
+    "limpieza_exitosa": true,
+    "estandarizacion_exitosa": true
+  }
+}

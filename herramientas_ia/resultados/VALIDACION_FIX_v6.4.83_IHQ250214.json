@@ -1,0 +1,37 @@
+{
+  "caso": "IHQ250214",
+  "version_extractor": "v6.4.83",
+  "correccion": "Patrón fallback DIAGNOSTICO_COLORACION (línea 899)",
+  "resultados": {
+    "score_antes": "No disponible (caso no auditado antes)",
+    "score_despues": "88.9%",
+    "objetivo": "100%",
+    "estado": "PARCIALMENTE EXITOSO"
+  },
+  "analisis": {
+    "extraccion": {
+      "estado": "EXITOSA",
+      "patron_usado": "Patrón fallback captura hasta primer punto",
+      "valor_extraido": "ADENOCARCINOMA MUCINOSO INVASIVO CON COMPROMISO DEL PERITONEO VISCERAL",
+      "ubicacion_ocr": "Descripción macroscópica (dentro de comillas)",
+      "validacion_manual": "CORRECTO - Diagnóstico completo capturado"
+    },
+    "validacion_auditor": {
+      "estado": "FALSO POSITIVO",
+      "warning": "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
+      "problema": "Algoritmo de búsqueda del auditor no detecta el valor que SÍ está en OCR",
+      "causa_raiz": "auditor_sistema.py busca con similitud pero no encuentra coincidencia",
+      "impacto": "Score 88.9% en lugar de 100% (1 warning falso)"
+    }
+  },
+  "conclusion": {
+    "extractor": "v6.4.83 FUNCIONA CORRECTAMENTE - Captura diagnóstico completo",
+    "auditor": "NECESITA CORRECCIÓN - Algoritmo de validación no detecta valor presente",
+    "accion_requerida": "Mejorar algoritmo de búsqueda en _validar_diagnostico_coloracion()"
+  },
+  "evidencia": {
+    "valor_bd": "ADENOCARCINOMA MUCINOSO INVASIVO CON COMPROMISO DEL PERITONEO VISCERAL",
+    "valor_ocr_fragmento": "...que corresponde a \"ADENOCARCINOMA MUCINOSO INVASIVO CON COMPROMISO DEL PERITONEO VISCERAL...",
+    "match_manual": "EXACTO (100% coincidencia)"
+  }
+}

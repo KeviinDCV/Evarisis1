@@ -1,0 +1,62 @@
+{
+  "caso": "IHQ251011",
+  "fecha_reprocesamiento": "2025-11-04T20:09:56.845624",
+  "pdf_procesado": "pdfs_patologia/IHQ DEL 980 AL 1037.pdf",
+  "total_casos_procesados": 48,
+  "columnas_nuevas_creadas": [
+    "IHQ_IDH1",
+    "IHQ_ATRX"
+  ],
+  "bd_regenerada": true,
+  "comparacion": {
+    "IHQ_IDH1": {
+      "antes": "NO EXISTIA",
+      "despues": "N/A",
+      "esperado": "POSITIVO (MUTADO) o MUTADO",
+      "estado": "COLUMNA CREADA PERO NO EXTRAE",
+      "emoji": "⚠️"
+    },
+    "IHQ_ATRX": {
+      "antes": "NO EXISTIA",
+      "despues": "N/A",
+      "esperado": "NEGATIVO (AUSENCIA DE EXPRESION) o MUTADO",
+      "estado": "COLUMNA CREADA PERO NO EXTRAE",
+      "emoji": "⚠️"
+    },
+    "IHQ_P53": {
+      "antes": ", GFAP, KI67 Y CD34",
+      "despues": "CONTRIBUTIVA",
+      "esperado": "NO CONTRIBUTIVA",
+      "estado": "CORREGIDO PARCIALMENTE",
+      "emoji": "🔧"
+    },
+    "IHQ_KI-67": {
+      "antes": "NO MENCIONADO",
+      "despues": "10%",
+      "esperado": "10%",
+      "estado": "CORRECTO",
+      "emoji": "✅"
+    },
+    "IHQ_GFAP": {
+      "antes": "POSITIVO",
+      "despues": "POSITIVO",
+      "esperado": "POSITIVO",
+      "estado": "CORRECTO",
+      "emoji": "✅"
+    },
+    "IHQ_CD34": {
+      "antes": "NEGATIVO",
+      "despues": "NEGATIVO",
+      "esperado": "NEGATIVO",
+      "estado": "CORRECTO",
+      "emoji": "✅"
+    }
+  },
+  "metricas": {
+    "total_campos": 6,
+    "correctos": 3,
+    "corregidos": 1,
+    "pendientes": 2,
+    "porcentaje_exito": 50.0
+  }
+}

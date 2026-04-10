@@ -1,0 +1,96 @@
+{
+  "operacion": "AGREGACION_ALIAS_BIOMARCADORES",
+  "fecha": "2025-12-17T03:36:01.844027",
+  "biomarcadores_modificados": [
+    {
+      "nombre": "SV40",
+      "columna_bd": "IHQ_SV40",
+      "descripcion": "Marcador de Poliomavirus en trasplante renal",
+      "alias_nuevos": [
+        "POLIOMAVIRUS",
+        "POLYOMAVIRUS"
+      ],
+      "alias_existentes": [
+        "SV40",
+        "SV 40",
+        "SV-40"
+      ],
+      "alias_totales": 5,
+      "contexto_medico": {
+        "uso": "Biopsias de injerto renal",
+        "detecta": "Nefropatia por poliomavirus",
+        "valores_tipicos": [
+          "POSITIVO",
+          "NEGATIVO"
+        ]
+      }
+    },
+    {
+      "nombre": "C4D",
+      "columna_bd": "IHQ_C4D",
+      "descripcion": "Marcador de rechazo humoral en trasplante",
+      "alias_nuevos": [
+        "C4D1",
+        "C4-D"
+      ],
+      "alias_existentes": [
+        "C4D",
+        "C 4D",
+        "C-4D"
+      ],
+      "alias_totales": 5,
+      "contexto_medico": {
+        "uso": "Biopsias de trasplante renal",
+        "detecta": "Rechazo mediado por anticuerpos",
+        "valores_tipicos": [
+          "POSITIVO",
+          "NEGATIVO",
+          "MINIMAMENTE POSITIVO"
+        ]
+      }
+    }
+  ],
+  "archivos_actualizados": [
+    {
+      "archivo": "herramientas_ia/auditor_sistema.py",
+      "ubicacion": "Lineas ~511, ~524",
+      "cambios": "Agregados alias en diccionario BIOMARCADORES"
+    },
+    {
+      "archivo": "core/validation_checker.py",
+      "ubicacion": "Lineas ~471, ~481",
+      "cambios": "Agregados alias en all_biomarker_mapping"
+    },
+    {
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "ubicacion": "Lineas ~1895, ~1920",
+      "cambios": "Agregados en nombres_alternativos de BIOMARKER_PATTERNS"
+    },
+    {
+      "archivo": "core/unified_extractor.py",
+      "ubicacion": "Lineas ~803-807, ~1669-1673",
+      "cambios": "Agregados en 2 mapeos de biomarcadores"
+    }
+  ],
+  "archivos_sin_cambios": [
+    {
+      "archivo": "core/database_manager.py",
+      "razon": "Columnas IHQ_SV40 e IHQ_C4D ya existian"
+    },
+    {
+      "archivo": "ui.py",
+      "razon": "Columnas ya estaban en interfaz"
+    }
+  ],
+  "validacion": {
+    "sistema_carga_ok": true,
+    "alias_mapeados_ok": true,
+    "sv40_alias_totales": 5,
+    "c4d_alias_totales": 5,
+    "errores": []
+  },
+  "estado_final": "EXITOSO",
+  "requiere_regenerar_bd": false,
+  "requiere_reprocesar_casos": false,
+  "nota": "Los alias funcionan inmediatamente. Al reprocesar casos con estos biomarcadores usando los nuevos alias, se extraeran correctamente."
+}

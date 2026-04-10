@@ -1,0 +1,42 @@
+{
+  "caso": "IHQ250198",
+  "version": "v6.4.65",
+  "timestamp": "2026-01-10T05:04:10.461368",
+  "cambio_aplicado": "Filtro que excluye patrones de tincion (DIFUSA, FOCAL, FUERTE, etc.)",
+  "validacion": {
+    "patron_difusa_en_ocr": true,
+    "contexto_difusa": "Descripcion microscopica: marcacion fuerte y DIFUSA para CD 3, CD 4...",
+    "difusa_en_ihq_estudios": false,
+    "filtrado_exitoso": true
+  },
+  "ihq_estudios_solicitados": {
+    "valor_bd": "CD20, CD56, CD2, CD3, CD4, CD5, BCL 6, BCL2, Ki-67, CD7, CD8, CD10, CD30, TDT",
+    "total_biomarcadores": 14,
+    "biomarcadores": [
+      "CD20",
+      "CD56",
+      "CD2",
+      "CD3",
+      "CD4",
+      "CD5",
+      "BCL 6",
+      "BCL2",
+      "Ki-67",
+      "CD7",
+      "CD8",
+      "CD10",
+      "CD30",
+      "TDT"
+    ]
+  },
+  "score_auditoria": {
+    "score_validacion": 88.9,
+    "estado_final": "OK",
+    "warnings": 0,
+    "errores": 0
+  },
+  "resultado": {
+    "estado": "EXITOSO",
+    "mensaje": "Filtro v6.4.65 funciona correctamente. DIFUSA NO aparece en IHQ_ESTUDIOS_SOLICITADOS."
+  }
+}

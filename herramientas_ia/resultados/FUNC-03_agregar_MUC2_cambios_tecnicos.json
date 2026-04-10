@@ -1,0 +1,101 @@
+{
+  "biomarcador": "MUC2",
+  "columna_bd": "IHQ_MUC2",
+  "cambios_por_archivo": [
+    {
+      "archivo": "core/database_manager.py",
+      "lineas_aproximadas": [
+        165,
+        251,
+        364
+      ],
+      "cambios": [
+        {
+          "seccion": "NEW_TABLE_COLUMNS_ORDER",
+          "antes": "\"IHQ_BCL2\", \"IHQ_BCL6\", \"IHQ_MUM1\", \"IHQ_HMB45\"",
+          "despues": "\"IHQ_BCL2\", \"IHQ_BCL6\", \"IHQ_MUM1\", \"IHQ_MUC2\", \"IHQ_HMB45\""
+        },
+        {
+          "seccion": "CREATE TABLE",
+          "antes": "\"IHQ_MUM1\" TEXT, \"IHQ_HMB45\" TEXT",
+          "despues": "\"IHQ_MUM1\" TEXT, \"IHQ_MUC2\" TEXT, \"IHQ_HMB45\" TEXT"
+        },
+        {
+          "seccion": "new_biomarkers",
+          "antes": "\"IHQ_MUM1\",",
+          "despues": "\"IHQ_MUM1\", \"IHQ_MUC2\","
+        }
+      ]
+    },
+    {
+      "archivo": "ui.py",
+      "lineas_aproximadas": [
+        4198
+      ],
+      "cambios": [
+        {
+          "seccion": "cols_to_show",
+          "antes": "\"IHQ_MUM1\",",
+          "despues": "\"IHQ_MUM1\", \"IHQ_MUC2\","
+        }
+      ]
+    },
+    {
+      "archivo": "core/validation_checker.py",
+      "lineas_aproximadas": [
+        382
+      ],
+      "cambios": [
+        {
+          "seccion": "all_biomarker_mapping",
+          "agregado": [
+            "'MUC2': 'IHQ_MUC2'",
+            "'MUC-2': 'IHQ_MUC2'",
+            "'MUC 2': 'IHQ_MUC2'",
+            "'MUCINA 2': 'IHQ_MUC2'",
+            "'IHQ_MUC2': 'IHQ_MUC2'"
+          ]
+        }
+      ]
+    },
+    {
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "lineas_aproximadas": [
+        1454,
+        3204
+      ],
+      "cambios": [
+        {
+          "seccion": "BIOMARKER_PATTERNS",
+          "agregado": "Entrada completa con 5 patrones regex"
+        },
+        {
+          "seccion": "normalize_biomarker_name",
+          "agregado": "Mapeo de variantes MUC2/MUC-2/MUC 2/MUCINA 2"
+        }
+      ]
+    },
+    {
+      "archivo": "core/unified_extractor.py",
+      "lineas_aproximadas": [
+        694,
+        1451,
+        1624
+      ],
+      "cambios": [
+        {
+          "seccion": "extract_biomarkers_refactored",
+          "agregado": "'MUC2': 'IHQ_MUC2'"
+        },
+        {
+          "seccion": "validate_and_complete_data",
+          "agregado": "'MUC2': 'IHQ_MUC2', 'muc2': 'IHQ_MUC2'"
+        },
+        {
+          "seccion": "diccionario_reverso",
+          "agregado": "'IHQ_MUC2': 'MUC2'"
+        }
+      ]
+    }
+  ]
+}

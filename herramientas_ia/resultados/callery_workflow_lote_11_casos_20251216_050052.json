@@ -1,0 +1,241 @@
+{
+  "lote_id": "lote_11_casos_20251216_050052",
+  "timestamp_inicio": "2025-12-16T05:00:52.272201",
+  "timestamp_fin": "2025-12-16T05:01:05.449267",
+  "usuario": "USUARIO",
+  "descripcion": "Auditoria de 11 casos",
+  "casos": [
+    {
+      "numero": "IHQ250040",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2025-12-16T05:00:59.015216",
+      "timestamp_fin": "2025-12-16T05:00:59.558319",
+      "duracion_segundos": 0.543103,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250040.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250041",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2025-12-16T05:00:59.564743",
+      "timestamp_fin": "2025-12-16T05:01:00.117745",
+      "duracion_segundos": 0.553002,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250041.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250042",
+      "estado": "COMPLETADO",
+      "score": 66.7,
+      "timestamp_inicio": "2025-12-16T05:01:00.123432",
+      "timestamp_fin": "2025-12-16T05:01:00.701825",
+      "duracion_segundos": 0.578393,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250042.json",
+      "errores_criticos": 2,
+      "warnings": 0,
+      "errores_detectados": [
+        {
+          "tipo": "DIAGNOSTICO_COLORACION",
+          "severidad": "CRITICO",
+          "campo": "Diagnostico Coloracion",
+          "problema": "Campo NO APLICA pero existe diagnostico en OCR",
+          "sugerencia": "Verificar patron de extraccion en medical_extractor.py (linea ~665)",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "extract_diagnostico_coloracion()"
+        },
+        {
+          "tipo": "VALOR_BIOMARCADOR_INCORRECTO",
+          "severidad": "CRITICO",
+          "campo": "Biomarcador SV40",
+          "problema": "Valor en BD no coincide con OCR",
+          "sugerencia": "Verificar extractor de SV40 o ejecutar FUNC-06",
+          "archivos_afectados": [
+            "core/extractors/biomarker_extractor.py"
+          ],
+          "funcion": "extract_biomarkers()"
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250043",
+      "estado": "COMPLETADO",
+      "score": 88.9,
+      "timestamp_inicio": "2025-12-16T05:01:00.707434",
+      "timestamp_fin": "2025-12-16T05:01:01.261884",
+      "duracion_segundos": 0.55445,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250043.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": [
+        {
+          "tipo": "VALOR_BIOMARCADOR_INCORRECTO",
+          "severidad": "CRITICO",
+          "campo": "Biomarcador NeuN",
+          "problema": "Valor en BD no coincide con OCR",
+          "sugerencia": "Verificar extractor de NeuN o ejecutar FUNC-06",
+          "archivos_afectados": [
+            "core/extractors/biomarker_extractor.py"
+          ],
+          "funcion": "extract_biomarkers()"
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250044",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2025-12-16T05:01:01.268057",
+      "timestamp_fin": "2025-12-16T05:01:01.821541",
+      "duracion_segundos": 0.553484,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250044.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250045",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2025-12-16T05:01:01.827350",
+      "timestamp_fin": "2025-12-16T05:01:02.364484",
+      "duracion_segundos": 0.537134,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250045.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250046",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2025-12-16T05:01:02.371376",
+      "timestamp_fin": "2025-12-16T05:01:03.065452",
+      "duracion_segundos": 0.694076,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250046.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250047",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2025-12-16T05:01:03.072167",
+      "timestamp_fin": "2025-12-16T05:01:03.705742",
+      "duracion_segundos": 0.633575,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250047.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250048",
+      "estado": "COMPLETADO",
+      "score": 77.8,
+      "timestamp_inicio": "2025-12-16T05:01:03.711828",
+      "timestamp_fin": "2025-12-16T05:01:04.302589",
+      "duracion_segundos": 0.590761,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250048.json",
+      "errores_criticos": 1,
+      "warnings": 0,
+      "errores_detectados": [
+        {
+          "tipo": "DIAGNOSTICO_COLORACION",
+          "severidad": "CRITICO",
+          "campo": "Diagnostico Coloracion",
+          "problema": "Campo NO APLICA pero existe diagnostico en OCR",
+          "sugerencia": "Verificar patron de extraccion en medical_extractor.py (linea ~665)",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "extract_diagnostico_coloracion()"
+        },
+        {
+          "tipo": "BIOMARCADOR_NO_MAPEADO",
+          "severidad": "WARNING",
+          "campo": "Biomarcador CALRRETININA (sin columna)",
+          "problema": "Biomarcador 'CALRRETININA (sin columna)' no esta en el sistema",
+          "sugerencia": "Ejecutar FUNC-03: auditor.agregar_biomarcador('CALRRETININA (sin columna)')",
+          "archivos_afectados": [
+            "core/validation_checker.py"
+          ],
+          "funcion": "FUNC-03"
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250049",
+      "estado": "COMPLETADO",
+      "score": 88.9,
+      "timestamp_inicio": "2025-12-16T05:01:04.308631",
+      "timestamp_fin": "2025-12-16T05:01:04.839941",
+      "duracion_segundos": 0.53131,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250049.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 50%)",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250050",
+      "estado": "COMPLETADO",
+      "score": 88.9,
+      "timestamp_inicio": "2025-12-16T05:01:04.845700",
+      "timestamp_fin": "2025-12-16T05:01:05.443230",
+      "duracion_segundos": 0.59753,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250050.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": [
+        {
+          "tipo": "BIOMARCADOR_NO_MAPEADO",
+          "severidad": "WARNING",
+          "campo": "Biomarcador EBER (sin columna)",
+          "problema": "Biomarcador 'EBER (sin columna)' no esta en el sistema",
+          "sugerencia": "Ejecutar FUNC-03: auditor.agregar_biomarcador('EBER (sin columna)')",
+          "archivos_afectados": [
+            "core/validation_checker.py"
+          ],
+          "funcion": "FUNC-03"
+        }
+      ]
+    }
+  ],
+  "resumen": {
+    "total": 11,
+    "completados": 11,
+    "en_proceso": 0,
+    "pendientes": 0,
+    "fallidos": 0,
+    "progreso_porcentaje": 100.0,
+    "tiempo_promedio_caso": 0.5788016363636364,
+    "tiempo_estimado_restante": 0.0,
+    "promedio_score": 91.92727272727272,
+    "casos_criticos": [
+      "IHQ250042",
+      "IHQ250043",
+      "IHQ250048",
+      "IHQ250049",
+      "IHQ250050"
+    ]
+  },
+  "interrupciones": [],
+  "version_herramienta": "2.0.0"
+}

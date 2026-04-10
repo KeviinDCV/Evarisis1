@@ -1,0 +1,60 @@
+{
+  "caso": "IHQ250270",
+  "version_fix": "v6.5.80",
+  "objetivo": "Validar FIX INHIBINA - Extraccion correcta de \"positividad heterogenea\"",
+  "timestamp": "2026-02-03T01:43:42.422783",
+  "comparacion": {
+    "ANTES_FIX": {
+      "IHQ_INHIBINA": "NEGATIVO",
+      "IHQ_CALRETININA": "POSITIVO",
+      "IHQ_CKAE1AE3": "(valor previo desconocido)"
+    },
+    "DESPUES_FIX": {
+      "IHQ_INHIBINA": "POSITIVO HETEROGENEO",
+      "IHQ_CALRETININA": "POSITIVO HETEROGENEO",
+      "IHQ_CKAE1AE3": "POSITIVO HETEROGENEO"
+    },
+    "cambios_detectados": [
+      {
+        "biomarcador": "IHQ_INHIBINA",
+        "antes": "NEGATIVO",
+        "despues": "POSITIVO HETEROGENEO",
+        "estado": "CORREGIDO",
+        "explicacion": "Ahora extrae correctamente \"positividad heterogenea\" del texto OCR"
+      },
+      {
+        "biomarcador": "IHQ_CALRETININA",
+        "antes": "POSITIVO",
+        "despues": "POSITIVO HETEROGENEO",
+        "estado": "MEJORADO",
+        "explicacion": "Mejora de \"POSITIVO\" generico a \"POSITIVO HETEROGENEO\" especifico"
+      },
+      {
+        "biomarcador": "IHQ_CKAE1AE3",
+        "antes": "(no verificado)",
+        "despues": "POSITIVO HETEROGENEO",
+        "estado": "CORRECTO",
+        "explicacion": "Extrae correctamente \"positividad heterogenea\" del texto OCR"
+      }
+    ]
+  },
+  "validacion_ocr": {
+    "texto_relevante": "Las celulas tumorales presentan positividad heterogenea para CKAE1AE3, inhibina y calretinina. Son negativas para EMA, CK-7 y PAX-8.",
+    "patron_detectado": "positividad heterogenea para CKAE1AE3, inhibina y calretinina",
+    "extraccion_correcta": true
+  },
+  "metricas": {
+    "score_auditoria": "100%",
+    "biomarcadores_solicitados": 6,
+    "biomarcadores_extraidos": 6,
+    "cobertura": "100%"
+  },
+  "conclusion": "FIX v6.5.80 VALIDADO EXITOSAMENTE",
+  "impacto": [
+    "OK INHIBINA: Corregido de NEGATIVO a POSITIVO HETEROGENEO",
+    "OK CALRETININA: Mejorado de POSITIVO a POSITIVO HETEROGENEO",
+    "OK CKAE1AE3: Extrae correctamente POSITIVO HETEROGENEO",
+    "OK Score: 100% (todos los biomarcadores correctos)",
+    "OK Patron \"positividad heterogenea\" ahora se detecta correctamente"
+  ]
+}

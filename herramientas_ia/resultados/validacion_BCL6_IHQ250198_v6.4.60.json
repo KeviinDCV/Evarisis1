@@ -1,0 +1,26 @@
+{
+  "caso": "IHQ250198",
+  "version": "v6.4.60",
+  "fecha_validacion": "2026-01-09 05:36:33",
+  "objetivo": "Validar corrección de patrón BCL 6 (Marcación positiva focal)",
+  "contexto_ocr": "Marcación positiva focal para BCL 6",
+  "resultado": {
+    "estado": "EXITOSO",
+    "ihq_bcl6_bd": "POSITIVA",
+    "ihq_bcl6_esperado": "POSITIVO/POSITIVA",
+    "match": true
+  },
+  "score_auditoria": {
+    "score": 77.8,
+    "estado": "ERROR",
+    "causa_error": "FACTOR_PRONOSTICO vacío (NO relacionado con BCL 6)"
+  },
+  "biomarcadores": {
+    "total_solicitado": 11,
+    "total_extraido": 15,
+    "bcl6_en_estudios": true,
+    "bcl6_valor_extraido": true
+  },
+  "conclusion": "Corrección v6.4.60 funciona correctamente. BCL 6 se extrae como POSITIVA desde patrón \"Marcación positiva focal para BCL 6\".",
+  "nota": "El error del score 77.8% se debe a FACTOR_PRONOSTICO vacío, que es un problema diferente no relacionado con BCL 6."
+}

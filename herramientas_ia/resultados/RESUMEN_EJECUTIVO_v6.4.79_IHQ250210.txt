@@ -1,0 +1,57 @@
+================================================================================
+RESUMEN EJECUTIVO - VALIDACION FIX v6.4.79
+================================================================================
+
+CASO: IHQ250210
+FECHA: 2026-01-12
+VERSION: v6.4.79
+
+--------------------------------------------------------------------------------
+PROBLEMA RESUELTO:
+--------------------------------------------------------------------------------
+P63 no se extraia cuando el texto usaba "marcacion" en lugar de "inmunotincion"
+
+Texto original: "se observa marcacion para celulas mioepiteliales con 
+                 calponina, p63 y CK5/6 positivo"
+
+--------------------------------------------------------------------------------
+SOLUCION APLICADA:
+--------------------------------------------------------------------------------
+Archivo: biomarker_extractor.py (lineas 5239-5259)
+Cambio: Patron extendido para aceptar "marcacion" O "inmunotincion"
+
+--------------------------------------------------------------------------------
+VALIDACION REALIZADA:
+--------------------------------------------------------------------------------
+1. FUNC-06: Reprocesar 50 casos (IHQ250160-IHQ250211) - EXITOSO
+2. FUNC-01: Auditar IHQ250210 - Score 100.0%, 0 errores
+3. Consulta BD: Verificar valores de biomarcadores - OK
+4. Verificar OCR: Confirmar contexto - OK
+
+--------------------------------------------------------------------------------
+RESULTADOS:
+--------------------------------------------------------------------------------
+IHQ_P63:                 POSITIVO (ANTES: NO MENCIONADO) [FIX EXITOSO]
+IHQ_CALPONINA:           POSITIVO (ya estaba correcto)
+IHQ_CK5_6:               POSITIVO (ya estaba correcto)
+IHQ_RECEPTOR_ESTROGENOS: POSITIVO (mosaico) (ya estaba correcto)
+
+Score de validacion: 100.0%
+Warnings: 0
+Errores: 0
+Estado: OK
+
+--------------------------------------------------------------------------------
+IMPACTO:
+--------------------------------------------------------------------------------
+- P63 ahora se extrae correctamente en casos con "marcacion"
+- NO se detectaron regresiones en los 50 casos del PDF
+- Patron anterior ("inmunotincion") sigue funcionando
+- Patron nuevo es ADICIONAL, no un reemplazo
+
+--------------------------------------------------------------------------------
+CONCLUSION:
+--------------------------------------------------------------------------------
+FIX v6.4.79 EXITOSO - P63 ahora POSITIVO - Score 100.0%
+
+================================================================================

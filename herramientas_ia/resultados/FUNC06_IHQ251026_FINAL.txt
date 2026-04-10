@@ -1,0 +1,130 @@
+================================================================================
+REPORTE FINAL FUNC-06: REPROCESAMIENTO COMPLETO IHQ251026
+================================================================================
+Fecha: 2025-11-10 08:23:00
+Estado: PARCIALMENTE EXITOSO
+
+CONTEXTO DE LAS CORRECCIONES APLICADAS:
+--------------------------------------------------------------------------------
+1. debug_mapper.py: Agregada busqueda de IHQ_CAM5 cuando encuentra CAM5.2
+2. medical_extractor.py: Corregido mapeo CK56 (ya NO mapea a CK5/6)
+3. medical_extractor.py: Agregado normalizacion 'CK 5/6' -> 'CK5/6'
+4. medical_extractor.py: Agregado normalizacion 'CAM 5.2' -> 'CAM5.2'
+
+RESULTADOS DESPUES DE FUNC-06:
+--------------------------------------------------------------------------------
+
+1. IHQ_ESTUDIOS_SOLICITADOS: OK
+   Valor: P16, P40, CAM5.2, BCL2, BCL6, CD20, CD5, CK5/6, CK7, CKAE1AE3
+   Confirmacion: Contiene "CK5/6" con barra correctamente
+
+2. CAM5.2: OK - CORRECCION EXITOSA
+   Columna: IHQ_CAM5 (columna unificada para CAM5/CAM5.2)
+   Valor: POSITIVO
+   Estado antes: NO MENCIONADO
+   Estado despues: POSITIVO
+   Confirmacion: CAM5.2 se detecto y guardo correctamente
+
+3. CK5/6: ERROR - NO DETECTADO
+   Columna: IHQ_CK5_6
+   Valor: NO MENCIONADO (sin cambios)
+   Texto en OCR: "las celulas del epitelio respiratorio son CK 5/6 positivas"
+
+CAUSA RAIZ DEL PROBLEMA CK5/6:
+--------------------------------------------------------------------------------
+Patron actual en biomarker_extractor.py (linea 839-841):
+
+Patron 1 (linea 839):
+   r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para[:\s]+.*?CK5[\s/\-]?6(?:\s|,|\.)'
+   Busca: "positivas PARA ... CK5/6"
+   Problema: Texto tiene "son CK 5/6 positivas" (sin "para")
+
+Patron 2 (linea 841):
+   r'(?i)CK5[\s/\-]?6[:\s]*(positiv[ao]s?|negativ[ao]s?)'
+   Busca: "CK5/6 positivas" (inmediatamente seguido)
+   Problema: Texto tiene "son CK 5/6 positivas" (palabra "son" entre medio)
+
+Texto real en OCR:
+   "las celulas del epitelio respiratorio son CK 5/6 positivas"
+
+SCORE DE VALIDACION FINAL:
+--------------------------------------------------------------------------------
+Score global: 77.8% (7/9 validaciones OK)
+Estado final: ERROR
+Biomarcadores mapeados: 10/10 (100.0%)
+
+Errores detectados:
+1. DIAGNOSTICO_COLORACION: Marcado como "NO APLICA" pero existe en OCR
+2. CK5/6: NO detectado por patron de extraccion inadecuado
+3. CK7: Valor BD (POSITIVO) no coincide con OCR ("C" - posible error OCR)
+
+COMPARACION ANTES vs DESPUES:
+--------------------------------------------------------------------------------
+
+CAM5.2 (IHQ_CAM5):
+   Antes:   NO MENCIONADO
+   Despues: POSITIVO
+   Estado:  CORRECCION EXITOSA
+
+CK5/6 (IHQ_CK5_6):
+   Antes:   NO MENCIONADO
+   Despues: NO MENCIONADO
+   Estado:  SIN CAMBIOS - PATRON DE EXTRACCION REQUIERE CORRECCION
+
+CK56 (IHQ_CK56):
+   Antes:   N/A
+   Despues: N/A
+   Estado:  CORRECTO - Ya no mapea incorrectamente a CK5/6
+
+BIOMARCADORES CORRECTAMENTE DETECTADOS:
+--------------------------------------------------------------------------------
+1. P16: (columnas IHQ_P16_ESTADO, IHQ_P16_PORCENTAJE)
+2. P40: IHQ_P40_ESTADO
+3. CAM5.2: IHQ_CAM5 = POSITIVO
+4. BCL2: IHQ_BCL2
+5. BCL6: IHQ_BCL6
+6. CD20: IHQ_CD20
+7. CD5: IHQ_CD5
+8. CK7: IHQ_CK7 = POSITIVO
+9. CKAE1AE3: IHQ_CKAE1AE3 = POSITIVO
+10. CK5/6: IHQ_CK5_6 = NO MENCIONADO (ERROR)
+
+PROXIMOS PASOS RECOMENDADOS:
+--------------------------------------------------------------------------------
+1. Corregir patron CK5/6 en biomarker_extractor.py linea 841
+
+   Patron actual:
+   r'(?i)CK5[\s/\-]?6[:\s]*(positiv[ao]s?|negativ[ao]s?)'
+
+   Patron sugerido (mas flexible):
+   r'(?i)(?:son|presentan|muestran)?\s*CK[\s\-]?5[\s/\-]6\s+(positiv[ao]s?|negativ[ao]s?)'
+
+   O agregar nuevo patron:
+   r'(?i)\s+CK[\s]?5\s?/\s?6\s+(positiv[ao]s?)'
+
+2. Ejecutar FUNC-06 nuevamente en IHQ251026 para validar correccion
+
+3. Verificar otros casos con patron similar para confirmar que la correccion
+   no rompe casos existentes
+
+RESUMEN EJECUTIVO:
+--------------------------------------------------------------------------------
+FUNC-06 se ejecuto correctamente y reproceso el PDF completo (47 casos).
+
+EXITOS:
+- CAM5.2 ahora se detecta y guarda correctamente en IHQ_CAM5 como POSITIVO
+- IHQ_ESTUDIOS_SOLICITADOS contiene "CK5/6" con barra correctamente
+- CK56 ya NO mapea incorrectamente a CK5/6 (correccion v6.2.7 exitosa)
+
+PENDIENTES:
+- CK5/6 NO se extrae porque patron de biomarker_extractor.py no captura
+  el formato "son CK 5/6 positivas" (requiere nuevo patron mas flexible)
+- DIAGNOSTICO_COLORACION marcado como "NO APLICA" pero existe en OCR
+
+IMPACTO GLOBAL:
+- 1/2 correcciones exitosas (CAM5.2: OK, CK5/6: Pendiente)
+- Score de validacion: 77.8% (mejorado desde baseline)
+- Reprocesamiento completo sin errores criticos
+- BD actualizada con 47 casos regenerados
+
+================================================================================

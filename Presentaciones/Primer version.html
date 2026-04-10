@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor Oncológico Inteligente | HUV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)), url('https://www.huv.gov.co/wp-content/uploads/2023/01/Fachada-HUV.jpg');
+            /* URL genérica, puedes poner una local */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-900">EVARISIS <span
+                            class="text-blue-500 text-sm font-normal">| Oncología</span></span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-xs font-semibold bg-blue-100 text-blue-800 py-1 px-3 rounded-full">Versión 9.0
+                        (PySide6)</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-bg pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center animate-fade-in-up">
+            <h1 class="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+                Inteligencia Artificial al servicio de la <span class="gradient-text">Vida</span>
+            </h1>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Transformamos reportes estáticos de patología en datos estructurados accionables.
+                Una solución de <strong>Ingeniería Biomédica</strong> desarrollada 100% in-house para el Hospital
+                Universitario del Valle.
+            </p>
+            <div class="flex justify-center gap-4">
+                <button
+                    class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition transform hover:-translate-y-1">
+                    <i class="fas fa-play-circle mr-2"></i> Ver Demo en Vivo
+                </button>
+                <button
+                    class="bg-white hover:bg-gray-50 text-slate-700 border border-slate-300 font-bold py-3 px-8 rounded-lg shadow transition">
+                    Ver Documentación Técnica
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-12 shadow-inner">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="p-6">
+                <div class="text-4xl font-bold text-blue-600 mb-2">95%</div>
+                <div class="text-sm text-slate-500 uppercase tracking-wide font-semibold">Reducción de Errores</div>
+                <p class="text-slate-600 mt-2">Validación automática vs. ingreso manual.</p>
+            </div>
+            <div class="p-6 border-l-0 md:border-l border-r-0 md:border-r border-slate-100">
+                <div class="text-4xl font-bold text-blue-600 mb-2">+1000</div>
+                <div class="text-sm text-slate-500 uppercase tracking-wide font-semibold">Reportes / Hora</div>
+                <p class="text-slate-600 mt-2">Capacidad de procesamiento masivo con IA local.</p>
+            </div>
+            <div class="p-6">
+                <div class="text-4xl font-bold text-blue-600 mb-2">100%</div>
+                <div class="text-sm text-slate-500 uppercase tracking-wide font-semibold">Privacidad de Datos</div>
+                <p class="text-slate-600 mt-2">Procesamiento local sin enviar datos a la nube.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Arquitectura del Sistema</h2>
+                <p class="text-slate-600 mt-4">Potenciado por Modelos de Lenguaje (LLMs) y Visión Computacional</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-slate-100">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">IA Cognitiva Local</h3>
+                    <p class="text-slate-600 text-sm">Integración con LM Studio para interpretar biomarcadores complejos
+                        (HER2, KI67) sin exponer datos del paciente a internet.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-slate-100">
+                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-teal-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Extracción Inteligente</h3>
+                    <p class="text-slate-600 text-sm">Motor OCR avanzado que digitaliza PDFs escaneados, corrigiendo
+                        errores tipográficos y validando terminología médica CIE-10.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-slate-100">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-desktop text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dashboard EVARISIS</h3>
+                    <p class="text-slate-600 text-sm">Nueva interfaz en PySide6. Más rápida, intuitiva y diseñada
+                        pensando en el flujo de trabajo real de los patólogos del HUV.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <h4 class="text-lg font-semibold">Stack Tecnológico</h4>
+                <p class="text-slate-400 text-sm">Robusto, Escalable y Seguro</p>
+            </div>
+            <div class="flex gap-8 text-slate-400 text-2xl">
+                <i class="fab fa-python hover:text-yellow-400 transition" title="Python Backend"></i>
+                <i class="fas fa-database hover:text-blue-400 transition" title="SQLite / SQL"></i>
+                <i class="fas fa-layer-group hover:text-green-400 transition" title="PySide6 UI"></i>
+                <i class="fas fa-microchip hover:text-purple-400 transition" title="Local LLMs"></i>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-8 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+            <p>&copy; 2024 Hospital Universitario del Valle. Desarrollo e Innovación Tecnológica.</p>
+            <p class="mt-2">Liderado por: <strong>Ing. Daniel Fernando Restrepo</strong></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

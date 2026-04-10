@@ -1,0 +1,38 @@
+{
+  "caso": "IHQ250247",
+  "version": "v6.5.48",
+  "timestamp": "2026-01-28T13:57:19.242623",
+  "score_auditoria": 100.0,
+  "comparacion": {
+    "IHQ_RECEPTOR_ESTROGENOS": {
+      "esperado": "POSITIVO (90%)",
+      "extraido": "POSITIVO",
+      "coincide": true,
+      "nota": "El porcentaje 90% está en Factor Pronóstico"
+    },
+    "IHQ_RECEPTOR_PROGESTERONA": {
+      "esperado": "POSITIVO (90%)",
+      "extraido": "POSITIVO",
+      "coincide": true,
+      "nota": "El porcentaje 90% está en Factor Pronóstico"
+    },
+    "IHQ_HER2": {
+      "esperado": "NEGATIVO (score 0)",
+      "extraido": "NEGATIVO",
+      "coincide": true,
+      "nota": "Score no especificado en columna individual"
+    },
+    "IHQ_CK5_6": {
+      "esperado": "NEGATIVO",
+      "extraido": "NEGATIVO",
+      "coincide": true,
+      "nota": ""
+    },
+    "IHQ_SINAPTOFISINA": {
+      "esperado": "NEGATIVO",
+      "extraido": "POSITIVO",
+      "coincide": false,
+      "nota": "DISCREPANCIA: Extraído POSITIVO, esperado NEGATIVO"
+    }
+  }
+}

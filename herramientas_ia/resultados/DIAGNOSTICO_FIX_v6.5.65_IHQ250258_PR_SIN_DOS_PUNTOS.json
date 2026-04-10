@@ -1,0 +1,55 @@
+{
+  "caso": "IHQ250258",
+  "version": "v6.5.64",
+  "timestamp": "2026-01-28T17:26:44.817066",
+  "problema": {
+    "tipo": "PATRON_REGEX_INCOMPLETO",
+    "severidad": "ALTA",
+    "campo_afectado": "IHQ_RECEPTOR_PROGESTERONA",
+    "descripcion": "Patron v6.5.64 NO captura progesterona cuando falta dos puntos al final de linea"
+  },
+  "resultado_actual": {
+    "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO (<1%)",
+    "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+    "Factor_pronostico": "HER2: NEGATIVO (SCORE 0), Ki-67: 90%, Receptor de Estrogeno: NEGATIVO (<1%), Receptor de Progesterona: NEGATIVO"
+  },
+  "resultado_esperado": {
+    "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO (<1%)",
+    "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO (<1%)",
+    "Factor_pronostico": "HER2: NEGATIVO (SCORE 0), Ki-67: 90%, Receptor de Estrogeno: NEGATIVO (<1%), Receptor de Progesterona: NEGATIVO (<1%)"
+  },
+  "texto_ocr": {
+    "linea_40": "Expresion de receptores de estrogeno:",
+    "linea_41": "- NEGATIVO (MENOR AL 1%).",
+    "linea_42": "Expresion de receptores de progesterona",
+    "linea_43": "- NEGATIVO (MENOR AL 1%)"
+  },
+  "analisis_causa_raiz": {
+    "patron_actual": "expresion\\s+de\\s+receptores?\\s+de\\s+progesterona\\s*:?\\s*\\n?\\s*-\\s*(NEGATIV[OA]S?|POSITIV[OA]S?)\\s*\\(\\s*MENOR\\s+AL?\\s+(\\d+)\\s*%\\s*\\)",
+    "problema_regex": "\n? (salto de linea OPCIONAL) solo funciona cuando hay dos puntos. Cuando NO hay dos puntos, el salto de linea es OBLIGATORIO.",
+    "por_que_falla": [
+      "Estrogeno: Tiene dos puntos -> patron busca : + salto opcional -> MATCH",
+      "Progesterona: NO tiene dos puntos -> linea termina SIN : -> salto de linea OBLIGATORIO -> patron espera salto OPCIONAL -> NO MATCH"
+    ]
+  },
+  "correccion": {
+    "estrategia": "Hacer salto de linea OBLIGATORIO en lugar de opcional",
+    "patron_nuevo": "expresion\\s+de\\s+receptores?\\s+de\\s+progesterona\\s*:?\\s*\\n\\s*-\\s*(NEGATIV[OA]S?|POSITIV[OA]S?)\\s*\\(\\s*MENOR\\s+AL?\\s+(\\d+)\\s*%\\s*\\)",
+    "cambio": "\n? -> \n (obligatorio)",
+    "ubicacion": "core/extractors/biomarker_extractor.py linea 4315",
+    "version_nueva": "v6.5.65"
+  },
+  "validacion_anti_regresion": {
+    "casos_referencia": [
+      "IHQ250258 (progesterona sin dos puntos)",
+      "IHQ250XXX (progesterona con dos puntos - buscar caso similar)"
+    ],
+    "pasos": [
+      "1. Aplicar correccion v6.5.65",
+      "2. Reprocesar IHQ250258 (FUNC-06)",
+      "3. Validar que AMBOS receptores tengan (<1%)",
+      "4. Buscar casos con progesterona CON dos puntos",
+      "5. Validar que NO se rompa extraccion existente"
+    ]
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "numero_caso": "IHQ250096",
+  "caso_num": 40,
+  "total_casos": 50,
+  "timestamp": "2025-12-19T23:52:15.606770",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 18,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "PROLIFERACIÓN HEMATOLINFOIDE",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LINFOMA LINFOBLÁSTICO DE CÉLULAS T"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67 del 90%",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "5 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 17,
+      "total_solicitado_bd": 17,
+      "estudios_ocr": [
+        "CD20",
+        "BCL2",
+        "BCL6",
+        "CD3",
+        "Ki-67",
+        "CD68",
+        "CD4",
+        "CD8",
+        "CD5",
+        "CD7",
+        "TDT",
+        "CD10",
+        "CD117",
+        "CD1A",
+        "CD34",
+        "CD56",
+        "CD99"
+      ],
+      "estudios_bd": [
+        "CD20",
+        "BCL2",
+        "BCL6",
+        "CD3",
+        "Ki-67",
+        "CD68",
+        "CD4",
+        "CD8",
+        "CD5",
+        "CD7",
+        "TDT",
+        "CD10",
+        "CD117",
+        "CD1A",
+        "CD34",
+        "CD56",
+        "CD99"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 17,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "Ki-67",
+          "columna": "IHQ_KI-67",
+          "valor_bd": "90%",
+          "valor_ocr": "POSITIVO"
+        },
+        {
+          "biomarcador": "CD10",
+          "columna": "IHQ_CD10",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "POSITIVO"
+        },
+        {
+          "biomarcador": "CD117",
+          "columna": "IHQ_CD117",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "POSITIVO"
+        },
+        {
+          "biomarcador": "CD34",
+          "columna": "IHQ_CD34",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "POSITIVO"
+        },
+        {
+          "biomarcador": "CD56",
+          "columna": "IHQ_CD56",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "POSITIVO"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado \"M2500467”..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MEDIASTINO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

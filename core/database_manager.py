@@ -145,26 +145,31 @@ NEW_TABLE_COLUMNS_ORDER: List[str] = [
     # Biomarcadores principales
     "IHQ_HER2", "IHQ_KI-67", "IHQ_RECEPTOR_ESTROGENOS", "IHQ_RECEPTOR_PROGESTERONA", "IHQ_PDL-1",
     "IHQ_P16_ESTADO", "IHQ_P16_PORCENTAJE", "IHQ_P40_ESTADO", "IHQ_E_CADHERINA",
-    # Biomarcadores agregados v4.0
-    "IHQ_CK7", "IHQ_MAMOGLOBINA", "IHQ_CMYC", "IHQ_IGG4", "IHQ_IGG", "IHQ_HEPATOCITO", "IHQ_PSA", "IHQ_CK19", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
-    # Biomarcadores adicionales v4.1 (extracción completa)
-    "IHQ_P53", "IHQ_TTF1", "IHQ_S100", "IHQ_VIMENTINA", "IHQ_CHROMOGRANINA", "IHQ_SYNAPTOPHYSIN", "IHQ_MELAN_A",
+    # Biomarcadores agregados v4.0 (V6.4.59: eliminado duplicado IHQ_CKAE1E3)
+    "IHQ_CK7", "IHQ_MAMOGLOBINA", "IHQ_CROMOGRAMINA", "IHQ_DESMINA", "IHQ_LCA", "IHQ_CD11", "IHQ_MIOGENINA", "IHQ_MAMAGLOBINA", "IHQ_TIROGLOBULINA", "IHQ_CK34BETAE12", "IHQ_CK34BETA12", "IHQ_OCT4", "IHQ_PODOPLANINA", "IHQ_IDH", "IHQ_GPC3", "IHQ_AFP", "IHQ_IGD", "IHQ_BETACATENINA", "IHQ_ACTINA_MUSCULO_ESPECIFICA", "IHQ_MIELOPEROXIDASA", "IHQ_CD7", "IHQ_HCG", "IHQ_ACTINA_MUSCULO_LISO", "IHQ_EBER", "IHQ_CALRRETININA", "IHQ_SINAPTOFISINA", "IHQ_CROMOGRANINA", "IHQ_CK56", "IHQ_CAM5", "IHQ_GLICOFORINA", "IHQ_TDT", "IHQ_ATRX", "IHQ_IDH1", "IHQ_CMYC", "IHQ_IGG4", "IHQ_IGG", "IHQ_HEPATOCITO", "IHQ_PSA", "IHQ_RCC", "IHQ_CK19", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10", "IHQ_SOX11",
+    # Biomarcadores adicionales v4.1 (V6.3.40: eliminados duplicados IHQ_CHROMOGRANINA, IHQ_SYNAPTOPHYSIN)
+    "IHQ_P53", "IHQ_TTF1", "IHQ_S100", "IHQ_VIMENTINA", "IHQ_MELAN_A",
     # Marcadores CD (básicos)
     "IHQ_CD2", "IHQ_CD3", "IHQ_CD5", "IHQ_CD10", "IHQ_CD20", "IHQ_CD30", "IHQ_CD34", "IHQ_CD38",
     "IHQ_CD45", "IHQ_CD56", "IHQ_CD61", "IHQ_CD68", "IHQ_CD117", "IHQ_CD138",
     "IHQ_KAPPA", "IHQ_LAMBDA",
+    # V6.4.0 - Biomarcadores para estudios de médula ósea/hematológicos (IHQ250012)
+    "IHQ_CICLINA_D1",
     # V3.2.5.1 - Biomarcadores adicionales de 50 casos iniciales
     "IHQ_PAX8", "IHQ_PAX5", "IHQ_WT1", "IHQ_NAPSIN", "IHQ_P63",
     # V6.1.3 - Biomarcador celulas mioepiteliales (IHQ250999) - CK5_6 ya existe en V5.3
     "IHQ_CALPONINA",
     "IHQ_CDK4", "IHQ_MDM2", "IHQ_MLH1", "IHQ_MSH2", "IHQ_MSH6", "IHQ_PMS2",
-    "IHQ_DOG1", "IHQ_HHV8", "IHQ_ACTIN", "IHQ_GFAP", "IHQ_CAM52", "IHQ_CKAE1AE3", "IHQ_NEUN",
+    # V6.5.83: IHQ_CAM52 eliminado (obsoleto desde v6.2.3, migrado a IHQ_CAM5)
+    "IHQ_DOG1", "IHQ_HHV8", "IHQ_ACTIN", "IHQ_GFAP", "IHQ_CKAE1AE3", "IHQ_NEUN",
     # V5.2 - Biomarcadores adicionales detectados por sistema avanzado
     "IHQ_CD15", "IHQ_CD79A", "IHQ_ALK", "IHQ_DESMIN", "IHQ_MYOGENIN", "IHQ_MYOD1",
     "IHQ_SMA", "IHQ_MSA", "IHQ_CALRETININ", "IHQ_CD31", "IHQ_FACTOR_VIII",
-    "IHQ_BCL2", "IHQ_BCL6", "IHQ_MUM1", "IHQ_HMB45", "IHQ_TYROSINASE", "IHQ_MELANOMA", "IHQ_BER_EP4",
+    "IHQ_BCL2", "IHQ_BCL6", "IHQ_MUM1", "IHQ_MUC1", "IHQ_MUC2", "IHQ_HMB45", "IHQ_TYROSINASE", "IHQ_MELANOMA", "IHQ_BER_EP4",
     # V6.1.2 - Biomarcadores IHQ250997 (tumor maligno indiferenciado)
     "IHQ_H_CALDESMON", "IHQ_AML",
+    # V6.3.71 - Biomarcadores hormonales hipofisarios (IHQ250097)
+    "IHQ_PROLACTINA", "IHQ_ACTH", "IHQ_GH", "IHQ_FSH", "IHQ_LH", "IHQ_TSH", "IHQ_INHIBINA",
     # V5.3 - Nuevos biomarcadores detectados en producción (28 adicionales)
     "IHQ_CD23", "IHQ_CD4", "IHQ_CD8", "IHQ_CD99", "IHQ_CD1A",
     "IHQ_C4D", "IHQ_LMP1", "IHQ_CITOMEGALOVIRUS", "IHQ_SV40",
@@ -216,39 +221,78 @@ def _create_table_if_not_exists(cursor: sqlite3.Cursor):
 
             -- Biomarcadores v4.0
             "IHQ_CK7" TEXT,
+            "IHQ_CROMOGRAMINA" TEXT,
+            "IHQ_DESMINA" TEXT,
+            "IHQ_LCA" TEXT,
+            "IHQ_CD11" TEXT,
+            "IHQ_MIOGENINA" TEXT,
+            "IHQ_MAMAGLOBINA" TEXT,
+            "IHQ_TIROGLOBULINA" TEXT,
+            "IHQ_CK34BETAE12" TEXT,
+            "IHQ_CK34BETA12" TEXT,
+            "IHQ_OCT4" TEXT,
+            "IHQ_PODOPLANINA" TEXT,
+            "IHQ_IDH" TEXT,
+            "IHQ_GPC3" TEXT,
+            "IHQ_AFP" TEXT,
+            "IHQ_IGD" TEXT,
+            "IHQ_BETACATENINA" TEXT,
+            "IHQ_ACTINA_MUSCULO_ESPECIFICA" TEXT,
+            "IHQ_MIELOPEROXIDASA" TEXT,
+            "IHQ_CD7" TEXT,
+            "IHQ_HCG" TEXT,
+            "IHQ_ACTINA_MUSCULO_LISO" TEXT,
+            "IHQ_EBER" TEXT,
+            "IHQ_CALRRETININA" TEXT,
+            -- V6.4.59: Eliminado "IHQ_CKAE1E3" TEXT (duplicado de IHQ_CKAE1AE3)
+            "IHQ_SINAPTOFISINA" TEXT,  -- V6.3.40: Unificado en español
+            "IHQ_CROMOGRANINA" TEXT,  -- V6.3.40: Unificado en español
+            "IHQ_CK56" TEXT,
+            "IHQ_CAM5" TEXT,
+            "IHQ_GLICOFORINA" TEXT,
+            "IHQ_TDT" TEXT,
+            "IHQ_ATRX" TEXT,
+            "IHQ_IDH1" TEXT,
             "IHQ_CMYC" TEXT,
             "IHQ_IGG4" TEXT,
             "IHQ_IGG" TEXT,
             "IHQ_MAMOGLOBINA" TEXT,
             "IHQ_HEPATOCITO" TEXT,  -- V6.1.4: Auto-agregado por FUNC-03
-            "IHQ_PSA" TEXT,  -- V6.0.16: Auto-agregado
-            "IHQ_CK19" TEXT, "IHQ_CK20" TEXT, "IHQ_CDX2" TEXT, "IHQ_EMA" TEXT, "IHQ_GATA3" TEXT, "IHQ_SOX10" TEXT,
+            "IHQ_PSA" TEXT,
+            "IHQ_RCC" TEXT,  -- V6.0.16: Auto-agregado
+            "IHQ_CK19" TEXT, "IHQ_CK20" TEXT, "IHQ_CDX2" TEXT, "IHQ_EMA" TEXT, "IHQ_GATA3" TEXT, "IHQ_SOX10" TEXT, "IHQ_SOX11" TEXT,
 
             -- Biomarcadores v4.1
             "IHQ_P53" TEXT, "IHQ_TTF1" TEXT, "IHQ_S100" TEXT, "IHQ_VIMENTINA" TEXT,
-            "IHQ_CHROMOGRANINA" TEXT, "IHQ_SYNAPTOPHYSIN" TEXT, "IHQ_MELAN_A" TEXT,
+            "IHQ_MELAN_A" TEXT,  -- V6.3.40: Eliminadas columnas duplicadas IHQ_CHROMOGRANINA, IHQ_SYNAPTOPHYSIN
 
             -- Marcadores CD (básicos)
             "IHQ_CD2" TEXT, "IHQ_CD3" TEXT, "IHQ_CD5" TEXT, "IHQ_CD10" TEXT, "IHQ_CD20" TEXT, "IHQ_CD30" TEXT,
             "IHQ_CD34" TEXT, "IHQ_CD38" TEXT, "IHQ_CD45" TEXT, "IHQ_CD56" TEXT, "IHQ_CD61" TEXT,
             "IHQ_CD68" TEXT, "IHQ_CD117" TEXT, "IHQ_CD138" TEXT,
             "IHQ_KAPPA" TEXT, "IHQ_LAMBDA" TEXT,
+            -- V6.4.0 - Biomarcadores para estudios de médula ósea/hematológicos (IHQ250012)
+            "IHQ_CICLINA_D1" TEXT,
 
             -- V3.2.5.1 - Biomarcadores adicionales de 50 casos iniciales
             "IHQ_PAX8" TEXT, "IHQ_PAX5" TEXT, "IHQ_WT1" TEXT, "IHQ_NAPSIN" TEXT, "IHQ_P63" TEXT,
             -- V6.1.3 - Biomarcador celulas mioepiteliales (IHQ250999) - CK5_6 ya existe en V5.3
             "IHQ_CALPONINA" TEXT,
             "IHQ_CDK4" TEXT, "IHQ_MDM2" TEXT, "IHQ_MLH1" TEXT, "IHQ_MSH2" TEXT, "IHQ_MSH6" TEXT, "IHQ_PMS2" TEXT,
-            "IHQ_DOG1" TEXT, "IHQ_HHV8" TEXT, "IHQ_ACTIN" TEXT, "IHQ_GFAP" TEXT, "IHQ_CAM52" TEXT, "IHQ_CKAE1AE3" TEXT, "IHQ_NEUN" TEXT,
+            -- V6.5.83: IHQ_CAM52 eliminado (obsoleto desde v6.2.3, migrado a IHQ_CAM5)
+            "IHQ_DOG1" TEXT, "IHQ_HHV8" TEXT, "IHQ_ACTIN" TEXT, "IHQ_GFAP" TEXT, "IHQ_CKAE1AE3" TEXT, "IHQ_NEUN" TEXT,
 
             -- V5.2 - Biomarcadores adicionales detectados por sistema avanzado
             "IHQ_CD15" TEXT, "IHQ_CD79A" TEXT, "IHQ_ALK" TEXT, "IHQ_DESMIN" TEXT, "IHQ_MYOGENIN" TEXT, "IHQ_MYOD1" TEXT,
             "IHQ_SMA" TEXT, "IHQ_MSA" TEXT, "IHQ_CALRETININ" TEXT, "IHQ_CD31" TEXT, "IHQ_FACTOR_VIII" TEXT,
-            "IHQ_BCL2" TEXT, "IHQ_BCL6" TEXT, "IHQ_MUM1" TEXT, "IHQ_HMB45" TEXT, "IHQ_TYROSINASE" TEXT, "IHQ_MELANOMA" TEXT,
+            "IHQ_BCL2" TEXT, "IHQ_BCL6" TEXT, "IHQ_MUM1" TEXT, "IHQ_MUC1" TEXT, "IHQ_MUC2" TEXT, "IHQ_HMB45" TEXT, "IHQ_TYROSINASE" TEXT, "IHQ_MELANOMA" TEXT,
             "IHQ_BER_EP4" TEXT,
 
             -- V6.1.2 - Biomarcadores IHQ250997 (tumor maligno indiferenciado)
             "IHQ_H_CALDESMON" TEXT, "IHQ_AML" TEXT,
+
+            -- V6.3.71 - Biomarcadores hormonales hipofisarios (IHQ250097)
+            "IHQ_PROLACTINA" TEXT, "IHQ_ACTH" TEXT, "IHQ_GH" TEXT, "IHQ_FSH" TEXT, "IHQ_LH" TEXT, "IHQ_TSH" TEXT, "IHQ_INHIBINA" TEXT,
 
             -- V5.3 - Nuevos biomarcadores detectados en producción (28 adicionales)
             "IHQ_CD23" TEXT, "IHQ_CD4" TEXT, "IHQ_CD8" TEXT, "IHQ_CD99" TEXT, "IHQ_CD1A" TEXT,
@@ -335,31 +379,36 @@ def _add_new_biomarker_columns(conn: sqlite3.Connection, cursor: sqlite3.Cursor)
     v5.3.7: Rellena con 'N/A' los registros existentes para evitar NULL en UI.
     """
     new_biomarkers = [
-        # v4.0
-        "IHQ_CK7", "IHQ_CMYC", "IHQ_IGG4", "IHQ_IGG", "IHQ_MAMOGLOBINA", "IHQ_HEPATOCITO", "IHQ_PSA", "IHQ_CK19", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10",
+        # v4.0 (V6.3.40: eliminados duplicados IHQ_SYNAPTOFISINA; V6.4.59: eliminado duplicado IHQ_CKAE1E3)
+        "IHQ_CK7", "IHQ_CROMOGRAMINA", "IHQ_DESMINA", "IHQ_LCA", "IHQ_CD11", "IHQ_MIOGENINA", "IHQ_MAMAGLOBINA", "IHQ_TIROGLOBULINA", "IHQ_CK34BETAE12", "IHQ_CK34BETA12", "IHQ_OCT4", "IHQ_PODOPLANINA", "IHQ_IDH", "IHQ_GPC3", "IHQ_AFP", "IHQ_IGD", "IHQ_BETACATENINA", "IHQ_ACTINA_MUSCULO_ESPECIFICA", "IHQ_MIELOPEROXIDASA", "IHQ_CD7", "IHQ_HCG", "IHQ_ACTINA_MUSCULO_LISO", "IHQ_EBER", "IHQ_CALRRETININA", "IHQ_SINAPTOFISINA", "IHQ_CROMOGRANINA", "IHQ_CK56", "IHQ_CAM5", "IHQ_GLICOFORINA", "IHQ_TDT", "IHQ_ATRX", "IHQ_IDH1", "IHQ_CMYC", "IHQ_IGG4", "IHQ_IGG", "IHQ_MAMOGLOBINA", "IHQ_HEPATOCITO", "IHQ_PSA", "IHQ_RCC", "IHQ_CK19", "IHQ_CK20", "IHQ_CDX2", "IHQ_EMA", "IHQ_GATA3", "IHQ_SOX10", "IHQ_SOX11",
         "IHQ_KAPPA",
         "IHQ_LAMBDA",
-        # v4.1 - Biomarcadores adicionales
+        # v4.1 - Biomarcadores adicionales (V6.3.40: eliminados IHQ_CHROMOGRANINA, IHQ_SYNAPTOPHYSIN)
         "IHQ_P53", "IHQ_TTF1", "IHQ_S100", "IHQ_VIMENTINA",
-        "IHQ_CHROMOGRANINA", "IHQ_SYNAPTOPHYSIN", "IHQ_MELAN_A",
+        "IHQ_MELAN_A",
         # v6.0.3 - E-Cadherina
         "IHQ_E_CADHERINA",
         # Marcadores CD
         "IHQ_CD2", "IHQ_CD3", "IHQ_CD5", "IHQ_CD10", "IHQ_CD20", "IHQ_CD30", "IHQ_CD34",
         "IHQ_CD38", "IHQ_CD45", "IHQ_CD56", "IHQ_CD61", "IHQ_CD68", "IHQ_CD117", "IHQ_CD138",
         "IHQ_KAPPA", "IHQ_LAMBDA",
+        # V6.4.0 - Biomarcadores para estudios de médula ósea/hematológicos (IHQ250012)
+        "IHQ_CICLINA_D1",
         # V3.2.5.1 - Biomarcadores adicionales de 50 casos iniciales
         "IHQ_PAX8", "IHQ_PAX5", "IHQ_WT1", "IHQ_NAPSIN", "IHQ_P63",
         # V6.1.3 - Biomarcador celulas mioepiteliales (IHQ250999) - CK5_6 ya existe en V5.3
         "IHQ_CALPONINA",
         "IHQ_CDK4", "IHQ_MDM2", "IHQ_MLH1", "IHQ_MSH2", "IHQ_MSH6", "IHQ_PMS2",
-        "IHQ_DOG1", "IHQ_HHV8", "IHQ_ACTIN", "IHQ_GFAP", "IHQ_CAM52", "IHQ_CKAE1AE3", "IHQ_NEUN",
+        # V6.5.83: IHQ_CAM52 eliminado (obsoleto desde v6.2.3, migrado a IHQ_CAM5)
+        "IHQ_DOG1", "IHQ_HHV8", "IHQ_ACTIN", "IHQ_GFAP", "IHQ_CKAE1AE3", "IHQ_NEUN",
         # V5.2 - Biomarcadores adicionales detectados por sistema avanzado
         "IHQ_CD15", "IHQ_CD79A", "IHQ_ALK", "IHQ_DESMIN", "IHQ_MYOGENIN", "IHQ_MYOD1",
         "IHQ_SMA", "IHQ_MSA", "IHQ_CALRETININ", "IHQ_CD31", "IHQ_FACTOR_VIII",
-        "IHQ_BCL2", "IHQ_BCL6", "IHQ_MUM1", "IHQ_HMB45", "IHQ_TYROSINASE", "IHQ_MELANOMA", "IHQ_BER_EP4",
+        "IHQ_BCL2", "IHQ_BCL6", "IHQ_MUM1", "IHQ_MUC1", "IHQ_MUC2", "IHQ_HMB45", "IHQ_TYROSINASE", "IHQ_MELANOMA", "IHQ_BER_EP4",
         # V6.1.2 - Biomarcadores IHQ250997 (tumor maligno indiferenciado)
         "IHQ_H_CALDESMON", "IHQ_AML",
+        # V6.3.71 - Biomarcadores hormonales hipofisarios (IHQ250097)
+        "IHQ_PROLACTINA", "IHQ_ACTH", "IHQ_GH", "IHQ_FSH", "IHQ_LH", "IHQ_TSH", "IHQ_INHIBINA", "IHQ_INHIBINA",
         # V5.3 - Nuevos biomarcadores detectados en producción (28 adicionales)
         "IHQ_CD23", "IHQ_CD4", "IHQ_CD8", "IHQ_CD99", "IHQ_CD1A",
         "IHQ_C4D", "IHQ_LMP1", "IHQ_CITOMEGALOVIRUS", "IHQ_SV40",

@@ -1,0 +1,135 @@
+======================================================================
+RESUMEN EJECUTIVO - VALIDACION v6.5.29
+======================================================================
+Caso: IHQ250238
+Fecha: 2026-01-28
+PDF: IHQ DEL 212 AL 262.pdf
+
+----------------------------------------------------------------------
+PROBLEMA REPORTADO
+----------------------------------------------------------------------
+- Biomarcador: CK34BE12 / CK34BETAE12
+- Estado anterior: "NO MENCIONADO"
+- Valor esperado: POSITIVO (igual que P63)
+- Contexto: Panel de prostata con RACEMASA, P63, CK5/6, CK34BE12
+
+----------------------------------------------------------------------
+ANALISIS DEL PROBLEMA
+----------------------------------------------------------------------
+
+1. VERIFICACION EN OCR:
+   - Estudios solicitados: "RACEMASA, p63, CK5/6, CK34 B E12"
+   - Texto microscopico: "marcador de celulas basales (p63, CK5/6, 
+     CK34 B E12) [...] positiva y difusa"
+   - CONFIRMADO: El OCR contiene "CK34 B E12" con valor POSITIVO
+
+2. VERIFICACION EN EXTRACTORES:
+   - biomarker_extractor.py (linea 703): Usa alias "34BETAE12"
+   - database_manager.py: Columna "IHQ_CK34BETAE12" definida
+   - validation_checker.py: PROBLEMA DETECTADO
+     * Tenia DOBLE mapeo:
+       - 'CK34BE12': 'IHQ_CK34BE12' (alias viejo)
+       - 'CK34BETAE12': 'IHQ_CK34BETAE12' (alias correcto)
+     * Causaba confusion en validacion de completitud
+
+----------------------------------------------------------------------
+CAMBIO IMPLEMENTADO (v6.5.29)
+----------------------------------------------------------------------
+
+Archivo: core/validation_checker.py
+Linea: 703
+
+ANTES:
+  'CK34BE12': 'IHQ_CK34BE12',           # Alias viejo
+  'CK34BETAE12': 'IHQ_CK34BETAE12',     # Alias correcto
+
+DESPUES:
+  'CK34BE12': 'IHQ_CK34BETAE12',        # UNIFICADO
+  '34BETAE12': 'IHQ_CK34BETAE12',       # Alias adicional
+  'CK34BETAE12': 'IHQ_CK34BETAE12',     # Alias correcto
+
+Razon: Unificar TODOS los alias bajo la columna correcta
+       IHQ_CK34BETAE12 (que es la que existe en BD)
+
+----------------------------------------------------------------------
+RESULTADO POST-REPROCESAMIENTO (FUNC-06)
+----------------------------------------------------------------------
+
+Score final: 100% ✓
+
+Valores extraidos:
+- IHQ_CK34BETAE12: POSITIVO (difusa)  ✓
+- IHQ_RACEMASA: NEGATIVO              ✓
+- IHQ_P63: POSITIVO (difusa)          ✓
+- IHQ_CK5_6: POSITIVO                 ✓
+
+Coherencia clinica:
+  Panel de celulas basales completo:
+  - P63: POSITIVO (difusa)
+  - CK5/6: POSITIVO
+  - CK34BETAE12: POSITIVO (difusa)
+  - RACEMASA: NEGATIVO (descarta adenocarcinoma)
+  
+  RESULTADO: Patron de celulas basales preservadas
+  INTERPRETACION: Compatible con hiperplasia benigna
+
+Auditoria biomarcadores:
+  - Total solicitado en OCR: 4
+  - Total mapeado en BD: 4
+  - Cobertura: 100%
+  - Estudios OCR: RACEMASA, P63, CK5/6, CK34 B E12
+  - Estudios BD: RACEMASA, P63, CK5/6, CK34 B E12, CK34BETAE12
+  - Nota: Auditor reconoce ambas variantes como mapeadas
+
+----------------------------------------------------------------------
+VALIDACION DE NO-REGRESION
+----------------------------------------------------------------------
+
+Riesgo: BAJO
+
+Razon:
+- NO se modificaron extractores (biomarker_extractor.py intacto)
+- SOLO se unifico mapeo en validation_checker.py
+- El extractor YA extraia correctamente con alias "34BETAE12"
+- El cambio SOLO afecta validacion de completitud
+
+Casos de referencia:
+- No aplica (cambio quirurgico de mapeo, no de patron)
+
+----------------------------------------------------------------------
+CONCLUSION
+----------------------------------------------------------------------
+
+Estado: RESUELTO ✓
+
+Problema diagnosticado:
+  El validation_checker.py tenia dos mapeos separados (CK34BE12 y 
+  CK34BETAE12) que causaban confusion. El extractor siempre extrajo
+  correctamente bajo IHQ_CK34BETAE12, pero el validador a veces
+  buscaba bajo IHQ_CK34BE12 (columna inexistente).
+
+Solucion aplicada:
+  Unificacion de TODOS los alias bajo IHQ_CK34BETAE12:
+  - CK34BE12 → IHQ_CK34BETAE12
+  - 34BETAE12 → IHQ_CK34BETAE12
+  - CK34BETAE12 → IHQ_CK34BETAE12
+
+Resultado:
+  Score: 100%
+  Panel de prostata completo y coherente
+  Caso validado exitosamente
+
+----------------------------------------------------------------------
+ARCHIVOS GENERADOS
+----------------------------------------------------------------------
+
+1. herramientas_ia/resultados/VALIDACION_FIX_v6.5.29_IHQ250238.json
+   (Reporte detallado en JSON)
+
+2. herramientas_ia/resultados/VALIDACION_FIX_v6.5.29_IHQ250238.txt
+   (Este resumen ejecutivo)
+
+3. herramientas_ia/resultados/auditoria_inteligente_IHQ250238.json
+   (Auditoria completa post-reprocesamiento)
+
+======================================================================

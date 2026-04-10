@@ -1,0 +1,59 @@
+VALIDACION FINAL v6.4.95 - IHQ250224 (ADENOCARCINOMA PROSTATA)
+================================================================
+
+PROBLEMA DETECTADO:
+-------------------
+Diagnostico truncado durante limpieza en limpiar_diagnostico()
+
+Valor extraido (linea 54 debug_map - unified_extractor):
+"Prostata, lobulo derecho. Biopsia. Estudio de inmunohistoquimica (Lamina A) ADENOCARCINOMA GLEASON SCORE 3+3 = 6 (GRUPO 1) PRESENTE EN EL 1% DE LA MUESTRA EXAMINADA NEGATIVO PARA INVASION LINFOVASCULAR NEGATIVO PARA INVASION PERINEURAL: 03/03/2025"
+
+Valor guardado en BD (linea 88 debug_map - campos_criticos):
+"ESTUDIO DE INMUNOHISTOQUIMICA (LAMINA A) ADENOCARCINOMA GLEASON"
+
+DIAGNOSTICO ESPERADO:
+"ADENOCARCINOMA GLEASON SCORE 3+3 = 6 (GRUPO 1) PRESENTE EN EL 1% DE LA MUESTRA EXAMINADA"
+
+CAUSA RAIZ:
+-----------
+Archivo: core/unified_extractor.py
+Funcion: limpiar_diagnostico() (linea 412-500)
+Problema: Patrones de limpieza de factores pronosticos (lineas 476-484) eliminan "SCORE" del diagnostico de prostata
+
+Patron problematico (linea 477):
+r'\s+HER-?2[:\s]*(NEGATIVO|POSITIVO|EQUIVOCO)(?:\s+\([^)]*\))?(?:\s*\(.*)?$'
+
+Este patron busca "HER2" pero el lookahead/lookbehind no valida que sea HER2, solo busca "SCORE"
+
+CORRECION PROPUESTA v6.4.95:
+------------------------------
+1. Agregar validacion ANTES de limpiar factores pronosticos:
+   - NO limpiar si diagnostico contiene "GLEASON SCORE" (caso prostata)
+   - NO limpiar si diagnostico contiene keywords de prostata
+
+2. Patron mas especifico para factores pronosticos:
+   - Validar que "SCORE" viene despues de "HER-?2", no como palabra suelta
+   - Usar lookbehind para asegurar contexto correcto
+
+PATRON MEJORADO:
+----------------
+ANTES (v6.4.94):
+r'\s+HER-?2[:\s]*(NEGATIVO|POSITIVO|EQUIVOCO)(?:\s+\([^)]*\))?(?:\s*\(.*)?$'
+
+DESPUES (v6.4.95):
+r'\s+HER-?2[:\s]*(NEGATIVO|POSITIVO|EQUIVOCO)(?:\s+\(SCORE\s+\d+\+\))?(?:\s*\(.*)?$'
+# Especifica "SCORE" solo despues de HER2
+
+VALIDACION DE NO REGRESION:
+----------------------------
+Casos de referencia a validar:
+1. IHQ250002: Score 100% (HER2: NEGATIVO (SCORE 0))
+2. IHQ250003: Score 100% (sin factores pronosticos)
+3. IHQ250140: Score 100% (HER2: POSITIVO (SCORE 3+))
+
+IMPACTO ESPERADO:
+-----------------
+IHQ250224: 88.9% -> 100%
+- DIAGNOSTICO_PRINCIPAL: Ahora debe contener diagnostico completo
+- CK34BE12: NEGATIVO (ya extraido correctamente)
+- IHQ_ESTUDIOS_SOLICITADOS: "P63, RACEMASA, CK34BE12" (ya correcto)

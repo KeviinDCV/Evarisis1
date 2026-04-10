@@ -1,0 +1,4 @@
+  File "<string>", line 34
+    if idx \!= -1:
+            ^
+SyntaxError: unexpected character after line continuation character

@@ -1,0 +1,122 @@
+{
+  "numero_caso": "IHQ250024",
+  "caso_num": 24,
+  "total_casos": 50,
+  "timestamp": "2025-12-13T11:39:16.980534",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 5,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL), GRADO 2",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL)"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "HER2: Equivoco (Score 2+), Ki-67: 90%, Receptor de Estrógeno: POSITIVO DÉBIL, 1%, Receptor de Progesterona: POSITIVO",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67",
+        "HER2",
+        "RE",
+        "RP"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 4,
+      "total_solicitado_bd": 4,
+      "estudios_ocr": [
+        "HER2",
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona",
+        "Ki-67"
+      ],
+      "estudios_bd": [
+        "HER2",
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona",
+        "Ki-67"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 4,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "Ki-67",
+          "columna": "IHQ_KI-67",
+          "valor_bd": "90%",
+          "valor_ocr": "a"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410266 que corresponde..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MAMA DERECHA"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

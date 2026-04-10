@@ -29,6 +29,9 @@ venv0/
 # 6. PDFs de patología (datos médicos)
 pdfs_patologia/
 
+# 7. Data (base de datos con datos de pacientes)
+data/
+
 # ===============================================
 # EXCLUSIONES ESTÁNDAR DE PYTHON (RECOMENDADAS)
 # ===============================================

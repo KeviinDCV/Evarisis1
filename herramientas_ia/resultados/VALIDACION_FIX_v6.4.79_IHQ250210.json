@@ -1,0 +1,57 @@
+{
+  "caso": "IHQ250210",
+  "fix_version": "v6.4.79",
+  "fecha_validacion": "2026-01-12T19:57:33.612841",
+  "objetivo": "Validar que el patrón extendido de \"marcación\" extrae correctamente P63 como POSITIVO",
+  "contexto": {
+    "texto_original": "se observa marcación para células mioepiteliales con calponina, p63 y CK5/6 positivo",
+    "problema_anterior": "Patrón anterior solo buscaba \"inmunotinción\", no \"marcación\"",
+    "modificacion_aplicada": "biomarker_extractor.py líneas 5239-5259: Patrón extendido para incluir \"marcación\""
+  },
+  "resultados": {
+    "reprocesamiento": {
+      "metodo": "FUNC-06 (reprocesar_caso_completo)",
+      "casos_afectados": 50,
+      "rango": "IHQ250160 - IHQ250211",
+      "estado": "EXITOSO (con warning I/O al final, pero procesamiento completo)"
+    },
+    "auditoria": {
+      "metodo": "FUNC-01 (auditar_caso_inteligente)",
+      "score": "100.0%",
+      "estado": "OK",
+      "warnings": 0,
+      "errores": 0
+    },
+    "biomarcadores_extraidos": {
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (mosaico)"
+    },
+    "biomarcadores_esperados": {
+      "IHQ_P63": "POSITIVO (ANTES: NO MENCIONADO)",
+      "IHQ_CALPONINA": "POSITIVO (ya estaba correcto)",
+      "IHQ_CK5_6": "POSITIVO (ya estaba correcto)",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (ya estaba correcto)"
+    }
+  },
+  "validacion_patron": {
+    "patron_antiguo": "(?i)inmunotinci[óo]n\\s+para\\s+(?:c[ée]lulas?\\s+)?(?:mioepiteliales?\\s+)?(?:con\\s+)?(.+?)(?:\\s+y\\s+|\\s*,\\s*|\\s+positivo)",
+    "patron_nuevo": "(?i)(?:inmunotinci[óo]n|marcaci[óo]n)\\s+para\\s+(?:c[ée]lulas?\\s+)?(?:mioepiteliales?\\s+)?(?:con\\s+)?(.+?)(?:\\s+y\\s+|\\s*,\\s*|\\s+positivo)",
+    "diferencia": "Agregado \"marcación\" como alternativa a \"inmunotinción\"",
+    "texto_capturado": "se observa marcación para células mioepiteliales con calponina, p63 y CK5/6 positivo",
+    "biomarcadores_capturados": [
+      "calponina",
+      "p63",
+      "CK5/6"
+    ]
+  },
+  "conclusion": {
+    "estado": "FIX EXITOSO",
+    "p63_estado": "POSITIVO (CORRECTO)",
+    "mejora": "El caso pasó de tener P63 como NO MENCIONADO a POSITIVO",
+    "score_mejora": "100.0% (auditoría completa sin errores)",
+    "impacto": "Patrón \"marcación\" ahora funciona correctamente junto con \"inmunotinción\"",
+    "casos_beneficiados": "Todos los casos futuros que usen \"marcación\" en lugar de \"inmunotinción\""
+  }
+}

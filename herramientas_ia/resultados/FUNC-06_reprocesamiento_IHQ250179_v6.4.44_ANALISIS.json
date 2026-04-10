@@ -1,0 +1,96 @@
+{
+  "caso": "IHQ250179",
+  "version": "v6.4.44",
+  "fecha": "2026-01-08",
+  "patrones_implementados": {
+    "ki67_cualitativo": {
+      "patron": "Ki[-\\s]?67[:\\s]*(POSITIVO[^.\\n]{0,100})",
+      "prioridad": "ALTA",
+      "estado": "EXITOSO",
+      "valor_antes": "67%",
+      "valor_despues": "POSITIVO (distribucion uniforme)",
+      "ubicacion_patron": "biomarker_extractor.py linea ~1125"
+    },
+    "muc1_positivo_difuso": {
+      "patron": "(?:positiva?\\s+difusa?|difusa?\\s+positiva?)\\s+[^.]*?para\\s+MUC[-\\s]?1",
+      "prioridad": "ALTA",
+      "estado": "BLOQUEADO",
+      "razon_bloqueo": "Campo IHQ_MUC1 no existe en base de datos",
+      "valor_esperado": "POSITIVO DIFUSO",
+      "evidencia_ocr": "munorreactiva positiva difusa en el epitelio para MUC1",
+      "ubicacion_patron": "biomarker_extractor.py linea ~1138"
+    }
+  },
+  "score_actual": {
+    "valor": 88.9,
+    "unidad": "porcentaje",
+    "estado": "ADVERTENCIA",
+    "causa": "MUC1 no extraido por falta de campo en BD"
+  },
+  "diagnostico_muc1": {
+    "patron_existe": true,
+    "campo_bd_existe": false,
+    "archivos_con_muc1": {
+      "biomarker_extractor.py": "SI (patron implementado)",
+      "database_manager.py": "NO (falta campo IHQ_MUC1)",
+      "auditor_sistema.py": "NO (falta mapeo)",
+      "validation_checker.py": "NO (falta mapeo)",
+      "unified_extractor.py": "NO (falta mapeo)",
+      "ui.py": "NO (columna no visible)"
+    },
+    "archivos_faltantes": 5
+  },
+  "solucion_requerida": {
+    "accion": "Agregar MUC1 en 5 archivos",
+    "metodo": "Manual o FUNC-03 modificado",
+    "archivos_a_modificar": [
+      {
+        "archivo": "database_manager.py",
+        "modificaciones": 3,
+        "lineas": [
+          167,
+          272,
+          390
+        ],
+        "descripcion": "Agregar IHQ_MUC1 en NEW_TABLE_COLUMNS_ORDER, CREATE TABLE, y new_biomarkers"
+      },
+      {
+        "archivo": "auditor_sistema.py",
+        "modificaciones": 1,
+        "descripcion": "Agregar mapeo MUC1 en BIOMARKER_ALIAS_MAP"
+      },
+      {
+        "archivo": "validation_checker.py",
+        "modificaciones": 1,
+        "descripcion": "Agregar mapeo MUC1 en all_biomarker_mapping"
+      },
+      {
+        "archivo": "unified_extractor.py",
+        "modificaciones": 2,
+        "descripcion": "Agregar MUC1 en normalize_biomarker_name() y biomarcador_a_columna_bd"
+      },
+      {
+        "archivo": "ui.py",
+        "modificaciones": 1,
+        "descripcion": "Agregar IHQ_MUC1 en cols_to_show"
+      }
+    ],
+    "pasos_siguientes": [
+      "Agregar MUC1 en los 5 archivos faltantes",
+      "Borrar BD: rm data/huv_oncologia_NUEVO.db",
+      "Reprocesar IHQ250179 con FUNC-06",
+      "Verificar score = 100% con MUC1 = \"POSITIVO DIFUSO\""
+    ]
+  },
+  "resultado_func06": {
+    "ejecutado": true,
+    "pdf_reprocesado": "IHQ DEL 160 AL 211.pdf",
+    "casos_afectados": 49,
+    "caso_objetivo": "IHQ250179",
+    "estado": "EXITOSO_PARCIAL",
+    "correcciones_aplicadas": {
+      "ki67": "EXITOSA",
+      "muc1": "BLOQUEADA (campo BD faltante)"
+    }
+  }
+}

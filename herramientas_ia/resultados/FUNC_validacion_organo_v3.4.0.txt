@@ -1,0 +1,86 @@
+RESUMEN DE CAMBIOS APLICADOS
+=============================
+
+Archivo: herramientas_ia/auditor_sistema.py
+Version: 3.3.0 -> 3.4.0
+Fecha: 5 de noviembre de 2025
+Caso de referencia: IHQ251014
+
+CAMBIOS REALIZADOS:
+===================
+
+1. NUEVA FUNCION: _validar_organo()
+   - Ubicacion: Linea 1314
+   - Proposito: Validar que el campo Organo este limpio (sin duplicacion ni contaminacion)
+   - Detecta:
+     * Texto duplicado (ej: "BIOPSIA DE HUESO" aparece 2 veces)
+     * Codigos de caso (IHQ251014-B)
+     * Codigos numericos largos (898807)
+     * Texto administrativo (ESTUDIO DE INMUNOHISTOQUIMICA, etc.)
+   - Genera: Sugerencia automatica de valor limpio
+   - Total lineas: ~95 lineas de codigo
+
+2. INTEGRACION EN FLUJO DE VALIDACION
+   - Ubicacion: Linea 837 (en _auditar_datos_guardados)
+   - Seccion: 3.2.6 Campo Organo (validar duplicacion y contaminacion)
+   - Manejo de estados:
+     * ERROR: Agrega a auditoria['errores'], establece estado ERROR
+     * WARNING: Agrega a auditoria['warnings']
+     * OK: Mensaje de confirmacion
+
+3. CHANGELOG ACTUALIZADO
+   - Ubicacion: Linea 30
+   - Version actualizada: 3.4.0
+   - Fecha actualizada: 5 de noviembre de 2025
+   - Detalle completo de funcionalidad agregada
+
+4. VALIDACION DE SINTAXIS
+   - Estado: OK
+   - py_compile: Sin errores
+   - Archivo compilable correctamente
+
+RESULTADO ESPERADO PARA IHQ251014:
+===================================
+
+Input (campo Organo en BD):
+"BIOPSIA DE HUESO IHQ251014-B ESTUDIO DE INMUNOHISTOQUIMICA 898807 
+ESTUDIO ANATOMOPATOLOGICO DE MARCACION INMUNOHISTOQUIMICA BASICA 
+(ESPECIFICO) BLOQUES Y LAMINAS BIOPSIA DE HUESO"
+
+Output (resultado de validacion):
+{
+    'estado': 'ERROR',
+    'mensaje': 'Campo Organo contiene problemas: texto duplicado: "BIOPSIA DE HUESO", codigo de caso, codigo numerico largo, texto administrativo',
+    'valor_bd': 'BIOPSIA DE HUESO IHQ251014-B ...',
+    'valor_sugerido': 'BIOPSIA DE HUESO',
+    'nota': 'Debe limpiarse: "..." -> "BIOPSIA DE HUESO"',
+    'problemas_detectados': [
+        'texto duplicado: "BIOPSIA DE HUESO"',
+        'codigo de caso',
+        'codigo numerico largo',
+        'texto administrativo'
+    ]
+}
+
+BACKUP:
+=======
+Ubicacion: herramientas_ia/auditor_sistema.py.backup_20251105_034035
+Tamano original: 193K
+Tamano nuevo: 203K
+Diferencia: +10K (nueva funcionalidad)
+
+IMPACTO:
+========
+- Total validaciones: 9 -> 10 (agregada validacion Organo)
+- Detecta contaminacion en campo Organo que antes pasaba desapercibida
+- Genera sugerencias automaticas de limpieza
+- Mejora calidad de datos en base de datos
+- Resuelve caso IHQ251014 y casos similares
+
+PROXIMOS PASOS RECOMENDADOS:
+============================
+1. Ejecutar auditor en IHQ251014 para verificar funcionamiento
+2. Auditar otros casos con campo Organo sospechoso
+3. Generar reporte de casos con campo Organo contaminado
+4. Considerar agregar funcion de correccion automatica
+

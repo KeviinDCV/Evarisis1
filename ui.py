@@ -37,7 +37,8 @@ import pytesseract
 from pathlib import Path
 
 from core.calendario import CalendarioInteligente
-from core.huv_web_automation import automatizar_entrega_resultados, Credenciales
+# LAZY IMPORT: huv_web_automation solo se importa cuando se necesita (evita error de webdriver_manager al iniciar)
+# from core.huv_web_automation import automatizar_entrega_resultados, Credenciales
 from core.enhanced_export_system import EnhancedExportSystem
 from config.version_info import get_version_string, get_build_info, get_full_version_info, get_dependencies_actual
 
@@ -210,6 +211,7 @@ class App(ttk.Window):
 
         # Estados del nuevo sistema de navegación flotante
         self.header_visible = True
+        self.sidebar_visible = False  # Sidebar no se usa en el nuevo diseño flotante
         self.floating_menu_visible = False
         self.welcome_screen_active = True
         self.current_view = "welcome"  # welcome, database, visualizar, dashboard
@@ -248,7 +250,8 @@ class App(ttk.Window):
         self.filters_panel = None
 
         # ===== Separador =====
-        ttk.Separator(main_frame, orient=HORIZONTAL).pack(fill=X, padx=20, pady=5)
+        self.header_separator = ttk.Separator(main_frame, orient=HORIZONTAL)
+        self.header_separator.pack(fill=X, padx=20, pady=5)
 
         # ===== Contenido principal (sin sidebar tradicional) =====
         self._create_main_content(main_frame)
@@ -691,6 +694,14 @@ class App(ttk.Window):
                 # Llamarlo aquí causa que el UPDATE de relleno sobrescriba valores recién insertados
                 # init_db()
                 self.master_df = get_all_records_as_dataframe()
+
+                # Ordenar por número de caso automáticamente
+                if self.master_df is not None and not self.master_df.empty and "Numero de caso" in self.master_df.columns:
+                    self.master_df = self.master_df.sort_values(
+                        by="Numero de caso",
+                        ascending=True,
+                        na_position='last'
+                    ).reset_index(drop=True)
             self.cargar_dashboard()
         except Exception as e:
             logging.error(f"Error auto-cargando dashboard: {e}")
@@ -1692,6 +1703,7 @@ Disco {i}:
         """Ocultar header si no estamos en la pantalla de bienvenida"""
         if self.header_visible:
             self.header.pack_forget()
+            self.header_separator.pack_forget()
             self.header_visible = False
             # Actualizar posición base del botón flotante sin header
             self.floating_btn_base_y = 20
@@ -1703,14 +1715,13 @@ Disco {i}:
         """Mostrar header (solo para pantalla de bienvenida)"""
         if not self.header_visible:
             self.header.pack(fill=X, before=self.content_container)
+            self.header_separator.pack(fill=X, padx=20, pady=5, before=self.content_container)
             self.header_visible = True
             # Reajustar posición base del botón flotante con header visible
             self.floating_btn_base_y = 150
             # Reposicionar inmediatamente el botón
             if hasattr(self, 'floating_btn_container'):
                 self.floating_btn_container.place(x=15, y=150, width=50, height=50)
-            # Reposicionar el botón flotante cuando se muestra el header
-            self.floating_btn.place(x=20, y=20)
 
     def _create_sidebar(self):
         """Crear la barra lateral de navegación"""
@@ -1832,6 +1843,25 @@ Disco {i}:
             # Hacer que el frame interno sea del mismo ancho que el canvas
             canvas_width = event.width
             canvas.itemconfig(window_id, width=canvas_width)
+            # Auto-mostrar/ocultar scrollbar según si el contenido excede el canvas
+            _update_scrollbar_visibility()
+        
+        def _update_scrollbar_visibility():
+            """Mostrar scrollbar solo cuando el contenido excede el área visible"""
+            try:
+                canvas.update_idletasks()
+                bbox = canvas.bbox("all")
+                if bbox:
+                    content_height = bbox[3] - bbox[1]
+                    canvas_height = canvas.winfo_height()
+                    if content_height > canvas_height:
+                        if not scrollbar.winfo_ismapped():
+                            scrollbar.pack(side="right", fill="y")
+                    else:
+                        if scrollbar.winfo_ismapped():
+                            scrollbar.pack_forget()
+            except Exception:
+                pass
         
         window_id = canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
         canvas.bind('<Configure>', _configure_canvas)
@@ -1883,7 +1913,7 @@ Disco {i}:
         
         # Empacar elementos para llenar toda el área
         canvas.pack(side="left", fill="both", expand=True)
-        scrollbar.pack(side="right", fill="y")
+        # scrollbar se muestra/oculta automáticamente según contenido
         
         # Aplicar el binding del scroll a todos los widgets después de un pequeño delay
         # para asegurar que todos los widgets hijos se han creado
@@ -2278,7 +2308,7 @@ Disco {i}:
             page_up_down_select_row=True,
             expand_sheet_if_paste_too_big=False,
             column_width=150,
-            startup_select=(0, 0, "rows"),
+            startup_select=None,  # No auto-seleccionar fila 0
             headers_height=30,
             default_row_height=25,
             show_horizontal_grid=True,
@@ -2343,6 +2373,51 @@ Disco {i}:
 
         # Evento de selección
         self.sheet.bind("<<SheetSelect>>", self.mostrar_detalle_registro)
+        # IMPORTANTE: También enlazar a ButtonRelease para capturar clicks que no disparen <<SheetSelect>>
+        self.sheet.bind("<ButtonRelease-1>", self.mostrar_detalle_registro, add="+")
+        # Y navegación con teclado
+        self.sheet.bind("<KeyRelease-Up>", self.mostrar_detalle_registro, add="+")
+        self.sheet.bind("<KeyRelease-Down>", self.mostrar_detalle_registro, add="+")
+        self.sheet.bind("<KeyRelease-Left>", self.mostrar_detalle_registro, add="+")
+        self.sheet.bind("<KeyRelease-Right>", self.mostrar_detalle_registro, add="+")
+
+        # Binding permanente para ordenamiento por click en encabezado
+        # IMPORTANTE: Se bindea UNA SOLA VEZ aquí (no en _populate_treeview)
+        def _on_header_click(event):
+            """Callback cuando se hace clic en un encabezado para ordenar columna"""
+            import logging
+
+            # Validación robusta: verificar que el evento tenga atributo 'region'
+            if not hasattr(event, 'region'):
+                logging.debug("_on_header_click: event sin atributo 'region', ignorando")
+                return
+
+            if event.region != "header":
+                logging.debug(f"_on_header_click: region='{event.region}' (no es header), ignorando")
+                return
+
+            # Procesar click en encabezado para ordenar
+            col_idx = event.column
+            if col_idx is not None and hasattr(self, 'master_df') and not self.master_df.empty:
+                # Obtener DataFrame actual (puede estar filtrado)
+                df_display = self.master_df
+
+                if col_idx < len(df_display.columns):
+                    col_name = df_display.columns[col_idx]
+
+                    # Alternar orden ascendente/descendente
+                    if not hasattr(self, '_last_sorted_col') or self._last_sorted_col != col_name:
+                        self._last_sorted_col = col_name
+                        self._last_sorted_reverse = False
+                    else:
+                        self._last_sorted_reverse = not self._last_sorted_reverse
+
+                    logging.info(f"Ordenando por columna '{col_name}' (reverso={self._last_sorted_reverse})")
+                    self._sort_treeview(col_name, self._last_sorted_reverse)
+
+        # Bindear el handler (add="+" para no reemplazar handlers existentes)
+        self.sheet.bind("<ButtonRelease-1>", _on_header_click, add="+")
+        logging.info("Handler de ordenamiento por encabezado bindeado correctamente")
 
         # V5.3.8: CAPA DE COMPATIBILIDAD TREEVIEW → SHEET
         # =================================================
@@ -2357,39 +2432,48 @@ Disco {i}:
             - Rangos (arrastrar selección)
             """
             try:
-                logging.debug("_sheet_selection: Llamado")
+                logging.info("_sheet_selection: Llamado")  # Cambiado a INFO para ver en logs
                 rows = set()
 
                 # ESTRATEGIA 1: Intentar obtener filas completas seleccionadas
                 selected_rows = self.sheet.get_selected_rows()
+                logging.info(f"_sheet_selection: get_selected_rows() = {selected_rows}")
                 if selected_rows:
                     rows.update(selected_rows)
-                    logging.debug(f"_sheet_selection: Estrategia 1 (filas completas): {selected_rows}")
+                    logging.info(f"_sheet_selection: Estrategia 1 (filas completas): {selected_rows}")
 
                 # ESTRATEGIA 2: Obtener celdas seleccionadas y extraer filas únicas
                 # Esto captura cuando el usuario hace clic en una CELDA individual
                 selected_cells = self.sheet.get_selected_cells()
+                logging.info(f"_sheet_selection: get_selected_cells() = {selected_cells}")
                 if selected_cells:
                     # Cada celda es una tupla (row, col), extraer solo las filas
                     cell_rows = set(row for row, col in selected_cells)
                     rows.update(cell_rows)
-                    logging.debug(f"_sheet_selection: Estrategia 2 (celdas): {len(cell_rows)} fila(s) desde {len(selected_cells)} celda(s)")
+                    logging.info(f"_sheet_selection: Estrategia 2 (celdas): {len(cell_rows)} fila(s) desde {len(selected_cells)} celda(s): {cell_rows}")
 
                 # ESTRATEGIA 3: Fallback usando get_currently_selected()
                 # Para capturar casos especiales que las estrategias 1 y 2 no cubran
                 if not rows:
                     selected = self.sheet.get_currently_selected()
+                    logging.info(f"_sheet_selection: get_currently_selected() = {selected}")
                     if selected and hasattr(selected, 'row') and selected.row is not None:
                         rows.add(selected.row)
-                        logging.debug(f"_sheet_selection: Estrategia 3 (fallback): fila {selected.row}")
+                        logging.info(f"_sheet_selection: Estrategia 3 (fallback): fila {selected.row}")
+
+                # ESTRATEGIA 4: Usar ultima_seleccion si todas las anteriores fallaron
+                # Esto maneja el caso donde el evento indica una fila pero los métodos del sheet no la detectan
+                if not rows and hasattr(self, 'ultima_seleccion') and self.ultima_seleccion is not None:
+                    rows.add(self.ultima_seleccion)
+                    logging.info(f"_sheet_selection: Estrategia 4 (ultima_seleccion): fila {self.ultima_seleccion}")
 
                 # Convertir set a lista para compatibilidad con Treeview
                 if rows:
                     result = list(rows)
-                    logging.debug(f"_sheet_selection: retornando {len(result)} fila(s): {result}")
+                    logging.info(f"_sheet_selection: ✅ RETORNANDO {len(result)} fila(s): {result}")
                     return result
                 else:
-                    logging.debug("_sheet_selection: sin selección, retornando []")
+                    logging.info("_sheet_selection: ⚠️ Sin selección, retornando []")
                     return []
 
             except Exception as e:
@@ -3214,6 +3298,14 @@ Disco {i}:
                 # init_db()
                 self.master_df = get_all_records_as_dataframe()
 
+                # Ordenar por número de caso automáticamente
+                if self.master_df is not None and not self.master_df.empty and "Numero de caso" in self.master_df.columns:
+                    self.master_df = self.master_df.sort_values(
+                        by="Numero de caso",
+                        ascending=True,
+                        na_position='last'
+                    ).reset_index(drop=True)
+
             # Ahora cargar el dashboard con datos disponibles
             self.cargar_dashboard()
         except Exception as e:
@@ -3277,6 +3369,7 @@ Disco {i}:
                     self.after(5, lambda: slide_up(steps_remaining - 1))  # Reducido de 20ms a 5ms
                 else:
                     self.header.pack_forget()
+                    self.header_separator.pack_forget()
                     self.header_visible = False
             
         if self.header_visible:
@@ -3284,6 +3377,9 @@ Disco {i}:
 
     def _animate_sidebar_hide(self):
         """Animar ocultamiento del sidebar hacia la izquierda - ULTRA RÁPIDO"""
+        if not hasattr(self, 'sidebar') or not self.sidebar_visible:
+            self.sidebar_visible = False
+            return
         def slide_left(steps_remaining):
             if steps_remaining > 0:
                 current_width = self.sidebar.winfo_width()
@@ -3317,7 +3413,7 @@ Disco {i}:
             self.header_visible = True
             
         # Mostrar sidebar
-        if not self.sidebar_visible:
+        if not self.sidebar_visible and hasattr(self, 'sidebar'):
             # Obtener el contenedor padre correcto (body frame)
             body_parent = self.content_container.master
             self.sidebar.pack(side=LEFT, fill=Y, before=self.content_container)
@@ -4100,6 +4196,14 @@ Disco {i}:
             # Cargar datos
             self.master_df = get_all_records_as_dataframe()
 
+            # Ordenar por número de caso automáticamente
+            if self.master_df is not None and not self.master_df.empty and "Numero de caso" in self.master_df.columns:
+                self.master_df = self.master_df.sort_values(
+                    by="Numero de caso",
+                    ascending=True,
+                    na_position='last'
+                ).reset_index(drop=True)
+
             if self.master_df is not None and not self.master_df.empty:
                 logging.info(f"📊 Datos cargados: {len(self.master_df)} registros")
 
@@ -4201,6 +4305,37 @@ Disco {i}:
             "IHQ_E_CADHERINA",  # v6.0.3 - E-Cadherina
             # Biomarcadores adicionales v4.0/v4.1
             "IHQ_CK7",
+            "IHQ_CROMOGRAMINA",
+            "IHQ_DESMINA",
+            "IHQ_LCA",
+            "IHQ_CD11",
+            "IHQ_MIOGENINA",
+            "IHQ_MAMAGLOBINA",
+            "IHQ_TIROGLOBULINA",
+            "IHQ_CK34BETAE12",
+            "IHQ_CK34BETA12",
+            "IHQ_OCT4",
+            "IHQ_PODOPLANINA",
+            "IHQ_IDH",
+            "IHQ_GPC3",
+            "IHQ_AFP",
+            "IHQ_IGD",
+            "IHQ_BETACATENINA",
+            "IHQ_ACTINA_MUSCULO_ESPECIFICA",
+            "IHQ_MIELOPEROXIDASA",
+            "IHQ_CD7",
+            "IHQ_EBER",
+            # V6.4.25: IHQ_CALRRETININA (typo v4.0) eliminado - duplicado de IHQ_CALRETININA (línea 4378)
+            "IHQ_SYNAPTOFISINA",
+            "IHQ_CKAE1E3",
+            "IHQ_SINAPTOFISINA",
+            "IHQ_CROMOGRANINA",
+            "IHQ_CK56",
+            "IHQ_CAM5",
+            "IHQ_GLICOFORINA",
+            "IHQ_TDT",
+            "IHQ_ATRX",
+            "IHQ_IDH1",
             "IHQ_CMYC",
             "IHQ_IGG4",
             "IHQ_IGG",
@@ -4239,7 +4374,7 @@ Disco {i}:
             # V6.0.13: Biomarcadores para linfomas y mielomas
             "IHQ_BCL2",
             "IHQ_BCL6",
-            "IHQ_MUM1",
+            "IHQ_MUM1", "IHQ_MUC1", "IHQ_MUC2"  # V6.4.43: MUC1 agregado,
             "IHQ_CD15",
             "IHQ_CD79A",
             "IHQ_ALK",
@@ -4253,7 +4388,7 @@ Disco {i}:
             # BIOMARCADORES ADICIONALES v5.1 - COMPLETAR CON TODAS LAS COLUMNAS DE BD
             "IHQ_PAX8",
             "IHQ_GFAP",
-            "IHQ_CAM52",
+            # V6.5.83: IHQ_CAM52 eliminado (obsoleto, migrado a IHQ_CAM5)
             "IHQ_DOG1",
             "IHQ_H_CALDESMON",  # V6.1.2: Biomarcador IHQ250997 (tumor maligno indiferenciado)
             "IHQ_AML",  # V6.1.2: Biomarcador IHQ250997 (tumor maligno indiferenciado)
@@ -4289,6 +4424,7 @@ Disco {i}:
             "IHQ_ARGINASA",
             "IHQ_HMB45",
             "IHQ_PSA",
+            "IHQ_INHIBINA",  # V6.4.60: Biomarcador hormonal
             "IHQ_RACEMASA",
             "IHQ_34BETA",
             "IHQ_B2",
@@ -4320,24 +4456,8 @@ Disco {i}:
         self.sheet.set_sheet_data(data=sheet_data, reset_col_positions=True, reset_row_positions=True, redraw=False)
         self.sheet.headers(newheaders=headers, index=None, reset_col_positions=False, show_headers_if_not_sheet=True, redraw=False)
 
-        # PASO 1.5: Configurar ordenamiento con clic en encabezados
-        def _on_header_click(event):
-            """Callback cuando se hace clic en un encabezado"""
-            if event.region != "header":
-                return
-            col_idx = event.column
-            if col_idx is not None and col_idx < len(df_display.columns):
-                col_name = df_display.columns[col_idx]
-                # Alternar orden ascendente/descendente
-                if not hasattr(self, '_last_sorted_col') or self._last_sorted_col != col_name:
-                    self._last_sorted_col = col_name
-                    self._last_sorted_reverse = False
-                else:
-                    self._last_sorted_reverse = not self._last_sorted_reverse
-                self._sort_treeview(col_name, self._last_sorted_reverse)
-
-        # Bind clic en encabezado
-        self.sheet.bind("<ButtonRelease-1>", _on_header_click, add="+")
+        # PASO 1.5: Ordenamiento por encabezado YA está configurado en __init__ (línea 2357-2391)
+        # NO bindear aquí para evitar acumulación de handlers duplicados
 
         # PASO 2: Configurar anchos de columnas
         column_widths = {}
@@ -4544,11 +4664,30 @@ Disco {i}:
         logging.info("mostrar_detalle_registro: EVENTO DISPARADO")
         logging.info(f"Evento: {event}")
 
+        # NUEVO: Extraer selección directamente del evento (más confiable que get_currently_selected)
+        actual_row = None
+        if isinstance(event, dict) and 'selected' in event:
+            selected_info = event['selected']
+            if hasattr(selected_info, 'row') and selected_info.row is not None:
+                actual_row = selected_info.row
+                logging.info(f"mostrar_detalle_registro: Fila seleccionada desde EVENTO: {actual_row}")
+
         # Probar la función selection()
         try:
             selection = self.tree.selection()
             logging.info(f"self.tree.selection() retornó: {selection}")
             logging.info(f"Tipo: {type(selection)}, Longitud: {len(selection) if selection else 0}")
+
+            # Si obtuvimos la fila real del evento, actualizar la selección
+            if actual_row is not None and (not selection or selection[0] != actual_row):
+                logging.info(f"⚠️ CORRECCIÓN: selection() retornó {selection}, pero evento indica fila {actual_row}")
+                selection = [actual_row]
+                logging.info(f"✅ Usando fila del evento: {selection}")
+
+            # Guardar última selección válida para uso en toggle_floating_details_panel
+            if selection and len(selection) > 0:
+                self.ultima_seleccion = selection[0]
+                logging.info(f"💾 Guardada última selección válida: {self.ultima_seleccion}")
         except Exception as e:
             logging.error(f"ERROR al llamar self.tree.selection(): {e}", exc_info=True)
 
@@ -4560,6 +4699,16 @@ Disco {i}:
         self._update_audit_buttons_state()
 
         logging.info("=" * 60)
+
+        # NUEVO: Si el panel de detalles está abierto, actualizarlo con el nuevo registro
+        try:
+            if (hasattr(self.export_system, 'details_panel') and
+                self.export_system.details_panel.winfo_exists() and
+                selection and len(selection) > 0):
+                logging.info("Panel de detalles abierto - actualizando contenido...")
+                self.export_system._update_details_panel_content(selection[0])
+        except Exception as e:
+            logging.error(f"Error al actualizar panel de detalles: {e}")
 
         # El panel de detalles ahora es flotante y se maneja en el export_system
         # Aquí solo manejamos la selección
@@ -5282,6 +5431,9 @@ Disco {i}:
 
     def _run_web_automation(self, fi, ff, user, pwd, criterio):
         try:
+            # LAZY IMPORT: Solo importar cuando realmente se necesite
+            from core.huv_web_automation import automatizar_entrega_resultados, Credenciales
+
             ok = automatizar_entrega_resultados(
                 fecha_inicial_ddmmaa=fi,
                 fecha_final_ddmmaa=ff,
@@ -5639,7 +5791,7 @@ Informes con malignidad: {malignant_count}"""
             self.files_listbox.insert(tk.END, f"Error: {str(e)}")
 
     def _process_selected_files(self):
-        """Procesar los archivos seleccionados de la lista"""
+        """Procesar los archivos seleccionados de la lista (con barra de progreso)"""
         # Verificar que existe el listbox
         if not hasattr(self, 'files_listbox') or self.files_listbox is None:
             messagebox.showerror("Error", "El visor de archivos no está disponible.")
@@ -5651,15 +5803,38 @@ Informes con malignidad: {malignant_count}"""
             return
 
         pdfs_path = os.path.join(os.getcwd(), "pdfs_patologia")
-        processed_count = 0
-        total_records = 0
-        errors = []
 
-        # V5.3.9: Acumulador de correcciones del sistema
-        todas_las_correcciones = []
+        # Pre-validar archivos y verificar duplicados (rápido, main thread)
+        files_to_process = []
+        for index in selected_indices:
+            filename = self.files_listbox.get(index)
+            if filename == "(No hay archivos PDF)" or filename.startswith("Error:"):
+                continue
+            file_path = os.path.join(pdfs_path, filename)
+            if not os.path.exists(file_path):
+                continue
 
-        # NUEVO: Limpiar lista de registros procesados y obtener peticiones existentes antes del procesamiento
-        self._ultimos_registros_procesados = []
+            duplicado_info = self._verificar_archivo_duplicado(file_path, filename)
+            if duplicado_info["es_duplicado"]:
+                respuesta = messagebox.askyesno(
+                    "Archivo ya importado",
+                    f"El archivo '{filename}' ya ha sido importado.\n\n"
+                    f"Número de petición: {duplicado_info['numero_peticion']}\n"
+                    f"Fecha del informe (PDF): {duplicado_info['fecha_informe']}\n"
+                    f"Fecha de importación al sistema: {duplicado_info['fecha_importacion']}\n\n"
+                    f"¿Desea ir al visualizador para ver el registro existente?"
+                )
+                if respuesta:
+                    self._redirigir_a_visualizador_con_filtro(duplicado_info['numero_peticion'])
+                continue
+
+            files_to_process.append((file_path, filename))
+
+        if not files_to_process:
+            messagebox.showinfo("Sin archivos", "No hay archivos nuevos para procesar.")
+            return
+
+        # Obtener peticiones existentes antes del procesamiento
         peticiones_antes = set()
         try:
             import sqlite3
@@ -5672,46 +5847,147 @@ Informes con malignidad: {malignant_count}"""
         except Exception as e:
             logging.warning(f"⚠️ Error obteniendo peticiones existentes: {e}")
 
-        # Procesar cada archivo seleccionado
-        for index in selected_indices:
-            filename = self.files_listbox.get(index)
-            if filename != "(No hay archivos PDF)" and not filename.startswith("Error:"):
-                file_path = os.path.join(pdfs_path, filename)
-                if os.path.exists(file_path):
-                    # NUEVA FUNCIONALIDAD: Verificar si ya está importado
-                    duplicado_info = self._verificar_archivo_duplicado(file_path, filename)
-                    if duplicado_info["es_duplicado"]:
-                        # Archivo ya importado - redirigir al visualizador
-                        respuesta = messagebox.askyesno(
-                            "Archivo ya importado",
-                            f"El archivo '{filename}' ya ha sido importado.\n\n"
-                            f"Número de petición: {duplicado_info['numero_peticion']}\n"
-                            f"Fecha del informe (PDF): {duplicado_info['fecha_informe']}\n"
-                            f"Fecha de importación al sistema: {duplicado_info['fecha_importacion']}\n\n"
-                            f"¿Desea ir al visualizador para ver el registro existente?"
-                        )
-                        if respuesta:
-                            self._redirigir_a_visualizador_con_filtro(duplicado_info['numero_peticion'])
-                        continue
+        # Mostrar overlay de progreso
+        self._show_processing_overlay(len(files_to_process))
 
-                    try:
-                        # V5.3.9: _process_file ahora retorna (records_count, correcciones)
-                        records_count, correcciones = self._process_file(file_path)
-                        processed_count += 1
-                        total_records += records_count
+        # Estado compartido con el thread
+        self._processing_result = {
+            "done": False,
+            "processed_count": 0,
+            "total_records": 0,
+            "errors": [],
+            "correcciones": [],
+            "peticiones_antes": peticiones_antes,
+            "current_file": "",
+            "current_index": 0,
+            "total_files": len(files_to_process),
+        }
 
-                        # V5.3.9: Acumular correcciones de este archivo
-                        if correcciones:
-                            todas_las_correcciones.extend(correcciones)
-                    except Exception as e:
-                        error_msg = f"{filename}: {str(e)}"
-                        errors.append(error_msg)
-                        # V5.3.9: Usar logging en lugar de print (stdout puede estar cerrado)
-                        logging.error(f"❌ Error procesando {filename}: {e}")
+        # Limpiar registros procesados
+        self._ultimos_registros_procesados = []
 
-        # Mostrar resultado final
+        # Lanzar thread de procesamiento
+        thread = threading.Thread(
+            target=self._process_files_worker,
+            args=(files_to_process,),
+            daemon=True
+        )
+        thread.start()
+
+        # Polling desde main thread para actualizar progreso
+        self._poll_processing_progress()
+
+    def _show_processing_overlay(self, num_files):
+        """Mostrar overlay con barra de progreso sobre la UI"""
+        self._progress_overlay = tk.Toplevel(self)
+        overlay = self._progress_overlay
+        overlay.title("Procesando PDFs...")
+        overlay.transient(self)
+        overlay.grab_set()
+        overlay.resizable(False, False)
+        overlay.protocol("WM_DELETE_WINDOW", lambda: None)  # No se puede cerrar
+
+        # Centrar ventana
+        w, h = 480, 200
+        x = self.winfo_x() + (self.winfo_width() - w) // 2
+        y = self.winfo_y() + (self.winfo_height() - h) // 2
+        overlay.geometry(f"{w}x{h}+{x}+{y}")
+
+        frame = ttk.Frame(overlay, padding=30)
+        frame.pack(fill=BOTH, expand=True)
+
+        ttk.Label(
+            frame,
+            text="⏳ Procesando archivos PDF...",
+            font=("Segoe UI", 13, "bold"),
+        ).pack(pady=(0, 5))
+
+        self._progress_status_label = ttk.Label(
+            frame,
+            text=f"Preparando {num_files} archivo(s)...",
+            font=("Segoe UI", 10),
+        )
+        self._progress_status_label.pack(pady=(0, 15))
+
+        self._progress_bar = ttk.Progressbar(
+            frame,
+            mode="determinate",
+            length=400,
+            maximum=num_files,
+            bootstyle="success-striped",
+        )
+        self._progress_bar.pack(pady=(0, 10))
+
+        self._progress_detail_label = ttk.Label(
+            frame,
+            text="El OCR puede tardar varios minutos por archivo...",
+            font=("Segoe UI", 9),
+            foreground="gray",
+        )
+        self._progress_detail_label.pack()
+
+    def _process_files_worker(self, files_to_process):
+        """Worker thread: procesa PDFs (pesado, NO toca UI)"""
+        result = self._processing_result
+
+        for i, (file_path, filename) in enumerate(files_to_process):
+            result["current_file"] = filename
+            result["current_index"] = i
+
+            try:
+                records_count, correcciones = self._process_file(file_path)
+                result["processed_count"] += 1
+                result["total_records"] += records_count
+                if correcciones:
+                    result["correcciones"].extend(correcciones)
+            except Exception as e:
+                result["errors"].append(f"{filename}: {str(e)}")
+                logging.error(f"❌ Error procesando {filename}: {e}")
+
+        result["done"] = True
+
+    def _poll_processing_progress(self):
+        """Polling desde main thread: actualiza barra de progreso"""
+        result = self._processing_result
+
+        if not result["done"]:
+            # Actualizar progreso
+            idx = result["current_index"]
+            filename = result["current_file"]
+            total = result["total_files"]
+
+            if filename:
+                self._progress_status_label.configure(
+                    text=f"Procesando ({idx + 1}/{total}): {filename}"
+                )
+                self._progress_bar.configure(value=idx)
+
+            # Seguir haciendo polling cada 500ms
+            self.after(500, self._poll_processing_progress)
+            return
+
+        # Procesamiento terminado - cerrar overlay
+        self._progress_bar.configure(value=result["total_files"])
+        self._progress_status_label.configure(text="✅ Procesamiento completado")
+        self.after(600, self._on_processing_complete)
+
+    def _on_processing_complete(self):
+        """Callback main thread: mostrar resultados después del procesamiento"""
+        result = self._processing_result
+
+        # Cerrar overlay
+        if hasattr(self, '_progress_overlay') and self._progress_overlay:
+            self._progress_overlay.grab_release()
+            self._progress_overlay.destroy()
+            self._progress_overlay = None
+
+        processed_count = result["processed_count"]
+        total_records = result["total_records"]
+        errors = result["errors"]
+        peticiones_antes = result["peticiones_antes"]
+
         if processed_count > 0:
-            # NUEVO: Obtener los números de petición de los registros recién procesados
+            # Obtener nuevos registros
             try:
                 import sqlite3
                 from core.database_manager import DB_FILE
@@ -5721,20 +5997,16 @@ Informes con malignidad: {malignant_count}"""
                 peticiones_despues = set(row[0] for row in cursor.fetchall() if row[0])
                 conn.close()
 
-                # Calcular la diferencia: nuevos registros = después - antes
                 nuevas_peticiones = list(peticiones_despues - peticiones_antes)
                 self._ultimos_registros_procesados = nuevas_peticiones
                 logging.info(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
-                if nuevas_peticiones:
-                    logging.info(f"   IDs: {', '.join(nuevas_peticiones[:5])}" + (" ..." if len(nuevas_peticiones) > 5 else ""))
             except Exception as e:
                 logging.warning(f"⚠️ Error capturando nuevos registros: {e}")
                 self._ultimos_registros_procesados = []
 
-            # Capturar números de petición de registros procesados
             numeros_peticion_procesados = self._ultimos_registros_procesados
 
-            # NUEVO: Analizar completitud de registros
+            # Analizar completitud
             try:
                 from core.validation_checker import analizar_batch_registros
 
@@ -5745,17 +6017,14 @@ Informes con malignidad: {malignant_count}"""
                 logging.info(f"   • Completos: {analisis['resumen']['completos']}")
                 logging.info(f"   • Incompletos: {analisis['resumen']['incompletos']}")
 
-                # Actualizar vista antes de mostrar ventana
                 try:
                     self.refresh_data_and_table()
                     self.after(500, self._delayed_refresh_after_processing)
-
                     if hasattr(self, 'enhanced_dashboard'):
                         self.enhanced_dashboard.refresh_all_data()
                 except Exception as e:
                     logging.warning(f"⚠️ Error en refresh: {e}")
 
-                # Mostrar ventana de resultados (permanece en pestaña Importación)
                 from core.ventana_resultados_importacion import mostrar_ventana_resultados
 
                 mostrar_ventana_resultados(
@@ -5765,14 +6034,10 @@ Informes con malignidad: {malignant_count}"""
                     resumen=analisis['resumen'],
                     callback_auditar=self._mostrar_selector_tipo_auditoria,
                     callback_continuar=self._nav_to_visualizar
-                    # V5.3.9: Correcciones ya NO se pasan - se leen desde debug_maps
                 )
 
             except Exception as e:
-                # Fallback al flujo original si hay error
-                # V5.3.9: Usar logging en lugar de print (stdout puede estar cerrado)
                 logging.warning(f"⚠️ Error en análisis de completitud: {e}")
-                logging.info(f"   Usando flujo de importación original")
 
                 success_msg = f"✅ Procesamiento completado:\n"
                 success_msg += f"• {processed_count} archivos procesados\n"
@@ -5786,16 +6051,15 @@ Informes con malignidad: {malignant_count}"""
 
                 messagebox.showinfo("Procesamiento completado", success_msg)
 
-                # Flujo original
                 self.refresh_data_and_table()
                 self.after(1000, self._delayed_refresh_after_processing)
                 if hasattr(self, 'enhanced_dashboard'):
                     self.enhanced_dashboard.refresh_all_data()
                 self._nav_to_visualizar()
-                
+
         else:
             error_msg = "❌ No se pudo procesar ningún archivo.\n\nErrores encontrados:\n"
-            error_msg += "\n".join(errors[:5])  # Mostrar los primeros 5 errores
+            error_msg += "\n".join(errors[:5])
             messagebox.showerror("Error de procesamiento", error_msg)
 
     def _process_file(self, file_path):

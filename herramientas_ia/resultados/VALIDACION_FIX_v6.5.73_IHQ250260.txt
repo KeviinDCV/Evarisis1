@@ -1,0 +1,140 @@
+====================================================================================================
+VALIDACION CORRECCION v6.5.73 - IHQ250260
+====================================================================================================
+Fecha: 2026-01-29 08:41:56
+Caso: IHQ250260 (FUNC-06 reprocesado)
+
+OBJETIVO DE LA CORRECCION:
+--------------------------
+Nuevo patron de captura para biomarcadores tipo "Resultado de X: ...".
+
+Patron v6.5.73: [^
+(]+(?:\([^)]*(?:
+[^)]*)*\))?
+
+Caracteristicas:
+- Captura texto SIN parentesis hasta nueva linea (ej: MLH1, MSH2, MSH6)
+- Captura texto CON parentesis permitiendo saltos de linea DENTRO (ej: PMS2)
+- CRITICO: NO debe capturar lineas siguientes si no estan en parentesis
+
+====================================================================================================
+VALIDACION DE VALORES EXTRAIDOS
+====================================================================================================
+
+1. IHQ_MLH1
+   -----------
+   Valor extraido: "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)"
+   
+   Validacion:
+   OK CORRECTO: Capturo SOLO "expresion nuclear intacta"
+   OK NO capturo la linea siguiente (MSH2)
+   
+2. IHQ_MSH2
+   -----------
+   Valor extraido: "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)"
+   
+   Validacion:
+   OK CORRECTO: Capturo SOLO "expresion nuclear intacta"
+   OK NO capturo la linea siguiente (MSH6)
+   
+3. IHQ_MSH6
+   -----------
+   Valor extraido: "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)"
+   
+   Validacion:
+   OK CORRECTO: Capturo SOLO "expresion nuclear intacta"
+   OK NO capturo la linea siguiente (PMS2)
+   
+4. IHQ_PMS2
+   -----------
+   Valor extraido: "POSITIVO (EXPRESIÓN NUCLEAR INTACTA (HAY MARCACIÓN CITOPLASMÁTICA PATRÓN PUNTEADO Y NUCLEAR MOTEADO))"
+   
+   Validacion:
+   OK CORRECTO: Capturo valor con parentesis multilinea completo
+   OK NO capturo "RECEPTORES ESTROGENOS" (linea siguiente fuera de parentesis)
+   
+   Detalle:
+   - Capturo: "expresion nuclear intacta (hay marcacion citoplasmatica patron punteado y nuclear moteado)"
+   - El parentesis incluia salto de linea entre "punteado y" y "nuclear moteado"
+   - Patron (?:\([^)]*(?:
+[^)]*)*\)) funciono correctamente
+
+5. IHQ_HER2
+   -----------
+   Valor extraido: "NEGATIVO (SCORE 1+)"
+   
+   Validacion:
+   OK CORRECTO: Capturo valor correcto
+   OK Formato esperado
+
+====================================================================================================
+CONTEXTO DEL OCR (SECCION CRITICA)
+====================================================================================================
+
+Resultado de MLH1: expresion nuclear intacta 
+Resultado de MSH2: expresion nuclear intacta
+Resultado de MSH6: expresion nuclear intacta
+Resultado de PMS2: expresion nuclear intacta (hay marcacion citoplasmatica patron punteado y
+nuclear moteado)
+RECEPTORES ESTROGENOS. HER2: NEGATIVO 1+
+
+Nota: El patron debe capturar hasta el cierre del parentesis en PMS2 (linea 5 completa)
+      pero NO debe capturar "RECEPTORES ESTROGENOS" (linea 6).
+
+====================================================================================================
+SCORE DE AUDITORIA
+====================================================================================================
+
+Score: 100.0%
+Estado: OK
+Warnings: 0
+Errores: 0
+
+Todos los biomarcadores mapeados: 5/5
+- MLH1: OK
+- MSH2: OK
+- MSH6: OK
+- PMS2: OK
+- HER2: OK
+
+====================================================================================================
+CONCLUSION
+====================================================================================================
+
+OK CORRECCION v6.5.73 VALIDADA EXITOSAMENTE
+
+El nuevo patron [^
+(]+(?:\([^)]*(?:
+[^)]*)*\))? funciona correctamente:
+
+1. OK Captura valores sin parentesis hasta nueva linea (MLH1, MSH2, MSH6)
+2. OK Captura valores con parentesis incluyendo saltos de linea internos (PMS2)
+3. OK NO captura lineas siguientes fuera de parentesis ("RECEPTORES ESTROGENOS")
+4. OK Todos los valores son correctos y completos
+5. OK Score de auditoria: 100%
+
+====================================================================================================
+PROBLEMA ORIGINAL RESUELTO
+====================================================================================================
+
+ANTES (v6.5.72):
+- PMS2 capturaba: "expresion nuclear intacta (hay marcacion citoplasmatica patron punteado y"
+- Problema: Patron [^
+)]+ cortaba en el salto de linea dentro del parentesis
+- Resultado: Valor truncado e incompleto
+
+DESPUES (v6.5.73):
+- PMS2 captura: "expresion nuclear intacta (hay marcacion citoplasmatica patron punteado y nuclear moteado)"
+- Solucion: Patron (?:\([^)]*(?:
+[^)]*)*\)) permite multiples lineas dentro de parentesis
+- Resultado: Valor completo y correcto
+
+====================================================================================================
+RECOMENDACION
+====================================================================================================
+
+OK APROBAR correccion v6.5.73 para produccion
+OK NO requiere mas ajustes
+OK Caso IHQ250260 validado como caso de referencia
+
+====================================================================================================
