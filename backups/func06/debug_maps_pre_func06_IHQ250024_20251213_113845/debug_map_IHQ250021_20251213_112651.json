@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250021_20251213_112651",
+  "numero_peticion": "IHQ250021",
+  "timestamp": "2025-12-13T11:26:51.177507",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250021\nCopia Pag. 1 de 2\nNombre : ROBINSON ASPRILLA GUTIERREZ\nN. peticion : IHQ250021\nN.Identificación : CC. 16480852\nGenero : MASCULINO\nEdad : 61 años 11 meses 7 dias\nEPS : FIDEICOMISO PATRIM. AUTONOMOS\nMédico tratante : CARLOS HERNAN MEJIA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/01/2025\nFecha Informe : 09/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibieron para su estudio en fresco 2 cilindros de tejido obtenidos mediante biopsia renal por punción\npercutánea. El cilindro de mayor tamaño mide 0,5 x 0,1 x 0,1 cm, y el de menor tamaño mide 0,3 x 0,1 x\n0,1 cm. Son de color café claro y de consistencia blanda. Todo el material se destinó al estudio por\nmicroscopía de luz. Fue fijado en formol bufferado al 10 % y posteriormente incluido en parafina. Se\nrealizaron cortes histológicos que fueron teñidos con Hematoxilina y Eosina, PAS, tricrómico de Masson y\nmetenamina de Jones. Además de la realización de estudios de inmunohistoquímica para SV40 Y C4d.\nDESCRIPCIÓN MICROSCÓPICA\nLa muestra destinada para estudio de microscopía de luz corresponde a un fragmento de téjido\nfibroadiposo sin representación de parénquima renal.\nDIAGNÓSTICO\nRIÑÓN (BIOPSIA POR PUNCIÓN):\nTÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL.\nTÉJIDO FIBROADIPOSO DE ARQUTIECTURA USUAL.\nVER COMENTARIO.\nCOMENTARIOS\nCOMENTARIO: la muestra no evidencia parénquima renal para la adecuada clasificación, se\nsugiere nuevo muestreo a criterio del médico tratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---\nIHQ250021\nCopia Pag. 2 de 2\nNombre : ROBINSON ASPRILLA GUTIERREZ\nN. peticion : IHQ250021\nN.Identificación : CC. 16480852\nGenero : MASCULINO\nEdad : 61 años 11 meses 7 dias\nEPS : FIDEICOMISO PATRIM. AUTONOMOS\nMédico tratante : CARLOS HERNAN MEJIA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/01/2025\nFecha Informe : 09/01/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3291,
+      "reduccion_porcentaje": 98.08
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250021",
+      "caso_num": 21,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ROBINSON ASPRILLA GUTIERREZ",
+      "numero_peticion": "IHQ250021",
+      "identificacion": "16480852",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "61",
+      "eps": "FIDEICOMISO PATRIM. AUTONOMOS",
+      "medico_tratante": "CARLOS HERNAN MEJIA",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "07/01/2025",
+      "fecha_informe": "09/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250021",
+      "N. de identificación": "16480852",
+      "Tipo de documento": "CC",
+      "EPS": "FIDEICOMISO PATRIM. AUTONOMOS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "CARLOS HERNAN MEJIA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/01/2025",
+      "Fecha Informe": "09/01/2025",
+      "nombres": "ROBINSON ASPRILLA",
+      "Primer nombre": "ROBINSON",
+      "Segundo nombre": "ASPRILLA",
+      "apellidos": "GUTIERREZ",
+      "Primer apellido": "GUTIERREZ",
+      "Segundo apellido": "",
+      "nombre_formal": "GUTIERREZ, ROBINSON ASPRILLA",
+      "diagnostico": "RIÑÓN (BIOPSIA POR PUNCIÓN): TÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL. TÉJIDO FIBROADIPOSO DE ARQUTIECTURA USUAL. VER COMENTARIO.",
+      "descripcion_microscopica": "La muestra destinada para estudio de microscopía de luz corresponde a un fragmento de téjido fibroadiposo sin representación de parénquima renal.",
+      "descripcion_macroscopica": "Se recibieron para su estudio en fresco 2 cilindros de tejido obtenidos mediante biopsia renal por punción percutánea. El cilindro de mayor tamaño mide 0,5 x 0,1 x 0,1 cm, y el de menor tamaño mide 0,3 x 0,1 x 0,1 cm. Son de color café claro y de consistencia blanda. Todo el material se destinó al estudio por microscopía de luz. Fue fijado en formol bufferado al 10 % y posteriormente incluido en parafina. Se realizaron cortes histológicos que fueron teñidos con Hematoxilina y Eosina, PAS, tricrómico de Masson y metenamina de Jones. Además de la realización de estudios de inmunohistoquímica para SV40 Y C4d.",
+      "ihq_organo": "RIÑÓN (BIOPSIA POR PUNCIÓN):\nTÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "SV40, C4D",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "COMENTARIO: la muestra no evidencia parénquima renal para la adecuada clasificación, se sugiere nuevo muestreo a criterio del médico tratante.",
+      "IHQ_ORGANO": "RIÑÓN (BIOPSIA POR PUNCIÓN):\nTÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "extraction_timestamp": "2025-12-13T11:26:51.320704",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250021\nCopia Pag. 1 de 2\nNombre : ROBINSON ASPRILLA GUTIERREZ\nN. peticion : IHQ250021\nN.Identificación : CC. 16480852\nGenero : MASCULINO\nEdad : 61 años 11 meses 7 dias\nEPS : FIDEICOMISO PATRIM. AUTONOMOS\nMédico tratante : CARLOS HERNAN MEJIA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/01/2025\nFecha Informe : 09/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibieron para su estudio en fresco 2 cilindros de tejido obtenidos mediante biopsia renal por punción\npercutánea. El cilindro de mayor tamaño mide 0,5 x 0,1 x 0,1 cm, y el de menor tamaño mide 0,3 x 0,1 x\n0,1 cm. Son de color café claro y de consistencia blanda. Todo el material se destinó al estudio por\nmicroscopía de luz. Fue fijado en formol bufferado al 10 % y posteriormente incluido en parafina. Se\nrealizaron cortes histológicos que fueron teñidos con Hematoxilina y Eosina, PAS, tricrómico de Masson y\nmetenamina de Jones. Además de la realización de estudios de inmunohistoquímica para SV40 Y C4d.\nDESCRIPCIÓN MICROSCÓPICA\nLa muestra destinada para estudio de microscopía de luz corresponde a un fragmento de téjido\nfibroadiposo sin representación de parénquima renal.\nDIAGNÓSTICO\nRIÑÓN (BIOPSIA POR PUNCIÓN):\nTÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL.\nTÉJIDO FIBROADIPOSO DE ARQUTIECTURA USUAL.\nVER COMENTARIO.\nCOMENTARIOS\nCOMENTARIO: la muestra no evidencia parénquima renal para la adecuada clasificación, se\nsugiere nuevo muestreo a criterio del médico tratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---\nIHQ250021\nCopia Pag. 2 de 2\nNombre : ROBINSON ASPRILLA GUTIERREZ\nN. peticion : IHQ250021\nN.Identificación : CC. 16480852\nGenero : MASCULINO\nEdad : 61 años 11 meses 7 dias\nEPS : FIDEICOMISO PATRIM. AUTONOMOS\nMédico tratante : CARLOS HERNAN MEJIA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/01/2025\nFecha Informe : 09/01/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "SV40, C4D",
+      "Descripcion macroscopica": "Se recibieron para su estudio en fresco 2 cilindros de tejido obtenidos mediante biopsia renal por punción percutánea. El cilindro de mayor tamaño mide 0,5 x 0,1 x 0,1 cm, y el de menor tamaño mide 0,3 x 0,1 x 0,1 cm. Son de color café claro y de consistencia blanda. Todo el material se destinó al estudio por microscopía de luz. Fue fijado en formol bufferado al 10 % y posteriormente incluido en parafina. Se realizaron cortes histológicos que fueron teñidos con Hematoxilina y Eosina, PAS, tricrómico de Masson y metenamina de Jones. Además de la realización de estudios de inmunohistoquímica para SV40 Y C4d.",
+      "Descripcion microscopica": "La muestra destinada para estudio de microscopía de luz corresponde a un fragmento de téjido fibroadiposo sin representación de parénquima renal.",
+      "Descripcion Diagnostico": "RIÑÓN (BIOPSIA POR PUNCIÓN): TÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL. TÉJIDO FIBROADIPOSO DE ARQUTIECTURA USUAL. VER COMENTARIO.",
+      "IHQ_ORGANO": "RIÑÓN (BIOPSIA POR PUNCIÓN):\nTÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL",
+      "Organo": "RIÑÓN (BIOPSIA POR PUNCIÓN):\nTÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "RIÑÓN (BIOPSIA POR PUNCIÓN): TÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL. TÉJIDO FIBROADIPOSO DE ARQUTIECTURA USUAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_SV40": "NO MENCIONADO",
+      "IHQ_C4D": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 121,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 22.93
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 121,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "RIÑÓN (BIOPSIA POR PUNCIÓN):\nTÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL.\nTÉJIDO FIBROADIPOSO DE ARQUTIECTURA USUAL.\nVER COMENTARIO.",
+      "valor_corregido": "RIÑÓN (BIOPSIA POR PUNCIÓN): TÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL. TÉJIDO FIBROADIPOSO DE ARQUTIECTURA USUAL. VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250021",
+      "timestamp": "2025-12-13T11:26:51.320442"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibieron para su estudio en fresco 2 cilindros de tejido obtenidos mediante biopsia renal por punción\npercutánea. El cilindro de mayor tamaño mide 0,5 x 0,1 x 0,1 cm, y el de menor tamaño mide 0,3 x 0,1 x\n0,1 cm. Son de color café claro y de consistencia blanda. Todo el material se destinó al estudio por\nmicroscopía de luz. Fue fijado en formol bufferado al 10 % y posteriormente incluido en parafina. Se\nrealizaron cortes histológicos que fueron teñidos con Hematoxilina y Eosina, PAS, tricrómico de Masson y\nmetenamina de Jones. Además de la realización de estudios de inmunohistoquímica para SV40 Y C4d.",
+      "valor_corregido": "Se recibieron para su estudio en fresco 2 cilindros de tejido obtenidos mediante biopsia renal por punción percutánea. El cilindro de mayor tamaño mide 0,5 x 0,1 x 0,1 cm, y el de menor tamaño mide 0,3 x 0,1 x 0,1 cm. Son de color café claro y de consistencia blanda. Todo el material se destinó al estudio por microscopía de luz. Fue fijado en formol bufferado al 10 % y posteriormente incluido en parafina. Se realizaron cortes histológicos que fueron teñidos con Hematoxilina y Eosina, PAS, tricrómico de Masson y metenamina de Jones. Además de la realización de estudios de inmunohistoquímica para SV40 Y C4d.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250021",
+      "timestamp": "2025-12-13T11:26:51.320449"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "La muestra destinada para estudio de microscopía de luz corresponde a un fragmento de téjido\nfibroadiposo sin representación de parénquima renal.",
+      "valor_corregido": "La muestra destinada para estudio de microscopía de luz corresponde a un fragmento de téjido fibroadiposo sin representación de parénquima renal.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250021",
+      "timestamp": "2025-12-13T11:26:51.320451"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "COMENTARIO: la muestra no evidencia parénquima renal para la adecuada clasificación, se\nsugiere nuevo muestreo a criterio del médico tratante.",
+      "valor_corregido": "COMENTARIO: la muestra no evidencia parénquima renal para la adecuada clasificación, se sugiere nuevo muestreo a criterio del médico tratante.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250021",
+      "timestamp": "2025-12-13T11:26:51.320452"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 47
+  }
+}

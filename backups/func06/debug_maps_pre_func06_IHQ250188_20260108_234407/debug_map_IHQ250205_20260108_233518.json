@@ -1,0 +1,168 @@
+{
+  "session_id": "IHQ250205_20260108_233518",
+  "numero_peticion": "IHQ250205",
+  "timestamp": "2026-01-08T23:35:18.937479",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250205\nCopia Pag. 1 de 2\nNombre : RAFAEL ALONSO CADAVID ACEVEDO N. peticion : IHQ250205\nN.Identificación : CC. 16584189\nGenero : MASCULINO\nEdad : 70 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : JULIANA BURBANO LUNA\nServicio : CARTAGO HOSPITALIZACION 3\nFecha Ingreso : 25/02/2025\nFecha Informe : 10/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE GANGLIO\nINGUINAL DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502104 que\ncorresponde a \"biopsia de ganglio inguinal derecho\" con diagnóstico de \"PROLIFERACIÓN\nLINFÓIDE ATÍPICA, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA\nCLASIFICACIÓN\" . Previa valoración de la coloración básica, se realizan cortes histológicos al\nbloque M2502104-2 para los siguientes marcadores: CD2, CD3, CD4, CD5, CD7, CD8, CD10,\nCD15, CD20, CD30, CD45, CD138, BCL2, BCL6, PAX5, MUM-1, ALK, LMP-1, Ki 67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nRESULTADOS:\nSe identifica ganglio linfático distorsión arquitectural dado por proliferación linfoide en patrón\ndifuso compuesto por células linfoides neoplásicas malignas de tamaño grande (no superan el\n10% de la celularidad total) con núcleos hipercromáticos, irregulares, nucleolos prominentes y\nactividad mitótica típica y atípica que son positivas para CD45, CD20, PAX 5, focal y tenue para\nMUM1 con marcación irregular heterogénea para CD30 y LMP-1. Son negativas para ALK, CD15,\nBcL2, BcL6, CD3, CD5, CD45, CD10. \nEl microambiente acompañante está compuesto de linfocitos T maduros (CD2+, CD3+, CD4+,\nCD5 +, CD7+, BCL2+) con ausencia de células plasmáticas (CD138-) . \nDIAGNÓSTICO\nGanglio inguinal derecho. Biopsia. Estudio de inmunohistoquímica. \nCOMENTARIOS\nCaso valorado en conjunto con la Dra Isabella Caicedo (patóloga). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---\nIHQ250205\nCopia Pag. 2 de 2\nNombre : RAFAEL ALONSO CADAVID ACEVEDO N. peticion : IHQ250205\nN.Identificación : CC. 16584189\nGenero : MASCULINO\nEdad : 70 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : JULIANA BURBANO LUNA\nServicio : CARTAGO HOSPITALIZACION 3\nFecha Ingreso : 25/02/2025\nFecha Informe : 10/03/2025\nLINFOMA DIFUSO DE CELULAS B GRANDES POSITIVO RICO EN LINFOCITOS T.\nEXPRESIÓN HETEROGÉNEA PARA MUM-1\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3883,
+      "reduccion_porcentaje": 97.66
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250205",
+      "caso_num": 44,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD30": "POSITIVO HETEROGÉNEO",
+      "IHQ_LMP1": "POSITIVO HETEROGÉNEO",
+      "IHQ_CD45": "NEGATIVO",
+      "IHQ_ALK": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_MUM1": "POSITIVO (focal)",
+      "nombre_completo": "RAFAEL ALONSO CADAVID ACEVEDO",
+      "numero_peticion": "IHQ250205",
+      "identificacion": "16584189",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "70",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JULIANA BURBANO LUNA",
+      "servicio": "",
+      "fecha_ingreso": "25/02/2025",
+      "fecha_informe": "10/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250205",
+      "N. de identificación": "16584189",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "",
+      "Médico tratante": "JULIANA BURBANO LUNA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "25/02/2025",
+      "Fecha Informe": "10/03/2025",
+      "nombres": "RAFAEL ALONSO",
+      "Primer nombre": "RAFAEL",
+      "Segundo nombre": "ALONSO",
+      "apellidos": "CADAVID ACEVEDO",
+      "Primer apellido": "CADAVID",
+      "Segundo apellido": "ACEVEDO",
+      "nombre_formal": "CADAVID ACEVEDO, RAFAEL ALONSO",
+      "diagnostico": "Ganglio inguinal derecho. Biopsia. Estudio de inmunohistoquímica.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. RESULTADOS: Se identifica ganglio linfático distorsión arquitectural dado por proliferación linfoide en patrón difuso compuesto por células linfoides neoplásicas malignas de tamaño grande (no superan el 10% de la celularidad total) con núcleos hipercromáticos, irregulares, nucleolos prominentes y actividad mitótica típica y atípica que son positivas para CD45, CD20, PAX 5, focal y tenue para MUM1 con marcación irregular heterogénea para CD30 y LMP-1. Son negativas para ALK, CD15, BcL2, BcL6, CD3, CD5, CD45, CD10. El microambiente acompañante está compuesto de linfocitos T maduros (CD2+, CD3+, CD4+, CD5 +, CD7+, BCL2+) con ausencia de células plasmáticas (CD138-) .",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502104 que corresponde a \"biopsia de ganglio inguinal derecho\" con diagnóstico de \"PROLIFERACIÓN LINFÓIDE ATÍPICA, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN\" . Previa valoración de la coloración básica, se realizan cortes histológicos al bloque M2502104-2 para los siguientes marcadores: CD2, CD3, CD4, CD5, CD7, CD8, CD10, CD15, CD20, CD30, CD45, CD138, BCL2, BCL6, PAX5, MUM-1, ALK, LMP-1, KI-67.",
+      "ihq_organo": "GANGLIO INGUINAL DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD2, CD3, CD4, CD5, CD7, CD8, CD10, CD15, CD20, CD30, CD45, CD138, BCL2, BCL6, PAX5, MUM 1, ALK, LMP 1, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con la Dra Isabella Caicedo (patóloga).",
+      "IHQ_ORGANO": "GANGLIO INGUINAL DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD2, CD3, CD4, CD5, CD7, CD8, CD10, CD15, CD20, CD30, CD45, CD138, BCL2, BCL6, PAX5, MUM 1, ALK, LMP 1, Ki-67",
+      "IHQ_CD3": "NEGATIVO",
+      "IHQ_CD4": "POSITIVO",
+      "IHQ_CD5": "NEGATIVO",
+      "IHQ_CD7": "POSITIVO",
+      "IHQ_BCL2": "NEGATIVO",
+      "IHQ_CD138": "NEGATIVO",
+      "IHQ_CD15": "NEGATIVO",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "extraction_timestamp": "2026-01-08T23:35:19.700068",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250205\nCopia Pag. 1 de 2\nNombre : RAFAEL ALONSO CADAVID ACEVEDO N. peticion : IHQ250205\nN.Identificación : CC. 16584189\nGenero : MASCULINO\nEdad : 70 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : JULIANA BURBANO LUNA\nServicio : CARTAGO HOSPITALIZACION 3\nFecha Ingreso : 25/02/2025\nFecha Informe : 10/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE GANGLIO\nINGUINAL DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502104 que\ncorresponde a \"biopsia de ganglio inguinal derecho\" con diagnóstico de \"PROLIFERACIÓN\nLINFÓIDE ATÍPICA, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA\nCLASIFICACIÓN\" . Previa valoración de la coloración básica, se realizan cortes histológicos al\nbloque M2502104-2 para los siguientes marcadores: CD2, CD3, CD4, CD5, CD7, CD8, CD10,\nCD15, CD20, CD30, CD45, CD138, BCL2, BCL6, PAX5, MUM-1, ALK, LMP-1, Ki 67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nRESULTADOS:\nSe identifica ganglio linfático distorsión arquitectural dado por proliferación linfoide en patrón\ndifuso compuesto por células linfoides neoplásicas malignas de tamaño grande (no superan el\n10% de la celularidad total) con núcleos hipercromáticos, irregulares, nucleolos prominentes y\nactividad mitótica típica y atípica que son positivas para CD45, CD20, PAX 5, focal y tenue para\nMUM1 con marcación irregular heterogénea para CD30 y LMP-1. Son negativas para ALK, CD15,\nBcL2, BcL6, CD3, CD5, CD45, CD10. \nEl microambiente acompañante está compuesto de linfocitos T maduros (CD2+, CD3+, CD4+,\nCD5 +, CD7+, BCL2+) con ausencia de células plasmáticas (CD138-) . \nDIAGNÓSTICO\nGanglio inguinal derecho. Biopsia. Estudio de inmunohistoquímica. \nCOMENTARIOS\nCaso valorado en conjunto con la Dra Isabella Caicedo (patóloga). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---\nIHQ250205\nCopia Pag. 2 de 2\nNombre : RAFAEL ALONSO CADAVID ACEVEDO N. peticion : IHQ250205\nN.Identificación : CC. 16584189\nGenero : MASCULINO\nEdad : 70 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : JULIANA BURBANO LUNA\nServicio : CARTAGO HOSPITALIZACION 3\nFecha Ingreso : 25/02/2025\nFecha Informe : 10/03/2025\nLINFOMA DIFUSO DE CELULAS B GRANDES POSITIVO RICO EN LINFOCITOS T.\nEXPRESIÓN HETEROGÉNEA PARA MUM-1\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD2, CD3, CD4, CD5, CD7, CD8, CD10, CD15, CD20, CD30, CD45, CD138, BCL2, BCL6, PAX5, MUM 1, ALK, LMP 1, Ki-67",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502104 que corresponde a \"biopsia de ganglio inguinal derecho\" con diagnóstico de \"PROLIFERACIÓN LINFÓIDE ATÍPICA, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN\" . Previa valoración de la coloración básica, se realizan cortes histológicos al bloque M2502104-2 para los siguientes marcadores: CD2, CD3, CD4, CD5, CD7, CD8, CD10, CD15, CD20, CD30, CD45, CD138, BCL2, BCL6, PAX5, MUM-1, ALK, LMP-1, Ki 67.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. RESULTADOS: Se identifica ganglio linfático distorsión arquitectural dado por proliferación linfoide en patrón difuso compuesto por células linfoides neoplásicas malignas de tamaño grande (no superan el 10% de la celularidad total) con núcleos hipercromáticos, irregulares, nucleolos prominentes y actividad mitótica típica y atípica que son positivas para CD45, CD20, PAX 5, focal y tenue para MUM1 con marcación irregular heterogénea para CD30 y LMP-1. Son negativas para ALK, CD15, BcL2, BcL6, CD3, CD5, CD45, CD10. El microambiente acompañante está compuesto de linfocitos T maduros (CD2+, CD3+, CD4+, CD5 +, CD7+, BCL2+) con ausencia de células plasmáticas (CD138-) .",
+      "Descripcion Diagnostico": "Ganglio inguinal derecho. Biopsia. Estudio de inmunohistoquímica.",
+      "IHQ_ORGANO": "GANGLIO INGUINAL DERECHO",
+      "Organo": "BIOPSIA DE GANGLIO INGUINAL DERECHO",
+      "Diagnostico Coloracion": "PROLIFERACIÓN LINFÓIDE ATÍPICA, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN",
+      "Diagnostico Principal": "ESTUDIO DE INMUNOHISTOQUÍMICA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD2": "NO MENCIONADO",
+      "IHQ_CD3": "NEGATIVO",
+      "IHQ_CD4": "POSITIVO",
+      "IHQ_CD5": "NEGATIVO",
+      "IHQ_CD7": "POSITIVO",
+      "IHQ_CD8": "NO MENCIONADO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD15": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD30": "POSITIVO HETEROGÉNEO",
+      "IHQ_CD45": "NEGATIVO",
+      "IHQ_CD138": "NEGATIVO",
+      "IHQ_BCL2": "NEGATIVO",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_MUM1": "POSITIVO (focal)",
+      "IHQ_ALK": "NEGATIVO",
+      "IHQ_LMP1": "POSITIVO HETEROGÉNEO",
+      "IHQ_KI-67": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 171,
+      "campos_vacios": 118,
+      "campos_completos": 53,
+      "biomarcadores_encontrados": 19,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 118,
+      "total_campos_completos": 53
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502104 que corresponde a \"biopsia de ganglio inguinal derecho\" con diagnóstico de \"PROLIFERACIÓN LINFÓIDE ATÍPICA, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN\" . Previa valoración de la coloración básica, se realizan cortes histológicos al bloque M2502104-2 para los siguientes marcadores: CD2, CD3, CD4, CD5, CD7, CD8, CD10, CD15, CD20, CD30, CD45, CD138, BCL2, BCL6, PAX5, MUM-1, ALK, LMP-1, Ki 67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502104 que corresponde a \"biopsia de ganglio inguinal derecho\" con diagnóstico de \"PROLIFERACIÓN LINFÓIDE ATÍPICA, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN\" . Previa valoración de la coloración básica, se realizan cortes histológicos al bloque M2502104-2 para los siguientes marcadores: CD2, CD3, CD4, CD5, CD7, CD8, CD10, CD15, CD20, CD30, CD45, CD138, BCL2, BCL6, PAX5, MUM-1, ALK, LMP-1, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250205",
+      "timestamp": "2026-01-08T23:35:19.699840"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 62
+  }
+}

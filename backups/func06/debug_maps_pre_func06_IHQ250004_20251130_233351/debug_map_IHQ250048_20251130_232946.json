@@ -1,0 +1,148 @@
+{
+  "session_id": "IHQ250048_20251130_232946",
+  "numero_peticion": "IHQ250048",
+  "timestamp": "2025-11-30T23:29:46.186599",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250048\nCopia Pag. 1 de 2\nNombre : HIJO DE YOLIMA LEITON CORTES\nN. peticion : IHQ250048\nN.Identificación : CN. 24129411253763\nGenero : FEMENINO\nEdad : 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : UCI RECIEN NACIDOS (CIRENA)\nFecha Ingreso : 15/01/2025\nFecha Informe : 17/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M25000212 que\ncorresponde a \"biopsia de recto\" consiste en un bloque de parafina y una lámina coloreadas con\nHematoxilina - Eosina. Diagnóstico de \"CÉLULAS GANGLIONARES PRESENTES, FILETES\nNERVIOSOS NORMALES\". Previa valoración de la coloración básica se solicitan niveles histológicos\npara marcar con CALRRETININA.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nCALRRETININA positiva en células ganglionares submucosas y en dendritas que ascienden a la\nmucosa. \nDIAGNÓSTICO\nMucosa rectal. Biopsia. Estudio de inmunohistoquímica. \nCÉLULAS GANGLIONARES PRESENTES. \nFILETES NERVIOSOS NORMALES (ESPERADO HASTA 40 MICRAS). \nCALRRETININA POSITIVA EN LAS DENDRITAS DE LAS CÉLULAS GANGLILARES EN LA MUCOSA. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---\nIHQ250048\nCopia Pag. 2 de 2\nNombre : HIJO DE YOLIMA LEITON CORTES\nN. peticion : IHQ250048\nN.Identificación : CN. 24129411253763\nGenero : FEMENINO\nEdad : 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : UCI RECIEN NACIDOS (CIRENA)\nFecha Ingreso : 15/01/2025\nFecha Informe : 17/01/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 83 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3152,
+      "reduccion_porcentaje": 98.16
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250048",
+      "caso_num": 48,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "HIJO DE YOLIMA LEITON CORTES",
+      "numero_peticion": "IHQ250048",
+      "identificacion": "24129411253763",
+      "tipo_documento": "CN",
+      "Genero": "FEMENINO",
+      "Edad": "5",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "LUIS MAURICIO FIGUEROA",
+      "servicio": "",
+      "fecha_ingreso": "15/01/2025",
+      "fecha_informe": "17/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250048",
+      "N. de identificación": "24129411253763",
+      "Tipo de documento": "CN",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "",
+      "Médico tratante": "LUIS MAURICIO FIGUEROA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "15/01/2025",
+      "Fecha Informe": "17/01/2025",
+      "nombres": "HIJO DE YOLIMA",
+      "Primer nombre": "HIJO",
+      "Segundo nombre": "DE YOLIMA",
+      "apellidos": "LEITON CORTES",
+      "Primer apellido": "LEITON",
+      "Segundo apellido": "CORTES",
+      "nombre_formal": "LEITON CORTES, HIJO DE YOLIMA",
+      "diagnostico": "Mucosa rectal. Biopsia. Estudio de inmunohistoquímica. CÉLULAS GANGLIONARES PRESENTES. FILETES NERVIOSOS NORMALES (ESPERADO HASTA 40 MICRAS). CALRRETININA POSITIVA EN LAS DENDRITAS DE LAS CÉLULAS GANGLILARES EN LA MUCOSA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. CALRRETININA positiva en células ganglionares submucosas y en dendritas que ascienden a la mucosa.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M25000212 que corresponde a \"biopsia de recto\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina. Diagnóstico de \"CÉLULAS GANGLIONARES PRESENTES, FILETES NERVIOSOS NORMALES\". Previa valoración de la coloración básica se solicitan niveles histológicos para marcar con CALRRETININA.",
+      "ihq_organo": "MUCOSA RECTAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CALRRETININA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA RECTAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "extraction_timestamp": "2025-11-30T23:29:46.332548",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250048\nCopia Pag. 1 de 2\nNombre : HIJO DE YOLIMA LEITON CORTES\nN. peticion : IHQ250048\nN.Identificación : CN. 24129411253763\nGenero : FEMENINO\nEdad : 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : UCI RECIEN NACIDOS (CIRENA)\nFecha Ingreso : 15/01/2025\nFecha Informe : 17/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M25000212 que\ncorresponde a \"biopsia de recto\" consiste en un bloque de parafina y una lámina coloreadas con\nHematoxilina - Eosina. Diagnóstico de \"CÉLULAS GANGLIONARES PRESENTES, FILETES\nNERVIOSOS NORMALES\". Previa valoración de la coloración básica se solicitan niveles histológicos\npara marcar con CALRRETININA.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nCALRRETININA positiva en células ganglionares submucosas y en dendritas que ascienden a la\nmucosa. \nDIAGNÓSTICO\nMucosa rectal. Biopsia. Estudio de inmunohistoquímica. \nCÉLULAS GANGLIONARES PRESENTES. \nFILETES NERVIOSOS NORMALES (ESPERADO HASTA 40 MICRAS). \nCALRRETININA POSITIVA EN LAS DENDRITAS DE LAS CÉLULAS GANGLILARES EN LA MUCOSA. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---\nIHQ250048\nCopia Pag. 2 de 2\nNombre : HIJO DE YOLIMA LEITON CORTES\nN. peticion : IHQ250048\nN.Identificación : CN. 24129411253763\nGenero : FEMENINO\nEdad : 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : UCI RECIEN NACIDOS (CIRENA)\nFecha Ingreso : 15/01/2025\nFecha Informe : 17/01/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 83 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CALRRETININA",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M25000212 que corresponde a \"biopsia de recto\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina. Diagnóstico de \"CÉLULAS GANGLIONARES PRESENTES, FILETES NERVIOSOS NORMALES\". Previa valoración de la coloración básica se solicitan niveles histológicos para marcar con CALRRETININA.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. CALRRETININA positiva en células ganglionares submucosas y en dendritas que ascienden a la mucosa.",
+      "Descripcion Diagnostico": "Mucosa rectal. Biopsia. Estudio de inmunohistoquímica. CÉLULAS GANGLIONARES PRESENTES. FILETES NERVIOSOS NORMALES (ESPERADO HASTA 40 MICRAS). CALRRETININA POSITIVA EN LAS DENDRITAS DE LAS CÉLULAS GANGLILARES EN LA MUCOSA.",
+      "IHQ_ORGANO": "MUCOSA RECTAL",
+      "Organo": "BX DE RECTO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CÉLULAS GANGLIONARES PRESENTES",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 150,
+      "campos_vacios": 116,
+      "campos_completos": 34,
+      "biomarcadores_encontrados": 0,
+      "completitud_porcentaje": 22.67
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 116,
+      "total_campos_completos": 34
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa rectal. Biopsia. Estudio de inmunohistoquímica. \nCÉLULAS GANGLIONARES PRESENTES. \nFILETES NERVIOSOS NORMALES (ESPERADO HASTA 40 MICRAS). \nCALRRETININA POSITIVA EN LAS DENDRITAS DE LAS CÉLULAS GANGLILARES EN LA MUCOSA.",
+      "valor_corregido": "Mucosa rectal. Biopsia. Estudio de inmunohistoquímica. CÉLULAS GANGLIONARES PRESENTES. FILETES NERVIOSOS NORMALES (ESPERADO HASTA 40 MICRAS). CALRRETININA POSITIVA EN LAS DENDRITAS DE LAS CÉLULAS GANGLILARES EN LA MUCOSA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250048",
+      "timestamp": "2025-11-30T23:29:46.332373"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M25000212 que\ncorresponde a \"biopsia de recto\" consiste en un bloque de parafina y una lámina coloreadas con\nHematoxilina - Eosina. Diagnóstico de \"CÉLULAS GANGLIONARES PRESENTES, FILETES\nNERVIOSOS NORMALES\". Previa valoración de la coloración básica se solicitan niveles histológicos\npara marcar con CALRRETININA.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M25000212 que corresponde a \"biopsia de recto\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina. Diagnóstico de \"CÉLULAS GANGLIONARES PRESENTES, FILETES NERVIOSOS NORMALES\". Previa valoración de la coloración básica se solicitan niveles histológicos para marcar con CALRRETININA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250048",
+      "timestamp": "2025-11-30T23:29:46.332379"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nCALRRETININA positiva en células ganglionares submucosas y en dendritas que ascienden a la\nmucosa.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. CALRRETININA positiva en células ganglionares submucosas y en dendritas que ascienden a la mucosa.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250048",
+      "timestamp": "2025-11-30T23:29:46.332380"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 44
+  }
+}

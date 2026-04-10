@@ -1,0 +1,87 @@
+{
+  "caso": "IHQ250068",
+  "biomarcador_problema": "LCA (Leucocyte Common Antigen)",
+  "estado_inicial": {
+    "descripcion": "LCA aparecía como \"sin columna\" (no mapeado)",
+    "score": 88.9,
+    "cobertura_biomarcadores": 83.3,
+    "mapeados": 5,
+    "no_mapeados": [
+      "LCA (sin columna)"
+    ]
+  },
+  "solucion_aplicada": {
+    "tipo": "Agregación de alias al biomarcador CD45 existente",
+    "alias_agregado": "LCA",
+    "columna_bd": "IHQ_CD45",
+    "archivos_modificados": [
+      {
+        "archivo": "herramientas_ia/auditor_sistema.py",
+        "linea": 283,
+        "tipo": "BIOMARKER_ALIAS_MAP",
+        "cambio": "Agregado 'LCA': 'IHQ_CD45'"
+      },
+      {
+        "archivo": "core/extractors/biomarker_extractor.py",
+        "linea": 2009,
+        "tipo": "nombres_alternativos",
+        "cambio": "Agregado 'LCA', 'Leucocyte Common Antigen'"
+      },
+      {
+        "archivo": "core/extractors/biomarker_extractor.py",
+        "linea": 2013,
+        "tipo": "patrón regex",
+        "cambio": "Agregado r'(?i)lca[:\\s]*(positivo|negativo|\\d+%?)'"
+      },
+      {
+        "archivo": "core/unified_extractor.py",
+        "linea": 1752,
+        "tipo": "mapeo biomarcador -> columna",
+        "cambio": "Agregado 'LCA': 'IHQ_CD45', 'lca': 'IHQ_CD45'"
+      },
+      {
+        "archivo": "core/validation_checker.py",
+        "linea": 361,
+        "tipo": "mapeo validación",
+        "cambio": "Agregado 'LCA': 'IHQ_CD45'"
+      }
+    ]
+  },
+  "resultado_final": {
+    "descripcion": "LCA ahora mapea correctamente a IHQ_CD45",
+    "score": 88.9,
+    "cobertura_biomarcadores": 100.0,
+    "mapeados": 6,
+    "no_mapeados": [],
+    "estudios_ocr": [
+      "CD99",
+      "LCA",
+      "CD56",
+      "CD3",
+      "CKAE1AE3",
+      "SYNAPTOFISINA"
+    ],
+    "estudios_bd": [
+      "CD99",
+      "LCA",
+      "CD56",
+      "CD3",
+      "CKAE1AE3",
+      "SYNAPTOFISINA",
+      "CD38",
+      "CD45",
+      "CD138",
+      "Lambda",
+      "Kappa",
+      "CICLINA D1"
+    ],
+    "estado": "OK"
+  },
+  "mejora": {
+    "cobertura_antes": "83.3%",
+    "cobertura_despues": "100.0%",
+    "incremento": "+16.7%",
+    "biomarcadores_corregidos": 1
+  },
+  "timestamp": "2026-01-07T19:14:35.168895"
+}

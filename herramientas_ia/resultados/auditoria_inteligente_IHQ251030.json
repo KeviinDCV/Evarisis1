@@ -1,0 +1,125 @@
+{
+  "numero_caso": "IHQ251030",
+  "caso_num": 44,
+  "total_casos": 47,
+  "timestamp": "2025-11-11T22:38:32.406530",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 2,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "ERROR",
+      "mensaje": "DIAGNOSTICO_COLORACION difiere entre BD y OCR",
+      "valor_bd": "ADENOCARCINOMA\nINTESTINAL\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO",
+      "valor_ocr": "“ADENOCARCINOMA"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "ADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor_bd": "HER2 : NEGATIVO (Score 0)",
+      "biomarcadores_fp": 1,
+      "total_solicitado": 1,
+      "cobertura_fp": "1/4",
+      "mensaje": "Factor pronóstico correcto con 1 biomarcador(es) - formato largo aceptado"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 1,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "HER2"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "HER2"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [
+      "DIAGNOSTICO_COLORACION difiere entre BD y OCR"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como ..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "ESTOMAGO"
+    },
+    "organo": {
+      "estado": "OK",
+      "mensaje": "Campo Organo está limpio",
+      "valor_bd": "GASTRECTOMIA TOTAL"
+    },
+    "formatos_biomarcadores": {
+      "estado": "OK",
+      "total_biomarcadores": 1,
+      "biomarcadores_con_problemas": 0,
+      "porcentaje_problemas": 0.0,
+      "problemas": [],
+      "mensaje": "Todos los biomarcadores tienen formato estandarizado"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 1,
+    "biomarcadores_solicitados": 0,
+    "biomarcadores_mapeados": 0,
+    "biomarcadores_no_mapeados": 0,
+    "completitud_biomarcadores": 100
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

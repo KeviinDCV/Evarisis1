@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250237_20260128_173332",
+  "numero_peticion": "IHQ250237",
+  "timestamp": "2026-01-28T17:33:32.843418",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250237\nCopia Pag. 1 de 2\nNombre : JOHAN SEBASTIAN GIL LOPEZ\nN. peticion : IHQ250237\nN.Identificación : CC. 1151957219\nGenero : MASCULINO\nEdad : 30 años 2 meses 18 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UROLOGIA COEX\nFecha Ingreso : 05/03/2025\nFecha Informe : 13/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTESTICULO IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410347\" correspondiente a “producto de orquidectomía izquierda ” con diagnóstico de \"SEMINOMA\".\nPrevia revisión de la histología se realizan niveles histológicos para tinción con los marcadores: SALL 4,\nPODOPLANINA, GLYPICAN 3, AFP, CD 30, CKAE1E3\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa celularidad tumoral tiene marcación positiva y fuerte para OCT 4, PODOPLANINA, es positivo focal para\nCKAE1/E3 y es negativo para GLYPICAN 3 , AFP y CD 30.\nDIAGNÓSTICO\nTestículo izquierdo. Tumor. Orquiectomía. Estudio de inmunohistoquimica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON SEMINOMA \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---\nIHQ250237\nCopia Pag. 2 de 2\nNombre : JOHAN SEBASTIAN GIL LOPEZ\nN. peticion : IHQ250237\nN.Identificación : CC. 1151957219\nGenero : MASCULINO\nEdad : 30 años 2 meses 18 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UROLOGIA COEX\nFecha Ingreso : 05/03/2025\nFecha Informe : 13/03/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3098,
+      "reduccion_porcentaje": 98.28
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250237",
+      "caso_num": 26,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_OCT4": "POSITIVO",
+      "IHQ_GPC3": "NEGATIVO",
+      "IHQ_AFP": "NEGATIVO",
+      "IHQ_GLIPICAN": "NEGATIVO",
+      "nombre_completo": "JOHAN SEBASTIAN GIL LOPEZ",
+      "numero_peticion": "IHQ250237",
+      "identificacion": "1151957219",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "30",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UROLOGIA COEX",
+      "fecha_ingreso": "05/03/2025",
+      "fecha_informe": "13/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250237",
+      "N. de identificación": "1151957219",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UROLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "05/03/2025",
+      "Fecha Informe": "13/03/2025",
+      "nombres": "JOHAN SEBASTIAN GIL",
+      "Primer nombre": "JOHAN",
+      "Segundo nombre": "SEBASTIAN GIL",
+      "apellidos": "LOPEZ",
+      "Primer apellido": "LOPEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "LOPEZ, JOHAN SEBASTIAN GIL",
+      "diagnostico": "Testículo izquierdo. Tumor. Orquiectomía. Estudio de inmunohistoquimica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON SEMINOMA",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad tumoral tiene marcación positiva y fuerte para OCT 4, PODOPLANINA, es positivo focal para CKAE1/E3 y es negativo para GLYPICAN 3 , AFP y CD 30.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2410347\" correspondiente a \"producto de orquidectomía izquierda \" con diagnóstico de \"SEMINOMA\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: SALL 4, PODOPLANINA, GLYPICAN 3, AFP, CD 30, CKAE1E3",
+      "ihq_organo": "TESTÍCULO IZQUIERDO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "UROLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "",
+      "comentarios": "",
+      "IHQ_ORGANO": "TESTÍCULO IZQUIERDO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_PODOPLANINA": "POSITIVO",
+      "extraction_timestamp": "2026-01-28T17:33:33.248767",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250237\nCopia Pag. 1 de 2\nNombre : JOHAN SEBASTIAN GIL LOPEZ\nN. peticion : IHQ250237\nN.Identificación : CC. 1151957219\nGenero : MASCULINO\nEdad : 30 años 2 meses 18 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UROLOGIA COEX\nFecha Ingreso : 05/03/2025\nFecha Informe : 13/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTESTICULO IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410347\" correspondiente a “producto de orquidectomía izquierda ” con diagnóstico de \"SEMINOMA\".\nPrevia revisión de la histología se realizan niveles histológicos para tinción con los marcadores: SALL 4,\nPODOPLANINA, GLYPICAN 3, AFP, CD 30, CKAE1E3\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa celularidad tumoral tiene marcación positiva y fuerte para OCT 4, PODOPLANINA, es positivo focal para\nCKAE1/E3 y es negativo para GLYPICAN 3 , AFP y CD 30.\nDIAGNÓSTICO\nTestículo izquierdo. Tumor. Orquiectomía. Estudio de inmunohistoquimica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON SEMINOMA \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---\nIHQ250237\nCopia Pag. 2 de 2\nNombre : JOHAN SEBASTIAN GIL LOPEZ\nN. peticion : IHQ250237\nN.Identificación : CC. 1151957219\nGenero : MASCULINO\nEdad : 30 años 2 meses 18 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UROLOGIA COEX\nFecha Ingreso : 05/03/2025\nFecha Informe : 13/03/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "AFP, CD30, CKAE1AE3, GLIPICAN, GPC3",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410347\" correspondiente a “producto de orquidectomía izquierda ” con diagnóstico de \"SEMINOMA\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: SALL 4, PODOPLANINA, GLYPICAN 3, AFP, CD 30, CKAE1E3",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad tumoral tiene marcación positiva y fuerte para OCT 4, PODOPLANINA, es positivo focal para CKAE1/E3 y es negativo para GLYPICAN 3 , AFP y CD 30.",
+      "Descripcion Diagnostico": "Testículo izquierdo. Tumor. Orquiectomía. Estudio de inmunohistoquimica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON SEMINOMA",
+      "IHQ_ORGANO": "TESTÍCULO IZQUIERDO",
+      "Organo": "TESTICULO IZQUIERDO",
+      "Diagnostico Coloracion": "SEMINOMA",
+      "Diagnostico Principal": "SEMINOMA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_AFP": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_GLIPICAN": "NEGATIVO",
+      "IHQ_GPC3": "NEGATIVO",
+      "IHQ_PODOPLANINA": "POSITIVO",
+      "IHQ_OCT4": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 177,
+      "campos_vacios": 136,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Testículo izquierdo. Tumor. Orquiectomía. Estudio de inmunohistoquimica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON SEMINOMA",
+      "valor_corregido": "Testículo izquierdo. Tumor. Orquiectomía. Estudio de inmunohistoquimica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON SEMINOMA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250237",
+      "timestamp": "2026-01-28T17:33:33.248562"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410347\" correspondiente a “producto de orquidectomía izquierda ” con diagnóstico de \"SEMINOMA\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: SALL 4, PODOPLANINA, GLYPICAN 3, AFP, CD 30, CKAE1E3",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2410347\" correspondiente a \"producto de orquidectomía izquierda \" con diagnóstico de \"SEMINOMA\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: SALL 4, PODOPLANINA, GLYPICAN 3, AFP, CD 30, CKAE1E3",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250237",
+      "timestamp": "2026-01-28T17:33:33.248568"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 51
+  }
+}

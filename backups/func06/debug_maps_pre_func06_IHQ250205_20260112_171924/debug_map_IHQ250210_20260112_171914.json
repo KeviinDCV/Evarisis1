@@ -1,0 +1,149 @@
+{
+  "session_id": "IHQ250210_20260112_171914",
+  "numero_peticion": "IHQ250210",
+  "timestamp": "2026-01-12T17:19:14.617440",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250210\nCopia Pag. 1 de 2\nNombre : ELIZABETH PAZ URREA\nN. peticion : IHQ250210\nN.Identificación : CC. 31933782\nGenero : FEMENINO\nEdad : 59 años 9 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 26/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2501412-3 que corresponden a \"biopsia de mama\" con diagnóstico de\n\"PROLIFERACIÓN ACINAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", por lo que se\nordenan los siguientes marcadores: P63, CK5/6, calponina y Receptor de estrógenos.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn las zonas donde se observaba la proliferación de los grupos glandulares en a coloración de H&E, se\nobserva marcación para células mioepiteliales con calponina, p63 y CK5/6 positivo, además de marcación\nen mosaico para receptores de estrógeno.\nDIAGNÓSTICO\n Mama derecha. Lesión. Biopsia trucut. Estudios de inmunohistoquímica.\nADENOSIS SIMPLE Y FIBROSIS.\nCOMENTARIOS\nSe sugiere en caso de alta sospecha clínica de neoplasia realizar nuevo muestreo.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 84 ---\nIHQ250210\nCopia Pag. 2 de 2\nNombre : ELIZABETH PAZ URREA\nN. peticion : IHQ250210\nN.Identificación : CC. 31933782\nGenero : FEMENINO\nEdad : 59 años 9 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 26/02/2025\nFecha Informe : 05/03/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 85 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3112,
+      "reduccion_porcentaje": 98.12
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250210",
+      "caso_num": 49,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (mosaico)",
+      "nombre_completo": "ELIZABETH PAZ URREA",
+      "numero_peticion": "IHQ250210",
+      "identificacion": "31933782",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "59",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "URIEL CARDONA NUÑEZ",
+      "servicio": "GINECOLOGIA COEX",
+      "fecha_ingreso": "26/02/2025",
+      "fecha_informe": "05/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250210",
+      "N. de identificación": "31933782",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "GINECOLOGIA COEX",
+      "Médico tratante": "URIEL CARDONA NUÑEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "26/02/2025",
+      "Fecha Informe": "05/03/2025",
+      "nombres": "ELIZABETH",
+      "Primer nombre": "ELIZABETH",
+      "Segundo nombre": "",
+      "apellidos": "PAZ URREA",
+      "Primer apellido": "PAZ",
+      "Segundo apellido": "URREA",
+      "nombre_formal": "PAZ URREA, ELIZABETH",
+      "diagnostico": "Mama derecha. Lesión. Biopsia trucut. Estudios de inmunohistoquímica. ADENOSIS SIMPLE Y FIBROSIS.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En las zonas donde se observaba la proliferación de los grupos glandulares en a coloración de H&E, se observa marcación para células mioepiteliales con calponina, p63 y CK5/6 positivo, además de marcación en mosaico para receptores de estrógeno.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2501412-3 que corresponden a \"biopsia de mama\" con diagnóstico de \"PROLIFERACIÓN ACINAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", por lo que se ordenan los siguientes marcadores: p63, CK5/6, calponina y Receptor de estrógenos.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "GINECOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P63, CK5/6, Calponina, Receptor de Estrógeno",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se sugiere en caso de alta sospecha clínica de neoplasia realizar nuevo muestreo.",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (mosaico)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK5/6, Calponina, Receptor de Estrógeno",
+      "IHQ_CK5_6": "POSITIVO",
+      "extraction_timestamp": "2026-01-12T17:19:15.039008",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250210\nCopia Pag. 1 de 2\nNombre : ELIZABETH PAZ URREA\nN. peticion : IHQ250210\nN.Identificación : CC. 31933782\nGenero : FEMENINO\nEdad : 59 años 9 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 26/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2501412-3 que corresponden a \"biopsia de mama\" con diagnóstico de\n\"PROLIFERACIÓN ACINAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", por lo que se\nordenan los siguientes marcadores: P63, CK5/6, calponina y Receptor de estrógenos.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn las zonas donde se observaba la proliferación de los grupos glandulares en a coloración de H&E, se\nobserva marcación para células mioepiteliales con calponina, p63 y CK5/6 positivo, además de marcación\nen mosaico para receptores de estrógeno.\nDIAGNÓSTICO\n Mama derecha. Lesión. Biopsia trucut. Estudios de inmunohistoquímica.\nADENOSIS SIMPLE Y FIBROSIS.\nCOMENTARIOS\nSe sugiere en caso de alta sospecha clínica de neoplasia realizar nuevo muestreo.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 84 ---\nIHQ250210\nCopia Pag. 2 de 2\nNombre : ELIZABETH PAZ URREA\nN. peticion : IHQ250210\nN.Identificación : CC. 31933782\nGenero : FEMENINO\nEdad : 59 años 9 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 26/02/2025\nFecha Informe : 05/03/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 85 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK5/6, Calponina, Receptor de Estrógeno",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2501412-3 que corresponden a \"biopsia de mama\" con diagnóstico de \"PROLIFERACIÓN ACINAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", por lo que se ordenan los siguientes marcadores: P63, CK5/6, calponina y Receptor de estrógenos.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En las zonas donde se observaba la proliferación de los grupos glandulares en a coloración de H&E, se observa marcación para células mioepiteliales con calponina, p63 y CK5/6 positivo, además de marcación en mosaico para receptores de estrógeno.",
+      "Descripcion Diagnostico": "Mama derecha. Lesión. Biopsia trucut. Estudios de inmunohistoquímica. ADENOSIS SIMPLE Y FIBROSIS.",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "BX MAMA DERECHA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN ACINAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "ADENOSIS SIMPLE Y FIBROSIS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (mosaico)",
+      "IHQ_P63": "NO MENCIONADO",
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (mosaico)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 135,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Lesión. Biopsia trucut. Estudios de inmunohistoquímica.\nADENOSIS SIMPLE Y FIBROSIS.",
+      "valor_corregido": "Mama derecha. Lesión. Biopsia trucut. Estudios de inmunohistoquímica. ADENOSIS SIMPLE Y FIBROSIS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250210",
+      "timestamp": "2026-01-12T17:19:15.038010"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2501412-3 que corresponden a \"biopsia de mama\" con diagnóstico de \"PROLIFERACIÓN ACINAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", por lo que se ordenan los siguientes marcadores: P63, CK5/6, calponina y Receptor de estrógenos.",
+      "valor_corregido": "Se realizan niveles al bloque M2501412-3 que corresponden a \"biopsia de mama\" con diagnóstico de \"PROLIFERACIÓN ACINAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", por lo que se ordenan los siguientes marcadores: p63, CK5/6, calponina y Receptor de estrógenos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250210",
+      "timestamp": "2026-01-12T17:19:15.038017"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 51
+  }
+}

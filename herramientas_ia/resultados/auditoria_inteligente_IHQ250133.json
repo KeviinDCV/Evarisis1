@@ -1,0 +1,132 @@
+{
+  "numero_caso": "IHQ250133",
+  "caso_num": 24,
+  "total_casos": 49,
+  "timestamp": "2026-01-05T04:46:00.976382",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 9,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "ADENOCARCINOMA ENDOMETRIOIDE INVASIVO FIGO 1",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
+      "valor_bd": "ADENOCARCINOMA ENDOMETRIOIDE INVASIVO FIGO 1 HER2 EQUÍVOCO (2+) NEGATIVO PARA INESTABILIDAD MICROSATELITAL"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "HER2: POSITIVO, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "HER2",
+        "RE",
+        "RP"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 8,
+      "total_solicitado_bd": 8,
+      "estudios_ocr": [
+        "P53",
+        "Receptor de Progesterona",
+        "Receptor de Estrógeno",
+        "HER2",
+        "MLH1",
+        "MSH2",
+        "MSH6",
+        "PMS2"
+      ],
+      "estudios_bd": [
+        "P53",
+        "Receptor de Progesterona",
+        "Receptor de Estrógeno",
+        "HER2",
+        "MLH1",
+        "MSH2",
+        "MSH6",
+        "PMS2"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 8,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "PMS2",
+          "columna": "IHQ_PMS2",
+          "valor_bd": ".",
+          "valor_ocr": "n"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "Descripcion macroscopica coincide parcialmente con OCR (similitud: 56%)"
+    ],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "WARNING",
+      "mensaje": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 56%)",
+      "valor_bd": "Se realizan niveles histológicos al bloque M2408596, el cual corresponde a histerectomía vaginal, co...",
+      "valor_ocr": "Se realizan niveles histológicos al bloque M2408596, el cual corresponde a histerectomía vaginal, co..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "ÚTERO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 77.8,
+    "score_final": 77.8,
+    "validaciones_ok": 7,
+    "total_validaciones": 9,
+    "warnings": 1,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "ADVERTENCIA"
+}

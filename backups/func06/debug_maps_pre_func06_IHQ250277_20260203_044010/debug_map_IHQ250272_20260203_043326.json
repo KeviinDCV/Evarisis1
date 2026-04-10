@@ -1,0 +1,167 @@
+{
+  "session_id": "IHQ250272_20260203_043326",
+  "numero_peticion": "IHQ250272",
+  "timestamp": "2026-02-03T04:33:26.860830",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250272\nCopia Pag. 1 de 2\nNombre : ANA MILENA OCORO SOLIS\nN. peticion : IHQ250272\nN.Identificación : CC. 66741122\nGenero : FEMENINO\nEdad : 54 años 2 meses 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO MERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 15/03/2025\nFecha Informe : 19/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION SELAR\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2502691” que corresponde a “lesión selar” con diagnóstico de “ADENOMA HIPOFISIARIO (PitNET)\nRECIDIVANTE”. Previa revisión de la histología, se realizan niveles histológicos para tinción con\nACTH,\nKI-67, CAM 5.2, sinaptofisina, GH, FSH, TSH y PROLACTINA.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para sinaptofisina y TSH. Son negativas para GH, FSH, prolactina,\nACTH y CAM 5.2.\nÍndice de proliferación KI-67 del 3%.\nDIAGNÓSTICO\nRegión selar. Tumor. Resección. Estudio de inmunohistoquímica:\n- ADENOMA HIPOFISIARIO (PitNET) DE TIPO TIROTROPO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---\nIHQ250272\nCopia Pag. 2 de 2\nNombre : ANA MILENA OCORO SOLIS\nN. peticion : IHQ250272\nN.Identificación : CC. 66741122\nGenero : FEMENINO\nEdad : 54 años 2 meses 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO MERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 15/03/2025\nFecha Informe : 19/03/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3058,
+      "reduccion_porcentaje": 98.25
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250272",
+      "caso_num": 9,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_SINAPTOFISINA": "POSITIVO",
+      "IHQ_GH": "NEGATIVO",
+      "IHQ_TSH": "POSITIVO",
+      "IHQ_FSH": "NEGATIVO",
+      "IHQ_PROLACTINA": "NEGATIVO",
+      "IHQ_ACTH": "NEGATIVO",
+      "IHQ_CAM5": "NEGATIVO",
+      "nombre_completo": "ANA MILENA OCORO SOLIS",
+      "numero_peticion": "IHQ250272",
+      "identificacion": "66741122",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "54",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JAVIER OROZCO MERA",
+      "servicio": "NEUROCIRUGIA",
+      "fecha_ingreso": "15/03/2025",
+      "fecha_informe": "19/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250272",
+      "N. de identificación": "66741122",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "NEUROCIRUGIA",
+      "Médico tratante": "JAVIER OROZCO MERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "15/03/2025",
+      "Fecha Informe": "19/03/2025",
+      "nombres": "ANA MILENA OCORO",
+      "Primer nombre": "ANA",
+      "Segundo nombre": "MILENA OCORO",
+      "apellidos": "SOLIS",
+      "Primer apellido": "SOLIS",
+      "Segundo apellido": "",
+      "nombre_formal": "SOLIS, ANA MILENA OCORO",
+      "diagnostico": "Región selar. Tumor. Resección. Estudio de inmunohistoquímica: - ADENOMA HIPOFISIARIO (PitNET) DE TIPO TIROTROPO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para synaptophysin y TSH. Son negativas para GH, FSH, prolactina, ACTH y CAM 5.2. Índice de proliferación KI-67 del 3%.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502691\" que corresponde a \"lesión selar\" con diagnóstico de \"ADENOMA HIPOFISIARIO (PitNET) RECIDIVANTE\". Previa revisión de la histología, se realizan niveles histológicos para tinción con ACTH, KI-67, CAM 5.2, synaptophysin, GH, FSH, TSH y PROLACTINA.",
+      "ihq_organo": "REGIÓN SELAR",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Ki-67, CAM5.2, SYNAPTOFISINA",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN SELAR",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: 3%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, CAM5.2, SYNAPTOFISINA",
+      "IHQ_KI-67": "3%",
+      "extraction_timestamp": "2026-02-03T04:33:27.172902",
+      "extractor_version": "6.5.91_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250272\nCopia Pag. 1 de 2\nNombre : ANA MILENA OCORO SOLIS\nN. peticion : IHQ250272\nN.Identificación : CC. 66741122\nGenero : FEMENINO\nEdad : 54 años 2 meses 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO MERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 15/03/2025\nFecha Informe : 19/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION SELAR\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2502691” que corresponde a “lesión selar” con diagnóstico de “ADENOMA HIPOFISIARIO (PitNET)\nRECIDIVANTE”. Previa revisión de la histología, se realizan niveles histológicos para tinción con\nACTH,\nKI-67, CAM 5.2, sinaptofisina, GH, FSH, TSH y PROLACTINA.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para sinaptofisina y TSH. Son negativas para GH, FSH, prolactina,\nACTH y CAM 5.2.\nÍndice de proliferación KI-67 del 3%.\nDIAGNÓSTICO\nRegión selar. Tumor. Resección. Estudio de inmunohistoquímica:\n- ADENOMA HIPOFISIARIO (PitNET) DE TIPO TIROTROPO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---\nIHQ250272\nCopia Pag. 2 de 2\nNombre : ANA MILENA OCORO SOLIS\nN. peticion : IHQ250272\nN.Identificación : CC. 66741122\nGenero : FEMENINO\nEdad : 54 años 2 meses 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO MERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 15/03/2025\nFecha Informe : 19/03/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, CAM5.2, SYNAPTOFISINA, ACTH, GH, PROLACTINA, TSH, FSH",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502691” que corresponde a “lesión selar” con diagnóstico de “ADENOMA HIPOFISIARIO (PitNET) RECIDIVANTE”. Previa revisión de la histología, se realizan niveles histológicos para tinción con ACTH, KI-67, CAM 5.2, sinaptofisina, GH, FSH, TSH y PROLACTINA.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para sinaptofisina y TSH. Son negativas para GH, FSH, prolactina, ACTH y CAM 5.2. Índice de proliferación KI-67 del 3%.",
+      "Descripcion Diagnostico": "Región selar. Tumor. Resección. Estudio de inmunohistoquímica: - ADENOMA HIPOFISIARIO (PitNET) DE TIPO TIROTROPO.",
+      "IHQ_ORGANO": "REGIÓN SELAR",
+      "Organo": "LESION SELAR",
+      "Diagnostico Coloracion": "ADENOMA HIPOFISIARIO (PITNET) RECIDIVANTE",
+      "Diagnostico Principal": "ADENOMA HIPOFISIARIO (PITNET) DE TIPO TIROTROPO",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: 3%",
+      "IHQ_KI-67": "3%",
+      "IHQ_CAM5": "NEGATIVO",
+      "IHQ_ACTH": "NEGATIVO",
+      "IHQ_GH": "NEGATIVO",
+      "IHQ_PROLACTINA": "NEGATIVO",
+      "IHQ_TSH": "POSITIVO",
+      "IHQ_FSH": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 136,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 8,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región selar. Tumor. Resección. Estudio de inmunohistoquímica:\n- ADENOMA HIPOFISIARIO (PitNET) DE TIPO TIROTROPO.",
+      "valor_corregido": "Región selar. Tumor. Resección. Estudio de inmunohistoquímica: - ADENOMA HIPOFISIARIO (PitNET) DE TIPO TIROTROPO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250272",
+      "timestamp": "2026-02-03T04:33:27.172652"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502691” que corresponde a “lesión selar” con diagnóstico de “ADENOMA HIPOFISIARIO (PitNET) RECIDIVANTE”. Previa revisión de la histología, se realizan niveles histológicos para tinción con ACTH, KI-67, CAM 5.2, sinaptofisina, GH, FSH, TSH y PROLACTINA.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502691\" que corresponde a \"lesión selar\" con diagnóstico de \"ADENOMA HIPOFISIARIO (PitNET) RECIDIVANTE\". Previa revisión de la histología, se realizan niveles histológicos para tinción con ACTH, KI-67, CAM 5.2, synaptophysin, GH, FSH, TSH y PROLACTINA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250272",
+      "timestamp": "2026-02-03T04:33:27.172659"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para sinaptofisina y TSH. Son negativas para GH, FSH, prolactina, ACTH y CAM 5.2. Índice de proliferación KI-67 del 3%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para synaptophysin y TSH. Son negativas para GH, FSH, prolactina, ACTH y CAM 5.2. Índice de proliferación KI-67 del 3%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250272",
+      "timestamp": "2026-02-03T04:33:27.172662"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 55
+  }
+}

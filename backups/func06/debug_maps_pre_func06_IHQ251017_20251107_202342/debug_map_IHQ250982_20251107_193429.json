@@ -1,0 +1,157 @@
+{
+  "session_id": "IHQ250982_20251107_193429",
+  "numero_peticion": "IHQ250982",
+  "timestamp": "2025-11-07T19:34:29.260762",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250982\nCopia Pag. 1 de 2\nNombre : ANGEL MAURICIO TENORIO CUERO\nN. peticion : IHQ250982\nN.Identificación : CC. 1111662903\nGenero : MASCULINO\nEdad : 20 años 7 meses 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOSE MAURICIO LONDOÑO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 08/09/2025\nFecha Informe : 22/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO CERVICAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de\n\"SYNLAB\" rotulado como \"2024 SO 22336\" el cual consiste en un bloque de parafina y una lámina de\nH&E correspondiente a \"ganglio cervical\" con diagnóstico de \"APARENTE COMPROMISO POR NEOPLASIA\nMALIGNA METASTÁSICA\". Se revisan placas para marcación de CKAE1E3, CAM 5.2, CK7, GFAP, SOX10 y\nSOX100.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nEn los niveles realizados se observan fragmentos de una lesión neoplásica con celularidad bifásica, una\npoblación de células epiteliales recubriendo estructuras pseudoacinares que son positivas para CKAE1E3,\nCK7 Y CAM 5.2 y células mioepiteliales que se distribuyen en un estroma condromixoide, positivas para\nGFAP, S100 y SOX10. \nDIAGNÓSTICO\n Región cervical. Lesión. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA LESIÓN BIFÁSICA CON\nCOMPONENTE CONDROMIXOIDE Y EPITELIAL SIN NECROSIS.\nVER COMENTARIO.\nCOMENTARIOS\nSe sugiere correlacionar este reporte con la historia clínica y examen físico del paciente, dado que en los\ndatos enviados no se especifica la localización de la lesión. En caso de ser una masa cercana a la\nubicación de glándulas salivales, puede corresponder a adenoma pleomórfico que requiere ser\nconfirmado con la resección completa de la lesión.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---\nIHQ250982\nCopia Pag. 2 de 2\nNombre : ANGEL MAURICIO TENORIO CUERO\nN. peticion : IHQ250982\nN.Identificación : CC. 1111662903\nGenero : MASCULINO\nEdad : 20 años 7 meses 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOSE MAURICIO LONDOÑO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 08/09/2025\nFecha Informe : 22/09/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3802,
+      "reduccion_porcentaje": 98.04
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250982",
+      "caso_num": 3,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CAM52": "POSITIVO",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "nombre_completo": "ANGEL MAURICIO TENORIO CUERO",
+      "numero_peticion": "IHQ250982",
+      "identificacion": "1111662903",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "20",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JOSE MAURICIO LONDOÑO",
+      "servicio": "INSTITUCION EXTERNA",
+      "fecha_ingreso": "08/09/2025",
+      "fecha_informe": "22/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250982",
+      "N. de identificación": "1111662903",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "INSTITUCION EXTERNA",
+      "Médico tratante": "JOSE MAURICIO LONDOÑO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/09/2025",
+      "Fecha Informe": "22/09/2025",
+      "nombres": "ANGEL MAURICIO",
+      "Primer nombre": "ANGEL",
+      "Segundo nombre": "MAURICIO",
+      "apellidos": "TENORIO CUERO",
+      "Primer apellido": "TENORIO",
+      "Segundo apellido": "CUERO",
+      "nombre_formal": "TENORIO CUERO, ANGEL MAURICIO",
+      "diagnostico": "Región cervical. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA LESIÓN BIFÁSICA CON COMPONENTE CONDROMIXOIDE Y EPITELIAL SIN NECROSIS. VER COMENTARIO.",
+      "descripcion_microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los niveles realizados se observan fragmentos de una lesión neoplásica con celularidad bifásica, una población de células epiteliales recubriendo estructuras pseudoacinares que son positivas para CKAE1E3, CK7 Y CAM 5.2 y células mioepiteliales que se distribuyen en un estroma condromixoide, positivas para GFAP, S100 y SOX10.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"SYNLAB\" rotulado como \"2024 SO 22336\" el cual consiste en un bloque de parafina y una lámina de H&E correspondiente a \"ganglio cervical\" con diagnóstico de \"APARENTE COMPROMISO POR NEOPLASIA MALIGNA METASTÁSICA\". Se revisan placas para marcación de CKAE1E3, CAM 5.2, CK7, GFAP, SOX10 y SOX100.",
+      "ihq_organo": "REGIÓN CERVICAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, CAM5.2, CK7, GFAP, SOX10, SOX100",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Se sugiere correlacionar este reporte con la historia clínica y examen físico del paciente, dado que en los datos enviados no se especifica la localización de la lesión. En caso de ser una masa cercana a la ubicación de glándulas salivales, puede corresponder a adenoma pleomórfico que requiere ser confirmado con la resección completa de la lesión. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 6 --- IHQ250982 Copia Pag. 2 de 2 Nombre : ANGEL MAURICIO TENORIO CUERO N. peticion : IHQ250982 N.Identificación : CC. 1111662903 Genero : MASCULINO Edad : 20 años 7 meses 14 dias EPS : EMSSANAR S.A.S Médico tratante : JOSE MAURICIO LONDOÑO Servicio : INSTITUCION EXTERNA Fecha Ingreso : 08/09/2025 Fecha Informe : 22/09/2025",
+      "IHQ_ORGANO": "REGIÓN CERVICAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_SOX10": "POSITIVO",
+      "extraction_timestamp": "2025-11-07T19:34:29.378802",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250982\nCopia Pag. 1 de 2\nNombre : ANGEL MAURICIO TENORIO CUERO\nN. peticion : IHQ250982\nN.Identificación : CC. 1111662903\nGenero : MASCULINO\nEdad : 20 años 7 meses 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOSE MAURICIO LONDOÑO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 08/09/2025\nFecha Informe : 22/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO CERVICAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de\n\"SYNLAB\" rotulado como \"2024 SO 22336\" el cual consiste en un bloque de parafina y una lámina de\nH&E correspondiente a \"ganglio cervical\" con diagnóstico de \"APARENTE COMPROMISO POR NEOPLASIA\nMALIGNA METASTÁSICA\". Se revisan placas para marcación de CKAE1E3, CAM 5.2, CK7, GFAP, SOX10 y\nSOX100.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nEn los niveles realizados se observan fragmentos de una lesión neoplásica con celularidad bifásica, una\npoblación de células epiteliales recubriendo estructuras pseudoacinares que son positivas para CKAE1E3,\nCK7 Y CAM 5.2 y células mioepiteliales que se distribuyen en un estroma condromixoide, positivas para\nGFAP, S100 y SOX10. \nDIAGNÓSTICO\n Región cervical. Lesión. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA LESIÓN BIFÁSICA CON\nCOMPONENTE CONDROMIXOIDE Y EPITELIAL SIN NECROSIS.\nVER COMENTARIO.\nCOMENTARIOS\nSe sugiere correlacionar este reporte con la historia clínica y examen físico del paciente, dado que en los\ndatos enviados no se especifica la localización de la lesión. En caso de ser una masa cercana a la\nubicación de glándulas salivales, puede corresponder a adenoma pleomórfico que requiere ser\nconfirmado con la resección completa de la lesión.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---\nIHQ250982\nCopia Pag. 2 de 2\nNombre : ANGEL MAURICIO TENORIO CUERO\nN. peticion : IHQ250982\nN.Identificación : CC. 1111662903\nGenero : MASCULINO\nEdad : 20 años 7 meses 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOSE MAURICIO LONDOÑO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 08/09/2025\nFecha Informe : 22/09/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, CAM5.2, CK7, GFAP, SOX10, SOX100",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"SYNLAB\" rotulado como \"2024 SO 22336\" el cual consiste en un bloque de parafina y una lámina de H&E correspondiente a \"ganglio cervical\" con diagnóstico de \"APARENTE COMPROMISO POR NEOPLASIA MALIGNA METASTÁSICA\". Se revisan placas para marcación de CKAE1E3, CAM 5.2, CK7, GFAP, SOX10 y SOX100.",
+      "Descripcion microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los niveles realizados se observan fragmentos de una lesión neoplásica con celularidad bifásica, una población de células epiteliales recubriendo estructuras pseudoacinares que son positivas para CKAE1E3, CK7 Y CAM 5.2 y células mioepiteliales que se distribuyen en un estroma condromixoide, positivas para GFAP, S100 y SOX10.",
+      "Descripcion Diagnostico": "Región cervical. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA LESIÓN BIFÁSICA CON COMPONENTE CONDROMIXOIDE Y EPITELIAL SIN NECROSIS. VER COMENTARIO.",
+      "IHQ_ORGANO": "REGIÓN CERVICAL",
+      "Organo": "GANGLIO CERVICAL",
+      "Diagnostico Coloracion": "APARENTE COMPROMISO POR NEOPLASIA\nMALIGNA METASTÁSICA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA LESIÓN BIFÁSICA CON COMPONENTE CONDROMIXOIDE Y EPITELIAL SIN NECROSIS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 143,
+      "campos_vacios": 102,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 28.67
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 102,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región cervical. Lesión. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA LESIÓN BIFÁSICA CON\nCOMPONENTE CONDROMIXOIDE Y EPITELIAL SIN NECROSIS.\nVER COMENTARIO.",
+      "valor_corregido": "Región cervical. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA LESIÓN BIFÁSICA CON COMPONENTE CONDROMIXOIDE Y EPITELIAL SIN NECROSIS. VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250982",
+      "timestamp": "2025-11-07T19:34:29.378492"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de\n\"SYNLAB\" rotulado como \"2024 SO 22336\" el cual consiste en un bloque de parafina y una lámina de\nH&E correspondiente a \"ganglio cervical\" con diagnóstico de \"APARENTE COMPROMISO POR NEOPLASIA\nMALIGNA METASTÁSICA\". Se revisan placas para marcación de CKAE1E3, CAM 5.2, CK7, GFAP, SOX10 y\nSOX100.",
+      "valor_corregido": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"SYNLAB\" rotulado como \"2024 SO 22336\" el cual consiste en un bloque de parafina y una lámina de H&E correspondiente a \"ganglio cervical\" con diagnóstico de \"APARENTE COMPROMISO POR NEOPLASIA MALIGNA METASTÁSICA\". Se revisan placas para marcación de CKAE1E3, CAM 5.2, CK7, GFAP, SOX10 y SOX100.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250982",
+      "timestamp": "2025-11-07T19:34:29.378497"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se sugiere correlacionar este reporte con la historia clínica y examen físico del paciente, dado que en los\ndatos enviados no se especifica la localización de la lesión. En caso de ser una masa cercana a la\nubicación de glándulas salivales, puede corresponder a adenoma pleomórfico que requiere ser\nconfirmado con la resección completa de la lesión.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---\nIHQ250982\nCopia Pag. 2 de 2\nNombre : ANGEL MAURICIO TENORIO CUERO\nN. peticion : IHQ250982\nN.Identificación : CC. 1111662903\nGenero : MASCULINO\nEdad : 20 años 7 meses 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOSE MAURICIO LONDOÑO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 08/09/2025\nFecha Informe : 22/09/2025",
+      "valor_corregido": "Se sugiere correlacionar este reporte con la historia clínica y examen físico del paciente, dado que en los datos enviados no se especifica la localización de la lesión. En caso de ser una masa cercana a la ubicación de glándulas salivales, puede corresponder a adenoma pleomórfico que requiere ser confirmado con la resección completa de la lesión. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 6 --- IHQ250982 Copia Pag. 2 de 2 Nombre : ANGEL MAURICIO TENORIO CUERO N. peticion : IHQ250982 N.Identificación : CC. 1111662903 Genero : MASCULINO Edad : 20 años 7 meses 14 dias EPS : EMSSANAR S.A.S Médico tratante : JOSE MAURICIO LONDOÑO Servicio : INSTITUCION EXTERNA Fecha Ingreso : 08/09/2025 Fecha Informe : 22/09/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250982",
+      "timestamp": "2025-11-07T19:34:29.378499"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 54
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "session_id": "IHQ250154_20260106_014715",
+  "numero_peticion": "IHQ250154",
+  "timestamp": "2026-01-06T01:47:15.423007",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250154\nCopia Pag. 1 de 2\nNombre : MARCELINA BONILLA\nN. peticion : IHQ250154\nN.Identificación : CC. 27256610\nGenero : FEMENINO\nEdad : 85 años 10 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : EULER JAVIER BURBANO\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 10/02/2025\nFecha Informe : 26/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2501136” que corresponde a “biopsia de cérvix” con diagnóstico de “LOS\nHALLZGOS MORFOLOGICOS FAVORECEN LESIÓN NEOPLASICA DE TIPO CARCINOSARCOMA. ”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción con Gata 3,\nProgesterona, Desmina, Miogenina, p16, p53, ki67, p40, CK7, CK20, CKA E1/E2, WT1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®\nLas células tumorales son: \nPositivas fuerte y difuso para CKAE1/AE3,CK7 ,P40 y P16 (Bloque).Presenta positividad focal y\ndébil para GATA 3 y Receptores de estrógenos. Son negativas para Ck20, myogenina, WT1,\nDESMINA, Receptores de progesterona, PAX8, P53 (Mutado).Ki 67 (indice de proliferación):90%\nDIAGNÓSTICO\nCérvix. biopsia. Estudios de inmunohistoquímica. \nCARCINOMA INVASIVO EN PATRÓN PAPILAR Y SÓLIDO DE POSIBLE ORIGEN UROTERIAL VS TRACTO\nGENITAL FEMENINO.\nCOMENTARIOS\nLos hallazgos morfológicos y de inmunohistoquímica evidencian una marcación positiva para\nGATA3 y focal para Receptores de Estrógenos sin ser concluyente para un origen especifico. Por\nlo que se sugiere correlacionar con imagenes diagnósticas e historia clinica, no disponibles en la\norden de solicitud.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---\nIHQ250154\nCopia Pag. 2 de 2\nNombre : MARCELINA BONILLA\nN. peticion : IHQ250154\nN.Identificación : CC. 27256610\nGenero : FEMENINO\nEdad : 85 años 10 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : EULER JAVIER BURBANO\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 10/02/2025\nFecha Informe : 26/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3614,
+      "reduccion_porcentaje": 97.92
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250154",
+      "caso_num": 44,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO (fuerte)",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "nombre_completo": "MARCELINA BONILLA",
+      "numero_peticion": "IHQ250154",
+      "identificacion": "27256610",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "85",
+      "eps": "ASMET SALUD EPS SAS",
+      "medico_tratante": "EULER JAVIER BURBANO",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "10/02/2025",
+      "fecha_informe": "26/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250154",
+      "N. de identificación": "27256610",
+      "Tipo de documento": "CC",
+      "EPS": "ASMET SALUD EPS SAS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "EULER JAVIER BURBANO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "10/02/2025",
+      "Fecha Informe": "26/02/2025",
+      "nombres": "MARCELINA BONILLA",
+      "Primer nombre": "MARCELINA",
+      "Segundo nombre": "BONILLA",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "MARCELINA BONILLA",
+      "diagnostico": "Cérvix. biopsia. Estudios de inmunohistoquímica. CARCINOMA INVASIVO EN PATRÓN PAPILAR Y SÓLIDO DE POSIBLE ORIGEN UROTERIAL VS TRACTO GENITAL FEMENINO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® Las células tumorales son: Positivas fuerte y difuso para CKAE1/AE3,CK7 ,p40 y p16 (Bloque).Presenta positividad focal y débil para GATA 3 y Receptores de estrógenos. Son negativas para CK20, myogenina, WT1, DESMINA, Receptores de progesterona, PAX8, p53 (Mutado).KI-67 (indice de proliferación):90%",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501136” que corresponde a “biopsia de cérvix” con diagnóstico de “LOS HALLZGOS MORFOLOGICOS FAVORECEN LESIÓN NEOPLASICA DE TIPO CARCINOSARCOMA. ”. Previa revisión de la histología, se realizan niveles histológicos para tinción con Gata 3, Progesterona, Desmina, Miogenina, p16, p53, KI-67, p40, CK7, CK20, CKA E1/E2, WT1.",
+      "ihq_organo": "CÉRVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "GATA3, Receptor de Progesterona, DESMINA, MIOGENINA, P16, P53, Ki-67, P40, CK7, CK20, CKA E1E2, WT1",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Los hallazgos morfológicos y de inmunohistoquímica evidencian una marcación positiva para GATA3 y focal para Receptores de Estrógenos sin ser concluyente para un origen especifico. Por lo que se sugiere correlacionar con imagenes diagnósticas e historia clinica, no disponibles en la orden de solicitud. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 81 --- IHQ250154 Copia Pag. 2 de 2 Nombre : MARCELINA BONILLA N. peticion : IHQ250154 N.Identificación : CC. 27256610 Genero : FEMENINO Edad : 85 años 10 dias EPS : ASMET SALUD EPS SAS Médico tratante : EULER JAVIER BURBANO Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 10/02/2025 Fecha Informe : 26/02/2025",
+      "IHQ_ORGANO": "CÉRVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: , PAX8",
+      "IHQ_ESTUDIOS_SOLICITADOS": "GATA3, Receptor de Progesterona, DESMINA, MIOGENINA, P16, P53, Ki-67, P40, CK7, CK20, CKA E1E2, WT1",
+      "IHQ_P53": "POSITIVO (MUTADA)",
+      "IHQ_RECEPTOR_PROGESTERONA": ", PAX8",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "p16": "NEGATIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-01-06T01:47:15.913734",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250154\nCopia Pag. 1 de 2\nNombre : MARCELINA BONILLA\nN. peticion : IHQ250154\nN.Identificación : CC. 27256610\nGenero : FEMENINO\nEdad : 85 años 10 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : EULER JAVIER BURBANO\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 10/02/2025\nFecha Informe : 26/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2501136” que corresponde a “biopsia de cérvix” con diagnóstico de “LOS\nHALLZGOS MORFOLOGICOS FAVORECEN LESIÓN NEOPLASICA DE TIPO CARCINOSARCOMA. ”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción con Gata 3,\nProgesterona, Desmina, Miogenina, p16, p53, ki67, p40, CK7, CK20, CKA E1/E2, WT1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®\nLas células tumorales son: \nPositivas fuerte y difuso para CKAE1/AE3,CK7 ,P40 y P16 (Bloque).Presenta positividad focal y\ndébil para GATA 3 y Receptores de estrógenos. Son negativas para Ck20, myogenina, WT1,\nDESMINA, Receptores de progesterona, PAX8, P53 (Mutado).Ki 67 (indice de proliferación):90%\nDIAGNÓSTICO\nCérvix. biopsia. Estudios de inmunohistoquímica. \nCARCINOMA INVASIVO EN PATRÓN PAPILAR Y SÓLIDO DE POSIBLE ORIGEN UROTERIAL VS TRACTO\nGENITAL FEMENINO.\nCOMENTARIOS\nLos hallazgos morfológicos y de inmunohistoquímica evidencian una marcación positiva para\nGATA3 y focal para Receptores de Estrógenos sin ser concluyente para un origen especifico. Por\nlo que se sugiere correlacionar con imagenes diagnósticas e historia clinica, no disponibles en la\norden de solicitud.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---\nIHQ250154\nCopia Pag. 2 de 2\nNombre : MARCELINA BONILLA\nN. peticion : IHQ250154\nN.Identificación : CC. 27256610\nGenero : FEMENINO\nEdad : 85 años 10 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : EULER JAVIER BURBANO\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 10/02/2025\nFecha Informe : 26/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "GATA3, Receptor de Progesterona, DESMINA, MIOGENINA, P16, P53, Ki-67, P40, CK7, CK20, CKA E1E2, WT1, Receptor de Estrógeno, CKAE1AE3, PAX8, DESMIN",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501136” que corresponde a “biopsia de cérvix” con diagnóstico de “LOS HALLZGOS MORFOLOGICOS FAVORECEN LESIÓN NEOPLASICA DE TIPO CARCINOSARCOMA. ”. Previa revisión de la histología, se realizan niveles histológicos para tinción con Gata 3, Progesterona, Desmina, Miogenina, p16, p53, ki67, p40, CK7, CK20, CKA E1/E2, WT1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® Las células tumorales son: Positivas fuerte y difuso para CKAE1/AE3,CK7 ,P40 y P16 (Bloque).Presenta positividad focal y débil para GATA 3 y Receptores de estrógenos. Son negativas para Ck20, myogenina, WT1, DESMINA, Receptores de progesterona, PAX8, P53 (Mutado).Ki 67 (indice de proliferación):90%",
+      "Descripcion Diagnostico": "Cérvix. biopsia. Estudios de inmunohistoquímica. CARCINOMA INVASIVO EN PATRÓN PAPILAR Y SÓLIDO DE POSIBLE ORIGEN UROTERIAL VS TRACTO GENITAL FEMENINO.",
+      "IHQ_ORGANO": "CÉRVIX",
+      "Organo": "TUMOR CERVIX",
+      "Diagnostico Coloracion": "LOS HALLZGOS MORFOLOGICOS FAVORECEN LESIÓN NEOPLASICA DE TIPO CARCINOSARCOMA",
+      "Diagnostico Principal": "CARCINOMA INVASIVO EN PATRÓN PAPILAR Y SÓLIDO DE POSIBLE ORIGEN UROTERIAL VS TRACTO GENITAL FEMENINO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: , PAX8",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": ", PAX8",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P53": "POSITIVO (MUTADA)",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO (fuerte)",
+      "IHQ_PAX8": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 121,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 14,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 121,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cérvix. biopsia. Estudios de inmunohistoquímica. \nCARCINOMA INVASIVO EN PATRÓN PAPILAR Y SÓLIDO DE POSIBLE ORIGEN UROTERIAL VS TRACTO\nGENITAL FEMENINO.",
+      "valor_corregido": "Cérvix. biopsia. Estudios de inmunohistoquímica. CARCINOMA INVASIVO EN PATRÓN PAPILAR Y SÓLIDO DE POSIBLE ORIGEN UROTERIAL VS TRACTO GENITAL FEMENINO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250154",
+      "timestamp": "2026-01-06T01:47:15.913459"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501136” que corresponde a “biopsia de cérvix” con diagnóstico de “LOS HALLZGOS MORFOLOGICOS FAVORECEN LESIÓN NEOPLASICA DE TIPO CARCINOSARCOMA. ”. Previa revisión de la histología, se realizan niveles histológicos para tinción con Gata 3, Progesterona, Desmina, Miogenina, p16, p53, ki67, p40, CK7, CK20, CKA E1/E2, WT1.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501136” que corresponde a “biopsia de cérvix” con diagnóstico de “LOS HALLZGOS MORFOLOGICOS FAVORECEN LESIÓN NEOPLASICA DE TIPO CARCINOSARCOMA. ”. Previa revisión de la histología, se realizan niveles histológicos para tinción con Gata 3, Progesterona, Desmina, Miogenina, p16, p53, KI-67, p40, CK7, CK20, CKA E1/E2, WT1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250154",
+      "timestamp": "2026-01-06T01:47:15.913466"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® Las células tumorales son: Positivas fuerte y difuso para CKAE1/AE3,CK7 ,P40 y P16 (Bloque).Presenta positividad focal y débil para GATA 3 y Receptores de estrógenos. Son negativas para Ck20, myogenina, WT1, DESMINA, Receptores de progesterona, PAX8, P53 (Mutado).Ki 67 (indice de proliferación):90%",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® Las células tumorales son: Positivas fuerte y difuso para CKAE1/AE3,CK7 ,p40 y p16 (Bloque).Presenta positividad focal y débil para GATA 3 y Receptores de estrógenos. Son negativas para CK20, myogenina, WT1, DESMINA, Receptores de progesterona, PAX8, p53 (Mutado).KI-67 (indice de proliferación):90%",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250154",
+      "timestamp": "2026-01-06T01:47:15.913468"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos morfológicos y de inmunohistoquímica evidencian una marcación positiva para\nGATA3 y focal para Receptores de Estrógenos sin ser concluyente para un origen especifico. Por\nlo que se sugiere correlacionar con imagenes diagnósticas e historia clinica, no disponibles en la\norden de solicitud.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---\nIHQ250154\nCopia Pag. 2 de 2\nNombre : MARCELINA BONILLA\nN. peticion : IHQ250154\nN.Identificación : CC. 27256610\nGenero : FEMENINO\nEdad : 85 años 10 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : EULER JAVIER BURBANO\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 10/02/2025\nFecha Informe : 26/02/2025",
+      "valor_corregido": "Los hallazgos morfológicos y de inmunohistoquímica evidencian una marcación positiva para GATA3 y focal para Receptores de Estrógenos sin ser concluyente para un origen especifico. Por lo que se sugiere correlacionar con imagenes diagnósticas e historia clinica, no disponibles en la orden de solicitud. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 81 --- IHQ250154 Copia Pag. 2 de 2 Nombre : MARCELINA BONILLA N. peticion : IHQ250154 N.Identificación : CC. 27256610 Genero : FEMENINO Edad : 85 años 10 dias EPS : ASMET SALUD EPS SAS Médico tratante : EULER JAVIER BURBANO Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 10/02/2025 Fecha Informe : 26/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250154",
+      "timestamp": "2026-01-06T01:47:15.913470"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 60
+  }
+}

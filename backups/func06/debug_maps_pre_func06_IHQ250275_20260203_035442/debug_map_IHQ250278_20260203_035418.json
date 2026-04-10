@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ250278_20260203_035418",
+  "numero_peticion": "IHQ250278",
+  "timestamp": "2026-02-03T03:54:18.501637",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250278\nCopia Pag. 1 de 2\nNombre : PEDRO NEL ROJAS\nN. peticion : IHQ250278\nN.Identificación : CC. 16605883\nGenero : MASCULINO\nEdad : 71 años 7 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JUAN CARLOS JARAMILLO\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 17/03/2025\nFecha Informe : 31/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA NASOFARINGEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502875 que\ncorresponde a \"masa nasofaríngea\" con diagnóstico de \"TUMOR MALIGNO POBREMENTE\nDIFERENCIADO, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA DETERMINAR SU\nHISTOGÉNESIS\" del 17/03/2025. Previa valoración de la coloración básica, se realizan cortes\nhistológicos al bloque de parafina para los siguientes marcadores: CKAE1/AE3, SOX 10, CD3, CD5,\nCD10, CD20, CD23,CD30,LMP1, MUM1, CMYC, BcL2, BcL6.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nLas células neoplásicas son negativas para CKAE1/AE3 y SOX 10. \nEstas células neoplásicas son de tamaño grande y expresan marcadores para linfocitos B (CD20+,\nBCL6+, BCL2+ y MUM1+) con C-MYC positivo (más del 40%) y un Índice de proliferación KI-67 del\n90%. \nEsta misma población es negativa con CD10, CD30, CD23,CD3, CD5, LMP1.\nSe observan linfocitos T acompañantes CD3+/CD5+ dispersos.\nDIAGNÓSTICO\nNasofaringe. Masa. Biopsia trans nasal. Estudio de inmunohistoquímica. \nHALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLE CON LINFOMA DIFUSO DE CÉLULAS B\nGRANDES, NO CENTROGERMINAL.\nCOMENTARIOS\nCaso valorado en conjunto con la Dra Isabella Caicedo (hematopatóloga). \nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---\nIHQ250278\nCopia Pag. 2 de 2\nNombre : PEDRO NEL ROJAS\nN. peticion : IHQ250278\nN.Identificación : CC. 16605883\nGenero : MASCULINO\nEdad : 71 años 7 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JUAN CARLOS JARAMILLO\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 17/03/2025\nFecha Informe : 31/03/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3567,
+      "reduccion_porcentaje": 97.96
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250278",
+      "caso_num": 15,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "nombre_completo": "PEDRO NEL ROJAS",
+      "numero_peticion": "IHQ250278",
+      "identificacion": "16605883",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "71",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JUAN CARLOS JARAMILLO",
+      "servicio": "UNIDAD DE CUIDADO ESPECIAL",
+      "fecha_ingreso": "17/03/2025",
+      "fecha_informe": "31/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250278",
+      "N. de identificación": "16605883",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "UNIDAD DE CUIDADO ESPECIAL",
+      "Médico tratante": "JUAN CARLOS JARAMILLO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "17/03/2025",
+      "Fecha Informe": "31/03/2025",
+      "nombres": "PEDRO NEL",
+      "Primer nombre": "PEDRO",
+      "Segundo nombre": "NEL",
+      "apellidos": "ROJAS",
+      "Primer apellido": "ROJAS",
+      "Segundo apellido": "",
+      "nombre_formal": "ROJAS, PEDRO NEL",
+      "diagnostico": "Nasofaringe. Masa. Biopsia trans nasal. Estudio de inmunohistoquímica. HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLE CON LINFOMA DIFUSO DE CÉLULAS B GRANDES, NO CENTROGERMINAL.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Las células neoplásicas son negativas para CKAE1/AE3 y SOX 10. Estas células neoplásicas son de tamaño grande y expresan marcadores para linfocitos B (CD20+, BCL6+, BCL2+ y MUM1+) con C-MYC positivo (más del 40%) y un Índice de proliferación KI-67 del 90%. Esta misma población es negativa con CD10, CD30, CD23,CD3, CD5, LMP1. Se observan linfocitos T acompañantes CD3+/CD5+ dispersos.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502875 que corresponde a \"masa nasofaríngea\" con diagnóstico de \"TUMOR MALIGNO POBREMENTE DIFERENCIADO, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA DETERMINAR SU HISTOGÉNESIS\" del 17/03/2025. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque de parafina para los siguientes marcadores: CKAE1/AE3, SOX 10, CD3, CD5, CD10, CD20, CD23,CD30,LMP1, MUM1, CMYC, BcL2, BcL6.",
+      "ihq_organo": "NASOFARINGE",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1AE3, SOX10, CD3, CD5, CD10, CD20, CD23, CD30, LMP1, MUM1, CMYC, BCL2, BCL6",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con la Dra Isabella Caicedo (hematopatóloga).",
+      "IHQ_ORGANO": "NASOFARINGE",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, SOX10, CD3, CD5, CD10, CD20, CD23, CD30, LMP1, MUM1, CMYC, BCL2, BCL6",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_CMYC": "POSITIVO",
+      "IHQ_CD3": "NEGATIVO",
+      "IHQ_CD5": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_BCL2": "NO MENCIONADO",
+      "IHQ_CD23": "NEGATIVO",
+      "IHQ_LMP1": "NEGATIVO",
+      "extraction_timestamp": "2026-02-03T03:54:19.058882",
+      "extractor_version": "6.5.90_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250278\nCopia Pag. 1 de 2\nNombre : PEDRO NEL ROJAS\nN. peticion : IHQ250278\nN.Identificación : CC. 16605883\nGenero : MASCULINO\nEdad : 71 años 7 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JUAN CARLOS JARAMILLO\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 17/03/2025\nFecha Informe : 31/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA NASOFARINGEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502875 que\ncorresponde a \"masa nasofaríngea\" con diagnóstico de \"TUMOR MALIGNO POBREMENTE\nDIFERENCIADO, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA DETERMINAR SU\nHISTOGÉNESIS\" del 17/03/2025. Previa valoración de la coloración básica, se realizan cortes\nhistológicos al bloque de parafina para los siguientes marcadores: CKAE1/AE3, SOX 10, CD3, CD5,\nCD10, CD20, CD23,CD30,LMP1, MUM1, CMYC, BcL2, BcL6.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nLas células neoplásicas son negativas para CKAE1/AE3 y SOX 10. \nEstas células neoplásicas son de tamaño grande y expresan marcadores para linfocitos B (CD20+,\nBCL6+, BCL2+ y MUM1+) con C-MYC positivo (más del 40%) y un Índice de proliferación KI-67 del\n90%. \nEsta misma población es negativa con CD10, CD30, CD23,CD3, CD5, LMP1.\nSe observan linfocitos T acompañantes CD3+/CD5+ dispersos.\nDIAGNÓSTICO\nNasofaringe. Masa. Biopsia trans nasal. Estudio de inmunohistoquímica. \nHALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLE CON LINFOMA DIFUSO DE CÉLULAS B\nGRANDES, NO CENTROGERMINAL.\nCOMENTARIOS\nCaso valorado en conjunto con la Dra Isabella Caicedo (hematopatóloga). \nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---\nIHQ250278\nCopia Pag. 2 de 2\nNombre : PEDRO NEL ROJAS\nN. peticion : IHQ250278\nN.Identificación : CC. 16605883\nGenero : MASCULINO\nEdad : 71 años 7 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JUAN CARLOS JARAMILLO\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 17/03/2025\nFecha Informe : 31/03/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, SOX10, CD3, CD5, CD10, CD20, CD23, CD30, LMP1, MUM1, CMYC, BCL2, BCL6, Ki-67",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502875 que corresponde a \"masa nasofaríngea\" con diagnóstico de \"TUMOR MALIGNO POBREMENTE DIFERENCIADO, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA DETERMINAR SU HISTOGÉNESIS\" del 17/03/2025. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque de parafina para los siguientes marcadores: CKAE1/AE3, SOX 10, CD3, CD5, CD10, CD20, CD23,CD30,LMP1, MUM1, CMYC, BcL2, BcL6.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Las células neoplásicas son negativas para CKAE1/AE3 y SOX 10. Estas células neoplásicas son de tamaño grande y expresan marcadores para linfocitos B (CD20+, BCL6+, BCL2+ y MUM1+) con C-MYC positivo (más del 40%) y un Índice de proliferación KI-67 del 90%. Esta misma población es negativa con CD10, CD30, CD23,CD3, CD5, LMP1. Se observan linfocitos T acompañantes CD3+/CD5+ dispersos.",
+      "Descripcion Diagnostico": "Nasofaringe. Masa. Biopsia trans nasal. Estudio de inmunohistoquímica. HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLE CON LINFOMA DIFUSO DE CÉLULAS B GRANDES, NO CENTROGERMINAL.",
+      "IHQ_ORGANO": "NASOFARINGE",
+      "Organo": "BX MASA NASOFARINGEA",
+      "Diagnostico Coloracion": "TUMOR MALIGNO POBREMENTE DIFERENCIADO, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA DETERMINAR SU HISTOGÉNESIS",
+      "Diagnostico Principal": "HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLE CON LINFOMA DIFUSO DE CÉLULAS B GRANDES, NO CENTROGERMINAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_CD3": "NEGATIVO",
+      "IHQ_CD5": "NEGATIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD23": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_LMP1": "NEGATIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "IHQ_CMYC": "POSITIVO",
+      "IHQ_BCL2": "NO MENCIONADO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_KI-67": "90%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 128,
+      "campos_completos": 48,
+      "biomarcadores_encontrados": 14,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 128,
+      "total_campos_completos": 48
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Nasofaringe. Masa. Biopsia trans nasal. Estudio de inmunohistoquímica. \nHALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLE CON LINFOMA DIFUSO DE CÉLULAS B\nGRANDES, NO CENTROGERMINAL.",
+      "valor_corregido": "Nasofaringe. Masa. Biopsia trans nasal. Estudio de inmunohistoquímica. HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLE CON LINFOMA DIFUSO DE CÉLULAS B GRANDES, NO CENTROGERMINAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250278",
+      "timestamp": "2026-02-03T03:54:19.057875"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 62
+  }
+}

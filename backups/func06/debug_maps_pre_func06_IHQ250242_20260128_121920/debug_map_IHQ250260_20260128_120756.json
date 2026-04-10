@@ -1,0 +1,152 @@
+{
+  "session_id": "IHQ250260_20260128_120756",
+  "numero_peticion": "IHQ250260",
+  "timestamp": "2026-01-28T12:07:56.300971",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250260\nCopia Pag. 1 de 2\nNombre : MARIA REINELDA MEJIA DE\nRESTREPO\nN. peticion : IHQ250260\nN.Identificación : CC. 29737988\nGenero : FEMENINO\nEdad : 77 años 11 meses 26 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 12/03/2025\nFecha Informe : 17/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX COLON DESCENDENTE\n+ HEMICOLECTOMIA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe\nrecibe\norden\npara\nrealización\nde\ninmunohistoquímica\nen\nmaterial\nextrainstitucional\nproveniente de CLÌNICA COLOMBIA.\ncomo “248262” que corresponde a “hemicolectomía\nizquierda” y con diagnóstico de “ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE”. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con: MLH1, MSH2, MSH6 y\nPMS2, HER2. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nPROTOCOLO CAP PARA REPORTE DE INESTABILIDAD MICROSATELITAL EN PROTEÍNAS MMR\nSitio del espécimen: colon rectosigmoide\nResultado de MLH1: expresión nuclear intacta \nResultado de MSH2: expresión nuclear intacta\nResultado de MSH6: expresión nuclear intacta\nResultado de PMS2: expresión nuclear intacta (hay marcación citoplasmática patrón punteado y\nnuclear moteado)\nRECEPTORES ESTROGENOS. HER2: NEGATIVO 1+\nInterpretación de las proteínas MMR: no hay pérdida de la expresión nuclear en las proteínas\nMMR: no hay evidencia de reparación deficiente de los desajustes (baja probabilidad de MSI-H)\nInterpretación de inestabilidad micro satelital: MSI-estable (MSS)\nDIAGNÓSTICO\nColon izquierdo. Hemicolectomía izquierda. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA BIEN DIFERENCIADO.\n- PATRÓN MICROSATELITAL ESTABLE: SIN PERDIDA DE LA EXPRESIÓN NUCLEAR. MSH2 PSM2\nMLH1 MSH6.\n- HER-2: NEGATIVO (SCORE 1+).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 93 ---\nIHQ250260\nCopia Pag. 2 de 2\nNombre : MARIA REINELDA MEJIA DE\nRESTREPO\nN. peticion : IHQ250260\nN.Identificación : CC. 29737988\nGenero : FEMENINO\nEdad : 77 años 11 meses 26 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 12/03/2025\nFecha Informe : 17/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 94 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3788,
+      "reduccion_porcentaje": 97.89
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250260",
+      "caso_num": 48,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA REINELDA MEJIA DE RESTREPO",
+      "numero_peticion": "IHQ250260",
+      "identificacion": "29737988",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "77",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "12/03/2025",
+      "fecha_informe": "17/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250260",
+      "N. de identificación": "29737988",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "12/03/2025",
+      "Fecha Informe": "17/03/2025",
+      "nombres": "MARIA REINELDA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "REINELDA",
+      "apellidos": "MEJIA DE RESTREPO",
+      "Primer apellido": "MEJIA",
+      "Segundo apellido": "DE RESTREPO",
+      "nombre_formal": "MEJIA DE RESTREPO, MARIA REINELDA",
+      "diagnostico": "Colon izquierdo. Hemicolectomía izquierda. Estudio de inmunohistoquímica: - ADENOCARCINOMA BIEN DIFERENCIADO. - PATRÓN MICROSATELITAL ESTABLE: SIN PERDIDA DE LA EXPRESIÓN NUCLEAR. MSH2 PSM2 MLH1 MSH6. - HER-2: NEGATIVO (SCORE 1+): 12/03/2025",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. PROTOCOLO CAP PARA REPORTE DE INESTABILIDAD MICROSATELITAL EN PROTEÍNAS MMR Sitio del espécimen: colon rectosigmoide Resultado de MLH1: expresión nuclear intacta Resultado de MSH2: expresión nuclear intacta Resultado de MSH6: expresión nuclear intacta Resultado de PMS2: expresión nuclear intacta (hay marcación citoplasmática patrón punteado y nuclear moteado) RECEPTORES ESTROGENOS. HER2: NEGATIVO 1+ Interpretación de las proteínas MMR: no hay pérdida de la expresión nuclear en las proteínas MMR: no hay evidencia de reparación deficiente de los desajustes (baja probabilidad de MSI-H) Interpretación de inestabilidad micro satelital: MSI-estable (MSS)",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional proveniente de CLÌNICA COLOMBIA. como \"248262\" que corresponde a \"hemicolectomía izquierda\" y con diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE\". Previa revisión de la histología se realizan niveles histológicos para tinción con: MLH1, MSH2, MSH6 y PMS2, HER2.",
+      "ihq_organo": "COLON IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MLH1, MSH2, MSH6, PMS2, HER2",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "COLON IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: NEGATIVO 1+",
+      "IHQ_ESTUDIOS_SOLICITADOS": "MLH1, MSH2, MSH6, PMS2, HER2",
+      "IHQ_HER2": "NEGATIVO (SCORE 1+)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA (HAY MARCACIÓN CITOPLASMÁTICA PATRÓN PUNTEADO Y)",
+      "extraction_timestamp": "2026-01-28T12:07:56.801321",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250260\nCopia Pag. 1 de 2\nNombre : MARIA REINELDA MEJIA DE\nRESTREPO\nN. peticion : IHQ250260\nN.Identificación : CC. 29737988\nGenero : FEMENINO\nEdad : 77 años 11 meses 26 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 12/03/2025\nFecha Informe : 17/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX COLON DESCENDENTE\n+ HEMICOLECTOMIA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe\nrecibe\norden\npara\nrealización\nde\ninmunohistoquímica\nen\nmaterial\nextrainstitucional\nproveniente de CLÌNICA COLOMBIA.\ncomo “248262” que corresponde a “hemicolectomía\nizquierda” y con diagnóstico de “ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE”. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con: MLH1, MSH2, MSH6 y\nPMS2, HER2. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nPROTOCOLO CAP PARA REPORTE DE INESTABILIDAD MICROSATELITAL EN PROTEÍNAS MMR\nSitio del espécimen: colon rectosigmoide\nResultado de MLH1: expresión nuclear intacta \nResultado de MSH2: expresión nuclear intacta\nResultado de MSH6: expresión nuclear intacta\nResultado de PMS2: expresión nuclear intacta (hay marcación citoplasmática patrón punteado y\nnuclear moteado)\nRECEPTORES ESTROGENOS. HER2: NEGATIVO 1+\nInterpretación de las proteínas MMR: no hay pérdida de la expresión nuclear en las proteínas\nMMR: no hay evidencia de reparación deficiente de los desajustes (baja probabilidad de MSI-H)\nInterpretación de inestabilidad micro satelital: MSI-estable (MSS)\nDIAGNÓSTICO\nColon izquierdo. Hemicolectomía izquierda. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA BIEN DIFERENCIADO.\n- PATRÓN MICROSATELITAL ESTABLE: SIN PERDIDA DE LA EXPRESIÓN NUCLEAR. MSH2 PSM2\nMLH1 MSH6.\n- HER-2: NEGATIVO (SCORE 1+).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 93 ---\nIHQ250260\nCopia Pag. 2 de 2\nNombre : MARIA REINELDA MEJIA DE\nRESTREPO\nN. peticion : IHQ250260\nN.Identificación : CC. 29737988\nGenero : FEMENINO\nEdad : 77 años 11 meses 26 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 12/03/2025\nFecha Informe : 17/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 94 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MLH1, MSH2, MSH6, PMS2, HER2",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional proveniente de CLÌNICA COLOMBIA. como “248262” que corresponde a “hemicolectomía izquierda” y con diagnóstico de “ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE”. Previa revisión de la histología se realizan niveles histológicos para tinción con: MLH1, MSH2, MSH6 y PMS2, HER2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. PROTOCOLO CAP PARA REPORTE DE INESTABILIDAD MICROSATELITAL EN PROTEÍNAS MMR Sitio del espécimen: colon rectosigmoide Resultado de MLH1: expresión nuclear intacta Resultado de MSH2: expresión nuclear intacta Resultado de MSH6: expresión nuclear intacta Resultado de PMS2: expresión nuclear intacta (hay marcación citoplasmática patrón punteado y nuclear moteado) RECEPTORES ESTROGENOS. HER2: NEGATIVO 1+ Interpretación de las proteínas MMR: no hay pérdida de la expresión nuclear en las proteínas MMR: no hay evidencia de reparación deficiente de los desajustes (baja probabilidad de MSI-H) Interpretación de inestabilidad micro satelital: MSI-estable (MSS)",
+      "Descripcion Diagnostico": "Colon izquierdo. Hemicolectomía izquierda. Estudio de inmunohistoquímica: - ADENOCARCINOMA BIEN DIFERENCIADO. - PATRÓN MICROSATELITAL ESTABLE: SIN PERDIDA DE LA EXPRESIÓN NUCLEAR. MSH2 PSM2 MLH1 MSH6. - HER-2: NEGATIVO (SCORE 1+): 12/03/2025",
+      "IHQ_ORGANO": "COLON IZQUIERDO",
+      "Organo": "BX COLON DESCENDENTE",
+      "Diagnostico Coloracion": "ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE",
+      "Diagnostico Principal": "ADENOCARCINOMA BIEN DIFERENCIADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO 1+",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA (HAY MARCACIÓN CITOPLASMÁTICA PATRÓN PUNTEADO Y)",
+      "IHQ_HER2": "NEGATIVO (SCORE 1+)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 175,
+      "campos_vacios": 135,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Colon izquierdo. Hemicolectomía izquierda. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA BIEN DIFERENCIADO.\n- PATRÓN MICROSATELITAL ESTABLE: SIN PERDIDA DE LA EXPRESIÓN NUCLEAR. MSH2 PSM2\nMLH1 MSH6.\n- HER-2: NEGATIVO (SCORE 1+): 12/03/2025",
+      "valor_corregido": "Colon izquierdo. Hemicolectomía izquierda. Estudio de inmunohistoquímica: - ADENOCARCINOMA BIEN DIFERENCIADO. - PATRÓN MICROSATELITAL ESTABLE: SIN PERDIDA DE LA EXPRESIÓN NUCLEAR. MSH2 PSM2 MLH1 MSH6. - HER-2: NEGATIVO (SCORE 1+): 12/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250260",
+      "timestamp": "2026-01-28T12:07:56.801103"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional proveniente de CLÌNICA COLOMBIA. como “248262” que corresponde a “hemicolectomía izquierda” y con diagnóstico de “ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE”. Previa revisión de la histología se realizan niveles histológicos para tinción con: MLH1, MSH2, MSH6 y PMS2, HER2.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional proveniente de CLÌNICA COLOMBIA. como \"248262\" que corresponde a \"hemicolectomía izquierda\" y con diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE\". Previa revisión de la histología se realizan niveles histológicos para tinción con: MLH1, MSH2, MSH6 y PMS2, HER2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250260",
+      "timestamp": "2026-01-28T12:07:56.801110"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 53
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "session_id": "IHQ250067_20251219_052627",
+  "numero_peticion": "IHQ250067",
+  "timestamp": "2025-12-19T05:26:27.369697",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250067\nCopia Pag. 1 de 2\nNombre : RUBEN DARIO ESCOBAR ORTIZ\nN. peticion : IHQ250067\nN.Identificación : CC. 14884660\nGenero : MASCULINO\nEdad : 63 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 22/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500404 que\ncorresponde a \" biopsia de pulmón izquierdo\" consiste en dos bloques de parafina y dos lámina\ncoloreadas con Hematoxilina - Eosina con diagnostico de \"CARCINOMA EPIDERMOIDE MAL\nDIFERENCIADO. (ANTECEDENTE DE CARICNOMA DE AMIGDALA)\". Previa valoración de la\ncoloración básica se solicitan los siguiente biomarcadores al bloque 2: p16 y p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nLa lesión neoplásica maligna con rasgos escamoides presenta inmunorreactividad nuclear fuerte\ny difusa para p40 con expresión positiva en bloque para p16.\nDIAGNÓSTICO\nPulmón izquierdo. Lesión. Biopsia. Estudio de inmunohistoquímica.\nCARCINOMA EPIDERMOIDE MAL DIFERENCIADO, p16 POSITIVO.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---\nIHQ250067\nCopia Pag. 2 de 2\nNombre : RUBEN DARIO ESCOBAR ORTIZ\nN. peticion : IHQ250067\nN.Identificación : CC. 14884660\nGenero : MASCULINO\nEdad : 63 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 22/01/2025\nFecha Informe : 27/01/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3125,
+      "reduccion_porcentaje": 98.33
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250067",
+      "caso_num": 14,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "RUBEN DARIO ESCOBAR ORTIZ",
+      "numero_peticion": "IHQ250067",
+      "identificacion": "14884660",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "63",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "CIRUGIA HOMBRES",
+      "fecha_ingreso": "22/01/2025",
+      "fecha_informe": "27/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250067",
+      "N. de identificación": "14884660",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CIRUGIA HOMBRES",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "22/01/2025",
+      "Fecha Informe": "27/01/2025",
+      "nombres": "RUBEN DARIO",
+      "Primer nombre": "RUBEN",
+      "Segundo nombre": "DARIO",
+      "apellidos": "ESCOBAR ORTIZ",
+      "Primer apellido": "ESCOBAR",
+      "Segundo apellido": "ORTIZ",
+      "nombre_formal": "ESCOBAR ORTIZ, RUBEN DARIO",
+      "diagnostico": "Pulmón izquierdo. Lesión. Biopsia. Estudio de inmunohistoquímica. CARCINOMA EPIDERMOIDE MAL DIFERENCIADO, P16 POSITIVO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: La lesión neoplásica maligna con rasgos escamoides presenta inmunorreactividad nuclear fuerte y difusa para P40 con expresión positiva en bloque para P16.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500404 que corresponde a \" biopsia de pulmón izquierdo\" consiste en dos bloques de parafina y dos lámina coloreadas con Hematoxilina - Eosina con diagnostico de \"CARCINOMA EPIDERMOIDE MAL DIFERENCIADO. (ANTECEDENTE DE CARICNOMA DE AMIGDALA)\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al bloque 2: P16 y P40.",
+      "ihq_organo": "PULMÓN IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PULMÓN IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "p16": "POSITIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2025-12-19T05:26:27.525560",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250067\nCopia Pag. 1 de 2\nNombre : RUBEN DARIO ESCOBAR ORTIZ\nN. peticion : IHQ250067\nN.Identificación : CC. 14884660\nGenero : MASCULINO\nEdad : 63 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 22/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500404 que\ncorresponde a \" biopsia de pulmón izquierdo\" consiste en dos bloques de parafina y dos lámina\ncoloreadas con Hematoxilina - Eosina con diagnostico de \"CARCINOMA EPIDERMOIDE MAL\nDIFERENCIADO. (ANTECEDENTE DE CARICNOMA DE AMIGDALA)\". Previa valoración de la\ncoloración básica se solicitan los siguiente biomarcadores al bloque 2: p16 y p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nLa lesión neoplásica maligna con rasgos escamoides presenta inmunorreactividad nuclear fuerte\ny difusa para p40 con expresión positiva en bloque para p16.\nDIAGNÓSTICO\nPulmón izquierdo. Lesión. Biopsia. Estudio de inmunohistoquímica.\nCARCINOMA EPIDERMOIDE MAL DIFERENCIADO, p16 POSITIVO.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---\nIHQ250067\nCopia Pag. 2 de 2\nNombre : RUBEN DARIO ESCOBAR ORTIZ\nN. peticion : IHQ250067\nN.Identificación : CC. 14884660\nGenero : MASCULINO\nEdad : 63 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 22/01/2025\nFecha Informe : 27/01/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500404 que corresponde a \" biopsia de pulmón izquierdo\" consiste en dos bloques de parafina y dos lámina coloreadas con Hematoxilina - Eosina con diagnostico de \"CARCINOMA EPIDERMOIDE MAL DIFERENCIADO. (ANTECEDENTE DE CARICNOMA DE AMIGDALA)\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al bloque 2: p16 y p40.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: La lesión neoplásica maligna con rasgos escamoides presenta inmunorreactividad nuclear fuerte y difusa para p40 con expresión positiva en bloque para p16.",
+      "Descripcion Diagnostico": "Pulmón izquierdo. Lesión. Biopsia. Estudio de inmunohistoquímica. CARCINOMA EPIDERMOIDE MAL DIFERENCIADO, P16 POSITIVO.",
+      "IHQ_ORGANO": "PULMÓN IZQUIERDO",
+      "Organo": "BX PULMON IZQUIERDO",
+      "Diagnostico Coloracion": "CARCINOMA EPIDERMOIDE MAL DIFERENCIADO. (ANTECEDENTE DE CARICNOMA DE AMIGDALA)",
+      "Diagnostico Principal": "CARCINOMA EPIDERMOIDE MAL DIFERENCIADO, P16 POSITIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 120,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 23.57
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 120,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón izquierdo. Lesión. Biopsia. Estudio de inmunohistoquímica.\nCARCINOMA EPIDERMOIDE MAL DIFERENCIADO, p16 POSITIVO.",
+      "valor_corregido": "Pulmón izquierdo. Lesión. Biopsia. Estudio de inmunohistoquímica. CARCINOMA EPIDERMOIDE MAL DIFERENCIADO, P16 POSITIVO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250067",
+      "timestamp": "2025-12-19T05:26:27.525283"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500404 que corresponde a \" biopsia de pulmón izquierdo\" consiste en dos bloques de parafina y dos lámina coloreadas con Hematoxilina - Eosina con diagnostico de \"CARCINOMA EPIDERMOIDE MAL DIFERENCIADO. (ANTECEDENTE DE CARICNOMA DE AMIGDALA)\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al bloque 2: p16 y p40.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500404 que corresponde a \" biopsia de pulmón izquierdo\" consiste en dos bloques de parafina y dos lámina coloreadas con Hematoxilina - Eosina con diagnostico de \"CARCINOMA EPIDERMOIDE MAL DIFERENCIADO. (ANTECEDENTE DE CARICNOMA DE AMIGDALA)\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al bloque 2: P16 y P40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250067",
+      "timestamp": "2025-12-19T05:26:27.525290"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: La lesión neoplásica maligna con rasgos escamoides presenta inmunorreactividad nuclear fuerte y difusa para p40 con expresión positiva en bloque para p16.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: La lesión neoplásica maligna con rasgos escamoides presenta inmunorreactividad nuclear fuerte y difusa para P40 con expresión positiva en bloque para P16.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250067",
+      "timestamp": "2025-12-19T05:26:27.525292"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 50
+  }
+}

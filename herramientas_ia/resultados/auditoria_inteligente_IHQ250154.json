@@ -1,0 +1,141 @@
+{
+  "numero_caso": "IHQ250154",
+  "caso_num": 44,
+  "total_casos": 49,
+  "timestamp": "2026-01-07T10:54:19.746989",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 16,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "LOS HALLZGOS MORFOLOGICOS FAVORECEN LESIÓN NEOPLASICA DE TIPO CARCINOSARCOMA",
+      "mensaje": "Correcto (similitud parcial)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "CARCINOMA INVASIVO EN PATRÓN PAPILAR Y SÓLIDO DE POSIBLE ORIGEN UROTERIAL VS TRACTO GENITAL FEMENINO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 90%, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67",
+        "RE",
+        "RP"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "WARNING",
+      "mensaje": "5 biomarcadores extras en BD",
+      "total_solicitado_ocr": 12,
+      "total_solicitado_bd": 17,
+      "estudios_ocr": [
+        "GATA3",
+        "Receptor de Progesterona",
+        "DESMINA",
+        "MIOGENINA",
+        "P16",
+        "P53",
+        "Ki-67",
+        "P40",
+        "CK7",
+        "CK20",
+        "CKA E1E2",
+        "WT1"
+      ],
+      "estudios_bd": [
+        "GATA3",
+        "Receptor de Progesterona",
+        "DESMINA",
+        "MIOGENINA",
+        "P16",
+        "P53",
+        "Ki-67",
+        "P40",
+        "CK7",
+        "CK20",
+        "CKA E1E2",
+        "WT1",
+        "Receptor de Estrógeno",
+        "CKAE1AE3",
+        "PAX8",
+        "DESMIN",
+        "MYOGENIN"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "Receptor de Estrógeno",
+        "CKAE1AE3",
+        "PAX8",
+        "DESMIN",
+        "MYOGENIN"
+      ],
+      "mapeados": 12,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "CÉRVIX"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

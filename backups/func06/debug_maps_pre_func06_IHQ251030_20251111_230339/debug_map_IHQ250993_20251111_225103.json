@@ -1,0 +1,166 @@
+{
+  "session_id": "IHQ250993_20251111_225103",
+  "numero_peticion": "IHQ250993",
+  "timestamp": "2025-11-11T22:51:03.301688",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250993\nCopia Pag. 1 de 2\nNombre : VALERIA IDROBO LOPEZ\nN. peticion : IHQ250993\nN.Identificación : TI. 1114836996\nGenero : MASCULINO\nEdad : 9 años 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : NATHALIE VALENCIA AMAYA\nServicio : PEDIATRIA ANHELO DE VIDA\nFecha Ingreso : 10/09/2025\nFecha Informe : 16/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR DEL III VENTRICULO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2510599 el cual corresponde a \"tumor del tercer ventrículo\" con\ndiagnóstico de \"LESIÓN NEOPLÁSICA DE ORIGEN GLIAL A CLASIFICAR\" por lo que se solicita marcación\npara GFAP, IDH, ATRX, p53, ki67 y CKAE1E3.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nEn los niveles realizados se observa parénquima cerebral con aumento de la densidad celular,\nirregularidad de los núcleos e hipercromacia. Esta lesión glial es positiva de manera difusa para GFAP y\nnegativa para CKAE1E3. Sin marcación para IDH (no mutado), sin pérdida de la expresión de ATRX ni\nsobreexpresión de p53. Índice de proliferación ki67 del 3%.\nDIAGNÓSTICO\n Tercer ventrículo. Tumor. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN TUMOR GLIAL DIFUSO DE\nBAJO GRADO (TIPO PEDIÁTRICO).\nIDH NO MUTADO.\nATRX NO MUTADO.\nP53 NO SOBREEXPRESADO.\nCOMENTARIOS\nLos hallazgos en esta pequeña muestra pueden corresponder a un glioma difuso de bajo grado que en la\npoblación pediátrica requiere caracterización molecular para una mejor conclusión (mutación de\nhistonas, BRAF, etc). Sin embargo es posible que la poca disponibilidad de estos estudios, requiera de\nuna correlación estricta por parte del médico tratante con los datos clínicos completos y estudios\nimagenológicos. \nCaso comentado con el doctor Diego Vargas, patólogo.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---\nIHQ250993\nCopia Pag. 2 de 2\nNombre : VALERIA IDROBO LOPEZ\nN. peticion : IHQ250993\nN.Identificación : TI. 1114836996\nGenero : MASCULINO\nEdad : 9 años 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : NATHALIE VALENCIA AMAYA\nServicio : PEDIATRIA ANHELO DE VIDA\nFecha Ingreso : 10/09/2025\nFecha Informe : 16/09/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3814,
+      "reduccion_porcentaje": 98.03
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250993",
+      "caso_num": 13,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GFAP": "POSITIVO",
+      "nombre_completo": "VALERIA IDROBO LOPEZ",
+      "numero_peticion": "IHQ250993",
+      "identificacion": "1114836996",
+      "tipo_documento": "TI",
+      "Genero": "MASCULINO",
+      "Edad": "9",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "NATHALIE VALENCIA AMAYA",
+      "servicio": "PEDIATRIA ANHELO DE VIDA",
+      "fecha_ingreso": "10/09/2025",
+      "fecha_informe": "16/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250993",
+      "N. de identificación": "1114836996",
+      "Tipo de documento": "TI",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "PEDIATRIA ANHELO DE VIDA",
+      "Médico tratante": "NATHALIE VALENCIA AMAYA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "10/09/2025",
+      "Fecha Informe": "16/09/2025",
+      "nombres": "VALERIA IDROBO",
+      "Primer nombre": "VALERIA",
+      "Segundo nombre": "IDROBO",
+      "apellidos": "LOPEZ",
+      "Primer apellido": "LOPEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "LOPEZ, VALERIA IDROBO",
+      "diagnostico": "Tercer ventrículo. Tumor. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN TUMOR GLIAL DIFUSO DE BAJO GRADO (TIPO PEDIÁTRICO). IDH NO MUTADO. ATRX NO MUTADO. P53 NO SOBREEXPRESADO.",
+      "descripcion_microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los niveles realizados se observa parénquima cerebral con aumento de la densidad celular, irregularidad de los núcleos e hipercromacia. Esta lesión glial es positiva de manera difusa para GFAP y negativa para CKAE1E3. Sin marcación para IDH (no mutado), sin pérdida de la expresión de ATRX ni sobreexpresión de p53. Índice de proliferación KI-67 del 3%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2510599 el cual corresponde a \"tumor del tercer ventrículo\" con diagnóstico de \"LESIÓN NEOPLÁSICA DE ORIGEN GLIAL A CLASIFICAR\" por lo que se solicita marcación para GFAP, IDH, ATRX, p53, KI-67 y CKAE1E3.",
+      "ihq_organo": "TERCER VENTRÍCULO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Los hallazgos en esta pequeña muestra pueden corresponder a un glioma difuso de bajo grado que en la población pediátrica requiere caracterización molecular para una mejor conclusión (mutación de histonas, BRAF, etc). Sin embargo es posible que la poca disponibilidad de estos estudios, requiera de una correlación estricta por parte del médico tratante con los datos clínicos completos y estudios imagenológicos. Caso comentado con el doctor Diego Vargas, patólogo. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 27 --- IHQ250993 Copia Pag. 2 de 2 Nombre : VALERIA IDROBO LOPEZ N. peticion : IHQ250993 N.Identificación : TI. 1114836996 Genero : MASCULINO Edad : 9 años 15 dias EPS : EMSSANAR S.A.S Médico tratante : NATHALIE VALENCIA AMAYA Servicio : PEDIATRIA ANHELO DE VIDA Fecha Ingreso : 10/09/2025 Fecha Informe : 16/09/2025",
+      "IHQ_ORGANO": "TERCER VENTRÍCULO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: 3%",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_KI-67": "3%",
+      "IHQ_P53": "POSITIVO (SOBREEXPRESIÓN)",
+      "IHQ_ATRX": "NEGATIVO",
+      "extraction_timestamp": "2025-11-11T22:51:03.446112",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250993\nCopia Pag. 1 de 2\nNombre : VALERIA IDROBO LOPEZ\nN. peticion : IHQ250993\nN.Identificación : TI. 1114836996\nGenero : MASCULINO\nEdad : 9 años 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : NATHALIE VALENCIA AMAYA\nServicio : PEDIATRIA ANHELO DE VIDA\nFecha Ingreso : 10/09/2025\nFecha Informe : 16/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR DEL III VENTRICULO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2510599 el cual corresponde a \"tumor del tercer ventrículo\" con\ndiagnóstico de \"LESIÓN NEOPLÁSICA DE ORIGEN GLIAL A CLASIFICAR\" por lo que se solicita marcación\npara GFAP, IDH, ATRX, p53, ki67 y CKAE1E3.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nEn los niveles realizados se observa parénquima cerebral con aumento de la densidad celular,\nirregularidad de los núcleos e hipercromacia. Esta lesión glial es positiva de manera difusa para GFAP y\nnegativa para CKAE1E3. Sin marcación para IDH (no mutado), sin pérdida de la expresión de ATRX ni\nsobreexpresión de p53. Índice de proliferación ki67 del 3%.\nDIAGNÓSTICO\n Tercer ventrículo. Tumor. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN TUMOR GLIAL DIFUSO DE\nBAJO GRADO (TIPO PEDIÁTRICO).\nIDH NO MUTADO.\nATRX NO MUTADO.\nP53 NO SOBREEXPRESADO.\nCOMENTARIOS\nLos hallazgos en esta pequeña muestra pueden corresponder a un glioma difuso de bajo grado que en la\npoblación pediátrica requiere caracterización molecular para una mejor conclusión (mutación de\nhistonas, BRAF, etc). Sin embargo es posible que la poca disponibilidad de estos estudios, requiera de\nuna correlación estricta por parte del médico tratante con los datos clínicos completos y estudios\nimagenológicos. \nCaso comentado con el doctor Diego Vargas, patólogo.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---\nIHQ250993\nCopia Pag. 2 de 2\nNombre : VALERIA IDROBO LOPEZ\nN. peticion : IHQ250993\nN.Identificación : TI. 1114836996\nGenero : MASCULINO\nEdad : 9 años 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : NATHALIE VALENCIA AMAYA\nServicio : PEDIATRIA ANHELO DE VIDA\nFecha Ingreso : 10/09/2025\nFecha Informe : 16/09/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, GFAP, Ki-67, P53",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2510599 el cual corresponde a \"tumor del tercer ventrículo\" con diagnóstico de \"LESIÓN NEOPLÁSICA DE ORIGEN GLIAL A CLASIFICAR\" por lo que se solicita marcación para GFAP, IDH, ATRX, p53, ki67 y CKAE1E3.",
+      "Descripcion microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los niveles realizados se observa parénquima cerebral con aumento de la densidad celular, irregularidad de los núcleos e hipercromacia. Esta lesión glial es positiva de manera difusa para GFAP y negativa para CKAE1E3. Sin marcación para IDH (no mutado), sin pérdida de la expresión de ATRX ni sobreexpresión de p53. Índice de proliferación ki67 del 3%.",
+      "Descripcion Diagnostico": "Tercer ventrículo. Tumor. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN TUMOR GLIAL DIFUSO DE BAJO GRADO (TIPO PEDIÁTRICO). IDH NO MUTADO. ATRX NO MUTADO. P53 NO SOBREEXPRESADO.",
+      "IHQ_ORGANO": "TERCER VENTRÍCULO",
+      "Organo": "TUMOR DEL III VENTRICULO",
+      "Diagnostico Coloracion": "LESIÓN NEOPLÁSICA DE ORIGEN GLIAL A CLASIFICAR",
+      "Diagnostico Principal": "GLIOMA DIFUSO DE BAJO GRADO QUE EN LA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 3%",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_KI-67": "3%",
+      "IHQ_P53": "POSITIVO (SOBREEXPRESIÓN)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 109,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 26.35
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 109,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Tercer ventrículo. Tumor. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN TUMOR GLIAL DIFUSO DE\nBAJO GRADO (TIPO PEDIÁTRICO).\nIDH NO MUTADO.\nATRX NO MUTADO.\nP53 NO SOBREEXPRESADO.",
+      "valor_corregido": "Tercer ventrículo. Tumor. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN TUMOR GLIAL DIFUSO DE BAJO GRADO (TIPO PEDIÁTRICO). IDH NO MUTADO. ATRX NO MUTADO. P53 NO SOBREEXPRESADO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250993",
+      "timestamp": "2025-11-11T22:51:03.445825"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2510599 el cual corresponde a \"tumor del tercer ventrículo\" con\ndiagnóstico de \"LESIÓN NEOPLÁSICA DE ORIGEN GLIAL A CLASIFICAR\" por lo que se solicita marcación\npara GFAP, IDH, ATRX, p53, ki67 y CKAE1E3.",
+      "valor_corregido": "Se realizan niveles al bloque M2510599 el cual corresponde a \"tumor del tercer ventrículo\" con diagnóstico de \"LESIÓN NEOPLÁSICA DE ORIGEN GLIAL A CLASIFICAR\" por lo que se solicita marcación para GFAP, IDH, ATRX, p53, KI-67 y CKAE1E3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250993",
+      "timestamp": "2025-11-11T22:51:03.445832"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los niveles realizados se observa parénquima cerebral con aumento de la densidad celular, irregularidad de los núcleos e hipercromacia. Esta lesión glial es positiva de manera difusa para GFAP y negativa para CKAE1E3. Sin marcación para IDH (no mutado), sin pérdida de la expresión de ATRX ni sobreexpresión de p53. Índice de proliferación ki67 del 3%.",
+      "valor_corregido": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los niveles realizados se observa parénquima cerebral con aumento de la densidad celular, irregularidad de los núcleos e hipercromacia. Esta lesión glial es positiva de manera difusa para GFAP y negativa para CKAE1E3. Sin marcación para IDH (no mutado), sin pérdida de la expresión de ATRX ni sobreexpresión de p53. Índice de proliferación KI-67 del 3%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250993",
+      "timestamp": "2025-11-11T22:51:03.445835"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos en esta pequeña muestra pueden corresponder a un glioma difuso de bajo grado que en la\npoblación pediátrica requiere caracterización molecular para una mejor conclusión (mutación de\nhistonas, BRAF, etc). Sin embargo es posible que la poca disponibilidad de estos estudios, requiera de\nuna correlación estricta por parte del médico tratante con los datos clínicos completos y estudios\nimagenológicos. \nCaso comentado con el doctor Diego Vargas, patólogo.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---\nIHQ250993\nCopia Pag. 2 de 2\nNombre : VALERIA IDROBO LOPEZ\nN. peticion : IHQ250993\nN.Identificación : TI. 1114836996\nGenero : MASCULINO\nEdad : 9 años 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : NATHALIE VALENCIA AMAYA\nServicio : PEDIATRIA ANHELO DE VIDA\nFecha Ingreso : 10/09/2025\nFecha Informe : 16/09/2025",
+      "valor_corregido": "Los hallazgos en esta pequeña muestra pueden corresponder a un glioma difuso de bajo grado que en la población pediátrica requiere caracterización molecular para una mejor conclusión (mutación de histonas, BRAF, etc). Sin embargo es posible que la poca disponibilidad de estos estudios, requiera de una correlación estricta por parte del médico tratante con los datos clínicos completos y estudios imagenológicos. Caso comentado con el doctor Diego Vargas, patólogo. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 27 --- IHQ250993 Copia Pag. 2 de 2 Nombre : VALERIA IDROBO LOPEZ N. peticion : IHQ250993 N.Identificación : TI. 1114836996 Genero : MASCULINO Edad : 9 años 15 dias EPS : EMSSANAR S.A.S Médico tratante : NATHALIE VALENCIA AMAYA Servicio : PEDIATRIA ANHELO DE VIDA Fecha Ingreso : 10/09/2025 Fecha Informe : 16/09/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250993",
+      "timestamp": "2025-11-11T22:51:03.445836"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 51
+  }
+}

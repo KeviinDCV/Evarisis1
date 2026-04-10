@@ -1,0 +1,147 @@
+{
+  "session_id": "IHQ250295_20260202_234257",
+  "numero_peticion": "IHQ250295",
+  "timestamp": "2026-02-02T23:42:57.475577",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250295\nCopia Pag. 1 de 2\nNombre : ALEYDA VARGAS VIVAS\nN. peticion : IHQ250295\nN.Identificación : CC. 66851860\nGenero : FEMENINO\nEdad : 52 años 5 meses 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ANDRES CAMILO SARMIENTO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 21/03/2025\nFecha Informe : 27/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION CUPULA VAGINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica de caso correspondiente a biopsia de lesión en\ncúpula vaginal, llega al laboratorio dos bloques de parafina y dos laminas de H&E con rotulo numero\nP241212577, con diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE\nCON NECROSIS TUMORAL EXTENSA\".\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLas células tumorales son positivas de manera fuerte y difusa para CK19 y CDX2 con positividad débil y\nfocal CK20, siendo dicha lesión adenocarcinomatosa negativa para CK7, GATA-3, PAX-8, Receptor de\nEstrógeno y WT1.\nLa expresión para p16 es en mosaico y p53 sin expresión. \nDIAGNÓSTICO\nCúpula vaginal. Lesión. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON ADENOCARCINOMA METASTASICO DE ORIGEN\nGASTROINTESTINAL.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 58 ---\nIHQ250295\nCopia Pag. 2 de 2\nNombre : ALEYDA VARGAS VIVAS\nN. peticion : IHQ250295\nN.Identificación : CC. 66851860\nGenero : FEMENINO\nEdad : 52 años 5 meses 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ANDRES CAMILO SARMIENTO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 21/03/2025\nFecha Informe : 27/03/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3270,
+      "reduccion_porcentaje": 98.13
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250295",
+      "caso_num": 31,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK19": "POSITIVO (fuerte y difusa)",
+      "IHQ_CDX2": "POSITIVO (fuerte y difusa)",
+      "IHQ_CK20": "POSITIVO (fuerte y difusa y focal)",
+      "IHQ_CK7": "NEGATIVO",
+      "nombre_completo": "ALEYDA VARGAS VIVAS",
+      "numero_peticion": "IHQ250295",
+      "identificacion": "66851860",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "52",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "ANDRES CAMILO SARMIENTO",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "21/03/2025",
+      "fecha_informe": "27/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250295",
+      "N. de identificación": "66851860",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "ANDRES CAMILO SARMIENTO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/03/2025",
+      "Fecha Informe": "27/03/2025",
+      "nombres": "ALEYDA",
+      "Primer nombre": "ALEYDA",
+      "Segundo nombre": "",
+      "apellidos": "VARGAS VIVAS",
+      "Primer apellido": "VARGAS",
+      "Segundo apellido": "VIVAS",
+      "nombre_formal": "VARGAS VIVAS, ALEYDA",
+      "diagnostico": "Cúpula vaginal. Lesión. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON ADENOCARCINOMA METASTASICO DE ORIGEN GASTROINTESTINAL.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales son positivas de manera fuerte y difusa para CK19 y CDX2 con positividad débil y focal CK20, siendo dicha lesión adenocarcinomatosa negativa para CK7, GATA-3, PAX-8, Receptor de Estrógeno y WT1. La expresión para p16 es en mosaico y p53 sin expresión.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica de caso correspondiente a biopsia de lesión en cúpula vaginal, llega al laboratorio dos bloques de parafina y dos laminas de H&E con rotulo numero P241212577, con diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE CON NECROSIS TUMORAL EXTENSA\".",
+      "ihq_organo": "CÚPULA VAGINAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CÚPULA VAGINAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "positivo para: negativo para CK7, GATA-3, PAX-8, Receptor de Estrógeno y WT1 / Negativo para CK7",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "extraction_timestamp": "2026-02-02T23:42:57.793220",
+      "extractor_version": "6.5.77_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250295\nCopia Pag. 1 de 2\nNombre : ALEYDA VARGAS VIVAS\nN. peticion : IHQ250295\nN.Identificación : CC. 66851860\nGenero : FEMENINO\nEdad : 52 años 5 meses 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ANDRES CAMILO SARMIENTO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 21/03/2025\nFecha Informe : 27/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION CUPULA VAGINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica de caso correspondiente a biopsia de lesión en\ncúpula vaginal, llega al laboratorio dos bloques de parafina y dos laminas de H&E con rotulo numero\nP241212577, con diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE\nCON NECROSIS TUMORAL EXTENSA\".\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLas células tumorales son positivas de manera fuerte y difusa para CK19 y CDX2 con positividad débil y\nfocal CK20, siendo dicha lesión adenocarcinomatosa negativa para CK7, GATA-3, PAX-8, Receptor de\nEstrógeno y WT1.\nLa expresión para p16 es en mosaico y p53 sin expresión. \nDIAGNÓSTICO\nCúpula vaginal. Lesión. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON ADENOCARCINOMA METASTASICO DE ORIGEN\nGASTROINTESTINAL.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 58 ---\nIHQ250295\nCopia Pag. 2 de 2\nNombre : ALEYDA VARGAS VIVAS\nN. peticion : IHQ250295\nN.Identificación : CC. 66851860\nGenero : FEMENINO\nEdad : 52 años 5 meses 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ANDRES CAMILO SARMIENTO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 21/03/2025\nFecha Informe : 27/03/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CDX2, CK19, CK20, CK7, CKAE1AE3, PAX8, Receptor de Estrógeno",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica de caso correspondiente a biopsia de lesión en cúpula vaginal, llega al laboratorio dos bloques de parafina y dos laminas de H&E con rotulo numero P241212577, con diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE CON NECROSIS TUMORAL EXTENSA\".",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales son positivas de manera fuerte y difusa para CK19 y CDX2 con positividad débil y focal CK20, siendo dicha lesión adenocarcinomatosa negativa para CK7, GATA-3, PAX-8, Receptor de Estrógeno y WT1. La expresión para p16 es en mosaico y p53 sin expresión.",
+      "Descripcion Diagnostico": "Cúpula vaginal. Lesión. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON ADENOCARCINOMA METASTASICO DE ORIGEN GASTROINTESTINAL.",
+      "IHQ_ORGANO": "CÚPULA VAGINAL",
+      "Organo": "LESION CUPULA VAGINAL",
+      "Diagnostico Coloracion": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE CON NECROSIS TUMORAL EXTENSA",
+      "Diagnostico Principal": "HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON ADENOCARCINOMA METASTASICO DE ORIGEN GASTROINTESTINAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "positivo para: negativo para CK7, GATA-3, PAX-8, Receptor de Estrógeno y WT1 / Negativo para CK7",
+      "IHQ_CDX2": "POSITIVO (fuerte y difusa)",
+      "IHQ_CK19": "POSITIVO (fuerte y difusa)",
+      "IHQ_CK20": "POSITIVO (fuerte y difusa y focal)",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 177,
+      "campos_vacios": 136,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cúpula vaginal. Lesión. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON ADENOCARCINOMA METASTASICO DE ORIGEN\nGASTROINTESTINAL.",
+      "valor_corregido": "Cúpula vaginal. Lesión. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON ADENOCARCINOMA METASTASICO DE ORIGEN GASTROINTESTINAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250295",
+      "timestamp": "2026-02-02T23:42:57.792887"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 52
+  }
+}

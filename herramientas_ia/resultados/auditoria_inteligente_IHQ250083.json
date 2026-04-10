@@ -1,0 +1,317 @@
+{
+  "numero_caso": "IHQ250083",
+  "caso_num": 30,
+  "total_casos": 50,
+  "timestamp": "2025-12-19T04:50:11.905993",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 2,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "ERROR",
+      "mensaje": "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
+      "valor_bd": "NO APLICA",
+      "valor_ocr": "ADENOCARCINOMA METASTASICO",
+      "patron_encontrado": "bloque M + diagnóstico de \"...\"",
+      "sugerencia": "Verificar medical_extractor.extract_diagnostico_coloracion()"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 1,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "NAPSIN"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "NAPSIN"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [
+      "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica en material procedente de esta institución con rótulo M24..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "CEREBRO, REGIÓN PARIETO OCCIPITAL DERECHA"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 1
+  },
+  "resumen": {},
+  "_datos_bd": {},
+  "_campos_criticos": {
+    "IHQ_ESTUDIOS_SOLICITADOS": "NAPSIN",
+    "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica en material procedente de esta institución con rótulo M2410767 que corresponde a biopsia de región parieto occipital derecha con",
+    "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales tienen marcación positiva y difusa para TTF1, Napsina A. Positividad focal para CK7. Negativo para para CK 20 Y GATA 3. diagnóstico de ADENOCARCINOMA METASTASICO. Se selecciona el bloque 1, para realizar niveles histológicos y marcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3.",
+    "Descripcion Diagnostico": "de ADENOCARCINOMA METASTASICO. Se selecciona el bloque 1, para realizar niveles histológicos y marcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3. DIAGNÓSTICO Cerebro, región parieto occipital derecha. Lesión. (Historia de adenocarcinoma primario pulmonar). Estudio de inmunohistoquimica: ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR",
+    "IHQ_ORGANO": "CEREBRO, REGIÓN PARIETO OCCIPITAL DERECHA",
+    "Organo": "LESION PARIETOOCCIPITAL DERECHA",
+    "Diagnostico Coloracion": "NO APLICA",
+    "Diagnostico Principal": "ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR",
+    "Malignidad": "MALIGNO",
+    "Factor pronostico": "NO APLICA",
+    "IHQ_NAPSIN": ". POSITIVIDAD FOCAL PARA"
+  },
+  "_texto_ocr": "IHQ250083\nCopia Pag. 1 de 2\nNombre : ELIZABETH RODRIGUEZ LERMA\nN. peticion : IHQ250083\nN.Identificación : CC. 31938791\nGenero : FEMENINO\nEdad : 59 años 2 meses 5 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : RADIOTERAPIA\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PARIETOOCCIPITAL\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en material procedente de esta institución con rótulo\nM2410767\nque\ncorresponde\na\nbiopsia\nde\nregión\nparieto\noccipital\nderecha\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales tienen marcación positiva y difusa para TTF1, Napsina A. Positividad focal para\nCK7. Negativo para para CK 20 Y GATA 3.\ndiagnóstico\nde\nADENOCARCINOMA METASTASICO. Se selecciona el bloque 1,\npara realizar niveles histológicos y\nmarcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3.\nDIAGNÓSTICO\nCerebro, región parieto occipital derecha. Lesión. (Historia de adenocarcinoma primario pulmonar).\nEstudio de inmunohistoquimica:\nADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR\nCOMENTARIOS\nSe sugiere correlacionar con historia clínica y estudios de imagenes diagnósticas.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 58 ---\nIHQ250083\nCopia Pag. 2 de 2\nNombre : ELIZABETH RODRIGUEZ LERMA\nN. peticion : IHQ250083\nN.Identificación : CC. 31938791\nGenero : FEMENINO\nEdad : 59 años 2 meses 5 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : RADIOTERAPIA\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---",
+  "_unified": {
+    "nombre_completo": "ELIZABETH RODRIGUEZ LERMA",
+    "numero_peticion": "IHQ250083",
+    "identificacion": "31938791",
+    "tipo_documento": "CC",
+    "Genero": "FEMENINO",
+    "Edad": "59",
+    "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+    "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+    "servicio": "RADIOTERAPIA",
+    "fecha_ingreso": "24/01/2025",
+    "fecha_informe": "04/02/2025",
+    "procedencia": "",
+    "historia_clinica": "",
+    "N. peticion (0. Numero de biopsia)": "IHQ250083",
+    "N. de identificación": "31938791",
+    "Tipo de documento": "CC",
+    "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+    "Servicio": "RADIOTERAPIA",
+    "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+    "Fecha de ingreso (2. Fecha de la muestra)": "24/01/2025",
+    "Fecha Informe": "04/02/2025",
+    "nombres": "ELIZABETH",
+    "Primer nombre": "ELIZABETH",
+    "Segundo nombre": "",
+    "apellidos": "RODRIGUEZ LERMA",
+    "Primer apellido": "RODRIGUEZ",
+    "Segundo apellido": "LERMA",
+    "nombre_formal": "RODRIGUEZ LERMA, ELIZABETH",
+    "diagnostico": "de ADENOCARCINOMA METASTASICO. Se selecciona el bloque 1, para realizar niveles histológicos y marcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3. DIAGNÓSTICO Cerebro, región parieto occipital derecha. Lesión. (Historia de adenocarcinoma primario pulmonar). Estudio de inmunohistoquimica: ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR",
+    "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales tienen marcación positiva y difusa para TTF1, Napsina A. Positividad focal para CK7. Negativo para para CK20 Y GATA 3. diagnóstico de ADENOCARCINOMA METASTASICO. Se selecciona el bloque 1, para realizar niveles histológicos y marcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3.",
+    "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica en material procedente de esta institución con rótulo M2410767 que corresponde a biopsia de región parieto occipital derecha con",
+    "ihq_organo": "CEREBRO, REGIÓN PARIETO OCCIPITAL DERECHA",
+    "malignidad": "MALIGNO",
+    "fecha_toma": "SIN DATO",
+    "responsable_final": "NANCY MEJIA VARGAS",
+    "especialidad_deducida": "PATOLOGIA",
+    "tipo_informe": "INMUNOHISTOQUIMICA",
+    "hospitalizado": "NO",
+    "estudios_solicitados_tabla": "",
+    "procedimiento": "BIOPSIA",
+    "comentarios": "Se sugiere correlacionar con historia clínica y estudios de imagenes diagnósticas.",
+    "IHQ_ORGANO": "CEREBRO, REGIÓN PARIETO OCCIPITAL DERECHA",
+    "Malignidad": "MALIGNO",
+    "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+    "Patologo": "NANCY MEJIA VARGAS",
+    "Factor pronostico": "NO APLICA",
+    "IHQ_NAPSIN": ". POSITIVIDAD FOCAL PARA",
+    "extraction_timestamp": "2025-12-19T04:49:02.828431",
+    "extractor_version": "6.0.9_unified_corrections",
+    "processing_method": "modular_extractors_with_corrections",
+    "_full_text": "IHQ250083\nCopia Pag. 1 de 2\nNombre : ELIZABETH RODRIGUEZ LERMA\nN. peticion : IHQ250083\nN.Identificación : CC. 31938791\nGenero : FEMENINO\nEdad : 59 años 2 meses 5 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : RADIOTERAPIA\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PARIETOOCCIPITAL\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en material procedente de esta institución con rótulo\nM2410767\nque\ncorresponde\na\nbiopsia\nde\nregión\nparieto\noccipital\nderecha\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales tienen marcación positiva y difusa para TTF1, Napsina A. Positividad focal para\nCK7. Negativo para para CK 20 Y GATA 3.\ndiagnóstico\nde\nADENOCARCINOMA METASTASICO. Se selecciona el bloque 1,\npara realizar niveles histológicos y\nmarcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3.\nDIAGNÓSTICO\nCerebro, región parieto occipital derecha. Lesión. (Historia de adenocarcinoma primario pulmonar).\nEstudio de inmunohistoquimica:\nADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR\nCOMENTARIOS\nSe sugiere correlacionar con historia clínica y estudios de imagenes diagnósticas.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 58 ---\nIHQ250083\nCopia Pag. 2 de 2\nNombre : ELIZABETH RODRIGUEZ LERMA\nN. peticion : IHQ250083\nN.Identificación : CC. 31938791\nGenero : FEMENINO\nEdad : 59 años 2 meses 5 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : RADIOTERAPIA\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---"
+  },
+  "_debug_map": {
+    "session_id": "IHQ250083_20251219_044902",
+    "numero_peticion": "IHQ250083",
+    "timestamp": "2025-12-19T04:49:02.673528",
+    "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+    "ocr": {
+      "texto_consolidado": "IHQ250083\nCopia Pag. 1 de 2\nNombre : ELIZABETH RODRIGUEZ LERMA\nN. peticion : IHQ250083\nN.Identificación : CC. 31938791\nGenero : FEMENINO\nEdad : 59 años 2 meses 5 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : RADIOTERAPIA\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PARIETOOCCIPITAL\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en material procedente de esta institución con rótulo\nM2410767\nque\ncorresponde\na\nbiopsia\nde\nregión\nparieto\noccipital\nderecha\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales tienen marcación positiva y difusa para TTF1, Napsina A. Positividad focal para\nCK7. Negativo para para CK 20 Y GATA 3.\ndiagnóstico\nde\nADENOCARCINOMA METASTASICO. Se selecciona el bloque 1,\npara realizar niveles histológicos y\nmarcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3.\nDIAGNÓSTICO\nCerebro, región parieto occipital derecha. Lesión. (Historia de adenocarcinoma primario pulmonar).\nEstudio de inmunohistoquimica:\nADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR\nCOMENTARIOS\nSe sugiere correlacionar con historia clínica y estudios de imagenes diagnósticas.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 58 ---\nIHQ250083\nCopia Pag. 2 de 2\nNombre : ELIZABETH RODRIGUEZ LERMA\nN. peticion : IHQ250083\nN.Identificación : CC. 31938791\nGenero : FEMENINO\nEdad : 59 años 2 meses 5 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : RADIOTERAPIA\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---",
+      "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+      "estadisticas": {
+        "caracteres_totales": 187103,
+        "caracteres_consolidados": 3272,
+        "reduccion_porcentaje": 98.25
+      },
+      "metadata": {
+        "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+        "numero_ihq": "IHQ250083",
+        "caso_num": 30,
+        "total_casos": 50
+      }
+    },
+    "extraccion": {
+      "unified_extractor": {
+        "nombre_completo": "ELIZABETH RODRIGUEZ LERMA",
+        "numero_peticion": "IHQ250083",
+        "identificacion": "31938791",
+        "tipo_documento": "CC",
+        "Genero": "FEMENINO",
+        "Edad": "59",
+        "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+        "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+        "servicio": "RADIOTERAPIA",
+        "fecha_ingreso": "24/01/2025",
+        "fecha_informe": "04/02/2025",
+        "procedencia": "",
+        "historia_clinica": "",
+        "N. peticion (0. Numero de biopsia)": "IHQ250083",
+        "N. de identificación": "31938791",
+        "Tipo de documento": "CC",
+        "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+        "Servicio": "RADIOTERAPIA",
+        "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+        "Fecha de ingreso (2. Fecha de la muestra)": "24/01/2025",
+        "Fecha Informe": "04/02/2025",
+        "nombres": "ELIZABETH",
+        "Primer nombre": "ELIZABETH",
+        "Segundo nombre": "",
+        "apellidos": "RODRIGUEZ LERMA",
+        "Primer apellido": "RODRIGUEZ",
+        "Segundo apellido": "LERMA",
+        "nombre_formal": "RODRIGUEZ LERMA, ELIZABETH",
+        "diagnostico": "de ADENOCARCINOMA METASTASICO. Se selecciona el bloque 1, para realizar niveles histológicos y marcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3. DIAGNÓSTICO Cerebro, región parieto occipital derecha. Lesión. (Historia de adenocarcinoma primario pulmonar). Estudio de inmunohistoquimica: ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR",
+        "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales tienen marcación positiva y difusa para TTF1, Napsina A. Positividad focal para CK7. Negativo para para CK20 Y GATA 3. diagnóstico de ADENOCARCINOMA METASTASICO. Se selecciona el bloque 1, para realizar niveles histológicos y marcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3.",
+        "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica en material procedente de esta institución con rótulo M2410767 que corresponde a biopsia de región parieto occipital derecha con",
+        "ihq_organo": "CEREBRO, REGIÓN PARIETO OCCIPITAL DERECHA",
+        "malignidad": "MALIGNO",
+        "fecha_toma": "SIN DATO",
+        "responsable_final": "NANCY MEJIA VARGAS",
+        "especialidad_deducida": "PATOLOGIA",
+        "tipo_informe": "INMUNOHISTOQUIMICA",
+        "hospitalizado": "NO",
+        "estudios_solicitados_tabla": "",
+        "procedimiento": "BIOPSIA",
+        "comentarios": "Se sugiere correlacionar con historia clínica y estudios de imagenes diagnósticas.",
+        "IHQ_ORGANO": "CEREBRO, REGIÓN PARIETO OCCIPITAL DERECHA",
+        "Malignidad": "MALIGNO",
+        "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+        "Patologo": "NANCY MEJIA VARGAS",
+        "Factor pronostico": "NO APLICA",
+        "IHQ_NAPSIN": ". POSITIVIDAD FOCAL PARA",
+        "extraction_timestamp": "2025-12-19T04:49:02.828431",
+        "extractor_version": "6.0.9_unified_corrections",
+        "processing_method": "modular_extractors_with_corrections",
+        "_full_text": "IHQ250083\nCopia Pag. 1 de 2\nNombre : ELIZABETH RODRIGUEZ LERMA\nN. peticion : IHQ250083\nN.Identificación : CC. 31938791\nGenero : FEMENINO\nEdad : 59 años 2 meses 5 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : RADIOTERAPIA\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PARIETOOCCIPITAL\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en material procedente de esta institución con rótulo\nM2410767\nque\ncorresponde\na\nbiopsia\nde\nregión\nparieto\noccipital\nderecha\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales tienen marcación positiva y difusa para TTF1, Napsina A. Positividad focal para\nCK7. Negativo para para CK 20 Y GATA 3.\ndiagnóstico\nde\nADENOCARCINOMA METASTASICO. Se selecciona el bloque 1,\npara realizar niveles histológicos y\nmarcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3.\nDIAGNÓSTICO\nCerebro, región parieto occipital derecha. Lesión. (Historia de adenocarcinoma primario pulmonar).\nEstudio de inmunohistoquimica:\nADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR\nCOMENTARIOS\nSe sugiere correlacionar con historia clínica y estudios de imagenes diagnósticas.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 58 ---\nIHQ250083\nCopia Pag. 2 de 2\nNombre : ELIZABETH RODRIGUEZ LERMA\nN. peticion : IHQ250083\nN.Identificación : CC. 31938791\nGenero : FEMENINO\nEdad : 59 años 2 meses 5 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : RADIOTERAPIA\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---"
+      }
+    },
+    "base_datos": {
+      "campos_criticos": {
+        "IHQ_ESTUDIOS_SOLICITADOS": "NAPSIN",
+        "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica en material procedente de esta institución con rótulo M2410767 que corresponde a biopsia de región parieto occipital derecha con",
+        "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales tienen marcación positiva y difusa para TTF1, Napsina A. Positividad focal para CK7. Negativo para para CK 20 Y GATA 3. diagnóstico de ADENOCARCINOMA METASTASICO. Se selecciona el bloque 1, para realizar niveles histológicos y marcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3.",
+        "Descripcion Diagnostico": "de ADENOCARCINOMA METASTASICO. Se selecciona el bloque 1, para realizar niveles histológicos y marcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3. DIAGNÓSTICO Cerebro, región parieto occipital derecha. Lesión. (Historia de adenocarcinoma primario pulmonar). Estudio de inmunohistoquimica: ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR",
+        "IHQ_ORGANO": "CEREBRO, REGIÓN PARIETO OCCIPITAL DERECHA",
+        "Organo": "LESION PARIETOOCCIPITAL DERECHA",
+        "Diagnostico Coloracion": "NO APLICA",
+        "Diagnostico Principal": "ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR",
+        "Malignidad": "MALIGNO",
+        "Factor pronostico": "NO APLICA",
+        "IHQ_NAPSIN": ". POSITIVIDAD FOCAL PARA"
+      },
+      "estadisticas": {
+        "total_campos_guardados": 157,
+        "campos_vacios": 122,
+        "campos_completos": 35,
+        "biomarcadores_encontrados": 1,
+        "completitud_porcentaje": 22.29
+      },
+      "columnas_mapeadas": {}
+    },
+    "validacion": {
+      "estadisticas": {
+        "total_campos_vacios": 122,
+        "total_campos_completos": 35
+      },
+      "top_campos_criticos_vacios": [],
+      "warnings": [],
+      "errores": []
+    },
+    "correcciones_aplicadas": [
+      {
+        "tipo": "ortografica",
+        "campo": "diagnostico",
+        "valor_original": "de\nADENOCARCINOMA METASTASICO. Se selecciona el bloque 1,\npara realizar niveles histológicos y\nmarcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3.\nDIAGNÓSTICO\nCerebro, región parieto occipital derecha. Lesión. (Historia de adenocarcinoma primario pulmonar).\nEstudio de inmunohistoquimica:\nADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR",
+        "valor_corregido": "de ADENOCARCINOMA METASTASICO. Se selecciona el bloque 1, para realizar niveles histológicos y marcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3. DIAGNÓSTICO Cerebro, región parieto occipital derecha. Lesión. (Historia de adenocarcinoma primario pulmonar). Estudio de inmunohistoquimica: ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR",
+        "razon": "Corrección automática",
+        "numero_caso": "IHQ250083",
+        "timestamp": "2025-12-19T04:49:02.828152"
+      },
+      {
+        "tipo": "ortografica",
+        "campo": "descripcion_microscopica",
+        "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales tienen marcación positiva y difusa para TTF1, Napsina A. Positividad focal para CK7. Negativo para para CK 20 Y GATA 3. diagnóstico de ADENOCARCINOMA METASTASICO. Se selecciona el bloque 1, para realizar niveles histológicos y marcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3.",
+        "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales tienen marcación positiva y difusa para TTF1, Napsina A. Positividad focal para CK7. Negativo para para CK20 Y GATA 3. diagnóstico de ADENOCARCINOMA METASTASICO. Se selecciona el bloque 1, para realizar niveles histológicos y marcación con los anticuerpos: CK7, CK20, TTF1, NAPSIN A Y GATA 3.",
+        "razon": "Corrección automática",
+        "numero_caso": "IHQ250083",
+        "timestamp": "2025-12-19T04:49:02.828160"
+      }
+    ],
+    "metadata": {
+      "correcciones_totales": 2,
+      "correcciones_por_tipo": {
+        "ortografica": 2
+      }
+    },
+    "metricas": {
+      "tiempo_ocr_segundos": 0,
+      "tiempo_extraccion_segundos": 0,
+      "tiempo_total_segundos": 0,
+      "caracteres_procesados": 187103,
+      "campos_extraidos": 47
+    }
+  },
+  "estado_final": "ERROR"
+}

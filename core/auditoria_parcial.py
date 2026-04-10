@@ -450,7 +450,7 @@ INSTRUCCIONES ESTRICTAS:
 
 5. **MAPEO DE VARIANTES** - Biomarcadores pueden aparecer con espacios, puntos, barras, guiones:
    ⚡ CRÍTICO: Busca TODAS las variantes posibles:
-   - "CAM 5.2" o "CAM5.2" o "CAM52" → IHQ_CAM52
+   - "CAM 5.2" o "CAM5.2" o "CAM52" → IHQ_CAM5 (V6.5.83: IHQ_CAM52 obsoleto)
    - "CKAE1/AE3" o "CKAE1 AE3" o "CKAE1AE3" → IHQ_CKAE1AE3
    - "KI 67" o "Ki-67" o "KI67" → IHQ_KI-67
    - "HER 2" o "HER-2" o "HER2" → IHQ_HER2
@@ -459,7 +459,7 @@ INSTRUCCIONES ESTRICTAS:
    - "PAX 8" o "PAX8" → IHQ_PAX8
    - "MSH 6" o "MSH6" → IHQ_MSH6
 
-   Si buscas IHQ_CAM52 y el PDF dice "CAM 5.2", ¡ESO ES UNA COINCIDENCIA! Extráelo.
+   Si buscas IHQ_CAM5 y el PDF dice "CAM 5.2", ¡ESO ES UNA COINCIDENCIA! Extráelo.
 
 6. **NO inventes datos** que no estén en el PDF
 

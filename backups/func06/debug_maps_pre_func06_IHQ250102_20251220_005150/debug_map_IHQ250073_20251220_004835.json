@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250073_20251220_004835",
+  "numero_peticion": "IHQ250073",
+  "timestamp": "2025-12-20T00:48:35.905078",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250073\nCopia Pag. 1 de 1\nNombre : NESTOR VACCA OROZCO\nN. peticion : IHQ250073\nN.Identificación : CC. 14964874\nGenero : MASCULINO\nEdad : 75 años 2 meses 4 dias\nEPS : FIDUCIARIA LA PREVISORA S.A.\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 22/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR DE BASE DE\nCRANEO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional\nproveniente de Christus sinergia, rotulado como “B24-25366 A Y B” que corresponde a “tumor\nbase de cráneo” con diagnósticos de “carcinoma metastásico”. Previa revisión de la histología, se\nrealizan niveles histológicos al bloque B para tinción con CK7, CK20, TTF-1, p40 y napsina A.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales son positivas para CK7, TTF-1 y napsina A.\nLos marcadores p40 y CK20 son negativos.\nDIAGNÓSTICO\nBase de craneo. Tumor. Resección. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 2460,
+      "reduccion_porcentaje": 98.69
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250073",
+      "caso_num": 20,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "nombre_completo": "NESTOR VACCA OROZCO",
+      "numero_peticion": "IHQ250073",
+      "identificacion": "14964874",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "75",
+      "eps": "FIDUCIARIA LA PREVISORA S.A.",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "MEDICINA INTERNA COEX",
+      "fecha_ingreso": "22/01/2025",
+      "fecha_informe": "23/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250073",
+      "N. de identificación": "14964874",
+      "Tipo de documento": "CC",
+      "EPS": "FIDUCIARIA LA PREVISORA S.A.",
+      "Servicio": "MEDICINA INTERNA COEX",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "22/01/2025",
+      "Fecha Informe": "23/01/2025",
+      "nombres": "NESTOR",
+      "Primer nombre": "NESTOR",
+      "Segundo nombre": "",
+      "apellidos": "NESTOR VACCA OROZCO",
+      "Primer apellido": "NESTOR",
+      "Segundo apellido": "VACCA OROZCO",
+      "nombre_formal": "NESTOR VACCA OROZCO, NESTOR",
+      "diagnostico": "Base de craneo. Tumor. Resección. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, TTF1 y napsina A. Los marcadores p40 y CK20 son negativos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional proveniente de Christus sinergia, rotulado como “B24-25366 A Y B” que corresponde a “tumor base de cráneo” con diagnósticos de “carcinoma metastásico”. Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción con CK7, CK20, TTF1, p40 y napsina A.",
+      "ihq_organo": "BASE DE CRANEO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "MEDICINA_INTERNA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, TTF-1, P40, NAPSINA A",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "BASE DE CRANEO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_NAPSIN": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2025-12-20T00:48:36.078195",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250073\nCopia Pag. 1 de 1\nNombre : NESTOR VACCA OROZCO\nN. peticion : IHQ250073\nN.Identificación : CC. 14964874\nGenero : MASCULINO\nEdad : 75 años 2 meses 4 dias\nEPS : FIDUCIARIA LA PREVISORA S.A.\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 22/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR DE BASE DE\nCRANEO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional\nproveniente de Christus sinergia, rotulado como “B24-25366 A Y B” que corresponde a “tumor\nbase de cráneo” con diagnósticos de “carcinoma metastásico”. Previa revisión de la histología, se\nrealizan niveles histológicos al bloque B para tinción con CK7, CK20, TTF-1, p40 y napsina A.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales son positivas para CK7, TTF-1 y napsina A.\nLos marcadores p40 y CK20 son negativos.\nDIAGNÓSTICO\nBase de craneo. Tumor. Resección. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, TTF-1, P40, NAPSINA A",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional proveniente de Christus sinergia, rotulado como “B24-25366 A Y B” que corresponde a “tumor base de cráneo” con diagnósticos de “carcinoma metastásico”. Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción con CK7, CK20, TTF-1, p40 y napsina A.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, TTF-1 y napsina A. Los marcadores p40 y CK20 son negativos.",
+      "Descripcion Diagnostico": "Base de craneo. Tumor. Resección. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR.",
+      "IHQ_ORGANO": "BASE DE CRANEO",
+      "Organo": "TUMOR DE BASE DE CRANEO",
+      "Diagnostico Coloracion": "CARCINOMA METASTÁSICO",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_NAPSIN": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 165,
+      "campos_vacios": 126,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 23.64
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 126,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Base de craneo. Tumor. Resección. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR.",
+      "valor_corregido": "Base de craneo. Tumor. Resección. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250073",
+      "timestamp": "2025-12-20T00:48:36.077990"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional proveniente de Christus sinergia, rotulado como “B24-25366 A Y B” que corresponde a “tumor base de cráneo” con diagnósticos de “carcinoma metastásico”. Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción con CK7, CK20, TTF-1, p40 y napsina A.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional proveniente de Christus sinergia, rotulado como “B24-25366 A Y B” que corresponde a “tumor base de cráneo” con diagnósticos de “carcinoma metastásico”. Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción con CK7, CK20, TTF1, p40 y napsina A.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250073",
+      "timestamp": "2025-12-20T00:48:36.077996"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, TTF-1 y napsina A. Los marcadores p40 y CK20 son negativos.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, TTF1 y napsina A. Los marcadores p40 y CK20 son negativos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250073",
+      "timestamp": "2025-12-20T00:48:36.077998"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 52
+  }
+}

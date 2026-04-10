@@ -1,0 +1,54 @@
+{
+  "caso": "IHQ250042",
+  "timestamp": "2025-12-17T03:42:55.375599",
+  "biomarcadores_analizados": [
+    "SV40",
+    "C4D"
+  ],
+  "estado_actual": {
+    "IHQ_SV40": {
+      "valor_bd": "NO MENCIONADO",
+      "valor_esperado": "NEGATIVO",
+      "estado": "ERROR"
+    },
+    "IHQ_C4D": {
+      "valor_bd": "NO MENCIONADO",
+      "valor_esperado": "MINIMAMENTE POSITIVO EN CAPILARES PERITUBULARES (C4d 1)",
+      "estado": "ERROR"
+    }
+  },
+  "diagnostico": {
+    "SV40": {
+      "problema": "Patron regex no captura formato con parentesis y texto separado",
+      "texto_ocr": "se efectuo marcacion para SV40 (Poliomavirus) a traves de la misma tecnica y resulto NEGATIVO",
+      "patron_actual": "sv[^\\w]*40[:\\s]*(positivo|negativo)",
+      "patron_sugerido": "sv[^\\w]*40\\s*(?:\\([^)]+\\))?\\s*(?:.*?\\s+)?result[oó]\\s+(positivo|negativo)",
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "linea": "1902",
+      "causa": "El patron busca SV40 seguido directamente de positivo/negativo, pero el texto tiene (Poliomavirus) y resulto en medio"
+    },
+    "C4D": {
+      "problema": "Patron regex no captura MINIMAMENTE POSITIVO ni valor numerico en parentesis",
+      "texto_ocr": "El resultado fue MINIMAMENTE POSITIVO EN CAPILARES PERITUBULARES (C4d 1)",
+      "patron_actual": "c4[^\\w]*d[:\\s]*(positivo|negativo)",
+      "patron_sugerido": "(?:resultado|marcaci[oó]n)\\s+(?:fue\\s+)?(?:minimamente\\s+)?(positivo|negativo)\\s+.*?c4d\\s*\\(\\d+\\)",
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "linea": "1927",
+      "causa": "El patron busca C4d: positivo/negativo pero el texto tiene resultado fue MINIMAMENTE POSITIVO...C4d (1)"
+    }
+  },
+  "soluciones": {
+    "SV40": {
+      "paso_1": "Agregar patron que capture SV40 (texto) ... resulto NEGATIVO/POSITIVO",
+      "paso_2": "Insertar en linea 1902 de biomarker_extractor.py",
+      "codigo_nuevo": "sv[^\\w]*40\\s*(?:\\([^)]+\\))?\\s*(?:.*?\\s+)?result[oó]\\s+(positivo|negativo)"
+    },
+    "C4D": {
+      "paso_1": "Agregar patron que capture MINIMAMENTE POSITIVO ... C4d (numero)",
+      "paso_2": "Insertar en linea 1927 de biomarker_extractor.py",
+      "paso_3": "Agregar normalizacion para minimamente positivo -> POSITIVO DEBIL",
+      "codigo_nuevo": "(?:resultado|marcaci[oó]n)\\s+(?:fue\\s+)?(?:minimamente\\s+)?(positivo|negativo)\\s+.*?c4d\\s*\\(\\d+\\)"
+    }
+  },
+  "recomendacion": "Modificar biomarker_extractor.py con los patrones sugeridos y ejecutar FUNC-06 nuevamente"
+}

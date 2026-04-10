@@ -1,0 +1,167 @@
+{
+  "session_id": "IHQ250220_20260128_064521",
+  "numero_peticion": "IHQ250220",
+  "timestamp": "2026-01-28T06:45:21.075725",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250220\nCopia Pag. 1 de 2\nNombre : ARTEMO MARTINEZ MUNERA\nN. peticion : IHQ250220\nN.Identificación : CC. 16343872\nGenero : MASCULINO\nEdad : 73 años\nEPS : NUEVA EPS\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE GANGLIO\nCERVICAL IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque extrainstitucional Q24-2937, el cual corresponde a\nbiopsia de ganglio linfático cervical izquierdo, con historia de adenocarcinoma prostático, con\ndiagnóstico de \"ADENOCARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CK7,\nCK20, PSA, Racemasa, CK19, CA19-9, CDX2, TTF-1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales son positivas para PSA, Racemasa y CK19. Son negativas para CK7, CK20,\nCA19-9, CDX2 y TTF-1.\nDIAGNÓSTICO\nGanglio linfático cervical izquierdo. Tumor (historia de adenocarcinoma prostático). Biopsia.\nEstudios de inmunohistoquímica:\nADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---\nIHQ250220\nCopia Pag. 2 de 2\nNombre : ARTEMO MARTINEZ MUNERA\nN. peticion : IHQ250220\nN.Identificación : CC. 16343872\nGenero : MASCULINO\nEdad : 73 años\nEPS : NUEVA EPS\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3049,
+      "reduccion_porcentaje": 98.3
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250220",
+      "caso_num": 9,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_PSA": "POSITIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_RACEMASA": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "nombre_completo": "ARTEMO MARTINEZ MUNERA",
+      "numero_peticion": "IHQ250220",
+      "identificacion": "16343872",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "73",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "servicio": "UNIDAD DE ONCOLOGIA",
+      "fecha_ingreso": "28/02/2025",
+      "fecha_informe": "04/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250220",
+      "N. de identificación": "16343872",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA",
+      "Médico tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/02/2025",
+      "Fecha Informe": "04/03/2025",
+      "nombres": "ARTEMO",
+      "Primer nombre": "ARTEMO",
+      "Segundo nombre": "",
+      "apellidos": "MARTINEZ MUNERA",
+      "Primer apellido": "MARTINEZ",
+      "Segundo apellido": "MUNERA",
+      "nombre_formal": "MARTINEZ MUNERA, ARTEMO",
+      "diagnostico": "Ganglio linfático cervical izquierdo. Tumor (historia de adenocarcinoma prostático). Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para PSA, Racemasa y CK19. Son negativas para CK7, CK20, CA19-9, CDX2 y TTF1.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque extrainstitucional Q24-2937, el cual corresponde a biopsia de ganglio linfático cervical izquierdo, con historia de adenocarcinoma prostático, con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CK7, CK20, PSA, Racemasa, CK19, CA19-9, CDX2, TTF1.",
+      "ihq_organo": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, PSA, RACEMASA, CK19, CA19-9, CDX2, TTF-1",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, PSA, RACEMASA, CK19, CA19-9, CDX2, TTF-1",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "extraction_timestamp": "2026-01-28T06:45:21.459908",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250220\nCopia Pag. 1 de 2\nNombre : ARTEMO MARTINEZ MUNERA\nN. peticion : IHQ250220\nN.Identificación : CC. 16343872\nGenero : MASCULINO\nEdad : 73 años\nEPS : NUEVA EPS\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE GANGLIO\nCERVICAL IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque extrainstitucional Q24-2937, el cual corresponde a\nbiopsia de ganglio linfático cervical izquierdo, con historia de adenocarcinoma prostático, con\ndiagnóstico de \"ADENOCARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CK7,\nCK20, PSA, Racemasa, CK19, CA19-9, CDX2, TTF-1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales son positivas para PSA, Racemasa y CK19. Son negativas para CK7, CK20,\nCA19-9, CDX2 y TTF-1.\nDIAGNÓSTICO\nGanglio linfático cervical izquierdo. Tumor (historia de adenocarcinoma prostático). Biopsia.\nEstudios de inmunohistoquímica:\nADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---\nIHQ250220\nCopia Pag. 2 de 2\nNombre : ARTEMO MARTINEZ MUNERA\nN. peticion : IHQ250220\nN.Identificación : CC. 16343872\nGenero : MASCULINO\nEdad : 73 años\nEPS : NUEVA EPS\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, PSA, RACEMASA, CK19, CA19-9, CDX2, TTF-1",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque extrainstitucional Q24-2937, el cual corresponde a biopsia de ganglio linfático cervical izquierdo, con historia de adenocarcinoma prostático, con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CK7, CK20, PSA, Racemasa, CK19, CA19-9, CDX2, TTF-1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para PSA, Racemasa y CK19. Son negativas para CK7, CK20, CA19-9, CDX2 y TTF-1.",
+      "Descripcion Diagnostico": "Ganglio linfático cervical izquierdo. Tumor (historia de adenocarcinoma prostático). Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "Organo": "BIOPSIA DE GANGLIO CERVICAL IZQUIERDO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA METASTÁSICO",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_PSA": "POSITIVO",
+      "IHQ_RACEMASA": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 174,
+      "campos_vacios": 132,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 8,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 132,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático cervical izquierdo. Tumor (historia de adenocarcinoma prostático). Biopsia.\nEstudios de inmunohistoquímica:\nADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO.",
+      "valor_corregido": "Ganglio linfático cervical izquierdo. Tumor (historia de adenocarcinoma prostático). Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250220",
+      "timestamp": "2026-01-28T06:45:21.459702"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque extrainstitucional Q24-2937, el cual corresponde a biopsia de ganglio linfático cervical izquierdo, con historia de adenocarcinoma prostático, con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CK7, CK20, PSA, Racemasa, CK19, CA19-9, CDX2, TTF-1.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque extrainstitucional Q24-2937, el cual corresponde a biopsia de ganglio linfático cervical izquierdo, con historia de adenocarcinoma prostático, con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CK7, CK20, PSA, Racemasa, CK19, CA19-9, CDX2, TTF1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250220",
+      "timestamp": "2026-01-28T06:45:21.459708"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para PSA, Racemasa y CK19. Son negativas para CK7, CK20, CA19-9, CDX2 y TTF-1.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para PSA, Racemasa y CK19. Son negativas para CK7, CK20, CA19-9, CDX2 y TTF1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250220",
+      "timestamp": "2026-01-28T06:45:21.459710"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 55
+  }
+}

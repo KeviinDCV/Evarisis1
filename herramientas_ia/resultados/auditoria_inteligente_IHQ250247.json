@@ -1,0 +1,121 @@
+{
+  "numero_caso": "IHQ250247",
+  "caso_num": 35,
+  "total_casos": 50,
+  "timestamp": "2026-01-28T14:38:59.477364",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 11,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "CARCINOMA INVASIVO DE ALTO GRADO CON CARACTERISTICAS DE CARCINOMA PAPILAR ENCAPSULADO DE ALTO GRADO",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS HISTOLOGICOS Y DE INMUNOHISTOQUIMICA FAVORECEN CARCINOMA PAPILAR INVASIVO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Receptores de Estrógenos: Marcación nuclear positiva fuerte del 90% / Receptores de Progesterona: Marcación nuclear positiva fuerte del 90%",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "RE",
+        "RP"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 8,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "CK5/6",
+        "GATA3",
+        "HER2",
+        "Ki-67",
+        "P63",
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona",
+        "SYNAPTOFISINA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "CK5/6",
+        "GATA3",
+        "HER2",
+        "Ki-67",
+        "P63",
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona",
+        "SYNAPTOFISINA"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material extranstit..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MAMA IZQUIERDA, COMPLEJO ARÉOLA PEZÓN Y VACIAMIENTO GANGLIONAR"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

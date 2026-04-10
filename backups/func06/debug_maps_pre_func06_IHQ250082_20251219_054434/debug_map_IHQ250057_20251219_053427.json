@@ -1,0 +1,157 @@
+{
+  "session_id": "IHQ250057_20251219_053427",
+  "numero_peticion": "IHQ250057",
+  "timestamp": "2025-12-19T05:34:27.876899",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250057\nCopia Pag. 1 de 2\nNombre : BETTY CARMEN MORALES\nN. peticion : IHQ250057\nN.Identificación : CC. 30706209\nGenero : FEMENINO\nEdad : 72 años 3 meses 8 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/01/2025\nFecha Informe : 21/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nADENOPATIA REGION\nAXILAR DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe para caso para revisión y estudio de inmunohistoquímica proveniente de “Fundación\nValle del Lili” que consta de dos bloques de parafina, dos láminas de hematoxilina eosina\nrotuladas 24FQ-28992 1 Y 2 correspondientes a “biopsia de adenomegalia axilar derecha” y con\ndiagnóstico de “carcinoma metastásico de alto grado, de probable origen primario en glándula\nmamaria”.\nAportan\nlos\nsiguientes\nmarcadores\nde\ninmunohistoquímica:\nReceptores\nde\nestrógenos,\nreceptores de progesterona, HER-2, KI-67, CK7, y GATA-3.\nSe realiza ampliación de panel de inmunohistoquímica institucional para tinción en ambos\nbloques con: TTF-1, CDX2, mamoglobina, SOX-10, PAX-8, CK20.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica: \nInmunohistoquímica externa: \nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: NEGATIVOS.\n-RECEPTOR DE PROGRESTERONA: NEGATIVOS.\n-HER 2: NEGATIVO (Score 0).\n-Ki-67: 70%.\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado. \n- Tiempo de fijación: no determinado. \nInmunohistoquimica institucional: \nLa mamoglobina es positiva heterogenea.\nLos marcadores TTF-1, CDX2, SOX-10, PAX-8 Y CK20 son negativos.\nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---\nIHQ250057\nCopia Pag. 2 de 2\nNombre : BETTY CARMEN MORALES\nN. peticion : IHQ250057\nN.Identificación : CC. 30706209\nGenero : FEMENINO\nEdad : 72 años 3 meses 8 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/01/2025\nFecha Informe : 21/01/2025\nGanglio linfático axilar derecho. Biopsia escisional. Estudio de inmunohistoquímica:\n- PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA COMPATIBLE CON CARCINOMA METASTÁSICO\nDE PROBABLE ORIGEN MAMARIO.\n- RECEPTOR DE ESTROGENOS: NEGATIVO.\n- RECEPTOR DE PROGRESTERONA: NEGATIVO.\n- HER 2: NEGATIVO (Score 0).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3808,
+      "reduccion_porcentaje": 97.96
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250057",
+      "caso_num": 5,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "BETTY CARMEN MORALES",
+      "numero_peticion": "IHQ250057",
+      "identificacion": "30706209",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "72",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "20/01/2025",
+      "fecha_informe": "21/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250057",
+      "N. de identificación": "30706209",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/01/2025",
+      "Fecha Informe": "21/01/2025",
+      "nombres": "BETTY CARMEN",
+      "Primer nombre": "BETTY",
+      "Segundo nombre": "CARMEN",
+      "apellidos": "MORALES",
+      "Primer apellido": "MORALES",
+      "Segundo apellido": "",
+      "nombre_formal": "MORALES, BETTY CARMEN",
+      "diagnostico": "- PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA COMPATIBLE CON CARCINOMA METASTÁSICO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica: Inmunohistoquímica externa: REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: NEGATIVOS. -RECEPTOR DE PROGRESTERONA: NEGATIVOS. -HER 2: NEGATIVO (Score 0). -KI-67: 70%. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado. Inmunohistoquimica institucional: La mamoglobina es positiva heterogenea. Los marcadores TTF1, CDX2, SOX-10, PAX-8 Y CK20 son negativos.",
+      "descripcion_macroscopica": "Se recibe para caso para revisión y estudio de inmunohistoquímica proveniente de “Fundación Valle del Lili” que consta de dos bloques de parafina, dos láminas de hematoxilina eosina rotuladas 24FQ-28992 1 Y 2 correspondientes a “biopsia de adenomegalia axilar derecha” y con diagnóstico de “carcinoma metastásico de alto grado, de probable origen primario en glándula mamaria”. Aportan los siguientes marcadores de inmunohistoquímica: Receptores de estrógenos, receptores de progesterona, HER-2, KI-67, CK7, y GATA-3. Se realiza ampliación de panel de inmunohistoquímica institucional para tinción en ambos bloques con: TTF1, CDX2, mamoglobina, SOX-10, PAX-8, CK20.",
+      "ihq_organo": "",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: NEGATIVO (SCORE 0), Ki-67: 70%, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_KI-67": "70%",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "extraction_timestamp": "2025-12-19T05:34:28.029950",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250057\nCopia Pag. 1 de 2\nNombre : BETTY CARMEN MORALES\nN. peticion : IHQ250057\nN.Identificación : CC. 30706209\nGenero : FEMENINO\nEdad : 72 años 3 meses 8 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/01/2025\nFecha Informe : 21/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nADENOPATIA REGION\nAXILAR DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe para caso para revisión y estudio de inmunohistoquímica proveniente de “Fundación\nValle del Lili” que consta de dos bloques de parafina, dos láminas de hematoxilina eosina\nrotuladas 24FQ-28992 1 Y 2 correspondientes a “biopsia de adenomegalia axilar derecha” y con\ndiagnóstico de “carcinoma metastásico de alto grado, de probable origen primario en glándula\nmamaria”.\nAportan\nlos\nsiguientes\nmarcadores\nde\ninmunohistoquímica:\nReceptores\nde\nestrógenos,\nreceptores de progesterona, HER-2, KI-67, CK7, y GATA-3.\nSe realiza ampliación de panel de inmunohistoquímica institucional para tinción en ambos\nbloques con: TTF-1, CDX2, mamoglobina, SOX-10, PAX-8, CK20.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica: \nInmunohistoquímica externa: \nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: NEGATIVOS.\n-RECEPTOR DE PROGRESTERONA: NEGATIVOS.\n-HER 2: NEGATIVO (Score 0).\n-Ki-67: 70%.\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado. \n- Tiempo de fijación: no determinado. \nInmunohistoquimica institucional: \nLa mamoglobina es positiva heterogenea.\nLos marcadores TTF-1, CDX2, SOX-10, PAX-8 Y CK20 son negativos.\nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---\nIHQ250057\nCopia Pag. 2 de 2\nNombre : BETTY CARMEN MORALES\nN. peticion : IHQ250057\nN.Identificación : CC. 30706209\nGenero : FEMENINO\nEdad : 72 años 3 meses 8 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/01/2025\nFecha Informe : 21/01/2025\nGanglio linfático axilar derecho. Biopsia escisional. Estudio de inmunohistoquímica:\n- PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA COMPATIBLE CON CARCINOMA METASTÁSICO\nDE PROBABLE ORIGEN MAMARIO.\n- RECEPTOR DE ESTROGENOS: NEGATIVO.\n- RECEPTOR DE PROGRESTERONA: NEGATIVO.\n- HER 2: NEGATIVO (Score 0).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CDX2, CK20, HER2, Ki-67, PAX8, Receptor de Estrógeno, Receptor de Progesterona, SOX10, TTF1",
+      "Descripcion macroscopica": "Se recibe para caso para revisión y estudio de inmunohistoquímica proveniente de “Fundación Valle del Lili” que consta de dos bloques de parafina, dos láminas de hematoxilina eosina rotuladas 24FQ-28992 1 Y 2 correspondientes a “biopsia de adenomegalia axilar derecha” y con diagnóstico de “carcinoma metastásico de alto grado, de probable origen primario en glándula mamaria”. Aportan los siguientes marcadores de inmunohistoquímica: Receptores de estrógenos, receptores de progesterona, HER-2, KI-67, CK7, y GATA-3. Se realiza ampliación de panel de inmunohistoquímica institucional para tinción en ambos bloques con: TTF-1, CDX2, mamoglobina, SOX-10, PAX-8, CK20.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica: Inmunohistoquímica externa: REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: NEGATIVOS. -RECEPTOR DE PROGRESTERONA: NEGATIVOS. -HER 2: NEGATIVO (Score 0). -Ki-67: 70%. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado. Inmunohistoquimica institucional: La mamoglobina es positiva heterogenea. Los marcadores TTF-1, CDX2, SOX-10, PAX-8 Y CK20 son negativos.",
+      "Descripcion Diagnostico": "- PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA COMPATIBLE CON CARCINOMA METASTÁSICO",
+      "IHQ_ORGANO": "ADENOPATIA REGION AXILAR DERECHA",
+      "Organo": "ADENOPATIA REGION AXILAR DERECHA",
+      "Diagnostico Coloracion": "CARCINOMA METASTÁSICO DE ALTO GRADO, DE PROBABLE ORIGEN PRIMARIO EN GLÁNDULA MAMARIA",
+      "Diagnostico Principal": "PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA COMPATIBLE CON CARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO (SCORE 0), Ki-67: 70%, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_KI-67": "70%",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 114,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 9,
+      "completitud_porcentaje": 27.39
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 114,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe para caso para revisión y estudio de inmunohistoquímica proveniente de “Fundación Valle del Lili” que consta de dos bloques de parafina, dos láminas de hematoxilina eosina rotuladas 24FQ-28992 1 Y 2 correspondientes a “biopsia de adenomegalia axilar derecha” y con diagnóstico de “carcinoma metastásico de alto grado, de probable origen primario en glándula mamaria”. Aportan los siguientes marcadores de inmunohistoquímica: Receptores de estrógenos, receptores de progesterona, HER-2, KI-67, CK7, y GATA-3. Se realiza ampliación de panel de inmunohistoquímica institucional para tinción en ambos bloques con: TTF-1, CDX2, mamoglobina, SOX-10, PAX-8, CK20.",
+      "valor_corregido": "Se recibe para caso para revisión y estudio de inmunohistoquímica proveniente de “Fundación Valle del Lili” que consta de dos bloques de parafina, dos láminas de hematoxilina eosina rotuladas 24FQ-28992 1 Y 2 correspondientes a “biopsia de adenomegalia axilar derecha” y con diagnóstico de “carcinoma metastásico de alto grado, de probable origen primario en glándula mamaria”. Aportan los siguientes marcadores de inmunohistoquímica: Receptores de estrógenos, receptores de progesterona, HER-2, KI-67, CK7, y GATA-3. Se realiza ampliación de panel de inmunohistoquímica institucional para tinción en ambos bloques con: TTF1, CDX2, mamoglobina, SOX-10, PAX-8, CK20.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250057",
+      "timestamp": "2025-12-19T05:34:28.029687"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica: Inmunohistoquímica externa: REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: NEGATIVOS. -RECEPTOR DE PROGRESTERONA: NEGATIVOS. -HER 2: NEGATIVO (Score 0). -Ki-67: 70%. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado. Inmunohistoquimica institucional: La mamoglobina es positiva heterogenea. Los marcadores TTF-1, CDX2, SOX-10, PAX-8 Y CK20 son negativos.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica: Inmunohistoquímica externa: REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: NEGATIVOS. -RECEPTOR DE PROGRESTERONA: NEGATIVOS. -HER 2: NEGATIVO (Score 0). -KI-67: 70%. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado. Inmunohistoquimica institucional: La mamoglobina es positiva heterogenea. Los marcadores TTF1, CDX2, SOX-10, PAX-8 Y CK20 son negativos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250057",
+      "timestamp": "2025-12-19T05:34:28.029695"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 52
+  }
+}

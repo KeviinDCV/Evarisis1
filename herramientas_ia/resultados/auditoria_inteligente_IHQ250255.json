@@ -1,0 +1,120 @@
+{
+  "numero_caso": "IHQ250255",
+  "caso_num": 43,
+  "total_casos": 50,
+  "timestamp": "2026-01-28T17:07:37.715598",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 10,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "PROLIFERACIÓN HEMATOLINFOIDE",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "HIPERPLASIA FOLICULAR Y SINUSOIDAL DE NATURALEZA REACTIVA"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: ESPERADO (folículos linfoides)",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (8/8)",
+      "total_solicitado_ocr": 8,
+      "total_solicitado_bd": 8,
+      "estudios_ocr": [
+        "Ki-67",
+        "BCL2",
+        "BCL6",
+        "CD3",
+        "CD5",
+        "CD20",
+        "CD38",
+        "PAX5"
+      ],
+      "estudios_bd": [
+        "Ki-67",
+        "BCL2",
+        "BCL6",
+        "CD3",
+        "CD5",
+        "CD20",
+        "CD38",
+        "PAX5"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 8,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se realizan niveles histológicos al bloque M2501630, el cual corresponde a resección de ganglio linf..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Se observa un ganglio linfático con incremento de la zona interfolicular la cual está compuesta por ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "GANGLIO LINFÁTICO CERVICAL ESTACIÓN III"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

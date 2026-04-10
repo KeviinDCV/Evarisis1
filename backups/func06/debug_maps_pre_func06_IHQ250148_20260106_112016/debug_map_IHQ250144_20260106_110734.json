@@ -1,0 +1,169 @@
+{
+  "session_id": "IHQ250144_20260106_110734",
+  "numero_peticion": "IHQ250144",
+  "timestamp": "2026-01-06T11:07:34.875236",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250144\nCopia Pag. 1 de 1\nNombre : ROSA ELVIRA LLANTEN LASSO\nN. peticion : IHQ250144\nN.Identificación : CC. 25415078\nGenero : FEMENINO\nEdad : 65 años 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HERRERA\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 07/02/2025\nFecha Informe : 20/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR FRONTAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2500759-2, el cual corresponde a resección parcial de tumor\nen región frontal izquierda de cerebro, con diagnóstico de \"TUMOR GLIAL DE ALTO GRADO WHO 4\". Se\nordenan los siguientes marcadores: p53, GFAP, IDH-1 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para GFAP y sobreexpresan IDH (de tipo mutante). La expresión de\np53 es de tipo aberrante (ausencia de expresión). El índice de proliferación celular medido por Ki-67 está\nentre el 30 y 40%.\nDIAGNÓSTICO\n Cerebro, región frontal izquierda. Tumor. Resección parcial. Estudios de inmunohistoquímica:\nGLIOMA DE ALTO GRADO, IDH MUTANTE\nCOMENTARIOS\nSe sugiere realizar tinción de ATRX por inmunohistoquímica y codeleción 1p/19q por biología molecular\npara adecuada clasificación del tumor.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 2655,
+      "reduccion_porcentaje": 98.47
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250144",
+      "caso_num": 35,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_IDH1": "POSITIVO",
+      "nombre_completo": "ROSA ELVIRA LLANTEN LASSO",
+      "numero_peticion": "IHQ250144",
+      "identificacion": "25415078",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "65",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ALEJANDRO HERRERA",
+      "servicio": "UCI NEUROCIRUGIA",
+      "fecha_ingreso": "07/02/2025",
+      "fecha_informe": "20/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250144",
+      "N. de identificación": "25415078",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "UCI NEUROCIRUGIA",
+      "Médico tratante": "ALEJANDRO HERRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/02/2025",
+      "Fecha Informe": "20/02/2025",
+      "nombres": "ROSA ELVIRA",
+      "Primer nombre": "ROSA",
+      "Segundo nombre": "ELVIRA",
+      "apellidos": "LLANTEN LASSO",
+      "Primer apellido": "LLANTEN",
+      "Segundo apellido": "LASSO",
+      "nombre_formal": "LLANTEN LASSO, ROSA ELVIRA",
+      "diagnostico": "Cerebro, región frontal izquierda. Tumor. Resección parcial. Estudios de inmunohistoquímica: GLIOMA DE ALTO GRADO, IDH MUTANTE",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para GFAP y sobreexpresan IDH (de tipo mutante). La expresión de p53 es de tipo aberrante (ausencia de expresión). El índice de proliferación celular medido por KI-67 está entre el 30 y 40%.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2500759-2, el cual corresponde a resección parcial de tumor en región frontal izquierda de cerebro, con diagnóstico de \"TUMOR GLIAL DE ALTO GRADO WHO 4\". Se ordenan los siguientes marcadores: p53, GFAP, IDH-1 y KI-67.",
+      "ihq_organo": "CEREBRO, REGIÓN FRONTAL IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P53, GFAP, IDH 1, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Se sugiere realizar tinción de ATRX por inmunohistoquímica y codeleción 1 p/19 q por biología molecular para adecuada clasificación del tumor.",
+      "IHQ_ORGANO": "CEREBRO, REGIÓN FRONTAL IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "Ki-67: 30%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P53, GFAP, IDH 1, Ki-67",
+      "IHQ_KI-67": "30%",
+      "IHQ_ATRX": "POSITIVO",
+      "IHQ_P53": "NEGATIVO (ABERRANTE)",
+      "extraction_timestamp": "2026-01-06T11:07:35.203335",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250144\nCopia Pag. 1 de 1\nNombre : ROSA ELVIRA LLANTEN LASSO\nN. peticion : IHQ250144\nN.Identificación : CC. 25415078\nGenero : FEMENINO\nEdad : 65 años 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HERRERA\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 07/02/2025\nFecha Informe : 20/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR FRONTAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2500759-2, el cual corresponde a resección parcial de tumor\nen región frontal izquierda de cerebro, con diagnóstico de \"TUMOR GLIAL DE ALTO GRADO WHO 4\". Se\nordenan los siguientes marcadores: p53, GFAP, IDH-1 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para GFAP y sobreexpresan IDH (de tipo mutante). La expresión de\np53 es de tipo aberrante (ausencia de expresión). El índice de proliferación celular medido por Ki-67 está\nentre el 30 y 40%.\nDIAGNÓSTICO\n Cerebro, región frontal izquierda. Tumor. Resección parcial. Estudios de inmunohistoquímica:\nGLIOMA DE ALTO GRADO, IDH MUTANTE\nCOMENTARIOS\nSe sugiere realizar tinción de ATRX por inmunohistoquímica y codeleción 1p/19q por biología molecular\npara adecuada clasificación del tumor.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P53, GFAP, IDH 1, Ki-67",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2500759-2, el cual corresponde a resección parcial de tumor en región frontal izquierda de cerebro, con diagnóstico de \"TUMOR GLIAL DE ALTO GRADO WHO 4\". Se ordenan los siguientes marcadores: p53, GFAP, IDH-1 y Ki-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para GFAP y sobreexpresan IDH (de tipo mutante). La expresión de p53 es de tipo aberrante (ausencia de expresión). El índice de proliferación celular medido por Ki-67 está entre el 30 y 40%.",
+      "Descripcion Diagnostico": "Cerebro, región frontal izquierda. Tumor. Resección parcial. Estudios de inmunohistoquímica: GLIOMA DE ALTO GRADO, IDH MUTANTE",
+      "IHQ_ORGANO": "CEREBRO, REGIÓN FRONTAL IZQUIERDA",
+      "Organo": "TUMOR FRONTAL IZQUIERDO",
+      "Diagnostico Coloracion": "TUMOR GLIAL DE ALTO GRADO WHO 4",
+      "Diagnostico Principal": "GLIOMA DE ALTO GRADO, IDH MUTANTE",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 30%",
+      "IHQ_P53": "NEGATIVO (ABERRANTE)",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_IDH1": "POSITIVO",
+      "IHQ_KI-67": "30%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 127,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 127,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cerebro, región frontal izquierda. Tumor. Resección parcial. Estudios de inmunohistoquímica:\nGLIOMA DE ALTO GRADO, IDH MUTANTE",
+      "valor_corregido": "Cerebro, región frontal izquierda. Tumor. Resección parcial. Estudios de inmunohistoquímica: GLIOMA DE ALTO GRADO, IDH MUTANTE",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250144",
+      "timestamp": "2026-01-06T11:07:35.203062"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2500759-2, el cual corresponde a resección parcial de tumor en región frontal izquierda de cerebro, con diagnóstico de \"TUMOR GLIAL DE ALTO GRADO WHO 4\". Se ordenan los siguientes marcadores: p53, GFAP, IDH-1 y Ki-67.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2500759-2, el cual corresponde a resección parcial de tumor en región frontal izquierda de cerebro, con diagnóstico de \"TUMOR GLIAL DE ALTO GRADO WHO 4\". Se ordenan los siguientes marcadores: p53, GFAP, IDH-1 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250144",
+      "timestamp": "2026-01-06T11:07:35.203068"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para GFAP y sobreexpresan IDH (de tipo mutante). La expresión de p53 es de tipo aberrante (ausencia de expresión). El índice de proliferación celular medido por Ki-67 está entre el 30 y 40%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para GFAP y sobreexpresan IDH (de tipo mutante). La expresión de p53 es de tipo aberrante (ausencia de expresión). El índice de proliferación celular medido por KI-67 está entre el 30 y 40%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250144",
+      "timestamp": "2026-01-06T11:07:35.203070"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se sugiere realizar tinción de ATRX por inmunohistoquímica y codeleción 1p/19q por biología molecular\npara adecuada clasificación del tumor.",
+      "valor_corregido": "Se sugiere realizar tinción de ATRX por inmunohistoquímica y codeleción 1 p/19 q por biología molecular para adecuada clasificación del tumor.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250144",
+      "timestamp": "2026-01-06T11:07:35.203071"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 54
+  }
+}

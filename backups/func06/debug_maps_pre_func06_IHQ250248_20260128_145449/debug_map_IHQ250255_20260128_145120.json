@@ -1,0 +1,166 @@
+{
+  "session_id": "IHQ250255_20260128_145120",
+  "numero_peticion": "IHQ250255",
+  "timestamp": "2026-01-28T14:51:20.699753",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250255\nCopia Pag. 1 de 2\nNombre : KEVIN JOSUE MELO RIVAS\nN. peticion : IHQ250255\nN.Identificación : RC. 1144000579\nGenero : MASCULINO\nEdad : 3 años 27 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LINA MARIA PARDO\nServicio : CIRUGIA PEDIATRICA ANA FRANK\nFecha Ingreso : 11/03/2025\nFecha Informe : 17/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO CERVICAL\nESTACION 3 DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2501630, el cual corresponde a resección de ganglio\nlinfático cervical estación III, con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan\nlos siguientes marcadores: Ki-67, BCL2, BCL6, CD3, CD5, CD20, CD38, PAX5.\nDESCRIPCIÓN MICROSCÓPICA\nSe observa un ganglio linfático con incremento de la zona interfolicular la cual está compuesta\npor linfocitos T (CD3+ y CD5+), inmunorreactividad esperada para BCL2+ en la región del manto\ny presencia de células plasmáticas CD38+ dispersas, sin formar cúmulos. En la periferia se\nobserva hiperplasia de folículos linfoides compuestos por\nlinfocitos B (CD20+, PAX-5+), con\nmarcación de BCL6+ en el centro germinal. El índice de proliferación celular Ki67% es el esperado\nen los folículos linfoides, más brillante hacia la zona oscura.\nDIAGNÓSTICO\nGanglio linfático cervical estación III. Resección. Estudios de inmunohistoquímica:\nHIPERPLASIA FOLICULAR Y SINUSOIDAL DE NATURALEZA REACTIVA\nCOMENTARIOS\nCaso revisado por Dra. Maria Ximena Varela, patóloga.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 83 ---\nIHQ250255\nCopia Pag. 2 de 2\nNombre : KEVIN JOSUE MELO RIVAS\nN. peticion : IHQ250255\nN.Identificación : RC. 1144000579\nGenero : MASCULINO\nEdad : 3 años 27 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LINA MARIA PARDO\nServicio : CIRUGIA PEDIATRICA ANA FRANK\nFecha Ingreso : 11/03/2025\nFecha Informe : 17/03/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 84 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3259,
+      "reduccion_porcentaje": 98.19
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250255",
+      "caso_num": 43,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "KEVIN JOSUE MELO RIVAS",
+      "numero_peticion": "IHQ250255",
+      "identificacion": "1144000579",
+      "tipo_documento": "RC",
+      "Genero": "MASCULINO",
+      "Edad": "3",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "LINA MARIA PARDO",
+      "servicio": "CIRUGIA PEDIATRICA ANA FRANK",
+      "fecha_ingreso": "11/03/2025",
+      "fecha_informe": "17/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250255",
+      "N. de identificación": "1144000579",
+      "Tipo de documento": "RC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CIRUGIA PEDIATRICA ANA FRANK",
+      "Médico tratante": "LINA MARIA PARDO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "11/03/2025",
+      "Fecha Informe": "17/03/2025",
+      "nombres": "KEVIN JOSUE MELO",
+      "Primer nombre": "KEVIN",
+      "Segundo nombre": "JOSUE MELO",
+      "apellidos": "RIVAS",
+      "Primer apellido": "RIVAS",
+      "Segundo apellido": "",
+      "nombre_formal": "RIVAS, KEVIN JOSUE MELO",
+      "diagnostico": "Ganglio linfático cervical estación III. Resección. Estudios de inmunohistoquímica: HIPERPLASIA FOLICULAR Y SINUSOIDAL DE NATURALEZA REACTIVA",
+      "descripcion_microscopica": "Se observa un ganglio linfático con incremento de la zona interfolicular la cual está compuesta por linfocitos T (CD3+ y CD5+), inmunorreactividad esperada para BCL2+ en la región del manto y presencia de células plasmáticas CD38+ dispersas, sin formar cúmulos. En la periferia se observa hiperplasia de folículos linfoides compuestos por linfocitos B (CD20+, PAX-5+), con marcación de BCL6+ en el centro germinal. El índice de proliferación celular KI-67% es el esperado en los folículos linfoides, más brillante hacia la zona oscura.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2501630, el cual corresponde a resección de ganglio linfático cervical estación III, con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes marcadores: KI-67, BCL2, BCL6, CD3, CD5, CD20, CD38, PAX5.",
+      "ihq_organo": "GANGLIO LINFÁTICO CERVICAL ESTACIÓN III",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Ki-67, BCL2, BCL6, CD3, CD5, CD20, CD38, PAX5",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Caso revisado por Dra. Maria Ximena Varela, patóloga.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL ESTACIÓN III",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, BCL2, BCL6, CD3, CD5, CD20, CD38, PAX5",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "extraction_timestamp": "2026-01-28T14:51:21.116230",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250255\nCopia Pag. 1 de 2\nNombre : KEVIN JOSUE MELO RIVAS\nN. peticion : IHQ250255\nN.Identificación : RC. 1144000579\nGenero : MASCULINO\nEdad : 3 años 27 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LINA MARIA PARDO\nServicio : CIRUGIA PEDIATRICA ANA FRANK\nFecha Ingreso : 11/03/2025\nFecha Informe : 17/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO CERVICAL\nESTACION 3 DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2501630, el cual corresponde a resección de ganglio\nlinfático cervical estación III, con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan\nlos siguientes marcadores: Ki-67, BCL2, BCL6, CD3, CD5, CD20, CD38, PAX5.\nDESCRIPCIÓN MICROSCÓPICA\nSe observa un ganglio linfático con incremento de la zona interfolicular la cual está compuesta\npor linfocitos T (CD3+ y CD5+), inmunorreactividad esperada para BCL2+ en la región del manto\ny presencia de células plasmáticas CD38+ dispersas, sin formar cúmulos. En la periferia se\nobserva hiperplasia de folículos linfoides compuestos por\nlinfocitos B (CD20+, PAX-5+), con\nmarcación de BCL6+ en el centro germinal. El índice de proliferación celular Ki67% es el esperado\nen los folículos linfoides, más brillante hacia la zona oscura.\nDIAGNÓSTICO\nGanglio linfático cervical estación III. Resección. Estudios de inmunohistoquímica:\nHIPERPLASIA FOLICULAR Y SINUSOIDAL DE NATURALEZA REACTIVA\nCOMENTARIOS\nCaso revisado por Dra. Maria Ximena Varela, patóloga.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 83 ---\nIHQ250255\nCopia Pag. 2 de 2\nNombre : KEVIN JOSUE MELO RIVAS\nN. peticion : IHQ250255\nN.Identificación : RC. 1144000579\nGenero : MASCULINO\nEdad : 3 años 27 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LINA MARIA PARDO\nServicio : CIRUGIA PEDIATRICA ANA FRANK\nFecha Ingreso : 11/03/2025\nFecha Informe : 17/03/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 84 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, BCL2, BCL6, CD3, CD5, CD20, CD38, PAX5",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2501630, el cual corresponde a resección de ganglio linfático cervical estación III, con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes marcadores: Ki-67, BCL2, BCL6, CD3, CD5, CD20, CD38, PAX5.",
+      "Descripcion microscopica": "Se observa un ganglio linfático con incremento de la zona interfolicular la cual está compuesta por linfocitos T (CD3+ y CD5+), inmunorreactividad esperada para BCL2+ en la región del manto y presencia de células plasmáticas CD38+ dispersas, sin formar cúmulos. En la periferia se observa hiperplasia de folículos linfoides compuestos por linfocitos B (CD20+, PAX-5+), con marcación de BCL6+ en el centro germinal. El índice de proliferación celular Ki67% es el esperado en los folículos linfoides, más brillante hacia la zona oscura.",
+      "Descripcion Diagnostico": "Ganglio linfático cervical estación III. Resección. Estudios de inmunohistoquímica: HIPERPLASIA FOLICULAR Y SINUSOIDAL DE NATURALEZA REACTIVA",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL ESTACIÓN III",
+      "Organo": "GANGLIO CERVICAL ESTACION 3 DERECHA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN HEMATOLINFOIDE",
+      "Diagnostico Principal": "HIPERPLASIA FOLICULAR Y SINUSOIDAL DE NATURALEZA REACTIVA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 134,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 8,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático cervical estación III. Resección. Estudios de inmunohistoquímica:\nHIPERPLASIA FOLICULAR Y SINUSOIDAL DE NATURALEZA REACTIVA",
+      "valor_corregido": "Ganglio linfático cervical estación III. Resección. Estudios de inmunohistoquímica: HIPERPLASIA FOLICULAR Y SINUSOIDAL DE NATURALEZA REACTIVA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250255",
+      "timestamp": "2026-01-28T14:51:21.116021"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2501630, el cual corresponde a resección de ganglio linfático cervical estación III, con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes marcadores: Ki-67, BCL2, BCL6, CD3, CD5, CD20, CD38, PAX5.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2501630, el cual corresponde a resección de ganglio linfático cervical estación III, con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes marcadores: KI-67, BCL2, BCL6, CD3, CD5, CD20, CD38, PAX5.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250255",
+      "timestamp": "2026-01-28T14:51:21.116027"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Se observa un ganglio linfático con incremento de la zona interfolicular la cual está compuesta por linfocitos T (CD3+ y CD5+), inmunorreactividad esperada para BCL2+ en la región del manto y presencia de células plasmáticas CD38+ dispersas, sin formar cúmulos. En la periferia se observa hiperplasia de folículos linfoides compuestos por linfocitos B (CD20+, PAX-5+), con marcación de BCL6+ en el centro germinal. El índice de proliferación celular Ki67% es el esperado en los folículos linfoides, más brillante hacia la zona oscura.",
+      "valor_corregido": "Se observa un ganglio linfático con incremento de la zona interfolicular la cual está compuesta por linfocitos T (CD3+ y CD5+), inmunorreactividad esperada para BCL2+ en la región del manto y presencia de células plasmáticas CD38+ dispersas, sin formar cúmulos. En la periferia se observa hiperplasia de folículos linfoides compuestos por linfocitos B (CD20+, PAX-5+), con marcación de BCL6+ en el centro germinal. El índice de proliferación celular KI-67% es el esperado en los folículos linfoides, más brillante hacia la zona oscura.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250255",
+      "timestamp": "2026-01-28T14:51:21.116029"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 55
+  }
+}

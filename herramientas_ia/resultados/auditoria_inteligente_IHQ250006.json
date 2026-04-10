@@ -1,0 +1,129 @@
+{
+  "numero_caso": "IHQ250006",
+  "caso_num": 6,
+  "total_casos": 50,
+  "timestamp": "2025-11-30T20:08:56.575743",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 6,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "ADENOCARCINOMA INVASIVO ULCERADO",
+      "mensaje": "Correcto (validacion por componentes: 1/1)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "HER2: negativo ( score 1 )",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "HER2"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "2 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 5,
+      "total_solicitado_bd": 5,
+      "estudios_ocr": [
+        "MLH 1",
+        "PMS2",
+        "MSH2",
+        "MSH6",
+        "HER2"
+      ],
+      "estudios_bd": [
+        "MLH 1",
+        "PMS2",
+        "MSH2",
+        "MSH6",
+        "HER2"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 5,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "MLH 1",
+          "columna": "IHQ_MLH1",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "P"
+        },
+        {
+          "biomarcador": "PMS2",
+          "columna": "IHQ_PMS2",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "P"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "Descripcion macroscopica coincide parcialmente con OCR (similitud: 68%)"
+    ],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "WARNING",
+      "mensaje": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 68%)",
+      "valor_bd": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410682 que corresponde a...",
+      "valor_ocr": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410682 que\ncorresponde a..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MUCOSA DE ESTOMAGO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 77.8,
+    "validaciones_ok": 7,
+    "total_validaciones": 9,
+    "warnings": 1,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "ADVERTENCIA"
+}

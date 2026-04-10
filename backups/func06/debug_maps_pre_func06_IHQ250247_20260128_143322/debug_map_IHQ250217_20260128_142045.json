@@ -1,0 +1,165 @@
+{
+  "session_id": "IHQ250217_20260128_142045",
+  "numero_peticion": "IHQ250217",
+  "timestamp": "2026-01-28T14:20:45.074384",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250217\nCopia Pag. 1 de 2\nNombre : LUIS FERNANDO MUÑOZ TABORDA\nN. peticion : IHQ250217\nN.Identificación : CC. 70047328\nGenero : MASCULINO\nEdad : 71 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR CLAVICULA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2502062, el cual corresponde a biopsia de clavícula\nderecha con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\". Se ordenan los siguientes\nmarcadores: CK7, CK20, CK19, CA19-9, CDX2, TTF-1, PAX-8.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales son positivas para CK7, CK19 y CA19-9. Son negativas para CK20, CDX2,\nTTF-1 y PAX-8\nDIAGNÓSTICO\nClavícula\nderecha.\nTumor\n(Historia\nde\ncarcinoma\ngástrico).\nBiopsia.\nEstudios\nde\ninmunohistoquímica:\nADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---\nIHQ250217\nCopia Pag. 2 de 2\nNombre : LUIS FERNANDO MUÑOZ TABORDA\nN. peticion : IHQ250217\nN.Identificación : CC. 70047328\nGenero : MASCULINO\nEdad : 71 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 2919,
+      "reduccion_porcentaje": 98.37
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250217",
+      "caso_num": 6,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CA19_9": "POSITIVO",
+      "nombre_completo": "LUIS FERNANDO MUÑOZ TABORDA",
+      "numero_peticion": "IHQ250217",
+      "identificacion": "70047328",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "71",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ANDRES FELIPE VARELA",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "28/02/2025",
+      "fecha_informe": "04/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250217",
+      "N. de identificación": "70047328",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "ANDRES FELIPE VARELA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/02/2025",
+      "Fecha Informe": "04/03/2025",
+      "nombres": "LUIS FERNANDO",
+      "Primer nombre": "LUIS",
+      "Segundo nombre": "FERNANDO",
+      "apellidos": "MUÑOZ TABORDA",
+      "Primer apellido": "MUÑOZ",
+      "Segundo apellido": "TABORDA",
+      "nombre_formal": "MUÑOZ TABORDA, LUIS FERNANDO",
+      "diagnostico": "Clavícula derecha. Tumor (Historia de carcinoma gástrico). Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, CK19 y CA19-9. Son negativas para CK20, CDX2, TTF1 y PAX-8",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2502062, el cual corresponde a biopsia de clavícula derecha con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CK7, CK20, CK19, CA19-9, CDX2, TTF1, PAX-8.",
+      "ihq_organo": "CLAVÍCULA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, CK19, CA19-9, CDX2, TTF-1, PAX 8",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CLAVÍCULA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, CK19, CA19-9, CDX2, TTF-1, PAX 8",
+      "extraction_timestamp": "2026-01-28T14:20:45.459761",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250217\nCopia Pag. 1 de 2\nNombre : LUIS FERNANDO MUÑOZ TABORDA\nN. peticion : IHQ250217\nN.Identificación : CC. 70047328\nGenero : MASCULINO\nEdad : 71 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR CLAVICULA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2502062, el cual corresponde a biopsia de clavícula\nderecha con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\". Se ordenan los siguientes\nmarcadores: CK7, CK20, CK19, CA19-9, CDX2, TTF-1, PAX-8.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales son positivas para CK7, CK19 y CA19-9. Son negativas para CK20, CDX2,\nTTF-1 y PAX-8\nDIAGNÓSTICO\nClavícula\nderecha.\nTumor\n(Historia\nde\ncarcinoma\ngástrico).\nBiopsia.\nEstudios\nde\ninmunohistoquímica:\nADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---\nIHQ250217\nCopia Pag. 2 de 2\nNombre : LUIS FERNANDO MUÑOZ TABORDA\nN. peticion : IHQ250217\nN.Identificación : CC. 70047328\nGenero : MASCULINO\nEdad : 71 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, CK19, CA19-9, CDX2, TTF-1, PAX 8",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2502062, el cual corresponde a biopsia de clavícula derecha con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CK7, CK20, CK19, CA19-9, CDX2, TTF-1, PAX-8.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, CK19 y CA19-9. Son negativas para CK20, CDX2, TTF-1 y PAX-8",
+      "Descripcion Diagnostico": "Clavícula derecha. Tumor (Historia de carcinoma gástrico). Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.",
+      "IHQ_ORGANO": "CLAVÍCULA DERECHA",
+      "Organo": "TUMOR CLAVICULA DERECHA",
+      "Diagnostico Coloracion": "ADENOCARCINOMA METASTÁSICO",
+      "Diagnostico Principal": "ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CA19_9": "POSITIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 175,
+      "campos_vacios": 133,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 133,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Clavícula\nderecha.\nTumor\n(Historia\nde\ncarcinoma\ngástrico).\nBiopsia.\nEstudios\nde\ninmunohistoquímica:\nADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.",
+      "valor_corregido": "Clavícula derecha. Tumor (Historia de carcinoma gástrico). Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250217",
+      "timestamp": "2026-01-28T14:20:45.459425"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2502062, el cual corresponde a biopsia de clavícula derecha con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CK7, CK20, CK19, CA19-9, CDX2, TTF-1, PAX-8.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2502062, el cual corresponde a biopsia de clavícula derecha con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CK7, CK20, CK19, CA19-9, CDX2, TTF1, PAX-8.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250217",
+      "timestamp": "2026-01-28T14:20:45.459431"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, CK19 y CA19-9. Son negativas para CK20, CDX2, TTF-1 y PAX-8",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, CK19 y CA19-9. Son negativas para CK20, CDX2, TTF1 y PAX-8",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250217",
+      "timestamp": "2026-01-28T14:20:45.459433"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 55
+  }
+}

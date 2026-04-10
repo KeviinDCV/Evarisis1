@@ -1,0 +1,150 @@
+{
+  "session_id": "IHQ250102_20251219_044541",
+  "numero_peticion": "IHQ250102",
+  "timestamp": "2025-12-19T04:45:41.646131",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250102\nCopia Pag. 1 de 2\nNombre : LUZ DARY QUIÑONES\nN. peticion : IHQ250102\nN.Identificación : CC. 66846907\nGenero : FEMENINO\nEdad : 54 años 5 meses 8 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : QUIMIOTERAPIA\nFecha Ingreso : 29/01/2025\nFecha Informe : 16/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA MAMA\nDERECHA\n2025-01-28\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M242029” correspondiente a \" B. Vaciamiento radical axilar derecho” con diagnóstico de “\nMICROMETASTASIS\nDE\nCARCINOMA\nDUCTAL\n(1\nMILÍMETRO)\n(1/14)”.\nPrevia\nrevisión\nde\nla\nhistología se realizan niveles histológicos en el blorque B9 para tinción con los marcadores: GATA\n3 y CKAE1/AE13\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nEn el ganglio linfático se reconoce celularidad positiva\npara CKAE1/AE3 y\nGATA 3. las células\nson negativas para Mamaglobina. La lesión tiene un tamaño de 1x 1mm \n\"Anticuerpos: \nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona:\nCONFIRM\nanti-Progesterone\nReceptor\n(ER)\n(1E2)\nRabbit\nMonoclonal\nPrimary\nAntibody. VENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nSe encuentra:\nExpresión de receptores de estrógenos: Marcación nuclear fuerte y positiva del 70% \nExpresión de receptores de progesterona:Marcación nuclear fuerte y positiva del 60% \nTiempo de isquemia en frío: desconocido\nTiempo de fijación en formalina buferada: desconocido.\nDIAGNÓSTICO\nGanglios linfáticos axilares derechos. Vaciamiento ( Historia de carcinoma ductal invasivo).\nEstudio de inmunohistoquimica\nMICROMETASTASIS DE CARCINOMA DUCTAL (1 MILÍMETRO)(1/14)\nRECEPTORES DE ESTROGENO :POSITIVO\nRECEPTORES DE PROGESTERONA: POSITIVO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 85 ---\nIHQ250102\nCopia Pag. 2 de 2\nNombre : LUZ DARY QUIÑONES\nN. peticion : IHQ250102\nN.Identificación : CC. 66846907\nGenero : FEMENINO\nEdad : 54 años 5 meses 8 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : QUIMIOTERAPIA\nFecha Ingreso : 29/01/2025\nFecha Informe : 16/02/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 86 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3931,
+      "reduccion_porcentaje": 97.9
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250102",
+      "caso_num": 45,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "nombre_completo": "LUZ DARY QUIÑONES",
+      "numero_peticion": "IHQ250102",
+      "identificacion": "66846907",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "54",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "QUIMIOTERAPIA",
+      "fecha_ingreso": "29/01/2025",
+      "fecha_informe": "16/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250102",
+      "N. de identificación": "66846907",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIMIOTERAPIA",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "29/01/2025",
+      "Fecha Informe": "16/02/2025",
+      "nombres": "LUZ DARY",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "DARY",
+      "apellidos": "QUIÑONES",
+      "Primer apellido": "QUIÑONES",
+      "Segundo apellido": "",
+      "nombre_formal": "QUIÑONES, LUZ DARY",
+      "diagnostico": "Ganglios linfáticos axilares derechos. Vaciamiento ( Historia de carcinoma ductal invasivo). Estudio de inmunohistoquimica MICROMETASTASIS DE CARCINOMA DUCTAL (1 MILÍMETRO)(1/14) RECEPTORES DE ESTROGENO :POSITIVO RECEPTORES DE PROGESTERONA: POSITIVO",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. En el ganglio linfático se reconoce celularidad positiva para CKAE1/AE3 y GATA 3. las células son negativas para Mamaglobina. La lesión tiene un tamaño de 1 x 1 mm \"Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Se encuentra: Expresión de receptores de estrógenos: Marcación nuclear fuerte y positiva del 70% Expresión de receptores de progesterona:Marcación nuclear fuerte y positiva del 60% Tiempo de isquemia en frío: desconocido Tiempo de fijación en formalina buferada: desconocido.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M242029” correspondiente a \" B. Vaciamiento radical axilar derecho” con diagnóstico de “ MICROMETASTASIS DE CARCINOMA DUCTAL (1 MILÍMETRO) (1/14)”. Previa revisión de la histología se realizan niveles histológicos en el blorque B9 para tinción con los marcadores: GATA 3 y CKAE1/AE13",
+      "ihq_organo": "GANGLIOS LINFÁTICOS AXILARES DERECHOS",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GANGLIOS LINFÁTICOS AXILARES DERECHOS",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: /Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_MAMOGLOBINA": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_HER2": "/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "extraction_timestamp": "2025-12-19T04:45:41.828821",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250102\nCopia Pag. 1 de 2\nNombre : LUZ DARY QUIÑONES\nN. peticion : IHQ250102\nN.Identificación : CC. 66846907\nGenero : FEMENINO\nEdad : 54 años 5 meses 8 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : QUIMIOTERAPIA\nFecha Ingreso : 29/01/2025\nFecha Informe : 16/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA MAMA\nDERECHA\n2025-01-28\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M242029” correspondiente a \" B. Vaciamiento radical axilar derecho” con diagnóstico de “\nMICROMETASTASIS\nDE\nCARCINOMA\nDUCTAL\n(1\nMILÍMETRO)\n(1/14)”.\nPrevia\nrevisión\nde\nla\nhistología se realizan niveles histológicos en el blorque B9 para tinción con los marcadores: GATA\n3 y CKAE1/AE13\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nEn el ganglio linfático se reconoce celularidad positiva\npara CKAE1/AE3 y\nGATA 3. las células\nson negativas para Mamaglobina. La lesión tiene un tamaño de 1x 1mm \n\"Anticuerpos: \nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona:\nCONFIRM\nanti-Progesterone\nReceptor\n(ER)\n(1E2)\nRabbit\nMonoclonal\nPrimary\nAntibody. VENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nSe encuentra:\nExpresión de receptores de estrógenos: Marcación nuclear fuerte y positiva del 70% \nExpresión de receptores de progesterona:Marcación nuclear fuerte y positiva del 60% \nTiempo de isquemia en frío: desconocido\nTiempo de fijación en formalina buferada: desconocido.\nDIAGNÓSTICO\nGanglios linfáticos axilares derechos. Vaciamiento ( Historia de carcinoma ductal invasivo).\nEstudio de inmunohistoquimica\nMICROMETASTASIS DE CARCINOMA DUCTAL (1 MILÍMETRO)(1/14)\nRECEPTORES DE ESTROGENO :POSITIVO\nRECEPTORES DE PROGESTERONA: POSITIVO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 85 ---\nIHQ250102\nCopia Pag. 2 de 2\nNombre : LUZ DARY QUIÑONES\nN. peticion : IHQ250102\nN.Identificación : CC. 66846907\nGenero : FEMENINO\nEdad : 54 años 5 meses 8 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : QUIMIOTERAPIA\nFecha Ingreso : 29/01/2025\nFecha Informe : 16/02/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 86 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, GATA3, HER2, Receptor de Estrógeno, Receptor de Progesterona",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M242029” correspondiente a \" B. Vaciamiento radical axilar derecho” con diagnóstico de “ MICROMETASTASIS DE CARCINOMA DUCTAL (1 MILÍMETRO) (1/14)”. Previa revisión de la histología se realizan niveles histológicos en el blorque B9 para tinción con los marcadores: GATA 3 y CKAE1/AE13",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. En el ganglio linfático se reconoce celularidad positiva para CKAE1/AE3 y GATA 3. las células son negativas para Mamaglobina. La lesión tiene un tamaño de 1x 1mm \"Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Se encuentra: Expresión de receptores de estrógenos: Marcación nuclear fuerte y positiva del 70% Expresión de receptores de progesterona:Marcación nuclear fuerte y positiva del 60% Tiempo de isquemia en frío: desconocido Tiempo de fijación en formalina buferada: desconocido.",
+      "Descripcion Diagnostico": "Ganglios linfáticos axilares derechos. Vaciamiento ( Historia de carcinoma ductal invasivo). Estudio de inmunohistoquimica MICROMETASTASIS DE CARCINOMA DUCTAL (1 MILÍMETRO)(1/14) RECEPTORES DE ESTROGENO :POSITIVO RECEPTORES DE PROGESTERONA: POSITIVO",
+      "IHQ_ORGANO": "GANGLIOS LINFÁTICOS AXILARES DERECHOS",
+      "Organo": "CUADRANTECTOMIA MAMA DERECHA",
+      "Diagnostico Coloracion": "MICROMETASTASIS DE CARCINOMA DUCTAL (1 MILÍMETRO) (1/14)",
+      "Diagnostico Principal": "METASTASIS DE CARCINOMA DUCTAL (1 MILÍMETRO)(1/14)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: /Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_HER2": "/NEU: PATHWAY ANTI-HER-2/NEU (4B5) Rabbit Monoclonal Antibody",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 116,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 26.11
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 116,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglios linfáticos axilares derechos. Vaciamiento ( Historia de carcinoma ductal invasivo).\nEstudio de inmunohistoquimica\nMICROMETASTASIS DE CARCINOMA DUCTAL (1 MILÍMETRO)(1/14)\nRECEPTORES DE ESTROGENO :POSITIVO\nRECEPTORES DE PROGESTERONA: POSITIVO",
+      "valor_corregido": "Ganglios linfáticos axilares derechos. Vaciamiento ( Historia de carcinoma ductal invasivo). Estudio de inmunohistoquimica MICROMETASTASIS DE CARCINOMA DUCTAL (1 MILÍMETRO)(1/14) RECEPTORES DE ESTROGENO :POSITIVO RECEPTORES DE PROGESTERONA: POSITIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250102",
+      "timestamp": "2025-12-19T04:45:41.828571"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. En el ganglio linfático se reconoce celularidad positiva para CKAE1/AE3 y GATA 3. las células son negativas para Mamaglobina. La lesión tiene un tamaño de 1x 1mm \"Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Se encuentra: Expresión de receptores de estrógenos: Marcación nuclear fuerte y positiva del 70% Expresión de receptores de progesterona:Marcación nuclear fuerte y positiva del 60% Tiempo de isquemia en frío: desconocido Tiempo de fijación en formalina buferada: desconocido.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. En el ganglio linfático se reconoce celularidad positiva para CKAE1/AE3 y GATA 3. las células son negativas para Mamaglobina. La lesión tiene un tamaño de 1 x 1 mm \"Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Se encuentra: Expresión de receptores de estrógenos: Marcación nuclear fuerte y positiva del 70% Expresión de receptores de progesterona:Marcación nuclear fuerte y positiva del 60% Tiempo de isquemia en frío: desconocido Tiempo de fijación en formalina buferada: desconocido.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250102",
+      "timestamp": "2025-12-19T04:45:41.828577"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 51
+  }
+}

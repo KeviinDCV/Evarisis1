@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250222_20260119_014346",
+  "numero_peticion": "IHQ250222",
+  "timestamp": "2026-01-19T01:43:46.237633",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250222\nCopia Pag. 1 de 2\nNombre : ORLANDO DE JESUS VALENCIA\nVALENCIA\nN. peticion : IHQ250222\nN.Identificación : CC. 16207354\nGenero : MASCULINO\nEdad : 69 años 24 dias\nEPS : NUEVA EPS\nMédico tratante : JHON SANDOVAL\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 03/03/2025\nFecha Informe : 10/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPLEURA PARIETAL Y\nMEDIASTINO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2501488” correspondiente a “ A. Pleura parietal y B. Mediastino” con diagnóstico de “CARCINOMA A\nCLASIFICAR”. Previa revisión de la histología se realizan niveles histológicos al bloque A3 y B para tinción\ncon los marcadores: Napsina, TTF 1, p 40.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nEn A y en B hallazgos similares: Las células tumorales tienen marcación fuerte y positiva para Napsina,\nTTF 1 y la marcación es negativa para p40.\nDIAGNÓSTICO\n A. Pleura parietal. Tumor. Biopsia. Estudio de inmunohistoquimica:\nADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR.\nB. Mediastino, Masa. Biopsia. Estudio de inmunohistoquimica\n ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---\nIHQ250222\nCopia Pag. 2 de 2\nNombre : ORLANDO DE JESUS VALENCIA\nVALENCIA\nN. peticion : IHQ250222\nN.Identificación : CC. 16207354\nGenero : MASCULINO\nEdad : 69 años 24 dias\nEPS : NUEVA EPS\nMédico tratante : JHON SANDOVAL\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 03/03/2025\nFecha Informe : 10/03/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 23 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3189,
+      "reduccion_porcentaje": 98.22
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250222",
+      "caso_num": 11,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_NAPSIN": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "nombre_completo": "ORLANDO DE JESUS VALENCIA VALENCIA",
+      "numero_peticion": "IHQ250222",
+      "identificacion": "16207354",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "69",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JHON SANDOVAL",
+      "servicio": "OTORRINO CONSULTA EXTERNA",
+      "fecha_ingreso": "03/03/2025",
+      "fecha_informe": "10/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250222",
+      "N. de identificación": "16207354",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "OTORRINO CONSULTA EXTERNA",
+      "Médico tratante": "JHON SANDOVAL",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/03/2025",
+      "Fecha Informe": "10/03/2025",
+      "nombres": "ORLANDO DE JESUS",
+      "Primer nombre": "ORLANDO",
+      "Segundo nombre": "DE JESUS",
+      "apellidos": "VALENCIA VALENCIA",
+      "Primer apellido": "VALENCIA",
+      "Segundo apellido": "VALENCIA",
+      "nombre_formal": "VALENCIA VALENCIA, ORLANDO DE JESUS",
+      "diagnostico": "A. Pleura parietal. Tumor. Biopsia. Estudio de inmunohistoquimica: ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR. B. Mediastino, Masa. Biopsia. Estudio de inmunohistoquimica ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. En A y en B hallazgos similares: Las células tumorales tienen marcación fuerte y positiva para Napsina, TTF1 y la marcación es negativa para p40.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2501488\" correspondiente a \" A. Pleura parietal y B. Mediastino\" con diagnóstico de \"CARCINOMA A CLASIFICAR\". Previa revisión de la histología se realizan niveles histológicos al bloque A3 y B para tinción con los marcadores: Napsina, TTF1, p40.",
+      "ihq_organo": "PLEURA PARIETAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "NAPSIN, TTF-1, P 40",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PLEURA PARIETAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "NAPSIN, TTF-1, P 40",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-01-19T01:43:46.762691",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250222\nCopia Pag. 1 de 2\nNombre : ORLANDO DE JESUS VALENCIA\nVALENCIA\nN. peticion : IHQ250222\nN.Identificación : CC. 16207354\nGenero : MASCULINO\nEdad : 69 años 24 dias\nEPS : NUEVA EPS\nMédico tratante : JHON SANDOVAL\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 03/03/2025\nFecha Informe : 10/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPLEURA PARIETAL Y\nMEDIASTINO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2501488” correspondiente a “ A. Pleura parietal y B. Mediastino” con diagnóstico de “CARCINOMA A\nCLASIFICAR”. Previa revisión de la histología se realizan niveles histológicos al bloque A3 y B para tinción\ncon los marcadores: Napsina, TTF 1, p 40.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nEn A y en B hallazgos similares: Las células tumorales tienen marcación fuerte y positiva para Napsina,\nTTF 1 y la marcación es negativa para p40.\nDIAGNÓSTICO\n A. Pleura parietal. Tumor. Biopsia. Estudio de inmunohistoquimica:\nADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR.\nB. Mediastino, Masa. Biopsia. Estudio de inmunohistoquimica\n ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---\nIHQ250222\nCopia Pag. 2 de 2\nNombre : ORLANDO DE JESUS VALENCIA\nVALENCIA\nN. peticion : IHQ250222\nN.Identificación : CC. 16207354\nGenero : MASCULINO\nEdad : 69 años 24 dias\nEPS : NUEVA EPS\nMédico tratante : JHON SANDOVAL\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 03/03/2025\nFecha Informe : 10/03/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 23 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "NAPSIN, TTF-1, P 40",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2501488” correspondiente a “ A. Pleura parietal y B. Mediastino” con diagnóstico de “CARCINOMA A CLASIFICAR”. Previa revisión de la histología se realizan niveles histológicos al bloque A3 y B para tinción con los marcadores: Napsina, TTF 1, p 40.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. En A y en B hallazgos similares: Las células tumorales tienen marcación fuerte y positiva para Napsina, TTF 1 y la marcación es negativa para p40.",
+      "Descripcion Diagnostico": "A. Pleura parietal. Tumor. Biopsia. Estudio de inmunohistoquimica: ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR. B. Mediastino, Masa. Biopsia. Estudio de inmunohistoquimica ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR.",
+      "IHQ_ORGANO": "PLEURA PARIETAL",
+      "Organo": "PLEURA PARIETAL Y MEDIASTINO",
+      "Diagnostico Coloracion": "CARCINOMA A CLASIFICAR",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_NAPSIN": "POSITIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 135,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Pleura parietal. Tumor. Biopsia. Estudio de inmunohistoquimica:\nADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR.\nB. Mediastino, Masa. Biopsia. Estudio de inmunohistoquimica\n ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR.",
+      "valor_corregido": "A. Pleura parietal. Tumor. Biopsia. Estudio de inmunohistoquimica: ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR. B. Mediastino, Masa. Biopsia. Estudio de inmunohistoquimica ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN PULMONAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250222",
+      "timestamp": "2026-01-19T01:43:46.762354"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2501488” correspondiente a “ A. Pleura parietal y B. Mediastino” con diagnóstico de “CARCINOMA A CLASIFICAR”. Previa revisión de la histología se realizan niveles histológicos al bloque A3 y B para tinción con los marcadores: Napsina, TTF 1, p 40.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2501488\" correspondiente a \" A. Pleura parietal y B. Mediastino\" con diagnóstico de \"CARCINOMA A CLASIFICAR\". Previa revisión de la histología se realizan niveles histológicos al bloque A3 y B para tinción con los marcadores: Napsina, TTF1, p40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250222",
+      "timestamp": "2026-01-19T01:43:46.762363"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. En A y en B hallazgos similares: Las células tumorales tienen marcación fuerte y positiva para Napsina, TTF 1 y la marcación es negativa para p40.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. En A y en B hallazgos similares: Las células tumorales tienen marcación fuerte y positiva para Napsina, TTF1 y la marcación es negativa para p40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250222",
+      "timestamp": "2026-01-19T01:43:46.762366"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 52
+  }
+}

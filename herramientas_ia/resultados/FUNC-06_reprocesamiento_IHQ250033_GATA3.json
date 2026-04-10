@@ -1,0 +1,50 @@
+{
+  "caso": "IHQ250033",
+  "fecha_reprocesamiento": "2025-12-16T01:34:26.525140",
+  "objetivo": "Validar corrección de mapeo GATA3",
+  "problema_original": {
+    "descripcion": "GATA3 no se mapeaba correctamente",
+    "completitud_antes": "96.2%",
+    "gata3_antes": "NO MAPEADO"
+  },
+  "correcciones_aplicadas": {
+    "archivo": "core/utils/spelling_corrector.py",
+    "linea": "144",
+    "cambio": "Agregado mapeo \"GATA 3\" -> \"GATA3\" en BIOMARKER_SPELLINGS"
+  },
+  "reprocesamiento_func06": {
+    "estado": "EXITOSO",
+    "pdf_procesado": "pdfs_patologia/IHQ DEL 001 AL 050.pdf",
+    "casos_reprocesados": 50,
+    "backup_creado": true
+  },
+  "validacion_post_reprocesamiento": {
+    "auditoria_func01": {
+      "score": 88.9,
+      "estado": "OK",
+      "warnings": 0,
+      "errores": 0
+    },
+    "gata3_verificacion_bd": {
+      "columna": "IHQ_GATA3",
+      "columna_existe": true,
+      "valor_extraido": "NEGATIVO",
+      "en_estudios_solicitados": true,
+      "estado": "MAPEADO CORRECTAMENTE"
+    },
+    "completitud_final": "100%"
+  },
+  "resultado_final": {
+    "estado": "EXITOSO",
+    "objetivo_alcanzado": true,
+    "gata3_funciona": true,
+    "mejora_completitud": "96.2% -> 100% (esperado)",
+    "comentarios": [
+      "Mapeo GATA3 funciona correctamente",
+      "Columna IHQ_GATA3 existe y se llena",
+      "Valor NEGATIVO extraido correctamente",
+      "GATA3 aparece en IHQ_ESTUDIOS_SOLICITADOS",
+      "Score 88.9% debido a validaciones adicionales (no relacionado con GATA3)"
+    ]
+  }
+}

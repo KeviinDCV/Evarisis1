@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250040_20251216_032444",
+  "numero_peticion": "IHQ250040",
+  "timestamp": "2025-12-16T03:24:44.736469",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250040\nCopia Pag. 1 de 1\nNombre : ELOY FERNANDO AREVALO VELASCO N. peticion : IHQ250040\nN.Identificación : CC. 6079750\nGenero : MASCULINO\nEdad : 83 años 1 mes 15 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : CARLOS ALBERTO MORIONES\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 14/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION DE CLIVUS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2409498 que corresponde a resección de lesión en la región del clivus, con\ndiagnóstico de \"NEOPLASIA FUSOCELULAR\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLesión fusocelular que presenta positividad para EMA, CKAE1/AE3, Beta catenina, siendo negativa para\nCK7, GAFP, SOX10, Receptor de Progesterona y S100.\nÍndice de proliferación celular con un Ki-67 menor del 1%.\nDIAGNÓSTICO\nRegión del clivus. Lesión. Resección\nHALLAZGOS COMPATIBLES CON CRANEOFARINGIOMA ADANTIMOMATOSO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 69 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 2384,
+      "reduccion_porcentaje": 98.61
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250040",
+      "caso_num": 40,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ELOY FERNANDO AREVALO VELASCO",
+      "numero_peticion": "IHQ250040",
+      "identificacion": "6079750",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "83",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "CARLOS ALBERTO MORIONES",
+      "servicio": "TRAUMA Y REANIMACION",
+      "fecha_ingreso": "14/01/2025",
+      "fecha_informe": "04/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250040",
+      "N. de identificación": "6079750",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "TRAUMA Y REANIMACION",
+      "Médico tratante": "CARLOS ALBERTO MORIONES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/01/2025",
+      "Fecha Informe": "04/02/2025",
+      "nombres": "ELOY FERNANDO",
+      "Primer nombre": "ELOY",
+      "Segundo nombre": "FERNANDO",
+      "apellidos": "AREVALO VELASCO",
+      "Primer apellido": "AREVALO",
+      "Segundo apellido": "VELASCO",
+      "nombre_formal": "AREVALO VELASCO, ELOY FERNANDO",
+      "diagnostico": "Región del clivus. Lesión. Resección HALLAZGOS COMPATIBLES CON CRANEOFARINGIOMA ADANTIMOMATOSO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión fusocelular que presenta positividad para EMA, CKAE1/AE3, Beta catenina, siendo negativa para CK7, GAFP, SOX10, Receptor de Progesterona y S100. Índice de proliferación celular con un KI-67 menor del 1%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2409498 que corresponde a resección de lesión en la región del clivus, con diagnóstico de \"NEOPLASIA FUSOCELULAR\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "REGIÓN DEL CLIVUS",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN DEL CLIVUS",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: <1%, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_KI-67": "<1%",
+      "extraction_timestamp": "2025-12-16T03:24:44.863968",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250040\nCopia Pag. 1 de 1\nNombre : ELOY FERNANDO AREVALO VELASCO N. peticion : IHQ250040\nN.Identificación : CC. 6079750\nGenero : MASCULINO\nEdad : 83 años 1 mes 15 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : CARLOS ALBERTO MORIONES\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 14/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION DE CLIVUS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2409498 que corresponde a resección de lesión en la región del clivus, con\ndiagnóstico de \"NEOPLASIA FUSOCELULAR\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLesión fusocelular que presenta positividad para EMA, CKAE1/AE3, Beta catenina, siendo negativa para\nCK7, GAFP, SOX10, Receptor de Progesterona y S100.\nÍndice de proliferación celular con un Ki-67 menor del 1%.\nDIAGNÓSTICO\nRegión del clivus. Lesión. Resección\nHALLAZGOS COMPATIBLES CON CRANEOFARINGIOMA ADANTIMOMATOSO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 69 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, Ki-67, Receptor de Progesterona, S100, SOX10",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2409498 que corresponde a resección de lesión en la región del clivus, con diagnóstico de \"NEOPLASIA FUSOCELULAR\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión fusocelular que presenta positividad para EMA, CKAE1/AE3, Beta catenina, siendo negativa para CK7, GAFP, SOX10, Receptor de Progesterona y S100. Índice de proliferación celular con un Ki-67 menor del 1%.",
+      "Descripcion Diagnostico": "Región del clivus. Lesión. Resección HALLAZGOS COMPATIBLES CON CRANEOFARINGIOMA ADANTIMOMATOSO.",
+      "IHQ_ORGANO": "REGIÓN DEL CLIVUS",
+      "Organo": "BX LESION DE CLIVUS",
+      "Diagnostico Coloracion": "NEOPLASIA FUSOCELULAR",
+      "Diagnostico Principal": "CRANEOFARINGIOMA ADANTIMOMATOSO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: <1%, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_KI-67": "<1%",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 155,
+      "campos_vacios": 115,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 25.81
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 115,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región del clivus. Lesión. Resección\nHALLAZGOS COMPATIBLES CON CRANEOFARINGIOMA ADANTIMOMATOSO.",
+      "valor_corregido": "Región del clivus. Lesión. Resección HALLAZGOS COMPATIBLES CON CRANEOFARINGIOMA ADANTIMOMATOSO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250040",
+      "timestamp": "2025-12-16T03:24:44.863696"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2409498 que corresponde a resección de lesión en la región del clivus, con\ndiagnóstico de \"NEOPLASIA FUSOCELULAR\". Se ordenan estudios de inmunohistoquímica.",
+      "valor_corregido": "Se realizan niveles al bloque M2409498 que corresponde a resección de lesión en la región del clivus, con diagnóstico de \"NEOPLASIA FUSOCELULAR\". Se ordenan estudios de inmunohistoquímica.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250040",
+      "timestamp": "2025-12-16T03:24:44.863705"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLesión fusocelular que presenta positividad para EMA, CKAE1/AE3, Beta catenina, siendo negativa para\nCK7, GAFP, SOX10, Receptor de Progesterona y S100.\nÍndice de proliferación celular con un Ki-67 menor del 1%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión fusocelular que presenta positividad para EMA, CKAE1/AE3, Beta catenina, siendo negativa para CK7, GAFP, SOX10, Receptor de Progesterona y S100. Índice de proliferación celular con un KI-67 menor del 1%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250040",
+      "timestamp": "2025-12-16T03:24:44.863707"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 51
+  }
+}

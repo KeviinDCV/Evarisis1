@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250072_20251219_021227",
+  "numero_peticion": "IHQ250072",
+  "timestamp": "2025-12-19T02:12:27.095088",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250072\nCopia Pag. 1 de 2\nNombre : ALVARO MARTIN GUERRERO\nN. peticion : IHQ250072\nN.Identificación : CC. 18125409\nGenero : MASCULINO\nEdad : 56 años 1 mes 9 dias\nEPS : NUEVA EPS\nMédico tratante : JAVIER OROZCO MERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 22/01/2025\nFecha Informe : 29/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION HIPOFISIS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2410116 que corresponde a resección de lesión en hipófisis, con\ndiagnóstico de \"HALLAZGOS FAVORECEN ADENOMA HIPOFISIARIO\". Se ordenan estudios de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células descritas en H&E son negativas para CAM5.2, GH, ACTH, Prolactina, siendo positivas para\nFSH, LH con positividad focal, con positividad difusa para Cromogranina y Sinaptofisina.\np53 con negatividad en todas las células.\nÍndice de proliferación celular Ki-67 menor del 1%.\nDIAGNÓSTICO\nHipófisis. Lesión. Resección. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON ADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROFINAS.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---\nIHQ250072\nCopia Pag. 2 de 2\nNombre : ALVARO MARTIN GUERRERO\nN. peticion : IHQ250072\nN.Identificación : CC. 18125409\nGenero : MASCULINO\nEdad : 56 años 1 mes 9 dias\nEPS : NUEVA EPS\nMédico tratante : JAVIER OROZCO MERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 22/01/2025\nFecha Informe : 29/01/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 37 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3036,
+      "reduccion_porcentaje": 98.38
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250072",
+      "caso_num": 19,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_FSH": "POSITIVO",
+      "nombre_completo": "ALVARO MARTIN GUERRERO",
+      "numero_peticion": "IHQ250072",
+      "identificacion": "18125409",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "56",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JAVIER OROZCO MERA",
+      "servicio": "NEUROCIRUGIA",
+      "fecha_ingreso": "22/01/2025",
+      "fecha_informe": "29/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250072",
+      "N. de identificación": "18125409",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "NEUROCIRUGIA",
+      "Médico tratante": "JAVIER OROZCO MERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "22/01/2025",
+      "Fecha Informe": "29/01/2025",
+      "nombres": "ALVARO",
+      "Primer nombre": "ALVARO",
+      "Segundo nombre": "",
+      "apellidos": "MARTIN GUERRERO",
+      "Primer apellido": "MARTIN",
+      "Segundo apellido": "GUERRERO",
+      "nombre_formal": "MARTIN GUERRERO, ALVARO",
+      "diagnostico": "Hipófisis. Lesión. Resección. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON ADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROFINAS.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células descritas en H&E son negativas para CAM5.2, GH, ACTH, Prolactina, siendo positivas para FSH, LH con positividad focal, con positividad difusa para Cromogranina y Synaptophysin. p53 con negatividad en todas las células. Índice de proliferación celular KI-67 menor del 1%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2410116 que corresponde a resección de lesión en hipófisis, con diagnóstico de \"HALLAZGOS FAVORECEN ADENOMA HIPOFISIARIO\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "HIPÓFISIS",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "HIPÓFISIS",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_CAM5": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "POSITIVO",
+      "IHQ_KI-67": "<1%",
+      "IHQ_CROMOGRANINA": "POSITIVO",
+      "extraction_timestamp": "2025-12-19T02:12:27.237129",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250072\nCopia Pag. 1 de 2\nNombre : ALVARO MARTIN GUERRERO\nN. peticion : IHQ250072\nN.Identificación : CC. 18125409\nGenero : MASCULINO\nEdad : 56 años 1 mes 9 dias\nEPS : NUEVA EPS\nMédico tratante : JAVIER OROZCO MERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 22/01/2025\nFecha Informe : 29/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION HIPOFISIS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2410116 que corresponde a resección de lesión en hipófisis, con\ndiagnóstico de \"HALLAZGOS FAVORECEN ADENOMA HIPOFISIARIO\". Se ordenan estudios de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células descritas en H&E son negativas para CAM5.2, GH, ACTH, Prolactina, siendo positivas para\nFSH, LH con positividad focal, con positividad difusa para Cromogranina y Sinaptofisina.\np53 con negatividad en todas las células.\nÍndice de proliferación celular Ki-67 menor del 1%.\nDIAGNÓSTICO\nHipófisis. Lesión. Resección. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON ADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROFINAS.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---\nIHQ250072\nCopia Pag. 2 de 2\nNombre : ALVARO MARTIN GUERRERO\nN. peticion : IHQ250072\nN.Identificación : CC. 18125409\nGenero : MASCULINO\nEdad : 56 años 1 mes 9 dias\nEPS : NUEVA EPS\nMédico tratante : JAVIER OROZCO MERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 22/01/2025\nFecha Informe : 29/01/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 37 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CROMOGRANINA, Ki-67, SINAPTOFISINA",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2410116 que corresponde a resección de lesión en hipófisis, con diagnóstico de \"HALLAZGOS FAVORECEN ADENOMA HIPOFISIARIO\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células descritas en H&E son negativas para CAM5.2, GH, ACTH, Prolactina, siendo positivas para FSH, LH con positividad focal, con positividad difusa para Cromogranina y Sinaptofisina. p53 con negatividad en todas las células. Índice de proliferación celular Ki-67 menor del 1%.",
+      "Descripcion Diagnostico": "Hipófisis. Lesión. Resección. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON ADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROFINAS.",
+      "IHQ_ORGANO": "HIPÓFISIS",
+      "Organo": "LESION HIPOFISIS",
+      "Diagnostico Coloracion": "HALLAZGOS FAVORECEN ADENOMA HIPOFISIARIO",
+      "Diagnostico Principal": "ADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROFINAS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_CROMOGRANINA": "POSITIVO",
+      "IHQ_KI-67": "<1%",
+      "IHQ_SINAPTOFISINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 159,
+      "campos_vacios": 118,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 25.79
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 118,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hipófisis. Lesión. Resección. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON ADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROFINAS.",
+      "valor_corregido": "Hipófisis. Lesión. Resección. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON ADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROFINAS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250072",
+      "timestamp": "2025-12-19T02:12:27.236895"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2410116 que corresponde a resección de lesión en hipófisis, con\ndiagnóstico de \"HALLAZGOS FAVORECEN ADENOMA HIPOFISIARIO\". Se ordenan estudios de\ninmunohistoquímica.",
+      "valor_corregido": "Se realizan niveles al bloque M2410116 que corresponde a resección de lesión en hipófisis, con diagnóstico de \"HALLAZGOS FAVORECEN ADENOMA HIPOFISIARIO\". Se ordenan estudios de inmunohistoquímica.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250072",
+      "timestamp": "2025-12-19T02:12:27.236908"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células descritas en H&E son negativas para CAM5.2, GH, ACTH, Prolactina, siendo positivas para\nFSH, LH con positividad focal, con positividad difusa para Cromogranina y Sinaptofisina.\np53 con negatividad en todas las células.\nÍndice de proliferación celular Ki-67 menor del 1%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células descritas en H&E son negativas para CAM5.2, GH, ACTH, Prolactina, siendo positivas para FSH, LH con positividad focal, con positividad difusa para Cromogranina y Synaptophysin. p53 con negatividad en todas las células. Índice de proliferación celular KI-67 menor del 1%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250072",
+      "timestamp": "2025-12-19T02:12:27.236910"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 50
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "session_id": "IHQ250310_20260203_030635",
+  "numero_peticion": "IHQ250310",
+  "timestamp": "2026-02-03T03:06:35.048900",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250310\nCopia Pag. 1 de 2\nNombre : OFELIA ORTEGA BRAVO\nN. peticion : IHQ250310\nN.Identificación : CC. 29738848\nGenero : FEMENINO\nEdad : 70 años 10 dias\nEPS : NUEVA EPS\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 28/03/2025\nFecha Informe : 03/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA CERVICAL\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2503135 que corresponde a \"NEOPLASIA PAPILAR A CLASIFICAR CON ESTUDIOS DE\nINMUNOHISTOQUIMICA\". Previa revisión de la histología, se realizan niveles histológicos al bloque\npara tinción con TTF-1, PAX8, CK7, CK19, Ki67, p53.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLas células tumorales presentan inmunorreactividad positiva para TTF-1, PAX8, CK7 , CK19 con\níndice de proliferación Ki-67 < 1% .EL p53 con expresión mutada (nula).\nDIAGNÓSTICO\nRegión cervical. Lesión. Biopsia. Estudios de inmunohistoquimica:\n- CARCINOMA PAPILAR DE TIROIDES.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 86 ---\nIHQ250310\nCopia Pag. 2 de 2\nNombre : OFELIA ORTEGA BRAVO\nN. peticion : IHQ250310\nN.Identificación : CC. 29738848\nGenero : FEMENINO\nEdad : 70 años 10 dias\nEPS : NUEVA EPS\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 28/03/2025\nFecha Informe : 03/04/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3009,
+      "reduccion_porcentaje": 98.28
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250310",
+      "caso_num": 46,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_TTF1": "POSITIVO",
+      "nombre_completo": "OFELIA ORTEGA BRAVO",
+      "numero_peticion": "IHQ250310",
+      "identificacion": "29738848",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "70",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ISABEL CRISTINA TORRES",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "28/03/2025",
+      "fecha_informe": "03/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250310",
+      "N. de identificación": "29738848",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "ISABEL CRISTINA TORRES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/03/2025",
+      "Fecha Informe": "03/04/2025",
+      "nombres": "OFELIA",
+      "Primer nombre": "OFELIA",
+      "Segundo nombre": "",
+      "apellidos": "ORTEGA BRAVO",
+      "Primer apellido": "ORTEGA",
+      "Segundo apellido": "BRAVO",
+      "nombre_formal": "ORTEGA BRAVO, OFELIA",
+      "diagnostico": "Región cervical. Lesión. Biopsia. Estudios de inmunohistoquimica: - CARCINOMA PAPILAR DE TIROIDES.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales presentan inmunorreactividad positiva para TTF1, PAX8, CK7 , CK19 con índice de proliferación KI-67 < 1% .EL p53 con expresión mutada (nula).",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2503135 que corresponde a \"NEOPLASIA PAPILAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología, se realizan niveles histológicos al bloque para tinción con TTF1, PAX8, CK7, CK19, KI-67, p53.",
+      "ihq_organo": "REGIÓN CERVICAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "TTF-1, PAX8, CK7, CK19, Ki-67, P53",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN CERVICAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: 1%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, PAX8, CK7, CK19, Ki-67, P53",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_KI-67": "1%",
+      "extraction_timestamp": "2026-02-03T03:06:35.383074",
+      "extractor_version": "6.5.84_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250310\nCopia Pag. 1 de 2\nNombre : OFELIA ORTEGA BRAVO\nN. peticion : IHQ250310\nN.Identificación : CC. 29738848\nGenero : FEMENINO\nEdad : 70 años 10 dias\nEPS : NUEVA EPS\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 28/03/2025\nFecha Informe : 03/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA CERVICAL\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2503135 que corresponde a \"NEOPLASIA PAPILAR A CLASIFICAR CON ESTUDIOS DE\nINMUNOHISTOQUIMICA\". Previa revisión de la histología, se realizan niveles histológicos al bloque\npara tinción con TTF-1, PAX8, CK7, CK19, Ki67, p53.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLas células tumorales presentan inmunorreactividad positiva para TTF-1, PAX8, CK7 , CK19 con\níndice de proliferación Ki-67 < 1% .EL p53 con expresión mutada (nula).\nDIAGNÓSTICO\nRegión cervical. Lesión. Biopsia. Estudios de inmunohistoquimica:\n- CARCINOMA PAPILAR DE TIROIDES.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 86 ---\nIHQ250310\nCopia Pag. 2 de 2\nNombre : OFELIA ORTEGA BRAVO\nN. peticion : IHQ250310\nN.Identificación : CC. 29738848\nGenero : FEMENINO\nEdad : 70 años 10 dias\nEPS : NUEVA EPS\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 28/03/2025\nFecha Informe : 03/04/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, PAX8, CK7, CK19, Ki-67, P53",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2503135 que corresponde a \"NEOPLASIA PAPILAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología, se realizan niveles histológicos al bloque para tinción con TTF-1, PAX8, CK7, CK19, Ki67, p53.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales presentan inmunorreactividad positiva para TTF-1, PAX8, CK7 , CK19 con índice de proliferación Ki-67 < 1% .EL p53 con expresión mutada (nula).",
+      "Descripcion Diagnostico": "Región cervical. Lesión. Biopsia. Estudios de inmunohistoquimica: - CARCINOMA PAPILAR DE TIROIDES.",
+      "IHQ_ORGANO": "REGIÓN CERVICAL",
+      "Organo": "BX MASA CERVICAL IZQUIERDA",
+      "Diagnostico Coloracion": "NEOPLASIA PAPILAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "CARCINOMA PAPILAR DE TIROIDES",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 1%",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_KI-67": "1%",
+      "IHQ_P53": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 136,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región cervical. Lesión. Biopsia. Estudios de inmunohistoquimica:\n- CARCINOMA PAPILAR DE TIROIDES.",
+      "valor_corregido": "Región cervical. Lesión. Biopsia. Estudios de inmunohistoquimica: - CARCINOMA PAPILAR DE TIROIDES.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250310",
+      "timestamp": "2026-02-03T03:06:35.382872"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2503135 que corresponde a \"NEOPLASIA PAPILAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología, se realizan niveles histológicos al bloque para tinción con TTF-1, PAX8, CK7, CK19, Ki67, p53.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2503135 que corresponde a \"NEOPLASIA PAPILAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología, se realizan niveles histológicos al bloque para tinción con TTF1, PAX8, CK7, CK19, KI-67, p53.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250310",
+      "timestamp": "2026-02-03T03:06:35.382879"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales presentan inmunorreactividad positiva para TTF-1, PAX8, CK7 , CK19 con índice de proliferación Ki-67 < 1% .EL p53 con expresión mutada (nula).",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales presentan inmunorreactividad positiva para TTF1, PAX8, CK7 , CK19 con índice de proliferación KI-67 < 1% .EL p53 con expresión mutada (nula).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250310",
+      "timestamp": "2026-02-03T03:06:35.382881"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 52
+  }
+}

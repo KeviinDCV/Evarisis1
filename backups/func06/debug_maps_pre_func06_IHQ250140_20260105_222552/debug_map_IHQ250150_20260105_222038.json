@@ -1,0 +1,189 @@
+{
+  "session_id": "IHQ250150_20260105_222038",
+  "numero_peticion": "IHQ250150",
+  "timestamp": "2026-01-05T22:20:38.488942",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250150\nCopia Pag. 1 de 2\nNombre : MABEL REBOLLEDO GOMEZ\nN. peticion : IHQ250150\nN.Identificación : CC. 66882366\nGenero : MASCULINO\nEdad : 52 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 07/02/2025\nFecha Informe : 17/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION PERITONEO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado\ncomo\n“M2501188”\nque\ncorresponde\na\n“biopsia\nperitoneal”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®\nLas células tumorales presentan inmunorreactividad difusa con CK19 Y CK7.\nCA19.9 Y CDX2 con positividad focal.\nLos marcadores CK20, CEA, receptores de progesterona, receptores de estrógenos, CDX2, p16,\nGATA-3, WT1, PAX-8, TTF-1 y napsina son negativos.\ndiagnósticos\nde\n“ADENOCARCINOMA\nMETASTÁSICO”.\nPrevia\nrevisión\nde\nla\nhistología,\nse\nrealizan\nniveles\nhistológicos al bloque 1 para tinción con CK7, CK20, CK19, PAX-8, WT1, CDX2, p16, GATA-3,\nreceptores de estrógenos, receptores de progesterona, TTF-1, napsina, CEA y CA19.9.\nDIAGNÓSTICO\nPeritoneo. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.\nCOMENTARIOS\nA pesar de que la historia clínica habla de la presencia de masas anexiales, el perfil de expresión\nde inmunohistoquímica realizado no apoya un origen ovárico. La adecuada interpretación de este\nestudio debe correlacionarse con el cuadro clínico e imágenes diagnósticas.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---\nIHQ250150\nCopia Pag. 2 de 2\nNombre : MABEL REBOLLEDO GOMEZ\nN. peticion : IHQ250150\nN.Identificación : CC. 66882366\nGenero : MASCULINO\nEdad : 52 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 07/02/2025\nFecha Informe : 17/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3522,
+      "reduccion_porcentaje": 97.97
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250150",
+      "caso_num": 40,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK19": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "nombre_completo": "MABEL REBOLLEDO GOMEZ",
+      "numero_peticion": "IHQ250150",
+      "identificacion": "66882366",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "52",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ADRIANA MAYOR BARRERA",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "07/02/2025",
+      "fecha_informe": "17/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250150",
+      "N. de identificación": "66882366",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "ADRIANA MAYOR BARRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/02/2025",
+      "Fecha Informe": "17/02/2025",
+      "nombres": "MABEL REBOLLEDO",
+      "Primer nombre": "MABEL",
+      "Segundo nombre": "REBOLLEDO",
+      "apellidos": "GOMEZ",
+      "Primer apellido": "GOMEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "GOMEZ, MABEL REBOLLEDO",
+      "diagnostico": "Peritoneo. Lesión. Biopsia. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® Las células tumorales presentan inmunorreactividad difusa con CK19 Y CK7. CA19.9 Y CDX2 con positividad focal. Los marcadores CK20, CEA, receptores de progesterona, receptores de estrógenos, CDX2, p16, GATA-3, WT1, PAX-8, TTF1 y napsina son negativos. 9.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501188” que corresponde a “biopsia peritoneal” con diagnósticos de “ADENOCARCINOMA METASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 1 para tinción con CK7, CK20, CK19, PAX-8, WT1, CDX2, p16, GATA-3, receptores de estrógenos, receptores de progesterona, TTF1, napsina, CEA y CA19.",
+      "ihq_organo": "PERITONEO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, CK19, PAX 8, WT1, CDX2, P16, GATA 3, Receptor de Estrógeno, Receptor de Progesterona, TTF-1, NAPSIN, CEA, CA19-9",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "A pesar de que la historia clínica habla de la presencia de masas anexiales, el perfil de expresión de inmunohistoquímica realizado no apoya un origen ovárico. La adecuada interpretación de este estudio debe correlacionarse con el cuadro clínico e imágenes diagnósticas.",
+      "IHQ_ORGANO": "PERITONEO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, CK19, PAX 8, WT1, CDX2, P16, GATA 3, Receptor de Estrógeno, Receptor de Progesterona, TTF-1, NAPSIN, CEA, CA19-9",
+      "p16": "NEGATIVO",
+      "extraction_timestamp": "2026-01-05T22:20:38.926062",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250150\nCopia Pag. 1 de 2\nNombre : MABEL REBOLLEDO GOMEZ\nN. peticion : IHQ250150\nN.Identificación : CC. 66882366\nGenero : MASCULINO\nEdad : 52 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 07/02/2025\nFecha Informe : 17/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION PERITONEO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado\ncomo\n“M2501188”\nque\ncorresponde\na\n“biopsia\nperitoneal”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®\nLas células tumorales presentan inmunorreactividad difusa con CK19 Y CK7.\nCA19.9 Y CDX2 con positividad focal.\nLos marcadores CK20, CEA, receptores de progesterona, receptores de estrógenos, CDX2, p16,\nGATA-3, WT1, PAX-8, TTF-1 y napsina son negativos.\ndiagnósticos\nde\n“ADENOCARCINOMA\nMETASTÁSICO”.\nPrevia\nrevisión\nde\nla\nhistología,\nse\nrealizan\nniveles\nhistológicos al bloque 1 para tinción con CK7, CK20, CK19, PAX-8, WT1, CDX2, p16, GATA-3,\nreceptores de estrógenos, receptores de progesterona, TTF-1, napsina, CEA y CA19.9.\nDIAGNÓSTICO\nPeritoneo. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.\nCOMENTARIOS\nA pesar de que la historia clínica habla de la presencia de masas anexiales, el perfil de expresión\nde inmunohistoquímica realizado no apoya un origen ovárico. La adecuada interpretación de este\nestudio debe correlacionarse con el cuadro clínico e imágenes diagnósticas.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---\nIHQ250150\nCopia Pag. 2 de 2\nNombre : MABEL REBOLLEDO GOMEZ\nN. peticion : IHQ250150\nN.Identificación : CC. 66882366\nGenero : MASCULINO\nEdad : 52 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 07/02/2025\nFecha Informe : 17/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, CK19, PAX 8, WT1, CDX2, P16, GATA 3, Receptor de Estrógeno, Receptor de Progesterona, TTF-1, NAPSIN, CEA, CA19-9",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501188” que corresponde a “biopsia peritoneal” con diagnósticos de “ADENOCARCINOMA METASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 1 para tinción con CK7, CK20, CK19, PAX-8, WT1, CDX2, p16, GATA-3, receptores de estrógenos, receptores de progesterona, TTF-1, napsina, CEA y CA19.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® Las células tumorales presentan inmunorreactividad difusa con CK19 Y CK7. CA19.9 Y CDX2 con positividad focal. Los marcadores CK20, CEA, receptores de progesterona, receptores de estrógenos, CDX2, p16, GATA-3, WT1, PAX-8, TTF-1 y napsina son negativos. 9.",
+      "Descripcion Diagnostico": "Peritoneo. Lesión. Biopsia. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.",
+      "IHQ_ORGANO": "PERITONEO",
+      "Organo": "BX LESION PERITONEO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA METASTÁSICO",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK19": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 120,
+      "campos_completos": 48,
+      "biomarcadores_encontrados": 14,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 120,
+      "total_campos_completos": 48
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Peritoneo. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.",
+      "valor_corregido": "Peritoneo. Lesión. Biopsia. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250150",
+      "timestamp": "2026-01-05T22:20:38.925865"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501188” que corresponde a “biopsia peritoneal” con diagnósticos de “ADENOCARCINOMA METASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 1 para tinción con CK7, CK20, CK19, PAX-8, WT1, CDX2, p16, GATA-3, receptores de estrógenos, receptores de progesterona, TTF-1, napsina, CEA y CA19.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501188” que corresponde a “biopsia peritoneal” con diagnósticos de “ADENOCARCINOMA METASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 1 para tinción con CK7, CK20, CK19, PAX-8, WT1, CDX2, p16, GATA-3, receptores de estrógenos, receptores de progesterona, TTF1, napsina, CEA y CA19.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250150",
+      "timestamp": "2026-01-05T22:20:38.925871"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® Las células tumorales presentan inmunorreactividad difusa con CK19 Y CK7. CA19.9 Y CDX2 con positividad focal. Los marcadores CK20, CEA, receptores de progesterona, receptores de estrógenos, CDX2, p16, GATA-3, WT1, PAX-8, TTF-1 y napsina son negativos. 9.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® Las células tumorales presentan inmunorreactividad difusa con CK19 Y CK7. CA19.9 Y CDX2 con positividad focal. Los marcadores CK20, CEA, receptores de progesterona, receptores de estrógenos, CDX2, p16, GATA-3, WT1, PAX-8, TTF1 y napsina son negativos. 9.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250150",
+      "timestamp": "2026-01-05T22:20:38.925872"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "A pesar de que la historia clínica habla de la presencia de masas anexiales, el perfil de expresión\nde inmunohistoquímica realizado no apoya un origen ovárico. La adecuada interpretación de este\nestudio debe correlacionarse con el cuadro clínico e imágenes diagnósticas.",
+      "valor_corregido": "A pesar de que la historia clínica habla de la presencia de masas anexiales, el perfil de expresión de inmunohistoquímica realizado no apoya un origen ovárico. La adecuada interpretación de este estudio debe correlacionarse con el cuadro clínico e imágenes diagnósticas.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250150",
+      "timestamp": "2026-01-05T22:20:38.925874"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 63
+  }
+}

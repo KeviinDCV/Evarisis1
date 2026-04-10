@@ -1,0 +1,135 @@
+{
+  "session_id": "IHQ250204_20260108_025831",
+  "numero_peticion": "IHQ250204",
+  "timestamp": "2026-01-08T02:58:31.312109",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250204\nCopia Pag. 1 de 1\nNombre : MARIA BENILDA ROCHA QUINTANA\nN. peticion : IHQ250204\nN.Identificación : CC. 48657035\nGenero : FEMENINO\nEdad : 57 años 6 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 25/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR MUCOSA GASTRICA\nANTRAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501942 que corresponde a\n\"ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO\nCON ULCERACIÓN.\". Previa valoración de la coloración básica, se realizan cortes histológicos para\nel siguientes marcadores: HER-2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\n Sobreexpresión de oncogen HER 2: Negativo (score 0)\nDIAGNÓSTICO\nMucosa gástrica antral. Tumor. Biopsia endoscópica. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO \n- HER 2 : NEGATIVO ( SCORE 0)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2371,
+      "reduccion_porcentaje": 98.57
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250204",
+      "caso_num": 43,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA BENILDA ROCHA QUINTANA",
+      "numero_peticion": "IHQ250204",
+      "identificacion": "48657035",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "57",
+      "eps": "ASMET SALUD EPS SAS",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "25/02/2025",
+      "fecha_informe": "28/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250204",
+      "N. de identificación": "48657035",
+      "Tipo de documento": "CC",
+      "EPS": "ASMET SALUD EPS SAS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "25/02/2025",
+      "Fecha Informe": "28/02/2025",
+      "nombres": "MARIA BENILDA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "BENILDA",
+      "apellidos": "ROCHA QUINTANA",
+      "Primer apellido": "ROCHA",
+      "Segundo apellido": "QUINTANA",
+      "nombre_formal": "ROCHA QUINTANA, MARIA BENILDA",
+      "diagnostico": "Mucosa gástrica antral. Tumor. Biopsia endoscópica. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO - HER 2 : NEGATIVO ( SCORE 0)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Sobreexpresión de oncogen HER 2: Negativo (score 0)",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501942 que corresponde a \"ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON ULCERACIÓN.\". Previa valoración de la coloración básica, se realizan cortes histológicos para el siguientes marcadores: HER-2.",
+      "ihq_organo": "MUCOSA GÁSTRICA ANTRAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA ANTRAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_HER2": "NEGATIVO",
+      "extraction_timestamp": "2026-01-08T02:58:31.650898",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250204\nCopia Pag. 1 de 1\nNombre : MARIA BENILDA ROCHA QUINTANA\nN. peticion : IHQ250204\nN.Identificación : CC. 48657035\nGenero : FEMENINO\nEdad : 57 años 6 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 25/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR MUCOSA GASTRICA\nANTRAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501942 que corresponde a\n\"ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO\nCON ULCERACIÓN.\". Previa valoración de la coloración básica, se realizan cortes histológicos para\nel siguientes marcadores: HER-2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\n Sobreexpresión de oncogen HER 2: Negativo (score 0)\nDIAGNÓSTICO\nMucosa gástrica antral. Tumor. Biopsia endoscópica. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO \n- HER 2 : NEGATIVO ( SCORE 0)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501942 que corresponde a \"ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON ULCERACIÓN.\". Previa valoración de la coloración básica, se realizan cortes histológicos para el siguientes marcadores: HER-2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Sobreexpresión de oncogen HER 2: Negativo (score 0)",
+      "Descripcion Diagnostico": "Mucosa gástrica antral. Tumor. Biopsia endoscópica. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO - HER 2 : NEGATIVO ( SCORE 0)",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA ANTRAL",
+      "Organo": "TUMOR MUCOSA GASTRICA ANTRAL",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO - HER 2 : NEGATIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO",
+      "IHQ_HER2": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 131,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 1,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 131,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa gástrica antral. Tumor. Biopsia endoscópica. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO \n- HER 2 : NEGATIVO ( SCORE 0)",
+      "valor_corregido": "Mucosa gástrica antral. Tumor. Biopsia endoscópica. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO - HER 2 : NEGATIVO ( SCORE 0)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250204",
+      "timestamp": "2026-01-08T02:58:31.650635"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 47
+  }
+}

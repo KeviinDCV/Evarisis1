@@ -1,0 +1,116 @@
+{
+  "titulo": "REPORTE FUNC-06: REPROCESAMIENTO EXITOSO IHQ251023",
+  "timestamp": "2025-11-08T22:22:36.208363",
+  "caso": "IHQ251023",
+  "1_resumen_ejecutivo": {
+    "estado": "EXITOSO",
+    "objetivo": "Validar extracción mejorada de CK20 con patrones actualizados",
+    "resultado": "CK20 extraído correctamente - Completitud alcanzada 100%%"
+  },
+  "2_fases_ejecutadas": {
+    "fase_1_limpieza": {
+      "estado": "COMPLETADA",
+      "accion": "Eliminación automática de datos antiguos",
+      "resultado": "Datos previos del caso removidos de BD"
+    },
+    "fase_2_reprocesamiento": {
+      "estado": "COMPLETADA",
+      "accion": "Regeneración completa del PDF",
+      "casos_procesados": 47,
+      "resultado": "PDF IHQ DEL 980 AL 1037.pdf reprocesado completamente"
+    },
+    "fase_3_validacion": {
+      "estado": "COMPLETADA",
+      "accion": "Auditoría inteligente FUNC-01",
+      "score": "100%%",
+      "resultado": "Validación exitosa con 1 warning menor"
+    }
+  },
+  "3_comparacion_biomarcadores": {
+    "antes_reprocesamiento": {
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "NO MENCIONADO",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_MUC2": "NEGATIVO",
+      "completitud": "80%% (4/5)"
+    },
+    "despues_reprocesamiento": {
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "POSITIVIDAD CITOPLASMÁTICA ESPORÁDICA FUERTE PARA CK20",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_MUC2": "NEGATIVO",
+      "completitud": "100%% (5/5)"
+    }
+  },
+  "4_cambio_critico": {
+    "campo": "IHQ_CK20",
+    "valor_anterior": "NO MENCIONADO",
+    "valor_nuevo": "POSITIVIDAD CITOPLASMÁTICA ESPORÁDICA FUERTE PARA CK20",
+    "patron_utilizado": "Patrón mejorado en biomarker_extractor.py",
+    "validacion": "CORRECTO",
+    "nota": "Patrón POSITIVIDAD CITOPLASMÁTICA... detectado exitosamente"
+  },
+  "5_completitud": {
+    "antes": "80%% (4/5 biomarcadores)",
+    "despues": "100%% (5/5 biomarcadores)",
+    "mejora": "+20%%",
+    "biomarcadores_solicitados": "CK7, CK19, CK20, CDX2, MUC2",
+    "todos_mapeados": true
+  },
+  "6_auditoria_inteligente": {
+    "score_validacion": "100%%",
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "errores": 0,
+    "warnings": 1,
+    "estado_final": "ADVERTENCIA (warning menor)",
+    "warning_descripcion": "1/5 biomarcadores con formato narrativo no estandarizado (IHQ_CK20 tiene valor largo)"
+  },
+  "7_validaciones_detalladas": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "ADENOCARCINOMA MUCINOSO DE BAJO GRADO (WHO, 5TA EDICIÓN)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "valor": "LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ADENOCARCINOMA DE APENDICE MODERADAMENTE DIFERENCIADO (NOS)"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA"
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "valor": "APENDICE CECAL"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "valor": "MALIGNO"
+    }
+  },
+  "8_recomendaciones": {
+    "warning_ck20": {
+      "problema": "Valor CK20 muy largo (54 caracteres)",
+      "valor_actual": "POSITIVIDAD CITOPLASMÁTICA ESPORÁDICA FUERTE PARA CK20",
+      "valor_sugerido": "POSITIVO",
+      "accion": "OPCIONAL: Normalizar formato a POSITIVO/NEGATIVO estándar",
+      "prioridad": "BAJA",
+      "nota": "El valor es correcto y específico. Normalización es opcional para uniformidad."
+    }
+  },
+  "9_archivos_generados": {
+    "reporte_func06": "herramientas_ia/resultados/FUNC-06_reprocesamiento_IHQ251023.json",
+    "auditoria_inteligente": "herramientas_ia/resultados/auditoria_inteligente_IHQ251023.json",
+    "reporte_consolidado": "herramientas_ia/resultados/REPORTE_CONSOLIDADO_FUNC06_IHQ251023.json"
+  },
+  "10_conclusion": {
+    "estado": "EXITOSO",
+    "objetivo_alcanzado": true,
+    "completitud_final": "100%%",
+    "ck20_extraido": true,
+    "patron_mejorado_funciona": true,
+    "siguiente_paso": "Ninguno - Caso completo y validado"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "session_id": "IHQ250186_20260112_132605",
+  "numero_peticion": "IHQ250186",
+  "timestamp": "2026-01-12T13:26:05.017888",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250186\nCopia Pag. 1 de 3\nNombre : LUIS JOSÉ MORALES VALENCIA\nN. peticion : IHQ250186\nN.Identificación : CC. 1148448481\nGenero : MASCULINO\nEdad : 32 años 5 meses 8 dias\nEPS : PARTICULAR\nMédico tratante : ARMANDO CORTES\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 19/02/2025\nFecha Informe : 21/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MUCOSA GASTRICA\nOXINTICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nrotulado como “P25 0530” que corresponde a “biopsia de mucosa gástrica oxíntica” con diagnóstico de\n“proliferación hematolinfoide a clasificar por inmunohistoquímica”. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con CKAE1E3, PAX-5, CD20, BCL6, BCL2, MUM-1, KI-67, CD10,\nCD5 Y CD3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células neoplásicas son positivas para CD20, PAX-5, BCL6, Y MUM-1. Son negativas para CKAE1E3,\nCD5, CD10, BCL2.\nÍndice de proliferación KI-67 del 90%.\nBajo la tinción de CD3 Y CD5 se reconocen lincitos T acompañantes.\nDIAGNÓSTICO\nMucosa gástrica oxíntica. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- LINFOMA DIFUSO DE CÉLULAS B GRANDES, NO CENTROGERMINAL.\nCOMENTARIOS\nEstudios de C-MYC por inmunohistoquímica en curso, serán reportados en un informe adicional.\nSe recomienda correlacionar este informe con la historia clínica, estudios endoscópicos e imágenes\ndiagnósticas para su adecuada interpretación.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---\nIHQ250186\nCopia Pag. 2 de 3\nNombre : LUIS JOSÉ MORALES VALENCIA\nN. peticion : IHQ250186\nN.Identificación : CC. 1148448481\nGenero : MASCULINO\nEdad : 32 años 5 meses 8 dias\nEPS : PARTICULAR\nMédico tratante : ARMANDO CORTES\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 19/02/2025\nFecha Informe : 21/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---\nIHQ250186\nCopia Pag. 3 de 3\nNombre : LUIS JOSÉ MORALES VALENCIA\nN. peticion : IHQ250186\nN.Identificación : CC. 1148448481\nGenero : MASCULINO\nEdad : 32 años 5 meses 8 dias\nEPS : PARTICULAR\nMédico tratante : ARMANDO CORTES\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 19/02/2025\nFecha Informe : 21/02/2025\nINFORME ADICIONAL\nFecha informe adicional: 25/02/2025\n Informe para reportar marcador de inmunohistoquimica adicional:\nC-MYC: Negativo.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 46 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 4262,
+      "reduccion_porcentaje": 97.43
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250186",
+      "caso_num": 26,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "nombre_completo": "LUIS JOSÉ MORALES VALENCIA",
+      "numero_peticion": "IHQ250186",
+      "identificacion": "1148448481",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "32",
+      "eps": "PARTICULAR",
+      "medico_tratante": "ARMANDO CORTES",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "19/02/2025",
+      "fecha_informe": "21/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250186",
+      "N. de identificación": "1148448481",
+      "Tipo de documento": "CC",
+      "EPS": "PARTICULAR",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "ARMANDO CORTES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "19/02/2025",
+      "Fecha Informe": "21/02/2025",
+      "nombres": "LUIS JOSÉ",
+      "Primer nombre": "LUIS",
+      "Segundo nombre": "JOSÉ",
+      "apellidos": "MORALES VALENCIA",
+      "Primer apellido": "MORALES",
+      "Segundo apellido": "VALENCIA",
+      "nombre_formal": "MORALES VALENCIA, LUIS JOSÉ",
+      "diagnostico": "Mucosa gástrica oxíntica. Lesión. Biopsia. Estudio de inmunohistoquímica: - LINFOMA DIFUSO DE CÉLULAS B GRANDES, NO CENTROGERMINAL.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son positivas para CD20, PAX-5, BCL6, Y MUM-1. Son negativas para CKAE1E3, CD5, CD10, BCL2. Índice de proliferación KI-67 del 90%. Bajo la tinción de CD3 Y CD5 se reconocen lincitos T acompañantes.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como \"P25 0530\" que corresponde a \"biopsia de mucosa gástrica oxíntica\" con diagnóstico de \"proliferación hematolinfoide a clasificar por inmunohistoquímica\". Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, PAX-5, CD20, BCL6, BCL2, MUM-1, KI-67, CD10, CD5 Y CD3.",
+      "ihq_organo": "MUCOSA GÁSTRICA OXÍNTICA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, PAX 5, CD20, BCL6, BCL2, MUM 1, Ki-67, CD10, CD5, CD3",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Estudios de C-MYC por inmunohistoquímica en curso, serán reportados en un informe adicional. Se recomienda correlacionar este informe con la historia clínica, estudios endoscópicos e imágenes diagnósticas para su adecuada interpretación.",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA OXÍNTICA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, PAX 5, CD20, BCL6, BCL2, MUM 1, Ki-67, CD10, CD5, CD3",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_BCL2": "NEGATIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_CMYC": "NEGATIVO",
+      "extraction_timestamp": "2026-01-12T13:26:05.649004",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250186\nCopia Pag. 1 de 3\nNombre : LUIS JOSÉ MORALES VALENCIA\nN. peticion : IHQ250186\nN.Identificación : CC. 1148448481\nGenero : MASCULINO\nEdad : 32 años 5 meses 8 dias\nEPS : PARTICULAR\nMédico tratante : ARMANDO CORTES\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 19/02/2025\nFecha Informe : 21/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MUCOSA GASTRICA\nOXINTICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nrotulado como “P25 0530” que corresponde a “biopsia de mucosa gástrica oxíntica” con diagnóstico de\n“proliferación hematolinfoide a clasificar por inmunohistoquímica”. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con CKAE1E3, PAX-5, CD20, BCL6, BCL2, MUM-1, KI-67, CD10,\nCD5 Y CD3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células neoplásicas son positivas para CD20, PAX-5, BCL6, Y MUM-1. Son negativas para CKAE1E3,\nCD5, CD10, BCL2.\nÍndice de proliferación KI-67 del 90%.\nBajo la tinción de CD3 Y CD5 se reconocen lincitos T acompañantes.\nDIAGNÓSTICO\nMucosa gástrica oxíntica. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- LINFOMA DIFUSO DE CÉLULAS B GRANDES, NO CENTROGERMINAL.\nCOMENTARIOS\nEstudios de C-MYC por inmunohistoquímica en curso, serán reportados en un informe adicional.\nSe recomienda correlacionar este informe con la historia clínica, estudios endoscópicos e imágenes\ndiagnósticas para su adecuada interpretación.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---\nIHQ250186\nCopia Pag. 2 de 3\nNombre : LUIS JOSÉ MORALES VALENCIA\nN. peticion : IHQ250186\nN.Identificación : CC. 1148448481\nGenero : MASCULINO\nEdad : 32 años 5 meses 8 dias\nEPS : PARTICULAR\nMédico tratante : ARMANDO CORTES\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 19/02/2025\nFecha Informe : 21/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---\nIHQ250186\nCopia Pag. 3 de 3\nNombre : LUIS JOSÉ MORALES VALENCIA\nN. peticion : IHQ250186\nN.Identificación : CC. 1148448481\nGenero : MASCULINO\nEdad : 32 años 5 meses 8 dias\nEPS : PARTICULAR\nMédico tratante : ARMANDO CORTES\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 19/02/2025\nFecha Informe : 21/02/2025\nINFORME ADICIONAL\nFecha informe adicional: 25/02/2025\n Informe para reportar marcador de inmunohistoquimica adicional:\nC-MYC: Negativo.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 46 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, PAX 5, CD20, BCL6, BCL2, MUM 1, Ki-67, CD10, CD5, CD3, CMYC",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como “P25 0530” que corresponde a “biopsia de mucosa gástrica oxíntica” con diagnóstico de “proliferación hematolinfoide a clasificar por inmunohistoquímica”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, PAX-5, CD20, BCL6, BCL2, MUM-1, KI-67, CD10, CD5 Y CD3.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son positivas para CD20, PAX-5, BCL6, Y MUM-1. Son negativas para CKAE1E3, CD5, CD10, BCL2. Índice de proliferación KI-67 del 90%. Bajo la tinción de CD3 Y CD5 se reconocen lincitos T acompañantes.",
+      "Descripcion Diagnostico": "Mucosa gástrica oxíntica. Lesión. Biopsia. Estudio de inmunohistoquímica: - LINFOMA DIFUSO DE CÉLULAS B GRANDES, NO CENTROGERMINAL.",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA OXÍNTICA",
+      "Organo": "BX MUCOSA GASTRICA OXINTICA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN HEMATOLINFOIDE A CLASIFICAR POR INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LINFOMA DIFUSO DE CÉLULAS B GRANDES, NO CENTROGERMINAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_BCL2": "NEGATIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD5": "NEGATIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CMYC": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 127,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 11,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 127,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa gástrica oxíntica. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- LINFOMA DIFUSO DE CÉLULAS B GRANDES, NO CENTROGERMINAL.",
+      "valor_corregido": "Mucosa gástrica oxíntica. Lesión. Biopsia. Estudio de inmunohistoquímica: - LINFOMA DIFUSO DE CÉLULAS B GRANDES, NO CENTROGERMINAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250186",
+      "timestamp": "2026-01-12T13:26:05.648594"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como “P25 0530” que corresponde a “biopsia de mucosa gástrica oxíntica” con diagnóstico de “proliferación hematolinfoide a clasificar por inmunohistoquímica”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, PAX-5, CD20, BCL6, BCL2, MUM-1, KI-67, CD10, CD5 Y CD3.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como \"P25 0530\" que corresponde a \"biopsia de mucosa gástrica oxíntica\" con diagnóstico de \"proliferación hematolinfoide a clasificar por inmunohistoquímica\". Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, PAX-5, CD20, BCL6, BCL2, MUM-1, KI-67, CD10, CD5 Y CD3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250186",
+      "timestamp": "2026-01-12T13:26:05.648606"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Estudios de C-MYC por inmunohistoquímica en curso, serán reportados en un informe adicional.\nSe recomienda correlacionar este informe con la historia clínica, estudios endoscópicos e imágenes\ndiagnósticas para su adecuada interpretación.",
+      "valor_corregido": "Estudios de C-MYC por inmunohistoquímica en curso, serán reportados en un informe adicional. Se recomienda correlacionar este informe con la historia clínica, estudios endoscópicos e imágenes diagnósticas para su adecuada interpretación.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250186",
+      "timestamp": "2026-01-12T13:26:05.648609"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 60
+  }
+}

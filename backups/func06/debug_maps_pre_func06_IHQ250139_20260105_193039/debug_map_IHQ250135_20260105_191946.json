@@ -1,0 +1,147 @@
+{
+  "session_id": "IHQ250135_20260105_191946",
+  "numero_peticion": "IHQ250135",
+  "timestamp": "2026-01-05T19:19:46.372123",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250135\nCopia Pag. 1 de 1\nNombre : ISABEL TOBON CASTRO\nN. peticion : IHQ250135\nN.Identificación : CC. 31405381\nGenero : FEMENINO\nEdad : 64 años 3 meses\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : INES MARIA LINARES\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 06/02/2025\nFecha Informe : 19/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION CUPULA VAGINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2500763, el cual corresponde a biopsia de lesión en cúpula\nvaginal historia de adenocarcinoma endometrioide invasivo FIGO I de útero), con diagnóstico de\n\"ADENOCARCINOMA INVASIVO\". Se ordenan los siguientes marcadores: p53, Receptores de\nProgesterona, Receptores de Estrógeno, HER2, MLH1, MSH2, MSH6 y PMS2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para Receptores de Estrógeno, Receptores de Progesterona,\nexpresión en patrón salvaje para p53 y HER2 negativo (1+).\nLos marcadores inmunohistoquímicos de inestabilidad microsatelital MLH1, MSH2, MSH6 y PMS2 no\npresentan pérdida de la expresión nuclear.\nDIAGNÓSTICO\n Cúpula vaginal. Tumor (historia de adenocarcinoma endometriode invasivo FIGO I de útero). Biopsia.\nEstudio de inmunohistoquímica:\nADENOCARCINOMA METASTÁSICO\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 2657,
+      "reduccion_porcentaje": 98.47
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250135",
+      "caso_num": 26,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_P53": "POSITIVO (PATRÓN SALVAJE)",
+      "IHQ_HER2": "NEGATIVO (1+)",
+      "nombre_completo": "ISABEL TOBON CASTRO",
+      "numero_peticion": "IHQ250135",
+      "identificacion": "31405381",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "64",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "INES MARIA LINARES",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "06/02/2025",
+      "fecha_informe": "19/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250135",
+      "N. de identificación": "31405381",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "INES MARIA LINARES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "06/02/2025",
+      "Fecha Informe": "19/02/2025",
+      "nombres": "ISABEL",
+      "Primer nombre": "ISABEL",
+      "Segundo nombre": "",
+      "apellidos": "TOBON CASTRO",
+      "Primer apellido": "TOBON",
+      "Segundo apellido": "CASTRO",
+      "nombre_formal": "TOBON CASTRO, ISABEL",
+      "diagnostico": "Cúpula vaginal. Tumor (historia de adenocarcinoma endometriode invasivo FIGO I de útero). Biopsia. Estudio de inmunohistoquímica: ADENOCARCINOMA METASTÁSICO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para Receptores de Estrógeno, Receptores de Progesterona, expresión en patrón salvaje para p53 y HER2 negativo (1+). Los marcadores inmunohistoquímicos de inestabilidad microsatelital MLH1, MSH2, MSH6 y PMS2 no presentan pérdida de la expresión nuclear.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2500763, el cual corresponde a biopsia de lesión en cúpula vaginal historia de adenocarcinoma endometrioide invasivo FIGO I de útero), con diagnóstico de \"ADENOCARCINOMA INVASIVO\". Se ordenan los siguientes marcadores: p53, Receptores de Progesterona, Receptores de Estrógeno, HER2, MLH1, MSH2, MSH6 y PMS2.",
+      "ihq_organo": "CÚPULA VAGINAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P53, Receptor de Progesterona, Receptor de Estrógeno, HER2, MLH1, MSH2, MSH6, PMS2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CÚPULA VAGINAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "HER2: NEGATIVO (1+), Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P53, Receptor de Progesterona, Receptor de Estrógeno, HER2, MLH1, MSH2, MSH6, PMS2",
+      "IHQ_MLH1": "POSITIVO",
+      "IHQ_MSH2": "POSITIVO",
+      "IHQ_MSH6": "POSITIVO",
+      "IHQ_PMS2": "POSITIVO",
+      "extraction_timestamp": "2026-01-05T19:19:46.662449",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250135\nCopia Pag. 1 de 1\nNombre : ISABEL TOBON CASTRO\nN. peticion : IHQ250135\nN.Identificación : CC. 31405381\nGenero : FEMENINO\nEdad : 64 años 3 meses\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : INES MARIA LINARES\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 06/02/2025\nFecha Informe : 19/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION CUPULA VAGINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2500763, el cual corresponde a biopsia de lesión en cúpula\nvaginal historia de adenocarcinoma endometrioide invasivo FIGO I de útero), con diagnóstico de\n\"ADENOCARCINOMA INVASIVO\". Se ordenan los siguientes marcadores: p53, Receptores de\nProgesterona, Receptores de Estrógeno, HER2, MLH1, MSH2, MSH6 y PMS2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para Receptores de Estrógeno, Receptores de Progesterona,\nexpresión en patrón salvaje para p53 y HER2 negativo (1+).\nLos marcadores inmunohistoquímicos de inestabilidad microsatelital MLH1, MSH2, MSH6 y PMS2 no\npresentan pérdida de la expresión nuclear.\nDIAGNÓSTICO\n Cúpula vaginal. Tumor (historia de adenocarcinoma endometriode invasivo FIGO I de útero). Biopsia.\nEstudio de inmunohistoquímica:\nADENOCARCINOMA METASTÁSICO\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P53, Receptor de Progesterona, Receptor de Estrógeno, HER2, MLH1, MSH2, MSH6, PMS2",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2500763, el cual corresponde a biopsia de lesión en cúpula vaginal historia de adenocarcinoma endometrioide invasivo FIGO I de útero), con diagnóstico de \"ADENOCARCINOMA INVASIVO\". Se ordenan los siguientes marcadores: p53, Receptores de Progesterona, Receptores de Estrógeno, HER2, MLH1, MSH2, MSH6 y PMS2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para Receptores de Estrógeno, Receptores de Progesterona, expresión en patrón salvaje para p53 y HER2 negativo (1+). Los marcadores inmunohistoquímicos de inestabilidad microsatelital MLH1, MSH2, MSH6 y PMS2 no presentan pérdida de la expresión nuclear.",
+      "Descripcion Diagnostico": "Cúpula vaginal. Tumor (historia de adenocarcinoma endometriode invasivo FIGO I de útero). Biopsia. Estudio de inmunohistoquímica: ADENOCARCINOMA METASTÁSICO",
+      "IHQ_ORGANO": "CÚPULA VAGINAL",
+      "Organo": "LESION CUPULA VAGINAL",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTÁSICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO (1+), Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "IHQ_P53": "POSITIVO (PATRÓN SALVAJE)",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_HER2": "NEGATIVO (1+)",
+      "IHQ_MLH1": "POSITIVO",
+      "IHQ_MSH2": "POSITIVO",
+      "IHQ_MSH6": "POSITIVO",
+      "IHQ_PMS2": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 125,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 8,
+      "completitud_porcentaje": 25.15
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 125,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cúpula vaginal. Tumor (historia de adenocarcinoma endometriode invasivo FIGO I de útero). Biopsia.\nEstudio de inmunohistoquímica:\nADENOCARCINOMA METASTÁSICO",
+      "valor_corregido": "Cúpula vaginal. Tumor (historia de adenocarcinoma endometriode invasivo FIGO I de útero). Biopsia. Estudio de inmunohistoquímica: ADENOCARCINOMA METASTÁSICO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250135",
+      "timestamp": "2026-01-05T19:19:46.662172"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 55
+  }
+}

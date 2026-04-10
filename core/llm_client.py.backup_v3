@@ -1,0 +1,699 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+🤖 CLIENTE LLM - OpenRouter Cloud API
+======================================
+
+Cliente para comunicación con OpenRouter (modelos gratuitos en la nube).
+Optimizado para validación y corrección de datos médicos.
+Compatible con cualquier equipo (no requiere GPU ni RAM extra).
+
+VERSION 3.0.0 - Migración a OpenRouter (10 Abr 2026):
+- Reemplazo de LM Studio local por OpenRouter cloud API
+- Modelos gratuitos: google/gemini-2.0-flash-exp:free
+- No requiere hardware especial
+- Mantiene interfaz compatible con el resto del sistema
+
+Autor: Sistema EVARISIS
+Versión: 3.0.0
+Fecha: 10 de abril de 2026
+"""
+
+import json
+import logging
+import os
+import sys
+import requests
+from pathlib import Path
+from typing import Dict, Any, Optional, List, Union
+from datetime import datetime
+import time
+import threading
+
+# Configurar salida UTF-8 en Windows
+if sys.platform.startswith('win'):
+    import io
+    # Solo configurar si no está ya configurado Y está accesible
+    try:
+        if hasattr(sys.stdout, 'encoding') and sys.stdout.encoding != 'utf-8':
+            if hasattr(sys.stdout, 'buffer') and not sys.stdout.closed:
+                sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    except (AttributeError, ValueError, OSError):
+        pass
+
+    try:
+        if hasattr(sys.stderr, 'encoding') and sys.stderr.encoding != 'utf-8':
+            if hasattr(sys.stderr, 'buffer') and not sys.stderr.closed:
+                sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+    except (AttributeError, ValueError, OSError):
+        pass
+
+
+class LMStudioClient:
+    """Cliente LLM compatible con OpenRouter (cloud, gratuito, sin GPU)"""
+
+    # Semáforo de clase para limitar concurrencia global
+    _request_semaphore = threading.Semaphore(2)  # Máximo 2 peticiones simultáneas
+    _last_request_time = 0
+    _min_request_interval = 0.5  # 500ms entre peticiones
+
+    # Modelos gratuitos en OpenRouter (fallback chain - orden de prioridad)
+    # Verificados 10 Abr 2026 via /api/v1/models
+    MODELOS_GRATUITOS = [
+        "google/gemma-4-31b-it:free",
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "google/gemma-3-27b-it:free",
+        "nousresearch/hermes-3-llama-3.1-405b:free",
+        "qwen/qwen3-coder:free",
+        "minimax/minimax-m2.5:free",
+    ]
+
+    def __init__(
+        self,
+        endpoint: str = "https://openrouter.ai/api/v1",
+        model: Optional[str] = None,
+        timeout: int = 120,
+        max_retries: int = 3,
+        api_key: Optional[str] = None,
+        **kwargs  # Absorber parámetros legacy sin romper
+    ):
+        """
+        Inicializar cliente LLM con OpenRouter
+
+        Args:
+            endpoint: URL del API (default: OpenRouter)
+            model: ID del modelo (default: primer modelo gratuito disponible)
+            timeout: Timeout para peticiones en segundos
+            max_retries: Número máximo de reintentos
+            api_key: API key de OpenRouter (o variable de entorno OPENROUTER_API_KEY)
+        """
+        self.endpoint = endpoint.rstrip('/')
+        self.model = model or self.MODELOS_GRATUITOS[0]
+        self._model_index = 0
+        self.timeout = timeout
+        self.max_retries = max_retries
+        self.session_history = []
+
+        # API Key: parámetro > variable de entorno > config.ini
+        self.api_key = api_key or os.environ.get("OPENROUTER_API_KEY", "")
+
+        if not self.api_key:
+            self._cargar_api_key_config()
+
+        if not self.api_key:
+            logging.warning("⚠️ No se encontró OPENROUTER_API_KEY. Configúrala en config/config.ini o como variable de entorno.")
+        else:
+            logging.info(f"✅ OpenRouter configurado - Modelo: {self.model}")
+
+    def _cargar_api_key_config(self):
+        """Intenta cargar API key desde config/config.ini"""
+        try:
+            import configparser
+            config_path = Path(__file__).parent.parent / "config" / "config.ini"
+            if config_path.exists():
+                config = configparser.ConfigParser()
+                config.read(config_path, encoding='utf-8')
+                self.api_key = config.get("openrouter", "api_key", fallback="")
+        except Exception:
+            pass
+
+    def _detectar_modelo(self):
+        """Compatibilidad: no-op para OpenRouter (modelo ya está definido)"""
+        pass
+
+    def completar(
+        self,
+        prompt: str,
+        system_prompt: Optional[str] = None,
+        temperature: float = 0.1,
+        max_tokens: int = 2000,
+        formato_json: bool = False,
+        enable_reasoning: bool = False
+    ) -> Dict[str, Any]:
+        """
+        Genera una completación usando OpenRouter
+
+        Args:
+            prompt: Prompt del usuario
+            system_prompt: Prompt del sistema (opcional)
+            temperature: Temperatura para generación (0.0-2.0)
+            max_tokens: Máximo de tokens a generar
+            formato_json: Si True, fuerza respuesta en JSON
+            enable_reasoning: Ignorado (compatibilidad legacy)
+
+        Returns:
+            Dict con respuesta y metadata
+        """
+        if not self.api_key:
+            return {
+                "exito": False,
+                "error": "API key de OpenRouter no configurada. Agrégala en config/config.ini [openrouter] api_key=...",
+                "timestamp": datetime.now().isoformat()
+            }
+
+        messages = []
+
+        if system_prompt:
+            messages.append({"role": "system", "content": system_prompt})
+
+        messages.append({"role": "user", "content": prompt})
+
+        # Agregar historial si existe
+        if self.session_history:
+            messages = self.session_history + messages
+
+        # Payload estándar OpenAI-compatible
+        payload = {
+            "messages": messages,
+            "temperature": temperature,
+            "max_tokens": max_tokens,
+            "stream": False,
+            "model": self.model
+        }
+
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://evarisis-huv.local",
+            "X-Title": "EVARISIS Gestor Oncologico"
+        }
+
+        # Reintentos con backoff exponencial + fallback entre modelos
+        last_error = None
+        max_total_attempts = self.max_retries * len(self.MODELOS_GRATUITOS)
+        intentos_modelo = 0  # Reintentos para el modelo actual
+        for intento in range(max_total_attempts):
+            try:
+                # Rate limiting con semáforo
+                with self._request_semaphore:
+                    current_time = time.time()
+                    time_since_last = current_time - LMStudioClient._last_request_time
+                    if time_since_last < self._min_request_interval:
+                        time.sleep(self._min_request_interval - time_since_last)
+
+                    LMStudioClient._last_request_time = time.time()
+
+                    logging.info(f"   🔄 Enviando request a OpenRouter ({self.model})...")
+                    response = requests.post(
+                        f"{self.endpoint}/chat/completions",
+                        json=payload,
+                        headers=headers,
+                        timeout=self.timeout
+                    )
+                    logging.info(f"   ✅ Respuesta recibida (status={response.status_code})")
+
+                # Éxito
+                if response.status_code == 200:
+                    data = response.json()
+
+                    # Validar estructura de respuesta
+                    if "error" in data:
+                        error_msg = data["error"].get("message", str(data["error"])) if isinstance(data["error"], dict) else str(data["error"])
+                        logging.info(f"⚠️ API devolvió error en respuesta 200: {error_msg[:200]}")
+                        # Tratar como rate limit si es por capacidad
+                        if "rate" in error_msg.lower() or "limit" in error_msg.lower() or "capacity" in error_msg.lower():
+                            response.status_code = 429  # Forzar manejo de rate limit
+                            continue
+                        last_error = {
+                            "exito": False,
+                            "error": f"Error del modelo: {error_msg[:300]}",
+                            "timestamp": datetime.now().isoformat()
+                        }
+                        # Intentar otro modelo
+                        if self._model_index < len(self.MODELOS_GRATUITOS) - 1:
+                            self._model_index += 1
+                            self.model = self.MODELOS_GRATUITOS[self._model_index]
+                            payload["model"] = self.model
+                            logging.info(f"⚠️ Probando siguiente modelo: {self.model}")
+                            continue
+                        return last_error
+
+                    if "choices" not in data or not data["choices"]:
+                        logging.info(f"⚠️ Respuesta sin 'choices': {str(data)[:300]}")
+                        last_error = {
+                            "exito": False,
+                            "error": f"Respuesta inesperada del modelo (sin 'choices'): {str(data)[:200]}",
+                            "timestamp": datetime.now().isoformat()
+                        }
+                        if self._model_index < len(self.MODELOS_GRATUITOS) - 1:
+                            self._model_index += 1
+                            self.model = self.MODELOS_GRATUITOS[self._model_index]
+                            payload["model"] = self.model
+                            continue
+                        return last_error
+
+                    message = data["choices"][0]["message"]
+                    respuesta = message.get("content", "")
+                    finish_reason = data["choices"][0].get("finish_reason")
+
+                    # Si content vacío pero hay reasoning, usar reasoning
+                    if not respuesta and "reasoning" in message:
+                        respuesta = message.get("reasoning", "")
+
+                    if finish_reason == "length" and len(respuesta.strip()) < 20 and len(prompt) > 50:
+                        return {
+                            "exito": False,
+                            "error": f"Modelo alcanzó límite de tokens (max_tokens={max_tokens}). Respuesta incompleta.",
+                            "finish_reason": finish_reason,
+                            "timestamp": datetime.now().isoformat()
+                        }
+
+                    if not respuesta or len(respuesta.strip()) < 2:
+                        return {
+                            "exito": False,
+                            "error": f"Modelo devolvió respuesta vacía (finish_reason={finish_reason}).",
+                            "respuesta_cruda": str(data),
+                            "timestamp": datetime.now().isoformat()
+                        }
+
+                    tokens = data.get("usage", {})
+
+                    contenido = respuesta
+                    if formato_json:
+                        try:
+                            # Limpiar markdown si viene envuelto en ```json ... ```
+                            texto_limpio = respuesta.strip()
+                            if texto_limpio.startswith("```"):
+                                lineas = texto_limpio.split("\n")
+                                # Quitar primera y última línea (``` markers)
+                                lineas = [l for l in lineas if not l.strip().startswith("```")]
+                                texto_limpio = "\n".join(lineas)
+                            contenido = json.loads(texto_limpio)
+                        except json.JSONDecodeError:
+                            logging.info("⚠️ La respuesta no es JSON válido, devolviendo texto plano")
+
+                    return {
+                        "exito": True,
+                        "respuesta": contenido,
+                        "tokens_usados": {
+                            "prompt": tokens.get("prompt_tokens", 0),
+                            "completion": tokens.get("completion_tokens", 0),
+                            "total": tokens.get("total_tokens", 0)
+                        },
+                        "modelo": data.get("model", self.model),
+                        "finish_reason": finish_reason,
+                        "timestamp": datetime.now().isoformat()
+                    }
+
+                # Rate limit (429) o modelo no disponible (404/400)
+                elif response.status_code in (429, 404, 400):
+                    status = response.status_code
+                    # Intentar siguiente modelo gratuito
+                    if self._model_index < len(self.MODELOS_GRATUITOS) - 1:
+                        self._model_index += 1
+                        self.model = self.MODELOS_GRATUITOS[self._model_index]
+                        payload["model"] = self.model
+                        intentos_modelo = 0  # Reset reintentos para nuevo modelo
+                        reason = "Rate limit" if status == 429 else "Modelo no disponible"
+                        logging.info(f"⚠️ {reason} ({status}), probando: {self.model}")
+                        time.sleep(1 if status != 429 else 2)
+                        continue
+
+                    # Ya probamos todos los modelos: esperar y reintentar desde el primero
+                    intentos_modelo += 1
+                    if intentos_modelo < self.max_retries:
+                        wait_time = (2 ** intentos_modelo) * 3
+                        self._model_index = 0
+                        self.model = self.MODELOS_GRATUITOS[0]
+                        payload["model"] = self.model
+                        logging.info(f"⚠️ Todos los modelos con rate limit - Esperando {wait_time}s, reintentando desde {self.model}...")
+                        time.sleep(wait_time)
+                        continue
+
+                    last_error = {
+                        "exito": False,
+                        "error": f"Todos los modelos gratuitos agotados después de múltiples intentos (último: HTTP {status})",
+                        "timestamp": datetime.now().isoformat()
+                    }
+                    return last_error
+
+                # Error del servidor
+                else:
+                    # HTTP 402 = límite de gasto agotado - NO reintentar
+                    if response.status_code == 402:
+                        error_text = response.text[:500]
+                        logging.error(f"\n🚫 LÍMITE DE API AGOTADO (HTTP 402). No se reintentará.")
+                        logging.error(f"   Detalle: {error_text[:200]}")
+                        return {
+                            "exito": False,
+                            "error": f"Límite de gasto de API agotado. Los modelos gratuitos tienen un tope diario. Espera unas horas o crea una nueva API key en openrouter.ai",
+                            "fatal_api": True,
+                            "timestamp": datetime.now().isoformat()
+                        }
+
+                    last_error = {
+                        "exito": False,
+                        "error": f"HTTP {response.status_code}: {response.text[:500]}",
+                        "timestamp": datetime.now().isoformat()
+                    }
+                    if response.status_code >= 500:
+                        wait_time = (2 ** intento) * 0.5
+                        if intento < self.max_retries - 1:
+                            logging.info(f"⚠️ Error servidor - Reintentando en {wait_time:.1f}s...")
+                            time.sleep(wait_time)
+                            continue
+                    return last_error
+
+            except requests.exceptions.Timeout:
+                last_error = {
+                    "exito": False,
+                    "error": f"Timeout después de {self.timeout} segundos",
+                    "timestamp": datetime.now().isoformat()
+                }
+                if intento < self.max_retries - 1:
+                    logging.info(f"⚠️ Timeout - Reintentando... ({intento+1}/{self.max_retries})")
+                    time.sleep(1)
+                    continue
+                return last_error
+
+            except requests.exceptions.ConnectionError as e:
+                last_error = {
+                    "exito": False,
+                    "error": f"No se puede conectar a OpenRouter. Verifica tu conexión a internet.",
+                    "detalle": str(e),
+                    "timestamp": datetime.now().isoformat()
+                }
+                if intento < self.max_retries - 1:
+                    logging.info(f"⚠️ Error de conexión - Reintentando... ({intento+1}/{self.max_retries})")
+                    time.sleep(1)
+                    continue
+                return last_error
+
+            except Exception as e:
+                last_error = {
+                    "exito": False,
+                    "error": f"Error inesperado: {type(e).__name__}: {str(e)}",
+                    "timestamp": datetime.now().isoformat()
+                }
+                if intento < self.max_retries - 1:
+                    logging.info(f"⚠️ Error inesperado - Reintentando...")
+                    time.sleep(1)
+                    continue
+                return last_error
+
+        return last_error if last_error else {
+            "exito": False,
+            "error": "Todos los reintentos fallaron",
+            "timestamp": datetime.now().isoformat()
+        }
+
+    def validar_campo_medico(
+        self,
+        campo: str,
+        valor_extraido: str,
+        texto_original: str,
+        contexto: Optional[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
+        """
+        Valida un campo médico usando el LLM
+
+        Args:
+            campo: Nombre del campo médico
+            valor_extraido: Valor extraído por el sistema
+            texto_original: Texto original del PDF
+            contexto: Contexto adicional (otros campos extraídos)
+
+        Returns:
+            Dict con validación y sugerencias
+        """
+        system_prompt = """Eres un asistente médico experto en validación de datos de informes de inmunohistoquímica (IHQ).
+
+Tu tarea es validar si un campo extraído automáticamente es correcto según el texto original del informe médico.
+
+Debes responder ÚNICAMENTE en formato JSON con esta estructura:
+{
+  "campo_correcto": true/false,
+  "confianza": 0.0-1.0,
+  "valor_sugerido": "valor corregido" o null,
+  "razonamiento": "explicación breve",
+  "ubicacion_en_texto": "fragmento donde encontraste la info"
+}"""
+
+        contexto_str = ""
+        if contexto:
+            contexto_str = f"\n\nOtros campos extraídos (para contexto):\n{json.dumps(contexto, ensure_ascii=False, indent=2)}"
+
+        prompt = f"""CAMPO A VALIDAR: {campo}
+VALOR EXTRAÍDO: {valor_extraido}
+
+TEXTO ORIGINAL DEL INFORME:
+{texto_original[:3000]}
+
+{contexto_str}
+
+Valida si el valor extraído es correcto y sugiere correcciones si es necesario."""
+
+        resultado = self.completar(
+            prompt=prompt,
+            system_prompt=system_prompt,
+            temperature=0.1,
+            max_tokens=500,
+            formato_json=True
+        )
+
+        if resultado["exito"]:
+            try:
+                # Si ya es dict (formato_json funcionó)
+                if isinstance(resultado["respuesta"], dict):
+                    validacion = resultado["respuesta"]
+                else:
+                    validacion = json.loads(resultado["respuesta"])
+
+                return {
+                    "exito": True,
+                    "campo": campo,
+                    "valor_original": valor_extraido,
+                    "validacion": validacion,
+                    "tokens_usados": resultado["tokens_usados"]
+                }
+            except json.JSONDecodeError:
+                return {
+                    "exito": False,
+                    "error": "Respuesta del LLM no es JSON válido",
+                    "respuesta_cruda": resultado["respuesta"]
+                }
+        else:
+            return resultado
+
+    def validar_multiple_campos(
+        self,
+        datos_extraidos: Dict[str, Any],
+        texto_original: str,
+        campos_a_validar: Optional[List[str]] = None
+    ) -> Dict[str, Any]:
+        """
+        Valida múltiples campos en una sola llamada
+
+        Args:
+            datos_extraidos: Dict con todos los datos extraídos
+            texto_original: Texto original del PDF
+            campos_a_validar: Lista de campos específicos a validar (None = todos)
+
+        Returns:
+            Dict con validaciones de todos los campos
+        """
+        campos = campos_a_validar or list(datos_extraidos.keys())
+
+        validaciones = {}
+        tokens_totales = 0
+
+        for campo in campos:
+            if campo not in datos_extraidos:
+                continue
+
+            valor = datos_extraidos[campo]
+
+            # Saltar campos vacíos
+            if not valor or str(valor).strip() in ['', 'N/A', 'None']:
+                continue
+
+            # Crear contexto sin el campo actual
+            contexto = {k: v for k, v in datos_extraidos.items() if k != campo}
+
+            resultado = self.validar_campo_medico(
+                campo,
+                str(valor),
+                texto_original,
+                contexto
+            )
+
+            validaciones[campo] = resultado
+
+            if resultado.get("exito"):
+                tokens_totales += resultado.get("tokens_usados", {}).get("total", 0)
+
+        return {
+            "validaciones": validaciones,
+            "campos_validados": len(validaciones),
+            "tokens_totales": tokens_totales,
+            "timestamp": datetime.now().isoformat()
+        }
+
+    def sugerir_correcciones_lote(
+        self,
+        datos_extraidos: Dict[str, Any],
+        datos_bd: Dict[str, Any],
+        texto_original: str
+    ) -> Dict[str, Any]:
+        """
+        Sugiere correcciones para todos los campos comparando extracción vs BD
+
+        Args:
+            datos_extraidos: Datos extraídos del PDF
+            datos_bd: Datos guardados en la base de datos
+            texto_original: Texto original del PDF
+
+        Returns:
+            Dict con correcciones sugeridas
+        """
+        system_prompt = """Eres un experto en validación de datos médicos de informes IHQ.
+
+Compara los datos extraídos automáticamente con los datos guardados en la base de datos.
+Identifica discrepancias y sugiere correcciones basándote en el texto original del informe.
+
+Responde ÚNICAMENTE en formato JSON:
+{
+  "correcciones": [
+    {
+      "campo": "nombre_campo",
+      "valor_extraido": "valor",
+      "valor_bd": "valor",
+      "valor_sugerido": "valor_correcto",
+      "confianza": 0.0-1.0,
+      "razon": "explicación",
+      "ubicacion_texto": "fragmento relevante"
+    }
+  ],
+  "resumen": {
+    "total_discrepancias": 0,
+    "correcciones_criticas": 0,
+    "correcciones_opcionales": 0
+  }
+}"""
+
+        prompt = f"""DATOS EXTRAÍDOS:
+{json.dumps(datos_extraidos, ensure_ascii=False, indent=2)}
+
+DATOS EN BASE DE DATOS:
+{json.dumps(datos_bd, ensure_ascii=False, indent=2)}
+
+TEXTO ORIGINAL DEL INFORME:
+{texto_original[:4000]}
+
+Identifica discrepancias y sugiere correcciones."""
+
+        resultado = self.completar(
+            prompt=prompt,
+            system_prompt=system_prompt,
+            temperature=0.1,
+            max_tokens=2000,
+            formato_json=True
+        )
+
+        return resultado
+
+    def extraer_campo_con_llm(
+        self,
+        campo: str,
+        descripcion_campo: str,
+        texto_original: str,
+        ejemplos: Optional[List[str]] = None
+    ) -> Dict[str, Any]:
+        """
+        Extrae un campo específico usando el LLM (fallback cuando regex falla)
+
+        Args:
+            campo: Nombre del campo
+            descripcion_campo: Descripción de qué extraer
+            texto_original: Texto del informe
+            ejemplos: Ejemplos de valores válidos (opcional)
+
+        Returns:
+            Dict con valor extraído y confianza
+        """
+        system_prompt = """Eres un experto en extracción de datos de informes médicos de inmunohistoquímica.
+
+Extrae ÚNICAMENTE el valor solicitado del texto.
+Responde en formato JSON:
+{
+  "valor": "valor_extraido" o null,
+  "confianza": 0.0-1.0,
+  "ubicacion": "fragmento donde encontraste el valor"
+}"""
+
+        ejemplos_str = ""
+        if ejemplos:
+            ejemplos_str = f"\n\nEJEMPLOS DE VALORES VÁLIDOS:\n" + "\n".join(f"- {ej}" for ej in ejemplos)
+
+        prompt = f"""CAMPO A EXTRAER: {campo}
+DESCRIPCIÓN: {descripcion_campo}{ejemplos_str}
+
+TEXTO DEL INFORME:
+{texto_original[:3000]}
+
+Extrae el valor del campo solicitado."""
+
+        resultado = self.completar(
+            prompt=prompt,
+            system_prompt=system_prompt,
+            temperature=0.1,
+            max_tokens=300,
+            formato_json=True
+        )
+
+        return resultado
+
+    def guardar_sesion(self, filepath: Path):
+        """Guarda el historial de la sesión en JSON"""
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump({
+                "endpoint": self.endpoint,
+                "model": self.model,
+                "historial": self.session_history,
+                "timestamp": datetime.now().isoformat()
+            }, f, indent=2, ensure_ascii=False)
+
+    def limpiar_historial(self):
+        """Limpia el historial de la sesión"""
+        self.session_history = []
+
+
+if __name__ == "__main__":
+    # Ejemplo de uso
+    logging.info("🤖 CLIENTE LLM - Ejemplo de uso")
+    logging.info("=" * 80)
+
+    client = LMStudioClient()
+
+    # Ejemplo 1: Completación simple
+    logging.info("\n📝 Ejemplo 1: Completación simple")
+    resultado = client.completar(
+        "¿Qué es la inmunohistoquímica?",
+        temperature=0.3,
+        max_tokens=200
+    )
+
+    if resultado["exito"]:
+        logging.info(f"✅ Respuesta: {resultado['respuesta'][:200]}...")
+        logging.info(f"📊 Tokens: {resultado['tokens_usados']['total']}")
+
+    # Ejemplo 2: Validación de campo
+    logging.info("\n\n🔍 Ejemplo 2: Validación de campo médico")
+    texto_ejemplo = """
+    INFORME DE INMUNOHISTOQUÍMICA
+    N. petición: IHQ250001
+    Paciente: MARIA GARCIA LOPEZ
+    Edad: 54 años
+    Género: FEMENINO
+    """
+
+    validacion = client.validar_campo_medico(
+        campo="Edad",
+        valor_extraido="54 años 3 meses",
+        texto_original=texto_ejemplo
+    )
+
+    if validacion["exito"]:
+        logging.info(f"✅ Validación:")
+        logging.info(json.dumps(validacion["validacion"], indent=2, ensure_ascii=False))

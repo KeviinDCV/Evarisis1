@@ -1,0 +1,141 @@
+{
+  "session_id": "IHQ251030_20251109_165734",
+  "numero_peticion": "IHQ251030",
+  "timestamp": "2025-11-09T16:57:34.309348",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251030\nCopia Pag. 1 de 2\nNombre : MIGUEL ANTONIO HERRERA\nGONZALEZ\nN. peticion : IHQ251030\nN.Identificación : CC. 79047315\nGenero : MASCULINO\nEdad : 60 años 7 meses 5 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : QUIMIOTERAPIA\nFecha Ingreso : 18/09/2025\nFecha Informe : 25/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGASTRECTOMIA TOTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado\ncomo\n“M2501720 bloque A7” que corresponde a \"Tumor de estomago.\nGastrectomía total.\". y\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nPruebas realizadas en la muestra / número: M2501720 A7.\n HER2 : NEGATIVO (Score 0)\ndiagnóstico\nde\n“ADENOCARCINOMA\nINTESTINAL\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con:\nHer2.\nDIAGNÓSTICO\nEstomago. Tumor. Gastrectomía total. Estudio de inmunohistoquímica. \nADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO. \nHER2 NEGATIVO (SCORE 0)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 93 ---\nIHQ251030\nCopia Pag. 2 de 2\nNombre : MIGUEL ANTONIO HERRERA\nGONZALEZ\nN. peticion : IHQ251030\nN.Identificación : CC. 79047315\nGenero : MASCULINO\nEdad : 60 años 7 meses 5 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : QUIMIOTERAPIA\nFecha Ingreso : 18/09/2025\nFecha Informe : 25/09/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 94 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3022,
+      "reduccion_porcentaje": 98.44
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251030",
+      "caso_num": 44,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MIGUEL ANTONIO HERRERA GONZALEZ",
+      "numero_peticion": "IHQ251030",
+      "identificacion": "79047315",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "60",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "QUIMIOTERAPIA",
+      "fecha_ingreso": "18/09/2025",
+      "fecha_informe": "25/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251030",
+      "N. de identificación": "79047315",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIMIOTERAPIA",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "18/09/2025",
+      "Fecha Informe": "25/09/2025",
+      "nombres": "MIGUEL ANTONIO HERRERA",
+      "Primer nombre": "MIGUEL",
+      "Segundo nombre": "ANTONIO HERRERA",
+      "apellidos": "GONZALEZ",
+      "Primer apellido": "GONZALEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "GONZALEZ, MIGUEL ANTONIO HERRERA",
+      "diagnostico": "de “ADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con: Her2. DIAGNÓSTICO Estomago. Tumor. Gastrectomía total. Estudio de inmunohistoquímica. ADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO. HER2 NEGATIVO (SCORE 0)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Pruebas realizadas en la muestra / número: M2501720 A7. HER2 : NEGATIVO (Score 0) diagnóstico de “ADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con: Her2.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “M2501720 bloque A7” que corresponde a \"Tumor de estomago. Gastrectomía total.\". y con",
+      "ihq_organo": "DE\n“ADENOCARCINOMA\nINTESTINAL\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO”",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "DE\n“ADENOCARCINOMA\nINTESTINAL\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO”",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2 : NEGATIVO (Score 0)",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "extraction_timestamp": "2025-11-09T16:57:34.420306",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251030\nCopia Pag. 1 de 2\nNombre : MIGUEL ANTONIO HERRERA\nGONZALEZ\nN. peticion : IHQ251030\nN.Identificación : CC. 79047315\nGenero : MASCULINO\nEdad : 60 años 7 meses 5 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : QUIMIOTERAPIA\nFecha Ingreso : 18/09/2025\nFecha Informe : 25/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGASTRECTOMIA TOTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado\ncomo\n“M2501720 bloque A7” que corresponde a \"Tumor de estomago.\nGastrectomía total.\". y\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nPruebas realizadas en la muestra / número: M2501720 A7.\n HER2 : NEGATIVO (Score 0)\ndiagnóstico\nde\n“ADENOCARCINOMA\nINTESTINAL\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con:\nHer2.\nDIAGNÓSTICO\nEstomago. Tumor. Gastrectomía total. Estudio de inmunohistoquímica. \nADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO. \nHER2 NEGATIVO (SCORE 0)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 93 ---\nIHQ251030\nCopia Pag. 2 de 2\nNombre : MIGUEL ANTONIO HERRERA\nGONZALEZ\nN. peticion : IHQ251030\nN.Identificación : CC. 79047315\nGenero : MASCULINO\nEdad : 60 años 7 meses 5 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : QUIMIOTERAPIA\nFecha Ingreso : 18/09/2025\nFecha Informe : 25/09/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 94 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “M2501720 bloque A7” que corresponde a \"Tumor de estomago. Gastrectomía total.\". y con",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Pruebas realizadas en la muestra / número: M2501720 A7. HER2 : NEGATIVO (Score 0) diagnóstico de “ADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con: Her2.",
+      "Descripcion Diagnostico": "de “ADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con: Her2. DIAGNÓSTICO Estomago. Tumor. Gastrectomía total. Estudio de inmunohistoquímica. ADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO. HER2 NEGATIVO (SCORE 0)",
+      "IHQ_ORGANO": "DE\n“ADENOCARCINOMA\nINTESTINAL\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO”",
+      "Organo": "GASTRECTOMIA TOTAL",
+      "Diagnostico Coloracion": "ADENOCARCINOMA\nINTESTINAL\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO",
+      "Diagnostico Principal": "ADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 : NEGATIVO (Score 0)",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 146,
+      "campos_vacios": 111,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 1,
+      "completitud_porcentaje": 23.97
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 111,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "de\n“ADENOCARCINOMA\nINTESTINAL\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con:\nHer2.\nDIAGNÓSTICO\nEstomago. Tumor. Gastrectomía total. Estudio de inmunohistoquímica. \nADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO. \nHER2 NEGATIVO (SCORE 0)",
+      "valor_corregido": "de “ADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con: Her2. DIAGNÓSTICO Estomago. Tumor. Gastrectomía total. Estudio de inmunohistoquímica. ADENOCARCINOMA INTESTINAL INVASIVO MODERADAMENTE DIFERENCIADO. HER2 NEGATIVO (SCORE 0)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251030",
+      "timestamp": "2025-11-09T16:57:34.420048"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado\ncomo\n“M2501720 bloque A7” que corresponde a \"Tumor de estomago.\nGastrectomía total.\". y\ncon",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “M2501720 bloque A7” que corresponde a \"Tumor de estomago. Gastrectomía total.\". y con",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251030",
+      "timestamp": "2025-11-09T16:57:34.420054"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 46
+  }
+}

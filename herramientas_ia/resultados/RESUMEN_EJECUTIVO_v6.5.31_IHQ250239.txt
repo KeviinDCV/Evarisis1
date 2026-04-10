@@ -1,0 +1,67 @@
+======================================================================
+RESUMEN EJECUTIVO - VALIDACIÓN FIX v6.5.31 (IHQ250239)
+======================================================================
+Fecha: 2026-01-28 10:49
+Caso: IHQ250239
+PDF: IHQ DEL 212 AL 262.pdf
+
+ESTADO ACTUAL:
+----------------------------------------------------------------------
+Score auditoría: 100% ✅
+PERO valores biomarcadores MMR son INCORRECTOS ❌
+
+Valores actuales (fragmentos):
+- IHQ_MLH1: ", MLH2, MSH6 Y PMS2)"  ❌
+- IHQ_MSH2: "N/A"                   ❌
+- IHQ_MSH6: "Y PMS2"                ❌
+- IHQ_PMS2: ")"                     ❌
+
+Valores esperados:
+- IHQ_MLH1: "POSITIVO" ✅
+- IHQ_MSH2: "POSITIVO" ✅
+- IHQ_MSH6: "POSITIVO" ✅
+- IHQ_PMS2: "POSITIVO" ✅
+
+CAUSA RAÍZ:
+----------------------------------------------------------------------
+El OCR del PDF tiene ERROR ORTOGRÁFICO:
+- Línea 35: "Resultado de MLH1: expresión nuclear intacta" ✅
+- Línea 36: "Resultado de MLH2: expresión nuclear intacta" ❌ (debería ser MSH2)
+- Línea 37: "Resultado de MSH6: expresión nuclear intacta" ✅
+- Línea 38: "Resultado de PMS2: expresión nuclear intacta" ✅
+
+Los patrones v6.5.30 buscan "MSH2" (correcto), pero el OCR dice "MLH2" (incorrecto).
+
+SOLUCIÓN PROPUESTA:
+----------------------------------------------------------------------
+Archivo: core/extractors/biomarker_extractor.py
+Línea: 3391 (sección MSH2)
+
+ANTES:
+    'nombres_alternativos': ['MSH-2', 'MSH 2'],
+
+DESPUÉS:
+    'nombres_alternativos': ['MSH-2', 'MSH 2', 'MLH2'],  # MLH2 es error ortográfico común en OCR
+
+Adicionalmente, agregar patrón específico:
+    r'(?i)[\+]?\s*Resultado\s+de\s+MLH2[:\s]*(Expresi[óo]n\s+nuclear\s+(?:intact[a]?|preservada|normal|ausente|p[ée]rdida))',
+
+IMPACTO:
+----------------------------------------------------------------------
+- Permitirá extraer MSH2 aunque el OCR tenga el error "MLH2"
+- Los 4 biomarcadores MMR se extraerán correctamente
+- Valores normalizados: "expresión nuclear intacta" → "POSITIVO"
+- Score mantendrá 100% pero con valores CORRECTOS
+
+PASOS SIGUIENTES:
+----------------------------------------------------------------------
+1. Aplicar cambio en biomarker_extractor.py
+2. Reprocesar caso IHQ250239 (FUNC-06)
+3. Validar que todos los biomarcadores MMR tengan valor "POSITIVO"
+4. Verificar diagnóstico principal incluye información MMR correcta
+5. Incrementar versión: v6.5.30 → v6.5.31
+
+VERSIÓN:
+----------------------------------------------------------------------
+v6.5.31: FIX IHQ250239 - Agregar MLH2 como alias de MSH2 (error ortográfico OCR)
+

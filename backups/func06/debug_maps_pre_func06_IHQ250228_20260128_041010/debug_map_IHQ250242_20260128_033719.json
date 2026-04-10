@@ -1,0 +1,168 @@
+{
+  "session_id": "IHQ250242_20260128_033719",
+  "numero_peticion": "IHQ250242",
+  "timestamp": "2026-01-28T03:37:19.945001",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250242\nCopia Pag. 1 de 2\nNombre : MARIA GUILERMINA CABEZAS\nORDOÑEZ\nN. peticion : IHQ250242\nN.Identificación : CC. 1087131416\nGenero : FEMENINO\nEdad : 50 años 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MIRLELLY AGUILAR PEÑA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 06/03/2025\nFecha Informe : 19/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2502449 que corresponde a \"CARCINOMA INFILTRANTE DE ALTO GRADO\". Previa valoración de\nla coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: p16\n, p40 , Receptor de estrogenos , vimentina , CKAE1E3 , Ki67 , PAX-8.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nA nivel exocervical se reconoce displasia de alto grado con extensión glandular con marcación de\nestudios de inmunohistoquimica de la siguiente manera: CKAE1E3 y p40 positivos , p16 con\nmarcación positivas en bloque en todo el espesor del epitelio escamoso , vimentina, PAX8 y\nreceptores de estrógeno negativos. Índice de proliferación Ki67 positivo en todo el espesor\nintraepitelial.\nSe reconoce en estroma endocervical una lesión neoplasia de origen epitelial con formaciones\nglandulares compuesta por células de núcleos irregulares , citoplasma amplio , con incremento\nde la actividad mitotica y cuentan con la siguiente marcación de inmunohistoquimica CKAE1E3 y\np16 positivo en células tumorales invasivas. Los demás marcadores p40, vimentina, PAX 8 y\nreceptor de estrógenos son negativos. Índice de proliferación Ki67 en un 80%.\nDIAGNÓSTICO\nCérvix. Biopsia. Estudio de inmunohistoquímica: \nADENOCARCINOMA INVASIVO ENDOCERVICAL. CON LESIÓN INTRAEPITELIAL EXOCERVICAL DE\nALTO GRADO ( NIC3 ).\n p16 POSITIVO.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---\nIHQ250242\nCopia Pag. 2 de 2\nNombre : MARIA GUILERMINA CABEZAS\nORDOÑEZ\nN. peticion : IHQ250242\nN.Identificación : CC. 1087131416\nGenero : FEMENINO\nEdad : 50 años 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MIRLELLY AGUILAR PEÑA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 06/03/2025\nFecha Informe : 19/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3987,
+      "reduccion_porcentaje": 97.78
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250242",
+      "caso_num": 31,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_VIMENTINA": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_KI67": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "nombre_completo": "MARIA GUILERMINA CABEZAS ORDOÑEZ",
+      "numero_peticion": "IHQ250242",
+      "identificacion": "1087131416",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "50",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "MIRLELLY AGUILAR PEÑA",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "06/03/2025",
+      "fecha_informe": "19/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250242",
+      "N. de identificación": "1087131416",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "MIRLELLY AGUILAR PEÑA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "06/03/2025",
+      "Fecha Informe": "19/03/2025",
+      "nombres": "MARIA GUILERMINA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "GUILERMINA",
+      "apellidos": "CABEZAS ORDOÑEZ",
+      "Primer apellido": "CABEZAS",
+      "Segundo apellido": "ORDOÑEZ",
+      "nombre_formal": "CABEZAS ORDOÑEZ, MARIA GUILERMINA",
+      "diagnostico": "Cérvix. Biopsia. Estudio de inmunohistoquímica: ADENOCARCINOMA INVASIVO ENDOCERVICAL. CON LESIÓN INTRAEPITELIAL EXOCERVICAL DE ALTO GRADO ( NIC3 ). p16 POSITIVO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. A nivel exocervical se reconoce displasia de alto grado con extensión glandular con marcación de estudios de inmunohistoquimica de la siguiente manera: CKAE1E3 y p40 positivos , p16 con marcación positivas en bloque en todo el espesor del epitelio escamoso , vimentina, PAX8 y receptores de estrógeno negativos. Índice de proliferación KI-67 positivo en todo el espesor intraepitelial. Se reconoce en estroma endocervical una lesión neoplasia de origen epitelial con formaciones glandulares compuesta por células de núcleos irregulares , citoplasma amplio , con incremento de la actividad mitotica y cuentan con la siguiente marcación de inmunohistoquimica CKAE1E3 y p16 positivo en células tumorales invasivas. Los demás marcadores p40, vimentina, PAX 8 y receptor de estrógenos son negativos. Índice de proliferación KI-67 en un 80%.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2502449 que corresponde a \"CARCINOMA INFILTRANTE DE ALTO GRADO\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: p16 , p40 , Receptor de estrogenos , vimentina , CKAE1E3 , KI-67 , PAX-8.",
+      "ihq_organo": "CÉRVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, P40, Receptor de Estrógeno, VIMENTINA, CKAE1E3, Ki-67, PAX 8",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CÉRVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: POSITIVO, Receptor de Estrógeno: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40, Receptor de Estrógeno, VIMENTINA, CKAE1E3, Ki-67, PAX 8",
+      "IHQ_KI-67": "POSITIVO",
+      "p16": "POSITIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-01-28T03:37:20.529197",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250242\nCopia Pag. 1 de 2\nNombre : MARIA GUILERMINA CABEZAS\nORDOÑEZ\nN. peticion : IHQ250242\nN.Identificación : CC. 1087131416\nGenero : FEMENINO\nEdad : 50 años 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MIRLELLY AGUILAR PEÑA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 06/03/2025\nFecha Informe : 19/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2502449 que corresponde a \"CARCINOMA INFILTRANTE DE ALTO GRADO\". Previa valoración de\nla coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: p16\n, p40 , Receptor de estrogenos , vimentina , CKAE1E3 , Ki67 , PAX-8.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nA nivel exocervical se reconoce displasia de alto grado con extensión glandular con marcación de\nestudios de inmunohistoquimica de la siguiente manera: CKAE1E3 y p40 positivos , p16 con\nmarcación positivas en bloque en todo el espesor del epitelio escamoso , vimentina, PAX8 y\nreceptores de estrógeno negativos. Índice de proliferación Ki67 positivo en todo el espesor\nintraepitelial.\nSe reconoce en estroma endocervical una lesión neoplasia de origen epitelial con formaciones\nglandulares compuesta por células de núcleos irregulares , citoplasma amplio , con incremento\nde la actividad mitotica y cuentan con la siguiente marcación de inmunohistoquimica CKAE1E3 y\np16 positivo en células tumorales invasivas. Los demás marcadores p40, vimentina, PAX 8 y\nreceptor de estrógenos son negativos. Índice de proliferación Ki67 en un 80%.\nDIAGNÓSTICO\nCérvix. Biopsia. Estudio de inmunohistoquímica: \nADENOCARCINOMA INVASIVO ENDOCERVICAL. CON LESIÓN INTRAEPITELIAL EXOCERVICAL DE\nALTO GRADO ( NIC3 ).\n p16 POSITIVO.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---\nIHQ250242\nCopia Pag. 2 de 2\nNombre : MARIA GUILERMINA CABEZAS\nORDOÑEZ\nN. peticion : IHQ250242\nN.Identificación : CC. 1087131416\nGenero : FEMENINO\nEdad : 50 años 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MIRLELLY AGUILAR PEÑA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 06/03/2025\nFecha Informe : 19/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40, Receptor de Estrógeno, VIMENTINA, CKAE1AE3, Ki-67, PAX 8",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2502449 que corresponde a \"CARCINOMA INFILTRANTE DE ALTO GRADO\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: p16 , p40 , Receptor de estrogenos , vimentina , CKAE1E3 , Ki67 , PAX-8.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. A nivel exocervical se reconoce displasia de alto grado con extensión glandular con marcación de estudios de inmunohistoquimica de la siguiente manera: CKAE1E3 y p40 positivos , p16 con marcación positivas en bloque en todo el espesor del epitelio escamoso , vimentina, PAX8 y receptores de estrógeno negativos. Índice de proliferación Ki67 positivo en todo el espesor intraepitelial. Se reconoce en estroma endocervical una lesión neoplasia de origen epitelial con formaciones glandulares compuesta por células de núcleos irregulares , citoplasma amplio , con incremento de la actividad mitotica y cuentan con la siguiente marcación de inmunohistoquimica CKAE1E3 y p16 positivo en células tumorales invasivas. Los demás marcadores p40, vimentina, PAX 8 y receptor de estrógenos son negativos. Índice de proliferación Ki67 en un 80%.",
+      "Descripcion Diagnostico": "Cérvix. Biopsia. Estudio de inmunohistoquímica: ADENOCARCINOMA INVASIVO ENDOCERVICAL. CON LESIÓN INTRAEPITELIAL EXOCERVICAL DE ALTO GRADO ( NIC3 ). p16 POSITIVO.",
+      "IHQ_ORGANO": "CÉRVIX",
+      "Organo": "BX CERVIX",
+      "Diagnostico Coloracion": "CARCINOMA INFILTRANTE DE ALTO GRADO",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO ENDOCERVICAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: POSITIVO, Receptor de Estrógeno: NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_VIMENTINA": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_KI-67": "POSITIVO",
+      "IHQ_PAX8": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 174,
+      "campos_vacios": 132,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 132,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cérvix. Biopsia. Estudio de inmunohistoquímica: \nADENOCARCINOMA INVASIVO ENDOCERVICAL. CON LESIÓN INTRAEPITELIAL EXOCERVICAL DE\nALTO GRADO ( NIC3 ).\n p16 POSITIVO.",
+      "valor_corregido": "Cérvix. Biopsia. Estudio de inmunohistoquímica: ADENOCARCINOMA INVASIVO ENDOCERVICAL. CON LESIÓN INTRAEPITELIAL EXOCERVICAL DE ALTO GRADO ( NIC3 ). p16 POSITIVO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250242",
+      "timestamp": "2026-01-28T03:37:20.528890"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2502449 que corresponde a \"CARCINOMA INFILTRANTE DE ALTO GRADO\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: p16 , p40 , Receptor de estrogenos , vimentina , CKAE1E3 , Ki67 , PAX-8.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2502449 que corresponde a \"CARCINOMA INFILTRANTE DE ALTO GRADO\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: p16 , p40 , Receptor de estrogenos , vimentina , CKAE1E3 , KI-67 , PAX-8.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250242",
+      "timestamp": "2026-01-28T03:37:20.528896"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. A nivel exocervical se reconoce displasia de alto grado con extensión glandular con marcación de estudios de inmunohistoquimica de la siguiente manera: CKAE1E3 y p40 positivos , p16 con marcación positivas en bloque en todo el espesor del epitelio escamoso , vimentina, PAX8 y receptores de estrógeno negativos. Índice de proliferación Ki67 positivo en todo el espesor intraepitelial. Se reconoce en estroma endocervical una lesión neoplasia de origen epitelial con formaciones glandulares compuesta por células de núcleos irregulares , citoplasma amplio , con incremento de la actividad mitotica y cuentan con la siguiente marcación de inmunohistoquimica CKAE1E3 y p16 positivo en células tumorales invasivas. Los demás marcadores p40, vimentina, PAX 8 y receptor de estrógenos son negativos. Índice de proliferación Ki67 en un 80%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. A nivel exocervical se reconoce displasia de alto grado con extensión glandular con marcación de estudios de inmunohistoquimica de la siguiente manera: CKAE1E3 y p40 positivos , p16 con marcación positivas en bloque en todo el espesor del epitelio escamoso , vimentina, PAX8 y receptores de estrógeno negativos. Índice de proliferación KI-67 positivo en todo el espesor intraepitelial. Se reconoce en estroma endocervical una lesión neoplasia de origen epitelial con formaciones glandulares compuesta por células de núcleos irregulares , citoplasma amplio , con incremento de la actividad mitotica y cuentan con la siguiente marcación de inmunohistoquimica CKAE1E3 y p16 positivo en células tumorales invasivas. Los demás marcadores p40, vimentina, PAX 8 y receptor de estrógenos son negativos. Índice de proliferación KI-67 en un 80%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250242",
+      "timestamp": "2026-01-28T03:37:20.528898"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 58
+  }
+}

@@ -1,0 +1,52 @@
+RESUMEN EJECUTIVO - FIX IHQ250235
+==================================
+
+Caso: IHQ250235
+Fecha: 28 enero 2026
+Versión: v6.5.14 + v6.5.15
+Estado: CORRECCIONES COMPLETADAS - PENDIENTE VALIDACION
+
+PROBLEMA INICIAL:
+-----------------
+- Score: 77.8%
+- DIAGNOSTICO_COLORACION: "NO APLICA" (deberia ser "BIOPSIA DE MEDULA OSEA")
+- Causa raiz: Patron v6.5.14 solo soportaba comillas ASCII (""), pero OCR contiene comillas Unicode (U+201C/U+201D)
+
+CORRECCIONES IMPLEMENTADAS:
+----------------------------
+
+1. V6.5.14 - SOPORTE UNICODE SMART QUOTES
+   Archivo: core/extractors/medical_extractor.py
+   Linea: 901
+   Patron anterior: r'rotulado\s+como\s+"M[\dA-Z-]+"\s+que\s+corresponden?\s+a\s+"([^"]{5,300})"'
+   Patron nuevo: r"rotulado\s+como\s+[\"'\u201c\u201d]M[\dA-Z-]+[\"'\u201c\u201d]\s+que\s+corresponden?\s+a\s+[\"'\u201c\u201d]([^\"'\u201c\u201d]{5,300})[\"'\u201c\u201d]"
+   
+   Razon: OCR contiene comillas Unicode inteligentes ("") en lugar de ASCII ("")
+   
+2. V6.5.15 - FALLBACK SIN COMILLAS
+   Archivo: core/extractors/medical_extractor.py
+   Lineas: 957-980
+   Patron: r'rotulado\s+como\s+M[\dA-Z-]+\s+que\s+corresponden?\s+a\s+(.+?)\.'
+   
+   Proposito: Fallback para casos donde NI el codigo M NI la descripcion tienen comillas
+   Nota: NO necesario para IHQ250235, pero util para otros casos
+
+VALIDACION DE PATRON:
+---------------------
+Patron v6.5.14 (con Unicode quotes) FUNCIONA:
+
+  Entrada (OCR): rotulado como "M2502235" que corresponde a "biopsia de medula osea"
+                 (donde "" son Unicode U+201C/U+201D)
+  
+  Salida: BIOPSIA DE MEDULA OSEA ✅
+
+PROXIMO PASO:
+-------------
+Ejecutar FUNC-06 para reprocesar caso completo y validar:
+- DIAGNOSTICO_COLORACION = "BIOPSIA DE MEDULA OSEA" (en lugar de "NO APLICA")
+- Score = 88.9% o 100%
+
+BACKUP CREADO:
+--------------
+core/extractors/medical_extractor.py.backup_v6514_sin_comillas
+

@@ -1,0 +1,162 @@
+{
+  "session_id": "IHQ250032_20251216_032443",
+  "numero_peticion": "IHQ250032",
+  "timestamp": "2025-12-16T03:24:43.333374",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250032\nCopia Pag. 1 de 1\nNombre : GLORIA EDITH ARBOLEDA VICTORIA\nN. peticion : IHQ250032\nN.Identificación : CC. 31387653\nGenero : FEMENINO\nEdad : 59 años 7 meses 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVID JAVIER DE LA HOZ VIZCAINO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 13/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION MEDIASTINO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500011 que corresponde a biopsia de lesión en mediastino, con\ndiagnóstico de \"PROLIFERACIÓN LINFOEPITELIAL\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLa lesión tumoral compuesta por células epitelioides positivas para p63, CK19 y CKAE1/AE3 y esta\nacompañada por linfocitos T CD3+, linfocitos B CD20+ y escasos linfocitos inmaduros TDT+\níndice de proliferación celular con un Ki-67 menor del 1%. \nDIAGNÓSTICO\nMediastino. Lesión. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON TIMOMA TIPO B2.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 2417,
+      "reduccion_porcentaje": 98.59
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250032",
+      "caso_num": 32,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "nombre_completo": "GLORIA EDITH ARBOLEDA VICTORIA",
+      "numero_peticion": "IHQ250032",
+      "identificacion": "31387653",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "59",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JAVID JAVIER DE LA HOZ VIZCAINO",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "13/01/2025",
+      "fecha_informe": "27/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250032",
+      "N. de identificación": "31387653",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "JAVID JAVIER DE LA HOZ VIZCAINO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "13/01/2025",
+      "Fecha Informe": "27/01/2025",
+      "nombres": "GLORIA EDITH",
+      "Primer nombre": "GLORIA",
+      "Segundo nombre": "EDITH",
+      "apellidos": "ARBOLEDA VICTORIA",
+      "Primer apellido": "ARBOLEDA",
+      "Segundo apellido": "VICTORIA",
+      "nombre_formal": "ARBOLEDA VICTORIA, GLORIA EDITH",
+      "diagnostico": "Mediastino. Lesión. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON TIMOMA TIPO B2.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La lesión tumoral compuesta por células epitelioides positivas para P63, CK19 y CKAE1/AE3 y esta acompañada por linfocitos T CD3+, linfocitos B CD20+ y escasos linfocitos inmaduros TDT+ índice de proliferación celular con un KI-67 menor del 1%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2500011 que corresponde a biopsia de lesión en mediastino, con diagnóstico de \"PROLIFERACIÓN LINFOEPITELIAL\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "MEDIASTINO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MEDIASTINO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_KI-67": "<1%",
+      "IHQ_TDT": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "extraction_timestamp": "2025-12-16T03:24:43.494929",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250032\nCopia Pag. 1 de 1\nNombre : GLORIA EDITH ARBOLEDA VICTORIA\nN. peticion : IHQ250032\nN.Identificación : CC. 31387653\nGenero : FEMENINO\nEdad : 59 años 7 meses 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVID JAVIER DE LA HOZ VIZCAINO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 13/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION MEDIASTINO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500011 que corresponde a biopsia de lesión en mediastino, con\ndiagnóstico de \"PROLIFERACIÓN LINFOEPITELIAL\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLa lesión tumoral compuesta por células epitelioides positivas para p63, CK19 y CKAE1/AE3 y esta\nacompañada por linfocitos T CD3+, linfocitos B CD20+ y escasos linfocitos inmaduros TDT+\níndice de proliferación celular con un Ki-67 menor del 1%. \nDIAGNÓSTICO\nMediastino. Lesión. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON TIMOMA TIPO B2.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD20, CD3, CK19, CKAE1AE3, Ki-67, P63, TDT",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2500011 que corresponde a biopsia de lesión en mediastino, con diagnóstico de \"PROLIFERACIÓN LINFOEPITELIAL\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La lesión tumoral compuesta por células epitelioides positivas para p63, CK19 y CKAE1/AE3 y esta acompañada por linfocitos T CD3+, linfocitos B CD20+ y escasos linfocitos inmaduros TDT+ índice de proliferación celular con un Ki-67 menor del 1%.",
+      "Descripcion Diagnostico": "Mediastino. Lesión. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON TIMOMA TIPO B2.",
+      "IHQ_ORGANO": "MEDIASTINO",
+      "Organo": "BX LESION MEDIASTINO",
+      "Diagnostico Coloracion": "PROLIFERACIÓN LINFOEPITELIAL",
+      "Diagnostico Principal": "TIMOMA TIPO B2",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_KI-67": "<1%",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_TDT": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 155,
+      "campos_vacios": 112,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 7,
+      "completitud_porcentaje": 27.74
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 112,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mediastino. Lesión. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON TIMOMA TIPO B2.",
+      "valor_corregido": "Mediastino. Lesión. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON TIMOMA TIPO B2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250032",
+      "timestamp": "2025-12-16T03:24:43.494673"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2500011 que corresponde a biopsia de lesión en mediastino, con\ndiagnóstico de \"PROLIFERACIÓN LINFOEPITELIAL\". Se ordenan estudios de inmunohistoquímica.",
+      "valor_corregido": "Se realizan niveles al bloque M2500011 que corresponde a biopsia de lesión en mediastino, con diagnóstico de \"PROLIFERACIÓN LINFOEPITELIAL\". Se ordenan estudios de inmunohistoquímica.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250032",
+      "timestamp": "2025-12-16T03:24:43.494679"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLa lesión tumoral compuesta por células epitelioides positivas para p63, CK19 y CKAE1/AE3 y esta\nacompañada por linfocitos T CD3+, linfocitos B CD20+ y escasos linfocitos inmaduros TDT+\níndice de proliferación celular con un Ki-67 menor del 1%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La lesión tumoral compuesta por células epitelioides positivas para P63, CK19 y CKAE1/AE3 y esta acompañada por linfocitos T CD3+, linfocitos B CD20+ y escasos linfocitos inmaduros TDT+ índice de proliferación celular con un KI-67 menor del 1%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250032",
+      "timestamp": "2025-12-16T03:24:43.494681"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 53
+  }
+}

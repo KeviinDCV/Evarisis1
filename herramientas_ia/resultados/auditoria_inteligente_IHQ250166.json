@@ -1,0 +1,140 @@
+{
+  "numero_caso": "IHQ250166",
+  "caso_num": 6,
+  "total_casos": 50,
+  "timestamp": "2026-01-08T03:20:55.512951",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 19,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NEOPLASIA MALIGNA EN PATRON SOLIDO Y TRABECULAR; BORDES PROFUNDO Y DISTAL POSITIVO PARA TUMOR",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLE CON CARCINOMA ANEXIAL CUTANEO NOS"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 40%",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 18,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "CD45",
+        "CDX2",
+        "CK20",
+        "CK7",
+        "CKAE1AE3",
+        "CROMOGRANINA",
+        "DESMIN",
+        "EMA",
+        "GATA3",
+        "HMB45",
+        "Ki-67",
+        "MELAN-A",
+        "P40",
+        "P63",
+        "S100",
+        "SOX10",
+        "SYNAPTOFISINA",
+        "TTF1"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "CD45",
+        "CDX2",
+        "CK20",
+        "CK7",
+        "CKAE1AE3",
+        "CROMOGRANINA",
+        "DESMIN",
+        "EMA",
+        "GATA3",
+        "HMB45",
+        "Ki-67",
+        "MELAN-A",
+        "P40",
+        "P63",
+        "S100",
+        "SOX10",
+        "SYNAPTOFISINA",
+        "TTF1"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se realizan niveles al bloque M2501275-A5 que corresponde a resección de tumor en mano izquierda, co..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MANO IZQUIERDA"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

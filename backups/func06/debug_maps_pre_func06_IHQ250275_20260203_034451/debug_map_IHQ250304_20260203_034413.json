@@ -1,0 +1,179 @@
+{
+  "session_id": "IHQ250304_20260203_034413",
+  "numero_peticion": "IHQ250304",
+  "timestamp": "2026-02-03T03:44:13.106129",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250304\nCopia Pag. 1 de 2\nNombre : EMERITA CUERO CAICEDO\nN. peticion : IHQ250304\nN.Identificación : CC. 48631225\nGenero : FEMENINO\nEdad : 57 años 3 meses 16 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 27/03/2025\nFecha Informe : 09/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMUSOCA MAXILAR\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2501641 ” al bloque I13 que corresponde a “Maxilectomía total” con\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas\ncélulas\ntumorales\npresentan\nmarcación\npositiva\npara\nCKAE1E3,\nde\nforma\ndifusa\ny\nheterogénea sobe citoplasma y membrana. Hubo defectos de la fase preanalitica que limitan la\nadecuada valoración para los marcadores de inmunohistoquimica P40, P63, KI67. El P16 se realizó\nen 2 ocasiones sin marcación positiva.\ndiagnóstico\nde\n“CARCINOMA\nESCAMOCELULAR\nCONVENCIONAL\nQUERATINIZANTE”.\nPrevia\nrevisión de la histología, se realizan niveles histológicos para tinción con KI67, p40, CKAE1E3,\nP16, p63, EMA. \nDIAGNÓSTICO\nI. Cavidad oral. Lesión. Maxilectomia total. Estudios de inmunohistoquímica. \nLOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA SON CONSISTENTES\nCON EL DIAGNOSTICO DE CARCINOMA ESCAMOCELULAR CONVENCIONAL QUERATINIZANTE.\nCOMENTARIOS\nPuede haber afectación de la marcación por la fase preanalítica por decalcificación previa.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---\nIHQ250304\nCopia Pag. 2 de 2\nNombre : EMERITA CUERO CAICEDO\nN. peticion : IHQ250304\nN.Identificación : CC. 48631225\nGenero : FEMENINO\nEdad : 57 años 3 meses 16 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 27/03/2025\nFecha Informe : 09/04/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3435,
+      "reduccion_porcentaje": 98.03
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250304",
+      "caso_num": 40,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "nombre_completo": "EMERITA CUERO CAICEDO",
+      "numero_peticion": "IHQ250304",
+      "identificacion": "48631225",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "57",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "27/03/2025",
+      "fecha_informe": "09/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250304",
+      "N. de identificación": "48631225",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "27/03/2025",
+      "Fecha Informe": "09/04/2025",
+      "nombres": "EMERITA CUERO",
+      "Primer nombre": "EMERITA",
+      "Segundo nombre": "CUERO",
+      "apellidos": "CAICEDO",
+      "Primer apellido": "CAICEDO",
+      "Segundo apellido": "",
+      "nombre_formal": "CAICEDO, EMERITA CUERO",
+      "diagnostico": "I. Cavidad oral. Lesión. Maxilectomia total. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA SON CONSISTENTES CON EL DIAGNOSTICO DE CARCINOMA ESCAMOCELULAR CONVENCIONAL QUERATINIZANTE.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan marcación positiva para CKAE1E3, de forma difusa y heterogénea sobe citoplasma y membrana. Hubo defectos de la fase preanalitica que limitan la adecuada valoración para los marcadores de inmunohistoquimica p40, p63, KI-67. El p16 se realizó en 2 ocasiones sin marcación positiva.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2501641 \" al bloque I13 que corresponde a \"Maxilectomía total\" con diagnóstico de \"CARCINOMA ESCAMOCELULAR CONVENCIONAL QUERATINIZANTE\". Previa revisión de la histología, se realizan niveles histológicos para tinción con KI-67, p40, CKAE1E3, p16, p63, EMA.",
+      "ihq_organo": "CAVIDAD ORAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Ki-67, P40, CKAE1E3, P16, P63, EMA",
+      "procedimiento": "",
+      "comentarios": "Puede haber afectación de la marcación por la fase preanalítica por decalcificación previa. NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 75 --- IHQ250304 Copia Pag. 2 de 2 Nombre : EMERITA CUERO CAICEDO N. peticion : IHQ250304 N.Identificación : CC. 48631225 Genero : FEMENINO Edad : 57 años 3 meses 16 dias EPS : NUEVA EPS Médico tratante : LISBETH PATRICIA RAMIREZ Servicio : CIRUGIA MUJERES Fecha Ingreso : 27/03/2025 Fecha Informe : 09/04/2025",
+      "IHQ_ORGANO": "CAVIDAD ORAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, P40, CKAE1E3, P16, P63, EMA",
+      "IHQ_P40_ESTADO": "POSITIVO (MARCACIÓN POSITIVA PARA CKAE1E3, DE FORMA DIFUSA Y HETEROGÉNEA SOBE CITOPLASMA Y MEMBRANA. HUBO DEFECTOS DE LA FASE PREANALITICA QUE LIMITAN LA ADECUADA VALORACIÓN PARA LOS MARCADORES DE INMUNOHISTOQUIMICA p40)",
+      "IHQ_P63": "POSITIVO",
+      "p40": "POSITIVO (MARCACIÓN POSITIVA PARA CKAE1E3, DE FORMA DIFUSA Y HETEROGÉNEA SOBE CITOPLASMA Y MEMBRANA. HUBO DEFECTOS DE LA FASE PREANALITICA QUE LIMITAN LA ADECUADA VALORACIÓN PARA LOS MARCADORES DE INMUNOHISTOQUIMICA P40)",
+      "extraction_timestamp": "2026-02-03T03:44:13.538974",
+      "extractor_version": "6.5.90_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250304\nCopia Pag. 1 de 2\nNombre : EMERITA CUERO CAICEDO\nN. peticion : IHQ250304\nN.Identificación : CC. 48631225\nGenero : FEMENINO\nEdad : 57 años 3 meses 16 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 27/03/2025\nFecha Informe : 09/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMUSOCA MAXILAR\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2501641 ” al bloque I13 que corresponde a “Maxilectomía total” con\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas\ncélulas\ntumorales\npresentan\nmarcación\npositiva\npara\nCKAE1E3,\nde\nforma\ndifusa\ny\nheterogénea sobe citoplasma y membrana. Hubo defectos de la fase preanalitica que limitan la\nadecuada valoración para los marcadores de inmunohistoquimica P40, P63, KI67. El P16 se realizó\nen 2 ocasiones sin marcación positiva.\ndiagnóstico\nde\n“CARCINOMA\nESCAMOCELULAR\nCONVENCIONAL\nQUERATINIZANTE”.\nPrevia\nrevisión de la histología, se realizan niveles histológicos para tinción con KI67, p40, CKAE1E3,\nP16, p63, EMA. \nDIAGNÓSTICO\nI. Cavidad oral. Lesión. Maxilectomia total. Estudios de inmunohistoquímica. \nLOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA SON CONSISTENTES\nCON EL DIAGNOSTICO DE CARCINOMA ESCAMOCELULAR CONVENCIONAL QUERATINIZANTE.\nCOMENTARIOS\nPuede haber afectación de la marcación por la fase preanalítica por decalcificación previa.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---\nIHQ250304\nCopia Pag. 2 de 2\nNombre : EMERITA CUERO CAICEDO\nN. peticion : IHQ250304\nN.Identificación : CC. 48631225\nGenero : FEMENINO\nEdad : 57 años 3 meses 16 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 27/03/2025\nFecha Informe : 09/04/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, P40, CKAE1AE3, P16, P63, EMA",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501641 ” al bloque I13 que corresponde a “Maxilectomía total” con diagnóstico de “CARCINOMA ESCAMOCELULAR CONVENCIONAL QUERATINIZANTE”. Previa revisión de la histología, se realizan niveles histológicos para tinción con KI67, p40, CKAE1E3, P16, p63, EMA.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan marcación positiva para CKAE1E3, de forma difusa y heterogénea sobe citoplasma y membrana. Hubo defectos de la fase preanalitica que limitan la adecuada valoración para los marcadores de inmunohistoquimica P40, P63, KI67. El P16 se realizó en 2 ocasiones sin marcación positiva.",
+      "Descripcion Diagnostico": "I. Cavidad oral. Lesión. Maxilectomia total. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA SON CONSISTENTES CON EL DIAGNOSTICO DE CARCINOMA ESCAMOCELULAR CONVENCIONAL QUERATINIZANTE.",
+      "IHQ_ORGANO": "CAVIDAD ORAL",
+      "Organo": "MUSOCA MAXILAR DERECHA",
+      "Diagnostico Coloracion": "CARCINOMA ESCAMOCELULAR CONVENCIONAL QUERATINIZANTE",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA SON CONSISTENTES CON EL DIAGNOSTICO DE CARCINOMA ESCAMOCELULAR CONVENCIONAL QUERATINIZANTE",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_P40_ESTADO": "POSITIVO (MARCACIÓN POSITIVA PARA CKAE1E3, DE FORMA DIFUSA Y HETEROGÉNEA SOBE CITOPLASMA Y MEMBRANA. HUBO DEFECTOS DE LA FASE PREANALITICA QUE LIMITAN LA ADECUADA VALORACIÓN PARA LOS MARCADORES DE INMUNOHISTOQUIMICA p40)",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_P16_ESTADO": "NO MENCIONADO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_EMA": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 136,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "I. Cavidad oral. Lesión. Maxilectomia total. Estudios de inmunohistoquímica. \nLOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA SON CONSISTENTES\nCON EL DIAGNOSTICO DE CARCINOMA ESCAMOCELULAR CONVENCIONAL QUERATINIZANTE.",
+      "valor_corregido": "I. Cavidad oral. Lesión. Maxilectomia total. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA SON CONSISTENTES CON EL DIAGNOSTICO DE CARCINOMA ESCAMOCELULAR CONVENCIONAL QUERATINIZANTE.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250304",
+      "timestamp": "2026-02-03T03:44:13.538749"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501641 ” al bloque I13 que corresponde a “Maxilectomía total” con diagnóstico de “CARCINOMA ESCAMOCELULAR CONVENCIONAL QUERATINIZANTE”. Previa revisión de la histología, se realizan niveles histológicos para tinción con KI67, p40, CKAE1E3, P16, p63, EMA.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2501641 \" al bloque I13 que corresponde a \"Maxilectomía total\" con diagnóstico de \"CARCINOMA ESCAMOCELULAR CONVENCIONAL QUERATINIZANTE\". Previa revisión de la histología, se realizan niveles histológicos para tinción con KI-67, p40, CKAE1E3, p16, p63, EMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250304",
+      "timestamp": "2026-02-03T03:44:13.538756"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan marcación positiva para CKAE1E3, de forma difusa y heterogénea sobe citoplasma y membrana. Hubo defectos de la fase preanalitica que limitan la adecuada valoración para los marcadores de inmunohistoquimica P40, P63, KI67. El P16 se realizó en 2 ocasiones sin marcación positiva.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan marcación positiva para CKAE1E3, de forma difusa y heterogénea sobe citoplasma y membrana. Hubo defectos de la fase preanalitica que limitan la adecuada valoración para los marcadores de inmunohistoquimica p40, p63, KI-67. El p16 se realizó en 2 ocasiones sin marcación positiva.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250304",
+      "timestamp": "2026-02-03T03:44:13.538758"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Puede haber afectación de la marcación por la fase preanalítica por decalcificación previa.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---\nIHQ250304\nCopia Pag. 2 de 2\nNombre : EMERITA CUERO CAICEDO\nN. peticion : IHQ250304\nN.Identificación : CC. 48631225\nGenero : FEMENINO\nEdad : 57 años 3 meses 16 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 27/03/2025\nFecha Informe : 09/04/2025",
+      "valor_corregido": "Puede haber afectación de la marcación por la fase preanalítica por decalcificación previa. NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 75 --- IHQ250304 Copia Pag. 2 de 2 Nombre : EMERITA CUERO CAICEDO N. peticion : IHQ250304 N.Identificación : CC. 48631225 Genero : FEMENINO Edad : 57 años 3 meses 16 dias EPS : NUEVA EPS Médico tratante : LISBETH PATRICIA RAMIREZ Servicio : CIRUGIA MUJERES Fecha Ingreso : 27/03/2025 Fecha Informe : 09/04/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250304",
+      "timestamp": "2026-02-03T03:44:13.538759"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "IHQ_P40_ESTADO",
+      "valor_original": "POSITIVO (MARCACIÓN POSITIVA PARA CKAE1E3, DE FORMA DIFUSA Y HETEROGÉNEA SOBE CITOPLASMA Y MEMBRANA. HUBO DEFECTOS DE LA FASE PREANALITICA QUE LIMITAN LA ADECUADA VALORACIÓN PARA LOS MARCADORES DE INMUNOHISTOQUIMICA P40)",
+      "valor_corregido": "POSITIVO (MARCACIÓN POSITIVA PARA CKAE1E3, DE FORMA DIFUSA Y HETEROGÉNEA SOBE CITOPLASMA Y MEMBRANA. HUBO DEFECTOS DE LA FASE PREANALITICA QUE LIMITAN LA ADECUADA VALORACIÓN PARA LOS MARCADORES DE INMUNOHISTOQUIMICA p40)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250304",
+      "timestamp": "2026-02-03T03:44:13.538760"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 5,
+    "correcciones_por_tipo": {
+      "ortografica": 5
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 51
+  }
+}

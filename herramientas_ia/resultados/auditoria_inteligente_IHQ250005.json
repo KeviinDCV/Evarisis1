@@ -1,0 +1,134 @@
+{
+  "numero_caso": "IHQ250005",
+  "caso_num": 5,
+  "total_casos": 50,
+  "timestamp": "2025-11-30T17:46:33.759332",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 11,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "ERROR",
+      "mensaje": "DIAGNOSTICO_COLORACION difiere entre BD y OCR",
+      "valor_bd": "LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO",
+      "valor_ocr": "\" LOS HALLAZGOS HISTOLÓGICOS SON"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO DE PROBABLE ORIGEN ENDOCERVICAL"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "RE",
+        "RP"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 10,
+      "total_solicitado_bd": 10,
+      "estudios_ocr": [
+        "CK7",
+        "CK20",
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona",
+        "PAX 8",
+        "P16",
+        "P53",
+        "P40",
+        "WT1",
+        "VIMENTINA"
+      ],
+      "estudios_bd": [
+        "CK7",
+        "CK20",
+        "Receptor de Estrógeno",
+        "Receptor de Progesterona",
+        "PAX 8",
+        "P16",
+        "P53",
+        "P40",
+        "WT1",
+        "VIMENTINA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 10,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "WT1",
+          "columna": "IHQ_WT1",
+          "valor_bd": "NO MENCIONADO",
+          "valor_ocr": "NEGATIVO"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [
+      "DIAGNOSTICO_COLORACION difiere entre BD y OCR"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410679 que corresponde..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "ÚTERO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 77.8,
+    "validaciones_ok": 7,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 1
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

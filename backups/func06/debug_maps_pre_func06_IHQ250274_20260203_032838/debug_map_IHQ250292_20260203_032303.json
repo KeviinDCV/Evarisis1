@@ -1,0 +1,150 @@
+{
+  "session_id": "IHQ250292_20260203_032303",
+  "numero_peticion": "IHQ250292",
+  "timestamp": "2026-02-03T03:23:03.717741",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250292\nCopia Pag. 1 de 2\nNombre : KALEB GARCES CASTILLO\nN. peticion : IHQ250292\nN.Identificación : TI. 1234197304\nGenero : MASCULINO\nEdad : 7 años 2 meses 27 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JORGE LUIS RAMIREZ MELO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 20/03/2025\nFecha Informe : 04/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PIEL DORSO DE MANO\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2502975\" correspondiente a “piel de dorso de mano izquierda” con diagnóstico de \" DERMATOSIS\nNEUTROFILICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque, para tinción\ncon los marcadores: CD 117, CD34, CD3, CD 15, CD 20, CD 68, CD 15\nDESCRIPCIÓN MICROSCÓPICA\n En la dermis el infiltrado esta compuesta por histiocitos CD 68+ y neutrófilos maduros CD 15+ . Hay\nlinfocitos B (CD 20+), linfocitos T (CD3) acompañantes. No hay presencia de celularidad inmadura\n(CD34-, CD117 -).\nDIAGNÓSTICO\n Piel, dorso de mano izquierda. Lesión. Biopsia. Estudio de inmunohistoquimica \nDERMATOSIS NEUTROFILICA\nCOMENTARIOS\nLos hallazgos histopatologicos asociados a la historia clínica favorecen un síndrome de Sweet \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---\nIHQ250292\nCopia Pag. 2 de 2\nNombre : KALEB GARCES CASTILLO\nN. peticion : IHQ250292\nN.Identificación : TI. 1234197304\nGenero : MASCULINO\nEdad : 7 años 2 meses 27 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JORGE LUIS RAMIREZ MELO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 20/03/2025\nFecha Informe : 04/04/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3123,
+      "reduccion_porcentaje": 98.21
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250292",
+      "caso_num": 28,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "KALEB GARCES CASTILLO",
+      "numero_peticion": "IHQ250292",
+      "identificacion": "1234197304",
+      "tipo_documento": "TI",
+      "Genero": "MASCULINO",
+      "Edad": "7",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JORGE LUIS RAMIREZ MELO",
+      "servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "fecha_ingreso": "20/03/2025",
+      "fecha_informe": "04/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250292",
+      "N. de identificación": "1234197304",
+      "Tipo de documento": "TI",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "Médico tratante": "JORGE LUIS RAMIREZ MELO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/03/2025",
+      "Fecha Informe": "04/04/2025",
+      "nombres": "KALEB",
+      "Primer nombre": "KALEB",
+      "Segundo nombre": "",
+      "apellidos": "GARCES CASTILLO",
+      "Primer apellido": "GARCES",
+      "Segundo apellido": "CASTILLO",
+      "nombre_formal": "GARCES CASTILLO, KALEB",
+      "diagnostico": "Piel, dorso de mano izquierda. Lesión. Biopsia. Estudio de inmunohistoquimica DERMATOSIS NEUTROFILICA",
+      "descripcion_microscopica": "En la dermis el infiltrado esta compuesta por histiocitos CD 68+ y neutrófilos maduros CD 15+ . Hay linfocitos B (CD 20+), linfocitos T (CD3) acompañantes. No hay presencia de celularidad inmadura (CD34-, CD117 -).",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2502975\" correspondiente a \"piel de dorso de mano izquierda\" con diagnóstico de \" DERMATOSIS NEUTROFILICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque, para tinción con los marcadores: CD 117, CD34, CD3, CD 15, CD 20, CD 68, CD 15",
+      "ihq_organo": "PIEL, DORSO DE MANO IZQUIERDA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Los hallazgos histopatologicos asociados a la historia clínica",
+      "IHQ_ORGANO": "PIEL, DORSO DE MANO IZQUIERDA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_CD68": "POSITIVO",
+      "extraction_timestamp": "2026-02-03T03:23:04.021008",
+      "extractor_version": "6.5.89_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250292\nCopia Pag. 1 de 2\nNombre : KALEB GARCES CASTILLO\nN. peticion : IHQ250292\nN.Identificación : TI. 1234197304\nGenero : MASCULINO\nEdad : 7 años 2 meses 27 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JORGE LUIS RAMIREZ MELO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 20/03/2025\nFecha Informe : 04/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PIEL DORSO DE MANO\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2502975\" correspondiente a “piel de dorso de mano izquierda” con diagnóstico de \" DERMATOSIS\nNEUTROFILICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque, para tinción\ncon los marcadores: CD 117, CD34, CD3, CD 15, CD 20, CD 68, CD 15\nDESCRIPCIÓN MICROSCÓPICA\n En la dermis el infiltrado esta compuesta por histiocitos CD 68+ y neutrófilos maduros CD 15+ . Hay\nlinfocitos B (CD 20+), linfocitos T (CD3) acompañantes. No hay presencia de celularidad inmadura\n(CD34-, CD117 -).\nDIAGNÓSTICO\n Piel, dorso de mano izquierda. Lesión. Biopsia. Estudio de inmunohistoquimica \nDERMATOSIS NEUTROFILICA\nCOMENTARIOS\nLos hallazgos histopatologicos asociados a la historia clínica favorecen un síndrome de Sweet \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---\nIHQ250292\nCopia Pag. 2 de 2\nNombre : KALEB GARCES CASTILLO\nN. peticion : IHQ250292\nN.Identificación : TI. 1234197304\nGenero : MASCULINO\nEdad : 7 años 2 meses 27 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JORGE LUIS RAMIREZ MELO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 20/03/2025\nFecha Informe : 04/04/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD117, CD20, CD34, CD68",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2502975\" correspondiente a “piel de dorso de mano izquierda” con diagnóstico de \" DERMATOSIS NEUTROFILICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque, para tinción con los marcadores: CD 117, CD34, CD3, CD 15, CD 20, CD 68, CD 15",
+      "Descripcion microscopica": "En la dermis el infiltrado esta compuesta por histiocitos CD 68+ y neutrófilos maduros CD 15+ . Hay linfocitos B (CD 20+), linfocitos T (CD3) acompañantes. No hay presencia de celularidad inmadura (CD34-, CD117 -).",
+      "Descripcion Diagnostico": "Piel, dorso de mano izquierda. Lesión. Biopsia. Estudio de inmunohistoquimica DERMATOSIS NEUTROFILICA",
+      "IHQ_ORGANO": "PIEL, DORSO DE MANO IZQUIERDA",
+      "Organo": "BX PIEL DORSO DE MANO IZQUIERDA",
+      "Diagnostico Coloracion": "DERMATOSIS NEUTROFILICA",
+      "Diagnostico Principal": "ESTUDIO DE INMUNOHISTOQUIMICA DERMATOSIS NEUTROFILICA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD68": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 139,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Piel, dorso de mano izquierda. Lesión. Biopsia. Estudio de inmunohistoquimica \nDERMATOSIS NEUTROFILICA",
+      "valor_corregido": "Piel, dorso de mano izquierda. Lesión. Biopsia. Estudio de inmunohistoquimica DERMATOSIS NEUTROFILICA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250292",
+      "timestamp": "2026-02-03T03:23:04.020763"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2502975\" correspondiente a “piel de dorso de mano izquierda” con diagnóstico de \" DERMATOSIS NEUTROFILICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque, para tinción con los marcadores: CD 117, CD34, CD3, CD 15, CD 20, CD 68, CD 15",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2502975\" correspondiente a \"piel de dorso de mano izquierda\" con diagnóstico de \" DERMATOSIS NEUTROFILICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque, para tinción con los marcadores: CD 117, CD34, CD3, CD 15, CD 20, CD 68, CD 15",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250292",
+      "timestamp": "2026-02-03T03:23:04.020770"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 48
+  }
+}

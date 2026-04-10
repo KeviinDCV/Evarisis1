@@ -1,0 +1,167 @@
+{
+  "session_id": "IHQ250980_20251108_183133",
+  "numero_peticion": "IHQ250980",
+  "timestamp": "2025-11-08T18:31:33.378713",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250980\nCopia Pag. 1 de 2\nNombre : MERCEDES DEL CARMEN VIVEROS\nCALDERON\nN. peticion : IHQ250980\nN.Identificación : CC. 27354410\nGenero : FEMENINO\nEdad : 69 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : NEUROCIRUGIA\nFecha Ingreso : 05/09/2025\nFecha Informe : 16/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE MAMA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2510488-1 que corresponde a \"biopsia de mama izquierda\" con\ndiagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). NOTTINGHAM GRADO 2 (PUNTAJE\nDE 6). CARCINOMA DUCTAL IN SITU NO IDENTIFICADO. INVASIÓN LINFOVASCULAR PRESENTE. INVASIÓN\nPERINEURAL NO IDENTIFICADA.\" para estudios de inmunohistoquímica por lo que se solicita receptores\nde estrógeno, receptores de progesterona, ki67 y HER2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA\nRef. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: POSITIVO FUERTE 3+(80-90%).\n-RECEPTOR DE PROGRESTERONA: POSITIVO MODERADO 2+ (80-90%)\n-HER 2: NEGATIVO (Score 1+).\n-Ki-67: 51-60%.\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado. \n- Tiempo de fijación: 48 horas.\nDIAGNÓSTICO\n Mama izquierda. Masa. Biopsia con aguja gruesa. Estudios de inmunohistoquímica.\n- CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL).\n- RECEPTORES DE ESTRÓGENO POSITIVO FUERTE 80-90%.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---\nIHQ250980\nCopia Pag. 2 de 2\nNombre : MERCEDES DEL CARMEN VIVEROS\nCALDERON\nN. peticion : IHQ250980\nN.Identificación : CC. 27354410\nGenero : FEMENINO\nEdad : 69 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : NEUROCIRUGIA\nFecha Ingreso : 05/09/2025\nFecha Informe : 16/09/2025\n- RECEPTORES DE PROGESTERONA POSITIVO MODERADO 80-90%.\n- HER 2 NEGATIVO (SCORE 1+)\n- KI-67 51-60%.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3888,
+      "reduccion_porcentaje": 97.99
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250980",
+      "caso_num": 1,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MERCEDES DEL CARMEN VIVEROS CALDERON",
+      "numero_peticion": "IHQ250980",
+      "identificacion": "27354410",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "69",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LUIS ALFONSO GONZALEZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "05/09/2025",
+      "fecha_informe": "16/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250980",
+      "N. de identificación": "27354410",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LUIS ALFONSO GONZALEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "05/09/2025",
+      "Fecha Informe": "16/09/2025",
+      "nombres": "MERCEDES DEL CARMEN",
+      "Primer nombre": "MERCEDES",
+      "Segundo nombre": "DEL CARMEN",
+      "apellidos": "VIVEROS CALDERON",
+      "Primer apellido": "VIVEROS",
+      "Segundo apellido": "CALDERON",
+      "nombre_formal": "VIVEROS CALDERON, MERCEDES DEL CARMEN",
+      "diagnostico": "Mama izquierda. Masa. Biopsia con aguja gruesa. Estudios de inmunohistoquímica. - CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). - RECEPTORES DE ESTRÓGENO POSITIVO FUERTE 80-90%. - RECEPTORES DE PROGESTERONA POSITIVO MODERADO 80-90%. - HER 2 NEGATIVO (SCORE 1+) - KI-67 51-60%",
+      "descripcion_microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: POSITIVO FUERTE 3+(80-90%). -RECEPTOR DE PROGRESTERONA: POSITIVO MODERADO 2+ (80-90%) -HER 2: NEGATIVO (Score 1+). -KI-67: 51-60%. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: 48 horas.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2510488-1 que corresponde a \"biopsia de mama izquierda\" con diagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). NOTTINGHAM GRADO 2 (PUNTAJE DE 6). CARCINOMA DUCTAL IN SITU NO IDENTIFICADO. INVASIÓN LINFOVASCULAR PRESENTE. INVASIÓN PERINEURAL NO IDENTIFICADA.\" para estudios de inmunohistoquímica por lo que se solicita receptores de estrógeno, receptores de progesterona, KI-67 y HER2.",
+      "ihq_organo": "MAMA IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: NEGATIVO (SCORE 1+), Ki-67: 51-60%, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_HER2": "NEGATIVO (SCORE 1+)",
+      "IHQ_KI-67": "51-60%",
+      "extraction_timestamp": "2025-11-08T18:31:33.493682",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250980\nCopia Pag. 1 de 2\nNombre : MERCEDES DEL CARMEN VIVEROS\nCALDERON\nN. peticion : IHQ250980\nN.Identificación : CC. 27354410\nGenero : FEMENINO\nEdad : 69 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : NEUROCIRUGIA\nFecha Ingreso : 05/09/2025\nFecha Informe : 16/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE MAMA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2510488-1 que corresponde a \"biopsia de mama izquierda\" con\ndiagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). NOTTINGHAM GRADO 2 (PUNTAJE\nDE 6). CARCINOMA DUCTAL IN SITU NO IDENTIFICADO. INVASIÓN LINFOVASCULAR PRESENTE. INVASIÓN\nPERINEURAL NO IDENTIFICADA.\" para estudios de inmunohistoquímica por lo que se solicita receptores\nde estrógeno, receptores de progesterona, ki67 y HER2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA\nRef. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: POSITIVO FUERTE 3+(80-90%).\n-RECEPTOR DE PROGRESTERONA: POSITIVO MODERADO 2+ (80-90%)\n-HER 2: NEGATIVO (Score 1+).\n-Ki-67: 51-60%.\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado. \n- Tiempo de fijación: 48 horas.\nDIAGNÓSTICO\n Mama izquierda. Masa. Biopsia con aguja gruesa. Estudios de inmunohistoquímica.\n- CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL).\n- RECEPTORES DE ESTRÓGENO POSITIVO FUERTE 80-90%.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---\nIHQ250980\nCopia Pag. 2 de 2\nNombre : MERCEDES DEL CARMEN VIVEROS\nCALDERON\nN. peticion : IHQ250980\nN.Identificación : CC. 27354410\nGenero : FEMENINO\nEdad : 69 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : NEUROCIRUGIA\nFecha Ingreso : 05/09/2025\nFecha Informe : 16/09/2025\n- RECEPTORES DE PROGESTERONA POSITIVO MODERADO 80-90%.\n- HER 2 NEGATIVO (SCORE 1+)\n- KI-67 51-60%.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2510488-1 que corresponde a \"biopsia de mama izquierda\" con diagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). NOTTINGHAM GRADO 2 (PUNTAJE DE 6). CARCINOMA DUCTAL IN SITU NO IDENTIFICADO. INVASIÓN LINFOVASCULAR PRESENTE. INVASIÓN PERINEURAL NO IDENTIFICADA.\" para estudios de inmunohistoquímica por lo que se solicita receptores de estrógeno, receptores de progesterona, ki67 y HER2.",
+      "Descripcion microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: POSITIVO FUERTE 3+(80-90%). -RECEPTOR DE PROGRESTERONA: POSITIVO MODERADO 2+ (80-90%) -HER 2: NEGATIVO (Score 1+). -Ki-67: 51-60%. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: 48 horas.",
+      "Descripcion Diagnostico": "Mama izquierda. Masa. Biopsia con aguja gruesa. Estudios de inmunohistoquímica. - CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). - RECEPTORES DE ESTRÓGENO POSITIVO FUERTE 80-90%. - RECEPTORES DE PROGESTERONA POSITIVO MODERADO 80-90%. - HER 2 NEGATIVO (SCORE 1+) - KI-67 51-60%",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Organo": "BX DE MAMA IZQUIERDA",
+      "Diagnostico Coloracion": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). NOTTINGHAM GRADO 2 (PUNTAJE DE 6). CARCINOMA DUCTAL IN SITU NO IDENTIFICADO. INVASIÓN LINFOVASCULAR PRESENTE. INVASIÓN PERINEURAL NO IDENTIFICADA",
+      "Diagnostico Principal": "CARCINOMA DUCTAL IN SITU NO IDENTIFICADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO (SCORE 1+), Ki-67: 51-60%, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "IHQ_HER2": "NEGATIVO (SCORE 1+)",
+      "IHQ_KI-67": "51-60%",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 143,
+      "campos_vacios": 104,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 27.27
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 104,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama izquierda. Masa. Biopsia con aguja gruesa. Estudios de inmunohistoquímica.\n- CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL).\n- RECEPTORES DE ESTRÓGENO POSITIVO FUERTE 80-90%.\n- RECEPTORES DE PROGESTERONA POSITIVO MODERADO 80-90%.\n- HER 2 NEGATIVO (SCORE 1+)\n- KI-67 51-60%",
+      "valor_corregido": "Mama izquierda. Masa. Biopsia con aguja gruesa. Estudios de inmunohistoquímica. - CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). - RECEPTORES DE ESTRÓGENO POSITIVO FUERTE 80-90%. - RECEPTORES DE PROGESTERONA POSITIVO MODERADO 80-90%. - HER 2 NEGATIVO (SCORE 1+) - KI-67 51-60%",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250980",
+      "timestamp": "2025-11-08T18:31:33.488647"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2510488-1 que corresponde a \"biopsia de mama izquierda\" con\ndiagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). NOTTINGHAM GRADO 2 (PUNTAJE\nDE 6). CARCINOMA DUCTAL IN SITU NO IDENTIFICADO. INVASIÓN LINFOVASCULAR PRESENTE. INVASIÓN\nPERINEURAL NO IDENTIFICADA.\" para estudios de inmunohistoquímica por lo que se solicita receptores\nde estrógeno, receptores de progesterona, ki67 y HER2.",
+      "valor_corregido": "Se realizan niveles al bloque M2510488-1 que corresponde a \"biopsia de mama izquierda\" con diagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). NOTTINGHAM GRADO 2 (PUNTAJE DE 6). CARCINOMA DUCTAL IN SITU NO IDENTIFICADO. INVASIÓN LINFOVASCULAR PRESENTE. INVASIÓN PERINEURAL NO IDENTIFICADA.\" para estudios de inmunohistoquímica por lo que se solicita receptores de estrógeno, receptores de progesterona, KI-67 y HER2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250980",
+      "timestamp": "2025-11-08T18:31:33.488653"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: POSITIVO FUERTE 3+(80-90%). -RECEPTOR DE PROGRESTERONA: POSITIVO MODERADO 2+ (80-90%) -HER 2: NEGATIVO (Score 1+). -Ki-67: 51-60%. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: 48 horas.",
+      "valor_corregido": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: POSITIVO FUERTE 3+(80-90%). -RECEPTOR DE PROGRESTERONA: POSITIVO MODERADO 2+ (80-90%) -HER 2: NEGATIVO (Score 1+). -KI-67: 51-60%. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: 48 horas.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250980",
+      "timestamp": "2025-11-08T18:31:33.488656"
+    },
+    {
+      "tipo": "medico_servicio",
+      "campo": "Servicio",
+      "valor_original": "NEUROCIRUGIA",
+      "valor_corregido": "UNIDAD DE ONCOLOGIA COEX",
+      "razon": "El médico LUIS ALFONSO GONZALEZ es Cirujano Oncólogo. El servicio 'NEUROCIRUGIA' es inconsistente. Servicio correcto: 'UNIDAD DE ONCOLOGIA COEX'",
+      "timestamp": "2025-11-08T18:31:33.494017",
+      "confianza": 1.0,
+      "numero_caso": "IHQ250980"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 3,
+      "medico_servicio": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 50
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "session_id": "IHQ250047_20251203_000844",
+  "numero_peticion": "IHQ250047",
+  "timestamp": "2025-12-03T00:08:44.097477",
+  "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250047\nCopia Pag. 1 de 2\nNombre : SANDRA BRIGITH GOMEZ JARAMILLO N. peticion : IHQ250047\nN.Identificación : CC. 1060356464\nGenero : FEMENINO\nEdad : 31 años\nEPS : NUEVA EPS\nMédico tratante : FABIAN ANDRES ARAGON\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 15/01/2025\nFecha Informe : 22/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX EXOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como\n“2024-SO28013” correspondiente a \" biopsia de exocérvix\" con diagnóstico de “CAMBIOS CITOLOGICOS\nINESPECIFICOS PARA DISPLASIA” Previa revisión de la histología se realizan niveles histológicos al bloque\nA1 para tinción con los marcadores: p16 y Ki 67\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células son negativas para p16 y Ki 67 presenta tinción usual (basal)\nDIAGNÓSTICO\nExocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica\nLA MUESTRA EXAMINADA ES NEGATIVA PARA CAMBIOS DISPLASICOS (Muestra fragmentada)\nCOMENTARIOS\nAnte la sospecha de displasia se sugiere nuevo muestreo a criterio de medico tratante\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---\nIHQ250047\nCopia Pag. 2 de 2\nNombre : SANDRA BRIGITH GOMEZ JARAMILLO N. peticion : IHQ250047\nN.Identificación : CC. 1060356464\nGenero : FEMENINO\nEdad : 31 años\nEPS : NUEVA EPS\nMédico tratante : FABIAN ANDRES ARAGON\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 15/01/2025\nFecha Informe : 22/01/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3082,
+      "reduccion_porcentaje": 98.2
+    },
+    "metadata": {
+      "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250047",
+      "caso_num": 47,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P16": "POSITIVO",
+      "nombre_completo": "SANDRA BRIGITH GOMEZ JARAMILLO",
+      "numero_peticion": "IHQ250047",
+      "identificacion": "1060356464",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "31",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "FABIAN ANDRES ARAGON",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "15/01/2025",
+      "fecha_informe": "22/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250047",
+      "N. de identificación": "1060356464",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "FABIAN ANDRES ARAGON",
+      "Fecha de ingreso (2. Fecha de la muestra)": "15/01/2025",
+      "Fecha Informe": "22/01/2025",
+      "nombres": "SANDRA BRIGITH",
+      "Primer nombre": "SANDRA",
+      "Segundo nombre": "BRIGITH",
+      "apellidos": "GOMEZ JARAMILLO",
+      "Primer apellido": "GOMEZ",
+      "Segundo apellido": "JARAMILLO",
+      "nombre_formal": "GOMEZ JARAMILLO, SANDRA BRIGITH",
+      "diagnostico": "Exocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica LA MUESTRA EXAMINADA ES NEGATIVA PARA CAMBIOS DISPLASICOS (Muestra fragmentada)",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células son negativas para P16 y KI-67 presenta tinción usual (basal)",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “2024-SO28013” correspondiente a \" biopsia de exocérvix\" con diagnóstico de “CAMBIOS CITOLOGICOS INESPECIFICOS PARA DISPLASIA” Previa revisión de la histología se realizan niveles histológicos al bloque A1 para tinción con los marcadores: P16 y KI-67",
+      "ihq_organo": "EXOCÉRVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Ante la sospecha de displasia se sugiere nue",
+      "IHQ_ORGANO": "EXOCÉRVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "extraction_timestamp": "2025-12-03T00:08:44.220589",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250047\nCopia Pag. 1 de 2\nNombre : SANDRA BRIGITH GOMEZ JARAMILLO N. peticion : IHQ250047\nN.Identificación : CC. 1060356464\nGenero : FEMENINO\nEdad : 31 años\nEPS : NUEVA EPS\nMédico tratante : FABIAN ANDRES ARAGON\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 15/01/2025\nFecha Informe : 22/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX EXOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como\n“2024-SO28013” correspondiente a \" biopsia de exocérvix\" con diagnóstico de “CAMBIOS CITOLOGICOS\nINESPECIFICOS PARA DISPLASIA” Previa revisión de la histología se realizan niveles histológicos al bloque\nA1 para tinción con los marcadores: p16 y Ki 67\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células son negativas para p16 y Ki 67 presenta tinción usual (basal)\nDIAGNÓSTICO\nExocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica\nLA MUESTRA EXAMINADA ES NEGATIVA PARA CAMBIOS DISPLASICOS (Muestra fragmentada)\nCOMENTARIOS\nAnte la sospecha de displasia se sugiere nuevo muestreo a criterio de medico tratante\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---\nIHQ250047\nCopia Pag. 2 de 2\nNombre : SANDRA BRIGITH GOMEZ JARAMILLO N. peticion : IHQ250047\nN.Identificación : CC. 1060356464\nGenero : FEMENINO\nEdad : 31 años\nEPS : NUEVA EPS\nMédico tratante : FABIAN ANDRES ARAGON\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 15/01/2025\nFecha Informe : 22/01/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “2024-SO28013” correspondiente a \" biopsia de exocérvix\" con diagnóstico de “CAMBIOS CITOLOGICOS INESPECIFICOS PARA DISPLASIA” Previa revisión de la histología se realizan niveles histológicos al bloque A1 para tinción con los marcadores: p16 y Ki 67",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células son negativas para p16 y Ki 67 presenta tinción usual (basal)",
+      "Descripcion Diagnostico": "Exocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica LA MUESTRA EXAMINADA ES NEGATIVA PARA CAMBIOS DISPLASICOS (Muestra fragmentada)",
+      "IHQ_ORGANO": "EXOCÉRVIX",
+      "Organo": "BX EXOCERVIX",
+      "Diagnostico Coloracion": "CAMBIOS CITOLOGICOS INESPECIFICOS PARA DISPLASIA",
+      "Diagnostico Principal": "DISPLASIA SE SUGIERE NUEVO MUESTREO A CRITERIO DE MEDICO TRATANTE",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 150,
+      "campos_vacios": 114,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 1,
+      "completitud_porcentaje": 24.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 114,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Exocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica\nLA MUESTRA EXAMINADA ES NEGATIVA PARA CAMBIOS DISPLASICOS (Muestra fragmentada)",
+      "valor_corregido": "Exocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica LA MUESTRA EXAMINADA ES NEGATIVA PARA CAMBIOS DISPLASICOS (Muestra fragmentada)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250047",
+      "timestamp": "2025-12-03T00:08:44.220390"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como\n“2024-SO28013” correspondiente a \" biopsia de exocérvix\" con diagnóstico de “CAMBIOS CITOLOGICOS\nINESPECIFICOS PARA DISPLASIA” Previa revisión de la histología se realizan niveles histológicos al bloque\nA1 para tinción con los marcadores: p16 y Ki 67",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “2024-SO28013” correspondiente a \" biopsia de exocérvix\" con diagnóstico de “CAMBIOS CITOLOGICOS INESPECIFICOS PARA DISPLASIA” Previa revisión de la histología se realizan niveles histológicos al bloque A1 para tinción con los marcadores: P16 y KI-67",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250047",
+      "timestamp": "2025-12-03T00:08:44.220397"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células son negativas para p16 y Ki 67 presenta tinción usual (basal)",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células son negativas para P16 y KI-67 presenta tinción usual (basal)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250047",
+      "timestamp": "2025-12-03T00:08:44.220399"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 49
+  }
+}

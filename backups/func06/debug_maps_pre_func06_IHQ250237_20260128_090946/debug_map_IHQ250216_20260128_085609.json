@@ -1,0 +1,164 @@
+{
+  "session_id": "IHQ250216_20260128_085609",
+  "numero_peticion": "IHQ250216",
+  "timestamp": "2026-01-28T08:56:09.466420",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250216\nCopia Pag. 1 de 2\nNombre : NELLY CHOCUE MONTEALEGRE\nN. peticion : IHQ250216\nN.Identificación : CC. 29702953\nGenero : FEMENINO\nEdad : 63 años 14 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PARED ABDOMINAL +\nOMENTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502094 A -B con\nrótulo correspondiente a \"A: pared abdominal; B: omento\" con diagnóstico de “CARCINOMA\nMETASTÁSICO”. Previa valoración de la coloración básica, se realizan cortes histológicos a los\nbloques A y B1 para: PAX8, WT1, p16, p53, RECEPTOR DE PROGESTERONA, RECEPTOR DE\nESTROGENOS. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADOS: \nLas células tumorales malignas demuestran inmunorreactividad positiva fuerte y difusa para PAX\n8, WT1, p53 (sobre expresado-mutado), receptores de estrógenos (tinción nuclear fuerte difusa)\ny focal para receptor de progesterona (tinción nuclear débil). Son negativas para p16. \nDIAGNÓSTICO\nA. Pared abdominal. Biopsia. Estudio de inmunohistoquímica. \nCARCINOMA METASTÁSICO ORIGEN GINECOLOGICO, VER COMENTARIO. \nB. Omento. Biopsia. Estudio de inmunohistoquímica. \nCARCINOMA METASTÁSICO ORIGEN GINECOLOGICO, VER COMENTARIO. \nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---\nIHQ250216\nCopia Pag. 2 de 2\nNombre : NELLY CHOCUE MONTEALEGRE\nN. peticion : IHQ250216\nN.Identificación : CC. 29702953\nGenero : FEMENINO\nEdad : 63 años 14 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\nLa marcación de inmunohistoquímica sugiere compromiso por carcinoma metastásico de origen\nginecológico, pudiendo corresponder a un carcinoma seroso. \nEl resultado de este estudio se debe correlacionar con historia clínica, estudios imagenológicos y\nestudio histopatológicos complementarios, a criterio del médico tratante. \nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3684,
+      "reduccion_porcentaje": 97.95
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250216",
+      "caso_num": 5,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_WT1": "POSITIVO",
+      "IHQ_P53": "POSITIVO (MUTADO)",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (TINCIÓN NUCLEAR FUERTE DIFUSA)",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO FOCAL",
+      "nombre_completo": "NELLY CHOCUE MONTEALEGRE",
+      "numero_peticion": "IHQ250216",
+      "identificacion": "29702953",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "63",
+      "eps": "ASMET SALUD EPS SAS",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "28/02/2025",
+      "fecha_informe": "04/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250216",
+      "N. de identificación": "29702953",
+      "Tipo de documento": "CC",
+      "EPS": "ASMET SALUD EPS SAS",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/02/2025",
+      "Fecha Informe": "04/03/2025",
+      "nombres": "NELLY",
+      "Primer nombre": "NELLY",
+      "Segundo nombre": "",
+      "apellidos": "CHOCUE MONTEALEGRE",
+      "Primer apellido": "CHOCUE",
+      "Segundo apellido": "MONTEALEGRE",
+      "nombre_formal": "CHOCUE MONTEALEGRE, NELLY",
+      "diagnostico": "A. Pared abdominal. Biopsia. Estudio de inmunohistoquímica. CARCINOMA METASTÁSICO ORIGEN GINECOLOGICO, VER COMENTARIO. B. Omento. Biopsia. Estudio de inmunohistoquímica. CARCINOMA METASTÁSICO ORIGEN GINECOLOGICO, VER COMENTARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADOS: Las células tumorales malignas demuestran inmunorreactividad positiva fuerte y difusa para PAX 8, WT1, p53 (sobre expresado-mutado), receptores de estrógenos (tinción nuclear fuerte difusa) y focal para receptor de progesterona (tinción nuclear débil). Son negativas para p16.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502094 A -B con rótulo correspondiente a \"A: pared abdominal; B: omento\" con diagnóstico de \"CARCINOMA METASTÁSICO\". Previa valoración de la coloración básica, se realizan cortes histológicos a los bloques A y B1 para: PAX8, WT1, p16, p53, RECEPTOR DE PROGESTERONA, RECEPTOR DE ESTROGENOS.",
+      "ihq_organo": "PARED ABDOMINAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 10 --- IHQ250216 Copia Pag. 2 de 2 Nombre : NELLY CHOCUE MONTEALEGRE N. peticion : IHQ250216 N.Identificación : CC. 29702953 Genero : FEMENINO Edad : 63 años 14 dias EPS : ASMET SALUD EPS SAS Médico tratante : JOSE OMAR ZORRILA LARA Servicio : CIRUGIA MUJERES Fecha Ingreso : 28/02/2025 Fecha Informe : 04/03/2025 La marcación de inmunohistoquímica sugiere compromiso por carcinoma metastásico de origen ginecológico, pudiendo corresponder a un carcinoma seroso. El resultado de este estudio se debe correlacionar con historia clínica, estudios imagenológicos y estudio histopatológicos complementarios, a criterio del médico tratante.",
+      "IHQ_ORGANO": "PARED ABDOMINAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Receptores de Estrógenos (tinción nuclear fuerte difusa) / receptor de progesterona (tinción nuclear débil)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "p16": "NEGATIVO",
+      "extraction_timestamp": "2026-01-28T08:56:10.069456",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250216\nCopia Pag. 1 de 2\nNombre : NELLY CHOCUE MONTEALEGRE\nN. peticion : IHQ250216\nN.Identificación : CC. 29702953\nGenero : FEMENINO\nEdad : 63 años 14 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PARED ABDOMINAL +\nOMENTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502094 A -B con\nrótulo correspondiente a \"A: pared abdominal; B: omento\" con diagnóstico de “CARCINOMA\nMETASTÁSICO”. Previa valoración de la coloración básica, se realizan cortes histológicos a los\nbloques A y B1 para: PAX8, WT1, p16, p53, RECEPTOR DE PROGESTERONA, RECEPTOR DE\nESTROGENOS. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADOS: \nLas células tumorales malignas demuestran inmunorreactividad positiva fuerte y difusa para PAX\n8, WT1, p53 (sobre expresado-mutado), receptores de estrógenos (tinción nuclear fuerte difusa)\ny focal para receptor de progesterona (tinción nuclear débil). Son negativas para p16. \nDIAGNÓSTICO\nA. Pared abdominal. Biopsia. Estudio de inmunohistoquímica. \nCARCINOMA METASTÁSICO ORIGEN GINECOLOGICO, VER COMENTARIO. \nB. Omento. Biopsia. Estudio de inmunohistoquímica. \nCARCINOMA METASTÁSICO ORIGEN GINECOLOGICO, VER COMENTARIO. \nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---\nIHQ250216\nCopia Pag. 2 de 2\nNombre : NELLY CHOCUE MONTEALEGRE\nN. peticion : IHQ250216\nN.Identificación : CC. 29702953\nGenero : FEMENINO\nEdad : 63 años 14 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\nLa marcación de inmunohistoquímica sugiere compromiso por carcinoma metastásico de origen\nginecológico, pudiendo corresponder a un carcinoma seroso. \nEl resultado de este estudio se debe correlacionar con historia clínica, estudios imagenológicos y\nestudio histopatológicos complementarios, a criterio del médico tratante. \nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P53, PAX8, Receptor de Estrógeno, Receptor de Progesterona, WT1",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502094 A -B con rótulo correspondiente a \"A: pared abdominal; B: omento\" con diagnóstico de “CARCINOMA METASTÁSICO”. Previa valoración de la coloración básica, se realizan cortes histológicos a los bloques A y B1 para: PAX8, WT1, p16, p53, RECEPTOR DE PROGESTERONA, RECEPTOR DE ESTROGENOS.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADOS: Las células tumorales malignas demuestran inmunorreactividad positiva fuerte y difusa para PAX 8, WT1, p53 (sobre expresado-mutado), receptores de estrógenos (tinción nuclear fuerte difusa) y focal para receptor de progesterona (tinción nuclear débil). Son negativas para p16.",
+      "Descripcion Diagnostico": "A. Pared abdominal. Biopsia. Estudio de inmunohistoquímica. CARCINOMA METASTÁSICO ORIGEN GINECOLOGICO, VER COMENTARIO. B. Omento. Biopsia. Estudio de inmunohistoquímica. CARCINOMA METASTÁSICO ORIGEN GINECOLOGICO, VER COMENTARIO.",
+      "IHQ_ORGANO": "PARED ABDOMINAL",
+      "Organo": "BX PARED ABDOMINAL + OMENTO",
+      "Diagnostico Coloracion": "CARCINOMA METASTÁSICO",
+      "Diagnostico Principal": "CARCINOMA METASTÁSICO ORIGEN GINECOLOGICO,",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptores de Estrógenos (tinción nuclear fuerte difusa) / receptor de progesterona (tinción nuclear débil)",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P53": "POSITIVO (MUTADO)",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (TINCIÓN NUCLEAR FUERTE DIFUSA)",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO FOCAL",
+      "IHQ_WT1": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 174,
+      "campos_vacios": 134,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Pared abdominal. Biopsia. Estudio de inmunohistoquímica. \nCARCINOMA METASTÁSICO ORIGEN GINECOLOGICO, VER COMENTARIO. \nB. Omento. Biopsia. Estudio de inmunohistoquímica. \nCARCINOMA METASTÁSICO ORIGEN GINECOLOGICO, VER COMENTARIO.",
+      "valor_corregido": "A. Pared abdominal. Biopsia. Estudio de inmunohistoquímica. CARCINOMA METASTÁSICO ORIGEN GINECOLOGICO, VER COMENTARIO. B. Omento. Biopsia. Estudio de inmunohistoquímica. CARCINOMA METASTÁSICO ORIGEN GINECOLOGICO, VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250216",
+      "timestamp": "2026-01-28T08:56:10.069248"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502094 A -B con rótulo correspondiente a \"A: pared abdominal; B: omento\" con diagnóstico de “CARCINOMA METASTÁSICO”. Previa valoración de la coloración básica, se realizan cortes histológicos a los bloques A y B1 para: PAX8, WT1, p16, p53, RECEPTOR DE PROGESTERONA, RECEPTOR DE ESTROGENOS.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502094 A -B con rótulo correspondiente a \"A: pared abdominal; B: omento\" con diagnóstico de \"CARCINOMA METASTÁSICO\". Previa valoración de la coloración básica, se realizan cortes histológicos a los bloques A y B1 para: PAX8, WT1, p16, p53, RECEPTOR DE PROGESTERONA, RECEPTOR DE ESTROGENOS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250216",
+      "timestamp": "2026-01-28T08:56:10.069254"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---\nIHQ250216\nCopia Pag. 2 de 2\nNombre : NELLY CHOCUE MONTEALEGRE\nN. peticion : IHQ250216\nN.Identificación : CC. 29702953\nGenero : FEMENINO\nEdad : 63 años 14 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 28/02/2025\nFecha Informe : 04/03/2025\nLa marcación de inmunohistoquímica sugiere compromiso por carcinoma metastásico de origen\nginecológico, pudiendo corresponder a un carcinoma seroso. \nEl resultado de este estudio se debe correlacionar con historia clínica, estudios imagenológicos y\nestudio histopatológicos complementarios, a criterio del médico tratante.",
+      "valor_corregido": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 10 --- IHQ250216 Copia Pag. 2 de 2 Nombre : NELLY CHOCUE MONTEALEGRE N. peticion : IHQ250216 N.Identificación : CC. 29702953 Genero : FEMENINO Edad : 63 años 14 dias EPS : ASMET SALUD EPS SAS Médico tratante : JOSE OMAR ZORRILA LARA Servicio : CIRUGIA MUJERES Fecha Ingreso : 28/02/2025 Fecha Informe : 04/03/2025 La marcación de inmunohistoquímica sugiere compromiso por carcinoma metastásico de origen ginecológico, pudiendo corresponder a un carcinoma seroso. El resultado de este estudio se debe correlacionar con historia clínica, estudios imagenológicos y estudio histopatológicos complementarios, a criterio del médico tratante.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250216",
+      "timestamp": "2026-01-28T08:56:10.069256"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 53
+  }
+}

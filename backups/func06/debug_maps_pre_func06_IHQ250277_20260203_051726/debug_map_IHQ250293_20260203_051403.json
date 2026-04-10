@@ -1,0 +1,188 @@
+{
+  "session_id": "IHQ250293_20260203_051403",
+  "numero_peticion": "IHQ250293",
+  "timestamp": "2026-02-03T05:14:03.189658",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250293\nCopia Pag. 1 de 2\nNombre : LUZ DERY SEPULVEDA GORDILLO\nN. peticion : IHQ250293\nN.Identificación : CC. 29832789\nGenero : FEMENINO\nEdad : 52 años 21 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 21/03/2025\nFecha Informe : 12/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR ORBITARIO\nIZQUIERDO\n2025-02-28\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2502396 \" correspondiente a “ tumor de orbita izquierda” con diagnóstico de \"NEOPLASIA DE CELULAS\nREDONDAS Y AZULES \". Previa revisión de la histología se realizan niveles histológicos en el bloque A1\npara tinción con los marcadores: CD99, CD45, Sinaptofisina, cromogranina, CD 38, CD 138, CD 20, CD3,\nCD 79A, CD 5, MUM 1, C-MYC , BCL2, BCL6, KI67, CD 10.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa celularidad neoplasica corresponde a linfocitos B con una expresión para CD 45, CD 20, CD 79A ,\nsobre expresión para BCL2, y de manera heterogenea para CD 43. Son negativos para CD3, CD5, BCL6,\nCD23. El índice proliferativo Ki 67 es del 10%. Hay folículos linfoides residuales con centros germinales\npositivos con BCL 6, CD 10, CD 23 , en la zona parafolicular linfocitos T acompañantes CD3 y CD5\npositivos y plasmocitos CD38 y CD138 positivos. La marcación es negativa para CD99, sinaptofisina,\ncromogranina, CD 10, MUM1 y C-MYC., CYCLINA, SOX 11, kappa\nDIAGNÓSTICO\n Región orbitaria izquierda. Masa. Resección. Estudio de inmunohistoquimica\n LOS HALLAZGOS MORFOLÓGICOS Y EL PATRON DE EXPRESIÓN DE INMUNOHISTOQÍMIMCA FAVORECEN\nCOMPROMISO POR LINFOMA DE CÉLULAS B DE LA ZONA MARGINAL, EXTRANODAL (TEJIDO LINFOIDE\nASOCIADO A LA MUCOSA (MALT)).\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---\nIHQ250293\nCopia Pag. 2 de 2\nNombre : LUZ DERY SEPULVEDA GORDILLO\nN. peticion : IHQ250293\nN.Identificación : CC. 29832789\nGenero : FEMENINO\nEdad : 52 años 21 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 21/03/2025\nFecha Informe : 12/04/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3776,
+      "reduccion_porcentaje": 97.84
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250293",
+      "caso_num": 29,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD99": "NEGATIVO",
+      "IHQ_CD3": "NEGATIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_CD23": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_MUM1": "NEGATIVO",
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_CICLINA_D1": "NEGATIVO",
+      "IHQ_SOX11": "NEGATIVO",
+      "IHQ_KAPPA": "NEGATIVO",
+      "IHQ_LCA": "NEGATIVO",
+      "IHQ_CD20": "NEGATIVO",
+      "IHQ_CD79A": "NEGATIVO",
+      "IHQ_BCL2": "NEGATIVO",
+      "nombre_completo": "LUZ DERY SEPULVEDA GORDILLO",
+      "numero_peticion": "IHQ250293",
+      "identificacion": "29832789",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "52",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "CATHERINE GONZALIAS DUQUE",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "21/03/2025",
+      "fecha_informe": "12/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250293",
+      "N. de identificación": "29832789",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "CATHERINE GONZALIAS DUQUE",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/03/2025",
+      "Fecha Informe": "12/04/2025",
+      "nombres": "LUZ DERY",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "DERY",
+      "apellidos": "SEPULVEDA GORDILLO",
+      "Primer apellido": "SEPULVEDA",
+      "Segundo apellido": "GORDILLO",
+      "nombre_formal": "SEPULVEDA GORDILLO, LUZ DERY",
+      "diagnostico": "Región orbitaria izquierda. Masa. Resección. Estudio de inmunohistoquimica LOS HALLAZGOS MORFOLÓGICOS Y EL PATRON DE EXPRESIÓN DE INMUNOHISTOQÍMIMCA FAVORECEN COMPROMISO POR LINFOMA DE CÉLULAS B DE LA ZONA MARGINAL, EXTRANODAL (TEJIDO LINFOIDE ASOCIADO A LA MUCOSA (MALT)). MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________: 21/03/2025",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad neoplasica corresponde a linfocitos B con una expresión para CD 45, CD 20, CD 79A , sobre expresión para BCL2, y de manera heterogenea para CD 43. Son negativos para CD3, CD5, BCL6, CD23. El índice proliferativo KI-67 es del 10%. Hay folículos linfoides residuales con centros germinales positivos con BCL 6, CD 10, CD 23 , en la zona parafolicular linfocitos T acompañantes CD3 y CD5 positivos y plasmocitos CD38 y CD138 positivos. La marcación es negativa para CD99, synaptophysin, cromogranina, CD 10, MUM1 y C-MYC., CYCLINA, SOX 11, kappa",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2502396 \" correspondiente a \" tumor de orbita izquierda\" con diagnóstico de \"NEOPLASIA DE CELULAS REDONDAS Y AZULES \". Previa revisión de la histología se realizan niveles histológicos en el bloque A1 para tinción con los marcadores: CD99, CD45, Synaptophysin, cromogranina, CD 38, CD 138, CD 20, CD3, CD 79A, CD 5, MUM 1, C-MYC , BCL2, BCL6, KI-67, CD 10.",
+      "ihq_organo": "REGIÓN ORBITARIA IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD99, CD45, SYNAPTOFISINA, CROMOGRANINA, CD3, CD138, CD20, CD79A, CD5, MUM 1, CMYC, BCL2, BCL6, Ki-67, CD10",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN ORBITARIA IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD99, CD45, SYNAPTOFISINA, CROMOGRANINA, CD3, CD138, CD20, CD79A, CD5, MUM 1, CMYC, BCL2, BCL6, Ki-67, CD10",
+      "IHQ_CD138": "POSITIVO",
+      "extraction_timestamp": "2026-02-03T05:14:03.636583",
+      "extractor_version": "6.5.93_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250293\nCopia Pag. 1 de 2\nNombre : LUZ DERY SEPULVEDA GORDILLO\nN. peticion : IHQ250293\nN.Identificación : CC. 29832789\nGenero : FEMENINO\nEdad : 52 años 21 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 21/03/2025\nFecha Informe : 12/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR ORBITARIO\nIZQUIERDO\n2025-02-28\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2502396 \" correspondiente a “ tumor de orbita izquierda” con diagnóstico de \"NEOPLASIA DE CELULAS\nREDONDAS Y AZULES \". Previa revisión de la histología se realizan niveles histológicos en el bloque A1\npara tinción con los marcadores: CD99, CD45, Sinaptofisina, cromogranina, CD 38, CD 138, CD 20, CD3,\nCD 79A, CD 5, MUM 1, C-MYC , BCL2, BCL6, KI67, CD 10.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa celularidad neoplasica corresponde a linfocitos B con una expresión para CD 45, CD 20, CD 79A ,\nsobre expresión para BCL2, y de manera heterogenea para CD 43. Son negativos para CD3, CD5, BCL6,\nCD23. El índice proliferativo Ki 67 es del 10%. Hay folículos linfoides residuales con centros germinales\npositivos con BCL 6, CD 10, CD 23 , en la zona parafolicular linfocitos T acompañantes CD3 y CD5\npositivos y plasmocitos CD38 y CD138 positivos. La marcación es negativa para CD99, sinaptofisina,\ncromogranina, CD 10, MUM1 y C-MYC., CYCLINA, SOX 11, kappa\nDIAGNÓSTICO\n Región orbitaria izquierda. Masa. Resección. Estudio de inmunohistoquimica\n LOS HALLAZGOS MORFOLÓGICOS Y EL PATRON DE EXPRESIÓN DE INMUNOHISTOQÍMIMCA FAVORECEN\nCOMPROMISO POR LINFOMA DE CÉLULAS B DE LA ZONA MARGINAL, EXTRANODAL (TEJIDO LINFOIDE\nASOCIADO A LA MUCOSA (MALT)).\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---\nIHQ250293\nCopia Pag. 2 de 2\nNombre : LUZ DERY SEPULVEDA GORDILLO\nN. peticion : IHQ250293\nN.Identificación : CC. 29832789\nGenero : FEMENINO\nEdad : 52 años 21 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 21/03/2025\nFecha Informe : 12/04/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD99, CD45, SYNAPTOFISINA, CROMOGRANINA, CD3, CD138, CD20, CD79A, CD5, MUM 1, CMYC, BCL2, BCL6, Ki-67, CD10, Kappa, CICLINA D1, CD23",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2502396 \" correspondiente a “ tumor de orbita izquierda” con diagnóstico de \"NEOPLASIA DE CELULAS REDONDAS Y AZULES \". Previa revisión de la histología se realizan niveles histológicos en el bloque A1 para tinción con los marcadores: CD99, CD45, Sinaptofisina, cromogranina, CD 38, CD 138, CD 20, CD3, CD 79A, CD 5, MUM 1, C-MYC , BCL2, BCL6, KI67, CD 10.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad neoplasica corresponde a linfocitos B con una expresión para CD 45, CD 20, CD 79A , sobre expresión para BCL2, y de manera heterogenea para CD 43. Son negativos para CD3, CD5, BCL6, CD23. El índice proliferativo Ki 67 es del 10%. Hay folículos linfoides residuales con centros germinales positivos con BCL 6, CD 10, CD 23 , en la zona parafolicular linfocitos T acompañantes CD3 y CD5 positivos y plasmocitos CD38 y CD138 positivos. La marcación es negativa para CD99, sinaptofisina, cromogranina, CD 10, MUM1 y C-MYC., CYCLINA, SOX 11, kappa",
+      "Descripcion Diagnostico": "Región orbitaria izquierda. Masa. Resección. Estudio de inmunohistoquimica LOS HALLAZGOS MORFOLÓGICOS Y EL PATRON DE EXPRESIÓN DE INMUNOHISTOQÍMIMCA FAVORECEN COMPROMISO POR LINFOMA DE CÉLULAS B DE LA ZONA MARGINAL, EXTRANODAL (TEJIDO LINFOIDE ASOCIADO A LA MUCOSA (MALT)). MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________: 21/03/2025",
+      "IHQ_ORGANO": "REGIÓN ORBITARIA IZQUIERDA",
+      "Organo": "TUMOR ORBITARIO IZQUIERDO",
+      "Diagnostico Coloracion": "NEOPLASIA DE CELULAS REDONDAS Y AZULES",
+      "Diagnostico Principal": "COMPROMISO POR LINFOMA DE CÉLULAS B DE LA ZONA MARGINAL, EXTRANODAL (TEJIDO LINFOIDE ASOCIADO A LA MUCOSA (MALT))",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD99": "NEGATIVO",
+      "IHQ_CD45": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_CD3": "NEGATIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD20": "NEGATIVO",
+      "IHQ_CD79A": "NEGATIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_MUM1": "NEGATIVO",
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_BCL2": "NEGATIVO",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_KAPPA": "NEGATIVO",
+      "IHQ_CICLINA_D1": "NEGATIVO",
+      "IHQ_CD23": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_SOX11": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 125,
+      "campos_completos": 53,
+      "biomarcadores_encontrados": 19,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 125,
+      "total_campos_completos": 53
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región orbitaria izquierda. Masa. Resección. Estudio de inmunohistoquimica\n LOS HALLAZGOS MORFOLÓGICOS Y EL PATRON DE EXPRESIÓN DE INMUNOHISTOQÍMIMCA FAVORECEN\nCOMPROMISO POR LINFOMA DE CÉLULAS B DE LA ZONA MARGINAL, EXTRANODAL (TEJIDO LINFOIDE\nASOCIADO A LA MUCOSA (MALT)).\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________: 21/03/2025",
+      "valor_corregido": "Región orbitaria izquierda. Masa. Resección. Estudio de inmunohistoquimica LOS HALLAZGOS MORFOLÓGICOS Y EL PATRON DE EXPRESIÓN DE INMUNOHISTOQÍMIMCA FAVORECEN COMPROMISO POR LINFOMA DE CÉLULAS B DE LA ZONA MARGINAL, EXTRANODAL (TEJIDO LINFOIDE ASOCIADO A LA MUCOSA (MALT)). MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________: 21/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250293",
+      "timestamp": "2026-02-03T05:14:03.636300"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2502396 \" correspondiente a “ tumor de orbita izquierda” con diagnóstico de \"NEOPLASIA DE CELULAS REDONDAS Y AZULES \". Previa revisión de la histología se realizan niveles histológicos en el bloque A1 para tinción con los marcadores: CD99, CD45, Sinaptofisina, cromogranina, CD 38, CD 138, CD 20, CD3, CD 79A, CD 5, MUM 1, C-MYC , BCL2, BCL6, KI67, CD 10.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2502396 \" correspondiente a \" tumor de orbita izquierda\" con diagnóstico de \"NEOPLASIA DE CELULAS REDONDAS Y AZULES \". Previa revisión de la histología se realizan niveles histológicos en el bloque A1 para tinción con los marcadores: CD99, CD45, Synaptophysin, cromogranina, CD 38, CD 138, CD 20, CD3, CD 79A, CD 5, MUM 1, C-MYC , BCL2, BCL6, KI-67, CD 10.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250293",
+      "timestamp": "2026-02-03T05:14:03.636306"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad neoplasica corresponde a linfocitos B con una expresión para CD 45, CD 20, CD 79A , sobre expresión para BCL2, y de manera heterogenea para CD 43. Son negativos para CD3, CD5, BCL6, CD23. El índice proliferativo Ki 67 es del 10%. Hay folículos linfoides residuales con centros germinales positivos con BCL 6, CD 10, CD 23 , en la zona parafolicular linfocitos T acompañantes CD3 y CD5 positivos y plasmocitos CD38 y CD138 positivos. La marcación es negativa para CD99, sinaptofisina, cromogranina, CD 10, MUM1 y C-MYC., CYCLINA, SOX 11, kappa",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad neoplasica corresponde a linfocitos B con una expresión para CD 45, CD 20, CD 79A , sobre expresión para BCL2, y de manera heterogenea para CD 43. Son negativos para CD3, CD5, BCL6, CD23. El índice proliferativo KI-67 es del 10%. Hay folículos linfoides residuales con centros germinales positivos con BCL 6, CD 10, CD 23 , en la zona parafolicular linfocitos T acompañantes CD3 y CD5 positivos y plasmocitos CD38 y CD138 positivos. La marcación es negativa para CD99, synaptophysin, cromogranina, CD 10, MUM1 y C-MYC., CYCLINA, SOX 11, kappa",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250293",
+      "timestamp": "2026-02-03T05:14:03.636308"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 64
+  }
+}

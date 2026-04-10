@@ -1,0 +1,152 @@
+{
+  "session_id": "IHQ250285_20260203_050148",
+  "numero_peticion": "IHQ250285",
+  "timestamp": "2026-02-03T05:01:48.591039",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250285\nCopia Pag. 1 de 2\nNombre : ELIZABETH SALCEDO PAEZ\nN. peticion : IHQ250285\nN.Identificación : CC. 39702456\nGenero : FEMENINO\nEdad : 62 años 1 mes 14 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 19/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION DUODENAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2501330, el cual corresponde a biopsia de mucosa\nduodenal con diagnóstico de \"ADENOCARCINOMA INFILTRANTE BIEN DIFERENCIADO\". Se ordena\nHER2 y los siguientes marcadores para inestabilidad microsatelital; MLH1, MSH2, MSH6 y PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nPROTOCOLO CAP PARA REPORTE DE INESTABILIDAD MICROSATELITAL EN PROTEÍNAS MMR\nSitio del especimen: mucosa duodenal\nResultado\nde\nMLH1:\ninmunorreactividad\nnuclear\ny\ncitoplasmática\ngranular\nheterogénea\n(deficiencia de MLH1)\nResultado de MLH2: expresión nuclear intacta\nResultado de MSH6: expresión nuclear intacta\nResultado de PMS2: pérdida de la expresión nuclear con tejido no neoplásico de fondo/control\ninterno con expresión nuclear intacta\nInterpretación de las proteínas MMR: pérdida de la expresión nuclear de MLH1 y PMS2\nHER2: 0 (negativo)\nDIAGNÓSTICO\nMucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia.\nEstudios de inmunohistoquímica:\nADENOCARCINOMA INFILTRANTE BIEN DIFERENCIADO\nPÉRDIDA DE LA EXPRESIÓN NUCLEAR DE MLH1 Y PMS2\nHER2: 0 (NEGATIVO)\nCOMENTARIOS\nSe recomienda realizar pánel de inmunohistoquímica y estudios moleculares complementarios en\nespecimen de resección.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---\nIHQ250285\nCopia Pag. 2 de 2\nNombre : ELIZABETH SALCEDO PAEZ\nN. peticion : IHQ250285\nN.Identificación : CC. 39702456\nGenero : FEMENINO\nEdad : 62 años 1 mes 14 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 19/03/2025\nFecha Informe : 28/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 43 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3615,
+      "reduccion_porcentaje": 97.93
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250285",
+      "caso_num": 22,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ELIZABETH SALCEDO PAEZ",
+      "numero_peticion": "IHQ250285",
+      "identificacion": "39702456",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "62",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "19/03/2025",
+      "fecha_informe": "28/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250285",
+      "N. de identificación": "39702456",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "19/03/2025",
+      "Fecha Informe": "28/03/2025",
+      "nombres": "ELIZABETH",
+      "Primer nombre": "ELIZABETH",
+      "Segundo nombre": "",
+      "apellidos": "SALCEDO PAEZ",
+      "Primer apellido": "SALCEDO",
+      "Segundo apellido": "PAEZ",
+      "nombre_formal": "SALCEDO PAEZ, ELIZABETH",
+      "diagnostico": "Mucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA INFILTRANTE BIEN DIFERENCIADO PÉRDIDA DE LA EXPRESIÓN NUCLEAR DE MLH1 Y PMS2 HER2: 0 (NEGATIVO)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. PROTOCOLO CAP PARA REPORTE DE INESTABILIDAD MICROSATELITAL EN PROTEÍNAS MMR Sitio del especimen: mucosa duodenal Resultado de MLH1: inmunorreactividad nuclear y citoplasmática granular heterogénea (deficiencia de MLH1) Resultado de MLH2: expresión nuclear intacta Resultado de MSH6: expresión nuclear intacta Resultado de PMS2: pérdida de la expresión nuclear con tejido no neoplásico de fondo/control interno con expresión nuclear intacta Interpretación de las proteínas MMR: pérdida de la expresión nuclear de MLH1 y PMS2 HER2: 0 (negativo)",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2501330, el cual corresponde a biopsia de mucosa duodenal con diagnóstico de \"ADENOCARCINOMA INFILTRANTE BIEN DIFERENCIADO\". Se ordena HER2 y los siguientes marcadores para inestabilidad microsatelital; MLH1, MSH2, MSH6 y PMS2.",
+      "ihq_organo": "MUCOSA DUODENAL, PRIMERA PORCIÓN",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Se recomienda realizar pánel de inmunohistoquímica y estudios moleculares complementarios en especimen de resección. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 42 --- IHQ250285 Copia Pag. 2 de 2 Nombre : ELIZABETH SALCEDO PAEZ N. peticion : IHQ250285 N.Identificación : CC. 39702456 Genero : FEMENINO Edad : 62 años 1 mes 14 dias EPS : NUEVA EPS Médico tratante : ALEJANDRO HIJUELOS Servicio : HEMATO ONCOLOGIA HOSP ADULTO Fecha Ingreso : 19/03/2025 Fecha Informe : 28/03/2025",
+      "IHQ_ORGANO": "MUCOSA DUODENAL, PRIMERA PORCIÓN",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2 y los siguientes marcadores para inestabilidad microsatelital; MLH1, MSH2, MSH6 y PMS2",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_HER2": "0 (NEGATIVO)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "INMUNORREACTIVIDAD",
+      "IHQ_PMS2": "POSITIVO (PÉRDIDA DE LA EXPRESIÓN NUCLEAR CON TEJIDO NO NEOPLÁSICO DE FONDO/CONTROL)",
+      "extraction_timestamp": "2026-02-03T05:01:48.936274",
+      "extractor_version": "6.5.93_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250285\nCopia Pag. 1 de 2\nNombre : ELIZABETH SALCEDO PAEZ\nN. peticion : IHQ250285\nN.Identificación : CC. 39702456\nGenero : FEMENINO\nEdad : 62 años 1 mes 14 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 19/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION DUODENAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2501330, el cual corresponde a biopsia de mucosa\nduodenal con diagnóstico de \"ADENOCARCINOMA INFILTRANTE BIEN DIFERENCIADO\". Se ordena\nHER2 y los siguientes marcadores para inestabilidad microsatelital; MLH1, MSH2, MSH6 y PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nPROTOCOLO CAP PARA REPORTE DE INESTABILIDAD MICROSATELITAL EN PROTEÍNAS MMR\nSitio del especimen: mucosa duodenal\nResultado\nde\nMLH1:\ninmunorreactividad\nnuclear\ny\ncitoplasmática\ngranular\nheterogénea\n(deficiencia de MLH1)\nResultado de MLH2: expresión nuclear intacta\nResultado de MSH6: expresión nuclear intacta\nResultado de PMS2: pérdida de la expresión nuclear con tejido no neoplásico de fondo/control\ninterno con expresión nuclear intacta\nInterpretación de las proteínas MMR: pérdida de la expresión nuclear de MLH1 y PMS2\nHER2: 0 (negativo)\nDIAGNÓSTICO\nMucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia.\nEstudios de inmunohistoquímica:\nADENOCARCINOMA INFILTRANTE BIEN DIFERENCIADO\nPÉRDIDA DE LA EXPRESIÓN NUCLEAR DE MLH1 Y PMS2\nHER2: 0 (NEGATIVO)\nCOMENTARIOS\nSe recomienda realizar pánel de inmunohistoquímica y estudios moleculares complementarios en\nespecimen de resección.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---\nIHQ250285\nCopia Pag. 2 de 2\nNombre : ELIZABETH SALCEDO PAEZ\nN. peticion : IHQ250285\nN.Identificación : CC. 39702456\nGenero : FEMENINO\nEdad : 62 años 1 mes 14 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 19/03/2025\nFecha Informe : 28/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 43 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MLH1, MSH2, MSH6, PMS2",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2501330, el cual corresponde a biopsia de mucosa duodenal con diagnóstico de \"ADENOCARCINOMA INFILTRANTE BIEN DIFERENCIADO\". Se ordena HER2 y los siguientes marcadores para inestabilidad microsatelital; MLH1, MSH2, MSH6 y PMS2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. PROTOCOLO CAP PARA REPORTE DE INESTABILIDAD MICROSATELITAL EN PROTEÍNAS MMR Sitio del especimen: mucosa duodenal Resultado de MLH1: inmunorreactividad nuclear y citoplasmática granular heterogénea (deficiencia de MLH1) Resultado de MLH2: expresión nuclear intacta Resultado de MSH6: expresión nuclear intacta Resultado de PMS2: pérdida de la expresión nuclear con tejido no neoplásico de fondo/control interno con expresión nuclear intacta Interpretación de las proteínas MMR: pérdida de la expresión nuclear de MLH1 y PMS2 HER2: 0 (negativo)",
+      "Descripcion Diagnostico": "Mucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA INFILTRANTE BIEN DIFERENCIADO PÉRDIDA DE LA EXPRESIÓN NUCLEAR DE MLH1 Y PMS2 HER2: 0 (NEGATIVO)",
+      "IHQ_ORGANO": "MUCOSA DUODENAL, PRIMERA PORCIÓN",
+      "Organo": "BX LESION DUODENAL",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INFILTRANTE BIEN DIFERENCIADO",
+      "Diagnostico Principal": "ADENOCARCINOMA INFILTRANTE BIEN DIFERENCIADO PÉRDIDA DE LA EXPRESIÓN NUCLEAR DE MLH1 Y PMS2 HER2: 0 (NEGATIVO)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 y los siguientes marcadores para inestabilidad microsatelital; MLH1, MSH2, MSH6 y PMS2",
+      "IHQ_HER2": "0 (NEGATIVO)",
+      "IHQ_MLH1": "INMUNORREACTIVIDAD",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (PÉRDIDA DE LA EXPRESIÓN NUCLEAR CON TEJIDO NO NEOPLÁSICO DE FONDO/CONTROL)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia.\nEstudios de inmunohistoquímica:\nADENOCARCINOMA INFILTRANTE BIEN DIFERENCIADO\nPÉRDIDA DE LA EXPRESIÓN NUCLEAR DE MLH1 Y PMS2\nHER2: 0 (NEGATIVO)",
+      "valor_corregido": "Mucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA INFILTRANTE BIEN DIFERENCIADO PÉRDIDA DE LA EXPRESIÓN NUCLEAR DE MLH1 Y PMS2 HER2: 0 (NEGATIVO)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250285",
+      "timestamp": "2026-02-03T05:01:48.935981"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se recomienda realizar pánel de inmunohistoquímica y estudios moleculares complementarios en\nespecimen de resección.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---\nIHQ250285\nCopia Pag. 2 de 2\nNombre : ELIZABETH SALCEDO PAEZ\nN. peticion : IHQ250285\nN.Identificación : CC. 39702456\nGenero : FEMENINO\nEdad : 62 años 1 mes 14 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 19/03/2025\nFecha Informe : 28/03/2025",
+      "valor_corregido": "Se recomienda realizar pánel de inmunohistoquímica y estudios moleculares complementarios en especimen de resección. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 42 --- IHQ250285 Copia Pag. 2 de 2 Nombre : ELIZABETH SALCEDO PAEZ N. peticion : IHQ250285 N.Identificación : CC. 39702456 Genero : FEMENINO Edad : 62 años 1 mes 14 dias EPS : NUEVA EPS Médico tratante : ALEJANDRO HIJUELOS Servicio : HEMATO ONCOLOGIA HOSP ADULTO Fecha Ingreso : 19/03/2025 Fecha Informe : 28/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250285",
+      "timestamp": "2026-02-03T05:01:48.935988"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 51
+  }
+}

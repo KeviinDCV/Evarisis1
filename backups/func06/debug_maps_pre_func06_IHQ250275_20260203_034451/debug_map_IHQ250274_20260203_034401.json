@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250274_20260203_034401",
+  "numero_peticion": "IHQ250274",
+  "timestamp": "2026-02-03T03:44:01.482437",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250274\nCopia Pag. 1 de 2\nNombre : KEVIN STEVEN SANCHEZ SANDOVAL\nN. peticion : IHQ250274\nN.Identificación : CC. 1193380809\nGenero : MASCULINO\nEdad : 24 años 4 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : ALEJANDRO HERRERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 15/03/2025\nFecha Informe : 21/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION DE FOSA\nPOSTERIOR\n2025-03-10\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2502805-2 que corresponde a resección de lesión en fosa posterior del\ncráneo \"HALLAZGOS MORFOLOGICOS COMPATIBLES CON EPENDIMOMA GRADO II DE LA WHO\". Se\nordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales presentan inmunorreactividad fuerte y difusa para GAFP y S100, con EMA\nfocalmente positivo en patrón paranuclear puntiforme y Sinaptofisina positiva de manera tenue y focal;\nasí mismo las células presentan negatividad para CAM-5.2, Cromogranina y NEU-N. \nDIAGNÓSTICO\nCráneo, fosa posterior. Lesión. Resección. Estudios de inmunohistoquímica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON EPENDIMOMA GRADO II DE\nLA WHO.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---\nIHQ250274\nCopia Pag. 2 de 2\nNombre : KEVIN STEVEN SANCHEZ SANDOVAL\nN. peticion : IHQ250274\nN.Identificación : CC. 1193380809\nGenero : MASCULINO\nEdad : 24 años 4 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : ALEJANDRO HERRERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 15/03/2025\nFecha Informe : 21/03/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3177,
+      "reduccion_porcentaje": 98.18
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250274",
+      "caso_num": 11,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "KEVIN STEVEN SANCHEZ SANDOVAL",
+      "numero_peticion": "IHQ250274",
+      "identificacion": "1193380809",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "24",
+      "eps": "ASMET SALUD EPS SAS",
+      "medico_tratante": "ALEJANDRO HERRERA",
+      "servicio": "NEUROCIRUGIA",
+      "fecha_ingreso": "15/03/2025",
+      "fecha_informe": "21/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250274",
+      "N. de identificación": "1193380809",
+      "Tipo de documento": "CC",
+      "EPS": "ASMET SALUD EPS SAS",
+      "Servicio": "NEUROCIRUGIA",
+      "Médico tratante": "ALEJANDRO HERRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "15/03/2025",
+      "Fecha Informe": "21/03/2025",
+      "nombres": "KEVIN STEVEN",
+      "Primer nombre": "KEVIN",
+      "Segundo nombre": "STEVEN",
+      "apellidos": "SANCHEZ SANDOVAL",
+      "Primer apellido": "SANCHEZ",
+      "Segundo apellido": "SANDOVAL",
+      "nombre_formal": "SANCHEZ SANDOVAL, KEVIN STEVEN",
+      "diagnostico": "Cráneo, fosa posterior. Lesión. Resección. Estudios de inmunohistoquímica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON EPENDIMOMA GRADO II DE LA WHO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad fuerte y difusa para GAFP y S100, con EMA focalmente positivo en patrón paranuclear puntiforme y Synaptophysin positiva de manera tenue y focal; así mismo las células presentan negatividad para CAM-5.2, Cromogranina y NEU-N.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2502805-2 que corresponde a resección de lesión en fosa posterior del cráneo \"HALLAZGOS MORFOLOGICOS COMPATIBLES CON EPENDIMOMA GRADO II DE LA WHO\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "CRÁNEO, FOSA POSTERIOR",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CRÁNEO, FOSA POSTERIOR",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_CAM5": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_NEUN": "NEGATIVO",
+      "IHQ_EMA": "POSITIVO",
+      "IHQ_SINAPTOFISINA": "POSITIVO",
+      "extraction_timestamp": "2026-02-03T03:44:01.839646",
+      "extractor_version": "6.5.90_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250274\nCopia Pag. 1 de 2\nNombre : KEVIN STEVEN SANCHEZ SANDOVAL\nN. peticion : IHQ250274\nN.Identificación : CC. 1193380809\nGenero : MASCULINO\nEdad : 24 años 4 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : ALEJANDRO HERRERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 15/03/2025\nFecha Informe : 21/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION DE FOSA\nPOSTERIOR\n2025-03-10\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2502805-2 que corresponde a resección de lesión en fosa posterior del\ncráneo \"HALLAZGOS MORFOLOGICOS COMPATIBLES CON EPENDIMOMA GRADO II DE LA WHO\". Se\nordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales presentan inmunorreactividad fuerte y difusa para GAFP y S100, con EMA\nfocalmente positivo en patrón paranuclear puntiforme y Sinaptofisina positiva de manera tenue y focal;\nasí mismo las células presentan negatividad para CAM-5.2, Cromogranina y NEU-N. \nDIAGNÓSTICO\nCráneo, fosa posterior. Lesión. Resección. Estudios de inmunohistoquímica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON EPENDIMOMA GRADO II DE\nLA WHO.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---\nIHQ250274\nCopia Pag. 2 de 2\nNombre : KEVIN STEVEN SANCHEZ SANDOVAL\nN. peticion : IHQ250274\nN.Identificación : CC. 1193380809\nGenero : MASCULINO\nEdad : 24 años 4 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : ALEJANDRO HERRERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 15/03/2025\nFecha Informe : 21/03/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CROMOGRANINA, EMA, GFAP, NEUN, S100, SYNAPTOFISINA",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2502805-2 que corresponde a resección de lesión en fosa posterior del cráneo \"HALLAZGOS MORFOLOGICOS COMPATIBLES CON EPENDIMOMA GRADO II DE LA WHO\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad fuerte y difusa para GAFP y S100, con EMA focalmente positivo en patrón paranuclear puntiforme y Sinaptofisina positiva de manera tenue y focal; así mismo las células presentan negatividad para CAM-5.2, Cromogranina y NEU-N.",
+      "Descripcion Diagnostico": "Cráneo, fosa posterior. Lesión. Resección. Estudios de inmunohistoquímica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON EPENDIMOMA GRADO II DE LA WHO.",
+      "IHQ_ORGANO": "CRÁNEO, FOSA POSTERIOR",
+      "Organo": "LESION DE FOSA POSTERIOR",
+      "Diagnostico Coloracion": "CRÁNEO \"HALLAZGOS MORFOLOGICOS COMPATIBLES CON EPENDIMOMA GRADO II DE LA WHO\". SE",
+      "Diagnostico Principal": "EPENDIMOMA GRADO II DE LA WHO",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_EMA": "POSITIVO",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_NEUN": "NEGATIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SINAPTOFISINA": "POSITIVO",
+      "IHQ_CAM5": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 134,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cráneo, fosa posterior. Lesión. Resección. Estudios de inmunohistoquímica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON EPENDIMOMA GRADO II DE\nLA WHO.",
+      "valor_corregido": "Cráneo, fosa posterior. Lesión. Resección. Estudios de inmunohistoquímica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON EPENDIMOMA GRADO II DE LA WHO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250274",
+      "timestamp": "2026-02-03T03:44:01.839430"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad fuerte y difusa para GAFP y S100, con EMA focalmente positivo en patrón paranuclear puntiforme y Sinaptofisina positiva de manera tenue y focal; así mismo las células presentan negatividad para CAM-5.2, Cromogranina y NEU-N.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad fuerte y difusa para GAFP y S100, con EMA focalmente positivo en patrón paranuclear puntiforme y Synaptophysin positiva de manera tenue y focal; así mismo las células presentan negatividad para CAM-5.2, Cromogranina y NEU-N.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250274",
+      "timestamp": "2026-02-03T03:44:01.839437"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 53
+  }
+}

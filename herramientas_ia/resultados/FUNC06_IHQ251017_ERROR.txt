@@ -1,0 +1,59 @@
+================================================================================
+REPORTE FUNC-06: REPROCESAMIENTO CASO IHQ251017
+================================================================================
+
+FECHA: 2025-11-07 20:37:51
+VERSION EXTRACTORES: v6.2.3
+CORRECCION APLICADA: normalize_organ_name() - deteccion organos duplicados
+
+================================================================================
+RESULTADO: ERROR - CORRECCION NO FUNCIONO
+================================================================================
+
+CAMPO: Organo
+--------------------------------------------------------------------------------
+VALOR ESPERADO:
+  BIOPSIA DE MEDULA OSEA
+
+VALOR OBTENIDO (INCORRECTO):
+  BIOPSIA DE MEDULA OSEA IHQ251017-B ESTUDIO DE INMUNOHISTOQUIMICA 898807 ESTUDIO ANATOMOPATOLOGICO DE MARCACION INMUNOHISTOQUIMICA BASICA (ESPECIFICO) BLOQUES Y LAMINAS BIOPSIA DE MEDULA OSEA
+
+LONGITUD: 190 caracteres
+
+PROBLEMAS DETECTADOS:
+  1. Contiene codigo de caso: IHQ251017-B
+  2. Contiene numero de orden: 898807
+  3. Contiene texto administrativo: ESTUDIO DE INMUNOHISTOQUIMICA
+  4. Contiene texto duplicado: BLOQUES Y LAMINAS
+  5. Organo aparece DUPLICADO al inicio y al final
+
+PATRON DEL ERROR:
+  BIOPSIA DE MEDULA OSEA [texto administrativo] BIOPSIA DE MEDULA OSEA
+  
+  La funcion normalize_organ_name() NO detecto este patron.
+
+================================================================================
+CAMPO: IHQ_ORGANO
+--------------------------------------------------------------------------------
+VALOR OBTENIDO: MEDULA ÓSEA
+
+PROBLEMA: Caracter especial corrupto
+  Deberia ser: MEDULA OSEA
+
+================================================================================
+ANALISIS DE LA FALLA
+================================================================================
+
+CAUSA RAIZ:
+  La correccion v6.2.3 no se aplico o el patron no coincide
+
+PATRON ESPERADO POR v6.2.3:
+  ORGANO [admin] ORGANO -> ORGANO
+
+PATRON REAL:
+  BIOPSIA DE MEDULA OSEA IHQ251017-B ... BIOPSIA DE MEDULA OSEA
+
+SIGUIENTE PASO:
+  Revisar normalize_organ_name() en medical_extractor.py
+
+================================================================================

@@ -1,0 +1,135 @@
+{
+  "session_id": "IHQ250031_20260107_164633",
+  "numero_peticion": "IHQ250031",
+  "timestamp": "2026-01-07T16:46:33.176258",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250031\nCopia Pag. 1 de 2\nNombre : LUZ DARY VILLEGAS\nN. peticion : IHQ250031\nN.Identificación : CC. 21812135\nGenero : FEMENINO\nEdad : 54 años 5 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 13/01/2025\nFecha Informe : 15/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPARED ABOMINAL +\nOMENTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500155” que corresponde a “A. Pared abdominal y B. Omento” con diagnósticos de\n“INFILTRACIÓN POR ADENOCARCINOMA, TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE\nSELLO.”. Previa revisión de la histología, se realizan niveles histológicos en ambos bloques para tinción\ncon HER-2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSobreexpresión de oncogen HER-2: Score 2: Tinción positiva leve en membrana basolateral en mas del\n10%, algunas otras con tinción nuclear y citoplasmática.\nDIAGNÓSTICO\nA y B. Pared abdominal y omento. Historia de adenocarcinoma gástrico. Biopsia. Estudio de\ninmunohistoquímica:\n- SOBREEXPRESIÓN DE HER-2: EQUÍVOCO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---\nIHQ250031\nCopia Pag. 2 de 2\nNombre : LUZ DARY VILLEGAS\nN. peticion : IHQ250031\nN.Identificación : CC. 21812135\nGenero : FEMENINO\nEdad : 54 años 5 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 13/01/2025\nFecha Informe : 15/01/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3138,
+      "reduccion_porcentaje": 98.17
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250031",
+      "caso_num": 31,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "LUZ DARY VILLEGAS",
+      "numero_peticion": "IHQ250031",
+      "identificacion": "21812135",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "54",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JOSE OMAR ZORILLA",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "13/01/2025",
+      "fecha_informe": "15/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250031",
+      "N. de identificación": "21812135",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "JOSE OMAR ZORILLA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "13/01/2025",
+      "Fecha Informe": "15/01/2025",
+      "nombres": "LUZ DARY",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "DARY",
+      "apellidos": "VILLEGAS",
+      "Primer apellido": "VILLEGAS",
+      "Segundo apellido": "",
+      "nombre_formal": "VILLEGAS, LUZ DARY",
+      "diagnostico": "A y B. Pared abdominal y omento. Historia de adenocarcinoma gástrico. Biopsia. Estudio de inmunohistoquímica: - SOBREEXPRESIÓN DE HER-2: EQUÍVOCO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Sobreexpresión de oncogen HER-2: Score 2: Tinción positiva leve en membrana basolateral en mas del 10%, algunas otras con tinción nuclear y citoplasmática.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500155” que corresponde a “A. Pared abdominal y B. Omento” con diagnósticos de “INFILTRACIÓN POR ADENOCARCINOMA, TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE SELLO.”. Previa revisión de la histología, se realizan niveles histológicos en ambos bloques para tinción con HER-2.",
+      "ihq_organo": "PARED ABDOMINAL Y OMENTO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PARED ABDOMINAL Y OMENTO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "HER2: EQUIVOCO (2+)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2",
+      "IHQ_HER2": "EQUIVOCO (2+)",
+      "extraction_timestamp": "2026-01-07T16:46:33.488050",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250031\nCopia Pag. 1 de 2\nNombre : LUZ DARY VILLEGAS\nN. peticion : IHQ250031\nN.Identificación : CC. 21812135\nGenero : FEMENINO\nEdad : 54 años 5 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 13/01/2025\nFecha Informe : 15/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPARED ABOMINAL +\nOMENTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500155” que corresponde a “A. Pared abdominal y B. Omento” con diagnósticos de\n“INFILTRACIÓN POR ADENOCARCINOMA, TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE\nSELLO.”. Previa revisión de la histología, se realizan niveles histológicos en ambos bloques para tinción\ncon HER-2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSobreexpresión de oncogen HER-2: Score 2: Tinción positiva leve en membrana basolateral en mas del\n10%, algunas otras con tinción nuclear y citoplasmática.\nDIAGNÓSTICO\nA y B. Pared abdominal y omento. Historia de adenocarcinoma gástrico. Biopsia. Estudio de\ninmunohistoquímica:\n- SOBREEXPRESIÓN DE HER-2: EQUÍVOCO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---\nIHQ250031\nCopia Pag. 2 de 2\nNombre : LUZ DARY VILLEGAS\nN. peticion : IHQ250031\nN.Identificación : CC. 21812135\nGenero : FEMENINO\nEdad : 54 años 5 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 13/01/2025\nFecha Informe : 15/01/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500155” que corresponde a “A. Pared abdominal y B. Omento” con diagnósticos de “INFILTRACIÓN POR ADENOCARCINOMA, TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE SELLO.”. Previa revisión de la histología, se realizan niveles histológicos en ambos bloques para tinción con HER-2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Sobreexpresión de oncogen HER-2: Score 2: Tinción positiva leve en membrana basolateral en mas del 10%, algunas otras con tinción nuclear y citoplasmática.",
+      "Descripcion Diagnostico": "A y B. Pared abdominal y omento. Historia de adenocarcinoma gástrico. Biopsia. Estudio de inmunohistoquímica: - SOBREEXPRESIÓN DE HER-2: EQUÍVOCO.",
+      "IHQ_ORGANO": "PARED ABDOMINAL Y OMENTO",
+      "Organo": "PARED ABOMINAL + OMENTO",
+      "Diagnostico Coloracion": "INFILTRACIÓN POR ADENOCARCINOMA, TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE SELLO",
+      "Diagnostico Principal": "SOBREEXPRESIÓN DE HER-2: EQUÍVOCO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: EQUIVOCO (2+)",
+      "IHQ_HER2": "EQUIVOCO (2+)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 132,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 1,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 132,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A y B. Pared abdominal y omento. Historia de adenocarcinoma gástrico. Biopsia. Estudio de\ninmunohistoquímica:\n- SOBREEXPRESIÓN DE HER-2: EQUÍVOCO.",
+      "valor_corregido": "A y B. Pared abdominal y omento. Historia de adenocarcinoma gástrico. Biopsia. Estudio de inmunohistoquímica: - SOBREEXPRESIÓN DE HER-2: EQUÍVOCO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250031",
+      "timestamp": "2026-01-07T16:46:33.487767"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 48
+  }
+}

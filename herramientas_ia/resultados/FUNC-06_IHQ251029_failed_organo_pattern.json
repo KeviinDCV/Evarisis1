@@ -1,0 +1,65 @@
+{
+  "timestamp": "2025-11-11T00:49:56.856433",
+  "caso_objetivo": "IHQ251029",
+  "funcion": "FUNC-06 (Reprocesamiento Completo)",
+  "correccion_aplicada": "Patrón multi-línea en patient_extractor.py línea 240",
+  "resultado": {
+    "reprocesamiento": "EXITOSO",
+    "casos_reprocesados": 47,
+    "rango_pdf": "IHQ DEL 980 AL 1037.pdf",
+    "tiempo_ejecucion": "7.2 segundos"
+  },
+  "validacion_campo_organo": {
+    "valor_esperado": "BIOPSIA MASA INTRAABDOMINAL",
+    "longitud_esperada": 27,
+    "valor_actual": "BIOPSIA MASA INTRAABDOMINAL INFORME DE ANATOMÍA PATOLÓGICA",
+    "longitud_actual": 58,
+    "contiene_intraabdominal": true,
+    "estado": "FALLIDO",
+    "razon": "El patrón captura texto adicional después de INTRAABDOMINAL"
+  },
+  "diagnostico_del_problema": {
+    "patron_actual": "(?:Bloques y laminas|Tejido en fresco|Organo:)\\s+([A-ZÁÉÍÓÚÑ][^\\n]*(?:\\n[A-ZÁÉÍÓÚÑ][^\\n]*)*)(?=\\n\\s*(?:INFORME|ESTUDIO|IHQ\\d+))",
+    "problema_identificado": [
+      "El lookahead (?=\n\\s*(?:INFORME|...)) verifica que hay INFORME después, pero NO detiene la captura",
+      "El cuantificador (?:\n[A-ZÁÉÍÓÚÑ][^\n]*)* continúa capturando líneas que empiezan con mayúscula",
+      "La línea \"INFORME DE ANATOMÍA PATOLÓGICA\" cumple el patrón [A-ZÁÉÍÓÚÑ][^\n]* y se captura",
+      "post_process actual solo limpia REGION y saltos de línea, NO elimina texto después de INFORME"
+    ],
+    "solucion_propuesta": [
+      "Opción 1 (PATRÓN): Usar negative lookahead dentro del cuantificador para excluir líneas que empiecen con INFORME",
+      "Opción 2 (POST_PROCESS): Agregar limpieza en post_process para eliminar texto después de palabras clave",
+      "Opción 3 (COMBINADA): Mejorar patrón Y agregar limpieza defensiva en post_process"
+    ]
+  },
+  "patron_mejorado_sugerido": {
+    "version": "Opción 1 - Negative lookahead",
+    "codigo": "(?:Bloques y laminas|Tejido en fresco|Organo:)\\s+([A-ZÁÉÍÓÚÑ][^\\n]*(?:\\n(?\\!INFORME|ESTUDIO|IHQ\\d+)[A-ZÁÉÍÓÚÑ][^\\n]*)*)",
+    "cambios": "Agregado (?\\!INFORME|ESTUDIO|IHQ\\d+) dentro del cuantificador para NO capturar líneas que empiecen con palabras clave",
+    "archivo": "core/extractors/patient_extractor.py",
+    "linea": 240
+  },
+  "post_process_mejorado_sugerido": {
+    "version": "Opción 2 - Limpieza defensiva",
+    "codigo_actual": "lambda x: x.replace('REGIÓON', 'REGION').replace('REGIÓN', 'REGION').replace('\n', ' ').strip()",
+    "codigo_mejorado": "lambda x: x.split('INFORME')[0].split('ESTUDIO')[0].replace('REGIÓON', 'REGION').replace('REGIÓN', 'REGION').replace('\n', ' ').strip()",
+    "cambios": "Agregado .split(\"INFORME\")[0].split(\"ESTUDIO\")[0] para eliminar texto después de palabras clave",
+    "archivo": "core/extractors/patient_extractor.py",
+    "linea": 253
+  },
+  "simulacion_limpieza_manual": {
+    "valor_con_problema": "BIOPSIA MASA INTRAABDOMINAL INFORME DE ANATOMÍA PATOLÓGICA",
+    "valor_limpio": "BIOPSIA MASA INTRAABDOMINAL",
+    "longitud_limpia": 27,
+    "metodo": "organo.split(\"INFORME\")[0].strip()",
+    "resultado": "CORRECTO si se aplica limpieza"
+  },
+  "recomendacion_final": {
+    "accion": "Aplicar OPCIÓN 3 (COMBINADA)",
+    "razon": "Doble protección: patrón más estricto + limpieza defensiva",
+    "archivos_a_modificar": [
+      "core/extractors/patient_extractor.py (líneas 240 y 253)"
+    ],
+    "validacion": "Ejecutar FUNC-06 nuevamente después de aplicar corrección"
+  }
+}

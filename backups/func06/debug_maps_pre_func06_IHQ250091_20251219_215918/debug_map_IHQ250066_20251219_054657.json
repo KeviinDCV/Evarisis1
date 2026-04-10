@@ -1,0 +1,144 @@
+{
+  "session_id": "IHQ250066_20251219_054657",
+  "numero_peticion": "IHQ250066",
+  "timestamp": "2025-12-19T05:46:57.692254",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250066\nCopia Pag. 1 de 2\nNombre : YUBELY PAOLA GOMEZ\nN. peticion : IHQ250066\nN.Identificación : CC. 1058970739\nGenero : FEMENINO\nEdad : 33 años 3 meses 19 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : TATIANA ANDREA ESPINOSA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 21/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX EXOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500310”\ncorrespondiente\na\n\"\nbiopsia\nde\nexocérvix\"\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células de la lesión son positivas en bloque para p16 y el Ki 67 es positivo en todo el espesor\ndel\nepitelio \ndiagnóstico\nde\n“LESIÓN\nESCAMOSA\nINTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR” Previa revisión de la histología se\nrealizan niveles histológicos al bloque para tinción con los marcadores: p16 y Ki 67\nDIAGNÓSTICO\nExocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica\nLESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR\nPOSITIVO PARA P16\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---\nIHQ250066\nCopia Pag. 2 de 2\nNombre : YUBELY PAOLA GOMEZ\nN. peticion : IHQ250066\nN.Identificación : CC. 1058970739\nGenero : FEMENINO\nEdad : 33 años 3 meses 19 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : TATIANA ANDREA ESPINOSA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 21/01/2025\nFecha Informe : 27/01/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3115,
+      "reduccion_porcentaje": 98.34
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250066",
+      "caso_num": 13,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "YUBELY PAOLA GOMEZ",
+      "numero_peticion": "IHQ250066",
+      "identificacion": "1058970739",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "33",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "TATIANA ANDREA ESPINOSA",
+      "servicio": "INSTITUCION EXTERNA",
+      "fecha_ingreso": "21/01/2025",
+      "fecha_informe": "27/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250066",
+      "N. de identificación": "1058970739",
+      "Tipo de documento": "CC",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "INSTITUCION EXTERNA",
+      "Médico tratante": "TATIANA ANDREA ESPINOSA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/01/2025",
+      "Fecha Informe": "27/01/2025",
+      "nombres": "YUBELY PAOLA",
+      "Primer nombre": "YUBELY",
+      "Segundo nombre": "PAOLA",
+      "apellidos": "GOMEZ",
+      "Primer apellido": "GOMEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "GOMEZ, YUBELY PAOLA",
+      "diagnostico": "de “LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: P16 y KI-67 DIAGNÓSTICO Exocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR POSITIVO PARA P16",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células de la lesión son positivas en bloque para P16 y el KI-67 es positivo en todo el espesor del epitelio diagnóstico de “LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: P16 y KI-67",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500310” correspondiente a \" biopsia de exocérvix\" con",
+      "ihq_organo": "DIAGNÓSTICO EXOCÉRVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "DIAGNÓSTICO EXOCÉRVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_KI-67": "POSITIVO",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2025-12-19T05:46:57.865970",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250066\nCopia Pag. 1 de 2\nNombre : YUBELY PAOLA GOMEZ\nN. peticion : IHQ250066\nN.Identificación : CC. 1058970739\nGenero : FEMENINO\nEdad : 33 años 3 meses 19 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : TATIANA ANDREA ESPINOSA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 21/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX EXOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500310”\ncorrespondiente\na\n\"\nbiopsia\nde\nexocérvix\"\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células de la lesión son positivas en bloque para p16 y el Ki 67 es positivo en todo el espesor\ndel\nepitelio \ndiagnóstico\nde\n“LESIÓN\nESCAMOSA\nINTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR” Previa revisión de la histología se\nrealizan niveles histológicos al bloque para tinción con los marcadores: p16 y Ki 67\nDIAGNÓSTICO\nExocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica\nLESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR\nPOSITIVO PARA P16\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---\nIHQ250066\nCopia Pag. 2 de 2\nNombre : YUBELY PAOLA GOMEZ\nN. peticion : IHQ250066\nN.Identificación : CC. 1058970739\nGenero : FEMENINO\nEdad : 33 años 3 meses 19 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : TATIANA ANDREA ESPINOSA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 21/01/2025\nFecha Informe : 27/01/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, P16",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500310” correspondiente a \" biopsia de exocérvix\" con",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células de la lesión son positivas en bloque para p16 y el Ki 67 es positivo en todo el espesor del epitelio diagnóstico de “LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: p16 y Ki 67",
+      "Descripcion Diagnostico": "de “LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: P16 y KI-67 DIAGNÓSTICO Exocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR POSITIVO PARA P16",
+      "IHQ_ORGANO": "DIAGNÓSTICO EXOCÉRVIX",
+      "Organo": "BX EXOCERVIX",
+      "Diagnostico Coloracion": "LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR",
+      "Diagnostico Principal": "LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: POSITIVO",
+      "IHQ_KI-67": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 121,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 22.93
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 121,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "de\n“LESIÓN\nESCAMOSA\nINTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR” Previa revisión de la histología se\nrealizan niveles histológicos al bloque para tinción con los marcadores: p16 y Ki 67\nDIAGNÓSTICO\nExocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica\nLESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR\nPOSITIVO PARA P16",
+      "valor_corregido": "de “LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: P16 y KI-67 DIAGNÓSTICO Exocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR POSITIVO PARA P16",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250066",
+      "timestamp": "2025-12-19T05:46:57.865654"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células de la lesión son positivas en bloque para p16 y el Ki 67 es positivo en todo el espesor del epitelio diagnóstico de “LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: p16 y Ki 67",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células de la lesión son positivas en bloque para P16 y el KI-67 es positivo en todo el espesor del epitelio diagnóstico de “LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (NIC 3) CON EXTENSION GLANDULAR” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: P16 y KI-67",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250066",
+      "timestamp": "2025-12-19T05:46:57.865662"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 48
+  }
+}

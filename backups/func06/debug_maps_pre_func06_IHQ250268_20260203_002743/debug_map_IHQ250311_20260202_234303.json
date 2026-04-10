@@ -1,0 +1,172 @@
+{
+  "session_id": "IHQ250311_20260202_234303",
+  "numero_peticion": "IHQ250311",
+  "timestamp": "2026-02-02T23:43:03.138850",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250311\nCopia Pag. 1 de 2\nNombre : JORGE ENRIQUE AMEZQUITA RENDON N. peticion : IHQ250311\nN.Identificación : CC. 14980631\nGenero : MASCULINO\nEdad : 73 años 15 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 28/03/2025\nFecha Informe : 16/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA MUSLO\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2503364-1, el cual corresponde a biopsia de muslo izquierdo\ncon diagnóstico de \"LESIÓN FUSOCELULAR\". Se ordenan los siguientes marcadores: ALK-1, EMA, CD31,\nS100, Desmina, CD34, SMA, Caldesmón, CD68, Ki-67, MDM2, DOG1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nEn los cortes histológicos se identifica una proliferación estromal con miofibroblastos prominentes y\ntejido de granulación exuberante rodeado por tejido necrótico tumoral completo. Dichos miofibroblastos\nson positivos para Caldesmón, con marcación de histiocitos acompañantes CD68+ y vasos sanguíneos\nCD31+ y CD34+. Son negativos para ALK-1, EMA, S100, Desmina, SMA, MDM2 y DOG-1. El índice de\nproliferación celular medido por Ki-67 es del 50-60%. \nDIAGNÓSTICO\n Muslo izquierdo. Biopsia. Estudios de inmunohistoquímica:\nPROLIFERACIÓN ESTROMAL CON MIOFIBROBLASTOS PROMINENTES Y TEJIDO DE GRANULACIÓN\nEXUBERANTE\nNEGATIVO PARA MALIGNIDAD O TUMOR RESIDUAL EN LA MUESTRA EVALUADA\nCOMENTARIOS\nCaso revisado por Dr. Jorge Moreno, Patólogo experto en tejidos blandos.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---\nIHQ250311\nCopia Pag. 2 de 2\nNombre : JORGE ENRIQUE AMEZQUITA RENDON N. peticion : IHQ250311\nN.Identificación : CC. 14980631\nGenero : MASCULINO\nEdad : 73 años 15 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 28/03/2025\nFecha Informe : 16/04/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3585,
+      "reduccion_porcentaje": 97.95
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250311",
+      "caso_num": 47,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_ALK": "NEGATIVO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_MDM2": "NEGATIVO",
+      "IHQ_DOG1": "NEGATIVO",
+      "nombre_completo": "JORGE ENRIQUE AMEZQUITA RENDON",
+      "numero_peticion": "IHQ250311",
+      "identificacion": "14980631",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "73",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "GERARDO ANDRES DEL CASTILLO",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "28/03/2025",
+      "fecha_informe": "16/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250311",
+      "N. de identificación": "14980631",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "GERARDO ANDRES DEL CASTILLO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/03/2025",
+      "Fecha Informe": "16/04/2025",
+      "nombres": "JORGE ENRIQUE AMEZQUITA",
+      "Primer nombre": "JORGE",
+      "Segundo nombre": "ENRIQUE AMEZQUITA",
+      "apellidos": "RENDON",
+      "Primer apellido": "RENDON",
+      "Segundo apellido": "",
+      "nombre_formal": "RENDON, JORGE ENRIQUE AMEZQUITA",
+      "diagnostico": "Muslo izquierdo. Biopsia. Estudios de inmunohistoquímica: PROLIFERACIÓN ESTROMAL CON MIOFIBROBLASTOS PROMINENTES Y TEJIDO DE GRANULACIÓN EXUBERANTE NEGATIVO PARA MALIGNIDAD O TUMOR RESIDUAL EN LA MUESTRA EVALUADA",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica una proliferación estromal con miofibroblastos prominentes y tejido de granulación exuberante rodeado por tejido necrótico tumoral completo. Dichos miofibroblastos son positivos para Caldesmón, con marcación de histiocitos acompañantes CD68+ y vasos sanguíneos CD31+ y CD34+. Son negativos para ALK-1, EMA, S100, Desmina, SMA, MDM2 y DOG-1. El índice de proliferación celular medido por KI-67 es del 50-60%.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2503364-1, el cual corresponde a biopsia de muslo izquierdo con diagnóstico de \"LESIÓN FUSOCELULAR\". Se ordenan los siguientes marcadores: ALK-1, EMA, CD31, S100, Desmina, CD34, SMA, Caldesmón, CD68, KI-67, MDM2, DOG1.",
+      "ihq_organo": "MUSLO IZQUIERDO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "ALK 1, EMA, CD31, S100, DESMINA, CD34, SMA, CALDESMÓN, CD68, Ki-67, MDM2, DOG1",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso revisado por Dr. Jorge Moreno, Patólogo experto en tejidos blandos.",
+      "IHQ_ORGANO": "MUSLO IZQUIERDO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "ALK 1, EMA, CD31, S100, DESMINA, CD34, SMA, CALDESMÓN, CD68, Ki-67, MDM2, DOG1",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD68": "POSITIVO",
+      "extraction_timestamp": "2026-02-02T23:43:03.525215",
+      "extractor_version": "6.5.77_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250311\nCopia Pag. 1 de 2\nNombre : JORGE ENRIQUE AMEZQUITA RENDON N. peticion : IHQ250311\nN.Identificación : CC. 14980631\nGenero : MASCULINO\nEdad : 73 años 15 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 28/03/2025\nFecha Informe : 16/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA MUSLO\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2503364-1, el cual corresponde a biopsia de muslo izquierdo\ncon diagnóstico de \"LESIÓN FUSOCELULAR\". Se ordenan los siguientes marcadores: ALK-1, EMA, CD31,\nS100, Desmina, CD34, SMA, Caldesmón, CD68, Ki-67, MDM2, DOG1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nEn los cortes histológicos se identifica una proliferación estromal con miofibroblastos prominentes y\ntejido de granulación exuberante rodeado por tejido necrótico tumoral completo. Dichos miofibroblastos\nson positivos para Caldesmón, con marcación de histiocitos acompañantes CD68+ y vasos sanguíneos\nCD31+ y CD34+. Son negativos para ALK-1, EMA, S100, Desmina, SMA, MDM2 y DOG-1. El índice de\nproliferación celular medido por Ki-67 es del 50-60%. \nDIAGNÓSTICO\n Muslo izquierdo. Biopsia. Estudios de inmunohistoquímica:\nPROLIFERACIÓN ESTROMAL CON MIOFIBROBLASTOS PROMINENTES Y TEJIDO DE GRANULACIÓN\nEXUBERANTE\nNEGATIVO PARA MALIGNIDAD O TUMOR RESIDUAL EN LA MUESTRA EVALUADA\nCOMENTARIOS\nCaso revisado por Dr. Jorge Moreno, Patólogo experto en tejidos blandos.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---\nIHQ250311\nCopia Pag. 2 de 2\nNombre : JORGE ENRIQUE AMEZQUITA RENDON N. peticion : IHQ250311\nN.Identificación : CC. 14980631\nGenero : MASCULINO\nEdad : 73 años 15 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 28/03/2025\nFecha Informe : 16/04/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "ALK 1, EMA, CD31, S100, DESMINA, CD34, SMA, CALDESMÓN, CD68, Ki-67, MDM2, DOG1, ALK, DESMIN",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2503364-1, el cual corresponde a biopsia de muslo izquierdo con diagnóstico de \"LESIÓN FUSOCELULAR\". Se ordenan los siguientes marcadores: ALK-1, EMA, CD31, S100, Desmina, CD34, SMA, Caldesmón, CD68, Ki-67, MDM2, DOG1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica una proliferación estromal con miofibroblastos prominentes y tejido de granulación exuberante rodeado por tejido necrótico tumoral completo. Dichos miofibroblastos son positivos para Caldesmón, con marcación de histiocitos acompañantes CD68+ y vasos sanguíneos CD31+ y CD34+. Son negativos para ALK-1, EMA, S100, Desmina, SMA, MDM2 y DOG-1. El índice de proliferación celular medido por Ki-67 es del 50-60%.",
+      "Descripcion Diagnostico": "Muslo izquierdo. Biopsia. Estudios de inmunohistoquímica: PROLIFERACIÓN ESTROMAL CON MIOFIBROBLASTOS PROMINENTES Y TEJIDO DE GRANULACIÓN EXUBERANTE NEGATIVO PARA MALIGNIDAD O TUMOR RESIDUAL EN LA MUESTRA EVALUADA",
+      "IHQ_ORGANO": "MUSLO IZQUIERDO",
+      "Organo": "BX MASA MUSLO IZQUIERDO",
+      "Diagnostico Coloracion": "LESIÓN FUSOCELULAR",
+      "Diagnostico Principal": "PROLIFERACIÓN ESTROMAL CON MIOFIBROBLASTOS PROMINENTES Y TEJIDO DE GRANULACIÓN EXUBERANTE NEGATIVO PARA MALIGNIDAD O TUMOR RESIDUAL EN LA MUESTRA EVALUADA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ALK1": "NO MENCIONADO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_CD3": "",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_MDM2": "NEGATIVO",
+      "IHQ_DOG1": "NEGATIVO",
+      "IHQ_ALK": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 177,
+      "campos_vacios": 132,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 12,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 132,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Muslo izquierdo. Biopsia. Estudios de inmunohistoquímica:\nPROLIFERACIÓN ESTROMAL CON MIOFIBROBLASTOS PROMINENTES Y TEJIDO DE GRANULACIÓN\nEXUBERANTE\nNEGATIVO PARA MALIGNIDAD O TUMOR RESIDUAL EN LA MUESTRA EVALUADA",
+      "valor_corregido": "Muslo izquierdo. Biopsia. Estudios de inmunohistoquímica: PROLIFERACIÓN ESTROMAL CON MIOFIBROBLASTOS PROMINENTES Y TEJIDO DE GRANULACIÓN EXUBERANTE NEGATIVO PARA MALIGNIDAD O TUMOR RESIDUAL EN LA MUESTRA EVALUADA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250311",
+      "timestamp": "2026-02-02T23:43:03.524841"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2503364-1, el cual corresponde a biopsia de muslo izquierdo con diagnóstico de \"LESIÓN FUSOCELULAR\". Se ordenan los siguientes marcadores: ALK-1, EMA, CD31, S100, Desmina, CD34, SMA, Caldesmón, CD68, Ki-67, MDM2, DOG1.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2503364-1, el cual corresponde a biopsia de muslo izquierdo con diagnóstico de \"LESIÓN FUSOCELULAR\". Se ordenan los siguientes marcadores: ALK-1, EMA, CD31, S100, Desmina, CD34, SMA, Caldesmón, CD68, KI-67, MDM2, DOG1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250311",
+      "timestamp": "2026-02-02T23:43:03.524847"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica una proliferación estromal con miofibroblastos prominentes y tejido de granulación exuberante rodeado por tejido necrótico tumoral completo. Dichos miofibroblastos son positivos para Caldesmón, con marcación de histiocitos acompañantes CD68+ y vasos sanguíneos CD31+ y CD34+. Son negativos para ALK-1, EMA, S100, Desmina, SMA, MDM2 y DOG-1. El índice de proliferación celular medido por Ki-67 es del 50-60%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica una proliferación estromal con miofibroblastos prominentes y tejido de granulación exuberante rodeado por tejido necrótico tumoral completo. Dichos miofibroblastos son positivos para Caldesmón, con marcación de histiocitos acompañantes CD68+ y vasos sanguíneos CD31+ y CD34+. Son negativos para ALK-1, EMA, S100, Desmina, SMA, MDM2 y DOG-1. El índice de proliferación celular medido por KI-67 es del 50-60%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250311",
+      "timestamp": "2026-02-02T23:43:03.524849"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 57
+  }
+}

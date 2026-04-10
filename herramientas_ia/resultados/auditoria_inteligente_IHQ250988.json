@@ -1,0 +1,144 @@
+{
+  "numero_caso": "IHQ250988",
+  "caso_num": 9,
+  "total_casos": 47,
+  "timestamp": "2025-11-04T22:59:14.525387",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 14,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "TUMOR MALIGNO MAL DIFERENCIADO. REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA ADECUADA HISTOGÉNESIS",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS HISTOLÓGICOS, DE INMUNOHISTOQUÍMICA FAVORECEN LINFOMA ANAPLÁSICO ALK NEGATIVO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor_bd": "Ki-67 del 98%",
+      "biomarcadores_fp": 1,
+      "total_solicitado": 13,
+      "cobertura_fp": "1/4",
+      "mensaje": "Factor pronóstico correcto con 1 biomarcador(es) - formato largo aceptado"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 13,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "ALK1",
+        "CD15",
+        "CD2",
+        "CD20",
+        "CD3",
+        "CD30",
+        "CD4",
+        "CD5",
+        "CD8",
+        "Ki-67",
+        "LMP-1",
+        "P53",
+        "SALL4"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "ALK1",
+        "CD15",
+        "CD2",
+        "CD20",
+        "CD3",
+        "CD30",
+        "CD4",
+        "CD5",
+        "CD8",
+        "Ki-67",
+        "LMP-1",
+        "P53",
+        "SALL4"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "Descripcion macroscopica coincide parcialmente con OCR (similitud: 52%)"
+    ],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "WARNING",
+      "mensaje": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 52%)",
+      "valor_bd": "Se realizan niveles al bloque M2510179-2 que corresponde a masa inguinal derecha con diagnóstico de ...",
+      "valor_ocr": "Se realizan niveles al bloque M2510179-2 que corresponde a masa inguinal derecha con"
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y ex..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "REGIÓN INGUINAL DERECHA"
+    },
+    "formatos_biomarcadores": {
+      "estado": "OK",
+      "total_biomarcadores": 12,
+      "biomarcadores_con_problemas": 0,
+      "porcentaje_problemas": 0.0,
+      "problemas": [],
+      "mensaje": "Todos los biomarcadores tienen formato estandarizado"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 1,
+    "errores": 0,
+    "biomarcadores_solicitados": 0,
+    "biomarcadores_mapeados": 0,
+    "biomarcadores_no_mapeados": 0,
+    "completitud_biomarcadores": 100
+  },
+  "resumen": {},
+  "estado_final": "ADVERTENCIA"
+}

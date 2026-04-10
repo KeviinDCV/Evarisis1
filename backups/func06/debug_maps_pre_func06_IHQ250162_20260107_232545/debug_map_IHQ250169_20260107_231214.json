@@ -1,0 +1,187 @@
+{
+  "session_id": "IHQ250169_20260107_231214",
+  "numero_peticion": "IHQ250169",
+  "timestamp": "2026-01-07T23:12:14.463066",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250169\nCopia Pag. 1 de 2\nNombre : ROBINSON AGUIRRE TABARES\nN. peticion : IHQ250169\nN.Identificación : CC. 14605820\nGenero : MASCULINO\nEdad : 43 años 8 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : MARIA FERNANDA BARRERA\nServicio : SALA HUMANA\nFecha Ingreso : 14/02/2025\nFecha Informe : 21/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE PULMON\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501359 que corresponde a \"Biopsia de pulmón\". Previa valoración de la coloración básica, se\nrealizan cortes histológicos para los siguientes marcadores en bloque 2: Ki67, CKEA1/EA3, PAX-8,\ndesmina,vimentina, RCC, CK20, CD 10, GATA 3, TTF1 Y p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales son positivas para CKAE1E3, PAX 8 , CD10, vimentina.\nIndice de proliferación Ki67 del 70 %. \nLos marcadores desmina, SOX10, napsina, RCC, CK20, GATA 3, TTF1 Y p40 son negativos.\nDIAGNÓSTICO\nPulmón. Sitio no especificado. Lesión. Biopsia. Estudio de inmunohistoquimica.\nCARCINOMA DE ALTO GRADO METASTASICO DE PROBABLE ORIGEN RENAL. \nCOMENTARIOS\nEl perfil de inmunohistoquimica favorece un carcinoma de alto grado de origen renal,\nprobablemente de células claras mal diferenciado.Sin embargo, la clasificación definitiva debe ser\ndeterminada en estudios histopatologicos de la lesión renal referida en la historia clínica.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250169\nCopia Pag. 2 de 2\nNombre : ROBINSON AGUIRRE TABARES\nN. peticion : IHQ250169\nN.Identificación : CC. 14605820\nGenero : MASCULINO\nEdad : 43 años 8 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : MARIA FERNANDA BARRERA\nServicio : SALA HUMANA\nFecha Ingreso : 14/02/2025\nFecha Informe : 21/02/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3420,
+      "reduccion_porcentaje": 97.94
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250169",
+      "caso_num": 9,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_RCC": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "nombre_completo": "ROBINSON AGUIRRE TABARES",
+      "numero_peticion": "IHQ250169",
+      "identificacion": "14605820",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "43",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "MARIA FERNANDA BARRERA",
+      "servicio": "SALA HUMANA",
+      "fecha_ingreso": "14/02/2025",
+      "fecha_informe": "21/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250169",
+      "N. de identificación": "14605820",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "SALA HUMANA",
+      "Médico tratante": "MARIA FERNANDA BARRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/02/2025",
+      "Fecha Informe": "21/02/2025",
+      "nombres": "ROBINSON AGUIRRE",
+      "Primer nombre": "ROBINSON",
+      "Segundo nombre": "AGUIRRE",
+      "apellidos": "TABARES",
+      "Primer apellido": "TABARES",
+      "Segundo apellido": "",
+      "nombre_formal": "TABARES, ROBINSON AGUIRRE",
+      "diagnostico": "Pulmón. Sitio no especificado. Lesión. Biopsia. Estudio de inmunohistoquimica. CARCINOMA DE ALTO GRADO METASTASICO DE PROBABLE ORIGEN RENAL.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, PAX 8 , CD10, vimentina. Indice de proliferación KI-67 del 70 %. Los marcadores desmina, SOX10, napsina, RCC, CK20, GATA 3, TTF1 Y p40 son negativos.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501359 que corresponde a \"Biopsia de pulmón\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores en bloque 2: KI-67, CKEA1/EA3, PAX-8, desmina,vimentina, RCC, CK20, CD 10, GATA 3, TTF1 Y p40.",
+      "ihq_organo": "PULMÓN",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Ki-67, CKEA1EA3, PAX 8",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "El perfil de inmunohistoquimica favorece un carcinoma de alto grado de origen renal, probablemente de células claras mal diferenciado.Sin embargo, la clasificación definitiva debe ser determinada en estudios histopatologicos de la lesión renal referida en la historia clínica. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 16 --- IHQ250169 Copia Pag. 2 de 2 Nombre : ROBINSON AGUIRRE TABARES N. peticion : IHQ250169 N.Identificación : CC. 14605820 Genero : MASCULINO Edad : 43 años 8 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : MARIA FERNANDA BARRERA Servicio : SALA HUMANA Fecha Ingreso : 14/02/2025 Fecha Informe : 21/02/2025",
+      "IHQ_ORGANO": "PULMÓN",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67 del 70 %",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, CKEA1EA3, PAX 8",
+      "IHQ_KI-67": "70%",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-01-07T23:12:14.879869",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250169\nCopia Pag. 1 de 2\nNombre : ROBINSON AGUIRRE TABARES\nN. peticion : IHQ250169\nN.Identificación : CC. 14605820\nGenero : MASCULINO\nEdad : 43 años 8 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : MARIA FERNANDA BARRERA\nServicio : SALA HUMANA\nFecha Ingreso : 14/02/2025\nFecha Informe : 21/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE PULMON\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501359 que corresponde a \"Biopsia de pulmón\". Previa valoración de la coloración básica, se\nrealizan cortes histológicos para los siguientes marcadores en bloque 2: Ki67, CKEA1/EA3, PAX-8,\ndesmina,vimentina, RCC, CK20, CD 10, GATA 3, TTF1 Y p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales son positivas para CKAE1E3, PAX 8 , CD10, vimentina.\nIndice de proliferación Ki67 del 70 %. \nLos marcadores desmina, SOX10, napsina, RCC, CK20, GATA 3, TTF1 Y p40 son negativos.\nDIAGNÓSTICO\nPulmón. Sitio no especificado. Lesión. Biopsia. Estudio de inmunohistoquimica.\nCARCINOMA DE ALTO GRADO METASTASICO DE PROBABLE ORIGEN RENAL. \nCOMENTARIOS\nEl perfil de inmunohistoquimica favorece un carcinoma de alto grado de origen renal,\nprobablemente de células claras mal diferenciado.Sin embargo, la clasificación definitiva debe ser\ndeterminada en estudios histopatologicos de la lesión renal referida en la historia clínica.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250169\nCopia Pag. 2 de 2\nNombre : ROBINSON AGUIRRE TABARES\nN. peticion : IHQ250169\nN.Identificación : CC. 14605820\nGenero : MASCULINO\nEdad : 43 años 8 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : MARIA FERNANDA BARRERA\nServicio : SALA HUMANA\nFecha Ingreso : 14/02/2025\nFecha Informe : 21/02/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, CKEA1EA3, PAX 8, P40, CD10, CK20, CKAE1AE3, TTF1, GATA3, SOX10, VIMENTINA, NAPSIN, DESMIN, RCC",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501359 que corresponde a \"Biopsia de pulmón\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores en bloque 2: Ki67, CKEA1/EA3, PAX-8, desmina,vimentina, RCC, CK20, CD 10, GATA 3, TTF1 Y p40.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, PAX 8 , CD10, vimentina. Indice de proliferación Ki67 del 70 %. Los marcadores desmina, SOX10, napsina, RCC, CK20, GATA 3, TTF1 Y p40 son negativos.",
+      "Descripcion Diagnostico": "Pulmón. Sitio no especificado. Lesión. Biopsia. Estudio de inmunohistoquimica. CARCINOMA DE ALTO GRADO METASTASICO DE PROBABLE ORIGEN RENAL.",
+      "IHQ_ORGANO": "PULMÓN",
+      "Organo": "BX DE PULMON",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CARCINOMA DE ALTO GRADO METASTASICO DE PROBABLE ORIGEN RENAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 70 %",
+      "IHQ_KI-67": "70%",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_RCC": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 120,
+      "campos_completos": 48,
+      "biomarcadores_encontrados": 13,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 120,
+      "total_campos_completos": 48
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón. Sitio no especificado. Lesión. Biopsia. Estudio de inmunohistoquimica.\nCARCINOMA DE ALTO GRADO METASTASICO DE PROBABLE ORIGEN RENAL.",
+      "valor_corregido": "Pulmón. Sitio no especificado. Lesión. Biopsia. Estudio de inmunohistoquimica. CARCINOMA DE ALTO GRADO METASTASICO DE PROBABLE ORIGEN RENAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250169",
+      "timestamp": "2026-01-07T23:12:14.879608"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501359 que corresponde a \"Biopsia de pulmón\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores en bloque 2: Ki67, CKEA1/EA3, PAX-8, desmina,vimentina, RCC, CK20, CD 10, GATA 3, TTF1 Y p40.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501359 que corresponde a \"Biopsia de pulmón\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores en bloque 2: KI-67, CKEA1/EA3, PAX-8, desmina,vimentina, RCC, CK20, CD 10, GATA 3, TTF1 Y p40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250169",
+      "timestamp": "2026-01-07T23:12:14.879615"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, PAX 8 , CD10, vimentina. Indice de proliferación Ki67 del 70 %. Los marcadores desmina, SOX10, napsina, RCC, CK20, GATA 3, TTF1 Y p40 son negativos.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, PAX 8 , CD10, vimentina. Indice de proliferación KI-67 del 70 %. Los marcadores desmina, SOX10, napsina, RCC, CK20, GATA 3, TTF1 Y p40 son negativos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250169",
+      "timestamp": "2026-01-07T23:12:14.879617"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El perfil de inmunohistoquimica favorece un carcinoma de alto grado de origen renal,\nprobablemente de células claras mal diferenciado.Sin embargo, la clasificación definitiva debe ser\ndeterminada en estudios histopatologicos de la lesión renal referida en la historia clínica.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250169\nCopia Pag. 2 de 2\nNombre : ROBINSON AGUIRRE TABARES\nN. peticion : IHQ250169\nN.Identificación : CC. 14605820\nGenero : MASCULINO\nEdad : 43 años 8 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : MARIA FERNANDA BARRERA\nServicio : SALA HUMANA\nFecha Ingreso : 14/02/2025\nFecha Informe : 21/02/2025",
+      "valor_corregido": "El perfil de inmunohistoquimica favorece un carcinoma de alto grado de origen renal, probablemente de células claras mal diferenciado.Sin embargo, la clasificación definitiva debe ser determinada en estudios histopatologicos de la lesión renal referida en la historia clínica. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 16 --- IHQ250169 Copia Pag. 2 de 2 Nombre : ROBINSON AGUIRRE TABARES N. peticion : IHQ250169 N.Identificación : CC. 14605820 Genero : MASCULINO Edad : 43 años 8 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : MARIA FERNANDA BARRERA Servicio : SALA HUMANA Fecha Ingreso : 14/02/2025 Fecha Informe : 21/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250169",
+      "timestamp": "2026-01-07T23:12:14.879618"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 62
+  }
+}

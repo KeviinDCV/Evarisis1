@@ -1,0 +1,110 @@
+================================================================================
+RESUMEN EJECUTIVO: VALIDACIÓN CORRECCIONES v6.5.03 - IHQ250229
+================================================================================
+
+CASO: IHQ250229
+FECHA: 2026-01-28 04:40
+VERSIÓN EXTRACTORES: v6.5.03
+CORRECCIONES APLICADAS:
+  1. P16: Capturing group corregido (?:...) → (...)
+  2. Ki-67: Normalizaciones MAYÚSCULAS agregadas
+
+================================================================================
+RESULTADO DEL REPROCESAMIENTO
+================================================================================
+
+SCORE OBTENIDO: 66.7% (6/9 validaciones OK)
+ESTADO: ERROR
+WARNINGS: 1
+ERRORES: 1
+
+VALIDACIONES:
+  ✅ Descripción macroscópica: OK
+  ❌ Diagnóstico coloración: ERROR (marcado NO APLICA pero existe en OCR)
+  ✅ Descripción microscópica: OK
+  ✅ Diagnóstico principal: OK
+  ✅ IHQ_ORGANO: OK
+  ✅ Factor pronóstico: OK
+  ❌ Biomarcadores: ERROR (1 valor NO coincide con OCR)
+  ⚠️  Malignidad: WARNING (BD indica MALIGNO pero no hay keywords en OCR)
+  ✅ Campos exhaustivos: OK
+
+================================================================================
+ANÁLISIS DETALLADO: P16
+================================================================================
+
+EXTRACCIÓN (CORRECTO):
+  IHQ_P16_ESTADO: "NEGATIVO"
+  Fuente OCR: "P16 presenta marcación citoplasmática focal (negativo)"
+  
+  ✅ El extractor v6.5.03 funciona CORRECTAMENTE
+
+AUDITORÍA (INCORRECTO):
+  valor_bd: "NEGATIVO"
+  valor_ocr detectado por auditor: "p" ← TRUNCADO INCORRECTAMENTE
+  
+  ❌ El auditor trunca el valor al validar contra OCR
+
+CAUSA RAÍZ:
+  Archivo: herramientas_ia/auditor_sistema.py
+  Método: _extraer_valor_biomarcador_desde_ocr() línea 2586-2689
+  Patrón problemático: línea 2645
+  
+  r'{bio}[:\s]+(?!y\s)([^\.\n,]+?)(?:\s+y\s+\w+)?'
+                         ^^^^^ modo non-greedy captura muy poco
+
+SOLUCIÓN RECOMENDADA:
+  Agregar patrón específico para P16 en auditor (línea ~2615):
+  
+  # V6.5.03 FIX IHQ250229: Patrón específico para P16
+  r'{bio}\s+presenta\s+marcaci[oó]n\s+[^(]+\((?:positivo|negativo)\)',
+
+IMPACTO:
+  Score actual: 66.7%
+  Score esperado después del fix: 77.8%
+  
+  Validación que seguirá fallando:
+  - DIAGNOSTICO_COLORACION: ERROR (problema diferente, no relacionado)
+
+================================================================================
+ANÁLISIS DETALLADO: Ki-67
+================================================================================
+
+EXTRACCIÓN (CORRECTO):
+  IHQ_KI-67: "POSITIVO (KI67 PRESENTA MARCACIÓN DE CELULARIDAD DE MEMBRANA BASAL (MARCACIÓN USUAL))"
+  Factor pronóstico: "Ki-67: POSITIVO (KI67 PRESENTA MARCACIÓN DE CELULARIDAD DE MEMBRANA BASAL (MARCACIÓN USUAL))"
+  
+  ✅ El extractor v6.5.03 funciona CORRECTAMENTE
+  ✅ Normalizaciones MAYÚSCULAS funcionan
+
+AUDITORÍA:
+  ✅ NO reporta error para Ki-67
+  ✅ Factor pronóstico valida OK
+
+================================================================================
+CONCLUSIÓN
+================================================================================
+
+1. EXTRACTORES v6.5.03: ✅ FUNCIONAN CORRECTAMENTE
+   - P16: Extrae "NEGATIVO" correctamente
+   - Ki-67: Extrae valor largo correctamente con normalizaciones
+
+2. PROBLEMA REAL: ❌ AUDITOR TRUNCA VALORES
+   - auditor_sistema.py necesita fix en método de validación
+   - No es necesario reprocesar casos (extracción ya es correcta)
+
+3. PRÓXIMOS PASOS:
+   - Aplicar fix en auditor_sistema.py (patrón específico P16)
+   - Re-auditar IHQ250229 con --inteligente
+   - Verificar score mejora a 77.8%
+   - NO reprocesar con FUNC-06 (no es necesario)
+
+================================================================================
+ARCHIVOS GENERADOS
+================================================================================
+
+- herramientas_ia/resultados/ANALISIS_P16_IHQ250229_v6.5.03.md (análisis técnico completo)
+- herramientas_ia/resultados/auditoria_inteligente_IHQ250229.json (reporte auditoría)
+- data/debug_maps/debug_map_IHQ250229_20260128_043942.json (datos reprocesados)
+
+================================================================================

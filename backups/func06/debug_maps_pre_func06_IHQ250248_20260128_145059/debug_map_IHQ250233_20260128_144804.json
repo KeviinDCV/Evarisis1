@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ250233_20260128_144804",
+  "numero_peticion": "IHQ250233",
+  "timestamp": "2026-01-28T14:48:04.892307",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250233\nCopia Pag. 1 de 2\nNombre : YOLANDA GUTIERREZ\nN. peticion : IHQ250233\nN.Identificación : PPT. 5523813\nGenero : FEMENINO\nEdad : 56 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 04/03/2025\nFecha Informe : 08/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional (Ramelli) con fecha de\nreporte del 27/12/24 con rótulo No. P241212445 que corresponde a “Biopsia trucut mama\nderecha\" con diagnóstico de “CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO\nDETERMINADO”. Previa revisión de la histología, se realizan niveles histológicos en el bloque A5\npara tinción con HER-2, KI-67, estrógenos y progesterona.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary\nAntibody. VENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: POSITIVOS (tinción fuerte en el 90% de las células tumorales).\n-RECEPTOR DE PROGRESTERONA: NEGATIVO.\n-HER 2: NEGATIVO (Score 1+)\n-Ki-67: 40%.\nAdemás se reconoce positividad en las células tumorales para E-cadherina.\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado. \n- Tiempo de fijación: no determinado. \nDIAGNÓSTICO\n Mama derecha. Masa. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL).\n- RECEPTOR DE ESTRÓGENOS: POSITIVO.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 43 ---\nIHQ250233\nCopia Pag. 2 de 2\nNombre : YOLANDA GUTIERREZ\nN. peticion : IHQ250233\nN.Identificación : PPT. 5523813\nGenero : FEMENINO\nEdad : 56 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 04/03/2025\nFecha Informe : 08/03/2025\n- RECEPTOR DE PROGESTERONA: NEGATIVO.\n- HER-2: NEGATIVO (Score 1+).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3850,
+      "reduccion_porcentaje": 97.86
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250233",
+      "caso_num": 22,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_E_CADHERINA": "POSITIVO",
+      "nombre_completo": "YOLANDA GUTIERREZ",
+      "numero_peticion": "IHQ250233",
+      "identificacion": "5523813",
+      "tipo_documento": "PPT",
+      "Genero": "FEMENINO",
+      "Edad": "56",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "04/03/2025",
+      "fecha_informe": "08/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250233",
+      "N. de identificación": "5523813",
+      "Tipo de documento": "PPT",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "04/03/2025",
+      "Fecha Informe": "08/03/2025",
+      "nombres": "YOLANDA",
+      "Primer nombre": "YOLANDA",
+      "Segundo nombre": "",
+      "apellidos": "GUTIERREZ",
+      "Primer apellido": "GUTIERREZ",
+      "Segundo apellido": "",
+      "nombre_formal": "GUTIERREZ, YOLANDA",
+      "diagnostico": "Mama derecha. Masa. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). - RECEPTOR DE ESTRÓGENOS: POSITIVO: 04/03/2025 - RECEPTOR DE PROGESTERONA: NEGATIVO. - HER-2: NEGATIVO (Score 1+).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: POSITIVOS (tinción fuerte en el 90% de las células tumorales). -RECEPTOR DE PROGRESTERONA: NEGATIVO. -HER 2: NEGATIVO (Score 1+) -KI-67: 40%. Además se reconoce positividad en las células tumorales para E-cadherina. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional (Ramelli) con fecha de reporte del 27/12/24 con rótulo No. P241212445 que corresponde a \"Biopsia trucut mama derecha\" con diagnóstico de \"CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO DETERMINADO\". Previa revisión de la histología, se realizan niveles histológicos en el bloque A5 para tinción con HER-2, KI-67, estrógenos y progesterona.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "RECEPTOR DE ESTRÓGENO: POSITIVOS (tinción fuerte en el 90% de las células tumorales)., RECEPTOR DE PROGRESTERONA: NEGATIVO., HER2: NEGATIVO (Score 1+), Ki-67: 40%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_HER2": "NEGATIVO (SCORE 1+)",
+      "IHQ_KI-67": "40%",
+      "extraction_timestamp": "2026-01-28T14:48:05.474024",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250233\nCopia Pag. 1 de 2\nNombre : YOLANDA GUTIERREZ\nN. peticion : IHQ250233\nN.Identificación : PPT. 5523813\nGenero : FEMENINO\nEdad : 56 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 04/03/2025\nFecha Informe : 08/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional (Ramelli) con fecha de\nreporte del 27/12/24 con rótulo No. P241212445 que corresponde a “Biopsia trucut mama\nderecha\" con diagnóstico de “CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO\nDETERMINADO”. Previa revisión de la histología, se realizan niveles histológicos en el bloque A5\npara tinción con HER-2, KI-67, estrógenos y progesterona.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary\nAntibody. VENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: POSITIVOS (tinción fuerte en el 90% de las células tumorales).\n-RECEPTOR DE PROGRESTERONA: NEGATIVO.\n-HER 2: NEGATIVO (Score 1+)\n-Ki-67: 40%.\nAdemás se reconoce positividad en las células tumorales para E-cadherina.\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado. \n- Tiempo de fijación: no determinado. \nDIAGNÓSTICO\n Mama derecha. Masa. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL).\n- RECEPTOR DE ESTRÓGENOS: POSITIVO.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 43 ---\nIHQ250233\nCopia Pag. 2 de 2\nNombre : YOLANDA GUTIERREZ\nN. peticion : IHQ250233\nN.Identificación : PPT. 5523813\nGenero : FEMENINO\nEdad : 56 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 04/03/2025\nFecha Informe : 08/03/2025\n- RECEPTOR DE PROGESTERONA: NEGATIVO.\n- HER-2: NEGATIVO (Score 1+).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional (Ramelli) con fecha de reporte del 27/12/24 con rótulo No. P241212445 que corresponde a “Biopsia trucut mama derecha\" con diagnóstico de “CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO DETERMINADO”. Previa revisión de la histología, se realizan niveles histológicos en el bloque A5 para tinción con HER-2, KI-67, estrógenos y progesterona.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: POSITIVOS (tinción fuerte en el 90% de las células tumorales). -RECEPTOR DE PROGRESTERONA: NEGATIVO. -HER 2: NEGATIVO (Score 1+) -Ki-67: 40%. Además se reconoce positividad en las células tumorales para E-cadherina. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado.",
+      "Descripcion Diagnostico": "Mama derecha. Masa. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). - RECEPTOR DE ESTRÓGENOS: POSITIVO: 04/03/2025 - RECEPTOR DE PROGESTERONA: NEGATIVO. - HER-2: NEGATIVO (Score 1+).",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "BX MAMA DERECHA",
+      "Diagnostico Coloracion": "CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO DETERMINADO",
+      "Diagnostico Principal": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "RECEPTOR DE ESTRÓGENO: POSITIVOS (tinción fuerte en el 90% de las células tumorales)., RECEPTOR DE PROGRESTERONA: NEGATIVO., HER2: NEGATIVO (Score 1+), Ki-67: 40%",
+      "IHQ_HER2": "NEGATIVO (SCORE 1+)",
+      "IHQ_KI-67": "40%",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_E_CADHERINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 138,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Masa. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL).\n- RECEPTOR DE ESTRÓGENOS: POSITIVO: 04/03/2025\n- RECEPTOR DE PROGESTERONA: NEGATIVO.\n- HER-2: NEGATIVO (Score 1+).",
+      "valor_corregido": "Mama derecha. Masa. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). - RECEPTOR DE ESTRÓGENOS: POSITIVO: 04/03/2025 - RECEPTOR DE PROGESTERONA: NEGATIVO. - HER-2: NEGATIVO (Score 1+).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250233",
+      "timestamp": "2026-01-28T14:48:05.473820"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional (Ramelli) con fecha de reporte del 27/12/24 con rótulo No. P241212445 que corresponde a “Biopsia trucut mama derecha\" con diagnóstico de “CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO DETERMINADO”. Previa revisión de la histología, se realizan niveles histológicos en el bloque A5 para tinción con HER-2, KI-67, estrógenos y progesterona.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional (Ramelli) con fecha de reporte del 27/12/24 con rótulo No. P241212445 que corresponde a \"Biopsia trucut mama derecha\" con diagnóstico de \"CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO DETERMINADO\". Previa revisión de la histología, se realizan niveles histológicos en el bloque A5 para tinción con HER-2, KI-67, estrógenos y progesterona.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250233",
+      "timestamp": "2026-01-28T14:48:05.473826"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: POSITIVOS (tinción fuerte en el 90% de las células tumorales). -RECEPTOR DE PROGRESTERONA: NEGATIVO. -HER 2: NEGATIVO (Score 1+) -Ki-67: 40%. Además se reconoce positividad en las células tumorales para E-cadherina. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: POSITIVOS (tinción fuerte en el 90% de las células tumorales). -RECEPTOR DE PROGRESTERONA: NEGATIVO. -HER 2: NEGATIVO (Score 1+) -KI-67: 40%. Además se reconoce positividad en las células tumorales para E-cadherina. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250233",
+      "timestamp": "2026-01-28T14:48:05.473828"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 51
+  }
+}

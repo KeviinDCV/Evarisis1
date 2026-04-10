@@ -423,26 +423,98 @@ class EnhancedExportSystem:
 
     def toggle_floating_details_panel(self):
         """Mostrar/ocultar panel flotante lateral animado de detalles del registro seleccionado"""
-        try:
-            # Si el panel ya existe, cerrarlo con animación
-            if hasattr(self, 'details_panel') and self.details_panel.winfo_exists():
-                self.close_details_panel()
-                return
+        import logging
 
+        try:
             # Verificar si hay selección
             if not hasattr(self.parent_app, 'tree'):
                 messagebox.showwarning("No disponible", "El visor de datos no está inicializado")
                 return
 
-            selected = self.parent_app.tree.selection()
-            if not selected:
+            # ESTRATEGIA MULTI-NIVEL para obtener la fila seleccionada correctamente
+            selected = None
+            item_id = None
+
+            # Estrategia 1: Intentar tree.selection() (puede estar desactualizado por race condition)
+            try:
+                selected_from_tree = self.parent_app.tree.selection()
+                logging.info(f"toggle_floating_details_panel: Estrategia 1 - tree.selection() = {selected_from_tree}")
+                if selected_from_tree and len(selected_from_tree) > 0:
+                    selected = selected_from_tree
+                    item_id = selected[0]
+                    logging.info(f"✅ Estrategia 1 exitosa: item_id = {item_id}")
+            except Exception as e:
+                logging.warning(f"⚠️ Estrategia 1 falló: {e}")
+
+            # Estrategia 2: Si tree.selection() falló o devolvió datos sospechosos, intentar métodos directos del sheet
+            if item_id is None or (item_id == 0 and hasattr(self.parent_app, 'sheet')):
+                try:
+                    # Intentar obtener filas seleccionadas directamente del sheet
+                    selected_rows = self.parent_app.sheet.get_selected_rows()
+                    logging.info(f"toggle_floating_details_panel: Estrategia 2A - get_selected_rows() = {selected_rows}")
+                    if selected_rows:
+                        item_id = list(selected_rows)[0]
+                        logging.info(f"✅ Estrategia 2A exitosa: item_id = {item_id}")
+                    else:
+                        # Intentar celdas seleccionadas
+                        selected_cells = self.parent_app.sheet.get_selected_cells()
+                        logging.info(f"toggle_floating_details_panel: Estrategia 2B - get_selected_cells() = {selected_cells}")
+                        if selected_cells:
+                            # Extraer la fila de la primera celda seleccionada
+                            item_id = list(selected_cells)[0][0]  # (row, col)
+                            logging.info(f"✅ Estrategia 2B exitosa: item_id = {item_id}")
+                except Exception as e:
+                    logging.warning(f"⚠️ Estrategia 2 falló: {e}")
+
+            # Estrategia 3: Usar última selección válida guardada previamente
+            if item_id is None and hasattr(self.parent_app, 'ultima_seleccion'):
+                item_id = self.parent_app.ultima_seleccion
+                logging.info(f"🔄 Estrategia 3: Usando última selección válida como fallback: {item_id}")
+
+            # Estrategia 4: Si todo falló, usar get_currently_selected() pero ADVERTIR al usuario
+            if item_id is None and hasattr(self.parent_app, 'sheet'):
+                try:
+                    currently_selected = self.parent_app.sheet.get_currently_selected()
+                    logging.info(f"toggle_floating_details_panel: Estrategia 4 - get_currently_selected() = {currently_selected}")
+                    if currently_selected and hasattr(currently_selected, 'row') and currently_selected.row is not None:
+                        item_id = currently_selected.row
+                        logging.warning(f"⚠️ Estrategia 4 (fallback final): Usando fila del cursor visual: {item_id}")
+                        logging.warning("⚠️ NOTA: Esta puede no ser la fila que el usuario quiso seleccionar")
+                except Exception as e:
+                    logging.warning(f"⚠️ Estrategia 4 falló: {e}")
+
+            # Validación final
+            if item_id is None:
                 messagebox.showinfo("Sin selección", "Por favor seleccione un registro para ver los detalles")
                 return
 
-            # Obtener el registro seleccionado
-            item_id = selected[0]
+            logging.info(f"toggle_floating_details_panel: item_id FINAL = {item_id} (tipo: {type(item_id)})")
+
+            # Si el panel ya existe, actualizar su contenido en lugar de cerrar
+            if hasattr(self, 'details_panel') and self.details_panel.winfo_exists():
+                try:
+                    # Actualizar contenido del panel existente
+                    self._update_details_panel_content(item_id)
+                    return
+                except Exception as e:
+                    # Si falla la actualización, cerrar y recrear
+                    self.close_details_panel()
+                    # Continuar para crear nuevo panel
+
             try:
-                row_data = self.parent_app.master_df.loc[int(item_id)]
+                logging.info(f"toggle_floating_details_panel: master_df.shape = {self.parent_app.master_df.shape}")
+                logging.info(f"toggle_floating_details_panel: Accediendo a iloc[{int(item_id)}]")
+
+                # USAR iloc en lugar de loc porque item_id es el índice posicional del Sheet
+                row_data = self.parent_app.master_df.iloc[int(item_id)]
+
+                # Log para verificar qué registro se obtuvo
+                # Intentar varios nombres posibles de columna
+                numero_caso = row_data.get('IHQ_NUMERO_PETICION') or row_data.get('Numero de caso') or row_data.get('NUMERO_PETICION') or 'N/A'
+                logging.info(f"toggle_floating_details_panel: Registro obtenido - Número de caso: {numero_caso}")
+
+                # DEBUG: Mostrar primeras columnas para verificar estructura
+                logging.info(f"toggle_floating_details_panel: Primeras 5 columnas del registro: {list(row_data.index[:5])}")
 
                 # Crear panel lateral flotante
                 self.details_panel = tk.Frame(
@@ -486,61 +558,40 @@ class EnhancedExportSystem:
                 ttk.Separator(self.details_panel, orient="horizontal").pack(fill="x")
 
                 # Frame con scroll para el contenido
-                canvas = tk.Canvas(self.details_panel, bg="#ffffff", highlightthickness=0)
-                scrollbar = ttk.Scrollbar(self.details_panel, orient="vertical", command=canvas.yview)
-                scrollable_frame = ttk.Frame(canvas)
+                self.details_canvas = tk.Canvas(self.details_panel, bg="#ffffff", highlightthickness=0)
+                scrollbar = ttk.Scrollbar(self.details_panel, orient="vertical", command=self.details_canvas.yview)
+                self.details_scrollable_frame = ttk.Frame(self.details_canvas)
 
-                scrollable_frame.bind(
+                self.details_scrollable_frame.bind(
                     "<Configure>",
-                    lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+                    lambda e: self.details_canvas.configure(scrollregion=self.details_canvas.bbox("all"))
                 )
 
-                canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-                canvas.configure(yscrollcommand=scrollbar.set)
+                self.details_canvas.create_window((0, 0), window=self.details_scrollable_frame, anchor="nw")
+                self.details_canvas.configure(yscrollcommand=scrollbar.set)
 
                 # Mostrar todos los campos
-                for i, (key, value) in enumerate(row_data.items()):
-                    field_frame = ttk.Frame(scrollable_frame, padding=15)
-                    field_frame.pack(fill="x", padx=10, pady=5)
+                self._populate_details_content(row_data)
 
-                    ttk.Label(
-                        field_frame,
-                        text=f"{key}:",
-                        font=("Segoe UI", 9, "bold"),
-                        foreground="#2c3e50"
-                    ).pack(anchor="w")
-
-                    value_text = str(value) if pd.notna(value) else "(vacío)"
-                    ttk.Label(
-                        field_frame,
-                        text=value_text,
-                        font=("Segoe UI", 9),
-                        wraplength=450,
-                        foreground="#34495e"
-                    ).pack(anchor="w", padx=10, pady=(5, 0))
-
-                    if i < len(row_data) - 1:
-                        ttk.Separator(scrollable_frame, orient="horizontal").pack(fill="x", padx=20, pady=10)
-
-                canvas.pack(side="left", fill="both", expand=True)
+                self.details_canvas.pack(side="left", fill="both", expand=True)
                 scrollbar.pack(side="right", fill="y")
 
                 # Habilitar scroll con rueda del ratón solo cuando el cursor está sobre el panel
                 def _on_mousewheel(event):
-                    canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+                    self.details_canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
                     return "break"
 
                 def _bind_mousewheel(event):
-                    canvas.bind("<MouseWheel>", _on_mousewheel)
+                    self.details_canvas.bind("<MouseWheel>", _on_mousewheel)
 
                 def _unbind_mousewheel(event):
-                    canvas.unbind("<MouseWheel>")
+                    self.details_canvas.unbind("<MouseWheel>")
 
                 # Activar/desactivar scroll según posición del cursor
                 self.details_panel.bind("<Enter>", _bind_mousewheel)
                 self.details_panel.bind("<Leave>", _unbind_mousewheel)
-                canvas.bind("<Enter>", _bind_mousewheel)
-                canvas.bind("<Leave>", _unbind_mousewheel)
+                self.details_canvas.bind("<Enter>", _bind_mousewheel)
+                self.details_canvas.bind("<Leave>", _unbind_mousewheel)
 
                 # Animar entrada del panel (deslizar desde la derecha)
                 self.animate_panel_in(screen_width, screen_width - panel_width, panel_width)
@@ -595,6 +646,64 @@ class EnhancedExportSystem:
             else:
                 # Destruir el panel al finalizar la animación
                 self.details_panel.destroy()
+
+    def _populate_details_content(self, row_data):
+        """Poblar el contenido del panel de detalles con los datos de una fila"""
+        # Limpiar contenido anterior
+        for widget in self.details_scrollable_frame.winfo_children():
+            widget.destroy()
+
+        # Mostrar todos los campos
+        for i, (key, value) in enumerate(row_data.items()):
+            field_frame = ttk.Frame(self.details_scrollable_frame, padding=15)
+            field_frame.pack(fill="x", padx=10, pady=5)
+
+            ttk.Label(
+                field_frame,
+                text=f"{key}:",
+                font=("Segoe UI", 9, "bold"),
+                foreground="#2c3e50"
+            ).pack(anchor="w")
+
+            value_text = str(value) if pd.notna(value) else "(vacío)"
+            ttk.Label(
+                field_frame,
+                text=value_text,
+                font=("Segoe UI", 9),
+                wraplength=450,
+                foreground="#34495e"
+            ).pack(anchor="w", padx=10, pady=(5, 0))
+
+            if i < len(row_data) - 1:
+                ttk.Separator(self.details_scrollable_frame, orient="horizontal").pack(fill="x", padx=20, pady=10)
+
+        # Resetear scroll a la parte superior
+        self.details_canvas.yview_moveto(0)
+
+    def _update_details_panel_content(self, item_id):
+        """Actualizar el contenido del panel de detalles con un nuevo registro"""
+        import logging
+
+        logging.info(f"_update_details_panel_content: item_id recibido = {item_id} (tipo: {type(item_id)})")
+
+        # Obtener los datos del nuevo registro
+        # USAR iloc en lugar de loc porque item_id es el índice posicional del Sheet (0, 1, 2...)
+        # NO el índice del DataFrame (que puede ser diferente después de filtros/ordenamiento)
+
+        logging.info(f"_update_details_panel_content: master_df.shape = {self.parent_app.master_df.shape}")
+        logging.info(f"_update_details_panel_content: Intentando acceder a iloc[{int(item_id)}]")
+
+        row_data = self.parent_app.master_df.iloc[int(item_id)]
+
+        # Log el número de caso para verificar
+        numero_caso = row_data.get('IHQ_NUMERO_PETICION') or row_data.get('Numero de caso') or row_data.get('NUMERO_PETICION') or 'N/A'
+        logging.info(f"_update_details_panel_content: Registro obtenido - Número de caso: {numero_caso}")
+
+        # DEBUG: Mostrar primeras columnas
+        logging.info(f"_update_details_panel_content: Primeras 5 columnas: {list(row_data.index[:5])}")
+
+        # Actualizar el contenido
+        self._populate_details_content(row_data)
 
     def toggle_advanced_filters_panel(self):
         """Mostrar/ocultar panel de filtros avanzados"""

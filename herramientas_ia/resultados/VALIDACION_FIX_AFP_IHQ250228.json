@@ -1,0 +1,26 @@
+{
+  "caso": "IHQ250228",
+  "fecha_validacion": "2026-01-28T04:25:26.668123",
+  "cambio_aplicado": "Agregado IHQ_AFP: AFP a biomarker_display_names en unified_extractor.py",
+  "resultado_validacion": {
+    "status": "EXITO",
+    "ihq_afp_bd": "NO MENCIONADO",
+    "ihq_estudios_solicitados": "Incluye AFP",
+    "contexto_ocr": {
+      "biomarcadores_solicitados": "CK7, CK20, ARGINASA, GLIPICAN, HEPATOCITO, CDX2, CA19-9, CK19, TTF-1, GATA-3, CEA, AFP, EMA",
+      "positivos_reportados": "CK7, CK19, EMA (focal)",
+      "negativos_reportados": "CK20, CDX2, Ca 19-9, ARGINASA, HEPATOCITO, GLIPICAN, GATA 3, TTF-1, CEA",
+      "sin_resultado_reportado": [
+        "AFP"
+      ]
+    },
+    "comportamiento_esperado": "AFP solicitado pero sin resultado reportado debe marcarse como NO MENCIONADO",
+    "comportamiento_actual": "AFP correctamente marcado como NO MENCIONADO",
+    "conclusion": "El mapeo funciona correctamente. AFP fue solicitado pero no se reporto resultado en el diagnostico, por lo que el sistema correctamente lo marca como NO MENCIONADO."
+  },
+  "score_auditoria": {
+    "antes": "No disponible (caso no auditado previamente)",
+    "despues": "88.9%",
+    "nota": "Score menor a 100% se debe a otros factores (CK19 con valor incorrecto en OCR)"
+  }
+}

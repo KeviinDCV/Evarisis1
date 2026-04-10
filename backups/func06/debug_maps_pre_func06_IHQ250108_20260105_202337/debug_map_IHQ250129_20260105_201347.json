@@ -1,0 +1,141 @@
+{
+  "session_id": "IHQ250129_20260105_201347",
+  "numero_peticion": "IHQ250129",
+  "timestamp": "2026-01-05T20:13:47.115950",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250129\nCopia Pag. 1 de 2\nNombre : JOSE ANTONIO OTALORA\nN. peticion : IHQ250129\nN.Identificación : CC. 79200797\nGenero : MASCULINO\nEdad : 64 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ESMERALDA MUÑOZ ARCOS\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 05/02/2025\nFecha Informe : 10/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION MUCOSA COLON\nASCENDENTE\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional\n( IDIME\n)\ncon fecha de\nreporte del 13/01/25\ncon rótulo 0-0033906-25\nque corresponde a \"Lesión mucosa colon\nascendente\"\nconsiste en\nun bloque de parafina y una lámina coloreadas con Hematoxilina -\nEosina con diagnóstico de \"ADENOCARCINOMA DE COLON ASCENDENTE BIEN DIFERENCIADO\nGRADO I\". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción\ncon : MLH1, PMS2, MSH2, MSH6, y HER-2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \n-MLH-1: Marcación nuclear intacta.\n- MSH-2: Marcación nuclear intacta.\n- MSH-6: Marcación nuclear intacta.\n- PMS-2: Marcación nuclear intacta.\nInterpretación de la reparación de desajustes (MMR)\nSin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación\ndeficiente de desajustes (baja probabilidad de MSI-H)\n- HER-2 Negativo (score 0)\nDIAGNÓSTICO\nColon ascendente. Lesión. Biopsia endoscopica. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA DE COLON ASCENDENTE BIEN DIFERENCIADO.\n- PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---\nIHQ250129\nCopia Pag. 2 de 2\nNombre : JOSE ANTONIO OTALORA\nN. peticion : IHQ250129\nN.Identificación : CC. 79200797\nGenero : MASCULINO\nEdad : 64 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ESMERALDA MUÑOZ ARCOS\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 05/02/2025\nFecha Informe : 10/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 43 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3548,
+      "reduccion_porcentaje": 97.96
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250129",
+      "caso_num": 21,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "JOSE ANTONIO OTALORA",
+      "numero_peticion": "IHQ250129",
+      "identificacion": "79200797",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "64",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "ESMERALDA MUÑOZ ARCOS",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "05/02/2025",
+      "fecha_informe": "10/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250129",
+      "N. de identificación": "79200797",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "ESMERALDA MUÑOZ ARCOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "05/02/2025",
+      "Fecha Informe": "10/02/2025",
+      "nombres": "JOSE",
+      "Primer nombre": "JOSE",
+      "Segundo nombre": "",
+      "apellidos": "ANTONIO OTALORA",
+      "Primer apellido": "ANTONIO",
+      "Segundo apellido": "OTALORA",
+      "nombre_formal": "ANTONIO OTALORA, JOSE",
+      "diagnostico": "Colon ascendente. Lesión. Biopsia endoscopica. Estudio de inmunohistoquímica: - ADENOCARCINOMA DE COLON ASCENDENTE BIEN DIFERENCIADO. - PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0): 05/02/2025",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: -MLH-1: Marcación nuclear intacta. - MSH-2: Marcación nuclear intacta. - MSH-6: Marcación nuclear intacta. - PMS-2: Marcación nuclear intacta. Interpretación de la reparación de desajustes (MMR) Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) - HER-2 Negativo (score 0)",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional ( IDIME ) con fecha de reporte del 13/01/25 con rótulo 0-0033906-25 que corresponde a \"Lesión mucosa colon ascendente\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"ADENOCARCINOMA DE COLON ASCENDENTE BIEN DIFERENCIADO GRADO I\". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con : MLH1, PMS2, MSH2, MSH6, y HER-2.",
+      "ihq_organo": "COLON ASCENDENTE",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "COLON ASCENDENTE",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2 Negativo (score 0)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_MSH2": "POSITIVO",
+      "IHQ_MSH6": "POSITIVO",
+      "IHQ_PMS2": "POSITIVO",
+      "IHQ_MLH1": "POSITIVO (MARCACIÓN NUCLEAR INTACTA)",
+      "extraction_timestamp": "2026-01-05T20:13:47.511987",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250129\nCopia Pag. 1 de 2\nNombre : JOSE ANTONIO OTALORA\nN. peticion : IHQ250129\nN.Identificación : CC. 79200797\nGenero : MASCULINO\nEdad : 64 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ESMERALDA MUÑOZ ARCOS\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 05/02/2025\nFecha Informe : 10/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION MUCOSA COLON\nASCENDENTE\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional\n( IDIME\n)\ncon fecha de\nreporte del 13/01/25\ncon rótulo 0-0033906-25\nque corresponde a \"Lesión mucosa colon\nascendente\"\nconsiste en\nun bloque de parafina y una lámina coloreadas con Hematoxilina -\nEosina con diagnóstico de \"ADENOCARCINOMA DE COLON ASCENDENTE BIEN DIFERENCIADO\nGRADO I\". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción\ncon : MLH1, PMS2, MSH2, MSH6, y HER-2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \n-MLH-1: Marcación nuclear intacta.\n- MSH-2: Marcación nuclear intacta.\n- MSH-6: Marcación nuclear intacta.\n- PMS-2: Marcación nuclear intacta.\nInterpretación de la reparación de desajustes (MMR)\nSin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación\ndeficiente de desajustes (baja probabilidad de MSI-H)\n- HER-2 Negativo (score 0)\nDIAGNÓSTICO\nColon ascendente. Lesión. Biopsia endoscopica. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA DE COLON ASCENDENTE BIEN DIFERENCIADO.\n- PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---\nIHQ250129\nCopia Pag. 2 de 2\nNombre : JOSE ANTONIO OTALORA\nN. peticion : IHQ250129\nN.Identificación : CC. 79200797\nGenero : MASCULINO\nEdad : 64 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ESMERALDA MUÑOZ ARCOS\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 05/02/2025\nFecha Informe : 10/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 43 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MLH1, MSH2, MSH6, PMS2",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional ( IDIME ) con fecha de reporte del 13/01/25 con rótulo 0-0033906-25 que corresponde a \"Lesión mucosa colon ascendente\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"ADENOCARCINOMA DE COLON ASCENDENTE BIEN DIFERENCIADO GRADO I\". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con : MLH1, PMS2, MSH2, MSH6, y HER-2.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: -MLH-1: Marcación nuclear intacta. - MSH-2: Marcación nuclear intacta. - MSH-6: Marcación nuclear intacta. - PMS-2: Marcación nuclear intacta. Interpretación de la reparación de desajustes (MMR) Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) - HER-2 Negativo (score 0)",
+      "Descripcion Diagnostico": "Colon ascendente. Lesión. Biopsia endoscopica. Estudio de inmunohistoquímica: - ADENOCARCINOMA DE COLON ASCENDENTE BIEN DIFERENCIADO. - PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0): 05/02/2025",
+      "IHQ_ORGANO": "COLON ASCENDENTE",
+      "Organo": "LESION MUCOSA COLON ASCENDENTE",
+      "Diagnostico Coloracion": "ADENOCARCINOMA DE COLON ASCENDENTE BIEN DIFERENCIADO GRADO I",
+      "Diagnostico Principal": "ADENOCARCINOMA DE COLON ASCENDENTE BIEN DIFERENCIADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 Negativo (score 0)",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_MLH1": "POSITIVO (MARCACIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH2": "POSITIVO",
+      "IHQ_MSH6": "POSITIVO",
+      "IHQ_PMS2": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 128,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 23.35
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 128,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Colon ascendente. Lesión. Biopsia endoscopica. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA DE COLON ASCENDENTE BIEN DIFERENCIADO.\n- PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0): 05/02/2025",
+      "valor_corregido": "Colon ascendente. Lesión. Biopsia endoscopica. Estudio de inmunohistoquímica: - ADENOCARCINOMA DE COLON ASCENDENTE BIEN DIFERENCIADO. - PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0): 05/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250129",
+      "timestamp": "2026-01-05T20:13:47.511697"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 50
+  }
+}

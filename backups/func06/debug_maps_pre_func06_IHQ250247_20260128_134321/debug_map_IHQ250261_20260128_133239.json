@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250261_20260128_133239",
+  "numero_peticion": "IHQ250261",
+  "timestamp": "2026-01-28T13:32:39.520986",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250261\nCopia Pag. 1 de 2\nNombre : RUBEN DARIO GARAY QUINTERO\nN. peticion : IHQ250261\nN.Identificación : CC. 6146411\nGenero : MASCULINO\nEdad : 59 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE DAVID CALDERON\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 12/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2502583 correspondiente a biopsia de hueso con diagnóstico de\n\"CELULARIDAD GLOBAL DEL 50%, RELACIÓN MIELOIDE ERITROIDE DE 2:1, MADURACIÓN NORMAL DE LA\nLINEA MIELOIDE, MEGACARIOCITOS 7-11 POR CAMPO DE ALTO PODER, SIN INCREMENTO DE CÉLULAS\nPLASMÁTICAS\" para estudios de inmunohistoquímica por lo que se solicita CD20, CD10, CD5, CD3, PAX5,\nBCL2, BCL6, MUM1, C-MYC.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nPresenta acúmulos de linfocitos B maduros con marcación positiva para CD20 y PAX 5. Hay linfocitos T\nacompañantes con marcación difusa de CD3 y CD5 sin formación de cúmulos. Marcación positiva fuerte\npara CD10 y BCL6, con marcación de BCL2 focal débil.\nMUM 1 positivo de manera dispersa sin formación de cúmulos negativo en la zona donde se encuentran\nlos linfocitos B maduros.\nSin marcación para C-MYC.\nDIAGNÓSTICO\n Médula ósea. Biopsia. Estudios de inmunohistoquímica.\nNEOPLASIA DE CÉLULAS B MADURAS.\nCOMENTARIOS\nLa historia clínica, estudios histopatológicos previos y reporte de citometría de flujo favorecen un linfoma\nburkitt, sin embargo, con C-MYC negativo por lo que se sugiere confirmación por estudios moleculares.\nCaso valorado en conjunto con la Doctora Maria Ximena Varela, Patóloga.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 95 ---\nIHQ250261\nCopia Pag. 2 de 2\nNombre : RUBEN DARIO GARAY QUINTERO\nN. peticion : IHQ250261\nN.Identificación : CC. 6146411\nGenero : MASCULINO\nEdad : 59 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE DAVID CALDERON\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 12/03/2025\nFecha Informe : 28/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 96 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3603,
+      "reduccion_porcentaje": 97.99
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250261",
+      "caso_num": 49,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_CD3": "POSITIVO (fuerte y difusa)",
+      "IHQ_CD5": "POSITIVO (fuerte y difusa)",
+      "nombre_completo": "RUBEN DARIO GARAY QUINTERO",
+      "numero_peticion": "IHQ250261",
+      "identificacion": "6146411",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "59",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JOSE DAVID CALDERON",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "12/03/2025",
+      "fecha_informe": "28/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250261",
+      "N. de identificación": "6146411",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "JOSE DAVID CALDERON",
+      "Fecha de ingreso (2. Fecha de la muestra)": "12/03/2025",
+      "Fecha Informe": "28/03/2025",
+      "nombres": "RUBEN DARIO",
+      "Primer nombre": "RUBEN",
+      "Segundo nombre": "DARIO",
+      "apellidos": "GARAY QUINTERO",
+      "Primer apellido": "GARAY",
+      "Segundo apellido": "QUINTERO",
+      "nombre_formal": "GARAY QUINTERO, RUBEN DARIO",
+      "diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica. NEOPLASIA DE CÉLULAS B MADURAS.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Presenta acúmulos de linfocitos B maduros con marcación positiva para CD20 y PAX 5. Hay linfocitos T acompañantes con marcación difusa de CD3 y CD5 sin formación de cúmulos. Marcación positiva fuerte para CD10 y BCL6, con marcación de BCL2 focal débil. MUM 1 positivo de manera dispersa sin formación de cúmulos negativo en la zona donde se encuentran los linfocitos B maduros. Sin marcación para C-MYC.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2502583 correspondiente a biopsia de hueso con diagnóstico de \"CELULARIDAD GLOBAL DEL 50%, RELACIÓN MIELOIDE ERITROIDE DE 2:1, MADURACIÓN NORMAL DE LA LINEA MIELOIDE, MEGACARIOCITOS 7-11 POR CAMPO DE ALTO PODER, SIN INCREMENTO DE CÉLULAS PLASMÁTICAS\" para estudios de inmunohistoquímica por lo que se solicita CD20, CD10, CD5, CD3, PAX5, BCL2, BCL6, MUM1, C-MYC.",
+      "ihq_organo": "MÉDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "La historia clínica, estudios histopatológicos previos y reporte de citometría de flujo favorecen un linfoma burkitt, sin embargo, con C-MYC negativo por lo que se sugiere confirmación por estudios moleculares. Caso valorado en conjunto con la Doctora Maria Ximena Varela, Patóloga. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 95 --- IHQ250261 Copia Pag. 2 de 2 Nombre : RUBEN DARIO GARAY QUINTERO N. peticion : IHQ250261 N.Identificación : CC. 6146411 Genero : MASCULINO Edad : 59 años 7 dias EPS : NUEVA EPS Médico tratante : JOSE DAVID CALDERON Servicio : HEMATO ONCOLOGIA HOSP ADULTO Fecha Ingreso : 12/03/2025 Fecha Informe : 28/03/2025",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_MUM1": "POSITIVO",
+      "extraction_timestamp": "2026-01-28T13:32:39.999740",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250261\nCopia Pag. 1 de 2\nNombre : RUBEN DARIO GARAY QUINTERO\nN. peticion : IHQ250261\nN.Identificación : CC. 6146411\nGenero : MASCULINO\nEdad : 59 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE DAVID CALDERON\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 12/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2502583 correspondiente a biopsia de hueso con diagnóstico de\n\"CELULARIDAD GLOBAL DEL 50%, RELACIÓN MIELOIDE ERITROIDE DE 2:1, MADURACIÓN NORMAL DE LA\nLINEA MIELOIDE, MEGACARIOCITOS 7-11 POR CAMPO DE ALTO PODER, SIN INCREMENTO DE CÉLULAS\nPLASMÁTICAS\" para estudios de inmunohistoquímica por lo que se solicita CD20, CD10, CD5, CD3, PAX5,\nBCL2, BCL6, MUM1, C-MYC.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nPresenta acúmulos de linfocitos B maduros con marcación positiva para CD20 y PAX 5. Hay linfocitos T\nacompañantes con marcación difusa de CD3 y CD5 sin formación de cúmulos. Marcación positiva fuerte\npara CD10 y BCL6, con marcación de BCL2 focal débil.\nMUM 1 positivo de manera dispersa sin formación de cúmulos negativo en la zona donde se encuentran\nlos linfocitos B maduros.\nSin marcación para C-MYC.\nDIAGNÓSTICO\n Médula ósea. Biopsia. Estudios de inmunohistoquímica.\nNEOPLASIA DE CÉLULAS B MADURAS.\nCOMENTARIOS\nLa historia clínica, estudios histopatológicos previos y reporte de citometría de flujo favorecen un linfoma\nburkitt, sin embargo, con C-MYC negativo por lo que se sugiere confirmación por estudios moleculares.\nCaso valorado en conjunto con la Doctora Maria Ximena Varela, Patóloga.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 95 ---\nIHQ250261\nCopia Pag. 2 de 2\nNombre : RUBEN DARIO GARAY QUINTERO\nN. peticion : IHQ250261\nN.Identificación : CC. 6146411\nGenero : MASCULINO\nEdad : 59 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE DAVID CALDERON\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 12/03/2025\nFecha Informe : 28/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 96 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "BCL6, CD10, CD20, CD3, CD5, CMYC, MUM1, PAX5",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2502583 correspondiente a biopsia de hueso con diagnóstico de \"CELULARIDAD GLOBAL DEL 50%, RELACIÓN MIELOIDE ERITROIDE DE 2:1, MADURACIÓN NORMAL DE LA LINEA MIELOIDE, MEGACARIOCITOS 7-11 POR CAMPO DE ALTO PODER, SIN INCREMENTO DE CÉLULAS PLASMÁTICAS\" para estudios de inmunohistoquímica por lo que se solicita CD20, CD10, CD5, CD3, PAX5, BCL2, BCL6, MUM1, C-MYC.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Presenta acúmulos de linfocitos B maduros con marcación positiva para CD20 y PAX 5. Hay linfocitos T acompañantes con marcación difusa de CD3 y CD5 sin formación de cúmulos. Marcación positiva fuerte para CD10 y BCL6, con marcación de BCL2 focal débil. MUM 1 positivo de manera dispersa sin formación de cúmulos negativo en la zona donde se encuentran los linfocitos B maduros. Sin marcación para C-MYC.",
+      "Descripcion Diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica. NEOPLASIA DE CÉLULAS B MADURAS.",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Organo": "BX DE HUESO",
+      "Diagnostico Coloracion": "CELULARIDAD GLOBAL DEL 50%, RELACIÓN MIELOIDE ERITROIDE DE 2:1, MADURACIÓN NORMAL DE LA LINEA MIELOIDE, MEGACARIOCITOS 7-11 POR CAMPO DE ALTO PODER, SIN INCREMENTO DE CÉLULAS PLASMÁTICAS",
+      "Diagnostico Principal": "NEOPLASIA DE CÉLULAS B MADURAS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO (fuerte y difusa)",
+      "IHQ_CD5": "POSITIVO (fuerte y difusa)",
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 175,
+      "campos_vacios": 132,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 8,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 132,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula ósea. Biopsia. Estudios de inmunohistoquímica.\nNEOPLASIA DE CÉLULAS B MADURAS.",
+      "valor_corregido": "Médula ósea. Biopsia. Estudios de inmunohistoquímica. NEOPLASIA DE CÉLULAS B MADURAS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250261",
+      "timestamp": "2026-01-28T13:32:39.999523"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La historia clínica, estudios histopatológicos previos y reporte de citometría de flujo favorecen un linfoma\nburkitt, sin embargo, con C-MYC negativo por lo que se sugiere confirmación por estudios moleculares.\nCaso valorado en conjunto con la Doctora Maria Ximena Varela, Patóloga.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 95 ---\nIHQ250261\nCopia Pag. 2 de 2\nNombre : RUBEN DARIO GARAY QUINTERO\nN. peticion : IHQ250261\nN.Identificación : CC. 6146411\nGenero : MASCULINO\nEdad : 59 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE DAVID CALDERON\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 12/03/2025\nFecha Informe : 28/03/2025",
+      "valor_corregido": "La historia clínica, estudios histopatológicos previos y reporte de citometría de flujo favorecen un linfoma burkitt, sin embargo, con C-MYC negativo por lo que se sugiere confirmación por estudios moleculares. Caso valorado en conjunto con la Doctora Maria Ximena Varela, Patóloga. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 95 --- IHQ250261 Copia Pag. 2 de 2 Nombre : RUBEN DARIO GARAY QUINTERO N. peticion : IHQ250261 N.Identificación : CC. 6146411 Genero : MASCULINO Edad : 59 años 7 dias EPS : NUEVA EPS Médico tratante : JOSE DAVID CALDERON Servicio : HEMATO ONCOLOGIA HOSP ADULTO Fecha Ingreso : 12/03/2025 Fecha Informe : 28/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250261",
+      "timestamp": "2026-01-28T13:32:39.999529"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 55
+  }
+}

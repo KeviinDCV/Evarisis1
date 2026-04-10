@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250257_20260128_010655",
+  "numero_peticion": "IHQ250257",
+  "timestamp": "2026-01-28T01:06:55.045899",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250257\nCopia Pag. 1 de 2\nNombre : BLANCA YENNY EGAS BACCA\nN. peticion : IHQ250257\nN.Identificación : CC. 66650828\nGenero : FEMENINO\nEdad : 66 años 1 mes 26 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA ARCE VARELA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 11/03/2025\nFecha Informe : 13/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional\nrotulado como M2501856 , correspondiente a “ biopsia de mama izquierda” con diagnóstico de “\nCARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL), GRADO HISTOLÓGICO 3 ”. Se realizan niveles al\nbloque 2 de parafina para la marcación con: Receptores estrógeno, Receptores de progesterona, Her2 y\nKi67.\nDESCRIPCIÓN MICROSCÓPICA\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA\nRef. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nLos cortes histológicos muestran tejido mamario con adecuada representación de carcinoma invasivo de\ntipo no especial (Ductal), se documentan los siguientes hallazgos:\nSe encuentra:\nExpresión de receptores de estrógenos: Negativo\nExpresión de receptores de progesterona: Negativo\nSobre expresión del oncogén HER2/neu: Positivo (score 3+).\nEl Índice proliferativo es del 50% Ki67.\nTiempo de isquemia en frío: desconocido\nTiempo de fijación en formalina buferada: desconocido.\nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---\nIHQ250257\nCopia Pag. 2 de 2\nNombre : BLANCA YENNY EGAS BACCA\nN. peticion : IHQ250257\nN.Identificación : CC. 66650828\nGenero : FEMENINO\nEdad : 66 años 1 mes 26 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA ARCE VARELA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 11/03/2025\nFecha Informe : 13/03/2025\nGlándula mamaria izquierda . Lesión. Biopsia. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO\nNO ESPECIAL (DUCTAL) CON:\nEXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVO\nEXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVO\nSOBREEXPRESIÓN DE HER2/NEU: Positiva (SCORE 3+)\nINDICE DE PROLIFERACIÓN DEL 50% (KI67)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3882,
+      "reduccion_porcentaje": 97.84
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250257",
+      "caso_num": 45,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "BLANCA YENNY EGAS BACCA",
+      "numero_peticion": "IHQ250257",
+      "identificacion": "66650828",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "66",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "DANIELA ARCE VARELA",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "11/03/2025",
+      "fecha_informe": "13/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250257",
+      "N. de identificación": "66650828",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "DANIELA ARCE VARELA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "11/03/2025",
+      "Fecha Informe": "13/03/2025",
+      "nombres": "BLANCA YENNY",
+      "Primer nombre": "BLANCA",
+      "Segundo nombre": "YENNY",
+      "apellidos": "EGAS BACCA",
+      "Primer apellido": "EGAS",
+      "Segundo apellido": "BACCA",
+      "nombre_formal": "EGAS BACCA, BLANCA YENNY",
+      "diagnostico": "Glándula mamaria izquierda . Lesión. Biopsia. Estudios de inmunohistoquímica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL) CON: EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVO EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVO SOBREEXPRESIÓN DE HER2/NEU: Positiva (SCORE 3+) INDICE DE PROLIFERACIÓN DEL 50% (KI-67): 11/03/2025",
+      "descripcion_microscopica": "Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Los cortes histológicos muestran tejido mamario con adecuada representación de carcinoma invasivo de tipo no especial (Ductal), se documentan los siguientes hallazgos: Se encuentra: Expresión de receptores de estrógenos: Negativo Expresión de receptores de progesterona: Negativo Sobre expresión del oncogén HER2/neu: Positivo (score 3+). El Índice proliferativo es del 50% KI-67. Tiempo de isquemia en frío: desconocido Tiempo de fijación en formalina buferada: desconocido.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como M2501856 , correspondiente a \" biopsia de mama izquierda\" con diagnóstico de \" CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL), GRADO HISTOLÓGICO 3 \". Se realizan niveles al bloque 2 de parafina para la marcación con: Receptores estrógeno, Receptores de progesterona, Her2 y KI-67.",
+      "ihq_organo": "GLÁNDULA MAMARIA IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GLÁNDULA MAMARIA IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: POSITIVO (Score 3+), Ki-67: 50%, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_HER2": "POSITIVO (Score 3+)",
+      "IHQ_KI-67": "50%",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "extraction_timestamp": "2026-01-28T01:06:55.620373",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250257\nCopia Pag. 1 de 2\nNombre : BLANCA YENNY EGAS BACCA\nN. peticion : IHQ250257\nN.Identificación : CC. 66650828\nGenero : FEMENINO\nEdad : 66 años 1 mes 26 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA ARCE VARELA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 11/03/2025\nFecha Informe : 13/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional\nrotulado como M2501856 , correspondiente a “ biopsia de mama izquierda” con diagnóstico de “\nCARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL), GRADO HISTOLÓGICO 3 ”. Se realizan niveles al\nbloque 2 de parafina para la marcación con: Receptores estrógeno, Receptores de progesterona, Her2 y\nKi67.\nDESCRIPCIÓN MICROSCÓPICA\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA\nRef. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nLos cortes histológicos muestran tejido mamario con adecuada representación de carcinoma invasivo de\ntipo no especial (Ductal), se documentan los siguientes hallazgos:\nSe encuentra:\nExpresión de receptores de estrógenos: Negativo\nExpresión de receptores de progesterona: Negativo\nSobre expresión del oncogén HER2/neu: Positivo (score 3+).\nEl Índice proliferativo es del 50% Ki67.\nTiempo de isquemia en frío: desconocido\nTiempo de fijación en formalina buferada: desconocido.\nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---\nIHQ250257\nCopia Pag. 2 de 2\nNombre : BLANCA YENNY EGAS BACCA\nN. peticion : IHQ250257\nN.Identificación : CC. 66650828\nGenero : FEMENINO\nEdad : 66 años 1 mes 26 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA ARCE VARELA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 11/03/2025\nFecha Informe : 13/03/2025\nGlándula mamaria izquierda . Lesión. Biopsia. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO\nNO ESPECIAL (DUCTAL) CON:\nEXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVO\nEXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVO\nSOBREEXPRESIÓN DE HER2/NEU: Positiva (SCORE 3+)\nINDICE DE PROLIFERACIÓN DEL 50% (KI67)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como M2501856 , correspondiente a “ biopsia de mama izquierda” con diagnóstico de “ CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL), GRADO HISTOLÓGICO 3 ”. Se realizan niveles al bloque 2 de parafina para la marcación con: Receptores estrógeno, Receptores de progesterona, Her2 y Ki67.",
+      "Descripcion microscopica": "Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Los cortes histológicos muestran tejido mamario con adecuada representación de carcinoma invasivo de tipo no especial (Ductal), se documentan los siguientes hallazgos: Se encuentra: Expresión de receptores de estrógenos: Negativo Expresión de receptores de progesterona: Negativo Sobre expresión del oncogén HER2/neu: Positivo (score 3+). El Índice proliferativo es del 50% Ki67. Tiempo de isquemia en frío: desconocido Tiempo de fijación en formalina buferada: desconocido.",
+      "Descripcion Diagnostico": "Glándula mamaria izquierda . Lesión. Biopsia. Estudios de inmunohistoquímica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL) CON: EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVO EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVO SOBREEXPRESIÓN DE HER2/NEU: Positiva (SCORE 3+) INDICE DE PROLIFERACIÓN DEL 50% (KI-67): 11/03/2025",
+      "IHQ_ORGANO": "GLÁNDULA MAMARIA IZQUIERDA",
+      "Organo": "BX MAMA IZQUIERDA",
+      "Diagnostico Coloracion": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL),",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL) CON: EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVO EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVO SOBREEXPRESIÓN DE HER2/NEU: POSITIVA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: POSITIVO (Score 3+), Ki-67: 50%, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_HER2": "POSITIVO (Score 3+)",
+      "IHQ_KI-67": "50%",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 174,
+      "campos_vacios": 135,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Glándula mamaria izquierda . Lesión. Biopsia. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO\nNO ESPECIAL (DUCTAL) CON:\nEXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVO\nEXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVO\nSOBREEXPRESIÓN DE HER2/NEU: Positiva (SCORE 3+)\nINDICE DE PROLIFERACIÓN DEL 50% (KI67): 11/03/2025",
+      "valor_corregido": "Glándula mamaria izquierda . Lesión. Biopsia. Estudios de inmunohistoquímica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL) CON: EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVO EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVO SOBREEXPRESIÓN DE HER2/NEU: Positiva (SCORE 3+) INDICE DE PROLIFERACIÓN DEL 50% (KI-67): 11/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250257",
+      "timestamp": "2026-01-28T01:06:55.620102"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como M2501856 , correspondiente a “ biopsia de mama izquierda” con diagnóstico de “ CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL), GRADO HISTOLÓGICO 3 ”. Se realizan niveles al bloque 2 de parafina para la marcación con: Receptores estrógeno, Receptores de progesterona, Her2 y Ki67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como M2501856 , correspondiente a \" biopsia de mama izquierda\" con diagnóstico de \" CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL), GRADO HISTOLÓGICO 3 \". Se realizan niveles al bloque 2 de parafina para la marcación con: Receptores estrógeno, Receptores de progesterona, Her2 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250257",
+      "timestamp": "2026-01-28T01:06:55.620108"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Los cortes histológicos muestran tejido mamario con adecuada representación de carcinoma invasivo de tipo no especial (Ductal), se documentan los siguientes hallazgos: Se encuentra: Expresión de receptores de estrógenos: Negativo Expresión de receptores de progesterona: Negativo Sobre expresión del oncogén HER2/neu: Positivo (score 3+). El Índice proliferativo es del 50% Ki67. Tiempo de isquemia en frío: desconocido Tiempo de fijación en formalina buferada: desconocido.",
+      "valor_corregido": "Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Los cortes histológicos muestran tejido mamario con adecuada representación de carcinoma invasivo de tipo no especial (Ductal), se documentan los siguientes hallazgos: Se encuentra: Expresión de receptores de estrógenos: Negativo Expresión de receptores de progesterona: Negativo Sobre expresión del oncogén HER2/neu: Positivo (score 3+). El Índice proliferativo es del 50% KI-67. Tiempo de isquemia en frío: desconocido Tiempo de fijación en formalina buferada: desconocido.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250257",
+      "timestamp": "2026-01-28T01:06:55.620111"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 50
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "session_id": "IHQ250267_20260203_031821",
+  "numero_peticion": "IHQ250267",
+  "timestamp": "2026-02-03T03:18:21.179863",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250267\nCopia Pag. 1 de 2\nNombre : MARIA CERAPIA ANGULO CASTILLO\nN. peticion : IHQ250267\nN.Identificación : CC. 66948055\nGenero : FEMENINO\nEdad : 50 años 26 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : EULER JAVIER BURBANO\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 13/03/2025\nFecha Informe : 21/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nHISTEROANEXECTOMIA +\nAPENDICECTOMIA +\nOMENTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501818-A11 que corresponde a histeroanexectomia bilateral con\ndiagnóstico de \"HALLAZGOS FAVORECEN CARCINOMA INFILTRANTE INDIFERENCIADO BILATERAL DE\nOVARIOS CON EXTENSIÓN A APENDICE CECAL Y MIOMETRIO; CERVIX SIN ALTERACIONES; BORDE\nEXOCERVICAL NEGATIVO; BORDES DE PARAMETRIOS NEGATIVOS; ENDOMETRIO BASAL; LEIOMIOMA\". Se\nordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales presentan inmunorreactividad fuerte y difusa para CKAE1/AE3, CK7, GATA-3,\nMamaglobina, CK19 y Receptor de Estrógeno, siendo negativas para Inhibina-A, Sinaptofisina,\nCromogranina, WT1, PAX-8, TTF-1, p40, CA19-9, CDX2 y CK20.\nPresentan las células tumorales positividad focal en bloque para p16 y con una expresión salvaje para\np53.\nEl índice de proliferación celular presenta una Ki-67 del 30%.\nDIAGNÓSTICO\nÚtero y ovarios. Masa. Histeroanexectomia. Estudios de inmunohistoquímica: \nHALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA POBREMENTE DIFERENCIADO DE\nPROBABLE ORIGEN EN MAMA.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---\nIHQ250267\nCopia Pag. 2 de 2\nNombre : MARIA CERAPIA ANGULO CASTILLO\nN. peticion : IHQ250267\nN.Identificación : CC. 66948055\nGenero : FEMENINO\nEdad : 50 años 26 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : EULER JAVIER BURBANO\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 13/03/2025\nFecha Informe : 21/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3489,
+      "reduccion_porcentaje": 98.0
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250267",
+      "caso_num": 5,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P53": "POSITIVO (focal)",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_INHIBINA": "NEGATIVO",
+      "nombre_completo": "MARIA CERAPIA ANGULO CASTILLO",
+      "numero_peticion": "IHQ250267",
+      "identificacion": "66948055",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "50",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "EULER JAVIER BURBANO",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "13/03/2025",
+      "fecha_informe": "21/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250267",
+      "N. de identificación": "66948055",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "EULER JAVIER BURBANO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "13/03/2025",
+      "Fecha Informe": "21/03/2025",
+      "nombres": "MARIA CERAPIA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "CERAPIA",
+      "apellidos": "ANGULO CASTILLO",
+      "Primer apellido": "ANGULO",
+      "Segundo apellido": "CASTILLO",
+      "nombre_formal": "ANGULO CASTILLO, MARIA CERAPIA",
+      "diagnostico": "Útero y ovarios. Masa. Histeroanexectomia. Estudios de inmunohistoquímica: HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA POBREMENTE DIFERENCIADO DE PROBABLE ORIGEN EN MAMA.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad fuerte y difusa para CKAE1/AE3, CK7, GATA-3, Mamaglobina, CK19 y Receptor de Estrógeno, siendo negativas para Inhibina-A, Synaptophysin, Cromogranina, WT1, PAX-8, TTF1, p40, CA19-9, CDX2 y CK20. Presentan las células tumorales positividad focal en bloque para p16 y con una expresión salvaje para p53. El índice de proliferación celular presenta una KI-67 del 30%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2501818-A11 que corresponde a histeroanexectomia bilateral con diagnóstico de \"HALLAZGOS FAVORECEN CARCINOMA INFILTRANTE INDIFERENCIADO BILATERAL DE OVARIOS CON EXTENSIÓN A APENDICE CECAL Y MIOMETRIO; CERVIX SIN ALTERACIONES; BORDE EXOCERVICAL NEGATIVO; BORDES DE PARAMETRIOS NEGATIVOS; ENDOMETRIO BASAL; LEIOMIOMA\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "ÚTERO Y OVARIOS",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "APENDICECTOMÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ÚTERO Y OVARIOS",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: 30%, Receptor de Estrógeno: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_MAMAGLOBINA": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_KI-67": "30%",
+      "p16": "POSITIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-02-03T03:18:21.542290",
+      "extractor_version": "6.5.87_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250267\nCopia Pag. 1 de 2\nNombre : MARIA CERAPIA ANGULO CASTILLO\nN. peticion : IHQ250267\nN.Identificación : CC. 66948055\nGenero : FEMENINO\nEdad : 50 años 26 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : EULER JAVIER BURBANO\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 13/03/2025\nFecha Informe : 21/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nHISTEROANEXECTOMIA +\nAPENDICECTOMIA +\nOMENTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501818-A11 que corresponde a histeroanexectomia bilateral con\ndiagnóstico de \"HALLAZGOS FAVORECEN CARCINOMA INFILTRANTE INDIFERENCIADO BILATERAL DE\nOVARIOS CON EXTENSIÓN A APENDICE CECAL Y MIOMETRIO; CERVIX SIN ALTERACIONES; BORDE\nEXOCERVICAL NEGATIVO; BORDES DE PARAMETRIOS NEGATIVOS; ENDOMETRIO BASAL; LEIOMIOMA\". Se\nordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales presentan inmunorreactividad fuerte y difusa para CKAE1/AE3, CK7, GATA-3,\nMamaglobina, CK19 y Receptor de Estrógeno, siendo negativas para Inhibina-A, Sinaptofisina,\nCromogranina, WT1, PAX-8, TTF-1, p40, CA19-9, CDX2 y CK20.\nPresentan las células tumorales positividad focal en bloque para p16 y con una expresión salvaje para\np53.\nEl índice de proliferación celular presenta una Ki-67 del 30%.\nDIAGNÓSTICO\nÚtero y ovarios. Masa. Histeroanexectomia. Estudios de inmunohistoquímica: \nHALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA POBREMENTE DIFERENCIADO DE\nPROBABLE ORIGEN EN MAMA.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---\nIHQ250267\nCopia Pag. 2 de 2\nNombre : MARIA CERAPIA ANGULO CASTILLO\nN. peticion : IHQ250267\nN.Identificación : CC. 66948055\nGenero : FEMENINO\nEdad : 50 años 26 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : EULER JAVIER BURBANO\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 13/03/2025\nFecha Informe : 21/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CA19-9, CDX2, CK19, CK20, CK7, CKAE1AE3, CROMOGRANINA, GATA3, Ki-67, P16, P40, P53, PAX8, Receptor de Estrógeno, SYNAPTOFISINA, TTF1, WT1",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2501818-A11 que corresponde a histeroanexectomia bilateral con diagnóstico de \"HALLAZGOS FAVORECEN CARCINOMA INFILTRANTE INDIFERENCIADO BILATERAL DE OVARIOS CON EXTENSIÓN A APENDICE CECAL Y MIOMETRIO; CERVIX SIN ALTERACIONES; BORDE EXOCERVICAL NEGATIVO; BORDES DE PARAMETRIOS NEGATIVOS; ENDOMETRIO BASAL; LEIOMIOMA\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad fuerte y difusa para CKAE1/AE3, CK7, GATA-3, Mamaglobina, CK19 y Receptor de Estrógeno, siendo negativas para Inhibina-A, Sinaptofisina, Cromogranina, WT1, PAX-8, TTF-1, p40, CA19-9, CDX2 y CK20. Presentan las células tumorales positividad focal en bloque para p16 y con una expresión salvaje para p53. El índice de proliferación celular presenta una Ki-67 del 30%.",
+      "Descripcion Diagnostico": "Útero y ovarios. Masa. Histeroanexectomia. Estudios de inmunohistoquímica: HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA POBREMENTE DIFERENCIADO DE PROBABLE ORIGEN EN MAMA.",
+      "IHQ_ORGANO": "ÚTERO Y OVARIOS",
+      "Organo": "HISTEROANEXECTOMIA + APENDICECTOMIA + OMENTO",
+      "Diagnostico Coloracion": "CARCINOMA INFILTRANTE INDIFERENCIADO BILATERAL DE OVARIOS CON EXTENSIÓN A APENDICE CECAL Y MIOMETRIO; CERVIX SIN ALTERACIONES; BORDE EXOCERVICAL NEGATIVO; BORDES DE PARAMETRIOS NEGATIVOS; ENDOMETRIO BASAL; LEIOMIOMA",
+      "Diagnostico Principal": "HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA POBREMENTE DIFERENCIADO DE PROBABLE ORIGEN EN MAMA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 30%, Receptor de Estrógeno: POSITIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_KI-67": "30%",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_P53": "POSITIVO (focal)",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_MAMAGLOBINA": "POSITIVO",
+      "IHQ_INHIBINA": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 122,
+      "campos_completos": 54,
+      "biomarcadores_encontrados": 19,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 122,
+      "total_campos_completos": 54
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Útero y ovarios. Masa. Histeroanexectomia. Estudios de inmunohistoquímica: \nHALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA POBREMENTE DIFERENCIADO DE\nPROBABLE ORIGEN EN MAMA.",
+      "valor_corregido": "Útero y ovarios. Masa. Histeroanexectomia. Estudios de inmunohistoquímica: HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA POBREMENTE DIFERENCIADO DE PROBABLE ORIGEN EN MAMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250267",
+      "timestamp": "2026-02-03T03:18:21.542099"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad fuerte y difusa para CKAE1/AE3, CK7, GATA-3, Mamaglobina, CK19 y Receptor de Estrógeno, siendo negativas para Inhibina-A, Sinaptofisina, Cromogranina, WT1, PAX-8, TTF-1, p40, CA19-9, CDX2 y CK20. Presentan las células tumorales positividad focal en bloque para p16 y con una expresión salvaje para p53. El índice de proliferación celular presenta una Ki-67 del 30%.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad fuerte y difusa para CKAE1/AE3, CK7, GATA-3, Mamaglobina, CK19 y Receptor de Estrógeno, siendo negativas para Inhibina-A, Synaptophysin, Cromogranina, WT1, PAX-8, TTF1, p40, CA19-9, CDX2 y CK20. Presentan las células tumorales positividad focal en bloque para p16 y con una expresión salvaje para p53. El índice de proliferación celular presenta una KI-67 del 30%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250267",
+      "timestamp": "2026-02-03T03:18:21.542105"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 67
+  }
+}

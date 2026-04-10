@@ -1,0 +1,91 @@
+======================================================================
+RESUMEN EJECUTIVO: DIAGNOSTICO FIX v6.5.33 - IHQ250239 MMR
+======================================================================
+
+ESTADO ACTUAL: REPROCESAMIENTO COMPLETO FALLIDO
+Score: 100% (pero valores MMR INCORRECTOS)
+
+----------------------------------------------------------------------
+PROBLEMA IDENTIFICADO
+----------------------------------------------------------------------
+
+Patron v6.5.32 (ACTUAL - INCORRECTO):
+  r'(?i)[\+]?\s*Resultado\s+de\s+MLH1[:\s]*(.+?)(?:\n|$)'
+
+Por que falla:
+  1. Captura (.+?) hasta \n (salto de linea) o $ (fin de string)
+  2. Texto OCR esta TODO EN UNA LINEA separado por |
+  3. Resultado: MLH1 captura desde su valor HASTA el final de linea
+
+Texto OCR real (IHQ250239):
+  "Resultado de MLH1: expresion nuclear intacta | Resultado de MLH2: expresion nuclear intacta | Resultado de MSH6: expresion nuclear intacta | Resultado de PMS2: expresion nuclear intacta"
+
+Valores extraidos (INCORRECTOS):
+  IHQ_MLH1: ", MLH2, MSH6 Y PMS2)"
+  IHQ_MSH2: "POSITIVO (EXPRESION NUCLEAR INTACTA)"
+  IHQ_MSH6: "Y PMS2"
+  IHQ_PMS2: ")"
+
+----------------------------------------------------------------------
+SOLUCION PROPUESTA: v6.5.33
+----------------------------------------------------------------------
+
+Patron CORRECTO para los 4 biomarcadores MMR:
+
+MLH1:
+  r'(?i)Resultado\s+de\s+MLH1[:\s]*([^|]+?)(?=\s*\||\n|$)'
+
+MSH2:
+  r'(?i)Resultado\s+de\s+(?:MLH2|MSH2)[:\s]*([^|]+?)(?=\s*\||\n|$)'
+
+MSH6:
+  r'(?i)Resultado\s+de\s+MSH6[:\s]*([^|]+?)(?=\s*\||\n|$)'
+
+PMS2:
+  r'(?i)Resultado\s+de\s+PMS2[:\s]*([^|]+?)(?=\s*\||\n|$)'
+
+Cambios clave:
+  1. [^|]+? = Captura TODO excepto el separador |
+  2. (?=\s*\||\n|$) = Lookahead: detiene ANTES del siguiente |
+  3. Quitar [\+]? innecesario (no hay + al inicio en protocolo CAP)
+
+----------------------------------------------------------------------
+ARCHIVOS A MODIFICAR
+----------------------------------------------------------------------
+
+core/extractors/biomarker_extractor.py:
+  - Linea 3366 (MLH1): Reemplazar patron prioridad 1
+  - Linea 3415-3416 (MSH2): Reemplazar patrones prioridad 1
+  - Linea 3459 (MSH6): Reemplazar patron prioridad 1
+  - Linea 3502 (PMS2): Agregar patron nuevo prioridad 1
+
+----------------------------------------------------------------------
+VALORES ESPERADOS DESPUES DE v6.5.33
+----------------------------------------------------------------------
+
+IHQ_MLH1: "POSITIVO"
+  - Captura: "expresion nuclear intacta"
+  - Normalizacion: "expresion nuclear intacta" -> POSITIVO
+
+IHQ_MSH2: "POSITIVO"
+  - Captura: "expresion nuclear intacta"
+  - Normalizacion: "expresion nuclear intacta" -> POSITIVO
+
+IHQ_MSH6: "POSITIVO"
+  - Captura: "expresion nuclear intacta"
+  - Normalizacion: "expresion nuclear intacta" -> POSITIVO
+
+IHQ_PMS2: "POSITIVO"
+  - Captura: "expresion nuclear intacta"
+  - Normalizacion: "expresion nuclear intacta" -> POSITIVO
+
+----------------------------------------------------------------------
+PROXIMO PASO
+----------------------------------------------------------------------
+
+1. Usuario modifica biomarker_extractor.py (lineas 3366, 3415-3416, 3459, 3502)
+2. Ejecutar FUNC-06 para reprocesar IHQ250239
+3. Validar que TODOS los valores MMR sean "POSITIVO"
+4. Score esperado: 100% con valores correctos
+
+======================================================================

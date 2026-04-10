@@ -1,0 +1,143 @@
+{
+  "session_id": "IHQ250286_20260203_025145",
+  "numero_peticion": "IHQ250286",
+  "timestamp": "2026-02-03T02:51:45.169478",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250286\nCopia Pag. 1 de 2\nNombre : JUANA DE LA CRUZ MARTINEZ\nSALAZAR\nN. peticion : IHQ250286\nN.Identificación : PPT. 5414795\nGenero : FEMENINO\nEdad : 49 años 1 mes 15 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 19/03/2025\nFecha Informe : 26/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASTECTOMIA RADICAL\nMAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501277 bloques A4 y A6 que corresponden a mastectomia radical\nderecha, con diagnóstico de \"HALLAZGOS QUE FAVORECEN PROLIFERACION INTRADUCTAL CON ATIPIA\nFOCAL A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUIMICA; MICROCALCIFICACIONES;\nINFLAMACION CRONICA NO ESPECIFICA; PIEL, PEZON Y BORDE PROFUNDO SIN ALTERACIONES. Se\nrealizan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nTejido mamario con extensa fibrosis, microcalcificaciones, proliferación de acinos con hiperplasia ductal,\ntodos los ductos y acinos presentan doble capa celular, con capa de células mioepiteliales positivas para\np63 y Calponina, CK5/6 y E-cadherina, presentando un positividad en mosaico para Receptor de\nEstrógeno.\nDIAGNÓSTICO\nMama derecha. Tumor. Mastectomia radical. Estudios de inmunohistoquímica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON:\n-NEGATIVO PARA PROCESO NEOPLASICO RESIDUAL\n-HIPERPLASIA DUCTAL USUAL\n-ADENOSIS\n-Residual cancer Burden: RCB-0 (pCR) \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---\nIHQ250286\nCopia Pag. 2 de 2\nNombre : JUANA DE LA CRUZ MARTINEZ\nSALAZAR\nN. peticion : IHQ250286\nN.Identificación : PPT. 5414795\nGenero : FEMENINO\nEdad : 49 años 1 mes 15 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 19/03/2025\nFecha Informe : 26/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3443,
+      "reduccion_porcentaje": 98.03
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250286",
+      "caso_num": 23,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (mosaico)",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_CK5_6": "POSITIVO (mosaico)",
+      "IHQ_E_CADHERINA": "POSITIVO (mosaico)",
+      "nombre_completo": "JUANA DE LA CRUZ MARTINEZ SALAZAR",
+      "numero_peticion": "IHQ250286",
+      "identificacion": "5414795",
+      "tipo_documento": "PPT",
+      "Genero": "FEMENINO",
+      "Edad": "49",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "19/03/2025",
+      "fecha_informe": "26/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250286",
+      "N. de identificación": "5414795",
+      "Tipo de documento": "PPT",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "19/03/2025",
+      "Fecha Informe": "26/03/2025",
+      "nombres": "JUANA DE LA CRUZ",
+      "Primer nombre": "JUANA",
+      "Segundo nombre": "DE LA CRUZ",
+      "apellidos": "MARTINEZ SALAZAR",
+      "Primer apellido": "MARTINEZ",
+      "Segundo apellido": "SALAZAR",
+      "nombre_formal": "MARTINEZ SALAZAR, JUANA DE LA CRUZ",
+      "diagnostico": "Mama derecha. Tumor. Mastectomia radical. Estudios de inmunohistoquímica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON: -NEGATIVO PARA PROCESO NEOPLASICO RESIDUAL -HIPERPLASIA DUCTAL USUAL -ADENOSIS -Residual cancer Burden: RCB-0 (pCR)",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Tejido mamario con extensa fibrosis, microcalcificaciones, proliferación de acinos con hiperplasia ductal, todos los ductos y acinos presentan doble capa celular, con capa de células mioepiteliales positivas para p63 y Calponina, CK5/6 y E-cadherina, presentando un positividad en mosaico para Receptor de Estrógeno.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2501277 bloques A4 y A6 que corresponden a mastectomia radical derecha, con diagnóstico de \"HALLAZGOS QUE FAVORECEN PROLIFERACION INTRADUCTAL CON ATIPIA FOCAL A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUIMICA; MICROCALCIFICACIONES; INFLAMACION CRONICA NO ESPECIFICA; PIEL, PEZON Y BORDE PROFUNDO SIN ALTERACIONES. Se realizan estudios de inmunohistoquímica.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (mosaico)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-02-03T02:51:45.533920",
+      "extractor_version": "6.5.84_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250286\nCopia Pag. 1 de 2\nNombre : JUANA DE LA CRUZ MARTINEZ\nSALAZAR\nN. peticion : IHQ250286\nN.Identificación : PPT. 5414795\nGenero : FEMENINO\nEdad : 49 años 1 mes 15 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 19/03/2025\nFecha Informe : 26/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASTECTOMIA RADICAL\nMAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501277 bloques A4 y A6 que corresponden a mastectomia radical\nderecha, con diagnóstico de \"HALLAZGOS QUE FAVORECEN PROLIFERACION INTRADUCTAL CON ATIPIA\nFOCAL A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUIMICA; MICROCALCIFICACIONES;\nINFLAMACION CRONICA NO ESPECIFICA; PIEL, PEZON Y BORDE PROFUNDO SIN ALTERACIONES. Se\nrealizan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nTejido mamario con extensa fibrosis, microcalcificaciones, proliferación de acinos con hiperplasia ductal,\ntodos los ductos y acinos presentan doble capa celular, con capa de células mioepiteliales positivas para\np63 y Calponina, CK5/6 y E-cadherina, presentando un positividad en mosaico para Receptor de\nEstrógeno.\nDIAGNÓSTICO\nMama derecha. Tumor. Mastectomia radical. Estudios de inmunohistoquímica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON:\n-NEGATIVO PARA PROCESO NEOPLASICO RESIDUAL\n-HIPERPLASIA DUCTAL USUAL\n-ADENOSIS\n-Residual cancer Burden: RCB-0 (pCR) \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---\nIHQ250286\nCopia Pag. 2 de 2\nNombre : JUANA DE LA CRUZ MARTINEZ\nSALAZAR\nN. peticion : IHQ250286\nN.Identificación : PPT. 5414795\nGenero : FEMENINO\nEdad : 49 años 1 mes 15 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 19/03/2025\nFecha Informe : 26/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK5/6, Calponina, P63, Receptor de Estrógeno",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2501277 bloques A4 y A6 que corresponden a mastectomia radical derecha, con diagnóstico de \"HALLAZGOS QUE FAVORECEN PROLIFERACION INTRADUCTAL CON ATIPIA FOCAL A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUIMICA; MICROCALCIFICACIONES; INFLAMACION CRONICA NO ESPECIFICA; PIEL, PEZON Y BORDE PROFUNDO SIN ALTERACIONES. Se realizan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Tejido mamario con extensa fibrosis, microcalcificaciones, proliferación de acinos con hiperplasia ductal, todos los ductos y acinos presentan doble capa celular, con capa de células mioepiteliales positivas para p63 y Calponina, CK5/6 y E-cadherina, presentando un positividad en mosaico para Receptor de Estrógeno.",
+      "Descripcion Diagnostico": "Mama derecha. Tumor. Mastectomia radical. Estudios de inmunohistoquímica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON: -NEGATIVO PARA PROCESO NEOPLASICO RESIDUAL -HIPERPLASIA DUCTAL USUAL -ADENOSIS -Residual cancer Burden: RCB-0 (pCR)",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "MASTECTOMIA RADICAL MAMA DERECHA",
+      "Diagnostico Coloracion": "HALLAZGOS QUE FAVORECEN PROLIFERACION INTRADUCTAL CON ATIPIA FOCAL A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUIMICA; MICROCALCIFICACIONES; INFLAMACION CRONICA NO ESPECIFICA; PIEL, PEZON Y BORDE PROFUNDO SIN ALTERACIONES",
+      "Diagnostico Principal": "HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON: -NEGATIVO PARA PROCESO NEOPLASICO RESIDUAL -HIPERPLASIA DUCTAL USUAL -ADENOSIS -RESIDUAL CANCER BURDEN: RCB-0 (PCR)",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (mosaico)",
+      "IHQ_CK5_6": "POSITIVO (mosaico)",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (mosaico)",
+      "IHQ_E_CADHERINA": "POSITIVO (mosaico)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 136,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Tumor. Mastectomia radical. Estudios de inmunohistoquímica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON:\n-NEGATIVO PARA PROCESO NEOPLASICO RESIDUAL\n-HIPERPLASIA DUCTAL USUAL\n-ADENOSIS\n-Residual cancer Burden: RCB-0 (pCR)",
+      "valor_corregido": "Mama derecha. Tumor. Mastectomia radical. Estudios de inmunohistoquímica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON: -NEGATIVO PARA PROCESO NEOPLASICO RESIDUAL -HIPERPLASIA DUCTAL USUAL -ADENOSIS -Residual cancer Burden: RCB-0 (pCR)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250286",
+      "timestamp": "2026-02-03T02:51:45.533651"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 51
+  }
+}

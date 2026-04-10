@@ -1,0 +1,42 @@
+{
+  "caso": "IHQ250217",
+  "version": "v6.4.87",
+  "timestamp": "2026-01-19T00:10:55.635214",
+  "fix_aplicado": "PAX8 extracción con separador Y case-insensitive",
+  "resultado": "FALLIDO",
+  "score": 100.0,
+  "problema_critico": {
+    "campo": "IHQ_PAX8",
+    "valor_esperado": "NEGATIVO",
+    "valor_obtenido": "NO MENCIONADO",
+    "texto_ocr": "Son negativas para CK20, CDX2, TTF-1 y PAX-8",
+    "patron_esperado": "Son negativas para ... y PAX-8",
+    "separador": "Y"
+  },
+  "analisis": {
+    "patron_funciona_para": [
+      "CK20: NEGATIVO (extraido correctamente)",
+      "CDX2: NEGATIVO (extraido correctamente)",
+      "TTF-1: NEGATIVO (extraido correctamente)"
+    ],
+    "patron_falla_para": [
+      "PAX-8: NO MENCIONADO (deberia ser NEGATIVO)"
+    ],
+    "causa_probable": "El patrón extrae los 3 primeros biomarcadores separados por comas, pero NO extrae el último después de \"y\""
+  },
+  "evidencia_ocr": {
+    "descripcion_microscopica": "Las células tumorales son positivas para CK7, CK19 y CA19-9. Son negativas para CK20, CDX2, TTF-1 y PAX-8",
+    "estudios_solicitados": "CK7, CK20, CK19, CA19-9, CDX2, TTF-1, PAX 8"
+  },
+  "biomarcadores_extraidos": {
+    "IHQ_CK7": "POSITIVO",
+    "IHQ_CK20": "NEGATIVO",
+    "IHQ_CK19": "POSITIVO",
+    "IHQ_CA19_9": "POSITIVO",
+    "IHQ_CDX2": "NEGATIVO",
+    "IHQ_TTF1": "NEGATIVO",
+    "IHQ_PAX8": "NO MENCIONADO"
+  },
+  "recomendacion": "El patrón regex en biomarker_extractor.py v6.4.87 necesita ajuste. Debe capturar biomarcadores después de \"y\" al final de la lista.",
+  "siguiente_paso": "Revisar patrón en biomarker_extractor.py líneas ~2500-2600 (patrón de extracción de negativos con separador Y)"
+}

@@ -1,0 +1,139 @@
+{
+  "numero_caso": "IHQ250228",
+  "caso_num": 17,
+  "total_casos": 50,
+  "timestamp": "2026-01-28T04:24:16.920112",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 15,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "CARCINOMA MODERADAMENTE DIFERENCIADO",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN COMPROMISO POR CARCINOMA DE PROBABLE ORIGEN BILIAR"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 valores NO coinciden con OCR; 1 biomarcadores extras en BD",
+      "total_solicitado_ocr": 14,
+      "total_solicitado_bd": 15,
+      "estudios_ocr": [
+        "CK7",
+        "CK20",
+        "ARGINASA",
+        "GLIPICAN",
+        "HEPATOCITO",
+        "CDX2",
+        "CA19-9",
+        "CK19",
+        "TTF-1",
+        "GATA 3",
+        "CEA",
+        "AFP",
+        "EMA",
+        "GATA3"
+      ],
+      "estudios_bd": [
+        "CK7",
+        "CK20",
+        "ARGINASA",
+        "GLIPICAN",
+        "HEPATOCITO",
+        "CDX2",
+        "CA19-9",
+        "CK19",
+        "TTF-1",
+        "GATA 3",
+        "CEA",
+        "AFP",
+        "EMA",
+        "GATA3",
+        "CKAE1AE3"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "CKAE1AE3"
+      ],
+      "mapeados": 14,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "CK19",
+          "columna": "IHQ_CK19",
+          "valor_bd": "POSITIVO",
+          "valor_ocr": "c"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica al caso institucional con rótuloM2501555 que corresponde ..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "HÍGADO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

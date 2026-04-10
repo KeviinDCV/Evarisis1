@@ -1,0 +1,170 @@
+{
+  "session_id": "IHQ250276_20260203_044511",
+  "numero_peticion": "IHQ250276",
+  "timestamp": "2026-02-03T04:45:11.218503",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250276\nCopia Pag. 1 de 2\nNombre : ARACELLY RODAS JARAMILLO\nN. peticion : IHQ250276\nN.Identificación : CC. 25233708\nGenero : FEMENINO\nEdad : 55 años 10 meses 27 dias\nEPS : NUEVA EPS\nMédico tratante : NATALIA TORO BEDOYA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 17/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION MAMA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de “ Tomas\nuribe uribe\" como “Q25-126” que corresponde a “Biopsia trucut mama izquierda\" con\ndiagnóstico de “HIPERPLASIA DUCTAL DE TIPO USUAL”. Previa revisión de la histología, se realizan\nniveles histológicos en el bloque A y B. para tinción con CK 5/6 , Receptor de estrógenos, S100,\np63,calretinina. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales presentan inmunorreactividad positiva para receptor de estrógenos. La\nexpresión de p63 se restringe a las células mioepiteliales. CK 5/6 negativa para mioepiteliales con\nexpresión focal . S100 presenta un patrón de expresión dentro de los rangos esperados. La\ncalretinina es negativa en las células tumorales.\nDIAGNÓSTICO\nA y B.Mama izquierda. Lesión. Biopsia. Estudios de inmunohistoquímica:\n- PAPILOMA INTRADUCTAL ESCLEROSANTE.\n- HIPERPLASIA DUCTAL CON ATIPIA FOCAL.\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---\nIHQ250276\nCopia Pag. 2 de 2\nNombre : ARACELLY RODAS JARAMILLO\nN. peticion : IHQ250276\nN.Identificación : CC. 25233708\nGenero : FEMENINO\nEdad : 55 años 10 meses 27 dias\nEPS : NUEVA EPS\nMédico tratante : NATALIA TORO BEDOYA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 17/03/2025\nFecha Informe : 28/03/2025\nEl cuadro inmunohistoquímico es consistente con un papiloma intraductal esclerosante con una\nhiperplasia ductal atípica focal , se recomienda resección completa de la lesión para una\nadecuada clasificación de la lesión . \nCaso visto en conjunto con el Dr Jorge Moreno y la Dra Natalia Aguirre .\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3606,
+      "reduccion_porcentaje": 97.94
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250276",
+      "caso_num": 13,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "nombre_completo": "ARACELLY RODAS JARAMILLO",
+      "numero_peticion": "IHQ250276",
+      "identificacion": "25233708",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "55",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "NATALIA TORO BEDOYA",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "17/03/2025",
+      "fecha_informe": "28/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250276",
+      "N. de identificación": "25233708",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "NATALIA TORO BEDOYA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "17/03/2025",
+      "Fecha Informe": "28/03/2025",
+      "nombres": "ARACELLY",
+      "Primer nombre": "ARACELLY",
+      "Segundo nombre": "",
+      "apellidos": "RODAS JARAMILLO",
+      "Primer apellido": "RODAS",
+      "Segundo apellido": "JARAMILLO",
+      "nombre_formal": "RODAS JARAMILLO, ARACELLY",
+      "diagnostico": "A y B.Mama izquierda. Lesión. Biopsia. Estudios de inmunohistoquímica: - PAPILOMA INTRADUCTAL ESCLEROSANTE. - HIPERPLASIA DUCTAL CON ATIPIA FOCAL.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva para receptor de estrógenos. La expresión de p63 se restringe a las células mioepiteliales. CK5/6 negativa para mioepiteliales con expresión focal . S100 presenta un patrón de expresión dentro de los rangos esperados. La calretinina es negativa en las células tumorales.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de \" Tomas uribe uribe\" como \"Q25-126\" que corresponde a \"Biopsia trucut mama izquierda\" con diagnóstico de \"HIPERPLASIA DUCTAL DE TIPO USUAL\". Previa revisión de la histología, se realizan niveles histológicos en el bloque A y B. para tinción con CK5/6 , Receptor de estrógenos, S100, p63,calretinina.",
+      "ihq_organo": "MAMA IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK5/6, Receptor de Estrógeno, S100, P63, CALRETININA",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 25 --- IHQ250276 Copia Pag. 2 de 2 Nombre : ARACELLY RODAS JARAMILLO N. peticion : IHQ250276 N.Identificación : CC. 25233708 Genero : FEMENINO Edad : 55 años 10 meses 27 dias EPS : NUEVA EPS Médico tratante : NATALIA TORO BEDOYA Servicio : CONSULTA EXTERNA Fecha Ingreso : 17/03/2025 Fecha Informe : 28/03/2025 El cuadro inmunohistoquímico es consistente con un papiloma intraductal esclerosante con una hiperplasia ductal atípica focal , se recomienda resección completa de la lesión para una adecuada clasificación de la lesión . Caso visto en conjunto con el Dr Jorge Moreno y la Dra Natalia Aguirre .",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK5/6, Receptor de Estrógeno, S100, P63, CALRETININA",
+      "IHQ_CALRETININA": "NEGATIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_CK5_6": "NEGATIVO",
+      "extraction_timestamp": "2026-02-03T04:45:11.607965",
+      "extractor_version": "6.5.93_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250276\nCopia Pag. 1 de 2\nNombre : ARACELLY RODAS JARAMILLO\nN. peticion : IHQ250276\nN.Identificación : CC. 25233708\nGenero : FEMENINO\nEdad : 55 años 10 meses 27 dias\nEPS : NUEVA EPS\nMédico tratante : NATALIA TORO BEDOYA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 17/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION MAMA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de “ Tomas\nuribe uribe\" como “Q25-126” que corresponde a “Biopsia trucut mama izquierda\" con\ndiagnóstico de “HIPERPLASIA DUCTAL DE TIPO USUAL”. Previa revisión de la histología, se realizan\nniveles histológicos en el bloque A y B. para tinción con CK 5/6 , Receptor de estrógenos, S100,\np63,calretinina. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales presentan inmunorreactividad positiva para receptor de estrógenos. La\nexpresión de p63 se restringe a las células mioepiteliales. CK 5/6 negativa para mioepiteliales con\nexpresión focal . S100 presenta un patrón de expresión dentro de los rangos esperados. La\ncalretinina es negativa en las células tumorales.\nDIAGNÓSTICO\nA y B.Mama izquierda. Lesión. Biopsia. Estudios de inmunohistoquímica:\n- PAPILOMA INTRADUCTAL ESCLEROSANTE.\n- HIPERPLASIA DUCTAL CON ATIPIA FOCAL.\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---\nIHQ250276\nCopia Pag. 2 de 2\nNombre : ARACELLY RODAS JARAMILLO\nN. peticion : IHQ250276\nN.Identificación : CC. 25233708\nGenero : FEMENINO\nEdad : 55 años 10 meses 27 dias\nEPS : NUEVA EPS\nMédico tratante : NATALIA TORO BEDOYA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 17/03/2025\nFecha Informe : 28/03/2025\nEl cuadro inmunohistoquímico es consistente con un papiloma intraductal esclerosante con una\nhiperplasia ductal atípica focal , se recomienda resección completa de la lesión para una\nadecuada clasificación de la lesión . \nCaso visto en conjunto con el Dr Jorge Moreno y la Dra Natalia Aguirre .\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK5/6, Receptor de Estrógeno, S100, P63, CALRETININA",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de “ Tomas uribe uribe\" como “Q25-126” que corresponde a “Biopsia trucut mama izquierda\" con diagnóstico de “HIPERPLASIA DUCTAL DE TIPO USUAL”. Previa revisión de la histología, se realizan niveles histológicos en el bloque A y B. para tinción con CK 5/6 , Receptor de estrógenos, S100, p63,calretinina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva para receptor de estrógenos. La expresión de p63 se restringe a las células mioepiteliales. CK 5/6 negativa para mioepiteliales con expresión focal . S100 presenta un patrón de expresión dentro de los rangos esperados. La calretinina es negativa en las células tumorales.",
+      "Descripcion Diagnostico": "A y B.Mama izquierda. Lesión. Biopsia. Estudios de inmunohistoquímica: - PAPILOMA INTRADUCTAL ESCLEROSANTE. - HIPERPLASIA DUCTAL CON ATIPIA FOCAL.",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Organo": "BX LESION MAMA IZQUIERDA",
+      "Diagnostico Coloracion": "HIPERPLASIA DUCTAL DE TIPO USUAL",
+      "Diagnostico Principal": "PAPILOMA INTRADUCTAL ESCLEROSANTE",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO",
+      "IHQ_CK5_6": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CALRETININA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A y B.Mama izquierda. Lesión. Biopsia. Estudios de inmunohistoquímica:\n- PAPILOMA INTRADUCTAL ESCLEROSANTE.\n- HIPERPLASIA DUCTAL CON ATIPIA FOCAL.",
+      "valor_corregido": "A y B.Mama izquierda. Lesión. Biopsia. Estudios de inmunohistoquímica: - PAPILOMA INTRADUCTAL ESCLEROSANTE. - HIPERPLASIA DUCTAL CON ATIPIA FOCAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250276",
+      "timestamp": "2026-02-03T04:45:11.607767"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de “ Tomas uribe uribe\" como “Q25-126” que corresponde a “Biopsia trucut mama izquierda\" con diagnóstico de “HIPERPLASIA DUCTAL DE TIPO USUAL”. Previa revisión de la histología, se realizan niveles histológicos en el bloque A y B. para tinción con CK 5/6 , Receptor de estrógenos, S100, p63,calretinina.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de \" Tomas uribe uribe\" como \"Q25-126\" que corresponde a \"Biopsia trucut mama izquierda\" con diagnóstico de \"HIPERPLASIA DUCTAL DE TIPO USUAL\". Previa revisión de la histología, se realizan niveles histológicos en el bloque A y B. para tinción con CK5/6 , Receptor de estrógenos, S100, p63,calretinina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250276",
+      "timestamp": "2026-02-03T04:45:11.607773"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva para receptor de estrógenos. La expresión de p63 se restringe a las células mioepiteliales. CK 5/6 negativa para mioepiteliales con expresión focal . S100 presenta un patrón de expresión dentro de los rangos esperados. La calretinina es negativa en las células tumorales.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva para receptor de estrógenos. La expresión de p63 se restringe a las células mioepiteliales. CK5/6 negativa para mioepiteliales con expresión focal . S100 presenta un patrón de expresión dentro de los rangos esperados. La calretinina es negativa en las células tumorales.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250276",
+      "timestamp": "2026-02-03T04:45:11.607775"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---\nIHQ250276\nCopia Pag. 2 de 2\nNombre : ARACELLY RODAS JARAMILLO\nN. peticion : IHQ250276\nN.Identificación : CC. 25233708\nGenero : FEMENINO\nEdad : 55 años 10 meses 27 dias\nEPS : NUEVA EPS\nMédico tratante : NATALIA TORO BEDOYA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 17/03/2025\nFecha Informe : 28/03/2025\nEl cuadro inmunohistoquímico es consistente con un papiloma intraductal esclerosante con una\nhiperplasia ductal atípica focal , se recomienda resección completa de la lesión para una\nadecuada clasificación de la lesión . \nCaso visto en conjunto con el Dr Jorge Moreno y la Dra Natalia Aguirre .",
+      "valor_corregido": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 25 --- IHQ250276 Copia Pag. 2 de 2 Nombre : ARACELLY RODAS JARAMILLO N. peticion : IHQ250276 N.Identificación : CC. 25233708 Genero : FEMENINO Edad : 55 años 10 meses 27 dias EPS : NUEVA EPS Médico tratante : NATALIA TORO BEDOYA Servicio : CONSULTA EXTERNA Fecha Ingreso : 17/03/2025 Fecha Informe : 28/03/2025 El cuadro inmunohistoquímico es consistente con un papiloma intraductal esclerosante con una hiperplasia ductal atípica focal , se recomienda resección completa de la lesión para una adecuada clasificación de la lesión . Caso visto en conjunto con el Dr Jorge Moreno y la Dra Natalia Aguirre .",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250276",
+      "timestamp": "2026-02-03T04:45:11.607776"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 53
+  }
+}

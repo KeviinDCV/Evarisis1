@@ -1,0 +1,691 @@
+{
+  "lote_id": "lote_20_casos_20251203_030703",
+  "timestamp_inicio": "2025-12-03T03:07:03.652401",
+  "timestamp_fin": "2025-12-03T03:07:21.494139",
+  "usuario": "USUARIO",
+  "descripcion": "Auditoria de 20 casos",
+  "casos": [
+    {
+      "numero": "IHQ250031",
+      "estado": "COMPLETADO",
+      "score": 88.9,
+      "timestamp_inicio": "2025-12-03T03:07:09.597176",
+      "timestamp_fin": "2025-12-03T03:07:10.192693",
+      "duracion_segundos": 0.595517,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250031.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250032",
+      "estado": "COMPLETADO",
+      "score": 88.9,
+      "timestamp_inicio": "2025-12-03T03:07:10.199904",
+      "timestamp_fin": "2025-12-03T03:07:10.749861",
+      "duracion_segundos": 0.549957,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250032.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "MALIGNIDAD_WARNING",
+          "severidad": "WARNING",
+          "campo": "Malignidad",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar clasificacion manualmente o ajustar keywords en medical_extractor.py",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "determine_malignancy()"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250033",
+      "estado": "COMPLETADO",
+      "score": 77.8,
+      "timestamp_inicio": "2025-12-03T03:07:10.756326",
+      "timestamp_fin": "2025-12-03T03:07:11.388160",
+      "duracion_segundos": 0.631834,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250033.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "BIOMARCADOR_NO_MAPEADO",
+          "severidad": "WARNING",
+          "campo": "Biomarcador TTF-1 (sin columna)",
+          "problema": "Biomarcador 'TTF-1 (sin columna)' no esta en el sistema",
+          "sugerencia": "Ejecutar FUNC-03: auditor.agregar_biomarcador('TTF-1 (sin columna)')",
+          "archivos_afectados": [
+            "core/validation_checker.py"
+          ],
+          "funcion": "FUNC-03"
+        },
+        {
+          "tipo": "BIOMARCADOR_NO_MAPEADO",
+          "severidad": "WARNING",
+          "campo": "Biomarcador CKAE1E3 (sin columna)",
+          "problema": "Biomarcador 'CKAE1E3 (sin columna)' no esta en el sistema",
+          "sugerencia": "Ejecutar FUNC-03: auditor.agregar_biomarcador('CKAE1E3 (sin columna)')",
+          "archivos_afectados": [
+            "core/validation_checker.py"
+          ],
+          "funcion": "FUNC-03"
+        },
+        {
+          "tipo": "BIOMARCADOR_NO_MAPEADO",
+          "severidad": "WARNING",
+          "campo": "Biomarcador SYNAPTOFISINA (sin columna)",
+          "problema": "Biomarcador 'SYNAPTOFISINA (sin columna)' no esta en el sistema",
+          "sugerencia": "Ejecutar FUNC-03: auditor.agregar_biomarcador('SYNAPTOFISINA (sin columna)')",
+          "archivos_afectados": [
+            "core/validation_checker.py"
+          ],
+          "funcion": "FUNC-03"
+        },
+        {
+          "tipo": "VALOR_BIOMARCADOR_INCORRECTO",
+          "severidad": "CRITICO",
+          "campo": "Biomarcador Ki-67",
+          "problema": "Valor en BD no coincide con OCR",
+          "sugerencia": "Verificar extractor de Ki-67 o ejecutar FUNC-06",
+          "archivos_afectados": [
+            "core/extractors/biomarker_extractor.py"
+          ],
+          "funcion": "extract_biomarkers()"
+        },
+        {
+          "tipo": "MALIGNIDAD_WARNING",
+          "severidad": "WARNING",
+          "campo": "Malignidad",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar clasificacion manualmente o ajustar keywords en medical_extractor.py",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "determine_malignancy()"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250034",
+      "estado": "COMPLETADO",
+      "score": 77.8,
+      "timestamp_inicio": "2025-12-03T03:07:11.394457",
+      "timestamp_fin": "2025-12-03T03:07:11.930772",
+      "duracion_segundos": 0.536315,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250034.json",
+      "errores_criticos": 0,
+      "warnings": 2,
+      "errores_detectados": [
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250035",
+      "estado": "COMPLETADO",
+      "score": 88.9,
+      "timestamp_inicio": "2025-12-03T03:07:11.937314",
+      "timestamp_fin": "2025-12-03T03:07:12.503585",
+      "duracion_segundos": 0.566271,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250035.json",
+      "errores_criticos": 1,
+      "warnings": 0,
+      "errores_detectados": [
+        {
+          "tipo": "DIAGNOSTICO_COLORACION",
+          "severidad": "CRITICO",
+          "campo": "Diagnostico Coloracion",
+          "problema": "Campo NO APLICA pero existe diagnostico en OCR",
+          "sugerencia": "Verificar patron de extraccion en medical_extractor.py (linea ~665)",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "extract_diagnostico_coloracion()"
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250036",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2025-12-03T03:07:12.510568",
+      "timestamp_fin": "2025-12-03T03:07:13.105822",
+      "duracion_segundos": 0.595254,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250036.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250037",
+      "estado": "COMPLETADO",
+      "score": 77.8,
+      "timestamp_inicio": "2025-12-03T03:07:13.112169",
+      "timestamp_fin": "2025-12-03T03:07:13.653464",
+      "duracion_segundos": 0.541295,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250037.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "VALOR_BIOMARCADOR_INCORRECTO",
+          "severidad": "CRITICO",
+          "campo": "Biomarcador HHV8",
+          "problema": "Valor en BD no coincide con OCR",
+          "sugerencia": "Verificar extractor de HHV8 o ejecutar FUNC-06",
+          "archivos_afectados": [
+            "core/extractors/biomarker_extractor.py"
+          ],
+          "funcion": "extract_biomarkers()"
+        },
+        {
+          "tipo": "MALIGNIDAD_WARNING",
+          "severidad": "WARNING",
+          "campo": "Malignidad",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar clasificacion manualmente o ajustar keywords en medical_extractor.py",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "determine_malignancy()"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250038",
+      "estado": "COMPLETADO",
+      "score": 88.9,
+      "timestamp_inicio": "2025-12-03T03:07:13.659666",
+      "timestamp_fin": "2025-12-03T03:07:14.281545",
+      "duracion_segundos": 0.621879,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250038.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250039",
+      "estado": "COMPLETADO",
+      "score": 88.9,
+      "timestamp_inicio": "2025-12-03T03:07:14.289249",
+      "timestamp_fin": "2025-12-03T03:07:14.838175",
+      "duracion_segundos": 0.548926,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250039.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250040",
+      "estado": "COMPLETADO",
+      "score": 88.9,
+      "timestamp_inicio": "2025-12-03T03:07:14.845137",
+      "timestamp_fin": "2025-12-03T03:07:15.475063",
+      "duracion_segundos": 0.629926,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250040.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "MALIGNIDAD_WARNING",
+          "severidad": "WARNING",
+          "campo": "Malignidad",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar clasificacion manualmente o ajustar keywords en medical_extractor.py",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "determine_malignancy()"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250041",
+      "estado": "COMPLETADO",
+      "score": 88.9,
+      "timestamp_inicio": "2025-12-03T03:07:15.482321",
+      "timestamp_fin": "2025-12-03T03:07:16.061786",
+      "duracion_segundos": 0.579465,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250041.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250042",
+      "estado": "COMPLETADO",
+      "score": 77.8,
+      "timestamp_inicio": "2025-12-03T03:07:16.068448",
+      "timestamp_fin": "2025-12-03T03:07:16.639146",
+      "duracion_segundos": 0.570698,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250042.json",
+      "errores_criticos": 1,
+      "warnings": 0,
+      "errores_detectados": [
+        {
+          "tipo": "DIAGNOSTICO_COLORACION",
+          "severidad": "CRITICO",
+          "campo": "Diagnostico Coloracion",
+          "problema": "Campo NO APLICA pero existe diagnostico en OCR",
+          "sugerencia": "Verificar patron de extraccion en medical_extractor.py (linea ~665)",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "extract_diagnostico_coloracion()"
+        },
+        {
+          "tipo": "VALOR_BIOMARCADOR_INCORRECTO",
+          "severidad": "CRITICO",
+          "campo": "Biomarcador SV40",
+          "problema": "Valor en BD no coincide con OCR",
+          "sugerencia": "Verificar extractor de SV40 o ejecutar FUNC-06",
+          "archivos_afectados": [
+            "core/extractors/biomarker_extractor.py"
+          ],
+          "funcion": "extract_biomarkers()"
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250043",
+      "estado": "COMPLETADO",
+      "score": 77.8,
+      "timestamp_inicio": "2025-12-03T03:07:16.646355",
+      "timestamp_fin": "2025-12-03T03:07:17.234888",
+      "duracion_segundos": 0.588533,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250043.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "VALOR_BIOMARCADOR_INCORRECTO",
+          "severidad": "CRITICO",
+          "campo": "Biomarcador NeuN",
+          "problema": "Valor en BD no coincide con OCR",
+          "sugerencia": "Verificar extractor de NeuN o ejecutar FUNC-06",
+          "archivos_afectados": [
+            "core/extractors/biomarker_extractor.py"
+          ],
+          "funcion": "extract_biomarkers()"
+        },
+        {
+          "tipo": "MALIGNIDAD_WARNING",
+          "severidad": "WARNING",
+          "campo": "Malignidad",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar clasificacion manualmente o ajustar keywords en medical_extractor.py",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "determine_malignancy()"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250044",
+      "estado": "COMPLETADO",
+      "score": 88.9,
+      "timestamp_inicio": "2025-12-03T03:07:17.241511",
+      "timestamp_fin": "2025-12-03T03:07:17.787043",
+      "duracion_segundos": 0.545532,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250044.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250045",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2025-12-03T03:07:17.794438",
+      "timestamp_fin": "2025-12-03T03:07:18.384409",
+      "duracion_segundos": 0.589971,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250045.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250046",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2025-12-03T03:07:18.390914",
+      "timestamp_fin": "2025-12-03T03:07:18.928854",
+      "duracion_segundos": 0.53794,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250046.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250047",
+      "estado": "COMPLETADO",
+      "score": 66.7,
+      "timestamp_inicio": "2025-12-03T03:07:18.935729",
+      "timestamp_fin": "2025-12-03T03:07:19.550739",
+      "duracion_segundos": 0.61501,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250047.json",
+      "errores_criticos": 1,
+      "warnings": 2,
+      "errores_detectados": [
+        {
+          "tipo": "DIAGNOSTICO_COLORACION",
+          "severidad": "CRITICO",
+          "campo": "Diagnostico Coloracion",
+          "problema": "Campo NO APLICA pero existe diagnostico en OCR",
+          "sugerencia": "Verificar patron de extraccion en medical_extractor.py (linea ~665)",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "extract_diagnostico_coloracion()"
+        },
+        {
+          "tipo": "MALIGNIDAD_WARNING",
+          "severidad": "WARNING",
+          "campo": "Malignidad",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar clasificacion manualmente o ajustar keywords en medical_extractor.py",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "determine_malignancy()"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250048",
+      "estado": "COMPLETADO",
+      "score": 66.7,
+      "timestamp_inicio": "2025-12-03T03:07:19.557639",
+      "timestamp_fin": "2025-12-03T03:07:20.193418",
+      "duracion_segundos": 0.635779,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250048.json",
+      "errores_criticos": 1,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "DIAGNOSTICO_COLORACION",
+          "severidad": "CRITICO",
+          "campo": "Diagnostico Coloracion",
+          "problema": "Campo NO APLICA pero existe diagnostico en OCR",
+          "sugerencia": "Verificar patron de extraccion en medical_extractor.py (linea ~665)",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "extract_diagnostico_coloracion()"
+        },
+        {
+          "tipo": "BIOMARCADOR_NO_MAPEADO",
+          "severidad": "WARNING",
+          "campo": "Biomarcador CALRRETININA (sin columna)",
+          "problema": "Biomarcador 'CALRRETININA (sin columna)' no esta en el sistema",
+          "sugerencia": "Ejecutar FUNC-03: auditor.agregar_biomarcador('CALRRETININA (sin columna)')",
+          "archivos_afectados": [
+            "core/validation_checker.py"
+          ],
+          "funcion": "FUNC-03"
+        },
+        {
+          "tipo": "MALIGNIDAD_WARNING",
+          "severidad": "WARNING",
+          "campo": "Malignidad",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar clasificacion manualmente o ajustar keywords en medical_extractor.py",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "determine_malignancy()"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250049",
+      "estado": "COMPLETADO",
+      "score": 77.8,
+      "timestamp_inicio": "2025-12-03T03:07:20.200407",
+      "timestamp_fin": "2025-12-03T03:07:20.806228",
+      "duracion_segundos": 0.605821,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250049.json",
+      "errores_criticos": 0,
+      "warnings": 2,
+      "errores_detectados": [
+        {
+          "tipo": "MALIGNIDAD_WARNING",
+          "severidad": "WARNING",
+          "campo": "Malignidad",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar clasificacion manualmente o ajustar keywords en medical_extractor.py",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "determine_malignancy()"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 50%)",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250050",
+      "estado": "COMPLETADO",
+      "score": 77.8,
+      "timestamp_inicio": "2025-12-03T03:07:20.813210",
+      "timestamp_fin": "2025-12-03T03:07:21.483609",
+      "duracion_segundos": 0.670399,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250050.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "BIOMARCADOR_NO_MAPEADO",
+          "severidad": "WARNING",
+          "campo": "Biomarcador EBER (sin columna)",
+          "problema": "Biomarcador 'EBER (sin columna)' no esta en el sistema",
+          "sugerencia": "Ejecutar FUNC-03: auditor.agregar_biomarcador('EBER (sin columna)')",
+          "archivos_afectados": [
+            "core/validation_checker.py"
+          ],
+          "funcion": "FUNC-03"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 67%)",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    }
+  ],
+  "resumen": {
+    "total": 20,
+    "completados": 20,
+    "en_proceso": 0,
+    "pendientes": 0,
+    "fallidos": 0,
+    "progreso_porcentaje": 100.0,
+    "tiempo_promedio_caso": 0.5878161,
+    "tiempo_estimado_restante": 0.0,
+    "promedio_score": 84.46000000000001,
+    "casos_criticos": [
+      "IHQ250031",
+      "IHQ250032",
+      "IHQ250033",
+      "IHQ250034",
+      "IHQ250035",
+      "IHQ250037",
+      "IHQ250038",
+      "IHQ250039",
+      "IHQ250040",
+      "IHQ250041",
+      "IHQ250042",
+      "IHQ250043",
+      "IHQ250044",
+      "IHQ250047",
+      "IHQ250048",
+      "IHQ250049",
+      "IHQ250050"
+    ]
+  },
+  "interrupciones": [],
+  "version_herramienta": "2.0.0"
+}

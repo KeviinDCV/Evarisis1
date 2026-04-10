@@ -1,0 +1,163 @@
+{
+  "session_id": "IHQ250022_20251205_012355",
+  "numero_peticion": "IHQ250022",
+  "timestamp": "2025-12-05T01:23:55.737039",
+  "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250022\nCopia Pag. 1 de 1\nNombre : MARIA DEL SOCORRO USMAN DE\nHERNANDEZ\nN. peticion : IHQ250022\nN.Identificación : CC. 31149095\nGenero : FEMENINO\nEdad : 66 años 16 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : RODOLFO GARCIA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 08/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMUCOSA ENDOMETRIAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe una lamina de H&E y un bloque de parafina que corresponden a biopsia de endometrio con\ndiagnóstico de \"HIPERPLASIA GLANDULA ATÍPICA\", se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe identifica en un fondo hemorrágico, fragmentos de una lesión de aspecto adenocarcinomatoso, con\nalgunas proyecciones de apariencia papilar, dicha lesión presenta la siguiente inmunomarcación:\n-Receptor de Estrógeno positivo de manera focal, WT1 negativo, p16 positivo en bloque, Receptor de\nprogesterona negativo, CK20 negativo, PAX8 positivo, p53 con sobreexpresión, CK7 positivo.\nDIAGNÓSTICO\nEndometrio. Legrado. Estudios de inmunohistoquímica:\nLOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 37 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 2537,
+      "reduccion_porcentaje": 98.52
+    },
+    "metadata": {
+      "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250022",
+      "caso_num": 22,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA DEL SOCORRO USMAN DE HERNANDEZ",
+      "numero_peticion": "IHQ250022",
+      "identificacion": "31149095",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "66",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "RODOLFO GARCIA",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "08/01/2025",
+      "fecha_informe": "23/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250022",
+      "N. de identificación": "31149095",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "RODOLFO GARCIA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/01/2025",
+      "Fecha Informe": "23/01/2025",
+      "nombres": "MARIA DEL SOCORRO USMAN DE",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "DEL SOCORRO USMAN DE",
+      "apellidos": "HERNANDEZ",
+      "Primer apellido": "HERNANDEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "HERNANDEZ, MARIA DEL SOCORRO USMAN DE",
+      "diagnostico": "Endometrio. Legrado. Estudios de inmunohistoquímica: LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se identifica en un fondo hemorrágico, fragmentos de una lesión de aspecto adenocarcinomatoso, con algunas proyecciones de apariencia papilar, dicha lesión presenta la siguiente inmunomarcación: -Receptor de Estrógeno positivo de manera focal, WT1 negativo, P16 positivo en bloque, Receptor de progesterona negativo, CK20 negativo, PAX8 positivo, p53 con sobreexpresión, CK7 positivo.",
+      "descripcion_macroscopica": "Se recibe una lamina de H&E y un bloque de parafina que corresponden a biopsia de endometrio con diagnóstico de \"HIPERPLASIA GLANDULA ATÍPICA\", se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "ENDOMETRIO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ENDOMETRIO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO DE MANERA FOCAL, WT1 NEGATIVO, P16 POSITIVO EN BLOQUE, RECEPTOR DE, Receptor de Progesterona: POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO DE MANERA FOCAL, WT1 NEGATIVO, P16 POSITIVO EN BLOQUE, RECEPTOR DE",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_WT1": "NEGATIVO, P16 POSITIVO EN BLOQUE, RECEPTOR DE",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2025-12-05T01:23:55.864082",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250022\nCopia Pag. 1 de 1\nNombre : MARIA DEL SOCORRO USMAN DE\nHERNANDEZ\nN. peticion : IHQ250022\nN.Identificación : CC. 31149095\nGenero : FEMENINO\nEdad : 66 años 16 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : RODOLFO GARCIA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 08/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMUCOSA ENDOMETRIAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe una lamina de H&E y un bloque de parafina que corresponden a biopsia de endometrio con\ndiagnóstico de \"HIPERPLASIA GLANDULA ATÍPICA\", se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe identifica en un fondo hemorrágico, fragmentos de una lesión de aspecto adenocarcinomatoso, con\nalgunas proyecciones de apariencia papilar, dicha lesión presenta la siguiente inmunomarcación:\n-Receptor de Estrógeno positivo de manera focal, WT1 negativo, p16 positivo en bloque, Receptor de\nprogesterona negativo, CK20 negativo, PAX8 positivo, p53 con sobreexpresión, CK7 positivo.\nDIAGNÓSTICO\nEndometrio. Legrado. Estudios de inmunohistoquímica:\nLOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 37 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK20, CK7, P16, PAX8, Receptor de Estrógeno, Receptor de Progesterona, WT1",
+      "Descripcion macroscopica": "Se recibe una lamina de H&E y un bloque de parafina que corresponden a biopsia de endometrio con diagnóstico de \"HIPERPLASIA GLANDULA ATÍPICA\", se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se identifica en un fondo hemorrágico, fragmentos de una lesión de aspecto adenocarcinomatoso, con algunas proyecciones de apariencia papilar, dicha lesión presenta la siguiente inmunomarcación: -Receptor de Estrógeno positivo de manera focal, WT1 negativo, p16 positivo en bloque, Receptor de progesterona negativo, CK20 negativo, PAX8 positivo, p53 con sobreexpresión, CK7 positivo.",
+      "Descripcion Diagnostico": "Endometrio. Legrado. Estudios de inmunohistoquímica: LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL",
+      "IHQ_ORGANO": "ENDOMETRIO",
+      "Organo": "MUCOSA ENDOMETRIAL",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO DE MANERA FOCAL, WT1 NEGATIVO, P16 POSITIVO EN BLOQUE, RECEPTOR DE, Receptor de Progesterona: POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO DE MANERA FOCAL, WT1 NEGATIVO, P16 POSITIVO EN BLOQUE, RECEPTOR DE",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_WT1": "NEGATIVO, P16 POSITIVO EN BLOQUE, RECEPTOR DE"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 156,
+      "campos_vacios": 115,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "completitud_porcentaje": 26.28
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 115,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Endometrio. Legrado. Estudios de inmunohistoquímica:\nLOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL",
+      "valor_corregido": "Endometrio. Legrado. Estudios de inmunohistoquímica: LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250022",
+      "timestamp": "2025-12-05T01:23:55.863822"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe una lamina de H&E y un bloque de parafina que corresponden a biopsia de endometrio con\ndiagnóstico de \"HIPERPLASIA GLANDULA ATÍPICA\", se ordenan estudios de inmunohistoquímica.",
+      "valor_corregido": "Se recibe una lamina de H&E y un bloque de parafina que corresponden a biopsia de endometrio con diagnóstico de \"HIPERPLASIA GLANDULA ATÍPICA\", se ordenan estudios de inmunohistoquímica.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250022",
+      "timestamp": "2025-12-05T01:23:55.863829"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe identifica en un fondo hemorrágico, fragmentos de una lesión de aspecto adenocarcinomatoso, con\nalgunas proyecciones de apariencia papilar, dicha lesión presenta la siguiente inmunomarcación:\n-Receptor de Estrógeno positivo de manera focal, WT1 negativo, p16 positivo en bloque, Receptor de\nprogesterona negativo, CK20 negativo, PAX8 positivo, p53 con sobreexpresión, CK7 positivo.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se identifica en un fondo hemorrágico, fragmentos de una lesión de aspecto adenocarcinomatoso, con algunas proyecciones de apariencia papilar, dicha lesión presenta la siguiente inmunomarcación: -Receptor de Estrógeno positivo de manera focal, WT1 negativo, P16 positivo en bloque, Receptor de progesterona negativo, CK20 negativo, PAX8 positivo, p53 con sobreexpresión, CK7 positivo.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250022",
+      "timestamp": "2025-12-05T01:23:55.863831"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 53
+  }
+}

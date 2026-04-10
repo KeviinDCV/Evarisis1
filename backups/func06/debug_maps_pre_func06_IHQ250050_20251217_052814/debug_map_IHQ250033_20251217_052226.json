@@ -1,0 +1,165 @@
+{
+  "session_id": "IHQ250033_20251217_052226",
+  "numero_peticion": "IHQ250033",
+  "timestamp": "2025-12-17T05:22:26.736019",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250033\nCopia Pag. 1 de 2\nNombre : MARIA MARGARITA ROJAS CUTIVA\nN. peticion : IHQ250033\nN.Identificación : CC. 31941338\nGenero : FEMENINO\nEdad : 58 años 10 meses 12 dias\nEPS : NUEVA EPS\nMédico tratante : JHON SANDOVAL\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 13/01/2025\nFecha Informe : 22/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nNODULO PULMONAR\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500148” que corresponde a “nódulo pulmonar izquierdo”. Previa revisión de la histología, se\nrealizan niveles histológicos al bloque 1 para tinción con TTF-1, GATA-3, CKAE1E3, napsina A, KI-67,p40,\nchromogranina y synaptofisina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nParénquima\npulmonar\ncon\nlesión\nneoplásica\nnodular\nbien\ndelimitada\ncompuesta\npor\ncélulas\nmonomórficas con núcleos ovoides dispuestas en un patrón organoide sin evidencia de actividad mitótica\nni necrosis. Borde de resección libre. Estas células tumorales presentan inmunorreactividad fuerte para\nTTF-1, chromogranina, synaptofisina y positividad parcheada con la CKAE1E3.\níndice de proliferación\nKI-67 del 1%. Los marcadores GATA-3, napsina A y p40 son negativos.\nDIAGNÓSTICO\nPulmón izquierdo. Lesión. Resección. Estudio de inmunohistoquímica:\n- TUMOR NEUROENDOCRINO BIEN DIFERENCIADO (CARCINOIDE TÍPICO).\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---\nIHQ250033\nCopia Pag. 2 de 2\nNombre : MARIA MARGARITA ROJAS CUTIVA\nN. peticion : IHQ250033\nN.Identificación : CC. 31941338\nGenero : FEMENINO\nEdad : 58 años 10 meses 12 dias\nEPS : NUEVA EPS\nMédico tratante : JHON SANDOVAL\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 13/01/2025\nFecha Informe : 22/01/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3408,
+      "reduccion_porcentaje": 98.01
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250033",
+      "caso_num": 33,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA MARGARITA ROJAS CUTIVA",
+      "numero_peticion": "IHQ250033",
+      "identificacion": "31941338",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "58",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JHON SANDOVAL",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "13/01/2025",
+      "fecha_informe": "22/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250033",
+      "N. de identificación": "31941338",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "JHON SANDOVAL",
+      "Fecha de ingreso (2. Fecha de la muestra)": "13/01/2025",
+      "Fecha Informe": "22/01/2025",
+      "nombres": "MARIA MARGARITA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "MARGARITA",
+      "apellidos": "ROJAS CUTIVA",
+      "Primer apellido": "ROJAS",
+      "Segundo apellido": "CUTIVA",
+      "nombre_formal": "ROJAS CUTIVA, MARIA MARGARITA",
+      "diagnostico": "Pulmón izquierdo. Lesión. Resección. Estudio de inmunohistoquímica: - TUMOR NEUROENDOCRINO BIEN DIFERENCIADO (CARCINOIDE TÍPICO).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Parénquima pulmonar con lesión neoplásica nodular bien delimitada compuesta por células monomórficas con núcleos ovoides dispuestas en un patrón organoide sin evidencia de actividad mitótica ni necrosis. Borde de resección libre. Estas células tumorales presentan inmunorreactividad fuerte para TTF1, chromogranina, synaptophysin y positividad parcheada con la CKAE1E3. índice de proliferación KI-67 del 1%. Los marcadores GATA-3, napsina A y P40 son negativos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500148” que corresponde a “nódulo pulmonar izquierdo”. Previa revisión de la histología, se realizan niveles histológicos al bloque 1 para tinción con TTF1, GATA-3, CKAE1E3, napsina A, KI-67,P40, chromogranina y synaptophysin.",
+      "ihq_organo": "PULMÓN IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "TTF-1, GATA 3, CKAE1E3, NAPSINA A, Ki-67, P40, CHROMOGRANINA, SYNAPTOFISINA",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PULMÓN IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "Ki-67: 1%",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_CROMOGRANINA": "POSITIVO",
+      "IHQ_SINAPTOFISINA": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "1%",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2025-12-17T05:22:26.890209",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250033\nCopia Pag. 1 de 2\nNombre : MARIA MARGARITA ROJAS CUTIVA\nN. peticion : IHQ250033\nN.Identificación : CC. 31941338\nGenero : FEMENINO\nEdad : 58 años 10 meses 12 dias\nEPS : NUEVA EPS\nMédico tratante : JHON SANDOVAL\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 13/01/2025\nFecha Informe : 22/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nNODULO PULMONAR\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500148” que corresponde a “nódulo pulmonar izquierdo”. Previa revisión de la histología, se\nrealizan niveles histológicos al bloque 1 para tinción con TTF-1, GATA-3, CKAE1E3, napsina A, KI-67,p40,\nchromogranina y synaptofisina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nParénquima\npulmonar\ncon\nlesión\nneoplásica\nnodular\nbien\ndelimitada\ncompuesta\npor\ncélulas\nmonomórficas con núcleos ovoides dispuestas en un patrón organoide sin evidencia de actividad mitótica\nni necrosis. Borde de resección libre. Estas células tumorales presentan inmunorreactividad fuerte para\nTTF-1, chromogranina, synaptofisina y positividad parcheada con la CKAE1E3.\níndice de proliferación\nKI-67 del 1%. Los marcadores GATA-3, napsina A y p40 son negativos.\nDIAGNÓSTICO\nPulmón izquierdo. Lesión. Resección. Estudio de inmunohistoquímica:\n- TUMOR NEUROENDOCRINO BIEN DIFERENCIADO (CARCINOIDE TÍPICO).\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---\nIHQ250033\nCopia Pag. 2 de 2\nNombre : MARIA MARGARITA ROJAS CUTIVA\nN. peticion : IHQ250033\nN.Identificación : CC. 31941338\nGenero : FEMENINO\nEdad : 58 años 10 meses 12 dias\nEPS : NUEVA EPS\nMédico tratante : JHON SANDOVAL\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 13/01/2025\nFecha Informe : 22/01/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, GATA 3, CKAE1E3, NAPSINA A, Ki-67, P40, CHROMOGRANINA, SYNAPTOFISINA",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500148” que corresponde a “nódulo pulmonar izquierdo”. Previa revisión de la histología, se realizan niveles histológicos al bloque 1 para tinción con TTF-1, GATA-3, CKAE1E3, napsina A, KI-67,p40, chromogranina y synaptofisina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Parénquima pulmonar con lesión neoplásica nodular bien delimitada compuesta por células monomórficas con núcleos ovoides dispuestas en un patrón organoide sin evidencia de actividad mitótica ni necrosis. Borde de resección libre. Estas células tumorales presentan inmunorreactividad fuerte para TTF-1, chromogranina, synaptofisina y positividad parcheada con la CKAE1E3. índice de proliferación KI-67 del 1%. Los marcadores GATA-3, napsina A y p40 son negativos.",
+      "Descripcion Diagnostico": "Pulmón izquierdo. Lesión. Resección. Estudio de inmunohistoquímica: - TUMOR NEUROENDOCRINO BIEN DIFERENCIADO (CARCINOIDE TÍPICO).",
+      "IHQ_ORGANO": "PULMÓN IZQUIERDO",
+      "Organo": "NODULO PULMONAR IZQUIERDO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "PULMÓN IZQUIERDO. LESIÓN. RESECCIÓN. ESTUDIO DE INMUNOHISTOQUÍMICA: - TUMOR NEUROENDOCRINO BIEN DIFERENCIADO (CARCINOIDE TÍPICO). NATALIA AGUIRRE VASQUEZ",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 1%",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CKAE1E3": "POSITIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_KI-67": "1%",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CHROMOGRANINA": "POSITIVO",
+      "IHQ_SYNAPTOFISINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 158,
+      "campos_vacios": 111,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 8,
+      "completitud_porcentaje": 29.75
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 111,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón izquierdo. Lesión. Resección. Estudio de inmunohistoquímica:\n- TUMOR NEUROENDOCRINO BIEN DIFERENCIADO (CARCINOIDE TÍPICO).",
+      "valor_corregido": "Pulmón izquierdo. Lesión. Resección. Estudio de inmunohistoquímica: - TUMOR NEUROENDOCRINO BIEN DIFERENCIADO (CARCINOIDE TÍPICO).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250033",
+      "timestamp": "2025-12-17T05:22:26.890008"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500148” que corresponde a “nódulo pulmonar izquierdo”. Previa revisión de la histología, se\nrealizan niveles histológicos al bloque 1 para tinción con TTF-1, GATA-3, CKAE1E3, napsina A, KI-67,p40,\nchromogranina y synaptofisina.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500148” que corresponde a “nódulo pulmonar izquierdo”. Previa revisión de la histología, se realizan niveles histológicos al bloque 1 para tinción con TTF1, GATA-3, CKAE1E3, napsina A, KI-67,P40, chromogranina y synaptophysin.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250033",
+      "timestamp": "2025-12-17T05:22:26.890014"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nParénquima\npulmonar\ncon\nlesión\nneoplásica\nnodular\nbien\ndelimitada\ncompuesta\npor\ncélulas\nmonomórficas con núcleos ovoides dispuestas en un patrón organoide sin evidencia de actividad mitótica\nni necrosis. Borde de resección libre. Estas células tumorales presentan inmunorreactividad fuerte para\nTTF-1, chromogranina, synaptofisina y positividad parcheada con la CKAE1E3.\níndice de proliferación\nKI-67 del 1%. Los marcadores GATA-3, napsina A y p40 son negativos.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Parénquima pulmonar con lesión neoplásica nodular bien delimitada compuesta por células monomórficas con núcleos ovoides dispuestas en un patrón organoide sin evidencia de actividad mitótica ni necrosis. Borde de resección libre. Estas células tumorales presentan inmunorreactividad fuerte para TTF1, chromogranina, synaptophysin y positividad parcheada con la CKAE1E3. índice de proliferación KI-67 del 1%. Los marcadores GATA-3, napsina A y P40 son negativos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250033",
+      "timestamp": "2025-12-17T05:22:26.890015"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 56
+  }
+}

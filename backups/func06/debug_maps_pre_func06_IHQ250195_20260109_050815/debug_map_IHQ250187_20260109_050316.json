@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250187_20260109_050316",
+  "numero_peticion": "IHQ250187",
+  "timestamp": "2026-01-09T05:03:16.682315",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250187\nCopia Pag. 1 de 1\nNombre : JHON JAIRO BUSTAMANTE DUQUE\nN. peticion : IHQ250187\nN.Identificación : CC. 16222965\nGenero : MASCULINO\nEdad : 56 años 20 dias\nEPS : NUEVA EPS\nMédico tratante : JAVIER OROZCO MERA\nServicio : CARTAGO URGENCIAS OBSERVACION\nFecha Ingreso : 19/02/2025\nFecha Informe : 04/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCEREBRO LOBULO\nTEMPORAL DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2501078-1, el cual corresponde a resección de tumor en\nlóbulo temporal derecho de cerebroo, con diagnóstico de \"TUMOR GLIAL DE ALTO GRADO WHO 4\". Se\nordenan los siguientes marcadores: p53, GFAP, IDH y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para GFAP y expresan p53 tipo salvaje (normal). Son negativas para\nIDH. El índice de proliferación celular medido por Ki-67 está entre 40 y 50%.\nDIAGNÓSTICO\n Cerebro, lóbulo temporal derecho. Tumor. Resección parcial. Estudios de inmunohistoquímica:\nGLIOBLASTOMA\nCOMENTARIOS\nCaso revisado por neuropatólogo extrainstitucional.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 47 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2475,
+      "reduccion_porcentaje": 98.51
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250187",
+      "caso_num": 27,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_P53": "POSITIVO (PATRÓN SALVAJE)",
+      "IHQ_IDH1": "NEGATIVO",
+      "nombre_completo": "JHON JAIRO BUSTAMANTE DUQUE",
+      "numero_peticion": "IHQ250187",
+      "identificacion": "16222965",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "56",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JAVIER OROZCO MERA",
+      "servicio": "CARTAGO URGENCIAS OBSERVACION",
+      "fecha_ingreso": "19/02/2025",
+      "fecha_informe": "04/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250187",
+      "N. de identificación": "16222965",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CARTAGO URGENCIAS OBSERVACION",
+      "Médico tratante": "JAVIER OROZCO MERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "19/02/2025",
+      "Fecha Informe": "04/03/2025",
+      "nombres": "JHON JAIRO",
+      "Primer nombre": "JHON",
+      "Segundo nombre": "JAIRO",
+      "apellidos": "BUSTAMANTE DUQUE",
+      "Primer apellido": "BUSTAMANTE",
+      "Segundo apellido": "DUQUE",
+      "nombre_formal": "BUSTAMANTE DUQUE, JHON JAIRO",
+      "diagnostico": "Cerebro, lóbulo temporal derecho. Tumor. Resección parcial. Estudios de inmunohistoquímica: GLIOBLASTOMA",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para GFAP y expresan p53 tipo salvaje (normal). Son negativas para IDH. El índice de proliferación celular medido por KI-67 está entre 40 y 50%.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2501078-1, el cual corresponde a resección de tumor en lóbulo temporal derecho de cerebroo, con diagnóstico de \"TUMOR GLIAL DE ALTO GRADO WHO 4\". Se ordenan los siguientes marcadores: p53, GFAP, IDH y KI-67.",
+      "ihq_organo": "CEREBRO, LÓBULO TEMPORAL DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P53, GFAP, IDH, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Caso revisado por neuropatólogo extrainstitucional.",
+      "IHQ_ORGANO": "CEREBRO, LÓBULO TEMPORAL DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: 40%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P53, GFAP, IDH, Ki-67",
+      "IHQ_KI-67": "40%",
+      "extraction_timestamp": "2026-01-09T05:03:17.035170",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250187\nCopia Pag. 1 de 1\nNombre : JHON JAIRO BUSTAMANTE DUQUE\nN. peticion : IHQ250187\nN.Identificación : CC. 16222965\nGenero : MASCULINO\nEdad : 56 años 20 dias\nEPS : NUEVA EPS\nMédico tratante : JAVIER OROZCO MERA\nServicio : CARTAGO URGENCIAS OBSERVACION\nFecha Ingreso : 19/02/2025\nFecha Informe : 04/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCEREBRO LOBULO\nTEMPORAL DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2501078-1, el cual corresponde a resección de tumor en\nlóbulo temporal derecho de cerebroo, con diagnóstico de \"TUMOR GLIAL DE ALTO GRADO WHO 4\". Se\nordenan los siguientes marcadores: p53, GFAP, IDH y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para GFAP y expresan p53 tipo salvaje (normal). Son negativas para\nIDH. El índice de proliferación celular medido por Ki-67 está entre 40 y 50%.\nDIAGNÓSTICO\n Cerebro, lóbulo temporal derecho. Tumor. Resección parcial. Estudios de inmunohistoquímica:\nGLIOBLASTOMA\nCOMENTARIOS\nCaso revisado por neuropatólogo extrainstitucional.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 47 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P53, GFAP, IDH, Ki-67",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2501078-1, el cual corresponde a resección de tumor en lóbulo temporal derecho de cerebroo, con diagnóstico de \"TUMOR GLIAL DE ALTO GRADO WHO 4\". Se ordenan los siguientes marcadores: p53, GFAP, IDH y Ki-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para GFAP y expresan p53 tipo salvaje (normal). Son negativas para IDH. El índice de proliferación celular medido por Ki-67 está entre 40 y 50%.",
+      "Descripcion Diagnostico": "Cerebro, lóbulo temporal derecho. Tumor. Resección parcial. Estudios de inmunohistoquímica: GLIOBLASTOMA",
+      "IHQ_ORGANO": "CEREBRO, LÓBULO TEMPORAL DERECHO",
+      "Organo": "CEREBRO LOBULO TEMPORAL DERECHO",
+      "Diagnostico Coloracion": "TUMOR GLIAL DE ALTO GRADO WHO 4",
+      "Diagnostico Principal": "GLIOBLASTOMA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 40%",
+      "IHQ_P53": "POSITIVO (PATRÓN SALVAJE)",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_IDH1": "NEGATIVO",
+      "IHQ_KI-67": "40%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 170,
+      "campos_vacios": 131,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 131,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cerebro, lóbulo temporal derecho. Tumor. Resección parcial. Estudios de inmunohistoquímica:\nGLIOBLASTOMA",
+      "valor_corregido": "Cerebro, lóbulo temporal derecho. Tumor. Resección parcial. Estudios de inmunohistoquímica: GLIOBLASTOMA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250187",
+      "timestamp": "2026-01-09T05:03:17.034968"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2501078-1, el cual corresponde a resección de tumor en lóbulo temporal derecho de cerebroo, con diagnóstico de \"TUMOR GLIAL DE ALTO GRADO WHO 4\". Se ordenan los siguientes marcadores: p53, GFAP, IDH y Ki-67.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2501078-1, el cual corresponde a resección de tumor en lóbulo temporal derecho de cerebroo, con diagnóstico de \"TUMOR GLIAL DE ALTO GRADO WHO 4\". Se ordenan los siguientes marcadores: p53, GFAP, IDH y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250187",
+      "timestamp": "2026-01-09T05:03:17.034974"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para GFAP y expresan p53 tipo salvaje (normal). Son negativas para IDH. El índice de proliferación celular medido por Ki-67 está entre 40 y 50%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para GFAP y expresan p53 tipo salvaje (normal). Son negativas para IDH. El índice de proliferación celular medido por KI-67 está entre 40 y 50%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250187",
+      "timestamp": "2026-01-09T05:03:17.034976"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 53
+  }
+}

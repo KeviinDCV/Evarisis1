@@ -1,0 +1,162 @@
+{
+  "session_id": "IHQ250160_20260112_165148",
+  "numero_peticion": "IHQ250160",
+  "timestamp": "2026-01-12T16:51:48.692754",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250160\nCopia Pag. 1 de 2\nNombre : MARIANA SANCHEZ GUTIERREZ\nN. peticion : IHQ250160\nN.Identificación : CC. 1007836817\nGenero : FEMENINO\nEdad : 21 años 4 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 11/02/2025\nFecha Informe : 20/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM250139 que corresponde a \"Biopsia de hueso\". Previa valoración de la coloración básica, se\nrealizan cortes histológicos para los siguientes marcadores: CD3, CD10 , CD15 , CD20, CD34,\nCD38, CD68, MPO, GLYCOFORINA, CD61, CD117.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nMédula ósea con hueso trabecular con espacios medulares evaluables con una celularidad del\n60%. Relación mieloide (Mieloperoxidasa + CD15+) : eritroide (Glicoforina +) de 2 a 1. Los\nmegacariocitos (CD61+) se cuentan hasta 8 x campo de alto poder, sin formacion de agregados.\nLos linfocitos B (CD20 +), células plasmáticas (CD38+,) linfocitos T (CD3+) se encuentran\ndispersos, sin formación de acúmulos. No hay incremento de blástos mieloides (CD117 + (2%) Y\nCD34+ menor al 1%).\nDIAGNÓSTICO\nMédula ósea hueso derecho. Biopsia. Estudio de inmunohistoquímica. \n- CELULARIDAD GLOBAL DEL 60%.\n- RELACIÓN MIELOIDE - ERITROIDE 2 A 1.\n- MEGACARIOCITOS DE 2 - 8 POR CAMPO DE ALTO PODER\n- SIN EVIDENCIA DE AGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE\nASPECTO PLASMOCITOIDE NI BLÁSTICO.\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---\nIHQ250160\nCopia Pag. 2 de 2\nNombre : MARIANA SANCHEZ GUTIERREZ\nN. peticion : IHQ250160\nN.Identificación : CC. 1007836817\nGenero : FEMENINO\nEdad : 21 años 4 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 11/02/2025\nFecha Informe : 20/02/2025\nCorrelacionar con estudio de citometría de flujo y mielograma. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3651,
+      "reduccion_porcentaje": 97.8
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250160",
+      "caso_num": 1,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIANA SANCHEZ GUTIERREZ",
+      "numero_peticion": "IHQ250160",
+      "identificacion": "1007836817",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "21",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "GERARDO ANDRES DEL CASTILLO",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "11/02/2025",
+      "fecha_informe": "20/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250160",
+      "N. de identificación": "1007836817",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "GERARDO ANDRES DEL CASTILLO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "11/02/2025",
+      "Fecha Informe": "20/02/2025",
+      "nombres": "MARIANA",
+      "Primer nombre": "MARIANA",
+      "Segundo nombre": "",
+      "apellidos": "SANCHEZ GUTIERREZ",
+      "Primer apellido": "SANCHEZ",
+      "Segundo apellido": "GUTIERREZ",
+      "nombre_formal": "SANCHEZ GUTIERREZ, MARIANA",
+      "diagnostico": "Médula ósea hueso derecho. Biopsia. Estudio de inmunohistoquímica. - CELULARIDAD GLOBAL DEL 60%. - RELACIÓN MIELOIDE - ERITROIDE 2 A 1. - MEGACARIOCITOS DE 2 - 8 POR CAMPO DE ALTO PODER - SIN EVIDENCIA DE AGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE ASPECTO PLASMOCITOIDE NI BLÁSTICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Médula ósea con hueso trabecular con espacios medulares evaluables con una celularidad del 60%. Relación mieloide (Mieloperoxidasa + CD15+) : eritroide (Glicoforina +) de 2 a 1. Los megacariocitos (CD61+) se cuentan hasta 8 x campo de alto poder, sin formacion de agregados. Los linfocitos B (CD20 +), células plasmáticas (CD38+,) linfocitos T (CD3+) se encuentran dispersos, sin formación de acúmulos. No hay incremento de blástos mieloides (CD117 + (2%) Y CD34+ menor al 1%).",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M250139 que corresponde a \"Biopsia de hueso\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: CD3, CD10 , CD15 , CD20, CD34, CD38, CD68, MPO, GLYCOFORINA, CD61, CD117.",
+      "ihq_organo": "MÉDULA ÓSEA HUESO DERECHO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD10, CD15, CD20, CD34, CD38, CD68, MPO, GLYCOFORINA, CD61, CD117",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 2 --- IHQ250160 Copia Pag. 2 de 2 Nombre : MARIANA SANCHEZ GUTIERREZ N. peticion : IHQ250160 N.Identificación : CC. 1007836817 Genero : FEMENINO Edad : 21 años 4 meses 23 dias EPS : NUEVA EPS Médico tratante : GERARDO ANDRES DEL CASTILLO Servicio : HEMATO ONCOLOGIA HOSP ADULTO Fecha Ingreso : 11/02/2025 Fecha Informe : 20/02/2025 Correlacionar con estudio de citometría de flujo y mielograma.",
+      "IHQ_ORGANO": "MÉDULA ÓSEA HUESO DERECHO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD10, CD15, CD20, CD34, CD38, CD68, MPO, GLYCOFORINA, CD61, CD117",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "extraction_timestamp": "2026-01-12T16:51:49.524285",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250160\nCopia Pag. 1 de 2\nNombre : MARIANA SANCHEZ GUTIERREZ\nN. peticion : IHQ250160\nN.Identificación : CC. 1007836817\nGenero : FEMENINO\nEdad : 21 años 4 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 11/02/2025\nFecha Informe : 20/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM250139 que corresponde a \"Biopsia de hueso\". Previa valoración de la coloración básica, se\nrealizan cortes histológicos para los siguientes marcadores: CD3, CD10 , CD15 , CD20, CD34,\nCD38, CD68, MPO, GLYCOFORINA, CD61, CD117.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nMédula ósea con hueso trabecular con espacios medulares evaluables con una celularidad del\n60%. Relación mieloide (Mieloperoxidasa + CD15+) : eritroide (Glicoforina +) de 2 a 1. Los\nmegacariocitos (CD61+) se cuentan hasta 8 x campo de alto poder, sin formacion de agregados.\nLos linfocitos B (CD20 +), células plasmáticas (CD38+,) linfocitos T (CD3+) se encuentran\ndispersos, sin formación de acúmulos. No hay incremento de blástos mieloides (CD117 + (2%) Y\nCD34+ menor al 1%).\nDIAGNÓSTICO\nMédula ósea hueso derecho. Biopsia. Estudio de inmunohistoquímica. \n- CELULARIDAD GLOBAL DEL 60%.\n- RELACIÓN MIELOIDE - ERITROIDE 2 A 1.\n- MEGACARIOCITOS DE 2 - 8 POR CAMPO DE ALTO PODER\n- SIN EVIDENCIA DE AGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE\nASPECTO PLASMOCITOIDE NI BLÁSTICO.\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---\nIHQ250160\nCopia Pag. 2 de 2\nNombre : MARIANA SANCHEZ GUTIERREZ\nN. peticion : IHQ250160\nN.Identificación : CC. 1007836817\nGenero : FEMENINO\nEdad : 21 años 4 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 11/02/2025\nFecha Informe : 20/02/2025\nCorrelacionar con estudio de citometría de flujo y mielograma. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD10, CD15, CD20, CD34, CD38, CD68, MPO, GLYCOFORINA, CD61, CD117, GLICOFORINA, MIELOPEROXIDASA",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M250139 que corresponde a \"Biopsia de hueso\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: CD3, CD10 , CD15 , CD20, CD34, CD38, CD68, MPO, GLYCOFORINA, CD61, CD117.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Médula ósea con hueso trabecular con espacios medulares evaluables con una celularidad del 60%. Relación mieloide (Mieloperoxidasa + CD15+) : eritroide (Glicoforina +) de 2 a 1. Los megacariocitos (CD61+) se cuentan hasta 8 x campo de alto poder, sin formacion de agregados. Los linfocitos B (CD20 +), células plasmáticas (CD38+,) linfocitos T (CD3+) se encuentran dispersos, sin formación de acúmulos. No hay incremento de blástos mieloides (CD117 + (2%) Y CD34+ menor al 1%).",
+      "Descripcion Diagnostico": "Médula ósea hueso derecho. Biopsia. Estudio de inmunohistoquímica. - CELULARIDAD GLOBAL DEL 60%. - RELACIÓN MIELOIDE - ERITROIDE 2 A 1. - MEGACARIOCITOS DE 2 - 8 POR CAMPO DE ALTO PODER - SIN EVIDENCIA DE AGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE ASPECTO PLASMOCITOIDE NI BLÁSTICO.",
+      "IHQ_ORGANO": "MÉDULA ÓSEA HUESO DERECHO",
+      "Organo": "BX DE HUESO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CELULARIDAD GLOBAL DEL 60%",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD10": "NO MENCIONADO",
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD68": "NO MENCIONADO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 129,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 11,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula ósea hueso derecho. Biopsia. Estudio de inmunohistoquímica. \n- CELULARIDAD GLOBAL DEL 60%.\n- RELACIÓN MIELOIDE - ERITROIDE 2 A 1.\n- MEGACARIOCITOS DE 2 - 8 POR CAMPO DE ALTO PODER\n- SIN EVIDENCIA DE AGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE\nASPECTO PLASMOCITOIDE NI BLÁSTICO.",
+      "valor_corregido": "Médula ósea hueso derecho. Biopsia. Estudio de inmunohistoquímica. - CELULARIDAD GLOBAL DEL 60%. - RELACIÓN MIELOIDE - ERITROIDE 2 A 1. - MEGACARIOCITOS DE 2 - 8 POR CAMPO DE ALTO PODER - SIN EVIDENCIA DE AGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE ASPECTO PLASMOCITOIDE NI BLÁSTICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250160",
+      "timestamp": "2026-01-12T16:51:49.223916"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---\nIHQ250160\nCopia Pag. 2 de 2\nNombre : MARIANA SANCHEZ GUTIERREZ\nN. peticion : IHQ250160\nN.Identificación : CC. 1007836817\nGenero : FEMENINO\nEdad : 21 años 4 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 11/02/2025\nFecha Informe : 20/02/2025\nCorrelacionar con estudio de citometría de flujo y mielograma.",
+      "valor_corregido": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 2 --- IHQ250160 Copia Pag. 2 de 2 Nombre : MARIANA SANCHEZ GUTIERREZ N. peticion : IHQ250160 N.Identificación : CC. 1007836817 Genero : FEMENINO Edad : 21 años 4 meses 23 dias EPS : NUEVA EPS Médico tratante : GERARDO ANDRES DEL CASTILLO Servicio : HEMATO ONCOLOGIA HOSP ADULTO Fecha Ingreso : 11/02/2025 Fecha Informe : 20/02/2025 Correlacionar con estudio de citometría de flujo y mielograma.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250160",
+      "timestamp": "2026-01-12T16:51:49.223926"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 55
+  }
+}

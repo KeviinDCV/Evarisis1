@@ -1,0 +1,68 @@
+================================================================================
+SIMULACIÓN DE CORRECCIONES - OCR_PROCESSOR.PY
+Caso: IHQ251029 - Descripción Macroscópica Cortada
+================================================================================
+
+--------------------------------------------------------------------------------
+CONTROL (SIN MODIFICACIONES)
+--------------------------------------------------------------------------------
+Estado: [FAIL] FALLIDO
+
+Resultado obtenido (109 chars):
+  Se recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado "M2510813" y...
+
+Esperado (323 chars):
+  Se recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado "M2510813" y diagnóstico "LOS HALLAZGOS MORFOLOGICOS FAVORECEN UN TUMOR NEUROENDOCRINO". Previa revisió...
+
+--------------------------------------------------------------------------------
+SOLUCION 1: Merge Continuations
+--------------------------------------------------------------------------------
+Estado: [FAIL] FALLIDO
+
+Resultado obtenido (109 chars):
+  Se recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado "M2510813" y...
+
+--------------------------------------------------------------------------------
+SOLUCION 2: Reorder Misplaced Text
+--------------------------------------------------------------------------------
+[DEBUG SOL2] macro_text termina en: 'a en material institucional, rotulado
+"M2510813"
+y'
+[DEBUG SOL2] micro_text empieza con: 'Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema
+ROCHE VENTAN'
+[DEBUG SOL2] Ultima linea de macro: 'y'
+[DEBUG SOL2] Continuacion detectada? True
+[DEBUG SOL2] Macroscopica termina incompleta. Buscando continuacion...
+[DEBUG SOL2] Encontro 'diagnostico' en micro? False
+Estado: [FAIL] FALLIDO
+
+Resultado obtenido (109 chars):
+  Se recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado "M2510813" y...
+
+--------------------------------------------------------------------------------
+SOLUCION 3: Hybrid (Merge + Reorder)
+--------------------------------------------------------------------------------
+[DEBUG SOL2] macro_text termina en: 'a en material institucional, rotulado
+"M2510813"
+y'
+[DEBUG SOL2] micro_text empieza con: 'Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema
+ROCHE VENTAN'
+[DEBUG SOL2] Ultima linea de macro: 'y'
+[DEBUG SOL2] Continuacion detectada? True
+[DEBUG SOL2] Macroscopica termina incompleta. Buscando continuacion...
+[DEBUG SOL2] Encontro 'diagnostico' en micro? False
+Estado: [FAIL] FALLIDO
+
+Resultado obtenido (109 chars):
+  Se recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado "M2510813" y...
+
+================================================================================
+RESUMEN DE RESULTADOS
+================================================================================
+CONTROL:     [FAIL] FALLIDO
+SOLUCION 1:  [FAIL] FALLIDO (Merge Continuations)
+SOLUCION 2:  [FAIL] FALLIDO (Reorder Misplaced)
+SOLUCION 3:  [FAIL] FALLIDO (Hybrid)
+
+[!!] ADVERTENCIA: Ninguna solucion resolvio el problema. Requiere analisis adicional.
+

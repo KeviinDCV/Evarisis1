@@ -1,0 +1,154 @@
+{
+  "session_id": "IHQ250995_20251110_225154",
+  "numero_peticion": "IHQ250995",
+  "timestamp": "2025-11-10T22:51:54.936642",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250995\nCopia Pag. 1 de 2\nNombre : CALIXTO ALEGRIA VALLESTERO\nN. peticion : IHQ250995\nN.Identificación : CC. 76339091\nGenero : MASCULINO\nEdad : 62 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN JOSE SERNA\nServicio : UROLOGIA COEX\nFecha Ingreso : 10/09/2025\nFecha Informe : 15/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE PROSTATA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M250332” que corresponde a “biopsia de prostáta” con diagnóstico de “ PROLIFERACIÓN ACINAR\nATIPICA (ASAP)\". Previa revisión de la histología, se realizan niveles histológicos al bloque A para tinción\ncon p63, 34BETA y racemasa en las tres laminas.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn la mayoría de la muestra se reconoce parénquima prostático con glándulas acinares con expresión de\ninmunohistoquímica positiva para marcadores de mioepitelio. Sin embargo se reconoce un foco de 1 mm\n( corresponde a 3 glándulas) con perdida de expresión para CK34 BETA E12 y P63 con marcación\npositiva para Racemasa.\nDIAGNÓSTICO\nPróstata, lóbulo derecho. Biopsia. Estudios de inmunohistoquímica:\nPROLIFERACIÓN ACINAR ATIPICA (ASAP)\nVER COMENTARIO.\nCOMENTARIOS\nAnte los hallazgos de foco mínimo de 1 mm (3 glándulas) sin marcación positiva para células basales y\npositividad para Racemasa; se sugiere correlacionar con estudios serológicos, imágenes diagnósticas y si\npersiste la sospecha de lesión neoplásica maligna, realizar nuevo muestreo a criterio del médico tratante.\nCaso valorado en conjunto con la Dra. Maria ximena Varela.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---\nIHQ250995\nCopia Pag. 2 de 2\nNombre : CALIXTO ALEGRIA VALLESTERO\nN. peticion : IHQ250995\nN.Identificación : CC. 76339091\nGenero : MASCULINO\nEdad : 62 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN JOSE SERNA\nServicio : UROLOGIA COEX\nFecha Ingreso : 10/09/2025\nFecha Informe : 15/09/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3576,
+      "reduccion_porcentaje": 98.16
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250995",
+      "caso_num": 15,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_RACEMASA": "POSITIVO",
+      "nombre_completo": "CALIXTO ALEGRIA VALLESTERO",
+      "numero_peticion": "IHQ250995",
+      "identificacion": "76339091",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "62",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JUAN JOSE SERNA",
+      "servicio": "UROLOGIA COEX",
+      "fecha_ingreso": "10/09/2025",
+      "fecha_informe": "15/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250995",
+      "N. de identificación": "76339091",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UROLOGIA COEX",
+      "Médico tratante": "JUAN JOSE SERNA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "10/09/2025",
+      "Fecha Informe": "15/09/2025",
+      "nombres": "CALIXTO",
+      "Primer nombre": "CALIXTO",
+      "Segundo nombre": "",
+      "apellidos": "ALEGRIA VALLESTERO",
+      "Primer apellido": "ALEGRIA",
+      "Segundo apellido": "VALLESTERO",
+      "nombre_formal": "ALEGRIA VALLESTERO, CALIXTO",
+      "diagnostico": "Próstata, lóbulo derecho. Biopsia. Estudios de inmunohistoquímica: PROLIFERACIÓN ACINAR ATIPICA (ASAP) VER COMENTARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la mayoría de la muestra se reconoce parénquima prostático con glándulas acinares con expresión de inmunohistoquímica positiva para marcadores de mioepitelio. Sin embargo se reconoce un foco de 1 mm ( corresponde a 3 glándulas) con perdida de expresión para CK34 BETA E12 y P63 con marcación positiva para Racemasa.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M250332” que corresponde a “biopsia de prostáta” con diagnóstico de “ PROLIFERACIÓN ACINAR ATIPICA (ASAP)\". Previa revisión de la histología, se realizan niveles histológicos al bloque A para tinción con P63, 34BETA y racemasa en las tres laminas.",
+      "ihq_organo": "PRÓSTATA, LÓBULO DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "UROLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P63, CK34BE12, RACEMASA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Ante los hallazgos de foco mínimo de 1 mm (3 glándulas) sin marcación positiva para células basales y positividad para Racemasa; se sugiere correlacionar con estudios serológicos, imágenes diagnósticas y si persiste la sospecha de lesión neoplásica maligna, realizar nuevo muestreo a criterio del médico tratante. Caso valorado en conjunto con la Dra. Maria ximena Varela. NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 31 --- IHQ250995 Copia Pag. 2 de 2 Nombre : CALIXTO ALEGRIA VALLESTERO N. peticion : IHQ250995 N.Identificación : CC. 76339091 Genero : MASCULINO Edad : 62 años 15 dias EPS : NUEVA EPS Médico tratante : JUAN JOSE SERNA Servicio : UROLOGIA COEX Fecha Ingreso : 10/09/2025 Fecha Informe : 15/09/2025",
+      "IHQ_ORGANO": "PRÓSTATA, LÓBULO DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK34BE12": "NEGATIVO",
+      "IHQ_P63": "NEGATIVO",
+      "extraction_timestamp": "2025-11-10T22:51:55.079151",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250995\nCopia Pag. 1 de 2\nNombre : CALIXTO ALEGRIA VALLESTERO\nN. peticion : IHQ250995\nN.Identificación : CC. 76339091\nGenero : MASCULINO\nEdad : 62 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN JOSE SERNA\nServicio : UROLOGIA COEX\nFecha Ingreso : 10/09/2025\nFecha Informe : 15/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE PROSTATA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M250332” que corresponde a “biopsia de prostáta” con diagnóstico de “ PROLIFERACIÓN ACINAR\nATIPICA (ASAP)\". Previa revisión de la histología, se realizan niveles histológicos al bloque A para tinción\ncon p63, 34BETA y racemasa en las tres laminas.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn la mayoría de la muestra se reconoce parénquima prostático con glándulas acinares con expresión de\ninmunohistoquímica positiva para marcadores de mioepitelio. Sin embargo se reconoce un foco de 1 mm\n( corresponde a 3 glándulas) con perdida de expresión para CK34 BETA E12 y P63 con marcación\npositiva para Racemasa.\nDIAGNÓSTICO\nPróstata, lóbulo derecho. Biopsia. Estudios de inmunohistoquímica:\nPROLIFERACIÓN ACINAR ATIPICA (ASAP)\nVER COMENTARIO.\nCOMENTARIOS\nAnte los hallazgos de foco mínimo de 1 mm (3 glándulas) sin marcación positiva para células basales y\npositividad para Racemasa; se sugiere correlacionar con estudios serológicos, imágenes diagnósticas y si\npersiste la sospecha de lesión neoplásica maligna, realizar nuevo muestreo a criterio del médico tratante.\nCaso valorado en conjunto con la Dra. Maria ximena Varela.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---\nIHQ250995\nCopia Pag. 2 de 2\nNombre : CALIXTO ALEGRIA VALLESTERO\nN. peticion : IHQ250995\nN.Identificación : CC. 76339091\nGenero : MASCULINO\nEdad : 62 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN JOSE SERNA\nServicio : UROLOGIA COEX\nFecha Ingreso : 10/09/2025\nFecha Informe : 15/09/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK34BE12, RACEMASA",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M250332” que corresponde a “biopsia de prostáta” con diagnóstico de “ PROLIFERACIÓN ACINAR ATIPICA (ASAP)\". Previa revisión de la histología, se realizan niveles histológicos al bloque A para tinción con p63, 34BETA y racemasa en las tres laminas.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la mayoría de la muestra se reconoce parénquima prostático con glándulas acinares con expresión de inmunohistoquímica positiva para marcadores de mioepitelio. Sin embargo se reconoce un foco de 1 mm ( corresponde a 3 glándulas) con perdida de expresión para CK34 BETA E12 y P63 con marcación positiva para Racemasa.",
+      "Descripcion Diagnostico": "Próstata, lóbulo derecho. Biopsia. Estudios de inmunohistoquímica: PROLIFERACIÓN ACINAR ATIPICA (ASAP) VER COMENTARIO.",
+      "IHQ_ORGANO": "PRÓSTATA, LÓBULO DERECHO",
+      "Organo": "BX DE PROSTATA DERECHA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN ACINAR ATIPICA (ASAP)",
+      "Diagnostico Principal": "PROLIFERACIÓN ACINAR ATIPICA (ASAP)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P63": "NEGATIVO",
+      "IHQ_CK34BE12": "NEGATIVO",
+      "IHQ_RACEMASA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 111,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 25.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 111,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Próstata, lóbulo derecho. Biopsia. Estudios de inmunohistoquímica:\nPROLIFERACIÓN ACINAR ATIPICA (ASAP)\nVER COMENTARIO.",
+      "valor_corregido": "Próstata, lóbulo derecho. Biopsia. Estudios de inmunohistoquímica: PROLIFERACIÓN ACINAR ATIPICA (ASAP) VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250995",
+      "timestamp": "2025-11-10T22:51:55.078866"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M250332” que corresponde a “biopsia de prostáta” con diagnóstico de “ PROLIFERACIÓN ACINAR\nATIPICA (ASAP)\". Previa revisión de la histología, se realizan niveles histológicos al bloque A para tinción\ncon p63, 34BETA y racemasa en las tres laminas.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M250332” que corresponde a “biopsia de prostáta” con diagnóstico de “ PROLIFERACIÓN ACINAR ATIPICA (ASAP)\". Previa revisión de la histología, se realizan niveles histológicos al bloque A para tinción con P63, 34BETA y racemasa en las tres laminas.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250995",
+      "timestamp": "2025-11-10T22:51:55.078874"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Ante los hallazgos de foco mínimo de 1 mm (3 glándulas) sin marcación positiva para células basales y\npositividad para Racemasa; se sugiere correlacionar con estudios serológicos, imágenes diagnósticas y si\npersiste la sospecha de lesión neoplásica maligna, realizar nuevo muestreo a criterio del médico tratante.\nCaso valorado en conjunto con la Dra. Maria ximena Varela.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---\nIHQ250995\nCopia Pag. 2 de 2\nNombre : CALIXTO ALEGRIA VALLESTERO\nN. peticion : IHQ250995\nN.Identificación : CC. 76339091\nGenero : MASCULINO\nEdad : 62 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN JOSE SERNA\nServicio : UROLOGIA COEX\nFecha Ingreso : 10/09/2025\nFecha Informe : 15/09/2025",
+      "valor_corregido": "Ante los hallazgos de foco mínimo de 1 mm (3 glándulas) sin marcación positiva para células basales y positividad para Racemasa; se sugiere correlacionar con estudios serológicos, imágenes diagnósticas y si persiste la sospecha de lesión neoplásica maligna, realizar nuevo muestreo a criterio del médico tratante. Caso valorado en conjunto con la Dra. Maria ximena Varela. NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 31 --- IHQ250995 Copia Pag. 2 de 2 Nombre : CALIXTO ALEGRIA VALLESTERO N. peticion : IHQ250995 N.Identificación : CC. 76339091 Genero : MASCULINO Edad : 62 años 15 dias EPS : NUEVA EPS Médico tratante : JUAN JOSE SERNA Servicio : UROLOGIA COEX Fecha Ingreso : 10/09/2025 Fecha Informe : 15/09/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250995",
+      "timestamp": "2025-11-10T22:51:55.078882"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 50
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "session_id": "IHQ250112_20260106_014657",
+  "numero_peticion": "IHQ250112",
+  "timestamp": "2026-01-06T01:46:57.220724",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250112\nCopia Pag. 1 de 2\nNombre : MARIA ROSELIANA DIAZ DE TORRES\nN. peticion : IHQ250112\nN.Identificación : CC. 29902152\nGenero : FEMENINO\nEdad : 68 años 20 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 07/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nHISTERECTOMIA +\nSALPINGECTOMIA\nUNILATERAL\n2025-01-30\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como\n“P245203” correspondiente a \"Útero, anexos. Histerectomía y salpingooferectomia bilateral abdominal:\"\ncon diagnóstico de “CARCINOMA ESCAMOCELULAR INVASIVO NOS ” Previa revisión de la histología se\nrealizan niveles histológicos al bloque con representacion del cervix para tinción con los marcadores: p16\ny Ki 67\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células de la lesión son positivas en bloque para p16 y el ki 67 es positivo en todo el espesor del\nepitelio y en el componente invasor\nDIAGNÓSTICO\nExocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica\nCARCINOMA ESCAMOCELULAR INVASIVO NOS\nPOSITIVO PARA P16\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---\nIHQ250112\nCopia Pag. 2 de 2\nNombre : MARIA ROSELIANA DIAZ DE TORRES\nN. peticion : IHQ250112\nN.Identificación : CC. 29902152\nGenero : FEMENINO\nEdad : 68 años 20 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 07/02/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3130,
+      "reduccion_porcentaje": 98.2
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250112",
+      "caso_num": 5,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P16_ESTADO": "POSITIVO (bloque)",
+      "IHQ_KI67": "POSITIVO (bloque)",
+      "IHQ_KI-67": "POSITIVO (todo el espesor)",
+      "nombre_completo": "MARIA ROSELIANA DIAZ DE TORRES",
+      "numero_peticion": "IHQ250112",
+      "identificacion": "29902152",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "68",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "MIGUEL REVELO",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "30/01/2025",
+      "fecha_informe": "07/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250112",
+      "N. de identificación": "29902152",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "MIGUEL REVELO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "30/01/2025",
+      "Fecha Informe": "07/02/2025",
+      "nombres": "MARIA ROSELIANA DIAZ DE",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "ROSELIANA DIAZ DE",
+      "apellidos": "TORRES",
+      "Primer apellido": "TORRES",
+      "Segundo apellido": "",
+      "nombre_formal": "TORRES, MARIA ROSELIANA DIAZ DE",
+      "diagnostico": "Exocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica CARCINOMA ESCAMOCELULAR INVASIVO NOS POSITIVO PARA p16",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células de la lesión son positivas en bloque para p16 y el KI-67 es positivo en todo el espesor del epitelio y en el componente invasor",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “P245203” correspondiente a \"Útero, anexos. Histerectomía y salpingooferectomia bilateral abdominal:\" con diagnóstico de “CARCINOMA ESCAMOCELULAR INVASIVO NOS ” Previa revisión de la histología se realizan niveles histológicos al bloque con representacion del cervix para tinción con los marcadores: p16 y KI-67",
+      "ihq_organo": "EXOCÉRVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "EXOCÉRVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "Ki-67: POSITIVO (todo el espesor)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "p16": "POSITIVO (bloque)",
+      "extraction_timestamp": "2026-01-06T01:46:57.609223",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250112\nCopia Pag. 1 de 2\nNombre : MARIA ROSELIANA DIAZ DE TORRES\nN. peticion : IHQ250112\nN.Identificación : CC. 29902152\nGenero : FEMENINO\nEdad : 68 años 20 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 07/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nHISTERECTOMIA +\nSALPINGECTOMIA\nUNILATERAL\n2025-01-30\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como\n“P245203” correspondiente a \"Útero, anexos. Histerectomía y salpingooferectomia bilateral abdominal:\"\ncon diagnóstico de “CARCINOMA ESCAMOCELULAR INVASIVO NOS ” Previa revisión de la histología se\nrealizan niveles histológicos al bloque con representacion del cervix para tinción con los marcadores: p16\ny Ki 67\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células de la lesión son positivas en bloque para p16 y el ki 67 es positivo en todo el espesor del\nepitelio y en el componente invasor\nDIAGNÓSTICO\nExocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica\nCARCINOMA ESCAMOCELULAR INVASIVO NOS\nPOSITIVO PARA P16\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---\nIHQ250112\nCopia Pag. 2 de 2\nNombre : MARIA ROSELIANA DIAZ DE TORRES\nN. peticion : IHQ250112\nN.Identificación : CC. 29902152\nGenero : FEMENINO\nEdad : 68 años 20 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 07/02/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, P16",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “P245203” correspondiente a \"Útero, anexos. Histerectomía y salpingooferectomia bilateral abdominal:\" con diagnóstico de “CARCINOMA ESCAMOCELULAR INVASIVO NOS ” Previa revisión de la histología se realizan niveles histológicos al bloque con representacion del cervix para tinción con los marcadores: p16 y Ki 67",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células de la lesión son positivas en bloque para p16 y el ki 67 es positivo en todo el espesor del epitelio y en el componente invasor",
+      "Descripcion Diagnostico": "Exocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica CARCINOMA ESCAMOCELULAR INVASIVO NOS POSITIVO PARA p16",
+      "IHQ_ORGANO": "EXOCÉRVIX",
+      "Organo": "HISTERECTOMIA + SALPINGECTOMIA UNILATERAL",
+      "Diagnostico Coloracion": "CARCINOMA ESCAMOCELULAR INVASIVO NOS",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR INVASIVO NOS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: POSITIVO (todo el espesor)",
+      "IHQ_KI-67": "POSITIVO (todo el espesor)",
+      "IHQ_P16_ESTADO": "POSITIVO (bloque)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 131,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 131,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Exocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica\nCARCINOMA ESCAMOCELULAR INVASIVO NOS\nPOSITIVO PARA P16",
+      "valor_corregido": "Exocérvix. Biopsia por colposcopia. Estudio de inmunohistoquimica CARCINOMA ESCAMOCELULAR INVASIVO NOS POSITIVO PARA p16",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250112",
+      "timestamp": "2026-01-06T01:46:57.609017"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “P245203” correspondiente a \"Útero, anexos. Histerectomía y salpingooferectomia bilateral abdominal:\" con diagnóstico de “CARCINOMA ESCAMOCELULAR INVASIVO NOS ” Previa revisión de la histología se realizan niveles histológicos al bloque con representacion del cervix para tinción con los marcadores: p16 y Ki 67",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “P245203” correspondiente a \"Útero, anexos. Histerectomía y salpingooferectomia bilateral abdominal:\" con diagnóstico de “CARCINOMA ESCAMOCELULAR INVASIVO NOS ” Previa revisión de la histología se realizan niveles histológicos al bloque con representacion del cervix para tinción con los marcadores: p16 y KI-67",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250112",
+      "timestamp": "2026-01-06T01:46:57.609023"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células de la lesión son positivas en bloque para p16 y el ki 67 es positivo en todo el espesor del epitelio y en el componente invasor",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células de la lesión son positivas en bloque para p16 y el KI-67 es positivo en todo el espesor del epitelio y en el componente invasor",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250112",
+      "timestamp": "2026-01-06T01:46:57.609025"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 49
+  }
+}

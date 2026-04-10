@@ -1,0 +1,139 @@
+{
+  "session_id": "IHQ250178_20260109_050312",
+  "numero_peticion": "IHQ250178",
+  "timestamp": "2026-01-09T05:03:12.793253",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250178\nCopia Pag. 1 de 2\nNombre : JOSE RAMIRO MARTINEZ JIMENEZ\nN. peticion : IHQ250178\nN.Identificación : CC. 16472816\nGenero : MASCULINO\nEdad : 70 años 13 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JESUS HARRISON BURBANO NOGUERAServicio\nFecha Ingreso : 17/02/2025\nFecha Informe : 24/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PROSTATA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501245-C y F, que corresponde a biopsia de próstata en ápex de lóbulo\nderecho e izquierdo respectivamente, con diagnóstico de \"PROLIFERACION ACINAR ATIPICA\". Se ordenan\nmarcadores de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nC. Tejido prostático cuyos acinos presentan células basales positivas para CK34BETAE12 y p63, siendo\nnegativas para Racemasa.\nF. Tejido prostático con presenta de un foco menor de 1 milímetro con glándulas que presentan ausencia\npara marcación de células basales siendo negativas para p63 y CK34BETAE12, con positividad para\nRacemasa. El total del tejido prostático corresponde a 22 milímetros, porcentaje de tejido comprometido\npor la lesión: 4.5%. No se identifica invasión linfovascular ni perineural. \nDIAGNÓSTICO\nC. Próstata. Ápex de lóbulo derecho. Biopsia\nNEGATIVO PARA MALIGNIDAD\nF. Próstata. Ápex de lóbulo izquierdo. Biopsia\nADENOCARCINOMA ACINAR 3+3 (GRUPO 1) EN MENOS DE 1 MILIMETRO DE TEJIDO PROSTÁTICO\n(TAMAÑO DE LOS CORES: 22 MILIMETROS)\nPORCENTAJE DE COMPROMISO DEL TEJIDO: 4.5%.\nINVASIÓN PERINEURAL NO IDENTIFICADA\nINVASIÓN LINFOVASCULAR NO IDENTIFICADA\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---\nIHQ250178\nCopia Pag. 2 de 2\nNombre : JOSE RAMIRO MARTINEZ JIMENEZ\nN. peticion : IHQ250178\nN.Identificación : CC. 16472816\nGenero : MASCULINO\nEdad : 70 años 13 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JESUS HARRISON BURBANO NOGUERAServicio\n: ORTOPEDIA\nFecha Ingreso : 17/02/2025\nFecha Informe : 24/02/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3517,
+      "reduccion_porcentaje": 97.88
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250178",
+      "caso_num": 18,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P63": "NEGATIVO",
+      "IHQ_CK34BE12": "NEGATIVO",
+      "IHQ_RACEMASA": "NEGATIVO",
+      "nombre_completo": "JOSE RAMIRO MARTINEZ JIMENEZ",
+      "numero_peticion": "IHQ250178",
+      "identificacion": "16472816",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "70",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JESUS HARRISON BURBANO NOGUERA",
+      "servicio": "ORTOPEDIA",
+      "fecha_ingreso": "17/02/2025",
+      "fecha_informe": "24/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250178",
+      "N. de identificación": "16472816",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "ORTOPEDIA",
+      "Médico tratante": "JESUS HARRISON BURBANO NOGUERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "17/02/2025",
+      "Fecha Informe": "24/02/2025",
+      "nombres": "JOSE RAMIRO",
+      "Primer nombre": "JOSE",
+      "Segundo nombre": "RAMIRO",
+      "apellidos": "MARTINEZ JIMENEZ",
+      "Primer apellido": "MARTINEZ",
+      "Segundo apellido": "JIMENEZ",
+      "nombre_formal": "MARTINEZ JIMENEZ, JOSE RAMIRO",
+      "diagnostico": "C. Próstata. Ápex de lóbulo derecho. Biopsia NEGATIVO PARA MALIGNIDAD F. Próstata. Ápex de lóbulo izquierdo. Biopsia ADENOCARCINOMA ACINAR 3+3 (GRUPO 1) EN MENOS DE 1 MILIMETRO DE TEJIDO PROSTÁTICO (TAMAÑO DE LOS CORES: 22 MILIMETROS) PORCENTAJE DE COMPROMISO DEL TEJIDO: 4.5%. INVASIÓN PERINEURAL NO IDENTIFICADA INVASIÓN LINFOVASCULAR NO IDENTIFICADA",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. C. Tejido prostático cuyos acinos presentan células basales positivas para CK34BETAE12 y p63, siendo negativas para Racemasa. F. Tejido prostático con presenta de un foco menor de 1 milímetro con glándulas que presentan ausencia para marcación de células basales siendo negativas para p63 y CK34BETAE12, con positividad para Racemasa. El total del tejido prostático corresponde a 22 milímetros, porcentaje de tejido comprometido por la lesión: 4.5%. No se identifica invasión linfovascular ni perineural.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2501245-C y F, que corresponde a biopsia de próstata en ápex de lóbulo derecho e izquierdo respectivamente, con diagnóstico de \"PROLIFERACION ACINAR ATIPICA\". Se ordenan marcadores de inmunohistoquímica.",
+      "ihq_organo": "PRÓSTATA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK34BE12",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PRÓSTATA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK34BE12",
+      "extraction_timestamp": "2026-01-09T05:03:13.273976",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250178\nCopia Pag. 1 de 2\nNombre : JOSE RAMIRO MARTINEZ JIMENEZ\nN. peticion : IHQ250178\nN.Identificación : CC. 16472816\nGenero : MASCULINO\nEdad : 70 años 13 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JESUS HARRISON BURBANO NOGUERAServicio\nFecha Ingreso : 17/02/2025\nFecha Informe : 24/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PROSTATA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501245-C y F, que corresponde a biopsia de próstata en ápex de lóbulo\nderecho e izquierdo respectivamente, con diagnóstico de \"PROLIFERACION ACINAR ATIPICA\". Se ordenan\nmarcadores de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nC. Tejido prostático cuyos acinos presentan células basales positivas para CK34BETAE12 y p63, siendo\nnegativas para Racemasa.\nF. Tejido prostático con presenta de un foco menor de 1 milímetro con glándulas que presentan ausencia\npara marcación de células basales siendo negativas para p63 y CK34BETAE12, con positividad para\nRacemasa. El total del tejido prostático corresponde a 22 milímetros, porcentaje de tejido comprometido\npor la lesión: 4.5%. No se identifica invasión linfovascular ni perineural. \nDIAGNÓSTICO\nC. Próstata. Ápex de lóbulo derecho. Biopsia\nNEGATIVO PARA MALIGNIDAD\nF. Próstata. Ápex de lóbulo izquierdo. Biopsia\nADENOCARCINOMA ACINAR 3+3 (GRUPO 1) EN MENOS DE 1 MILIMETRO DE TEJIDO PROSTÁTICO\n(TAMAÑO DE LOS CORES: 22 MILIMETROS)\nPORCENTAJE DE COMPROMISO DEL TEJIDO: 4.5%.\nINVASIÓN PERINEURAL NO IDENTIFICADA\nINVASIÓN LINFOVASCULAR NO IDENTIFICADA\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---\nIHQ250178\nCopia Pag. 2 de 2\nNombre : JOSE RAMIRO MARTINEZ JIMENEZ\nN. peticion : IHQ250178\nN.Identificación : CC. 16472816\nGenero : MASCULINO\nEdad : 70 años 13 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JESUS HARRISON BURBANO NOGUERAServicio\n: ORTOPEDIA\nFecha Ingreso : 17/02/2025\nFecha Informe : 24/02/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK34BE12, P63, RACEMASA",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2501245-C y F, que corresponde a biopsia de próstata en ápex de lóbulo derecho e izquierdo respectivamente, con diagnóstico de \"PROLIFERACION ACINAR ATIPICA\". Se ordenan marcadores de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. C. Tejido prostático cuyos acinos presentan células basales positivas para CK34BETAE12 y p63, siendo negativas para Racemasa. F. Tejido prostático con presenta de un foco menor de 1 milímetro con glándulas que presentan ausencia para marcación de células basales siendo negativas para p63 y CK34BETAE12, con positividad para Racemasa. El total del tejido prostático corresponde a 22 milímetros, porcentaje de tejido comprometido por la lesión: 4.5%. No se identifica invasión linfovascular ni perineural.",
+      "Descripcion Diagnostico": "C. Próstata. Ápex de lóbulo derecho. Biopsia NEGATIVO PARA MALIGNIDAD F. Próstata. Ápex de lóbulo izquierdo. Biopsia ADENOCARCINOMA ACINAR 3+3 (GRUPO 1) EN MENOS DE 1 MILIMETRO DE TEJIDO PROSTÁTICO (TAMAÑO DE LOS CORES: 22 MILIMETROS) PORCENTAJE DE COMPROMISO DEL TEJIDO: 4.5%. INVASIÓN PERINEURAL NO IDENTIFICADA INVASIÓN LINFOVASCULAR NO IDENTIFICADA",
+      "IHQ_ORGANO": "PRÓSTATA",
+      "Organo": "BX PROSTATA",
+      "Diagnostico Coloracion": "PROLIFERACION ACINAR ATIPICA",
+      "Diagnostico Principal": "ADENOCARCINOMA ACINAR 3+3 (GRUPO 1) EN MENOS DE 1 MILIMETRO DE TEJIDO PROSTÁTICO (TAMAÑO DE LOS CORES: 22 MILIMETROS) PORCENTAJE DE COMPROMISO DEL TEJIDO: 4",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK34BE12": "NEGATIVO",
+      "IHQ_P63": "NEGATIVO",
+      "IHQ_RACEMASA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 170,
+      "campos_vacios": 132,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 132,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "C. Próstata. Ápex de lóbulo derecho. Biopsia\nNEGATIVO PARA MALIGNIDAD\nF. Próstata. Ápex de lóbulo izquierdo. Biopsia\nADENOCARCINOMA ACINAR 3+3 (GRUPO 1) EN MENOS DE 1 MILIMETRO DE TEJIDO PROSTÁTICO\n(TAMAÑO DE LOS CORES: 22 MILIMETROS)\nPORCENTAJE DE COMPROMISO DEL TEJIDO: 4.5%.\nINVASIÓN PERINEURAL NO IDENTIFICADA\nINVASIÓN LINFOVASCULAR NO IDENTIFICADA",
+      "valor_corregido": "C. Próstata. Ápex de lóbulo derecho. Biopsia NEGATIVO PARA MALIGNIDAD F. Próstata. Ápex de lóbulo izquierdo. Biopsia ADENOCARCINOMA ACINAR 3+3 (GRUPO 1) EN MENOS DE 1 MILIMETRO DE TEJIDO PROSTÁTICO (TAMAÑO DE LOS CORES: 22 MILIMETROS) PORCENTAJE DE COMPROMISO DEL TEJIDO: 4.5%. INVASIÓN PERINEURAL NO IDENTIFICADA INVASIÓN LINFOVASCULAR NO IDENTIFICADA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250178",
+      "timestamp": "2026-01-09T05:03:13.273761"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 51
+  }
+}

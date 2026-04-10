@@ -1,0 +1,152 @@
+{
+  "session_id": "IHQ250230_20260128_124130",
+  "numero_peticion": "IHQ250230",
+  "timestamp": "2026-01-28T12:41:30.949173",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250230\nCopia Pag. 1 de 2\nNombre : ESPERANZA GUTIERREZ\nMONTENEGRO\nN. peticion : IHQ250230\nN.Identificación : CC. 34660106\nGenero : FEMENINO\nEdad : 53 años 1 mes 27 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : ENDOSCOPIA\nFecha Ingreso : 03/03/2025\nFecha Informe : 10/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCOLON TRANSVERSO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado\ncomo\n“M2500169”\nque\ncorresponde\na\n“colon\ntransverso”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nREPORTE:\nMLH1: Pérdida de la expresión nuclear. \nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Pérdida de la expresión nuclear (tinción citoplasmática granular).\nInterpretación de la reparación de desajustes (MMR): \n+ Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de\ndesajustes).\nInterpretación de la inestabilidad de microsatélites (MSI): \n+ MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad\nSobreexpresión de oncogén HER2: Negativo (Score 1+). \ndiagnósticos\nde\n“ADENOCARCINOMA\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO\nCON\nCOMPONENTE\nMUCINOSO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 7 para\ntinción con MLH1, MSH2, MSH6, PMS2 Y HER-2.\nDIAGNÓSTICO\nColon transverso. Tumor. Hemicolectomía izquierda. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 37 ---\nIHQ250230\nCopia Pag. 2 de 2\nNombre : ESPERANZA GUTIERREZ\nMONTENEGRO\nN. peticion : IHQ250230\nN.Identificación : CC. 34660106\nGenero : FEMENINO\nEdad : 53 años 1 mes 27 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : ENDOSCOPIA\nFecha Ingreso : 03/03/2025\nFecha Informe : 10/03/2025\n- PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.\n- HER-2: NEGATIVO (SCORE 1+).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3790,
+      "reduccion_porcentaje": 97.89
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250230",
+      "caso_num": 19,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ESPERANZA GUTIERREZ MONTENEGRO",
+      "numero_peticion": "IHQ250230",
+      "identificacion": "34660106",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "53",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "ENDOSCOPIA",
+      "fecha_ingreso": "03/03/2025",
+      "fecha_informe": "10/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250230",
+      "N. de identificación": "34660106",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "ENDOSCOPIA",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/03/2025",
+      "Fecha Informe": "10/03/2025",
+      "nombres": "ESPERANZA",
+      "Primer nombre": "ESPERANZA",
+      "Segundo nombre": "",
+      "apellidos": "GUTIERREZ MONTENEGRO",
+      "Primer apellido": "GUTIERREZ",
+      "Segundo apellido": "MONTENEGRO",
+      "nombre_formal": "GUTIERREZ MONTENEGRO, ESPERANZA",
+      "diagnostico": "Colon transverso. Tumor. Hemicolectomía izquierda. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO: 03/03/2025 - PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2. - HER-2: NEGATIVO (SCORE 1+).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). REPORTE: MLH1: Pérdida de la expresión nuclear. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Pérdida de la expresión nuclear (tinción citoplasmática granular). Interpretación de la reparación de desajustes (MMR): + Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de desajustes). Interpretación de la inestabilidad de microsatélites (MSI): + MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad Sobreexpresión de oncogén HER2: Negativo (Score 1+).",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2500169\" que corresponde a \"colon transverso\" con diagnósticos de \"ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO\". Previa revisión de la histología, se realizan niveles histológicos al bloque 7 para tinción con MLH1, MSH2, MSH6, PMS2 Y HER-2.",
+      "ihq_organo": "COLON TRANSVERSO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MLH1, MSH2, MSH6, PMS2, HER2",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "COLON TRANSVERSO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: Negativo (Score 1+)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "MLH1, MSH2, MSH6, PMS2, HER2",
+      "IHQ_HER2": "NEGATIVO (SCORE 1+)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (PÉRDIDA DE LA EXPRESIÓN NUCLEAR)",
+      "IHQ_PMS2": "POSITIVO (PÉRDIDA DE LA EXPRESIÓN NUCLEAR)",
+      "extraction_timestamp": "2026-01-28T12:41:31.604424",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250230\nCopia Pag. 1 de 2\nNombre : ESPERANZA GUTIERREZ\nMONTENEGRO\nN. peticion : IHQ250230\nN.Identificación : CC. 34660106\nGenero : FEMENINO\nEdad : 53 años 1 mes 27 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : ENDOSCOPIA\nFecha Ingreso : 03/03/2025\nFecha Informe : 10/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCOLON TRANSVERSO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado\ncomo\n“M2500169”\nque\ncorresponde\na\n“colon\ntransverso”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nREPORTE:\nMLH1: Pérdida de la expresión nuclear. \nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Pérdida de la expresión nuclear (tinción citoplasmática granular).\nInterpretación de la reparación de desajustes (MMR): \n+ Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de\ndesajustes).\nInterpretación de la inestabilidad de microsatélites (MSI): \n+ MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad\nSobreexpresión de oncogén HER2: Negativo (Score 1+). \ndiagnósticos\nde\n“ADENOCARCINOMA\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO\nCON\nCOMPONENTE\nMUCINOSO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 7 para\ntinción con MLH1, MSH2, MSH6, PMS2 Y HER-2.\nDIAGNÓSTICO\nColon transverso. Tumor. Hemicolectomía izquierda. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 37 ---\nIHQ250230\nCopia Pag. 2 de 2\nNombre : ESPERANZA GUTIERREZ\nMONTENEGRO\nN. peticion : IHQ250230\nN.Identificación : CC. 34660106\nGenero : FEMENINO\nEdad : 53 años 1 mes 27 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : ENDOSCOPIA\nFecha Ingreso : 03/03/2025\nFecha Informe : 10/03/2025\n- PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.\n- HER-2: NEGATIVO (SCORE 1+).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MLH1, MSH2, MSH6, PMS2, HER2",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500169” que corresponde a “colon transverso” con diagnósticos de “ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 7 para tinción con MLH1, MSH2, MSH6, PMS2 Y HER-2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). REPORTE: MLH1: Pérdida de la expresión nuclear. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Pérdida de la expresión nuclear (tinción citoplasmática granular). Interpretación de la reparación de desajustes (MMR): + Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de desajustes). Interpretación de la inestabilidad de microsatélites (MSI): + MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad Sobreexpresión de oncogén HER2: Negativo (Score 1+).",
+      "Descripcion Diagnostico": "Colon transverso. Tumor. Hemicolectomía izquierda. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO: 03/03/2025 - PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2. - HER-2: NEGATIVO (SCORE 1+).",
+      "IHQ_ORGANO": "COLON TRANSVERSO",
+      "Organo": "COLON TRANSVERSO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO: 03/03/2025",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: Negativo (Score 1+)",
+      "IHQ_MLH1": "POSITIVO (PÉRDIDA DE LA EXPRESIÓN NUCLEAR)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (PÉRDIDA DE LA EXPRESIÓN NUCLEAR)",
+      "IHQ_HER2": "NEGATIVO (SCORE 1+)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 175,
+      "campos_vacios": 136,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Colon transverso. Tumor. Hemicolectomía izquierda. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO: 03/03/2025\n- PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.\n- HER-2: NEGATIVO (SCORE 1+).",
+      "valor_corregido": "Colon transverso. Tumor. Hemicolectomía izquierda. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO: 03/03/2025 - PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2. - HER-2: NEGATIVO (SCORE 1+).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250230",
+      "timestamp": "2026-01-28T12:41:31.604129"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500169” que corresponde a “colon transverso” con diagnósticos de “ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 7 para tinción con MLH1, MSH2, MSH6, PMS2 Y HER-2.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2500169\" que corresponde a \"colon transverso\" con diagnósticos de \"ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON COMPONENTE MUCINOSO\". Previa revisión de la histología, se realizan niveles histológicos al bloque 7 para tinción con MLH1, MSH2, MSH6, PMS2 Y HER-2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250230",
+      "timestamp": "2026-01-28T12:41:31.604138"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 52
+  }
+}

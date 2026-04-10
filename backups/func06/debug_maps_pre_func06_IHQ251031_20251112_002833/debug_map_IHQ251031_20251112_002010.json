@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ251031_20251112_002010",
+  "numero_peticion": "IHQ251031",
+  "timestamp": "2025-11-12T00:20:10.543097",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251031\nCopia Pag. 1 de 2\nNombre : ESTHER SALAZAR CASTILLO\nN. peticion : IHQ251031\nN.Identificación : CC. 29580948\nGenero : FEMENINO\nEdad : 76 años 15 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 18/09/2025\nFecha Informe : 30/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR COLON\nTRANSVERSO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2510719 y que corresponde a \"colon transverso\" con diagnóstico de \"ADENOCARCINOMA\nINVASIVO\" .Previa revisión de la histología, se realizan niveles histológicos para tinción con HER-2 , MSH6\n, MSH2 , MLH1 , PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos\nse\nanalizan\ntinciones\nde\nInmunohistoquímica\nrealizadas\nen\nla\nplataforma\nautomatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nPATRÓN MICROSATELITAL: Estable\nSobreexpresión de oncogén HER2: NEGATIVO (Score 0+).\nDIAGNÓSTICO\nMucosa de colon transverso. Tumor. Biopsia endoscópica. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO\n- PATRÓN MICROSATELITAL ESTABLE.\n- HER-2: NEGATIVO (SCORE 0).\nARMANDO CORTES BUELVAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 95 ---\nIHQ251031\nCopia Pag. 2 de 2\nNombre : ESTHER SALAZAR CASTILLO\nN. peticion : IHQ251031\nN.Identificación : CC. 29580948\nGenero : FEMENINO\nEdad : 76 años 15 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 18/09/2025\nFecha Informe : 30/09/2025\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 96 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3259,
+      "reduccion_porcentaje": 98.32
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251031",
+      "caso_num": 45,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ESTHER SALAZAR CASTILLO",
+      "numero_peticion": "IHQ251031",
+      "identificacion": "29580948",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "76",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "18/09/2025",
+      "fecha_informe": "30/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251031",
+      "N. de identificación": "29580948",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "18/09/2025",
+      "Fecha Informe": "30/09/2025",
+      "nombres": "ESTHER",
+      "Primer nombre": "ESTHER",
+      "Segundo nombre": "",
+      "apellidos": "SALAZAR CASTILLO",
+      "Primer apellido": "SALAZAR",
+      "Segundo apellido": "CASTILLO",
+      "nombre_formal": "SALAZAR CASTILLO, ESTHER",
+      "diagnostico": "Mucosa de colon transverso. Tumor. Biopsia endoscópica. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO - PATRÓN MICROSATELITAL ESTABLE. - HER-2: NEGATIVO (SCORE 0).",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable PATRÓN MICROSATELITAL: Estable Sobreexpresión de oncogén HER2: NEGATIVO (Score 0+).",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2510719 y que corresponde a \"colon transverso\" con diagnóstico de \"ADENOCARCINOMA INVASIVO\" .Previa revisión de la histología, se realizan niveles histológicos para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "ihq_organo": "MUCOSA DE COLON TRANSVERSO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA DE COLON TRANSVERSO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "HER2 , MSH6",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_PMS2": "POSITIVO",
+      "IHQ_MSH6": "POSITIVO",
+      "IHQ_MSH2": "POSITIVO",
+      "IHQ_MLH1": "EXPRESIÓN NUCLEAR INTACTA",
+      "extraction_timestamp": "2025-11-12T00:20:10.676557",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251031\nCopia Pag. 1 de 2\nNombre : ESTHER SALAZAR CASTILLO\nN. peticion : IHQ251031\nN.Identificación : CC. 29580948\nGenero : FEMENINO\nEdad : 76 años 15 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 18/09/2025\nFecha Informe : 30/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR COLON\nTRANSVERSO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2510719 y que corresponde a \"colon transverso\" con diagnóstico de \"ADENOCARCINOMA\nINVASIVO\" .Previa revisión de la histología, se realizan niveles histológicos para tinción con HER-2 , MSH6\n, MSH2 , MLH1 , PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos\nse\nanalizan\ntinciones\nde\nInmunohistoquímica\nrealizadas\nen\nla\nplataforma\nautomatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nPATRÓN MICROSATELITAL: Estable\nSobreexpresión de oncogén HER2: NEGATIVO (Score 0+).\nDIAGNÓSTICO\nMucosa de colon transverso. Tumor. Biopsia endoscópica. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO\n- PATRÓN MICROSATELITAL ESTABLE.\n- HER-2: NEGATIVO (SCORE 0).\nARMANDO CORTES BUELVAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 95 ---\nIHQ251031\nCopia Pag. 2 de 2\nNombre : ESTHER SALAZAR CASTILLO\nN. peticion : IHQ251031\nN.Identificación : CC. 29580948\nGenero : FEMENINO\nEdad : 76 años 15 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 18/09/2025\nFecha Informe : 30/09/2025\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 96 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2510719 y que corresponde a \"colon transverso\" con diagnóstico de \"ADENOCARCINOMA INVASIVO\" .Previa revisión de la histología, se realizan niveles histológicos para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable PATRÓN MICROSATELITAL: Estable Sobreexpresión de oncogén HER2: NEGATIVO (Score 0+).",
+      "Descripcion Diagnostico": "Mucosa de colon transverso. Tumor. Biopsia endoscópica. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO - PATRÓN MICROSATELITAL ESTABLE. - HER-2: NEGATIVO (SCORE 0).",
+      "IHQ_ORGANO": "MUCOSA DE COLON TRANSVERSO",
+      "Organo": "TUMOR COLON TRANSVERSO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 , MSH6",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_MSH6": "POSITIVO",
+      "IHQ_MSH2": "POSITIVO",
+      "IHQ_MLH1": "EXPRESIÓN NUCLEAR INTACTA",
+      "IHQ_PMS2": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 109,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 26.35
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 109,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa de colon transverso. Tumor. Biopsia endoscópica. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO\n- PATRÓN MICROSATELITAL ESTABLE.\n- HER-2: NEGATIVO (SCORE 0).",
+      "valor_corregido": "Mucosa de colon transverso. Tumor. Biopsia endoscópica. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO - PATRÓN MICROSATELITAL ESTABLE. - HER-2: NEGATIVO (SCORE 0).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251031",
+      "timestamp": "2025-11-12T00:20:10.676183"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2510719 y que corresponde a \"colon transverso\" con diagnóstico de \"ADENOCARCINOMA\nINVASIVO\" .Previa revisión de la histología, se realizan niveles histológicos para tinción con HER-2 , MSH6\n, MSH2 , MLH1 , PMS2.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2510719 y que corresponde a \"colon transverso\" con diagnóstico de \"ADENOCARCINOMA INVASIVO\" .Previa revisión de la histología, se realizan niveles histológicos para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251031",
+      "timestamp": "2025-11-12T00:20:10.676187"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos\nse\nanalizan\ntinciones\nde\nInmunohistoquímica\nrealizadas\nen\nla\nplataforma\nautomatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nPATRÓN MICROSATELITAL: Estable\nSobreexpresión de oncogén HER2: NEGATIVO (Score 0+).",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable PATRÓN MICROSATELITAL: Estable Sobreexpresión de oncogén HER2: NEGATIVO (Score 0+).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251031",
+      "timestamp": "2025-11-12T00:20:10.676189"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 51
+  }
+}

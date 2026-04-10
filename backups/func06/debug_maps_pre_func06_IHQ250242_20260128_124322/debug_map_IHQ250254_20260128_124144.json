@@ -1,0 +1,176 @@
+{
+  "session_id": "IHQ250254_20260128_124144",
+  "numero_peticion": "IHQ250254",
+  "timestamp": "2026-01-28T12:41:44.542591",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250254\nCopia Pag. 1 de 2\nNombre : BEATRIZ ELENA MOLINA\nN. peticion : IHQ250254\nN.Identificación : CC. 29406362\nGenero : FEMENINO\nEdad : 68 años 16 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 11/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nSALPINGOOFORECTOMIA\nBILATERAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2502169 ” correspondiente a “” con diagnóstico de “TUMOR MALIGNO\nPOBREMENTE DIFERENCIADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa\nrevisión de la histología, se realizan niveles histológicos para tinción en el especimen A2:\nEMA,\nDESMINA, SALL-4, ESTROGENO, WT1, PAX- 8, Ki67, S100, CKAE1E3, p53 y en el especimen B1:\nSALL 4, CKAE1/AE3, PAX8 y KI67\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nEn el espécimen A2:\nLas células tumorales presentan una marcación bifásica, un componente\nepitelial positivo para CKAE1/AE3, PAX 8, SALL 4 (focal), P53, EMA (focal) y el componente\nmesenquimal es positivo para S100.. Sin marcación positiva para : DESMINA, WT1, RECEPTORES\nDE ESTROGENOS. El ki 67(indice de proliferación):80%.\nEl especimen B muestra un grupo de celularidad atípica focal en el ovario que presenta una\nmarcación positiva para : CKAE1/AE3, PAX 8,\ny KI 67 del 80% . Sin marcación positiva para\nSALLL4\nDIAGNÓSTICO\nA.\nTuba\nuterina\ny\novario\nderecho\n(Lamina\nA2).\nLesión.\nSalpingooferectomía.\nEstudios\nde\ninmunohistoquímica. \nLOS\nHALLAZGOS\nMORFOLOGICOS\nY\nESTUDIOS\nDE\nINMUNOHISTOQUIMICA\nSUGIEREN\nUN CARCINOSARCOMA DEL OVARIO.\nB. Tuba uterina y ovario izquierdo.Lesión. Salpingooferectomia: \nCARCINOMA METASTÁSICO EN OVARIO (3 Milimetros )\nCISTOADENOMA SEROSO.\nTUBA UTERINA CON QUISTES PARATUBÁRICOS.\nCOMENTARIOS\nSe sugiere correlacionar con reporte de patología institucional M2502169\ncaso valorado en conjunto con Dr. Jorge Moreno y Dr. Armando Cortes (Patólogos)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---\nIHQ250254\nCopia Pag. 2 de 2\nNombre : BEATRIZ ELENA MOLINA\nN. peticion : IHQ250254\nN.Identificación : CC. 29406362\nGenero : FEMENINO\nEdad : 68 años 16 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 11/03/2025\nFecha Informe : 28/03/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3941,
+      "reduccion_porcentaje": 97.81
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250254",
+      "caso_num": 42,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "nombre_completo": "BEATRIZ ELENA MOLINA",
+      "numero_peticion": "IHQ250254",
+      "identificacion": "29406362",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "68",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "EULER JAVIER BURBANO",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "11/03/2025",
+      "fecha_informe": "28/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250254",
+      "N. de identificación": "29406362",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "EULER JAVIER BURBANO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "11/03/2025",
+      "Fecha Informe": "28/03/2025",
+      "nombres": "BEATRIZ",
+      "Primer nombre": "BEATRIZ",
+      "Segundo nombre": "",
+      "apellidos": "ELENA MOLINA",
+      "Primer apellido": "ELENA",
+      "Segundo apellido": "MOLINA",
+      "nombre_formal": "ELENA MOLINA, BEATRIZ",
+      "diagnostico": "A. Tuba uterina y ovario derecho (Lamina A2). Lesión. Salpingooferectomía. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA SUGIEREN UN CARCINOSARCOMA DEL OVARIO. B. Tuba uterina y ovario izquierdo.Lesión. Salpingooferectomia: CARCINOMA METASTÁSICO EN OVARIO (3 Milimetros ) CISTOADENOMA SEROSO. TUBA UTERINA CON QUISTES PARATUBÁRICOS.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En el espécimen A2: Las células tumorales presentan una marcación bifásica, un componente epitelial positivo para CKAE1/AE3, PAX 8, SALL 4 (focal), p53, EMA (focal) y el componente mesenquimal es positivo para S100.. Sin marcación positiva para : DESMINA, WT1, RECEPTORES DE ESTROGENOS. El KI-67(indice de proliferación):80%. El especimen B muestra un grupo de celularidad atípica focal en el ovario que presenta una marcación positiva para : CKAE1/AE3, PAX 8, y KI-67 del 80% . Sin marcación positiva para SALLL4",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502169 \" correspondiente a \"\" con diagnóstico de \"TUMOR MALIGNO POBREMENTE DIFERENCIADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se realizan niveles histológicos para tinción en el especimen A2: EMA, DESMINA, SALL-4, ESTROGENO, WT1, PAX- 8, KI-67, S100, CKAE1E3, p53 y en el especimen B1: SALL 4, CKAE1/AE3, PAX8 y KI-67",
+      "ihq_organo": "TUBA UTERINA Y OVARIO DERECHO (LAMINA A2)",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Se sugiere correlacionar con reporte de patología institucional M2502169 caso valorado en conjunto con Dr. Jorge Moreno y Dr. Armando Cortes (Patólogos)",
+      "IHQ_ORGANO": "TUBA UTERINA Y OVARIO DERECHO (LAMINA A2)",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 80%, Receptor de Estrógeno: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_P53": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_DESMIN": "POSITIVO",
+      "IHQ_WT1": "POSITIVO",
+      "IHQ_KI-67": "80%",
+      "extraction_timestamp": "2026-01-28T12:41:45.142135",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250254\nCopia Pag. 1 de 2\nNombre : BEATRIZ ELENA MOLINA\nN. peticion : IHQ250254\nN.Identificación : CC. 29406362\nGenero : FEMENINO\nEdad : 68 años 16 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 11/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nSALPINGOOFORECTOMIA\nBILATERAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2502169 ” correspondiente a “” con diagnóstico de “TUMOR MALIGNO\nPOBREMENTE DIFERENCIADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa\nrevisión de la histología, se realizan niveles histológicos para tinción en el especimen A2:\nEMA,\nDESMINA, SALL-4, ESTROGENO, WT1, PAX- 8, Ki67, S100, CKAE1E3, p53 y en el especimen B1:\nSALL 4, CKAE1/AE3, PAX8 y KI67\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nEn el espécimen A2:\nLas células tumorales presentan una marcación bifásica, un componente\nepitelial positivo para CKAE1/AE3, PAX 8, SALL 4 (focal), P53, EMA (focal) y el componente\nmesenquimal es positivo para S100.. Sin marcación positiva para : DESMINA, WT1, RECEPTORES\nDE ESTROGENOS. El ki 67(indice de proliferación):80%.\nEl especimen B muestra un grupo de celularidad atípica focal en el ovario que presenta una\nmarcación positiva para : CKAE1/AE3, PAX 8,\ny KI 67 del 80% . Sin marcación positiva para\nSALLL4\nDIAGNÓSTICO\nA.\nTuba\nuterina\ny\novario\nderecho\n(Lamina\nA2).\nLesión.\nSalpingooferectomía.\nEstudios\nde\ninmunohistoquímica. \nLOS\nHALLAZGOS\nMORFOLOGICOS\nY\nESTUDIOS\nDE\nINMUNOHISTOQUIMICA\nSUGIEREN\nUN CARCINOSARCOMA DEL OVARIO.\nB. Tuba uterina y ovario izquierdo.Lesión. Salpingooferectomia: \nCARCINOMA METASTÁSICO EN OVARIO (3 Milimetros )\nCISTOADENOMA SEROSO.\nTUBA UTERINA CON QUISTES PARATUBÁRICOS.\nCOMENTARIOS\nSe sugiere correlacionar con reporte de patología institucional M2502169\ncaso valorado en conjunto con Dr. Jorge Moreno y Dr. Armando Cortes (Patólogos)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---\nIHQ250254\nCopia Pag. 2 de 2\nNombre : BEATRIZ ELENA MOLINA\nN. peticion : IHQ250254\nN.Identificación : CC. 29406362\nGenero : FEMENINO\nEdad : 68 años 16 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 11/03/2025\nFecha Informe : 28/03/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, DESMIN, Ki-67, P53, PAX8, Receptor de Estrógeno, S100, WT1",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502169 ” correspondiente a “” con diagnóstico de “TUMOR MALIGNO POBREMENTE DIFERENCIADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan niveles histológicos para tinción en el especimen A2: EMA, DESMINA, SALL-4, ESTROGENO, WT1, PAX- 8, Ki67, S100, CKAE1E3, p53 y en el especimen B1: SALL 4, CKAE1/AE3, PAX8 y KI67",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En el espécimen A2: Las células tumorales presentan una marcación bifásica, un componente epitelial positivo para CKAE1/AE3, PAX 8, SALL 4 (focal), P53, EMA (focal) y el componente mesenquimal es positivo para S100.. Sin marcación positiva para : DESMINA, WT1, RECEPTORES DE ESTROGENOS. El ki 67(indice de proliferación):80%. El especimen B muestra un grupo de celularidad atípica focal en el ovario que presenta una marcación positiva para : CKAE1/AE3, PAX 8, y KI 67 del 80% . Sin marcación positiva para SALLL4",
+      "Descripcion Diagnostico": "A. Tuba uterina y ovario derecho (Lamina A2). Lesión. Salpingooferectomía. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA SUGIEREN UN CARCINOSARCOMA DEL OVARIO. B. Tuba uterina y ovario izquierdo.Lesión. Salpingooferectomia: CARCINOMA METASTÁSICO EN OVARIO (3 Milimetros ) CISTOADENOMA SEROSO. TUBA UTERINA CON QUISTES PARATUBÁRICOS.",
+      "IHQ_ORGANO": "TUBA UTERINA Y OVARIO DERECHO (LAMINA A2)",
+      "Organo": "SALPINGOOFORECTOMIA BILATERAL",
+      "Diagnostico Coloracion": "TUMOR MALIGNO POBREMENTE DIFERENCIADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA SUGIEREN UN CARCINOSARCOMA DEL OVARIO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 80%, Receptor de Estrógeno: POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_DESMIN": "POSITIVO",
+      "IHQ_KI-67": "80%",
+      "IHQ_P53": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_WT1": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 175,
+      "campos_vacios": 133,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 8,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 133,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A.\nTuba\nuterina\ny\novario\nderecho\n(Lamina\nA2).\nLesión.\nSalpingooferectomía.\nEstudios\nde\ninmunohistoquímica. \nLOS\nHALLAZGOS\nMORFOLOGICOS\nY\nESTUDIOS\nDE\nINMUNOHISTOQUIMICA\nSUGIEREN\nUN CARCINOSARCOMA DEL OVARIO.\nB. Tuba uterina y ovario izquierdo.Lesión. Salpingooferectomia: \nCARCINOMA METASTÁSICO EN OVARIO (3 Milimetros )\nCISTOADENOMA SEROSO.\nTUBA UTERINA CON QUISTES PARATUBÁRICOS.",
+      "valor_corregido": "A. Tuba uterina y ovario derecho (Lamina A2). Lesión. Salpingooferectomía. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA SUGIEREN UN CARCINOSARCOMA DEL OVARIO. B. Tuba uterina y ovario izquierdo.Lesión. Salpingooferectomia: CARCINOMA METASTÁSICO EN OVARIO (3 Milimetros ) CISTOADENOMA SEROSO. TUBA UTERINA CON QUISTES PARATUBÁRICOS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250254",
+      "timestamp": "2026-01-28T12:41:45.141785"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502169 ” correspondiente a “” con diagnóstico de “TUMOR MALIGNO POBREMENTE DIFERENCIADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan niveles histológicos para tinción en el especimen A2: EMA, DESMINA, SALL-4, ESTROGENO, WT1, PAX- 8, Ki67, S100, CKAE1E3, p53 y en el especimen B1: SALL 4, CKAE1/AE3, PAX8 y KI67",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502169 \" correspondiente a \"\" con diagnóstico de \"TUMOR MALIGNO POBREMENTE DIFERENCIADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se realizan niveles histológicos para tinción en el especimen A2: EMA, DESMINA, SALL-4, ESTROGENO, WT1, PAX- 8, KI-67, S100, CKAE1E3, p53 y en el especimen B1: SALL 4, CKAE1/AE3, PAX8 y KI-67",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250254",
+      "timestamp": "2026-01-28T12:41:45.141794"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En el espécimen A2: Las células tumorales presentan una marcación bifásica, un componente epitelial positivo para CKAE1/AE3, PAX 8, SALL 4 (focal), P53, EMA (focal) y el componente mesenquimal es positivo para S100.. Sin marcación positiva para : DESMINA, WT1, RECEPTORES DE ESTROGENOS. El ki 67(indice de proliferación):80%. El especimen B muestra un grupo de celularidad atípica focal en el ovario que presenta una marcación positiva para : CKAE1/AE3, PAX 8, y KI 67 del 80% . Sin marcación positiva para SALLL4",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En el espécimen A2: Las células tumorales presentan una marcación bifásica, un componente epitelial positivo para CKAE1/AE3, PAX 8, SALL 4 (focal), p53, EMA (focal) y el componente mesenquimal es positivo para S100.. Sin marcación positiva para : DESMINA, WT1, RECEPTORES DE ESTROGENOS. El KI-67(indice de proliferación):80%. El especimen B muestra un grupo de celularidad atípica focal en el ovario que presenta una marcación positiva para : CKAE1/AE3, PAX 8, y KI-67 del 80% . Sin marcación positiva para SALLL4",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250254",
+      "timestamp": "2026-01-28T12:41:45.141798"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se sugiere correlacionar con reporte de patología institucional M2502169\ncaso valorado en conjunto con Dr. Jorge Moreno y Dr. Armando Cortes (Patólogos)",
+      "valor_corregido": "Se sugiere correlacionar con reporte de patología institucional M2502169 caso valorado en conjunto con Dr. Jorge Moreno y Dr. Armando Cortes (Patólogos)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250254",
+      "timestamp": "2026-01-28T12:41:45.141800"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 54
+  }
+}

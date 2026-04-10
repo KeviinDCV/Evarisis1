@@ -1,0 +1,148 @@
+{
+  "session_id": "IHQ250195_20260107_231226",
+  "numero_peticion": "IHQ250195",
+  "timestamp": "2026-01-07T23:12:26.495883",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250195\nCopia Pag. 1 de 2\nNombre : CLARA ROSA JIMENEZ ARIAS\nN. peticion : IHQ250195\nN.Identificación : CC. 66712938\nGenero : FEMENINO\nEdad : 56 años 8 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HERRERA\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 21/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR DE FOSA\nPOSTERIOR\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2501699” correspondiente a “Tumor de fosa posterior ” con diagnóstico de\n“NEOPLASIA FUSOCELULAR A CLASIFICAR POR INMUNOHISTOQUIMICA”. Previa revisión de la\nhistología,\nse\nrealizan\nniveles\nhistológicos\npara\ntinción\ncon\nS100,\nSOX10,\nGFAP,\nKI65,\nProgesterona, EMA, IDH, Inhibina, CD34. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células son: \n positivas para: S100 y SOX 10. Ki67 4% \nNegativo para: IDH, Inhibina, GFAP, Progesterona, EMA.\nCD34 resalta la vasculatura.\nDIAGNÓSTICO\nFosa posterior. Lesión. Resección. Estudios de inmunohistoquímica.\nSCHWANNOMA.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---\nIHQ250195\nCopia Pag. 2 de 2\nNombre : CLARA ROSA JIMENEZ ARIAS\nN. peticion : IHQ250195\nN.Identificación : CC. 66712938\nGenero : FEMENINO\nEdad : 56 años 8 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HERRERA\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 21/02/2025\nFecha Informe : 28/02/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3078,
+      "reduccion_porcentaje": 98.14
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250195",
+      "caso_num": 35,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "CLARA ROSA JIMENEZ ARIAS",
+      "numero_peticion": "IHQ250195",
+      "identificacion": "66712938",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "56",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ALEJANDRO HERRERA",
+      "servicio": "UCI NEUROCIRUGIA",
+      "fecha_ingreso": "21/02/2025",
+      "fecha_informe": "28/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250195",
+      "N. de identificación": "66712938",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "UCI NEUROCIRUGIA",
+      "Médico tratante": "ALEJANDRO HERRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/02/2025",
+      "Fecha Informe": "28/02/2025",
+      "nombres": "CLARA ROSA",
+      "Primer nombre": "CLARA",
+      "Segundo nombre": "ROSA",
+      "apellidos": "JIMENEZ ARIAS",
+      "Primer apellido": "JIMENEZ",
+      "Segundo apellido": "ARIAS",
+      "nombre_formal": "JIMENEZ ARIAS, CLARA ROSA",
+      "diagnostico": "Fosa posterior. Lesión. Resección. Estudios de inmunohistoquímica. SCHWANNOMA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células son: positivas para: S100 y SOX 10. KI-67 4% Negativo para: IDH, Inhibina, GFAP, Progesterona, EMA. CD34 resalta la vasculatura.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501699” correspondiente a “Tumor de fosa posterior ” con diagnóstico de “NEOPLASIA FUSOCELULAR A CLASIFICAR POR INMUNOHISTOQUIMICA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con S100, SOX10, GFAP, KI65, Progesterona, EMA, IDH, Inhibina, CD34.",
+      "ihq_organo": "FOSA POSTERIOR",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "S100, SOX10, GFAP, KI65, Receptor de Progesterona, EMA, IDH, INHIBINA, CD34",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "FOSA POSTERIOR",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "Ki-67 4%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "S100, SOX10, GFAP, KI65, Receptor de Progesterona, EMA, IDH, INHIBINA, CD34",
+      "extraction_timestamp": "2026-01-07T23:12:26.847988",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250195\nCopia Pag. 1 de 2\nNombre : CLARA ROSA JIMENEZ ARIAS\nN. peticion : IHQ250195\nN.Identificación : CC. 66712938\nGenero : FEMENINO\nEdad : 56 años 8 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HERRERA\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 21/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR DE FOSA\nPOSTERIOR\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2501699” correspondiente a “Tumor de fosa posterior ” con diagnóstico de\n“NEOPLASIA FUSOCELULAR A CLASIFICAR POR INMUNOHISTOQUIMICA”. Previa revisión de la\nhistología,\nse\nrealizan\nniveles\nhistológicos\npara\ntinción\ncon\nS100,\nSOX10,\nGFAP,\nKI65,\nProgesterona, EMA, IDH, Inhibina, CD34. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células son: \n positivas para: S100 y SOX 10. Ki67 4% \nNegativo para: IDH, Inhibina, GFAP, Progesterona, EMA.\nCD34 resalta la vasculatura.\nDIAGNÓSTICO\nFosa posterior. Lesión. Resección. Estudios de inmunohistoquímica.\nSCHWANNOMA.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---\nIHQ250195\nCopia Pag. 2 de 2\nNombre : CLARA ROSA JIMENEZ ARIAS\nN. peticion : IHQ250195\nN.Identificación : CC. 66712938\nGenero : FEMENINO\nEdad : 56 años 8 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HERRERA\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 21/02/2025\nFecha Informe : 28/02/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "S100, SOX10, GFAP, KI65, Receptor de Progesterona, EMA, IDH, INHIBINA, CD34",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501699” correspondiente a “Tumor de fosa posterior ” con diagnóstico de “NEOPLASIA FUSOCELULAR A CLASIFICAR POR INMUNOHISTOQUIMICA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con S100, SOX10, GFAP, KI65, Progesterona, EMA, IDH, Inhibina, CD34.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células son: positivas para: S100 y SOX 10. Ki67 4% Negativo para: IDH, Inhibina, GFAP, Progesterona, EMA. CD34 resalta la vasculatura.",
+      "Descripcion Diagnostico": "Fosa posterior. Lesión. Resección. Estudios de inmunohistoquímica. SCHWANNOMA.",
+      "IHQ_ORGANO": "FOSA POSTERIOR",
+      "Organo": "TUMOR DE FOSA POSTERIOR",
+      "Diagnostico Coloracion": "NEOPLASIA FUSOCELULAR A CLASIFICAR POR INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "SCHWANNOMA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 4%",
+      "IHQ_S100": "NO MENCIONADO",
+      "IHQ_SOX10": "NO MENCIONADO",
+      "IHQ_GFAP": "NO MENCIONADO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NO MENCIONADO",
+      "IHQ_EMA": "NO MENCIONADO",
+      "IHQ_CD34": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 126,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 126,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Fosa posterior. Lesión. Resección. Estudios de inmunohistoquímica.\nSCHWANNOMA.",
+      "valor_corregido": "Fosa posterior. Lesión. Resección. Estudios de inmunohistoquímica. SCHWANNOMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250195",
+      "timestamp": "2026-01-07T23:12:26.847657"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células son: positivas para: S100 y SOX 10. Ki67 4% Negativo para: IDH, Inhibina, GFAP, Progesterona, EMA. CD34 resalta la vasculatura.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células son: positivas para: S100 y SOX 10. KI-67 4% Negativo para: IDH, Inhibina, GFAP, Progesterona, EMA. CD34 resalta la vasculatura.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250195",
+      "timestamp": "2026-01-07T23:12:26.847664"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 48
+  }
+}

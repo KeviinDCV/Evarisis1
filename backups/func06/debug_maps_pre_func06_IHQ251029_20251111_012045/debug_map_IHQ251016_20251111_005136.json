@@ -1,0 +1,166 @@
+{
+  "session_id": "IHQ251016_20251111_005136",
+  "numero_peticion": "IHQ251016",
+  "timestamp": "2025-11-11T00:51:36.874000",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251016\nCopia Pag. 1 de 2\nNombre : HELMER DE JESUS URREGO GOMEZ\nN. peticion : IHQ251016\nN.Identificación : CC. 6428273\nGenero : MASCULINO\nEdad : 54 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 16/09/2025\nFecha Informe : 30/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2511100” que corresponde a \"Medula ósea. Biopsia\" y con diagnóstico de “CELULARIDAD\nGLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS\nTRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN\nINCREMENTO MORFOLOGICO DE BLASTOS.”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con: CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, Glicoforina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células de la medula ósea presentan la siguiente marcación: Hay marcación para escasos\nlinfocitos B\n(CD20+) y linfocitos T (CD3+, CD5+) dispersos, presenta una relación mieloide\neritroide 4:1 Células plasmáticas maduras dispersas (CD38+, CD56-), mastocitos dispersos\n(CD117+ CD34-) y marcación para escasos megacariocitos CD61+ se identifican hasta 10 por\ncampo de alto poder. \nDIAGNÓSTICO\nMedula osea. Biopsia. Estudios de inmunohistoquímica. \nCELULARIDAD GLOBAL DEL 50%.\nRELACIÓN MIELOIDE ERITROIDE 4:1.\nMEGACARIOCITOS HASTA 10 POR CAMPO DE ALTO PODER. \nLINFOCITOS T Y B MADUROS DISPERSOS. \nCELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS.\nSIN INCREMENTO DE BLASTOS. \nCOMENTARIOS\nCaso valorado en conjunto con la Dra Maria Ximena Varela (patológa).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---\nIHQ251016\nCopia Pag. 2 de 2\nNombre : HELMER DE JESUS URREGO GOMEZ\nN. peticion : IHQ251016\nN.Identificación : CC. 6428273\nGenero : MASCULINO\nEdad : 54 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 16/09/2025\nFecha Informe : 30/09/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3686,
+      "reduccion_porcentaje": 98.1
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251016",
+      "caso_num": 35,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "HELMER DE JESUS URREGO GOMEZ",
+      "numero_peticion": "IHQ251016",
+      "identificacion": "6428273",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "54",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "SILVIO ANDRES BOLAÑOS",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "16/09/2025",
+      "fecha_informe": "30/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251016",
+      "N. de identificación": "6428273",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "SILVIO ANDRES BOLAÑOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "16/09/2025",
+      "Fecha Informe": "30/09/2025",
+      "nombres": "HELMER DE JESUS URREGO",
+      "Primer nombre": "HELMER",
+      "Segundo nombre": "DE JESUS URREGO",
+      "apellidos": "GOMEZ",
+      "Primer apellido": "GOMEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "GOMEZ, HELMER DE JESUS URREGO",
+      "diagnostico": "Medula osea. Biopsia. Estudios de inmunohistoquímica. CELULARIDAD GLOBAL DEL 50%. RELACIÓN MIELOIDE ERITROIDE 4:1. MEGACARIOCITOS HASTA 10 POR CAMPO DE ALTO PODER. LINFOCITOS T Y B MADUROS DISPERSOS. CELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS. SIN INCREMENTO DE BLASTOS.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células de la medula ósea presentan la siguiente marcación: Hay marcación para escasos linfocitos B (CD20+) y linfocitos T (CD3+, CD5+) dispersos, presenta una relación mieloide eritroide 4:1 Células plasmáticas maduras dispersas (CD38+, CD56-), mastocitos dispersos (CD117+ CD34-) y marcación para escasos megacariocitos CD61+ se identifican hasta 10 por campo de alto poder.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2511100” que corresponde a \"Medula ósea. Biopsia\" y con diagnóstico de “CELULARIDAD GLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS TRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN INCREMENTO MORFOLOGICO DE BLASTOS.”. Previa revisión de la histología se realizan niveles histológicos para tinción con: CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, Glicoforina. DESCRIPCIÓN MICROSCÓPICA Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células de la medula ósea presentan la siguiente marcación: Hay marcación para escasos linfocitos B (CD20+) y linfocitos T (CD3+, CD5+) dispersos, presenta una relación mieloide eritroide 4:1 Células plasmáticas maduras dispersas (CD38+, CD56-), mastocitos dispersos (CD117+ CD34-) y marcación para escasos megacariocitos CD61+ se identifican hasta 10 por campo de alto poder. DIAGNÓSTICO Medula osea. Biopsia. Estudios de inmunohistoquímica. CELULARIDAD GLOBAL DEL 50%. RELACIÓN MIELOIDE ERITROIDE 4:1. MEGACARIOCITOS HASTA 10 POR CAMPO DE ALTO PODER. LINFOCITOS T Y B MADUROS DISPERSOS. CELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS. SIN INCREMENTO DE BLASTOS. COMENTARIOS Caso valorado en conjunto con la Dra Maria Ximena Varela (patológa). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 75 --- IHQ251016 Copia Pag. 2 de 2 Nombre : HELMER DE JESUS URREGO GOMEZ N. peticion : IHQ251016 N.Identificación : CC. 6428273 Genero : MASCULINO Edad : 54 años 6 dias EPS : NUEVA EPS Médico tratante : SILVIO ANDRES BOLAÑOS Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 16/09/2025 Fecha Informe : 30/09/2025 NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 76 ---",
+      "ihq_organo": "MEDULA OSEA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, GLICOFORINA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con la Dra Maria Ximena Varela (patológa). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 75 --- IHQ251016 Copia Pag. 2 de 2 Nombre : HELMER DE JESUS URREGO GOMEZ N. peticion : IHQ251016 N.Identificación : CC. 6428273 Genero : MASCULINO Edad : 54 años 6 dias EPS : NUEVA EPS Médico tratante : SILVIO ANDRES BOLAÑOS Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 16/09/2025 Fecha Informe : 30/09/2025",
+      "IHQ_ORGANO": "MEDULA OSEA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "extraction_timestamp": "2025-11-11T00:51:37.007485",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251016\nCopia Pag. 1 de 2\nNombre : HELMER DE JESUS URREGO GOMEZ\nN. peticion : IHQ251016\nN.Identificación : CC. 6428273\nGenero : MASCULINO\nEdad : 54 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 16/09/2025\nFecha Informe : 30/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2511100” que corresponde a \"Medula ósea. Biopsia\" y con diagnóstico de “CELULARIDAD\nGLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS\nTRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN\nINCREMENTO MORFOLOGICO DE BLASTOS.”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con: CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, Glicoforina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células de la medula ósea presentan la siguiente marcación: Hay marcación para escasos\nlinfocitos B\n(CD20+) y linfocitos T (CD3+, CD5+) dispersos, presenta una relación mieloide\neritroide 4:1 Células plasmáticas maduras dispersas (CD38+, CD56-), mastocitos dispersos\n(CD117+ CD34-) y marcación para escasos megacariocitos CD61+ se identifican hasta 10 por\ncampo de alto poder. \nDIAGNÓSTICO\nMedula osea. Biopsia. Estudios de inmunohistoquímica. \nCELULARIDAD GLOBAL DEL 50%.\nRELACIÓN MIELOIDE ERITROIDE 4:1.\nMEGACARIOCITOS HASTA 10 POR CAMPO DE ALTO PODER. \nLINFOCITOS T Y B MADUROS DISPERSOS. \nCELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS.\nSIN INCREMENTO DE BLASTOS. \nCOMENTARIOS\nCaso valorado en conjunto con la Dra Maria Ximena Varela (patológa).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---\nIHQ251016\nCopia Pag. 2 de 2\nNombre : HELMER DE JESUS URREGO GOMEZ\nN. peticion : IHQ251016\nN.Identificación : CC. 6428273\nGenero : MASCULINO\nEdad : 54 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 16/09/2025\nFecha Informe : 30/09/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, GLICOFORINA",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2511100” que corresponde a \"Medula ósea. Biopsia\" y con diagnóstico de “CELULARIDAD GLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS TRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN INCREMENTO MORFOLOGICO DE BLASTOS.”. Previa revisión de la histología se realizan niveles histológicos para tinción con: CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, Glicoforina. DESCRIPCIÓN MICROSCÓPICA Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células de la medula ósea presentan la siguiente marcación: Hay marcación para escasos linfocitos B (CD20+) y linfocitos T (CD3+, CD5+) dispersos, presenta una relación mieloide eritroide 4:1 Células plasmáticas maduras dispersas (CD38+, CD56-), mastocitos dispersos (CD117+ CD34-) y marcación para escasos megacariocitos CD61+ se identifican hasta 10 por campo de alto poder. DIAGNÓSTICO Medula osea. Biopsia. Estudios de inmunohistoquímica. CELULARIDAD GLOBAL DEL 50%. RELACIÓN MIELOIDE ERITROIDE 4:1. MEGACARIOCITOS HASTA 10 POR CAMPO DE ALTO PODER. LINFOCITOS T Y B MADUROS DISPERSOS. CELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS. SIN INCREMENTO DE BLASTOS. COMENTARIOS Caso valorado en conjunto con la Dra Maria Ximena Varela (patológa). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 75 --- IHQ251016 Copia Pag. 2 de 2 Nombre : HELMER DE JESUS URREGO GOMEZ N. peticion : IHQ251016 N.Identificación : CC. 6428273 Genero : MASCULINO Edad : 54 años 6 dias EPS : NUEVA EPS Médico tratante : SILVIO ANDRES BOLAÑOS Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 16/09/2025 Fecha Informe : 30/09/2025 NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 76 ---",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células de la medula ósea presentan la siguiente marcación: Hay marcación para escasos linfocitos B (CD20+) y linfocitos T (CD3+, CD5+) dispersos, presenta una relación mieloide eritroide 4:1 Células plasmáticas maduras dispersas (CD38+, CD56-), mastocitos dispersos (CD117+ CD34-) y marcación para escasos megacariocitos CD61+ se identifican hasta 10 por campo de alto poder.",
+      "Descripcion Diagnostico": "Medula osea. Biopsia. Estudios de inmunohistoquímica. CELULARIDAD GLOBAL DEL 50%. RELACIÓN MIELOIDE ERITROIDE 4:1. MEGACARIOCITOS HASTA 10 POR CAMPO DE ALTO PODER. LINFOCITOS T Y B MADUROS DISPERSOS. CELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS. SIN INCREMENTO DE BLASTOS.",
+      "IHQ_ORGANO": "MEDULA OSEA",
+      "Organo": "BIOPSIA DE HUESO",
+      "Diagnostico Coloracion": "CELULARIDAD GLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS TRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN INCREMENTO MORFOLOGICO DE BLASTOS",
+      "Diagnostico Principal": "CELULARIDAD GLOBAL DEL 50%",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_GLICOFORINA": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 104,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 9,
+      "completitud_porcentaje": 29.73
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 104,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula osea. Biopsia. Estudios de inmunohistoquímica. \nCELULARIDAD GLOBAL DEL 50%.\nRELACIÓN MIELOIDE ERITROIDE 4:1.\nMEGACARIOCITOS HASTA 10 POR CAMPO DE ALTO PODER. \nLINFOCITOS T Y B MADUROS DISPERSOS. \nCELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS.\nSIN INCREMENTO DE BLASTOS.",
+      "valor_corregido": "Medula osea. Biopsia. Estudios de inmunohistoquímica. CELULARIDAD GLOBAL DEL 50%. RELACIÓN MIELOIDE ERITROIDE 4:1. MEGACARIOCITOS HASTA 10 POR CAMPO DE ALTO PODER. LINFOCITOS T Y B MADUROS DISPERSOS. CELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS. SIN INCREMENTO DE BLASTOS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251016",
+      "timestamp": "2025-11-11T00:51:37.007280"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2511100” que corresponde a \"Medula ósea. Biopsia\" y con diagnóstico de “CELULARIDAD\nGLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS\nTRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN\nINCREMENTO MORFOLOGICO DE BLASTOS.”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con: CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, Glicoforina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células de la medula ósea presentan la siguiente marcación: Hay marcación para escasos\nlinfocitos B\n(CD20+) y linfocitos T (CD3+, CD5+) dispersos, presenta una relación mieloide\neritroide 4:1 Células plasmáticas maduras dispersas (CD38+, CD56-), mastocitos dispersos\n(CD117+ CD34-) y marcación para escasos megacariocitos CD61+ se identifican hasta 10 por\ncampo de alto poder. \nDIAGNÓSTICO\nMedula osea. Biopsia. Estudios de inmunohistoquímica. \nCELULARIDAD GLOBAL DEL 50%.\nRELACIÓN MIELOIDE ERITROIDE 4:1.\nMEGACARIOCITOS HASTA 10 POR CAMPO DE ALTO PODER. \nLINFOCITOS T Y B MADUROS DISPERSOS. \nCELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS.\nSIN INCREMENTO DE BLASTOS. \nCOMENTARIOS\nCaso valorado en conjunto con la Dra Maria Ximena Varela (patológa).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---\nIHQ251016\nCopia Pag. 2 de 2\nNombre : HELMER DE JESUS URREGO GOMEZ\nN. peticion : IHQ251016\nN.Identificación : CC. 6428273\nGenero : MASCULINO\nEdad : 54 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 16/09/2025\nFecha Informe : 30/09/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2511100” que corresponde a \"Medula ósea. Biopsia\" y con diagnóstico de “CELULARIDAD GLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS TRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN INCREMENTO MORFOLOGICO DE BLASTOS.”. Previa revisión de la histología se realizan niveles histológicos para tinción con: CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, Glicoforina. DESCRIPCIÓN MICROSCÓPICA Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células de la medula ósea presentan la siguiente marcación: Hay marcación para escasos linfocitos B (CD20+) y linfocitos T (CD3+, CD5+) dispersos, presenta una relación mieloide eritroide 4:1 Células plasmáticas maduras dispersas (CD38+, CD56-), mastocitos dispersos (CD117+ CD34-) y marcación para escasos megacariocitos CD61+ se identifican hasta 10 por campo de alto poder. DIAGNÓSTICO Medula osea. Biopsia. Estudios de inmunohistoquímica. CELULARIDAD GLOBAL DEL 50%. RELACIÓN MIELOIDE ERITROIDE 4:1. MEGACARIOCITOS HASTA 10 POR CAMPO DE ALTO PODER. LINFOCITOS T Y B MADUROS DISPERSOS. CELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS. SIN INCREMENTO DE BLASTOS. COMENTARIOS Caso valorado en conjunto con la Dra Maria Ximena Varela (patológa). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 75 --- IHQ251016 Copia Pag. 2 de 2 Nombre : HELMER DE JESUS URREGO GOMEZ N. peticion : IHQ251016 N.Identificación : CC. 6428273 Genero : MASCULINO Edad : 54 años 6 dias EPS : NUEVA EPS Médico tratante : SILVIO ANDRES BOLAÑOS Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 16/09/2025 Fecha Informe : 30/09/2025 NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 76 ---",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251016",
+      "timestamp": "2025-11-11T00:51:37.007286"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Caso valorado en conjunto con la Dra Maria Ximena Varela (patológa).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---\nIHQ251016\nCopia Pag. 2 de 2\nNombre : HELMER DE JESUS URREGO GOMEZ\nN. peticion : IHQ251016\nN.Identificación : CC. 6428273\nGenero : MASCULINO\nEdad : 54 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 16/09/2025\nFecha Informe : 30/09/2025",
+      "valor_corregido": "Caso valorado en conjunto con la Dra Maria Ximena Varela (patológa). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 75 --- IHQ251016 Copia Pag. 2 de 2 Nombre : HELMER DE JESUS URREGO GOMEZ N. peticion : IHQ251016 N.Identificación : CC. 6428273 Genero : MASCULINO Edad : 54 años 6 dias EPS : NUEVA EPS Médico tratante : SILVIO ANDRES BOLAÑOS Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 16/09/2025 Fecha Informe : 30/09/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251016",
+      "timestamp": "2025-11-11T00:51:37.007288"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 56
+  }
+}

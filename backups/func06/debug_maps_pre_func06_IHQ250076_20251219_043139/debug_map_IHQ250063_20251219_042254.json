@@ -1,0 +1,154 @@
+{
+  "session_id": "IHQ250063_20251219_042254",
+  "numero_peticion": "IHQ250063",
+  "timestamp": "2025-12-19T04:22:54.202206",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250063\nCopia Pag. 1 de 1\nNombre : HERMES RIASCOS HURTADO\nN. peticion : IHQ250063\nN.Identificación : CC. 4701366\nGenero : MASCULINO\nEdad : 59 años 5 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : JULIANA CASTELLANOS TORO\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 20/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR SUBMANDIBULAR\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2500356”\nque\ncorresponde\na\n“biopsia\nsubmandibular\nderecho”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\np40 positivo.\np16 negativo.\ndiagnósticos\nde\n“CARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO”. Previa revisión de la\nhistología, se realizan niveles histológicos para tinción con p16 y p40.\nDIAGNÓSTICO\nRegión submandibular derecha. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA ESCAMOCELULAR INFILTRANTE, SIN EXPRESIÓN DE p16.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 20 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 2414,
+      "reduccion_porcentaje": 98.71
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250063",
+      "caso_num": 10,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "HERMES RIASCOS HURTADO",
+      "numero_peticion": "IHQ250063",
+      "identificacion": "4701366",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "59",
+      "eps": "ASMET SALUD EPS SAS",
+      "medico_tratante": "JULIANA CASTELLANOS TORO",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "20/01/2025",
+      "fecha_informe": "23/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250063",
+      "N. de identificación": "4701366",
+      "Tipo de documento": "CC",
+      "EPS": "ASMET SALUD EPS SAS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "JULIANA CASTELLANOS TORO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/01/2025",
+      "Fecha Informe": "23/01/2025",
+      "nombres": "HERMES",
+      "Primer nombre": "HERMES",
+      "Segundo nombre": "",
+      "apellidos": "RIASCOS HURTADO",
+      "Primer apellido": "RIASCOS",
+      "Segundo apellido": "HURTADO",
+      "nombre_formal": "RIASCOS HURTADO, HERMES",
+      "diagnostico": "Región submandibular derecha. Tumor. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA ESCAMOCELULAR INFILTRANTE, SIN EXPRESIÓN DE P16.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. P40 positivo. P16 negativo.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500356” que corresponde a “biopsia submandibular derecho” con diagnósticos de “CARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con P16 y P40.",
+      "ihq_organo": "REGIÓN SUBMANDIBULAR DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, P40",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN SUBMANDIBULAR DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "p16": "NEGATIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2025-12-19T04:22:54.365623",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250063\nCopia Pag. 1 de 1\nNombre : HERMES RIASCOS HURTADO\nN. peticion : IHQ250063\nN.Identificación : CC. 4701366\nGenero : MASCULINO\nEdad : 59 años 5 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : JULIANA CASTELLANOS TORO\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 20/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR SUBMANDIBULAR\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2500356”\nque\ncorresponde\na\n“biopsia\nsubmandibular\nderecho”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\np40 positivo.\np16 negativo.\ndiagnósticos\nde\n“CARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO”. Previa revisión de la\nhistología, se realizan niveles histológicos para tinción con p16 y p40.\nDIAGNÓSTICO\nRegión submandibular derecha. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA ESCAMOCELULAR INFILTRANTE, SIN EXPRESIÓN DE p16.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 20 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500356” que corresponde a “biopsia submandibular derecho” con diagnósticos de “CARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y p40.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. p40 positivo. p16 negativo.",
+      "Descripcion Diagnostico": "Región submandibular derecha. Tumor. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA ESCAMOCELULAR INFILTRANTE, SIN EXPRESIÓN DE P16.",
+      "IHQ_ORGANO": "REGIÓN SUBMANDIBULAR DERECHA",
+      "Organo": "TUMOR SUBMANDIBULAR DERECHO",
+      "Diagnostico Coloracion": "CARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR INFILTRANTE",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P40_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 121,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 22.93
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 121,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región submandibular derecha. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA ESCAMOCELULAR INFILTRANTE, SIN EXPRESIÓN DE p16.",
+      "valor_corregido": "Región submandibular derecha. Tumor. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA ESCAMOCELULAR INFILTRANTE, SIN EXPRESIÓN DE P16.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250063",
+      "timestamp": "2025-12-19T04:22:54.365416"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500356” que corresponde a “biopsia submandibular derecho” con diagnósticos de “CARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y p40.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500356” que corresponde a “biopsia submandibular derecho” con diagnósticos de “CARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con P16 y P40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250063",
+      "timestamp": "2025-12-19T04:22:54.365422"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. p40 positivo. p16 negativo.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. P40 positivo. P16 negativo.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250063",
+      "timestamp": "2025-12-19T04:22:54.365424"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 50
+  }
+}

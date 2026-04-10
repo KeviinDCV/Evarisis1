@@ -1,0 +1,49 @@
+{
+  "caso": "IHQ250226",
+  "fecha": "2026-01-28T03:23:51.738865",
+  "version": "v6.4.99",
+  "modificacion": "Patron refinado con terminador de salto de linea",
+  "archivo_modificado": "biomarker_extractor.py",
+  "problema_original": {
+    "descripcion": "Receptor de Estrogeno y Progesterona capturaban texto adicional despues de su valor",
+    "ejemplo_incorrecto": "POSITIVO (marcacion usual en mosaico) DIAGNOSTICO Mama izquierda",
+    "causa": "Terminador solo paraba en punto (.), no en salto de linea"
+  },
+  "solucion_aplicada": {
+    "patron_anterior": "([^\\.]+?)(?:\\.|$)",
+    "patron_nuevo": "([^\\.\\n]+?)(?:[\\.\\n]|$)",
+    "cambio": "Agregado salto de linea (\n) como terminador adicional",
+    "linea_codigo": "~1550"
+  },
+  "validacion": {
+    "score_auditoria": 100.0,
+    "receptor_estrogeno": {
+      "valor_extraido": "POSITIVO (marcacion usual en mosaico)",
+      "limpio": true,
+      "sin_ruido": [
+        "DIAGNOSTICO",
+        "Mama izquierda",
+        "otro texto"
+      ]
+    },
+    "receptor_progesterona": {
+      "valor_extraido": "POSITIVO (marcacion usual en mosaico)",
+      "limpio": true,
+      "sin_ruido": [
+        "DIAGNOSTICO",
+        "Mama izquierda",
+        "otro texto"
+      ]
+    },
+    "factor_pronostico": {
+      "construido_correctamente": true,
+      "valor": "Receptor de Estrogeno: POSITIVO (marcacion usual en mosaico), Receptor de Progesterona: POSITIVO (marcacion usual en mosaico)"
+    }
+  },
+  "resultado": {
+    "estado": "EXITOSO",
+    "patron_funciona": true,
+    "valores_limpios": true,
+    "score_100": true
+  }
+}

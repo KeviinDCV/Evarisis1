@@ -1,0 +1,89 @@
+====================================================================================================
+REPORTE FUNC-06: REPROCESAMIENTO CASO IHQ250992 CON PATRONES DE NORMALIZACION v6.1.8
+====================================================================================================
+
+Fecha: 2025-11-04 22:00:37
+Version extractores: v6.1.8
+Caso: IHQ250992 (Neoplasia de celulas plasmaticas)
+
+====================================================================================================
+COMPARACION ANTES vs DESPUES DEL REPROCESAMIENTO
+====================================================================================================
+
+BIOMARCADOR        ANTES (sin normalizacion)                    DESPUES (v6.1.8 normalizado)         RESULTADO
+-------------------------------------------------------------------------------------------------------------------
+IHQ_CD38           EXPRESION DE CD38                            POSITIVO                             MEJORADO
+IHQ_CD138          EXPRESION DE CD38 Y CD138                    POSITIVO                             MEJORADO
+IHQ_CD56           EXPRESION ABERRANTE PARA CD56                POSITIVO (ABERRANTE)                 MEJORADO
+IHQ_KAPPA          RESTRICCION DE CADENAS LIVIANAS KAPPA        POSITIVO (RESTRICCION KAPPA)         MEJORADO
+IHQ_LAMBDA         NEGATIVO                                     NEGATIVO                             SIN CAMBIO
+IHQ_CD117          POSITIVO                                     POSITIVO                             SIN CAMBIO
+
+====================================================================================================
+RESUMEN DE MEJORAS
+====================================================================================================
+
+Total biomarcadores: 6
+Biomarcadores normalizados: 4/6 (66%)
+Biomarcadores sin cambio: 2/6 (33%)
+
+====================================================================================================
+PATRONES DE NORMALIZACION APLICADOS (v6.1.8)
+====================================================================================================
+
+Patron 9:  "EXPRESION DE [BIOMARCADOR]" -> "POSITIVO"
+           Aplicado en: IHQ_CD38, IHQ_CD138
+
+Patron 10: "EXPRESION ABERRANTE PARA X" -> "POSITIVO (ABERRANTE)"
+           Aplicado en: IHQ_CD56
+
+Patron 11: "RESTRICCION DE CADENAS LIVIANAS KAPPA" -> "POSITIVO (RESTRICCION KAPPA)"
+           Aplicado en: IHQ_KAPPA
+
+Patron 12: "EXPRESION DEBIL PARA X" -> "POSITIVO (DEBIL)"
+           NO aplicado en este caso
+
+Patron 13: "CON EXPRESION DE X" -> "POSITIVO"
+           NO aplicado en este caso
+
+====================================================================================================
+AUDITORIA INTELIGENTE POST-REPROCESAMIENTO
+====================================================================================================
+
+Score de validacion: 77.8%
+Estado final: ADVERTENCIA
+Warnings: 2
+Errores: 0
+
+Validacion formatos_biomarcadores:
+- Estado: OK
+- Total biomarcadores: 6
+- Biomarcadores con problemas: 0
+- Porcentaje problemas: 0.0%
+- Mensaje: "Todos los biomarcadores tienen formato estandarizado"
+
+====================================================================================================
+MEJORA ALCANZADA
+====================================================================================================
+
+ANTES: 4/6 biomarcadores con formato NO estandarizado (descriptivo)
+       Problemas: "EXPRESION DE", "EXPRESION ABERRANTE", "RESTRICCION DE CADENAS"
+
+DESPUES: 6/6 biomarcadores con formato estandarizado (POSITIVO/NEGATIVO)
+         Todos los biomarcadores usan formato POSITIVO/NEGATIVO con calificadores entre parentesis
+
+IMPACTO: 100% de los biomarcadores ahora tienen formato consistente y estandarizado
+
+====================================================================================================
+CONCLUSION
+====================================================================================================
+
+Los patrones de normalizacion v6.1.8 funcionan correctamente:
+- IHQ_CD38: "EXPRESION DE CD38" -> "POSITIVO" (patron 9)
+- IHQ_CD138: "EXPRESION DE CD38 Y CD138" -> "POSITIVO" (patron 9)
+- IHQ_CD56: "EXPRESION ABERRANTE PARA CD56" -> "POSITIVO (ABERRANTE)" (patron 10)
+- IHQ_KAPPA: "RESTRICCION DE CADENAS LIVIANAS KAPPA" -> "POSITIVO (RESTRICCION KAPPA)" (patron 11)
+
+La seccion formatos_biomarcadores reporta 0 problemas (antes: 4 problemas).
+
+ESTADO: EXITOSO

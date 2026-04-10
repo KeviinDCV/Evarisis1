@@ -1,0 +1,162 @@
+{
+  "session_id": "IHQ250235_20260128_101226",
+  "numero_peticion": "IHQ250235",
+  "timestamp": "2026-01-28T10:12:26.633990",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250235\nCopia Pag. 1 de 2\nNombre : MARIANA HERNANDEZ MURILLO\nN. peticion : IHQ250235\nN.Identificación : TI. 1105382702\nGenero : FEMENINO\nEdad : 12 años 16 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS HERNAN ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 05/03/2025\nFecha Informe : 12/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2502235” que corresponde a “biopsia de medula ósea”. Previa revisión de la\nhistología, se realizan niveles histológicos en bloque A y B para tinción con myogenina, MyoD1,\ndesmina, CD3, CD20, CD38, CD56, CD61, CD34 y CD117.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nMedula ósea con linfocitos T (CD3+), linfocitos B (CD20+) y células plasmáticas (CD38+/CD56-)\nesparcidas sin formar cúmulos.\nHay blastos mieloides (CD34+/CD117+) menores al 5%. Bajo la\ntinción de CD61 se observan de 4-8 megacariocitos por campo de alto poder.\nNo se observan\ncélulas inmunorreactivas para desmina, myogenina y MyoD1.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquímica:\n- SIN COMPROMISO POR LESIÓN NEOPLÁSICA.\nCOMENTARIOS\nCaso valorado en conjunto con Dra. Maria Ximena Varela (patóloga).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 47 ---\nIHQ250235\nCopia Pag. 2 de 2\nNombre : MARIANA HERNANDEZ MURILLO\nN. peticion : IHQ250235\nN.Identificación : TI. 1105382702\nGenero : FEMENINO\nEdad : 12 años 16 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS HERNAN ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 05/03/2025\nFecha Informe : 12/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3276,
+      "reduccion_porcentaje": 98.18
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250235",
+      "caso_num": 24,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_MYOGENIN": "NEGATIVO",
+      "IHQ_MYOD1": "NEGATIVO",
+      "nombre_completo": "MARIANA HERNANDEZ MURILLO",
+      "numero_peticion": "IHQ250235",
+      "identificacion": "1105382702",
+      "tipo_documento": "TI",
+      "Genero": "FEMENINO",
+      "Edad": "12",
+      "eps": "COMFENALCO VALLE",
+      "medico_tratante": "LUIS HERNAN ROMERO",
+      "servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "fecha_ingreso": "05/03/2025",
+      "fecha_informe": "12/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250235",
+      "N. de identificación": "1105382702",
+      "Tipo de documento": "TI",
+      "EPS": "COMFENALCO VALLE",
+      "Servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "Médico tratante": "LUIS HERNAN ROMERO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "05/03/2025",
+      "Fecha Informe": "12/03/2025",
+      "nombres": "MARIANA",
+      "Primer nombre": "MARIANA",
+      "Segundo nombre": "",
+      "apellidos": "HERNANDEZ MURILLO",
+      "Primer apellido": "HERNANDEZ",
+      "Segundo apellido": "MURILLO",
+      "nombre_formal": "HERNANDEZ MURILLO, MARIANA",
+      "diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquímica: - SIN COMPROMISO POR LESIÓN NEOPLÁSICA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Medula ósea con linfocitos T (CD3+), linfocitos B (CD20+) y células plasmáticas (CD38+/CD56-) esparcidas sin formar cúmulos. Hay blastos mieloides (CD34+/CD117+) menores al 5%. Bajo la tinción de CD61 se observan de 4-8 megacariocitos por campo de alto poder. No se observan células inmunorreactivas para desmina, myogenina y MyoD1.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502235\" que corresponde a \"biopsia de medula ósea\". Previa revisión de la histología, se realizan niveles histológicos en bloque A y B para tinción con myogenina, MyoD1, desmina, CD3, CD20, CD38, CD56, CD61, CD34 y CD117.",
+      "ihq_organo": "MEDULA ÓSEA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MYOGENINA, MYOD1, DESMINA, CD3, CD20, CD38, CD56, CD61, CD34, CD117",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con Dra. Maria Ximena Varela (patóloga).",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "MYOGENINA, MYOD1, DESMINA, CD3, CD20, CD38, CD56, CD61, CD34, CD117",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "extraction_timestamp": "2026-01-28T10:12:27.012289",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250235\nCopia Pag. 1 de 2\nNombre : MARIANA HERNANDEZ MURILLO\nN. peticion : IHQ250235\nN.Identificación : TI. 1105382702\nGenero : FEMENINO\nEdad : 12 años 16 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS HERNAN ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 05/03/2025\nFecha Informe : 12/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2502235” que corresponde a “biopsia de medula ósea”. Previa revisión de la\nhistología, se realizan niveles histológicos en bloque A y B para tinción con myogenina, MyoD1,\ndesmina, CD3, CD20, CD38, CD56, CD61, CD34 y CD117.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nMedula ósea con linfocitos T (CD3+), linfocitos B (CD20+) y células plasmáticas (CD38+/CD56-)\nesparcidas sin formar cúmulos.\nHay blastos mieloides (CD34+/CD117+) menores al 5%. Bajo la\ntinción de CD61 se observan de 4-8 megacariocitos por campo de alto poder.\nNo se observan\ncélulas inmunorreactivas para desmina, myogenina y MyoD1.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquímica:\n- SIN COMPROMISO POR LESIÓN NEOPLÁSICA.\nCOMENTARIOS\nCaso valorado en conjunto con Dra. Maria Ximena Varela (patóloga).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 47 ---\nIHQ250235\nCopia Pag. 2 de 2\nNombre : MARIANA HERNANDEZ MURILLO\nN. peticion : IHQ250235\nN.Identificación : TI. 1105382702\nGenero : FEMENINO\nEdad : 12 años 16 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS HERNAN ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 05/03/2025\nFecha Informe : 12/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MYOGENINA, MYOD1, DESMINA, CD3, CD20, CD38, CD56, CD61, CD34, CD117, DESMIN, MYOGENIN",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502235” que corresponde a “biopsia de medula ósea”. Previa revisión de la histología, se realizan niveles histológicos en bloque A y B para tinción con myogenina, MyoD1, desmina, CD3, CD20, CD38, CD56, CD61, CD34 y CD117.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Medula ósea con linfocitos T (CD3+), linfocitos B (CD20+) y células plasmáticas (CD38+/CD56-) esparcidas sin formar cúmulos. Hay blastos mieloides (CD34+/CD117+) menores al 5%. Bajo la tinción de CD61 se observan de 4-8 megacariocitos por campo de alto poder. No se observan células inmunorreactivas para desmina, myogenina y MyoD1.",
+      "Descripcion Diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquímica: - SIN COMPROMISO POR LESIÓN NEOPLÁSICA.",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Organo": "BX MEDULA OSEA",
+      "Diagnostico Coloracion": "BIOPSIA DE MEDULA ÓSEA",
+      "Diagnostico Principal": "SIN COMPROMISO POR LESIÓN NEOPLÁSICA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_MYOGENIN": "NEGATIVO",
+      "IHQ_MYOD1": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD117": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 174,
+      "campos_vacios": 130,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 12,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 130,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula ósea. Biopsia. Estudio de inmunohistoquímica:\n- SIN COMPROMISO POR LESIÓN NEOPLÁSICA.",
+      "valor_corregido": "Medula ósea. Biopsia. Estudio de inmunohistoquímica: - SIN COMPROMISO POR LESIÓN NEOPLÁSICA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250235",
+      "timestamp": "2026-01-28T10:12:27.012001"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502235” que corresponde a “biopsia de medula ósea”. Previa revisión de la histología, se realizan niveles histológicos en bloque A y B para tinción con myogenina, MyoD1, desmina, CD3, CD20, CD38, CD56, CD61, CD34 y CD117.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502235\" que corresponde a \"biopsia de medula ósea\". Previa revisión de la histología, se realizan niveles histológicos en bloque A y B para tinción con myogenina, MyoD1, desmina, CD3, CD20, CD38, CD56, CD61, CD34 y CD117.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250235",
+      "timestamp": "2026-01-28T10:12:27.012007"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 58
+  }
+}

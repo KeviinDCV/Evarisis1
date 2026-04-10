@@ -1,0 +1,149 @@
+{
+  "session_id": "IHQ251023_20251111_232901",
+  "numero_peticion": "IHQ251023",
+  "timestamp": "2025-11-11T23:29:01.879585",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251023\nFinal Pag. 1 de 2\nNombre : VICTOR MANUEL ACOSTA HOYOS\nN. peticion : IHQ251023\nN.Identificación : TI. 1081280881\nGenero : MASCULINO\nEdad : 15 años 3 meses 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : SINDY JHOANA RODRIGUEZ\nServicio : PEDIATRIA CLINICA URGENCIAS\nFecha Ingreso : 18/09/2025\nFecha Informe : 30/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nAPENDICE CECAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de\n\"COMPAÑIA DE PATOLOGOS DE CAUCA SAS CPC SAS\" rotulado como \"CPC-12973\" el cual consiste en\ncuatro bloques de parafina y cuatro lámina de H&E correspondiente a \"APÉNDICE.\" con diagnóstico de\n\"ADENOCARCINOMA MUCINOSO DE BAJO GRADO (WHO, 5TA EDICIÓN)\". Se revisan placas para\nmarcación de CK7, CK19, CK20, CDX2 y MUC2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se\nobserva en las células tumorales marcación nuclear positiva para CDX2 y citoplasmática para CK19, con\npositividad citoplasmática esporádica fuerte para CK20 y marcación negativa para MUC2 y CK7.\nDIAGNÓSTICO\n Apendice cecal. Apendicectomía. Estudio de inmunohistoquímica.\nLOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ADENOCARCINOMA DE\nAPENDICE MODERADAMENTE DIFERENCIADO (NOS)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 86 ---\nIHQ251023\nFinal Pag. 2 de 2\nNombre : VICTOR MANUEL ACOSTA HOYOS\nN. peticion : IHQ251023\nN.Identificación : TI. 1081280881\nGenero : MASCULINO\nEdad : 15 años 3 meses 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : SINDY JHOANA RODRIGUEZ\nServicio : PEDIATRIA CLINICA URGENCIAS\nFecha Ingreso : 18/09/2025\nFecha Informe : 30/09/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3259,
+      "reduccion_porcentaje": 98.32
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251023",
+      "caso_num": 40,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_MUC2": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "nombre_completo": "VICTOR MANUEL ACOSTA HOYOS",
+      "numero_peticion": "IHQ251023",
+      "identificacion": "1081280881",
+      "tipo_documento": "TI",
+      "Genero": "MASCULINO",
+      "Edad": "15",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "SINDY JHOANA RODRIGUEZ",
+      "servicio": "PEDIATRIA CLINICA URGENCIAS",
+      "fecha_ingreso": "18/09/2025",
+      "fecha_informe": "30/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251023",
+      "N. de identificación": "1081280881",
+      "Tipo de documento": "TI",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "PEDIATRIA CLINICA URGENCIAS",
+      "Médico tratante": "SINDY JHOANA RODRIGUEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "18/09/2025",
+      "Fecha Informe": "30/09/2025",
+      "nombres": "VICTOR MANUEL ACOSTA",
+      "Primer nombre": "VICTOR",
+      "Segundo nombre": "MANUEL ACOSTA",
+      "apellidos": "HOYOS",
+      "Primer apellido": "HOYOS",
+      "Segundo apellido": "",
+      "nombre_formal": "HOYOS, VICTOR MANUEL ACOSTA",
+      "diagnostico": "Apendice cecal. Apendicectomía. Estudio de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ADENOCARCINOMA DE APENDICE MODERADAMENTE DIFERENCIADO (NOS)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa en las células tumorales marcación nuclear positiva para CDX2 y citoplasmática para CK19, con positividad citoplasmática esporádica fuerte para CK20 y marcación negativa para MUC2 y CK7.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"COMPAÑIA DE PATOLOGOS DE CAUCA SAS CPC SAS\" rotulado como \"CPC-12973\" el cual consiste en cuatro bloques de parafina y cuatro lámina de H&E correspondiente a \"APÉNDICE.\" con diagnóstico de \"ADENOCARCINOMA MUCINOSO DE BAJO GRADO (WHO, 5TA EDICIÓN)\". Se revisan placas para marcación de CK7, CK19, CK20, CDX2 y MUC2.",
+      "ihq_organo": "APENDICE CECAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK19, CK20, CDX2, MUC2",
+      "procedimiento": "APENDICECTOMÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "APENDICE CECAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "POSITIVO",
+      "extraction_timestamp": "2025-11-11T23:29:02.086844",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251023\nFinal Pag. 1 de 2\nNombre : VICTOR MANUEL ACOSTA HOYOS\nN. peticion : IHQ251023\nN.Identificación : TI. 1081280881\nGenero : MASCULINO\nEdad : 15 años 3 meses 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : SINDY JHOANA RODRIGUEZ\nServicio : PEDIATRIA CLINICA URGENCIAS\nFecha Ingreso : 18/09/2025\nFecha Informe : 30/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nAPENDICE CECAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de\n\"COMPAÑIA DE PATOLOGOS DE CAUCA SAS CPC SAS\" rotulado como \"CPC-12973\" el cual consiste en\ncuatro bloques de parafina y cuatro lámina de H&E correspondiente a \"APÉNDICE.\" con diagnóstico de\n\"ADENOCARCINOMA MUCINOSO DE BAJO GRADO (WHO, 5TA EDICIÓN)\". Se revisan placas para\nmarcación de CK7, CK19, CK20, CDX2 y MUC2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se\nobserva en las células tumorales marcación nuclear positiva para CDX2 y citoplasmática para CK19, con\npositividad citoplasmática esporádica fuerte para CK20 y marcación negativa para MUC2 y CK7.\nDIAGNÓSTICO\n Apendice cecal. Apendicectomía. Estudio de inmunohistoquímica.\nLOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ADENOCARCINOMA DE\nAPENDICE MODERADAMENTE DIFERENCIADO (NOS)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 86 ---\nIHQ251023\nFinal Pag. 2 de 2\nNombre : VICTOR MANUEL ACOSTA HOYOS\nN. peticion : IHQ251023\nN.Identificación : TI. 1081280881\nGenero : MASCULINO\nEdad : 15 años 3 meses 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : SINDY JHOANA RODRIGUEZ\nServicio : PEDIATRIA CLINICA URGENCIAS\nFecha Ingreso : 18/09/2025\nFecha Informe : 30/09/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK19, CK20, CDX2, MUC2",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"COMPAÑIA DE PATOLOGOS DE CAUCA SAS CPC SAS\" rotulado como \"CPC-12973\" el cual consiste en cuatro bloques de parafina y cuatro lámina de H&E correspondiente a \"APÉNDICE.\" con diagnóstico de \"ADENOCARCINOMA MUCINOSO DE BAJO GRADO (WHO, 5TA EDICIÓN)\". Se revisan placas para marcación de CK7, CK19, CK20, CDX2 y MUC2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa en las células tumorales marcación nuclear positiva para CDX2 y citoplasmática para CK19, con positividad citoplasmática esporádica fuerte para CK20 y marcación negativa para MUC2 y CK7.",
+      "Descripcion Diagnostico": "Apendice cecal. Apendicectomía. Estudio de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ADENOCARCINOMA DE APENDICE MODERADAMENTE DIFERENCIADO (NOS)",
+      "IHQ_ORGANO": "APENDICE CECAL",
+      "Organo": "APENDICE CECAL",
+      "Diagnostico Coloracion": "ADENOCARCINOMA MUCINOSO DE BAJO GRADO (WHO, 5TA EDICIÓN)",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ADENOCARCINOMA DE APENDICE MODERADAMENTE DIFERENCIADO (NOS)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "POSITIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_MUC2": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 109,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 26.35
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 109,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Apendice cecal. Apendicectomía. Estudio de inmunohistoquímica.\nLOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ADENOCARCINOMA DE\nAPENDICE MODERADAMENTE DIFERENCIADO (NOS)",
+      "valor_corregido": "Apendice cecal. Apendicectomía. Estudio de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ADENOCARCINOMA DE APENDICE MODERADAMENTE DIFERENCIADO (NOS)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251023",
+      "timestamp": "2025-11-11T23:29:02.086562"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de\n\"COMPAÑIA DE PATOLOGOS DE CAUCA SAS CPC SAS\" rotulado como \"CPC-12973\" el cual consiste en\ncuatro bloques de parafina y cuatro lámina de H&E correspondiente a \"APÉNDICE.\" con diagnóstico de\n\"ADENOCARCINOMA MUCINOSO DE BAJO GRADO (WHO, 5TA EDICIÓN)\". Se revisan placas para\nmarcación de CK7, CK19, CK20, CDX2 y MUC2.",
+      "valor_corregido": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"COMPAÑIA DE PATOLOGOS DE CAUCA SAS CPC SAS\" rotulado como \"CPC-12973\" el cual consiste en cuatro bloques de parafina y cuatro lámina de H&E correspondiente a \"APÉNDICE.\" con diagnóstico de \"ADENOCARCINOMA MUCINOSO DE BAJO GRADO (WHO, 5TA EDICIÓN)\". Se revisan placas para marcación de CK7, CK19, CK20, CDX2 y MUC2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251023",
+      "timestamp": "2025-11-11T23:29:02.086569"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 51
+  }
+}

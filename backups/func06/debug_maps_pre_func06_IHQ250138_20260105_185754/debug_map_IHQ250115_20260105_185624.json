@@ -1,0 +1,157 @@
+{
+  "session_id": "IHQ250115_20260105_185624",
+  "numero_peticion": "IHQ250115",
+  "timestamp": "2026-01-05T18:56:24.912962",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250115\nCopia Pag. 1 de 2\nNombre : JOSE VENANCIO ARCINIEGA\nESPINOSA\nN. peticion : IHQ250115\nN.Identificación : CC. 5327769\nGenero : MASCULINO\nEdad : 77 años 2 meses 25 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 17/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\n2025-01-30\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500662 ” correspondiente a \" biopsia de médula ósea” con diagnóstico de “ PROLIFERACIÓN\nHEMATOLINFOIDE MONONUCLEAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD 10,\nCD 3, KI-67, BCL2, CD 5, D 23, CYCLINA D1 Y SOX 11.\nDESCRIPCIÓN MICROSCÓPICA\n La celularidad de la medula ósea es de forma difusa positiva para Linfocitos B CD 20 +, BCL2, CD 5, CD\n23 y es negativo para CD 10, CYCLINA, SOX 11. Hay linfocitos T acompañantes CD 3+.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquimica:\nEL INMUNOPERFIL FAVORECE UNA LEUCEMIA LINFOCÍTICA CRONICA /LINFOMA LINFOCITICO DE CÉLULA\nPEQUEÑA\nVER COMENTARIO\nCOMENTARIOS\nSe trata de una neoplasia de célula B madura, La cual es CD 20 Y CD 5 positivo con Cyclina y SOX 11\nnegativo lo que favorece el diagnostico de LEUCEMIA LINFOCÍTICA CRONICA /LINFOMA LINFOCITICO DE\nCÉLULA PEQUEÑA. Sin embargo dado que la expresión de los marcadores nucleares Cyclina y SOX 11,\npuede verse afectado en tejidos descalcificado se considera necesario descartar un linfoma de células de\nmanto a través del estudio de la translocación t(11;14) o realizar la adecuada clasificación de este\nlinfoma en tejido que no requiera descalcificación como ganglio linfático\nCaso valorad en conjunto con la Dra Isabella Caicedo (hematopatologa)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---\nIHQ250115\nCopia Pag. 2 de 2\nNombre : JOSE VENANCIO ARCINIEGA\nESPINOSA\nN. peticion : IHQ250115\nN.Identificación : CC. 5327769\nGenero : MASCULINO\nEdad : 77 años 2 meses 25 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 17/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3667,
+      "reduccion_porcentaje": 97.89
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250115",
+      "caso_num": 8,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "JOSE VENANCIO ARCINIEGA ESPINOSA",
+      "numero_peticion": "IHQ250115",
+      "identificacion": "5327769",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "77",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "MIGUEL REVELO",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "30/01/2025",
+      "fecha_informe": "17/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250115",
+      "N. de identificación": "5327769",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "MIGUEL REVELO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "30/01/2025",
+      "Fecha Informe": "17/02/2025",
+      "nombres": "JOSE VENANCIO",
+      "Primer nombre": "JOSE",
+      "Segundo nombre": "VENANCIO",
+      "apellidos": "ARCINIEGA ESPINOSA",
+      "Primer apellido": "ARCINIEGA",
+      "Segundo apellido": "ESPINOSA",
+      "nombre_formal": "ARCINIEGA ESPINOSA, JOSE VENANCIO",
+      "diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: EL INMUNOPERFIL FAVORECE UNA LEUCEMIA LINFOCÍTICA CRONICA /LINFOMA LINFOCITICO DE CÉLULA PEQUEÑA VER COMENTARIO",
+      "descripcion_microscopica": "La celularidad de la medula ósea es de forma difusa positiva para Linfocitos B CD 20 +, BCL2, CD 5, CD 23 y es negativo para CD 10, CYCLINA, SOX 11. Hay linfocitos T acompañantes CD 3+.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500662 ” correspondiente a \" biopsia de médula ósea” con diagnóstico de “ PROLIFERACIÓN HEMATOLINFOIDE MONONUCLEAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD 10, CD 3, KI-67, BCL2, CD 5, D 23, CYCLINA D1 Y SOX 11.",
+      "ihq_organo": "MEDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD 20, CD 10, CD 3, Ki-67, BCL2, CD 5, D 23, CYCLINA D1, SOX 11",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se trata de una neoplasia de célula B madura, La cual es CD 20 Y CD 5 positivo con Cyclina y SOX 11 negativo lo que favorece el diagnostico de LEUCEMIA LINFOCÍTICA CRONICA /LINFOMA LINFOCITICO DE CÉLULA PEQUEÑA. Sin embargo dado que la expresión de los marcadores nucleares Cyclina y SOX 11, puede verse afectado en tejidos descalcificado se considera necesario descartar un linfoma de células de manto a través del estudio de la translocación t(11;14) o realizar la adecuada clasificación de este linfoma en tejido que no requiera descalcificación como ganglio linfático Caso valorad en conjunto con la Dra Isabella Caicedo (hematopatologa)",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD 20, CD 10, CD 3, Ki-67, BCL2, CD 5, D 23, CYCLINA D1, SOX 11",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CICLINA_D1": "NEGATIVO",
+      "IHQ_SOX11": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "extraction_timestamp": "2026-01-05T18:56:25.372013",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250115\nCopia Pag. 1 de 2\nNombre : JOSE VENANCIO ARCINIEGA\nESPINOSA\nN. peticion : IHQ250115\nN.Identificación : CC. 5327769\nGenero : MASCULINO\nEdad : 77 años 2 meses 25 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 17/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\n2025-01-30\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500662 ” correspondiente a \" biopsia de médula ósea” con diagnóstico de “ PROLIFERACIÓN\nHEMATOLINFOIDE MONONUCLEAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD 10,\nCD 3, KI-67, BCL2, CD 5, D 23, CYCLINA D1 Y SOX 11.\nDESCRIPCIÓN MICROSCÓPICA\n La celularidad de la medula ósea es de forma difusa positiva para Linfocitos B CD 20 +, BCL2, CD 5, CD\n23 y es negativo para CD 10, CYCLINA, SOX 11. Hay linfocitos T acompañantes CD 3+.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquimica:\nEL INMUNOPERFIL FAVORECE UNA LEUCEMIA LINFOCÍTICA CRONICA /LINFOMA LINFOCITICO DE CÉLULA\nPEQUEÑA\nVER COMENTARIO\nCOMENTARIOS\nSe trata de una neoplasia de célula B madura, La cual es CD 20 Y CD 5 positivo con Cyclina y SOX 11\nnegativo lo que favorece el diagnostico de LEUCEMIA LINFOCÍTICA CRONICA /LINFOMA LINFOCITICO DE\nCÉLULA PEQUEÑA. Sin embargo dado que la expresión de los marcadores nucleares Cyclina y SOX 11,\npuede verse afectado en tejidos descalcificado se considera necesario descartar un linfoma de células de\nmanto a través del estudio de la translocación t(11;14) o realizar la adecuada clasificación de este\nlinfoma en tejido que no requiera descalcificación como ganglio linfático\nCaso valorad en conjunto con la Dra Isabella Caicedo (hematopatologa)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---\nIHQ250115\nCopia Pag. 2 de 2\nNombre : JOSE VENANCIO ARCINIEGA\nESPINOSA\nN. peticion : IHQ250115\nN.Identificación : CC. 5327769\nGenero : MASCULINO\nEdad : 77 años 2 meses 25 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 17/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD 20, CD 10, CD 3, Ki-67, BCL2, CD 5, D 23, CYCLINA D1, SOX 11, CICLINA D1, CD23",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500662 ” correspondiente a \" biopsia de médula ósea” con diagnóstico de “ PROLIFERACIÓN HEMATOLINFOIDE MONONUCLEAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD 10, CD 3, KI-67, BCL2, CD 5, D 23, CYCLINA D1 Y SOX 11.",
+      "Descripcion microscopica": "La celularidad de la medula ósea es de forma difusa positiva para Linfocitos B CD 20 +, BCL2, CD 5, CD 23 y es negativo para CD 10, CYCLINA, SOX 11. Hay linfocitos T acompañantes CD 3+.",
+      "Descripcion Diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: EL INMUNOPERFIL FAVORECE UNA LEUCEMIA LINFOCÍTICA CRONICA /LINFOMA LINFOCITICO DE CÉLULA PEQUEÑA VER COMENTARIO",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Organo": "BX MEDULA OSEA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN HEMATOLINFOIDE MONONUCLEAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "EL INMUNOPERFIL FAVORECE UNA LEUCEMIA LINFOCÍTICA CRONICA /LINFOMA LINFOCITICO DE CÉLULA PEQUEÑA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CICLINA_D1": "NEGATIVO",
+      "IHQ_SOX11": "NEGATIVO",
+      "IHQ_CD23": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 166,
+      "campos_vacios": 122,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 10,
+      "completitud_porcentaje": 26.51
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 122,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula ósea. Biopsia. Estudio de inmunohistoquimica:\nEL INMUNOPERFIL FAVORECE UNA LEUCEMIA LINFOCÍTICA CRONICA /LINFOMA LINFOCITICO DE CÉLULA\nPEQUEÑA\nVER COMENTARIO",
+      "valor_corregido": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: EL INMUNOPERFIL FAVORECE UNA LEUCEMIA LINFOCÍTICA CRONICA /LINFOMA LINFOCITICO DE CÉLULA PEQUEÑA VER COMENTARIO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250115",
+      "timestamp": "2026-01-05T18:56:25.371789"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se trata de una neoplasia de célula B madura, La cual es CD 20 Y CD 5 positivo con Cyclina y SOX 11\nnegativo lo que favorece el diagnostico de LEUCEMIA LINFOCÍTICA CRONICA /LINFOMA LINFOCITICO DE\nCÉLULA PEQUEÑA. Sin embargo dado que la expresión de los marcadores nucleares Cyclina y SOX 11,\npuede verse afectado en tejidos descalcificado se considera necesario descartar un linfoma de células de\nmanto a través del estudio de la translocación t(11;14) o realizar la adecuada clasificación de este\nlinfoma en tejido que no requiera descalcificación como ganglio linfático\nCaso valorad en conjunto con la Dra Isabella Caicedo (hematopatologa)",
+      "valor_corregido": "Se trata de una neoplasia de célula B madura, La cual es CD 20 Y CD 5 positivo con Cyclina y SOX 11 negativo lo que favorece el diagnostico de LEUCEMIA LINFOCÍTICA CRONICA /LINFOMA LINFOCITICO DE CÉLULA PEQUEÑA. Sin embargo dado que la expresión de los marcadores nucleares Cyclina y SOX 11, puede verse afectado en tejidos descalcificado se considera necesario descartar un linfoma de células de manto a través del estudio de la translocación t(11;14) o realizar la adecuada clasificación de este linfoma en tejido que no requiera descalcificación como ganglio linfático Caso valorad en conjunto con la Dra Isabella Caicedo (hematopatologa)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250115",
+      "timestamp": "2026-01-05T18:56:25.371797"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 57
+  }
+}

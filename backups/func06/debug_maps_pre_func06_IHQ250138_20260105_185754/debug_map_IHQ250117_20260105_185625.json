@@ -1,0 +1,157 @@
+{
+  "session_id": "IHQ250117_20260105_185625",
+  "numero_peticion": "IHQ250117",
+  "timestamp": "2026-01-05T18:56:25.910342",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250117\nCopia Pag. 1 de 2\nNombre : MARIA BIBIANA DIAZ JIMENEZ\nN. peticion : IHQ250117\nN.Identificación : CC. 66656007\nGenero : FEMENINO\nEdad : 52 años 11 meses 12 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HUJUELOS\nServicio : RADIOTERAPIA\nFecha Ingreso : 30/01/2025\nFecha Informe : 13/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMAMA DERECHA\n2025-01-30\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como M2409604 que corresponde a cuadrantectomía de tumor en mama derecha con\ndiagnóstico principal de \"CARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM SCORE 6.\nGRADO 2.\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para\nmarcación con Receptores de Estrógenos, Receptores de progesterona, HER2 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA:\nExpresión de receptores de estrógeno:\n- POSITIVO (INTENSIDAD FUERTE EN EL 100% DE LAS CELULAS TUMORALES)\nExpresión de receptores de progesterona:\n- POSITIVO (INTENSIDAD FUERTE EN EL 100% DE LAS CELULAS TUMORALES)\nSobreexpresión de oncogén HER2:\n- EQUÍVOCO (Score 2+).\nIndice de proliferación celular (Ki67): 40%.\nDIAGNÓSTICO\nA. Mama derecha. Tumor. Cuadrantectomía externa. Estudios de inmunohistoquímica:\nCARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM SCORE 6. GRADO 2.\nRECEPTORES DE ESTRÓGENOS: POSITIVO.\nRECEPTORES DE PROGESTERONA: POSITIVO.\nHER2: SCORE 2+ (EQUÍVOCO)\nÍNDICE DE PROLIFERACIÓN CELULAR Ki-67: 40%\nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---\nIHQ250117\nCopia Pag. 2 de 2\nNombre : MARIA BIBIANA DIAZ JIMENEZ\nN. peticion : IHQ250117\nN.Identificación : CC. 66656007\nGenero : FEMENINO\nEdad : 52 años 11 meses 12 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HUJUELOS\nServicio : RADIOTERAPIA\nFecha Ingreso : 30/01/2025\nFecha Informe : 13/02/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3508,
+      "reduccion_porcentaje": 97.98
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250117",
+      "caso_num": 10,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA BIBIANA DIAZ JIMENEZ",
+      "numero_peticion": "IHQ250117",
+      "identificacion": "66656007",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "52",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ALEJANDRO HUJUELOS",
+      "servicio": "RADIOTERAPIA",
+      "fecha_ingreso": "30/01/2025",
+      "fecha_informe": "13/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250117",
+      "N. de identificación": "66656007",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "RADIOTERAPIA",
+      "Médico tratante": "ALEJANDRO HUJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "30/01/2025",
+      "Fecha Informe": "13/02/2025",
+      "nombres": "MARIA BIBIANA DIAZ",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "BIBIANA DIAZ",
+      "apellidos": "JIMENEZ",
+      "Primer apellido": "JIMENEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "JIMENEZ, MARIA BIBIANA DIAZ",
+      "diagnostico": "A. Mama derecha. Tumor. Cuadrantectomía externa. Estudios de inmunohistoquímica: CARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM SCORE 6. GRADO 2. RECEPTORES DE ESTRÓGENOS: POSITIVO. RECEPTORES DE PROGESTERONA: POSITIVO. HER2: SCORE 2+ (EQUÍVOCO) ÍNDICE DE PROLIFERACIÓN CELULAR KI-67: 40%",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Expresión de receptores de estrógeno: - POSITIVO (INTENSIDAD FUERTE EN EL 100% DE LAS CELULAS TUMORALES) Expresión de receptores de progesterona: - POSITIVO (INTENSIDAD FUERTE EN EL 100% DE LAS CELULAS TUMORALES) Sobreexpresión de oncogén HER2: - EQUÍVOCO (Score 2+). Indice de proliferación celular (KI-67): 40%.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2409604 que corresponde a cuadrantectomía de tumor en mama derecha con diagnóstico principal de \"CARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM SCORE 6. GRADO 2.\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con Receptores de Estrógenos, Receptores de progesterona, HER2 y KI-67.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Receptor de Estrógeno, Receptor de Progesterona, HER2, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: EQUIVOCO (Score 2+), Ki-67: 40%, Receptor de Estrógeno: POSITIVO (NUCLEAR FUERTE 100%), Receptor de Progesterona: POSITIVO (NUCLEAR FUERTE 100%)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, Receptor de Progesterona, HER2, Ki-67",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO (NUCLEAR FUERTE 100%)",
+      "IHQ_HER2": "EQUIVOCO (Score 2+)",
+      "IHQ_KI-67": "40%",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (NUCLEAR FUERTE 100%)",
+      "extraction_timestamp": "2026-01-05T18:56:26.363822",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250117\nCopia Pag. 1 de 2\nNombre : MARIA BIBIANA DIAZ JIMENEZ\nN. peticion : IHQ250117\nN.Identificación : CC. 66656007\nGenero : FEMENINO\nEdad : 52 años 11 meses 12 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HUJUELOS\nServicio : RADIOTERAPIA\nFecha Ingreso : 30/01/2025\nFecha Informe : 13/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMAMA DERECHA\n2025-01-30\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como M2409604 que corresponde a cuadrantectomía de tumor en mama derecha con\ndiagnóstico principal de \"CARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM SCORE 6.\nGRADO 2.\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para\nmarcación con Receptores de Estrógenos, Receptores de progesterona, HER2 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA:\nExpresión de receptores de estrógeno:\n- POSITIVO (INTENSIDAD FUERTE EN EL 100% DE LAS CELULAS TUMORALES)\nExpresión de receptores de progesterona:\n- POSITIVO (INTENSIDAD FUERTE EN EL 100% DE LAS CELULAS TUMORALES)\nSobreexpresión de oncogén HER2:\n- EQUÍVOCO (Score 2+).\nIndice de proliferación celular (Ki67): 40%.\nDIAGNÓSTICO\nA. Mama derecha. Tumor. Cuadrantectomía externa. Estudios de inmunohistoquímica:\nCARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM SCORE 6. GRADO 2.\nRECEPTORES DE ESTRÓGENOS: POSITIVO.\nRECEPTORES DE PROGESTERONA: POSITIVO.\nHER2: SCORE 2+ (EQUÍVOCO)\nÍNDICE DE PROLIFERACIÓN CELULAR Ki-67: 40%\nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---\nIHQ250117\nCopia Pag. 2 de 2\nNombre : MARIA BIBIANA DIAZ JIMENEZ\nN. peticion : IHQ250117\nN.Identificación : CC. 66656007\nGenero : FEMENINO\nEdad : 52 años 11 meses 12 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HUJUELOS\nServicio : RADIOTERAPIA\nFecha Ingreso : 30/01/2025\nFecha Informe : 13/02/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, Receptor de Progesterona, HER2, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2409604 que corresponde a cuadrantectomía de tumor en mama derecha con diagnóstico principal de \"CARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM SCORE 6. GRADO 2.\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con Receptores de Estrógenos, Receptores de progesterona, HER2 y Ki-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Expresión de receptores de estrógeno: - POSITIVO (INTENSIDAD FUERTE EN EL 100% DE LAS CELULAS TUMORALES) Expresión de receptores de progesterona: - POSITIVO (INTENSIDAD FUERTE EN EL 100% DE LAS CELULAS TUMORALES) Sobreexpresión de oncogén HER2: - EQUÍVOCO (Score 2+). Indice de proliferación celular (Ki67): 40%.",
+      "Descripcion Diagnostico": "A. Mama derecha. Tumor. Cuadrantectomía externa. Estudios de inmunohistoquímica: CARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM SCORE 6. GRADO 2. RECEPTORES DE ESTRÓGENOS: POSITIVO. RECEPTORES DE PROGESTERONA: POSITIVO. HER2: SCORE 2+ (EQUÍVOCO) ÍNDICE DE PROLIFERACIÓN CELULAR KI-67: 40%",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "MAMA DERECHA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: EQUIVOCO (Score 2+), Ki-67: 40%, Receptor de Estrógeno: POSITIVO (NUCLEAR FUERTE 100%), Receptor de Progesterona: POSITIVO (NUCLEAR FUERTE 100%)",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (NUCLEAR FUERTE 100%)",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO (NUCLEAR FUERTE 100%)",
+      "IHQ_HER2": "EQUIVOCO (Score 2+)",
+      "IHQ_KI-67": "40%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 166,
+      "campos_vacios": 128,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 22.89
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 128,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Mama derecha. Tumor. Cuadrantectomía externa. Estudios de inmunohistoquímica:\nCARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM SCORE 6. GRADO 2.\nRECEPTORES DE ESTRÓGENOS: POSITIVO.\nRECEPTORES DE PROGESTERONA: POSITIVO.\nHER2: SCORE 2+ (EQUÍVOCO)\nÍNDICE DE PROLIFERACIÓN CELULAR Ki-67: 40%",
+      "valor_corregido": "A. Mama derecha. Tumor. Cuadrantectomía externa. Estudios de inmunohistoquímica: CARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM SCORE 6. GRADO 2. RECEPTORES DE ESTRÓGENOS: POSITIVO. RECEPTORES DE PROGESTERONA: POSITIVO. HER2: SCORE 2+ (EQUÍVOCO) ÍNDICE DE PROLIFERACIÓN CELULAR KI-67: 40%",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250117",
+      "timestamp": "2026-01-05T18:56:26.363618"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2409604 que corresponde a cuadrantectomía de tumor en mama derecha con diagnóstico principal de \"CARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM SCORE 6. GRADO 2.\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con Receptores de Estrógenos, Receptores de progesterona, HER2 y Ki-67.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2409604 que corresponde a cuadrantectomía de tumor en mama derecha con diagnóstico principal de \"CARCINOMA INVASIVO DE TIPO MUCINOSO, NOTTINGHAM SCORE 6. GRADO 2.\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con Receptores de Estrógenos, Receptores de progesterona, HER2 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250117",
+      "timestamp": "2026-01-05T18:56:26.363623"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Expresión de receptores de estrógeno: - POSITIVO (INTENSIDAD FUERTE EN EL 100% DE LAS CELULAS TUMORALES) Expresión de receptores de progesterona: - POSITIVO (INTENSIDAD FUERTE EN EL 100% DE LAS CELULAS TUMORALES) Sobreexpresión de oncogén HER2: - EQUÍVOCO (Score 2+). Indice de proliferación celular (Ki67): 40%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Expresión de receptores de estrógeno: - POSITIVO (INTENSIDAD FUERTE EN EL 100% DE LAS CELULAS TUMORALES) Expresión de receptores de progesterona: - POSITIVO (INTENSIDAD FUERTE EN EL 100% DE LAS CELULAS TUMORALES) Sobreexpresión de oncogén HER2: - EQUÍVOCO (Score 2+). Indice de proliferación celular (KI-67): 40%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250117",
+      "timestamp": "2026-01-05T18:56:26.363625"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 51
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "session_id": "IHQ250281_20260203_034755",
+  "numero_peticion": "IHQ250281",
+  "timestamp": "2026-02-03T03:47:55.033931",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250281\nCopia Pag. 1 de 2\nNombre : LUIS FERNANDO MUÑOZ TABORDA\nN. peticion : IHQ250281\nN.Identificación : CC. 70047328\nGenero : MASCULINO\nEdad : 71 años 1 mes 5 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : ORTOPEDIA\nFecha Ingreso : 18/03/2025\nFecha Informe : 21/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE PULMON\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan nivele al bloque M2502347-2 que corresponde a biopsia de lesión pulmonar, con diagnóstico\nde \"CARCINOMA INVASIVO DE ALTO GRADO EN PATRON SOLIDO\". Se ordenan estudios de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son negativas para la expresión de p40, TTF-1 y CK20, presentando\ninmunorreactividad para CK7, CK19, CDX2 y CA-19.9.\nDIAGNÓSTICO\nPulmón. Lesión. Biopsia percutánea. Estudios de inmunohistoquímica:\nHALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA METASTASICO.\nCOMENTARIOS\nEl patrón de inmunohistoquímica favorece a que se trate de carcinoma metastásico de probable origen\nen el tracto gastrointestinal vs pancreatobiliar, por lo que se requiere correlacionar con estudios de\nimágenes y clínica del paciente, para establecer el origen primario de la lesión de acuerdo a criterio del\nmedico tratante.\nCaso valorado en conjunto con la Dra. Natalia Aguirre(Patologa).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---\nIHQ250281\nCopia Pag. 2 de 2\nNombre : LUIS FERNANDO MUÑOZ TABORDA\nN. peticion : IHQ250281\nN.Identificación : CC. 70047328\nGenero : MASCULINO\nEdad : 71 años 1 mes 5 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : ORTOPEDIA\nFecha Ingreso : 18/03/2025\nFecha Informe : 21/03/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3285,
+      "reduccion_porcentaje": 98.12
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250281",
+      "caso_num": 18,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "nombre_completo": "LUIS FERNANDO MUÑOZ TABORDA",
+      "numero_peticion": "IHQ250281",
+      "identificacion": "70047328",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "71",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ANDRES FELIPE VARELA",
+      "servicio": "ORTOPEDIA",
+      "fecha_ingreso": "18/03/2025",
+      "fecha_informe": "21/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250281",
+      "N. de identificación": "70047328",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "ORTOPEDIA",
+      "Médico tratante": "ANDRES FELIPE VARELA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "18/03/2025",
+      "Fecha Informe": "21/03/2025",
+      "nombres": "LUIS FERNANDO",
+      "Primer nombre": "LUIS",
+      "Segundo nombre": "FERNANDO",
+      "apellidos": "MUÑOZ TABORDA",
+      "Primer apellido": "MUÑOZ",
+      "Segundo apellido": "TABORDA",
+      "nombre_formal": "MUÑOZ TABORDA, LUIS FERNANDO",
+      "diagnostico": "Pulmón. Lesión. Biopsia percutánea. Estudios de inmunohistoquímica: HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA METASTASICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son negativas para la expresión de p40, TTF1 y CK20, presentando inmunorreactividad para CK7, CK19, CDX2 y CA-19.9.",
+      "descripcion_macroscopica": "Se realizan nivele al bloque M2502347-2 que corresponde a biopsia de lesión pulmonar, con diagnóstico de \"CARCINOMA INVASIVO DE ALTO GRADO EN PATRON SOLIDO\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "PULMÓN",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "El patrón de inmunohistoquímica favorece a que se trate de carcinoma metastásico de probable origen en el tracto gastrointestinal vs pancreatobiliar, por lo que se requiere correlacionar con estudios de imágenes y clínica del paciente, para establecer el origen primario de la lesión de acuerdo a criterio del medico tratante. Caso valorado en conjunto con la Dra. Natalia Aguirre(Patologa).",
+      "IHQ_ORGANO": "PULMÓN",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-02-03T03:47:55.437495",
+      "extractor_version": "6.5.90_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250281\nCopia Pag. 1 de 2\nNombre : LUIS FERNANDO MUÑOZ TABORDA\nN. peticion : IHQ250281\nN.Identificación : CC. 70047328\nGenero : MASCULINO\nEdad : 71 años 1 mes 5 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : ORTOPEDIA\nFecha Ingreso : 18/03/2025\nFecha Informe : 21/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE PULMON\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan nivele al bloque M2502347-2 que corresponde a biopsia de lesión pulmonar, con diagnóstico\nde \"CARCINOMA INVASIVO DE ALTO GRADO EN PATRON SOLIDO\". Se ordenan estudios de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son negativas para la expresión de p40, TTF-1 y CK20, presentando\ninmunorreactividad para CK7, CK19, CDX2 y CA-19.9.\nDIAGNÓSTICO\nPulmón. Lesión. Biopsia percutánea. Estudios de inmunohistoquímica:\nHALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA METASTASICO.\nCOMENTARIOS\nEl patrón de inmunohistoquímica favorece a que se trate de carcinoma metastásico de probable origen\nen el tracto gastrointestinal vs pancreatobiliar, por lo que se requiere correlacionar con estudios de\nimágenes y clínica del paciente, para establecer el origen primario de la lesión de acuerdo a criterio del\nmedico tratante.\nCaso valorado en conjunto con la Dra. Natalia Aguirre(Patologa).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---\nIHQ250281\nCopia Pag. 2 de 2\nNombre : LUIS FERNANDO MUÑOZ TABORDA\nN. peticion : IHQ250281\nN.Identificación : CC. 70047328\nGenero : MASCULINO\nEdad : 71 años 1 mes 5 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : ORTOPEDIA\nFecha Ingreso : 18/03/2025\nFecha Informe : 21/03/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CDX2, CK19, CK20, CK7, P40, TTF1",
+      "Descripcion macroscopica": "Se realizan nivele al bloque M2502347-2 que corresponde a biopsia de lesión pulmonar, con diagnóstico de \"CARCINOMA INVASIVO DE ALTO GRADO EN PATRON SOLIDO\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son negativas para la expresión de p40, TTF-1 y CK20, presentando inmunorreactividad para CK7, CK19, CDX2 y CA-19.9.",
+      "Descripcion Diagnostico": "Pulmón. Lesión. Biopsia percutánea. Estudios de inmunohistoquímica: HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA METASTASICO.",
+      "IHQ_ORGANO": "PULMÓN",
+      "Organo": "BX DE PULMON",
+      "Diagnostico Coloracion": "CARCINOMA INVASIVO DE ALTO GRADO EN PATRON SOLIDO",
+      "Diagnostico Principal": "HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA METASTASICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_TTF1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 135,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón. Lesión. Biopsia percutánea. Estudios de inmunohistoquímica:\nHALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA METASTASICO.",
+      "valor_corregido": "Pulmón. Lesión. Biopsia percutánea. Estudios de inmunohistoquímica: HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA METASTASICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250281",
+      "timestamp": "2026-02-03T03:47:55.437135"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son negativas para la expresión de p40, TTF-1 y CK20, presentando inmunorreactividad para CK7, CK19, CDX2 y CA-19.9.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son negativas para la expresión de p40, TTF1 y CK20, presentando inmunorreactividad para CK7, CK19, CDX2 y CA-19.9.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250281",
+      "timestamp": "2026-02-03T03:47:55.437143"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El patrón de inmunohistoquímica favorece a que se trate de carcinoma metastásico de probable origen\nen el tracto gastrointestinal vs pancreatobiliar, por lo que se requiere correlacionar con estudios de\nimágenes y clínica del paciente, para establecer el origen primario de la lesión de acuerdo a criterio del\nmedico tratante.\nCaso valorado en conjunto con la Dra. Natalia Aguirre(Patologa).",
+      "valor_corregido": "El patrón de inmunohistoquímica favorece a que se trate de carcinoma metastásico de probable origen en el tracto gastrointestinal vs pancreatobiliar, por lo que se requiere correlacionar con estudios de imágenes y clínica del paciente, para establecer el origen primario de la lesión de acuerdo a criterio del medico tratante. Caso valorado en conjunto con la Dra. Natalia Aguirre(Patologa).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250281",
+      "timestamp": "2026-02-03T03:47:55.437146"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 54
+  }
+}

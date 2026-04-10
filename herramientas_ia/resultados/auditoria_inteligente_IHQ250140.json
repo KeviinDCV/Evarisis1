@@ -1,0 +1,153 @@
+{
+  "numero_caso": "IHQ250140",
+  "caso_num": 31,
+  "total_casos": 49,
+  "timestamp": "2026-01-06T00:05:45.589375",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 13,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NEOPLASIA MESENQUIMAL CON ATIPIA",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN LEIOMIOSARCOMA"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67 del 80%",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "2 biomarcadores faltantes en BD; 5 biomarcadores sin mapeo/vacíos; 1 valores NO coinciden con OCR; 3 biomarcadores extras en BD",
+      "total_solicitado_ocr": 14,
+      "total_solicitado_bd": 15,
+      "estudios_ocr": [
+        "CKAE1E3",
+        "DESMINA",
+        "ACTINA",
+        "DE MÚSCULO LISO",
+        "ACTINA MÚSCULO ESPECÍFICA",
+        "CALDESMON",
+        "MYOD1",
+        "MIOGENINA",
+        "Ki-67",
+        "S100",
+        "SOX10",
+        "CD68",
+        "CD34",
+        "MDM2"
+      ],
+      "estudios_bd": [
+        "CKAE1E3",
+        "DESMINA",
+        "ACTINA MÚSCULO ESPECÍFICA",
+        "CALDESMON",
+        "MYOD1",
+        "MIOGENINA",
+        "Ki-67",
+        "S100",
+        "SOX10",
+        "CD68",
+        "CD34",
+        "MDM2",
+        "CKAE1AE3",
+        "ACTINA DE MUSCULO LISO",
+        "DESMIN"
+      ],
+      "faltantes_en_bd": [
+        "ACTINA",
+        "DE MÚSCULO LISO"
+      ],
+      "extras_en_bd": [
+        "CKAE1AE3",
+        "ACTINA DE MUSCULO LISO",
+        "DESMIN"
+      ],
+      "mapeados": 9,
+      "no_mapeados": [
+        "ACTINA (sin columna)",
+        "DE MÚSCULO LISO (sin columna)",
+        "ACTINA MÚSCULO ESPECÍFICA (sin columna)",
+        "CALDESMON (sin columna)",
+        "MIOGENINA (sin columna)"
+      ],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "Ki-67",
+          "columna": "IHQ_KI-67",
+          "valor_bd": "80%",
+          "valor_ocr": "d"
+        }
+      ],
+      "cobertura": 64.3
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de ..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "BRAZO DERECHO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

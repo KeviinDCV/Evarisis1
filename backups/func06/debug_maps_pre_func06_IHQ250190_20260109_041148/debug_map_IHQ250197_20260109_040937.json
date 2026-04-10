@@ -1,0 +1,155 @@
+{
+  "session_id": "IHQ250197_20260109_040937",
+  "numero_peticion": "IHQ250197",
+  "timestamp": "2026-01-09T04:09:37.148130",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250197\nCopia Pag. 1 de 1\nNombre : ANDRES FELIPE URDINOLA ALVAREZ\nN. peticion : IHQ250197\nN.Identificación : CC. 6200007\nGenero : MASCULINO\nEdad : 42 años 4 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : OSCAR ANDRES ESCOBAR\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 22/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR FRONTAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2501893” correspondiente a “lóbulo frontal” con diagnósticos de \" GLIOMA DIFUSO WHO IV“. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con los marcadores: IDH, GFAP,\nSINAPTOFISINA, KI 67\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa celularidad tumoral tiene expresión fuerte y difusa para IDH con marcación positiva de P53, GFAP.\nSinaptofisina negativo.Ki67 Índice proliferativo del 50 %\nDIAGNÓSTICO\n Lóbulo frontal izquierdo. Tumor. Resección. Estudio de inmunohistoquimica:\nASTROCITOMA IDH MUTADO WHO IV\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2450,
+      "reduccion_porcentaje": 98.52
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250197",
+      "caso_num": 36,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P53": "POSITIVO",
+      "nombre_completo": "ANDRES FELIPE URDINOLA ALVAREZ",
+      "numero_peticion": "IHQ250197",
+      "identificacion": "6200007",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "42",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "OSCAR ANDRES ESCOBAR",
+      "servicio": "UCI NEUROCIRUGIA",
+      "fecha_ingreso": "22/02/2025",
+      "fecha_informe": "05/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250197",
+      "N. de identificación": "6200007",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "UCI NEUROCIRUGIA",
+      "Médico tratante": "OSCAR ANDRES ESCOBAR",
+      "Fecha de ingreso (2. Fecha de la muestra)": "22/02/2025",
+      "Fecha Informe": "05/03/2025",
+      "nombres": "ANDRES FELIPE URDINOLA",
+      "Primer nombre": "ANDRES",
+      "Segundo nombre": "FELIPE URDINOLA",
+      "apellidos": "ALVAREZ",
+      "Primer apellido": "ALVAREZ",
+      "Segundo apellido": "",
+      "nombre_formal": "ALVAREZ, ANDRES FELIPE URDINOLA",
+      "diagnostico": "Lóbulo frontal izquierdo. Tumor. Resección. Estudio de inmunohistoquimica: ASTROCITOMA IDH MUTADO WHO IV",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad tumoral tiene expresión fuerte y difusa para IDH con marcación positiva de p53, GFAP. Synaptophysin negativo.KI-67 Índice proliferativo del 50 %",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2501893\" correspondiente a \"lóbulo frontal\" con diagnósticos de \" GLIOMA DIFUSO WHO IV\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: IDH, GFAP, SYNAPTOPHYSIN, KI-67",
+      "ihq_organo": "LÓBULO FRONTAL IZQUIERDO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "LÓBULO FRONTAL IZQUIERDO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "extraction_timestamp": "2026-01-09T04:09:37.481097",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250197\nCopia Pag. 1 de 1\nNombre : ANDRES FELIPE URDINOLA ALVAREZ\nN. peticion : IHQ250197\nN.Identificación : CC. 6200007\nGenero : MASCULINO\nEdad : 42 años 4 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : OSCAR ANDRES ESCOBAR\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 22/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR FRONTAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2501893” correspondiente a “lóbulo frontal” con diagnósticos de \" GLIOMA DIFUSO WHO IV“. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con los marcadores: IDH, GFAP,\nSINAPTOFISINA, KI 67\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa celularidad tumoral tiene expresión fuerte y difusa para IDH con marcación positiva de P53, GFAP.\nSinaptofisina negativo.Ki67 Índice proliferativo del 50 %\nDIAGNÓSTICO\n Lóbulo frontal izquierdo. Tumor. Resección. Estudio de inmunohistoquimica:\nASTROCITOMA IDH MUTADO WHO IV\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P53, SYNAPTOFISINA",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2501893” correspondiente a “lóbulo frontal” con diagnósticos de \" GLIOMA DIFUSO WHO IV“. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: IDH, GFAP, SINAPTOFISINA, KI 67",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad tumoral tiene expresión fuerte y difusa para IDH con marcación positiva de P53, GFAP. Sinaptofisina negativo.Ki67 Índice proliferativo del 50 %",
+      "Descripcion Diagnostico": "Lóbulo frontal izquierdo. Tumor. Resección. Estudio de inmunohistoquimica: ASTROCITOMA IDH MUTADO WHO IV",
+      "IHQ_ORGANO": "LÓBULO FRONTAL IZQUIERDO",
+      "Organo": "TUMOR FRONTAL IZQUIERDO",
+      "Diagnostico Coloracion": "GLIOMA DIFUSO WHO IV",
+      "Diagnostico Principal": "ASTROCITOMA IDH MUTADO WHO IV",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P53": "POSITIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 170,
+      "campos_vacios": 134,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Lóbulo frontal izquierdo. Tumor. Resección. Estudio de inmunohistoquimica:\nASTROCITOMA IDH MUTADO WHO IV",
+      "valor_corregido": "Lóbulo frontal izquierdo. Tumor. Resección. Estudio de inmunohistoquimica: ASTROCITOMA IDH MUTADO WHO IV",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250197",
+      "timestamp": "2026-01-09T04:09:37.480786"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2501893” correspondiente a “lóbulo frontal” con diagnósticos de \" GLIOMA DIFUSO WHO IV“. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: IDH, GFAP, SINAPTOFISINA, KI 67",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2501893\" correspondiente a \"lóbulo frontal\" con diagnósticos de \" GLIOMA DIFUSO WHO IV\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: IDH, GFAP, SYNAPTOPHYSIN, KI-67",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250197",
+      "timestamp": "2026-01-09T04:09:37.480793"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad tumoral tiene expresión fuerte y difusa para IDH con marcación positiva de P53, GFAP. Sinaptofisina negativo.Ki67 Índice proliferativo del 50 %",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad tumoral tiene expresión fuerte y difusa para IDH con marcación positiva de p53, GFAP. Synaptophysin negativo.KI-67 Índice proliferativo del 50 %",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250197",
+      "timestamp": "2026-01-09T04:09:37.480795"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 47
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "numero_caso": "IHQ250198",
+  "caso_num": 37,
+  "total_casos": 50,
+  "timestamp": "2026-01-10T05:00:36.187024",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 16,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "PROLIFERACION LINFOIDE ATIPICA REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LINFOMA DE CÉLULAS T PERIFÉRICAS NO ESPECIFICADO CON CD 30 NEGATIVO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 90%",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "WARNING",
+      "mensaje": "4 biomarcadores extras en BD",
+      "total_solicitado_ocr": 10,
+      "total_solicitado_bd": 14,
+      "estudios_ocr": [
+        "CD20",
+        "CD56",
+        "CD2",
+        "CD3",
+        "CD4",
+        "CD5",
+        "BCL 6",
+        "BCL2",
+        "Ki-67",
+        "CD7"
+      ],
+      "estudios_bd": [
+        "CD20",
+        "CD56",
+        "CD2",
+        "CD3",
+        "CD4",
+        "CD5",
+        "BCL 6",
+        "BCL2",
+        "Ki-67",
+        "CD7",
+        "CD8",
+        "CD10",
+        "CD30",
+        "TDT"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "CD8",
+        "CD10",
+        "CD30",
+        "TDT"
+      ],
+      "mapeados": 10,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M250..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "La celularidad atípica tiene marcación fuerte y difusa para CD 3, CD 4, CD 5, CD 2, CD7. Marcación p..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MEDIASTINO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

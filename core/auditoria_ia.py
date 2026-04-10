@@ -299,22 +299,22 @@ class AuditoriaIA:
 
     def __init__(
         self,
-        llm_endpoint: str = "http://127.0.0.1:1234",
-        timeout: int = 600  # V3.2.4.2: FIX 11 - Aumentado para lotes de casos con muchos campos vacíos (300 → 600 seg = 10 min)
+        llm_endpoint: str = "https://openrouter.ai/api/v1",
+        timeout: int = 120
     ):
         """
         Inicializar sistema de auditoría
 
         Args:
-            llm_endpoint: Endpoint del servidor LM Studio
-            timeout: Timeout para peticiones LLM en segundos (default 600seg = 10min)
+            llm_endpoint: Endpoint del servidor LLM (OpenRouter)
+            timeout: Timeout para peticiones LLM en segundos
         """
         self.llm_client = None
         self.llm_activo = False
 
         # Intentar conectar con LLM
         try:
-            logging.info(f"Conectando con LM Studio en {llm_endpoint}...")
+            logging.info(f"Conectando con OpenRouter...")
             self.llm_client = LMStudioClient(endpoint=llm_endpoint, timeout=timeout)
 
             # V3.2.4.2: FIX 5 - Eliminar warmup innecesario "Hi"
@@ -369,16 +369,23 @@ class AuditoriaIA:
             modo_texto = "PARCIAL" if modo == 'parcial' else "COMPLETA"
             progress_callback(f"Auditando {numero_peticion} (modo {modo_texto})...", 0)
 
+        # V4.0: Siempre usar prompts compactos (todos los proveedores son gratuitos con contexto limitado)
+
         # 1. Preparar prompt para LLM según modo
         if progress_callback:
             progress_callback(f"Preparando datos para auditoría...", 10)
 
         if modo == 'parcial':
             prompt = self._preparar_prompt_parcial(debug_map, datos_bd, campos_a_buscar or [])
-            max_tokens = 5000  # V3.2.4.2: FIX 15 - Aumentado (2000 → 5000) para texto completo sin límite
+            max_tokens = 2000
         else:
-            prompt = self._preparar_prompt_auditoria(debug_map, datos_bd)
-            max_tokens = 5000  # V3.2.4.2: FIX 15 - Aumentado (4000 → 5000) para texto optimizado (8000 chars)
+            prompt = self._preparar_prompt_compacto(debug_map, datos_bd)
+            max_tokens = 2000
+
+        # Log tamaño del prompt para diagnóstico
+        prompt_chars = len(prompt)
+        prompt_tokens_est = prompt_chars // 4  # Estimación ~4 chars/token
+        logging.info(f"   📏 Prompt {modo}: {prompt_chars} chars (~{prompt_tokens_est} tokens)")
 
         # 2. Enviar a LLM
         if progress_callback:
@@ -387,29 +394,26 @@ class AuditoriaIA:
 
         try:
             # V2.1.2: Controlar reasoning según modo VIA PROMPT
-            # PARCIAL: Sin reasoning (rápido, directo) - Solo completa campos
-            # COMPLETA: Con reasoning (profundo, analítico) - Valida todo
             enable_reasoning = (modo == 'completa')
 
-            # Seleccionar el system_prompt apropiado (cargado desde archivos)
-            if enable_reasoning:
-                system_prompt = get_system_prompt_completa() + get_system_prompt_comun()
-            else:
-                system_prompt = get_system_prompt_parcial() + get_system_prompt_comun()
+            # V4.0: Siempre usar system prompt compacto (todos los proveedores son gratuitos)
+            system_prompt = self._get_system_prompt_compacto(modo)
 
             respuesta_llm = self.llm_client.completar(
                 prompt=prompt,
-                system_prompt=system_prompt,  # Dinámico según modo
+                system_prompt=system_prompt,
                 temperature=0.1,
                 max_tokens=max_tokens,
                 formato_json=True,
-                enable_reasoning=enable_reasoning  # Solo para logging
+                enable_reasoning=enable_reasoning
             )
 
             if not respuesta_llm.get("exito"):
                 return {
                     "exito": False,
+                    "numero_peticion": numero_peticion,
                     "error": f"Error en LLM: {respuesta_llm.get('error')}",
+                    "fatal_api": respuesta_llm.get("fatal_api", False),
                     "correcciones_aplicadas": 0
                 }
 
@@ -437,11 +441,14 @@ class AuditoriaIA:
                 try:
                     correcciones_json = json.loads(respuesta_limpia)
                 except json.JSONDecodeError as e:
-                    return {
-                        "exito": False,
-                        "error": f"Respuesta del LLM no es JSON válido: {e}\nRespuesta: {respuesta_limpia[:200]}",
-                        "correcciones_aplicadas": 0
-                    }
+                    # Intentar recuperar JSON truncado
+                    correcciones_json = self._recuperar_json_truncado(respuesta_limpia)
+                    if correcciones_json is None:
+                        return {
+                            "exito": False,
+                            "error": f"Respuesta del LLM no es JSON válido: {e}\nRespuesta: {respuesta_limpia[:200]}",
+                            "correcciones_aplicadas": 0
+                        }
 
             # 4. Aplicar correcciones a BD
             if progress_callback:
@@ -493,6 +500,7 @@ class AuditoriaIA:
         except Exception as e:
             return {
                 "exito": False,
+                "numero_peticion": numero_peticion,
                 "error": f"Error en auditoría: {str(e)}",
                 "correcciones_aplicadas": 0
             }
@@ -864,6 +872,103 @@ class AuditoriaIA:
                 "numero_peticion": caso.get('numero_peticion', 'Desconocido')
             } for caso in casos]
 
+    def _get_system_prompt_compacto(self, modo: str) -> str:
+        """
+        System prompt compacto para modelos gratuitos con contexto limitado (~8K tokens).
+        Reemplaza los archivos system_prompt_completa.txt + system_prompt_comun.txt
+        que juntos suman ~9,600 tokens (demasiado para modelos gratuitos).
+        """
+        if modo == 'completa':
+            return """Auditor de informes IHQ del Hospital Universitario del Valle.
+
+Compara datos del PDF con datos en BD. Detecta errores y datos faltantes.
+
+REGLAS:
+- Si un biomarcador NO está en el PDF, NO lo incluyas en correcciones
+- Estado: POSITIVO/NEGATIVO. Porcentaje: 0-100
+- Se MUY CONCISO en razon (máx 10 palabras)
+- NO incluyas campo evidencia
+
+RESPONDE SOLO JSON:
+{"correcciones":[{"campo_bd":"X","valor_actual":"Y","valor_corregido":"Z","confianza":0.9,"razon":"breve"}],"analisis_profundo":{"veracidad_porcentaje":85,"problemas_detectados":["prob1"]}}"""
+        else:
+            return """Eres un auditor de informes IHQ. Busca SOLO los campos faltantes indicados.
+
+REGLAS:
+- Si el campo NO está en el texto del PDF, responde con correcciones vacías
+- Valores: POSITIVO/NEGATIVO para estados, número 0-100 para porcentajes
+
+RESPONDE SOLO JSON válido:
+{
+  "numero_peticion": "IHQXXXXXX",
+  "correcciones": [
+    {"campo_bd": "nombre_campo", "valor_actual": "", "valor_corregido": "VALOR", "confianza": 0.9, "razon": "encontrado en PDF"}
+  ]
+}"""
+
+    def _preparar_prompt_compacto(
+        self,
+        debug_map: Dict[str, Any],
+        datos_bd: Dict[str, Any]
+    ) -> str:
+        """
+        Prompt compacto para modelos gratuitos (~3K tokens total con system prompt).
+        Envía solo los datos esenciales sin archivos de reglas ni listados de 93 biomarcadores.
+        """
+        extraccion = debug_map.get("extraccion", {})
+        unified_extractor = extraccion.get("unified_extractor", {})
+        numero_peticion = datos_bd.get("Numero de caso", "Desconocido")
+
+        # Extraer texto relevante del PDF (solo diagnóstico y comentarios, comprimido)
+        diag = unified_extractor.get("diagnostico", "N/A") or "N/A"
+        comentarios = unified_extractor.get("comentarios", "N/A") or "N/A"
+        micro = unified_extractor.get("descripcion_microscopica", "N/A") or "N/A"
+
+        # Truncar textos largos - total ~3000 chars máx para caber en 8K context de modelos gratuitos
+        max_text = 800
+        if len(diag) > max_text:
+            diag = diag[:max_text] + "...(truncado)"
+        if len(micro) > max_text:
+            micro = micro[:max_text] + "...(truncado)"
+        if len(comentarios) > max_text:
+            comentarios = comentarios[:max_text] + "...(truncado)"
+
+        # Solo campos IHQ con datos + campos críticos
+        campos_con_datos = {}
+        campos_vacios_ihq = []
+        for campo, valor in datos_bd.items():
+            if campo.startswith("IHQ_"):
+                if valor and str(valor).strip() and str(valor).strip() not in ("N/A", "nan", "None"):
+                    campos_con_datos[campo] = str(valor)
+                else:
+                    campos_vacios_ihq.append(campo)
+
+        # Agregar campos críticos no-IHQ
+        for c in ["Organo", "Diagnostico Principal", "Factor pronostico"]:
+            val = datos_bd.get(c, "")
+            if val and str(val).strip():
+                campos_con_datos[c] = str(val)
+
+        # Limitar campos vacíos reportados para ahorrar tokens
+        vacios_display = campos_vacios_ihq[:15]
+
+        prompt = f"""CASO: {numero_peticion}
+
+DIAGNÓSTICO: {diag}
+
+MICROSCOPÍA: {micro}
+
+COMENTARIOS: {comentarios}
+
+BD ({len(campos_con_datos)} campos):
+{json.dumps(campos_con_datos, ensure_ascii=False, separators=(',', ':'))}
+
+VACÍOS ({len(campos_vacios_ihq)}): {', '.join(vacios_display)}
+
+Compara PDF vs BD. Responde SOLO JSON con correcciones."""
+
+        return prompt
+
     def _preparar_prompt_auditoria(
         self,
         debug_map: Dict[str, Any],
@@ -1063,147 +1168,80 @@ Debes realizar un análisis EXHAUSTIVO comparando:
         campos_a_buscar: List[str]
     ) -> str:
         """
-        Prepara prompt SIMPLE para auditoría parcial (individual, NO lotes)
-        Solo busca campos específicos faltantes, no hace análisis profundo
-
-        V5.1.2: UNIFICADO con auditoría COMPLETA
-        - Usa los MISMOS 4 campos extraídos del PDF que COMPLETA
-        - Solo envía campos FALTANTES según validation_checker
-        - Procesa 1 caso a la vez
-
-        Args:
-            debug_map: Debug map completo
-            datos_bd: Datos de BD
-            campos_a_buscar: Lista de nombres de campos faltantes
-
-        Returns:
-            Prompt optimizado para extracción rápida
+        Prompt compacto para auditoría parcial (~2K tokens).
+        Busca solo campos faltantes en texto truncado del PDF.
         """
         numero_peticion = datos_bd.get("Numero de caso", "Desconocido")
 
-        # V5.1.2: NUEVO - Extraer campos estructurados del PDF (igual que COMPLETA)
         extraccion = debug_map.get("extraccion", {})
         unified_extractor = extraccion.get("unified_extractor", {})
 
-        campos_pdf = {
-            "DESCRIPCIÓN MACROSCÓPICA": unified_extractor.get("descripcion_macroscopica", "N/A"),
-            "DESCRIPCIÓN MICROSCÓPICA": unified_extractor.get("descripcion_microscopica", "N/A"),
-            "DIAGNÓSTICO": unified_extractor.get("diagnostico", "N/A"),
-            "COMENTARIOS": unified_extractor.get("comentarios", "N/A")
-        }
+        # Extraer y truncar texto del PDF (máx 800 chars cada sección)
+        max_text = 800
+        diag = str(unified_extractor.get("diagnostico", "") or "")[:max_text]
+        comentarios = str(unified_extractor.get("comentarios", "") or "")[:max_text]
+        micro = str(unified_extractor.get("descripcion_microscopica", "") or "")[:max_text]
 
-        # Construir texto del PDF estructurado
-        texto_pdf_parts = []
-        for seccion, contenido in campos_pdf.items():
-            if contenido and contenido != "N/A" and str(contenido).strip():
-                texto_pdf_parts.append(f"═══ {seccion} ═══")
-                texto_pdf_parts.append(contenido)
-                texto_pdf_parts.append("")
+        # Campos faltantes en formato compacto
+        campos_lista = [c.split('(')[0].strip() for c in campos_a_buscar]
+        campos_texto = ", ".join(campos_lista[:20])  # Máx 20 campos
 
-        texto_original = "\n".join(texto_pdf_parts) if texto_pdf_parts else "NO HAY TEXTO DISPONIBLE"
+        prompt = f"""CASO: {numero_peticion}
 
-        # V5.1.2: Agregar contexto de estudios solicitados
-        estudios_solicitados_raw = datos_bd.get('IHQ_ESTUDIOS_SOLICITADOS', '')
-        contexto_estudios = ""
-        if estudios_solicitados_raw and estudios_solicitados_raw not in ['', 'N/A', 'NO ENCONTRADO']:
-            from core.validation_checker import parsear_estudios_solicitados
-            estudios_info = parsear_estudios_solicitados(estudios_solicitados_raw)
-            if estudios_info['tiene_estudios']:
-                biomarcadores_str = ', '.join(estudios_info['biomarcadores_raw'])
-                contexto_estudios = f"\n📋 Estudios SOLICITADOS: {biomarcadores_str}\n"
-        
-        # Convertir campos a nombres legibles
-        campos_legibles = []
-        for campo in campos_a_buscar:
-            # Extraer nombre legible (antes del paréntesis)
-            nombre = campo.split('(')[0].strip()
-            campos_legibles.append(f"- {nombre} (campo BD: {campo})")
-        
-        campos_texto = "\n".join(campos_legibles)
-        
-        prompt = f"""Eres un asistente de extracción de datos médicos para el Hospital Universitario del Valle.
+BUSCAR estos campos faltantes: {campos_texto}
 
-CASO: {numero_peticion}{contexto_estudios}
+DIAGNÓSTICO: {diag}
 
-TAREA: Completar ÚNICAMENTE estos campos FALTANTES:
+MICROSCOPÍA: {micro}
 
-CAMPOS A BUSCAR:
-{campos_texto}
+COMENTARIOS: {comentarios}
 
-CAMPOS EXTRAÍDOS DEL PDF:
-{texto_original}
+Reglas:
+- _ESTADO: solo POSITIVO/NEGATIVO/FOCAL/DÉBIL/FUERTE
+- _PORCENTAJE: solo números con % (ej: 15%)
+- Factor pronostico: construir de biomarcadores (Ki-67:X%, HER2:NEG, etc)
+- NO inventes datos
 
-INSTRUCCIONES ESTRICTAS:
+JSON respuesta:
+{{"numero_peticion":"{numero_peticion}","correcciones":[{{"campo_bd":"campo","valor_actual":"NO ENCONTRADO","valor_corregido":"valor","confianza":0.9,"razon":"razón"}}],"no_encontrados":["campo"],"resumen":{{"total_correcciones":0,"total_no_encontrados":0}}}}"""
 
-1. **Para cada campo faltante**: Busca el dato en los CAMPOS EXTRAÍDOS DEL PDF
-   - Si lo encuentras, extráelo TEXTUALMENTE como aparece
-   - Si NO lo encuentras, agrégalo a "no_encontrados"
-
-2. **Para "Factor pronostico"** (si está en campos faltantes):
-   [!] NO busques "Factor Pronóstico" literal. DEBES CONSTRUIRLO de los biomarcadores:
-   - Busca: Ki-67, P53, HER2, ER (Receptor Estrógeno), PR (Receptor Progesterona), P16, P40
-   - Formato: "Ki-67: X%, HER2: NEGATIVO, ER: 90% POSITIVO"
-   - Ejemplo: "Ki-67: 18%, P53: POSITIVO"
-
-3. **Biomarcadores IHQ - REGLAS CRÍTICAS**:
-
-   ⚠️ SOLO BUSCAR BIOMARCADORES SOLICITADOS:
-   - Si el caso muestra "📋 Estudios SOLICITADOS: HER2, Ki-67"
-   - SOLO busca esos 2 en el PDF
-   - NO busques P16, P40, PDL-1 ni otros no solicitados
-   - Objetivo: Evitar falsos positivos
-
-   ⚠️ DISTINCIÓN ESTADO vs PORCENTAJE:
-   - CAMPO _ESTADO: Solo POSITIVO/NEGATIVO/FOCAL/DÉBIL/FUERTE
-   - CAMPO _PORCENTAJE o KI-67: Solo números con % (ej: 15%, 80%)
-   - PDF "P16 POSITIVO" → IHQ_P16_ESTADO = "POSITIVO" (NO porcentaje)
-   - PDF "P16: 70%" → IHQ_P16_PORCENTAJE = "70%" (NO estado)
-
-4. **MAPEO DE VARIANTES** - Biomarcadores pueden aparecer con espacios, puntos, barras, guiones:
-   ⚡ CRÍTICO: Busca TODAS las variantes posibles:
-   - "CAM 5.2" o "CAM5.2" o "CAM52" → IHQ_CAM52
-   - "CKAE1/AE3" o "CKAE1 AE3" o "CKAE1AE3" → IHQ_CKAE1AE3
-   - "KI 67" o "Ki-67" o "KI67" → IHQ_KI-67
-   - "HER 2" o "HER-2" o "HER2" → IHQ_HER2
-   - "P 53" o "P53" → IHQ_P53
-   - "PDL 1" o "PDL-1" → IHQ_PDL-1
-   - "PAX 8" o "PAX8" → IHQ_PAX8
-   - "MSH 6" o "MSH6" → IHQ_MSH6
-
-   Si buscas IHQ_CAM52 y el PDF dice "CAM 5.2", ¡ESO ES UNA COINCIDENCIA! Extráelo.
-
-5. **NO inventes datos** que no estén en el PDF
-
-FORMATO DE RESPUESTA (JSON estricto):
-{{
-  "numero_peticion": "{numero_peticion}",
-  "correcciones": [
-    {{
-      "campo_bd": "Nombre EXACTO del campo como aparece en la lista",
-      "valor_actual": "NO ENCONTRADO",
-      "valor_corregido": "Valor extraído del informe",
-      "confianza": 0.95,
-      "razon": "Encontrado en sección X del texto",
-      "evidencia": "Fragmento exacto del informe que lo confirma"
-    }}
-  ],
-  "no_encontrados": [
-    "Nombre del campo que no se encontró"
-  ],
-  "resumen": {{
-    "total_correcciones": 0,
-    "total_no_encontrados": 0
-  }}
-}}
-
-IMPORTANTE:
-- Responde SOLO con JSON válido, sin texto adicional
-- NO uses markdown (```json```), solo el JSON puro
-- Si un campo no aparece en el informe, agrégalo a "no_encontrados"
-- Solo incluye en "correcciones" los campos que SÍ encontraste
-"""
-        
         return prompt
+
+    def _recuperar_json_truncado(self, texto: str) -> Optional[Dict]:
+        """
+        Intenta recuperar un JSON truncado (respuesta cortada por max_tokens).
+        Cierra progresivamente brackets/braces abiertos.
+        """
+        texto = texto.strip()
+        if not texto.startswith('{'):
+            return None
+
+        # Intentar cerrar el JSON progresivamente
+        for suffix in [']}', '"}]}', '"]}}', '"}],"analisis_profundo":{}}', '"}]}']:
+            try:
+                result = json.loads(texto + suffix)
+                logging.info(f"✅ JSON truncado recuperado con sufijo: {suffix}")
+                return result
+            except json.JSONDecodeError:
+                continue
+
+        # Intentar encontrar el último objeto completo en "correcciones"
+        try:
+            # Buscar hasta la última "}" que cierre una corrección válida
+            last_brace = texto.rfind('}')
+            while last_brace > 0:
+                attempt = texto[:last_brace + 1] + ']}'
+                try:
+                    result = json.loads(attempt)
+                    logging.info(f"✅ JSON truncado recuperado cortando en posición {last_brace}")
+                    return result
+                except json.JSONDecodeError:
+                    last_brace = texto.rfind('}', 0, last_brace)
+        except Exception:
+            pass
+
+        logging.info("⚠️ No se pudo recuperar JSON truncado")
+        return None
 
     def _aplicar_correcciones_bd(
         self,

@@ -1,0 +1,128 @@
+{
+  "numero_caso": "IHQ250091",
+  "caso_num": 36,
+  "total_casos": 50,
+  "timestamp": "2025-12-19T22:10:59.719247",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 13,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "PROLIFERACIÓN HEMATOLINFOIDE",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS MORFOLÒGICOS Y EL PERFIL DE EXPRESIÒN DE INMUNOHISTOQUÌMICA FAVORECEN LINFOMA DE CÉLULAS B GRANDES DIFUSO NO CENTRO GERMINAL MARIA XIMENA VARELA QUEVEDO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 80%",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (12/12)",
+      "total_solicitado_ocr": 12,
+      "total_solicitado_bd": 12,
+      "estudios_ocr": [
+        "CD3",
+        "CD5",
+        "CD10",
+        "CD20",
+        "CD30",
+        "MUM 1",
+        "LMP 1",
+        "BCL2",
+        "BCL6",
+        "Ki-67",
+        "CMYC",
+        "CD79A"
+      ],
+      "estudios_bd": [
+        "CD3",
+        "CD5",
+        "CD10",
+        "CD20",
+        "CD30",
+        "MUM 1",
+        "LMP 1",
+        "BCL2",
+        "BCL6",
+        "Ki-67",
+        "CMYC",
+        "CD79A"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 12,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de inmunohistoquímica en bloque institucional rotulado como “M25004..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO (HISTORIA DE NEOPLA"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

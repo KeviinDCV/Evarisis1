@@ -1,0 +1,162 @@
+{
+  "session_id": "IHQ250062_20251219_015011",
+  "numero_peticion": "IHQ250062",
+  "timestamp": "2025-12-19T01:50:11.756536",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250062\nCopia Pag. 1 de 2\nNombre : BLADIMIR MENA MOSQUERA\nN. peticion : IHQ250062\nN.Identificación : CC. 11617057\nGenero : MASCULINO\nEdad : 56 años 17 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : MEDICA HOMBRES\nFecha Ingreso : 20/01/2025\nFecha Informe : 24/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA PULMON LOBULO\nSUPERIOR IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500028” que corresponde a “masa pulmón lóbulo superior izquierdo”. Previa revisión de la\nhistología, se realizan niveles histológicos para tinción con p40 y TTF-1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales presentan inmunorreactividad positiva nuclear para p40\ny para TTF-1 con\nmarcación heterogénea focal. \nDIAGNÓSTICO\nPulmón, bronquio para lóbulo superior izquierdo. Masa. Biopsia transbronquial. Estudio de\ninmunohistoquímica:\n- CARCINOMA DE CÉLULAS NO PEQUEÑAS, NOS. (VER COMENTARIO). \nCOMENTARIOS\nEl perfil de inmunohistoquimica muestra inmunorreactividad tanto para TTF1 como para P40 lo que\npuede sugerir posible carcinoma adenoescamoso, diagnóstico\nque debe ser realizado espécimen de\nresección. \nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---\nIHQ250062\nCopia Pag. 2 de 2\nNombre : BLADIMIR MENA MOSQUERA\nN. peticion : IHQ250062\nN.Identificación : CC. 11617057\nGenero : MASCULINO\nEdad : 56 años 17 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : MEDICA HOMBRES\nFecha Ingreso : 20/01/2025\nFecha Informe : 24/01/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3307,
+      "reduccion_porcentaje": 98.23
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250062",
+      "caso_num": 9,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "BLADIMIR MENA MOSQUERA",
+      "numero_peticion": "IHQ250062",
+      "identificacion": "11617057",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "56",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "servicio": "MEDICA HOMBRES",
+      "fecha_ingreso": "20/01/2025",
+      "fecha_informe": "24/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250062",
+      "N. de identificación": "11617057",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "MEDICA HOMBRES",
+      "Médico tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/01/2025",
+      "Fecha Informe": "24/01/2025",
+      "nombres": "BLADIMIR",
+      "Primer nombre": "BLADIMIR",
+      "Segundo nombre": "",
+      "apellidos": "MENA MOSQUERA",
+      "Primer apellido": "MENA",
+      "Segundo apellido": "MOSQUERA",
+      "nombre_formal": "MENA MOSQUERA, BLADIMIR",
+      "diagnostico": "Pulmón, bronquio para lóbulo superior izquierdo. Masa. Biopsia transbronquial. Estudio de inmunohistoquímica: - CARCINOMA DE CÉLULAS NO PEQUEÑAS, NOS. (VER COMENTARIO).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva nuclear para P40 y para TTF1 con marcación heterogénea focal.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500028” que corresponde a “masa pulmón lóbulo superior izquierdo”. Previa revisión de la histología, se realizan niveles histológicos para tinción con P40 y TTF1.",
+      "ihq_organo": "PULMÓN, BRONQUIO PARA LÓBULO SUPERIOR IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P40, TTF-1",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "El perfil de inmunohistoquimica muestra inmunorreactividad tanto para TTF1 como para P40 lo que puede sugerir posible carcinoma adenoescamoso, diagnóstico que debe ser realizado espécimen de resección.",
+      "IHQ_ORGANO": "PULMÓN, BRONQUIO PARA LÓBULO SUPERIOR IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2025-12-19T01:50:11.921713",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250062\nCopia Pag. 1 de 2\nNombre : BLADIMIR MENA MOSQUERA\nN. peticion : IHQ250062\nN.Identificación : CC. 11617057\nGenero : MASCULINO\nEdad : 56 años 17 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : MEDICA HOMBRES\nFecha Ingreso : 20/01/2025\nFecha Informe : 24/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA PULMON LOBULO\nSUPERIOR IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500028” que corresponde a “masa pulmón lóbulo superior izquierdo”. Previa revisión de la\nhistología, se realizan niveles histológicos para tinción con p40 y TTF-1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales presentan inmunorreactividad positiva nuclear para p40\ny para TTF-1 con\nmarcación heterogénea focal. \nDIAGNÓSTICO\nPulmón, bronquio para lóbulo superior izquierdo. Masa. Biopsia transbronquial. Estudio de\ninmunohistoquímica:\n- CARCINOMA DE CÉLULAS NO PEQUEÑAS, NOS. (VER COMENTARIO). \nCOMENTARIOS\nEl perfil de inmunohistoquimica muestra inmunorreactividad tanto para TTF1 como para P40 lo que\npuede sugerir posible carcinoma adenoescamoso, diagnóstico\nque debe ser realizado espécimen de\nresección. \nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---\nIHQ250062\nCopia Pag. 2 de 2\nNombre : BLADIMIR MENA MOSQUERA\nN. peticion : IHQ250062\nN.Identificación : CC. 11617057\nGenero : MASCULINO\nEdad : 56 años 17 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : MEDICA HOMBRES\nFecha Ingreso : 20/01/2025\nFecha Informe : 24/01/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, TTF-1",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500028” que corresponde a “masa pulmón lóbulo superior izquierdo”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p40 y TTF-1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva nuclear para p40 y para TTF-1 con marcación heterogénea focal.",
+      "Descripcion Diagnostico": "Pulmón, bronquio para lóbulo superior izquierdo. Masa. Biopsia transbronquial. Estudio de inmunohistoquímica: - CARCINOMA DE CÉLULAS NO PEQUEÑAS, NOS. (VER COMENTARIO).",
+      "IHQ_ORGANO": "PULMÓN, BRONQUIO PARA LÓBULO SUPERIOR IZQUIERDO",
+      "Organo": "BX MASA PULMON LOBULO SUPERIOR IZQUIERDO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CARCINOMA DE CÉLULAS NO PEQUEÑAS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_TTF1": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 121,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 22.93
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 121,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón, bronquio para lóbulo superior izquierdo. Masa. Biopsia transbronquial. Estudio de\ninmunohistoquímica:\n- CARCINOMA DE CÉLULAS NO PEQUEÑAS, NOS. (VER COMENTARIO).",
+      "valor_corregido": "Pulmón, bronquio para lóbulo superior izquierdo. Masa. Biopsia transbronquial. Estudio de inmunohistoquímica: - CARCINOMA DE CÉLULAS NO PEQUEÑAS, NOS. (VER COMENTARIO).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250062",
+      "timestamp": "2025-12-19T01:50:11.921425"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500028” que corresponde a “masa pulmón lóbulo superior izquierdo”. Previa revisión de la\nhistología, se realizan niveles histológicos para tinción con p40 y TTF-1.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500028” que corresponde a “masa pulmón lóbulo superior izquierdo”. Previa revisión de la histología, se realizan niveles histológicos para tinción con P40 y TTF1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250062",
+      "timestamp": "2025-12-19T01:50:11.921431"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales presentan inmunorreactividad positiva nuclear para p40\ny para TTF-1 con\nmarcación heterogénea focal.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva nuclear para P40 y para TTF1 con marcación heterogénea focal.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250062",
+      "timestamp": "2025-12-19T01:50:11.921433"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El perfil de inmunohistoquimica muestra inmunorreactividad tanto para TTF1 como para P40 lo que\npuede sugerir posible carcinoma adenoescamoso, diagnóstico\nque debe ser realizado espécimen de\nresección.",
+      "valor_corregido": "El perfil de inmunohistoquimica muestra inmunorreactividad tanto para TTF1 como para P40 lo que puede sugerir posible carcinoma adenoescamoso, diagnóstico que debe ser realizado espécimen de resección.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250062",
+      "timestamp": "2025-12-19T01:50:11.921435"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 50
+  }
+}

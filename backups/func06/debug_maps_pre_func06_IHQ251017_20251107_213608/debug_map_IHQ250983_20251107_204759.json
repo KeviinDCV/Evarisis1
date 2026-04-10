@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ250983_20251107_204759",
+  "numero_peticion": "IHQ250983",
+  "timestamp": "2025-11-07T20:47:59.672938",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250983\nCopia Pag. 1 de 2\nNombre : ADELA ROSA BENJUMEA GIRALDO\nN. peticion : IHQ250983\nN.Identificación : CC. 29327255\nGenero : FEMENINO\nEdad : 69 años 17 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA CAMILA ARTURO\nServicio : SALA HUMANA\nFecha Ingreso : 08/09/2025\nFecha Informe : 12/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra institucional\nrotulado como “Q-124333-25” que corresponde a “Hepática”. Costa de dos bloques de parafina y dos\nláminas teñidas con hematoxilina- eosina. Previa revisión de la histología, se realizan niveles histológicos\npara tinción con GATA3, CDX2, PAX 8, TTF1, P40, S100 y CKAE1AE3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe\nevidencia\ninmunorreactividad\nen\nlas\ncélulas\ntumorales\npara\nCKAE1AE3,\nS100\n,\nPAX8\ny\np40\nheterogéneo y son negativas para GATA3, CDX2, y TTF1.\nDIAGNÓSTICO\nHígado. Lesión. Biopsia. Estudios de inmunohistoquímica.\n- ADENOCARCINOMA METASTASICO.\nCOMENTARIOS\nEl perfil de inmunohistoquímica favorece carcinoma adenoide quístico de probable origen ginecológico.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 8 ---\nIHQ250983\nCopia Pag. 2 de 2\nNombre : ADELA ROSA BENJUMEA GIRALDO\nN. peticion : IHQ250983\nN.Identificación : CC. 29327255\nGenero : FEMENINO\nEdad : 69 años 17 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA CAMILA ARTURO\nServicio : SALA HUMANA\nFecha Ingreso : 08/09/2025\nFecha Informe : 12/09/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3112,
+      "reduccion_porcentaje": 98.39
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250983",
+      "caso_num": 4,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ADELA ROSA BENJUMEA GIRALDO",
+      "numero_peticion": "IHQ250983",
+      "identificacion": "29327255",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "69",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "MARIA CAMILA ARTURO",
+      "servicio": "SALA HUMANA",
+      "fecha_ingreso": "08/09/2025",
+      "fecha_informe": "12/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250983",
+      "N. de identificación": "29327255",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "SALA HUMANA",
+      "Médico tratante": "MARIA CAMILA ARTURO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/09/2025",
+      "Fecha Informe": "12/09/2025",
+      "nombres": "ADELA ROSA",
+      "Primer nombre": "ADELA",
+      "Segundo nombre": "ROSA",
+      "apellidos": "BENJUMEA GIRALDO",
+      "Primer apellido": "BENJUMEA",
+      "Segundo apellido": "GIRALDO",
+      "nombre_formal": "BENJUMEA GIRALDO, ADELA ROSA",
+      "diagnostico": "Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica. - ADENOCARCINOMA METASTASICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se evidencia inmunorreactividad en las células tumorales para CKAE1AE3, S100 , PAX8 y P40 heterogéneo y son negativas para GATA3, CDX2, y TTF1.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra institucional rotulado como “Q-124333-25” que corresponde a “Hepática”. Costa de dos bloques de parafina y dos láminas teñidas con hematoxilina- eosina. Previa revisión de la histología, se realizan niveles histológicos para tinción con GATA3, CDX2, PAX 8, TTF1, P40, S100 y CKAE1AE3.",
+      "ihq_organo": "HÍGADO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "GATA3, CDX2, PAX 8, TTF-1, P40, S100, CKAE1AE3",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "El perfil de inmunohistoquímica favorece carcinoma adenoide quístico de probable origen ginecológico.",
+      "IHQ_ORGANO": "HÍGADO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_P40_ESTADO": "POSITIVO HETEROGÉNEO",
+      "p40": "POSITIVO HETEROGÉNEO",
+      "extraction_timestamp": "2025-11-07T20:47:59.840685",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250983\nCopia Pag. 1 de 2\nNombre : ADELA ROSA BENJUMEA GIRALDO\nN. peticion : IHQ250983\nN.Identificación : CC. 29327255\nGenero : FEMENINO\nEdad : 69 años 17 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA CAMILA ARTURO\nServicio : SALA HUMANA\nFecha Ingreso : 08/09/2025\nFecha Informe : 12/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra institucional\nrotulado como “Q-124333-25” que corresponde a “Hepática”. Costa de dos bloques de parafina y dos\nláminas teñidas con hematoxilina- eosina. Previa revisión de la histología, se realizan niveles histológicos\npara tinción con GATA3, CDX2, PAX 8, TTF1, P40, S100 y CKAE1AE3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe\nevidencia\ninmunorreactividad\nen\nlas\ncélulas\ntumorales\npara\nCKAE1AE3,\nS100\n,\nPAX8\ny\np40\nheterogéneo y son negativas para GATA3, CDX2, y TTF1.\nDIAGNÓSTICO\nHígado. Lesión. Biopsia. Estudios de inmunohistoquímica.\n- ADENOCARCINOMA METASTASICO.\nCOMENTARIOS\nEl perfil de inmunohistoquímica favorece carcinoma adenoide quístico de probable origen ginecológico.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 8 ---\nIHQ250983\nCopia Pag. 2 de 2\nNombre : ADELA ROSA BENJUMEA GIRALDO\nN. peticion : IHQ250983\nN.Identificación : CC. 29327255\nGenero : FEMENINO\nEdad : 69 años 17 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA CAMILA ARTURO\nServicio : SALA HUMANA\nFecha Ingreso : 08/09/2025\nFecha Informe : 12/09/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "GATA3, CDX2, PAX 8, TTF-1, P40, S100, CKAE1AE3",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra institucional rotulado como “Q-124333-25” que corresponde a “Hepática”. Costa de dos bloques de parafina y dos láminas teñidas con hematoxilina- eosina. Previa revisión de la histología, se realizan niveles histológicos para tinción con GATA3, CDX2, PAX 8, TTF1, P40, S100 y CKAE1AE3.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se evidencia inmunorreactividad en las células tumorales para CKAE1AE3, S100 , PAX8 y p40 heterogéneo y son negativas para GATA3, CDX2, y TTF1.",
+      "Descripcion Diagnostico": "Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica. - ADENOCARCINOMA METASTASICO.",
+      "IHQ_ORGANO": "HÍGADO",
+      "Organo": "BX HIGADO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTASICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_P40_ESTADO": "POSITIVO HETEROGÉNEO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 143,
+      "campos_vacios": 101,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 29.37
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 101,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica.\n- ADENOCARCINOMA METASTASICO.",
+      "valor_corregido": "Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica. - ADENOCARCINOMA METASTASICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250983",
+      "timestamp": "2025-11-07T20:47:59.840373"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra institucional\nrotulado como “Q-124333-25” que corresponde a “Hepática”. Costa de dos bloques de parafina y dos\nláminas teñidas con hematoxilina- eosina. Previa revisión de la histología, se realizan niveles histológicos\npara tinción con GATA3, CDX2, PAX 8, TTF1, P40, S100 y CKAE1AE3.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra institucional rotulado como “Q-124333-25” que corresponde a “Hepática”. Costa de dos bloques de parafina y dos láminas teñidas con hematoxilina- eosina. Previa revisión de la histología, se realizan niveles histológicos para tinción con GATA3, CDX2, PAX 8, TTF1, P40, S100 y CKAE1AE3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250983",
+      "timestamp": "2025-11-07T20:47:59.840380"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se evidencia inmunorreactividad en las células tumorales para CKAE1AE3, S100 , PAX8 y p40 heterogéneo y son negativas para GATA3, CDX2, y TTF1.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se evidencia inmunorreactividad en las células tumorales para CKAE1AE3, S100 , PAX8 y P40 heterogéneo y son negativas para GATA3, CDX2, y TTF1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250983",
+      "timestamp": "2025-11-07T20:47:59.840382"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 56
+  }
+}

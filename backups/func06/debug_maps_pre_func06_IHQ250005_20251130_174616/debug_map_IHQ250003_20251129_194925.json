@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250003_20251129_194925",
+  "numero_peticion": "IHQ250003",
+  "timestamp": "2025-11-29T19:49:25.401104",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250003\nCopia Pag. 1 de 2\nNombre : JAIME GOMEZ PERALTA\nN. peticion : IHQ250003\nN.Identificación : CC. 4628062\nGenero : MASCULINO\nEdad : 76 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA MARIN MORENO\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 02/01/2025\nFecha Informe : 07/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE PLEURA + BX DE\nPULMON\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410638” que corresponde a “A. Biopsia de pleura y B. Biopsia de pulmón” con diagnósticos de\n“NEOPLASIA INVASIVA EN PATRÓN SOLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA”.\nPrevia revisión de la histología, se realizan niveles histológicos al bloque A para tinción con CK7,CK20,\nTTF-1, napsina A y p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales presentan inmunorreactividad fuerte y difusa para TTF-1 y CK7.\nLos marcadores, napsina A, p40 y CK20 son negativos.\nDIAGNÓSTICO\nPleura. Lesión. Biopsia percutanea. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA METASTÁSICO CON PRIMARIO PULMONAR.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 5 ---\nIHQ250003\nCopia Pag. 2 de 2\nNombre : JAIME GOMEZ PERALTA\nN. peticion : IHQ250003\nN.Identificación : CC. 4628062\nGenero : MASCULINO\nEdad : 76 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA MARIN MORENO\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 02/01/2025\nFecha Informe : 07/01/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3106,
+      "reduccion_porcentaje": 98.19
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250003",
+      "caso_num": 3,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "JAIME GOMEZ PERALTA",
+      "numero_peticion": "IHQ250003",
+      "identificacion": "4628062",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "76",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "DANIELA MARIN MORENO",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "02/01/2025",
+      "fecha_informe": "07/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250003",
+      "N. de identificación": "4628062",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "DANIELA MARIN MORENO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/01/2025",
+      "Fecha Informe": "07/01/2025",
+      "nombres": "JAIME",
+      "Primer nombre": "JAIME",
+      "Segundo nombre": "",
+      "apellidos": "GOMEZ PERALTA",
+      "Primer apellido": "GOMEZ",
+      "Segundo apellido": "PERALTA",
+      "nombre_formal": "GOMEZ PERALTA, JAIME",
+      "diagnostico": "Pleura. Lesión. Biopsia percutanea. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTÁSICO CON PRIMARIO PULMONAR.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad fuerte y difusa para TTF1 y CK7. Los marcadores, napsina A, P40 y CK20 son negativos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410638” que corresponde a “A. Biopsia de pleura y B. Biopsia de pulmón” con diagnósticos de “NEOPLASIA INVASIVA EN PATRÓN SOLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan niveles histológicos al bloque A para tinción con CK7,CK20, TTF1, napsina A y P40.",
+      "ihq_organo": "PLEURA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, TTF-1, NAPSINA A, P40",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PLEURA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2025-11-29T19:49:25.519715",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250003\nCopia Pag. 1 de 2\nNombre : JAIME GOMEZ PERALTA\nN. peticion : IHQ250003\nN.Identificación : CC. 4628062\nGenero : MASCULINO\nEdad : 76 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA MARIN MORENO\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 02/01/2025\nFecha Informe : 07/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE PLEURA + BX DE\nPULMON\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410638” que corresponde a “A. Biopsia de pleura y B. Biopsia de pulmón” con diagnósticos de\n“NEOPLASIA INVASIVA EN PATRÓN SOLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA”.\nPrevia revisión de la histología, se realizan niveles histológicos al bloque A para tinción con CK7,CK20,\nTTF-1, napsina A y p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales presentan inmunorreactividad fuerte y difusa para TTF-1 y CK7.\nLos marcadores, napsina A, p40 y CK20 son negativos.\nDIAGNÓSTICO\nPleura. Lesión. Biopsia percutanea. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA METASTÁSICO CON PRIMARIO PULMONAR.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 5 ---\nIHQ250003\nCopia Pag. 2 de 2\nNombre : JAIME GOMEZ PERALTA\nN. peticion : IHQ250003\nN.Identificación : CC. 4628062\nGenero : MASCULINO\nEdad : 76 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA MARIN MORENO\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 02/01/2025\nFecha Informe : 07/01/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, TTF-1, NAPSINA A, P40",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410638” que corresponde a “A. Biopsia de pleura y B. Biopsia de pulmón” con diagnósticos de “NEOPLASIA INVASIVA EN PATRÓN SOLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan niveles histológicos al bloque A para tinción con CK7,CK20, TTF-1, napsina A y p40.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad fuerte y difusa para TTF-1 y CK7. Los marcadores, napsina A, p40 y CK20 son negativos.",
+      "Descripcion Diagnostico": "Pleura. Lesión. Biopsia percutanea. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTÁSICO CON PRIMARIO PULMONAR.",
+      "IHQ_ORGANO": "PLEURA",
+      "Organo": "BX DE PLEURA + BX DE PULMON",
+      "Diagnostico Coloracion": "NEOPLASIA INVASIVA EN PATRÓN SOLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTÁSICO CON PRIMARIO PULMONAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 109,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 26.35
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 109,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pleura. Lesión. Biopsia percutanea. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA METASTÁSICO CON PRIMARIO PULMONAR.",
+      "valor_corregido": "Pleura. Lesión. Biopsia percutanea. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTÁSICO CON PRIMARIO PULMONAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250003",
+      "timestamp": "2025-11-29T19:49:25.519507"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410638” que corresponde a “A. Biopsia de pleura y B. Biopsia de pulmón” con diagnósticos de\n“NEOPLASIA INVASIVA EN PATRÓN SOLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA”.\nPrevia revisión de la histología, se realizan niveles histológicos al bloque A para tinción con CK7,CK20,\nTTF-1, napsina A y p40.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410638” que corresponde a “A. Biopsia de pleura y B. Biopsia de pulmón” con diagnósticos de “NEOPLASIA INVASIVA EN PATRÓN SOLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan niveles histológicos al bloque A para tinción con CK7,CK20, TTF1, napsina A y P40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250003",
+      "timestamp": "2025-11-29T19:49:25.519512"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales presentan inmunorreactividad fuerte y difusa para TTF-1 y CK7.\nLos marcadores, napsina A, p40 y CK20 son negativos.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad fuerte y difusa para TTF1 y CK7. Los marcadores, napsina A, P40 y CK20 son negativos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250003",
+      "timestamp": "2025-11-29T19:49:25.519514"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 52
+  }
+}

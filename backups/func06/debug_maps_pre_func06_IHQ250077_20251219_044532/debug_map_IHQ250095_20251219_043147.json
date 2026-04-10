@@ -1,0 +1,165 @@
+{
+  "session_id": "IHQ250095_20251219_043147",
+  "numero_peticion": "IHQ250095",
+  "timestamp": "2025-12-19T04:31:47.992317",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250095\nCopia Pag. 1 de 2\nNombre : JUAN GUILLERMO SANCHEZ ALVAREZ N. peticion : IHQ250095\nN.Identificación : CC. 1114094238\nGenero : MASCULINO\nEdad : 28 años 10 dias\nEPS : S.O.S\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : MEDICA HOMBRES\nFecha Ingreso : 28/01/2025\nFecha Informe : 05/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR\nRETROPERITONEAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500829” que corresponde a “tumor retroperitoneal” con diagnósticos de “PROLIFERACIÓN\nLINFOIDE ATÍPICA A CLASIFICAR POR INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan\nniveles histológicos para tinción con CD20, PAX-5, MUM-1, BCL6, BCL2, CD5, CD3, CD10, CD23, CD30, C-\nMYC, KI-67 Y CD38.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células neoplásicas son positivas para CD20, PAX-5, BCL6 Y BCL2. \nLos marcadores CD10, MUM-1, CD30, Y CD23 son negativos.\nC-MYC negativo (tinción nuclear debil en menos del 30%).\nÍndice de proliferación KI-67 del 80%.\nHay linfocitos T acompañantes CD3+/CD5+ y células plasmáticas CD38+ dispersas.\nDIAGNÓSTICO\nRetroperitoneo. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- HALLAZGOS DE INMUNOHISTIQUÍMICA COMPATIBLES CON LINFOMA DIFUSO DE CÉLULAS B GRANDES,\nFENOTIPO CENTROGERMINAL.\nCOMENTARIOS\nEl resultado de este estudio debe estar en estricta correlación con la historia clínica completa, estudios\nhematológicos e imágenes diagnósticas para su adecuada interpretación. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---\nIHQ250095\nCopia Pag. 2 de 2\nNombre : JUAN GUILLERMO SANCHEZ ALVAREZ N. peticion : IHQ250095\nN.Identificación : CC. 1114094238\nGenero : MASCULINO\nEdad : 28 años 10 dias\nEPS : S.O.S\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : MEDICA HOMBRES\nFecha Ingreso : 28/01/2025\nFecha Informe : 05/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3528,
+      "reduccion_porcentaje": 98.11
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250095",
+      "caso_num": 39,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "nombre_completo": "JUAN GUILLERMO SANCHEZ ALVAREZ",
+      "numero_peticion": "IHQ250095",
+      "identificacion": "1114094238",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "28",
+      "eps": "S.O.S",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "MEDICA HOMBRES",
+      "fecha_ingreso": "28/01/2025",
+      "fecha_informe": "05/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250095",
+      "N. de identificación": "1114094238",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S",
+      "Servicio": "MEDICA HOMBRES",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/01/2025",
+      "Fecha Informe": "05/02/2025",
+      "nombres": "JUAN GUILLERMO",
+      "Primer nombre": "JUAN",
+      "Segundo nombre": "GUILLERMO",
+      "apellidos": "SANCHEZ ALVAREZ",
+      "Primer apellido": "SANCHEZ",
+      "Segundo apellido": "ALVAREZ",
+      "nombre_formal": "SANCHEZ ALVAREZ, JUAN GUILLERMO",
+      "diagnostico": "Retroperitoneo. Tumor. Biopsia. Estudio de inmunohistoquímica: - HALLAZGOS DE INMUNOHISTIQUÍMICA COMPATIBLES CON LINFOMA DIFUSO DE CÉLULAS B GRANDES, FENOTIPO CENTROGERMINAL.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son positivas para CD20, PAX-5, BCL6 Y BCL2. Los marcadores CD10, MUM-1, CD30, Y CD23 son negativos. C-MYC negativo (tinción nuclear debil en menos del 30%). Índice de proliferación KI-67 del 80%. Hay linfocitos T acompañantes CD3+/CD5+ y células plasmáticas CD38+ dispersas.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500829” que corresponde a “tumor retroperitoneal” con diagnósticos de “PROLIFERACIÓN LINFOIDE ATÍPICA A CLASIFICAR POR INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CD20, PAX-5, MUM-1, BCL6, BCL2, CD5, CD3, CD10, CD23, CD30, C- MYC, KI-67 Y CD38.",
+      "ihq_organo": "RETROPERITONEO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD20, PAX 5, MUM 1, BCL6, BCL2, CD5, CD3, CD10, CD23, CD30, C MYC, Ki-67, CD38",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "El resultado de este estudio debe estar en estricta correlación con la historia clínica completa, estudios hematológicos e imágenes diagnósticas para su adecuada interpretación.",
+      "IHQ_ORGANO": "RETROPERITONEO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Ki-67 del 80%",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_MUM1": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_CD23": "NEGATIVO",
+      "IHQ_KI-67": "80%",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "extraction_timestamp": "2025-12-19T04:31:48.150313",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250095\nCopia Pag. 1 de 2\nNombre : JUAN GUILLERMO SANCHEZ ALVAREZ N. peticion : IHQ250095\nN.Identificación : CC. 1114094238\nGenero : MASCULINO\nEdad : 28 años 10 dias\nEPS : S.O.S\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : MEDICA HOMBRES\nFecha Ingreso : 28/01/2025\nFecha Informe : 05/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR\nRETROPERITONEAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500829” que corresponde a “tumor retroperitoneal” con diagnósticos de “PROLIFERACIÓN\nLINFOIDE ATÍPICA A CLASIFICAR POR INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan\nniveles histológicos para tinción con CD20, PAX-5, MUM-1, BCL6, BCL2, CD5, CD3, CD10, CD23, CD30, C-\nMYC, KI-67 Y CD38.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células neoplásicas son positivas para CD20, PAX-5, BCL6 Y BCL2. \nLos marcadores CD10, MUM-1, CD30, Y CD23 son negativos.\nC-MYC negativo (tinción nuclear debil en menos del 30%).\nÍndice de proliferación KI-67 del 80%.\nHay linfocitos T acompañantes CD3+/CD5+ y células plasmáticas CD38+ dispersas.\nDIAGNÓSTICO\nRetroperitoneo. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- HALLAZGOS DE INMUNOHISTIQUÍMICA COMPATIBLES CON LINFOMA DIFUSO DE CÉLULAS B GRANDES,\nFENOTIPO CENTROGERMINAL.\nCOMENTARIOS\nEl resultado de este estudio debe estar en estricta correlación con la historia clínica completa, estudios\nhematológicos e imágenes diagnósticas para su adecuada interpretación. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---\nIHQ250095\nCopia Pag. 2 de 2\nNombre : JUAN GUILLERMO SANCHEZ ALVAREZ N. peticion : IHQ250095\nN.Identificación : CC. 1114094238\nGenero : MASCULINO\nEdad : 28 años 10 dias\nEPS : S.O.S\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : MEDICA HOMBRES\nFecha Ingreso : 28/01/2025\nFecha Informe : 05/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD20, PAX 5, MUM 1, BCL6, BCL2, CD5, CD3, CD10, CD23, CD30, C MYC, Ki-67, CD38",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500829” que corresponde a “tumor retroperitoneal” con diagnósticos de “PROLIFERACIÓN LINFOIDE ATÍPICA A CLASIFICAR POR INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CD20, PAX-5, MUM-1, BCL6, BCL2, CD5, CD3, CD10, CD23, CD30, C- MYC, KI-67 Y CD38.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son positivas para CD20, PAX-5, BCL6 Y BCL2. Los marcadores CD10, MUM-1, CD30, Y CD23 son negativos. C-MYC negativo (tinción nuclear debil en menos del 30%). Índice de proliferación KI-67 del 80%. Hay linfocitos T acompañantes CD3+/CD5+ y células plasmáticas CD38+ dispersas.",
+      "Descripcion Diagnostico": "Retroperitoneo. Tumor. Biopsia. Estudio de inmunohistoquímica: - HALLAZGOS DE INMUNOHISTIQUÍMICA COMPATIBLES CON LINFOMA DIFUSO DE CÉLULAS B GRANDES, FENOTIPO CENTROGERMINAL.",
+      "IHQ_ORGANO": "RETROPERITONEO",
+      "Organo": "BX TUMOR RETROPERITONEAL",
+      "Diagnostico Coloracion": "PROLIFERACIÓN LINFOIDE ATÍPICA A CLASIFICAR POR INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "RETROPERITONEO. TUMOR. BIOPSIA. ESTUDIO DE INMUNOHISTOQUÍMICA: - HALLAZGOS DE INMUNOHISTIQUÍMICA COMPATIBLES CON LINFOMA DIFUSO DE CÉLULAS B GRANDES, FENOTIPO CENTROGERMINAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 80%",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_MUM1": "NEGATIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD23": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_CMYC": "",
+      "IHQ_KI-67": "80%",
+      "IHQ_CD38": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 110,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 12,
+      "completitud_porcentaje": 29.94
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 110,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Retroperitoneo. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- HALLAZGOS DE INMUNOHISTIQUÍMICA COMPATIBLES CON LINFOMA DIFUSO DE CÉLULAS B GRANDES,\nFENOTIPO CENTROGERMINAL.",
+      "valor_corregido": "Retroperitoneo. Tumor. Biopsia. Estudio de inmunohistoquímica: - HALLAZGOS DE INMUNOHISTIQUÍMICA COMPATIBLES CON LINFOMA DIFUSO DE CÉLULAS B GRANDES, FENOTIPO CENTROGERMINAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250095",
+      "timestamp": "2025-12-19T04:31:48.150093"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El resultado de este estudio debe estar en estricta correlación con la historia clínica completa, estudios\nhematológicos e imágenes diagnósticas para su adecuada interpretación.",
+      "valor_corregido": "El resultado de este estudio debe estar en estricta correlación con la historia clínica completa, estudios hematológicos e imágenes diagnósticas para su adecuada interpretación.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250095",
+      "timestamp": "2025-12-19T04:31:48.150099"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 59
+  }
+}

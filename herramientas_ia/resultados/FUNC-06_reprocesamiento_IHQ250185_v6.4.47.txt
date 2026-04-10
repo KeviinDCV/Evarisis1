@@ -1,0 +1,138 @@
+================================================================================
+REPORTE FUNC-06: REPROCESAMIENTO IHQ250185 (v6.4.47)
+================================================================================
+
+CAMBIOS APLICADOS EN biomarker_extractor.py v6.4.47:
+- Agregados patrones ALTA PRIORIDAD para "positivas para: X, Y, Z" (con dos puntos)
+- Agregados patrones para "negativos para: X, Y, Z" (con dos puntos)
+- Mejora en captura de biomarcadores con multiples palabras
+
+================================================================================
+RESULTADOS DEL REPROCESAMIENTO
+================================================================================
+
+TEXTO OCR ORIGINAL:
+-------------------
+Linea 37-39:
+"Las celulas tumorales son positivas para: CK7, CAM 5.2, p53 sobre expresado,
+receptor de estrogenos y PAX 8 con una tincion en bloque para p16 en el 10%
+de las celulas tumorales. Ki67 del 70% de las celulas invasivas."
+
+Linea 40:
+"las celulas tumorales son negativos para: p40, CK 20, vimentina, RCC."
+
+================================================================================
+COMPARACION: ESPERADO vs OBTENIDO
+================================================================================
+
+BIOMARCADORES POSITIVOS:
+------------------------
+Biomarcador             | Esperado        | Obtenido                | Estado
+---------------------------------------------------------------------------------------
+CK7                     | POSITIVO        | POSITIVO (IHQ_CK7)      | OK CORRECTO
+CAM5                    | POSITIVO        | POSITIVO (IHQ_CAM5)     | OK CORRECTO
+P53                     | POSITIVO        | NO MENCIONADO           | ERROR FALLO
+  (sobreexpresado)      |                 | (IHQ_P53)               |
+RECEPTOR_ESTROGENOS     | POSITIVO        | NO EXTRAIDO             | ERROR FALLO
+                        |                 | (columna no existe)     |
+PAX8                    | POSITIVO        | NO EXTRAIDO             | ERROR FALLO
+                        |                 | (columna no existe)     |
+P16                     | POSITIVO (10%)  | POSITIVO                | WARN PARCIAL
+                        |                 | (IHQ_P16_ESTADO)        | (falta %)
+Ki-67                   | 70%             | 70% (IHQ_KI-67)         | OK CORRECTO
+
+BIOMARCADORES NEGATIVOS:
+------------------------
+Biomarcador             | Esperado        | Obtenido                | Estado
+---------------------------------------------------------------------------------------
+P40                     | NEGATIVO        | NEGATIVO                | OK CORRECTO
+                        |                 | (IHQ_P40_ESTADO)        |
+CK20                    | NEGATIVO        | NEGATIVO (IHQ_CK20)     | OK CORRECTO
+VIMENTINA               | NEGATIVO        | NEGATIVO                | OK CORRECTO
+                        |                 | (IHQ_VIMENTINA)         |
+RCC                     | NEGATIVO        | NEGATIVO (IHQ_RCC)      | OK CORRECTO
+
+================================================================================
+SCORE FINAL
+================================================================================
+
+Score auditoria: 88.9% (8/9 validaciones OK)
+
+EXITOS (7/10 biomarcadores):
+  OK CK7: POSITIVO
+  OK CAM5: POSITIVO
+  OK P40: NEGATIVO
+  OK CK20: NEGATIVO
+  OK VIMENTINA: NEGATIVO
+  OK RCC: NEGATIVO
+  OK Ki-67: 70%
+
+PARCIALES (1/10):
+  WARN P16: POSITIVO (extraido, pero falta porcentaje 10%)
+
+FALLIDOS (3/10 biomarcadores):
+  ERROR P53: Dice "NO MENCIONADO" pero OCR dice "p53 sobre expresado"
+  ERROR RECEPTOR_ESTROGENOS: No se extrajo (columna no existe)
+  ERROR PAX8: No se extrajo (columna no existe)
+
+================================================================================
+DIAGNOSTICO DE PROBLEMAS
+================================================================================
+
+PROBLEMA 1: P53 "sobre expresado" no se mapea a POSITIVO
+---------------------------------------------------------
+Causa: El patron captura "p53" como biomarcador pero "sobre expresado"
+       no se interpreta como valor POSITIVO.
+
+Solucion requerida:
+  - Agregar logica para detectar "sobre expresado", "sobreexpresado",
+    "overexpressed" como indicadores de POSITIVO
+  - Ubicacion: biomarker_extractor.py, en la funcion que normaliza valores
+
+PROBLEMA 2: "receptor de estrogenos" no se extrae
+---------------------------------------------------
+Causa: No existe columna IHQ_RECEPTOR_ESTROGENOS en la base de datos.
+
+Solucion requerida:
+  1. Verificar si la columna existe con otro nombre (IHQ_ER, IHQ_ESTROGENOS)
+  2. Si no existe, usar FUNC-03 para agregar biomarcador:
+     auditor.agregar_biomarcador('RECEPTOR_ESTROGENOS', 
+                                 ['receptor de estrogenos', 
+                                  'receptor de estrogenos',
+                                  'R. Estrogenos',
+                                  'ER'])
+
+PROBLEMA 3: PAX8 no se extrae
+------------------------------
+Causa: No existe columna IHQ_PAX8 en la base de datos.
+
+Solucion requerida:
+  1. Verificar si ya existe columna PAX8
+  2. Si no existe, usar FUNC-03 para agregar biomarcador:
+     auditor.agregar_biomarcador('PAX8', ['PAX 8', 'PAX-8'])
+
+PROBLEMA 4: P16 sin porcentaje
+-------------------------------
+Causa: Se extrae estado (POSITIVO) pero no el porcentaje (10%)
+
+Solucion requerida:
+  - Mejorar extraccion de P16 para capturar formato:
+    "tincion en bloque para p16 en el 10%"
+
+================================================================================
+CONCLUSION
+================================================================================
+
+Los patrones v6.4.47 mejoraron significativamente la extraccion:
+  OK Patron "positivas para:" funciono para CK7, CAM5
+  OK Patron "negativos para:" funciono para P40, CK20, VIMENTINA, RCC
+  WARN Biomarcadores multi-palabra requieren columnas en BD
+  ERROR "sobre expresado" no se interpreta como POSITIVO
+
+PROXIMOS PASOS RECOMENDADOS:
+1. Verificar si RECEPTOR_ESTROGENOS y PAX8 tienen columnas en BD
+2. Si no existen, ejecutar FUNC-03 para agregarlos
+3. Agregar logica para "sobre expresado" -> POSITIVO
+4. Reprocesar caso IHQ250185 nuevamente con FUNC-06
+
+================================================================================

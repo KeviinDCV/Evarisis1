@@ -1,0 +1,150 @@
+{
+  "session_id": "IHQ250157_20260105_185642",
+  "numero_peticion": "IHQ250157",
+  "timestamp": "2026-01-05T18:56:42.989150",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250157\nCopia Pag. 1 de 2\nNombre : VALENTINA HERNANDEZ ALFONSO\nN. peticion : IHQ250157\nN.Identificación : CC. 1117023122\nGenero : FEMENINO\nEdad : 20 años 14 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 11/02/2025\nFecha Informe : 25/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2501286, el cual corresponde a biopsia de médula ósea con\ndiagnóstico de \"INFILTRACIÓN LEUCÉMICA\". Se ordenan los siguientes marcadores: CD20, CD79a, CD38,\nCD10, CD34, CD117, TdT.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLos cortes histológicos corresponden a médula ósea con trabéculas de aspecto usual. En los cinco\nespacios medulares se observa una celularidad del 60 AL 70% constituida por una proliferación de células\npequeñas, redondas y azules con escaso citopasma y núcleo basófilo hipercromático que se distribuyen\nen un patrón difuso y reemplazan las series mieloide y eritroide. Se obervan hasta dos megacariocitos\npor campo de alto poder, de morfología y número usual. El estroma no presenta alteraciones. Dicha\nproliferación celular es de línea linfoide B CD20 y CD79, con marcación positiva homogénea y difusa para\nCD10, heterogénea para CD34 y TdT; siendo negativas para CD117. Hay población plasmocítica\nacompañante CD38.\nDIAGNÓSTICO\n Médula ósea. Lesión (historia de leucemia/linfoma de precursores linfoides B (linfoblástica). Biopsia.\nEstudio de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UNA LEUCEMIA/LINFOMA DE\nPRECURSORES LINFOIDES B\nCOMENTARIOS\nCaso revisado por Dra. Maria Ximena Varela, Hematopatóloga.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---\nIHQ250157\nCopia Pag. 2 de 2\nNombre : VALENTINA HERNANDEZ ALFONSO\nN. peticion : IHQ250157\nN.Identificación : CC. 1117023122\nGenero : FEMENINO\nEdad : 20 años 14 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 11/02/2025\nFecha Informe : 25/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3748,
+      "reduccion_porcentaje": 97.84
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250157",
+      "caso_num": 47,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD10": "POSITIVO (difusa)",
+      "IHQ_CD117": "NEGATIVO",
+      "nombre_completo": "VALENTINA HERNANDEZ ALFONSO",
+      "numero_peticion": "IHQ250157",
+      "identificacion": "1117023122",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "20",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "LAZARO DAMIAN CORTINA",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "11/02/2025",
+      "fecha_informe": "25/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250157",
+      "N. de identificación": "1117023122",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "LAZARO DAMIAN CORTINA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "11/02/2025",
+      "Fecha Informe": "25/02/2025",
+      "nombres": "VALENTINA",
+      "Primer nombre": "VALENTINA",
+      "Segundo nombre": "",
+      "apellidos": "HERNANDEZ ALFONSO",
+      "Primer apellido": "HERNANDEZ",
+      "Segundo apellido": "ALFONSO",
+      "nombre_formal": "HERNANDEZ ALFONSO, VALENTINA",
+      "diagnostico": "Médula ósea. Lesión (historia de leucemia/linfoma de precursores linfoides B (linfoblástica). Biopsia. Estudio de inmunohistoquímica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UNA LEUCEMIA/LINFOMA DE PRECURSORES LINFOIDES B",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Los cortes histológicos corresponden a médula ósea con trabéculas de aspecto usual. En los cinco espacios medulares se observa una celularidad del 60 AL 70% constituida por una proliferación de células pequeñas, redondas y azules con escaso citopasma y núcleo basófilo hipercromático que se distribuyen en un patrón difuso y reemplazan las series mieloide y eritroide. Se obervan hasta dos megacariocitos por campo de alto poder, de morfología y número usual. El estroma no presenta alteraciones. Dicha proliferación celular es de línea linfoide B CD20 y CD79, con marcación positiva homogénea y difusa para CD10, heterogénea para CD34 y TdT; siendo negativas para CD117. Hay población plasmocítica acompañante CD38.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2501286, el cual corresponde a biopsia de médula ósea con diagnóstico de \"INFILTRACIÓN LEUCÉMICA\". Se ordenan los siguientes marcadores: CD20, CD79 a, CD38, CD10, CD34, CD117, TdT.",
+      "ihq_organo": "MÉDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD20, CD79A, CD38, CD10, CD34, CD117, TDT",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso revisado por Dra. Maria Ximena Varela, Hematopatóloga.",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD20, CD79A, CD38, CD10, CD34, CD117, TDT",
+      "IHQ_CD34": "POSITIVA",
+      "extraction_timestamp": "2026-01-05T18:56:43.475029",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250157\nCopia Pag. 1 de 2\nNombre : VALENTINA HERNANDEZ ALFONSO\nN. peticion : IHQ250157\nN.Identificación : CC. 1117023122\nGenero : FEMENINO\nEdad : 20 años 14 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 11/02/2025\nFecha Informe : 25/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2501286, el cual corresponde a biopsia de médula ósea con\ndiagnóstico de \"INFILTRACIÓN LEUCÉMICA\". Se ordenan los siguientes marcadores: CD20, CD79a, CD38,\nCD10, CD34, CD117, TdT.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLos cortes histológicos corresponden a médula ósea con trabéculas de aspecto usual. En los cinco\nespacios medulares se observa una celularidad del 60 AL 70% constituida por una proliferación de células\npequeñas, redondas y azules con escaso citopasma y núcleo basófilo hipercromático que se distribuyen\nen un patrón difuso y reemplazan las series mieloide y eritroide. Se obervan hasta dos megacariocitos\npor campo de alto poder, de morfología y número usual. El estroma no presenta alteraciones. Dicha\nproliferación celular es de línea linfoide B CD20 y CD79, con marcación positiva homogénea y difusa para\nCD10, heterogénea para CD34 y TdT; siendo negativas para CD117. Hay población plasmocítica\nacompañante CD38.\nDIAGNÓSTICO\n Médula ósea. Lesión (historia de leucemia/linfoma de precursores linfoides B (linfoblástica). Biopsia.\nEstudio de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UNA LEUCEMIA/LINFOMA DE\nPRECURSORES LINFOIDES B\nCOMENTARIOS\nCaso revisado por Dra. Maria Ximena Varela, Hematopatóloga.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---\nIHQ250157\nCopia Pag. 2 de 2\nNombre : VALENTINA HERNANDEZ ALFONSO\nN. peticion : IHQ250157\nN.Identificación : CC. 1117023122\nGenero : FEMENINO\nEdad : 20 años 14 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 11/02/2025\nFecha Informe : 25/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD20, CD79A, CD38, CD10, CD34, CD117, TDT",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2501286, el cual corresponde a biopsia de médula ósea con diagnóstico de \"INFILTRACIÓN LEUCÉMICA\". Se ordenan los siguientes marcadores: CD20, CD79a, CD38, CD10, CD34, CD117, TdT.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Los cortes histológicos corresponden a médula ósea con trabéculas de aspecto usual. En los cinco espacios medulares se observa una celularidad del 60 AL 70% constituida por una proliferación de células pequeñas, redondas y azules con escaso citopasma y núcleo basófilo hipercromático que se distribuyen en un patrón difuso y reemplazan las series mieloide y eritroide. Se obervan hasta dos megacariocitos por campo de alto poder, de morfología y número usual. El estroma no presenta alteraciones. Dicha proliferación celular es de línea linfoide B CD20 y CD79, con marcación positiva homogénea y difusa para CD10, heterogénea para CD34 y TdT; siendo negativas para CD117. Hay población plasmocítica acompañante CD38.",
+      "Descripcion Diagnostico": "Médula ósea. Lesión (historia de leucemia/linfoma de precursores linfoides B (linfoblástica). Biopsia. Estudio de inmunohistoquímica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UNA LEUCEMIA/LINFOMA DE PRECURSORES LINFOIDES B",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Organo": "BX MEDULA OSEA",
+      "Diagnostico Coloracion": "INFILTRACIÓN LEUCÉMICA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UNA LEUCEMIA/LINFOMA DE PRECURSORES LINFOIDES B",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD20": "NO MENCIONADO",
+      "IHQ_CD79A": "NO MENCIONADO",
+      "IHQ_CD38": "NO MENCIONADO",
+      "IHQ_CD10": "POSITIVO (difusa)",
+      "IHQ_CD34": "POSITIVA",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_TDT": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 166,
+      "campos_vacios": 125,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "completitud_porcentaje": 24.7
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 125,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula ósea. Lesión (historia de leucemia/linfoma de precursores linfoides B (linfoblástica). Biopsia.\nEstudio de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UNA LEUCEMIA/LINFOMA DE\nPRECURSORES LINFOIDES B",
+      "valor_corregido": "Médula ósea. Lesión (historia de leucemia/linfoma de precursores linfoides B (linfoblástica). Biopsia. Estudio de inmunohistoquímica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UNA LEUCEMIA/LINFOMA DE PRECURSORES LINFOIDES B",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250157",
+      "timestamp": "2026-01-05T18:56:43.474793"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2501286, el cual corresponde a biopsia de médula ósea con diagnóstico de \"INFILTRACIÓN LEUCÉMICA\". Se ordenan los siguientes marcadores: CD20, CD79a, CD38, CD10, CD34, CD117, TdT.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2501286, el cual corresponde a biopsia de médula ósea con diagnóstico de \"INFILTRACIÓN LEUCÉMICA\". Se ordenan los siguientes marcadores: CD20, CD79 a, CD38, CD10, CD34, CD117, TdT.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250157",
+      "timestamp": "2026-01-05T18:56:43.474799"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 51
+  }
+}

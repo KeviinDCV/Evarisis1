@@ -1,0 +1,166 @@
+{
+  "session_id": "IHQ250046_20251213_112654",
+  "numero_peticion": "IHQ250046",
+  "timestamp": "2025-12-13T11:26:54.732123",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250046\nCopia Pag. 1 de 2\nNombre : LUIS HERNANDO YAQUENO GUEVARA N. peticion : IHQ250046\nN.Identificación : CC. 12992070\nGenero : MASCULINO\nEdad : 58 años 7 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CAMILO GALINDEZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 15/01/2025\nFecha Informe : 25/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500103” correspondiente a \" biopsia de pulmón derecho\": con diagnóstico de “ADENOCARCINOMA”\nPrevia revisión de la histología se realizan niveles histológicos para tinción con los marcadores: TTF1 y\nNAPSINA\nDESCRIPCIÓN MICROSCÓPICA\n Las células tumorales tienen marcación fuerte y positiva para CA19-9, CK 19, CK 7, positivo focal para\nCK 20 y CD X2 para Napsina y TTF 1\nDIAGNÓSTICO\nPulmón derecho. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:\nADENOCARCINOMA MUCINOSO \nCOMENTARIOS\nEl adenocarcinoma mucinoso de pancreas y pulmón tiene igual perfil de inmunohistoquimica, por lo\ncual se sugiere ampliar estudios de extensión para descartar posible origen pancreato biliar y si esto es\nnegativo se puede considerar como sitio primario el pulmón.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---\nIHQ250046\nCopia Pag. 2 de 2\nNombre : LUIS HERNANDO YAQUENO GUEVARA N. peticion : IHQ250046\nN.Identificación : CC. 12992070\nGenero : MASCULINO\nEdad : 58 años 7 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CAMILO GALINDEZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 15/01/2025\nFecha Informe : 25/01/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3087,
+      "reduccion_porcentaje": 98.2
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250046",
+      "caso_num": 46,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_NAPSIN": "POSITIVO",
+      "IHQ_CA19_9": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "nombre_completo": "LUIS HERNANDO YAQUENO GUEVARA",
+      "numero_peticion": "IHQ250046",
+      "identificacion": "12992070",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "58",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JUAN CAMILO GALINDEZ",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "15/01/2025",
+      "fecha_informe": "25/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250046",
+      "N. de identificación": "12992070",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "JUAN CAMILO GALINDEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "15/01/2025",
+      "Fecha Informe": "25/01/2025",
+      "nombres": "LUIS HERNANDO",
+      "Primer nombre": "LUIS",
+      "Segundo nombre": "HERNANDO",
+      "apellidos": "YAQUENO GUEVARA",
+      "Primer apellido": "YAQUENO",
+      "Segundo apellido": "GUEVARA",
+      "nombre_formal": "YAQUENO GUEVARA, LUIS HERNANDO",
+      "diagnostico": "Pulmón derecho. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: ADENOCARCINOMA MUCINOSO",
+      "descripcion_microscopica": "Las células tumorales tienen marcación fuerte y positiva para CA19-9, CK 19, CK7, positivo focal para CK20 y CD X2 para Napsina y TTF1",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500103” correspondiente a \" biopsia de pulmón derecho\": con diagnóstico de “ADENOCARCINOMA” Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: TTF1 y NAPSINA",
+      "ihq_organo": "PULMÓN DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "El adenocarcinoma mucinoso de pancreas y pulmón tiene igual perfil de inmunohistoquimica, por lo cual se sugiere ampliar estudios de extensión para descartar posible origen pancreato biliar y si esto es negativo se puede considerar como sitio primario el pulmón.",
+      "IHQ_ORGANO": "PULMÓN DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_TTF1": "POSITIVO",
+      "extraction_timestamp": "2025-12-13T11:26:54.897162",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250046\nCopia Pag. 1 de 2\nNombre : LUIS HERNANDO YAQUENO GUEVARA N. peticion : IHQ250046\nN.Identificación : CC. 12992070\nGenero : MASCULINO\nEdad : 58 años 7 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CAMILO GALINDEZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 15/01/2025\nFecha Informe : 25/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500103” correspondiente a \" biopsia de pulmón derecho\": con diagnóstico de “ADENOCARCINOMA”\nPrevia revisión de la histología se realizan niveles histológicos para tinción con los marcadores: TTF1 y\nNAPSINA\nDESCRIPCIÓN MICROSCÓPICA\n Las células tumorales tienen marcación fuerte y positiva para CA19-9, CK 19, CK 7, positivo focal para\nCK 20 y CD X2 para Napsina y TTF 1\nDIAGNÓSTICO\nPulmón derecho. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:\nADENOCARCINOMA MUCINOSO \nCOMENTARIOS\nEl adenocarcinoma mucinoso de pancreas y pulmón tiene igual perfil de inmunohistoquimica, por lo\ncual se sugiere ampliar estudios de extensión para descartar posible origen pancreato biliar y si esto es\nnegativo se puede considerar como sitio primario el pulmón.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---\nIHQ250046\nCopia Pag. 2 de 2\nNombre : LUIS HERNANDO YAQUENO GUEVARA N. peticion : IHQ250046\nN.Identificación : CC. 12992070\nGenero : MASCULINO\nEdad : 58 años 7 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CAMILO GALINDEZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 15/01/2025\nFecha Informe : 25/01/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CA19-9, CK7, NAPSIN, TTF1",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500103” correspondiente a \" biopsia de pulmón derecho\": con diagnóstico de “ADENOCARCINOMA” Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: TTF1 y NAPSINA",
+      "Descripcion microscopica": "Las células tumorales tienen marcación fuerte y positiva para CA19-9, CK 19, CK 7, positivo focal para CK 20 y CD X2 para Napsina y TTF 1",
+      "Descripcion Diagnostico": "Pulmón derecho. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: ADENOCARCINOMA MUCINOSO",
+      "IHQ_ORGANO": "PULMÓN DERECHO",
+      "Organo": "BX PULMON DERECHO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA",
+      "Diagnostico Principal": "ADENOCARCINOMA MUCINOSO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CA19_9": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_NAPSIN": "POSITIVO",
+      "IHQ_TTF1": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 117,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 25.48
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 117,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón derecho. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:\nADENOCARCINOMA MUCINOSO",
+      "valor_corregido": "Pulmón derecho. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: ADENOCARCINOMA MUCINOSO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250046",
+      "timestamp": "2025-12-13T11:26:54.896964"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500103” correspondiente a \" biopsia de pulmón derecho\": con diagnóstico de “ADENOCARCINOMA”\nPrevia revisión de la histología se realizan niveles histológicos para tinción con los marcadores: TTF1 y\nNAPSINA",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500103” correspondiente a \" biopsia de pulmón derecho\": con diagnóstico de “ADENOCARCINOMA” Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: TTF1 y NAPSINA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250046",
+      "timestamp": "2025-12-13T11:26:54.896970"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Las células tumorales tienen marcación fuerte y positiva para CA19-9, CK 19, CK 7, positivo focal para\nCK 20 y CD X2 para Napsina y TTF 1",
+      "valor_corregido": "Las células tumorales tienen marcación fuerte y positiva para CA19-9, CK 19, CK7, positivo focal para CK20 y CD X2 para Napsina y TTF1",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250046",
+      "timestamp": "2025-12-13T11:26:54.896972"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El adenocarcinoma mucinoso de pancreas y pulmón tiene igual perfil de inmunohistoquimica, por lo\ncual se sugiere ampliar estudios de extensión para descartar posible origen pancreato biliar y si esto es\nnegativo se puede considerar como sitio primario el pulmón.",
+      "valor_corregido": "El adenocarcinoma mucinoso de pancreas y pulmón tiene igual perfil de inmunohistoquimica, por lo cual se sugiere ampliar estudios de extensión para descartar posible origen pancreato biliar y si esto es negativo se puede considerar como sitio primario el pulmón.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250046",
+      "timestamp": "2025-12-13T11:26:54.896973"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 52
+  }
+}

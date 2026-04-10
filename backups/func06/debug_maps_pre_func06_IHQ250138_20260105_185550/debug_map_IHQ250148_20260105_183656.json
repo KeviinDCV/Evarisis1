@@ -1,0 +1,137 @@
+{
+  "session_id": "IHQ250148_20260105_183656",
+  "numero_peticion": "IHQ250148",
+  "timestamp": "2026-01-05T18:36:56.896819",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250148\nCopia Pag. 1 de 2\nNombre : REINALDO GARZON LOSADA\nN. peticion : IHQ250148\nN.Identificación : CC. 12139169\nGenero : MASCULINO\nEdad : 55 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ANGELA GERALDINE MORENO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/02/2025\nFecha Informe : 14/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PROSTATA DERECHA E\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe caso para revisión y realización de estudios de inmunohistoquímica proveniente de “SYNLAB”,\nque consta de 6 bloques de parafina y 6 láminas histológicas de hematoxilina eosina, rotuladas como\n“2024-SO17972”, correspondientes a “A. Próstata lado derecho y B. Próstata lado izquierdo” y con\ndiagnóstico de “cambios de hiperplasia glanduloestromal, inflamación crónica con áreas de atrofia\nglandular y focos microacinares atípicos”.\nPrevia revisión de la histología se realiza inmunomarcación con p63, CK34BetaE12 y racemesa en los\nbloques A1, A2 y B5.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®:\nA1, A2 Y B5. En los cortes histológicos se observa parénquima prostático con epitelio glandular que\nexpresan células basales (p63+ y CK34BetaE12+) y son negativas para racemasa. \nDIAGNÓSTICO\nA. Prostáta, lado derecho. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nB. Prostáta, lado izquierdo. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 70 ---\nIHQ250148\nCopia Pag. 2 de 2\nNombre : REINALDO GARZON LOSADA\nN. peticion : IHQ250148\nN.Identificación : CC. 12139169\nGenero : MASCULINO\nEdad : 55 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ANGELA GERALDINE MORENO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/02/2025\nFecha Informe : 14/02/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3410,
+      "reduccion_porcentaje": 98.04
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250148",
+      "caso_num": 38,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_RACEMASA": "NEGATIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK34BE12": "POSITIVO",
+      "nombre_completo": "REINALDO GARZON LOSADA",
+      "numero_peticion": "IHQ250148",
+      "identificacion": "12139169",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "55",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "ANGELA GERALDINE MORENO",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "07/02/2025",
+      "fecha_informe": "14/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250148",
+      "N. de identificación": "12139169",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "ANGELA GERALDINE MORENO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/02/2025",
+      "Fecha Informe": "14/02/2025",
+      "nombres": "REINALDO",
+      "Primer nombre": "REINALDO",
+      "Segundo nombre": "",
+      "apellidos": "GARZON LOSADA",
+      "Primer apellido": "GARZON",
+      "Segundo apellido": "LOSADA",
+      "nombre_formal": "GARZON LOSADA, REINALDO",
+      "diagnostico": "A. Prostáta, lado derecho. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA. B. Prostáta, lado izquierdo. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®: A1, A2 Y B5. En los cortes histológicos se observa parénquima prostático con epitelio glandular que expresan células basales (p63+ y CK34BetaE12+) y son negativas para racemasa.",
+      "descripcion_macroscopica": "Se recibe caso para revisión y realización de estudios de inmunohistoquímica proveniente de “SYNLAB”, que consta de 6 bloques de parafina y 6 láminas histológicas de hematoxilina eosina, rotuladas como “2024-SO17972”, correspondientes a “A. Próstata lado derecho y B. Próstata lado izquierdo” y con diagnóstico de “cambios de hiperplasia glanduloestromal, inflamación crónica con áreas de atrofia glandular y focos microacinares atípicos”. Previa revisión de la histología se realiza inmunomarcación con p63, CK34BetaE12 y racemesa en los bloques A1, A2 y B5.",
+      "ihq_organo": "PROSTÁTA, LADO DERECHO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PROSTÁTA, LADO DERECHO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-01-05T18:36:57.319762",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250148\nCopia Pag. 1 de 2\nNombre : REINALDO GARZON LOSADA\nN. peticion : IHQ250148\nN.Identificación : CC. 12139169\nGenero : MASCULINO\nEdad : 55 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ANGELA GERALDINE MORENO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/02/2025\nFecha Informe : 14/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PROSTATA DERECHA E\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe caso para revisión y realización de estudios de inmunohistoquímica proveniente de “SYNLAB”,\nque consta de 6 bloques de parafina y 6 láminas histológicas de hematoxilina eosina, rotuladas como\n“2024-SO17972”, correspondientes a “A. Próstata lado derecho y B. Próstata lado izquierdo” y con\ndiagnóstico de “cambios de hiperplasia glanduloestromal, inflamación crónica con áreas de atrofia\nglandular y focos microacinares atípicos”.\nPrevia revisión de la histología se realiza inmunomarcación con p63, CK34BetaE12 y racemesa en los\nbloques A1, A2 y B5.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®:\nA1, A2 Y B5. En los cortes histológicos se observa parénquima prostático con epitelio glandular que\nexpresan células basales (p63+ y CK34BetaE12+) y son negativas para racemasa. \nDIAGNÓSTICO\nA. Prostáta, lado derecho. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nB. Prostáta, lado izquierdo. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 70 ---\nIHQ250148\nCopia Pag. 2 de 2\nNombre : REINALDO GARZON LOSADA\nN. peticion : IHQ250148\nN.Identificación : CC. 12139169\nGenero : MASCULINO\nEdad : 55 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ANGELA GERALDINE MORENO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/02/2025\nFecha Informe : 14/02/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK34BE12, P63, RACEMASA",
+      "Descripcion macroscopica": "Se recibe caso para revisión y realización de estudios de inmunohistoquímica proveniente de “SYNLAB”, que consta de 6 bloques de parafina y 6 láminas histológicas de hematoxilina eosina, rotuladas como “2024-SO17972”, correspondientes a “A. Próstata lado derecho y B. Próstata lado izquierdo” y con diagnóstico de “cambios de hiperplasia glanduloestromal, inflamación crónica con áreas de atrofia glandular y focos microacinares atípicos”. Previa revisión de la histología se realiza inmunomarcación con p63, CK34BetaE12 y racemesa en los bloques A1, A2 y B5.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®: A1, A2 Y B5. En los cortes histológicos se observa parénquima prostático con epitelio glandular que expresan células basales (p63+ y CK34BetaE12+) y son negativas para racemasa.",
+      "Descripcion Diagnostico": "A. Prostáta, lado derecho. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA. B. Prostáta, lado izquierdo. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA.",
+      "IHQ_ORGANO": "PROSTÁTA, LADO DERECHO",
+      "Organo": "BX PROSTATA DERECHA E IZQUIERDA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "NEGATIVO PARA NEOPLASIA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK34BE12": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RACEMASA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 166,
+      "campos_vacios": 129,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 22.29
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Prostáta, lado derecho. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nB. Prostáta, lado izquierdo. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.",
+      "valor_corregido": "A. Prostáta, lado derecho. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA. B. Prostáta, lado izquierdo. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250148",
+      "timestamp": "2026-01-05T18:36:57.319437"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 48
+  }
+}

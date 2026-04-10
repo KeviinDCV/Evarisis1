@@ -1,0 +1,168 @@
+{
+  "session_id": "IHQ250175_20260108_113137",
+  "numero_peticion": "IHQ250175",
+  "timestamp": "2026-01-08T11:31:37.026630",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250175\nCopia Pag. 1 de 2\nNombre : JENNY LILIBETH PEREZ SALAS\nN. peticion : IHQ250175\nN.Identificación : PPT. 5893551\nGenero : FEMENINO\nEdad : 51 años 6 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CAMILO SALCEDO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 17/02/2025\nFecha Informe : 21/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION TUMORAL\nPARIETOTEMPORAL\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501592 con rótulo\ncorrespondiente a \"Lesión tumoral parietotemporal\" con diagnóstico de “GLIOMA DIFUSO DE\nALTO GRADO (WHO 4)\". Previa valoración de la coloración básica, se realizan cortes histológicos\nal bloque 3 para marcación con GFAP, p53, Ki 67, IDH. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales presentan una inmunorreactividad heterogénea para GFAP y tinción nuclear\nfuerte y difusa para p53 (mutado-sobre-expresado). EL índice de proliferación célular medido con\nKi 67 es del 95%. \nNo se identifica marcación para IDH (negativo tipo salvaje). \nDIAGNÓSTICO\nRegión parietotemporal derecha. Masa. Resección parcial. Estudio de\ninmunohistoquímica. \nGLIOBLASTOMA, IDH NO MUTADO (GRADO WHO 4). \nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Armando Cortes (patólogo). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250175\nCopia Pag. 2 de 2\nNombre : JENNY LILIBETH PEREZ SALAS\nN. peticion : IHQ250175\nN.Identificación : PPT. 5893551\nGenero : FEMENINO\nEdad : 51 años 6 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CAMILO SALCEDO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 17/02/2025\nFecha Informe : 21/02/2025\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3327,
+      "reduccion_porcentaje": 97.99
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250175",
+      "caso_num": 15,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_IDH1": "NEGATIVO",
+      "nombre_completo": "JENNY LILIBETH PEREZ SALAS",
+      "numero_peticion": "IHQ250175",
+      "identificacion": "5893551",
+      "tipo_documento": "PPT",
+      "Genero": "FEMENINO",
+      "Edad": "51",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JUAN CAMILO SALCEDO",
+      "servicio": "NEUROCIRUGIA",
+      "fecha_ingreso": "17/02/2025",
+      "fecha_informe": "21/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250175",
+      "N. de identificación": "5893551",
+      "Tipo de documento": "PPT",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "NEUROCIRUGIA",
+      "Médico tratante": "JUAN CAMILO SALCEDO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "17/02/2025",
+      "Fecha Informe": "21/02/2025",
+      "nombres": "JENNY LILIBETH",
+      "Primer nombre": "JENNY",
+      "Segundo nombre": "LILIBETH",
+      "apellidos": "PEREZ SALAS",
+      "Primer apellido": "PEREZ",
+      "Segundo apellido": "SALAS",
+      "nombre_formal": "PEREZ SALAS, JENNY LILIBETH",
+      "diagnostico": "Región parietotemporal derecha. Masa. Resección parcial. Estudio de inmunohistoquímica. GLIOBLASTOMA, IDH NO MUTADO (GRADO WHO 4).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan una inmunorreactividad heterogénea para GFAP y tinción nuclear fuerte y difusa para p53 (mutado-sobre-expresado). EL índice de proliferación célular medido con KI-67 es del 95%. No se identifica marcación para IDH (negativo tipo salvaje).",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501592 con rótulo correspondiente a \"Lesión tumoral parietotemporal\" con diagnóstico de \"GLIOMA DIFUSO DE ALTO GRADO (WHO 4)\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque 3 para marcación con GFAP, p53, KI-67, IDH.",
+      "ihq_organo": "REGIÓN PARIETOTEMPORAL DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "GFAP, P53, Ki-67, IDH",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Caso valorado en conjunto con el Dr. Armando Cortes (patólogo). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 28 --- IHQ250175 Copia Pag. 2 de 2 Nombre : JENNY LILIBETH PEREZ SALAS N. peticion : IHQ250175 N.Identificación : PPT. 5893551 Genero : FEMENINO Edad : 51 años 6 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : JUAN CAMILO SALCEDO Servicio : NEUROCIRUGIA Fecha Ingreso : 17/02/2025 Fecha Informe : 21/02/2025",
+      "IHQ_ORGANO": "REGIÓN PARIETOTEMPORAL DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "Ki-67: 95%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "GFAP, P53, Ki-67, IDH",
+      "IHQ_GFAP": "POSITIVO HETEROGÉNEO",
+      "IHQ_P53": "POSITIVO (MUTADO)",
+      "IHQ_KI-67": "95%",
+      "extraction_timestamp": "2026-01-08T11:31:37.445085",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250175\nCopia Pag. 1 de 2\nNombre : JENNY LILIBETH PEREZ SALAS\nN. peticion : IHQ250175\nN.Identificación : PPT. 5893551\nGenero : FEMENINO\nEdad : 51 años 6 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CAMILO SALCEDO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 17/02/2025\nFecha Informe : 21/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION TUMORAL\nPARIETOTEMPORAL\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501592 con rótulo\ncorrespondiente a \"Lesión tumoral parietotemporal\" con diagnóstico de “GLIOMA DIFUSO DE\nALTO GRADO (WHO 4)\". Previa valoración de la coloración básica, se realizan cortes histológicos\nal bloque 3 para marcación con GFAP, p53, Ki 67, IDH. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales presentan una inmunorreactividad heterogénea para GFAP y tinción nuclear\nfuerte y difusa para p53 (mutado-sobre-expresado). EL índice de proliferación célular medido con\nKi 67 es del 95%. \nNo se identifica marcación para IDH (negativo tipo salvaje). \nDIAGNÓSTICO\nRegión parietotemporal derecha. Masa. Resección parcial. Estudio de\ninmunohistoquímica. \nGLIOBLASTOMA, IDH NO MUTADO (GRADO WHO 4). \nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Armando Cortes (patólogo). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250175\nCopia Pag. 2 de 2\nNombre : JENNY LILIBETH PEREZ SALAS\nN. peticion : IHQ250175\nN.Identificación : PPT. 5893551\nGenero : FEMENINO\nEdad : 51 años 6 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CAMILO SALCEDO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 17/02/2025\nFecha Informe : 21/02/2025\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "GFAP, P53, Ki-67, IDH",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501592 con rótulo correspondiente a \"Lesión tumoral parietotemporal\" con diagnóstico de “GLIOMA DIFUSO DE ALTO GRADO (WHO 4)\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque 3 para marcación con GFAP, p53, Ki 67, IDH.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan una inmunorreactividad heterogénea para GFAP y tinción nuclear fuerte y difusa para p53 (mutado-sobre-expresado). EL índice de proliferación célular medido con Ki 67 es del 95%. No se identifica marcación para IDH (negativo tipo salvaje).",
+      "Descripcion Diagnostico": "Región parietotemporal derecha. Masa. Resección parcial. Estudio de inmunohistoquímica. GLIOBLASTOMA, IDH NO MUTADO (GRADO WHO 4).",
+      "IHQ_ORGANO": "REGIÓN PARIETOTEMPORAL DERECHA",
+      "Organo": "LESION TUMORAL PARIETOTEMPORAL DERECHA",
+      "Diagnostico Coloracion": "GLIOMA DIFUSO DE ALTO GRADO (WHO 4)",
+      "Diagnostico Principal": "GLIOBLASTOMA, IDH NO MUTADO (GRADO WHO 4)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 95%",
+      "IHQ_GFAP": "POSITIVO HETEROGÉNEO",
+      "IHQ_P53": "POSITIVO (MUTADO)",
+      "IHQ_KI-67": "95%",
+      "IHQ_IDH1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 169,
+      "campos_vacios": 130,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 130,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región parietotemporal derecha. Masa. Resección parcial. Estudio de\ninmunohistoquímica. \nGLIOBLASTOMA, IDH NO MUTADO (GRADO WHO 4).",
+      "valor_corregido": "Región parietotemporal derecha. Masa. Resección parcial. Estudio de inmunohistoquímica. GLIOBLASTOMA, IDH NO MUTADO (GRADO WHO 4).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250175",
+      "timestamp": "2026-01-08T11:31:37.444839"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501592 con rótulo correspondiente a \"Lesión tumoral parietotemporal\" con diagnóstico de “GLIOMA DIFUSO DE ALTO GRADO (WHO 4)\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque 3 para marcación con GFAP, p53, Ki 67, IDH.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501592 con rótulo correspondiente a \"Lesión tumoral parietotemporal\" con diagnóstico de \"GLIOMA DIFUSO DE ALTO GRADO (WHO 4)\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque 3 para marcación con GFAP, p53, KI-67, IDH.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250175",
+      "timestamp": "2026-01-08T11:31:37.444845"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan una inmunorreactividad heterogénea para GFAP y tinción nuclear fuerte y difusa para p53 (mutado-sobre-expresado). EL índice de proliferación célular medido con Ki 67 es del 95%. No se identifica marcación para IDH (negativo tipo salvaje).",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan una inmunorreactividad heterogénea para GFAP y tinción nuclear fuerte y difusa para p53 (mutado-sobre-expresado). EL índice de proliferación célular medido con KI-67 es del 95%. No se identifica marcación para IDH (negativo tipo salvaje).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250175",
+      "timestamp": "2026-01-08T11:31:37.444847"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Caso valorado en conjunto con el Dr. Armando Cortes (patólogo). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250175\nCopia Pag. 2 de 2\nNombre : JENNY LILIBETH PEREZ SALAS\nN. peticion : IHQ250175\nN.Identificación : PPT. 5893551\nGenero : FEMENINO\nEdad : 51 años 6 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CAMILO SALCEDO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 17/02/2025\nFecha Informe : 21/02/2025",
+      "valor_corregido": "Caso valorado en conjunto con el Dr. Armando Cortes (patólogo). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 28 --- IHQ250175 Copia Pag. 2 de 2 Nombre : JENNY LILIBETH PEREZ SALAS N. peticion : IHQ250175 N.Identificación : PPT. 5893551 Genero : FEMENINO Edad : 51 años 6 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : JUAN CAMILO SALCEDO Servicio : NEUROCIRUGIA Fecha Ingreso : 17/02/2025 Fecha Informe : 21/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250175",
+      "timestamp": "2026-01-08T11:31:37.444849"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 53
+  }
+}

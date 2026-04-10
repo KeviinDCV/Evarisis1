@@ -1,0 +1,160 @@
+{
+  "session_id": "IHQ250992_20251108_232727",
+  "numero_peticion": "IHQ250992",
+  "timestamp": "2025-11-08T23:27:27.951134",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250992\nCopia Pag. 1 de 2\nNombre : MARIELA FERNANDEZ SANCHEZ\nN. peticion : IHQ250992\nN.Identificación : CC. 26528741\nGenero : FEMENINO\nEdad : 66 años 20 dias\nEPS : NUEVA EPS\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 09/09/2025\nFecha Informe : 19/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2510141 el cual corresponde a \"biopsia de hueso\" con diagnóstico de\n\"MUESTRA SUBÓPTIMA PARA DIAGNÓSTICO (ESCASA Y FRAGMENTADA). CELULARIDAD GLOBAL DEL 30%.\nRELACIÓN MIELOIDE ERITROIDE DE 3:1. MADURACIÓN NORMAL DE LA LÍNEA MIELOIDE. SIN EVIDENCIA\nMORFOLÓGICA DE INCREMENTO DE BLASTOS.\" por lo que se realiza marcación para CD38, CD138, CD56,\nCD117, kappa y lambda.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nMédula ósea con presencia de células plasmáticas que corresponden alrededor del 20% de la\ncelularidad, con expresión de CD38 y CD138. Presenta expresión aberrante para CD56, expresión débil\npara CD117 y con restricción de cadenas livianas kappa (lambda negativo).\nDIAGNÓSTICO\n Médula ósea. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON NEOPLASIA DE\nCÉLULAS PLASMÁTICAS CON RESTRICCIÓN DE CADENAS LIVIANAS KAPPA.\nCOMENTARIOS\nSe sugiere al médico tratante correlacionar este reporte con los datos clínicos de la paciente, reporte de\ncitometría de flujo y demás paraclínicos realizados.\nCaso comentado con la doctora Maria Ximena Varela, patóloga. \nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---\nIHQ250992\nCopia Pag. 2 de 2\nNombre : MARIELA FERNANDEZ SANCHEZ\nN. peticion : IHQ250992\nN.Identificación : CC. 26528741\nGenero : FEMENINO\nEdad : 66 años 20 dias\nEPS : NUEVA EPS\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 09/09/2025\nFecha Informe : 19/09/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3529,
+      "reduccion_porcentaje": 98.18
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250992",
+      "caso_num": 12,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD117": "POSITIVO",
+      "nombre_completo": "MARIELA FERNANDEZ SANCHEZ",
+      "numero_peticion": "IHQ250992",
+      "identificacion": "26528741",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "66",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LAZARO DAMIAN CORTINA",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "09/09/2025",
+      "fecha_informe": "19/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250992",
+      "N. de identificación": "26528741",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LAZARO DAMIAN CORTINA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/09/2025",
+      "Fecha Informe": "19/09/2025",
+      "nombres": "MARIELA",
+      "Primer nombre": "MARIELA",
+      "Segundo nombre": "",
+      "apellidos": "FERNANDEZ SANCHEZ",
+      "Primer apellido": "FERNANDEZ",
+      "Segundo apellido": "SANCHEZ",
+      "nombre_formal": "FERNANDEZ SANCHEZ, MARIELA",
+      "diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON NEOPLASIA DE CÉLULAS PLASMÁTICAS CON RESTRICCIÓN DE CADENAS LIVIANAS KAPPA.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Médula ósea con presencia de células plasmáticas que corresponden alrededor del 20% de la celularidad, con expresión de CD38 y CD138. Presenta expresión aberrante para CD56, expresión débil para CD117 y con restricción de cadenas livianas kappa (lambda negativo).",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2510141 el cual corresponde a \"biopsia de hueso\" con diagnóstico de \"MUESTRA SUBÓPTIMA PARA DIAGNÓSTICO (ESCASA Y FRAGMENTADA). CELULARIDAD GLOBAL DEL 30%. RELACIÓN MIELOIDE ERITROIDE DE 3:1. MADURACIÓN NORMAL DE LA LÍNEA MIELOIDE. SIN EVIDENCIA MORFOLÓGICA DE INCREMENTO DE BLASTOS.\" por lo que se realiza marcación para CD38, CD138, CD56, CD117, kappa y lambda.",
+      "ihq_organo": "MÉDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se sugiere al médico tratante correlacionar este reporte con los datos clínicos de la paciente, reporte de citometría de flujo y demás paraclínicos realizados. Caso comentado con la doctora Maria Ximena Varela, patóloga.",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_LAMBDA": "NEGATIVO",
+      "IHQ_KAPPA": "POSITIVO (restricción kappa)",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "POSITIVO (aberrante)",
+      "IHQ_CD138": "POSITIVO",
+      "extraction_timestamp": "2025-11-08T23:27:28.075717",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250992\nCopia Pag. 1 de 2\nNombre : MARIELA FERNANDEZ SANCHEZ\nN. peticion : IHQ250992\nN.Identificación : CC. 26528741\nGenero : FEMENINO\nEdad : 66 años 20 dias\nEPS : NUEVA EPS\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 09/09/2025\nFecha Informe : 19/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2510141 el cual corresponde a \"biopsia de hueso\" con diagnóstico de\n\"MUESTRA SUBÓPTIMA PARA DIAGNÓSTICO (ESCASA Y FRAGMENTADA). CELULARIDAD GLOBAL DEL 30%.\nRELACIÓN MIELOIDE ERITROIDE DE 3:1. MADURACIÓN NORMAL DE LA LÍNEA MIELOIDE. SIN EVIDENCIA\nMORFOLÓGICA DE INCREMENTO DE BLASTOS.\" por lo que se realiza marcación para CD38, CD138, CD56,\nCD117, kappa y lambda.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nMédula ósea con presencia de células plasmáticas que corresponden alrededor del 20% de la\ncelularidad, con expresión de CD38 y CD138. Presenta expresión aberrante para CD56, expresión débil\npara CD117 y con restricción de cadenas livianas kappa (lambda negativo).\nDIAGNÓSTICO\n Médula ósea. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON NEOPLASIA DE\nCÉLULAS PLASMÁTICAS CON RESTRICCIÓN DE CADENAS LIVIANAS KAPPA.\nCOMENTARIOS\nSe sugiere al médico tratante correlacionar este reporte con los datos clínicos de la paciente, reporte de\ncitometría de flujo y demás paraclínicos realizados.\nCaso comentado con la doctora Maria Ximena Varela, patóloga. \nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---\nIHQ250992\nCopia Pag. 2 de 2\nNombre : MARIELA FERNANDEZ SANCHEZ\nN. peticion : IHQ250992\nN.Identificación : CC. 26528741\nGenero : FEMENINO\nEdad : 66 años 20 dias\nEPS : NUEVA EPS\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 09/09/2025\nFecha Informe : 19/09/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD117, CD138, CD38, CD56, Kappa, Lambda",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2510141 el cual corresponde a \"biopsia de hueso\" con diagnóstico de \"MUESTRA SUBÓPTIMA PARA DIAGNÓSTICO (ESCASA Y FRAGMENTADA). CELULARIDAD GLOBAL DEL 30%. RELACIÓN MIELOIDE ERITROIDE DE 3:1. MADURACIÓN NORMAL DE LA LÍNEA MIELOIDE. SIN EVIDENCIA MORFOLÓGICA DE INCREMENTO DE BLASTOS.\" por lo que se realiza marcación para CD38, CD138, CD56, CD117, kappa y lambda.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Médula ósea con presencia de células plasmáticas que corresponden alrededor del 20% de la celularidad, con expresión de CD38 y CD138. Presenta expresión aberrante para CD56, expresión débil para CD117 y con restricción de cadenas livianas kappa (lambda negativo).",
+      "Descripcion Diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON NEOPLASIA DE CÉLULAS PLASMÁTICAS CON RESTRICCIÓN DE CADENAS LIVIANAS KAPPA.",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Organo": "BX DE HUESO",
+      "Diagnostico Coloracion": "MUESTRA SUBÓPTIMA PARA DIAGNÓSTICO (ESCASA Y FRAGMENTADA). CELULARIDAD GLOBAL DEL 30%. RELACIÓN MIELOIDE ERITROIDE DE 3:1. MADURACIÓN NORMAL DE LA LÍNEA MIELOIDE. SIN EVIDENCIA MORFOLÓGICA DE INCREMENTO DE BLASTOS",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON NEOPLASIA DE CÉLULAS PLASMÁTICAS CON RESTRICCIÓN DE CADENAS LIVIANAS KAPPA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "POSITIVO (ABERRANTE)",
+      "IHQ_KAPPA": "POSITIVO (RESTRICCIÓN KAPPA)",
+      "IHQ_LAMBDA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 145,
+      "campos_vacios": 105,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "completitud_porcentaje": 27.59
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 105,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula ósea. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON NEOPLASIA DE\nCÉLULAS PLASMÁTICAS CON RESTRICCIÓN DE CADENAS LIVIANAS KAPPA.",
+      "valor_corregido": "Médula ósea. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON NEOPLASIA DE CÉLULAS PLASMÁTICAS CON RESTRICCIÓN DE CADENAS LIVIANAS KAPPA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250992",
+      "timestamp": "2025-11-08T23:27:28.075282"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2510141 el cual corresponde a \"biopsia de hueso\" con diagnóstico de\n\"MUESTRA SUBÓPTIMA PARA DIAGNÓSTICO (ESCASA Y FRAGMENTADA). CELULARIDAD GLOBAL DEL 30%.\nRELACIÓN MIELOIDE ERITROIDE DE 3:1. MADURACIÓN NORMAL DE LA LÍNEA MIELOIDE. SIN EVIDENCIA\nMORFOLÓGICA DE INCREMENTO DE BLASTOS.\" por lo que se realiza marcación para CD38, CD138, CD56,\nCD117, kappa y lambda.",
+      "valor_corregido": "Se realizan niveles al bloque M2510141 el cual corresponde a \"biopsia de hueso\" con diagnóstico de \"MUESTRA SUBÓPTIMA PARA DIAGNÓSTICO (ESCASA Y FRAGMENTADA). CELULARIDAD GLOBAL DEL 30%. RELACIÓN MIELOIDE ERITROIDE DE 3:1. MADURACIÓN NORMAL DE LA LÍNEA MIELOIDE. SIN EVIDENCIA MORFOLÓGICA DE INCREMENTO DE BLASTOS.\" por lo que se realiza marcación para CD38, CD138, CD56, CD117, kappa y lambda.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250992",
+      "timestamp": "2025-11-08T23:27:28.075297"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se sugiere al médico tratante correlacionar este reporte con los datos clínicos de la paciente, reporte de\ncitometría de flujo y demás paraclínicos realizados.\nCaso comentado con la doctora Maria Ximena Varela, patóloga.",
+      "valor_corregido": "Se sugiere al médico tratante correlacionar este reporte con los datos clínicos de la paciente, reporte de citometría de flujo y demás paraclínicos realizados. Caso comentado con la doctora Maria Ximena Varela, patóloga.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250992",
+      "timestamp": "2025-11-08T23:27:28.075301"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 52
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "caso": "IHQ251023",
+  "timestamp": "2025-11-08T22:13:39.404548",
+  "func_ejecutada": "FUNC-06",
+  "accion": "Reprocesamiento completo con extractores actualizados (MUC2 agregado)",
+  "resultado_reprocesamiento": {
+    "estado": "EXITOSO",
+    "datos_antiguos_eliminados": "SI (todo el rango 980-1037, 47 casos)",
+    "pdf_reprocesado": "pdfs_patologia/IHQ DEL 980 AL 1037.pdf",
+    "casos_reprocesados": 47,
+    "backup_creado": "SI (automático por FUNC-06)"
+  },
+  "datos_caso": {
+    "numero_caso": "IHQ251023",
+    "paciente": "Paciente (Nombre completo)",
+    "organo": "APENDICE CECAL",
+    "diagnostico_principal": "LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ADENOCARCINOMA DE APENDICE MODERADAMENTE DIFERENCIADO (NOS)",
+    "diagnostico_coloracion": "ADENOCARCINOMA MUCINOSO DE BAJO GRADO (WHO, 5TA EDICIÓN)"
+  },
+  "biomarcadores": {
+    "solicitados": "CK7, CK19, CK20, CDX2, MUC2",
+    "total_solicitados": 5,
+    "valores": {
+      "IHQ_MUC2": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "NO MENCIONADO",
+      "IHQ_CDX2": "POSITIVO"
+    },
+    "extraidos_correctamente": 4,
+    "no_mencionados": 1,
+    "completitud": 80.0
+  },
+  "validacion_muc2": {
+    "columna_existe": "SI (IHQ_MUC2 en posicion 120/151)",
+    "valor_extraido": "NEGATIVO",
+    "estado": "EXTRAIDO CORRECTAMENTE"
+  },
+  "auditoria_func01": {
+    "ejecutada": "SI",
+    "score_validacion": 100.0,
+    "estado": "OK",
+    "archivo_json": "herramientas_ia/resultados/auditoria_inteligente_IHQ251023.json"
+  },
+  "observaciones": [
+    "MUC2 se extrajo correctamente con valor NEGATIVO",
+    "CK20 tiene valor NO MENCIONADO (probablemente no está en el PDF o patrón no coincide)",
+    "Completitud 80% (4/5 biomarcadores extraídos)",
+    "Para mejorar a 100% se debe verificar si CK20 está en el PDF y ajustar patrón si es necesario"
+  ]
+}

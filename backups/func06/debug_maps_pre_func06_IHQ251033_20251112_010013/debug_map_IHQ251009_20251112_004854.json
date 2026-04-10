@@ -1,0 +1,178 @@
+{
+  "session_id": "IHQ251009_20251112_004854",
+  "numero_peticion": "IHQ251009",
+  "timestamp": "2025-11-12T00:48:54.896753",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251009\nCopia Pag. 1 de 2\nNombre : DANIELA TEUTA QUIÑONEZ\nN. peticion : IHQ251009\nN.Identificación : CC. 1109115808\nGenero : FEMENINO\nEdad : 20 años 1 mes 11 dias\nEPS : COMFENALCO VALLE\nMédico tratante : CARLOS EDUARDO GALLEGO\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 16/09/2025\nFecha Informe : 25/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO INGUINAL\nIZQUIERDO\nIHQ251009-B\nESTUDIO DE\nINMUNOHISTOQUIMICA\n898807 Estudio anatomopatologico de marcacion\ninmunohistoquimica basica (especifico)\nBloques y laminas\nGANGLIO INGUINAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2511064 que corresponde a “ganglio inguinal izquierdo” con diagnostico\nde \"NEOPLASIA MALIGNA DE POSIBLE ORIGEN HEMATOLINFOIDE DE ALTO GRADO A CLASIFICAR.\" para\nestudios de inmunohistoquímica por lo que se revisa marcación para CD3, CD5, CD10, CD15, CD20,\nCD23, CD30, CD38, CD138, PAX5, BCL2, BCL6, MUM1, CMYC y Ki67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los niveles realizados se observa celularidad de ganglio linfático con algunos folículos linfoides.\nPresentan linfocitos positivos para CD20 y PAX5 ubicados de manera predominante en los centros\ngerminales, los cuales presentan positividad fuerte para CD23, débil para CD10 y BCL6. Linfocitos T\nacompañantes CD3, CD5 ubicados en la zona marginal con marcación BCL2 positivos. Estroma con\npresencia de células plasmáticas positivas para CD38. Marcación difusa para MUM1. Marcación debil y\nesporadica de predominio en la periferia para CD138 y CD15. Sin marcación para CD30, CICLINA, CMYC.\nKi67 con marcación difusa, el 90% en los centros germinales y del 10% en la zona marginal.\nDIAGNÓSTICO\n Ganglio linfático inguinal izquierdo. Adenopatias. Resección. Estudio de inmunohistoquímica.\nLOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN HIPERPLASIA FOLICULAR DE\nASPECTO REACTIVO\nCOMENTARIOS\nCorrelacionar con citometria de flujo .Caso comentado con la Dra. Maria Ximena Varela (Patologa).\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ251009\nCopia Pag. 2 de 2\nNombre : DANIELA TEUTA QUIÑONEZ\nN. peticion : IHQ251009\nN.Identificación : CC. 1109115808\nGenero : FEMENINO\nEdad : 20 años 1 mes 11 dias\nEPS : COMFENALCO VALLE\nMédico tratante : CARLOS EDUARDO GALLEGO\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 16/09/2025\nFecha Informe : 25/09/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3966,
+      "reduccion_porcentaje": 97.95
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251009",
+      "caso_num": 29,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "nombre_completo": "DANIELA TEUTA QUIÑONEZ",
+      "numero_peticion": "IHQ251009",
+      "identificacion": "1109115808",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "20",
+      "eps": "COMFENALCO VALLE",
+      "medico_tratante": "CARLOS EDUARDO GALLEGO",
+      "servicio": "TRAUMA Y REANIMACION",
+      "fecha_ingreso": "16/09/2025",
+      "fecha_informe": "25/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251009",
+      "N. de identificación": "1109115808",
+      "Tipo de documento": "CC",
+      "EPS": "COMFENALCO VALLE",
+      "Servicio": "TRAUMA Y REANIMACION",
+      "Médico tratante": "CARLOS EDUARDO GALLEGO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "16/09/2025",
+      "Fecha Informe": "25/09/2025",
+      "nombres": "DANIELA TEUTA",
+      "Primer nombre": "DANIELA",
+      "Segundo nombre": "TEUTA",
+      "apellidos": "QUIÑONEZ",
+      "Primer apellido": "QUIÑONEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "QUIÑONEZ, DANIELA TEUTA",
+      "diagnostico": "Ganglio linfático inguinal izquierdo. Adenopatias. Resección. Estudio de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN HIPERPLASIA FOLICULAR DE ASPECTO REACTIVO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los niveles realizados se observa celularidad de ganglio linfático con algunos folículos linfoides. Presentan linfocitos positivos para CD20 y PAX5 ubicados de manera predominante en los centros germinales, los cuales presentan positividad fuerte para CD23, débil para CD10 y BCL6. Linfocitos T acompañantes CD3, CD5 ubicados en la zona marginal con marcación BCL2 positivos. Estroma con presencia de células plasmáticas positivas para CD38. Marcación difusa para MUM1. Marcación debil y esporadica de predominio en la periferia para CD138 y CD15. Sin marcación para CD30, CICLINA, CMYC. KI-67 con marcación difusa, el 90% en los centros germinales y del 10% en la zona marginal.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2511064 que corresponde a “ganglio inguinal izquierdo” con diagnostico de \"NEOPLASIA MALIGNA DE POSIBLE ORIGEN HEMATOLINFOIDE DE ALTO GRADO A CLASIFICAR.\" para estudios de inmunohistoquímica por lo que se revisa marcación para CD3, CD5, CD10, CD15, CD20, CD23, CD30, CD38, CD138, PAX5, BCL2, BCL6, MUM1, CMYC y KI-67.",
+      "ihq_organo": "GANGLIO LINFÁTICO INGUINAL IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD5, CD10, CD15, CD20, CD23, CD30, CD38, CD138, PAX5, BCL2, BCL6, MUM1, CMYC, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Correlacionar con citometria de flujo .Caso comentado con la Dra. Maria Ximena Varela (Patologa).",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO INGUINAL IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_KI-67": "90%",
+      "extraction_timestamp": "2025-11-12T00:48:55.049296",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251009\nCopia Pag. 1 de 2\nNombre : DANIELA TEUTA QUIÑONEZ\nN. peticion : IHQ251009\nN.Identificación : CC. 1109115808\nGenero : FEMENINO\nEdad : 20 años 1 mes 11 dias\nEPS : COMFENALCO VALLE\nMédico tratante : CARLOS EDUARDO GALLEGO\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 16/09/2025\nFecha Informe : 25/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO INGUINAL\nIZQUIERDO\nIHQ251009-B\nESTUDIO DE\nINMUNOHISTOQUIMICA\n898807 Estudio anatomopatologico de marcacion\ninmunohistoquimica basica (especifico)\nBloques y laminas\nGANGLIO INGUINAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2511064 que corresponde a “ganglio inguinal izquierdo” con diagnostico\nde \"NEOPLASIA MALIGNA DE POSIBLE ORIGEN HEMATOLINFOIDE DE ALTO GRADO A CLASIFICAR.\" para\nestudios de inmunohistoquímica por lo que se revisa marcación para CD3, CD5, CD10, CD15, CD20,\nCD23, CD30, CD38, CD138, PAX5, BCL2, BCL6, MUM1, CMYC y Ki67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los niveles realizados se observa celularidad de ganglio linfático con algunos folículos linfoides.\nPresentan linfocitos positivos para CD20 y PAX5 ubicados de manera predominante en los centros\ngerminales, los cuales presentan positividad fuerte para CD23, débil para CD10 y BCL6. Linfocitos T\nacompañantes CD3, CD5 ubicados en la zona marginal con marcación BCL2 positivos. Estroma con\npresencia de células plasmáticas positivas para CD38. Marcación difusa para MUM1. Marcación debil y\nesporadica de predominio en la periferia para CD138 y CD15. Sin marcación para CD30, CICLINA, CMYC.\nKi67 con marcación difusa, el 90% en los centros germinales y del 10% en la zona marginal.\nDIAGNÓSTICO\n Ganglio linfático inguinal izquierdo. Adenopatias. Resección. Estudio de inmunohistoquímica.\nLOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN HIPERPLASIA FOLICULAR DE\nASPECTO REACTIVO\nCOMENTARIOS\nCorrelacionar con citometria de flujo .Caso comentado con la Dra. Maria Ximena Varela (Patologa).\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ251009\nCopia Pag. 2 de 2\nNombre : DANIELA TEUTA QUIÑONEZ\nN. peticion : IHQ251009\nN.Identificación : CC. 1109115808\nGenero : FEMENINO\nEdad : 20 años 1 mes 11 dias\nEPS : COMFENALCO VALLE\nMédico tratante : CARLOS EDUARDO GALLEGO\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 16/09/2025\nFecha Informe : 25/09/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD5, CD10, CD15, CD20, CD23, CD30, CD38, CD138, PAX5, BCL2, BCL6, MUM1, CMYC, Ki-67",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2511064 que corresponde a “ganglio inguinal izquierdo” con diagnostico de \"NEOPLASIA MALIGNA DE POSIBLE ORIGEN HEMATOLINFOIDE DE ALTO GRADO A CLASIFICAR.\" para estudios de inmunohistoquímica por lo que se revisa marcación para CD3, CD5, CD10, CD15, CD20, CD23, CD30, CD38, CD138, PAX5, BCL2, BCL6, MUM1, CMYC y Ki67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los niveles realizados se observa celularidad de ganglio linfático con algunos folículos linfoides. Presentan linfocitos positivos para CD20 y PAX5 ubicados de manera predominante en los centros germinales, los cuales presentan positividad fuerte para CD23, débil para CD10 y BCL6. Linfocitos T acompañantes CD3, CD5 ubicados en la zona marginal con marcación BCL2 positivos. Estroma con presencia de células plasmáticas positivas para CD38. Marcación difusa para MUM1. Marcación debil y esporadica de predominio en la periferia para CD138 y CD15. Sin marcación para CD30, CICLINA, CMYC. Ki67 con marcación difusa, el 90% en los centros germinales y del 10% en la zona marginal.",
+      "Descripcion Diagnostico": "Ganglio linfático inguinal izquierdo. Adenopatias. Resección. Estudio de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN HIPERPLASIA FOLICULAR DE ASPECTO REACTIVO",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO INGUINAL IZQUIERDO",
+      "Organo": "GANGLIO INGUINAL IZQUIERDO",
+      "Diagnostico Coloracion": "NEOPLASIA MALIGNA DE POSIBLE ORIGEN HEMATOLINFOIDE DE ALTO GRADO A CLASIFICAR",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN HIPERPLASIA FOLICULAR DE ASPECTO REACTIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_KI-67": "90%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 99,
+      "campos_completos": 49,
+      "biomarcadores_encontrados": 15,
+      "completitud_porcentaje": 33.11
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 99,
+      "total_campos_completos": 49
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático inguinal izquierdo. Adenopatias. Resección. Estudio de inmunohistoquímica.\nLOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN HIPERPLASIA FOLICULAR DE\nASPECTO REACTIVO",
+      "valor_corregido": "Ganglio linfático inguinal izquierdo. Adenopatias. Resección. Estudio de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN HIPERPLASIA FOLICULAR DE ASPECTO REACTIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251009",
+      "timestamp": "2025-11-12T00:48:55.048872"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2511064 que corresponde a “ganglio inguinal izquierdo” con diagnostico\nde \"NEOPLASIA MALIGNA DE POSIBLE ORIGEN HEMATOLINFOIDE DE ALTO GRADO A CLASIFICAR.\" para\nestudios de inmunohistoquímica por lo que se revisa marcación para CD3, CD5, CD10, CD15, CD20,\nCD23, CD30, CD38, CD138, PAX5, BCL2, BCL6, MUM1, CMYC y Ki67.",
+      "valor_corregido": "Se realizan niveles al bloque M2511064 que corresponde a “ganglio inguinal izquierdo” con diagnostico de \"NEOPLASIA MALIGNA DE POSIBLE ORIGEN HEMATOLINFOIDE DE ALTO GRADO A CLASIFICAR.\" para estudios de inmunohistoquímica por lo que se revisa marcación para CD3, CD5, CD10, CD15, CD20, CD23, CD30, CD38, CD138, PAX5, BCL2, BCL6, MUM1, CMYC y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251009",
+      "timestamp": "2025-11-12T00:48:55.048878"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los niveles realizados se observa celularidad de ganglio linfático con algunos folículos linfoides.\nPresentan linfocitos positivos para CD20 y PAX5 ubicados de manera predominante en los centros\ngerminales, los cuales presentan positividad fuerte para CD23, débil para CD10 y BCL6. Linfocitos T\nacompañantes CD3, CD5 ubicados en la zona marginal con marcación BCL2 positivos. Estroma con\npresencia de células plasmáticas positivas para CD38. Marcación difusa para MUM1. Marcación debil y\nesporadica de predominio en la periferia para CD138 y CD15. Sin marcación para CD30, CICLINA, CMYC.\nKi67 con marcación difusa, el 90% en los centros germinales y del 10% en la zona marginal.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los niveles realizados se observa celularidad de ganglio linfático con algunos folículos linfoides. Presentan linfocitos positivos para CD20 y PAX5 ubicados de manera predominante en los centros germinales, los cuales presentan positividad fuerte para CD23, débil para CD10 y BCL6. Linfocitos T acompañantes CD3, CD5 ubicados en la zona marginal con marcación BCL2 positivos. Estroma con presencia de células plasmáticas positivas para CD38. Marcación difusa para MUM1. Marcación debil y esporadica de predominio en la periferia para CD138 y CD15. Sin marcación para CD30, CICLINA, CMYC. KI-67 con marcación difusa, el 90% en los centros germinales y del 10% en la zona marginal.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251009",
+      "timestamp": "2025-11-12T00:48:55.048880"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 62
+  }
+}

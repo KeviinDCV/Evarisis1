@@ -1,0 +1,137 @@
+{
+  "session_id": "IHQ250289_20260203_032847",
+  "numero_peticion": "IHQ250289",
+  "timestamp": "2026-02-03T03:28:47.335592",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250289\nCopia Pag. 1 de 1\nNombre : LIGIA HENAO ACOSTA\nN. peticion : IHQ250289\nN.Identificación : CC. 28738665\nGenero : FEMENINO\nEdad : 80 años 4 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : MILAGRO DE JESUS PABON\nServicio : MEDICA MUJERES\nFecha Ingreso : 19/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2503027-1 que corresponden a \"biopsia de pulmón derecho\" con\ndiagnóstico de \"CARCINOMA EPIDERMOIDE A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\"\npara estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: TTF1 Y p40.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe observa marcación positiva fuerte para p40 en los nidos de células tumorales, con marcación de TTF1\nen alveólos.\nDIAGNÓSTICO\n Pulmón derecho. Tumor. Biopsia percutánea. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA\nESCAMOCELULAR MODERADAMENTE DIFERENCIADO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 2416,
+      "reduccion_porcentaje": 98.62
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250289",
+      "caso_num": 25,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P40_ESTADO": "POSITIVO (fuerte)",
+      "nombre_completo": "LIGIA HENAO ACOSTA",
+      "numero_peticion": "IHQ250289",
+      "identificacion": "28738665",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "80",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "MILAGRO DE JESUS PABON",
+      "servicio": "MEDICA MUJERES",
+      "fecha_ingreso": "19/03/2025",
+      "fecha_informe": "28/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250289",
+      "N. de identificación": "28738665",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "MEDICA MUJERES",
+      "Médico tratante": "MILAGRO DE JESUS PABON",
+      "Fecha de ingreso (2. Fecha de la muestra)": "19/03/2025",
+      "Fecha Informe": "28/03/2025",
+      "nombres": "LIGIA",
+      "Primer nombre": "LIGIA",
+      "Segundo nombre": "",
+      "apellidos": "HENAO ACOSTA",
+      "Primer apellido": "HENAO",
+      "Segundo apellido": "ACOSTA",
+      "nombre_formal": "HENAO ACOSTA, LIGIA",
+      "diagnostico": "Pulmón derecho. Tumor. Biopsia percutánea. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa marcación positiva fuerte para p40 en los nidos de células tumorales, con marcación de TTF1 en alveólos.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2503027-1 que corresponden a \"biopsia de pulmón derecho\" con diagnóstico de \"CARCINOMA EPIDERMOIDE A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\" para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: TTF1 Y p40.",
+      "ihq_organo": "PULMÓN DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "TTF-1, P40",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PULMÓN DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, P40",
+      "p40": "POSITIVO (fuerte)",
+      "extraction_timestamp": "2026-02-03T03:28:47.628628",
+      "extractor_version": "6.5.89_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250289\nCopia Pag. 1 de 1\nNombre : LIGIA HENAO ACOSTA\nN. peticion : IHQ250289\nN.Identificación : CC. 28738665\nGenero : FEMENINO\nEdad : 80 años 4 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : MILAGRO DE JESUS PABON\nServicio : MEDICA MUJERES\nFecha Ingreso : 19/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2503027-1 que corresponden a \"biopsia de pulmón derecho\" con\ndiagnóstico de \"CARCINOMA EPIDERMOIDE A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\"\npara estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: TTF1 Y p40.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe observa marcación positiva fuerte para p40 en los nidos de células tumorales, con marcación de TTF1\nen alveólos.\nDIAGNÓSTICO\n Pulmón derecho. Tumor. Biopsia percutánea. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA\nESCAMOCELULAR MODERADAMENTE DIFERENCIADO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, P40",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2503027-1 que corresponden a \"biopsia de pulmón derecho\" con diagnóstico de \"CARCINOMA EPIDERMOIDE A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\" para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: TTF1 Y p40.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa marcación positiva fuerte para p40 en los nidos de células tumorales, con marcación de TTF1 en alveólos.",
+      "Descripcion Diagnostico": "Pulmón derecho. Tumor. Biopsia percutánea. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO.",
+      "IHQ_ORGANO": "PULMÓN DERECHO",
+      "Organo": "BX PULMON DERECHO",
+      "Diagnostico Coloracion": "CARCINOMA EPIDERMOIDE A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_TTF1": "NO MENCIONADO",
+      "IHQ_P40_ESTADO": "POSITIVO (fuerte)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 140,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón derecho. Tumor. Biopsia percutánea. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA\nESCAMOCELULAR MODERADAMENTE DIFERENCIADO.",
+      "valor_corregido": "Pulmón derecho. Tumor. Biopsia percutánea. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250289",
+      "timestamp": "2026-02-03T03:28:47.628333"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 49
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ250225_20260128_065723",
+  "numero_peticion": "IHQ250225",
+  "timestamp": "2026-01-28T06:57:23.524383",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250225\nCopia Pag. 1 de 2\nNombre : VICTORIA CORTAZAR DONNEYS\nN. peticion : IHQ250225\nN.Identificación : CC. 1109662107\nGenero : FEMENINO\nEdad : 21 años 2 meses 15 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : CLAUDIA JULIANA DIAZ\nServicio : DERMATOLOGIA\nFecha Ingreso : 03/03/2025\nFecha Informe : 14/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPIEL DE PLANTA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2410370 que corresponde a biopsia de lesión en piel de planta izquierda,\ncon diagnóstico de \"HALLAZGOS COMPATIBLES CON NEVUS MELANOCITICO ACRAL COMPUESTO CON\nMODERADA ATIPIA ARQUITECTURAL\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nPiel con proliferación melanocítica dérmica con disminución de HMB45 desde la superficie hacia la base,\nsiendo positivas para SOX-10, Melan-A y S100.\nEl Ki-67 se expresa solo en la base del epitelio escamoso, sin positividad en los melanocitos dérmicos.\nDIAGNÓSTICO\nPiel de planta izquierda. Lesión. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON NEVUS MELANOCITICO ACRAL COMPUESTO CON DISPLASIA MODERADA\nATIPIA Y ARQUITECTURAL.\nCOMENTARIOS\nSi bien la morfología favorecía un comportamiento benigno, llama la atención la fuerte positividad para\nSOX-10, lo que favorece un fenómeno de progresión displásico de la lesión por lo que es prudente tratar\ncomo melanoma acral.\nCaso valorado en conjunto con el Dr. Ricardo Rueda (Dermatopatologo).\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250225\nCopia Pag. 2 de 2\nNombre : VICTORIA CORTAZAR DONNEYS\nN. peticion : IHQ250225\nN.Identificación : CC. 1109662107\nGenero : FEMENINO\nEdad : 21 años 2 meses 15 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : CLAUDIA JULIANA DIAZ\nServicio : DERMATOLOGIA\nFecha Ingreso : 03/03/2025\nFecha Informe : 14/03/2025\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3545,
+      "reduccion_porcentaje": 98.03
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250225",
+      "caso_num": 14,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_SOX10": "POSITIVO",
+      "IHQ_MELAN_A": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "nombre_completo": "VICTORIA CORTAZAR DONNEYS",
+      "numero_peticion": "IHQ250225",
+      "identificacion": "1109662107",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "21",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "CLAUDIA JULIANA DIAZ",
+      "servicio": "DERMATOLOGIA",
+      "fecha_ingreso": "03/03/2025",
+      "fecha_informe": "14/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250225",
+      "N. de identificación": "1109662107",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "DERMATOLOGIA",
+      "Médico tratante": "CLAUDIA JULIANA DIAZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/03/2025",
+      "Fecha Informe": "14/03/2025",
+      "nombres": "VICTORIA",
+      "Primer nombre": "VICTORIA",
+      "Segundo nombre": "",
+      "apellidos": "CORTAZAR DONNEYS",
+      "Primer apellido": "CORTAZAR",
+      "Segundo apellido": "DONNEYS",
+      "nombre_formal": "CORTAZAR DONNEYS, VICTORIA",
+      "diagnostico": "Piel de planta izquierda. Lesión. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON NEVUS MELANOCITICO ACRAL COMPUESTO CON DISPLASIA MODERADA ATIPIA Y ARQUITECTURAL.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Piel con proliferación melanocítica dérmica con disminución de HMB45 desde la superficie hacia la base, siendo positivas para SOX-10, Melan-A y S100. El KI-67 se expresa solo en la base del epitelio escamoso, sin positividad en los melanocitos dérmicos.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2410370 que corresponde a biopsia de lesión en piel de planta izquierda, con diagnóstico de \"HALLAZGOS COMPATIBLES CON NEVUS MELANOCITICO ACRAL COMPUESTO CON MODERADA ATIPIA ARQUITECTURAL\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "PIEL DE PLANTA IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "DERMATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Si bien la morfología favorecía un comportamiento benigno, llama la atención la fuerte positividad para SOX-10, lo que favorece un fenómeno de progresión displásico de la lesión por lo que es prudente tratar como melanoma acral. Caso valorado en conjunto con el Dr. Ricardo Rueda (Dermatopatologo).",
+      "IHQ_ORGANO": "PIEL DE PLANTA IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "Ki-67: NEGATIVO (sin positividad en los melanocitos dérmicos)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_HMB45": "POSITIVO (desde la superficie hacia la base)",
+      "IHQ_KI-67": "NEGATIVO (sin positividad en los melanocitos dérmicos)",
+      "extraction_timestamp": "2026-01-28T06:57:24.037349",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250225\nCopia Pag. 1 de 2\nNombre : VICTORIA CORTAZAR DONNEYS\nN. peticion : IHQ250225\nN.Identificación : CC. 1109662107\nGenero : FEMENINO\nEdad : 21 años 2 meses 15 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : CLAUDIA JULIANA DIAZ\nServicio : DERMATOLOGIA\nFecha Ingreso : 03/03/2025\nFecha Informe : 14/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPIEL DE PLANTA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2410370 que corresponde a biopsia de lesión en piel de planta izquierda,\ncon diagnóstico de \"HALLAZGOS COMPATIBLES CON NEVUS MELANOCITICO ACRAL COMPUESTO CON\nMODERADA ATIPIA ARQUITECTURAL\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nPiel con proliferación melanocítica dérmica con disminución de HMB45 desde la superficie hacia la base,\nsiendo positivas para SOX-10, Melan-A y S100.\nEl Ki-67 se expresa solo en la base del epitelio escamoso, sin positividad en los melanocitos dérmicos.\nDIAGNÓSTICO\nPiel de planta izquierda. Lesión. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON NEVUS MELANOCITICO ACRAL COMPUESTO CON DISPLASIA MODERADA\nATIPIA Y ARQUITECTURAL.\nCOMENTARIOS\nSi bien la morfología favorecía un comportamiento benigno, llama la atención la fuerte positividad para\nSOX-10, lo que favorece un fenómeno de progresión displásico de la lesión por lo que es prudente tratar\ncomo melanoma acral.\nCaso valorado en conjunto con el Dr. Ricardo Rueda (Dermatopatologo).\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250225\nCopia Pag. 2 de 2\nNombre : VICTORIA CORTAZAR DONNEYS\nN. peticion : IHQ250225\nN.Identificación : CC. 1109662107\nGenero : FEMENINO\nEdad : 21 años 2 meses 15 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : CLAUDIA JULIANA DIAZ\nServicio : DERMATOLOGIA\nFecha Ingreso : 03/03/2025\nFecha Informe : 14/03/2025\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HMB45, Ki-67, MELAN-A, S100, SOX10",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2410370 que corresponde a biopsia de lesión en piel de planta izquierda, con diagnóstico de \"HALLAZGOS COMPATIBLES CON NEVUS MELANOCITICO ACRAL COMPUESTO CON MODERADA ATIPIA ARQUITECTURAL\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Piel con proliferación melanocítica dérmica con disminución de HMB45 desde la superficie hacia la base, siendo positivas para SOX-10, Melan-A y S100. El Ki-67 se expresa solo en la base del epitelio escamoso, sin positividad en los melanocitos dérmicos.",
+      "Descripcion Diagnostico": "Piel de planta izquierda. Lesión. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON NEVUS MELANOCITICO ACRAL COMPUESTO CON DISPLASIA MODERADA ATIPIA Y ARQUITECTURAL.",
+      "IHQ_ORGANO": "PIEL DE PLANTA IZQUIERDA",
+      "Organo": "PIEL DE PLANTA IZQUIERDA",
+      "Diagnostico Coloracion": "NEVUS MELANOCITICO ACRAL COMPUESTO CON MODERADA ATIPIA ARQUITECTURAL",
+      "Diagnostico Principal": "NEVUS MELANOCITICO ACRAL COMPUESTO CON DISPLASIA MODERADA ATIPIA Y ARQUITECTURAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: NEGATIVO (sin positividad en los melanocitos dérmicos)",
+      "IHQ_HMB45": "POSITIVO (desde la superficie hacia la base)",
+      "IHQ_KI-67": "NEGATIVO (sin positividad en los melanocitos dérmicos)",
+      "IHQ_MELAN_A": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 174,
+      "campos_vacios": 135,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Piel de planta izquierda. Lesión. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON NEVUS MELANOCITICO ACRAL COMPUESTO CON DISPLASIA MODERADA\nATIPIA Y ARQUITECTURAL.",
+      "valor_corregido": "Piel de planta izquierda. Lesión. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON NEVUS MELANOCITICO ACRAL COMPUESTO CON DISPLASIA MODERADA ATIPIA Y ARQUITECTURAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250225",
+      "timestamp": "2026-01-28T06:57:24.036979"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Piel con proliferación melanocítica dérmica con disminución de HMB45 desde la superficie hacia la base, siendo positivas para SOX-10, Melan-A y S100. El Ki-67 se expresa solo en la base del epitelio escamoso, sin positividad en los melanocitos dérmicos.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Piel con proliferación melanocítica dérmica con disminución de HMB45 desde la superficie hacia la base, siendo positivas para SOX-10, Melan-A y S100. El KI-67 se expresa solo en la base del epitelio escamoso, sin positividad en los melanocitos dérmicos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250225",
+      "timestamp": "2026-01-28T06:57:24.036986"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Si bien la morfología favorecía un comportamiento benigno, llama la atención la fuerte positividad para\nSOX-10, lo que favorece un fenómeno de progresión displásico de la lesión por lo que es prudente tratar\ncomo melanoma acral.\nCaso valorado en conjunto con el Dr. Ricardo Rueda (Dermatopatologo).",
+      "valor_corregido": "Si bien la morfología favorecía un comportamiento benigno, llama la atención la fuerte positividad para SOX-10, lo que favorece un fenómeno de progresión displásico de la lesión por lo que es prudente tratar como melanoma acral. Caso valorado en conjunto con el Dr. Ricardo Rueda (Dermatopatologo).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250225",
+      "timestamp": "2026-01-28T06:57:24.036989"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 51
+  }
+}

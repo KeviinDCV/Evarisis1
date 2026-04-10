@@ -1,0 +1,141 @@
+{
+  "session_id": "IHQ251033_20251111_005138",
+  "numero_peticion": "IHQ251033",
+  "timestamp": "2025-11-11T00:51:38.349654",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251033\nCopia Pag. 1 de 2\nNombre : DILAN JAVIER NAVARRO MERIÑO\nN. peticion : IHQ251033\nN.Identificación : TI. 1137875664\nGenero : MASCULINO\nEdad : 10 años 17 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 19/09/2025\nFecha Informe : 24/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX COLOSTOMIA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe caso para revisión proveniente del Hospital infantil universitario de San José que consta de dos\nbloques de parafina y dos láminas histológicas de H & E. El material viene rotulado como caso JIU-\nQX8327-24 acompañados de 6 laminas de IHQ que corresponden a marcadores de S100 y Calretinina y\nque corresponde a\n2.\"Biopsia rectal\" con diagnóstico de \"CAMBIOS INFLAMATORIOS Y REACTIVOS, -\nPRESENCIA DE CELULAS GANGLIONARES\". En los bloques de parafina recibidos se observa escaso tejido\nque podria ser agotado durante los estudios a realizar. Se realizan niveles histológicos a los bloques de\nparafina para IHQ con Calretinina. \nDESCRIPCIÓN MICROSCÓPICA\nPROTOCOLO PARA EL ESTUDIO HISTOPATOLÓGICO DE BIOPSIAS CON SOSPECHA DE ENFERMEDAD DE\nHIRSPRUNG:\n- Tipo de espécimen : Biopsia de recto.\n- Sitio de biopsia (Distancia de la línea pectínea): No especificado.\n- Número total de cortes evaluados: 24 niveles de corte.\n- Estudios adicionales: Calretinina negativa para células ganglionares. \nDIAGNÓSTICO\nRecto. Biopsia. Revisión. Estudio de inmunohistoquímica:\n- NEGATIVO PARA PRESENCIA DE CÉLULAS GANGLIONARES.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 97 ---\nIHQ251033\nCopia Pag. 2 de 2\nNombre : DILAN JAVIER NAVARRO MERIÑO\nN. peticion : IHQ251033\nN.Identificación : TI. 1137875664\nGenero : MASCULINO\nEdad : 10 años 17 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 19/09/2025\nFecha Informe : 24/09/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 98 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3300,
+      "reduccion_porcentaje": 98.3
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251033",
+      "caso_num": 46,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "DILAN JAVIER NAVARRO MERIÑO",
+      "numero_peticion": "IHQ251033",
+      "identificacion": "1137875664",
+      "tipo_documento": "TI",
+      "Genero": "MASCULINO",
+      "Edad": "10",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LUIS MAURICIO FIGUEROA",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "19/09/2025",
+      "fecha_informe": "24/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251033",
+      "N. de identificación": "1137875664",
+      "Tipo de documento": "TI",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "LUIS MAURICIO FIGUEROA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "19/09/2025",
+      "Fecha Informe": "24/09/2025",
+      "nombres": "DILAN",
+      "Primer nombre": "DILAN",
+      "Segundo nombre": "",
+      "apellidos": "JAVIER NAVARRO MERIÑO",
+      "Primer apellido": "JAVIER",
+      "Segundo apellido": "NAVARRO MERIÑO",
+      "nombre_formal": "JAVIER NAVARRO MERIÑO, DILAN",
+      "diagnostico": "Recto. Biopsia. Revisión. Estudio de inmunohistoquímica: - NEGATIVO PARA PRESENCIA DE CÉLULAS GANGLIONARES.",
+      "descripcion_microscopica": "PROTOCOLO PARA EL ESTUDIO HISTOPATOLÓGICO DE BIOPSIAS CON SOSPECHA DE ENFERMEDAD DE HIRSPRUNG: - Tipo de espécimen : Biopsia de recto. - Sitio de biopsia (Distancia de la línea pectínea): No especificado. - Número total de cortes evaluados: 24 niveles de corte. - Estudios adicionales: Calretinina negativa para células ganglionares.",
+      "descripcion_macroscopica": "Se recibe caso para revisión proveniente del Hospital infantil universitario de San José que consta de dos bloques de parafina y dos láminas histológicas de H & E. El material viene rotulado como caso JIU- QX8327-24 acompañados de 6 laminas de IHQ que corresponden a marcadores de S100 y Calretinina y que corresponde a 2.\"Biopsia rectal\" con diagnóstico de \"CAMBIOS INFLAMATORIOS Y REACTIVOS, - PRESENCIA DE CELULAS GANGLIONARES\". En los bloques de parafina recibidos se observa escaso tejido que podria ser agotado durante los estudios a realizar. Se realizan niveles histológicos a los bloques de parafina para IHQ con Calretinina. DESCRIPCIÓN MICROSCÓPICA PROTOCOLO PARA EL ESTUDIO HISTOPATOLÓGICO DE BIOPSIAS CON SOSPECHA DE ENFERMEDAD DE HIRSPRUNG: - Tipo de espécimen : Biopsia de recto. - Sitio de biopsia (Distancia de la línea pectínea): No especificado. - Número total de cortes evaluados: 24 niveles de corte. - Estudios adicionales: Calretinina negativa para células ganglionares. DIAGNÓSTICO Recto. Biopsia. Revisión. Estudio de inmunohistoquímica: - NEGATIVO PARA PRESENCIA DE CÉLULAS GANGLIONARES. NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 97 --- IHQ251033 Copia Pag. 2 de 2 Nombre : DILAN JAVIER NAVARRO MERIÑO N. peticion : IHQ251033 N.Identificación : TI. 1137875664 Genero : MASCULINO Edad : 10 años 17 dias EPS : NUEVA EPS Médico tratante : LUIS MAURICIO FIGUEROA Servicio : QUIROFANO CENTRAL Fecha Ingreso : 19/09/2025 Fecha Informe : 24/09/2025 Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 98 ---",
+      "ihq_organo": "RECTO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "RECTO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "extraction_timestamp": "2025-11-11T00:51:38.469108",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251033\nCopia Pag. 1 de 2\nNombre : DILAN JAVIER NAVARRO MERIÑO\nN. peticion : IHQ251033\nN.Identificación : TI. 1137875664\nGenero : MASCULINO\nEdad : 10 años 17 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 19/09/2025\nFecha Informe : 24/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX COLOSTOMIA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe caso para revisión proveniente del Hospital infantil universitario de San José que consta de dos\nbloques de parafina y dos láminas histológicas de H & E. El material viene rotulado como caso JIU-\nQX8327-24 acompañados de 6 laminas de IHQ que corresponden a marcadores de S100 y Calretinina y\nque corresponde a\n2.\"Biopsia rectal\" con diagnóstico de \"CAMBIOS INFLAMATORIOS Y REACTIVOS, -\nPRESENCIA DE CELULAS GANGLIONARES\". En los bloques de parafina recibidos se observa escaso tejido\nque podria ser agotado durante los estudios a realizar. Se realizan niveles histológicos a los bloques de\nparafina para IHQ con Calretinina. \nDESCRIPCIÓN MICROSCÓPICA\nPROTOCOLO PARA EL ESTUDIO HISTOPATOLÓGICO DE BIOPSIAS CON SOSPECHA DE ENFERMEDAD DE\nHIRSPRUNG:\n- Tipo de espécimen : Biopsia de recto.\n- Sitio de biopsia (Distancia de la línea pectínea): No especificado.\n- Número total de cortes evaluados: 24 niveles de corte.\n- Estudios adicionales: Calretinina negativa para células ganglionares. \nDIAGNÓSTICO\nRecto. Biopsia. Revisión. Estudio de inmunohistoquímica:\n- NEGATIVO PARA PRESENCIA DE CÉLULAS GANGLIONARES.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 97 ---\nIHQ251033\nCopia Pag. 2 de 2\nNombre : DILAN JAVIER NAVARRO MERIÑO\nN. peticion : IHQ251033\nN.Identificación : TI. 1137875664\nGenero : MASCULINO\nEdad : 10 años 17 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 19/09/2025\nFecha Informe : 24/09/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 98 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "Descripcion macroscopica": "Se recibe caso para revisión proveniente del Hospital infantil universitario de San José que consta de dos bloques de parafina y dos láminas histológicas de H & E. El material viene rotulado como caso JIU- QX8327-24 acompañados de 6 laminas de IHQ que corresponden a marcadores de S100 y Calretinina y que corresponde a 2.\"Biopsia rectal\" con diagnóstico de \"CAMBIOS INFLAMATORIOS Y REACTIVOS, - PRESENCIA DE CELULAS GANGLIONARES\". En los bloques de parafina recibidos se observa escaso tejido que podria ser agotado durante los estudios a realizar. Se realizan niveles histológicos a los bloques de parafina para IHQ con Calretinina. DESCRIPCIÓN MICROSCÓPICA PROTOCOLO PARA EL ESTUDIO HISTOPATOLÓGICO DE BIOPSIAS CON SOSPECHA DE ENFERMEDAD DE HIRSPRUNG: - Tipo de espécimen : Biopsia de recto. - Sitio de biopsia (Distancia de la línea pectínea): No especificado. - Número total de cortes evaluados: 24 niveles de corte. - Estudios adicionales: Calretinina negativa para células ganglionares. DIAGNÓSTICO Recto. Biopsia. Revisión. Estudio de inmunohistoquímica: - NEGATIVO PARA PRESENCIA DE CÉLULAS GANGLIONARES. NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 97 --- IHQ251033 Copia Pag. 2 de 2 Nombre : DILAN JAVIER NAVARRO MERIÑO N. peticion : IHQ251033 N.Identificación : TI. 1137875664 Genero : MASCULINO Edad : 10 años 17 dias EPS : NUEVA EPS Médico tratante : LUIS MAURICIO FIGUEROA Servicio : QUIROFANO CENTRAL Fecha Ingreso : 19/09/2025 Fecha Informe : 24/09/2025 Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 98 ---",
+      "Descripcion microscopica": "PROTOCOLO PARA EL ESTUDIO HISTOPATOLÓGICO DE BIOPSIAS CON SOSPECHA DE ENFERMEDAD DE HIRSPRUNG: - Tipo de espécimen : Biopsia de recto. - Sitio de biopsia (Distancia de la línea pectínea): No especificado. - Número total de cortes evaluados: 24 niveles de corte. - Estudios adicionales: Calretinina negativa para células ganglionares.",
+      "Descripcion Diagnostico": "Recto. Biopsia. Revisión. Estudio de inmunohistoquímica: - NEGATIVO PARA PRESENCIA DE CÉLULAS GANGLIONARES.",
+      "IHQ_ORGANO": "RECTO",
+      "Organo": "BX COLOSTOMIA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "NEGATIVO PARA PRESENCIA DE CÉLULAS GANGLIONARES",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 115,
+      "campos_completos": 33,
+      "biomarcadores_encontrados": 0,
+      "completitud_porcentaje": 22.3
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 115,
+      "total_campos_completos": 33
+    },
+    "top_campos_criticos_vacios": [
+      "IHQ_ESTUDIOS_SOLICITADOS"
+    ],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Recto. Biopsia. Revisión. Estudio de inmunohistoquímica:\n- NEGATIVO PARA PRESENCIA DE CÉLULAS GANGLIONARES.",
+      "valor_corregido": "Recto. Biopsia. Revisión. Estudio de inmunohistoquímica: - NEGATIVO PARA PRESENCIA DE CÉLULAS GANGLIONARES.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251033",
+      "timestamp": "2025-11-11T00:51:38.468861"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe caso para revisión proveniente del Hospital infantil universitario de San José que consta de dos\nbloques de parafina y dos láminas histológicas de H & E. El material viene rotulado como caso JIU-\nQX8327-24 acompañados de 6 laminas de IHQ que corresponden a marcadores de S100 y Calretinina y\nque corresponde a\n2.\"Biopsia rectal\" con diagnóstico de \"CAMBIOS INFLAMATORIOS Y REACTIVOS, -\nPRESENCIA DE CELULAS GANGLIONARES\". En los bloques de parafina recibidos se observa escaso tejido\nque podria ser agotado durante los estudios a realizar. Se realizan niveles histológicos a los bloques de\nparafina para IHQ con Calretinina. \nDESCRIPCIÓN MICROSCÓPICA\nPROTOCOLO PARA EL ESTUDIO HISTOPATOLÓGICO DE BIOPSIAS CON SOSPECHA DE ENFERMEDAD DE\nHIRSPRUNG:\n- Tipo de espécimen : Biopsia de recto.\n- Sitio de biopsia (Distancia de la línea pectínea): No especificado.\n- Número total de cortes evaluados: 24 niveles de corte.\n- Estudios adicionales: Calretinina negativa para células ganglionares. \nDIAGNÓSTICO\nRecto. Biopsia. Revisión. Estudio de inmunohistoquímica:\n- NEGATIVO PARA PRESENCIA DE CÉLULAS GANGLIONARES.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 97 ---\nIHQ251033\nCopia Pag. 2 de 2\nNombre : DILAN JAVIER NAVARRO MERIÑO\nN. peticion : IHQ251033\nN.Identificación : TI. 1137875664\nGenero : MASCULINO\nEdad : 10 años 17 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 19/09/2025\nFecha Informe : 24/09/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 98 ---",
+      "valor_corregido": "Se recibe caso para revisión proveniente del Hospital infantil universitario de San José que consta de dos bloques de parafina y dos láminas histológicas de H & E. El material viene rotulado como caso JIU- QX8327-24 acompañados de 6 laminas de IHQ que corresponden a marcadores de S100 y Calretinina y que corresponde a 2.\"Biopsia rectal\" con diagnóstico de \"CAMBIOS INFLAMATORIOS Y REACTIVOS, - PRESENCIA DE CELULAS GANGLIONARES\". En los bloques de parafina recibidos se observa escaso tejido que podria ser agotado durante los estudios a realizar. Se realizan niveles histológicos a los bloques de parafina para IHQ con Calretinina. DESCRIPCIÓN MICROSCÓPICA PROTOCOLO PARA EL ESTUDIO HISTOPATOLÓGICO DE BIOPSIAS CON SOSPECHA DE ENFERMEDAD DE HIRSPRUNG: - Tipo de espécimen : Biopsia de recto. - Sitio de biopsia (Distancia de la línea pectínea): No especificado. - Número total de cortes evaluados: 24 niveles de corte. - Estudios adicionales: Calretinina negativa para células ganglionares. DIAGNÓSTICO Recto. Biopsia. Revisión. Estudio de inmunohistoquímica: - NEGATIVO PARA PRESENCIA DE CÉLULAS GANGLIONARES. NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 97 --- IHQ251033 Copia Pag. 2 de 2 Nombre : DILAN JAVIER NAVARRO MERIÑO N. peticion : IHQ251033 N.Identificación : TI. 1137875664 Genero : MASCULINO Edad : 10 años 17 dias EPS : NUEVA EPS Médico tratante : LUIS MAURICIO FIGUEROA Servicio : QUIROFANO CENTRAL Fecha Ingreso : 19/09/2025 Fecha Informe : 24/09/2025 Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 98 ---",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251033",
+      "timestamp": "2025-11-11T00:51:38.468868"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 45
+  }
+}

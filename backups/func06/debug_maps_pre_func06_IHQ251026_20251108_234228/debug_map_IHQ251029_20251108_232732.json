@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ251029_20251108_232732",
+  "numero_peticion": "IHQ251029",
+  "timestamp": "2025-11-08T23:27:32.098358",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251029\nFinal Pag. 1 de 2\nNombre : ROSA MARIA HERRERA VASQUEZ\nN. peticion : IHQ251029\nN.Identificación : CC. 31528345\nGenero : FEMENINO\nEdad : 73 años 13 dias\nEPS : COMFENALCO VALLE\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 18/09/2025\nFecha Informe : 01/10/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA MASA\nINTRAABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado\n\"M2510813\"\ny\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema\nROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nProliferación de celulas poligonales, con citoplasma moderado, anfofílico, con núcleo redondo y\ncromatina punteada en patrón \"sal y pimienta\" que se disponen en patrón organoide, con\nactividad\nmitótica\nde\ny\nexpresan\ninmunofenotipo\ncon\nmarcación\nfuerte\ny\ndifusa\npara\nSinaptofisina+/Cromogranina\nA+\nen\npatrón\npunteado\napical\ny\nperinucleal,\ny\nCKAE1-AE3+\ncitoplasmático, con positividad débil para CD56.\nEl índice de proliferación celular estimado por Ki-67 es del 2%.\ndiagnóstico\n\"LOS\nHALLAZGOS\nMORFOLOGICOS\nFAVORECEN\nUN\nTUMOR\nNEUROENDOCRINO\".\nPrevia\nrevisión\nde\nla\nhistología\nse\nsolicitan\ncoloraciones\ninmunohistoquímica\ncon\nCD56,\nCromogranina-A, Sinaptofisina, CKAE1/AE3 y Ki-67.\nDIAGNÓSTICO\nMesenterio. Tumor. Biopsia. Estudio de inmunohistoquímica.\nTUMOR NEUROENDOCRINO BIEN DIFERENCIADO, GRADO 1 (1/3 WHO).\nÍNDOCE DE PROLIFERACIÓN CELULAR POR Ki-67 DEL 2%.\nNEGATIVO PARA INVASIÓN LINFOVASCULAR EN LA MUESTRA.\nCOMENTARIOS\nLos tumores neuroendocrinos del tracto digestivo presentan una marcación NO organoespecífica.\nRequiere correlación clínica, paraclínica e imagenológica para determinar si se trata de un tumor\nprimario.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 91 ---\nIHQ251029\nFinal Pag. 2 de 2\nNombre : ROSA MARIA HERRERA VASQUEZ\nN. peticion : IHQ251029\nN.Identificación : CC. 31528345\nGenero : FEMENINO\nEdad : 73 años 13 dias\nEPS : COMFENALCO VALLE\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 18/09/2025\nFecha Informe : 01/10/2025\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 92 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3640,
+      "reduccion_porcentaje": 98.12
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251029",
+      "caso_num": 43,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD56": "POSITIVO",
+      "nombre_completo": "ROSA MARIA HERRERA VASQUEZ",
+      "numero_peticion": "IHQ251029",
+      "identificacion": "31528345",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "73",
+      "eps": "COMFENALCO VALLE",
+      "medico_tratante": "NATHALY PRADA",
+      "servicio": "RADIOLOGIA",
+      "fecha_ingreso": "18/09/2025",
+      "fecha_informe": "01/10/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251029",
+      "N. de identificación": "31528345",
+      "Tipo de documento": "CC",
+      "EPS": "COMFENALCO VALLE",
+      "Servicio": "RADIOLOGIA",
+      "Médico tratante": "NATHALY PRADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "18/09/2025",
+      "Fecha Informe": "01/10/2025",
+      "nombres": "ROSA MARIA HERRERA",
+      "Primer nombre": "ROSA",
+      "Segundo nombre": "MARIA HERRERA",
+      "apellidos": "VASQUEZ",
+      "Primer apellido": "VASQUEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "VASQUEZ, ROSA MARIA HERRERA",
+      "diagnostico": "\"LOS HALLAZGOS MORFOLOGICOS FAVORECEN UN TUMOR NEUROENDOCRINO\". Previa revisión de la histología se solicitan coloraciones inmunohistoquímica con CD56, Cromogranina-A, Synaptophysin, CKAE1/AE3 y KI-67. DIAGNÓSTICO Mesenterio. Tumor. Biopsia. Estudio de inmunohistoquímica. TUMOR NEUROENDOCRINO BIEN DIFERENCIADO, GRADO 1 (1/3 WHO). ÍNDOCE DE PROLIFERACIÓN CELULAR POR KI-67 DEL 2%. NEGATIVO PARA INVASIÓN LINFOVASCULAR EN LA MUESTRA.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Proliferación de celulas poligonales, con citoplasma moderado, anfofílico, con núcleo redondo y cromatina punteada en patrón \"sal y pimienta\" que se disponen en patrón organoide, con actividad mitótica de y expresan inmunofenotipo con marcación fuerte y difusa para Synaptophysin+/Cromogranina A+ en patrón punteado apical y perinucleal, y CKAE1-AE3+ citoplasmático, con positividad débil para CD56. El índice de proliferación celular estimado por KI-67 es del 2%. diagnóstico \"LOS HALLAZGOS MORFOLOGICOS FAVORECEN UN TUMOR NEUROENDOCRINO\". Previa revisión de la histología se solicitan coloraciones inmunohistoquímica con CD56, Cromogranina-A, Synaptophysin, CKAE1/AE3 y KI-67.",
+      "descripcion_macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado \"M2510813\" y",
+      "ihq_organo": "\"LOS\nHALLAZGOS\nMORFOLOGICOS\nFAVORECEN\nUN\nTUMOR\nNEUROENDOCRINO\"",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Los tumores neuroendocrinos del tracto digestivo presentan una marcación NO organoespecífica. Requiere correlación clínica, paraclínica e imagenológica para determinar si se trata de un tumor primario. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 91 --- IHQ251029 Final Pag. 2 de 2 Nombre : ROSA MARIA HERRERA VASQUEZ N. peticion : IHQ251029 N.Identificación : CC. 31528345 Genero : FEMENINO Edad : 73 años 13 dias EPS : COMFENALCO VALLE Médico tratante : NATHALY PRADA Servicio : RADIOLOGIA Fecha Ingreso : 18/09/2025 Fecha Informe : 01/10/2025",
+      "IHQ_ORGANO": "\"LOS\nHALLAZGOS\nMORFOLOGICOS\nFAVORECEN\nUN\nTUMOR\nNEUROENDOCRINO\"",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Ki-67 DEL 2% / AE3 y Ki-67",
+      "IHQ_KI-67": "2%",
+      "extraction_timestamp": "2025-11-08T23:27:32.228780",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251029\nFinal Pag. 1 de 2\nNombre : ROSA MARIA HERRERA VASQUEZ\nN. peticion : IHQ251029\nN.Identificación : CC. 31528345\nGenero : FEMENINO\nEdad : 73 años 13 dias\nEPS : COMFENALCO VALLE\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 18/09/2025\nFecha Informe : 01/10/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA MASA\nINTRAABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado\n\"M2510813\"\ny\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema\nROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nProliferación de celulas poligonales, con citoplasma moderado, anfofílico, con núcleo redondo y\ncromatina punteada en patrón \"sal y pimienta\" que se disponen en patrón organoide, con\nactividad\nmitótica\nde\ny\nexpresan\ninmunofenotipo\ncon\nmarcación\nfuerte\ny\ndifusa\npara\nSinaptofisina+/Cromogranina\nA+\nen\npatrón\npunteado\napical\ny\nperinucleal,\ny\nCKAE1-AE3+\ncitoplasmático, con positividad débil para CD56.\nEl índice de proliferación celular estimado por Ki-67 es del 2%.\ndiagnóstico\n\"LOS\nHALLAZGOS\nMORFOLOGICOS\nFAVORECEN\nUN\nTUMOR\nNEUROENDOCRINO\".\nPrevia\nrevisión\nde\nla\nhistología\nse\nsolicitan\ncoloraciones\ninmunohistoquímica\ncon\nCD56,\nCromogranina-A, Sinaptofisina, CKAE1/AE3 y Ki-67.\nDIAGNÓSTICO\nMesenterio. Tumor. Biopsia. Estudio de inmunohistoquímica.\nTUMOR NEUROENDOCRINO BIEN DIFERENCIADO, GRADO 1 (1/3 WHO).\nÍNDOCE DE PROLIFERACIÓN CELULAR POR Ki-67 DEL 2%.\nNEGATIVO PARA INVASIÓN LINFOVASCULAR EN LA MUESTRA.\nCOMENTARIOS\nLos tumores neuroendocrinos del tracto digestivo presentan una marcación NO organoespecífica.\nRequiere correlación clínica, paraclínica e imagenológica para determinar si se trata de un tumor\nprimario.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 91 ---\nIHQ251029\nFinal Pag. 2 de 2\nNombre : ROSA MARIA HERRERA VASQUEZ\nN. peticion : IHQ251029\nN.Identificación : CC. 31528345\nGenero : FEMENINO\nEdad : 73 años 13 dias\nEPS : COMFENALCO VALLE\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 18/09/2025\nFecha Informe : 01/10/2025\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 92 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD56, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado \"M2510813\" y",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Proliferación de celulas poligonales, con citoplasma moderado, anfofílico, con núcleo redondo y cromatina punteada en patrón \"sal y pimienta\" que se disponen en patrón organoide, con actividad mitótica de y expresan inmunofenotipo con marcación fuerte y difusa para Sinaptofisina+/Cromogranina A+ en patrón punteado apical y perinucleal, y CKAE1-AE3+ citoplasmático, con positividad débil para CD56. El índice de proliferación celular estimado por Ki-67 es del 2%. diagnóstico \"LOS HALLAZGOS MORFOLOGICOS FAVORECEN UN TUMOR NEUROENDOCRINO\". Previa revisión de la histología se solicitan coloraciones inmunohistoquímica con CD56, Cromogranina-A, Sinaptofisina, CKAE1/AE3 y Ki-67.",
+      "Descripcion Diagnostico": "\"LOS HALLAZGOS MORFOLOGICOS FAVORECEN UN TUMOR NEUROENDOCRINO\". Previa revisión de la histología se solicitan coloraciones inmunohistoquímica con CD56, Cromogranina-A, Synaptophysin, CKAE1/AE3 y KI-67. DIAGNÓSTICO Mesenterio. Tumor. Biopsia. Estudio de inmunohistoquímica. TUMOR NEUROENDOCRINO BIEN DIFERENCIADO, GRADO 1 (1/3 WHO). ÍNDOCE DE PROLIFERACIÓN CELULAR POR KI-67 DEL 2%. NEGATIVO PARA INVASIÓN LINFOVASCULAR EN LA MUESTRA.",
+      "IHQ_ORGANO": "\"LOS\nHALLAZGOS\nMORFOLOGICOS\nFAVORECEN\nUN\nTUMOR\nNEUROENDOCRINO\"",
+      "Organo": "BIOPSIA MASA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "TUMOR NEUROENDOCRINO BIEN DIFERENCIADO,",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 DEL 2% / AE3 y Ki-67",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_KI-67": "2%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 145,
+      "campos_vacios": 110,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 24.14
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 110,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "\"LOS\nHALLAZGOS\nMORFOLOGICOS\nFAVORECEN\nUN\nTUMOR\nNEUROENDOCRINO\".\nPrevia\nrevisión\nde\nla\nhistología\nse\nsolicitan\ncoloraciones\ninmunohistoquímica\ncon\nCD56,\nCromogranina-A, Sinaptofisina, CKAE1/AE3 y Ki-67.\nDIAGNÓSTICO\nMesenterio. Tumor. Biopsia. Estudio de inmunohistoquímica.\nTUMOR NEUROENDOCRINO BIEN DIFERENCIADO, GRADO 1 (1/3 WHO).\nÍNDOCE DE PROLIFERACIÓN CELULAR POR Ki-67 DEL 2%.\nNEGATIVO PARA INVASIÓN LINFOVASCULAR EN LA MUESTRA.",
+      "valor_corregido": "\"LOS HALLAZGOS MORFOLOGICOS FAVORECEN UN TUMOR NEUROENDOCRINO\". Previa revisión de la histología se solicitan coloraciones inmunohistoquímica con CD56, Cromogranina-A, Synaptophysin, CKAE1/AE3 y KI-67. DIAGNÓSTICO Mesenterio. Tumor. Biopsia. Estudio de inmunohistoquímica. TUMOR NEUROENDOCRINO BIEN DIFERENCIADO, GRADO 1 (1/3 WHO). ÍNDOCE DE PROLIFERACIÓN CELULAR POR KI-67 DEL 2%. NEGATIVO PARA INVASIÓN LINFOVASCULAR EN LA MUESTRA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251029",
+      "timestamp": "2025-11-08T23:27:32.228537"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado\n\"M2510813\"\ny",
+      "valor_corregido": "Se recibe orden para realizar estudios de inmunohistoquímica en material institucional, rotulado \"M2510813\" y",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251029",
+      "timestamp": "2025-11-08T23:27:32.228544"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Proliferación de celulas poligonales, con citoplasma moderado, anfofílico, con núcleo redondo y cromatina punteada en patrón \"sal y pimienta\" que se disponen en patrón organoide, con actividad mitótica de y expresan inmunofenotipo con marcación fuerte y difusa para Sinaptofisina+/Cromogranina A+ en patrón punteado apical y perinucleal, y CKAE1-AE3+ citoplasmático, con positividad débil para CD56. El índice de proliferación celular estimado por Ki-67 es del 2%. diagnóstico \"LOS HALLAZGOS MORFOLOGICOS FAVORECEN UN TUMOR NEUROENDOCRINO\". Previa revisión de la histología se solicitan coloraciones inmunohistoquímica con CD56, Cromogranina-A, Sinaptofisina, CKAE1/AE3 y Ki-67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Proliferación de celulas poligonales, con citoplasma moderado, anfofílico, con núcleo redondo y cromatina punteada en patrón \"sal y pimienta\" que se disponen en patrón organoide, con actividad mitótica de y expresan inmunofenotipo con marcación fuerte y difusa para Synaptophysin+/Cromogranina A+ en patrón punteado apical y perinucleal, y CKAE1-AE3+ citoplasmático, con positividad débil para CD56. El índice de proliferación celular estimado por KI-67 es del 2%. diagnóstico \"LOS HALLAZGOS MORFOLOGICOS FAVORECEN UN TUMOR NEUROENDOCRINO\". Previa revisión de la histología se solicitan coloraciones inmunohistoquímica con CD56, Cromogranina-A, Synaptophysin, CKAE1/AE3 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251029",
+      "timestamp": "2025-11-08T23:27:32.228546"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los tumores neuroendocrinos del tracto digestivo presentan una marcación NO organoespecífica.\nRequiere correlación clínica, paraclínica e imagenológica para determinar si se trata de un tumor\nprimario.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 91 ---\nIHQ251029\nFinal Pag. 2 de 2\nNombre : ROSA MARIA HERRERA VASQUEZ\nN. peticion : IHQ251029\nN.Identificación : CC. 31528345\nGenero : FEMENINO\nEdad : 73 años 13 dias\nEPS : COMFENALCO VALLE\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 18/09/2025\nFecha Informe : 01/10/2025",
+      "valor_corregido": "Los tumores neuroendocrinos del tracto digestivo presentan una marcación NO organoespecífica. Requiere correlación clínica, paraclínica e imagenológica para determinar si se trata de un tumor primario. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 91 --- IHQ251029 Final Pag. 2 de 2 Nombre : ROSA MARIA HERRERA VASQUEZ N. peticion : IHQ251029 N.Identificación : CC. 31528345 Genero : FEMENINO Edad : 73 años 13 dias EPS : COMFENALCO VALLE Médico tratante : NATHALY PRADA Servicio : RADIOLOGIA Fecha Ingreso : 18/09/2025 Fecha Informe : 01/10/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251029",
+      "timestamp": "2025-11-08T23:27:32.228548"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 46
+  }
+}

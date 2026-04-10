@@ -1,0 +1,160 @@
+{
+  "session_id": "IHQ250036_20251204_232231",
+  "numero_peticion": "IHQ250036",
+  "timestamp": "2025-12-04T23:22:31.988960",
+  "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250036\nCopia Pag. 1 de 2\nNombre : FRANCISCO JAVIER ATEHORTUA RIOS N. peticion : IHQ250036\nN.Identificación : CC. 6456687\nGenero : MASCULINO\nEdad : 74 años\nEPS : EMSSANAR S.A.S\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 14/01/2025\nFecha Informe : 24/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION ESTOMAGO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo B24-800\n(21/12/2024) que corresponde a \" Lesión de mucosa gástrica \" con diagnóstico de\n“PROLIFERAICÓN CELULAR ATÍPICA”. consiste en una lamina coloreadas H&E y un bloque de\nparafina. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para\nlos siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2, CKAE1/AE3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nEn los niveles histológicos realizados se identifica una lesion caricnomatosa poco cohesiva con\ncélulas positivas para CKAE1/AE3. \nREPORTE:\nMLH1: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta.\nInterpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las\nproteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de\nMSI-H)\nSobreexpresion de HER2: negativo ( score 0 ) \nDIAGNÓSTICO\nMucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica.\n- ⁠CARCINOMA POCO COHESIVO \n- ⁠PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---\nIHQ250036\nCopia Pag. 2 de 2\nNombre : FRANCISCO JAVIER ATEHORTUA RIOS N. peticion : IHQ250036\nN.Identificación : CC. 6456687\nGenero : MASCULINO\nEdad : 74 años\nEPS : EMSSANAR S.A.S\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 14/01/2025\nFecha Informe : 24/01/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3724,
+      "reduccion_porcentaje": 97.82
+    },
+    "metadata": {
+      "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250036",
+      "caso_num": 36,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "nombre_completo": "FRANCISCO JAVIER ATEHORTUA RIOS",
+      "numero_peticion": "IHQ250036",
+      "identificacion": "6456687",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "74",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "14/01/2025",
+      "fecha_informe": "24/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250036",
+      "N. de identificación": "6456687",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/01/2025",
+      "Fecha Informe": "24/01/2025",
+      "nombres": "FRANCISCO",
+      "Primer nombre": "FRANCISCO",
+      "Segundo nombre": "",
+      "apellidos": "JAVIER ATEHORTUA RIOS",
+      "Primer apellido": "JAVIER",
+      "Segundo apellido": "ATEHORTUA RIOS",
+      "nombre_formal": "JAVIER ATEHORTUA RIOS, FRANCISCO",
+      "diagnostico": "Mucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica. - ⁠CARCINOMA POCO COHESIVO - ⁠PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). En los niveles histológicos realizados se identifica una lesion caricnomatosa poco cohesiva con células positivas para CKAE1/AE3. REPORTE: MLH1: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. Interpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) Sobreexpresion de HER2: negativo ( score 0 )",
+      "descripcion_macroscopica": "Se realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo B24-800 (21/12/2024) que corresponde a \" Lesión de mucosa gástrica \" con diagnóstico de “PROLIFERAICÓN CELULAR ATÍPICA”. consiste en una lamina coloreadas H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2, CKAE1/AE3.",
+      "ihq_organo": "MUCOSA DE ESTOMAGO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MLH 1, PMS2, MSH2, MSH6, HER2, CKAE1AE3",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA DE ESTOMAGO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "HER2: negativo ( score 0 )",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_MSH2": "POSITIVO",
+      "IHQ_MSH6": "POSITIVO",
+      "IHQ_PMS2": "POSITIVO",
+      "IHQ_MLH1": "POSITIVO (expresión nuclear intacta)",
+      "extraction_timestamp": "2025-12-04T23:22:32.133258",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250036\nCopia Pag. 1 de 2\nNombre : FRANCISCO JAVIER ATEHORTUA RIOS N. peticion : IHQ250036\nN.Identificación : CC. 6456687\nGenero : MASCULINO\nEdad : 74 años\nEPS : EMSSANAR S.A.S\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 14/01/2025\nFecha Informe : 24/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION ESTOMAGO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo B24-800\n(21/12/2024) que corresponde a \" Lesión de mucosa gástrica \" con diagnóstico de\n“PROLIFERAICÓN CELULAR ATÍPICA”. consiste en una lamina coloreadas H&E y un bloque de\nparafina. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para\nlos siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2, CKAE1/AE3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nEn los niveles histológicos realizados se identifica una lesion caricnomatosa poco cohesiva con\ncélulas positivas para CKAE1/AE3. \nREPORTE:\nMLH1: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta.\nInterpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las\nproteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de\nMSI-H)\nSobreexpresion de HER2: negativo ( score 0 ) \nDIAGNÓSTICO\nMucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica.\n- ⁠CARCINOMA POCO COHESIVO \n- ⁠PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---\nIHQ250036\nCopia Pag. 2 de 2\nNombre : FRANCISCO JAVIER ATEHORTUA RIOS N. peticion : IHQ250036\nN.Identificación : CC. 6456687\nGenero : MASCULINO\nEdad : 74 años\nEPS : EMSSANAR S.A.S\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 14/01/2025\nFecha Informe : 24/01/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MLH 1, PMS2, MSH2, MSH6, HER2, CKAE1AE3",
+      "Descripcion macroscopica": "Se realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo B24-800 (21/12/2024) que corresponde a \" Lesión de mucosa gástrica \" con diagnóstico de “PROLIFERAICÓN CELULAR ATÍPICA”. consiste en una lamina coloreadas H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2, CKAE1/AE3.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). En los niveles histológicos realizados se identifica una lesion caricnomatosa poco cohesiva con células positivas para CKAE1/AE3. REPORTE: MLH1: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. Interpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) Sobreexpresion de HER2: negativo ( score 0 )",
+      "Descripcion Diagnostico": "Mucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica. - ⁠CARCINOMA POCO COHESIVO - ⁠PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0).",
+      "IHQ_ORGANO": "MUCOSA DE ESTOMAGO",
+      "Organo": "LESION ESTOMAGO",
+      "Diagnostico Coloracion": "PROLIFERAICÓN CELULAR ATÍPICA",
+      "Diagnostico Principal": "CARCINOMA POCO COHESIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: negativo ( score 0 )",
+      "IHQ_MLH1": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_PMS2": "POSITIVO",
+      "IHQ_MSH2": "POSITIVO",
+      "IHQ_MSH6": "POSITIVO",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 156,
+      "campos_vacios": 116,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "completitud_porcentaje": 25.64
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 116,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica.\n- ⁠CARCINOMA POCO COHESIVO \n- ⁠PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).",
+      "valor_corregido": "Mucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica. - ⁠CARCINOMA POCO COHESIVO - ⁠PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250036",
+      "timestamp": "2025-12-04T23:22:32.133046"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo B24-800\n(21/12/2024) que corresponde a \" Lesión de mucosa gástrica \" con diagnóstico de\n“PROLIFERAICÓN CELULAR ATÍPICA”. consiste en una lamina coloreadas H&E y un bloque de\nparafina. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para\nlos siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2, CKAE1/AE3.",
+      "valor_corregido": "Se realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo B24-800 (21/12/2024) que corresponde a \" Lesión de mucosa gástrica \" con diagnóstico de “PROLIFERAICÓN CELULAR ATÍPICA”. consiste en una lamina coloreadas H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2, CKAE1/AE3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250036",
+      "timestamp": "2025-12-04T23:22:32.133052"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nEn los niveles histológicos realizados se identifica una lesion caricnomatosa poco cohesiva con\ncélulas positivas para CKAE1/AE3. \nREPORTE:\nMLH1: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta.\nInterpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las\nproteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de\nMSI-H)\nSobreexpresion de HER2: negativo ( score 0 )",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). En los niveles histológicos realizados se identifica una lesion caricnomatosa poco cohesiva con células positivas para CKAE1/AE3. REPORTE: MLH1: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. Interpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) Sobreexpresion de HER2: negativo ( score 0 )",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250036",
+      "timestamp": "2025-12-04T23:22:32.133054"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 52
+  }
+}

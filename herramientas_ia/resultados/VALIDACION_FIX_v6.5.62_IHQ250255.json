@@ -1,0 +1,26 @@
+{
+  "caso": "IHQ250255",
+  "version": "v6.5.62",
+  "fecha": "2026-01-28T17:08:11.617925",
+  "objetivo": "Validar correccion Ki-67 con patron ESPERADO (foliculos linfoides)",
+  "validacion": {
+    "IHQ_KI-67": {
+      "valor_bd": "ESPERADO (folículos linfoides)",
+      "esperado": "ESPERADO (foliculos linfoides)",
+      "correcto": true,
+      "nota": "Patron v6.5.62 debe capturar formato narrativo"
+    },
+    "Factor_pronostico": {
+      "valor_bd": "Ki-67: ESPERADO (folículos linfoides)",
+      "contiene_ki67": true,
+      "correcto": true
+    }
+  },
+  "texto_ocr_original": [
+    "Linea 30: los siguientes marcadores: Ki-67, BCL2, BCL6, CD3, CD5, CD20, CD38, PAX5.",
+    "Linea 37: marcación de BCL6+ en el centro germinal. El índice de proliferación celular Ki67% es el esperado"
+  ],
+  "resultado": "EXITOSO",
+  "score_auditoria": 100.0,
+  "estado_auditoria": "OK"
+}

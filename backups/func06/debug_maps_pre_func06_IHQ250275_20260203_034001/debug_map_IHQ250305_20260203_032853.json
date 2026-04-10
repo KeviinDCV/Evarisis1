@@ -1,0 +1,139 @@
+{
+  "session_id": "IHQ250305_20260203_032853",
+  "numero_peticion": "IHQ250305",
+  "timestamp": "2026-02-03T03:28:53.082038",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250305\nCopia Pag. 1 de 2\nNombre : DIEGO CALDAS IGLESIAS\nN. peticion : IHQ250305\nN.Identificación : CC. 16820643\nGenero : MASCULINO\nEdad : 70 años 3 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN JOSE SERNA\nServicio : ORTOPEDIA\nFecha Ingreso : 27/03/2025\nFecha Informe : 01/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPROSTATA TRANSRECTAL\nLADO DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410741-A2\" correspondiente a “ próstata” con diagnóstico de \"FOCO MICROGLANDULAR ATIPICO\n(LAMINA NUMERO 2)\". Previa revisión de la histología se realizan niveles histológicos para tinción con los\nmarcadores: p63, Racemasa, CK34BETA12\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nDurante el procesamiento de los estudios de inmunohistoquimica hubo fragmentación del tejido donde\nno es posible evaluar las glándulas prostáticas en su totalidad. La escasa representación disponible \nmuestra marcación positiva para p63, CK34BETA12 y son negativos para Racemasa\nVER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO \nDIAGNÓSTICO\n Próstata, lóbulo derecho, bloque A2. Biopsia. Estudio de inmunohistoquimica \nCOMENTARIOS\nSe sugiere hacer correlación de los hallazgos con historia clínica y laboratorios del paciente. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---\nIHQ250305\nCopia Pag. 2 de 2\nNombre : DIEGO CALDAS IGLESIAS\nN. peticion : IHQ250305\nN.Identificación : CC. 16820643\nGenero : MASCULINO\nEdad : 70 años 3 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN JOSE SERNA\nServicio : ORTOPEDIA\nFecha Ingreso : 27/03/2025\nFecha Informe : 01/04/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3264,
+      "reduccion_porcentaje": 98.13
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250305",
+      "caso_num": 41,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RACEMASA": "NEGATIVO",
+      "IHQ_CK34BETAE12": "NEGATIVO",
+      "nombre_completo": "DIEGO CALDAS IGLESIAS",
+      "numero_peticion": "IHQ250305",
+      "identificacion": "16820643",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "70",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JUAN JOSE SERNA",
+      "servicio": "ORTOPEDIA",
+      "fecha_ingreso": "27/03/2025",
+      "fecha_informe": "01/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250305",
+      "N. de identificación": "16820643",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "ORTOPEDIA",
+      "Médico tratante": "JUAN JOSE SERNA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "27/03/2025",
+      "Fecha Informe": "01/04/2025",
+      "nombres": "DIEGO",
+      "Primer nombre": "DIEGO",
+      "Segundo nombre": "",
+      "apellidos": "CALDAS IGLESIAS",
+      "Primer apellido": "CALDAS",
+      "Segundo apellido": "IGLESIAS",
+      "nombre_formal": "CALDAS IGLESIAS, DIEGO",
+      "diagnostico": "Próstata, lóbulo derecho, bloque A2. Biopsia. Estudio de inmunohistoquimica",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Durante el procesamiento de los estudios de inmunohistoquimica hubo fragmentación del tejido donde no es posible evaluar las glándulas prostáticas en su totalidad. La escasa representación disponible muestra marcación positiva para p63, CK34BETA12 y son negativos para Racemasa VER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2410741-A2\" correspondiente a \" próstata\" con diagnóstico de \"FOCO MICROGLANDULAR ATIPICO (LAMINA NUMERO 2)\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: p63, Racemasa, CK34BETA12",
+      "ihq_organo": "PRÓSTATA, LÓBULO DERECHO, BLOQUE A2",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se sugiere hacer correlación de los hallazgos con historia clínica y laboratorios del paciente.",
+      "IHQ_ORGANO": "PRÓSTATA, LÓBULO DERECHO, BLOQUE A2",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-02-03T03:28:53.465264",
+      "extractor_version": "6.5.89_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250305\nCopia Pag. 1 de 2\nNombre : DIEGO CALDAS IGLESIAS\nN. peticion : IHQ250305\nN.Identificación : CC. 16820643\nGenero : MASCULINO\nEdad : 70 años 3 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN JOSE SERNA\nServicio : ORTOPEDIA\nFecha Ingreso : 27/03/2025\nFecha Informe : 01/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPROSTATA TRANSRECTAL\nLADO DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410741-A2\" correspondiente a “ próstata” con diagnóstico de \"FOCO MICROGLANDULAR ATIPICO\n(LAMINA NUMERO 2)\". Previa revisión de la histología se realizan niveles histológicos para tinción con los\nmarcadores: p63, Racemasa, CK34BETA12\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nDurante el procesamiento de los estudios de inmunohistoquimica hubo fragmentación del tejido donde\nno es posible evaluar las glándulas prostáticas en su totalidad. La escasa representación disponible \nmuestra marcación positiva para p63, CK34BETA12 y son negativos para Racemasa\nVER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO \nDIAGNÓSTICO\n Próstata, lóbulo derecho, bloque A2. Biopsia. Estudio de inmunohistoquimica \nCOMENTARIOS\nSe sugiere hacer correlación de los hallazgos con historia clínica y laboratorios del paciente. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---\nIHQ250305\nCopia Pag. 2 de 2\nNombre : DIEGO CALDAS IGLESIAS\nN. peticion : IHQ250305\nN.Identificación : CC. 16820643\nGenero : MASCULINO\nEdad : 70 años 3 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN JOSE SERNA\nServicio : ORTOPEDIA\nFecha Ingreso : 27/03/2025\nFecha Informe : 01/04/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK34BETAE12, P63, RACEMASA",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410741-A2\" correspondiente a “ próstata” con diagnóstico de \"FOCO MICROGLANDULAR ATIPICO (LAMINA NUMERO 2)\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: p63, Racemasa, CK34BETA12",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Durante el procesamiento de los estudios de inmunohistoquimica hubo fragmentación del tejido donde no es posible evaluar las glándulas prostáticas en su totalidad. La escasa representación disponible muestra marcación positiva para p63, CK34BETA12 y son negativos para Racemasa VER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO",
+      "Descripcion Diagnostico": "Próstata, lóbulo derecho, bloque A2. Biopsia. Estudio de inmunohistoquimica",
+      "IHQ_ORGANO": "PRÓSTATA, LÓBULO DERECHO, BLOQUE A2",
+      "Organo": "PROSTATA TRANSRECTAL LADO DERECHO",
+      "Diagnostico Coloracion": "FOCO MICROGLANDULAR ATIPICO (LAMINA NUMERO 2)",
+      "Diagnostico Principal": "ESTUDIO DE INMUNOHISTOQUIMICA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK34BETAE12": "NEGATIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RACEMASA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 139,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410741-A2\" correspondiente a “ próstata” con diagnóstico de \"FOCO MICROGLANDULAR ATIPICO (LAMINA NUMERO 2)\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: p63, Racemasa, CK34BETA12",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2410741-A2\" correspondiente a \" próstata\" con diagnóstico de \"FOCO MICROGLANDULAR ATIPICO (LAMINA NUMERO 2)\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: p63, Racemasa, CK34BETA12",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250305",
+      "timestamp": "2026-02-03T03:28:53.465065"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 49
+  }
+}

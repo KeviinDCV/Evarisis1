@@ -1,0 +1,164 @@
+{
+  "session_id": "IHQ250125_20260105_214405",
+  "numero_peticion": "IHQ250125",
+  "timestamp": "2026-01-05T21:44:05.027845",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250125\nCopia Pag. 1 de 2\nNombre : MERARDO ROJAS HURTADO\nN. peticion : IHQ250125\nN.Identificación : CC. 82390314\nGenero : MASCULINO\nEdad : 49 años 5 meses 21 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA OSORIO MORALES\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 04/02/2025\nFecha Informe : 25/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500967” correspondiente a “medula ósea” en la que se evidenciaba “celularidad hematopoyética\nglobal del 80%, MEGACARIOCITOS DE 6 A 7 POR CAMPO ADECUDADA MADURACIÓN DE LAS TRES LÍNEAS\n. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MPO,\nCD3, CD 20, CD38, CD 56, C34, CD 117, GLICOFORINA, CD 79ª, PAX 5\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nMedula ósea con celularidad global del 80% en la que se identifican células mieloides (MPO+) y eritroides\n(Glicoforina +) invertida con hiperplasia de la línea eritoride . Los linfocitos T (CD3 +) y células\nplasmáticas CD 38 +y CD 56 negativo de inmunofenotipo esperado. Hay megacariocitos (CD61+) de 5-7\npor campo de alto poder, sin formar cúmulos. Células inmaduras positivas para CD34 y CD117 son\nmenores al 2%. Los linfocitos B positivos para CD 20, PAX 5 y CD 79a no hay aumento en el numero ni\nformación de cúmulos.\nDIAGNÓSTICO\n Medula osea. Biopsia. Estudio de inmunohistoquimica:\nHIPERPLASIA DE LA LINEA ERITROIDE\n- SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA.\n- SIN INCREMENTO DE BLASTOS.\nCOMENTARIOS\nCaso valorado con Dra.Isabella Caicedo (Hematopatologa)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---\nIHQ250125\nCopia Pag. 2 de 2\nNombre : MERARDO ROJAS HURTADO\nN. peticion : IHQ250125\nN.Identificación : CC. 82390314\nGenero : MASCULINO\nEdad : 49 años 5 meses 21 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA OSORIO MORALES\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 04/02/2025\nFecha Informe : 25/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3662,
+      "reduccion_porcentaje": 97.89
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250125",
+      "caso_num": 17,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "nombre_completo": "MERARDO ROJAS HURTADO",
+      "numero_peticion": "IHQ250125",
+      "identificacion": "82390314",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "49",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "DANIELA OSORIO MORALES",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "04/02/2025",
+      "fecha_informe": "25/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250125",
+      "N. de identificación": "82390314",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "DANIELA OSORIO MORALES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "04/02/2025",
+      "Fecha Informe": "25/02/2025",
+      "nombres": "MERARDO",
+      "Primer nombre": "MERARDO",
+      "Segundo nombre": "",
+      "apellidos": "ROJAS HURTADO",
+      "Primer apellido": "ROJAS",
+      "Segundo apellido": "HURTADO",
+      "nombre_formal": "ROJAS HURTADO, MERARDO",
+      "diagnostico": "Medula osea. Biopsia. Estudio de inmunohistoquimica: HIPERPLASIA DE LA LINEA ERITROIDE - SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA. - SIN INCREMENTO DE BLASTOS.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Medula ósea con celularidad global del 80% en la que se identifican células mieloides (MPO+) y eritroides (Glicoforina +) invertida con hiperplasia de la línea eritoride . Los linfocitos T (CD3 +) y células plasmáticas CD 38 +y CD 56 negativo de inmunofenotipo esperado. Hay megacariocitos (CD61+) de 5-7 por campo de alto poder, sin formar cúmulos. Células inmaduras positivas para CD34 y CD117 son menores al 2%. Los linfocitos B positivos para CD 20, PAX 5 y CD 79 a no hay aumento en el numero ni formación de cúmulos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500967” correspondiente a “medula ósea” en la que se evidenciaba “celularidad hematopoyética global del 80%, MEGACARIOCITOS DE 6 A 7 POR CAMPO ADECUDADA MADURACIÓN DE LAS TRES LÍNEAS . Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MPO, CD3, CD 20, CD38, CD 56, C34, CD 117, GLICOFORINA, CD 79ª, PAX 5",
+      "ihq_organo": "MEDULA OSEA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado con Dra.Isabella Caicedo (Hematopatologa)",
+      "IHQ_ORGANO": "MEDULA OSEA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_CD79A": "POSITIVO",
+      "extraction_timestamp": "2026-01-05T21:44:05.588352",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250125\nCopia Pag. 1 de 2\nNombre : MERARDO ROJAS HURTADO\nN. peticion : IHQ250125\nN.Identificación : CC. 82390314\nGenero : MASCULINO\nEdad : 49 años 5 meses 21 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA OSORIO MORALES\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 04/02/2025\nFecha Informe : 25/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500967” correspondiente a “medula ósea” en la que se evidenciaba “celularidad hematopoyética\nglobal del 80%, MEGACARIOCITOS DE 6 A 7 POR CAMPO ADECUDADA MADURACIÓN DE LAS TRES LÍNEAS\n. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MPO,\nCD3, CD 20, CD38, CD 56, C34, CD 117, GLICOFORINA, CD 79ª, PAX 5\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nMedula ósea con celularidad global del 80% en la que se identifican células mieloides (MPO+) y eritroides\n(Glicoforina +) invertida con hiperplasia de la línea eritoride . Los linfocitos T (CD3 +) y células\nplasmáticas CD 38 +y CD 56 negativo de inmunofenotipo esperado. Hay megacariocitos (CD61+) de 5-7\npor campo de alto poder, sin formar cúmulos. Células inmaduras positivas para CD34 y CD117 son\nmenores al 2%. Los linfocitos B positivos para CD 20, PAX 5 y CD 79a no hay aumento en el numero ni\nformación de cúmulos.\nDIAGNÓSTICO\n Medula osea. Biopsia. Estudio de inmunohistoquimica:\nHIPERPLASIA DE LA LINEA ERITROIDE\n- SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA.\n- SIN INCREMENTO DE BLASTOS.\nCOMENTARIOS\nCaso valorado con Dra.Isabella Caicedo (Hematopatologa)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---\nIHQ250125\nCopia Pag. 2 de 2\nNombre : MERARDO ROJAS HURTADO\nN. peticion : IHQ250125\nN.Identificación : CC. 82390314\nGenero : MASCULINO\nEdad : 49 años 5 meses 21 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA OSORIO MORALES\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 04/02/2025\nFecha Informe : 25/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD117, CD20, CD3, CD34, CD38, CD56, CD61, CD79A, GLICOFORINA, MIELOPEROXIDASA, PAX5",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500967” correspondiente a “medula ósea” en la que se evidenciaba “celularidad hematopoyética global del 80%, MEGACARIOCITOS DE 6 A 7 POR CAMPO ADECUDADA MADURACIÓN DE LAS TRES LÍNEAS . Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MPO, CD3, CD 20, CD38, CD 56, C34, CD 117, GLICOFORINA, CD 79ª, PAX 5",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Medula ósea con celularidad global del 80% en la que se identifican células mieloides (MPO+) y eritroides (Glicoforina +) invertida con hiperplasia de la línea eritoride . Los linfocitos T (CD3 +) y células plasmáticas CD 38 +y CD 56 negativo de inmunofenotipo esperado. Hay megacariocitos (CD61+) de 5-7 por campo de alto poder, sin formar cúmulos. Células inmaduras positivas para CD34 y CD117 son menores al 2%. Los linfocitos B positivos para CD 20, PAX 5 y CD 79a no hay aumento en el numero ni formación de cúmulos.",
+      "Descripcion Diagnostico": "Medula osea. Biopsia. Estudio de inmunohistoquimica: HIPERPLASIA DE LA LINEA ERITROIDE - SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA. - SIN INCREMENTO DE BLASTOS.",
+      "IHQ_ORGANO": "MEDULA OSEA",
+      "Organo": "BX MEDULA OSEA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "HIPERPLASIA DE LA LINEA ERITROIDE - SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD79A": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 121,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 11,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 121,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula osea. Biopsia. Estudio de inmunohistoquimica:\nHIPERPLASIA DE LA LINEA ERITROIDE\n- SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA.\n- SIN INCREMENTO DE BLASTOS.",
+      "valor_corregido": "Medula osea. Biopsia. Estudio de inmunohistoquimica: HIPERPLASIA DE LA LINEA ERITROIDE - SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA. - SIN INCREMENTO DE BLASTOS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250125",
+      "timestamp": "2026-01-05T21:44:05.588113"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Medula ósea con celularidad global del 80% en la que se identifican células mieloides (MPO+) y eritroides (Glicoforina +) invertida con hiperplasia de la línea eritoride . Los linfocitos T (CD3 +) y células plasmáticas CD 38 +y CD 56 negativo de inmunofenotipo esperado. Hay megacariocitos (CD61+) de 5-7 por campo de alto poder, sin formar cúmulos. Células inmaduras positivas para CD34 y CD117 son menores al 2%. Los linfocitos B positivos para CD 20, PAX 5 y CD 79a no hay aumento en el numero ni formación de cúmulos.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Medula ósea con celularidad global del 80% en la que se identifican células mieloides (MPO+) y eritroides (Glicoforina +) invertida con hiperplasia de la línea eritoride . Los linfocitos T (CD3 +) y células plasmáticas CD 38 +y CD 56 negativo de inmunofenotipo esperado. Hay megacariocitos (CD61+) de 5-7 por campo de alto poder, sin formar cúmulos. Células inmaduras positivas para CD34 y CD117 son menores al 2%. Los linfocitos B positivos para CD 20, PAX 5 y CD 79 a no hay aumento en el numero ni formación de cúmulos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250125",
+      "timestamp": "2026-01-05T21:44:05.588121"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 57
+  }
+}

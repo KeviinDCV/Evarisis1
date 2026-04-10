@@ -1,0 +1,173 @@
+{
+  "session_id": "IHQ250007_20251202_142759",
+  "numero_peticion": "IHQ250007",
+  "timestamp": "2025-12-02T14:27:59.046143",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250007\nCopia Pag. 1 de 2\nNombre : GABRIEL ANGULO ANGULO\nN. peticion : IHQ250007\nN.Identificación : CC. 1111802442\nGenero : MASCULINO\nEdad : 35 años 1 dia\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 03/01/2025\nFecha Informe : 13/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO PROFUNDO\nMETASTASICO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nproveniente de COLCAN, rotulado como “24-59287” que corresponde a “ganglio profundo metastásico”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción con\nCKAE1E3, CK7, CK20,\nCK19, CDX2, p40, CA19-9, CEA, SALL-4, CD56, synaptofisina, chromogranina y CD30.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CKAE1E3, CD56, CK19 Y CDX2. \nCromogranina y CEA positivo heterogéneo.\nLos marcadores SALL-4, CD30, p40, CK7, CK20 y CA19-9 son negativos.\nDIAGNÓSTICO\nGanglio\nlinfático\nprofundo\n(sitio\nno\nespecificado).\nBiopsia\nescisional.\nEstudio\nde\ninmunohistoquímica:\n-\nHALLAZGOS\nDE\nINMUNOHISTOQUÍMICA\nCOMPATIBLES\nCON\nCARCINOMA\nNEUROENDOCRINO\nMETASTÁSICO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---\nIHQ250007\nCopia Pag. 2 de 2\nNombre : GABRIEL ANGULO ANGULO\nN. peticion : IHQ250007\nN.Identificación : CC. 1111802442\nGenero : MASCULINO\nEdad : 35 años 1 dia\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 03/01/2025\nFecha Informe : 13/01/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3199,
+      "reduccion_porcentaje": 98.13
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250007",
+      "caso_num": 7,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "nombre_completo": "GABRIEL ANGULO ANGULO",
+      "numero_peticion": "IHQ250007",
+      "identificacion": "1111802442",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "35",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "03/01/2025",
+      "fecha_informe": "13/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250007",
+      "N. de identificación": "1111802442",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/01/2025",
+      "Fecha Informe": "13/01/2025",
+      "nombres": "GABRIEL",
+      "Primer nombre": "GABRIEL",
+      "Segundo nombre": "",
+      "apellidos": "ANGULO ANGULO",
+      "Primer apellido": "ANGULO",
+      "Segundo apellido": "ANGULO",
+      "nombre_formal": "ANGULO ANGULO, GABRIEL",
+      "diagnostico": "Ganglio linfático profundo (sitio no especificado). Biopsia escisional. Estudio de inmunohistoquímica: - HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON CARCINOMA NEUROENDOCRINO METASTÁSICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CD56, CK19 Y CDX2. Cromogranina y CEA positivo heterogéneo. Los marcadores SALL-4, CD30, P40, CK7, CK20 y CA19-9 son negativos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional proveniente de COLCAN, rotulado como “24-59287” que corresponde a “ganglio profundo metastásico”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, CK7, CK20, CK19, CDX2, P40, CA19-9, CEA, SALL-4, CD56, synaptophysin, chromogranina y CD30.",
+      "ihq_organo": "GANGLIO\nLINFÁTICO\nPROFUNDO\n(SITIO\nNO\nESPECIFICADO)",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, CK7, CK20, CK19, CDX2, P40, CA19 9, CEA, SALL 4, CD56, SYNAPTOFISINA, CHROMOGRANINA, CD30",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GANGLIO\nLINFÁTICO\nPROFUNDO\n(SITIO\nNO\nESPECIFICADO)",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CHROMOGRANINA": "POSITIVO (HETEROGÉNEO)",
+      "IHQ_CEA": "POSITIVO (HETEROGÉNEO)",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_SALL4": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2025-12-02T14:27:59.170038",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250007\nCopia Pag. 1 de 2\nNombre : GABRIEL ANGULO ANGULO\nN. peticion : IHQ250007\nN.Identificación : CC. 1111802442\nGenero : MASCULINO\nEdad : 35 años 1 dia\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 03/01/2025\nFecha Informe : 13/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO PROFUNDO\nMETASTASICO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nproveniente de COLCAN, rotulado como “24-59287” que corresponde a “ganglio profundo metastásico”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción con\nCKAE1E3, CK7, CK20,\nCK19, CDX2, p40, CA19-9, CEA, SALL-4, CD56, synaptofisina, chromogranina y CD30.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CKAE1E3, CD56, CK19 Y CDX2. \nCromogranina y CEA positivo heterogéneo.\nLos marcadores SALL-4, CD30, p40, CK7, CK20 y CA19-9 son negativos.\nDIAGNÓSTICO\nGanglio\nlinfático\nprofundo\n(sitio\nno\nespecificado).\nBiopsia\nescisional.\nEstudio\nde\ninmunohistoquímica:\n-\nHALLAZGOS\nDE\nINMUNOHISTOQUÍMICA\nCOMPATIBLES\nCON\nCARCINOMA\nNEUROENDOCRINO\nMETASTÁSICO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---\nIHQ250007\nCopia Pag. 2 de 2\nNombre : GABRIEL ANGULO ANGULO\nN. peticion : IHQ250007\nN.Identificación : CC. 1111802442\nGenero : MASCULINO\nEdad : 35 años 1 dia\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 03/01/2025\nFecha Informe : 13/01/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---",
+      "IHQ_CROMOGRANINA": "POSITIVO (HETEROGÉNEO)"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, CK7, CK20, CK19, CDX2, P40, CA19 9, CEA, SALL 4, CD56, SYNAPTOFISINA, CHROMOGRANINA, CD30",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional proveniente de COLCAN, rotulado como “24-59287” que corresponde a “ganglio profundo metastásico”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, CK7, CK20, CK19, CDX2, p40, CA19-9, CEA, SALL-4, CD56, synaptofisina, chromogranina y CD30.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CD56, CK19 Y CDX2. Cromogranina y CEA positivo heterogéneo. Los marcadores SALL-4, CD30, p40, CK7, CK20 y CA19-9 son negativos.",
+      "Descripcion Diagnostico": "Ganglio linfático profundo (sitio no especificado). Biopsia escisional. Estudio de inmunohistoquímica: - HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON CARCINOMA NEUROENDOCRINO METASTÁSICO.",
+      "IHQ_ORGANO": "GANGLIO\nLINFÁTICO\nPROFUNDO\n(SITIO\nNO\nESPECIFICADO)",
+      "Organo": "GANGLIO PROFUNDO METASTASICO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON CARCINOMA NEUROENDOCRINO METASTÁSICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CEA": "POSITIVO (HETEROGÉNEO)",
+      "IHQ_SALL4": "NEGATIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_CHROMOGRANINA": "POSITIVO (HETEROGÉNEO)",
+      "IHQ_CD30": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 150,
+      "campos_vacios": 103,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 11,
+      "completitud_porcentaje": 31.33
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 103,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio\nlinfático\nprofundo\n(sitio\nno\nespecificado).\nBiopsia\nescisional.\nEstudio\nde\ninmunohistoquímica:\n-\nHALLAZGOS\nDE\nINMUNOHISTOQUÍMICA\nCOMPATIBLES\nCON\nCARCINOMA\nNEUROENDOCRINO\nMETASTÁSICO.",
+      "valor_corregido": "Ganglio linfático profundo (sitio no especificado). Biopsia escisional. Estudio de inmunohistoquímica: - HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON CARCINOMA NEUROENDOCRINO METASTÁSICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250007",
+      "timestamp": "2025-12-02T14:27:59.169770"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nproveniente de COLCAN, rotulado como “24-59287” que corresponde a “ganglio profundo metastásico”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción con\nCKAE1E3, CK7, CK20,\nCK19, CDX2, p40, CA19-9, CEA, SALL-4, CD56, synaptofisina, chromogranina y CD30.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional proveniente de COLCAN, rotulado como “24-59287” que corresponde a “ganglio profundo metastásico”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, CK7, CK20, CK19, CDX2, P40, CA19-9, CEA, SALL-4, CD56, synaptophysin, chromogranina y CD30.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250007",
+      "timestamp": "2025-12-02T14:27:59.169776"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CKAE1E3, CD56, CK19 Y CDX2. \nCromogranina y CEA positivo heterogéneo.\nLos marcadores SALL-4, CD30, p40, CK7, CK20 y CA19-9 son negativos.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CD56, CK19 Y CDX2. Cromogranina y CEA positivo heterogéneo. Los marcadores SALL-4, CD30, P40, CK7, CK20 y CA19-9 son negativos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250007",
+      "timestamp": "2025-12-02T14:27:59.169778"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 60
+  }
+}

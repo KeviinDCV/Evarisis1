@@ -1,0 +1,145 @@
+{
+  "session_id": "IHQ250142_20260106_112031",
+  "numero_peticion": "IHQ250142",
+  "timestamp": "2026-01-06T11:20:31.166414",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250142\nCopia Pag. 1 de 1\nNombre : NESTOR VACCA OROZCO\nN. peticion : IHQ250142\nN.Identificación : CC. 14964874\nGenero : MASCULINO\nEdad : 75 años 2 meses 19 dias\nEPS : FOMAG\nMédico tratante : INGRID VIVIANA PEREZ\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/02/2025\nFecha Informe : 11/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX BRONQUIAL DE LOBULO\nSUPERIOR IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501281-2 que corresponde a biopsia transbronquial de pulmon en lóbulo\nsuperior izquierdo, con diagnóstico de \"ADENOCARCINOMA NOS\". Se ordenan estudios de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales presentan inmunorreactividad fuerte y difusa para TTF-1 siendo negativas para\np40.\nDIAGNÓSTICO\nPulmón, lóbulo superior izquierdo. Biopsia transbronquial. Estudios de inmunohistoquímica\nADENOCARCINOMA DE ORIGEN PULMONAR\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 2313,
+      "reduccion_porcentaje": 98.67
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250142",
+      "caso_num": 33,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "nombre_completo": "NESTOR VACCA OROZCO",
+      "numero_peticion": "IHQ250142",
+      "identificacion": "14964874",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "75",
+      "eps": "FOMAG",
+      "medico_tratante": "INGRID VIVIANA PEREZ",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "07/02/2025",
+      "fecha_informe": "11/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250142",
+      "N. de identificación": "14964874",
+      "Tipo de documento": "CC",
+      "EPS": "FOMAG",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "INGRID VIVIANA PEREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/02/2025",
+      "Fecha Informe": "11/02/2025",
+      "nombres": "NESTOR",
+      "Primer nombre": "NESTOR",
+      "Segundo nombre": "",
+      "apellidos": "NESTOR VACCA OROZCO",
+      "Primer apellido": "NESTOR",
+      "Segundo apellido": "VACCA OROZCO",
+      "nombre_formal": "NESTOR VACCA OROZCO, NESTOR",
+      "diagnostico": "Pulmón, lóbulo superior izquierdo. Biopsia transbronquial. Estudios de inmunohistoquímica ADENOCARCINOMA DE ORIGEN PULMONAR",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad fuerte y difusa para TTF1 siendo negativas para p40.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2501281-2 que corresponde a biopsia transbronquial de pulmon en lóbulo superior izquierdo, con diagnóstico de \"ADENOCARCINOMA NOS\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "PULMÓN, LÓBULO SUPERIOR IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PULMÓN, LÓBULO SUPERIOR IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-01-06T11:20:31.440644",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250142\nCopia Pag. 1 de 1\nNombre : NESTOR VACCA OROZCO\nN. peticion : IHQ250142\nN.Identificación : CC. 14964874\nGenero : MASCULINO\nEdad : 75 años 2 meses 19 dias\nEPS : FOMAG\nMédico tratante : INGRID VIVIANA PEREZ\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/02/2025\nFecha Informe : 11/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX BRONQUIAL DE LOBULO\nSUPERIOR IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501281-2 que corresponde a biopsia transbronquial de pulmon en lóbulo\nsuperior izquierdo, con diagnóstico de \"ADENOCARCINOMA NOS\". Se ordenan estudios de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales presentan inmunorreactividad fuerte y difusa para TTF-1 siendo negativas para\np40.\nDIAGNÓSTICO\nPulmón, lóbulo superior izquierdo. Biopsia transbronquial. Estudios de inmunohistoquímica\nADENOCARCINOMA DE ORIGEN PULMONAR\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2501281-2 que corresponde a biopsia transbronquial de pulmon en lóbulo superior izquierdo, con diagnóstico de \"ADENOCARCINOMA NOS\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad fuerte y difusa para TTF-1 siendo negativas para p40.",
+      "Descripcion Diagnostico": "Pulmón, lóbulo superior izquierdo. Biopsia transbronquial. Estudios de inmunohistoquímica ADENOCARCINOMA DE ORIGEN PULMONAR",
+      "IHQ_ORGANO": "PULMÓN, LÓBULO SUPERIOR IZQUIERDO",
+      "Organo": "BX BRONQUIAL DE LOBULO SUPERIOR IZQUIERDA",
+      "Diagnostico Coloracion": "ADENOCARCINOMA NOS",
+      "Diagnostico Principal": "ADENOCARCINOMA DE ORIGEN PULMONAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P40_ESTADO": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 132,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 1,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 132,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón, lóbulo superior izquierdo. Biopsia transbronquial. Estudios de inmunohistoquímica\nADENOCARCINOMA DE ORIGEN PULMONAR",
+      "valor_corregido": "Pulmón, lóbulo superior izquierdo. Biopsia transbronquial. Estudios de inmunohistoquímica ADENOCARCINOMA DE ORIGEN PULMONAR",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250142",
+      "timestamp": "2026-01-06T11:20:31.440436"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad fuerte y difusa para TTF-1 siendo negativas para p40.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad fuerte y difusa para TTF1 siendo negativas para p40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250142",
+      "timestamp": "2026-01-06T11:20:31.440442"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 47
+  }
+}

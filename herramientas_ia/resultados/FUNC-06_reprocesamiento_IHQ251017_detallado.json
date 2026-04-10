@@ -1,0 +1,106 @@
+{
+  "caso": "IHQ251017",
+  "timestamp": "2025-11-07T20:26:33.198503",
+  "operacion": "FUNC-06: Reprocesar Caso Completo",
+  "objetivo": "Validar correcciones en medical_extractor.py v6.2.3",
+  "estado_antes": {
+    "campo_organo_legacy": "BIOPSIA DE MEDULA OSEA IHQ251017-B ESTUDIO DE INMUNOHISTOQUIMICA 898807...",
+    "problemas": [
+      "Contenia codigo de caso (IHQ251017-B)",
+      "Contenia texto administrativo (ESTUDIO DE INMUNOHISTOQUIMICA 898807)",
+      "Texto duplicado",
+      "Longitud excesiva (190+ caracteres)"
+    ]
+  },
+  "correcciones_implementadas": {
+    "archivo": "core/extractors/medical_extractor.py",
+    "version": "v6.2.3",
+    "cambios": [
+      "Mejora del patron bloques_pattern (linea 2520)",
+      "Limpieza adicional en normalize_organ_name (lineas 2581-2587)",
+      "Eliminacion de codigos de caso (IHQ######-X)",
+      "Eliminacion de texto administrativo (ESTUDIO DE...)"
+    ]
+  },
+  "estado_despues": {
+    "reprocesamiento": {
+      "casos_procesados": 47,
+      "pdf_fuente": "IHQ DEL 980 AL 1037.pdf",
+      "tiempo_procesamiento": "~7 segundos",
+      "estado": "EXITOSO"
+    },
+    "campo_organo_legacy": {
+      "valor": "BIOPSIA DE MEDULA OSEA IHQ251017-B ESTUDIO DE INMUNOHISTOQUIMICA 898807...",
+      "longitud": 190,
+      "estado": "SIGUE CONTAMINADO",
+      "razon": "La columna \"Organo\" legacy NO se limpia automaticamente (esperado)"
+    },
+    "campo_ihq_organo_normalizado": {
+      "valor": "MEDULA ÓSEA",
+      "longitud": 11,
+      "estado": "LIMPIO",
+      "verificacion": {
+        "contiene_numero_caso": false,
+        "contiene_estudio": false,
+        "contiene_codigo": false,
+        "contiene_duplicados": false
+      }
+    },
+    "auditoria_inteligente": {
+      "score_validacion": 77.8,
+      "validaciones_ok": 7,
+      "total_validaciones": 9,
+      "warnings": 1,
+      "errores": 2,
+      "estado_final": "ERROR",
+      "detalles_campo_ihq_organo": {
+        "estado": "OK",
+        "mensaje": "IHQ_ORGANO esta limpio",
+        "valor_bd": "MEDULA ÓSEA"
+      },
+      "detalles_campo_organo_legacy": {
+        "estado": "ERROR",
+        "mensaje": "Campo Organo contiene problemas",
+        "valor_bd": "BIOPSIA DE MEDULA OSEA IHQ251017-B ESTUDIO DE INMUNOHISTOQUIMICA 898807...",
+        "valor_sugerido": "BIOPSIA DE MEDULA OSEA",
+        "problemas": [
+          "texto duplicado: BIOPSIA DE MEDULA OSEA",
+          "codigo de caso",
+          "texto administrativo (multiple)"
+        ]
+      },
+      "biomarcadores": {
+        "total_solicitado": 11,
+        "total_mapeado": 11,
+        "cobertura": 100.0,
+        "estado": "OK",
+        "estudios": [
+          "CD138",
+          "CD38",
+          "CD56",
+          "CD117",
+          "CD5",
+          "CD3",
+          "CD20",
+          "CD15",
+          "CD61",
+          "CD34",
+          "GLICOFORINA"
+        ]
+      }
+    }
+  },
+  "conclusion": {
+    "exito_parcial": true,
+    "campo_ihq_organo": "LIMPIO (objetivo logrado)",
+    "campo_organo_legacy": "CONTAMINADO (esperado - columna legacy)",
+    "recomendacion": "Usar campo IHQ_ORGANO normalizado en lugar de columna Organo legacy",
+    "nota_importante": "El sistema ahora tiene 2 columnas: Organo (legacy, contaminada) e IHQ_ORGANO (normalizada, limpia)",
+    "siguientes_pasos": [
+      "Considerar deprecar columna \"Organo\" legacy",
+      "Migrar sistema a usar exclusivamente IHQ_ORGANO",
+      "Actualizar interfaz UI para mostrar IHQ_ORGANO en lugar de Organo",
+      "Corregir extraccion de DIAGNOSTICO_COLORACION (actualmente NO APLICA pero existe en OCR)"
+    ]
+  }
+}

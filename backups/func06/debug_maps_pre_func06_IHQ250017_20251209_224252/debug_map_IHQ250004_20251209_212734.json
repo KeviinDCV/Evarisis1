@@ -1,0 +1,169 @@
+{
+  "session_id": "IHQ250004_20251209_212734",
+  "numero_peticion": "IHQ250004",
+  "timestamp": "2025-12-09T21:27:34.672796",
+  "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250004\nCopia Pag. 1 de 2\nNombre : OLGA YULIETH RODAS GALVIS\nN. peticion : IHQ250004\nN.Identificación : CC. 29448941\nGenero : FEMENINO\nEdad : 46 años 13 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HERRERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 02/01/2025\nFecha Informe : 22/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPOLO TEMPORAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410452” que corresponde a “A y B. Polo temporal derecho y C.Meningioma temporal derecho”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción de la siguiente manera:\n- Bloque A4: GFAP, CD68 Y NeuN.\n- Bloque C: EMA, progesterona y KI-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nA y B. Se reconocen áreas neocorticales con proliferación astrocitaria positiva para proteína acido fibrilar\nglial e incremento de la actividad microglial CD68+. Bajo la tinción de NeuN se observa adecuada\ndisposición laminar de las capas corticales y además, se identifican entre 20 - 30 cuerpos neuronales\nheterotópicos sustancia blanca subcortical. No se observan cambios displásicos ni lesiones neopláscias.\nC. Las células tumorales son positivas para progesterona con intensidad leve parcheada para EMA. Índice\nde proliferación KI-67 del 1-2%.\nDIAGNÓSTICO\nA y B. Cerebro, polo temporal derecho. Lobectomía. Estudio de inmunohistoquímica:\n- HETEROTOPIA NEURONAL.\n- CAMBIOS REACTIVOS GLIALES CON ACTIVIDAD MICROGLIAL.\nC. Cerebro, lóbulo temporal derecho. Tumor. Resección. Estudio de inmunohistoquímica:\n- MENINGIOMA MENINGOTELIAL , WHO 1.\nCOMENTARIOS\nLa interpretación de este estudio debe de estar en estricta correlación con los datos clinicos del paciente,\nresultados de estudios electrofisiológicos y diagnostico por imágenes para su adecuada conclusión.\nCaso valorado en conjunto con neuropatólogo externo.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---\nIHQ250004\nCopia Pag. 2 de 2\nNombre : OLGA YULIETH RODAS GALVIS\nN. peticion : IHQ250004\nN.Identificación : CC. 29448941\nGenero : FEMENINO\nEdad : 46 años 13 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HERRERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 02/01/2025\nFecha Informe : 22/01/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 8 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3903,
+      "reduccion_porcentaje": 97.72
+    },
+    "metadata": {
+      "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250004",
+      "caso_num": 4,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "OLGA YULIETH RODAS GALVIS",
+      "numero_peticion": "IHQ250004",
+      "identificacion": "29448941",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "46",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "ALEJANDRO HERRERA",
+      "servicio": "NEUROCIRUGIA",
+      "fecha_ingreso": "02/01/2025",
+      "fecha_informe": "22/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250004",
+      "N. de identificación": "29448941",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "NEUROCIRUGIA",
+      "Médico tratante": "ALEJANDRO HERRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/01/2025",
+      "Fecha Informe": "22/01/2025",
+      "nombres": "OLGA YULIETH",
+      "Primer nombre": "OLGA",
+      "Segundo nombre": "YULIETH",
+      "apellidos": "RODAS GALVIS",
+      "Primer apellido": "RODAS",
+      "Segundo apellido": "GALVIS",
+      "nombre_formal": "RODAS GALVIS, OLGA YULIETH",
+      "diagnostico": "A y B. Cerebro, polo temporal derecho. Lobectomía. Estudio de inmunohistoquímica: - HETEROTOPIA NEURONAL. - CAMBIOS REACTIVOS GLIALES CON ACTIVIDAD MICROGLIAL. C. Cerebro, lóbulo temporal derecho. Tumor. Resección. Estudio de inmunohistoquímica: - MENINGIOMA MENINGOTELIAL , WHO 1.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A y B. Se reconocen áreas neocorticales con proliferación astrocitaria positiva para proteína acido fibrilar glial e incremento de la actividad microglial CD68+. Bajo la tinción de NeuN se observa adecuada disposición laminar de las capas corticales y además, se identifican entre 20 - 30 cuerpos neuronales heterotópicos sustancia blanca subcortical. No se observan cambios displásicos ni lesiones neopláscias. C. Las células tumorales son positivas para progesterona con intensidad leve parcheada para EMA. Índice de proliferación KI-67 del 1-2%.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410452” que corresponde a “A y B. Polo temporal derecho y C.Meningioma temporal derecho”. Previa revisión de la histología, se realizan niveles histológicos para tinción de la siguiente manera: - Bloque A4: GFAP, CD68 Y NeuN. - Bloque C: EMA, progesterona y KI-67.",
+      "ihq_organo": "CEREBRO, POLO TEMPORAL DERECHO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "GFAP, CD68, NeuN, EMA, Receptor de Progesterona, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "La interpretación de este estudio debe de estar en estricta correlación con los datos clinicos del paciente, resultados de estudios electrofisiológicos y diagnostico por imágenes para su adecuada conclusión. Caso valorado en conjunto con neuropatólogo externo. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 7 --- IHQ250004 Copia Pag. 2 de 2 Nombre : OLGA YULIETH RODAS GALVIS N. peticion : IHQ250004 N.Identificación : CC. 29448941 Genero : FEMENINO Edad : 46 años 13 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : ALEJANDRO HERRERA Servicio : NEUROCIRUGIA Fecha Ingreso : 02/01/2025 Fecha Informe : 22/01/2025",
+      "IHQ_ORGANO": "CEREBRO, POLO TEMPORAL DERECHO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 1-2%, Receptor de Progesterona: POSITIVO",
+      "IHQ_EMA": "POSITIVO (LEVE) (PARCHEADO)",
+      "IHQ_NEUN": "POSITIVO",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_KI-67": "1-2%",
+      "IHQ_CD68": "POSITIVO",
+      "extraction_timestamp": "2025-12-09T21:27:34.828324",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250004\nCopia Pag. 1 de 2\nNombre : OLGA YULIETH RODAS GALVIS\nN. peticion : IHQ250004\nN.Identificación : CC. 29448941\nGenero : FEMENINO\nEdad : 46 años 13 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HERRERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 02/01/2025\nFecha Informe : 22/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPOLO TEMPORAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410452” que corresponde a “A y B. Polo temporal derecho y C.Meningioma temporal derecho”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción de la siguiente manera:\n- Bloque A4: GFAP, CD68 Y NeuN.\n- Bloque C: EMA, progesterona y KI-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nA y B. Se reconocen áreas neocorticales con proliferación astrocitaria positiva para proteína acido fibrilar\nglial e incremento de la actividad microglial CD68+. Bajo la tinción de NeuN se observa adecuada\ndisposición laminar de las capas corticales y además, se identifican entre 20 - 30 cuerpos neuronales\nheterotópicos sustancia blanca subcortical. No se observan cambios displásicos ni lesiones neopláscias.\nC. Las células tumorales son positivas para progesterona con intensidad leve parcheada para EMA. Índice\nde proliferación KI-67 del 1-2%.\nDIAGNÓSTICO\nA y B. Cerebro, polo temporal derecho. Lobectomía. Estudio de inmunohistoquímica:\n- HETEROTOPIA NEURONAL.\n- CAMBIOS REACTIVOS GLIALES CON ACTIVIDAD MICROGLIAL.\nC. Cerebro, lóbulo temporal derecho. Tumor. Resección. Estudio de inmunohistoquímica:\n- MENINGIOMA MENINGOTELIAL , WHO 1.\nCOMENTARIOS\nLa interpretación de este estudio debe de estar en estricta correlación con los datos clinicos del paciente,\nresultados de estudios electrofisiológicos y diagnostico por imágenes para su adecuada conclusión.\nCaso valorado en conjunto con neuropatólogo externo.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---\nIHQ250004\nCopia Pag. 2 de 2\nNombre : OLGA YULIETH RODAS GALVIS\nN. peticion : IHQ250004\nN.Identificación : CC. 29448941\nGenero : FEMENINO\nEdad : 46 años 13 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HERRERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 02/01/2025\nFecha Informe : 22/01/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 8 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "GFAP, CD68, NeuN, EMA, Receptor de Progesterona, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410452” que corresponde a “A y B. Polo temporal derecho y C.Meningioma temporal derecho”. Previa revisión de la histología, se realizan niveles histológicos para tinción de la siguiente manera: - Bloque A4: GFAP, CD68 Y NeuN. - Bloque C: EMA, progesterona y KI-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A y B. Se reconocen áreas neocorticales con proliferación astrocitaria positiva para proteína acido fibrilar glial e incremento de la actividad microglial CD68+. Bajo la tinción de NeuN se observa adecuada disposición laminar de las capas corticales y además, se identifican entre 20 - 30 cuerpos neuronales heterotópicos sustancia blanca subcortical. No se observan cambios displásicos ni lesiones neopláscias. C. Las células tumorales son positivas para progesterona con intensidad leve parcheada para EMA. Índice de proliferación KI-67 del 1-2%.",
+      "Descripcion Diagnostico": "A y B. Cerebro, polo temporal derecho. Lobectomía. Estudio de inmunohistoquímica: - HETEROTOPIA NEURONAL. - CAMBIOS REACTIVOS GLIALES CON ACTIVIDAD MICROGLIAL. C. Cerebro, lóbulo temporal derecho. Tumor. Resección. Estudio de inmunohistoquímica: - MENINGIOMA MENINGOTELIAL , WHO 1.",
+      "IHQ_ORGANO": "CEREBRO, POLO TEMPORAL DERECHO",
+      "Organo": "POLO TEMPORAL",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "HETEROTOPIA NEURONAL",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: 1-2%, Receptor de Progesterona: POSITIVO",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_NEUN": "POSITIVO",
+      "IHQ_EMA": "POSITIVO (LEVE) (PARCHEADO)",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_KI-67": "1-2%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 156,
+      "campos_vacios": 115,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 6,
+      "completitud_porcentaje": 26.28
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 115,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A y B. Cerebro, polo temporal derecho. Lobectomía. Estudio de inmunohistoquímica:\n- HETEROTOPIA NEURONAL.\n- CAMBIOS REACTIVOS GLIALES CON ACTIVIDAD MICROGLIAL.\nC. Cerebro, lóbulo temporal derecho. Tumor. Resección. Estudio de inmunohistoquímica:\n- MENINGIOMA MENINGOTELIAL , WHO 1.",
+      "valor_corregido": "A y B. Cerebro, polo temporal derecho. Lobectomía. Estudio de inmunohistoquímica: - HETEROTOPIA NEURONAL. - CAMBIOS REACTIVOS GLIALES CON ACTIVIDAD MICROGLIAL. C. Cerebro, lóbulo temporal derecho. Tumor. Resección. Estudio de inmunohistoquímica: - MENINGIOMA MENINGOTELIAL , WHO 1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250004",
+      "timestamp": "2025-12-09T21:27:34.828105"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410452” que corresponde a “A y B. Polo temporal derecho y C.Meningioma temporal derecho”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción de la siguiente manera:\n- Bloque A4: GFAP, CD68 Y NeuN.\n- Bloque C: EMA, progesterona y KI-67.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410452” que corresponde a “A y B. Polo temporal derecho y C.Meningioma temporal derecho”. Previa revisión de la histología, se realizan niveles histológicos para tinción de la siguiente manera: - Bloque A4: GFAP, CD68 Y NeuN. - Bloque C: EMA, progesterona y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250004",
+      "timestamp": "2025-12-09T21:27:34.828112"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nA y B. Se reconocen áreas neocorticales con proliferación astrocitaria positiva para proteína acido fibrilar\nglial e incremento de la actividad microglial CD68+. Bajo la tinción de NeuN se observa adecuada\ndisposición laminar de las capas corticales y además, se identifican entre 20 - 30 cuerpos neuronales\nheterotópicos sustancia blanca subcortical. No se observan cambios displásicos ni lesiones neopláscias.\nC. Las células tumorales son positivas para progesterona con intensidad leve parcheada para EMA. Índice\nde proliferación KI-67 del 1-2%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A y B. Se reconocen áreas neocorticales con proliferación astrocitaria positiva para proteína acido fibrilar glial e incremento de la actividad microglial CD68+. Bajo la tinción de NeuN se observa adecuada disposición laminar de las capas corticales y además, se identifican entre 20 - 30 cuerpos neuronales heterotópicos sustancia blanca subcortical. No se observan cambios displásicos ni lesiones neopláscias. C. Las células tumorales son positivas para progesterona con intensidad leve parcheada para EMA. Índice de proliferación KI-67 del 1-2%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250004",
+      "timestamp": "2025-12-09T21:27:34.828114"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La interpretación de este estudio debe de estar en estricta correlación con los datos clinicos del paciente,\nresultados de estudios electrofisiológicos y diagnostico por imágenes para su adecuada conclusión.\nCaso valorado en conjunto con neuropatólogo externo.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---\nIHQ250004\nCopia Pag. 2 de 2\nNombre : OLGA YULIETH RODAS GALVIS\nN. peticion : IHQ250004\nN.Identificación : CC. 29448941\nGenero : FEMENINO\nEdad : 46 años 13 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HERRERA\nServicio : NEUROCIRUGIA\nFecha Ingreso : 02/01/2025\nFecha Informe : 22/01/2025",
+      "valor_corregido": "La interpretación de este estudio debe de estar en estricta correlación con los datos clinicos del paciente, resultados de estudios electrofisiológicos y diagnostico por imágenes para su adecuada conclusión. Caso valorado en conjunto con neuropatólogo externo. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 7 --- IHQ250004 Copia Pag. 2 de 2 Nombre : OLGA YULIETH RODAS GALVIS N. peticion : IHQ250004 N.Identificación : CC. 29448941 Genero : FEMENINO Edad : 46 años 13 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : ALEJANDRO HERRERA Servicio : NEUROCIRUGIA Fecha Ingreso : 02/01/2025 Fecha Informe : 22/01/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250004",
+      "timestamp": "2025-12-09T21:27:34.828119"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 54
+  }
+}

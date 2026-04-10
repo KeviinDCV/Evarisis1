@@ -1,0 +1,163 @@
+{
+  "session_id": "IHQ250303_20260203_034507",
+  "numero_peticion": "IHQ250303",
+  "timestamp": "2026-02-03T03:45:07.631850",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250303\nCopia Pag. 1 de 2\nNombre : MARIA CRISTINA SALAS MONTOYA\nN. peticion : IHQ250303\nN.Identificación : CC. 25379501\nGenero : FEMENINO\nEdad : 66 años 2 meses 30 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : NATHALY PRADA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 26/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2502786-1 que corresponde a biopsia de lesión en hígado con diagnóstico\nde \"NEOPLASIA EN PATRON SOLIDO (Foco de 2 mm)\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLa representación de células tumorales es escasa sin presencia de mitosis y estas presentan\ninmunorreactividad para Cromogranina y focal positividad para Sinaptofisina, siendo negativas para CK7,\nCK20 y CDX2.\nEl índice de proliferación celular presenta un Ki-67 menor del 1%.\nDIAGNÓSTICO\nHígado, sin otra especificación. Lesión. Biopsia. Estudios de inmunohistoquímica\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON TUMOR NEUROENDOCRINO\nBIEN DIFERENCIADO GRADO 1 ( VER COMENTARIO)\nCOMENTARIOS\nLa representaciòn tumoral es escasa, el patron y grado histologico peude cambiar en el especimen \nresecciòn\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---\nIHQ250303\nCopia Pag. 2 de 2\nNombre : MARIA CRISTINA SALAS MONTOYA\nN. peticion : IHQ250303\nN.Identificación : CC. 25379501\nGenero : FEMENINO\nEdad : 66 años 2 meses 30 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : NATHALY PRADA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 26/03/2025\nFecha Informe : 28/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3306,
+      "reduccion_porcentaje": 98.11
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250303",
+      "caso_num": 39,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_SINAPTOFISINA": "POSITIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "nombre_completo": "MARIA CRISTINA SALAS MONTOYA",
+      "numero_peticion": "IHQ250303",
+      "identificacion": "25379501",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "66",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "NATHALY PRADA",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "26/03/2025",
+      "fecha_informe": "28/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250303",
+      "N. de identificación": "25379501",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "NATHALY PRADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "26/03/2025",
+      "Fecha Informe": "28/03/2025",
+      "nombres": "MARIA CRISTINA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "CRISTINA",
+      "apellidos": "SALAS MONTOYA",
+      "Primer apellido": "SALAS",
+      "Segundo apellido": "MONTOYA",
+      "nombre_formal": "SALAS MONTOYA, MARIA CRISTINA",
+      "diagnostico": "Hígado, sin otra especificación. Lesión. Biopsia. Estudios de inmunohistoquímica HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON TUMOR NEUROENDOCRINO BIEN DIFERENCIADO GRADO 1 ( VER COMENTARIO)",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. La representación de células tumorales es escasa sin presencia de mitosis y estas presentan inmunorreactividad para Cromogranina y focal positividad para Synaptophysin, siendo negativas para CK7, CK20 y CDX2. El índice de proliferación celular presenta un KI-67 menor del 1%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2502786-1 que corresponde a biopsia de lesión en hígado con diagnóstico de \"NEOPLASIA EN PATRON SOLIDO (Foco de 2 mm)\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "HÍGADO, SIN OTRA ESPECIFICACIÓN",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "La representaciòn tumoral es escasa, el patron y grado histologico peude cambiar en el especimen resecciò",
+      "IHQ_ORGANO": "HÍGADO, SIN OTRA ESPECIFICACIÓN",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "POSITIVO",
+      "IHQ_KI-67": "<1%",
+      "extraction_timestamp": "2026-02-03T03:45:07.955280",
+      "extractor_version": "6.5.90_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250303\nCopia Pag. 1 de 2\nNombre : MARIA CRISTINA SALAS MONTOYA\nN. peticion : IHQ250303\nN.Identificación : CC. 25379501\nGenero : FEMENINO\nEdad : 66 años 2 meses 30 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : NATHALY PRADA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 26/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2502786-1 que corresponde a biopsia de lesión en hígado con diagnóstico\nde \"NEOPLASIA EN PATRON SOLIDO (Foco de 2 mm)\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLa representación de células tumorales es escasa sin presencia de mitosis y estas presentan\ninmunorreactividad para Cromogranina y focal positividad para Sinaptofisina, siendo negativas para CK7,\nCK20 y CDX2.\nEl índice de proliferación celular presenta un Ki-67 menor del 1%.\nDIAGNÓSTICO\nHígado, sin otra especificación. Lesión. Biopsia. Estudios de inmunohistoquímica\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON TUMOR NEUROENDOCRINO\nBIEN DIFERENCIADO GRADO 1 ( VER COMENTARIO)\nCOMENTARIOS\nLa representaciòn tumoral es escasa, el patron y grado histologico peude cambiar en el especimen \nresecciòn\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---\nIHQ250303\nCopia Pag. 2 de 2\nNombre : MARIA CRISTINA SALAS MONTOYA\nN. peticion : IHQ250303\nN.Identificación : CC. 25379501\nGenero : FEMENINO\nEdad : 66 años 2 meses 30 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : NATHALY PRADA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 26/03/2025\nFecha Informe : 28/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CDX2, CK20, CK7, CROMOGRANINA, Ki-67, SYNAPTOFISINA",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2502786-1 que corresponde a biopsia de lesión en hígado con diagnóstico de \"NEOPLASIA EN PATRON SOLIDO (Foco de 2 mm)\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. La representación de células tumorales es escasa sin presencia de mitosis y estas presentan inmunorreactividad para Cromogranina y focal positividad para Sinaptofisina, siendo negativas para CK7, CK20 y CDX2. El índice de proliferación celular presenta un Ki-67 menor del 1%.",
+      "Descripcion Diagnostico": "Hígado, sin otra especificación. Lesión. Biopsia. Estudios de inmunohistoquímica HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON TUMOR NEUROENDOCRINO BIEN DIFERENCIADO GRADO 1 ( VER COMENTARIO)",
+      "IHQ_ORGANO": "HÍGADO, SIN OTRA ESPECIFICACIÓN",
+      "Organo": "BX HIGADO",
+      "Diagnostico Coloracion": "NEOPLASIA EN PATRON SOLIDO (FOCO DE 2 MM)",
+      "Diagnostico Principal": "ESTUDIOS DE INMUNOHISTOQUÍMICA HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON TUMOR NEUROENDOCRINO BIEN DIFERENCIADO GRADO 1",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "POSITIVO",
+      "IHQ_KI-67": "<1%",
+      "IHQ_SINAPTOFISINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 135,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hígado, sin otra especificación. Lesión. Biopsia. Estudios de inmunohistoquímica\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON TUMOR NEUROENDOCRINO\nBIEN DIFERENCIADO GRADO 1 ( VER COMENTARIO)",
+      "valor_corregido": "Hígado, sin otra especificación. Lesión. Biopsia. Estudios de inmunohistoquímica HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON TUMOR NEUROENDOCRINO BIEN DIFERENCIADO GRADO 1 ( VER COMENTARIO)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250303",
+      "timestamp": "2026-02-03T03:45:07.955080"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. La representación de células tumorales es escasa sin presencia de mitosis y estas presentan inmunorreactividad para Cromogranina y focal positividad para Sinaptofisina, siendo negativas para CK7, CK20 y CDX2. El índice de proliferación celular presenta un Ki-67 menor del 1%.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. La representación de células tumorales es escasa sin presencia de mitosis y estas presentan inmunorreactividad para Cromogranina y focal positividad para Synaptophysin, siendo negativas para CK7, CK20 y CDX2. El índice de proliferación celular presenta un KI-67 menor del 1%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250303",
+      "timestamp": "2026-02-03T03:45:07.955086"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La representaciòn tumoral es escasa, el patron y grado histologico peude cambiar en el especimen \nresecciò",
+      "valor_corregido": "La representaciòn tumoral es escasa, el patron y grado histologico peude cambiar en el especimen resecciò",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250303",
+      "timestamp": "2026-02-03T03:45:07.955088"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 53
+  }
+}

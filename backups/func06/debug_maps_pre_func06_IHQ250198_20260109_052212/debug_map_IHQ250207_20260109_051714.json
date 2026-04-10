@@ -1,0 +1,165 @@
+{
+  "session_id": "IHQ250207_20260109_051714",
+  "numero_peticion": "IHQ250207",
+  "timestamp": "2026-01-09T05:17:14.020527",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250207\nCopia Pag. 1 de 2\nNombre : LUZ MIRIAM GALVIS\nN. peticion : IHQ250207\nN.Identificación : CC. 31871658\nGenero : FEMENINO\nEdad : 65 años 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CARLOS ALBERTO HERNANDEZ\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 26/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nREGION PARIETAL\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501826-3 que corresponde a resección de masa en región parietal\nderecha. Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLa muestra presenta extensa necrosis y neovascularización, las células tumorales son positivas para\nCKAE1/AE3 y PAX-8, siendo negativas para la expresión de GFAP, CK7, CK20, RCC, TTF-1, GATA-3, sin\nexpresión aberrante de p53 ni IDH-1.\nEl índice de proliferación celular presenta un Ki-67 del 60%.\nDIAGNÓSTICO\nRegión parietal derecho. Lesión. Resección. Estudios de inmunohistoquímica:\nLOS HALLAZGOS SON COMPATIBLES CON:\n-CARCINOMA METASTASICO DE PROBABLE ORIGEN RENAL.\nCOMENTARIOS\nSi bien la morfología favorecía una neoplasia de probable origen glial, con los marcadores de\ninmunohistoquímica se descarta este diagnóstico debido a la ausencia de diferenciación glial en dicha\ncelularidad con un GAFP negativo y con positividad para origen epitelial dado por la positividad de\nCKAE1/AE3 y PAX-8 positivo, por lo que se considera carcinoma metastásico de probable origen renal, por\nlo que se debe corroborar con la clínica e imágenes diagnósticas del paciente.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---\nIHQ250207\nCopia Pag. 2 de 2\nNombre : LUZ MIRIAM GALVIS\nN. peticion : IHQ250207\nN.Identificación : CC. 31871658\nGenero : FEMENINO\nEdad : 65 años 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CARLOS ALBERTO HERNANDEZ\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 26/02/2025\nFecha Informe : 05/03/2025\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3571,
+      "reduccion_porcentaje": 97.85
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250207",
+      "caso_num": 46,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "nombre_completo": "LUZ MIRIAM GALVIS",
+      "numero_peticion": "IHQ250207",
+      "identificacion": "31871658",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "65",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "CARLOS ALBERTO HERNANDEZ",
+      "servicio": "UCI NEUROCIRUGIA",
+      "fecha_ingreso": "26/02/2025",
+      "fecha_informe": "05/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250207",
+      "N. de identificación": "31871658",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "UCI NEUROCIRUGIA",
+      "Médico tratante": "CARLOS ALBERTO HERNANDEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "26/02/2025",
+      "Fecha Informe": "05/03/2025",
+      "nombres": "LUZ MIRIAM",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "MIRIAM",
+      "apellidos": "GALVIS",
+      "Primer apellido": "GALVIS",
+      "Segundo apellido": "",
+      "nombre_formal": "GALVIS, LUZ MIRIAM",
+      "diagnostico": "Región parietal derecho. Lesión. Resección. Estudios de inmunohistoquímica: LOS HALLAZGOS SON COMPATIBLES CON: -CARCINOMA METASTASICO DE PROBABLE ORIGEN RENAL.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La muestra presenta extensa necrosis y neovascularización, las células tumorales son positivas para CKAE1/AE3 y PAX-8, siendo negativas para la expresión de GFAP, CK7, CK20, RCC, TTF1, GATA-3, sin expresión aberrante de p53 ni IDH-1. El índice de proliferación celular presenta un KI-67 del 60%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2501826-3 que corresponde a resección de masa en región parietal derecha. Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "REGIÓN PARIETAL DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Si bien la morfología favorecía una neoplasia de probable origen glial, con los marcadores de inmunohistoquímica se descarta este diagnóstico debido a la ausencia de diferenciación glial en dicha celularidad con un GAFP negativo y con positividad para origen epitelial dado por la positividad de CKAE1/AE3 y PAX-8 positivo, por lo que se considera carcinoma metastásico de probable origen renal, por lo que se debe corroborar con la clínica e imágenes diagnósticas del paciente.",
+      "IHQ_ORGANO": "REGIÓN PARIETAL DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: 60%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_P53": "NEGATIVO",
+      "IHQ_IDH1": "NEGATIVO",
+      "IHQ_KI-67": "60%",
+      "extraction_timestamp": "2026-01-09T05:17:14.505850",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250207\nCopia Pag. 1 de 2\nNombre : LUZ MIRIAM GALVIS\nN. peticion : IHQ250207\nN.Identificación : CC. 31871658\nGenero : FEMENINO\nEdad : 65 años 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CARLOS ALBERTO HERNANDEZ\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 26/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nREGION PARIETAL\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501826-3 que corresponde a resección de masa en región parietal\nderecha. Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLa muestra presenta extensa necrosis y neovascularización, las células tumorales son positivas para\nCKAE1/AE3 y PAX-8, siendo negativas para la expresión de GFAP, CK7, CK20, RCC, TTF-1, GATA-3, sin\nexpresión aberrante de p53 ni IDH-1.\nEl índice de proliferación celular presenta un Ki-67 del 60%.\nDIAGNÓSTICO\nRegión parietal derecho. Lesión. Resección. Estudios de inmunohistoquímica:\nLOS HALLAZGOS SON COMPATIBLES CON:\n-CARCINOMA METASTASICO DE PROBABLE ORIGEN RENAL.\nCOMENTARIOS\nSi bien la morfología favorecía una neoplasia de probable origen glial, con los marcadores de\ninmunohistoquímica se descarta este diagnóstico debido a la ausencia de diferenciación glial en dicha\ncelularidad con un GAFP negativo y con positividad para origen epitelial dado por la positividad de\nCKAE1/AE3 y PAX-8 positivo, por lo que se considera carcinoma metastásico de probable origen renal, por\nlo que se debe corroborar con la clínica e imágenes diagnósticas del paciente.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---\nIHQ250207\nCopia Pag. 2 de 2\nNombre : LUZ MIRIAM GALVIS\nN. peticion : IHQ250207\nN.Identificación : CC. 31871658\nGenero : FEMENINO\nEdad : 65 años 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CARLOS ALBERTO HERNANDEZ\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 26/02/2025\nFecha Informe : 05/03/2025\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CKAE1AE3, GFAP, Ki-67, P53, PAX8",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2501826-3 que corresponde a resección de masa en región parietal derecha. Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La muestra presenta extensa necrosis y neovascularización, las células tumorales son positivas para CKAE1/AE3 y PAX-8, siendo negativas para la expresión de GFAP, CK7, CK20, RCC, TTF-1, GATA-3, sin expresión aberrante de p53 ni IDH-1. El índice de proliferación celular presenta un Ki-67 del 60%.",
+      "Descripcion Diagnostico": "Región parietal derecho. Lesión. Resección. Estudios de inmunohistoquímica: LOS HALLAZGOS SON COMPATIBLES CON: -CARCINOMA METASTASICO DE PROBABLE ORIGEN RENAL.",
+      "IHQ_ORGANO": "REGIÓN PARIETAL DERECHO",
+      "Organo": "REGION PARIETAL DERECHA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "LOS HALLAZGOS SON COMPATIBLES CON: -CARCINOMA METASTASICO DE PROBABLE ORIGEN RENAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 60%",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_KI-67": "60%",
+      "IHQ_P53": "NEGATIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_IDH1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 170,
+      "campos_vacios": 129,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región parietal derecho. Lesión. Resección. Estudios de inmunohistoquímica:\nLOS HALLAZGOS SON COMPATIBLES CON:\n-CARCINOMA METASTASICO DE PROBABLE ORIGEN RENAL.",
+      "valor_corregido": "Región parietal derecho. Lesión. Resección. Estudios de inmunohistoquímica: LOS HALLAZGOS SON COMPATIBLES CON: -CARCINOMA METASTASICO DE PROBABLE ORIGEN RENAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250207",
+      "timestamp": "2026-01-09T05:17:14.505622"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La muestra presenta extensa necrosis y neovascularización, las células tumorales son positivas para CKAE1/AE3 y PAX-8, siendo negativas para la expresión de GFAP, CK7, CK20, RCC, TTF-1, GATA-3, sin expresión aberrante de p53 ni IDH-1. El índice de proliferación celular presenta un Ki-67 del 60%.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La muestra presenta extensa necrosis y neovascularización, las células tumorales son positivas para CKAE1/AE3 y PAX-8, siendo negativas para la expresión de GFAP, CK7, CK20, RCC, TTF1, GATA-3, sin expresión aberrante de p53 ni IDH-1. El índice de proliferación celular presenta un KI-67 del 60%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250207",
+      "timestamp": "2026-01-09T05:17:14.505628"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Si bien la morfología favorecía una neoplasia de probable origen glial, con los marcadores de\ninmunohistoquímica se descarta este diagnóstico debido a la ausencia de diferenciación glial en dicha\ncelularidad con un GAFP negativo y con positividad para origen epitelial dado por la positividad de\nCKAE1/AE3 y PAX-8 positivo, por lo que se considera carcinoma metastásico de probable origen renal, por\nlo que se debe corroborar con la clínica e imágenes diagnósticas del paciente.",
+      "valor_corregido": "Si bien la morfología favorecía una neoplasia de probable origen glial, con los marcadores de inmunohistoquímica se descarta este diagnóstico debido a la ausencia de diferenciación glial en dicha celularidad con un GAFP negativo y con positividad para origen epitelial dado por la positividad de CKAE1/AE3 y PAX-8 positivo, por lo que se considera carcinoma metastásico de probable origen renal, por lo que se debe corroborar con la clínica e imágenes diagnósticas del paciente.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250207",
+      "timestamp": "2026-01-09T05:17:14.505630"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 53
+  }
+}

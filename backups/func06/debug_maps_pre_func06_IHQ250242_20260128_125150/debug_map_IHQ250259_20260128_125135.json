@@ -1,0 +1,143 @@
+{
+  "session_id": "IHQ250259_20260128_125135",
+  "numero_peticion": "IHQ250259",
+  "timestamp": "2026-01-28T12:51:35.485301",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250259\nCopia Pag. 1 de 2\nNombre : SILVIA IRENE SEGURA\nPORTOCARRERO\nN. peticion : IHQ250259\nN.Identificación : CC. 59664424\nGenero : FEMENINO\nEdad : 59 años\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 11/03/2025\nFecha Informe : 25/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orde para realización de inmunhistoquímica en material extrainstitucional proveniente de\n\"COLCAN, laboratorio clínico\" rotulado como \"4480-2025\" el cual consiste en un bloque de parafina y\nuna lámina de H&E correspondiente a \"biopsia de recto\" con diagnóstico de \"ADENOCARCINOMA DE TIPO\nINTESTINAL INFILTRANTE MODERADAMENTE DIFERENCIADO EROSIANADO Y ULCERADO\". Se revisan\nplacas para marcación de HER2, MSH2, MSH6, MLH1 y PMS2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nEVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta con marcación citoplasmática en el 90%.\nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nLas células tumorales no presentan expresión para HER2 (score 0)\nLos controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.\nDIAGNÓSTICO\n Mucosa rectal. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica.\nADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE.\nSIN EXPRESIÓN PARA HER2.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 91 ---\nIHQ250259\nCopia Pag. 2 de 2\nNombre : SILVIA IRENE SEGURA\nPORTOCARRERO\nN. peticion : IHQ250259\nN.Identificación : CC. 59664424\nGenero : FEMENINO\nEdad : 59 años\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 11/03/2025\nFecha Informe : 25/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 92 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3559,
+      "reduccion_porcentaje": 98.02
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250259",
+      "caso_num": 47,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "SILVIA IRENE SEGURA PORTOCARRERO",
+      "numero_peticion": "IHQ250259",
+      "identificacion": "59664424",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "59",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "11/03/2025",
+      "fecha_informe": "25/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250259",
+      "N. de identificación": "59664424",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "11/03/2025",
+      "Fecha Informe": "25/03/2025",
+      "nombres": "SILVIA IRENE",
+      "Primer nombre": "SILVIA",
+      "Segundo nombre": "IRENE",
+      "apellidos": "SEGURA PORTOCARRERO",
+      "Primer apellido": "SEGURA",
+      "Segundo apellido": "PORTOCARRERO",
+      "nombre_formal": "SEGURA PORTOCARRERO, SILVIA IRENE",
+      "diagnostico": "Mucosa rectal. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica. ADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE. SIN EXPRESIÓN PARA HER2: 11/03/2025",
+      "descripcion_microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta con marcación citoplasmática en el 90%. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable Las células tumorales no presentan expresión para HER2 (score 0) Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.",
+      "descripcion_macroscopica": "Se recibe orde para realización de inmunhistoquímica en material extrainstitucional proveniente de \"COLCAN, laboratorio clínico\" rotulado como \"4480-2025\" el cual consiste en un bloque de parafina y una lámina de H&E correspondiente a \"biopsia de recto\" con diagnóstico de \"ADENOCARCINOMA DE TIPO INTESTINAL INFILTRANTE MODERADAMENTE DIFERENCIADO EROSIANADO Y ULCERADO\". Se revisan placas para marcación de HER2, MSH2, MSH6, MLH1 y PMS2.",
+      "ihq_organo": "MUCOSA RECTAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2, MSH2, MSH6, MLH1, PMS2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA RECTAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2 (score 0)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH2, MSH6, MLH1, PMS2",
+      "IHQ_HER2": "(SCORE 0)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "extraction_timestamp": "2026-01-28T12:51:35.971329",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250259\nCopia Pag. 1 de 2\nNombre : SILVIA IRENE SEGURA\nPORTOCARRERO\nN. peticion : IHQ250259\nN.Identificación : CC. 59664424\nGenero : FEMENINO\nEdad : 59 años\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 11/03/2025\nFecha Informe : 25/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orde para realización de inmunhistoquímica en material extrainstitucional proveniente de\n\"COLCAN, laboratorio clínico\" rotulado como \"4480-2025\" el cual consiste en un bloque de parafina y\nuna lámina de H&E correspondiente a \"biopsia de recto\" con diagnóstico de \"ADENOCARCINOMA DE TIPO\nINTESTINAL INFILTRANTE MODERADAMENTE DIFERENCIADO EROSIANADO Y ULCERADO\". Se revisan\nplacas para marcación de HER2, MSH2, MSH6, MLH1 y PMS2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nEVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta con marcación citoplasmática en el 90%.\nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nLas células tumorales no presentan expresión para HER2 (score 0)\nLos controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.\nDIAGNÓSTICO\n Mucosa rectal. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica.\nADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE.\nSIN EXPRESIÓN PARA HER2.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 91 ---\nIHQ250259\nCopia Pag. 2 de 2\nNombre : SILVIA IRENE SEGURA\nPORTOCARRERO\nN. peticion : IHQ250259\nN.Identificación : CC. 59664424\nGenero : FEMENINO\nEdad : 59 años\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 11/03/2025\nFecha Informe : 25/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 92 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH2, MSH6, MLH1, PMS2",
+      "Descripcion macroscopica": "Se recibe orde para realización de inmunhistoquímica en material extrainstitucional proveniente de \"COLCAN, laboratorio clínico\" rotulado como \"4480-2025\" el cual consiste en un bloque de parafina y una lámina de H&E correspondiente a \"biopsia de recto\" con diagnóstico de \"ADENOCARCINOMA DE TIPO INTESTINAL INFILTRANTE MODERADAMENTE DIFERENCIADO EROSIANADO Y ULCERADO\". Se revisan placas para marcación de HER2, MSH2, MSH6, MLH1 y PMS2.",
+      "Descripcion microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta con marcación citoplasmática en el 90%. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable Las células tumorales no presentan expresión para HER2 (score 0) Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.",
+      "Descripcion Diagnostico": "Mucosa rectal. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica. ADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE. SIN EXPRESIÓN PARA HER2: 11/03/2025",
+      "IHQ_ORGANO": "MUCOSA RECTAL",
+      "Organo": "BX LESION RECTO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA DE TIPO INTESTINAL INFILTRANTE MODERADAMENTE DIFERENCIADO EROSIANADO Y ULCERADO",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 (score 0)",
+      "IHQ_HER2": "(SCORE 0)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 175,
+      "campos_vacios": 135,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa rectal. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica.\nADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE.\nSIN EXPRESIÓN PARA HER2: 11/03/2025",
+      "valor_corregido": "Mucosa rectal. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica. ADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE. SIN EXPRESIÓN PARA HER2: 11/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250259",
+      "timestamp": "2026-01-28T12:51:35.971098"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 53
+  }
+}

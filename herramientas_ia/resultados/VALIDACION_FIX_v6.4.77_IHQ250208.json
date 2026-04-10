@@ -1,0 +1,53 @@
+{
+  "caso": "IHQ250208",
+  "fix": "v6.4.77",
+  "fecha_validacion": "2026-01-12T19:07:39.938269",
+  "objetivo": "Validar alias BLC2 -> BCL2 para corregir error OCR",
+  "resultado": "EXITOSO",
+  "auditoria_inteligente": {
+    "score": 100.0,
+    "estado": "OK",
+    "warnings": 0,
+    "errores": 0
+  },
+  "biomarcadores_esperados": [
+    "BCL2 (alias BLC2)",
+    "BCL6",
+    "CD3",
+    "CD20"
+  ],
+  "biomarcadores_extraidos": {
+    "BCL2": "POSITIVO",
+    "BCL6": "POSITIVO",
+    "CD3": "POSITIVO",
+    "CD20": "POSITIVO",
+    "CD5": "NO MENCIONADO",
+    "Ki-67": "NO MENCIONADO"
+  },
+  "validacion_fix": {
+    "biomarcador_objetivo": "BCL2",
+    "alias_agregado": "BLC2",
+    "motivo": "Error OCR: BLC2 en lugar de BCL2",
+    "archivo_modificado": "core/validation_checker.py",
+    "linea_modificada": "Cerca de linea 233",
+    "patron_agregado": "\"BLC2\": \"IHQ_BCL2\"",
+    "estado_antes": "NO EXTRAIDO (alias faltante)",
+    "estado_despues": "POSITIVO (extraido correctamente)",
+    "conclusion": "FIX EXITOSO - Alias BLC2 -> BCL2 funciona correctamente"
+  },
+  "impacto": {
+    "casos_beneficiados": [
+      "IHQ250208 (caso de prueba)"
+    ],
+    "biomarcadores_afectados": 1,
+    "score_mejora": {
+      "antes": "N/A (caso sin auditar previo)",
+      "despues": "100%"
+    }
+  },
+  "notas": [
+    "CD5 y Ki-67 marcados como NO MENCIONADO son correctos (no aparecen en OCR)",
+    "Los 4 biomarcadores principales fueron extraidos correctamente",
+    "El fix no causa regresion en otros casos (solo agrega alias)"
+  ]
+}

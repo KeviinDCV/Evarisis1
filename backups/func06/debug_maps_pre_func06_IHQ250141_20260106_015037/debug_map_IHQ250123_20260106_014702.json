@@ -1,0 +1,152 @@
+{
+  "session_id": "IHQ250123_20260106_014702",
+  "numero_peticion": "IHQ250123",
+  "timestamp": "2026-01-06T01:47:02.786610",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250123\nCopia Pag. 1 de 2\nNombre : LUZ MARINA CAICEDO RENTERIA\nN. peticion : IHQ250123\nN.Identificación : CC. 35805400\nGenero : FEMENINO\nEdad : 56 años 11 dias\nEPS : NUEVA EPS\nMédico tratante : STEFANIA OSPINA SANTA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 04/02/2025\nFecha Informe : 07/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMONAR\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado\ncomo\n“M2501160”\nque\ncorresponde\na\n“biopsia\npulmonar”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales son positivas para desmina, h-caldesmon, actina de musculo liso y actina\nmusculo específica.\nÍndice de proliferación KI-67 del 80%.\nLos marcadores CKAE1E3, SOX10, MyoD1, myogenina, y S100 son negativos.\ndiagnósticos\nde\n“SARCOMA DE ALTO GRADO”. Previa revisión de la histología, se realizan niveles histológicos al\nbloque 1 para tinción con CKAE1E3, SOX10, desmina, h-caldesmon, MyoD1, myogenina , actina\nde musculo liso, actina musculo específica, KI-67 y S100.\nDIAGNÓSTICO\nPulmón, lateralidad no especificada. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- LEIOMIOSARCOMA DE ALTO GRADO.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---\nIHQ250123\nCopia Pag. 2 de 2\nNombre : LUZ MARINA CAICEDO RENTERIA\nN. peticion : IHQ250123\nN.Identificación : CC. 35805400\nGenero : FEMENINO\nEdad : 56 años 11 dias\nEPS : NUEVA EPS\nMédico tratante : STEFANIA OSPINA SANTA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 04/02/2025\nFecha Informe : 07/02/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3229,
+      "reduccion_porcentaje": 98.14
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250123",
+      "caso_num": 15,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_DESMIN": "POSITIVO",
+      "IHQ_H_CALDESMON": "POSITIVO",
+      "IHQ_ACTINA_MUSCULO_LISO": "POSITIVO",
+      "IHQ_ACTINA_MUSCULO_ESPECIFICA": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_MYOD1": "NEGATIVO",
+      "IHQ_MYOGENIN": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "nombre_completo": "LUZ MARINA CAICEDO RENTERIA",
+      "numero_peticion": "IHQ250123",
+      "identificacion": "35805400",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "56",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "STEFANIA OSPINA SANTA",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "04/02/2025",
+      "fecha_informe": "07/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250123",
+      "N. de identificación": "35805400",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "STEFANIA OSPINA SANTA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "04/02/2025",
+      "Fecha Informe": "07/02/2025",
+      "nombres": "LUZ MARINA",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "MARINA",
+      "apellidos": "CAICEDO RENTERIA",
+      "Primer apellido": "CAICEDO",
+      "Segundo apellido": "RENTERIA",
+      "nombre_formal": "CAICEDO RENTERIA, LUZ MARINA",
+      "diagnostico": "Pulmón, lateralidad no especificada. Lesión. Biopsia. Estudio de inmunohistoquímica: - LEIOMIOSARCOMA DE ALTO GRADO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para desmina, h-caldesmon, actina de musculo liso y actina musculo específica. Índice de proliferación KI-67 del 80%. Los marcadores CKAE1E3, SOX10, MyoD1, myogenina, y S100 son negativos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501160” que corresponde a “biopsia pulmonar” con diagnósticos de “SARCOMA DE ALTO GRADO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 1 para tinción con CKAE1E3, SOX10, desmina, h-caldesmon, MyoD1, myogenina , actina de musculo liso, actina musculo específica, KI-67 y S100.",
+      "ihq_organo": "PULMÓN, LATERALIDAD NO ESPECIFICADA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, SOX10, DESMINA, H CALDESMON, MYOD1, MYOGENINA, ACTINA, DE MUSCULO LISO, ACTINA MÚSCULO ESPECÍFICA, Ki-67, S100",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PULMÓN, LATERALIDAD NO ESPECIFICADA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "Ki-67 del 80%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, SOX10, DESMINA, H CALDESMON, MYOD1, MYOGENINA, ACTINA, DE MUSCULO LISO, ACTINA MÚSCULO ESPECÍFICA, Ki-67, S100",
+      "IHQ_KI-67": "80%",
+      "extraction_timestamp": "2026-01-06T01:47:03.218951",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250123\nCopia Pag. 1 de 2\nNombre : LUZ MARINA CAICEDO RENTERIA\nN. peticion : IHQ250123\nN.Identificación : CC. 35805400\nGenero : FEMENINO\nEdad : 56 años 11 dias\nEPS : NUEVA EPS\nMédico tratante : STEFANIA OSPINA SANTA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 04/02/2025\nFecha Informe : 07/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMONAR\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado\ncomo\n“M2501160”\nque\ncorresponde\na\n“biopsia\npulmonar”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales son positivas para desmina, h-caldesmon, actina de musculo liso y actina\nmusculo específica.\nÍndice de proliferación KI-67 del 80%.\nLos marcadores CKAE1E3, SOX10, MyoD1, myogenina, y S100 son negativos.\ndiagnósticos\nde\n“SARCOMA DE ALTO GRADO”. Previa revisión de la histología, se realizan niveles histológicos al\nbloque 1 para tinción con CKAE1E3, SOX10, desmina, h-caldesmon, MyoD1, myogenina , actina\nde musculo liso, actina musculo específica, KI-67 y S100.\nDIAGNÓSTICO\nPulmón, lateralidad no especificada. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- LEIOMIOSARCOMA DE ALTO GRADO.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---\nIHQ250123\nCopia Pag. 2 de 2\nNombre : LUZ MARINA CAICEDO RENTERIA\nN. peticion : IHQ250123\nN.Identificación : CC. 35805400\nGenero : FEMENINO\nEdad : 56 años 11 dias\nEPS : NUEVA EPS\nMédico tratante : STEFANIA OSPINA SANTA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 04/02/2025\nFecha Informe : 07/02/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, SOX10, DESMINA, H CALDESMON, MYOD1, MYOGENINA, ACTINA MÚSCULO ESPECÍFICA, Ki-67, S100, H_CALDESMON, ACTINA DE MUSCULO LISO, DESMIN, MYOGENIN",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501160” que corresponde a “biopsia pulmonar” con diagnósticos de “SARCOMA DE ALTO GRADO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 1 para tinción con CKAE1E3, SOX10, desmina, h-caldesmon, MyoD1, myogenina , actina de musculo liso, actina musculo específica, KI-67 y S100.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para desmina, h-caldesmon, actina de musculo liso y actina musculo específica. Índice de proliferación KI-67 del 80%. Los marcadores CKAE1E3, SOX10, MyoD1, myogenina, y S100 son negativos.",
+      "Descripcion Diagnostico": "Pulmón, lateralidad no especificada. Lesión. Biopsia. Estudio de inmunohistoquímica: - LEIOMIOSARCOMA DE ALTO GRADO.",
+      "IHQ_ORGANO": "PULMÓN, LATERALIDAD NO ESPECIFICADA",
+      "Organo": "BX PULMONAR",
+      "Diagnostico Coloracion": "SARCOMA DE ALTO GRADO",
+      "Diagnostico Principal": "LEIOMIOSARCOMA DE ALTO GRADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 80%",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_DESMIN": "POSITIVO",
+      "IHQ_H_CALDESMON": "POSITIVO",
+      "IHQ_MYOD1": "NEGATIVO",
+      "IHQ_MYOGENIN": "NEGATIVO",
+      "IHQ_KI-67": "80%",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_ACTINA_MUSCULO_LISO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 122,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 12,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 122,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón, lateralidad no especificada. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- LEIOMIOSARCOMA DE ALTO GRADO.",
+      "valor_corregido": "Pulmón, lateralidad no especificada. Lesión. Biopsia. Estudio de inmunohistoquímica: - LEIOMIOSARCOMA DE ALTO GRADO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250123",
+      "timestamp": "2026-01-06T01:47:03.218751"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 58
+  }
+}

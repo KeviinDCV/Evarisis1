@@ -1,0 +1,68 @@
+{
+  "fecha": "2025-11-04",
+  "version_auditor": "6.2.2",
+  "casos_auditados": [
+    "IHQ251012",
+    "IHQ250988"
+  ],
+  "resultado_auditorias": {
+    "IHQ251012": {
+      "score": 88.9,
+      "estado": "ADVERTENCIA",
+      "estudios_ocr": [],
+      "no_mapeados": [],
+      "mensaje": "Sin debug_map - no puede extraer del OCR"
+    },
+    "IHQ250988": {
+      "score": 88.9,
+      "estado": "ADVERTENCIA",
+      "estudios_ocr": [],
+      "no_mapeados": [],
+      "mensaje": "Sin debug_map - no puede extraer del OCR"
+    }
+  },
+  "problema_detectado": {
+    "causa_raiz": "Casos NO tienen debug_maps generados",
+    "impacto": "Auditor NO puede acceder al OCR del PDF",
+    "consecuencia": "NO puede extraer biomarcadores independientemente"
+  },
+  "mejoras_implementadas": {
+    "estado": "CORRECTAMENTE IMPLEMENTADAS",
+    "evidencia": [
+      "Funcion _validar_biomarcadores_completos (linea 1381): Extrae independientemente del OCR",
+      "Funcion _extraer_estudios_solicitados_desde_ocr (linea 1000): Delega a medical_extractor",
+      "Logica deteccion NO MAPEADOS (lineas 1425-1439): Valida columnas IHQ_*",
+      "Estado INCOMPLETO (linea 1500): Cuando hay no_mapeados"
+    ],
+    "funciones_agregadas": 4,
+    "lineas_codigo": "~200"
+  },
+  "validacion": {
+    "estado": "PENDIENTE",
+    "razon": "Requiere caso con debug_map generado",
+    "opciones": [
+      "Opcion 1: Crear caso sintetico con debug_map (5s)",
+      "Opcion 2: Usar FUNC-06 para reprocesar IHQ250988 (30s)",
+      "Opcion 3: Reprocesar PDF completo via ui.py (2min)"
+    ]
+  },
+  "comparacion_teorica": {
+    "antes_v6.2.1": {
+      "estudios_ocr": "[]",
+      "no_mapeados": "[]",
+      "estado": "OK (falso positivo)"
+    },
+    "despues_v6.2.2_con_debug_map": {
+      "estudios_ocr": "[CD1a, CD3, CD5, CD20, CD117, CKAE1E3, TDT]",
+      "mapeados": "[CD20]",
+      "no_mapeados": "[CD1a (sin columna), CD3 (sin columna), ...]",
+      "estado": "INCOMPLETO (correcto)"
+    }
+  },
+  "conclusion": {
+    "mejoras_correctas": true,
+    "validacion_posible": true,
+    "metodo_recomendado": "Crear caso sintetico (Opcion 1)",
+    "tiempo_estimado": "5 segundos"
+  }
+}

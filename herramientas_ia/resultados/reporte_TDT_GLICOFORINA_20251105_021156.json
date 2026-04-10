@@ -1,0 +1,50 @@
+{
+  "operacion": "AGREGAR_PATRONES_TDT_GLICOFORINA",
+  "fecha": "2025-11-05 02:11:56",
+  "archivo_modificado": "core/extractors/biomarker_extractor.py",
+  "backup_creado": "backups/biomarker_extractor_backup_20251105_012523.py",
+  "patrones_agregados": [
+    "TDT",
+    "GLICOFORINA"
+  ],
+  "ubicacion_insercion": {
+    "linea_inicio": 1495,
+    "linea_fin": 1547,
+    "total_lineas": 53,
+    "despues_de": "ALK1 (línea 1493)",
+    "antes_de": "ACTH - Biomarcadores hormonales (línea 1550)"
+  },
+  "validacion_sintaxis": "EXITOSA (sin errores)",
+  "detalles_patrones": {
+    "TDT": {
+      "nombres_alternativos": [
+        "T-DT",
+        "TdT",
+        "TERMINAL DEOXYNUCLEOTIDYL TRANSFERASE",
+        "DT"
+      ],
+      "descripcion": "Terminal deoxynucleotidyl transferase (marcador de linfoblastos)",
+      "patrones_count": 6,
+      "valores_posibles": [
+        "POSITIVO",
+        "NEGATIVO"
+      ]
+    },
+    "GLICOFORINA": {
+      "nombres_alternativos": [
+        "GLYCOPHORIN",
+        "GLICOFORINA A",
+        "GLYCOPHORIN A",
+        "GLICO",
+        "GPA"
+      ],
+      "descripcion": "Glicoforina A (marcador de diferenciación eritroide)",
+      "patrones_count": 10,
+      "valores_posibles": [
+        "POSITIVO",
+        "NEGATIVO"
+      ]
+    }
+  },
+  "estado": "COMPLETADO_EXITOSAMENTE"
+}

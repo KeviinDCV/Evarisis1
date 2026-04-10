@@ -1,0 +1,180 @@
+{
+  "session_id": "IHQ250055_20251219_015255",
+  "numero_peticion": "IHQ250055",
+  "timestamp": "2025-12-19T01:52:55.540367",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250055\nCopia Pag. 1 de 2\nNombre : MARIANA SANCHEZ GUTIERREZ\nN. peticion : IHQ250055\nN.Identificación : CC. 1007836817\nGenero : FEMENINO\nEdad : 21 años 3 meses 29 dias\nEPS : NUEVA EPS\nMédico tratante : JAVID JAVIER DE LA HOZ VIZCAINO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 17/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA MEDIASTINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica a caso institucional (21/01/2025) con rótulo\nM2500429 que corresponde a \"Ganglios linfáticos mediastinales\" con dos bloques de parafina y\ndos láminas coloreadas con H&E, diagnóstico de \"HIPERPLASIA SINUSOIDAL y ANTRACOSIS\" y\nsugerencia de estudios de inmunohistoquímica. Previa valoración de la coloración básica, se\nrealizan cortes histológicos al bloque 2 para los siguientes marcadores: CD3, CD10,CD20, CD23,\nBcL2, BcL6, Ki 67, S100, CD4, ALK, CD1a y CD68.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nGanglio linfático aumentado de tamaño secundario a hiperplasia sinusoidal con proliferación de\nhistiocitos maduros CD68+ con expresión no concluyente para CD4+ y ausencia de expresión\npara CD1a, ALK y S100.\nSe identifican cúmulos linfoides CD3+, BcL2+ y además remanentes de folículos linfoides\nsecundarios CD20+, con centro germinal CD10+, BcL6+ y presencia de red dendrítica folicular\nCD23+. El índice de proliferación células medido con Ki 67 está organizado predominantemente\nen los cúmulos linfoides. \nSe realiza valoración de la coloración básica con H&E encontrando abundantes depósitos de\npigmento antracótico y birrefringencia positiva para polvo sílice. \nDIAGNÓSTICO\nGanglios linfáticos mediastinales. Resección. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS SUGIEREN: \nHIPERPLASIA SINUSOIDAL.\nSILICOANTRACOSIS. \nCOMENTARIOS\nLos hallazgos histológicos y la expresión inmunohistoquímica son consistentes con un proceso\nreactivo asociado a silicoantracosis. No obstante, si persiste la sospecha clínica de una neoplasia\nde mayor grado histológico, se recomienda evaluar la necesidad de un nuevo muestreo,\nquedando esta decisión a criterio del médico tratante.\nCaso valorado en conjunto con la Dra Maria Ximena Varela (patóloga), Edwin carrascal (patólogo),\nIsabella Caicedo (hematopatóloga), Natalia Aguirre (neumopatóloga). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 5 ---\nIHQ250055\nCopia Pag. 2 de 2\nNombre : MARIANA SANCHEZ GUTIERREZ\nN. peticion : IHQ250055\nN.Identificación : CC. 1007836817\nGenero : FEMENINO\nEdad : 21 años 3 meses 29 dias\nEPS : NUEVA EPS\nMédico tratante : JAVID JAVIER DE LA HOZ VIZCAINO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 17/01/2025\nFecha Informe : 04/02/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 4320,
+      "reduccion_porcentaje": 97.69
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250055",
+      "caso_num": 3,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIANA SANCHEZ GUTIERREZ",
+      "numero_peticion": "IHQ250055",
+      "identificacion": "1007836817",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "21",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JAVID JAVIER DE LA HOZ VIZCAINO",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "17/01/2025",
+      "fecha_informe": "04/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250055",
+      "N. de identificación": "1007836817",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "JAVID JAVIER DE LA HOZ VIZCAINO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "17/01/2025",
+      "Fecha Informe": "04/02/2025",
+      "nombres": "MARIANA",
+      "Primer nombre": "MARIANA",
+      "Segundo nombre": "",
+      "apellidos": "SANCHEZ GUTIERREZ",
+      "Primer apellido": "SANCHEZ",
+      "Segundo apellido": "GUTIERREZ",
+      "nombre_formal": "SANCHEZ GUTIERREZ, MARIANA",
+      "diagnostico": "Ganglios linfáticos mediastinales. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS SUGIEREN: HIPERPLASIA SINUSOIDAL. SILICOANTRACOSIS.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Ganglio linfático aumentado de tamaño secundario a hiperplasia sinusoidal con proliferación de histiocitos maduros CD68+ con expresión no concluyente para CD4+ y ausencia de expresión para CD1 a, ALK y S100. Se identifican cúmulos linfoides CD3+, BcL2+ y además remanentes de folículos linfoides secundarios CD20+, con centro germinal CD10+, BcL6+ y presencia de red dendrítica folicular CD23+. El índice de proliferación células medido con KI-67 está organizado predominantemente en los cúmulos linfoides. Se realiza valoración de la coloración básica con H&E encontrando abundantes depósitos de pigmento antracótico y birrefringencia positiva para polvo sílice.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica a caso institucional (21/01/2025) con rótulo M2500429 que corresponde a \"Ganglios linfáticos mediastinales\" con dos bloques de parafina y dos láminas coloreadas con H&E, diagnóstico de \"HIPERPLASIA SINUSOIDAL y ANTRACOSIS\" y sugerencia de estudios de inmunohistoquímica. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque 2 para los siguientes marcadores: CD3, CD10,CD20, CD23, BcL2, BcL6, KI-67, S100, CD4, ALK, CD1 a y CD68.",
+      "ihq_organo": "GANGLIOS LINFÁTICOS MEDIASTINALES",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD10, CD20, CD23, BCL2, BCL6, Ki-67, S100, CD4, ALK, CD1A, CD68",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Los hallazgos histológicos y la expresión inmunohistoquímica son consistentes con un proceso reactivo asociado a silicoantracosis. No obstante, si persiste la sospecha clínica de una neoplasia de mayor grado histológico, se recomienda evaluar la necesidad de un nuevo muestreo, quedando esta decisión a criterio del médico tratante. Caso valorado en conjunto con la Dra Maria Ximena Varela (patóloga), Edwin carrascal (patólogo), Isabella Caicedo (hematopatóloga), Natalia Aguirre (neumopatóloga).",
+      "IHQ_ORGANO": "GANGLIOS LINFÁTICOS MEDIASTINALES",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD1A": "NEGATIVO",
+      "IHQ_ALK": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_CD4": "NO CONCLUYENTE",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "extraction_timestamp": "2025-12-19T01:52:55.703635",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250055\nCopia Pag. 1 de 2\nNombre : MARIANA SANCHEZ GUTIERREZ\nN. peticion : IHQ250055\nN.Identificación : CC. 1007836817\nGenero : FEMENINO\nEdad : 21 años 3 meses 29 dias\nEPS : NUEVA EPS\nMédico tratante : JAVID JAVIER DE LA HOZ VIZCAINO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 17/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA MEDIASTINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica a caso institucional (21/01/2025) con rótulo\nM2500429 que corresponde a \"Ganglios linfáticos mediastinales\" con dos bloques de parafina y\ndos láminas coloreadas con H&E, diagnóstico de \"HIPERPLASIA SINUSOIDAL y ANTRACOSIS\" y\nsugerencia de estudios de inmunohistoquímica. Previa valoración de la coloración básica, se\nrealizan cortes histológicos al bloque 2 para los siguientes marcadores: CD3, CD10,CD20, CD23,\nBcL2, BcL6, Ki 67, S100, CD4, ALK, CD1a y CD68.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nGanglio linfático aumentado de tamaño secundario a hiperplasia sinusoidal con proliferación de\nhistiocitos maduros CD68+ con expresión no concluyente para CD4+ y ausencia de expresión\npara CD1a, ALK y S100.\nSe identifican cúmulos linfoides CD3+, BcL2+ y además remanentes de folículos linfoides\nsecundarios CD20+, con centro germinal CD10+, BcL6+ y presencia de red dendrítica folicular\nCD23+. El índice de proliferación células medido con Ki 67 está organizado predominantemente\nen los cúmulos linfoides. \nSe realiza valoración de la coloración básica con H&E encontrando abundantes depósitos de\npigmento antracótico y birrefringencia positiva para polvo sílice. \nDIAGNÓSTICO\nGanglios linfáticos mediastinales. Resección. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS SUGIEREN: \nHIPERPLASIA SINUSOIDAL.\nSILICOANTRACOSIS. \nCOMENTARIOS\nLos hallazgos histológicos y la expresión inmunohistoquímica son consistentes con un proceso\nreactivo asociado a silicoantracosis. No obstante, si persiste la sospecha clínica de una neoplasia\nde mayor grado histológico, se recomienda evaluar la necesidad de un nuevo muestreo,\nquedando esta decisión a criterio del médico tratante.\nCaso valorado en conjunto con la Dra Maria Ximena Varela (patóloga), Edwin carrascal (patólogo),\nIsabella Caicedo (hematopatóloga), Natalia Aguirre (neumopatóloga). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 5 ---\nIHQ250055\nCopia Pag. 2 de 2\nNombre : MARIANA SANCHEZ GUTIERREZ\nN. peticion : IHQ250055\nN.Identificación : CC. 1007836817\nGenero : FEMENINO\nEdad : 21 años 3 meses 29 dias\nEPS : NUEVA EPS\nMédico tratante : JAVID JAVIER DE LA HOZ VIZCAINO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 17/01/2025\nFecha Informe : 04/02/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD10, CD20, CD23, BCL2, BCL6, Ki-67, S100, CD4, ALK, CD1A, CD68",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica a caso institucional (21/01/2025) con rótulo M2500429 que corresponde a \"Ganglios linfáticos mediastinales\" con dos bloques de parafina y dos láminas coloreadas con H&E, diagnóstico de \"HIPERPLASIA SINUSOIDAL y ANTRACOSIS\" y sugerencia de estudios de inmunohistoquímica. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque 2 para los siguientes marcadores: CD3, CD10,CD20, CD23, BcL2, BcL6, Ki 67, S100, CD4, ALK, CD1a y CD68.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Ganglio linfático aumentado de tamaño secundario a hiperplasia sinusoidal con proliferación de histiocitos maduros CD68+ con expresión no concluyente para CD4+ y ausencia de expresión para CD1a, ALK y S100. Se identifican cúmulos linfoides CD3+, BcL2+ y además remanentes de folículos linfoides secundarios CD20+, con centro germinal CD10+, BcL6+ y presencia de red dendrítica folicular CD23+. El índice de proliferación células medido con Ki 67 está organizado predominantemente en los cúmulos linfoides. Se realiza valoración de la coloración básica con H&E encontrando abundantes depósitos de pigmento antracótico y birrefringencia positiva para polvo sílice.",
+      "Descripcion Diagnostico": "Ganglios linfáticos mediastinales. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS SUGIEREN: HIPERPLASIA SINUSOIDAL. SILICOANTRACOSIS.",
+      "IHQ_ORGANO": "GANGLIOS LINFÁTICOS MEDIASTINALES",
+      "Organo": "BX MASA MEDIASTINAL",
+      "Diagnostico Coloracion": "HIPERPLASIA SINUSOIDAL Y ANTRACOSIS",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS SUGIEREN: HIPERPLASIA SINUSOIDAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_CD4": "NO CONCLUYENTE",
+      "IHQ_ALK": "NEGATIVO",
+      "IHQ_CD1A": "NEGATIVO",
+      "IHQ_CD68": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 111,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 12,
+      "completitud_porcentaje": 29.3
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 111,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglios linfáticos mediastinales. Resección. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS SUGIEREN: \nHIPERPLASIA SINUSOIDAL.\nSILICOANTRACOSIS.",
+      "valor_corregido": "Ganglios linfáticos mediastinales. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS SUGIEREN: HIPERPLASIA SINUSOIDAL. SILICOANTRACOSIS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250055",
+      "timestamp": "2025-12-19T01:52:55.703432"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica a caso institucional (21/01/2025) con rótulo\nM2500429 que corresponde a \"Ganglios linfáticos mediastinales\" con dos bloques de parafina y\ndos láminas coloreadas con H&E, diagnóstico de \"HIPERPLASIA SINUSOIDAL y ANTRACOSIS\" y\nsugerencia de estudios de inmunohistoquímica. Previa valoración de la coloración básica, se\nrealizan cortes histológicos al bloque 2 para los siguientes marcadores: CD3, CD10,CD20, CD23,\nBcL2, BcL6, Ki 67, S100, CD4, ALK, CD1a y CD68.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica a caso institucional (21/01/2025) con rótulo M2500429 que corresponde a \"Ganglios linfáticos mediastinales\" con dos bloques de parafina y dos láminas coloreadas con H&E, diagnóstico de \"HIPERPLASIA SINUSOIDAL y ANTRACOSIS\" y sugerencia de estudios de inmunohistoquímica. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque 2 para los siguientes marcadores: CD3, CD10,CD20, CD23, BcL2, BcL6, KI-67, S100, CD4, ALK, CD1 a y CD68.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250055",
+      "timestamp": "2025-12-19T01:52:55.703438"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nGanglio linfático aumentado de tamaño secundario a hiperplasia sinusoidal con proliferación de\nhistiocitos maduros CD68+ con expresión no concluyente para CD4+ y ausencia de expresión\npara CD1a, ALK y S100.\nSe identifican cúmulos linfoides CD3+, BcL2+ y además remanentes de folículos linfoides\nsecundarios CD20+, con centro germinal CD10+, BcL6+ y presencia de red dendrítica folicular\nCD23+. El índice de proliferación células medido con Ki 67 está organizado predominantemente\nen los cúmulos linfoides. \nSe realiza valoración de la coloración básica con H&E encontrando abundantes depósitos de\npigmento antracótico y birrefringencia positiva para polvo sílice.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Ganglio linfático aumentado de tamaño secundario a hiperplasia sinusoidal con proliferación de histiocitos maduros CD68+ con expresión no concluyente para CD4+ y ausencia de expresión para CD1 a, ALK y S100. Se identifican cúmulos linfoides CD3+, BcL2+ y además remanentes de folículos linfoides secundarios CD20+, con centro germinal CD10+, BcL6+ y presencia de red dendrítica folicular CD23+. El índice de proliferación células medido con KI-67 está organizado predominantemente en los cúmulos linfoides. Se realiza valoración de la coloración básica con H&E encontrando abundantes depósitos de pigmento antracótico y birrefringencia positiva para polvo sílice.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250055",
+      "timestamp": "2025-12-19T01:52:55.703440"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos histológicos y la expresión inmunohistoquímica son consistentes con un proceso\nreactivo asociado a silicoantracosis. No obstante, si persiste la sospecha clínica de una neoplasia\nde mayor grado histológico, se recomienda evaluar la necesidad de un nuevo muestreo,\nquedando esta decisión a criterio del médico tratante.\nCaso valorado en conjunto con la Dra Maria Ximena Varela (patóloga), Edwin carrascal (patólogo),\nIsabella Caicedo (hematopatóloga), Natalia Aguirre (neumopatóloga).",
+      "valor_corregido": "Los hallazgos histológicos y la expresión inmunohistoquímica son consistentes con un proceso reactivo asociado a silicoantracosis. No obstante, si persiste la sospecha clínica de una neoplasia de mayor grado histológico, se recomienda evaluar la necesidad de un nuevo muestreo, quedando esta decisión a criterio del médico tratante. Caso valorado en conjunto con la Dra Maria Ximena Varela (patóloga), Edwin carrascal (patólogo), Isabella Caicedo (hematopatóloga), Natalia Aguirre (neumopatóloga).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250055",
+      "timestamp": "2025-12-19T01:52:55.703442"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 58
+  }
+}

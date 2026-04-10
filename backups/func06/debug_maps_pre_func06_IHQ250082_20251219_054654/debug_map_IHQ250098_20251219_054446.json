@@ -1,0 +1,162 @@
+{
+  "session_id": "IHQ250098_20251219_054446",
+  "numero_peticion": "IHQ250098",
+  "timestamp": "2025-12-19T05:44:46.186974",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250098\nCopia Pag. 1 de 2\nNombre : AURA LIGIA ARCE CEDEÑO\nN. peticion : IHQ250098\nN.Identificación : CC. 31887910\nGenero : FEMENINO\nEdad : 62 años 13 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : VICTOR MARIO GONZALEZ\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 28/01/2025\nFecha Informe : 31/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2500352” que corresponde a “biopsia de mama derecha” con diagnósticos de\n“PROLIFERACIÓN PAPILAR A ESTUDIO”. Previa revisión de la histología, se realizan niveles\nhistológicos para tinción con receptores hormonales de estrógenos, p63 y CK5/6.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales presentan inmunorreactividad difusa para receptores hormonales de\nestrógenos.\nLos marcadores p63 y CK5/6 son negativos.\nDIAGNÓSTICO\nMama derecha. Lesión. Biopsia Tru-cut. Estudio de inmunohistoquímica: \n-\nHALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS COMPATIBLES CON CARCINOMA\nPAPILAR ( VER COMENTARIO) \nCOMENTARIOS\nLa marcación difusa para receptores hormonales de estrógenos y la ausencia de marcación de\np63 y CK5/6\nson altamente sugestivos de un carcinoma papilar, sin embargo,\nno se puede\ndeterminar la presencia o ausencia de invasión\ndado la caracteristicas de la muestra (biopsia\npequeña), la adecuada clasificacion de la lesión se debe realizar en el especimen resección\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---\nIHQ250098\nCopia Pag. 2 de 2\nNombre : AURA LIGIA ARCE CEDEÑO\nN. peticion : IHQ250098\nN.Identificación : CC. 31887910\nGenero : FEMENINO\nEdad : 62 años 13 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : VICTOR MARIO GONZALEZ\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 28/01/2025\nFecha Informe : 31/01/2025\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3533,
+      "reduccion_porcentaje": 98.11
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250098",
+      "caso_num": 42,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "AURA LIGIA ARCE CEDEÑO",
+      "numero_peticion": "IHQ250098",
+      "identificacion": "31887910",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "62",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "VICTOR MARIO GONZALEZ",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "28/01/2025",
+      "fecha_informe": "31/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250098",
+      "N. de identificación": "31887910",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "VICTOR MARIO GONZALEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/01/2025",
+      "Fecha Informe": "31/01/2025",
+      "nombres": "AURA LIGIA",
+      "Primer nombre": "AURA",
+      "Segundo nombre": "LIGIA",
+      "apellidos": "ARCE CEDEÑO",
+      "Primer apellido": "ARCE",
+      "Segundo apellido": "CEDEÑO",
+      "nombre_formal": "ARCE CEDEÑO, AURA LIGIA",
+      "diagnostico": "Mama derecha. Lesión. Biopsia Tru-cut. Estudio de inmunohistoquímica: - HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS COMPATIBLES CON CARCINOMA PAPILAR ( VER COMENTARIO)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad difusa para receptores hormonales de estrógenos. Los marcadores P63 y CK5/6 son negativos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500352” que corresponde a “biopsia de mama derecha” con diagnósticos de “PROLIFERACIÓN PAPILAR A ESTUDIO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con receptores hormonales de estrógenos, P63 y CK5/6.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Receptor de Estrógeno, P63, CK5/6",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "La marcación difusa para receptores hormonales de estrógenos y la ausencia de marcación de P63 y CK5/6 son altamente sugestivos de un carcinoma papilar, sin embargo, no se puede determinar la presencia o ausencia de invasión dado la caracteristicas de la muestra (biopsia pequeña), la adecuada clasificacion de la lesión se deb",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P63": "NEGATIVO",
+      "IHQ_CK5_6": "NEGATIVO",
+      "extraction_timestamp": "2025-12-19T05:44:46.377593",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250098\nCopia Pag. 1 de 2\nNombre : AURA LIGIA ARCE CEDEÑO\nN. peticion : IHQ250098\nN.Identificación : CC. 31887910\nGenero : FEMENINO\nEdad : 62 años 13 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : VICTOR MARIO GONZALEZ\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 28/01/2025\nFecha Informe : 31/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2500352” que corresponde a “biopsia de mama derecha” con diagnósticos de\n“PROLIFERACIÓN PAPILAR A ESTUDIO”. Previa revisión de la histología, se realizan niveles\nhistológicos para tinción con receptores hormonales de estrógenos, p63 y CK5/6.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales presentan inmunorreactividad difusa para receptores hormonales de\nestrógenos.\nLos marcadores p63 y CK5/6 son negativos.\nDIAGNÓSTICO\nMama derecha. Lesión. Biopsia Tru-cut. Estudio de inmunohistoquímica: \n-\nHALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS COMPATIBLES CON CARCINOMA\nPAPILAR ( VER COMENTARIO) \nCOMENTARIOS\nLa marcación difusa para receptores hormonales de estrógenos y la ausencia de marcación de\np63 y CK5/6\nson altamente sugestivos de un carcinoma papilar, sin embargo,\nno se puede\ndeterminar la presencia o ausencia de invasión\ndado la caracteristicas de la muestra (biopsia\npequeña), la adecuada clasificacion de la lesión se debe realizar en el especimen resección\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---\nIHQ250098\nCopia Pag. 2 de 2\nNombre : AURA LIGIA ARCE CEDEÑO\nN. peticion : IHQ250098\nN.Identificación : CC. 31887910\nGenero : FEMENINO\nEdad : 62 años 13 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : VICTOR MARIO GONZALEZ\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 28/01/2025\nFecha Informe : 31/01/2025\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, P63, CK5/6",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500352” que corresponde a “biopsia de mama derecha” con diagnósticos de “PROLIFERACIÓN PAPILAR A ESTUDIO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con receptores hormonales de estrógenos, p63 y CK5/6.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad difusa para receptores hormonales de estrógenos. Los marcadores p63 y CK5/6 son negativos.",
+      "Descripcion Diagnostico": "Mama derecha. Lesión. Biopsia Tru-cut. Estudio de inmunohistoquímica: - HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS COMPATIBLES CON CARCINOMA PAPILAR ( VER COMENTARIO)",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "BX MAMA DERECHA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN PAPILAR A ESTUDIO",
+      "Diagnostico Principal": "MAMA DERECHA. LESIÓN. BIOPSIA TRU-CUT. ESTUDIO DE INMUNOHISTOQUÍMICA: - HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS COMPATIBLES CON CARCINOMA PAPILAR (",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_RECEPTOR_ESTROGENOS": "NO MENCIONADO",
+      "IHQ_P63": "NEGATIVO",
+      "IHQ_CK5_6": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 119,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 24.2
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 119,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Lesión. Biopsia Tru-cut. Estudio de inmunohistoquímica: \n-\nHALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS COMPATIBLES CON CARCINOMA\nPAPILAR ( VER COMENTARIO)",
+      "valor_corregido": "Mama derecha. Lesión. Biopsia Tru-cut. Estudio de inmunohistoquímica: - HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS COMPATIBLES CON CARCINOMA PAPILAR ( VER COMENTARIO)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250098",
+      "timestamp": "2025-12-19T05:44:46.377287"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500352” que corresponde a “biopsia de mama derecha” con diagnósticos de “PROLIFERACIÓN PAPILAR A ESTUDIO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con receptores hormonales de estrógenos, p63 y CK5/6.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500352” que corresponde a “biopsia de mama derecha” con diagnósticos de “PROLIFERACIÓN PAPILAR A ESTUDIO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con receptores hormonales de estrógenos, P63 y CK5/6.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250098",
+      "timestamp": "2025-12-19T05:44:46.377294"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad difusa para receptores hormonales de estrógenos. Los marcadores p63 y CK5/6 son negativos.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad difusa para receptores hormonales de estrógenos. Los marcadores P63 y CK5/6 son negativos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250098",
+      "timestamp": "2025-12-19T05:44:46.377296"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La marcación difusa para receptores hormonales de estrógenos y la ausencia de marcación de\np63 y CK5/6\nson altamente sugestivos de un carcinoma papilar, sin embargo,\nno se puede\ndeterminar la presencia o ausencia de invasión\ndado la caracteristicas de la muestra (biopsia\npequeña), la adecuada clasificacion de la lesión se deb",
+      "valor_corregido": "La marcación difusa para receptores hormonales de estrógenos y la ausencia de marcación de P63 y CK5/6 son altamente sugestivos de un carcinoma papilar, sin embargo, no se puede determinar la presencia o ausencia de invasión dado la caracteristicas de la muestra (biopsia pequeña), la adecuada clasificacion de la lesión se deb",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250098",
+      "timestamp": "2025-12-19T05:44:46.377297"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 50
+  }
+}

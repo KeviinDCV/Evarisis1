@@ -1,0 +1,143 @@
+{
+  "session_id": "IHQ250189_20260112_164952",
+  "numero_peticion": "IHQ250189",
+  "timestamp": "2026-01-12T16:49:52.603605",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250189\nCopia Pag. 1 de 1\nNombre : ESTHER JULIA MONTANCHEZ DE\nCASTILLO\nN. peticion : IHQ250189\nN.Identificación : CC. 29392552\nGenero : FEMENINO\nEdad : 72 años 1 mes 3 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : HERNY RICARDO MORENO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 20/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2500458 que corresponde a biopsia de hígado con diagnóstico principal de \"LOS HALLAZGOS\nMORFOLÓGICOS SUGIEREN HEPATOCARCINOMA\". Previa revisión de la histología, se procesa estudio de\ninmunohistoquímica para marcación con CK7, CK20, Glypican-3, Hepatocito, Arginasa.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas fuerte y difuso para Glypican-3, Hepatocito y Arginasa. Son negativas\npara CK7 y CK20.\nDIAGNÓSTICO\n Hígado. Tumor Biopsia. Estudios de inmunohistoquímica: \nLOS HALLAZGOS INMUNOHISTOQUÍMICOS FAVORECEN HEPATOCARCINOMA\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2478,
+      "reduccion_porcentaje": 98.51
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250189",
+      "caso_num": 29,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GPC3": "POSITIVO (fuerte)",
+      "IHQ_HEPATOCITO": "POSITIVO (fuerte)",
+      "IHQ_ARGINASA": "POSITIVO (fuerte)",
+      "IHQ_CK7": "NEGATIVO",
+      "nombre_completo": "ESTHER JULIA MONTANCHEZ DE CASTILLO",
+      "numero_peticion": "IHQ250189",
+      "identificacion": "29392552",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "72",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "HERNY RICARDO MORENO",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "20/02/2025",
+      "fecha_informe": "28/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250189",
+      "N. de identificación": "29392552",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "HERNY RICARDO MORENO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/02/2025",
+      "Fecha Informe": "28/02/2025",
+      "nombres": "ESTHER JULIA",
+      "Primer nombre": "ESTHER",
+      "Segundo nombre": "JULIA",
+      "apellidos": "MONTANCHEZ DE CASTILLO",
+      "Primer apellido": "MONTANCHEZ",
+      "Segundo apellido": "DE CASTILLO",
+      "nombre_formal": "MONTANCHEZ DE CASTILLO, ESTHER JULIA",
+      "diagnostico": "Hígado. Tumor Biopsia. Estudios de inmunohistoquímica: LOS HALLAZGOS INMUNOHISTOQUÍMICOS FAVORECEN HEPATOCARCINOMA",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas fuerte y difuso para Glypican-3, Hepatocito y Arginasa. Son negativas para CK7 y CK20.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2500458 que corresponde a biopsia de hígado con diagnóstico principal de \"LOS HALLAZGOS MORFOLÓGICOS SUGIEREN HEPATOCARCINOMA\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con CK7, CK20, Glypican-3, Hepatocito, Arginasa.",
+      "ihq_organo": "HÍGADO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, GLYPICAN 3, HEPATOCITO, ARGINASA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "HÍGADO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, GLYPICAN 3, HEPATOCITO, ARGINASA",
+      "IHQ_CK20": "NEGATIVO",
+      "extraction_timestamp": "2026-01-12T16:49:52.950740",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250189\nCopia Pag. 1 de 1\nNombre : ESTHER JULIA MONTANCHEZ DE\nCASTILLO\nN. peticion : IHQ250189\nN.Identificación : CC. 29392552\nGenero : FEMENINO\nEdad : 72 años 1 mes 3 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : HERNY RICARDO MORENO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 20/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2500458 que corresponde a biopsia de hígado con diagnóstico principal de \"LOS HALLAZGOS\nMORFOLÓGICOS SUGIEREN HEPATOCARCINOMA\". Previa revisión de la histología, se procesa estudio de\ninmunohistoquímica para marcación con CK7, CK20, Glypican-3, Hepatocito, Arginasa.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas fuerte y difuso para Glypican-3, Hepatocito y Arginasa. Son negativas\npara CK7 y CK20.\nDIAGNÓSTICO\n Hígado. Tumor Biopsia. Estudios de inmunohistoquímica: \nLOS HALLAZGOS INMUNOHISTOQUÍMICOS FAVORECEN HEPATOCARCINOMA\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, GLYPICAN 3, HEPATOCITO, ARGINASA",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2500458 que corresponde a biopsia de hígado con diagnóstico principal de \"LOS HALLAZGOS MORFOLÓGICOS SUGIEREN HEPATOCARCINOMA\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con CK7, CK20, Glypican-3, Hepatocito, Arginasa.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas fuerte y difuso para Glypican-3, Hepatocito y Arginasa. Son negativas para CK7 y CK20.",
+      "Descripcion Diagnostico": "Hígado. Tumor Biopsia. Estudios de inmunohistoquímica: LOS HALLAZGOS INMUNOHISTOQUÍMICOS FAVORECEN HEPATOCARCINOMA",
+      "IHQ_ORGANO": "HÍGADO",
+      "Organo": "BX TUMOR HIGADO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "LOS HALLAZGOS INMUNOHISTOQUÍMICOS FAVORECEN HEPATOCARCINOMA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_HEPATOCITO": "POSITIVO (fuerte)",
+      "IHQ_ARGINASA": "POSITIVO (fuerte)",
+      "IHQ_GPC3": "POSITIVO (fuerte)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 133,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 133,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hígado. Tumor Biopsia. Estudios de inmunohistoquímica: \nLOS HALLAZGOS INMUNOHISTOQUÍMICOS FAVORECEN HEPATOCARCINOMA",
+      "valor_corregido": "Hígado. Tumor Biopsia. Estudios de inmunohistoquímica: LOS HALLAZGOS INMUNOHISTOQUÍMICOS FAVORECEN HEPATOCARCINOMA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250189",
+      "timestamp": "2026-01-12T16:49:52.950529"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 53
+  }
+}

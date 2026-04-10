@@ -1,0 +1,173 @@
+{
+  "numero_caso": "IHQ250277",
+  "caso_num": 14,
+  "total_casos": 49,
+  "timestamp": "2026-02-03T05:17:58.032873",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 13,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "CARCINOMA EPIDERMOIDE POBREMENTE DIFERENCIADO METASTASICO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "mensaje": "Correcto (similitud parcial)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS MORFOLÓGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA FAVORECEN UN ANGIOSARCOMA"
+    },
+    "factor_pronostico": {
+      "estado": "ERROR",
+      "valor_bd": "NO APLICA",
+      "mensaje": "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "4 biomarcadores sin mapeo/vacíos; 2 biomarcadores extras en BD",
+      "total_solicitado_ocr": 26,
+      "total_solicitado_bd": 29,
+      "estudios_ocr": [
+        "CALRETININA",
+        "WT1",
+        "Ki-67",
+        "VIMENTINA",
+        "CD68",
+        "CALDESMON",
+        "P63",
+        "SYNAPTOFISINA",
+        "SMA",
+        "CD34",
+        "CD31",
+        "MYO D1",
+        "LCA",
+        "CKAE1E3",
+        "CD10",
+        "EMA",
+        "S100",
+        "MELAN A",
+        "CD1A",
+        "CD99",
+        "P16",
+        "DESMINA",
+        "CROMOGRAMINA",
+        "ALK 01",
+        "SOX10",
+        "P40"
+      ],
+      "estudios_bd": [
+        "CALRETININA",
+        "WT1",
+        "Ki-67",
+        "VIMENTINA",
+        "CD68",
+        "CALDESMON",
+        "P63",
+        "SYNAPTOFISINA",
+        "SMA",
+        "CD34",
+        "CD31",
+        "MYO D1",
+        "LCA",
+        "CKAE1AE3",
+        "CD10",
+        "EMA",
+        "S100",
+        "MELAN A",
+        "CD1A",
+        "CD99",
+        "P16",
+        "DESMINA",
+        "CROMOGRAMINA",
+        "ALK 01",
+        "SOX10",
+        "P40",
+        "CD45",
+        "H_CALDESMON",
+        "ALK"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "H_CALDESMON",
+        "ALK"
+      ],
+      "mapeados": 22,
+      "no_mapeados": [
+        "CD31 (sin columna)",
+        "LCA (sin columna)",
+        "CROMOGRAMINA (sin columna)",
+        "ALK 01 (sin columna)"
+      ],
+      "valores_incorrectos": [],
+      "cobertura": 84.6
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [
+      "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "IMPLANTES PERITONEALES"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 14,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 14,
+      "estado": "OK",
+      "mensaje": "14/14 biomarcadores \"NO MENCIONADO\" validados correctamente"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 80.0,
+    "score_final": 80.0,
+    "validaciones_ok": 8,
+    "total_validaciones": 10,
+    "warnings": 0,
+    "errores": 1
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

@@ -1,0 +1,180 @@
+{
+  "session_id": "IHQ250143_20260105_214412",
+  "numero_peticion": "IHQ250143",
+  "timestamp": "2026-01-05T21:44:12.515134",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250143\nCopia Pag. 1 de 2\nNombre : EVER ANTONIO IMBACHI\nN. peticion : IHQ250143\nN.Identificación : CC. 16618037\nGenero : MASCULINO\nEdad : 68 años 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : OSVALDO MENDEZ QUINTERO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/02/2025\nFecha Informe : 21/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPIEL PRIMER DEDO PIE\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional ( IPS HISTOtecnologos ) \ncon fecha de reporte del 13/10/24 con rótulo No BH-59029 que corresponde a \"Piel primer dedo\npie derecho\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina -\nEosina con diagnóstico de \"biopsia de lesión tumoral ulcerada en primer dedo de pie derecho \".\nPrevia revisión de la histología se realizan niveles histológicos al bloque para tinción con :\nCKAE1/AE3, CD45, MART1, HMB45, SOX-10, HHV8, CD31, SMA, CD34 , S100 , Ki67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLos marcadores de inmunohistoquímica siguientes : CKAE1/AE3, CD45, MART1, HMB45, SOX-10,\nHHV8, CD31, SMA, CD34 , S100 , Ki67 son negativos.\nLos hallazgos histológicos evidencian una proliferación de miofibroblastos grandes, poligonales ,\nsemejantes a células ganglionares en un estroma mixoide y con colageno variable. Existen datos\nde la literatura que favorece que el marcador SMA podría ser positivo o negativo en el caso de\nuna fascitis nodular , adicionalmente la proteína s100 marca algunas células que pudieran\ncorresponder a dendrocitos dérmicos y cuenta con un Ki 67 < 5% en las células pequeńas. Los\nhallazgos favorecen fascitis nodular.\nDIAGNÓSTICO\nPiel de pie derecho. Lesión. Biopsia.\nLos hallazgos morfológicos, asociados a los datos clínicos aportados favorecen una FASCITIS\nNODULAR.\nVer descripción y comentario.\nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Ricardo Rueda ( Dermatopatólogo )\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ250143\nCopia Pag. 2 de 2\nNombre : EVER ANTONIO IMBACHI\nN. peticion : IHQ250143\nN.Identificación : CC. 16618037\nGenero : MASCULINO\nEdad : 68 años 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : OSVALDO MENDEZ QUINTERO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/02/2025\nFecha Informe : 21/02/2025\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3929,
+      "reduccion_porcentaje": 97.74
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250143",
+      "caso_num": 34,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CD45": "NEGATIVO",
+      "IHQ_HMB45": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_HHV8": "NEGATIVO",
+      "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_KI-67": "NEGATIVO",
+      "nombre_completo": "EVER ANTONIO IMBACHI",
+      "numero_peticion": "IHQ250143",
+      "identificacion": "16618037",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "68",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "OSVALDO MENDEZ QUINTERO",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "07/02/2025",
+      "fecha_informe": "21/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250143",
+      "N. de identificación": "16618037",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "OSVALDO MENDEZ QUINTERO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/02/2025",
+      "Fecha Informe": "21/02/2025",
+      "nombres": "EVER",
+      "Primer nombre": "EVER",
+      "Segundo nombre": "",
+      "apellidos": "ANTONIO IMBACHI",
+      "Primer apellido": "ANTONIO",
+      "Segundo apellido": "IMBACHI",
+      "nombre_formal": "ANTONIO IMBACHI, EVER",
+      "diagnostico": "Piel de pie derecho. Lesión. Biopsia. Los hallazgos morfológicos, asociados a los datos clínicos aportados favorecen una FASCITIS NODULAR. Ver descripción y comentario.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Los marcadores de inmunohistoquímica siguientes : CKAE1/AE3, CD45, MART1, HMB45, SOX-10, HHV8, CD31, SMA, CD34 , S100 , KI-67 son negativos. Los hallazgos histológicos evidencian una proliferación de miofibroblastos grandes, poligonales , semejantes a células ganglionares en un estroma mixoide y con colageno variable. Existen datos de la literatura que favorece que el marcador SMA podría ser positivo o negativo en el caso de una fascitis nodular , adicionalmente la proteína s100 marca algunas células que pudieran corresponder a dendrocitos dérmicos y cuenta con un KI-67 < 5% en las células pequeńas. Los hallazgos favorecen fascitis nodular.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional ( IPS HISTOtecnologos ) con fecha de reporte del 13/10/24 con rótulo No BH-59029 que corresponde a \"Piel primer dedo pie derecho\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"biopsia de lesión tumoral ulcerada en primer dedo de pie derecho \". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con : CKAE1/AE3, CD45, MART1, HMB45, SOX-10, HHV8, CD31, SMA, CD34 , S100 , KI-67.",
+      "ihq_organo": "PIEL DE PIE DERECHO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con el Dr. Ricardo Rueda ( Dermatopatólogo ) Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 63 --- IHQ250143 Copia Pag. 2 de 2 Nombre : EVER ANTONIO IMBACHI N. peticion : IHQ250143 N.Identificación : CC. 16618037 Genero : MASCULINO Edad : 68 años 3 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : OSVALDO MENDEZ QUINTERO Servicio : CONSULTA EXTERNA Fecha Ingreso : 07/02/2025 Fecha Informe : 21/02/2025",
+      "IHQ_ORGANO": "PIEL DE PIE DERECHO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Ki-67: NEGATIVO, Receptor de Estrógeno: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "extraction_timestamp": "2026-01-05T21:44:13.042136",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250143\nCopia Pag. 1 de 2\nNombre : EVER ANTONIO IMBACHI\nN. peticion : IHQ250143\nN.Identificación : CC. 16618037\nGenero : MASCULINO\nEdad : 68 años 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : OSVALDO MENDEZ QUINTERO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/02/2025\nFecha Informe : 21/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPIEL PRIMER DEDO PIE\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional ( IPS HISTOtecnologos ) \ncon fecha de reporte del 13/10/24 con rótulo No BH-59029 que corresponde a \"Piel primer dedo\npie derecho\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina -\nEosina con diagnóstico de \"biopsia de lesión tumoral ulcerada en primer dedo de pie derecho \".\nPrevia revisión de la histología se realizan niveles histológicos al bloque para tinción con :\nCKAE1/AE3, CD45, MART1, HMB45, SOX-10, HHV8, CD31, SMA, CD34 , S100 , Ki67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLos marcadores de inmunohistoquímica siguientes : CKAE1/AE3, CD45, MART1, HMB45, SOX-10,\nHHV8, CD31, SMA, CD34 , S100 , Ki67 son negativos.\nLos hallazgos histológicos evidencian una proliferación de miofibroblastos grandes, poligonales ,\nsemejantes a células ganglionares en un estroma mixoide y con colageno variable. Existen datos\nde la literatura que favorece que el marcador SMA podría ser positivo o negativo en el caso de\nuna fascitis nodular , adicionalmente la proteína s100 marca algunas células que pudieran\ncorresponder a dendrocitos dérmicos y cuenta con un Ki 67 < 5% en las células pequeńas. Los\nhallazgos favorecen fascitis nodular.\nDIAGNÓSTICO\nPiel de pie derecho. Lesión. Biopsia.\nLos hallazgos morfológicos, asociados a los datos clínicos aportados favorecen una FASCITIS\nNODULAR.\nVer descripción y comentario.\nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Ricardo Rueda ( Dermatopatólogo )\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ250143\nCopia Pag. 2 de 2\nNombre : EVER ANTONIO IMBACHI\nN. peticion : IHQ250143\nN.Identificación : CC. 16618037\nGenero : MASCULINO\nEdad : 68 años 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : OSVALDO MENDEZ QUINTERO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/02/2025\nFecha Informe : 21/02/2025\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "ACTINA DE MUSCULO LISO, CD34, CD45, CKAE1AE3, HHV8, HMB45, Ki-67, Receptor de Estrógeno, S100, SOX10",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional ( IPS HISTOtecnologos ) con fecha de reporte del 13/10/24 con rótulo No BH-59029 que corresponde a \"Piel primer dedo pie derecho\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"biopsia de lesión tumoral ulcerada en primer dedo de pie derecho \". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con : CKAE1/AE3, CD45, MART1, HMB45, SOX-10, HHV8, CD31, SMA, CD34 , S100 , Ki67.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Los marcadores de inmunohistoquímica siguientes : CKAE1/AE3, CD45, MART1, HMB45, SOX-10, HHV8, CD31, SMA, CD34 , S100 , Ki67 son negativos. Los hallazgos histológicos evidencian una proliferación de miofibroblastos grandes, poligonales , semejantes a células ganglionares en un estroma mixoide y con colageno variable. Existen datos de la literatura que favorece que el marcador SMA podría ser positivo o negativo en el caso de una fascitis nodular , adicionalmente la proteína s100 marca algunas células que pudieran corresponder a dendrocitos dérmicos y cuenta con un Ki 67 < 5% en las células pequeńas. Los hallazgos favorecen fascitis nodular.",
+      "Descripcion Diagnostico": "Piel de pie derecho. Lesión. Biopsia. Los hallazgos morfológicos, asociados a los datos clínicos aportados favorecen una FASCITIS NODULAR. Ver descripción y comentario.",
+      "IHQ_ORGANO": "PIEL DE PIE DERECHO",
+      "Organo": "PIEL PRIMER DEDO PIE DERECHO",
+      "Diagnostico Coloracion": "BIOPSIA DE LESIÓN TUMORAL ULCERADA EN PRIMER DEDO DE PIE DERECHO",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS, ASOCIADOS A LOS DATOS CLÍNICOS APORTADOS FAVORECEN UNA FASCITIS NODULAR",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: NEGATIVO, Receptor de Estrógeno: POSITIVO",
+      "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD45": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_HHV8": "NEGATIVO",
+      "IHQ_HMB45": "NEGATIVO",
+      "IHQ_KI-67": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 123,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 123,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Piel de pie derecho. Lesión. Biopsia.\nLos hallazgos morfológicos, asociados a los datos clínicos aportados favorecen una FASCITIS\nNODULAR.\nVer descripción y comentario.",
+      "valor_corregido": "Piel de pie derecho. Lesión. Biopsia. Los hallazgos morfológicos, asociados a los datos clínicos aportados favorecen una FASCITIS NODULAR. Ver descripción y comentario.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250143",
+      "timestamp": "2026-01-05T21:44:13.041829"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional ( IPS HISTOtecnologos ) con fecha de reporte del 13/10/24 con rótulo No BH-59029 que corresponde a \"Piel primer dedo pie derecho\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"biopsia de lesión tumoral ulcerada en primer dedo de pie derecho \". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con : CKAE1/AE3, CD45, MART1, HMB45, SOX-10, HHV8, CD31, SMA, CD34 , S100 , Ki67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional ( IPS HISTOtecnologos ) con fecha de reporte del 13/10/24 con rótulo No BH-59029 que corresponde a \"Piel primer dedo pie derecho\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"biopsia de lesión tumoral ulcerada en primer dedo de pie derecho \". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con : CKAE1/AE3, CD45, MART1, HMB45, SOX-10, HHV8, CD31, SMA, CD34 , S100 , KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250143",
+      "timestamp": "2026-01-05T21:44:13.041835"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Los marcadores de inmunohistoquímica siguientes : CKAE1/AE3, CD45, MART1, HMB45, SOX-10, HHV8, CD31, SMA, CD34 , S100 , Ki67 son negativos. Los hallazgos histológicos evidencian una proliferación de miofibroblastos grandes, poligonales , semejantes a células ganglionares en un estroma mixoide y con colageno variable. Existen datos de la literatura que favorece que el marcador SMA podría ser positivo o negativo en el caso de una fascitis nodular , adicionalmente la proteína s100 marca algunas células que pudieran corresponder a dendrocitos dérmicos y cuenta con un Ki 67 < 5% en las células pequeńas. Los hallazgos favorecen fascitis nodular.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Los marcadores de inmunohistoquímica siguientes : CKAE1/AE3, CD45, MART1, HMB45, SOX-10, HHV8, CD31, SMA, CD34 , S100 , KI-67 son negativos. Los hallazgos histológicos evidencian una proliferación de miofibroblastos grandes, poligonales , semejantes a células ganglionares en un estroma mixoide y con colageno variable. Existen datos de la literatura que favorece que el marcador SMA podría ser positivo o negativo en el caso de una fascitis nodular , adicionalmente la proteína s100 marca algunas células que pudieran corresponder a dendrocitos dérmicos y cuenta con un KI-67 < 5% en las células pequeńas. Los hallazgos favorecen fascitis nodular.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250143",
+      "timestamp": "2026-01-05T21:44:13.041837"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Caso valorado en conjunto con el Dr. Ricardo Rueda ( Dermatopatólogo )\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ250143\nCopia Pag. 2 de 2\nNombre : EVER ANTONIO IMBACHI\nN. peticion : IHQ250143\nN.Identificación : CC. 16618037\nGenero : MASCULINO\nEdad : 68 años 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : OSVALDO MENDEZ QUINTERO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/02/2025\nFecha Informe : 21/02/2025",
+      "valor_corregido": "Caso valorado en conjunto con el Dr. Ricardo Rueda ( Dermatopatólogo ) Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 63 --- IHQ250143 Copia Pag. 2 de 2 Nombre : EVER ANTONIO IMBACHI N. peticion : IHQ250143 N.Identificación : CC. 16618037 Genero : MASCULINO Edad : 68 años 3 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : OSVALDO MENDEZ QUINTERO Servicio : CONSULTA EXTERNA Fecha Ingreso : 07/02/2025 Fecha Informe : 21/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250143",
+      "timestamp": "2026-01-05T21:44:13.041838"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 54
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "session_id": "IHQ250162_20260112_142258",
+  "numero_peticion": "IHQ250162",
+  "timestamp": "2026-01-12T14:22:58.857176",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250162\nCopia Pag. 1 de 2\nNombre : JOSE RODRIGO MUÑOZ MONTES\nN. peticion : IHQ250162\nN.Identificación : CC. 1113303884\nGenero : MASCULINO\nEdad : 40 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 12/02/2025\nFecha Informe : 07/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nFOSA INFRATEMPORAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501397-B1 que corresponden a \"tumor infratemporal\" con\ndiagnostico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO A CLASIFICAR CON ESTUDIOS DE\nINMUNOHISTOQUÍMICA\",\npara\nestudios\nde\ninmunohistoquímica\npor\nlo\nque\nse\nordenan\nlos\nsiguientes marcadores: Betacatenina, ki67, SMA, EMA, progesterona, CD34, SOX10, S100, GFAP,\ndesmina, p53 y calretinina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células neoplásicas son positivas de manera focal para S100 y SOX 10.\nNo presentan expresión para calretinina, desmina, SMA, EMA, progesterona, CD34, GFAP, p53.\nMarcación en membrana para b-tacatenina .\nIndice de proliferación ki67 del 20%.\nVER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.\nDIAGNÓSTICO\nFosa infratemporal. Tumor. Resección. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN SCHWANNOMA DE TIPO\nCELULAR.\nCOMENTARIOS\nLos hallazgos clínicos, quirúrgicos, imagenológicos e histológicos concuerdan con un schwannoma\ncelular del nervio vago. Para diferenciarlo del tumor maligno de la vaina nerviosa periférica\n(TMVNP), que comparte características inmunohistoquímicas similares, se sugiere utilizar el\nmarcador H3K27M3 como herramienta clave para un enfoque diagnóstico más preciso.\nCaso valorado en conjunto con el Doctor Jorge Moreno, patólogo.\nReferencias:\nZhang X, Zheng H, Li G, Li T. Clinicopathological differences between classical schwannomas and\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---\nIHQ250162\nCopia Pag. 2 de 2\nNombre : JOSE RODRIGO MUÑOZ MONTES\nN. peticion : IHQ250162\nN.Identificación : CC. 1113303884\nGenero : MASCULINO\nEdad : 40 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 12/02/2025\nFecha Informe : 07/03/2025\ncellular\nschwannomas\nin\nthe\nretroperitoneum.\nJ\nNeuropathol\nExp\nNeurol.\n2024\nDec\n1;83(12):1030-1038. doi: 10.1093/jnen/nlae104. PMID: 39340836; PMCID: PMC11576544.\nBelakhoua, Sarra M MD; Rodriguez, Fausto J MD. Diagnostic Pathology of Tumors of Peripheral\nNerve. Neurosurgery 88(3):p 443-456, March 2021. | DOI: 10.1093/neuros/nyab021.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 5 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 4096,
+      "reduccion_porcentaje": 97.53
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250162",
+      "caso_num": 2,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_KI67": "POSITIVO",
+      "IHQ_S100": "POSITIVO (focal)",
+      "IHQ_SOX10": "POSITIVO (focal)",
+      "IHQ_CALRETININA": "NEGATIVO",
+      "nombre_completo": "JOSE RODRIGO MUÑOZ MONTES",
+      "numero_peticion": "IHQ250162",
+      "identificacion": "1113303884",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "40",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JAVIER OROZCO",
+      "servicio": "NEUROCIRUGIA",
+      "fecha_ingreso": "12/02/2025",
+      "fecha_informe": "07/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250162",
+      "N. de identificación": "1113303884",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "NEUROCIRUGIA",
+      "Médico tratante": "JAVIER OROZCO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "12/02/2025",
+      "Fecha Informe": "07/03/2025",
+      "nombres": "JOSE RODRIGO MUÑOZ",
+      "Primer nombre": "JOSE",
+      "Segundo nombre": "RODRIGO MUÑOZ",
+      "apellidos": "MONTES",
+      "Primer apellido": "MONTES",
+      "Segundo apellido": "",
+      "nombre_formal": "MONTES, JOSE RODRIGO MUÑOZ",
+      "diagnostico": "Fosa infratemporal. Tumor. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN SCHWANNOMA DE TIPO CELULAR.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son positivas de manera focal para S100 y SOX 10. No presentan expresión para calretinina, desmina, SMA, EMA, progesterona, CD34, GFAP, p53. Marcación en membrana para b-tacatenina . Indice de proliferación KI-67 del 20%. VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2501397-B1 que corresponden a \"tumor infratemporal\" con diagnostico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: Betacatenina, KI-67, SMA, EMA, progesterona, CD34, SOX10, S100, GFAP, desmina, p53 y calretinina.",
+      "ihq_organo": "FOSA INFRATEMPORAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "BETACATENINA, Ki-67, SMA, EMA, Receptor de Progesterona, CD34, SOX10, S100, GFAP, DESMINA, P53, CALRETININA",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Los hallazgos clínicos, quirúrgicos, imagenológicos e histológicos concuerdan con un schwannoma celular del nervio vago. Para diferenciarlo del tumor maligno de la vaina nerviosa periférica (TMVNP), que comparte características inmunohistoquímicas similares, se sugiere utilizar el marcador H3K27M3 como herramienta clave para un enfoque diagnóstico más preciso. Caso valorado en conjunto con el Doctor Jorge Moreno, patólogo. Referencias: Zhang X, Zheng H, Li G, Li T. Clinicopathological differences between classical schwannomas and Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 4 --- IHQ250162 Copia Pag. 2 de 2 Nombre : JOSE RODRIGO MUÑOZ MONTES N. peticion : IHQ250162 N.Identificación : CC. 1113303884 Genero : MASCULINO Edad : 40 años 5 dias EPS : EMSSANAR S.A.S Médico tratante : JAVIER OROZCO Servicio : NEUROCIRUGIA Fecha Ingreso : 12/02/2025 Fecha Informe : 07/03/2025 cellular schwannomas in the retroperitoneum. J Neuropathol Exp Neurol. 2024 Dec 1;83(12):1030-1038. doi: 10.1093/jnen/nlae104. PMID: 39340836; PMCID: PMC11576544. Belakhoua, Sarra M MD; Rodriguez, Fausto J MD. Diagnostic Pathology of Tumors of Peripheral Nerve. Neurosurgery 88(3):p 443-456, March 2021. | DOI: 10.1093/neuros/nyab021.",
+      "IHQ_ORGANO": "FOSA INFRATEMPORAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 20%, Receptor de Progesterona: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "BETACATENINA, Ki-67, SMA, EMA, Receptor de Progesterona, CD34, SOX10, S100, GFAP, DESMINA, P53, CALRETININA",
+      "IHQ_BETACATENINA": "POSITIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_GFAP": "NEGATIVO",
+      "IHQ_P53": "NEGATIVO",
+      "IHQ_KI-67": "20%",
+      "extraction_timestamp": "2026-01-12T14:22:59.494516",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250162\nCopia Pag. 1 de 2\nNombre : JOSE RODRIGO MUÑOZ MONTES\nN. peticion : IHQ250162\nN.Identificación : CC. 1113303884\nGenero : MASCULINO\nEdad : 40 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 12/02/2025\nFecha Informe : 07/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nFOSA INFRATEMPORAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501397-B1 que corresponden a \"tumor infratemporal\" con\ndiagnostico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO A CLASIFICAR CON ESTUDIOS DE\nINMUNOHISTOQUÍMICA\",\npara\nestudios\nde\ninmunohistoquímica\npor\nlo\nque\nse\nordenan\nlos\nsiguientes marcadores: Betacatenina, ki67, SMA, EMA, progesterona, CD34, SOX10, S100, GFAP,\ndesmina, p53 y calretinina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células neoplásicas son positivas de manera focal para S100 y SOX 10.\nNo presentan expresión para calretinina, desmina, SMA, EMA, progesterona, CD34, GFAP, p53.\nMarcación en membrana para b-tacatenina .\nIndice de proliferación ki67 del 20%.\nVER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.\nDIAGNÓSTICO\nFosa infratemporal. Tumor. Resección. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN SCHWANNOMA DE TIPO\nCELULAR.\nCOMENTARIOS\nLos hallazgos clínicos, quirúrgicos, imagenológicos e histológicos concuerdan con un schwannoma\ncelular del nervio vago. Para diferenciarlo del tumor maligno de la vaina nerviosa periférica\n(TMVNP), que comparte características inmunohistoquímicas similares, se sugiere utilizar el\nmarcador H3K27M3 como herramienta clave para un enfoque diagnóstico más preciso.\nCaso valorado en conjunto con el Doctor Jorge Moreno, patólogo.\nReferencias:\nZhang X, Zheng H, Li G, Li T. Clinicopathological differences between classical schwannomas and\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---\nIHQ250162\nCopia Pag. 2 de 2\nNombre : JOSE RODRIGO MUÑOZ MONTES\nN. peticion : IHQ250162\nN.Identificación : CC. 1113303884\nGenero : MASCULINO\nEdad : 40 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 12/02/2025\nFecha Informe : 07/03/2025\ncellular\nschwannomas\nin\nthe\nretroperitoneum.\nJ\nNeuropathol\nExp\nNeurol.\n2024\nDec\n1;83(12):1030-1038. doi: 10.1093/jnen/nlae104. PMID: 39340836; PMCID: PMC11576544.\nBelakhoua, Sarra M MD; Rodriguez, Fausto J MD. Diagnostic Pathology of Tumors of Peripheral\nNerve. Neurosurgery 88(3):p 443-456, March 2021. | DOI: 10.1093/neuros/nyab021.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 5 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "BETACATENINA, Ki-67, SMA, EMA, Receptor de Progesterona, CD34, SOX10, S100, GFAP, DESMINA, P53, CALRETININA, DESMIN",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2501397-B1 que corresponden a \"tumor infratemporal\" con diagnostico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: Betacatenina, ki67, SMA, EMA, progesterona, CD34, SOX10, S100, GFAP, desmina, p53 y calretinina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son positivas de manera focal para S100 y SOX 10. No presentan expresión para calretinina, desmina, SMA, EMA, progesterona, CD34, GFAP, p53. Marcación en membrana para b-tacatenina . Indice de proliferación ki67 del 20%. VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "Descripcion Diagnostico": "Fosa infratemporal. Tumor. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN SCHWANNOMA DE TIPO CELULAR.",
+      "IHQ_ORGANO": "FOSA INFRATEMPORAL",
+      "Organo": "FOSA INFRATEMPORAL",
+      "Diagnostico Coloracion": "NEOPLASIA FUSOCELULAR DE BAJO GRADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN SCHWANNOMA DE TIPO CELULAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 20%, Receptor de Progesterona: NEGATIVO",
+      "IHQ_BETACATENINA": "POSITIVO",
+      "IHQ_KI-67": "20%",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_SOX10": "POSITIVO (focal)",
+      "IHQ_S100": "POSITIVO (focal)",
+      "IHQ_GFAP": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_P53": "NEGATIVO",
+      "IHQ_CALRETININA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 127,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 13,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 127,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Fosa infratemporal. Tumor. Resección. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN SCHWANNOMA DE TIPO\nCELULAR.",
+      "valor_corregido": "Fosa infratemporal. Tumor. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN SCHWANNOMA DE TIPO CELULAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250162",
+      "timestamp": "2026-01-12T14:22:59.494239"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2501397-B1 que corresponden a \"tumor infratemporal\" con diagnostico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: Betacatenina, ki67, SMA, EMA, progesterona, CD34, SOX10, S100, GFAP, desmina, p53 y calretinina.",
+      "valor_corregido": "Se realizan niveles al bloque M2501397-B1 que corresponden a \"tumor infratemporal\" con diagnostico de \"NEOPLASIA FUSOCELULAR DE BAJO GRADO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: Betacatenina, KI-67, SMA, EMA, progesterona, CD34, SOX10, S100, GFAP, desmina, p53 y calretinina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250162",
+      "timestamp": "2026-01-12T14:22:59.494248"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son positivas de manera focal para S100 y SOX 10. No presentan expresión para calretinina, desmina, SMA, EMA, progesterona, CD34, GFAP, p53. Marcación en membrana para b-tacatenina . Indice de proliferación ki67 del 20%. VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son positivas de manera focal para S100 y SOX 10. No presentan expresión para calretinina, desmina, SMA, EMA, progesterona, CD34, GFAP, p53. Marcación en membrana para b-tacatenina . Indice de proliferación KI-67 del 20%. VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250162",
+      "timestamp": "2026-01-12T14:22:59.494251"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos clínicos, quirúrgicos, imagenológicos e histológicos concuerdan con un schwannoma\ncelular del nervio vago. Para diferenciarlo del tumor maligno de la vaina nerviosa periférica\n(TMVNP), que comparte características inmunohistoquímicas similares, se sugiere utilizar el\nmarcador H3K27M3 como herramienta clave para un enfoque diagnóstico más preciso.\nCaso valorado en conjunto con el Doctor Jorge Moreno, patólogo.\nReferencias:\nZhang X, Zheng H, Li G, Li T. Clinicopathological differences between classical schwannomas and\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---\nIHQ250162\nCopia Pag. 2 de 2\nNombre : JOSE RODRIGO MUÑOZ MONTES\nN. peticion : IHQ250162\nN.Identificación : CC. 1113303884\nGenero : MASCULINO\nEdad : 40 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 12/02/2025\nFecha Informe : 07/03/2025\ncellular\nschwannomas\nin\nthe\nretroperitoneum.\nJ\nNeuropathol\nExp\nNeurol.\n2024\nDec\n1;83(12):1030-1038. doi: 10.1093/jnen/nlae104. PMID: 39340836; PMCID: PMC11576544.\nBelakhoua, Sarra M MD; Rodriguez, Fausto J MD. Diagnostic Pathology of Tumors of Peripheral\nNerve. Neurosurgery 88(3):p 443-456, March 2021. | DOI: 10.1093/neuros/nyab021.",
+      "valor_corregido": "Los hallazgos clínicos, quirúrgicos, imagenológicos e histológicos concuerdan con un schwannoma celular del nervio vago. Para diferenciarlo del tumor maligno de la vaina nerviosa periférica (TMVNP), que comparte características inmunohistoquímicas similares, se sugiere utilizar el marcador H3K27M3 como herramienta clave para un enfoque diagnóstico más preciso. Caso valorado en conjunto con el Doctor Jorge Moreno, patólogo. Referencias: Zhang X, Zheng H, Li G, Li T. Clinicopathological differences between classical schwannomas and Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 4 --- IHQ250162 Copia Pag. 2 de 2 Nombre : JOSE RODRIGO MUÑOZ MONTES N. peticion : IHQ250162 N.Identificación : CC. 1113303884 Genero : MASCULINO Edad : 40 años 5 dias EPS : EMSSANAR S.A.S Médico tratante : JAVIER OROZCO Servicio : NEUROCIRUGIA Fecha Ingreso : 12/02/2025 Fecha Informe : 07/03/2025 cellular schwannomas in the retroperitoneum. J Neuropathol Exp Neurol. 2024 Dec 1;83(12):1030-1038. doi: 10.1093/jnen/nlae104. PMID: 39340836; PMCID: PMC11576544. Belakhoua, Sarra M MD; Rodriguez, Fausto J MD. Diagnostic Pathology of Tumors of Peripheral Nerve. Neurosurgery 88(3):p 443-456, March 2021. | DOI: 10.1093/neuros/nyab021.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250162",
+      "timestamp": "2026-01-12T14:22:59.494253"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 61
+  }
+}

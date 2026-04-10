@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250291_20260203_035250",
+  "numero_peticion": "IHQ250291",
+  "timestamp": "2026-02-03T03:52:50.918168",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250291\nCopia Pag. 1 de 2\nNombre : MARIA FERNANDA RIVERA TORRES\nN. peticion : IHQ250291\nN.Identificación : CC. 31467131\nGenero : FEMENINO\nEdad : 65 años 2 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : OSCAR ANDRES ESCOBAR\nServicio : UCI CARDIOVASCULAR\nFecha Ingreso : 20/03/2025\nFecha Informe : 25/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION EXTRAAXIAL\nFRONTOTEMPORAL\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2503147 que corresponde a \"MENINGIOMA MICROQUISTICO WHO I.\". Previa revisión de la\nhistología, se realizan niveles histológicos al bloque para tinción con Receptores de progesterona\n, EMA , Ki67, GFAP.\nDESCRIPCIÓN MICROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “” que corresponde a “” con diagnósticos de “MENINGIOMA MICROQUÍSTICO”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción con EMA,\nprogesterona, GFAP y KI-67.\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nLas células tumorales son positivas para EMA y progesterona.\nÍndice de proliferación KI-67 del 2%\nCon la tinción de GFAP se observa parénquima cerebral reactivo no invadido por el tumor. \nDIAGNÓSTICO\nDIAGNÓSTICO:\nMENINGIOMA MICROQUÍSTICO, WHO 1.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---\nIHQ250291\nCopia Pag. 2 de 2\nNombre : MARIA FERNANDA RIVERA TORRES\nN. peticion : IHQ250291\nN.Identificación : CC. 31467131\nGenero : FEMENINO\nEdad : 65 años 2 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : OSCAR ANDRES ESCOBAR\nServicio : UCI CARDIOVASCULAR\nFecha Ingreso : 20/03/2025\nFecha Informe : 25/03/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3290,
+      "reduccion_porcentaje": 98.12
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250291",
+      "caso_num": 27,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_EMA": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "nombre_completo": "MARIA FERNANDA RIVERA TORRES",
+      "numero_peticion": "IHQ250291",
+      "identificacion": "31467131",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "65",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "OSCAR ANDRES ESCOBAR",
+      "servicio": "UCI CARDIOVASCULAR",
+      "fecha_ingreso": "20/03/2025",
+      "fecha_informe": "25/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250291",
+      "N. de identificación": "31467131",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "UCI CARDIOVASCULAR",
+      "Médico tratante": "OSCAR ANDRES ESCOBAR",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/03/2025",
+      "Fecha Informe": "25/03/2025",
+      "nombres": "MARIA FERNANDA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "FERNANDA",
+      "apellidos": "RIVERA TORRES",
+      "Primer apellido": "RIVERA",
+      "Segundo apellido": "TORRES",
+      "nombre_formal": "RIVERA TORRES, MARIA FERNANDA",
+      "diagnostico": "DIAGNÓSTICO: MENINGIOMA MICROQUÍSTICO, WHO 1: 20/03/2025",
+      "descripcion_microscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"\" que corresponde a \"\" con diagnósticos de \"MENINGIOMA MICROQUÍSTICO\". Previa revisión de la histología, se realizan niveles histológicos para tinción con EMA, progesterona, GFAP y KI-67. Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Las células tumorales son positivas para EMA y progesterona. Índice de proliferación KI-67 del 2% Con la tinción de GFAP se observa parénquima cerebral reactivo no invadido por el tumor.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"\" que corresponde a \"\" con diagnósticos de \"MENINGIOMA MICROQUÍSTICO\". Previa revisión de la histología, se realizan niveles histológicos para tinción con EMA, progesterona, GFAP y KI-67. Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Las células tumorales son positivas para EMA y progesterona. Índice de proliferación KI-67 del 2% Con la tinción de GFAP se observa parénquima cerebral reactivo no invadido por el tumor. DIAGNÓSTICO DIAGNÓSTICO: MENINGIOMA MICROQUÍSTICO, WHO 1. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 50 --- IHQ250291 Copia Pag. 2 de 2 Nombre : MARIA FERNANDA RIVERA TORRES N. peticion : IHQ250291 N.Identificación : CC. 31467131 Genero : FEMENINO Edad : 65 años 2 dias EPS : EMSSANAR S.A.S Médico tratante : OSCAR ANDRES ESCOBAR Servicio : UCI CARDIOVASCULAR Fecha Ingreso : 20/03/2025 Fecha Informe : 25/03/2025 ARMANDO CORTES BUELVAS Responsable del análisis: MD Patólogo RM 12135 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 51 ---",
+      "ihq_organo": "REGION PARIETO OCCIPITAL",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Receptor de Progesterona, EMA, Ki-67, GFAP",
+      "procedimiento": "",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGION PARIETO OCCIPITAL",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: 2%, Receptor de Progesterona: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Progesterona, EMA, Ki-67, GFAP",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_KI-67": "2%",
+      "extraction_timestamp": "2026-02-03T03:52:51.257662",
+      "extractor_version": "6.5.90_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250291\nCopia Pag. 1 de 2\nNombre : MARIA FERNANDA RIVERA TORRES\nN. peticion : IHQ250291\nN.Identificación : CC. 31467131\nGenero : FEMENINO\nEdad : 65 años 2 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : OSCAR ANDRES ESCOBAR\nServicio : UCI CARDIOVASCULAR\nFecha Ingreso : 20/03/2025\nFecha Informe : 25/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION EXTRAAXIAL\nFRONTOTEMPORAL\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2503147 que corresponde a \"MENINGIOMA MICROQUISTICO WHO I.\". Previa revisión de la\nhistología, se realizan niveles histológicos al bloque para tinción con Receptores de progesterona\n, EMA , Ki67, GFAP.\nDESCRIPCIÓN MICROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “” que corresponde a “” con diagnósticos de “MENINGIOMA MICROQUÍSTICO”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción con EMA,\nprogesterona, GFAP y KI-67.\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nLas células tumorales son positivas para EMA y progesterona.\nÍndice de proliferación KI-67 del 2%\nCon la tinción de GFAP se observa parénquima cerebral reactivo no invadido por el tumor. \nDIAGNÓSTICO\nDIAGNÓSTICO:\nMENINGIOMA MICROQUÍSTICO, WHO 1.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---\nIHQ250291\nCopia Pag. 2 de 2\nNombre : MARIA FERNANDA RIVERA TORRES\nN. peticion : IHQ250291\nN.Identificación : CC. 31467131\nGenero : FEMENINO\nEdad : 65 años 2 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : OSCAR ANDRES ESCOBAR\nServicio : UCI CARDIOVASCULAR\nFecha Ingreso : 20/03/2025\nFecha Informe : 25/03/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Progesterona, EMA, Ki-67, GFAP",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “” que corresponde a “” con diagnósticos de “MENINGIOMA MICROQUÍSTICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con EMA, progesterona, GFAP y KI-67. Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Las células tumorales son positivas para EMA y progesterona. Índice de proliferación KI-67 del 2% Con la tinción de GFAP se observa parénquima cerebral reactivo no invadido por el tumor. DIAGNÓSTICO DIAGNÓSTICO: MENINGIOMA MICROQUÍSTICO, WHO 1. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 50 --- IHQ250291 Copia Pag. 2 de 2 Nombre : MARIA FERNANDA RIVERA TORRES N. peticion : IHQ250291 N.Identificación : CC. 31467131 Genero : FEMENINO Edad : 65 años 2 dias EPS : EMSSANAR S.A.S Médico tratante : OSCAR ANDRES ESCOBAR Servicio : UCI CARDIOVASCULAR Fecha Ingreso : 20/03/2025 Fecha Informe : 25/03/2025 ARMANDO CORTES BUELVAS Responsable del análisis: MD Patólogo RM 12135 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 51 ---",
+      "Descripcion microscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “” que corresponde a “” con diagnósticos de “MENINGIOMA MICROQUÍSTICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con EMA, progesterona, GFAP y KI-67. Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Las células tumorales son positivas para EMA y progesterona. Índice de proliferación KI-67 del 2% Con la tinción de GFAP se observa parénquima cerebral reactivo no invadido por el tumor.",
+      "Descripcion Diagnostico": "DIAGNÓSTICO: MENINGIOMA MICROQUÍSTICO, WHO 1: 20/03/2025",
+      "IHQ_ORGANO": "REGION PARIETO OCCIPITAL",
+      "Organo": "LESION EXTRAAXIAL FRONTOTEMPORAL IZQUIERDA",
+      "Diagnostico Coloracion": "MENINGIOMA MICROQUÍSTICO",
+      "Diagnostico Principal": "MENINGIOMA MICROQUÍSTICO, WHO 1: 20/03/2025",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: 2%, Receptor de Progesterona: POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_EMA": "POSITIVO",
+      "IHQ_KI-67": "2%",
+      "IHQ_GFAP": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 137,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "DIAGNÓSTICO:\nMENINGIOMA MICROQUÍSTICO, WHO 1: 20/03/2025",
+      "valor_corregido": "DIAGNÓSTICO: MENINGIOMA MICROQUÍSTICO, WHO 1: 20/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250291",
+      "timestamp": "2026-02-03T03:52:51.257447"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “” que corresponde a “” con diagnósticos de “MENINGIOMA MICROQUÍSTICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con EMA, progesterona, GFAP y KI-67. Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Las células tumorales son positivas para EMA y progesterona. Índice de proliferación KI-67 del 2% Con la tinción de GFAP se observa parénquima cerebral reactivo no invadido por el tumor. DIAGNÓSTICO DIAGNÓSTICO: MENINGIOMA MICROQUÍSTICO, WHO 1. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 50 --- IHQ250291 Copia Pag. 2 de 2 Nombre : MARIA FERNANDA RIVERA TORRES N. peticion : IHQ250291 N.Identificación : CC. 31467131 Genero : FEMENINO Edad : 65 años 2 dias EPS : EMSSANAR S.A.S Médico tratante : OSCAR ANDRES ESCOBAR Servicio : UCI CARDIOVASCULAR Fecha Ingreso : 20/03/2025 Fecha Informe : 25/03/2025 ARMANDO CORTES BUELVAS Responsable del análisis: MD Patólogo RM 12135 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 51 ---",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"\" que corresponde a \"\" con diagnósticos de \"MENINGIOMA MICROQUÍSTICO\". Previa revisión de la histología, se realizan niveles histológicos para tinción con EMA, progesterona, GFAP y KI-67. Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Las células tumorales son positivas para EMA y progesterona. Índice de proliferación KI-67 del 2% Con la tinción de GFAP se observa parénquima cerebral reactivo no invadido por el tumor. DIAGNÓSTICO DIAGNÓSTICO: MENINGIOMA MICROQUÍSTICO, WHO 1. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 50 --- IHQ250291 Copia Pag. 2 de 2 Nombre : MARIA FERNANDA RIVERA TORRES N. peticion : IHQ250291 N.Identificación : CC. 31467131 Genero : FEMENINO Edad : 65 años 2 dias EPS : EMSSANAR S.A.S Médico tratante : OSCAR ANDRES ESCOBAR Servicio : UCI CARDIOVASCULAR Fecha Ingreso : 20/03/2025 Fecha Informe : 25/03/2025 ARMANDO CORTES BUELVAS Responsable del análisis: MD Patólogo RM 12135 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 51 ---",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250291",
+      "timestamp": "2026-02-03T03:52:51.257454"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “” que corresponde a “” con diagnósticos de “MENINGIOMA MICROQUÍSTICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con EMA, progesterona, GFAP y KI-67. Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Las células tumorales son positivas para EMA y progesterona. Índice de proliferación KI-67 del 2% Con la tinción de GFAP se observa parénquima cerebral reactivo no invadido por el tumor.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"\" que corresponde a \"\" con diagnósticos de \"MENINGIOMA MICROQUÍSTICO\". Previa revisión de la histología, se realizan niveles histológicos para tinción con EMA, progesterona, GFAP y KI-67. Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Las células tumorales son positivas para EMA y progesterona. Índice de proliferación KI-67 del 2% Con la tinción de GFAP se observa parénquima cerebral reactivo no invadido por el tumor.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250291",
+      "timestamp": "2026-02-03T03:52:51.257455"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 51
+  }
+}

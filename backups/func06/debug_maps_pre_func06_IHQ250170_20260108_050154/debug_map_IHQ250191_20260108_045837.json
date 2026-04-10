@@ -1,0 +1,162 @@
+{
+  "session_id": "IHQ250191_20260108_045837",
+  "numero_peticion": "IHQ250191",
+  "timestamp": "2026-01-08T04:58:37.470476",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250191\nCopia Pag. 1 de 2\nNombre : VALENTINA MOSCOSO GOMEZ\nN. peticion : IHQ250191\nN.Identificación : CC. 1007763401\nGenero : FEMENINO\nEdad : 25 años 16 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : EULER JAVIER BURBANO\nServicio : GINECOLOGIA\nFecha Ingreso : 20/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PERITONEO PARIETAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501266-1 que corresponde a biopsia de peritoneo, con diagnóstico de\n\"FORMACIONES ACINARES CON ATIPIA Y MICROCALFICACIONES A CLASIFICAR MEDIANTE ESTUDIOS DE\nINMUNOHSITOQUÍMICA\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales presentan inmunorreactividad para CKAE1/AE3, CK7, CK19, Receptor de Estrógeno,\nPAX-8, WT1, siendo negativo para CK20, GATA-3, CA19-9 y CDX2.\nLa calretinina se presenta positividad focal en el recubrimiento señalando las células mesoteliales sin\npositividad en la proliferación neoplásica.\nDIAGNÓSTICO\nPeritoneo. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON ADENOCARCINOMA\nMETASTASICO DE PROBABLE ORIGEN EN TRACTO GENITAL FEMENINO. \nCOMENTARIOS\nLos hallazgos son sugestivos de que se trate de adenocarcinoma del tracto genital femenino que es\nprobable que sea de origen ovárico, sin embargo se debe correlacionar con la clínica, imágenes\ndiagnósticas y estudios serológicos.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---\nIHQ250191\nCopia Pag. 2 de 2\nNombre : VALENTINA MOSCOSO GOMEZ\nN. peticion : IHQ250191\nN.Identificación : CC. 1007763401\nGenero : FEMENINO\nEdad : 25 años 16 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : EULER JAVIER BURBANO\nServicio : GINECOLOGIA\nFecha Ingreso : 20/02/2025\nFecha Informe : 28/02/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3448,
+      "reduccion_porcentaje": 97.92
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250191",
+      "caso_num": 31,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK20": "NEGATIVO",
+      "nombre_completo": "VALENTINA MOSCOSO GOMEZ",
+      "numero_peticion": "IHQ250191",
+      "identificacion": "1007763401",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "25",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "EULER JAVIER BURBANO",
+      "servicio": "GINECOLOGIA",
+      "fecha_ingreso": "20/02/2025",
+      "fecha_informe": "28/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250191",
+      "N. de identificación": "1007763401",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "GINECOLOGIA",
+      "Médico tratante": "EULER JAVIER BURBANO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/02/2025",
+      "Fecha Informe": "28/02/2025",
+      "nombres": "VALENTINA MOSCOSO",
+      "Primer nombre": "VALENTINA",
+      "Segundo nombre": "MOSCOSO",
+      "apellidos": "GOMEZ",
+      "Primer apellido": "GOMEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "GOMEZ, VALENTINA MOSCOSO",
+      "diagnostico": "Peritoneo. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN EN TRACTO GENITAL FEMENINO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad para CKAE1/AE3, CK7, CK19, Receptor de Estrógeno, PAX-8, WT1, siendo negativo para CK20, GATA-3, CA19-9 y CDX2. La calretinina se presenta positividad focal en el recubrimiento señalando las células mesoteliales sin positividad en la proliferación neoplásica.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2501266-1 que corresponde a biopsia de peritoneo, con diagnóstico de \"FORMACIONES ACINARES CON ATIPIA Y MICROCALFICACIONES A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHSITOQUÍMICA\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "PERITONEO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "GINECOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Los hallazgos son sugestivos de que se trate de adenocarcinoma del tracto genital femenino que es probable que sea de origen ovárico, sin embargo se debe correlacionar con la clínica, imágenes diagnósticas y estudios serológicos.",
+      "IHQ_ORGANO": "PERITONEO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_WT1": "POSITIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "extraction_timestamp": "2026-01-08T04:58:37.880818",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250191\nCopia Pag. 1 de 2\nNombre : VALENTINA MOSCOSO GOMEZ\nN. peticion : IHQ250191\nN.Identificación : CC. 1007763401\nGenero : FEMENINO\nEdad : 25 años 16 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : EULER JAVIER BURBANO\nServicio : GINECOLOGIA\nFecha Ingreso : 20/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PERITONEO PARIETAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501266-1 que corresponde a biopsia de peritoneo, con diagnóstico de\n\"FORMACIONES ACINARES CON ATIPIA Y MICROCALFICACIONES A CLASIFICAR MEDIANTE ESTUDIOS DE\nINMUNOHSITOQUÍMICA\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales presentan inmunorreactividad para CKAE1/AE3, CK7, CK19, Receptor de Estrógeno,\nPAX-8, WT1, siendo negativo para CK20, GATA-3, CA19-9 y CDX2.\nLa calretinina se presenta positividad focal en el recubrimiento señalando las células mesoteliales sin\npositividad en la proliferación neoplásica.\nDIAGNÓSTICO\nPeritoneo. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON ADENOCARCINOMA\nMETASTASICO DE PROBABLE ORIGEN EN TRACTO GENITAL FEMENINO. \nCOMENTARIOS\nLos hallazgos son sugestivos de que se trate de adenocarcinoma del tracto genital femenino que es\nprobable que sea de origen ovárico, sin embargo se debe correlacionar con la clínica, imágenes\ndiagnósticas y estudios serológicos.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---\nIHQ250191\nCopia Pag. 2 de 2\nNombre : VALENTINA MOSCOSO GOMEZ\nN. peticion : IHQ250191\nN.Identificación : CC. 1007763401\nGenero : FEMENINO\nEdad : 25 años 16 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : EULER JAVIER BURBANO\nServicio : GINECOLOGIA\nFecha Ingreso : 20/02/2025\nFecha Informe : 28/02/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CA19-9, CDX2, CK19, CK20, CK7, CKAE1AE3, GATA3, PAX8, Receptor de Estrógeno, WT1",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2501266-1 que corresponde a biopsia de peritoneo, con diagnóstico de \"FORMACIONES ACINARES CON ATIPIA Y MICROCALFICACIONES A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHSITOQUÍMICA\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad para CKAE1/AE3, CK7, CK19, Receptor de Estrógeno, PAX-8, WT1, siendo negativo para CK20, GATA-3, CA19-9 y CDX2. La calretinina se presenta positividad focal en el recubrimiento señalando las células mesoteliales sin positividad en la proliferación neoplásica.",
+      "Descripcion Diagnostico": "Peritoneo. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN EN TRACTO GENITAL FEMENINO.",
+      "IHQ_ORGANO": "PERITONEO",
+      "Organo": "BX PERITONEO PARIETAL",
+      "Diagnostico Coloracion": "FORMACIONES ACINARES CON ATIPIA Y MICROCALFICACIONES A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHSITOQUÍMICA",
+      "Diagnostico Principal": "HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN EN TRACTO GENITAL FEMENINO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_WT1": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 169,
+      "campos_vacios": 124,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 124,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Peritoneo. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON ADENOCARCINOMA\nMETASTASICO DE PROBABLE ORIGEN EN TRACTO GENITAL FEMENINO.",
+      "valor_corregido": "Peritoneo. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN EN TRACTO GENITAL FEMENINO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250191",
+      "timestamp": "2026-01-08T04:58:37.880516"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos son sugestivos de que se trate de adenocarcinoma del tracto genital femenino que es\nprobable que sea de origen ovárico, sin embargo se debe correlacionar con la clínica, imágenes\ndiagnósticas y estudios serológicos.",
+      "valor_corregido": "Los hallazgos son sugestivos de que se trate de adenocarcinoma del tracto genital femenino que es probable que sea de origen ovárico, sin embargo se debe correlacionar con la clínica, imágenes diagnósticas y estudios serológicos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250191",
+      "timestamp": "2026-01-08T04:58:37.880522"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 56
+  }
+}

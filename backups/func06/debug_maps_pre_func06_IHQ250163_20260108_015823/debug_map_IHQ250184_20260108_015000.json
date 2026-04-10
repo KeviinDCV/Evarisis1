@@ -1,0 +1,164 @@
+{
+  "session_id": "IHQ250184_20260108_015000",
+  "numero_peticion": "IHQ250184",
+  "timestamp": "2026-01-08T01:50:00.541595",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250184\nCopia Pag. 1 de 1\nNombre : WILLIAMS FIGUEROA GONZALIAS\nN. peticion : IHQ250184\nN.Identificación : CC. 70549568\nGenero : MASCULINO\nEdad : 68 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ANGELICA MARIA PABON\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 19/02/2025\nFecha Informe : 27/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASA MUCOSA DE\nESOFAGO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional\nrotulado como 2025-SO2398 que corresponde a \"biopsia de mucosa esofágica\" con diagnóstico principal\nde\"ADENCARCINOMA INVASIVO, BIEN DIFERENCIADO\". Previa revisión de la histología, se procesa estudio\nde inmunohistoquímica para marcación con CDX2, CA19-9, HER2, TTF-1, CK19, CK7 y CK20.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CK7, CK19 y CDX2. Son negativas para CK20, CA19-9, TTF-1 y\nHER2 (1+).\nDIAGNÓSTICO\n Esófago. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica:\nADENOCARCINOMA BIEN DIFERENCIADO DE PROBABLE ORIGEN EN EL TUBO DIGESTIVO\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 41 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2506,
+      "reduccion_porcentaje": 98.49
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250184",
+      "caso_num": 24,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "nombre_completo": "WILLIAMS FIGUEROA GONZALIAS",
+      "numero_peticion": "IHQ250184",
+      "identificacion": "70549568",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "68",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "ANGELICA MARIA PABON",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "19/02/2025",
+      "fecha_informe": "27/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250184",
+      "N. de identificación": "70549568",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "ANGELICA MARIA PABON",
+      "Fecha de ingreso (2. Fecha de la muestra)": "19/02/2025",
+      "Fecha Informe": "27/02/2025",
+      "nombres": "WILLIAMS FIGUEROA",
+      "Primer nombre": "WILLIAMS",
+      "Segundo nombre": "FIGUEROA",
+      "apellidos": "GONZALIAS",
+      "Primer apellido": "GONZALIAS",
+      "Segundo apellido": "",
+      "nombre_formal": "GONZALIAS, WILLIAMS FIGUEROA",
+      "diagnostico": "Esófago. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica: ADENOCARCINOMA BIEN DIFERENCIADO DE PROBABLE ORIGEN EN EL TUBO DIGESTIVO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, CK19 y CDX2. Son negativas para CK20, CA19-9, TTF1 y HER2 (1+).",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como 2025-SO2398 que corresponde a \"biopsia de mucosa esofágica\" con diagnóstico principal de\"ADENCARCINOMA INVASIVO, BIEN DIFERENCIADO\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con CDX2, CA19-9, HER2, TTF1, CK19, CK7 y CK20.",
+      "ihq_organo": "ESÓFAGO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CDX2, CA19-9, HER2, TTF-1, CK19, CK7, CK20",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ESÓFAGO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "HER2 (1+)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CDX2, CA19-9, HER2, TTF-1, CK19, CK7, CK20",
+      "IHQ_HER2": "NEGATIVO (1+)",
+      "IHQ_CA19_9": "POSITIVO",
+      "extraction_timestamp": "2026-01-08T01:50:00.889732",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250184\nCopia Pag. 1 de 1\nNombre : WILLIAMS FIGUEROA GONZALIAS\nN. peticion : IHQ250184\nN.Identificación : CC. 70549568\nGenero : MASCULINO\nEdad : 68 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ANGELICA MARIA PABON\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 19/02/2025\nFecha Informe : 27/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASA MUCOSA DE\nESOFAGO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional\nrotulado como 2025-SO2398 que corresponde a \"biopsia de mucosa esofágica\" con diagnóstico principal\nde\"ADENCARCINOMA INVASIVO, BIEN DIFERENCIADO\". Previa revisión de la histología, se procesa estudio\nde inmunohistoquímica para marcación con CDX2, CA19-9, HER2, TTF-1, CK19, CK7 y CK20.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CK7, CK19 y CDX2. Son negativas para CK20, CA19-9, TTF-1 y\nHER2 (1+).\nDIAGNÓSTICO\n Esófago. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica:\nADENOCARCINOMA BIEN DIFERENCIADO DE PROBABLE ORIGEN EN EL TUBO DIGESTIVO\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 41 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CDX2, CA19-9, HER2, TTF-1, CK19, CK7, CK20",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como 2025-SO2398 que corresponde a \"biopsia de mucosa esofágica\" con diagnóstico principal de\"ADENCARCINOMA INVASIVO, BIEN DIFERENCIADO\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con CDX2, CA19-9, HER2, TTF-1, CK19, CK7 y CK20.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, CK19 y CDX2. Son negativas para CK20, CA19-9, TTF-1 y HER2 (1+).",
+      "Descripcion Diagnostico": "Esófago. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica: ADENOCARCINOMA BIEN DIFERENCIADO DE PROBABLE ORIGEN EN EL TUBO DIGESTIVO",
+      "IHQ_ORGANO": "ESÓFAGO",
+      "Organo": "MASA MUCOSA DE ESOFAGO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "ADENOCARCINOMA BIEN DIFERENCIADO DE PROBABLE ORIGEN EN EL TUBO DIGESTIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 (1+)",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_CA19_9": "POSITIVO",
+      "IHQ_HER2": "NEGATIVO (1+)",
+      "IHQ_TTF1": "NO MENCIONADO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 126,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 126,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Esófago. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica:\nADENOCARCINOMA BIEN DIFERENCIADO DE PROBABLE ORIGEN EN EL TUBO DIGESTIVO",
+      "valor_corregido": "Esófago. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica: ADENOCARCINOMA BIEN DIFERENCIADO DE PROBABLE ORIGEN EN EL TUBO DIGESTIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250184",
+      "timestamp": "2026-01-08T01:50:00.889491"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como 2025-SO2398 que corresponde a \"biopsia de mucosa esofágica\" con diagnóstico principal de\"ADENCARCINOMA INVASIVO, BIEN DIFERENCIADO\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con CDX2, CA19-9, HER2, TTF-1, CK19, CK7 y CK20.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como 2025-SO2398 que corresponde a \"biopsia de mucosa esofágica\" con diagnóstico principal de\"ADENCARCINOMA INVASIVO, BIEN DIFERENCIADO\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con CDX2, CA19-9, HER2, TTF1, CK19, CK7 y CK20.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250184",
+      "timestamp": "2026-01-08T01:50:00.889498"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, CK19 y CDX2. Son negativas para CK20, CA19-9, TTF-1 y HER2 (1+).",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, CK19 y CDX2. Son negativas para CK20, CA19-9, TTF1 y HER2 (1+).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250184",
+      "timestamp": "2026-01-08T01:50:00.889500"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 53
+  }
+}

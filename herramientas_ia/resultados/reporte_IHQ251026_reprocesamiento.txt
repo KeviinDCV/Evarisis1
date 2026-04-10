@@ -1,0 +1,33 @@
+=== REPORTE COMPLETO IHQ251026 ===
+
+DATOS DEL PACIENTE:
+  Caso: IHQ251026
+  Nombre: N/A
+  Edad: 14
+  Genero: FEMENINO
+
+>>> MALIGNIDAD (correccion v6.3.6):
+  MALIGNIDAD: BENIGNO <<<< OK
+
+=== BIOMARCADORES (correcciones v6.2.7) ===
+  OK    IHQ_P16_ESTADO: NEGATIVO
+  OK    IHQ_CK7: POSITIVO
+  OK    IHQ_CD20: NEGATIVO
+  OK    IHQ_BCL2: NEGATIVO
+  OK    IHQ_BCL6: NEGATIVO
+  OK    IHQ_CD5: POSITIVO
+  OK    IHQ_CAM5: POSITIVO
+  ERROR IHQ_CK56: N/A (esperado: POSITIVO)
+
+FACTOR PRONOSTICO: NO APLICA
+IHQ_ORGANO: REGIÓN ESFENOIDES
+IHQ_ESTUDIOS_SOLICITADOS: P16, P40, CAM5.2, BCL2, BCL6, CD20, CD5, CK 56, CK7, CKAE1AE3
+
+=== RESUMEN DE VALIDACION ===
+Total biomarcadores verificados: 8
+  Correctos: 7/8 (87.5%)
+  Incorrectos: 0/8
+  No extraidos: 1/8
+
+Biomarcadores NO extraidos:
+  - IHQ_CK56 (esperado: POSITIVO)

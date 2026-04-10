@@ -1,0 +1,177 @@
+{
+  "session_id": "IHQ250294_20260203_042232",
+  "numero_peticion": "IHQ250294",
+  "timestamp": "2026-02-03T04:22:32.959582",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250294\nCopia Pag. 1 de 2\nNombre : LUZ MAYERLY ESCUDERO TABORDA\nN. peticion : IHQ250294\nN.Identificación : CC. 1116238073\nGenero : FEMENINO\nEdad : 37 años 6 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 21/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX COLON\n2025-03-08\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente\nde \"Laboratorio de patología Bertha Yulieth Garzón Mora\" rotulado como \"B25-180\" el cual\nconsiste en un bloque de parafina y una lámina de H&E correspondiente a \"Colon\" con\ndiagnóstico de \"PROLIFERACIÓN LINFOIDE ATÍPICA\". Se revisan placas para marcación de CD3,\nCD5, CD10, CD20, CD23, CD38, PAX-5, BCL2, BCL6, MUM-1 y Ki67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia revisión de la técnica y verificación del adecuado rendimiento de los controles internos y\nexternos,\nse\nanalizan\ntinciones\nde\nInmunohistoquímica\nrealizadas\ncon\ntécnica\nde\ninmunoperoxidasa en la plataforma automatizada Roche VENTANA©.\nSe\nobservan\nmucosa\ncolónica\ncon\nfragmentación\ny\natricción\ndel\ntéjido,\ncon\nevidencia\nde glándulas de histoarquitectura conservada, en la lámina propia hay un infiltrado inflamatorio\nmononuclear formando cúmulos compuestos por linfocitos B positivos para CD20 y PAX5 con\nescasa\nrepresentación\nde\ncentros\ngerminales\npositivos\npara\nCD10\ny\nBCL6.\nLinfocitos\nT\nacompañantes\npositivos\npara\nCD3,\nCD5\ny\nBCL2.\nHay\ncélulas\nplasmáticas\nen\ndistribución\nusual positivas para CD38. No hay\ninmunorreactividad para CD23. Ki67 (indice de proliferación)\npositivo en centros germinales.\nDIAGNÓSTICO\nMucosa de colon. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica.\nHIPERPLASIA FOLICULAR REACTIVA.\nSIN EVIDENCIA DE POBLACIÓN NEOPLÁSICA EN ESTA MUESTRA.\nCOMENTARIOS\nDurante el procesamiento de la muestra se presentó fragmentación del tejido por lo que la\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---\nIHQ250294\nCopia Pag. 2 de 2\nNombre : LUZ MAYERLY ESCUDERO TABORDA\nN. peticion : IHQ250294\nN.Identificación : CC. 1116238073\nGenero : FEMENINO\nEdad : 37 años 6 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 21/03/2025\nFecha Informe : 28/03/2025\ninterpretación de la misma puede ser díficil. En caso de alta sospecha clínica de neoplasia se\nsugiere nuevo muestreo a criterio del médico tratante.\nCaso valorado en conjunto con la Doctora Maria Ximena Varela, Patóloga.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 57 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3944,
+      "reduccion_porcentaje": 97.74
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250294",
+      "caso_num": 30,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "nombre_completo": "LUZ MAYERLY ESCUDERO TABORDA",
+      "numero_peticion": "IHQ250294",
+      "identificacion": "1116238073",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "37",
+      "eps": "EPS FAMISANAR SAS",
+      "medico_tratante": "JOSE OMAR ZORILLA",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "21/03/2025",
+      "fecha_informe": "28/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250294",
+      "N. de identificación": "1116238073",
+      "Tipo de documento": "CC",
+      "EPS": "EPS FAMISANAR SAS",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "JOSE OMAR ZORILLA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/03/2025",
+      "Fecha Informe": "28/03/2025",
+      "nombres": "LUZ MAYERLY",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "MAYERLY",
+      "apellidos": "ESCUDERO TABORDA",
+      "Primer apellido": "ESCUDERO",
+      "Segundo apellido": "TABORDA",
+      "nombre_formal": "ESCUDERO TABORDA, LUZ MAYERLY",
+      "diagnostico": "Mucosa de colon. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica. HIPERPLASIA FOLICULAR REACTIVA. SIN EVIDENCIA DE POBLACIÓN NEOPLÁSICA EN ESTA MUESTRA.",
+      "descripcion_microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Se observan mucosa colónica con fragmentación y atricción del téjido, con evidencia de glándulas de histoarquitectura conservada, en la lámina propia hay un infiltrado inflamatorio mononuclear formando cúmulos compuestos por linfocitos B positivos para CD20 y PAX5 con escasa representación de centros germinales positivos para CD10 y BCL6. Linfocitos T acompañantes positivos para CD3, CD5 y BCL2. Hay células plasmáticas en distribución usual positivas para CD38. No hay inmunorreactividad para CD23. KI-67 (indice de proliferación) positivo en centros germinales.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"Laboratorio de patología Bertha Yulieth Garzón Mora\" rotulado como \"B25-180\" el cual consiste en un bloque de parafina y una lámina de H&E correspondiente a \"Colon\" con diagnóstico de \"PROLIFERACIÓN LINFOIDE ATÍPICA\". Se revisan placas para marcación de CD3, CD5, CD10, CD20, CD23, CD38, PAX-5, BCL2, BCL6, MUM-1 y KI-67.",
+      "ihq_organo": "MUCOSA DE COLON",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD5, CD10, CD20, CD23, CD38, PAX 5, BCL2, BCL6, MUM 1, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Durante el procesamiento de la muestra se presentó fragmentación del tejido por lo que la Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 56 --- IHQ250294 Copia Pag. 2 de 2 Nombre : LUZ MAYERLY ESCUDERO TABORDA N. peticion : IHQ250294 N.Identificación : CC. 1116238073 Genero : FEMENINO Edad : 37 años 6 dias EPS : EPS FAMISANAR SAS Médico tratante : JOSE OMAR ZORILLA Servicio : CIRUGIA MUJERES Fecha Ingreso : 21/03/2025 Fecha Informe : 28/03/2025 interpretación de la misma puede ser díficil. En caso de alta sospecha clínica de neoplasia se sugiere nuevo muestreo a criterio del médico tratante. Caso valorado en conjunto con la Doctora Maria Ximena Varela, Patóloga.",
+      "IHQ_ORGANO": "MUCOSA DE COLON",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD5, CD10, CD20, CD23, CD38, PAX 5, BCL2, BCL6, MUM 1, Ki-67",
+      "IHQ_CD23": "POSITIVO",
+      "extraction_timestamp": "2026-02-03T04:22:33.318768",
+      "extractor_version": "6.5.91_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250294\nCopia Pag. 1 de 2\nNombre : LUZ MAYERLY ESCUDERO TABORDA\nN. peticion : IHQ250294\nN.Identificación : CC. 1116238073\nGenero : FEMENINO\nEdad : 37 años 6 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 21/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX COLON\n2025-03-08\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente\nde \"Laboratorio de patología Bertha Yulieth Garzón Mora\" rotulado como \"B25-180\" el cual\nconsiste en un bloque de parafina y una lámina de H&E correspondiente a \"Colon\" con\ndiagnóstico de \"PROLIFERACIÓN LINFOIDE ATÍPICA\". Se revisan placas para marcación de CD3,\nCD5, CD10, CD20, CD23, CD38, PAX-5, BCL2, BCL6, MUM-1 y Ki67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia revisión de la técnica y verificación del adecuado rendimiento de los controles internos y\nexternos,\nse\nanalizan\ntinciones\nde\nInmunohistoquímica\nrealizadas\ncon\ntécnica\nde\ninmunoperoxidasa en la plataforma automatizada Roche VENTANA©.\nSe\nobservan\nmucosa\ncolónica\ncon\nfragmentación\ny\natricción\ndel\ntéjido,\ncon\nevidencia\nde glándulas de histoarquitectura conservada, en la lámina propia hay un infiltrado inflamatorio\nmononuclear formando cúmulos compuestos por linfocitos B positivos para CD20 y PAX5 con\nescasa\nrepresentación\nde\ncentros\ngerminales\npositivos\npara\nCD10\ny\nBCL6.\nLinfocitos\nT\nacompañantes\npositivos\npara\nCD3,\nCD5\ny\nBCL2.\nHay\ncélulas\nplasmáticas\nen\ndistribución\nusual positivas para CD38. No hay\ninmunorreactividad para CD23. Ki67 (indice de proliferación)\npositivo en centros germinales.\nDIAGNÓSTICO\nMucosa de colon. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica.\nHIPERPLASIA FOLICULAR REACTIVA.\nSIN EVIDENCIA DE POBLACIÓN NEOPLÁSICA EN ESTA MUESTRA.\nCOMENTARIOS\nDurante el procesamiento de la muestra se presentó fragmentación del tejido por lo que la\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---\nIHQ250294\nCopia Pag. 2 de 2\nNombre : LUZ MAYERLY ESCUDERO TABORDA\nN. peticion : IHQ250294\nN.Identificación : CC. 1116238073\nGenero : FEMENINO\nEdad : 37 años 6 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 21/03/2025\nFecha Informe : 28/03/2025\ninterpretación de la misma puede ser díficil. En caso de alta sospecha clínica de neoplasia se\nsugiere nuevo muestreo a criterio del médico tratante.\nCaso valorado en conjunto con la Doctora Maria Ximena Varela, Patóloga.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 57 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD5, CD10, CD20, CD23, CD38, PAX 5, BCL2, BCL6, MUM 1, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"Laboratorio de patología Bertha Yulieth Garzón Mora\" rotulado como \"B25-180\" el cual consiste en un bloque de parafina y una lámina de H&E correspondiente a \"Colon\" con diagnóstico de \"PROLIFERACIÓN LINFOIDE ATÍPICA\". Se revisan placas para marcación de CD3, CD5, CD10, CD20, CD23, CD38, PAX-5, BCL2, BCL6, MUM-1 y Ki67.",
+      "Descripcion microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Se observan mucosa colónica con fragmentación y atricción del téjido, con evidencia de glándulas de histoarquitectura conservada, en la lámina propia hay un infiltrado inflamatorio mononuclear formando cúmulos compuestos por linfocitos B positivos para CD20 y PAX5 con escasa representación de centros germinales positivos para CD10 y BCL6. Linfocitos T acompañantes positivos para CD3, CD5 y BCL2. Hay células plasmáticas en distribución usual positivas para CD38. No hay inmunorreactividad para CD23. Ki67 (indice de proliferación) positivo en centros germinales.",
+      "Descripcion Diagnostico": "Mucosa de colon. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica. HIPERPLASIA FOLICULAR REACTIVA. SIN EVIDENCIA DE POBLACIÓN NEOPLÁSICA EN ESTA MUESTRA.",
+      "IHQ_ORGANO": "MUCOSA DE COLON",
+      "Organo": "BX COLON",
+      "Diagnostico Coloracion": "PROLIFERACIÓN LINFOIDE ATÍPICA",
+      "Diagnostico Principal": "HIPERPLASIA FOLICULAR REACTIVA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "NO MENCIONADO",
+      "IHQ_CD5": "NO MENCIONADO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_BCL2": "NO MENCIONADO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_MUM1": "NO MENCIONADO",
+      "IHQ_KI-67": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 130,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 11,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 130,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa de colon. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica.\nHIPERPLASIA FOLICULAR REACTIVA.\nSIN EVIDENCIA DE POBLACIÓN NEOPLÁSICA EN ESTA MUESTRA.",
+      "valor_corregido": "Mucosa de colon. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica. HIPERPLASIA FOLICULAR REACTIVA. SIN EVIDENCIA DE POBLACIÓN NEOPLÁSICA EN ESTA MUESTRA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250294",
+      "timestamp": "2026-02-03T04:22:33.318546"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"Laboratorio de patología Bertha Yulieth Garzón Mora\" rotulado como \"B25-180\" el cual consiste en un bloque de parafina y una lámina de H&E correspondiente a \"Colon\" con diagnóstico de \"PROLIFERACIÓN LINFOIDE ATÍPICA\". Se revisan placas para marcación de CD3, CD5, CD10, CD20, CD23, CD38, PAX-5, BCL2, BCL6, MUM-1 y Ki67.",
+      "valor_corregido": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"Laboratorio de patología Bertha Yulieth Garzón Mora\" rotulado como \"B25-180\" el cual consiste en un bloque de parafina y una lámina de H&E correspondiente a \"Colon\" con diagnóstico de \"PROLIFERACIÓN LINFOIDE ATÍPICA\". Se revisan placas para marcación de CD3, CD5, CD10, CD20, CD23, CD38, PAX-5, BCL2, BCL6, MUM-1 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250294",
+      "timestamp": "2026-02-03T04:22:33.318552"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Se observan mucosa colónica con fragmentación y atricción del téjido, con evidencia de glándulas de histoarquitectura conservada, en la lámina propia hay un infiltrado inflamatorio mononuclear formando cúmulos compuestos por linfocitos B positivos para CD20 y PAX5 con escasa representación de centros germinales positivos para CD10 y BCL6. Linfocitos T acompañantes positivos para CD3, CD5 y BCL2. Hay células plasmáticas en distribución usual positivas para CD38. No hay inmunorreactividad para CD23. Ki67 (indice de proliferación) positivo en centros germinales.",
+      "valor_corregido": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Se observan mucosa colónica con fragmentación y atricción del téjido, con evidencia de glándulas de histoarquitectura conservada, en la lámina propia hay un infiltrado inflamatorio mononuclear formando cúmulos compuestos por linfocitos B positivos para CD20 y PAX5 con escasa representación de centros germinales positivos para CD10 y BCL6. Linfocitos T acompañantes positivos para CD3, CD5 y BCL2. Hay células plasmáticas en distribución usual positivas para CD38. No hay inmunorreactividad para CD23. KI-67 (indice de proliferación) positivo en centros germinales.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250294",
+      "timestamp": "2026-02-03T04:22:33.318554"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Durante el procesamiento de la muestra se presentó fragmentación del tejido por lo que la\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---\nIHQ250294\nCopia Pag. 2 de 2\nNombre : LUZ MAYERLY ESCUDERO TABORDA\nN. peticion : IHQ250294\nN.Identificación : CC. 1116238073\nGenero : FEMENINO\nEdad : 37 años 6 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 21/03/2025\nFecha Informe : 28/03/2025\ninterpretación de la misma puede ser díficil. En caso de alta sospecha clínica de neoplasia se\nsugiere nuevo muestreo a criterio del médico tratante.\nCaso valorado en conjunto con la Doctora Maria Ximena Varela, Patóloga.",
+      "valor_corregido": "Durante el procesamiento de la muestra se presentó fragmentación del tejido por lo que la Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 56 --- IHQ250294 Copia Pag. 2 de 2 Nombre : LUZ MAYERLY ESCUDERO TABORDA N. peticion : IHQ250294 N.Identificación : CC. 1116238073 Genero : FEMENINO Edad : 37 años 6 dias EPS : EPS FAMISANAR SAS Médico tratante : JOSE OMAR ZORILLA Servicio : CIRUGIA MUJERES Fecha Ingreso : 21/03/2025 Fecha Informe : 28/03/2025 interpretación de la misma puede ser díficil. En caso de alta sospecha clínica de neoplasia se sugiere nuevo muestreo a criterio del médico tratante. Caso valorado en conjunto con la Doctora Maria Ximena Varela, Patóloga.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250294",
+      "timestamp": "2026-02-03T04:22:33.318556"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 55
+  }
+}

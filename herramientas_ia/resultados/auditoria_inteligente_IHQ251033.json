@@ -1,0 +1,118 @@
+{
+  "numero_caso": "IHQ251033",
+  "caso_num": 46,
+  "total_casos": 47,
+  "timestamp": "2025-11-12T01:10:17.244598",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 1,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "ERROR",
+      "mensaje": "DIAGNOSTICO_COLORACION difiere entre BD y OCR",
+      "valor_bd": "CAMBIOS INFLAMATORIOS Y REACTIVOS, - PRESENCIA DE CELULAS GANGLIONARES",
+      "valor_ocr": "\"CAMBIOS INFLAMATORIOS Y REACTIVOS, -"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "NEGATIVO PARA PRESENCIA DE CÉLULAS GANGLIONARES"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 0,
+      "estudios_ocr": [],
+      "estudios_bd": [],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [
+      "DIAGNOSTICO_COLORACION difiere entre BD y OCR"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe caso para revisión proveniente del Hospital infantil universitario de San José que consta ..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "PROTOCOLO PARA EL ESTUDIO HISTOPATOLÓGICO DE BIOPSIAS CON SOSPECHA DE ENFERMEDAD DE HIRSPRUNG: - Tip..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "RECTO"
+    },
+    "organo": {
+      "estado": "OK",
+      "mensaje": "Campo Organo está limpio",
+      "valor_bd": "BX COLOSTOMIA"
+    },
+    "formatos_biomarcadores": {
+      "estado": "OK",
+      "total_biomarcadores": 0,
+      "biomarcadores_con_problemas": 0,
+      "porcentaje_problemas": 0,
+      "problemas": [],
+      "mensaje": "Todos los biomarcadores tienen formato estandarizado"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 1,
+    "biomarcadores_solicitados": 0,
+    "biomarcadores_mapeados": 0,
+    "biomarcadores_no_mapeados": 0,
+    "completitud_biomarcadores": 100
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

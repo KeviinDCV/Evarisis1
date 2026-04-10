@@ -1,0 +1,51 @@
+{
+  "caso": "IHQ250224",
+  "timestamp": "2026-01-28T01:08:48.645140",
+  "score_antes": 88.9,
+  "score_despues": 88.9,
+  "estado": "PROBLEMAS PERSISTENTES",
+  "modificaciones_aplicadas": [
+    "CK34BETA12 agregado al sistema (FUNC-03) - v6.4.90",
+    "medical_extractor.py v6.4.92 - Captura diagnosticos multipagina sin vinetas",
+    "biomarker_extractor.py v6.4.91 - Ya actualizado previamente"
+  ],
+  "problemas_detectados": {
+    "DIAGNOSTICO_PRINCIPAL": {
+      "actual": "ESTUDIO DE INMUNOHISTOQUIMICA (LAMINA A) ADENOCARCINOMA GLEASON",
+      "esperado": "ADENOCARCINOMA GLEASON SCORE 3+3 = 6 (GRUPO 1) PRESENTE EN EL 1% DE LA MUESTRA EXAMINADA",
+      "problema": "Truncado - falta el final del diagnostico",
+      "ubicacion_ocr": "Pagina 2 (lineas separadas sin vinetas)",
+      "causa_probable": "Patron v6.4.92 no captura correctamente diagnosticos en formato sin vinetas de prostata"
+    },
+    "IHQ_ESTUDIOS_SOLICITADOS": {
+      "actual": "P63, RACEMASA",
+      "esperado": "P63, RACEMASA, CK34BETA12",
+      "problema": "Falta CK34BETA12",
+      "ubicacion_ocr": "Descripcion Macroscopica: para tincion con los marcadores: p63, Racemasa, CK34BETA12",
+      "causa_probable": "Patron de extraccion no reconoce CK34BETA12 en la lista de marcadores"
+    },
+    "IHQ_CK34BETA12": {
+      "actual": "N/A",
+      "esperado": "NEGATIVO",
+      "problema": "No se extrajo valor",
+      "ubicacion_ocr": "Descripcion Microscopica: negativa para p63 y CK34BETA12",
+      "causa_probable": "biomarker_extractor.py no tiene patron para CK34BETA12"
+    }
+  },
+  "ocr_relevante": {
+    "descripcion_macroscopica": "para tincion con los marcadores: p63, Racemasa, CK34BETA12",
+    "descripcion_microscopica": "negativa para p63 y CK34BETA12",
+    "diagnostico_pagina_2": [
+      "ADENOCARCINOMA GLEASON SCORE 3+3 = 6 (GRUPO 1)",
+      "PRESENTE EN EL 1% DE LA MUESTRA EXAMINADA",
+      "NEGATIVO PARA INVASION LINFOVASCULAR",
+      "NEGATIVO PARA INVASION PERINEURAL"
+    ]
+  },
+  "acciones_requeridas": [
+    "1. medical_extractor.py: Mejorar extract_principal_diagnosis() para casos de prostata sin vinetas",
+    "2. biomarker_extractor.py: Agregar patron para CK34BETA12 en extract_narrative_biomarkers()",
+    "3. medical_extractor.py: Agregar CK34BETA12 a la lista de biomarcadores en extract_requested_studies()"
+  ],
+  "siguiente_paso": "Modificar extractores y ejecutar FUNC-06 nuevamente"
+}

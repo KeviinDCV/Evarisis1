@@ -1,0 +1,38 @@
+======================================================================
+VALIDACION CORRECCION v6.5.69 - PMS2 IHQ250259
+======================================================================
+
+CONTEXTO:
+---------
+Version: v6.5.69
+Biomarcador: PMS2 (MMR)
+Caso: IHQ250259
+Fecha validacion: 2026-01-29 08:01:23
+
+PROBLEMA ORIGINAL:
+------------------
+El patron anterior truncaba la descripcion de PMS2:
+ANTES: "POSITIVO (EXPRESION NUCLEAR INTACTA)"
+ESPERADO: Capturar texto completo hasta punto final
+
+SOLUCION IMPLEMENTADA:
+----------------------
+Patron v6.5.69 en biomarker_extractor.py:
+r"PMS2[:\s]+([^.]+\.)" <- Captura hasta punto final
+
+RESULTADO DESPUES DE FUNC-06:
+-----------------------------
+Valor PMS2 extraido: "POSITIVO (EXPRESIÓN NUCLEAR INTACTA CON MARCACIÓN CITOPLASMÁTICA EN EL 90%)"
+Longitud: 75 caracteres
+
+VALIDACION:
+-----------
+ESTADO: FALLO
+El patron v6.5.69 NO capturo la descripcion completa
+
+======================================================================
+CONCLUSION:
+======================================================================
+
+La correccion v6.5.69 requiere revision.
+RECOMENDACION: Revisar patron en biomarker_extractor.py.

@@ -1,0 +1,185 @@
+{
+  "session_id": "IHQ250078_20251219_020214",
+  "numero_peticion": "IHQ250078",
+  "timestamp": "2025-12-19T02:02:14.818679",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250078\nCopia Pag. 1 de 2\nNombre : DORIS MUÑOZ DE TORRES\nN. peticion : IHQ250078\nN.Identificación : CC. 38980328\nGenero : MASCULINO\nEdad : 80 años 11 meses 15 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JAVID JAVIER DE LA HOZ VIZCAINO\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 24/01/2025\nFecha Informe : 10/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX GANGLIO SUPRACLAV.\nIZQ\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500530-2 que corresponde a resección de masa en región\nsupraclavicular con diagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLa células tumorales no presentan diferenciación epitelial siendo negativas para CKAE1/AE3, no\npresentan diferenciación melanocítica dado la negatividad para SOX-10, pero presentan positividad\ndifusa para diferenciación linfoide siendo positivas para CD45; esta celularidad linfoide es en su mayoría\nlinfocitos B positivos para CD20 y PAX-5, siendo negativas para CD3, CD5, CD10, CD23, Cyclina-D1,\nCD30, con expresión focal para C-myc (30%) y es positiva esta celularidad para MUM-1, BCL2 y BCL6. \nEl índice de proliferación celular presenta un Ki-67 del 90%.\nLa celularidad acompañante corresponde a linfocitos T CD3 y CD5 positivos.\nDIAGNÓSTICO\nRegión supraclavicular. Masa. Resección. Estudios de inmunohistoquímica\nHALLAZGOS COMPATIBLES CON LINFOMA DIFUSO DE CELULAS B MADURAS.\nCOMENTARIOS\nEste resultado debe ser correlacionado con las imágenes diagnósticas, estudios de citometría de flujo y\nbiología molecular.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---\nIHQ250078\nCopia Pag. 2 de 2\nNombre : DORIS MUÑOZ DE TORRES\nN. peticion : IHQ250078\nN.Identificación : CC. 38980328\nGenero : MASCULINO\nEdad : 80 años 11 meses 15 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JAVID JAVIER DE LA HOZ VIZCAINO\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 24/01/2025\nFecha Informe : 10/02/2025\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3638,
+      "reduccion_porcentaje": 98.06
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250078",
+      "caso_num": 25,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "DORIS MUÑOZ DE TORRES",
+      "numero_peticion": "IHQ250078",
+      "identificacion": "38980328",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "80",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "JAVID JAVIER DE LA HOZ VIZCAINO",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "24/01/2025",
+      "fecha_informe": "10/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250078",
+      "N. de identificación": "38980328",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "JAVID JAVIER DE LA HOZ VIZCAINO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "24/01/2025",
+      "Fecha Informe": "10/02/2025",
+      "nombres": "DORIS MUÑOZ DE",
+      "Primer nombre": "DORIS",
+      "Segundo nombre": "MUÑOZ DE",
+      "apellidos": "TORRES",
+      "Primer apellido": "TORRES",
+      "Segundo apellido": "",
+      "nombre_formal": "TORRES, DORIS MUÑOZ DE",
+      "diagnostico": "Región supraclavicular. Masa. Resección. Estudios de inmunohistoquímica HALLAZGOS COMPATIBLES CON LINFOMA DIFUSO DE CELULAS B MADURAS.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La células tumorales no presentan diferenciación epitelial siendo negativas para CKAE1/AE3, no presentan diferenciación melanocítica dado la negatividad para SOX-10, pero presentan positividad difusa para diferenciación linfoide siendo positivas para CD45; esta celularidad linfoide es en su mayoría linfocitos B positivos para CD20 y PAX-5, siendo negativas para CD3, CD5, CD10, CD23, Cyclina-D1, CD30, con expresión focal para C-myc (30%) y es positiva esta celularidad para MUM-1, BCL2 y BCL6. El índice de proliferación celular presenta un KI-67 del 90%. La celularidad acompañante corresponde a linfocitos T CD3 y CD5 positivos.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2500530-2 que corresponde a resección de masa en región supraclavicular con diagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "REGIÓN SUPRACLAVICULAR",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Este resultado debe ser correlacionado con las imágenes diagnósticas, estudios de citometría de flujo y biología molecular.",
+      "IHQ_ORGANO": "REGIÓN SUPRACLAVICULAR",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67 del 90%",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_PAX5": "NEGATIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD23": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_BCL2": "NEGATIVO",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CD45": "POSITIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "extraction_timestamp": "2025-12-19T02:02:14.981054",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250078\nCopia Pag. 1 de 2\nNombre : DORIS MUÑOZ DE TORRES\nN. peticion : IHQ250078\nN.Identificación : CC. 38980328\nGenero : MASCULINO\nEdad : 80 años 11 meses 15 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JAVID JAVIER DE LA HOZ VIZCAINO\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 24/01/2025\nFecha Informe : 10/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX GANGLIO SUPRACLAV.\nIZQ\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500530-2 que corresponde a resección de masa en región\nsupraclavicular con diagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLa células tumorales no presentan diferenciación epitelial siendo negativas para CKAE1/AE3, no\npresentan diferenciación melanocítica dado la negatividad para SOX-10, pero presentan positividad\ndifusa para diferenciación linfoide siendo positivas para CD45; esta celularidad linfoide es en su mayoría\nlinfocitos B positivos para CD20 y PAX-5, siendo negativas para CD3, CD5, CD10, CD23, Cyclina-D1,\nCD30, con expresión focal para C-myc (30%) y es positiva esta celularidad para MUM-1, BCL2 y BCL6. \nEl índice de proliferación celular presenta un Ki-67 del 90%.\nLa celularidad acompañante corresponde a linfocitos T CD3 y CD5 positivos.\nDIAGNÓSTICO\nRegión supraclavicular. Masa. Resección. Estudios de inmunohistoquímica\nHALLAZGOS COMPATIBLES CON LINFOMA DIFUSO DE CELULAS B MADURAS.\nCOMENTARIOS\nEste resultado debe ser correlacionado con las imágenes diagnósticas, estudios de citometría de flujo y\nbiología molecular.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---\nIHQ250078\nCopia Pag. 2 de 2\nNombre : DORIS MUÑOZ DE TORRES\nN. peticion : IHQ250078\nN.Identificación : CC. 38980328\nGenero : MASCULINO\nEdad : 80 años 11 meses 15 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JAVID JAVIER DE LA HOZ VIZCAINO\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 24/01/2025\nFecha Informe : 10/02/2025\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "BCL2, BCL6, CD10, CD20, CD23, CD3, CD30, CD45, CD5, CKAE1AE3, Ki-67, MUM1, PAX5, SOX10",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2500530-2 que corresponde a resección de masa en región supraclavicular con diagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La células tumorales no presentan diferenciación epitelial siendo negativas para CKAE1/AE3, no presentan diferenciación melanocítica dado la negatividad para SOX-10, pero presentan positividad difusa para diferenciación linfoide siendo positivas para CD45; esta celularidad linfoide es en su mayoría linfocitos B positivos para CD20 y PAX-5, siendo negativas para CD3, CD5, CD10, CD23, Cyclina-D1, CD30, con expresión focal para C-myc (30%) y es positiva esta celularidad para MUM-1, BCL2 y BCL6. El índice de proliferación celular presenta un Ki-67 del 90%. La celularidad acompañante corresponde a linfocitos T CD3 y CD5 positivos.",
+      "Descripcion Diagnostico": "Región supraclavicular. Masa. Resección. Estudios de inmunohistoquímica HALLAZGOS COMPATIBLES CON LINFOMA DIFUSO DE CELULAS B MADURAS.",
+      "IHQ_ORGANO": "REGIÓN SUPRACLAVICULAR",
+      "Organo": "BX GANGLIO SUPRACLAV. IZQ",
+      "Diagnostico Coloracion": "TUMOR MALIGNO INDIFERENCIADO",
+      "Diagnostico Principal": "LINFOMA DIFUSO DE CELULAS B MADURAS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 90%",
+      "IHQ_BCL2": "NEGATIVO",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD23": "NEGATIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_CD45": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_MUM1": "POSITIVO",
+      "IHQ_PAX5": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 108,
+      "campos_completos": 49,
+      "biomarcadores_encontrados": 14,
+      "completitud_porcentaje": 31.21
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 108,
+      "total_campos_completos": 49
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región supraclavicular. Masa. Resección. Estudios de inmunohistoquímica\nHALLAZGOS COMPATIBLES CON LINFOMA DIFUSO DE CELULAS B MADURAS.",
+      "valor_corregido": "Región supraclavicular. Masa. Resección. Estudios de inmunohistoquímica HALLAZGOS COMPATIBLES CON LINFOMA DIFUSO DE CELULAS B MADURAS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250078",
+      "timestamp": "2025-12-19T02:02:14.980730"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2500530-2 que corresponde a resección de masa en región\nsupraclavicular con diagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de\ninmunohistoquímica.",
+      "valor_corregido": "Se realizan niveles al bloque M2500530-2 que corresponde a resección de masa en región supraclavicular con diagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250078",
+      "timestamp": "2025-12-19T02:02:14.980737"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLa células tumorales no presentan diferenciación epitelial siendo negativas para CKAE1/AE3, no\npresentan diferenciación melanocítica dado la negatividad para SOX-10, pero presentan positividad\ndifusa para diferenciación linfoide siendo positivas para CD45; esta celularidad linfoide es en su mayoría\nlinfocitos B positivos para CD20 y PAX-5, siendo negativas para CD3, CD5, CD10, CD23, Cyclina-D1,\nCD30, con expresión focal para C-myc (30%) y es positiva esta celularidad para MUM-1, BCL2 y BCL6. \nEl índice de proliferación celular presenta un Ki-67 del 90%.\nLa celularidad acompañante corresponde a linfocitos T CD3 y CD5 positivos.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La células tumorales no presentan diferenciación epitelial siendo negativas para CKAE1/AE3, no presentan diferenciación melanocítica dado la negatividad para SOX-10, pero presentan positividad difusa para diferenciación linfoide siendo positivas para CD45; esta celularidad linfoide es en su mayoría linfocitos B positivos para CD20 y PAX-5, siendo negativas para CD3, CD5, CD10, CD23, Cyclina-D1, CD30, con expresión focal para C-myc (30%) y es positiva esta celularidad para MUM-1, BCL2 y BCL6. El índice de proliferación celular presenta un KI-67 del 90%. La celularidad acompañante corresponde a linfocitos T CD3 y CD5 positivos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250078",
+      "timestamp": "2025-12-19T02:02:14.980740"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Este resultado debe ser correlacionado con las imágenes diagnósticas, estudios de citometría de flujo y\nbiología molecular.",
+      "valor_corregido": "Este resultado debe ser correlacionado con las imágenes diagnósticas, estudios de citometría de flujo y biología molecular.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250078",
+      "timestamp": "2025-12-19T02:02:14.980742"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 60
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "caso": "IHQ250162",
+  "fecha": "2026-01-07T22:44:04.945577",
+  "version": "v6.4.23",
+  "patron_validado": "No presentan expresión para",
+  "score_final": 77.8,
+  "estado": "ADVERTENCIA",
+  "resumen_ejecutivo": {
+    "patron_ejecutado": true,
+    "biomarcadores_en_lista": 8,
+    "biomarcadores_correctos": 5,
+    "tasa_exito": 62.5,
+    "problemas_detectados": 4
+  },
+  "texto_ocr": "No presentan expresión para calretinina, desmina, SMA, EMA, progesterona, CD34, GFAP, p53.",
+  "resultados_biomarcadores": [
+    {
+      "nombre": "CALRETININA",
+      "esperado": "NEGATIVO",
+      "obtenido": "POSITIVO (focal)",
+      "correcto": false,
+      "problema": "Conflicto con patrón focal"
+    },
+    {
+      "nombre": "DESMINA",
+      "esperado": "NEGATIVO",
+      "obtenido": "NEGATIVO",
+      "correcto": true,
+      "problema": null
+    },
+    {
+      "nombre": "SMA",
+      "esperado": "NEGATIVO",
+      "obtenido": "N/A",
+      "correcto": false,
+      "problema": "No reconocido en parseo de lista"
+    },
+    {
+      "nombre": "EMA",
+      "esperado": "NEGATIVO",
+      "obtenido": "NEGATIVO",
+      "correcto": true,
+      "problema": null
+    },
+    {
+      "nombre": "PROGESTERONA",
+      "esperado": "NEGATIVO",
+      "obtenido": "NEGATIVO",
+      "correcto": true,
+      "problema": null
+    },
+    {
+      "nombre": "CD34",
+      "esperado": "NEGATIVO",
+      "obtenido": "NEGATIVO",
+      "correcto": true,
+      "problema": null
+    },
+    {
+      "nombre": "GFAP",
+      "esperado": "NEGATIVO",
+      "obtenido": "NO MENCIONADO",
+      "correcto": false,
+      "problema": "No reconocido en parseo de lista"
+    },
+    {
+      "nombre": "P53",
+      "esperado": "NEGATIVO",
+      "obtenido": "NEGATIVO",
+      "correcto": true,
+      "problema": null
+    }
+  ],
+  "problemas_adicionales": [
+    {
+      "biomarcador": "BETACATENINA",
+      "texto_ocr": "Marcación en membrana para b-tacatenina",
+      "esperado": "POSITIVO",
+      "obtenido": "Vacío",
+      "problema": "Patrón no existe o no reconoce b-tacatenina"
+    }
+  ],
+  "causas_raiz": {
+    "calretinina": "Patrón focal se ejecuta DESPUÉS del patrón v6.4.23 y sobrescribe el valor correcto NEGATIVO",
+    "sma_gfap": "Función _get_target_column_for_biomarker no reconoce SMA ni GFAP en el parseo de la lista",
+    "betacatenina": "No existe patrón para \"Marcación en membrana para\" o no reconoce variante \"b-tacatenina\""
+  },
+  "acciones_requeridas": [
+    {
+      "prioridad": "MAXIMA",
+      "accion": "Garantizar que patrón v6.4.23 se ejecute DESPUÉS de \"focal\" Y sobrescriba valores",
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "metodo": "extract_narrative_biomarkers",
+      "lineas": "4976-5003"
+    },
+    {
+      "prioridad": "ALTA",
+      "accion": "Investigar por qué SMA y GFAP no se reconocen en parseo de lista",
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "metodo": "_get_target_column_for_biomarker",
+      "lineas": "Por determinar"
+    },
+    {
+      "prioridad": "MEDIA",
+      "accion": "Agregar patrón para \"Marcación en membrana para\" con soporte BETACATENINA",
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "metodo": "extract_narrative_biomarkers",
+      "lineas": "Agregar nuevo patrón"
+    }
+  ],
+  "validacion_regresion": {
+    "ejecutada": false,
+    "casos_referencia": [],
+    "nota": "Se requiere validar que v6.4.23 no rompió casos previos antes de continuar correcciones"
+  }
+}

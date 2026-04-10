@@ -1,0 +1,23 @@
+{
+  "caso": "IHQ250260",
+  "fecha_validacion": "2026-01-29T08:25:00.061842",
+  "version_correccion": "v6.5.70",
+  "biomarcador": "PMS2",
+  "objetivo": "Capturar valor completo a través del salto de línea",
+  "texto_ocr": "PMS2: expresión nuclear intacta (hay marcación citoplasmática patrón punteado y\nnuclear moteado)\nRECEPTORES ESTROGENOS",
+  "valor_antes": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA (HAY MARCACIÓN CITOPLASMÁTICA PATRÓN PUNTEADO Y)",
+  "valor_despues": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA (HAY MARCACIÓN CITOPLASMÁTICA PATRÓN PUNTEADO Y NUCLEAR MOTEADO) RECEPTORES ESTROGENOS)",
+  "validacion": {
+    "captura_salto_linea": true,
+    "texto_completo": true,
+    "contaminacion_detectada": true
+  },
+  "resultado": "EXITOSO con advertencia",
+  "detalles": {
+    "exito": "Corrección v6.5.70 captura correctamente texto a través del salto de línea",
+    "problema_detectado": "Valor contiene contaminación de biomarcador siguiente (RECEPTORES ESTROGENOS)",
+    "causa_raiz": "Patrón de extracción captura más allá del paréntesis de cierre",
+    "impacto": "El biomarcador se extrae completo pero con texto extra no deseado"
+  },
+  "recomendacion": "Ajustar patrón v6.5.70 para DETENER extracción inmediatamente después del paréntesis de cierre"
+}

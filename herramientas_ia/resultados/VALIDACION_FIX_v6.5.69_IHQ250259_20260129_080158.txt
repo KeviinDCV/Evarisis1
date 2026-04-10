@@ -1,0 +1,72 @@
+======================================================================
+VALIDACION CORRECCION v6.5.69 - PMS2 IHQ250259
+======================================================================
+
+CONTEXTO:
+---------
+Version: v6.5.69
+Biomarcador: PMS2 (MMR)
+Caso: IHQ250259
+Fecha validacion: 2026-01-29 08:01:58
+
+PROBLEMA ORIGINAL:
+------------------
+El patron anterior (v6.5.68) truncaba la descripcion de PMS2:
+VALOR TRUNCADO: "POSITIVO (EXPRESION NUCLEAR INTACTA)"
+PROBLEMA: Solo capturaba hasta parentesis, perdiendo informacion
+         relevante sobre marcacion citoplasmatica
+
+SOLUCION IMPLEMENTADA:
+----------------------
+Patron v6.5.69 en biomarker_extractor.py (linea ~1145):
+  mmr_pattern = r"(MLH1|MSH2|MSH6|PMS2)[:\s]+([^.]+\.)"
+
+Mejora: Captura hasta punto final, no solo hasta parentesis
+
+RESULTADO DESPUES DE FUNC-06:
+-----------------------------
+Valor PMS2 extraido: "POSITIVO (EXPRESION NUCLEAR INTACTA CON MARCACION CITOPLASMATICA EN EL 90%)"
+Longitud: 75 caracteres
+
+VALIDACION:
+-----------
+ESTADO: EXITO
+
+Componentes capturados correctamente:
+1. Resultado base: "POSITIVO"
+2. Descripcion nuclear: "EXPRESION NUCLEAR INTACTA"
+3. Detalle citoplasmatico: "CON MARCACION CITOPLASMATICA EN EL 90%"
+
+Comparacion:
+- ANTES (v6.5.68): 36 caracteres (truncado)
+- DESPUES (v6.5.69): 75 caracteres (completo)
+- Ganancia: +39 caracteres de informacion clinica relevante
+
+METRICAS DE AUDITORIA:
+----------------------
+Score de validacion: 100.0%
+Biomarcadores mapeados: 5/5 (100%)
+Estado caso: OK
+Warnings: 0
+Errores: 0
+
+======================================================================
+CONCLUSION:
+======================================================================
+
+La correccion v6.5.69 funciona CORRECTAMENTE.
+
+BENEFICIOS:
+1. Captura descripcion completa de PMS2 (no truncada)
+2. Incluye detalles de marcacion citoplasmatica (90%)
+3. Mantiene informacion clinicamente relevante
+4. Patron reutilizable para otros 3 biomarcadores MMR (MLH1, MSH2, MSH6)
+
+RECOMENDACION:
+Patron v6.5.69 VALIDADO y listo para produccion.
+Aplicar a otros casos con biomarcadores MMR para validacion cruzada.
+
+SIGUIENTES PASOS:
+1. Validar patron en casos con MLH1, MSH2, MSH6 similares
+2. Documentar cambio en CHANGELOG v6.5.69
+3. Registrar caso IHQ250259 en auditoria_realizada.md

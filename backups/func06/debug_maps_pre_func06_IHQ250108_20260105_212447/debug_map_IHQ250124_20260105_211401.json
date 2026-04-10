@@ -1,0 +1,153 @@
+{
+  "session_id": "IHQ250124_20260105_211401",
+  "numero_peticion": "IHQ250124",
+  "timestamp": "2026-01-05T21:14:01.504771",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250124\nCopia Pag. 1 de 2\nNombre : LUIS DUBERLEY RODRIGUEZ OVIEDO\nN. peticion : IHQ250124\nN.Identificación : CC. 6387924\nGenero : MASCULINO\nEdad : 76 años 1 mes 16 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 04/02/2025\nFecha Informe : 07/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque MM2410376-2 que corresponde a biopsia de lesión en lóbulo derecho\npulmonar, con diagnóstico de \"ADENOCARCINOMA INVASIVO CON PATRON ACINAR, INVASION LINFATICA\nPRESENTE, DISEMINACIÓN POR A ESPACIO AEREO PRESENTE\". Se ordena marcación de\ninmunohistoquímica: TTF-1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLa lesión tumoral descrita en H&E presenta marcación fuerte y difusa para TTF-1. \nDIAGNÓSTICO\nPulmón, lóbulo derecho. Biopsia\nHALLAZGOS INMUNOHISTOQUIMICOS COMPATIBLES CON ADENOCARCINOMA INVASIVO DE ORIGEN\nPULMONAR.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---\nIHQ250124\nCopia Pag. 2 de 2\nNombre : LUIS DUBERLEY RODRIGUEZ OVIEDO\nN. peticion : IHQ250124\nN.Identificación : CC. 6387924\nGenero : MASCULINO\nEdad : 76 años 1 mes 16 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 04/02/2025\nFecha Informe : 07/02/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3058,
+      "reduccion_porcentaje": 98.24
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250124",
+      "caso_num": 16,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_TTF1": "POSITIVO (fuerte y difusa)",
+      "nombre_completo": "LUIS DUBERLEY RODRIGUEZ OVIEDO",
+      "numero_peticion": "IHQ250124",
+      "identificacion": "6387924",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "76",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "OTORRINO CONSULTA EXTERNA",
+      "fecha_ingreso": "04/02/2025",
+      "fecha_informe": "07/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250124",
+      "N. de identificación": "6387924",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "OTORRINO CONSULTA EXTERNA",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "04/02/2025",
+      "Fecha Informe": "07/02/2025",
+      "nombres": "LUIS DUBERLEY",
+      "Primer nombre": "LUIS",
+      "Segundo nombre": "DUBERLEY",
+      "apellidos": "RODRIGUEZ OVIEDO",
+      "Primer apellido": "RODRIGUEZ",
+      "Segundo apellido": "OVIEDO",
+      "nombre_formal": "RODRIGUEZ OVIEDO, LUIS DUBERLEY",
+      "diagnostico": "Pulmón, lóbulo derecho. Biopsia HALLAZGOS INMUNOHISTOQUIMICOS COMPATIBLES CON ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La lesión tumoral descrita en H&E presenta marcación fuerte y difusa para TTF1.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque MM2410376-2 que corresponde a biopsia de lesión en lóbulo derecho pulmonar, con diagnóstico de \"ADENOCARCINOMA INVASIVO CON PATRON ACINAR, INVASION LINFATICA PRESENTE, DISEMINACIÓN POR A ESPACIO AEREO PRESENTE\". Se ordena marcación de inmunohistoquímica: TTF1.",
+      "ihq_organo": "PULMÓN, LÓBULO DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PULMÓN, LÓBULO DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-01-05T21:14:01.824808",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250124\nCopia Pag. 1 de 2\nNombre : LUIS DUBERLEY RODRIGUEZ OVIEDO\nN. peticion : IHQ250124\nN.Identificación : CC. 6387924\nGenero : MASCULINO\nEdad : 76 años 1 mes 16 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 04/02/2025\nFecha Informe : 07/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque MM2410376-2 que corresponde a biopsia de lesión en lóbulo derecho\npulmonar, con diagnóstico de \"ADENOCARCINOMA INVASIVO CON PATRON ACINAR, INVASION LINFATICA\nPRESENTE, DISEMINACIÓN POR A ESPACIO AEREO PRESENTE\". Se ordena marcación de\ninmunohistoquímica: TTF-1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLa lesión tumoral descrita en H&E presenta marcación fuerte y difusa para TTF-1. \nDIAGNÓSTICO\nPulmón, lóbulo derecho. Biopsia\nHALLAZGOS INMUNOHISTOQUIMICOS COMPATIBLES CON ADENOCARCINOMA INVASIVO DE ORIGEN\nPULMONAR.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---\nIHQ250124\nCopia Pag. 2 de 2\nNombre : LUIS DUBERLEY RODRIGUEZ OVIEDO\nN. peticion : IHQ250124\nN.Identificación : CC. 6387924\nGenero : MASCULINO\nEdad : 76 años 1 mes 16 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 04/02/2025\nFecha Informe : 07/02/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF1",
+      "Descripcion macroscopica": "Se realizan niveles al bloque MM2410376-2 que corresponde a biopsia de lesión en lóbulo derecho pulmonar, con diagnóstico de \"ADENOCARCINOMA INVASIVO CON PATRON ACINAR, INVASION LINFATICA PRESENTE, DISEMINACIÓN POR A ESPACIO AEREO PRESENTE\". Se ordena marcación de inmunohistoquímica: TTF-1.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La lesión tumoral descrita en H&E presenta marcación fuerte y difusa para TTF-1.",
+      "Descripcion Diagnostico": "Pulmón, lóbulo derecho. Biopsia HALLAZGOS INMUNOHISTOQUIMICOS COMPATIBLES CON ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR.",
+      "IHQ_ORGANO": "PULMÓN, LÓBULO DERECHO",
+      "Organo": "BX PULMON DERECHO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO CON PATRON ACINAR, INVASION LINFATICA PRESENTE, DISEMINACIÓN POR A ESPACIO AEREO PRESENTE",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_TTF1": "POSITIVO (fuerte y difusa)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 131,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 1,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 131,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón, lóbulo derecho. Biopsia\nHALLAZGOS INMUNOHISTOQUIMICOS COMPATIBLES CON ADENOCARCINOMA INVASIVO DE ORIGEN\nPULMONAR.",
+      "valor_corregido": "Pulmón, lóbulo derecho. Biopsia HALLAZGOS INMUNOHISTOQUIMICOS COMPATIBLES CON ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250124",
+      "timestamp": "2026-01-05T21:14:01.824520"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque MM2410376-2 que corresponde a biopsia de lesión en lóbulo derecho pulmonar, con diagnóstico de \"ADENOCARCINOMA INVASIVO CON PATRON ACINAR, INVASION LINFATICA PRESENTE, DISEMINACIÓN POR A ESPACIO AEREO PRESENTE\". Se ordena marcación de inmunohistoquímica: TTF-1.",
+      "valor_corregido": "Se realizan niveles al bloque MM2410376-2 que corresponde a biopsia de lesión en lóbulo derecho pulmonar, con diagnóstico de \"ADENOCARCINOMA INVASIVO CON PATRON ACINAR, INVASION LINFATICA PRESENTE, DISEMINACIÓN POR A ESPACIO AEREO PRESENTE\". Se ordena marcación de inmunohistoquímica: TTF1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250124",
+      "timestamp": "2026-01-05T21:14:01.824525"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La lesión tumoral descrita en H&E presenta marcación fuerte y difusa para TTF-1.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La lesión tumoral descrita en H&E presenta marcación fuerte y difusa para TTF1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250124",
+      "timestamp": "2026-01-05T21:14:01.824527"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 47
+  }
+}

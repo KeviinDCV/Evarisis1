@@ -1,0 +1,39 @@
+{
+  "caso": "IHQ250239",
+  "fecha": "2026-01-28T10:51:29.230165",
+  "version_extractores": "v6.5.30",
+  "problema": "Biomarcadores MMR no se extraen correctamente",
+  "causa_raiz": "OCR tiene error ortográfico MLH2 (debería ser MSH2)",
+  "valores_actuales": {
+    "IHQ_MLH1": "\", MLH2, MSH6 Y PMS2)\"",
+    "IHQ_MSH2": "\"N/A\"",
+    "IHQ_MSH6": "\"Y PMS2\"",
+    "IHQ_PMS2": "\")\""
+  },
+  "valores_esperados": {
+    "IHQ_MLH1": "POSITIVO",
+    "IHQ_MSH2": "POSITIVO",
+    "IHQ_MSH6": "POSITIVO",
+    "IHQ_PMS2": "POSITIVO"
+  },
+  "formato_ocr_real": {
+    "linea_35": "Resultado de MLH1: expresión nuclear intacta",
+    "linea_36": "Resultado de MLH2: expresión nuclear intacta",
+    "linea_37": "Resultado de MSH6: expresión nuclear intacta",
+    "linea_38": "Resultado de PMS2: expresión nuclear intacta"
+  },
+  "solucion": {
+    "archivo": "core/extractors/biomarker_extractor.py",
+    "cambio": "Agregar MLH2 como nombre alternativo de MSH2",
+    "linea": "3391",
+    "antes": "'nombres_alternativos': ['MSH-2', 'MSH 2']",
+    "despues": "'nombres_alternativos': ['MSH-2', 'MSH 2', 'MLH2']  # MLH2 es error ortográfico común en OCR"
+  },
+  "impacto": "Permitirá extraer MSH2 aunque el OCR tenga el error ortográfico MLH2",
+  "score_actual": "100% (pero valores incorrectos)",
+  "score_esperado": "100% (con valores correctos)",
+  "normalizacion": {
+    "expresion_nuclear_intacta": "POSITIVO",
+    "expresion_nuclear_perdida": "NEGATIVO"
+  }
+}

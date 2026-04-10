@@ -1,0 +1,128 @@
+{
+  "numero_caso": "IHQ250105",
+  "caso_num": 48,
+  "total_casos": 50,
+  "timestamp": "2025-12-20T05:27:37.674650",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 13,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (coincide con OCR)",
+      "valor_bd": "DE “ PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”. PREVIA REVISIÓN DE LA HISTOLOGÍA SE REALIZAN NIVELES HISTOLÓGICOS PARA TINCIÓN CON LOS MARCADORES: CD 20, CD79, PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3 +, CD 5 Y KI 67. DIAGNÓSTICO PIEL DE ANTEBRAZO IZQUIERDO. LESIÓN. BIOPSIA. ESTUDIO DE INMUNOHISTOQUIMICA LEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 90%",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 12,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "BCL2",
+        "CD10",
+        "CD20",
+        "CD23",
+        "CD3",
+        "CD34",
+        "CD5",
+        "CD79A",
+        "CD99",
+        "Ki-67",
+        "PAX5",
+        "TDT"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "BCL2",
+        "CD10",
+        "CD20",
+        "CD23",
+        "CD3",
+        "CD34",
+        "CD5",
+        "CD79A",
+        "CD99",
+        "Ki-67",
+        "PAX5",
+        "TDT"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “ M25..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Las células tumorales tienen marcación negativa para CD 20, Con marcación positiva para CD79 A y PAX..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

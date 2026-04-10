@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250077_20251219_041530",
+  "numero_peticion": "IHQ250077",
+  "timestamp": "2025-12-19T04:15:30.963436",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250077\nCopia Pag. 1 de 2\nNombre : CECILIA MENDEZ\nN. peticion : IHQ250077\nN.Identificación : CC. 38951640\nGenero : FEMENINO\nEdad : 82 años 6 meses 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 23/01/2025\nFecha Informe : 31/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR COLON IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2408630 ” correspondiente a “producto de hemicolectomía izquierda” con\ndiagnóstico de “ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INVASIVO”. Previa revisión\nde la histología, se realizan niveles histológicos para tinción con HER-2, MLH1, MSH2, MSH6 y\nPMS2 en el bloque 3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nREPORTE:\nMLH1: Pérdida de la expresión nuclear. \nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Presenta marcación citoplasmática con pérdida de la expresión nuclear.\nInterpretación de la reparación de desajustes (MMR): \n+ Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de\ndesajustes).\nInterpretación de la inestabilidad de microsatélites (MSI): \n+ MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad\nSobreexpresión de oncogén HER2: Negativo (Score 1+). \nDIAGNÓSTICO\nColon izquierdo. Tumor. Hemicolectomía izquierda. Estudio de inmunohistoquímica:\n- PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.\nCOMENTARIOS\nSe sugiere la realización de estudios moleculares.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 46 ---\nIHQ250077\nCopia Pag. 2 de 2\nNombre : CECILIA MENDEZ\nN. peticion : IHQ250077\nN.Identificación : CC. 38951640\nGenero : FEMENINO\nEdad : 82 años 6 meses 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 23/01/2025\nFecha Informe : 31/01/2025\n- HER-2: NEGATIVO (SCORE 1+).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 47 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3740,
+      "reduccion_porcentaje": 98.0
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250077",
+      "caso_num": 24,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "CECILIA MENDEZ",
+      "numero_peticion": "IHQ250077",
+      "identificacion": "38951640",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "82",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "MEDICINA INTERNA COEX",
+      "fecha_ingreso": "23/01/2025",
+      "fecha_informe": "31/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250077",
+      "N. de identificación": "38951640",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "MEDICINA INTERNA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "23/01/2025",
+      "Fecha Informe": "31/01/2025",
+      "nombres": "CECILIA",
+      "Primer nombre": "CECILIA",
+      "Segundo nombre": "",
+      "apellidos": "MENDEZ",
+      "Primer apellido": "MENDEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "MENDEZ, CECILIA",
+      "diagnostico": "Colon izquierdo. Tumor. Hemicolectomía izquierda. Estudio de inmunohistoquímica: - PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). REPORTE: MLH1: Pérdida de la expresión nuclear. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Presenta marcación citoplasmática con pérdida de la expresión nuclear. Interpretación de la reparación de desajustes (MMR): + Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de desajustes). Interpretación de la inestabilidad de microsatélites (MSI): + MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad Sobreexpresión de oncogén HER2: Negativo (Score 1+).",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2408630 ” correspondiente a “producto de hemicolectomía izquierda” con diagnóstico de “ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INVASIVO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con HER-2, MLH1, MSH2, MSH6 y PMS2 en el bloque 3.",
+      "ihq_organo": "COLON IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "MEDICINA_INTERNA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2, MLH1, MSH2, MSH6, PMS2",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Se sugiere la realización de estudios moleculares.",
+      "IHQ_ORGANO": "COLON IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: Negativo (Score 1+)",
+      "IHQ_HER2": "NEGATIVO (SCORE 1+)",
+      "IHQ_MSH2": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MSH6": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MLH1": "NEGATIVO",
+      "IHQ_PMS2": "PRESENTA MARCACIÓN CITOPLASMÁTICA CON PÉRDIDA DE LA EXPRESIÓN NUCLEAR",
+      "extraction_timestamp": "2025-12-19T04:15:31.147880",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250077\nCopia Pag. 1 de 2\nNombre : CECILIA MENDEZ\nN. peticion : IHQ250077\nN.Identificación : CC. 38951640\nGenero : FEMENINO\nEdad : 82 años 6 meses 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 23/01/2025\nFecha Informe : 31/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR COLON IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2408630 ” correspondiente a “producto de hemicolectomía izquierda” con\ndiagnóstico de “ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INVASIVO”. Previa revisión\nde la histología, se realizan niveles histológicos para tinción con HER-2, MLH1, MSH2, MSH6 y\nPMS2 en el bloque 3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nREPORTE:\nMLH1: Pérdida de la expresión nuclear. \nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Presenta marcación citoplasmática con pérdida de la expresión nuclear.\nInterpretación de la reparación de desajustes (MMR): \n+ Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de\ndesajustes).\nInterpretación de la inestabilidad de microsatélites (MSI): \n+ MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad\nSobreexpresión de oncogén HER2: Negativo (Score 1+). \nDIAGNÓSTICO\nColon izquierdo. Tumor. Hemicolectomía izquierda. Estudio de inmunohistoquímica:\n- PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.\nCOMENTARIOS\nSe sugiere la realización de estudios moleculares.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 46 ---\nIHQ250077\nCopia Pag. 2 de 2\nNombre : CECILIA MENDEZ\nN. peticion : IHQ250077\nN.Identificación : CC. 38951640\nGenero : FEMENINO\nEdad : 82 años 6 meses 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 23/01/2025\nFecha Informe : 31/01/2025\n- HER-2: NEGATIVO (SCORE 1+).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 47 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MLH1, MSH2, MSH6, PMS2",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2408630 ” correspondiente a “producto de hemicolectomía izquierda” con diagnóstico de “ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INVASIVO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con HER-2, MLH1, MSH2, MSH6 y PMS2 en el bloque 3.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). REPORTE: MLH1: Pérdida de la expresión nuclear. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Presenta marcación citoplasmática con pérdida de la expresión nuclear. Interpretación de la reparación de desajustes (MMR): + Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de desajustes). Interpretación de la inestabilidad de microsatélites (MSI): + MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad Sobreexpresión de oncogén HER2: Negativo (Score 1+).",
+      "Descripcion Diagnostico": "Colon izquierdo. Tumor. Hemicolectomía izquierda. Estudio de inmunohistoquímica: - PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.",
+      "IHQ_ORGANO": "COLON IZQUIERDO",
+      "Organo": "TUMOR COLON IZQUIERDO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INVASIVO",
+      "Diagnostico Principal": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INVASIVO”",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: Negativo (Score 1+)",
+      "IHQ_HER2": "NEGATIVO (SCORE 1+)",
+      "IHQ_MLH1": "NEGATIVO",
+      "IHQ_MSH2": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MSH6": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_PMS2": "PRESENTA MARCACIÓN CITOPLASMÁTICA CON PÉRDIDA DE LA EXPRESIÓN NUCLEAR"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 119,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 24.2
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 119,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Colon izquierdo. Tumor. Hemicolectomía izquierda. Estudio de inmunohistoquímica:\n- PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.",
+      "valor_corregido": "Colon izquierdo. Tumor. Hemicolectomía izquierda. Estudio de inmunohistoquímica: - PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250077",
+      "timestamp": "2025-12-19T04:15:31.147360"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2408630 ” correspondiente a “producto de hemicolectomía izquierda” con\ndiagnóstico de “ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INVASIVO”. Previa revisión\nde la histología, se realizan niveles histológicos para tinción con HER-2, MLH1, MSH2, MSH6 y\nPMS2 en el bloque 3.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2408630 ” correspondiente a “producto de hemicolectomía izquierda” con diagnóstico de “ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INVASIVO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con HER-2, MLH1, MSH2, MSH6 y PMS2 en el bloque 3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250077",
+      "timestamp": "2025-12-19T04:15:31.147389"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nREPORTE:\nMLH1: Pérdida de la expresión nuclear. \nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Presenta marcación citoplasmática con pérdida de la expresión nuclear.\nInterpretación de la reparación de desajustes (MMR): \n+ Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de\ndesajustes).\nInterpretación de la inestabilidad de microsatélites (MSI): \n+ MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad\nSobreexpresión de oncogén HER2: Negativo (Score 1+).",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). REPORTE: MLH1: Pérdida de la expresión nuclear. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Presenta marcación citoplasmática con pérdida de la expresión nuclear. Interpretación de la reparación de desajustes (MMR): + Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de desajustes). Interpretación de la inestabilidad de microsatélites (MSI): + MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad Sobreexpresión de oncogén HER2: Negativo (Score 1+).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250077",
+      "timestamp": "2025-12-19T04:15:31.147392"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 51
+  }
+}

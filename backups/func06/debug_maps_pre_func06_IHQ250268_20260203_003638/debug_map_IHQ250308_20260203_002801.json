@@ -1,0 +1,160 @@
+{
+  "session_id": "IHQ250308_20260203_002801",
+  "numero_peticion": "IHQ250308",
+  "timestamp": "2026-02-03T00:28:01.061892",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250308\nCopia Pag. 1 de 2\nNombre : NIDIA VERONICA QUIÑONES GARCIA\nN. peticion : IHQ250308\nN.Identificación : CC. 38568209\nGenero : FEMENINO\nEdad : 46 años 7 meses 25 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : CAROLINA ALVAREZ TAPIA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 28/03/2025\nFecha Informe : 03/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA MAMA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe\nrecibe\norden\npara\nrealización\nde\ninmunohistoquímica\nen\nmaterial\nextrainstitucional\nproveniente\nde\nINSTITUTO\nDE\nCANCER\nHEMATO\nONCOLOGOS.\ncomo\n“H2501P0299”\nque\ncorresponde a “cuadrantectomía central mama derecha” y con diagnóstico de “PAPILOMA\nINTRADUCTAL”. Previa revisión de la histología se realizan niveles histológicos para tinción con:\np63, receptor de Estrógenos, CALPONINA, S100, CK 5/6. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células mioepiteliales: presentan marcación positiva para S100 y Calponina con marcación\ncompleta; p63 y CK 5/6, marcan la mayoría de las células mioepiteliales.\nReceptor de estrógenos presenta expresión nuclear heterogénea en las células epiteliales. \nDIAGNÓSTICO\nMama derecha. Lesión. Cuadrantectomía. Estudios de inmunohistoquímica.\nLOS ESTUDIOS INMUNOHISTOQUIMICOS SON CONSISTENTES CON UN PAPILOMA INTRADUCTAL.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 83 ---\nIHQ250308\nCopia Pag. 2 de 2\nNombre : NIDIA VERONICA QUIÑONES GARCIA\nN. peticion : IHQ250308\nN.Identificación : CC. 38568209\nGenero : FEMENINO\nEdad : 46 años 7 meses 25 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : CAROLINA ALVAREZ TAPIA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 28/03/2025\nFecha Informe : 03/04/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 84 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3326,
+      "reduccion_porcentaje": 98.1
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250308",
+      "caso_num": 44,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_S100": "POSITIVO",
+      "IHQ_CALPONINA": "POSITIVO",
+      "nombre_completo": "NIDIA VERONICA QUIÑONES GARCIA",
+      "numero_peticion": "IHQ250308",
+      "identificacion": "38568209",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "46",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "CAROLINA ALVAREZ TAPIA",
+      "servicio": "INSTITUCION EXTERNA",
+      "fecha_ingreso": "28/03/2025",
+      "fecha_informe": "03/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250308",
+      "N. de identificación": "38568209",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "INSTITUCION EXTERNA",
+      "Médico tratante": "CAROLINA ALVAREZ TAPIA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/03/2025",
+      "Fecha Informe": "03/04/2025",
+      "nombres": "NIDIA VERONICA",
+      "Primer nombre": "NIDIA",
+      "Segundo nombre": "VERONICA",
+      "apellidos": "QUIÑONES GARCIA",
+      "Primer apellido": "QUIÑONES",
+      "Segundo apellido": "GARCIA",
+      "nombre_formal": "QUIÑONES GARCIA, NIDIA VERONICA",
+      "diagnostico": "Mama derecha. Lesión. Cuadrantectomía. Estudios de inmunohistoquímica. LOS ESTUDIOS INMUNOHISTOQUIMICOS SON CONSISTENTES CON UN PAPILOMA INTRADUCTAL. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células mioepiteliales: presentan marcación positiva para S100 y Calponina con marcación completa; p63 y CK5/6, marcan la mayoría de las células mioepiteliales. Receptor de estrógenos presenta expresión nuclear heterogénea en las células epiteliales.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional proveniente de INSTITUTO DE CANCER HEMATO ONCOLOGOS. como \"H2501P0299\" que corresponde a \"cuadrantectomía central mama derecha\" y con diagnóstico de \"PAPILOMA INTRADUCTAL\". Previa revisión de la histología se realizan niveles histológicos para tinción con: p63, receptor de Estrógenos, CALPONINA, S100, CK5/6.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P63, Receptor de Estrógeno, Calponina, S100, CK5/6",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Receptor de estrógenos presenta expresión nuclear heterogénea en las células epiteliales",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, Receptor de Estrógeno, Calponina, S100, CK5/6",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK5_6": "POSITIVO",
+      "extraction_timestamp": "2026-02-03T00:28:01.464936",
+      "extractor_version": "6.5.77_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250308\nCopia Pag. 1 de 2\nNombre : NIDIA VERONICA QUIÑONES GARCIA\nN. peticion : IHQ250308\nN.Identificación : CC. 38568209\nGenero : FEMENINO\nEdad : 46 años 7 meses 25 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : CAROLINA ALVAREZ TAPIA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 28/03/2025\nFecha Informe : 03/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA MAMA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe\nrecibe\norden\npara\nrealización\nde\ninmunohistoquímica\nen\nmaterial\nextrainstitucional\nproveniente\nde\nINSTITUTO\nDE\nCANCER\nHEMATO\nONCOLOGOS.\ncomo\n“H2501P0299”\nque\ncorresponde a “cuadrantectomía central mama derecha” y con diagnóstico de “PAPILOMA\nINTRADUCTAL”. Previa revisión de la histología se realizan niveles histológicos para tinción con:\np63, receptor de Estrógenos, CALPONINA, S100, CK 5/6. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células mioepiteliales: presentan marcación positiva para S100 y Calponina con marcación\ncompleta; p63 y CK 5/6, marcan la mayoría de las células mioepiteliales.\nReceptor de estrógenos presenta expresión nuclear heterogénea en las células epiteliales. \nDIAGNÓSTICO\nMama derecha. Lesión. Cuadrantectomía. Estudios de inmunohistoquímica.\nLOS ESTUDIOS INMUNOHISTOQUIMICOS SON CONSISTENTES CON UN PAPILOMA INTRADUCTAL.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 83 ---\nIHQ250308\nCopia Pag. 2 de 2\nNombre : NIDIA VERONICA QUIÑONES GARCIA\nN. peticion : IHQ250308\nN.Identificación : CC. 38568209\nGenero : FEMENINO\nEdad : 46 años 7 meses 25 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : CAROLINA ALVAREZ TAPIA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 28/03/2025\nFecha Informe : 03/04/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 84 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, Receptor de Estrógeno, Calponina, S100, CK5/6",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional proveniente de INSTITUTO DE CANCER HEMATO ONCOLOGOS. como “H2501P0299” que corresponde a “cuadrantectomía central mama derecha” y con diagnóstico de “PAPILOMA INTRADUCTAL”. Previa revisión de la histología se realizan niveles histológicos para tinción con: p63, receptor de Estrógenos, CALPONINA, S100, CK 5/6.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células mioepiteliales: presentan marcación positiva para S100 y Calponina con marcación completa; p63 y CK 5/6, marcan la mayoría de las células mioepiteliales. Receptor de estrógenos presenta expresión nuclear heterogénea en las células epiteliales.",
+      "Descripcion Diagnostico": "Mama derecha. Lesión. Cuadrantectomía. Estudios de inmunohistoquímica. LOS ESTUDIOS INMUNOHISTOQUIMICOS SON CONSISTENTES CON UN PAPILOMA INTRADUCTAL. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "CUADRANTECTOMIA MAMA DERECHA",
+      "Diagnostico Coloracion": "PAPILOMA INTRADUCTAL",
+      "Diagnostico Principal": "LOS ESTUDIOS INMUNOHISTOQUIMICOS SON CONSISTENTES CON UN PAPILOMA INTRADUCTAL",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Receptor de estrógenos presenta expresión nuclear heterogénea en las células epiteliales",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NO MENCIONADO",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_CK5_6": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 177,
+      "campos_vacios": 138,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Lesión. Cuadrantectomía. Estudios de inmunohistoquímica.\nLOS ESTUDIOS INMUNOHISTOQUIMICOS SON CONSISTENTES CON UN PAPILOMA INTRADUCTAL.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________",
+      "valor_corregido": "Mama derecha. Lesión. Cuadrantectomía. Estudios de inmunohistoquímica. LOS ESTUDIOS INMUNOHISTOQUIMICOS SON CONSISTENTES CON UN PAPILOMA INTRADUCTAL. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250308",
+      "timestamp": "2026-02-03T00:28:01.464666"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional proveniente de INSTITUTO DE CANCER HEMATO ONCOLOGOS. como “H2501P0299” que corresponde a “cuadrantectomía central mama derecha” y con diagnóstico de “PAPILOMA INTRADUCTAL”. Previa revisión de la histología se realizan niveles histológicos para tinción con: p63, receptor de Estrógenos, CALPONINA, S100, CK 5/6.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional proveniente de INSTITUTO DE CANCER HEMATO ONCOLOGOS. como \"H2501P0299\" que corresponde a \"cuadrantectomía central mama derecha\" y con diagnóstico de \"PAPILOMA INTRADUCTAL\". Previa revisión de la histología se realizan niveles histológicos para tinción con: p63, receptor de Estrógenos, CALPONINA, S100, CK5/6.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250308",
+      "timestamp": "2026-02-03T00:28:01.464673"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células mioepiteliales: presentan marcación positiva para S100 y Calponina con marcación completa; p63 y CK 5/6, marcan la mayoría de las células mioepiteliales. Receptor de estrógenos presenta expresión nuclear heterogénea en las células epiteliales.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células mioepiteliales: presentan marcación positiva para S100 y Calponina con marcación completa; p63 y CK5/6, marcan la mayoría de las células mioepiteliales. Receptor de estrógenos presenta expresión nuclear heterogénea en las células epiteliales.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250308",
+      "timestamp": "2026-02-03T00:28:01.464675"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 50
+  }
+}

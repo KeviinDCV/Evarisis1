@@ -1,0 +1,152 @@
+{
+  "session_id": "IHQ250199_20260108_021712",
+  "numero_peticion": "IHQ250199",
+  "timestamp": "2026-01-08T02:17:12.744376",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250199\nCopia Pag. 1 de 2\nNombre : MARIA LIGIA RODAS FORONDA\nN. peticion : IHQ250199\nN.Identificación : CC. 31396964\nGenero : FEMENINO\nEdad : 73 años 1 mes 6 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA FERNANDA LEDESMA\nServicio : MEDICA MUJERES\nFecha Ingreso : 22/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION GASTRICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501784 que corresponde a biopsia endoscópica de lesión en mucosa\ngástrica de cuerpo con diagnóstico de \"ADENOCARCINOMA INFILTRANTE DE TIPO INTESTINAL\". Se\nordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales presentan expresión equívoca para la sobreexpresión de HER-2 score 2+.\nEVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear y citoplasmática en el 10% de la celularidad tumoral y 90% en citoplasma.\nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nDIAGNÓSTICO\nMucosa gástrica corporal. Lesión. Biopsia por endoscópica. Estudios de inmunohistoquímica:\nADENOCARCINOMA DE TIPO INTESTINAL\nSOBREEXPRESIÓN PARA HER-2: EQUIVOCO SCORE 2+\nPATRON MICROSATELITAL ESTABLE\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---\nIHQ250199\nCopia Pag. 2 de 2\nNombre : MARIA LIGIA RODAS FORONDA\nN. peticion : IHQ250199\nN.Identificación : CC. 31396964\nGenero : FEMENINO\nEdad : 73 años 1 mes 6 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA FERNANDA LEDESMA\nServicio : MEDICA MUJERES\nFecha Ingreso : 22/02/2025\nFecha Informe : 28/02/2025\nLa inestabilidad microsatelital presenta una marcación no usual en PMS2 sin embargo no esta\nacompañada de ninguna otra alteración en los otros marcadores de inestabilidad microsatelital, por lo\nque se recomienda repetir dichos estudios en el especimen de resección.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3574,
+      "reduccion_porcentaje": 97.84
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250199",
+      "caso_num": 38,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA LIGIA RODAS FORONDA",
+      "numero_peticion": "IHQ250199",
+      "identificacion": "31396964",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "73",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "MARIA FERNANDA LEDESMA",
+      "servicio": "MEDICA MUJERES",
+      "fecha_ingreso": "22/02/2025",
+      "fecha_informe": "28/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250199",
+      "N. de identificación": "31396964",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "MEDICA MUJERES",
+      "Médico tratante": "MARIA FERNANDA LEDESMA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "22/02/2025",
+      "Fecha Informe": "28/02/2025",
+      "nombres": "MARIA LIGIA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "LIGIA",
+      "apellidos": "RODAS FORONDA",
+      "Primer apellido": "RODAS",
+      "Segundo apellido": "FORONDA",
+      "nombre_formal": "RODAS FORONDA, MARIA LIGIA",
+      "diagnostico": "Mucosa gástrica corporal. Lesión. Biopsia por endoscópica. Estudios de inmunohistoquímica: ADENOCARCINOMA DE TIPO INTESTINAL SOBREEXPRESIÓN PARA HER-2: EQUIVOCO SCORE 2+ PATRON MICROSATELITAL ESTABLE",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan expresión equívoca para la sobreexpresión de HER-2 score 2+. EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear y citoplasmática en el 10% de la celularidad tumoral y 90% en citoplasma. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2501784 que corresponde a biopsia endoscópica de lesión en mucosa gástrica de cuerpo con diagnóstico de \"ADENOCARCINOMA INFILTRANTE DE TIPO INTESTINAL\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "MUCOSA GÁSTRICA CORPORAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 66 --- IHQ250199 Copia Pag. 2 de 2 Nombre : MARIA LIGIA RODAS FORONDA N. peticion : IHQ250199 N.Identificación : CC. 31396964 Genero : FEMENINO Edad : 73 años 1 mes 6 dias EPS : NUEVA EPS Médico tratante : MARIA FERNANDA LEDESMA Servicio : MEDICA MUJERES Fecha Ingreso : 22/02/2025 Fecha Informe : 28/02/2025 La inestabilidad microsatelital presenta una marcación no usual en PMS2 sin embargo no esta acompañada de ninguna otra alteración en los otros marcadores de inestabilidad microsatelital, por lo que se recomienda repetir dichos estudios en el especimen de resección.",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA CORPORAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2 score 2+",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_HER2": "EQUIVOCO (Score 2+)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR Y CITOPLASMÁTICA EN EL 10% DE LA CELULARIDAD TUMORAL Y 90% EN CITOPLASMA)",
+      "extraction_timestamp": "2026-01-08T02:17:13.135618",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250199\nCopia Pag. 1 de 2\nNombre : MARIA LIGIA RODAS FORONDA\nN. peticion : IHQ250199\nN.Identificación : CC. 31396964\nGenero : FEMENINO\nEdad : 73 años 1 mes 6 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA FERNANDA LEDESMA\nServicio : MEDICA MUJERES\nFecha Ingreso : 22/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION GASTRICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501784 que corresponde a biopsia endoscópica de lesión en mucosa\ngástrica de cuerpo con diagnóstico de \"ADENOCARCINOMA INFILTRANTE DE TIPO INTESTINAL\". Se\nordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales presentan expresión equívoca para la sobreexpresión de HER-2 score 2+.\nEVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear y citoplasmática en el 10% de la celularidad tumoral y 90% en citoplasma.\nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nDIAGNÓSTICO\nMucosa gástrica corporal. Lesión. Biopsia por endoscópica. Estudios de inmunohistoquímica:\nADENOCARCINOMA DE TIPO INTESTINAL\nSOBREEXPRESIÓN PARA HER-2: EQUIVOCO SCORE 2+\nPATRON MICROSATELITAL ESTABLE\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---\nIHQ250199\nCopia Pag. 2 de 2\nNombre : MARIA LIGIA RODAS FORONDA\nN. peticion : IHQ250199\nN.Identificación : CC. 31396964\nGenero : FEMENINO\nEdad : 73 años 1 mes 6 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA FERNANDA LEDESMA\nServicio : MEDICA MUJERES\nFecha Ingreso : 22/02/2025\nFecha Informe : 28/02/2025\nLa inestabilidad microsatelital presenta una marcación no usual en PMS2 sin embargo no esta\nacompañada de ninguna otra alteración en los otros marcadores de inestabilidad microsatelital, por lo\nque se recomienda repetir dichos estudios en el especimen de resección.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MLH1, MSH2, MSH6, PMS2",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2501784 que corresponde a biopsia endoscópica de lesión en mucosa gástrica de cuerpo con diagnóstico de \"ADENOCARCINOMA INFILTRANTE DE TIPO INTESTINAL\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan expresión equívoca para la sobreexpresión de HER-2 score 2+. EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear y citoplasmática en el 10% de la celularidad tumoral y 90% en citoplasma. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable",
+      "Descripcion Diagnostico": "Mucosa gástrica corporal. Lesión. Biopsia por endoscópica. Estudios de inmunohistoquímica: ADENOCARCINOMA DE TIPO INTESTINAL SOBREEXPRESIÓN PARA HER-2: EQUIVOCO SCORE 2+ PATRON MICROSATELITAL ESTABLE",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA CORPORAL",
+      "Organo": "BX LESION GASTRICA",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INFILTRANTE DE TIPO INTESTINAL",
+      "Diagnostico Principal": "ADENOCARCINOMA DE TIPO INTESTINAL SOBREEXPRESIÓN PARA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 score 2+",
+      "IHQ_HER2": "EQUIVOCO (Score 2+)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR Y CITOPLASMÁTICA EN EL 10% DE LA CELULARIDAD TUMORAL Y 90% EN CITOPLASMA)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 127,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 127,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa gástrica corporal. Lesión. Biopsia por endoscópica. Estudios de inmunohistoquímica:\nADENOCARCINOMA DE TIPO INTESTINAL\nSOBREEXPRESIÓN PARA HER-2: EQUIVOCO SCORE 2+\nPATRON MICROSATELITAL ESTABLE",
+      "valor_corregido": "Mucosa gástrica corporal. Lesión. Biopsia por endoscópica. Estudios de inmunohistoquímica: ADENOCARCINOMA DE TIPO INTESTINAL SOBREEXPRESIÓN PARA HER-2: EQUIVOCO SCORE 2+ PATRON MICROSATELITAL ESTABLE",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250199",
+      "timestamp": "2026-01-08T02:17:13.135316"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---\nIHQ250199\nCopia Pag. 2 de 2\nNombre : MARIA LIGIA RODAS FORONDA\nN. peticion : IHQ250199\nN.Identificación : CC. 31396964\nGenero : FEMENINO\nEdad : 73 años 1 mes 6 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA FERNANDA LEDESMA\nServicio : MEDICA MUJERES\nFecha Ingreso : 22/02/2025\nFecha Informe : 28/02/2025\nLa inestabilidad microsatelital presenta una marcación no usual en PMS2 sin embargo no esta\nacompañada de ninguna otra alteración en los otros marcadores de inestabilidad microsatelital, por lo\nque se recomienda repetir dichos estudios en el especimen de resección.",
+      "valor_corregido": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 66 --- IHQ250199 Copia Pag. 2 de 2 Nombre : MARIA LIGIA RODAS FORONDA N. peticion : IHQ250199 N.Identificación : CC. 31396964 Genero : FEMENINO Edad : 73 años 1 mes 6 dias EPS : NUEVA EPS Médico tratante : MARIA FERNANDA LEDESMA Servicio : MEDICA MUJERES Fecha Ingreso : 22/02/2025 Fecha Informe : 28/02/2025 La inestabilidad microsatelital presenta una marcación no usual en PMS2 sin embargo no esta acompañada de ninguna otra alteración en los otros marcadores de inestabilidad microsatelital, por lo que se recomienda repetir dichos estudios en el especimen de resección.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250199",
+      "timestamp": "2026-01-08T02:17:13.135322"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 52
+  }
+}

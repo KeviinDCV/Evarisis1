@@ -1,0 +1,69 @@
+{
+  "version": "v6.4.86",
+  "caso_validacion": "IHQ250216",
+  "timestamp": "2026-01-19T00:03:38.827712",
+  "score": {
+    "antes": 66.7,
+    "despues": 100.0,
+    "mejora": 33.3
+  },
+  "biomarcadores_criticos": {
+    "IHQ_P53": {
+      "antes": "NEGATIVO",
+      "despues": "POSITIVO (MUTADO)",
+      "ocr": "p53 (sobre expresado-mutado)",
+      "estado": "CORREGIDO"
+    },
+    "IHQ_RECEPTOR_ESTROGENOS": {
+      "antes": "NEGATIVO",
+      "despues": "POSITIVO (TINCION NUCLEAR FUERTE DIFUSA)",
+      "ocr": "receptores de estrogenos (tincion nuclear fuerte difusa)",
+      "estado": "CORREGIDO"
+    },
+    "IHQ_RECEPTOR_PROGESTERONA": {
+      "antes": "NEGATIVO",
+      "despues": "POSITIVO FOCAL",
+      "ocr": "y focal para receptor de progesterona (tincion nuclear debil)",
+      "estado": "CORREGIDO"
+    }
+  },
+  "cambios_aplicados": [
+    {
+      "patron": "inmunorreactividad_positiva_fuerte_difusa",
+      "antes": "(?:inmunorreactividad )?positiva? fuerte difusa para ([^.]+)",
+      "despues": "(?:inmunorreactividad )?positiva? (?:fuerte y difusa |fuerte difusa )?para ([^.]+)",
+      "motivo": "Capturar variantes con y sin conector \"y\""
+    },
+    {
+      "patron": "focal_para",
+      "antes": "NO EXISTIA",
+      "despues": "(?:y )?focal para ([^.(]+)",
+      "motivo": "Nuevo patron para capturar expresion focal de biomarcadores"
+    }
+  ],
+  "validacion_no_regresion": {
+    "rango_reprocesado": "IHQ250212-IHQ250262",
+    "casos_procesados": 50,
+    "casos_referencia": [
+      "IHQ250212",
+      "IHQ250213",
+      "IHQ250214"
+    ],
+    "scores_referencia": {
+      "IHQ250212": {
+        "antes": 100,
+        "despues": 100
+      },
+      "IHQ250213": {
+        "antes": 100,
+        "despues": 100
+      },
+      "IHQ250214": {
+        "antes": 100,
+        "despues": 100
+      }
+    },
+    "regresion_detectada": false
+  },
+  "estado_final": "EXITOSO"
+}

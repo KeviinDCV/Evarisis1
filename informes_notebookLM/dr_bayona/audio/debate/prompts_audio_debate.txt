@@ -1,0 +1,11 @@
+### Prompts para formato: audio_debate (Audiencia: Dr_bayona)
+
+--- FORMATO DE AUDIO (Format para Audio Overview) ---
+Debate
+
+--- CONFIGURACIÓN ---
+Idioma: español
+Duración: Predeterminada (12-18 minutos)
+
+--- PROMPT DE ENFOQUE (Steering Prompt) ---
+Crear un debate reflexivo entre un presentador IA 'Optimista' (enfocado en la oportunidad económica de negociar con farmacéuticas) y un presentador IA 'Pragmático' (enfocado en los riesgos y la precisión del modelo). Ambos deben concluir que el beneficio económico supera con creces el riesgo. Enfócate exclusivamente en el **impacto económico y estratégico** del proyecto. Dirígete a un **Gerente** que valora el ROI, la eficiencia financiera y la ventaja competitiva. Usa los datos sobre la predicción de tendencias para justificar la **negociación estratégica con farmacéuticas**. Sé directo, profesional y basado en datos. Omite detalles técnicos de bajo nivel (código, librerías).

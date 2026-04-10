@@ -1,0 +1,157 @@
+{
+  "session_id": "IHQ250068_20251220_024747",
+  "numero_peticion": "IHQ250068",
+  "timestamp": "2025-12-20T02:47:47.930850",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250068\nCopia Pag. 1 de 2\nNombre : EDILBERTO MANRIQUE MONTOYA\nN. peticion : IHQ250068\nN.Identificación : CC. 96360709\nGenero : MASCULINO\nEdad : 50 años 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : AURA MARIA ECHEVERRY\nServicio : MEDICA HOMBRES\nFecha Ingreso : 22/01/2025\nFecha Informe : 28/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nVERTEBRA T1-T2\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500313”\ncorrespondiente\na\n\"\nVertebra\nT1-T2\"\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nlas células tumorales son positivas fuerte y difuso para CD 38, CD 138, CYCLINA\ny LAMBDA. Estas\ncélulas son negativas para CD 56, CD 99, Sinaptofisina, CD 45, KAPPA, \ndiagnóstico\nde\n“NEOPLASIA\nDE\nCELULAS\nREDONDAS Y AZULES” Previa revisión de la histología se realizan niveles histológicos al bloque para\ntinción con los marcadores: CD99, LCA, CD56, CD 38, CKAE1AE3, Sinaptofisina.CD 138, KAPPA, LAMBDA\nY CYCLINA \nDIAGNÓSTICO\n Vertebra T1-T2. Lesión. Biopsia. Estudio de inmunohistoquimica:\nNEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA\nCOMENTARIOS\nCaso valorado en conjunto con la Dra Maria Ximena Varela.(Patologa)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---\nIHQ250068\nCopia Pag. 2 de 2\nNombre : EDILBERTO MANRIQUE MONTOYA\nN. peticion : IHQ250068\nN.Identificación : CC. 96360709\nGenero : MASCULINO\nEdad : 50 años 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : AURA MARIA ECHEVERRY\nServicio : MEDICA HOMBRES\nFecha Ingreso : 22/01/2025\nFecha Informe : 28/01/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3207,
+      "reduccion_porcentaje": 98.29
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250068",
+      "caso_num": 15,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "EDILBERTO MANRIQUE MONTOYA",
+      "numero_peticion": "IHQ250068",
+      "identificacion": "96360709",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "50",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "AURA MARIA ECHEVERRY",
+      "servicio": "MEDICA HOMBRES",
+      "fecha_ingreso": "22/01/2025",
+      "fecha_informe": "28/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250068",
+      "N. de identificación": "96360709",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "MEDICA HOMBRES",
+      "Médico tratante": "AURA MARIA ECHEVERRY",
+      "Fecha de ingreso (2. Fecha de la muestra)": "22/01/2025",
+      "Fecha Informe": "28/01/2025",
+      "nombres": "EDILBERTO",
+      "Primer nombre": "EDILBERTO",
+      "Segundo nombre": "",
+      "apellidos": "MANRIQUE MONTOYA",
+      "Primer apellido": "MANRIQUE",
+      "Segundo apellido": "MONTOYA",
+      "nombre_formal": "MANRIQUE MONTOYA, EDILBERTO",
+      "diagnostico": "NEOPLASIA DE CELULAS REDONDAS Y AZULES” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: CD99, LCA, CD56, CD 38, CKAE1AE3, Synaptophysin.CD 138, KAPPA, LAMBDA Y CYCLINA DIAGNÓSTICO Vertebra T1-T2. Lesión. Biopsia. Estudio de inmunohistoquimica: NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. las células tumorales son positivas fuerte y difuso para CD 38, CD 138, CYCLINA y LAMBDA. Estas células son negativas para CD 56, CD 99, Synaptophysin, CD 45, KAPPA, diagnóstico de “NEOPLASIA DE CELULAS REDONDAS Y AZULES” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: CD99, LCA, CD56, CD 38, CKAE1AE3, Synaptophysin.CD 138, KAPPA, LAMBDA Y CYCLINA",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500313” correspondiente a \" Vertebra T1-T2\" con",
+      "ihq_organo": "",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con la Dra Maria Ximena Varela.(Patologa)",
+      "IHQ_ORGANO": "VERTEBRA T1-T2",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD99": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_KAPPA": "NEGATIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_LAMBDA": "NEGATIVO",
+      "IHQ_CD45": "NEGATIVO",
+      "IHQ_CD38": "NEGATIVO",
+      "IHQ_CD138": "NEGATIVO",
+      "extraction_timestamp": "2025-12-20T02:47:48.127164",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250068\nCopia Pag. 1 de 2\nNombre : EDILBERTO MANRIQUE MONTOYA\nN. peticion : IHQ250068\nN.Identificación : CC. 96360709\nGenero : MASCULINO\nEdad : 50 años 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : AURA MARIA ECHEVERRY\nServicio : MEDICA HOMBRES\nFecha Ingreso : 22/01/2025\nFecha Informe : 28/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nVERTEBRA T1-T2\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500313”\ncorrespondiente\na\n\"\nVertebra\nT1-T2\"\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nlas células tumorales son positivas fuerte y difuso para CD 38, CD 138, CYCLINA\ny LAMBDA. Estas\ncélulas son negativas para CD 56, CD 99, Sinaptofisina, CD 45, KAPPA, \ndiagnóstico\nde\n“NEOPLASIA\nDE\nCELULAS\nREDONDAS Y AZULES” Previa revisión de la histología se realizan niveles histológicos al bloque para\ntinción con los marcadores: CD99, LCA, CD56, CD 38, CKAE1AE3, Sinaptofisina.CD 138, KAPPA, LAMBDA\nY CYCLINA \nDIAGNÓSTICO\n Vertebra T1-T2. Lesión. Biopsia. Estudio de inmunohistoquimica:\nNEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA\nCOMENTARIOS\nCaso valorado en conjunto con la Dra Maria Ximena Varela.(Patologa)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---\nIHQ250068\nCopia Pag. 2 de 2\nNombre : EDILBERTO MANRIQUE MONTOYA\nN. peticion : IHQ250068\nN.Identificación : CC. 96360709\nGenero : MASCULINO\nEdad : 50 años 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : AURA MARIA ECHEVERRY\nServicio : MEDICA HOMBRES\nFecha Ingreso : 22/01/2025\nFecha Informe : 28/01/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD138, CD38, CD45, CD56, CD99, CKAE1AE3, Kappa, Lambda, SINAPTOFISINA",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500313” correspondiente a \" Vertebra T1-T2\" con",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. las células tumorales son positivas fuerte y difuso para CD 38, CD 138, CYCLINA y LAMBDA. Estas células son negativas para CD 56, CD 99, Sinaptofisina, CD 45, KAPPA, diagnóstico de “NEOPLASIA DE CELULAS REDONDAS Y AZULES” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: CD99, LCA, CD56, CD 38, CKAE1AE3, Sinaptofisina.CD 138, KAPPA, LAMBDA Y CYCLINA",
+      "Descripcion Diagnostico": "NEOPLASIA DE CELULAS REDONDAS Y AZULES” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: CD99, LCA, CD56, CD 38, CKAE1AE3, Synaptophysin.CD 138, KAPPA, LAMBDA Y CYCLINA DIAGNÓSTICO Vertebra T1-T2. Lesión. Biopsia. Estudio de inmunohistoquimica: NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA",
+      "IHQ_ORGANO": "VERTEBRA T1-T2",
+      "Organo": "VERTEBRA T1-T2",
+      "Diagnostico Coloracion": "NEOPLASIA DE CELULAS REDONDAS Y AZULES",
+      "Diagnostico Principal": "NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD138": "NEGATIVO",
+      "IHQ_CD38": "NEGATIVO",
+      "IHQ_CD45": "NEGATIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD99": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_KAPPA": "NEGATIVO",
+      "IHQ_LAMBDA": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 166,
+      "campos_vacios": 120,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 9,
+      "completitud_porcentaje": 27.71
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 120,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "NEOPLASIA\nDE\nCELULAS\nREDONDAS Y AZULES” Previa revisión de la histología se realizan niveles histológicos al bloque para\ntinción con los marcadores: CD99, LCA, CD56, CD 38, CKAE1AE3, Sinaptofisina.CD 138, KAPPA, LAMBDA\nY CYCLINA \nDIAGNÓSTICO\n Vertebra T1-T2. Lesión. Biopsia. Estudio de inmunohistoquimica:\nNEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA",
+      "valor_corregido": "NEOPLASIA DE CELULAS REDONDAS Y AZULES” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: CD99, LCA, CD56, CD 38, CKAE1AE3, Synaptophysin.CD 138, KAPPA, LAMBDA Y CYCLINA DIAGNÓSTICO Vertebra T1-T2. Lesión. Biopsia. Estudio de inmunohistoquimica: NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250068",
+      "timestamp": "2025-12-20T02:47:48.126826"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. las células tumorales son positivas fuerte y difuso para CD 38, CD 138, CYCLINA y LAMBDA. Estas células son negativas para CD 56, CD 99, Sinaptofisina, CD 45, KAPPA, diagnóstico de “NEOPLASIA DE CELULAS REDONDAS Y AZULES” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: CD99, LCA, CD56, CD 38, CKAE1AE3, Sinaptofisina.CD 138, KAPPA, LAMBDA Y CYCLINA",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. las células tumorales son positivas fuerte y difuso para CD 38, CD 138, CYCLINA y LAMBDA. Estas células son negativas para CD 56, CD 99, Synaptophysin, CD 45, KAPPA, diagnóstico de “NEOPLASIA DE CELULAS REDONDAS Y AZULES” Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: CD99, LCA, CD56, CD 38, CKAE1AE3, Synaptophysin.CD 138, KAPPA, LAMBDA Y CYCLINA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250068",
+      "timestamp": "2025-12-20T02:47:48.126837"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 54
+  }
+}

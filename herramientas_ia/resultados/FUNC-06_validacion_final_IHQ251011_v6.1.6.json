@@ -1,0 +1,73 @@
+{
+  "caso": "IHQ251011",
+  "fecha_validacion": "2025-11-04 20:19:56",
+  "version_validada": "v6.1.6",
+  "texto_original_pdf": "La expreeion para IDH1 es positiva (mutado). Ausencia de expresion para ATRX (mutado), La expresion para p53 no es contributiva.,El Ki-67 es del 10%.",
+  "biomarcadores_validados": {
+    "IHQ_P53": {
+      "version_inicial": "NO MENCIONADO",
+      "despues_v6.1.5": "CONTRIBUTIVA",
+      "despues_v6.1.6": "NO ES CONTRIBUTIVA",
+      "esperado": "NO ES CONTRIBUTIVA",
+      "estado": "CORRECTO"
+    },
+    "IHQ_KI-67": {
+      "version_inicial": "NO MENCIONADO",
+      "despues_v6.1.5": "10%",
+      "despues_v6.1.6": "10%",
+      "esperado": "10%",
+      "estado": "CORRECTO"
+    },
+    "IHQ_IDH1": {
+      "version_inicial": "(no existia columna)",
+      "despues_v6.1.5": "N/A",
+      "despues_v6.1.6": "POSITIVO",
+      "esperado": "POSITIVO (MUTADO)",
+      "estado": "ERROR - falta MUTADO"
+    },
+    "IHQ_ATRX": {
+      "version_inicial": "(no existia columna)",
+      "despues_v6.1.5": "N/A",
+      "despues_v6.1.6": "AUSENCIA DE EXPRESION PARA ATRX (MUTADO)",
+      "esperado": "NEGATIVO (MUTADO)",
+      "estado": "ERROR - sin normalizar"
+    },
+    "IHQ_GFAP": {
+      "version_inicial": "POSITIVO",
+      "despues_v6.1.5": "POSITIVO",
+      "despues_v6.1.6": "POSITIVO",
+      "esperado": "POSITIVO",
+      "estado": "CORRECTO"
+    },
+    "IHQ_CD34": {
+      "version_inicial": "NEGATIVO",
+      "despues_v6.1.5": "NEGATIVO",
+      "despues_v6.1.6": "NEGATIVO",
+      "esperado": "NEGATIVO",
+      "estado": "CORRECTO"
+    }
+  },
+  "score_final": {
+    "errores_corregidos": 2,
+    "errores_pendientes": 2,
+    "total_errores_iniciales": 4,
+    "biomarcadores_correctos": 4,
+    "biomarcadores_incorrectos": 2,
+    "total_biomarcadores": 6,
+    "porcentaje_exito": 66.7
+  },
+  "errores_pendientes": {
+    "ERROR_1": {
+      "biomarcador": "IHQ_IDH1",
+      "problema": "Patron no captura (MUTADO)",
+      "solucion": "Modificar patron para capturar texto entre parentesis",
+      "ejemplo_regex": "r\"IDH1.*?(POSITIVO|NEGATIVO)\\s*\\((MUTADO|WILD[- ]?TYPE)\\)\""
+    },
+    "ERROR_2": {
+      "biomarcador": "IHQ_ATRX",
+      "problema": "No normaliza Ausencia de expresion",
+      "solucion": "Agregar post-procesamiento",
+      "ejemplo_codigo": "if \"AUSENCIA\" in valor: valor = \"NEGATIVO (MUTADO)\""
+    }
+  }
+}

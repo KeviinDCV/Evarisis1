@@ -1,0 +1,183 @@
+{
+  "session_id": "IHQ250069_20251220_021927",
+  "numero_peticion": "IHQ250069",
+  "timestamp": "2025-12-20T02:19:27.938589",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250069\nCopia Pag. 1 de 2\nNombre : MARILUZ JIMENEZ MORENO\nN. peticion : IHQ250069\nN.Identificación : CC. 29506373\nGenero : FEMENINO\nEdad : 42 años 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LAZARO CORTINA\nServicio : MEDICA MUJERES\nFecha Ingreso : 22/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500392 que\ncorresponde a \" biopsia de médula ósea\"\nconsiste en\nun bloque de parafina y dos lámina\ncoloreadas con Hematoxilina - Eosina con diagnostico de \"CARCINOMA METASTASICO\". Previa\nvaloración de la coloración básica se solicitan los siguiente marcadores para CKAE1/AE3, CK7,\nCK20, CK5/6, p40, PAX8, RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA, p63, p16,\nGATA 3, TTF-1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nLas\ncélulas\ntumorales\nmalignas\nidentificadas\nen\nla\ncoloración\nbásica\npresentan\ninmunorreactividad positiva para CKAE1/AE3, CK7, CK5/6 y p16.\nSon negativas para CK20, p40, p63, PAX 8, RECEPTOR DE ESTROGENOS, PROGESTERONA, GATA\n3 y TTF-1.\nver descripción microscopica y comentario.\nDIAGNÓSTICO\nMédula\nósea.\nHistoria\nde\nca\nde\ncervix.\nBiopsia\ncon\naguja\ngruesa.\nEstudio\nde\ninmunohistoquímica. \nHALLAZGOS COMPATIBLES CON CARCINOMA METASTÁSICO DE PROBABLE ORIGEN DEL TRACTO\nGENITAL FEMENINO\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---\nIHQ250069\nCopia Pag. 2 de 2\nNombre : MARILUZ JIMENEZ MORENO\nN. peticion : IHQ250069\nN.Identificación : CC. 29506373\nGenero : FEMENINO\nEdad : 42 años 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LAZARO CORTINA\nServicio : MEDICA MUJERES\nFecha Ingreso : 22/01/2025\nFecha Informe : 04/02/2025\nEl resultado de este estudio es una aproximación diagnóstica, debe ser analizado en conjunto con\nhistoria clínica, hallazgos imagenológicos y estudios histopatológicos de la lesión primaria.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3551,
+      "reduccion_porcentaje": 98.1
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250069",
+      "caso_num": 16,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK5_6": "POSITIVO",
+      "nombre_completo": "MARILUZ JIMENEZ MORENO",
+      "numero_peticion": "IHQ250069",
+      "identificacion": "29506373",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "42",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "LAZARO CORTINA",
+      "servicio": "MEDICA MUJERES",
+      "fecha_ingreso": "22/01/2025",
+      "fecha_informe": "04/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250069",
+      "N. de identificación": "29506373",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "MEDICA MUJERES",
+      "Médico tratante": "LAZARO CORTINA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "22/01/2025",
+      "Fecha Informe": "04/02/2025",
+      "nombres": "MARILUZ",
+      "Primer nombre": "MARILUZ",
+      "Segundo nombre": "",
+      "apellidos": "JIMENEZ MORENO",
+      "Primer apellido": "JIMENEZ",
+      "Segundo apellido": "MORENO",
+      "nombre_formal": "JIMENEZ MORENO, MARILUZ",
+      "diagnostico": "Médula ósea. Historia de ca de cervix. Biopsia con aguja gruesa. Estudio de inmunohistoquímica. HALLAZGOS COMPATIBLES CON CARCINOMA METASTÁSICO DE PROBABLE ORIGEN DEL TRACTO GENITAL FEMENINO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Las células tumorales malignas identificadas en la coloración básica presentan inmunorreactividad positiva para CKAE1/AE3, CK7, CK5/6 y p16. Son negativas para CK20, p40, p63, PAX 8, RECEPTOR DE ESTROGENOS, PROGESTERONA, GATA 3 y TTF1. ver descripción microscopica y comentario.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500392 que corresponde a \" biopsia de médula ósea\" consiste en un bloque de parafina y dos lámina coloreadas con Hematoxilina - Eosina con diagnostico de \"CARCINOMA METASTASICO\". Previa valoración de la coloración básica se solicitan los siguiente marcadores para CKAE1/AE3, CK7, CK20, CK5/6, p40, PAX8, RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA, p63, p16, GATA 3, TTF1.",
+      "ihq_organo": "MÉDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 31 --- IHQ250069 Copia Pag. 2 de 2 Nombre : MARILUZ JIMENEZ MORENO N. peticion : IHQ250069 N.Identificación : CC. 29506373 Genero : FEMENINO Edad : 42 años 9 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : LAZARO CORTINA Servicio : MEDICA MUJERES Fecha Ingreso : 22/01/2025 Fecha Informe : 04/02/2025 El resultado de este estudio es una aproximación diagnóstica, debe ser analizado en conjunto con historia clínica, hallazgos imagenológicos y estudios histopatológicos de la lesión primaria.",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_P63": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "p16": "POSITIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2025-12-20T02:19:28.168438",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250069\nCopia Pag. 1 de 2\nNombre : MARILUZ JIMENEZ MORENO\nN. peticion : IHQ250069\nN.Identificación : CC. 29506373\nGenero : FEMENINO\nEdad : 42 años 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LAZARO CORTINA\nServicio : MEDICA MUJERES\nFecha Ingreso : 22/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500392 que\ncorresponde a \" biopsia de médula ósea\"\nconsiste en\nun bloque de parafina y dos lámina\ncoloreadas con Hematoxilina - Eosina con diagnostico de \"CARCINOMA METASTASICO\". Previa\nvaloración de la coloración básica se solicitan los siguiente marcadores para CKAE1/AE3, CK7,\nCK20, CK5/6, p40, PAX8, RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA, p63, p16,\nGATA 3, TTF-1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nLas\ncélulas\ntumorales\nmalignas\nidentificadas\nen\nla\ncoloración\nbásica\npresentan\ninmunorreactividad positiva para CKAE1/AE3, CK7, CK5/6 y p16.\nSon negativas para CK20, p40, p63, PAX 8, RECEPTOR DE ESTROGENOS, PROGESTERONA, GATA\n3 y TTF-1.\nver descripción microscopica y comentario.\nDIAGNÓSTICO\nMédula\nósea.\nHistoria\nde\nca\nde\ncervix.\nBiopsia\ncon\naguja\ngruesa.\nEstudio\nde\ninmunohistoquímica. \nHALLAZGOS COMPATIBLES CON CARCINOMA METASTÁSICO DE PROBABLE ORIGEN DEL TRACTO\nGENITAL FEMENINO\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---\nIHQ250069\nCopia Pag. 2 de 2\nNombre : MARILUZ JIMENEZ MORENO\nN. peticion : IHQ250069\nN.Identificación : CC. 29506373\nGenero : FEMENINO\nEdad : 42 años 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LAZARO CORTINA\nServicio : MEDICA MUJERES\nFecha Ingreso : 22/01/2025\nFecha Informe : 04/02/2025\nEl resultado de este estudio es una aproximación diagnóstica, debe ser analizado en conjunto con\nhistoria clínica, hallazgos imagenológicos y estudios histopatológicos de la lesión primaria.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK20, CK5/6, CK7, CKAE1AE3, GATA3, P16, P40, P63, PAX8, Receptor de Estrógeno, Receptor de Progesterona, TTF1",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500392 que corresponde a \" biopsia de médula ósea\" consiste en un bloque de parafina y dos lámina coloreadas con Hematoxilina - Eosina con diagnostico de \"CARCINOMA METASTASICO\". Previa valoración de la coloración básica se solicitan los siguiente marcadores para CKAE1/AE3, CK7, CK20, CK5/6, p40, PAX8, RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA, p63, p16, GATA 3, TTF-1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Las células tumorales malignas identificadas en la coloración básica presentan inmunorreactividad positiva para CKAE1/AE3, CK7, CK5/6 y p16. Son negativas para CK20, p40, p63, PAX 8, RECEPTOR DE ESTROGENOS, PROGESTERONA, GATA 3 y TTF-1. ver descripción microscopica y comentario.",
+      "Descripcion Diagnostico": "Médula ósea. Historia de ca de cervix. Biopsia con aguja gruesa. Estudio de inmunohistoquímica. HALLAZGOS COMPATIBLES CON CARCINOMA METASTÁSICO DE PROBABLE ORIGEN DEL TRACTO GENITAL FEMENINO",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Organo": "BX MEDULA OSEA",
+      "Diagnostico Coloracion": "CARCINOMA METASTASICO",
+      "Diagnostico Principal": "CARCINOMA METASTÁSICO DE PROBABLE ORIGEN DEL TRACTO GENITAL FEMENINO COMENTARIOS TODOS LOS ANÁLISIS SON AVALADOS FRENTE A LOS PROGRAMAS DE CONTROL DE CALIDAD EXTERNO ACREDITADOS POR LA ISO 17043:2010; COLEGIO AMERICANO DE PATÓLOGOS (CAP), THE ROYAL COLLEGE OF PATHOLOGISTS OF AUSTRALASIA QUALITY ASSURANCE PROGRAMS (RCPAQAP), ONEWORLD ACCURACY (1WA) --- PÁGINA 31 --- IHQ250069 COPIA PAG",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_P63": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 165,
+      "campos_vacios": 118,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 12,
+      "completitud_porcentaje": 28.48
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 118,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula\nósea.\nHistoria\nde\nca\nde\ncervix.\nBiopsia\ncon\naguja\ngruesa.\nEstudio\nde\ninmunohistoquímica. \nHALLAZGOS COMPATIBLES CON CARCINOMA METASTÁSICO DE PROBABLE ORIGEN DEL TRACTO\nGENITAL FEMENINO",
+      "valor_corregido": "Médula ósea. Historia de ca de cervix. Biopsia con aguja gruesa. Estudio de inmunohistoquímica. HALLAZGOS COMPATIBLES CON CARCINOMA METASTÁSICO DE PROBABLE ORIGEN DEL TRACTO GENITAL FEMENINO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250069",
+      "timestamp": "2025-12-20T02:19:28.168138"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500392 que corresponde a \" biopsia de médula ósea\" consiste en un bloque de parafina y dos lámina coloreadas con Hematoxilina - Eosina con diagnostico de \"CARCINOMA METASTASICO\". Previa valoración de la coloración básica se solicitan los siguiente marcadores para CKAE1/AE3, CK7, CK20, CK5/6, p40, PAX8, RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA, p63, p16, GATA 3, TTF-1.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500392 que corresponde a \" biopsia de médula ósea\" consiste en un bloque de parafina y dos lámina coloreadas con Hematoxilina - Eosina con diagnostico de \"CARCINOMA METASTASICO\". Previa valoración de la coloración básica se solicitan los siguiente marcadores para CKAE1/AE3, CK7, CK20, CK5/6, p40, PAX8, RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA, p63, p16, GATA 3, TTF1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250069",
+      "timestamp": "2025-12-20T02:19:28.168145"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Las células tumorales malignas identificadas en la coloración básica presentan inmunorreactividad positiva para CKAE1/AE3, CK7, CK5/6 y p16. Son negativas para CK20, p40, p63, PAX 8, RECEPTOR DE ESTROGENOS, PROGESTERONA, GATA 3 y TTF-1. ver descripción microscopica y comentario.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Las células tumorales malignas identificadas en la coloración básica presentan inmunorreactividad positiva para CKAE1/AE3, CK7, CK5/6 y p16. Son negativas para CK20, p40, p63, PAX 8, RECEPTOR DE ESTROGENOS, PROGESTERONA, GATA 3 y TTF1. ver descripción microscopica y comentario.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250069",
+      "timestamp": "2025-12-20T02:19:28.168146"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---\nIHQ250069\nCopia Pag. 2 de 2\nNombre : MARILUZ JIMENEZ MORENO\nN. peticion : IHQ250069\nN.Identificación : CC. 29506373\nGenero : FEMENINO\nEdad : 42 años 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LAZARO CORTINA\nServicio : MEDICA MUJERES\nFecha Ingreso : 22/01/2025\nFecha Informe : 04/02/2025\nEl resultado de este estudio es una aproximación diagnóstica, debe ser analizado en conjunto con\nhistoria clínica, hallazgos imagenológicos y estudios histopatológicos de la lesión primaria.",
+      "valor_corregido": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 31 --- IHQ250069 Copia Pag. 2 de 2 Nombre : MARILUZ JIMENEZ MORENO N. peticion : IHQ250069 N.Identificación : CC. 29506373 Genero : FEMENINO Edad : 42 años 9 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : LAZARO CORTINA Servicio : MEDICA MUJERES Fecha Ingreso : 22/01/2025 Fecha Informe : 04/02/2025 El resultado de este estudio es una aproximación diagnóstica, debe ser analizado en conjunto con historia clínica, hallazgos imagenológicos y estudios histopatológicos de la lesión primaria.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250069",
+      "timestamp": "2025-12-20T02:19:28.168148"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 60
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "caso": "IHQ250231",
+  "fix_aplicado": "v6.5.10",
+  "descripcion_fix": "Proteccion de secciones criticas (DESCRIPCION MICROSCOPICA/MACROSCOPICA) en _preprocess_multipage_diagnosis",
+  "timestamp": "20260128_062150",
+  "estado": "EXITOSO",
+  "reprocesamiento": {
+    "pdf_procesado": "IHQ DEL 212 AL 262.pdf",
+    "casos_procesados": 50,
+    "rango": "212-262",
+    "metodo": "FUNC-06 (limpieza automatica + reprocesamiento)"
+  },
+  "auditoria_despues": {
+    "score": 88.9,
+    "estado": "OK",
+    "warnings": 0,
+    "errores": 0,
+    "validaciones_ok": "8/9"
+  },
+  "validaciones_criticas": {
+    "DESCRIPCION_MACROSCOPICA": "OK - Extraida correctamente",
+    "DESCRIPCION_MICROSCOPICA": "OK - Extraida correctamente",
+    "DIAGNOSTICO_COLORACION": "OK - CARCINOMA DE CELULAS NO PEQUENAS",
+    "DIAGNOSTICO_PRINCIPAL": "OK - LOS HALLAZGOS SUGIEREN UN ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR",
+    "IHQ_ORGANO": "OK - PULMON IZQUIERDO",
+    "MALIGNIDAD": "OK - MALIGNO"
+  },
+  "biomarcadores": {
+    "solicitados_ocr": [
+      "P40",
+      "TTF-1"
+    ],
+    "solicitados_bd": [
+      "P40",
+      "TTF-1",
+      "SYNAPTOFISINA"
+    ],
+    "cobertura": "100%",
+    "mapeados": 2,
+    "no_mapeados": 0,
+    "warning": "1 biomarcador extra en BD (SYNAPTOFISINA no estaba en solicitud)"
+  },
+  "verificacion_fix": {
+    "objetivo": "Proteger secciones DESCRIPCION MICROSCOPICA/MACROSCOPICA de ser eliminadas",
+    "resultado": "EXITOSO",
+    "evidencia": [
+      "DESCRIPCION_MACROSCOPICA extraida y guardada correctamente",
+      "DESCRIPCION_MICROSCOPICA extraida y guardada correctamente",
+      "No se detectaron eliminaciones incorrectas de secciones criticas"
+    ]
+  },
+  "siguiente_paso": "Fix v6.5.10 validado. Caso IHQ250231 reprocesado exitosamente con secciones criticas protegidas."
+}

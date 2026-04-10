@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ250174_20260112_172115",
+  "numero_peticion": "IHQ250174",
+  "timestamp": "2026-01-12T17:21:15.426017",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250174\nCopia Pag. 1 de 2\nNombre : MIREYA GAVIRIA\nN. peticion : IHQ250174\nN.Identificación : CC. 31522489\nGenero : FEMENINO\nEdad : 68 años 3 meses 11 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : EULER JAVIER BURBANO\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 15/02/2025\nFecha Informe : 24/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA EN CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501565 con rótulo\ncorrespondiente a \"biopsia de masa en cérvix\" con diagnóstico de “CARCINOMA INVASIVO\nDE ALTO GRADO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa\nvaloración de la coloración básica, se realizan cortes histológicos para CKAE1/AE3, PAX8,\nRECEPTOR DE ESTRÓGENOS, RECEPTOR DE PROGESTERONA, p53, p16, NAPSINA, WT-1, CEA. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nLa lesión carcinomatosa invasiva de alto grado descrito demuestra una tinción positiva fuerte y\ndifusa para CKAE1/AE3, PAX8, p16 en bloque y WT1 heterogéneo débil con sobre-expresión de\np53 (mutado). \nSon negativas para RECEPTORES DE ESTRÓGENOS, RECEPTORES DE PROGESTERONA, CEA y\nNAPSINA. \nDIAGNÓSTICO\nCérvix. Masa. Biopsia. Estudio de inmunohistoquímica. \nLOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA\nFAVORECEN CARCINOMA SEROSO DE ALTO GRADO. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---\nIHQ250174\nCopia Pag. 2 de 2\nNombre : MIREYA GAVIRIA\nN. peticion : IHQ250174\nN.Identificación : CC. 31522489\nGenero : FEMENINO\nEdad : 68 años 3 meses 11 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : EULER JAVIER BURBANO\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 15/02/2025\nFecha Informe : 24/02/2025\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3383,
+      "reduccion_porcentaje": 97.96
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250174",
+      "caso_num": 14,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P53": "POSITIVO",
+      "IHQ_WT1": "POSITIVO",
+      "nombre_completo": "MIREYA GAVIRIA",
+      "numero_peticion": "IHQ250174",
+      "identificacion": "31522489",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "68",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "EULER JAVIER BURBANO",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "15/02/2025",
+      "fecha_informe": "24/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250174",
+      "N. de identificación": "31522489",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "EULER JAVIER BURBANO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "15/02/2025",
+      "Fecha Informe": "24/02/2025",
+      "nombres": "MIREYA GAVIRIA",
+      "Primer nombre": "MIREYA",
+      "Segundo nombre": "GAVIRIA",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "MIREYA GAVIRIA",
+      "diagnostico": "Cérvix. Masa. Biopsia. Estudio de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO DE ALTO GRADO. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga: 15/02/2025 RM 761520 _________________________________________________________________________________________________",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: La lesión carcinomatosa invasiva de alto grado descrito demuestra una tinción positiva fuerte y difusa para CKAE1/AE3, PAX8, p16 en bloque y WT1 heterogéneo débil con sobre-expresión de p53 (mutado). Son negativas para RECEPTORES DE ESTRÓGENOS, RECEPTORES DE PROGESTERONA, CEA y NAPSINA.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501565 con rótulo correspondiente a \"biopsia de masa en cérvix\" con diagnóstico de \"CARCINOMA INVASIVO DE ALTO GRADO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa valoración de la coloración básica, se realizan cortes histológicos para CKAE1/AE3, PAX8, RECEPTOR DE ESTRÓGENOS, RECEPTOR DE PROGESTERONA, p53, p16, NAPSINA, WT-1, CEA.",
+      "ihq_organo": "CÉRVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CÉRVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2026-01-12T17:21:15.970775",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250174\nCopia Pag. 1 de 2\nNombre : MIREYA GAVIRIA\nN. peticion : IHQ250174\nN.Identificación : CC. 31522489\nGenero : FEMENINO\nEdad : 68 años 3 meses 11 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : EULER JAVIER BURBANO\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 15/02/2025\nFecha Informe : 24/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA EN CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501565 con rótulo\ncorrespondiente a \"biopsia de masa en cérvix\" con diagnóstico de “CARCINOMA INVASIVO\nDE ALTO GRADO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa\nvaloración de la coloración básica, se realizan cortes histológicos para CKAE1/AE3, PAX8,\nRECEPTOR DE ESTRÓGENOS, RECEPTOR DE PROGESTERONA, p53, p16, NAPSINA, WT-1, CEA. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nLa lesión carcinomatosa invasiva de alto grado descrito demuestra una tinción positiva fuerte y\ndifusa para CKAE1/AE3, PAX8, p16 en bloque y WT1 heterogéneo débil con sobre-expresión de\np53 (mutado). \nSon negativas para RECEPTORES DE ESTRÓGENOS, RECEPTORES DE PROGESTERONA, CEA y\nNAPSINA. \nDIAGNÓSTICO\nCérvix. Masa. Biopsia. Estudio de inmunohistoquímica. \nLOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA\nFAVORECEN CARCINOMA SEROSO DE ALTO GRADO. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---\nIHQ250174\nCopia Pag. 2 de 2\nNombre : MIREYA GAVIRIA\nN. peticion : IHQ250174\nN.Identificación : CC. 31522489\nGenero : FEMENINO\nEdad : 68 años 3 meses 11 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : EULER JAVIER BURBANO\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 15/02/2025\nFecha Informe : 24/02/2025\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CEA, CKAE1AE3, NAPSIN, P16, P53, PAX8, Receptor de Estrógeno, Receptor de Progesterona, WT1",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501565 con rótulo correspondiente a \"biopsia de masa en cérvix\" con diagnóstico de “CARCINOMA INVASIVO DE ALTO GRADO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa valoración de la coloración básica, se realizan cortes histológicos para CKAE1/AE3, PAX8, RECEPTOR DE ESTRÓGENOS, RECEPTOR DE PROGESTERONA, p53, p16, NAPSINA, WT-1, CEA.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: La lesión carcinomatosa invasiva de alto grado descrito demuestra una tinción positiva fuerte y difusa para CKAE1/AE3, PAX8, p16 en bloque y WT1 heterogéneo débil con sobre-expresión de p53 (mutado). Son negativas para RECEPTORES DE ESTRÓGENOS, RECEPTORES DE PROGESTERONA, CEA y NAPSINA.",
+      "Descripcion Diagnostico": "Cérvix. Masa. Biopsia. Estudio de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO DE ALTO GRADO. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga: 15/02/2025 RM 761520 _________________________________________________________________________________________________",
+      "IHQ_ORGANO": "CÉRVIX",
+      "Organo": "BX MASA EN CERVIX",
+      "Diagnostico Coloracion": "CARCINOMA INVASIVO DE ALTO GRADO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO DE ALTO GRADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P53": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_WT1": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 132,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 132,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cérvix. Masa. Biopsia. Estudio de inmunohistoquímica. \nLOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA\nFAVORECEN CARCINOMA SEROSO DE ALTO GRADO. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga: 15/02/2025\nRM 761520\n_________________________________________________________________________________________________",
+      "valor_corregido": "Cérvix. Masa. Biopsia. Estudio de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO DE ALTO GRADO. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga: 15/02/2025 RM 761520 _________________________________________________________________________________________________",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250174",
+      "timestamp": "2026-01-12T17:21:15.970573"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501565 con rótulo correspondiente a \"biopsia de masa en cérvix\" con diagnóstico de “CARCINOMA INVASIVO DE ALTO GRADO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa valoración de la coloración básica, se realizan cortes histológicos para CKAE1/AE3, PAX8, RECEPTOR DE ESTRÓGENOS, RECEPTOR DE PROGESTERONA, p53, p16, NAPSINA, WT-1, CEA.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501565 con rótulo correspondiente a \"biopsia de masa en cérvix\" con diagnóstico de \"CARCINOMA INVASIVO DE ALTO GRADO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa valoración de la coloración básica, se realizan cortes histológicos para CKAE1/AE3, PAX8, RECEPTOR DE ESTRÓGENOS, RECEPTOR DE PROGESTERONA, p53, p16, NAPSINA, WT-1, CEA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250174",
+      "timestamp": "2026-01-12T17:21:15.970579"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 51
+  }
+}

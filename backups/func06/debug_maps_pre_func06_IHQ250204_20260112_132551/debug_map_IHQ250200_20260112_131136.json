@@ -1,0 +1,168 @@
+{
+  "session_id": "IHQ250200_20260112_131136",
+  "numero_peticion": "IHQ250200",
+  "timestamp": "2026-01-12T13:11:36.165429",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250200\nCopia Pag. 1 de 2\nNombre : MARLOVE JOHANNA ORTEGA MEZA\nN. peticion : IHQ250200\nN.Identificación : CC. 38682875\nGenero : FEMENINO\nEdad : 41 años 4 meses 7 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JUAN CARLOS JARAMILLO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 24/02/2025\nFecha Informe : 03/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION EN LENGUA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2501632, el cual corresponde a biopsia de lengua con\ndiagnóstico de \"LESIÓN PAPILOMATOSA ULCERADA\". Se ordenan los siguientes marcadores: p40,\np16 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nSe observa epitelio escamoso acantótico y de configuración papilomatosa con alargamiento de\ncrestas y ulceraciones en la superficie, sin invasión estromal. En el estroma adyacente presenta\nincremento\nde\nestructuras\nvasculares\ncon\ncelularidad\nmixta\ninflamatoria\nde\npredominio\nmononuclear. Hay marcación celular del epitelio escamoso a nivel basal con p40 y Ki-67\nesperable, negativa para p16.\nDIAGNÓSTICO\nLengua. Tumor. Biopsia. Estudios de inmunohistoquímica:\nPAPILOMA ESCAMOSO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---\nIHQ250200\nCopia Pag. 2 de 2\nNombre : MARLOVE JOHANNA ORTEGA MEZA\nN. peticion : IHQ250200\nN.Identificación : CC. 38682875\nGenero : FEMENINO\nEdad : 41 años 4 meses 7 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JUAN CARLOS JARAMILLO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 24/02/2025\nFecha Informe : 03/03/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 69 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3112,
+      "reduccion_porcentaje": 98.12
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250200",
+      "caso_num": 39,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "nombre_completo": "MARLOVE JOHANNA ORTEGA MEZA",
+      "numero_peticion": "IHQ250200",
+      "identificacion": "38682875",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "41",
+      "eps": "EPS FAMISANAR SAS",
+      "medico_tratante": "JUAN CARLOS JARAMILLO",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "24/02/2025",
+      "fecha_informe": "03/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250200",
+      "N. de identificación": "38682875",
+      "Tipo de documento": "CC",
+      "EPS": "EPS FAMISANAR SAS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "JUAN CARLOS JARAMILLO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "24/02/2025",
+      "Fecha Informe": "03/03/2025",
+      "nombres": "MARLOVE JOHANNA",
+      "Primer nombre": "MARLOVE",
+      "Segundo nombre": "JOHANNA",
+      "apellidos": "ORTEGA MEZA",
+      "Primer apellido": "ORTEGA",
+      "Segundo apellido": "MEZA",
+      "nombre_formal": "ORTEGA MEZA, MARLOVE JOHANNA",
+      "diagnostico": "Lengua. Tumor. Biopsia. Estudios de inmunohistoquímica: PAPILOMA ESCAMOSO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa epitelio escamoso acantótico y de configuración papilomatosa con alargamiento de crestas y ulceraciones en la superficie, sin invasión estromal. En el estroma adyacente presenta incremento de estructuras vasculares con celularidad mixta inflamatoria de predominio mononuclear. Hay marcación celular del epitelio escamoso a nivel basal con p40 y KI-67 esperable, negativa para p16.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2501632, el cual corresponde a biopsia de lengua con diagnóstico de \"LESIÓN PAPILOMATOSA ULCERADA\". Se ordenan los siguientes marcadores: p40, p16 y KI-67.",
+      "ihq_organo": "LENGUA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P40, P16, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "LENGUA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: ESPERABLE (patrón basal normal)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, Ki-67",
+      "IHQ_KI-67": "ESPERABLE (patrón basal normal)",
+      "IHQ_P40_ESTADO": "POSITIVO (HAY MARCACIÓN CELULAR DEL EPITELIO ESCAMOSO A NIVEL BASAL CON p40)",
+      "p16": "NEGATIVO",
+      "p40": "POSITIVO (HAY MARCACIÓN CELULAR DEL EPITELIO ESCAMOSO A NIVEL BASAL CON P40)",
+      "extraction_timestamp": "2026-01-12T13:11:36.576714",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250200\nCopia Pag. 1 de 2\nNombre : MARLOVE JOHANNA ORTEGA MEZA\nN. peticion : IHQ250200\nN.Identificación : CC. 38682875\nGenero : FEMENINO\nEdad : 41 años 4 meses 7 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JUAN CARLOS JARAMILLO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 24/02/2025\nFecha Informe : 03/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION EN LENGUA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2501632, el cual corresponde a biopsia de lengua con\ndiagnóstico de \"LESIÓN PAPILOMATOSA ULCERADA\". Se ordenan los siguientes marcadores: p40,\np16 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nSe observa epitelio escamoso acantótico y de configuración papilomatosa con alargamiento de\ncrestas y ulceraciones en la superficie, sin invasión estromal. En el estroma adyacente presenta\nincremento\nde\nestructuras\nvasculares\ncon\ncelularidad\nmixta\ninflamatoria\nde\npredominio\nmononuclear. Hay marcación celular del epitelio escamoso a nivel basal con p40 y Ki-67\nesperable, negativa para p16.\nDIAGNÓSTICO\nLengua. Tumor. Biopsia. Estudios de inmunohistoquímica:\nPAPILOMA ESCAMOSO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---\nIHQ250200\nCopia Pag. 2 de 2\nNombre : MARLOVE JOHANNA ORTEGA MEZA\nN. peticion : IHQ250200\nN.Identificación : CC. 38682875\nGenero : FEMENINO\nEdad : 41 años 4 meses 7 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JUAN CARLOS JARAMILLO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 24/02/2025\nFecha Informe : 03/03/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 69 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, Ki-67",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2501632, el cual corresponde a biopsia de lengua con diagnóstico de \"LESIÓN PAPILOMATOSA ULCERADA\". Se ordenan los siguientes marcadores: p40, p16 y Ki-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa epitelio escamoso acantótico y de configuración papilomatosa con alargamiento de crestas y ulceraciones en la superficie, sin invasión estromal. En el estroma adyacente presenta incremento de estructuras vasculares con celularidad mixta inflamatoria de predominio mononuclear. Hay marcación celular del epitelio escamoso a nivel basal con p40 y Ki-67 esperable, negativa para p16.",
+      "Descripcion Diagnostico": "Lengua. Tumor. Biopsia. Estudios de inmunohistoquímica: PAPILOMA ESCAMOSO",
+      "IHQ_ORGANO": "LENGUA",
+      "Organo": "BX LESION EN LENGUA",
+      "Diagnostico Coloracion": "LESIÓN PAPILOMATOSA ULCERADA",
+      "Diagnostico Principal": "PAPILOMA ESCAMOSO",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: ESPERABLE (patrón basal normal)",
+      "IHQ_P40_ESTADO": "POSITIVO (HAY MARCACIÓN CELULAR DEL EPITELIO ESCAMOSO A NIVEL BASAL CON p40)",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "ESPERABLE (patrón basal normal)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 135,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Lengua. Tumor. Biopsia. Estudios de inmunohistoquímica:\nPAPILOMA ESCAMOSO",
+      "valor_corregido": "Lengua. Tumor. Biopsia. Estudios de inmunohistoquímica: PAPILOMA ESCAMOSO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250200",
+      "timestamp": "2026-01-12T13:11:36.576368"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2501632, el cual corresponde a biopsia de lengua con diagnóstico de \"LESIÓN PAPILOMATOSA ULCERADA\". Se ordenan los siguientes marcadores: p40, p16 y Ki-67.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2501632, el cual corresponde a biopsia de lengua con diagnóstico de \"LESIÓN PAPILOMATOSA ULCERADA\". Se ordenan los siguientes marcadores: p40, p16 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250200",
+      "timestamp": "2026-01-12T13:11:36.576375"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa epitelio escamoso acantótico y de configuración papilomatosa con alargamiento de crestas y ulceraciones en la superficie, sin invasión estromal. En el estroma adyacente presenta incremento de estructuras vasculares con celularidad mixta inflamatoria de predominio mononuclear. Hay marcación celular del epitelio escamoso a nivel basal con p40 y Ki-67 esperable, negativa para p16.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa epitelio escamoso acantótico y de configuración papilomatosa con alargamiento de crestas y ulceraciones en la superficie, sin invasión estromal. En el estroma adyacente presenta incremento de estructuras vasculares con celularidad mixta inflamatoria de predominio mononuclear. Hay marcación celular del epitelio escamoso a nivel basal con p40 y KI-67 esperable, negativa para p16.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250200",
+      "timestamp": "2026-01-12T13:11:36.576377"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "IHQ_P40_ESTADO",
+      "valor_original": "POSITIVO (HAY MARCACIÓN CELULAR DEL EPITELIO ESCAMOSO A NIVEL BASAL CON P40)",
+      "valor_corregido": "POSITIVO (HAY MARCACIÓN CELULAR DEL EPITELIO ESCAMOSO A NIVEL BASAL CON p40)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250200",
+      "timestamp": "2026-01-12T13:11:36.576379"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 53
+  }
+}

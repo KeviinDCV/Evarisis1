@@ -1,0 +1,162 @@
+{
+  "session_id": "IHQ250201_20260109_050832",
+  "numero_peticion": "IHQ250201",
+  "timestamp": "2026-01-09T05:08:32.700589",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250201\nCopia Pag. 1 de 2\nNombre : JOSE GREGORIO GARCIA AVILA\nN. peticion : IHQ250201\nN.Identificación : PPT. 5002911\nGenero : MASCULINO\nEdad : 30 años 27 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LUIS ALBERTO TORRES\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 24/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA INTRAABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500929-1 que corresponde a biopsia de masa en región intraabdominal,\ncon diagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales son positivas para CKAE1/AE3, SALL-4, OCT-4, CD117, Podoplanina (D2-40), ,\nsiendo negativos para SOX-10, Melan-A, AFP, CD30, hCG y Glypican-3.\nEl índice de proliferación celular presenta Ki-67 del 70%.\nDIAGNÓSTICO\nRegión intrabdominal sin otra especificación. Masa. Biopsia percutánea. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON SEMINOMA METASTASICO.\nCOMENTARIOS\nSe debe correlacionar con la clínica, hallazgos imagenológicos y estudios de laboratorio.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 70 ---\nIHQ250201\nCopia Pag. 2 de 2\nNombre : JOSE GREGORIO GARCIA AVILA\nN. peticion : IHQ250201\nN.Identificación : PPT. 5002911\nGenero : MASCULINO\nEdad : 30 años 27 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LUIS ALBERTO TORRES\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 24/02/2025\nFecha Informe : 28/02/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3173,
+      "reduccion_porcentaje": 98.09
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250201",
+      "caso_num": 40,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_SALL4": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "nombre_completo": "JOSE GREGORIO GARCIA AVILA",
+      "numero_peticion": "IHQ250201",
+      "identificacion": "5002911",
+      "tipo_documento": "PPT",
+      "Genero": "MASCULINO",
+      "Edad": "30",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "LUIS ALBERTO TORRES",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "24/02/2025",
+      "fecha_informe": "28/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250201",
+      "N. de identificación": "5002911",
+      "Tipo de documento": "PPT",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "LUIS ALBERTO TORRES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "24/02/2025",
+      "Fecha Informe": "28/02/2025",
+      "nombres": "JOSE GREGORIO",
+      "Primer nombre": "JOSE",
+      "Segundo nombre": "GREGORIO",
+      "apellidos": "GARCIA AVILA",
+      "Primer apellido": "GARCIA",
+      "Segundo apellido": "AVILA",
+      "nombre_formal": "GARCIA AVILA, JOSE GREGORIO",
+      "diagnostico": "Región intrabdominal sin otra especificación. Masa. Biopsia percutánea. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON SEMINOMA METASTASICO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son positivas para CKAE1/AE3, SALL-4, OCT-4, CD117, Podoplanina (D2-40), , siendo negativos para SOX-10, Melan-A, AFP, CD30, hCG y Glypican-3. El índice de proliferación celular presenta KI-67 del 70%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2500929-1 que corresponde a biopsia de masa en región intraabdominal, con diagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "REGIÓN INTRABDOMINAL SIN OTRA ESPECIFICACIÓN",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se debe correlacionar con la clínica, hallazgos imagenológicos y estudios de laboratorio.",
+      "IHQ_ORGANO": "REGIÓN INTRABDOMINAL SIN OTRA ESPECIFICACIÓN",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67 del 70%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_MELAN_A": "NEGATIVO",
+      "IHQ_AFP": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_HCG": "NEGATIVO",
+      "IHQ_GPC3": "NEGATIVO",
+      "IHQ_KI-67": "70%",
+      "extraction_timestamp": "2026-01-09T05:08:33.120668",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250201\nCopia Pag. 1 de 2\nNombre : JOSE GREGORIO GARCIA AVILA\nN. peticion : IHQ250201\nN.Identificación : PPT. 5002911\nGenero : MASCULINO\nEdad : 30 años 27 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LUIS ALBERTO TORRES\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 24/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA INTRAABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500929-1 que corresponde a biopsia de masa en región intraabdominal,\ncon diagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales son positivas para CKAE1/AE3, SALL-4, OCT-4, CD117, Podoplanina (D2-40), ,\nsiendo negativos para SOX-10, Melan-A, AFP, CD30, hCG y Glypican-3.\nEl índice de proliferación celular presenta Ki-67 del 70%.\nDIAGNÓSTICO\nRegión intrabdominal sin otra especificación. Masa. Biopsia percutánea. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON SEMINOMA METASTASICO.\nCOMENTARIOS\nSe debe correlacionar con la clínica, hallazgos imagenológicos y estudios de laboratorio.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 70 ---\nIHQ250201\nCopia Pag. 2 de 2\nNombre : JOSE GREGORIO GARCIA AVILA\nN. peticion : IHQ250201\nN.Identificación : PPT. 5002911\nGenero : MASCULINO\nEdad : 30 años 27 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LUIS ALBERTO TORRES\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 24/02/2025\nFecha Informe : 28/02/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD117, CD30, CKAE1AE3, Ki-67, MELAN-A, SALL4, SOX10",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2500929-1 que corresponde a biopsia de masa en región intraabdominal, con diagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son positivas para CKAE1/AE3, SALL-4, OCT-4, CD117, Podoplanina (D2-40), , siendo negativos para SOX-10, Melan-A, AFP, CD30, hCG y Glypican-3. El índice de proliferación celular presenta Ki-67 del 70%.",
+      "Descripcion Diagnostico": "Región intrabdominal sin otra especificación. Masa. Biopsia percutánea. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON SEMINOMA METASTASICO.",
+      "IHQ_ORGANO": "REGIÓN INTRABDOMINAL SIN OTRA ESPECIFICACIÓN",
+      "Organo": "BX MASA INTRAABDOMINAL",
+      "Diagnostico Coloracion": "TUMOR MALIGNO INDIFERENCIADO",
+      "Diagnostico Principal": "SEMINOMA METASTASICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 70%",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_KI-67": "70%",
+      "IHQ_MELAN_A": "NEGATIVO",
+      "IHQ_SALL4": "POSITIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_GPC3": "NEGATIVO",
+      "IHQ_HCG": "NEGATIVO",
+      "IHQ_AFP": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 170,
+      "campos_vacios": 125,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 125,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región intrabdominal sin otra especificación. Masa. Biopsia percutánea. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON SEMINOMA METASTASICO.",
+      "valor_corregido": "Región intrabdominal sin otra especificación. Masa. Biopsia percutánea. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON SEMINOMA METASTASICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250201",
+      "timestamp": "2026-01-09T05:08:33.120462"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son positivas para CKAE1/AE3, SALL-4, OCT-4, CD117, Podoplanina (D2-40), , siendo negativos para SOX-10, Melan-A, AFP, CD30, hCG y Glypican-3. El índice de proliferación celular presenta Ki-67 del 70%.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son positivas para CKAE1/AE3, SALL-4, OCT-4, CD117, Podoplanina (D2-40), , siendo negativos para SOX-10, Melan-A, AFP, CD30, hCG y Glypican-3. El índice de proliferación celular presenta KI-67 del 70%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250201",
+      "timestamp": "2026-01-09T05:08:33.120468"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 57
+  }
+}

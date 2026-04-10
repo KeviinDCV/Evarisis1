@@ -1,0 +1,140 @@
+{
+  "session_id": "IHQ250070_20251220_000731",
+  "numero_peticion": "IHQ250070",
+  "timestamp": "2025-12-20T00:07:31.185411",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250070\nCopia Pag. 1 de 2\nNombre : ALEJANDRO MARIN MALDONADO\nN. peticion : IHQ250070\nN.Identificación : CC. 16358697\nGenero : MASCULINO\nEdad : 61 años\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 22/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MUCOSA RECTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquímica al caso extrainstitucional del laboratorio Fundación San\nJose de Buga con rotulo P24-5673 (18/11/2024) que corresponde a \" Lesión de mucosa rectal \"\ncon diagnóstico de “ADENOCARICNOMA MODERADAMENTE DIFERENCIADO INFILTRANTE”.\nconsiste en dos lamina coloreadas H&E y dos bloques de parafina. Previa valoración de la\ncoloración básica, se realizan cortes histológicos a ambos bloques para los siguientes\nmarcadores: MLH-1, PMS2, MSH2, MSH6, HER2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nControles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. \nRESULTADO:\nMLH1: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta y citoplasmática de leve a moderada en más del 50% de las\ncélulas. \nPMS2: Expresión nuclear intacta.\nInterpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las\nproteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de\nMSI-H)\nSobreexpresion de HER2: negativo ( score 0 ) \nDIAGNÓSTICO\nMucosa de recto. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica.\n ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE\n- ⁠PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---\nIHQ250070\nCopia Pag. 2 de 2\nNombre : ALEJANDRO MARIN MALDONADO\nN. peticion : IHQ250070\nN.Identificación : CC. 16358697\nGenero : MASCULINO\nEdad : 61 años\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 22/01/2025\nFecha Informe : 27/01/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3776,
+      "reduccion_porcentaje": 97.98
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250070",
+      "caso_num": 17,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ALEJANDRO MARIN MALDONADO",
+      "numero_peticion": "IHQ250070",
+      "identificacion": "16358697",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "61",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "22/01/2025",
+      "fecha_informe": "27/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250070",
+      "N. de identificación": "16358697",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "22/01/2025",
+      "Fecha Informe": "27/01/2025",
+      "nombres": "ALEJANDRO",
+      "Primer nombre": "ALEJANDRO",
+      "Segundo nombre": "",
+      "apellidos": "MARIN MALDONADO",
+      "Primer apellido": "MARIN",
+      "Segundo apellido": "MALDONADO",
+      "nombre_formal": "MARIN MALDONADO, ALEJANDRO",
+      "diagnostico": "Mucosa de recto. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica. ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE - ⁠PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). Controles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. RESULTADO: MLH1: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta y citoplasmática de leve a moderada en más del 50% de las células. PMS2: Expresión nuclear intacta. Interpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) Sobreexpresion de HER2: negativo ( score 0 )",
+      "descripcion_macroscopica": "Se realiza estudio de inmunohistoquímica al caso extrainstitucional del laboratorio Fundación San Jose de Buga con rotulo P24-5673 (18/11/2024) que corresponde a \" Lesión de mucosa rectal \" con diagnóstico de “ADENOCARICNOMA MODERADAMENTE DIFERENCIADO INFILTRANTE”. consiste en dos lamina coloreadas H&E y dos bloques de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos a ambos bloques para los siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2.",
+      "ihq_organo": "MUCOSA DE RECTO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MLH 1, PMS2, MSH2, MSH6, HER2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA DE RECTO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: negativo ( score 0 )",
+      "IHQ_HER2": "NEGATIVO ( SCORE 0 )",
+      "IHQ_MSH2": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MSH6": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MLH1": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_PMS2": "POSITIVO (expresión nuclear intacta)",
+      "extraction_timestamp": "2025-12-20T00:07:31.384628",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250070\nCopia Pag. 1 de 2\nNombre : ALEJANDRO MARIN MALDONADO\nN. peticion : IHQ250070\nN.Identificación : CC. 16358697\nGenero : MASCULINO\nEdad : 61 años\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 22/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MUCOSA RECTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquímica al caso extrainstitucional del laboratorio Fundación San\nJose de Buga con rotulo P24-5673 (18/11/2024) que corresponde a \" Lesión de mucosa rectal \"\ncon diagnóstico de “ADENOCARICNOMA MODERADAMENTE DIFERENCIADO INFILTRANTE”.\nconsiste en dos lamina coloreadas H&E y dos bloques de parafina. Previa valoración de la\ncoloración básica, se realizan cortes histológicos a ambos bloques para los siguientes\nmarcadores: MLH-1, PMS2, MSH2, MSH6, HER2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nControles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. \nRESULTADO:\nMLH1: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta y citoplasmática de leve a moderada en más del 50% de las\ncélulas. \nPMS2: Expresión nuclear intacta.\nInterpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las\nproteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de\nMSI-H)\nSobreexpresion de HER2: negativo ( score 0 ) \nDIAGNÓSTICO\nMucosa de recto. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica.\n ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE\n- ⁠PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---\nIHQ250070\nCopia Pag. 2 de 2\nNombre : ALEJANDRO MARIN MALDONADO\nN. peticion : IHQ250070\nN.Identificación : CC. 16358697\nGenero : MASCULINO\nEdad : 61 años\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 22/01/2025\nFecha Informe : 27/01/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MLH 1, PMS2, MSH2, MSH6, HER2",
+      "Descripcion macroscopica": "Se realiza estudio de inmunohistoquímica al caso extrainstitucional del laboratorio Fundación San Jose de Buga con rotulo P24-5673 (18/11/2024) que corresponde a \" Lesión de mucosa rectal \" con diagnóstico de “ADENOCARICNOMA MODERADAMENTE DIFERENCIADO INFILTRANTE”. consiste en dos lamina coloreadas H&E y dos bloques de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos a ambos bloques para los siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). Controles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. RESULTADO: MLH1: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta y citoplasmática de leve a moderada en más del 50% de las células. PMS2: Expresión nuclear intacta. Interpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) Sobreexpresion de HER2: negativo ( score 0 )",
+      "Descripcion Diagnostico": "Mucosa de recto. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica. ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE - ⁠PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0).",
+      "IHQ_ORGANO": "MUCOSA DE RECTO",
+      "Organo": "BX MUCOSA RECTAL",
+      "Diagnostico Coloracion": "ADENOCARICNOMA MODERADAMENTE DIFERENCIADO INFILTRANTE",
+      "Diagnostico Principal": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE - ⁠PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: negativo ( score 0 )",
+      "IHQ_MLH1": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_PMS2": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MSH2": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MSH6": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_HER2": "NEGATIVO ( SCORE 0 )"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 159,
+      "campos_vacios": 120,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 24.53
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 120,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa de recto. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica.\n ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE\n- ⁠PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).",
+      "valor_corregido": "Mucosa de recto. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica. ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE - ⁠PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250070",
+      "timestamp": "2025-12-20T00:07:31.384314"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 51
+  }
+}

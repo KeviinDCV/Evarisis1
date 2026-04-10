@@ -1,0 +1,155 @@
+{
+  "session_id": "IHQ250039_20251217_034543",
+  "numero_peticion": "IHQ250039",
+  "timestamp": "2025-12-17T03:45:43.838525",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250039\nCopia Pag. 1 de 2\nNombre : OLGA NIDIA MONTILLA BOTINA\nN. peticion : IHQ250039\nN.Identificación : CC. 29690709\nGenero : FEMENINO\nEdad : 64 años 3 meses 21 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 14/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA MAMA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M250077 que\ncorresponde a \" cuadrantectomía\nde mama derecha\" ,\nconsiste en cinco bloques de parafina y\ncinco lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"CARCINOMA DUCTAL IN\nSITU DE BAJO GRADO MULTIFOCAL.BORDES LIBRES. BORDE MÁS CERCANO: ANTERIOR Y MEDIAL\nA 1 MILÍMETRO.\nLESIÓN PAPILAR. ADENOSIS ESCLEROSANTE. ECTASIA DUCTAL. METAPLASIA\nAPOCRINA\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al\nbloque 2 para : p63, CK5/6, RECEPTOR DE ESTRÓGENOS\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nRESULTADOS:\n- Se identifican focos de carcinoma ductal in situ rodeados de células mioepiteliales ( p63 , CK 5/6\n) positivas y una marcación difusa de fuerte a moderada para receptores de estrógenos en las\ncélulas epiteliales. \n- La lesión papilar\ndescrita presenta tinción nuclear heterogénea ( normal ) para receptores de\nestrógenos y se rodean en la periferia por células mioepiteliales ( p63 , CK 5/6 ) positivas. \n- El área correspondiente adenosis esclerosante demuestra positividad periférica para\ncélulas\nmioepiteliales ( p63 , CK 5/6 ) positivas. \nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---\nIHQ250039\nCopia Pag. 2 de 2\nNombre : OLGA NIDIA MONTILLA BOTINA\nN. peticion : IHQ250039\nN.Identificación : CC. 29690709\nGenero : FEMENINO\nEdad : 64 años 3 meses 21 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 14/01/2025\nFecha Informe : 23/01/2025\nMama derecha. Lesión. Cuadrantectomía. Estudio de inmunohistoquímica.\nCARCINOMA DUCTAL IN SITU DE BAJO GRADO MULTIFOCAL.\nPAPILOMA INTRADUCTAL CON METAPLASIA APOCRINA FOCAL.\nADENOSIS ESCLEROSANTE.\nECTASIA DUCTAL.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3912,
+      "reduccion_porcentaje": 97.71
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250039",
+      "caso_num": 39,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_ER": "POSITIVO",
+      "nombre_completo": "OLGA NIDIA MONTILLA BOTINA",
+      "numero_peticion": "IHQ250039",
+      "identificacion": "29690709",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "64",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LUIS ALFONSO GONZALEZ",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "14/01/2025",
+      "fecha_informe": "23/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250039",
+      "N. de identificación": "29690709",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "LUIS ALFONSO GONZALEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/01/2025",
+      "Fecha Informe": "23/01/2025",
+      "nombres": "OLGA NIDIA",
+      "Primer nombre": "OLGA",
+      "Segundo nombre": "NIDIA",
+      "apellidos": "MONTILLA BOTINA",
+      "Primer apellido": "MONTILLA",
+      "Segundo apellido": "BOTINA",
+      "nombre_formal": "MONTILLA BOTINA, OLGA NIDIA",
+      "diagnostico": "CARCINOMA DUCTAL IN SITU DE BAJO GRADO MULTIFOCAL",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. RESULTADOS: - Se identifican focos de carcinoma ductal in situ rodeados de células mioepiteliales ( P63 , CK5/6 ) positivas y una marcación difusa de fuerte a moderada para receptores de estrógenos en las células epiteliales. - La lesión papilar descrita presenta tinción nuclear heterogénea ( normal ) para receptores de estrógenos y se rodean en la periferia por células mioepiteliales ( P63 , CK5/6 ) positivas. - El área correspondiente adenosis esclerosante demuestra positividad periférica para células mioepiteliales ( P63 , CK5/6 ) positivas.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M250077 que corresponde a \" cuadrantectomía de mama derecha\" , consiste en cinco bloques de parafina y cinco lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"CARCINOMA DUCTAL IN SITU DE BAJO GRADO MULTIFOCAL.BORDES LIBRES. BORDE MÁS CERCANO: ANTERIOR Y MEDIAL A 1 MILÍMETRO. LESIÓN PAPILAR. ADENOSIS ESCLEROSANTE. ECTASIA DUCTAL. METAPLASIA APOCRINA\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al bloque 2 para : P63, CK5/6, RECEPTOR DE ESTRÓGENOS",
+      "ihq_organo": "",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "RECEPTOR DE ESTRÓGENOS DESCRIPCIÓN MICROSCÓPICA",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (marcación difusa a fuerte a moderada)",
+      "extraction_timestamp": "2025-12-17T03:45:44.015503",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250039\nCopia Pag. 1 de 2\nNombre : OLGA NIDIA MONTILLA BOTINA\nN. peticion : IHQ250039\nN.Identificación : CC. 29690709\nGenero : FEMENINO\nEdad : 64 años 3 meses 21 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 14/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA MAMA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M250077 que\ncorresponde a \" cuadrantectomía\nde mama derecha\" ,\nconsiste en cinco bloques de parafina y\ncinco lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"CARCINOMA DUCTAL IN\nSITU DE BAJO GRADO MULTIFOCAL.BORDES LIBRES. BORDE MÁS CERCANO: ANTERIOR Y MEDIAL\nA 1 MILÍMETRO.\nLESIÓN PAPILAR. ADENOSIS ESCLEROSANTE. ECTASIA DUCTAL. METAPLASIA\nAPOCRINA\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al\nbloque 2 para : p63, CK5/6, RECEPTOR DE ESTRÓGENOS\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nRESULTADOS:\n- Se identifican focos de carcinoma ductal in situ rodeados de células mioepiteliales ( p63 , CK 5/6\n) positivas y una marcación difusa de fuerte a moderada para receptores de estrógenos en las\ncélulas epiteliales. \n- La lesión papilar\ndescrita presenta tinción nuclear heterogénea ( normal ) para receptores de\nestrógenos y se rodean en la periferia por células mioepiteliales ( p63 , CK 5/6 ) positivas. \n- El área correspondiente adenosis esclerosante demuestra positividad periférica para\ncélulas\nmioepiteliales ( p63 , CK 5/6 ) positivas. \nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---\nIHQ250039\nCopia Pag. 2 de 2\nNombre : OLGA NIDIA MONTILLA BOTINA\nN. peticion : IHQ250039\nN.Identificación : CC. 29690709\nGenero : FEMENINO\nEdad : 64 años 3 meses 21 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 14/01/2025\nFecha Informe : 23/01/2025\nMama derecha. Lesión. Cuadrantectomía. Estudio de inmunohistoquímica.\nCARCINOMA DUCTAL IN SITU DE BAJO GRADO MULTIFOCAL.\nPAPILOMA INTRADUCTAL CON METAPLASIA APOCRINA FOCAL.\nADENOSIS ESCLEROSANTE.\nECTASIA DUCTAL.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK5/6, P63, Receptor de Estrógeno",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M250077 que corresponde a \" cuadrantectomía de mama derecha\" , consiste en cinco bloques de parafina y cinco lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"CARCINOMA DUCTAL IN SITU DE BAJO GRADO MULTIFOCAL.BORDES LIBRES. BORDE MÁS CERCANO: ANTERIOR Y MEDIAL A 1 MILÍMETRO. LESIÓN PAPILAR. ADENOSIS ESCLEROSANTE. ECTASIA DUCTAL. METAPLASIA APOCRINA\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al bloque 2 para : p63, CK5/6, RECEPTOR DE ESTRÓGENOS",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. RESULTADOS: - Se identifican focos de carcinoma ductal in situ rodeados de células mioepiteliales ( p63 , CK 5/6 ) positivas y una marcación difusa de fuerte a moderada para receptores de estrógenos en las células epiteliales. - La lesión papilar descrita presenta tinción nuclear heterogénea ( normal ) para receptores de estrógenos y se rodean en la periferia por células mioepiteliales ( p63 , CK 5/6 ) positivas. - El área correspondiente adenosis esclerosante demuestra positividad periférica para células mioepiteliales ( p63 , CK 5/6 ) positivas.",
+      "Descripcion Diagnostico": "CARCINOMA DUCTAL IN SITU DE BAJO GRADO MULTIFOCAL",
+      "IHQ_ORGANO": "CUADRANTECTOMIA MAMA DERECHA",
+      "Organo": "CUADRANTECTOMIA MAMA DERECHA",
+      "Diagnostico Coloracion": "CARCINOMA DUCTAL IN SITU DE BAJO GRADO MULTIFOCAL.BORDES LIBRES. BORDE MÁS CERCANO: ANTERIOR Y MEDIAL A 1 MILÍMETRO. LESIÓN PAPILAR. ADENOSIS ESCLEROSANTE. ECTASIA DUCTAL. METAPLASIA APOCRINA",
+      "Diagnostico Principal": "CARCINOMA DUCTAL IN SITU DE BAJO GRADO MULTIFOCAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "RECEPTOR DE ESTRÓGENOS DESCRIPCIÓN MICROSCÓPICA",
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (marcación difusa a fuerte a moderada)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 156,
+      "campos_vacios": 118,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 24.36
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 118,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "CARCINOMA DUCTAL IN\nSITU DE BAJO GRADO MULTIFOCAL",
+      "valor_corregido": "CARCINOMA DUCTAL IN SITU DE BAJO GRADO MULTIFOCAL",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250039",
+      "timestamp": "2025-12-17T03:45:44.015309"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M250077 que\ncorresponde a \" cuadrantectomía\nde mama derecha\" ,\nconsiste en cinco bloques de parafina y\ncinco lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"CARCINOMA DUCTAL IN\nSITU DE BAJO GRADO MULTIFOCAL.BORDES LIBRES. BORDE MÁS CERCANO: ANTERIOR Y MEDIAL\nA 1 MILÍMETRO.\nLESIÓN PAPILAR. ADENOSIS ESCLEROSANTE. ECTASIA DUCTAL. METAPLASIA\nAPOCRINA\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al\nbloque 2 para : p63, CK5/6, RECEPTOR DE ESTRÓGENOS",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M250077 que corresponde a \" cuadrantectomía de mama derecha\" , consiste en cinco bloques de parafina y cinco lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"CARCINOMA DUCTAL IN SITU DE BAJO GRADO MULTIFOCAL.BORDES LIBRES. BORDE MÁS CERCANO: ANTERIOR Y MEDIAL A 1 MILÍMETRO. LESIÓN PAPILAR. ADENOSIS ESCLEROSANTE. ECTASIA DUCTAL. METAPLASIA APOCRINA\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al bloque 2 para : P63, CK5/6, RECEPTOR DE ESTRÓGENOS",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250039",
+      "timestamp": "2025-12-17T03:45:44.015315"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nRESULTADOS:\n- Se identifican focos de carcinoma ductal in situ rodeados de células mioepiteliales ( p63 , CK 5/6\n) positivas y una marcación difusa de fuerte a moderada para receptores de estrógenos en las\ncélulas epiteliales. \n- La lesión papilar\ndescrita presenta tinción nuclear heterogénea ( normal ) para receptores de\nestrógenos y se rodean en la periferia por células mioepiteliales ( p63 , CK 5/6 ) positivas. \n- El área correspondiente adenosis esclerosante demuestra positividad periférica para\ncélulas\nmioepiteliales ( p63 , CK 5/6 ) positivas.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. RESULTADOS: - Se identifican focos de carcinoma ductal in situ rodeados de células mioepiteliales ( P63 , CK5/6 ) positivas y una marcación difusa de fuerte a moderada para receptores de estrógenos en las células epiteliales. - La lesión papilar descrita presenta tinción nuclear heterogénea ( normal ) para receptores de estrógenos y se rodean en la periferia por células mioepiteliales ( P63 , CK5/6 ) positivas. - El área correspondiente adenosis esclerosante demuestra positividad periférica para células mioepiteliales ( P63 , CK5/6 ) positivas.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250039",
+      "timestamp": "2025-12-17T03:45:44.015317"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 48
+  }
+}

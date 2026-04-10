@@ -1,0 +1,149 @@
+{
+  "session_id": "IHQ250108_20260105_202338",
+  "numero_peticion": "IHQ250108",
+  "timestamp": "2026-01-05T20:23:38.242279",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250108\nCopia Pag. 1 de 2\nNombre : FERNANDO PERDOMO YUSTI\nN. peticion : IHQ250108\nN.Identificación : CC. 16647102\nGenero : MASCULINO\nEdad : 64 años\nEPS : POLICIA NACIONAL\nMédico tratante : ALEJANDRO MORENO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 03/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nproveniente de laboratoio Adriana Correa, rotulado como “P24-9596” que corresponde a “A. Biopsia de\nprostáta\nlado\nderecho\ny\nB.\nBiopsia\nde\nprostáta\nlado\nizquierdo”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nA y B. En los cortes se observan glándulas prostáticas que expresan células basales (p63+ y CK34BE12+)\ny son negativas para racemasa. Negativo para neoplasia.\ndiagnóstico\nde\n“FOCOS\nMICROACINARES ATÍPICOS”. Previa revisión de la histología, se realizan niveles histológicos para tinción\ncon p63, racemasa y CK34betaE12 en bloques A2,A3, B2 Y B3.\nDIAGNÓSTICO\nA. Prostáta, lado derecho. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nB. Prostáta, lado izquierdo. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---\nIHQ250108\nCopia Pag. 2 de 2\nNombre : FERNANDO PERDOMO YUSTI\nN. peticion : IHQ250108\nN.Identificación : CC. 16647102\nGenero : MASCULINO\nEdad : 64 años\nEPS : POLICIA NACIONAL\nMédico tratante : ALEJANDRO MORENO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 03/02/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3173,
+      "reduccion_porcentaje": 98.17
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250108",
+      "caso_num": 1,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_RACEMASA": "NEGATIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK34BE12": "POSITIVO",
+      "nombre_completo": "FERNANDO PERDOMO YUSTI",
+      "numero_peticion": "IHQ250108",
+      "identificacion": "16647102",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "64",
+      "eps": "POLICIA NACIONAL",
+      "medico_tratante": "ALEJANDRO MORENO",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "30/01/2025",
+      "fecha_informe": "03/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250108",
+      "N. de identificación": "16647102",
+      "Tipo de documento": "CC",
+      "EPS": "POLICIA NACIONAL",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "ALEJANDRO MORENO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "30/01/2025",
+      "Fecha Informe": "03/02/2025",
+      "nombres": "FERNANDO",
+      "Primer nombre": "FERNANDO",
+      "Segundo nombre": "",
+      "apellidos": "PERDOMO YUSTI",
+      "Primer apellido": "PERDOMO",
+      "Segundo apellido": "YUSTI",
+      "nombre_formal": "PERDOMO YUSTI, FERNANDO",
+      "diagnostico": "A. Prostáta, lado derecho. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA. B. Prostáta, lado izquierdo. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A y B. En los cortes se observan glándulas prostáticas que expresan células basales (p63+ y CK34BE12+) y son negativas para racemasa. Negativo para neoplasia.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional proveniente de laboratoio Adriana Correa, rotulado como “P24-9596” que corresponde a “A. Biopsia de prostáta lado derecho y B. Biopsia de prostáta lado izquierdo” con diagnóstico de “FOCOS MICROACINARES ATÍPICOS”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p63, racemasa y CK34 betaE12 en bloques A2,A3, B2 Y B3.",
+      "ihq_organo": "PROSTÁTA, LADO DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P63, RACEMASA, A3, B2, B3",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PROSTÁTA, LADO DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, RACEMASA, A3, B2, B3",
+      "extraction_timestamp": "2026-01-05T20:23:39.108597",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250108\nCopia Pag. 1 de 2\nNombre : FERNANDO PERDOMO YUSTI\nN. peticion : IHQ250108\nN.Identificación : CC. 16647102\nGenero : MASCULINO\nEdad : 64 años\nEPS : POLICIA NACIONAL\nMédico tratante : ALEJANDRO MORENO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 03/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nproveniente de laboratoio Adriana Correa, rotulado como “P24-9596” que corresponde a “A. Biopsia de\nprostáta\nlado\nderecho\ny\nB.\nBiopsia\nde\nprostáta\nlado\nizquierdo”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nA y B. En los cortes se observan glándulas prostáticas que expresan células basales (p63+ y CK34BE12+)\ny son negativas para racemasa. Negativo para neoplasia.\ndiagnóstico\nde\n“FOCOS\nMICROACINARES ATÍPICOS”. Previa revisión de la histología, se realizan niveles histológicos para tinción\ncon p63, racemasa y CK34betaE12 en bloques A2,A3, B2 Y B3.\nDIAGNÓSTICO\nA. Prostáta, lado derecho. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nB. Prostáta, lado izquierdo. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---\nIHQ250108\nCopia Pag. 2 de 2\nNombre : FERNANDO PERDOMO YUSTI\nN. peticion : IHQ250108\nN.Identificación : CC. 16647102\nGenero : MASCULINO\nEdad : 64 años\nEPS : POLICIA NACIONAL\nMédico tratante : ALEJANDRO MORENO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 03/02/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, RACEMASA, A3, B2, B3, CK34BE12",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional proveniente de laboratoio Adriana Correa, rotulado como “P24-9596” que corresponde a “A. Biopsia de prostáta lado derecho y B. Biopsia de prostáta lado izquierdo” con diagnóstico de “FOCOS MICROACINARES ATÍPICOS”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p63, racemasa y CK34betaE12 en bloques A2,A3, B2 Y B3.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A y B. En los cortes se observan glándulas prostáticas que expresan células basales (p63+ y CK34BE12+) y son negativas para racemasa. Negativo para neoplasia.",
+      "Descripcion Diagnostico": "A. Prostáta, lado derecho. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA. B. Prostáta, lado izquierdo. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA.",
+      "IHQ_ORGANO": "PROSTÁTA, LADO DERECHO",
+      "Organo": "PROSTÁTA, LADO DERECHO",
+      "Diagnostico Coloracion": "FOCOS MICROACINARES ATÍPICOS",
+      "Diagnostico Principal": "NEGATIVO PARA NEOPLASIA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RACEMASA": "NEGATIVO",
+      "IHQ_B2": "NO MENCIONADO",
+      "IHQ_CK34BE12": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 129,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Prostáta, lado derecho. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nB. Prostáta, lado izquierdo. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.",
+      "valor_corregido": "A. Prostáta, lado derecho. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA. B. Prostáta, lado izquierdo. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250108",
+      "timestamp": "2026-01-05T20:23:38.824361"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional proveniente de laboratoio Adriana Correa, rotulado como “P24-9596” que corresponde a “A. Biopsia de prostáta lado derecho y B. Biopsia de prostáta lado izquierdo” con diagnóstico de “FOCOS MICROACINARES ATÍPICOS”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p63, racemasa y CK34betaE12 en bloques A2,A3, B2 Y B3.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional proveniente de laboratoio Adriana Correa, rotulado como “P24-9596” que corresponde a “A. Biopsia de prostáta lado derecho y B. Biopsia de prostáta lado izquierdo” con diagnóstico de “FOCOS MICROACINARES ATÍPICOS”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p63, racemasa y CK34 betaE12 en bloques A2,A3, B2 Y B3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250108",
+      "timestamp": "2026-01-05T20:23:38.824368"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 50
+  }
+}

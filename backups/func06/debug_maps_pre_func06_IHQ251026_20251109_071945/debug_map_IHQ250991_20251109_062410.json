@@ -1,0 +1,165 @@
+{
+  "session_id": "IHQ250991_20251109_062410",
+  "numero_peticion": "IHQ250991",
+  "timestamp": "2025-11-09T06:24:10.688907",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250991\nCopia Pag. 1 de 2\nNombre : AMANDA LOPEZ PATIÑO\nN. peticion : IHQ250991\nN.Identificación : CC. 29804984\nGenero : FEMENINO\nEdad : 80 años\nEPS : NUEVA EPS\nMédico tratante : FELIPE ANDRES ZAMORA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 09/09/2025\nFecha Informe : 19/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nREGION AXILAR IZQUIERDA\n+ DORSO NASAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material extra-institucional rotulado\ncomo “Q029619 ” que corresponde a “region maxilar izquierda bloques 1-3 y dorso nasal bloques\n4-6\" y con diagnóstico de “PROLIFERACIÓN DE CELULAS BASALOIDES NODULARES A ESTUDIO\nQUE REQUIERE ESTUDIOS COMPLEMENTARIO. Previa valoración de la hematoxilina se decide\nrealizar marcadores para: BERRP4, BCL2, p63 p40. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nSe realizan estudios de inmunohistoquímica en el bloque 5 correspondiente a \"dorso nasal\".\nmargen más cercano 0.125 cm\nLas células tumorales basaloides presentan marcación positiva para: p40, p63, EBERP4/Ep-CAM,\nBCL2.\nLas láminas 1-3 corresponden a \"piel maxilar izquierdo\" \nEn los cortes histológicos se identifica piel con una lesión compuesta por células basaloides que\npresentan empalizada periférica y areas de retracción estromal que invade la dermis reticular\nsuperficial y media a modo de nodulaciones similares a las observadas en el dorso nasal.\nlos\nbordes de resección están libres margen más cercano 0.2cm. \nDIAGNÓSTICO\nPiel dorso nasal. Resección. Estudios de inmunohistoquímica. \nLOS\nHALLAZGOS\nMORFOLOGICOS\nY\nESTUDIOS\nDE\nINMUNOHISTOQUÍMICA\nFAVORECEN\nCARCINOMA BASOCELULAR NODULAR.\nBORDES DE RESECCIÓN LIBRES. \nPiel maxilar izquierdo. Lesión. Resección. \nCARCINOMA BASOCELULAR NODULAR. \nBORDES DE RESECCIÓN LIBRES. \nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 23 ---\nIHQ250991\nCopia Pag. 2 de 2\nNombre : AMANDA LOPEZ PATIÑO\nN. peticion : IHQ250991\nN.Identificación : CC. 29804984\nGenero : FEMENINO\nEdad : 80 años\nEPS : NUEVA EPS\nMédico tratante : FELIPE ANDRES ZAMORA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 09/09/2025\nFecha Informe : 19/09/2025\nCaso valorado en conjunto con la Dra Maria Ximena Varela (patóloga) \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 24 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3810,
+      "reduccion_porcentaje": 98.03
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250991",
+      "caso_num": 11,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "AMANDA LOPEZ PATIÑO",
+      "numero_peticion": "IHQ250991",
+      "identificacion": "29804984",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "80",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "FELIPE ANDRES ZAMORA",
+      "servicio": "INSTITUCION EXTERNA",
+      "fecha_ingreso": "09/09/2025",
+      "fecha_informe": "19/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250991",
+      "N. de identificación": "29804984",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "INSTITUCION EXTERNA",
+      "Médico tratante": "FELIPE ANDRES ZAMORA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/09/2025",
+      "Fecha Informe": "19/09/2025",
+      "nombres": "AMANDA",
+      "Primer nombre": "AMANDA",
+      "Segundo nombre": "",
+      "apellidos": "LOPEZ PATIÑO",
+      "Primer apellido": "LOPEZ",
+      "Segundo apellido": "PATIÑO",
+      "nombre_formal": "LOPEZ PATIÑO, AMANDA",
+      "diagnostico": "Piel dorso nasal. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA BASOCELULAR NODULAR. BORDES DE RESECCIÓN LIBRES. Piel maxilar izquierdo. Lesión. Resección. CARCINOMA BASOCELULAR NODULAR. BORDES DE RESECCIÓN LIBRES.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se realizan estudios de inmunohistoquímica en el bloque 5 correspondiente a \"dorso nasal\". margen más cercano 0.125 cm Las células tumorales basaloides presentan marcación positiva para: P40, P63, EBERP4/Ep-CAM, BCL2. Las láminas 1-3 corresponden a \"piel maxilar izquierdo\" En los cortes histológicos se identifica piel con una lesión compuesta por células basaloides que presentan empalizada periférica y areas de retracción estromal que invade la dermis reticular superficial y media a modo de nodulaciones similares a las observadas en el dorso nasal. los bordes de resección están libres margen más cercano 0.2cm.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extra-institucional rotulado como “Q029619 ” que corresponde a “region maxilar izquierda bloques 1-3 y dorso nasal bloques 4-6\" y con diagnóstico de “PROLIFERACIÓN DE CELULAS BASALOIDES NODULARES A ESTUDIO QUE REQUIERE ESTUDIOS COMPLEMENTARIO. Previa valoración de la hematoxilina se decide realizar marcadores para: BERRP4, BCL2, P63 P40.",
+      "ihq_organo": "PIEL DORSO NASAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "BERRP4, BCL2, P63, P40",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 23 --- IHQ250991 Copia Pag. 2 de 2 Nombre : AMANDA LOPEZ PATIÑO N. peticion : IHQ250991 N.Identificación : CC. 29804984 Genero : FEMENINO Edad : 80 años EPS : NUEVA EPS Médico tratante : FELIPE ANDRES ZAMORA Servicio : INSTITUCION EXTERNA Fecha Ingreso : 09/09/2025 Fecha Informe : 19/09/2025 Caso valorado en conjunto con la Dra Maria Ximena Varela (patóloga)",
+      "IHQ_ORGANO": "PIEL DORSO NASAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_BER_EP4": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2025-11-09T06:24:10.815686",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250991\nCopia Pag. 1 de 2\nNombre : AMANDA LOPEZ PATIÑO\nN. peticion : IHQ250991\nN.Identificación : CC. 29804984\nGenero : FEMENINO\nEdad : 80 años\nEPS : NUEVA EPS\nMédico tratante : FELIPE ANDRES ZAMORA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 09/09/2025\nFecha Informe : 19/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nREGION AXILAR IZQUIERDA\n+ DORSO NASAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material extra-institucional rotulado\ncomo “Q029619 ” que corresponde a “region maxilar izquierda bloques 1-3 y dorso nasal bloques\n4-6\" y con diagnóstico de “PROLIFERACIÓN DE CELULAS BASALOIDES NODULARES A ESTUDIO\nQUE REQUIERE ESTUDIOS COMPLEMENTARIO. Previa valoración de la hematoxilina se decide\nrealizar marcadores para: BERRP4, BCL2, p63 p40. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nSe realizan estudios de inmunohistoquímica en el bloque 5 correspondiente a \"dorso nasal\".\nmargen más cercano 0.125 cm\nLas células tumorales basaloides presentan marcación positiva para: p40, p63, EBERP4/Ep-CAM,\nBCL2.\nLas láminas 1-3 corresponden a \"piel maxilar izquierdo\" \nEn los cortes histológicos se identifica piel con una lesión compuesta por células basaloides que\npresentan empalizada periférica y areas de retracción estromal que invade la dermis reticular\nsuperficial y media a modo de nodulaciones similares a las observadas en el dorso nasal.\nlos\nbordes de resección están libres margen más cercano 0.2cm. \nDIAGNÓSTICO\nPiel dorso nasal. Resección. Estudios de inmunohistoquímica. \nLOS\nHALLAZGOS\nMORFOLOGICOS\nY\nESTUDIOS\nDE\nINMUNOHISTOQUÍMICA\nFAVORECEN\nCARCINOMA BASOCELULAR NODULAR.\nBORDES DE RESECCIÓN LIBRES. \nPiel maxilar izquierdo. Lesión. Resección. \nCARCINOMA BASOCELULAR NODULAR. \nBORDES DE RESECCIÓN LIBRES. \nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 23 ---\nIHQ250991\nCopia Pag. 2 de 2\nNombre : AMANDA LOPEZ PATIÑO\nN. peticion : IHQ250991\nN.Identificación : CC. 29804984\nGenero : FEMENINO\nEdad : 80 años\nEPS : NUEVA EPS\nMédico tratante : FELIPE ANDRES ZAMORA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 09/09/2025\nFecha Informe : 19/09/2025\nCaso valorado en conjunto con la Dra Maria Ximena Varela (patóloga) \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 24 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "BERRP4, BCL2, P63, P40",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extra-institucional rotulado como “Q029619 ” que corresponde a “region maxilar izquierda bloques 1-3 y dorso nasal bloques 4-6\" y con diagnóstico de “PROLIFERACIÓN DE CELULAS BASALOIDES NODULARES A ESTUDIO QUE REQUIERE ESTUDIOS COMPLEMENTARIO. Previa valoración de la hematoxilina se decide realizar marcadores para: BERRP4, BCL2, p63 p40.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se realizan estudios de inmunohistoquímica en el bloque 5 correspondiente a \"dorso nasal\". margen más cercano 0.125 cm Las células tumorales basaloides presentan marcación positiva para: p40, p63, EBERP4/Ep-CAM, BCL2. Las láminas 1-3 corresponden a \"piel maxilar izquierdo\" En los cortes histológicos se identifica piel con una lesión compuesta por células basaloides que presentan empalizada periférica y areas de retracción estromal que invade la dermis reticular superficial y media a modo de nodulaciones similares a las observadas en el dorso nasal. los bordes de resección están libres margen más cercano 0.2cm.",
+      "Descripcion Diagnostico": "Piel dorso nasal. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA BASOCELULAR NODULAR. BORDES DE RESECCIÓN LIBRES. Piel maxilar izquierdo. Lesión. Resección. CARCINOMA BASOCELULAR NODULAR. BORDES DE RESECCIÓN LIBRES.",
+      "IHQ_ORGANO": "PIEL DORSO NASAL",
+      "Organo": "REGION AXILAR IZQUIERDA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CARCINOMA BASOCELULAR NODULAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 145,
+      "campos_vacios": 107,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 26.21
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 107,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Piel dorso nasal. Resección. Estudios de inmunohistoquímica. \nLOS\nHALLAZGOS\nMORFOLOGICOS\nY\nESTUDIOS\nDE\nINMUNOHISTOQUÍMICA\nFAVORECEN\nCARCINOMA BASOCELULAR NODULAR.\nBORDES DE RESECCIÓN LIBRES. \nPiel maxilar izquierdo. Lesión. Resección. \nCARCINOMA BASOCELULAR NODULAR. \nBORDES DE RESECCIÓN LIBRES.",
+      "valor_corregido": "Piel dorso nasal. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLOGICOS Y ESTUDIOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA BASOCELULAR NODULAR. BORDES DE RESECCIÓN LIBRES. Piel maxilar izquierdo. Lesión. Resección. CARCINOMA BASOCELULAR NODULAR. BORDES DE RESECCIÓN LIBRES.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250991",
+      "timestamp": "2025-11-09T06:24:10.815378"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material extra-institucional rotulado\ncomo “Q029619 ” que corresponde a “region maxilar izquierda bloques 1-3 y dorso nasal bloques\n4-6\" y con diagnóstico de “PROLIFERACIÓN DE CELULAS BASALOIDES NODULARES A ESTUDIO\nQUE REQUIERE ESTUDIOS COMPLEMENTARIO. Previa valoración de la hematoxilina se decide\nrealizar marcadores para: BERRP4, BCL2, p63 p40.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material extra-institucional rotulado como “Q029619 ” que corresponde a “region maxilar izquierda bloques 1-3 y dorso nasal bloques 4-6\" y con diagnóstico de “PROLIFERACIÓN DE CELULAS BASALOIDES NODULARES A ESTUDIO QUE REQUIERE ESTUDIOS COMPLEMENTARIO. Previa valoración de la hematoxilina se decide realizar marcadores para: BERRP4, BCL2, P63 P40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250991",
+      "timestamp": "2025-11-09T06:24:10.815384"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se realizan estudios de inmunohistoquímica en el bloque 5 correspondiente a \"dorso nasal\". margen más cercano 0.125 cm Las células tumorales basaloides presentan marcación positiva para: p40, p63, EBERP4/Ep-CAM, BCL2. Las láminas 1-3 corresponden a \"piel maxilar izquierdo\" En los cortes histológicos se identifica piel con una lesión compuesta por células basaloides que presentan empalizada periférica y areas de retracción estromal que invade la dermis reticular superficial y media a modo de nodulaciones similares a las observadas en el dorso nasal. los bordes de resección están libres margen más cercano 0.2cm.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se realizan estudios de inmunohistoquímica en el bloque 5 correspondiente a \"dorso nasal\". margen más cercano 0.125 cm Las células tumorales basaloides presentan marcación positiva para: P40, P63, EBERP4/Ep-CAM, BCL2. Las láminas 1-3 corresponden a \"piel maxilar izquierdo\" En los cortes histológicos se identifica piel con una lesión compuesta por células basaloides que presentan empalizada periférica y areas de retracción estromal que invade la dermis reticular superficial y media a modo de nodulaciones similares a las observadas en el dorso nasal. los bordes de resección están libres margen más cercano 0.2cm.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250991",
+      "timestamp": "2025-11-09T06:24:10.815386"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 23 ---\nIHQ250991\nCopia Pag. 2 de 2\nNombre : AMANDA LOPEZ PATIÑO\nN. peticion : IHQ250991\nN.Identificación : CC. 29804984\nGenero : FEMENINO\nEdad : 80 años\nEPS : NUEVA EPS\nMédico tratante : FELIPE ANDRES ZAMORA\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 09/09/2025\nFecha Informe : 19/09/2025\nCaso valorado en conjunto con la Dra Maria Ximena Varela (patóloga)",
+      "valor_corregido": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 23 --- IHQ250991 Copia Pag. 2 de 2 Nombre : AMANDA LOPEZ PATIÑO N. peticion : IHQ250991 N.Identificación : CC. 29804984 Genero : FEMENINO Edad : 80 años EPS : NUEVA EPS Médico tratante : FELIPE ANDRES ZAMORA Servicio : INSTITUCION EXTERNA Fecha Ingreso : 09/09/2025 Fecha Informe : 19/09/2025 Caso valorado en conjunto con la Dra Maria Ximena Varela (patóloga)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250991",
+      "timestamp": "2025-11-09T06:24:10.815387"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 52
+  }
+}

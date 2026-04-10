@@ -1,0 +1,180 @@
+{
+  "session_id": "IHQ250234_20260128_161017",
+  "numero_peticion": "IHQ250234",
+  "timestamp": "2026-01-28T16:10:17.367402",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250234\nCopia Pag. 1 de 2\nNombre : REYNERIO GONZALEZ JIMENEZ\nN. peticion : IHQ250234\nN.Identificación : CC. 2990569\nGenero : MASCULINO\nEdad : 62 años 25 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 04/03/2025\nFecha Informe : 10/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501410-2 que corresponden a biopsia de hígado con diagnóstico\nde\n\"NEOPLASIA\nINVASIVA\nEN\nPATRÓN\nSÓLIDO\nA\nCLASIFICAR\nCON\nESTUDIOS\nDE\nINMUNOHISTOQUÍMICA\",\npara\nestudios\nde\ninmunohistoquímica\npor\nlo\nque\nse\nordenan\nlos\nsiguientes marcadores: CKE1E3, CK7, CK19, CK20, CA19-9, CDX2, TTF-1, arginasa, HEPAR\n(hepatocito), glypican-3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nSe observa marcación positiva para CKAE1E3, Glypican-3, hepatocito y arginasa.\nSin marcación para CK7, CK20, CK19, CDX2, CA19-9, TTF-1.\nDIAGNÓSTICO\nHigado. Lesión. Biopsia. Estudios de inmunohistoquímica.\nLOS\nHALLAZGOS\nMORFOLÓGICOS\nY\nDE\nINMUNOHISTOQUÍMICA\nSUGIEREN\nCARCINOMA\nHEPATOCELULAR MODERADAMENTE DIFERENCIADO.\nCOMENTARIOS\nCaso comentado en conjunto con Dr.Cortes (Patologo)\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---\nIHQ250234\nCopia Pag. 2 de 2\nNombre : REYNERIO GONZALEZ JIMENEZ\nN. peticion : IHQ250234\nN.Identificación : CC. 2990569\nGenero : MASCULINO\nEdad : 62 años 25 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 04/03/2025\nFecha Informe : 10/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 46 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3107,
+      "reduccion_porcentaje": 98.27
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250234",
+      "caso_num": 23,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK19": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_GPC3": "POSITIVO",
+      "IHQ_HEPATOCITO": "POSITIVO",
+      "IHQ_ARGINASA": "POSITIVO",
+      "nombre_completo": "REYNERIO GONZALEZ JIMENEZ",
+      "numero_peticion": "IHQ250234",
+      "identificacion": "2990569",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "62",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "NATHALY PRADA",
+      "servicio": "RADIOLOGIA",
+      "fecha_ingreso": "04/03/2025",
+      "fecha_informe": "10/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250234",
+      "N. de identificación": "2990569",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "RADIOLOGIA",
+      "Médico tratante": "NATHALY PRADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "04/03/2025",
+      "Fecha Informe": "10/03/2025",
+      "nombres": "REYNERIO",
+      "Primer nombre": "REYNERIO",
+      "Segundo nombre": "",
+      "apellidos": "GONZALEZ JIMENEZ",
+      "Primer apellido": "GONZALEZ",
+      "Segundo apellido": "JIMENEZ",
+      "nombre_formal": "GONZALEZ JIMENEZ, REYNERIO",
+      "diagnostico": "Higado. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN CARCINOMA HEPATOCELULAR MODERADAMENTE DIFERENCIADO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa marcación positiva para CKAE1E3, Glypican-3, hepatocito y arginasa. Sin marcación para CK7, CK20, CK19, CDX2, CA19-9, TTF1.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2501410-2 que corresponden a biopsia de hígado con diagnóstico de \"NEOPLASIA INVASIVA EN PATRÓN SÓLIDO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: CKE1E3, CK7, CK19, CK20, CA19-9, CDX2, TTF1, arginasa, HEPAR (hepatocito), glypican-3.",
+      "ihq_organo": "HIGADO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKE1E3, CK7, CK19, CK20, CA19-9, CDX2, TTF-1, ARGINASA, HEPATOCITO, GLYPICAN 3",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso comentado en conjunto con Dr.Cortes (Patologo) Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 45 --- IHQ250234 Copia Pag. 2 de 2 Nombre : REYNERIO GONZALEZ JIMENEZ N. peticion : IHQ250234 N.Identificación : CC. 2990569 Genero : MASCULINO Edad : 62 años 25 dias EPS : EMSSANAR S.A.S Médico tratante : NATHALY PRADA Servicio : RADIOLOGIA Fecha Ingreso : 04/03/2025 Fecha Informe : 10/03/2025",
+      "IHQ_ORGANO": "HIGADO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKE1E3, CK7, CK19, CK20, CA19-9, CDX2, TTF-1, ARGINASA, HEPATOCITO, GLYPICAN 3",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "extraction_timestamp": "2026-01-28T16:10:17.771176",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250234\nCopia Pag. 1 de 2\nNombre : REYNERIO GONZALEZ JIMENEZ\nN. peticion : IHQ250234\nN.Identificación : CC. 2990569\nGenero : MASCULINO\nEdad : 62 años 25 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 04/03/2025\nFecha Informe : 10/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501410-2 que corresponden a biopsia de hígado con diagnóstico\nde\n\"NEOPLASIA\nINVASIVA\nEN\nPATRÓN\nSÓLIDO\nA\nCLASIFICAR\nCON\nESTUDIOS\nDE\nINMUNOHISTOQUÍMICA\",\npara\nestudios\nde\ninmunohistoquímica\npor\nlo\nque\nse\nordenan\nlos\nsiguientes marcadores: CKE1E3, CK7, CK19, CK20, CA19-9, CDX2, TTF-1, arginasa, HEPAR\n(hepatocito), glypican-3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nSe observa marcación positiva para CKAE1E3, Glypican-3, hepatocito y arginasa.\nSin marcación para CK7, CK20, CK19, CDX2, CA19-9, TTF-1.\nDIAGNÓSTICO\nHigado. Lesión. Biopsia. Estudios de inmunohistoquímica.\nLOS\nHALLAZGOS\nMORFOLÓGICOS\nY\nDE\nINMUNOHISTOQUÍMICA\nSUGIEREN\nCARCINOMA\nHEPATOCELULAR MODERADAMENTE DIFERENCIADO.\nCOMENTARIOS\nCaso comentado en conjunto con Dr.Cortes (Patologo)\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---\nIHQ250234\nCopia Pag. 2 de 2\nNombre : REYNERIO GONZALEZ JIMENEZ\nN. peticion : IHQ250234\nN.Identificación : CC. 2990569\nGenero : MASCULINO\nEdad : 62 años 25 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 04/03/2025\nFecha Informe : 10/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 46 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, CK7, CK19, CK20, CA19-9, CDX2, TTF-1, ARGINASA, HEPATOCITO, GLYPICAN 3, GPC3",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2501410-2 que corresponden a biopsia de hígado con diagnóstico de \"NEOPLASIA INVASIVA EN PATRÓN SÓLIDO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: CKE1E3, CK7, CK19, CK20, CA19-9, CDX2, TTF-1, arginasa, HEPAR (hepatocito), glypican-3.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa marcación positiva para CKAE1E3, Glypican-3, hepatocito y arginasa. Sin marcación para CK7, CK20, CK19, CDX2, CA19-9, TTF-1.",
+      "Descripcion Diagnostico": "Higado. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN CARCINOMA HEPATOCELULAR MODERADAMENTE DIFERENCIADO.",
+      "IHQ_ORGANO": "HIGADO",
+      "Organo": "BX HIGADO",
+      "Diagnostico Coloracion": "NEOPLASIA INVASIVA EN PATRÓN SÓLIDO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN CARCINOMA HEPATOCELULAR MODERADAMENTE DIFERENCIADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK19": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_ARGINASA": "POSITIVO",
+      "IHQ_HEPATOCITO": "POSITIVO",
+      "IHQ_GPC3": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 177,
+      "campos_vacios": 133,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 133,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Higado. Lesión. Biopsia. Estudios de inmunohistoquímica.\nLOS\nHALLAZGOS\nMORFOLÓGICOS\nY\nDE\nINMUNOHISTOQUÍMICA\nSUGIEREN\nCARCINOMA\nHEPATOCELULAR MODERADAMENTE DIFERENCIADO.",
+      "valor_corregido": "Higado. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN CARCINOMA HEPATOCELULAR MODERADAMENTE DIFERENCIADO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250234",
+      "timestamp": "2026-01-28T16:10:17.770962"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2501410-2 que corresponden a biopsia de hígado con diagnóstico de \"NEOPLASIA INVASIVA EN PATRÓN SÓLIDO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: CKE1E3, CK7, CK19, CK20, CA19-9, CDX2, TTF-1, arginasa, HEPAR (hepatocito), glypican-3.",
+      "valor_corregido": "Se realizan niveles al bloque M2501410-2 que corresponden a biopsia de hígado con diagnóstico de \"NEOPLASIA INVASIVA EN PATRÓN SÓLIDO A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA\", para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: CKE1E3, CK7, CK19, CK20, CA19-9, CDX2, TTF1, arginasa, HEPAR (hepatocito), glypican-3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250234",
+      "timestamp": "2026-01-28T16:10:17.770968"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa marcación positiva para CKAE1E3, Glypican-3, hepatocito y arginasa. Sin marcación para CK7, CK20, CK19, CDX2, CA19-9, TTF-1.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa marcación positiva para CKAE1E3, Glypican-3, hepatocito y arginasa. Sin marcación para CK7, CK20, CK19, CDX2, CA19-9, TTF1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250234",
+      "timestamp": "2026-01-28T16:10:17.770970"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Caso comentado en conjunto con Dr.Cortes (Patologo)\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---\nIHQ250234\nCopia Pag. 2 de 2\nNombre : REYNERIO GONZALEZ JIMENEZ\nN. peticion : IHQ250234\nN.Identificación : CC. 2990569\nGenero : MASCULINO\nEdad : 62 años 25 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 04/03/2025\nFecha Informe : 10/03/2025",
+      "valor_corregido": "Caso comentado en conjunto con Dr.Cortes (Patologo) Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 45 --- IHQ250234 Copia Pag. 2 de 2 Nombre : REYNERIO GONZALEZ JIMENEZ N. peticion : IHQ250234 N.Identificación : CC. 2990569 Genero : MASCULINO Edad : 62 años 25 dias EPS : EMSSANAR S.A.S Médico tratante : NATHALY PRADA Servicio : RADIOLOGIA Fecha Ingreso : 04/03/2025 Fecha Informe : 10/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250234",
+      "timestamp": "2026-01-28T16:10:17.770972"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 58
+  }
+}

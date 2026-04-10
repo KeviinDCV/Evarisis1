@@ -1,0 +1,154 @@
+{
+  "session_id": "IHQ250064_20251219_043142",
+  "numero_peticion": "IHQ250064",
+  "timestamp": "2025-12-19T04:31:42.703724",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250064\nCopia Pag. 1 de 2\nNombre : CARMEN ESMERALDA QUIÑONES\nCASIERRA\nN. peticion : IHQ250064\nN.Identificación : CC. 66736080\nGenero : FEMENINO\nEdad : 54 años 11 meses 23 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 21/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX CUPULA VAGINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2404716 que\ncorresponde a \"biopsia de cúpula vaginal\" consiste en un bloque de parafina y una lámina\ncoloreadas con Hematoxilina - Eosina. diagnóstico de \"FAVORECE CARCINOMA ESCAMOCELULAR\nINVASIVO, NOS\". Previa valoración de la coloración básica se solicitan niveles histológicos para\nmarcar con p16 y p40. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células neoplásicas epiteliales presentan inmunorreactividad positiva fuerte y difusa para p40\ny en bloque para p16. \nDIAGNÓSTICO\nCúpula vaginal. Historia de histerectomía por NIC III. Lesión. Biopsia.\nFAVORECE CARCINOMA ESCAMOCELULAR INVASIVO p16 POSITIVO. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---\nIHQ250064\nCopia Pag. 2 de 2\nNombre : CARMEN ESMERALDA QUIÑONES\nCASIERRA\nN. peticion : IHQ250064\nN.Identificación : CC. 66736080\nGenero : FEMENINO\nEdad : 54 años 11 meses 23 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 21/01/2025\nFecha Informe : 23/01/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3089,
+      "reduccion_porcentaje": 98.35
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250064",
+      "caso_num": 11,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "CARMEN ESMERALDA QUIÑONES CASIERRA",
+      "numero_peticion": "IHQ250064",
+      "identificacion": "66736080",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "54",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ADRIANA MAYOR BARRERA",
+      "servicio": "GINECOLOGIA COEX",
+      "fecha_ingreso": "21/01/2025",
+      "fecha_informe": "23/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250064",
+      "N. de identificación": "66736080",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "GINECOLOGIA COEX",
+      "Médico tratante": "ADRIANA MAYOR BARRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/01/2025",
+      "Fecha Informe": "23/01/2025",
+      "nombres": "CARMEN ESMERALDA",
+      "Primer nombre": "CARMEN",
+      "Segundo nombre": "ESMERALDA",
+      "apellidos": "QUIÑONES CASIERRA",
+      "Primer apellido": "QUIÑONES",
+      "Segundo apellido": "CASIERRA",
+      "nombre_formal": "QUIÑONES CASIERRA, CARMEN ESMERALDA",
+      "diagnostico": "Cúpula vaginal. Historia de histerectomía por NIC III. Lesión. Biopsia. FAVORECE CARCINOMA ESCAMOCELULAR INVASIVO P16 POSITIVO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas epiteliales presentan inmunorreactividad positiva fuerte y difusa para P40 y en bloque para P16.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2404716 que corresponde a \"biopsia de cúpula vaginal\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina. diagnóstico de \"FAVORECE CARCINOMA ESCAMOCELULAR INVASIVO, NOS\". Previa valoración de la coloración básica se solicitan niveles histológicos para marcar con P16 y P40.",
+      "ihq_organo": "CÚPULA VAGINAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "GINECOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, P40",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CÚPULA VAGINAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "p16": "POSITIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2025-12-19T04:31:42.951605",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250064\nCopia Pag. 1 de 2\nNombre : CARMEN ESMERALDA QUIÑONES\nCASIERRA\nN. peticion : IHQ250064\nN.Identificación : CC. 66736080\nGenero : FEMENINO\nEdad : 54 años 11 meses 23 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 21/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX CUPULA VAGINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2404716 que\ncorresponde a \"biopsia de cúpula vaginal\" consiste en un bloque de parafina y una lámina\ncoloreadas con Hematoxilina - Eosina. diagnóstico de \"FAVORECE CARCINOMA ESCAMOCELULAR\nINVASIVO, NOS\". Previa valoración de la coloración básica se solicitan niveles histológicos para\nmarcar con p16 y p40. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células neoplásicas epiteliales presentan inmunorreactividad positiva fuerte y difusa para p40\ny en bloque para p16. \nDIAGNÓSTICO\nCúpula vaginal. Historia de histerectomía por NIC III. Lesión. Biopsia.\nFAVORECE CARCINOMA ESCAMOCELULAR INVASIVO p16 POSITIVO. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---\nIHQ250064\nCopia Pag. 2 de 2\nNombre : CARMEN ESMERALDA QUIÑONES\nCASIERRA\nN. peticion : IHQ250064\nN.Identificación : CC. 66736080\nGenero : FEMENINO\nEdad : 54 años 11 meses 23 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 21/01/2025\nFecha Informe : 23/01/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2404716 que corresponde a \"biopsia de cúpula vaginal\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina. diagnóstico de \"FAVORECE CARCINOMA ESCAMOCELULAR INVASIVO, NOS\". Previa valoración de la coloración básica se solicitan niveles histológicos para marcar con p16 y p40.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas epiteliales presentan inmunorreactividad positiva fuerte y difusa para p40 y en bloque para p16.",
+      "Descripcion Diagnostico": "Cúpula vaginal. Historia de histerectomía por NIC III. Lesión. Biopsia. FAVORECE CARCINOMA ESCAMOCELULAR INVASIVO P16 POSITIVO.",
+      "IHQ_ORGANO": "CÚPULA VAGINAL",
+      "Organo": "BX CUPULA VAGINAL",
+      "Diagnostico Coloracion": "FAVORECE CARCINOMA ESCAMOCELULAR INVASIVO, NOS",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR INVASIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 120,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 23.57
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 120,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cúpula vaginal. Historia de histerectomía por NIC III. Lesión. Biopsia.\nFAVORECE CARCINOMA ESCAMOCELULAR INVASIVO p16 POSITIVO.",
+      "valor_corregido": "Cúpula vaginal. Historia de histerectomía por NIC III. Lesión. Biopsia. FAVORECE CARCINOMA ESCAMOCELULAR INVASIVO P16 POSITIVO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250064",
+      "timestamp": "2025-12-19T04:31:42.951341"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2404716 que corresponde a \"biopsia de cúpula vaginal\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina. diagnóstico de \"FAVORECE CARCINOMA ESCAMOCELULAR INVASIVO, NOS\". Previa valoración de la coloración básica se solicitan niveles histológicos para marcar con p16 y p40.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2404716 que corresponde a \"biopsia de cúpula vaginal\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina. diagnóstico de \"FAVORECE CARCINOMA ESCAMOCELULAR INVASIVO, NOS\". Previa valoración de la coloración básica se solicitan niveles histológicos para marcar con P16 y P40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250064",
+      "timestamp": "2025-12-19T04:31:42.951349"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas epiteliales presentan inmunorreactividad positiva fuerte y difusa para p40 y en bloque para p16.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas epiteliales presentan inmunorreactividad positiva fuerte y difusa para P40 y en bloque para P16.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250064",
+      "timestamp": "2025-12-19T04:31:42.951351"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 51
+  }
+}

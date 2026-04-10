@@ -1,0 +1,65 @@
+{
+  "caso": "IHQ251010",
+  "timestamp": "2025-11-04T19:40:28.720831",
+  "accion": "FUNC-06: Reprocesar caso completo",
+  "motivo": "Correcciones aplicadas a debug_mapper.py para incluir IHQ_P16_ESTADO y IHQ_P40_ESTADO en campos_criticos",
+  "cambios_en_codigo": {
+    "archivo": "core/debug_mapper.py",
+    "funcion": "capture_database_state()",
+    "lineas_modificadas": "~141-142",
+    "cambio": "Agregados campos IHQ_P16_ESTADO e IHQ_P40_ESTADO a la lista de campos_criticos"
+  },
+  "resultado_reprocesamiento": {
+    "estado": "EXITOSO",
+    "casos_procesados": 47,
+    "pdf_procesado": "pdfs_patologia/IHQ DEL 980 AL 1037.pdf",
+    "rango_casos": "IHQ250980 - IHQ251037"
+  },
+  "debug_map_regenerado": {
+    "archivo": "debug_map_IHQ251010_20251104_193809.json",
+    "fecha_creacion": "2025-11-04 19:38:09",
+    "tamano_kb": 13.17,
+    "version_extractor": "6.0.9_unified_corrections"
+  },
+  "verificacion_campos_criticos": {
+    "IHQ_P16_ESTADO": {
+      "presente_en_debug_map": true,
+      "valor_debug_map": "POSITIVO (SOBREEXPRESION)",
+      "presente_en_bd": true,
+      "valor_bd": "POSITIVO (SOBREEXPRESION)",
+      "estado": "OK"
+    },
+    "IHQ_P40_ESTADO": {
+      "presente_en_debug_map": true,
+      "valor_debug_map": "POSITIVO",
+      "presente_en_bd": true,
+      "valor_bd": "POSITIVO",
+      "estado": "OK"
+    }
+  },
+  "biomarcadores_extraidos": {
+    "total": 7,
+    "lista": [
+      "CK20: NEGATIVO",
+      "CK7: POSITIVO",
+      "NAPSIN: NEGATIVO",
+      "P16: POSITIVO (SOBREEXPRESION)",
+      "P40: POSITIVO",
+      "PAX8: POSITIVO",
+      "TTF1: NEGATIVO"
+    ]
+  },
+  "diagnostico": "Ganglio linfático, estacion V izquierda. Biopsia con aguja gruesa. COMPROMISO POR CARCINOMA ESCAMOCELULAR METASTASICO. POSITIVO PARRA SOBREEXPRESION DE P16.",
+  "conclusiones": [
+    "Debug_map regenerado correctamente",
+    "IHQ_P16_ESTADO ahora incluido en campos_criticos del debug_map",
+    "IHQ_P40_ESTADO ahora incluido en campos_criticos del debug_map",
+    "Ambos campos guardados correctamente en base de datos",
+    "Valores extraidos coinciden con el contenido del PDF original"
+  ],
+  "siguientes_pasos": [
+    "Verificar que otros casos con P16/P40 ahora incluyan estos campos en debug_map",
+    "Ejecutar auditoría FUNC-01 para validar completitud del caso",
+    "Considerar regenerar casos anteriores si requieren estos campos en campos_criticos"
+  ]
+}

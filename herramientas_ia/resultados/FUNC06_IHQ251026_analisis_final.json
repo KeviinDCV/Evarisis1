@@ -1,0 +1,77 @@
+{
+  "caso": "IHQ251026",
+  "fecha": "2025-11-10T09:35:15.515430",
+  "operacion": "FUNC-06 + FUNC-01",
+  "objetivo": "Validar corrección de patrón \"y con diagnóstico de\" en medical_extractor.py",
+  "resultado_func06": {
+    "estado": "COMPLETADO",
+    "casos_reprocesados": 47,
+    "rango_pdf": "IHQ DEL 980 AL 1037.pdf",
+    "tiempo_aproximado": "6 segundos"
+  },
+  "resultado_func01": {
+    "estado": "ERROR",
+    "score_validacion": 77.8,
+    "validaciones_ok": 7,
+    "validaciones_total": 9,
+    "errores": 1
+  },
+  "diagnostico_coloracion": {
+    "valor_esperado": "SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS",
+    "valor_en_bd": "NO APLICA",
+    "estado": "ERROR - NO SE EXTRAJO",
+    "causa_raiz": "Patrón regex en medical_extractor.py línea 561 NO captura este formato",
+    "texto_real_pdf": "bloque A\" que corresponde a \"biopsia de lesión en esfenoides\" y con diagnóstico de \"SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS.\""
+  },
+  "analisis_patron_regex": {
+    "patron_actual_linea_561": "corresponden?\\s+a\\s+[\"'“”][^\"'“”]+[\"'“”]\\s*,?\\s*y?\\s*con\\s+diagn[óo]stico",
+    "problema": "El patrón espera comillas alrededor de TODO el bloque (desde corresponde hasta diagnóstico)",
+    "realidad": "Las comillas están SEPARADAS: \"biopsia...\" y \"SINOSOPATIA...\"",
+    "estructura_texto_real": [
+      "bloque A\"",
+      "que corresponde a",
+      "\"biopsia de lesión en esfenoides\"",
+      "y con diagnóstico de",
+      "\"SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS.\""
+    ]
+  },
+  "solucion_propuesta": {
+    "ubicacion": "core/extractors/medical_extractor.py línea 561",
+    "patron_nuevo_sugerido": "bloque\\s+[MA][\\dA-Z-]*\\s*[\"\\'\\u201c\\u201d]?\\s*que\\s+corresponden?\\s+a\\s+[\"\\'\\u201c\\u201d][^\"\\'\\u201c\\u201d]+[\"\\'\\u201c\\u201d]\\s+y\\s+con\\s+diagn[óo]stico\\s+de\\s+[\"\\'\\u201c\\u201d\\s]+(.*?)[\"\\'\\u201c\\u201d]",
+    "cambios_clave": [
+      "Permitir comillas opcionales después del bloque (bloque A\")",
+      "Capturar texto entre comillas en \"corresponde a\"",
+      "Capturar diagnóstico después de \"y con diagnóstico de\"",
+      "Mantener captura de grupo (.*?) para el diagnóstico"
+    ]
+  },
+  "campos_validados_correctamente": [
+    "DESCRIPCION_MACROSCOPICA (OK)",
+    "DESCRIPCION_MICROSCOPICA (OK)",
+    "DIAGNOSTICO_PRINCIPAL (OK)",
+    "IHQ_ORGANO (OK)",
+    "ORGANO (OK)",
+    "FACTOR_PRONOSTICO (OK - NO APLICA)",
+    "MALIGNIDAD (OK - BENIGNO)"
+  ],
+  "biomarcadores": {
+    "total_solicitados": 10,
+    "total_mapeados": 10,
+    "cobertura": 100.0,
+    "lista": [
+      "P16",
+      "P40",
+      "CAM5.2",
+      "BCL2",
+      "BCL6",
+      "CD20",
+      "CD5",
+      "CK5/6",
+      "CK7",
+      "CKAE1AE3"
+    ]
+  },
+  "estado_final": "REQUIERE CORRECCIÓN ADICIONAL",
+  "siguiente_paso": "Ajustar patrón regex en medical_extractor.py línea 561 para capturar formato con comillas separadas",
+  "score_esperado_despues_correccion": "88.9% (8/9 validaciones OK)"
+}

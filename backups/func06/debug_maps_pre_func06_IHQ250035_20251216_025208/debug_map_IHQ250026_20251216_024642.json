@@ -1,0 +1,165 @@
+{
+  "session_id": "IHQ250026_20251216_024642",
+  "numero_peticion": "IHQ250026",
+  "timestamp": "2025-12-16T02:46:42.488059",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250026\nCopia Pag. 1 de 2\nNombre : JANIER VASQUEZ CASTAÑEDA\nN. peticion : IHQ250026\nN.Identificación : CC. 16637722\nGenero : MASCULINO\nEdad : 54 años 16 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 09/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410533” correspondiente a “biopsia de pulmón izquierda” con diagnóstico de “SARCOMA DE ALTO\nGRADO PATRÓN EPITELIOIDE”. Previa revisión de la histología se realizan niveles histológicos para tinción\ncon los marcadores: S100, SOX 10, MelanA,\nActina, HMB45, CKAE1E3, DESMINA, MyoD1, CD 34,\nCromogranina y sinaptofisina. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para S100, SOX 10,MelanA y son negativas para Actina, HMB45,\nCKAE1E3, DESMINA, MyoD1, CD 34, Cromogranina y sinaptofisina. \nDIAGNÓSTICO\nPulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:\nLOS HALLAZGOS HISTOLOGIOS Y DE INMUNOHISTOQUIMICA SON COMPATIBLES CON MELANOMA .\nCOMENTARIOS\nCorrelacionar hallazgos con estudios imagenológicos e historia clínica \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 43 ---\nIHQ250026\nCopia Pag. 2 de 2\nNombre : JANIER VASQUEZ CASTAÑEDA\nN. peticion : IHQ250026\nN.Identificación : CC. 16637722\nGenero : MASCULINO\nEdad : 54 años 16 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 09/01/2025\nFecha Informe : 27/01/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3256,
+      "reduccion_porcentaje": 98.1
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250026",
+      "caso_num": 26,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO",
+      "nombre_completo": "JANIER VASQUEZ CASTAÑEDA",
+      "numero_peticion": "IHQ250026",
+      "identificacion": "16637722",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "54",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "NATHALY PRADA",
+      "servicio": "RADIOLOGIA",
+      "fecha_ingreso": "09/01/2025",
+      "fecha_informe": "27/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250026",
+      "N. de identificación": "16637722",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "RADIOLOGIA",
+      "Médico tratante": "NATHALY PRADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/01/2025",
+      "Fecha Informe": "27/01/2025",
+      "nombres": "JANIER",
+      "Primer nombre": "JANIER",
+      "Segundo nombre": "",
+      "apellidos": "VASQUEZ CASTAÑEDA",
+      "Primer apellido": "VASQUEZ",
+      "Segundo apellido": "CASTAÑEDA",
+      "nombre_formal": "VASQUEZ CASTAÑEDA, JANIER",
+      "diagnostico": "Pulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: LOS HALLAZGOS HISTOLOGIOS Y DE INMUNOHISTOQUIMICA SON COMPATIBLES CON MELANOMA .",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para S100, SOX 10,MelanA y son negativas para Actina, HMB45, CKAE1E3, DESMINA, MyoD1, CD 34, Cromogranina y synaptophysin.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410533” correspondiente a “biopsia de pulmón izquierda” con diagnóstico de “SARCOMA DE ALTO GRADO PATRÓN EPITELIOIDE”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: S100, SOX 10, MelanA, Actina, HMB45, CKAE1E3, DESMINA, MyoD1, CD 34, Cromogranina y synaptophysin.",
+      "ihq_organo": "PULMÓN IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Correlacionar hallazgos con es",
+      "IHQ_ORGANO": "PULMÓN IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_HMB45": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_MELAN_A": "POSITIVO",
+      "extraction_timestamp": "2025-12-16T02:46:42.625513",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250026\nCopia Pag. 1 de 2\nNombre : JANIER VASQUEZ CASTAÑEDA\nN. peticion : IHQ250026\nN.Identificación : CC. 16637722\nGenero : MASCULINO\nEdad : 54 años 16 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 09/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410533” correspondiente a “biopsia de pulmón izquierda” con diagnóstico de “SARCOMA DE ALTO\nGRADO PATRÓN EPITELIOIDE”. Previa revisión de la histología se realizan niveles histológicos para tinción\ncon los marcadores: S100, SOX 10, MelanA,\nActina, HMB45, CKAE1E3, DESMINA, MyoD1, CD 34,\nCromogranina y sinaptofisina. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para S100, SOX 10,MelanA y son negativas para Actina, HMB45,\nCKAE1E3, DESMINA, MyoD1, CD 34, Cromogranina y sinaptofisina. \nDIAGNÓSTICO\nPulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:\nLOS HALLAZGOS HISTOLOGIOS Y DE INMUNOHISTOQUIMICA SON COMPATIBLES CON MELANOMA .\nCOMENTARIOS\nCorrelacionar hallazgos con estudios imagenológicos e historia clínica \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 43 ---\nIHQ250026\nCopia Pag. 2 de 2\nNombre : JANIER VASQUEZ CASTAÑEDA\nN. peticion : IHQ250026\nN.Identificación : CC. 16637722\nGenero : MASCULINO\nEdad : 54 años 16 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 09/01/2025\nFecha Informe : 27/01/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD34, CKAE1AE3, CROMOGRANINA, HMB45, MELAN-A, S100, SINAPTOFISINA, SOX10",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410533” correspondiente a “biopsia de pulmón izquierda” con diagnóstico de “SARCOMA DE ALTO GRADO PATRÓN EPITELIOIDE”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: S100, SOX 10, MelanA, Actina, HMB45, CKAE1E3, DESMINA, MyoD1, CD 34, Cromogranina y sinaptofisina.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para S100, SOX 10,MelanA y son negativas para Actina, HMB45, CKAE1E3, DESMINA, MyoD1, CD 34, Cromogranina y sinaptofisina.",
+      "Descripcion Diagnostico": "Pulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: LOS HALLAZGOS HISTOLOGIOS Y DE INMUNOHISTOQUIMICA SON COMPATIBLES CON MELANOMA .",
+      "IHQ_ORGANO": "PULMÓN IZQUIERDO",
+      "Organo": "BX PULMON IZQUIERDO",
+      "Diagnostico Coloracion": "SARCOMA DE ALTO GRADO PATRÓN EPITELIOIDE",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLOGIOS Y DE INMUNOHISTOQUIMICA SON COMPATIBLES CON MELANOMA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_HMB45": "NEGATIVO",
+      "IHQ_MELAN_A": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_SOX10": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 110,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 8,
+      "completitud_porcentaje": 29.94
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 110,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:\nLOS HALLAZGOS HISTOLOGIOS Y DE INMUNOHISTOQUIMICA SON COMPATIBLES CON MELANOMA .",
+      "valor_corregido": "Pulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: LOS HALLAZGOS HISTOLOGIOS Y DE INMUNOHISTOQUIMICA SON COMPATIBLES CON MELANOMA .",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250026",
+      "timestamp": "2025-12-16T02:46:42.625247"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410533” correspondiente a “biopsia de pulmón izquierda” con diagnóstico de “SARCOMA DE ALTO\nGRADO PATRÓN EPITELIOIDE”. Previa revisión de la histología se realizan niveles histológicos para tinción\ncon los marcadores: S100, SOX 10, MelanA,\nActina, HMB45, CKAE1E3, DESMINA, MyoD1, CD 34,\nCromogranina y sinaptofisina.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410533” correspondiente a “biopsia de pulmón izquierda” con diagnóstico de “SARCOMA DE ALTO GRADO PATRÓN EPITELIOIDE”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: S100, SOX 10, MelanA, Actina, HMB45, CKAE1E3, DESMINA, MyoD1, CD 34, Cromogranina y synaptophysin.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250026",
+      "timestamp": "2025-12-16T02:46:42.625252"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para S100, SOX 10,MelanA y son negativas para Actina, HMB45,\nCKAE1E3, DESMINA, MyoD1, CD 34, Cromogranina y sinaptofisina.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para S100, SOX 10,MelanA y son negativas para Actina, HMB45, CKAE1E3, DESMINA, MyoD1, CD 34, Cromogranina y synaptophysin.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250026",
+      "timestamp": "2025-12-16T02:46:42.625254"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 55
+  }
+}

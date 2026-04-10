@@ -1,0 +1,45 @@
+{
+  "caso": "IHQ251029",
+  "timestamp": "2025-11-10T22:38:01.071740",
+  "correcciones": {
+    "CKAE1AE3": {
+      "antes": "NO MENCIONADO",
+      "despues": "POSITIVO",
+      "esperado": "POSITIVO",
+      "estado": "CORRECTO"
+    },
+    "IHQ_ESTUDIOS_SOLICITADOS": {
+      "valor": "CD56, CROMOGRANINA A, SINAPTOFISINA, CKAE1AE3, Ki-67",
+      "biomarcadores_detectados": 2,
+      "total_esperado": 5,
+      "estado": "INCOMPLETO"
+    },
+    "DIAGNOSTICO_COLORACION": {
+      "presente": false,
+      "valor_preview": "NO ENCONTRADO",
+      "estado": "VACIO"
+    }
+  },
+  "biomarcadores_individuales": {
+    "CKAE1AE3": {
+      "valor": "POSITIVO",
+      "estado": "OK"
+    },
+    "TTF-1": {
+      "valor": "NO ENCONTRADO",
+      "estado": "ERROR"
+    },
+    "P40": {
+      "valor": "NO ENCONTRADO",
+      "estado": "ERROR"
+    },
+    "P63": {
+      "valor": "N/A",
+      "estado": "OK"
+    },
+    "Sinaptofisina": {
+      "valor": "NO ENCONTRADO",
+      "estado": "ERROR"
+    }
+  }
+}

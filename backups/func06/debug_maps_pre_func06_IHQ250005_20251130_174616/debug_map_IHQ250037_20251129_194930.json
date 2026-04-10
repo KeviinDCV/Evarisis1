@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250037_20251129_194930",
+  "numero_peticion": "IHQ250037",
+  "timestamp": "2025-11-29T19:49:30.014640",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250037\nCopia Pag. 1 de 2\nNombre : DIEGO FERNANDO TORRES CORDOBA N. peticion : IHQ250037\nN.Identificación : CC. 1136059220\nGenero : MASCULINO\nEdad : 36 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ANGEL ARTURO ROBERTY\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 14/01/2025\nFecha Informe : 16/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION RECTO BAJO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nrotulado como “F24967 1 Y 2” que corresponde a “lesión de recto bajo”. Previa revisión de la histología,\nse realizan niveles histológicos para tinción con HHV8 Y CD34.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLos capilares maduros presentan expresión para CD34.\nHHV8 negativo.\nDIAGNÓSTICO\nMucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica:\n- HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE FAVORECEN COLITIS AGUDA Y CRÓNICA\nNO ESPECÍFICA.\nCOMENTARIOS\nAnte la sospecha de una lesión neoplásica de mayor grado histológico se sugiere nuevo muestreo\na\ncriterio de medico tratante. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ250037\nCopia Pag. 2 de 2\nNombre : DIEGO FERNANDO TORRES CORDOBA N. peticion : IHQ250037\nN.Identificación : CC. 1136059220\nGenero : MASCULINO\nEdad : 36 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ANGEL ARTURO ROBERTY\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 14/01/2025\nFecha Informe : 16/01/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3119,
+      "reduccion_porcentaje": 98.18
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250037",
+      "caso_num": 37,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "DIEGO FERNANDO TORRES CORDOBA",
+      "numero_peticion": "IHQ250037",
+      "identificacion": "1136059220",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "36",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "ANGEL ARTURO ROBERTY",
+      "servicio": "MEDICINA INTERNA COEX",
+      "fecha_ingreso": "14/01/2025",
+      "fecha_informe": "16/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250037",
+      "N. de identificación": "1136059220",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "MEDICINA INTERNA COEX",
+      "Médico tratante": "ANGEL ARTURO ROBERTY",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/01/2025",
+      "Fecha Informe": "16/01/2025",
+      "nombres": "DIEGO FERNANDO",
+      "Primer nombre": "DIEGO",
+      "Segundo nombre": "FERNANDO",
+      "apellidos": "TORRES CORDOBA",
+      "Primer apellido": "TORRES",
+      "Segundo apellido": "CORDOBA",
+      "nombre_formal": "TORRES CORDOBA, DIEGO FERNANDO",
+      "diagnostico": "Mucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica: - HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE FAVORECEN COLITIS AGUDA Y CRÓNICA NO ESPECÍFICA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Los capilares maduros presentan expresión para CD34. HHV8 negativo.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como “F24967 1 Y 2” que corresponde a “lesión de recto bajo”. Previa revisión de la histología, se realizan niveles histológicos para tinción con HHV8 Y CD34.",
+      "ihq_organo": "MUCOSA RECTAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "MEDICINA_INTERNA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HHV8, CD34",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Ante la sospecha de una lesión neoplásica de mayor grado histológico se sugiere nuevo muestreo a criterio de medico tratante.",
+      "IHQ_ORGANO": "MUCOSA RECTAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "extraction_timestamp": "2025-11-29T19:49:30.168987",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250037\nCopia Pag. 1 de 2\nNombre : DIEGO FERNANDO TORRES CORDOBA N. peticion : IHQ250037\nN.Identificación : CC. 1136059220\nGenero : MASCULINO\nEdad : 36 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ANGEL ARTURO ROBERTY\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 14/01/2025\nFecha Informe : 16/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION RECTO BAJO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nrotulado como “F24967 1 Y 2” que corresponde a “lesión de recto bajo”. Previa revisión de la histología,\nse realizan niveles histológicos para tinción con HHV8 Y CD34.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLos capilares maduros presentan expresión para CD34.\nHHV8 negativo.\nDIAGNÓSTICO\nMucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica:\n- HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE FAVORECEN COLITIS AGUDA Y CRÓNICA\nNO ESPECÍFICA.\nCOMENTARIOS\nAnte la sospecha de una lesión neoplásica de mayor grado histológico se sugiere nuevo muestreo\na\ncriterio de medico tratante. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ250037\nCopia Pag. 2 de 2\nNombre : DIEGO FERNANDO TORRES CORDOBA N. peticion : IHQ250037\nN.Identificación : CC. 1136059220\nGenero : MASCULINO\nEdad : 36 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ANGEL ARTURO ROBERTY\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 14/01/2025\nFecha Informe : 16/01/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HHV8, CD34",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como “F24967 1 Y 2” que corresponde a “lesión de recto bajo”. Previa revisión de la histología, se realizan niveles histológicos para tinción con HHV8 Y CD34.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Los capilares maduros presentan expresión para CD34. HHV8 negativo.",
+      "Descripcion Diagnostico": "Mucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica: - HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE FAVORECEN COLITIS AGUDA Y CRÓNICA NO ESPECÍFICA.",
+      "IHQ_ORGANO": "MUCOSA RECTAL",
+      "Organo": "LESION RECTO BAJO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE FAVORECEN COLITIS AGUDA Y CRÓNICA NO ESPECÍFICA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_HHV8": "NO MENCIONADO",
+      "IHQ_CD34": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 149,
+      "campos_vacios": 112,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 24.83
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 112,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica:\n- HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE FAVORECEN COLITIS AGUDA Y CRÓNICA\nNO ESPECÍFICA.",
+      "valor_corregido": "Mucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica: - HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE FAVORECEN COLITIS AGUDA Y CRÓNICA NO ESPECÍFICA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250037",
+      "timestamp": "2025-11-29T19:49:30.168675"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nrotulado como “F24967 1 Y 2” que corresponde a “lesión de recto bajo”. Previa revisión de la histología,\nse realizan niveles histológicos para tinción con HHV8 Y CD34.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como “F24967 1 Y 2” que corresponde a “lesión de recto bajo”. Previa revisión de la histología, se realizan niveles histológicos para tinción con HHV8 Y CD34.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250037",
+      "timestamp": "2025-11-29T19:49:30.168681"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLos capilares maduros presentan expresión para CD34.\nHHV8 negativo.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Los capilares maduros presentan expresión para CD34. HHV8 negativo.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250037",
+      "timestamp": "2025-11-29T19:49:30.168683"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Ante la sospecha de una lesión neoplásica de mayor grado histológico se sugiere nuevo muestreo\na\ncriterio de medico tratante.",
+      "valor_corregido": "Ante la sospecha de una lesión neoplásica de mayor grado histológico se sugiere nuevo muestreo a criterio de medico tratante.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250037",
+      "timestamp": "2025-11-29T19:49:30.168684"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 48
+  }
+}

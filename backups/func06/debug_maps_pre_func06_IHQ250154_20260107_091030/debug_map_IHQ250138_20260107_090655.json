@@ -1,0 +1,153 @@
+{
+  "session_id": "IHQ250138_20260107_090655",
+  "numero_peticion": "IHQ250138",
+  "timestamp": "2026-01-07T09:06:55.628541",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250138\nCopia Pag. 1 de 2\nNombre : ANA VIRGINIA GONZALEZ GARCIA\nN. peticion : IHQ250138\nN.Identificación : SV. 8089810\nGenero : FEMENINO\nEdad : 75 años 6 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LUIS MIGUEL BENAVIDES\nServicio : MEDICA MUJERES\nFecha Ingreso : 06/02/2025\nFecha Informe : 13/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2501097” que corresponde a “biopsia de medula ósea”. Previa revisión de la\nhistología, se realizan niveles histológicos para tinción con CD138, CD20, CD3,\nCD34, CD56,\nCD61, CD117 Glicoforina, MPX, Cyclina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nMedula ósea con celularidad global entre 30-70% donde se observa una relación mieloide\n(mieloperoxidasa +) eritroide (glicoforina +) invertida de 1:4. Hay linfocitos T (CD3+) y linfocitos\nB (CD20+) dispersos, y células plasmáticas (CD138+/CD56-) del 10% esparcidas sin formar\nacúmulos.\nSe identifican 1-4 megacariocitos marcados con CD61+ y mastocitos dispersos\nCD117+. Blastos mieloides CD34 + del 1-2%. Ciclina D1 negativo. \nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquímica:\nCELULARIDAD GLOBAL ENTRE 30-70%.\nPREDOMINIO DE LÍNEA ERITROIDE. \nCÉLULAS PLASMÁTICAS: 10%\nBLASTOS MIELOIDES 1-2% \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---\nIHQ250138\nCopia Pag. 2 de 2\nNombre : ANA VIRGINIA GONZALEZ GARCIA\nN. peticion : IHQ250138\nN.Identificación : SV. 8089810\nGenero : FEMENINO\nEdad : 75 años 6 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LUIS MIGUEL BENAVIDES\nServicio : MEDICA MUJERES\nFecha Ingreso : 06/02/2025\nFecha Informe : 13/02/2025\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3370,
+      "reduccion_porcentaje": 98.06
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250138",
+      "caso_num": 29,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ANA VIRGINIA GONZALEZ GARCIA",
+      "numero_peticion": "IHQ250138",
+      "identificacion": "8089810",
+      "tipo_documento": "SV",
+      "Genero": "FEMENINO",
+      "Edad": "75",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "LUIS MIGUEL BENAVIDES",
+      "servicio": "MEDICA MUJERES",
+      "fecha_ingreso": "06/02/2025",
+      "fecha_informe": "13/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250138",
+      "N. de identificación": "8089810",
+      "Tipo de documento": "SV",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "MEDICA MUJERES",
+      "Médico tratante": "LUIS MIGUEL BENAVIDES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "06/02/2025",
+      "Fecha Informe": "13/02/2025",
+      "nombres": "ANA VIRGINIA",
+      "Primer nombre": "ANA",
+      "Segundo nombre": "VIRGINIA",
+      "apellidos": "GONZALEZ GARCIA",
+      "Primer apellido": "GONZALEZ",
+      "Segundo apellido": "GARCIA",
+      "nombre_formal": "GONZALEZ GARCIA, ANA VIRGINIA",
+      "diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquímica: CELULARIDAD GLOBAL ENTRE 30-70%. PREDOMINIO DE LÍNEA ERITROIDE. CÉLULAS PLASMÁTICAS: 10% BLASTOS MIELOIDES 1-2% MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga: 06/02/2025 RM 761520 _________________________________________________________________________________________________",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Medula ósea con celularidad global entre 30-70% donde se observa una relación mieloide (mieloperoxidasa +) eritroide (glicoforina +) invertida de 1:4. Hay linfocitos T (CD3+) y linfocitos B (CD20+) dispersos, y células plasmáticas (CD138+/CD56-) del 10% esparcidas sin formar acúmulos. Se identifican 1-4 megacariocitos marcados con CD61+ y mastocitos dispersos CD117+. Blastos mieloides CD34 + del 1-2%. Ciclina D1 negativo.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501097” que corresponde a “biopsia de medula ósea”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CD138, CD20, CD3, CD34, CD56, CD61, CD117 Glicoforina, MPX, Cyclina.",
+      "ihq_organo": "MEDULA ÓSEA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD138, CD20, CD3, CD34, CD56, CD61, CD117 GLICOFORINA, MPX, CYCLINA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD138, CD20, CD3, CD34, CD56, CD61, CD117 GLICOFORINA, MPX, CYCLINA",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CICLINA_D1": "NEGATIVO",
+      "extraction_timestamp": "2026-01-07T09:06:56.046814",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250138\nCopia Pag. 1 de 2\nNombre : ANA VIRGINIA GONZALEZ GARCIA\nN. peticion : IHQ250138\nN.Identificación : SV. 8089810\nGenero : FEMENINO\nEdad : 75 años 6 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LUIS MIGUEL BENAVIDES\nServicio : MEDICA MUJERES\nFecha Ingreso : 06/02/2025\nFecha Informe : 13/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2501097” que corresponde a “biopsia de medula ósea”. Previa revisión de la\nhistología, se realizan niveles histológicos para tinción con CD138, CD20, CD3,\nCD34, CD56,\nCD61, CD117 Glicoforina, MPX, Cyclina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nMedula ósea con celularidad global entre 30-70% donde se observa una relación mieloide\n(mieloperoxidasa +) eritroide (glicoforina +) invertida de 1:4. Hay linfocitos T (CD3+) y linfocitos\nB (CD20+) dispersos, y células plasmáticas (CD138+/CD56-) del 10% esparcidas sin formar\nacúmulos.\nSe identifican 1-4 megacariocitos marcados con CD61+ y mastocitos dispersos\nCD117+. Blastos mieloides CD34 + del 1-2%. Ciclina D1 negativo. \nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquímica:\nCELULARIDAD GLOBAL ENTRE 30-70%.\nPREDOMINIO DE LÍNEA ERITROIDE. \nCÉLULAS PLASMÁTICAS: 10%\nBLASTOS MIELOIDES 1-2% \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---\nIHQ250138\nCopia Pag. 2 de 2\nNombre : ANA VIRGINIA GONZALEZ GARCIA\nN. peticion : IHQ250138\nN.Identificación : SV. 8089810\nGenero : FEMENINO\nEdad : 75 años 6 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LUIS MIGUEL BENAVIDES\nServicio : MEDICA MUJERES\nFecha Ingreso : 06/02/2025\nFecha Informe : 13/02/2025\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD138, CD20, CD3, CD34, CD56, CD61, CD117 GLICOFORINA, MPX, CYCLINA, CD117, GLICOFORINA, MIELOPEROXIDASA, CICLINA D1",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501097” que corresponde a “biopsia de medula ósea”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CD138, CD20, CD3, CD34, CD56, CD61, CD117 Glicoforina, MPX, Cyclina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Medula ósea con celularidad global entre 30-70% donde se observa una relación mieloide (mieloperoxidasa +) eritroide (glicoforina +) invertida de 1:4. Hay linfocitos T (CD3+) y linfocitos B (CD20+) dispersos, y células plasmáticas (CD138+/CD56-) del 10% esparcidas sin formar acúmulos. Se identifican 1-4 megacariocitos marcados con CD61+ y mastocitos dispersos CD117+. Blastos mieloides CD34 + del 1-2%. Ciclina D1 negativo.",
+      "Descripcion Diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquímica: CELULARIDAD GLOBAL ENTRE 30-70%. PREDOMINIO DE LÍNEA ERITROIDE. CÉLULAS PLASMÁTICAS: 10% BLASTOS MIELOIDES 1-2% MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga: 06/02/2025 RM 761520 _________________________________________________________________________________________________",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Organo": "BX HUESO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CELULARIDAD GLOBAL ENTRE 30-70%",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_CICLINA_D1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 122,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 122,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula ósea. Biopsia. Estudio de inmunohistoquímica:\nCELULARIDAD GLOBAL ENTRE 30-70%.\nPREDOMINIO DE LÍNEA ERITROIDE. \nCÉLULAS PLASMÁTICAS: 10%\nBLASTOS MIELOIDES 1-2% \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga: 06/02/2025\nRM 761520\n_________________________________________________________________________________________________",
+      "valor_corregido": "Medula ósea. Biopsia. Estudio de inmunohistoquímica: CELULARIDAD GLOBAL ENTRE 30-70%. PREDOMINIO DE LÍNEA ERITROIDE. CÉLULAS PLASMÁTICAS: 10% BLASTOS MIELOIDES 1-2% MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga: 06/02/2025 RM 761520 _________________________________________________________________________________________________",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250138",
+      "timestamp": "2026-01-07T09:06:56.046616"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 56
+  }
+}

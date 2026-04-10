@@ -1,0 +1,157 @@
+{
+  "session_id": "IHQ250131_20260105_185631",
+  "numero_peticion": "IHQ250131",
+  "timestamp": "2026-01-05T18:56:31.970298",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250131\nCopia Pag. 1 de 1\nNombre : CLAUDIA ISABEL HERNANDEZ\nGRANOBLES\nN. peticion : IHQ250131\nN.Identificación : CC. 31643826\nGenero : FEMENINO\nEdad : 45 años 3 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 05/02/2025\nFecha Informe : 24/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MUCOSA DE RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque externo extrainstitucional P245946 el cual corresponde a\nbiopsia endoscópica de mucosa rectal con diagnóstico de \"NEOPLASIA NEUROENDOCRINA DE BAJO\nGRADO\". Se ordenan los siguientes marcadores: Ki-67, Cromogranina, Sinaptofisina y CDX2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para Sinaptofisina en intensidad moderada y distribución homogénea\ndifusa, Son negativas para Cromogranina y CDX2. Tienen un índice de proliferación celular medido por\nKi-67 del 2%.\nDIAGNÓSTICO\n Mucosa rectal. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica:\nTUMOR NEUROENDOCRINO BIEN DIFERENCIADO WHO GRADO 1 (G1)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 2482,
+      "reduccion_porcentaje": 98.57
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250131",
+      "caso_num": 22,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_SINAPTOFISINA": "POSITIVO (difusa y moderada)",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "nombre_completo": "CLAUDIA ISABEL HERNANDEZ GRANOBLES",
+      "numero_peticion": "IHQ250131",
+      "identificacion": "31643826",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "45",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "05/02/2025",
+      "fecha_informe": "24/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250131",
+      "N. de identificación": "31643826",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "05/02/2025",
+      "Fecha Informe": "24/02/2025",
+      "nombres": "CLAUDIA ISABEL",
+      "Primer nombre": "CLAUDIA",
+      "Segundo nombre": "ISABEL",
+      "apellidos": "HERNANDEZ GRANOBLES",
+      "Primer apellido": "HERNANDEZ",
+      "Segundo apellido": "GRANOBLES",
+      "nombre_formal": "HERNANDEZ GRANOBLES, CLAUDIA ISABEL",
+      "diagnostico": "Mucosa rectal. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica: TUMOR NEUROENDOCRINO BIEN DIFERENCIADO WHO GRADO 1 (G1)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para Synaptophysin en intensidad moderada y distribución homogénea difusa, Son negativas para Cromogranina y CDX2. Tienen un índice de proliferación celular medido por KI-67 del 2%.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque externo extrainstitucional P245946 el cual corresponde a biopsia endoscópica de mucosa rectal con diagnóstico de \"NEOPLASIA NEUROENDOCRINA DE BAJO GRADO\". Se ordenan los siguientes marcadores: KI-67, Cromogranina, Synaptophysin y CDX2.",
+      "ihq_organo": "MUCOSA RECTAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Ki-67, CROMOGRANINA, SINAPTOFISINA, CDX2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA RECTAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 2%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, CROMOGRANINA, SINAPTOFISINA, CDX2",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_KI-67": "2%",
+      "extraction_timestamp": "2026-01-05T18:56:32.375531",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250131\nCopia Pag. 1 de 1\nNombre : CLAUDIA ISABEL HERNANDEZ\nGRANOBLES\nN. peticion : IHQ250131\nN.Identificación : CC. 31643826\nGenero : FEMENINO\nEdad : 45 años 3 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 05/02/2025\nFecha Informe : 24/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MUCOSA DE RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque externo extrainstitucional P245946 el cual corresponde a\nbiopsia endoscópica de mucosa rectal con diagnóstico de \"NEOPLASIA NEUROENDOCRINA DE BAJO\nGRADO\". Se ordenan los siguientes marcadores: Ki-67, Cromogranina, Sinaptofisina y CDX2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para Sinaptofisina en intensidad moderada y distribución homogénea\ndifusa, Son negativas para Cromogranina y CDX2. Tienen un índice de proliferación celular medido por\nKi-67 del 2%.\nDIAGNÓSTICO\n Mucosa rectal. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica:\nTUMOR NEUROENDOCRINO BIEN DIFERENCIADO WHO GRADO 1 (G1)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, CROMOGRANINA, SINAPTOFISINA, CDX2",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque externo extrainstitucional P245946 el cual corresponde a biopsia endoscópica de mucosa rectal con diagnóstico de \"NEOPLASIA NEUROENDOCRINA DE BAJO GRADO\". Se ordenan los siguientes marcadores: Ki-67, Cromogranina, Sinaptofisina y CDX2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para Sinaptofisina en intensidad moderada y distribución homogénea difusa, Son negativas para Cromogranina y CDX2. Tienen un índice de proliferación celular medido por Ki-67 del 2%.",
+      "Descripcion Diagnostico": "Mucosa rectal. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica: TUMOR NEUROENDOCRINO BIEN DIFERENCIADO WHO GRADO 1 (G1)",
+      "IHQ_ORGANO": "MUCOSA RECTAL",
+      "Organo": "BX MUCOSA DE RECTO",
+      "Diagnostico Coloracion": "NEOPLASIA NEUROENDOCRINA DE BAJO GRADO",
+      "Diagnostico Principal": "TUMOR NEUROENDOCRINO BIEN DIFERENCIADO WHO GRADO 1 (G1)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 2%",
+      "IHQ_KI-67": "2%",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "POSITIVO (difusa y moderada)",
+      "IHQ_CDX2": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 126,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 25.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 126,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa rectal. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica:\nTUMOR NEUROENDOCRINO BIEN DIFERENCIADO WHO GRADO 1 (G1)",
+      "valor_corregido": "Mucosa rectal. Tumor. Biopsia endoscópica. Estudios de inmunohistoquímica: TUMOR NEUROENDOCRINO BIEN DIFERENCIADO WHO GRADO 1 (G1)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250131",
+      "timestamp": "2026-01-05T18:56:32.375232"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque externo extrainstitucional P245946 el cual corresponde a biopsia endoscópica de mucosa rectal con diagnóstico de \"NEOPLASIA NEUROENDOCRINA DE BAJO GRADO\". Se ordenan los siguientes marcadores: Ki-67, Cromogranina, Sinaptofisina y CDX2.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque externo extrainstitucional P245946 el cual corresponde a biopsia endoscópica de mucosa rectal con diagnóstico de \"NEOPLASIA NEUROENDOCRINA DE BAJO GRADO\". Se ordenan los siguientes marcadores: KI-67, Cromogranina, Synaptophysin y CDX2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250131",
+      "timestamp": "2026-01-05T18:56:32.375239"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para Sinaptofisina en intensidad moderada y distribución homogénea difusa, Son negativas para Cromogranina y CDX2. Tienen un índice de proliferación celular medido por Ki-67 del 2%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para Synaptophysin en intensidad moderada y distribución homogénea difusa, Son negativas para Cromogranina y CDX2. Tienen un índice de proliferación celular medido por KI-67 del 2%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250131",
+      "timestamp": "2026-01-05T18:56:32.375241"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 52
+  }
+}

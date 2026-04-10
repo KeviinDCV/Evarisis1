@@ -1,0 +1,174 @@
+{
+  "session_id": "IHQ250096_20251219_042259",
+  "numero_peticion": "IHQ250096",
+  "timestamp": "2025-12-19T04:22:59.723329",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250096\nCopia Pag. 1 de 2\nNombre : RODRIGO LONDOÑO GARCIA\nN. peticion : IHQ250096\nN.Identificación : CC. 14443807\nGenero : MASCULINO\nEdad : 70 años 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 28/01/2025\nFecha Informe : 19/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA MEDIASTINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado \"M2500467”\nque corresponde a linfadenectomia en ganglio linfático en cuello izquierdo con diagnóstico de\n\"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes marcadores: CD20, BCL2, BCL6, CD3,\nKi-67, CD68, CD4, CD8, CD5, CD7, TdT, CD10, CD117, CD1a, CD34, CD56 y CD99.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLa muestra corresponde a fragmentos de tejido fibroconectivo con una lesión proliferativa de origen\nlinfoide constituída por linfocitos, plasmocitos, histiocitos y células de mayor tamaño, dispuestas en\nalgunos acúmulos separados por bandas de colágeno. La proliferación celular es de linaje T con\ninmunotinción para CD3, CD5, CD7, así como marcación doble positiva para CD4 y CD8; blastos positivos\npara TdT, CD1a y CD99, con un índice de proliferación celular medido con Ki-67 del 90%, sin\ninmunomarcación para CD10, CD117, CD34 ni CD56. Hay linfocitos B acompañantes con marcación para\nCD20, BCL2 y BCL6, así como histiocitos dispersos CD68. \nDIAGNÓSTICO\n Mediastino. Lesión. Biopsia mediastinoscópica. Estudios de inmunohistoquímica: \nLOS HALLAZGOS FAVORECEN UN LINFOMA LINFOBLÁSTICO DE CÉLULAS T \nCOMENTARIOS\nCaso revisado por Dra. Isabella Caicedo, Hematopatóloga.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---\nIHQ250096\nCopia Pag. 2 de 2\nNombre : RODRIGO LONDOÑO GARCIA\nN. peticion : IHQ250096\nN.Identificación : CC. 14443807\nGenero : MASCULINO\nEdad : 70 años 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 28/01/2025\nFecha Informe : 19/02/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3676,
+      "reduccion_porcentaje": 98.04
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250096",
+      "caso_num": 40,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CD4": "POSITIVO",
+      "nombre_completo": "RODRIGO LONDOÑO GARCIA",
+      "numero_peticion": "IHQ250096",
+      "identificacion": "14443807",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "70",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JHON SANDOVAL",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "28/01/2025",
+      "fecha_informe": "19/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250096",
+      "N. de identificación": "14443807",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "JHON SANDOVAL",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/01/2025",
+      "Fecha Informe": "19/02/2025",
+      "nombres": "RODRIGO LONDOÑO",
+      "Primer nombre": "RODRIGO",
+      "Segundo nombre": "LONDOÑO",
+      "apellidos": "GARCIA",
+      "Primer apellido": "GARCIA",
+      "Segundo apellido": "",
+      "nombre_formal": "GARCIA, RODRIGO LONDOÑO",
+      "diagnostico": "Mediastino. Lesión. Biopsia mediastinoscópica. Estudios de inmunohistoquímica: LOS HALLAZGOS FAVORECEN UN LINFOMA LINFOBLÁSTICO DE CÉLULAS T",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La muestra corresponde a fragmentos de tejido fibroconectivo con una lesión proliferativa de origen linfoide constituída por linfocitos, plasmocitos, histiocitos y células de mayor tamaño, dispuestas en algunos acúmulos separados por bandas de colágeno. La proliferación celular es de linaje T con inmunotinción para CD3, CD5, CD7, así como marcación doble positiva para CD4 y CD8; blastos positivos para TdT, CD1 a y CD99, con un índice de proliferación celular medido con KI-67 del 90%, sin inmunomarcación para CD10, CD117, CD34 ni CD56. Hay linfocitos B acompañantes con marcación para CD20, BCL2 y BCL6, así como histiocitos dispersos CD68.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado \"M2500467” que corresponde a linfadenectomia en ganglio linfático en cuello izquierdo con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes marcadores: CD20, BCL2, BCL6, CD3, KI-67, CD68, CD4, CD8, CD5, CD7, TdT, CD10, CD117, CD1 a, CD34, CD56 y CD99.",
+      "ihq_organo": "MEDIASTINO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD20, BCL2, BCL6, CD3, Ki-67, CD68, CD4, CD8, CD5, CD7, TDT, CD10, CD117, CD1A, CD34, CD56, CD99",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso revisado por Dra. Isabella Caicedo, Hematopatóloga.",
+      "IHQ_ORGANO": "MEDIASTINO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Ki-67 del 90%",
+      "IHQ_CD1A": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_TDT": "POSITIVO",
+      "extraction_timestamp": "2025-12-19T04:22:59.918977",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250096\nCopia Pag. 1 de 2\nNombre : RODRIGO LONDOÑO GARCIA\nN. peticion : IHQ250096\nN.Identificación : CC. 14443807\nGenero : MASCULINO\nEdad : 70 años 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 28/01/2025\nFecha Informe : 19/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA MEDIASTINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado \"M2500467”\nque corresponde a linfadenectomia en ganglio linfático en cuello izquierdo con diagnóstico de\n\"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes marcadores: CD20, BCL2, BCL6, CD3,\nKi-67, CD68, CD4, CD8, CD5, CD7, TdT, CD10, CD117, CD1a, CD34, CD56 y CD99.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLa muestra corresponde a fragmentos de tejido fibroconectivo con una lesión proliferativa de origen\nlinfoide constituída por linfocitos, plasmocitos, histiocitos y células de mayor tamaño, dispuestas en\nalgunos acúmulos separados por bandas de colágeno. La proliferación celular es de linaje T con\ninmunotinción para CD3, CD5, CD7, así como marcación doble positiva para CD4 y CD8; blastos positivos\npara TdT, CD1a y CD99, con un índice de proliferación celular medido con Ki-67 del 90%, sin\ninmunomarcación para CD10, CD117, CD34 ni CD56. Hay linfocitos B acompañantes con marcación para\nCD20, BCL2 y BCL6, así como histiocitos dispersos CD68. \nDIAGNÓSTICO\n Mediastino. Lesión. Biopsia mediastinoscópica. Estudios de inmunohistoquímica: \nLOS HALLAZGOS FAVORECEN UN LINFOMA LINFOBLÁSTICO DE CÉLULAS T \nCOMENTARIOS\nCaso revisado por Dra. Isabella Caicedo, Hematopatóloga.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---\nIHQ250096\nCopia Pag. 2 de 2\nNombre : RODRIGO LONDOÑO GARCIA\nN. peticion : IHQ250096\nN.Identificación : CC. 14443807\nGenero : MASCULINO\nEdad : 70 años 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 28/01/2025\nFecha Informe : 19/02/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD20, BCL2, BCL6, CD3, Ki-67, CD68, CD4, CD8, CD5, CD7, TDT, CD10, CD117, CD1A, CD34, CD56, CD99",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado \"M2500467” que corresponde a linfadenectomia en ganglio linfático en cuello izquierdo con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes marcadores: CD20, BCL2, BCL6, CD3, Ki-67, CD68, CD4, CD8, CD5, CD7, TdT, CD10, CD117, CD1a, CD34, CD56 y CD99.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La muestra corresponde a fragmentos de tejido fibroconectivo con una lesión proliferativa de origen linfoide constituída por linfocitos, plasmocitos, histiocitos y células de mayor tamaño, dispuestas en algunos acúmulos separados por bandas de colágeno. La proliferación celular es de linaje T con inmunotinción para CD3, CD5, CD7, así como marcación doble positiva para CD4 y CD8; blastos positivos para TdT, CD1a y CD99, con un índice de proliferación celular medido con Ki-67 del 90%, sin inmunomarcación para CD10, CD117, CD34 ni CD56. Hay linfocitos B acompañantes con marcación para CD20, BCL2 y BCL6, así como histiocitos dispersos CD68.",
+      "Descripcion Diagnostico": "Mediastino. Lesión. Biopsia mediastinoscópica. Estudios de inmunohistoquímica: LOS HALLAZGOS FAVORECEN UN LINFOMA LINFOBLÁSTICO DE CÉLULAS T",
+      "IHQ_ORGANO": "MEDIASTINO",
+      "Organo": "BX MASA MEDIASTINAL",
+      "Diagnostico Coloracion": "PROLIFERACIÓN HEMATOLINFOIDE",
+      "Diagnostico Principal": "LINFOMA LINFOBLÁSTICO DE CÉLULAS T",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 90%",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD3": "NO MENCIONADO",
+      "IHQ_KI-67": "90%",
+      "IHQ_CD68": "NO MENCIONADO",
+      "IHQ_CD4": "POSITIVO",
+      "IHQ_CD8": "NO MENCIONADO",
+      "IHQ_CD5": "NO MENCIONADO",
+      "IHQ_TDT": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD1A": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD56": "NO MENCIONADO",
+      "IHQ_CD99": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 108,
+      "campos_completos": 49,
+      "biomarcadores_encontrados": 16,
+      "completitud_porcentaje": 31.21
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 108,
+      "total_campos_completos": 49
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mediastino. Lesión. Biopsia mediastinoscópica. Estudios de inmunohistoquímica: \nLOS HALLAZGOS FAVORECEN UN LINFOMA LINFOBLÁSTICO DE CÉLULAS T",
+      "valor_corregido": "Mediastino. Lesión. Biopsia mediastinoscópica. Estudios de inmunohistoquímica: LOS HALLAZGOS FAVORECEN UN LINFOMA LINFOBLÁSTICO DE CÉLULAS T",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250096",
+      "timestamp": "2025-12-19T04:22:59.918781"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado \"M2500467” que corresponde a linfadenectomia en ganglio linfático en cuello izquierdo con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes marcadores: CD20, BCL2, BCL6, CD3, Ki-67, CD68, CD4, CD8, CD5, CD7, TdT, CD10, CD117, CD1a, CD34, CD56 y CD99.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado \"M2500467” que corresponde a linfadenectomia en ganglio linfático en cuello izquierdo con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes marcadores: CD20, BCL2, BCL6, CD3, KI-67, CD68, CD4, CD8, CD5, CD7, TdT, CD10, CD117, CD1 a, CD34, CD56 y CD99.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250096",
+      "timestamp": "2025-12-19T04:22:59.918787"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La muestra corresponde a fragmentos de tejido fibroconectivo con una lesión proliferativa de origen linfoide constituída por linfocitos, plasmocitos, histiocitos y células de mayor tamaño, dispuestas en algunos acúmulos separados por bandas de colágeno. La proliferación celular es de linaje T con inmunotinción para CD3, CD5, CD7, así como marcación doble positiva para CD4 y CD8; blastos positivos para TdT, CD1a y CD99, con un índice de proliferación celular medido con Ki-67 del 90%, sin inmunomarcación para CD10, CD117, CD34 ni CD56. Hay linfocitos B acompañantes con marcación para CD20, BCL2 y BCL6, así como histiocitos dispersos CD68.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La muestra corresponde a fragmentos de tejido fibroconectivo con una lesión proliferativa de origen linfoide constituída por linfocitos, plasmocitos, histiocitos y células de mayor tamaño, dispuestas en algunos acúmulos separados por bandas de colágeno. La proliferación celular es de linaje T con inmunotinción para CD3, CD5, CD7, así como marcación doble positiva para CD4 y CD8; blastos positivos para TdT, CD1 a y CD99, con un índice de proliferación celular medido con KI-67 del 90%, sin inmunomarcación para CD10, CD117, CD34 ni CD56. Hay linfocitos B acompañantes con marcación para CD20, BCL2 y BCL6, así como histiocitos dispersos CD68.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250096",
+      "timestamp": "2025-12-19T04:22:59.918789"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 55
+  }
+}

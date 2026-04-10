@@ -1,0 +1,42 @@
+{
+  "caso": "IHQ251029",
+  "timestamp": "2025-11-10T23:37:08",
+  "correcciones_aplicadas": 4,
+  "resultados": [
+    {
+      "descripcion": "CORRECCION 1 (Sincronizacion Cromogranina)",
+      "campo": "IHQ_CROMOGRANINA",
+      "antes": "N/A",
+      "despues": "POSITIVO",
+      "resultado": "CAMBIO"
+    },
+    {
+      "descripcion": "CORRECCION 1 (Sincronizacion Sinaptofisina)",
+      "campo": "IHQ_SINAPTOFISINA",
+      "antes": "N/A",
+      "despues": "POSITIVO",
+      "resultado": "CAMBIO"
+    },
+    {
+      "descripcion": "CORRECCION 2 (Filtro AE3)",
+      "campo": "Factor pronostico",
+      "antes": "Ki-67 DEL 2% / AE3 y Ki-67",
+      "despues": "Ki-67 DEL 2% / AE3 y Ki-67",
+      "resultado": "SIN CAMBIO"
+    },
+    {
+      "descripcion": "CORRECCION 3 (Extraccion desde DIAGNOSTICO)",
+      "campo": "IHQ_ORGANO",
+      "antes": "\"LOS\nHALLAZGOS\nMORFOLOGICOS\nFAVORECEN\nUN\nTUMOR\nNEUROENDOCRINO\"",
+      "despues": "MESENTERIO",
+      "resultado": "CAMBIO"
+    },
+    {
+      "descripcion": "CORRECCION 4 (Captura multi-linea)",
+      "campo": "Organo",
+      "antes": "BIOPSIA MASA",
+      "despues": "BIOPSIA MASA",
+      "resultado": "SIN CAMBIO"
+    }
+  ]
+}

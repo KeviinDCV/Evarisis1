@@ -1,0 +1,132 @@
+{
+  "session_id": "IHQ250099_20251219_044904",
+  "numero_peticion": "IHQ250099",
+  "timestamp": "2025-12-19T04:49:04.960476",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250099\nCopia Pag. 1 de 2\nNombre : NIDIA GARCIA CABRERA\nN. peticion : IHQ250099\nN.Identificación : CC. 52216217\nGenero : FEMENINO\nEdad : 47 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 28/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION INCISURA\nANGULARIS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles a bloque extrainstitucional con rotulo \"Q-151173-24\" que corresponde a biopsia de\nlesión superficial en incisura angularis, con diagnóstico de \"ADENOCARCINOMA DIFUSO (POBREMENTE\nCOHESIVO) CON CELULAS EN ANILLO DE SELLO\". Se ordenan estudios de inmunohistoquímica: Her-2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLesión tumoral compuesta por células grandes epitelioides pobremente cohesivas y escasas de\napariencia en anillo de sello que son negativas para la expresión de HER-2(Score 0).\nDIAGNÓSTICO\nMucosa gástrica de incisura angular. Lesión. Biopsia. Estudio de inmunohistoquímica\nADENOCARCINOMA DIFUSO CON CELULAS EN ANILLO DE SELLO\nSOBREEXPRESIÓN DE HER-2. NEGATIVO (SCORE 0)\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---\nIHQ250099\nCopia Pag. 2 de 2\nNombre : NIDIA GARCIA CABRERA\nN. peticion : IHQ250099\nN.Identificación : CC. 52216217\nGenero : FEMENINO\nEdad : 47 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 28/01/2025\nFecha Informe : 04/02/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3154,
+      "reduccion_porcentaje": 98.31
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250099",
+      "caso_num": 43,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "NIDIA GARCIA CABRERA",
+      "numero_peticion": "IHQ250099",
+      "identificacion": "52216217",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "47",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "28/01/2025",
+      "fecha_informe": "04/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250099",
+      "N. de identificación": "52216217",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/01/2025",
+      "Fecha Informe": "04/02/2025",
+      "nombres": "NIDIA",
+      "Primer nombre": "NIDIA",
+      "Segundo nombre": "",
+      "apellidos": "GARCIA CABRERA",
+      "Primer apellido": "GARCIA",
+      "Segundo apellido": "CABRERA",
+      "nombre_formal": "GARCIA CABRERA, NIDIA",
+      "diagnostico": "Mucosa gástrica de incisura angular. Lesión. Biopsia. Estudio de inmunohistoquímica ADENOCARCINOMA DIFUSO CON CELULAS EN ANILLO DE SELLO SOBREEXPRESIÓN DE HER-2. NEGATIVO (SCORE 0)",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Lesión tumoral compuesta por células grandes epitelioides pobremente cohesivas y escasas de apariencia en anillo de sello que son negativas para la expresión de HER-2(Score 0).",
+      "descripcion_macroscopica": "Se realizan niveles a bloque extrainstitucional con rotulo \"Q-151173-24\" que corresponde a biopsia de lesión superficial en incisura angularis, con diagnóstico de \"ADENOCARCINOMA DIFUSO (POBREMENTE COHESIVO) CON CELULAS EN ANILLO DE SELLO\". Se ordenan estudios de inmunohistoquímica: Her-2.",
+      "ihq_organo": "MUCOSA GÁSTRICA DE INCISURA ANGULAR",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA DE INCISURA ANGULAR",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "HER2: . NEGATIVO (SCORE 0)",
+      "IHQ_HER2": ". NEGATIVO (SCORE 0)",
+      "extraction_timestamp": "2025-12-19T04:49:05.117874",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250099\nCopia Pag. 1 de 2\nNombre : NIDIA GARCIA CABRERA\nN. peticion : IHQ250099\nN.Identificación : CC. 52216217\nGenero : FEMENINO\nEdad : 47 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 28/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION INCISURA\nANGULARIS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles a bloque extrainstitucional con rotulo \"Q-151173-24\" que corresponde a biopsia de\nlesión superficial en incisura angularis, con diagnóstico de \"ADENOCARCINOMA DIFUSO (POBREMENTE\nCOHESIVO) CON CELULAS EN ANILLO DE SELLO\". Se ordenan estudios de inmunohistoquímica: Her-2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLesión tumoral compuesta por células grandes epitelioides pobremente cohesivas y escasas de\napariencia en anillo de sello que son negativas para la expresión de HER-2(Score 0).\nDIAGNÓSTICO\nMucosa gástrica de incisura angular. Lesión. Biopsia. Estudio de inmunohistoquímica\nADENOCARCINOMA DIFUSO CON CELULAS EN ANILLO DE SELLO\nSOBREEXPRESIÓN DE HER-2. NEGATIVO (SCORE 0)\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---\nIHQ250099\nCopia Pag. 2 de 2\nNombre : NIDIA GARCIA CABRERA\nN. peticion : IHQ250099\nN.Identificación : CC. 52216217\nGenero : FEMENINO\nEdad : 47 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 28/01/2025\nFecha Informe : 04/02/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2",
+      "Descripcion macroscopica": "Se realizan niveles a bloque extrainstitucional con rotulo \"Q-151173-24\" que corresponde a biopsia de lesión superficial en incisura angularis, con diagnóstico de \"ADENOCARCINOMA DIFUSO (POBREMENTE COHESIVO) CON CELULAS EN ANILLO DE SELLO\". Se ordenan estudios de inmunohistoquímica: Her-2.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Lesión tumoral compuesta por células grandes epitelioides pobremente cohesivas y escasas de apariencia en anillo de sello que son negativas para la expresión de HER-2(Score 0).",
+      "Descripcion Diagnostico": "Mucosa gástrica de incisura angular. Lesión. Biopsia. Estudio de inmunohistoquímica ADENOCARCINOMA DIFUSO CON CELULAS EN ANILLO DE SELLO SOBREEXPRESIÓN DE HER-2. NEGATIVO (SCORE 0)",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA DE INCISURA ANGULAR",
+      "Organo": "LESION INCISURA ANGULARIS",
+      "Diagnostico Coloracion": "ADENOCARCINOMA DIFUSO (POBREMENTE COHESIVO) CON CELULAS EN ANILLO DE SELLO",
+      "Diagnostico Principal": "ADENOCARCINOMA DIFUSO (POBREMENTE",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: . NEGATIVO (SCORE 0)",
+      "IHQ_HER2": ". NEGATIVO (SCORE 0)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 122,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 1,
+      "completitud_porcentaje": 22.29
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 122,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa gástrica de incisura angular. Lesión. Biopsia. Estudio de inmunohistoquímica\nADENOCARCINOMA DIFUSO CON CELULAS EN ANILLO DE SELLO\nSOBREEXPRESIÓN DE HER-2. NEGATIVO (SCORE 0)",
+      "valor_corregido": "Mucosa gástrica de incisura angular. Lesión. Biopsia. Estudio de inmunohistoquímica ADENOCARCINOMA DIFUSO CON CELULAS EN ANILLO DE SELLO SOBREEXPRESIÓN DE HER-2. NEGATIVO (SCORE 0)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250099",
+      "timestamp": "2025-12-19T04:49:05.117684"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 46
+  }
+}

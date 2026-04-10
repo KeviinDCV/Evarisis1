@@ -1,0 +1,53 @@
+
+RESUMEN EJECUTIVO v6.5.30/v6.5.31 - IHQ250239
+======================================================================
+
+CAMBIOS IMPLEMENTADOS:
+- v6.5.30: Patrones protocolo CAP para MLH1, MSH2, MSH6, PMS2
+- v6.5.31: Alias 'MLH2' para MSH2 (error ortográfico OCR)
+
+RESULTADOS DEL REPROCESAMIENTO:
+
+1. VALORES EXTRAIDOS EN BD:
+   MLH1: , MLH2, MSH6 Y PMS2)
+   MSH2: POSITIVO (EXPRESIÓN NUCLEAR INTACTA)
+   MSH6: Y PMS2
+   PMS2: )
+
+2. TEXTO ORIGINAL EN OCR:
+Resultado de MLH1: expresión nuclear intacta
+Resultado de MLH2: expresión nuclear intacta
+Resultado de MSH6: expresión nuclear intacta
+Resultado de PMS2: expresión nuclear intacta
+Interpretación de las proteínas MMR: no hay pérdida de la expresión nuclear en las proteínas
+MMR: no hay evidencia de re
+
+3. ANALISIS DEL PROBLEMA:
+
+   PROBLEMA IDENTIFICADO: Encoding UTF-8 vs Patrón Regex
+
+   El patrón implementado:
+   r'(?i)[\+]?\s*Resultado\s+de\s+MLH1[:\s]*(Expresi[óo]n\s+nuclear\s+...)'
+
+   Busca: "Expresi[óo]n" (donde [óo] espera 1 byte)
+   OCR tiene: "expresión" (UTF-8: Ã³ = 2 bytes)
+
+   RESULTADO: El patrón NO hace match
+
+4. ESTADO POR BIOMARCADOR:
+
+   MLH1: FALLO - Extrajo fragmento del diagnóstico
+   MSH2: EXITO PARCIAL - Alias 'MLH2' funcionó, valor correcto
+   MSH6: FALLO - Extrajo fragmento del diagnóstico
+   PMS2: FALLO - Extrajo solo ")"
+
+5. SCORE FINAL: 100% (falso positivo)
+   Razón: El auditor no detecta valores incorrectos en columnas IHQ_*
+
+CONCLUSION:
+El patrón v6.5.30 tiene un bug de encoding. La clase de caracteres
+[óo] no captura la 'ó' UTF-8 del OCR real.
+
+SOLUCION PROPUESTA:
+Reemplazar [óo] por (?:ó|o) para forzar match UTF-8, o usar 
+r'(?i)...Expresi.n...' (wildcard en lugar de clase de caracteres).

@@ -1,0 +1,149 @@
+{
+  "session_id": "IHQ250017_20251203_030946",
+  "numero_peticion": "IHQ250017",
+  "timestamp": "2025-12-03T03:09:46.594279",
+  "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250017\nCopia Pag. 1 de 2\nNombre : FLOR MARIA LERMA PINEDA\nN. peticion : IHQ250017\nN.Identificación : CC. 36810851\nGenero : FEMENINO\nEdad : 53 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/01/2025\nFecha Informe : 14/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION MUCOSA DE RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe\nrealizan\nestudios\nde\ninmunohistoquímica\nal\ncaso\ninstitucional\ncon\nrótulo\nM2410475\ncorrespondiente a \" B: Lesión mucosa de recto\" con diagnósticos de \"ADENOCACRINOMA\nMODERADAMENTE DIFERENCIADO (FRAGMENTOS).\". Previa revisión histológica de las láminas, se\nrealizan niveles histológicos al bloque B\n1 y 2 para inmunomarcación con: MLH1, PMS2, MSH2,\nMSH6, HER2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \n-MLH-1: Expresión nuclear intacta\n-MSH-2: Expresión nuclear intacta\n-MSH-6: Expresión nuclear intacta\n-PMS-2: Expresión nuclear intacta, tinción citoplasmática débil a moderada en el 50% de las\ncélulas. \nControles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. \nInterpretación de la reparación de desajustes (MMR):\nSin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación\ndeficiente de desajustes (baja probabilidad de MSI-H)\nHER2 : negativo ( score 0 ).\nDIAGNÓSTICO\nMucosa de recto. Lesión. Biopsia endoscópica. Estudios de inmunohistoquímica.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250017\nCopia Pag. 2 de 2\nNombre : FLOR MARIA LERMA PINEDA\nN. peticion : IHQ250017\nN.Identificación : CC. 36810851\nGenero : FEMENINO\nEdad : 53 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/01/2025\nFecha Informe : 14/01/2025\nADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS). \nPATRON MICROSATELITAL ESTABLE\nHER 2 NEGATIVO (SCORE 0).\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3558,
+      "reduccion_porcentaje": 97.92
+    },
+    "metadata": {
+      "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250017",
+      "caso_num": 17,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "FLOR MARIA LERMA PINEDA",
+      "numero_peticion": "IHQ250017",
+      "identificacion": "36810851",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "53",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "07/01/2025",
+      "fecha_informe": "14/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250017",
+      "N. de identificación": "36810851",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/01/2025",
+      "Fecha Informe": "14/01/2025",
+      "nombres": "FLOR MARIA",
+      "Primer nombre": "FLOR",
+      "Segundo nombre": "MARIA",
+      "apellidos": "LERMA PINEDA",
+      "Primer apellido": "LERMA",
+      "Segundo apellido": "PINEDA",
+      "nombre_formal": "LERMA PINEDA, FLOR MARIA",
+      "diagnostico": "Mucosa de recto. Lesión. Biopsia endoscópica. Estudios de inmunohistoquímica",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: -MLH-1: Expresión nuclear intacta -MSH-2: Expresión nuclear intacta -MSH-6: Expresión nuclear intacta -PMS-2: Expresión nuclear intacta, tinción citoplasmática débil a moderada en el 50% de las células. Controles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. Interpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) HER2 : negativo ( score 0 ).",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410475 correspondiente a \" B: Lesión mucosa de recto\" con diagnósticos de \"ADENOCACRINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS).\". Previa revisión histológica de las láminas, se realizan niveles histológicos al bloque B 1 y 2 para inmunomarcación con: MLH1, PMS2, MSH2, MSH6, HER2.",
+      "ihq_organo": "MUCOSA DE RECTO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA DE RECTO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "HER2 : negativo ( score 0 )",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_MSH2": ",",
+      "IHQ_MSH6": ", HER2",
+      "IHQ_MLH1": ", PMS2, MSH2,",
+      "IHQ_PMS2": ", MSH2,",
+      "extraction_timestamp": "2025-12-03T03:09:46.718358",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250017\nCopia Pag. 1 de 2\nNombre : FLOR MARIA LERMA PINEDA\nN. peticion : IHQ250017\nN.Identificación : CC. 36810851\nGenero : FEMENINO\nEdad : 53 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/01/2025\nFecha Informe : 14/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION MUCOSA DE RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe\nrealizan\nestudios\nde\ninmunohistoquímica\nal\ncaso\ninstitucional\ncon\nrótulo\nM2410475\ncorrespondiente a \" B: Lesión mucosa de recto\" con diagnósticos de \"ADENOCACRINOMA\nMODERADAMENTE DIFERENCIADO (FRAGMENTOS).\". Previa revisión histológica de las láminas, se\nrealizan niveles histológicos al bloque B\n1 y 2 para inmunomarcación con: MLH1, PMS2, MSH2,\nMSH6, HER2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \n-MLH-1: Expresión nuclear intacta\n-MSH-2: Expresión nuclear intacta\n-MSH-6: Expresión nuclear intacta\n-PMS-2: Expresión nuclear intacta, tinción citoplasmática débil a moderada en el 50% de las\ncélulas. \nControles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. \nInterpretación de la reparación de desajustes (MMR):\nSin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación\ndeficiente de desajustes (baja probabilidad de MSI-H)\nHER2 : negativo ( score 0 ).\nDIAGNÓSTICO\nMucosa de recto. Lesión. Biopsia endoscópica. Estudios de inmunohistoquímica.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250017\nCopia Pag. 2 de 2\nNombre : FLOR MARIA LERMA PINEDA\nN. peticion : IHQ250017\nN.Identificación : CC. 36810851\nGenero : FEMENINO\nEdad : 53 años 15 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/01/2025\nFecha Informe : 14/01/2025\nADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS). \nPATRON MICROSATELITAL ESTABLE\nHER 2 NEGATIVO (SCORE 0).\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MLH1, MSH2, MSH6, PMS2",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410475 correspondiente a \" B: Lesión mucosa de recto\" con diagnósticos de \"ADENOCACRINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS).\". Previa revisión histológica de las láminas, se realizan niveles histológicos al bloque B 1 y 2 para inmunomarcación con: MLH1, PMS2, MSH2, MSH6, HER2.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: -MLH-1: Expresión nuclear intacta -MSH-2: Expresión nuclear intacta -MSH-6: Expresión nuclear intacta -PMS-2: Expresión nuclear intacta, tinción citoplasmática débil a moderada en el 50% de las células. Controles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. Interpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) HER2 : negativo ( score 0 ).",
+      "Descripcion Diagnostico": "Mucosa de recto. Lesión. Biopsia endoscópica. Estudios de inmunohistoquímica",
+      "IHQ_ORGANO": "MUCOSA DE RECTO",
+      "Organo": "LESION MUCOSA DE RECTO",
+      "Diagnostico Coloracion": "ADENOCACRINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS)",
+      "Diagnostico Principal": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 : negativo ( score 0 )",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_MLH1": ", PMS2, MSH2,",
+      "IHQ_MSH2": ",",
+      "IHQ_MSH6": ", HER2",
+      "IHQ_PMS2": ", MSH2,"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 154,
+      "campos_vacios": 114,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 25.97
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 114,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se\nrealizan\nestudios\nde\ninmunohistoquímica\nal\ncaso\ninstitucional\ncon\nrótulo\nM2410475\ncorrespondiente a \" B: Lesión mucosa de recto\" con diagnósticos de \"ADENOCACRINOMA\nMODERADAMENTE DIFERENCIADO (FRAGMENTOS).\". Previa revisión histológica de las láminas, se\nrealizan niveles histológicos al bloque B\n1 y 2 para inmunomarcación con: MLH1, PMS2, MSH2,\nMSH6, HER2.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410475 correspondiente a \" B: Lesión mucosa de recto\" con diagnósticos de \"ADENOCACRINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS).\". Previa revisión histológica de las láminas, se realizan niveles histológicos al bloque B 1 y 2 para inmunomarcación con: MLH1, PMS2, MSH2, MSH6, HER2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250017",
+      "timestamp": "2025-12-03T03:09:46.718151"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \n-MLH-1: Expresión nuclear intacta\n-MSH-2: Expresión nuclear intacta\n-MSH-6: Expresión nuclear intacta\n-PMS-2: Expresión nuclear intacta, tinción citoplasmática débil a moderada en el 50% de las\ncélulas. \nControles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. \nInterpretación de la reparación de desajustes (MMR):\nSin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación\ndeficiente de desajustes (baja probabilidad de MSI-H)\nHER2 : negativo ( score 0 ).",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: -MLH-1: Expresión nuclear intacta -MSH-2: Expresión nuclear intacta -MSH-6: Expresión nuclear intacta -PMS-2: Expresión nuclear intacta, tinción citoplasmática débil a moderada en el 50% de las células. Controles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. Interpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) HER2 : negativo ( score 0 ).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250017",
+      "timestamp": "2025-12-03T03:09:46.718157"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 51
+  }
+}

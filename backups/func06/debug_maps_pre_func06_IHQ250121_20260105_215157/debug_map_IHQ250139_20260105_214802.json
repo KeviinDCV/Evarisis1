@@ -1,0 +1,167 @@
+{
+  "session_id": "IHQ250139_20260105_214802",
+  "numero_peticion": "IHQ250139",
+  "timestamp": "2026-01-05T21:48:02.053576",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250139\nCopia Pag. 1 de 2\nNombre : DIRSON ARMANDO GONZALEZ\nESCALONA\nN. peticion : IHQ250139\nN.Identificación : PPT. 8092208\nGenero : MASCULINO\nEdad : 16 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS HERNAN ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 07/02/2025\nFecha Informe : 24/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500977”\ncorrespondiente\na\n\"\nMédula\nósea.”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nMedula ósea con celularidad\nglobal del 90% en la que no hay tinción para mieloperoxidasa, las\ncélulas eritroides son positivas para Glicoforina . Los linfocitos B son positivos para CD 20 y La\ncelularidad infiltrante en la medula ósea\nes\npositiva y difusa para\nCD 79a y CD 10. Tinción\npositiva focal para PAX 5, BCL2 y TDT. CD 23 y CD 99 negativo. Células inmaduras son positivas\npara CD34 y CD117 menores al 2%\ndiagnóstico\nde\n“\nPROLIFERACIÓN\nHEMATOLINFOIDE QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la\nhistología se realizan niveles histológicos para tinción con los marcadores CD 20, CD79 A ,PAX 5,\nBCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3, CD 5, Ki 67\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquimica:\nLEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS\nCOMENTARIOS\nEl diagnostico definitivo requiere estudios moleculares.\nCaso comentado con Dra. Isabella Caicedo (Hematopatologa)\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---\nIHQ250139\nCopia Pag. 2 de 2\nNombre : DIRSON ARMANDO GONZALEZ\nESCALONA\nN. peticion : IHQ250139\nN.Identificación : PPT. 8092208\nGenero : MASCULINO\nEdad : 16 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS HERNAN ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 07/02/2025\nFecha Informe : 24/02/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 57 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3503,
+      "reduccion_porcentaje": 97.98
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250139",
+      "caso_num": 30,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_CD79A": "POSITIVO (difusa y focal)",
+      "IHQ_PAX5": "POSITIVO (difusa y focal)",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD10": "POSITIVO (difusa)",
+      "nombre_completo": "DIRSON ARMANDO GONZALEZ ESCALONA",
+      "numero_peticion": "IHQ250139",
+      "identificacion": "8092208",
+      "tipo_documento": "PPT",
+      "Genero": "MASCULINO",
+      "Edad": "16",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LUIS HERNAN ROMERO",
+      "servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "fecha_ingreso": "07/02/2025",
+      "fecha_informe": "24/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250139",
+      "N. de identificación": "8092208",
+      "Tipo de documento": "PPT",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "Médico tratante": "LUIS HERNAN ROMERO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/02/2025",
+      "Fecha Informe": "24/02/2025",
+      "nombres": "DIRSON ARMANDO",
+      "Primer nombre": "DIRSON",
+      "Segundo nombre": "ARMANDO",
+      "apellidos": "GONZALEZ ESCALONA",
+      "Primer apellido": "GONZALEZ",
+      "Segundo apellido": "ESCALONA",
+      "nombre_formal": "GONZALEZ ESCALONA, DIRSON ARMANDO",
+      "diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: LEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Medula ósea con celularidad global del 90% en la que no hay tinción para mieloperoxidasa, las células eritroides son positivas para Glicoforina . Los linfocitos B son positivos para CD 20 y La celularidad infiltrante en la medula ósea es positiva y difusa para CD 79 a y CD 10. Tinción positiva focal para PAX 5, BCL2 y TDT. CD 23 y CD 99 negativo. Células inmaduras son positivas para CD34 y CD117 menores al 2% diagnóstico de “ PROLIFERACIÓN HEMATOLINFOIDE QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores CD 20, CD79 A ,PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3, CD 5, KI-67",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500977” correspondiente a \" Médula ósea.” con",
+      "ihq_organo": "MEDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "El diagnostico definitivo requiere estudios moleculares. Caso comentado con Dra. Isabella Caicedo (Hematopatologa) NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 56 --- IHQ250139 Copia Pag. 2 de 2 Nombre : DIRSON ARMANDO GONZALEZ ESCALONA N. peticion : IHQ250139 N.Identificación : PPT. 8092208 Genero : MASCULINO Edad : 16 años 8 dias EPS : NUEVA EPS Médico tratante : LUIS HERNAN ROMERO Servicio : HEMATO ONCOLOGIA HOSP PEDIAT Fecha Ingreso : 07/02/2025 Fecha Informe : 24/02/2025",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_TDT": "POSITIVO",
+      "extraction_timestamp": "2026-01-05T21:48:02.555339",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250139\nCopia Pag. 1 de 2\nNombre : DIRSON ARMANDO GONZALEZ\nESCALONA\nN. peticion : IHQ250139\nN.Identificación : PPT. 8092208\nGenero : MASCULINO\nEdad : 16 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS HERNAN ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 07/02/2025\nFecha Informe : 24/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500977”\ncorrespondiente\na\n\"\nMédula\nósea.”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nMedula ósea con celularidad\nglobal del 90% en la que no hay tinción para mieloperoxidasa, las\ncélulas eritroides son positivas para Glicoforina . Los linfocitos B son positivos para CD 20 y La\ncelularidad infiltrante en la medula ósea\nes\npositiva y difusa para\nCD 79a y CD 10. Tinción\npositiva focal para PAX 5, BCL2 y TDT. CD 23 y CD 99 negativo. Células inmaduras son positivas\npara CD34 y CD117 menores al 2%\ndiagnóstico\nde\n“\nPROLIFERACIÓN\nHEMATOLINFOIDE QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la\nhistología se realizan niveles histológicos para tinción con los marcadores CD 20, CD79 A ,PAX 5,\nBCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3, CD 5, Ki 67\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquimica:\nLEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS\nCOMENTARIOS\nEl diagnostico definitivo requiere estudios moleculares.\nCaso comentado con Dra. Isabella Caicedo (Hematopatologa)\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---\nIHQ250139\nCopia Pag. 2 de 2\nNombre : DIRSON ARMANDO GONZALEZ\nESCALONA\nN. peticion : IHQ250139\nN.Identificación : PPT. 8092208\nGenero : MASCULINO\nEdad : 16 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS HERNAN ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 07/02/2025\nFecha Informe : 24/02/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 57 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD10, CD117, CD20, CD34, CD79A, GLICOFORINA, PAX5, TDT",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500977” correspondiente a \" Médula ósea.” con",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Medula ósea con celularidad global del 90% en la que no hay tinción para mieloperoxidasa, las células eritroides son positivas para Glicoforina . Los linfocitos B son positivos para CD 20 y La celularidad infiltrante en la medula ósea es positiva y difusa para CD 79a y CD 10. Tinción positiva focal para PAX 5, BCL2 y TDT. CD 23 y CD 99 negativo. Células inmaduras son positivas para CD34 y CD117 menores al 2% diagnóstico de “ PROLIFERACIÓN HEMATOLINFOIDE QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores CD 20, CD79 A ,PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3, CD 5, Ki 67",
+      "Descripcion Diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: LEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Organo": "BX MEDULA OSEA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN HEMATOLINFOIDE QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "LEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD10": "POSITIVO (difusa)",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD79A": "POSITIVO (difusa y focal)",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO (difusa y focal)",
+      "IHQ_TDT": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 124,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 8,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 124,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula ósea. Biopsia. Estudio de inmunohistoquimica:\nLEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS",
+      "valor_corregido": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: LEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250139",
+      "timestamp": "2026-01-05T21:48:02.555069"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Medula ósea con celularidad global del 90% en la que no hay tinción para mieloperoxidasa, las células eritroides son positivas para Glicoforina . Los linfocitos B son positivos para CD 20 y La celularidad infiltrante en la medula ósea es positiva y difusa para CD 79a y CD 10. Tinción positiva focal para PAX 5, BCL2 y TDT. CD 23 y CD 99 negativo. Células inmaduras son positivas para CD34 y CD117 menores al 2% diagnóstico de “ PROLIFERACIÓN HEMATOLINFOIDE QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores CD 20, CD79 A ,PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3, CD 5, Ki 67",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Medula ósea con celularidad global del 90% en la que no hay tinción para mieloperoxidasa, las células eritroides son positivas para Glicoforina . Los linfocitos B son positivos para CD 20 y La celularidad infiltrante en la medula ósea es positiva y difusa para CD 79 a y CD 10. Tinción positiva focal para PAX 5, BCL2 y TDT. CD 23 y CD 99 negativo. Células inmaduras son positivas para CD34 y CD117 menores al 2% diagnóstico de “ PROLIFERACIÓN HEMATOLINFOIDE QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores CD 20, CD79 A ,PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3, CD 5, KI-67",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250139",
+      "timestamp": "2026-01-05T21:48:02.555075"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El diagnostico definitivo requiere estudios moleculares.\nCaso comentado con Dra. Isabella Caicedo (Hematopatologa)\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---\nIHQ250139\nCopia Pag. 2 de 2\nNombre : DIRSON ARMANDO GONZALEZ\nESCALONA\nN. peticion : IHQ250139\nN.Identificación : PPT. 8092208\nGenero : MASCULINO\nEdad : 16 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS HERNAN ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 07/02/2025\nFecha Informe : 24/02/2025",
+      "valor_corregido": "El diagnostico definitivo requiere estudios moleculares. Caso comentado con Dra. Isabella Caicedo (Hematopatologa) NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 56 --- IHQ250139 Copia Pag. 2 de 2 Nombre : DIRSON ARMANDO GONZALEZ ESCALONA N. peticion : IHQ250139 N.Identificación : PPT. 8092208 Genero : MASCULINO Edad : 16 años 8 dias EPS : NUEVA EPS Médico tratante : LUIS HERNAN ROMERO Servicio : HEMATO ONCOLOGIA HOSP PEDIAT Fecha Ingreso : 07/02/2025 Fecha Informe : 24/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250139",
+      "timestamp": "2026-01-05T21:48:02.555077"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 55
+  }
+}

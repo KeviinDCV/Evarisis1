@@ -1,0 +1,163 @@
+{
+  "session_id": "IHQ251005_20251111_232859",
+  "numero_peticion": "IHQ251005",
+  "timestamp": "2025-11-11T23:28:59.029055",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251005\nCopia Pag. 1 de 2\nNombre : YERALDIN MARIN CASTILLO\nN. peticion : IHQ251005\nN.Identificación : TI. 1112153680\nGenero : FEMENINO\nEdad : 16 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : PEDIATRIA ANHELO DE VIDA\nFecha Ingreso : 11/09/2025\nFecha Informe : 23/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGLANDULA LAGRIMAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizaar estudios de inmunohistoquímica en el caso M2510836.\nPrevia revisión de la histología, se solicitan tinciones con los anticuerpos para CD3, CD20, CD38,\nIgG, IgG4, BCL6, BCL2 y Ki-67 en todos los bloques (A, B y C).\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema\nROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nEn\nlos\nfragmentos\nde\nglándula\nlagrimal\ny\ngrasa\nperiorbitaria\nse\nobserva\nun\ninfiltrado\nlinfoplasmocitario denso, de distribución intersticial, con presencia de folículos linfoides reactivos\ny áreas de fibrosis leve focal. No se identifican atipias citológicas ni lesiones linfoides neoplásicas.\nInmunohistoquímica\nCD20 y CD3: distribución en patrón reactivo, con preservación de la arquitectura y relación B/T\npoliclonal.\nBCL2 y BCL6: expresión en patrón reactivo folicular.\nCD38: células plasmáticas policlonales.\nIgG: células plasmáticas positivas.\nIgG4: escasas células positivas, sin incremento significativo. La relación IgG4/IgG está por debajo\nde los puntos de corte diagnósticos (no sugestivo de enfermedad relacionada con IgG4).\nDIAGNÓSTICO\nA,B y C :Glándula lagrimal y tejido periorbitario. Biopsia. Estudios de inmunohistoquímica.\nINFILTRADO INFLAMATORIO LINFOPLASMOCITARIO DE CARACTERÍSTICAS\nREACTIVAS.\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---\nIHQ251005\nCopia Pag. 2 de 2\nNombre : YERALDIN MARIN CASTILLO\nN. peticion : IHQ251005\nN.Identificación : TI. 1112153680\nGenero : FEMENINO\nEdad : 16 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : PEDIATRIA ANHELO DE VIDA\nFecha Ingreso : 11/09/2025\nFecha Informe : 23/09/2025\nEl hallazgo es compatible con un proceso inflamatorio crónico reactivo. Se sugiere correlacionar\ncon\nclínica,\nserología\nde\nIgG4\ny\nestudios\nradiológicos\npara\ndescartar\notras\ncausas\nde\ndacrioadenitis (autoinmunes, infecciosas, reactivas).\nValorado en conjunto con la Dra. María Ximena Varela, patología.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3876,
+      "reduccion_porcentaje": 98.0
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251005",
+      "caso_num": 25,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "YERALDIN MARIN CASTILLO",
+      "numero_peticion": "IHQ251005",
+      "identificacion": "1112153680",
+      "tipo_documento": "TI",
+      "Genero": "FEMENINO",
+      "Edad": "16",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "CATHERINE GONZALIAS DUQUE",
+      "servicio": "PEDIATRIA ANHELO DE VIDA",
+      "fecha_ingreso": "11/09/2025",
+      "fecha_informe": "23/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251005",
+      "N. de identificación": "1112153680",
+      "Tipo de documento": "TI",
+      "EPS": "NUEVA EPS",
+      "Servicio": "PEDIATRIA ANHELO DE VIDA",
+      "Médico tratante": "CATHERINE GONZALIAS DUQUE",
+      "Fecha de ingreso (2. Fecha de la muestra)": "11/09/2025",
+      "Fecha Informe": "23/09/2025",
+      "nombres": "YERALDIN",
+      "Primer nombre": "YERALDIN",
+      "Segundo nombre": "",
+      "apellidos": "MARIN CASTILLO",
+      "Primer apellido": "MARIN",
+      "Segundo apellido": "CASTILLO",
+      "nombre_formal": "MARIN CASTILLO, YERALDIN",
+      "diagnostico": "A,B y C :Glándula lagrimal y tejido periorbitario. Biopsia. Estudios de inmunohistoquímica. INFILTRADO INFLAMATORIO LINFOPLASMOCITARIO DE CARACTERÍSTICAS REACTIVAS.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: En los fragmentos de glándula lagrimal y grasa periorbitaria se observa un infiltrado linfoplasmocitario denso, de distribución intersticial, con presencia de folículos linfoides reactivos y áreas de fibrosis leve focal. No se identifican atipias citológicas ni lesiones linfoides neoplásicas. Inmunohistoquímica CD20 y CD3: distribución en patrón reactivo, con preservación de la arquitectura y relación B/T policlonal. BCL2 y BCL6: expresión en patrón reactivo folicular. CD38: células plasmáticas policlonales. IgG: células plasmáticas positivas. IgG4: escasas células positivas, sin incremento significativo. La relación IgG4/IgG está por debajo de los puntos de corte diagnósticos (no sugestivo de enfermedad relacionada con IgG4).",
+      "descripcion_macroscopica": "Se recibe orden para realizaar estudios de inmunohistoquímica en el caso M2510836. Previa revisión de la histología, se solicitan tinciones con los anticuerpos para CD3, CD20, CD38, IgG, IgG4, BCL6, BCL2 y KI-67 en todos los bloques (A, B y C).",
+      "ihq_organo": "GLÁNDULA LAGRIMAL Y TEJIDO PERIORBITARIO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD20, CD38, IGG, IGG4, BCL6, BCL2, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 53 --- IHQ251005 Copia Pag. 2 de 2 Nombre : YERALDIN MARIN CASTILLO N. peticion : IHQ251005 N.Identificación : TI. 1112153680 Genero : FEMENINO Edad : 16 años 6 dias EPS : NUEVA EPS Médico tratante : CATHERINE GONZALIAS DUQUE Servicio : PEDIATRIA ANHELO DE VIDA Fecha Ingreso : 11/09/2025 Fecha Informe : 23/09/2025 El hallazgo es compatible con un proceso inflamatorio crónico reactivo. Se sugiere correlacionar con clínica, serología de IgG4 y estudios radiológicos para descartar otras causas de dacrioadenitis (autoinmunes, infecciosas, reactivas). Valorado en conjunto con la Dra. María Ximena Varela, patología.",
+      "IHQ_ORGANO": "GLÁNDULA LAGRIMAL Y TEJIDO PERIORBITARIO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_IGG": "POSITIVO",
+      "IHQ_IGG4": "POSITIVO",
+      "extraction_timestamp": "2025-11-11T23:28:59.209300",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251005\nCopia Pag. 1 de 2\nNombre : YERALDIN MARIN CASTILLO\nN. peticion : IHQ251005\nN.Identificación : TI. 1112153680\nGenero : FEMENINO\nEdad : 16 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : PEDIATRIA ANHELO DE VIDA\nFecha Ingreso : 11/09/2025\nFecha Informe : 23/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGLANDULA LAGRIMAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizaar estudios de inmunohistoquímica en el caso M2510836.\nPrevia revisión de la histología, se solicitan tinciones con los anticuerpos para CD3, CD20, CD38,\nIgG, IgG4, BCL6, BCL2 y Ki-67 en todos los bloques (A, B y C).\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema\nROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nEn\nlos\nfragmentos\nde\nglándula\nlagrimal\ny\ngrasa\nperiorbitaria\nse\nobserva\nun\ninfiltrado\nlinfoplasmocitario denso, de distribución intersticial, con presencia de folículos linfoides reactivos\ny áreas de fibrosis leve focal. No se identifican atipias citológicas ni lesiones linfoides neoplásicas.\nInmunohistoquímica\nCD20 y CD3: distribución en patrón reactivo, con preservación de la arquitectura y relación B/T\npoliclonal.\nBCL2 y BCL6: expresión en patrón reactivo folicular.\nCD38: células plasmáticas policlonales.\nIgG: células plasmáticas positivas.\nIgG4: escasas células positivas, sin incremento significativo. La relación IgG4/IgG está por debajo\nde los puntos de corte diagnósticos (no sugestivo de enfermedad relacionada con IgG4).\nDIAGNÓSTICO\nA,B y C :Glándula lagrimal y tejido periorbitario. Biopsia. Estudios de inmunohistoquímica.\nINFILTRADO INFLAMATORIO LINFOPLASMOCITARIO DE CARACTERÍSTICAS\nREACTIVAS.\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---\nIHQ251005\nCopia Pag. 2 de 2\nNombre : YERALDIN MARIN CASTILLO\nN. peticion : IHQ251005\nN.Identificación : TI. 1112153680\nGenero : FEMENINO\nEdad : 16 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : PEDIATRIA ANHELO DE VIDA\nFecha Ingreso : 11/09/2025\nFecha Informe : 23/09/2025\nEl hallazgo es compatible con un proceso inflamatorio crónico reactivo. Se sugiere correlacionar\ncon\nclínica,\nserología\nde\nIgG4\ny\nestudios\nradiológicos\npara\ndescartar\notras\ncausas\nde\ndacrioadenitis (autoinmunes, infecciosas, reactivas).\nValorado en conjunto con la Dra. María Ximena Varela, patología.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD20, CD38, IGG, IGG4, BCL6, BCL2, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realizaar estudios de inmunohistoquímica en el caso M2510836. Previa revisión de la histología, se solicitan tinciones con los anticuerpos para CD3, CD20, CD38, IgG, IgG4, BCL6, BCL2 y Ki-67 en todos los bloques (A, B y C).",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: En los fragmentos de glándula lagrimal y grasa periorbitaria se observa un infiltrado linfoplasmocitario denso, de distribución intersticial, con presencia de folículos linfoides reactivos y áreas de fibrosis leve focal. No se identifican atipias citológicas ni lesiones linfoides neoplásicas. Inmunohistoquímica CD20 y CD3: distribución en patrón reactivo, con preservación de la arquitectura y relación B/T policlonal. BCL2 y BCL6: expresión en patrón reactivo folicular. CD38: células plasmáticas policlonales. IgG: células plasmáticas positivas. IgG4: escasas células positivas, sin incremento significativo. La relación IgG4/IgG está por debajo de los puntos de corte diagnósticos (no sugestivo de enfermedad relacionada con IgG4).",
+      "Descripcion Diagnostico": "A,B y C :Glándula lagrimal y tejido periorbitario. Biopsia. Estudios de inmunohistoquímica. INFILTRADO INFLAMATORIO LINFOPLASMOCITARIO DE CARACTERÍSTICAS REACTIVAS.",
+      "IHQ_ORGANO": "GLÁNDULA LAGRIMAL Y TEJIDO PERIORBITARIO",
+      "Organo": "GLANDULA LAGRIMAL",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "INFILTRADO INFLAMATORIO LINFOPLASMOCITARIO DE CARACTERÍSTICAS REACTIVAS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_IGG": "POSITIVO",
+      "IHQ_IGG4": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_KI-67": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 106,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 8,
+      "completitud_porcentaje": 28.38
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 106,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A,B y C :Glándula lagrimal y tejido periorbitario. Biopsia. Estudios de inmunohistoquímica.\nINFILTRADO INFLAMATORIO LINFOPLASMOCITARIO DE CARACTERÍSTICAS\nREACTIVAS.",
+      "valor_corregido": "A,B y C :Glándula lagrimal y tejido periorbitario. Biopsia. Estudios de inmunohistoquímica. INFILTRADO INFLAMATORIO LINFOPLASMOCITARIO DE CARACTERÍSTICAS REACTIVAS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251005",
+      "timestamp": "2025-11-11T23:28:59.208928"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realizaar estudios de inmunohistoquímica en el caso M2510836.\nPrevia revisión de la histología, se solicitan tinciones con los anticuerpos para CD3, CD20, CD38,\nIgG, IgG4, BCL6, BCL2 y Ki-67 en todos los bloques (A, B y C).",
+      "valor_corregido": "Se recibe orden para realizaar estudios de inmunohistoquímica en el caso M2510836. Previa revisión de la histología, se solicitan tinciones con los anticuerpos para CD3, CD20, CD38, IgG, IgG4, BCL6, BCL2 y KI-67 en todos los bloques (A, B y C).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251005",
+      "timestamp": "2025-11-11T23:28:59.208938"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---\nIHQ251005\nCopia Pag. 2 de 2\nNombre : YERALDIN MARIN CASTILLO\nN. peticion : IHQ251005\nN.Identificación : TI. 1112153680\nGenero : FEMENINO\nEdad : 16 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : PEDIATRIA ANHELO DE VIDA\nFecha Ingreso : 11/09/2025\nFecha Informe : 23/09/2025\nEl hallazgo es compatible con un proceso inflamatorio crónico reactivo. Se sugiere correlacionar\ncon\nclínica,\nserología\nde\nIgG4\ny\nestudios\nradiológicos\npara\ndescartar\notras\ncausas\nde\ndacrioadenitis (autoinmunes, infecciosas, reactivas).\nValorado en conjunto con la Dra. María Ximena Varela, patología.",
+      "valor_corregido": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 53 --- IHQ251005 Copia Pag. 2 de 2 Nombre : YERALDIN MARIN CASTILLO N. peticion : IHQ251005 N.Identificación : TI. 1112153680 Genero : FEMENINO Edad : 16 años 6 dias EPS : NUEVA EPS Médico tratante : CATHERINE GONZALIAS DUQUE Servicio : PEDIATRIA ANHELO DE VIDA Fecha Ingreso : 11/09/2025 Fecha Informe : 23/09/2025 El hallazgo es compatible con un proceso inflamatorio crónico reactivo. Se sugiere correlacionar con clínica, serología de IgG4 y estudios radiológicos para descartar otras causas de dacrioadenitis (autoinmunes, infecciosas, reactivas). Valorado en conjunto con la Dra. María Ximena Varela, patología.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251005",
+      "timestamp": "2025-11-11T23:28:59.208941"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 54
+  }
+}

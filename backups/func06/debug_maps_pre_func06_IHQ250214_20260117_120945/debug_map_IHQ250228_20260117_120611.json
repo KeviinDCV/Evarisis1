@@ -1,0 +1,184 @@
+{
+  "session_id": "IHQ250228_20260117_120611",
+  "numero_peticion": "IHQ250228",
+  "timestamp": "2026-01-17T12:06:11.176088",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250228\nCopia Pag. 1 de 2\nNombre : BLANCA ELIA ALZATE DUQUE\nN. peticion : IHQ250228\nN.Identificación : CC. 31201160\nGenero : FEMENINO\nEdad : 61 años 21 dias\nEPS : COMFENALCO VALLE\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 03/03/2025\nFecha Informe : 14/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótuloM2501555 que\ncorresponde a \"biopsia de hígado\" con diagnóstico de \"CARCINOMA MODERADAMENTE\nDIFERENCIADO\" del 14/02/2025. Previa valoración de la coloración básica, se realizan cortes\nhistológicos al bloque para los siguientes marcadores: CK7, CK20, ARGINASA, GLIPICAN,\nHEPATOCITO, CDX2, CA19-9, CK19, TTF-1, GATA-3, CEA, AFP, EMA, CEA, GATA 3, TTF 1. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAdecuada tinción de los marcadores de inmunohistoquímica en los controles externos. \nRESULTADO: \nParénquima hepático con una lesión carcinomatosa que se organiza en glándulas y trabéculas\ncompuesta por células tumorales grandes que expresan positividad fuerte y difusa para CK7 y\nCK19 con una marcación focal para EMA. \nSon negativas para CK20, CDX2, Ca 19-9, ARGINASA, HEPATOCITO, GLIPICAN, GATA 3, TTF-1,\nCEA. \nDIAGNÓSTICO\nHígado. lesión. Biopsia. Estudio de inmunohistoquímica. \nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN COMPROMISO POR\nCARCINOMA DE PROBABLE ORIGEN BILIAR. \nVER COMENTARIO.\nCOMENTARIOS\nLa correlación de los datos de historia clínica, hallazgos histológicos y de inmunohistoquímica\nsugieren un compromiso por carcinoma de origen gastro biliar (CK7+, CK19+), sin embargo\ncuenta con un reporte endoscópico gástrico e histológico (08-01-2025 de Idime) negativo para\nmalignidad, lo cual sugiere neoplasia maligna de origen en vía biliar. El reporte de este estudio se\ndebe analizar con estudios imagenológicos adicionales para esclarecer si el origen es intra o\nextrahepático, a criterio del médico tratante. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---\nIHQ250228\nCopia Pag. 2 de 2\nNombre : BLANCA ELIA ALZATE DUQUE\nN. peticion : IHQ250228\nN.Identificación : CC. 31201160\nGenero : FEMENINO\nEdad : 61 años 21 dias\nEPS : COMFENALCO VALLE\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 03/03/2025\nFecha Informe : 14/03/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3944,
+      "reduccion_porcentaje": 97.8
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250228",
+      "caso_num": 17,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "nombre_completo": "BLANCA ELIA ALZATE DUQUE",
+      "numero_peticion": "IHQ250228",
+      "identificacion": "31201160",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "61",
+      "eps": "COMFENALCO VALLE",
+      "medico_tratante": "NATHALY PRADA",
+      "servicio": "RADIOLOGIA",
+      "fecha_ingreso": "03/03/2025",
+      "fecha_informe": "14/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250228",
+      "N. de identificación": "31201160",
+      "Tipo de documento": "CC",
+      "EPS": "COMFENALCO VALLE",
+      "Servicio": "RADIOLOGIA",
+      "Médico tratante": "NATHALY PRADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/03/2025",
+      "Fecha Informe": "14/03/2025",
+      "nombres": "BLANCA ELIA",
+      "Primer nombre": "BLANCA",
+      "Segundo nombre": "ELIA",
+      "apellidos": "ALZATE DUQUE",
+      "Primer apellido": "ALZATE",
+      "Segundo apellido": "DUQUE",
+      "nombre_formal": "ALZATE DUQUE, BLANCA ELIA",
+      "diagnostico": "Hígado. lesión. Biopsia. Estudio de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN COMPROMISO POR CARCINOMA DE PROBABLE ORIGEN BILIAR. VER COMENTARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Adecuada tinción de los marcadores de inmunohistoquímica en los controles externos. RESULTADO: Parénquima hepático con una lesión carcinomatosa que se organiza en glándulas y trabéculas compuesta por células tumorales grandes que expresan positividad fuerte y difusa para CK7 y CK19 con una marcación focal para EMA. Son negativas para CK20, CDX2, Ca 19-9, ARGINASA, HEPATOCITO, GLIPICAN, GATA 3, TTF1, CEA.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótuloM2501555 que corresponde a \"biopsia de hígado\" con diagnóstico de \"CARCINOMA MODERADAMENTE DIFERENCIADO\" del 14/02/2025. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: CK7, CK20, ARGINASA, GLIPICAN, HEPATOCITO, CDX2, CA19-9, CK19, TTF1, GATA-3, CEA, AFP, EMA, CEA, GATA 3, TTF1.",
+      "ihq_organo": "HÍGADO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, ARGINASA, GLIPICAN, HEPATOCITO, CDX2, CA19-9, CK19, TTF-1, GATA 3, CEA, AFP, EMA, GATA3",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "La correlación de los datos de historia clínica, hallazgos histológicos y de inmunohistoquímica sugieren un compromiso por carcinoma de origen gastro biliar (CK7+, CK19+), sin embargo cuenta con un reporte endoscópico gástrico e histológico (08-01-2025 de Idime) negativo para malignidad, lo cual sugiere neoplasia maligna de origen en vía biliar. El reporte de este estudio se debe analizar con estudios imagenológicos adicionales para esclarecer si el origen es intra o extrahepático, a criterio del médico tratante.",
+      "IHQ_ORGANO": "HÍGADO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, ARGINASA, GLIPICAN, HEPATOCITO, CDX2, CA19-9, CK19, TTF-1, GATA 3, CEA, AFP, EMA, GATA3",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_ARGINASA": "NEGATIVO",
+      "IHQ_HEPATOCITO": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "extraction_timestamp": "2026-01-17T12:06:11.855937",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250228\nCopia Pag. 1 de 2\nNombre : BLANCA ELIA ALZATE DUQUE\nN. peticion : IHQ250228\nN.Identificación : CC. 31201160\nGenero : FEMENINO\nEdad : 61 años 21 dias\nEPS : COMFENALCO VALLE\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 03/03/2025\nFecha Informe : 14/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótuloM2501555 que\ncorresponde a \"biopsia de hígado\" con diagnóstico de \"CARCINOMA MODERADAMENTE\nDIFERENCIADO\" del 14/02/2025. Previa valoración de la coloración básica, se realizan cortes\nhistológicos al bloque para los siguientes marcadores: CK7, CK20, ARGINASA, GLIPICAN,\nHEPATOCITO, CDX2, CA19-9, CK19, TTF-1, GATA-3, CEA, AFP, EMA, CEA, GATA 3, TTF 1. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAdecuada tinción de los marcadores de inmunohistoquímica en los controles externos. \nRESULTADO: \nParénquima hepático con una lesión carcinomatosa que se organiza en glándulas y trabéculas\ncompuesta por células tumorales grandes que expresan positividad fuerte y difusa para CK7 y\nCK19 con una marcación focal para EMA. \nSon negativas para CK20, CDX2, Ca 19-9, ARGINASA, HEPATOCITO, GLIPICAN, GATA 3, TTF-1,\nCEA. \nDIAGNÓSTICO\nHígado. lesión. Biopsia. Estudio de inmunohistoquímica. \nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN COMPROMISO POR\nCARCINOMA DE PROBABLE ORIGEN BILIAR. \nVER COMENTARIO.\nCOMENTARIOS\nLa correlación de los datos de historia clínica, hallazgos histológicos y de inmunohistoquímica\nsugieren un compromiso por carcinoma de origen gastro biliar (CK7+, CK19+), sin embargo\ncuenta con un reporte endoscópico gástrico e histológico (08-01-2025 de Idime) negativo para\nmalignidad, lo cual sugiere neoplasia maligna de origen en vía biliar. El reporte de este estudio se\ndebe analizar con estudios imagenológicos adicionales para esclarecer si el origen es intra o\nextrahepático, a criterio del médico tratante. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---\nIHQ250228\nCopia Pag. 2 de 2\nNombre : BLANCA ELIA ALZATE DUQUE\nN. peticion : IHQ250228\nN.Identificación : CC. 31201160\nGenero : FEMENINO\nEdad : 61 años 21 dias\nEPS : COMFENALCO VALLE\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 03/03/2025\nFecha Informe : 14/03/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, ARGINASA, GLIPICAN, HEPATOCITO, CDX2, CA19-9, CK19, TTF-1, GATA 3, CEA, AFP, EMA, GATA3",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótuloM2501555 que corresponde a \"biopsia de hígado\" con diagnóstico de \"CARCINOMA MODERADAMENTE DIFERENCIADO\" del 14/02/2025. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: CK7, CK20, ARGINASA, GLIPICAN, HEPATOCITO, CDX2, CA19-9, CK19, TTF-1, GATA-3, CEA, AFP, EMA, CEA, GATA 3, TTF 1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Adecuada tinción de los marcadores de inmunohistoquímica en los controles externos. RESULTADO: Parénquima hepático con una lesión carcinomatosa que se organiza en glándulas y trabéculas compuesta por células tumorales grandes que expresan positividad fuerte y difusa para CK7 y CK19 con una marcación focal para EMA. Son negativas para CK20, CDX2, Ca 19-9, ARGINASA, HEPATOCITO, GLIPICAN, GATA 3, TTF-1, CEA.",
+      "Descripcion Diagnostico": "Hígado. lesión. Biopsia. Estudio de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN COMPROMISO POR CARCINOMA DE PROBABLE ORIGEN BILIAR. VER COMENTARIO.",
+      "IHQ_ORGANO": "HÍGADO",
+      "Organo": "BX DE HIGADO",
+      "Diagnostico Coloracion": "CARCINOMA MODERADAMENTE DIFERENCIADO",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN COMPROMISO POR CARCINOMA DE PROBABLE ORIGEN BILIAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_ARGINASA": "NEGATIVO",
+      "IHQ_GLIPICAN": "NO MENCIONADO",
+      "IHQ_HEPATOCITO": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_AFP": "",
+      "IHQ_EMA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 126,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 13,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 126,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hígado. lesión. Biopsia. Estudio de inmunohistoquímica. \nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN COMPROMISO POR\nCARCINOMA DE PROBABLE ORIGEN BILIAR. \nVER COMENTARIO.",
+      "valor_corregido": "Hígado. lesión. Biopsia. Estudio de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN COMPROMISO POR CARCINOMA DE PROBABLE ORIGEN BILIAR. VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250228",
+      "timestamp": "2026-01-17T12:06:11.855709"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótuloM2501555 que corresponde a \"biopsia de hígado\" con diagnóstico de \"CARCINOMA MODERADAMENTE DIFERENCIADO\" del 14/02/2025. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: CK7, CK20, ARGINASA, GLIPICAN, HEPATOCITO, CDX2, CA19-9, CK19, TTF-1, GATA-3, CEA, AFP, EMA, CEA, GATA 3, TTF 1.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótuloM2501555 que corresponde a \"biopsia de hígado\" con diagnóstico de \"CARCINOMA MODERADAMENTE DIFERENCIADO\" del 14/02/2025. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: CK7, CK20, ARGINASA, GLIPICAN, HEPATOCITO, CDX2, CA19-9, CK19, TTF1, GATA-3, CEA, AFP, EMA, CEA, GATA 3, TTF1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250228",
+      "timestamp": "2026-01-17T12:06:11.855716"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Adecuada tinción de los marcadores de inmunohistoquímica en los controles externos. RESULTADO: Parénquima hepático con una lesión carcinomatosa que se organiza en glándulas y trabéculas compuesta por células tumorales grandes que expresan positividad fuerte y difusa para CK7 y CK19 con una marcación focal para EMA. Son negativas para CK20, CDX2, Ca 19-9, ARGINASA, HEPATOCITO, GLIPICAN, GATA 3, TTF-1, CEA.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Adecuada tinción de los marcadores de inmunohistoquímica en los controles externos. RESULTADO: Parénquima hepático con una lesión carcinomatosa que se organiza en glándulas y trabéculas compuesta por células tumorales grandes que expresan positividad fuerte y difusa para CK7 y CK19 con una marcación focal para EMA. Son negativas para CK20, CDX2, Ca 19-9, ARGINASA, HEPATOCITO, GLIPICAN, GATA 3, TTF1, CEA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250228",
+      "timestamp": "2026-01-17T12:06:11.855718"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La correlación de los datos de historia clínica, hallazgos histológicos y de inmunohistoquímica\nsugieren un compromiso por carcinoma de origen gastro biliar (CK7+, CK19+), sin embargo\ncuenta con un reporte endoscópico gástrico e histológico (08-01-2025 de Idime) negativo para\nmalignidad, lo cual sugiere neoplasia maligna de origen en vía biliar. El reporte de este estudio se\ndebe analizar con estudios imagenológicos adicionales para esclarecer si el origen es intra o\nextrahepático, a criterio del médico tratante.",
+      "valor_corregido": "La correlación de los datos de historia clínica, hallazgos histológicos y de inmunohistoquímica sugieren un compromiso por carcinoma de origen gastro biliar (CK7+, CK19+), sin embargo cuenta con un reporte endoscópico gástrico e histológico (08-01-2025 de Idime) negativo para malignidad, lo cual sugiere neoplasia maligna de origen en vía biliar. El reporte de este estudio se debe analizar con estudios imagenológicos adicionales para esclarecer si el origen es intra o extrahepático, a criterio del médico tratante.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250228",
+      "timestamp": "2026-01-17T12:06:11.855719"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 60
+  }
+}

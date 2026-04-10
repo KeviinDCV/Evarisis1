@@ -1,0 +1,148 @@
+{
+  "session_id": "IHQ250153_20260106_014239",
+  "numero_peticion": "IHQ250153",
+  "timestamp": "2026-01-06T01:42:39.299414",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250153\nCopia Pag. 1 de 1\nNombre : GLORIA CONSTANZA MOSQUERA\nCORREA\nN. peticion : IHQ250153\nN.Identificación : CC. 65739090\nGenero : FEMENINO\nEdad : 56 años 6 meses 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOSE DAVID CALDERON\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 08/02/2025\nFecha Informe : 25/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2500708, el cual corresponde a biopsia de médula ósea con\ndiagnóstico de \"CELULARIDAD GLOBAL DEL 10%, APLASIA\". Se ordenan los siguientes marcadores:\nMieloperoxidasa, CD34, CD20, CD117, CD3, Glicoforina.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nNo hay poblaciones sugestivas de lesiones tumorales en la muestra evaluada.\nDIAGNÓSTICO\n Médula ósea. Biopia. Estudios de inmuhistoquímica:\nCELULARIDAD GLOBAL DEL 10%\nAPLASIA\nNEGATIVO PARA LESIÓN TUMORAL EN LA MUESTRA EVALUADA\nCOMENTARIOS\nDado que la muestra es hipocelular, se recomienda correlacionar con estudios de mayor sensibilidad\n(Citometría de Flujo y Mielograma).\nCaso revisad\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 2494,
+      "reduccion_porcentaje": 98.56
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250153",
+      "caso_num": 43,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "GLORIA CONSTANZA MOSQUERA CORREA",
+      "numero_peticion": "IHQ250153",
+      "identificacion": "65739090",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "56",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JOSE DAVID CALDERON",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "08/02/2025",
+      "fecha_informe": "25/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250153",
+      "N. de identificación": "65739090",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "JOSE DAVID CALDERON",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/02/2025",
+      "Fecha Informe": "25/02/2025",
+      "nombres": "GLORIA CONSTANZA",
+      "Primer nombre": "GLORIA",
+      "Segundo nombre": "CONSTANZA",
+      "apellidos": "MOSQUERA CORREA",
+      "Primer apellido": "MOSQUERA",
+      "Segundo apellido": "CORREA",
+      "nombre_formal": "MOSQUERA CORREA, GLORIA CONSTANZA",
+      "diagnostico": "Médula ósea. Biopia. Estudios de inmuhistoquímica: CELULARIDAD GLOBAL DEL 10% APLASIA NEGATIVO PARA LESIÓN TUMORAL EN LA MUESTRA EVALUADA",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. No hay poblaciones sugestivas de lesiones tumorales en la muestra evaluada.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2500708, el cual corresponde a biopsia de médula ósea con diagnóstico de \"CELULARIDAD GLOBAL DEL 10%, APLASIA\". Se ordenan los siguientes marcadores: Mieloperoxidasa, CD34, CD20, CD117, CD3, Glicoforina.",
+      "ihq_organo": "MÉDULA ÓSEA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MIELOPEROXIDASA, CD34, CD20, CD117, CD3, GLICOFORINA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Dado que la muestra es hipocelular, se recomienda correlacionar con estudios de mayor sensibilidad (Citometría de Flujo y Mielograma).",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "MIELOPEROXIDASA, CD34, CD20, CD117, CD3, GLICOFORINA",
+      "extraction_timestamp": "2026-01-06T01:42:39.654795",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250153\nCopia Pag. 1 de 1\nNombre : GLORIA CONSTANZA MOSQUERA\nCORREA\nN. peticion : IHQ250153\nN.Identificación : CC. 65739090\nGenero : FEMENINO\nEdad : 56 años 6 meses 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOSE DAVID CALDERON\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 08/02/2025\nFecha Informe : 25/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2500708, el cual corresponde a biopsia de médula ósea con\ndiagnóstico de \"CELULARIDAD GLOBAL DEL 10%, APLASIA\". Se ordenan los siguientes marcadores:\nMieloperoxidasa, CD34, CD20, CD117, CD3, Glicoforina.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nNo hay poblaciones sugestivas de lesiones tumorales en la muestra evaluada.\nDIAGNÓSTICO\n Médula ósea. Biopia. Estudios de inmuhistoquímica:\nCELULARIDAD GLOBAL DEL 10%\nAPLASIA\nNEGATIVO PARA LESIÓN TUMORAL EN LA MUESTRA EVALUADA\nCOMENTARIOS\nDado que la muestra es hipocelular, se recomienda correlacionar con estudios de mayor sensibilidad\n(Citometría de Flujo y Mielograma).\nCaso revisad\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MIELOPEROXIDASA, CD34, CD20, CD117, CD3, GLICOFORINA",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2500708, el cual corresponde a biopsia de médula ósea con diagnóstico de \"CELULARIDAD GLOBAL DEL 10%, APLASIA\". Se ordenan los siguientes marcadores: Mieloperoxidasa, CD34, CD20, CD117, CD3, Glicoforina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. No hay poblaciones sugestivas de lesiones tumorales en la muestra evaluada.",
+      "Descripcion Diagnostico": "Médula ósea. Biopia. Estudios de inmuhistoquímica: CELULARIDAD GLOBAL DEL 10% APLASIA NEGATIVO PARA LESIÓN TUMORAL EN LA MUESTRA EVALUADA",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Organo": "BX MEDULA OSEA",
+      "Diagnostico Coloracion": "CELULARIDAD GLOBAL DEL 10%, APLASIA",
+      "Diagnostico Principal": "CELULARIDAD GLOBAL DEL 10%, APLASIA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_MIELOPEROXIDASA": "",
+      "IHQ_CD34": "NO MENCIONADO",
+      "IHQ_CD20": "NO MENCIONADO",
+      "IHQ_CD117": "NO MENCIONADO",
+      "IHQ_CD3": "NO MENCIONADO",
+      "IHQ_GLICOFORINA": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 126,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 126,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula ósea. Biopia. Estudios de inmuhistoquímica:\nCELULARIDAD GLOBAL DEL 10%\nAPLASIA\nNEGATIVO PARA LESIÓN TUMORAL EN LA MUESTRA EVALUADA",
+      "valor_corregido": "Médula ósea. Biopia. Estudios de inmuhistoquímica: CELULARIDAD GLOBAL DEL 10% APLASIA NEGATIVO PARA LESIÓN TUMORAL EN LA MUESTRA EVALUADA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250153",
+      "timestamp": "2026-01-06T01:42:39.654477"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Dado que la muestra es hipocelular, se recomienda correlacionar con estudios de mayor sensibilidad\n(Citometría de Flujo y Mielograma).",
+      "valor_corregido": "Dado que la muestra es hipocelular, se recomienda correlacionar con estudios de mayor sensibilidad (Citometría de Flujo y Mielograma).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250153",
+      "timestamp": "2026-01-06T01:42:39.654485"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 49
+  }
+}

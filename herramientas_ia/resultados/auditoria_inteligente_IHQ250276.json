@@ -1,0 +1,146 @@
+{
+  "numero_caso": "IHQ250276",
+  "caso_num": 13,
+  "total_casos": 49,
+  "timestamp": "2026-02-03T04:23:01.458623",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 7,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "HIPERPLASIA DUCTAL DE TIPO USUAL",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "PAPILOMA INTRADUCTAL ESCLEROSANTE"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Receptor de Estrógeno: POSITIVO",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "RE"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (5/5)",
+      "total_solicitado_ocr": 5,
+      "total_solicitado_bd": 5,
+      "estudios_ocr": [
+        "CK5/6",
+        "Receptor de Estrógeno",
+        "S100",
+        "P63",
+        "CALRETININA"
+      ],
+      "estudios_bd": [
+        "CK5/6",
+        "Receptor de Estrógeno",
+        "S100",
+        "P63",
+        "CALRETININA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 5,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "BD indica MALIGNO pero no se encontraron keywords malignos en OCR"
+    ],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de “ Tomas uribe u..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MAMA IZQUIERDA"
+    },
+    "malignidad": {
+      "estado": "WARNING",
+      "mensaje": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+      "valor_bd": "MALIGNO",
+      "keywords_buscados": [
+        "CARCINOMA",
+        "ADENOCARCINOMA",
+        "SARCOMA",
+        "MELANOMA",
+        "LINFOMA",
+        "LEUCEMIA",
+        "NEOPLASIA MALIGNA",
+        "TUMOR MALIGNO",
+        "METASTASIS",
+        "METASTÁSICO",
+        "INVASIVO",
+        "INFILTRANTE",
+        "NEOPLASIA",
+        "MIELOMA",
+        "PLASMOCITOMA",
+        "TUMOR DEL ESTROMA GASTROINTESTINAL",
+        "LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO",
+        "NIC 3",
+        "CIN 3",
+        "GLIOMA"
+      ],
+      "nota": "Revisar manualmente si la clasificación es correcta"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 90.0,
+    "score_final": 90.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 10,
+    "warnings": 1,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "ADVERTENCIA"
+}

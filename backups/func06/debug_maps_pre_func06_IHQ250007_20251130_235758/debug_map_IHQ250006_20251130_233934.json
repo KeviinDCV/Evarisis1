@@ -1,0 +1,167 @@
+{
+  "session_id": "IHQ250006_20251130_233934",
+  "numero_peticion": "IHQ250006",
+  "timestamp": "2025-11-30T23:39:34.610579",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250006\nCopia Pag. 1 de 2\nNombre : JAIME PIEDRAHITA CAICEDO\nN. peticion : IHQ250006\nN.Identificación : CC. 10471632\nGenero : MASCULINO\nEdad : 65 años 3 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : ANDRES MAURICIO VALDERRAMA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 02/01/2025\nFecha Informe : 09/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION GASTRICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410682 que\ncorresponde a \" Lesión gástrica \" con diagnóstico de “ADENOCARCINOMA INVASIVO ULCERADO”.\nconsiste en dos laminas coloreadas H&E y dos bloques de parafina. Previa valoración de la\ncoloración básica, se realizan cortes histológicos al bloque dos\npara los siguientes marcadores:\nMLH-1, PMS2, MSH2, MSH6, HER2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nControles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. \nREPORTE:\nMLH1: Pérdida de la expresión nuclear. \nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Pérdida de la expresión nuclear. tinción citoplasmática débil en el 100% de las células\ntumorales.\nInterpretación de la reparación de desajustes (MMR): Pérdida de la expresión nuclear de una o\nmás proteínas MMR (reparación deficiente de desajustes).\nInterpretación de la inestabilidad de microsatélites (MSI): \nMSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad\nSobreexpresion de HER2: negativo ( score 1 ) \nDIAGNÓSTICO\nMucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica.\n- ⁠ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO.\n- ⁠PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.\n- HER-2: NEGATIVO (SCORE 1+).\nCOMENTARIOS\nEl tejido presenta limitaciones debido a defectos en la fase preanalítica, lo que podría indicar una\nmarcación inadecuada. Por lo tanto, se sugiere repetir estos estudios en el especimen de\nresección, según el criterio del médico tratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---\nIHQ250006\nCopia Pag. 2 de 2\nNombre : JAIME PIEDRAHITA CAICEDO\nN. peticion : IHQ250006\nN.Identificación : CC. 10471632\nGenero : MASCULINO\nEdad : 65 años 3 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : ANDRES MAURICIO VALDERRAMA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 02/01/2025\nFecha Informe : 09/01/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 4137,
+      "reduccion_porcentaje": 97.58
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250006",
+      "caso_num": 6,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "JAIME PIEDRAHITA CAICEDO",
+      "numero_peticion": "IHQ250006",
+      "identificacion": "10471632",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "65",
+      "eps": "EPS FAMISANAR SAS",
+      "medico_tratante": "ANDRES MAURICIO VALDERRAMA",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "02/01/2025",
+      "fecha_informe": "09/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250006",
+      "N. de identificación": "10471632",
+      "Tipo de documento": "CC",
+      "EPS": "EPS FAMISANAR SAS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "ANDRES MAURICIO VALDERRAMA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/01/2025",
+      "Fecha Informe": "09/01/2025",
+      "nombres": "JAIME PIEDRAHITA",
+      "Primer nombre": "JAIME",
+      "Segundo nombre": "PIEDRAHITA",
+      "apellidos": "CAICEDO",
+      "Primer apellido": "CAICEDO",
+      "Segundo apellido": "",
+      "nombre_formal": "CAICEDO, JAIME PIEDRAHITA",
+      "diagnostico": "Mucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica. - ⁠ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO. - ⁠PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2. - HER-2: NEGATIVO (SCORE 1+).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). Controles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. REPORTE: MLH1: Pérdida de la expresión nuclear. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Pérdida de la expresión nuclear. tinción citoplasmática débil en el 100% de las células tumorales. Interpretación de la reparación de desajustes (MMR): Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de desajustes). Interpretación de la inestabilidad de microsatélites (MSI): MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad Sobreexpresion de HER2: negativo ( score 1 )",
+      "descripcion_macroscopica": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410682 que corresponde a \" Lesión gástrica \" con diagnóstico de “ADENOCARCINOMA INVASIVO ULCERADO”. consiste en dos laminas coloreadas H&E y dos bloques de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque dos para los siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2.",
+      "ihq_organo": "MUCOSA DE ESTOMAGO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MLH 1, PMS2, MSH2, MSH6, HER2",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "El tejido presenta limitaciones debido a defectos en la fase preanalítica, lo que podría indicar una marcación inadecuada. Por lo tanto, se sugiere repetir estos estudios en el especimen de resección, según el criterio del médico tratante.",
+      "IHQ_ORGANO": "MUCOSA DE ESTOMAGO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: negativo ( score 1 )",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_MSH2": "POSITIVO",
+      "IHQ_MSH6": "POSITIVO",
+      "IHQ_PMS2": "NEGATIVO",
+      "IHQ_MLH1": "NEGATIVO",
+      "extraction_timestamp": "2025-11-30T23:39:34.737687",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250006\nCopia Pag. 1 de 2\nNombre : JAIME PIEDRAHITA CAICEDO\nN. peticion : IHQ250006\nN.Identificación : CC. 10471632\nGenero : MASCULINO\nEdad : 65 años 3 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : ANDRES MAURICIO VALDERRAMA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 02/01/2025\nFecha Informe : 09/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION GASTRICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410682 que\ncorresponde a \" Lesión gástrica \" con diagnóstico de “ADENOCARCINOMA INVASIVO ULCERADO”.\nconsiste en dos laminas coloreadas H&E y dos bloques de parafina. Previa valoración de la\ncoloración básica, se realizan cortes histológicos al bloque dos\npara los siguientes marcadores:\nMLH-1, PMS2, MSH2, MSH6, HER2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nControles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. \nREPORTE:\nMLH1: Pérdida de la expresión nuclear. \nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Pérdida de la expresión nuclear. tinción citoplasmática débil en el 100% de las células\ntumorales.\nInterpretación de la reparación de desajustes (MMR): Pérdida de la expresión nuclear de una o\nmás proteínas MMR (reparación deficiente de desajustes).\nInterpretación de la inestabilidad de microsatélites (MSI): \nMSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad\nSobreexpresion de HER2: negativo ( score 1 ) \nDIAGNÓSTICO\nMucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica.\n- ⁠ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO.\n- ⁠PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.\n- HER-2: NEGATIVO (SCORE 1+).\nCOMENTARIOS\nEl tejido presenta limitaciones debido a defectos en la fase preanalítica, lo que podría indicar una\nmarcación inadecuada. Por lo tanto, se sugiere repetir estos estudios en el especimen de\nresección, según el criterio del médico tratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---\nIHQ250006\nCopia Pag. 2 de 2\nNombre : JAIME PIEDRAHITA CAICEDO\nN. peticion : IHQ250006\nN.Identificación : CC. 10471632\nGenero : MASCULINO\nEdad : 65 años 3 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : ANDRES MAURICIO VALDERRAMA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 02/01/2025\nFecha Informe : 09/01/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MLH 1, PMS2, MSH2, MSH6, HER2",
+      "Descripcion macroscopica": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410682 que corresponde a \" Lesión gástrica \" con diagnóstico de “ADENOCARCINOMA INVASIVO ULCERADO”. consiste en dos laminas coloreadas H&E y dos bloques de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque dos para los siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). Controles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. REPORTE: MLH1: Pérdida de la expresión nuclear. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Pérdida de la expresión nuclear. tinción citoplasmática débil en el 100% de las células tumorales. Interpretación de la reparación de desajustes (MMR): Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de desajustes). Interpretación de la inestabilidad de microsatélites (MSI): MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad Sobreexpresion de HER2: negativo ( score 1 )",
+      "Descripcion Diagnostico": "Mucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica. - ⁠ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO. - ⁠PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2. - HER-2: NEGATIVO (SCORE 1+).",
+      "IHQ_ORGANO": "MUCOSA DE ESTOMAGO",
+      "Organo": "BX LESION GASTRICA",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO ULCERADO",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: negativo ( score 1 )",
+      "IHQ_MLH1": "NEGATIVO",
+      "IHQ_PMS2": "NEGATIVO",
+      "IHQ_MSH2": "POSITIVO",
+      "IHQ_MSH6": "POSITIVO",
+      "IHQ_HER2": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 150,
+      "campos_vacios": 111,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 26.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 111,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica.\n- ⁠ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO.\n- ⁠PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.\n- HER-2: NEGATIVO (SCORE 1+).",
+      "valor_corregido": "Mucosa de estomago. Lesión. Biopsia endoscopica. Estudio de inmunohistoquimica. - ⁠ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO. - ⁠PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2. - HER-2: NEGATIVO (SCORE 1+).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250006",
+      "timestamp": "2025-11-30T23:39:34.737420"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410682 que\ncorresponde a \" Lesión gástrica \" con diagnóstico de “ADENOCARCINOMA INVASIVO ULCERADO”.\nconsiste en dos laminas coloreadas H&E y dos bloques de parafina. Previa valoración de la\ncoloración básica, se realizan cortes histológicos al bloque dos\npara los siguientes marcadores:\nMLH-1, PMS2, MSH2, MSH6, HER2.",
+      "valor_corregido": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410682 que corresponde a \" Lesión gástrica \" con diagnóstico de “ADENOCARCINOMA INVASIVO ULCERADO”. consiste en dos laminas coloreadas H&E y dos bloques de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque dos para los siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250006",
+      "timestamp": "2025-11-30T23:39:34.737426"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nControles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. \nREPORTE:\nMLH1: Pérdida de la expresión nuclear. \nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Pérdida de la expresión nuclear. tinción citoplasmática débil en el 100% de las células\ntumorales.\nInterpretación de la reparación de desajustes (MMR): Pérdida de la expresión nuclear de una o\nmás proteínas MMR (reparación deficiente de desajustes).\nInterpretación de la inestabilidad de microsatélites (MSI): \nMSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad\nSobreexpresion de HER2: negativo ( score 1 )",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). Controles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. REPORTE: MLH1: Pérdida de la expresión nuclear. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Pérdida de la expresión nuclear. tinción citoplasmática débil en el 100% de las células tumorales. Interpretación de la reparación de desajustes (MMR): Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de desajustes). Interpretación de la inestabilidad de microsatélites (MSI): MSI-Alto (MSI-H): 2 o más de los 5 marcadores NCI o mononucleótidos presentan inestabilidad Sobreexpresion de HER2: negativo ( score 1 )",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250006",
+      "timestamp": "2025-11-30T23:39:34.737428"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El tejido presenta limitaciones debido a defectos en la fase preanalítica, lo que podría indicar una\nmarcación inadecuada. Por lo tanto, se sugiere repetir estos estudios en el especimen de\nresección, según el criterio del médico tratante.",
+      "valor_corregido": "El tejido presenta limitaciones debido a defectos en la fase preanalítica, lo que podría indicar una marcación inadecuada. Por lo tanto, se sugiere repetir estos estudios en el especimen de resección, según el criterio del médico tratante.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250006",
+      "timestamp": "2025-11-30T23:39:34.737430"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 52
+  }
+}

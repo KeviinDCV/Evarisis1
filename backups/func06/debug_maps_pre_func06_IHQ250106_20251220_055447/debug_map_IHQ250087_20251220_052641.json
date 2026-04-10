@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250087_20251220_052641",
+  "numero_peticion": "IHQ250087",
+  "timestamp": "2025-12-20T05:26:41.117984",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250087\nCopia Pag. 1 de 2\nNombre : LUIS AURELIO VALENCIA\nN. peticion : IHQ250087\nN.Identificación : CC. 6460649\nGenero : MASCULINO\nEdad : 73 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CIRUGIA COEX\nFecha Ingreso : 27/01/2025\nFecha Informe : 29/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION ANAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nproveniente de IDIME, rotulado como “Q-162467-24” que corresponde a “biopsia de lesión anal”\ncon diagnóstico de “TUMOR MALIGNO MAL DIFERENCIADO”. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con SOX-10, CKAE1E3, CD34, desmina, p40, S100,\nHMB45, MELAN-A, y p16 en el bloque 2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células neoplásicas son positivas para MELAN-A, HMB45, S100, SOX 10 y p16 en bloque.\nLos marcadores p40, desmina, CKAE1E3 y CD34 son negativos.\nDIAGNÓSTICO\nCanal anal. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA COMPATIBLE CON MELANOMA INVASIVO.\n-VER COMENTARIO.\nCOMENTARIOS\nAunque los hallazgos de inmunohistoquímica y la localización de la lesión sugieren un melanoma\ninvasivo de las mucosas, es necesario correlacionar con historia clínica e imagenes diagnósticas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ250087\nCopia Pag. 2 de 2\nNombre : LUIS AURELIO VALENCIA\nN. peticion : IHQ250087\nN.Identificación : CC. 6460649\nGenero : MASCULINO\nEdad : 73 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CIRUGIA COEX\nFecha Ingreso : 27/01/2025\nFecha Informe : 29/01/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3322,
+      "reduccion_porcentaje": 98.22
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250087",
+      "caso_num": 33,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_MELAN_A": "POSITIVO",
+      "IHQ_HMB45": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO",
+      "nombre_completo": "LUIS AURELIO VALENCIA",
+      "numero_peticion": "IHQ250087",
+      "identificacion": "6460649",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "73",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "CIRUGIA COEX",
+      "fecha_ingreso": "27/01/2025",
+      "fecha_informe": "29/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250087",
+      "N. de identificación": "6460649",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CIRUGIA COEX",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "27/01/2025",
+      "Fecha Informe": "29/01/2025",
+      "nombres": "LUIS AURELIO",
+      "Primer nombre": "LUIS",
+      "Segundo nombre": "AURELIO",
+      "apellidos": "VALENCIA",
+      "Primer apellido": "VALENCIA",
+      "Segundo apellido": "",
+      "nombre_formal": "VALENCIA, LUIS AURELIO",
+      "diagnostico": "Canal anal. Tumor. Biopsia. Estudio de inmunohistoquímica: - PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA COMPATIBLE CON MELANOMA INVASIVO. -VER COMENTARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son positivas para MELAN-A, HMB45, S100, SOX 10 y p16 en bloque. Los marcadores p40, desmina, CKAE1E3 y CD34 son negativos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional proveniente de IDIME, rotulado como “Q-162467-24” que corresponde a “biopsia de lesión anal” con diagnóstico de “TUMOR MALIGNO MAL DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con SOX-10, CKAE1E3, CD34, desmina, p40, S100, HMB45, MELAN-A, y p16 en el bloque 2.",
+      "ihq_organo": "CANAL ANAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "SOX 10, CKAE1E3, CD34, DESMINA, P40, S100, HMB45, MELAN A, P16",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Aunque los hallazgos de inmunohistoquímica y la localización de la lesión sugieren un melanoma invasivo de las mucosas, es necesario correlacionar con historia clínica e imagenes diagnósticas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 63 --- IHQ250087 Copia Pag. 2 de 2 Nombre : LUIS AURELIO VALENCIA N. peticion : IHQ250087 N.Identificación : CC. 6460649 Genero : MASCULINO Edad : 73 años EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : ALEJANDRO HIJUELOS Servicio : CIRUGIA COEX Fecha Ingreso : 27/01/2025 Fecha Informe : 29/01/2025",
+      "IHQ_ORGANO": "CANAL ANAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "p16": "POSITIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2025-12-20T05:26:41.295414",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250087\nCopia Pag. 1 de 2\nNombre : LUIS AURELIO VALENCIA\nN. peticion : IHQ250087\nN.Identificación : CC. 6460649\nGenero : MASCULINO\nEdad : 73 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CIRUGIA COEX\nFecha Ingreso : 27/01/2025\nFecha Informe : 29/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION ANAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nproveniente de IDIME, rotulado como “Q-162467-24” que corresponde a “biopsia de lesión anal”\ncon diagnóstico de “TUMOR MALIGNO MAL DIFERENCIADO”. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con SOX-10, CKAE1E3, CD34, desmina, p40, S100,\nHMB45, MELAN-A, y p16 en el bloque 2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células neoplásicas son positivas para MELAN-A, HMB45, S100, SOX 10 y p16 en bloque.\nLos marcadores p40, desmina, CKAE1E3 y CD34 son negativos.\nDIAGNÓSTICO\nCanal anal. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA COMPATIBLE CON MELANOMA INVASIVO.\n-VER COMENTARIO.\nCOMENTARIOS\nAunque los hallazgos de inmunohistoquímica y la localización de la lesión sugieren un melanoma\ninvasivo de las mucosas, es necesario correlacionar con historia clínica e imagenes diagnósticas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ250087\nCopia Pag. 2 de 2\nNombre : LUIS AURELIO VALENCIA\nN. peticion : IHQ250087\nN.Identificación : CC. 6460649\nGenero : MASCULINO\nEdad : 73 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CIRUGIA COEX\nFecha Ingreso : 27/01/2025\nFecha Informe : 29/01/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "SOX 10, CKAE1E3, CD34, DESMINA, P40, S100, HMB45, MELAN A, P16",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional proveniente de IDIME, rotulado como “Q-162467-24” que corresponde a “biopsia de lesión anal” con diagnóstico de “TUMOR MALIGNO MAL DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con SOX-10, CKAE1E3, CD34, desmina, p40, S100, HMB45, MELAN-A, y p16 en el bloque 2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son positivas para MELAN-A, HMB45, S100, SOX 10 y p16 en bloque. Los marcadores p40, desmina, CKAE1E3 y CD34 son negativos.",
+      "Descripcion Diagnostico": "Canal anal. Tumor. Biopsia. Estudio de inmunohistoquímica: - PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA COMPATIBLE CON MELANOMA INVASIVO. -VER COMENTARIO.",
+      "IHQ_ORGANO": "CANAL ANAL",
+      "Organo": "BX LESION ANAL",
+      "Diagnostico Coloracion": "TUMOR MALIGNO MAL DIFERENCIADO",
+      "Diagnostico Principal": "PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA COMPATIBLE CON MELANOMA INVASIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_SOX10": "POSITIVO",
+      "IHQ_CKAE1E3": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_HMB45": "POSITIVO",
+      "IHQ_MELAN_A": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 165,
+      "campos_vacios": 121,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 9,
+      "completitud_porcentaje": 26.67
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 121,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Canal anal. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA COMPATIBLE CON MELANOMA INVASIVO.\n-VER COMENTARIO.",
+      "valor_corregido": "Canal anal. Tumor. Biopsia. Estudio de inmunohistoquímica: - PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA COMPATIBLE CON MELANOMA INVASIVO. -VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250087",
+      "timestamp": "2025-12-20T05:26:41.295134"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Aunque los hallazgos de inmunohistoquímica y la localización de la lesión sugieren un melanoma\ninvasivo de las mucosas, es necesario correlacionar con historia clínica e imagenes diagnósticas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ250087\nCopia Pag. 2 de 2\nNombre : LUIS AURELIO VALENCIA\nN. peticion : IHQ250087\nN.Identificación : CC. 6460649\nGenero : MASCULINO\nEdad : 73 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CIRUGIA COEX\nFecha Ingreso : 27/01/2025\nFecha Informe : 29/01/2025",
+      "valor_corregido": "Aunque los hallazgos de inmunohistoquímica y la localización de la lesión sugieren un melanoma invasivo de las mucosas, es necesario correlacionar con historia clínica e imagenes diagnósticas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 63 --- IHQ250087 Copia Pag. 2 de 2 Nombre : LUIS AURELIO VALENCIA N. peticion : IHQ250087 N.Identificación : CC. 6460649 Genero : MASCULINO Edad : 73 años EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : ALEJANDRO HIJUELOS Servicio : CIRUGIA COEX Fecha Ingreso : 27/01/2025 Fecha Informe : 29/01/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250087",
+      "timestamp": "2025-12-20T05:26:41.295140"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 58
+  }
+}

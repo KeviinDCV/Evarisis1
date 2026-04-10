@@ -1,0 +1,152 @@
+{
+  "session_id": "IHQ250016_20251213_101340",
+  "numero_peticion": "IHQ250016",
+  "timestamp": "2025-12-13T10:13:40.317320",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250016\nCopia Pag. 1 de 2\nNombre : EMERITA CUERO CAICEDO\nN. peticion : IHQ250016\nN.Identificación : CC. 48631225\nGenero : FEMENINO\nEdad : 57 años 27 dias\nEPS : NUEVA EPS\nMédico tratante : JHON JAIRO OSORIO\nServicio : ODONTOLOGIA\nFecha Ingreso : 07/01/2025\nFecha Informe : 14/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR PALADAR DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2410007 con rótulo correspondiente a \" tumor paladar\nderecho\" con diagnóstico de “ NEOPLASIA EN PATRÓN SÓLIDO INVASIVO A CLASIFICAR ”. Previa\nvaloración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores:\np16, p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales malignas presentan inmunomarcación nuclear fuerte y difusa para p40. Son\nnegativas para p16. \nDIAGNÓSTICO\nPaladar derecho. Lesión. Biopsia. Estudio de inmunohistoquímica. \nCARCINOMA ESCAMOCELULAR INVASIVO QUERATINIZANTE ( BIEN DIFERENCIADO )\np16 NEGATIVO\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---\nIHQ250016\nCopia Pag. 2 de 2\nNombre : EMERITA CUERO CAICEDO\nN. peticion : IHQ250016\nN.Identificación : CC. 48631225\nGenero : FEMENINO\nEdad : 57 años 27 dias\nEPS : NUEVA EPS\nMédico tratante : JHON JAIRO OSORIO\nServicio : ODONTOLOGIA\nFecha Ingreso : 07/01/2025\nFecha Informe : 14/01/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 2957,
+      "reduccion_porcentaje": 98.27
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250016",
+      "caso_num": 16,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "EMERITA CUERO CAICEDO",
+      "numero_peticion": "IHQ250016",
+      "identificacion": "48631225",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "57",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JHON JAIRO OSORIO",
+      "servicio": "ODONTOLOGIA",
+      "fecha_ingreso": "07/01/2025",
+      "fecha_informe": "14/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250016",
+      "N. de identificación": "48631225",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "ODONTOLOGIA",
+      "Médico tratante": "JHON JAIRO OSORIO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/01/2025",
+      "Fecha Informe": "14/01/2025",
+      "nombres": "EMERITA CUERO",
+      "Primer nombre": "EMERITA",
+      "Segundo nombre": "CUERO",
+      "apellidos": "CAICEDO",
+      "Primer apellido": "CAICEDO",
+      "Segundo apellido": "",
+      "nombre_formal": "CAICEDO, EMERITA CUERO",
+      "diagnostico": "Paladar derecho. Lesión. Biopsia. Estudio de inmunohistoquímica. CARCINOMA ESCAMOCELULAR INVASIVO QUERATINIZANTE ( BIEN DIFERENCIADO ) P16 NEGATIVO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales malignas presentan inmunomarcación nuclear fuerte y difusa para P40. Son negativas para P16.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2410007 con rótulo correspondiente a \" tumor paladar derecho\" con diagnóstico de “ NEOPLASIA EN PATRÓN SÓLIDO INVASIVO A CLASIFICAR ”. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: P16, P40.",
+      "ihq_organo": "PALADAR DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, P40",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PALADAR DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "p16": "NEGATIVO",
+      "extraction_timestamp": "2025-12-13T10:13:40.469719",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250016\nCopia Pag. 1 de 2\nNombre : EMERITA CUERO CAICEDO\nN. peticion : IHQ250016\nN.Identificación : CC. 48631225\nGenero : FEMENINO\nEdad : 57 años 27 dias\nEPS : NUEVA EPS\nMédico tratante : JHON JAIRO OSORIO\nServicio : ODONTOLOGIA\nFecha Ingreso : 07/01/2025\nFecha Informe : 14/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR PALADAR DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2410007 con rótulo correspondiente a \" tumor paladar\nderecho\" con diagnóstico de “ NEOPLASIA EN PATRÓN SÓLIDO INVASIVO A CLASIFICAR ”. Previa\nvaloración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores:\np16, p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales malignas presentan inmunomarcación nuclear fuerte y difusa para p40. Son\nnegativas para p16. \nDIAGNÓSTICO\nPaladar derecho. Lesión. Biopsia. Estudio de inmunohistoquímica. \nCARCINOMA ESCAMOCELULAR INVASIVO QUERATINIZANTE ( BIEN DIFERENCIADO )\np16 NEGATIVO\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---\nIHQ250016\nCopia Pag. 2 de 2\nNombre : EMERITA CUERO CAICEDO\nN. peticion : IHQ250016\nN.Identificación : CC. 48631225\nGenero : FEMENINO\nEdad : 57 años 27 dias\nEPS : NUEVA EPS\nMédico tratante : JHON JAIRO OSORIO\nServicio : ODONTOLOGIA\nFecha Ingreso : 07/01/2025\nFecha Informe : 14/01/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2410007 con rótulo correspondiente a \" tumor paladar derecho\" con diagnóstico de “ NEOPLASIA EN PATRÓN SÓLIDO INVASIVO A CLASIFICAR ”. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: p16, p40.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales malignas presentan inmunomarcación nuclear fuerte y difusa para p40. Son negativas para p16.",
+      "Descripcion Diagnostico": "Paladar derecho. Lesión. Biopsia. Estudio de inmunohistoquímica. CARCINOMA ESCAMOCELULAR INVASIVO QUERATINIZANTE ( BIEN DIFERENCIADO ) P16 NEGATIVO",
+      "IHQ_ORGANO": "PALADAR DERECHO",
+      "Organo": "TUMOR PALADAR DERECHO",
+      "Diagnostico Coloracion": "NEOPLASIA EN PATRÓN SÓLIDO INVASIVO A CLASIFICAR",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR INVASIVO QUERATINIZANTE ( BIEN DIFERENCIADO )",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 121,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 22.93
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 121,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Paladar derecho. Lesión. Biopsia. Estudio de inmunohistoquímica. \nCARCINOMA ESCAMOCELULAR INVASIVO QUERATINIZANTE ( BIEN DIFERENCIADO )\np16 NEGATIVO",
+      "valor_corregido": "Paladar derecho. Lesión. Biopsia. Estudio de inmunohistoquímica. CARCINOMA ESCAMOCELULAR INVASIVO QUERATINIZANTE ( BIEN DIFERENCIADO ) P16 NEGATIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250016",
+      "timestamp": "2025-12-13T10:13:40.469401"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2410007 con rótulo correspondiente a \" tumor paladar\nderecho\" con diagnóstico de “ NEOPLASIA EN PATRÓN SÓLIDO INVASIVO A CLASIFICAR ”. Previa\nvaloración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores:\np16, p40.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2410007 con rótulo correspondiente a \" tumor paladar derecho\" con diagnóstico de “ NEOPLASIA EN PATRÓN SÓLIDO INVASIVO A CLASIFICAR ”. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: P16, P40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250016",
+      "timestamp": "2025-12-13T10:13:40.469410"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales malignas presentan inmunomarcación nuclear fuerte y difusa para p40. Son\nnegativas para p16.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales malignas presentan inmunomarcación nuclear fuerte y difusa para P40. Son negativas para P16.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250016",
+      "timestamp": "2025-12-13T10:13:40.469414"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 48
+  }
+}

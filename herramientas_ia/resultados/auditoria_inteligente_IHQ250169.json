@@ -1,0 +1,139 @@
+{
+  "numero_caso": "IHQ250169",
+  "caso_num": 9,
+  "total_casos": 50,
+  "timestamp": "2026-01-08T04:30:08.133259",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 15,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "No hay estudio M previo"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "CARCINOMA DE ALTO GRADO METASTASICO DE PROBABLE ORIGEN RENAL"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67 del 70 %",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 valores NO coinciden con OCR; 10 biomarcadores extras en BD",
+      "total_solicitado_ocr": 3,
+      "total_solicitado_bd": 14,
+      "estudios_ocr": [
+        "Ki-67",
+        "CKEA1EA3",
+        "PAX 8"
+      ],
+      "estudios_bd": [
+        "Ki-67",
+        "CKEA1EA3",
+        "PAX 8",
+        "P40",
+        "CD10",
+        "CK20",
+        "CKAE1AE3",
+        "TTF1",
+        "GATA3",
+        "SOX10",
+        "VIMENTINA",
+        "NAPSIN",
+        "DESMIN",
+        "RCC"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "P40",
+        "CD10",
+        "CK20",
+        "TTF1",
+        "GATA3",
+        "SOX10",
+        "VIMENTINA",
+        "NAPSIN",
+        "DESMIN",
+        "RCC"
+      ],
+      "mapeados": 3,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "Ki-67",
+          "columna": "IHQ_KI-67",
+          "valor_bd": "70%",
+          "valor_ocr": "d"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501359 qu..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "PULMÓN"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

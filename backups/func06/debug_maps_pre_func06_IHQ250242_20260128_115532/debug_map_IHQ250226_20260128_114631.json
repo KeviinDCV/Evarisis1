@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ250226_20260128_114631",
+  "numero_peticion": "IHQ250226",
+  "timestamp": "2026-01-28T11:46:31.612680",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250226\nCopia Pag. 1 de 2\nNombre : YERALDID CAMPO ILAMO\nN. peticion : IHQ250226\nN.Identificación : CC. 1114732085\nGenero : FEMENINO\nEdad : 32 años 1 mes 12 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : ANA MARIA FIDALGO\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 03/03/2025\nFecha Informe : 12/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX NODULO MAMA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500674\" correspondiente a “biopsia de mama izquierda” con diagnóstico de \"PROLIFERACIÓN\nINTRADUCTAL A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA \". Previa revisión de la\nhistología se realizan niveles histológicos al bloque para tinción con los marcadores: S100,\nCALPONINA, ESTROGENO, P63, PROGESTERONA.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nLa celularidad es positiva para S100, p63, calponina. Receptores Estrógeno y progesterona con\nmarcación usual en mosaico\nDIAGNÓSTICO\nMama izquierda. Nódulo. Biopsia. Estudio de inmunohistoquímica\nLOS HALLAZGOS MORFOLÓGICOS SUGIEREN UN ADENOMA DE LA LACTANCIA.\nCOMENTARIOS\nAnte la sospecha de una lesión neoplásica de mayor grado histológico se sugiere nuevo muestreo\na criterio del médico tratante.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---\nIHQ250226\nCopia Pag. 2 de 2\nNombre : YERALDID CAMPO ILAMO\nN. peticion : IHQ250226\nN.Identificación : CC. 1114732085\nGenero : FEMENINO\nEdad : 32 años 1 mes 12 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : ANA MARIA FIDALGO\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 03/03/2025\nFecha Informe : 12/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3261,
+      "reduccion_porcentaje": 98.18
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250226",
+      "caso_num": 15,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_S100": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CALPONINA": "POSITIVO",
+      "nombre_completo": "YERALDID CAMPO ILAMO",
+      "numero_peticion": "IHQ250226",
+      "identificacion": "1114732085",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "32",
+      "eps": "E.P.S. INDIGENA MALLAMAS GUACH",
+      "medico_tratante": "ANA MARIA FIDALGO",
+      "servicio": "GINECOLOGIA COEX",
+      "fecha_ingreso": "03/03/2025",
+      "fecha_informe": "12/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250226",
+      "N. de identificación": "1114732085",
+      "Tipo de documento": "CC",
+      "EPS": "E.P.S. INDIGENA MALLAMAS GUACH",
+      "Servicio": "GINECOLOGIA COEX",
+      "Médico tratante": "ANA MARIA FIDALGO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/03/2025",
+      "Fecha Informe": "12/03/2025",
+      "nombres": "YERALDID",
+      "Primer nombre": "YERALDID",
+      "Segundo nombre": "",
+      "apellidos": "CAMPO ILAMO",
+      "Primer apellido": "CAMPO",
+      "Segundo apellido": "ILAMO",
+      "nombre_formal": "CAMPO ILAMO, YERALDID",
+      "diagnostico": "Mama izquierda. Nódulo. Biopsia. Estudio de inmunohistoquímica LOS HALLAZGOS MORFOLÓGICOS SUGIEREN UN ADENOMA DE LA LACTANCIA.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad es positiva para S100, p63, calponina. Receptores Estrógeno y progesterona con marcación usual en mosaico",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2500674\" correspondiente a \"biopsia de mama izquierda\" con diagnóstico de \"PROLIFERACIÓN INTRADUCTAL A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA \". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: S100, CALPONINA, ESTROGENO, p63, PROGESTERONA.",
+      "ihq_organo": "MAMA IZQUIERDA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "GINECOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "S100, Calponina, Receptor de Estrógeno, P63, Receptor de Progesterona",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Ante la sospecha de una lesión neoplásica de mayor grado histológico se sugiere nuevo muestreo a criterio del médico tratante. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 30 --- IHQ250226 Copia Pag. 2 de 2 Nombre : YERALDID CAMPO ILAMO N. peticion : IHQ250226 N.Identificación : CC. 1114732085 Genero : FEMENINO Edad : 32 años 1 mes 12 dias EPS : E.P.S. INDIGENA MALLAMAS GUACH Médico tratante : ANA MARIA FIDALGO Servicio : GINECOLOGIA COEX Fecha Ingreso : 03/03/2025 Fecha Informe : 12/03/2025",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (marcación usual en mosaico), Receptor de Progesterona: POSITIVO (marcación usual en mosaico)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "S100, Calponina, Receptor de Estrógeno, P63, Receptor de Progesterona",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (marcación usual en mosaico)",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO (marcación usual en mosaico)",
+      "extraction_timestamp": "2026-01-28T11:46:32.015188",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250226\nCopia Pag. 1 de 2\nNombre : YERALDID CAMPO ILAMO\nN. peticion : IHQ250226\nN.Identificación : CC. 1114732085\nGenero : FEMENINO\nEdad : 32 años 1 mes 12 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : ANA MARIA FIDALGO\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 03/03/2025\nFecha Informe : 12/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX NODULO MAMA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500674\" correspondiente a “biopsia de mama izquierda” con diagnóstico de \"PROLIFERACIÓN\nINTRADUCTAL A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA \". Previa revisión de la\nhistología se realizan niveles histológicos al bloque para tinción con los marcadores: S100,\nCALPONINA, ESTROGENO, P63, PROGESTERONA.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nLa celularidad es positiva para S100, p63, calponina. Receptores Estrógeno y progesterona con\nmarcación usual en mosaico\nDIAGNÓSTICO\nMama izquierda. Nódulo. Biopsia. Estudio de inmunohistoquímica\nLOS HALLAZGOS MORFOLÓGICOS SUGIEREN UN ADENOMA DE LA LACTANCIA.\nCOMENTARIOS\nAnte la sospecha de una lesión neoplásica de mayor grado histológico se sugiere nuevo muestreo\na criterio del médico tratante.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---\nIHQ250226\nCopia Pag. 2 de 2\nNombre : YERALDID CAMPO ILAMO\nN. peticion : IHQ250226\nN.Identificación : CC. 1114732085\nGenero : FEMENINO\nEdad : 32 años 1 mes 12 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : ANA MARIA FIDALGO\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 03/03/2025\nFecha Informe : 12/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "S100, Calponina, Receptor de Estrógeno, P63, Receptor de Progesterona",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500674\" correspondiente a “biopsia de mama izquierda” con diagnóstico de \"PROLIFERACIÓN INTRADUCTAL A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA \". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: S100, CALPONINA, ESTROGENO, P63, PROGESTERONA.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad es positiva para S100, p63, calponina. Receptores Estrógeno y progesterona con marcación usual en mosaico",
+      "Descripcion Diagnostico": "Mama izquierda. Nódulo. Biopsia. Estudio de inmunohistoquímica LOS HALLAZGOS MORFOLÓGICOS SUGIEREN UN ADENOMA DE LA LACTANCIA.",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Organo": "BX NODULO MAMA IZQUIERDA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN INTRADUCTAL A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "ESTUDIO DE INMUNOHISTOQUÍMICA LOS HALLAZGOS MORFOLÓGICOS SUGIEREN UN ADENOMA DE LA LACTANCIA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (marcación usual en mosaico), Receptor de Progesterona: POSITIVO (marcación usual en mosaico)",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (marcación usual en mosaico)",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO (marcación usual en mosaico)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 175,
+      "campos_vacios": 136,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama izquierda. Nódulo. Biopsia. Estudio de inmunohistoquímica\nLOS HALLAZGOS MORFOLÓGICOS SUGIEREN UN ADENOMA DE LA LACTANCIA.",
+      "valor_corregido": "Mama izquierda. Nódulo. Biopsia. Estudio de inmunohistoquímica LOS HALLAZGOS MORFOLÓGICOS SUGIEREN UN ADENOMA DE LA LACTANCIA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250226",
+      "timestamp": "2026-01-28T11:46:32.014975"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500674\" correspondiente a “biopsia de mama izquierda” con diagnóstico de \"PROLIFERACIÓN INTRADUCTAL A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA \". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: S100, CALPONINA, ESTROGENO, P63, PROGESTERONA.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2500674\" correspondiente a \"biopsia de mama izquierda\" con diagnóstico de \"PROLIFERACIÓN INTRADUCTAL A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA \". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con los marcadores: S100, CALPONINA, ESTROGENO, p63, PROGESTERONA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250226",
+      "timestamp": "2026-01-28T11:46:32.014981"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Ante la sospecha de una lesión neoplásica de mayor grado histológico se sugiere nuevo muestreo\na criterio del médico tratante.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---\nIHQ250226\nCopia Pag. 2 de 2\nNombre : YERALDID CAMPO ILAMO\nN. peticion : IHQ250226\nN.Identificación : CC. 1114732085\nGenero : FEMENINO\nEdad : 32 años 1 mes 12 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : ANA MARIA FIDALGO\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 03/03/2025\nFecha Informe : 12/03/2025",
+      "valor_corregido": "Ante la sospecha de una lesión neoplásica de mayor grado histológico se sugiere nuevo muestreo a criterio del médico tratante. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 30 --- IHQ250226 Copia Pag. 2 de 2 Nombre : YERALDID CAMPO ILAMO N. peticion : IHQ250226 N.Identificación : CC. 1114732085 Genero : FEMENINO Edad : 32 años 1 mes 12 dias EPS : E.P.S. INDIGENA MALLAMAS GUACH Médico tratante : ANA MARIA FIDALGO Servicio : GINECOLOGIA COEX Fecha Ingreso : 03/03/2025 Fecha Informe : 12/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250226",
+      "timestamp": "2026-01-28T11:46:32.014983"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 53
+  }
+}

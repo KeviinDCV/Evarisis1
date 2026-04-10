@@ -1,0 +1,144 @@
+{
+  "session_id": "IHQ250134_20260105_193050",
+  "numero_peticion": "IHQ250134",
+  "timestamp": "2026-01-05T19:30:50.785340",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250134\nCopia Pag. 1 de 1\nNombre : ISABEL TOBON CASTRO\nN. peticion : IHQ250134\nN.Identificación : CC. 31405381\nGenero : FEMENINO\nEdad : 64 años 3 meses\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : INES MARIA LINARES\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 06/02/2025\nFecha Informe : 14/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION REGION VAGINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500553 que corresponde a biopsia de lesión en región vaginal, con\ndiagnóstico de \"ADENOCARCINOMA\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales son positivas para CK7, Receptor de Progesterona, Receptor de Estrógeno, PAX-8,\nexpresión focal para p16, y expresión salvaje para p53.\nDIAGNÓSTICO\nRegión vaginal, sin otra especificación. Lesión. Biopsia. Estudios de inmunohistoquímica:\nADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 2346,
+      "reduccion_porcentaje": 98.65
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250134",
+      "caso_num": 25,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P53": "POSITIVO (PATRÓN SALVAJE)",
+      "nombre_completo": "ISABEL TOBON CASTRO",
+      "numero_peticion": "IHQ250134",
+      "identificacion": "31405381",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "64",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "INES MARIA LINARES",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "06/02/2025",
+      "fecha_informe": "14/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250134",
+      "N. de identificación": "31405381",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "INES MARIA LINARES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "06/02/2025",
+      "Fecha Informe": "14/02/2025",
+      "nombres": "ISABEL",
+      "Primer nombre": "ISABEL",
+      "Segundo nombre": "",
+      "apellidos": "TOBON CASTRO",
+      "Primer apellido": "TOBON",
+      "Segundo apellido": "CASTRO",
+      "nombre_formal": "TOBON CASTRO, ISABEL",
+      "diagnostico": "Región vaginal, sin otra especificación. Lesión. Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son positivas para CK7, Receptor de Progesterona, Receptor de Estrógeno, PAX-8, expresión focal para p16, y expresión salvaje para p53.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2500553 que corresponde a biopsia de lesión en región vaginal, con diagnóstico de \"ADENOCARCINOMA\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "REGIÓN VAGINAL, SIN OTRA ESPECIFICACIÓN",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN VAGINAL, SIN OTRA ESPECIFICACIÓN",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2026-01-05T19:30:51.095823",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250134\nCopia Pag. 1 de 1\nNombre : ISABEL TOBON CASTRO\nN. peticion : IHQ250134\nN.Identificación : CC. 31405381\nGenero : FEMENINO\nEdad : 64 años 3 meses\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : INES MARIA LINARES\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 06/02/2025\nFecha Informe : 14/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION REGION VAGINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500553 que corresponde a biopsia de lesión en región vaginal, con\ndiagnóstico de \"ADENOCARCINOMA\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales son positivas para CK7, Receptor de Progesterona, Receptor de Estrógeno, PAX-8,\nexpresión focal para p16, y expresión salvaje para p53.\nDIAGNÓSTICO\nRegión vaginal, sin otra especificación. Lesión. Biopsia. Estudios de inmunohistoquímica:\nADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, P16, P53, PAX8, Receptor de Estrógeno, Receptor de Progesterona",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2500553 que corresponde a biopsia de lesión en región vaginal, con diagnóstico de \"ADENOCARCINOMA\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son positivas para CK7, Receptor de Progesterona, Receptor de Estrógeno, PAX-8, expresión focal para p16, y expresión salvaje para p53.",
+      "Descripcion Diagnostico": "Región vaginal, sin otra especificación. Lesión. Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL.",
+      "IHQ_ORGANO": "REGIÓN VAGINAL, SIN OTRA ESPECIFICACIÓN",
+      "Organo": "LESION REGION VAGINAL",
+      "Diagnostico Coloracion": "ADENOCARCINOMA",
+      "Diagnostico Principal": "ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P53": "POSITIVO (PATRÓN SALVAJE)",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 127,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "completitud_porcentaje": 23.95
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 127,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región vaginal, sin otra especificación. Lesión. Biopsia. Estudios de inmunohistoquímica:\nADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL.",
+      "valor_corregido": "Región vaginal, sin otra especificación. Lesión. Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250134",
+      "timestamp": "2026-01-05T19:30:51.095624"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 52
+  }
+}

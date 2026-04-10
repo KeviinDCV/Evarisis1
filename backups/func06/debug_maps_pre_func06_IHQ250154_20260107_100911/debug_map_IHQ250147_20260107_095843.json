@@ -1,0 +1,152 @@
+{
+  "session_id": "IHQ250147_20260107_095843",
+  "numero_peticion": "IHQ250147",
+  "timestamp": "2026-01-07T09:58:43.386620",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250147\nCopia Pag. 1 de 2\nNombre : GUILLERMO IBARRA\nN. peticion : IHQ250147\nN.Identificación : CC. 19106285\nGenero : MASCULINO\nEdad : 74 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 07/02/2025\nFecha Informe : 18/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMUCOSA DE COLON\nTRANSVERSO + MUCOSA\nRECTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque extrainstitucional 12554-B2 que corresponde a biopsia de lesión en\nmucosa rectal, con diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE\". Se\nordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nRoche VENTANA©.\nLa lesión adenocarcinomatosa descrita en H&E es negativa para sobreexpresión de HER-2 (SCORE\n0).\nLos\ncortes\nhistológicos\nmuestran\nmucosa\nde\ncolon\ncon\nadecuada\nrepresentación\nde\nadenocarcinoma moderadamente diferenciado que alcanza la muscular de la mucosa. Se evalúa\nla expresión para las proteínas MLH1, MSH2, MSH6 y PMS2.\nEVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta pero focal y de moderada a débil intensidad \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nLos controles positivos de tejido conocido y los controles internos tienen una marcación\nDIAGNÓSTICO\nMucosa rectal. Lesión. Biopsia por colonoscopia. Estudios de inmunohistoquímica:\nADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE CON PATRÓN MICROSATELITAL ESTABLE\nSOBREEXPRESION DE HER-2: NEGATIVO (SCORE 0)\nCOMENTARIOS\nLa expresión de PMS2 es focal de moderada a debíl intensidad, por lo que se recomienda repetir\nla realización de inestabilidad microsatelital en el especimen de resección, a criterio del médico\ntratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---\nIHQ250147\nCopia Pag. 2 de 2\nNombre : GUILLERMO IBARRA\nN. peticion : IHQ250147\nN.Identificación : CC. 19106285\nGenero : MASCULINO\nEdad : 74 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 07/02/2025\nFecha Informe : 18/02/2025\nsatisfactoria.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 69 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3891,
+      "reduccion_porcentaje": 97.76
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250147",
+      "caso_num": 37,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "GUILLERMO IBARRA",
+      "numero_peticion": "IHQ250147",
+      "identificacion": "19106285",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "74",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "07/02/2025",
+      "fecha_informe": "18/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250147",
+      "N. de identificación": "19106285",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/02/2025",
+      "Fecha Informe": "18/02/2025",
+      "nombres": "GUILLERMO IBARRA",
+      "Primer nombre": "GUILLERMO",
+      "Segundo nombre": "IBARRA",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "GUILLERMO IBARRA",
+      "diagnostico": "Mucosa rectal. Lesión. Biopsia por colonoscopia. Estudios de inmunohistoquímica: ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE CON PATRÓN MICROSATELITAL ESTABLE SOBREEXPRESION DE HER-2: NEGATIVO (SCORE 0)",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La lesión adenocarcinomatosa descrita en H&E es negativa para sobreexpresión de HER-2 (SCORE 0). Los cortes histológicos muestran mucosa de colon con adecuada representación de adenocarcinoma moderadamente diferenciado que alcanza la muscular de la mucosa. Se evalúa la expresión para las proteínas MLH1, MSH2, MSH6 y PMS2. EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta pero focal y de moderada a débil intensidad MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable Los controles positivos de tejido conocido y los controles internos tienen una marcación",
+      "descripcion_macroscopica": "Se realizan niveles al bloque extrainstitucional 12554-B2 que corresponde a biopsia de lesión en mucosa rectal, con diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "MUCOSA RECTAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "La expresión de PMS2 es focal de moderada a debíl intensidad, por lo que se recomienda repetir la realización de inestabilidad microsatelital en el especimen de resección, a criterio del médico tratante.",
+      "IHQ_ORGANO": "MUCOSA RECTAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: NEGATIVO (0)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_HER2": "NEGATIVO (0)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "extraction_timestamp": "2026-01-07T09:58:43.839880",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250147\nCopia Pag. 1 de 2\nNombre : GUILLERMO IBARRA\nN. peticion : IHQ250147\nN.Identificación : CC. 19106285\nGenero : MASCULINO\nEdad : 74 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 07/02/2025\nFecha Informe : 18/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMUCOSA DE COLON\nTRANSVERSO + MUCOSA\nRECTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque extrainstitucional 12554-B2 que corresponde a biopsia de lesión en\nmucosa rectal, con diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE\". Se\nordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nRoche VENTANA©.\nLa lesión adenocarcinomatosa descrita en H&E es negativa para sobreexpresión de HER-2 (SCORE\n0).\nLos\ncortes\nhistológicos\nmuestran\nmucosa\nde\ncolon\ncon\nadecuada\nrepresentación\nde\nadenocarcinoma moderadamente diferenciado que alcanza la muscular de la mucosa. Se evalúa\nla expresión para las proteínas MLH1, MSH2, MSH6 y PMS2.\nEVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta pero focal y de moderada a débil intensidad \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nLos controles positivos de tejido conocido y los controles internos tienen una marcación\nDIAGNÓSTICO\nMucosa rectal. Lesión. Biopsia por colonoscopia. Estudios de inmunohistoquímica:\nADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE CON PATRÓN MICROSATELITAL ESTABLE\nSOBREEXPRESION DE HER-2: NEGATIVO (SCORE 0)\nCOMENTARIOS\nLa expresión de PMS2 es focal de moderada a debíl intensidad, por lo que se recomienda repetir\nla realización de inestabilidad microsatelital en el especimen de resección, a criterio del médico\ntratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---\nIHQ250147\nCopia Pag. 2 de 2\nNombre : GUILLERMO IBARRA\nN. peticion : IHQ250147\nN.Identificación : CC. 19106285\nGenero : MASCULINO\nEdad : 74 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 07/02/2025\nFecha Informe : 18/02/2025\nsatisfactoria.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 69 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MLH1, MSH2, MSH6, PMS2",
+      "Descripcion macroscopica": "Se realizan niveles al bloque extrainstitucional 12554-B2 que corresponde a biopsia de lesión en mucosa rectal, con diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La lesión adenocarcinomatosa descrita en H&E es negativa para sobreexpresión de HER-2 (SCORE 0). Los cortes histológicos muestran mucosa de colon con adecuada representación de adenocarcinoma moderadamente diferenciado que alcanza la muscular de la mucosa. Se evalúa la expresión para las proteínas MLH1, MSH2, MSH6 y PMS2. EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta pero focal y de moderada a débil intensidad MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable Los controles positivos de tejido conocido y los controles internos tienen una marcación",
+      "Descripcion Diagnostico": "Mucosa rectal. Lesión. Biopsia por colonoscopia. Estudios de inmunohistoquímica: ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE CON PATRÓN MICROSATELITAL ESTABLE SOBREEXPRESION DE HER-2: NEGATIVO (SCORE 0)",
+      "IHQ_ORGANO": "MUCOSA RECTAL",
+      "Organo": "MUCOSA DE COLON TRANSVERSO + MUCOSA RECTAL",
+      "Diagnostico Coloracion": "ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE",
+      "Diagnostico Principal": "ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE CON PATRÓN MICROSATELITAL ESTABLE SOBREEXPRESION DE HER-2: NEGATIVO (",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO (0)",
+      "IHQ_HER2": "NEGATIVO (0)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 129,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa rectal. Lesión. Biopsia por colonoscopia. Estudios de inmunohistoquímica:\nADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE CON PATRÓN MICROSATELITAL ESTABLE\nSOBREEXPRESION DE HER-2: NEGATIVO (SCORE 0)",
+      "valor_corregido": "Mucosa rectal. Lesión. Biopsia por colonoscopia. Estudios de inmunohistoquímica: ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE CON PATRÓN MICROSATELITAL ESTABLE SOBREEXPRESION DE HER-2: NEGATIVO (SCORE 0)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250147",
+      "timestamp": "2026-01-07T09:58:43.839608"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La expresión de PMS2 es focal de moderada a debíl intensidad, por lo que se recomienda repetir\nla realización de inestabilidad microsatelital en el especimen de resección, a criterio del médico\ntratante.",
+      "valor_corregido": "La expresión de PMS2 es focal de moderada a debíl intensidad, por lo que se recomienda repetir la realización de inestabilidad microsatelital en el especimen de resección, a criterio del médico tratante.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250147",
+      "timestamp": "2026-01-07T09:58:43.839614"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 49
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "session_id": "IHQ250263_20260203_044011",
+  "numero_peticion": "IHQ250263",
+  "timestamp": "2026-02-03T04:40:11.180255",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250263\nFinal Pag. 1 de 1\nNombre : MADELEINE WALLES PAREDES\nN. peticion : IHQ250263\nN.Identificación : CC. 31478637\nGenero : FEMENINO\nEdad : 49 años 6 meses 4 dias\nEPS : COMFENALCO VALLE\nMédico tratante : JUAN PABLO FLOREZ\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 12/03/2025\nFecha Informe : 18/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA MUSLO\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2408303-2, el cual corresponde a biopsia de muslo izquierdo\ncon diagnóstico de \"TUMOR DE CÉLULAS GRANULARES\". Se ordenan los siguientes marcadores de\ninmunohistoquímica: CKAE1E3, S100, SOX10 y CD68.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para S100, CD68 y SOX10. Son negativas para CKAE1E3.\nDIAGNÓSTICO\n Muslo izquierdo. Masa. Biopsia. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN: TUMOR DE CÉLULAS\nGRANULARES\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 2338,
+      "reduccion_porcentaje": 98.66
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250263",
+      "caso_num": 1,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_S100": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO",
+      "nombre_completo": "MADELEINE WALLES PAREDES",
+      "numero_peticion": "IHQ250263",
+      "identificacion": "31478637",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "49",
+      "eps": "COMFENALCO VALLE",
+      "medico_tratante": "JUAN PABLO FLOREZ",
+      "servicio": "INSTITUCION EXTERNA",
+      "fecha_ingreso": "12/03/2025",
+      "fecha_informe": "18/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250263",
+      "N. de identificación": "31478637",
+      "Tipo de documento": "CC",
+      "EPS": "COMFENALCO VALLE",
+      "Servicio": "INSTITUCION EXTERNA",
+      "Médico tratante": "JUAN PABLO FLOREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "12/03/2025",
+      "Fecha Informe": "18/03/2025",
+      "nombres": "MADELEINE",
+      "Primer nombre": "MADELEINE",
+      "Segundo nombre": "",
+      "apellidos": "WALLES PAREDES",
+      "Primer apellido": "WALLES",
+      "Segundo apellido": "PAREDES",
+      "nombre_formal": "WALLES PAREDES, MADELEINE",
+      "diagnostico": "Muslo izquierdo. Masa. Biopsia. Estudios de inmunohistoquímica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN: TUMOR DE CÉLULAS GRANULARES",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para S100, CD68 y SOX10. Son negativas para CKAE1E3.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2408303-2, el cual corresponde a biopsia de muslo izquierdo con diagnóstico de \"TUMOR DE CÉLULAS GRANULARES\". Se ordenan los siguientes marcadores de inmunohistoquímica: CKAE1E3, S100, SOX10 y CD68.",
+      "ihq_organo": "MUSLO IZQUIERDO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUSLO IZQUIERDO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-02-03T04:40:11.794729",
+      "extractor_version": "6.5.92_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250263\nFinal Pag. 1 de 1\nNombre : MADELEINE WALLES PAREDES\nN. peticion : IHQ250263\nN.Identificación : CC. 31478637\nGenero : FEMENINO\nEdad : 49 años 6 meses 4 dias\nEPS : COMFENALCO VALLE\nMédico tratante : JUAN PABLO FLOREZ\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 12/03/2025\nFecha Informe : 18/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA MUSLO\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2408303-2, el cual corresponde a biopsia de muslo izquierdo\ncon diagnóstico de \"TUMOR DE CÉLULAS GRANULARES\". Se ordenan los siguientes marcadores de\ninmunohistoquímica: CKAE1E3, S100, SOX10 y CD68.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para S100, CD68 y SOX10. Son negativas para CKAE1E3.\nDIAGNÓSTICO\n Muslo izquierdo. Masa. Biopsia. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN: TUMOR DE CÉLULAS\nGRANULARES\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD68, CKAE1AE3, S100, SOX10",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2408303-2, el cual corresponde a biopsia de muslo izquierdo con diagnóstico de \"TUMOR DE CÉLULAS GRANULARES\". Se ordenan los siguientes marcadores de inmunohistoquímica: CKAE1E3, S100, SOX10 y CD68.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para S100, CD68 y SOX10. Son negativas para CKAE1E3.",
+      "Descripcion Diagnostico": "Muslo izquierdo. Masa. Biopsia. Estudios de inmunohistoquímica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN: TUMOR DE CÉLULAS GRANULARES",
+      "IHQ_ORGANO": "MUSLO IZQUIERDO",
+      "Organo": "BX MASA MUSLO IZQUIERDO",
+      "Diagnostico Coloracion": "TUMOR DE CÉLULAS GRANULARES",
+      "Diagnostico Principal": "TUMOR DE CÉLULAS GRANULARES",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Muslo izquierdo. Masa. Biopsia. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN: TUMOR DE CÉLULAS\nGRANULARES",
+      "valor_corregido": "Muslo izquierdo. Masa. Biopsia. Estudios de inmunohistoquímica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN: TUMOR DE CÉLULAS GRANULARES",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250263",
+      "timestamp": "2026-02-03T04:40:11.507605"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 49
+  }
+}

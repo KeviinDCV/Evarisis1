@@ -1,0 +1,166 @@
+{
+  "session_id": "IHQ250140_20260105_185604",
+  "numero_peticion": "IHQ250140",
+  "timestamp": "2026-01-05T18:56:04.599112",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250140\nCopia Pag. 1 de 2\nNombre : GREGORIA JIPA CORTES\nN. peticion : IHQ250140\nN.Identificación : CC. 26637077\nGenero : FEMENINO\nEdad : 59 años\nEPS : EMSSANAR S.A.S\nMédico tratante : JOHAN GABRIEL QUINTERO\nServicio : ORTOPEDIA\nFecha Ingreso : 07/02/2025\nFecha Informe : 21/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR BRAZO\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"Dra\nMargarita Cortés Martinez MD\" rotulado como \"EMC2502\" el cual consiste en dos bloques de parafina y\ndos láminas de H&E correspondiente a \"tumor de brazo derecho\" con diagnóstico de \"NEOPLASIA\nMESENQUIMAL CON ATIPIA\". Se revisan placas para marcación de CKAE1E3, desmina, actina de músculo\nliso, actina músculo específica, caldesmon, MyoD1, mIogenina, Ki67, S100, SOX10, CD68, CD34 y MDM2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para actina de músculo especifica, SMA y caldesmón. CD34 positivo\nen estructuras vasculares y CD68 positivo focal. \nKi67 del 80% (alto).\nNo tienen expresión para CKE1E3, desmina, MyoD1, miogenina, MDMD2, S100 y SOX10.\nDIAGNÓSTICO\n Brazo derecho. Tumor. Biopsia TRUCUT. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN LEIOMIOSARCOMA. \nCOMENTARIOS\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 58 ---\nIHQ250140\nCopia Pag. 2 de 2\nNombre : GREGORIA JIPA CORTES\nN. peticion : IHQ250140\nN.Identificación : CC. 26637077\nGenero : FEMENINO\nEdad : 59 años\nEPS : EMSSANAR S.A.S\nMédico tratante : JOHAN GABRIEL QUINTERO\nServicio : ORTOPEDIA\nFecha Ingreso : 07/02/2025\nFecha Informe : 21/02/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3315,
+      "reduccion_porcentaje": 98.09
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250140",
+      "caso_num": 31,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_ACTINA_MUSCULO_LISO": "POSITIVO",
+      "IHQ_CD68": "POSITIVO",
+      "nombre_completo": "GREGORIA JIPA CORTES",
+      "numero_peticion": "IHQ250140",
+      "identificacion": "26637077",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "59",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JOHAN GABRIEL QUINTERO",
+      "servicio": "ORTOPEDIA",
+      "fecha_ingreso": "07/02/2025",
+      "fecha_informe": "21/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250140",
+      "N. de identificación": "26637077",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "ORTOPEDIA",
+      "Médico tratante": "JOHAN GABRIEL QUINTERO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/02/2025",
+      "Fecha Informe": "21/02/2025",
+      "nombres": "GREGORIA JIPA",
+      "Primer nombre": "GREGORIA",
+      "Segundo nombre": "JIPA",
+      "apellidos": "CORTES",
+      "Primer apellido": "CORTES",
+      "Segundo apellido": "",
+      "nombre_formal": "CORTES, GREGORIA JIPA",
+      "diagnostico": "Brazo derecho. Tumor. Biopsia TRUCUT. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN LEIOMIOSARCOMA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para actina de músculo especifica, SMA y caldesmón. CD34 positivo en estructuras vasculares y CD68 positivo focal. KI-67 del 80% (alto). No tienen expresión para CKE1E3, desmina, MyoD1, miogenina, MDMD2, S100 y SOX10.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"Dra Margarita Cortés Martinez MD\" rotulado como \"EMC2502\" el cual consiste en dos bloques de parafina y dos láminas de H&E correspondiente a \"tumor de brazo derecho\" con diagnóstico de \"NEOPLASIA MESENQUIMAL CON ATIPIA\". Se revisan placas para marcación de CKAE1E3, desmina, actina de músculo liso, actina músculo específica, caldesmon, MyoD1, mIogenina, KI-67, S100, SOX10, CD68, CD34 y MDM2.",
+      "ihq_organo": "BRAZO DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, DESMINA, ACTINA, DE MÚSCULO LISO, ACTINA MÚSCULO ESPECÍFICA, CALDESMON, MYOD1, MIOGENINA, Ki-67, S100, SOX10, CD68, CD34, MDM2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "BRAZO DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67 del 80%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, DESMINA, ACTINA, DE MÚSCULO LISO, ACTINA MÚSCULO ESPECÍFICA, CALDESMON, MYOD1, MIOGENINA, Ki-67, S100, SOX10, CD68, CD34, MDM2",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_KI-67": "80%",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_DESMIN": "POSITIVO",
+      "extraction_timestamp": "2026-01-05T18:56:05.002630",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250140\nCopia Pag. 1 de 2\nNombre : GREGORIA JIPA CORTES\nN. peticion : IHQ250140\nN.Identificación : CC. 26637077\nGenero : FEMENINO\nEdad : 59 años\nEPS : EMSSANAR S.A.S\nMédico tratante : JOHAN GABRIEL QUINTERO\nServicio : ORTOPEDIA\nFecha Ingreso : 07/02/2025\nFecha Informe : 21/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR BRAZO\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"Dra\nMargarita Cortés Martinez MD\" rotulado como \"EMC2502\" el cual consiste en dos bloques de parafina y\ndos láminas de H&E correspondiente a \"tumor de brazo derecho\" con diagnóstico de \"NEOPLASIA\nMESENQUIMAL CON ATIPIA\". Se revisan placas para marcación de CKAE1E3, desmina, actina de músculo\nliso, actina músculo específica, caldesmon, MyoD1, mIogenina, Ki67, S100, SOX10, CD68, CD34 y MDM2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para actina de músculo especifica, SMA y caldesmón. CD34 positivo\nen estructuras vasculares y CD68 positivo focal. \nKi67 del 80% (alto).\nNo tienen expresión para CKE1E3, desmina, MyoD1, miogenina, MDMD2, S100 y SOX10.\nDIAGNÓSTICO\n Brazo derecho. Tumor. Biopsia TRUCUT. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN LEIOMIOSARCOMA. \nCOMENTARIOS\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 58 ---\nIHQ250140\nCopia Pag. 2 de 2\nNombre : GREGORIA JIPA CORTES\nN. peticion : IHQ250140\nN.Identificación : CC. 26637077\nGenero : FEMENINO\nEdad : 59 años\nEPS : EMSSANAR S.A.S\nMédico tratante : JOHAN GABRIEL QUINTERO\nServicio : ORTOPEDIA\nFecha Ingreso : 07/02/2025\nFecha Informe : 21/02/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, DESMINA, ACTINA, DE MÚSCULO LISO, ACTINA MÚSCULO ESPECÍFICA, CALDESMON, MYOD1, MIOGENINA, Ki-67, S100, SOX10, CD68, CD34, MDM2, ACTINA DE MUSCULO LISO, DESMIN",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"Dra Margarita Cortés Martinez MD\" rotulado como \"EMC2502\" el cual consiste en dos bloques de parafina y dos láminas de H&E correspondiente a \"tumor de brazo derecho\" con diagnóstico de \"NEOPLASIA MESENQUIMAL CON ATIPIA\". Se revisan placas para marcación de CKAE1E3, desmina, actina de músculo liso, actina músculo específica, caldesmon, MyoD1, mIogenina, Ki67, S100, SOX10, CD68, CD34 y MDM2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para actina de músculo especifica, SMA y caldesmón. CD34 positivo en estructuras vasculares y CD68 positivo focal. Ki67 del 80% (alto). No tienen expresión para CKE1E3, desmina, MyoD1, miogenina, MDMD2, S100 y SOX10.",
+      "Descripcion Diagnostico": "Brazo derecho. Tumor. Biopsia TRUCUT. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN LEIOMIOSARCOMA.",
+      "IHQ_ORGANO": "BRAZO DERECHO",
+      "Organo": "BX TUMOR BRAZO DERECHO",
+      "Diagnostico Coloracion": "NEOPLASIA MESENQUIMAL CON ATIPIA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN LEIOMIOSARCOMA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 80%",
+      "IHQ_CKAE1E3": "",
+      "IHQ_DESMIN": "POSITIVO",
+      "IHQ_ACTIN": "",
+      "IHQ_MYOD1": "NO MENCIONADO",
+      "IHQ_KI-67": "80%",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "NO MENCIONADO",
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_MDM2": "NO MENCIONADO",
+      "IHQ_ACTINA_MUSCULO_LISO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 166,
+      "campos_vacios": 123,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 10,
+      "completitud_porcentaje": 25.9
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 123,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Brazo derecho. Tumor. Biopsia TRUCUT. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN LEIOMIOSARCOMA.",
+      "valor_corregido": "Brazo derecho. Tumor. Biopsia TRUCUT. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN LEIOMIOSARCOMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250140",
+      "timestamp": "2026-01-05T18:56:05.001589"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"Dra Margarita Cortés Martinez MD\" rotulado como \"EMC2502\" el cual consiste en dos bloques de parafina y dos láminas de H&E correspondiente a \"tumor de brazo derecho\" con diagnóstico de \"NEOPLASIA MESENQUIMAL CON ATIPIA\". Se revisan placas para marcación de CKAE1E3, desmina, actina de músculo liso, actina músculo específica, caldesmon, MyoD1, mIogenina, Ki67, S100, SOX10, CD68, CD34 y MDM2.",
+      "valor_corregido": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de \"Dra Margarita Cortés Martinez MD\" rotulado como \"EMC2502\" el cual consiste en dos bloques de parafina y dos láminas de H&E correspondiente a \"tumor de brazo derecho\" con diagnóstico de \"NEOPLASIA MESENQUIMAL CON ATIPIA\". Se revisan placas para marcación de CKAE1E3, desmina, actina de músculo liso, actina músculo específica, caldesmon, MyoD1, mIogenina, KI-67, S100, SOX10, CD68, CD34 y MDM2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250140",
+      "timestamp": "2026-01-05T18:56:05.001596"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para actina de músculo especifica, SMA y caldesmón. CD34 positivo en estructuras vasculares y CD68 positivo focal. Ki67 del 80% (alto). No tienen expresión para CKE1E3, desmina, MyoD1, miogenina, MDMD2, S100 y SOX10.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para actina de músculo especifica, SMA y caldesmón. CD34 positivo en estructuras vasculares y CD68 positivo focal. KI-67 del 80% (alto). No tienen expresión para CKE1E3, desmina, MyoD1, miogenina, MDMD2, S100 y SOX10.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250140",
+      "timestamp": "2026-01-05T18:56:05.001597"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 53
+  }
+}

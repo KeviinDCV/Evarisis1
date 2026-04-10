@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250024_20251213_110823",
+  "numero_peticion": "IHQ250024",
+  "timestamp": "2025-12-13T11:08:23.654193",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250024\nCopia Pag. 1 de 2\nNombre : EMILSEN PEREZ CEBALLOS\nN. peticion : IHQ250024\nN.Identificación : CC. 29951905\nGenero : FEMENINO\nEdad : 52 años 23 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 09/01/2025\nFecha Informe : 15/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA MAMA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410266 que\ncorresponde a cuadrantectomía derecha, consiste en diez bloques de parafina y diez lámina\ncoloreadas con Hematoxilina - Eosina. Diagnóstico de \"CARCINOMA INVASIVO SIN TIPO ESPECIAL\n(DUCTAL), GRADO 2\". Previa valoración de la coloración básica se solicitan niveles histológicos a\nlos blques A2, A8 para los siguiente biomarcadores: HER 2, RECEPTOR DE ESTROGENO,\nRECEPTOR DE PROGESTERONA y Ki 67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary\nAntibody. VENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\n Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nEstado adecuado de los controles externos e internos para los biomarcadores utilizados. \nREPORTE DE BIOMARCADORES: \nHER 2: Equivoco (Score 2+)\nRECEPTOR DE ESTROGENO: Positivo débil, 1%.\nRECEPTOR DE PROGESTERONA: Positivo débil focal 3%\nKi 67: 90%.\nDIAGNÓSTICO\nMama derecha. Lesión. Cuadrantectomía. Estudio de inmunohistoquímica. \nCARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL)\nGRADO HISTOLOGICO 2 (NOTTINGHAM 7/9 PUNTOS). \nTAMAÑO TUMORAL: 50 x 40 x 32 MILÍMETROS\nINVASIÓN LINFÁTICA Y /O VASCULAR: PRESENTE\nCOMPROMISO DÉRMICO: NO IDENTIFICADA. \nINVASIÓN LIFATICA Y/O VASCULAR DÉRMICA: NO IDENTIFICADA. \nBORDES: NEGATIVOS. \nRCB: II\nRECEPTORES DE ESTRÓGENOS POSITIVO DÉBIL 1%\nRECEPTORES DE PROGESTERONA POSITIVO DÉBIL 3%\nHER 2: EQUIVOCO (SCORE 2+)\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 40 ---\nIHQ250024\nCopia Pag. 2 de 2\nNombre : EMILSEN PEREZ CEBALLOS\nN. peticion : IHQ250024\nN.Identificación : CC. 29951905\nGenero : FEMENINO\nEdad : 52 años 23 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 09/01/2025\nFecha Informe : 15/01/2025\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado. \n- Tiempo de fijación: no determinado. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 41 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 4185,
+      "reduccion_porcentaje": 97.56
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250024",
+      "caso_num": 24,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "EMILSEN PEREZ CEBALLOS",
+      "numero_peticion": "IHQ250024",
+      "identificacion": "29951905",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "52",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "09/01/2025",
+      "fecha_informe": "15/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250024",
+      "N. de identificación": "29951905",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/01/2025",
+      "Fecha Informe": "15/01/2025",
+      "nombres": "EMILSEN",
+      "Primer nombre": "EMILSEN",
+      "Segundo nombre": "",
+      "apellidos": "PEREZ CEBALLOS",
+      "Primer apellido": "PEREZ",
+      "Segundo apellido": "CEBALLOS",
+      "nombre_formal": "PEREZ CEBALLOS, EMILSEN",
+      "diagnostico": "Mama derecha. Lesión. Cuadrantectomía. Estudio de inmunohistoquímica. CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL) GRADO HISTOLOGICO 2 (NOTTINGHAM 7/9 PUNTOS). TAMAÑO TUMORAL: 50 x 40 x 32 MILÍMETROS INVASIÓN LINFÁTICA Y /O VASCULAR: PRESENTE COMPROMISO DÉRMICO: NO IDENTIFICADA. INVASIÓN LIFATICA Y/O VASCULAR DÉRMICA: NO IDENTIFICADA. BORDES: NEGATIVOS. RCB: II RECEPTORES DE ESTRÓGENOS POSITIVO DÉBIL 1% RECEPTORES DE PROGESTERONA POSITIVO DÉBIL 3% HER 2: EQUIVOCO (SCORE 2+)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Estado adecuado de los controles externos e internos para los biomarcadores utilizados. REPORTE DE BIOMARCADORES: HER 2: Equivoco (Score 2+) RECEPTOR DE ESTROGENO: Positivo débil, 1%. RECEPTOR DE PROGESTERONA: Positivo débil focal 3% KI-67: 90%.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410266 que corresponde a cuadrantectomía derecha, consiste en diez bloques de parafina y diez lámina coloreadas con Hematoxilina - Eosina. Diagnóstico de \"CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL), GRADO 2\". Previa valoración de la coloración básica se solicitan niveles histológicos a los blques A2, A8 para los siguiente biomarcadores: HER 2, RECEPTOR DE ESTROGENO, RECEPTOR DE PROGESTERONA y KI-67.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2, Receptor de Estrógeno, Receptor de Progesterona, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "HER2: Equivoco (Score 2+), Ki-67: 90%, Receptor de Estrógeno: POSITIVO DÉBIL, 1%, Receptor de Progesterona: POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_HER2": "Equivoco (Score 2+)",
+      "IHQ_KI-67": "90%",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO DÉBIL, 1%",
+      "extraction_timestamp": "2025-12-13T11:08:23.780906",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250024\nCopia Pag. 1 de 2\nNombre : EMILSEN PEREZ CEBALLOS\nN. peticion : IHQ250024\nN.Identificación : CC. 29951905\nGenero : FEMENINO\nEdad : 52 años 23 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 09/01/2025\nFecha Informe : 15/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA MAMA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410266 que\ncorresponde a cuadrantectomía derecha, consiste en diez bloques de parafina y diez lámina\ncoloreadas con Hematoxilina - Eosina. Diagnóstico de \"CARCINOMA INVASIVO SIN TIPO ESPECIAL\n(DUCTAL), GRADO 2\". Previa valoración de la coloración básica se solicitan niveles histológicos a\nlos blques A2, A8 para los siguiente biomarcadores: HER 2, RECEPTOR DE ESTROGENO,\nRECEPTOR DE PROGESTERONA y Ki 67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary\nAntibody. VENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\n Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nEstado adecuado de los controles externos e internos para los biomarcadores utilizados. \nREPORTE DE BIOMARCADORES: \nHER 2: Equivoco (Score 2+)\nRECEPTOR DE ESTROGENO: Positivo débil, 1%.\nRECEPTOR DE PROGESTERONA: Positivo débil focal 3%\nKi 67: 90%.\nDIAGNÓSTICO\nMama derecha. Lesión. Cuadrantectomía. Estudio de inmunohistoquímica. \nCARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL)\nGRADO HISTOLOGICO 2 (NOTTINGHAM 7/9 PUNTOS). \nTAMAÑO TUMORAL: 50 x 40 x 32 MILÍMETROS\nINVASIÓN LINFÁTICA Y /O VASCULAR: PRESENTE\nCOMPROMISO DÉRMICO: NO IDENTIFICADA. \nINVASIÓN LIFATICA Y/O VASCULAR DÉRMICA: NO IDENTIFICADA. \nBORDES: NEGATIVOS. \nRCB: II\nRECEPTORES DE ESTRÓGENOS POSITIVO DÉBIL 1%\nRECEPTORES DE PROGESTERONA POSITIVO DÉBIL 3%\nHER 2: EQUIVOCO (SCORE 2+)\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 40 ---\nIHQ250024\nCopia Pag. 2 de 2\nNombre : EMILSEN PEREZ CEBALLOS\nN. peticion : IHQ250024\nN.Identificación : CC. 29951905\nGenero : FEMENINO\nEdad : 52 años 23 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 09/01/2025\nFecha Informe : 15/01/2025\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado. \n- Tiempo de fijación: no determinado. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 41 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, Receptor de Estrógeno, Receptor de Progesterona, Ki-67",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410266 que corresponde a cuadrantectomía derecha, consiste en diez bloques de parafina y diez lámina coloreadas con Hematoxilina - Eosina. Diagnóstico de \"CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL), GRADO 2\". Previa valoración de la coloración básica se solicitan niveles histológicos a los blques A2, A8 para los siguiente biomarcadores: HER 2, RECEPTOR DE ESTROGENO, RECEPTOR DE PROGESTERONA y Ki 67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Estado adecuado de los controles externos e internos para los biomarcadores utilizados. REPORTE DE BIOMARCADORES: HER 2: Equivoco (Score 2+) RECEPTOR DE ESTROGENO: Positivo débil, 1%. RECEPTOR DE PROGESTERONA: Positivo débil focal 3% Ki 67: 90%.",
+      "Descripcion Diagnostico": "Mama derecha. Lesión. Cuadrantectomía. Estudio de inmunohistoquímica. CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL) GRADO HISTOLOGICO 2 (NOTTINGHAM 7/9 PUNTOS). TAMAÑO TUMORAL: 50 x 40 x 32 MILÍMETROS INVASIÓN LINFÁTICA Y /O VASCULAR: PRESENTE COMPROMISO DÉRMICO: NO IDENTIFICADA. INVASIÓN LIFATICA Y/O VASCULAR DÉRMICA: NO IDENTIFICADA. BORDES: NEGATIVOS. RCB: II RECEPTORES DE ESTRÓGENOS POSITIVO DÉBIL 1% RECEPTORES DE PROGESTERONA POSITIVO DÉBIL 3% HER 2: EQUIVOCO (SCORE 2+)",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "CUADRANTECTOMIA MAMA DERECHA",
+      "Diagnostico Coloracion": "CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL), GRADO 2",
+      "Diagnostico Principal": "CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL) GRADO HISTOLOGICO 2 (NOTTINGHAM 7/9 PUNTOS)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: Equivoco (Score 2+), Ki-67: 90%, Receptor de Estrógeno: POSITIVO DÉBIL, 1%, Receptor de Progesterona: POSITIVO",
+      "IHQ_HER2": "EQUIVOCO (Score 2+)",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO DÉBIL, 1%",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_KI-67": "90%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 119,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 24.2
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 119,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Lesión. Cuadrantectomía. Estudio de inmunohistoquímica. \nCARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL)\nGRADO HISTOLOGICO 2 (NOTTINGHAM 7/9 PUNTOS). \nTAMAÑO TUMORAL: 50 x 40 x 32 MILÍMETROS\nINVASIÓN LINFÁTICA Y /O VASCULAR: PRESENTE\nCOMPROMISO DÉRMICO: NO IDENTIFICADA. \nINVASIÓN LIFATICA Y/O VASCULAR DÉRMICA: NO IDENTIFICADA. \nBORDES: NEGATIVOS. \nRCB: II\nRECEPTORES DE ESTRÓGENOS POSITIVO DÉBIL 1%\nRECEPTORES DE PROGESTERONA POSITIVO DÉBIL 3%\nHER 2: EQUIVOCO (SCORE 2+)",
+      "valor_corregido": "Mama derecha. Lesión. Cuadrantectomía. Estudio de inmunohistoquímica. CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL) GRADO HISTOLOGICO 2 (NOTTINGHAM 7/9 PUNTOS). TAMAÑO TUMORAL: 50 x 40 x 32 MILÍMETROS INVASIÓN LINFÁTICA Y /O VASCULAR: PRESENTE COMPROMISO DÉRMICO: NO IDENTIFICADA. INVASIÓN LIFATICA Y/O VASCULAR DÉRMICA: NO IDENTIFICADA. BORDES: NEGATIVOS. RCB: II RECEPTORES DE ESTRÓGENOS POSITIVO DÉBIL 1% RECEPTORES DE PROGESTERONA POSITIVO DÉBIL 3% HER 2: EQUIVOCO (SCORE 2+)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250024",
+      "timestamp": "2025-12-13T11:08:23.780652"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410266 que\ncorresponde a cuadrantectomía derecha, consiste en diez bloques de parafina y diez lámina\ncoloreadas con Hematoxilina - Eosina. Diagnóstico de \"CARCINOMA INVASIVO SIN TIPO ESPECIAL\n(DUCTAL), GRADO 2\". Previa valoración de la coloración básica se solicitan niveles histológicos a\nlos blques A2, A8 para los siguiente biomarcadores: HER 2, RECEPTOR DE ESTROGENO,\nRECEPTOR DE PROGESTERONA y Ki 67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410266 que corresponde a cuadrantectomía derecha, consiste en diez bloques de parafina y diez lámina coloreadas con Hematoxilina - Eosina. Diagnóstico de \"CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL), GRADO 2\". Previa valoración de la coloración básica se solicitan niveles histológicos a los blques A2, A8 para los siguiente biomarcadores: HER 2, RECEPTOR DE ESTROGENO, RECEPTOR DE PROGESTERONA y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250024",
+      "timestamp": "2025-12-13T11:08:23.780658"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary\nAntibody. VENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\n Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nEstado adecuado de los controles externos e internos para los biomarcadores utilizados. \nREPORTE DE BIOMARCADORES: \nHER 2: Equivoco (Score 2+)\nRECEPTOR DE ESTROGENO: Positivo débil, 1%.\nRECEPTOR DE PROGESTERONA: Positivo débil focal 3%\nKi 67: 90%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Estado adecuado de los controles externos e internos para los biomarcadores utilizados. REPORTE DE BIOMARCADORES: HER 2: Equivoco (Score 2+) RECEPTOR DE ESTROGENO: Positivo débil, 1%. RECEPTOR DE PROGESTERONA: Positivo débil focal 3% KI-67: 90%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250024",
+      "timestamp": "2025-12-13T11:08:23.780661"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 50
+  }
+}

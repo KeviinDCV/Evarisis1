@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250119_20260105_185801",
+  "numero_peticion": "IHQ250119",
+  "timestamp": "2026-01-05T18:58:01.081686",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250119\nCopia Pag. 1 de 2\nNombre : NUBIA DE JESUS ROJAS DE\nBETANCOURT\nN. peticion : IHQ250119\nN.Identificación : CC. 29201951\nGenero : FEMENINO\nEdad : 81 años 6 meses 9 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 03/02/2025\nFecha Informe : 11/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA MAMA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como \"cuadrantectomía de mama izquierda\" con diagnóstico principal de \"CARCINOMA\nINVASIVO DE TIPO NO ESPECIAL\". Previa revisión de la histología, se procesa estudio de\ninmunohistoquímica para marcación con Receptores de Estrógenos, Receptores de progesterona,\nHER2 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nA. Tejido mamario con presencia de una lesión carcinomatosa infiltrante con el siguiente perfil\nmolecular:\nExpresión de receptores de estrógeno:\n- NEGATIVO (MENOR AL 1%)\nExpresión de receptores de progesterona:\n- NEGATIVO (MENOR AL 1% DE LAS CELULAS TUMORALES)\nSobreexpresión de oncogén HER2:\n- POSITIVO (Score3+).\nÍndice de proliferación celular (Ki-67): 70%.\nB. Ganglio linfático que presenta una lesión neoplásica carcinomatosa metastásica que es positiva\npara GATA-3, siendo negativo para Receptor de Estrógeno, Receptor de Progesterona y con\nsobreexpresión para Her-2 positivo (Score 3+).\nDIAGNÓSTICO\nA.\nMama\nizquierda.\nCuadrante\nno\nespecificado.\nCuadrantectomía.\nEstudios\nde\ninmunohistoquímica:\nCARCINOMA INVASIVO DE TIPO NO ESPECIAL\nEXPRESION MOLECULAR:\n-RECEPTORES DE ESTRÓGENO: NEGATIVO \n-RECEPTORES DE PROGESTERONA: NEGATIVO \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---\nIHQ250119\nCopia Pag. 2 de 2\nNombre : NUBIA DE JESUS ROJAS DE\nBETANCOURT\nN. peticion : IHQ250119\nN.Identificación : CC. 29201951\nGenero : FEMENINO\nEdad : 81 años 6 meses 9 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 03/02/2025\nFecha Informe : 11/02/2025\n-HER 2: SCORE 3+ (POSITIVO)\nB. Ganglio linfático, región axilar izquierda. Vaciamiento. Estudios de inmunohistoquímica:\nCARCINOMA METASTASICO DE ORIGEN MAMARIO\nRECEPTOR DE ESTROGENO NEGATIVO \nRECEPTOR DE PROGESTERONA NEGATIVO\nHER-2 POSITVO (Score 3+)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3980,
+      "reduccion_porcentaje": 97.71
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250119",
+      "caso_num": 12,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GATA3": "POSITIVO",
+      "nombre_completo": "NUBIA DE JESUS ROJAS DE BETANCOURT",
+      "numero_peticion": "IHQ250119",
+      "identificacion": "29201951",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "81",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "03/02/2025",
+      "fecha_informe": "11/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250119",
+      "N. de identificación": "29201951",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/02/2025",
+      "Fecha Informe": "11/02/2025",
+      "nombres": "NUBIA DE JESUS",
+      "Primer nombre": "NUBIA",
+      "Segundo nombre": "DE JESUS",
+      "apellidos": "ROJAS DE BETANCOURT",
+      "Primer apellido": "ROJAS",
+      "Segundo apellido": "DE BETANCOURT",
+      "nombre_formal": "ROJAS DE BETANCOURT, NUBIA DE JESUS",
+      "diagnostico": "A. Mama izquierda. Cuadrante no especificado. Cuadrantectomía. Estudios de inmunohistoquímica: CARCINOMA INVASIVO DE TIPO NO ESPECIAL EXPRESION MOLECULAR: -RECEPTORES DE ESTRÓGENO: NEGATIVO -RECEPTORES DE PROGESTERONA: NEGATIVO: 03/02/2025 -HER 2: SCORE 3+ (POSITIVO) B. Ganglio linfático, región axilar izquierda. Vaciamiento. Estudios de inmunohistoquímica: CARCINOMA METASTASICO DE ORIGEN MAMARIO RECEPTOR DE ESTROGENO NEGATIVO RECEPTOR DE PROGESTERONA NEGATIVO HER-2 POSITVO (Score 3+)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A. Tejido mamario con presencia de una lesión carcinomatosa infiltrante con el siguiente perfil molecular: Expresión de receptores de estrógeno: - NEGATIVO (MENOR AL 1%) Expresión de receptores de progesterona: - NEGATIVO (MENOR AL 1% DE LAS CELULAS TUMORALES) Sobreexpresión de oncogén HER2: - POSITIVO (Score3+). Índice de proliferación celular (KI-67): 70%. B. Ganglio linfático que presenta una lesión neoplásica carcinomatosa metastásica que es positiva para GATA-3, siendo negativo para Receptor de Estrógeno, Receptor de Progesterona y con sobreexpresión para Her-2 positivo (Score 3+).",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"cuadrantectomía de mama izquierda\" con diagnóstico principal de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con Receptores de Estrógenos, Receptores de progesterona, HER2 y KI-67.",
+      "ihq_organo": "MAMA IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Receptor de Estrógeno, Receptor de Progesterona, HER2, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: NEGATIVO, Ki-67: POSITIVO, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, Receptor de Progesterona, HER2, Ki-67",
+      "IHQ_KI-67": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "extraction_timestamp": "2026-01-05T18:58:01.564431",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250119\nCopia Pag. 1 de 2\nNombre : NUBIA DE JESUS ROJAS DE\nBETANCOURT\nN. peticion : IHQ250119\nN.Identificación : CC. 29201951\nGenero : FEMENINO\nEdad : 81 años 6 meses 9 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 03/02/2025\nFecha Informe : 11/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA MAMA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como \"cuadrantectomía de mama izquierda\" con diagnóstico principal de \"CARCINOMA\nINVASIVO DE TIPO NO ESPECIAL\". Previa revisión de la histología, se procesa estudio de\ninmunohistoquímica para marcación con Receptores de Estrógenos, Receptores de progesterona,\nHER2 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nA. Tejido mamario con presencia de una lesión carcinomatosa infiltrante con el siguiente perfil\nmolecular:\nExpresión de receptores de estrógeno:\n- NEGATIVO (MENOR AL 1%)\nExpresión de receptores de progesterona:\n- NEGATIVO (MENOR AL 1% DE LAS CELULAS TUMORALES)\nSobreexpresión de oncogén HER2:\n- POSITIVO (Score3+).\nÍndice de proliferación celular (Ki-67): 70%.\nB. Ganglio linfático que presenta una lesión neoplásica carcinomatosa metastásica que es positiva\npara GATA-3, siendo negativo para Receptor de Estrógeno, Receptor de Progesterona y con\nsobreexpresión para Her-2 positivo (Score 3+).\nDIAGNÓSTICO\nA.\nMama\nizquierda.\nCuadrante\nno\nespecificado.\nCuadrantectomía.\nEstudios\nde\ninmunohistoquímica:\nCARCINOMA INVASIVO DE TIPO NO ESPECIAL\nEXPRESION MOLECULAR:\n-RECEPTORES DE ESTRÓGENO: NEGATIVO \n-RECEPTORES DE PROGESTERONA: NEGATIVO \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---\nIHQ250119\nCopia Pag. 2 de 2\nNombre : NUBIA DE JESUS ROJAS DE\nBETANCOURT\nN. peticion : IHQ250119\nN.Identificación : CC. 29201951\nGenero : FEMENINO\nEdad : 81 años 6 meses 9 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 03/02/2025\nFecha Informe : 11/02/2025\n-HER 2: SCORE 3+ (POSITIVO)\nB. Ganglio linfático, región axilar izquierda. Vaciamiento. Estudios de inmunohistoquímica:\nCARCINOMA METASTASICO DE ORIGEN MAMARIO\nRECEPTOR DE ESTROGENO NEGATIVO \nRECEPTOR DE PROGESTERONA NEGATIVO\nHER-2 POSITVO (Score 3+)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, Receptor de Progesterona, HER2, Ki-67, GATA3",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"cuadrantectomía de mama izquierda\" con diagnóstico principal de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con Receptores de Estrógenos, Receptores de progesterona, HER2 y Ki-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A. Tejido mamario con presencia de una lesión carcinomatosa infiltrante con el siguiente perfil molecular: Expresión de receptores de estrógeno: - NEGATIVO (MENOR AL 1%) Expresión de receptores de progesterona: - NEGATIVO (MENOR AL 1% DE LAS CELULAS TUMORALES) Sobreexpresión de oncogén HER2: - POSITIVO (Score3+). Índice de proliferación celular (Ki-67): 70%. B. Ganglio linfático que presenta una lesión neoplásica carcinomatosa metastásica que es positiva para GATA-3, siendo negativo para Receptor de Estrógeno, Receptor de Progesterona y con sobreexpresión para Her-2 positivo (Score 3+).",
+      "Descripcion Diagnostico": "A. Mama izquierda. Cuadrante no especificado. Cuadrantectomía. Estudios de inmunohistoquímica: CARCINOMA INVASIVO DE TIPO NO ESPECIAL EXPRESION MOLECULAR: -RECEPTORES DE ESTRÓGENO: NEGATIVO -RECEPTORES DE PROGESTERONA: NEGATIVO: 03/02/2025 -HER 2: SCORE 3+ (POSITIVO) B. Ganglio linfático, región axilar izquierda. Vaciamiento. Estudios de inmunohistoquímica: CARCINOMA METASTASICO DE ORIGEN MAMARIO RECEPTOR DE ESTROGENO NEGATIVO RECEPTOR DE PROGESTERONA NEGATIVO HER-2 POSITVO (Score 3+)",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Organo": "CUADRANTECTOMIA MAMA IZQUIERDA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL EXPRESION MOLECULAR: -RECEPTORES DE ESTRÓGENO: NEGATIVO -RECEPTORES DE PROGESTERONA: NEGATIVO: 03/02/2025 -HER 2: SCORE 3+ (POSITIVO) B",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO, Ki-67: POSITIVO, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_KI-67": "POSITIVO",
+      "IHQ_GATA3": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 166,
+      "campos_vacios": 126,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 24.1
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 126,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A.\nMama\nizquierda.\nCuadrante\nno\nespecificado.\nCuadrantectomía.\nEstudios\nde\ninmunohistoquímica:\nCARCINOMA INVASIVO DE TIPO NO ESPECIAL\nEXPRESION MOLECULAR:\n-RECEPTORES DE ESTRÓGENO: NEGATIVO \n-RECEPTORES DE PROGESTERONA: NEGATIVO: 03/02/2025\n-HER 2: SCORE 3+ (POSITIVO)\nB. Ganglio linfático, región axilar izquierda. Vaciamiento. Estudios de inmunohistoquímica:\nCARCINOMA METASTASICO DE ORIGEN MAMARIO\nRECEPTOR DE ESTROGENO NEGATIVO \nRECEPTOR DE PROGESTERONA NEGATIVO\nHER-2 POSITVO (Score 3+)",
+      "valor_corregido": "A. Mama izquierda. Cuadrante no especificado. Cuadrantectomía. Estudios de inmunohistoquímica: CARCINOMA INVASIVO DE TIPO NO ESPECIAL EXPRESION MOLECULAR: -RECEPTORES DE ESTRÓGENO: NEGATIVO -RECEPTORES DE PROGESTERONA: NEGATIVO: 03/02/2025 -HER 2: SCORE 3+ (POSITIVO) B. Ganglio linfático, región axilar izquierda. Vaciamiento. Estudios de inmunohistoquímica: CARCINOMA METASTASICO DE ORIGEN MAMARIO RECEPTOR DE ESTROGENO NEGATIVO RECEPTOR DE PROGESTERONA NEGATIVO HER-2 POSITVO (Score 3+)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250119",
+      "timestamp": "2026-01-05T18:58:01.564220"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"cuadrantectomía de mama izquierda\" con diagnóstico principal de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con Receptores de Estrógenos, Receptores de progesterona, HER2 y Ki-67.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"cuadrantectomía de mama izquierda\" con diagnóstico principal de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con Receptores de Estrógenos, Receptores de progesterona, HER2 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250119",
+      "timestamp": "2026-01-05T18:58:01.564227"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A. Tejido mamario con presencia de una lesión carcinomatosa infiltrante con el siguiente perfil molecular: Expresión de receptores de estrógeno: - NEGATIVO (MENOR AL 1%) Expresión de receptores de progesterona: - NEGATIVO (MENOR AL 1% DE LAS CELULAS TUMORALES) Sobreexpresión de oncogén HER2: - POSITIVO (Score3+). Índice de proliferación celular (Ki-67): 70%. B. Ganglio linfático que presenta una lesión neoplásica carcinomatosa metastásica que es positiva para GATA-3, siendo negativo para Receptor de Estrógeno, Receptor de Progesterona y con sobreexpresión para Her-2 positivo (Score 3+).",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A. Tejido mamario con presencia de una lesión carcinomatosa infiltrante con el siguiente perfil molecular: Expresión de receptores de estrógeno: - NEGATIVO (MENOR AL 1%) Expresión de receptores de progesterona: - NEGATIVO (MENOR AL 1% DE LAS CELULAS TUMORALES) Sobreexpresión de oncogén HER2: - POSITIVO (Score3+). Índice de proliferación celular (KI-67): 70%. B. Ganglio linfático que presenta una lesión neoplásica carcinomatosa metastásica que es positiva para GATA-3, siendo negativo para Receptor de Estrógeno, Receptor de Progesterona y con sobreexpresión para Her-2 positivo (Score 3+).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250119",
+      "timestamp": "2026-01-05T18:58:01.564229"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 53
+  }
+}

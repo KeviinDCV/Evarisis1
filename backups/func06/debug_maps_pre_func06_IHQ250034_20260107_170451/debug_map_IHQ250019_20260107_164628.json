@@ -1,0 +1,157 @@
+{
+  "session_id": "IHQ250019_20260107_164628",
+  "numero_peticion": "IHQ250019",
+  "timestamp": "2026-01-07T16:46:28.911901",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250019\nCopia Pag. 1 de 2\nNombre : MARTHA CECILIA CHAVERRA PATIÑO\nN. peticion : IHQ250019\nN.Identificación : CC. 31957683\nGenero : FEMENINO\nEdad : 57 años 9 dias\nEPS : NUEVA EPS\nMédico tratante : ANA MARIA FIDALGO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 07/01/2025\nFecha Informe : 10/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION MAMA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquimica al caso institucional con rotulo M2410677 con rótulo\nque corresponden a\n\"Biopsia de lesión mama izquierda\" con diagnóstico de \"PROLIFERACIÓN\nINTRADUCTAL CON EXTENSAS MICROCALCIFICACIONES\".\nPrevia valoración de la coloración\nbásica, se realizan cortes histológicos para los siguientes marcadores: p63,CK5/6, RECEPTORES\nDE ESTROGENOS.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nEstado de los controles internos para los biomarcadores utilizados: Células de control interno\npresentes y teñidas como se esperaba.\n-La lesión de interés presenta ductos comprimidos por un estroma fibroso\ny con abundantes\nmicrocalcificaciones, los ductos se revistes internamente por células epiteliales con expresión en\nmosaico (normal) para receptores de estrógenos y se rodean de células mioepiteliales positivas\npara p65 y CK 5/6. \nDIAGNÓSTICO\nMama izquierda. Lesión. Biopsia por esterotacsia. Estudio de inmunohistoquímica.\nADENOSIS ESCLEROSANTE CON ABUNDANTES MICROCALCIFICACIONES.\nVER COMENTARIO.\nCOMENTARIOS\nLas lesiones de mama son heterogéneas por ende el diagnostico de adenosis esclerosante no\ndescarta una lesión maligna asociada, por consiguiente queda a criterio del medico tratante y\nsegún la sospecha clínica realizar un nuevo muestreo. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---\nIHQ250019\nCopia Pag. 2 de 2\nNombre : MARTHA CECILIA CHAVERRA PATIÑO\nN. peticion : IHQ250019\nN.Identificación : CC. 31957683\nGenero : FEMENINO\nEdad : 57 años 9 dias\nEPS : NUEVA EPS\nMédico tratante : ANA MARIA FIDALGO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 07/01/2025\nFecha Informe : 10/01/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3763,
+      "reduccion_porcentaje": 97.8
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250019",
+      "caso_num": 19,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK5_6": "POSITIVO",
+      "nombre_completo": "MARTHA CECILIA CHAVERRA PATIÑO",
+      "numero_peticion": "IHQ250019",
+      "identificacion": "31957683",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "57",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ANA MARIA FIDALGO",
+      "servicio": "INSTITUCION EXTERNA",
+      "fecha_ingreso": "07/01/2025",
+      "fecha_informe": "10/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250019",
+      "N. de identificación": "31957683",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "INSTITUCION EXTERNA",
+      "Médico tratante": "ANA MARIA FIDALGO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/01/2025",
+      "Fecha Informe": "10/01/2025",
+      "nombres": "MARTHA CECILIA",
+      "Primer nombre": "MARTHA",
+      "Segundo nombre": "CECILIA",
+      "apellidos": "CHAVERRA PATIÑO",
+      "Primer apellido": "CHAVERRA",
+      "Segundo apellido": "PATIÑO",
+      "nombre_formal": "CHAVERRA PATIÑO, MARTHA CECILIA",
+      "diagnostico": "Mama izquierda. Lesión. Biopsia por esterotacsia. Estudio de inmunohistoquímica. ADENOSIS ESCLEROSANTE CON ABUNDANTES MICROCALCIFICACIONES. VER COMENTARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Estado de los controles internos para los biomarcadores utilizados: Células de control interno presentes y teñidas como se esperaba. -La lesión de interés presenta ductos comprimidos por un estroma fibroso y con abundantes microcalcificaciones, los ductos se revistes internamente por células epiteliales con expresión en mosaico (normal) para receptores de estrógenos y se rodean de células mioepiteliales positivas para p65 y CK5/6.",
+      "descripcion_macroscopica": "Se realiza estudio de inmunohistoquimica al caso institucional con rotulo M2410677 con rótulo que corresponden a \"Biopsia de lesión mama izquierda\" con diagnóstico de \"PROLIFERACIÓN INTRADUCTAL CON EXTENSAS MICROCALCIFICACIONES\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: p63,CK5/6, RECEPTORES DE ESTROGENOS.",
+      "ihq_organo": "MAMA IZQUIERDA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P63, CK5/6, Receptor de Estrógeno",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Las lesiones de mama son heterogéneas por ende el diagnostico de adenosis esclerosante no descarta una lesión maligna asociada, por consiguiente queda a criterio del medico tratante y según la sospecha clínica realizar un nuevo muestreo.",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (mosaico normal)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK5/6, Receptor de Estrógeno",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (mosaico normal)",
+      "extraction_timestamp": "2026-01-07T16:46:29.338585",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250019\nCopia Pag. 1 de 2\nNombre : MARTHA CECILIA CHAVERRA PATIÑO\nN. peticion : IHQ250019\nN.Identificación : CC. 31957683\nGenero : FEMENINO\nEdad : 57 años 9 dias\nEPS : NUEVA EPS\nMédico tratante : ANA MARIA FIDALGO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 07/01/2025\nFecha Informe : 10/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION MAMA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquimica al caso institucional con rotulo M2410677 con rótulo\nque corresponden a\n\"Biopsia de lesión mama izquierda\" con diagnóstico de \"PROLIFERACIÓN\nINTRADUCTAL CON EXTENSAS MICROCALCIFICACIONES\".\nPrevia valoración de la coloración\nbásica, se realizan cortes histológicos para los siguientes marcadores: p63,CK5/6, RECEPTORES\nDE ESTROGENOS.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nEstado de los controles internos para los biomarcadores utilizados: Células de control interno\npresentes y teñidas como se esperaba.\n-La lesión de interés presenta ductos comprimidos por un estroma fibroso\ny con abundantes\nmicrocalcificaciones, los ductos se revistes internamente por células epiteliales con expresión en\nmosaico (normal) para receptores de estrógenos y se rodean de células mioepiteliales positivas\npara p65 y CK 5/6. \nDIAGNÓSTICO\nMama izquierda. Lesión. Biopsia por esterotacsia. Estudio de inmunohistoquímica.\nADENOSIS ESCLEROSANTE CON ABUNDANTES MICROCALCIFICACIONES.\nVER COMENTARIO.\nCOMENTARIOS\nLas lesiones de mama son heterogéneas por ende el diagnostico de adenosis esclerosante no\ndescarta una lesión maligna asociada, por consiguiente queda a criterio del medico tratante y\nsegún la sospecha clínica realizar un nuevo muestreo. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---\nIHQ250019\nCopia Pag. 2 de 2\nNombre : MARTHA CECILIA CHAVERRA PATIÑO\nN. peticion : IHQ250019\nN.Identificación : CC. 31957683\nGenero : FEMENINO\nEdad : 57 años 9 dias\nEPS : NUEVA EPS\nMédico tratante : ANA MARIA FIDALGO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 07/01/2025\nFecha Informe : 10/01/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK5/6, Receptor de Estrógeno",
+      "Descripcion macroscopica": "Se realiza estudio de inmunohistoquimica al caso institucional con rotulo M2410677 con rótulo que corresponden a \"Biopsia de lesión mama izquierda\" con diagnóstico de \"PROLIFERACIÓN INTRADUCTAL CON EXTENSAS MICROCALCIFICACIONES\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: p63,CK5/6, RECEPTORES DE ESTROGENOS.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Estado de los controles internos para los biomarcadores utilizados: Células de control interno presentes y teñidas como se esperaba. -La lesión de interés presenta ductos comprimidos por un estroma fibroso y con abundantes microcalcificaciones, los ductos se revistes internamente por células epiteliales con expresión en mosaico (normal) para receptores de estrógenos y se rodean de células mioepiteliales positivas para p65 y CK 5/6.",
+      "Descripcion Diagnostico": "Mama izquierda. Lesión. Biopsia por esterotacsia. Estudio de inmunohistoquímica. ADENOSIS ESCLEROSANTE CON ABUNDANTES MICROCALCIFICACIONES. VER COMENTARIO.",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Organo": "BX LESION MAMA IZQUIERDA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN INTRADUCTAL CON EXTENSAS MICROCALCIFICACIONES",
+      "Diagnostico Principal": "ADENOSIS ESCLEROSANTE CON ABUNDANTES MICROCALCIFICACIONES",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (mosaico normal)",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (mosaico normal)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 129,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama izquierda. Lesión. Biopsia por esterotacsia. Estudio de inmunohistoquímica.\nADENOSIS ESCLEROSANTE CON ABUNDANTES MICROCALCIFICACIONES.\nVER COMENTARIO.",
+      "valor_corregido": "Mama izquierda. Lesión. Biopsia por esterotacsia. Estudio de inmunohistoquímica. ADENOSIS ESCLEROSANTE CON ABUNDANTES MICROCALCIFICACIONES. VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250019",
+      "timestamp": "2026-01-07T16:46:29.338304"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Estado de los controles internos para los biomarcadores utilizados: Células de control interno presentes y teñidas como se esperaba. -La lesión de interés presenta ductos comprimidos por un estroma fibroso y con abundantes microcalcificaciones, los ductos se revistes internamente por células epiteliales con expresión en mosaico (normal) para receptores de estrógenos y se rodean de células mioepiteliales positivas para p65 y CK 5/6.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Estado de los controles internos para los biomarcadores utilizados: Células de control interno presentes y teñidas como se esperaba. -La lesión de interés presenta ductos comprimidos por un estroma fibroso y con abundantes microcalcificaciones, los ductos se revistes internamente por células epiteliales con expresión en mosaico (normal) para receptores de estrógenos y se rodean de células mioepiteliales positivas para p65 y CK5/6.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250019",
+      "timestamp": "2026-01-07T16:46:29.338310"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Las lesiones de mama son heterogéneas por ende el diagnostico de adenosis esclerosante no\ndescarta una lesión maligna asociada, por consiguiente queda a criterio del medico tratante y\nsegún la sospecha clínica realizar un nuevo muestreo.",
+      "valor_corregido": "Las lesiones de mama son heterogéneas por ende el diagnostico de adenosis esclerosante no descarta una lesión maligna asociada, por consiguiente queda a criterio del medico tratante y según la sospecha clínica realizar un nuevo muestreo.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250019",
+      "timestamp": "2026-01-07T16:46:29.338312"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 52
+  }
+}

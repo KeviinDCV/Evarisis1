@@ -1,0 +1,164 @@
+{
+  "session_id": "IHQ250121_20260105_185557",
+  "numero_peticion": "IHQ250121",
+  "timestamp": "2026-01-05T18:55:57.319405",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250121\nCopia Pag. 1 de 2\nNombre : OMAR FLAVIO HURTADO\nN. peticion : IHQ250121\nN.Identificación : CC. 16470694\nGenero : MASCULINO\nEdad : 68 años 19 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JAVIER OROZCO MERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 04/02/2025\nFecha Informe : 10/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR SELAR\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2501092”\ncorrespondiente\na\n“tumor\nselar”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas\ncelulas\ntumorales\nson\npositivas\npara\nCK7,\nCK19,\nCA19.9,\ny\npresentan\ninmunorreactividad\nheterogénea con el CDX2.\nLos marcadores PSA, gata-3, PAX-8, racemasa, synaptofisina, napsina A, TTF-1, CK20 son negativos.\ndiagnóstico\nde\n“ADENOCARCINOMA\nMETASTÁSICO. Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción\ncon PSA, gata-3, PAX-8, racemasa, synaptofisina, napsina A, TTF-1, CK7, CK20, CDX2, CK19 Y CA19-19.\nDIAGNÓSTICO\nRegión supra selar. Tumor. Resección. Estudio de inmunohistoquímica: \nADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250121\nCopia Pag. 2 de 2\nNombre : OMAR FLAVIO HURTADO\nN. peticion : IHQ250121\nN.Identificación : CC. 16470694\nGenero : MASCULINO\nEdad : 68 años 19 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JAVIER OROZCO MERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 04/02/2025\nFecha Informe : 10/02/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3189,
+      "reduccion_porcentaje": 98.16
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250121",
+      "caso_num": 14,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "POSITIVO HETEROGÉNEO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_RACEMASA": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "nombre_completo": "OMAR FLAVIO HURTADO",
+      "numero_peticion": "IHQ250121",
+      "identificacion": "16470694",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "68",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JAVIER OROZCO MERA",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "04/02/2025",
+      "fecha_informe": "10/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250121",
+      "N. de identificación": "16470694",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "JAVIER OROZCO MERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "04/02/2025",
+      "Fecha Informe": "10/02/2025",
+      "nombres": "OMAR",
+      "Primer nombre": "OMAR",
+      "Segundo nombre": "",
+      "apellidos": "FLAVIO HURTADO",
+      "Primer apellido": "FLAVIO",
+      "Segundo apellido": "HURTADO",
+      "nombre_formal": "FLAVIO HURTADO, OMAR",
+      "diagnostico": "Región supra selar. Tumor. Resección. Estudio de inmunohistoquímica: ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las celulas tumorales son positivas para CK7, CK19, CA19.9, y presentan inmunorreactividad heterogénea con el CDX2. Los marcadores PSA, gata-3, PAX-8, racemasa, synaptophysin, napsina A, TTF1, CK20 son negativos. diagnóstico de “ADENOCARCINOMA METASTÁSICO. Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción con PSA, gata-3, PAX-8, racemasa, synaptophysin, napsina A, TTF1, CK7, CK20, CDX2, CK19 Y CA19-19.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501092” correspondiente a “tumor selar” con",
+      "ihq_organo": "REGIÓN SUPRA SELAR",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN SUPRA SELAR",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_PSA": "NEGATIVO",
+      "extraction_timestamp": "2026-01-05T18:55:57.768962",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250121\nCopia Pag. 1 de 2\nNombre : OMAR FLAVIO HURTADO\nN. peticion : IHQ250121\nN.Identificación : CC. 16470694\nGenero : MASCULINO\nEdad : 68 años 19 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JAVIER OROZCO MERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 04/02/2025\nFecha Informe : 10/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR SELAR\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2501092”\ncorrespondiente\na\n“tumor\nselar”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas\ncelulas\ntumorales\nson\npositivas\npara\nCK7,\nCK19,\nCA19.9,\ny\npresentan\ninmunorreactividad\nheterogénea con el CDX2.\nLos marcadores PSA, gata-3, PAX-8, racemasa, synaptofisina, napsina A, TTF-1, CK20 son negativos.\ndiagnóstico\nde\n“ADENOCARCINOMA\nMETASTÁSICO. Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción\ncon PSA, gata-3, PAX-8, racemasa, synaptofisina, napsina A, TTF-1, CK7, CK20, CDX2, CK19 Y CA19-19.\nDIAGNÓSTICO\nRegión supra selar. Tumor. Resección. Estudio de inmunohistoquímica: \nADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250121\nCopia Pag. 2 de 2\nNombre : OMAR FLAVIO HURTADO\nN. peticion : IHQ250121\nN.Identificación : CC. 16470694\nGenero : MASCULINO\nEdad : 68 años 19 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JAVIER OROZCO MERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 04/02/2025\nFecha Informe : 10/02/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CA19-9, CDX2, CK19, CK20, CK7, GATA3, NAPSIN, PAX8, PSA, RACEMASA, SINAPTOFISINA, TTF1",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501092” correspondiente a “tumor selar” con",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las celulas tumorales son positivas para CK7, CK19, CA19.9, y presentan inmunorreactividad heterogénea con el CDX2. Los marcadores PSA, gata-3, PAX-8, racemasa, synaptofisina, napsina A, TTF-1, CK20 son negativos. diagnóstico de “ADENOCARCINOMA METASTÁSICO. Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción con PSA, gata-3, PAX-8, racemasa, synaptofisina, napsina A, TTF-1, CK7, CK20, CDX2, CK19 Y CA19-19.",
+      "Descripcion Diagnostico": "Región supra selar. Tumor. Resección. Estudio de inmunohistoquímica: ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.",
+      "IHQ_ORGANO": "REGIÓN SUPRA SELAR",
+      "Organo": "TUMOR SELAR",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "POSITIVO HETEROGÉNEO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_PSA": "NEGATIVO",
+      "IHQ_RACEMASA": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 119,
+      "campos_completos": 48,
+      "biomarcadores_encontrados": 12,
+      "completitud_porcentaje": 28.74
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 119,
+      "total_campos_completos": 48
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región supra selar. Tumor. Resección. Estudio de inmunohistoquímica: \nADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.",
+      "valor_corregido": "Región supra selar. Tumor. Resección. Estudio de inmunohistoquímica: ADENOCARCINOMA METASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250121",
+      "timestamp": "2026-01-05T18:55:57.767971"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las celulas tumorales son positivas para CK7, CK19, CA19.9, y presentan inmunorreactividad heterogénea con el CDX2. Los marcadores PSA, gata-3, PAX-8, racemasa, synaptofisina, napsina A, TTF-1, CK20 son negativos. diagnóstico de “ADENOCARCINOMA METASTÁSICO. Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción con PSA, gata-3, PAX-8, racemasa, synaptofisina, napsina A, TTF-1, CK7, CK20, CDX2, CK19 Y CA19-19.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las celulas tumorales son positivas para CK7, CK19, CA19.9, y presentan inmunorreactividad heterogénea con el CDX2. Los marcadores PSA, gata-3, PAX-8, racemasa, synaptophysin, napsina A, TTF1, CK20 son negativos. diagnóstico de “ADENOCARCINOMA METASTÁSICO. Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción con PSA, gata-3, PAX-8, racemasa, synaptophysin, napsina A, TTF1, CK7, CK20, CDX2, CK19 Y CA19-19.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250121",
+      "timestamp": "2026-01-05T18:55:57.767977"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 57
+  }
+}

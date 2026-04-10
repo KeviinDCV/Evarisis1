@@ -1,0 +1,181 @@
+{
+  "session_id": "IHQ250105_20251220_005159",
+  "numero_peticion": "IHQ250105",
+  "timestamp": "2025-12-20T00:51:59.848582",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250105\nCopia Pag. 1 de 2\nNombre : DIRSON ARMANDO GONZALEZ\nESCALONA\nN. peticion : IHQ250105\nN.Identificación : PPT. 8092208\nGenero : MASCULINO\nEdad : 16 años\nEPS : SANTIAGO DE CALI DISTRITO\nMédico tratante : VALENTINA OCAMPO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 30/01/2025\nFecha Informe : 16/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX ANTEBRAZO IZQUIERDO2025-01-27\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como “\nM2500670”\ncorrespondiente\na\n\"\nPiel\nde\nantebrazo\nizquierdo.”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nLas células tumorales tienen marcación negativa para CD 20, Con marcación positiva para CD79\nA y PAX 5, BCL2, TDT, CD10. Negativo para CD 34, CD 23, CD 99 Linfocitos T (CD3 +, CD 5)\nacompañantes. Índice de proliferación Ki 67 del 90%\ndiagnóstico\nde\n“\nPROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20,\nCD79, PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3 +, CD 5 y Ki 67.\nDIAGNÓSTICO\nPiel de antebrazo izquierdo. Lesión. Biopsia. Estudio de inmunohistoquimica\nLEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS\nCOMENTARIOS\nEl diagnostico definitivo requiere estudios moleculares.\nCaso comentado con la Dra Isabela Caicedo (hematopatologa)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 91 ---\nIHQ250105\nCopia Pag. 2 de 2\nNombre : DIRSON ARMANDO GONZALEZ\nESCALONA\nN. peticion : IHQ250105\nN.Identificación : PPT. 8092208\nGenero : MASCULINO\nEdad : 16 años\nEPS : SANTIAGO DE CALI DISTRITO\nESPECIAL\nMédico tratante : VALENTINA OCAMPO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 30/01/2025\nFecha Informe : 16/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 92 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3197,
+      "reduccion_porcentaje": 98.29
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250105",
+      "caso_num": 48,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD79A": "POSITIVO",
+      "nombre_completo": "DIRSON ARMANDO GONZALEZ ESCALONA",
+      "numero_peticion": "IHQ250105",
+      "identificacion": "8092208",
+      "tipo_documento": "PPT",
+      "Genero": "MASCULINO",
+      "Edad": "16",
+      "eps": "SANTIAGO DE CALI DISTRITO",
+      "medico_tratante": "VALENTINA OCAMPO",
+      "servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "fecha_ingreso": "30/01/2025",
+      "fecha_informe": "16/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250105",
+      "N. de identificación": "8092208",
+      "Tipo de documento": "PPT",
+      "EPS": "SANTIAGO DE CALI DISTRITO",
+      "Servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "Médico tratante": "VALENTINA OCAMPO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "30/01/2025",
+      "Fecha Informe": "16/02/2025",
+      "nombres": "DIRSON ARMANDO",
+      "Primer nombre": "DIRSON",
+      "Segundo nombre": "ARMANDO",
+      "apellidos": "GONZALEZ ESCALONA",
+      "Primer apellido": "GONZALEZ",
+      "Segundo apellido": "ESCALONA",
+      "nombre_formal": "GONZALEZ ESCALONA, DIRSON ARMANDO",
+      "diagnostico": "de “ PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD79, PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3 +, CD 5 y KI-67. DIAGNÓSTICO Piel de antebrazo izquierdo. Lesión. Biopsia. Estudio de inmunohistoquimica LEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS",
+      "descripcion_microscopica": "Las células tumorales tienen marcación negativa para CD 20, Con marcación positiva para CD79 A y PAX 5, BCL2, TDT, CD10. Negativo para CD 34, CD 23, CD 99 Linfocitos T (CD3 +, CD 5) acompañantes. Índice de proliferación KI-67 del 90%",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “ M2500670” correspondiente a \" Piel de antebrazo izquierdo.” con diagnóstico de “ PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD79, PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3 +, CD 5 y KI-67.",
+      "ihq_organo": "DE “ PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "El diagnostico definitivo requiere estudios moleculares. Caso comentado con la Dra Isabela Caicedo (hematopatologa)",
+      "IHQ_ORGANO": "DE “ PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_TDT": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD99": "NEGATIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "extraction_timestamp": "2025-12-20T00:52:00.016738",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250105\nCopia Pag. 1 de 2\nNombre : DIRSON ARMANDO GONZALEZ\nESCALONA\nN. peticion : IHQ250105\nN.Identificación : PPT. 8092208\nGenero : MASCULINO\nEdad : 16 años\nEPS : SANTIAGO DE CALI DISTRITO\nMédico tratante : VALENTINA OCAMPO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 30/01/2025\nFecha Informe : 16/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX ANTEBRAZO IZQUIERDO2025-01-27\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como “\nM2500670”\ncorrespondiente\na\n\"\nPiel\nde\nantebrazo\nizquierdo.”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nLas células tumorales tienen marcación negativa para CD 20, Con marcación positiva para CD79\nA y PAX 5, BCL2, TDT, CD10. Negativo para CD 34, CD 23, CD 99 Linfocitos T (CD3 +, CD 5)\nacompañantes. Índice de proliferación Ki 67 del 90%\ndiagnóstico\nde\n“\nPROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20,\nCD79, PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3 +, CD 5 y Ki 67.\nDIAGNÓSTICO\nPiel de antebrazo izquierdo. Lesión. Biopsia. Estudio de inmunohistoquimica\nLEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS\nCOMENTARIOS\nEl diagnostico definitivo requiere estudios moleculares.\nCaso comentado con la Dra Isabela Caicedo (hematopatologa)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 91 ---\nIHQ250105\nCopia Pag. 2 de 2\nNombre : DIRSON ARMANDO GONZALEZ\nESCALONA\nN. peticion : IHQ250105\nN.Identificación : PPT. 8092208\nGenero : MASCULINO\nEdad : 16 años\nEPS : SANTIAGO DE CALI DISTRITO\nESPECIAL\nMédico tratante : VALENTINA OCAMPO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 30/01/2025\nFecha Informe : 16/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 92 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "BCL2, CD10, CD20, CD23, CD3, CD34, CD5, CD79A, CD99, Ki-67, PAX5, TDT",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “ M2500670” correspondiente a \" Piel de antebrazo izquierdo.” con diagnóstico de “ PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD79, PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3 +, CD 5 y Ki 67.",
+      "Descripcion microscopica": "Las células tumorales tienen marcación negativa para CD 20, Con marcación positiva para CD79 A y PAX 5, BCL2, TDT, CD10. Negativo para CD 34, CD 23, CD 99 Linfocitos T (CD3 +, CD 5) acompañantes. Índice de proliferación Ki 67 del 90%",
+      "Descripcion Diagnostico": "de “ PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD79, PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3 +, CD 5 y KI-67. DIAGNÓSTICO Piel de antebrazo izquierdo. Lesión. Biopsia. Estudio de inmunohistoquimica LEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS",
+      "IHQ_ORGANO": "DE “ PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”",
+      "Organo": "BX ANTEBRAZO IZQUIERDO2025-01-27",
+      "Diagnostico Coloracion": "PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "DE “ PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”. PREVIA REVISIÓN DE LA HISTOLOGÍA SE REALIZAN NIVELES HISTOLÓGICOS PARA TINCIÓN CON LOS MARCADORES: CD 20, CD79, PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3 +, CD 5 Y KI 67. DIAGNÓSTICO PIEL DE ANTEBRAZO IZQUIERDO. LESIÓN. BIOPSIA. ESTUDIO DE INMUNOHISTOQUIMICA LEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD79A": "POSITIVO",
+      "IHQ_CD99": "NEGATIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_TDT": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 165,
+      "campos_vacios": 118,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 12,
+      "completitud_porcentaje": 28.48
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 118,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "de\n“\nPROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20,\nCD79, PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3 +, CD 5 y Ki 67.\nDIAGNÓSTICO\nPiel de antebrazo izquierdo. Lesión. Biopsia. Estudio de inmunohistoquimica\nLEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS",
+      "valor_corregido": "de “ PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD79, PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3 +, CD 5 y KI-67. DIAGNÓSTICO Piel de antebrazo izquierdo. Lesión. Biopsia. Estudio de inmunohistoquimica LEUCEMIA/LINFOMA LINFOBLÁSTICO DE CÉLULAS B NOS",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250105",
+      "timestamp": "2025-12-20T00:52:00.016464"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “ M2500670” correspondiente a \" Piel de antebrazo izquierdo.” con diagnóstico de “ PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD79, PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3 +, CD 5 y Ki 67.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “ M2500670” correspondiente a \" Piel de antebrazo izquierdo.” con diagnóstico de “ PROLIFERACIÓN LINFOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA ”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD79, PAX 5, BCL2, TDT, CD10, CD 34, CD 23, CD 99, CD3 +, CD 5 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250105",
+      "timestamp": "2025-12-20T00:52:00.016473"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Las células tumorales tienen marcación negativa para CD 20, Con marcación positiva para CD79 A y PAX 5, BCL2, TDT, CD10. Negativo para CD 34, CD 23, CD 99 Linfocitos T (CD3 +, CD 5) acompañantes. Índice de proliferación Ki 67 del 90%",
+      "valor_corregido": "Las células tumorales tienen marcación negativa para CD 20, Con marcación positiva para CD79 A y PAX 5, BCL2, TDT, CD10. Negativo para CD 34, CD 23, CD 99 Linfocitos T (CD3 +, CD 5) acompañantes. Índice de proliferación KI-67 del 90%",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250105",
+      "timestamp": "2025-12-20T00:52:00.016476"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El diagnostico definitivo requiere estudios moleculares.\nCaso comentado con la Dra Isabela Caicedo (hematopatologa)",
+      "valor_corregido": "El diagnostico definitivo requiere estudios moleculares. Caso comentado con la Dra Isabela Caicedo (hematopatologa)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250105",
+      "timestamp": "2025-12-20T00:52:00.016477"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 59
+  }
+}

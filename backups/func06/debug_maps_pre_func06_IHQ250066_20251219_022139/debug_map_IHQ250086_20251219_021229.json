@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250086_20251219_021229",
+  "numero_peticion": "IHQ250086",
+  "timestamp": "2025-12-19T02:12:29.243249",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250086\nCopia Pag. 1 de 2\nNombre : LUZ EVELY GRAJALES OCHOA\nN. peticion : IHQ250086\nN.Identificación : CC. 31418975\nGenero : FEMENINO\nEdad : 56 años 5 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : UCI CRITICO QUIRURGICO\nFecha Ingreso : 27/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR MUCOSA COLONICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500665 ” correspondiente a \" masa en colon descendente” con diagnóstico de “ ADENOCARCINOMA\nINVASIVO”. Previa revisión de la histología se realizan niveles histológicos en la lámina numero 1 y 2 para\ntinción con los marcadores: MSH2, MSH6, HER2, MLH1, PMS2\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\n- Las células tumorales tienen expresión HER 2 Negativo (score 0)\n- Prueba de Reparación de Desajuste de ADN\nSitio de la Muestra: Hemicolectomia derecha\nPruebas Realizadas en el bloque No. 1 y 2\nResultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste\n+Resultado de MLH1: Expresión nuclear intacta\n+Resultado de MSH2: Expresión nuclear intacta\n+Resultado de MSH6: Expresión nuclear intacta\n+Resultado de PMS2: Expresión nuclear intacta\nInterpretación de Reparación de Desajuste (MMR): No hay pérdida de expresión nuclear de las proteínas\nMMR:\nInterpretación de Inestabilidad de Microsatélites (MSI): MSI-estable (MSS)\nDIAGNÓSTICO\nMucosa colonica. Tumor. Biopsia endoscopica. Estudio de inmunohistoquimica:\n- ADENOCARCINOMA INVASIVO\n- MSI-ESTABLE (MSS)\n- HER2 NEGATIVO \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---\nIHQ250086\nCopia Pag. 2 de 2\nNombre : LUZ EVELY GRAJALES OCHOA\nN. peticion : IHQ250086\nN.Identificación : CC. 31418975\nGenero : FEMENINO\nEdad : 56 años 5 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : UCI CRITICO QUIRURGICO\nFecha Ingreso : 27/01/2025\nFecha Informe : 04/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3612,
+      "reduccion_porcentaje": 98.07
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250086",
+      "caso_num": 32,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "LUZ EVELY GRAJALES OCHOA",
+      "numero_peticion": "IHQ250086",
+      "identificacion": "31418975",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "56",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "UCI CRITICO QUIRURGICO",
+      "fecha_ingreso": "27/01/2025",
+      "fecha_informe": "04/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250086",
+      "N. de identificación": "31418975",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "UCI CRITICO QUIRURGICO",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "27/01/2025",
+      "Fecha Informe": "04/02/2025",
+      "nombres": "LUZ EVELY",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "EVELY",
+      "apellidos": "GRAJALES OCHOA",
+      "Primer apellido": "GRAJALES",
+      "Segundo apellido": "OCHOA",
+      "nombre_formal": "GRAJALES OCHOA, LUZ EVELY",
+      "diagnostico": "Mucosa colonica. Tumor. Biopsia endoscopica. Estudio de inmunohistoquimica: - ADENOCARCINOMA INVASIVO - MSI-ESTABLE (MSS) - HER2 NEGATIVO",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. - Las células tumorales tienen expresión HER 2 Negativo (score 0) - Prueba de Reparación de Desajuste de ADN Sitio de la Muestra: Hemicolectomia derecha Pruebas Realizadas en el bloque No. 1 y 2 Resultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste +Resultado de MLH1: Expresión nuclear intacta +Resultado de MSH2: Expresión nuclear intacta +Resultado de MSH6: Expresión nuclear intacta +Resultado de PMS2: Expresión nuclear intacta Interpretación de Reparación de Desajuste (MMR): No hay pérdida de expresión nuclear de las proteínas MMR: Interpretación de Inestabilidad de Microsatélites (MSI): MSI-estable (MSS)",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500665 ” correspondiente a \" masa en colon descendente” con diagnóstico de “ ADENOCARCINOMA INVASIVO”. Previa revisión de la histología se realizan niveles histológicos en la lámina numero 1 y 2 para tinción con los marcadores: MSH2, MSH6, HER2, MLH1, PMS2",
+      "ihq_organo": "MUCOSA COLONICA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA COLONICA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: Negativo (score 0)",
+      "IHQ_HER2": "Negativo (score 0)",
+      "IHQ_MSH2": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MSH6": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MLH1": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_PMS2": "POSITIVO (expresión nuclear intacta)",
+      "extraction_timestamp": "2025-12-19T02:12:29.408852",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250086\nCopia Pag. 1 de 2\nNombre : LUZ EVELY GRAJALES OCHOA\nN. peticion : IHQ250086\nN.Identificación : CC. 31418975\nGenero : FEMENINO\nEdad : 56 años 5 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : UCI CRITICO QUIRURGICO\nFecha Ingreso : 27/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR MUCOSA COLONICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500665 ” correspondiente a \" masa en colon descendente” con diagnóstico de “ ADENOCARCINOMA\nINVASIVO”. Previa revisión de la histología se realizan niveles histológicos en la lámina numero 1 y 2 para\ntinción con los marcadores: MSH2, MSH6, HER2, MLH1, PMS2\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\n- Las células tumorales tienen expresión HER 2 Negativo (score 0)\n- Prueba de Reparación de Desajuste de ADN\nSitio de la Muestra: Hemicolectomia derecha\nPruebas Realizadas en el bloque No. 1 y 2\nResultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste\n+Resultado de MLH1: Expresión nuclear intacta\n+Resultado de MSH2: Expresión nuclear intacta\n+Resultado de MSH6: Expresión nuclear intacta\n+Resultado de PMS2: Expresión nuclear intacta\nInterpretación de Reparación de Desajuste (MMR): No hay pérdida de expresión nuclear de las proteínas\nMMR:\nInterpretación de Inestabilidad de Microsatélites (MSI): MSI-estable (MSS)\nDIAGNÓSTICO\nMucosa colonica. Tumor. Biopsia endoscopica. Estudio de inmunohistoquimica:\n- ADENOCARCINOMA INVASIVO\n- MSI-ESTABLE (MSS)\n- HER2 NEGATIVO \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---\nIHQ250086\nCopia Pag. 2 de 2\nNombre : LUZ EVELY GRAJALES OCHOA\nN. peticion : IHQ250086\nN.Identificación : CC. 31418975\nGenero : FEMENINO\nEdad : 56 años 5 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : UCI CRITICO QUIRURGICO\nFecha Ingreso : 27/01/2025\nFecha Informe : 04/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MLH1, MSH2, MSH6, PMS2",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500665 ” correspondiente a \" masa en colon descendente” con diagnóstico de “ ADENOCARCINOMA INVASIVO”. Previa revisión de la histología se realizan niveles histológicos en la lámina numero 1 y 2 para tinción con los marcadores: MSH2, MSH6, HER2, MLH1, PMS2",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. - Las células tumorales tienen expresión HER 2 Negativo (score 0) - Prueba de Reparación de Desajuste de ADN Sitio de la Muestra: Hemicolectomia derecha Pruebas Realizadas en el bloque No. 1 y 2 Resultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste +Resultado de MLH1: Expresión nuclear intacta +Resultado de MSH2: Expresión nuclear intacta +Resultado de MSH6: Expresión nuclear intacta +Resultado de PMS2: Expresión nuclear intacta Interpretación de Reparación de Desajuste (MMR): No hay pérdida de expresión nuclear de las proteínas MMR: Interpretación de Inestabilidad de Microsatélites (MSI): MSI-estable (MSS)",
+      "Descripcion Diagnostico": "Mucosa colonica. Tumor. Biopsia endoscopica. Estudio de inmunohistoquimica: - ADENOCARCINOMA INVASIVO - MSI-ESTABLE (MSS) - HER2 NEGATIVO",
+      "IHQ_ORGANO": "MUCOSA COLONICA",
+      "Organo": "TUMOR MUCOSA COLONICA",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: Negativo (score 0)",
+      "IHQ_HER2": "NEGATIVO (score 0)",
+      "IHQ_MLH1": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MSH2": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MSH6": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_PMS2": "POSITIVO (expresión nuclear intacta)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 117,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 25.48
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 117,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa colonica. Tumor. Biopsia endoscopica. Estudio de inmunohistoquimica:\n- ADENOCARCINOMA INVASIVO\n- MSI-ESTABLE (MSS)\n- HER2 NEGATIVO",
+      "valor_corregido": "Mucosa colonica. Tumor. Biopsia endoscopica. Estudio de inmunohistoquimica: - ADENOCARCINOMA INVASIVO - MSI-ESTABLE (MSS) - HER2 NEGATIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250086",
+      "timestamp": "2025-12-19T02:12:29.408657"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500665 ” correspondiente a \" masa en colon descendente” con diagnóstico de “ ADENOCARCINOMA\nINVASIVO”. Previa revisión de la histología se realizan niveles histológicos en la lámina numero 1 y 2 para\ntinción con los marcadores: MSH2, MSH6, HER2, MLH1, PMS2",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500665 ” correspondiente a \" masa en colon descendente” con diagnóstico de “ ADENOCARCINOMA INVASIVO”. Previa revisión de la histología se realizan niveles histológicos en la lámina numero 1 y 2 para tinción con los marcadores: MSH2, MSH6, HER2, MLH1, PMS2",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250086",
+      "timestamp": "2025-12-19T02:12:29.408663"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\n- Las células tumorales tienen expresión HER 2 Negativo (score 0)\n- Prueba de Reparación de Desajuste de ADN\nSitio de la Muestra: Hemicolectomia derecha\nPruebas Realizadas en el bloque No. 1 y 2\nResultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste\n+Resultado de MLH1: Expresión nuclear intacta\n+Resultado de MSH2: Expresión nuclear intacta\n+Resultado de MSH6: Expresión nuclear intacta\n+Resultado de PMS2: Expresión nuclear intacta\nInterpretación de Reparación de Desajuste (MMR): No hay pérdida de expresión nuclear de las proteínas\nMMR:\nInterpretación de Inestabilidad de Microsatélites (MSI): MSI-estable (MSS)",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. - Las células tumorales tienen expresión HER 2 Negativo (score 0) - Prueba de Reparación de Desajuste de ADN Sitio de la Muestra: Hemicolectomia derecha Pruebas Realizadas en el bloque No. 1 y 2 Resultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste +Resultado de MLH1: Expresión nuclear intacta +Resultado de MSH2: Expresión nuclear intacta +Resultado de MSH6: Expresión nuclear intacta +Resultado de PMS2: Expresión nuclear intacta Interpretación de Reparación de Desajuste (MMR): No hay pérdida de expresión nuclear de las proteínas MMR: Interpretación de Inestabilidad de Microsatélites (MSI): MSI-estable (MSS)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250086",
+      "timestamp": "2025-12-19T02:12:29.408665"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 51
+  }
+}

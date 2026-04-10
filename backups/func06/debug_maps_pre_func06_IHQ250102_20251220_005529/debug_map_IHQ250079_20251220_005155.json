@@ -1,0 +1,151 @@
+{
+  "session_id": "IHQ250079_20251220_005155",
+  "numero_peticion": "IHQ250079",
+  "timestamp": "2025-12-20T00:51:55.727752",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250079\nCopia Pag. 1 de 2\nNombre : SHERLEY MONTAÑO PAREDES\nN. peticion : IHQ250079\nN.Identificación : CC. 66986864\nGenero : FEMENINO\nEdad : 47 años 4 meses 14 dias\nEPS : COSMITET LTDA\nMédico tratante : NATALIA MONTOYA MORENO\nServicio : DERMATOLOGIA\nFecha Ingreso : 24/01/2025\nFecha Informe : 11/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPIEL CARA INTERNA MUSLO\nIZQ\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2406708” que corresponde a “piel de cara interna de muslo izquierdo” con\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nPiel con escaso infiltrado inflamatorio mononuclear superficial de localización perivascular,\ncompuesto a base de escasos linfocitos B (CD20+) y linfocitos T (CD3+/CD5+) con relación\nCD4+/CD8+ de 2 a 1, ninguno epidermotrópico. El CD30 es negativo.\ndiagnósticos\nde\n“CAMBIOS\nPIGMENTARIOS\nPOST\nINFLAMATORIOS”.\nPrevia\nrevisión\nde\nla\nhistología, se realizan niveles histológicos para tinción con CD3, CD5, CD4, CD8, CD20 Y CD30.\nDIAGNÓSTICO\nPiel\nde\ncara\ninterna\nde\nmuslo\nizquierdo.\nLesión.\nBiopsia.\nEstudio\nde\ninmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nCOMENTARIOS\nLos hallazgos histológicos y de inmunohistoquímica favorecen a un proceso reactivo. \nCaso valoradao en conjunto con Dr. Ricardo Rueda (dermatopatólogo) y Dra. Isabella Caicedo\n(hematopatóloga).\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---\nIHQ250079\nCopia Pag. 2 de 2\nNombre : SHERLEY MONTAÑO PAREDES\nN. peticion : IHQ250079\nN.Identificación : CC. 66986864\nGenero : FEMENINO\nEdad : 47 años 4 meses 14 dias\nEPS : COSMITET LTDA\nMédico tratante : NATALIA MONTOYA MORENO\nServicio : DERMATOLOGIA\nFecha Ingreso : 24/01/2025\nFecha Informe : 11/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3379,
+      "reduccion_porcentaje": 98.19
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250079",
+      "caso_num": 26,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "SHERLEY MONTAÑO PAREDES",
+      "numero_peticion": "IHQ250079",
+      "identificacion": "66986864",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "47",
+      "eps": "COSMITET LTDA",
+      "medico_tratante": "NATALIA MONTOYA MORENO",
+      "servicio": "DERMATOLOGIA",
+      "fecha_ingreso": "24/01/2025",
+      "fecha_informe": "11/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250079",
+      "N. de identificación": "66986864",
+      "Tipo de documento": "CC",
+      "EPS": "COSMITET LTDA",
+      "Servicio": "DERMATOLOGIA",
+      "Médico tratante": "NATALIA MONTOYA MORENO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "24/01/2025",
+      "Fecha Informe": "11/02/2025",
+      "nombres": "SHERLEY MONTAÑO",
+      "Primer nombre": "SHERLEY",
+      "Segundo nombre": "MONTAÑO",
+      "apellidos": "PAREDES",
+      "Primer apellido": "PAREDES",
+      "Segundo apellido": "",
+      "nombre_formal": "PAREDES, SHERLEY MONTAÑO",
+      "diagnostico": "Piel de cara interna de muslo izquierdo. Lesión. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Piel con escaso infiltrado inflamatorio mononuclear superficial de localización perivascular, compuesto a base de escasos linfocitos B (CD20+) y linfocitos T (CD3+/CD5+) con relación CD4+/CD8+ de 2 a 1, ninguno epidermotrópico. El CD30 es negativo.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2406708” que corresponde a “piel de cara interna de muslo izquierdo” con diagnósticos de “CAMBIOS PIGMENTARIOS POST INFLAMATORIOS”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CD3, CD5, CD4, CD8, CD20 Y CD30.",
+      "ihq_organo": "PIEL DE CARA INTERNA DE MUSLO IZQUIERDO",
+      "malignidad": "NO_DETERMINADO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "DERMATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD5, CD4, CD8, CD20, CD30",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Los hallazgos histológicos y de inmunohistoquímica favorecen a un proceso reactivo. Caso valoradao en conjunto con Dr. Ricardo Rueda (dermatopatólogo) y Dra. Isabella Caicedo (hematopatóloga).",
+      "IHQ_ORGANO": "PIEL DE CARA INTERNA DE MUSLO IZQUIERDO",
+      "Malignidad": "NO_DETERMINADO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD8": "POSITIVO",
+      "IHQ_CD4": "POSITIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "extraction_timestamp": "2025-12-20T00:51:55.902933",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250079\nCopia Pag. 1 de 2\nNombre : SHERLEY MONTAÑO PAREDES\nN. peticion : IHQ250079\nN.Identificación : CC. 66986864\nGenero : FEMENINO\nEdad : 47 años 4 meses 14 dias\nEPS : COSMITET LTDA\nMédico tratante : NATALIA MONTOYA MORENO\nServicio : DERMATOLOGIA\nFecha Ingreso : 24/01/2025\nFecha Informe : 11/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPIEL CARA INTERNA MUSLO\nIZQ\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2406708” que corresponde a “piel de cara interna de muslo izquierdo” con\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nPiel con escaso infiltrado inflamatorio mononuclear superficial de localización perivascular,\ncompuesto a base de escasos linfocitos B (CD20+) y linfocitos T (CD3+/CD5+) con relación\nCD4+/CD8+ de 2 a 1, ninguno epidermotrópico. El CD30 es negativo.\ndiagnósticos\nde\n“CAMBIOS\nPIGMENTARIOS\nPOST\nINFLAMATORIOS”.\nPrevia\nrevisión\nde\nla\nhistología, se realizan niveles histológicos para tinción con CD3, CD5, CD4, CD8, CD20 Y CD30.\nDIAGNÓSTICO\nPiel\nde\ncara\ninterna\nde\nmuslo\nizquierdo.\nLesión.\nBiopsia.\nEstudio\nde\ninmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nCOMENTARIOS\nLos hallazgos histológicos y de inmunohistoquímica favorecen a un proceso reactivo. \nCaso valoradao en conjunto con Dr. Ricardo Rueda (dermatopatólogo) y Dra. Isabella Caicedo\n(hematopatóloga).\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---\nIHQ250079\nCopia Pag. 2 de 2\nNombre : SHERLEY MONTAÑO PAREDES\nN. peticion : IHQ250079\nN.Identificación : CC. 66986864\nGenero : FEMENINO\nEdad : 47 años 4 meses 14 dias\nEPS : COSMITET LTDA\nMédico tratante : NATALIA MONTOYA MORENO\nServicio : DERMATOLOGIA\nFecha Ingreso : 24/01/2025\nFecha Informe : 11/02/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD5, CD4, CD8, CD20, CD30",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2406708” que corresponde a “piel de cara interna de muslo izquierdo” con diagnósticos de “CAMBIOS PIGMENTARIOS POST INFLAMATORIOS”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CD3, CD5, CD4, CD8, CD20 Y CD30.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Piel con escaso infiltrado inflamatorio mononuclear superficial de localización perivascular, compuesto a base de escasos linfocitos B (CD20+) y linfocitos T (CD3+/CD5+) con relación CD4+/CD8+ de 2 a 1, ninguno epidermotrópico. El CD30 es negativo.",
+      "Descripcion Diagnostico": "Piel de cara interna de muslo izquierdo. Lesión. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA.",
+      "IHQ_ORGANO": "PIEL DE CARA INTERNA DE MUSLO IZQUIERDO",
+      "Organo": "PIEL CARA INTERNA MUSLO IZQ",
+      "Diagnostico Coloracion": "CAMBIOS PIGMENTARIOS POST INFLAMATORIOS",
+      "Diagnostico Principal": "NEGATIVO PARA NEOPLASIA",
+      "Malignidad": "NO_DETERMINADO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD4": "POSITIVO",
+      "IHQ_CD8": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD30": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 165,
+      "campos_vacios": 125,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "completitud_porcentaje": 24.24
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 125,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Piel\nde\ncara\ninterna\nde\nmuslo\nizquierdo.\nLesión.\nBiopsia.\nEstudio\nde\ninmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.",
+      "valor_corregido": "Piel de cara interna de muslo izquierdo. Lesión. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250079",
+      "timestamp": "2025-12-20T00:51:55.902738"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos histológicos y de inmunohistoquímica favorecen a un proceso reactivo. \nCaso valoradao en conjunto con Dr. Ricardo Rueda (dermatopatólogo) y Dra. Isabella Caicedo\n(hematopatóloga).",
+      "valor_corregido": "Los hallazgos histológicos y de inmunohistoquímica favorecen a un proceso reactivo. Caso valoradao en conjunto con Dr. Ricardo Rueda (dermatopatólogo) y Dra. Isabella Caicedo (hematopatóloga).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250079",
+      "timestamp": "2025-12-20T00:51:55.902743"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 53
+  }
+}

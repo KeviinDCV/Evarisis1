@@ -1,0 +1,149 @@
+{
+  "session_id": "IHQ250088_20251219_225844",
+  "numero_peticion": "IHQ250088",
+  "timestamp": "2025-12-19T22:58:44.395834",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250088\nCopia Pag. 1 de 2\nNombre : MARIA NELLY PASUY GUERRERO\nN. peticion : IHQ250088\nN.Identificación : CC. 38998127\nGenero : FEMENINO\nEdad : 76 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 27/01/2025\nFecha Informe : 31/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PERITONEO PARIETAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2500605\n”\nque\ncorresponde\na\n“peritoneo\nparietal”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células neoplásicas son positivas para CK7 y PAX-8.\np16 positivo en bloque.\np53 mutado (expresión nula).\nLos marcadores receptores hormonales de GATA-3, estrógenos, progesterona, WT1, CK20 son negativos.\ndiagnósticos\nde\n“CARCINOMA\nMETASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con\nCK7,GATA-3, CK20, receptores de estrógenos, receptores de progesterona, WT1, p16, p53 y PAX-8.\nDIAGNÓSTICO\nPeritoneo parietal. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA METASTÁSICO DE PROBABLE ORIGEN GINECOLÓGICO.\nCOMENTARIOS\nSe sugiere correlacionar con imágenes diagnósticas y demás estudios anatomopatológicos.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---\nIHQ250088\nCopia Pag. 2 de 2\nNombre : MARIA NELLY PASUY GUERRERO\nN. peticion : IHQ250088\nN.Identificación : CC. 38998127\nGenero : FEMENINO\nEdad : 76 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 27/01/2025\nFecha Informe : 31/01/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3247,
+      "reduccion_porcentaje": 98.26
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250088",
+      "caso_num": 34,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "nombre_completo": "MARIA NELLY PASUY GUERRERO",
+      "numero_peticion": "IHQ250088",
+      "identificacion": "38998127",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "76",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ADRIANA MAYOR BARRERA",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "27/01/2025",
+      "fecha_informe": "31/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250088",
+      "N. de identificación": "38998127",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "ADRIANA MAYOR BARRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "27/01/2025",
+      "Fecha Informe": "31/01/2025",
+      "nombres": "MARIA NELLY",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "NELLY",
+      "apellidos": "PASUY GUERRERO",
+      "Primer apellido": "PASUY",
+      "Segundo apellido": "GUERRERO",
+      "nombre_formal": "PASUY GUERRERO, MARIA NELLY",
+      "diagnostico": "Peritoneo parietal. Lesión. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA METASTÁSICO DE PROBABLE ORIGEN GINECOLÓGICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son positivas para CK7 y PAX-8. p16 positivo en bloque. p53 mutado (expresión nula). Los marcadores receptores hormonales de GATA-3, estrógenos, progesterona, WT1, CK20 son negativos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500605 ” que corresponde a “peritoneo parietal” con diagnósticos de “CARCINOMA METASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CK7,GATA-3, CK20, receptores de estrógenos, receptores de progesterona, WT1, p16, p53 y PAX-8.",
+      "ihq_organo": "PERITONEO PARIETAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, GATA 3, CK20, Receptor de Estrógeno, Receptor de Progesterona, WT1, P16, P53, PAX 8",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se sugiere correlacionar con imágenes diagnósticas y demás estudios anatomopatológicos.",
+      "IHQ_ORGANO": "PERITONEO PARIETAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P53": "POSITIVO (MUTADA)",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2025-12-19T22:58:44.594359",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250088\nCopia Pag. 1 de 2\nNombre : MARIA NELLY PASUY GUERRERO\nN. peticion : IHQ250088\nN.Identificación : CC. 38998127\nGenero : FEMENINO\nEdad : 76 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 27/01/2025\nFecha Informe : 31/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PERITONEO PARIETAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2500605\n”\nque\ncorresponde\na\n“peritoneo\nparietal”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células neoplásicas son positivas para CK7 y PAX-8.\np16 positivo en bloque.\np53 mutado (expresión nula).\nLos marcadores receptores hormonales de GATA-3, estrógenos, progesterona, WT1, CK20 son negativos.\ndiagnósticos\nde\n“CARCINOMA\nMETASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con\nCK7,GATA-3, CK20, receptores de estrógenos, receptores de progesterona, WT1, p16, p53 y PAX-8.\nDIAGNÓSTICO\nPeritoneo parietal. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA METASTÁSICO DE PROBABLE ORIGEN GINECOLÓGICO.\nCOMENTARIOS\nSe sugiere correlacionar con imágenes diagnósticas y demás estudios anatomopatológicos.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---\nIHQ250088\nCopia Pag. 2 de 2\nNombre : MARIA NELLY PASUY GUERRERO\nN. peticion : IHQ250088\nN.Identificación : CC. 38998127\nGenero : FEMENINO\nEdad : 76 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 27/01/2025\nFecha Informe : 31/01/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, GATA 3, CK20, Receptor de Estrógeno, Receptor de Progesterona, WT1, P16, P53, PAX 8",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500605 ” que corresponde a “peritoneo parietal” con diagnósticos de “CARCINOMA METASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CK7,GATA-3, CK20, receptores de estrógenos, receptores de progesterona, WT1, p16, p53 y PAX-8.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son positivas para CK7 y PAX-8. p16 positivo en bloque. p53 mutado (expresión nula). Los marcadores receptores hormonales de GATA-3, estrógenos, progesterona, WT1, CK20 son negativos.",
+      "Descripcion Diagnostico": "Peritoneo parietal. Lesión. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA METASTÁSICO DE PROBABLE ORIGEN GINECOLÓGICO.",
+      "IHQ_ORGANO": "PERITONEO PARIETAL",
+      "Organo": "BX PERITONEO PARIETAL",
+      "Diagnostico Coloracion": "CARCINOMA METASTÁSICO",
+      "Diagnostico Principal": "CARCINOMA METASTÁSICO DE PROBABLE ORIGEN GINECOLÓGICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P53": "POSITIVO (MUTADA)",
+      "IHQ_PAX8": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 158,
+      "campos_vacios": 114,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 9,
+      "completitud_porcentaje": 27.85
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 114,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Peritoneo parietal. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA METASTÁSICO DE PROBABLE ORIGEN GINECOLÓGICO.",
+      "valor_corregido": "Peritoneo parietal. Lesión. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA METASTÁSICO DE PROBABLE ORIGEN GINECOLÓGICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250088",
+      "timestamp": "2025-12-19T22:58:44.594103"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 58
+  }
+}

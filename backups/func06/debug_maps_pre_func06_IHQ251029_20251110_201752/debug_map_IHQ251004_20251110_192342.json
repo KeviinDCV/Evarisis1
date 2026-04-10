@@ -1,0 +1,145 @@
+{
+  "session_id": "IHQ251004_20251110_192342",
+  "numero_peticion": "IHQ251004",
+  "timestamp": "2025-11-10T19:23:42.674579",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251004\nCopia Pag. 1 de 2\nNombre : JAIME DE JESUS ORTIZ MURILLO\nN. peticion : IHQ251004\nN.Identificación : CC. 4387598\nGenero : MASCULINO\nEdad : 83 años 13 dias\nEPS : NUEVA EPS\nMédico tratante : JULIANA CALLE\nServicio : CARTAGO HOSPITALIZACION 1\nFecha Ingreso : 11/09/2025\nFecha Informe : 18/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nNEOFORMACION VESICAL\n-PROSTATA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de inmunohistoquímica\nCaso institucional: M2510562\nÓrgano: \"Neoformación vesical-próstata\".\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO. \nLas células tumorales presentan una inmuno marcación positiva fuerte y difusa para PSA y\nRACEMASA.\nEl urotelio escasamente representado tiene un control interno positivo con expresión de GATA 3,\nsiendo negativo en las células neoplásicas infiltrativas. \nDiagnóstico Inicial: \n-NEOPLASIA INVASIVA EN PATRÓN PAPILAR Y CRIBIFORME, REQUIERE ESTUDIOS DE\nINMUNOHISTOQUÍMICA PARA MEJOR CLASIFICACIÓN. \n-INVASIÓN DE MÚSCULO DETRUSOR. \nFecha de diagnóstico: 09-09-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al\nbloque 2.\nEstudios Solicitados:\nSe realizó inmuno tinción especial para : GATA 3, PSA, RACEMASA. \nDIAGNÓSTICO\nVejiga. Lesión. Biopsia por cistoscopia. Estudio de inmunohistoquímica.\nCARCINOMA METASTASICO DE PROBABLE ORIGEN PROSTATICO. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---\nIHQ251004\nCopia Pag. 2 de 2\nNombre : JAIME DE JESUS ORTIZ MURILLO\nN. peticion : IHQ251004\nN.Identificación : CC. 4387598\nGenero : MASCULINO\nEdad : 83 años 13 dias\nEPS : NUEVA EPS\nMédico tratante : JULIANA CALLE\nServicio : CARTAGO HOSPITALIZACION 1\nFecha Ingreso : 11/09/2025\nFecha Informe : 18/09/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3331,
+      "reduccion_porcentaje": 98.28
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251004",
+      "caso_num": 24,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_PSA": "POSITIVO",
+      "IHQ_RACEMASA": "POSITIVO",
+      "nombre_completo": "JAIME DE JESUS ORTIZ MURILLO",
+      "numero_peticion": "IHQ251004",
+      "identificacion": "4387598",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "83",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JULIANA CALLE",
+      "servicio": "",
+      "fecha_ingreso": "11/09/2025",
+      "fecha_informe": "18/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251004",
+      "N. de identificación": "4387598",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "",
+      "Médico tratante": "JULIANA CALLE",
+      "Fecha de ingreso (2. Fecha de la muestra)": "11/09/2025",
+      "Fecha Informe": "18/09/2025",
+      "nombres": "JAIME DE JESUS",
+      "Primer nombre": "JAIME",
+      "Segundo nombre": "DE JESUS",
+      "apellidos": "ORTIZ MURILLO",
+      "Primer apellido": "ORTIZ",
+      "Segundo apellido": "MURILLO",
+      "nombre_formal": "ORTIZ MURILLO, JAIME DE JESUS",
+      "diagnostico": "Vejiga. Lesión. Biopsia por cistoscopia. Estudio de inmunohistoquímica. CARCINOMA METASTASICO DE PROBABLE ORIGEN PROSTATICO1",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO. Las células tumorales presentan una inmuno marcación positiva fuerte y difusa para PSA y RACEMASA. El urotelio escasamente representado tiene un control interno positivo con expresión de GATA 3, siendo negativo en las células neoplásicas infiltrativas. Diagnóstico Inicial: -NEOPLASIA INVASIVA EN PATRÓN PAPILAR Y CRIBIFORME, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA MEJOR CLASIFICACIÓN. -INVASIÓN DE MÚSCULO DETRUSOR. Fecha de diagnóstico: 09-09-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al bloque 2. Estudios Solicitados: Se realizó inmuno tinción especial para : GATA 3, PSA, RACEMASA.",
+      "descripcion_macroscopica": "Informe de Estudios de inmunohistoquímica Caso institucional: M2510562 Órgano: \"Neoformación vesical-próstata\".",
+      "ihq_organo": "VEJIGA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "GATA3, PSA, RACEMASA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "VEJIGA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_GATA3": "NEGATIVO",
+      "extraction_timestamp": "2025-11-10T19:23:42.809415",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251004\nCopia Pag. 1 de 2\nNombre : JAIME DE JESUS ORTIZ MURILLO\nN. peticion : IHQ251004\nN.Identificación : CC. 4387598\nGenero : MASCULINO\nEdad : 83 años 13 dias\nEPS : NUEVA EPS\nMédico tratante : JULIANA CALLE\nServicio : CARTAGO HOSPITALIZACION 1\nFecha Ingreso : 11/09/2025\nFecha Informe : 18/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nNEOFORMACION VESICAL\n-PROSTATA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de inmunohistoquímica\nCaso institucional: M2510562\nÓrgano: \"Neoformación vesical-próstata\".\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO. \nLas células tumorales presentan una inmuno marcación positiva fuerte y difusa para PSA y\nRACEMASA.\nEl urotelio escasamente representado tiene un control interno positivo con expresión de GATA 3,\nsiendo negativo en las células neoplásicas infiltrativas. \nDiagnóstico Inicial: \n-NEOPLASIA INVASIVA EN PATRÓN PAPILAR Y CRIBIFORME, REQUIERE ESTUDIOS DE\nINMUNOHISTOQUÍMICA PARA MEJOR CLASIFICACIÓN. \n-INVASIÓN DE MÚSCULO DETRUSOR. \nFecha de diagnóstico: 09-09-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al\nbloque 2.\nEstudios Solicitados:\nSe realizó inmuno tinción especial para : GATA 3, PSA, RACEMASA. \nDIAGNÓSTICO\nVejiga. Lesión. Biopsia por cistoscopia. Estudio de inmunohistoquímica.\nCARCINOMA METASTASICO DE PROBABLE ORIGEN PROSTATICO. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---\nIHQ251004\nCopia Pag. 2 de 2\nNombre : JAIME DE JESUS ORTIZ MURILLO\nN. peticion : IHQ251004\nN.Identificación : CC. 4387598\nGenero : MASCULINO\nEdad : 83 años 13 dias\nEPS : NUEVA EPS\nMédico tratante : JULIANA CALLE\nServicio : CARTAGO HOSPITALIZACION 1\nFecha Ingreso : 11/09/2025\nFecha Informe : 18/09/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "GATA3, PSA, RACEMASA",
+      "Descripcion macroscopica": "Informe de Estudios de inmunohistoquímica Caso institucional: M2510562 Órgano: \"Neoformación vesical-próstata\".",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO. Las células tumorales presentan una inmuno marcación positiva fuerte y difusa para PSA y RACEMASA. El urotelio escasamente representado tiene un control interno positivo con expresión de GATA 3, siendo negativo en las células neoplásicas infiltrativas. Diagnóstico Inicial: -NEOPLASIA INVASIVA EN PATRÓN PAPILAR Y CRIBIFORME, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA MEJOR CLASIFICACIÓN. -INVASIÓN DE MÚSCULO DETRUSOR. Fecha de diagnóstico: 09-09-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al bloque 2. Estudios Solicitados: Se realizó inmuno tinción especial para : GATA 3, PSA, RACEMASA.",
+      "Descripcion Diagnostico": "Vejiga. Lesión. Biopsia por cistoscopia. Estudio de inmunohistoquímica. CARCINOMA METASTASICO DE PROBABLE ORIGEN PROSTATICO1",
+      "IHQ_ORGANO": "VEJIGA",
+      "Organo": "NEOFORMACION VESICAL",
+      "Diagnostico Coloracion": "-NEOPLASIA INVASIVA EN PATRÓN PAPILAR Y CRIBIFORME, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA MEJOR CLASIFICACIÓN. -INVASIÓN DE MÚSCULO DETRUSOR",
+      "Diagnostico Principal": "CARCINOMA METASTASICO DE PROBABLE ORIGEN PROSTATICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_PSA": "POSITIVO",
+      "IHQ_RACEMASA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 146,
+      "campos_vacios": 109,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 25.34
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 109,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Vejiga. Lesión. Biopsia por cistoscopia. Estudio de inmunohistoquímica.\nCARCINOMA METASTASICO DE PROBABLE ORIGEN PROSTATICO1",
+      "valor_corregido": "Vejiga. Lesión. Biopsia por cistoscopia. Estudio de inmunohistoquímica. CARCINOMA METASTASICO DE PROBABLE ORIGEN PROSTATICO1",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251004",
+      "timestamp": "2025-11-10T19:23:42.809214"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Informe de Estudios de inmunohistoquímica\nCaso institucional: M2510562\nÓrgano: \"Neoformación vesical-próstata\".",
+      "valor_corregido": "Informe de Estudios de inmunohistoquímica Caso institucional: M2510562 Órgano: \"Neoformación vesical-próstata\".",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251004",
+      "timestamp": "2025-11-10T19:23:42.809221"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 47
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "version": "v6.4.60",
+  "fecha": "2026-01-09T05:53:23.094864",
+  "caso_validacion": "IHQ250200",
+  "tipo_correccion": "Ki-67 esperable (patrón basal normal)",
+  "contexto_pdf": {
+    "texto_original": "Hay marcación celular del epitelio escamoso a nivel basal con p40 y Ki-67 esperable",
+    "ubicacion": "Descripción microscópica, línea 45"
+  },
+  "resultados_antes_v6_4_60": {
+    "IHQ_KI-67": "NO MENCIONADO o vacío (patrón no reconocido)",
+    "FACTOR_PRONOSTICO": "Sin Ki-67 o vacío",
+    "problema": "Patrón «Ki-67 esperable» no se extraía correctamente"
+  },
+  "resultados_despues_v6_4_60": {
+    "IHQ_KI-67": "ESPERABLE (patrón basal normal)",
+    "FACTOR_PRONOSTICO": "Ki-67: ESPERABLE (patrón basal normal)",
+    "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, Ki-67",
+    "score_validacion": 100.0,
+    "estado": "OK"
+  },
+  "patron_agregado": {
+    "archivo": "core/extractors/biomarker_extractor.py",
+    "patron_regex": "Ki-67\\s+esperable",
+    "valor_extraido": "ESPERABLE (patrón basal normal)",
+    "descripcion": "Patrón específico para Ki-67 con valor cualitativo «esperable» usado en casos benignos con patrón de proliferación basal normal"
+  },
+  "validacion_final": {
+    "reprocesamiento_exitoso": true,
+    "auditoria_score": 100.0,
+    "campos_validados": [
+      "IHQ_KI-67 = \"ESPERABLE (patrón basal normal)\" ✓",
+      "FACTOR_PRONOSTICO incluye Ki-67 ✓",
+      "IHQ_ESTUDIOS_SOLICITADOS incluye Ki-67 ✓"
+    ],
+    "sin_regresion": true,
+    "casos_referencia_validados": [
+      "IHQ250200"
+    ]
+  },
+  "impacto": {
+    "casos_afectados_potenciales": "Casos con Ki-67 esperable (patrón basal normal en lesiones benignas)",
+    "mejora": "Ki-67 ahora se extrae correctamente cuando tiene valor cualitativo «esperable»",
+    "casos_similares": "IHQ250XXX con papilomas escamosos, lesiones benignas con patrón basal"
+  }
+}

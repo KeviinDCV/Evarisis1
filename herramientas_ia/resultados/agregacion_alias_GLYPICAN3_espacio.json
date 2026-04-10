@@ -1,0 +1,28 @@
+{
+  "biomarcador": "GPC3",
+  "alias_agregado": "GLYPICAN 3",
+  "columna_bd": "IHQ_GPC3",
+  "archivos_modificados": [
+    "herramientas_ia/auditor_sistema.py (BIOMARKER_ALIAS_MAP)"
+  ],
+  "variantes_totales": [
+    "GPC3",
+    "GLYPICAN3",
+    "Glypican 3",
+    "GLYPICAN 3",
+    "GLYPICAN-3",
+    "Glypican-3",
+    "GPC-3"
+  ],
+  "estado": "EXITOSO",
+  "timestamp": "2026-01-09T01:11:02.526844",
+  "contexto": {
+    "caso_previo": "IHQ250188 - \"Glypican-3\" (con guion) - Ya mapeado",
+    "caso_nuevo": "IHQ250189 - \"GLYPICAN 3\" (con espacio) - Ahora mapeado"
+  },
+  "siguientes_pasos": [
+    "NO requiere borrar BD (GPC3 ya existe, solo se agrego alias)",
+    "Reprocesar IHQ250189 para validar extraccion de \"GLYPICAN 3\"",
+    "Auditar IHQ250189 para confirmar que GPC3 ya no aparece como NO MAPEADO"
+  ]
+}

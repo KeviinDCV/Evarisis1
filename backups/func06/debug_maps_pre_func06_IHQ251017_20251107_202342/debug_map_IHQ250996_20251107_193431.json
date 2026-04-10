@@ -1,0 +1,143 @@
+{
+  "session_id": "IHQ250996_20251107_193431",
+  "numero_peticion": "IHQ250996",
+  "timestamp": "2025-11-07T19:34:31.199268",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250996\nCopia Pag. 1 de 2\nNombre : JOSE RUBIEL JIMENEZ CERON\nN. peticion : IHQ250996\nN.Identificación : CC. 6428435\nGenero : MASCULINO\nEdad : 68 años 4 meses 13 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 10/09/2025\nFecha Informe : 12/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO CERVICAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra institucional\nrotulado como “Q25-1710” que corresponde a “biopsia de ganglio cervical izquierdo”. Se recibe una\nlámina teñida con hematoxilina-eosina y un bloque de parafina. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con CKAE1AE3 y PSA.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe evidencia inmunorreactividad en las células tumorales para CKAE1E3 y PSA.\nDIAGNÓSTICO\nGanglio linfático cervical izquierdo. Lesión. Escisión. Estudios de inmunohistoquímica. \n- LOS HALLAZGOS FAVORECEN CARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---\nIHQ250996\nCopia Pag. 2 de 2\nNombre : JOSE RUBIEL JIMENEZ CERON\nN. peticion : IHQ250996\nN.Identificación : CC. 6428435\nGenero : MASCULINO\nEdad : 68 años 4 meses 13 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 10/09/2025\nFecha Informe : 12/09/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3058,
+      "reduccion_porcentaje": 98.42
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250996",
+      "caso_num": 16,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_PSA": "POSITIVO",
+      "nombre_completo": "JOSE RUBIEL JIMENEZ CERON",
+      "numero_peticion": "IHQ250996",
+      "identificacion": "6428435",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "68",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "10/09/2025",
+      "fecha_informe": "12/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250996",
+      "N. de identificación": "6428435",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "10/09/2025",
+      "Fecha Informe": "12/09/2025",
+      "nombres": "JOSE RUBIEL",
+      "Primer nombre": "JOSE",
+      "Segundo nombre": "RUBIEL",
+      "apellidos": "JIMENEZ CERON",
+      "Primer apellido": "JIMENEZ",
+      "Segundo apellido": "CERON",
+      "nombre_formal": "JIMENEZ CERON, JOSE RUBIEL",
+      "diagnostico": "Ganglio linfático cervical izquierdo. Lesión. Escisión. Estudios de inmunohistoquímica. - LOS HALLAZGOS FAVORECEN CARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se evidencia inmunorreactividad en las células tumorales para CKAE1E3 y PSA.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra institucional rotulado como “Q25-1710” que corresponde a “biopsia de ganglio cervical izquierdo”. Se recibe una lámina teñida con hematoxilina-eosina y un bloque de parafina. Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1AE3 y PSA.",
+      "ihq_organo": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1AE3, PSA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "extraction_timestamp": "2025-11-07T19:34:31.312583",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250996\nCopia Pag. 1 de 2\nNombre : JOSE RUBIEL JIMENEZ CERON\nN. peticion : IHQ250996\nN.Identificación : CC. 6428435\nGenero : MASCULINO\nEdad : 68 años 4 meses 13 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 10/09/2025\nFecha Informe : 12/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO CERVICAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra institucional\nrotulado como “Q25-1710” que corresponde a “biopsia de ganglio cervical izquierdo”. Se recibe una\nlámina teñida con hematoxilina-eosina y un bloque de parafina. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con CKAE1AE3 y PSA.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe evidencia inmunorreactividad en las células tumorales para CKAE1E3 y PSA.\nDIAGNÓSTICO\nGanglio linfático cervical izquierdo. Lesión. Escisión. Estudios de inmunohistoquímica. \n- LOS HALLAZGOS FAVORECEN CARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---\nIHQ250996\nCopia Pag. 2 de 2\nNombre : JOSE RUBIEL JIMENEZ CERON\nN. peticion : IHQ250996\nN.Identificación : CC. 6428435\nGenero : MASCULINO\nEdad : 68 años 4 meses 13 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 10/09/2025\nFecha Informe : 12/09/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, PSA",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra institucional rotulado como “Q25-1710” que corresponde a “biopsia de ganglio cervical izquierdo”. Se recibe una lámina teñida con hematoxilina-eosina y un bloque de parafina. Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1AE3 y PSA.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se evidencia inmunorreactividad en las células tumorales para CKAE1E3 y PSA.",
+      "Descripcion Diagnostico": "Ganglio linfático cervical izquierdo. Lesión. Escisión. Estudios de inmunohistoquímica. - LOS HALLAZGOS FAVORECEN CARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "Organo": "GANGLIO CERVICAL IZQUIERDO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "LOS HALLAZGOS FAVORECEN CARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_PSA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 143,
+      "campos_vacios": 106,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 25.87
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 106,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático cervical izquierdo. Lesión. Escisión. Estudios de inmunohistoquímica. \n- LOS HALLAZGOS FAVORECEN CARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO.",
+      "valor_corregido": "Ganglio linfático cervical izquierdo. Lesión. Escisión. Estudios de inmunohistoquímica. - LOS HALLAZGOS FAVORECEN CARCINOMA METASTÁSICO DE PROBABLE ORIGEN PROSTÁTICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250996",
+      "timestamp": "2025-11-07T19:34:31.312303"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra institucional\nrotulado como “Q25-1710” que corresponde a “biopsia de ganglio cervical izquierdo”. Se recibe una\nlámina teñida con hematoxilina-eosina y un bloque de parafina. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con CKAE1AE3 y PSA.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra institucional rotulado como “Q25-1710” que corresponde a “biopsia de ganglio cervical izquierdo”. Se recibe una lámina teñida con hematoxilina-eosina y un bloque de parafina. Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1AE3 y PSA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250996",
+      "timestamp": "2025-11-07T19:34:31.312308"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 49
+  }
+}

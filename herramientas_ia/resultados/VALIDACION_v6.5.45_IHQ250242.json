@@ -1,0 +1,35 @@
+{
+  "caso": "IHQ250242",
+  "timestamp": "2026-01-28T13:06:34.282533",
+  "version": "v6.5.45",
+  "objetivo": "Validar correcciones en Ki-67, CKAE1AE3 y P40",
+  "estado": "EXITOSO",
+  "valores_validados": {
+    "IHQ_KI-67": {
+      "esperado": "80%",
+      "actual": "80%",
+      "estado": "OK"
+    },
+    "IHQ_CKAE1AE3": {
+      "esperado": "POSITIVO",
+      "actual": "POSITIVO",
+      "estado": "OK"
+    },
+    "IHQ_P40_ESTADO": {
+      "esperado": "NEGATIVO",
+      "actual": "NEGATIVO",
+      "estado": "OK"
+    }
+  },
+  "metricas": {
+    "score_validacion": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "estado_final": "OK"
+  },
+  "resumen": {
+    "valores_correctos": 3,
+    "valores_incorrectos": 0,
+    "validacion_exitosa": true
+  }
+}

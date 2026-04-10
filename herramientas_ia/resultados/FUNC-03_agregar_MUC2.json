@@ -1,0 +1,62 @@
+{
+  "biomarcador": "MUC2",
+  "columna_bd": "IHQ_MUC2",
+  "aliases": [
+    "MUC-2",
+    "MUC 2",
+    "MUCINA 2"
+  ],
+  "fecha_agregado": "2025-11-08 21:13:44",
+  "archivos_modificados": [
+    {
+      "archivo": "core/database_manager.py",
+      "cambios": [
+        "Agregado \"IHQ_MUC2\" en NEW_TABLE_COLUMNS_ORDER (despues de IHQ_MUM1)",
+        "Agregado \"IHQ_MUC2\" TEXT en CREATE TABLE",
+        "Agregado \"IHQ_MUC2\" en new_biomarkers list para migraciones"
+      ]
+    },
+    {
+      "archivo": "herramientas_ia/auditor_sistema.py",
+      "cambios": [
+        "Agregado mapeo MUC2 -> IHQ_MUC2 en BIOMARKER_ALIAS_MAP",
+        "Agregado aliases: MUC-2, MUCINA 2"
+      ]
+    },
+    {
+      "archivo": "ui.py",
+      "cambios": [
+        "Agregado \"IHQ_MUC2\" en cols_to_show (columnas visibles en dashboard)"
+      ]
+    },
+    {
+      "archivo": "core/validation_checker.py",
+      "cambios": [
+        "Agregado mapeo MUC2 -> IHQ_MUC2 en all_biomarker_mapping",
+        "Agregado variantes: MUC-2, MUC 2, MUCINA 2, IHQ_MUC2"
+      ]
+    },
+    {
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "cambios": [
+        "Agregado entrada completa en BIOMARKER_PATTERNS con 5 patrones regex",
+        "Agregado en normalize_biomarker_name para normalizacion de variantes"
+      ]
+    },
+    {
+      "archivo": "core/unified_extractor.py",
+      "cambios": [
+        "Agregado mapeo MUC2 -> IHQ_MUC2 en extract_biomarkers_refactored",
+        "Agregado mapeo en validate_and_complete_data (mayusculas y minusculas)",
+        "Agregado mapeo reverso IHQ_MUC2 -> MUC2"
+      ]
+    }
+  ],
+  "estado": "EXITOSO",
+  "pasos_siguientes": [
+    "1. Borrar BD para aplicar nuevo schema: rm data/huv_oncologia_NUEVO.db",
+    "2. Reprocesar casos que mencionen MUC2 en sus PDFs",
+    "3. Verificar que IHQ_MUC2 se pueble correctamente en BD",
+    "4. Ejecutar auditor para validar: python herramientas_ia/auditor_sistema.py [CASO] --inteligente"
+  ]
+}

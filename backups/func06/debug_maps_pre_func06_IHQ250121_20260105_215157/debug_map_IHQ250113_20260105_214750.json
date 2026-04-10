@@ -1,0 +1,141 @@
+{
+  "session_id": "IHQ250113_20260105_214750",
+  "numero_peticion": "IHQ250113",
+  "timestamp": "2026-01-05T21:47:50.013493",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250113\nCopia Pag. 1 de 2\nNombre : HELEN MAHYAM GUEGUE SALAZAR\nN. peticion : IHQ250113\nN.Identificación : TI. 1029620895\nGenero : FEMENINO\nEdad : 11 años 5 meses 24 dias\nEPS : COMFENALCO VALLE\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 06/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\n2025-01-30\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como\n“M2500776”\ncorrespondiente\na\n\"\nbiopsia\nde\nmama\nderecha”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nParénquima\nmamario\ncon\nmarcación\nen\nmosaico\nde\nestrógenos,\ncélulas\nmioepitelilaes\npositivas\npara\ncalponina y p63. En el estroma hay colágeno denso con canales anastomosados en forma de\nhendidura que tienen marcación positiva fuerte y difusa para CD 34.\ndiagnóstico\nde\n“HALLAZGOS\nCOMPATIBLES\nCON\nHIPERPLASIA\nPSEUDOANGIOMATOSA\nESTROMAL\nCON\nCAMBIOS\nFIBROADENOMATOSOS.” Previa revisión de la histología se realizan niveles histológicos para la tinción\ncon los marcadores: Estrógeno, p63, CALPONINA, CD 34.\nDIAGNÓSTICO\nMama derecha. Nódulo. Biopsia. Estudio de inmunohistoquimica:\nHIPERPLASIA PSEUDOANGIOMATOSA ESTROMAL CON CAMBIOS FIBROADENOMATOSOS.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---\nIHQ250113\nCopia Pag. 2 de 2\nNombre : HELEN MAHYAM GUEGUE SALAZAR\nN. peticion : IHQ250113\nN.Identificación : TI. 1029620895\nGenero : FEMENINO\nEdad : 11 años 5 meses 24 dias\nEPS : COMFENALCO VALLE\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 06/02/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3247,
+      "reduccion_porcentaje": 98.13
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250113",
+      "caso_num": 6,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD34": "POSITIVO (fuerte y difusa)",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (mosaico)",
+      "nombre_completo": "HELEN MAHYAM GUEGUE SALAZAR",
+      "numero_peticion": "IHQ250113",
+      "identificacion": "1029620895",
+      "tipo_documento": "TI",
+      "Genero": "FEMENINO",
+      "Edad": "11",
+      "eps": "COMFENALCO VALLE",
+      "medico_tratante": "MIGUEL REVELO",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "30/01/2025",
+      "fecha_informe": "06/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250113",
+      "N. de identificación": "1029620895",
+      "Tipo de documento": "TI",
+      "EPS": "COMFENALCO VALLE",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "MIGUEL REVELO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "30/01/2025",
+      "Fecha Informe": "06/02/2025",
+      "nombres": "HELEN MAHYAM GUEGUE",
+      "Primer nombre": "HELEN",
+      "Segundo nombre": "MAHYAM GUEGUE",
+      "apellidos": "SALAZAR",
+      "Primer apellido": "SALAZAR",
+      "Segundo apellido": "",
+      "nombre_formal": "SALAZAR, HELEN MAHYAM GUEGUE",
+      "diagnostico": "Mama derecha. Nódulo. Biopsia. Estudio de inmunohistoquimica: HIPERPLASIA PSEUDOANGIOMATOSA ESTROMAL CON CAMBIOS FIBROADENOMATOSOS.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Parénquima mamario con marcación en mosaico de estrógenos, células mioepitelilaes positivas para calponina y p63. En el estroma hay colágeno denso con canales anastomosados en forma de hendidura que tienen marcación positiva fuerte y difusa para CD 34. diagnóstico de “HALLAZGOS COMPATIBLES CON HIPERPLASIA PSEUDOANGIOMATOSA ESTROMAL CON CAMBIOS FIBROADENOMATOSOS.” Previa revisión de la histología se realizan niveles histológicos para la tinción con los marcadores: Estrógeno, p63, CALPONINA, CD 34.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “M2500776” correspondiente a \" biopsia de mama derecha” con",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Receptor de Estrógeno, P63, Calponina, CD34",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (mosaico)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, P63, Calponina, CD34",
+      "extraction_timestamp": "2026-01-05T21:47:50.548870",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250113\nCopia Pag. 1 de 2\nNombre : HELEN MAHYAM GUEGUE SALAZAR\nN. peticion : IHQ250113\nN.Identificación : TI. 1029620895\nGenero : FEMENINO\nEdad : 11 años 5 meses 24 dias\nEPS : COMFENALCO VALLE\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 06/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\n2025-01-30\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como\n“M2500776”\ncorrespondiente\na\n\"\nbiopsia\nde\nmama\nderecha”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nParénquima\nmamario\ncon\nmarcación\nen\nmosaico\nde\nestrógenos,\ncélulas\nmioepitelilaes\npositivas\npara\ncalponina y p63. En el estroma hay colágeno denso con canales anastomosados en forma de\nhendidura que tienen marcación positiva fuerte y difusa para CD 34.\ndiagnóstico\nde\n“HALLAZGOS\nCOMPATIBLES\nCON\nHIPERPLASIA\nPSEUDOANGIOMATOSA\nESTROMAL\nCON\nCAMBIOS\nFIBROADENOMATOSOS.” Previa revisión de la histología se realizan niveles histológicos para la tinción\ncon los marcadores: Estrógeno, p63, CALPONINA, CD 34.\nDIAGNÓSTICO\nMama derecha. Nódulo. Biopsia. Estudio de inmunohistoquimica:\nHIPERPLASIA PSEUDOANGIOMATOSA ESTROMAL CON CAMBIOS FIBROADENOMATOSOS.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---\nIHQ250113\nCopia Pag. 2 de 2\nNombre : HELEN MAHYAM GUEGUE SALAZAR\nN. peticion : IHQ250113\nN.Identificación : TI. 1029620895\nGenero : FEMENINO\nEdad : 11 años 5 meses 24 dias\nEPS : COMFENALCO VALLE\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 06/02/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, P63, Calponina, CD34",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “M2500776” correspondiente a \" biopsia de mama derecha” con",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Parénquima mamario con marcación en mosaico de estrógenos, células mioepitelilaes positivas para calponina y p63. En el estroma hay colágeno denso con canales anastomosados en forma de hendidura que tienen marcación positiva fuerte y difusa para CD 34. diagnóstico de “HALLAZGOS COMPATIBLES CON HIPERPLASIA PSEUDOANGIOMATOSA ESTROMAL CON CAMBIOS FIBROADENOMATOSOS.” Previa revisión de la histología se realizan niveles histológicos para la tinción con los marcadores: Estrógeno, p63, CALPONINA, CD 34.",
+      "Descripcion Diagnostico": "Mama derecha. Nódulo. Biopsia. Estudio de inmunohistoquimica: HIPERPLASIA PSEUDOANGIOMATOSA ESTROMAL CON CAMBIOS FIBROADENOMATOSOS.",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "BX MAMA DERECHA",
+      "Diagnostico Coloracion": "HIPERPLASIA PSEUDOANGIOMATOSA ESTROMAL CON CAMBIOS FIBROADENOMATOSOS",
+      "Diagnostico Principal": "HIPERPLASIA PSEUDOANGIOMATOSA ESTROMAL CON CAMBIOS FIBROADENOMATOSOS",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (mosaico)",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (mosaico)",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_CD34": "POSITIVO (fuerte y difusa)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 129,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Nódulo. Biopsia. Estudio de inmunohistoquimica:\nHIPERPLASIA PSEUDOANGIOMATOSA ESTROMAL CON CAMBIOS FIBROADENOMATOSOS.",
+      "valor_corregido": "Mama derecha. Nódulo. Biopsia. Estudio de inmunohistoquimica: HIPERPLASIA PSEUDOANGIOMATOSA ESTROMAL CON CAMBIOS FIBROADENOMATOSOS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250113",
+      "timestamp": "2026-01-05T21:47:50.548603"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 51
+  }
+}

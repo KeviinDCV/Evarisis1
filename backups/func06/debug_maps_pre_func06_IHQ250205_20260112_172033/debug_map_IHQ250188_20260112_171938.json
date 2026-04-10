@@ -1,0 +1,160 @@
+{
+  "session_id": "IHQ250188_20260112_171938",
+  "numero_peticion": "IHQ250188",
+  "timestamp": "2026-01-12T17:19:38.356954",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250188\nCopia Pag. 1 de 2\nNombre : ERASMO ANTONIO ARGUINZONES\nN. peticion : IHQ250188\nN.Identificación : PPT. 3466983\nGenero : MASCULINO\nEdad : 71 años 1 mes 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOCELYN ELLY LOZADA\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 20/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nHIGADO LOBULO\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500537-2 que corresponde a biopsia de lesión en hígado, con diagnóstico\nde \"HALLAZGOS FAVORECEN HEPATOCARCINOMA MODERADAMENTE DIFERENCIADO, PATRON\nTRABECULAR\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales presentan la siguiente inmunomarcación:\nCK7, CK19, CK20 y CD10 negativos, con positividad para Glypican-3 de manera fuerte y difuso, con\nHepar-1, Arginasa y AFP positivo focal.\nEl índice de proliferación celular presenta un Ki-67 del 30%.\nDIAGNÓSTICO\nHígado, lóbulo izquierdo. Lesión. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON HEPATOCARCINOMA.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---\nIHQ250188\nCopia Pag. 2 de 2\nNombre : ERASMO ANTONIO ARGUINZONES\nN. peticion : IHQ250188\nN.Identificación : PPT. 3466983\nGenero : MASCULINO\nEdad : 71 años 1 mes 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOCELYN ELLY LOZADA\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 20/02/2025\nFecha Informe : 28/02/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3109,
+      "reduccion_porcentaje": 98.12
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250188",
+      "caso_num": 28,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GPC3": "POSITIVO (fuerte)",
+      "IHQ_HEPAR": "POSITIVO (focal)",
+      "IHQ_ARGINASA": "POSITIVO (focal)",
+      "IHQ_AFP": "POSITIVO (focal)",
+      "nombre_completo": "ERASMO ANTONIO ARGUINZONES",
+      "numero_peticion": "IHQ250188",
+      "identificacion": "3466983",
+      "tipo_documento": "PPT",
+      "Genero": "MASCULINO",
+      "Edad": "71",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JOCELYN ELLY LOZADA",
+      "servicio": "HOSPITALIZACION TRASPLANTE HPB",
+      "fecha_ingreso": "20/02/2025",
+      "fecha_informe": "28/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250188",
+      "N. de identificación": "3466983",
+      "Tipo de documento": "PPT",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "HOSPITALIZACION TRASPLANTE HPB",
+      "Médico tratante": "JOCELYN ELLY LOZADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/02/2025",
+      "Fecha Informe": "28/02/2025",
+      "nombres": "ERASMO ANTONIO",
+      "Primer nombre": "ERASMO",
+      "Segundo nombre": "ANTONIO",
+      "apellidos": "ARGUINZONES",
+      "Primer apellido": "ARGUINZONES",
+      "Segundo apellido": "",
+      "nombre_formal": "ARGUINZONES, ERASMO ANTONIO",
+      "diagnostico": "Hígado, lóbulo izquierdo. Lesión. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON HEPATOCARCINOMA.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan la siguiente inmunomarcación: CK7, CK19, CK20 y CD10 negativos, con positividad para Glypican-3 de manera fuerte y difuso, con Hepar-1, Arginasa y AFP positivo focal. El índice de proliferación celular presenta un KI-67 del 30%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2500537-2 que corresponde a biopsia de lesión en hígado, con diagnóstico de \"HALLAZGOS FAVORECEN HEPATOCARCINOMA MODERADAMENTE DIFERENCIADO, PATRON TRABECULAR\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "HÍGADO, LÓBULO IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "HÍGADO, LÓBULO IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67 del 30%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK19": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_KI-67": "30%",
+      "extraction_timestamp": "2026-01-12T17:19:38.754887",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250188\nCopia Pag. 1 de 2\nNombre : ERASMO ANTONIO ARGUINZONES\nN. peticion : IHQ250188\nN.Identificación : PPT. 3466983\nGenero : MASCULINO\nEdad : 71 años 1 mes 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOCELYN ELLY LOZADA\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 20/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nHIGADO LOBULO\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500537-2 que corresponde a biopsia de lesión en hígado, con diagnóstico\nde \"HALLAZGOS FAVORECEN HEPATOCARCINOMA MODERADAMENTE DIFERENCIADO, PATRON\nTRABECULAR\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nLas células tumorales presentan la siguiente inmunomarcación:\nCK7, CK19, CK20 y CD10 negativos, con positividad para Glypican-3 de manera fuerte y difuso, con\nHepar-1, Arginasa y AFP positivo focal.\nEl índice de proliferación celular presenta un Ki-67 del 30%.\nDIAGNÓSTICO\nHígado, lóbulo izquierdo. Lesión. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON HEPATOCARCINOMA.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---\nIHQ250188\nCopia Pag. 2 de 2\nNombre : ERASMO ANTONIO ARGUINZONES\nN. peticion : IHQ250188\nN.Identificación : PPT. 3466983\nGenero : MASCULINO\nEdad : 71 años 1 mes 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOCELYN ELLY LOZADA\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 20/02/2025\nFecha Informe : 28/02/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "ARGINASA, CD10, CK19, CK20, CK7, HEPAR, Ki-67",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2500537-2 que corresponde a biopsia de lesión en hígado, con diagnóstico de \"HALLAZGOS FAVORECEN HEPATOCARCINOMA MODERADAMENTE DIFERENCIADO, PATRON TRABECULAR\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan la siguiente inmunomarcación: CK7, CK19, CK20 y CD10 negativos, con positividad para Glypican-3 de manera fuerte y difuso, con Hepar-1, Arginasa y AFP positivo focal. El índice de proliferación celular presenta un Ki-67 del 30%.",
+      "Descripcion Diagnostico": "Hígado, lóbulo izquierdo. Lesión. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON HEPATOCARCINOMA.",
+      "IHQ_ORGANO": "HÍGADO, LÓBULO IZQUIERDO",
+      "Organo": "HIGADO LOBULO IZQUIERDO",
+      "Diagnostico Coloracion": "HEPATOCARCINOMA MODERADAMENTE DIFERENCIADO, PATRON TRABECULAR",
+      "Diagnostico Principal": "HEPATOCARCINOMA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 30%",
+      "IHQ_ARGINASA": "POSITIVO (focal)",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CK19": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_HEPAR": "POSITIVO (focal)",
+      "IHQ_KI-67": "30%",
+      "IHQ_AFP": "POSITIVO (focal)",
+      "IHQ_GPC3": "POSITIVO (fuerte)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 130,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 130,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hígado, lóbulo izquierdo. Lesión. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON HEPATOCARCINOMA.",
+      "valor_corregido": "Hígado, lóbulo izquierdo. Lesión. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON HEPATOCARCINOMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250188",
+      "timestamp": "2026-01-12T17:19:38.754542"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan la siguiente inmunomarcación: CK7, CK19, CK20 y CD10 negativos, con positividad para Glypican-3 de manera fuerte y difuso, con Hepar-1, Arginasa y AFP positivo focal. El índice de proliferación celular presenta un Ki-67 del 30%.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan la siguiente inmunomarcación: CK7, CK19, CK20 y CD10 negativos, con positividad para Glypican-3 de manera fuerte y difuso, con Hepar-1, Arginasa y AFP positivo focal. El índice de proliferación celular presenta un KI-67 del 30%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250188",
+      "timestamp": "2026-01-12T17:19:38.754551"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 54
+  }
+}

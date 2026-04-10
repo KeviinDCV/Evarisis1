@@ -1,0 +1,83 @@
+================================================================================
+RESULTADO FUNC-06: Reprocesamiento IHQ250227 con patrones v6.5.00
+================================================================================
+Fecha: 2026-01-28 03:37 UTC
+Caso: IHQ250227 (archivo PDF IHQ DEL 212 AL 262.pdf)
+Score post-reprocesamiento: 88.9%
+
+================================================================================
+EXTRACCIÓN DE BIOMARCADORES
+================================================================================
+
+Contexto OCR (líneas 33-34):
+  "El tumor presenta células luminales c-kit/CD117 + y células basales p63+."
+  "TTF-1 y sinaptofisina negativo en el tumor."
+
+Valores extraídos en BD:
+  - IHQ_P63: "POSITIVO" ✅
+  - IHQ_CD117: "POSITIVO" ✅
+  - IHQ_SINAPTOFISINA: "NEGATIVO" ✅
+  - IHQ_TTF-1: "IHQ_TTF-1" ❌ (valor corrupto)
+
+================================================================================
+ANÁLISIS
+================================================================================
+
+ÉXITO PARCIAL v6.5.00:
+
+1. ✅ P63 extraído correctamente como POSITIVO
+   - Patrón v6.5.00 funcionó: r'células?\s+basales\s+([A-Z0-9\-/]+)\s*\+'
+   - Match: "células basales p63+"
+   - Extracción: "p63" -> mapeado a IHQ_P63 -> POSITIVO
+
+2. ✅ CD117 extraído correctamente como POSITIVO
+   - Patrón anterior funcionó: "c-kit/CD117 +"
+   
+3. ✅ SINAPTOFISINA extraída correctamente como NEGATIVO
+   - Patrón conjunto funcionó: "[BIO1] y [BIO2] negativo"
+   - Match: "TTF-1 y sinaptofisina negativo"
+
+PROBLEMA DETECTADO:
+
+❌ IHQ_TTF-1 tiene valor corrupto "IHQ_TTF-1" (debería ser NEGATIVO)
+   - El patrón "[BIO1] y [BIO2] negativo" captura SINAPTOFISINA pero NO TTF-1
+   - Texto OCR: "TTF-1 y sinaptofisina negativo en el tumor"
+   - Resultado: SINAPTOFISINA = NEGATIVO ✅, TTF-1 = valor corrupto ❌
+
+CAUSA PROBABLE:
+
+El patrón de biomarcadores conjuntos con "y" puede estar procesando
+solo el segundo biomarcador. Patrón regex esperado:
+
+  r'([A-Z0-9\-]+)\s+y\s+([A-Z0-9\-]+)\s+negativo'
+  
+Match:
+  - Grupo 1: TTF-1
+  - Grupo 2: sinaptofisina
+  
+Pero solo se procesa el grupo 2.
+
+================================================================================
+SIGUIENTE PASO
+================================================================================
+
+Investigar en biomarker_extractor.py:
+1. Verificar patrón de biomarcadores conjuntos con "y"
+2. Confirmar que AMBOS grupos se procesan
+3. Verificar que TTF-1 (con guión) se normaliza correctamente a TTF1
+
+Comando para verificar:
+  grep -n "negativo" core/extractors/biomarker_extractor.py
+  grep -n "TTF-1\|TTF1" core/extractors/biomarker_extractor.py
+
+================================================================================
+RESUMEN
+================================================================================
+
+Score: 88.9% (8/9 validaciones OK)
+Patrones v6.5.00: ÉXITO PARCIAL
+  - ✅ P63 extraído (nuevo patrón "células basales [BIO]+")
+  - ✅ SINAPTOFISINA extraída (patrón conjunto)
+  - ❌ TTF-1 NO extraído correctamente (patrón conjunto parcial)
+
+Recomendación: Revisar extracción de biomarcadores conjuntos con "y negativo"

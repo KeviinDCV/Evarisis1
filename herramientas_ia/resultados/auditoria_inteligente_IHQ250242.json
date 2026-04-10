@@ -1,0 +1,132 @@
+{
+  "numero_caso": "IHQ250242",
+  "caso_num": 31,
+  "total_casos": 50,
+  "timestamp": "2026-01-28T13:05:31.623282",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 12,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "CARCINOMA INFILTRANTE DE ALTO GRADO",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "ADENOCARCINOMA INVASIVO ENDOCERVICAL"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 80%, Receptor de Estrógeno: NEGATIVO",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67",
+        "RE"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "2 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 7,
+      "total_solicitado_bd": 7,
+      "estudios_ocr": [
+        "P16",
+        "P40",
+        "Receptor de Estrógeno",
+        "VIMENTINA",
+        "CKAE1E3",
+        "Ki-67",
+        "PAX 8"
+      ],
+      "estudios_bd": [
+        "P16",
+        "P40",
+        "Receptor de Estrógeno",
+        "VIMENTINA",
+        "CKAE1AE3",
+        "Ki-67",
+        "PAX 8"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 7,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "P40",
+          "columna": "IHQ_P40_ESTADO",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "POSITIVO"
+        },
+        {
+          "biomarcador": "Ki-67",
+          "columna": "IHQ_KI-67",
+          "valor_bd": "80%",
+          "valor_ocr": "POSITIVO"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2502449 qu..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "CÉRVIX"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

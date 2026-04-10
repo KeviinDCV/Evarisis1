@@ -1,11 +1,45 @@
 {
   "permissions": {
     "allow": [
-      "Bash(del \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\data\\debug_maps\\debug_map_IHQ251007_20251103_211013.json\")",
+      "Bash(python herramientas_ia/auditor_sistema.py:*)",
       "Bash(python:*)",
-      "Bash(dir:*)"
-    ],
-    "deny": [],
-    "ask": []
+      "Bash(ls:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(python3:*)",
+      "Bash(cd:*)",
+      "Bash(cat:*)",
+      "Bash(more:*)",
+      "Bash(iconv:*)",
+      "Bash(find:*)",
+      "Bash(powershell -Command \"$input | Select-Object -Last 1\")",
+      "Bash(copy /Y \"backups\\\\func06\\\\huv_oncologia_pre_func06_IHQ250175_20260108_083612.db\" \"data\\\\huv_oncologia_NUEVO.db\")",
+      "Bash(if exist datahuv_oncologia_NUEVO.db del datahuv_oncologia_NUEVO.db)",
+      "Bash(grep:*)",
+      "Bash(awk:*)",
+      "Bash(del datahuv_oncologia_NUEVO.db)",
+      "Bash(del temp_biomarkers.txt)",
+      "Bash(sqlite3:*)",
+      "Bash(powershell -Command \"Get-Content herramientas_ia\\\\resultados\\\\auditoria_inteligente_IHQ250190.json | Out-File -Encoding utf8 temp_validation.txt\")",
+      "Bash(del temp_validation.txt)",
+      "Bash(tee:*)",
+      "Bash(timeout 10 python:*)",
+      "Bash(xargs cat:*)",
+      "Bash(timeout 30 python:*)",
+      "Bash(timeout 60 python:*)",
+      "Bash(timeout 120 python:*)",
+      "Bash(copy \"C:\\\\Users\\\\USUARIO\\\\Desktop\\\\DEBERES HUV\\\\ProyectoHUV9GESTOR_ONCOLOGIA\\\\backups\\\\func06\\\\debug_maps_pre_func06_IHQ250218_20260119_023655\\\\debug_map_IHQ250218_20260119_015436.json\" \"C:\\\\Users\\\\USUARIO\\\\Desktop\\\\DEBERES HUV\\\\ProyectoHUV9GESTOR_ONCOLOGIA\\\\data\\\\debug_maps\\\\debug_map_IHQ250218_20260119_015436.json\")",
+      "Bash(for caso in IHQ250212 IHQ250213 IHQ250220 IHQ250225)",
+      "Bash(do)",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\USUARIO\\\\Desktop\\\\DEBERES HUV\\\\ProyectoHUV9GESTOR_ONCOLOGIA\\\\data\\\\debug_maps'' | Where-Object { $_Name -like ''*250237*'' } | Select-Object -ExpandProperty Name\")",
+      "Bash(xargs -I {} bash -c \"cd ''C:\\\\Users\\\\USUARIO\\\\Desktop\\\\DEBERES HUV\\\\ProyectoHUV9GESTOR_ONCOLOGIA'' && python -c \"\"import json; data = json.load\\(open\\(''{}'', encoding=''utf-8''\\)\\); bd = data.get\\(''base_datos'', {}\\).get\\(''datos_guardados'', {}\\); print\\(''MAMAGLOBINA:'', bd.get\\(''IHQ_MAMAGLOBINA''\\)\\); print\\(''CD34:'', bd.get\\(''IHQ_CD34''\\)\\); print\\(''EMA:'', bd.get\\(''IHQ_EMA''\\)\\); print\\(''P63:'', bd.get\\(''IHQ_P63''\\)\\); print\\(''E-Cadherina:'', bd.get\\(''IHQ_E_CADHERINA''\\)\\)\"\"\")",
+      "Bash(xargs:*)",
+      "Bash(timeout /t 15)",
+      "Bash(timeout /t 3)",
+      "Bash(timeout /t 6)",
+      "Bash(chcp:*)"
+    ]
   }
 }

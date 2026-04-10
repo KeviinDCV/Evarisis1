@@ -1,0 +1,152 @@
+{
+  "session_id": "IHQ250212_20260128_120732",
+  "numero_peticion": "IHQ250212",
+  "timestamp": "2026-01-28T12:07:32.791350",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250212\nCopia Pag. 1 de 2\nNombre : HIRAM HUMBERTO CHAVEZ\nCIFUENTES\nN. peticion : IHQ250212\nN.Identificación : CC. 16677818\nGenero : MASCULINO\nEdad : 62 años 2 meses 10 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : ENDOSCOPIA\nFecha Ingreso : 27/02/2025\nFecha Informe : 10/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION EN RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquímica al caso institucional con rótulo M2410229 que\ncorresponde a \" lesión en recto \" con diagnóstico de “ADENOCARICNOMA MODERADAMENTE\nDIFERENCIADO (FRAGMENTOS)”. consiste en una lamina coloreadas H&E y un bloque de parafina.\nPrevia valoración de la coloración básica, se realizan cortes histológicos para los siguientes\nmarcadores: MLH-1, PMS2, MSH2, MSH6, HER2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nControles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. \nREPORTE:\nMLH1: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta y citoplasmática de leve a moderada en más del 50% de las\ncélulas. \nPMS2: Expresión nuclear intacta.\nInterpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las\nproteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de\nMSI-H)\nHER2: negativo ( score 0 ) \nDIAGNÓSTICO\nMucosa de recto. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. \nADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS). \n- ⁠PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---\nIHQ250212\nCopia Pag. 2 de 2\nNombre : HIRAM HUMBERTO CHAVEZ\nCIFUENTES\nN. peticion : IHQ250212\nN.Identificación : CC. 16677818\nGenero : MASCULINO\nEdad : 62 años 2 meses 10 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : ENDOSCOPIA\nFecha Ingreso : 27/02/2025\nFecha Informe : 10/03/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3706,
+      "reduccion_porcentaje": 97.94
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250212",
+      "caso_num": 1,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "HIRAM HUMBERTO CHAVEZ CIFUENTES",
+      "numero_peticion": "IHQ250212",
+      "identificacion": "16677818",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "62",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "ENDOSCOPIA",
+      "fecha_ingreso": "27/02/2025",
+      "fecha_informe": "10/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250212",
+      "N. de identificación": "16677818",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "ENDOSCOPIA",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "27/02/2025",
+      "Fecha Informe": "10/03/2025",
+      "nombres": "HIRAM HUMBERTO",
+      "Primer nombre": "HIRAM",
+      "Segundo nombre": "HUMBERTO",
+      "apellidos": "CHAVEZ CIFUENTES",
+      "Primer apellido": "CHAVEZ",
+      "Segundo apellido": "CIFUENTES",
+      "nombre_formal": "CHAVEZ CIFUENTES, HIRAM HUMBERTO",
+      "diagnostico": "Mucosa de recto. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. ADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS). - ⁠PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). Controles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. REPORTE: MLH1: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta y citoplasmática de leve a moderada en más del 50% de las células. PMS2: Expresión nuclear intacta. Interpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) HER2: negativo ( score 0 )",
+      "descripcion_macroscopica": "Se realiza estudio de inmunohistoquímica al caso institucional con rótulo M2410229 que corresponde a \" lesión en recto \" con diagnóstico de \"ADENOCARICNOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS)\". consiste en una lamina coloreadas H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2.",
+      "ihq_organo": "MUCOSA DE RECTO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MLH 1, PMS2, MSH2, MSH6, HER2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA DE RECTO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "HER2: negativo ( score 0 )",
+      "IHQ_ESTUDIOS_SOLICITADOS": "MLH 1, PMS2, MSH2, MSH6, HER2",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "extraction_timestamp": "2026-01-28T12:07:33.695307",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250212\nCopia Pag. 1 de 2\nNombre : HIRAM HUMBERTO CHAVEZ\nCIFUENTES\nN. peticion : IHQ250212\nN.Identificación : CC. 16677818\nGenero : MASCULINO\nEdad : 62 años 2 meses 10 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : ENDOSCOPIA\nFecha Ingreso : 27/02/2025\nFecha Informe : 10/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION EN RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquímica al caso institucional con rótulo M2410229 que\ncorresponde a \" lesión en recto \" con diagnóstico de “ADENOCARICNOMA MODERADAMENTE\nDIFERENCIADO (FRAGMENTOS)”. consiste en una lamina coloreadas H&E y un bloque de parafina.\nPrevia valoración de la coloración básica, se realizan cortes histológicos para los siguientes\nmarcadores: MLH-1, PMS2, MSH2, MSH6, HER2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nControles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. \nREPORTE:\nMLH1: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta y citoplasmática de leve a moderada en más del 50% de las\ncélulas. \nPMS2: Expresión nuclear intacta.\nInterpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las\nproteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de\nMSI-H)\nHER2: negativo ( score 0 ) \nDIAGNÓSTICO\nMucosa de recto. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. \nADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS). \n- ⁠PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---\nIHQ250212\nCopia Pag. 2 de 2\nNombre : HIRAM HUMBERTO CHAVEZ\nCIFUENTES\nN. peticion : IHQ250212\nN.Identificación : CC. 16677818\nGenero : MASCULINO\nEdad : 62 años 2 meses 10 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : ENDOSCOPIA\nFecha Ingreso : 27/02/2025\nFecha Informe : 10/03/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MLH 1, PMS2, MSH2, MSH6, HER2",
+      "Descripcion macroscopica": "Se realiza estudio de inmunohistoquímica al caso institucional con rótulo M2410229 que corresponde a \" lesión en recto \" con diagnóstico de “ADENOCARICNOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS)”. consiste en una lamina coloreadas H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). Controles internos y externos con adecuada marcación nuclear en linfocitos y células epiteliales. REPORTE: MLH1: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta y citoplasmática de leve a moderada en más del 50% de las células. PMS2: Expresión nuclear intacta. Interpretación de la reparación de desajustes (MMR): Sin pérdida de la expresión nuclear de las proteínas MMR: No hay evidencia de reparación deficiente de desajustes (baja probabilidad de MSI-H) HER2: negativo ( score 0 )",
+      "Descripcion Diagnostico": "Mucosa de recto. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. ADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS). - ⁠PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0).",
+      "IHQ_ORGANO": "MUCOSA DE RECTO",
+      "Organo": "LESION EN RECTO",
+      "Diagnostico Coloracion": "ADENOCARICNOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS)",
+      "Diagnostico Principal": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: negativo ( score 0 )",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 175,
+      "campos_vacios": 135,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa de recto. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. \nADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS). \n- ⁠PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).",
+      "valor_corregido": "Mucosa de recto. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. ADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS). - ⁠PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250212",
+      "timestamp": "2026-01-28T12:07:33.319652"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realiza estudio de inmunohistoquímica al caso institucional con rótulo M2410229 que corresponde a \" lesión en recto \" con diagnóstico de “ADENOCARICNOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS)”. consiste en una lamina coloreadas H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2.",
+      "valor_corregido": "Se realiza estudio de inmunohistoquímica al caso institucional con rótulo M2410229 que corresponde a \" lesión en recto \" con diagnóstico de \"ADENOCARICNOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS)\". consiste en una lamina coloreadas H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: MLH-1, PMS2, MSH2, MSH6, HER2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250212",
+      "timestamp": "2026-01-28T12:07:33.319660"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 53
+  }
+}

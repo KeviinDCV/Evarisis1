@@ -1,0 +1,134 @@
+{
+  "session_id": "IHQ250094_20251220_005538",
+  "numero_peticion": "IHQ250094",
+  "timestamp": "2025-12-20T00:55:38.196467",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250094\nCopia Pag. 1 de 1\nNombre : JUAN GABRIEL AGUIRRE RAMIREZ\nN. peticion : IHQ250094\nN.Identificación : CC. 1116726398\nGenero : FEMENINO\nEdad : 29 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ORLANDO FAVIO AREVALO\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 28/01/2025\nFecha Informe : 31/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HEPATICA +\nADENOPATIA MESENTERICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nrotulado como “Q24-4027-B” que corresponde a “biopsia de hígcado” con diagnóstico de\n“INFLAMACIÓN CRÓNICA GRANULOMATOSA Y EOSINOFILIA”. Previa revisión de la histología, se\nprocesa estudio de inmunohistoquímica para marcación con CD1a y S100.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nCD1a y S100 negativos.\nDIAGNÓSTICO\nHígado. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- EXPRESIÓN DE CD1a Y S100 NEGATIVA.\n- INFLAMACIÓN CRÓNICA GRANULOMATOSA.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 2348,
+      "reduccion_porcentaje": 98.75
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250094",
+      "caso_num": 38,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "JUAN GABRIEL AGUIRRE RAMIREZ",
+      "numero_peticion": "IHQ250094",
+      "identificacion": "1116726398",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "29",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ORLANDO FAVIO AREVALO",
+      "servicio": "TRAUMA Y REANIMACION",
+      "fecha_ingreso": "28/01/2025",
+      "fecha_informe": "31/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250094",
+      "N. de identificación": "1116726398",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "TRAUMA Y REANIMACION",
+      "Médico tratante": "ORLANDO FAVIO AREVALO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/01/2025",
+      "Fecha Informe": "31/01/2025",
+      "nombres": "JUAN GABRIEL AGUIRRE",
+      "Primer nombre": "JUAN",
+      "Segundo nombre": "GABRIEL AGUIRRE",
+      "apellidos": "RAMIREZ",
+      "Primer apellido": "RAMIREZ",
+      "Segundo apellido": "",
+      "nombre_formal": "RAMIREZ, JUAN GABRIEL AGUIRRE",
+      "diagnostico": "Hígado. Lesión. Biopsia. Estudio de inmunohistoquímica: - EXPRESIÓN DE CD1a Y S100 NEGATIVA. - INFLAMACIÓN CRÓNICA GRANULOMATOSA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. CD1a y S100 negativos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como “Q24-4027-B” que corresponde a “biopsia de hígcado” con diagnóstico de “INFLAMACIÓN CRÓNICA GRANULOMATOSA Y EOSINOFILIA”. Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con CD1a y S100.",
+      "ihq_organo": "HÍGADO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD1A, S100",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "HÍGADO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_CD1A": "NEGATIVO",
+      "extraction_timestamp": "2025-12-20T00:55:38.355593",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250094\nCopia Pag. 1 de 1\nNombre : JUAN GABRIEL AGUIRRE RAMIREZ\nN. peticion : IHQ250094\nN.Identificación : CC. 1116726398\nGenero : FEMENINO\nEdad : 29 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ORLANDO FAVIO AREVALO\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 28/01/2025\nFecha Informe : 31/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HEPATICA +\nADENOPATIA MESENTERICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nrotulado como “Q24-4027-B” que corresponde a “biopsia de hígcado” con diagnóstico de\n“INFLAMACIÓN CRÓNICA GRANULOMATOSA Y EOSINOFILIA”. Previa revisión de la histología, se\nprocesa estudio de inmunohistoquímica para marcación con CD1a y S100.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nCD1a y S100 negativos.\nDIAGNÓSTICO\nHígado. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- EXPRESIÓN DE CD1a Y S100 NEGATIVA.\n- INFLAMACIÓN CRÓNICA GRANULOMATOSA.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD1A, S100",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como “Q24-4027-B” que corresponde a “biopsia de hígcado” con diagnóstico de “INFLAMACIÓN CRÓNICA GRANULOMATOSA Y EOSINOFILIA”. Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con CD1a y S100.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. CD1a y S100 negativos.",
+      "Descripcion Diagnostico": "Hígado. Lesión. Biopsia. Estudio de inmunohistoquímica: - EXPRESIÓN DE CD1a Y S100 NEGATIVA. - INFLAMACIÓN CRÓNICA GRANULOMATOSA.",
+      "IHQ_ORGANO": "HÍGADO",
+      "Organo": "BX HEPATICA + ADENOPATIA MESENTERICA",
+      "Diagnostico Coloracion": "INFLAMACIÓN CRÓNICA GRANULOMATOSA Y EOSINOFILIA",
+      "Diagnostico Principal": "EXPRESIÓN DE CD1A Y S100 NEGATIVA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD1A": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 165,
+      "campos_vacios": 129,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 21.82
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hígado. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- EXPRESIÓN DE CD1a Y S100 NEGATIVA.\n- INFLAMACIÓN CRÓNICA GRANULOMATOSA.",
+      "valor_corregido": "Hígado. Lesión. Biopsia. Estudio de inmunohistoquímica: - EXPRESIÓN DE CD1a Y S100 NEGATIVA. - INFLAMACIÓN CRÓNICA GRANULOMATOSA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250094",
+      "timestamp": "2025-12-20T00:55:38.355396"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 48
+  }
+}

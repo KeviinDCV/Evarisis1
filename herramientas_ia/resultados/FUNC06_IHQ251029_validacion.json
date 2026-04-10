@@ -1,0 +1,61 @@
+{
+  "caso": "IHQ251029",
+  "timestamp": "2025-11-11T00:07:38.537846",
+  "fase": "FUNC-06_REPROCESAMIENTO",
+  "modificaciones_aplicadas": [
+    {
+      "archivo": "core/extractors/medical_extractor.py",
+      "lineas": "220-222",
+      "cambio": "Patron descripcion_macroscopica: .*? -> .*",
+      "objetivo": "Capturar descripcion macroscopica COMPLETA hasta DESCRIPCION MICROSCOPICA",
+      "resultado": "EXITOSO"
+    },
+    {
+      "archivo": "core/extractors/medical_extractor.py",
+      "linea": "2707",
+      "cambio": "Patron bloques_pattern: {2,80}? -> {2,80}",
+      "objetivo": "Capturar Organo multi-linea completo (BIOPSIA MASA INTRAABDOMINAL)",
+      "resultado": "PARCIALMENTE_FALLIDO"
+    }
+  ],
+  "validaciones": [
+    {
+      "campo": "Descripcion macroscopica",
+      "esperado": "Texto completo sin terminar en y",
+      "obtenido_ultimos_50": "CPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 92 ---",
+      "longitud": 3073,
+      "termina_en_y": false,
+      "estado": "CORRECTO"
+    },
+    {
+      "campo": "Organo",
+      "esperado": "BIOPSIA MASA INTRAABDOMINAL",
+      "obtenido": "BIOPSIA MASA",
+      "contiene_intraabdominal": false,
+      "estado": "ERROR"
+    },
+    {
+      "campo": "Diagnostico Principal",
+      "obtenido": "TUMOR NEUROENDOCRINO BIEN DIFERENCIADO,",
+      "estado": "OK"
+    },
+    {
+      "campo": "Diagnostico Coloracion",
+      "obtenido": "LOS HALLAZGOS MORFOLOGICOS FAVORECEN UN TUMOR NEUROENDOCRINO",
+      "estado": "OK"
+    }
+  ],
+  "analisis_organo": {
+    "problema": "Patron bloques_pattern NO captura multi-linea correctamente",
+    "causa_raiz": "El lookahead encuentra INFORME antes de capturar INTRAABDOMINAL",
+    "evidencia_pdf": "BIOPSIA MASA + salto_linea + INTRAABDOMINAL + salto_linea + INFORME DE ANATOMIA PATOLOGICA",
+    "patron_actual_linea_2707": "bloques_pattern con lookahead que detecta INFORME prematuramente",
+    "solucion_propuesta": "Modificar lookahead para no detener en INFORME cuando hay continuacion"
+  },
+  "resumen": {
+    "reprocesamiento": "COMPLETADO (47 casos procesados)",
+    "validacion_descripcion_macro": "EXITOSA - Ya NO termina en y",
+    "validacion_organo": "FALLIDA - Falta INTRAABDOMINAL",
+    "siguiente_paso": "Modificar patron bloques_pattern en medical_extractor.py linea 2707"
+  }
+}

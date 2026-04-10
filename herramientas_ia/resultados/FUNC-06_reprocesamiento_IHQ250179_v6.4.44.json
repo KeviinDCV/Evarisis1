@@ -1,0 +1,48 @@
+{
+  "caso": "IHQ250179",
+  "timestamp": "2026-01-08T11:26:02.127449",
+  "version": "v6.4.44",
+  "operacion": "FUNC-06_REPROCESAMIENTO",
+  "resultado": "EXITOSO_CON_ADVERTENCIA",
+  "correcciones_aplicadas": {
+    "v6.4.43": "MUC1 agregado al sistema (columna + alias + extractor)",
+    "v6.4.44": "Ki-67 cualitativo sin cuantificacion porcentual"
+  },
+  "biomarcadores_objetivo": {
+    "MUC1": {
+      "extraido": "POSITIVO DIFUSO",
+      "ocr": "positiva difusa en el epitelio para MUC1",
+      "estado": "OK - CORRECTO (v6.4.43)",
+      "nota": "Primera extraccion exitosa con alias v6.4.43"
+    },
+    "Ki-67": {
+      "extraido": "POSITIVO (distribucion uniforme)",
+      "ocr": "el indice de proliferacion celular medido con Ki 67 se distribuye uniformemente",
+      "estado": "OK - CORRECTO (v6.4.44)",
+      "nota": "Cualitativo sin cuantificacion porcentual"
+    }
+  },
+  "biomarcadores_adicionales": {
+    "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+    "IHQ_CD117": "NEGATIVO",
+    "IHQ_CD34": "NEGATIVO",
+    "IHQ_DESMIN": "NEGATIVO",
+    "IHQ_DOG1": "NEGATIVO",
+    "IHQ_EMA": "NEGATIVO",
+    "IHQ_MUC2": "NEGATIVO",
+    "IHQ_S100": "NEGATIVO"
+  },
+  "factor_pronostico": "Ki-67: POSITIVO (distribucion uniforme)",
+  "completitud": {
+    "total_campos": 169,
+    "campos_completos": 44,
+    "biomarcadores": 9,
+    "porcentaje": 100.0
+  },
+  "advertencias": [
+    "Error I/O al guardar en BD (archivo cerrado prematuramente)",
+    "Debug_map contiene datos correctos",
+    "Caso requiere guardado manual o reprocesamiento del lote completo"
+  ],
+  "conclusion": "REPROCESAMIENTO EXITOSO - Correcciones v6.4.44 validadas"
+}

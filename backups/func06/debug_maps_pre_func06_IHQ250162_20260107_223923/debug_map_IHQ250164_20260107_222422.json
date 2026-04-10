@@ -1,0 +1,160 @@
+{
+  "session_id": "IHQ250164_20260107_222422",
+  "numero_peticion": "IHQ250164",
+  "timestamp": "2026-01-07T22:24:22.648027",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250164\nCopia Pag. 1 de 2\nNombre : TANCREDO PRADO GUTIERREZ\nN. peticion : IHQ250164\nN.Identificación : CC. 10630254\nGenero : MASCULINO\nEdad : 68 años 18 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 12/02/2025\nFecha Informe : 24/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGLANDULA LAGRIMAL Y\nORBITA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500835” que corresponde a “lesión de glándula lagrimal y orbita izquierda” con diagnósticos\nde “PROLIFERACIÓN HEMATOLINFOIDE ATÍPICA”. Previa revisión de la histología, se realizan niveles\nhistológicos para tinción con SOX11, cyclina D1, CD3, CD5, CD20, PAX-5, BCL2, BCL6, CD10, CD23, IgD,\nKI-67 Y CD38.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®\nLa proliferación linfoide atípica descrita es positiva para CD20, PAX-5 Y BCL-2, y\nnegativa con el CD5,\nCD10, BCL6, IgD, SOX -11 y Ciclyna D1; hay importante participación de células plasmáticas CD38+. La\nexpresión de cadenas livianas tiene restricción lambda+/kappa-. índice de proliferación KI-67 del 10%.\nHay linfocitos T CD3+ y CD5+ esparcidos. Bajo la tinción de CD23+ se reconocen redes de células\ndendríticas foliculares.\nDIAGNÓSTICO\nGlándula lagrimal y orbita izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA QUE FAVORECE LINFOMA EXTRANODAL DE LA ZONA\nMARGINAL.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 8 ---\nIHQ250164\nCopia Pag. 2 de 2\nNombre : TANCREDO PRADO GUTIERREZ\nN. peticion : IHQ250164\nN.Identificación : CC. 10630254\nGenero : MASCULINO\nEdad : 68 años 18 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 12/02/2025\nFecha Informe : 24/02/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3520,
+      "reduccion_porcentaje": 97.88
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250164",
+      "caso_num": 4,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD20": "POSITIVO",
+      "nombre_completo": "TANCREDO PRADO GUTIERREZ",
+      "numero_peticion": "IHQ250164",
+      "identificacion": "10630254",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "68",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "CATHERINE GONZALIAS DUQUE",
+      "servicio": "CIRUGIA HOMBRES",
+      "fecha_ingreso": "12/02/2025",
+      "fecha_informe": "24/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250164",
+      "N. de identificación": "10630254",
+      "Tipo de documento": "CC",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "CIRUGIA HOMBRES",
+      "Médico tratante": "CATHERINE GONZALIAS DUQUE",
+      "Fecha de ingreso (2. Fecha de la muestra)": "12/02/2025",
+      "Fecha Informe": "24/02/2025",
+      "nombres": "TANCREDO PRADO",
+      "Primer nombre": "TANCREDO",
+      "Segundo nombre": "PRADO",
+      "apellidos": "GUTIERREZ",
+      "Primer apellido": "GUTIERREZ",
+      "Segundo apellido": "",
+      "nombre_formal": "GUTIERREZ, TANCREDO PRADO",
+      "diagnostico": "Glándula lagrimal y orbita izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica: - PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA QUE FAVORECE LINFOMA EXTRANODAL DE LA ZONA MARGINAL. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________: 12/02/2025",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® La proliferación linfoide atípica descrita es positiva para CD20, PAX-5 Y BCL-2, y negativa con el CD5, CD10, BCL6, IgD, SOX -11 y Ciclyna D1; hay importante participación de células plasmáticas CD38+. La expresión de cadenas livianas tiene restricción lambda+/kappa-. índice de proliferación KI-67 del 10%. Hay linfocitos T CD3+ y CD5+ esparcidos. Bajo la tinción de CD23+ se reconocen redes de células dendríticas foliculares.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500835” que corresponde a “lesión de glándula lagrimal y orbita izquierda” con diagnósticos de “PROLIFERACIÓN HEMATOLINFOIDE ATÍPICA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con SOX11, cyclina D1, CD3, CD5, CD20, PAX-5, BCL2, BCL6, CD10, CD23, IgD, KI-67 Y CD38.",
+      "ihq_organo": "GLÁNDULA LAGRIMAL Y ORBITA IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "SOX11, CYCLINA D1, CD3, CD5, CD20, PAX 5, BCL2, BCL6, CD10, CD23, IGD, Ki-67, CD38",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GLÁNDULA LAGRIMAL Y ORBITA IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Ki-67 del 10%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "SOX11, CYCLINA D1, CD3, CD5, CD20, PAX 5, BCL2, BCL6, CD10, CD23, IGD, Ki-67, CD38",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_KAPPA": "NEGATIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_KI-67": "10%",
+      "IHQ_LAMBDA": "POSITIVO",
+      "IHQ_CICLINA_D1": "POSITIVO",
+      "extraction_timestamp": "2026-01-07T22:24:23.072439",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250164\nCopia Pag. 1 de 2\nNombre : TANCREDO PRADO GUTIERREZ\nN. peticion : IHQ250164\nN.Identificación : CC. 10630254\nGenero : MASCULINO\nEdad : 68 años 18 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 12/02/2025\nFecha Informe : 24/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGLANDULA LAGRIMAL Y\nORBITA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500835” que corresponde a “lesión de glándula lagrimal y orbita izquierda” con diagnósticos\nde “PROLIFERACIÓN HEMATOLINFOIDE ATÍPICA”. Previa revisión de la histología, se realizan niveles\nhistológicos para tinción con SOX11, cyclina D1, CD3, CD5, CD20, PAX-5, BCL2, BCL6, CD10, CD23, IgD,\nKI-67 Y CD38.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®\nLa proliferación linfoide atípica descrita es positiva para CD20, PAX-5 Y BCL-2, y\nnegativa con el CD5,\nCD10, BCL6, IgD, SOX -11 y Ciclyna D1; hay importante participación de células plasmáticas CD38+. La\nexpresión de cadenas livianas tiene restricción lambda+/kappa-. índice de proliferación KI-67 del 10%.\nHay linfocitos T CD3+ y CD5+ esparcidos. Bajo la tinción de CD23+ se reconocen redes de células\ndendríticas foliculares.\nDIAGNÓSTICO\nGlándula lagrimal y orbita izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA QUE FAVORECE LINFOMA EXTRANODAL DE LA ZONA\nMARGINAL.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 8 ---\nIHQ250164\nCopia Pag. 2 de 2\nNombre : TANCREDO PRADO GUTIERREZ\nN. peticion : IHQ250164\nN.Identificación : CC. 10630254\nGenero : MASCULINO\nEdad : 68 años 18 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 12/02/2025\nFecha Informe : 24/02/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "SOX11, CYCLINA D1, CD3, CD5, CD20, PAX 5, BCL2, BCL6, CD10, CD23, IGD, Ki-67, CD38, Lambda, Kappa, CICLINA D1",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500835” que corresponde a “lesión de glándula lagrimal y orbita izquierda” con diagnósticos de “PROLIFERACIÓN HEMATOLINFOIDE ATÍPICA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con SOX11, cyclina D1, CD3, CD5, CD20, PAX-5, BCL2, BCL6, CD10, CD23, IgD, KI-67 Y CD38.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® La proliferación linfoide atípica descrita es positiva para CD20, PAX-5 Y BCL-2, y negativa con el CD5, CD10, BCL6, IgD, SOX -11 y Ciclyna D1; hay importante participación de células plasmáticas CD38+. La expresión de cadenas livianas tiene restricción lambda+/kappa-. índice de proliferación KI-67 del 10%. Hay linfocitos T CD3+ y CD5+ esparcidos. Bajo la tinción de CD23+ se reconocen redes de células dendríticas foliculares.",
+      "Descripcion Diagnostico": "Glándula lagrimal y orbita izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica: - PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA QUE FAVORECE LINFOMA EXTRANODAL DE LA ZONA MARGINAL. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________: 12/02/2025",
+      "IHQ_ORGANO": "GLÁNDULA LAGRIMAL Y ORBITA IZQUIERDA",
+      "Organo": "GLANDULA LAGRIMAL Y ORBITA IZQUIERDA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN HEMATOLINFOIDE ATÍPICA",
+      "Diagnostico Principal": "PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA QUE FAVORECE LINFOMA EXTRANODAL DE LA ZONA MARGINAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 10%",
+      "IHQ_SOX11": "",
+      "IHQ_CICLINA_D1": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_KI-67": "10%",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_LAMBDA": "POSITIVO",
+      "IHQ_KAPPA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 121,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 14,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 121,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Glándula lagrimal y orbita izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA QUE FAVORECE LINFOMA EXTRANODAL DE LA ZONA\nMARGINAL.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________: 12/02/2025",
+      "valor_corregido": "Glándula lagrimal y orbita izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica: - PERFIL DE EXPRESIÓN DE INMUNOHISTOQUÍMICA QUE FAVORECE LINFOMA EXTRANODAL DE LA ZONA MARGINAL. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________: 12/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250164",
+      "timestamp": "2026-01-07T22:24:23.072172"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 58
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "session_id": "IHQ250215_20260117_120327",
+  "numero_peticion": "IHQ250215",
+  "timestamp": "2026-01-17T12:03:27.775864",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250215\nCopia Pag. 1 de 2\nNombre : FERNANDO SALGADO CADAVID\nN. peticion : IHQ250215\nN.Identificación : CC. 14565125\nGenero : MASCULINO\nEdad : 63 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRA CARDONA MINA\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 27/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE PULMON\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2502245” que corresponde a “pulmón izquierdo” con diagnósticos de “TUMOR MALIGNO MAL\nDIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción\ncon CKAE1E3, p40, TTF-1, CD56, synaptofisina, cromogranina A y KI-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CKAE1E3, CD56, TTF-1 y con marcación focal y heterogenea\npara sinaptofisina.\nÍndice de proliferación KI-67 del 100%. \nLos marcadores p40 y cromogranina son negativos.\nDIAGNÓSTICO\nPulmón izquierdo. Masa. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA DE CÉLULAS PEQUEÑAS.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 8 ---\nIHQ250215\nCopia Pag. 2 de 2\nNombre : FERNANDO SALGADO CADAVID\nN. peticion : IHQ250215\nN.Identificación : CC. 14565125\nGenero : MASCULINO\nEdad : 63 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRA CARDONA MINA\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 27/02/2025\nFecha Informe : 05/03/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3130,
+      "reduccion_porcentaje": 98.26
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250215",
+      "caso_num": 4,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_KI67": "POSITIVO (focal)",
+      "IHQ_SINAPTOFISINA": "POSITIVO HETEROGÉNEO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "nombre_completo": "FERNANDO SALGADO CADAVID",
+      "numero_peticion": "IHQ250215",
+      "identificacion": "14565125",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "63",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ALEJANDRA CARDONA MINA",
+      "servicio": "UNIDAD DE CUIDADO ESPECIAL",
+      "fecha_ingreso": "27/02/2025",
+      "fecha_informe": "05/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250215",
+      "N. de identificación": "14565125",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE CUIDADO ESPECIAL",
+      "Médico tratante": "ALEJANDRA CARDONA MINA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "27/02/2025",
+      "Fecha Informe": "05/03/2025",
+      "nombres": "FERNANDO",
+      "Primer nombre": "FERNANDO",
+      "Segundo nombre": "",
+      "apellidos": "SALGADO CADAVID",
+      "Primer apellido": "SALGADO",
+      "Segundo apellido": "CADAVID",
+      "nombre_formal": "SALGADO CADAVID, FERNANDO",
+      "diagnostico": "Pulmón izquierdo. Masa. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA DE CÉLULAS PEQUEÑAS.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CD56, TTF1 y con marcación focal y heterogenea para synaptophysin. Índice de proliferación KI-67 del 100%. Los marcadores p40 y cromogranina son negativos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502245\" que corresponde a \"pulmón izquierdo\" con diagnósticos de \"TUMOR MALIGNO MAL DIFERENCIADO\". Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción con CKAE1E3, p40, TTF1, CD56, synaptophysin, cromogranina A y KI-67.",
+      "ihq_organo": "PULMÓN IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, P40, TTF-1, CD56, SYNAPTOFISINA, CROMOGRANINA A, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PULMÓN IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67 del 100%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, P40, TTF-1, CD56, SYNAPTOFISINA, CROMOGRANINA A, Ki-67",
+      "IHQ_KI-67": "100%",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-01-17T12:03:28.186388",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250215\nCopia Pag. 1 de 2\nNombre : FERNANDO SALGADO CADAVID\nN. peticion : IHQ250215\nN.Identificación : CC. 14565125\nGenero : MASCULINO\nEdad : 63 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRA CARDONA MINA\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 27/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE PULMON\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2502245” que corresponde a “pulmón izquierdo” con diagnósticos de “TUMOR MALIGNO MAL\nDIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción\ncon CKAE1E3, p40, TTF-1, CD56, synaptofisina, cromogranina A y KI-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CKAE1E3, CD56, TTF-1 y con marcación focal y heterogenea\npara sinaptofisina.\nÍndice de proliferación KI-67 del 100%. \nLos marcadores p40 y cromogranina son negativos.\nDIAGNÓSTICO\nPulmón izquierdo. Masa. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA DE CÉLULAS PEQUEÑAS.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 8 ---\nIHQ250215\nCopia Pag. 2 de 2\nNombre : FERNANDO SALGADO CADAVID\nN. peticion : IHQ250215\nN.Identificación : CC. 14565125\nGenero : MASCULINO\nEdad : 63 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRA CARDONA MINA\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 27/02/2025\nFecha Informe : 05/03/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, P40, TTF-1, CD56, SYNAPTOFISINA, CROMOGRANINA A, Ki-67, CROMOGRANINA",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502245” que corresponde a “pulmón izquierdo” con diagnósticos de “TUMOR MALIGNO MAL DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción con CKAE1E3, p40, TTF-1, CD56, synaptofisina, cromogranina A y KI-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CD56, TTF-1 y con marcación focal y heterogenea para sinaptofisina. Índice de proliferación KI-67 del 100%. Los marcadores p40 y cromogranina son negativos.",
+      "Descripcion Diagnostico": "Pulmón izquierdo. Masa. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA DE CÉLULAS PEQUEÑAS.",
+      "IHQ_ORGANO": "PULMÓN IZQUIERDO",
+      "Organo": "BIOPSIA DE PULMON IZQUIERDO",
+      "Diagnostico Coloracion": "TUMOR MALIGNO MAL DIFERENCIADO",
+      "Diagnostico Principal": "CARCINOMA DE CÉLULAS PEQUEÑAS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 100%",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_KI-67": "100%",
+      "IHQ_SINAPTOFISINA": "POSITIVO HETEROGÉNEO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 132,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 8,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 132,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón izquierdo. Masa. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA DE CÉLULAS PEQUEÑAS.",
+      "valor_corregido": "Pulmón izquierdo. Masa. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA DE CÉLULAS PEQUEÑAS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250215",
+      "timestamp": "2026-01-17T12:03:28.186165"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502245” que corresponde a “pulmón izquierdo” con diagnósticos de “TUMOR MALIGNO MAL DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción con CKAE1E3, p40, TTF-1, CD56, synaptofisina, cromogranina A y KI-67.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502245\" que corresponde a \"pulmón izquierdo\" con diagnósticos de \"TUMOR MALIGNO MAL DIFERENCIADO\". Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción con CKAE1E3, p40, TTF1, CD56, synaptophysin, cromogranina A y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250215",
+      "timestamp": "2026-01-17T12:03:28.186171"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CD56, TTF-1 y con marcación focal y heterogenea para sinaptofisina. Índice de proliferación KI-67 del 100%. Los marcadores p40 y cromogranina son negativos.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CD56, TTF1 y con marcación focal y heterogenea para synaptophysin. Índice de proliferación KI-67 del 100%. Los marcadores p40 y cromogranina son negativos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250215",
+      "timestamp": "2026-01-17T12:03:28.186173"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 56
+  }
+}

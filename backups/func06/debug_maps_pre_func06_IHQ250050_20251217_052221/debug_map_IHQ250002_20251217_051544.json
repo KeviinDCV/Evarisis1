@@ -1,0 +1,160 @@
+{
+  "session_id": "IHQ250002_20251217_051544",
+  "numero_peticion": "IHQ250002",
+  "timestamp": "2025-12-17T05:15:44.911345",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250002\nCopia Pag. 1 de 2\nNombre : ANYI PAOLA VARGAS RIVERA\nN. peticion : IHQ250002\nN.Identificación : CC. 1116447711\nGenero : FEMENINO\nEdad : 26 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO MERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 02/01/2025\nFecha Informe : 16/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION HIPOFISIS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquimica al caso institucional con rotulo M2410489 que\ncorresponde\na \" Lesion de hipofisis \" con diagnóstico de “NEOPLASIA EN PATRON ORGANOIDE”.\nconsiste en dos laminas coloreadas H&E y dos bloques de parafina. Previa valoración de la\ncoloración básica, se realizan cortes histológicosal bloque uno\npara los siguientes marcadores:\nCKAE1/AE3, CAM 5.2, GATA 3 ,RECEPTOR DE ESTROGENOS,SINAPTOFISINA y Ki 67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales presentan inmuno marcación positiva fuerte y difusa para\nCKAE1/AE3 y\nSINAPTOFISINA\nDIAGNÓSTICO\nHipófisis. Lesión. Resección. Estudio de inmunohistoquimica:\nTUMOR NUEROENDOCRINO HIPOFISIARIO.\nEXPRESIÓN HORMONAL\nACTH, negativo\nGH, negativo\nPROLACTINA, negativo\nTSH, positivo\nLH, negativo\nFSH, positivo\nFACTORES DE TRANSCRIPCION\nTpit, no disponible\nPit1, no disponible\nSF1, no disponible\nGATA 3, positivo focal\nRECEPTOR DE ESTRÓGENOS, positivo focal\nCOMENTARIOS\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---\nIHQ250002\nCopia Pag. 2 de 2\nNombre : ANYI PAOLA VARGAS RIVERA\nN. peticion : IHQ250002\nN.Identificación : CC. 1116447711\nGenero : FEMENINO\nEdad : 26 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO MERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 02/01/2025\nFecha Informe : 16/01/2025\nEXPRESIÓN DE CITOQUERATINA CAM 5.2: perinuclear granular denso. \nÍNDICE DE PROLIFERAICÓN CÉLULAR MEDIDO CON Ki 67: 8%\np53 tiene expresión en mosaico (no mutado). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3493,
+      "reduccion_porcentaje": 97.96
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250002",
+      "caso_num": 2,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ANYI PAOLA VARGAS RIVERA",
+      "numero_peticion": "IHQ250002",
+      "identificacion": "1116447711",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "26",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JAVIER OROZCO MERA",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "02/01/2025",
+      "fecha_informe": "16/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250002",
+      "N. de identificación": "1116447711",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "JAVIER OROZCO MERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/01/2025",
+      "Fecha Informe": "16/01/2025",
+      "nombres": "ANYI PAOLA",
+      "Primer nombre": "ANYI",
+      "Segundo nombre": "PAOLA",
+      "apellidos": "VARGAS RIVERA",
+      "Primer apellido": "VARGAS",
+      "Segundo apellido": "RIVERA",
+      "nombre_formal": "VARGAS RIVERA, ANYI PAOLA",
+      "diagnostico": "Hipófisis. Lesión. Resección. Estudio de inmunohistoquimica: TUMOR NEUROENDOCRINO HIPOFISIARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmuno marcación positiva fuerte y difusa para CKAE1/AE3 y SYNAPTOPHYSIN EXPRESIÓN DE CITOQUERATINA CAM 5.2: perinuclear granular denso. ÍNDICE DE PROLIFERAICÓN CÉLULAR MEDIDO CON KI-67: 8% p53 tiene expresión en mosaico (no mutado). | EXPRESIÓN HORMONAL: ACTH, negativo, GH, negativo, PROLACTINA, negativo, TSH, positivo, LH, negativo, FSH, positivo | FACTORES DE TRANSCRIPCIÓN: Tpit, no disponible, Pit1, no disponible, SF1, no disponible, GATA 3, positivo focal, RECEPTOR DE ESTRÓGENOS, positivo focal | EXPRESIÓN DE CITOQUERATINA CAM 5.2: perinuclear granular denso. | ÍNDICE DE PROLIFERACIÓN CELULAR (KI-67): 8% | p53: expresión en mosaico (no mutado).",
+      "descripcion_macroscopica": "Se realiza estudio de inmunohistoquimica al caso institucional con rotulo M2410489 que corresponde a \" Lesion de hipofisis \" con diagnóstico de “NEOPLASIA EN PATRON ORGANOIDE”. consiste en dos laminas coloreadas H&E y dos bloques de parafina. Previa valoración de la coloración básica, se realizan cortes histológicosal bloque uno para los siguientes marcadores: CKAE1/AE3, CAM 5.2, GATA 3 ,RECEPTOR DE ESTROGENOS,SYNAPTOPHYSIN y KI-67.",
+      "ihq_organo": "HIPÓFISIS",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1AE3, CAM5.2, GATA3, Receptor de Estrógeno, SINAPTOFISINA, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "HIPÓFISIS",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "Ki-67: 8%, Receptor de Estrógeno: POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_SINAPTOFISINA": "POSITIVO",
+      "IHQ_KI-67": "8%",
+      "IHQ_CAM5": "POSITIVO (perinuclear granular denso)",
+      "extraction_timestamp": "2025-12-17T05:15:45.052638",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250002\nCopia Pag. 1 de 2\nNombre : ANYI PAOLA VARGAS RIVERA\nN. peticion : IHQ250002\nN.Identificación : CC. 1116447711\nGenero : FEMENINO\nEdad : 26 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO MERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 02/01/2025\nFecha Informe : 16/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION HIPOFISIS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquimica al caso institucional con rotulo M2410489 que\ncorresponde\na \" Lesion de hipofisis \" con diagnóstico de “NEOPLASIA EN PATRON ORGANOIDE”.\nconsiste en dos laminas coloreadas H&E y dos bloques de parafina. Previa valoración de la\ncoloración básica, se realizan cortes histológicosal bloque uno\npara los siguientes marcadores:\nCKAE1/AE3, CAM 5.2, GATA 3 ,RECEPTOR DE ESTROGENOS,SINAPTOFISINA y Ki 67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales presentan inmuno marcación positiva fuerte y difusa para\nCKAE1/AE3 y\nSINAPTOFISINA\nDIAGNÓSTICO\nHipófisis. Lesión. Resección. Estudio de inmunohistoquimica:\nTUMOR NUEROENDOCRINO HIPOFISIARIO.\nEXPRESIÓN HORMONAL\nACTH, negativo\nGH, negativo\nPROLACTINA, negativo\nTSH, positivo\nLH, negativo\nFSH, positivo\nFACTORES DE TRANSCRIPCION\nTpit, no disponible\nPit1, no disponible\nSF1, no disponible\nGATA 3, positivo focal\nRECEPTOR DE ESTRÓGENOS, positivo focal\nCOMENTARIOS\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---\nIHQ250002\nCopia Pag. 2 de 2\nNombre : ANYI PAOLA VARGAS RIVERA\nN. peticion : IHQ250002\nN.Identificación : CC. 1116447711\nGenero : FEMENINO\nEdad : 26 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO MERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 02/01/2025\nFecha Informe : 16/01/2025\nEXPRESIÓN DE CITOQUERATINA CAM 5.2: perinuclear granular denso. \nÍNDICE DE PROLIFERAICÓN CÉLULAR MEDIDO CON Ki 67: 8%\np53 tiene expresión en mosaico (no mutado). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, CAM5.2, GATA3, Receptor de Estrógeno, SINAPTOFISINA, Ki-67",
+      "Descripcion macroscopica": "Se realiza estudio de inmunohistoquimica al caso institucional con rotulo M2410489 que corresponde a \" Lesion de hipofisis \" con diagnóstico de “NEOPLASIA EN PATRON ORGANOIDE”. consiste en dos laminas coloreadas H&E y dos bloques de parafina. Previa valoración de la coloración básica, se realizan cortes histológicosal bloque uno para los siguientes marcadores: CKAE1/AE3, CAM 5.2, GATA 3 ,RECEPTOR DE ESTROGENOS,SINAPTOFISINA y Ki 67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmuno marcación positiva fuerte y difusa para CKAE1/AE3 y SINAPTOFISINA EXPRESIÓN DE CITOQUERATINA CAM 5.2: perinuclear granular denso. ÍNDICE DE PROLIFERAICÓN CÉLULAR MEDIDO CON Ki 67: 8% p53 tiene expresión en mosaico (no mutado). | EXPRESIÓN HORMONAL: ACTH, negativo, GH, negativo, PROLACTINA, negativo, TSH, positivo, LH, negativo, FSH, positivo | FACTORES DE TRANSCRIPCIÓN: Tpit, no disponible, Pit1, no disponible, SF1, no disponible, GATA 3, positivo focal, RECEPTOR DE ESTRÓGENOS, positivo focal | EXPRESIÓN DE CITOQUERATINA CAM 5.2: perinuclear granular denso. | ÍNDICE DE PROLIFERACIÓN CELULAR (Ki-67): 8% | p53: expresión en mosaico (no mutado).",
+      "Descripcion Diagnostico": "Hipófisis. Lesión. Resección. Estudio de inmunohistoquimica: TUMOR NEUROENDOCRINO HIPOFISIARIO.",
+      "IHQ_ORGANO": "HIPÓFISIS",
+      "Organo": "LESION HIPOFISIS",
+      "Diagnostico Coloracion": "NEOPLASIA EN PATRON ORGANOIDE",
+      "Diagnostico Principal": "TUMOR NUEROENDOCRINO HIPOFISIARIO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 8%, Receptor de Estrógeno: POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CAM5": "POSITIVO (perinuclear granular denso)",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_SINAPTOFISINA": "POSITIVO",
+      "IHQ_KI-67": "8%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 112,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 6,
+      "completitud_porcentaje": 28.66
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 112,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hipófisis. Lesión. Resección. Estudio de inmunohistoquimica:\nTUMOR NUEROENDOCRINO HIPOFISIARIO.",
+      "valor_corregido": "Hipófisis. Lesión. Resección. Estudio de inmunohistoquimica: TUMOR NEUROENDOCRINO HIPOFISIARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250002",
+      "timestamp": "2025-12-17T05:15:45.052431"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realiza estudio de inmunohistoquimica al caso institucional con rotulo M2410489 que\ncorresponde\na \" Lesion de hipofisis \" con diagnóstico de “NEOPLASIA EN PATRON ORGANOIDE”.\nconsiste en dos laminas coloreadas H&E y dos bloques de parafina. Previa valoración de la\ncoloración básica, se realizan cortes histológicosal bloque uno\npara los siguientes marcadores:\nCKAE1/AE3, CAM 5.2, GATA 3 ,RECEPTOR DE ESTROGENOS,SINAPTOFISINA y Ki 67.",
+      "valor_corregido": "Se realiza estudio de inmunohistoquimica al caso institucional con rotulo M2410489 que corresponde a \" Lesion de hipofisis \" con diagnóstico de “NEOPLASIA EN PATRON ORGANOIDE”. consiste en dos laminas coloreadas H&E y dos bloques de parafina. Previa valoración de la coloración básica, se realizan cortes histológicosal bloque uno para los siguientes marcadores: CKAE1/AE3, CAM 5.2, GATA 3 ,RECEPTOR DE ESTROGENOS,SYNAPTOPHYSIN y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250002",
+      "timestamp": "2025-12-17T05:15:45.052438"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmuno marcación positiva fuerte y difusa para CKAE1/AE3 y SINAPTOFISINA EXPRESIÓN DE CITOQUERATINA CAM 5.2: perinuclear granular denso. ÍNDICE DE PROLIFERAICÓN CÉLULAR MEDIDO CON Ki 67: 8% p53 tiene expresión en mosaico (no mutado). | EXPRESIÓN HORMONAL: ACTH, negativo, GH, negativo, PROLACTINA, negativo, TSH, positivo, LH, negativo, FSH, positivo | FACTORES DE TRANSCRIPCIÓN: Tpit, no disponible, Pit1, no disponible, SF1, no disponible, GATA 3, positivo focal, RECEPTOR DE ESTRÓGENOS, positivo focal | EXPRESIÓN DE CITOQUERATINA CAM 5.2: perinuclear granular denso. | ÍNDICE DE PROLIFERACIÓN CELULAR (Ki-67): 8% | p53: expresión en mosaico (no mutado).",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmuno marcación positiva fuerte y difusa para CKAE1/AE3 y SYNAPTOPHYSIN EXPRESIÓN DE CITOQUERATINA CAM 5.2: perinuclear granular denso. ÍNDICE DE PROLIFERAICÓN CÉLULAR MEDIDO CON KI-67: 8% p53 tiene expresión en mosaico (no mutado). | EXPRESIÓN HORMONAL: ACTH, negativo, GH, negativo, PROLACTINA, negativo, TSH, positivo, LH, negativo, FSH, positivo | FACTORES DE TRANSCRIPCIÓN: Tpit, no disponible, Pit1, no disponible, SF1, no disponible, GATA 3, positivo focal, RECEPTOR DE ESTRÓGENOS, positivo focal | EXPRESIÓN DE CITOQUERATINA CAM 5.2: perinuclear granular denso. | ÍNDICE DE PROLIFERACIÓN CELULAR (KI-67): 8% | p53: expresión en mosaico (no mutado).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250002",
+      "timestamp": "2025-12-17T05:15:45.052440"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 53
+  }
+}

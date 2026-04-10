@@ -1,0 +1,153 @@
+{
+  "session_id": "IHQ250127_20260106_012841",
+  "numero_peticion": "IHQ250127",
+  "timestamp": "2026-01-06T01:28:41.907642",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250127\nCopia Pag. 1 de 2\nNombre : DANIEL JOSUE TUNUBALA SALAZAR\nN. peticion : IHQ250127\nN.Identificación : TI. 1062329066\nGenero : MASCULINO\nEdad : 8 años 22 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : STEVEN KOREMBLUN MURILLO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 04/02/2025\nFecha Informe : 10/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500979” correspondiente a \" biopsia de medula ósea\". Previa revisión de la histología se realizan\nniveles histológicos al bloque con los marcadores: Mieloperoxidasa, Glycoforina, CD 3, CD20, CD34,\nCD38, CD56, CD61, CD117.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\n La médula esta exprimida. la mayor parte de la celularidad es positiva para Glicoforina, Población\nmieloide positiva para mieloperoxidasa. Hay escasa representación de linfocitos T (CD3 + y CD 4+),\nlinfocitos B (CD20 + ) y células plasmáticas (CD38+, CD56). Megacariocitos (CD61+) 2 a 7 por campo de\nalto poder, sin formar acúmulos. No hay representación de células inmaduras positivas para CD34 y\nCD117. No es posible determinar la presencia de células tumorales debido a exprimido de la muestra. \nDIAGNÓSTICO\n Medula ósea. Biopsia. Estudio de inmunohistoquimica:\nCELULARIDAD HEMATOPOYETICA REPRESENTADA \nDEFECTO POR EXPRIMIDO DE LA MUESTRA \nSIN CELULARIDAD TUMORAL REPRESENTADA POR ESTE METODO (VER CITOMETRIA DE FLUJO CF2500042)\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---\nIHQ250127\nCopia Pag. 2 de 2\nNombre : DANIEL JOSUE TUNUBALA SALAZAR\nN. peticion : IHQ250127\nN.Identificación : TI. 1062329066\nGenero : MASCULINO\nEdad : 8 años 22 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : STEVEN KOREMBLUN MURILLO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 04/02/2025\nFecha Informe : 10/02/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3551,
+      "reduccion_porcentaje": 97.96
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250127",
+      "caso_num": 19,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_MPO": "POSITIVO",
+      "nombre_completo": "DANIEL JOSUE TUNUBALA SALAZAR",
+      "numero_peticion": "IHQ250127",
+      "identificacion": "1062329066",
+      "tipo_documento": "TI",
+      "Genero": "MASCULINO",
+      "Edad": "8",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "STEVEN KOREMBLUN MURILLO",
+      "servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "fecha_ingreso": "04/02/2025",
+      "fecha_informe": "10/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250127",
+      "N. de identificación": "1062329066",
+      "Tipo de documento": "TI",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "Médico tratante": "STEVEN KOREMBLUN MURILLO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "04/02/2025",
+      "Fecha Informe": "10/02/2025",
+      "nombres": "DANIEL JOSUE TUNUBALA",
+      "Primer nombre": "DANIEL",
+      "Segundo nombre": "JOSUE TUNUBALA",
+      "apellidos": "SALAZAR",
+      "Primer apellido": "SALAZAR",
+      "Segundo apellido": "",
+      "nombre_formal": "SALAZAR, DANIEL JOSUE TUNUBALA",
+      "diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: CELULARIDAD HEMATOPOYETICA REPRESENTADA DEFECTO POR EXPRIMIDO DE LA MUESTRA SIN CELULARIDAD TUMORAL REPRESENTADA POR ESTE METODO (VER CITOMETRIA DE FLUJO CF2500042)",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La médula esta exprimida. la mayor parte de la celularidad es positiva para Glicoforina, Población mieloide positiva para mieloperoxidasa. Hay escasa representación de linfocitos T (CD3 + y CD 4+), linfocitos B (CD20 + ) y células plasmáticas (CD38+, CD56). Megacariocitos (CD61+) 2 a 7 por campo de alto poder, sin formar acúmulos. No hay representación de células inmaduras positivas para CD34 y CD117. No es posible determinar la presencia de células tumorales debido a exprimido de la muestra.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500979” correspondiente a \" biopsia de medula ósea\". Previa revisión de la histología se realizan niveles histológicos al bloque con los marcadores: Mieloperoxidasa, Glycoforina, CD 3, CD20, CD34, CD38, CD56, CD61, CD117.",
+      "ihq_organo": "MEDULA ÓSEA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD4": "POSITIVO",
+      "extraction_timestamp": "2026-01-06T01:28:42.414113",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250127\nCopia Pag. 1 de 2\nNombre : DANIEL JOSUE TUNUBALA SALAZAR\nN. peticion : IHQ250127\nN.Identificación : TI. 1062329066\nGenero : MASCULINO\nEdad : 8 años 22 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : STEVEN KOREMBLUN MURILLO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 04/02/2025\nFecha Informe : 10/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500979” correspondiente a \" biopsia de medula ósea\". Previa revisión de la histología se realizan\nniveles histológicos al bloque con los marcadores: Mieloperoxidasa, Glycoforina, CD 3, CD20, CD34,\nCD38, CD56, CD61, CD117.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\n La médula esta exprimida. la mayor parte de la celularidad es positiva para Glicoforina, Población\nmieloide positiva para mieloperoxidasa. Hay escasa representación de linfocitos T (CD3 + y CD 4+),\nlinfocitos B (CD20 + ) y células plasmáticas (CD38+, CD56). Megacariocitos (CD61+) 2 a 7 por campo de\nalto poder, sin formar acúmulos. No hay representación de células inmaduras positivas para CD34 y\nCD117. No es posible determinar la presencia de células tumorales debido a exprimido de la muestra. \nDIAGNÓSTICO\n Medula ósea. Biopsia. Estudio de inmunohistoquimica:\nCELULARIDAD HEMATOPOYETICA REPRESENTADA \nDEFECTO POR EXPRIMIDO DE LA MUESTRA \nSIN CELULARIDAD TUMORAL REPRESENTADA POR ESTE METODO (VER CITOMETRIA DE FLUJO CF2500042)\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---\nIHQ250127\nCopia Pag. 2 de 2\nNombre : DANIEL JOSUE TUNUBALA SALAZAR\nN. peticion : IHQ250127\nN.Identificación : TI. 1062329066\nGenero : MASCULINO\nEdad : 8 años 22 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : STEVEN KOREMBLUN MURILLO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 04/02/2025\nFecha Informe : 10/02/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD117, CD20, CD3, CD34, CD38, CD4, CD56, CD61, GLICOFORINA, MIELOPEROXIDASA",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500979” correspondiente a \" biopsia de medula ósea\". Previa revisión de la histología se realizan niveles histológicos al bloque con los marcadores: Mieloperoxidasa, Glycoforina, CD 3, CD20, CD34, CD38, CD56, CD61, CD117.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La médula esta exprimida. la mayor parte de la celularidad es positiva para Glicoforina, Población mieloide positiva para mieloperoxidasa. Hay escasa representación de linfocitos T (CD3 + y CD 4+), linfocitos B (CD20 + ) y células plasmáticas (CD38+, CD56). Megacariocitos (CD61+) 2 a 7 por campo de alto poder, sin formar acúmulos. No hay representación de células inmaduras positivas para CD34 y CD117. No es posible determinar la presencia de células tumorales debido a exprimido de la muestra.",
+      "Descripcion Diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: CELULARIDAD HEMATOPOYETICA REPRESENTADA DEFECTO POR EXPRIMIDO DE LA MUESTRA SIN CELULARIDAD TUMORAL REPRESENTADA POR ESTE METODO (VER CITOMETRIA DE FLUJO CF2500042)",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Organo": "BX DE HUESO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CELULARIDAD HEMATOPOYETICA REPRESENTADA DEFECTO POR EXPRIMIDO DE LA MUESTRA SIN CELULARIDAD TUMORAL REPRESENTADA POR ESTE METODO (VER CITOMETRIA DE FLUJO CF2500042)",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD4": "POSITIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": ""
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 123,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 123,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula ósea. Biopsia. Estudio de inmunohistoquimica:\nCELULARIDAD HEMATOPOYETICA REPRESENTADA \nDEFECTO POR EXPRIMIDO DE LA MUESTRA \nSIN CELULARIDAD TUMORAL REPRESENTADA POR ESTE METODO (VER CITOMETRIA DE FLUJO CF2500042)",
+      "valor_corregido": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: CELULARIDAD HEMATOPOYETICA REPRESENTADA DEFECTO POR EXPRIMIDO DE LA MUESTRA SIN CELULARIDAD TUMORAL REPRESENTADA POR ESTE METODO (VER CITOMETRIA DE FLUJO CF2500042)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250127",
+      "timestamp": "2026-01-06T01:28:42.413765"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 55
+  }
+}

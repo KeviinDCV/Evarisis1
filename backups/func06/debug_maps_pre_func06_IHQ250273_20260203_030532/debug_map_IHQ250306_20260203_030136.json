@@ -1,0 +1,148 @@
+{
+  "session_id": "IHQ250306_20260203_030136",
+  "numero_peticion": "IHQ250306",
+  "timestamp": "2026-02-03T03:01:36.229496",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250306\nCopia Pag. 1 de 2\nNombre : LAURA TERESA VILLOTA URIBE\nN. peticion : IHQ250306\nN.Identificación : CC. 31954894\nGenero : FEMENINO\nEdad : 58 años 1 mes 3 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LUIS ALFONSO GONZALEZ DELGADO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 27/03/2025\nFecha Informe : 08/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMAMA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2502150-C” que corresponde a “nódulo adicional retroareolar derecho” con\ndiagnóstico principal de “LESIÓN PAPILAR”. Previa revisión de la histología, se realizan niveles\nhistológicos al bloque C2 para tinción con p63, CK5/6, receptores de estrógenos y progesterona.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLa lesión papilar conserva células mioepiteliales (p63+) y tiene expresión heterogénea para\nreceptores hormonales de estrógenos y progesterona. \nEl CK5/6 resalta células mioepiteliales y tiene expresión heterígenea dentro de la lesión papilar.\nDIAGNÓSTICO\nC. Mama derecha. Lesión retroareolar. Resección. Estudio de inmunohistoquímica:\n- PAPILOMA INTRADUCTAL.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---\nIHQ250306\nCopia Pag. 2 de 2\nNombre : LAURA TERESA VILLOTA URIBE\nN. peticion : IHQ250306\nN.Identificación : CC. 31954894\nGenero : FEMENINO\nEdad : 58 años 1 mes 3 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LUIS ALFONSO GONZALEZ DELGADO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 27/03/2025\nFecha Informe : 08/04/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3246,
+      "reduccion_porcentaje": 98.14
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250306",
+      "caso_num": 42,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "LAURA TERESA VILLOTA URIBE",
+      "numero_peticion": "IHQ250306",
+      "identificacion": "31954894",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "58",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "LUIS ALFONSO GONZALEZ DELGADO",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "27/03/2025",
+      "fecha_informe": "08/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250306",
+      "N. de identificación": "31954894",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LUIS ALFONSO GONZALEZ DELGADO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "27/03/2025",
+      "Fecha Informe": "08/04/2025",
+      "nombres": "LAURA TERESA",
+      "Primer nombre": "LAURA",
+      "Segundo nombre": "TERESA",
+      "apellidos": "VILLOTA URIBE",
+      "Primer apellido": "VILLOTA",
+      "Segundo apellido": "URIBE",
+      "nombre_formal": "VILLOTA URIBE, LAURA TERESA",
+      "diagnostico": "C. Mama derecha. Lesión retroareolar. Resección. Estudio de inmunohistoquímica: - PAPILOMA INTRADUCTAL.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La lesión papilar conserva células mioepiteliales (p63+) y tiene expresión heterogénea para receptores hormonales de estrógenos y progesterona. El CK5/6 resalta células mioepiteliales y tiene expresión heterígenea dentro de la lesión papilar.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502150-C\" que corresponde a \"nódulo adicional retroareolar derecho\" con diagnóstico principal de \"LESIÓN PAPILAR\". Previa revisión de la histología, se realizan niveles histológicos al bloque C2 para tinción con p63, CK5/6, receptores de estrógenos y progesterona.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P63, CK5/6, Receptor de Estrógeno, Receptor de Progesterona",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Receptor de Estrógeno: S Y PROGESTERONA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK5/6, Receptor de Estrógeno, Receptor de Progesterona",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "S Y PROGESTERONA",
+      "extraction_timestamp": "2026-02-03T03:01:36.558404",
+      "extractor_version": "6.5.84_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250306\nCopia Pag. 1 de 2\nNombre : LAURA TERESA VILLOTA URIBE\nN. peticion : IHQ250306\nN.Identificación : CC. 31954894\nGenero : FEMENINO\nEdad : 58 años 1 mes 3 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LUIS ALFONSO GONZALEZ DELGADO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 27/03/2025\nFecha Informe : 08/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMAMA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2502150-C” que corresponde a “nódulo adicional retroareolar derecho” con\ndiagnóstico principal de “LESIÓN PAPILAR”. Previa revisión de la histología, se realizan niveles\nhistológicos al bloque C2 para tinción con p63, CK5/6, receptores de estrógenos y progesterona.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLa lesión papilar conserva células mioepiteliales (p63+) y tiene expresión heterogénea para\nreceptores hormonales de estrógenos y progesterona. \nEl CK5/6 resalta células mioepiteliales y tiene expresión heterígenea dentro de la lesión papilar.\nDIAGNÓSTICO\nC. Mama derecha. Lesión retroareolar. Resección. Estudio de inmunohistoquímica:\n- PAPILOMA INTRADUCTAL.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---\nIHQ250306\nCopia Pag. 2 de 2\nNombre : LAURA TERESA VILLOTA URIBE\nN. peticion : IHQ250306\nN.Identificación : CC. 31954894\nGenero : FEMENINO\nEdad : 58 años 1 mes 3 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LUIS ALFONSO GONZALEZ DELGADO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 27/03/2025\nFecha Informe : 08/04/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK5/6, Receptor de Estrógeno, Receptor de Progesterona",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502150-C” que corresponde a “nódulo adicional retroareolar derecho” con diagnóstico principal de “LESIÓN PAPILAR”. Previa revisión de la histología, se realizan niveles histológicos al bloque C2 para tinción con p63, CK5/6, receptores de estrógenos y progesterona.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La lesión papilar conserva células mioepiteliales (p63+) y tiene expresión heterogénea para receptores hormonales de estrógenos y progesterona. El CK5/6 resalta células mioepiteliales y tiene expresión heterígenea dentro de la lesión papilar.",
+      "Descripcion Diagnostico": "C. Mama derecha. Lesión retroareolar. Resección. Estudio de inmunohistoquímica: - PAPILOMA INTRADUCTAL.",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "MAMA IZQUIERDA",
+      "Diagnostico Coloracion": "NÓDULO ADICIONAL RETROAREOLAR DERECHO",
+      "Diagnostico Principal": "PAPILOMA INTRADUCTAL",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: S Y PROGESTERONA",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK5_6": "NO MENCIONADO",
+      "IHQ_RECEPTOR_ESTROGENOS": "S Y PROGESTERONA",
+      "IHQ_RECEPTOR_PROGESTERONA": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 137,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "C. Mama derecha. Lesión retroareolar. Resección. Estudio de inmunohistoquímica:\n- PAPILOMA INTRADUCTAL.",
+      "valor_corregido": "C. Mama derecha. Lesión retroareolar. Resección. Estudio de inmunohistoquímica: - PAPILOMA INTRADUCTAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250306",
+      "timestamp": "2026-02-03T03:01:36.558204"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502150-C” que corresponde a “nódulo adicional retroareolar derecho” con diagnóstico principal de “LESIÓN PAPILAR”. Previa revisión de la histología, se realizan niveles histológicos al bloque C2 para tinción con p63, CK5/6, receptores de estrógenos y progesterona.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502150-C\" que corresponde a \"nódulo adicional retroareolar derecho\" con diagnóstico principal de \"LESIÓN PAPILAR\". Previa revisión de la histología, se realizan niveles histológicos al bloque C2 para tinción con p63, CK5/6, receptores de estrógenos y progesterona.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250306",
+      "timestamp": "2026-02-03T03:01:36.558210"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 50
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "session_id": "IHQ250168_20260107_224655",
+  "numero_peticion": "IHQ250168",
+  "timestamp": "2026-01-07T22:46:55.259948",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250168\nCopia Pag. 1 de 1\nNombre : ELIZABETH SALCEDO PAEZ\nN. peticion : IHQ250168\nN.Identificación : CC. 39702456\nGenero : FEMENINO\nEdad : 62 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 13/02/2025\nFecha Informe : 26/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION DUODENAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2501330, el cual corresponde a biopsia endoscópica de tumor\nen primera porción de mucosa duodenal, con diagnóstico de \"INFILTRACIÓN POR ADENOCARCINOMA BIEN\nDIFERENCIADO\". Se ordenan los siguientes marcadores: CKAE1E3, CK7, CK20, CK19, CA19-9, CDX2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para CKAE1E3, CK7, CK19 y CDX2. Son negativas para CK20 y\nCA19-9.\nDIAGNÓSTICO\n Mucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia. Estudio\nde inmunohistoquímica:\nADENOCARCINOMA DE PROBABLE ORIGEN GASTROINTESTINAL\nCOMENTARIOS\nSe recomienda correlacionar con historia clínica y demás estudios complementarios.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2512,
+      "reduccion_porcentaje": 98.48
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250168",
+      "caso_num": 8,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "nombre_completo": "ELIZABETH SALCEDO PAEZ",
+      "numero_peticion": "IHQ250168",
+      "identificacion": "39702456",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "62",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "13/02/2025",
+      "fecha_informe": "26/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250168",
+      "N. de identificación": "39702456",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "13/02/2025",
+      "Fecha Informe": "26/02/2025",
+      "nombres": "ELIZABETH",
+      "Primer nombre": "ELIZABETH",
+      "Segundo nombre": "",
+      "apellidos": "SALCEDO PAEZ",
+      "Primer apellido": "SALCEDO",
+      "Segundo apellido": "PAEZ",
+      "nombre_formal": "SALCEDO PAEZ, ELIZABETH",
+      "diagnostico": "Mucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia. Estudio de inmunohistoquímica: ADENOCARCINOMA DE PROBABLE ORIGEN GASTROINTESTINAL",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CK7, CK19 y CDX2. Son negativas para CK20 y CA19-9.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2501330, el cual corresponde a biopsia endoscópica de tumor en primera porción de mucosa duodenal, con diagnóstico de \"INFILTRACIÓN POR ADENOCARCINOMA BIEN DIFERENCIADO\". Se ordenan los siguientes marcadores: CKAE1E3, CK7, CK20, CK19, CA19-9, CDX2.",
+      "ihq_organo": "MUCOSA DUODENAL, PRIMERA PORCIÓN",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, CK7, CK20, CK19, CA19-9, CDX2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se recomienda correlacionar con historia clínica y demás estudios complementarios.",
+      "IHQ_ORGANO": "MUCOSA DUODENAL, PRIMERA PORCIÓN",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, CK7, CK20, CK19, CA19-9, CDX2",
+      "IHQ_CA19_9": "NEGATIVO",
+      "extraction_timestamp": "2026-01-07T22:46:55.689925",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250168\nCopia Pag. 1 de 1\nNombre : ELIZABETH SALCEDO PAEZ\nN. peticion : IHQ250168\nN.Identificación : CC. 39702456\nGenero : FEMENINO\nEdad : 62 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 13/02/2025\nFecha Informe : 26/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION DUODENAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2501330, el cual corresponde a biopsia endoscópica de tumor\nen primera porción de mucosa duodenal, con diagnóstico de \"INFILTRACIÓN POR ADENOCARCINOMA BIEN\nDIFERENCIADO\". Se ordenan los siguientes marcadores: CKAE1E3, CK7, CK20, CK19, CA19-9, CDX2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para CKAE1E3, CK7, CK19 y CDX2. Son negativas para CK20 y\nCA19-9.\nDIAGNÓSTICO\n Mucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia. Estudio\nde inmunohistoquímica:\nADENOCARCINOMA DE PROBABLE ORIGEN GASTROINTESTINAL\nCOMENTARIOS\nSe recomienda correlacionar con historia clínica y demás estudios complementarios.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, CK7, CK20, CK19, CA19-9, CDX2",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2501330, el cual corresponde a biopsia endoscópica de tumor en primera porción de mucosa duodenal, con diagnóstico de \"INFILTRACIÓN POR ADENOCARCINOMA BIEN DIFERENCIADO\". Se ordenan los siguientes marcadores: CKAE1E3, CK7, CK20, CK19, CA19-9, CDX2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CK7, CK19 y CDX2. Son negativas para CK20 y CA19-9.",
+      "Descripcion Diagnostico": "Mucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia. Estudio de inmunohistoquímica: ADENOCARCINOMA DE PROBABLE ORIGEN GASTROINTESTINAL",
+      "IHQ_ORGANO": "MUCOSA DUODENAL, PRIMERA PORCIÓN",
+      "Organo": "BX LESION DUODENAL",
+      "Diagnostico Coloracion": "INFILTRACIÓN POR ADENOCARCINOMA BIEN DIFERENCIADO",
+      "Diagnostico Principal": "ADENOCARCINOMA DE PROBABLE ORIGEN GASTROINTESTINAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 170,
+      "campos_vacios": 129,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia. Estudio\nde inmunohistoquímica:\nADENOCARCINOMA DE PROBABLE ORIGEN GASTROINTESTINAL",
+      "valor_corregido": "Mucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia. Estudio de inmunohistoquímica: ADENOCARCINOMA DE PROBABLE ORIGEN GASTROINTESTINAL",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250168",
+      "timestamp": "2026-01-07T22:46:55.689658"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 54
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "numero_caso": "IHQ251023",
+  "caso_num": 40,
+  "total_casos": 47,
+  "timestamp": "2025-11-08T22:21:59.145129",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 6,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "ADENOCARCINOMA MUCINOSO DE BAJO GRADO (WHO, 5TA EDICIÓN)",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ADENOCARCINOMA DE APENDICE MODERADAMENTE DIFERENCIADO (NOS)"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (5/5)",
+      "total_solicitado_ocr": 5,
+      "total_solicitado_bd": 5,
+      "estudios_ocr": [
+        "CK7",
+        "CK19",
+        "CK20",
+        "CDX2",
+        "MUC2"
+      ],
+      "estudios_bd": [
+        "CK7",
+        "CK19",
+        "CK20",
+        "CDX2",
+        "MUC2"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 5,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "1/5 biomarcadores con formato narrativo no estandarizado"
+    ],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de ..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "APENDICE CECAL"
+    },
+    "organo": {
+      "estado": "OK",
+      "mensaje": "Campo Organo está limpio",
+      "valor_bd": "APENDICE CECAL"
+    },
+    "formatos_biomarcadores": {
+      "estado": "WARNING",
+      "total_biomarcadores": 5,
+      "biomarcadores_con_problemas": 1,
+      "porcentaje_problemas": 20.0,
+      "problemas": [
+        {
+          "columna": "IHQ_CK20",
+          "biomarcador": "CK20",
+          "valor_actual": "POSITIVIDAD CITOPLASMÁTICA ESPORÁDICA FUERTE PARA CK20",
+          "valor_sugerido": "POSITIVO",
+          "tipo_problema": "VALOR_LARGO",
+          "descripcion": "Valor muy largo (54 caracteres) debería estandarizarse",
+          "longitud_valor": 54
+        }
+      ],
+      "mensaje": "1/5 biomarcadores con formato narrativo no estandarizado"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 1,
+    "errores": 0,
+    "biomarcadores_solicitados": 5,
+    "biomarcadores_mapeados": 5,
+    "biomarcadores_no_mapeados": 0,
+    "completitud_biomarcadores": 100.0
+  },
+  "resumen": {},
+  "estado_final": "ADVERTENCIA"
+}

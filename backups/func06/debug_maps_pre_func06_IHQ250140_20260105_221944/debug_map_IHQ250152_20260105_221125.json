@@ -1,0 +1,135 @@
+{
+  "session_id": "IHQ250152_20260105_221125",
+  "numero_peticion": "IHQ250152",
+  "timestamp": "2026-01-05T22:11:25.879880",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250152\nCopia Pag. 1 de 2\nNombre : ALEXANDRA MINA\nN. peticion : IHQ250152\nN.Identificación : CC. 1112467299\nGenero : FEMENINO\nEdad : 38 años 15 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 08/02/2025\nFecha Informe : 12/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION MUCOSA\nCORPORAL Y ANTRAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500827- A con\nrótulo correspondiente a \"Mucosa corporal y antral\" con diagnóstico de “COMPROMISO POR\nADENOCARCINOMA TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE SELLO”. Previa\nvaloración de la coloración básica, se realizan cortes histológicos a los bloques A1, A2, A3 para\nHER2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nRESULTADOS.\nLas células tumorales presentan ausencia completa de marcación para HER 2 (Score 0). \nDIAGNÓSTICO\nA. Mucosa corporal y antral. Lesión. Biopsia endoscópica. Estudio de\ninmunohistoquímica.\nCOMPROMISO POR ADENOCARCINOMA TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO\nDE SELLO\nHER 2: NEGATIVO (SCORE 0). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---\nIHQ250152\nCopia Pag. 2 de 2\nNombre : ALEXANDRA MINA\nN. peticion : IHQ250152\nN.Identificación : CC. 1112467299\nGenero : FEMENINO\nEdad : 38 años 15 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 08/02/2025\nFecha Informe : 12/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3220,
+      "reduccion_porcentaje": 98.15
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250152",
+      "caso_num": 42,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_HER2": "POSITIVO (3+)",
+      "nombre_completo": "ALEXANDRA MINA",
+      "numero_peticion": "IHQ250152",
+      "identificacion": "1112467299",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "38",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "08/02/2025",
+      "fecha_informe": "12/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250152",
+      "N. de identificación": "1112467299",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/02/2025",
+      "Fecha Informe": "12/02/2025",
+      "nombres": "ALEXANDRA MINA",
+      "Primer nombre": "ALEXANDRA",
+      "Segundo nombre": "MINA",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "ALEXANDRA MINA",
+      "diagnostico": "A. Mucosa corporal y antral. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. COMPROMISO POR ADENOCARCINOMA TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE SELLO HER 2: NEGATIVO (SCORE 0): 08/02/2025",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. RESULTADOS. Las células tumorales presentan ausencia completa de marcación para HER 2 (Score 0).",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500827- A con rótulo correspondiente a \"Mucosa corporal y antral\" con diagnóstico de “COMPROMISO POR ADENOCARCINOMA TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE SELLO”. Previa valoración de la coloración básica, se realizan cortes histológicos a los bloques A1, A2, A3 para HER2.",
+      "ihq_organo": "MUCOSA CORPORAL Y ANTRAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA CORPORAL Y ANTRAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: POSITIVO (3+)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-01-05T22:11:26.286587",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250152\nCopia Pag. 1 de 2\nNombre : ALEXANDRA MINA\nN. peticion : IHQ250152\nN.Identificación : CC. 1112467299\nGenero : FEMENINO\nEdad : 38 años 15 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 08/02/2025\nFecha Informe : 12/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION MUCOSA\nCORPORAL Y ANTRAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500827- A con\nrótulo correspondiente a \"Mucosa corporal y antral\" con diagnóstico de “COMPROMISO POR\nADENOCARCINOMA TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE SELLO”. Previa\nvaloración de la coloración básica, se realizan cortes histológicos a los bloques A1, A2, A3 para\nHER2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nRESULTADOS.\nLas células tumorales presentan ausencia completa de marcación para HER 2 (Score 0). \nDIAGNÓSTICO\nA. Mucosa corporal y antral. Lesión. Biopsia endoscópica. Estudio de\ninmunohistoquímica.\nCOMPROMISO POR ADENOCARCINOMA TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO\nDE SELLO\nHER 2: NEGATIVO (SCORE 0). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---\nIHQ250152\nCopia Pag. 2 de 2\nNombre : ALEXANDRA MINA\nN. peticion : IHQ250152\nN.Identificación : CC. 1112467299\nGenero : FEMENINO\nEdad : 38 años 15 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 08/02/2025\nFecha Informe : 12/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500827- A con rótulo correspondiente a \"Mucosa corporal y antral\" con diagnóstico de “COMPROMISO POR ADENOCARCINOMA TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE SELLO”. Previa valoración de la coloración básica, se realizan cortes histológicos a los bloques A1, A2, A3 para HER2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. RESULTADOS. Las células tumorales presentan ausencia completa de marcación para HER 2 (Score 0).",
+      "Descripcion Diagnostico": "A. Mucosa corporal y antral. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. COMPROMISO POR ADENOCARCINOMA TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE SELLO HER 2: NEGATIVO (SCORE 0): 08/02/2025",
+      "IHQ_ORGANO": "MUCOSA CORPORAL Y ANTRAL",
+      "Organo": "LESION MUCOSA CORPORAL Y ANTRAL",
+      "Diagnostico Coloracion": "COMPROMISO POR ADENOCARCINOMA TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE SELLO",
+      "Diagnostico Principal": "COMPROMISO POR ADENOCARCINOMA TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE SELLO HER 2: NEGATIVO (",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: POSITIVO (3+)",
+      "IHQ_HER2": "POSITIVO (3+)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 134,
+      "campos_completos": 34,
+      "biomarcadores_encontrados": 1,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 34
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Mucosa corporal y antral. Lesión. Biopsia endoscópica. Estudio de\ninmunohistoquímica.\nCOMPROMISO POR ADENOCARCINOMA TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO\nDE SELLO\nHER 2: NEGATIVO (SCORE 0): 08/02/2025",
+      "valor_corregido": "A. Mucosa corporal y antral. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. COMPROMISO POR ADENOCARCINOMA TIPO DIFUSO CON COMPONENTE DE CÉLULAS EN ANILLO DE SELLO HER 2: NEGATIVO (SCORE 0): 08/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250152",
+      "timestamp": "2026-01-05T22:11:26.286275"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 44
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "session_id": "IHQ250158_20260106_014717",
+  "numero_peticion": "IHQ250158",
+  "timestamp": "2026-01-06T01:47:17.453045",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250158\nCopia Pag. 1 de 2\nNombre : EZEQUIEL DAVID HERNANDEZ RIVAS\nN. peticion : IHQ250158\nN.Identificación : CC. 6618404\nGenero : MASCULINO\nEdad : 63 años 4 meses 23 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : PEDRO LUIS GUACHETA\nServicio : UROLOGIA COEX\nFecha Ingreso : 11/02/2025\nFecha Informe : 19/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCISTOPROSTATECTOMIA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe caso para realización de estudio de inmunohistoquímica en caso institucional rotulado\ncomo \"M2501146\" correspondiente a \"Cistoprostatectomia\" con diagnostico principal de \"TUMOR\nMALIGNO POBREMENTE DIFERENCIADO EN VEJIGA\nY PROLIFERACIÓN ACINAR ATIPICA EN\nPROSTÁTA\". previa revisión de la histologia, se realiza panel de inmunohistoquimica de la\nsiguiente manera :\n- Bloque A5: p63, 34betae12, y Racemasa.\n-Bloque A14: vimentina, p53, CkAE1E3, desmina, KI67, Pax 8 y Gata 3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nVEJIGA: (Bloque A14) Las células tumorales son positivas para CKE1E3, Gata 3, Vimentina. Son\nnegativas para Desmina y pax8. p53 no mutado de tipo silvestre. índice de proliferación KI67 del\n90%. \nPROSTATA ( Bloque A5) La proliferación acinar atípica pierde expresión de células Basales (p63 -\n34beta E12- ) y tiene inmunoreactividad para racemasa. \nDIAGNÓSTICO\nVejiga y próstata. Lesión. Cistoprostatectomía. Estudio de inmunohistoquímica:\nVEJIGA:\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA UROTELIAL POBREMENTE\nDIFERENCIADO ULCERADO.\n- EXTENSIÓN TUMORAL: MUSCULAR PROPIA.\n- INVASIÓN LINFOVASCULAR: NO EVIDENTE.\nPROSTATA: \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---\nIHQ250158\nCopia Pag. 2 de 2\nNombre : EZEQUIEL DAVID HERNANDEZ RIVAS\nN. peticion : IHQ250158\nN.Identificación : CC. 6618404\nGenero : MASCULINO\nEdad : 63 años 4 meses 23 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : PEDRO LUIS GUACHETA\nServicio : UROLOGIA COEX\nFecha Ingreso : 11/02/2025\nFecha Informe : 19/02/2025\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA ACINAR GRADO 1\n(GLEASON 3+3)\n-COMPROMISO DEL 20% DEL PARENQUIMA EVALUADO. \n-INVASIÓN PERINEURAL NO EVIDENTE.\n-INVASIÓN LINFOVASCULAR NO EVIDENTE. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 90 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3786,
+      "reduccion_porcentaje": 97.82
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250158",
+      "caso_num": 48,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "nombre_completo": "EZEQUIEL DAVID HERNANDEZ RIVAS",
+      "numero_peticion": "IHQ250158",
+      "identificacion": "6618404",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "63",
+      "eps": "E.P.S. INDIGENA MALLAMAS GUACH",
+      "medico_tratante": "PEDRO LUIS GUACHETA",
+      "servicio": "UROLOGIA COEX",
+      "fecha_ingreso": "11/02/2025",
+      "fecha_informe": "19/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250158",
+      "N. de identificación": "6618404",
+      "Tipo de documento": "CC",
+      "EPS": "E.P.S. INDIGENA MALLAMAS GUACH",
+      "Servicio": "UROLOGIA COEX",
+      "Médico tratante": "PEDRO LUIS GUACHETA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "11/02/2025",
+      "Fecha Informe": "19/02/2025",
+      "nombres": "EZEQUIEL DAVID",
+      "Primer nombre": "EZEQUIEL",
+      "Segundo nombre": "DAVID",
+      "apellidos": "HERNANDEZ RIVAS",
+      "Primer apellido": "HERNANDEZ",
+      "Segundo apellido": "RIVAS",
+      "nombre_formal": "HERNANDEZ RIVAS, EZEQUIEL DAVID",
+      "diagnostico": "Vejiga y próstata. Lesión. Cistoprostatectomía. Estudio de inmunohistoquímica: VEJIGA: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA UROTELIAL POBREMENTE DIFERENCIADO ULCERADO. - EXTENSIÓN TUMORAL: MUSCULAR PROPIA. - INVASIÓN LINFOVASCULAR: NO EVIDENTE. PROSTATA: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA ACINAR GRADO 1: 11/02/2025 (GLEASON 3+3) -COMPROMISO DEL 20% DEL PARENQUIMA EVALUADO. -INVASIÓN PERINEURAL NO EVIDENTE. -INVASIÓN LINFOVASCULAR NO EVIDENTE.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. VEJIGA: (Bloque A14) Las células tumorales son positivas para CKE1E3, Gata 3, Vimentina. Son negativas para Desmina y pax8. p53 no mutado de tipo silvestre. índice de proliferación KI-67 del 90%. PROSTATA ( Bloque A5) La proliferación acinar atípica pierde expresión de células Basales (p63 - 34 beta E12- ) y tiene inmunoreactividad para racemasa.",
+      "descripcion_macroscopica": "Se recibe caso para realización de estudio de inmunohistoquímica en caso institucional rotulado como \"M2501146\" correspondiente a \"Cistoprostatectomia\" con diagnostico principal de \"TUMOR MALIGNO POBREMENTE DIFERENCIADO EN VEJIGA Y PROLIFERACIÓN ACINAR ATIPICA EN PROSTÁTA\". previa revisión de la histologia, se realiza panel de inmunohistoquimica de la siguiente manera : - Bloque A5: p63, 34 betae12, y Racemasa. -Bloque A14: vimentina, p53, CkAE1E3, desmina, KI-67, Pax 8 y Gata 3.",
+      "ihq_organo": "VEJIGA Y PRÓSTATA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "UROLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "",
+      "comentarios": "",
+      "IHQ_ORGANO": "VEJIGA Y PRÓSTATA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK34BE12": "POSITIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_RACEMASA": "POSITIVO",
+      "extraction_timestamp": "2026-01-06T01:47:17.890704",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250158\nCopia Pag. 1 de 2\nNombre : EZEQUIEL DAVID HERNANDEZ RIVAS\nN. peticion : IHQ250158\nN.Identificación : CC. 6618404\nGenero : MASCULINO\nEdad : 63 años 4 meses 23 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : PEDRO LUIS GUACHETA\nServicio : UROLOGIA COEX\nFecha Ingreso : 11/02/2025\nFecha Informe : 19/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCISTOPROSTATECTOMIA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe caso para realización de estudio de inmunohistoquímica en caso institucional rotulado\ncomo \"M2501146\" correspondiente a \"Cistoprostatectomia\" con diagnostico principal de \"TUMOR\nMALIGNO POBREMENTE DIFERENCIADO EN VEJIGA\nY PROLIFERACIÓN ACINAR ATIPICA EN\nPROSTÁTA\". previa revisión de la histologia, se realiza panel de inmunohistoquimica de la\nsiguiente manera :\n- Bloque A5: p63, 34betae12, y Racemasa.\n-Bloque A14: vimentina, p53, CkAE1E3, desmina, KI67, Pax 8 y Gata 3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nVEJIGA: (Bloque A14) Las células tumorales son positivas para CKE1E3, Gata 3, Vimentina. Son\nnegativas para Desmina y pax8. p53 no mutado de tipo silvestre. índice de proliferación KI67 del\n90%. \nPROSTATA ( Bloque A5) La proliferación acinar atípica pierde expresión de células Basales (p63 -\n34beta E12- ) y tiene inmunoreactividad para racemasa. \nDIAGNÓSTICO\nVejiga y próstata. Lesión. Cistoprostatectomía. Estudio de inmunohistoquímica:\nVEJIGA:\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA UROTELIAL POBREMENTE\nDIFERENCIADO ULCERADO.\n- EXTENSIÓN TUMORAL: MUSCULAR PROPIA.\n- INVASIÓN LINFOVASCULAR: NO EVIDENTE.\nPROSTATA: \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---\nIHQ250158\nCopia Pag. 2 de 2\nNombre : EZEQUIEL DAVID HERNANDEZ RIVAS\nN. peticion : IHQ250158\nN.Identificación : CC. 6618404\nGenero : MASCULINO\nEdad : 63 años 4 meses 23 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : PEDRO LUIS GUACHETA\nServicio : UROLOGIA COEX\nFecha Ingreso : 11/02/2025\nFecha Informe : 19/02/2025\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA ACINAR GRADO 1\n(GLEASON 3+3)\n-COMPROMISO DEL 20% DEL PARENQUIMA EVALUADO. \n-INVASIÓN PERINEURAL NO EVIDENTE.\n-INVASIÓN LINFOVASCULAR NO EVIDENTE. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 90 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK34BE12, CKAE1AE3, DESMIN, GATA3, Ki-67, P63, PAX8, RACEMASA, VIMENTINA",
+      "Descripcion macroscopica": "Se recibe caso para realización de estudio de inmunohistoquímica en caso institucional rotulado como \"M2501146\" correspondiente a \"Cistoprostatectomia\" con diagnostico principal de \"TUMOR MALIGNO POBREMENTE DIFERENCIADO EN VEJIGA Y PROLIFERACIÓN ACINAR ATIPICA EN PROSTÁTA\". previa revisión de la histologia, se realiza panel de inmunohistoquimica de la siguiente manera : - Bloque A5: p63, 34betae12, y Racemasa. -Bloque A14: vimentina, p53, CkAE1E3, desmina, KI67, Pax 8 y Gata 3.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. VEJIGA: (Bloque A14) Las células tumorales son positivas para CKE1E3, Gata 3, Vimentina. Son negativas para Desmina y pax8. p53 no mutado de tipo silvestre. índice de proliferación KI67 del 90%. PROSTATA ( Bloque A5) La proliferación acinar atípica pierde expresión de células Basales (p63 - 34beta E12- ) y tiene inmunoreactividad para racemasa.",
+      "Descripcion Diagnostico": "Vejiga y próstata. Lesión. Cistoprostatectomía. Estudio de inmunohistoquímica: VEJIGA: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA UROTELIAL POBREMENTE DIFERENCIADO ULCERADO. - EXTENSIÓN TUMORAL: MUSCULAR PROPIA. - INVASIÓN LINFOVASCULAR: NO EVIDENTE. PROSTATA: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA ACINAR GRADO 1: 11/02/2025 (GLEASON 3+3) -COMPROMISO DEL 20% DEL PARENQUIMA EVALUADO. -INVASIÓN PERINEURAL NO EVIDENTE. -INVASIÓN LINFOVASCULAR NO EVIDENTE.",
+      "IHQ_ORGANO": "VEJIGA Y PRÓSTATA",
+      "Organo": "CISTOPROSTATECTOMIA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "VEJIGA: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA UROTELIAL POBREMENTE DIFERENCIADO ULCERADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_CK34BE12": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_RACEMASA": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 123,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 123,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Vejiga y próstata. Lesión. Cistoprostatectomía. Estudio de inmunohistoquímica:\nVEJIGA:\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA UROTELIAL POBREMENTE\nDIFERENCIADO ULCERADO.\n- EXTENSIÓN TUMORAL: MUSCULAR PROPIA.\n- INVASIÓN LINFOVASCULAR: NO EVIDENTE.\nPROSTATA:\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA ACINAR GRADO 1: 11/02/2025\n(GLEASON 3+3)\n-COMPROMISO DEL 20% DEL PARENQUIMA EVALUADO. \n-INVASIÓN PERINEURAL NO EVIDENTE.\n-INVASIÓN LINFOVASCULAR NO EVIDENTE.",
+      "valor_corregido": "Vejiga y próstata. Lesión. Cistoprostatectomía. Estudio de inmunohistoquímica: VEJIGA: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA UROTELIAL POBREMENTE DIFERENCIADO ULCERADO. - EXTENSIÓN TUMORAL: MUSCULAR PROPIA. - INVASIÓN LINFOVASCULAR: NO EVIDENTE. PROSTATA: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA ACINAR GRADO 1: 11/02/2025 (GLEASON 3+3) -COMPROMISO DEL 20% DEL PARENQUIMA EVALUADO. -INVASIÓN PERINEURAL NO EVIDENTE. -INVASIÓN LINFOVASCULAR NO EVIDENTE.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250158",
+      "timestamp": "2026-01-06T01:47:17.890443"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe caso para realización de estudio de inmunohistoquímica en caso institucional rotulado como \"M2501146\" correspondiente a \"Cistoprostatectomia\" con diagnostico principal de \"TUMOR MALIGNO POBREMENTE DIFERENCIADO EN VEJIGA Y PROLIFERACIÓN ACINAR ATIPICA EN PROSTÁTA\". previa revisión de la histologia, se realiza panel de inmunohistoquimica de la siguiente manera : - Bloque A5: p63, 34betae12, y Racemasa. -Bloque A14: vimentina, p53, CkAE1E3, desmina, KI67, Pax 8 y Gata 3.",
+      "valor_corregido": "Se recibe caso para realización de estudio de inmunohistoquímica en caso institucional rotulado como \"M2501146\" correspondiente a \"Cistoprostatectomia\" con diagnostico principal de \"TUMOR MALIGNO POBREMENTE DIFERENCIADO EN VEJIGA Y PROLIFERACIÓN ACINAR ATIPICA EN PROSTÁTA\". previa revisión de la histologia, se realiza panel de inmunohistoquimica de la siguiente manera : - Bloque A5: p63, 34 betae12, y Racemasa. -Bloque A14: vimentina, p53, CkAE1E3, desmina, KI-67, Pax 8 y Gata 3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250158",
+      "timestamp": "2026-01-06T01:47:17.890451"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. VEJIGA: (Bloque A14) Las células tumorales son positivas para CKE1E3, Gata 3, Vimentina. Son negativas para Desmina y pax8. p53 no mutado de tipo silvestre. índice de proliferación KI67 del 90%. PROSTATA ( Bloque A5) La proliferación acinar atípica pierde expresión de células Basales (p63 - 34beta E12- ) y tiene inmunoreactividad para racemasa.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. VEJIGA: (Bloque A14) Las células tumorales son positivas para CKE1E3, Gata 3, Vimentina. Son negativas para Desmina y pax8. p53 no mutado de tipo silvestre. índice de proliferación KI-67 del 90%. PROSTATA ( Bloque A5) La proliferación acinar atípica pierde expresión de células Basales (p63 - 34 beta E12- ) y tiene inmunoreactividad para racemasa.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250158",
+      "timestamp": "2026-01-06T01:47:17.890453"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 54
+  }
+}

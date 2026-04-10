@@ -1,0 +1,165 @@
+{
+  "session_id": "IHQ250994_20251109_062411",
+  "numero_peticion": "IHQ250994",
+  "timestamp": "2025-11-09T06:24:11.054099",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250994\nCopia Pag. 1 de 2\nNombre : MARLENY CEBALLOS ESCOBAR\nN. peticion : IHQ250994\nN.Identificación : CC. 31410569\nGenero : FEMENINO\nEdad : 62 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : ANGIE TATIANA MUÑOZ\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 10/09/2025\nFecha Informe : 24/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2510673-A2 que corresponde a “cérvix” y al bloque M2510673-B que\ncorresponde a “endometrio” con diagnostico de \"TUMOR BIFASICO A CLASIFICAR POR ESTUDIOS DE\nINMUNOHISTOQUIMICA.\" para estudios de inmunohistoquímica por lo que se revisa marcación para P16,\nP40, CKAE1AE3, PAX-8, Estrogeno, Progesterona, Vimentina y P53.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nA2.En la porción solida de la masa tumoral se observa marcación positiva para P40, CKAE1AE3, R.\nEstrogenos además, en su componente glandular con marcación positiva para R. Estrogenos, CKAE1AE3,\nPAX8.\nA4. En la porción solida de la masa tumoral se observa marcación positiva para P40, PAx 8, P16 de forma\nparcheada, R. Progesterona, R. Estrogeno, Vimentina y P53 de expresión usual (Wild Type).\nDIAGNÓSTICO\n A.Cervix. Lesión. Resección. Estudio de inmunohistoquímica.(Láminas 1 y 4):\nLOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA DE ENDOMETRIO\nDE TIPO ENDOMETRIOIDE CON DIFERENCIACIÓN ESCAMOSA.\nVER COMENTARIO\nCOMENTARIOS\nLos hallazgos histológicos y de inmunohistoquímica sugieren una lesión del tracto genital femenino de\nposible origen endometrial, sin embargo se sugiere correlacionar con imágenes diagnósticas e historia\nclínica.\nCaso valorado en conjunto con Dra. Ximena Varela (patologa).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---\nIHQ250994\nCopia Pag. 2 de 2\nNombre : MARLENY CEBALLOS ESCOBAR\nN. peticion : IHQ250994\nN.Identificación : CC. 31410569\nGenero : FEMENINO\nEdad : 62 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : ANGIE TATIANA MUÑOZ\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 10/09/2025\nFecha Informe : 24/09/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3664,
+      "reduccion_porcentaje": 98.11
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250994",
+      "caso_num": 14,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P40": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "nombre_completo": "MARLENY CEBALLOS ESCOBAR",
+      "numero_peticion": "IHQ250994",
+      "identificacion": "31410569",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "62",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ANGIE TATIANA MUÑOZ",
+      "servicio": "ADMISION Y SALA DE PARTOS",
+      "fecha_ingreso": "10/09/2025",
+      "fecha_informe": "24/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250994",
+      "N. de identificación": "31410569",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "ADMISION Y SALA DE PARTOS",
+      "Médico tratante": "ANGIE TATIANA MUÑOZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "10/09/2025",
+      "Fecha Informe": "24/09/2025",
+      "nombres": "MARLENY",
+      "Primer nombre": "MARLENY",
+      "Segundo nombre": "",
+      "apellidos": "CEBALLOS ESCOBAR",
+      "Primer apellido": "CEBALLOS",
+      "Segundo apellido": "ESCOBAR",
+      "nombre_formal": "CEBALLOS ESCOBAR, MARLENY",
+      "diagnostico": "A.Cervix. Lesión. Resección. Estudio de inmunohistoquímica.(Láminas 1 y 4): LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA DE ENDOMETRIO DE TIPO ENDOMETRIOIDE CON DIFERENCIACIÓN ESCAMOSA. VER COMENTARIO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A2.En la porción solida de la masa tumoral se observa marcación positiva para P40, CKAE1AE3, R. Estrogenos además, en su componente glandular con marcación positiva para R. Estrogenos, CKAE1AE3, PAX8. A4. En la porción solida de la masa tumoral se observa marcación positiva para P40, PAx 8, P16 de forma parcheada, R. Progesterona, R. Estrogeno, Vimentina y P53 de expresión usual (Wild Type).",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2510673-A2 que corresponde a “cérvix” y al bloque M2510673-B que corresponde a “endometrio” con diagnostico de \"TUMOR BIFASICO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA.\" para estudios de inmunohistoquímica por lo que se revisa marcación para P16, P40, CKAE1AE3, PAX-8, Estrogeno, Progesterona, Vimentina y P53.",
+      "ihq_organo": "CERVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, P40, CKAE1AE3, PAX 8, Receptor de Estrógeno, Receptor de Progesterona, VIMENTINA, P53",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Los hallazgos histológicos y de inmunohistoquímica sugieren una lesión del tracto genital femenino de posible origen endometrial, sin embargo se sugiere correlacionar con imágenes diagnósticas e historia clínica. Caso valorado en conjunto con Dra. Ximena Varela (patologa).",
+      "IHQ_ORGANO": "CERVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "IHQ_P53": "POSITIVO",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2025-11-09T06:24:11.174226",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250994\nCopia Pag. 1 de 2\nNombre : MARLENY CEBALLOS ESCOBAR\nN. peticion : IHQ250994\nN.Identificación : CC. 31410569\nGenero : FEMENINO\nEdad : 62 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : ANGIE TATIANA MUÑOZ\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 10/09/2025\nFecha Informe : 24/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2510673-A2 que corresponde a “cérvix” y al bloque M2510673-B que\ncorresponde a “endometrio” con diagnostico de \"TUMOR BIFASICO A CLASIFICAR POR ESTUDIOS DE\nINMUNOHISTOQUIMICA.\" para estudios de inmunohistoquímica por lo que se revisa marcación para P16,\nP40, CKAE1AE3, PAX-8, Estrogeno, Progesterona, Vimentina y P53.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nA2.En la porción solida de la masa tumoral se observa marcación positiva para P40, CKAE1AE3, R.\nEstrogenos además, en su componente glandular con marcación positiva para R. Estrogenos, CKAE1AE3,\nPAX8.\nA4. En la porción solida de la masa tumoral se observa marcación positiva para P40, PAx 8, P16 de forma\nparcheada, R. Progesterona, R. Estrogeno, Vimentina y P53 de expresión usual (Wild Type).\nDIAGNÓSTICO\n A.Cervix. Lesión. Resección. Estudio de inmunohistoquímica.(Láminas 1 y 4):\nLOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA DE ENDOMETRIO\nDE TIPO ENDOMETRIOIDE CON DIFERENCIACIÓN ESCAMOSA.\nVER COMENTARIO\nCOMENTARIOS\nLos hallazgos histológicos y de inmunohistoquímica sugieren una lesión del tracto genital femenino de\nposible origen endometrial, sin embargo se sugiere correlacionar con imágenes diagnósticas e historia\nclínica.\nCaso valorado en conjunto con Dra. Ximena Varela (patologa).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---\nIHQ250994\nCopia Pag. 2 de 2\nNombre : MARLENY CEBALLOS ESCOBAR\nN. peticion : IHQ250994\nN.Identificación : CC. 31410569\nGenero : FEMENINO\nEdad : 62 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : ANGIE TATIANA MUÑOZ\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 10/09/2025\nFecha Informe : 24/09/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40, CKAE1AE3, PAX 8, Receptor de Estrógeno, Receptor de Progesterona, VIMENTINA, P53",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2510673-A2 que corresponde a “cérvix” y al bloque M2510673-B que corresponde a “endometrio” con diagnostico de \"TUMOR BIFASICO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA.\" para estudios de inmunohistoquímica por lo que se revisa marcación para P16, P40, CKAE1AE3, PAX-8, Estrogeno, Progesterona, Vimentina y P53.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A2.En la porción solida de la masa tumoral se observa marcación positiva para P40, CKAE1AE3, R. Estrogenos además, en su componente glandular con marcación positiva para R. Estrogenos, CKAE1AE3, PAX8. A4. En la porción solida de la masa tumoral se observa marcación positiva para P40, PAx 8, P16 de forma parcheada, R. Progesterona, R. Estrogeno, Vimentina y P53 de expresión usual (Wild Type).",
+      "Descripcion Diagnostico": "A.Cervix. Lesión. Resección. Estudio de inmunohistoquímica.(Láminas 1 y 4): LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA DE ENDOMETRIO DE TIPO ENDOMETRIOIDE CON DIFERENCIACIÓN ESCAMOSA. VER COMENTARIO",
+      "IHQ_ORGANO": "CERVIX",
+      "Organo": "CERVIX",
+      "Diagnostico Coloracion": "TUMOR BIFASICO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "(LÁMINAS 1 Y 4): LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA DE ENDOMETRIO DE TIPO ENDOMETRIOIDE CON DIFERENCIACIÓN ESCAMOSA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "IHQ_P53": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 145,
+      "campos_vacios": 103,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 7,
+      "completitud_porcentaje": 28.97
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 103,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A.Cervix. Lesión. Resección. Estudio de inmunohistoquímica.(Láminas 1 y 4):\nLOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA DE ENDOMETRIO\nDE TIPO ENDOMETRIOIDE CON DIFERENCIACIÓN ESCAMOSA.\nVER COMENTARIO",
+      "valor_corregido": "A.Cervix. Lesión. Resección. Estudio de inmunohistoquímica.(Láminas 1 y 4): LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA DE ENDOMETRIO DE TIPO ENDOMETRIOIDE CON DIFERENCIACIÓN ESCAMOSA. VER COMENTARIO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250994",
+      "timestamp": "2025-11-09T06:24:11.173928"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2510673-A2 que corresponde a “cérvix” y al bloque M2510673-B que\ncorresponde a “endometrio” con diagnostico de \"TUMOR BIFASICO A CLASIFICAR POR ESTUDIOS DE\nINMUNOHISTOQUIMICA.\" para estudios de inmunohistoquímica por lo que se revisa marcación para P16,\nP40, CKAE1AE3, PAX-8, Estrogeno, Progesterona, Vimentina y P53.",
+      "valor_corregido": "Se realizan niveles al bloque M2510673-A2 que corresponde a “cérvix” y al bloque M2510673-B que corresponde a “endometrio” con diagnostico de \"TUMOR BIFASICO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA.\" para estudios de inmunohistoquímica por lo que se revisa marcación para P16, P40, CKAE1AE3, PAX-8, Estrogeno, Progesterona, Vimentina y P53.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250994",
+      "timestamp": "2025-11-09T06:24:11.173935"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos histológicos y de inmunohistoquímica sugieren una lesión del tracto genital femenino de\nposible origen endometrial, sin embargo se sugiere correlacionar con imágenes diagnósticas e historia\nclínica.\nCaso valorado en conjunto con Dra. Ximena Varela (patologa).",
+      "valor_corregido": "Los hallazgos histológicos y de inmunohistoquímica sugieren una lesión del tracto genital femenino de posible origen endometrial, sin embargo se sugiere correlacionar con imágenes diagnósticas e historia clínica. Caso valorado en conjunto con Dra. Ximena Varela (patologa).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250994",
+      "timestamp": "2025-11-09T06:24:11.173937"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 57
+  }
+}

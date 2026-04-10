@@ -1,0 +1,147 @@
+{
+  "session_id": "IHQ250059_20251219_010539",
+  "numero_peticion": "IHQ250059",
+  "timestamp": "2025-12-19T01:05:39.081989",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250059\nCopia Pag. 1 de 2\nNombre : LUZ ARGENY MOSQUERA MINA\nN. peticion : IHQ250059\nN.Identificación : CC. 66984639\nGenero : FEMENINO\nEdad : 48 años 4 meses 11 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION MAMA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe\nrealizan\nestudios\nde\ninmunohistoquímica\nen\nbloques\nde\nparafina\nprocedentes\nde\nmaterial\nextrainstitucional rotulado como “P241212444 ”. La muestra corresponde a biopsia de mama izquierda\ncon diagnóstico de “ CARCINOMA DUCTAL INFILTRANTE DE TIPO NO ESPECIAL GRADO NUCLEAR 2”. Se\nrealizan niveles a los bloques de parafina al bloque 1 para la marcación con: Receptores estrógeno,\nReceptores de progesterona, Her2 y Ki67.\nDESCRIPCIÓN MICROSCÓPICA\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA\nRef. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nLos cortes histológicos muestran tejido mamario con adecuada representación de carcinoma ductal, se\ndocumentan los siguientes hallazgos:\nSe encuentra:\nExpresión de receptores de estrógenos: Marcación nuclear fuerte y positiva del 90%\nExpresión de receptores de progesterona:Marcación nuclear fuerte y positiva del 80%\nSobre expresión del oncogén HER2/neu: Equivoco (score 2+).\nEl Índice proliferativo es del 10% Ki67.\nTiempo de isquemia en frío: desconocido\nTiempo de fijación en formalina buferada: desconocido.\nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---\nIHQ250059\nCopia Pag. 2 de 2\nNombre : LUZ ARGENY MOSQUERA MINA\nN. peticion : IHQ250059\nN.Identificación : CC. 66984639\nGenero : FEMENINO\nEdad : 48 años 4 meses 11 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/01/2025\nFecha Informe : 27/01/2025\nGlándula mamaria izquierda . Lesión. Biopsia. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO\nNO ESPECIAL (DUCTAL) CON:\nEXPRESIÓN DE RECEPTORES DE ESTROGENOS: POSITIVOS\nEXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: POSITIVOS\nSOBREEXPRESIÓN DE HER2/NEU: EQUIVOCO (SCORE 2+)\nINDICE DE PROLIFERACIÓN DEL 10% (KI67)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 4023,
+      "reduccion_porcentaje": 97.85
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250059",
+      "caso_num": 6,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "LUZ ARGENY MOSQUERA MINA",
+      "numero_peticion": "IHQ250059",
+      "identificacion": "66984639",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "48",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "20/01/2025",
+      "fecha_informe": "27/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250059",
+      "N. de identificación": "66984639",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/01/2025",
+      "Fecha Informe": "27/01/2025",
+      "nombres": "LUZ ARGENY",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "ARGENY",
+      "apellidos": "MOSQUERA MINA",
+      "Primer apellido": "MOSQUERA",
+      "Segundo apellido": "MINA",
+      "nombre_formal": "MOSQUERA MINA, LUZ ARGENY",
+      "diagnostico": "CARCINOMA DUCTAL INFILTRANTE DE TIPO NO ESPECIAL GRADO NUCLEAR 2”",
+      "descripcion_microscopica": "Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Los cortes histológicos muestran tejido mamario con adecuada representación de carcinoma ductal, se documentan los siguientes hallazgos: Se encuentra: Expresión de receptores de estrógenos: Marcación nuclear fuerte y positiva del 90% Expresión de receptores de progesterona:Marcación nuclear fuerte y positiva del 80% Sobre expresión del oncogén HER2/neu: Equivoco (score 2+). El Índice proliferativo es del 10% KI-67. Tiempo de isquemia en frío: desconocido Tiempo de fijación en formalina buferada: desconocido.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material extrainstitucional rotulado como “P241212444 ”. La muestra corresponde a biopsia de mama izquierda con diagnóstico de “ CARCINOMA DUCTAL INFILTRANTE DE TIPO NO ESPECIAL GRADO NUCLEAR 2”. Se realizan niveles a los bloques de parafina al bloque 1 para la marcación con: Receptores estrógeno, Receptores de progesterona, Her2 y KI-67.",
+      "ihq_organo": "",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2 y Ki67 / Receptores de Estrógenos: Marcación nuclear fuerte y positiva del 90% / Receptores de Progesterona:Marcación nuclear fuerte y positiva del 80%",
+      "IHQ_HER2": "EQUIVOCO ( Score 2+)",
+      "IHQ_KI-67": "10%",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVOS",
+      "extraction_timestamp": "2025-12-19T01:05:39.232367",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250059\nCopia Pag. 1 de 2\nNombre : LUZ ARGENY MOSQUERA MINA\nN. peticion : IHQ250059\nN.Identificación : CC. 66984639\nGenero : FEMENINO\nEdad : 48 años 4 meses 11 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION MAMA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe\nrealizan\nestudios\nde\ninmunohistoquímica\nen\nbloques\nde\nparafina\nprocedentes\nde\nmaterial\nextrainstitucional rotulado como “P241212444 ”. La muestra corresponde a biopsia de mama izquierda\ncon diagnóstico de “ CARCINOMA DUCTAL INFILTRANTE DE TIPO NO ESPECIAL GRADO NUCLEAR 2”. Se\nrealizan niveles a los bloques de parafina al bloque 1 para la marcación con: Receptores estrógeno,\nReceptores de progesterona, Her2 y Ki67.\nDESCRIPCIÓN MICROSCÓPICA\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA\nRef. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nLos cortes histológicos muestran tejido mamario con adecuada representación de carcinoma ductal, se\ndocumentan los siguientes hallazgos:\nSe encuentra:\nExpresión de receptores de estrógenos: Marcación nuclear fuerte y positiva del 90%\nExpresión de receptores de progesterona:Marcación nuclear fuerte y positiva del 80%\nSobre expresión del oncogén HER2/neu: Equivoco (score 2+).\nEl Índice proliferativo es del 10% Ki67.\nTiempo de isquemia en frío: desconocido\nTiempo de fijación en formalina buferada: desconocido.\nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---\nIHQ250059\nCopia Pag. 2 de 2\nNombre : LUZ ARGENY MOSQUERA MINA\nN. peticion : IHQ250059\nN.Identificación : CC. 66984639\nGenero : FEMENINO\nEdad : 48 años 4 meses 11 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/01/2025\nFecha Informe : 27/01/2025\nGlándula mamaria izquierda . Lesión. Biopsia. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO\nNO ESPECIAL (DUCTAL) CON:\nEXPRESIÓN DE RECEPTORES DE ESTROGENOS: POSITIVOS\nEXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: POSITIVOS\nSOBREEXPRESIÓN DE HER2/NEU: EQUIVOCO (SCORE 2+)\nINDICE DE PROLIFERACIÓN DEL 10% (KI67)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material extrainstitucional rotulado como “P241212444 ”. La muestra corresponde a biopsia de mama izquierda con diagnóstico de “ CARCINOMA DUCTAL INFILTRANTE DE TIPO NO ESPECIAL GRADO NUCLEAR 2”. Se realizan niveles a los bloques de parafina al bloque 1 para la marcación con: Receptores estrógeno, Receptores de progesterona, Her2 y Ki67.",
+      "Descripcion microscopica": "Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Los cortes histológicos muestran tejido mamario con adecuada representación de carcinoma ductal, se documentan los siguientes hallazgos: Se encuentra: Expresión de receptores de estrógenos: Marcación nuclear fuerte y positiva del 90% Expresión de receptores de progesterona:Marcación nuclear fuerte y positiva del 80% Sobre expresión del oncogén HER2/neu: Equivoco (score 2+). El Índice proliferativo es del 10% Ki67. Tiempo de isquemia en frío: desconocido Tiempo de fijación en formalina buferada: desconocido.",
+      "Descripcion Diagnostico": "CARCINOMA DUCTAL INFILTRANTE DE TIPO NO ESPECIAL GRADO NUCLEAR 2”",
+      "IHQ_ORGANO": "BX LESION MAMA IZQUIERDA",
+      "Organo": "BX LESION MAMA IZQUIERDA",
+      "Diagnostico Coloracion": "CARCINOMA DUCTAL INFILTRANTE DE TIPO NO ESPECIAL GRADO NUCLEAR 2",
+      "Diagnostico Principal": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 y Ki67 / Receptores de Estrógenos: Marcación nuclear fuerte y positiva del 90% / Receptores de Progesterona:Marcación nuclear fuerte y positiva del 80%",
+      "IHQ_HER2": "EQUIVOCO ( Score 2+)",
+      "IHQ_KI-67": "10%",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVOS"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 118,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 24.84
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 118,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se\nrealizan\nestudios\nde\ninmunohistoquímica\nen\nbloques\nde\nparafina\nprocedentes\nde\nmaterial\nextrainstitucional rotulado como “P241212444 ”. La muestra corresponde a biopsia de mama izquierda\ncon diagnóstico de “ CARCINOMA DUCTAL INFILTRANTE DE TIPO NO ESPECIAL GRADO NUCLEAR 2”. Se\nrealizan niveles a los bloques de parafina al bloque 1 para la marcación con: Receptores estrógeno,\nReceptores de progesterona, Her2 y Ki67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material extrainstitucional rotulado como “P241212444 ”. La muestra corresponde a biopsia de mama izquierda con diagnóstico de “ CARCINOMA DUCTAL INFILTRANTE DE TIPO NO ESPECIAL GRADO NUCLEAR 2”. Se realizan niveles a los bloques de parafina al bloque 1 para la marcación con: Receptores estrógeno, Receptores de progesterona, Her2 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250059",
+      "timestamp": "2025-12-19T01:05:39.232092"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Anticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA\nRef. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nLos cortes histológicos muestran tejido mamario con adecuada representación de carcinoma ductal, se\ndocumentan los siguientes hallazgos:\nSe encuentra:\nExpresión de receptores de estrógenos: Marcación nuclear fuerte y positiva del 90%\nExpresión de receptores de progesterona:Marcación nuclear fuerte y positiva del 80%\nSobre expresión del oncogén HER2/neu: Equivoco (score 2+).\nEl Índice proliferativo es del 10% Ki67.\nTiempo de isquemia en frío: desconocido\nTiempo de fijación en formalina buferada: desconocido.",
+      "valor_corregido": "Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Los cortes histológicos muestran tejido mamario con adecuada representación de carcinoma ductal, se documentan los siguientes hallazgos: Se encuentra: Expresión de receptores de estrógenos: Marcación nuclear fuerte y positiva del 90% Expresión de receptores de progesterona:Marcación nuclear fuerte y positiva del 80% Sobre expresión del oncogén HER2/neu: Equivoco (score 2+). El Índice proliferativo es del 10% KI-67. Tiempo de isquemia en frío: desconocido Tiempo de fijación en formalina buferada: desconocido.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250059",
+      "timestamp": "2025-12-19T01:05:39.232097"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 48
+  }
+}

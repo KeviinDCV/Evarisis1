@@ -1,0 +1,175 @@
+{
+  "session_id": "IHQ250185_20260109_043241",
+  "numero_peticion": "IHQ250185",
+  "timestamp": "2026-01-09T04:32:41.925516",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250185\nCopia Pag. 1 de 2\nNombre : FLOR MARIA CACAIS ORTIZ\nN. peticion : IHQ250185\nN.Identificación : CC. 31219256\nGenero : FEMENINO\nEdad : 75 años\nEPS : EMSSANAR S.A.S\nMédico tratante : KELLY JOHANA GUTIERREZ\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 19/02/2025\nFecha Informe : 04/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX ENDOMETRIO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional\nrotulado como 2024-SO33203 proveniente del laboratorio SYNLAB correspondiente a un bloque\nde parafina y una lámina de tejido coloreado con H&E de “biopsia de endometrio\" con diagnóstico\nde “CARCINOMA INFILTRANTE CON DIFERENCIACIÓN ESCAMOSA DE ORIGEN INDEFINIDO\" del 23\nde diciembre 2024. Previa revisión de la histología, se realizan niveles al bloque para tinción con\np40, P16, RCC, Ki67, p53, CK7, CK20, CAM 5.2, Vimentina, PAX 8, Estrógeno. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nLas células tumorales son positivas para: CK7, CAM 5.2, p53 sobre expresado, receptor de\nestrógenos y PAX 8 con una tinción en bloque para p16 en el 10% de las células tumorales. Ki67\ndel 70% de las células invasivas. \nlas células tumorales son negativos para: p40, CK 20, vimentina, RCC.\nDIAGNÓSTICO\nEndometrio. Biopsia. Estudios de inmunohistoqímica.\nLOS ESTUDIOS DE INMUNOHISTOQUÍMICIA SUGIEREN UN CARCINOMA INVASIVO DE PROBABLE\nORIGEN DE TRACTO GENITAL FEMENINO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---\nIHQ250185\nCopia Pag. 2 de 2\nNombre : FLOR MARIA CACAIS ORTIZ\nN. peticion : IHQ250185\nN.Identificación : CC. 31219256\nGenero : FEMENINO\nEdad : 75 años\nEPS : EMSSANAR S.A.S\nMédico tratante : KELLY JOHANA GUTIERREZ\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 19/02/2025\nFecha Informe : 04/03/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 43 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3403,
+      "reduccion_porcentaje": 97.95
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250185",
+      "caso_num": 25,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CAM5": "POSITIVO",
+      "IHQ_P53": "POSITIVO (SOBRE EXPRESADO)",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_VIMENTINA": "NEGATIVO",
+      "IHQ_RCC": "NEGATIVO",
+      "nombre_completo": "FLOR MARIA CACAIS ORTIZ",
+      "numero_peticion": "IHQ250185",
+      "identificacion": "31219256",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "75",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "KELLY JOHANA GUTIERREZ",
+      "servicio": "GINECOLOGIA COEX",
+      "fecha_ingreso": "19/02/2025",
+      "fecha_informe": "04/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250185",
+      "N. de identificación": "31219256",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "GINECOLOGIA COEX",
+      "Médico tratante": "KELLY JOHANA GUTIERREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "19/02/2025",
+      "Fecha Informe": "04/03/2025",
+      "nombres": "FLOR MARIA",
+      "Primer nombre": "FLOR",
+      "Segundo nombre": "MARIA",
+      "apellidos": "CACAIS ORTIZ",
+      "Primer apellido": "CACAIS",
+      "Segundo apellido": "ORTIZ",
+      "nombre_formal": "CACAIS ORTIZ, FLOR MARIA",
+      "diagnostico": "Endometrio. Biopsia. Estudios de inmunohistoqímica. LOS ESTUDIOS DE INMUNOHISTOQUÍMICIA SUGIEREN UN CARCINOMA INVASIVO DE PROBABLE ORIGEN DE TRACTO GENITAL FEMENINO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Las células tumorales son positivas para: CK7, CAM 5.2, p53 sobre expresado, receptor de estrógenos y PAX 8 con una tinción en bloque para p16 en el 10% de las células tumorales. KI-67 del 70% de las células invasivas. las células tumorales son negativos para: p40, CK20, vimentina, RCC.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como 2024-SO33203 proveniente del laboratorio SYNLAB correspondiente a un bloque de parafina y una lámina de tejido coloreado con H&E de \"biopsia de endometrio\" con diagnóstico de \"CARCINOMA INFILTRANTE CON DIFERENCIACIÓN ESCAMOSA DE ORIGEN INDEFINIDO\" del 23 de diciembre 2024. Previa revisión de la histología, se realizan niveles al bloque para tinción con p40, p16, RCC, KI-67, p53, CK7, CK20, CAM 5.2, Vimentina, PAX 8, Estrógeno.",
+      "ihq_organo": "ENDOMETRIO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "GINECOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P40, P16, RCC, Ki-67, P53, CK7, CK20, CAM 5",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ENDOMETRIO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 70%, Receptor de Estrógeno: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, RCC, Ki-67, P53, CK7, CK20, CAM 5",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_KI-67": "70%",
+      "p16": "POSITIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-01-09T04:32:42.503972",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250185\nCopia Pag. 1 de 2\nNombre : FLOR MARIA CACAIS ORTIZ\nN. peticion : IHQ250185\nN.Identificación : CC. 31219256\nGenero : FEMENINO\nEdad : 75 años\nEPS : EMSSANAR S.A.S\nMédico tratante : KELLY JOHANA GUTIERREZ\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 19/02/2025\nFecha Informe : 04/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX ENDOMETRIO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional\nrotulado como 2024-SO33203 proveniente del laboratorio SYNLAB correspondiente a un bloque\nde parafina y una lámina de tejido coloreado con H&E de “biopsia de endometrio\" con diagnóstico\nde “CARCINOMA INFILTRANTE CON DIFERENCIACIÓN ESCAMOSA DE ORIGEN INDEFINIDO\" del 23\nde diciembre 2024. Previa revisión de la histología, se realizan niveles al bloque para tinción con\np40, P16, RCC, Ki67, p53, CK7, CK20, CAM 5.2, Vimentina, PAX 8, Estrógeno. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nLas células tumorales son positivas para: CK7, CAM 5.2, p53 sobre expresado, receptor de\nestrógenos y PAX 8 con una tinción en bloque para p16 en el 10% de las células tumorales. Ki67\ndel 70% de las células invasivas. \nlas células tumorales son negativos para: p40, CK 20, vimentina, RCC.\nDIAGNÓSTICO\nEndometrio. Biopsia. Estudios de inmunohistoqímica.\nLOS ESTUDIOS DE INMUNOHISTOQUÍMICIA SUGIEREN UN CARCINOMA INVASIVO DE PROBABLE\nORIGEN DE TRACTO GENITAL FEMENINO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---\nIHQ250185\nCopia Pag. 2 de 2\nNombre : FLOR MARIA CACAIS ORTIZ\nN. peticion : IHQ250185\nN.Identificación : CC. 31219256\nGenero : FEMENINO\nEdad : 75 años\nEPS : EMSSANAR S.A.S\nMédico tratante : KELLY JOHANA GUTIERREZ\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 19/02/2025\nFecha Informe : 04/03/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 43 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, RCC, Ki-67, P53, CK7, CK20, CAM 5, Receptor de Estrógeno, PAX8, VIMENTINA",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como 2024-SO33203 proveniente del laboratorio SYNLAB correspondiente a un bloque de parafina y una lámina de tejido coloreado con H&E de “biopsia de endometrio\" con diagnóstico de “CARCINOMA INFILTRANTE CON DIFERENCIACIÓN ESCAMOSA DE ORIGEN INDEFINIDO\" del 23 de diciembre 2024. Previa revisión de la histología, se realizan niveles al bloque para tinción con p40, P16, RCC, Ki67, p53, CK7, CK20, CAM 5.2, Vimentina, PAX 8, Estrógeno.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Las células tumorales son positivas para: CK7, CAM 5.2, p53 sobre expresado, receptor de estrógenos y PAX 8 con una tinción en bloque para p16 en el 10% de las células tumorales. Ki67 del 70% de las células invasivas. las células tumorales son negativos para: p40, CK 20, vimentina, RCC.",
+      "Descripcion Diagnostico": "Endometrio. Biopsia. Estudios de inmunohistoqímica. LOS ESTUDIOS DE INMUNOHISTOQUÍMICIA SUGIEREN UN CARCINOMA INVASIVO DE PROBABLE ORIGEN DE TRACTO GENITAL FEMENINO.",
+      "IHQ_ORGANO": "ENDOMETRIO",
+      "Organo": "BX ENDOMETRIO",
+      "Diagnostico Coloracion": "CARCINOMA INFILTRANTE CON DIFERENCIACIÓN ESCAMOSA DE ORIGEN INDEFINIDO",
+      "Diagnostico Principal": "ESTUDIOS DE INMUNOHISTOQÍMICA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 70%, Receptor de Estrógeno: POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_RCC": "NEGATIVO",
+      "IHQ_KI-67": "70%",
+      "IHQ_P53": "POSITIVO (SOBRE EXPRESADO)",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CAM5": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_VIMENTINA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 170,
+      "campos_vacios": 124,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 11,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 124,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Endometrio. Biopsia. Estudios de inmunohistoqímica.\nLOS ESTUDIOS DE INMUNOHISTOQUÍMICIA SUGIEREN UN CARCINOMA INVASIVO DE PROBABLE\nORIGEN DE TRACTO GENITAL FEMENINO.",
+      "valor_corregido": "Endometrio. Biopsia. Estudios de inmunohistoqímica. LOS ESTUDIOS DE INMUNOHISTOQUÍMICIA SUGIEREN UN CARCINOMA INVASIVO DE PROBABLE ORIGEN DE TRACTO GENITAL FEMENINO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250185",
+      "timestamp": "2026-01-09T04:32:42.503670"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como 2024-SO33203 proveniente del laboratorio SYNLAB correspondiente a un bloque de parafina y una lámina de tejido coloreado con H&E de “biopsia de endometrio\" con diagnóstico de “CARCINOMA INFILTRANTE CON DIFERENCIACIÓN ESCAMOSA DE ORIGEN INDEFINIDO\" del 23 de diciembre 2024. Previa revisión de la histología, se realizan niveles al bloque para tinción con p40, P16, RCC, Ki67, p53, CK7, CK20, CAM 5.2, Vimentina, PAX 8, Estrógeno.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como 2024-SO33203 proveniente del laboratorio SYNLAB correspondiente a un bloque de parafina y una lámina de tejido coloreado con H&E de \"biopsia de endometrio\" con diagnóstico de \"CARCINOMA INFILTRANTE CON DIFERENCIACIÓN ESCAMOSA DE ORIGEN INDEFINIDO\" del 23 de diciembre 2024. Previa revisión de la histología, se realizan niveles al bloque para tinción con p40, p16, RCC, KI-67, p53, CK7, CK20, CAM 5.2, Vimentina, PAX 8, Estrógeno.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250185",
+      "timestamp": "2026-01-09T04:32:42.503679"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Las células tumorales son positivas para: CK7, CAM 5.2, p53 sobre expresado, receptor de estrógenos y PAX 8 con una tinción en bloque para p16 en el 10% de las células tumorales. Ki67 del 70% de las células invasivas. las células tumorales son negativos para: p40, CK 20, vimentina, RCC.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Las células tumorales son positivas para: CK7, CAM 5.2, p53 sobre expresado, receptor de estrógenos y PAX 8 con una tinción en bloque para p16 en el 10% de las células tumorales. KI-67 del 70% de las células invasivas. las células tumorales son negativos para: p40, CK20, vimentina, RCC.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250185",
+      "timestamp": "2026-01-09T04:32:42.503681"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 61
+  }
+}

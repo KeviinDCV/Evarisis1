@@ -1,0 +1,157 @@
+{
+  "session_id": "IHQ250302_20260203_034729",
+  "numero_peticion": "IHQ250302",
+  "timestamp": "2026-02-03T03:47:29.491982",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250302\nCopia Pag. 1 de 2\nNombre : NATHAN LASSO VIVAS\nN. peticion : IHQ250302\nN.Identificación : TI. 1062205297\nGenero : MASCULINO\nEdad : 7 años 5 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 26/03/2025\nFecha Informe : 02/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA MUSLO DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2503321 ” correspondiente a “biopsia muslo derecho” con diagnóstico de\n“TUMOR MALIGNO MAL DIFERENCIADO”. Previa revisión de la histología, se realizan niveles\nhistológicos para tinción con KI67, CD99, CD68, S100, CKAE1E3\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas\ncélulas\ntumorales\npresentar\nmarcación\nnegativa\npara:\nS100,\nCD99,\nCKAE1E3.\nCD68\nmarcación positiva en algunos histiocitos. ki67 (índice de proliferación) del 35%.\nDIAGNÓSTICO\nMasa muslo derecho. Biopsia. Estudios de inmunohistoquímica.\nLAS CARACTERÍSTICAS DEL TUMOR Y LOS HALLAZGOS DE LA INMUNOHISTOQUÍMICA SUGIEREN\nUN OSTEOSARCOMA DE TIPO CONVENCIONAL DE ALTO GRADO.\nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Jorge Moreno y el Dr. Armando Cortes (patólogos). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---\nIHQ250302\nCopia Pag. 2 de 2\nNombre : NATHAN LASSO VIVAS\nN. peticion : IHQ250302\nN.Identificación : TI. 1062205297\nGenero : MASCULINO\nEdad : 7 años 5 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 26/03/2025\nFecha Informe : 02/04/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3252,
+      "reduccion_porcentaje": 98.14
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250302",
+      "caso_num": 38,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_CD99": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "nombre_completo": "NATHAN LASSO VIVAS",
+      "numero_peticion": "IHQ250302",
+      "identificacion": "1062205297",
+      "tipo_documento": "TI",
+      "Genero": "MASCULINO",
+      "Edad": "7",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "ANDRES FELIPE VARELA",
+      "servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "fecha_ingreso": "26/03/2025",
+      "fecha_informe": "02/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250302",
+      "N. de identificación": "1062205297",
+      "Tipo de documento": "TI",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "Médico tratante": "ANDRES FELIPE VARELA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "26/03/2025",
+      "Fecha Informe": "02/04/2025",
+      "nombres": "NATHAN LASSO",
+      "Primer nombre": "NATHAN",
+      "Segundo nombre": "LASSO",
+      "apellidos": "VIVAS",
+      "Primer apellido": "VIVAS",
+      "Segundo apellido": "",
+      "nombre_formal": "VIVAS, NATHAN LASSO",
+      "diagnostico": "Masa muslo derecho. Biopsia. Estudios de inmunohistoquímica. LAS CARACTERÍSTICAS DEL TUMOR Y LOS HALLAZGOS DE LA INMUNOHISTOQUÍMICA SUGIEREN UN OSTEOSARCOMA DE TIPO CONVENCIONAL DE ALTO GRADO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentar marcación negativa para: S100, CD99, CKAE1E3. CD68 marcación positiva en algunos histiocitos. KI-67 (índice de proliferación) del 35%.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2503321 \" correspondiente a \"biopsia muslo derecho\" con diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO\". Previa revisión de la histología, se realizan niveles histológicos para tinción con KI-67, CD99, CD68, S100, CKAE1E3",
+      "ihq_organo": "MASA MUSLO DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con el Dr. Jorge Moreno y el Dr. Armando Cortes (patólogos).",
+      "IHQ_ORGANO": "MASA MUSLO DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-02-03T03:47:29.833294",
+      "extractor_version": "6.5.90_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250302\nCopia Pag. 1 de 2\nNombre : NATHAN LASSO VIVAS\nN. peticion : IHQ250302\nN.Identificación : TI. 1062205297\nGenero : MASCULINO\nEdad : 7 años 5 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 26/03/2025\nFecha Informe : 02/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA MUSLO DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2503321 ” correspondiente a “biopsia muslo derecho” con diagnóstico de\n“TUMOR MALIGNO MAL DIFERENCIADO”. Previa revisión de la histología, se realizan niveles\nhistológicos para tinción con KI67, CD99, CD68, S100, CKAE1E3\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas\ncélulas\ntumorales\npresentar\nmarcación\nnegativa\npara:\nS100,\nCD99,\nCKAE1E3.\nCD68\nmarcación positiva en algunos histiocitos. ki67 (índice de proliferación) del 35%.\nDIAGNÓSTICO\nMasa muslo derecho. Biopsia. Estudios de inmunohistoquímica.\nLAS CARACTERÍSTICAS DEL TUMOR Y LOS HALLAZGOS DE LA INMUNOHISTOQUÍMICA SUGIEREN\nUN OSTEOSARCOMA DE TIPO CONVENCIONAL DE ALTO GRADO.\nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Jorge Moreno y el Dr. Armando Cortes (patólogos). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---\nIHQ250302\nCopia Pag. 2 de 2\nNombre : NATHAN LASSO VIVAS\nN. peticion : IHQ250302\nN.Identificación : TI. 1062205297\nGenero : MASCULINO\nEdad : 7 años 5 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 26/03/2025\nFecha Informe : 02/04/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD99, CKAE1AE3, S100",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2503321 ” correspondiente a “biopsia muslo derecho” con diagnóstico de “TUMOR MALIGNO MAL DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con KI67, CD99, CD68, S100, CKAE1E3",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentar marcación negativa para: S100, CD99, CKAE1E3. CD68 marcación positiva en algunos histiocitos. ki67 (índice de proliferación) del 35%.",
+      "Descripcion Diagnostico": "Masa muslo derecho. Biopsia. Estudios de inmunohistoquímica. LAS CARACTERÍSTICAS DEL TUMOR Y LOS HALLAZGOS DE LA INMUNOHISTOQUÍMICA SUGIEREN UN OSTEOSARCOMA DE TIPO CONVENCIONAL DE ALTO GRADO.",
+      "IHQ_ORGANO": "MASA MUSLO DERECHO",
+      "Organo": "BX MASA MUSLO DERECHO",
+      "Diagnostico Coloracion": "TUMOR MALIGNO MAL DIFERENCIADO",
+      "Diagnostico Principal": "LAS CARACTERÍSTICAS DEL TUMOR Y LOS HALLAZGOS DE LA INMUNOHISTOQUÍMICA SUGIEREN UN OSTEOSARCOMA DE TIPO CONVENCIONAL DE ALTO GRADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD99": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 139,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Masa muslo derecho. Biopsia. Estudios de inmunohistoquímica.\nLAS CARACTERÍSTICAS DEL TUMOR Y LOS HALLAZGOS DE LA INMUNOHISTOQUÍMICA SUGIEREN\nUN OSTEOSARCOMA DE TIPO CONVENCIONAL DE ALTO GRADO.",
+      "valor_corregido": "Masa muslo derecho. Biopsia. Estudios de inmunohistoquímica. LAS CARACTERÍSTICAS DEL TUMOR Y LOS HALLAZGOS DE LA INMUNOHISTOQUÍMICA SUGIEREN UN OSTEOSARCOMA DE TIPO CONVENCIONAL DE ALTO GRADO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250302",
+      "timestamp": "2026-02-03T03:47:29.833074"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2503321 ” correspondiente a “biopsia muslo derecho” con diagnóstico de “TUMOR MALIGNO MAL DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con KI67, CD99, CD68, S100, CKAE1E3",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2503321 \" correspondiente a \"biopsia muslo derecho\" con diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO\". Previa revisión de la histología, se realizan niveles histológicos para tinción con KI-67, CD99, CD68, S100, CKAE1E3",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250302",
+      "timestamp": "2026-02-03T03:47:29.833080"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentar marcación negativa para: S100, CD99, CKAE1E3. CD68 marcación positiva en algunos histiocitos. ki67 (índice de proliferación) del 35%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentar marcación negativa para: S100, CD99, CKAE1E3. CD68 marcación positiva en algunos histiocitos. KI-67 (índice de proliferación) del 35%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250302",
+      "timestamp": "2026-02-03T03:47:29.833082"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 49
+  }
+}

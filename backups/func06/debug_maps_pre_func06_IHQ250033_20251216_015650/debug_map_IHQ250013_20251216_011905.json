@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250013_20251216_011905",
+  "numero_peticion": "IHQ250013",
+  "timestamp": "2025-12-16T01:19:05.999825",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250013\nCopia Pag. 1 de 1\nNombre : YAMID FABIAN TRISTANCHO SANTOS\nN. peticion : IHQ250013\nN.Identificación : CC. 4218464\nGenero : MASCULINO\nEdad : 39 años 12 dias\nEPS : NUEVA EPS\nMédico tratante : ORLANDO FAVIO AREVALO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 07/01/2025\nFecha Informe : 20/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION DE PARED\nABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2410600 que corresponde a resección de lesión en pared abdominal, con\ndiagnóstico con \"LESIÓN FUSOCELULAR BIEN DIFERENCIADA\". Se ordenan marcadores de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLesión fusocelular con evidencia de positividad para Beta-Catenina, y focal positividad para SMA, así\nmismo presentan negatividad para S100, DOG-1, CD117 y a CKAE1/AE3.\nEl índice de proliferación celular presenta un Ki-67 menor del 1%.\nDIAGNÓSTICO\nPared abdominal. Lesión. Resección\nHALLAZGOS DE MORFOLOGIA E INMUNOHISTOQUÍMICA COMPATIBLES CON FIBROMATOSIS DE TIPO\nDESMOIDE\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 23 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 2400,
+      "reduccion_porcentaje": 98.6
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250013",
+      "caso_num": 13,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "YAMID FABIAN TRISTANCHO SANTOS",
+      "numero_peticion": "IHQ250013",
+      "identificacion": "4218464",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "39",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ORLANDO FAVIO AREVALO",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "07/01/2025",
+      "fecha_informe": "20/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250013",
+      "N. de identificación": "4218464",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "ORLANDO FAVIO AREVALO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/01/2025",
+      "Fecha Informe": "20/01/2025",
+      "nombres": "YAMID FABIAN TRISTANCHO",
+      "Primer nombre": "YAMID",
+      "Segundo nombre": "FABIAN TRISTANCHO",
+      "apellidos": "SANTOS",
+      "Primer apellido": "SANTOS",
+      "Segundo apellido": "",
+      "nombre_formal": "SANTOS, YAMID FABIAN TRISTANCHO",
+      "diagnostico": "Pared abdominal. Lesión. Resección HALLAZGOS DE MORFOLOGIA E INMUNOHISTOQUÍMICA COMPATIBLES CON FIBROMATOSIS DE TIPO DESMOIDE",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión fusocelular con evidencia de positividad para Beta-Catenina, y focal positividad para SMA, así mismo presentan negatividad para S100, DOG-1, CD117 y a CKAE1/AE3. El índice de proliferación celular presenta un KI-67 menor del 1%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2410600 que corresponde a resección de lesión en pared abdominal, con diagnóstico con \"LESIÓN FUSOCELULAR BIEN DIFERENCIADA\". Se ordenan marcadores de inmunohistoquímica.",
+      "ihq_organo": "PARED ABDOMINAL",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PARED ABDOMINAL",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_DOG1": "NEGATIVO",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_KI-67": "<1%",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "extraction_timestamp": "2025-12-16T01:19:06.130494",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250013\nCopia Pag. 1 de 1\nNombre : YAMID FABIAN TRISTANCHO SANTOS\nN. peticion : IHQ250013\nN.Identificación : CC. 4218464\nGenero : MASCULINO\nEdad : 39 años 12 dias\nEPS : NUEVA EPS\nMédico tratante : ORLANDO FAVIO AREVALO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 07/01/2025\nFecha Informe : 20/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION DE PARED\nABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2410600 que corresponde a resección de lesión en pared abdominal, con\ndiagnóstico con \"LESIÓN FUSOCELULAR BIEN DIFERENCIADA\". Se ordenan marcadores de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLesión fusocelular con evidencia de positividad para Beta-Catenina, y focal positividad para SMA, así\nmismo presentan negatividad para S100, DOG-1, CD117 y a CKAE1/AE3.\nEl índice de proliferación celular presenta un Ki-67 menor del 1%.\nDIAGNÓSTICO\nPared abdominal. Lesión. Resección\nHALLAZGOS DE MORFOLOGIA E INMUNOHISTOQUÍMICA COMPATIBLES CON FIBROMATOSIS DE TIPO\nDESMOIDE\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 23 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD117, CKAE1AE3, DOG1, Ki-67, S100",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2410600 que corresponde a resección de lesión en pared abdominal, con diagnóstico con \"LESIÓN FUSOCELULAR BIEN DIFERENCIADA\". Se ordenan marcadores de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión fusocelular con evidencia de positividad para Beta-Catenina, y focal positividad para SMA, así mismo presentan negatividad para S100, DOG-1, CD117 y a CKAE1/AE3. El índice de proliferación celular presenta un Ki-67 menor del 1%.",
+      "Descripcion Diagnostico": "Pared abdominal. Lesión. Resección HALLAZGOS DE MORFOLOGIA E INMUNOHISTOQUÍMICA COMPATIBLES CON FIBROMATOSIS DE TIPO DESMOIDE",
+      "IHQ_ORGANO": "PARED ABDOMINAL",
+      "Organo": "LESION DE PARED ABDOMINAL",
+      "Diagnostico Coloracion": "LESIÓN FUSOCELULAR BIEN DIFERENCIADA",
+      "Diagnostico Principal": "FIBROMATOSIS DE TIPO DESMOIDE",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_DOG1": "NEGATIVO",
+      "IHQ_KI-67": "<1%",
+      "IHQ_S100": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 117,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 25.48
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 117,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pared abdominal. Lesión. Resección\nHALLAZGOS DE MORFOLOGIA E INMUNOHISTOQUÍMICA COMPATIBLES CON FIBROMATOSIS DE TIPO\nDESMOIDE",
+      "valor_corregido": "Pared abdominal. Lesión. Resección HALLAZGOS DE MORFOLOGIA E INMUNOHISTOQUÍMICA COMPATIBLES CON FIBROMATOSIS DE TIPO DESMOIDE",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250013",
+      "timestamp": "2025-12-16T01:19:06.130215"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2410600 que corresponde a resección de lesión en pared abdominal, con\ndiagnóstico con \"LESIÓN FUSOCELULAR BIEN DIFERENCIADA\". Se ordenan marcadores de\ninmunohistoquímica.",
+      "valor_corregido": "Se realizan niveles al bloque M2410600 que corresponde a resección de lesión en pared abdominal, con diagnóstico con \"LESIÓN FUSOCELULAR BIEN DIFERENCIADA\". Se ordenan marcadores de inmunohistoquímica.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250013",
+      "timestamp": "2025-12-16T01:19:06.130223"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLesión fusocelular con evidencia de positividad para Beta-Catenina, y focal positividad para SMA, así\nmismo presentan negatividad para S100, DOG-1, CD117 y a CKAE1/AE3.\nEl índice de proliferación celular presenta un Ki-67 menor del 1%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión fusocelular con evidencia de positividad para Beta-Catenina, y focal positividad para SMA, así mismo presentan negatividad para S100, DOG-1, CD117 y a CKAE1/AE3. El índice de proliferación celular presenta un KI-67 menor del 1%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250013",
+      "timestamp": "2025-12-16T01:19:06.130225"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 50
+  }
+}

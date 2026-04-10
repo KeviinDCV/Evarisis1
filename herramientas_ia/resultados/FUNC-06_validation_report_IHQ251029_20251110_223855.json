@@ -1,0 +1,61 @@
+{
+  "caso": "IHQ251029",
+  "timestamp": "2025-11-10T22:38:55.564039",
+  "objetivo": "Validar correccion de extraccion CKAE1AE3 formato compacto",
+  "tipo_tumor": "NEUROENDOCRINO",
+  "biomarcadores_solicitados": [
+    "CD56",
+    "CROMOGRANINA A",
+    "SINAPTOFISINA",
+    "CKAE1AE3",
+    "Ki-67"
+  ],
+  "correcciones": {
+    "CKAE1AE3": {
+      "antes": "NO MENCIONADO",
+      "despues": "POSITIVO",
+      "esperado": "POSITIVO",
+      "estado": "SUCCESS",
+      "detalles": "Patron \"CKAE1-AE3+\" ahora extrae correctamente POSITIVO"
+    },
+    "IHQ_ESTUDIOS_SOLICITADOS": {
+      "valor": "CD56, CROMOGRANINA A, SINAPTOFISINA, CKAE1AE3, Ki-67",
+      "biomarcadores_detectados": 5,
+      "total_esperado": 5,
+      "estado": "SUCCESS"
+    },
+    "DIAGNOSTICO_COLORACION": {
+      "estado": "N/A",
+      "razon": "Caso IHQ sin estudio M previo"
+    }
+  },
+  "biomarcadores_individuales": {
+    "IHQ_CKAE1AE3": {
+      "valor": "POSITIVO",
+      "estado": "OK"
+    },
+    "IHQ_CD56": {
+      "valor": "POSITIVO",
+      "estado": "OK"
+    },
+    "IHQ_KI-67": {
+      "valor": "2%",
+      "estado": "OK"
+    },
+    "IHQ_CROMOGRANINA": {
+      "valor": "IHQ_CROMOGRANINA",
+      "estado": "PENDING_EXTRACTION"
+    },
+    "IHQ_SINAPTOFISINA": {
+      "valor": "IHQ_SINAPTOFISINA",
+      "estado": "PENDING_EXTRACTION"
+    }
+  },
+  "resumen": {
+    "objetivo_principal": "ACHIEVED",
+    "ckae1ae3_correccion": "SUCCESS",
+    "mejoras_adicionales": [
+      "Cromogranina y Sinaptofisina necesitan patrones de extraccion adicionales"
+    ]
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "session_id": "IHQ250132_20260105_214035",
+  "numero_peticion": "IHQ250132",
+  "timestamp": "2026-01-05T21:40:35.856814",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250132\nCopia Pag. 1 de 2\nNombre : MARIA NELLY PASUY GUERRERO\nN. peticion : IHQ250132\nN.Identificación : CC. 38998127\nGenero : FEMENINO\nEdad : 76 años 16 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 06/02/2025\nFecha Informe : 10/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX VEJIGA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado\ncomo\n“M2500831\n”\nque\ncorresponde\na\n“tumor\nde\nvejiga”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales son positivas para CK7, PAX-8, p16 positivo en bloque y p53 mutado\n(expresión nula).\nLos marcadores receptores de estrógenos, progesterona, WT1, CK20 son negativos.\ndiagnósticos\nde\n“CARCINOMA\nMAL\nDIFERENCIADO”.\nPrevia\nrevisión\nde\nla\nhistología,\nse\nrealizan\nniveles\nhistológicos para tinción con CK7, CK20, receptores de estrógenos, receptores de progesterona,\nWT1, p16, p53 Y PAX-8.\nDIAGNÓSTICO\nVejiga. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA INFILTRANTE DE PROBABLE ORIGEN GINECOLÓGICO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---\nIHQ250132\nCopia Pag. 2 de 2\nNombre : MARIA NELLY PASUY GUERRERO\nN. peticion : IHQ250132\nN.Identificación : CC. 38998127\nGenero : FEMENINO\nEdad : 76 años 16 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 06/02/2025\nFecha Informe : 10/02/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 46 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3112,
+      "reduccion_porcentaje": 98.21
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250132",
+      "caso_num": 23,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_P53": "POSITIVO (bloque)",
+      "IHQ_PAX8": "POSITIVO (bloque)",
+      "IHQ_P16_ESTADO": "POSITIVO (bloque)",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "nombre_completo": "MARIA NELLY PASUY GUERRERO",
+      "numero_peticion": "IHQ250132",
+      "identificacion": "38998127",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "76",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "06/02/2025",
+      "fecha_informe": "10/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250132",
+      "N. de identificación": "38998127",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "06/02/2025",
+      "Fecha Informe": "10/02/2025",
+      "nombres": "MARIA NELLY",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "NELLY",
+      "apellidos": "PASUY GUERRERO",
+      "Primer apellido": "PASUY",
+      "Segundo apellido": "GUERRERO",
+      "nombre_formal": "PASUY GUERRERO, MARIA NELLY",
+      "diagnostico": "Vejiga. Tumor. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA INFILTRANTE DE PROBABLE ORIGEN GINECOLÓGICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, PAX-8, p16 positivo en bloque y p53 mutado (expresión nula). Los marcadores receptores de estrógenos, progesterona, WT1, CK20 son negativos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500831 ” que corresponde a “tumor de vejiga” con diagnósticos de “CARCINOMA MAL DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CK7, CK20, receptores de estrógenos, receptores de progesterona, WT1, p16, p53 Y PAX-8.",
+      "ihq_organo": "VEJIGA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, Receptor de Estrógeno, Receptor de Progesterona, WT1, P16, P53, PAX 8",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "VEJIGA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, Receptor de Estrógeno, Receptor de Progesterona, WT1, P16, P53, PAX 8",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "p16": "POSITIVO (bloque)",
+      "extraction_timestamp": "2026-01-05T21:40:36.255159",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250132\nCopia Pag. 1 de 2\nNombre : MARIA NELLY PASUY GUERRERO\nN. peticion : IHQ250132\nN.Identificación : CC. 38998127\nGenero : FEMENINO\nEdad : 76 años 16 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 06/02/2025\nFecha Informe : 10/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX VEJIGA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado\ncomo\n“M2500831\n”\nque\ncorresponde\na\n“tumor\nde\nvejiga”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales son positivas para CK7, PAX-8, p16 positivo en bloque y p53 mutado\n(expresión nula).\nLos marcadores receptores de estrógenos, progesterona, WT1, CK20 son negativos.\ndiagnósticos\nde\n“CARCINOMA\nMAL\nDIFERENCIADO”.\nPrevia\nrevisión\nde\nla\nhistología,\nse\nrealizan\nniveles\nhistológicos para tinción con CK7, CK20, receptores de estrógenos, receptores de progesterona,\nWT1, p16, p53 Y PAX-8.\nDIAGNÓSTICO\nVejiga. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA INFILTRANTE DE PROBABLE ORIGEN GINECOLÓGICO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---\nIHQ250132\nCopia Pag. 2 de 2\nNombre : MARIA NELLY PASUY GUERRERO\nN. peticion : IHQ250132\nN.Identificación : CC. 38998127\nGenero : FEMENINO\nEdad : 76 años 16 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 06/02/2025\nFecha Informe : 10/02/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 46 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, Receptor de Estrógeno, Receptor de Progesterona, WT1, P16, P53, PAX 8",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500831 ” que corresponde a “tumor de vejiga” con diagnósticos de “CARCINOMA MAL DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CK7, CK20, receptores de estrógenos, receptores de progesterona, WT1, p16, p53 Y PAX-8.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, PAX-8, p16 positivo en bloque y p53 mutado (expresión nula). Los marcadores receptores de estrógenos, progesterona, WT1, CK20 son negativos.",
+      "Descripcion Diagnostico": "Vejiga. Tumor. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA INFILTRANTE DE PROBABLE ORIGEN GINECOLÓGICO.",
+      "IHQ_ORGANO": "VEJIGA",
+      "Organo": "BX VEJIGA",
+      "Diagnostico Coloracion": "CARCINOMA MAL DIFERENCIADO",
+      "Diagnostico Principal": "CARCINOMA INFILTRANTE DE PROBABLE ORIGEN GINECOLÓGICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO (bloque)",
+      "IHQ_P53": "POSITIVO (bloque)",
+      "IHQ_PAX8": "POSITIVO (bloque)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 124,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 8,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 124,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Vejiga. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA INFILTRANTE DE PROBABLE ORIGEN GINECOLÓGICO.",
+      "valor_corregido": "Vejiga. Tumor. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA INFILTRANTE DE PROBABLE ORIGEN GINECOLÓGICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250132",
+      "timestamp": "2026-01-05T21:40:36.254870"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 57
+  }
+}

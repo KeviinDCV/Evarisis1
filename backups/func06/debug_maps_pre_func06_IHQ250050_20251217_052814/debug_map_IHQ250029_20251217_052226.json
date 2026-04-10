@@ -1,0 +1,176 @@
+{
+  "session_id": "IHQ250029_20251217_052226",
+  "numero_peticion": "IHQ250029",
+  "timestamp": "2025-12-17T05:22:26.148469",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250029\nCopia Pag. 1 de 2\nNombre : NORALBA NARVAEZ DAVID\nN. peticion : IHQ250029\nN.Identificación : CC. 29399448\nGenero : FEMENINO\nEdad : 64 años 17 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JHOINNY ANDRES GOMEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 10/01/2025\nFecha Informe : 05/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION VERTEBRA L1\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410550” correspondiente a “Biopsia de vertebra L1” con diagnóstico de “TUMOR MAL DIFERENCIADO\nREQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA.”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores: CD 20, CD 23 CD 10 BCL6 y CD 30, PAX 5 , CKAE1E3, MUM\n1, C-MYC, CD 138, BCL 2, CD 38, CD 5 y Ki 67 \nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales tienen marcación positiva y difusa para CD 20, CD 23 positivo para BCL6 y CD 30 ,\nPositivo focal para PAX 5 . Lasa células son negativas para CKAE1E3, MUM 1, C-MYC, CD 138, BCL 2, CD\n10. Hay células plasmociticas (CD 38+), linfocitos T (cd5+). Índice de proliferación Ki 67 menor al 20%\nDIAGNÓSTICO\n Vertebra L1. Lesión. Biopsia. Estudio de inmunohistoquimica:\nLINFOMA DE CELULAS B MADURAS \nCOMENTARIOS\nLos hallazgos son concordantes con un LINFOMA FOLICULAR GRADO 3, sin embargo el diagnostico\nrequiere la correlación con citometria de flujo, pruebas moleculares y clínica de la paciente.\nCaso comentado con la DRA. Isabela Caicedo y Dra. María Ximena Varela \nARMANDO CORTES BUELVAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---\nIHQ250029\nCopia Pag. 2 de 2\nNombre : NORALBA NARVAEZ DAVID\nN. peticion : IHQ250029\nN.Identificación : CC. 29399448\nGenero : FEMENINO\nEdad : 64 años 17 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JHOINNY ANDRES GOMEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 10/01/2025\nFecha Informe : 05/02/2025\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3582,
+      "reduccion_porcentaje": 97.91
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250029",
+      "caso_num": 29,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_BCL6": "POSITIVO",
+      "nombre_completo": "NORALBA NARVAEZ DAVID",
+      "numero_peticion": "IHQ250029",
+      "identificacion": "29399448",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "64",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "JHOINNY ANDRES GOMEZ",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "10/01/2025",
+      "fecha_informe": "05/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250029",
+      "N. de identificación": "29399448",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "JHOINNY ANDRES GOMEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "10/01/2025",
+      "Fecha Informe": "05/02/2025",
+      "nombres": "NORALBA",
+      "Primer nombre": "NORALBA",
+      "Segundo nombre": "",
+      "apellidos": "NARVAEZ DAVID",
+      "Primer apellido": "NARVAEZ",
+      "Segundo apellido": "DAVID",
+      "nombre_formal": "NARVAEZ DAVID, NORALBA",
+      "diagnostico": "Vertebra L1. Lesión. Biopsia. Estudio de inmunohistoquimica: LINFOMA DE CELULAS B MADURAS",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales tienen marcación positiva y difusa para CD 20, CD 23 positivo para BCL6 y CD 30 , Positivo focal para PAX 5 . Lasa células son negativas para CKAE1E3, MUM 1, C-MYC, CD 138, BCL 2, CD 10. Hay células plasmociticas (CD 38+), linfocitos T (cd5+). Índice de proliferación KI-67 menor al 20%",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410550” correspondiente a “Biopsia de vertebra L1” con diagnóstico de “TUMOR MAL DIFERENCIADO REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA.”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD 23 CD 10 BCL6 y CD 30, PAX 5 , CKAE1E3, MUM 1, C-MYC, CD 138, BCL 2, CD 38, CD 5 y KI-67",
+      "ihq_organo": "VERTEBRA L1",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Los hallazgos son concordantes con un LINFOMA FOLICULAR GRADO 3, sin embargo el diagnostico requiere la correlación con citometria de flujo, pruebas moleculares y clínica de la paciente. Caso comentado con la DRA. Isabela Caicedo y Dra. María Ximena Varela ARMANDO CORTES BUELVAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 49 --- IHQ250029 Copia Pag. 2 de 2 Nombre : NORALBA NARVAEZ DAVID N. peticion : IHQ250029 N.Identificación : CC. 29399448 Genero : FEMENINO Edad : 64 años 17 dias EPS : S.O.S. SERV.OCCID.DE SALUD EPS Médico tratante : JHOINNY ANDRES GOMEZ Servicio : QUIROFANO CENTRAL Fecha Ingreso : 10/01/2025 Fecha Informe : 05/02/2025 Responsable del análisis: MD Patólogo RM 12135 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 50 ---",
+      "IHQ_ORGANO": "VERTEBRA L1",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: <20%",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_MUM1": "NEGATIVO",
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_BCL2": "NEGATIVO",
+      "IHQ_KI-67": "<20%",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "extraction_timestamp": "2025-12-17T05:22:26.304436",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250029\nCopia Pag. 1 de 2\nNombre : NORALBA NARVAEZ DAVID\nN. peticion : IHQ250029\nN.Identificación : CC. 29399448\nGenero : FEMENINO\nEdad : 64 años 17 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JHOINNY ANDRES GOMEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 10/01/2025\nFecha Informe : 05/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION VERTEBRA L1\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410550” correspondiente a “Biopsia de vertebra L1” con diagnóstico de “TUMOR MAL DIFERENCIADO\nREQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA.”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores: CD 20, CD 23 CD 10 BCL6 y CD 30, PAX 5 , CKAE1E3, MUM\n1, C-MYC, CD 138, BCL 2, CD 38, CD 5 y Ki 67 \nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales tienen marcación positiva y difusa para CD 20, CD 23 positivo para BCL6 y CD 30 ,\nPositivo focal para PAX 5 . Lasa células son negativas para CKAE1E3, MUM 1, C-MYC, CD 138, BCL 2, CD\n10. Hay células plasmociticas (CD 38+), linfocitos T (cd5+). Índice de proliferación Ki 67 menor al 20%\nDIAGNÓSTICO\n Vertebra L1. Lesión. Biopsia. Estudio de inmunohistoquimica:\nLINFOMA DE CELULAS B MADURAS \nCOMENTARIOS\nLos hallazgos son concordantes con un LINFOMA FOLICULAR GRADO 3, sin embargo el diagnostico\nrequiere la correlación con citometria de flujo, pruebas moleculares y clínica de la paciente.\nCaso comentado con la DRA. Isabela Caicedo y Dra. María Ximena Varela \nARMANDO CORTES BUELVAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---\nIHQ250029\nCopia Pag. 2 de 2\nNombre : NORALBA NARVAEZ DAVID\nN. peticion : IHQ250029\nN.Identificación : CC. 29399448\nGenero : FEMENINO\nEdad : 64 años 17 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JHOINNY ANDRES GOMEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 10/01/2025\nFecha Informe : 05/02/2025\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "BCL2, BCL6, CD138, CD23, CD38, CD5, CKAE1AE3, Ki-67, MUM1",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410550” correspondiente a “Biopsia de vertebra L1” con diagnóstico de “TUMOR MAL DIFERENCIADO REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA.”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD 23 CD 10 BCL6 y CD 30, PAX 5 , CKAE1E3, MUM 1, C-MYC, CD 138, BCL 2, CD 38, CD 5 y Ki 67",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales tienen marcación positiva y difusa para CD 20, CD 23 positivo para BCL6 y CD 30 , Positivo focal para PAX 5 . Lasa células son negativas para CKAE1E3, MUM 1, C-MYC, CD 138, BCL 2, CD 10. Hay células plasmociticas (CD 38+), linfocitos T (cd5+). Índice de proliferación Ki 67 menor al 20%",
+      "Descripcion Diagnostico": "Vertebra L1. Lesión. Biopsia. Estudio de inmunohistoquimica: LINFOMA DE CELULAS B MADURAS",
+      "IHQ_ORGANO": "VERTEBRA L1",
+      "Organo": "LESION VERTEBRA L1",
+      "Diagnostico Coloracion": "TUMOR MAL DIFERENCIADO REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "LINFOMA DE CELULAS B MADURAS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: <20%",
+      "IHQ_BCL2": "NEGATIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_KI-67": "<20%",
+      "IHQ_MUM1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 156,
+      "campos_vacios": 111,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 9,
+      "completitud_porcentaje": 28.85
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 111,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Vertebra L1. Lesión. Biopsia. Estudio de inmunohistoquimica:\nLINFOMA DE CELULAS B MADURAS",
+      "valor_corregido": "Vertebra L1. Lesión. Biopsia. Estudio de inmunohistoquimica: LINFOMA DE CELULAS B MADURAS",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250029",
+      "timestamp": "2025-12-17T05:22:26.304232"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410550” correspondiente a “Biopsia de vertebra L1” con diagnóstico de “TUMOR MAL DIFERENCIADO\nREQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA.”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores: CD 20, CD 23 CD 10 BCL6 y CD 30, PAX 5 , CKAE1E3, MUM\n1, C-MYC, CD 138, BCL 2, CD 38, CD 5 y Ki 67",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410550” correspondiente a “Biopsia de vertebra L1” con diagnóstico de “TUMOR MAL DIFERENCIADO REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA.”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CD 20, CD 23 CD 10 BCL6 y CD 30, PAX 5 , CKAE1E3, MUM 1, C-MYC, CD 138, BCL 2, CD 38, CD 5 y KI-67",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250029",
+      "timestamp": "2025-12-17T05:22:26.304238"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales tienen marcación positiva y difusa para CD 20, CD 23 positivo para BCL6 y CD 30 ,\nPositivo focal para PAX 5 . Lasa células son negativas para CKAE1E3, MUM 1, C-MYC, CD 138, BCL 2, CD\n10. Hay células plasmociticas (CD 38+), linfocitos T (cd5+). Índice de proliferación Ki 67 menor al 20%",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales tienen marcación positiva y difusa para CD 20, CD 23 positivo para BCL6 y CD 30 , Positivo focal para PAX 5 . Lasa células son negativas para CKAE1E3, MUM 1, C-MYC, CD 138, BCL 2, CD 10. Hay células plasmociticas (CD 38+), linfocitos T (cd5+). Índice de proliferación KI-67 menor al 20%",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250029",
+      "timestamp": "2025-12-17T05:22:26.304240"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos son concordantes con un LINFOMA FOLICULAR GRADO 3, sin embargo el diagnostico\nrequiere la correlación con citometria de flujo, pruebas moleculares y clínica de la paciente.\nCaso comentado con la DRA. Isabela Caicedo y Dra. María Ximena Varela \nARMANDO CORTES BUELVAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---\nIHQ250029\nCopia Pag. 2 de 2\nNombre : NORALBA NARVAEZ DAVID\nN. peticion : IHQ250029\nN.Identificación : CC. 29399448\nGenero : FEMENINO\nEdad : 64 años 17 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JHOINNY ANDRES GOMEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 10/01/2025\nFecha Informe : 05/02/2025\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---",
+      "valor_corregido": "Los hallazgos son concordantes con un LINFOMA FOLICULAR GRADO 3, sin embargo el diagnostico requiere la correlación con citometria de flujo, pruebas moleculares y clínica de la paciente. Caso comentado con la DRA. Isabela Caicedo y Dra. María Ximena Varela ARMANDO CORTES BUELVAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 49 --- IHQ250029 Copia Pag. 2 de 2 Nombre : NORALBA NARVAEZ DAVID N. peticion : IHQ250029 N.Identificación : CC. 29399448 Genero : FEMENINO Edad : 64 años 17 dias EPS : S.O.S. SERV.OCCID.DE SALUD EPS Médico tratante : JHOINNY ANDRES GOMEZ Servicio : QUIROFANO CENTRAL Fecha Ingreso : 10/01/2025 Fecha Informe : 05/02/2025 Responsable del análisis: MD Patólogo RM 12135 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 50 ---",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250029",
+      "timestamp": "2025-12-17T05:22:26.304241"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 56
+  }
+}

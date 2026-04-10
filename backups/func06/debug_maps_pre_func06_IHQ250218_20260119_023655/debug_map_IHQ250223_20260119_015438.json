@@ -1,0 +1,163 @@
+{
+  "session_id": "IHQ250223_20260119_015438",
+  "numero_peticion": "IHQ250223",
+  "timestamp": "2026-01-19T01:54:38.762511",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250223\nCopia Pag. 1 de 2\nNombre : LUCERO RESTREPO DE CHAMORRO\nN. peticion : IHQ250223\nN.Identificación : CC. 31264305\nGenero : FEMENINO\nEdad : 71 años 12 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JOCELYN ELLY LOZADA\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 03/03/2025\nFecha Informe : 12/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPANCREATODUDENECTOMI\nA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501977 que corresponde a \"ADENOCARCINOMA INFILTRANTE NOS DE CABEZA DE\nPÁNCREAS.\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque\nA7 para los siguientes marcadores: GATA3 , CA19-9 , CDX2, mamoglobina, PAX8 , estrogenos,\nCEA, CK19 , CK7 ,CK20 , TTF1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\n La células tumorales muestran inmunorreactivadad con CK 7 , CK19, CA19-9 , CDX2 y CEA con\nmarcación focal. Son negativas para , GATA3 , mamoglobina, PAX8 , estrogenos ,CK20 , TTF1.\nDIAGNÓSTICO\n Duodeno,vía biliar y cabeza de páncreas. Masa. Pancreatoduodenectomía. Estudio de\ninmunohistoquimica: \n-ADENOCARCINOMA DUCTAL PANCREATICO MODERADAMENTE DIFERENCIADO.\nCOMENTARIOS\nSe sugiere correlacionar con reporte de patologia M2501977.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 24 ---\nIHQ250223\nCopia Pag. 2 de 2\nNombre : LUCERO RESTREPO DE CHAMORRO\nN. peticion : IHQ250223\nN.Identificación : CC. 31264305\nGenero : FEMENINO\nEdad : 71 años 12 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JOCELYN ELLY LOZADA\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 03/03/2025\nFecha Informe : 12/03/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3281,
+      "reduccion_porcentaje": 98.17
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250223",
+      "caso_num": 12,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK19": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "nombre_completo": "LUCERO RESTREPO DE CHAMORRO",
+      "numero_peticion": "IHQ250223",
+      "identificacion": "31264305",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "71",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "JOCELYN ELLY LOZADA",
+      "servicio": "HOSPITALIZACION TRASPLANTE HPB",
+      "fecha_ingreso": "03/03/2025",
+      "fecha_informe": "12/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250223",
+      "N. de identificación": "31264305",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "HOSPITALIZACION TRASPLANTE HPB",
+      "Médico tratante": "JOCELYN ELLY LOZADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/03/2025",
+      "Fecha Informe": "12/03/2025",
+      "nombres": "LUCERO RESTREPO",
+      "Primer nombre": "LUCERO",
+      "Segundo nombre": "RESTREPO",
+      "apellidos": "DE CHAMORRO",
+      "Primer apellido": "DE",
+      "Segundo apellido": "CHAMORRO",
+      "nombre_formal": "DE CHAMORRO, LUCERO RESTREPO",
+      "diagnostico": "Duodeno,vía biliar y cabeza de páncreas. Masa. Pancreatoduodenectomía. Estudio de inmunohistoquimica: -ADENOCARCINOMA DUCTAL PANCREATICO MODERADAMENTE DIFERENCIADO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La células tumorales muestran inmunorreactivadad con CK7 , CK19, CA19-9 , CDX2 y CEA con marcación focal. Son negativas para , GATA3 , mamoglobina, PAX8 , estrogenos ,CK20 , TTF1.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501977 que corresponde a \"ADENOCARCINOMA INFILTRANTE NOS DE CABEZA DE PÁNCREAS.\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque A7 para los siguientes marcadores: GATA3 , CA19-9 , CDX2, mamoglobina, PAX8 , estrogenos, CEA, CK19 , CK7 ,CK20 , TTF1.",
+      "ihq_organo": "DUODENO,VÍA BILIAR Y CABEZA DE PÁNCREAS",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "GATA3, CA19-9, CDX2, MAMOGLOBINA, PAX8, Receptor de Estrógeno, CEA, CK19, CK7, CK20, TTF-1",
+      "procedimiento": "",
+      "comentarios": "Se sugiere correlacionar con reporte de patologia M2501977.",
+      "IHQ_ORGANO": "DUODENO,VÍA BILIAR Y CABEZA DE PÁNCREAS",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "GATA3, CA19-9, CDX2, MAMOGLOBINA, PAX8, Receptor de Estrógeno, CEA, CK19, CK7, CK20, TTF-1",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_MAMOGLOBINA": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "extraction_timestamp": "2026-01-19T01:54:39.169965",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250223\nCopia Pag. 1 de 2\nNombre : LUCERO RESTREPO DE CHAMORRO\nN. peticion : IHQ250223\nN.Identificación : CC. 31264305\nGenero : FEMENINO\nEdad : 71 años 12 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JOCELYN ELLY LOZADA\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 03/03/2025\nFecha Informe : 12/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPANCREATODUDENECTOMI\nA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501977 que corresponde a \"ADENOCARCINOMA INFILTRANTE NOS DE CABEZA DE\nPÁNCREAS.\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque\nA7 para los siguientes marcadores: GATA3 , CA19-9 , CDX2, mamoglobina, PAX8 , estrogenos,\nCEA, CK19 , CK7 ,CK20 , TTF1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\n La células tumorales muestran inmunorreactivadad con CK 7 , CK19, CA19-9 , CDX2 y CEA con\nmarcación focal. Son negativas para , GATA3 , mamoglobina, PAX8 , estrogenos ,CK20 , TTF1.\nDIAGNÓSTICO\n Duodeno,vía biliar y cabeza de páncreas. Masa. Pancreatoduodenectomía. Estudio de\ninmunohistoquimica: \n-ADENOCARCINOMA DUCTAL PANCREATICO MODERADAMENTE DIFERENCIADO.\nCOMENTARIOS\nSe sugiere correlacionar con reporte de patologia M2501977.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 24 ---\nIHQ250223\nCopia Pag. 2 de 2\nNombre : LUCERO RESTREPO DE CHAMORRO\nN. peticion : IHQ250223\nN.Identificación : CC. 31264305\nGenero : FEMENINO\nEdad : 71 años 12 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JOCELYN ELLY LOZADA\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 03/03/2025\nFecha Informe : 12/03/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "GATA3, CA19-9, CDX2, MAMOGLOBINA, PAX8, Receptor de Estrógeno, CEA, CK19, CK7, CK20, TTF-1",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501977 que corresponde a \"ADENOCARCINOMA INFILTRANTE NOS DE CABEZA DE PÁNCREAS.\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque A7 para los siguientes marcadores: GATA3 , CA19-9 , CDX2, mamoglobina, PAX8 , estrogenos, CEA, CK19 , CK7 ,CK20 , TTF1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La células tumorales muestran inmunorreactivadad con CK 7 , CK19, CA19-9 , CDX2 y CEA con marcación focal. Son negativas para , GATA3 , mamoglobina, PAX8 , estrogenos ,CK20 , TTF1.",
+      "Descripcion Diagnostico": "Duodeno,vía biliar y cabeza de páncreas. Masa. Pancreatoduodenectomía. Estudio de inmunohistoquimica: -ADENOCARCINOMA DUCTAL PANCREATICO MODERADAMENTE DIFERENCIADO.",
+      "IHQ_ORGANO": "DUODENO,VÍA BILIAR Y CABEZA DE PÁNCREAS",
+      "Organo": "PANCREATODUDENECTOMI A",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INFILTRANTE NOS DE CABEZA DE PÁNCREAS",
+      "Diagnostico Principal": "ADENOCARCINOMA DUCTAL PANCREATICO MODERADAMENTE DIFERENCIADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_MAMOGLOBINA": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_CEA": "NO MENCIONADO",
+      "IHQ_CK19": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 127,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 11,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 127,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Duodeno,vía biliar y cabeza de páncreas. Masa. Pancreatoduodenectomía. Estudio de\ninmunohistoquimica: \n-ADENOCARCINOMA DUCTAL PANCREATICO MODERADAMENTE DIFERENCIADO.",
+      "valor_corregido": "Duodeno,vía biliar y cabeza de páncreas. Masa. Pancreatoduodenectomía. Estudio de inmunohistoquimica: -ADENOCARCINOMA DUCTAL PANCREATICO MODERADAMENTE DIFERENCIADO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250223",
+      "timestamp": "2026-01-19T01:54:39.169760"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La células tumorales muestran inmunorreactivadad con CK 7 , CK19, CA19-9 , CDX2 y CEA con marcación focal. Son negativas para , GATA3 , mamoglobina, PAX8 , estrogenos ,CK20 , TTF1.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La células tumorales muestran inmunorreactivadad con CK7 , CK19, CA19-9 , CDX2 y CEA con marcación focal. Son negativas para , GATA3 , mamoglobina, PAX8 , estrogenos ,CK20 , TTF1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250223",
+      "timestamp": "2026-01-19T01:54:39.169766"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 58
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "session_id": "IHQ250179_20260112_142640",
+  "numero_peticion": "IHQ250179",
+  "timestamp": "2026-01-12T14:26:40.482774",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250179\nCopia Pag. 1 de 2\nNombre : WILSON CAICEDO CANGA\nN. peticion : IHQ250179\nN.Identificación : CC. 16476547\nGenero : MASCULINO\nEdad : 64 años 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOSE OMAR ZORILLA\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 17/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX POLIPO EN CUERPO Y\nANTRO GÁSTRICO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501541 A y B con\nrótulo correspondiente a \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\" con diagnóstico de “A:\nPólipo en antro y B: Pólipo en cuerpo”. Previa valoración de la coloración básica, se realizan cortes\nhistológicos a los bloques A y B. \nA: ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG-1, S100. \nB1 -2: MUC 1, MUC 2, Ki 67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nSe realiza una revisión de niveles histológicos de los bloques A, B1 y B2 y tinciones de\ninmunohistoquímica encontrando: \nBLOQUE A:\nLesión submucosa en forma polipoide compuesta por células estromales fusiformes y estrelladas\nsobre un estroma edematoso vascularizado e infiltrado inflamatorio rico en eosinófilos. \nEstas células son negativas para ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG1,\nS100. \nBLOQUE B 1 -2: \nLesión polipoide con epitelio de tipo foveolar, corporal con proliferación muscular sobre la lámina\npropia superficial de forma discontinua asociado a edema estromal e infiltrado inflamatorio mixto.\nEl epitelio demuestra inmunorreactiva positiva difusa en el epitelio para MUC1 y son negativas\npara MUC2, el índice de proliferación celular medido con Ki 67 se distribuye uniformemente en la\nmucosa. No se identifican focos de displasia. \nDIAGNÓSTICO\nA. Mucosa gástrica de antro. lesión. Biopsia endoscópica. Estudio de\ninmunohistoquímica.\nPOLIPO FIBROIDE INFLAMATORIO. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---\nIHQ250179\nCopia Pag. 2 de 2\nNombre : WILSON CAICEDO CANGA\nN. peticion : IHQ250179\nN.Identificación : CC. 16476547\nGenero : MASCULINO\nEdad : 64 años 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOSE OMAR ZORILLA\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 17/02/2025\nFecha Informe : 05/03/2025\nB. Mucosa gástrica de cuerpo. Lesión. Biopsia endoscópica. Estudio de\ninmunohistoquímica.\nPOLIPO HAMARTOMATOSO. \nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3952,
+      "reduccion_porcentaje": 97.62
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250179",
+      "caso_num": 19,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_MUC2": "NEGATIVO",
+      "IHQ_MUC1": "POSITIVO DIFUSO",
+      "nombre_completo": "WILSON CAICEDO CANGA",
+      "numero_peticion": "IHQ250179",
+      "identificacion": "16476547",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "64",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JOSE OMAR ZORILLA",
+      "servicio": "TRAUMA Y REANIMACION",
+      "fecha_ingreso": "17/02/2025",
+      "fecha_informe": "05/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250179",
+      "N. de identificación": "16476547",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "TRAUMA Y REANIMACION",
+      "Médico tratante": "JOSE OMAR ZORILLA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "17/02/2025",
+      "Fecha Informe": "05/03/2025",
+      "nombres": "WILSON",
+      "Primer nombre": "WILSON",
+      "Segundo nombre": "",
+      "apellidos": "CAICEDO CANGA",
+      "Primer apellido": "CAICEDO",
+      "Segundo apellido": "CANGA",
+      "nombre_formal": "CAICEDO CANGA, WILSON",
+      "diagnostico": "A. Mucosa gástrica de antro. lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. POLIPO FIBROIDE INFLAMATORIO: 17/02/2025 B. Mucosa gástrica de cuerpo. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. POLIPO HAMARTOMATOSO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se realiza una revisión de niveles histológicos de los bloques A, B1 y B2 y tinciones de inmunohistoquímica encontrando: BLOQUE A: Lesión submucosa en forma polipoide compuesta por células estromales fusiformes y estrelladas sobre un estroma edematoso vascularizado e infiltrado inflamatorio rico en eosinófilos. Estas células son negativas para ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG1, S100. BLOQUE B 1 -2: Lesión polipoide con epitelio de tipo foveolar, corporal con proliferación muscular sobre la lámina propia superficial de forma discontinua asociado a edema estromal e infiltrado inflamatorio mixto. El epitelio demuestra inmunorreactiva positiva difusa en el epitelio para MUC1 y son negativas para MUC2, el índice de proliferación celular medido con KI-67 se distribuye uniformemente en la mucosa. No se identifican focos de displasia.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501541 A y B con rótulo correspondiente a \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\" con diagnóstico de \"A: Pólipo en antro y B: Pólipo en cuerpo\". Previa valoración de la coloración básica, se realizan cortes histológicos a los bloques A y B. A: ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG-1, S100. B1 -2: MUC 1, MUC 2, KI-67.",
+      "ihq_organo": "MUCOSA GÁSTRICA DE ANTRO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA DE ANTRO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: POSITIVO (distribución uniforme)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_KI-67": "POSITIVO (distribución uniforme)",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_DOG1": "NEGATIVO",
+      "IHQ_EMA": "NEGATIVO",
+      "extraction_timestamp": "2026-01-12T14:26:41.010612",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250179\nCopia Pag. 1 de 2\nNombre : WILSON CAICEDO CANGA\nN. peticion : IHQ250179\nN.Identificación : CC. 16476547\nGenero : MASCULINO\nEdad : 64 años 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOSE OMAR ZORILLA\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 17/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX POLIPO EN CUERPO Y\nANTRO GÁSTRICO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501541 A y B con\nrótulo correspondiente a \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\" con diagnóstico de “A:\nPólipo en antro y B: Pólipo en cuerpo”. Previa valoración de la coloración básica, se realizan cortes\nhistológicos a los bloques A y B. \nA: ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG-1, S100. \nB1 -2: MUC 1, MUC 2, Ki 67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nSe realiza una revisión de niveles histológicos de los bloques A, B1 y B2 y tinciones de\ninmunohistoquímica encontrando: \nBLOQUE A:\nLesión submucosa en forma polipoide compuesta por células estromales fusiformes y estrelladas\nsobre un estroma edematoso vascularizado e infiltrado inflamatorio rico en eosinófilos. \nEstas células son negativas para ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG1,\nS100. \nBLOQUE B 1 -2: \nLesión polipoide con epitelio de tipo foveolar, corporal con proliferación muscular sobre la lámina\npropia superficial de forma discontinua asociado a edema estromal e infiltrado inflamatorio mixto.\nEl epitelio demuestra inmunorreactiva positiva difusa en el epitelio para MUC1 y son negativas\npara MUC2, el índice de proliferación celular medido con Ki 67 se distribuye uniformemente en la\nmucosa. No se identifican focos de displasia. \nDIAGNÓSTICO\nA. Mucosa gástrica de antro. lesión. Biopsia endoscópica. Estudio de\ninmunohistoquímica.\nPOLIPO FIBROIDE INFLAMATORIO. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---\nIHQ250179\nCopia Pag. 2 de 2\nNombre : WILSON CAICEDO CANGA\nN. peticion : IHQ250179\nN.Identificación : CC. 16476547\nGenero : MASCULINO\nEdad : 64 años 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JOSE OMAR ZORILLA\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 17/02/2025\nFecha Informe : 05/03/2025\nB. Mucosa gástrica de cuerpo. Lesión. Biopsia endoscópica. Estudio de\ninmunohistoquímica.\nPOLIPO HAMARTOMATOSO. \nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "ACTINA DE MUSCULO LISO, CD117, CD34, DESMIN, DOG1, EMA, Ki-67, MUC1, MUC2, S100",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501541 A y B con rótulo correspondiente a \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\" con diagnóstico de “A: Pólipo en antro y B: Pólipo en cuerpo”. Previa valoración de la coloración básica, se realizan cortes histológicos a los bloques A y B. A: ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG-1, S100. B1 -2: MUC 1, MUC 2, Ki 67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se realiza una revisión de niveles histológicos de los bloques A, B1 y B2 y tinciones de inmunohistoquímica encontrando: BLOQUE A: Lesión submucosa en forma polipoide compuesta por células estromales fusiformes y estrelladas sobre un estroma edematoso vascularizado e infiltrado inflamatorio rico en eosinófilos. Estas células son negativas para ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG1, S100. BLOQUE B 1 -2: Lesión polipoide con epitelio de tipo foveolar, corporal con proliferación muscular sobre la lámina propia superficial de forma discontinua asociado a edema estromal e infiltrado inflamatorio mixto. El epitelio demuestra inmunorreactiva positiva difusa en el epitelio para MUC1 y son negativas para MUC2, el índice de proliferación celular medido con Ki 67 se distribuye uniformemente en la mucosa. No se identifican focos de displasia.",
+      "Descripcion Diagnostico": "A. Mucosa gástrica de antro. lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. POLIPO FIBROIDE INFLAMATORIO: 17/02/2025 B. Mucosa gástrica de cuerpo. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. POLIPO HAMARTOMATOSO.",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA DE ANTRO",
+      "Organo": "BX POLIPO EN CUERPO Y ANTRO GÁSTRICO",
+      "Diagnostico Coloracion": "A: PÓLIPO EN ANTRO Y B: PÓLIPO EN CUERPO",
+      "Diagnostico Principal": "POLIPO FIBROIDE INFLAMATORIO: 17/02/2025 B",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: POSITIVO (distribución uniforme)",
+      "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_DOG1": "NEGATIVO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_KI-67": "POSITIVO (distribución uniforme)",
+      "IHQ_MUC1": "POSITIVO DIFUSO",
+      "IHQ_MUC2": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 129,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Mucosa gástrica de antro. lesión. Biopsia endoscópica. Estudio de\ninmunohistoquímica.\nPOLIPO FIBROIDE INFLAMATORIO: 17/02/2025\nB. Mucosa gástrica de cuerpo. Lesión. Biopsia endoscópica. Estudio de\ninmunohistoquímica.\nPOLIPO HAMARTOMATOSO.",
+      "valor_corregido": "A. Mucosa gástrica de antro. lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. POLIPO FIBROIDE INFLAMATORIO: 17/02/2025 B. Mucosa gástrica de cuerpo. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. POLIPO HAMARTOMATOSO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250179",
+      "timestamp": "2026-01-12T14:26:41.010404"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501541 A y B con rótulo correspondiente a \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\" con diagnóstico de “A: Pólipo en antro y B: Pólipo en cuerpo”. Previa valoración de la coloración básica, se realizan cortes histológicos a los bloques A y B. A: ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG-1, S100. B1 -2: MUC 1, MUC 2, Ki 67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2501541 A y B con rótulo correspondiente a \"NEOPLASIA FUSOCELULAR DE BAJO GRADO\" con diagnóstico de \"A: Pólipo en antro y B: Pólipo en cuerpo\". Previa valoración de la coloración básica, se realizan cortes histológicos a los bloques A y B. A: ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG-1, S100. B1 -2: MUC 1, MUC 2, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250179",
+      "timestamp": "2026-01-12T14:26:41.010411"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se realiza una revisión de niveles histológicos de los bloques A, B1 y B2 y tinciones de inmunohistoquímica encontrando: BLOQUE A: Lesión submucosa en forma polipoide compuesta por células estromales fusiformes y estrelladas sobre un estroma edematoso vascularizado e infiltrado inflamatorio rico en eosinófilos. Estas células son negativas para ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG1, S100. BLOQUE B 1 -2: Lesión polipoide con epitelio de tipo foveolar, corporal con proliferación muscular sobre la lámina propia superficial de forma discontinua asociado a edema estromal e infiltrado inflamatorio mixto. El epitelio demuestra inmunorreactiva positiva difusa en el epitelio para MUC1 y son negativas para MUC2, el índice de proliferación celular medido con Ki 67 se distribuye uniformemente en la mucosa. No se identifican focos de displasia.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se realiza una revisión de niveles histológicos de los bloques A, B1 y B2 y tinciones de inmunohistoquímica encontrando: BLOQUE A: Lesión submucosa en forma polipoide compuesta por células estromales fusiformes y estrelladas sobre un estroma edematoso vascularizado e infiltrado inflamatorio rico en eosinófilos. Estas células son negativas para ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG1, S100. BLOQUE B 1 -2: Lesión polipoide con epitelio de tipo foveolar, corporal con proliferación muscular sobre la lámina propia superficial de forma discontinua asociado a edema estromal e infiltrado inflamatorio mixto. El epitelio demuestra inmunorreactiva positiva difusa en el epitelio para MUC1 y son negativas para MUC2, el índice de proliferación celular medido con KI-67 se distribuye uniformemente en la mucosa. No se identifican focos de displasia.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250179",
+      "timestamp": "2026-01-12T14:26:41.010413"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 55
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250104_20251219_220837",
+  "numero_peticion": "IHQ250104",
+  "timestamp": "2025-12-19T22:08:37.299820",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250104\nCopia Pag. 1 de 2\nNombre : JUAN ANGULO ANGULO\nN. peticion : IHQ250104\nN.Identificación : CC. 16484397\nGenero : MASCULINO\nEdad : 64 años 2 meses 6 dias\nEPS : COMFENALCO VALLE\nMédico tratante : CARLOS HERNAN MEJIA\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 29/01/2025\nFecha Informe : 31/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe para su estudio producto de biopsia del injerto renal por punción percutánea, dos\ncilindros de tejido, el mayor mide 1,2 x0,1 x 0,1 cm el cual se destinó para estudio de microscopía\nde luz, por lo que este material se fijó en formol-buffer al 10%, se incluyó en parafina y se\nrealizaron cortes que se tiñeron con Hematoxilina y Eosina, PAS, Tricrómico de Masson y\nMetenamina de Jones; además de inmunohistoquímica para SV40 y C4d.\nDESCRIPCIÓN MICROSCÓPICA\nLa muestra destinada para estudio de microscopía de luz corresponde a dos cilindros de\nparénquima renal (exclusivamente corteza) que en conjunto cuentan con 16 glomérulos por\nsección en total, ninguno de los glomerulos muestra esclerosis global. Los glomérulos analizables\nmuestran las asas capilares abiertas, con algunos segmentos dilatados y ectásicos. Hay escasas\ncélulas inflamatorias mononucleares con algunos neutrófilos en las luces (g1). Las membranas\nbasales glomerulares son en general homogéneas. Se observa fibrosis intersticial ni atrofia\ntubular asociada 15% (grado 0), (ci1) (ct1). Hay edema intersticial\ninfiltrado inflamatorio focal,\nsin tubulitis (t0) y sin capilaritis peritubular (ptc0). El epitelio tubular muestra vacuolización del\ncitoplasma, focalmente de tipo isométrico, con cambios regenerativos moderados. En las luces de\nlos tubulos se reconocen restos hemáticos . Los vasos arteriolares preglomerulares, intersticiales\ny las arterias de pequeño calibre, tienen engrosamiento leve de las paredes (ah1) e hipertrofia\nleve de la tunica media. No hay endotelitis ni endarteritis (v0). \nESTUDIOS DE INMUNOHISTOQUÍMICA EN TEJIDO DEL BLOQUE DE PARAFINA. \nSe efectuó marcación para C4d y SV40 (Poliomavirus) a través de la técnica de inmunoperoxidasa\nindirecta en el tejido del bloque de parafina, encontrándose\n- VER DESCRIPCIÓN MICROSCÓPICA Y NOTA.\nDIAGNÓSTICO\nBIOPSIA DEL INJERTO RENAL .\n LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHSITOQUÍMICA:\n- NECROSIS TUBULAR AGUDA CON CAMBIOS REGENERATIVOS MODERADOS Y VACUOLIZACIÓN\nISOMÉTRICA FOCAL DEL EPITELIO TUBULAR.\nCOMENTARIOS\nLos cambios morfológicos arriba descritos, aun sin ser específicos, en conjunto podrían sugerir\ntoxicidad por inhibidores de la calcineurina. No hay datos que apoyen la posibilidad de daño\ninmunológico (rechazo) en este momento.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---\nIHQ250104\nCopia Pag. 2 de 2\nNombre : JUAN ANGULO ANGULO\nN. peticion : IHQ250104\nN.Identificación : CC. 16484397\nGenero : MASCULINO\nEdad : 64 años 2 meses 6 dias\nEPS : COMFENALCO VALLE\nMédico tratante : CARLOS HERNAN MEJIA\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 29/01/2025\nFecha Informe : 31/01/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 90 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 4468,
+      "reduccion_porcentaje": 97.61
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250104",
+      "caso_num": 47,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "JUAN ANGULO ANGULO",
+      "numero_peticion": "IHQ250104",
+      "identificacion": "16484397",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "64",
+      "eps": "COMFENALCO VALLE",
+      "medico_tratante": "CARLOS HERNAN MEJIA",
+      "servicio": "HOSPITALIZACION TRASPLANTE HPB",
+      "fecha_ingreso": "29/01/2025",
+      "fecha_informe": "31/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250104",
+      "N. de identificación": "16484397",
+      "Tipo de documento": "CC",
+      "EPS": "COMFENALCO VALLE",
+      "Servicio": "HOSPITALIZACION TRASPLANTE HPB",
+      "Médico tratante": "CARLOS HERNAN MEJIA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "29/01/2025",
+      "Fecha Informe": "31/01/2025",
+      "nombres": "JUAN",
+      "Primer nombre": "JUAN",
+      "Segundo nombre": "",
+      "apellidos": "ANGULO ANGULO",
+      "Primer apellido": "ANGULO",
+      "Segundo apellido": "ANGULO",
+      "nombre_formal": "ANGULO ANGULO, JUAN",
+      "diagnostico": "BIOPSIA DEL INJERTO RENAL . LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHSITOQUÍMICA: - NECROSIS TUBULAR AGUDA CON CAMBIOS REGENERATIVOS MODERADOS Y VACUOLIZACIÓN ISOMÉTRICA FOCAL DEL EPITELIO TUBULAR.",
+      "descripcion_microscopica": "La muestra destinada para estudio de microscopía de luz corresponde a dos cilindros de parénquima renal (exclusivamente corteza) que en conjunto cuentan con 16 glomérulos por sección en total, ninguno de los glomerulos muestra esclerosis global. Los glomérulos analizables muestran las asas capilares abiertas, con algunos segmentos dilatados y ectásicos. Hay escasas células inflamatorias mononucleares con algunos neutrófilos en las luces (g1). Las membranas basales glomerulares son en general homogéneas. Se observa fibrosis intersticial ni atrofia tubular asociada 15% (grado 0), (ci1) (ct1). Hay edema intersticial infiltrado inflamatorio focal, sin tubulitis (t0) y sin capilaritis peritubular (ptc0). El epitelio tubular muestra vacuolización del citoplasma, focalmente de tipo isométrico, con cambios regenerativos moderados. En las luces de los tubulos se reconocen restos hemáticos . Los vasos arteriolares preglomerulares, intersticiales y las arterias de pequeño calibre, tienen engrosamiento leve de las paredes (ah1) e hipertrofia leve de la tunica media. No hay endotelitis ni endarteritis (v0). ESTUDIOS DE INMUNOHISTOQUÍMICA EN TEJIDO DEL BLOQUE DE PARAFINA. Se efectuó marcación para C4 d y SV40 (Poliomavirus) a través de la técnica de inmunoperoxidasa indirecta en el tejido del bloque de parafina, encontrándose - VER DESCRIPCIÓN MICROSCÓPICA Y NOTA.",
+      "descripcion_macroscopica": "Se recibe para su estudio producto de biopsia del injerto renal por punción percutánea, dos cilindros de tejido, el mayor mide 1,2 x0,1 x 0,1 cm el cual se destinó para estudio de microscopía de luz, por lo que este material se fijó en formol-buffer al 10%, se incluyó en parafina y se realizaron cortes que se tiñeron con Hematoxilina y Eosina, PAS, Tricrómico de Masson y Metenamina de Jones; además de inmunohistoquímica para SV40 y C4 d.",
+      "ihq_organo": "BIOPSIA DEL INJERTO RENAL",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "SV40, C4D",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Los cambios morfológicos arriba descritos, aun sin ser específicos, en conjunto podrían sugerir toxicidad por inhibidores de la calcineurina. No hay datos que apoyen la posibilidad de daño inmunológico (rechazo) en este momento.",
+      "IHQ_ORGANO": "BIOPSIA DEL INJERTO RENAL",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "extraction_timestamp": "2025-12-19T22:08:37.501415",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250104\nCopia Pag. 1 de 2\nNombre : JUAN ANGULO ANGULO\nN. peticion : IHQ250104\nN.Identificación : CC. 16484397\nGenero : MASCULINO\nEdad : 64 años 2 meses 6 dias\nEPS : COMFENALCO VALLE\nMédico tratante : CARLOS HERNAN MEJIA\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 29/01/2025\nFecha Informe : 31/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe para su estudio producto de biopsia del injerto renal por punción percutánea, dos\ncilindros de tejido, el mayor mide 1,2 x0,1 x 0,1 cm el cual se destinó para estudio de microscopía\nde luz, por lo que este material se fijó en formol-buffer al 10%, se incluyó en parafina y se\nrealizaron cortes que se tiñeron con Hematoxilina y Eosina, PAS, Tricrómico de Masson y\nMetenamina de Jones; además de inmunohistoquímica para SV40 y C4d.\nDESCRIPCIÓN MICROSCÓPICA\nLa muestra destinada para estudio de microscopía de luz corresponde a dos cilindros de\nparénquima renal (exclusivamente corteza) que en conjunto cuentan con 16 glomérulos por\nsección en total, ninguno de los glomerulos muestra esclerosis global. Los glomérulos analizables\nmuestran las asas capilares abiertas, con algunos segmentos dilatados y ectásicos. Hay escasas\ncélulas inflamatorias mononucleares con algunos neutrófilos en las luces (g1). Las membranas\nbasales glomerulares son en general homogéneas. Se observa fibrosis intersticial ni atrofia\ntubular asociada 15% (grado 0), (ci1) (ct1). Hay edema intersticial\ninfiltrado inflamatorio focal,\nsin tubulitis (t0) y sin capilaritis peritubular (ptc0). El epitelio tubular muestra vacuolización del\ncitoplasma, focalmente de tipo isométrico, con cambios regenerativos moderados. En las luces de\nlos tubulos se reconocen restos hemáticos . Los vasos arteriolares preglomerulares, intersticiales\ny las arterias de pequeño calibre, tienen engrosamiento leve de las paredes (ah1) e hipertrofia\nleve de la tunica media. No hay endotelitis ni endarteritis (v0). \nESTUDIOS DE INMUNOHISTOQUÍMICA EN TEJIDO DEL BLOQUE DE PARAFINA. \nSe efectuó marcación para C4d y SV40 (Poliomavirus) a través de la técnica de inmunoperoxidasa\nindirecta en el tejido del bloque de parafina, encontrándose\n- VER DESCRIPCIÓN MICROSCÓPICA Y NOTA.\nDIAGNÓSTICO\nBIOPSIA DEL INJERTO RENAL .\n LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHSITOQUÍMICA:\n- NECROSIS TUBULAR AGUDA CON CAMBIOS REGENERATIVOS MODERADOS Y VACUOLIZACIÓN\nISOMÉTRICA FOCAL DEL EPITELIO TUBULAR.\nCOMENTARIOS\nLos cambios morfológicos arriba descritos, aun sin ser específicos, en conjunto podrían sugerir\ntoxicidad por inhibidores de la calcineurina. No hay datos que apoyen la posibilidad de daño\ninmunológico (rechazo) en este momento.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---\nIHQ250104\nCopia Pag. 2 de 2\nNombre : JUAN ANGULO ANGULO\nN. peticion : IHQ250104\nN.Identificación : CC. 16484397\nGenero : MASCULINO\nEdad : 64 años 2 meses 6 dias\nEPS : COMFENALCO VALLE\nMédico tratante : CARLOS HERNAN MEJIA\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 29/01/2025\nFecha Informe : 31/01/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 90 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "SV40, C4D",
+      "Descripcion macroscopica": "Se recibe para su estudio producto de biopsia del injerto renal por punción percutánea, dos cilindros de tejido, el mayor mide 1,2 x0,1 x 0,1 cm el cual se destinó para estudio de microscopía de luz, por lo que este material se fijó en formol-buffer al 10%, se incluyó en parafina y se realizaron cortes que se tiñeron con Hematoxilina y Eosina, PAS, Tricrómico de Masson y Metenamina de Jones; además de inmunohistoquímica para SV40 y C4d.",
+      "Descripcion microscopica": "La muestra destinada para estudio de microscopía de luz corresponde a dos cilindros de parénquima renal (exclusivamente corteza) que en conjunto cuentan con 16 glomérulos por sección en total, ninguno de los glomerulos muestra esclerosis global. Los glomérulos analizables muestran las asas capilares abiertas, con algunos segmentos dilatados y ectásicos. Hay escasas células inflamatorias mononucleares con algunos neutrófilos en las luces (g1). Las membranas basales glomerulares son en general homogéneas. Se observa fibrosis intersticial ni atrofia tubular asociada 15% (grado 0), (ci1) (ct1). Hay edema intersticial infiltrado inflamatorio focal, sin tubulitis (t0) y sin capilaritis peritubular (ptc0). El epitelio tubular muestra vacuolización del citoplasma, focalmente de tipo isométrico, con cambios regenerativos moderados. En las luces de los tubulos se reconocen restos hemáticos . Los vasos arteriolares preglomerulares, intersticiales y las arterias de pequeño calibre, tienen engrosamiento leve de las paredes (ah1) e hipertrofia leve de la tunica media. No hay endotelitis ni endarteritis (v0). ESTUDIOS DE INMUNOHISTOQUÍMICA EN TEJIDO DEL BLOQUE DE PARAFINA. Se efectuó marcación para C4d y SV40 (Poliomavirus) a través de la técnica de inmunoperoxidasa indirecta en el tejido del bloque de parafina, encontrándose - VER DESCRIPCIÓN MICROSCÓPICA Y NOTA.",
+      "Descripcion Diagnostico": "BIOPSIA DEL INJERTO RENAL . LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHSITOQUÍMICA: - NECROSIS TUBULAR AGUDA CON CAMBIOS REGENERATIVOS MODERADOS Y VACUOLIZACIÓN ISOMÉTRICA FOCAL DEL EPITELIO TUBULAR.",
+      "IHQ_ORGANO": "BIOPSIA DEL INJERTO RENAL",
+      "Organo": "BIOPSIA DEL INJERTO RENAL",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "BIOPSIA DEL INJERTO RENAL . LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHSITOQUÍMICA: - NECROSIS TUBULAR AGUDA CON CAMBIOS REGENERATIVOS MODERADOS Y VACUOLIZACIÓN ISOMÉTRICA FOCAL DEL EPITELIO TUBULAR",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_SV40": "NO MENCIONADO",
+      "IHQ_C4D": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 158,
+      "campos_vacios": 122,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 22.78
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 122,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "BIOPSIA DEL INJERTO RENAL .\n LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHSITOQUÍMICA:\n- NECROSIS TUBULAR AGUDA CON CAMBIOS REGENERATIVOS MODERADOS Y VACUOLIZACIÓN\nISOMÉTRICA FOCAL DEL EPITELIO TUBULAR.",
+      "valor_corregido": "BIOPSIA DEL INJERTO RENAL . LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHSITOQUÍMICA: - NECROSIS TUBULAR AGUDA CON CAMBIOS REGENERATIVOS MODERADOS Y VACUOLIZACIÓN ISOMÉTRICA FOCAL DEL EPITELIO TUBULAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250104",
+      "timestamp": "2025-12-19T22:08:37.501163"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe para su estudio producto de biopsia del injerto renal por punción percutánea, dos cilindros de tejido, el mayor mide 1,2 x0,1 x 0,1 cm el cual se destinó para estudio de microscopía de luz, por lo que este material se fijó en formol-buffer al 10%, se incluyó en parafina y se realizaron cortes que se tiñeron con Hematoxilina y Eosina, PAS, Tricrómico de Masson y Metenamina de Jones; además de inmunohistoquímica para SV40 y C4d.",
+      "valor_corregido": "Se recibe para su estudio producto de biopsia del injerto renal por punción percutánea, dos cilindros de tejido, el mayor mide 1,2 x0,1 x 0,1 cm el cual se destinó para estudio de microscopía de luz, por lo que este material se fijó en formol-buffer al 10%, se incluyó en parafina y se realizaron cortes que se tiñeron con Hematoxilina y Eosina, PAS, Tricrómico de Masson y Metenamina de Jones; además de inmunohistoquímica para SV40 y C4 d.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250104",
+      "timestamp": "2025-12-19T22:08:37.501170"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "La muestra destinada para estudio de microscopía de luz corresponde a dos cilindros de parénquima renal (exclusivamente corteza) que en conjunto cuentan con 16 glomérulos por sección en total, ninguno de los glomerulos muestra esclerosis global. Los glomérulos analizables muestran las asas capilares abiertas, con algunos segmentos dilatados y ectásicos. Hay escasas células inflamatorias mononucleares con algunos neutrófilos en las luces (g1). Las membranas basales glomerulares son en general homogéneas. Se observa fibrosis intersticial ni atrofia tubular asociada 15% (grado 0), (ci1) (ct1). Hay edema intersticial infiltrado inflamatorio focal, sin tubulitis (t0) y sin capilaritis peritubular (ptc0). El epitelio tubular muestra vacuolización del citoplasma, focalmente de tipo isométrico, con cambios regenerativos moderados. En las luces de los tubulos se reconocen restos hemáticos . Los vasos arteriolares preglomerulares, intersticiales y las arterias de pequeño calibre, tienen engrosamiento leve de las paredes (ah1) e hipertrofia leve de la tunica media. No hay endotelitis ni endarteritis (v0). ESTUDIOS DE INMUNOHISTOQUÍMICA EN TEJIDO DEL BLOQUE DE PARAFINA. Se efectuó marcación para C4d y SV40 (Poliomavirus) a través de la técnica de inmunoperoxidasa indirecta en el tejido del bloque de parafina, encontrándose - VER DESCRIPCIÓN MICROSCÓPICA Y NOTA.",
+      "valor_corregido": "La muestra destinada para estudio de microscopía de luz corresponde a dos cilindros de parénquima renal (exclusivamente corteza) que en conjunto cuentan con 16 glomérulos por sección en total, ninguno de los glomerulos muestra esclerosis global. Los glomérulos analizables muestran las asas capilares abiertas, con algunos segmentos dilatados y ectásicos. Hay escasas células inflamatorias mononucleares con algunos neutrófilos en las luces (g1). Las membranas basales glomerulares son en general homogéneas. Se observa fibrosis intersticial ni atrofia tubular asociada 15% (grado 0), (ci1) (ct1). Hay edema intersticial infiltrado inflamatorio focal, sin tubulitis (t0) y sin capilaritis peritubular (ptc0). El epitelio tubular muestra vacuolización del citoplasma, focalmente de tipo isométrico, con cambios regenerativos moderados. En las luces de los tubulos se reconocen restos hemáticos . Los vasos arteriolares preglomerulares, intersticiales y las arterias de pequeño calibre, tienen engrosamiento leve de las paredes (ah1) e hipertrofia leve de la tunica media. No hay endotelitis ni endarteritis (v0). ESTUDIOS DE INMUNOHISTOQUÍMICA EN TEJIDO DEL BLOQUE DE PARAFINA. Se efectuó marcación para C4 d y SV40 (Poliomavirus) a través de la técnica de inmunoperoxidasa indirecta en el tejido del bloque de parafina, encontrándose - VER DESCRIPCIÓN MICROSCÓPICA Y NOTA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250104",
+      "timestamp": "2025-12-19T22:08:37.501171"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los cambios morfológicos arriba descritos, aun sin ser específicos, en conjunto podrían sugerir\ntoxicidad por inhibidores de la calcineurina. No hay datos que apoyen la posibilidad de daño\ninmunológico (rechazo) en este momento.",
+      "valor_corregido": "Los cambios morfológicos arriba descritos, aun sin ser específicos, en conjunto podrían sugerir toxicidad por inhibidores de la calcineurina. No hay datos que apoyen la posibilidad de daño inmunológico (rechazo) en este momento.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250104",
+      "timestamp": "2025-12-19T22:08:37.501173"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 47
+  }
+}

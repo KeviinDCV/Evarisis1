@@ -1,0 +1,154 @@
+{
+  "session_id": "IHQ250071_20251219_234838",
+  "numero_peticion": "IHQ250071",
+  "timestamp": "2025-12-19T23:48:38.398960",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250071\nCopia Pag. 1 de 1\nNombre : ARGENIS OSPINA ALCARAZ\nN. peticion : IHQ250071\nN.Identificación : CC. 29899424\nGenero : FEMENINO\nEdad : 60 años 5 meses 5 dias\nEPS : NUEVA EPS\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 22/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloquea externo 24-2532, el cual corresponde a biopsia de mama\nizquierda, con diagnóstico de \"NEOPLASIA FIBROEPITELIAL DE COMPORTAMIENTO BIOLÓGICO POR\nDETERMINAR (ANTECEDENTE DE RESECCIÓN DE TUMOR PHYLLODES\". Se ordenan los siguientes\nmarcadores: p63, CD117 y KI-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células neoplasicas no presentan inmunotinción con p53 ni CD117 (cKIT). El índice de proliferación\ncelular medido por Ki-67 es bajo (menos del 10%).\nDIAGNÓSTICO\n Mama izquierda. Antecedente de resección tumor filodes. Biopsia por Trucut. Estudios de\ninmunohistoquímica:\nTUMOR FILODES DE BAJO GRADO\nCOMENTARIOS\nSi bien la literatura establece que la negatividad a los inmunomarcadores descritos asociado al\ndisminuído índice de proliferación celular confiere un comportamiento neoplásico de bajo grado, el\ndiagnóstico definitivo deberá hacerse en especimen de resección.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 2719,
+      "reduccion_porcentaje": 98.55
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250071",
+      "caso_num": 18,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ARGENIS OSPINA ALCARAZ",
+      "numero_peticion": "IHQ250071",
+      "identificacion": "29899424",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "60",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "URIEL CARDONA NUÑEZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "22/01/2025",
+      "fecha_informe": "04/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250071",
+      "N. de identificación": "29899424",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "URIEL CARDONA NUÑEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "22/01/2025",
+      "Fecha Informe": "04/02/2025",
+      "nombres": "ARGENIS",
+      "Primer nombre": "ARGENIS",
+      "Segundo nombre": "",
+      "apellidos": "ARGENIS OSPINA ALCARAZ",
+      "Primer apellido": "ARGENIS",
+      "Segundo apellido": "OSPINA ALCARAZ",
+      "nombre_formal": "ARGENIS OSPINA ALCARAZ, ARGENIS",
+      "diagnostico": "Mama izquierda. Antecedente de resección tumor filodes. Biopsia por Trucut. Estudios de inmunohistoquímica: TUMOR FILODES DE BAJO GRADO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplasicas no presentan inmunotinción con p53 ni CD117 (cKIT). El índice de proliferación celular medido por KI-67 es bajo (menos del 10%).",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloquea externo 24-2532, el cual corresponde a biopsia de mama izquierda, con diagnóstico de \"NEOPLASIA FIBROEPITELIAL DE COMPORTAMIENTO BIOLÓGICO POR DETERMINAR (ANTECEDENTE DE RESECCIÓN DE TUMOR PHYLLODES\". Se ordenan los siguientes marcadores: p63, CD117 y KI-67.",
+      "ihq_organo": "MAMA IZQUIERDA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P63, CD117, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Si bien la literatura establece que la negatividad a los inmunomarcadores descritos asociado al disminuído índice de proliferación celular confiere un comportamiento neoplásico de bajo grado, el diagnóstico definitivo deberá hacerse en especimen de resección.",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: <10%",
+      "IHQ_KI-67": "<10%",
+      "IHQ_P63": "NEGATIVO",
+      "IHQ_CD117": "NEGATIVO",
+      "extraction_timestamp": "2025-12-19T23:48:38.553703",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250071\nCopia Pag. 1 de 1\nNombre : ARGENIS OSPINA ALCARAZ\nN. peticion : IHQ250071\nN.Identificación : CC. 29899424\nGenero : FEMENINO\nEdad : 60 años 5 meses 5 dias\nEPS : NUEVA EPS\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 22/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloquea externo 24-2532, el cual corresponde a biopsia de mama\nizquierda, con diagnóstico de \"NEOPLASIA FIBROEPITELIAL DE COMPORTAMIENTO BIOLÓGICO POR\nDETERMINAR (ANTECEDENTE DE RESECCIÓN DE TUMOR PHYLLODES\". Se ordenan los siguientes\nmarcadores: p63, CD117 y KI-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células neoplasicas no presentan inmunotinción con p53 ni CD117 (cKIT). El índice de proliferación\ncelular medido por Ki-67 es bajo (menos del 10%).\nDIAGNÓSTICO\n Mama izquierda. Antecedente de resección tumor filodes. Biopsia por Trucut. Estudios de\ninmunohistoquímica:\nTUMOR FILODES DE BAJO GRADO\nCOMENTARIOS\nSi bien la literatura establece que la negatividad a los inmunomarcadores descritos asociado al\ndisminuído índice de proliferación celular confiere un comportamiento neoplásico de bajo grado, el\ndiagnóstico definitivo deberá hacerse en especimen de resección.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CD117, Ki-67",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloquea externo 24-2532, el cual corresponde a biopsia de mama izquierda, con diagnóstico de \"NEOPLASIA FIBROEPITELIAL DE COMPORTAMIENTO BIOLÓGICO POR DETERMINAR (ANTECEDENTE DE RESECCIÓN DE TUMOR PHYLLODES\". Se ordenan los siguientes marcadores: p63, CD117 y KI-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplasicas no presentan inmunotinción con p53 ni CD117 (cKIT). El índice de proliferación celular medido por Ki-67 es bajo (menos del 10%).",
+      "Descripcion Diagnostico": "Mama izquierda. Antecedente de resección tumor filodes. Biopsia por Trucut. Estudios de inmunohistoquímica: TUMOR FILODES DE BAJO GRADO",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Organo": "BX MAMA IZQUIERDA",
+      "Diagnostico Coloracion": "NEOPLASIA FIBROEPITELIAL DE COMPORTAMIENTO BIOLÓGICO POR DETERMINAR (ANTECEDENTE DE RESECCIÓN DE TUMOR PHYLLODES",
+      "Diagnostico Principal": "TUMOR FILODES DE BAJO",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: <10%",
+      "IHQ_P63": "NEGATIVO",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_KI-67": "<10%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 159,
+      "campos_vacios": 122,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 23.27
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 122,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama izquierda. Antecedente de resección tumor filodes. Biopsia por Trucut. Estudios de\ninmunohistoquímica:\nTUMOR FILODES DE BAJO GRADO",
+      "valor_corregido": "Mama izquierda. Antecedente de resección tumor filodes. Biopsia por Trucut. Estudios de inmunohistoquímica: TUMOR FILODES DE BAJO GRADO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250071",
+      "timestamp": "2025-12-19T23:48:38.553415"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplasicas no presentan inmunotinción con p53 ni CD117 (cKIT). El índice de proliferación celular medido por Ki-67 es bajo (menos del 10%).",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplasicas no presentan inmunotinción con p53 ni CD117 (cKIT). El índice de proliferación celular medido por KI-67 es bajo (menos del 10%).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250071",
+      "timestamp": "2025-12-19T23:48:38.553421"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Si bien la literatura establece que la negatividad a los inmunomarcadores descritos asociado al\ndisminuído índice de proliferación celular confiere un comportamiento neoplásico de bajo grado, el\ndiagnóstico definitivo deberá hacerse en especimen de resección.",
+      "valor_corregido": "Si bien la literatura establece que la negatividad a los inmunomarcadores descritos asociado al disminuído índice de proliferación celular confiere un comportamiento neoplásico de bajo grado, el diagnóstico definitivo deberá hacerse en especimen de resección.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250071",
+      "timestamp": "2025-12-19T23:48:38.553423"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 50
+  }
+}

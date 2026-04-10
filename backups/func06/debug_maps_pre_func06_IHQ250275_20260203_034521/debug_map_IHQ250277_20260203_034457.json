@@ -1,0 +1,200 @@
+{
+  "session_id": "IHQ250277_20260203_034457",
+  "numero_peticion": "IHQ250277",
+  "timestamp": "2026-02-03T03:44:57.319915",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250277\nCopia Pag. 1 de 2\nNombre : ROSA EMILIA SUAREZ\nN. peticion : IHQ250277\nN.Identificación : CC. 29393240\nGenero : FEMENINO\nEdad : 72 años 2 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 17/03/2025\nFecha Informe : 08/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX IMPLANTE PERITONEAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2502731 ”que corresponde a “biopsia implante peritonea” con diagnóstico de\n“CARCINOMA\nEPIDERMOIDE\nPOBREMENTE\nDIFERENCIADO\nMETASTASICO,\nREQUIERE\nCONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA. ”. Previa revisión de la histología, se\nrealizan\nniveles\nhistológicos\npara\ntinción\ncon:\nCalretinina,\nWT1,\nKi67,\nVimentina,\nCD68,\nCaldesmon, p63, Sinaptofisina, SMA, CD34, CD31, Myo D1, LCA, CKAE1E3, CD10, EMA, S100,\nMelan A, CD1a, CD99, P16, Desmina, Cromogramina, ALK-01, SOX10, p40, CD31.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales presentan inmunoreactividad POSITIVA para: CD34 focal, Vimentina, H-\nCaldesmon, CD31. Con marcación positiva focal\nen membrana para Wt1. Las células tumorales\nno presentan inmunoreactividad para: SOX10, S100, MELAN A, CROMOGRAMINA, SINAPTOFISINA,\nCD99, p40, P16, CKAE1/AE3, EMA, ALK 01, CD1a, Actina de musculo liso, LCA, p63, Desmina,\nCalretinina, CD68. El índice de proliferación (ki67) es del 70%\nDIAGNÓSTICO\nImplantes peritoneales. Estudios de inmunohistoquímica. \nLOS\nHALLAZGOS\nMORFOLÓGICOS\nY\nESTUDIOS\nDE\nINMUNOHISTOQUIMICA\nFAVORECEN\nUN\nANGIOSARCOMA.\nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Jorge moreno (patólogo). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---\nIHQ250277\nCopia Pag. 2 de 2\nNombre : ROSA EMILIA SUAREZ\nN. peticion : IHQ250277\nN.Identificación : CC. 29393240\nGenero : FEMENINO\nEdad : 72 años 2 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 17/03/2025\nFecha Informe : 08/04/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3660,
+      "reduccion_porcentaje": 97.9
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250277",
+      "caso_num": 14,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO (focal)",
+      "IHQ_H_CALDESMON": "POSITIVO (focal)",
+      "IHQ_WT1": "POSITIVO (focal)",
+      "nombre_completo": "ROSA EMILIA SUAREZ",
+      "numero_peticion": "IHQ250277",
+      "identificacion": "29393240",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "72",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ADRIANA MAYOR BARRERA",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "17/03/2025",
+      "fecha_informe": "08/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250277",
+      "N. de identificación": "29393240",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "ADRIANA MAYOR BARRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "17/03/2025",
+      "Fecha Informe": "08/04/2025",
+      "nombres": "ROSA EMILIA",
+      "Primer nombre": "ROSA",
+      "Segundo nombre": "EMILIA",
+      "apellidos": "SUAREZ",
+      "Primer apellido": "SUAREZ",
+      "Segundo apellido": "",
+      "nombre_formal": "SUAREZ, ROSA EMILIA",
+      "diagnostico": "Implantes peritoneales. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA FAVORECEN UN ANGIOSARCOMA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunoreactividad POSITIVA para: CD34 focal, Vimentina, H- Caldesmon, CD31. Con marcación positiva focal en membrana para Wt1. Las células tumorales no presentan inmunoreactividad para: SOX10, S100, MELAN A, CROMOGRAMINA, SYNAPTOPHYSIN, CD99, p40, p16, CKAE1/AE3, EMA, ALK 01, CD1a, Actina de musculo liso, LCA, p63, Desmina, Calretinina, CD68. El índice de proliferación (KI-67) es del 70%",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502731 \"que corresponde a \"biopsia implante peritonea\" con diagnóstico de \"CARCINOMA EPIDERMOIDE POBREMENTE DIFERENCIADO METASTASICO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA. \". Previa revisión de la histología, se realizan niveles histológicos para tinción con: Calretinina, WT1, KI-67, Vimentina, CD68, Caldesmon, p63, Synaptophysin, SMA, CD34, CD31, Myo D1, LCA, CKAE1E3, CD10, EMA, S100, Melan A, CD1a, CD99, p16, Desmina, Cromogramina, ALK-01, SOX10, p40, CD31.",
+      "ihq_organo": "IMPLANTES PERITONEALES",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CALRETININA, WT1, Ki-67, VIMENTINA, CD68, CALDESMON, P63, SYNAPTOFISINA, SMA, CD34, CD31, MYO D1, LCA, CKAE1E3, CD10, EMA, S100, MELAN A, CD1A, CD99, P16, DESMINA, CROMOGRAMINA, ALK 01, SOX10, P40",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con el Dr. Jorge moreno (patólogo). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 27 --- IHQ250277 Copia Pag. 2 de 2 Nombre : ROSA EMILIA SUAREZ N. peticion : IHQ250277 N.Identificación : CC. 29393240 Genero : FEMENINO Edad : 72 años 2 meses 14 dias EPS : NUEVA EPS Médico tratante : ADRIANA MAYOR BARRERA Servicio : ALTO RIESGO OBSTETRICO Fecha Ingreso : 17/03/2025 Fecha Informe : 08/04/2025",
+      "IHQ_ORGANO": "IMPLANTES PERITONEALES",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CALRETININA, WT1, Ki-67, VIMENTINA, CD68, CALDESMON, P63, SYNAPTOFISINA, SMA, CD34, CD31, MYO D1, LCA, CKAE1E3, CD10, EMA, S100, MELAN A, CD1A, CD99, P16, DESMINA, CROMOGRAMINA, ALK 01, SOX10, P40",
+      "IHQ_P40_ESTADO": "POSITIVO (POSITIVA PARA: CD34 FOCAL, VIMENTINA, H- CALDESMON, CD31. CON MARCACIÓN POSITIVA FOCAL EN MEMBRANA PARA WT1. LAS CÉLULAS TUMORALES NO PRESENTAN INMUNOREACTIVIDAD PARA: SOX10, S100, MELAN A, CROMOGRAMINA, SYNAPTOPHYSIN, CD99, p40)",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CALRETININA": "POSITIVO",
+      "p40": "POSITIVO (POSITIVA PARA: CD34 FOCAL, VIMENTINA, H- CALDESMON, CD31. CON MARCACIÓN POSITIVA FOCAL EN MEMBRANA PARA WT1. LAS CÉLULAS TUMORALES NO PRESENTAN INMUNOREACTIVIDAD PARA: SOX10, S100, MELAN A, CROMOGRAMINA, SINAPTOFISINA, CD99, P40)",
+      "extraction_timestamp": "2026-02-03T03:44:57.856370",
+      "extractor_version": "6.5.90_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250277\nCopia Pag. 1 de 2\nNombre : ROSA EMILIA SUAREZ\nN. peticion : IHQ250277\nN.Identificación : CC. 29393240\nGenero : FEMENINO\nEdad : 72 años 2 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 17/03/2025\nFecha Informe : 08/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX IMPLANTE PERITONEAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como\n“M2502731 ”que corresponde a “biopsia implante peritonea” con diagnóstico de\n“CARCINOMA\nEPIDERMOIDE\nPOBREMENTE\nDIFERENCIADO\nMETASTASICO,\nREQUIERE\nCONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA. ”. Previa revisión de la histología, se\nrealizan\nniveles\nhistológicos\npara\ntinción\ncon:\nCalretinina,\nWT1,\nKi67,\nVimentina,\nCD68,\nCaldesmon, p63, Sinaptofisina, SMA, CD34, CD31, Myo D1, LCA, CKAE1E3, CD10, EMA, S100,\nMelan A, CD1a, CD99, P16, Desmina, Cromogramina, ALK-01, SOX10, p40, CD31.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales presentan inmunoreactividad POSITIVA para: CD34 focal, Vimentina, H-\nCaldesmon, CD31. Con marcación positiva focal\nen membrana para Wt1. Las células tumorales\nno presentan inmunoreactividad para: SOX10, S100, MELAN A, CROMOGRAMINA, SINAPTOFISINA,\nCD99, p40, P16, CKAE1/AE3, EMA, ALK 01, CD1a, Actina de musculo liso, LCA, p63, Desmina,\nCalretinina, CD68. El índice de proliferación (ki67) es del 70%\nDIAGNÓSTICO\nImplantes peritoneales. Estudios de inmunohistoquímica. \nLOS\nHALLAZGOS\nMORFOLÓGICOS\nY\nESTUDIOS\nDE\nINMUNOHISTOQUIMICA\nFAVORECEN\nUN\nANGIOSARCOMA.\nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Jorge moreno (patólogo). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---\nIHQ250277\nCopia Pag. 2 de 2\nNombre : ROSA EMILIA SUAREZ\nN. peticion : IHQ250277\nN.Identificación : CC. 29393240\nGenero : FEMENINO\nEdad : 72 años 2 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 17/03/2025\nFecha Informe : 08/04/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CALRETININA, WT1, Ki-67, VIMENTINA, CD68, CALDESMON, P63, SYNAPTOFISINA, SMA, CD34, CD31, MYO D1, LCA, CKAE1AE3, CD10, EMA, S100, MELAN A, CD1A, CD99, P16, DESMINA, CROMOGRAMINA, ALK 01, SOX10, P40, H_CALDESMON",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502731 ”que corresponde a “biopsia implante peritonea” con diagnóstico de “CARCINOMA EPIDERMOIDE POBREMENTE DIFERENCIADO METASTASICO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA. ”. Previa revisión de la histología, se realizan niveles histológicos para tinción con: Calretinina, WT1, Ki67, Vimentina, CD68, Caldesmon, p63, Sinaptofisina, SMA, CD34, CD31, Myo D1, LCA, CKAE1E3, CD10, EMA, S100, Melan A, CD1a, CD99, P16, Desmina, Cromogramina, ALK-01, SOX10, p40, CD31.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunoreactividad POSITIVA para: CD34 focal, Vimentina, H- Caldesmon, CD31. Con marcación positiva focal en membrana para Wt1. Las células tumorales no presentan inmunoreactividad para: SOX10, S100, MELAN A, CROMOGRAMINA, SINAPTOFISINA, CD99, p40, P16, CKAE1/AE3, EMA, ALK 01, CD1a, Actina de musculo liso, LCA, p63, Desmina, Calretinina, CD68. El índice de proliferación (ki67) es del 70%",
+      "Descripcion Diagnostico": "Implantes peritoneales. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA FAVORECEN UN ANGIOSARCOMA.",
+      "IHQ_ORGANO": "IMPLANTES PERITONEALES",
+      "Organo": "BX IMPLANTE PERITONEAL",
+      "Diagnostico Coloracion": "CARCINOMA EPIDERMOIDE POBREMENTE DIFERENCIADO METASTASICO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA FAVORECEN UN ANGIOSARCOMA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CALRETININA": "POSITIVO",
+      "IHQ_WT1": "POSITIVO (focal)",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_VIMENTINA": "POSITIVO (focal)",
+      "IHQ_CD68": "NO MENCIONADO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_SMA": "NO MENCIONADO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD3": "",
+      "IHQ_MYOD1": "NO MENCIONADO",
+      "IHQ_CKAE1AE3": "NO MENCIONADO",
+      "IHQ_CD10": "NO MENCIONADO",
+      "IHQ_EMA": "NO MENCIONADO",
+      "IHQ_S100": "NO MENCIONADO",
+      "IHQ_MELAN_A": "NO MENCIONADO",
+      "IHQ_CD1A": "NO MENCIONADO",
+      "IHQ_CD99": "NO MENCIONADO",
+      "IHQ_P16_ESTADO": "NO MENCIONADO",
+      "IHQ_DESMIN": "",
+      "IHQ_SOX10": "NO MENCIONADO",
+      "IHQ_P40_ESTADO": "POSITIVO (POSITIVA PARA: CD34 FOCAL, VIMENTINA, H- CALDESMON, CD31. CON MARCACIÓN POSITIVA FOCAL EN MEMBRANA PARA WT1. LAS CÉLULAS TUMORALES NO PRESENTAN INMUNOREACTIVIDAD PARA: SOX10, S100, MELAN A, CROMOGRAMINA, SYNAPTOPHYSIN, CD99, p40)",
+      "IHQ_H_CALDESMON": "POSITIVO (focal)",
+      "IHQ_SINAPTOFISINA": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 121,
+      "campos_completos": 55,
+      "biomarcadores_encontrados": 21,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 121,
+      "total_campos_completos": 55
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Implantes peritoneales. Estudios de inmunohistoquímica. \nLOS\nHALLAZGOS\nMORFOLÓGICOS\nY\nESTUDIOS\nDE\nINMUNOHISTOQUIMICA\nFAVORECEN\nUN\nANGIOSARCOMA.",
+      "valor_corregido": "Implantes peritoneales. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA FAVORECEN UN ANGIOSARCOMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250277",
+      "timestamp": "2026-02-03T03:44:57.856058"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502731 ”que corresponde a “biopsia implante peritonea” con diagnóstico de “CARCINOMA EPIDERMOIDE POBREMENTE DIFERENCIADO METASTASICO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA. ”. Previa revisión de la histología, se realizan niveles histológicos para tinción con: Calretinina, WT1, Ki67, Vimentina, CD68, Caldesmon, p63, Sinaptofisina, SMA, CD34, CD31, Myo D1, LCA, CKAE1E3, CD10, EMA, S100, Melan A, CD1a, CD99, P16, Desmina, Cromogramina, ALK-01, SOX10, p40, CD31.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502731 \"que corresponde a \"biopsia implante peritonea\" con diagnóstico de \"CARCINOMA EPIDERMOIDE POBREMENTE DIFERENCIADO METASTASICO, REQUIERE CONFIRMACIÓN CON ESTUDIOS DE INMUNOHISTOQUÍMICA. \". Previa revisión de la histología, se realizan niveles histológicos para tinción con: Calretinina, WT1, KI-67, Vimentina, CD68, Caldesmon, p63, Synaptophysin, SMA, CD34, CD31, Myo D1, LCA, CKAE1E3, CD10, EMA, S100, Melan A, CD1a, CD99, p16, Desmina, Cromogramina, ALK-01, SOX10, p40, CD31.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250277",
+      "timestamp": "2026-02-03T03:44:57.856067"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunoreactividad POSITIVA para: CD34 focal, Vimentina, H- Caldesmon, CD31. Con marcación positiva focal en membrana para Wt1. Las células tumorales no presentan inmunoreactividad para: SOX10, S100, MELAN A, CROMOGRAMINA, SINAPTOFISINA, CD99, p40, P16, CKAE1/AE3, EMA, ALK 01, CD1a, Actina de musculo liso, LCA, p63, Desmina, Calretinina, CD68. El índice de proliferación (ki67) es del 70%",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunoreactividad POSITIVA para: CD34 focal, Vimentina, H- Caldesmon, CD31. Con marcación positiva focal en membrana para Wt1. Las células tumorales no presentan inmunoreactividad para: SOX10, S100, MELAN A, CROMOGRAMINA, SYNAPTOPHYSIN, CD99, p40, p16, CKAE1/AE3, EMA, ALK 01, CD1a, Actina de musculo liso, LCA, p63, Desmina, Calretinina, CD68. El índice de proliferación (KI-67) es del 70%",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250277",
+      "timestamp": "2026-02-03T03:44:57.856071"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Caso valorado en conjunto con el Dr. Jorge moreno (patólogo). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---\nIHQ250277\nCopia Pag. 2 de 2\nNombre : ROSA EMILIA SUAREZ\nN. peticion : IHQ250277\nN.Identificación : CC. 29393240\nGenero : FEMENINO\nEdad : 72 años 2 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 17/03/2025\nFecha Informe : 08/04/2025",
+      "valor_corregido": "Caso valorado en conjunto con el Dr. Jorge moreno (patólogo). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 27 --- IHQ250277 Copia Pag. 2 de 2 Nombre : ROSA EMILIA SUAREZ N. peticion : IHQ250277 N.Identificación : CC. 29393240 Genero : FEMENINO Edad : 72 años 2 meses 14 dias EPS : NUEVA EPS Médico tratante : ADRIANA MAYOR BARRERA Servicio : ALTO RIESGO OBSTETRICO Fecha Ingreso : 17/03/2025 Fecha Informe : 08/04/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250277",
+      "timestamp": "2026-02-03T03:44:57.856074"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "IHQ_P40_ESTADO",
+      "valor_original": "POSITIVO (POSITIVA PARA: CD34 FOCAL, VIMENTINA, H- CALDESMON, CD31. CON MARCACIÓN POSITIVA FOCAL EN MEMBRANA PARA WT1. LAS CÉLULAS TUMORALES NO PRESENTAN INMUNOREACTIVIDAD PARA: SOX10, S100, MELAN A, CROMOGRAMINA, SINAPTOFISINA, CD99, P40)",
+      "valor_corregido": "POSITIVO (POSITIVA PARA: CD34 FOCAL, VIMENTINA, H- CALDESMON, CD31. CON MARCACIÓN POSITIVA FOCAL EN MEMBRANA PARA WT1. LAS CÉLULAS TUMORALES NO PRESENTAN INMUNOREACTIVIDAD PARA: SOX10, S100, MELAN A, CROMOGRAMINA, SYNAPTOPHYSIN, CD99, p40)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250277",
+      "timestamp": "2026-02-03T03:44:57.856077"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 5,
+    "correcciones_por_tipo": {
+      "ortografica": 5
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 56
+  }
+}

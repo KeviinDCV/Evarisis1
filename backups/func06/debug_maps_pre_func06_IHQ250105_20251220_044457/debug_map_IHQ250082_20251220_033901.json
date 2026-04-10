@@ -1,0 +1,163 @@
+{
+  "session_id": "IHQ250082_20251220_033901",
+  "numero_peticion": "IHQ250082",
+  "timestamp": "2025-12-20T03:39:01.812979",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250082\nCopia Pag. 1 de 1\nNombre : SANDRA MILENA TERRANOVA\nCARDONA\nN. peticion : IHQ250082\nN.Identificación : CC. 66926098\nGenero : FEMENINO\nEdad : 50 años 7 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JAVIER OROZCO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 24/01/2025\nFecha Informe : 12/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR HIPOFISIS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2500466, el cual corresponde a resección de masa en hipófisis\ncon diagnóstico de \"ADENOMA\". Se ordenan los siguientes marcadores: cromogranina, prolactina, LH,\nTSH, GH, ACTH, FSH, CAM 5.2, HCG, Ki-67, sinaptofisina.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas a Sinaptofisina, Cromogranina, LH (heterogéneo), FSH y HCG.\nLas células tumorales son negativas para: prolactina, TSH, GH, ACTH, CAM 5.2.\nEl índice de proliferación celular medido con Ki-67 es del 2%.\nDIAGNÓSTICO\n Hipófisis. Lesión. Resección vía endonasal. Estudio de inmunohistoquímica:\nADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROPINAS\nCOMENTARIOS\nSe requiere correlación con datos de la historia clínica y paraclínicos. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 57 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 2575,
+      "reduccion_porcentaje": 98.62
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250082",
+      "caso_num": 29,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "SANDRA MILENA TERRANOVA CARDONA",
+      "numero_peticion": "IHQ250082",
+      "identificacion": "66926098",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "50",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "JAVIER OROZCO",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "24/01/2025",
+      "fecha_informe": "12/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250082",
+      "N. de identificación": "66926098",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "JAVIER OROZCO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "24/01/2025",
+      "Fecha Informe": "12/02/2025",
+      "nombres": "SANDRA MILENA",
+      "Primer nombre": "SANDRA",
+      "Segundo nombre": "MILENA",
+      "apellidos": "TERRANOVA CARDONA",
+      "Primer apellido": "TERRANOVA",
+      "Segundo apellido": "CARDONA",
+      "nombre_formal": "TERRANOVA CARDONA, SANDRA MILENA",
+      "diagnostico": "Hipófisis. Lesión. Resección vía endonasal. Estudio de inmunohistoquímica: ADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROPINAS",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas a Synaptophysin, Cromogranina, LH (heterogéneo), FSH y HCG. Las células tumorales son negativas para: prolactina, TSH, GH, ACTH, CAM 5.2. El índice de proliferación celular medido con KI-67 es del 2%.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2500466, el cual corresponde a resección de masa en hipófisis con diagnóstico de \"ADENOMA\". Se ordenan los siguientes marcadores: cromogranina, prolactina, LH, TSH, GH, ACTH, FSH, CAM 5.2, HCG, KI-67, synaptophysin.",
+      "ihq_organo": "HIPÓFISIS",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CROMOGRANINA, CAM5.2, HCG, Ki-67, SINAPTOFISINA",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Se requiere correlación con datos de la historia clínica y paraclínicos.",
+      "IHQ_ORGANO": "HIPÓFISIS",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Ki-67: 2%",
+      "IHQ_SINAPTOFISINA": "POSITIVO",
+      "IHQ_CROMOGRANINA": "POSITIVO",
+      "IHQ_FSH": "POSITIVO",
+      "IHQ_HCG": "POSITIVO",
+      "IHQ_PROLACTINA": "NEGATIVO",
+      "IHQ_TSH": "NEGATIVO",
+      "IHQ_GH": "NEGATIVO",
+      "IHQ_ACTH": "NEGATIVO",
+      "IHQ_CAM5": "NEGATIVO",
+      "IHQ_KI-67": "2%",
+      "extraction_timestamp": "2025-12-20T03:39:01.977104",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250082\nCopia Pag. 1 de 1\nNombre : SANDRA MILENA TERRANOVA\nCARDONA\nN. peticion : IHQ250082\nN.Identificación : CC. 66926098\nGenero : FEMENINO\nEdad : 50 años 7 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JAVIER OROZCO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 24/01/2025\nFecha Informe : 12/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR HIPOFISIS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2500466, el cual corresponde a resección de masa en hipófisis\ncon diagnóstico de \"ADENOMA\". Se ordenan los siguientes marcadores: cromogranina, prolactina, LH,\nTSH, GH, ACTH, FSH, CAM 5.2, HCG, Ki-67, sinaptofisina.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas a Sinaptofisina, Cromogranina, LH (heterogéneo), FSH y HCG.\nLas células tumorales son negativas para: prolactina, TSH, GH, ACTH, CAM 5.2.\nEl índice de proliferación celular medido con Ki-67 es del 2%.\nDIAGNÓSTICO\n Hipófisis. Lesión. Resección vía endonasal. Estudio de inmunohistoquímica:\nADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROPINAS\nCOMENTARIOS\nSe requiere correlación con datos de la historia clínica y paraclínicos. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 57 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CROMOGRANINA, CAM5.2, HCG, Ki-67, SINAPTOFISINA",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2500466, el cual corresponde a resección de masa en hipófisis con diagnóstico de \"ADENOMA\". Se ordenan los siguientes marcadores: cromogranina, prolactina, LH, TSH, GH, ACTH, FSH, CAM 5.2, HCG, Ki-67, sinaptofisina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas a Sinaptofisina, Cromogranina, LH (heterogéneo), FSH y HCG. Las células tumorales son negativas para: prolactina, TSH, GH, ACTH, CAM 5.2. El índice de proliferación celular medido con Ki-67 es del 2%.",
+      "Descripcion Diagnostico": "Hipófisis. Lesión. Resección vía endonasal. Estudio de inmunohistoquímica: ADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROPINAS",
+      "IHQ_ORGANO": "HIPÓFISIS",
+      "Organo": "TUMOR HIPOFISIS",
+      "Diagnostico Coloracion": "ADENOMA",
+      "Diagnostico Principal": "ADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROPINAS",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: 2%",
+      "IHQ_CROMOGRANINA": "POSITIVO",
+      "IHQ_CAM5": "NEGATIVO",
+      "IHQ_HCG": "POSITIVO",
+      "IHQ_KI-67": "2%",
+      "IHQ_SINAPTOFISINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 119,
+      "campos_completos": 48,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 28.74
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 119,
+      "total_campos_completos": 48
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hipófisis. Lesión. Resección vía endonasal. Estudio de inmunohistoquímica:\nADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROPINAS",
+      "valor_corregido": "Hipófisis. Lesión. Resección vía endonasal. Estudio de inmunohistoquímica: ADENOMA HIPOFISIARIO PRODUCTOR DE GONADOTROPINAS",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250082",
+      "timestamp": "2025-12-20T03:39:01.976888"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2500466, el cual corresponde a resección de masa en hipófisis con diagnóstico de \"ADENOMA\". Se ordenan los siguientes marcadores: cromogranina, prolactina, LH, TSH, GH, ACTH, FSH, CAM 5.2, HCG, Ki-67, sinaptofisina.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2500466, el cual corresponde a resección de masa en hipófisis con diagnóstico de \"ADENOMA\". Se ordenan los siguientes marcadores: cromogranina, prolactina, LH, TSH, GH, ACTH, FSH, CAM 5.2, HCG, KI-67, synaptophysin.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250082",
+      "timestamp": "2025-12-20T03:39:01.976897"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas a Sinaptofisina, Cromogranina, LH (heterogéneo), FSH y HCG. Las células tumorales son negativas para: prolactina, TSH, GH, ACTH, CAM 5.2. El índice de proliferación celular medido con Ki-67 es del 2%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas a Synaptophysin, Cromogranina, LH (heterogéneo), FSH y HCG. Las células tumorales son negativas para: prolactina, TSH, GH, ACTH, CAM 5.2. El índice de proliferación celular medido con KI-67 es del 2%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250082",
+      "timestamp": "2025-12-20T03:39:01.976898"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 56
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "session_id": "IHQ250005_20251217_052222",
+  "numero_peticion": "IHQ250005",
+  "timestamp": "2025-12-17T05:22:22.472630",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250005\nCopia Pag. 1 de 2\nNombre : PERSIDES ESTUPIÑAN\nN. peticion : IHQ250005\nN.Identificación : CC. 27257934\nGenero : FEMENINO\nEdad : 68 años 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : CAMILA MEJIA ARANGO\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 02/01/2025\nFecha Informe : 17/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE LESION CERVICAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo\nM2410679 que\ncorresponde a biopsia de lesion cervical,\nconsiste en un bloque de parafina y una lámina\ncoloreadas con Hematoxilina - Eosina con diagnostico de \" LOS HALLAZGOS HISTOLÓGICOS SON\nCOMPATIBLES\nCON\nADENOCARCINOMA\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO\".\nPrevia\nvaloración de la coloración básica se solicitan los siguiente biomarcadores: CK7 , CK20 ,\nRECEPTOR DE ESTROGENOS, RECEPTORES DE PROGESTERONA, PAX 8, p16,\np53, P40 , WT1,\nVIMENTINA. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona:\nCONFIRM\nanti-Progesterone\nReceptor\n(ER)\n(1E2)\nRabbit\nMonoclonal\nPrimary\nAntibody. VENTANA Ref. 790-2223.\nEstado adecuado de los controles externos e internos para los biomarcadores utilizados. \nLas células tumorales presentan inmuno marcación positiva para CK7 y PAX 8, el p16 esta\npositivo en bloque con sobre expresion de p53 ( mutada ). \nCK 20 , p40 , VIMENTINA , RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA y\nWT1\nnegativos.\nDIAGNÓSTICO\nÚtero. Cérvix. Lesión. Biopsia. Estudio de inmunohistoquimica.\nLOS\nHALLAZGOS\nHISTOLÓGICOS\nSON\nCOMPATIBLES\nCON\nADENOCARCINOMA\nINVASIVO\nMODERADAMENTE DIFERENCIADO DE PROBABLE ORIGEN ENDOCERVICAL.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---\nIHQ250005\nCopia Pag. 2 de 2\nNombre : PERSIDES ESTUPIÑAN\nN. peticion : IHQ250005\nN.Identificación : CC. 27257934\nGenero : FEMENINO\nEdad : 68 años 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : CAMILA MEJIA ARANGO\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 02/01/2025\nFecha Informe : 17/01/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3729,
+      "reduccion_porcentaje": 97.82
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250005",
+      "caso_num": 5,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "nombre_completo": "PERSIDES ESTUPIÑAN",
+      "numero_peticion": "IHQ250005",
+      "identificacion": "27257934",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "68",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "CAMILA MEJIA ARANGO",
+      "servicio": "ADMISION Y SALA DE PARTOS",
+      "fecha_ingreso": "02/01/2025",
+      "fecha_informe": "17/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250005",
+      "N. de identificación": "27257934",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "ADMISION Y SALA DE PARTOS",
+      "Médico tratante": "CAMILA MEJIA ARANGO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/01/2025",
+      "Fecha Informe": "17/01/2025",
+      "nombres": "PERSIDES ESTUPIÑAN",
+      "Primer nombre": "PERSIDES",
+      "Segundo nombre": "ESTUPIÑAN",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "PERSIDES ESTUPIÑAN",
+      "diagnostico": "Útero. Cérvix. Lesión. Biopsia. Estudio de inmunohistoquimica. LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO DE PROBABLE ORIGEN ENDOCERVICAL",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Estado adecuado de los controles externos e internos para los biomarcadores utilizados. Las células tumorales presentan inmuno marcación positiva para CK7 y PAX 8, el P16 esta positivo en bloque con sobre expresion de p53 ( mutada ). CK20 , P40 , VIMENTINA , RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA y WT1 negativos.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410679 que corresponde a biopsia de lesion cervical, consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnostico de \" LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores: CK7 , CK20 , RECEPTOR DE ESTROGENOS, RECEPTORES DE PROGESTERONA, PAX 8, P16, p53, P40 , WT1, VIMENTINA.",
+      "ihq_organo": "ÚTERO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, Receptor de Estrógeno, Receptor de Progesterona, PAX 8, P16, P53, P40, WT1, VIMENTINA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ÚTERO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_VIMENTINA": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P53": "POSITIVO (MUTADA)",
+      "p16": "POSITIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2025-12-17T05:22:22.635433",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250005\nCopia Pag. 1 de 2\nNombre : PERSIDES ESTUPIÑAN\nN. peticion : IHQ250005\nN.Identificación : CC. 27257934\nGenero : FEMENINO\nEdad : 68 años 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : CAMILA MEJIA ARANGO\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 02/01/2025\nFecha Informe : 17/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE LESION CERVICAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo\nM2410679 que\ncorresponde a biopsia de lesion cervical,\nconsiste en un bloque de parafina y una lámina\ncoloreadas con Hematoxilina - Eosina con diagnostico de \" LOS HALLAZGOS HISTOLÓGICOS SON\nCOMPATIBLES\nCON\nADENOCARCINOMA\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO\".\nPrevia\nvaloración de la coloración básica se solicitan los siguiente biomarcadores: CK7 , CK20 ,\nRECEPTOR DE ESTROGENOS, RECEPTORES DE PROGESTERONA, PAX 8, p16,\np53, P40 , WT1,\nVIMENTINA. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona:\nCONFIRM\nanti-Progesterone\nReceptor\n(ER)\n(1E2)\nRabbit\nMonoclonal\nPrimary\nAntibody. VENTANA Ref. 790-2223.\nEstado adecuado de los controles externos e internos para los biomarcadores utilizados. \nLas células tumorales presentan inmuno marcación positiva para CK7 y PAX 8, el p16 esta\npositivo en bloque con sobre expresion de p53 ( mutada ). \nCK 20 , p40 , VIMENTINA , RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA y\nWT1\nnegativos.\nDIAGNÓSTICO\nÚtero. Cérvix. Lesión. Biopsia. Estudio de inmunohistoquimica.\nLOS\nHALLAZGOS\nHISTOLÓGICOS\nSON\nCOMPATIBLES\nCON\nADENOCARCINOMA\nINVASIVO\nMODERADAMENTE DIFERENCIADO DE PROBABLE ORIGEN ENDOCERVICAL.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 9 ---\nIHQ250005\nCopia Pag. 2 de 2\nNombre : PERSIDES ESTUPIÑAN\nN. peticion : IHQ250005\nN.Identificación : CC. 27257934\nGenero : FEMENINO\nEdad : 68 años 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : CAMILA MEJIA ARANGO\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 02/01/2025\nFecha Informe : 17/01/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, Receptor de Estrógeno, Receptor de Progesterona, PAX 8, P16, P53, P40, WT1, VIMENTINA",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410679 que corresponde a biopsia de lesion cervical, consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnostico de \" LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores: CK7 , CK20 , RECEPTOR DE ESTROGENOS, RECEPTORES DE PROGESTERONA, PAX 8, p16, p53, P40 , WT1, VIMENTINA.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Estado adecuado de los controles externos e internos para los biomarcadores utilizados. Las células tumorales presentan inmuno marcación positiva para CK7 y PAX 8, el p16 esta positivo en bloque con sobre expresion de p53 ( mutada ). CK 20 , p40 , VIMENTINA , RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA y WT1 negativos.",
+      "Descripcion Diagnostico": "Útero. Cérvix. Lesión. Biopsia. Estudio de inmunohistoquimica. LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO DE PROBABLE ORIGEN ENDOCERVICAL",
+      "IHQ_ORGANO": "ÚTERO",
+      "Organo": "BX DE LESION CERVICAL",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO DE PROBABLE ORIGEN ENDOCERVICAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P53": "POSITIVO (MUTADA)",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_VIMENTINA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 156,
+      "campos_vacios": 113,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 10,
+      "completitud_porcentaje": 27.56
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 113,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Útero. Cérvix. Lesión. Biopsia. Estudio de inmunohistoquimica.\nLOS\nHALLAZGOS\nHISTOLÓGICOS\nSON\nCOMPATIBLES\nCON\nADENOCARCINOMA\nINVASIVO\nMODERADAMENTE DIFERENCIADO DE PROBABLE ORIGEN ENDOCERVICAL",
+      "valor_corregido": "Útero. Cérvix. Lesión. Biopsia. Estudio de inmunohistoquimica. LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO DE PROBABLE ORIGEN ENDOCERVICAL",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250005",
+      "timestamp": "2025-12-17T05:22:22.635236"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo\nM2410679 que\ncorresponde a biopsia de lesion cervical,\nconsiste en un bloque de parafina y una lámina\ncoloreadas con Hematoxilina - Eosina con diagnostico de \" LOS HALLAZGOS HISTOLÓGICOS SON\nCOMPATIBLES\nCON\nADENOCARCINOMA\nINVASIVO\nMODERADAMENTE\nDIFERENCIADO\".\nPrevia\nvaloración de la coloración básica se solicitan los siguiente biomarcadores: CK7 , CK20 ,\nRECEPTOR DE ESTROGENOS, RECEPTORES DE PROGESTERONA, PAX 8, p16,\np53, P40 , WT1,\nVIMENTINA.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410679 que corresponde a biopsia de lesion cervical, consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnostico de \" LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores: CK7 , CK20 , RECEPTOR DE ESTROGENOS, RECEPTORES DE PROGESTERONA, PAX 8, P16, p53, P40 , WT1, VIMENTINA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250005",
+      "timestamp": "2025-12-17T05:22:22.635242"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona:\nCONFIRM\nanti-Progesterone\nReceptor\n(ER)\n(1E2)\nRabbit\nMonoclonal\nPrimary\nAntibody. VENTANA Ref. 790-2223.\nEstado adecuado de los controles externos e internos para los biomarcadores utilizados. \nLas células tumorales presentan inmuno marcación positiva para CK7 y PAX 8, el p16 esta\npositivo en bloque con sobre expresion de p53 ( mutada ). \nCK 20 , p40 , VIMENTINA , RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA y\nWT1\nnegativos.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Estado adecuado de los controles externos e internos para los biomarcadores utilizados. Las células tumorales presentan inmuno marcación positiva para CK7 y PAX 8, el P16 esta positivo en bloque con sobre expresion de p53 ( mutada ). CK20 , P40 , VIMENTINA , RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA y WT1 negativos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250005",
+      "timestamp": "2025-12-17T05:22:22.635243"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 56
+  }
+}

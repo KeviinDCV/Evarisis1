@@ -1,0 +1,104 @@
+================================================================================
+VALIDACION EXITOSA v6.4.65 - IHQ250201
+================================================================================
+Fecha: 2026-01-10
+Caso: IHQ250201
+Archivo PDF: IHQ DEL 160 AL 211.pdf (caso 42 de 52)
+
+CAMBIOS APLICADOS (v6.4.65):
+- Agregado alias "OCT-4" (con guión) → OCT4
+- Agregado alias "Podoplanina" (capitalizado) → PODOPLANINA
+
+================================================================================
+RESULTADOS DE REPROCESAMIENTO (FUNC-06)
+================================================================================
+
+1. AUDITORIA ANTES (estimada):
+   - IHQ_OCT4: N/A (no extraído)
+   - IHQ_PODOPLANINA: N/A (no extraído)
+   - Score estimado: <100%
+
+2. REPROCESAMIENTO:
+   - Rango procesado: IHQ250160-IHQ250211 (52 casos)
+   - Método: Eliminación completa + extracción fresca
+   - Extractores: v6.4.65 (con nuevos aliases)
+
+3. AUDITORIA DESPUÉS:
+   - Score final: 100.0%
+   - Estado: OK
+   - Warnings: 0
+   - Errores: 0
+
+================================================================================
+VALIDACION DE BIOMARCADORES OBJETIVO
+================================================================================
+
+Texto OCR (línea 33):
+"Las células tumorales son positivas para CKAE1/AE3, SALL-4, OCT-4, 
+ CD117, Podoplanina (D2-40), ,"
+
+EXTRACCION EN BD:
+✅ IHQ_OCT4: "POSITIVO"
+✅ IHQ_PODOPLANINA: "POSITIVO"
+
+ALIASES QUE FUNCIONARON:
+- OCT-4 (con guión) → IHQ_OCT4
+- Podoplanina (capitalizado) → IHQ_PODOPLANINA
+- D2-40 (entre paréntesis) → IHQ_PODOPLANINA
+
+================================================================================
+PATRON DE EXTRACCION EXITOSO
+================================================================================
+
+Patrón utilizado: "son positivas para [lista]"
+Formato OCR: "CKAE1/AE3, SALL-4, OCT-4, CD117, Podoplanina (D2-40),"
+
+Biomarcadores extraídos del patrón (total: 7):
+1. CKAE1AE3 → POSITIVO ✅
+2. SALL4 → POSITIVO ✅
+3. OCT4 → POSITIVO ✅ (NUEVO v6.4.65)
+4. CD117 → POSITIVO ✅
+5. PODOPLANINA → POSITIVO ✅ (NUEVO v6.4.65)
+6. CD30 → NEGATIVO ✅
+7. SOX10 → NEGATIVO ✅
+
+Otros biomarcadores extraídos (totales: 13):
+- MELAN-A → NEGATIVO ✅
+- Ki-67 → 70% ✅
+
+================================================================================
+VALIDACION ANTI-REGRESION
+================================================================================
+
+Casos de referencia validados:
+- IHQ250201: Score 100% ✅ (caso objetivo)
+
+Pendiente validar casos adicionales del rango 160-211 para confirmar que no
+hubo regresiones en otros patrones.
+
+RECOMENDACION:
+Validar 3-5 casos más del mismo PDF para confirmar estabilidad:
+- IHQ250160
+- IHQ250170
+- IHQ250180
+- IHQ250190
+- IHQ250200
+
+================================================================================
+CONCLUSION
+================================================================================
+
+✅ VALIDACION EXITOSA
+
+Los cambios v6.4.65 funcionaron correctamente:
+- OCT-4 (con guión) se extrae correctamente
+- Podoplanina (capitalizado) se extrae correctamente
+- D2-40 (alias entre paréntesis) se reconoce correctamente
+- Score final: 100%
+- Sin regresiones detectadas en caso objetivo
+
+SIGUIENTE PASO RECOMENDADO:
+Ejecutar FUNC-05B para validar anti-regresión en todos los casos del sistema
+y confirmar que el cambio no afectó otros casos.
+
+================================================================================

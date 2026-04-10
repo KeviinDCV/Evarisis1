@@ -1,0 +1,174 @@
+{
+  "session_id": "IHQ250076_20251219_220833",
+  "numero_peticion": "IHQ250076",
+  "timestamp": "2025-12-19T22:08:33.223737",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250076\nCopia Pag. 1 de 2\nNombre : FABIOLA CALVO\nN. peticion : IHQ250076\nN.Identificación : CC. 29119349\nGenero : FEMENINO\nEdad : 45 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LIZETH MAGALI MARIN\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 23/01/2025\nFecha Informe : 15/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA EN CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500281 que corresponde biopsia de masa en cérvix con\ndiagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nRoche VENTANA©.\nLas células tumorales son positivas de manera fuerte y difusa para CK7, PAX-8, Vimentina, con\npositividad en bloque y difuso para p16, p53 en patrón de \"wild type\" y positividad focal tenue\npara Receptor de Progesterona y Receptor de Estrógeno; siendo negativas para CK20, p40, WT1 y\nCEA. Índice de proliferación celular con un Ki-67 del 70%.\nVER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.\nDIAGNÓSTICO\nCérvix. Masa. Biopsia. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN ADENOCARCINOMA\nDE ORIGEN EN EL TRACTO GENITAL FEMENINO.\nCOMENTARIOS\nA pesar de que la localización mencionada en la solicitud es a nivel de cérvix, se sugiere\ncorrelacionar los hallazgos anatomopatológicos con la historia clínica y las imágenes diagnósticas,\nya que, según los hallazgos, es posible origen de la lesión a nivel del endometrio.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---\nIHQ250076\nCopia Pag. 2 de 2\nNombre : FABIOLA CALVO\nN. peticion : IHQ250076\nN.Identificación : CC. 29119349\nGenero : FEMENINO\nEdad : 45 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LIZETH MAGALI MARIN\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 23/01/2025\nFecha Informe : 15/02/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3443,
+      "reduccion_porcentaje": 98.16
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250076",
+      "caso_num": 23,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "nombre_completo": "FABIOLA CALVO",
+      "numero_peticion": "IHQ250076",
+      "identificacion": "29119349",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "45",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "LIZETH MAGALI MARIN",
+      "servicio": "ADMISION Y SALA DE PARTOS",
+      "fecha_ingreso": "23/01/2025",
+      "fecha_informe": "15/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250076",
+      "N. de identificación": "29119349",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "ADMISION Y SALA DE PARTOS",
+      "Médico tratante": "LIZETH MAGALI MARIN",
+      "Fecha de ingreso (2. Fecha de la muestra)": "23/01/2025",
+      "Fecha Informe": "15/02/2025",
+      "nombres": "FABIOLA CALVO",
+      "Primer nombre": "FABIOLA",
+      "Segundo nombre": "CALVO",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "FABIOLA CALVO",
+      "diagnostico": "Cérvix. Masa. Biopsia. Estudios de inmunohistoquímica: LOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN ADENOCARCINOMA DE ORIGEN EN EL TRACTO GENITAL FEMENINO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son positivas de manera fuerte y difusa para CK7, PAX-8, Vimentina, con positividad en bloque y difuso para P16, p53 en patrón de \"wild type\" y positividad focal tenue para Receptor de Progesterona y Receptor de Estrógeno; siendo negativas para CK20, P40, WT1 y CEA. Índice de proliferación celular con un KI-67 del 70%. VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2500281 que corresponde biopsia de masa en cérvix con diagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "CÉRVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "A pesar de que la localización mencionada en la solicitud es a nivel de cérvix, se sugiere correlacionar los hallazgos anatomopatológicos con la historia clínica y las imágenes diagnósticas, ya que, según los hallazgos, es posible origen de la lesión a nivel del endometrio. NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 44 --- IHQ250076 Copia Pag. 2 de 2 Nombre : FABIOLA CALVO N. peticion : IHQ250076 N.Identificación : CC. 29119349 Genero : FEMENINO Edad : 45 años 10 dias EPS : EMSSANAR S.A.S Médico tratante : LIZETH MAGALI MARIN Servicio : ADMISION Y SALA DE PARTOS Fecha Ingreso : 23/01/2025 Fecha Informe : 15/02/2025",
+      "IHQ_ORGANO": "CÉRVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 70%, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_KI-67": "70%",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P53": "WILD TYPE",
+      "p16": "POSITIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2025-12-19T22:08:33.368059",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250076\nCopia Pag. 1 de 2\nNombre : FABIOLA CALVO\nN. peticion : IHQ250076\nN.Identificación : CC. 29119349\nGenero : FEMENINO\nEdad : 45 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LIZETH MAGALI MARIN\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 23/01/2025\nFecha Informe : 15/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA EN CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500281 que corresponde biopsia de masa en cérvix con\ndiagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nRoche VENTANA©.\nLas células tumorales son positivas de manera fuerte y difusa para CK7, PAX-8, Vimentina, con\npositividad en bloque y difuso para p16, p53 en patrón de \"wild type\" y positividad focal tenue\npara Receptor de Progesterona y Receptor de Estrógeno; siendo negativas para CK20, p40, WT1 y\nCEA. Índice de proliferación celular con un Ki-67 del 70%.\nVER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.\nDIAGNÓSTICO\nCérvix. Masa. Biopsia. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN ADENOCARCINOMA\nDE ORIGEN EN EL TRACTO GENITAL FEMENINO.\nCOMENTARIOS\nA pesar de que la localización mencionada en la solicitud es a nivel de cérvix, se sugiere\ncorrelacionar los hallazgos anatomopatológicos con la historia clínica y las imágenes diagnósticas,\nya que, según los hallazgos, es posible origen de la lesión a nivel del endometrio.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---\nIHQ250076\nCopia Pag. 2 de 2\nNombre : FABIOLA CALVO\nN. peticion : IHQ250076\nN.Identificación : CC. 29119349\nGenero : FEMENINO\nEdad : 45 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LIZETH MAGALI MARIN\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 23/01/2025\nFecha Informe : 15/02/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CEA, CK20, CK7, Ki-67, P16, P40, P53, PAX8, Receptor de Estrógeno, Receptor de Progesterona, VIMENTINA, WT1",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2500281 que corresponde biopsia de masa en cérvix con diagnóstico de \"TUMOR MALIGNO INDIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son positivas de manera fuerte y difusa para CK7, PAX-8, Vimentina, con positividad en bloque y difuso para p16, p53 en patrón de \"wild type\" y positividad focal tenue para Receptor de Progesterona y Receptor de Estrógeno; siendo negativas para CK20, p40, WT1 y CEA. Índice de proliferación celular con un Ki-67 del 70%. VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "Descripcion Diagnostico": "Cérvix. Masa. Biopsia. Estudios de inmunohistoquímica: LOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN ADENOCARCINOMA DE ORIGEN EN EL TRACTO GENITAL FEMENINO.",
+      "IHQ_ORGANO": "CÉRVIX",
+      "Organo": "BX MASA EN CERVIX",
+      "Diagnostico Coloracion": "TUMOR MALIGNO INDIFERENCIADO",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN ADENOCARCINOMA DE ORIGEN EN EL TRACTO GENITAL FEMENINO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 70%, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_KI-67": "70%",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_P53": "WILD TYPE",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "IHQ_WT1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 158,
+      "campos_vacios": 113,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 12,
+      "completitud_porcentaje": 28.48
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 113,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cérvix. Masa. Biopsia. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN ADENOCARCINOMA\nDE ORIGEN EN EL TRACTO GENITAL FEMENINO.",
+      "valor_corregido": "Cérvix. Masa. Biopsia. Estudios de inmunohistoquímica: LOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN ADENOCARCINOMA DE ORIGEN EN EL TRACTO GENITAL FEMENINO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250076",
+      "timestamp": "2025-12-19T22:08:33.367855"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son positivas de manera fuerte y difusa para CK7, PAX-8, Vimentina, con positividad en bloque y difuso para p16, p53 en patrón de \"wild type\" y positividad focal tenue para Receptor de Progesterona y Receptor de Estrógeno; siendo negativas para CK20, p40, WT1 y CEA. Índice de proliferación celular con un Ki-67 del 70%. VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son positivas de manera fuerte y difusa para CK7, PAX-8, Vimentina, con positividad en bloque y difuso para P16, p53 en patrón de \"wild type\" y positividad focal tenue para Receptor de Progesterona y Receptor de Estrógeno; siendo negativas para CK20, P40, WT1 y CEA. Índice de proliferación celular con un KI-67 del 70%. VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250076",
+      "timestamp": "2025-12-19T22:08:33.367861"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "A pesar de que la localización mencionada en la solicitud es a nivel de cérvix, se sugiere\ncorrelacionar los hallazgos anatomopatológicos con la historia clínica y las imágenes diagnósticas,\nya que, según los hallazgos, es posible origen de la lesión a nivel del endometrio.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---\nIHQ250076\nCopia Pag. 2 de 2\nNombre : FABIOLA CALVO\nN. peticion : IHQ250076\nN.Identificación : CC. 29119349\nGenero : FEMENINO\nEdad : 45 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LIZETH MAGALI MARIN\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 23/01/2025\nFecha Informe : 15/02/2025",
+      "valor_corregido": "A pesar de que la localización mencionada en la solicitud es a nivel de cérvix, se sugiere correlacionar los hallazgos anatomopatológicos con la historia clínica y las imágenes diagnósticas, ya que, según los hallazgos, es posible origen de la lesión a nivel del endometrio. NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 44 --- IHQ250076 Copia Pag. 2 de 2 Nombre : FABIOLA CALVO N. peticion : IHQ250076 N.Identificación : CC. 29119349 Genero : FEMENINO Edad : 45 años 10 dias EPS : EMSSANAR S.A.S Médico tratante : LIZETH MAGALI MARIN Servicio : ADMISION Y SALA DE PARTOS Fecha Ingreso : 23/01/2025 Fecha Informe : 15/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250076",
+      "timestamp": "2025-12-19T22:08:33.367862"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 58
+  }
+}

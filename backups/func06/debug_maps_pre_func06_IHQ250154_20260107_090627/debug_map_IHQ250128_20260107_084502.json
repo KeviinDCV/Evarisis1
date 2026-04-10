@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ250128_20260107_084502",
+  "numero_peticion": "IHQ250128",
+  "timestamp": "2026-01-07T08:45:02.889379",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250128\nCopia Pag. 1 de 2\nNombre : MARIA MARLENE APONTE ALDANA\nN. peticion : IHQ250128\nN.Identificación : CC. 31866181\nGenero : FEMENINO\nEdad : 65 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JULIO CESAE MESA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 05/02/2025\nFecha Informe : 10/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASA PERIAREOLAR\nSUPERIOR Y PROFUNDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunhistoquímica en material extrainstitucional rotulado como\n\"P250156 A\" correspondiente a \"masa periareolar superficial\" y \"P250156 B\" correspondiente a \"masa\nperiareolar profunda\", el cual contiene catorce láminas de Hematoxilina & Eosina y catorce bloques de\nparafina con diagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)\". Se revisan placas\npara marcación RE, RP, HER2, ki67 y E-cadherina.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® en el\nbloque A1.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA\nRef. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nLas células tumorales son positivas para E-CADHERINA POSITIVO FUERTE Y DIFUSO EN UN 80%\nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%).\n-RECEPTOR DE PROGRESTERONA: NEGATIVO\n-HER 2: NEGATIVO (Score 0).\n-Ki-67: 60% ALTO.\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado. \n- Tiempo de fijación: no determinado.\nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 40 ---\nIHQ250128\nCopia Pag. 2 de 2\nNombre : MARIA MARLENE APONTE ALDANA\nN. peticion : IHQ250128\nN.Identificación : CC. 31866181\nGenero : FEMENINO\nEdad : 65 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JULIO CESAE MESA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 05/02/2025\nFecha Informe : 10/02/2025\n Mama derecha. Tumor. Biopsia. Estudios de inmuhistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO\nNO ESPECIAL (DUCTAL).\n-RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%).\n-RECEPTOR DE PROGRESTERONA: NEGATIVO\n-HER 2: NEGATIVO (Score 0).\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 41 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 4008,
+      "reduccion_porcentaje": 97.69
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250128",
+      "caso_num": 20,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_E_CADHERINA": "POSITIVO (fuerte)",
+      "nombre_completo": "MARIA MARLENE APONTE ALDANA",
+      "numero_peticion": "IHQ250128",
+      "identificacion": "31866181",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "65",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "JULIO CESAE MESA",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "05/02/2025",
+      "fecha_informe": "10/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250128",
+      "N. de identificación": "31866181",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "JULIO CESAE MESA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "05/02/2025",
+      "Fecha Informe": "10/02/2025",
+      "nombres": "MARIA MARLENE",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "MARLENE",
+      "apellidos": "APONTE ALDANA",
+      "Primer apellido": "APONTE",
+      "Segundo apellido": "ALDANA",
+      "nombre_formal": "APONTE ALDANA, MARIA MARLENE",
+      "diagnostico": ": 05/02/2025 Mama derecha. Tumor. Biopsia. Estudios de inmuhistoquímica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). -RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%). -RECEPTOR DE PROGRESTERONA: NEGATIVO -HER 2: NEGATIVO (Score 0).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® en el bloque A1. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Las células tumorales son positivas para E-CADHERINA POSITIVO FUERTE Y DIFUSO EN UN 80% REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%). -RECEPTOR DE PROGRESTERONA: NEGATIVO -HER 2: NEGATIVO (Score 0). -KI-67: 60% ALTO. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional rotulado como \"P250156 A\" correspondiente a \"masa periareolar superficial\" y \"P250156 B\" correspondiente a \"masa periareolar profunda\", el cual contiene catorce láminas de Hematoxilina & Eosina y catorce bloques de parafina con diagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)\". Se revisan placas para marcación RE, RP, HER2, KI-67 y E-cadherina.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Receptor de Estrógeno, Receptor de Progesterona, HER2, Ki-67, E-Cadherina",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "HER2: NEGATIVO (SCORE 0), Ki-67: 60%, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, Receptor de Progesterona, HER2, Ki-67, E-Cadherina",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_KI-67": "60%",
+      "extraction_timestamp": "2026-01-07T08:45:03.432247",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250128\nCopia Pag. 1 de 2\nNombre : MARIA MARLENE APONTE ALDANA\nN. peticion : IHQ250128\nN.Identificación : CC. 31866181\nGenero : FEMENINO\nEdad : 65 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JULIO CESAE MESA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 05/02/2025\nFecha Informe : 10/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASA PERIAREOLAR\nSUPERIOR Y PROFUNDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunhistoquímica en material extrainstitucional rotulado como\n\"P250156 A\" correspondiente a \"masa periareolar superficial\" y \"P250156 B\" correspondiente a \"masa\nperiareolar profunda\", el cual contiene catorce láminas de Hematoxilina & Eosina y catorce bloques de\nparafina con diagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)\". Se revisan placas\npara marcación RE, RP, HER2, ki67 y E-cadherina.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® en el\nbloque A1.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA\nRef. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nLas células tumorales son positivas para E-CADHERINA POSITIVO FUERTE Y DIFUSO EN UN 80%\nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%).\n-RECEPTOR DE PROGRESTERONA: NEGATIVO\n-HER 2: NEGATIVO (Score 0).\n-Ki-67: 60% ALTO.\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado. \n- Tiempo de fijación: no determinado.\nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 40 ---\nIHQ250128\nCopia Pag. 2 de 2\nNombre : MARIA MARLENE APONTE ALDANA\nN. peticion : IHQ250128\nN.Identificación : CC. 31866181\nGenero : FEMENINO\nEdad : 65 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JULIO CESAE MESA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 05/02/2025\nFecha Informe : 10/02/2025\n Mama derecha. Tumor. Biopsia. Estudios de inmuhistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO\nNO ESPECIAL (DUCTAL).\n-RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%).\n-RECEPTOR DE PROGRESTERONA: NEGATIVO\n-HER 2: NEGATIVO (Score 0).\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 41 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, Receptor de Progesterona, HER2, Ki-67, E-Cadherina",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional rotulado como \"P250156 A\" correspondiente a \"masa periareolar superficial\" y \"P250156 B\" correspondiente a \"masa periareolar profunda\", el cual contiene catorce láminas de Hematoxilina & Eosina y catorce bloques de parafina con diagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)\". Se revisan placas para marcación RE, RP, HER2, ki67 y E-cadherina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® en el bloque A1. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Las células tumorales son positivas para E-CADHERINA POSITIVO FUERTE Y DIFUSO EN UN 80% REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%). -RECEPTOR DE PROGRESTERONA: NEGATIVO -HER 2: NEGATIVO (Score 0). -Ki-67: 60% ALTO. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado.",
+      "Descripcion Diagnostico": ": 05/02/2025 Mama derecha. Tumor. Biopsia. Estudios de inmuhistoquímica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). -RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%). -RECEPTOR DE PROGRESTERONA: NEGATIVO -HER 2: NEGATIVO (Score 0).",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "MASA PERIAREOLAR SUPERIOR Y PROFUNDA",
+      "Diagnostico Coloracion": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+      "Diagnostico Principal": "ESTUDIOS DE INMUHISTOQUÍMICA: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO (SCORE 0), Ki-67: 60%, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_KI-67": "60%",
+      "IHQ_E_CADHERINA": "POSITIVO (fuerte)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 127,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 127,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": ": 05/02/2025\n Mama derecha. Tumor. Biopsia. Estudios de inmuhistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO\nNO ESPECIAL (DUCTAL).\n-RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%).\n-RECEPTOR DE PROGRESTERONA: NEGATIVO\n-HER 2: NEGATIVO (Score 0).",
+      "valor_corregido": ": 05/02/2025 Mama derecha. Tumor. Biopsia. Estudios de inmuhistoquímica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). -RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%). -RECEPTOR DE PROGRESTERONA: NEGATIVO -HER 2: NEGATIVO (Score 0).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250128",
+      "timestamp": "2026-01-07T08:45:03.432042"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional rotulado como \"P250156 A\" correspondiente a \"masa periareolar superficial\" y \"P250156 B\" correspondiente a \"masa periareolar profunda\", el cual contiene catorce láminas de Hematoxilina & Eosina y catorce bloques de parafina con diagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)\". Se revisan placas para marcación RE, RP, HER2, ki67 y E-cadherina.",
+      "valor_corregido": "Se recibe orden para realización de inmunhistoquímica en material extrainstitucional rotulado como \"P250156 A\" correspondiente a \"masa periareolar superficial\" y \"P250156 B\" correspondiente a \"masa periareolar profunda\", el cual contiene catorce láminas de Hematoxilina & Eosina y catorce bloques de parafina con diagnóstico de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)\". Se revisan placas para marcación RE, RP, HER2, KI-67 y E-cadherina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250128",
+      "timestamp": "2026-01-07T08:45:03.432047"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® en el bloque A1. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Las células tumorales son positivas para E-CADHERINA POSITIVO FUERTE Y DIFUSO EN UN 80% REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%). -RECEPTOR DE PROGRESTERONA: NEGATIVO -HER 2: NEGATIVO (Score 0). -Ki-67: 60% ALTO. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® en el bloque A1. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. Las células tumorales son positivas para E-CADHERINA POSITIVO FUERTE Y DIFUSO EN UN 80% REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%). -RECEPTOR DE PROGRESTERONA: NEGATIVO -HER 2: NEGATIVO (Score 0). -KI-67: 60% ALTO. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250128",
+      "timestamp": "2026-01-07T08:45:03.432049"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 53
+  }
+}

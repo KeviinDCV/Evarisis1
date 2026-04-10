@@ -1,0 +1,125 @@
+{
+  "numero_caso": "IHQ251002",
+  "caso_num": 22,
+  "total_casos": 47,
+  "timestamp": "2025-11-27T13:38:35.474920",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 9,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "WARNING",
+      "mensaje": "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
+      "valor_bd": "NEOPLASIA FUSOCELULAR A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "valor_ocr": null,
+      "nota": "Verificar manualmente si el diagnóstico está en un formato no estándar"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "SARCOMA FUSOCELULAR INDIFERENCIADO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor_bd": "Ki-67: 50%",
+      "biomarcadores_fp": 1,
+      "total_solicitado": 8,
+      "cobertura_fp": "1/4",
+      "mensaje": "Factor pronóstico correcto con 1 biomarcador(es) - formato largo aceptado"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 8,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "CD34",
+        "CD56",
+        "CD68",
+        "CKAE1AE3",
+        "Ki-67",
+        "P63",
+        "S100",
+        "SOX10"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "CD34",
+        "CD56",
+        "CD68",
+        "CKAE1AE3",
+        "Ki-67",
+        "P63",
+        "S100",
+        "SOX10"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "Descripcion macroscopica coincide parcialmente con OCR (similitud: 67%)",
+      "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR"
+    ],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "WARNING",
+      "mensaje": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 67%)",
+      "valor_bd": "Se recibe orden para realizar estudios de inmunohistoquímica en material institucional rotulado M251...",
+      "valor_ocr": "Se recibe orden para realizar estudios de inmunohistoquímica en material institucional rotulado\nM251..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTAN..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "FÉMUR DERECHO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 77.8,
+    "validaciones_ok": 7,
+    "total_validaciones": 9,
+    "warnings": 2,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "ADVERTENCIA"
+}

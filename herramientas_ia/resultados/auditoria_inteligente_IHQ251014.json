@@ -1,0 +1,206 @@
+{
+  "numero_caso": "IHQ251014",
+  "caso_num": 33,
+  "total_casos": 47,
+  "timestamp": "2025-11-05T03:48:02.550708",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 15,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "ERROR",
+      "mensaje": "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
+      "valor_bd": "NO APLICA",
+      "valor_ocr": "“CELULARIDAD",
+      "patron_encontrado": "bloque M + diagnóstico de \"...\"",
+      "sugerencia": "Verificar medical_extractor.extract_diagnostico_coloracion()"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "CELULARIDAD GLOBAL DEL 70%"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "4 valores NO coinciden con OCR",
+      "total_solicitado_ocr": 14,
+      "total_solicitado_bd": 14,
+      "estudios_ocr": [
+        "CKAE1AE3",
+        "TDT",
+        "CD138",
+        "CD38",
+        "CD56",
+        "CD117",
+        "CD5",
+        "CD3",
+        "CD20",
+        "CD15",
+        "CD61",
+        "CD68",
+        "CD34",
+        "GLICOFORINA"
+      ],
+      "estudios_bd": [
+        "CKAE1AE3",
+        "TDT",
+        "CD138",
+        "CD38",
+        "CD56",
+        "CD117",
+        "CD5",
+        "CD3",
+        "CD20",
+        "CD15",
+        "CD61",
+        "CD68",
+        "CD34",
+        "GLICOFORINA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 14,
+      "no_mapeados": [],
+      "valores_incorrectos": [
+        {
+          "biomarcador": "CKAE1AE3",
+          "columna": "IHQ_CKAE1AE3",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "D"
+        },
+        {
+          "biomarcador": "TDT",
+          "columna": "IHQ_TDT",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "-"
+        },
+        {
+          "biomarcador": "CD117",
+          "columna": "IHQ_CD117",
+          "valor_bd": "POSITIVO",
+          "valor_ocr": "+"
+        },
+        {
+          "biomarcador": "CD34",
+          "columna": "IHQ_CD34",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "-"
+        }
+      ],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [
+      "BD indica MALIGNO pero no se encontraron keywords malignos en OCR"
+    ],
+    "errores": [
+      "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
+      "Campo Organo contiene problemas: texto duplicado: \"BIOPSIA DE HUESO\", código de caso, texto administrativo, texto administrativo, texto administrativo, texto administrativo, texto administrativo"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M251..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "MEDULA OSEA"
+    },
+    "organo": {
+      "estado": "ERROR",
+      "mensaje": "Campo Organo contiene problemas: texto duplicado: \"BIOPSIA DE HUESO\", código de caso, texto administrativo, texto administrativo, texto administrativo, texto administrativo, texto administrativo",
+      "valor_bd": "BIOPSIA DE HUESO IHQ251014-B ESTUDIO DE INMUNOHISTOQUIMICA 898807 ESTUDIO ANATOMOPATOLOGICO DE MARCACION INMUNOHISTOQUIMICA BASICA (ESPECIFICO) BLOQUES Y LAMINAS BIOPSIA DE HUESO",
+      "valor_sugerido": "BIOPSIA DE HUESO",
+      "nota": "Debe limpiarse: \"BIOPSIA DE HUESO IHQ251014-B ESTUDIO DE INMUNOHISTOQUIMICA 898807 ESTUDIO ANATOMOPATOLOGICO DE MARCACION INMUNOHISTOQUIMICA BASICA (ESPECIFICO) BLOQUES Y LAMINAS BIOPSIA DE HUESO\" → \"BIOPSIA DE HUESO\"",
+      "problemas_detectados": [
+        "texto duplicado: \"BIOPSIA DE HUESO\"",
+        "código de caso",
+        "texto administrativo",
+        "texto administrativo",
+        "texto administrativo",
+        "texto administrativo",
+        "texto administrativo"
+      ]
+    },
+    "formatos_biomarcadores": {
+      "estado": "OK",
+      "total_biomarcadores": 14,
+      "biomarcadores_con_problemas": 0,
+      "porcentaje_problemas": 0.0,
+      "problemas": [],
+      "mensaje": "Todos los biomarcadores tienen formato estandarizado"
+    },
+    "malignidad": {
+      "estado": "WARNING",
+      "mensaje": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+      "valor_bd": "MALIGNO",
+      "keywords_buscados": [
+        "CARCINOMA",
+        "ADENOCARCINOMA",
+        "SARCOMA",
+        "MELANOMA",
+        "LINFOMA",
+        "LEUCEMIA",
+        "NEOPLASIA MALIGNA",
+        "TUMOR MALIGNO",
+        "METASTASIS",
+        "METASTÁSICO",
+        "CÉLULAS TUMORALES",
+        "TIMOMA",
+        "TIMOMA AB",
+        "TIMOMA TIPO B"
+      ],
+      "nota": "Revisar manualmente si la clasificación es correcta"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 66.7,
+    "validaciones_ok": 6,
+    "total_validaciones": 9,
+    "warnings": 1,
+    "errores": 2,
+    "biomarcadores_solicitados": 14,
+    "biomarcadores_mapeados": 14,
+    "biomarcadores_no_mapeados": 0,
+    "completitud_biomarcadores": 100.0
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

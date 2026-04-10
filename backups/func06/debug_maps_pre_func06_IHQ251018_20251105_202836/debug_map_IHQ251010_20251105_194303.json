@@ -1,0 +1,165 @@
+{
+  "session_id": "IHQ251010_20251105_194303",
+  "numero_peticion": "IHQ251010",
+  "timestamp": "2025-11-05T19:43:03.027570",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251010\nCopia Pag. 1 de 2\nNombre : ANGELA MARIA MARTINEZ ROBLEDO\nN. peticion : IHQ251010\nN.Identificación : CC. 66716094\nGenero : FEMENINO\nEdad : 55 años 3 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 16/09/2025\nFecha Informe : 23/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO NIVEL V CUELLO\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe ordenamiento para realizarestudios de inmunohistoquímica del caso \"J2025-1529\" y\n\"J2025-1529-B\" correspondiente al estudo de un ganglio linfático cervical en la estación V del lado\nizquierdo.\nPrevia revisión de la histología se solicitan estudios de inmunohistoquímica con el anticuerpo para\np16.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema\nROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nGanglio linfático que está comprometido por una proliferación celular epitelial, con citoplasma\nabundante anfofílico, núcleos grandes, redondos a ovalados, con nucléolos prominentes, con\naumento de la actividad mitótica, hasta 5 por campo de alto poder.\nEstas células presentan un\ninmunofenotipo CK7+/CK20-, p40+/PAX8+/p63 y negativas para TTF-1, Tiroglobulina y Napsina A.\nAdicionalmente presenta sobreexpresión en bloque para p16.\nDIAGNÓSTICO\nGanglio linfático, estación V izquierda. Biopsia con aguja gruesa. \nCOMPROMISO POR CARCINOMA ESCAMOCELULAR METASTÁSICO.\nPOSITIVO PARRA SOBREEXPRESIÓN DE p16.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---\nIHQ251010\nCopia Pag. 2 de 2\nNombre : ANGELA MARIA MARTINEZ ROBLEDO\nN. peticion : IHQ251010\nN.Identificación : CC. 66716094\nGenero : FEMENINO\nEdad : 55 años 3 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 16/09/2025\nFecha Informe : 23/09/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3340,
+      "reduccion_porcentaje": 98.28
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251010",
+      "caso_num": 30,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ANGELA MARIA MARTINEZ ROBLEDO",
+      "numero_peticion": "IHQ251010",
+      "identificacion": "66716094",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "55",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "16/09/2025",
+      "fecha_informe": "23/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251010",
+      "N. de identificación": "66716094",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "16/09/2025",
+      "Fecha Informe": "23/09/2025",
+      "nombres": "ANGELA MARIA",
+      "Primer nombre": "ANGELA",
+      "Segundo nombre": "MARIA",
+      "apellidos": "MARTINEZ ROBLEDO",
+      "Primer apellido": "MARTINEZ",
+      "Segundo apellido": "ROBLEDO",
+      "nombre_formal": "MARTINEZ ROBLEDO, ANGELA MARIA",
+      "diagnostico": "Ganglio linfático, estación V izquierda. Biopsia con aguja gruesa. COMPROMISO POR CARCINOMA ESCAMOCELULAR METASTÁSICO. POSITIVO PARRA SOBREEXPRESIÓN DE P16.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Ganglio linfático que está comprometido por una proliferación celular epitelial, con citoplasma abundante anfofílico, núcleos grandes, redondos a ovalados, con nucléolos prominentes, con aumento de la actividad mitótica, hasta 5 por campo de alto poder. Estas células presentan un inmunofenotipo CK7+/CK20-, P40+/PAX8+/P63 y negativas para TTF1, Tiroglobulina y Napsina A. Adicionalmente presenta sobreexpresión en bloque para P16.",
+      "descripcion_macroscopica": "Se recibe ordenamiento para realizarestudios de inmunohistoquímica del caso \"J2025-1529\" y \"J2025-1529-B\" correspondiente al estudo de un ganglio linfático cervical en la estación V del lado izquierdo. Previa revisión de la histología se solicitan estudios de inmunohistoquímica con el anticuerpo para P16.",
+      "ihq_organo": "GANGLIO LINFÁTICO, ESTACIÓN V IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO, ESTACIÓN V IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO (SOBREEXPRESIÓN)",
+      "p16": "POSITIVO (SOBREEXPRESIÓN)",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2025-11-05T19:43:03.185808",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK20, CK7, NAPSIN, P16, P40, P63, PAX8, TTF1",
+      "Descripcion macroscopica": "Se recibe ordenamiento para realizarestudios de inmunohistoquímica del caso \"J2025-1529\" y \"J2025-1529-B\" correspondiente al estudo de un ganglio linfático cervical en la estación V del lado izquierdo. Previa revisión de la histología se solicitan estudios de inmunohistoquímica con el anticuerpo para p16.",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Ganglio linfático que está comprometido por una proliferación celular epitelial, con citoplasma abundante anfofílico, núcleos grandes, redondos a ovalados, con nucléolos prominentes, con aumento de la actividad mitótica, hasta 5 por campo de alto poder. Estas células presentan un inmunofenotipo CK7+/CK20-, p40+/PAX8+/p63 y negativas para TTF-1, Tiroglobulina y Napsina A. Adicionalmente presenta sobreexpresión en bloque para p16.",
+      "Descripcion Diagnostico": "Ganglio linfático, estación V izquierda. Biopsia con aguja gruesa. COMPROMISO POR CARCINOMA ESCAMOCELULAR METASTÁSICO. POSITIVO PARRA SOBREEXPRESIÓN DE P16.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO, ESTACIÓN V IZQUIERDA",
+      "Organo": "GANGLIO NIVEL V CUELLO IZQUIERDO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "COMPROMISO POR CARCINOMA ESCAMOCELULAR METASTÁSICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO (SOBREEXPRESIÓN)",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_TTF1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 143,
+      "campos_vacios": 100,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 8,
+      "completitud_porcentaje": 30.07
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 100,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático, estación V izquierda. Biopsia con aguja gruesa. \nCOMPROMISO POR CARCINOMA ESCAMOCELULAR METASTÁSICO.\nPOSITIVO PARRA SOBREEXPRESIÓN DE p16.",
+      "valor_corregido": "Ganglio linfático, estación V izquierda. Biopsia con aguja gruesa. COMPROMISO POR CARCINOMA ESCAMOCELULAR METASTÁSICO. POSITIVO PARRA SOBREEXPRESIÓN DE P16.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251010",
+      "timestamp": "2025-11-05T19:43:03.185454"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe ordenamiento para realizarestudios de inmunohistoquímica del caso \"J2025-1529\" y\n\"J2025-1529-B\" correspondiente al estudo de un ganglio linfático cervical en la estación V del lado\nizquierdo.\nPrevia revisión de la histología se solicitan estudios de inmunohistoquímica con el anticuerpo para\np16.",
+      "valor_corregido": "Se recibe ordenamiento para realizarestudios de inmunohistoquímica del caso \"J2025-1529\" y \"J2025-1529-B\" correspondiente al estudo de un ganglio linfático cervical en la estación V del lado izquierdo. Previa revisión de la histología se solicitan estudios de inmunohistoquímica con el anticuerpo para P16.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251010",
+      "timestamp": "2025-11-05T19:43:03.185461"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Ganglio linfático que está comprometido por una proliferación celular epitelial, con citoplasma abundante anfofílico, núcleos grandes, redondos a ovalados, con nucléolos prominentes, con aumento de la actividad mitótica, hasta 5 por campo de alto poder. Estas células presentan un inmunofenotipo CK7+/CK20-, p40+/PAX8+/p63 y negativas para TTF-1, Tiroglobulina y Napsina A. Adicionalmente presenta sobreexpresión en bloque para p16.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Ganglio linfático que está comprometido por una proliferación celular epitelial, con citoplasma abundante anfofílico, núcleos grandes, redondos a ovalados, con nucléolos prominentes, con aumento de la actividad mitótica, hasta 5 por campo de alto poder. Estas células presentan un inmunofenotipo CK7+/CK20-, P40+/PAX8+/P63 y negativas para TTF1, Tiroglobulina y Napsina A. Adicionalmente presenta sobreexpresión en bloque para P16.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251010",
+      "timestamp": "2025-11-05T19:43:03.185464"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 55
+  }
+}

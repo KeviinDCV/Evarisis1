@@ -1,0 +1,160 @@
+{
+  "session_id": "IHQ250043_20251130_182257",
+  "numero_peticion": "IHQ250043",
+  "timestamp": "2025-11-30T18:22:57.384910",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250043\nCopia Pag. 1 de 2\nNombre : NAHIDU URIBE CONDE\nN. peticion : IHQ250043\nN.Identificación : TI. 1077231406\nGenero : FEMENINO\nEdad : 15 años 2 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 15/01/2025\nFecha Informe : 22/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPOLO TEMPORAL +\nHIPOCAMPO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500289” correspondientes A.“Polo temporal derecho” y B.“Hipocampo”. Previa revisión de la\nhistología se realizan niveles histológicos para realizar inmunohistoquímica con NeuN - GFAP - CD68 en\nlos bloques A4 Y B2.\nDESCRIPCIÓN MICROSCÓPICA\nA. Se observa neocorteza con adecuada disposición laminar de los cuerpos neuronales inmunorreactivos\ncon el NeuN. Hay zonas corticales y subcorticales con incremento de astrocitos reactivos marcados con el\nGFAP. No se observan cambios displásicos ni lesión neoplásica.\nB. Bajo la tinción de NeuN se reconoce una despoblación neuronal notable en las zonas adyacentes al\ngiro dentado que se acompaña de una proliferación astrocitaria reactiva positiva para GFAP y de\nincremento en la actividad microglial CD68+. No se observan cambios displásicos ni lesión neoplásica.\nDIAGNÓSTICO\nA. Cerebro, temporal derecho. Lobectomía parcial. Estudio de inmunohistoquímica:\n- HALLAZGOS QUE FAVORECEN GLIOSIS REACTIVA.\nB. Hipocampo derecho. Hipocampectomía. Estudio de inmunohistoquímica:\n- COMPATIBLE CON ESCLEROSIS HIPOCAMPAL.\n- CAMBIOS REACTIVOS GLIALES Y MICROGLIALES.\nCOMENTARIOS\nA pesar que en la muestra recibida se logra conservar solo una parte del hipocampo, la disminución de la\npoblación neuronal encontrada es compatible con un cuadro de esclerosis hipocampal. Sin embargo, no\nes posible determinar una clasificación según la ILAE por efecto de falta de conservación de la\narquitectura completa. Todo lo descrito anteriormente debe ser correlacionado por el médico tratante\ncon las imágenes diagnosticas, datos clínicos y estudios adicionales completos.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---\nIHQ250043\nCopia Pag. 2 de 2\nNombre : NAHIDU URIBE CONDE\nN. peticion : IHQ250043\nN.Identificación : TI. 1077231406\nGenero : FEMENINO\nEdad : 15 años 2 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 15/01/2025\nFecha Informe : 22/01/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3893,
+      "reduccion_porcentaje": 97.73
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250043",
+      "caso_num": 43,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GFAP": "POSITIVO",
+      "nombre_completo": "NAHIDU URIBE CONDE",
+      "numero_peticion": "IHQ250043",
+      "identificacion": "1077231406",
+      "tipo_documento": "TI",
+      "Genero": "FEMENINO",
+      "Edad": "15",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "ALEJANDRO HERRERA",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "15/01/2025",
+      "fecha_informe": "22/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250043",
+      "N. de identificación": "1077231406",
+      "Tipo de documento": "TI",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "ALEJANDRO HERRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "15/01/2025",
+      "Fecha Informe": "22/01/2025",
+      "nombres": "NAHIDU",
+      "Primer nombre": "NAHIDU",
+      "Segundo nombre": "",
+      "apellidos": "URIBE CONDE",
+      "Primer apellido": "URIBE",
+      "Segundo apellido": "CONDE",
+      "nombre_formal": "URIBE CONDE, NAHIDU",
+      "diagnostico": "A. Cerebro, temporal derecho. Lobectomía parcial. Estudio de inmunohistoquímica: - HALLAZGOS QUE FAVORECEN GLIOSIS REACTIVA. B. Hipocampo derecho. Hipocampectomía. Estudio de inmunohistoquímica: - COMPATIBLE CON ESCLEROSIS HIPOCAMPAL. - CAMBIOS REACTIVOS GLIALES Y MICROGLIALES.",
+      "descripcion_microscopica": "A. Se observa neocorteza con adecuada disposición laminar de los cuerpos neuronales inmunorreactivos con el NeuN. Hay zonas corticales y subcorticales con incremento de astrocitos reactivos marcados con el GFAP. No se observan cambios displásicos ni lesión neoplásica. B. Bajo la tinción de NeuN se reconoce una despoblación neuronal notable en las zonas adyacentes al giro dentado que se acompaña de una proliferación astrocitaria reactiva positiva para GFAP y de incremento en la actividad microglial CD68+. No se observan cambios displásicos ni lesión neoplásica.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500289” correspondientes A.“Polo temporal derecho” y B.“Hipocampo”. Previa revisión de la histología se realizan niveles histológicos para realizar inmunohistoquímica con NeuN - GFAP - CD68 en los bloques A4 Y B2.",
+      "ihq_organo": "CEREBRO, TEMPORAL DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "NEUN GFAP CD68, B2",
+      "procedimiento": "",
+      "comentarios": "A pesar que en la muestra recibida se logra conservar solo una parte del hipocampo, la disminución de la población neuronal encontrada es compatible con un cuadro de esclerosis hipocampal. Sin embargo, no es posible determinar una clasificación según la ILAE por efecto de falta de conservación de la arquitectura completa. Todo lo descrito anteriormente debe ser correlacionado por el médico tratante con las imágenes diagnosticas, datos clínicos y estudios adicionales completos. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 73 --- IHQ250043 Copia Pag. 2 de 2 Nombre : NAHIDU URIBE CONDE N. peticion : IHQ250043 N.Identificación : TI. 1077231406 Genero : FEMENINO Edad : 15 años 2 dias EPS : ASOCIACION INDIGENA DEL CAUCA Médico tratante : ALEJANDRO HERRERA Servicio : QUIROFANO CENTRAL Fecha Ingreso : 15/01/2025 Fecha Informe : 22/01/2025",
+      "IHQ_ORGANO": "CEREBRO, TEMPORAL DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD68": "POSITIVO",
+      "extraction_timestamp": "2025-11-30T18:22:57.527238",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250043\nCopia Pag. 1 de 2\nNombre : NAHIDU URIBE CONDE\nN. peticion : IHQ250043\nN.Identificación : TI. 1077231406\nGenero : FEMENINO\nEdad : 15 años 2 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 15/01/2025\nFecha Informe : 22/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPOLO TEMPORAL +\nHIPOCAMPO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500289” correspondientes A.“Polo temporal derecho” y B.“Hipocampo”. Previa revisión de la\nhistología se realizan niveles histológicos para realizar inmunohistoquímica con NeuN - GFAP - CD68 en\nlos bloques A4 Y B2.\nDESCRIPCIÓN MICROSCÓPICA\nA. Se observa neocorteza con adecuada disposición laminar de los cuerpos neuronales inmunorreactivos\ncon el NeuN. Hay zonas corticales y subcorticales con incremento de astrocitos reactivos marcados con el\nGFAP. No se observan cambios displásicos ni lesión neoplásica.\nB. Bajo la tinción de NeuN se reconoce una despoblación neuronal notable en las zonas adyacentes al\ngiro dentado que se acompaña de una proliferación astrocitaria reactiva positiva para GFAP y de\nincremento en la actividad microglial CD68+. No se observan cambios displásicos ni lesión neoplásica.\nDIAGNÓSTICO\nA. Cerebro, temporal derecho. Lobectomía parcial. Estudio de inmunohistoquímica:\n- HALLAZGOS QUE FAVORECEN GLIOSIS REACTIVA.\nB. Hipocampo derecho. Hipocampectomía. Estudio de inmunohistoquímica:\n- COMPATIBLE CON ESCLEROSIS HIPOCAMPAL.\n- CAMBIOS REACTIVOS GLIALES Y MICROGLIALES.\nCOMENTARIOS\nA pesar que en la muestra recibida se logra conservar solo una parte del hipocampo, la disminución de la\npoblación neuronal encontrada es compatible con un cuadro de esclerosis hipocampal. Sin embargo, no\nes posible determinar una clasificación según la ILAE por efecto de falta de conservación de la\narquitectura completa. Todo lo descrito anteriormente debe ser correlacionado por el médico tratante\ncon las imágenes diagnosticas, datos clínicos y estudios adicionales completos.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---\nIHQ250043\nCopia Pag. 2 de 2\nNombre : NAHIDU URIBE CONDE\nN. peticion : IHQ250043\nN.Identificación : TI. 1077231406\nGenero : FEMENINO\nEdad : 15 años 2 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 15/01/2025\nFecha Informe : 22/01/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "NEUN GFAP CD68, B2",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500289” correspondientes A.“Polo temporal derecho” y B.“Hipocampo”. Previa revisión de la histología se realizan niveles histológicos para realizar inmunohistoquímica con NeuN - GFAP - CD68 en los bloques A4 Y B2.",
+      "Descripcion microscopica": "A. Se observa neocorteza con adecuada disposición laminar de los cuerpos neuronales inmunorreactivos con el NeuN. Hay zonas corticales y subcorticales con incremento de astrocitos reactivos marcados con el GFAP. No se observan cambios displásicos ni lesión neoplásica. B. Bajo la tinción de NeuN se reconoce una despoblación neuronal notable en las zonas adyacentes al giro dentado que se acompaña de una proliferación astrocitaria reactiva positiva para GFAP y de incremento en la actividad microglial CD68+. No se observan cambios displásicos ni lesión neoplásica.",
+      "Descripcion Diagnostico": "A. Cerebro, temporal derecho. Lobectomía parcial. Estudio de inmunohistoquímica: - HALLAZGOS QUE FAVORECEN GLIOSIS REACTIVA. B. Hipocampo derecho. Hipocampectomía. Estudio de inmunohistoquímica: - COMPATIBLE CON ESCLEROSIS HIPOCAMPAL. - CAMBIOS REACTIVOS GLIALES Y MICROGLIALES.",
+      "IHQ_ORGANO": "CEREBRO, TEMPORAL DERECHO",
+      "Organo": "POLO TEMPORAL + HIPOCAMPO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "HALLAZGOS QUE FAVORECEN GLIOSIS REACTIVA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_B2": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 149,
+      "campos_vacios": 112,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 1,
+      "completitud_porcentaje": 24.83
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 112,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Cerebro, temporal derecho. Lobectomía parcial. Estudio de inmunohistoquímica:\n- HALLAZGOS QUE FAVORECEN GLIOSIS REACTIVA.\nB. Hipocampo derecho. Hipocampectomía. Estudio de inmunohistoquímica:\n- COMPATIBLE CON ESCLEROSIS HIPOCAMPAL.\n- CAMBIOS REACTIVOS GLIALES Y MICROGLIALES.",
+      "valor_corregido": "A. Cerebro, temporal derecho. Lobectomía parcial. Estudio de inmunohistoquímica: - HALLAZGOS QUE FAVORECEN GLIOSIS REACTIVA. B. Hipocampo derecho. Hipocampectomía. Estudio de inmunohistoquímica: - COMPATIBLE CON ESCLEROSIS HIPOCAMPAL. - CAMBIOS REACTIVOS GLIALES Y MICROGLIALES.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250043",
+      "timestamp": "2025-11-30T18:22:57.527025"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500289” correspondientes A.“Polo temporal derecho” y B.“Hipocampo”. Previa revisión de la\nhistología se realizan niveles histológicos para realizar inmunohistoquímica con NeuN - GFAP - CD68 en\nlos bloques A4 Y B2.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500289” correspondientes A.“Polo temporal derecho” y B.“Hipocampo”. Previa revisión de la histología se realizan niveles histológicos para realizar inmunohistoquímica con NeuN - GFAP - CD68 en los bloques A4 Y B2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250043",
+      "timestamp": "2025-11-30T18:22:57.527031"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "A. Se observa neocorteza con adecuada disposición laminar de los cuerpos neuronales inmunorreactivos\ncon el NeuN. Hay zonas corticales y subcorticales con incremento de astrocitos reactivos marcados con el\nGFAP. No se observan cambios displásicos ni lesión neoplásica.\nB. Bajo la tinción de NeuN se reconoce una despoblación neuronal notable en las zonas adyacentes al\ngiro dentado que se acompaña de una proliferación astrocitaria reactiva positiva para GFAP y de\nincremento en la actividad microglial CD68+. No se observan cambios displásicos ni lesión neoplásica.",
+      "valor_corregido": "A. Se observa neocorteza con adecuada disposición laminar de los cuerpos neuronales inmunorreactivos con el NeuN. Hay zonas corticales y subcorticales con incremento de astrocitos reactivos marcados con el GFAP. No se observan cambios displásicos ni lesión neoplásica. B. Bajo la tinción de NeuN se reconoce una despoblación neuronal notable en las zonas adyacentes al giro dentado que se acompaña de una proliferación astrocitaria reactiva positiva para GFAP y de incremento en la actividad microglial CD68+. No se observan cambios displásicos ni lesión neoplásica.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250043",
+      "timestamp": "2025-11-30T18:22:57.527033"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "A pesar que en la muestra recibida se logra conservar solo una parte del hipocampo, la disminución de la\npoblación neuronal encontrada es compatible con un cuadro de esclerosis hipocampal. Sin embargo, no\nes posible determinar una clasificación según la ILAE por efecto de falta de conservación de la\narquitectura completa. Todo lo descrito anteriormente debe ser correlacionado por el médico tratante\ncon las imágenes diagnosticas, datos clínicos y estudios adicionales completos.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---\nIHQ250043\nCopia Pag. 2 de 2\nNombre : NAHIDU URIBE CONDE\nN. peticion : IHQ250043\nN.Identificación : TI. 1077231406\nGenero : FEMENINO\nEdad : 15 años 2 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 15/01/2025\nFecha Informe : 22/01/2025",
+      "valor_corregido": "A pesar que en la muestra recibida se logra conservar solo una parte del hipocampo, la disminución de la población neuronal encontrada es compatible con un cuadro de esclerosis hipocampal. Sin embargo, no es posible determinar una clasificación según la ILAE por efecto de falta de conservación de la arquitectura completa. Todo lo descrito anteriormente debe ser correlacionado por el médico tratante con las imágenes diagnosticas, datos clínicos y estudios adicionales completos. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 73 --- IHQ250043 Copia Pag. 2 de 2 Nombre : NAHIDU URIBE CONDE N. peticion : IHQ250043 N.Identificación : TI. 1077231406 Genero : FEMENINO Edad : 15 años 2 dias EPS : ASOCIACION INDIGENA DEL CAUCA Médico tratante : ALEJANDRO HERRERA Servicio : QUIROFANO CENTRAL Fecha Ingreso : 15/01/2025 Fecha Informe : 22/01/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250043",
+      "timestamp": "2025-11-30T18:22:57.527034"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 48
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "caso": "IHQ251026",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "casos_eliminados": 0,
+  "casos_reprocesados": 0,
+  "score_antes": 0,
+  "score_despues": 0,
+  "mejora_porcentaje": 0,
+  "auditoria_completa": {},
+  "estado": "ERROR_REPROCESAMIENTO_ROLLBACK_EXITOSO",
+  "errores": [
+    "Error en procesamiento IHQ: No se pudo extraer información de ningún informe en el PDF.\n\nDetalles:\n- PDF: IHQ DEL 980 AL 1037.pdf\n- Segmentos detectados: 47\n- Casos que intentaron procesarse: 47\n\nPosibles causas:\n1. El PDF no contiene informes IHQ válidos\n2. El formato del PDF es diferente al esperado\n3. Los datos extraídos están vacíos o son inválidos\n\nCasos encontrados: ['IHQ250980', 'IHQ250981', 'IHQ250982', 'IHQ250983', 'IHQ250984', 'IHQ250985', 'IHQ250986', 'IHQ250987', 'IHQ250988', 'IHQ250989', 'IHQ250991', 'IHQ250992', 'IHQ250993', 'IHQ250994', 'IHQ250995', 'IHQ250996', 'IHQ250997', 'IHQ250998', 'IHQ250999', 'IHQ251000', 'IHQ251001', 'IHQ251002', 'IHQ251003', 'IHQ251004', 'IHQ251005', 'IHQ251006', 'IHQ251007', 'IHQ251008', 'IHQ251009', 'IHQ251010', 'IHQ251011', 'IHQ251012', 'IHQ251014', 'IHQ251015', 'IHQ251016', 'IHQ251017', 'IHQ251018', 'IHQ251020', 'IHQ251022', 'IHQ251023', 'IHQ251026', 'IHQ251027', 'IHQ251029', 'IHQ251030', 'IHQ251031', 'IHQ251033', 'IHQ251037']\nTraceback (most recent call last):\n  File \"C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\core\\ihq_processor.py\", line 193, in process_ihq_file\n    raise RuntimeError(error_detallado)\nRuntimeError: No se pudo extraer información de ningún informe en el PDF.\n\nDetalles:\n- PDF: IHQ DEL 980 AL 1037.pdf\n- Segmentos detectados: 47\n- Casos que intentaron procesarse: 47\n\nPosibles causas:\n1. El PDF no contiene informes IHQ válidos\n2. El formato del PDF es diferente al esperado\n3. Los datos extraídos están vacíos o son inválidos\n\nCasos encontrados: ['IHQ250980', 'IHQ250981', 'IHQ250982', 'IHQ250983', 'IHQ250984', 'IHQ250985', 'IHQ250986', 'IHQ250987', 'IHQ250988', 'IHQ250989', 'IHQ250991', 'IHQ250992', 'IHQ250993', 'IHQ250994', 'IHQ250995', 'IHQ250996', 'IHQ250997', 'IHQ250998', 'IHQ250999', 'IHQ251000', 'IHQ251001', 'IHQ251002', 'IHQ251003', 'IHQ251004', 'IHQ251005', 'IHQ251006', 'IHQ251007', 'IHQ251008', 'IHQ251009', 'IHQ251010', 'IHQ251011', 'IHQ251012', 'IHQ251014', 'IHQ251015', 'IHQ251016', 'IHQ251017', 'IHQ251018', 'IHQ251020', 'IHQ251022', 'IHQ251023', 'IHQ251026', 'IHQ251027', 'IHQ251029', 'IHQ251030', 'IHQ251031', 'IHQ251033', 'IHQ251037']\n"
+  ],
+  "backup_db": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\func06\\huv_oncologia_pre_func06_IHQ251026_20251108_234713.db",
+  "backup_debug_maps": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\func06\\debug_maps_pre_func06_IHQ251026_20251108_234713",
+  "backup_timestamp": "20251108_234713"
+}

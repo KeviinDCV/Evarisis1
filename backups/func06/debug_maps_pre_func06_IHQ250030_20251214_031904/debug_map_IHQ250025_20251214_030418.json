@@ -1,0 +1,153 @@
+{
+  "session_id": "IHQ250025_20251214_030418",
+  "numero_peticion": "IHQ250025",
+  "timestamp": "2025-12-14T03:04:18.851879",
+  "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250025\nCopia Pag. 1 de 1\nNombre : JOSE CARMELO MURILLO ALBORNOZ N. peticion : IHQ250025\nN.Identificación : CC. 4834876\nGenero : MASCULINO\nEdad : 65 años 9 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAIRO ALONSO ALEGRIA ORTIZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 09/01/2025\nFecha Informe : 20/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PULMON\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410737” correspondiente a “biopsia de lesión en pulmón izquierda” con diagnóstico de “CARCINOMA\nDE CÉLULA GRANDE ,TIPO INDIFERENCIADO”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores: Napsina, TTF 1, p 40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para Napsina y TTF 1. Las celulas son negativas para p40.\nDIAGNÓSTICO\nPulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:\nADENOCARCINOMA INVASIVO PULMONAR EN PATRÓN SOLIDO (Tejido fragmentado )\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 2460,
+      "reduccion_porcentaje": 98.56
+    },
+    "metadata": {
+      "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250025",
+      "caso_num": 25,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_NAPSIN": "POSITIVO",
+      "nombre_completo": "JOSE CARMELO MURILLO ALBORNOZ",
+      "numero_peticion": "IHQ250025",
+      "identificacion": "4834876",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "65",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JAIRO ALONSO ALEGRIA ORTIZ",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "09/01/2025",
+      "fecha_informe": "20/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250025",
+      "N. de identificación": "4834876",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "JAIRO ALONSO ALEGRIA ORTIZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/01/2025",
+      "Fecha Informe": "20/01/2025",
+      "nombres": "JOSE CARMELO",
+      "Primer nombre": "JOSE",
+      "Segundo nombre": "CARMELO",
+      "apellidos": "MURILLO ALBORNOZ",
+      "Primer apellido": "MURILLO",
+      "Segundo apellido": "ALBORNOZ",
+      "nombre_formal": "MURILLO ALBORNOZ, JOSE CARMELO",
+      "diagnostico": "Pulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: ADENOCARCINOMA INVASIVO PULMONAR EN PATRÓN SOLIDO (Tejido fragmentado )",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para Napsina y TTF1. Las celulas son negativas para P40.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410737” correspondiente a “biopsia de lesión en pulmón izquierda” con diagnóstico de “CARCINOMA DE CÉLULA GRANDE ,TIPO INDIFERENCIADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: Napsina, TTF1, P40.",
+      "ihq_organo": "PULMÓN IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PULMÓN IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2025-12-14T03:04:18.985848",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250025\nCopia Pag. 1 de 1\nNombre : JOSE CARMELO MURILLO ALBORNOZ N. peticion : IHQ250025\nN.Identificación : CC. 4834876\nGenero : MASCULINO\nEdad : 65 años 9 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAIRO ALONSO ALEGRIA ORTIZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 09/01/2025\nFecha Informe : 20/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PULMON\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410737” correspondiente a “biopsia de lesión en pulmón izquierda” con diagnóstico de “CARCINOMA\nDE CÉLULA GRANDE ,TIPO INDIFERENCIADO”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores: Napsina, TTF 1, p 40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para Napsina y TTF 1. Las celulas son negativas para p40.\nDIAGNÓSTICO\nPulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:\nADENOCARCINOMA INVASIVO PULMONAR EN PATRÓN SOLIDO (Tejido fragmentado )\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "NAPSIN, P40",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410737” correspondiente a “biopsia de lesión en pulmón izquierda” con diagnóstico de “CARCINOMA DE CÉLULA GRANDE ,TIPO INDIFERENCIADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: Napsina, TTF 1, p 40.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para Napsina y TTF 1. Las celulas son negativas para p40.",
+      "Descripcion Diagnostico": "Pulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: ADENOCARCINOMA INVASIVO PULMONAR EN PATRÓN SOLIDO (Tejido fragmentado )",
+      "IHQ_ORGANO": "PULMÓN IZQUIERDO",
+      "Organo": "LESION PULMON IZQUIERDO",
+      "Diagnostico Coloracion": "CARCINOMA DE CÉLULA GRANDE ,TIPO INDIFERENCIADO",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO PULMONAR EN PATRÓN SOLIDO (TEJIDO FRAGMENTADO )",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_NAPSIN": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 120,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 23.57
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 120,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:\nADENOCARCINOMA INVASIVO PULMONAR EN PATRÓN SOLIDO (Tejido fragmentado )",
+      "valor_corregido": "Pulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: ADENOCARCINOMA INVASIVO PULMONAR EN PATRÓN SOLIDO (Tejido fragmentado )",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250025",
+      "timestamp": "2025-12-14T03:04:18.985469"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410737” correspondiente a “biopsia de lesión en pulmón izquierda” con diagnóstico de “CARCINOMA\nDE CÉLULA GRANDE ,TIPO INDIFERENCIADO”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores: Napsina, TTF 1, p 40.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410737” correspondiente a “biopsia de lesión en pulmón izquierda” con diagnóstico de “CARCINOMA DE CÉLULA GRANDE ,TIPO INDIFERENCIADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: Napsina, TTF1, P40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250025",
+      "timestamp": "2025-12-14T03:04:18.985478"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para Napsina y TTF 1. Las celulas son negativas para p40.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para Napsina y TTF1. Las celulas son negativas para P40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250025",
+      "timestamp": "2025-12-14T03:04:18.985481"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 49
+  }
+}

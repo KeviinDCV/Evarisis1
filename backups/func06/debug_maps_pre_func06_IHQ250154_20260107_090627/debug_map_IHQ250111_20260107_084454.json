@@ -1,0 +1,150 @@
+{
+  "session_id": "IHQ250111_20260107_084454",
+  "numero_peticion": "IHQ250111",
+  "timestamp": "2026-01-07T08:44:54.996807",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250111\nCopia Pag. 1 de 2\nNombre : SULEIMA MARIA ARAGON LOZADA\nN. peticion : IHQ250111\nN.Identificación : CC. 66835469\nGenero : FEMENINO\nEdad : 55 años 3 dias\nEPS : POLICIA NACIONAL\nMédico tratante : SANDRA MORERA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 06/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque P24-19600 que corresponde a biopsia trucut de lesión en mama derecha,\ncon diagnóstico de \"LESIÓN FIBROEPITELIAL QUE FAVORECE FIBROADENOMA\". Se ordenan estudios de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nEn los cortes de H&E se identifica una lesión fibroepitelial de aspecto benigno, con marcación de células\nmioepiteliales para Calponina y p63, con positividad en las células epiteliales para CK5/6 y con\npositividad en mosaico para Receptor de Estrógeno.\nDIAGNÓSTICO\nMama derecha. Lesión. Biopsia trucut. Estudios de inmunohistoquímica:\nLESIÓN FIBROEPITELIAL QUE FAVORECE FIBROADENOMA.\nNEGATIVO PARA CAMBIOS INVASVOS O PREINVASIVOS EN LA MUESTRA\nCOMENTARIOS\nLas lesiones mamarias suelen ser heterogéneas, por lo que en caso de sospecha de malignidad se\nrecomienda estudio en especimen de resección de acuerdo a criterio del medico tratante\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---\nIHQ250111\nCopia Pag. 2 de 2\nNombre : SULEIMA MARIA ARAGON LOZADA\nN. peticion : IHQ250111\nN.Identificación : CC. 66835469\nGenero : FEMENINO\nEdad : 55 años 3 dias\nEPS : POLICIA NACIONAL\nMédico tratante : SANDRA MORERA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 06/02/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 8 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3243,
+      "reduccion_porcentaje": 98.13
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250111",
+      "caso_num": 4,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (mosaico)",
+      "nombre_completo": "SULEIMA MARIA ARAGON LOZADA",
+      "numero_peticion": "IHQ250111",
+      "identificacion": "66835469",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "55",
+      "eps": "POLICIA NACIONAL",
+      "medico_tratante": "SANDRA MORERA",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "30/01/2025",
+      "fecha_informe": "06/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250111",
+      "N. de identificación": "66835469",
+      "Tipo de documento": "CC",
+      "EPS": "POLICIA NACIONAL",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "SANDRA MORERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "30/01/2025",
+      "Fecha Informe": "06/02/2025",
+      "nombres": "SULEIMA MARIA",
+      "Primer nombre": "SULEIMA",
+      "Segundo nombre": "MARIA",
+      "apellidos": "ARAGON LOZADA",
+      "Primer apellido": "ARAGON",
+      "Segundo apellido": "LOZADA",
+      "nombre_formal": "ARAGON LOZADA, SULEIMA MARIA",
+      "diagnostico": "Mama derecha. Lesión. Biopsia trucut. Estudios de inmunohistoquímica: LESIÓN FIBROEPITELIAL QUE FAVORECE FIBROADENOMA. NEGATIVO PARA CAMBIOS INVASVOS O PREINVASIVOS EN LA MUESTRA",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. En los cortes de H&E se identifica una lesión fibroepitelial de aspecto benigno, con marcación de células mioepiteliales para Calponina y p63, con positividad en las células epiteliales para CK5/6 y con positividad en mosaico para Receptor de Estrógeno.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque P24-19600 que corresponde a biopsia trucut de lesión en mama derecha, con diagnóstico de \"LESIÓN FIBROEPITELIAL QUE FAVORECE FIBROADENOMA\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Las lesiones mamarias suelen ser heterogéneas, por lo que en caso de sospecha de malignidad se recomienda estudio en especimen de resección de a",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (mosaico)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-01-07T08:44:55.425756",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250111\nCopia Pag. 1 de 2\nNombre : SULEIMA MARIA ARAGON LOZADA\nN. peticion : IHQ250111\nN.Identificación : CC. 66835469\nGenero : FEMENINO\nEdad : 55 años 3 dias\nEPS : POLICIA NACIONAL\nMédico tratante : SANDRA MORERA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 06/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque P24-19600 que corresponde a biopsia trucut de lesión en mama derecha,\ncon diagnóstico de \"LESIÓN FIBROEPITELIAL QUE FAVORECE FIBROADENOMA\". Se ordenan estudios de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nEn los cortes de H&E se identifica una lesión fibroepitelial de aspecto benigno, con marcación de células\nmioepiteliales para Calponina y p63, con positividad en las células epiteliales para CK5/6 y con\npositividad en mosaico para Receptor de Estrógeno.\nDIAGNÓSTICO\nMama derecha. Lesión. Biopsia trucut. Estudios de inmunohistoquímica:\nLESIÓN FIBROEPITELIAL QUE FAVORECE FIBROADENOMA.\nNEGATIVO PARA CAMBIOS INVASVOS O PREINVASIVOS EN LA MUESTRA\nCOMENTARIOS\nLas lesiones mamarias suelen ser heterogéneas, por lo que en caso de sospecha de malignidad se\nrecomienda estudio en especimen de resección de acuerdo a criterio del medico tratante\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---\nIHQ250111\nCopia Pag. 2 de 2\nNombre : SULEIMA MARIA ARAGON LOZADA\nN. peticion : IHQ250111\nN.Identificación : CC. 66835469\nGenero : FEMENINO\nEdad : 55 años 3 dias\nEPS : POLICIA NACIONAL\nMédico tratante : SANDRA MORERA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 06/02/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 8 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK5/6, Calponina, P63, Receptor de Estrógeno",
+      "Descripcion macroscopica": "Se realizan niveles al bloque P24-19600 que corresponde a biopsia trucut de lesión en mama derecha, con diagnóstico de \"LESIÓN FIBROEPITELIAL QUE FAVORECE FIBROADENOMA\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. En los cortes de H&E se identifica una lesión fibroepitelial de aspecto benigno, con marcación de células mioepiteliales para Calponina y p63, con positividad en las células epiteliales para CK5/6 y con positividad en mosaico para Receptor de Estrógeno.",
+      "Descripcion Diagnostico": "Mama derecha. Lesión. Biopsia trucut. Estudios de inmunohistoquímica: LESIÓN FIBROEPITELIAL QUE FAVORECE FIBROADENOMA. NEGATIVO PARA CAMBIOS INVASVOS O PREINVASIVOS EN LA MUESTRA",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "MAMA DERECHA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "LESIÓN FIBROEPITELIAL QUE FAVORECE FIBROADENOMA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (mosaico)",
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (mosaico)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 128,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 128,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Lesión. Biopsia trucut. Estudios de inmunohistoquímica:\nLESIÓN FIBROEPITELIAL QUE FAVORECE FIBROADENOMA.\nNEGATIVO PARA CAMBIOS INVASVOS O PREINVASIVOS EN LA MUESTRA",
+      "valor_corregido": "Mama derecha. Lesión. Biopsia trucut. Estudios de inmunohistoquímica: LESIÓN FIBROEPITELIAL QUE FAVORECE FIBROADENOMA. NEGATIVO PARA CAMBIOS INVASVOS O PREINVASIVOS EN LA MUESTRA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250111",
+      "timestamp": "2026-01-07T08:44:55.425516"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Las lesiones mamarias suelen ser heterogéneas, por lo que en caso de sospecha de malignidad se\nrecomienda estudio en especimen de resección de a",
+      "valor_corregido": "Las lesiones mamarias suelen ser heterogéneas, por lo que en caso de sospecha de malignidad se recomienda estudio en especimen de resección de a",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250111",
+      "timestamp": "2026-01-07T08:44:55.425525"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 51
+  }
+}

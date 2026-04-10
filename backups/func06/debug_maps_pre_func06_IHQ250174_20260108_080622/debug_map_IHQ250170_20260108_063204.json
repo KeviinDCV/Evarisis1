@@ -1,0 +1,164 @@
+{
+  "session_id": "IHQ250170_20260108_063204",
+  "numero_peticion": "IHQ250170",
+  "timestamp": "2026-01-08T06:32:04.740018",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250170\nCopia Pag. 1 de 2\nNombre : FABIO CHIRIVI LISARASO\nN. peticion : IHQ250170\nN.Identificación : CC. 6400752\nGenero : MASCULINO\nEdad : 69 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : JHONNY ANDRES GOMEZ AREVALO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 14/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR MENINGE\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501378 . Previa valoración de la coloración básica, se realizan cortes histológicos para los\nsiguientes marcadores: CK AE1/AE2 , EMA , progesterona , Ki67 , vimentina , S100.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEn la muestra evaluada no se reconocen meninges, EMA, AE1/AE3, progesterona negativos. Se\nobserva tejido fibroconectivo denso con proliferación de fibroblastos y miofibroblastos (vimentina\n+, S100-), acompañado de escaso infiltrados inflamatorios mononucleares algunos con marcación\npara Ki67. No se identifican atipias celulares ni signos de malignidad.\nEl estudio de inmunohistoquímica revela un perfil compatible con una reacción reparativa, sin\nmarcadores sugestivos de neoplasia.\nDIAGNÓSTICO\nCanal medular ( Meninges). Lesión. Resección. Estudio de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÒGICOS Y EL PERFIL DE EXPRESIÒN DE INMUNOHISTOQUÌMICA\nCONSISTENTES CON\nFIBROSIS\nREACCIÓN REPARATIVA\nNEOFORMACIÓN ÓSEA.\nCOMENTARIOS\nEl perfil de inmunohistoquìmica descartar compromiso por lesiòn neoplasica. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---\nIHQ250170\nCopia Pag. 2 de 2\nNombre : FABIO CHIRIVI LISARASO\nN. peticion : IHQ250170\nN.Identificación : CC. 6400752\nGenero : MASCULINO\nEdad : 69 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : JHONNY ANDRES GOMEZ AREVALO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 14/02/2025\nFecha Informe : 05/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3481,
+      "reduccion_porcentaje": 97.9
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250170",
+      "caso_num": 10,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_KI67": "POSITIVO",
+      "nombre_completo": "FABIO CHIRIVI LISARASO",
+      "numero_peticion": "IHQ250170",
+      "identificacion": "6400752",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "69",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JHONNY ANDRES GOMEZ AREVALO",
+      "servicio": "NEUROCIRUGIA",
+      "fecha_ingreso": "14/02/2025",
+      "fecha_informe": "05/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250170",
+      "N. de identificación": "6400752",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "NEUROCIRUGIA",
+      "Médico tratante": "JHONNY ANDRES GOMEZ AREVALO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/02/2025",
+      "Fecha Informe": "05/03/2025",
+      "nombres": "FABIO",
+      "Primer nombre": "FABIO",
+      "Segundo nombre": "",
+      "apellidos": "CHIRIVI LISARASO",
+      "Primer apellido": "CHIRIVI",
+      "Segundo apellido": "LISARASO",
+      "nombre_formal": "CHIRIVI LISARASO, FABIO",
+      "diagnostico": "Canal medular ( Meninges). Lesión. Resección. Estudio de inmunohistoquímica. LOS HALLAZGOS MORFOLÒGICOS Y EL PERFIL DE EXPRESIÒN DE INMUNOHISTOQUÌMICA CONSISTENTES CON FIBROSIS REACCIÓN REPARATIVA NEOFORMACIÓN ÓSEA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la muestra evaluada no se reconocen meninges, EMA, AE1/AE3, progesterona negativos. Se observa tejido fibroconectivo denso con proliferación de fibroblastos y miofibroblastos (vimentina +, S100-), acompañado de escaso infiltrados inflamatorios mononucleares algunos con marcación para KI-67. No se identifican atipias celulares ni signos de malignidad. El estudio de inmunohistoquímica revela un perfil compatible con una reacción reparativa, sin marcadores sugestivos de neoplasia.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501378 . Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: CK AE1/AE2 , EMA , progesterona , KI-67 , vimentina , S100.",
+      "ihq_organo": "CANAL MEDULAR ( MENINGES)",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK, AE1AE2, EMA, Receptor de Progesterona, Ki-67, VIMENTINA, S100",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "El perfil de inmunohistoquìmica descartar compromiso por lesiòn neoplasica.",
+      "IHQ_ORGANO": "CANAL MEDULAR ( MENINGES)",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Ki-67: POSITIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK, AE1AE2, EMA, Receptor de Progesterona, Ki-67, VIMENTINA, S100",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_KI-67": "POSITIVO",
+      "extraction_timestamp": "2026-01-08T06:32:05.163254",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250170\nCopia Pag. 1 de 2\nNombre : FABIO CHIRIVI LISARASO\nN. peticion : IHQ250170\nN.Identificación : CC. 6400752\nGenero : MASCULINO\nEdad : 69 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : JHONNY ANDRES GOMEZ AREVALO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 14/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR MENINGE\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501378 . Previa valoración de la coloración básica, se realizan cortes histológicos para los\nsiguientes marcadores: CK AE1/AE2 , EMA , progesterona , Ki67 , vimentina , S100.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEn la muestra evaluada no se reconocen meninges, EMA, AE1/AE3, progesterona negativos. Se\nobserva tejido fibroconectivo denso con proliferación de fibroblastos y miofibroblastos (vimentina\n+, S100-), acompañado de escaso infiltrados inflamatorios mononucleares algunos con marcación\npara Ki67. No se identifican atipias celulares ni signos de malignidad.\nEl estudio de inmunohistoquímica revela un perfil compatible con una reacción reparativa, sin\nmarcadores sugestivos de neoplasia.\nDIAGNÓSTICO\nCanal medular ( Meninges). Lesión. Resección. Estudio de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÒGICOS Y EL PERFIL DE EXPRESIÒN DE INMUNOHISTOQUÌMICA\nCONSISTENTES CON\nFIBROSIS\nREACCIÓN REPARATIVA\nNEOFORMACIÓN ÓSEA.\nCOMENTARIOS\nEl perfil de inmunohistoquìmica descartar compromiso por lesiòn neoplasica. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---\nIHQ250170\nCopia Pag. 2 de 2\nNombre : FABIO CHIRIVI LISARASO\nN. peticion : IHQ250170\nN.Identificación : CC. 6400752\nGenero : MASCULINO\nEdad : 69 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : JHONNY ANDRES GOMEZ AREVALO\nServicio : NEUROCIRUGIA\nFecha Ingreso : 14/02/2025\nFecha Informe : 05/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, CKAE1AE3, EMA, Receptor de Progesterona, Ki-67, VIMENTINA, S100",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501378 . Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: CK AE1/AE2 , EMA , progesterona , Ki67 , vimentina , S100.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la muestra evaluada no se reconocen meninges, EMA, AE1/AE3, progesterona negativos. Se observa tejido fibroconectivo denso con proliferación de fibroblastos y miofibroblastos (vimentina +, S100-), acompañado de escaso infiltrados inflamatorios mononucleares algunos con marcación para Ki67. No se identifican atipias celulares ni signos de malignidad. El estudio de inmunohistoquímica revela un perfil compatible con una reacción reparativa, sin marcadores sugestivos de neoplasia.",
+      "Descripcion Diagnostico": "Canal medular ( Meninges). Lesión. Resección. Estudio de inmunohistoquímica. LOS HALLAZGOS MORFOLÒGICOS Y EL PERFIL DE EXPRESIÒN DE INMUNOHISTOQUÌMICA CONSISTENTES CON FIBROSIS REACCIÓN REPARATIVA NEOFORMACIÓN ÓSEA.",
+      "IHQ_ORGANO": "CANAL MEDULAR ( MENINGES)",
+      "Organo": "TUMOR MENINGE",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÒGICOS Y EL PERFIL DE EXPRESIÒN DE INMUNOHISTOQUÌMICA CONSISTENTES CON FIBROSIS REACCIÓN REPARATIVA NEOFORMACIÓN ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: POSITIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_KI-67": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "IHQ_S100": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 169,
+      "campos_vacios": 129,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Canal medular ( Meninges). Lesión. Resección. Estudio de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÒGICOS Y EL PERFIL DE EXPRESIÒN DE INMUNOHISTOQUÌMICA\nCONSISTENTES CON\nFIBROSIS\nREACCIÓN REPARATIVA\nNEOFORMACIÓN ÓSEA.",
+      "valor_corregido": "Canal medular ( Meninges). Lesión. Resección. Estudio de inmunohistoquímica. LOS HALLAZGOS MORFOLÒGICOS Y EL PERFIL DE EXPRESIÒN DE INMUNOHISTOQUÌMICA CONSISTENTES CON FIBROSIS REACCIÓN REPARATIVA NEOFORMACIÓN ÓSEA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250170",
+      "timestamp": "2026-01-08T06:32:05.163050"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501378 . Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: CK AE1/AE2 , EMA , progesterona , Ki67 , vimentina , S100.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501378 . Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: CK AE1/AE2 , EMA , progesterona , KI-67 , vimentina , S100.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250170",
+      "timestamp": "2026-01-08T06:32:05.163056"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la muestra evaluada no se reconocen meninges, EMA, AE1/AE3, progesterona negativos. Se observa tejido fibroconectivo denso con proliferación de fibroblastos y miofibroblastos (vimentina +, S100-), acompañado de escaso infiltrados inflamatorios mononucleares algunos con marcación para Ki67. No se identifican atipias celulares ni signos de malignidad. El estudio de inmunohistoquímica revela un perfil compatible con una reacción reparativa, sin marcadores sugestivos de neoplasia.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la muestra evaluada no se reconocen meninges, EMA, AE1/AE3, progesterona negativos. Se observa tejido fibroconectivo denso con proliferación de fibroblastos y miofibroblastos (vimentina +, S100-), acompañado de escaso infiltrados inflamatorios mononucleares algunos con marcación para KI-67. No se identifican atipias celulares ni signos de malignidad. El estudio de inmunohistoquímica revela un perfil compatible con una reacción reparativa, sin marcadores sugestivos de neoplasia.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250170",
+      "timestamp": "2026-01-08T06:32:05.163058"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 53
+  }
+}

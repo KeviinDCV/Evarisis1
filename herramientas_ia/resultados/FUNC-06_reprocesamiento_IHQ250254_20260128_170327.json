@@ -1,0 +1,86 @@
+{
+  "caso": "IHQ250254",
+  "timestamp": "2026-01-28T17:03:27.291913",
+  "correcciones_validadas": {
+    "versiones": [
+      "v6.5.58",
+      "v6.5.59",
+      "v6.5.60",
+      "v6.5.61"
+    ],
+    "objetivo": "Capturar SALL-4 y EMA como POSITIVO (focal)",
+    "descripcion": [
+      "v6.5.58: Patron generico mejorado para capturar (FOCAL)",
+      "v6.5.59: Patron especifico SALL-4 con espacios",
+      "v6.5.60: Fallback a patron alternativo",
+      "v6.5.61: Normalizacion final"
+    ]
+  },
+  "estado": "EXITOSO",
+  "pdf_procesado": "pdfs_patologia/IHQ DEL 212 AL 262.pdf",
+  "casos_reprocesados": 50,
+  "rango_casos": "IHQ250212-IHQ250262",
+  "validacion_objetivo": {
+    "IHQ_ESTUDIOS_SOLICITADOS": {
+      "valor": "EMA, DESMINA, SALL 4, Receptor de Estrógeno, WT1, PAX 8, Ki-67, S100, CKAE1AE3, P53, DESMIN",
+      "contiene_SALL4": true,
+      "contiene_EMA": true,
+      "estado": "OK"
+    },
+    "IHQ_SALL4": {
+      "valor_bd": "POSITIVO (focal)",
+      "valor_esperado": "POSITIVO (focal)",
+      "match_exacto": true,
+      "match_case_insensitive": true,
+      "estado": "OK"
+    },
+    "IHQ_EMA": {
+      "valor_bd": "POSITIVO (focal)",
+      "valor_esperado": "POSITIVO (focal)",
+      "match_exacto": true,
+      "match_case_insensitive": true,
+      "estado": "OK"
+    }
+  },
+  "contexto_ocr": {
+    "SALL4_en_pdf": [
+      "ON ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan niveles histológicos para tinción en el especimen A2: EMA, DESMINA, SALL-4, ESTROGENO, WT1, PAX- 8, Ki67, S100, CKAE1E3, p53 y en el especimen B1: SALL 4, CKAE1/AE3, PAX8 y KI67 DESCRIPCIÓN MICROSCÓPICA Previa valoración d",
+      "Roche VENTANA®. En el espécimen A2: Las células tumorales presentan una marcación bifásica, un componente epitelial positivo para CKAE1/AE3, PAX 8, SALL 4 (focal), P53, EMA (focal) y el componente mesenquimal es positivo para S100.. Sin marcación positiva para : DESMINA, WT1, RECEPTORES DE ESTROGENOS."
+    ],
+    "EMA_extraction_source": "un componente epitelial positivo para CKAE1/AE3, PAX 8, SALL 4 (focal), P53, EMA (focal)"
+  },
+  "score_despues": 88.9,
+  "estado_auditoria": "OK",
+  "biomarcadores": {
+    "total_solicitado": 10,
+    "cobertura": 100.0,
+    "mapeados": 10,
+    "no_mapeados": [],
+    "valores_incorrectos": [
+      {
+        "biomarcador": "Ki-67",
+        "columna": "IHQ_KI-67",
+        "valor_bd": "80%",
+        "valor_ocr": "D"
+      }
+    ]
+  },
+  "resumen_ejecutivo": {
+    "conclusion": "CORRECCIONES EXITOSAS",
+    "validaciones": {
+      "IHQ_ESTUDIOS_SOLICITADOS_incluye_SALL4": true,
+      "IHQ_ESTUDIOS_SOLICITADOS_incluye_EMA": true,
+      "IHQ_SALL4_extraido_correctamente": true,
+      "IHQ_EMA_extraido_correctamente": true
+    },
+    "antes": {
+      "IHQ_SALL4": "NO MENCIONADO",
+      "IHQ_EMA": "NO MENCIONADO"
+    },
+    "despues": {
+      "IHQ_SALL4": "POSITIVO (focal)",
+      "IHQ_EMA": "POSITIVO (focal)"
+    },
+    "nota": "Diferencia de mayusculas en (focal) vs (FOCAL) es trivial - extraccion correcta"
+  }
+}

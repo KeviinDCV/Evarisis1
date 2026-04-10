@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250061_20251219_030827",
+  "numero_peticion": "IHQ250061",
+  "timestamp": "2025-12-19T03:08:27.231874",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250061\nCopia Pag. 1 de 2\nNombre : BRIHAN SPENCER MINA ARBOLEDA\nN. peticion : IHQ250061\nN.Identificación : RC. 1191228317\nGenero : MASCULINO\nEdad : 7 meses 24 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : CIRUGIA PEDIATRICA ANA FRANK\nFecha Ingreso : 20/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPROCTOSIGMOIDECTOMIA\nDISTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500174 que\ncorresponde a \" B. Proctosigmoidectomía distal\" consiste en cinco bloques de parafina y cinco\nlámina coloreadas con Hematoxilina - Eosina con diagnostico de \"SEGMENTO DE RECTO\nSIGMOIDE DILATADO EN UNA EXTENSIÓN DE 10 CM DE LONGITUD CON CÉLULAS GANGLIONARES\nPRESENTES DE FORMA CONTINUA. 3 CM DISTALES DEL ESPÉCIMEN SIN HIPERTROFIA DE FILETES\nNERVIOSOS, SIN EMBARGO SE REQUIERE ESTUDIO DE INMUNOHISTOQUÍMICA (CALRRETININA)\nPARA DETERMINAR LA PRESENCIA DE CÉLULAS GANGLIONARES\". Previa valoración de la\ncoloración básica se solicitan los siguiente biomarcadores al bloque 3-4 y 5: Calrretinina. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nBloque B3: Presencia de células ganglionares en el plexo submucoso y plexo mientérico con\ndendritas positivas en la mucosa de forma continua. \nBloque B4: Presencia de células ganglionares en el plexo submucoso y plexo mientérico con\ndendritas positivas en la mucosa de forma continua. . \nBloque B5: No se identifican células ganglionares en la coloración básica, la calrretinina es\nnegativa para células ganglionares y dendritas en la mucosa.\nDIAGNÓSTICO\nB. Rectosigmoide distal. Proctosigmoidectomía distal. Estudio de inmunohistoquímica:\n. \nBloque B5 -corte region distal: No se identifican células ganglionares en la coloración básica,\nla calrretinina es negativa para células ganglionares y dendritas en la mucosa.\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250061\nCopia Pag. 2 de 2\nNombre : BRIHAN SPENCER MINA ARBOLEDA\nN. peticion : IHQ250061\nN.Identificación : RC. 1191228317\nGenero : MASCULINO\nEdad : 7 meses 24 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : CIRUGIA PEDIATRICA ANA FRANK\nFecha Ingreso : 20/01/2025\nFecha Informe : 23/01/2025\nCaso valorado en conjunto con el Dr Edwin Carrascal (patólogo). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3963,
+      "reduccion_porcentaje": 97.88
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250061",
+      "caso_num": 8,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "BRIHAN SPENCER MINA ARBOLEDA",
+      "numero_peticion": "IHQ250061",
+      "identificacion": "1191228317",
+      "tipo_documento": "RC",
+      "Genero": "MASCULINO",
+      "Edad": "7",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "LUIS MAURICIO FIGUEROA",
+      "servicio": "CIRUGIA PEDIATRICA ANA FRANK",
+      "fecha_ingreso": "20/01/2025",
+      "fecha_informe": "23/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250061",
+      "N. de identificación": "1191228317",
+      "Tipo de documento": "RC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "CIRUGIA PEDIATRICA ANA FRANK",
+      "Médico tratante": "LUIS MAURICIO FIGUEROA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/01/2025",
+      "Fecha Informe": "23/01/2025",
+      "nombres": "BRIHAN",
+      "Primer nombre": "BRIHAN",
+      "Segundo nombre": "",
+      "apellidos": "SPENCER MINA ARBOLEDA",
+      "Primer apellido": "SPENCER",
+      "Segundo apellido": "MINA ARBOLEDA",
+      "nombre_formal": "SPENCER MINA ARBOLEDA, BRIHAN",
+      "diagnostico": "B. Rectosigmoide distal. Proctosigmoidectomía distal. Estudio de inmunohistoquímica: . Bloque B5 -corte region distal: No se identifican células ganglionares en la coloración básica, la calrretinina es negativa para células ganglionares y dendritas en la mucosa.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Bloque B3: Presencia de células ganglionares en el plexo submucoso y plexo mientérico con dendritas positivas en la mucosa de forma continua. Bloque B4: Presencia de células ganglionares en el plexo submucoso y plexo mientérico con dendritas positivas en la mucosa de forma continua. . Bloque B5: No se identifican células ganglionares en la coloración básica, la calrretinina es negativa para células ganglionares y dendritas en la mucosa.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500174 que corresponde a \" B. Proctosigmoidectomía distal\" consiste en cinco bloques de parafina y cinco lámina coloreadas con Hematoxilina - Eosina con diagnostico de \"SEGMENTO DE RECTO SIGMOIDE DILATADO EN UNA EXTENSIÓN DE 10 CM DE LONGITUD CON CÉLULAS GANGLIONARES PRESENTES DE FORMA CONTINUA. 3 CM DISTALES DEL ESPÉCIMEN SIN HIPERTROFIA DE FILETES NERVIOSOS, SIN EMBARGO SE REQUIERE ESTUDIO DE INMUNOHISTOQUÍMICA (CALRRETININA) PARA DETERMINAR LA PRESENCIA DE CÉLULAS GANGLIONARES\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al bloque 3-4 y 5: Calrretinina.",
+      "ihq_organo": "RECTOSIGMOIDE DISTAL",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 16 --- IHQ250061 Copia Pag. 2 de 2 Nombre : BRIHAN SPENCER MINA ARBOLEDA N. peticion : IHQ250061 N.Identificación : RC. 1191228317 Genero : MASCULINO Edad : 7 meses 24 dias EPS : S.O.S. SERV.OCCID.DE SALUD EPS Médico tratante : LUIS MAURICIO FIGUEROA Servicio : CIRUGIA PEDIATRICA ANA FRANK Fecha Ingreso : 20/01/2025 Fecha Informe : 23/01/2025 Caso valorado en conjunto con el Dr Edwin Carrascal (patólogo).",
+      "IHQ_ORGANO": "RECTOSIGMOIDE DISTAL",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CALRRETININA": "NEGATIVO",
+      "extraction_timestamp": "2025-12-19T03:08:27.429937",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250061\nCopia Pag. 1 de 2\nNombre : BRIHAN SPENCER MINA ARBOLEDA\nN. peticion : IHQ250061\nN.Identificación : RC. 1191228317\nGenero : MASCULINO\nEdad : 7 meses 24 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : CIRUGIA PEDIATRICA ANA FRANK\nFecha Ingreso : 20/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPROCTOSIGMOIDECTOMIA\nDISTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500174 que\ncorresponde a \" B. Proctosigmoidectomía distal\" consiste en cinco bloques de parafina y cinco\nlámina coloreadas con Hematoxilina - Eosina con diagnostico de \"SEGMENTO DE RECTO\nSIGMOIDE DILATADO EN UNA EXTENSIÓN DE 10 CM DE LONGITUD CON CÉLULAS GANGLIONARES\nPRESENTES DE FORMA CONTINUA. 3 CM DISTALES DEL ESPÉCIMEN SIN HIPERTROFIA DE FILETES\nNERVIOSOS, SIN EMBARGO SE REQUIERE ESTUDIO DE INMUNOHISTOQUÍMICA (CALRRETININA)\nPARA DETERMINAR LA PRESENCIA DE CÉLULAS GANGLIONARES\". Previa valoración de la\ncoloración básica se solicitan los siguiente biomarcadores al bloque 3-4 y 5: Calrretinina. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nBloque B3: Presencia de células ganglionares en el plexo submucoso y plexo mientérico con\ndendritas positivas en la mucosa de forma continua. \nBloque B4: Presencia de células ganglionares en el plexo submucoso y plexo mientérico con\ndendritas positivas en la mucosa de forma continua. . \nBloque B5: No se identifican células ganglionares en la coloración básica, la calrretinina es\nnegativa para células ganglionares y dendritas en la mucosa.\nDIAGNÓSTICO\nB. Rectosigmoide distal. Proctosigmoidectomía distal. Estudio de inmunohistoquímica:\n. \nBloque B5 -corte region distal: No se identifican células ganglionares en la coloración básica,\nla calrretinina es negativa para células ganglionares y dendritas en la mucosa.\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250061\nCopia Pag. 2 de 2\nNombre : BRIHAN SPENCER MINA ARBOLEDA\nN. peticion : IHQ250061\nN.Identificación : RC. 1191228317\nGenero : MASCULINO\nEdad : 7 meses 24 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : CIRUGIA PEDIATRICA ANA FRANK\nFecha Ingreso : 20/01/2025\nFecha Informe : 23/01/2025\nCaso valorado en conjunto con el Dr Edwin Carrascal (patólogo). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CALRRETININA",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500174 que corresponde a \" B. Proctosigmoidectomía distal\" consiste en cinco bloques de parafina y cinco lámina coloreadas con Hematoxilina - Eosina con diagnostico de \"SEGMENTO DE RECTO SIGMOIDE DILATADO EN UNA EXTENSIÓN DE 10 CM DE LONGITUD CON CÉLULAS GANGLIONARES PRESENTES DE FORMA CONTINUA. 3 CM DISTALES DEL ESPÉCIMEN SIN HIPERTROFIA DE FILETES NERVIOSOS, SIN EMBARGO SE REQUIERE ESTUDIO DE INMUNOHISTOQUÍMICA (CALRRETININA) PARA DETERMINAR LA PRESENCIA DE CÉLULAS GANGLIONARES\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al bloque 3-4 y 5: Calrretinina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Bloque B3: Presencia de células ganglionares en el plexo submucoso y plexo mientérico con dendritas positivas en la mucosa de forma continua. Bloque B4: Presencia de células ganglionares en el plexo submucoso y plexo mientérico con dendritas positivas en la mucosa de forma continua. . Bloque B5: No se identifican células ganglionares en la coloración básica, la calrretinina es negativa para células ganglionares y dendritas en la mucosa.",
+      "Descripcion Diagnostico": "B. Rectosigmoide distal. Proctosigmoidectomía distal. Estudio de inmunohistoquímica: . Bloque B5 -corte region distal: No se identifican células ganglionares en la coloración básica, la calrretinina es negativa para células ganglionares y dendritas en la mucosa.",
+      "IHQ_ORGANO": "RECTOSIGMOIDE DISTAL",
+      "Organo": "PROCTOSIGMOIDECTOMIA DISTAL",
+      "Diagnostico Coloracion": "SEGMENTO DE RECTO SIGMOIDE DILATADO EN UNA EXTENSIÓN DE 10 CM DE LONGITUD CON CÉLULAS GANGLIONARES PRESENTES DE FORMA CONTINUA. 3 CM DISTALES DEL ESPÉCIMEN SIN HIPERTROFIA DE FILETES NERVIOSOS, SIN EMBARGO SE REQUIERE ESTUDIO DE INMUNOHISTOQUÍMICA (CALRRETININA) PARA DETERMINAR LA PRESENCIA DE CÉLULAS GANGLIONARES",
+      "Diagnostico Principal": "BLOQUE B5 -CORTE REGION DISTAL: NO SE IDENTIFICAN CÉLULAS GANGLIONARES EN LA COLORACIÓN BÁSICA, LA CALRRETININA ES NEGATIVA PARA CÉLULAS GANGLIONARES Y DENDRITAS EN LA MUCOSA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CALRRETININA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 122,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 1,
+      "completitud_porcentaje": 22.29
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 122,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "B. Rectosigmoide distal. Proctosigmoidectomía distal. Estudio de inmunohistoquímica:\n. \nBloque B5 -corte region distal: No se identifican células ganglionares en la coloración básica,\nla calrretinina es negativa para células ganglionares y dendritas en la mucosa.",
+      "valor_corregido": "B. Rectosigmoide distal. Proctosigmoidectomía distal. Estudio de inmunohistoquímica: . Bloque B5 -corte region distal: No se identifican células ganglionares en la coloración básica, la calrretinina es negativa para células ganglionares y dendritas en la mucosa.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250061",
+      "timestamp": "2025-12-19T03:08:27.429589"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500174 que\ncorresponde a \" B. Proctosigmoidectomía distal\" consiste en cinco bloques de parafina y cinco\nlámina coloreadas con Hematoxilina - Eosina con diagnostico de \"SEGMENTO DE RECTO\nSIGMOIDE DILATADO EN UNA EXTENSIÓN DE 10 CM DE LONGITUD CON CÉLULAS GANGLIONARES\nPRESENTES DE FORMA CONTINUA. 3 CM DISTALES DEL ESPÉCIMEN SIN HIPERTROFIA DE FILETES\nNERVIOSOS, SIN EMBARGO SE REQUIERE ESTUDIO DE INMUNOHISTOQUÍMICA (CALRRETININA)\nPARA DETERMINAR LA PRESENCIA DE CÉLULAS GANGLIONARES\". Previa valoración de la\ncoloración básica se solicitan los siguiente biomarcadores al bloque 3-4 y 5: Calrretinina.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500174 que corresponde a \" B. Proctosigmoidectomía distal\" consiste en cinco bloques de parafina y cinco lámina coloreadas con Hematoxilina - Eosina con diagnostico de \"SEGMENTO DE RECTO SIGMOIDE DILATADO EN UNA EXTENSIÓN DE 10 CM DE LONGITUD CON CÉLULAS GANGLIONARES PRESENTES DE FORMA CONTINUA. 3 CM DISTALES DEL ESPÉCIMEN SIN HIPERTROFIA DE FILETES NERVIOSOS, SIN EMBARGO SE REQUIERE ESTUDIO DE INMUNOHISTOQUÍMICA (CALRRETININA) PARA DETERMINAR LA PRESENCIA DE CÉLULAS GANGLIONARES\". Previa valoración de la coloración básica se solicitan los siguiente biomarcadores al bloque 3-4 y 5: Calrretinina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250061",
+      "timestamp": "2025-12-19T03:08:27.429600"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nBloque B3: Presencia de células ganglionares en el plexo submucoso y plexo mientérico con\ndendritas positivas en la mucosa de forma continua. \nBloque B4: Presencia de células ganglionares en el plexo submucoso y plexo mientérico con\ndendritas positivas en la mucosa de forma continua. . \nBloque B5: No se identifican células ganglionares en la coloración básica, la calrretinina es\nnegativa para células ganglionares y dendritas en la mucosa.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Bloque B3: Presencia de células ganglionares en el plexo submucoso y plexo mientérico con dendritas positivas en la mucosa de forma continua. Bloque B4: Presencia de células ganglionares en el plexo submucoso y plexo mientérico con dendritas positivas en la mucosa de forma continua. . Bloque B5: No se identifican células ganglionares en la coloración básica, la calrretinina es negativa para células ganglionares y dendritas en la mucosa.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250061",
+      "timestamp": "2025-12-19T03:08:27.429602"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250061\nCopia Pag. 2 de 2\nNombre : BRIHAN SPENCER MINA ARBOLEDA\nN. peticion : IHQ250061\nN.Identificación : RC. 1191228317\nGenero : MASCULINO\nEdad : 7 meses 24 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LUIS MAURICIO FIGUEROA\nServicio : CIRUGIA PEDIATRICA ANA FRANK\nFecha Ingreso : 20/01/2025\nFecha Informe : 23/01/2025\nCaso valorado en conjunto con el Dr Edwin Carrascal (patólogo).",
+      "valor_corregido": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 16 --- IHQ250061 Copia Pag. 2 de 2 Nombre : BRIHAN SPENCER MINA ARBOLEDA N. peticion : IHQ250061 N.Identificación : RC. 1191228317 Genero : MASCULINO Edad : 7 meses 24 dias EPS : S.O.S. SERV.OCCID.DE SALUD EPS Médico tratante : LUIS MAURICIO FIGUEROA Servicio : CIRUGIA PEDIATRICA ANA FRANK Fecha Ingreso : 20/01/2025 Fecha Informe : 23/01/2025 Caso valorado en conjunto con el Dr Edwin Carrascal (patólogo).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250061",
+      "timestamp": "2025-12-19T03:08:27.429603"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 47
+  }
+}

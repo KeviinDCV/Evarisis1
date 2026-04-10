@@ -1,0 +1,180 @@
+{
+  "session_id": "IHQ250116_20260106_014659",
+  "numero_peticion": "IHQ250116",
+  "timestamp": "2026-01-06T01:46:59.834224",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250116\nCopia Pag. 1 de 2\nNombre : DILIA NUÑEZ\nN. peticion : IHQ250116\nN.Identificación : CC. 29868863\nGenero : FEMENINO\nEdad : 80 años 9 meses 20 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 18/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\n2025-01-30\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como M2500798 que corresponde a biopsia trucut de lesión en mama derecha con\ndiagnóstico de \"LESIÓN PAPILAR ATÍPICA COMPATIBLE CON CARICNOMA PAPILAR DE BAJO\nGRADO\". Se revisan las láminas histológicas y se realizan niveles histológicos para estudios de\ninmunohistoquímica con: CK5/6, Cromogranina, Sinaptofisina, Progesterona, Estrógeno, HER2,\nCalponina, p63 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nLa biopsia contiene fragmentos de una lesión neoplásica con arquitectura papilar y áreas sólidas,\nque presenta atipia nuclear focal.\nreceptores de estrógenos con intensidad moderada y patrón\nheterogéneo, y receptores de progesterona con intensidad débil y patrón heterogéneo. El HER2\npresenta un score de 2+, el índice de proliferación celular medido por Ki-67 es del 5%, y se\nobserva expresión de células mioepiteliales periductales de manera focal para p63 y de manera\nmayoritaria para S100, CK5/6 y calponina. No se detecta expresión de cromogranina ni de\nsinaptofisina.\nDIAGNÓSTICO\nMama derecha. Lesión. Biopsia Tru cut. Estudios de inmunohistoquímica:\nLOS HALLAZGOS SON COMPATIBLES CON LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR CON ATIPIA\nFOCAL.\nCOMENTARIOS\nLos hallazgos morfológicos sugieren una lesión neoplásica con patrón papilar, atipia focal y\nmarcación\nfocal\nen\nalgunas\náreas\nde\ncélulas\nmioepiteliales\ncon\nel\nmarcador\nde\ninmunohistoquímica P63. No obstante, dado que se trata de una biopsia y que la evaluación\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---\nIHQ250116\nCopia Pag. 2 de 2\nNombre : DILIA NUÑEZ\nN. peticion : IHQ250116\nN.Identificación : CC. 29868863\nGenero : FEMENINO\nEdad : 80 años 9 meses 20 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 18/02/2025\nadecuada de este tipo de lesiones, las cuales presentan áreas heterogéneas características\n(incluyendo un posible componente capsular), se encuentra limitada, se sugiere, a criterio del\nmédico tratante y en correlación con imágenes diagnósticas y la historia clínica, la resección de la\nlesión para un enfoque diagnóstico más preciso.\nCaso revisado por Dra. Natalia Aguirre, Patóloga.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 20 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 4263,
+      "reduccion_porcentaje": 97.55
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250116",
+      "caso_num": 9,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P63": "POSITIVO (focal)",
+      "IHQ_S100": "POSITIVO (mayoritaria)",
+      "IHQ_CK5_6": "POSITIVO (mayoritaria)",
+      "IHQ_CALPONINA": "POSITIVO (mayoritaria)",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_SYNAPTOFISINA": "NEGATIVO",
+      "nombre_completo": "DILIA NUÑEZ",
+      "numero_peticion": "IHQ250116",
+      "identificacion": "29868863",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "80",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "MIGUEL REVELO",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "30/01/2025",
+      "fecha_informe": "18/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250116",
+      "N. de identificación": "29868863",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "MIGUEL REVELO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "30/01/2025",
+      "Fecha Informe": "18/02/2025",
+      "nombres": "DILIA",
+      "Primer nombre": "DILIA",
+      "Segundo nombre": "",
+      "apellidos": "NUÑEZ",
+      "Primer apellido": "NUÑEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "NUÑEZ, DILIA",
+      "diagnostico": "Mama derecha. Lesión. Biopsia Tru cut. Estudios de inmunohistoquímica: LOS HALLAZGOS SON COMPATIBLES CON LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR CON ATIPIA FOCAL.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La biopsia contiene fragmentos de una lesión neoplásica con arquitectura papilar y áreas sólidas, que presenta atipia nuclear focal. receptores de estrógenos con intensidad moderada y patrón heterogéneo, y receptores de progesterona con intensidad débil y patrón heterogéneo. El HER2 presenta un score de 2+, el índice de proliferación celular medido por KI-67 es del 5%, y se observa expresión de células mioepiteliales periductales de manera focal para p63 y de manera mayoritaria para S100, CK5/6 y calponina. No se detecta expresión de cromogranina ni de synaptophysin.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2500798 que corresponde a biopsia trucut de lesión en mama derecha con diagnóstico de \"LESIÓN PAPILAR ATÍPICA COMPATIBLE CON CARICNOMA PAPILAR DE BAJO GRADO\". Se revisan las láminas histológicas y se realizan niveles histológicos para estudios de inmunohistoquímica con: CK5/6, Cromogranina, Synaptophysin, Progesterona, Estrógeno, HER2, Calponina, p63 y KI-67.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK5/6, CROMOGRANINA, SYNAPTOFISINA, Receptor de Progesterona, Receptor de Estrógeno, HER2, Calponina, P63, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Los hallazgos morfológicos sugieren una lesión neoplásica con patrón papilar, atipia focal y marcación focal en algunas áreas de células mioepiteliales con el marcador de inmunohistoquímica p63. No obstante, dado que se trata de una biopsia y que la evaluación Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 19 --- IHQ250116 Copia Pag. 2 de 2 Nombre : DILIA NUÑEZ N. peticion : IHQ250116 N.Identificación : CC. 29868863 Genero : FEMENINO Edad : 80 años 9 meses 20 dias EPS : NUEVA EPS Médico tratante : MIGUEL REVELO Servicio : CONSULTA EXTERNA Fecha Ingreso : 30/01/2025 Fecha Informe : 18/02/2025 adecuada de este tipo de lesiones, las cuales presentan áreas heterogéneas características (incluyendo un posible componente capsular), se encuentra limitada, se sugiere, a criterio del médico tratante y en correlación con imágenes diagnósticas y la historia clínica, la resección de la lesión para un enfoque diagnóstico más preciso. Caso revisado por Dra. Natalia Aguirre, Patóloga.",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: EQUIVOCO (Score 2+), Ki-67: 5%, Receptor de Estrógeno: POSITIVO (CON INTENSIDAD MODERADA Y PATRÓN HETEROGÉNEO), Receptor de Progesterona: POSITIVO (CON INTENSIDAD DÉBIL Y PATRÓN HETEROGÉNEO)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK5/6, CROMOGRANINA, SYNAPTOFISINA, Receptor de Progesterona, Receptor de Estrógeno, HER2, Calponina, P63, Ki-67",
+      "IHQ_HER2": "EQUIVOCO (Score 2+)",
+      "IHQ_KI-67": "5%",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (CON INTENSIDAD MODERADA Y PATRÓN HETEROGÉNEO)",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO (CON INTENSIDAD DÉBIL Y PATRÓN HETEROGÉNEO)",
+      "extraction_timestamp": "2026-01-06T01:47:00.360176",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250116\nCopia Pag. 1 de 2\nNombre : DILIA NUÑEZ\nN. peticion : IHQ250116\nN.Identificación : CC. 29868863\nGenero : FEMENINO\nEdad : 80 años 9 meses 20 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 18/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\n2025-01-30\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como M2500798 que corresponde a biopsia trucut de lesión en mama derecha con\ndiagnóstico de \"LESIÓN PAPILAR ATÍPICA COMPATIBLE CON CARICNOMA PAPILAR DE BAJO\nGRADO\". Se revisan las láminas histológicas y se realizan niveles histológicos para estudios de\ninmunohistoquímica con: CK5/6, Cromogranina, Sinaptofisina, Progesterona, Estrógeno, HER2,\nCalponina, p63 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nLa biopsia contiene fragmentos de una lesión neoplásica con arquitectura papilar y áreas sólidas,\nque presenta atipia nuclear focal.\nreceptores de estrógenos con intensidad moderada y patrón\nheterogéneo, y receptores de progesterona con intensidad débil y patrón heterogéneo. El HER2\npresenta un score de 2+, el índice de proliferación celular medido por Ki-67 es del 5%, y se\nobserva expresión de células mioepiteliales periductales de manera focal para p63 y de manera\nmayoritaria para S100, CK5/6 y calponina. No se detecta expresión de cromogranina ni de\nsinaptofisina.\nDIAGNÓSTICO\nMama derecha. Lesión. Biopsia Tru cut. Estudios de inmunohistoquímica:\nLOS HALLAZGOS SON COMPATIBLES CON LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR CON ATIPIA\nFOCAL.\nCOMENTARIOS\nLos hallazgos morfológicos sugieren una lesión neoplásica con patrón papilar, atipia focal y\nmarcación\nfocal\nen\nalgunas\náreas\nde\ncélulas\nmioepiteliales\ncon\nel\nmarcador\nde\ninmunohistoquímica P63. No obstante, dado que se trata de una biopsia y que la evaluación\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---\nIHQ250116\nCopia Pag. 2 de 2\nNombre : DILIA NUÑEZ\nN. peticion : IHQ250116\nN.Identificación : CC. 29868863\nGenero : FEMENINO\nEdad : 80 años 9 meses 20 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 18/02/2025\nadecuada de este tipo de lesiones, las cuales presentan áreas heterogéneas características\n(incluyendo un posible componente capsular), se encuentra limitada, se sugiere, a criterio del\nmédico tratante y en correlación con imágenes diagnósticas y la historia clínica, la resección de la\nlesión para un enfoque diagnóstico más preciso.\nCaso revisado por Dra. Natalia Aguirre, Patóloga.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 20 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK5/6, CROMOGRANINA, SYNAPTOFISINA, Receptor de Progesterona, Receptor de Estrógeno, HER2, Calponina, P63, Ki-67, S100",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2500798 que corresponde a biopsia trucut de lesión en mama derecha con diagnóstico de \"LESIÓN PAPILAR ATÍPICA COMPATIBLE CON CARICNOMA PAPILAR DE BAJO GRADO\". Se revisan las láminas histológicas y se realizan niveles histológicos para estudios de inmunohistoquímica con: CK5/6, Cromogranina, Sinaptofisina, Progesterona, Estrógeno, HER2, Calponina, p63 y Ki-67.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La biopsia contiene fragmentos de una lesión neoplásica con arquitectura papilar y áreas sólidas, que presenta atipia nuclear focal. receptores de estrógenos con intensidad moderada y patrón heterogéneo, y receptores de progesterona con intensidad débil y patrón heterogéneo. El HER2 presenta un score de 2+, el índice de proliferación celular medido por Ki-67 es del 5%, y se observa expresión de células mioepiteliales periductales de manera focal para p63 y de manera mayoritaria para S100, CK5/6 y calponina. No se detecta expresión de cromogranina ni de sinaptofisina.",
+      "Descripcion Diagnostico": "Mama derecha. Lesión. Biopsia Tru cut. Estudios de inmunohistoquímica: LOS HALLAZGOS SON COMPATIBLES CON LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR CON ATIPIA FOCAL.",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "BX MAMA DERECHA",
+      "Diagnostico Coloracion": "LESIÓN PAPILAR ATÍPICA COMPATIBLE CON CARICNOMA PAPILAR DE BAJO GRADO",
+      "Diagnostico Principal": "LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR CON ATIPIA FOCAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: EQUIVOCO (Score 2+), Ki-67: 5%, Receptor de Estrógeno: POSITIVO (CON INTENSIDAD MODERADA Y PATRÓN HETEROGÉNEO), Receptor de Progesterona: POSITIVO (CON INTENSIDAD DÉBIL Y PATRÓN HETEROGÉNEO)",
+      "IHQ_CK5_6": "POSITIVO (mayoritaria)",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_SYNAPTOFISINA": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO (CON INTENSIDAD DÉBIL Y PATRÓN HETEROGÉNEO)",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (CON INTENSIDAD MODERADA Y PATRÓN HETEROGÉNEO)",
+      "IHQ_HER2": "EQUIVOCO (Score 2+)",
+      "IHQ_CALPONINA": "POSITIVO (mayoritaria)",
+      "IHQ_P63": "POSITIVO (focal)",
+      "IHQ_KI-67": "5%",
+      "IHQ_S100": "POSITIVO (mayoritaria)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 169,
+      "campos_vacios": 123,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 123,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Lesión. Biopsia Tru cut. Estudios de inmunohistoquímica:\nLOS HALLAZGOS SON COMPATIBLES CON LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR CON ATIPIA\nFOCAL.",
+      "valor_corregido": "Mama derecha. Lesión. Biopsia Tru cut. Estudios de inmunohistoquímica: LOS HALLAZGOS SON COMPATIBLES CON LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR CON ATIPIA FOCAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250116",
+      "timestamp": "2026-01-06T01:47:00.359973"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2500798 que corresponde a biopsia trucut de lesión en mama derecha con diagnóstico de \"LESIÓN PAPILAR ATÍPICA COMPATIBLE CON CARICNOMA PAPILAR DE BAJO GRADO\". Se revisan las láminas histológicas y se realizan niveles histológicos para estudios de inmunohistoquímica con: CK5/6, Cromogranina, Sinaptofisina, Progesterona, Estrógeno, HER2, Calponina, p63 y Ki-67.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2500798 que corresponde a biopsia trucut de lesión en mama derecha con diagnóstico de \"LESIÓN PAPILAR ATÍPICA COMPATIBLE CON CARICNOMA PAPILAR DE BAJO GRADO\". Se revisan las láminas histológicas y se realizan niveles histológicos para estudios de inmunohistoquímica con: CK5/6, Cromogranina, Synaptophysin, Progesterona, Estrógeno, HER2, Calponina, p63 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250116",
+      "timestamp": "2026-01-06T01:47:00.359979"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La biopsia contiene fragmentos de una lesión neoplásica con arquitectura papilar y áreas sólidas, que presenta atipia nuclear focal. receptores de estrógenos con intensidad moderada y patrón heterogéneo, y receptores de progesterona con intensidad débil y patrón heterogéneo. El HER2 presenta un score de 2+, el índice de proliferación celular medido por Ki-67 es del 5%, y se observa expresión de células mioepiteliales periductales de manera focal para p63 y de manera mayoritaria para S100, CK5/6 y calponina. No se detecta expresión de cromogranina ni de sinaptofisina.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La biopsia contiene fragmentos de una lesión neoplásica con arquitectura papilar y áreas sólidas, que presenta atipia nuclear focal. receptores de estrógenos con intensidad moderada y patrón heterogéneo, y receptores de progesterona con intensidad débil y patrón heterogéneo. El HER2 presenta un score de 2+, el índice de proliferación celular medido por KI-67 es del 5%, y se observa expresión de células mioepiteliales periductales de manera focal para p63 y de manera mayoritaria para S100, CK5/6 y calponina. No se detecta expresión de cromogranina ni de synaptophysin.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250116",
+      "timestamp": "2026-01-06T01:47:00.359981"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos morfológicos sugieren una lesión neoplásica con patrón papilar, atipia focal y\nmarcación\nfocal\nen\nalgunas\náreas\nde\ncélulas\nmioepiteliales\ncon\nel\nmarcador\nde\ninmunohistoquímica P63. No obstante, dado que se trata de una biopsia y que la evaluación\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---\nIHQ250116\nCopia Pag. 2 de 2\nNombre : DILIA NUÑEZ\nN. peticion : IHQ250116\nN.Identificación : CC. 29868863\nGenero : FEMENINO\nEdad : 80 años 9 meses 20 dias\nEPS : NUEVA EPS\nMédico tratante : MIGUEL REVELO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 30/01/2025\nFecha Informe : 18/02/2025\nadecuada de este tipo de lesiones, las cuales presentan áreas heterogéneas características\n(incluyendo un posible componente capsular), se encuentra limitada, se sugiere, a criterio del\nmédico tratante y en correlación con imágenes diagnósticas y la historia clínica, la resección de la\nlesión para un enfoque diagnóstico más preciso.\nCaso revisado por Dra. Natalia Aguirre, Patóloga.",
+      "valor_corregido": "Los hallazgos morfológicos sugieren una lesión neoplásica con patrón papilar, atipia focal y marcación focal en algunas áreas de células mioepiteliales con el marcador de inmunohistoquímica p63. No obstante, dado que se trata de una biopsia y que la evaluación Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 19 --- IHQ250116 Copia Pag. 2 de 2 Nombre : DILIA NUÑEZ N. peticion : IHQ250116 N.Identificación : CC. 29868863 Genero : FEMENINO Edad : 80 años 9 meses 20 dias EPS : NUEVA EPS Médico tratante : MIGUEL REVELO Servicio : CONSULTA EXTERNA Fecha Ingreso : 30/01/2025 Fecha Informe : 18/02/2025 adecuada de este tipo de lesiones, las cuales presentan áreas heterogéneas características (incluyendo un posible componente capsular), se encuentra limitada, se sugiere, a criterio del médico tratante y en correlación con imágenes diagnósticas y la historia clínica, la resección de la lesión para un enfoque diagnóstico más preciso. Caso revisado por Dra. Natalia Aguirre, Patóloga.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250116",
+      "timestamp": "2026-01-06T01:47:00.359982"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 57
+  }
+}

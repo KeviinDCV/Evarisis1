@@ -1,0 +1,35 @@
+{
+  "operacion": "FUNC-08_MANUAL",
+  "caso_detectado": "IHQ250221",
+  "biomarcador_ocr": "ESTROGÉNOS",
+  "columna_bd": "IHQ_RECEPTOR_ESTROGENOS",
+  "timestamp": "2026-01-19T14:29:24.673255",
+  "archivos_modificados": {
+    "validation_checker.py": {
+      "version_anterior": "1.0.9",
+      "version_nueva": "1.0.10",
+      "alias_agregado": "ESTROGÉNOS",
+      "linea": 145,
+      "backup": "core/validation_checker.py.backup_estrogenos_acento"
+    },
+    "auditor_sistema.py": {
+      "version": "3.5.1",
+      "alias_agregado": "ESTROGÉNOS",
+      "linea": 295,
+      "backup": "herramientas_ia/auditor_sistema.py.backup_estrogenos_acento"
+    }
+  },
+  "validacion": {
+    "score_antes": 88.9,
+    "score_despues": 100.0,
+    "mejora": 11.1,
+    "estado": "EXITOSO"
+  },
+  "problema_resuelto": "Error ortográfico ESTROGÉNOS (con acento, sin RECEPTOR DE) no se mapeaba",
+  "solucion_aplicada": "Agregado alias en validation_checker.py (MAPEO_BIOMARCADORES) y auditor_sistema.py (BIOMARCADORES)",
+  "sincronizacion": {
+    "validation_checker.py": "v1.0.10",
+    "auditor_sistema.py": "v3.5.1",
+    "biomarker_extractor.py": "NO MODIFICADO (alias ortográfico, no patrón extracción)"
+  }
+}

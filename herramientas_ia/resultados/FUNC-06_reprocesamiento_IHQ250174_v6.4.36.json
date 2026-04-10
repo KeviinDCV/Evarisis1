@@ -1,0 +1,67 @@
+{
+  "caso": "IHQ250174",
+  "timestamp": "2026-01-08T05:44:26",
+  "patron_version": "6.4.36",
+  "tipo_caso": "CÉRVIX - CARCINOMA SEROSO DE ALTO GRADO",
+  "comparacion": {
+    "IHQ_PAX8": {
+      "antes": "NEGATIVO",
+      "despues": "POSITIVO",
+      "esperado": "POSITIVO",
+      "estado": "CORREGIDO",
+      "evidencia_ocr": "tinción positiva fuerte y difusa para CKAE1/AE3, PAX8, p16 en bloque y WT1",
+      "causa_raiz_anterior": "Patrón no capturaba 'tinción positiva fuerte y difusa'",
+      "solucion_v6_4_36": "Nuevo patrón específico para 'tinción' + adjetivos múltiples"
+    },
+    "IHQ_P16_ESTADO": {
+      "antes": "NEGATIVO",
+      "despues": "POSITIVO",
+      "esperado": "POSITIVO",
+      "estado": "CORREGIDO",
+      "evidencia_ocr": "tinción positiva fuerte y difusa para CKAE1/AE3, PAX8, p16 en bloque y WT1",
+      "causa_raiz_anterior": "Calificador 'p16 en bloque' no era capturado",
+      "solucion_v6_4_36": "Limpieza de calificadores ('en bloque' se remueve)"
+    },
+    "IHQ_WT1": {
+      "antes": "NEGATIVO",
+      "despues": "POSITIVO",
+      "esperado": "POSITIVO",
+      "estado": "CORREGIDO",
+      "evidencia_ocr": "tinción positiva fuerte y difusa para CKAE1/AE3, PAX8, p16 en bloque y WT1 heterogéneo débil",
+      "causa_raiz_anterior": "Calificador 'heterogéneo débil' interfería",
+      "solucion_v6_4_36": "Limpieza de calificadores post-nombre"
+    },
+    "IHQ_RECEPTOR_PROGESTERONA": {
+      "antes": ", CEA Y NAPSINA",
+      "despues": ", CEA Y NAPSINA",
+      "esperado": "NEGATIVO",
+      "estado": "PENDIENTE",
+      "evidencia_ocr": "Son negativas para RECEPTORES DE ESTRÓGENOS, RECEPTORES DE PROGESTERONA, CEA y NAPSINA.",
+      "causa_raiz_actual": "Extractor de negativos NO limpia listas correctamente",
+      "solucion_requerida_v6_4_37": "Modificar extractor de negativos para split por coma y procesar individualmente"
+    }
+  },
+  "metricas": {
+    "total_biomarcadores_problematicos": 4,
+    "corregidos": 3,
+    "pendientes": 1,
+    "tasa_correccion": "75%",
+    "score_antes": "100.0% (falso positivo)",
+    "score_despues": "100.0% (3 corregidos, 1 pendiente)"
+  },
+  "patron_v6_4_36": {
+    "mejoras": [
+      "Acepta 'tinción' además de 'marcación'",
+      "Captura adjetivos múltiples ('fuerte y difusa')",
+      "Limpia calificadores ('p16 en bloque' → 'p16')",
+      "SIEMPRE sobrescribe valores anteriores (alta confianza)"
+    ],
+    "frase_capturada": "La lesión carcinomatosa invasiva de alto grado descrito demuestra una tinción positiva fuerte y difusa para CKAE1/AE3, PAX8, p16 en bloque y WT1 heterogéneo débil con sobre-expresión de p53 (mutado)."
+  },
+  "proximos_pasos": {
+    "version": "6.4.37",
+    "tarea": "Corregir extractor de negativos",
+    "objetivo": "IHQ_RECEPTOR_PROGESTERONA debe ser 'NEGATIVO', no ', CEA Y NAPSINA'",
+    "accion": "Implementar split por coma en extractor de negativos y procesar cada biomarcador individualmente"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "session_id": "IHQ251003_20251110_225156",
+  "numero_peticion": "IHQ251003",
+  "timestamp": "2025-11-10T22:51:56.170184",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251003\nCopia Pag. 1 de 2\nNombre : MARIA JANETH FLOREZ GUEVARA\nN. peticion : IHQ251003\nN.Identificación : CC. 60316854\nGenero : FEMENINO\nEdad : 61 años 1 mes\nEPS : EMSSANAR S.A.S\nMédico tratante : OSCAR EDUARDO ROA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 11/09/2025\nFecha Informe : 18/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPARED TORÁCICA\nESTERNÓN\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de inmunohistoquímica\nCaso institucional: M2509581\nÓrgano: Pared torácica, esternón\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO. \nEn medio de material hemático se identifica células neoplásicas de origen epitelial (CKAE1/AE3)\ncon expresión de marcadores que sugieren origen mamario (MAMAGLOBINA y GATA 3). No se\nobserva representación de hueso en la muestra examinada. \nDiagnóstico Inicial: \n-MATERIAL HEMÁTICO. \n-MICROCALCIFICACIONES. \n-ESCASAS CÉLULAS ATÍPICAS A CARACTERIZAR POR ESTUDIOS DE\nINMUNOHISTOQUIMICA\nFecha de diagnóstico: 14-08-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al único\nbloque.\nEstudios Solicitados:\nSe realizó inmuno tinción especial para : CKAE1AE3, MAMOGLOBINA y GATA 3, \nDIAGNÓSTICO\nPared torácica, esternón. Historia de carcinoma de mama. Lesión. Biopsia. \nCARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO. \nCOMENTARIOS\nSe\nreconoce\ncelularidad\natípica\naislada\ncon\nla\nmarcación\ndescrita\nen\nlos\nhallazgos\nde\ninmunohistoquímica en un fondo hemático, sin reconocerse tejido oseo, no es posible asegurar\ncompromiso en algún órgano, ya que podría corresponder a liquido de cavidad con celularidad\ntumoral aislada.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---\nIHQ251003\nCopia Pag. 2 de 2\nNombre : MARIA JANETH FLOREZ GUEVARA\nN. peticion : IHQ251003\nN.Identificación : CC. 60316854\nGenero : FEMENINO\nEdad : 61 años 1 mes\nEPS : EMSSANAR S.A.S\nMédico tratante : OSCAR EDUARDO ROA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 11/09/2025\nFecha Informe : 18/09/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3579,
+      "reduccion_porcentaje": 98.15
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251003",
+      "caso_num": 23,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA JANETH FLOREZ GUEVARA",
+      "numero_peticion": "IHQ251003",
+      "identificacion": "60316854",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "61",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "OSCAR EDUARDO ROA",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "11/09/2025",
+      "fecha_informe": "18/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251003",
+      "N. de identificación": "60316854",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "OSCAR EDUARDO ROA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "11/09/2025",
+      "Fecha Informe": "18/09/2025",
+      "nombres": "MARIA JANETH",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "JANETH",
+      "apellidos": "FLOREZ GUEVARA",
+      "Primer apellido": "FLOREZ",
+      "Segundo apellido": "GUEVARA",
+      "nombre_formal": "FLOREZ GUEVARA, MARIA JANETH",
+      "diagnostico": "Pared torácica, esternón. Historia de carcinoma de mama. Lesión. Biopsia. CARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO. En medio de material hemático se identifica células neoplásicas de origen epitelial (CKAE1/AE3) con expresión de marcadores que sugieren origen mamario (MAMAGLOBINA y GATA 3). No se observa representación de hueso en la muestra examinada. Diagnóstico Inicial: -MATERIAL HEMÁTICO. -MICROCALCIFICACIONES. -ESCASAS CÉLULAS ATÍPICAS A CARACTERIZAR POR ESTUDIOS DE INMUNOHISTOQUIMICA Fecha de diagnóstico: 14-08-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al único bloque. Estudios Solicitados: Se realizó inmuno tinción especial para : CKAE1AE3, MAMOGLOBINA y GATA 3,",
+      "descripcion_macroscopica": "Informe de Estudios de inmunohistoquímica Caso institucional: M2509581 Órgano: Pared torácica, esternón",
+      "ihq_organo": "PARED TORÁCICA, ESTERNÓN",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1AE3, MAMOGLOBINA, GATA3",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se reconoce celularidad atípica aislada con la marcación descrita en los hallazgos de inmunohistoquímica en un fondo hemático, sin reconocerse tejido oseo, no es posible asegurar compromiso en algún órgano, ya que podría corresponder a liquido de cavidad con celularidad tumoral aislada.",
+      "IHQ_ORGANO": "PARED TORÁCICA, ESTERNÓN",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_MAMOGLOBINA": "POSITIVO",
+      "IHQ_GATA3": "POSITIVO",
+      "extraction_timestamp": "2025-11-10T22:51:56.305872",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251003\nCopia Pag. 1 de 2\nNombre : MARIA JANETH FLOREZ GUEVARA\nN. peticion : IHQ251003\nN.Identificación : CC. 60316854\nGenero : FEMENINO\nEdad : 61 años 1 mes\nEPS : EMSSANAR S.A.S\nMédico tratante : OSCAR EDUARDO ROA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 11/09/2025\nFecha Informe : 18/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPARED TORÁCICA\nESTERNÓN\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de inmunohistoquímica\nCaso institucional: M2509581\nÓrgano: Pared torácica, esternón\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO. \nEn medio de material hemático se identifica células neoplásicas de origen epitelial (CKAE1/AE3)\ncon expresión de marcadores que sugieren origen mamario (MAMAGLOBINA y GATA 3). No se\nobserva representación de hueso en la muestra examinada. \nDiagnóstico Inicial: \n-MATERIAL HEMÁTICO. \n-MICROCALCIFICACIONES. \n-ESCASAS CÉLULAS ATÍPICAS A CARACTERIZAR POR ESTUDIOS DE\nINMUNOHISTOQUIMICA\nFecha de diagnóstico: 14-08-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al único\nbloque.\nEstudios Solicitados:\nSe realizó inmuno tinción especial para : CKAE1AE3, MAMOGLOBINA y GATA 3, \nDIAGNÓSTICO\nPared torácica, esternón. Historia de carcinoma de mama. Lesión. Biopsia. \nCARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO. \nCOMENTARIOS\nSe\nreconoce\ncelularidad\natípica\naislada\ncon\nla\nmarcación\ndescrita\nen\nlos\nhallazgos\nde\ninmunohistoquímica en un fondo hemático, sin reconocerse tejido oseo, no es posible asegurar\ncompromiso en algún órgano, ya que podría corresponder a liquido de cavidad con celularidad\ntumoral aislada.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---\nIHQ251003\nCopia Pag. 2 de 2\nNombre : MARIA JANETH FLOREZ GUEVARA\nN. peticion : IHQ251003\nN.Identificación : CC. 60316854\nGenero : FEMENINO\nEdad : 61 años 1 mes\nEPS : EMSSANAR S.A.S\nMédico tratante : OSCAR EDUARDO ROA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 11/09/2025\nFecha Informe : 18/09/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, MAMOGLOBINA, GATA3",
+      "Descripcion macroscopica": "Informe de Estudios de inmunohistoquímica Caso institucional: M2509581 Órgano: Pared torácica, esternón",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO. En medio de material hemático se identifica células neoplásicas de origen epitelial (CKAE1/AE3) con expresión de marcadores que sugieren origen mamario (MAMAGLOBINA y GATA 3). No se observa representación de hueso en la muestra examinada. Diagnóstico Inicial: -MATERIAL HEMÁTICO. -MICROCALCIFICACIONES. -ESCASAS CÉLULAS ATÍPICAS A CARACTERIZAR POR ESTUDIOS DE INMUNOHISTOQUIMICA Fecha de diagnóstico: 14-08-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al único bloque. Estudios Solicitados: Se realizó inmuno tinción especial para : CKAE1AE3, MAMOGLOBINA y GATA 3,",
+      "Descripcion Diagnostico": "Pared torácica, esternón. Historia de carcinoma de mama. Lesión. Biopsia. CARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO.",
+      "IHQ_ORGANO": "PARED TORÁCICA, ESTERNÓN",
+      "Organo": "PARED TORÁCICA",
+      "Diagnostico Coloracion": "-MATERIAL HEMÁTICO. -MICROCALCIFICACIONES. -ESCASAS CÉLULAS ATÍPICAS A CARACTERIZAR POR ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "CARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_MAMOGLOBINA": "POSITIVO",
+      "IHQ_GATA3": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 110,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 25.68
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 110,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pared torácica, esternón. Historia de carcinoma de mama. Lesión. Biopsia. \nCARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO.",
+      "valor_corregido": "Pared torácica, esternón. Historia de carcinoma de mama. Lesión. Biopsia. CARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251003",
+      "timestamp": "2025-11-10T22:51:56.305667"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Informe de Estudios de inmunohistoquímica\nCaso institucional: M2509581\nÓrgano: Pared torácica, esternón",
+      "valor_corregido": "Informe de Estudios de inmunohistoquímica Caso institucional: M2509581 Órgano: Pared torácica, esternón",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251003",
+      "timestamp": "2025-11-10T22:51:56.305673"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se\nreconoce\ncelularidad\natípica\naislada\ncon\nla\nmarcación\ndescrita\nen\nlos\nhallazgos\nde\ninmunohistoquímica en un fondo hemático, sin reconocerse tejido oseo, no es posible asegurar\ncompromiso en algún órgano, ya que podría corresponder a liquido de cavidad con celularidad\ntumoral aislada.",
+      "valor_corregido": "Se reconoce celularidad atípica aislada con la marcación descrita en los hallazgos de inmunohistoquímica en un fondo hemático, sin reconocerse tejido oseo, no es posible asegurar compromiso en algún órgano, ya que podría corresponder a liquido de cavidad con celularidad tumoral aislada.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251003",
+      "timestamp": "2025-11-10T22:51:56.305675"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 51
+  }
+}

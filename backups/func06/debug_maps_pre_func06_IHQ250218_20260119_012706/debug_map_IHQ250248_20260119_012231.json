@@ -1,0 +1,167 @@
+{
+  "session_id": "IHQ250248_20260119_012231",
+  "numero_peticion": "IHQ250248",
+  "timestamp": "2026-01-19T01:22:31.851173",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250248\nCopia Pag. 1 de 2\nNombre : FLOR ALICIA CHARRIA SEGURA\nN. peticion : IHQ250248\nN.Identificación : CC. 29088032\nGenero : FEMENINO\nEdad : 85 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ENDOSCOPIA\nFecha Ingreso : 07/03/2025\nFecha Informe : 19/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional con fecha de reporte del\n27/12/24 con rótulo No. P241212445 que corresponde a “Biopsia trucut mama derecha\" con\ndiagnóstico de “CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO DETERMINADO”. Previa\nrevisión de la histología, se realizan niveles histológicos en el bloque A5 para tinción con HER-2,\nKI-67, estrógenos, progesterona , GATA3 , Mamaglobina, SOX-10, CKAE1E3, desmin, CD34, EMA,\np63, E-cadherina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary\nAntibody. VENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: Negativo\n-RECEPTOR DE PROGRESTERONA: Negativo\n-HER 2: NEGATIVO socre 0 \n-Ki-67: 30%.\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado. \n- Tiempo de fijación: no determinado. \nLos siguientes marcadores son negativos : GATA3 , Mamaglobina, SOX-10, CKAE1E3, desmin,\nCD34, EMA, p63, E-cadherina.\nDIAGNÓSTICO\nMama izquierda. Leisón. Biopsia. Estudio de inmunohistoquimica:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 70 ---\nIHQ250248\nCopia Pag. 2 de 2\nNombre : FLOR ALICIA CHARRIA SEGURA\nN. peticion : IHQ250248\nN.Identificación : CC. 29088032\nGenero : FEMENINO\nEdad : 85 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ENDOSCOPIA\nFecha Ingreso : 07/03/2025\nFecha Informe : 19/03/2025\nLOS HALLAZGOS FAVORECEN UN TUMOR MALIGNO INDIFERENCIADO CON MATERIAL\nMETAPLÁSICO OSTEOGÉNICO.\nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: Negativo\n-RECEPTOR DE PROGRESTERONA: Negativo\n-HER 2: NEGATIVO socre 0 \n-Ki-67: 30%.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3972,
+      "reduccion_porcentaje": 97.79
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250248",
+      "caso_num": 36,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "FLOR ALICIA CHARRIA SEGURA",
+      "numero_peticion": "IHQ250248",
+      "identificacion": "29088032",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "85",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "ENDOSCOPIA",
+      "fecha_ingreso": "07/03/2025",
+      "fecha_informe": "19/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250248",
+      "N. de identificación": "29088032",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "ENDOSCOPIA",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/03/2025",
+      "Fecha Informe": "19/03/2025",
+      "nombres": "FLOR ALICIA",
+      "Primer nombre": "FLOR",
+      "Segundo nombre": "ALICIA",
+      "apellidos": "CHARRIA SEGURA",
+      "Primer apellido": "CHARRIA",
+      "Segundo apellido": "SEGURA",
+      "nombre_formal": "CHARRIA SEGURA, FLOR ALICIA",
+      "diagnostico": "Mama izquierda. Leisón. Biopsia. Estudio de inmunohistoquimica:: 07/03/2025 LOS HALLAZGOS FAVORECEN UN TUMOR MALIGNO INDIFERENCIADO CON MATERIAL METAPLÁSICO OSTEOGÉNICO. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: Negativo -RECEPTOR DE PROGRESTERONA: Negativo -HER 2: NEGATIVO socre 0 -KI-67: 30%.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: Negativo -RECEPTOR DE PROGRESTERONA: Negativo -HER 2: NEGATIVO socre 0 -KI-67: 30%. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado. Los siguientes marcadores son negativos : GATA3 , Mamaglobina, SOX-10, CKAE1E3, desmin, CD34, EMA, p63, E-cadherina.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional con fecha de reporte del 27/12/24 con rótulo No. P241212445 que corresponde a \"Biopsia trucut mama derecha\" con diagnóstico de \"CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO DETERMINADO\". Previa revisión de la histología, se realizan niveles histológicos en el bloque A5 para tinción con HER-2, KI-67, estrógenos, progesterona , GATA3 , Mamaglobina, SOX-10, CKAE1E3, desmin, CD34, EMA, p63, E-cadherina.",
+      "ihq_organo": "MAMA IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona, GATA3, MAMAGLOBINA, SOX 10, CKAE1E3, DESMIN, CD34, EMA, P63, E-Cadherina",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: NEGATIVO, Ki-67: 30%, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona, GATA3, MAMAGLOBINA, SOX 10, CKAE1E3, DESMIN, CD34, EMA, P63, E-Cadherina",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_KI-67": "30%",
+      "extraction_timestamp": "2026-01-19T01:22:32.553660",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250248\nCopia Pag. 1 de 2\nNombre : FLOR ALICIA CHARRIA SEGURA\nN. peticion : IHQ250248\nN.Identificación : CC. 29088032\nGenero : FEMENINO\nEdad : 85 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ENDOSCOPIA\nFecha Ingreso : 07/03/2025\nFecha Informe : 19/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional con fecha de reporte del\n27/12/24 con rótulo No. P241212445 que corresponde a “Biopsia trucut mama derecha\" con\ndiagnóstico de “CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO DETERMINADO”. Previa\nrevisión de la histología, se realizan niveles histológicos en el bloque A5 para tinción con HER-2,\nKI-67, estrógenos, progesterona , GATA3 , Mamaglobina, SOX-10, CKAE1E3, desmin, CD34, EMA,\np63, E-cadherina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary\nAntibody. VENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nKi67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286.\nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: Negativo\n-RECEPTOR DE PROGRESTERONA: Negativo\n-HER 2: NEGATIVO socre 0 \n-Ki-67: 30%.\nIsquemia fría y tiempo de fijación:\n- Tiempo de isquemia fría: no determinado. \n- Tiempo de fijación: no determinado. \nLos siguientes marcadores son negativos : GATA3 , Mamaglobina, SOX-10, CKAE1E3, desmin,\nCD34, EMA, p63, E-cadherina.\nDIAGNÓSTICO\nMama izquierda. Leisón. Biopsia. Estudio de inmunohistoquimica:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 70 ---\nIHQ250248\nCopia Pag. 2 de 2\nNombre : FLOR ALICIA CHARRIA SEGURA\nN. peticion : IHQ250248\nN.Identificación : CC. 29088032\nGenero : FEMENINO\nEdad : 85 años\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ENDOSCOPIA\nFecha Ingreso : 07/03/2025\nFecha Informe : 19/03/2025\nLOS HALLAZGOS FAVORECEN UN TUMOR MALIGNO INDIFERENCIADO CON MATERIAL\nMETAPLÁSICO OSTEOGÉNICO.\nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: Negativo\n-RECEPTOR DE PROGRESTERONA: Negativo\n-HER 2: NEGATIVO socre 0 \n-Ki-67: 30%.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona, GATA3, MAMAGLOBINA, SOX 10, CKAE1AE3, DESMIN, CD34, EMA, P63, E-Cadherina",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional con fecha de reporte del 27/12/24 con rótulo No. P241212445 que corresponde a “Biopsia trucut mama derecha\" con diagnóstico de “CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO DETERMINADO”. Previa revisión de la histología, se realizan niveles histológicos en el bloque A5 para tinción con HER-2, KI-67, estrógenos, progesterona , GATA3 , Mamaglobina, SOX-10, CKAE1E3, desmin, CD34, EMA, p63, E-cadherina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: Negativo -RECEPTOR DE PROGRESTERONA: Negativo -HER 2: NEGATIVO socre 0 -Ki-67: 30%. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado. Los siguientes marcadores son negativos : GATA3 , Mamaglobina, SOX-10, CKAE1E3, desmin, CD34, EMA, p63, E-cadherina.",
+      "Descripcion Diagnostico": "Mama izquierda. Leisón. Biopsia. Estudio de inmunohistoquimica:: 07/03/2025 LOS HALLAZGOS FAVORECEN UN TUMOR MALIGNO INDIFERENCIADO CON MATERIAL METAPLÁSICO OSTEOGÉNICO. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: Negativo -RECEPTOR DE PROGRESTERONA: Negativo -HER 2: NEGATIVO socre 0 -KI-67: 30%.",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Organo": "BX MAMA IZQUIERDA",
+      "Diagnostico Coloracion": "CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO DETERMINADO",
+      "Diagnostico Principal": "TUMOR MALIGNO INDIFERENCIADO CON MATERIAL METAPLÁSICO OSTEOGÉNICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO, Ki-67: 30%, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_KI-67": "30%",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_GATA3": "NO MENCIONADO",
+      "IHQ_SOX10": "NO MENCIONADO",
+      "IHQ_CKAE1AE3": "NO MENCIONADO",
+      "IHQ_DESMIN": "NO MENCIONADO",
+      "IHQ_CD34": "NO MENCIONADO",
+      "IHQ_EMA": "NO MENCIONADO",
+      "IHQ_P63": "NO MENCIONADO",
+      "IHQ_E_CADHERINA": ""
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 127,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 11,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 127,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama izquierda. Leisón. Biopsia. Estudio de inmunohistoquimica:: 07/03/2025\nLOS HALLAZGOS FAVORECEN UN TUMOR MALIGNO INDIFERENCIADO CON MATERIAL\nMETAPLÁSICO OSTEOGÉNICO.\nREPORTE DE BIOMARCADORES: \n-RECEPTOR DE ESTROGENOS: Negativo\n-RECEPTOR DE PROGRESTERONA: Negativo\n-HER 2: NEGATIVO socre 0 \n-Ki-67: 30%.",
+      "valor_corregido": "Mama izquierda. Leisón. Biopsia. Estudio de inmunohistoquimica:: 07/03/2025 LOS HALLAZGOS FAVORECEN UN TUMOR MALIGNO INDIFERENCIADO CON MATERIAL METAPLÁSICO OSTEOGÉNICO. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: Negativo -RECEPTOR DE PROGRESTERONA: Negativo -HER 2: NEGATIVO socre 0 -KI-67: 30%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250248",
+      "timestamp": "2026-01-19T01:22:32.553445"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional con fecha de reporte del 27/12/24 con rótulo No. P241212445 que corresponde a “Biopsia trucut mama derecha\" con diagnóstico de “CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO DETERMINADO”. Previa revisión de la histología, se realizan niveles histológicos en el bloque A5 para tinción con HER-2, KI-67, estrógenos, progesterona , GATA3 , Mamaglobina, SOX-10, CKAE1E3, desmin, CD34, EMA, p63, E-cadherina.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional con fecha de reporte del 27/12/24 con rótulo No. P241212445 que corresponde a \"Biopsia trucut mama derecha\" con diagnóstico de \"CARCINOMA INFILTRANTE DE TIPO HISTOLOGICO NO DETERMINADO\". Previa revisión de la histología, se realizan niveles histológicos en el bloque A5 para tinción con HER-2, KI-67, estrógenos, progesterona , GATA3 , Mamaglobina, SOX-10, CKAE1E3, desmin, CD34, EMA, p63, E-cadherina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250248",
+      "timestamp": "2026-01-19T01:22:32.553452"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. Ki67: anti-Ki67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: Negativo -RECEPTOR DE PROGRESTERONA: Negativo -HER 2: NEGATIVO socre 0 -Ki-67: 30%. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado. Los siguientes marcadores son negativos : GATA3 , Mamaglobina, SOX-10, CKAE1E3, desmin, CD34, EMA, p63, E-cadherina.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. KI-67: anti-KI-67 (30-9) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4286. REPORTE DE BIOMARCADORES: -RECEPTOR DE ESTROGENOS: Negativo -RECEPTOR DE PROGRESTERONA: Negativo -HER 2: NEGATIVO socre 0 -KI-67: 30%. Isquemia fría y tiempo de fijación: - Tiempo de isquemia fría: no determinado. - Tiempo de fijación: no determinado. Los siguientes marcadores son negativos : GATA3 , Mamaglobina, SOX-10, CKAE1E3, desmin, CD34, EMA, p63, E-cadherina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250248",
+      "timestamp": "2026-01-19T01:22:32.553454"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 52
+  }
+}

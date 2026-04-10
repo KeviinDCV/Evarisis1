@@ -1,0 +1,182 @@
+{
+  "session_id": "IHQ250988_20251111_233334",
+  "numero_peticion": "IHQ250988",
+  "timestamp": "2025-11-11T23:33:34.433704",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "Nombre : ERIK ALEXANDER RAMIREZ MORA\nN. peticion : IHQ250988\nN.Identificación : CC. 1143951853\nGenero : MASCULINO\nEdad : 32 años 26 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 08/09/2025\nFecha Informe : 19/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nIHQ250988\nESTUDIO DE\nINMUNOHISTOQUIMICA\n898807 Estudio anatomopatologico de marcacion\ninmunohistoquimica basica (especifico)\nBloques y laminas\nBX DE MASA INGUINAL\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2510179-2 que corresponde a masa inguinal derecha con diagnóstico de\n\"TUMOR MALIGNO MAL DIFERENCIADO. REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA ADECUADA\nHISTOGÉNESIS\" por lo que se realiza marcación para CD2, CD3, CD4, CD5, CD8, CD15, CD20, CD30,\nSALL4, LMP1, ALK1, ki67 y p53.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nEn los niveles realizados se observa una neoplasia maligna mal diferenciada compuesta en su mayoría\npor células pleomórficas, grandes y con alta actividad mitótica. Son positivas para la marcación con CD30\ny CD4, sin marcación para CD2, CD3, CD5, CD8, CD15, CD20 ni SALL4. No tienen expresión de ALK1 ni de\nLMP1. Índice de proliferación ki67 del 98% y sobreexpresión de p53.\nDIAGNÓSTICO\n Región inguinal derecha. Tumor. Biopsia.\nLOS HALLAZGOS HISTOLÓGICOS, DE INMUNOHISTOQUÍMICA FAVORECEN LINFOMA ANAPLÁSICO ALK\nNEGATIVO.\nSOBREEXPRESIÓN DE P53 (MUTADO).\nVER COMENTARIO.\nCOMENTARIOS\nSe sugiere ver el reporte del caso IHQ250926 donde se descartó origen epitelial, mesenquimal y germinal\nde la lesión tumoral, solo con marcación para CD30 y CD4. La historia clínica y la morfología son\ncompatibles con linfoma anaplásico ALK negativo, sin embargo, requiere estudios moleculares para\nevaluar la clonalidad del receptor T.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---\nIHQ250988\nCopia Pag. 2 de 2\nNombre : ERIK ALEXANDER RAMIREZ MORA\nN. peticion : IHQ250988\nN.Identificación : CC. 1143951853\nGenero : MASCULINO\nEdad : 32 años 26 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 08/09/2025\nFecha Informe : 19/09/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 20 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3767,
+      "reduccion_porcentaje": 98.06
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250988",
+      "caso_num": 9,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD3": "NEGATIVO",
+      "IHQ_CD5": "NEGATIVO",
+      "IHQ_CD15": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD30": "POSITIVO",
+      "nombre_completo": "ERIK ALEXANDER RAMIREZ MORA",
+      "numero_peticion": "IHQ250988",
+      "identificacion": "1143951853",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "32",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "CARLOS ANDRES MUÑOZ",
+      "servicio": "CIRUGIA HOMBRES",
+      "fecha_ingreso": "08/09/2025",
+      "fecha_informe": "19/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250988",
+      "N. de identificación": "1143951853",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CIRUGIA HOMBRES",
+      "Médico tratante": "CARLOS ANDRES MUÑOZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/09/2025",
+      "Fecha Informe": "19/09/2025",
+      "nombres": "ERIK",
+      "Primer nombre": "ERIK",
+      "Segundo nombre": "",
+      "apellidos": "ALEXANDER RAMIREZ MORA",
+      "Primer apellido": "ALEXANDER",
+      "Segundo apellido": "RAMIREZ MORA",
+      "nombre_formal": "ALEXANDER RAMIREZ MORA, ERIK",
+      "diagnostico": "Región inguinal derecha. Tumor. Biopsia. LOS HALLAZGOS HISTOLÓGICOS, DE INMUNOHISTOQUÍMICA FAVORECEN LINFOMA ANAPLÁSICO ALK NEGATIVO. SOBREEXPRESIÓN DE P53 (MUTADO). VER COMENTARIO.",
+      "descripcion_microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los niveles realizados se observa una neoplasia maligna mal diferenciada compuesta en su mayoría por células pleomórficas, grandes y con alta actividad mitótica. Son positivas para la marcación con CD30 y CD4, sin marcación para CD2, CD3, CD5, CD8, CD15, CD20 ni SALL4. No tienen expresión de ALK1 ni de LMP1. Índice de proliferación KI-67 del 98% y sobreexpresión de p53.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2510179-2 que corresponde a masa inguinal derecha con diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO. REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA ADECUADA HISTOGÉNESIS\" por lo que se realiza marcación para CD2, CD3, CD4, CD5, CD8, CD15, CD20, CD30, SALL4, LMP1, ALK1, KI-67 y p53.",
+      "ihq_organo": "REGIÓN INGUINAL DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se sugiere ver el reporte del caso IHQ250926 donde se descartó origen epitelial, mesenquimal y germinal de la lesión tumoral, solo con marcación para CD30 y CD4. La historia clínica y la morfología son compatibles con linfoma anaplásico ALK negativo, sin embargo, requiere estudios moleculares para evaluar la clonalidad del receptor T. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 19 --- IHQ250988 Copia Pag. 2 de 2 Nombre : ERIK ALEXANDER RAMIREZ MORA N. peticion : IHQ250988 N.Identificación : CC. 1143951853 Genero : MASCULINO Edad : 32 años 26 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : CARLOS ANDRES MUÑOZ Servicio : CIRUGIA HOMBRES Fecha Ingreso : 08/09/2025 Fecha Informe : 19/09/2025",
+      "IHQ_ORGANO": "REGIÓN INGUINAL DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67 del 98%",
+      "IHQ_KI-67": "98%",
+      "IHQ_P53": "POSITIVO (SOBREEXPRESIÓN)",
+      "IHQ_CD2": "NEGATIVO",
+      "IHQ_CD4": "POSITIVO",
+      "IHQ_CD8": "NEGATIVO",
+      "IHQ_LMP1": "NO TIENEN EXPRESIÓN DE ALK1 NI DE LMP1",
+      "IHQ_SALL4": "NEGATIVO",
+      "IHQ_ALK1": "NO TIENEN EXPRESIÓN DE ALK1",
+      "extraction_timestamp": "2025-11-11T23:33:34.584079",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "Nombre : ERIK ALEXANDER RAMIREZ MORA\nN. peticion : IHQ250988\nN.Identificación : CC. 1143951853\nGenero : MASCULINO\nEdad : 32 años 26 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 08/09/2025\nFecha Informe : 19/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nIHQ250988\nESTUDIO DE\nINMUNOHISTOQUIMICA\n898807 Estudio anatomopatologico de marcacion\ninmunohistoquimica basica (especifico)\nBloques y laminas\nBX DE MASA INGUINAL\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2510179-2 que corresponde a masa inguinal derecha con diagnóstico de\n\"TUMOR MALIGNO MAL DIFERENCIADO. REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA ADECUADA\nHISTOGÉNESIS\" por lo que se realiza marcación para CD2, CD3, CD4, CD5, CD8, CD15, CD20, CD30,\nSALL4, LMP1, ALK1, ki67 y p53.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nEn los niveles realizados se observa una neoplasia maligna mal diferenciada compuesta en su mayoría\npor células pleomórficas, grandes y con alta actividad mitótica. Son positivas para la marcación con CD30\ny CD4, sin marcación para CD2, CD3, CD5, CD8, CD15, CD20 ni SALL4. No tienen expresión de ALK1 ni de\nLMP1. Índice de proliferación ki67 del 98% y sobreexpresión de p53.\nDIAGNÓSTICO\n Región inguinal derecha. Tumor. Biopsia.\nLOS HALLAZGOS HISTOLÓGICOS, DE INMUNOHISTOQUÍMICA FAVORECEN LINFOMA ANAPLÁSICO ALK\nNEGATIVO.\nSOBREEXPRESIÓN DE P53 (MUTADO).\nVER COMENTARIO.\nCOMENTARIOS\nSe sugiere ver el reporte del caso IHQ250926 donde se descartó origen epitelial, mesenquimal y germinal\nde la lesión tumoral, solo con marcación para CD30 y CD4. La historia clínica y la morfología son\ncompatibles con linfoma anaplásico ALK negativo, sin embargo, requiere estudios moleculares para\nevaluar la clonalidad del receptor T.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---\nIHQ250988\nCopia Pag. 2 de 2\nNombre : ERIK ALEXANDER RAMIREZ MORA\nN. peticion : IHQ250988\nN.Identificación : CC. 1143951853\nGenero : MASCULINO\nEdad : 32 años 26 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 08/09/2025\nFecha Informe : 19/09/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 20 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "ALK1, CD15, CD2, CD20, CD3, CD30, CD4, CD5, CD8, Ki-67, LMP-1, P53, SALL4",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2510179-2 que corresponde a masa inguinal derecha con diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO. REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA ADECUADA HISTOGÉNESIS\" por lo que se realiza marcación para CD2, CD3, CD4, CD5, CD8, CD15, CD20, CD30, SALL4, LMP1, ALK1, ki67 y p53.",
+      "Descripcion microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los niveles realizados se observa una neoplasia maligna mal diferenciada compuesta en su mayoría por células pleomórficas, grandes y con alta actividad mitótica. Son positivas para la marcación con CD30 y CD4, sin marcación para CD2, CD3, CD5, CD8, CD15, CD20 ni SALL4. No tienen expresión de ALK1 ni de LMP1. Índice de proliferación ki67 del 98% y sobreexpresión de p53.",
+      "Descripcion Diagnostico": "Región inguinal derecha. Tumor. Biopsia. LOS HALLAZGOS HISTOLÓGICOS, DE INMUNOHISTOQUÍMICA FAVORECEN LINFOMA ANAPLÁSICO ALK NEGATIVO. SOBREEXPRESIÓN DE P53 (MUTADO). VER COMENTARIO.",
+      "IHQ_ORGANO": "REGIÓN INGUINAL DERECHA",
+      "Organo": "BX DE MASA INGUINAL DERECHA",
+      "Diagnostico Coloracion": "TUMOR MALIGNO MAL DIFERENCIADO. REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA ADECUADA HISTOGÉNESIS",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLÓGICOS, DE INMUNOHISTOQUÍMICA FAVORECEN LINFOMA ANAPLÁSICO ALK NEGATIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 98%",
+      "IHQ_ALK1": "NO TIENEN EXPRESIÓN DE ALK1",
+      "IHQ_CD15": "NEGATIVO",
+      "IHQ_CD2": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "NEGATIVO",
+      "IHQ_CD30": "POSITIVO",
+      "IHQ_CD4": "POSITIVO",
+      "IHQ_CD5": "NEGATIVO",
+      "IHQ_CD8": "NEGATIVO",
+      "IHQ_KI-67": "98%",
+      "IHQ_P53": "POSITIVO (SOBREEXPRESIÓN)",
+      "IHQ_SALL4": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 101,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 12,
+      "completitud_porcentaje": 31.76
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 101,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región inguinal derecha. Tumor. Biopsia.\nLOS HALLAZGOS HISTOLÓGICOS, DE INMUNOHISTOQUÍMICA FAVORECEN LINFOMA ANAPLÁSICO ALK\nNEGATIVO.\nSOBREEXPRESIÓN DE P53 (MUTADO).\nVER COMENTARIO.",
+      "valor_corregido": "Región inguinal derecha. Tumor. Biopsia. LOS HALLAZGOS HISTOLÓGICOS, DE INMUNOHISTOQUÍMICA FAVORECEN LINFOMA ANAPLÁSICO ALK NEGATIVO. SOBREEXPRESIÓN DE P53 (MUTADO). VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250988",
+      "timestamp": "2025-11-11T23:33:34.583795"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2510179-2 que corresponde a masa inguinal derecha con diagnóstico de\n\"TUMOR MALIGNO MAL DIFERENCIADO. REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA ADECUADA\nHISTOGÉNESIS\" por lo que se realiza marcación para CD2, CD3, CD4, CD5, CD8, CD15, CD20, CD30,\nSALL4, LMP1, ALK1, ki67 y p53.",
+      "valor_corregido": "Se realizan niveles al bloque M2510179-2 que corresponde a masa inguinal derecha con diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO. REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA ADECUADA HISTOGÉNESIS\" por lo que se realiza marcación para CD2, CD3, CD4, CD5, CD8, CD15, CD20, CD30, SALL4, LMP1, ALK1, KI-67 y p53.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250988",
+      "timestamp": "2025-11-11T23:33:34.583803"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los niveles realizados se observa una neoplasia maligna mal diferenciada compuesta en su mayoría por células pleomórficas, grandes y con alta actividad mitótica. Son positivas para la marcación con CD30 y CD4, sin marcación para CD2, CD3, CD5, CD8, CD15, CD20 ni SALL4. No tienen expresión de ALK1 ni de LMP1. Índice de proliferación ki67 del 98% y sobreexpresión de p53.",
+      "valor_corregido": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los niveles realizados se observa una neoplasia maligna mal diferenciada compuesta en su mayoría por células pleomórficas, grandes y con alta actividad mitótica. Son positivas para la marcación con CD30 y CD4, sin marcación para CD2, CD3, CD5, CD8, CD15, CD20 ni SALL4. No tienen expresión de ALK1 ni de LMP1. Índice de proliferación KI-67 del 98% y sobreexpresión de p53.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250988",
+      "timestamp": "2025-11-11T23:33:34.583805"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se sugiere ver el reporte del caso IHQ250926 donde se descartó origen epitelial, mesenquimal y germinal\nde la lesión tumoral, solo con marcación para CD30 y CD4. La historia clínica y la morfología son\ncompatibles con linfoma anaplásico ALK negativo, sin embargo, requiere estudios moleculares para\nevaluar la clonalidad del receptor T.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---\nIHQ250988\nCopia Pag. 2 de 2\nNombre : ERIK ALEXANDER RAMIREZ MORA\nN. peticion : IHQ250988\nN.Identificación : CC. 1143951853\nGenero : MASCULINO\nEdad : 32 años 26 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 08/09/2025\nFecha Informe : 19/09/2025",
+      "valor_corregido": "Se sugiere ver el reporte del caso IHQ250926 donde se descartó origen epitelial, mesenquimal y germinal de la lesión tumoral, solo con marcación para CD30 y CD4. La historia clínica y la morfología son compatibles con linfoma anaplásico ALK negativo, sin embargo, requiere estudios moleculares para evaluar la clonalidad del receptor T. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 19 --- IHQ250988 Copia Pag. 2 de 2 Nombre : ERIK ALEXANDER RAMIREZ MORA N. peticion : IHQ250988 N.Identificación : CC. 1143951853 Genero : MASCULINO Edad : 32 años 26 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : CARLOS ANDRES MUÑOZ Servicio : CIRUGIA HOMBRES Fecha Ingreso : 08/09/2025 Fecha Informe : 19/09/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250988",
+      "timestamp": "2025-11-11T23:33:34.583806"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 59
+  }
+}

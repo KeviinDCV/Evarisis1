@@ -51,16 +51,16 @@ class ProcesadorConIA:
         generar_debug: bool = True,
         validar_con_ia: bool = False,
         aplicar_correcciones: bool = False,
-        llm_endpoint: str = "http://127.0.0.1:1234"
+        llm_endpoint: str = "https://openrouter.ai/api/v1"
     ):
         """
         Inicializar procesador con IA
 
         Args:
             generar_debug: Si True, genera archivos debug_map
-            validar_con_ia: Si True, valida con LLM (requiere LM Studio activo)
+            validar_con_ia: Si True, valida con LLM (requiere conexión a internet)
             aplicar_correcciones: Si True, aplica correcciones sugeridas por IA
-            llm_endpoint: Endpoint del servidor LM Studio
+            llm_endpoint: Endpoint del servidor LLM (OpenRouter)
         """
         self.generar_debug = generar_debug
         self.validar_con_ia = validar_con_ia

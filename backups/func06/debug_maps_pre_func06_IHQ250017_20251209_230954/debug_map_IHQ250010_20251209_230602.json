@@ -1,0 +1,157 @@
+{
+  "session_id": "IHQ250010_20251209_230602",
+  "numero_peticion": "IHQ250010",
+  "timestamp": "2025-12-09T23:06:02.127319",
+  "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250010\nCopia Pag. 1 de 1\nNombre : MILTON ARCADIO ESCOBAR\nQUIÑONEZ\nN. peticion : IHQ250010\nN.Identificación : CC. 5303217\nGenero : MASCULINO\nEdad : 62 años 7 meses 29 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : OSCAR ANDRES ESCOBAR\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 03/01/2025\nFecha Informe : 17/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nREGION PARIETO\nOCCIPITAL IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410554” correspondiente a “Tumor extra axial parieto occipital izquierdo” con diagnóstico de\n“MENINGIOMA MENINGOTELIAL, WHO GRADO 1”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores: Progesterona, Ki 67, GFAP, S100 Y EMA.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación y adecuada marcación\nde los controles externos e internos de la técnica de\ninmunohistoquímica se evidencia:\nLas células de la lesión son positivas para progesterona, negativas para GFAP Y S100. Índice proliferativo\nki 67 menor al 5 %.\nDIAGNÓSTICO\nRegión parieto occipital lado izquierdo. Tumor extra axial. Resección. Estudio de inmunohistoquimica:\nMENINGIOMA MENINGOTELIAL, WHO GRADO 1\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 2431,
+      "reduccion_porcentaje": 98.58
+    },
+    "metadata": {
+      "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250010",
+      "caso_num": 10,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_PR": "POSITIVO",
+      "nombre_completo": "MILTON ARCADIO ESCOBAR QUIÑONEZ",
+      "numero_peticion": "IHQ250010",
+      "identificacion": "5303217",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "62",
+      "eps": "ASMET SALUD EPS SAS",
+      "medico_tratante": "OSCAR ANDRES ESCOBAR",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "03/01/2025",
+      "fecha_informe": "17/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250010",
+      "N. de identificación": "5303217",
+      "Tipo de documento": "CC",
+      "EPS": "ASMET SALUD EPS SAS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "OSCAR ANDRES ESCOBAR",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/01/2025",
+      "Fecha Informe": "17/01/2025",
+      "nombres": "MILTON ARCADIO",
+      "Primer nombre": "MILTON",
+      "Segundo nombre": "ARCADIO",
+      "apellidos": "ESCOBAR QUIÑONEZ",
+      "Primer apellido": "ESCOBAR",
+      "Segundo apellido": "QUIÑONEZ",
+      "nombre_formal": "ESCOBAR QUIÑONEZ, MILTON ARCADIO",
+      "diagnostico": "Región parieto occipital lado izquierdo. Tumor extra axial. Resección. Estudio de inmunohistoquimica: MENINGIOMA MENINGOTELIAL, WHO GRADO 1",
+      "descripcion_microscopica": "Previa validación y adecuada marcación de los controles externos e internos de la técnica de inmunohistoquímica se evidencia: Las células de la lesión son positivas para progesterona, negativas para GFAP Y S100. Índice proliferativo KI-67 menor al 5 %.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410554” correspondiente a “Tumor extra axial parieto occipital izquierdo” con diagnóstico de “MENINGIOMA MENINGOTELIAL, WHO GRADO 1”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: Progesterona, KI-67, GFAP, S100 Y EMA.",
+      "ihq_organo": "REGIÓN PARIETO OCCIPITAL LADO IZQUIERDO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN PARIETO OCCIPITAL LADO IZQUIERDO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 5, Receptor de Progesterona: POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_KI-67": "5",
+      "extraction_timestamp": "2025-12-09T23:06:02.244454",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250010\nCopia Pag. 1 de 1\nNombre : MILTON ARCADIO ESCOBAR\nQUIÑONEZ\nN. peticion : IHQ250010\nN.Identificación : CC. 5303217\nGenero : MASCULINO\nEdad : 62 años 7 meses 29 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : OSCAR ANDRES ESCOBAR\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 03/01/2025\nFecha Informe : 17/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nREGION PARIETO\nOCCIPITAL IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410554” correspondiente a “Tumor extra axial parieto occipital izquierdo” con diagnóstico de\n“MENINGIOMA MENINGOTELIAL, WHO GRADO 1”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores: Progesterona, Ki 67, GFAP, S100 Y EMA.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación y adecuada marcación\nde los controles externos e internos de la técnica de\ninmunohistoquímica se evidencia:\nLas células de la lesión son positivas para progesterona, negativas para GFAP Y S100. Índice proliferativo\nki 67 menor al 5 %.\nDIAGNÓSTICO\nRegión parieto occipital lado izquierdo. Tumor extra axial. Resección. Estudio de inmunohistoquimica:\nMENINGIOMA MENINGOTELIAL, WHO GRADO 1\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "GFAP, Ki-67, Receptor de Progesterona, S100",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410554” correspondiente a “Tumor extra axial parieto occipital izquierdo” con diagnóstico de “MENINGIOMA MENINGOTELIAL, WHO GRADO 1”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: Progesterona, Ki 67, GFAP, S100 Y EMA.",
+      "Descripcion microscopica": "Previa validación y adecuada marcación de los controles externos e internos de la técnica de inmunohistoquímica se evidencia: Las células de la lesión son positivas para progesterona, negativas para GFAP Y S100. Índice proliferativo ki 67 menor al 5 %.",
+      "Descripcion Diagnostico": "Región parieto occipital lado izquierdo. Tumor extra axial. Resección. Estudio de inmunohistoquimica: MENINGIOMA MENINGOTELIAL, WHO GRADO 1",
+      "IHQ_ORGANO": "REGIÓN PARIETO OCCIPITAL LADO IZQUIERDO",
+      "Organo": "REGION PARIETO OCCIPITAL IZQUIERDA",
+      "Diagnostico Coloracion": "MENINGIOMA MENINGOTELIAL, WHO GRADO 1",
+      "Diagnostico Principal": "MENINGIOMA MENINGOTELIAL, WHO",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: 5, Receptor de Progesterona: POSITIVO",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_KI-67": "5",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_S100": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 156,
+      "campos_vacios": 117,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 25.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 117,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región parieto occipital lado izquierdo. Tumor extra axial. Resección. Estudio de inmunohistoquimica:\nMENINGIOMA MENINGOTELIAL, WHO GRADO 1",
+      "valor_corregido": "Región parieto occipital lado izquierdo. Tumor extra axial. Resección. Estudio de inmunohistoquimica: MENINGIOMA MENINGOTELIAL, WHO GRADO 1",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250010",
+      "timestamp": "2025-12-09T23:06:02.244145"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410554” correspondiente a “Tumor extra axial parieto occipital izquierdo” con diagnóstico de\n“MENINGIOMA MENINGOTELIAL, WHO GRADO 1”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores: Progesterona, Ki 67, GFAP, S100 Y EMA.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410554” correspondiente a “Tumor extra axial parieto occipital izquierdo” con diagnóstico de “MENINGIOMA MENINGOTELIAL, WHO GRADO 1”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: Progesterona, KI-67, GFAP, S100 Y EMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250010",
+      "timestamp": "2025-12-09T23:06:02.244152"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación y adecuada marcación\nde los controles externos e internos de la técnica de\ninmunohistoquímica se evidencia:\nLas células de la lesión son positivas para progesterona, negativas para GFAP Y S100. Índice proliferativo\nki 67 menor al 5 %.",
+      "valor_corregido": "Previa validación y adecuada marcación de los controles externos e internos de la técnica de inmunohistoquímica se evidencia: Las células de la lesión son positivas para progesterona, negativas para GFAP Y S100. Índice proliferativo KI-67 menor al 5 %.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250010",
+      "timestamp": "2025-12-09T23:06:02.244154"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 51
+  }
+}

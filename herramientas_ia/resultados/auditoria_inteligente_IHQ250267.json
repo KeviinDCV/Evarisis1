@@ -1,0 +1,139 @@
+{
+  "numero_caso": "IHQ250267",
+  "caso_num": 5,
+  "total_casos": 49,
+  "timestamp": "2026-01-29T21:54:46.480541",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 20,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "CARCINOMA INFILTRANTE INDIFERENCIADO BILATERAL DE OVARIOS CON EXTENSIÓN A APENDICE CECAL Y MIOMETRIO; CERVIX SIN ALTERACIONES; BORDE EXOCERVICAL NEGATIVO; BORDES DE PARAMETRIOS NEGATIVOS; ENDOMETRIO BASAL; LEIOMIOMA",
+      "mensaje": "Correcto (similitud parcial)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON CARCINOMA POBREMENTE DIFERENCIADO DE PROBABLE ORIGEN EN MAMA"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "Ki-67: 30%, Receptor de Estrógeno: POSITIVO",
+      "mensaje": "Factor pronóstico con biomarcadores válidos",
+      "biomarcadores_detectados": [
+        "Ki-67",
+        "RE"
+      ]
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (0/0)",
+      "total_solicitado_ocr": 0,
+      "total_solicitado_bd": 17,
+      "estudios_ocr": [],
+      "estudios_bd": [
+        "CA19-9",
+        "CDX2",
+        "CK19",
+        "CK20",
+        "CK7",
+        "CKAE1AE3",
+        "CROMOGRANINA",
+        "GATA3",
+        "Ki-67",
+        "P16",
+        "P40",
+        "P53",
+        "PAX8",
+        "Receptor de Estrógeno",
+        "SYNAPTOFISINA",
+        "TTF1",
+        "WT1"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "CA19-9",
+        "CDX2",
+        "CK19",
+        "CK20",
+        "CK7",
+        "CKAE1AE3",
+        "CROMOGRANINA",
+        "GATA3",
+        "Ki-67",
+        "P16",
+        "P40",
+        "P53",
+        "PAX8",
+        "Receptor de Estrógeno",
+        "SYNAPTOFISINA",
+        "TTF1",
+        "WT1"
+      ],
+      "mapeados": 0,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se realizan niveles al bloque M2501818-A11 que corresponde a histeroanexectomia bilateral con diagnó..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "ÚTERO Y OVARIOS"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

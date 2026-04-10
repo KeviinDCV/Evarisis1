@@ -1,0 +1,184 @@
+{
+  "session_id": "IHQ250190_20260108_110002",
+  "numero_peticion": "IHQ250190",
+  "timestamp": "2026-01-08T11:00:02.291476",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250190\nCopia Pag. 1 de 2\nNombre : MARIANA HERNANDEZ MURILLO\nN. peticion : IHQ250190\nN.Identificación : TI. 1105382702\nGenero : FEMENINO\nEdad : 12 años 3 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS FERNANDO ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 20/02/2025\nFecha Informe : 27/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX GANGLIO LINFATICO\nCERVICAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501825 que corresponde a biopsia de ganglio linfático cervical,\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nRoche VENTANA©.\nLas\ncélulas\ntumorales\nson\nnegativas\npara\nCKAE1/AE3,\nCD3,\nCD20,SALL4,SOX\n10,S100,\nCROMOGRANINA, SINAPTOFISINA,CD99, SMA Y CD34. Presentan positividad fuerte para CD56,\nDESMINA, MYOGENINA y Myo D1. Presenta positividad focal en membrana para WT1. El KI 67\n(indice de proliferación) : 80%. \ndiagnóstico\nde\n\"TUMOR\nMALIGNO\nMAL\nDIFERENCIADO\".\nSe\nordenan\nestudios\nde\ninmunohistoquímica.\nDIAGNÓSTICO\nRegión cervical. Biopsia escisional. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN SARCOMA DE ALTO\nGRADO\nDE\nMORFOLOGÍA\nDE\nCÉLULA\nPEQUEÑA\nDE\nALTO\nGRADO\nCON\nDIFERENCIACIÓN\nMIOGÉNICA (RABDOMIOSARCOMA NOS).\nCOMENTARIOS\nLa muestra está compuesta por una población de células hipercromáticas, con una disposición\ndesordenada y aleatoria. La expresión de marcadores miogénicos respalda los hallazgos\nmencionados en el diagnóstico. Sin embargo, es necesario realizar una adecuada correlación con\nimágenes diagnósticas y estudios moleculares para una correcta clasificación de la lesión, lo que\npermitirá excluir otras entidades, como el tumor de células redondas desmoplásico, ya que se\nevidencia una marcación positiva focal para WT1.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---\nIHQ250190\nCopia Pag. 2 de 2\nNombre : MARIANA HERNANDEZ MURILLO\nN. peticion : IHQ250190\nN.Identificación : TI. 1105382702\nGenero : FEMENINO\nEdad : 12 años 3 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS FERNANDO ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 20/02/2025\nFecha Informe : 27/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3728,
+      "reduccion_porcentaje": 97.75
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250190",
+      "caso_num": 30,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_KI67": "POSITIVO (focal)",
+      "IHQ_WT1": "POSITIVO (focal)",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "nombre_completo": "MARIANA HERNANDEZ MURILLO",
+      "numero_peticion": "IHQ250190",
+      "identificacion": "1105382702",
+      "tipo_documento": "TI",
+      "Genero": "FEMENINO",
+      "Edad": "12",
+      "eps": "COMFENALCO VALLE",
+      "medico_tratante": "LUIS FERNANDO ROMERO",
+      "servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "fecha_ingreso": "20/02/2025",
+      "fecha_informe": "27/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250190",
+      "N. de identificación": "1105382702",
+      "Tipo de documento": "TI",
+      "EPS": "COMFENALCO VALLE",
+      "Servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "Médico tratante": "LUIS FERNANDO ROMERO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/02/2025",
+      "Fecha Informe": "27/02/2025",
+      "nombres": "MARIANA",
+      "Primer nombre": "MARIANA",
+      "Segundo nombre": "",
+      "apellidos": "HERNANDEZ MURILLO",
+      "Primer apellido": "HERNANDEZ",
+      "Segundo apellido": "MURILLO",
+      "nombre_formal": "HERNANDEZ MURILLO, MARIANA",
+      "diagnostico": "Región cervical. Biopsia escisional. Estudios de inmunohistoquímica: LOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN SARCOMA DE ALTO GRADO DE MORFOLOGÍA DE CÉLULA PEQUEÑA DE ALTO GRADO CON DIFERENCIACIÓN MIOGÉNICA (RABDOMIOSARCOMA NOS).",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son negativas para CKAE1/AE3, CD3, CD20,SALL4,SOX 10,S100, CROMOGRANINA, SYNAPTOPHYSIN,CD99, SMA Y CD34. Presentan positividad fuerte para CD56, DESMINA, MYOGENINA y Myo D1. Presenta positividad focal en membrana para WT1. El KI-67 (indice de proliferación) : 80%. diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2501825 que corresponde a biopsia de ganglio linfático cervical, con",
+      "ihq_organo": "REGIÓN CERVICAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "La muestra está compuesta por una población de células hipercromáticas, con una disposición desordenada y aleatoria. La expresión de marcadores miogénicos respalda los hallazgos mencionados en el diagnóstico. Sin embargo, es necesario realizar una adecuada correlación con imágenes diagnósticas y estudios moleculares para una correcta clasificación de la lesión, lo que permitirá excluir otras entidades, como el tumor de células redondas desmoplásico, ya que se evidencia una marcación positiva focal para WT1. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 51 --- IHQ250190 Copia Pag. 2 de 2 Nombre : MARIANA HERNANDEZ MURILLO N. peticion : IHQ250190 N.Identificación : TI. 1105382702 Genero : FEMENINO Edad : 12 años 3 dias EPS : COMFENALCO VALLE Médico tratante : LUIS FERNANDO ROMERO Servicio : HEMATO ONCOLOGIA HOSP PEDIAT Fecha Ingreso : 20/02/2025 Fecha Informe : 27/02/2025",
+      "IHQ_ORGANO": "REGIÓN CERVICAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 80%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD3": "NEGATIVO",
+      "IHQ_CD20": "NEGATIVO",
+      "IHQ_SALL4": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_CD99": "NEGATIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_MYOGENIN": "NEGATIVO",
+      "IHQ_KI-67": "80%",
+      "extraction_timestamp": "2026-01-08T11:00:02.837051",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250190\nCopia Pag. 1 de 2\nNombre : MARIANA HERNANDEZ MURILLO\nN. peticion : IHQ250190\nN.Identificación : TI. 1105382702\nGenero : FEMENINO\nEdad : 12 años 3 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS FERNANDO ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 20/02/2025\nFecha Informe : 27/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX GANGLIO LINFATICO\nCERVICAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2501825 que corresponde a biopsia de ganglio linfático cervical,\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nRoche VENTANA©.\nLas\ncélulas\ntumorales\nson\nnegativas\npara\nCKAE1/AE3,\nCD3,\nCD20,SALL4,SOX\n10,S100,\nCROMOGRANINA, SINAPTOFISINA,CD99, SMA Y CD34. Presentan positividad fuerte para CD56,\nDESMINA, MYOGENINA y Myo D1. Presenta positividad focal en membrana para WT1. El KI 67\n(indice de proliferación) : 80%. \ndiagnóstico\nde\n\"TUMOR\nMALIGNO\nMAL\nDIFERENCIADO\".\nSe\nordenan\nestudios\nde\ninmunohistoquímica.\nDIAGNÓSTICO\nRegión cervical. Biopsia escisional. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN SARCOMA DE ALTO\nGRADO\nDE\nMORFOLOGÍA\nDE\nCÉLULA\nPEQUEÑA\nDE\nALTO\nGRADO\nCON\nDIFERENCIACIÓN\nMIOGÉNICA (RABDOMIOSARCOMA NOS).\nCOMENTARIOS\nLa muestra está compuesta por una población de células hipercromáticas, con una disposición\ndesordenada y aleatoria. La expresión de marcadores miogénicos respalda los hallazgos\nmencionados en el diagnóstico. Sin embargo, es necesario realizar una adecuada correlación con\nimágenes diagnósticas y estudios moleculares para una correcta clasificación de la lesión, lo que\npermitirá excluir otras entidades, como el tumor de células redondas desmoplásico, ya que se\nevidencia una marcación positiva focal para WT1.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---\nIHQ250190\nCopia Pag. 2 de 2\nNombre : MARIANA HERNANDEZ MURILLO\nN. peticion : IHQ250190\nN.Identificación : TI. 1105382702\nGenero : FEMENINO\nEdad : 12 años 3 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS FERNANDO ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 20/02/2025\nFecha Informe : 27/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD20, CD3, CD34, CD56, CD99, CKAE1AE3, CROMOGRANINA, DESMIN, Ki-67, MYOGENIN, S100, SALL4, SMA, SOX10, SYNAPTOFISINA, WT1",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2501825 que corresponde a biopsia de ganglio linfático cervical, con",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son negativas para CKAE1/AE3, CD3, CD20,SALL4,SOX 10,S100, CROMOGRANINA, SINAPTOFISINA,CD99, SMA Y CD34. Presentan positividad fuerte para CD56, DESMINA, MYOGENINA y Myo D1. Presenta positividad focal en membrana para WT1. El KI 67 (indice de proliferación) : 80%. diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion Diagnostico": "Región cervical. Biopsia escisional. Estudios de inmunohistoquímica: LOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN SARCOMA DE ALTO GRADO DE MORFOLOGÍA DE CÉLULA PEQUEÑA DE ALTO GRADO CON DIFERENCIACIÓN MIOGÉNICA (RABDOMIOSARCOMA NOS).",
+      "IHQ_ORGANO": "REGIÓN CERVICAL",
+      "Organo": "BX GANGLIO LINFATICO CERVICAL",
+      "Diagnostico Coloracion": "TUMOR MALIGNO MAL DIFERENCIADO",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN SARCOMA DE ALTO GRADO DE MORFOLOGÍA DE CÉLULA PEQUEÑA DE ALTO GRADO CON DIFERENCIACIÓN MIOGÉNICA (RABDOMIOSARCOMA NOS)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 80%",
+      "IHQ_CD20": "NEGATIVO",
+      "IHQ_CD3": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_CD99": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_KI-67": "80%",
+      "IHQ_MYOGENIN": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_SALL4": "NEGATIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_SYNAPTOFISINA": "NEGATIVO",
+      "IHQ_WT1": "POSITIVO (focal)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 171,
+      "campos_vacios": 117,
+      "campos_completos": 54,
+      "biomarcadores_encontrados": 16,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 117,
+      "total_campos_completos": 54
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región cervical. Biopsia escisional. Estudios de inmunohistoquímica:\nLOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN SARCOMA DE ALTO\nGRADO\nDE\nMORFOLOGÍA\nDE\nCÉLULA\nPEQUEÑA\nDE\nALTO\nGRADO\nCON\nDIFERENCIACIÓN\nMIOGÉNICA (RABDOMIOSARCOMA NOS).",
+      "valor_corregido": "Región cervical. Biopsia escisional. Estudios de inmunohistoquímica: LOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN SARCOMA DE ALTO GRADO DE MORFOLOGÍA DE CÉLULA PEQUEÑA DE ALTO GRADO CON DIFERENCIACIÓN MIOGÉNICA (RABDOMIOSARCOMA NOS).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250190",
+      "timestamp": "2026-01-08T11:00:02.836797"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son negativas para CKAE1/AE3, CD3, CD20,SALL4,SOX 10,S100, CROMOGRANINA, SINAPTOFISINA,CD99, SMA Y CD34. Presentan positividad fuerte para CD56, DESMINA, MYOGENINA y Myo D1. Presenta positividad focal en membrana para WT1. El KI 67 (indice de proliferación) : 80%. diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Las células tumorales son negativas para CKAE1/AE3, CD3, CD20,SALL4,SOX 10,S100, CROMOGRANINA, SYNAPTOPHYSIN,CD99, SMA Y CD34. Presentan positividad fuerte para CD56, DESMINA, MYOGENINA y Myo D1. Presenta positividad focal en membrana para WT1. El KI-67 (indice de proliferación) : 80%. diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO\". Se ordenan estudios de inmunohistoquímica.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250190",
+      "timestamp": "2026-01-08T11:00:02.836804"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La muestra está compuesta por una población de células hipercromáticas, con una disposición\ndesordenada y aleatoria. La expresión de marcadores miogénicos respalda los hallazgos\nmencionados en el diagnóstico. Sin embargo, es necesario realizar una adecuada correlación con\nimágenes diagnósticas y estudios moleculares para una correcta clasificación de la lesión, lo que\npermitirá excluir otras entidades, como el tumor de células redondas desmoplásico, ya que se\nevidencia una marcación positiva focal para WT1.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---\nIHQ250190\nCopia Pag. 2 de 2\nNombre : MARIANA HERNANDEZ MURILLO\nN. peticion : IHQ250190\nN.Identificación : TI. 1105382702\nGenero : FEMENINO\nEdad : 12 años 3 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS FERNANDO ROMERO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 20/02/2025\nFecha Informe : 27/02/2025",
+      "valor_corregido": "La muestra está compuesta por una población de células hipercromáticas, con una disposición desordenada y aleatoria. La expresión de marcadores miogénicos respalda los hallazgos mencionados en el diagnóstico. Sin embargo, es necesario realizar una adecuada correlación con imágenes diagnósticas y estudios moleculares para una correcta clasificación de la lesión, lo que permitirá excluir otras entidades, como el tumor de células redondas desmoplásico, ya que se evidencia una marcación positiva focal para WT1. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 51 --- IHQ250190 Copia Pag. 2 de 2 Nombre : MARIANA HERNANDEZ MURILLO N. peticion : IHQ250190 N.Identificación : TI. 1105382702 Genero : FEMENINO Edad : 12 años 3 dias EPS : COMFENALCO VALLE Médico tratante : LUIS FERNANDO ROMERO Servicio : HEMATO ONCOLOGIA HOSP PEDIAT Fecha Ingreso : 20/02/2025 Fecha Informe : 27/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250190",
+      "timestamp": "2026-01-08T11:00:02.836806"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 63
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "session_id": "IHQ250213_20260128_112159",
+  "numero_peticion": "IHQ250213",
+  "timestamp": "2026-01-28T11:21:59.611014",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250213\nCopia Pag. 1 de 2\nNombre : BENITO ALFONSO MURIEL LAREO\nN. peticion : IHQ250213\nN.Identificación : CC. 6398481\nGenero : MASCULINO\nEdad : 68 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ELPIDIO BARAJAS FREGOSO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 27/02/2025\nFecha Informe : 06/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE GANGLIO\nCERVICAL IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2502037, el cual corresponde a biopsia de ganglio\nlinfático\ncervical\nizquierdo,\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLa\ntotalidad\nde\nla\nmuestra\ncorresponde\na\ncelularidad\ninflamatoria\nmixta\nde\npredominio\nlinfohistiocitario con marcación positiva homogénea y difusa para CD68. No se repesenta\ncelularidad neoplásica ni hay marcación para CK7, CK20, CKAE1E3, PAX-8, GATA-3, CDX2, TTF-1\nni Hepatocito en la muestra evaluada.\ndiagnóstico\nde\n\"INFILTRADO\nINFLAMATORIO\nMIXTO\nDE\nPREDOMINIO LINFOHISTIOCITARIO. CELULARIDAD ATÍPICA FOCAL\". Se ordenan los siguientes\nmarcadores: CK7, CK20, TTF-1, GATA-3, CDX2, Hepatocito, PAX-8, CKAE1E3 y CD68.\nDIAGNÓSTICO\nGanglio linfático cervical izquierdo. Biopsia. Estudios de inmunohistoquímica:\nPROCESO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO\nNEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA\nCOMENTARIOS\nSe recomienda la escisión completa del ganglio linfático en caso de persistir sospecha neoplásica,\na criterio del médico tratante.\n***Se sugieren coloraciones de histoquímica en la evaluación de microorganismos.\nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---\nIHQ250213\nCopia Pag. 2 de 2\nNombre : BENITO ALFONSO MURIEL LAREO\nN. peticion : IHQ250213\nN.Identificación : CC. 6398481\nGenero : MASCULINO\nEdad : 68 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ELPIDIO BARAJAS FREGOSO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 27/02/2025\nFecha Informe : 06/03/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 5 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3504,
+      "reduccion_porcentaje": 98.05
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250213",
+      "caso_num": 2,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CD68": "POSITIVO (difusa)",
+      "nombre_completo": "BENITO ALFONSO MURIEL LAREO",
+      "numero_peticion": "IHQ250213",
+      "identificacion": "6398481",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "68",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ELPIDIO BARAJAS FREGOSO",
+      "servicio": "INSTITUCION EXTERNA",
+      "fecha_ingreso": "27/02/2025",
+      "fecha_informe": "06/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250213",
+      "N. de identificación": "6398481",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "INSTITUCION EXTERNA",
+      "Médico tratante": "ELPIDIO BARAJAS FREGOSO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "27/02/2025",
+      "Fecha Informe": "06/03/2025",
+      "nombres": "BENITO ALFONSO",
+      "Primer nombre": "BENITO",
+      "Segundo nombre": "ALFONSO",
+      "apellidos": "MURIEL LAREO",
+      "Primer apellido": "MURIEL",
+      "Segundo apellido": "LAREO",
+      "nombre_formal": "MURIEL LAREO, BENITO ALFONSO",
+      "diagnostico": "Ganglio linfático cervical izquierdo. Biopsia. Estudios de inmunohistoquímica: PROCESO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La totalidad de la muestra corresponde a celularidad inflamatoria mixta de predominio linfohistiocitario con marcación positiva homogénea y difusa para CD68. No se repesenta celularidad neoplásica ni hay marcación para CK7, CK20, CKAE1E3, PAX-8, GATA-3, CDX2, TTF1 ni Hepatocito en la muestra evaluada. diagnóstico de \"INFILTRADO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO. CELULARIDAD ATÍPICA FOCAL\". Se ordenan los siguientes marcadores: CK7, CK20, TTF1, GATA-3, CDX2, Hepatocito, PAX-8, CKAE1E3 y CD68.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2502037, el cual corresponde a biopsia de ganglio linfático cervical izquierdo, con",
+      "ihq_organo": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, TTF-1, GATA 3, CDX2, HEPATOCITO, PAX 8, CKAE1E3, CD68",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se recomienda la escisión completa del ganglio linfático en caso de persistir sospecha neoplásica, a criterio del médico tratante. ***Se sugieren coloraciones de histoquímica en la evaluación de microorganismos.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, TTF-1, GATA 3, CDX2, HEPATOCITO, PAX 8, CKAE1E3, CD68",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "extraction_timestamp": "2026-01-28T11:22:00.247187",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250213\nCopia Pag. 1 de 2\nNombre : BENITO ALFONSO MURIEL LAREO\nN. peticion : IHQ250213\nN.Identificación : CC. 6398481\nGenero : MASCULINO\nEdad : 68 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ELPIDIO BARAJAS FREGOSO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 27/02/2025\nFecha Informe : 06/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE GANGLIO\nCERVICAL IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2502037, el cual corresponde a biopsia de ganglio\nlinfático\ncervical\nizquierdo,\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLa\ntotalidad\nde\nla\nmuestra\ncorresponde\na\ncelularidad\ninflamatoria\nmixta\nde\npredominio\nlinfohistiocitario con marcación positiva homogénea y difusa para CD68. No se repesenta\ncelularidad neoplásica ni hay marcación para CK7, CK20, CKAE1E3, PAX-8, GATA-3, CDX2, TTF-1\nni Hepatocito en la muestra evaluada.\ndiagnóstico\nde\n\"INFILTRADO\nINFLAMATORIO\nMIXTO\nDE\nPREDOMINIO LINFOHISTIOCITARIO. CELULARIDAD ATÍPICA FOCAL\". Se ordenan los siguientes\nmarcadores: CK7, CK20, TTF-1, GATA-3, CDX2, Hepatocito, PAX-8, CKAE1E3 y CD68.\nDIAGNÓSTICO\nGanglio linfático cervical izquierdo. Biopsia. Estudios de inmunohistoquímica:\nPROCESO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO\nNEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA\nCOMENTARIOS\nSe recomienda la escisión completa del ganglio linfático en caso de persistir sospecha neoplásica,\na criterio del médico tratante.\n***Se sugieren coloraciones de histoquímica en la evaluación de microorganismos.\nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---\nIHQ250213\nCopia Pag. 2 de 2\nNombre : BENITO ALFONSO MURIEL LAREO\nN. peticion : IHQ250213\nN.Identificación : CC. 6398481\nGenero : MASCULINO\nEdad : 68 años 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ELPIDIO BARAJAS FREGOSO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 27/02/2025\nFecha Informe : 06/03/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 5 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, TTF-1, GATA 3, CDX2, HEPATOCITO, PAX 8, CKAE1AE3, CD68",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2502037, el cual corresponde a biopsia de ganglio linfático cervical izquierdo, con",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La totalidad de la muestra corresponde a celularidad inflamatoria mixta de predominio linfohistiocitario con marcación positiva homogénea y difusa para CD68. No se repesenta celularidad neoplásica ni hay marcación para CK7, CK20, CKAE1E3, PAX-8, GATA-3, CDX2, TTF-1 ni Hepatocito en la muestra evaluada. diagnóstico de \"INFILTRADO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO. CELULARIDAD ATÍPICA FOCAL\". Se ordenan los siguientes marcadores: CK7, CK20, TTF-1, GATA-3, CDX2, Hepatocito, PAX-8, CKAE1E3 y CD68.",
+      "Descripcion Diagnostico": "Ganglio linfático cervical izquierdo. Biopsia. Estudios de inmunohistoquímica: PROCESO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "Organo": "BIOPSIA DE GANGLIO CERVICAL IZQUIERDO",
+      "Diagnostico Coloracion": "INFILTRADO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO. CELULARIDAD ATÍPICA FOCAL",
+      "Diagnostico Principal": "PROCESO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_HEPATOCITO": "NO MENCIONADO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CD68": "POSITIVO (difusa)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 174,
+      "campos_vacios": 130,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 130,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático cervical izquierdo. Biopsia. Estudios de inmunohistoquímica:\nPROCESO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO\nNEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "valor_corregido": "Ganglio linfático cervical izquierdo. Biopsia. Estudios de inmunohistoquímica: PROCESO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250213",
+      "timestamp": "2026-01-28T11:22:00.246904"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La totalidad de la muestra corresponde a celularidad inflamatoria mixta de predominio linfohistiocitario con marcación positiva homogénea y difusa para CD68. No se repesenta celularidad neoplásica ni hay marcación para CK7, CK20, CKAE1E3, PAX-8, GATA-3, CDX2, TTF-1 ni Hepatocito en la muestra evaluada. diagnóstico de \"INFILTRADO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO. CELULARIDAD ATÍPICA FOCAL\". Se ordenan los siguientes marcadores: CK7, CK20, TTF-1, GATA-3, CDX2, Hepatocito, PAX-8, CKAE1E3 y CD68.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La totalidad de la muestra corresponde a celularidad inflamatoria mixta de predominio linfohistiocitario con marcación positiva homogénea y difusa para CD68. No se repesenta celularidad neoplásica ni hay marcación para CK7, CK20, CKAE1E3, PAX-8, GATA-3, CDX2, TTF1 ni Hepatocito en la muestra evaluada. diagnóstico de \"INFILTRADO INFLAMATORIO MIXTO DE PREDOMINIO LINFOHISTIOCITARIO. CELULARIDAD ATÍPICA FOCAL\". Se ordenan los siguientes marcadores: CK7, CK20, TTF1, GATA-3, CDX2, Hepatocito, PAX-8, CKAE1E3 y CD68.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250213",
+      "timestamp": "2026-01-28T11:22:00.246912"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se recomienda la escisión completa del ganglio linfático en caso de persistir sospecha neoplásica,\na criterio del médico tratante.\n***Se sugieren coloraciones de histoquímica en la evaluación de microorganismos.",
+      "valor_corregido": "Se recomienda la escisión completa del ganglio linfático en caso de persistir sospecha neoplásica, a criterio del médico tratante. ***Se sugieren coloraciones de histoquímica en la evaluación de microorganismos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250213",
+      "timestamp": "2026-01-28T11:22:00.246915"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 57
+  }
+}

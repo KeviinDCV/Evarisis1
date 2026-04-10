@@ -1,0 +1,39 @@
+{
+  "caso": "IHQ250035",
+  "biomarcador": "MLH1",
+  "fecha_analisis": "2025-12-16T03:23:39.675688",
+  "problema_detectado": {
+    "descripcion": "MLH1 se extrae como NEGATIVO cuando debería ser POSITIVO (expresión nuclear intacta)",
+    "valor_esperado": "POSITIVO (expresión nuclear intacta)",
+    "valor_actual_bd": "NEGATIVO",
+    "ocr_fuente": "+Resultado de MLH1: Expresión nuclear intact",
+    "linea_ocr": 42
+  },
+  "diagnostico": {
+    "causa_raiz": "El patrón de extracción no incluye el prefijo + al inicio de la línea",
+    "patron_actual": "(?i)Resultado\\s+de\\s+MLH1[:\\s]*(Expresi[óo]n\\s+nuclear\\s+(?:intact[a]?|preservada|normal|ausente|p[ée]rdida))",
+    "patron_problema": "No reconoce el prefijo + antes de \"Resultado\"",
+    "patron_cae_en": "Patrón genérico posterior que captura texto incorrecto",
+    "archivo": "core/extractors/biomarker_extractor.py",
+    "linea": 2142
+  },
+  "solucion": {
+    "tipo": "Modificar patrón regex para incluir prefijo + opcional",
+    "patron_nuevo": "(?i)[\\+]?\\s*Resultado\\s+de\\s+MLH1[:\\s]*(Expresi[óo]n\\s+nuclear\\s+(?:intact[a]?|preservada|normal|ausente|p[ée]rdida))",
+    "cambio": "Agregar [\\+]?\\s* al inicio del patrón",
+    "lineas_afectadas": [
+      "2142"
+    ],
+    "archivo": "core/extractors/biomarker_extractor.py"
+  },
+  "validacion": {
+    "otros_mmr_ok": {
+      "MSH2": "POSITIVO (expresión nuclear intacta) - OK",
+      "MSH6": "POSITIVO (expresión nuclear intacta) - OK",
+      "PMS2": "POSITIVO (expresión nuclear intacta) - OK"
+    },
+    "diferencia": "MSH2/MSH6/PMS2 usan +Resultado... pero con intacta (con a), MLH1 usa intact (sin a)",
+    "nota": "Los patrones de MSH2/MSH6/PMS2 probablemente ya incluyen el prefijo + o no les afecta"
+  },
+  "siguiente_paso": "Modificar biomarker_extractor.py línea 2142 y ejecutar FUNC-06 nuevamente"
+}

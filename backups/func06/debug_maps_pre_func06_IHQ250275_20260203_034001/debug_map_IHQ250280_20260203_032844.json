@@ -1,0 +1,162 @@
+{
+  "session_id": "IHQ250280_20260203_032844",
+  "numero_peticion": "IHQ250280",
+  "timestamp": "2026-02-03T03:28:44.504236",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250280\nCopia Pag. 1 de 2\nNombre : MILENA INES CAICEDO GOMEZ\nN. peticion : IHQ250280\nN.Identificación : CC. 67004037\nGenero : FEMENINO\nEdad : 47 años 1 mes 11 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : MARIA ISABEL SANCLEMENTE\nServicio : MEDICA MUJERES\nFecha Ingreso : 17/03/2025\nFecha Informe : 31/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMUCOSA DE CIEGO,\nSIGMOIDES, COLON\nDESCENDENTE\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502841que\ncorresponde a \"A. mucosa de ciego y B. mucosa de sigmoide y colon descendente\" con\ndiagnóstico de \"PROLIFERACION CELULAR, REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA\nSU ADECUADA CLASIFICACION\" del 17/03/2025. Previa valoración de la coloración básica, se\nrealizan cortes histológicos al bloque A2 y B para los siguientes marcadores: CD3, CD5, CD10,\nCD15, CD20, CD34, CD38, CD68, CKAE1/AE3, HHV -8.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nEn los cortes histológicos se observa un proceso inflamatorio mixto con predominio de neutrófilos\n(CD15+), abundantes histiocitos (CD68+), linfocitos T (CD3+, CD5+), linfocitos B (CD20+, CD10-)\ny plasmocitos (CD38+) con un índice de proliferación celular elevado (esperado). Hay tejido de\ngranulación con neoformación de vasos (CD34+) siendo negativos para HHV-8. En el fondo\ninflamatorio se observa una células de tamaño intermedio de origen no especificado (CKAE1/AE3\nnegativo). \nDIAGNÓSTICO\nA. Mucosa de ciego. Biopsia endoscópica. Biopsia endoscópica. Estudio de\nCOMENTARIOS\nLas muestras histológicas evidencian un proceso inflamatorio agudo y crónico con\nneovascularización y expresión de inmunomarcación esperada, sin embargo hay escasas células\nde tamaño grande intercaladas de histogénesis no determinada con los marcadores de\ninmunohistoquímica realizados. Si la sospecha de proceso neoplasico persiste se considera un\nmuestreo más amplio a criterio del médico tratante. \nCaso valorado en conjunto con la Dra Isabella Caicedo (patóloga). \nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---\nIHQ250280\nCopia Pag. 2 de 2\nNombre : MILENA INES CAICEDO GOMEZ\nN. peticion : IHQ250280\nN.Identificación : CC. 67004037\nGenero : FEMENINO\nEdad : 47 años 1 mes 11 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : MARIA ISABEL SANCLEMENTE\nServicio : MEDICA MUJERES\nFecha Ingreso : 17/03/2025\nFecha Informe : 31/03/2025\ninmunohistoquímica. \nPROCESO INFLAMATORIO MIXTO CON TEJIDO DE GRANULACIÓN. \nVER COMENTARIO. \nB. Mucosa de sigmoide y colon descendente. Biopsia endoscópica. Estudio de\ninmunohistoquímica. \nPROCESO INFLAMATORIO MIXTO CON TEJIDO DE GRANULACIÓN. \nVER COMENTARIO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 4289,
+      "reduccion_porcentaje": 97.54
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250280",
+      "caso_num": 17,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_HHV8": "NEGATIVO",
+      "nombre_completo": "MILENA INES CAICEDO GOMEZ",
+      "numero_peticion": "IHQ250280",
+      "identificacion": "67004037",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "47",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "MARIA ISABEL SANCLEMENTE",
+      "servicio": "MEDICA MUJERES",
+      "fecha_ingreso": "17/03/2025",
+      "fecha_informe": "31/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250280",
+      "N. de identificación": "67004037",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "MEDICA MUJERES",
+      "Médico tratante": "MARIA ISABEL SANCLEMENTE",
+      "Fecha de ingreso (2. Fecha de la muestra)": "17/03/2025",
+      "Fecha Informe": "31/03/2025",
+      "nombres": "MILENA INES",
+      "Primer nombre": "MILENA",
+      "Segundo nombre": "INES",
+      "apellidos": "CAICEDO GOMEZ",
+      "Primer apellido": "CAICEDO",
+      "Segundo apellido": "GOMEZ",
+      "nombre_formal": "CAICEDO GOMEZ, MILENA INES",
+      "diagnostico": "A. Mucosa de ciego. Biopsia endoscópica. Biopsia endoscópica. Estudio de",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: En los cortes histológicos se observa un proceso inflamatorio mixto con predominio de neutrófilos (CD15+), abundantes histiocitos (CD68+), linfocitos T (CD3+, CD5+), linfocitos B (CD20+, CD10-) y plasmocitos (CD38+) con un índice de proliferación celular elevado (esperado). Hay tejido de granulación con neoformación de vasos (CD34+) siendo negativos para HHV-8. En el fondo inflamatorio se observa una células de tamaño intermedio de origen no especificado (CKAE1/AE3 negativo).",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502841 que corresponde a \"A. mucosa de ciego y B. mucosa de sigmoide y colon descendente\" con diagnóstico de \"PROLIFERACION CELULAR, REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA SU ADECUADA CLASIFICACION\" del 17/03/2025. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque A2 y B para los siguientes marcadores: CD3, CD5, CD10, CD15, CD20, CD34, CD38, CD68, CKAE1/AE3, HHV -8.",
+      "ihq_organo": "MUCOSA DE CIEGO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD5, CD10, CD15, CD20, CD34, CD38, CD68, CKAE1AE3, HHV 8",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Las muestras histológicas evidencian un proceso inflamatorio agudo y crónico con neovascularización y expresión de inmunomarcación esperada, sin embargo hay escasas células de tamaño grande intercaladas de histogénesis no determinada con los marcadores de inmunohistoquímica realizados. Si la sospecha de proceso neoplasico persiste se considera un muestreo más amplio a criterio del médico tratante. Caso valorado en conjunto con la Dra Isabella Caicedo (patóloga).",
+      "IHQ_ORGANO": "MUCOSA DE CIEGO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD5, CD10, CD15, CD20, CD34, CD38, CD68, CKAE1AE3, HHV 8",
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "extraction_timestamp": "2026-02-03T03:28:44.900513",
+      "extractor_version": "6.5.89_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250280\nCopia Pag. 1 de 2\nNombre : MILENA INES CAICEDO GOMEZ\nN. peticion : IHQ250280\nN.Identificación : CC. 67004037\nGenero : FEMENINO\nEdad : 47 años 1 mes 11 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : MARIA ISABEL SANCLEMENTE\nServicio : MEDICA MUJERES\nFecha Ingreso : 17/03/2025\nFecha Informe : 31/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMUCOSA DE CIEGO,\nSIGMOIDES, COLON\nDESCENDENTE\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502841que\ncorresponde a \"A. mucosa de ciego y B. mucosa de sigmoide y colon descendente\" con\ndiagnóstico de \"PROLIFERACION CELULAR, REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA\nSU ADECUADA CLASIFICACION\" del 17/03/2025. Previa valoración de la coloración básica, se\nrealizan cortes histológicos al bloque A2 y B para los siguientes marcadores: CD3, CD5, CD10,\nCD15, CD20, CD34, CD38, CD68, CKAE1/AE3, HHV -8.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nEn los cortes histológicos se observa un proceso inflamatorio mixto con predominio de neutrófilos\n(CD15+), abundantes histiocitos (CD68+), linfocitos T (CD3+, CD5+), linfocitos B (CD20+, CD10-)\ny plasmocitos (CD38+) con un índice de proliferación celular elevado (esperado). Hay tejido de\ngranulación con neoformación de vasos (CD34+) siendo negativos para HHV-8. En el fondo\ninflamatorio se observa una células de tamaño intermedio de origen no especificado (CKAE1/AE3\nnegativo). \nDIAGNÓSTICO\nA. Mucosa de ciego. Biopsia endoscópica. Biopsia endoscópica. Estudio de\nCOMENTARIOS\nLas muestras histológicas evidencian un proceso inflamatorio agudo y crónico con\nneovascularización y expresión de inmunomarcación esperada, sin embargo hay escasas células\nde tamaño grande intercaladas de histogénesis no determinada con los marcadores de\ninmunohistoquímica realizados. Si la sospecha de proceso neoplasico persiste se considera un\nmuestreo más amplio a criterio del médico tratante. \nCaso valorado en conjunto con la Dra Isabella Caicedo (patóloga). \nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---\nIHQ250280\nCopia Pag. 2 de 2\nNombre : MILENA INES CAICEDO GOMEZ\nN. peticion : IHQ250280\nN.Identificación : CC. 67004037\nGenero : FEMENINO\nEdad : 47 años 1 mes 11 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : MARIA ISABEL SANCLEMENTE\nServicio : MEDICA MUJERES\nFecha Ingreso : 17/03/2025\nFecha Informe : 31/03/2025\ninmunohistoquímica. \nPROCESO INFLAMATORIO MIXTO CON TEJIDO DE GRANULACIÓN. \nVER COMENTARIO. \nB. Mucosa de sigmoide y colon descendente. Biopsia endoscópica. Estudio de\ninmunohistoquímica. \nPROCESO INFLAMATORIO MIXTO CON TEJIDO DE GRANULACIÓN. \nVER COMENTARIO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD5, CD10, CD15, CD20, CD34, CD38, CD68, CKAE1AE3, HHV 8",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502841que corresponde a \"A. mucosa de ciego y B. mucosa de sigmoide y colon descendente\" con diagnóstico de \"PROLIFERACION CELULAR, REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA SU ADECUADA CLASIFICACION\" del 17/03/2025. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque A2 y B para los siguientes marcadores: CD3, CD5, CD10, CD15, CD20, CD34, CD38, CD68, CKAE1/AE3, HHV -8.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: En los cortes histológicos se observa un proceso inflamatorio mixto con predominio de neutrófilos (CD15+), abundantes histiocitos (CD68+), linfocitos T (CD3+, CD5+), linfocitos B (CD20+, CD10-) y plasmocitos (CD38+) con un índice de proliferación celular elevado (esperado). Hay tejido de granulación con neoformación de vasos (CD34+) siendo negativos para HHV-8. En el fondo inflamatorio se observa una células de tamaño intermedio de origen no especificado (CKAE1/AE3 negativo).",
+      "Descripcion Diagnostico": "A. Mucosa de ciego. Biopsia endoscópica. Biopsia endoscópica. Estudio de",
+      "IHQ_ORGANO": "MUCOSA DE CIEGO",
+      "Organo": "MUCOSA DE CIEGO, SIGMOIDES, COLON DESCENDENTE",
+      "Diagnostico Coloracion": "PROLIFERACION CELULAR, REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA SU ADECUADA CLASIFICACION",
+      "Diagnostico Principal": "PROLIFERACION CELULAR, REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA SU ADECUADA CLASIFICACION",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_HHV8": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 131,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 131,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502841que corresponde a \"A. mucosa de ciego y B. mucosa de sigmoide y colon descendente\" con diagnóstico de \"PROLIFERACION CELULAR, REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA SU ADECUADA CLASIFICACION\" del 17/03/2025. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque A2 y B para los siguientes marcadores: CD3, CD5, CD10, CD15, CD20, CD34, CD38, CD68, CKAE1/AE3, HHV -8.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502841 que corresponde a \"A. mucosa de ciego y B. mucosa de sigmoide y colon descendente\" con diagnóstico de \"PROLIFERACION CELULAR, REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA SU ADECUADA CLASIFICACION\" del 17/03/2025. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque A2 y B para los siguientes marcadores: CD3, CD5, CD10, CD15, CD20, CD34, CD38, CD68, CKAE1/AE3, HHV -8.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250280",
+      "timestamp": "2026-02-03T03:28:44.900318"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Las muestras histológicas evidencian un proceso inflamatorio agudo y crónico con\nneovascularización y expresión de inmunomarcación esperada, sin embargo hay escasas células\nde tamaño grande intercaladas de histogénesis no determinada con los marcadores de\ninmunohistoquímica realizados. Si la sospecha de proceso neoplasico persiste se considera un\nmuestreo más amplio a criterio del médico tratante. \nCaso valorado en conjunto con la Dra Isabella Caicedo (patóloga).",
+      "valor_corregido": "Las muestras histológicas evidencian un proceso inflamatorio agudo y crónico con neovascularización y expresión de inmunomarcación esperada, sin embargo hay escasas células de tamaño grande intercaladas de histogénesis no determinada con los marcadores de inmunohistoquímica realizados. Si la sospecha de proceso neoplasico persiste se considera un muestreo más amplio a criterio del médico tratante. Caso valorado en conjunto con la Dra Isabella Caicedo (patóloga).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250280",
+      "timestamp": "2026-02-03T03:28:44.900325"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 59
+  }
+}

@@ -4,8 +4,13 @@
 🔍 AUDITOR DE SISTEMA - Auditoría Inteligente EVARISIS
 =======================================================
 
-FUNCIONALIDAD ÚNICA:
-- Auditoría Inteligente (FUNC-01): Análisis semántico completo de casos IHQ
+FUNCIONALIDADES:
+- FUNC-01: Auditoría Inteligente - Análisis semántico completo de casos IHQ
+- FUNC-03: Agregar biomarcador automáticamente (6 archivos)
+- FUNC-05: Workflow completitud automática (casos incompletos específicos)
+- FUNC-05B: Análisis masivo casos problemáticos
+- FUNC-06: Reprocesar caso completo (limpieza automática + comparación)
+- FUNC-08: Corrección automática validation_checker.py cuando caso incompleto por mapeo 🆕
 
 Valida:
 1. Extracción inicial (unified_extractor)
@@ -24,8 +29,137 @@ Salida:
   herramientas_ia/resultados/auditoria_inteligente_IHQ250980.json
 
 Autor: Sistema EVARISIS
-Versión: 3.3.0 - VALIDACIÓN ANTI-PROBLEMAS (IHQ251007)
-Fecha: 3 de noviembre de 2025
+Versión: 3.7.0 - AUTO-CORRECCIÓN COMPLETA: FUNC-01 + FUNC-03/FUNC-08 + FUNC-06 automáticos
+Fecha: 8 de enero de 2026
+
+CHANGELOG v3.7.0:
+- ✅ FUNC-01 MEJORADA: Ahora ejecuta FUNC-06 automáticamente después de correcciones (línea 2934)
+- 🤖 Comportamiento actualizado: Workflow completamente automático sin intervención manual
+- 🔄 Flujo automático COMPLETO:
+  1. Audita caso (FUNC-01)
+  2. Detecta biomarcadores problemáticos
+  3. Si NO existe en BD → ejecuta FUNC-03 automáticamente
+  4. Si existe pero no mapea → ejecuta FUNC-08 automáticamente
+  5. ✨ NUEVO: Ejecuta FUNC-06 automáticamente para reprocesar
+  6. ✨ NUEVO: Audita nuevamente el caso reprocesado
+  7. ✨ NUEVO: Compara scores ANTES/DESPUÉS y muestra mejora
+- 🎯 Resultado: Usuario ejecuta "auditar IHQ250188" y el sistema:
+  - Detecta: Glypican-3, Hepar-1, Arginasa, AFP no extraídos
+  - Ejecuta: FUNC-03 para GPC3 y AFP
+  - Ejecuta: FUNC-06 para reprocesar caso
+  - Valida: Score 88.9% → 100% ✅
+  - Continúa: Listo para siguiente caso
+- 📊 Impacto: Workflow 100% automático - de auditoría a validación sin pasos manuales
+- 🛠️ Modificación: _ejecutar_autocorreccion_inteligente() ahora incluye FUNC-06 + re-auditoría
+
+CHANGELOG v3.6.0:
+- ✅ FUNC-01 MEJORADA: Auto-corrección inteligente integrada (línea 2749)
+- 🤖 Comportamiento nuevo: Al auditar caso, detecta problemas y ejecuta correcciones automáticamente
+- 🔍 Flujo automático:
+  1. Audita caso (FUNC-01)
+  2. Detecta biomarcadores problemáticos
+  3. Si NO existe en BD → ejecuta FUNC-03 automáticamente
+  4. Si existe pero no mapea → ejecuta FUNC-08 automáticamente
+  5. Sugiere FUNC-06 para reprocesar (MANUAL en v3.6.0, AUTOMÁTICO en v3.7.0)
+- 🎯 Parámetro nuevo: auto_corregir=True (por defecto habilitado)
+- 💡 Caso de uso: Usuario ejecuta "auditar IHQ250185" y el sistema detecta + corrige automático
+- 🛠️ Nueva función: _ejecutar_autocorreccion_inteligente() (línea 2819) - Orquesta FUNC-03/FUNC-08/FUNC-06
+- 📊 Impacto: Workflow más natural - el usuario solo dice "auditar" y el sistema hace el resto
+
+CHANGELOG v3.5.0:
+- ✅ NUEVA FUNC-08: Corrección automática validation_checker.py cuando caso incompleto por mapeo
+- 🎯 Propósito: Detecta cuando caso está incompleto por falta de alias en MAPEO_BIOMARCADORES
+- 🔧 Funcionalidad: Genera aliases ortográficos automáticamente (con espacio, punto, guion, etc.)
+- 💡 Caso de uso: IHQ250185 incompleto 96.2% por "CAM 5" (con espacio) no mapeado a IHQ_CAM5
+- 🛠️ Nueva función auxiliar: _generar_alias_para_mapeo() - Genera variantes ortográficas inteligentes
+
+CHANGELOG v3.4.3:
+- ✅ FIX IHQ250162: Búsqueda de debug_map unificada por timestamp en nombre (línea 673)
+- 📊 Problema 1: _obtener_debug_map ordenaba por st_mtime (fecha modificación), no por timestamp en nombre
+- 🎯 Solución 1: Ordenar alfabéticamente por nombre (timestamp YYYYMMDD_HHMMSS)
+- 🔧 Consistencia: Ahora usa mismo método que _buscar_debug_map_reciente
+- ✅ FIX IHQ250162: Validación descripción macroscópica mejorada (línea 2099-2151)
+- 📊 Problema 2: Similitud 52% generaba WARNING cuando texto era correcto pero truncado
+- 🎯 Solución 2: Agregadas 3 estrategias de validación:
+  1. Substring match directo (ideal)
+  2. Primeras 10 palabras clave (80% coincidencia)
+  3. Similitud de palabras (umbral ajustado: <40% ERROR, <70% WARNING, ≥70% OK)
+- 🔄 Impacto: Reduce falsos positivos en casos con texto truncado o diferencias menores
+
+CHANGELOG v3.4.2:
+- ✅ FIX IHQ250160: Agregado alias 'GLYCOFORINA' → 'IHQ_GLICOFORINA' en diccionario BIOMARCADORES (línea 442)
+- 📊 Problema: Estudios solicitados con "GLYCOFORINA" (con Y) no se reconocían como alias de "GLICOFORINA" (con I)
+- 🎯 Solución: Agregado alias ortográfico al diccionario BIOMARCADORES
+- 🔧 Impacto: Auditor ahora reconoce ambas variantes ortográficas del biomarcador
+- 🔄 Sincronizado con: validation_checker.py v1.0.7, biomarker_extractor.py v6.4.22
+
+CHANGELOG v3.4.1:
+- ✅ FIX IHQ250156: Normalización de biomarcadores mejorada en comparación OCR vs BD (línea 1811-1837)
+- ✅ Problema: "CKAE1E3" (OCR) vs "CKAE1AE3" (BD) detectados como diferentes → falso positivo
+- ✅ Causa: Función normalizar_biomarcador() usaba normalización de texto básica sin capturar variantes
+- ✅ Solución: Usar diccionario BIOMARCADORES para normalizar a columna BD canónica antes de comparar
+- 📊 Ejemplo: "CKAE1E3" → "IHQ_CKAE1AE3", "CKAE1AE3" → "IHQ_CKAE1AE3" (mismo resultado)
+- 🔧 Impacto: Variantes de biomarcadores ahora se reconocen correctamente como el mismo biomarcador
+- 🎯 Casos afectados: IHQ250156 (y todos con variantes OCR de nombres de biomarcadores)
+
+CHANGELOG v3.3.11:
+- ✅ FIX IHQ250144: Agregado keyword 'GLIOMA' a lista de keywords_maligno (línea 2203)
+- ✅ Problema: "GLIOMA DE ALTO GRADO" clasificado como MALIGNO pero auditor reportaba warning
+- ✅ Solución: Agregado 'GLIOMA' a keywords_maligno (tumores cerebrales de alto grado malignos)
+- 📊 Impacto: Casos de gliomas de alto grado ya no reportan warning de clasificación
+- 🎯 Casos afectados: IHQ250144 (y futuros casos de gliomas)
+
+CHANGELOG v3.3.6:
+- ✅ FIX IHQ250061: Corregido falso positivo de GIST en validación de Malignidad
+- ✅ Problema: "GIST" se detectaba en "Pathologists" (substring match) → falso positivo
+- ✅ Solución: Keywords cortos como GIST ahora usan word boundary (\\bGIST\\b)
+- ✅ Nueva lista: keywords_maligno_word_boundary para palabras que necesitan match exacto
+- 📊 Impacto: Casos con texto "Royal College of Pathologists" ya no reportan falso GIST
+
+CHANGELOG v3.3.5:
+- ✅ FIX IHQ250030: DIAGNOSTICO_PRINCIPAL acepta versiones resumidas del diagnóstico
+- ✅ Problema: "MIELOMA MULTIPLE" (BD) vs "MEDULA OSEA. BIOPSIA... MIELOMA MULTIPLE" (OCR) → WARNING
+- ✅ Solución: Verificar si el diagnóstico BD está CONTENIDO en el OCR → OK
+- ✅ Nueva validación: Verificar si palabras clave del diagnóstico coinciden → OK
+- ✅ Casos donde el diagnóstico viene de descripción macroscópica ahora pasan correctamente
+- 📊 Impacto: Reduce falsos positivos en validación de diagnóstico principal
+
+CHANGELOG v3.3.4:
+- ✅ FIX IHQ250012: Agregados keywords malignidad para neoplasias hematológicas
+- ✅ Problema: "NEOPLASIA DE CELULAS PLASMATICAS" clasificada MALIGNO pero no detectaba keyword
+- ✅ Solución: Agregados 'NEOPLASIA', 'MIELOMA', 'PLASMOCITOMA' a keywords_maligno (línea 2001)
+- ✅ FIX IHQ250012: Mejorada validación DIAGNOSTICO_COLORACION (coincidencia parcial)
+- ✅ Problema 1: OCR con "HIPERPLASIA" vs BD "HIPERPLASIA MIELOIDE" reportaba ERROR
+- ✅ Solución 1: Agregada validación de contención parcial (línea 1213)
+- ✅ Problema 2: Normalización no eliminaba comillas Unicode (\u201c/\u201d) del OCR
+- ✅ Solución 2: Agregada eliminación de comillas Unicode en función normalizar() (línea 1170)
+- ✅ Impacto: Acepta si BD contiene OCR o viceversa (OCR puede tener texto truncado)
+- ✅ Resultado: IHQ250012 pasa de 77.8% → 100.0% (0 errores, 0 warnings)
+
+CHANGELOG v3.3.3:
+- ✅ FIX IHQ250033: Biomarcadores SYNAPTOFISINA/CKAE1E3 no validaban correctamente
+- ✅ Problema: BD tiene columnas duplicadas (español/inglés) pero mapeo solo apuntaba a una
+- ✅ Ejemplo: SYNAPTOFISINA buscaba en IHQ_SYNAPTOFISINA (vacía) pero valor estaba en IHQ_SYNAPTOPHYSIN
+- ✅ Solución: Agregadas variantes duales en BIOMARKER_ALIAS_MAP (líneas 265-272)
+- ✅ Ahora mapea: SYNAPTOFISINA → ambas (IHQ_SYNAPTOFISINA + IHQ_SYNAPTOPHYSIN)
+- ✅ Ahora mapea: CKAE1E3 → ambas (IHQ_CKAE1E3 + IHQ_CKAE1AE3)
+- ✅ Impacto: Auditor busca en AMBAS columnas si existen variantes de nombres
+- ✅ Resuelve: IHQ250033 ahora detecta correctamente TTF1, CHROMOGRANINA, SYNAPTOFISINA, CKAE1E3
+
+CHANGELOG v3.3.2:
+- ✅ FIX IHQ250012: Validador DIAGNOSTICO_COLORACION reportaba falso positivo (línea 957)
+- ✅ Problema: OCR con comillas tipográficas (\u201c \u201d) no se reconocían
+- ✅ Anterior: Patrón solo reconocía comillas ASCII ('" y ') → falso ERROR
+- ✅ Solución: Agregadas comillas tipográficas Unicode al patrón
+- ✅ Patrón actualizado: `["\'\u201c\u201d]` reconoce ASCII + Unicode
+- ✅ Impacto: Elimina falsos positivos en casos con comillas tipográficas del OCR
+- ✅ Resuelve: IHQ250012 DIAGNOSTICO_COLORACION ahora valida correctamente
+
+CHANGELOG v3.3.1:
+- ✅ FIX CRÍTICO IHQ250011: Validador detectaba incorrectamente POSITIVO en contextos negativos
+- ✅ Problema: "positivo para X y negativas para CD68" → CD68 se validaba como POSITIVO
+- ✅ Solución: Nuevo patrón de prioridad máxima 'negativ[oa]s? para.*{bio}' → NEGATIVO
+- ✅ Impacto: Elimina falsos positivos en biomarcadores dentro de listas negativas
 
 CHANGELOG v3.3.0:
 - ✅ NUEVA FUNCIONALIDAD: Validación Descripcion macroscopica contra OCR (línea 1438)
@@ -158,6 +292,7 @@ class AuditorSistema:
     'ESTRÓGENOS': 'IHQ_RECEPTOR_ESTROGENOS',
     'ESTROGENO': 'IHQ_RECEPTOR_ESTROGENOS',
     'ESTROGENOS': 'IHQ_RECEPTOR_ESTROGENOS',
+    'ESTROGÉNOS': 'IHQ_RECEPTOR_ESTROGENOS',  # V3.5.1 FIX IHQ250221: Error ortográfico con acento
     'RE': 'IHQ_RECEPTOR_ESTROGENOS', 'ER': 'IHQ_RECEPTOR_ESTROGENOS',
     # RECEPTOR DE PROGESTERONA (columna existente: IHQ_RECEPTOR_PROGESTERONA)
     'RECEPTOR DE PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',
@@ -171,15 +306,17 @@ class AuditorSistema:
     'P53': 'IHQ_P53', 'TP53': 'IHQ_P53',
     
     # TTF1 (marcador pulmonar)
-    'TTF1': 'IHQ_TTF1', 'TTF-1': 'IHQ_TTF1', 'TTF 1': 'IHQ_TTF1',
+    'TTF1': 'IHQ_TTF1', 'TTF-1': 'IHQ_TTF1', 'TTF 1': 'IHQ_TTF1', 'TTF- 1': 'IHQ_TTF1',  # V3.6.0 FIX IHQ250231
     
     # Chromogranina (neuroendocrino)
-    'CHROMOGRANINA': 'IHQ_CHROMOGRANINA', 'CHROMOGRANIN': 'IHQ_CHROMOGRANINA',
-    'CROMOGRANINA': 'IHQ_CHROMOGRANINA',
-    
+    # V6.4.85 FIX IHQ250215: Columna real es IHQ_CROMOGRANINA (sin H)
+    'CHROMOGRANINA': 'IHQ_CROMOGRANINA', 'CHROMOGRANIN': 'IHQ_CROMOGRANINA',
+    'CROMOGRANINA': 'IHQ_CROMOGRANINA', 'CROMOGRANINA A': 'IHQ_CROMOGRANINA',
+
     # Synaptophysin (neuroendocrino)
-    'SYNAPTOPHYSIN': 'IHQ_SYNAPTOPHYSIN', 'SINAPTOFISINA': 'IHQ_SYNAPTOPHYSIN',
-    'SINAPTOFISIN': 'IHQ_SYNAPTOPHYSIN',
+    # V6.4.85 FIX IHQ250215: Columna real es IHQ_SINAPTOFISINA (con I, no Y)
+    'SYNAPTOPHYSIN': 'IHQ_SINAPTOFISINA', 'SINAPTOFISINA': 'IHQ_SINAPTOFISINA',
+    'SINAPTOFISIN': 'IHQ_SINAPTOFISINA', 'SYNAPTOFISINA': 'IHQ_SINAPTOFISINA',
     
     # CD56 (neuroendocrino/NK)
     'CD56': 'IHQ_CD56', 'CD 56': 'IHQ_CD56',
@@ -212,7 +349,7 @@ class AuditorSistema:
     'CD23': 'IHQ_CD23', 'CD 23': 'IHQ_CD23', 'CD-23': 'IHQ_CD23',
     'CD30': 'IHQ_CD30', 'CD 30': 'IHQ_CD30', 'CD-30': 'IHQ_CD30',
     'CD34': 'IHQ_CD34', 'CD 34': 'IHQ_CD34', 'CD-34': 'IHQ_CD34',
-    'CD45': 'IHQ_CD45', 'CD 45': 'IHQ_CD45', 'CD-45': 'IHQ_CD45',
+    'CD45': 'IHQ_CD45', 'CD 45': 'IHQ_CD45', 'CD-45': 'IHQ_CD45', 'LCA': 'IHQ_CD45', 'LCA': 'IHQ_CD45',
     'CD68': 'IHQ_CD68', 'CD 68': 'IHQ_CD68', 'CD-68': 'IHQ_CD68',
     'CD117': 'IHQ_CD117', 'CD 117': 'IHQ_CD117', 'CD-117': 'IHQ_CD117', 'C-KIT': 'IHQ_CD117', 'CKIT': 'IHQ_CD117',
     'CD138': 'IHQ_CD138', 'CD 138': 'IHQ_CD138', 'CD-138': 'IHQ_CD138',
@@ -232,15 +369,112 @@ class AuditorSistema:
     'PAX5': 'IHQ_PAX5', 'PAX-5': 'IHQ_PAX5', 'PAX 5': 'IHQ_PAX5',
     'GATA3': 'IHQ_GATA3', 'GATA-3': 'IHQ_GATA3', 'GATA 3': 'IHQ_GATA3',
     'WT1': 'IHQ_WT1', 'WT-1': 'IHQ_WT1', 'WT 1': 'IHQ_WT1',
-    'NAPSIN A': 'IHQ_NAPSIN', 'NAPSIN-A': 'IHQ_NAPSIN', 'NAPSINA': 'IHQ_NAPSIN',
-    'P40': 'IHQ_P40_ESTADO', 'P-40': 'IHQ_P40_ESTADO',  # V6.0.17: Corregido a _ESTADO (IHQ250994)
-    'P63': 'IHQ_P63', 'P-63': 'IHQ_P63',
-    'P16': 'IHQ_P16_ESTADO', 'P-16': 'IHQ_P16_ESTADO',  # V6.0.17: Corregido a _ESTADO (IHQ250994)
+    'NAPSIN A': 'IHQ_NAPSIN', 'NAPSIN-A': 'IHQ_NAPSIN', 'NAPSINA': 'IHQ_NAPSIN', 'NAPSINA A': 'IHQ_NAPSIN',
+    'P40': 'IHQ_P40_ESTADO', 'P-40': 'IHQ_P40_ESTADO', 'P 40': 'IHQ_P40_ESTADO',  # V6.0.17: Corregido a _ESTADO (IHQ250994) + V6.4.21 FIX IHQ250025: Alias con espacio
+    'P63': 'IHQ_P63', 'P-63': 'IHQ_P63', 'P65': 'IHQ_P63', 'P-65': 'IHQ_P63', 'p65': 'IHQ_P63', 'p-65': 'IHQ_P63',
+    'P16': 'IHQ_P16_ESTADO', 'P-16': 'IHQ_P16_ESTADO', 'P 16': 'IHQ_P16_ESTADO',  # V6.0.17: Corregido a _ESTADO (IHQ250994) + V6.4.21: Alias con espacio
     'EMA': 'IHQ_EMA', 'ANTÍGENO DE MEMBRANA EPITELIAL': 'IHQ_EMA', 'ANTIGENO DE MEMBRANA EPITELIAL': 'IHQ_EMA',
     
     # ---------- Citoqueratinas (12 biomarcadores) ----------
+    # V3.4.0: FIX IHQ250154 - Agregar variantes CKA E1E2 (typo OCR común: E1E2 en vez de AE1AE3)
     'CK AE1/AE3': 'IHQ_CKAE1AE3', 'CK AE1 AE3': 'IHQ_CKAE1AE3', 'CKAE1AE3': 'IHQ_CKAE1AE3',
+    'CKA E1E2': 'IHQ_CKAE1AE3', 'CKA E1/E2': 'IHQ_CKAE1AE3',  # Variante OCR común con typo
     'CK7': 'IHQ_CK7', 'CK 7': 'IHQ_CK7', 'CK-7': 'IHQ_CK7', 'CITOQUERATINA 7': 'IHQ_CK7',
+    'CROMOGRAMINA': 'IHQ_CROMOGRAMINA',
+    'CHROMOGRANIN': 'IHQ_CROMOGRAMINA',
+    'CHROMOGRANIN A': 'IHQ_CROMOGRAMINA',
+    'CROMOGRANINA': 'IHQ_CROMOGRAMINA',
+    'CGA': 'IHQ_CROMOGRAMINA',
+    'DES': 'IHQ_DESMINA',
+    'DESMINA': 'IHQ_DESMINA',
+    'DESMIN': 'IHQ_DESMINA',
+    'CD 45': 'IHQ_LCA',
+    'CD-45': 'IHQ_LCA',
+    'LCA': 'IHQ_LCA',
+    'CD45': 'IHQ_LCA',
+    'LEUCOCITO COMUN': 'IHQ_LCA',
+    'CD 11': 'IHQ_CD11',
+    'CD11': 'IHQ_CD11',
+    'CD-11': 'IHQ_CD11',
+    'MIOGENINA': 'IHQ_MIOGENINA',
+    'MYOGENINA': 'IHQ_MIOGENINA',
+    'MAMA GLOBINA': 'IHQ_MAMAGLOBINA',
+    'MAMOGLOBINA': 'IHQ_MAMAGLOBINA',
+    'Mamaglobina': 'IHQ_MAMAGLOBINA',
+    'MAMAGLOBINA': 'IHQ_MAMAGLOBINA',
+    'TIROGLOBULINA': 'IHQ_TIROGLOBULINA',
+    'THYROGLOBULIN': 'IHQ_TIROGLOBULINA',
+    'TG': 'IHQ_TIROGLOBULINA',
+    'CK 34 BE12': 'IHQ_CK34BETAE12',
+    '34betaE12': 'IHQ_CK34BETAE12',
+    'CK34 BE12': 'IHQ_CK34BETAE12',
+    'CK34BE12': 'IHQ_CK34BETAE12',
+    '34BE12': 'IHQ_CK34BETAE12',
+    'CK 34 B E12': 'IHQ_CK34BETAE12',
+    'CK34-BE12': 'IHQ_CK34BETAE12',
+    'CK34-B-E12': 'IHQ_CK34BETAE12',
+    'CK34BETAE12': 'IHQ_CK34BETAE12',
+    'CK34 B E12': 'IHQ_CK34BETAE12',
+    'CK34BETA12': 'IHQ_CK34BETA12',
+    'CK-34BETA12': 'IHQ_CK34BETA12',
+    'CK34 BETA12': 'IHQ_CK34BETA12',
+    'CK34BETA 12': 'IHQ_CK34BETA12',
+    'CK 34BETA12': 'IHQ_CK34BETA12',
+    'CK34 BETA 12': 'IHQ_CK34BETA12',
+    'OCT-4': 'IHQ_OCT4',
+    'OCT4': 'IHQ_OCT4',
+    'OCT 4': 'IHQ_OCT4',
+    'Podoplanina (D2-40)': 'IHQ_PODOPLANINA',
+    'D2 40': 'IHQ_PODOPLANINA',
+    'D240': 'IHQ_PODOPLANINA',
+    'PODOPLANINA': 'IHQ_PODOPLANINA',
+    'D2-40': 'IHQ_PODOPLANINA',
+    'IDH2': 'IHQ_IDH',
+    'IDH1': 'IHQ_IDH',
+    'ISOCITRATO DESHIDROGENASA': 'IHQ_IDH',
+    'IDH-1': 'IHQ_IDH',
+    'IDH-2': 'IHQ_IDH',
+    'IDH': 'IHQ_IDH',
+    'ISOCITRATO-DESHIDROGENASA': 'IHQ_IDH',
+    'GPC3': 'IHQ_GPC3',
+    'GLYPICAN3': 'IHQ_GPC3',
+    'Glypican 3': 'IHQ_GPC3',
+    'GLYPICAN 3': 'IHQ_GPC3',
+    'GLYPICAN-3': 'IHQ_GPC3',
+    'Glypican-3': 'IHQ_GPC3',
+    'GPC-3': 'IHQ_GPC3',
+    'IG-D': 'IHQ_IGD',
+    'INMUNOGLOBULINA D': 'IHQ_IGD',
+    'IGD': 'IHQ_IGD',
+    'IgD': 'IHQ_IGD',
+    'IG D': 'IHQ_IGD',
+    'BETA CATENINA': 'IHQ_BETACATENINA',
+    'B-TACATENINA': 'IHQ_BETACATENINA',
+    'BETA-CATENINA': 'IHQ_BETACATENINA',
+    'β-CATENINA': 'IHQ_BETACATENINA',
+    'BETACATENINA': 'IHQ_BETACATENINA',
+    'MUSCLE-SPECIFIC ACTIN': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',
+    'ACTINA MUSCULO ESPECIFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',
+    'ACTINA_MUSCULO_ESPECIFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',
+    'ACTINA MÚSCULO ESPECÍFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA', 'ACTINA MUSCULO ESPECIFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA', 'ACTINA MUSCULO ESPECIFICA': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',
+    'HHF35': 'IHQ_ACTINA_MUSCULO_ESPECIFICA',
+    'MPO': 'IHQ_MIELOPEROXIDASA',
+    'MPX': 'IHQ_MIELOPEROXIDASA',
+    'MIELOPEROXIDASA': 'IHQ_MIELOPEROXIDASA',
+    'CD7': 'IHQ_CD7',
+    'CD-7': 'IHQ_CD7',
+    'CD 7': 'IHQ_CD7',
+    'EBER ISH': 'IHQ_EBER',
+    'EBER-ISH': 'IHQ_EBER',
+    'EBER': 'IHQ_EBER',
+    # V6.4.25: FIX IHQ250162 - Mapear a columna correcta IHQ_CALRETININA (v5.3, sin doble R)
+    'CALRETININ': 'IHQ_CALRETININA',  # Variante inglés
+    'CALRRETININA': 'IHQ_CALRETININA',  # Variante OCR typo (doble R) → redirigir a columna correcta
+    'CALRETININA': 'IHQ_CALRETININA',  # Columna correcta (v5.3)
+    # V6.4.85: Eliminadas líneas duplicadas incorrectas que mapeaban a IHQ_SYNAPTOFISINA (columna no existe)
+    # Mapeo correcto está en líneas 316-318: todas las variantes → IHQ_SINAPTOFISINA (con I)
+    # V3.4.0: FIX IHQ250154 - Eliminadas líneas 325-329 (duplicados incorrectos que mapeaban a IHQ_CKAE1E3)
+    # Mapeo correcto está en líneas 302-303: CKAE1AE3 → IHQ_CKAE1AE3
     'CICLINA D1': 'IHQ_CMYC',
     'CMYC': 'IHQ_CMYC',
     'C MYC': 'IHQ_CMYC',
@@ -270,11 +504,12 @@ class AuditorSistema:
     'KAPPA LIGHT CHAIN': 'IHQ_KAPPA',  # V6.0.16: Auto-agregado
     'CK20': 'IHQ_CK20', 'CK 20': 'IHQ_CK20', 'CK-20': 'IHQ_CK20', 'CITOQUERATINA 20': 'IHQ_CK20',
     'CK5/6': 'IHQ_CK5_6', 'CK5/5': 'IHQ_CK5_6', 'CK55': 'IHQ_CK5_6', 'CK5 6': 'IHQ_CK5_6', 'CK 5/6': 'IHQ_CK5_6', 'CK56': 'IHQ_CK5_6', 'CK 5 / 6': 'IHQ_CK5_6',
-    'CK34BE12': 'IHQ_CK34BE12', 'CK34 BE12': 'IHQ_CK34BE12', 'CK 34BE12': 'IHQ_CK34BE12',
+    'CK34BE12': 'IHQ_CK34BETAE12', 'CK34 BE12': 'IHQ_CK34BETAE12', 'CK 34BE12': 'IHQ_CK34BETAE12',
     'CK8': 'IHQ_CK8', 'CK 8': 'IHQ_CK8', 'CK-8': 'IHQ_CK8', 'CITOQUERATINA 8': 'IHQ_CK8',
     'CK18': 'IHQ_CK18', 'CK 18': 'IHQ_CK18', 'CK-18': 'IHQ_CK18', 'CITOQUERATINA 18': 'IHQ_CK18',
     'CK19': 'IHQ_CK19', 'CK 19': 'IHQ_CK19', 'CK-19': 'IHQ_CK19', 'CITOQUERATINA 19': 'IHQ_CK19',
-    'CAM5.2': 'IHQ_CAM52', 'CAM 5.2': 'IHQ_CAM52', 'CAM52': 'IHQ_CAM52',
+    # V6.2.5 FIX: CAM5.2 ahora mapea a IHQ_CAM5 (unificado con biomarker_extractor.py)
+    'CAM5.2': 'IHQ_CAM5', 'CAM 5.2': 'IHQ_CAM5', 'CAM52': 'IHQ_CAM5', 'CAM5': 'IHQ_CAM5',
     'CK903': 'IHQ_CK903', 'CK 903': 'IHQ_CK903', 'CK-903': 'IHQ_CK903',
     'CK14': 'IHQ_CK14', 'CK 14': 'IHQ_CK14', 'CK-14': 'IHQ_CK14', 'CITOQUERATINA 14': 'IHQ_CK14',
     'CK17': 'IHQ_CK17', 'CK 17': 'IHQ_CK17', 'CK-17': 'IHQ_CK17', 'CITOQUERATINA 17': 'IHQ_CK17',
@@ -282,10 +517,13 @@ class AuditorSistema:
     
     # ---------- Marcadores mesenquimales (8 biomarcadores) ----------
     'DESMINA': 'IHQ_DESMIN', 'DESMIN': 'IHQ_DESMIN',
-    'ACTINA ML': 'IHQ_ACTINA_ML', 'ACTINA MÚSCULO LISO': 'IHQ_ACTINA_ML', 'ACTINA MUSCULO LISO': 'IHQ_ACTINA_ML',
+    # V6.3.13 FIX IHQ250018: ACTINA DE MUSCULO LISO mapea a IHQ_ACTIN (columna real en BD)
+    'ACTINA ML': 'IHQ_ACTIN', 'ACTINA MÚSCULO LISO': 'IHQ_ACTIN', 'ACTINA MUSCULO LISO': 'IHQ_ACTIN', 'DE MÚSCULO LISO': 'IHQ_ACTIN', 'DE MÚSCULO LISO': 'IHQ_ACTIN',
+    'ACTINA DE MÚSCULO LISO': 'IHQ_ACTIN', 'ACTINA DE MUSCULO LISO': 'IHQ_ACTIN',
+    'AML': 'IHQ_ACTIN', 'SMA': 'IHQ_ACTIN',
     'ACTINA HHF-35': 'IHQ_ACTINA_HHF35', 'ACTINA HHF35': 'IHQ_ACTINA_HHF35', 'HHF-35': 'IHQ_ACTINA_HHF35',
-    'CALDESMON': 'IHQ_CALDESMON', 'CALDESMÓN': 'IHQ_CALDESMON', 'H-CALDESMON': 'IHQ_CALDESMON',
-    'MIOGENINA': 'IHQ_MIOGENINA', 'MYOGENIN': 'IHQ_MYOGENIN', 'MIOGENÍN': 'IHQ_MYOGENIN',
+    'CALDESMON': 'IHQ_H_CALDESMON', 'CALDESMÓN': 'IHQ_H_CALDESMON', 'H-CALDESMON': 'IHQ_H_CALDESMON',
+    'MIOGENINA': 'IHQ_MYOGENIN', 'MYOGENIN': 'IHQ_MYOGENIN', 'MIOGENÍN': 'IHQ_MYOGENIN',
     'MYOD1': 'IHQ_MYOD1', 'MYO-D1': 'IHQ_MYOD1', 'MYO D1': 'IHQ_MYOD1',
     
     # ---------- Marcadores melanoma (4 biomarcadores) ----------
@@ -313,12 +551,11 @@ class AuditorSistema:
     'CA-125': 'IHQ_CA125', 'CA125': 'IHQ_CA125', 'CA 125': 'IHQ_CA125',
     'CA-19-9': 'IHQ_CA19_9', 'CA19-9': 'IHQ_CA19_9', 'CA 19-9': 'IHQ_CA19_9', 'CA199': 'IHQ_CA19_9',
     'CEA': 'IHQ_CEA', 'ANTÍGENO CARCINOEMBRIONARIO': 'IHQ_CEA', 'ANTIGENO CARCINOEMBRIONARIO': 'IHQ_CEA',
-    'TIROGLOBULINA': 'IHQ_TIROGLOBULINA', 'THYROGLOBULIN': 'IHQ_TIROGLOBULINA', 'TG': 'IHQ_TIROGLOBULINA',
     'CALCITONINA': 'IHQ_CALCITONINA', 'CALCITONIN': 'IHQ_CALCITONINA',
     'INHIBINA': 'IHQ_INHIBINA', 'INHIBIN': 'IHQ_INHIBINA', 'INHIBINA-A': 'IHQ_INHIBINA',
     'PLAP': 'IHQ_PLAP', 'FOSFATASA ALCALINA PLACENTARIA': 'IHQ_PLAP',
     'BETA-HCG': 'IHQ_BETA_HCG', 'BETA HCG': 'IHQ_BETA_HCG', 'HCG': 'IHQ_BETA_HCG', 'GONADOTROPINA': 'IHQ_BETA_HCG',
-    'AFP': 'IHQ_AFP', 'ALFA-FETOPROTEÍNA': 'IHQ_AFP', 'ALFAFETOPROTEINA': 'IHQ_AFP', 'ALFA FETOPROTEÍNA': 'IHQ_AFP',
+    'AFP': 'IHQ_AFP', 'ALFA-FETOPROTEÍNA': 'IHQ_AFP', 'ALFAFETOPROTEINA': 'IHQ_AFP', 'ALFA FETOPROTEÍNA': 'IHQ_AFP', 'ALPHA-FETOPROTEIN': 'IHQ_AFP', 'ALFAFETOPROTEÍNA': 'IHQ_AFP',
     'OCT3/4': 'IHQ_OCT3_4', 'OCT3 4': 'IHQ_OCT3_4', 'OCT4': 'IHQ_OCT3_4', 'OCTAMER-4': 'IHQ_OCT3_4',
     'SALL4': 'IHQ_SALL4', 'SALL-4': 'IHQ_SALL4', 'SALL 4': 'IHQ_SALL4',
     
@@ -336,16 +573,21 @@ class AuditorSistema:
     # ========== FASE 3.2 v6.0.6 - BIOMARCADORES FALTANTES (10 variantes detectadas) ==========
     
     # Variantes adicionales detectadas en verificación de mapeo
-    'CAM 5': 'IHQ_CAM52',  # Variante de CAM5.2 sin el .2
+    'CAM 5': 'IHQ_CAM5',  # V6.2.5 FIX: Variante de CAM5.2 sin el .2 - unificado a IHQ_CAM5
     'CKAE1E3': 'IHQ_CKAE1AE3',  # Error tipográfico común (E en vez de A)
     'R. ESTROGENO': 'IHQ_RECEPTOR_ESTROGENOS',  # Forma abreviada
     'R. ESTROGENOS': 'IHQ_RECEPTOR_ESTROGENOS',  # Forma abreviada plural
     'R. PROGESTERONA': 'IHQ_RECEPTOR_PROGESTERONA',  # Forma abreviada
     'TDT': 'IHQ_TDT',  # Terminal deoxynucleotidyl transferase
     'GLICOFORINA': 'IHQ_GLICOFORINA',  # Marcador eritrocitario
+    'GLYCOFORINA': 'IHQ_GLICOFORINA',  # V3.4.2: Alias ortográfico GLYCOFORINA → GLICOFORINA
     'GLICOFORINA A': 'IHQ_GLICOFORINA',
     'HEPATOCITO': 'IHQ_HEPAR',  # Sinónimo de HEPAR
     'PARENQUIMA HEPATICO': 'IHQ_HEPAR',
+    'MUC1': 'IHQ_MUC1',  # V6.4.43 Mucina 1 (marcador gástrico foveolar)
+    'MUC-1': 'IHQ_MUC1',
+    'MUC 1': 'IHQ_MUC1',
+    'MUCINA 1': 'IHQ_MUC1',
     'MUC2': 'IHQ_MUC2',  # Mucina 2 (gastrointestinal)
     'MUC-2': 'IHQ_MUC2',
     'MUCINA 2': 'IHQ_MUC2',
@@ -360,10 +602,10 @@ class AuditorSistema:
     'DESMIN': 'IHQ_DESMIN', 'DESMINA': 'IHQ_DESMIN',
     
     # CKAE1AE3 (columna BD: IHQ_CKAE1AE3 - sin guiones)
-    'CKAE1AE3': 'IHQ_CKAE1AE3', 'CK AE1 AE3': 'IHQ_CKAE1AE3', 'CK AE1/AE3': 'IHQ_CKAE1AE3',
+    'CKAE1AE3': 'IHQ_CKAE1AE3', 'CK AE1 AE3': 'IHQ_CKAE1AE3', 'CK AE1/AE3': 'IHQ_CKAE1AE3', 'CKEA1EA3': 'IHQ_CKAE1AE3', 'CKEA1/EA3': 'IHQ_CKAE1AE3',  # V6.4.33: FIX IHQ250169 - Orden letras invertido (EA antes de 1) 'CKEA1EA3': 'IHQ_CKAE1AE3', 'CKEA1/EA3': 'IHQ_CKAE1AE3',  # V6.4.33: FIX IHQ250169 - Orden letras invertido (EA antes de 1)
     
-    # CAM52 (columna BD: IHQ_CAM52 - sin punto)
-    'CAM52': 'IHQ_CAM52', 'CAM5.2': 'IHQ_CAM52', 'CAM 5.2': 'IHQ_CAM52',
+    # CAM5 (columna BD: IHQ_CAM5 - V6.2.5 FIX: unificado desde IHQ_CAM52)
+    'CAM52': 'IHQ_CAM5', 'CAM5.2': 'IHQ_CAM5', 'CAM 5.2': 'IHQ_CAM5',
     
     # 34BETA (columna BD: IHQ_34BETA - nombre corto, y también existe IHQ_CK34BE12)
     '34BETA': 'IHQ_34BETA', '34 BETA': 'IHQ_34BETA', 'CK34BETA': 'IHQ_34BETA',
@@ -372,7 +614,8 @@ class AuditorSistema:
     'HEPAR': 'IHQ_HEPAR', 'HEP PAR': 'IHQ_HEPAR', 'HEP-PAR': 'IHQ_HEPAR', 'HEP PAR-1': 'IHQ_HEPAR', 'HEP PAR 1': 'IHQ_HEPAR', 'HEPPAR1': 'IHQ_HEPAR',
     
     # NAPSIN (columna BD: IHQ_NAPSIN - sin sufijo A)
-    'NAPSIN': 'IHQ_NAPSIN', 'NAPSIN A': 'IHQ_NAPSIN', 'NAPSIN-A': 'IHQ_NAPSIN', 'NAPSINA': 'IHQ_NAPSIN',
+    # V6.3.2 FIX IHQ250003: Agregada variante 'NAPSINA A'
+    'NAPSIN': 'IHQ_NAPSIN', 'NAPSIN A': 'IHQ_NAPSIN', 'NAPSIN-A': 'IHQ_NAPSIN', 'NAPSINA': 'IHQ_NAPSIN', 'NAPSINA A': 'IHQ_NAPSIN',
     
     # GLIPICAN (columna BD: IHQ_GLIPICAN - sin número)
     'GLIPICAN': 'IHQ_GLIPICAN', 'GLIPICAN-3': 'IHQ_GLIPICAN', 'GLIPICAN 3': 'IHQ_GLIPICAN', 'GPC3': 'IHQ_GLIPICAN',
@@ -427,15 +670,18 @@ class AuditorSistema:
     'CD99': 'IHQ_CD99', 'CD 99': 'IHQ_CD99', 'CD-99': 'IHQ_CD99',
     
     # ---------- Grupo 4: Mesenquimales adicionales (3 biomarcadores) ----------
-    # SMA - Actina de músculo liso
-    'SMA': 'IHQ_SMA', 'SMOOTH MUSCLE ACTIN': 'IHQ_SMA', 'ACTINA MUSCULO LISO': 'IHQ_SMA',
+    # SMA - Actina de músculo liso (V6.3.13: mapea a IHQ_ACTIN, no IHQ_SMA)
+    'SMOOTH MUSCLE ACTIN': 'IHQ_ACTIN',
     
     # MSA - Actina específica de músculo
     'MSA': 'IHQ_MSA', 'MUSCLE SPECIFIC ACTIN': 'IHQ_MSA',
     
     # GFAP - Gliomas, astrocitomas
     'GFAP': 'IHQ_GFAP', 'GLIAL FIBRILLARY ACIDIC PROTEIN': 'IHQ_GFAP',
-    
+
+    # IDH1 - Gliomas (marcador mutación IDH) - V3.3.11 FIX IHQ250144
+    'IDH1': 'IHQ_IDH1', 'IDH 1': 'IHQ_IDH1', 'IDH-1': 'IHQ_IDH1', 'IDH': 'IHQ_IDH1', 'ISOCITRATE DEHYDROGENASE': 'IHQ_IDH1',
+
     # ---------- Grupo 5: Oncogénicos (3 biomarcadores) ----------
     # MDM2 - Liposarcoma bien diferenciado
     'MDM2': 'IHQ_MDM2', 'MDM 2': 'IHQ_MDM2', 'MDM-2': 'IHQ_MDM2',
@@ -444,7 +690,7 @@ class AuditorSistema:
     'CDK4': 'IHQ_CDK4', 'CDK 4': 'IHQ_CDK4', 'CDK-4': 'IHQ_CDK4',
     
     # C4d - Rechazo renal agudo
-    'C4D': 'IHQ_C4D', 'C 4D': 'IHQ_C4D', 'C-4D': 'IHQ_C4D',
+    'C4D': 'IHQ_C4D', 'C 4D': 'IHQ_C4D', 'C-4D': 'IHQ_C4D', 'C4D1': 'IHQ_C4D', 'C4-D': 'IHQ_C4D', 'C4D1': 'IHQ_C4D', 'C4-D': 'IHQ_C4D',
     
     # ---------- Grupo 6: Virales (4 biomarcadores) ----------
     # HHV8 - Sarcoma de Kaposi
@@ -457,7 +703,7 @@ class AuditorSistema:
     'CITOMEGALOVIRUS': 'IHQ_CITOMEGALOVIRUS', 'CMV': 'IHQ_CITOMEGALOVIRUS',
     
     # SV40
-    'SV40': 'IHQ_SV40', 'SV 40': 'IHQ_SV40', 'SV-40': 'IHQ_SV40',
+    'SV40': 'IHQ_SV40', 'SV 40': 'IHQ_SV40', 'SV-40': 'IHQ_SV40', 'POLIOMAVIRUS': 'IHQ_SV40', 'POLYOMAVIRUS': 'IHQ_SV40', 'POLIOMAVIRUS': 'IHQ_SV40', 'POLYOMAVIRUS': 'IHQ_SV40',
 
     # SALL4 - Células germinales/hematológicas
     'SALL4': 'IHQ_SALL4', 'SALL 4': 'IHQ_SALL4', 'SALL-4': 'IHQ_SALL4',
@@ -479,6 +725,16 @@ class AuditorSistema:
     
     # B2 (Beta-2-microglobulina)
     'B2': 'IHQ_B2', 'BETA 2': 'IHQ_B2',
+
+    # ---------- Grupo 8: Biomarcadores para estudios de médula ósea/hematológicos (V6.4.0 - IHQ250012) ----------
+    # MPO - Mieloperoxidasa (diferenciación mieloide)
+    'MPO': 'IHQ_MPO', 'MIELOPEROXIDASA': 'IHQ_MPO', 'MYELOPEROXIDASE': 'IHQ_MPO',
+
+    # CICLINA_D1 - Linfomas de células del manto
+    'CICLINA_D1': 'IHQ_CICLINA_D1', 'CICLINA D1': 'IHQ_CICLINA_D1', 'CICLYNA-D1': 'IHQ_CICLINA_D1',
+    'CICLYNA D1': 'IHQ_CICLINA_D1', 'CYCLIN D1': 'IHQ_CICLINA_D1', 'CYCLIN-D1': 'IHQ_CICLINA_D1',
+    'CYCLINA': 'IHQ_CICLINA_D1', 'CYCLINA D1': 'IHQ_CICLINA_D1',
+    'CCND1': 'IHQ_CICLINA_D1',
     }
 
     def __init__(self):
@@ -526,6 +782,12 @@ class AuditorSistema:
         OPTIMIZACIÓN: Usa caché LRU (maxsize=100) para evitar lecturas repetidas.
         En auditorías masivas, reduce I/O significativamente (~40% más rápido).
 
+        V3.4.3 FIX IHQ250162: Ordenar por timestamp en nombre (no por st_mtime)
+        - Anterior: Ordenaba por fecha de modificación del archivo (st_mtime)
+        - Problema: Si archivo se modifica después, no es el más reciente por nombre
+        - Solución: Ordenar alfabéticamente por nombre (timestamp format: YYYYMMDD_HHMMSS)
+        - Consistencia: Usa mismo método que _buscar_debug_map_reciente (línea 4049)
+
         Args:
             numero_caso: Número del caso IHQ (ej: IHQ250025)
 
@@ -540,7 +802,9 @@ class AuditorSistema:
             self.logger.warning(f"No se encontró debug_map para {numero_caso}")
             return None
 
-        archivo_mas_reciente = max(archivos, key=lambda p: p.stat().st_mtime)
+        # V3.4.3: Ordenar por nombre (timestamp alfabético), no por st_mtime
+        archivos.sort(reverse=True)
+        archivo_mas_reciente = archivos[0]
         self.logger.debug(f"Archivo más reciente: {archivo_mas_reciente.name}")
 
         try:
@@ -852,6 +1116,20 @@ class AuditorSistema:
                 elif problema['severidad'] == 'WARNING':
                     auditoria['warnings'].append(f"{problema['campo']}: {problema['mensaje']}")
 
+        # 3.8 VALIDACIÓN EXHAUSTIVA DE BIOMARCADORES "NO MENCIONADO" (v6.5.84)
+        print("Validando biomarcadores 'NO MENCIONADO' contra OCR...")
+        estado_no_mencionado = self._validar_biomarcadores_no_mencionado_exhaustivo(criticos, ocr)
+        auditoria['biomarcadores_no_mencionado'] = estado_no_mencionado
+        if estado_no_mencionado['falsos_no_mencionado']:
+            for falso in estado_no_mencionado['falsos_no_mencionado']:
+                auditoria['errores'].append(f"{falso['biomarcador']}: {falso['mensaje']}")
+                auditoria['estado'] = 'ERROR'
+            print(f"   ⚠️  DETECTADOS {len(estado_no_mencionado['falsos_no_mencionado'])} FALSOS 'NO MENCIONADO':")
+            for falso in estado_no_mencionado['falsos_no_mencionado']:
+                print(f"      • {falso['biomarcador']}: BD='NO MENCIONADO' pero OCR='{falso['valor_ocr']}'")
+        else:
+            print(f"   ✅ Todos los 'NO MENCIONADO' validados correctamente ({estado_no_mencionado['total_revisados']} revisados)")
+
         resultado['auditoria_bd'] = auditoria
 
         # Resumen
@@ -870,16 +1148,47 @@ class AuditorSistema:
         Extrae DIAGNOSTICO_PRINCIPAL directamente del OCR (validación independiente).
 
         V3.1.0: Nueva función para evitar validación circular.
+        V6.3.3: Aplica limpieza de frases introductorias (igual que DIAGNOSTICO_COLORACION)
+        V3.3.5: FIX IHQ250017 - Busca diagnóstico en página 2 (después de ADENOCARCINOMA/CARCINOMA)
+
         Extrae el diagnóstico desde la sección "DIAGNÓSTICO" del OCR.
 
         Args:
             ocr: Texto OCR consolidado
 
         Returns:
-            Diagnóstico extraído o None si no se encuentra
+            Diagnóstico extraído y LIMPIO (sin "LOS HALLAZGOS...") o None si no se encuentra
 
-        Complexity: CC ~4
+        Complexity: CC ~5
         """
+        # V3.3.5: PATRÓN PRIORITARIO - Diagnóstico en página 2 (después de ÚLTIMA "Fecha Informe")
+        # Casos donde el diagnóstico real está después de "Fecha Informe: DD/MM/YYYY"
+        # y contiene keywords de malignidad (ADENOCARCINOMA, CARCINOMA, etc.)
+        # Buscar TODAS las apariciones y tomar la ÚLTIMA (página 2)
+        matches_fecha = list(re.finditer(r'Fecha\s+Informe\s*:\s*\d{2}/\d{2}/\d{4}', ocr, re.IGNORECASE))
+
+        if matches_fecha:
+            # Tomar ÚLTIMA aparición (página 2)
+            last_match = matches_fecha[-1]
+            pos_despues_fecha = last_match.end()
+
+            # Buscar diagnóstico después de la fecha (primeros 1000 caracteres)
+            texto_pagina2 = ocr[pos_despues_fecha:pos_despues_fecha+1000]
+
+            # Buscar keywords de diagnóstico (ADENOCARCINOMA, CARCINOMA, etc.)
+            patron_diagnostico = r'((?:ADENOCARCINOMA|CARCINOMA|SARCOMA|MELANOMA|LINFOMA|TUMOR|PATRON|HER).*?)(?=\n\s*[A-ZÁÉÍÓÚÑ\s]{15,}\n|RESPONSABLE|MD\s+PAT|\Z)'
+            match_diag = re.search(patron_diagnostico, texto_pagina2, re.IGNORECASE | re.DOTALL)
+
+            if match_diag:
+                diagnostico = match_diag.group(1).strip()
+                # Limpiar y normalizar
+                diagnostico = re.sub(r'\n+', ' ', diagnostico)
+                diagnostico = re.sub(r'\s+', ' ', diagnostico).strip()
+                # Tomar solo primeras 3 líneas (evitar capturar metadata)
+                lineas = diagnostico.split('.')
+                diagnostico = '. '.join(lineas[:3]).strip()
+                return self._limpiar_diagnostico(diagnostico) if diagnostico else None
+
         # Patrón 1: Sección DIAGNÓSTICO hasta COMENTARIOS
         patron1 = r'DIAGN[ÓO]STICO\s*\n\s*(.+?)(?=COMENTARIOS|---|\Z)'
         match = re.search(patron1, ocr, re.IGNORECASE | re.DOTALL)
@@ -889,7 +1198,8 @@ class AuditorSistema:
             # Limpiar saltos de línea múltiples
             diagnostico = re.sub(r'\n+', ' ', diagnostico)
             diagnostico = re.sub(r'\s+', ' ', diagnostico).strip()
-            return diagnostico if diagnostico else None
+            # V6.3.3: Aplicar limpieza de frases introductorias
+            return self._limpiar_diagnostico(diagnostico) if diagnostico else None
 
         # Patrón 2: Más flexible - buscar después de "DIAGNÓSTICO"
         patron2 = r'DIAGN[ÓO]STICO[:\s]*\n\s*(.+?)(?:\n\s*[A-ZÁÉÍÓÚ]{3,}|\Z)'
@@ -899,10 +1209,11 @@ class AuditorSistema:
             diagnostico = match.group(1).strip()
             diagnostico = re.sub(r'\n+', ' ', diagnostico)
             diagnostico = re.sub(r'\s+', ' ', diagnostico).strip()
-            # Tomar solo primeras 3 líneas para evitar capturar comentarios
+            # Tomar solo primeras 5 líneas para evitar capturar comentarios
             lineas = diagnostico.split('.')
             diagnostico = '. '.join(lineas[:5]).strip()
-            return diagnostico if diagnostico else None
+            # V6.3.3: Aplicar limpieza de frases introductorias
+            return self._limpiar_diagnostico(diagnostico) if diagnostico else None
 
         return None
 
@@ -914,6 +1225,7 @@ class AuditorSistema:
         V3.1.0: Nueva función para evitar validación circular.
         V3.3.1: Agregados patrones adicionales para tumores gliales y otros casos.
         V3.3.2: Agregado patrón "Diagnóstico Inicial:" en descripción microscópica.
+        V6.4.84: FIX IHQ250214 - Agregada estrategia 2D para patrón "que corresponde a"
         Busca diagnóstico del estudio M previo con múltiples estrategias.
 
         Args:
@@ -922,7 +1234,7 @@ class AuditorSistema:
         Returns:
             Diagnóstico de coloración o None si no hay estudio M previo
 
-        Complexity: CC ~6
+        Complexity: CC ~7
         """
         # ESTRATEGIA 1: Patrón "Diagnóstico Inicial:" (común en descripciones microscópicas de IHQ)
         patron1 = r'Diagn[óo]stico\s+Inicial[:\s]+(.+?)(?=Fecha|Tras|Estudios\s+Solicitados|$)'
@@ -935,10 +1247,11 @@ class AuditorSistema:
             diagnostico = re.sub(r'\s+', ' ', diagnostico).strip()
             # Validar que tenga contenido significativo
             if len(diagnostico) > 10:
-                return diagnostico
+                return self._limpiar_diagnostico_coloracion(diagnostico)
 
         # ESTRATEGIA 2: Patrón estándar - bloque M + "diagnóstico de" + texto entre comillas
-        patron2 = r'bloque\s+M\d+.*?diagn[óo]stico\s+de\s*["\'](.+?)["\']'
+        # V3.3.2 FIX IHQ250012: Soporte para comillas tipográficas Unicode (\u201c \u201d)
+        patron2 = r'bloque\s+M\d+.*?diagn[óo]stico\s+de\s*["\'\u201c\u201d](.+?)["\'\u201c\u201d]'
         match = re.search(patron2, ocr, re.IGNORECASE | re.DOTALL)
 
         if match:
@@ -946,7 +1259,51 @@ class AuditorSistema:
             # Limpiar saltos de línea
             diagnostico = re.sub(r'\n+', ' ', diagnostico)
             diagnostico = re.sub(r'\s+', ' ', diagnostico).strip()
-            return diagnostico if diagnostico else None
+            return self._limpiar_diagnostico_coloracion(diagnostico) if diagnostico else None
+
+        # ESTRATEGIA 2B: V6.3.2 FIX IHQ250005 - "diagnóstico(s) de" + texto entre comillas (con saltos de línea)
+        # V3.3.4 FIX IHQ250015: Soporte para plural "diagnósticos de"
+        # Formato OCR: diagnostico de " LOS HALLAZGOS...\nCOMPATIBLES\nCON\nADENOCARCINOMA..."
+        # Formato OCR: diagnosticos de " CAMBIOS\nREACTIVOS\nEPITELIALES..."
+        patron2b = r'diagn[óo]sticos?\s+de\s*["\'\u201c\u201d]+\s*(.+?)["\'\u201c\u201d]+\s*\.'
+        match = re.search(patron2b, ocr, re.IGNORECASE | re.DOTALL)
+
+        if match:
+            diagnostico = match.group(1).strip()
+            # Normalizar saltos de línea y espacios
+            diagnostico = ' '.join(diagnostico.split())
+            if len(diagnostico) > 10:
+                return self._limpiar_diagnostico_coloracion(diagnostico)
+
+        # ESTRATEGIA 2C: V3.3.9 FIX IHQ250066 - "diagnóstico de" + texto entre comillas SIN punto después
+        # Formato OCR: diagnóstico de "LESIÓN ESCAMOSA INTRAEPITELIAL..." Previa revisión...
+        # Captura texto entre comillas seguido de "Previa" u otra palabra
+        patron2c = r'diagn[óo]sticos?\s+de\s*["\'\u201c\u201d]+\s*(.+?)["\'\u201c\u201d]+\s*(?:Previa|[A-Z][a-z])'
+        match = re.search(patron2c, ocr, re.IGNORECASE | re.DOTALL)
+
+        if match:
+            diagnostico = match.group(1).strip()
+            # Normalizar saltos de línea y espacios
+            diagnostico = ' '.join(diagnostico.split())
+            if len(diagnostico) > 10:
+                return self._limpiar_diagnostico_coloracion(diagnostico)
+
+        # ESTRATEGIA 2D: V6.4.84 FIX IHQ250214 - "que corresponde a" + texto (sin comilla de cierre)
+        # Formato común en descripciones macroscópicas IHQ cuando se referencia el caso M previo
+        # Formato OCR: "número de registro: M2501390 que corresponde a \"ADENOCARCINOMA...\" Previa..."
+        # IMPORTANTE: A veces la comilla de cierre está ausente en el OCR, usamos lookahead a "Previa"
+        patron2d = r'que\s+corresponde\s+a\s*["\'\u201c\u201d]+\s*(.+?)(?=\s*Previa)'
+        match = re.search(patron2d, ocr, re.IGNORECASE | re.DOTALL)
+
+        if match:
+            diagnostico = match.group(1).strip()
+            # Normalizar saltos de línea y espacios
+            diagnostico = ' '.join(diagnostico.split())
+            # Limpiar punto final si existe (común en este patrón)
+            if diagnostico.endswith('.'):
+                diagnostico = diagnostico[:-1].strip()
+            if len(diagnostico) > 10:
+                return self._limpiar_diagnostico_coloracion(diagnostico)
 
         # ESTRATEGIA 3: Tumores gliales - "LESIÓN" o "LESION" + tipo + "A CLASIFICAR"
         patron3 = r'LESI[ÓO]N\s+NEOPL[ÁA]SICA\s+DE\s+ORIGEN\s+(\w+)\s+A\s+CLASIFICAR'
@@ -954,20 +1311,107 @@ class AuditorSistema:
 
         if match:
             diagnostico = match.group(0).strip()
-            return diagnostico
+            return self._limpiar_diagnostico_coloracion(diagnostico)
 
-        # ESTRATEGIA 4: Patrón sin comillas - "diagnóstico de" + texto hasta punto o salto de línea
-        patron4 = r'diagn[óo]stico\s+de[:\s]+([^.\n]{10,150})'
+        # ESTRATEGIA 4: Patrón sin comillas - "diagnóstico(s) de" + texto hasta punto o salto de línea
+        # V3.3.4 FIX IHQ250015: Soporte para plural "diagnósticos de"
+        # V6.3.73 FIX IHQ250100: Excluir matches dentro de sección COMENTARIOS
+
+        # Encontrar posición de sección COMENTARIOS para excluir matches dentro de ella
+        pos_comentarios = -1
+        match_comentarios = re.search(r'\bCOMENTARIOS?\b', ocr, re.IGNORECASE)
+        if match_comentarios:
+            pos_comentarios = match_comentarios.start()
+
+        patron4 = r'diagn[óo]sticos?\s+de[:\s]+([^.\n]{10,150})'
         match = re.search(patron4, ocr, re.IGNORECASE)
 
         if match:
+            # V6.3.73 FIX IHQ250100: Ignorar si el match está dentro de COMENTARIOS
+            if pos_comentarios > 0 and match.start() > pos_comentarios:
+                return None  # Match está en sección COMENTARIOS, ignorar
+
             diagnostico = match.group(1).strip()
             # Limpiar y validar que tenga sentido médico
             diagnostico = re.sub(r'\s+', ' ', diagnostico).strip()
             if len(diagnostico) > 10:  # Al menos 10 caracteres
-                return diagnostico
+                return self._limpiar_diagnostico_coloracion(diagnostico)
 
         return None
+
+    def _limpiar_diagnostico(self, diagnostico: str) -> str:
+        """
+        Limpia frases introductorias de cualquier diagnóstico (coloración o principal).
+
+        V6.3.2: FIX IHQ250005 - Elimina frases como "LOS HALLAZGOS... SON COMPATIBLES CON"
+        V6.3.3: Generalizada para DIAGNOSTICO_COLORACION y DIAGNOSTICO_PRINCIPAL
+
+        Args:
+            diagnostico: Diagnóstico extraído (coloración o principal)
+
+        Returns:
+            Diagnóstico limpio sin frases introductorias
+        """
+        if not diagnostico:
+            return diagnostico
+
+        # Normalizar espacios y saltos de línea
+        diagnostico = ' '.join(diagnostico.split()).upper()
+
+        # Eliminar frases introductorias comunes
+        frases_introductorias = [
+            r'^LOS\s+HALLAZGOS\s+HISTOL[ÓO]GICOS\s+SON\s+COMPATIBLES\s+CON\s+',
+            r'^LOS\s+HALLAZGOS\s+SON\s+COMPATIBLES\s+CON\s+',
+            r'^LOS\s+HALLAZGOS\s+MORFOL[ÓO]GICOS\s+(?:SON\s+)?COMPATIBLES\s+CON\s+',
+            r'^LOS\s+HALLAZGOS\s+FAVORECEN\s+(?:UN\s+)?',
+            r'^HALLAZGOS\s+COMPATIBLES\s+CON\s+',
+            r'^COMPATIBLE\s+CON\s+',
+            r'^COMPATIBLES\s+CON\s+',
+            r'^["\'"]+\s*',  # Comillas iniciales (una o más)
+            r'\s*["\'"]+$',  # Comillas finales (una o más) - V6.3.3 FIX IHQ250006
+        ]
+
+        for patron in frases_introductorias:
+            diagnostico_limpio = re.sub(patron, '', diagnostico, flags=re.IGNORECASE)
+            if diagnostico_limpio != diagnostico:
+                diagnostico = diagnostico_limpio.strip()
+
+        return diagnostico
+
+    def _limpiar_diagnostico_coloracion(self, diagnostico: str) -> str:
+        """Alias para compatibilidad - usa _limpiar_diagnostico."""
+        return self._limpiar_diagnostico(diagnostico)
+
+    def _tiene_frase_introductoria(self, texto: str) -> bool:
+        """
+        Detecta si un texto tiene frases introductorias que deberían ser eliminadas.
+
+        V6.3.3: FIX IHQ250005 - Para validación de DIAGNOSTICO_COLORACION y DIAGNOSTICO_PRINCIPAL
+
+        Args:
+            texto: Texto a verificar
+
+        Returns:
+            True si contiene frases introductorias, False si está limpio
+        """
+        if not texto:
+            return False
+
+        texto_upper = texto.upper().strip()
+
+        frases_introductorias = [
+            r'^LOS\s+HALLAZGOS\s+HISTOL[ÓO]GICOS\s+SON\s+COMPATIBLES\s+CON\s+',
+            r'^LOS\s+HALLAZGOS\s+SON\s+COMPATIBLES\s+CON\s+',
+            r'^LOS\s+HALLAZGOS\s+MORFOL[ÓO]GICOS\s+(?:SON\s+)?COMPATIBLES\s+CON\s+',
+            r'^LOS\s+HALLAZGOS\s+FAVORECEN\s+(?:UN\s+)?',
+            r'^HALLAZGOS\s+COMPATIBLES\s+CON\s+',
+        ]
+
+        for patron in frases_introductorias:
+            if re.search(patron, texto_upper, re.IGNORECASE):
+                return True
+
+        return False
 
 
     def _extraer_estudios_solicitados_desde_ocr(self, ocr: str) -> List[str]:
@@ -1024,7 +1468,11 @@ class AuditorSistema:
             if not texto:
                 return ''
             texto = re.sub(r'\s+', ' ', texto).strip().upper()
-            return texto.replace('"', '').replace("'", '')
+            # V6.3.12 FIX IHQ250012: Eliminar comillas Unicode además de ASCII
+            texto = texto.replace('"', '').replace("'", '').replace('\u201c', '').replace('\u201d', '')
+            # V3.3.5 FIX IHQ250017: Normalización ortográfica (errores OCR comunes)
+            texto = texto.replace('ADENOCACRINOMA', 'ADENOCARCINOMA')
+            return texto
 
         diagnostico_bd_norm = normalizar(diagnostico_bd)
         diagnostico_ocr_norm = normalizar(diagnostico_ocr) if diagnostico_ocr else ''
@@ -1044,6 +1492,22 @@ class AuditorSistema:
         if not diagnostico_ocr and diagnostico_bd in ['NO APLICA', '', 'N/A']:
             return {'estado': 'OK', 'valor': 'NO APLICA', 'mensaje': 'No hay estudio M previo'}
 
+        # CASO 2B: V6.3.3 FIX IHQ250005 - Validar frases introductorias
+        # El diagnóstico de coloración NO debe comenzar con "LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON"
+        if self._tiene_frase_introductoria(diagnostico_bd):
+            diagnostico_limpio = self._limpiar_diagnostico(diagnostico_bd)
+            return {
+                'estado': 'ERROR',
+                'mensaje': 'DIAGNOSTICO_COLORACION contiene frase introductoria que debe eliminarse',
+                'valor_bd': diagnostico_bd,
+                'valor_esperado': diagnostico_limpio,
+                'sugerencia': (
+                    'El diagnóstico de coloración debe ser SOLO el diagnóstico del estudio M, '
+                    'sin frases como "LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON...".\n'
+                    f'Valor correcto: {diagnostico_limpio}'
+                )
+            }
+
         # CASO 3: BD tiene diagnóstico pero OCR no → WARNING (verificar)
         if not diagnostico_ocr and diagnostico_bd not in ['NO APLICA', '', 'N/A']:
             return {
@@ -1059,6 +1523,15 @@ class AuditorSistema:
             # Comparación exacta
             if diagnostico_bd_norm == diagnostico_ocr_norm:
                 return {'estado': 'OK', 'valor': diagnostico_bd, 'mensaje': 'Correcto (coincidencia exacta)'}
+
+            # V6.3.12 FIX IHQ250012: Validación mejorada para coincidencias parciales
+            # Si BD contiene el texto completo del OCR (OCR puede tener solo parte entre comillas)
+            if diagnostico_bd_norm in diagnostico_ocr_norm or diagnostico_ocr_norm in diagnostico_bd_norm:
+                return {
+                    'estado': 'OK',
+                    'valor': diagnostico_bd,
+                    'mensaje': 'Correcto (similitud parcial)'
+                }
 
             # Comparación por componentes (>= 80%)
             componentes_bd = [c.strip() for c in re.split(r'[,.:;/]', diagnostico_bd_norm) if c.strip() and len(c.strip()) > 3]
@@ -1154,11 +1627,29 @@ class AuditorSistema:
                 )
             }
 
+        # PASO 3B: V6.3.3 FIX IHQ250005 - Validar frases introductorias
+        # El diagnóstico NO debe comenzar con "LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON"
+        if self._tiene_frase_introductoria(diagnostico_bd):
+            diagnostico_limpio = self._limpiar_diagnostico(diagnostico_bd)
+            return {
+                'estado': 'ERROR',
+                'mensaje': 'DIAGNOSTICO_PRINCIPAL contiene frase introductoria que debe eliminarse',
+                'valor_bd': diagnostico_bd,
+                'valor_esperado': diagnostico_limpio,
+                'sugerencia': (
+                    'El diagnóstico debe ser SOLO el diagnóstico, sin frases como '
+                    '"LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON...".\n'
+                    f'Valor correcto: {diagnostico_limpio}'
+                )
+            }
+
         # PASO 4: Comparar con OCR (si existe)
         if diagnostico_ocr:
             # Normalizar para comparar
             def normalizar(texto):
                 texto = re.sub(r'\s+', ' ', texto).strip().upper()
+                # V3.3.5 FIX IHQ250017: Normalización ortográfica (errores OCR comunes)
+                texto = texto.replace('ADENOCACRINOMA', 'ADENOCARCINOMA')
                 return texto
 
             diagnostico_bd_norm = normalizar(diagnostico_bd)
@@ -1180,7 +1671,42 @@ class AuditorSistema:
                     'valor_bd': diagnostico_bd
                 }
 
-            # Difieren
+            # V6.3.36 FIX IHQ250030: Validar si el diagnóstico BD es una versión resumida válida
+            # Casos donde el diagnóstico en BD es solo el nombre de la enfermedad (ej: "MIELOMA MULTIPLE")
+            # y el OCR tiene el texto completo con biomarcadores (ej: "MEDULA OSEA. BIOPSIA... MIELOMA MULTIPLE")
+            # También aplica cuando el diagnóstico viene de la descripción macroscópica
+            if diagnostico_bd_norm in diagnostico_ocr_norm:
+                return {
+                    'estado': 'OK',
+                    'mensaje': 'DIAGNOSTICO_PRINCIPAL correcto (versión resumida contenida en OCR)',
+                    'valor_bd': diagnostico_bd
+                }
+
+            # V6.3.36: También verificar si el diagnóstico BD contiene palabras clave del OCR
+            # Dividir en palabras significativas (> 4 caracteres) para comparar
+            palabras_bd = set(w for w in diagnostico_bd_norm.split() if len(w) > 4)
+            palabras_ocr = set(w for w in diagnostico_ocr_norm.split() if len(w) > 4)
+
+            # Si todas las palabras significativas de BD están en OCR, es válido
+            if palabras_bd and palabras_bd.issubset(palabras_ocr):
+                return {
+                    'estado': 'OK',
+                    'mensaje': 'DIAGNOSTICO_PRINCIPAL correcto (palabras clave coinciden con OCR)',
+                    'valor_bd': diagnostico_bd
+                }
+
+            # V6.3.36 FIX IHQ250030: Si no coincide con sección DIAGNÓSTICO, buscar en texto OCR COMPLETO
+            # Casos donde el diagnóstico viene de la descripción macroscópica (entre comillas)
+            # Ejemplo: diagnósticos de "MIELOMA MÚLTIPLE" en descripción macroscópica
+            texto_ocr_completo_norm = normalizar(texto_ocr)
+            if diagnostico_bd_norm in texto_ocr_completo_norm:
+                return {
+                    'estado': 'OK',
+                    'mensaje': 'DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)',
+                    'valor_bd': diagnostico_bd
+                }
+
+            # Difieren significativamente
             return {
                 'estado': 'WARNING',
                 'mensaje': 'DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)',
@@ -1201,9 +1727,10 @@ class AuditorSistema:
 
     def _validar_ihq_organo(self, campos_criticos: Dict) -> Dict:
         """
-        Valida que IHQ_ORGANO esté limpio (sin prefijos de bloques).
+        Valida que IHQ_ORGANO contenga un órgano válido.
 
         V6.X.X: Nueva validación para detectar prefijos de bloques como "A,B Y C :"
+        V6.3.5 FIX IHQ250004: Detectar valores inválidos como "A Y B" (solo etiquetas)
 
         Args:
             campos_criticos: Diccionario base_datos.campos_criticos del debug_map
@@ -1211,7 +1738,7 @@ class AuditorSistema:
         Returns:
             Dict con estado de validación
 
-        Complexity: CC ~4
+        Complexity: CC ~5
         """
         ihq_organo = campos_criticos.get('IHQ_ORGANO', '')
 
@@ -1235,6 +1762,27 @@ class AuditorSistema:
                 'nota': 'Debe limpiarse el prefijo (ej: "A,B Y C :" → debe eliminarse)'
             }
 
+        # V6.3.5 FIX IHQ250004: Detectar valores que son SOLO etiquetas de bloques
+        # Ejemplos inválidos: "A Y B", "A, B Y C", "A,B", "A Y B Y C"
+        # Estos NO son órganos válidos
+        patron_solo_etiquetas = r'^[A-Z](?:\s*[,Y]\s*[A-Z])+$'
+        if re.search(patron_solo_etiquetas, ihq_organo.upper().strip(), re.IGNORECASE):
+            return {
+                'estado': 'ERROR',
+                'mensaje': f'IHQ_ORGANO contiene solo etiquetas de bloque, no un órgano: "{ihq_organo}"',
+                'valor_bd': ihq_organo,
+                'nota': 'Debe extraerse el órgano real del diagnóstico (ej: "A Y B" → "CEREBRO")'
+            }
+
+        # V6.3.5: Validar longitud mínima (un órgano debe tener al menos 4 caracteres)
+        if len(ihq_organo.strip()) < 4:
+            return {
+                'estado': 'WARNING',
+                'mensaje': f'IHQ_ORGANO demasiado corto: "{ihq_organo}"',
+                'valor_bd': ihq_organo,
+                'nota': 'Verificar que sea un órgano válido'
+            }
+
         # Todo OK
         return {
             'estado': 'OK',
@@ -1250,6 +1798,9 @@ class AuditorSistema:
         - Solo algunos biomarcadores si esos son los únicos solicitados en el estudio
         - "NO APLICA" si no hay ningún biomarcador de FP en el estudio
 
+        V6.3.2 FIX IHQ250004: Si Factor Pronóstico tiene contenido válido (Ki-67, HER2, etc.),
+        aceptar aunque las columnas IHQ_* estén vacías o con N/A.
+
         Args:
             bd: Datos guardados en BD
             criticos: Campos criticos del debug_map
@@ -1261,6 +1812,7 @@ class AuditorSistema:
         Complexity: CC ~6
         """
         BIOMARCADORES_FP = ['HER2', 'Ki-67', 'Receptor de Estrogeno', 'Receptor de Progesterona']
+        PLACEHOLDERS = ['N/A', 'NO APLICA', '', 'SIN DATO', None]
 
         ihq_estudios = criticos.get('IHQ_ESTUDIOS_SOLICITADOS', '')
         her2 = criticos.get('IHQ_HER2', '')
@@ -1268,18 +1820,45 @@ class AuditorSistema:
         er = criticos.get('IHQ_RECEPTOR_ESTROGENOS', '')
         pr = criticos.get('IHQ_RECEPTOR_PROGESTERONA', '')
 
-        # Verificar cuales de los 4 estan presentes
+        # V6.3.2: Verificar cuales de los 4 estan presentes (ignorando placeholders)
         presentes = []
-        if her2:
+        if her2 and her2 not in PLACEHOLDERS:
             presentes.append(('HER2', her2))
-        if ki67:
+        if ki67 and ki67 not in PLACEHOLDERS:
             presentes.append(('Ki-67', ki67))
-        if er:
+        if er and er not in PLACEHOLDERS:
             presentes.append(('Receptor de Estrogeno', er))
-        if pr:
+        if pr and pr not in PLACEHOLDERS:
             presentes.append(('Receptor de Progesterona', pr))
 
         factor_bd = criticos.get('Factor pronostico', '')
+
+        # V3.3.7 FIX IHQ250065: En diagnósticos BENIGNOS, Ki-67 no requiere factor pronóstico
+        # HIPERPLASIA, ADENOSIS, FIBROADENOMA, etc. son benignos - FP no aplica
+        diagnostico_principal = criticos.get('Diagnostico Principal', '').upper()
+        DIAGNOSTICOS_BENIGNOS = ['HIPERPLASIA', 'ADENOSIS', 'FIBROADENOMA', 'FIBROSIS', 'INFLAMACION',
+                                  'BENIGNO', 'REACTIVO', 'NORMAL', 'NEGATIVO PARA']
+        es_benigno = any(d in diagnostico_principal for d in DIAGNOSTICOS_BENIGNOS)
+
+        # V6.3.2 FIX IHQ250004: Si Factor Pronóstico tiene contenido válido con Ki-67/HER2/RE/RP,
+        # aceptar aunque las columnas IHQ_* estén vacías
+        if factor_bd and factor_bd not in PLACEHOLDERS:
+            # Verificar si el factor pronóstico contiene algún biomarcador válido
+            factor_upper = factor_bd.upper()
+            tiene_ki67 = 'KI-67' in factor_upper or 'KI67' in factor_upper or 'KI 67' in factor_upper
+            tiene_her2 = 'HER2' in factor_upper or 'HER-2' in factor_upper or 'HER 2' in factor_upper
+            tiene_re = 'ESTROGENO' in factor_upper or 'ESTRÓGENO' in factor_upper
+            tiene_rp = 'PROGESTERONA' in factor_upper
+
+            if tiene_ki67 or tiene_her2 or tiene_re or tiene_rp:
+                # El factor pronóstico tiene contenido válido de biomarcadores FP
+                return {
+                    'estado': 'OK',
+                    'valor': factor_bd,
+                    'mensaje': f'Factor pronóstico con biomarcadores válidos',
+                    'biomarcadores_detectados': [b for b, v in [('Ki-67', tiene_ki67), ('HER2', tiene_her2),
+                                                                 ('RE', tiene_re), ('RP', tiene_rp)] if v]
+                }
 
         if not presentes:
             # Ninguno presente -> debe ser "NO APLICA"
@@ -1291,6 +1870,14 @@ class AuditorSistema:
                     'valor_bd': factor_bd,
                     'mensaje': 'FACTOR_PRONOSTICO debe ser "NO APLICA" (no hay biomarcadores de FP)'
                 }
+
+        # V3.3.7 FIX IHQ250065: Si es diagnóstico benigno, NO APLICA es correcto aunque haya Ki-67
+        if es_benigno and factor_bd in ['NO APLICA', 'N/A', '']:
+            return {
+                'estado': 'OK',
+                'valor': 'NO APLICA',
+                'mensaje': f'Correcto (diagnóstico benigno - Ki-67 no es factor pronóstico)'
+            }
 
         # Si hay al menos 1 biomarcador de FP, validar que el campo no esté vacío
         if not factor_bd or factor_bd in ['NO APLICA', 'N/A']:
@@ -1315,35 +1902,71 @@ class AuditorSistema:
         """
         Busca columna de biomarcador con estrategias múltiples.
 
+        V3.3.3: CORRECCIÓN - Búsqueda en columnas duales español/inglés (IHQ250033)
         V6.0.10: CORRECCIÓN - Búsqueda flexible con sufijos (_ESTADO, _PORCENTAJE)
 
         Estrategias:
         1. Búsqueda exacta en BIOMARCADORES
-        2. Búsqueda con sufijos (_ESTADO, _PORCENTAJE)
-        3. Búsqueda con variante "NOMBRE ESTADO"
+        2. V3.3.3 NUEVO: Búsqueda en variantes duales (español/inglés)
+        3. Búsqueda con sufijos (_ESTADO, _PORCENTAJE)
+        4. Búsqueda con variante "NOMBRE ESTADO"
 
         Args:
-            biomarcador: Nombre del biomarcador (ej. "P40", "Ki-67")
+            biomarcador: Nombre del biomarcador (ej. "P40", "Ki-67", "SYNAPTOFISINA")
             bd: Datos guardados en BD
             criticos: Campos críticos del debug_map
 
         Returns:
             Nombre de columna si existe con valor, None si no se encuentra
 
-        Complexity: CC ~6
+        Complexity: CC ~8
         """
         # 1. Búsqueda exacta en BIOMARCADORES
         columna = self.BIOMARCADORES.get(biomarcador.upper())
-        if columna and (bd.get(columna) or criticos.get(columna)):
-            return columna
 
-        # 2. Búsqueda con sufijos (_ESTADO, _PORCENTAJE)
+        # 2. V3.3.3: Búsqueda en variantes duales español/inglés
+        # Mapa de columnas duales: si una está vacía, buscar en la alternativa
+        # V6.4.85 FIX IHQ250215: Columna real es IHQ_SINAPTOFISINA (con I), no IHQ_SYNAPTOFISINA (con Y)
+        columnas_duales = {
+            'IHQ_CKAE1E3': 'IHQ_CKAE1AE3',  # sin A → con A
+            'IHQ_CKAE1AE3': 'IHQ_CKAE1E3',  # con A → sin A
+            # V6.4.25: FIX IHQ250162 - Usar columna correcta IHQ_CALRETININA (v5.3, sin doble R)
+            'IHQ_CALRRETININA': 'IHQ_CALRETININA',  # typo antiguo (v4.0) → columna correcta (v5.3)
+            'IHQ_CALRETININ': 'IHQ_CALRETININA',  # inglés → español (columna correcta)
+            # V6.4.85: Todas las variantes SINAP*/SYNAP* ahora mapean a IHQ_SINAPTOFISINA en diccionario BIOMARCADORES
+            # No se necesita alternativa dual porque solo existe una columna (IHQ_SINAPTOFISINA)
+        }
+
+        # Si columna existe, verificar si tiene valor o buscar en alternativa dual
+        if columna:
+            # Helper: Verificar si valor es válido (no vacío, no "N/A")
+            def tiene_valor_valido(valor):
+                if not valor:
+                    return False
+                valor_str = str(valor).strip().upper()
+                return valor_str and valor_str not in ['N/A', 'NA', '']
+
+            # Verificar si columna principal tiene valor válido
+            valor_principal = bd.get(columna) or criticos.get(columna)
+
+            if tiene_valor_valido(valor_principal):
+                return columna
+
+            # Si columna principal vacía/N/A Y existe alternativa dual, buscar allí
+            if columna in columnas_duales:
+                columna_alternativa = columnas_duales[columna]
+                valor_alternativa = bd.get(columna_alternativa) or criticos.get(columna_alternativa)
+
+                if tiene_valor_valido(valor_alternativa):
+                    return columna_alternativa
+
+        # 3. Búsqueda con sufijos (_ESTADO, _PORCENTAJE)
         for sufijo in ['_ESTADO', '_PORCENTAJE', '']:
             columna_test = f'IHQ_{biomarcador.upper().replace(" ", "_")}{sufijo}'
             if bd.get(columna_test) or criticos.get(columna_test):
                 return columna_test
 
-        # 3. Búsqueda con variante (ej. "P40 ESTADO")
+        # 4. Búsqueda con variante (ej. "P40 ESTADO")
         columna_variante = self.BIOMARCADORES.get(f'{biomarcador.upper()} ESTADO')
         if columna_variante and (bd.get(columna_variante) or criticos.get(columna_variante)):
             return columna_variante
@@ -1374,12 +1997,34 @@ class AuditorSistema:
         estudios_bd_str = criticos.get('IHQ_ESTUDIOS_SOLICITADOS', '')
         estudios_bd = [e.strip() for e in estudios_bd_str.split(', ') if e.strip()]
 
-        # Normalizar nombres para comparar
+        # V3.4.1: FIX IHQ250156 - Normalizar usando BIOMARCADORES para capturar variantes
         def normalizar_biomarcador(nombre):
-            nombre = nombre.upper().strip()
-            nombre = re.sub(r'\b(DE|DEL|LA|LAS|LOS|EL)\b', '', nombre).strip()
-            nombre = re.sub(r'[-_\s]+', '', nombre)  # Eliminar separadores
-            return nombre
+            """
+            Normaliza nombre de biomarcador a su columna BD canónica.
+
+            Problema: "CKAE1E3" vs "CKAE1AE3" no se reconocían como el mismo biomarcador
+            Solución: Usar mapeo del diccionario BIOMARCADORES para normalizar a columna BD canónica
+            Ejemplo: "CKAE1E3" → "IHQ_CKAE1AE3", "CKAE1AE3" → "IHQ_CKAE1AE3" (mismo resultado)
+            """
+            nombre_upper = nombre.upper().strip()
+
+            # Intentar mapear usando el diccionario BIOMARCADORES
+            columna_bd = self.BIOMARCADORES.get(nombre_upper)
+            if columna_bd:
+                # Encontró mapeo - usar columna BD como nombre normalizado canónico
+                return columna_bd
+
+            # No encontró mapeo directo - aplicar normalización básica
+            nombre_norm = re.sub(r'\b(DE|DEL|LA|LAS|LOS|EL)\b', '', nombre_upper).strip()
+            nombre_norm = re.sub(r'[-_\s]+', '', nombre_norm)  # Eliminar separadores
+
+            # Intentar de nuevo con el nombre normalizado
+            columna_bd = self.BIOMARCADORES.get(nombre_norm)
+            if columna_bd:
+                return columna_bd
+
+            # No hay mapeo - retornar normalizado básico
+            return nombre_norm
 
         estudios_ocr_norm = {normalizar_biomarcador(e): e for e in estudios_ocr}
         estudios_bd_norm = {normalizar_biomarcador(e): e for e in estudios_bd}
@@ -1419,6 +2064,24 @@ class AuditorSistema:
             columna = self._buscar_columna_biomarcador(biomarcador, bd, criticos)
             valor_bd = bd.get(columna) or criticos.get(columna)
 
+            # V3.4.4 FIX IHQ250172: Si valor_bd es "NO MENCIONADO", verificar OCR
+            # CRÍTICO: Biomarcador solicitado + "NO MENCIONADO" + presente en OCR = ERROR de extracción
+            # Solo es válido "NO MENCIONADO" si realmente NO aparece en el PDF
+            if str(valor_bd).upper().strip() == 'NO MENCIONADO':
+                # Verificar si el biomarcador SÍ está mencionado en el OCR
+                valor_ocr_check = self._extraer_valor_biomarcador_desde_ocr(biomarcador, ocr)
+                if valor_ocr_check:
+                    # ERROR: Biomarcador solicitado, presente en PDF pero extraído como "NO MENCIONADO"
+                    valores_incorrectos.append({
+                        'biomarcador': biomarcador,
+                        'columna': columna,
+                        'valor_bd': 'NO MENCIONADO',
+                        'valor_ocr': valor_ocr_check,
+                        'tipo_error': 'EXTRACCIÓN FALLIDA (biomarcador solicitado y mencionado en PDF)'
+                    })
+                # Si no está en OCR, entonces "NO MENCIONADO" es correcto
+                continue
+
             # Extraer valor desde OCR
             valor_ocr = self._extraer_valor_biomarcador_desde_ocr(biomarcador, ocr)
 
@@ -1441,6 +2104,21 @@ class AuditorSistema:
                 # 3. Ambos indican negatividad
                 elif ('NEGATIV' in valor_bd_norm and 'NEGATIV' in valor_ocr_norm):
                     valores_validos = True
+
+                # 3B. V6.3.61 FIX IHQ250077: Equivalencia MMR (MLH1, MSH2, MSH6, PMS2)
+                # "PÉRDIDA DE EXPRESIÓN NUCLEAR" = "NEGATIVO" = "P" (pérdida) en contexto MMR
+                elif biomarcador.upper() in ['MLH1', 'MSH2', 'MSH6', 'PMS2']:
+                    # Indicadores de pérdida/negativo en cualquier formato
+                    perdida_bd = any(x in valor_bd_norm for x in ['PERDIDA', 'PÉRDIDA', 'NEGATIV', 'AUSENTE'])
+                    perdida_ocr = any(x in valor_ocr_norm for x in ['PERDIDA', 'PÉRDIDA', 'NEGATIV', 'AUSENTE', 'P'])
+                    # Si ambos indican pérdida (incluyendo "P" como abreviatura)
+                    if perdida_bd and perdida_ocr:
+                        valores_validos = True
+                    # Indicadores de intacto/positivo en cualquier formato
+                    intacto_bd = any(x in valor_bd_norm for x in ['POSITIV', 'INTACTA', 'PRESERV', 'NORMAL'])
+                    intacto_ocr = any(x in valor_ocr_norm for x in ['POSITIV', 'INTACTA', 'PRESERV', 'NORMAL'])
+                    if intacto_bd and intacto_ocr:
+                        valores_validos = True
 
                 # 4. Porcentajes similares (±5% tolerancia)
                 elif '%' in valor_bd_norm and '%' in valor_ocr_norm:
@@ -1589,32 +2267,54 @@ class AuditorSistema:
         desc_bd_norm = re.sub(r'\s+', ' ', desc_bd[:200].upper().strip())
         desc_ocr_norm = re.sub(r'\s+', ' ', desc_ocr[:500].upper().strip())
 
-        # Verificar si al menos 70% del texto BD está en OCR
-        if desc_bd_norm not in desc_ocr_norm:
-            # Buscar similitud parcial
-            palabras_bd = set(desc_bd_norm.split())
-            palabras_ocr = set(desc_ocr_norm.split())
-            coincidencias = len(palabras_bd & palabras_ocr)
-            total = len(palabras_bd)
-            similitud = (coincidencias / total) * 100 if total > 0 else 0
+        # V3.4.3 FIX IHQ250162: Validación mejorada con múltiples estrategias
+        # Estrategia 1: Substring match directo (ideal)
+        if desc_bd_norm in desc_ocr_norm:
+            return {
+                'estado': 'OK',
+                'mensaje': 'Descripcion macroscopica correcta',
+                'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd
+            }
 
-            if similitud < 50:
-                return {
-                    'estado': 'ERROR',
-                    'mensaje': f'Descripcion macroscopica NO coincide con OCR (similitud: {similitud:.0f}%)',
-                    'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd,
-                    'valor_ocr': desc_ocr[:100] + '...' if len(desc_ocr) > 100 else desc_ocr,
-                    'sugerencia': 'Verificar patrones de extracción en medical_extractor'
-                }
-            elif similitud < 70:
-                return {
-                    'estado': 'WARNING',
-                    'mensaje': f'Descripcion macroscopica coincide parcialmente con OCR (similitud: {similitud:.0f}%)',
-                    'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd,
-                    'valor_ocr': desc_ocr[:100] + '...' if len(desc_ocr) > 100 else desc_ocr
-                }
+        # Estrategia 2: Verificar primeras 10 palabras clave (para textos truncados/completos)
+        palabras_bd_list = desc_bd_norm.split()[:10]
+        palabras_ocr_set = set(desc_ocr_norm.split())
+        coincidencias_iniciales = sum(1 for palabra in palabras_bd_list if palabra in palabras_ocr_set)
+        if len(palabras_bd_list) > 0 and (coincidencias_iniciales / len(palabras_bd_list)) >= 0.8:
+            return {
+                'estado': 'OK',
+                'mensaje': 'Descripcion macroscopica correcta (palabras clave coinciden)',
+                'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd
+            }
 
-        # TODO: OK - descripción correctamente extraída
+        # Estrategia 3: Similitud de palabras (para diferencias ortográficas menores)
+        palabras_bd = set(desc_bd_norm.split())
+        palabras_ocr = set(desc_ocr_norm.split())
+        coincidencias = len(palabras_bd & palabras_ocr)
+        total = len(palabras_bd)
+        similitud = (coincidencias / total) * 100 if total > 0 else 0
+
+        if similitud < 40:
+            # ERROR crítico: menos de 40% de similitud
+            return {
+                'estado': 'ERROR',
+                'mensaje': f'Descripcion macroscopica NO coincide con OCR (similitud: {similitud:.0f}%)',
+                'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd,
+                'valor_ocr': desc_ocr[:100] + '...' if len(desc_ocr) > 100 else desc_ocr,
+                'sugerencia': 'Verificar patrones de extracción en medical_extractor'
+            }
+        elif similitud < 70:
+            # V3.4.3: Reducir umbral de WARNING de 60% a 70%
+            # Justificación: Con estrategias 1 y 2, si llegamos aquí es que hay diferencias reales
+            # Toleramos hasta 70% para casos con texto truncado/completo pero similar
+            return {
+                'estado': 'WARNING',
+                'mensaje': f'Descripcion macroscopica coincide parcialmente con OCR (similitud: {similitud:.0f}%)',
+                'valor_bd': desc_bd[:100] + '...' if len(desc_bd) > 100 else desc_bd,
+                'valor_ocr': desc_ocr[:100] + '...' if len(desc_ocr) > 100 else desc_ocr
+            }
+
+        # OK: Similitud >= 70%
         return {
             'estado': 'OK',
             'mensaje': 'Descripcion macroscopica correcta',
@@ -1740,17 +2440,48 @@ class AuditorSistema:
         ocr_upper = ocr.upper()
 
         # Keywords por categoría
+        # V6.3.2 FIX IHQ250004: Removido 'CÉLULAS TUMORALES' (muy genérico, aparece en contextos benignos)
+        # V6.3.12 FIX IHQ250012: Agregado 'NEOPLASIA' (casos hematológicos), 'MIELOMA', 'PLASMOCITOMA'
+        # V6.3.13 FIX IHQ250018: Agregado 'TUMOR DEL ESTROMA GASTROINTESTINAL', 'GIST' (tumores GIST son malignos)
         keywords_maligno = [
             'CARCINOMA', 'ADENOCARCINOMA', 'SARCOMA', 'MELANOMA',
             'LINFOMA', 'LEUCEMIA', 'NEOPLASIA MALIGNA', 'TUMOR MALIGNO',
-            'METASTASIS', 'METASTÁSICO', 'CÉLULAS TUMORALES'
+            'METASTASIS', 'METASTÁSICO', 'INVASIVO', 'INFILTRANTE',
+            'NEOPLASIA', 'MIELOMA', 'PLASMOCITOMA',
+            'TUMOR DEL ESTROMA GASTROINTESTINAL',
+            # V3.3.8 FIX IHQ250066: Lesiones intraepiteliales de alto grado (premalignas)
+            # NIC 3/CIN 3 son lesiones de alto grado que clínicamente se manejan como potencialmente malignas
+            'LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO', 'NIC 3', 'CIN 3',
+            # V3.3.11 FIX IHQ250144: GLIOMA agregado (tumores cerebrales de alto grado malignos)
+            'GLIOMA'
+            # V3.3.6 FIX IHQ250061: GIST movido a keywords_word_boundary (evita falso positivo "PathologiSTs")
         ]
+        # V3.3.6 FIX IHQ250061: Keywords que necesitan word boundary (palabras cortas que aparecen como substring)
+        # Ejemplo: "GIST" aparece en "Pathologists" → falso positivo
+        keywords_maligno_word_boundary = ['GIST']
+
         keywords_benigno = [
             'BENIGNO', 'HIPERPLASIA', 'ADENOMA', 'FIBROMA',
-            'LIPOMA', 'NEVUS', 'PAPILOMA', 'LESIÓN BENIGNA'
+            'LIPOMA', 'NEVUS', 'PAPILOMA', 'LESIÓN BENIGNA',
+            # V6.3.2: Diagnósticos benignos que pueden tener "células tumorales" en descripción
+            'HETEROTOPIA', 'HAMARTOMA', 'TERATOMA MADURO', 'QUISTE',
+            'CORISTOMA', 'GANGLIOCITOMA', 'SCHWANNOMA', 'NEUROFIBROMA',
+            'MENINGIOMA GRADO I', 'MENINGIOMA GRADO 1',
+            # V6.4.0 FIX IHQ250013: Neoplasias localmente agresivas pero NO malignas (no metastatizan)
+            'FIBROMATOSIS DESMOIDE', 'FIBROMATOSIS DE TIPO DESMOIDE', 'TUMOR DESMOIDE',
+            # V6.3.78 FIX IHQ250106: Diagnósticos explícitos de NO neoplasia
+            'SIN EVIDENCIA DE LESIÓN NEOPLÁSICA', 'SIN EVIDENCIA DE NEOPLASIA',
+            'NO EVIDENCIA DE MALIGNIDAD', 'SIN EVIDENCIA DE MALIGNIDAD'
         ]
 
+        # V3.3.6: Búsqueda normal (substring) para keywords largos
         encontrado_maligno = any(kw in ocr_upper for kw in keywords_maligno)
+        # V3.3.6: Búsqueda con word boundary para keywords cortos (evita falsos positivos)
+        if not encontrado_maligno:
+            for kw in keywords_maligno_word_boundary:
+                if re.search(rf'\b{kw}\b', ocr_upper):
+                    encontrado_maligno = True
+                    break
         encontrado_benigno = any(kw in ocr_upper for kw in keywords_benigno)
 
         # PASO 4: Validar concordancia
@@ -1763,13 +2494,27 @@ class AuditorSistema:
                 'nota': 'Revisar manualmente si la clasificación es correcta'
             }
 
-        if malignidad_bd == 'BENIGNO' and encontrado_maligno:
+        # V6.3.2 FIX IHQ250004: Si hay keywords benignos, priorizar sobre malignos
+        # (algunos diagnósticos benignos pueden mencionar "células tumorales" descriptivamente)
+        if malignidad_bd == 'BENIGNO' and encontrado_maligno and not encontrado_benigno:
+            # V3.3.6: Incluir keywords de word_boundary en la lista de encontrados
+            kw_encontrados = [kw for kw in keywords_maligno if kw in ocr_upper]
+            kw_encontrados += [kw for kw in keywords_maligno_word_boundary if re.search(rf'\b{kw}\b', ocr_upper)]
             return {
                 'estado': 'ERROR',
                 'mensaje': 'BD indica BENIGNO pero OCR contiene keywords MALIGNOS',
                 'valor_bd': malignidad_bd,
-                'keywords_encontrados': [kw for kw in keywords_maligno if kw in ocr_upper],
+                'keywords_encontrados': kw_encontrados,
                 'sugerencia': 'Probable error de clasificación - verificar diagnóstico'
+            }
+
+        # V6.3.2: Si hay keywords benignos Y malignos, confiar en la clasificación de BD
+        if malignidad_bd == 'BENIGNO' and encontrado_maligno and encontrado_benigno:
+            return {
+                'estado': 'OK',
+                'mensaje': f'Malignidad correcta: {malignidad_bd} (diagnóstico benigno confirmado)',
+                'valor_bd': malignidad_bd,
+                'nota': 'Keywords malignos ignorados por presencia de diagnóstico benigno específico'
             }
 
         # OK
@@ -1829,8 +2574,18 @@ class AuditorSistema:
             valor_str = str(valor).strip()
 
             # VALIDACIÓN: Buscar valor en OCR (normalizado)
-            valor_norm = re.sub(r'\s+', ' ', valor_str.upper())
-            ocr_norm = re.sub(r'\s+', ' ', ocr.upper())
+            # V3.3.3: FIX IHQ250015 - Normalizar saltos de línea y caracteres especiales
+            # Bug: OCR tenía "CAMBIOS\nREACTIVOS\nEPITELIALES" con saltos, pero valor BD sin saltos
+            # Solución: Normalizar \n, \r, \t y comillas Unicode antes de comparar
+            valor_norm = valor_str.upper()
+            valor_norm = re.sub(r'[\n\r\t]+', ' ', valor_norm)  # Normalizar saltos de línea
+            valor_norm = re.sub(r'["\'\u201c\u201d]+', '"', valor_norm)  # Normalizar comillas
+            valor_norm = re.sub(r'\s+', ' ', valor_norm).strip()  # Normalizar espacios
+
+            ocr_norm = ocr.upper()
+            ocr_norm = re.sub(r'[\n\r\t]+', ' ', ocr_norm)  # Normalizar saltos de línea
+            ocr_norm = re.sub(r'["\'\u201c\u201d]+', '"', ocr_norm)  # Normalizar comillas
+            ocr_norm = re.sub(r'\s+', ' ', ocr_norm).strip()  # Normalizar espacios
 
             # Buscar valor completo
             if valor_norm in ocr_norm:
@@ -1876,6 +2631,96 @@ class AuditorSistema:
         }
 
 
+    def _validar_biomarcadores_no_mencionado_exhaustivo(self, campos_criticos: Dict, ocr: str) -> Dict:
+        """
+        Validación exhaustiva de TODOS los biomarcadores con "NO MENCIONADO".
+
+        V6.5.84: Nueva función para detectar falsos "NO MENCIONADO" en TODOS los biomarcadores.
+        A diferencia de _validar_biomarcadores_completos que solo valida estudios solicitados,
+        esta función revisa TODAS las columnas IHQ_* de la BD.
+
+        PROBLEMA RESUELTO:
+        - Biomarcador solicitado + extraído como "NO MENCIONADO" + realmente está en PDF = ERROR
+        - Antes solo detectábamos esto para biomarcadores en "estudios solicitados"
+        - Ahora detectamos en TODAS las columnas IHQ_*
+
+        Args:
+            campos_criticos: Diccionario base_datos.campos_criticos del debug_map
+            ocr: Texto OCR completo
+
+        Returns:
+            Dict con resultados de validación:
+            {
+                'total_revisados': int,
+                'falsos_no_mencionado': List[Dict],
+                'biomarcadores_ok': int,
+                'estado': 'OK' | 'WARNING' | 'ERROR'
+            }
+
+        Complexity: CC ~6
+        """
+        falsos_no_mencionado = []
+        total_revisados = 0
+
+        # Obtener TODAS las columnas IHQ_* del diccionario de campos críticos
+        columnas_ihq = {k: v for k, v in campos_criticos.items() if k.startswith('IHQ_')}
+
+        for columna, valor_bd in columnas_ihq.items():
+            # Solo revisar campos con "NO MENCIONADO"
+            if not valor_bd or str(valor_bd).strip().upper() != 'NO MENCIONADO':
+                continue
+
+            total_revisados += 1
+
+            # Extraer nombre del biomarcador desde la columna (IHQ_P53 → P53)
+            nombre_biomarcador = columna.replace('IHQ_', '').replace('_', ' ')
+
+            # Variantes comunes para mejorar detección
+            variantes = [
+                nombre_biomarcador,
+                nombre_biomarcador.replace(' ', '-'),  # P40 → P-40
+                nombre_biomarcador.replace(' ', '/'),  # CK5 6 → CK5/6
+                nombre_biomarcador.replace(' ', ''),   # KI 67 → KI67
+            ]
+
+            # Buscar biomarcador en OCR usando función existente
+            valor_encontrado = None
+            for variante in variantes:
+                valor_encontrado = self._extraer_valor_biomarcador_desde_ocr(variante, ocr)
+                if valor_encontrado:
+                    break
+
+            # Si encontramos valor en OCR, es un falso "NO MENCIONADO"
+            if valor_encontrado:
+                falsos_no_mencionado.append({
+                    'columna': columna,
+                    'biomarcador': nombre_biomarcador,
+                    'valor_bd': 'NO MENCIONADO',
+                    'valor_ocr': valor_encontrado,
+                    'severidad': 'ERROR',
+                    'mensaje': f'{nombre_biomarcador}: Extraído como "NO MENCIONADO" pero encontrado en OCR como "{valor_encontrado}"',
+                    'tipo_error': 'EXTRACCIÓN FALLIDA (biomarcador presente en PDF)',
+                    'sugerencia': 'Reprocesar caso con FUNC-06 para corregir extracción'
+                })
+
+        biomarcadores_ok = total_revisados - len(falsos_no_mencionado)
+
+        # Determinar estado
+        if falsos_no_mencionado:
+            estado = 'ERROR'  # Cualquier falso "NO MENCIONADO" es un error crítico
+        else:
+            estado = 'OK'
+
+        return {
+            'total_revisados': total_revisados,
+            'falsos_no_mencionado': falsos_no_mencionado,
+            'biomarcadores_ok': biomarcadores_ok,
+            'estado': estado,
+            'mensaje': f'{biomarcadores_ok}/{total_revisados} biomarcadores "NO MENCIONADO" validados correctamente' if estado == 'OK'
+                      else f'{len(falsos_no_mencionado)} falsos "NO MENCIONADO" detectados'
+        }
+
+
     def _extraer_valor_biomarcador_desde_ocr(self, biomarcador: str, ocr: str) -> Optional[str]:
         """
         Extrae valor de un biomarcador específico desde OCR.
@@ -1905,13 +2750,51 @@ class AuditorSistema:
 
         # Patrones de extracción (ordenados por especificidad)
         patrones = [
+            # V6.5.80 FIX IHQ250270: PRIORIDAD MÁXIMA - "positividad heterogénea para X, inhibina y Z"
+            # Formato lista narrativa con calificador heterogénea
+            # Captura biomarcador en lista después de "positividad heterogénea para"
+            r'positividad\s+heterog[eé]nea\s+para\s+[^.]*?{bio}',
+
+            # V6.5.81 FIX IHQ250271: PRIORIDAD MÁXIMA - "{bio} con ausencia de expresión"
+            # Formato: "p53 con ausencia de expresión" = NEGATIVO
+            r'{bio}\s+con\s+ausencia\s+de\s+expresi[oó]n',
+
+            # V6.5.79 FIX IHQ250268: PRIORIDAD MÁXIMA - "(p63 y CK34BETA negativos)"
+            # Formato agrupado en paréntesis con resultado al final
+            r'\({bio}\s+y\s+\w+\s+(positiv[oa]s?|negativ[oa]s?)\)',
+            r'\(\w+\s+y\s+{bio}\s+(positiv[oa]s?|negativ[oa]s?)\)',
+
+            # V6.5.04 FIX IHQ250229: "P16 presenta marcación ... (positivo/negativo)" (estudios cervicales)
+            # Patrón: "P16 presenta marcación citoplasmática focal (negativo)"
+            # DEBE IR PRIMERO para evitar truncamiento por patrón genérico
+            r'{bio}\s+presenta\s+marcaci[oó]n\s+[^(]+\((\w+)\)',
+            # V6.4.73 FIX IHQ250206: "sin marcación para {bio}" = NEGATIVO
+            # Patrón: "marcación positiva difusa para TTF1, sin marcación para p40"
+            # DEBE IR PRIMERO para tener prioridad sobre patrón genérico "positiv...para...{bio}"
+            r'sin\s+marcaci[oó]n\s+para\s+{bio}',
+            # V3.3.10 FIX IHQ250071: "no presentan inmunotinción con/ni X" = NEGATIVO
+            # Patrón: "no presentan inmunotinción con p53 ni CD117"
+            # DEBE IR PRIMERO para evitar que patrón genérico capture "(" de "(cKIT)"
+            r'no\s+presentan?\s+inmunotinci[oó]n\s+(?:con\s+)?(?:\w+\s+ni\s+)?{bio}',
+            # V6.2.8 FIX IHQ250011: PRIORIDAD MÁXIMA - Detectar contexto "negativas para X, Y, Z"
+            # Patrón: "negativas para receptores de estrógenos, CD68 y PAX-8"
+            # DEBE IR PRIMERO para tener prioridad sobre patrones genéricos de "positivo para"
+            r'negativ[oa]s?\s+para\s+(?:receptores?\s+(?:de\s+)?)?[^.]*?{bio}',
+            # V3.3.7 FIX IHQ250065: "CD23 marca las células" = POSITIVO (marcación = expresión)
+            r'{bio}\s+marca\s+(?:las?\s+)?c[eé]lulas?',
             # Patrón con porcentaje: "Ki-67: 30%"
             r'{bio}[:\s]+(\d+%)',
             # Patrón con estado: "P63: POSITIVO"
             r'{bio}[:\s]+(POSITIVO|NEGATIVO|NO\s+MENCIONADO)',
+            # V6.3.2 FIX IHQ250003: Patrón "X son negativos/positivos"
+            # Ej: "napsina A, p40 y CK20 son negativos"
+            r'{bio}\s+(?:son|es|fueron?)\s+(positiv[oa]s?|negativ[oa]s?)',
             # Patrón narrativo mejorado: "positividad para [células/marcadores] biomarcador"
             # Captura contextos como "positividad para celulas mioepiteliales CK5/6 y P63"
             r'(?:positividad|positivo|inmunorreactividad)\s+(?:para|a|de)\s+(?:el\s+|los\s+|las\s+|celulas\s+\w+\s+)?{bio}(?:\s+y\s+\w+)?',
+            # V3.3.3 FIX IHQ250002: Patrón lista narrativa - detecta biomarcador en lista después de "positivo para"
+            # Ej: "marcación positiva fuerte y difusa para CKAE1/AE3 y SINAPTOFISINA"
+            r'(?:positiv[oa]|inmunorreactiv[oa])\s+[^.]*?para\s+[^.]*?{bio}',
             # Patrón en tabla: "Ki-67    30%"
             r'{bio}\s+(\d+%)',
             # Patrón genérico: captura siguiente palabra después del biomarcador (evita capturar "y [otro_biomarcador]")
@@ -1925,16 +2808,72 @@ class AuditorSistema:
                 match = re.search(patron, ocr, re.IGNORECASE | re.DOTALL)
 
                 if match:
-                    # Si el patrón narrativo solo detecta presencia, retornar "POSITIVO"
-                    if 'positividad' in patron_template or 'positivo' in patron_template:
+                    # V6.4.73 FIX IHQ250206: "sin marcación para {bio}" = NEGATIVO
+                    if 'sin\\s+marcaci' in patron_template:
+                        return 'NEGATIVO'
+
+                    # V6.2.8 FIX IHQ250011: Primero verificar si es patrón de contexto negativo
+                    if 'negativ[oa]s?' in patron_template:
+                        return 'NEGATIVO'
+
+                    # V3.3.10 FIX IHQ250071: "no presentan inmunotinción" = NEGATIVO
+                    if 'no\\s+presentan' in patron_template or 'inmunotinci' in patron_template:
+                        return 'NEGATIVO'
+
+                    # V6.5.80 FIX IHQ250270: "positividad heterogénea para..." = POSITIVO HETEROGÉNEO
+                    if 'heterog' in patron_template.lower():
+                        return 'POSITIVO HETEROGÉNEO'
+
+                    # V6.5.81 FIX IHQ250271: "{bio} con ausencia de expresión" = NEGATIVO
+                    if 'ausencia\\s+de\\s+expresi' in patron_template:
+                        return 'NEGATIVO'
+
+                    # V6.5.79 FIX IHQ250268: Formato agrupado "(X y Y negativos)" - usar valor capturado
+                    if '\\(' in patron_template and match.groups():
+                        valor = match.group(1).strip().upper()
+                        if valor.startswith('NEGATIV'):
+                            return 'NEGATIVO'
+                        elif valor.startswith('POSITIV'):
+                            return 'POSITIVO'
+
+                    # V6.5.04 FIX IHQ250229: "presenta marcación" - usar valor capturado, NO "marca" genérico
+                    # DEBE IR ANTES del check de 'marca' para evitar que lo capture como POSITIVO
+                    if 'presenta\\s+marcaci' in patron_template and match.groups():
+                        valor = match.group(1).strip().upper()
+                        if valor.startswith('NEGATIV'):
+                            return 'NEGATIVO'
+                        elif valor.startswith('POSITIV'):
+                            return 'POSITIVO'
+                        return valor
+
+                    # V3.3.7 FIX IHQ250065: Patrón "marca las células" = POSITIVO
+                    if 'marca' in patron_template:
                         return 'POSITIVO'
-                    # Si captura grupo, retornar valor capturado
+
+                    # V6.3.2 FIX: Primero verificar si captura grupo (tiene prioridad sobre detección narrativa)
                     if match.groups():
                         valor = match.group(1).strip()
+                        # Normalizar "negativos/positivos" → "NEGATIVO/POSITIVO"
+                        valor_upper = valor.upper()
+                        if valor_upper.startswith('NEGATIV'):
+                            return 'NEGATIVO'
+                        elif valor_upper.startswith('POSITIV'):
+                            return 'POSITIVO'
+                        # V6.5.76 FIX IHQ250266: Filtrar valores de 1-2 caracteres espurios
+                        # PROBLEMA: Patrones capturaban "p" de "p63, p40" o "s" de "p53, SOX"
+                        # SOLUCIÓN: Solo aceptar valores cortos si son porcentajes válidos
+                        if len(valor) <= 2:
+                            # Solo aceptar si es dígito(s) (será combinado con % en patrón superior)
+                            if not valor.isdigit():
+                                continue  # Probar siguiente patrón
                         # Limitar longitud (evitar capturar demasiado texto)
                         # Evitar valores que sean solo conectores como "y"
                         if len(valor) < 100 and valor.lower() not in ['y', 'e', 'o']:
                             return valor
+                    # Si el patrón narrativo solo detecta presencia (SIN grupo), retornar "POSITIVO"
+                    # V3.3.3: Incluye 'positiv' para detectar patrones como 'positiv[oa]'
+                    elif 'positividad' in patron_template or 'positivo' in patron_template or 'positiv[oa]' in patron_template:
+                        return 'POSITIVO'
 
         return None
 
@@ -1956,10 +2895,11 @@ class AuditorSistema:
 
         # V3.3.0: 7 validaciones (agregadas macroscopica y microscopica)
         # V3.3.0: 9 validaciones exhaustivas (agregadas malignidad y campos_exhaustivos)
-        total_validaciones = 9  # desc_macro, coloracion, desc_micro, principal, ihq_organo, factor, biomarcadores, malignidad, campos_exhaustivos
+        # V6.5.84: 10 validaciones (agregada validación exhaustiva biomarcadores "NO MENCIONADO")
+        total_validaciones = 10  # desc_macro, coloracion, desc_micro, principal, ihq_organo, factor, biomarcadores, malignidad, campos_exhaustivos, biomarcadores_no_mencionado
         validaciones_ok = 0
 
-        # Conteo de validaciones OK (v3.3.0: 9 validaciones)
+        # Conteo de validaciones OK (v6.5.84: 10 validaciones)
         if auditoria_bd.get('descripcion_macroscopica', {}).get('estado') == 'OK':
             validaciones_ok += 1
         if auditoria_bd.get('diagnostico_coloracion', {}).get('estado') == 'OK':
@@ -1978,6 +2918,8 @@ class AuditorSistema:
             validaciones_ok += 1
         if auditoria_bd.get('campos_exhaustivos', {}).get('estado') == 'OK':
             validaciones_ok += 1
+        if auditoria_bd.get('biomarcadores_no_mencionado', {}).get('estado') == 'OK':
+            validaciones_ok += 1
 
         score = (validaciones_ok / total_validaciones) * 100
 
@@ -1991,6 +2933,7 @@ class AuditorSistema:
 
         resultado['metricas'] = {
             'score_validacion': round(score, 1),
+            'score_final': round(score, 1),  # Agregar score_final para compatibilidad
             'validaciones_ok': validaciones_ok,
             'total_validaciones': total_validaciones,
             'warnings': len(auditoria_bd.get('warnings', [])),
@@ -2025,8 +2968,57 @@ class AuditorSistema:
 
         print(f"Exportado a: {output_file}")
 
+    def _actualizar_archivo_auditoria(self, numero_caso: str, score: float) -> None:
+        """
+        Actualiza el archivo auditoria_realizada.md marcando el caso como auditado.
 
-    def auditar_caso_inteligente(self, numero_caso: str, json_export: bool = False, nivel: str = 'completo') -> Dict:
+        Args:
+            numero_caso: Numero IHQ (ej: IHQ250010)
+            score: Score final de la auditoria (0-100)
+
+        Complexity: CC ~3
+        """
+        from datetime import datetime
+        import re
+
+        archivo_auditoria = self.project_root / "auditoria_realizada.md"
+
+        # Si el archivo no existe, no hacer nada (modo silencioso)
+        if not archivo_auditoria.exists():
+            return
+
+        try:
+            # Leer contenido actual
+            with open(archivo_auditoria, 'r', encoding='utf-8') as f:
+                contenido = f.read()
+
+            # Fecha actual
+            fecha_hoy = datetime.now().strftime('%Y-%m-%d')
+
+            # Patron para buscar el caso con estado "Pendiente"
+            # Formato: | 10 | IHQ250010 | ⏳ Pendiente |
+            patron = rf'(\|\s*\d+\s*\|\s*{re.escape(numero_caso)}\s*\|\s*)⏳ Pendiente(\s*\|)'
+
+            # Reemplazar con estado Auditado + Score
+            contenido_nuevo = re.sub(
+                patron,
+                rf'\1✅ Auditado (Score: {score:.1f}%)\2',
+                contenido
+            )
+
+            # Si hubo cambios, guardar
+            if contenido != contenido_nuevo:
+                with open(archivo_auditoria, 'w', encoding='utf-8') as f:
+                    f.write(contenido_nuevo)
+
+                print(f"📝 Actualizado auditoria_realizada.md: {numero_caso} -> Auditado (Score: {score:.1f}%)")
+
+        except Exception as e:
+            # Modo silencioso: no fallar si hay error
+            print(f"⚠️  No se pudo actualizar auditoria_realizada.md: {e}")
+
+
+    def auditar_caso_inteligente(self, numero_caso: str, json_export: bool = False, nivel: str = 'completo', auto_corregir: bool = True) -> Dict:
         """
         Audita un caso con INTELIGENCIA SEMANTICA completa.
 
@@ -2035,11 +3027,16 @@ class AuditorSistema:
         2. Validacion inteligente (comparacion semantica, deteccion de contaminacion)
         3. Diagnostico de errores (causa raiz, tipo de error)
         4. Generacion de sugerencias (archivo, funcion, patron, comando)
+        5. AUTO-CORRECCIÓN (si auto_corregir=True):
+           - Detecta biomarcadores NO MAPEADOS → ejecuta FUNC-08 automáticamente
+           - Detecta biomarcadores NO EXISTEN → ejecuta FUNC-03 automáticamente
+           - Sugiere FUNC-06 para reprocesar
 
         Args:
             numero_caso: Numero IHQ (ej: IHQ250980)
             json_export: Exportar resultado a JSON
             nivel: 'basico', 'completo', 'profundo'
+            auto_corregir: Si True, ejecuta FUNC-03/FUNC-08 automáticamente cuando detecta problemas
 
         Returns:
             Dict con reporte completo de auditoria inteligente
@@ -2047,7 +3044,7 @@ class AuditorSistema:
         Complexity: CC ~8 (refactorizado desde CC 42)
         """
         print(f"\n{'='*100}")
-        print(f"AI AUDITORIA INTELIGENTE - CASO {numero_caso}")
+        print(f"🔍 AUDITORIA INTELIGENTE - CASO {numero_caso}")
         print(f"{'='*100}\n")
 
         # PASO 1: Inicializar y leer debug_map
@@ -2068,698 +3065,178 @@ class AuditorSistema:
         if json_export:
             self._exportar_json_auditoria(resultado)
 
+        # PASO 5: AUTO-CORRECCIÓN INTELIGENTE (si está habilitada)
+        if auto_corregir:
+            self._ejecutar_autocorreccion_inteligente(resultado, numero_caso)
+
         return resultado
 
-    def corregir_caso_automatico(self, numero_caso: str, auto_aprobar: bool = False, max_iteraciones: int = 3, usar_reporte_existente: bool = False) -> Dict:
+    def _ejecutar_autocorreccion_inteligente(self, resultado: Dict, numero_caso: str) -> None:
         """
-        FUNC-02: Corrección automática iterativa con validación
+        Ejecuta auto-corrección inteligente después de auditar un caso.
+
+        Detecta problemas y ejecuta FUNC-03 o FUNC-08 automáticamente:
+        - Biomarcador NO existe en BD → FUNC-03 (crear columna)
+        - Biomarcador existe pero no mapea → FUNC-08 (agregar aliases)
 
         Args:
-            usar_reporte_existente: Si True, lee JSON de FUNC-01 existente en lugar de re-auditar
+            resultado: Dict de auditoría completo
+            numero_caso: Número IHQ
 
-        Flujo NORMAL (usar_reporte_existente=False):
-            1. Audita con FUNC-01 (30-60s)
-            2. Aplica correcciones
-            3. Reprocesa
-            4. Re-audita
-            5. Itera si necesario
-
-        Flujo OPTIMIZADO (usar_reporte_existente=True):
-            1. Lee JSON existente (0.1s) - Sin re-auditar
-            2. Aplica correcciones
-            3. Reprocesa
-            4. Re-audita
-            5. Itera si necesario
+        Complejidad: CC ~5
         """
-        print(f"\n{'='*80}")
-        print(f"🔧 FUNC-02: Corrección Automática - {numero_caso}")
-        if usar_reporte_existente:
-            print(f"⚡ Modo OPTIMIZADO: Usando reporte JSON existente")
-        print(f"{'='*80}\n")
+        score = resultado.get('metricas', {}).get('score_final', 100)
 
-        for iteracion in range(1, max_iteraciones + 1):
-            print(f"\n📍 ITERACIÓN {iteracion}/{max_iteraciones}")
+        # Si el caso está perfecto, no hacer nada
+        if score >= 100:
+            return
 
-            # PASO 1: Obtener resultado de auditoría
-            if usar_reporte_existente and iteracion == 1:
-                # Modo OPTIMIZADO: Leer JSON existente
-                print("  1️⃣ Leyendo reporte JSON existente de FUNC-01...")
-                resultado = self._cargar_reporte_json_existente(numero_caso)
+        print(f"\n{'='*100}")
+        print(f"🤖 AUTO-CORRECCIÓN INTELIGENTE")
+        print(f"{'='*100}\n")
+        print(f"📊 Score actual: {score}% - Detectando problemas corregibles...\n")
 
-                if not resultado:
-                    print("  ⚠️ No se encontró reporte JSON reciente")
-                    print("  💡 Ejecutando FUNC-01 completa...")
-                    resultado = self.auditar_caso_inteligente(numero_caso, json_export=False, nivel='completo')
-            else:
-                # Modo normal: Ejecutar FUNC-01 completa
-                print("  1️⃣ Auditando con FUNC-01...")
-                resultado = self.auditar_caso_inteligente(numero_caso, json_export=False, nivel='completo')
+        biomarcadores_bd = resultado.get('auditoria_bd', {}).get('biomarcadores', {})
+        biomarcadores_detectados = biomarcadores_bd.get('biomarcadores_detectados', [])
 
-            if not resultado:
-                print("  ❌ No se pudo obtener resultado de auditoría")
-                return {"estado": "ERROR", "mensaje": "Auditoría fallida"}
+        problemas_detectados = []
+        correcciones_aplicadas = []
 
-            # Obtener métricas
-            metricas = resultado.get('metricas', {})
-            score = metricas.get('score_validacion', 0)
-            errores = metricas.get('errores', 0)
+        # Detectar biomarcadores problemáticos
+        for bio in biomarcadores_detectados:
+            nombre = bio.get('nombre', '')
+            estado = bio.get('estado', '')
 
-            print(f"  📊 Score actual: {score:.1f}%")
-            print(f"  ❌ Errores: {errores}")
+            if estado in ['NO MENCIONADO', 'NO ENCONTRADO', '']:
+                # Verificar si existe columna en BD
+                columna_bd = self._buscar_columna_biomarcador(nombre, {}, {})
 
-            # Si score = 100%, éxito
-            if score >= 100.0:
-                print(f"\n✅ ÉXITO en {iteracion} iteración(es)")
-                print(f"   Score final: {score:.1f}%")
-                return {"estado": "EXITO", "score": score, "iteraciones": iteracion}
-
-            # PASO 2: Aplicar correcciones en extractores (NO en BD)
-            print(f"  2️⃣ Aplicando correcciones en extractores...")
-            cambios_aplicados = self._aplicar_correcciones_extractores(resultado, numero_caso, auto_aprobar)
-
-            if not cambios_aplicados:
-                print(f"  ⚠️ No se pudieron aplicar correcciones automáticas")
-                print(f"  💡 Requiere edición manual")
-                return {"estado": "REQUIERE_MANUAL", "score": score, "iteraciones": iteracion}
-
-            # PASO 3: Reprocesar caso
-            print(f"  3️⃣ Reprocesando caso completo...")
-            if not self._reprocesar_caso(numero_caso):
-                print(f"  ❌ Error al reprocesar")
-                return {"estado": "ERROR_REPROCESO", "iteraciones": iteracion}
-
-            print(f"  ✅ Reprocesado exitosamente\n")
-
-        # Si llegamos aquí, alcanzamos max_iteraciones sin éxito
-        print(f"\n⚠️ Alcanzado límite de {max_iteraciones} iteraciones")
-        print(f"   Score final: {score:.1f}%")
-        return {"estado": "LIMITE_ITERACIONES", "score": score, "iteraciones": max_iteraciones}
-
-    def _cargar_reporte_json_existente(self, numero_caso: str) -> Optional[Dict]:
-        """
-        Carga reporte JSON existente de FUNC-01 si existe y es reciente.
-
-        Args:
-            numero_caso: Número IHQ (ej: IHQ250980)
-
-        Returns:
-            Dict con resultado de auditoría si existe, None si no
-
-        Validaciones:
-        - Archivo existe
-        - Archivo es del mismo día (para evitar usar reportes obsoletos)
-        - JSON es válido
-        - Contiene estructura esperada
-        """
-        import os
-        from datetime import datetime, timedelta
-
-        # Ruta del reporte
-        ruta_json = f'herramientas_ia/resultados/auditoria_inteligente_{numero_caso}.json'
-
-        # Verificar existencia
-        if not os.path.exists(ruta_json):
-            print(f"     ❌ No existe: {ruta_json}")
-            return None
-
-        # Verificar antigüedad (mismo día recomendado)
-        fecha_modificacion = datetime.fromtimestamp(os.path.getmtime(ruta_json))
-        ahora = datetime.now()
-
-        if (ahora - fecha_modificacion) > timedelta(days=1):
-            print(f"     ⚠️ Reporte antiguo (>{1} día): {fecha_modificacion.strftime('%Y-%m-%d %H:%M')}")
-            print(f"     💡 Se recomienda re-auditar con FUNC-01")
-            return None
-
-        # Cargar JSON
-        try:
-            with open(ruta_json, 'r', encoding='utf-8') as f:
-                resultado = json.load(f)
-
-            print(f"     ✅ Reporte cargado: {ruta_json}")
-            print(f"     📅 Fecha: {fecha_modificacion.strftime('%Y-%m-%d %H:%M:%S')}")
-
-            # Validar estructura básica
-            if 'auditoria_bd' not in resultado or 'metricas' not in resultado:
-                print(f"     ❌ JSON inválido: falta estructura esperada")
-                return None
-
-            print(f"     📊 Score en reporte: {resultado.get('metricas', {}).get('score_validacion', 0):.1f}%")
-            return resultado
-
-        except json.JSONDecodeError as e:
-            print(f"     ❌ Error JSON inválido: {e}")
-            return None
-        except Exception as e:
-            print(f"     ❌ Error al cargar: {e}")
-            return None
-
-    # ========================================================================
-    # FUNC-02: FUNCIONES AUXILIARES PARA CORRECCIÓN DE EXTRACTORES
-    # ========================================================================
-
-    def _validar_sintaxis_python(self, archivo: Path) -> bool:
-        """
-        Valida sintaxis Python de un archivo.
-
-        Args:
-            archivo: Path del archivo .py a validar
-
-        Returns:
-            True si sintaxis válida, False si hay errores
-        """
-        import py_compile
-
-        try:
-            # Compilar sin archivo de salida (solo validar)
-            py_compile.compile(str(archivo), doraise=True)
-            return True
-        except py_compile.PyCompileError as e:
-            print(f"     ❌ Error de sintaxis en {archivo.name}:")
-            print(f"        {str(e)[:200]}")
-            return False
-        except Exception as e:
-            print(f"     ❌ Error al validar sintaxis: {e}")
-            return False
-
-    def _crear_backup_codigo(self, archivo: Path) -> Path:
-        """
-        Crea backup de un archivo de código antes de modificarlo.
-
-        Args:
-            archivo: Path del archivo a respaldar
-
-        Returns:
-            Path del backup creado
-        """
-        import shutil
-
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        backup_path = self.project_root / "backups" / f"{archivo.stem}_backup_{timestamp}{archivo.suffix}"
-
-        # Crear directorio backups si no existe
-        backup_path.parent.mkdir(parents=True, exist_ok=True)
-
-        # Copiar archivo
-        shutil.copy2(archivo, backup_path)
-
-        print(f"     💾 Backup código: {backup_path.name}")
-        return backup_path
-
-    def _restaurar_backup(self, backup_path: Path, archivo_destino: Path) -> bool:
-        """
-        Restaura un archivo desde su backup.
-
-        Args:
-            backup_path: Path del backup
-            archivo_destino: Path del archivo a restaurar
-
-        Returns:
-            True si se restauró exitosamente
-        """
-        import shutil
-
-        try:
-            shutil.copy2(backup_path, archivo_destino)
-            print(f"     ♻️  Código restaurado desde: {backup_path.name}")
-            return True
-        except Exception as e:
-            print(f"     ❌ Error al restaurar backup: {e}")
-            return False
-
-    def _mostrar_diff_codigo(self, codigo_antes: str, codigo_despues: str, contexto_lineas: int = 5):
-        """
-        Muestra diff visual entre código antes y después.
-
-        Args:
-            codigo_antes: Código original
-            codigo_despues: Código modificado
-            contexto_lineas: Líneas de contexto a mostrar
-        """
-        import difflib
-
-        diff = difflib.unified_diff(
-            codigo_antes.splitlines(keepends=True),
-            codigo_despues.splitlines(keepends=True),
-            fromfile='ANTES',
-            tofile='DESPUÉS',
-            n=contexto_lineas
-        )
-
-        print(f"\n     📝 DIFF de cambios propuestos:")
-        print(f"     {'─'*70}")
-        for line in diff:
-            line = line.rstrip()
-            if line.startswith('+++') or line.startswith('---'):
-                print(f"     {line}")
-            elif line.startswith('+'):
-                print(f"     \033[92m{line}\033[0m")  # Verde
-            elif line.startswith('-'):
-                print(f"     \033[91m{line}\033[0m")  # Rojo
-            elif line.startswith('@@'):
-                print(f"     \033[94m{line}\033[0m")  # Azul
-            else:
-                print(f"     {line}")
-        print(f"     {'─'*70}\n")
-
-    # ========================================================================
-    # FUNC-02 FASE 2: FUNCIONES AUXILIARES AST (Análisis Sintáctico Preciso)
-    # ========================================================================
-
-    def _encontrar_funcion_ast(self, codigo: str, nombre_funcion: str) -> Optional[dict]:
-        """
-        Encuentra una función usando AST y retorna información precisa.
-
-        Args:
-            codigo: Código fuente Python completo
-            nombre_funcion: Nombre de la función a buscar
-
-        Returns:
-            Dict con información de la función o None si no se encuentra
-            {
-                'node': ast.FunctionDef,
-                'lineno_start': int,  # Línea donde inicia (1-indexed)
-                'lineno_end': int,    # Línea donde termina
-                'col_offset': int,    # Columna de indentación
-                'source': str,        # Código fuente de la función
-                'params': List[str],  # Lista de parámetros
-            }
-        """
-        import ast
-
-        try:
-            tree = ast.parse(codigo)
-        except SyntaxError as e:
-            print(f"     ❌ Error de sintaxis al parsear código: {e}")
-            return None
-
-        # Buscar la función en el AST
-        for node in ast.walk(tree):
-            if isinstance(node, ast.FunctionDef) and node.name == nombre_funcion:
-                # Obtener líneas de código
-                lineas_codigo = codigo.split('\n')
-                lineno_start = node.lineno
-
-                # Encontrar línea final (buscar siguiente def/class o fin de archivo)
-                lineno_end = len(lineas_codigo)
-                for other_node in ast.walk(tree):
-                    if isinstance(other_node, (ast.FunctionDef, ast.ClassDef)):
-                        if other_node.lineno > node.lineno and other_node.lineno < lineno_end:
-                            lineno_end = other_node.lineno - 1
-
-                # Extraer código fuente de la función
-                source_lines = lineas_codigo[lineno_start - 1:lineno_end]
-                source = '\n'.join(source_lines)
-
-                # Extraer parámetros
-                params = [arg.arg for arg in node.args.args]
-
-                return {
-                    'node': node,
-                    'lineno_start': lineno_start,
-                    'lineno_end': lineno_end,
-                    'col_offset': node.col_offset,
-                    'source': source,
-                    'params': params,
-                }
-
-        return None
-
-    def _encontrar_punto_insercion_despues_validacion(self, func_info: dict, codigo: str) -> Optional[int]:
-        """
-        Encuentra el punto de inserción correcto DESPUÉS de validaciones iniciales.
-
-        Args:
-            func_info: Dict con información de la función (de _encontrar_funcion_ast)
-            codigo: Código fuente completo
-
-        Returns:
-            Número de línea (1-indexed) donde insertar código o None
-        """
-        import ast
-
-        node = func_info['node']
-        lineas = codigo.split('\n')
-
-        # Buscar después de docstring y validaciones iniciales (if not param: return)
-        # Estrategia: encontrar la primera línea de código "real" después de validaciones
-
-        # 1. Saltar docstring si existe
-        linea_inicio = node.lineno
-        if node.body and isinstance(node.body[0], ast.Expr) and isinstance(node.body[0].value, ast.Constant):
-            # Tiene docstring
-            linea_inicio = node.body[0].end_lineno + 1
-
-        # 2. Saltar validaciones tipo "if not param: return ''"
-        for stmt in node.body:
-            if isinstance(stmt, ast.If):
-                # Verificar si es validación tipo "if not x:"
-                test = stmt.test
-                if isinstance(test, ast.UnaryOp) and isinstance(test.op, ast.Not):
-                    # Es una validación negativa, saltar
-                    linea_inicio = stmt.end_lineno + 1
-                    continue
+                if columna_bd:
+                    # Existe columna pero no mapea correctamente
+                    problemas_detectados.append({
+                        'tipo': 'MAPEO_FALTANTE',
+                        'biomarcador': nombre,
+                        'columna_bd': columna_bd
+                    })
                 else:
-                    # Es un if "real", insertar ANTES de este
-                    return stmt.lineno
-            elif isinstance(stmt, (ast.Assign, ast.Expr, ast.For, ast.While)):
-                # Primera línea de código real
-                return stmt.lineno
+                    # No existe columna en BD
+                    problemas_detectados.append({
+                        'tipo': 'BIOMARCADOR_NO_EXISTE',
+                        'biomarcador': nombre,
+                        'columna_bd': None
+                    })
 
-        # Si no encontramos nada, insertar al final del cuerpo
-        return func_info['lineno_end']
+        if not problemas_detectados:
+            print("ℹ️  No se detectaron problemas de biomarcadores corregibles automáticamente")
+            print("⚠️  Score < 100% puede deberse a otros campos (diagnóstico, descripciones, etc.)\n")
+            return
 
-    def _insertar_codigo_en_funcion(self, codigo: str, nombre_funcion: str, codigo_nuevo: str,
-                                     posicion: str = 'despues_validacion') -> str:
-        """
-        Inserta código en una función de forma precisa usando AST.
-
-        Args:
-            codigo: Código fuente completo
-            nombre_funcion: Nombre de la función donde insertar
-            codigo_nuevo: Código a insertar (sin indentación, se ajusta automáticamente)
-            posicion: 'despues_validacion', 'inicio_funcion', 'fin_funcion'
-
-        Returns:
-            Código modificado con inserción precisa
-        """
-        func_info = self._encontrar_funcion_ast(codigo, nombre_funcion)
-        if not func_info:
-            print(f"     ❌ No se encontró función: {nombre_funcion}")
-            return codigo
-
-        lineas = codigo.split('\n')
-
-        # Determinar punto de inserción
-        if posicion == 'despues_validacion':
-            linea_insercion = self._encontrar_punto_insercion_despues_validacion(func_info, codigo)
-        elif posicion == 'inicio_funcion':
-            # Después de docstring
-            if func_info['node'].body and isinstance(func_info['node'].body[0], ast.Expr):
-                linea_insercion = func_info['node'].body[0].end_lineno + 1
+        print(f"✅ Detectados {len(problemas_detectados)} problemas corregibles:\n")
+        for p in problemas_detectados:
+            if p['tipo'] == 'BIOMARCADOR_NO_EXISTE':
+                print(f"   • {p['biomarcador']}: NO existe en BD → Ejecutar FUNC-03")
             else:
-                linea_insercion = func_info['lineno_start'] + 1
-        elif posicion == 'fin_funcion':
-            linea_insercion = func_info['lineno_end']
-        else:
-            linea_insercion = func_info['lineno_start'] + 1
+                print(f"   • {p['biomarcador']}: Existe en {p['columna_bd']} pero no mapea → Ejecutar FUNC-08")
 
-        # Determinar indentación base de la función
-        indentacion_base = ' ' * (func_info['col_offset'] + 4)  # +4 para contenido de función
+        # Aplicar correcciones automáticamente
+        print(f"\n{'─'*100}")
+        print("🔧 APLICANDO CORRECCIONES AUTOMÁTICAS...\n")
 
-        # Agregar indentación a cada línea del código nuevo
-        lineas_nuevas = []
-        for linea in codigo_nuevo.strip().split('\n'):
-            if linea.strip():  # Si no es línea vacía
-                lineas_nuevas.append(indentacion_base + linea)
-            else:
-                lineas_nuevas.append('')
+        for problema in problemas_detectados:
+            try:
+                if problema['tipo'] == 'BIOMARCADOR_NO_EXISTE':
+                    # Ejecutar FUNC-03
+                    print(f"📌 Agregando '{problema['biomarcador']}' al sistema (FUNC-03)...")
+                    resultado_func03 = self.agregar_biomarcador(problema['biomarcador'])
 
-        # Insertar código
-        lineas.insert(linea_insercion - 1, '\n'.join(lineas_nuevas))
+                    if resultado_func03.get('estado') in ['EXITOSO', 'COMPLETADO_CON_ADVERTENCIAS']:
+                        print(f"✅ '{problema['biomarcador']}' agregado exitosamente\n")
+                        correcciones_aplicadas.append({
+                            'biomarcador': problema['biomarcador'],
+                            'funcion': 'FUNC-03',
+                            'estado': 'EXITOSO'
+                        })
+                    else:
+                        print(f"⚠️ '{problema['biomarcador']}' agregado con advertencias\n")
 
-        return '\n'.join(lineas)
-
-    def _encontrar_linea_por_patron(self, codigo: str, patron: str, func_info: dict = None) -> Optional[int]:
-        """
-        Encuentra número de línea que coincide con un patrón (comentario, código, etc.).
-
-        Args:
-            codigo: Código fuente completo
-            patron: Patrón a buscar (string literal o regex)
-            func_info: Opcional, información de función para buscar solo dentro de ella
-
-        Returns:
-            Número de línea (1-indexed) o None si no se encuentra
-        """
-        import re
-
-        lineas = codigo.split('\n')
-
-        # Determinar rango de búsqueda
-        if func_info:
-            linea_inicio = func_info['lineno_start'] - 1
-            linea_fin = func_info['lineno_end']
-        else:
-            linea_inicio = 0
-            linea_fin = len(lineas)
-
-        # Buscar patrón
-        for i in range(linea_inicio, linea_fin):
-            if patron in lineas[i]:
-                return i + 1  # Retornar 1-indexed
-
-        return None
-
-    def _aplicar_correcciones_extractores(self, resultado: Dict, numero_caso: str, auto_aprobar: bool = False) -> bool:
-        """
-        Aplica correcciones MODIFICANDO CÓDIGO de extractores (no BD).
-
-        Proceso:
-        1. Analiza errores detectados por FUNC-01
-        2. Identifica archivo/función/línea a modificar
-        3. Virtualiza corrección (simula cambio en memoria)
-        4. Muestra DIFF para aprobación
-        5. Aplica cambio + backup si aprobado
-        6. Valida sintaxis, rollback si falla
-
-        Args:
-            resultado: Resultado de FUNC-01 con errores detectados
-            numero_caso: Número de caso IHQ para logs
-            auto_aprobar: Si True, aplica sin confirmación
-
-        Returns:
-            True si se aplicaron correcciones, False si no
-        """
-        auditoria_bd = resultado.get('auditoria_bd', {})
-        errores = auditoria_bd.get('errores', [])
-
-        if not errores:
-            print(f"     ℹ️  No hay errores que requieran corrección de código")
-            return False
-
-        print(f"\n{'='*80}")
-        print(f"🔧 FUNC-02: Corrección Automática de Extractores")
-        print(f"{'='*80}")
-        print(f"Caso: {numero_caso}")
-        print(f"Errores detectados: {len(errores)}")
-        print(f"Modo: {'AUTO-APROBAR' if auto_aprobar else 'INTERACTIVO'}")
-
-        correcciones_aplicadas = 0
-
-        # ================================================================
-        # ERROR 1: DIAGNOSTICO_COLORACION vacío o incorrecto
-        # ================================================================
-        diag_coloracion = auditoria_bd.get('diagnostico_coloracion', {})
-        if diag_coloracion.get('estado') == 'ERROR':
-            valor_bd = diag_coloracion.get('valor_bd', '')
-            valor_ocr = diag_coloracion.get('valor_ocr', '')
-
-            print(f"\n{'─'*80}")
-            print(f"🔍 ERROR 1: DIAGNOSTICO_COLORACION incorrecto")
-            print(f"   • BD dice: '{valor_bd}'")
-            print(f"   • OCR dice: '{valor_ocr}'")
-
-            # Identificar causa raíz
-            if 'APARENTE COMPROMISO' in valor_ocr.upper() or 'METASTÁSICA' in valor_ocr.upper():
-                print(f"   • Causa: Extractor no detecta material extrainstitucional")
-                print(f"   • Archivo: core/extractors/medical_extractor.py")
-                print(f"   • Función: extract_diagnostico_coloracion()")
-
-                archivo_extractor = self.project_root / "core" / "extractors" / "medical_extractor.py"
-
-                # Leer código actual
-                with open(archivo_extractor, 'r', encoding='utf-8') as f:
-                    codigo_actual = f.read()
-
-                # VIRTUALIZAR CORRECCIÓN usando AST (FUNC-02 Fase 2)
-                # Obtener información de la función
-                func_info = self._encontrar_funcion_ast(codigo_actual, 'extract_diagnostico_coloracion')
-
-                if func_info:
-                    # Obtener nombre del parámetro (text, diagnostico_completo, etc.)
-                    param_texto = func_info['params'][0] if func_info['params'] else 'text'
-
-                    # Código a insertar (sin indentación, se ajusta automáticamente)
-                    codigo_nuevo = f"""# FUNC-02: Patrón para material extrainstitucional (IHQ250982)
-patron_material_externo = r'APARENTE\\s+COMPROMISO.*?(?:NEOPLASIA|METASTÁSICA|MALIGNA)'
-match_material = re.search(patron_material_externo, {param_texto}, re.IGNORECASE | re.DOTALL)
-if match_material:
-    return match_material.group(0).strip()
-"""
-
-                    # Insertar código DESPUÉS de validaciones (posición precisa con AST)
-                    codigo_modificado = self._insertar_codigo_en_funcion(
-                        codigo_actual,
-                        'extract_diagnostico_coloracion',
-                        codigo_nuevo,
-                        posicion='despues_validacion'
+                elif problema['tipo'] == 'MAPEO_FALTANTE':
+                    # Ejecutar FUNC-08
+                    print(f"📌 Corrigiendo mapeo de '{problema['biomarcador']}' (FUNC-08)...")
+                    resultado_func08 = self.corregir_mapeo_validation_checker(
+                        numero_caso,
+                        problema['biomarcador'],
+                        problema['columna_bd']
                     )
 
-                    # Mostrar DIFF
-                    self._mostrar_diff_codigo(codigo_actual, codigo_modificado, contexto_lineas=3)
-
-                    # Confirmar aplicación
-                    aplicar = auto_aprobar
-                    if not auto_aprobar:
-                        respuesta = input("     ¿Aplicar esta corrección? [s/n]: ").strip().lower()
-                        aplicar = respuesta == 's'
-
-                    if aplicar:
-                        # Crear backup
-                        backup_path = self._crear_backup_codigo(archivo_extractor)
-
-                        # Aplicar cambio
-                        with open(archivo_extractor, 'w', encoding='utf-8') as f:
-                            f.write(codigo_modificado)
-
-                        print(f"     ✅ Código modificado: {archivo_extractor.name}")
-
-                        # Validar sintaxis
-                        if self._validar_sintaxis_python(archivo_extractor):
-                            print(f"     ✅ Sintaxis válida")
-                            correcciones_aplicadas += 1
-                        else:
-                            print(f"     ❌ Sintaxis inválida - ROLLBACK")
-                            self._restaurar_backup(backup_path, archivo_extractor)
-                            return False
+                    if resultado_func08.get('estado') == 'EXITOSO':
+                        print(f"✅ Mapeo de '{problema['biomarcador']}' corregido\n")
+                        correcciones_aplicadas.append({
+                            'biomarcador': problema['biomarcador'],
+                            'funcion': 'FUNC-08',
+                            'estado': 'EXITOSO'
+                        })
                     else:
-                        print(f"     ⏭️  Corrección omitida por usuario")
-                else:
-                    print(f"     ❌ No se pudo analizar función con AST")
+                        print(f"⚠️ Mapeo con estado: {resultado_func08.get('estado')}\n")
 
-        # ================================================================
-        # ERROR 2: FACTOR_PRONOSTICO contaminado con biomarcadores de tipificación
-        # ================================================================
-        factor_pronostico = auditoria_bd.get('factor_pronostico', {})
-        if factor_pronostico.get('estado') == 'ERROR':
-            valor_bd = factor_pronostico.get('valor_bd', '')
+            except Exception as e:
+                print(f"❌ Error corrigiendo '{problema['biomarcador']}': {str(e)}\n")
 
-            print(f"\n{'─'*80}")
-            print(f"🔍 ERROR 2: FACTOR_PRONOSTICO contaminado")
-            print(f"   • BD dice: '{valor_bd}'")
-            print(f"   • Contiene biomarcadores de tipificación (CK, CKAE1E3, CAM 5.2)")
+        # Resumen y ejecución automática de FUNC-06
+        if correcciones_aplicadas:
+            print(f"{'─'*100}")
+            print(f"✅ CORRECCIONES COMPLETADAS: {len(correcciones_aplicadas)}/{len(problemas_detectados)}\n")
 
-            # Lista de biomarcadores de tipificación conocidos
-            biomarcadores_tipificacion = ['CKAE1E3', 'CK7', 'CAM 5.2', 'CAM5.2', 'CK AE1/AE3']
+            # EJECUTAR FUNC-06 AUTOMÁTICAMENTE
+            print("🔄 EJECUTANDO FUNC-06 AUTOMÁTICAMENTE...")
+            print(f"   Reprocesando caso {numero_caso} con las correcciones aplicadas...\n")
 
-            print(f"   • Causa: extract_factor_pronostico() no filtra tipificación")
-            print(f"   • Archivo: core/extractors/medical_extractor.py")
-            print(f"   • Función: extract_factor_pronostico()")
+            try:
+                # Guardar score anterior
+                score_anterior = resultado.get('metricas', {}).get('score_final', 0)
 
-            archivo_extractor = self.project_root / "core" / "extractors" / "medical_extractor.py"
+                # Ejecutar FUNC-06
+                resultado_func06 = self.reprocesar_caso_completo(numero_caso)
 
-            # Leer código actual
-            with open(archivo_extractor, 'r', encoding='utf-8') as f:
-                codigo_actual = f.read()
+                if resultado_func06.get('estado') == 'EXITOSO':
+                    print(f"\n{'─'*100}")
+                    print("✅ REPROCESAMIENTO COMPLETADO\n")
 
-            # VIRTUALIZAR CORRECCIÓN usando AST (FUNC-02 Fase 2)
-            func_info = self._encontrar_funcion_ast(codigo_actual, 'extract_factor_pronostico')
+                    # Auditar nuevamente para obtener el nuevo score
+                    print("🔍 Auditando caso reprocesado para validar mejora...\n")
+                    resultado_validacion = self.auditar_caso_inteligente(numero_caso, json_export=False, auto_corregir=False)
+                    score_nuevo = resultado_validacion.get('metricas', {}).get('score_final', 0)
+                    mejora = score_nuevo - score_anterior
 
-            if func_info:
-                # PASO 1: Agregar lista negra al inicio (después de validaciones)
-                codigo_lista_negra = """# FUNC-02: Lista negra de biomarcadores de tipificación (NO son factores pronósticos)
-biomarcadores_tipificacion = [
-    'CKAE1E3', 'CK AE1/AE3', 'CKAE1/AE3',
-    'CK7', 'CK 7',
-    'CAM 5.2', 'CAM5.2', 'CAM 5 2',
-    'CK20', 'CK 20',
-    'VIMENTINA', 'ACTINA'
-]
-"""
+                    # Actualizar el resultado original con el nuevo score
+                    resultado['metricas']['score_final'] = score_nuevo
 
-                codigo_modificado = self._insertar_codigo_en_funcion(
-                    codigo_actual,
-                    'extract_factor_pronostico',
-                    codigo_lista_negra,
-                    posicion='despues_validacion'
-                )
-
-                # PASO 2: Buscar punto de inserción del filtro (comentario específico)
-                # Actualizar func_info con código modificado
-                func_info_actualizada = self._encontrar_funcion_ast(codigo_modificado, 'extract_factor_pronostico')
-                linea_filtro = self._encontrar_linea_por_patron(
-                    codigo_modificado,
-                    '# Si NO hay estructurados pero SÍ hay narrativos',
-                    func_info_actualizada
-                )
-
-                if linea_filtro:
-                    # Buscar dentro del bloque "if listas_encontradas:"
-                    # Insertar filtro justo después de la línea "if listas_encontradas:"
-                    lineas = codigo_modificado.split('\n')
-
-                    # Buscar "if listas_encontradas:" después del comentario
-                    for i in range(linea_filtro, min(linea_filtro + 5, len(lineas))):
-                        if 'if listas_encontradas:' in lineas[i]:
-                            # Insertar código de filtrado justo después
-                            indentacion = ' ' * (len(lineas[i]) - len(lineas[i].lstrip()) + 4)
-
-                            codigo_filtro = f"""{indentacion}# FUNC-02: Filtrar biomarcadores de tipificación de listas narrativas
-{indentacion}listas_filtradas = []
-{indentacion}for lista in listas_encontradas:
-{indentacion}    contiene_tipificacion = False
-{indentacion}    for bio_tip in biomarcadores_tipificacion:
-{indentacion}        if bio_tip.upper() in lista.upper():
-{indentacion}            contiene_tipificacion = True
-{indentacion}            break
-{indentacion}    if not contiene_tipificacion:
-{indentacion}        listas_filtradas.append(lista)
-{indentacion}
-{indentacion}# Si después de filtrar no quedan listas, retornar "NO APLICA"
-{indentacion}if not listas_filtradas:
-{indentacion}    return "NO APLICA"
-{indentacion}
-{indentacion}# Actualizar listas_encontradas con las filtradas
-{indentacion}listas_encontradas = listas_filtradas
-"""
-
-                            lineas.insert(i + 1, codigo_filtro)
-                            codigo_modificado = '\n'.join(lineas)
-                            break
-
-                # Mostrar DIFF
-                self._mostrar_diff_codigo(codigo_actual, codigo_modificado, contexto_lineas=3)
-
-                # Confirmar aplicación
-                aplicar = auto_aprobar
-                if not auto_aprobar:
-                    respuesta = input("     ¿Aplicar esta corrección? [s/n]: ").strip().lower()
-                    aplicar = respuesta == 's'
-
-                if aplicar:
-                    # Crear backup
-                    backup_path = self._crear_backup_codigo(archivo_extractor)
-
-                    # Aplicar cambio
-                    with open(archivo_extractor, 'w', encoding='utf-8') as f:
-                        f.write(codigo_modificado)
-
-                    print(f"     ✅ Código modificado: {archivo_extractor.name}")
-
-                    # Validar sintaxis
-                    if self._validar_sintaxis_python(archivo_extractor):
-                        print(f"     ✅ Sintaxis válida")
-                        correcciones_aplicadas += 1
+                    print(f"{'─'*100}")
+                    print("📊 COMPARACIÓN ANTES/DESPUÉS:\n")
+                    print(f"   Score ANTERIOR: {score_anterior}%")
+                    print(f"   Score NUEVO:    {score_nuevo}%")
+                    if mejora > 0:
+                        print(f"   Mejora:         +{mejora}% ✅")
+                    elif mejora < 0:
+                        print(f"   Regresión:      {mejora}% ⚠️")
                     else:
-                        print(f"     ❌ Sintaxis inválida - ROLLBACK")
-                        self._restaurar_backup(backup_path, archivo_extractor)
-                        return False
+                        print(f"   Sin cambios:    {mejora}%")
+
+                    if score_nuevo == 100.0:
+                        print(f"\n🎉 ¡CASO CORREGIDO COMPLETAMENTE! Score: 100% ✅\n")
+                    elif mejora > 0:
+                        print(f"\n✅ Caso mejorado. Puede requerir correcciones adicionales.\n")
+                    else:
+                        print(f"\n⚠️ Sin mejora. Los cambios no afectaron el score.\n")
+
                 else:
-                    print(f"     ⏭️  Corrección omitida por usuario")
-            else:
-                print(f"     ❌ No se pudo analizar función con AST")
+                    print(f"\n⚠️ FUNC-06 completado con estado: {resultado_func06.get('estado')}")
+                    print(f"   Puede requerir intervención manual.\n")
 
-        # Resumen
-        print(f"\n{'='*80}")
-        print(f"✅ Correcciones aplicadas en extractores: {correcciones_aplicadas}")
-        print(f"{'='*80}\n")
+            except Exception as e:
+                print(f"\n❌ Error ejecutando FUNC-06: {str(e)}")
+                print(f"   Ejecutar manualmente: python herramientas_ia/auditor_sistema.py {numero_caso} --func-06\n")
 
-        return correcciones_aplicadas > 0
-
-    # ========================================================================
-    # FUNC-02: REPROCESAMIENTO DE CASOS
-    # ========================================================================
+            print(f"{'='*100}\n")
 
     def _buscar_pdf_por_numero(self, numero_caso: str) -> Optional[Path]:
         """
@@ -3089,6 +3566,9 @@ biomarcadores_tipificacion = [
             'CK20': ['CITOQUERATINA 20', 'CYTOKERATIN 20', 'CK 20', 'CK-20'],
             'LAMBDA': ['CADENA LIGERA LAMBDA', 'L-LAMBDA', 'LAMBDA LIGHT CHAIN'],
             'KAPPA': ['CADENA LIGERA KAPPA', 'K-KAPPA', 'KAPPA LIGHT CHAIN'],
+            # V6.4.0: Biomarcadores para estudios de médula ósea/hematológicos (IHQ250012)
+            'MPO': ['MIELOPEROXIDASA', 'MYELOPEROXIDASE'],
+            'CICLINA_D1': ['CICLINA D1', 'CICLYNA-D1', 'CICLYNA D1', 'CYCLIN D1', 'CYCLIN-D1', 'CYCLINA', 'CYCLINA D1', 'CCND1'],
             'MSH2': ['MSH 2', 'MSH-2'],
             'MSH6': ['MSH 6', 'MSH-6'],
             'MLH1': ['MLH 1', 'MLH-1'],
@@ -3803,6 +4283,266 @@ biomarcadores_tipificacion = [
         return resultado
 
     # ============================================================================
+    # FUNC-05B: Análisis de Casos Problemáticos (Mejora de FUNC-05)
+    # ============================================================================
+
+    def analizar_casos_problematicos(self, tipo: str = 'ambos', generar_reporte: bool = True, limite: int = None) -> Dict[str, Any]:
+        """
+        FUNC-05B: Análisis masivo de casos problemáticos con TODO-LIST consolidado.
+
+        Modos:
+        - 'incompletos': Solo casos con biomarcadores NO MAPEADO
+        - 'validacion': Solo casos con errores de validación (score < 100%)
+        - 'ambos': Ambos tipos (por defecto)
+
+        Proceso:
+        1. Lee reporte_importacion.json (para incompletos)
+        2. Analiza debug_maps de casos (para validación)
+        3. Detecta patrones comunes de error
+        4. Genera TODO-LIST consolidado con prioridades
+
+        Args:
+            tipo: 'incompletos', 'validacion', 'ambos'
+            generar_reporte: Si True, genera JSON en herramientas_ia/resultados/
+            limite: Límite de casos a analizar (None = todos)
+
+        Returns:
+            Dict con:
+            - casos_incompletos: Lista de casos con biomarcadores no mapeados
+            - casos_mal_validados: Lista de casos con errores de validación
+            - todo_list: Lista priorizada de acciones
+            - estadisticas: Resumen agregado
+        """
+        import json
+        import glob
+        from pathlib import Path
+        from datetime import datetime
+
+        print(f"\n{'='*70}")
+        print(f"📊 FUNC-05B: Análisis de Casos Problemáticos")
+        print(f"{'='*70}")
+        print(f"Modo: {tipo}")
+        if limite:
+            print(f"Límite: {limite} casos")
+        print()
+
+        resultado = {
+            'tipo_analisis': tipo,
+            'casos_incompletos': [],
+            'casos_mal_validados': [],
+            'todo_list': [],
+            'estadisticas': {
+                'total_incompletos': 0,
+                'total_mal_validados': 0,
+                'total_biomarcadores_no_mapeados': 0,
+                'total_casos_analizados': 0
+            },
+            'errores': []
+        }
+
+        base_path = Path(__file__).parent.parent
+
+        # ===== PASO 1: Analizar casos incompletos =====
+        if tipo in ['incompletos', 'ambos']:
+            print("🔍 PASO 1: Analizando casos incompletos...")
+
+            try:
+                reportes_dir = base_path / 'data' / 'reportes_importacion'
+                reportes = glob.glob(str(reportes_dir / 'reporte_importacion_*.json'))
+
+                if reportes:
+                    reporte_path = max(reportes, key=lambda x: Path(x).stat().st_mtime)
+                    print(f"   📁 Reporte: {Path(reporte_path).name}")
+
+                    with open(reporte_path, 'r', encoding='utf-8') as f:
+                        reporte_data = json.load(f)
+
+                    for item in reporte_data.get('incompletos', []):
+                        biomarcadores_no_mapeados = []
+                        for bio in item.get('biomarcadores_faltantes', []):
+                            if 'NO MAPEADO' in bio.get('razon', ''):
+                                biomarcadores_no_mapeados.append(bio.get('nombre', ''))
+
+                        if biomarcadores_no_mapeados:
+                            resultado['casos_incompletos'].append({
+                                'caso': item.get('caso', ''),
+                                'biomarcadores_no_mapeados': biomarcadores_no_mapeados,
+                                'prioridad': 'ALTA'
+                            })
+                            resultado['estadisticas']['total_biomarcadores_no_mapeados'] += len(biomarcadores_no_mapeados)
+
+                    resultado['estadisticas']['total_incompletos'] = len(resultado['casos_incompletos'])
+                    print(f"   ✅ Casos incompletos detectados: {resultado['estadisticas']['total_incompletos']}")
+                else:
+                    print(f"   ⚠️ No se encontraron reportes de importación")
+
+            except Exception as e:
+                error_msg = f"Error analizando incompletos: {str(e)}"
+                resultado['errores'].append(error_msg)
+                print(f"   ❌ {error_msg}")
+
+        # ===== PASO 2: Analizar casos con problemas de validación =====
+        if tipo in ['validacion', 'ambos']:
+            print("\n🔍 PASO 2: Analizando errores de validación...")
+
+            try:
+                debug_maps_dir = base_path / 'data' / 'debug_maps'
+
+                if debug_maps_dir.exists():
+                    # Buscar todos los debug_maps
+                    debug_maps = list(debug_maps_dir.glob('debug_map_IHQ*.json'))
+
+                    if limite:
+                        debug_maps = debug_maps[:limite]
+
+                    print(f"   📂 Debug maps a analizar: {len(debug_maps)}")
+
+                    casos_analizados = 0
+                    for dm_path in debug_maps:
+                        try:
+                            with open(dm_path, 'r', encoding='utf-8') as f:
+                                dm = json.load(f)
+
+                            # Extraer número de caso del debug_map
+                            caso = dm.get('caso', '')
+                            if not caso:
+                                continue
+
+                            campos_criticos = dm.get('base_datos', {}).get('campos_criticos', {})
+                            problemas = []
+
+                            # VALIDACIÓN 1: DIAGNOSTICO_PRINCIPAL contaminado
+                            diag_principal = campos_criticos.get('DIAGNOSTICO_PRINCIPAL', '')
+                            keywords_prohibidos = ['ESTUDIO DE INMUNOHISTOQUIMICA', 'MARCACION', 'BASICA']
+                            if any(kw in diag_principal.upper() for kw in keywords_prohibidos):
+                                problemas.append({
+                                    'tipo': 'CONTAMINACION_DIAGNOSTICO',
+                                    'campo': 'DIAGNOSTICO_PRINCIPAL',
+                                    'prioridad': 'CRITICA'
+                                })
+
+                            # VALIDACIÓN 2: IHQ_ORGANO vacío o inválido
+                            ihq_organo = campos_criticos.get('IHQ_ORGANO', '')
+                            if not ihq_organo or len(ihq_organo) > 100:
+                                problemas.append({
+                                    'tipo': 'ORGANO_INVALIDO',
+                                    'campo': 'IHQ_ORGANO',
+                                    'prioridad': 'ALTA'
+                                })
+
+                            # VALIDACIÓN 3: FACTOR_PRONOSTICO contaminado
+                            factor = campos_criticos.get('FACTOR_PRONOSTICO', '')
+                            biomarcadores_tipificacion = ['CKAE1E3', 'CK7', 'CAM 5.2']
+                            if any(bio in factor.upper() for bio in biomarcadores_tipificacion):
+                                problemas.append({
+                                    'tipo': 'CONTAMINACION_FACTOR',
+                                    'campo': 'FACTOR_PRONOSTICO',
+                                    'prioridad': 'ALTA'
+                                })
+
+                            if problemas:
+                                resultado['casos_mal_validados'].append({
+                                    'caso': caso,
+                                    'problemas': problemas,
+                                    'prioridad': max(p['prioridad'] for p in problemas)
+                                })
+
+                            casos_analizados += 1
+
+                        except Exception as e:
+                            continue
+
+                    resultado['estadisticas']['total_mal_validados'] = len(resultado['casos_mal_validados'])
+                    resultado['estadisticas']['total_casos_analizados'] = casos_analizados
+                    print(f"   ✅ Casos con errores: {resultado['estadisticas']['total_mal_validados']}")
+                else:
+                    print(f"   ⚠️ No existe carpeta debug_maps")
+
+            except Exception as e:
+                error_msg = f"Error analizando validación: {str(e)}"
+                resultado['errores'].append(error_msg)
+                print(f"   ❌ {error_msg}")
+
+        # ===== PASO 3: Generar TODO-LIST consolidado =====
+        print("\n📋 PASO 3: Generando TODO-LIST...")
+
+        # Agregar casos incompletos al TODO
+        for caso_item in resultado['casos_incompletos']:
+            resultado['todo_list'].append({
+                'caso': caso_item['caso'],
+                'tipo_problema': 'BIOMARCADORES_NO_MAPEADOS',
+                'detalles': ', '.join(caso_item['biomarcadores_no_mapeados']),
+                'prioridad': 'ALTA',
+                'accion_sugerida': 'FUNC-03: Agregar biomarcadores al sistema'
+            })
+
+        # Agregar casos mal validados al TODO
+        for caso_item in resultado['casos_mal_validados']:
+            for problema in caso_item['problemas']:
+                resultado['todo_list'].append({
+                    'caso': caso_item['caso'],
+                    'tipo_problema': problema['tipo'],
+                    'detalles': f"Campo {problema['campo']} tiene problemas",
+                    'prioridad': problema['prioridad'],
+                    'accion_sugerida': self._generar_accion_para_problema(problema['tipo'])
+                })
+
+        # Ordenar por prioridad
+        prioridad_orden = {'CRITICA': 0, 'ALTA': 1, 'MEDIA': 2, 'BAJA': 3}
+        resultado['todo_list'].sort(key=lambda x: prioridad_orden.get(x['prioridad'], 999))
+
+        print(f"   ✅ TODO-LIST generado: {len(resultado['todo_list'])} acciones")
+
+        # ===== PASO 4: Generar reporte JSON =====
+        if generar_reporte:
+            try:
+                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                reportes_dir = base_path / 'herramientas_ia' / 'resultados'
+                reportes_dir.mkdir(parents=True, exist_ok=True)
+
+                reporte_path = reportes_dir / f'FUNC-05B_analisis_{timestamp}.json'
+
+                with open(reporte_path, 'w', encoding='utf-8') as f:
+                    json.dump(resultado, f, indent=2, ensure_ascii=False)
+
+                print(f"\n📁 Reporte guardado: {reporte_path.name}")
+            except Exception as e:
+                print(f"\n⚠️ No se pudo guardar reporte: {str(e)}")
+
+        # ===== RESUMEN FINAL =====
+        print(f"\n{'='*70}")
+        print(f"✅ ANÁLISIS COMPLETADO")
+        print(f"{'='*70}")
+        print(f"Casos incompletos: {resultado['estadisticas']['total_incompletos']}")
+        print(f"Casos con errores validación: {resultado['estadisticas']['total_mal_validados']}")
+        print(f"Total acciones en TODO-LIST: {len(resultado['todo_list'])}")
+
+        if resultado['todo_list']:
+            print(f"\n🔝 TOP 5 PROBLEMAS:")
+            for i, item in enumerate(resultado['todo_list'][:5], 1):
+                print(f"{i}. {item['caso']}: {item['tipo_problema']} → {item['accion_sugerida']}")
+
+        return resultado
+
+    def _generar_accion_para_problema(self, tipo_problema: str) -> str:
+        """
+        Helper para generar acción sugerida según tipo de problema.
+
+        Args:
+            tipo_problema: Tipo de problema detectado
+
+        Returns:
+            Acción sugerida como string
+        """
+        acciones = {
+            'CONTAMINACION_DIAGNOSTICO': 'FUNC-06: Reprocesar con extractores corregidos',
+            'ORGANO_INVALIDO': 'FUNC-06: Reprocesar caso',
+            'CONTAMINACION_FACTOR': 'FUNC-06: Reprocesar caso',
+            'NO_MAPEADO': 'FUNC-03: Agregar biomarcador al sistema'
+        }
+        return acciones.get(tipo_problema, 'Revisión manual requerida')
+
+    # ============================================================================
     # FUNC-06: Reprocesar Caso con Limpieza Automática
     # ============================================================================
 
@@ -4215,27 +4955,583 @@ Error técnico: {str(e)}
 
         return resultado
 
+    # ============================================================================
+    # FUNC-08: Corrección Automática validation_checker.py cuando Caso Incompleto por Mapeo
+    # ============================================================================
 
+    def corregir_mapeo_validation_checker(self, numero_caso: str, biomarcador_ocr: str, columna_bd: str) -> Dict[str, Any]:
+        """
+        FUNC-08: Corrige automáticamente validation_checker.py cuando un caso está incompleto
+        por falta de mapeo (no por falta de extracción).
+
+        Detecta que:
+        - El biomarcador está en IHQ_ESTUDIOS_SOLICITADOS con una variante (ej: "CAM 5")
+        - El dato está extraído correctamente en BD (ej: IHQ_CAM5 = "POSITIVO")
+        - Pero validation_checker.py no tiene el alias mapeado
+        - → Genera aliases comunes y actualiza validation_checker.py
+
+        Args:
+            numero_caso: Número IHQ (ej: 'IHQ250185')
+            biomarcador_ocr: Nombre como aparece en OCR (ej: 'CAM 5')
+            columna_bd: Columna BD donde se guardó (ej: 'IHQ_CAM5')
+
+        Returns:
+            Dict con:
+            - biomarcador_ocr: Nombre en OCR
+            - columna_bd: Columna en BD
+            - alias_generados: Lista de aliases agregados
+            - archivo_modificado: Path de validation_checker.py
+            - version_anterior: Versión antes de modificar
+            - version_nueva: Nueva versión
+            - completitud_antes: % completitud antes
+            - completitud_despues: % completitud después
+            - estado: EXITOSO / ERROR
+
+        Ejemplo:
+            auditor = AuditorSistema()
+            resultado = auditor.corregir_mapeo_validation_checker('IHQ250185', 'CAM 5', 'IHQ_CAM5')
+        """
+        from pathlib import Path
+        import re
+        from datetime import datetime
+
+        print(f"\n{'='*70}")
+        print(f"🔧 FUNC-08: Corrección Automática validation_checker.py")
+        print(f"{'='*70}")
+        print(f"Caso: {numero_caso}")
+        print(f"Biomarcador OCR: '{biomarcador_ocr}'")
+        print(f"Columna BD: {columna_bd}\n")
+
+        resultado = {
+            'caso': numero_caso,
+            'biomarcador_ocr': biomarcador_ocr,
+            'columna_bd': columna_bd,
+            'alias_generados': [],
+            'archivo_modificado': None,
+            'version_anterior': None,
+            'version_nueva': None,
+            'completitud_antes': 0,
+            'completitud_despues': 0,
+            'estado': 'PENDIENTE',
+            'errores': []
+        }
+
+        # ===== PASO 1: Validar completitud ANTES =====
+        print("📊 PASO 1: Validando completitud ANTES...")
+        try:
+            auditoria_antes = self.auditar_caso_inteligente(numero_caso, json_export=False)
+            resultado['completitud_antes'] = auditoria_antes.get('metricas', {}).get('score_final', 0)
+            print(f"   ✅ Completitud ANTES: {resultado['completitud_antes']}%")
+        except Exception as e:
+            print(f"   ⚠️ No se pudo auditar antes: {str(e)}")
+            resultado['completitud_antes'] = 0
+
+        # ===== PASO 2: Generar aliases comunes =====
+        print(f"\n🔍 PASO 2: Generando aliases para '{biomarcador_ocr}'...")
+
+        alias_generados = self._generar_alias_para_mapeo(biomarcador_ocr, columna_bd)
+        resultado['alias_generados'] = alias_generados
+
+        if not alias_generados:
+            error_msg = f"No se pudieron generar aliases para '{biomarcador_ocr}'"
+            resultado['errores'].append(error_msg)
+            resultado['estado'] = 'ERROR_GENERACION_ALIAS'
+            print(f"   ❌ {error_msg}")
+            return resultado
+
+        print(f"   ✅ Aliases generados:")
+        for alias in alias_generados:
+            print(f"      - '{alias}' → '{columna_bd}'")
+
+        # ===== PASO 3: Actualizar validation_checker.py =====
+        print(f"\n📝 PASO 3: Actualizando validation_checker.py...")
+
+        try:
+            base_path = Path(__file__).parent.parent
+            archivo_path = base_path / 'core' / 'validation_checker.py'
+
+            # Leer archivo completo
+            with open(archivo_path, 'r', encoding='utf-8') as f:
+                contenido = f.read()
+
+            # Extraer versión actual
+            match_version = re.search(r'Versión:\s*(\d+\.\d+\.\d+)', contenido)
+            version_anterior = match_version.group(1) if match_version else "1.0.0"
+            resultado['version_anterior'] = version_anterior
+
+            # Calcular nueva versión (incrementar último dígito)
+            partes = version_anterior.split('.')
+            partes[-1] = str(int(partes[-1]) + 1)
+            version_nueva = '.'.join(partes)
+            resultado['version_nueva'] = version_nueva
+
+            print(f"   📌 Versión actual: {version_anterior}")
+            print(f"   🆕 Nueva versión: {version_nueva}")
+
+            # Buscar MAPEO_BIOMARCADORES y agregar aliases
+            # Buscar la entrada base del biomarcador (sin espacio/punto)
+            biomarcador_base = columna_bd.replace('IHQ_', '')
+            patron_base = rf"('{biomarcador_base}':\s*'{columna_bd}',)"
+
+            # Construir las nuevas líneas de aliases
+            fecha_hoy = datetime.now().strftime('%Y-%m-%d')
+            nuevas_lineas = []
+            for alias in alias_generados:
+                if alias != biomarcador_base:  # No duplicar el alias base
+                    nuevas_lineas.append(f"    '{alias}': '{columna_bd}',  # V{version_nueva}: FIX {numero_caso} - Variante ortográfica")
+
+            if not nuevas_lineas:
+                error_msg = "No hay aliases nuevos para agregar (ya existen)"
+                resultado['errores'].append(error_msg)
+                print(f"   ⚠️ {error_msg}")
+                resultado['estado'] = 'ALIAS_YA_EXISTEN'
+                return resultado
+
+            # Insertar después de la línea base
+            mapeo_nuevo = '\n'.join(nuevas_lineas)
+            nuevo_contenido = re.sub(
+                patron_base,
+                rf'\1\n{mapeo_nuevo}',
+                contenido,
+                count=1
+            )
+
+            if nuevo_contenido == contenido:
+                error_msg = f"No se encontró patrón base '{biomarcador_base}' en MAPEO_BIOMARCADORES"
+                resultado['errores'].append(error_msg)
+                print(f"   ❌ {error_msg}")
+                resultado['estado'] = 'ERROR_PATRON_NO_ENCONTRADO'
+                return resultado
+
+            # Actualizar versión en header
+            nuevo_contenido = re.sub(
+                r'Versión:\s*\d+\.\d+\.\d+',
+                f'Versión: {version_nueva}',
+                nuevo_contenido
+            )
+
+            # Actualizar CHANGELOG en header (agregar nueva entrada al principio)
+            changelog_entry = f"""
+CHANGELOG v{version_nueva} ({datetime.now().strftime('%-d %B %Y').replace('January', 'enero').replace('February', 'febrero').replace('March', 'marzo').replace('April', 'abril').replace('May', 'mayo').replace('June', 'junio').replace('July', 'julio').replace('August', 'agosto').replace('September', 'septiembre').replace('October', 'octubre').replace('November', 'noviembre').replace('December', 'diciembre')}):
+- ✅ FIX {numero_caso}: Agregados aliases {', '.join([f"'{a}'" for a in alias_generados if a != biomarcador_base])} → '{columna_bd}'
+- 📊 Problema: Estudios solicitados con "{biomarcador_ocr}" no se mapeaban a columna {columna_bd}
+- 🎯 Solución: Agregadas variantes ortográficas de {biomarcador_base} al MAPEO_BIOMARCADORES
+- 🔧 Impacto: Casos con "{biomarcador_ocr}" ahora se marcan como completos correctamente
+- 📝 Nota: Corrección automática mediante FUNC-08
+
+"""
+
+            # Buscar el primer CHANGELOG y agregar antes de él
+            patron_changelog = r'(CHANGELOG v\d+\.\d+\.\d+)'
+            nuevo_contenido = re.sub(
+                patron_changelog,
+                f'{changelog_entry}\\1',
+                nuevo_contenido,
+                count=1
+            )
+
+            # Guardar archivo modificado
+            with open(archivo_path, 'w', encoding='utf-8') as f:
+                f.write(nuevo_contenido)
+
+            resultado['archivo_modificado'] = str(archivo_path)
+            print(f"   ✅ Archivo modificado: {archivo_path.name}")
+            print(f"   ✅ Aliases agregados: {len(alias_generados) - 1}")  # -1 porque no contamos el base
+
+        except Exception as e:
+            error_msg = f"Error actualizando validation_checker.py: {str(e)}"
+            resultado['errores'].append(error_msg)
+            resultado['estado'] = 'ERROR_ACTUALIZACION_ARCHIVO'
+            print(f"   ❌ {error_msg}")
+            return resultado
+
+        # ===== PASO 4: Re-validar completitud DESPUÉS =====
+        print(f"\n🔍 PASO 4: Re-validando completitud DESPUÉS...")
+
+        try:
+            # Recargar módulo de validación para que use el nuevo mapeo
+            import importlib
+            from core import validation_checker
+            importlib.reload(validation_checker)
+
+            auditoria_despues = self.auditar_caso_inteligente(numero_caso, json_export=False)
+            resultado['completitud_despues'] = auditoria_despues.get('metricas', {}).get('score_final', 0)
+            print(f"   ✅ Completitud DESPUÉS: {resultado['completitud_despues']}%")
+
+            mejora = resultado['completitud_despues'] - resultado['completitud_antes']
+            if mejora > 0:
+                print(f"   ✅ Mejora: +{mejora}%")
+                resultado['estado'] = 'EXITOSO'
+            elif mejora == 0:
+                print(f"   ⚠️ Sin cambio en completitud (puede necesitar reprocesamiento)")
+                resultado['estado'] = 'SIN_CAMBIO'
+            else:
+                print(f"   ⚠️ Regresión: {mejora}%")
+                resultado['estado'] = 'REGRESION'
+
+        except Exception as e:
+            error_msg = f"Error en re-validación: {str(e)}"
+            resultado['errores'].append(error_msg)
+            print(f"   ❌ {error_msg}")
+            resultado['estado'] = 'ERROR_REVALIDACION'
+            return resultado
+
+        # ===== RESUMEN FINAL =====
+        print(f"\n{'='*70}")
+        print(f"✅ FUNC-08 COMPLETADA")
+        print(f"{'='*70}")
+        print(f"Caso: {numero_caso}")
+        print(f"Biomarcador: '{biomarcador_ocr}' → {columna_bd}")
+        print(f"Aliases agregados: {len(alias_generados) - 1}")
+        print(f"Archivo: validation_checker.py v{version_anterior} → v{version_nueva}")
+        print(f"\n📊 COMPARACIÓN:")
+        print(f"   Completitud ANTES:   {resultado['completitud_antes']}%")
+        print(f"   Completitud DESPUÉS: {resultado['completitud_despues']}%")
+        mejora = resultado['completitud_despues'] - resultado['completitud_antes']
+        if mejora > 0:
+            print(f"   Mejora:              +{mejora}% ✅")
+        elif mejora < 0:
+            print(f"   Regresión:           {mejora}% ⚠️")
+        else:
+            print(f"   Sin cambios:         {mejora}%")
+        print(f"{'='*70}\n")
+
+        return resultado
+
+    def _generar_alias_para_mapeo(self, biomarcador_ocr: str, columna_bd: str) -> List[str]:
+        """
+        Genera aliases comunes para un biomarcador basado en variantes ortográficas.
+
+        Args:
+            biomarcador_ocr: Nombre como aparece en OCR (ej: 'CAM 5', 'Ki 67')
+            columna_bd: Columna BD (ej: 'IHQ_CAM5', 'IHQ_KI67')
+
+        Returns:
+            Lista de aliases comunes:
+            - Sin espacios: 'CAM5'
+            - Con espacios: 'CAM 5'
+            - Con puntos: 'CAM5.2', 'CAM 5.2'
+            - Con guiones: 'CAM-5', 'Ki-67'
+            - Variantes ortográficas comunes
+
+        Ejemplo:
+            _generar_alias_para_mapeo('CAM 5', 'IHQ_CAM5')
+            → ['CAM5', 'CAM 5', 'CAM5.2', 'CAM 5.2', 'CAM-5']
+        """
+        import re
+
+        alias = []
+
+        # Extraer nombre base de columna BD (sin IHQ_)
+        biomarcador_base = columna_bd.replace('IHQ_', '')
+
+        # Agregar el biomarcador base (sin modificaciones)
+        alias.append(biomarcador_base)
+
+        # Agregar el biomarcador OCR tal cual
+        if biomarcador_ocr.upper() not in [a.upper() for a in alias]:
+            alias.append(biomarcador_ocr.upper())
+
+        # Generar variantes ortográficas
+        biomarcador_limpio = re.sub(r'[^A-Z0-9]', '', biomarcador_base.upper())
+
+        # 1. Con espacios (si tiene números)
+        match_numero = re.search(r'([A-Z]+)(\d+)', biomarcador_limpio)
+        if match_numero:
+            letras = match_numero.group(1)
+            numeros = match_numero.group(2)
+
+            # Con espacio
+            variante_espacio = f"{letras} {numeros}"
+            if variante_espacio.upper() not in [a.upper() for a in alias]:
+                alias.append(variante_espacio)
+
+            # Con guion
+            variante_guion = f"{letras}-{numeros}"
+            if variante_guion.upper() not in [a.upper() for a in alias]:
+                alias.append(variante_guion)
+
+            # Con punto (para versiones como CAM5.2, Ki-67.5)
+            variante_punto = f"{letras}{numeros}.2"
+            if variante_punto.upper() not in [a.upper() for a in alias]:
+                alias.append(variante_punto)
+
+            # Con espacio y punto
+            variante_espacio_punto = f"{letras} {numeros}.2"
+            if variante_espacio_punto.upper() not in [a.upper() for a in alias]:
+                alias.append(variante_espacio_punto)
+
+            # Con guion y punto
+            variante_guion_punto = f"{letras}-{numeros}.2"
+            if variante_guion_punto.upper() not in [a.upper() for a in alias]:
+                alias.append(variante_guion_punto)
+
+        # Eliminar duplicados (case-insensitive)
+        alias_unicos = []
+        alias_upper_set = set()
+        for a in alias:
+            if a.upper() not in alias_upper_set:
+                alias_unicos.append(a)
+                alias_upper_set.add(a.upper())
+
+        return alias_unicos
+
+    # ============================================================================
+    # FUNC-07: Procesamiento Automático de Biomarcadores No Mapeados desde Reporte
+    # ============================================================================
+
+    def procesar_biomarcadores_no_mapeados_automatico(self, archivo_pdf: str = None) -> Dict[str, Any]:
+        """
+        FUNC-07: Procesa automáticamente biomarcadores NO MAPEADOS desde reporte de importación.
+
+        Este método automatiza el flujo completo de:
+        1. Leer reporte_importacion más reciente (o de archivo PDF específico)
+        2. Extraer TODOS los biomarcadores marcados como "NO MAPEADO"
+        3. Agregarlos automáticamente al sistema con FUNC-03
+        4. Actualizar auditoria_realizada.md con casos incompletos detectados
+
+        Args:
+            archivo_pdf: Nombre del archivo PDF procesado (opcional).
+                        Si no se especifica, lee el reporte más reciente.
+
+        Returns:
+            Dict con resultado del procesamiento:
+            {
+                'reporte_leido': str,
+                'biomarcadores_no_mapeados': List[str],
+                'biomarcadores_agregados': Dict[str, Any],
+                'casos_incompletos': List[str],
+                'auditoria_actualizada': bool,
+                'errores': List[str]
+            }
+
+        Ejemplo:
+            # Después de procesar "IHQ DEL 160 AL 211.pdf"
+            auditor = AuditorSistema()
+            resultado = auditor.procesar_biomarcadores_no_mapeados_automatico("IHQ DEL 160 AL 211.pdf")
+        """
+        import json
+        import glob
+        from pathlib import Path
+        from collections import defaultdict
+        from datetime import datetime
+
+        print(f"\n{'='*80}")
+        print(f"🔧 FUNC-07: PROCESAMIENTO AUTOMÁTICO DE BIOMARCADORES NO MAPEADOS")
+        print(f"{'='*80}\n")
+
+        resultado = {
+            'reporte_leido': None,
+            'biomarcadores_no_mapeados': [],
+            'biomarcadores_agregados': {},
+            'casos_incompletos': [],
+            'casos_incompletos_detalle': [],
+            'auditoria_actualizada': False,
+            'errores': []
+        }
+
+        base_path = Path(__file__).parent.parent
+        reportes_dir = base_path / 'data' / 'reportes_importacion'
+
+        # ===== PASO 1: Leer reporte de importación =====
+        print("📂 PASO 1: Buscando reporte de importación...")
+
+        try:
+            reportes = sorted(reportes_dir.glob('reporte_importacion_*.json'), reverse=True)
+            if not reportes:
+                error_msg = "No se encontraron reportes de importación"
+                resultado['errores'].append(error_msg)
+                print(f"   ❌ {error_msg}")
+                return resultado
+
+            reporte_path = reportes[0]
+            resultado['reporte_leido'] = reporte_path.name
+            print(f"   ✅ Reporte encontrado: {reporte_path.name}")
+
+            with open(reporte_path, 'r', encoding='utf-8') as f:
+                reporte_data = json.load(f)
+
+        except Exception as e:
+            error_msg = f"Error leyendo reporte: {str(e)}"
+            resultado['errores'].append(error_msg)
+            print(f"   ❌ {error_msg}")
+            return resultado
+
+        # ===== PASO 2: Extraer biomarcadores NO MAPEADOS únicos =====
+        print("\n🔍 PASO 2: Extrayendo biomarcadores NO MAPEADOS...")
+
+        biomarcadores_no_mapeados_set = set()
+        casos_incompletos_list = []
+
+        try:
+            # Obtener lista de casos desde el reporte
+            casos_procesados = reporte_data.get('casos_procesados', [])
+
+            for caso_data in casos_procesados:
+                numero_caso = caso_data.get('numero_peticion', '')
+                nivel = caso_data.get('nivel', '')
+
+                # Si es caso incompleto, agregarlo a la lista
+                if nivel == 'incompleto':
+                    casos_incompletos_list.append({
+                        'numero_caso': numero_caso,
+                        'nombre_paciente': caso_data.get('paciente_nombre', ''),
+                        'porcentaje_completitud': caso_data.get('porcentaje_completitud', 0),
+                        'biomarcadores_faltantes': caso_data.get('biomarcadores_faltantes', [])
+                    })
+
+                # Extraer biomarcadores NO MAPEADOS
+                biomarcadores_faltantes = caso_data.get('biomarcadores_faltantes', [])
+                for bio_faltante in biomarcadores_faltantes:
+                    if isinstance(bio_faltante, str) and '(NO MAPEADO)' in bio_faltante:
+                        # Extraer nombre del biomarcador (quitar " (NO MAPEADO)")
+                        bio_nombre = bio_faltante.replace(' (NO MAPEADO)', '').strip()
+                        biomarcadores_no_mapeados_set.add(bio_nombre)
+
+            resultado['biomarcadores_no_mapeados'] = sorted(list(biomarcadores_no_mapeados_set))
+            resultado['casos_incompletos'] = [c['numero_caso'] for c in casos_incompletos_list]
+            resultado['casos_incompletos_detalle'] = casos_incompletos_list
+
+            print(f"   ✅ {len(resultado['biomarcadores_no_mapeados'])} biomarcadores NO MAPEADOS únicos detectados")
+            print(f"   ✅ {len(casos_incompletos_list)} casos incompletos detectados")
+
+            if resultado['biomarcadores_no_mapeados']:
+                print(f"\n   📋 Biomarcadores NO MAPEADOS:")
+                for bio in resultado['biomarcadores_no_mapeados']:
+                    print(f"      - {bio}")
+
+        except Exception as e:
+            error_msg = f"Error extrayendo biomarcadores: {str(e)}"
+            resultado['errores'].append(error_msg)
+            print(f"   ❌ {error_msg}")
+            return resultado
+
+        # ===== PASO 3: Agregar cada biomarcador con FUNC-03 =====
+        if resultado['biomarcadores_no_mapeados']:
+            print(f"\n🔧 PASO 3: Agregando {len(resultado['biomarcadores_no_mapeados'])} biomarcadores con FUNC-03...")
+
+            for bio_nombre in resultado['biomarcadores_no_mapeados']:
+                print(f"\n   📌 Procesando: {bio_nombre}")
+                try:
+                    # Generar variantes automáticas
+                    variantes = self._generar_variantes_inteligentes(bio_nombre)
+
+                    # Agregar con FUNC-03
+                    resultado_func03 = self.agregar_biomarcador(bio_nombre, variantes)
+
+                    if resultado_func03.get('estado') in ['EXITOSO', 'COMPLETADO_CON_ADVERTENCIAS']:
+                        resultado['biomarcadores_agregados'][bio_nombre] = 'EXITOSO'
+                        print(f"      ✅ {bio_nombre} agregado exitosamente")
+                    elif resultado_func03.get('estado') == 'ERROR_YA_EXISTE':
+                        resultado['biomarcadores_agregados'][bio_nombre] = 'YA_EXISTE'
+                        print(f"      ⏭️  {bio_nombre} ya existe en el sistema")
+                    else:
+                        resultado['biomarcadores_agregados'][bio_nombre] = 'ERROR'
+                        error_msg = f"Error agregando {bio_nombre}: {resultado_func03.get('error', 'Desconocido')}"
+                        resultado['errores'].append(error_msg)
+                        print(f"      ❌ {error_msg}")
+
+                except Exception as e:
+                    resultado['biomarcadores_agregados'][bio_nombre] = 'ERROR_EXCEPTION'
+                    error_msg = f"Excepción agregando {bio_nombre}: {str(e)}"
+                    resultado['errores'].append(error_msg)
+                    print(f"      ❌ {error_msg}")
+
+            print(f"\n   ✅ Procesamiento de biomarcadores completado")
+            print(f"      Exitosos: {sum(1 for v in resultado['biomarcadores_agregados'].values() if v == 'EXITOSO')}")
+            print(f"      Ya existían: {sum(1 for v in resultado['biomarcadores_agregados'].values() if v == 'YA_EXISTE')}")
+            print(f"      Errores: {sum(1 for v in resultado['biomarcadores_agregados'].values() if v.startswith('ERROR'))}")
+
+        else:
+            print("\n   ✅ No hay biomarcadores NO MAPEADOS para agregar")
+
+        # ===== PASO 4: Actualizar auditoria_realizada.md =====
+        print("\n📝 PASO 4: Actualizando auditoria_realizada.md con casos incompletos...")
+
+        try:
+            auditoria_path = base_path / 'auditoria_realizada.md'
+
+            if not auditoria_path.exists():
+                print(f"   ⚠️  auditoria_realizada.md no existe, se creará al registrar primer caso")
+                resultado['auditoria_actualizada'] = False
+            else:
+                # Leer archivo actual
+                with open(auditoria_path, 'r', encoding='utf-8') as f:
+                    contenido_actual = f.read()
+
+                # Agregar sección de casos incompletos si no existe
+                if '## 📋 Casos Incompletos Detectados' not in contenido_actual:
+                    # Agregar al final del archivo
+                    seccion_incompletos = f"""
+
+## 📋 Casos Incompletos Detectados
+
+**Última actualización:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+**Fuente:** {resultado['reporte_leido']}
+
+| Caso | Paciente | Completitud | Biomarcadores Faltantes |
+|------|----------|-------------|-------------------------|
+"""
+                    for caso_inc in casos_incompletos_list:
+                        bio_faltantes = ', '.join(caso_inc['biomarcadores_faltantes'])
+                        seccion_incompletos += f"| {caso_inc['numero_caso']} | {caso_inc['nombre_paciente']} | {caso_inc['porcentaje_completitud']}% | {bio_faltantes} |\n"
+
+                    with open(auditoria_path, 'a', encoding='utf-8') as f:
+                        f.write(seccion_incompletos)
+
+                    resultado['auditoria_actualizada'] = True
+                    print(f"   ✅ Sección de casos incompletos agregada a auditoria_realizada.md")
+                    print(f"      {len(casos_incompletos_list)} casos incompletos registrados")
+                else:
+                    print(f"   ⏭️  Sección de casos incompletos ya existe en auditoria_realizada.md")
+                    resultado['auditoria_actualizada'] = False
+
+        except Exception as e:
+            error_msg = f"Error actualizando auditoria_realizada.md: {str(e)}"
+            resultado['errores'].append(error_msg)
+            print(f"   ❌ {error_msg}")
+
+        # ===== RESUMEN FINAL =====
+        print(f"\n{'='*80}")
+        print(f"✅ FUNC-07 COMPLETADA")
+        print(f"{'='*80}")
+        print(f"Reporte leído: {resultado['reporte_leido']}")
+        print(f"Biomarcadores NO MAPEADOS detectados: {len(resultado['biomarcadores_no_mapeados'])}")
+        print(f"Biomarcadores agregados exitosamente: {sum(1 for v in resultado['biomarcadores_agregados'].values() if v == 'EXITOSO')}")
+        print(f"Casos incompletos detectados: {len(resultado['casos_incompletos'])}")
+        print(f"Auditoria actualizada: {'Sí' if resultado['auditoria_actualizada'] else 'No'}")
+
+        if resultado['errores']:
+            print(f"\n⚠️ Errores encontrados: {len(resultado['errores'])}")
+            for error in resultado['errores']:
+                print(f"   ❌ {error}")
+
+        print(f"\n📋 Próximos pasos:")
+        if any(v == 'EXITOSO' for v in resultado['biomarcadores_agregados'].values()):
+            print(f"   1. Borrar BD y regenerar: rm data/huv_oncologia_NUEVO.db && python ui.py")
+            print(f"   2. Reprocesar casos afectados con FUNC-06")
+        print(f"   3. Re-auditar casos incompletos para verificar completitud")
+        print(f"{'='*80}\n")
+
+        return resultado
 
 
 def main():
-    """CLI principal - Auditoría inteligente + Corrección automática"""
+    """CLI principal - Auditoría inteligente con auto-corrección"""
     parser = argparse.ArgumentParser(
-        description="🔍 Auditor EVARISIS - FUNC-01: Auditoría | FUNC-02: Corrección",
+        description="🔍 Auditor EVARISIS - FUNC-01: Auditoría con auto-corrección | FUNC-06: Reprocesar | FUNC-08: Mapeo",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Ejemplos de uso:
-  # FUNC-01: Auditoría inteligente
+  # FUNC-01: Auditoría inteligente (con auto-corrección automática) 🆕
   python auditor_sistema.py IHQ250980 --inteligente
+  → Audita caso + detecta problemas + ejecuta FUNC-03/FUNC-08 automáticamente + sugiere FUNC-06
 
-  # FUNC-02: Corrección automática
-  python auditor_sistema.py IHQ250980 --corregir
-  python auditor_sistema.py IHQ250980 --corregir --auto-aprobar
-  python auditor_sistema.py IHQ250980 --corregir --max-iteraciones 5
+  # FUNC-06: Reprocesar caso después de correcciones
+  python auditor_sistema.py IHQ250185 --func-06
 
-Ejemplo de uso OLD:
-
-  python auditor_sistema.py IHQ250980 --inteligente
+  # FUNC-08: Corrección manual de mapeo validation_checker.py
+  python auditor_sistema.py IHQ250185 --func-08 --biomarcador "CAM 5" --columna IHQ_CAM5
 
 El resultado se exporta automáticamente a JSON en:
   herramientas_ia/resultados/auditoria_inteligente_IHQ250980.json
@@ -4244,39 +5540,70 @@ El resultado se exporta automáticamente a JSON en:
 
     parser.add_argument("caso", help="Número IHQ (ej: IHQ250980)")
     parser.add_argument("--inteligente", action="store_true",
-                        help="FUNC-01: Auditoría inteligente")
-    parser.add_argument("--corregir", action="store_true",
-                        help="FUNC-02: Corrección automática iterativa")
-    parser.add_argument("--auto-aprobar", action="store_true",
-                        help="Aprobar cambios automáticamente sin confirmación")
-    parser.add_argument("--max-iteraciones", type=int, default=3,
-                        help="Número máximo de iteraciones (default: 3)")
-    parser.add_argument("--usar-reporte-existente", action="store_true",
-                        help="FUNC-02 OPTIMIZADO: Usa reporte JSON de FUNC-01 existente (sin re-auditar)")
+                        help="FUNC-01: Auditoría inteligente (con auto-corrección automática)")
+    parser.add_argument("--func-06", action="store_true",
+                        help="FUNC-06: Reprocesar caso completo (limpieza + reprocesamiento + validación)")
+    parser.add_argument("--func-08", action="store_true",
+                        help="FUNC-08: Corrección manual mapeo validation_checker.py")
+    parser.add_argument("--biomarcador", type=str,
+                        help="FUNC-08: Nombre biomarcador en OCR (ej: 'CAM 5')")
+    parser.add_argument("--columna", type=str,
+                        help="FUNC-08: Columna BD (ej: 'IHQ_CAM5')")
 
     args = parser.parse_args()
 
     # Validar que al menos una función esté activada
-    if not args.inteligente and not args.corregir:
-        print("❌ ERROR: Debes especificar --inteligente o --corregir")
+    if not args.inteligente and not args.func_06 and not args.func_08:
+        print("❌ ERROR: Debes especificar --inteligente, --func-06 o --func-08")
         print("\nEjemplos:")
         print("  python auditor_sistema.py IHQ250980 --inteligente")
-        print("  python auditor_sistema.py IHQ250980 --corregir")
+        print("  python auditor_sistema.py IHQ250185 --func-06")
+        print("  python auditor_sistema.py IHQ250185 --func-08 --biomarcador 'CAM 5' --columna IHQ_CAM5")
         sys.exit(1)
 
     try:
         auditor = AuditorSistema()
 
-        # FUNC-02: Corrección automática
-        if args.corregir:
-            resultado = auditor.corregir_caso_automatico(
+        # FUNC-06: Reprocesar caso completo
+        if args.func_06:
+            resultado = auditor.reprocesar_caso_completo(args.caso)
+
+            print(f"\n📊 Resultado FUNC-06: {resultado.get('estado')}")
+            if resultado.get('estado') == 'EXITOSO':
+                print(f"✅ Caso reprocesado - Score: {resultado['score_antes']}% → {resultado['score_despues']}%")
+                sys.exit(0)
+            else:
+                sys.exit(1)
+
+        # FUNC-08: Corrección mapeo validation_checker.py
+        if args.func_08:
+            if not args.biomarcador or not args.columna:
+                print("❌ ERROR: FUNC-08 requiere --biomarcador y --columna")
+                print("\nEjemplo:")
+                print("  python auditor_sistema.py IHQ250185 --func-08 --biomarcador 'CAM 5' --columna IHQ_CAM5")
+                sys.exit(1)
+
+            resultado = auditor.corregir_mapeo_validation_checker(
                 args.caso,
-                auto_aprobar=args.auto_aprobar,
-                max_iteraciones=args.max_iteraciones,
-                usar_reporte_existente=args.usar_reporte_existente
+                args.biomarcador,
+                args.columna
             )
-            print(f"\n📊 Resultado: {resultado.get('estado')}")
+
+            print(f"\n📊 Resultado FUNC-08: {resultado.get('estado')}")
+            if resultado.get('estado') in ['EXITOSO', 'SIN_CAMBIO']:
+                print(f"✅ Completitud mejoró de {resultado['completitud_antes']}% a {resultado['completitud_despues']}%")
             sys.exit(0)
+
+        # FUNC-02: Corrección automática
+        # LEGACY FUNC-02 (comentado): if args.corregir:
+        # LEGACY FUNC-02 (comentado): resultado = auditor.corregir_caso_automatico(
+        # LEGACY FUNC-02 (comentado): args.caso,
+        # LEGACY FUNC-02 (comentado): auto_aprobar=args.auto_aprobar,
+        # LEGACY FUNC-02 (comentado): max_iteraciones=args.max_iteraciones,
+        # LEGACY FUNC-02 (comentado): usar_reporte_existente=args.usar_reporte_existente
+        # LEGACY FUNC-02 (comentado): )
+        # LEGACY FUNC-02 (comentado): print(f"\n📊 Resultado: {resultado.get('estado')}")
+        # LEGACY FUNC-02 (comentado): sys.exit(0)
 
         # FUNC-01: Auditoría inteligente
         resultado = auditor.auditar_caso_inteligente(args.caso, json_export=True)
@@ -4284,7 +5611,21 @@ El resultado se exporta automáticamente a JSON en:
         if resultado:
             print(f"\n✅ Auditoría completada: {args.caso}")
             score = resultado.get("metricas", {}).get("score_final", 0)
+            estado = resultado.get("estado_final", "DESCONOCIDO")
             print(f"   Score: {score:.1f}%")
+            print(f"   Estado: {estado}")
+
+            # Preguntar si desea registrar en auditoria_realizada.md
+            try:
+                respuesta = input("\n¿Desea registrar este caso en auditoria_realizada.md? (s/n): ").strip().lower()
+                if respuesta in ['s', 'si', 'yes', 'y']:
+                    auditor._actualizar_archivo_auditoria(args.caso, score)
+                    print("✅ Caso registrado en auditoria_realizada.md")
+                else:
+                    print("⏭️  Caso NO registrado en auditoria_realizada.md")
+            except EOFError:
+                # Si no hay entrada interactiva (ej: script automatizado), no preguntar
+                print("⏭️  Modo no interactivo - Caso NO registrado automáticamente")
         else:
             print(f"\n❌ Error al auditar: {args.caso}")
             sys.exit(1)

@@ -1,0 +1,171 @@
+{
+  "session_id": "IHQ250012_20251213_052321",
+  "numero_peticion": "IHQ250012",
+  "timestamp": "2025-12-13T05:23:21.337667",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250012\nCopia Pag. 1 de 2\nNombre : AMPARO CORTES\nN. peticion : IHQ250012\nN.Identificación : CC. 31225203\nGenero : FEMENINO\nEdad : 74 años 1 mes 12 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 07/01/2025\nFecha Informe : 29/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en bloques de parafina procedentes de esta institución con\nrotulo \"M2410350\" corresponde aspirado biopsia de medula ósea con diagnóstico de “HIPERPLASIA\nMIELOIDE”. Se realizan niveles al bloque de parafina para marcación con Glicoforina, Mieloperoxidasa,\nCD3, CD20, CD34, CD117, CD38, CD138, CD56, CD61, Kappa, Lambda y Ciclyna-D1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nMédula ósea con 8 espacios medulares evaluables y celularidad global del 70-80%. Se encuentran las\ntres líneas celulares con relación mieloide - eritroide de 2:1. La línea mieloide (MPO+) presenta adecuada\nmaduración. Se cuentan de 6 a 10 megacariocitos pequeños e hipolobulados por campo de alto poder\n(CD61+). Hay linfocitos T (CD3+), linfocitos B (CD20+) acompañantes de inmunofenotipo esperado. No\nse observa incremento de los blastos (CD34- y CD117-). Se observa incremento marcado de células\nplasmáticas de características neoplásicas, algunas en acúmulos con marcación fuerte y difusa para\nCD38+, CD138+, CD56+ y para cadenas livianas Lambda. No se observa marcación para cadenas\nlivianas Kappa ni para Ciclyna-D1.\nDIAGNÓSTICO\nMédula ósea. Biopsia. Estudios de inmunohistoquímica.\nNEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA.\nCOMENTARIOS\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---\nIHQ250012\nCopia Pag. 2 de 2\nNombre : AMPARO CORTES\nN. peticion : IHQ250012\nN.Identificación : CC. 31225203\nGenero : FEMENINO\nEdad : 74 años 1 mes 12 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 07/01/2025\nFecha Informe : 29/01/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3676,
+      "reduccion_porcentaje": 97.85
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250012",
+      "caso_num": 12,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "AMPARO CORTES",
+      "numero_peticion": "IHQ250012",
+      "identificacion": "31225203",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "74",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "LAZARO DAMIAN CORTINA",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "07/01/2025",
+      "fecha_informe": "29/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250012",
+      "N. de identificación": "31225203",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "LAZARO DAMIAN CORTINA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/01/2025",
+      "Fecha Informe": "29/01/2025",
+      "nombres": "AMPARO",
+      "Primer nombre": "AMPARO",
+      "Segundo nombre": "",
+      "apellidos": "CORTES",
+      "Primer apellido": "CORTES",
+      "Segundo apellido": "",
+      "nombre_formal": "CORTES, AMPARO",
+      "diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica. NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Médula ósea con 8 espacios medulares evaluables y celularidad global del 70-80%. Se encuentran las tres líneas celulares con relación mieloide - eritroide de 2:1. La línea mieloide (MPO+) presenta adecuada maduración. Se cuentan de 6 a 10 megacariocitos pequeños e hipolobulados por campo de alto poder (CD61+). Hay linfocitos T (CD3+), linfocitos B (CD20+) acompañantes de inmunofenotipo esperado. No se observa incremento de los blastos (CD34- y CD117-). Se observa incremento marcado de células plasmáticas de características neoplásicas, algunas en acúmulos con marcación fuerte y difusa para CD38+, CD138+, CD56+ y para cadenas livianas Lambda. No se observa marcación para cadenas livianas Kappa ni para Ciclyna-D1.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de esta institución con rotulo \"M2410350\" corresponde aspirado biopsia de medula ósea con diagnóstico de “HIPERPLASIA MIELOIDE”. Se realizan niveles al bloque de parafina para marcación con Glicoforina, Mieloperoxidasa, CD3, CD20, CD34, CD117, CD38, CD138, CD56, CD61, Kappa, Lambda y Ciclyna-D1.",
+      "ihq_organo": "MÉDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "GLICOFORINA, MIELOPEROXIDASA, CD3, CD20, CD34, CD117, CD38, CD138, CD56, CD61, KAPPA, LAMBDA, CICLYNA D1",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_LAMBDA": "POSITIVO (restricción lambda)",
+      "IHQ_KAPPA": "NO SE OBSERVA MARCACIÓN PARA CADENAS LIVIANAS KAPPA",
+      "IHQ_MPO": "POSITIVO",
+      "IHQ_CICLINA_D1": "NO SE OBSERVA MARCACIÓN PARA CADENAS LIVIANAS KAPPA NI PARA CICLYNA-D1",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "extraction_timestamp": "2025-12-13T05:23:21.475747",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250012\nCopia Pag. 1 de 2\nNombre : AMPARO CORTES\nN. peticion : IHQ250012\nN.Identificación : CC. 31225203\nGenero : FEMENINO\nEdad : 74 años 1 mes 12 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 07/01/2025\nFecha Informe : 29/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en bloques de parafina procedentes de esta institución con\nrotulo \"M2410350\" corresponde aspirado biopsia de medula ósea con diagnóstico de “HIPERPLASIA\nMIELOIDE”. Se realizan niveles al bloque de parafina para marcación con Glicoforina, Mieloperoxidasa,\nCD3, CD20, CD34, CD117, CD38, CD138, CD56, CD61, Kappa, Lambda y Ciclyna-D1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nMédula ósea con 8 espacios medulares evaluables y celularidad global del 70-80%. Se encuentran las\ntres líneas celulares con relación mieloide - eritroide de 2:1. La línea mieloide (MPO+) presenta adecuada\nmaduración. Se cuentan de 6 a 10 megacariocitos pequeños e hipolobulados por campo de alto poder\n(CD61+). Hay linfocitos T (CD3+), linfocitos B (CD20+) acompañantes de inmunofenotipo esperado. No\nse observa incremento de los blastos (CD34- y CD117-). Se observa incremento marcado de células\nplasmáticas de características neoplásicas, algunas en acúmulos con marcación fuerte y difusa para\nCD38+, CD138+, CD56+ y para cadenas livianas Lambda. No se observa marcación para cadenas\nlivianas Kappa ni para Ciclyna-D1.\nDIAGNÓSTICO\nMédula ósea. Biopsia. Estudios de inmunohistoquímica.\nNEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA.\nCOMENTARIOS\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---\nIHQ250012\nCopia Pag. 2 de 2\nNombre : AMPARO CORTES\nN. peticion : IHQ250012\nN.Identificación : CC. 31225203\nGenero : FEMENINO\nEdad : 74 años 1 mes 12 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 07/01/2025\nFecha Informe : 29/01/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "GLICOFORINA, MIELOPEROXIDASA, CD3, CD20, CD34, CD117, CD38, CD138, CD56, CD61, KAPPA, LAMBDA, CICLYNA D1",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de esta institución con rotulo \"M2410350\" corresponde aspirado biopsia de medula ósea con diagnóstico de “HIPERPLASIA MIELOIDE”. Se realizan niveles al bloque de parafina para marcación con Glicoforina, Mieloperoxidasa, CD3, CD20, CD34, CD117, CD38, CD138, CD56, CD61, Kappa, Lambda y Ciclyna-D1.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Médula ósea con 8 espacios medulares evaluables y celularidad global del 70-80%. Se encuentran las tres líneas celulares con relación mieloide - eritroide de 2:1. La línea mieloide (MPO+) presenta adecuada maduración. Se cuentan de 6 a 10 megacariocitos pequeños e hipolobulados por campo de alto poder (CD61+). Hay linfocitos T (CD3+), linfocitos B (CD20+) acompañantes de inmunofenotipo esperado. No se observa incremento de los blastos (CD34- y CD117-). Se observa incremento marcado de células plasmáticas de características neoplásicas, algunas en acúmulos con marcación fuerte y difusa para CD38+, CD138+, CD56+ y para cadenas livianas Lambda. No se observa marcación para cadenas livianas Kappa ni para Ciclyna-D1.",
+      "Descripcion Diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica. NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA.",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Organo": "BX MEDULA OSEA",
+      "Diagnostico Coloracion": "HIPERPLASIA MIELOIDE",
+      "Diagnostico Principal": "NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_GLICOFORINA": "NO MENCIONADO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_KAPPA": "NO SE OBSERVA MARCACIÓN PARA CADENAS LIVIANAS KAPPA",
+      "IHQ_LAMBDA": "POSITIVO (restricción lambda)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 111,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 11,
+      "completitud_porcentaje": 29.3
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 111,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula ósea. Biopsia. Estudios de inmunohistoquímica.\nNEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA.",
+      "valor_corregido": "Médula ósea. Biopsia. Estudios de inmunohistoquímica. NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250012",
+      "timestamp": "2025-12-13T05:23:21.475481"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de esta institución con\nrotulo \"M2410350\" corresponde aspirado biopsia de medula ósea con diagnóstico de “HIPERPLASIA\nMIELOIDE”. Se realizan niveles al bloque de parafina para marcación con Glicoforina, Mieloperoxidasa,\nCD3, CD20, CD34, CD117, CD38, CD138, CD56, CD61, Kappa, Lambda y Ciclyna-D1.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de esta institución con rotulo \"M2410350\" corresponde aspirado biopsia de medula ósea con diagnóstico de “HIPERPLASIA MIELOIDE”. Se realizan niveles al bloque de parafina para marcación con Glicoforina, Mieloperoxidasa, CD3, CD20, CD34, CD117, CD38, CD138, CD56, CD61, Kappa, Lambda y Ciclyna-D1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250012",
+      "timestamp": "2025-12-13T05:23:21.475486"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nMédula ósea con 8 espacios medulares evaluables y celularidad global del 70-80%. Se encuentran las\ntres líneas celulares con relación mieloide - eritroide de 2:1. La línea mieloide (MPO+) presenta adecuada\nmaduración. Se cuentan de 6 a 10 megacariocitos pequeños e hipolobulados por campo de alto poder\n(CD61+). Hay linfocitos T (CD3+), linfocitos B (CD20+) acompañantes de inmunofenotipo esperado. No\nse observa incremento de los blastos (CD34- y CD117-). Se observa incremento marcado de células\nplasmáticas de características neoplásicas, algunas en acúmulos con marcación fuerte y difusa para\nCD38+, CD138+, CD56+ y para cadenas livianas Lambda. No se observa marcación para cadenas\nlivianas Kappa ni para Ciclyna-D1.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Médula ósea con 8 espacios medulares evaluables y celularidad global del 70-80%. Se encuentran las tres líneas celulares con relación mieloide - eritroide de 2:1. La línea mieloide (MPO+) presenta adecuada maduración. Se cuentan de 6 a 10 megacariocitos pequeños e hipolobulados por campo de alto poder (CD61+). Hay linfocitos T (CD3+), linfocitos B (CD20+) acompañantes de inmunofenotipo esperado. No se observa incremento de los blastos (CD34- y CD117-). Se observa incremento marcado de células plasmáticas de características neoplásicas, algunas en acúmulos con marcación fuerte y difusa para CD38+, CD138+, CD56+ y para cadenas livianas Lambda. No se observa marcación para cadenas livianas Kappa ni para Ciclyna-D1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250012",
+      "timestamp": "2025-12-13T05:23:21.475488"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 57
+  }
+}

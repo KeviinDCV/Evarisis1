@@ -1,0 +1,171 @@
+{
+  "session_id": "IHQ250299_20260203_035427",
+  "numero_peticion": "IHQ250299",
+  "timestamp": "2026-02-03T03:54:27.226594",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250299\nCopia Pag. 1 de 2\nNombre : MARIA EUCARY VIERA MARTINEZ\nN. peticion : IHQ250299\nN.Identificación : CC. 29963289\nGenero : FEMENINO\nEdad : 63 años 1 mes 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : UNIDAD CUIDADO INTERMEDIO\nFecha Ingreso : 21/03/2025\nFecha Informe : 31/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON IZQUIERDO+PL\nEURA+DIAFRAGMA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502895 que\ncorresponde a \"A. Pulmón, pleura y diafragma y B Mediastino\" con diagnóstico de\n\"HEMANGIOLINFANGIOMATOSIS DIFUSA\". Previa valoración de la coloración básica, se realizan\ncortes histológicos al bloque A7 y B3 de parafina para los siguientes marcadores: CKAE1/AE3,\nCD31, CD34, PODOPLANINA, HHV8, Ki 67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nRESULTADO:\nParénquima pulmonar y de ganglio linfático mediastinal que demuestran proliferación anómala de\nvasos sanguíneos (CD31+ y CD34+ focal) y linfáticos (PODOPLANINA+) tortuosos,\nanastomosantes y de diferentes tamaños con células endoteliales planas con actividad\nproliferativa presente valorada por Ki67 menor al 1%. La CKAE1/AE3 tiene una expresión normal\nesperada en el epitelio respiratorio. \nEl HHV8 es negativo en ambas muestras. \nDIAGNÓSTICO\nA. Pulmón, pleura y diafragma. Lesión. Neumectomía con resección de pleura y\ndiafragma. Estudio de inmunohistoquímica. \nHEMANGIOLINFANGIOMATOSIS DIFUSA. \nB. Mediastino. Lesión. Resección. Estudio de inmunohistoquímica. \nHEMAMGIOLINFANGIOMATOSIS DIFUSA. \nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---\nIHQ250299\nCopia Pag. 2 de 2\nNombre : MARIA EUCARY VIERA MARTINEZ\nN. peticion : IHQ250299\nN.Identificación : CC. 29963289\nGenero : FEMENINO\nEdad : 63 años 1 mes 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : UNIDAD CUIDADO INTERMEDIO\nFecha Ingreso : 21/03/2025\nFecha Informe : 31/03/2025\nCaso valorado en conjunto con el Dr Jorge Moreno 8patólogo de tejidos blandos ).\nBibliografía.\nHernández, J. J., Sánchez, J. R., Riera, A. M., Fernández, F. S., Cabrera, M. R., & Hermoso, F. G.\n(1992). Hemangiolinfangioma subpleural: a propósito de un caso. Archivos de\nbronconeumología, 28(4), 195-197.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3917,
+      "reduccion_porcentaje": 97.76
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250299",
+      "caso_num": 35,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA EUCARY VIERA MARTINEZ",
+      "numero_peticion": "IHQ250299",
+      "identificacion": "29963289",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "63",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JHON SANDOVAL",
+      "servicio": "UNIDAD CUIDADO INTERMEDIO",
+      "fecha_ingreso": "21/03/2025",
+      "fecha_informe": "31/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250299",
+      "N. de identificación": "29963289",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "UNIDAD CUIDADO INTERMEDIO",
+      "Médico tratante": "JHON SANDOVAL",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/03/2025",
+      "Fecha Informe": "31/03/2025",
+      "nombres": "MARIA EUCARY VIERA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "EUCARY VIERA",
+      "apellidos": "MARTINEZ",
+      "Primer apellido": "MARTINEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "MARTINEZ, MARIA EUCARY VIERA",
+      "diagnostico": "A. Pulmón, pleura y diafragma. Lesión. Neumectomía con resección de pleura y diafragma. Estudio de inmunohistoquímica. HEMANGIOLINFANGIOMATOSIS DIFUSA. B. Mediastino. Lesión. Resección. Estudio de inmunohistoquímica. HEMAMGIOLINFANGIOMATOSIS DIFUSA.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. RESULTADO: Parénquima pulmonar y de ganglio linfático mediastinal que demuestran proliferación anómala de vasos sanguíneos (CD31+ y CD34+ focal) y linfáticos (PODOPLANINA+) tortuosos, anastomosantes y de diferentes tamaños con células endoteliales planas con actividad proliferativa presente valorada por KI-67 menor al 1%. La CKAE1/AE3 tiene una expresión normal esperada en el epitelio respiratorio. El HHV8 es negativo en ambas muestras.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502895 que corresponde a \"A. Pulmón, pleura y diafragma y B Mediastino\" con diagnóstico de \"HEMANGIOLINFANGIOMATOSIS DIFUSA\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque A7 y B3 de parafina para los siguientes marcadores: CKAE1/AE3, CD31, CD34, PODOPLANINA, HHV8, KI-67.",
+      "ihq_organo": "PULMÓN, PLEURA Y DIAFRAGMA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1AE3, CD31, CD34, PODOPLANINA, HHV8, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 66 --- IHQ250299 Copia Pag. 2 de 2 Nombre : MARIA EUCARY VIERA MARTINEZ N. peticion : IHQ250299 N.Identificación : CC. 29963289 Genero : FEMENINO Edad : 63 años 1 mes 18 dias EPS : EMSSANAR S.A.S Médico tratante : JHON SANDOVAL Servicio : UNIDAD CUIDADO INTERMEDIO Fecha Ingreso : 21/03/2025 Fecha Informe : 31/03/2025 Caso valorado en conjunto con el Dr Jorge Moreno 8 patólogo de tejidos blandos ). Bibliografía. Hernández, J. J., Sánchez, J. R., Riera, A. M., Fernández, F. S., Cabrera, M. R., & Hermoso, F. G. (1992). Hemangiolinfangioma subpleural: a propósito de un caso. Archivos de bronconeumología, 28(4), 195-197.",
+      "IHQ_ORGANO": "PULMÓN, PLEURA Y DIAFRAGMA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, CD31, CD34, PODOPLANINA, HHV8, Ki-67",
+      "IHQ_PODOPLANINA": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_KI-67": "<1%",
+      "IHQ_CKAE1AE3": "NO MENCIONADO",
+      "IHQ_HHV8": "NO MENCIONADO",
+      "extraction_timestamp": "2026-02-03T03:54:27.759963",
+      "extractor_version": "6.5.90_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250299\nCopia Pag. 1 de 2\nNombre : MARIA EUCARY VIERA MARTINEZ\nN. peticion : IHQ250299\nN.Identificación : CC. 29963289\nGenero : FEMENINO\nEdad : 63 años 1 mes 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : UNIDAD CUIDADO INTERMEDIO\nFecha Ingreso : 21/03/2025\nFecha Informe : 31/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON IZQUIERDO+PL\nEURA+DIAFRAGMA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502895 que\ncorresponde a \"A. Pulmón, pleura y diafragma y B Mediastino\" con diagnóstico de\n\"HEMANGIOLINFANGIOMATOSIS DIFUSA\". Previa valoración de la coloración básica, se realizan\ncortes histológicos al bloque A7 y B3 de parafina para los siguientes marcadores: CKAE1/AE3,\nCD31, CD34, PODOPLANINA, HHV8, Ki 67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nRESULTADO:\nParénquima pulmonar y de ganglio linfático mediastinal que demuestran proliferación anómala de\nvasos sanguíneos (CD31+ y CD34+ focal) y linfáticos (PODOPLANINA+) tortuosos,\nanastomosantes y de diferentes tamaños con células endoteliales planas con actividad\nproliferativa presente valorada por Ki67 menor al 1%. La CKAE1/AE3 tiene una expresión normal\nesperada en el epitelio respiratorio. \nEl HHV8 es negativo en ambas muestras. \nDIAGNÓSTICO\nA. Pulmón, pleura y diafragma. Lesión. Neumectomía con resección de pleura y\ndiafragma. Estudio de inmunohistoquímica. \nHEMANGIOLINFANGIOMATOSIS DIFUSA. \nB. Mediastino. Lesión. Resección. Estudio de inmunohistoquímica. \nHEMAMGIOLINFANGIOMATOSIS DIFUSA. \nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---\nIHQ250299\nCopia Pag. 2 de 2\nNombre : MARIA EUCARY VIERA MARTINEZ\nN. peticion : IHQ250299\nN.Identificación : CC. 29963289\nGenero : FEMENINO\nEdad : 63 años 1 mes 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : UNIDAD CUIDADO INTERMEDIO\nFecha Ingreso : 21/03/2025\nFecha Informe : 31/03/2025\nCaso valorado en conjunto con el Dr Jorge Moreno 8patólogo de tejidos blandos ).\nBibliografía.\nHernández, J. J., Sánchez, J. R., Riera, A. M., Fernández, F. S., Cabrera, M. R., & Hermoso, F. G.\n(1992). Hemangiolinfangioma subpleural: a propósito de un caso. Archivos de\nbronconeumología, 28(4), 195-197.\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, CD31, CD34, PODOPLANINA, HHV8, Ki-67",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502895 que corresponde a \"A. Pulmón, pleura y diafragma y B Mediastino\" con diagnóstico de \"HEMANGIOLINFANGIOMATOSIS DIFUSA\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque A7 y B3 de parafina para los siguientes marcadores: CKAE1/AE3, CD31, CD34, PODOPLANINA, HHV8, Ki 67.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. RESULTADO: Parénquima pulmonar y de ganglio linfático mediastinal que demuestran proliferación anómala de vasos sanguíneos (CD31+ y CD34+ focal) y linfáticos (PODOPLANINA+) tortuosos, anastomosantes y de diferentes tamaños con células endoteliales planas con actividad proliferativa presente valorada por Ki67 menor al 1%. La CKAE1/AE3 tiene una expresión normal esperada en el epitelio respiratorio. El HHV8 es negativo en ambas muestras.",
+      "Descripcion Diagnostico": "A. Pulmón, pleura y diafragma. Lesión. Neumectomía con resección de pleura y diafragma. Estudio de inmunohistoquímica. HEMANGIOLINFANGIOMATOSIS DIFUSA. B. Mediastino. Lesión. Resección. Estudio de inmunohistoquímica. HEMAMGIOLINFANGIOMATOSIS DIFUSA.",
+      "IHQ_ORGANO": "PULMÓN, PLEURA Y DIAFRAGMA",
+      "Organo": "BX PULMON IZQUIERDO+PL EURA+DIAFRAGMA",
+      "Diagnostico Coloracion": "HEMANGIOLINFANGIOMATOSIS DIFUSA",
+      "Diagnostico Principal": "HEMANGIOLINFANGIOMATOSIS DIFUSA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_CKAE1AE3": "NO MENCIONADO",
+      "IHQ_CD3": "",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_PODOPLANINA": "POSITIVO",
+      "IHQ_HHV8": "NO MENCIONADO",
+      "IHQ_KI-67": "<1%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 137,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Pulmón, pleura y diafragma. Lesión. Neumectomía con resección de pleura y\ndiafragma. Estudio de inmunohistoquímica. \nHEMANGIOLINFANGIOMATOSIS DIFUSA. \nB. Mediastino. Lesión. Resección. Estudio de inmunohistoquímica. \nHEMAMGIOLINFANGIOMATOSIS DIFUSA.",
+      "valor_corregido": "A. Pulmón, pleura y diafragma. Lesión. Neumectomía con resección de pleura y diafragma. Estudio de inmunohistoquímica. HEMANGIOLINFANGIOMATOSIS DIFUSA. B. Mediastino. Lesión. Resección. Estudio de inmunohistoquímica. HEMAMGIOLINFANGIOMATOSIS DIFUSA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250299",
+      "timestamp": "2026-02-03T03:54:27.758882"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502895 que corresponde a \"A. Pulmón, pleura y diafragma y B Mediastino\" con diagnóstico de \"HEMANGIOLINFANGIOMATOSIS DIFUSA\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque A7 y B3 de parafina para los siguientes marcadores: CKAE1/AE3, CD31, CD34, PODOPLANINA, HHV8, Ki 67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2502895 que corresponde a \"A. Pulmón, pleura y diafragma y B Mediastino\" con diagnóstico de \"HEMANGIOLINFANGIOMATOSIS DIFUSA\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque A7 y B3 de parafina para los siguientes marcadores: CKAE1/AE3, CD31, CD34, PODOPLANINA, HHV8, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250299",
+      "timestamp": "2026-02-03T03:54:27.758888"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. RESULTADO: Parénquima pulmonar y de ganglio linfático mediastinal que demuestran proliferación anómala de vasos sanguíneos (CD31+ y CD34+ focal) y linfáticos (PODOPLANINA+) tortuosos, anastomosantes y de diferentes tamaños con células endoteliales planas con actividad proliferativa presente valorada por Ki67 menor al 1%. La CKAE1/AE3 tiene una expresión normal esperada en el epitelio respiratorio. El HHV8 es negativo en ambas muestras.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. RESULTADO: Parénquima pulmonar y de ganglio linfático mediastinal que demuestran proliferación anómala de vasos sanguíneos (CD31+ y CD34+ focal) y linfáticos (PODOPLANINA+) tortuosos, anastomosantes y de diferentes tamaños con células endoteliales planas con actividad proliferativa presente valorada por KI-67 menor al 1%. La CKAE1/AE3 tiene una expresión normal esperada en el epitelio respiratorio. El HHV8 es negativo en ambas muestras.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250299",
+      "timestamp": "2026-02-03T03:54:27.758890"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---\nIHQ250299\nCopia Pag. 2 de 2\nNombre : MARIA EUCARY VIERA MARTINEZ\nN. peticion : IHQ250299\nN.Identificación : CC. 29963289\nGenero : FEMENINO\nEdad : 63 años 1 mes 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : UNIDAD CUIDADO INTERMEDIO\nFecha Ingreso : 21/03/2025\nFecha Informe : 31/03/2025\nCaso valorado en conjunto con el Dr Jorge Moreno 8patólogo de tejidos blandos ).\nBibliografía.\nHernández, J. J., Sánchez, J. R., Riera, A. M., Fernández, F. S., Cabrera, M. R., & Hermoso, F. G.\n(1992). Hemangiolinfangioma subpleural: a propósito de un caso. Archivos de\nbronconeumología, 28(4), 195-197.",
+      "valor_corregido": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 66 --- IHQ250299 Copia Pag. 2 de 2 Nombre : MARIA EUCARY VIERA MARTINEZ N. peticion : IHQ250299 N.Identificación : CC. 29963289 Genero : FEMENINO Edad : 63 años 1 mes 18 dias EPS : EMSSANAR S.A.S Médico tratante : JHON SANDOVAL Servicio : UNIDAD CUIDADO INTERMEDIO Fecha Ingreso : 21/03/2025 Fecha Informe : 31/03/2025 Caso valorado en conjunto con el Dr Jorge Moreno 8 patólogo de tejidos blandos ). Bibliografía. Hernández, J. J., Sánchez, J. R., Riera, A. M., Fernández, F. S., Cabrera, M. R., & Hermoso, F. G. (1992). Hemangiolinfangioma subpleural: a propósito de un caso. Archivos de bronconeumología, 28(4), 195-197.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250299",
+      "timestamp": "2026-02-03T03:54:27.758892"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 53
+  }
+}

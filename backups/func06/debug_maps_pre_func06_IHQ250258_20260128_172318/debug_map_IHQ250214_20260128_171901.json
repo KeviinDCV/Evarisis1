@@ -1,0 +1,143 @@
+{
+  "session_id": "IHQ250214_20260128_171901",
+  "numero_peticion": "IHQ250214",
+  "timestamp": "2026-01-28T17:19:01.615163",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250214\nCopia Pag. 1 de 2\nNombre : DIOFENI TAMAYO GIRALDO\nN. peticion : IHQ250214\nN.Identificación : CC. 31192779\nGenero : FEMENINO\nEdad : 68 años 21 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 27/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nHEMICOLECTOMIA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501390 que corresponde a \"ADENOCARCINOMA MUCINOSO INVASIVO CON COMPROMISO DEL\nPERITONEO VISCERAL. Previa valoración de la coloración básica, se realizan cortes histológicos al\nbloque A3 para los siguientes marcadores: HER-2 , MSH6 , MSH2 , MLH1 , PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\n- HER-2 Negativo (score 0)\nLos controles positivos de tejido conocido y los controles internos tienen una marcación\nsatisfactoria.\nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---\nIHQ250214\nCopia Pag. 2 de 2\nNombre : DIOFENI TAMAYO GIRALDO\nN. peticion : IHQ250214\nN.Identificación : CC. 31192779\nGenero : FEMENINO\nEdad : 68 años 21 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 27/02/2025\nFecha Informe : 05/03/2025\n Colon ascendente, íleon y apéndice cecal. Tumor. Hemicolectomía derecha. Estudio de\ninmunohistoquímica:\n- ADENOCARCINOMA MUCINOSO INVASIVO.\n- PATRÓN MICROSATELITAL ESTABLE.\n- HER-2: NEGATIVO (SCORE 0).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3406,
+      "reduccion_porcentaje": 98.1
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250214",
+      "caso_num": 3,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "DIOFENI TAMAYO GIRALDO",
+      "numero_peticion": "IHQ250214",
+      "identificacion": "31192779",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "68",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "27/02/2025",
+      "fecha_informe": "05/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250214",
+      "N. de identificación": "31192779",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "27/02/2025",
+      "Fecha Informe": "05/03/2025",
+      "nombres": "DIOFENI",
+      "Primer nombre": "DIOFENI",
+      "Segundo nombre": "",
+      "apellidos": "TAMAYO GIRALDO",
+      "Primer apellido": "TAMAYO",
+      "Segundo apellido": "GIRALDO",
+      "nombre_formal": "TAMAYO GIRALDO, DIOFENI",
+      "diagnostico": ": 27/02/2025 Colon ascendente, íleon y apéndice cecal. Tumor. Hemicolectomía derecha. Estudio de inmunohistoquímica: - ADENOCARCINOMA MUCINOSO INVASIVO. - PATRÓN MICROSATELITAL ESTABLE. - HER-2: NEGATIVO (SCORE 0).",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable - HER-2 Negativo (score 0) Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501390 que corresponde a \"ADENOCARCINOMA MUCINOSO INVASIVO CON COMPROMISO DEL PERITONEO VISCERAL. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque A3 para los siguientes marcadores: HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "ihq_organo": "COLON ASCENDENTE, ÍLEON Y APÉNDICE CECAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "COLON ASCENDENTE, ÍLEON Y APÉNDICE CECAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2 , MSH6 , MSH2 , MLH1 , PMS2",
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "extraction_timestamp": "2026-01-28T17:19:02.058373",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250214\nCopia Pag. 1 de 2\nNombre : DIOFENI TAMAYO GIRALDO\nN. peticion : IHQ250214\nN.Identificación : CC. 31192779\nGenero : FEMENINO\nEdad : 68 años 21 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 27/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nHEMICOLECTOMIA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501390 que corresponde a \"ADENOCARCINOMA MUCINOSO INVASIVO CON COMPROMISO DEL\nPERITONEO VISCERAL. Previa valoración de la coloración básica, se realizan cortes histológicos al\nbloque A3 para los siguientes marcadores: HER-2 , MSH6 , MSH2 , MLH1 , PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\n- HER-2 Negativo (score 0)\nLos controles positivos de tejido conocido y los controles internos tienen una marcación\nsatisfactoria.\nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---\nIHQ250214\nCopia Pag. 2 de 2\nNombre : DIOFENI TAMAYO GIRALDO\nN. peticion : IHQ250214\nN.Identificación : CC. 31192779\nGenero : FEMENINO\nEdad : 68 años 21 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 27/02/2025\nFecha Informe : 05/03/2025\n Colon ascendente, íleon y apéndice cecal. Tumor. Hemicolectomía derecha. Estudio de\ninmunohistoquímica:\n- ADENOCARCINOMA MUCINOSO INVASIVO.\n- PATRÓN MICROSATELITAL ESTABLE.\n- HER-2: NEGATIVO (SCORE 0).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501390 que corresponde a \"ADENOCARCINOMA MUCINOSO INVASIVO CON COMPROMISO DEL PERITONEO VISCERAL. Previa valoración de la coloración básica, se realizan cortes histológicos al bloque A3 para los siguientes marcadores: HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable - HER-2 Negativo (score 0) Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.",
+      "Descripcion Diagnostico": ": 27/02/2025 Colon ascendente, íleon y apéndice cecal. Tumor. Hemicolectomía derecha. Estudio de inmunohistoquímica: - ADENOCARCINOMA MUCINOSO INVASIVO. - PATRÓN MICROSATELITAL ESTABLE. - HER-2: NEGATIVO (SCORE 0).",
+      "IHQ_ORGANO": "COLON ASCENDENTE, ÍLEON Y APÉNDICE CECAL",
+      "Organo": "HEMICOLECTOMIA DERECHA",
+      "Diagnostico Coloracion": "ADENOCARCINOMA MUCINOSO INVASIVO CON COMPROMISO DEL PERITONEO VISCERAL",
+      "Diagnostico Principal": "ADENOCARCINOMA MUCINOSO INVASIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 , MSH6 , MSH2 , MLH1 , PMS2",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 177,
+      "campos_vacios": 138,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": ": 27/02/2025\n Colon ascendente, íleon y apéndice cecal. Tumor. Hemicolectomía derecha. Estudio de\ninmunohistoquímica:\n- ADENOCARCINOMA MUCINOSO INVASIVO.\n- PATRÓN MICROSATELITAL ESTABLE.\n- HER-2: NEGATIVO (SCORE 0).",
+      "valor_corregido": ": 27/02/2025 Colon ascendente, íleon y apéndice cecal. Tumor. Hemicolectomía derecha. Estudio de inmunohistoquímica: - ADENOCARCINOMA MUCINOSO INVASIVO. - PATRÓN MICROSATELITAL ESTABLE. - HER-2: NEGATIVO (SCORE 0).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250214",
+      "timestamp": "2026-01-28T17:19:02.058159"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 52
+  }
+}

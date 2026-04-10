@@ -1,0 +1,178 @@
+{
+  "session_id": "IHQ250219_20260128_064936",
+  "numero_peticion": "IHQ250219",
+  "timestamp": "2026-01-28T06:49:36.204316",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250219\nCopia Pag. 1 de 2\nNombre : SEBASTIAN CABEZAS HINESTROZA\nN. peticion : IHQ250219\nN.Identificación : CC. 1110292208\nGenero : MASCULINO\nEdad : 23 años 7 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 28/02/2025\nFecha Informe : 12/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO INGUINAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al bloque parafinado institucional con rótulo\nM2502141 que corresponde a \"Ganglio inguinal izquierdo\" con diagnóstico de \"HIPERPLASIA\nLINFOIDE, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN\".\nPrevia valoración de la coloración básica, se realizan cortes histológicos al bloque para los\nsiguientes marcadores: CD3, CD10, CD20, CD23, BcL2, BcL6, Ki 67, LMP-1, HHV-8.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nGanglio linfático con presencia de folículos linfoides de diferentes tamaños (CD20+) con centro\ngerminal bien delimitado (CD10+, Bcl6+) con red dendrítica (CD23+),\ndemuestran ensanchamiento de la zona margina (Bcl2+) con fusión en algunas áreas. Los\nfolículos linfoides se rodean en su periferia por linfocitos T (CD3+). El índice de proliferación\ncelular medido mediante el Ki67 se distribuye predominantemente en el centro del folículo. No\nhay expreisón para HHV-8 ni para LMP-1.\nDIAGNÓSTICO\nGanglio linfático. Región inguinal izquierda. Biopsia escicional. Estudio de\ninmunohistoquímica. \nHIPERPLASIA FOLICULAR REACTIVA. \nCOMENTARIOS\nCaso valorado en conjunto con la Dra Isabella Caicedo (patóloga). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250219\nCopia Pag. 2 de 2\nNombre : SEBASTIAN CABEZAS HINESTROZA\nN. peticion : IHQ250219\nN.Identificación : CC. 1110292208\nGenero : MASCULINO\nEdad : 23 años 7 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 28/02/2025\nFecha Informe : 12/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3590,
+      "reduccion_porcentaje": 98.0
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250219",
+      "caso_num": 8,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "SEBASTIAN CABEZAS HINESTROZA",
+      "numero_peticion": "IHQ250219",
+      "identificacion": "1110292208",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "23",
+      "eps": "ASMET SALUD EPS SAS",
+      "medico_tratante": "CARLOS ANDRES MUÑOZ",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "28/02/2025",
+      "fecha_informe": "12/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250219",
+      "N. de identificación": "1110292208",
+      "Tipo de documento": "CC",
+      "EPS": "ASMET SALUD EPS SAS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "CARLOS ANDRES MUÑOZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/02/2025",
+      "Fecha Informe": "12/03/2025",
+      "nombres": "SEBASTIAN",
+      "Primer nombre": "SEBASTIAN",
+      "Segundo nombre": "",
+      "apellidos": "CABEZAS HINESTROZA",
+      "Primer apellido": "CABEZAS",
+      "Segundo apellido": "HINESTROZA",
+      "nombre_formal": "CABEZAS HINESTROZA, SEBASTIAN",
+      "diagnostico": "Ganglio linfático. Región inguinal izquierda. Biopsia escicional. Estudio de inmunohistoquímica. HIPERPLASIA FOLICULAR REACTIVA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Ganglio linfático con presencia de folículos linfoides de diferentes tamaños (CD20+) con centro germinal bien delimitado (CD10+, Bcl6+) con red dendrítica (CD23+), demuestran ensanchamiento de la zona margina (Bcl2+) con fusión en algunas áreas. Los folículos linfoides se rodean en su periferia por linfocitos T (CD3+). El índice de proliferación celular medido mediante el KI-67 se distribuye predominantemente en el centro del folículo. No hay expreisón para HHV-8 ni para LMP-1.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al bloque parafinado institucional con rótulo M2502141 que corresponde a \"Ganglio inguinal izquierdo\" con diagnóstico de \"HIPERPLASIA LINFOIDE, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: CD3, CD10, CD20, CD23, BcL2, BcL6, KI-67, LMP-1, HHV-8.",
+      "ihq_organo": "GANGLIO LINFÁTICO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD10, CD20, CD23, BCL2, BCL6, Ki-67, LMP 1, HHV 8",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con la Dra Isabella Caicedo (patóloga). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 16 --- IHQ250219 Copia Pag. 2 de 2 Nombre : SEBASTIAN CABEZAS HINESTROZA N. peticion : IHQ250219 N.Identificación : CC. 1110292208 Genero : MASCULINO Edad : 23 años 7 dias EPS : ASMET SALUD EPS SAS Médico tratante : CARLOS ANDRES MUÑOZ Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 28/02/2025 Fecha Informe : 12/03/2025",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: POSITIVO (distribución predominante)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD10, CD20, CD23, BCL2, BCL6, Ki-67, LMP 1, HHV 8",
+      "IHQ_KI-67": "POSITIVO (distribución predominante)",
+      "IHQ_HHV8": "NEGATIVO",
+      "IHQ_LMP1": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "extraction_timestamp": "2026-01-28T06:49:36.671398",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250219\nCopia Pag. 1 de 2\nNombre : SEBASTIAN CABEZAS HINESTROZA\nN. peticion : IHQ250219\nN.Identificación : CC. 1110292208\nGenero : MASCULINO\nEdad : 23 años 7 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 28/02/2025\nFecha Informe : 12/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO INGUINAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al bloque parafinado institucional con rótulo\nM2502141 que corresponde a \"Ganglio inguinal izquierdo\" con diagnóstico de \"HIPERPLASIA\nLINFOIDE, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN\".\nPrevia valoración de la coloración básica, se realizan cortes histológicos al bloque para los\nsiguientes marcadores: CD3, CD10, CD20, CD23, BcL2, BcL6, Ki 67, LMP-1, HHV-8.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO:\nGanglio linfático con presencia de folículos linfoides de diferentes tamaños (CD20+) con centro\ngerminal bien delimitado (CD10+, Bcl6+) con red dendrítica (CD23+),\ndemuestran ensanchamiento de la zona margina (Bcl2+) con fusión en algunas áreas. Los\nfolículos linfoides se rodean en su periferia por linfocitos T (CD3+). El índice de proliferación\ncelular medido mediante el Ki67 se distribuye predominantemente en el centro del folículo. No\nhay expreisón para HHV-8 ni para LMP-1.\nDIAGNÓSTICO\nGanglio linfático. Región inguinal izquierda. Biopsia escicional. Estudio de\ninmunohistoquímica. \nHIPERPLASIA FOLICULAR REACTIVA. \nCOMENTARIOS\nCaso valorado en conjunto con la Dra Isabella Caicedo (patóloga). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250219\nCopia Pag. 2 de 2\nNombre : SEBASTIAN CABEZAS HINESTROZA\nN. peticion : IHQ250219\nN.Identificación : CC. 1110292208\nGenero : MASCULINO\nEdad : 23 años 7 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 28/02/2025\nFecha Informe : 12/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD10, CD20, CD23, BCL2, BCL6, Ki-67, LMP 1, HHV 8",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al bloque parafinado institucional con rótulo M2502141 que corresponde a \"Ganglio inguinal izquierdo\" con diagnóstico de \"HIPERPLASIA LINFOIDE, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: CD3, CD10, CD20, CD23, BcL2, BcL6, Ki 67, LMP-1, HHV-8.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Ganglio linfático con presencia de folículos linfoides de diferentes tamaños (CD20+) con centro germinal bien delimitado (CD10+, Bcl6+) con red dendrítica (CD23+), demuestran ensanchamiento de la zona margina (Bcl2+) con fusión en algunas áreas. Los folículos linfoides se rodean en su periferia por linfocitos T (CD3+). El índice de proliferación celular medido mediante el Ki67 se distribuye predominantemente en el centro del folículo. No hay expreisón para HHV-8 ni para LMP-1.",
+      "Descripcion Diagnostico": "Ganglio linfático. Región inguinal izquierda. Biopsia escicional. Estudio de inmunohistoquímica. HIPERPLASIA FOLICULAR REACTIVA.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO",
+      "Organo": "GANGLIO INGUINAL IZQUIERDO",
+      "Diagnostico Coloracion": "HIPERPLASIA LINFOIDE, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN",
+      "Diagnostico Principal": "HIPERPLASIA FOLICULAR REACTIVA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: POSITIVO (distribución predominante)",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_KI-67": "POSITIVO (distribución predominante)",
+      "IHQ_LMP1": "NEGATIVO",
+      "IHQ_HHV8": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 174,
+      "campos_vacios": 131,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 131,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático. Región inguinal izquierda. Biopsia escicional. Estudio de\ninmunohistoquímica. \nHIPERPLASIA FOLICULAR REACTIVA.",
+      "valor_corregido": "Ganglio linfático. Región inguinal izquierda. Biopsia escicional. Estudio de inmunohistoquímica. HIPERPLASIA FOLICULAR REACTIVA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250219",
+      "timestamp": "2026-01-28T06:49:36.671161"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al bloque parafinado institucional con rótulo M2502141 que corresponde a \"Ganglio inguinal izquierdo\" con diagnóstico de \"HIPERPLASIA LINFOIDE, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: CD3, CD10, CD20, CD23, BcL2, BcL6, Ki 67, LMP-1, HHV-8.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al bloque parafinado institucional con rótulo M2502141 que corresponde a \"Ganglio inguinal izquierdo\" con diagnóstico de \"HIPERPLASIA LINFOIDE, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN\". Previa valoración de la coloración básica, se realizan cortes histológicos al bloque para los siguientes marcadores: CD3, CD10, CD20, CD23, BcL2, BcL6, KI-67, LMP-1, HHV-8.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250219",
+      "timestamp": "2026-01-28T06:49:36.671167"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Ganglio linfático con presencia de folículos linfoides de diferentes tamaños (CD20+) con centro germinal bien delimitado (CD10+, Bcl6+) con red dendrítica (CD23+), demuestran ensanchamiento de la zona margina (Bcl2+) con fusión en algunas áreas. Los folículos linfoides se rodean en su periferia por linfocitos T (CD3+). El índice de proliferación celular medido mediante el Ki67 se distribuye predominantemente en el centro del folículo. No hay expreisón para HHV-8 ni para LMP-1.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Ganglio linfático con presencia de folículos linfoides de diferentes tamaños (CD20+) con centro germinal bien delimitado (CD10+, Bcl6+) con red dendrítica (CD23+), demuestran ensanchamiento de la zona margina (Bcl2+) con fusión en algunas áreas. Los folículos linfoides se rodean en su periferia por linfocitos T (CD3+). El índice de proliferación celular medido mediante el KI-67 se distribuye predominantemente en el centro del folículo. No hay expreisón para HHV-8 ni para LMP-1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250219",
+      "timestamp": "2026-01-28T06:49:36.671169"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Caso valorado en conjunto con la Dra Isabella Caicedo (patóloga). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250219\nCopia Pag. 2 de 2\nNombre : SEBASTIAN CABEZAS HINESTROZA\nN. peticion : IHQ250219\nN.Identificación : CC. 1110292208\nGenero : MASCULINO\nEdad : 23 años 7 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 28/02/2025\nFecha Informe : 12/03/2025",
+      "valor_corregido": "Caso valorado en conjunto con la Dra Isabella Caicedo (patóloga). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 16 --- IHQ250219 Copia Pag. 2 de 2 Nombre : SEBASTIAN CABEZAS HINESTROZA N. peticion : IHQ250219 N.Identificación : CC. 1110292208 Genero : MASCULINO Edad : 23 años 7 dias EPS : ASMET SALUD EPS SAS Médico tratante : CARLOS ANDRES MUÑOZ Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 28/02/2025 Fecha Informe : 12/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250219",
+      "timestamp": "2026-01-28T06:49:36.671171"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 57
+  }
+}

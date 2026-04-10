@@ -1,0 +1,148 @@
+{
+  "session_id": "IHQ250252_20260128_042401",
+  "numero_peticion": "IHQ250252",
+  "timestamp": "2026-01-28T04:24:01.514570",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250252\nCopia Pag. 1 de 1\nNombre : LUZ MARINA VARGAS SUAREZ\nN. peticion : IHQ250252\nN.Identificación : CC. 1020110806\nGenero : FEMENINO\nEdad : 64 años 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MIRLELLY AGUILAR PEÑA\nServicio : SALA HUMANA\nFecha Ingreso : 10/03/2025\nFecha Informe : 12/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado\ncomo\n“M2502657”\nque\ncorresponde\na\n“biopsia\nde\ncérvix”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales presentan inmunorreactividad para p40.\np16 positivo en bloque.\ndiagnósticos\nde\n“CARCINOMA ESCAMOCELULAR INVASIVO NOS”. Previa revisión de la histología, se realizan\nniveles histológicos para tinción con p40 y p16.\nDIAGNÓSTICO\nCérvix. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, p16 POSITIVO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 2342,
+      "reduccion_porcentaje": 98.7
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250252",
+      "caso_num": 40,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "LUZ MARINA VARGAS SUAREZ",
+      "numero_peticion": "IHQ250252",
+      "identificacion": "1020110806",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "64",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "MIRLELLY AGUILAR PEÑA",
+      "servicio": "SALA HUMANA",
+      "fecha_ingreso": "10/03/2025",
+      "fecha_informe": "12/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250252",
+      "N. de identificación": "1020110806",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "SALA HUMANA",
+      "Médico tratante": "MIRLELLY AGUILAR PEÑA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "10/03/2025",
+      "Fecha Informe": "12/03/2025",
+      "nombres": "LUZ MARINA",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "MARINA",
+      "apellidos": "VARGAS SUAREZ",
+      "Primer apellido": "VARGAS",
+      "Segundo apellido": "SUAREZ",
+      "nombre_formal": "VARGAS SUAREZ, LUZ MARINA",
+      "diagnostico": "Cérvix. Lesión. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, p16 POSITIVO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad para p40. p16 positivo en bloque.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502657\" que corresponde a \"biopsia de cérvix\" con diagnósticos de \"CARCINOMA ESCAMOCELULAR INVASIVO NOS\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p40 y p16.",
+      "ihq_organo": "CÉRVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P40, P16",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CÉRVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "p16": "POSITIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-01-28T04:24:01.884453",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250252\nCopia Pag. 1 de 1\nNombre : LUZ MARINA VARGAS SUAREZ\nN. peticion : IHQ250252\nN.Identificación : CC. 1020110806\nGenero : FEMENINO\nEdad : 64 años 3 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MIRLELLY AGUILAR PEÑA\nServicio : SALA HUMANA\nFecha Ingreso : 10/03/2025\nFecha Informe : 12/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado\ncomo\n“M2502657”\nque\ncorresponde\na\n“biopsia\nde\ncérvix”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales presentan inmunorreactividad para p40.\np16 positivo en bloque.\ndiagnósticos\nde\n“CARCINOMA ESCAMOCELULAR INVASIVO NOS”. Previa revisión de la histología, se realizan\nniveles histológicos para tinción con p40 y p16.\nDIAGNÓSTICO\nCérvix. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, p16 POSITIVO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502657” que corresponde a “biopsia de cérvix” con diagnósticos de “CARCINOMA ESCAMOCELULAR INVASIVO NOS”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p40 y p16.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad para p40. p16 positivo en bloque.",
+      "Descripcion Diagnostico": "Cérvix. Lesión. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, p16 POSITIVO.",
+      "IHQ_ORGANO": "CÉRVIX",
+      "Organo": "BX CERVIX",
+      "Diagnostico Coloracion": "CARCINOMA ESCAMOCELULAR INVASIVO NOS",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, P16 POSITIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 174,
+      "campos_vacios": 137,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cérvix. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, p16 POSITIVO.",
+      "valor_corregido": "Cérvix. Lesión. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, p16 POSITIVO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250252",
+      "timestamp": "2026-01-28T04:24:01.884189"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2502657” que corresponde a “biopsia de cérvix” con diagnósticos de “CARCINOMA ESCAMOCELULAR INVASIVO NOS”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p40 y p16.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2502657\" que corresponde a \"biopsia de cérvix\" con diagnósticos de \"CARCINOMA ESCAMOCELULAR INVASIVO NOS\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p40 y p16.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250252",
+      "timestamp": "2026-01-28T04:24:01.884196"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 52
+  }
+}

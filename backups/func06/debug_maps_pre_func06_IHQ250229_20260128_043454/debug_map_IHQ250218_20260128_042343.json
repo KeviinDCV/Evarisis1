@@ -1,0 +1,173 @@
+{
+  "session_id": "IHQ250218_20260128_042343",
+  "numero_peticion": "IHQ250218",
+  "timestamp": "2026-01-28T04:23:43.766287",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250218\nCopia Pag. 1 de 2\nNombre : LUIS ALFONSO LASSO\nN. peticion : IHQ250218\nN.Identificación : CC. 12105894\nGenero : MASCULINO\nEdad : 71 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 28/02/2025\nFecha Informe : 14/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nESTACION V DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional HUV,\nrotulado como “m2502201” que corresponde a “biopsia masa de cuello\".\nPrevia revisión de la\nhistología, se realizan niveles histológicos para tinción con: Ki67, BCL2, BCL6, CD3, CD5, CD10,\nCD20, CD30, CD38, MUM1, cMYC.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células neoplásicas son de tamaño grande, corresponden a linfocitos B con expresión de\nCD20, expresión devcentro germinal (CD 10+, BcL6+), hay expresión aberrante para CD5+, el\nMUM1 es del 30%.\nSon negativas para CD38, cMYC y CD30. presentan un índice mitótico alto\ndado por un Ki67o es de 90%. Hay linfocitos T acompañantes CD3+, BCL2+\nDIAGNÓSTICO\nMasa en cuello. Lesión. Resección. Estudios de inmunohistoquímica. \nLOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN\nDE INMUNO HISTOQUIMICA SON\nCOMPATIBLES CON UN LINFOMA DIFUSO DE CEULAS B GRANDES, DE FENOTIPO CENTRO\nGERMINAL. \nCOMENTARIOS\nLos marcarodes LMP1, SOX 11 Ciclina D1 seran descritos en informe adicional posteriormente\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---\nIHQ250218\nCopia Pag. 2 de 2\nNombre : LUIS ALFONSO LASSO\nN. peticion : IHQ250218\nN.Identificación : CC. 12105894\nGenero : MASCULINO\nEdad : 71 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 28/02/2025\nFecha Informe : 14/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3431,
+      "reduccion_porcentaje": 98.09
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250218",
+      "caso_num": 7,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD38": "NEGATIVO",
+      "nombre_completo": "LUIS ALFONSO LASSO",
+      "numero_peticion": "IHQ250218",
+      "identificacion": "12105894",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "71",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "URIEL CARDONA NUÑEZ",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "28/02/2025",
+      "fecha_informe": "14/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250218",
+      "N. de identificación": "12105894",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "URIEL CARDONA NUÑEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "28/02/2025",
+      "Fecha Informe": "14/03/2025",
+      "nombres": "LUIS",
+      "Primer nombre": "LUIS",
+      "Segundo nombre": "",
+      "apellidos": "ALFONSO LASSO",
+      "Primer apellido": "ALFONSO",
+      "Segundo apellido": "LASSO",
+      "nombre_formal": "ALFONSO LASSO, LUIS",
+      "diagnostico": "Masa en cuello. Lesión. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN DE INMUNOHISTOQUIMICA SON COMPATIBLES CON UN LINFOMA DIFUSO DE CEULAS B GRANDES, DE FENOTIPO CENTRO GERMINAL.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son de tamaño grande, corresponden a linfocitos B con expresión de CD20, expresión devcentro germinal (CD 10+, BcL6+), hay expresión aberrante para CD5+, el MUM1 es del 30%. Son negativas para CD38, cMYC y CD30. presentan un índice mitótico alto dado por un Ki67 o es de 90%. Hay linfocitos T acompañantes CD3+, BCL2+",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional HUV, rotulado como \"m2502201\" que corresponde a \"biopsia masa de cuello\". Previa revisión de la histología, se realizan niveles histológicos para tinción con: KI-67, BCL2, BCL6, CD3, CD5, CD10, CD20, CD30, CD38, MUM1, cMYC.",
+      "ihq_organo": "MASA EN CUELLO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Ki-67, BCL2, BCL6, CD3, CD5, CD10, CD20, CD30, CD38, MUM1, CMYC",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Los marcarodes LMP1, SOX 11 Ciclina D1 seran descritos en",
+      "IHQ_ORGANO": "MASA EN CUELLO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, BCL2, BCL6, CD3, CD5, CD10, CD20, CD30, CD38, MUM1, CMYC",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_MUM1": "30%",
+      "IHQ_LMP1": "NEGATIVO",
+      "extraction_timestamp": "2026-01-28T04:23:44.249405",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250218\nCopia Pag. 1 de 2\nNombre : LUIS ALFONSO LASSO\nN. peticion : IHQ250218\nN.Identificación : CC. 12105894\nGenero : MASCULINO\nEdad : 71 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 28/02/2025\nFecha Informe : 14/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nESTACION V DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional HUV,\nrotulado como “m2502201” que corresponde a “biopsia masa de cuello\".\nPrevia revisión de la\nhistología, se realizan niveles histológicos para tinción con: Ki67, BCL2, BCL6, CD3, CD5, CD10,\nCD20, CD30, CD38, MUM1, cMYC.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células neoplásicas son de tamaño grande, corresponden a linfocitos B con expresión de\nCD20, expresión devcentro germinal (CD 10+, BcL6+), hay expresión aberrante para CD5+, el\nMUM1 es del 30%.\nSon negativas para CD38, cMYC y CD30. presentan un índice mitótico alto\ndado por un Ki67o es de 90%. Hay linfocitos T acompañantes CD3+, BCL2+\nDIAGNÓSTICO\nMasa en cuello. Lesión. Resección. Estudios de inmunohistoquímica. \nLOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN\nDE INMUNO HISTOQUIMICA SON\nCOMPATIBLES CON UN LINFOMA DIFUSO DE CEULAS B GRANDES, DE FENOTIPO CENTRO\nGERMINAL. \nCOMENTARIOS\nLos marcarodes LMP1, SOX 11 Ciclina D1 seran descritos en informe adicional posteriormente\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---\nIHQ250218\nCopia Pag. 2 de 2\nNombre : LUIS ALFONSO LASSO\nN. peticion : IHQ250218\nN.Identificación : CC. 12105894\nGenero : MASCULINO\nEdad : 71 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 28/02/2025\nFecha Informe : 14/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, BCL2, BCL6, CD3, CD5, CD10, CD20, CD30, CD38, MUM1, CMYC, LMP-1",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional HUV, rotulado como “m2502201” que corresponde a “biopsia masa de cuello\". Previa revisión de la histología, se realizan niveles histológicos para tinción con: Ki67, BCL2, BCL6, CD3, CD5, CD10, CD20, CD30, CD38, MUM1, cMYC.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son de tamaño grande, corresponden a linfocitos B con expresión de CD20, expresión devcentro germinal (CD 10+, BcL6+), hay expresión aberrante para CD5+, el MUM1 es del 30%. Son negativas para CD38, cMYC y CD30. presentan un índice mitótico alto dado por un Ki67o es de 90%. Hay linfocitos T acompañantes CD3+, BCL2+",
+      "Descripcion Diagnostico": "Masa en cuello. Lesión. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN DE INMUNOHISTOQUIMICA SON COMPATIBLES CON UN LINFOMA DIFUSO DE CEULAS B GRANDES, DE FENOTIPO CENTRO GERMINAL.",
+      "IHQ_ORGANO": "MASA EN CUELLO",
+      "Organo": "ESTACION V DERECHA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN DE INMUNOHISTOQUIMICA SON COMPATIBLES CON UN LINFOMA DIFUSO DE CEULAS B GRANDES, DE FENOTIPO CENTRO GERMINAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_KI-67": "90%",
+      "IHQ_BCL2": "NO MENCIONADO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD3": "NO MENCIONADO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_CD38": "NEGATIVO",
+      "IHQ_MUM1": "30%",
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_LMP1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 174,
+      "campos_vacios": 129,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 12,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Masa en cuello. Lesión. Resección. Estudios de inmunohistoquímica. \nLOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN\nDE INMUNO HISTOQUIMICA SON\nCOMPATIBLES CON UN LINFOMA DIFUSO DE CEULAS B GRANDES, DE FENOTIPO CENTRO\nGERMINAL.",
+      "valor_corregido": "Masa en cuello. Lesión. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y EL PERFIL DE EXPRESIÓN DE INMUNOHISTOQUIMICA SON COMPATIBLES CON UN LINFOMA DIFUSO DE CEULAS B GRANDES, DE FENOTIPO CENTRO GERMINAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250218",
+      "timestamp": "2026-01-28T04:23:44.249170"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional HUV, rotulado como “m2502201” que corresponde a “biopsia masa de cuello\". Previa revisión de la histología, se realizan niveles histológicos para tinción con: Ki67, BCL2, BCL6, CD3, CD5, CD10, CD20, CD30, CD38, MUM1, cMYC.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional HUV, rotulado como \"m2502201\" que corresponde a \"biopsia masa de cuello\". Previa revisión de la histología, se realizan niveles histológicos para tinción con: KI-67, BCL2, BCL6, CD3, CD5, CD10, CD20, CD30, CD38, MUM1, cMYC.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250218",
+      "timestamp": "2026-01-28T04:23:44.249177"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son de tamaño grande, corresponden a linfocitos B con expresión de CD20, expresión devcentro germinal (CD 10+, BcL6+), hay expresión aberrante para CD5+, el MUM1 es del 30%. Son negativas para CD38, cMYC y CD30. presentan un índice mitótico alto dado por un Ki67o es de 90%. Hay linfocitos T acompañantes CD3+, BCL2+",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas son de tamaño grande, corresponden a linfocitos B con expresión de CD20, expresión devcentro germinal (CD 10+, BcL6+), hay expresión aberrante para CD5+, el MUM1 es del 30%. Son negativas para CD38, cMYC y CD30. presentan un índice mitótico alto dado por un Ki67 o es de 90%. Hay linfocitos T acompañantes CD3+, BCL2+",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250218",
+      "timestamp": "2026-01-28T04:23:44.249179"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 56
+  }
+}

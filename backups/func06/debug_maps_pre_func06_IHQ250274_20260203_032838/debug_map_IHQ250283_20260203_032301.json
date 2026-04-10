@@ -1,0 +1,141 @@
+{
+  "session_id": "IHQ250283_20260203_032301",
+  "numero_peticion": "IHQ250283",
+  "timestamp": "2026-02-03T03:23:01.112400",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250283\nCopia Pag. 1 de 1\nNombre : JUVER DE JESUS OCAMPO VILLA\nN. peticion : IHQ250283\nN.Identificación : CC. 10632806\nGenero : MASCULINO\nEdad : 48 años\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 18/03/2025\nFecha Informe : 27/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGASTRECTOMIA DISTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque externo P242756, el cual corresponde a gastrectomía, con\ndiagnóstico de \"ADENOCARCINOMA POBREMENTE DIFERENCIADO CON ESTROMA LINFOIDE\". Se ordenan\nlos siguientes marcadores: CKAE1E3, HER2, CD3 y CD20.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para CKAE1E3, con linfocitos B CD20+ formando folículos linfoides y\nlinfocitos T CD3+ acompañantes interfoliculares. El HER2 es negativo (0).\nDIAGNÓSTICO\n Estómago. Tumor. Gastrectomía distal. Estudios de inmunohistoquímica:\nCARCINOMA GASTRICO CON ESTROMA LINFOIDE\nHER2 0 (NEGATIVO)\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 2423,
+      "reduccion_porcentaje": 98.61
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250283",
+      "caso_num": 20,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "nombre_completo": "JUVER DE JESUS OCAMPO VILLA",
+      "numero_peticion": "IHQ250283",
+      "identificacion": "10632806",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "48",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "18/03/2025",
+      "fecha_informe": "27/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250283",
+      "N. de identificación": "10632806",
+      "Tipo de documento": "CC",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "18/03/2025",
+      "Fecha Informe": "27/03/2025",
+      "nombres": "JUVER",
+      "Primer nombre": "JUVER",
+      "Segundo nombre": "",
+      "apellidos": "JUVER DE JESUS OCAMPO VILLA",
+      "Primer apellido": "JUVER",
+      "Segundo apellido": "DE JESUS OCAMPO VILLA",
+      "nombre_formal": "JUVER DE JESUS OCAMPO VILLA, JUVER",
+      "diagnostico": "Estómago. Tumor. Gastrectomía distal. Estudios de inmunohistoquímica: CARCINOMA GASTRICO CON ESTROMA LINFOIDE HER2 0 (NEGATIVO) MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, con linfocitos B CD20+ formando folículos linfoides y linfocitos T CD3+ acompañantes interfoliculares. El HER2 es negativo (0).",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque externo P242756, el cual corresponde a gastrectomía, con diagnóstico de \"ADENOCARCINOMA POBREMENTE DIFERENCIADO CON ESTROMA LINFOIDE\". Se ordenan los siguientes marcadores: CKAE1E3, HER2, CD3 y CD20.",
+      "ihq_organo": "ESTÓMAGO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, HER2, CD3, CD20",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ESTÓMAGO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "HER2 es negativo (0)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, HER2, CD3, CD20",
+      "IHQ_HER2": "es negativo (0)",
+      "extraction_timestamp": "2026-02-03T03:23:01.434500",
+      "extractor_version": "6.5.89_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250283\nCopia Pag. 1 de 1\nNombre : JUVER DE JESUS OCAMPO VILLA\nN. peticion : IHQ250283\nN.Identificación : CC. 10632806\nGenero : MASCULINO\nEdad : 48 años\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 18/03/2025\nFecha Informe : 27/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGASTRECTOMIA DISTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque externo P242756, el cual corresponde a gastrectomía, con\ndiagnóstico de \"ADENOCARCINOMA POBREMENTE DIFERENCIADO CON ESTROMA LINFOIDE\". Se ordenan\nlos siguientes marcadores: CKAE1E3, HER2, CD3 y CD20.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para CKAE1E3, con linfocitos B CD20+ formando folículos linfoides y\nlinfocitos T CD3+ acompañantes interfoliculares. El HER2 es negativo (0).\nDIAGNÓSTICO\n Estómago. Tumor. Gastrectomía distal. Estudios de inmunohistoquímica:\nCARCINOMA GASTRICO CON ESTROMA LINFOIDE\nHER2 0 (NEGATIVO)\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, HER2, CD3, CD20",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque externo P242756, el cual corresponde a gastrectomía, con diagnóstico de \"ADENOCARCINOMA POBREMENTE DIFERENCIADO CON ESTROMA LINFOIDE\". Se ordenan los siguientes marcadores: CKAE1E3, HER2, CD3 y CD20.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, con linfocitos B CD20+ formando folículos linfoides y linfocitos T CD3+ acompañantes interfoliculares. El HER2 es negativo (0).",
+      "Descripcion Diagnostico": "Estómago. Tumor. Gastrectomía distal. Estudios de inmunohistoquímica: CARCINOMA GASTRICO CON ESTROMA LINFOIDE HER2 0 (NEGATIVO) MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "IHQ_ORGANO": "ESTÓMAGO",
+      "Organo": "GASTRECTOMIA DISTAL",
+      "Diagnostico Coloracion": "ADENOCARCINOMA POBREMENTE DIFERENCIADO CON ESTROMA LINFOIDE",
+      "Diagnostico Principal": "CARCINOMA GASTRICO CON ESTROMA LINFOIDE HER2 0 (NEGATIVO) MARIA XIMENA VARELA QUEVEDO RESPONSABLE DEL ANÁLISIS: MD PATÓLOGA RM 761520 _________________________________________________________________________________________________",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 es negativo (0)",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_HER2": "ES NEGATIVO (0)",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 139,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Estómago. Tumor. Gastrectomía distal. Estudios de inmunohistoquímica:\nCARCINOMA GASTRICO CON ESTROMA LINFOIDE\nHER2 0 (NEGATIVO)\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________",
+      "valor_corregido": "Estómago. Tumor. Gastrectomía distal. Estudios de inmunohistoquímica: CARCINOMA GASTRICO CON ESTROMA LINFOIDE HER2 0 (NEGATIVO) MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250283",
+      "timestamp": "2026-02-03T03:23:01.434282"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 49
+  }
+}

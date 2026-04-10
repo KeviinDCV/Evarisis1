@@ -1,0 +1,72 @@
+======================================================================
+VALIDACION FINAL: Corrección v6.4.65 - IHQ250198
+======================================================================
+Fecha: 10 enero 2026, 05:00
+Caso validado: IHQ250198
+
+CAMBIO APLICADO:
+  Agregado filtro que excluye patrones de tinción en
+  extract_biomarker_list() de patient_extractor.py
+
+  Patrones excluidos:
+    - DIFUSA, FOCAL, FUERTE, DEBIL, INTENSA, MODERADA
+    - PARCIAL, TOTAL, LEVE, MARCADA, HETEROGENEA
+
+======================================================================
+COMPARACION DE SCORES
+======================================================================
+
+v6.4.60 (9 enero 2026, 05:36):
+  Score: 77.8%
+  Estado: ERROR
+  Causa: FACTOR_PRONOSTICO vacío
+  Biomarcadores solicitados: 11
+  Biomarcadores extraídos: 15
+
+v6.4.65 (10 enero 2026, 05:00):
+  Score: 88.9%
+  Estado: OK
+  Warnings: 0 | Errores: 0
+  Biomarcadores solicitados (OCR): 10
+  Biomarcadores extraídos (BD): 14
+
+MEJORA: +11.1 puntos (77.8% → 88.9%)
+
+======================================================================
+VALIDACION DEL FILTRO
+======================================================================
+
+1. DIFUSA en OCR:
+   ✓ Presente: SI
+   ✓ Contexto: Descripción microscópica
+   ✓ Texto: "...marcación fuerte y DIFUSA para CD 3, CD 4..."
+
+2. DIFUSA en IHQ_ESTUDIOS_SOLICITADOS:
+   ✓ Presente: NO
+   ✓ Estado: FILTRADO EXITOSO ✓
+
+3. Biomarcadores extraídos (correctos):
+   CD20, CD56, CD2, CD3, CD4, CD5, BCL 6, BCL2,
+   Ki-67, CD7, CD8, CD10, CD30, TDT
+
+======================================================================
+RESULTADO FINAL
+======================================================================
+
+✓ Estado: EXITOSO
+
+Confirmaciones:
+  ✓ Filtro v6.4.65 funciona correctamente
+  ✓ DIFUSA NO aparece en IHQ_ESTUDIOS_SOLICITADOS
+  ✓ Los biomarcadores reales se extraen correctamente
+  ✓ Score mejoró de 77.8% a 88.9% (+11.1 puntos)
+
+Próximo paso recomendado:
+  → Validar con 2-3 casos adicionales para confirmar
+    que el filtro no causa regresión en otros casos
+  → Sugerencia: IHQ250197, IHQ250199, IHQ250200
+
+Reportes generados:
+  1. herramientas_ia/resultados/VALIDACION_FIX_v6.4.65_IHQ250198.json
+  2. herramientas_ia/resultados/VALIDACION_FIX_v6.4.65_IHQ250198.txt
+  3. herramientas_ia/resultados/auditoria_inteligente_IHQ250198.json

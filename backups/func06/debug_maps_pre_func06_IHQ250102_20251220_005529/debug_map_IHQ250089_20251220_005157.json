@@ -1,0 +1,178 @@
+{
+  "session_id": "IHQ250089_20251220_005157",
+  "numero_peticion": "IHQ250089",
+  "timestamp": "2025-12-20T00:51:57.435274",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250089\nCopia Pag. 1 de 2\nNombre : LILIANA MARIA ERAZO AGUDELO\nN. peticion : IHQ250089\nN.Identificación : CC. 31977672\nGenero : FEMENINO\nEdad : 56 años 11 meses 18 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : ANGIE MAITE RAMIREZ ROSERO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 27/01/2025\nFecha Informe : 12/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE GANGLIO\nCERVICAL IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500182 con rótulo\ncorrespondiente a \"biopsia de ganglio cervical izquierdo\" con diagnóstico de “NEOPLASIA EN\nPATRON SÓLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa valoración de la\ncoloración básica, se realizan cortes histológicos para los siguientes marcadores: \nBloque 1 y 2: CD45, CD20, CD5\nBloque 2: CD10, CD30, PAX 5, MUM1, cMYC, BcL2, BcL6, Ki 67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO: \nSe reconoce una proliferación de células linfoides B (CD20+, PAX5+) de tamaño intermedio a\ngrande que distribuyen de forma difusa. Expresan fuertemente marcadores del centro germinal\n(CD10+, BcL 6+, MUM1+) y coexpresan en menor intensidad CD5+, BCL2+ (> 50 % de las\ncélulas tumorales) y MYC+ (> 40 % de las células tumorales). Son negativas para CD30. El\níndice de proliferación celular medido con Ki67 es del 90% . \nDIAGNÓSTICO\nGanglio cervical izquierdo. Lesión. Biopsia tru cut. Estudio de inmunohistoquímica. \nLINFOMA DE CÉLULAS B GRANDES DE ALTO GRADO \nVER COMENTARIO. \nCOMENTARIOS\nLa coexpresión de BCL2 (> 50 % de las células tumorales) y MYC (> 40 % de las células\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---\nIHQ250089\nCopia Pag. 2 de 2\nNombre : LILIANA MARIA ERAZO AGUDELO\nN. peticion : IHQ250089\nN.Identificación : CC. 31977672\nGenero : FEMENINO\nEdad : 56 años 11 meses 18 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : ANGIE MAITE RAMIREZ ROSERO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 27/01/2025\nFecha Informe : 12/02/2025\ntumorales) requiere la realización de FISH para determinar la presencia de reordenamientos\ncromosómicos de MYC y BCL2 para su posterior adecuada clasificación. \nCaso valorado en conjunto con la Dra Maria Ximena Valera (patóloga). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3861,
+      "reduccion_porcentaje": 97.94
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250089",
+      "caso_num": 35,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "LILIANA MARIA ERAZO AGUDELO",
+      "numero_peticion": "IHQ250089",
+      "identificacion": "31977672",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "56",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "ANGIE MAITE RAMIREZ ROSERO",
+      "servicio": "INSTITUCION EXTERNA",
+      "fecha_ingreso": "27/01/2025",
+      "fecha_informe": "12/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250089",
+      "N. de identificación": "31977672",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "INSTITUCION EXTERNA",
+      "Médico tratante": "ANGIE MAITE RAMIREZ ROSERO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "27/01/2025",
+      "Fecha Informe": "12/02/2025",
+      "nombres": "LILIANA MARIA",
+      "Primer nombre": "LILIANA",
+      "Segundo nombre": "MARIA",
+      "apellidos": "ERAZO AGUDELO",
+      "Primer apellido": "ERAZO",
+      "Segundo apellido": "AGUDELO",
+      "nombre_formal": "ERAZO AGUDELO, LILIANA MARIA",
+      "diagnostico": "Ganglio cervical izquierdo. Lesión. Biopsia tru cut. Estudio de inmunohistoquímica. LINFOMA DE CÉLULAS B GRANDES DE ALTO GRADO VER COMENTARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Se reconoce una proliferación de células linfoides B (CD20+, PAX5+) de tamaño intermedio a grande que distribuyen de forma difusa. Expresan fuertemente marcadores del centro germinal (CD10+, BcL 6+, MUM1+) y coexpresan en menor intensidad CD5+, BCL2+ (> 50 % de las células tumorales) y MYC+ (> 40 % de las células tumorales). Son negativas para CD30. El índice de proliferación celular medido con KI-67 es del 90% .",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500182 con rótulo correspondiente a \"biopsia de ganglio cervical izquierdo\" con diagnóstico de “NEOPLASIA EN PATRON SÓLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: Bloque 1 y 2: CD45, CD20, CD5 Bloque 2: CD10, CD30, PAX 5, MUM1, cMYC, BcL2, BcL6, KI-67.",
+      "ihq_organo": "GANGLIO CERVICAL IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD45, CD20, CD5, CD10, CD30, PAX 5, MUM1, CMYC, BCL2, BCL6, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "La coexpresión de BCL2 (> 50 % de las células tumorales) y MYC (> 40 % de las células Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 67 --- IHQ250089 Copia Pag. 2 de 2 Nombre : LILIANA MARIA ERAZO AGUDELO N. peticion : IHQ250089 N.Identificación : CC. 31977672 Genero : FEMENINO Edad : 56 años 11 meses 18 dias EPS : S.O.S. SERV.OCCID.DE SALUD EPS Médico tratante : ANGIE MAITE RAMIREZ ROSERO Servicio : INSTITUCION EXTERNA Fecha Ingreso : 27/01/2025 Fecha Informe : 12/02/2025 tumorales) requiere la realización de FISH para determinar la presencia de reordenamientos cromosómicos de MYC y BCL2 para su posterior adecuada clasificación. Caso valorado en conjunto con la Dra Maria Ximena Valera (patóloga).",
+      "IHQ_ORGANO": "GANGLIO CERVICAL IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CMYC": "POSITIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_BCL6": "POSITIVO",
+      "extraction_timestamp": "2025-12-20T00:51:57.607364",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250089\nCopia Pag. 1 de 2\nNombre : LILIANA MARIA ERAZO AGUDELO\nN. peticion : IHQ250089\nN.Identificación : CC. 31977672\nGenero : FEMENINO\nEdad : 56 años 11 meses 18 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : ANGIE MAITE RAMIREZ ROSERO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 27/01/2025\nFecha Informe : 12/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE GANGLIO\nCERVICAL IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500182 con rótulo\ncorrespondiente a \"biopsia de ganglio cervical izquierdo\" con diagnóstico de “NEOPLASIA EN\nPATRON SÓLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa valoración de la\ncoloración básica, se realizan cortes histológicos para los siguientes marcadores: \nBloque 1 y 2: CD45, CD20, CD5\nBloque 2: CD10, CD30, PAX 5, MUM1, cMYC, BcL2, BcL6, Ki 67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO: \nSe reconoce una proliferación de células linfoides B (CD20+, PAX5+) de tamaño intermedio a\ngrande que distribuyen de forma difusa. Expresan fuertemente marcadores del centro germinal\n(CD10+, BcL 6+, MUM1+) y coexpresan en menor intensidad CD5+, BCL2+ (> 50 % de las\ncélulas tumorales) y MYC+ (> 40 % de las células tumorales). Son negativas para CD30. El\níndice de proliferación celular medido con Ki67 es del 90% . \nDIAGNÓSTICO\nGanglio cervical izquierdo. Lesión. Biopsia tru cut. Estudio de inmunohistoquímica. \nLINFOMA DE CÉLULAS B GRANDES DE ALTO GRADO \nVER COMENTARIO. \nCOMENTARIOS\nLa coexpresión de BCL2 (> 50 % de las células tumorales) y MYC (> 40 % de las células\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---\nIHQ250089\nCopia Pag. 2 de 2\nNombre : LILIANA MARIA ERAZO AGUDELO\nN. peticion : IHQ250089\nN.Identificación : CC. 31977672\nGenero : FEMENINO\nEdad : 56 años 11 meses 18 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : ANGIE MAITE RAMIREZ ROSERO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 27/01/2025\nFecha Informe : 12/02/2025\ntumorales) requiere la realización de FISH para determinar la presencia de reordenamientos\ncromosómicos de MYC y BCL2 para su posterior adecuada clasificación. \nCaso valorado en conjunto con la Dra Maria Ximena Valera (patóloga). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD45, CD20, CD5, CD10, CD30, PAX 5, MUM1, CMYC, BCL2, BCL6, Ki-67",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500182 con rótulo correspondiente a \"biopsia de ganglio cervical izquierdo\" con diagnóstico de “NEOPLASIA EN PATRON SÓLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: Bloque 1 y 2: CD45, CD20, CD5 Bloque 2: CD10, CD30, PAX 5, MUM1, cMYC, BcL2, BcL6, Ki 67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Se reconoce una proliferación de células linfoides B (CD20+, PAX5+) de tamaño intermedio a grande que distribuyen de forma difusa. Expresan fuertemente marcadores del centro germinal (CD10+, BcL 6+, MUM1+) y coexpresan en menor intensidad CD5+, BCL2+ (> 50 % de las células tumorales) y MYC+ (> 40 % de las células tumorales). Son negativas para CD30. El índice de proliferación celular medido con Ki67 es del 90% .",
+      "Descripcion Diagnostico": "Ganglio cervical izquierdo. Lesión. Biopsia tru cut. Estudio de inmunohistoquímica. LINFOMA DE CÉLULAS B GRANDES DE ALTO GRADO VER COMENTARIO.",
+      "IHQ_ORGANO": "GANGLIO CERVICAL IZQUIERDO",
+      "Organo": "BIOPSIA DE GANGLIO CERVICAL IZQUIERDO",
+      "Diagnostico Coloracion": "NEOPLASIA EN PATRON SÓLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LINFOIDES B (CD20+, PAX5+) DE TAMAÑO INTERMEDIO A",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_CD45": "NO MENCIONADO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "IHQ_CMYC": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_KI-67": "90%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 165,
+      "campos_vacios": 119,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 11,
+      "completitud_porcentaje": 27.88
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 119,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio cervical izquierdo. Lesión. Biopsia tru cut. Estudio de inmunohistoquímica. \nLINFOMA DE CÉLULAS B GRANDES DE ALTO GRADO \nVER COMENTARIO.",
+      "valor_corregido": "Ganglio cervical izquierdo. Lesión. Biopsia tru cut. Estudio de inmunohistoquímica. LINFOMA DE CÉLULAS B GRANDES DE ALTO GRADO VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250089",
+      "timestamp": "2025-12-20T00:51:57.607161"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500182 con rótulo correspondiente a \"biopsia de ganglio cervical izquierdo\" con diagnóstico de “NEOPLASIA EN PATRON SÓLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: Bloque 1 y 2: CD45, CD20, CD5 Bloque 2: CD10, CD30, PAX 5, MUM1, cMYC, BcL2, BcL6, Ki 67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500182 con rótulo correspondiente a \"biopsia de ganglio cervical izquierdo\" con diagnóstico de “NEOPLASIA EN PATRON SÓLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: Bloque 1 y 2: CD45, CD20, CD5 Bloque 2: CD10, CD30, PAX 5, MUM1, cMYC, BcL2, BcL6, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250089",
+      "timestamp": "2025-12-20T00:51:57.607167"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Se reconoce una proliferación de células linfoides B (CD20+, PAX5+) de tamaño intermedio a grande que distribuyen de forma difusa. Expresan fuertemente marcadores del centro germinal (CD10+, BcL 6+, MUM1+) y coexpresan en menor intensidad CD5+, BCL2+ (> 50 % de las células tumorales) y MYC+ (> 40 % de las células tumorales). Son negativas para CD30. El índice de proliferación celular medido con Ki67 es del 90% .",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO: Se reconoce una proliferación de células linfoides B (CD20+, PAX5+) de tamaño intermedio a grande que distribuyen de forma difusa. Expresan fuertemente marcadores del centro germinal (CD10+, BcL 6+, MUM1+) y coexpresan en menor intensidad CD5+, BCL2+ (> 50 % de las células tumorales) y MYC+ (> 40 % de las células tumorales). Son negativas para CD30. El índice de proliferación celular medido con KI-67 es del 90% .",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250089",
+      "timestamp": "2025-12-20T00:51:57.607168"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La coexpresión de BCL2 (> 50 % de las células tumorales) y MYC (> 40 % de las células\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---\nIHQ250089\nCopia Pag. 2 de 2\nNombre : LILIANA MARIA ERAZO AGUDELO\nN. peticion : IHQ250089\nN.Identificación : CC. 31977672\nGenero : FEMENINO\nEdad : 56 años 11 meses 18 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : ANGIE MAITE RAMIREZ ROSERO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 27/01/2025\nFecha Informe : 12/02/2025\ntumorales) requiere la realización de FISH para determinar la presencia de reordenamientos\ncromosómicos de MYC y BCL2 para su posterior adecuada clasificación. \nCaso valorado en conjunto con la Dra Maria Ximena Valera (patóloga).",
+      "valor_corregido": "La coexpresión de BCL2 (> 50 % de las células tumorales) y MYC (> 40 % de las células Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 67 --- IHQ250089 Copia Pag. 2 de 2 Nombre : LILIANA MARIA ERAZO AGUDELO N. peticion : IHQ250089 N.Identificación : CC. 31977672 Genero : FEMENINO Edad : 56 años 11 meses 18 dias EPS : S.O.S. SERV.OCCID.DE SALUD EPS Médico tratante : ANGIE MAITE RAMIREZ ROSERO Servicio : INSTITUCION EXTERNA Fecha Ingreso : 27/01/2025 Fecha Informe : 12/02/2025 tumorales) requiere la realización de FISH para determinar la presencia de reordenamientos cromosómicos de MYC y BCL2 para su posterior adecuada clasificación. Caso valorado en conjunto con la Dra Maria Ximena Valera (patóloga).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250089",
+      "timestamp": "2025-12-20T00:51:57.607170"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 58
+  }
+}

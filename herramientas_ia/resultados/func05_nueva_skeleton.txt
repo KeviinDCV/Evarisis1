@@ -1,0 +1,43 @@
+    # ============================================================================
+    # FUNC-05B: Análisis de Casos Problemáticos (NUEVA VERSIÓN MEJORADA)
+    # ============================================================================
+
+    def analizar_casos_problematicos(
+        self, 
+        tipo: str = 'ambos',
+        generar_reporte: bool = True,
+        limite: Optional[int] = None
+    ) -> Dict[str, Any]:
+        '''
+        FUNC-05B MEJORADA: Analiza casos con problemas y genera TODO-LIST consolidado.
+        
+        Esta función COMPLEMENTA (no reemplaza) a corregir_completitud_automatica.
+        
+        Modos de análisis:
+        - 'incompletos': Solo casos con biomarcadores NO MAPEADO
+        - 'validacion': Solo casos "completos" con errores de validación (score < 100%)
+        - 'ambos': Ambos tipos (por defecto)
+        
+        Proceso:
+        1. Lee reporte_importacion.json para casos incompletos
+        2. Audita casos marcados como "completos" con FUNC-01 para detectar errores de validación
+        3. Detecta patrones comunes de error
+        4. Genera TODO-LIST consolidado con prioridades
+        
+        Args:
+            tipo: Tipo de análisis ('incompletos', 'validacion', 'ambos')
+            generar_reporte: Si True, genera JSON en herramientas_ia/resultados/
+            limite: Límite de casos a analizar (para validación masiva)
+        
+        Returns:
+            Dict con:
+            - casos_incompletos: Lista de casos con biomarcadores no mapeados
+            - casos_mal_validados: Lista de casos con errores de validación
+            - todo_list: Lista priorizada de acciones
+            - estadisticas: Resumen agregado
+        '''
+        pass
+
+    def _generar_accion_para_problema(self, problema: Dict[str, Any]) -> str:
+        '''Genera acción sugerida para un problema detectado.'''
+        pass

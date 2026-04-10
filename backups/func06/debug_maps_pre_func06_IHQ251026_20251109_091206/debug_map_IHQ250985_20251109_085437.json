@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250985_20251109_085437",
+  "numero_peticion": "IHQ250985",
+  "timestamp": "2025-11-09T08:54:37.306077",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250985\nCopia Pag. 1 de 2\nNombre : MARIA CRISTINA RUIZ IDROBO\nN. peticion : IHQ250985\nN.Identificación : CC. 34546824\nGenero : FEMENINO\nEdad : 64 años 4 meses 18 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 08/09/2025\nFecha Informe : 12/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nNODULO MAMARIO\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en material externo con rótulo\n\"P2501782\" que corresponde a la biopsia de un nódulo de mama derecha.\nPrevia revisión de la histología se realizan coloraciones inmunohistoquímicas con los anticuerpos\npara Receptores hormonales (RE y RP), Ki-67 y HER2/Neu en el Bloque 1.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema\nROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nReceptor de estrógeno:\nPOSITIVO.\nPorcentaje de células con positiva nuclear: 100%.\nPromedio de intensidad la tinción: fuerte.\nReceptor de progesterona:\nPOSITIVO.\nPorcentaje de células con positiva nuclear: 100%.\nPromedio de intensidad la tinción: fuerte.\nHER2/Neu:\nNEGATIVO (Score 0)\nKi-67:\nTasa de proliferación celuar estimada en el 2%.\nMÉTODOS\nTiempo de isquemia fría: desconocido.\nTiempo de fijación: desconocido.\nFijador: formalina.\nMétodo para RE: \nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: SP1.\nMétodo para RP: \nDIAGNÓSTICO\nMama izquierda. Lesión. Biopsia con aguja gruesa. Estudio de inmunohistoquímica para\nbiomarcadores mamarios.\nCARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)\nCLASIFICACIÓN GENERAL, GRADO 1 (NOTTINGHAM 5/9)\nCLASIFICACIÓN MOLECULAR, LUMINAL A.\nCARCINOMA DUCTAL IN SITU DE GRADO NUCLEAR INTERMEDIO PRESENTE.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---\nIHQ250985\nCopia Pag. 2 de 2\nNombre : MARIA CRISTINA RUIZ IDROBO\nN. peticion : IHQ250985\nN.Identificación : CC. 34546824\nGenero : FEMENINO\nEdad : 64 años 4 meses 18 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 08/09/2025\nFecha Informe : 12/09/2025\nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: 1E2.\nMétodo para HER2/Neu: \nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: 4B5.\nMétodo para Ki-67: \nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: 30-9.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3810,
+      "reduccion_porcentaje": 98.03
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250985",
+      "caso_num": 6,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA CRISTINA RUIZ IDROBO",
+      "numero_peticion": "IHQ250985",
+      "identificacion": "34546824",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "64",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "08/09/2025",
+      "fecha_informe": "12/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250985",
+      "N. de identificación": "34546824",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/09/2025",
+      "Fecha Informe": "12/09/2025",
+      "nombres": "MARIA CRISTINA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "CRISTINA",
+      "apellidos": "RUIZ IDROBO",
+      "Primer apellido": "RUIZ",
+      "Segundo apellido": "IDROBO",
+      "nombre_formal": "RUIZ IDROBO, MARIA CRISTINA",
+      "diagnostico": "Mama izquierda. Lesión. Biopsia con aguja gruesa. Estudio de inmunohistoquímica para biomarcadores mamarios. CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL) CLASIFICACIÓN GENERAL, GRADO 1 (NOTTINGHAM 5/9) CLASIFICACIÓN MOLECULAR, LUMINAL A. CARCINOMA DUCTAL IN SITU DE GRADO NUCLEAR INTERMEDIO PRESENTE.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Receptor de estrógeno: POSITIVO. Porcentaje de células con positiva nuclear: 100%. Promedio de intensidad la tinción: fuerte. Receptor de progesterona: POSITIVO. Porcentaje de células con positiva nuclear: 100%. Promedio de intensidad la tinción: fuerte. HER2/Neu: NEGATIVO (Score 0) KI-67: Tasa de proliferación celuar estimada en el 2%. MÉTODOS Tiempo de isquemia fría: desconocido. Tiempo de fijación: desconocido. Fijador: formalina. Método para RE: FDA aprobado: ROCHE/VENTANA. Anticuerpo primario: SP1. Método para RP:",
+      "descripcion_macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo con rótulo \"P2501782\" que corresponde a la biopsia de un nódulo de mama derecha. Previa revisión de la histología se realizan coloraciones inmunohistoquímicas con los anticuerpos para Receptores hormonales (RE y RP), KI-67 y HER2/Neu en el Bloque 1.",
+      "ihq_organo": "MAMA IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "RE, RP, Ki-67, HER2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "HER2: NEGATIVO (SCORE 0), Ki-67: 2%, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_KI-67": "2%",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "extraction_timestamp": "2025-11-09T08:54:37.453331",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250985\nCopia Pag. 1 de 2\nNombre : MARIA CRISTINA RUIZ IDROBO\nN. peticion : IHQ250985\nN.Identificación : CC. 34546824\nGenero : FEMENINO\nEdad : 64 años 4 meses 18 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 08/09/2025\nFecha Informe : 12/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nNODULO MAMARIO\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en material externo con rótulo\n\"P2501782\" que corresponde a la biopsia de un nódulo de mama derecha.\nPrevia revisión de la histología se realizan coloraciones inmunohistoquímicas con los anticuerpos\npara Receptores hormonales (RE y RP), Ki-67 y HER2/Neu en el Bloque 1.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema\nROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nReceptor de estrógeno:\nPOSITIVO.\nPorcentaje de células con positiva nuclear: 100%.\nPromedio de intensidad la tinción: fuerte.\nReceptor de progesterona:\nPOSITIVO.\nPorcentaje de células con positiva nuclear: 100%.\nPromedio de intensidad la tinción: fuerte.\nHER2/Neu:\nNEGATIVO (Score 0)\nKi-67:\nTasa de proliferación celuar estimada en el 2%.\nMÉTODOS\nTiempo de isquemia fría: desconocido.\nTiempo de fijación: desconocido.\nFijador: formalina.\nMétodo para RE: \nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: SP1.\nMétodo para RP: \nDIAGNÓSTICO\nMama izquierda. Lesión. Biopsia con aguja gruesa. Estudio de inmunohistoquímica para\nbiomarcadores mamarios.\nCARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)\nCLASIFICACIÓN GENERAL, GRADO 1 (NOTTINGHAM 5/9)\nCLASIFICACIÓN MOLECULAR, LUMINAL A.\nCARCINOMA DUCTAL IN SITU DE GRADO NUCLEAR INTERMEDIO PRESENTE.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---\nIHQ250985\nCopia Pag. 2 de 2\nNombre : MARIA CRISTINA RUIZ IDROBO\nN. peticion : IHQ250985\nN.Identificación : CC. 34546824\nGenero : FEMENINO\nEdad : 64 años 4 meses 18 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 08/09/2025\nFecha Informe : 12/09/2025\nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: 1E2.\nMétodo para HER2/Neu: \nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: 4B5.\nMétodo para Ki-67: \nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: 30-9.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "RECEPTOR DE ESTROGENOS, RECEPTOR DE PROGESTERONA, Ki-67, HER2",
+      "Descripcion macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo con rótulo \"P2501782\" que corresponde a la biopsia de un nódulo de mama derecha. Previa revisión de la histología se realizan coloraciones inmunohistoquímicas con los anticuerpos para Receptores hormonales (RE y RP), Ki-67 y HER2/Neu en el Bloque 1.",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Receptor de estrógeno: POSITIVO. Porcentaje de células con positiva nuclear: 100%. Promedio de intensidad la tinción: fuerte. Receptor de progesterona: POSITIVO. Porcentaje de células con positiva nuclear: 100%. Promedio de intensidad la tinción: fuerte. HER2/Neu: NEGATIVO (Score 0) Ki-67: Tasa de proliferación celuar estimada en el 2%. MÉTODOS Tiempo de isquemia fría: desconocido. Tiempo de fijación: desconocido. Fijador: formalina. Método para RE: FDA aprobado: ROCHE/VENTANA. Anticuerpo primario: SP1. Método para RP:",
+      "Descripcion Diagnostico": "Mama izquierda. Lesión. Biopsia con aguja gruesa. Estudio de inmunohistoquímica para biomarcadores mamarios. CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL) CLASIFICACIÓN GENERAL, GRADO 1 (NOTTINGHAM 5/9) CLASIFICACIÓN MOLECULAR, LUMINAL A. CARCINOMA DUCTAL IN SITU DE GRADO NUCLEAR INTERMEDIO PRESENTE.",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Organo": "NODULO MAMARIO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO (SCORE 0), Ki-67: 2%, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_KI-67": "2%",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 145,
+      "campos_vacios": 106,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 26.9
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 106,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama izquierda. Lesión. Biopsia con aguja gruesa. Estudio de inmunohistoquímica para\nbiomarcadores mamarios.\nCARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)\nCLASIFICACIÓN GENERAL, GRADO 1 (NOTTINGHAM 5/9)\nCLASIFICACIÓN MOLECULAR, LUMINAL A.\nCARCINOMA DUCTAL IN SITU DE GRADO NUCLEAR INTERMEDIO PRESENTE.",
+      "valor_corregido": "Mama izquierda. Lesión. Biopsia con aguja gruesa. Estudio de inmunohistoquímica para biomarcadores mamarios. CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL) CLASIFICACIÓN GENERAL, GRADO 1 (NOTTINGHAM 5/9) CLASIFICACIÓN MOLECULAR, LUMINAL A. CARCINOMA DUCTAL IN SITU DE GRADO NUCLEAR INTERMEDIO PRESENTE.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250985",
+      "timestamp": "2025-11-09T08:54:37.453078"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo con rótulo\n\"P2501782\" que corresponde a la biopsia de un nódulo de mama derecha.\nPrevia revisión de la histología se realizan coloraciones inmunohistoquímicas con los anticuerpos\npara Receptores hormonales (RE y RP), Ki-67 y HER2/Neu en el Bloque 1.",
+      "valor_corregido": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo con rótulo \"P2501782\" que corresponde a la biopsia de un nódulo de mama derecha. Previa revisión de la histología se realizan coloraciones inmunohistoquímicas con los anticuerpos para Receptores hormonales (RE y RP), KI-67 y HER2/Neu en el Bloque 1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250985",
+      "timestamp": "2025-11-09T08:54:37.453086"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Receptor de estrógeno: POSITIVO. Porcentaje de células con positiva nuclear: 100%. Promedio de intensidad la tinción: fuerte. Receptor de progesterona: POSITIVO. Porcentaje de células con positiva nuclear: 100%. Promedio de intensidad la tinción: fuerte. HER2/Neu: NEGATIVO (Score 0) Ki-67: Tasa de proliferación celuar estimada en el 2%. MÉTODOS Tiempo de isquemia fría: desconocido. Tiempo de fijación: desconocido. Fijador: formalina. Método para RE: FDA aprobado: ROCHE/VENTANA. Anticuerpo primario: SP1. Método para RP:",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Receptor de estrógeno: POSITIVO. Porcentaje de células con positiva nuclear: 100%. Promedio de intensidad la tinción: fuerte. Receptor de progesterona: POSITIVO. Porcentaje de células con positiva nuclear: 100%. Promedio de intensidad la tinción: fuerte. HER2/Neu: NEGATIVO (Score 0) KI-67: Tasa de proliferación celuar estimada en el 2%. MÉTODOS Tiempo de isquemia fría: desconocido. Tiempo de fijación: desconocido. Fijador: formalina. Método para RE: FDA aprobado: ROCHE/VENTANA. Anticuerpo primario: SP1. Método para RP:",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250985",
+      "timestamp": "2025-11-09T08:54:37.453088"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 51
+  }
+}

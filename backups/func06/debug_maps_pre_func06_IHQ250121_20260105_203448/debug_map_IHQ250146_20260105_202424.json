@@ -1,0 +1,163 @@
+{
+  "session_id": "IHQ250146_20260105_202424",
+  "numero_peticion": "IHQ250146",
+  "timestamp": "2026-01-05T20:24:24.575255",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250146\nCopia Pag. 1 de 2\nNombre : JAIME RAMIREZ\nN. peticion : IHQ250146\nN.Identificación : CC. 2605354\nGenero : MASCULINO\nEdad : 76 años 4 meses 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : RADIOTERAPIA\nFecha Ingreso : 07/02/2025\nFecha Informe : 20/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PREAURICULAR\nIZQUIERDA + REGION\nSUBMAXILAR IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos a los bloques del caso externo H24-08P01604-A1 y B1 los cuales\ncorresponden a dos especímenes: A. Resección de región preauricular izquierda y B. Resección de región\nsubmaxilar izquierda, ambos con diagnóstico morfológico con hallazgos que sugieren \"CARCINOMA DE\nCÉLULAS ESCAMOSAS MAL DIFERENCIADO INFILTRANTE\". Se ordenan los siguientes marcadores:\nCKAE1E3, p40, p16 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nAmbos especímenes presentan células tumorales malignas con inmunotinción positiva para CKAE1E3,\np40, marcación fuerte y en bloque para p16 y un índice de proliferación celular medido por Ki-67 del\n70%.\nDIAGNÓSTICO\n A. Región preauricular izquierda. Tumor (historia de carcinoma sinonasal maxtiloetmoidal izquierdo y de\nórbita izquierda). Resección. Estudio de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH\nB. Región submaxilar izquierda. Tumor (historia de carcinoma sinonasal maxtiloetmoidal izquierdo y de\nórbita izquierda). Resección. Estudio de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---\nIHQ250146\nCopia Pag. 2 de 2\nNombre : JAIME RAMIREZ\nN. peticion : IHQ250146\nN.Identificación : CC. 2605354\nGenero : MASCULINO\nEdad : 76 años 4 meses 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : RADIOTERAPIA\nFecha Ingreso : 07/02/2025\nFecha Informe : 20/02/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3500,
+      "reduccion_porcentaje": 97.98
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250146",
+      "caso_num": 36,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P16_ESTADO": "POSITIVO (bloque)",
+      "IHQ_KI67": "POSITIVO (bloque)",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "nombre_completo": "JAIME RAMIREZ",
+      "numero_peticion": "IHQ250146",
+      "identificacion": "2605354",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "76",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "RADIOTERAPIA",
+      "fecha_ingreso": "07/02/2025",
+      "fecha_informe": "20/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250146",
+      "N. de identificación": "2605354",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "RADIOTERAPIA",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/02/2025",
+      "Fecha Informe": "20/02/2025",
+      "nombres": "JAIME",
+      "Primer nombre": "JAIME",
+      "Segundo nombre": "",
+      "apellidos": "RAMIREZ",
+      "Primer apellido": "RAMIREZ",
+      "Segundo apellido": "",
+      "nombre_formal": "RAMIREZ, JAIME",
+      "diagnostico": "A. Región preauricular izquierda. Tumor (historia de carcinoma sinonasal maxtiloetmoidal izquierdo y de órbita izquierda). Resección. Estudio de inmunohistoquímica: CARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH B. Región submaxilar izquierda. Tumor (historia de carcinoma sinonasal maxtiloetmoidal izquierdo y de órbita izquierda). Resección. Estudio de inmunohistoquímica: CARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Ambos especímenes presentan células tumorales malignas con inmunotinción positiva para CKAE1E3, p40, marcación fuerte y en bloque para p16 y un índice de proliferación celular medido por KI-67 del 70%.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos a los bloques del caso externo H24-08P01604-A1 y B1 los cuales corresponden a dos especímenes: A. Resección de región preauricular izquierda y B. Resección de región submaxilar izquierda, ambos con diagnóstico morfológico con hallazgos que sugieren \"CARCINOMA DE CÉLULAS ESCAMOSAS MAL DIFERENCIADO INFILTRANTE\". Se ordenan los siguientes marcadores: CKAE1E3, p40, p16 y KI-67.",
+      "ihq_organo": "REGIÓN PREAURICULAR IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, P40, P16, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN PREAURICULAR IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "Ki-67 del 70%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, P40, P16, Ki-67",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_KI-67": "70%",
+      "p16": "POSITIVO (bloque)",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-01-05T20:24:25.061507",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250146\nCopia Pag. 1 de 2\nNombre : JAIME RAMIREZ\nN. peticion : IHQ250146\nN.Identificación : CC. 2605354\nGenero : MASCULINO\nEdad : 76 años 4 meses 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : RADIOTERAPIA\nFecha Ingreso : 07/02/2025\nFecha Informe : 20/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PREAURICULAR\nIZQUIERDA + REGION\nSUBMAXILAR IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos a los bloques del caso externo H24-08P01604-A1 y B1 los cuales\ncorresponden a dos especímenes: A. Resección de región preauricular izquierda y B. Resección de región\nsubmaxilar izquierda, ambos con diagnóstico morfológico con hallazgos que sugieren \"CARCINOMA DE\nCÉLULAS ESCAMOSAS MAL DIFERENCIADO INFILTRANTE\". Se ordenan los siguientes marcadores:\nCKAE1E3, p40, p16 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nAmbos especímenes presentan células tumorales malignas con inmunotinción positiva para CKAE1E3,\np40, marcación fuerte y en bloque para p16 y un índice de proliferación celular medido por Ki-67 del\n70%.\nDIAGNÓSTICO\n A. Región preauricular izquierda. Tumor (historia de carcinoma sinonasal maxtiloetmoidal izquierdo y de\nórbita izquierda). Resección. Estudio de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH\nB. Región submaxilar izquierda. Tumor (historia de carcinoma sinonasal maxtiloetmoidal izquierdo y de\nórbita izquierda). Resección. Estudio de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---\nIHQ250146\nCopia Pag. 2 de 2\nNombre : JAIME RAMIREZ\nN. peticion : IHQ250146\nN.Identificación : CC. 2605354\nGenero : MASCULINO\nEdad : 76 años 4 meses 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : RADIOTERAPIA\nFecha Ingreso : 07/02/2025\nFecha Informe : 20/02/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, P40, P16, Ki-67, CKAE1AE3",
+      "Descripcion macroscopica": "Se realizan niveles histológicos a los bloques del caso externo H24-08P01604-A1 y B1 los cuales corresponden a dos especímenes: A. Resección de región preauricular izquierda y B. Resección de región submaxilar izquierda, ambos con diagnóstico morfológico con hallazgos que sugieren \"CARCINOMA DE CÉLULAS ESCAMOSAS MAL DIFERENCIADO INFILTRANTE\". Se ordenan los siguientes marcadores: CKAE1E3, p40, p16 y Ki-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Ambos especímenes presentan células tumorales malignas con inmunotinción positiva para CKAE1E3, p40, marcación fuerte y en bloque para p16 y un índice de proliferación celular medido por Ki-67 del 70%.",
+      "Descripcion Diagnostico": "A. Región preauricular izquierda. Tumor (historia de carcinoma sinonasal maxtiloetmoidal izquierdo y de órbita izquierda). Resección. Estudio de inmunohistoquímica: CARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH B. Región submaxilar izquierda. Tumor (historia de carcinoma sinonasal maxtiloetmoidal izquierdo y de órbita izquierda). Resección. Estudio de inmunohistoquímica: CARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH",
+      "IHQ_ORGANO": "REGIÓN PREAURICULAR IZQUIERDA",
+      "Organo": "LESION PREAURICULAR IZQUIERDA + REGION SUBMAXILAR IZQUIERDA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH B",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 70%",
+      "IHQ_CKAE1E3": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO (bloque)",
+      "IHQ_KI-67": "70%",
+      "IHQ_CKAE1AE3": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 129,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Región preauricular izquierda. Tumor (historia de carcinoma sinonasal maxtiloetmoidal izquierdo y de\nórbita izquierda). Resección. Estudio de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH\nB. Región submaxilar izquierda. Tumor (historia de carcinoma sinonasal maxtiloetmoidal izquierdo y de\nórbita izquierda). Resección. Estudio de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH",
+      "valor_corregido": "A. Región preauricular izquierda. Tumor (historia de carcinoma sinonasal maxtiloetmoidal izquierdo y de órbita izquierda). Resección. Estudio de inmunohistoquímica: CARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH B. Región submaxilar izquierda. Tumor (historia de carcinoma sinonasal maxtiloetmoidal izquierdo y de órbita izquierda). Resección. Estudio de inmunohistoquímica: CARCINOMA ESCAMOCELULAR INVASIVO ASOCIADO A VPH",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250146",
+      "timestamp": "2026-01-05T20:24:25.061233"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos a los bloques del caso externo H24-08P01604-A1 y B1 los cuales corresponden a dos especímenes: A. Resección de región preauricular izquierda y B. Resección de región submaxilar izquierda, ambos con diagnóstico morfológico con hallazgos que sugieren \"CARCINOMA DE CÉLULAS ESCAMOSAS MAL DIFERENCIADO INFILTRANTE\". Se ordenan los siguientes marcadores: CKAE1E3, p40, p16 y Ki-67.",
+      "valor_corregido": "Se realizan niveles histológicos a los bloques del caso externo H24-08P01604-A1 y B1 los cuales corresponden a dos especímenes: A. Resección de región preauricular izquierda y B. Resección de región submaxilar izquierda, ambos con diagnóstico morfológico con hallazgos que sugieren \"CARCINOMA DE CÉLULAS ESCAMOSAS MAL DIFERENCIADO INFILTRANTE\". Se ordenan los siguientes marcadores: CKAE1E3, p40, p16 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250146",
+      "timestamp": "2026-01-05T20:24:25.061240"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Ambos especímenes presentan células tumorales malignas con inmunotinción positiva para CKAE1E3, p40, marcación fuerte y en bloque para p16 y un índice de proliferación celular medido por Ki-67 del 70%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Ambos especímenes presentan células tumorales malignas con inmunotinción positiva para CKAE1E3, p40, marcación fuerte y en bloque para p16 y un índice de proliferación celular medido por KI-67 del 70%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250146",
+      "timestamp": "2026-01-05T20:24:25.061242"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 53
+  }
+}

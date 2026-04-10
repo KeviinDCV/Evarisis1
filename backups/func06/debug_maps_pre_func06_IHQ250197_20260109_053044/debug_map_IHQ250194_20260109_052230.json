@@ -1,0 +1,169 @@
+{
+  "session_id": "IHQ250194_20260109_052230",
+  "numero_peticion": "IHQ250194",
+  "timestamp": "2026-01-09T05:22:30.405007",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250194\nCopia Pag. 1 de 2\nNombre : ALBERTO RODRIGO PINTA TRUJILLO\nN. peticion : IHQ250194\nN.Identificación : CC. 16593752\nGenero : MASCULINO\nEdad : 69 años 1 mes 6 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/02/2025\nFecha Informe : 26/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500346” que corresponde a “biopsia de medula ósea”. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con glicoforina, mieloperoxidasa, CD3, CD20, CD38, CD56,\nCD61, CD34 y CD117.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®\nMedula ósea con celularidad global del 10 - 20% que corresponde mayoritariamente a línea eritroide\n(glicoforina+) con alteraciones morfológicas. Hay escasa línea mieloide (mieloperoxidasa +) y se\nreconocen linfocitos B (CD20+), linfocitos T (CD3+) y células plasmáticas (CD38+/CD56-) esparcidas sin\nformar acúmulos. Bajo la tinción de CD34+ y CD117+ se observan de blastos mieloides correspondientes\nal 15%. Megacariocitos CD61+ de 0 - 2 por campo de alto poder, sin cambios morfológicos.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquímica:\n- CELULARIDAD GLOBAL DEL 10 AL 20% (HIPOCELULAR).\n- PREDOMINIO ERITROIDE CON ALTERACIONES MORFOLÓGICAS.\n- INCREMENTO DE BLASTOS MIELOIDES: 15%.\nCOMENTARIOS\nLos\nhallazgos\nmorfológicos\ny\nde\ninmunohistoquímica\npudieran\ncorresponder\na\nun\nsíndrome\nmielodisplásico con incremento de blastos. Sin embargo, esto requiere correlación con los datos de la\nhistoria clínica, hallazgos en el mielograma, estudios citogenética y de biología molecular.\nCaso valorado en conjunto con Dra. María Ximena Varela (patóloga).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---\nIHQ250194\nCopia Pag. 2 de 2\nNombre : ALBERTO RODRIGO PINTA TRUJILLO\nN. peticion : IHQ250194\nN.Identificación : CC. 16593752\nGenero : MASCULINO\nEdad : 69 años 1 mes 6 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/02/2025\nFecha Informe : 26/02/2025\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3901,
+      "reduccion_porcentaje": 97.65
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250194",
+      "caso_num": 34,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ALBERTO RODRIGO PINTA TRUJILLO",
+      "numero_peticion": "IHQ250194",
+      "identificacion": "16593752",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "69",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "SILVIO ANDRES BOLAÑOS",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "20/02/2025",
+      "fecha_informe": "26/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250194",
+      "N. de identificación": "16593752",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "SILVIO ANDRES BOLAÑOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/02/2025",
+      "Fecha Informe": "26/02/2025",
+      "nombres": "ALBERTO RODRIGO",
+      "Primer nombre": "ALBERTO",
+      "Segundo nombre": "RODRIGO",
+      "apellidos": "PINTA TRUJILLO",
+      "Primer apellido": "PINTA",
+      "Segundo apellido": "TRUJILLO",
+      "nombre_formal": "PINTA TRUJILLO, ALBERTO RODRIGO",
+      "diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquímica: - CELULARIDAD GLOBAL DEL 10 AL 20% (HIPOCELULAR). - PREDOMINIO ERITROIDE CON ALTERACIONES MORFOLÓGICAS. - INCREMENTO DE BLASTOS MIELOIDES: 15%.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® Medula ósea con celularidad global del 10 - 20% que corresponde mayoritariamente a línea eritroide (glicoforina+) con alteraciones morfológicas. Hay escasa línea mieloide (mieloperoxidasa +) y se reconocen linfocitos B (CD20+), linfocitos T (CD3+) y células plasmáticas (CD38+/CD56-) esparcidas sin formar acúmulos. Bajo la tinción de CD34+ y CD117+ se observan de blastos mieloides correspondientes al 15%. Megacariocitos CD61+ de 0 - 2 por campo de alto poder, sin cambios morfológicos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2500346\" que corresponde a \"biopsia de medula ósea\". Previa revisión de la histología, se realizan niveles histológicos para tinción con glicoforina, mieloperoxidasa, CD3, CD20, CD38, CD56, CD61, CD34 y CD117.",
+      "ihq_organo": "MEDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "GLICOFORINA, MIELOPEROXIDASA, CD3, CD20, CD38, CD56, CD61, CD34, CD117",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Los hallazgos morfológicos y de inmunohistoquímica pudieran corresponder a un síndrome mielodisplásico con incremento de blastos. Sin embargo, esto requiere correlación con los datos de la historia clínica, hallazgos en el mielograma, estudios citogenética y de biología molecular. Caso valorado en conjunto con Dra. María Ximena Varela (patóloga). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 59 --- IHQ250194 Copia Pag. 2 de 2 Nombre : ALBERTO RODRIGO PINTA TRUJILLO N. peticion : IHQ250194 N.Identificación : CC. 16593752 Genero : MASCULINO Edad : 69 años 1 mes 6 dias EPS : S.O.S. SERV.OCCID.DE SALUD EPS Médico tratante : SILVIO ANDRES BOLAÑOS Servicio : UNIDAD DE ONCOLOGIA COEX Fecha Ingreso : 20/02/2025 Fecha Informe : 26/02/2025",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "GLICOFORINA, MIELOPEROXIDASA, CD3, CD20, CD38, CD56, CD61, CD34, CD117",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "extraction_timestamp": "2026-01-09T05:22:30.980493",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250194\nCopia Pag. 1 de 2\nNombre : ALBERTO RODRIGO PINTA TRUJILLO\nN. peticion : IHQ250194\nN.Identificación : CC. 16593752\nGenero : MASCULINO\nEdad : 69 años 1 mes 6 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/02/2025\nFecha Informe : 26/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500346” que corresponde a “biopsia de medula ósea”. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con glicoforina, mieloperoxidasa, CD3, CD20, CD38, CD56,\nCD61, CD34 y CD117.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®\nMedula ósea con celularidad global del 10 - 20% que corresponde mayoritariamente a línea eritroide\n(glicoforina+) con alteraciones morfológicas. Hay escasa línea mieloide (mieloperoxidasa +) y se\nreconocen linfocitos B (CD20+), linfocitos T (CD3+) y células plasmáticas (CD38+/CD56-) esparcidas sin\nformar acúmulos. Bajo la tinción de CD34+ y CD117+ se observan de blastos mieloides correspondientes\nal 15%. Megacariocitos CD61+ de 0 - 2 por campo de alto poder, sin cambios morfológicos.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquímica:\n- CELULARIDAD GLOBAL DEL 10 AL 20% (HIPOCELULAR).\n- PREDOMINIO ERITROIDE CON ALTERACIONES MORFOLÓGICAS.\n- INCREMENTO DE BLASTOS MIELOIDES: 15%.\nCOMENTARIOS\nLos\nhallazgos\nmorfológicos\ny\nde\ninmunohistoquímica\npudieran\ncorresponder\na\nun\nsíndrome\nmielodisplásico con incremento de blastos. Sin embargo, esto requiere correlación con los datos de la\nhistoria clínica, hallazgos en el mielograma, estudios citogenética y de biología molecular.\nCaso valorado en conjunto con Dra. María Ximena Varela (patóloga).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---\nIHQ250194\nCopia Pag. 2 de 2\nNombre : ALBERTO RODRIGO PINTA TRUJILLO\nN. peticion : IHQ250194\nN.Identificación : CC. 16593752\nGenero : MASCULINO\nEdad : 69 años 1 mes 6 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/02/2025\nFecha Informe : 26/02/2025\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "GLICOFORINA, MIELOPEROXIDASA, CD3, CD20, CD38, CD56, CD61, CD34, CD117",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500346” que corresponde a “biopsia de medula ósea”. Previa revisión de la histología, se realizan niveles histológicos para tinción con glicoforina, mieloperoxidasa, CD3, CD20, CD38, CD56, CD61, CD34 y CD117.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® Medula ósea con celularidad global del 10 - 20% que corresponde mayoritariamente a línea eritroide (glicoforina+) con alteraciones morfológicas. Hay escasa línea mieloide (mieloperoxidasa +) y se reconocen linfocitos B (CD20+), linfocitos T (CD3+) y células plasmáticas (CD38+/CD56-) esparcidas sin formar acúmulos. Bajo la tinción de CD34+ y CD117+ se observan de blastos mieloides correspondientes al 15%. Megacariocitos CD61+ de 0 - 2 por campo de alto poder, sin cambios morfológicos.",
+      "Descripcion Diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquímica: - CELULARIDAD GLOBAL DEL 10 AL 20% (HIPOCELULAR). - PREDOMINIO ERITROIDE CON ALTERACIONES MORFOLÓGICAS. - INCREMENTO DE BLASTOS MIELOIDES: 15%.",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Organo": "BX MEDULA OSEA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CELULARIDAD GLOBAL DEL 10 AL 20% (HIPOCELULAR)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD117": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 170,
+      "campos_vacios": 126,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 126,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula ósea. Biopsia. Estudio de inmunohistoquímica:\n- CELULARIDAD GLOBAL DEL 10 AL 20% (HIPOCELULAR).\n- PREDOMINIO ERITROIDE CON ALTERACIONES MORFOLÓGICAS.\n- INCREMENTO DE BLASTOS MIELOIDES: 15%.",
+      "valor_corregido": "Medula ósea. Biopsia. Estudio de inmunohistoquímica: - CELULARIDAD GLOBAL DEL 10 AL 20% (HIPOCELULAR). - PREDOMINIO ERITROIDE CON ALTERACIONES MORFOLÓGICAS. - INCREMENTO DE BLASTOS MIELOIDES: 15%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250194",
+      "timestamp": "2026-01-09T05:22:30.980176"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500346” que corresponde a “biopsia de medula ósea”. Previa revisión de la histología, se realizan niveles histológicos para tinción con glicoforina, mieloperoxidasa, CD3, CD20, CD38, CD56, CD61, CD34 y CD117.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2500346\" que corresponde a \"biopsia de medula ósea\". Previa revisión de la histología, se realizan niveles histológicos para tinción con glicoforina, mieloperoxidasa, CD3, CD20, CD38, CD56, CD61, CD34 y CD117.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250194",
+      "timestamp": "2026-01-09T05:22:30.980184"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los\nhallazgos\nmorfológicos\ny\nde\ninmunohistoquímica\npudieran\ncorresponder\na\nun\nsíndrome\nmielodisplásico con incremento de blastos. Sin embargo, esto requiere correlación con los datos de la\nhistoria clínica, hallazgos en el mielograma, estudios citogenética y de biología molecular.\nCaso valorado en conjunto con Dra. María Ximena Varela (patóloga).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---\nIHQ250194\nCopia Pag. 2 de 2\nNombre : ALBERTO RODRIGO PINTA TRUJILLO\nN. peticion : IHQ250194\nN.Identificación : CC. 16593752\nGenero : MASCULINO\nEdad : 69 años 1 mes 6 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 20/02/2025\nFecha Informe : 26/02/2025",
+      "valor_corregido": "Los hallazgos morfológicos y de inmunohistoquímica pudieran corresponder a un síndrome mielodisplásico con incremento de blastos. Sin embargo, esto requiere correlación con los datos de la historia clínica, hallazgos en el mielograma, estudios citogenética y de biología molecular. Caso valorado en conjunto con Dra. María Ximena Varela (patóloga). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 59 --- IHQ250194 Copia Pag. 2 de 2 Nombre : ALBERTO RODRIGO PINTA TRUJILLO N. peticion : IHQ250194 N.Identificación : CC. 16593752 Genero : MASCULINO Edad : 69 años 1 mes 6 dias EPS : S.O.S. SERV.OCCID.DE SALUD EPS Médico tratante : SILVIO ANDRES BOLAÑOS Servicio : UNIDAD DE ONCOLOGIA COEX Fecha Ingreso : 20/02/2025 Fecha Informe : 26/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250194",
+      "timestamp": "2026-01-09T05:22:30.980186"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 58
+  }
+}

@@ -1,0 +1,11 @@
+### Prompts para formato: audio_critica (Audiencia: Gerente_irne_torres)
+
+--- FORMATO DE AUDIO (Format para Audio Overview) ---
+Crítica
+
+--- CONFIGURACIÓN ---
+Idioma: español
+Duración: Predeterminada (10-15 minutos)
+
+--- PROMPT DE ENFOQUE (Steering Prompt) ---
+Genera una revisión experta del proyecto con comentarios constructivos. Analiza fortalezas, áreas de mejora, comparación con alternativas, y recomendaciones específicas. El tono debe ser profesional, balanceado, constructivo pero honesto. Enfócate exclusivamente en el **impacto económico y estratégico** del proyecto. Dirígete a un **Gerente** que valora el ROI, la eficiencia financiera y la ventaja competitiva. Usa los datos sobre la predicción de tendencias para justificar la **negociación estratégica con farmacéuticas**. Sé directo, profesional y basado en datos. Omite detalles técnicos de bajo nivel (código, librerías).

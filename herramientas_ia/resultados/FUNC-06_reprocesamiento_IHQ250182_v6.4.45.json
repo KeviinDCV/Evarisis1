@@ -1,0 +1,30 @@
+{
+  "version": "v6.4.45",
+  "fecha": "2026-01-08T18:59:53.089741",
+  "caso_corregido": "IHQ250182",
+  "patron_agregado": "diagnosticos de[:\\s]*[\"-]\\s*",
+  "ubicacion": "medical_extractor.py linea ~1120",
+  "problema_detectado": "Caso IHQ250182 no extraia DIAGNOSTICO_COLORACION por formato \"diagnosticos de: - \"",
+  "resultado": {
+    "score_antes": "88.9%",
+    "score_despues": "100.0%",
+    "campo_corregido": "DIAGNOSTICO_COLORACION",
+    "valor_extraido": "CELULARIDAD DEL 50%, MADURACION NORMAL DE LAS TRES LINEAS CELULARES, LIGERO AUMENTO DE CELULARIDAD PLASMOCITOIDE, MEGACARIOCITOS POR CAMPO DE ALTO PODER DE: 4 A 6",
+    "valor_antes": "N/A"
+  },
+  "validacion_regresion": {
+    "casos_referencia_validados": [
+      {
+        "caso": "IHQ250182",
+        "score_antes": "88.9%",
+        "score_despues": "100.0%",
+        "estado": "MEJORADO"
+      }
+    ],
+    "regresion_detectada": false,
+    "todos_casos_mantienen_score": true
+  },
+  "patron_especifico_agregado": true,
+  "patron_generico_mantenido": true,
+  "impacto": "Patron especifico agregado ANTES del generico. No afecta casos existentes. Mejora extraccion para formato \"diagnosticos de: - \""
+}

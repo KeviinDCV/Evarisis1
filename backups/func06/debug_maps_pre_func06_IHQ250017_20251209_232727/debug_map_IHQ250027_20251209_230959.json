@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250027_20251209_230959",
+  "numero_peticion": "IHQ250027",
+  "timestamp": "2025-12-09T23:09:59.679746",
+  "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250027\nCopia Pag. 1 de 2\nNombre : ELVIS RAMON SEQUERA ANGARITA\nN. peticion : IHQ250027\nN.Identificación : PPT. 6373668\nGenero : MASCULINO\nEdad : 44 años 16 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : FABIO ERNESTO ARCOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 09/01/2025\nFecha Informe : 20/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR EN LENGUA LADO\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410544” correspondiente a “tumor en lengua del lado derecho” con diagnóstico de “NEOPLASICA EN\nPATRON SOLIDO CON EXTENSA ULCERACIÓN E INFLAMACIÓN AGUDA.”. Previa revisión de la histología se\nrealizan niveles histológicos para tinción con los marcadores: CKAE1E3, p40, p16 y Ki 67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para: CKAE1E3, p40, p16 (en bloque). Indice proliferativo Ki 67 del\n90%.\nDIAGNÓSTICO\nLengua, lado derecho. Tumor. Biopsia. Estudio de inmunohistoquimica:\nHALLAZGOS CONSISTENTES CON CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO.\nP16 POSITIVO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---\nIHQ250027\nCopia Pag. 2 de 2\nNombre : ELVIS RAMON SEQUERA ANGARITA\nN. peticion : IHQ250027\nN.Identificación : PPT. 6373668\nGenero : MASCULINO\nEdad : 44 años 16 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : FABIO ERNESTO ARCOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 09/01/2025\nFecha Informe : 20/01/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 46 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3138,
+      "reduccion_porcentaje": 98.17
+    },
+    "metadata": {
+      "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250027",
+      "caso_num": 27,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ELVIS RAMON SEQUERA ANGARITA",
+      "numero_peticion": "IHQ250027",
+      "identificacion": "6373668",
+      "tipo_documento": "PPT",
+      "Genero": "MASCULINO",
+      "Edad": "44",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "FABIO ERNESTO ARCOS",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "09/01/2025",
+      "fecha_informe": "20/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250027",
+      "N. de identificación": "6373668",
+      "Tipo de documento": "PPT",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "FABIO ERNESTO ARCOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/01/2025",
+      "Fecha Informe": "20/01/2025",
+      "nombres": "ELVIS",
+      "Primer nombre": "ELVIS",
+      "Segundo nombre": "",
+      "apellidos": "RAMON SEQUERA ANGARITA",
+      "Primer apellido": "RAMON",
+      "Segundo apellido": "SEQUERA ANGARITA",
+      "nombre_formal": "RAMON SEQUERA ANGARITA, ELVIS",
+      "diagnostico": "Lengua, lado derecho. Tumor. Biopsia. Estudio de inmunohistoquimica: HALLAZGOS CONSISTENTES CON CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO. P16 POSITIVO",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para: CKAE1E3, P40, P16 (en bloque). Indice proliferativo KI-67 del 90%.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410544” correspondiente a “tumor en lengua del lado derecho” con diagnóstico de “NEOPLASICA EN PATRON SOLIDO CON EXTENSA ULCERACIÓN E INFLAMACIÓN AGUDA.”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CKAE1E3, P40, P16 y KI-67.",
+      "ihq_organo": "LENGUA, LADO DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "LENGUA, LADO DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67 del 90%",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "p16": "POSITIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2025-12-09T23:09:59.827177",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250027\nCopia Pag. 1 de 2\nNombre : ELVIS RAMON SEQUERA ANGARITA\nN. peticion : IHQ250027\nN.Identificación : PPT. 6373668\nGenero : MASCULINO\nEdad : 44 años 16 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : FABIO ERNESTO ARCOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 09/01/2025\nFecha Informe : 20/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR EN LENGUA LADO\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410544” correspondiente a “tumor en lengua del lado derecho” con diagnóstico de “NEOPLASICA EN\nPATRON SOLIDO CON EXTENSA ULCERACIÓN E INFLAMACIÓN AGUDA.”. Previa revisión de la histología se\nrealizan niveles histológicos para tinción con los marcadores: CKAE1E3, p40, p16 y Ki 67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para: CKAE1E3, p40, p16 (en bloque). Indice proliferativo Ki 67 del\n90%.\nDIAGNÓSTICO\nLengua, lado derecho. Tumor. Biopsia. Estudio de inmunohistoquimica:\nHALLAZGOS CONSISTENTES CON CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO.\nP16 POSITIVO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---\nIHQ250027\nCopia Pag. 2 de 2\nNombre : ELVIS RAMON SEQUERA ANGARITA\nN. peticion : IHQ250027\nN.Identificación : PPT. 6373668\nGenero : MASCULINO\nEdad : 44 años 16 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : FABIO ERNESTO ARCOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 09/01/2025\nFecha Informe : 20/01/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 46 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, P16, P40",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410544” correspondiente a “tumor en lengua del lado derecho” con diagnóstico de “NEOPLASICA EN PATRON SOLIDO CON EXTENSA ULCERACIÓN E INFLAMACIÓN AGUDA.”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CKAE1E3, p40, p16 y Ki 67.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para: CKAE1E3, p40, p16 (en bloque). Indice proliferativo Ki 67 del 90%.",
+      "Descripcion Diagnostico": "Lengua, lado derecho. Tumor. Biopsia. Estudio de inmunohistoquimica: HALLAZGOS CONSISTENTES CON CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO. P16 POSITIVO",
+      "IHQ_ORGANO": "LENGUA, LADO DERECHO",
+      "Organo": "TUMOR EN LENGUA LADO DERECHO",
+      "Diagnostico Coloracion": "NEOPLASICA EN PATRON SOLIDO CON EXTENSA ULCERACIÓN E INFLAMACIÓN AGUDA",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 90%",
+      "IHQ_KI-67": "90%",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 156,
+      "campos_vacios": 119,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 23.72
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 119,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Lengua, lado derecho. Tumor. Biopsia. Estudio de inmunohistoquimica:\nHALLAZGOS CONSISTENTES CON CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO.\nP16 POSITIVO",
+      "valor_corregido": "Lengua, lado derecho. Tumor. Biopsia. Estudio de inmunohistoquimica: HALLAZGOS CONSISTENTES CON CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO. P16 POSITIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250027",
+      "timestamp": "2025-12-09T23:09:59.826967"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410544” correspondiente a “tumor en lengua del lado derecho” con diagnóstico de “NEOPLASICA EN\nPATRON SOLIDO CON EXTENSA ULCERACIÓN E INFLAMACIÓN AGUDA.”. Previa revisión de la histología se\nrealizan niveles histológicos para tinción con los marcadores: CKAE1E3, p40, p16 y Ki 67.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410544” correspondiente a “tumor en lengua del lado derecho” con diagnóstico de “NEOPLASICA EN PATRON SOLIDO CON EXTENSA ULCERACIÓN E INFLAMACIÓN AGUDA.”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CKAE1E3, P40, P16 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250027",
+      "timestamp": "2025-12-09T23:09:59.826973"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para: CKAE1E3, p40, p16 (en bloque). Indice proliferativo Ki 67 del\n90%.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para: CKAE1E3, P40, P16 (en bloque). Indice proliferativo KI-67 del 90%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250027",
+      "timestamp": "2025-12-09T23:09:59.826975"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 50
+  }
+}

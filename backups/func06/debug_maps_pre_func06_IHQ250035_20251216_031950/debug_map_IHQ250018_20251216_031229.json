@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250018_20251216_031229",
+  "numero_peticion": "IHQ250018",
+  "timestamp": "2025-12-16T03:12:29.503402",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250018\nCopia Pag. 1 de 2\nNombre : JOSE ROQUE VIRGUEZ LOPEZ\nN. peticion : IHQ250018\nN.Identificación : CC. 3075587\nGenero : MASCULINO\nEdad : 78 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : ENDOSCOPIA\nFecha Ingreso : 07/01/2025\nFecha Informe : 10/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION MUCOSA DE RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410694 que\ncorresponde a \"pólipo en recto superior\" con diagnóstico de “LOS HALLAZGOS SON\nCOMPATIBLES CON LESIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE\nINMUNOHISTOQUIMICA”. Consiste en una laminas coloreadas H&E y un bloque de parafina. Previa\nvaloración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores:\nDOG1, CD117, ACTINA DE MUSCULO LISO, CD34, S100.\nDESCRIPCIÓN MICROSCÓPICA\nLISTA DE CHEQUEO DEL COLEGIO DE PATOLOGOS AMERICANOS VERSION 4.3.0.0\nCLÍNICO: \nSíndrome asociado: Sin dato. \nTratamiento de prerrsección: no se conoce tratamiento previo a la resección. \nESPÉCIMEN: \nProcedimiento: Escisión local. \nTUMOR\nLocalidad: unifocal\nSitio del tumor: Recto\nTipo histológico: Tumor del estroma gastrointestinal, tipo células fusiforme\nTamaño del tumor: 10 x 9 milímetros\nTasa mitótica: Grado histológico: G1, grado bajo. \nNecrosis: no identificada\nEfecto del tratamiento: no se conoce tratamiento prequirúrgico\nEvaluación de riesgos: ninguno\nMÁRGENES: Comprometido, borde de resección quirúrgico en contacto con la lesión.\nDIAGNÓSTICO\nMucosa de recto superior. Lesión. Resección. Estudio de inmunohistoquímica. \nTUMOR DEL ESTROMA GASTROINTESTINALFUSOCELULAR DE BAJO GRADO\nBORDE DE RESECCIÓN COMPROMETIDO. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---\nIHQ250018\nCopia Pag. 2 de 2\nNombre : JOSE ROQUE VIRGUEZ LOPEZ\nN. peticion : IHQ250018\nN.Identificación : CC. 3075587\nGenero : MASCULINO\nEdad : 78 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : ENDOSCOPIA\nFecha Ingreso : 07/01/2025\nFecha Informe : 10/01/2025\nGANGLIOS LINFÁTICOS REGIONALES: no aportados.\nESTUDIOS DE INMUNOHISTOQUÍMICA : \n-KIT (CD117) positivo. \n-DOG1 (ANO1) positivo\n-CD34: positivo\n-ACTIMINA DE MUSCULO LISO y S100 : Negativos. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3668,
+      "reduccion_porcentaje": 97.86
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250018",
+      "caso_num": 18,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "JOSE ROQUE VIRGUEZ LOPEZ",
+      "numero_peticion": "IHQ250018",
+      "identificacion": "3075587",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "78",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JOSE OMAR ZORILLA",
+      "servicio": "ENDOSCOPIA",
+      "fecha_ingreso": "07/01/2025",
+      "fecha_informe": "10/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250018",
+      "N. de identificación": "3075587",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "ENDOSCOPIA",
+      "Médico tratante": "JOSE OMAR ZORILLA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/01/2025",
+      "Fecha Informe": "10/01/2025",
+      "nombres": "JOSE ROQUE",
+      "Primer nombre": "JOSE",
+      "Segundo nombre": "ROQUE",
+      "apellidos": "VIRGUEZ LOPEZ",
+      "Primer apellido": "VIRGUEZ",
+      "Segundo apellido": "LOPEZ",
+      "nombre_formal": "VIRGUEZ LOPEZ, JOSE ROQUE",
+      "diagnostico": "Mucosa de recto superior. Lesión. Resección. Estudio de inmunohistoquímica. TUMOR DEL ESTROMA GASTROINTESTINALFUSOCELULAR DE BAJO GRADO BORDE DE RESECCIÓN COMPROMETIDO.",
+      "descripcion_microscopica": "LISTA DE CHEQUEO DEL COLEGIO DE PATOLOGOS AMERICANOS VERSION 4.3.0.0 CLÍNICO: Síndrome asociado: Sin dato. Tratamiento de prerrsección: no se conoce tratamiento previo a la resección. ESPÉCIMEN: Procedimiento: Escisión local. TUMOR Localidad: unifocal Sitio del tumor: Recto Tipo histológico: Tumor del estroma gastrointestinal, tipo células fusiforme Tamaño del tumor: 10 x 9 milímetros Tasa mitótica: Grado histológico: G1, grado bajo. Necrosis: no identificada Efecto del tratamiento: no se conoce tratamiento prequirúrgico Evaluación de riesgos: ninguno MÁRGENES: Comprometido, borde de resección quirúrgico en contacto con la lesión.",
+      "descripcion_macroscopica": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410694 que corresponde a \"pólipo en recto superior\" con diagnóstico de “LOS HALLAZGOS SON COMPATIBLES CON LESIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA”. Consiste en una laminas coloreadas H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: DOG1, CD117, ACTINA DE MUSCULO LISO, CD34, S100.",
+      "ihq_organo": "MUCOSA DE RECTO SUPERIOR",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "DOG1, CD117, ACTINA DE MUSCULO LISO, CD34, S100",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA DE RECTO SUPERIOR",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_DOG1": "POSITIVO",
+      "extraction_timestamp": "2025-12-16T03:12:29.663579",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250018\nCopia Pag. 1 de 2\nNombre : JOSE ROQUE VIRGUEZ LOPEZ\nN. peticion : IHQ250018\nN.Identificación : CC. 3075587\nGenero : MASCULINO\nEdad : 78 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : ENDOSCOPIA\nFecha Ingreso : 07/01/2025\nFecha Informe : 10/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION MUCOSA DE RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410694 que\ncorresponde a \"pólipo en recto superior\" con diagnóstico de “LOS HALLAZGOS SON\nCOMPATIBLES CON LESIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE\nINMUNOHISTOQUIMICA”. Consiste en una laminas coloreadas H&E y un bloque de parafina. Previa\nvaloración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores:\nDOG1, CD117, ACTINA DE MUSCULO LISO, CD34, S100.\nDESCRIPCIÓN MICROSCÓPICA\nLISTA DE CHEQUEO DEL COLEGIO DE PATOLOGOS AMERICANOS VERSION 4.3.0.0\nCLÍNICO: \nSíndrome asociado: Sin dato. \nTratamiento de prerrsección: no se conoce tratamiento previo a la resección. \nESPÉCIMEN: \nProcedimiento: Escisión local. \nTUMOR\nLocalidad: unifocal\nSitio del tumor: Recto\nTipo histológico: Tumor del estroma gastrointestinal, tipo células fusiforme\nTamaño del tumor: 10 x 9 milímetros\nTasa mitótica: Grado histológico: G1, grado bajo. \nNecrosis: no identificada\nEfecto del tratamiento: no se conoce tratamiento prequirúrgico\nEvaluación de riesgos: ninguno\nMÁRGENES: Comprometido, borde de resección quirúrgico en contacto con la lesión.\nDIAGNÓSTICO\nMucosa de recto superior. Lesión. Resección. Estudio de inmunohistoquímica. \nTUMOR DEL ESTROMA GASTROINTESTINALFUSOCELULAR DE BAJO GRADO\nBORDE DE RESECCIÓN COMPROMETIDO. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---\nIHQ250018\nCopia Pag. 2 de 2\nNombre : JOSE ROQUE VIRGUEZ LOPEZ\nN. peticion : IHQ250018\nN.Identificación : CC. 3075587\nGenero : MASCULINO\nEdad : 78 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : ENDOSCOPIA\nFecha Ingreso : 07/01/2025\nFecha Informe : 10/01/2025\nGANGLIOS LINFÁTICOS REGIONALES: no aportados.\nESTUDIOS DE INMUNOHISTOQUÍMICA : \n-KIT (CD117) positivo. \n-DOG1 (ANO1) positivo\n-CD34: positivo\n-ACTIMINA DE MUSCULO LISO y S100 : Negativos. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "DOG1, CD117, ACTINA DE MUSCULO LISO, CD34, S100",
+      "Descripcion macroscopica": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410694 que corresponde a \"pólipo en recto superior\" con diagnóstico de “LOS HALLAZGOS SON COMPATIBLES CON LESIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA”. Consiste en una laminas coloreadas H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: DOG1, CD117, ACTINA DE MUSCULO LISO, CD34, S100.",
+      "Descripcion microscopica": "LISTA DE CHEQUEO DEL COLEGIO DE PATOLOGOS AMERICANOS VERSION 4.3.0.0 CLÍNICO: Síndrome asociado: Sin dato. Tratamiento de prerrsección: no se conoce tratamiento previo a la resección. ESPÉCIMEN: Procedimiento: Escisión local. TUMOR Localidad: unifocal Sitio del tumor: Recto Tipo histológico: Tumor del estroma gastrointestinal, tipo células fusiforme Tamaño del tumor: 10 x 9 milímetros Tasa mitótica: Grado histológico: G1, grado bajo. Necrosis: no identificada Efecto del tratamiento: no se conoce tratamiento prequirúrgico Evaluación de riesgos: ninguno MÁRGENES: Comprometido, borde de resección quirúrgico en contacto con la lesión.",
+      "Descripcion Diagnostico": "Mucosa de recto superior. Lesión. Resección. Estudio de inmunohistoquímica. TUMOR DEL ESTROMA GASTROINTESTINALFUSOCELULAR DE BAJO GRADO BORDE DE RESECCIÓN COMPROMETIDO.",
+      "IHQ_ORGANO": "MUCOSA DE RECTO SUPERIOR",
+      "Organo": "LESION MUCOSA DE RECTO",
+      "Diagnostico Coloracion": "LESIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "TUMOR DEL ESTROMA GASTROINTESTINALFUSOCELULAR DE BAJO GRADO BORDE DE RESECCIÓN COMPROMETIDO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_DOG1": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_S100": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 155,
+      "campos_vacios": 115,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 25.81
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 115,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa de recto superior. Lesión. Resección. Estudio de inmunohistoquímica. \nTUMOR DEL ESTROMA GASTROINTESTINALFUSOCELULAR DE BAJO GRADO\nBORDE DE RESECCIÓN COMPROMETIDO.",
+      "valor_corregido": "Mucosa de recto superior. Lesión. Resección. Estudio de inmunohistoquímica. TUMOR DEL ESTROMA GASTROINTESTINALFUSOCELULAR DE BAJO GRADO BORDE DE RESECCIÓN COMPROMETIDO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250018",
+      "timestamp": "2025-12-16T03:12:29.663321"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410694 que\ncorresponde a \"pólipo en recto superior\" con diagnóstico de “LOS HALLAZGOS SON\nCOMPATIBLES CON LESIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE\nINMUNOHISTOQUIMICA”. Consiste en una laminas coloreadas H&E y un bloque de parafina. Previa\nvaloración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores:\nDOG1, CD117, ACTINA DE MUSCULO LISO, CD34, S100.",
+      "valor_corregido": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410694 que corresponde a \"pólipo en recto superior\" con diagnóstico de “LOS HALLAZGOS SON COMPATIBLES CON LESIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA”. Consiste en una laminas coloreadas H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: DOG1, CD117, ACTINA DE MUSCULO LISO, CD34, S100.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250018",
+      "timestamp": "2025-12-16T03:12:29.663327"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "LISTA DE CHEQUEO DEL COLEGIO DE PATOLOGOS AMERICANOS VERSION 4.3.0.0\nCLÍNICO: \nSíndrome asociado: Sin dato. \nTratamiento de prerrsección: no se conoce tratamiento previo a la resección. \nESPÉCIMEN: \nProcedimiento: Escisión local. \nTUMOR\nLocalidad: unifocal\nSitio del tumor: Recto\nTipo histológico: Tumor del estroma gastrointestinal, tipo células fusiforme\nTamaño del tumor: 10 x 9 milímetros\nTasa mitótica: Grado histológico: G1, grado bajo. \nNecrosis: no identificada\nEfecto del tratamiento: no se conoce tratamiento prequirúrgico\nEvaluación de riesgos: ninguno\nMÁRGENES: Comprometido, borde de resección quirúrgico en contacto con la lesión.",
+      "valor_corregido": "LISTA DE CHEQUEO DEL COLEGIO DE PATOLOGOS AMERICANOS VERSION 4.3.0.0 CLÍNICO: Síndrome asociado: Sin dato. Tratamiento de prerrsección: no se conoce tratamiento previo a la resección. ESPÉCIMEN: Procedimiento: Escisión local. TUMOR Localidad: unifocal Sitio del tumor: Recto Tipo histológico: Tumor del estroma gastrointestinal, tipo células fusiforme Tamaño del tumor: 10 x 9 milímetros Tasa mitótica: Grado histológico: G1, grado bajo. Necrosis: no identificada Efecto del tratamiento: no se conoce tratamiento prequirúrgico Evaluación de riesgos: ninguno MÁRGENES: Comprometido, borde de resección quirúrgico en contacto con la lesión.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250018",
+      "timestamp": "2025-12-16T03:12:29.663329"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 52
+  }
+}

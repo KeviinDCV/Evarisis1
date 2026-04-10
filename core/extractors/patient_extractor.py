@@ -231,8 +231,14 @@ PATIENT_PATTERNS = {
     'organo': {
         'descripcion': 'Órgano o sitio anatómico del estudio (de tabla)',
         'patrones': [
-            # V6.0.3: Patrón 1 - Captura TODAS las líneas multilínea después de "Organo:" hasta encontrar delimitador
-            r'(?:Bloques y laminas|Tejido en fresco|Organo:)\s+((?:[A-ZÁÉÍÓÚÑ0-9][^\n]*(?:\n\s*)?)+?)(?=\s*(?:INFORME|DESCRIPCI[ÓO]N|Estudios\s+solicitados|\n\s*\n))',
+            # V6.2.6: Patrón 1 - Captura solo UNA LÍNEA después de "Bloques y laminas" para evitar múltiples filas de tabla
+            # FIX IHQ251017: El patrón anterior capturaba múltiples filas de tabla (IHQ251017 e IHQ251017-B)
+            # V6.2.10: FIX IHQ251029 - Permitir captura multi-línea (ej: "BIOPSIA MASA\nINTRAABDOMINAL")
+            # Problema 1: Cuantificador lazy captura mínimo y se detiene en \n prematuramente
+            # Problema 2: Sin negative lookahead, capturaba también "INFORME DE ANATOMÍA PATOLÓGICA"
+            # Solución: Negative lookahead (?!INFORME|ESTUDIO|IHQ\d+) dentro del cuantificador
+            # Formato: [primera línea](\n[línea que NO empiece con palabras clave])*
+            r'(?:Bloques y laminas|Tejido en fresco|Organo:)\s+([A-ZÁÉÍÓÚÑ][^\n]*(?:\n(?!INFORME|ESTUDIO|IHQ\d+)[A-ZÁÉÍÓÚÑ][^\n]*)*)',
             # Patrón 2: Órgano multilínea que termina con "+" o "BX DE" o "DE" (ej: "BX DE PLEURA + BX DE\nPULMON")
             r'(?:Bloques y laminas|Tejido en fresco)\s+([A-ZÁÉÍÓÚÑ][^\n]*(?:\+|BX\s+DE|DE)\s*)\n\s*([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s0-9]+?)(?=\s*(?:\n|INFORME|DESCRIPCI))',
             # Patrón 3: TUMOR REGION/REGIÓON seguido de INTRADURAL en siguiente línea
@@ -245,13 +251,17 @@ PATIENT_PATTERNS = {
         'ejemplo': 'Bloques y laminas  BX DE PLEURA + BX DE\nPULMON',
         'multilínea': True,
         'concatenar_grupos': True,
-        'post_process': lambda x: x.replace('REGIÓON', 'REGION').replace('REGIÓN', 'REGION').replace('\n', ' ').strip()
+        # V6.2.10: FIX IHQ251029 - Limpieza defensiva: eliminar texto después de palabras clave (INFORME, ESTUDIO)
+        # Problema: Patrón podría capturar "BIOPSIA MASA INTRAABDOMINAL INFORME DE..." en algunos casos
+        # Solución: .split() para cortar en primera ocurrencia de palabra clave
+        'post_process': lambda x: x.split('INFORME')[0].split('ESTUDIO')[0].replace('REGIÓON', 'REGION').replace('REGIÓN', 'REGION').replace('\n', ' ').strip()
     },
 
     'procedimiento': {
         'descripcion': 'Tipo de procedimiento (CIRUGÍA o BIOPSIA)',
         'patrones': [
-            r'(?i)(Resección|Reseccion|Extirpación|Extirpacion|Exéresis|Exeresis|Hemicolectomía|Hemicolectomia|Gastrectomía|Gastrectomia|Mastectomía|Mastectomia|Nefrectomía|Nefrectomia|Colectomía|Colectomia|Sigmoidectomía|Sigmoidectomia|Cuadrantectomía|Cuadrantectomia)',
+            # V6.0.21: Apendicectomía agregada (IHQ251023)
+            r'(?i)(Resección|Reseccion|Extirpación|Extirpacion|Exéresis|Exeresis|Hemicolectomía|Hemicolectomia|Gastrectomía|Gastrectomia|Mastectomía|Mastectomia|Nefrectomía|Nefrectomia|Colectomía|Colectomia|Sigmoidectomía|Sigmoidectomia|Cuadrantectomía|Cuadrantectomia|Apendicectomía|Apendicectomia|Lobectomía|Lobectomia|Tumorectomía|Tumorectomia|Cistectomía|Cistectomia|Ooforectomía|Ooforectomia|Salpingectomía|Salpingectomia|Histerectomía|Histerectomia|Vaciamiento)',
             r'(?i)(Biopsia|BX)',
         ],
         'normalizacion': {
@@ -275,10 +285,26 @@ PATIENT_PATTERNS = {
             'sigmoidectomia': 'CIRUGÍA',
             'cuadrantectomía': 'CIRUGÍA',
             'cuadrantectomia': 'CIRUGÍA',
+            'lobectomía': 'CIRUGÍA',
+            'lobectomia': 'CIRUGÍA',
+            'tumorectomía': 'CIRUGÍA',
+            'tumorectomia': 'CIRUGÍA',
+            'cistectomía': 'CIRUGÍA',
+            'cistectomia': 'CIRUGÍA',
+            'ooforectomía': 'CIRUGÍA',
+            'ooforectomia': 'CIRUGÍA',
+            'salpingectomía': 'CIRUGÍA',
+            'salpingectomia': 'CIRUGÍA',
+            'histerectomía': 'CIRUGÍA',
+            'histerectomia': 'CIRUGÍA',
+            'vaciamiento': 'CIRUGÍA',
+            'resección': 'CIRUGÍA',
+            'apendicectomía': 'APENDICECTOMÍA',
+            'apendicectomia': 'APENDICECTOMÍA',
             'biopsia': 'BIOPSIA',
             'bx': 'BIOPSIA',
         },
-        'ejemplo': 'Resección → CIRUGÍA, Biopsia → BIOPSIA'
+        'ejemplo': 'Resección → CIRUGÍA, Biopsia → BIOPSIA, Apendicectomía → APENDICECTOMÍA'
     },
 }
 

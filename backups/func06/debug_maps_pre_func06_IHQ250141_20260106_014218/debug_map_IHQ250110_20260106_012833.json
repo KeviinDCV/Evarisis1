@@ -1,0 +1,139 @@
+{
+  "session_id": "IHQ250110_20260106_012833",
+  "numero_peticion": "IHQ250110",
+  "timestamp": "2026-01-06T01:28:33.732555",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250110\nCopia Pag. 1 de 1\nNombre : RUBEN DARIO VALLEJO RODRIGUEZ\nN. peticion : IHQ250110\nN.Identificación : CC. 16628619\nGenero : MASCULINO\nEdad : 65 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : JHONY ANDRES GOMEZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 30/01/2025\nFecha Informe : 03/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nVERTEBRA T6-T7\n2025-01-24\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2500900\n”\nque\ncorresponde\na\n“vertebra\nT6-T7”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CKAE1E3, racemasa y PSA.\ndiagnósticos\nde\n“CARCINOMA\nMETASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con\nCKAE1E3, PSA y racemasa en el bloque 1.\nDIAGNÓSTICO\nVertebra, nivel T6-T7. Lesión. Biopsia. Estudio de inmunohistoquímica: \n- ADENOCARCINOMA METASTASICO DE ORIGEN PROSTÁTICO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 2367,
+      "reduccion_porcentaje": 98.64
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250110",
+      "caso_num": 3,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_RACEMASA": "POSITIVO",
+      "IHQ_PSA": "POSITIVO",
+      "nombre_completo": "RUBEN DARIO VALLEJO RODRIGUEZ",
+      "numero_peticion": "IHQ250110",
+      "identificacion": "16628619",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "65",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JHONY ANDRES GOMEZ",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "30/01/2025",
+      "fecha_informe": "03/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250110",
+      "N. de identificación": "16628619",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "JHONY ANDRES GOMEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "30/01/2025",
+      "Fecha Informe": "03/02/2025",
+      "nombres": "RUBEN DARIO VALLEJO",
+      "Primer nombre": "RUBEN",
+      "Segundo nombre": "DARIO VALLEJO",
+      "apellidos": "RODRIGUEZ",
+      "Primer apellido": "RODRIGUEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "RODRIGUEZ, RUBEN DARIO VALLEJO",
+      "diagnostico": "Vertebra, nivel T6-T7. Lesión. Biopsia. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTASICO DE ORIGEN PROSTÁTICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, racemasa y PSA.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500900 ” que corresponde a “vertebra T6-T7” con diagnósticos de “CARCINOMA METASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, PSA y racemasa en el bloque 1.",
+      "ihq_organo": "VERTEBRA, NIVEL T6-T7",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, PSA, RACEMASA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "VERTEBRA, NIVEL T6-T7",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, PSA, RACEMASA",
+      "extraction_timestamp": "2026-01-06T01:28:34.028366",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250110\nCopia Pag. 1 de 1\nNombre : RUBEN DARIO VALLEJO RODRIGUEZ\nN. peticion : IHQ250110\nN.Identificación : CC. 16628619\nGenero : MASCULINO\nEdad : 65 años 6 dias\nEPS : NUEVA EPS\nMédico tratante : JHONY ANDRES GOMEZ\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 30/01/2025\nFecha Informe : 03/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nVERTEBRA T6-T7\n2025-01-24\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2500900\n”\nque\ncorresponde\na\n“vertebra\nT6-T7”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CKAE1E3, racemasa y PSA.\ndiagnósticos\nde\n“CARCINOMA\nMETASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con\nCKAE1E3, PSA y racemasa en el bloque 1.\nDIAGNÓSTICO\nVertebra, nivel T6-T7. Lesión. Biopsia. Estudio de inmunohistoquímica: \n- ADENOCARCINOMA METASTASICO DE ORIGEN PROSTÁTICO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, PSA, RACEMASA",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500900 ” que corresponde a “vertebra T6-T7” con diagnósticos de “CARCINOMA METASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, PSA y racemasa en el bloque 1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, racemasa y PSA.",
+      "Descripcion Diagnostico": "Vertebra, nivel T6-T7. Lesión. Biopsia. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTASICO DE ORIGEN PROSTÁTICO.",
+      "IHQ_ORGANO": "VERTEBRA, NIVEL T6-T7",
+      "Organo": "VERTEBRA T6-T7",
+      "Diagnostico Coloracion": "CARCINOMA METASTÁSICO",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTASICO DE ORIGEN PROSTÁTICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_PSA": "POSITIVO",
+      "IHQ_RACEMASA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 130,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 130,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Vertebra, nivel T6-T7. Lesión. Biopsia. Estudio de inmunohistoquímica: \n- ADENOCARCINOMA METASTASICO DE ORIGEN PROSTÁTICO.",
+      "valor_corregido": "Vertebra, nivel T6-T7. Lesión. Biopsia. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTASICO DE ORIGEN PROSTÁTICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250110",
+      "timestamp": "2026-01-06T01:28:34.028029"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 50
+  }
+}

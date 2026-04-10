@@ -1,0 +1,141 @@
+{
+  "session_id": "IHQ250209_20260112_131140",
+  "numero_peticion": "IHQ250209",
+  "timestamp": "2026-01-12T13:11:40.080786",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250209\nCopia Pag. 1 de 1\nNombre : JACOBO RIASCOS RIASCOS\nN. peticion : IHQ250209\nN.Identificación : CC. 4700965\nGenero : MASCULINO\nEdad : 46 años 6 meses 17 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 26/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX OMENTO + PARED\nABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles a los bloques M2502023-A1, M2502023-A2, M2502023-A4 y M2502023-A5 que\ncorresponden a \"biopsia de omento\" con diagnóstico de \"FIBROSIS\", para estudios de\ninmunohistoquímica por lo que se ordenan los siguientes marcadores: CD3, CD10, CD20 y BCL2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nBloque A1, A2, A4 y A5: En todas las muestras se observa tejido fibrótico en ganglios con marcación\npositiva para CD3 y BCL2 en linfocitos de la periferia. Sin marcación para CD10 ni CD20.\nDIAGNÓSTICO\n Omento. Biopsia. Estudios de inmunohistoquímica.\nTEJIDO FIBRÓTICO SIN COMPROMISO POR LINFOMA.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 83 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2413,
+      "reduccion_porcentaje": 98.54
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250209",
+      "caso_num": 48,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD20": "NEGATIVO",
+      "nombre_completo": "JACOBO RIASCOS RIASCOS",
+      "numero_peticion": "IHQ250209",
+      "identificacion": "4700965",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "46",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "TRAUMA Y REANIMACION",
+      "fecha_ingreso": "26/02/2025",
+      "fecha_informe": "05/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250209",
+      "N. de identificación": "4700965",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "TRAUMA Y REANIMACION",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "26/02/2025",
+      "Fecha Informe": "05/03/2025",
+      "nombres": "JACOBO",
+      "Primer nombre": "JACOBO",
+      "Segundo nombre": "",
+      "apellidos": "RIASCOS RIASCOS",
+      "Primer apellido": "RIASCOS",
+      "Segundo apellido": "RIASCOS",
+      "nombre_formal": "RIASCOS RIASCOS, JACOBO",
+      "diagnostico": "Omento. Biopsia. Estudios de inmunohistoquímica. TEJIDO FIBRÓTICO SIN COMPROMISO POR LINFOMA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Bloque A1, A2, A4 y A5: En todas las muestras se observa tejido fibrótico en ganglios con marcación positiva para CD3 y BCL2 en linfocitos de la periferia. Sin marcación para CD10 ni CD20.",
+      "descripcion_macroscopica": "Se realizan niveles a los bloques M2502023-A1, M2502023-A2, M2502023-A4 y M2502023-A5 que corresponden a \"biopsia de omento\" con diagnóstico de \"FIBROSIS\", para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: CD3, CD10, CD20 y BCL2.",
+      "ihq_organo": "OMENTO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD10, CD20, BCL2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "OMENTO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD10, CD20, BCL2",
+      "extraction_timestamp": "2026-01-12T13:11:40.455571",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250209\nCopia Pag. 1 de 1\nNombre : JACOBO RIASCOS RIASCOS\nN. peticion : IHQ250209\nN.Identificación : CC. 4700965\nGenero : MASCULINO\nEdad : 46 años 6 meses 17 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 26/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX OMENTO + PARED\nABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles a los bloques M2502023-A1, M2502023-A2, M2502023-A4 y M2502023-A5 que\ncorresponden a \"biopsia de omento\" con diagnóstico de \"FIBROSIS\", para estudios de\ninmunohistoquímica por lo que se ordenan los siguientes marcadores: CD3, CD10, CD20 y BCL2.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nBloque A1, A2, A4 y A5: En todas las muestras se observa tejido fibrótico en ganglios con marcación\npositiva para CD3 y BCL2 en linfocitos de la periferia. Sin marcación para CD10 ni CD20.\nDIAGNÓSTICO\n Omento. Biopsia. Estudios de inmunohistoquímica.\nTEJIDO FIBRÓTICO SIN COMPROMISO POR LINFOMA.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 83 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD10, CD20, BCL2",
+      "Descripcion macroscopica": "Se realizan niveles a los bloques M2502023-A1, M2502023-A2, M2502023-A4 y M2502023-A5 que corresponden a \"biopsia de omento\" con diagnóstico de \"FIBROSIS\", para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: CD3, CD10, CD20 y BCL2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Bloque A1, A2, A4 y A5: En todas las muestras se observa tejido fibrótico en ganglios con marcación positiva para CD3 y BCL2 en linfocitos de la periferia. Sin marcación para CD10 ni CD20.",
+      "Descripcion Diagnostico": "Omento. Biopsia. Estudios de inmunohistoquímica. TEJIDO FIBRÓTICO SIN COMPROMISO POR LINFOMA.",
+      "IHQ_ORGANO": "OMENTO",
+      "Organo": "BX OMENTO + PARED ABDOMINAL",
+      "Diagnostico Coloracion": "FIBROSIS",
+      "Diagnostico Principal": "TEJIDO FIBRÓTICO SIN COMPROMISO POR LINFOMA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD20": "NEGATIVO",
+      "IHQ_BCL2": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 135,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Omento. Biopsia. Estudios de inmunohistoquímica.\nTEJIDO FIBRÓTICO SIN COMPROMISO POR LINFOMA.",
+      "valor_corregido": "Omento. Biopsia. Estudios de inmunohistoquímica. TEJIDO FIBRÓTICO SIN COMPROMISO POR LINFOMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250209",
+      "timestamp": "2026-01-12T13:11:40.455289"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 51
+  }
+}

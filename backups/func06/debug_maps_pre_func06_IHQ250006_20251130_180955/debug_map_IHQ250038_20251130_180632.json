@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250038_20251130_180632",
+  "numero_peticion": "IHQ250038",
+  "timestamp": "2025-11-30T18:06:32.613089",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250038\nCopia Pag. 1 de 2\nNombre : ALIS ANNAR DORADO\nN. peticion : IHQ250038\nN.Identificación : CC. 29590495\nGenero : FEMENINO\nEdad : 76 años 5 dias\nEPS : NUEVA EPS\nMédico tratante : GILBERTO JARAMILLO\nServicio : ENDOSCOPIA\nFecha Ingreso : 14/01/2025\nFecha Informe : 22/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA RECTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500152” que corresponde a “masa rectal” con diagnósticos de “ADENOCARCINOMA INVASIVO”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción con MLH1, MSH2, MSH6 y\nPMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse\nanalizan\ntinciones\nde\nInmunohistoquímica\nrealizadas\ncon\ntécnica\nde\ninmunoperoxidasa\nen\nla\nplataforma automatizada Roche VENTANA©.\nEVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nLos controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.\nDIAGNÓSTICO\nMucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---\nIHQ250038\nCopia Pag. 2 de 2\nNombre : ALIS ANNAR DORADO\nN. peticion : IHQ250038\nN.Identificación : CC. 29590495\nGenero : FEMENINO\nEdad : 76 años 5 dias\nEPS : NUEVA EPS\nMédico tratante : GILBERTO JARAMILLO\nServicio : ENDOSCOPIA\nFecha Ingreso : 14/01/2025\nFecha Informe : 22/01/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3240,
+      "reduccion_porcentaje": 98.11
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250038",
+      "caso_num": 38,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ALIS ANNAR DORADO",
+      "numero_peticion": "IHQ250038",
+      "identificacion": "29590495",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "76",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "GILBERTO JARAMILLO",
+      "servicio": "ENDOSCOPIA",
+      "fecha_ingreso": "14/01/2025",
+      "fecha_informe": "22/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250038",
+      "N. de identificación": "29590495",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "ENDOSCOPIA",
+      "Médico tratante": "GILBERTO JARAMILLO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/01/2025",
+      "Fecha Informe": "22/01/2025",
+      "nombres": "ALIS",
+      "Primer nombre": "ALIS",
+      "Segundo nombre": "",
+      "apellidos": "ANNAR DORADO",
+      "Primer apellido": "ANNAR",
+      "Segundo apellido": "DORADO",
+      "nombre_formal": "ANNAR DORADO, ALIS",
+      "diagnostico": "Mucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE.",
+      "descripcion_microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500152” que corresponde a “masa rectal” con diagnósticos de “ADENOCARCINOMA INVASIVO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con MLH1, MSH2, MSH6 y PMS2.",
+      "ihq_organo": "MUCOSA RECTAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MLH1, MSH2, MSH6, PMS2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA RECTAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_MLH1": "POSITIVO",
+      "IHQ_PMS2": "POSITIVO",
+      "IHQ_MSH6": "POSITIVO",
+      "IHQ_MSH2": "POSITIVO",
+      "extraction_timestamp": "2025-11-30T18:06:32.741783",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250038\nCopia Pag. 1 de 2\nNombre : ALIS ANNAR DORADO\nN. peticion : IHQ250038\nN.Identificación : CC. 29590495\nGenero : FEMENINO\nEdad : 76 años 5 dias\nEPS : NUEVA EPS\nMédico tratante : GILBERTO JARAMILLO\nServicio : ENDOSCOPIA\nFecha Ingreso : 14/01/2025\nFecha Informe : 22/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA RECTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500152” que corresponde a “masa rectal” con diagnósticos de “ADENOCARCINOMA INVASIVO”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción con MLH1, MSH2, MSH6 y\nPMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse\nanalizan\ntinciones\nde\nInmunohistoquímica\nrealizadas\ncon\ntécnica\nde\ninmunoperoxidasa\nen\nla\nplataforma automatizada Roche VENTANA©.\nEVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nLos controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.\nDIAGNÓSTICO\nMucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---\nIHQ250038\nCopia Pag. 2 de 2\nNombre : ALIS ANNAR DORADO\nN. peticion : IHQ250038\nN.Identificación : CC. 29590495\nGenero : FEMENINO\nEdad : 76 años 5 dias\nEPS : NUEVA EPS\nMédico tratante : GILBERTO JARAMILLO\nServicio : ENDOSCOPIA\nFecha Ingreso : 14/01/2025\nFecha Informe : 22/01/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MLH1, MSH2, MSH6, PMS2",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500152” que corresponde a “masa rectal” con diagnósticos de “ADENOCARCINOMA INVASIVO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con MLH1, MSH2, MSH6 y PMS2.",
+      "Descripcion microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.",
+      "Descripcion Diagnostico": "Mucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE.",
+      "IHQ_ORGANO": "MUCOSA RECTAL",
+      "Organo": "BX MASA RECTAL",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO”",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_MLH1": "POSITIVO",
+      "IHQ_MSH2": "POSITIVO",
+      "IHQ_MSH6": "POSITIVO",
+      "IHQ_PMS2": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 149,
+      "campos_vacios": 111,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 25.5
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 111,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE.",
+      "valor_corregido": "Mucosa rectal. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO CON PATRÓN MICROSATELITAL ESTABLE.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250038",
+      "timestamp": "2025-11-30T18:06:32.741588"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500152” que corresponde a “masa rectal” con diagnósticos de “ADENOCARCINOMA INVASIVO”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción con MLH1, MSH2, MSH6 y\nPMS2.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500152” que corresponde a “masa rectal” con diagnósticos de “ADENOCARCINOMA INVASIVO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con MLH1, MSH2, MSH6 y PMS2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250038",
+      "timestamp": "2025-11-30T18:06:32.741594"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse\nanalizan\ntinciones\nde\nInmunohistoquímica\nrealizadas\ncon\ntécnica\nde\ninmunoperoxidasa\nen\nla\nplataforma automatizada Roche VENTANA©.\nEVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nLos controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.",
+      "valor_corregido": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250038",
+      "timestamp": "2025-11-30T18:06:32.741596"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 50
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250011_20251130_195357",
+  "numero_peticion": "IHQ250011",
+  "timestamp": "2025-11-30T19:53:57.712193",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250011\nCopia Pag. 1 de 1\nNombre : CINDY YANEISY CEDEÑO MINA\nN. peticion : IHQ250011\nN.Identificación : PPT. 5700531\nGenero : FEMENINO\nEdad : 26 años 7 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : DIANA FERNANDA SOLARTE\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 03/01/2025\nFecha Informe : 08/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PARED ABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410656” que corresponde a “pared abdominal”. Previa revisión de la histología, se realizan\nniveles histológicos para tinción con PAX-8, receptores de estrógenos, receptores de progesterona y\nCD68.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEl tejido endometrial decidualizado es positivo para receptores hormonales de progesterona y negativas\npara receptores de estrógenos, CD68 y PAX-8.\nDIAGNÓSTICO\nPared abdominal. Lesión. Biopsia. Estudio de inmunohistoquímica:\n-\nHALLAZGOS\nDE\nINMUNOHISTOQUÍMICA\nCOMPATIBLES\nCON\nTEJIDO\nENDOMETRIAL\nECTÓPICO\nDECIDUALIZADO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 20 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 2458,
+      "reduccion_porcentaje": 98.56
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250011",
+      "caso_num": 11,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "CINDY YANEISY CEDEÑO MINA",
+      "numero_peticion": "IHQ250011",
+      "identificacion": "5700531",
+      "tipo_documento": "PPT",
+      "Genero": "FEMENINO",
+      "Edad": "26",
+      "eps": "ASMET SALUD EPS SAS",
+      "medico_tratante": "DIANA FERNANDA SOLARTE",
+      "servicio": "ADMISION Y SALA DE PARTOS",
+      "fecha_ingreso": "03/01/2025",
+      "fecha_informe": "08/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250011",
+      "N. de identificación": "5700531",
+      "Tipo de documento": "PPT",
+      "EPS": "ASMET SALUD EPS SAS",
+      "Servicio": "ADMISION Y SALA DE PARTOS",
+      "Médico tratante": "DIANA FERNANDA SOLARTE",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/01/2025",
+      "Fecha Informe": "08/01/2025",
+      "nombres": "CINDY YANEISY",
+      "Primer nombre": "CINDY",
+      "Segundo nombre": "YANEISY",
+      "apellidos": "CEDEÑO MINA",
+      "Primer apellido": "CEDEÑO",
+      "Segundo apellido": "MINA",
+      "nombre_formal": "CEDEÑO MINA, CINDY YANEISY",
+      "diagnostico": "Pared abdominal. Lesión. Biopsia. Estudio de inmunohistoquímica: - HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON TEJIDO ENDOMETRIAL ECTÓPICO DECIDUALIZADO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. El tejido endometrial decidualizado es positivo para receptores hormonales de progesterona y negativas para receptores de estrógenos, CD68 y PAX-8.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410656” que corresponde a “pared abdominal”. Previa revisión de la histología, se realizan niveles histológicos para tinción con PAX-8, receptores de estrógenos, receptores de progesterona y CD68.",
+      "ihq_organo": "PARED ABDOMINAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "PAX 8, Receptor de Estrógeno, Receptor de Progesterona, CD68",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PARED ABDOMINAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: , CD68 Y PAX-8, Receptor de Progesterona: Y",
+      "IHQ_RECEPTOR_ESTROGENOS": ", CD68 Y PAX-8",
+      "IHQ_RECEPTOR_PROGESTERONA": "Y",
+      "IHQ_CD68": "NEGATIVO",
+      "IHQ_PAX8": ", RECEPTORES DE ESTRÓGENOS, RECEPTORES DE PROGESTERONA Y",
+      "extraction_timestamp": "2025-11-30T19:53:57.827283",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250011\nCopia Pag. 1 de 1\nNombre : CINDY YANEISY CEDEÑO MINA\nN. peticion : IHQ250011\nN.Identificación : PPT. 5700531\nGenero : FEMENINO\nEdad : 26 años 7 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : DIANA FERNANDA SOLARTE\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 03/01/2025\nFecha Informe : 08/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PARED ABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410656” que corresponde a “pared abdominal”. Previa revisión de la histología, se realizan\nniveles histológicos para tinción con PAX-8, receptores de estrógenos, receptores de progesterona y\nCD68.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEl tejido endometrial decidualizado es positivo para receptores hormonales de progesterona y negativas\npara receptores de estrógenos, CD68 y PAX-8.\nDIAGNÓSTICO\nPared abdominal. Lesión. Biopsia. Estudio de inmunohistoquímica:\n-\nHALLAZGOS\nDE\nINMUNOHISTOQUÍMICA\nCOMPATIBLES\nCON\nTEJIDO\nENDOMETRIAL\nECTÓPICO\nDECIDUALIZADO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 20 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "PAX 8, Receptor de Estrógeno, Receptor de Progesterona, CD68",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410656” que corresponde a “pared abdominal”. Previa revisión de la histología, se realizan niveles histológicos para tinción con PAX-8, receptores de estrógenos, receptores de progesterona y CD68.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. El tejido endometrial decidualizado es positivo para receptores hormonales de progesterona y negativas para receptores de estrógenos, CD68 y PAX-8.",
+      "Descripcion Diagnostico": "Pared abdominal. Lesión. Biopsia. Estudio de inmunohistoquímica: - HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON TEJIDO ENDOMETRIAL ECTÓPICO DECIDUALIZADO.",
+      "IHQ_ORGANO": "PARED ABDOMINAL",
+      "Organo": "LESION PARED ABDOMINAL",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "ENDOMETRIAL DECIDUALIZADO ES",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: , CD68 Y PAX-8, Receptor de Progesterona: Y",
+      "IHQ_PAX8": ", RECEPTORES DE ESTRÓGENOS, RECEPTORES DE PROGESTERONA Y",
+      "IHQ_RECEPTOR_ESTROGENOS": ", CD68 Y PAX-8",
+      "IHQ_RECEPTOR_PROGESTERONA": "Y",
+      "IHQ_CD68": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 149,
+      "campos_vacios": 110,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 26.17
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 110,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pared abdominal. Lesión. Biopsia. Estudio de inmunohistoquímica:\n-\nHALLAZGOS\nDE\nINMUNOHISTOQUÍMICA\nCOMPATIBLES\nCON\nTEJIDO\nENDOMETRIAL\nECTÓPICO\nDECIDUALIZADO.",
+      "valor_corregido": "Pared abdominal. Lesión. Biopsia. Estudio de inmunohistoquímica: - HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON TEJIDO ENDOMETRIAL ECTÓPICO DECIDUALIZADO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250011",
+      "timestamp": "2025-11-30T19:53:57.826924"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410656” que corresponde a “pared abdominal”. Previa revisión de la histología, se realizan\nniveles histológicos para tinción con PAX-8, receptores de estrógenos, receptores de progesterona y\nCD68.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410656” que corresponde a “pared abdominal”. Previa revisión de la histología, se realizan niveles histológicos para tinción con PAX-8, receptores de estrógenos, receptores de progesterona y CD68.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250011",
+      "timestamp": "2025-11-30T19:53:57.826932"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEl tejido endometrial decidualizado es positivo para receptores hormonales de progesterona y negativas\npara receptores de estrógenos, CD68 y PAX-8.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. El tejido endometrial decidualizado es positivo para receptores hormonales de progesterona y negativas para receptores de estrógenos, CD68 y PAX-8.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250011",
+      "timestamp": "2025-11-30T19:53:57.826935"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 51
+  }
+}

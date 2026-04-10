@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250080_20251219_022145",
+  "numero_peticion": "IHQ250080",
+  "timestamp": "2025-12-19T02:21:45.430613",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250080\nCopia Pag. 1 de 2\nNombre : MARIA CONSUELO MURILLO ROSERO N. peticion : IHQ250080\nN.Identificación : CC. 66745334\nGenero : FEMENINO\nEdad : 55 años 2 meses 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : CIRUGIA COEX\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX COLON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2408961” correspondiente a \" hemicolectomia derecha” con diagnóstico de “ CARCINOMA EN CELULAS\nDE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA”. Previa revisión de la histología se realizan\nniveles histológicos en la lámina numero 4 para tinción con los marcadores: MSH2, MSH6, HER2, MLH1,\nPMS2\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\n- Las células tumorales tienen expresión HER 2 negativo (score 0)\n- Prueba de Reparación de Desajuste de ADN\nSitio de la Muestra: Hemicolectomia derecha\nPruebas Realizadas en el bloque No. 4\nResultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste\n+Resultado de MLH1: Expresión nuclear intacta\n+Resultado de MSH2: Expresión nuclear intacta\n+Resultado de MSH6: Expresión nuclear intacta\n+Resultado de PMS2: Expresión nuclear intacta\nInterpretación de Reparación de Desajuste (MMR): No hay pérdida de expresión nuclear de las proteínas\nMMR:\nInterpretación de Inestabilidad de Microsatélites (MSI): MSI-estable (MSS)\nDIAGNÓSTICO\nColon derecho. Tumor. Hemicolectomia derecha. Historia de inmunohistoquimica:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---\nIHQ250080\nCopia Pag. 2 de 2\nNombre : MARIA CONSUELO MURILLO ROSERO N. peticion : IHQ250080\nN.Identificación : CC. 66745334\nGenero : FEMENINO\nEdad : 55 años 2 meses 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : CIRUGIA COEX\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\n- CARCINOMA EN CELULAS DE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA\n- MSI-ESTABLE (MSS)\n- HER2 NEGATIVO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3706,
+      "reduccion_porcentaje": 98.02
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250080",
+      "caso_num": 27,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA CONSUELO MURILLO ROSERO",
+      "numero_peticion": "IHQ250080",
+      "identificacion": "66745334",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "55",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "CIRUGIA COEX",
+      "fecha_ingreso": "24/01/2025",
+      "fecha_informe": "04/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250080",
+      "N. de identificación": "66745334",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CIRUGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "24/01/2025",
+      "Fecha Informe": "04/02/2025",
+      "nombres": "MARIA CONSUELO",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "CONSUELO",
+      "apellidos": "MURILLO ROSERO",
+      "Primer apellido": "MURILLO",
+      "Segundo apellido": "ROSERO",
+      "nombre_formal": "MURILLO ROSERO, MARIA CONSUELO",
+      "diagnostico": "Colon derecho. Tumor. Hemicolectomia derecha. Historia de inmunohistoquimica: - CARCINOMA EN CELULAS DE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA - MSI-ESTABLE (MSS) - HER2 NEGATIVO",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. - Las células tumorales tienen expresión HER 2 negativo (score 0) - Prueba de Reparación de Desajuste de ADN Sitio de la Muestra: Hemicolectomia derecha Pruebas Realizadas en el bloque No. 4 Resultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste +Resultado de MLH1: Expresión nuclear intacta +Resultado de MSH2: Expresión nuclear intacta +Resultado de MSH6: Expresión nuclear intacta +Resultado de PMS2: Expresión nuclear intacta Interpretación de Reparación de Desajuste (MMR): No hay pérdida de expresión nuclear de las proteínas MMR: Interpretación de Inestabilidad de Microsatélites (MSI): MSI-estable (MSS)",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2408961” correspondiente a \" hemicolectomia derecha” con diagnóstico de “ CARCINOMA EN CELULAS DE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA”. Previa revisión de la histología se realizan niveles histológicos en la lámina numero 4 para tinción con los marcadores: MSH2, MSH6, HER2, MLH1, PMS2",
+      "ihq_organo": "COLON DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "COLON DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: negativo (score 0)",
+      "IHQ_HER2": "negativo (score 0)",
+      "IHQ_MSH2": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MSH6": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MLH1": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_PMS2": "POSITIVO (expresión nuclear intacta)",
+      "extraction_timestamp": "2025-12-19T02:21:45.656283",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250080\nCopia Pag. 1 de 2\nNombre : MARIA CONSUELO MURILLO ROSERO N. peticion : IHQ250080\nN.Identificación : CC. 66745334\nGenero : FEMENINO\nEdad : 55 años 2 meses 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : CIRUGIA COEX\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX COLON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2408961” correspondiente a \" hemicolectomia derecha” con diagnóstico de “ CARCINOMA EN CELULAS\nDE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA”. Previa revisión de la histología se realizan\nniveles histológicos en la lámina numero 4 para tinción con los marcadores: MSH2, MSH6, HER2, MLH1,\nPMS2\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\n- Las células tumorales tienen expresión HER 2 negativo (score 0)\n- Prueba de Reparación de Desajuste de ADN\nSitio de la Muestra: Hemicolectomia derecha\nPruebas Realizadas en el bloque No. 4\nResultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste\n+Resultado de MLH1: Expresión nuclear intacta\n+Resultado de MSH2: Expresión nuclear intacta\n+Resultado de MSH6: Expresión nuclear intacta\n+Resultado de PMS2: Expresión nuclear intacta\nInterpretación de Reparación de Desajuste (MMR): No hay pérdida de expresión nuclear de las proteínas\nMMR:\nInterpretación de Inestabilidad de Microsatélites (MSI): MSI-estable (MSS)\nDIAGNÓSTICO\nColon derecho. Tumor. Hemicolectomia derecha. Historia de inmunohistoquimica:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---\nIHQ250080\nCopia Pag. 2 de 2\nNombre : MARIA CONSUELO MURILLO ROSERO N. peticion : IHQ250080\nN.Identificación : CC. 66745334\nGenero : FEMENINO\nEdad : 55 años 2 meses 9 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : CIRUGIA COEX\nFecha Ingreso : 24/01/2025\nFecha Informe : 04/02/2025\n- CARCINOMA EN CELULAS DE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA\n- MSI-ESTABLE (MSS)\n- HER2 NEGATIVO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MLH1, MSH2, MSH6, PMS2",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2408961” correspondiente a \" hemicolectomia derecha” con diagnóstico de “ CARCINOMA EN CELULAS DE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA”. Previa revisión de la histología se realizan niveles histológicos en la lámina numero 4 para tinción con los marcadores: MSH2, MSH6, HER2, MLH1, PMS2",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. - Las células tumorales tienen expresión HER 2 negativo (score 0) - Prueba de Reparación de Desajuste de ADN Sitio de la Muestra: Hemicolectomia derecha Pruebas Realizadas en el bloque No. 4 Resultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste +Resultado de MLH1: Expresión nuclear intacta +Resultado de MSH2: Expresión nuclear intacta +Resultado de MSH6: Expresión nuclear intacta +Resultado de PMS2: Expresión nuclear intacta Interpretación de Reparación de Desajuste (MMR): No hay pérdida de expresión nuclear de las proteínas MMR: Interpretación de Inestabilidad de Microsatélites (MSI): MSI-estable (MSS)",
+      "Descripcion Diagnostico": "Colon derecho. Tumor. Hemicolectomia derecha. Historia de inmunohistoquimica: - CARCINOMA EN CELULAS DE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA - MSI-ESTABLE (MSS) - HER2 NEGATIVO",
+      "IHQ_ORGANO": "COLON DERECHO",
+      "Organo": "BX COLON DERECHO",
+      "Diagnostico Coloracion": "CARCINOMA EN CELULAS DE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA",
+      "Diagnostico Principal": "CARCINOMA EN CELULAS DE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: negativo (score 0)",
+      "IHQ_HER2": "NEGATIVO (score 0)",
+      "IHQ_MLH1": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MSH2": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_MSH6": "POSITIVO (expresión nuclear intacta)",
+      "IHQ_PMS2": "POSITIVO (expresión nuclear intacta)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 117,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 25.48
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 117,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Colon derecho. Tumor. Hemicolectomia derecha. Historia de inmunohistoquimica:\n- CARCINOMA EN CELULAS DE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA\n- MSI-ESTABLE (MSS)\n- HER2 NEGATIVO",
+      "valor_corregido": "Colon derecho. Tumor. Hemicolectomia derecha. Historia de inmunohistoquimica: - CARCINOMA EN CELULAS DE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA - MSI-ESTABLE (MSS) - HER2 NEGATIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250080",
+      "timestamp": "2025-12-19T02:21:45.655982"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2408961” correspondiente a \" hemicolectomia derecha” con diagnóstico de “ CARCINOMA EN CELULAS\nDE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA”. Previa revisión de la histología se realizan\nniveles histológicos en la lámina numero 4 para tinción con los marcadores: MSH2, MSH6, HER2, MLH1,\nPMS2",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2408961” correspondiente a \" hemicolectomia derecha” con diagnóstico de “ CARCINOMA EN CELULAS DE ANILLO SELLO CON INVASIÓN HASTA LA MUSULAR PROPIA”. Previa revisión de la histología se realizan niveles histológicos en la lámina numero 4 para tinción con los marcadores: MSH2, MSH6, HER2, MLH1, PMS2",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250080",
+      "timestamp": "2025-12-19T02:21:45.655991"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\n- Las células tumorales tienen expresión HER 2 negativo (score 0)\n- Prueba de Reparación de Desajuste de ADN\nSitio de la Muestra: Hemicolectomia derecha\nPruebas Realizadas en el bloque No. 4\nResultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste\n+Resultado de MLH1: Expresión nuclear intacta\n+Resultado de MSH2: Expresión nuclear intacta\n+Resultado de MSH6: Expresión nuclear intacta\n+Resultado de PMS2: Expresión nuclear intacta\nInterpretación de Reparación de Desajuste (MMR): No hay pérdida de expresión nuclear de las proteínas\nMMR:\nInterpretación de Inestabilidad de Microsatélites (MSI): MSI-estable (MSS)",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. - Las células tumorales tienen expresión HER 2 negativo (score 0) - Prueba de Reparación de Desajuste de ADN Sitio de la Muestra: Hemicolectomia derecha Pruebas Realizadas en el bloque No. 4 Resultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste +Resultado de MLH1: Expresión nuclear intacta +Resultado de MSH2: Expresión nuclear intacta +Resultado de MSH6: Expresión nuclear intacta +Resultado de PMS2: Expresión nuclear intacta Interpretación de Reparación de Desajuste (MMR): No hay pérdida de expresión nuclear de las proteínas MMR: Interpretación de Inestabilidad de Microsatélites (MSI): MSI-estable (MSS)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250080",
+      "timestamp": "2025-12-19T02:21:45.655994"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 51
+  }
+}

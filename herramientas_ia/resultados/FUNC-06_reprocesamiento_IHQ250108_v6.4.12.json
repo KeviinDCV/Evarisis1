@@ -1,0 +1,43 @@
+{
+  "caso": "IHQ250108",
+  "version_extractor": "v6.4.12",
+  "fecha_reprocesamiento": "2026-01-05 21:34:28",
+  "problema_corregido": "Códigos de bloques (A3, B2, B3) extraídos incorrectamente como biomarcadores",
+  "solucion_aplicada": "Filtrado de códigos de bloques en biomarker_extractor.py",
+  "antes": {
+    "ihq_estudios_solicitados": "P63, RACEMASA, CK34BE12, A3, B2, B3 (CONTAMINADO)",
+    "biomarcadores_validos": 3,
+    "biomarcadores_invalidos": 3,
+    "score_validacion": "<100%"
+  },
+  "despues": {
+    "ihq_estudios_solicitados": "P63, RACEMASA, CK34BE12",
+    "biomarcadores_validos": 3,
+    "biomarcadores_invalidos": 0,
+    "score_validacion": "100.0%"
+  },
+  "biomarcadores_extraidos": {
+    "IHQ_P63": "POSITIVO",
+    "IHQ_RACEMASA": "NEGATIVO",
+    "IHQ_CK34BE12": "POSITIVO"
+  },
+  "validacion": {
+    "estado": "OK",
+    "score": 100.0,
+    "warnings": 0,
+    "errores": 0,
+    "campos_validados": 9,
+    "campos_ok": 9
+  },
+  "modificaciones_codigo": [
+    {
+      "archivo": "core/extractors/biomarker_extractor.py",
+      "linea": "~720",
+      "cambio": "Agregado filtrado de códigos de bloques con regex",
+      "patron": "\\b[A-Z]\\d{1,2}\\b"
+    }
+  ],
+  "casos_reprocesados": 48,
+  "rango_pdf": "IHQ250108 a IHQ250159",
+  "conclusion": "Corrección exitosa. Los códigos de bloques ya NO son extraídos como biomarcadores."
+}

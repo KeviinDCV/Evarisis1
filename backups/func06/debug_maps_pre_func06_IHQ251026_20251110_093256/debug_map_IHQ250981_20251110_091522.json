@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250981_20251110_091522",
+  "numero_peticion": "IHQ250981",
+  "timestamp": "2025-11-10T09:15:22.844576",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250981\nCopia Pag. 1 de 2\nNombre : ALBA MARINA MEJIA MERCHAN\nN. peticion : IHQ250981\nN.Identificación : CC. 38987682\nGenero : FEMENINO\nEdad : 78 años 17 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 08/09/2025\nFecha Informe : 15/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASTECTOMIA RADICAL\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2506442” que corresponde a \"tumor mama izquierda. Mastectomía radical\" y con diagnóstico\nde “CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)”. Previa revisión\nde la histología se realizan niveles histológicos para tinción con: E-Cadherina, Progesterona,\nEstrógenos, Her2, Ki67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales en el corte histológico muestran marcación positiva para: E-Cadherina. \nPruebas realizadas en la muestra / número: M2506442\nEstado del receptor de estrógeno (ER) Positivos. \nPorcentaje de células con positividad nuclear: 91-100 %.\nIntensidad. Moderada.\nControles internos presentes. Marcación adecuada y fuerte intensidad. \nControles externos presentes. Marcación adecuada y fuerte intensidad. \n Estado del receptor de progesterona (PgR): Negativo. \nPorcentaje de células con positividad nuclear: Menos del 1 % \n HER2: EQUIVOCO (Score 2+)\nÍndice de proliferación celular (Ki67): 21-30%.\nDIAGNÓSTICO\n Mama izquierda. Lesión. Mastectomía radical izquierda. Estudios de inmunohistoquímica. \n-CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9) \n- TAMAÑO TUMORAL MAYOR 7 x 6 x 3 CENTÍMETROS.\n- MÁRGENES DE RESECCIÓN LIBRES DE TUMOR (TODOS)\n-INVASION DE VASOS LINFATICOS PRESENTE.\n- GANGLIOS LINFÁTICOS COMPROMETIDOS 4/11.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---\nIHQ250981\nCopia Pag. 2 de 2\nNombre : ALBA MARINA MEJIA MERCHAN\nN. peticion : IHQ250981\nN.Identificación : CC. 38987682\nGenero : FEMENINO\nEdad : 78 años 17 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 08/09/2025\nFecha Informe : 15/09/2025\nExpresión molecular: \n- RECEPTORES DE ESTRÓGENOS: POSITIVOS (90-100%).\n- RECEPTORES DE PROGESTERONA: NEGATIVOS (MENOR AL 1 %).\n- SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 5 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 4006,
+      "reduccion_porcentaje": 97.93
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250981",
+      "caso_num": 2,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ALBA MARINA MEJIA MERCHAN",
+      "numero_peticion": "IHQ250981",
+      "identificacion": "38987682",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "78",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "08/09/2025",
+      "fecha_informe": "15/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250981",
+      "N. de identificación": "38987682",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/09/2025",
+      "Fecha Informe": "15/09/2025",
+      "nombres": "ALBA MARINA",
+      "Primer nombre": "ALBA",
+      "Segundo nombre": "MARINA",
+      "apellidos": "MEJIA MERCHAN",
+      "Primer apellido": "MEJIA",
+      "Segundo apellido": "MERCHAN",
+      "nombre_formal": "MEJIA MERCHAN, ALBA MARINA",
+      "diagnostico": "Mama izquierda. Lesión. Mastectomía radical izquierda. Estudios de inmunohistoquímica. -CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9) - TAMAÑO TUMORAL MAYOR 7 x 6 x 3 CENTÍMETROS. - MÁRGENES DE RESECCIÓN LIBRES DE TUMOR (TODOS) -INVASION DE VASOS LINFATICOS PRESENTE. - GANGLIOS LINFÁTICOS COMPROMETIDOS 4/11. - RECEPTORES DE ESTRÓGENOS: POSITIVOS (90-100%). - RECEPTORES DE PROGESTERONA: NEGATIVOS (MENOR AL 1 %). - SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales en el corte histológico muestran marcación positiva para: E-Cadherina. Pruebas realizadas en la muestra / número: M2506442 Estado del receptor de estrógeno (ER) Positivos. Porcentaje de células con positividad nuclear: 91-100 %. Intensidad. Moderada. Controles internos presentes. Marcación adecuada y fuerte intensidad. Controles externos presentes. Marcación adecuada y fuerte intensidad. Estado del receptor de progesterona (PgR): Negativo. Porcentaje de células con positividad nuclear: Menos del 1 % HER2: EQUIVOCO (Score 2+) Índice de proliferación celular (KI-67): 21-30%.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2506442” que corresponde a \"tumor mama izquierda. Mastectomía radical\" y con diagnóstico de “CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)”. Previa revisión de la histología se realizan niveles histológicos para tinción con: E-Cadherina, Progesterona, Estrógenos, Her2, KI-67.",
+      "ihq_organo": "MAMA IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "E-Cadherina, Receptor de Progesterona, Receptor de Estrógeno, HER2, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: EQUIVOCO (SCORE 2+), Ki-67: 21-30%, Receptor de Estrógeno: POSITIVOS (90-100%), Receptor de Progesterona: NEGATIVOS (MENOR AL 1 %)",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVOS (90-100%)",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVOS (MENOR AL 1 %)",
+      "IHQ_HER2": "EQUIVOCO (SCORE 2+)",
+      "IHQ_KI-67": "21-30%",
+      "IHQ_E_CADHERINA": "POSITIVO",
+      "extraction_timestamp": "2025-11-10T09:15:22.954013",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250981\nCopia Pag. 1 de 2\nNombre : ALBA MARINA MEJIA MERCHAN\nN. peticion : IHQ250981\nN.Identificación : CC. 38987682\nGenero : FEMENINO\nEdad : 78 años 17 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 08/09/2025\nFecha Informe : 15/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASTECTOMIA RADICAL\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2506442” que corresponde a \"tumor mama izquierda. Mastectomía radical\" y con diagnóstico\nde “CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)”. Previa revisión\nde la histología se realizan niveles histológicos para tinción con: E-Cadherina, Progesterona,\nEstrógenos, Her2, Ki67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales en el corte histológico muestran marcación positiva para: E-Cadherina. \nPruebas realizadas en la muestra / número: M2506442\nEstado del receptor de estrógeno (ER) Positivos. \nPorcentaje de células con positividad nuclear: 91-100 %.\nIntensidad. Moderada.\nControles internos presentes. Marcación adecuada y fuerte intensidad. \nControles externos presentes. Marcación adecuada y fuerte intensidad. \n Estado del receptor de progesterona (PgR): Negativo. \nPorcentaje de células con positividad nuclear: Menos del 1 % \n HER2: EQUIVOCO (Score 2+)\nÍndice de proliferación celular (Ki67): 21-30%.\nDIAGNÓSTICO\n Mama izquierda. Lesión. Mastectomía radical izquierda. Estudios de inmunohistoquímica. \n-CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9) \n- TAMAÑO TUMORAL MAYOR 7 x 6 x 3 CENTÍMETROS.\n- MÁRGENES DE RESECCIÓN LIBRES DE TUMOR (TODOS)\n-INVASION DE VASOS LINFATICOS PRESENTE.\n- GANGLIOS LINFÁTICOS COMPROMETIDOS 4/11.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---\nIHQ250981\nCopia Pag. 2 de 2\nNombre : ALBA MARINA MEJIA MERCHAN\nN. peticion : IHQ250981\nN.Identificación : CC. 38987682\nGenero : FEMENINO\nEdad : 78 años 17 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 08/09/2025\nFecha Informe : 15/09/2025\nExpresión molecular: \n- RECEPTORES DE ESTRÓGENOS: POSITIVOS (90-100%).\n- RECEPTORES DE PROGESTERONA: NEGATIVOS (MENOR AL 1 %).\n- SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 5 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "E-Cadherina, Receptor de Progesterona, Receptor de Estrógeno, HER2, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2506442” que corresponde a \"tumor mama izquierda. Mastectomía radical\" y con diagnóstico de “CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)”. Previa revisión de la histología se realizan niveles histológicos para tinción con: E-Cadherina, Progesterona, Estrógenos, Her2, Ki67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales en el corte histológico muestran marcación positiva para: E-Cadherina. Pruebas realizadas en la muestra / número: M2506442 Estado del receptor de estrógeno (ER) Positivos. Porcentaje de células con positividad nuclear: 91-100 %. Intensidad. Moderada. Controles internos presentes. Marcación adecuada y fuerte intensidad. Controles externos presentes. Marcación adecuada y fuerte intensidad. Estado del receptor de progesterona (PgR): Negativo. Porcentaje de células con positividad nuclear: Menos del 1 % HER2: EQUIVOCO (Score 2+) Índice de proliferación celular (Ki67): 21-30%.",
+      "Descripcion Diagnostico": "Mama izquierda. Lesión. Mastectomía radical izquierda. Estudios de inmunohistoquímica. -CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9) - TAMAÑO TUMORAL MAYOR 7 x 6 x 3 CENTÍMETROS. - MÁRGENES DE RESECCIÓN LIBRES DE TUMOR (TODOS) -INVASION DE VASOS LINFATICOS PRESENTE. - GANGLIOS LINFÁTICOS COMPROMETIDOS 4/11. - RECEPTORES DE ESTRÓGENOS: POSITIVOS (90-100%). - RECEPTORES DE PROGESTERONA: NEGATIVOS (MENOR AL 1 %). - SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+)",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Organo": "MASTECTOMIA RADICAL",
+      "Diagnostico Coloracion": "CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)",
+      "Diagnostico Principal": "CARCINOMA MICROPAPILAR, INVASIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: EQUIVOCO (SCORE 2+), Ki-67: 21-30%, Receptor de Estrógeno: POSITIVOS (90-100%), Receptor de Progesterona: NEGATIVOS (MENOR AL 1 %)",
+      "IHQ_E_CADHERINA": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVOS (MENOR AL 1 %)",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVOS (90-100%)",
+      "IHQ_HER2": "EQUIVOCO (SCORE 2+)",
+      "IHQ_KI-67": "21-30%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 146,
+      "campos_vacios": 106,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 27.4
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 106,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama izquierda. Lesión. Mastectomía radical izquierda. Estudios de inmunohistoquímica. \n-CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9) \n- TAMAÑO TUMORAL MAYOR 7 x 6 x 3 CENTÍMETROS.\n- MÁRGENES DE RESECCIÓN LIBRES DE TUMOR (TODOS)\n-INVASION DE VASOS LINFATICOS PRESENTE.\n- GANGLIOS LINFÁTICOS COMPROMETIDOS 4/11.\n- RECEPTORES DE ESTRÓGENOS: POSITIVOS (90-100%).\n- RECEPTORES DE PROGESTERONA: NEGATIVOS (MENOR AL 1 %).\n- SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+)",
+      "valor_corregido": "Mama izquierda. Lesión. Mastectomía radical izquierda. Estudios de inmunohistoquímica. -CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9) - TAMAÑO TUMORAL MAYOR 7 x 6 x 3 CENTÍMETROS. - MÁRGENES DE RESECCIÓN LIBRES DE TUMOR (TODOS) -INVASION DE VASOS LINFATICOS PRESENTE. - GANGLIOS LINFÁTICOS COMPROMETIDOS 4/11. - RECEPTORES DE ESTRÓGENOS: POSITIVOS (90-100%). - RECEPTORES DE PROGESTERONA: NEGATIVOS (MENOR AL 1 %). - SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250981",
+      "timestamp": "2025-11-10T09:15:22.953817"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2506442” que corresponde a \"tumor mama izquierda. Mastectomía radical\" y con diagnóstico\nde “CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)”. Previa revisión\nde la histología se realizan niveles histológicos para tinción con: E-Cadherina, Progesterona,\nEstrógenos, Her2, Ki67.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2506442” que corresponde a \"tumor mama izquierda. Mastectomía radical\" y con diagnóstico de “CARCINOMA MICROPAPILAR, INVASIVO GRADO HISTOLOGICO: 1 (SCORE 3/9)”. Previa revisión de la histología se realizan niveles histológicos para tinción con: E-Cadherina, Progesterona, Estrógenos, Her2, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250981",
+      "timestamp": "2025-11-10T09:15:22.953823"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales en el corte histológico muestran marcación positiva para: E-Cadherina. Pruebas realizadas en la muestra / número: M2506442 Estado del receptor de estrógeno (ER) Positivos. Porcentaje de células con positividad nuclear: 91-100 %. Intensidad. Moderada. Controles internos presentes. Marcación adecuada y fuerte intensidad. Controles externos presentes. Marcación adecuada y fuerte intensidad. Estado del receptor de progesterona (PgR): Negativo. Porcentaje de células con positividad nuclear: Menos del 1 % HER2: EQUIVOCO (Score 2+) Índice de proliferación celular (Ki67): 21-30%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales en el corte histológico muestran marcación positiva para: E-Cadherina. Pruebas realizadas en la muestra / número: M2506442 Estado del receptor de estrógeno (ER) Positivos. Porcentaje de células con positividad nuclear: 91-100 %. Intensidad. Moderada. Controles internos presentes. Marcación adecuada y fuerte intensidad. Controles externos presentes. Marcación adecuada y fuerte intensidad. Estado del receptor de progesterona (PgR): Negativo. Porcentaje de células con positividad nuclear: Menos del 1 % HER2: EQUIVOCO (Score 2+) Índice de proliferación celular (KI-67): 21-30%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250981",
+      "timestamp": "2025-11-10T09:15:22.953825"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 52
+  }
+}

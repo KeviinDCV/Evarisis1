@@ -1,0 +1,145 @@
+{
+  "session_id": "IHQ251007_20251111_233316",
+  "numero_peticion": "IHQ251007",
+  "timestamp": "2025-11-11T23:33:16.114558",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251007\nCopia Pag. 1 de 1\nNombre : SANDRA YOLIMA NAVIA GRANDA\nN. peticion : IHQ251007\nN.Identificación : CC. 34563444\nGenero : FEMENINO\nEdad : 54 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 16/09/2025\nFecha Informe : 19/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION MAMA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque de RAMELLI con Nro P25077405 rotulado como \"Biopsia de\nmama izquierda\" con diagnostico de \" CARCINOMA DUCTAL IN SITU, GRADO NUCLEAR 2 \", se realizan los\nsiguientes marcadores: P63, CK5/5, Receptores de estrógeno.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLas celulas tumorales presenta una inmunoreactividad moderada y fuerte a receptores de estrogeno.\nHay positividad para celulas mioepiteliales CK5/6 y P63. Sin marcación intraductal para CK5/6. \nDIAGNÓSTICO\n Mama izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica. \n- LOS HALLAZGOS DE INMUNOHITOQUÍMICA SUGIEREN UN CARCINOMA DUCTAL IN SITU CON PATRON\nSOLIDO Y DE COMEDONECROSIS. \n- GRADO NUCLEAR 2. \n- EXTENSION TUMORAL MAXIMA REPRESENTADA DE 2MM. \n- NEGATIVO PARA COMPONENTE INVASIVO REPRESENTADO EN LA MUESTRA RECIBIDA. \n- MICROCALCIFICACIONES INTRADUCTALES TUMORALES PRESENTES.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 2672,
+      "reduccion_porcentaje": 98.62
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251007",
+      "caso_num": 27,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "nombre_completo": "SANDRA YOLIMA NAVIA GRANDA",
+      "numero_peticion": "IHQ251007",
+      "identificacion": "34563444",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "54",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "URIEL CARDONA NUÑEZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "16/09/2025",
+      "fecha_informe": "19/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251007",
+      "N. de identificación": "34563444",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "URIEL CARDONA NUÑEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "16/09/2025",
+      "Fecha Informe": "19/09/2025",
+      "nombres": "SANDRA YOLIMA",
+      "Primer nombre": "SANDRA",
+      "Segundo nombre": "YOLIMA",
+      "apellidos": "NAVIA GRANDA",
+      "Primer apellido": "NAVIA",
+      "Segundo apellido": "GRANDA",
+      "nombre_formal": "NAVIA GRANDA, SANDRA YOLIMA",
+      "diagnostico": "Mama izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica. - LOS HALLAZGOS DE INMUNOHITOQUÍMICA SUGIEREN UN CARCINOMA DUCTAL IN SITU CON PATRON SOLIDO Y DE COMEDONECROSIS. - GRADO NUCLEAR 2. - EXTENSION TUMORAL MAXIMA REPRESENTADA DE 2MM. - NEGATIVO PARA COMPONENTE INVASIVO REPRESENTADO EN LA MUESTRA RECIBIDA. - MICROCALCIFICACIONES INTRADUCTALES TUMORALES PRESENTES.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las celulas tumorales presenta una inmunoreactividad moderada y fuerte a receptores de estrogeno. Hay positividad para celulas mioepiteliales CK5/6 y P63. Sin marcación intraductal para CK5/6.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque de RAMELLI con Nro P25077405 rotulado como \"Biopsia de mama izquierda\" con diagnostico de \" CARCINOMA DUCTAL IN SITU, GRADO NUCLEAR 2 \", se realizan los siguientes marcadores: P63, CK5/5, Receptores de estrógeno.",
+      "ihq_organo": "MAMA IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P63, CK5/6, Receptor de Estrógeno",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: INMUNOREACTIVIDAD MODERADA Y FUERTE A RECEPTORES DE ESTROGENO",
+      "IHQ_RECEPTOR_ESTROGENOS": "INMUNOREACTIVIDAD MODERADA Y FUERTE A RECEPTORES DE ESTROGENO",
+      "extraction_timestamp": "2025-11-11T23:33:16.245817",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251007\nCopia Pag. 1 de 1\nNombre : SANDRA YOLIMA NAVIA GRANDA\nN. peticion : IHQ251007\nN.Identificación : CC. 34563444\nGenero : FEMENINO\nEdad : 54 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 16/09/2025\nFecha Informe : 19/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION MAMA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque de RAMELLI con Nro P25077405 rotulado como \"Biopsia de\nmama izquierda\" con diagnostico de \" CARCINOMA DUCTAL IN SITU, GRADO NUCLEAR 2 \", se realizan los\nsiguientes marcadores: P63, CK5/5, Receptores de estrógeno.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLas celulas tumorales presenta una inmunoreactividad moderada y fuerte a receptores de estrogeno.\nHay positividad para celulas mioepiteliales CK5/6 y P63. Sin marcación intraductal para CK5/6. \nDIAGNÓSTICO\n Mama izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica. \n- LOS HALLAZGOS DE INMUNOHITOQUÍMICA SUGIEREN UN CARCINOMA DUCTAL IN SITU CON PATRON\nSOLIDO Y DE COMEDONECROSIS. \n- GRADO NUCLEAR 2. \n- EXTENSION TUMORAL MAXIMA REPRESENTADA DE 2MM. \n- NEGATIVO PARA COMPONENTE INVASIVO REPRESENTADO EN LA MUESTRA RECIBIDA. \n- MICROCALCIFICACIONES INTRADUCTALES TUMORALES PRESENTES.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK5/6, Receptor de Estrógeno",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque de RAMELLI con Nro P25077405 rotulado como \"Biopsia de mama izquierda\" con diagnostico de \" CARCINOMA DUCTAL IN SITU, GRADO NUCLEAR 2 \", se realizan los siguientes marcadores: P63, CK5/5, Receptores de estrógeno.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las celulas tumorales presenta una inmunoreactividad moderada y fuerte a receptores de estrogeno. Hay positividad para celulas mioepiteliales CK5/6 y P63. Sin marcación intraductal para CK5/6.",
+      "Descripcion Diagnostico": "Mama izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica. - LOS HALLAZGOS DE INMUNOHITOQUÍMICA SUGIEREN UN CARCINOMA DUCTAL IN SITU CON PATRON SOLIDO Y DE COMEDONECROSIS. - GRADO NUCLEAR 2. - EXTENSION TUMORAL MAXIMA REPRESENTADA DE 2MM. - NEGATIVO PARA COMPONENTE INVASIVO REPRESENTADO EN LA MUESTRA RECIBIDA. - MICROCALCIFICACIONES INTRADUCTALES TUMORALES PRESENTES.",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Organo": "LESION MAMA IZQUIERDA",
+      "Diagnostico Coloracion": "CARCINOMA DUCTAL IN SITU, GRADO NUCLEAR 2",
+      "Diagnostico Principal": "CARCINOMA DUCTAL IN SITU CON PATRON",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: INMUNOREACTIVIDAD MODERADA Y FUERTE A RECEPTORES DE ESTROGENO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "INMUNOREACTIVIDAD MODERADA Y FUERTE A RECEPTORES DE ESTROGENO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 110,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 25.68
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 110,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica. \n- LOS HALLAZGOS DE INMUNOHITOQUÍMICA SUGIEREN UN CARCINOMA DUCTAL IN SITU CON PATRON\nSOLIDO Y DE COMEDONECROSIS. \n- GRADO NUCLEAR 2. \n- EXTENSION TUMORAL MAXIMA REPRESENTADA DE 2MM. \n- NEGATIVO PARA COMPONENTE INVASIVO REPRESENTADO EN LA MUESTRA RECIBIDA. \n- MICROCALCIFICACIONES INTRADUCTALES TUMORALES PRESENTES.",
+      "valor_corregido": "Mama izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica. - LOS HALLAZGOS DE INMUNOHITOQUÍMICA SUGIEREN UN CARCINOMA DUCTAL IN SITU CON PATRON SOLIDO Y DE COMEDONECROSIS. - GRADO NUCLEAR 2. - EXTENSION TUMORAL MAXIMA REPRESENTADA DE 2MM. - NEGATIVO PARA COMPONENTE INVASIVO REPRESENTADO EN LA MUESTRA RECIBIDA. - MICROCALCIFICACIONES INTRADUCTALES TUMORALES PRESENTES.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251007",
+      "timestamp": "2025-11-11T23:33:16.244674"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque de RAMELLI con Nro P25077405 rotulado como \"Biopsia de\nmama izquierda\" con diagnostico de \" CARCINOMA DUCTAL IN SITU, GRADO NUCLEAR 2 \", se realizan los\nsiguientes marcadores: P63, CK5/5, Receptores de estrógeno.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque de RAMELLI con Nro P25077405 rotulado como \"Biopsia de mama izquierda\" con diagnostico de \" CARCINOMA DUCTAL IN SITU, GRADO NUCLEAR 2 \", se realizan los siguientes marcadores: P63, CK5/5, Receptores de estrógeno.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251007",
+      "timestamp": "2025-11-11T23:33:16.244680"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 50
+  }
+}

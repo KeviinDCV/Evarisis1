@@ -1,0 +1,157 @@
+{
+  "session_id": "IHQ250009_20251205_005107",
+  "numero_peticion": "IHQ250009",
+  "timestamp": "2025-12-05T00:51:07.190243",
+  "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250009\nCopia Pag. 1 de 2\nNombre : GERMAN RODRIGUEZ CORTES\nN. peticion : IHQ250009\nN.Identificación : CC. 16761187\nGenero : MASCULINO\nEdad : 56 años 7 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JUAN CARLOS AGUIRRE\nServicio : ORTOPEDIA\nFecha Ingreso : 03/01/2025\nFecha Informe : 10/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION MUSLO\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410640” que corresponde a “biopsia de muslo derecho” con diagnósticos de “LESIÓN\nNEOPLÁSICA LIPOMATOSA CON ATIPIA”. Previa revisión de la histología, se realizan niveles histológicos\npara tinción con S100, p16, CDK4 y MDM2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nS100 positivo.\np16 positivo focal.\nCDK4 y MDM2 negativos.\n- VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.\nDIAGNÓSTICO\nMuslo derecho. Lesión. Biopsia. Estudio de inmunohistoquímica:\nCOMENTARIOS\nLos\nhallazgos\nhistológicos\nsugieren\nun\nhibernoma,\nsin\nembargo,\nse\nrealizaron\nestudios\nde\ninmunohistoquímica para CDK4 y MDM2 que fueron negativos sin un adecuado control externo. Se\nsugiere la realización de estudios moleculares e inmunohistoquímica en la pieza quirurgica de resección a\ncriterio de medico tratante.\nValorado en conjunto con Dr. Carrascal (Patólogo).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---\nIHQ250009\nCopia Pag. 2 de 2\nNombre : GERMAN RODRIGUEZ CORTES\nN. peticion : IHQ250009\nN.Identificación : CC. 16761187\nGenero : MASCULINO\nEdad : 56 años 7 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JUAN CARLOS AGUIRRE\nServicio : ORTOPEDIA\nFecha Ingreso : 03/01/2025\nFecha Informe : 10/01/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3280,
+      "reduccion_porcentaje": 98.08
+    },
+    "metadata": {
+      "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250009",
+      "caso_num": 9,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "GERMAN RODRIGUEZ CORTES",
+      "numero_peticion": "IHQ250009",
+      "identificacion": "16761187",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "56",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JUAN CARLOS AGUIRRE",
+      "servicio": "ORTOPEDIA",
+      "fecha_ingreso": "03/01/2025",
+      "fecha_informe": "10/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250009",
+      "N. de identificación": "16761187",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "ORTOPEDIA",
+      "Médico tratante": "JUAN CARLOS AGUIRRE",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/01/2025",
+      "Fecha Informe": "10/01/2025",
+      "nombres": "GERMAN",
+      "Primer nombre": "GERMAN",
+      "Segundo nombre": "",
+      "apellidos": "RODRIGUEZ CORTES",
+      "Primer apellido": "RODRIGUEZ",
+      "Segundo apellido": "CORTES",
+      "nombre_formal": "RODRIGUEZ CORTES, GERMAN",
+      "diagnostico": "Muslo derecho. Lesión. Biopsia. Estudio de inmunohistoquímica:",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. S100 positivo. P16 positivo focal. CDK4 y MDM2 negativos. - VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410640” que corresponde a “biopsia de muslo derecho” con diagnósticos de “LESIÓN NEOPLÁSICA LIPOMATOSA CON ATIPIA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con S100, P16, CDK4 y MDM2.",
+      "ihq_organo": "MUSLO DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "S100, P16, CDK4, MDM2",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Los hallazgos histológicos sugieren un hibernoma, sin embargo, se realizaron estudios de inmunohistoquímica para CDK4 y MDM2 que fueron negativos sin un adecuado control externo. Se sugiere la realización de estudios moleculares e inmunohistoquímica en la pieza quirurgica de resección a criterio de medico tratante. Valorado en conjunto con Dr. Carrascal (Patólogo).",
+      "IHQ_ORGANO": "MUSLO DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_MDM2": "NEGATIVO",
+      "IHQ_CDK4": "NEGATIVO",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2025-12-05T00:51:07.320857",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250009\nCopia Pag. 1 de 2\nNombre : GERMAN RODRIGUEZ CORTES\nN. peticion : IHQ250009\nN.Identificación : CC. 16761187\nGenero : MASCULINO\nEdad : 56 años 7 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JUAN CARLOS AGUIRRE\nServicio : ORTOPEDIA\nFecha Ingreso : 03/01/2025\nFecha Informe : 10/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION MUSLO\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410640” que corresponde a “biopsia de muslo derecho” con diagnósticos de “LESIÓN\nNEOPLÁSICA LIPOMATOSA CON ATIPIA”. Previa revisión de la histología, se realizan niveles histológicos\npara tinción con S100, p16, CDK4 y MDM2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nS100 positivo.\np16 positivo focal.\nCDK4 y MDM2 negativos.\n- VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.\nDIAGNÓSTICO\nMuslo derecho. Lesión. Biopsia. Estudio de inmunohistoquímica:\nCOMENTARIOS\nLos\nhallazgos\nhistológicos\nsugieren\nun\nhibernoma,\nsin\nembargo,\nse\nrealizaron\nestudios\nde\ninmunohistoquímica para CDK4 y MDM2 que fueron negativos sin un adecuado control externo. Se\nsugiere la realización de estudios moleculares e inmunohistoquímica en la pieza quirurgica de resección a\ncriterio de medico tratante.\nValorado en conjunto con Dr. Carrascal (Patólogo).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---\nIHQ250009\nCopia Pag. 2 de 2\nNombre : GERMAN RODRIGUEZ CORTES\nN. peticion : IHQ250009\nN.Identificación : CC. 16761187\nGenero : MASCULINO\nEdad : 56 años 7 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JUAN CARLOS AGUIRRE\nServicio : ORTOPEDIA\nFecha Ingreso : 03/01/2025\nFecha Informe : 10/01/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "S100, P16, CDK4, MDM2",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410640” que corresponde a “biopsia de muslo derecho” con diagnósticos de “LESIÓN NEOPLÁSICA LIPOMATOSA CON ATIPIA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con S100, p16, CDK4 y MDM2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. S100 positivo. p16 positivo focal. CDK4 y MDM2 negativos. - VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "Descripcion Diagnostico": "Muslo derecho. Lesión. Biopsia. Estudio de inmunohistoquímica:",
+      "IHQ_ORGANO": "MUSLO DERECHO",
+      "Organo": "BX LESION MUSLO DERECHO",
+      "Diagnostico Coloracion": "LESIÓN NEOPLÁSICA LIPOMATOSA CON ATIPIA",
+      "Diagnostico Principal": "ESTUDIO DE INMUNOHISTOQUÍMICA:",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_CDK4": "NEGATIVO",
+      "IHQ_MDM2": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 156,
+      "campos_vacios": 118,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 24.36
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 118,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410640” que corresponde a “biopsia de muslo derecho” con diagnósticos de “LESIÓN\nNEOPLÁSICA LIPOMATOSA CON ATIPIA”. Previa revisión de la histología, se realizan niveles histológicos\npara tinción con S100, p16, CDK4 y MDM2.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410640” que corresponde a “biopsia de muslo derecho” con diagnósticos de “LESIÓN NEOPLÁSICA LIPOMATOSA CON ATIPIA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con S100, P16, CDK4 y MDM2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250009",
+      "timestamp": "2025-12-05T00:51:07.320566"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nS100 positivo.\np16 positivo focal.\nCDK4 y MDM2 negativos.\n- VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. S100 positivo. P16 positivo focal. CDK4 y MDM2 negativos. - VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250009",
+      "timestamp": "2025-12-05T00:51:07.320572"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los\nhallazgos\nhistológicos\nsugieren\nun\nhibernoma,\nsin\nembargo,\nse\nrealizaron\nestudios\nde\ninmunohistoquímica para CDK4 y MDM2 que fueron negativos sin un adecuado control externo. Se\nsugiere la realización de estudios moleculares e inmunohistoquímica en la pieza quirurgica de resección a\ncriterio de medico tratante.\nValorado en conjunto con Dr. Carrascal (Patólogo).",
+      "valor_corregido": "Los hallazgos histológicos sugieren un hibernoma, sin embargo, se realizaron estudios de inmunohistoquímica para CDK4 y MDM2 que fueron negativos sin un adecuado control externo. Se sugiere la realización de estudios moleculares e inmunohistoquímica en la pieza quirurgica de resección a criterio de medico tratante. Valorado en conjunto con Dr. Carrascal (Patólogo).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250009",
+      "timestamp": "2025-12-05T00:51:07.320574"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 52
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "session_id": "IHQ251012_20251104_231619",
+  "numero_peticion": "IHQ251012",
+  "timestamp": "2025-11-04T23:16:19.892481",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251012\nFinal Pag. 1 de 2\nNombre : MARIA YANETH VIDAL GARCES\nN. peticion : IHQ251012\nN.Identificación : CC. 24528670\nGenero : FEMENINO\nEdad : 50 años 26 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : JHON SANDOVAL\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 16/09/2025\nFecha Informe : 01/10/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR MEDIASTINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2510185-6 y M2510185-10, que corresponden a \"tumor mediastinal\" con\ndiagnóstico de \"TUMOR FUSOCELULAR Y PATRÓN DE CÉLULA MONOMÓRFICA QUE REQUIERE ESTUDIOS\nDE INMUNOHISTOQUÍMICA PARA ADECUADA HISTOGÉNESIS.\" por lo que se solicita marcación para CD1a,\nCD3, CD5, CD20, CD117, CKAE1E3, PAX8, P63 y TDT.\nDESCRIPCIÓN MICROSCÓPICA\n PROTOCOLO CAP TIMO VERSIÓN 5.0.0.0\nESPÉCIMEN\nProcedimiento: Timectomía.\nTUMOR\nSitio: Timo.\nTipo histológico: Timoma AB.\n+Patrones histológicos presentes: \n - Tipo A: 30%.\n - Tipo B2: 70%.\nTamaño tumoral: 10.5 x 8 x 6 cm.\nInvasión linfática o vascular: No identificada.\nEfecto del tratamiento: Sin conocimiento de tratamiento prequirúrgico.\nSitios afectados por tumor: Tumor limitado al timo.\nMárgenes: Todos los márgenes negativos para tumor.\nDistancia exacta: 0.5 mm de la cápsula.\nGANGLIOS LINFÁTICOS REGIONALES\nNo aplica, no fueron enviados.\nMETÁSTASIS A DISTANCIA\nNO aplica.\nCLASIFICACIÓN pTNM\npT1b: Tumor de más de 5 cm encapsulado.\npN: No aplica.\npM: No aplica.\nESTUDIOS ESPECIALES\n+ Inmunohistoquímica\nPrevia revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nDIAGNÓSTICO\n Timo. Tumor. Resección.\nHALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS COMPATIBLES CON TIMOMA AB.\nTAMAÑO TUMORAL 10.5 x 8 x 6 cm.\nINVASION LINFATICA NEGATIVA \nBORDES DE RESECCIÓN NEGATIVOS \nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 69 ---\nIHQ251012\nFinal Pag. 2 de 2\nNombre : MARIA YANETH VIDAL GARCES\nN. peticion : IHQ251012\nN.Identificación : CC. 24528670\nGenero : FEMENINO\nEdad : 50 años 26 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : JHON SANDOVAL\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 16/09/2025\nFecha Informe : 01/10/2025\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nEn los cortes histológicos se observa un tumor nodular con áreas más oscuras ricas en linfocitos y áreas\nmás claras con escasos linfocitos. Los timocitos son positivos para TDT, CD1a, CD3 y CD5.\nLas células epitelioides y fusiformes de la lesión, son positivas para CKAE1E3 y p63, con focos de\nexpresión aberrante para CD20. \nExpresión focal positiva para PAX8.\nSin expresión para CD117.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 70 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 4147,
+      "reduccion_porcentaje": 97.86
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251012",
+      "caso_num": 32,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA YANETH VIDAL GARCES",
+      "numero_peticion": "IHQ251012",
+      "identificacion": "24528670",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "50",
+      "eps": "E.P.S. INDIGENA MALLAMAS GUACH",
+      "medico_tratante": "JHON SANDOVAL",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "16/09/2025",
+      "fecha_informe": "01/10/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251012",
+      "N. de identificación": "24528670",
+      "Tipo de documento": "CC",
+      "EPS": "E.P.S. INDIGENA MALLAMAS GUACH",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "JHON SANDOVAL",
+      "Fecha de ingreso (2. Fecha de la muestra)": "16/09/2025",
+      "Fecha Informe": "01/10/2025",
+      "nombres": "MARIA YANETH",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "YANETH",
+      "apellidos": "VIDAL GARCES",
+      "Primer apellido": "VIDAL",
+      "Segundo apellido": "GARCES",
+      "nombre_formal": "VIDAL GARCES, MARIA YANETH",
+      "diagnostico": "Timo. Tumor. Resección. HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS COMPATIBLES CON TIMOMA AB. TAMAÑO TUMORAL 10.5 x 8 x 6 cm. INVASION LINFATICA NEGATIVA BORDES DE RESECCIÓN NEGATIVOS",
+      "descripcion_microscopica": "PROTOCOLO CAP TIMO VERSIÓN 5.0.0.0 ESPÉCIMEN Procedimiento: Timectomía. TUMOR Sitio: Timo. Tipo histológico: Timoma AB. +Patrones histológicos presentes: - Tipo A: 30%. - Tipo B2: 70%. Tamaño tumoral: 10.5 x 8 x 6 cm. Invasión linfática o vascular: No identificada. Efecto del tratamiento: Sin conocimiento de tratamiento prequirúrgico. Sitios afectados por tumor: Tumor limitado al timo. Márgenes: Todos los márgenes negativos para tumor. Distancia exacta: 0.5 mm de la cápsula. GANGLIOS LINFÁTICOS REGIONALES No aplica, no fueron enviados. METÁSTASIS A DISTANCIA NO aplica. CLASIFICACIÓN pTNM pT1b: Tumor de más de 5 cm encapsulado. pN: No aplica. pM: No aplica. ESTUDIOS ESPECIALES + Inmunohistoquímica Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2510185-6 y M2510185-10, que corresponden a \"tumor mediastinal\" con diagnóstico de \"TUMOR FUSOCELULAR Y PATRÓN DE CÉLULA MONOMÓRFICA QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA ADECUADA HISTOGÉNESIS.\" por lo que se solicita marcación para CD1a, CD3, CD5, CD20, CD117, CKAE1E3, PAX8, P63 y TDT.",
+      "ihq_organo": "TIMO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "TIMO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_P63": "NEGATIVOS",
+      "extraction_timestamp": "2025-11-04T23:16:20.022132",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, PAX8",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2510185-6 y M2510185-10, que corresponden a \"tumor mediastinal\" con diagnóstico de \"TUMOR FUSOCELULAR Y PATRÓN DE CÉLULA MONOMÓRFICA QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA ADECUADA HISTOGÉNESIS.\" por lo que se solicita marcación para CD1a, CD3, CD5, CD20, CD117, CKAE1E3, PAX8, P63 y TDT.",
+      "Descripcion microscopica": "PROTOCOLO CAP TIMO VERSIÓN 5.0.0.0 ESPÉCIMEN Procedimiento: Timectomía. TUMOR Sitio: Timo. Tipo histológico: Timoma AB. +Patrones histológicos presentes: - Tipo A: 30%. - Tipo B2: 70%. Tamaño tumoral: 10.5 x 8 x 6 cm. Invasión linfática o vascular: No identificada. Efecto del tratamiento: Sin conocimiento de tratamiento prequirúrgico. Sitios afectados por tumor: Tumor limitado al timo. Márgenes: Todos los márgenes negativos para tumor. Distancia exacta: 0.5 mm de la cápsula. GANGLIOS LINFÁTICOS REGIONALES No aplica, no fueron enviados. METÁSTASIS A DISTANCIA NO aplica. CLASIFICACIÓN pTNM pT1b: Tumor de más de 5 cm encapsulado. pN: No aplica. pM: No aplica. ESTUDIOS ESPECIALES + Inmunohistoquímica Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,",
+      "Descripcion Diagnostico": "Timo. Tumor. Resección. HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS COMPATIBLES CON TIMOMA AB. TAMAÑO TUMORAL 10.5 x 8 x 6 cm. INVASION LINFATICA NEGATIVA BORDES DE RESECCIÓN NEGATIVOS",
+      "IHQ_ORGANO": "TIMO",
+      "Organo": "TUMOR MEDIASTINAL",
+      "Diagnostico Coloracion": "TUMOR FUSOCELULAR Y PATRÓN DE CÉLULA MONOMÓRFICA QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA ADECUADA HISTOGÉNESIS",
+      "Diagnostico Principal": "TIMOMA AB",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P63": "NEGATIVOS",
+      "IHQ_PAX8": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 141,
+      "campos_vacios": 104,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 26.24
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 104,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Timo. Tumor. Resección.\nHALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS COMPATIBLES CON TIMOMA AB.\nTAMAÑO TUMORAL 10.5 x 8 x 6 cm.\nINVASION LINFATICA NEGATIVA \nBORDES DE RESECCIÓN NEGATIVOS",
+      "valor_corregido": "Timo. Tumor. Resección. HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS COMPATIBLES CON TIMOMA AB. TAMAÑO TUMORAL 10.5 x 8 x 6 cm. INVASION LINFATICA NEGATIVA BORDES DE RESECCIÓN NEGATIVOS",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251012",
+      "timestamp": "2025-11-04T23:16:20.021693"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2510185-6 y M2510185-10, que corresponden a \"tumor mediastinal\" con\ndiagnóstico de \"TUMOR FUSOCELULAR Y PATRÓN DE CÉLULA MONOMÓRFICA QUE REQUIERE ESTUDIOS\nDE INMUNOHISTOQUÍMICA PARA ADECUADA HISTOGÉNESIS.\" por lo que se solicita marcación para CD1a,\nCD3, CD5, CD20, CD117, CKAE1E3, PAX8, P63 y TDT.",
+      "valor_corregido": "Se realizan niveles al bloque M2510185-6 y M2510185-10, que corresponden a \"tumor mediastinal\" con diagnóstico de \"TUMOR FUSOCELULAR Y PATRÓN DE CÉLULA MONOMÓRFICA QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA ADECUADA HISTOGÉNESIS.\" por lo que se solicita marcación para CD1a, CD3, CD5, CD20, CD117, CKAE1E3, PAX8, P63 y TDT.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251012",
+      "timestamp": "2025-11-04T23:16:20.021702"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 47
+  }
+}

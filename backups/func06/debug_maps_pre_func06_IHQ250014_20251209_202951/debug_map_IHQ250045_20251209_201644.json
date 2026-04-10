@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250045_20251209_201644",
+  "numero_peticion": "IHQ250045",
+  "timestamp": "2025-12-09T20:16:44.319705",
+  "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250045\nCopia Pag. 1 de 1\nNombre : GABRIEL ANGULO ANGULO\nN. peticion : IHQ250045\nN.Identificación : CC. 1111802442\nGenero : MASCULINO\nEdad : 35 años 13 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 15/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUELLO ESTACION 4 Y 5\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500013 que corresponde a biopsia de ganglio linfático del cuelo estación\n4 y 5, con diagnóstico de \"CARCINOMA A CLASIFICAR\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLesión carcinomatosa que presenta positividad para Sinaptofisina, Cromogranina, CDX2 y TTF1 focal,\nsiendo negativo para p40, CK7 y CK20.\nÍndice de proliferación celular con un Ki67 del 80%.\nDIAGNÓSTICO\nCuello, lado izquierdo estación 4 y 5. Lesión. Biopsia. Estudios de inmunohistoquímica:\nCARCINOMA NEUROENDOCRINO METASTASICO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 2362,
+      "reduccion_porcentaje": 98.62
+    },
+    "metadata": {
+      "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250045",
+      "caso_num": 45,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "GABRIEL ANGULO ANGULO",
+      "numero_peticion": "IHQ250045",
+      "identificacion": "1111802442",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "35",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "CIRUGIA HOMBRES",
+      "fecha_ingreso": "15/01/2025",
+      "fecha_informe": "27/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250045",
+      "N. de identificación": "1111802442",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CIRUGIA HOMBRES",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "15/01/2025",
+      "Fecha Informe": "27/01/2025",
+      "nombres": "GABRIEL",
+      "Primer nombre": "GABRIEL",
+      "Segundo nombre": "",
+      "apellidos": "ANGULO ANGULO",
+      "Primer apellido": "ANGULO",
+      "Segundo apellido": "ANGULO",
+      "nombre_formal": "ANGULO ANGULO, GABRIEL",
+      "diagnostico": "Cuello, lado izquierdo estación 4 y 5. Lesión. Biopsia. Estudios de inmunohistoquímica: CARCINOMA NEUROENDOCRINO METASTASICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión carcinomatosa que presenta positividad para Synaptophysin, Cromogranina, CDX2 y TTF1 focal, siendo negativo para P40, CK7 y CK20. Índice de proliferación celular con un KI-67 del 80%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2500013 que corresponde a biopsia de ganglio linfático del cuelo estación 4 y 5, con diagnóstico de \"CARCINOMA A CLASIFICAR\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "CUELLO, LADO IZQUIERDO ESTACIÓN 4 Y 5",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CUELLO, LADO IZQUIERDO ESTACIÓN 4 Y 5",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67 del 80%",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_KI-67": "80%",
+      "IHQ_CK20": "POSITIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2025-12-09T20:16:44.451443",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250045\nCopia Pag. 1 de 1\nNombre : GABRIEL ANGULO ANGULO\nN. peticion : IHQ250045\nN.Identificación : CC. 1111802442\nGenero : MASCULINO\nEdad : 35 años 13 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 15/01/2025\nFecha Informe : 27/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUELLO ESTACION 4 Y 5\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2500013 que corresponde a biopsia de ganglio linfático del cuelo estación\n4 y 5, con diagnóstico de \"CARCINOMA A CLASIFICAR\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLesión carcinomatosa que presenta positividad para Sinaptofisina, Cromogranina, CDX2 y TTF1 focal,\nsiendo negativo para p40, CK7 y CK20.\nÍndice de proliferación celular con un Ki67 del 80%.\nDIAGNÓSTICO\nCuello, lado izquierdo estación 4 y 5. Lesión. Biopsia. Estudios de inmunohistoquímica:\nCARCINOMA NEUROENDOCRINO METASTASICO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK20, CK7, Ki-67, P40, TTF1",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2500013 que corresponde a biopsia de ganglio linfático del cuelo estación 4 y 5, con diagnóstico de \"CARCINOMA A CLASIFICAR\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión carcinomatosa que presenta positividad para Sinaptofisina, Cromogranina, CDX2 y TTF1 focal, siendo negativo para p40, CK7 y CK20. Índice de proliferación celular con un Ki67 del 80%.",
+      "Descripcion Diagnostico": "Cuello, lado izquierdo estación 4 y 5. Lesión. Biopsia. Estudios de inmunohistoquímica: CARCINOMA NEUROENDOCRINO METASTASICO.",
+      "IHQ_ORGANO": "CUELLO, LADO IZQUIERDO ESTACIÓN 4 Y 5",
+      "Organo": "CUELLO ESTACION 4 Y 5",
+      "Diagnostico Coloracion": "CARCINOMA A CLASIFICAR",
+      "Diagnostico Principal": "CARCINOMA NEUROENDOCRINO METASTASICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 80%",
+      "IHQ_CK20": "POSITIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_KI-67": "80%",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_TTF1": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 156,
+      "campos_vacios": 117,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 25.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 117,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cuello, lado izquierdo estación 4 y 5. Lesión. Biopsia. Estudios de inmunohistoquímica:\nCARCINOMA NEUROENDOCRINO METASTASICO.",
+      "valor_corregido": "Cuello, lado izquierdo estación 4 y 5. Lesión. Biopsia. Estudios de inmunohistoquímica: CARCINOMA NEUROENDOCRINO METASTASICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250045",
+      "timestamp": "2025-12-09T20:16:44.451128"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2500013 que corresponde a biopsia de ganglio linfático del cuelo estación\n4 y 5, con diagnóstico de \"CARCINOMA A CLASIFICAR\". Se ordenan estudios de inmunohistoquímica.",
+      "valor_corregido": "Se realizan niveles al bloque M2500013 que corresponde a biopsia de ganglio linfático del cuelo estación 4 y 5, con diagnóstico de \"CARCINOMA A CLASIFICAR\". Se ordenan estudios de inmunohistoquímica.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250045",
+      "timestamp": "2025-12-09T20:16:44.451137"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLesión carcinomatosa que presenta positividad para Sinaptofisina, Cromogranina, CDX2 y TTF1 focal,\nsiendo negativo para p40, CK7 y CK20.\nÍndice de proliferación celular con un Ki67 del 80%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión carcinomatosa que presenta positividad para Synaptophysin, Cromogranina, CDX2 y TTF1 focal, siendo negativo para P40, CK7 y CK20. Índice de proliferación celular con un KI-67 del 80%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250045",
+      "timestamp": "2025-12-09T20:16:44.451139"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 51
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "session_id": "IHQ250250_20260128_043513",
+  "numero_peticion": "IHQ250250",
+  "timestamp": "2026-01-28T04:35:13.464288",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250250\nCopia Pag. 1 de 2\nNombre : MARICELA SOLARTE ORDOÑEA\nN. peticion : IHQ250250\nN.Identificación : CC. 25286582\nGenero : FEMENINO\nEdad : 44 años 11 meses 17 dias\nEPS : FOMAG\nMédico tratante : GIOVANNA RIVAS TAFURT\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/03/2025\nFecha Informe : 12/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX EXOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo Q-191455-24\n(06/11/2024) proveniente del laboratorio de patológica Idime que corresponde a \"exocérvix hora\n2 \" con diagnóstico de “CERVICITIS CRÓNICA Y AGUDA CON ATIPIAS CELULARES DE SIGNIFICADO\nINDETERMINADO” consiste en una lamina coloreada con H&E y un bloque de parafina. Previa\nvaloración de la coloración básica, se realizan cortes histológicos para p16 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nRESULTADO: \nCérvix con presencia de unión escamocolumnar con epitelio demuestra una metaplasia escamosa\ninmadura y se encuentra desprendido del estroma, la distribución del índice de proliferación\nmedido con Ki 67 es a nivel de la capa basal con un p16 negativo. \nDIAGNÓSTICO\nExocérvix hora 2. Biopsia por colposcopia. \nNEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA. \nP16 NEGATIVO. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---\nIHQ250250\nCopia Pag. 2 de 2\nNombre : MARICELA SOLARTE ORDOÑEA\nN. peticion : IHQ250250\nN.Identificación : CC. 25286582\nGenero : FEMENINO\nEdad : 44 años 11 meses 17 dias\nEPS : FOMAG\nMédico tratante : GIOVANNA RIVAS TAFURT\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/03/2025\nFecha Informe : 12/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3243,
+      "reduccion_porcentaje": 98.19
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250250",
+      "caso_num": 38,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARICELA SOLARTE ORDOÑEA",
+      "numero_peticion": "IHQ250250",
+      "identificacion": "25286582",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "44",
+      "eps": "FOMAG",
+      "medico_tratante": "GIOVANNA RIVAS TAFURT",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "07/03/2025",
+      "fecha_informe": "12/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250250",
+      "N. de identificación": "25286582",
+      "Tipo de documento": "CC",
+      "EPS": "FOMAG",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "GIOVANNA RIVAS TAFURT",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/03/2025",
+      "Fecha Informe": "12/03/2025",
+      "nombres": "MARICELA",
+      "Primer nombre": "MARICELA",
+      "Segundo nombre": "",
+      "apellidos": "SOLARTE ORDOÑEA",
+      "Primer apellido": "SOLARTE",
+      "Segundo apellido": "ORDOÑEA",
+      "nombre_formal": "SOLARTE ORDOÑEA, MARICELA",
+      "diagnostico": "Exocérvix hora 2. Biopsia por colposcopia. NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA. p16 NEGATIVO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. RESULTADO: Cérvix con presencia de unión escamocolumnar con epitelio demuestra una metaplasia escamosa inmadura y se encuentra desprendido del estroma, la distribución del índice de proliferación medido con KI-67 es a nivel de la capa basal con un p16 negativo.",
+      "descripcion_macroscopica": "Se realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo Q-191455-24 (06/11/2024) proveniente del laboratorio de patológica Idime que corresponde a \"exocérvix hora 2 \" con diagnóstico de \"CERVICITIS CRÓNICA Y AGUDA CON ATIPIAS CELULARES DE SIGNIFICADO INDETERMINADO\" consiste en una lamina coloreada con H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos para p16 y KI-67.",
+      "ihq_organo": "EXOCÉRVIX HORA 2",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "EXOCÉRVIX HORA 2",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "p16": "NEGATIVO",
+      "extraction_timestamp": "2026-01-28T04:35:13.957895",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250250\nCopia Pag. 1 de 2\nNombre : MARICELA SOLARTE ORDOÑEA\nN. peticion : IHQ250250\nN.Identificación : CC. 25286582\nGenero : FEMENINO\nEdad : 44 años 11 meses 17 dias\nEPS : FOMAG\nMédico tratante : GIOVANNA RIVAS TAFURT\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/03/2025\nFecha Informe : 12/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX EXOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo Q-191455-24\n(06/11/2024) proveniente del laboratorio de patológica Idime que corresponde a \"exocérvix hora\n2 \" con diagnóstico de “CERVICITIS CRÓNICA Y AGUDA CON ATIPIAS CELULARES DE SIGNIFICADO\nINDETERMINADO” consiste en una lamina coloreada con H&E y un bloque de parafina. Previa\nvaloración de la coloración básica, se realizan cortes histológicos para p16 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nRESULTADO: \nCérvix con presencia de unión escamocolumnar con epitelio demuestra una metaplasia escamosa\ninmadura y se encuentra desprendido del estroma, la distribución del índice de proliferación\nmedido con Ki 67 es a nivel de la capa basal con un p16 negativo. \nDIAGNÓSTICO\nExocérvix hora 2. Biopsia por colposcopia. \nNEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA. \nP16 NEGATIVO. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---\nIHQ250250\nCopia Pag. 2 de 2\nNombre : MARICELA SOLARTE ORDOÑEA\nN. peticion : IHQ250250\nN.Identificación : CC. 25286582\nGenero : FEMENINO\nEdad : 44 años 11 meses 17 dias\nEPS : FOMAG\nMédico tratante : GIOVANNA RIVAS TAFURT\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/03/2025\nFecha Informe : 12/03/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16",
+      "Descripcion macroscopica": "Se realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo Q-191455-24 (06/11/2024) proveniente del laboratorio de patológica Idime que corresponde a \"exocérvix hora 2 \" con diagnóstico de “CERVICITIS CRÓNICA Y AGUDA CON ATIPIAS CELULARES DE SIGNIFICADO INDETERMINADO” consiste en una lamina coloreada con H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos para p16 y Ki-67.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. RESULTADO: Cérvix con presencia de unión escamocolumnar con epitelio demuestra una metaplasia escamosa inmadura y se encuentra desprendido del estroma, la distribución del índice de proliferación medido con Ki 67 es a nivel de la capa basal con un p16 negativo.",
+      "Descripcion Diagnostico": "Exocérvix hora 2. Biopsia por colposcopia. NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA. p16 NEGATIVO.",
+      "IHQ_ORGANO": "EXOCÉRVIX HORA 2",
+      "Organo": "BX EXOCERVIX",
+      "Diagnostico Coloracion": "CERVICITIS CRÓNICA Y AGUDA CON ATIPIAS CELULARES DE SIGNIFICADO INDETERMINADO",
+      "Diagnostico Principal": "CERVICITIS CRÓNICA Y AGUDA CON ATIPIAS CELULARES DE SIGNIFICADO INDETERMINADO",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 174,
+      "campos_vacios": 139,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 1,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Exocérvix hora 2. Biopsia por colposcopia. \nNEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA. \nP16 NEGATIVO.",
+      "valor_corregido": "Exocérvix hora 2. Biopsia por colposcopia. NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA. p16 NEGATIVO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250250",
+      "timestamp": "2026-01-28T04:35:13.957682"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo Q-191455-24 (06/11/2024) proveniente del laboratorio de patológica Idime que corresponde a \"exocérvix hora 2 \" con diagnóstico de “CERVICITIS CRÓNICA Y AGUDA CON ATIPIAS CELULARES DE SIGNIFICADO INDETERMINADO” consiste en una lamina coloreada con H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos para p16 y Ki-67.",
+      "valor_corregido": "Se realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo Q-191455-24 (06/11/2024) proveniente del laboratorio de patológica Idime que corresponde a \"exocérvix hora 2 \" con diagnóstico de \"CERVICITIS CRÓNICA Y AGUDA CON ATIPIAS CELULARES DE SIGNIFICADO INDETERMINADO\" consiste en una lamina coloreada con H&E y un bloque de parafina. Previa valoración de la coloración básica, se realizan cortes histológicos para p16 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250250",
+      "timestamp": "2026-01-28T04:35:13.957688"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. RESULTADO: Cérvix con presencia de unión escamocolumnar con epitelio demuestra una metaplasia escamosa inmadura y se encuentra desprendido del estroma, la distribución del índice de proliferación medido con Ki 67 es a nivel de la capa basal con un p16 negativo.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. RESULTADO: Cérvix con presencia de unión escamocolumnar con epitelio demuestra una metaplasia escamosa inmadura y se encuentra desprendido del estroma, la distribución del índice de proliferación medido con KI-67 es a nivel de la capa basal con un p16 negativo.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250250",
+      "timestamp": "2026-01-28T04:35:13.957690"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 47
+  }
+}

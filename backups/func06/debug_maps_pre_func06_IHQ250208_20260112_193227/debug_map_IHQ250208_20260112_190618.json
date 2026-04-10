@@ -1,0 +1,152 @@
+{
+  "session_id": "IHQ250208_20260112_190618",
+  "numero_peticion": "IHQ250208",
+  "timestamp": "2026-01-12T19:06:18.657357",
+  "pdf_path": "pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250208\nCopia Pag. 1 de 1\nNombre : CARLOS TINTINAGO CHICANGANA\nN. peticion : IHQ250208\nN.Identificación : CC. 4696376\nGenero : MASCULINO\nEdad : 47 años\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : DARIO FERNANDO BURBANO\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 26/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX CANAL ANAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como\n“053084” correspondiente a “biopsia de canal anal” con diagnósticos de “colitis crónica con infiltrado\nlinfoplasmocitario“. Previa revisión de la histología se realizan niveles histológicos para tinción con los\nmarcadores: BCL2, BCL 6, CD 5, CD 3, CD 20, KI 67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nMucosa anal con presencia en la submucosa de folículo linfoide con marcación esperada de CD 20, BCL\n6, CD 3, BLC2 acompañantes. El indice proliferativo en el centro germinal es del 20 %\nDIAGNÓSTICO\n Canal anal. Biopsia. Estudio de inmunohistoquimica:\nHIPERPLASIA FOLICULAR\nSIN REPRESENTACIÓN DE NEOPLASIA EN LA MUESTRA\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2522,
+      "reduccion_porcentaje": 98.48
+    },
+    "metadata": {
+      "pdf_path": "pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250208",
+      "caso_num": 47,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD20": "POSITIVO",
+      "nombre_completo": "CARLOS TINTINAGO CHICANGANA",
+      "numero_peticion": "IHQ250208",
+      "identificacion": "4696376",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "47",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "DARIO FERNANDO BURBANO",
+      "servicio": "MEDICINA INTERNA COEX",
+      "fecha_ingreso": "26/02/2025",
+      "fecha_informe": "05/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250208",
+      "N. de identificación": "4696376",
+      "Tipo de documento": "CC",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "MEDICINA INTERNA COEX",
+      "Médico tratante": "DARIO FERNANDO BURBANO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "26/02/2025",
+      "Fecha Informe": "05/03/2025",
+      "nombres": "CARLOS",
+      "Primer nombre": "CARLOS",
+      "Segundo nombre": "",
+      "apellidos": "TINTINAGO CHICANGANA",
+      "Primer apellido": "TINTINAGO",
+      "Segundo apellido": "CHICANGANA",
+      "nombre_formal": "TINTINAGO CHICANGANA, CARLOS",
+      "diagnostico": "Canal anal. Biopsia. Estudio de inmunohistoquimica: HIPERPLASIA FOLICULAR SIN REPRESENTACIÓN DE NEOPLASIA EN LA MUESTRA",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Mucosa anal con presencia en la submucosa de folículo linfoide con marcación esperada de CD 20, BCL 6, CD 3, BLC2 acompañantes. El indice proliferativo en el centro germinal es del 20 %",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como \"053084\" correspondiente a \"biopsia de canal anal\" con diagnósticos de \"colitis crónica con infiltrado linfoplasmocitario\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: BCL2, BCL 6, CD 5, CD 3, CD 20, KI-67.",
+      "ihq_organo": "CANAL ANAL",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "MEDICINA_INTERNA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "BCL2, BCL 6, CD5, CD3, CD20, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CANAL ANAL",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "BCL2, BCL 6, CD5, CD3, CD20, Ki-67",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "extraction_timestamp": "2026-01-12T19:06:19.042184",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250208\nCopia Pag. 1 de 1\nNombre : CARLOS TINTINAGO CHICANGANA\nN. peticion : IHQ250208\nN.Identificación : CC. 4696376\nGenero : MASCULINO\nEdad : 47 años\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : DARIO FERNANDO BURBANO\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 26/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX CANAL ANAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como\n“053084” correspondiente a “biopsia de canal anal” con diagnósticos de “colitis crónica con infiltrado\nlinfoplasmocitario“. Previa revisión de la histología se realizan niveles histológicos para tinción con los\nmarcadores: BCL2, BCL 6, CD 5, CD 3, CD 20, KI 67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nMucosa anal con presencia en la submucosa de folículo linfoide con marcación esperada de CD 20, BCL\n6, CD 3, BLC2 acompañantes. El indice proliferativo en el centro germinal es del 20 %\nDIAGNÓSTICO\n Canal anal. Biopsia. Estudio de inmunohistoquimica:\nHIPERPLASIA FOLICULAR\nSIN REPRESENTACIÓN DE NEOPLASIA EN LA MUESTRA\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "BCL2, BCL 6, CD5, CD3, CD20, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “053084” correspondiente a “biopsia de canal anal” con diagnósticos de “colitis crónica con infiltrado linfoplasmocitario“. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: BCL2, BCL 6, CD 5, CD 3, CD 20, KI 67.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Mucosa anal con presencia en la submucosa de folículo linfoide con marcación esperada de CD 20, BCL 6, CD 3, BLC2 acompañantes. El indice proliferativo en el centro germinal es del 20 %",
+      "Descripcion Diagnostico": "Canal anal. Biopsia. Estudio de inmunohistoquimica: HIPERPLASIA FOLICULAR SIN REPRESENTACIÓN DE NEOPLASIA EN LA MUESTRA",
+      "IHQ_ORGANO": "CANAL ANAL",
+      "Organo": "BX CANAL ANAL",
+      "Diagnostico Coloracion": "COLITIS CRÓNICA CON INFILTRADO LINFOPLASMOCITARIO",
+      "Diagnostico Principal": "HIPERPLASIA FOLICULAR SIN REPRESENTACIÓN DE NEOPLASIA EN LA MUESTRA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD5": "NO MENCIONADO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_KI-67": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 173,
+      "campos_vacios": 133,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 133,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Canal anal. Biopsia. Estudio de inmunohistoquimica:\nHIPERPLASIA FOLICULAR\nSIN REPRESENTACIÓN DE NEOPLASIA EN LA MUESTRA",
+      "valor_corregido": "Canal anal. Biopsia. Estudio de inmunohistoquimica: HIPERPLASIA FOLICULAR SIN REPRESENTACIÓN DE NEOPLASIA EN LA MUESTRA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250208",
+      "timestamp": "2026-01-12T19:06:19.041917"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como “053084” correspondiente a “biopsia de canal anal” con diagnósticos de “colitis crónica con infiltrado linfoplasmocitario“. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: BCL2, BCL 6, CD 5, CD 3, CD 20, KI 67.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material extrainstitucional rotulado como \"053084\" correspondiente a \"biopsia de canal anal\" con diagnósticos de \"colitis crónica con infiltrado linfoplasmocitario\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: BCL2, BCL 6, CD 5, CD 3, CD 20, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250208",
+      "timestamp": "2026-01-12T19:06:19.041923"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 51
+  }
+}

@@ -1,0 +1,123 @@
+# ===================================================================
+# REQUIREMENTS PARA MIGRACIÓN A PYSIDE6
+# EVARISIS CIRUGÍA ONCOLÓGICA v7.0.0
+# ===================================================================
+# Fecha: 19 Noviembre 2025
+# Proyecto: ProyectoHUV9GESTOR_ONCOLOGIA
+# ===================================================================
+
+# === FRAMEWORK UI PRINCIPAL ===
+PySide6>=6.6.0                      # Qt6 framework completo - Base UI moderna
+PySide6-Addons>=6.6.0               # Módulos adicionales Qt (Charts, DataVisualization)
+qt-material>=2.14                   # Material Design para Qt - Temas profesionales
+
+# === GRÁFICOS AVANZADOS ===
+pyqtgraph>=0.13.3                   # Gráficos real-time 60fps para dashboard
+matplotlib>=3.8.0                   # Gráficos científicos (backend Qt)
+seaborn>=0.13.0                     # Visualización estadística elegante
+
+# === BACKEND - PROCESAMIENTO (MANTENER) ===
+numpy>=1.24.0                       # Cálculos numéricos
+pandas>=2.0.0                       # Manipulación de datos
+
+# === OCR Y PDFs (MANTENER) ===
+pytesseract>=0.3.10                 # OCR Tesseract wrapper
+PyMuPDF>=1.23.0                     # Lectura PDFs (fitz)
+pillow>=10.0.0                      # Procesamiento imágenes
+
+# === AUTOMATIZACIÓN WEB (MANTENER) ===
+selenium>=4.15.0                    # Automatización navegador
+webdriver-manager>=4.0.0            # Gestión drivers Selenium
+
+# === ARCHIVOS EXCEL (MANTENER) ===
+openpyxl>=3.1.0                     # Lectura/escritura Excel
+
+# === UTILIDADES (MANTENER) ===
+python-dateutil>=2.8.0              # Manipulación fechas
+Babel>=2.12.0                       # Internacionalización
+holidays>=0.34                      # Fechas festivas Colombia
+psutil>=5.9.0                       # Información del sistema
+
+# === SEGURIDAD (MANTENER) ===
+cryptography>=41.0.0                # Encriptación
+
+# === TESTING ===
+pytest>=7.0.0                       # Framework de testing
+pytest-qt>=4.2.0                    # Testing específico para Qt/PySide6
+pytest-cov>=4.0.0                   # Cobertura de código
+pytest-benchmark>=4.0.0             # Benchmarking de rendimiento
+
+# === COMPILACIÓN Y DISTRIBUCIÓN ===
+pyinstaller>=6.0.0                  # Empaquetado tradicional
+nuitka>=1.9.0                       # Compilación Python → C (mejor rendimiento)
+
+# === DESARROLLO ===
+black>=23.0.0                       # Formatter de código
+pylint>=3.0.0                       # Linter
+mypy>=1.7.0                         # Type checking estático
+
+# === DOCUMENTACIÓN ===
+sphinx>=7.2.0                       # Generador documentación
+sphinx-rtd-theme>=2.0.0             # Tema Read The Docs
+
+# ===================================================================
+# NOTAS DE MIGRACIÓN
+# ===================================================================
+#
+# CAMBIOS PRINCIPALES VS requirements.txt:
+#
+# REMOVIDO:
+#   - ttkbootstrap==1.10.1          → Reemplazado por PySide6
+#   - tksheet>=7.5.0                → Reemplazado por QTableView nativo
+#
+# AGREGADO:
+#   - PySide6>=6.6.0                → Framework UI principal
+#   - PySide6-Addons>=6.6.0         → Módulos Qt adicionales
+#   - qt-material>=2.14             → Sistema de temas profesional
+#   - pyqtgraph>=0.13.3             → Gráficos real-time
+#   - pytest-qt>=4.2.0              → Testing Qt específico
+#   - nuitka>=1.9.0                 → Compilación optimizada
+#
+# BACKEND SIN CAMBIOS:
+#   - numpy, pandas, pytesseract, PyMuPDF, pillow, selenium,
+#     webdriver-manager, openpyxl, python-dateutil, Babel,
+#     holidays, cryptography, psutil
+#
+# ===================================================================
+# INSTALACIÓN
+# ===================================================================
+#
+# 1. Crear entorno virtual:
+#    python -m venv venv_pyside6
+#
+# 2. Activar entorno:
+#    Windows: venv_pyside6\Scripts\activate
+#    Linux/Mac: source venv_pyside6/bin/activate
+#
+# 3. Instalar dependencias:
+#    pip install -r requirements_pyside6.txt
+#
+# 4. Verificar instalación PySide6:
+#    python -c "from PySide6.QtWidgets import QApplication; print('✅ PySide6 OK')"
+#
+# ===================================================================
+# TAMAÑO ESTIMADO DE INSTALACIÓN
+# ===================================================================
+#
+# PySide6 + Addons:     ~200 MB
+# Matplotlib:           ~50 MB
+# PyQtGraph:            ~10 MB
+# Otras dependencias:   ~100 MB
+# TOTAL:                ~360 MB
+#
+# (vs ~150 MB con TTKBootstrap)
+#
+# ===================================================================
+# COMPATIBILIDAD
+# ===================================================================
+#
+# Python:       >= 3.9 (recomendado 3.11)
+# SO:           Windows 10/11, macOS 11+, Linux (Ubuntu 20.04+)
+# Qt Version:   6.6.0+ (incluido en PySide6)
+#
+# ===================================================================

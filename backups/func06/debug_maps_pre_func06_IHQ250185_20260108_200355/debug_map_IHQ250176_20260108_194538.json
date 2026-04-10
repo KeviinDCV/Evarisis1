@@ -1,0 +1,164 @@
+{
+  "session_id": "IHQ250176_20260108_194538",
+  "numero_peticion": "IHQ250176",
+  "timestamp": "2026-01-08T19:45:38.547642",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250176\nCopia Pag. 1 de 1\nNombre : ROSA MARIA URREA HERRERA\nN. peticion : IHQ250176\nN.Identificación : CC. 24620450\nGenero : FEMENINO\nEdad : 67 años 10 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 17/02/2025\nFecha Informe : 27/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2501446” correspondiente a “medula ósea” con diagnósticos de \"CELULARIDAD AUMENTADA PARA LA\nEDAD, CÉLULAS PLASMATICAS AUMENTADAS \". Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores: MPO, CD3, CD 20, CD38, CD 138, CD 56,Cyclina, Lambda y\nkappa.\nDESCRIPCIÓN MICROSCÓPICA\n Medula ósea con celularidad global del 60% en la que se identifican células mieloides MPO+ , linfocitos T\n(CD3 +) y linfocitos B ( CD 20 +) son de inmunofenotipo esperado. Las células tumorales corresponden a\ncélulas plasmáticas que son positivas de forma fuerte y difusa para CD38,CD 138 con restricción de la\nexpresión de la cadena liviana Lambda. Cyclina negativo, CD 56 negativo, CD 117 positivo.\nDIAGNÓSTICO\n Medula ósea. Biopsia. Estudio de inmunohistoquimica:\nNEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA LAMBDA\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2584,
+      "reduccion_porcentaje": 98.44
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250176",
+      "caso_num": 16,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD38": "POSITIVO (fuerte y difusa)",
+      "IHQ_CD138": "POSITIVO (fuerte y difusa)",
+      "nombre_completo": "ROSA MARIA URREA HERRERA",
+      "numero_peticion": "IHQ250176",
+      "identificacion": "24620450",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "67",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "GERARDO ANDRES DEL CASTILLO",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "17/02/2025",
+      "fecha_informe": "27/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250176",
+      "N. de identificación": "24620450",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "GERARDO ANDRES DEL CASTILLO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "17/02/2025",
+      "Fecha Informe": "27/02/2025",
+      "nombres": "ROSA MARIA",
+      "Primer nombre": "ROSA",
+      "Segundo nombre": "MARIA",
+      "apellidos": "URREA HERRERA",
+      "Primer apellido": "URREA",
+      "Segundo apellido": "HERRERA",
+      "nombre_formal": "URREA HERRERA, ROSA MARIA",
+      "diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA LAMBDA",
+      "descripcion_microscopica": "Medula ósea con celularidad global del 60% en la que se identifican células mieloides MPO+ , linfocitos T (CD3 +) y linfocitos B ( CD 20 +) son de inmunofenotipo esperado. Las células tumorales corresponden a células plasmáticas que son positivas de forma fuerte y difusa para CD38,CD 138 con restricción de la expresión de la cadena liviana Lambda. Cyclina negativo, CD 56 negativo, CD 117 positivo.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2501446\" correspondiente a \"medula ósea\" con diagnósticos de \"CELULARIDAD AUMENTADA PARA LA EDAD, CÉLULAS PLASMATICAS AUMENTADAS \". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MPO, CD3, CD 20, CD38, CD 138, CD 56,Cyclina, Lambda y kappa.",
+      "ihq_organo": "MEDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MPO, CD3, CD20, CD38, CD138, CD5, CYCLINA, LAMBDA, KAPPA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "MPO, CD3, CD20, CD38, CD138, CD5, CYCLINA, LAMBDA, KAPPA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_LAMBDA": "POSITIVO",
+      "IHQ_KAPPA": "NEGATIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_CICLINA_D1": "NEGATIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "extraction_timestamp": "2026-01-08T19:45:38.911929",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250176\nCopia Pag. 1 de 1\nNombre : ROSA MARIA URREA HERRERA\nN. peticion : IHQ250176\nN.Identificación : CC. 24620450\nGenero : FEMENINO\nEdad : 67 años 10 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 17/02/2025\nFecha Informe : 27/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2501446” correspondiente a “medula ósea” con diagnósticos de \"CELULARIDAD AUMENTADA PARA LA\nEDAD, CÉLULAS PLASMATICAS AUMENTADAS \". Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores: MPO, CD3, CD 20, CD38, CD 138, CD 56,Cyclina, Lambda y\nkappa.\nDESCRIPCIÓN MICROSCÓPICA\n Medula ósea con celularidad global del 60% en la que se identifican células mieloides MPO+ , linfocitos T\n(CD3 +) y linfocitos B ( CD 20 +) son de inmunofenotipo esperado. Las células tumorales corresponden a\ncélulas plasmáticas que son positivas de forma fuerte y difusa para CD38,CD 138 con restricción de la\nexpresión de la cadena liviana Lambda. Cyclina negativo, CD 56 negativo, CD 117 positivo.\nDIAGNÓSTICO\n Medula ósea. Biopsia. Estudio de inmunohistoquimica:\nNEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA LAMBDA\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MPO, CD3, CD20, CD38, CD138, CD5, CYCLINA, LAMBDA, KAPPA, CD56, CD117, MIELOPEROXIDASA, CICLINA D1",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2501446” correspondiente a “medula ósea” con diagnósticos de \"CELULARIDAD AUMENTADA PARA LA EDAD, CÉLULAS PLASMATICAS AUMENTADAS \". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MPO, CD3, CD 20, CD38, CD 138, CD 56,Cyclina, Lambda y kappa.",
+      "Descripcion microscopica": "Medula ósea con celularidad global del 60% en la que se identifican células mieloides MPO+ , linfocitos T (CD3 +) y linfocitos B ( CD 20 +) son de inmunofenotipo esperado. Las células tumorales corresponden a células plasmáticas que son positivas de forma fuerte y difusa para CD38,CD 138 con restricción de la expresión de la cadena liviana Lambda. Cyclina negativo, CD 56 negativo, CD 117 positivo.",
+      "Descripcion Diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA LAMBDA",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Organo": "BX MEDULA OSEA",
+      "Diagnostico Coloracion": "CELULARIDAD AUMENTADA PARA LA EDAD, CÉLULAS PLASMATICAS AUMENTADAS",
+      "Diagnostico Principal": "NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA LAMBDA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_MPO": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO (fuerte y difusa)",
+      "IHQ_CD138": "POSITIVO (fuerte y difusa)",
+      "IHQ_CD5": "NO MENCIONADO",
+      "IHQ_LAMBDA": "POSITIVO",
+      "IHQ_KAPPA": "NEGATIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_CICLINA_D1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 169,
+      "campos_vacios": 122,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 12,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 122,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula ósea. Biopsia. Estudio de inmunohistoquimica:\nNEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA LAMBDA",
+      "valor_corregido": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA LAMBDA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250176",
+      "timestamp": "2026-01-08T19:45:38.911666"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2501446” correspondiente a “medula ósea” con diagnósticos de \"CELULARIDAD AUMENTADA PARA LA EDAD, CÉLULAS PLASMATICAS AUMENTADAS \". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MPO, CD3, CD 20, CD38, CD 138, CD 56,Cyclina, Lambda y kappa.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2501446\" correspondiente a \"medula ósea\" con diagnósticos de \"CELULARIDAD AUMENTADA PARA LA EDAD, CÉLULAS PLASMATICAS AUMENTADAS \". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MPO, CD3, CD 20, CD38, CD 138, CD 56,Cyclina, Lambda y kappa.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250176",
+      "timestamp": "2026-01-08T19:45:38.911672"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 58
+  }
+}

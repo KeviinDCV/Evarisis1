@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-11-08T22:28:22.032706",
+  "caso": "IHQ251023",
+  "funcionalidad": "FUNC-06",
+  "operacion": "REPROCESAMIENTO_CON_EXTRACTOR_ACTUALIZADO",
+  "objetivo": "Normalizar CK20 de formato largo a formato estandar POSITIVO",
+  "estado_final": "EXITOSO",
+  "datos_extraidos": {
+    "paciente": "VICTOR HOYOS",
+    "organo": "APENDICE CECAL",
+    "diagnostico_principal": "LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ADENOCARCINOMA DE APENDICE MODERADAMENTE DIFERENCIADO (NOS)",
+    "estudios_solicitados": "CK7, CK19, CK20, CDX2, MUC2"
+  },
+  "biomarcadores_normalizados": {
+    "CK20": {
+      "valor_anterior": "POSITIVIDAD CITOPLASMATICA DIFUSA EN EL 100% DE LAS CELULAS NEOPLASICAS.",
+      "valor_nuevo": "POSITIVO",
+      "longitud_anterior": 74,
+      "longitud_nueva": 8,
+      "estado": "NORMALIZADO_EXITOSAMENTE"
+    },
+    "CK7": {
+      "valor": "NEGATIVO",
+      "estado": "OK"
+    },
+    "CK19": {
+      "valor": "POSITIVO",
+      "estado": "OK"
+    },
+    "CDX2": {
+      "valor": "POSITIVO",
+      "estado": "OK"
+    },
+    "MUC2": {
+      "valor": "NEGATIVO",
+      "estado": "OK"
+    }
+  },
+  "validacion": {
+    "ck20_es_positivo_estandar": true,
+    "completitud_biomarcadores": "5/5",
+    "todos_estudios_solicitados_extraidos": true,
+    "warnings": 0
+  },
+  "pasos_ejecutados": [
+    "1. Busqueda automatica de PDF (pdfs_patologia/IHQ DEL 980 AL 1037.pdf)",
+    "2. Eliminacion automatica de datos antiguos del rango 980-1037",
+    "3. Reprocesamiento completo del PDF con extractores actualizados",
+    "4. Normalizacion automatica de CK20 aplicada",
+    "5. Validacion post-reprocesamiento"
+  ],
+  "archivos_modificados": [
+    "core/extractors/biomarker_extractor.py (v6.2.5 - normalizacion CK20)",
+    "data/huv_oncologia_NUEVO.db (caso IHQ251023 actualizado)"
+  ]
+}

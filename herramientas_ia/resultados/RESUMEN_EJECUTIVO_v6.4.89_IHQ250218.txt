@@ -1,0 +1,81 @@
+======================================================================
+RESUMEN EJECUTIVO - VALIDACIÓN FIX v6.4.89 IHQ250218
+======================================================================
+
+CASO: IHQ250218 - Linfoma difuso de células B grandes
+
+RESULTADO: ❌ FALLIDO - Fix v6.4.89 es demasiado agresivo
+
+SCORE ACTUAL: 66.7% (esperado: 100%)
+
+----------------------------------------------------------------------
+VALIDACIÓN DE BIOMARCADORES ESPECÍFICOS
+----------------------------------------------------------------------
+
+1. Ki-67: ✅ CORRECTO
+   - Esperado: 90%
+   - Obtenido: 90%
+   - Estado: OK
+
+2. MUM1: ✅ CORRECTO
+   - Esperado: 30%
+   - Obtenido: 30%
+   - Estado: OK
+
+3. CD3: ❌ INCORRECTO
+   - Esperado: NEGATIVO (células tumorales NO expresan CD3)
+   - Obtenido: NO MENCIONADO
+   - Problema: Filtro v6.4.89 elimina TODO el CD3
+
+----------------------------------------------------------------------
+PROBLEMA RAÍZ
+----------------------------------------------------------------------
+
+El OCR contiene:
+- "Son negativas para CD38, cMYC y CD30" (CD3 no mencionado = NEGATIVO)
+- "Hay linfocitos T acompañantes CD3+, BCL2+" (CD3 de células normales)
+
+LÓGICA ACTUAL v6.4.89:
+- Detecta "linfocitos T acompañantes CD3+"
+- Elimina TODO el CD3 (sin verificar valor)
+- RESULTADO: CD3 = NO MENCIONADO ❌
+
+LÓGICA CORRECTA v6.4.90:
+- Detecta "linfocitos T acompañantes CD3+"
+- Verifica valor del CD3 extraído
+- Si POSITIVO → Eliminar (viene de acompañantes)
+- Si NEGATIVO → MANTENER (es resultado tumoral)
+- RESULTADO: CD3 = NEGATIVO ✅
+
+----------------------------------------------------------------------
+SOLUCIÓN PROPUESTA
+----------------------------------------------------------------------
+
+VERSION: v6.4.90
+ARCHIVO: core/unified_extractor.py (líneas 1286-1318)
+
+CAMBIO: Filtro selectivo por valor
+- CD3 POSITIVO + patrón acompañantes → Eliminar
+- CD3 NEGATIVO + patrón acompañantes → Mantener
+- BCL2 siempre eliminar cuando hay patrón acompañantes
+
+----------------------------------------------------------------------
+PRÓXIMOS PASOS
+----------------------------------------------------------------------
+
+1. Implementar v6.4.90 con filtro selectivo
+2. Reprocesar IHQ250218 (FUNC-06)
+3. Validar score 100%
+4. Validar casos de regresión (mínimo 3)
+5. Documentar en CHANGELOG
+
+----------------------------------------------------------------------
+REPORTE DETALLADO
+----------------------------------------------------------------------
+
+Ver: herramientas_ia/resultados/DIAGNOSTICO_FIX_v6.4.89_IHQ250218_PROBLEMA.md
+
+======================================================================
+Generado: 2026-01-19 08:02:00
+Estado: PENDIENTE IMPLEMENTACIÓN v6.4.90
+======================================================================

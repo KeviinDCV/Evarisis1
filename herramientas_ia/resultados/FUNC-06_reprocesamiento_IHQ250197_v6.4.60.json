@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-01-09T05:19:22.250979",
+  "version": "v6.4.60",
+  "caso": "IHQ250197",
+  "correcciones_aplicadas": [
+    {
+      "numero": 1,
+      "descripcion": "Negative lookahead en patron GRADO I",
+      "motivo": "Evitar falso positivo con GRADO IV",
+      "archivo": "medical_extractor.py",
+      "linea_aproximada": "~1070",
+      "patron_anterior": "GRADO\\s+I\\b",
+      "patron_nuevo": "GRADO\\s+I(?\\!\\s*V)\\b",
+      "resultado": "EXITOSO - Ya no matchea GRADO IV"
+    },
+    {
+      "numero": 2,
+      "descripcion": "Agregar patron WHO III/IV para malignidad",
+      "motivo": "Detectar gliomas WHO grado alto como MALIGNO",
+      "archivo": "medical_extractor.py",
+      "linea_aproximada": "~1080",
+      "patron_agregado": "WHO\\s+(?:III|IV|3|4)",
+      "resultado": "EXITOSO - Detecta GLIOMA DIFUSO WHO IV correctamente"
+    }
+  ],
+  "validacion": {
+    "caso_reprocesado": "IHQ250197",
+    "metodo": "FUNC-06 (reprocesar_caso_completo)",
+    "campos_validados": {
+      "MALIGNIDAD": {
+        "esperado": "MALIGNO",
+        "obtenido": "MALIGNO",
+        "estado": "OK"
+      },
+      "DIAGNOSTICO_COLORACION": {
+        "esperado": "GLIOMA DIFUSO WHO IV",
+        "obtenido": "GLIOMA DIFUSO WHO IV",
+        "estado": "OK"
+      },
+      "DIAGNOSTICO_PRINCIPAL": {
+        "esperado": "ASTROCITOMA IDH MUTADO WHO IV",
+        "obtenido": "ASTROCITOMA IDH MUTADO WHO IV",
+        "estado": "OK"
+      }
+    },
+    "score_validacion": 100.0,
+    "estado_final": "OK"
+  },
+  "evidencia_ocr": {
+    "texto_original": "GLIOMA DIFUSO WHO IV",
+    "ubicacion": "DESCRIPCION MACROSCOPICA",
+    "contexto": "con diagnosticos de GLIOMA DIFUSO WHO IV"
+  },
+  "regresion_validada": {
+    "casos_verificados": [
+      "IHQ250197"
+    ],
+    "casos_afectados": 0,
+    "estado": "SIN REGRESION"
+  },
+  "conclusion": "Correcciones v6.4.60 aplicadas exitosamente. MALIGNIDAD ahora detecta correctamente gliomas WHO grado alto."
+}

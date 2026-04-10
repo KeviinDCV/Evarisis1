@@ -1,0 +1,149 @@
+{
+  "session_id": "IHQ250231_20260128_053538",
+  "numero_peticion": "IHQ250231",
+  "timestamp": "2026-01-28T05:35:38.136153",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250231\nCopia Pag. 1 de 2\nNombre : HENRY GOMEZ VINAZCO\nN. peticion : IHQ250231\nN.Identificación : CC. 19133277\nGenero : MASCULINO\nEdad : 74 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 04/03/2025\nFecha Informe : 14/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como M2502192\nlaboratorio HUV correspondiente a “biopsia pulmonar\" con diagnóstico\nde “CARCINOMA DE CÉLULAS NO PEQUEÑAS\". Previa revisión de la histología, se realizan niveles\nal bloque 1. para tinción con p40, y TTF 1. \nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nRESULTADO:\nLas células tumorales son positivas para: TTF- 1 con tinción baja. \nlas células tumorales son negativos para: p40 y Sinaptofisina.\nDIAGNÓSTICO\n Pulmón izquierdo. Biopsia guiada por TAC. Estudio de inmunohistoquímica.\nLOS HALLAZGOS SUGIEREN UN ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR CON PATRON\nSOLIDO \nNEGATIVO PARA INVASIÓN LINFATICA\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---\nIHQ250231\nCopia Pag. 2 de 2\nNombre : HENRY GOMEZ VINAZCO\nN. peticion : IHQ250231\nN.Identificación : CC. 19133277\nGenero : MASCULINO\nEdad : 74 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 04/03/2025\nFecha Informe : 14/03/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 40 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3110,
+      "reduccion_porcentaje": 98.27
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250231",
+      "caso_num": 20,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "nombre_completo": "HENRY GOMEZ VINAZCO",
+      "numero_peticion": "IHQ250231",
+      "identificacion": "19133277",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "74",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ISABEL CRISTINA TORRES",
+      "servicio": "CIRUGIA HOMBRES",
+      "fecha_ingreso": "04/03/2025",
+      "fecha_informe": "14/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250231",
+      "N. de identificación": "19133277",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CIRUGIA HOMBRES",
+      "Médico tratante": "ISABEL CRISTINA TORRES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "04/03/2025",
+      "Fecha Informe": "14/03/2025",
+      "nombres": "HENRY",
+      "Primer nombre": "HENRY",
+      "Segundo nombre": "",
+      "apellidos": "GOMEZ VINAZCO",
+      "Primer apellido": "GOMEZ",
+      "Segundo apellido": "VINAZCO",
+      "nombre_formal": "GOMEZ VINAZCO, HENRY",
+      "diagnostico": "ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR CON PATRON SOLIDO NEGATIVO PARA INVASIÓN LINFATICA NATALIA AGUIRRE VASQUEZ Responsable del análisis: RM 1716212-08 Patología Quirúgica Patología Pulmonar _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance",
+      "descripcion_microscopica": "",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2502192 laboratorio HUV correspondiente a \"biopsia pulmonar\" con DIAGNÓSTICO Pulmón izquierdo. Biopsia guiada por TAC. Estudio de inmunohistoquímica. LOS HALLAZGOS SUGIEREN UN ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR CON PATRON SOLIDO NEGATIVO PARA INVASIÓN LINFATICA NATALIA AGUIRRE VASQUEZ Responsable del análisis: RM 1716212-08 Patología Quirúgica Patología Pulmonar _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 39 --- IHQ250231 Copia Pag. 2 de 2 Nombre : HENRY GOMEZ VINAZCO N. peticion : IHQ250231 N.Identificación : CC. 19133277 Genero : MASCULINO Edad : 74 años 7 dias EPS : NUEVA EPS Médico tratante : ISABEL CRISTINA TORRES Servicio : CIRUGIA HOMBRES Fecha Ingreso : 04/03/2025 Fecha Informe : 14/03/2025 Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 40 ---",
+      "ihq_organo": "",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "BX PULMON IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-01-28T05:35:38.722628",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250231\nCopia Pag. 1 de 2\nNombre : HENRY GOMEZ VINAZCO\nN. peticion : IHQ250231\nN.Identificación : CC. 19133277\nGenero : MASCULINO\nEdad : 74 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 04/03/2025\nFecha Informe : 14/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como M2502192\nlaboratorio HUV correspondiente a “biopsia pulmonar\" con diagnóstico\nde “CARCINOMA DE CÉLULAS NO PEQUEÑAS\". Previa revisión de la histología, se realizan niveles\nal bloque 1. para tinción con p40, y TTF 1. \nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nRESULTADO:\nLas células tumorales son positivas para: TTF- 1 con tinción baja. \nlas células tumorales son negativos para: p40 y Sinaptofisina.\nDIAGNÓSTICO\n Pulmón izquierdo. Biopsia guiada por TAC. Estudio de inmunohistoquímica.\nLOS HALLAZGOS SUGIEREN UN ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR CON PATRON\nSOLIDO \nNEGATIVO PARA INVASIÓN LINFATICA\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---\nIHQ250231\nCopia Pag. 2 de 2\nNombre : HENRY GOMEZ VINAZCO\nN. peticion : IHQ250231\nN.Identificación : CC. 19133277\nGenero : MASCULINO\nEdad : 74 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 04/03/2025\nFecha Informe : 14/03/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 40 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, SYNAPTOFISINA",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2502192 laboratorio HUV correspondiente a “biopsia pulmonar\" con DIAGNÓSTICO Pulmón izquierdo. Biopsia guiada por TAC. Estudio de inmunohistoquímica. LOS HALLAZGOS SUGIEREN UN ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR CON PATRON SOLIDO NEGATIVO PARA INVASIÓN LINFATICA NATALIA AGUIRRE VASQUEZ Responsable del análisis: RM 1716212-08 Patología Quirúgica Patología Pulmonar _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 39 --- IHQ250231 Copia Pag. 2 de 2 Nombre : HENRY GOMEZ VINAZCO N. peticion : IHQ250231 N.Identificación : CC. 19133277 Genero : MASCULINO Edad : 74 años 7 dias EPS : NUEVA EPS Médico tratante : ISABEL CRISTINA TORRES Servicio : CIRUGIA HOMBRES Fecha Ingreso : 04/03/2025 Fecha Informe : 14/03/2025 Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 40 ---",
+      "Descripcion microscopica": "",
+      "Descripcion Diagnostico": "ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR CON PATRON SOLIDO NEGATIVO PARA INVASIÓN LINFATICA NATALIA AGUIRRE VASQUEZ Responsable del análisis: RM 1716212-08 Patología Quirúgica Patología Pulmonar _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance",
+      "IHQ_ORGANO": "BX PULMON IZQUIERDO",
+      "Organo": "BX PULMON IZQUIERDO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR CON PATRON SOLIDO NEGATIVO PARA INVASIÓN LINFATICA NATALIA AGUIRRE VASQUEZ Responsable del análisis: RM 1716212-08 Patología Quirúgica Patología Pulmonar _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 174,
+      "campos_vacios": 139,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 9,
+      "completitud_porcentaje": 90.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [
+      "Descripcion microscopica"
+    ],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR CON PATRON\nSOLIDO \nNEGATIVO PARA INVASIÓN LINFATICA\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance",
+      "valor_corregido": "ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR CON PATRON SOLIDO NEGATIVO PARA INVASIÓN LINFATICA NATALIA AGUIRRE VASQUEZ Responsable del análisis: RM 1716212-08 Patología Quirúgica Patología Pulmonar _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250231",
+      "timestamp": "2026-01-28T05:35:38.722305"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2502192 laboratorio HUV correspondiente a “biopsia pulmonar\" con DIAGNÓSTICO Pulmón izquierdo. Biopsia guiada por TAC. Estudio de inmunohistoquímica. LOS HALLAZGOS SUGIEREN UN ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR CON PATRON SOLIDO NEGATIVO PARA INVASIÓN LINFATICA NATALIA AGUIRRE VASQUEZ Responsable del análisis: RM 1716212-08 Patología Quirúgica Patología Pulmonar _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 39 --- IHQ250231 Copia Pag. 2 de 2 Nombre : HENRY GOMEZ VINAZCO N. peticion : IHQ250231 N.Identificación : CC. 19133277 Genero : MASCULINO Edad : 74 años 7 dias EPS : NUEVA EPS Médico tratante : ISABEL CRISTINA TORRES Servicio : CIRUGIA HOMBRES Fecha Ingreso : 04/03/2025 Fecha Informe : 14/03/2025 Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 40 ---",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2502192 laboratorio HUV correspondiente a \"biopsia pulmonar\" con DIAGNÓSTICO Pulmón izquierdo. Biopsia guiada por TAC. Estudio de inmunohistoquímica. LOS HALLAZGOS SUGIEREN UN ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR CON PATRON SOLIDO NEGATIVO PARA INVASIÓN LINFATICA NATALIA AGUIRRE VASQUEZ Responsable del análisis: RM 1716212-08 Patología Quirúgica Patología Pulmonar _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 39 --- IHQ250231 Copia Pag. 2 de 2 Nombre : HENRY GOMEZ VINAZCO N. peticion : IHQ250231 N.Identificación : CC. 19133277 Genero : MASCULINO Edad : 74 años 7 dias EPS : NUEVA EPS Médico tratante : ISABEL CRISTINA TORRES Servicio : CIRUGIA HOMBRES Fecha Ingreso : 04/03/2025 Fecha Informe : 14/03/2025 Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 40 ---",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250231",
+      "timestamp": "2026-01-28T05:35:38.722312"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 46
+  }
+}

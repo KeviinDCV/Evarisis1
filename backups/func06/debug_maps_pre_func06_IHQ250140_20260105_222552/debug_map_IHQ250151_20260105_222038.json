@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250151_20260105_222038",
+  "numero_peticion": "IHQ250151",
+  "timestamp": "2026-01-05T22:20:38.930145",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250151\nCopia Pag. 1 de 2\nNombre : MARIA ALICIA ORTEGA DE PEREZ\nN. peticion : IHQ250151\nN.Identificación : CC. 27274709\nGenero : FEMENINO\nEdad : 72 años 28 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 07/02/2025\nFecha Informe : 15/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION HIGADO, OMENTO,\nPARED ABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2501187” que corresponde a “A. Hígado y B. Omento” con diagnósticos de “A.\nADENOCARCINOMA INVASIVO A CLASICAR POR INMUNOHISTOQUÍMICA y B. CÉLULAS ATÍPICAS A\nCLASIFICAR POR INMUNOHISTOQUÍMICA.”.Previa revisión de la histología, se realizan niveles\nhistológicos para tinción de la siguiente manera:\nBloque A1: CKAE1E3,CK7, CK20, arginasa, CDX2, CK19 Y CA19-9.\nBloque D: Calretinina y CKAE1E3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®\nA. Las células tumorales son positivas para CKAE1E3, CK7, CK19, CDX2 Y CA19.9. Negativas para\nCK20 y arginasa.\nB. Las células atípicas son negativas para CKAE1E3 y algunas positivas para calretinina.\nDIAGNÓSTICO\nA. Hígado. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.\nD. Omento. Omentectomía parcial. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nCOMENTARIOS\nSe sugiere correlacionar con historia clínica e imagenes diagnósticas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---\nIHQ250151\nCopia Pag. 2 de 2\nNombre : MARIA ALICIA ORTEGA DE PEREZ\nN. peticion : IHQ250151\nN.Identificación : CC. 27274709\nGenero : FEMENINO\nEdad : 72 años 28 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 07/02/2025\nFecha Informe : 15/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3456,
+      "reduccion_porcentaje": 98.01
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250151",
+      "caso_num": 41,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CALRETININA": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_ARGINASA": "NEGATIVO",
+      "nombre_completo": "MARIA ALICIA ORTEGA DE PEREZ",
+      "numero_peticion": "IHQ250151",
+      "identificacion": "27274709",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "72",
+      "eps": "EPS FAMISANAR SAS",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "07/02/2025",
+      "fecha_informe": "15/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250151",
+      "N. de identificación": "27274709",
+      "Tipo de documento": "CC",
+      "EPS": "EPS FAMISANAR SAS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/02/2025",
+      "Fecha Informe": "15/02/2025",
+      "nombres": "MARIA ALICIA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "ALICIA",
+      "apellidos": "ORTEGA DE PEREZ",
+      "Primer apellido": "ORTEGA",
+      "Segundo apellido": "DE PEREZ",
+      "nombre_formal": "ORTEGA DE PEREZ, MARIA ALICIA",
+      "diagnostico": "A. Hígado. Lesión. Biopsia. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR. D. Omento. Omentectomía parcial. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® A. Las células tumorales son positivas para CKAE1E3, CK7, CK19, CDX2 Y CA19.9. Negativas para CK20 y arginasa. B. Las células atípicas son negativas para CKAE1E3 y algunas positivas para calretinina.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501187” que corresponde a “A. Hígado y B. Omento” con diagnósticos de “A. ADENOCARCINOMA INVASIVO A CLASICAR POR INMUNOHISTOQUÍMICA y B. CÉLULAS ATÍPICAS A CLASIFICAR POR INMUNOHISTOQUÍMICA.”.Previa revisión de la histología, se realizan niveles histológicos para tinción de la siguiente manera: Bloque A1: CKAE1E3,CK7, CK20, arginasa, CDX2, CK19 Y CA19-9. Bloque D: Calretinina y CKAE1E3.",
+      "ihq_organo": "HÍGADO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se sugiere correlacionar con historia clínica e imagenes diagnósticas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 76 --- IHQ250151 Copia Pag. 2 de 2 Nombre : MARIA ALICIA ORTEGA DE PEREZ N. peticion : IHQ250151 N.Identificación : CC. 27274709 Genero : FEMENINO Edad : 72 años 28 dias EPS : EPS FAMISANAR SAS Médico tratante : JOSE OMAR ZORRILA LARA Servicio : QUIROFANO CENTRAL Fecha Ingreso : 07/02/2025 Fecha Informe : 15/02/2025",
+      "IHQ_ORGANO": "HÍGADO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-01-05T22:20:39.340238",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250151\nCopia Pag. 1 de 2\nNombre : MARIA ALICIA ORTEGA DE PEREZ\nN. peticion : IHQ250151\nN.Identificación : CC. 27274709\nGenero : FEMENINO\nEdad : 72 años 28 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 07/02/2025\nFecha Informe : 15/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION HIGADO, OMENTO,\nPARED ABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2501187” que corresponde a “A. Hígado y B. Omento” con diagnósticos de “A.\nADENOCARCINOMA INVASIVO A CLASICAR POR INMUNOHISTOQUÍMICA y B. CÉLULAS ATÍPICAS A\nCLASIFICAR POR INMUNOHISTOQUÍMICA.”.Previa revisión de la histología, se realizan niveles\nhistológicos para tinción de la siguiente manera:\nBloque A1: CKAE1E3,CK7, CK20, arginasa, CDX2, CK19 Y CA19-9.\nBloque D: Calretinina y CKAE1E3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®\nA. Las células tumorales son positivas para CKAE1E3, CK7, CK19, CDX2 Y CA19.9. Negativas para\nCK20 y arginasa.\nB. Las células atípicas son negativas para CKAE1E3 y algunas positivas para calretinina.\nDIAGNÓSTICO\nA. Hígado. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.\nD. Omento. Omentectomía parcial. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.\nCOMENTARIOS\nSe sugiere correlacionar con historia clínica e imagenes diagnósticas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---\nIHQ250151\nCopia Pag. 2 de 2\nNombre : MARIA ALICIA ORTEGA DE PEREZ\nN. peticion : IHQ250151\nN.Identificación : CC. 27274709\nGenero : FEMENINO\nEdad : 72 años 28 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 07/02/2025\nFecha Informe : 15/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "ARGINASA, CA19-9, CALRETININA, CDX2, CK19, CK20, CK7, CKAE1AE3",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501187” que corresponde a “A. Hígado y B. Omento” con diagnósticos de “A. ADENOCARCINOMA INVASIVO A CLASICAR POR INMUNOHISTOQUÍMICA y B. CÉLULAS ATÍPICAS A CLASIFICAR POR INMUNOHISTOQUÍMICA.”.Previa revisión de la histología, se realizan niveles histológicos para tinción de la siguiente manera: Bloque A1: CKAE1E3,CK7, CK20, arginasa, CDX2, CK19 Y CA19-9. Bloque D: Calretinina y CKAE1E3.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA® A. Las células tumorales son positivas para CKAE1E3, CK7, CK19, CDX2 Y CA19.9. Negativas para CK20 y arginasa. B. Las células atípicas son negativas para CKAE1E3 y algunas positivas para calretinina.",
+      "Descripcion Diagnostico": "A. Hígado. Lesión. Biopsia. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR. D. Omento. Omentectomía parcial. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA.",
+      "IHQ_ORGANO": "HÍGADO",
+      "Organo": "LESION HIGADO, OMENTO, PARED ABDOMINAL",
+      "Diagnostico Coloracion": "A. ADENOCARCINOMA INVASIVO A CLASICAR POR INMUNOHISTOQUÍMICA Y B. CÉLULAS ATÍPICAS A CLASIFICAR POR INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ARGINASA": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CALRETININA": "POSITIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 124,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 8,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 124,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Hígado. Lesión. Biopsia. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.\nD. Omento. Omentectomía parcial. Estudio de inmunohistoquímica:\n- NEGATIVO PARA NEOPLASIA.",
+      "valor_corregido": "A. Hígado. Lesión. Biopsia. Estudio de inmunohistoquímica: - ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROPANCREATOBILIAR. D. Omento. Omentectomía parcial. Estudio de inmunohistoquímica: - NEGATIVO PARA NEOPLASIA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250151",
+      "timestamp": "2026-01-05T22:20:39.339991"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se sugiere correlacionar con historia clínica e imagenes diagnósticas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---\nIHQ250151\nCopia Pag. 2 de 2\nNombre : MARIA ALICIA ORTEGA DE PEREZ\nN. peticion : IHQ250151\nN.Identificación : CC. 27274709\nGenero : FEMENINO\nEdad : 72 años 28 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 07/02/2025\nFecha Informe : 15/02/2025",
+      "valor_corregido": "Se sugiere correlacionar con historia clínica e imagenes diagnósticas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 76 --- IHQ250151 Copia Pag. 2 de 2 Nombre : MARIA ALICIA ORTEGA DE PEREZ N. peticion : IHQ250151 N.Identificación : CC. 27274709 Genero : FEMENINO Edad : 72 años 28 dias EPS : EPS FAMISANAR SAS Médico tratante : JOSE OMAR ZORRILA LARA Servicio : QUIROFANO CENTRAL Fecha Ingreso : 07/02/2025 Fecha Informe : 15/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250151",
+      "timestamp": "2026-01-05T22:20:39.339999"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 55
+  }
+}

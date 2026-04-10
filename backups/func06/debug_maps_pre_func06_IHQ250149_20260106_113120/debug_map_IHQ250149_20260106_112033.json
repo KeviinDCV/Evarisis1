@@ -1,0 +1,155 @@
+{
+  "session_id": "IHQ250149_20260106_112033",
+  "numero_peticion": "IHQ250149",
+  "timestamp": "2026-01-06T11:20:33.625585",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250149\nCopia Pag. 1 de 2\nNombre : SILVIO EDMUNDO MERA CALDERON\nN. peticion : IHQ250149\nN.Identificación : CC. 10484399\nGenero : MASCULINO\nEdad : 61 años 9 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 07/02/2025\nFecha Informe : 26/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MUSLO IZQUIERDO\nCARA MEDIAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2501026” correspondiente a “Tumor de muslo izquierdo” con diagnóstico de “TUMOR ANGIO\nFIBRO MIXOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la\nhistología se realizan niveles histológicos para tinción con los marcadores: DESMINA, CD 34,\nMDM2, CDK4 MyOD1, SMA, S100, CKAE1E3 y H-CALDESMON.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nTumor bien circunscrito de origen mesenquimal con marcación negativo para MDM2, CDK4,\nMyOD1,CKAE1/E3, DESMINA, AML, es Positivo para h-caldesmon, S100.Presenta una red vascular\nprominente y positividad fuerte y homogénea para CD34.\nDIAGNÓSTICO\nMuslo izquierdo, cara medial. Tumor. Resección. Estudio de inmunohistóquimica:\nLOS HALLAZGOS MORFOLÓGICO SUGIEREN UN MIXOFIBROSARCOMA DE BAJO GRADO.\nCOMENTARIOS\nCaso valorado con el Dr. Jorge Moreno. (Patólogo )\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---\nIHQ250149\nCopia Pag. 2 de 2\nNombre : SILVIO EDMUNDO MERA CALDERON\nN. peticion : IHQ250149\nN.Identificación : CC. 10484399\nGenero : MASCULINO\nEdad : 61 años 9 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 07/02/2025\nFecha Informe : 26/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3343,
+      "reduccion_porcentaje": 98.07
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250149",
+      "caso_num": 39,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_MDM2": "NEGATIVO",
+      "IHQ_CD34": "POSITIVO (fuerte)",
+      "IHQ_H_CALDESMON": "POSITIVO",
+      "nombre_completo": "SILVIO EDMUNDO MERA CALDERON",
+      "numero_peticion": "IHQ250149",
+      "identificacion": "10484399",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "61",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "URIEL CARDONA NUÑEZ",
+      "servicio": "TRAUMA Y REANIMACION",
+      "fecha_ingreso": "07/02/2025",
+      "fecha_informe": "26/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250149",
+      "N. de identificación": "10484399",
+      "Tipo de documento": "CC",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "TRAUMA Y REANIMACION",
+      "Médico tratante": "URIEL CARDONA NUÑEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/02/2025",
+      "Fecha Informe": "26/02/2025",
+      "nombres": "SILVIO EDMUNDO MERA",
+      "Primer nombre": "SILVIO",
+      "Segundo nombre": "EDMUNDO MERA",
+      "apellidos": "CALDERON",
+      "Primer apellido": "CALDERON",
+      "Segundo apellido": "",
+      "nombre_formal": "CALDERON, SILVIO EDMUNDO MERA",
+      "diagnostico": "Muslo izquierdo, cara medial. Tumor. Resección. Estudio de inmunohistóquimica: LOS HALLAZGOS MORFOLÓGICO SUGIEREN UN MIXOFIBROSARCOMA DE BAJO GRADO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Tumor bien circunscrito de origen mesenquimal con marcación negativo para MDM2, CDK4, MyOD1,CKAE1/E3, DESMINA, AML, es Positivo para h-caldesmon, S100.Presenta una red vascular prominente y positividad fuerte y homogénea para CD34.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2501026” correspondiente a “Tumor de muslo izquierdo” con diagnóstico de “TUMOR ANGIO FIBRO MIXOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: DESMINA, CD 34, MDM2, CDK4 MyOD1, SMA, S100, CKAE1E3 y H-CALDESMON.",
+      "ihq_organo": "MUSLO IZQUIERDO, CARA MEDIAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "DESMINA, CD34, MDM2, CDK4, MYOD1, SMA, S100, CKAE1E3, H CALDESMON",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Caso valorado con el Dr. Jorge Moreno. (Patólogo ) Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 72 --- IHQ250149 Copia Pag. 2 de 2 Nombre : SILVIO EDMUNDO MERA CALDERON N. peticion : IHQ250149 N.Identificación : CC. 10484399 Genero : MASCULINO Edad : 61 años 9 dias EPS : ASOCIACION INDIGENA DEL CAUCA Médico tratante : URIEL CARDONA NUÑEZ Servicio : TRAUMA Y REANIMACION Fecha Ingreso : 07/02/2025 Fecha Informe : 26/02/2025",
+      "IHQ_ORGANO": "MUSLO IZQUIERDO, CARA MEDIAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "DESMINA, CD34, MDM2, CDK4, MYOD1, SMA, S100, CKAE1E3, H CALDESMON",
+      "IHQ_S100": "NEGATIVO",
+      "extraction_timestamp": "2026-01-06T11:20:34.033661",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250149\nCopia Pag. 1 de 2\nNombre : SILVIO EDMUNDO MERA CALDERON\nN. peticion : IHQ250149\nN.Identificación : CC. 10484399\nGenero : MASCULINO\nEdad : 61 años 9 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 07/02/2025\nFecha Informe : 26/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MUSLO IZQUIERDO\nCARA MEDIAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2501026” correspondiente a “Tumor de muslo izquierdo” con diagnóstico de “TUMOR ANGIO\nFIBRO MIXOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la\nhistología se realizan niveles histológicos para tinción con los marcadores: DESMINA, CD 34,\nMDM2, CDK4 MyOD1, SMA, S100, CKAE1E3 y H-CALDESMON.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nTumor bien circunscrito de origen mesenquimal con marcación negativo para MDM2, CDK4,\nMyOD1,CKAE1/E3, DESMINA, AML, es Positivo para h-caldesmon, S100.Presenta una red vascular\nprominente y positividad fuerte y homogénea para CD34.\nDIAGNÓSTICO\nMuslo izquierdo, cara medial. Tumor. Resección. Estudio de inmunohistóquimica:\nLOS HALLAZGOS MORFOLÓGICO SUGIEREN UN MIXOFIBROSARCOMA DE BAJO GRADO.\nCOMENTARIOS\nCaso valorado con el Dr. Jorge Moreno. (Patólogo )\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---\nIHQ250149\nCopia Pag. 2 de 2\nNombre : SILVIO EDMUNDO MERA CALDERON\nN. peticion : IHQ250149\nN.Identificación : CC. 10484399\nGenero : MASCULINO\nEdad : 61 años 9 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 07/02/2025\nFecha Informe : 26/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "DESMINA, CD34, MDM2, CDK4, MYOD1, SMA, S100, CKAE1AE3, H CALDESMON, H_CALDESMON",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2501026” correspondiente a “Tumor de muslo izquierdo” con diagnóstico de “TUMOR ANGIO FIBRO MIXOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: DESMINA, CD 34, MDM2, CDK4 MyOD1, SMA, S100, CKAE1E3 y H-CALDESMON.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Tumor bien circunscrito de origen mesenquimal con marcación negativo para MDM2, CDK4, MyOD1,CKAE1/E3, DESMINA, AML, es Positivo para h-caldesmon, S100.Presenta una red vascular prominente y positividad fuerte y homogénea para CD34.",
+      "Descripcion Diagnostico": "Muslo izquierdo, cara medial. Tumor. Resección. Estudio de inmunohistóquimica: LOS HALLAZGOS MORFOLÓGICO SUGIEREN UN MIXOFIBROSARCOMA DE BAJO GRADO.",
+      "IHQ_ORGANO": "MUSLO IZQUIERDO, CARA MEDIAL",
+      "Organo": "BX MUSLO IZQUIERDO CARA MEDIAL",
+      "Diagnostico Coloracion": "TUMOR ANGIO FIBRO MIXOIDE A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "SARCOMA DE BAJO GRADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_DESMIN": "",
+      "IHQ_CD34": "POSITIVO (fuerte)",
+      "IHQ_MDM2": "NEGATIVO",
+      "IHQ_CDK4": "NO MENCIONADO",
+      "IHQ_MYOD1": "NO MENCIONADO",
+      "IHQ_SMA": "NO MENCIONADO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NO MENCIONADO",
+      "IHQ_H_CALDESMON": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 125,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 125,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Muslo izquierdo, cara medial. Tumor. Resección. Estudio de inmunohistóquimica:\nLOS HALLAZGOS MORFOLÓGICO SUGIEREN UN MIXOFIBROSARCOMA DE BAJO GRADO.",
+      "valor_corregido": "Muslo izquierdo, cara medial. Tumor. Resección. Estudio de inmunohistóquimica: LOS HALLAZGOS MORFOLÓGICO SUGIEREN UN MIXOFIBROSARCOMA DE BAJO GRADO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250149",
+      "timestamp": "2026-01-06T11:20:34.033459"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Caso valorado con el Dr. Jorge Moreno. (Patólogo )\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---\nIHQ250149\nCopia Pag. 2 de 2\nNombre : SILVIO EDMUNDO MERA CALDERON\nN. peticion : IHQ250149\nN.Identificación : CC. 10484399\nGenero : MASCULINO\nEdad : 61 años 9 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : URIEL CARDONA NUÑEZ\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 07/02/2025\nFecha Informe : 26/02/2025",
+      "valor_corregido": "Caso valorado con el Dr. Jorge Moreno. (Patólogo ) Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 72 --- IHQ250149 Copia Pag. 2 de 2 Nombre : SILVIO EDMUNDO MERA CALDERON N. peticion : IHQ250149 N.Identificación : CC. 10484399 Genero : MASCULINO Edad : 61 años 9 dias EPS : ASOCIACION INDIGENA DEL CAUCA Médico tratante : URIEL CARDONA NUÑEZ Servicio : TRAUMA Y REANIMACION Fecha Ingreso : 07/02/2025 Fecha Informe : 26/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250149",
+      "timestamp": "2026-01-06T11:20:34.033465"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 52
+  }
+}

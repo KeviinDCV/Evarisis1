@@ -1,0 +1,138 @@
+{
+  "session_id": "IHQ250203_20260109_020348",
+  "numero_peticion": "IHQ250203",
+  "timestamp": "2026-01-09T02:03:48.630229",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250203\nCopia Pag. 1 de 2\nNombre : ROSLEIDY MARIA HERRERA\nRODRIGUEZ\nN. peticion : IHQ250203\nN.Identificación : PPT. 5647967\nGenero : FEMENINO\nEdad : 30 años 6 dias\nEPS : SALUD TOTAL EPS\nMédico tratante : HAMED TINOCO PALACIOS\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 25/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION ENDOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501943 que corresponde a \"CARCINOMA ESCAMOCELULAR INVASIVO NOS\". Previa valoración\nde la coloración básica, se realizan cortes histológicos para los siguientes marcadores: p16 y\np63.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales son positivas para p16 ( en bloque ) y p63 positivo.\nDIAGNÓSTICO\nEndocérvix. Lesión. Biopsia.Estudio de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR INVASIVO. \np16 POSITIVO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---\nIHQ250203\nCopia Pag. 2 de 2\nNombre : ROSLEIDY MARIA HERRERA\nRODRIGUEZ\nN. peticion : IHQ250203\nN.Identificación : PPT. 5647967\nGenero : FEMENINO\nEdad : 30 años 6 dias\nEPS : SALUD TOTAL EPS\nMédico tratante : HAMED TINOCO PALACIOS\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 25/02/2025\nFecha Informe : 28/02/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2903,
+      "reduccion_porcentaje": 98.25
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250203",
+      "caso_num": 42,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P63": "POSITIVO (bloque)",
+      "nombre_completo": "ROSLEIDY MARIA HERRERA RODRIGUEZ",
+      "numero_peticion": "IHQ250203",
+      "identificacion": "5647967",
+      "tipo_documento": "PPT",
+      "Genero": "FEMENINO",
+      "Edad": "30",
+      "eps": "SALUD TOTAL EPS",
+      "medico_tratante": "HAMED TINOCO PALACIOS",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "25/02/2025",
+      "fecha_informe": "28/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250203",
+      "N. de identificación": "5647967",
+      "Tipo de documento": "PPT",
+      "EPS": "SALUD TOTAL EPS",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "HAMED TINOCO PALACIOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "25/02/2025",
+      "Fecha Informe": "28/02/2025",
+      "nombres": "ROSLEIDY MARIA HERRERA",
+      "Primer nombre": "ROSLEIDY",
+      "Segundo nombre": "MARIA HERRERA",
+      "apellidos": "RODRIGUEZ",
+      "Primer apellido": "RODRIGUEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "RODRIGUEZ, ROSLEIDY MARIA HERRERA",
+      "diagnostico": "Endocérvix. Lesión. Biopsia.Estudio de inmunohistoquímica: CARCINOMA ESCAMOCELULAR INVASIVO. p16 POSITIVO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para p16 ( en bloque ) y p63 positivo.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501943 que corresponde a \"CARCINOMA ESCAMOCELULAR INVASIVO NOS\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: p16 y p63.",
+      "ihq_organo": "ENDOCÉRVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, P63",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ENDOCÉRVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P63",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2026-01-09T02:03:49.032326",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250203\nCopia Pag. 1 de 2\nNombre : ROSLEIDY MARIA HERRERA\nRODRIGUEZ\nN. peticion : IHQ250203\nN.Identificación : PPT. 5647967\nGenero : FEMENINO\nEdad : 30 años 6 dias\nEPS : SALUD TOTAL EPS\nMédico tratante : HAMED TINOCO PALACIOS\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 25/02/2025\nFecha Informe : 28/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION ENDOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501943 que corresponde a \"CARCINOMA ESCAMOCELULAR INVASIVO NOS\". Previa valoración\nde la coloración básica, se realizan cortes histológicos para los siguientes marcadores: p16 y\np63.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales son positivas para p16 ( en bloque ) y p63 positivo.\nDIAGNÓSTICO\nEndocérvix. Lesión. Biopsia.Estudio de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR INVASIVO. \np16 POSITIVO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---\nIHQ250203\nCopia Pag. 2 de 2\nNombre : ROSLEIDY MARIA HERRERA\nRODRIGUEZ\nN. peticion : IHQ250203\nN.Identificación : PPT. 5647967\nGenero : FEMENINO\nEdad : 30 años 6 dias\nEPS : SALUD TOTAL EPS\nMédico tratante : HAMED TINOCO PALACIOS\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 25/02/2025\nFecha Informe : 28/02/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P63",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501943 que corresponde a \"CARCINOMA ESCAMOCELULAR INVASIVO NOS\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: p16 y p63.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para p16 ( en bloque ) y p63 positivo.",
+      "Descripcion Diagnostico": "Endocérvix. Lesión. Biopsia.Estudio de inmunohistoquímica: CARCINOMA ESCAMOCELULAR INVASIVO. p16 POSITIVO.",
+      "IHQ_ORGANO": "ENDOCÉRVIX",
+      "Organo": "BX LESION ENDOCERVIX",
+      "Diagnostico Coloracion": "M2501943 QUE CORRESPONDE A \"CARCINOMA ESCAMOCELULAR INVASIVO NOS\". PREVIA VALORACIÓN",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR INVASIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P63": "POSITIVO (bloque)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 171,
+      "campos_vacios": 135,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Endocérvix. Lesión. Biopsia.Estudio de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR INVASIVO. \np16 POSITIVO.",
+      "valor_corregido": "Endocérvix. Lesión. Biopsia.Estudio de inmunohistoquímica: CARCINOMA ESCAMOCELULAR INVASIVO. p16 POSITIVO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250203",
+      "timestamp": "2026-01-09T02:03:49.032108"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 50
+  }
+}

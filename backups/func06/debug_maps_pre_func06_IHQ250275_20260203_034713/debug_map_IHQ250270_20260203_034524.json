@@ -1,0 +1,154 @@
+{
+  "session_id": "IHQ250270_20260203_034524",
+  "numero_peticion": "IHQ250270",
+  "timestamp": "2026-02-03T03:45:24.794921",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250270\nCopia Pag. 1 de 2\nNombre : JENNY PAOLA ARCE NOREÑA\nN. peticion : IHQ250270\nN.Identificación : CC. 1112770016\nGenero : FEMENINO\nEdad : 35 años 1 mes 20 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : DANIELA GONZALEZ GOMEZ\nServicio : CARTAGO GINECOLOGIA OBSTETRICIA\nFecha Ingreso : 14/03/2025\nFecha Informe : 19/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASA OVARICA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500857-A” que corresponde a “masa ovárica izquierda” con diagnóstico de “HALLAZGOS\nMORFOLOGICOS COMPATIBLES CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO DE OVARIO”.\nPrevia revisión de la histología, se realizan niveles histológicos al bloque A4 para tinción con CK7,\nCKAE1E3, EMA, inhibina, PAX-8 y calretinina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales presentan positividad heterogénea para CKAE1AE3, inhibina y calretinina. Son\nnegativas para EMA, CK-7 y PAX-8.\nDIAGNÓSTICO\nOvario izquierdo. Tumor. Resección. Estudio de inmunohistoquímica:\n- TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---\nIHQ250270\nCopia Pag. 2 de 2\nNombre : JENNY PAOLA ARCE NOREÑA\nN. peticion : IHQ250270\nN.Identificación : CC. 1112770016\nGenero : FEMENINO\nEdad : 35 años 1 mes 20 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : DANIELA GONZALEZ GOMEZ\nServicio : CARTAGO GINECOLOGIA OBSTETRICIA\nFecha Ingreso : 14/03/2025\nFecha Informe : 19/03/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3187,
+      "reduccion_porcentaje": 98.18
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250270",
+      "caso_num": 7,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO HETEROGÉNEO",
+      "IHQ_INHIBINA": "POSITIVO HETEROGÉNEO",
+      "IHQ_CALRETININA": "POSITIVO HETEROGÉNEO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "nombre_completo": "JENNY PAOLA ARCE NOREÑA",
+      "numero_peticion": "IHQ250270",
+      "identificacion": "1112770016",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "35",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "DANIELA GONZALEZ GOMEZ",
+      "servicio": "",
+      "fecha_ingreso": "14/03/2025",
+      "fecha_informe": "19/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250270",
+      "N. de identificación": "1112770016",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "",
+      "Médico tratante": "DANIELA GONZALEZ GOMEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/03/2025",
+      "Fecha Informe": "19/03/2025",
+      "nombres": "JENNY PAOLA",
+      "Primer nombre": "JENNY",
+      "Segundo nombre": "PAOLA",
+      "apellidos": "ARCE NOREÑA",
+      "Primer apellido": "ARCE",
+      "Segundo apellido": "NOREÑA",
+      "nombre_formal": "ARCE NOREÑA, JENNY PAOLA",
+      "diagnostico": "Ovario izquierdo. Tumor. Resección. Estudio de inmunohistoquímica: - TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan positividad heterogénea para CKAE1AE3, inhibina y calretinina. Son negativas para EMA, CK-7 y PAX-8.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2500857-A\" que corresponde a \"masa ovárica izquierda\" con diagnóstico de \"HALLAZGOS MORFOLOGICOS COMPATIBLES CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO DE OVARIO\". Previa revisión de la histología, se realizan niveles histológicos al bloque A4 para tinción con CK7, CKAE1E3, EMA, inhibina, PAX-8 y calretinina.",
+      "ihq_organo": "OVARIO IZQUIERDO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CKAE1E3, EMA, INHIBINA, PAX 8, CALRETININA",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "OVARIO IZQUIERDO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CKAE1E3, EMA, INHIBINA, PAX 8, CALRETININA",
+      "extraction_timestamp": "2026-02-03T03:45:25.123482",
+      "extractor_version": "6.5.90_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250270\nCopia Pag. 1 de 2\nNombre : JENNY PAOLA ARCE NOREÑA\nN. peticion : IHQ250270\nN.Identificación : CC. 1112770016\nGenero : FEMENINO\nEdad : 35 años 1 mes 20 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : DANIELA GONZALEZ GOMEZ\nServicio : CARTAGO GINECOLOGIA OBSTETRICIA\nFecha Ingreso : 14/03/2025\nFecha Informe : 19/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASA OVARICA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500857-A” que corresponde a “masa ovárica izquierda” con diagnóstico de “HALLAZGOS\nMORFOLOGICOS COMPATIBLES CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO DE OVARIO”.\nPrevia revisión de la histología, se realizan niveles histológicos al bloque A4 para tinción con CK7,\nCKAE1E3, EMA, inhibina, PAX-8 y calretinina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales presentan positividad heterogénea para CKAE1AE3, inhibina y calretinina. Son\nnegativas para EMA, CK-7 y PAX-8.\nDIAGNÓSTICO\nOvario izquierdo. Tumor. Resección. Estudio de inmunohistoquímica:\n- TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---\nIHQ250270\nCopia Pag. 2 de 2\nNombre : JENNY PAOLA ARCE NOREÑA\nN. peticion : IHQ250270\nN.Identificación : CC. 1112770016\nGenero : FEMENINO\nEdad : 35 años 1 mes 20 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : DANIELA GONZALEZ GOMEZ\nServicio : CARTAGO GINECOLOGIA OBSTETRICIA\nFecha Ingreso : 14/03/2025\nFecha Informe : 19/03/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CKAE1AE3, EMA, INHIBINA, PAX 8, CALRETININA",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500857-A” que corresponde a “masa ovárica izquierda” con diagnóstico de “HALLAZGOS MORFOLOGICOS COMPATIBLES CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO DE OVARIO”. Previa revisión de la histología, se realizan niveles histológicos al bloque A4 para tinción con CK7, CKAE1E3, EMA, inhibina, PAX-8 y calretinina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan positividad heterogénea para CKAE1AE3, inhibina y calretinina. Son negativas para EMA, CK-7 y PAX-8.",
+      "Descripcion Diagnostico": "Ovario izquierdo. Tumor. Resección. Estudio de inmunohistoquímica: - TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO.",
+      "IHQ_ORGANO": "OVARIO IZQUIERDO",
+      "Organo": "MASA OVARICA IZQUIERDA",
+      "Diagnostico Coloracion": "HALLAZGOS MORFOLOGICOS COMPATIBLES CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO DE OVARIO",
+      "Diagnostico Principal": "TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO HETEROGÉNEO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_INHIBINA": "POSITIVO HETEROGÉNEO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_CALRETININA": "POSITIVO HETEROGÉNEO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 136,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ovario izquierdo. Tumor. Resección. Estudio de inmunohistoquímica:\n- TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO.",
+      "valor_corregido": "Ovario izquierdo. Tumor. Resección. Estudio de inmunohistoquímica: - TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250270",
+      "timestamp": "2026-02-03T03:45:25.123281"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500857-A” que corresponde a “masa ovárica izquierda” con diagnóstico de “HALLAZGOS MORFOLOGICOS COMPATIBLES CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO DE OVARIO”. Previa revisión de la histología, se realizan niveles histológicos al bloque A4 para tinción con CK7, CKAE1E3, EMA, inhibina, PAX-8 y calretinina.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2500857-A\" que corresponde a \"masa ovárica izquierda\" con diagnóstico de \"HALLAZGOS MORFOLOGICOS COMPATIBLES CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO DE OVARIO\". Previa revisión de la histología, se realizan niveles histológicos al bloque A4 para tinción con CK7, CKAE1E3, EMA, inhibina, PAX-8 y calretinina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250270",
+      "timestamp": "2026-02-03T03:45:25.123292"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 51
+  }
+}

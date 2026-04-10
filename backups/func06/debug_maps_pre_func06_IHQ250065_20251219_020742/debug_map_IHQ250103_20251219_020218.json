@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ250103_20251219_020218",
+  "numero_peticion": "IHQ250103",
+  "timestamp": "2025-12-19T02:02:18.840829",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250103\nCopia Pag. 1 de 2\nNombre : MARIA ALICIA ORTEGA DE PEREZ\nN. peticion : IHQ250103\nN.Identificación : CC. 27274709\nGenero : FEMENINO\nEdad : 72 años 19 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 29/01/2025\nFecha Informe : 15/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMUCOSA GASTRICA DE\nCUERPO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2500213” que corresponde a biopsia endoscópica de mucosa gástrica oxíntica,\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nFragmentos de una lesión adenocarcinomatosa bien diferenciada invasiva presente en la\nsubmucosa y muscularis de la mucosa. Focalmente hay cambios displásicos de alto grado de tipo\nantral en la mucosa gástrica y en otros atrofia con metaplasia intestinal completa. Se rodean de\nun proceso inflamatorio agudo con lecho ulceroso contiguo. Las células tumorales presentan\ninmunotinción para CKAE1E3, CK7, CK19, CDX2 Y CA19.9. Son negativas para CK20. El HER 2 es\nnegativo (SCORE 1+).\ndiagnóstico\nde\n\"ADENOCARCINOMA\nBIEN\nDIFERENCIADO\nINVASIVO\nMÍNIMAMENTE\nREPRESENTADO\". Se revisa la lámina histológica y se realizan niveles histológicos para estudios\nde inmunohistoquímica para: HER2.\nDIAGNÓSTICO\nMucosa gástrica de cuerpo. Lesión. Biopsia endoscópica. Estudios de inmunohistoquímica \nADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.\nPUNTAJE DE HER2: NEGATIVO (SCORE 1+)\nVER COMENTARIO.\nCOMENTARIOS\nAl tener acceso a la información clínica, se realizó una ampliación de los marcadores de\ninmunohistoquímica, encontrándose inmunorreactividad que sugiere un posible origen a nivel\npancreatobiliar versus primario gástrico. Por lo anterior, se considera necesario correlacionar\nestos hallazgos con imágenes diagnósticas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---\nIHQ250103\nCopia Pag. 2 de 2\nNombre : MARIA ALICIA ORTEGA DE PEREZ\nN. peticion : IHQ250103\nN.Identificación : CC. 27274709\nGenero : FEMENINO\nEdad : 72 años 19 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 29/01/2025\nFecha Informe : 15/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3839,
+      "reduccion_porcentaje": 97.95
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250103",
+      "caso_num": 46,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA ALICIA ORTEGA DE PEREZ",
+      "numero_peticion": "IHQ250103",
+      "identificacion": "27274709",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "72",
+      "eps": "EPS FAMISANAR SAS",
+      "medico_tratante": "JOSE OMAR ZORILLA",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "29/01/2025",
+      "fecha_informe": "15/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250103",
+      "N. de identificación": "27274709",
+      "Tipo de documento": "CC",
+      "EPS": "EPS FAMISANAR SAS",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "JOSE OMAR ZORILLA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "29/01/2025",
+      "Fecha Informe": "15/02/2025",
+      "nombres": "MARIA ALICIA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "ALICIA",
+      "apellidos": "ORTEGA DE PEREZ",
+      "Primer apellido": "ORTEGA",
+      "Segundo apellido": "DE PEREZ",
+      "nombre_formal": "ORTEGA DE PEREZ, MARIA ALICIA",
+      "diagnostico": "de \"ADENOCARCINOMA BIEN DIFERENCIADO INVASIVO MÍNIMAMENTE REPRESENTADO\". Se revisa la lámina histológica y se realizan niveles histológicos para estudios de inmunohistoquímica para: HER2. DIAGNÓSTICO Mucosa gástrica de cuerpo. Lesión. Biopsia endoscópica. Estudios de inmunohistoquímica ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR. PUNTAJE DE HER2: NEGATIVO (SCORE 1+) VER COMENTARIO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Fragmentos de una lesión adenocarcinomatosa bien diferenciada invasiva presente en la submucosa y muscularis de la mucosa. Focalmente hay cambios displásicos de alto grado de tipo antral en la mucosa gástrica y en otros atrofia con metaplasia intestinal completa. Se rodean de un proceso inflamatorio agudo con lecho ulceroso contiguo. Las células tumorales presentan inmunotinción para CKAE1E3, CK7, CK19, CDX2 Y CA19.9. Son negativas para CK20. El HER 2 es negativo (SCORE 1+). diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO INVASIVO MÍNIMAMENTE REPRESENTADO\". Se revisa la lámina histológica y se realizan niveles histológicos para estudios de inmunohistoquímica para: HER2.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500213” que corresponde a biopsia endoscópica de mucosa gástrica oxíntica, con",
+      "ihq_organo": "MUCOSA GÁSTRICA DE CUERPO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Al tener acceso a la información clínica, se realizó una ampliación de los marcadores de inmunohistoquímica, encontrándose inmunorreactividad que sugiere un posible origen a nivel pancreatobiliar versus primario gástrico. Por lo anterior, se considera necesario correlacionar estos hallazgos con imágenes diagnósticas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 87 --- IHQ250103 Copia Pag. 2 de 2 Nombre : MARIA ALICIA ORTEGA DE PEREZ N. peticion : IHQ250103 N.Identificación : CC. 27274709 Genero : FEMENINO Edad : 72 años 19 dias EPS : EPS FAMISANAR SAS Médico tratante : JOSE OMAR ZORILLA Servicio : CIRUGIA MUJERES Fecha Ingreso : 29/01/2025 Fecha Informe : 15/02/2025",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA DE CUERPO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: NEGATIVO (SCORE 1+)",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_HER2": "NEGATIVO (SCORE 1+)",
+      "extraction_timestamp": "2025-12-19T02:02:19.015370",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250103\nCopia Pag. 1 de 2\nNombre : MARIA ALICIA ORTEGA DE PEREZ\nN. peticion : IHQ250103\nN.Identificación : CC. 27274709\nGenero : FEMENINO\nEdad : 72 años 19 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 29/01/2025\nFecha Informe : 15/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMUCOSA GASTRICA DE\nCUERPO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2500213” que corresponde a biopsia endoscópica de mucosa gástrica oxíntica,\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nFragmentos de una lesión adenocarcinomatosa bien diferenciada invasiva presente en la\nsubmucosa y muscularis de la mucosa. Focalmente hay cambios displásicos de alto grado de tipo\nantral en la mucosa gástrica y en otros atrofia con metaplasia intestinal completa. Se rodean de\nun proceso inflamatorio agudo con lecho ulceroso contiguo. Las células tumorales presentan\ninmunotinción para CKAE1E3, CK7, CK19, CDX2 Y CA19.9. Son negativas para CK20. El HER 2 es\nnegativo (SCORE 1+).\ndiagnóstico\nde\n\"ADENOCARCINOMA\nBIEN\nDIFERENCIADO\nINVASIVO\nMÍNIMAMENTE\nREPRESENTADO\". Se revisa la lámina histológica y se realizan niveles histológicos para estudios\nde inmunohistoquímica para: HER2.\nDIAGNÓSTICO\nMucosa gástrica de cuerpo. Lesión. Biopsia endoscópica. Estudios de inmunohistoquímica \nADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.\nPUNTAJE DE HER2: NEGATIVO (SCORE 1+)\nVER COMENTARIO.\nCOMENTARIOS\nAl tener acceso a la información clínica, se realizó una ampliación de los marcadores de\ninmunohistoquímica, encontrándose inmunorreactividad que sugiere un posible origen a nivel\npancreatobiliar versus primario gástrico. Por lo anterior, se considera necesario correlacionar\nestos hallazgos con imágenes diagnósticas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---\nIHQ250103\nCopia Pag. 2 de 2\nNombre : MARIA ALICIA ORTEGA DE PEREZ\nN. peticion : IHQ250103\nN.Identificación : CC. 27274709\nGenero : FEMENINO\nEdad : 72 años 19 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 29/01/2025\nFecha Informe : 15/02/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK20, HER2",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500213” que corresponde a biopsia endoscópica de mucosa gástrica oxíntica, con",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Fragmentos de una lesión adenocarcinomatosa bien diferenciada invasiva presente en la submucosa y muscularis de la mucosa. Focalmente hay cambios displásicos de alto grado de tipo antral en la mucosa gástrica y en otros atrofia con metaplasia intestinal completa. Se rodean de un proceso inflamatorio agudo con lecho ulceroso contiguo. Las células tumorales presentan inmunotinción para CKAE1E3, CK7, CK19, CDX2 Y CA19.9. Son negativas para CK20. El HER 2 es negativo (SCORE 1+). diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO INVASIVO MÍNIMAMENTE REPRESENTADO\". Se revisa la lámina histológica y se realizan niveles histológicos para estudios de inmunohistoquímica para: HER2.",
+      "Descripcion Diagnostico": "de \"ADENOCARCINOMA BIEN DIFERENCIADO INVASIVO MÍNIMAMENTE REPRESENTADO\". Se revisa la lámina histológica y se realizan niveles histológicos para estudios de inmunohistoquímica para: HER2. DIAGNÓSTICO Mucosa gástrica de cuerpo. Lesión. Biopsia endoscópica. Estudios de inmunohistoquímica ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR. PUNTAJE DE HER2: NEGATIVO (SCORE 1+) VER COMENTARIO.",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA DE CUERPO",
+      "Organo": "MUCOSA GASTRICA DE CUERPO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA BIEN DIFERENCIADO INVASIVO MÍNIMAMENTE REPRESENTADO",
+      "Diagnostico Principal": "DE \"ADENOCARCINOMA BIEN DIFERENCIADO INVASIVO MÍNIMAMENTE REPRESENTADO\". SE REVISA LA LÁMINA HISTOLÓGICA Y SE REALIZAN NIVELES HISTOLÓGICOS PARA ESTUDIOS DE INMUNOHISTOQUÍMICA PARA: HER2. DIAGNÓSTICO MUCOSA GÁSTRICA DE CUERPO. LESIÓN. BIOPSIA ENDOSCÓPICA. ESTUDIOS DE INMUNOHISTOQUÍMICA ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR. PUNTAJE DE HER2: NEGATIVO (SCORE 1+)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO (SCORE 1+)",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_HER2": "NEGATIVO (SCORE 1+)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 120,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 23.57
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 120,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "de\n\"ADENOCARCINOMA\nBIEN\nDIFERENCIADO\nINVASIVO\nMÍNIMAMENTE\nREPRESENTADO\". Se revisa la lámina histológica y se realizan niveles histológicos para estudios\nde inmunohistoquímica para: HER2.\nDIAGNÓSTICO\nMucosa gástrica de cuerpo. Lesión. Biopsia endoscópica. Estudios de inmunohistoquímica \nADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR.\nPUNTAJE DE HER2: NEGATIVO (SCORE 1+)\nVER COMENTARIO.",
+      "valor_corregido": "de \"ADENOCARCINOMA BIEN DIFERENCIADO INVASIVO MÍNIMAMENTE REPRESENTADO\". Se revisa la lámina histológica y se realizan niveles histológicos para estudios de inmunohistoquímica para: HER2. DIAGNÓSTICO Mucosa gástrica de cuerpo. Lesión. Biopsia endoscópica. Estudios de inmunohistoquímica ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR. PUNTAJE DE HER2: NEGATIVO (SCORE 1+) VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250103",
+      "timestamp": "2025-12-19T02:02:19.015087"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2500213” que corresponde a biopsia endoscópica de mucosa gástrica oxíntica,\ncon",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500213” que corresponde a biopsia endoscópica de mucosa gástrica oxíntica, con",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250103",
+      "timestamp": "2025-12-19T02:02:19.015093"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nFragmentos de una lesión adenocarcinomatosa bien diferenciada invasiva presente en la\nsubmucosa y muscularis de la mucosa. Focalmente hay cambios displásicos de alto grado de tipo\nantral en la mucosa gástrica y en otros atrofia con metaplasia intestinal completa. Se rodean de\nun proceso inflamatorio agudo con lecho ulceroso contiguo. Las células tumorales presentan\ninmunotinción para CKAE1E3, CK7, CK19, CDX2 Y CA19.9. Son negativas para CK20. El HER 2 es\nnegativo (SCORE 1+).\ndiagnóstico\nde\n\"ADENOCARCINOMA\nBIEN\nDIFERENCIADO\nINVASIVO\nMÍNIMAMENTE\nREPRESENTADO\". Se revisa la lámina histológica y se realizan niveles histológicos para estudios\nde inmunohistoquímica para: HER2.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Fragmentos de una lesión adenocarcinomatosa bien diferenciada invasiva presente en la submucosa y muscularis de la mucosa. Focalmente hay cambios displásicos de alto grado de tipo antral en la mucosa gástrica y en otros atrofia con metaplasia intestinal completa. Se rodean de un proceso inflamatorio agudo con lecho ulceroso contiguo. Las células tumorales presentan inmunotinción para CKAE1E3, CK7, CK19, CDX2 Y CA19.9. Son negativas para CK20. El HER 2 es negativo (SCORE 1+). diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO INVASIVO MÍNIMAMENTE REPRESENTADO\". Se revisa la lámina histológica y se realizan niveles histológicos para estudios de inmunohistoquímica para: HER2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250103",
+      "timestamp": "2025-12-19T02:02:19.015095"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Al tener acceso a la información clínica, se realizó una ampliación de los marcadores de\ninmunohistoquímica, encontrándose inmunorreactividad que sugiere un posible origen a nivel\npancreatobiliar versus primario gástrico. Por lo anterior, se considera necesario correlacionar\nestos hallazgos con imágenes diagnósticas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---\nIHQ250103\nCopia Pag. 2 de 2\nNombre : MARIA ALICIA ORTEGA DE PEREZ\nN. peticion : IHQ250103\nN.Identificación : CC. 27274709\nGenero : FEMENINO\nEdad : 72 años 19 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 29/01/2025\nFecha Informe : 15/02/2025",
+      "valor_corregido": "Al tener acceso a la información clínica, se realizó una ampliación de los marcadores de inmunohistoquímica, encontrándose inmunorreactividad que sugiere un posible origen a nivel pancreatobiliar versus primario gástrico. Por lo anterior, se considera necesario correlacionar estos hallazgos con imágenes diagnósticas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 87 --- IHQ250103 Copia Pag. 2 de 2 Nombre : MARIA ALICIA ORTEGA DE PEREZ N. peticion : IHQ250103 N.Identificación : CC. 27274709 Genero : FEMENINO Edad : 72 años 19 dias EPS : EPS FAMISANAR SAS Médico tratante : JOSE OMAR ZORILLA Servicio : CIRUGIA MUJERES Fecha Ingreso : 29/01/2025 Fecha Informe : 15/02/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250103",
+      "timestamp": "2025-12-19T02:02:19.015097"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 49
+  }
+}

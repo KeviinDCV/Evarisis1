@@ -1,0 +1,147 @@
+{
+  "session_id": "IHQ250999_20251107_213611",
+  "numero_peticion": "IHQ250999",
+  "timestamp": "2025-11-07T21:36:11.701830",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250999\nCopia Pag. 1 de 1\nNombre : AMANDA NAVEROS BERMUDEZ\nN. peticion : IHQ250999\nN.Identificación : CC. 51854068\nGenero : FEMENINO\nEdad : 58 años 7 meses 27 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 11/09/2025\nFecha Informe : 23/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al rotulado M2510623-A3 , el cual corresponde a \"Biopsia de mama\nderecha\", con diagnostico de \" LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR (TÉJIDO FRAGMENTADO) \", se\nsolicitan los siguientes marcadores: CK5/6, Calponina, receptores estrógeno y P63\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nSe observa células mioepiteliales positivas para P63, calponina y CK5/6, recubriendo los tallos\nfibrovasculares, con expresión moderada de los receptores de estrógeno. \nDIAGNÓSTICO\n Mama derecha. Resección de centro mamario. Inmunohistoquímica.\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA SUGIEREN PAPILOMA INTRADUCTAL.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 40 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 2397,
+      "reduccion_porcentaje": 98.76
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250999",
+      "caso_num": 19,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CALPONINA": "POSITIVO",
+      "nombre_completo": "AMANDA NAVEROS BERMUDEZ",
+      "numero_peticion": "IHQ250999",
+      "identificacion": "51854068",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "58",
+      "eps": "COMFENALCO VALLE",
+      "medico_tratante": "LUIS ALFONSO GONZALEZ",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "11/09/2025",
+      "fecha_informe": "23/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250999",
+      "N. de identificación": "51854068",
+      "Tipo de documento": "CC",
+      "EPS": "COMFENALCO VALLE",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "LUIS ALFONSO GONZALEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "11/09/2025",
+      "Fecha Informe": "23/09/2025",
+      "nombres": "AMANDA",
+      "Primer nombre": "AMANDA",
+      "Segundo nombre": "",
+      "apellidos": "NAVEROS BERMUDEZ",
+      "Primer apellido": "NAVEROS",
+      "Segundo apellido": "BERMUDEZ",
+      "nombre_formal": "NAVEROS BERMUDEZ, AMANDA",
+      "diagnostico": "Mama derecha. Resección de centro mamario. Inmunohistoquímica. - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA SUGIEREN PAPILOMA INTRADUCTAL.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Se observa células mioepiteliales positivas para P63, calponina y CK5/6, recubriendo los tallos fibrovasculares, con expresión moderada de los receptores de estrógeno.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al rotulado M2510623-A3 , el cual corresponde a \"Biopsia de mama derecha\", con diagnostico de \" LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR (TÉJIDO FRAGMENTADO) \", se solicitan los siguientes marcadores: CK5/6, Calponina, receptores estrógeno y P63",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: EXPRESION MODERADA",
+      "IHQ_RECEPTOR_ESTROGENOS": "EXPRESION MODERADA",
+      "IHQ_CK5_6": "POSITIVO",
+      "extraction_timestamp": "2025-11-07T21:36:11.826317",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250999\nCopia Pag. 1 de 1\nNombre : AMANDA NAVEROS BERMUDEZ\nN. peticion : IHQ250999\nN.Identificación : CC. 51854068\nGenero : FEMENINO\nEdad : 58 años 7 meses 27 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 11/09/2025\nFecha Informe : 23/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al rotulado M2510623-A3 , el cual corresponde a \"Biopsia de mama\nderecha\", con diagnostico de \" LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR (TÉJIDO FRAGMENTADO) \", se\nsolicitan los siguientes marcadores: CK5/6, Calponina, receptores estrógeno y P63\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nSe observa células mioepiteliales positivas para P63, calponina y CK5/6, recubriendo los tallos\nfibrovasculares, con expresión moderada de los receptores de estrógeno. \nDIAGNÓSTICO\n Mama derecha. Resección de centro mamario. Inmunohistoquímica.\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA SUGIEREN PAPILOMA INTRADUCTAL.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 40 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK5/6, Calponina, P63, Receptor de Estrógeno",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al rotulado M2510623-A3 , el cual corresponde a \"Biopsia de mama derecha\", con diagnostico de \" LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR (TÉJIDO FRAGMENTADO) \", se solicitan los siguientes marcadores: CK5/6, Calponina, receptores estrógeno y P63",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Se observa células mioepiteliales positivas para P63, calponina y CK5/6, recubriendo los tallos fibrovasculares, con expresión moderada de los receptores de estrógeno.",
+      "Descripcion Diagnostico": "Mama derecha. Resección de centro mamario. Inmunohistoquímica. - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA SUGIEREN PAPILOMA INTRADUCTAL.",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "BX MAMA DERECHA",
+      "Diagnostico Coloracion": "LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR (TÉJIDO FRAGMENTADO)",
+      "Diagnostico Principal": "LOS HALLAZGOS DE INMUNOHISTOQUÍMICA SUGIEREN PAPILOMA INTRADUCTAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: EXPRESION MODERADA",
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "EXPRESION MODERADA"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 143,
+      "campos_vacios": 105,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "completitud_porcentaje": 26.57
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 105,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Resección de centro mamario. Inmunohistoquímica.\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA SUGIEREN PAPILOMA INTRADUCTAL.",
+      "valor_corregido": "Mama derecha. Resección de centro mamario. Inmunohistoquímica. - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA SUGIEREN PAPILOMA INTRADUCTAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250999",
+      "timestamp": "2025-11-07T21:36:11.825323"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al rotulado M2510623-A3 , el cual corresponde a \"Biopsia de mama\nderecha\", con diagnostico de \" LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR (TÉJIDO FRAGMENTADO) \", se\nsolicitan los siguientes marcadores: CK5/6, Calponina, receptores estrógeno y P63",
+      "valor_corregido": "Se realizan niveles histológicos al rotulado M2510623-A3 , el cual corresponde a \"Biopsia de mama derecha\", con diagnostico de \" LESIÓN NEOPLÁSICA EN PATRÓN PAPILAR (TÉJIDO FRAGMENTADO) \", se solicitan los siguientes marcadores: CK5/6, Calponina, receptores estrógeno y P63",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250999",
+      "timestamp": "2025-11-07T21:36:11.825330"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 49
+  }
+}

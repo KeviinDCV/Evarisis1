@@ -1,0 +1,145 @@
+{
+  "session_id": "IHQ250987_20251105_190414",
+  "numero_peticion": "IHQ250987",
+  "timestamp": "2025-11-05T19:04:14.098295",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250987\nCopia Pag. 1 de 2\nNombre : ZULLY ESCUE MESTIZO\nN. peticion : IHQ250987\nN.Identificación : CC. 1061433630\nGenero : FEMENINO\nEdad : 34 años 7 meses 14 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : JORGE WILMAR TEJADA\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 08/09/2025\nFecha Informe : 19/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIOS NIVEL IV\nCUELLO + GANGLIOS NIVEL\nC6\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2503060-C1 que corresponde a \"disección central nivel C6\" con\ndiagnóstico de \"CARCINOMA PAPILAR METASTÁSICO. GANGLIOS LINFÁTICOS COMPROMETIDOS POR\nLESIÓN TUMORAL 8/8.\" por lo que se realiza marcación para CDX2, CK7, TTF1 y CK19.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nEn los niveles realizados se observan ganglios linfáticos reemplazados casi en su totalidad por lesión\nmetastásica compuesta por células con características papilares positivas para CK7, CK19 y TTF1, sin\nmarcación para CDX2. \nDIAGNÓSTICO\n Ganglios de disección central nivel C6. Historia de carcinoma papilar de tiroides. Resección.\nEstudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA METASTÁSICO\nDE POSIBLE ORIGEN TIROIDEO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---\nIHQ250987\nCopia Pag. 2 de 2\nNombre : ZULLY ESCUE MESTIZO\nN. peticion : IHQ250987\nN.Identificación : CC. 1061433630\nGenero : FEMENINO\nEdad : 34 años 7 meses 14 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : JORGE WILMAR TEJADA\nServicio : MEDICINA INTERNA COEX\nFecha Ingreso : 08/09/2025\nFecha Informe : 19/09/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3259,
+      "reduccion_porcentaje": 98.32
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250987",
+      "caso_num": 8,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "nombre_completo": "ZULLY ESCUE MESTIZO",
+      "numero_peticion": "IHQ250987",
+      "identificacion": "1061433630",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "34",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "JORGE WILMAR TEJADA",
+      "servicio": "MEDICINA INTERNA COEX",
+      "fecha_ingreso": "08/09/2025",
+      "fecha_informe": "19/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250987",
+      "N. de identificación": "1061433630",
+      "Tipo de documento": "CC",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "MEDICINA INTERNA COEX",
+      "Médico tratante": "JORGE WILMAR TEJADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/09/2025",
+      "Fecha Informe": "19/09/2025",
+      "nombres": "ZULLY",
+      "Primer nombre": "ZULLY",
+      "Segundo nombre": "",
+      "apellidos": "ESCUE MESTIZO",
+      "Primer apellido": "ESCUE",
+      "Segundo apellido": "MESTIZO",
+      "nombre_formal": "ESCUE MESTIZO, ZULLY",
+      "diagnostico": "Ganglios de disección central nivel C6. Historia de carcinoma papilar de tiroides. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA METASTÁSICO DE POSIBLE ORIGEN TIROIDEO.",
+      "descripcion_microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los niveles realizados se observan ganglios linfáticos reemplazados casi en su totalidad por lesión metastásica compuesta por células con características papilares positivas para CK7, CK19 y TTF1, sin marcación para CDX2.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2503060-C1 que corresponde a \"disección central nivel C6\" con diagnóstico de \"CARCINOMA PAPILAR METASTÁSICO. GANGLIOS LINFÁTICOS COMPROMETIDOS POR LESIÓN TUMORAL 8/8.\" por lo que se realiza marcación para CDX2, CK7, TTF1 y CK19.",
+      "ihq_organo": "GANGLIOS DE DISECCIÓN CENTRAL NIVEL C6",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "MEDICINA_INTERNA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GANGLIOS DE DISECCIÓN CENTRAL NIVEL C6",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "extraction_timestamp": "2025-11-05T19:04:14.276892",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CDX2, CK7, TTF1",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2503060-C1 que corresponde a \"disección central nivel C6\" con diagnóstico de \"CARCINOMA PAPILAR METASTÁSICO. GANGLIOS LINFÁTICOS COMPROMETIDOS POR LESIÓN TUMORAL 8/8.\" por lo que se realiza marcación para CDX2, CK7, TTF1 y CK19.",
+      "Descripcion microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los niveles realizados se observan ganglios linfáticos reemplazados casi en su totalidad por lesión metastásica compuesta por células con características papilares positivas para CK7, CK19 y TTF1, sin marcación para CDX2.",
+      "Descripcion Diagnostico": "Ganglios de disección central nivel C6. Historia de carcinoma papilar de tiroides. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA METASTÁSICO DE POSIBLE ORIGEN TIROIDEO.",
+      "IHQ_ORGANO": "GANGLIOS DE DISECCIÓN CENTRAL NIVEL C6",
+      "Organo": "GANGLIOS NIVEL IV CUELLO + GANGLIOS NIVEL C6",
+      "Diagnostico Coloracion": "CARCINOMA PAPILAR METASTÁSICO. GANGLIOS LINFÁTICOS COMPROMETIDOS POR LESIÓN TUMORAL 8/8",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA METASTÁSICO DE POSIBLE ORIGEN TIROIDEO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_TTF1": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 143,
+      "campos_vacios": 105,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "completitud_porcentaje": 26.57
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 105,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglios de disección central nivel C6. Historia de carcinoma papilar de tiroides. Resección.\nEstudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA METASTÁSICO\nDE POSIBLE ORIGEN TIROIDEO.",
+      "valor_corregido": "Ganglios de disección central nivel C6. Historia de carcinoma papilar de tiroides. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA METASTÁSICO DE POSIBLE ORIGEN TIROIDEO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250987",
+      "timestamp": "2025-11-05T19:04:14.276433"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2503060-C1 que corresponde a \"disección central nivel C6\" con\ndiagnóstico de \"CARCINOMA PAPILAR METASTÁSICO. GANGLIOS LINFÁTICOS COMPROMETIDOS POR\nLESIÓN TUMORAL 8/8.\" por lo que se realiza marcación para CDX2, CK7, TTF1 y CK19.",
+      "valor_corregido": "Se realizan niveles al bloque M2503060-C1 que corresponde a \"disección central nivel C6\" con diagnóstico de \"CARCINOMA PAPILAR METASTÁSICO. GANGLIOS LINFÁTICOS COMPROMETIDOS POR LESIÓN TUMORAL 8/8.\" por lo que se realiza marcación para CDX2, CK7, TTF1 y CK19.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250987",
+      "timestamp": "2025-11-05T19:04:14.276443"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 48
+  }
+}

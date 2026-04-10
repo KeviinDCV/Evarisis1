@@ -1,0 +1,164 @@
+{
+  "session_id": "IHQ250202_20260108_085356",
+  "numero_peticion": "IHQ250202",
+  "timestamp": "2026-01-08T08:53:56.074535",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250202\nCopia Pag. 1 de 2\nNombre : LUIS NEVARDO ARROYAVE CEBALLOS N. peticion : IHQ250202\nN.Identificación : CC. 6524211\nGenero : MASCULINO\nEdad : 65 años 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 25/02/2025\nFecha Informe : 07/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PARED TORACICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501925 que corresponde a\n\"ADENOCARCINOMA METASTÁSICO\". Previa valoración de la\ncoloración básica, se realizan cortes histológicos para los siguientes marcadores:\nTTF-1 y\nnapsina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.«\nLos marcadores napsina y TTF-1 - son negativos. \nDIAGNÓSTICO\nPared torácica. Lesión. Biopsia. Estudio de inmunohistoquimica:\nLOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA METASTÁSICO CON COMPONENTE\nMUCINOSO.\nVER COMENTARIO.\nCOMENTARIOS\nEl adenocarcinoma mucinoso no es organotipico compartiendo inmunoperfil en diferentes\norganos, dado que la sospecha de este paciente es alta de origen pulmonar , los cuales pueden\nperder la expresión de TTF1, se decide no ampliar panel de inmunohistoquimica para preservar\ntejido para estudio moleculares adicionales. La interpretación de este resultado y diagnostico\nfinal debe ser realizado por medico tratante en correlación con la historia clínica y estudios de\nextension\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---\nIHQ250202\nCopia Pag. 2 de 2\nNombre : LUIS NEVARDO ARROYAVE CEBALLOS N. peticion : IHQ250202\nN.Identificación : CC. 6524211\nGenero : MASCULINO\nEdad : 65 años 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 25/02/2025\nFecha Informe : 07/03/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3405,
+      "reduccion_porcentaje": 97.95
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250202",
+      "caso_num": 41,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "nombre_completo": "LUIS NEVARDO ARROYAVE CEBALLOS",
+      "numero_peticion": "IHQ250202",
+      "identificacion": "6524211",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "65",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ISABEL CRISTINA TORRES",
+      "servicio": "CIRUGIA HOMBRES",
+      "fecha_ingreso": "25/02/2025",
+      "fecha_informe": "07/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250202",
+      "N. de identificación": "6524211",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CIRUGIA HOMBRES",
+      "Médico tratante": "ISABEL CRISTINA TORRES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "25/02/2025",
+      "Fecha Informe": "07/03/2025",
+      "nombres": "LUIS NEVARDO ARROYAVE",
+      "Primer nombre": "LUIS",
+      "Segundo nombre": "NEVARDO ARROYAVE",
+      "apellidos": "CEBALLOS",
+      "Primer apellido": "CEBALLOS",
+      "Segundo apellido": "",
+      "nombre_formal": "CEBALLOS, LUIS NEVARDO ARROYAVE",
+      "diagnostico": "Pared torácica. Lesión. Biopsia. Estudio de inmunohistoquimica: LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA METASTÁSICO CON COMPONENTE MUCINOSO. VER COMENTARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.« Los marcadores napsina y TTF1 - son negativos.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501925 que corresponde a \"ADENOCARCINOMA METASTÁSICO\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: TTF1 y napsina.",
+      "ihq_organo": "PARED TORÁCICA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "TTF-1, NAPSIN",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "El adenocarcinoma mucinoso no es organotipico compartiendo inmunoperfil en diferentes organos, dado que la sospecha de este paciente es alta de origen pulmonar , los cuales pueden perder la expresión de TTF1, se decide no ampliar panel de inmunohistoquimica para preservar tejido para estudio moleculares adicionales. La interpretación de este resultado y diagnostico final debe ser realizado por medico tratante en correlación con la historia clínica y estudios de extension NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 72 --- IHQ250202 Copia Pag. 2 de 2 Nombre : LUIS NEVARDO ARROYAVE CEBALLOS N. peticion : IHQ250202 N.Identificación : CC. 6524211 Genero : MASCULINO Edad : 65 años 11 dias EPS : EMSSANAR S.A.S Médico tratante : ISABEL CRISTINA TORRES Servicio : CIRUGIA HOMBRES Fecha Ingreso : 25/02/2025 Fecha Informe : 07/03/2025",
+      "IHQ_ORGANO": "PARED TORÁCICA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, NAPSIN",
+      "extraction_timestamp": "2026-01-08T08:53:56.531058",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250202\nCopia Pag. 1 de 2\nNombre : LUIS NEVARDO ARROYAVE CEBALLOS N. peticion : IHQ250202\nN.Identificación : CC. 6524211\nGenero : MASCULINO\nEdad : 65 años 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 25/02/2025\nFecha Informe : 07/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PARED TORACICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501925 que corresponde a\n\"ADENOCARCINOMA METASTÁSICO\". Previa valoración de la\ncoloración básica, se realizan cortes histológicos para los siguientes marcadores:\nTTF-1 y\nnapsina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.«\nLos marcadores napsina y TTF-1 - son negativos. \nDIAGNÓSTICO\nPared torácica. Lesión. Biopsia. Estudio de inmunohistoquimica:\nLOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA METASTÁSICO CON COMPONENTE\nMUCINOSO.\nVER COMENTARIO.\nCOMENTARIOS\nEl adenocarcinoma mucinoso no es organotipico compartiendo inmunoperfil en diferentes\norganos, dado que la sospecha de este paciente es alta de origen pulmonar , los cuales pueden\nperder la expresión de TTF1, se decide no ampliar panel de inmunohistoquimica para preservar\ntejido para estudio moleculares adicionales. La interpretación de este resultado y diagnostico\nfinal debe ser realizado por medico tratante en correlación con la historia clínica y estudios de\nextension\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---\nIHQ250202\nCopia Pag. 2 de 2\nNombre : LUIS NEVARDO ARROYAVE CEBALLOS N. peticion : IHQ250202\nN.Identificación : CC. 6524211\nGenero : MASCULINO\nEdad : 65 años 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 25/02/2025\nFecha Informe : 07/03/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, NAPSIN",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501925 que corresponde a \"ADENOCARCINOMA METASTÁSICO\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: TTF-1 y napsina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.« Los marcadores napsina y TTF-1 - son negativos.",
+      "Descripcion Diagnostico": "Pared torácica. Lesión. Biopsia. Estudio de inmunohistoquimica: LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA METASTÁSICO CON COMPONENTE MUCINOSO. VER COMENTARIO.",
+      "IHQ_ORGANO": "PARED TORÁCICA",
+      "Organo": "LESION PARED TORACICA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTÁSICO CON COMPONENTE MUCINOSO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_NAPSIN": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 132,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 132,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pared torácica. Lesión. Biopsia. Estudio de inmunohistoquimica:\nLOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA METASTÁSICO CON COMPONENTE\nMUCINOSO.\nVER COMENTARIO.",
+      "valor_corregido": "Pared torácica. Lesión. Biopsia. Estudio de inmunohistoquimica: LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA METASTÁSICO CON COMPONENTE MUCINOSO. VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250202",
+      "timestamp": "2026-01-08T08:53:56.530795"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501925 que corresponde a \"ADENOCARCINOMA METASTÁSICO\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: TTF-1 y napsina.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501925 que corresponde a \"ADENOCARCINOMA METASTÁSICO\". Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: TTF1 y napsina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250202",
+      "timestamp": "2026-01-08T08:53:56.530803"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.« Los marcadores napsina y TTF-1 - son negativos.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.« Los marcadores napsina y TTF1 - son negativos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250202",
+      "timestamp": "2026-01-08T08:53:56.530805"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El adenocarcinoma mucinoso no es organotipico compartiendo inmunoperfil en diferentes\norganos, dado que la sospecha de este paciente es alta de origen pulmonar , los cuales pueden\nperder la expresión de TTF1, se decide no ampliar panel de inmunohistoquimica para preservar\ntejido para estudio moleculares adicionales. La interpretación de este resultado y diagnostico\nfinal debe ser realizado por medico tratante en correlación con la historia clínica y estudios de\nextension\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---\nIHQ250202\nCopia Pag. 2 de 2\nNombre : LUIS NEVARDO ARROYAVE CEBALLOS N. peticion : IHQ250202\nN.Identificación : CC. 6524211\nGenero : MASCULINO\nEdad : 65 años 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 25/02/2025\nFecha Informe : 07/03/2025",
+      "valor_corregido": "El adenocarcinoma mucinoso no es organotipico compartiendo inmunoperfil en diferentes organos, dado que la sospecha de este paciente es alta de origen pulmonar , los cuales pueden perder la expresión de TTF1, se decide no ampliar panel de inmunohistoquimica para preservar tejido para estudio moleculares adicionales. La interpretación de este resultado y diagnostico final debe ser realizado por medico tratante en correlación con la historia clínica y estudios de extension NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 72 --- IHQ250202 Copia Pag. 2 de 2 Nombre : LUIS NEVARDO ARROYAVE CEBALLOS N. peticion : IHQ250202 N.Identificación : CC. 6524211 Genero : MASCULINO Edad : 65 años 11 dias EPS : EMSSANAR S.A.S Médico tratante : ISABEL CRISTINA TORRES Servicio : CIRUGIA HOMBRES Fecha Ingreso : 25/02/2025 Fecha Informe : 07/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250202",
+      "timestamp": "2026-01-08T08:53:56.530806"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 50
+  }
+}

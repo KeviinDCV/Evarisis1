@@ -1,0 +1,155 @@
+{
+  "session_id": "IHQ250182_20260108_005653",
+  "numero_peticion": "IHQ250182",
+  "timestamp": "2026-01-08T00:56:53.268639",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250182\nCopia Pag. 1 de 1\nNombre : LUIS ALBERTO PARRA VANEGAS\nN. peticion : IHQ250182\nN.Identificación : CC. 6360423\nGenero : MASCULINO\nEdad : 66 años 21 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : UCI 2\nFecha Ingreso : 19/02/2025\nFecha Informe : 27/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500973”\ncorrespondiente\na\n“medula\nósea”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nMedula ósea con celularidad global del 50% en la que se identifican células mieloides (MPO+) y eritroides\n(Glicoforina +) invertida Los linfocitos T (CD3 +) y linfocitos B ( CD 20 +) son de inmunofenotipo\nesperado. Las células tumorales corresponden a células plasmáticas que son positivas de forma fuerte y\ndifusa para CD38,CD 138 y CD 56 con restricción de la expresión de la cadena liviana kappa. Cyclina\npositiva y CD 117 negativo.\ndiagnósticos\nde\n\"CELULARIDAD\nDEL\n50%,\nMADURACION\nNORMAL\nDE\nLAS\nTRES\nLINEAS\nCELULARES,\nLIGERO\nAUMENTO\nDE\nCELULARIDAD\nPLASMOCITOIDE, MEGACARIOCITOS POR CAMPO DE ALTO PODER DE: 4 A 6\" . Previa revisión de la\nhistología se realizan niveles histológicos para tinción con los marcadores: MPO, CD3, CD 20, CD38, CD\n138, CD 56,Cyclina, Lambda y kappa\nDIAGNÓSTICO\n Medula osea. Biopsia. Estudio de inmunohistoquimica:\nNEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA KAPPA\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2692,
+      "reduccion_porcentaje": 98.38
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250182",
+      "caso_num": 22,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD38": "POSITIVO (fuerte y difusa)",
+      "IHQ_CD138": "POSITIVO (fuerte y difusa)",
+      "IHQ_CD56": "POSITIVO (fuerte y difusa)",
+      "nombre_completo": "LUIS ALBERTO PARRA VANEGAS",
+      "numero_peticion": "IHQ250182",
+      "identificacion": "6360423",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "66",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "LAZARO DAMIAN CORTINA",
+      "servicio": "",
+      "fecha_ingreso": "19/02/2025",
+      "fecha_informe": "27/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250182",
+      "N. de identificación": "6360423",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "",
+      "Médico tratante": "LAZARO DAMIAN CORTINA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "19/02/2025",
+      "Fecha Informe": "27/02/2025",
+      "nombres": "LUIS ALBERTO PARRA",
+      "Primer nombre": "LUIS",
+      "Segundo nombre": "ALBERTO PARRA",
+      "apellidos": "VANEGAS",
+      "Primer apellido": "VANEGAS",
+      "Segundo apellido": "",
+      "nombre_formal": "VANEGAS, LUIS ALBERTO PARRA",
+      "diagnostico": "Medula osea. Biopsia. Estudio de inmunohistoquimica: NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA KAPPA",
+      "descripcion_microscopica": "Medula ósea con celularidad global del 50% en la que se identifican células mieloides (MPO+) y eritroides (Glicoforina +) invertida Los linfocitos T (CD3 +) y linfocitos B ( CD 20 +) son de inmunofenotipo esperado. Las células tumorales corresponden a células plasmáticas que son positivas de forma fuerte y difusa para CD38,CD 138 y CD 56 con restricción de la expresión de la cadena liviana kappa. Cyclina positiva y CD 117 negativo. diagnósticos de \"CELULARIDAD DEL 50%, MADURACION NORMAL DE LAS TRES LINEAS CELULARES, LIGERO AUMENTO DE CELULARIDAD PLASMOCITOIDE, MEGACARIOCITOS POR CAMPO DE ALTO PODER DE: 4 A 6\" . Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MPO, CD3, CD 20, CD38, CD 138, CD 56,Cyclina, Lambda y kappa",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500973” correspondiente a “medula ósea” con",
+      "ihq_organo": "MEDULA OSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MEDULA OSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_LAMBDA": "POSITIVO",
+      "IHQ_KAPPA": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_CICLINA_D1": "POSITIVA",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "extraction_timestamp": "2026-01-08T00:56:53.796418",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250182\nCopia Pag. 1 de 1\nNombre : LUIS ALBERTO PARRA VANEGAS\nN. peticion : IHQ250182\nN.Identificación : CC. 6360423\nGenero : MASCULINO\nEdad : 66 años 21 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : UCI 2\nFecha Ingreso : 19/02/2025\nFecha Informe : 27/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MEDULA OSEA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2500973”\ncorrespondiente\na\n“medula\nósea”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nMedula ósea con celularidad global del 50% en la que se identifican células mieloides (MPO+) y eritroides\n(Glicoforina +) invertida Los linfocitos T (CD3 +) y linfocitos B ( CD 20 +) son de inmunofenotipo\nesperado. Las células tumorales corresponden a células plasmáticas que son positivas de forma fuerte y\ndifusa para CD38,CD 138 y CD 56 con restricción de la expresión de la cadena liviana kappa. Cyclina\npositiva y CD 117 negativo.\ndiagnósticos\nde\n\"CELULARIDAD\nDEL\n50%,\nMADURACION\nNORMAL\nDE\nLAS\nTRES\nLINEAS\nCELULARES,\nLIGERO\nAUMENTO\nDE\nCELULARIDAD\nPLASMOCITOIDE, MEGACARIOCITOS POR CAMPO DE ALTO PODER DE: 4 A 6\" . Previa revisión de la\nhistología se realizan niveles histológicos para tinción con los marcadores: MPO, CD3, CD 20, CD38, CD\n138, CD 56,Cyclina, Lambda y kappa\nDIAGNÓSTICO\n Medula osea. Biopsia. Estudio de inmunohistoquimica:\nNEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA KAPPA\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD117, CD138, CD20, CD3, CD38, CD56, CICLINA D1, GLICOFORINA, Kappa, Lambda, MIELOPEROXIDASA",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2500973” correspondiente a “medula ósea” con",
+      "Descripcion microscopica": "Medula ósea con celularidad global del 50% en la que se identifican células mieloides (MPO+) y eritroides (Glicoforina +) invertida Los linfocitos T (CD3 +) y linfocitos B ( CD 20 +) son de inmunofenotipo esperado. Las células tumorales corresponden a células plasmáticas que son positivas de forma fuerte y difusa para CD38,CD 138 y CD 56 con restricción de la expresión de la cadena liviana kappa. Cyclina positiva y CD 117 negativo. diagnósticos de \"CELULARIDAD DEL 50%, MADURACION NORMAL DE LAS TRES LINEAS CELULARES, LIGERO AUMENTO DE CELULARIDAD PLASMOCITOIDE, MEGACARIOCITOS POR CAMPO DE ALTO PODER DE: 4 A 6\" . Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MPO, CD3, CD 20, CD38, CD 138, CD 56,Cyclina, Lambda y kappa",
+      "Descripcion Diagnostico": "Medula osea. Biopsia. Estudio de inmunohistoquimica: NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA KAPPA",
+      "IHQ_ORGANO": "MEDULA OSEA",
+      "Organo": "BX MEDULA OSEA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA KAPPA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_CD138": "POSITIVO (fuerte y difusa)",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD38": "POSITIVO (fuerte y difusa)",
+      "IHQ_CD56": "POSITIVO (fuerte y difusa)",
+      "IHQ_CICLINA_D1": "POSITIVA",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_KAPPA": "POSITIVO",
+      "IHQ_LAMBDA": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 167,
+      "campos_vacios": 122,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 11,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 122,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula osea. Biopsia. Estudio de inmunohistoquimica:\nNEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA KAPPA",
+      "valor_corregido": "Medula osea. Biopsia. Estudio de inmunohistoquimica: NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCIÓN DE LA CADENA LIVIANA KAPPA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250182",
+      "timestamp": "2026-01-08T00:56:53.796235"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 53
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250120_20260105_221951",
+  "numero_peticion": "IHQ250120",
+  "timestamp": "2026-01-05T22:19:51.472371",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250120\nCopia Pag. 1 de 1\nNombre : SHIRLEY LIZARALDE GIRON\nN. peticion : IHQ250120\nN.Identificación : CC. 29671326\nGenero : FEMENINO\nEdad : 43 años 2 meses 1 dia\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 03/02/2025\nFecha Informe : 18/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLECHO UNGUEAL HALLUX\nBILATERAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2409574, el cual corresponde a biopsia de lecho ungueal en\nhállux bilateral, con diagnóstico de \"MELANONIQUIA ESTRIADA\". Se ordenan los siguientes marcadores:\nSOX10, MATR-1, HMB45 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas inmunotinciones con todos los marcadores descritos (SOX-10, MATR-1, HMB45 y Ki-67) son negativas.\nDIAGNÓSTICO\n A y B. Lecho ungueal de hállux bilateral. Biopsia. Estudio de inmunohistoquímica:\nNEGATIVO PARA PROLIFERACIÓN MELANOCÍTICA EN LA MUESTRA EVALUADA\nCOMENTARIOS\nCaso revisado por Dr. Ricardo Rueda, Dermatopatólogo.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 2430,
+      "reduccion_porcentaje": 98.6
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250120",
+      "caso_num": 13,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_SOX10": "POSITIVO",
+      "IHQ_MELAN_A": "POSITIVO",
+      "IHQ_HMB45": "POSITIVO",
+      "IHQ_KI-67": "POSITIVO",
+      "nombre_completo": "SHIRLEY LIZARALDE GIRON",
+      "numero_peticion": "IHQ250120",
+      "identificacion": "29671326",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "43",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "LUIS ALFONSO GONZALEZ",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "03/02/2025",
+      "fecha_informe": "18/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250120",
+      "N. de identificación": "29671326",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "LUIS ALFONSO GONZALEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/02/2025",
+      "Fecha Informe": "18/02/2025",
+      "nombres": "SHIRLEY LIZARALDE",
+      "Primer nombre": "SHIRLEY",
+      "Segundo nombre": "LIZARALDE",
+      "apellidos": "GIRON",
+      "Primer apellido": "GIRON",
+      "Segundo apellido": "",
+      "nombre_formal": "GIRON, SHIRLEY LIZARALDE",
+      "diagnostico": "A y B. Lecho ungueal de hállux bilateral. Biopsia. Estudio de inmunohistoquímica: NEGATIVO PARA PROLIFERACIÓN MELANOCÍTICA EN LA MUESTRA EVALUADA",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las inmunotinciones con todos los marcadores descritos (SOX-10, MATR-1, HMB45 y KI-67) son negativas.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2409574, el cual corresponde a biopsia de lecho ungueal en hállux bilateral, con diagnóstico de \"MELANONIQUIA ESTRIADA\". Se ordenan los siguientes marcadores: SOX10, MATR-1, HMB45 y KI-67.",
+      "ihq_organo": "LECHO UNGUEAL DE HÁLLUX BILATERAL",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "SOX10, MATR 1, HMB45, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso revisado por Dr. Ricardo Rueda, Dermatopatólogo.",
+      "IHQ_ORGANO": "LECHO UNGUEAL DE HÁLLUX BILATERAL",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "Ki-67: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "SOX10, MATR 1, HMB45, Ki-67",
+      "extraction_timestamp": "2026-01-05T22:19:51.801008",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250120\nCopia Pag. 1 de 1\nNombre : SHIRLEY LIZARALDE GIRON\nN. peticion : IHQ250120\nN.Identificación : CC. 29671326\nGenero : FEMENINO\nEdad : 43 años 2 meses 1 dia\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 03/02/2025\nFecha Informe : 18/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLECHO UNGUEAL HALLUX\nBILATERAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2409574, el cual corresponde a biopsia de lecho ungueal en\nhállux bilateral, con diagnóstico de \"MELANONIQUIA ESTRIADA\". Se ordenan los siguientes marcadores:\nSOX10, MATR-1, HMB45 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas inmunotinciones con todos los marcadores descritos (SOX-10, MATR-1, HMB45 y Ki-67) son negativas.\nDIAGNÓSTICO\n A y B. Lecho ungueal de hállux bilateral. Biopsia. Estudio de inmunohistoquímica:\nNEGATIVO PARA PROLIFERACIÓN MELANOCÍTICA EN LA MUESTRA EVALUADA\nCOMENTARIOS\nCaso revisado por Dr. Ricardo Rueda, Dermatopatólogo.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "SOX10, MATR 1, HMB45, Ki-67, MELAN-A",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2409574, el cual corresponde a biopsia de lecho ungueal en hállux bilateral, con diagnóstico de \"MELANONIQUIA ESTRIADA\". Se ordenan los siguientes marcadores: SOX10, MATR-1, HMB45 y Ki-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las inmunotinciones con todos los marcadores descritos (SOX-10, MATR-1, HMB45 y Ki-67) son negativas.",
+      "Descripcion Diagnostico": "A y B. Lecho ungueal de hállux bilateral. Biopsia. Estudio de inmunohistoquímica: NEGATIVO PARA PROLIFERACIÓN MELANOCÍTICA EN LA MUESTRA EVALUADA",
+      "IHQ_ORGANO": "LECHO UNGUEAL DE HÁLLUX BILATERAL",
+      "Organo": "LECHO UNGUEAL HALLUX BILATERAL",
+      "Diagnostico Coloracion": "MELANONIQUIA ESTRIADA",
+      "Diagnostico Principal": "NEGATIVO PARA PROLIFERACIÓN MELANOCÍTICA EN LA MUESTRA EVALUADA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: POSITIVO",
+      "IHQ_SOX10": "POSITIVO",
+      "IHQ_HMB45": "POSITIVO",
+      "IHQ_KI-67": "POSITIVO",
+      "IHQ_MELAN_A": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 130,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 130,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A y B. Lecho ungueal de hállux bilateral. Biopsia. Estudio de inmunohistoquímica:\nNEGATIVO PARA PROLIFERACIÓN MELANOCÍTICA EN LA MUESTRA EVALUADA",
+      "valor_corregido": "A y B. Lecho ungueal de hállux bilateral. Biopsia. Estudio de inmunohistoquímica: NEGATIVO PARA PROLIFERACIÓN MELANOCÍTICA EN LA MUESTRA EVALUADA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250120",
+      "timestamp": "2026-01-05T22:19:51.799995"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2409574, el cual corresponde a biopsia de lecho ungueal en hállux bilateral, con diagnóstico de \"MELANONIQUIA ESTRIADA\". Se ordenan los siguientes marcadores: SOX10, MATR-1, HMB45 y Ki-67.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2409574, el cual corresponde a biopsia de lecho ungueal en hállux bilateral, con diagnóstico de \"MELANONIQUIA ESTRIADA\". Se ordenan los siguientes marcadores: SOX10, MATR-1, HMB45 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250120",
+      "timestamp": "2026-01-05T22:19:51.800001"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las inmunotinciones con todos los marcadores descritos (SOX-10, MATR-1, HMB45 y Ki-67) son negativas.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las inmunotinciones con todos los marcadores descritos (SOX-10, MATR-1, HMB45 y KI-67) son negativas.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250120",
+      "timestamp": "2026-01-05T22:19:51.800003"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 52
+  }
+}

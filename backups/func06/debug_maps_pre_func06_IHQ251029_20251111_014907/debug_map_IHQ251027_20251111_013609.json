@@ -1,0 +1,153 @@
+{
+  "session_id": "IHQ251027_20251111_013609",
+  "numero_peticion": "IHQ251027",
+  "timestamp": "2025-11-11T01:36:09.019991",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251027\nFinal Pag. 1 de 1\nNombre : JUAN CAMILO MACA CHICANGANA\nN. peticion : IHQ251027\nN.Identificación : CC. 1107525456\nGenero : MASCULINO\nEdad : 26 años 4 meses 14 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ANGEL ARTURO ROBERT\nServicio : CIRUGIA COEX\nFecha Ingreso : 18/09/2025\nFecha Informe : 29/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCANAL ANAL ANTERIOR\nDERECHO +LATERAL\nDERECHO E IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos a la patología externa 5210397, rotulado como \" canal anal anterior\nderecho, canal anal lateral derecho, canal anal lateral izquierdo\" con diagnostico de \" LIGEROS CAMBIOS\nINDEFINIDOS ENTRE CAMBIOS REPARATIVOS VS DISPLASIA \", se solicitan los siguientes marcadores: P16,\nKI-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn la inmunohistoquimica se evidencian celulas epiteliales, que NO presentan inmunoreactividad a P16, y\npresenta un kI67 positivo esperado en la mebrana basal.\nDIAGNÓSTICO\nCanal anterior derecho. lateral derecho y lateral izquierdo. Lesion. Biopsia. \n- LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 90 ---",
+    "hash_original": "876c7e73f63a9ff1961337d4cd3f1cd7",
+    "estadisticas": {
+      "caracteres_totales": 193227,
+      "caracteres_consolidados": 2527,
+      "reduccion_porcentaje": 98.69
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251027",
+      "caso_num": 42,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "JUAN CAMILO MACA CHICANGANA",
+      "numero_peticion": "IHQ251027",
+      "identificacion": "1107525456",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "26",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "ANGEL ARTURO ROBERT",
+      "servicio": "CIRUGIA COEX",
+      "fecha_ingreso": "18/09/2025",
+      "fecha_informe": "29/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251027",
+      "N. de identificación": "1107525456",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CIRUGIA COEX",
+      "Médico tratante": "ANGEL ARTURO ROBERT",
+      "Fecha de ingreso (2. Fecha de la muestra)": "18/09/2025",
+      "Fecha Informe": "29/09/2025",
+      "nombres": "JUAN CAMILO",
+      "Primer nombre": "JUAN",
+      "Segundo nombre": "CAMILO",
+      "apellidos": "MACA CHICANGANA",
+      "Primer apellido": "MACA",
+      "Segundo apellido": "CHICANGANA",
+      "nombre_formal": "MACA CHICANGANA, JUAN CAMILO",
+      "diagnostico": "Canal anterior derecho. lateral derecho y lateral izquierdo. Lesion. Biopsia. - LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la inmunohistoquimica se evidencian celulas epiteliales, que NO presentan inmunoreactividad a P16, y presenta un KI-67 positivo esperado en la mebrana basal.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos a la patología externa 5210397, rotulado como \" canal anal anterior derecho, canal anal lateral derecho, canal anal lateral izquierdo\" con diagnostico de \" LIGEROS CAMBIOS INDEFINIDOS ENTRE CAMBIOS REPARATIVOS VS DISPLASIA \", se solicitan los siguientes marcadores: P16, KI-67. DESCRIPCIÓN MICROSCÓPICA Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la inmunohistoquimica se evidencian celulas epiteliales, que NO presentan inmunoreactividad a P16, y presenta un KI-67 positivo esperado en la mebrana basal. DIAGNÓSTICO Canal anterior derecho. lateral derecho y lateral izquierdo. Lesion. Biopsia. - LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 90 ---",
+      "ihq_organo": "CANAL ANTERIOR DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CANAL ANTERIOR DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: POSITIVO",
+      "IHQ_KI-67": "POSITIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "p16": "NEGATIVO",
+      "extraction_timestamp": "2025-11-11T01:36:09.132321",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251027\nFinal Pag. 1 de 1\nNombre : JUAN CAMILO MACA CHICANGANA\nN. peticion : IHQ251027\nN.Identificación : CC. 1107525456\nGenero : MASCULINO\nEdad : 26 años 4 meses 14 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ANGEL ARTURO ROBERT\nServicio : CIRUGIA COEX\nFecha Ingreso : 18/09/2025\nFecha Informe : 29/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCANAL ANAL ANTERIOR\nDERECHO +LATERAL\nDERECHO E IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos a la patología externa 5210397, rotulado como \" canal anal anterior\nderecho, canal anal lateral derecho, canal anal lateral izquierdo\" con diagnostico de \" LIGEROS CAMBIOS\nINDEFINIDOS ENTRE CAMBIOS REPARATIVOS VS DISPLASIA \", se solicitan los siguientes marcadores: P16,\nKI-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn la inmunohistoquimica se evidencian celulas epiteliales, que NO presentan inmunoreactividad a P16, y\npresenta un kI67 positivo esperado en la mebrana basal.\nDIAGNÓSTICO\nCanal anterior derecho. lateral derecho y lateral izquierdo. Lesion. Biopsia. \n- LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 90 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, Ki-67",
+      "Descripcion macroscopica": "Se realizan niveles histológicos a la patología externa 5210397, rotulado como \" canal anal anterior derecho, canal anal lateral derecho, canal anal lateral izquierdo\" con diagnostico de \" LIGEROS CAMBIOS INDEFINIDOS ENTRE CAMBIOS REPARATIVOS VS DISPLASIA \", se solicitan los siguientes marcadores: P16, KI-67. DESCRIPCIÓN MICROSCÓPICA Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la inmunohistoquimica se evidencian celulas epiteliales, que NO presentan inmunoreactividad a P16, y presenta un kI67 positivo esperado en la mebrana basal. DIAGNÓSTICO Canal anterior derecho. lateral derecho y lateral izquierdo. Lesion. Biopsia. - LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 90 ---",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la inmunohistoquimica se evidencian celulas epiteliales, que NO presentan inmunoreactividad a P16, y presenta un kI67 positivo esperado en la mebrana basal.",
+      "Descripcion Diagnostico": "Canal anterior derecho. lateral derecho y lateral izquierdo. Lesion. Biopsia. - LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO",
+      "IHQ_ORGANO": "CANAL ANTERIOR DERECHO",
+      "Organo": "CANAL ANAL ANTERIOR DERECHO +LATERAL DERECHO E IZQUIERDO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CAMBIO EPITELIALES DE ASPECTO REACTIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: POSITIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 111,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 25.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 111,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Canal anterior derecho. lateral derecho y lateral izquierdo. Lesion. Biopsia. \n- LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO",
+      "valor_corregido": "Canal anterior derecho. lateral derecho y lateral izquierdo. Lesion. Biopsia. - LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251027",
+      "timestamp": "2025-11-11T01:36:09.132075"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos a la patología externa 5210397, rotulado como \" canal anal anterior\nderecho, canal anal lateral derecho, canal anal lateral izquierdo\" con diagnostico de \" LIGEROS CAMBIOS\nINDEFINIDOS ENTRE CAMBIOS REPARATIVOS VS DISPLASIA \", se solicitan los siguientes marcadores: P16,\nKI-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn la inmunohistoquimica se evidencian celulas epiteliales, que NO presentan inmunoreactividad a P16, y\npresenta un kI67 positivo esperado en la mebrana basal.\nDIAGNÓSTICO\nCanal anterior derecho. lateral derecho y lateral izquierdo. Lesion. Biopsia. \n- LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 90 ---",
+      "valor_corregido": "Se realizan niveles histológicos a la patología externa 5210397, rotulado como \" canal anal anterior derecho, canal anal lateral derecho, canal anal lateral izquierdo\" con diagnostico de \" LIGEROS CAMBIOS INDEFINIDOS ENTRE CAMBIOS REPARATIVOS VS DISPLASIA \", se solicitan los siguientes marcadores: P16, KI-67. DESCRIPCIÓN MICROSCÓPICA Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la inmunohistoquimica se evidencian celulas epiteliales, que NO presentan inmunoreactividad a P16, y presenta un KI-67 positivo esperado en la mebrana basal. DIAGNÓSTICO Canal anterior derecho. lateral derecho y lateral izquierdo. Lesion. Biopsia. - LOS HALLAZGOS INMUNOHISTOQUIMICOS FAVORECEN A CAMBIO EPITELIALES DE ASPECTO REACTIVO NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 90 ---",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251027",
+      "timestamp": "2025-11-11T01:36:09.132084"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la inmunohistoquimica se evidencian celulas epiteliales, que NO presentan inmunoreactividad a P16, y presenta un kI67 positivo esperado en la mebrana basal.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En la inmunohistoquimica se evidencian celulas epiteliales, que NO presentan inmunoreactividad a P16, y presenta un KI-67 positivo esperado en la mebrana basal.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251027",
+      "timestamp": "2025-11-11T01:36:09.132086"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193227,
+    "campos_extraidos": 50
+  }
+}

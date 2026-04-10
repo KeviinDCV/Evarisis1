@@ -1,0 +1,20 @@
+{
+  "timestamp": "20251109_063711",
+  "biomarcador": "CAM5",
+  "estado": "YA_EXISTE",
+  "problema_detectado": "DUPLICACION_PATRONES",
+  "columnas_bd": [
+    "IHQ_CAM5",
+    "IHQ_CAM52"
+  ],
+  "decision": "UNIFICAR_BAJO_IHQ_CAM5",
+  "accion_requerida": "LIMPIEZA_NO_AGREGAR",
+  "archivos_afectados": [
+    "core/database_manager.py",
+    "core/extractors/biomarker_extractor.py",
+    "herramientas_ia/auditor_sistema.py",
+    "ui.py",
+    "core/validation_checker.py",
+    "core/unified_extractor.py"
+  ]
+}

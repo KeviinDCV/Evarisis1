@@ -1,0 +1,151 @@
+{
+  "session_id": "IHQ250271_20260203_032841",
+  "numero_peticion": "IHQ250271",
+  "timestamp": "2026-02-03T03:28:41.290659",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250271\nCopia Pag. 1 de 2\nNombre : DORIS JIMENEZ\nN. peticion : IHQ250271\nN.Identificación : CC. 29688553\nGenero : INDETERMINADO\nEdad : 67 años 2 meses 29 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : MARCO ANTONIO REVEIZ\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 14/03/2025\nFecha Informe : 21/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nHISTERECTOMIA +\nANEXECTOMIA BILATERAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410188” que corresponde a “Útero” con diagnóstico principal de “HALLAZGOS MORFOLÓGICOS\nQUE FAVORECEN NÓDULO FUSOCELULAR CON NECROSIS QUE REQUIERE SER EVALUADO POR ESTUDIOS\nDE INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan niveles histológicos al bloque 5\npara tinción con H-caldesmon, p16, KI-67, y p53.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para H-caldesmon.\nÍndice de proliferación KI-67 menor al 5%.\np16 negativo.\np53 con ausencia de expresión.\nDIAGNÓSTICO\nÚtero. Nódulo. Histerectomía. Estudio de inmunohistoquímica:\n- HALLAZGOS DE INMUNOHISTOQUÍMICA Y MORFOLÓGICOS QUE FAVORECEN LEIOMIOMA.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---\nIHQ250271\nCopia Pag. 2 de 2\nNombre : DORIS JIMENEZ\nN. peticion : IHQ250271\nN.Identificación : CC. 29688553\nGenero : INDETERMINADO\nEdad : 67 años 2 meses 29 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : MARCO ANTONIO REVEIZ\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 14/03/2025\nFecha Informe : 21/03/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3205,
+      "reduccion_porcentaje": 98.17
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250271",
+      "caso_num": 8,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_H_CALDESMON": "POSITIVO",
+      "nombre_completo": "DORIS JIMENEZ",
+      "numero_peticion": "IHQ250271",
+      "identificacion": "29688553",
+      "tipo_documento": "CC",
+      "Genero": "INDETERMINADO",
+      "Edad": "67",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "MARCO ANTONIO REVEIZ",
+      "servicio": "GINECOLOGIA COEX",
+      "fecha_ingreso": "14/03/2025",
+      "fecha_informe": "21/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250271",
+      "N. de identificación": "29688553",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "GINECOLOGIA COEX",
+      "Médico tratante": "MARCO ANTONIO REVEIZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/03/2025",
+      "Fecha Informe": "21/03/2025",
+      "nombres": "DORIS",
+      "Primer nombre": "DORIS",
+      "Segundo nombre": "",
+      "apellidos": "JIMENEZ",
+      "Primer apellido": "JIMENEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "JIMENEZ, DORIS",
+      "diagnostico": "Útero. Nódulo. Histerectomía. Estudio de inmunohistoquímica: - HALLAZGOS DE INMUNOHISTOQUÍMICA Y MORFOLÓGICOS QUE FAVORECEN LEIOMIOMA. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para H-caldesmon. Índice de proliferación KI-67 menor al 5%. p16 negativo. p53 con ausencia de expresión.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2410188\" que corresponde a \"Útero\" con diagnóstico principal de \"HALLAZGOS MORFOLÓGICOS QUE FAVORECEN NÓDULO FUSOCELULAR CON NECROSIS QUE REQUIERE SER EVALUADO POR ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se realizan niveles histológicos al bloque 5 para tinción con H-caldesmon, p16, KI-67, y p53.",
+      "ihq_organo": "ÚTERO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "GINECOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "H CALDESMON, P16, Ki-67, P53",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ÚTERO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Ki-67: <5%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "H CALDESMON, P16, Ki-67, P53",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "<5%",
+      "IHQ_P53": "NEGATIVO (ausencia de expresión)",
+      "p16": "NEGATIVO",
+      "extraction_timestamp": "2026-02-03T03:28:41.605355",
+      "extractor_version": "6.5.89_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250271\nCopia Pag. 1 de 2\nNombre : DORIS JIMENEZ\nN. peticion : IHQ250271\nN.Identificación : CC. 29688553\nGenero : INDETERMINADO\nEdad : 67 años 2 meses 29 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : MARCO ANTONIO REVEIZ\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 14/03/2025\nFecha Informe : 21/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nHISTERECTOMIA +\nANEXECTOMIA BILATERAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410188” que corresponde a “Útero” con diagnóstico principal de “HALLAZGOS MORFOLÓGICOS\nQUE FAVORECEN NÓDULO FUSOCELULAR CON NECROSIS QUE REQUIERE SER EVALUADO POR ESTUDIOS\nDE INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan niveles histológicos al bloque 5\npara tinción con H-caldesmon, p16, KI-67, y p53.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para H-caldesmon.\nÍndice de proliferación KI-67 menor al 5%.\np16 negativo.\np53 con ausencia de expresión.\nDIAGNÓSTICO\nÚtero. Nódulo. Histerectomía. Estudio de inmunohistoquímica:\n- HALLAZGOS DE INMUNOHISTOQUÍMICA Y MORFOLÓGICOS QUE FAVORECEN LEIOMIOMA.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---\nIHQ250271\nCopia Pag. 2 de 2\nNombre : DORIS JIMENEZ\nN. peticion : IHQ250271\nN.Identificación : CC. 29688553\nGenero : INDETERMINADO\nEdad : 67 años 2 meses 29 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : MARCO ANTONIO REVEIZ\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 14/03/2025\nFecha Informe : 21/03/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "H CALDESMON, P16, Ki-67, P53, H_CALDESMON",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410188” que corresponde a “Útero” con diagnóstico principal de “HALLAZGOS MORFOLÓGICOS QUE FAVORECEN NÓDULO FUSOCELULAR CON NECROSIS QUE REQUIERE SER EVALUADO POR ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan niveles histológicos al bloque 5 para tinción con H-caldesmon, p16, KI-67, y p53.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para H-caldesmon. Índice de proliferación KI-67 menor al 5%. p16 negativo. p53 con ausencia de expresión.",
+      "Descripcion Diagnostico": "Útero. Nódulo. Histerectomía. Estudio de inmunohistoquímica: - HALLAZGOS DE INMUNOHISTOQUÍMICA Y MORFOLÓGICOS QUE FAVORECEN LEIOMIOMA. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "IHQ_ORGANO": "ÚTERO",
+      "Organo": "HISTERECTOMIA + ANEXECTOMIA BILATERAL",
+      "Diagnostico Coloracion": "ÚTERO",
+      "Diagnostico Principal": "HALLAZGOS DE INMUNOHISTOQUÍMICA Y MORFOLÓGICOS QUE FAVORECEN LEIOMIOMA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: <5%",
+      "IHQ_H_CALDESMON": "POSITIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "<5%",
+      "IHQ_P53": "NEGATIVO (ausencia de expresión)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 140,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Útero. Nódulo. Histerectomía. Estudio de inmunohistoquímica:\n- HALLAZGOS DE INMUNOHISTOQUÍMICA Y MORFOLÓGICOS QUE FAVORECEN LEIOMIOMA.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________",
+      "valor_corregido": "Útero. Nódulo. Histerectomía. Estudio de inmunohistoquímica: - HALLAZGOS DE INMUNOHISTOQUÍMICA Y MORFOLÓGICOS QUE FAVORECEN LEIOMIOMA. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250271",
+      "timestamp": "2026-02-03T03:28:41.605144"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410188” que corresponde a “Útero” con diagnóstico principal de “HALLAZGOS MORFOLÓGICOS QUE FAVORECEN NÓDULO FUSOCELULAR CON NECROSIS QUE REQUIERE SER EVALUADO POR ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa revisión de la histología, se realizan niveles histológicos al bloque 5 para tinción con H-caldesmon, p16, KI-67, y p53.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2410188\" que corresponde a \"Útero\" con diagnóstico principal de \"HALLAZGOS MORFOLÓGICOS QUE FAVORECEN NÓDULO FUSOCELULAR CON NECROSIS QUE REQUIERE SER EVALUADO POR ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se realizan niveles histológicos al bloque 5 para tinción con H-caldesmon, p16, KI-67, y p53.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250271",
+      "timestamp": "2026-02-03T03:28:41.605151"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 49
+  }
+}

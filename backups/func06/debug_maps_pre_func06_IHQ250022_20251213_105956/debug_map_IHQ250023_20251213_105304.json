@@ -1,0 +1,169 @@
+{
+  "session_id": "IHQ250023_20251213_105304",
+  "numero_peticion": "IHQ250023",
+  "timestamp": "2025-12-13T10:53:04.953805",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250023\nCopia Pag. 1 de 2\nNombre : YOLIMA MOSQUERA SINISTERRA\nN. peticion : IHQ250023\nN.Identificación : CC. 66749889\nGenero : FEMENINO\nEdad : 52 años 22 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 09/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX RENAL IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410299 ” correspondiente a “biopsia renal izquierda”con diagnóstico de “NEOPLASIA ONCOCITICA A\nCLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan\nniveles histológicos para tinción con los marcadores: CK7, CD 117, CK 20, VIMENTINA Y Racemasa\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para CK20, PAX 8, Racemasa, vimentina y son negativas para CK7 y\nCD 117\nVER NOTA Y DESCRIPCIÓN MICROSCOPICA. \nDIAGNÓSTICO\nRiñón izquierdo . Lesión. Biopsia. Estudio de inmunohistoquimica:\nLOS HALLAZGOS SON SUGESTIVOS DE UNA NEOPLASIA EN PATRON ACINAR CON CAMBIOS ONCOCITICOS\nDE PROBABLE ORIGEN RENAL.\nCOMENTARIOS\nLos hallazgos morfológicos e inmunohistoquímicos sugieren una neoplasia de origen renal, que dentro del\nespectro de las neoplasias oncocíticas podría corresponder a un carcinoma de células renales eosinofílico\nsólido y quístico. Sin embargo, la marcación y la heterogeneidad de las lesiones tumorales pueden variar\nen el espécimen de resección. Por lo tanto, se recomienda correlacionar estos hallazgos con las\nimágenes, la historia clínica, la pieza quirúrgica definitiva y los estudios moleculares para un mejor\nacercamiento diagnóstico.Todo lo anterior a criterio del médico tratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---\nIHQ250023\nCopia Pag. 2 de 2\nNombre : YOLIMA MOSQUERA SINISTERRA\nN. peticion : IHQ250023\nN.Identificación : CC. 66749889\nGenero : FEMENINO\nEdad : 52 años 22 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 09/01/2025\nFecha Informe : 23/01/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3745,
+      "reduccion_porcentaje": 97.81
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250023",
+      "caso_num": 23,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_RACEMASA": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "nombre_completo": "YOLIMA MOSQUERA SINISTERRA",
+      "numero_peticion": "IHQ250023",
+      "identificacion": "66749889",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "52",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "NATHALY PRADA",
+      "servicio": "RADIOLOGIA",
+      "fecha_ingreso": "09/01/2025",
+      "fecha_informe": "23/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250023",
+      "N. de identificación": "66749889",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "RADIOLOGIA",
+      "Médico tratante": "NATHALY PRADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/01/2025",
+      "Fecha Informe": "23/01/2025",
+      "nombres": "YOLIMA",
+      "Primer nombre": "YOLIMA",
+      "Segundo nombre": "",
+      "apellidos": "MOSQUERA SINISTERRA",
+      "Primer apellido": "MOSQUERA",
+      "Segundo apellido": "SINISTERRA",
+      "nombre_formal": "MOSQUERA SINISTERRA, YOLIMA",
+      "diagnostico": "Riñón izquierdo . Lesión. Biopsia. Estudio de inmunohistoquimica: LOS HALLAZGOS SON SUGESTIVOS DE UNA NEOPLASIA EN PATRON ACINAR CON CAMBIOS ONCOCITICOS DE PROBABLE ORIGEN RENAL.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para CK20, PAX 8, Racemasa, vimentina y son negativas para CK7 y CD 117 VER NOTA Y DESCRIPCIÓN MICROSCOPICA.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410299 ” correspondiente a “biopsia renal izquierda”con diagnóstico de “NEOPLASIA ONCOCITICA A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CK7, CD 117, CK20, VIMENTINA Y Racemasa",
+      "ihq_organo": "RIÑÓN IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Los hallazgos morfológicos e inmunohistoquímicos sugieren una neoplasia de origen renal, que dentro del espectro de las neoplasias oncocíticas podría corresponder a un carcinoma de células renales eosinofílico sólido y quístico. Sin embargo, la marcación y la heterogeneidad de las lesiones tumorales pueden variar en el espécimen de resección. Por lo tanto, se recomienda correlacionar estos hallazgos con las imágenes, la historia clínica, la pieza quirúrgica definitiva y los estudios moleculares para un mejor acercamiento diagnóstico.Todo lo anterior a criterio del médico tratante.",
+      "IHQ_ORGANO": "RIÑÓN IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD117": "POSITIVO",
+      "extraction_timestamp": "2025-12-13T10:53:05.101858",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250023\nCopia Pag. 1 de 2\nNombre : YOLIMA MOSQUERA SINISTERRA\nN. peticion : IHQ250023\nN.Identificación : CC. 66749889\nGenero : FEMENINO\nEdad : 52 años 22 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 09/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX RENAL IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410299 ” correspondiente a “biopsia renal izquierda”con diagnóstico de “NEOPLASIA ONCOCITICA A\nCLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan\nniveles histológicos para tinción con los marcadores: CK7, CD 117, CK 20, VIMENTINA Y Racemasa\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para CK20, PAX 8, Racemasa, vimentina y son negativas para CK7 y\nCD 117\nVER NOTA Y DESCRIPCIÓN MICROSCOPICA. \nDIAGNÓSTICO\nRiñón izquierdo . Lesión. Biopsia. Estudio de inmunohistoquimica:\nLOS HALLAZGOS SON SUGESTIVOS DE UNA NEOPLASIA EN PATRON ACINAR CON CAMBIOS ONCOCITICOS\nDE PROBABLE ORIGEN RENAL.\nCOMENTARIOS\nLos hallazgos morfológicos e inmunohistoquímicos sugieren una neoplasia de origen renal, que dentro del\nespectro de las neoplasias oncocíticas podría corresponder a un carcinoma de células renales eosinofílico\nsólido y quístico. Sin embargo, la marcación y la heterogeneidad de las lesiones tumorales pueden variar\nen el espécimen de resección. Por lo tanto, se recomienda correlacionar estos hallazgos con las\nimágenes, la historia clínica, la pieza quirúrgica definitiva y los estudios moleculares para un mejor\nacercamiento diagnóstico.Todo lo anterior a criterio del médico tratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---\nIHQ250023\nCopia Pag. 2 de 2\nNombre : YOLIMA MOSQUERA SINISTERRA\nN. peticion : IHQ250023\nN.Identificación : CC. 66749889\nGenero : FEMENINO\nEdad : 52 años 22 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 09/01/2025\nFecha Informe : 23/01/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD117, CK20, CK7, PAX8, RACEMASA, VIMENTINA",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410299 ” correspondiente a “biopsia renal izquierda”con diagnóstico de “NEOPLASIA ONCOCITICA A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CK7, CD 117, CK 20, VIMENTINA Y Racemasa",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para CK20, PAX 8, Racemasa, vimentina y son negativas para CK7 y CD 117 VER NOTA Y DESCRIPCIÓN MICROSCOPICA.",
+      "Descripcion Diagnostico": "Riñón izquierdo . Lesión. Biopsia. Estudio de inmunohistoquimica: LOS HALLAZGOS SON SUGESTIVOS DE UNA NEOPLASIA EN PATRON ACINAR CON CAMBIOS ONCOCITICOS DE PROBABLE ORIGEN RENAL.",
+      "IHQ_ORGANO": "RIÑÓN IZQUIERDO",
+      "Organo": "BX RENAL IZQUIERDA",
+      "Diagnostico Coloracion": "NEOPLASIA ONCOCITICA A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "NEOPLASIA ONCOCITICA A",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CK20": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_RACEMASA": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 117,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "completitud_porcentaje": 25.48
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 117,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Riñón izquierdo . Lesión. Biopsia. Estudio de inmunohistoquimica:\nLOS HALLAZGOS SON SUGESTIVOS DE UNA NEOPLASIA EN PATRON ACINAR CON CAMBIOS ONCOCITICOS\nDE PROBABLE ORIGEN RENAL.",
+      "valor_corregido": "Riñón izquierdo . Lesión. Biopsia. Estudio de inmunohistoquimica: LOS HALLAZGOS SON SUGESTIVOS DE UNA NEOPLASIA EN PATRON ACINAR CON CAMBIOS ONCOCITICOS DE PROBABLE ORIGEN RENAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250023",
+      "timestamp": "2025-12-13T10:53:05.101525"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2410299 ” correspondiente a “biopsia renal izquierda”con diagnóstico de “NEOPLASIA ONCOCITICA A\nCLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan\nniveles histológicos para tinción con los marcadores: CK7, CD 117, CK 20, VIMENTINA Y Racemasa",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2410299 ” correspondiente a “biopsia renal izquierda”con diagnóstico de “NEOPLASIA ONCOCITICA A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: CK7, CD 117, CK20, VIMENTINA Y Racemasa",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250023",
+      "timestamp": "2025-12-13T10:53:05.101533"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para CK20, PAX 8, Racemasa, vimentina y son negativas para CK7 y\nCD 117\nVER NOTA Y DESCRIPCIÓN MICROSCOPICA.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para CK20, PAX 8, Racemasa, vimentina y son negativas para CK7 y CD 117 VER NOTA Y DESCRIPCIÓN MICROSCOPICA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250023",
+      "timestamp": "2025-12-13T10:53:05.101536"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos morfológicos e inmunohistoquímicos sugieren una neoplasia de origen renal, que dentro del\nespectro de las neoplasias oncocíticas podría corresponder a un carcinoma de células renales eosinofílico\nsólido y quístico. Sin embargo, la marcación y la heterogeneidad de las lesiones tumorales pueden variar\nen el espécimen de resección. Por lo tanto, se recomienda correlacionar estos hallazgos con las\nimágenes, la historia clínica, la pieza quirúrgica definitiva y los estudios moleculares para un mejor\nacercamiento diagnóstico.Todo lo anterior a criterio del médico tratante.",
+      "valor_corregido": "Los hallazgos morfológicos e inmunohistoquímicos sugieren una neoplasia de origen renal, que dentro del espectro de las neoplasias oncocíticas podría corresponder a un carcinoma de células renales eosinofílico sólido y quístico. Sin embargo, la marcación y la heterogeneidad de las lesiones tumorales pueden variar en el espécimen de resección. Por lo tanto, se recomienda correlacionar estos hallazgos con las imágenes, la historia clínica, la pieza quirúrgica definitiva y los estudios moleculares para un mejor acercamiento diagnóstico.Todo lo anterior a criterio del médico tratante.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250023",
+      "timestamp": "2025-12-13T10:53:05.101538"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 52
+  }
+}

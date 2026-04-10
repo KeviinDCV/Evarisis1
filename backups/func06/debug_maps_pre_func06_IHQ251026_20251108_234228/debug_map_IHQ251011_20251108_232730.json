@@ -1,0 +1,160 @@
+{
+  "session_id": "IHQ251011_20251108_232730",
+  "numero_peticion": "IHQ251011",
+  "timestamp": "2025-11-08T23:27:30.466378",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251011\nCopia Pag. 1 de 2\nNombre : YUBER EMILSON QUISOBONI ARGOTE N. peticion : IHQ251011\nN.Identificación : CC. 10320780\nGenero : MASCULINO\nEdad : 42 años 1 mes 16 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 16/09/2025\nFecha Informe : 01/10/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR FRONTAL DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2509206-2 que corresponde a “Tumor frontal derecho” con diagnostico de\n\"Hallazgos histologicos que favorecen una lesion glial de alto grado\" para estudios de\ninmunohistoquímica por lo que se revisa marcación para ATRX, IDH1, P53, GFAP, KI67 y CD34.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se\nobserva los siguiente\nLas células tumorales presentan marcación positiva para GFAP, siendo negativa para CD34. La expreeion\npara IDH1 es positiva (mutado). Ausencia de expresion para ATRX (mutado), La expresion para p53 no es\ncontributiva.,El Ki-67 es del 10%.\nDIAGNÓSTICO\n Encefalo. Lesion. Reseccion. Estudio de inmunohistoquímica.\nLOS HALLAZGOS FAVORECEN ASTROCITOMA IDH MUTADO (WHO 4)\nComentario: se recomienda correlacion con los datos clinicos y resultados de imagenes para su adecuada\nconclusion \nDIEGO VARGAS GALVAN\nResponsable del análisis:\nMD Patólogo\nRM 761086\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---\nIHQ251011\nCopia Pag. 2 de 2\nNombre : YUBER EMILSON QUISOBONI ARGOTE N. peticion : IHQ251011\nN.Identificación : CC. 10320780\nGenero : MASCULINO\nEdad : 42 años 1 mes 16 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 16/09/2025\nFecha Informe : 01/10/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3298,
+      "reduccion_porcentaje": 98.3
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251011",
+      "caso_num": 31,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GFAP": "POSITIVO",
+      "nombre_completo": "YUBER EMILSON QUISOBONI ARGOTE",
+      "numero_peticion": "IHQ251011",
+      "identificacion": "10320780",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "42",
+      "eps": "E.P.S. INDIGENA MALLAMAS GUACH",
+      "medico_tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "16/09/2025",
+      "fecha_informe": "01/10/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251011",
+      "N. de identificación": "10320780",
+      "Tipo de documento": "CC",
+      "EPS": "E.P.S. INDIGENA MALLAMAS GUACH",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "16/09/2025",
+      "Fecha Informe": "01/10/2025",
+      "nombres": "YUBER",
+      "Primer nombre": "YUBER",
+      "Segundo nombre": "",
+      "apellidos": "EMILSON QUISOBONI ARGOTE",
+      "Primer apellido": "EMILSON",
+      "Segundo apellido": "QUISOBONI ARGOTE",
+      "nombre_formal": "EMILSON QUISOBONI ARGOTE, YUBER",
+      "diagnostico": "Encefalo. Lesion. Reseccion. Estudio de inmunohistoquímica. LOS HALLAZGOS FAVORECEN ASTROCITOMA IDH MUTADO (WHO 4) Comentario: se recomienda correlacion con los datos clinicos y resultados de imagenes para su adecuada conclusion DIEGO VARGAS GALVAN",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa los siguiente Las células tumorales presentan marcación positiva para GFAP, siendo negativa para CD34. La expreeion para IDH1 es positiva (mutado). Ausencia de expresion para ATRX (mutado), La expresion para p53 no es contributiva.,El KI-67 es del 10%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2509206-2 que corresponde a “Tumor frontal derecho” con diagnostico de \"Hallazgos histologicos que favorecen una lesion glial de alto grado\" para estudios de inmunohistoquímica por lo que se revisa marcación para ATRX, IDH1, P53, GFAP, KI-67 y CD34.",
+      "ihq_organo": "ENCEFALO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "ATRX, IDH1, P53, GFAP, Ki-67, CD34",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ENCEFALO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Ki-67: 10%",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_KI-67": "10%",
+      "IHQ_P53": "NEGATIVO (no contributiva)",
+      "IHQ_ATRX": "NEGATIVO (mutado)",
+      "IHQ_IDH1": "POSITIVO",
+      "extraction_timestamp": "2025-11-08T23:27:30.581951",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251011\nCopia Pag. 1 de 2\nNombre : YUBER EMILSON QUISOBONI ARGOTE N. peticion : IHQ251011\nN.Identificación : CC. 10320780\nGenero : MASCULINO\nEdad : 42 años 1 mes 16 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 16/09/2025\nFecha Informe : 01/10/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR FRONTAL DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2509206-2 que corresponde a “Tumor frontal derecho” con diagnostico de\n\"Hallazgos histologicos que favorecen una lesion glial de alto grado\" para estudios de\ninmunohistoquímica por lo que se revisa marcación para ATRX, IDH1, P53, GFAP, KI67 y CD34.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se\nobserva los siguiente\nLas células tumorales presentan marcación positiva para GFAP, siendo negativa para CD34. La expreeion\npara IDH1 es positiva (mutado). Ausencia de expresion para ATRX (mutado), La expresion para p53 no es\ncontributiva.,El Ki-67 es del 10%.\nDIAGNÓSTICO\n Encefalo. Lesion. Reseccion. Estudio de inmunohistoquímica.\nLOS HALLAZGOS FAVORECEN ASTROCITOMA IDH MUTADO (WHO 4)\nComentario: se recomienda correlacion con los datos clinicos y resultados de imagenes para su adecuada\nconclusion \nDIEGO VARGAS GALVAN\nResponsable del análisis:\nMD Patólogo\nRM 761086\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---\nIHQ251011\nCopia Pag. 2 de 2\nNombre : YUBER EMILSON QUISOBONI ARGOTE N. peticion : IHQ251011\nN.Identificación : CC. 10320780\nGenero : MASCULINO\nEdad : 42 años 1 mes 16 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 16/09/2025\nFecha Informe : 01/10/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "ATRX, IDH1, P53, GFAP, Ki-67, CD34",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2509206-2 que corresponde a “Tumor frontal derecho” con diagnostico de \"Hallazgos histologicos que favorecen una lesion glial de alto grado\" para estudios de inmunohistoquímica por lo que se revisa marcación para ATRX, IDH1, P53, GFAP, KI67 y CD34.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa los siguiente Las células tumorales presentan marcación positiva para GFAP, siendo negativa para CD34. La expreeion para IDH1 es positiva (mutado). Ausencia de expresion para ATRX (mutado), La expresion para p53 no es contributiva.,El Ki-67 es del 10%.",
+      "Descripcion Diagnostico": "Encefalo. Lesion. Reseccion. Estudio de inmunohistoquímica. LOS HALLAZGOS FAVORECEN ASTROCITOMA IDH MUTADO (WHO 4) Comentario: se recomienda correlacion con los datos clinicos y resultados de imagenes para su adecuada conclusion DIEGO VARGAS GALVAN",
+      "IHQ_ORGANO": "ENCEFALO",
+      "Organo": "TUMOR FRONTAL DERECHO",
+      "Diagnostico Coloracion": "HALLAZGOS HISTOLOGICOS QUE FAVORECEN UNA LESION GLIAL DE ALTO GRADO",
+      "Diagnostico Principal": "ASTROCITOMA IDH MUTADO (WHO 4)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 10%",
+      "IHQ_ATRX": "NEGATIVO (MUTADO)",
+      "IHQ_IDH1": "POSITIVO",
+      "IHQ_P53": "NEGATIVO (NO CONTRIBUTIVA)",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_KI-67": "10%",
+      "IHQ_CD34": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 145,
+      "campos_vacios": 106,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 6,
+      "completitud_porcentaje": 26.9
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 106,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Encefalo. Lesion. Reseccion. Estudio de inmunohistoquímica.\nLOS HALLAZGOS FAVORECEN ASTROCITOMA IDH MUTADO (WHO 4)\nComentario: se recomienda correlacion con los datos clinicos y resultados de imagenes para su adecuada\nconclusion \nDIEGO VARGAS GALVAN",
+      "valor_corregido": "Encefalo. Lesion. Reseccion. Estudio de inmunohistoquímica. LOS HALLAZGOS FAVORECEN ASTROCITOMA IDH MUTADO (WHO 4) Comentario: se recomienda correlacion con los datos clinicos y resultados de imagenes para su adecuada conclusion DIEGO VARGAS GALVAN",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251011",
+      "timestamp": "2025-11-08T23:27:30.581748"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2509206-2 que corresponde a “Tumor frontal derecho” con diagnostico de\n\"Hallazgos histologicos que favorecen una lesion glial de alto grado\" para estudios de\ninmunohistoquímica por lo que se revisa marcación para ATRX, IDH1, P53, GFAP, KI67 y CD34.",
+      "valor_corregido": "Se realizan niveles al bloque M2509206-2 que corresponde a “Tumor frontal derecho” con diagnostico de \"Hallazgos histologicos que favorecen una lesion glial de alto grado\" para estudios de inmunohistoquímica por lo que se revisa marcación para ATRX, IDH1, P53, GFAP, KI-67 y CD34.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251011",
+      "timestamp": "2025-11-08T23:27:30.581754"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa los siguiente Las células tumorales presentan marcación positiva para GFAP, siendo negativa para CD34. La expreeion para IDH1 es positiva (mutado). Ausencia de expresion para ATRX (mutado), La expresion para p53 no es contributiva.,El Ki-67 es del 10%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa los siguiente Las células tumorales presentan marcación positiva para GFAP, siendo negativa para CD34. La expreeion para IDH1 es positiva (mutado). Ausencia de expresion para ATRX (mutado), La expresion para p53 no es contributiva.,El KI-67 es del 10%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251011",
+      "timestamp": "2025-11-08T23:27:30.581756"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 50
+  }
+}

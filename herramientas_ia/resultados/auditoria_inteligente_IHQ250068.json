@@ -1,0 +1,125 @@
+{
+  "numero_caso": "IHQ250068",
+  "caso_num": 15,
+  "total_casos": 50,
+  "timestamp": "2026-01-07T19:14:00.334891",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 12,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "NEOPLASIA DE CELULAS REDONDAS Y AZULES",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "WARNING",
+      "mensaje": "5 biomarcadores extras en BD",
+      "total_solicitado_ocr": 6,
+      "total_solicitado_bd": 12,
+      "estudios_ocr": [
+        "CD99",
+        "LCA",
+        "CD56",
+        "CD3",
+        "CKAE1AE3",
+        "SYNAPTOFISINA"
+      ],
+      "estudios_bd": [
+        "CD99",
+        "LCA",
+        "CD56",
+        "CD3",
+        "CKAE1AE3",
+        "SYNAPTOFISINA",
+        "CD38",
+        "CD45",
+        "CD138",
+        "Lambda",
+        "Kappa",
+        "CICLINA D1"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "CD38",
+        "CD138",
+        "Lambda",
+        "Kappa",
+        "CICLINA D1"
+      ],
+      "mapeados": 6,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [],
+    "estado": "OK",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M250..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e ..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "VERTEBRA T1-T2"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 88.9,
+    "score_final": 88.9,
+    "validaciones_ok": 8,
+    "total_validaciones": 9,
+    "warnings": 0,
+    "errores": 0
+  },
+  "resumen": {},
+  "estado_final": "OK"
+}

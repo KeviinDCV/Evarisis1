@@ -1,0 +1,170 @@
+{
+  "session_id": "IHQ250296_20260203_035543",
+  "numero_peticion": "IHQ250296",
+  "timestamp": "2026-02-03T03:55:43.527732",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250296\nCopia Pag. 1 de 2\nNombre : TRIFENIA VIVAS\nN. peticion : IHQ250296\nN.Identificación : CC. 27371441\nGenero : FEMENINO\nEdad : 69 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 21/03/2025\nFecha Informe : 26/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR CEREBRAL\nTEMPORAL IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2503206”\nque\ncorresponde\na\n“tumor\ncerebral\ntemporal\nizquierdo”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales presentan inmunorreactividad para CKAE1E3, TTF-1, CD56 y sinaptofisina. Son\nnegativas para S100, GFAP, p40, CK5/6 y cromogranina.\ndiagnóstico\nde\n“COMPATIBLE CON CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE\nMETASTÁSICO/REQUIERE\nESTUDIOS DE INMUNOHISTOQUÍMICA CONFIRMATORIOS”. Previa revisión de la histología, se realizan\nniveles histológicos al bloque B2 para tinción con cromogranina, GFAP, CK5/6, CKAE1E3, sinaptofisina,\nTTF-1, p40, S100 y CD56.\nDIAGNÓSTICO\nCerebro, región temporal izquierda. Tumor (Historia de carcinoma neuroendocrino de célula\ngrande de pulmón). Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE METASTÁSICO DE ORIGEN PULMONAR.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---\nIHQ250296\nCopia Pag. 2 de 2\nNombre : TRIFENIA VIVAS\nN. peticion : IHQ250296\nN.Identificación : CC. 27371441\nGenero : FEMENINO\nEdad : 69 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 21/03/2025\nFecha Informe : 26/03/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3292,
+      "reduccion_porcentaje": 98.12
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250296",
+      "caso_num": 32,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_GFAP": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CK5_6": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_SINAPTOFISINA": "POSITIVO",
+      "nombre_completo": "TRIFENIA VIVAS",
+      "numero_peticion": "IHQ250296",
+      "identificacion": "27371441",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "69",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ALEJANDRO HERRERA",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "21/03/2025",
+      "fecha_informe": "26/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250296",
+      "N. de identificación": "27371441",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "ALEJANDRO HERRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/03/2025",
+      "Fecha Informe": "26/03/2025",
+      "nombres": "TRIFENIA",
+      "Primer nombre": "TRIFENIA",
+      "Segundo nombre": "",
+      "apellidos": "VIVAS",
+      "Primer apellido": "VIVAS",
+      "Segundo apellido": "",
+      "nombre_formal": "VIVAS, TRIFENIA",
+      "diagnostico": "Cerebro, región temporal izquierda. Tumor (Historia de carcinoma neuroendocrino de célula grande de pulmón). Biopsia. Estudio de inmunohistoquímica: - CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE METASTÁSICO DE ORIGEN PULMONAR.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad para CKAE1E3, TTF1, CD56 y synaptophysin. Son negativas para S100, GFAP, p40, CK5/6 y cromogranina.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2503206\" que corresponde a \"tumor cerebral temporal izquierdo\" con diagnóstico de \"COMPATIBLE CON CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE METASTÁSICO/REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA CONFIRMATORIOS\". Previa revisión de la histología, se realizan niveles histológicos al bloque B2 para tinción con cromogranina, GFAP, CK5/6, CKAE1E3, synaptophysin, TTF1, p40, S100 y CD56.",
+      "ihq_organo": "CEREBRO, REGIÓN TEMPORAL IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CROMOGRANINA, GFAP, CK5/6, CKAE1E3, SYNAPTOFISINA, TTF-1, P40, S100, CD56",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CEREBRO, REGIÓN TEMPORAL IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CROMOGRANINA, GFAP, CK5/6, CKAE1E3, SYNAPTOFISINA, TTF-1, P40, S100, CD56",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-02-03T03:55:43.946078",
+      "extractor_version": "6.5.90_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250296\nCopia Pag. 1 de 2\nNombre : TRIFENIA VIVAS\nN. peticion : IHQ250296\nN.Identificación : CC. 27371441\nGenero : FEMENINO\nEdad : 69 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 21/03/2025\nFecha Informe : 26/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR CEREBRAL\nTEMPORAL IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2503206”\nque\ncorresponde\na\n“tumor\ncerebral\ntemporal\nizquierdo”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales presentan inmunorreactividad para CKAE1E3, TTF-1, CD56 y sinaptofisina. Son\nnegativas para S100, GFAP, p40, CK5/6 y cromogranina.\ndiagnóstico\nde\n“COMPATIBLE CON CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE\nMETASTÁSICO/REQUIERE\nESTUDIOS DE INMUNOHISTOQUÍMICA CONFIRMATORIOS”. Previa revisión de la histología, se realizan\nniveles histológicos al bloque B2 para tinción con cromogranina, GFAP, CK5/6, CKAE1E3, sinaptofisina,\nTTF-1, p40, S100 y CD56.\nDIAGNÓSTICO\nCerebro, región temporal izquierda. Tumor (Historia de carcinoma neuroendocrino de célula\ngrande de pulmón). Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE METASTÁSICO DE ORIGEN PULMONAR.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---\nIHQ250296\nCopia Pag. 2 de 2\nNombre : TRIFENIA VIVAS\nN. peticion : IHQ250296\nN.Identificación : CC. 27371441\nGenero : FEMENINO\nEdad : 69 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 21/03/2025\nFecha Informe : 26/03/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CROMOGRANINA, GFAP, CK5/6, CKAE1AE3, SYNAPTOFISINA, TTF-1, P40, S100, CD56",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2503206” que corresponde a “tumor cerebral temporal izquierdo” con diagnóstico de “COMPATIBLE CON CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE METASTÁSICO/REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA CONFIRMATORIOS”. Previa revisión de la histología, se realizan niveles histológicos al bloque B2 para tinción con cromogranina, GFAP, CK5/6, CKAE1E3, sinaptofisina, TTF-1, p40, S100 y CD56.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad para CKAE1E3, TTF-1, CD56 y sinaptofisina. Son negativas para S100, GFAP, p40, CK5/6 y cromogranina.",
+      "Descripcion Diagnostico": "Cerebro, región temporal izquierda. Tumor (Historia de carcinoma neuroendocrino de célula grande de pulmón). Biopsia. Estudio de inmunohistoquímica: - CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE METASTÁSICO DE ORIGEN PULMONAR.",
+      "IHQ_ORGANO": "CEREBRO, REGIÓN TEMPORAL IZQUIERDA",
+      "Organo": "TUMOR CEREBRAL TEMPORAL IZQUIERDO",
+      "Diagnostico Coloracion": "CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE METASTÁSICO/REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA CONFIRMATORIOS",
+      "Diagnostico Principal": "CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE METASTÁSICO DE ORIGEN PULMONAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_GFAP": "NEGATIVO",
+      "IHQ_CK5_6": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_SINAPTOFISINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 134,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cerebro, región temporal izquierda. Tumor (Historia de carcinoma neuroendocrino de célula\ngrande de pulmón). Biopsia. Estudio de inmunohistoquímica:\n- CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE METASTÁSICO DE ORIGEN PULMONAR.",
+      "valor_corregido": "Cerebro, región temporal izquierda. Tumor (Historia de carcinoma neuroendocrino de célula grande de pulmón). Biopsia. Estudio de inmunohistoquímica: - CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE METASTÁSICO DE ORIGEN PULMONAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250296",
+      "timestamp": "2026-02-03T03:55:43.944990"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2503206” que corresponde a “tumor cerebral temporal izquierdo” con diagnóstico de “COMPATIBLE CON CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE METASTÁSICO/REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA CONFIRMATORIOS”. Previa revisión de la histología, se realizan niveles histológicos al bloque B2 para tinción con cromogranina, GFAP, CK5/6, CKAE1E3, sinaptofisina, TTF-1, p40, S100 y CD56.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2503206\" que corresponde a \"tumor cerebral temporal izquierdo\" con diagnóstico de \"COMPATIBLE CON CARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE METASTÁSICO/REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA CONFIRMATORIOS\". Previa revisión de la histología, se realizan niveles histológicos al bloque B2 para tinción con cromogranina, GFAP, CK5/6, CKAE1E3, synaptophysin, TTF1, p40, S100 y CD56.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250296",
+      "timestamp": "2026-02-03T03:55:43.944997"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad para CKAE1E3, TTF-1, CD56 y sinaptofisina. Son negativas para S100, GFAP, p40, CK5/6 y cromogranina.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad para CKAE1E3, TTF1, CD56 y synaptophysin. Son negativas para S100, GFAP, p40, CK5/6 y cromogranina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250296",
+      "timestamp": "2026-02-03T03:55:43.944999"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 56
+  }
+}

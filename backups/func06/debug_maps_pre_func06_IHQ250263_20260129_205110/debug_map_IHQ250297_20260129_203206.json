@@ -1,0 +1,143 @@
+{
+  "session_id": "IHQ250297_20260129_203206",
+  "numero_peticion": "IHQ250297",
+  "timestamp": "2026-01-29T20:32:06.732515",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250297\nCopia Pag. 1 de 2\nNombre : DORA LILIA ARANGO VILLADA\nN. peticion : IHQ250297\nN.Identificación : CC. 1112759943\nGenero : FEMENINO\nEdad : 52 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 21/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR GASTRICO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2503112 que corresponde a \"ADENOCARCINOMA INVASIVO DE TIPO DIFUSO\". Previa revisión de\nla histología, se realizan niveles histológicos al bloque 2 para tinción con HER-2 , MSH6 , MSH2 ,\nMLH1 , PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\n- HER-2 Negativo (score 0)\nLos controles positivos de tejido conocido y los controles internos tienen una marcación\nsatisfactoria.\nDIAGNÓSTICO\nMucosa gastrica. Tumor. Biopsia endoscopica. Estudios de inmunohistoquimica:\nADENOCARCINOMA INVASIVO DE TIPO DIFUSO.\n- PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---\nIHQ250297\nCopia Pag. 2 de 2\nNombre : DORA LILIA ARANGO VILLADA\nN. peticion : IHQ250297\nN.Identificación : CC. 1112759943\nGenero : FEMENINO\nEdad : 52 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 21/03/2025\nFecha Informe : 28/03/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3321,
+      "reduccion_porcentaje": 98.1
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250297",
+      "caso_num": 33,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "DORA LILIA ARANGO VILLADA",
+      "numero_peticion": "IHQ250297",
+      "identificacion": "1112759943",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "52",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "21/03/2025",
+      "fecha_informe": "28/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250297",
+      "N. de identificación": "1112759943",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/03/2025",
+      "Fecha Informe": "28/03/2025",
+      "nombres": "DORA LILIA",
+      "Primer nombre": "DORA",
+      "Segundo nombre": "LILIA",
+      "apellidos": "ARANGO VILLADA",
+      "Primer apellido": "ARANGO",
+      "Segundo apellido": "VILLADA",
+      "nombre_formal": "ARANGO VILLADA, DORA LILIA",
+      "diagnostico": "Mucosa gastrica. Tumor. Biopsia endoscopica. Estudios de inmunohistoquimica: ADENOCARCINOMA INVASIVO DE TIPO DIFUSO. - PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0): 21/03/2025",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable - HER-2 Negativo (score 0) Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2503112 que corresponde a \"ADENOCARCINOMA INVASIVO DE TIPO DIFUSO\". Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "ihq_organo": "MUCOSA GASTRICA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA GASTRICA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "HER2 , MSH6 , MSH2 ,",
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "extraction_timestamp": "2026-01-29T20:32:07.300770",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250297\nCopia Pag. 1 de 2\nNombre : DORA LILIA ARANGO VILLADA\nN. peticion : IHQ250297\nN.Identificación : CC. 1112759943\nGenero : FEMENINO\nEdad : 52 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 21/03/2025\nFecha Informe : 28/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR GASTRICO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2503112 que corresponde a \"ADENOCARCINOMA INVASIVO DE TIPO DIFUSO\". Previa revisión de\nla histología, se realizan niveles histológicos al bloque 2 para tinción con HER-2 , MSH6 , MSH2 ,\nMLH1 , PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\n- HER-2 Negativo (score 0)\nLos controles positivos de tejido conocido y los controles internos tienen una marcación\nsatisfactoria.\nDIAGNÓSTICO\nMucosa gastrica. Tumor. Biopsia endoscopica. Estudios de inmunohistoquimica:\nADENOCARCINOMA INVASIVO DE TIPO DIFUSO.\n- PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---\nIHQ250297\nCopia Pag. 2 de 2\nNombre : DORA LILIA ARANGO VILLADA\nN. peticion : IHQ250297\nN.Identificación : CC. 1112759943\nGenero : FEMENINO\nEdad : 52 años 3 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 21/03/2025\nFecha Informe : 28/03/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2503112 que corresponde a \"ADENOCARCINOMA INVASIVO DE TIPO DIFUSO\". Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable - HER-2 Negativo (score 0) Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.",
+      "Descripcion Diagnostico": "Mucosa gastrica. Tumor. Biopsia endoscopica. Estudios de inmunohistoquimica: ADENOCARCINOMA INVASIVO DE TIPO DIFUSO. - PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0): 21/03/2025",
+      "IHQ_ORGANO": "MUCOSA GASTRICA",
+      "Organo": "BX TUMOR GASTRICO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO DE TIPO DIFUSO",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO DE TIPO DIFUSO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 , MSH6 , MSH2 ,",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 177,
+      "campos_vacios": 137,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa gastrica. Tumor. Biopsia endoscopica. Estudios de inmunohistoquimica:\nADENOCARCINOMA INVASIVO DE TIPO DIFUSO.\n- PATRÓN MICROSATELITAL ESTABLE\n- HER-2: NEGATIVO (SCORE 0): 21/03/2025",
+      "valor_corregido": "Mucosa gastrica. Tumor. Biopsia endoscopica. Estudios de inmunohistoquimica: ADENOCARCINOMA INVASIVO DE TIPO DIFUSO. - PATRÓN MICROSATELITAL ESTABLE - HER-2: NEGATIVO (SCORE 0): 21/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250297",
+      "timestamp": "2026-01-29T20:32:07.300476"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 53
+  }
+}

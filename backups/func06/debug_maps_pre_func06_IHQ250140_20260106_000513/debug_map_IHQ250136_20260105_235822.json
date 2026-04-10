@@ -1,0 +1,145 @@
+{
+  "session_id": "IHQ250136_20260105_235822",
+  "numero_peticion": "IHQ250136",
+  "timestamp": "2026-01-05T23:58:22.343152",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250136\nCopia Pag. 1 de 2\nNombre : FRANCY VALDERRUTEN\nMONTEALEGRE\nN. peticion : IHQ250136\nN.Identificación : CC. 31984516\nGenero : FEMENINO\nEdad : 59 años 3 meses 19 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 06/02/2025\nFecha Informe : 11/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX ESTERNON\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500398 con rótulo\ncorrespondiente a\" biopsia lesión lítica en esternón\" con diagnóstico de “CARCINOMA\nMETASTÁSICO. (HISTORIA DE PRIMARIO EN MAMA)”. Previa valoración de la coloración básica, se\nrealizan cortes histológicos para los siguientes marcadores: CK7, MAMOGLOBINA, GATA 3,\nRECEPTOR DE ESTRÓGENOS, RECEPTOR DE PROGESTERONA, HER2. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary\nAntibody. VENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nRESULTADO: \nLas células tumorales malignas expresan inmurreactividad positiva para CK7, GATA 3 y\nfocalmente para MAMOGLOBINA. Los RECEPTOR DE ESTRÓGENOS y RECEPTOR DE\nPROGESTERONA son positivos con tinción nuclear fuerte en el 100% de las células tumorales. Son\nnegativas para HER2. \nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---\nIHQ250136\nCopia Pag. 2 de 2\nNombre : FRANCY VALDERRUTEN\nMONTEALEGRE\nN. peticion : IHQ250136\nN.Identificación : CC. 31984516\nGenero : FEMENINO\nEdad : 59 años 3 meses 19 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 06/02/2025\nFecha Informe : 11/02/2025\nEsternón. Biopsia por tru cut. Estudios de inmunohistoquímica. \nCARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3587,
+      "reduccion_porcentaje": 97.93
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250136",
+      "caso_num": 27,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_HER2": "NEGATIVO (0)",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_MAMOGLOBINA": "POSITIVO (focal)",
+      "nombre_completo": "FRANCY VALDERRUTEN MONTEALEGRE",
+      "numero_peticion": "IHQ250136",
+      "identificacion": "31984516",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "59",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JHON SANDOVAL",
+      "servicio": "OTORRINO CONSULTA EXTERNA",
+      "fecha_ingreso": "06/02/2025",
+      "fecha_informe": "11/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250136",
+      "N. de identificación": "31984516",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "OTORRINO CONSULTA EXTERNA",
+      "Médico tratante": "JHON SANDOVAL",
+      "Fecha de ingreso (2. Fecha de la muestra)": "06/02/2025",
+      "Fecha Informe": "11/02/2025",
+      "nombres": "FRANCY",
+      "Primer nombre": "FRANCY",
+      "Segundo nombre": "",
+      "apellidos": "VALDERRUTEN MONTEALEGRE",
+      "Primer apellido": "VALDERRUTEN",
+      "Segundo apellido": "MONTEALEGRE",
+      "nombre_formal": "VALDERRUTEN MONTEALEGRE, FRANCY",
+      "diagnostico": ": 06/02/2025 Esternón. Biopsia por tru cut. Estudios de inmunohistoquímica. CARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. RESULTADO: Las células tumorales malignas expresan inmurreactividad positiva para CK7, GATA 3 y focalmente para MAMOGLOBINA. Los RECEPTOR DE ESTRÓGENOS y RECEPTOR DE PROGESTERONA son positivos con tinción nuclear fuerte en el 100% de las células tumorales. Son negativas para HER2.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500398 con rótulo correspondiente a\" biopsia lesión lítica en esternón\" con diagnóstico de “CARCINOMA METASTÁSICO. (HISTORIA DE PRIMARIO EN MAMA)”. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: CK7, MAMOGLOBINA, GATA 3, RECEPTOR DE ESTRÓGENOS, RECEPTOR DE PROGESTERONA, HER2.",
+      "ihq_organo": "ESTERNÓN",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, MAMOGLOBINA, GATA3, Receptor de Estrógeno, Receptor de Progesterona, HER2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ESTERNÓN",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: NEGATIVO (0), Receptor de Estrógeno: POSITIVOS CON TINCIÓN NUCLEAR FUERTE EN EL 100% DE LAS CÉLULAS TUMORALES, Receptor de Progesterona: POSITIVOS CON TINCIÓN NUCLEAR FUERTE EN EL 100% DE LAS CÉLULAS TUMORALES",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, MAMOGLOBINA, GATA3, Receptor de Estrógeno, Receptor de Progesterona, HER2",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVOS CON TINCIÓN NUCLEAR FUERTE EN EL 100% DE LAS CÉLULAS TUMORALES",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVOS CON TINCIÓN NUCLEAR FUERTE EN EL 100% DE LAS CÉLULAS TUMORALES",
+      "extraction_timestamp": "2026-01-05T23:58:22.839866",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250136\nCopia Pag. 1 de 2\nNombre : FRANCY VALDERRUTEN\nMONTEALEGRE\nN. peticion : IHQ250136\nN.Identificación : CC. 31984516\nGenero : FEMENINO\nEdad : 59 años 3 meses 19 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 06/02/2025\nFecha Informe : 11/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX ESTERNON\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500398 con rótulo\ncorrespondiente a\" biopsia lesión lítica en esternón\" con diagnóstico de “CARCINOMA\nMETASTÁSICO. (HISTORIA DE PRIMARIO EN MAMA)”. Previa valoración de la coloración básica, se\nrealizan cortes histológicos para los siguientes marcadores: CK7, MAMOGLOBINA, GATA 3,\nRECEPTOR DE ESTRÓGENOS, RECEPTOR DE PROGESTERONA, HER2. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nEstrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody.\nVENTANA Ref. 790-4324.\nProgesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary\nAntibody. VENTANA Ref. 790-2223.\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nRESULTADO: \nLas células tumorales malignas expresan inmurreactividad positiva para CK7, GATA 3 y\nfocalmente para MAMOGLOBINA. Los RECEPTOR DE ESTRÓGENOS y RECEPTOR DE\nPROGESTERONA son positivos con tinción nuclear fuerte en el 100% de las células tumorales. Son\nnegativas para HER2. \nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---\nIHQ250136\nCopia Pag. 2 de 2\nNombre : FRANCY VALDERRUTEN\nMONTEALEGRE\nN. peticion : IHQ250136\nN.Identificación : CC. 31984516\nGenero : FEMENINO\nEdad : 59 años 3 meses 19 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JHON SANDOVAL\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 06/02/2025\nFecha Informe : 11/02/2025\nEsternón. Biopsia por tru cut. Estudios de inmunohistoquímica. \nCARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, MAMOGLOBINA, GATA3, Receptor de Estrógeno, Receptor de Progesterona, HER2",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2500398 con rótulo correspondiente a\" biopsia lesión lítica en esternón\" con diagnóstico de “CARCINOMA METASTÁSICO. (HISTORIA DE PRIMARIO EN MAMA)”. Previa valoración de la coloración básica, se realizan cortes histológicos para los siguientes marcadores: CK7, MAMOGLOBINA, GATA 3, RECEPTOR DE ESTRÓGENOS, RECEPTOR DE PROGESTERONA, HER2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Estrógeno: CONFIRM anti-Estrogen Receptor (ER) (SP1) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-4324. Progesterona: CONFIRM anti-Progesterone Receptor (ER) (1E2) Rabbit Monoclonal Primary Antibody. VENTANA Ref. 790-2223. Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. RESULTADO: Las células tumorales malignas expresan inmurreactividad positiva para CK7, GATA 3 y focalmente para MAMOGLOBINA. Los RECEPTOR DE ESTRÓGENOS y RECEPTOR DE PROGESTERONA son positivos con tinción nuclear fuerte en el 100% de las células tumorales. Son negativas para HER2.",
+      "Descripcion Diagnostico": ": 06/02/2025 Esternón. Biopsia por tru cut. Estudios de inmunohistoquímica. CARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO.",
+      "IHQ_ORGANO": "ESTERNÓN",
+      "Organo": "BX ESTERNON",
+      "Diagnostico Coloracion": "CARCINOMA METASTÁSICO. (HISTORIA DE PRIMARIO EN MAMA)",
+      "Diagnostico Principal": "CARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO (0), Receptor de Estrógeno: POSITIVOS CON TINCIÓN NUCLEAR FUERTE EN EL 100% DE LAS CÉLULAS TUMORALES, Receptor de Progesterona: POSITIVOS CON TINCIÓN NUCLEAR FUERTE EN EL 100% DE LAS CÉLULAS TUMORALES",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_MAMOGLOBINA": "POSITIVO (focal)",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVOS CON TINCIÓN NUCLEAR FUERTE EN EL 100% DE LAS CÉLULAS TUMORALES",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVOS CON TINCIÓN NUCLEAR FUERTE EN EL 100% DE LAS CÉLULAS TUMORALES",
+      "IHQ_HER2": "NEGATIVO (0)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 128,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 128,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": ": 06/02/2025\nEsternón. Biopsia por tru cut. Estudios de inmunohistoquímica. \nCARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO.",
+      "valor_corregido": ": 06/02/2025 Esternón. Biopsia por tru cut. Estudios de inmunohistoquímica. CARCINOMA METASTÁSICO DE PROBABLE ORIGEN MAMARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250136",
+      "timestamp": "2026-01-05T23:58:22.839598"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 53
+  }
+}

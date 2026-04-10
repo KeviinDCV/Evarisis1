@@ -1,0 +1,153 @@
+{
+  "session_id": "IHQ250015_20251214_030417",
+  "numero_peticion": "IHQ250015",
+  "timestamp": "2025-12-14T03:04:17.243436",
+  "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250015\nCopia Pag. 1 de 1\nNombre : MARTHA LUCIA CAIRASCO GARCIA\nN. peticion : IHQ250015\nN.Identificación : CC. 31927019\nGenero : FEMENINO\nEdad : 60 años 5 meses 24 dias\nEPS : NUEVA EPS\nMédico tratante : DIANA MELISSA RENGIFO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/01/2025\nFecha Informe : 10/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX EXOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2410644”\nque\ncorresponde\na\n“exocérvix”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\np16 negativo.\nKI-67 expresión limitada a la capa basal (usual).\ndiagnósticos\nde\n“CAMBIOS\nREACTIVOS\nEPITELIALES\nINDEFINIDOS\nPARA\nDISPLASIA”.\nPrevia\nrevisión\nde\nla\nhistología,\nse\nrealizan\nniveles\nhistológicos para tinción con p16 y KI-67.\nDIAGNÓSTICO\nExocérvix. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA/INVASIVA. \nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 2342,
+      "reduccion_porcentaje": 98.63
+    },
+    "metadata": {
+      "pdf_path": "pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250015",
+      "caso_num": 15,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARTHA LUCIA CAIRASCO GARCIA",
+      "numero_peticion": "IHQ250015",
+      "identificacion": "31927019",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "60",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "DIANA MELISSA RENGIFO",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "07/01/2025",
+      "fecha_informe": "10/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250015",
+      "N. de identificación": "31927019",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "DIANA MELISSA RENGIFO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/01/2025",
+      "Fecha Informe": "10/01/2025",
+      "nombres": "MARTHA LUCIA CAIRASCO",
+      "Primer nombre": "MARTHA",
+      "Segundo nombre": "LUCIA CAIRASCO",
+      "apellidos": "GARCIA",
+      "Primer apellido": "GARCIA",
+      "Segundo apellido": "",
+      "nombre_formal": "GARCIA, MARTHA LUCIA CAIRASCO",
+      "diagnostico": "Exocérvix. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA/INVASIVA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. P16 negativo. KI-67 expresión limitada a la capa basal (usual).",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410644” que corresponde a “exocérvix” con diagnósticos de “CAMBIOS REACTIVOS EPITELIALES INDEFINIDOS PARA DISPLASIA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con P16 y KI-67.",
+      "ihq_organo": "EXOCÉRVIX",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "EXOCÉRVIX",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67: EXPRESIÓN LIMITADA A CAPA BASAL",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "EXPRESIÓN LIMITADA A CAPA BASAL",
+      "p16": "NEGATIVO",
+      "extraction_timestamp": "2025-12-14T03:04:17.373668",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250015\nCopia Pag. 1 de 1\nNombre : MARTHA LUCIA CAIRASCO GARCIA\nN. peticion : IHQ250015\nN.Identificación : CC. 31927019\nGenero : FEMENINO\nEdad : 60 años 5 meses 24 dias\nEPS : NUEVA EPS\nMédico tratante : DIANA MELISSA RENGIFO\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/01/2025\nFecha Informe : 10/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX EXOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2410644”\nque\ncorresponde\na\n“exocérvix”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\np16 negativo.\nKI-67 expresión limitada a la capa basal (usual).\ndiagnósticos\nde\n“CAMBIOS\nREACTIVOS\nEPITELIALES\nINDEFINIDOS\nPARA\nDISPLASIA”.\nPrevia\nrevisión\nde\nla\nhistología,\nse\nrealizan\nniveles\nhistológicos para tinción con p16 y KI-67.\nDIAGNÓSTICO\nExocérvix. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA/INVASIVA. \nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410644” que corresponde a “exocérvix” con diagnósticos de “CAMBIOS REACTIVOS EPITELIALES INDEFINIDOS PARA DISPLASIA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y KI-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. p16 negativo. KI-67 expresión limitada a la capa basal (usual).",
+      "Descripcion Diagnostico": "Exocérvix. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA/INVASIVA.",
+      "IHQ_ORGANO": "EXOCÉRVIX",
+      "Organo": "BX EXOCERVIX",
+      "Diagnostico Coloracion": "CAMBIOS REACTIVOS EPITELIALES INDEFINIDOS PARA DISPLASIA",
+      "Diagnostico Principal": "EXOCÉRVIX. BIOPSIA. ESTUDIO DE INMUNOHISTOQUÍMICA: - NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA/INVASIVA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: EXPRESIÓN LIMITADA A CAPA BASAL",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "EXPRESIÓN LIMITADA A CAPA BASAL"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 157,
+      "campos_vacios": 121,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 22.93
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 121,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Exocérvix. Biopsia. Estudio de inmunohistoquímica:\n- NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA/INVASIVA.",
+      "valor_corregido": "Exocérvix. Biopsia. Estudio de inmunohistoquímica: - NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA/INVASIVA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250015",
+      "timestamp": "2025-12-14T03:04:17.373413"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo\n“M2410644”\nque\ncorresponde\na\n“exocérvix”\ncon diagnósticos de “CAMBIOS REACTIVOS EPITELIALES INDEFINIDOS PARA DISPLASIA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y KI-67.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410644” que corresponde a “exocérvix” con diagnósticos de “CAMBIOS REACTIVOS EPITELIALES INDEFINIDOS PARA DISPLASIA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con P16 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250015",
+      "timestamp": "2025-12-14T03:04:17.373419"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. p16 negativo. KI-67 expresión limitada a la capa basal (usual).",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. P16 negativo. KI-67 expresión limitada a la capa basal (usual).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250015",
+      "timestamp": "2025-12-14T03:04:17.373421"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 49
+  }
+}

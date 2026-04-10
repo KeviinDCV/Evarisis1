@@ -1,0 +1,139 @@
+{
+  "session_id": "IHQ250192_20260108_050208",
+  "numero_peticion": "IHQ250192",
+  "timestamp": "2026-01-08T05:02:08.664297",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250192\nCopia Pag. 1 de 2\nNombre : PEDRO NEL SALCEDO CASTAÑO\nN. peticion : IHQ250192\nN.Identificación : CC. 16682937\nGenero : MASCULINO\nEdad : 62 años 10 meses 10 dias\nEPS : FOMAG\nMédico tratante : WILSON CARO BEDOYA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 20/02/2025\nFecha Informe : 26/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nANTRO Y CUERPO\nGASTRICO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2408267-B que corresponde a biopsia de mucosa gástrica oxíntica con los\nsiguientes diagnósticos: \"GASTRITIS CRONICA CON ATROFIA LEVE CON METAPLASIA INTESTINAL\nCOMPLETA FOCAL; INFLAMACION AGUDA MODERADA; Helicobacter pylori EN MODERADA\nCANTIDAD; CAMBIOS COMPATIBLES CON XANTOMA (VER COMENTARIO). Se ordenan los siguientes\nmarcadores.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nSe identifican en la lamina propia de la mucosa gástrica histiocitos en acúmulos con positividad para\nCD68 y S100, siendo negativos para CD1a.\nDIAGNÓSTICO\nMucosa gástrica oxíntica. Biopsia por endoscopia\nHALLAZGOS COMPATIBLES CON XANTOMA GASTRICO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---\nIHQ250192\nCopia Pag. 2 de 2\nNombre : PEDRO NEL SALCEDO CASTAÑO\nN. peticion : IHQ250192\nN.Identificación : CC. 16682937\nGenero : MASCULINO\nEdad : 62 años 10 meses 10 dias\nEPS : FOMAG\nMédico tratante : WILSON CARO BEDOYA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 20/02/2025\nFecha Informe : 26/02/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3033,
+      "reduccion_porcentaje": 98.17
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250192",
+      "caso_num": 32,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_CD1A": "NEGATIVO",
+      "nombre_completo": "PEDRO NEL SALCEDO CASTAÑO",
+      "numero_peticion": "IHQ250192",
+      "identificacion": "16682937",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "62",
+      "eps": "FOMAG",
+      "medico_tratante": "WILSON CARO BEDOYA",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "20/02/2025",
+      "fecha_informe": "26/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250192",
+      "N. de identificación": "16682937",
+      "Tipo de documento": "CC",
+      "EPS": "FOMAG",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "WILSON CARO BEDOYA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/02/2025",
+      "Fecha Informe": "26/02/2025",
+      "nombres": "PEDRO NEL",
+      "Primer nombre": "PEDRO",
+      "Segundo nombre": "NEL",
+      "apellidos": "SALCEDO CASTAÑO",
+      "Primer apellido": "SALCEDO",
+      "Segundo apellido": "CASTAÑO",
+      "nombre_formal": "SALCEDO CASTAÑO, PEDRO NEL",
+      "diagnostico": "Mucosa gástrica oxíntica. Biopsia por endoscopia HALLAZGOS COMPATIBLES CON XANTOMA GASTRICO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Se identifican en la lamina propia de la mucosa gástrica histiocitos en acúmulos con positividad para CD68 y S100, siendo negativos para CD1a.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2408267-B que corresponde a biopsia de mucosa gástrica oxíntica con los siguientes diagnósticos: \"GASTRITIS CRONICA CON ATROFIA LEVE CON METAPLASIA INTESTINAL COMPLETA FOCAL; INFLAMACION AGUDA MODERADA; Helicobacter pylori EN MODERADA CANTIDAD; CAMBIOS COMPATIBLES CON XANTOMA (VER COMENTARIO). Se ordenan los siguientes marcadores.",
+      "ihq_organo": "MUCOSA GÁSTRICA OXÍNTICA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA OXÍNTICA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-01-08T05:02:09.043638",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250192\nCopia Pag. 1 de 2\nNombre : PEDRO NEL SALCEDO CASTAÑO\nN. peticion : IHQ250192\nN.Identificación : CC. 16682937\nGenero : MASCULINO\nEdad : 62 años 10 meses 10 dias\nEPS : FOMAG\nMédico tratante : WILSON CARO BEDOYA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 20/02/2025\nFecha Informe : 26/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nANTRO Y CUERPO\nGASTRICO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2408267-B que corresponde a biopsia de mucosa gástrica oxíntica con los\nsiguientes diagnósticos: \"GASTRITIS CRONICA CON ATROFIA LEVE CON METAPLASIA INTESTINAL\nCOMPLETA FOCAL; INFLAMACION AGUDA MODERADA; Helicobacter pylori EN MODERADA\nCANTIDAD; CAMBIOS COMPATIBLES CON XANTOMA (VER COMENTARIO). Se ordenan los siguientes\nmarcadores.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©.\nSe identifican en la lamina propia de la mucosa gástrica histiocitos en acúmulos con positividad para\nCD68 y S100, siendo negativos para CD1a.\nDIAGNÓSTICO\nMucosa gástrica oxíntica. Biopsia por endoscopia\nHALLAZGOS COMPATIBLES CON XANTOMA GASTRICO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---\nIHQ250192\nCopia Pag. 2 de 2\nNombre : PEDRO NEL SALCEDO CASTAÑO\nN. peticion : IHQ250192\nN.Identificación : CC. 16682937\nGenero : MASCULINO\nEdad : 62 años 10 meses 10 dias\nEPS : FOMAG\nMédico tratante : WILSON CARO BEDOYA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 20/02/2025\nFecha Informe : 26/02/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD1A, CD68, S100",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2408267-B que corresponde a biopsia de mucosa gástrica oxíntica con los siguientes diagnósticos: \"GASTRITIS CRONICA CON ATROFIA LEVE CON METAPLASIA INTESTINAL COMPLETA FOCAL; INFLAMACION AGUDA MODERADA; Helicobacter pylori EN MODERADA CANTIDAD; CAMBIOS COMPATIBLES CON XANTOMA (VER COMENTARIO). Se ordenan los siguientes marcadores.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. Se identifican en la lamina propia de la mucosa gástrica histiocitos en acúmulos con positividad para CD68 y S100, siendo negativos para CD1a.",
+      "Descripcion Diagnostico": "Mucosa gástrica oxíntica. Biopsia por endoscopia HALLAZGOS COMPATIBLES CON XANTOMA GASTRICO.",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA OXÍNTICA",
+      "Organo": "ANTRO Y CUERPO GASTRICO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "XANTOMA GASTRICO",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD1A": "NEGATIVO",
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_S100": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 130,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 130,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa gástrica oxíntica. Biopsia por endoscopia\nHALLAZGOS COMPATIBLES CON XANTOMA GASTRICO.",
+      "valor_corregido": "Mucosa gástrica oxíntica. Biopsia por endoscopia HALLAZGOS COMPATIBLES CON XANTOMA GASTRICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250192",
+      "timestamp": "2026-01-08T05:02:09.043438"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 49
+  }
+}

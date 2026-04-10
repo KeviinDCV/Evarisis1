@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ251026_20251108_155840",
+  "numero_peticion": "IHQ251026",
+  "timestamp": "2025-11-08T15:58:40.133434",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251026\nCopia Pag. 1 de 2\nNombre : DANNA ISABELLA MORENO VALENCIA N. peticion : IHQ251026\nN.Identificación : TI. 1150940268\nGenero : FEMENINO\nEdad : 14 años 1 mes 27 dias\nEPS : NUEVA EPS\nMédico tratante : DIEGO ALEJANDRO CUADROS\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 18/09/2025\nFecha Informe : 29/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION ESFENOIDES\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2511122 bloque A” que corresponde a “biopsia de lesión en esfenoides\" y con diagnóstico de\n“SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS.” Previa revisión de la histología se realizan\nniveles histológicos para tinción con: p16, p40, CAM 5.2. BCL2, BCL6, CD20, CD5, p40, CK 5/6,\nCK7, CKAE1/AE3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEstudios de inmunohistoquímica caso M2511122 Bloque A. \nResultado: Se identifica marcación en la celularidad del epitelio respiratorio y algunas glándulas\npositiva para CKAE1AE3, CK7 CAM 5.2; las células del epitelio respiratorio son CK 5/6 positivas. No\nhay marcación en la muestra para p40, p16, CD20, BCL2 ni BCL6, marcación para algunos\nlinfocitos T (CD5+). \nDIAGNÓSTICO\nRegión esfenoides. Lesión. Resección. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA SINOSOPATIA\nAGUDA Y CRÓNICA CON NECROSIS.\nNEGATIVO PARA MALIGNIDAD. \nCOMENTARIOS\nCaso valorado en conjunto con el Dr José bravo (patólogo) y la Dra Natalia Aguirre (patóloga) \nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---\nIHQ251026\nCopia Pag. 2 de 2\nNombre : DANNA ISABELLA MORENO VALENCIA N. peticion : IHQ251026\nN.Identificación : TI. 1150940268\nGenero : FEMENINO\nEdad : 14 años 1 mes 27 dias\nEPS : NUEVA EPS\nMédico tratante : DIEGO ALEJANDRO CUADROS\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 18/09/2025\nFecha Informe : 29/09/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3522,
+      "reduccion_porcentaje": 98.18
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251026",
+      "caso_num": 41,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "nombre_completo": "DANNA ISABELLA MORENO VALENCIA",
+      "numero_peticion": "IHQ251026",
+      "identificacion": "1150940268",
+      "tipo_documento": "TI",
+      "Genero": "FEMENINO",
+      "Edad": "14",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "DIEGO ALEJANDRO CUADROS",
+      "servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "fecha_ingreso": "18/09/2025",
+      "fecha_informe": "29/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251026",
+      "N. de identificación": "1150940268",
+      "Tipo de documento": "TI",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "Médico tratante": "DIEGO ALEJANDRO CUADROS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "18/09/2025",
+      "Fecha Informe": "29/09/2025",
+      "nombres": "DANNA ISABELLA MORENO",
+      "Primer nombre": "DANNA",
+      "Segundo nombre": "ISABELLA MORENO",
+      "apellidos": "VALENCIA",
+      "Primer apellido": "VALENCIA",
+      "Segundo apellido": "",
+      "nombre_formal": "VALENCIA, DANNA ISABELLA MORENO",
+      "diagnostico": "Región esfenoides. Lesión. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS. NEGATIVO PARA MALIGNIDAD.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Estudios de inmunohistoquímica caso M2511122 Bloque A. Resultado: Se identifica marcación en la celularidad del epitelio respiratorio y algunas glándulas positiva para CKAE1AE3, CK7 CAM 5.2; las células del epitelio respiratorio son CK5/6 positivas. No hay marcación en la muestra para P40, P16, CD20, BCL2 ni BCL6, marcación para algunos linfocitos T (CD5+).",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2511122 bloque A” que corresponde a “biopsia de lesión en esfenoides\" y con diagnóstico de “SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS.” Previa revisión de la histología se realizan niveles histológicos para tinción con: P16, P40, CAM 5.2. BCL2, BCL6, CD20, CD5, P40, CK5/6, CK7, CKAE1/AE3.",
+      "ihq_organo": "REGIÓN ESFENOIDES",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, P40, CAM 5",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Caso valorado en conjunto con el Dr José bravo (patólogo) y la Dra Natalia Aguirre (patóloga)",
+      "IHQ_ORGANO": "REGIÓN ESFENOIDES",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": ", P40, CAM 5",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "p16": ", P40, CAM 5",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2025-11-08T15:58:40.259843",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251026\nCopia Pag. 1 de 2\nNombre : DANNA ISABELLA MORENO VALENCIA N. peticion : IHQ251026\nN.Identificación : TI. 1150940268\nGenero : FEMENINO\nEdad : 14 años 1 mes 27 dias\nEPS : NUEVA EPS\nMédico tratante : DIEGO ALEJANDRO CUADROS\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 18/09/2025\nFecha Informe : 29/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION ESFENOIDES\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2511122 bloque A” que corresponde a “biopsia de lesión en esfenoides\" y con diagnóstico de\n“SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS.” Previa revisión de la histología se realizan\nniveles histológicos para tinción con: p16, p40, CAM 5.2. BCL2, BCL6, CD20, CD5, p40, CK 5/6,\nCK7, CKAE1/AE3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEstudios de inmunohistoquímica caso M2511122 Bloque A. \nResultado: Se identifica marcación en la celularidad del epitelio respiratorio y algunas glándulas\npositiva para CKAE1AE3, CK7 CAM 5.2; las células del epitelio respiratorio son CK 5/6 positivas. No\nhay marcación en la muestra para p40, p16, CD20, BCL2 ni BCL6, marcación para algunos\nlinfocitos T (CD5+). \nDIAGNÓSTICO\nRegión esfenoides. Lesión. Resección. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA SINOSOPATIA\nAGUDA Y CRÓNICA CON NECROSIS.\nNEGATIVO PARA MALIGNIDAD. \nCOMENTARIOS\nCaso valorado en conjunto con el Dr José bravo (patólogo) y la Dra Natalia Aguirre (patóloga) \nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---\nIHQ251026\nCopia Pag. 2 de 2\nNombre : DANNA ISABELLA MORENO VALENCIA N. peticion : IHQ251026\nN.Identificación : TI. 1150940268\nGenero : FEMENINO\nEdad : 14 años 1 mes 27 dias\nEPS : NUEVA EPS\nMédico tratante : DIEGO ALEJANDRO CUADROS\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 18/09/2025\nFecha Informe : 29/09/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40, CAM 5",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2511122 bloque A” que corresponde a “biopsia de lesión en esfenoides\" y con diagnóstico de “SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS.” Previa revisión de la histología se realizan niveles histológicos para tinción con: p16, p40, CAM 5.2. BCL2, BCL6, CD20, CD5, p40, CK 5/6, CK7, CKAE1/AE3.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Estudios de inmunohistoquímica caso M2511122 Bloque A. Resultado: Se identifica marcación en la celularidad del epitelio respiratorio y algunas glándulas positiva para CKAE1AE3, CK7 CAM 5.2; las células del epitelio respiratorio son CK 5/6 positivas. No hay marcación en la muestra para p40, p16, CD20, BCL2 ni BCL6, marcación para algunos linfocitos T (CD5+).",
+      "Descripcion Diagnostico": "Región esfenoides. Lesión. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS. NEGATIVO PARA MALIGNIDAD.",
+      "IHQ_ORGANO": "REGIÓN ESFENOIDES",
+      "Organo": "LESION ESFENOIDES",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": ", P40, CAM 5",
+      "IHQ_P40_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 143,
+      "campos_vacios": 102,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 2,
+      "completitud_porcentaje": 28.67
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 102,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región esfenoides. Lesión. Resección. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA SINOSOPATIA\nAGUDA Y CRÓNICA CON NECROSIS.\nNEGATIVO PARA MALIGNIDAD.",
+      "valor_corregido": "Región esfenoides. Lesión. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UNA SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS. NEGATIVO PARA MALIGNIDAD.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251026",
+      "timestamp": "2025-11-08T15:58:40.259655"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2511122 bloque A” que corresponde a “biopsia de lesión en esfenoides\" y con diagnóstico de\n“SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS.” Previa revisión de la histología se realizan\nniveles histológicos para tinción con: p16, p40, CAM 5.2. BCL2, BCL6, CD20, CD5, p40, CK 5/6,\nCK7, CKAE1/AE3.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2511122 bloque A” que corresponde a “biopsia de lesión en esfenoides\" y con diagnóstico de “SINOSOPATIA AGUDA Y CRÓNICA CON NECROSIS.” Previa revisión de la histología se realizan niveles histológicos para tinción con: P16, P40, CAM 5.2. BCL2, BCL6, CD20, CD5, P40, CK5/6, CK7, CKAE1/AE3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251026",
+      "timestamp": "2025-11-08T15:58:40.259660"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Estudios de inmunohistoquímica caso M2511122 Bloque A. Resultado: Se identifica marcación en la celularidad del epitelio respiratorio y algunas glándulas positiva para CKAE1AE3, CK7 CAM 5.2; las células del epitelio respiratorio son CK 5/6 positivas. No hay marcación en la muestra para p40, p16, CD20, BCL2 ni BCL6, marcación para algunos linfocitos T (CD5+).",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Estudios de inmunohistoquímica caso M2511122 Bloque A. Resultado: Se identifica marcación en la celularidad del epitelio respiratorio y algunas glándulas positiva para CKAE1AE3, CK7 CAM 5.2; las células del epitelio respiratorio son CK5/6 positivas. No hay marcación en la muestra para P40, P16, CD20, BCL2 ni BCL6, marcación para algunos linfocitos T (CD5+).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251026",
+      "timestamp": "2025-11-08T15:58:40.259662"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 56
+  }
+}

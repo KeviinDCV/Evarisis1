@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250065_20251220_002212",
+  "numero_peticion": "IHQ250065",
+  "timestamp": "2025-12-20T00:22:12.878631",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250065\nCopia Pag. 1 de 2\nNombre : SHARON CELESTE MARTINEZ\nVALENCIA\nN. peticion : IHQ250065\nN.Identificación : TI. 1032482838\nGenero : FEMENINO\nEdad : 10 años 1 mes 18 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LUIS HERNAN ROMERO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 21/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX GANGLIO CERVICAL\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2409627” que corresponde a “ganglio linfático cervical profundo derecho” con diagnóstico de\n“COMPATIBLE CON HIPERPLASIA FOLICULAR Y PARACORTICAL”. Previa revisión de la histología, se\nprocesa estudio de inmunohistoquímica para marcación con CD3, CD20, CD10, CD5, BCL2, BCL6, KI-67,\nCD38, PAX-8 Y CD23.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nGanglio linfático con folículos primarios compuestos por linfocitos B maduros (CD20+) con formación de\ncentro germinal (BCL6+/CD10+). Hay hiperplasia sinusoidal y expansión de la zona paracortical por\nlinfocitos T maduros (CD3+, CD5+, BCL2+). Se observan\ncélulas plasmáticas esparcidas positivas para\nCD38, sin formación de acúmulos. El CD23 marca las células dendríticas en los centros foliculares. Índice\nde proliferación celular (KI67) del 70% en el centro de los folículos. Negativo para compromiso por\nlinfoma.\nDIAGNÓSTICO\nGanglio linfático cervical derecho. Biopsia escisional. Estudio de inmunohistoquímica:\n- HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA COMPATIBLES CON HIPERPLASIA FOLICULAR\nY PARACORTICAL.\n- SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA.\nCOMENTARIOS\nCaso valorado en conjunto con Dra. Maria Ximena Varela, patóloga.\nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 23 ---\nIHQ250065\nCopia Pag. 2 de 2\nNombre : SHARON CELESTE MARTINEZ\nVALENCIA\nN. peticion : IHQ250065\nN.Identificación : TI. 1032482838\nGenero : FEMENINO\nEdad : 10 años 1 mes 18 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LUIS HERNAN ROMERO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 21/01/2025\nFecha Informe : 23/01/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 24 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3737,
+      "reduccion_porcentaje": 98.0
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250065",
+      "caso_num": 12,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "SHARON CELESTE MARTINEZ VALENCIA",
+      "numero_peticion": "IHQ250065",
+      "identificacion": "1032482838",
+      "tipo_documento": "TI",
+      "Genero": "FEMENINO",
+      "Edad": "10",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "LUIS HERNAN ROMERO",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "21/01/2025",
+      "fecha_informe": "23/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250065",
+      "N. de identificación": "1032482838",
+      "Tipo de documento": "TI",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LUIS HERNAN ROMERO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/01/2025",
+      "Fecha Informe": "23/01/2025",
+      "nombres": "SHARON CELESTE",
+      "Primer nombre": "SHARON",
+      "Segundo nombre": "CELESTE",
+      "apellidos": "MARTINEZ VALENCIA",
+      "Primer apellido": "MARTINEZ",
+      "Segundo apellido": "VALENCIA",
+      "nombre_formal": "MARTINEZ VALENCIA, SHARON CELESTE",
+      "diagnostico": "Ganglio linfático cervical derecho. Biopsia escisional. Estudio de inmunohistoquímica: - HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA COMPATIBLES CON HIPERPLASIA FOLICULAR Y PARACORTICAL. - SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Ganglio linfático con folículos primarios compuestos por linfocitos B maduros (CD20+) con formación de centro germinal (BCL6+/CD10+). Hay hiperplasia sinusoidal y expansión de la zona paracortical por linfocitos T maduros (CD3+, CD5+, BCL2+). Se observan células plasmáticas esparcidas positivas para CD38, sin formación de acúmulos. El CD23 marca las células dendríticas en los centros foliculares. Índice de proliferación celular (KI-67) del 70% en el centro de los folículos. Negativo para compromiso por linfoma.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2409627” que corresponde a “ganglio linfático cervical profundo derecho” con diagnóstico de “COMPATIBLE CON HIPERPLASIA FOLICULAR Y PARACORTICAL”. Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con CD3, CD20, CD10, CD5, BCL2, BCL6, KI-67, CD38, PAX-8 Y CD23.",
+      "ihq_organo": "GANGLIO LINFÁTICO CERVICAL DERECHO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD20, CD10, CD5, BCL2, BCL6, Ki-67, CD38, PAX 8, CD23",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con Dra. Maria Ximena Varela, patóloga.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL DERECHO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 70%",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_KI-67": "70%",
+      "IHQ_CD23": "POSITIVO",
+      "extraction_timestamp": "2025-12-20T00:22:13.060891",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250065\nCopia Pag. 1 de 2\nNombre : SHARON CELESTE MARTINEZ\nVALENCIA\nN. peticion : IHQ250065\nN.Identificación : TI. 1032482838\nGenero : FEMENINO\nEdad : 10 años 1 mes 18 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LUIS HERNAN ROMERO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 21/01/2025\nFecha Informe : 23/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX GANGLIO CERVICAL\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2409627” que corresponde a “ganglio linfático cervical profundo derecho” con diagnóstico de\n“COMPATIBLE CON HIPERPLASIA FOLICULAR Y PARACORTICAL”. Previa revisión de la histología, se\nprocesa estudio de inmunohistoquímica para marcación con CD3, CD20, CD10, CD5, BCL2, BCL6, KI-67,\nCD38, PAX-8 Y CD23.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nGanglio linfático con folículos primarios compuestos por linfocitos B maduros (CD20+) con formación de\ncentro germinal (BCL6+/CD10+). Hay hiperplasia sinusoidal y expansión de la zona paracortical por\nlinfocitos T maduros (CD3+, CD5+, BCL2+). Se observan\ncélulas plasmáticas esparcidas positivas para\nCD38, sin formación de acúmulos. El CD23 marca las células dendríticas en los centros foliculares. Índice\nde proliferación celular (KI67) del 70% en el centro de los folículos. Negativo para compromiso por\nlinfoma.\nDIAGNÓSTICO\nGanglio linfático cervical derecho. Biopsia escisional. Estudio de inmunohistoquímica:\n- HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA COMPATIBLES CON HIPERPLASIA FOLICULAR\nY PARACORTICAL.\n- SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA.\nCOMENTARIOS\nCaso valorado en conjunto con Dra. Maria Ximena Varela, patóloga.\nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 23 ---\nIHQ250065\nCopia Pag. 2 de 2\nNombre : SHARON CELESTE MARTINEZ\nVALENCIA\nN. peticion : IHQ250065\nN.Identificación : TI. 1032482838\nGenero : FEMENINO\nEdad : 10 años 1 mes 18 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LUIS HERNAN ROMERO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 21/01/2025\nFecha Informe : 23/01/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 24 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD20, CD10, CD5, BCL2, BCL6, Ki-67, CD38, PAX 8, CD23",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2409627” que corresponde a “ganglio linfático cervical profundo derecho” con diagnóstico de “COMPATIBLE CON HIPERPLASIA FOLICULAR Y PARACORTICAL”. Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con CD3, CD20, CD10, CD5, BCL2, BCL6, KI-67, CD38, PAX-8 Y CD23.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Ganglio linfático con folículos primarios compuestos por linfocitos B maduros (CD20+) con formación de centro germinal (BCL6+/CD10+). Hay hiperplasia sinusoidal y expansión de la zona paracortical por linfocitos T maduros (CD3+, CD5+, BCL2+). Se observan células plasmáticas esparcidas positivas para CD38, sin formación de acúmulos. El CD23 marca las células dendríticas en los centros foliculares. Índice de proliferación celular (KI67) del 70% en el centro de los folículos. Negativo para compromiso por linfoma.",
+      "Descripcion Diagnostico": "Ganglio linfático cervical derecho. Biopsia escisional. Estudio de inmunohistoquímica: - HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA COMPATIBLES CON HIPERPLASIA FOLICULAR Y PARACORTICAL. - SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL DERECHO",
+      "Organo": "BX GANGLIO CERVICAL DERECHO",
+      "Diagnostico Coloracion": "HIPERPLASIA FOLICULAR Y PARACORTICAL",
+      "Diagnostico Principal": "HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA COMPATIBLES CON HIPERPLASIA FOLICULAR Y PARACORTICAL",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: 70%",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_KI-67": "70%",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_PAX8": "NO MENCIONADO",
+      "IHQ_CD23": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 165,
+      "campos_vacios": 120,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 10,
+      "completitud_porcentaje": 27.27
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 120,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático cervical derecho. Biopsia escisional. Estudio de inmunohistoquímica:\n- HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA COMPATIBLES CON HIPERPLASIA FOLICULAR\nY PARACORTICAL.\n- SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA.",
+      "valor_corregido": "Ganglio linfático cervical derecho. Biopsia escisional. Estudio de inmunohistoquímica: - HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA COMPATIBLES CON HIPERPLASIA FOLICULAR Y PARACORTICAL. - SIN COMPROMISO POR LINFOMA EN ESTA MUESTRA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250065",
+      "timestamp": "2025-12-20T00:22:13.060611"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Ganglio linfático con folículos primarios compuestos por linfocitos B maduros (CD20+) con formación de centro germinal (BCL6+/CD10+). Hay hiperplasia sinusoidal y expansión de la zona paracortical por linfocitos T maduros (CD3+, CD5+, BCL2+). Se observan células plasmáticas esparcidas positivas para CD38, sin formación de acúmulos. El CD23 marca las células dendríticas en los centros foliculares. Índice de proliferación celular (KI67) del 70% en el centro de los folículos. Negativo para compromiso por linfoma.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Ganglio linfático con folículos primarios compuestos por linfocitos B maduros (CD20+) con formación de centro germinal (BCL6+/CD10+). Hay hiperplasia sinusoidal y expansión de la zona paracortical por linfocitos T maduros (CD3+, CD5+, BCL2+). Se observan células plasmáticas esparcidas positivas para CD38, sin formación de acúmulos. El CD23 marca las células dendríticas en los centros foliculares. Índice de proliferación celular (KI-67) del 70% en el centro de los folículos. Negativo para compromiso por linfoma.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250065",
+      "timestamp": "2025-12-20T00:22:13.060618"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 57
+  }
+}

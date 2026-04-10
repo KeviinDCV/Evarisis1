@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ251022_20251108_155839",
+  "numero_peticion": "IHQ251022",
+  "timestamp": "2025-11-08T15:58:39.882683",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ251022\nFinal Pag. 1 de 2\nNombre : JOSE ARCADIO VARGAS MUÑOZ\nN. peticion : IHQ251022\nN.Identificación : CC. 12617540\nGenero : MASCULINO\nEdad : 65 años 26 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : DANIELA OSORIO MORALES\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 17/09/2025\nFecha Informe : 02/10/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE HUESO\nIHQ251022-B\nESTUDIO DE\nINMUNOHISTOQUIMICA\n898807 Estudio anatomopatologico de marcacion\ninmunohistoquimica basica (especifico)\nBloques y laminas\nBIOPSIA DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2511100” que corresponde a \"Medula ósea. Biopsia\" y con diagnóstico de “CELULARIDAD\nGLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS\nTRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN\nINCREMENTO MORFOLOGICO DE BLASTOS. ”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con: CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, Glicoforina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células de la medula ósea presentan la siguiente marcación: Hay marcación para linfocitos B\ndispersos (CD20+), linfocitos T (CD3+, CD5+) y células plasmáticas maduras (CD38+, CD56-)\nalrededor del 3% dispersas, sin formación de acúmulos. Hay representación de la línea mieloide\n(CD15) y eritroide (Glycophorin) con una relación mieloide eritroide 4:1. los megacariocitos\n(CD61) se cuentan hasta 9 por campo de alto poder. La celularidad CD117 + CD34 - escasa\ncorresponde alrededor del 1%.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudios de inmunohistoquímica. \nCELULARIDAD GLOBAL DEL 50%. ADECUADA PARA LA EDAD.\nRELACIÓN MIELOIDE ERITROIDE 6:1\nMEGACARIOCITOS HASTA 9 POR CAMPO DE ALTO PODER. \nLINFOCITOS T Y B MADUROS DISPERSOS. \nCELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS.\nSIN INCREMENTO DE BLASTOS. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 84 ---\nIHQ251022\nFinal Pag. 2 de 2\nNombre : JOSE ARCADIO VARGAS MUÑOZ\nN. peticion : IHQ251022\nN.Identificación : CC. 12617540\nGenero : MASCULINO\nEdad : 65 años 26 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : DANIELA OSORIO MORALES\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 17/09/2025\nFecha Informe : 02/10/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 85 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3927,
+      "reduccion_porcentaje": 97.97
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ251022",
+      "caso_num": 39,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "JOSE ARCADIO VARGAS MUÑOZ",
+      "numero_peticion": "IHQ251022",
+      "identificacion": "12617540",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "65",
+      "eps": "EPS FAMISANAR SAS",
+      "medico_tratante": "DANIELA OSORIO MORALES",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "17/09/2025",
+      "fecha_informe": "02/10/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ251022",
+      "N. de identificación": "12617540",
+      "Tipo de documento": "CC",
+      "EPS": "EPS FAMISANAR SAS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "DANIELA OSORIO MORALES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "17/09/2025",
+      "Fecha Informe": "02/10/2025",
+      "nombres": "JOSE ARCADIO",
+      "Primer nombre": "JOSE",
+      "Segundo nombre": "ARCADIO",
+      "apellidos": "VARGAS MUÑOZ",
+      "Primer apellido": "VARGAS",
+      "Segundo apellido": "MUÑOZ",
+      "nombre_formal": "VARGAS MUÑOZ, JOSE ARCADIO",
+      "diagnostico": "Medula ósea. Biopsia. Estudios de inmunohistoquímica. CELULARIDAD GLOBAL DEL 50%. ADECUADA PARA LA EDAD. RELACIÓN MIELOIDE ERITROIDE 6:1 MEGACARIOCITOS HASTA 9 POR CAMPO DE ALTO PODER. LINFOCITOS T Y B MADUROS DISPERSOS. CELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS. SIN INCREMENTO DE BLASTOSFinal Pag. 2 de 2.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células de la medula ósea presentan la siguiente marcación: Hay marcación para linfocitos B dispersos (CD20+), linfocitos T (CD3+, CD5+) y células plasmáticas maduras (CD38+, CD56-) alrededor del 3% dispersas, sin formación de acúmulos. Hay representación de la línea mieloide (CD15) y eritroide (Glycophorin) con una relación mieloide eritroide 4:1. los megacariocitos (CD61) se cuentan hasta 9 por campo de alto poder. La celularidad CD117 + CD34 - escasa corresponde alrededor del 1%.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2511100” que corresponde a \"Medula ósea. Biopsia\" y con diagnóstico de “CELULARIDAD GLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS TRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN INCREMENTO MORFOLOGICO DE BLASTOS. ”. Previa revisión de la histología se realizan niveles histológicos para tinción con: CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, Glicoforina.",
+      "ihq_organo": "MEDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, GLICOFORINA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "extraction_timestamp": "2025-11-08T15:58:40.006940",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ251022\nFinal Pag. 1 de 2\nNombre : JOSE ARCADIO VARGAS MUÑOZ\nN. peticion : IHQ251022\nN.Identificación : CC. 12617540\nGenero : MASCULINO\nEdad : 65 años 26 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : DANIELA OSORIO MORALES\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 17/09/2025\nFecha Informe : 02/10/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE HUESO\nIHQ251022-B\nESTUDIO DE\nINMUNOHISTOQUIMICA\n898807 Estudio anatomopatologico de marcacion\ninmunohistoquimica basica (especifico)\nBloques y laminas\nBIOPSIA DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2511100” que corresponde a \"Medula ósea. Biopsia\" y con diagnóstico de “CELULARIDAD\nGLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS\nTRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN\nINCREMENTO MORFOLOGICO DE BLASTOS. ”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con: CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, Glicoforina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células de la medula ósea presentan la siguiente marcación: Hay marcación para linfocitos B\ndispersos (CD20+), linfocitos T (CD3+, CD5+) y células plasmáticas maduras (CD38+, CD56-)\nalrededor del 3% dispersas, sin formación de acúmulos. Hay representación de la línea mieloide\n(CD15) y eritroide (Glycophorin) con una relación mieloide eritroide 4:1. los megacariocitos\n(CD61) se cuentan hasta 9 por campo de alto poder. La celularidad CD117 + CD34 - escasa\ncorresponde alrededor del 1%.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudios de inmunohistoquímica. \nCELULARIDAD GLOBAL DEL 50%. ADECUADA PARA LA EDAD.\nRELACIÓN MIELOIDE ERITROIDE 6:1\nMEGACARIOCITOS HASTA 9 POR CAMPO DE ALTO PODER. \nLINFOCITOS T Y B MADUROS DISPERSOS. \nCELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS.\nSIN INCREMENTO DE BLASTOS. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 84 ---\nIHQ251022\nFinal Pag. 2 de 2\nNombre : JOSE ARCADIO VARGAS MUÑOZ\nN. peticion : IHQ251022\nN.Identificación : CC. 12617540\nGenero : MASCULINO\nEdad : 65 años 26 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : DANIELA OSORIO MORALES\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 17/09/2025\nFecha Informe : 02/10/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 85 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, GLICOFORINA",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2511100” que corresponde a \"Medula ósea. Biopsia\" y con diagnóstico de “CELULARIDAD GLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS TRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN INCREMENTO MORFOLOGICO DE BLASTOS. ”. Previa revisión de la histología se realizan niveles histológicos para tinción con: CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, Glicoforina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células de la medula ósea presentan la siguiente marcación: Hay marcación para linfocitos B dispersos (CD20+), linfocitos T (CD3+, CD5+) y células plasmáticas maduras (CD38+, CD56-) alrededor del 3% dispersas, sin formación de acúmulos. Hay representación de la línea mieloide (CD15) y eritroide (Glycophorin) con una relación mieloide eritroide 4:1. los megacariocitos (CD61) se cuentan hasta 9 por campo de alto poder. La celularidad CD117 + CD34 - escasa corresponde alrededor del 1%.",
+      "Descripcion Diagnostico": "Medula ósea. Biopsia. Estudios de inmunohistoquímica. CELULARIDAD GLOBAL DEL 50%. ADECUADA PARA LA EDAD. RELACIÓN MIELOIDE ERITROIDE 6:1 MEGACARIOCITOS HASTA 9 POR CAMPO DE ALTO PODER. LINFOCITOS T Y B MADUROS DISPERSOS. CELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS. SIN INCREMENTO DE BLASTOSFinal Pag. 2 de 2.",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Organo": "BIOPSIA DE HUESO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CELULARIDAD GLOBAL DEL 50%",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_GLICOFORINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 143,
+      "campos_vacios": 97,
+      "campos_completos": 46,
+      "biomarcadores_encontrados": 9,
+      "completitud_porcentaje": 32.17
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 97,
+      "total_campos_completos": 46
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula ósea. Biopsia. Estudios de inmunohistoquímica. \nCELULARIDAD GLOBAL DEL 50%. ADECUADA PARA LA EDAD.\nRELACIÓN MIELOIDE ERITROIDE 6:1\nMEGACARIOCITOS HASTA 9 POR CAMPO DE ALTO PODER. \nLINFOCITOS T Y B MADUROS DISPERSOS. \nCELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS.\nSIN INCREMENTO DE BLASTOSFinal Pag. 2 de 2.",
+      "valor_corregido": "Medula ósea. Biopsia. Estudios de inmunohistoquímica. CELULARIDAD GLOBAL DEL 50%. ADECUADA PARA LA EDAD. RELACIÓN MIELOIDE ERITROIDE 6:1 MEGACARIOCITOS HASTA 9 POR CAMPO DE ALTO PODER. LINFOCITOS T Y B MADUROS DISPERSOS. CELULARIDAD PLASMATICA MADURAS ESCASAS DISPERSAS. SIN INCREMENTO DE BLASTOSFinal Pag. 2 de 2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251022",
+      "timestamp": "2025-11-08T15:58:40.006703"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2511100” que corresponde a \"Medula ósea. Biopsia\" y con diagnóstico de “CELULARIDAD\nGLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS\nTRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN\nINCREMENTO MORFOLOGICO DE BLASTOS. ”. Previa revisión de la histología se realizan niveles\nhistológicos para tinción con: CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, Glicoforina.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2511100” que corresponde a \"Medula ósea. Biopsia\" y con diagnóstico de “CELULARIDAD GLOBAL DEL 50 %; RELACIÓN MIELOIDE ERITROIDE 6:1; HAY ADECUADA MADURACIÓN DE LAS TRES LINEAS GERMINALES; MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER; SIN INCREMENTO MORFOLOGICO DE BLASTOS. ”. Previa revisión de la histología se realizan niveles histológicos para tinción con: CD38, CD56, CD117, CD5, CD3, CD20, CD61, CD34, Glicoforina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ251022",
+      "timestamp": "2025-11-08T15:58:40.006709"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 58
+  }
+}

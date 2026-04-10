@@ -2,8 +2,17 @@
 # -*- coding: utf-8 -*-
 """
 Corrector ortográfico para términos médicos y biomarcadores
-Versión: 5.3.9
-Fecha: 19 de octubre de 2025
+Versión: 5.3.10
+Fecha: 8 de enero de 2026
+
+V5.3.10 (8/01/2026): FIX IHQ250162 - Limpieza de comillas escapadas y caracteres especiales
+  - Problema: Comillas escapadas \" en descripciones causaban baja similitud al comparar con OCR
+  - Solución: Agregada limpieza de caracteres especiales al inicio de correct_spelling():
+    * Comillas escapadas \" → "
+    * Comillas Unicode \u201c \u201d → "
+    * Saltos de línea/tabulaciones escapados → espacio
+  - Impacto: Mejora validación de descripciones macroscópicas/microscópicas
+  - Ubicación: Línea 175-189 (antes de correcciones de términos médicos)
 
 V5.3.9: Agregado tracking de correcciones aplicadas
 """
@@ -172,6 +181,27 @@ def correct_spelling(text: str, case_sensitive: bool = False) -> str:
 
     corrected = text
 
+    # 0. V5.3.10 FIX IHQ250162: Limpieza de caracteres especiales (ANTES de correcciones)
+    # Problema: Comillas escapadas \"  y comillas Unicode causan fallos en comparaciones
+    # Solución: Normalizar a comillas estándar al inicio del proceso
+
+    # Reemplazar comillas escapadas literales (backslash + comilla)
+    corrected = corrected.replace('\\"', '"')       # Comillas dobles escapadas → comillas normales
+    corrected = corrected.replace("\\'", "'")       # Comillas simples escapadas → comillas simples
+
+    # Reemplazar comillas Unicode (caracteres Unicode reales)
+    corrected = corrected.replace('\u201c', '"')    # Comilla Unicode izquierda "
+    corrected = corrected.replace('\u201d', '"')    # Comilla Unicode derecha "
+    corrected = corrected.replace('\u2018', "'")    # Comilla simple Unicode izquierda '
+    corrected = corrected.replace('\u2019', "'")    # Comilla simple Unicode derecha '
+
+    # Reemplazar otros caracteres especiales escapados
+    corrected = corrected.replace('\\n', ' ')       # Saltos de línea escapados → espacio
+    corrected = corrected.replace('\\t', ' ')       # Tabulaciones escapadas → espacio
+
+    # Normalizar espacios múltiples resultantes de limpiezas
+    corrected = re.sub(r'\s+', ' ', corrected)
+
     # 1. Correcciones de términos médicos (case-insensitive por defecto)
     for wrong, correct in MEDICAL_TERMS_CORRECTIONS.items():
         if case_sensitive:
@@ -199,6 +229,38 @@ def correct_spelling(text: str, case_sensitive: bool = False) -> str:
     # 2. Normalización de biomarcadores (preservar formato estándar)
     for pattern, normalized in BIOMARKER_PATTERNS.items():
         corrected = re.sub(pattern, normalized, corrected, flags=re.IGNORECASE)
+
+    # 3. V6.3.28: FIX IHQ250028 - Corregir espacios faltantes entre número y palabra
+    # Formato común OCR: "M2408063que" → "M2408063 que"
+    # Patrón: número seguido directamente de letra minúscula (sin espacio)
+    # V6.3.75 FIX IHQ250094: EXCLUIR biomarcadores conocidos que terminan en letra minúscula
+    # Ej: CD1a, CD3, p16, p40, p53 - NO deben separarse como "CD1 a", "p 16"
+    # Paso 1: Proteger biomarcadores conocidos con placeholder
+    biomarkers_to_protect = [
+        (r'\bCD1a\b', '##CD1A_PLACEHOLDER##'),
+        (r'\bCD3\b', '##CD3_PLACEHOLDER##'),
+        (r'\bp16\b', '##P16_PLACEHOLDER##'),
+        (r'\bp40\b', '##P40_PLACEHOLDER##'),
+        (r'\bp53\b', '##P53_PLACEHOLDER##'),
+        (r'\bp63\b', '##P63_PLACEHOLDER##'),
+    ]
+    for pattern, placeholder in biomarkers_to_protect:
+        corrected = re.sub(pattern, placeholder, corrected, flags=re.IGNORECASE)
+
+    # Paso 2: Aplicar corrección de espacios
+    corrected = re.sub(r'(\d)([a-záéíóúñ])', r'\1 \2', corrected)
+
+    # Paso 3: Restaurar biomarcadores
+    biomarkers_restore = [
+        ('##CD1A_PLACEHOLDER##', 'CD1a'),
+        ('##CD3_PLACEHOLDER##', 'CD3'),
+        ('##P16_PLACEHOLDER##', 'p16'),
+        ('##P40_PLACEHOLDER##', 'p40'),
+        ('##P53_PLACEHOLDER##', 'p53'),
+        ('##P63_PLACEHOLDER##', 'p63'),
+    ]
+    for placeholder, biomarker in biomarkers_restore:
+        corrected = corrected.replace(placeholder, biomarker)
 
     return corrected
 

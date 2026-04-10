@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250989_20251111_225102",
+  "numero_peticion": "IHQ250989",
+  "timestamp": "2025-11-11T22:51:02.788516",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250989\nCopia Pag. 1 de 2\nNombre : LUIS HERNANDO ESCOBAR MURILLO\nN. peticion : IHQ250989\nN.Identificación : CC. 16700685\nGenero : MASCULINO\nEdad : 61 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 09/09/2025\nFecha Informe : 16/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2510695” que corresponde a “Biopsia de hueso”. Previa revisión de la histología, se realizan\nniveles histológicos para tinción con MUM-1, CD138, CD20, BCL-6 Y Ki67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe identifica población dispersa de linfocitos B (CD20+), sin formación de cúmulos.\nLas células plasmáticas (CD38+) distribuidas de manera dispersa y sin agregados.\nBCL6 Negativo.\nLos marcadores MUM-1 negativo.\nÍndice de proliferación KI-67 del 5%.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquímica.\n- SIN AUMENTO DE CÉLULAS PLASMÁTICAS.\n- SIN INFILTRACIÓN LINFOMATOSA DE CÉLULAS B.\nCOMENTARIOS\nEl método de elección para el tamizaje de los trastornos linfoproliferativos y de las neoplasias de células\nplasmáticas en médula ósea es la citometría de flujo, ya que permite identificar con alta sensibilidad y\nespecificidad las poblaciones celulares anormales y caracterizar sus marcadores inmunofenotípicos. \nCARLOS CAICEDO ESTRADA\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---\nIHQ250989\nCopia Pag. 2 de 2\nNombre : LUIS HERNANDO ESCOBAR MURILLO\nN. peticion : IHQ250989\nN.Identificación : CC. 16700685\nGenero : MASCULINO\nEdad : 61 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 09/09/2025\nFecha Informe : 16/09/2025\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---",
+    "hash_original": "d14fdd7d25a2c9cad03dc2e84a050724",
+    "estadisticas": {
+      "caracteres_totales": 193865,
+      "caracteres_consolidados": 3416,
+      "reduccion_porcentaje": 98.24
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 980 AL 1037.pdf",
+      "numero_ihq": "IHQ250989",
+      "caso_num": 10,
+      "total_casos": 47
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "LUIS HERNANDO ESCOBAR MURILLO",
+      "numero_peticion": "IHQ250989",
+      "identificacion": "16700685",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "61",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LAZARO DAMIAN CORTINA",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "09/09/2025",
+      "fecha_informe": "16/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250989",
+      "N. de identificación": "16700685",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "LAZARO DAMIAN CORTINA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/09/2025",
+      "Fecha Informe": "16/09/2025",
+      "nombres": "LUIS HERNANDO",
+      "Primer nombre": "LUIS",
+      "Segundo nombre": "HERNANDO",
+      "apellidos": "ESCOBAR MURILLO",
+      "Primer apellido": "ESCOBAR",
+      "Segundo apellido": "MURILLO",
+      "nombre_formal": "ESCOBAR MURILLO, LUIS HERNANDO",
+      "diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquímica. - SIN AUMENTO DE CÉLULAS PLASMÁTICAS. - SIN INFILTRACIÓN LINFOMATOSA DE CÉLULAS B.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se identifica población dispersa de linfocitos B (CD20+), sin formación de cúmulos. Las células plasmáticas (CD38+) distribuidas de manera dispersa y sin agregados. BCL6 Negativo. Los marcadores MUM-1 negativo. Índice de proliferación KI-67 del 5%.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2510695” que corresponde a “Biopsia de hueso”. Previa revisión de la histología, se realizan niveles histológicos para tinción con MUM-1, CD138, CD20, BCL-6 Y KI-67.",
+      "ihq_organo": "MEDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MUM 1, CD138, CD20, BCL 6, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "El método de elección para el tamizaje de los trastornos linfoproliferativos y de las neoplasias de células plasmáticas en médula ósea es la citometría de flujo, ya que permite identificar con alta sensibilidad y especificidad las poblaciones celulares anormales y caracterizar sus marcadores inmunofenotípicos. CARLOS CAICEDO ESTRADA Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 21 --- IHQ250989 Copia Pag. 2 de 2 Nombre : LUIS HERNANDO ESCOBAR MURILLO N. peticion : IHQ250989 N.Identificación : CC. 16700685 Genero : MASCULINO Edad : 61 años 7 dias EPS : NUEVA EPS Médico tratante : LAZARO DAMIAN CORTINA Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 09/09/2025 Fecha Informe : 16/09/2025 Responsable del análisis: MD Patólogo _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 22 ---",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "Ki-67 del 5%",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_MUM1": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_KI-67": "5%",
+      "IHQ_CD38": "POSITIVO",
+      "extraction_timestamp": "2025-11-11T22:51:02.950752",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250989\nCopia Pag. 1 de 2\nNombre : LUIS HERNANDO ESCOBAR MURILLO\nN. peticion : IHQ250989\nN.Identificación : CC. 16700685\nGenero : MASCULINO\nEdad : 61 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 09/09/2025\nFecha Informe : 16/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2510695” que corresponde a “Biopsia de hueso”. Previa revisión de la histología, se realizan\nniveles histológicos para tinción con MUM-1, CD138, CD20, BCL-6 Y Ki67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe identifica población dispersa de linfocitos B (CD20+), sin formación de cúmulos.\nLas células plasmáticas (CD38+) distribuidas de manera dispersa y sin agregados.\nBCL6 Negativo.\nLos marcadores MUM-1 negativo.\nÍndice de proliferación KI-67 del 5%.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquímica.\n- SIN AUMENTO DE CÉLULAS PLASMÁTICAS.\n- SIN INFILTRACIÓN LINFOMATOSA DE CÉLULAS B.\nCOMENTARIOS\nEl método de elección para el tamizaje de los trastornos linfoproliferativos y de las neoplasias de células\nplasmáticas en médula ósea es la citometría de flujo, ya que permite identificar con alta sensibilidad y\nespecificidad las poblaciones celulares anormales y caracterizar sus marcadores inmunofenotípicos. \nCARLOS CAICEDO ESTRADA\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---\nIHQ250989\nCopia Pag. 2 de 2\nNombre : LUIS HERNANDO ESCOBAR MURILLO\nN. peticion : IHQ250989\nN.Identificación : CC. 16700685\nGenero : MASCULINO\nEdad : 61 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 09/09/2025\nFecha Informe : 16/09/2025\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MUM 1, CD138, CD20, BCL 6, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2510695” que corresponde a “Biopsia de hueso”. Previa revisión de la histología, se realizan niveles histológicos para tinción con MUM-1, CD138, CD20, BCL-6 Y Ki67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se identifica población dispersa de linfocitos B (CD20+), sin formación de cúmulos. Las células plasmáticas (CD38+) distribuidas de manera dispersa y sin agregados. BCL6 Negativo. Los marcadores MUM-1 negativo. Índice de proliferación KI-67 del 5%.",
+      "Descripcion Diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquímica. - SIN AUMENTO DE CÉLULAS PLASMÁTICAS. - SIN INFILTRACIÓN LINFOMATOSA DE CÉLULAS B.",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Organo": "BX DE HUESO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "LINFOMATOSA DE CÉLULAS B",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 5%",
+      "IHQ_MUM1": "NEGATIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_KI-67": "5%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 148,
+      "campos_vacios": 107,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 5,
+      "completitud_porcentaje": 27.7
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 107,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula ósea. Biopsia. Estudio de inmunohistoquímica.\n- SIN AUMENTO DE CÉLULAS PLASMÁTICAS.\n- SIN INFILTRACIÓN LINFOMATOSA DE CÉLULAS B.",
+      "valor_corregido": "Medula ósea. Biopsia. Estudio de inmunohistoquímica. - SIN AUMENTO DE CÉLULAS PLASMÁTICAS. - SIN INFILTRACIÓN LINFOMATOSA DE CÉLULAS B.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250989",
+      "timestamp": "2025-11-11T22:51:02.950503"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2510695” que corresponde a “Biopsia de hueso”. Previa revisión de la histología, se realizan\nniveles histológicos para tinción con MUM-1, CD138, CD20, BCL-6 Y Ki67.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2510695” que corresponde a “Biopsia de hueso”. Previa revisión de la histología, se realizan niveles histológicos para tinción con MUM-1, CD138, CD20, BCL-6 Y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250989",
+      "timestamp": "2025-11-11T22:51:02.950510"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El método de elección para el tamizaje de los trastornos linfoproliferativos y de las neoplasias de células\nplasmáticas en médula ósea es la citometría de flujo, ya que permite identificar con alta sensibilidad y\nespecificidad las poblaciones celulares anormales y caracterizar sus marcadores inmunofenotípicos. \nCARLOS CAICEDO ESTRADA\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---\nIHQ250989\nCopia Pag. 2 de 2\nNombre : LUIS HERNANDO ESCOBAR MURILLO\nN. peticion : IHQ250989\nN.Identificación : CC. 16700685\nGenero : MASCULINO\nEdad : 61 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : LAZARO DAMIAN CORTINA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 09/09/2025\nFecha Informe : 16/09/2025\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 22 ---",
+      "valor_corregido": "El método de elección para el tamizaje de los trastornos linfoproliferativos y de las neoplasias de células plasmáticas en médula ósea es la citometría de flujo, ya que permite identificar con alta sensibilidad y especificidad las poblaciones celulares anormales y caracterizar sus marcadores inmunofenotípicos. CARLOS CAICEDO ESTRADA Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 21 --- IHQ250989 Copia Pag. 2 de 2 Nombre : LUIS HERNANDO ESCOBAR MURILLO N. peticion : IHQ250989 N.Identificación : CC. 16700685 Genero : MASCULINO Edad : 61 años 7 dias EPS : NUEVA EPS Médico tratante : LAZARO DAMIAN CORTINA Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 09/09/2025 Fecha Informe : 16/09/2025 Responsable del análisis: MD Patólogo _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 22 ---",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250989",
+      "timestamp": "2025-11-11T22:51:02.950512"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 193865,
+    "campos_extraidos": 54
+  }
+}

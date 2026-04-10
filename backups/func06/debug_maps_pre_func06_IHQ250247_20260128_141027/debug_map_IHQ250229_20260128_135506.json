@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250229_20260128_135506",
+  "numero_peticion": "IHQ250229",
+  "timestamp": "2026-01-28T13:55:06.219555",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250229\nCopia Pag. 1 de 2\nNombre : JOSELIN MARLELLY GOMEZ CORNEJO N. peticion : IHQ250229\nN.Identificación : CC. 1002884733\nGenero : FEMENINO\nEdad : 26 años\nEPS : NUEVA EPS\nMédico tratante : MARTHA PALADINES\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 03/03/2025\nFecha Informe : 14/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX ENDOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material proveniente de\nHospital francisco de paula Santander rotulado como “24-12260” que corresponde a \"exocérvix\"\ncon diagnóstico principal de “sugestiva de lesión escamosa intraepitelial cervical de bajo grado ”.\nPrevia revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con\nP16 y Ki67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\n Ki67 presenta marcación de celularidad de membrana basal (marcación usual)\nP16 presenta marcación citoplasmática focal (negativo) \nDIAGNÓSTICO\nEndocérvix. Biopsia por colposcopia. Estudios de inmunohistoquímica. \nCERVICITIS AGUDA.\nSIN ENVIDENCIA DE CAMBIOS DISPLASICOS.\nMETAPLASIA ESCAMOSA. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---\nIHQ250229\nCopia Pag. 2 de 2\nNombre : JOSELIN MARLELLY GOMEZ CORNEJO N. peticion : IHQ250229\nN.Identificación : CC. 1002884733\nGenero : FEMENINO\nEdad : 26 años\nEPS : NUEVA EPS\nMédico tratante : MARTHA PALADINES\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 03/03/2025\nFecha Informe : 14/03/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3064,
+      "reduccion_porcentaje": 98.29
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250229",
+      "caso_num": 18,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "JOSELIN MARLELLY GOMEZ CORNEJO",
+      "numero_peticion": "IHQ250229",
+      "identificacion": "1002884733",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "26",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "MARTHA PALADINES",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "03/03/2025",
+      "fecha_informe": "14/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250229",
+      "N. de identificación": "1002884733",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "MARTHA PALADINES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/03/2025",
+      "Fecha Informe": "14/03/2025",
+      "nombres": "JOSELIN MARLELLY",
+      "Primer nombre": "JOSELIN",
+      "Segundo nombre": "MARLELLY",
+      "apellidos": "GOMEZ CORNEJO",
+      "Primer apellido": "GOMEZ",
+      "Segundo apellido": "CORNEJO",
+      "nombre_formal": "GOMEZ CORNEJO, JOSELIN MARLELLY",
+      "diagnostico": "Endocérvix. Biopsia por colposcopia. Estudios de inmunohistoquímica. CERVICITIS AGUDA. SIN ENVIDENCIA DE CAMBIOS DISPLASICOS. METAPLASIA ESCAMOSA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. KI-67 presenta marcación de celularidad de membrana basal (marcación usual) p16 presenta marcación citoplasmática focal (negativo)",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material proveniente de Hospital francisco de paula Santander rotulado como \"24-12260\" que corresponde a \"exocérvix\" con diagnóstico principal de \"sugestiva de lesión escamosa intraepitelial cervical de bajo grado \". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con p16 y KI-67.",
+      "ihq_organo": "ENDOCÉRVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ENDOCÉRVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: POSITIVO (KI67 PRESENTA MARCACIÓN DE CELULARIDAD DE MEMBRANA BASAL (MARCACIÓN USUAL))",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, Ki-67",
+      "IHQ_KI-67": "POSITIVO (KI67 PRESENTA MARCACIÓN DE CELULARIDAD DE MEMBRANA BASAL (MARCACIÓN USUAL))",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "p16": "NEGATIVO",
+      "extraction_timestamp": "2026-01-28T13:55:06.623446",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250229\nCopia Pag. 1 de 2\nNombre : JOSELIN MARLELLY GOMEZ CORNEJO N. peticion : IHQ250229\nN.Identificación : CC. 1002884733\nGenero : FEMENINO\nEdad : 26 años\nEPS : NUEVA EPS\nMédico tratante : MARTHA PALADINES\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 03/03/2025\nFecha Informe : 14/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX ENDOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material proveniente de\nHospital francisco de paula Santander rotulado como “24-12260” que corresponde a \"exocérvix\"\ncon diagnóstico principal de “sugestiva de lesión escamosa intraepitelial cervical de bajo grado ”.\nPrevia revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con\nP16 y Ki67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\n Ki67 presenta marcación de celularidad de membrana basal (marcación usual)\nP16 presenta marcación citoplasmática focal (negativo) \nDIAGNÓSTICO\nEndocérvix. Biopsia por colposcopia. Estudios de inmunohistoquímica. \nCERVICITIS AGUDA.\nSIN ENVIDENCIA DE CAMBIOS DISPLASICOS.\nMETAPLASIA ESCAMOSA. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---\nIHQ250229\nCopia Pag. 2 de 2\nNombre : JOSELIN MARLELLY GOMEZ CORNEJO N. peticion : IHQ250229\nN.Identificación : CC. 1002884733\nGenero : FEMENINO\nEdad : 26 años\nEPS : NUEVA EPS\nMédico tratante : MARTHA PALADINES\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 03/03/2025\nFecha Informe : 14/03/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material proveniente de Hospital francisco de paula Santander rotulado como “24-12260” que corresponde a \"exocérvix\" con diagnóstico principal de “sugestiva de lesión escamosa intraepitelial cervical de bajo grado ”. Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con P16 y Ki67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Ki67 presenta marcación de celularidad de membrana basal (marcación usual) P16 presenta marcación citoplasmática focal (negativo)",
+      "Descripcion Diagnostico": "Endocérvix. Biopsia por colposcopia. Estudios de inmunohistoquímica. CERVICITIS AGUDA. SIN ENVIDENCIA DE CAMBIOS DISPLASICOS. METAPLASIA ESCAMOSA.",
+      "IHQ_ORGANO": "ENDOCÉRVIX",
+      "Organo": "BX ENDOCERVIX",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CERVICITIS AGUDA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: POSITIVO (KI67 PRESENTA MARCACIÓN DE CELULARIDAD DE MEMBRANA BASAL (MARCACIÓN USUAL))",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "POSITIVO (KI67 PRESENTA MARCACIÓN DE CELULARIDAD DE MEMBRANA BASAL (MARCACIÓN USUAL))"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 175,
+      "campos_vacios": 138,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Endocérvix. Biopsia por colposcopia. Estudios de inmunohistoquímica. \nCERVICITIS AGUDA.\nSIN ENVIDENCIA DE CAMBIOS DISPLASICOS.\nMETAPLASIA ESCAMOSA.",
+      "valor_corregido": "Endocérvix. Biopsia por colposcopia. Estudios de inmunohistoquímica. CERVICITIS AGUDA. SIN ENVIDENCIA DE CAMBIOS DISPLASICOS. METAPLASIA ESCAMOSA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250229",
+      "timestamp": "2026-01-28T13:55:06.623208"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material proveniente de Hospital francisco de paula Santander rotulado como “24-12260” que corresponde a \"exocérvix\" con diagnóstico principal de “sugestiva de lesión escamosa intraepitelial cervical de bajo grado ”. Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con P16 y Ki67.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material proveniente de Hospital francisco de paula Santander rotulado como \"24-12260\" que corresponde a \"exocérvix\" con diagnóstico principal de \"sugestiva de lesión escamosa intraepitelial cervical de bajo grado \". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con p16 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250229",
+      "timestamp": "2026-01-28T13:55:06.623214"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Ki67 presenta marcación de celularidad de membrana basal (marcación usual) P16 presenta marcación citoplasmática focal (negativo)",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. KI-67 presenta marcación de celularidad de membrana basal (marcación usual) p16 presenta marcación citoplasmática focal (negativo)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250229",
+      "timestamp": "2026-01-28T13:55:06.623216"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 51
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "session_id": "IHQ250156_20260105_201357",
+  "numero_peticion": "IHQ250156",
+  "timestamp": "2026-01-05T20:13:57.426697",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250156\nCopia Pag. 1 de 2\nNombre : GUSTAVO ANDRES ARBOLEDA\nBALTAZAR\nN. peticion : IHQ250156\nN.Identificación : CC. 16843397\nGenero : MASCULINO\nEdad : 43 años 1 mes 18 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ESNEYDER ALEXANDER REYES\nServicio : MEDICA HOMBRES\nFecha Ingreso : 10/02/2025\nFecha Informe : 03/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLOBULO SUPERIOR\nPULMON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2501080, el cual corresponde a lobectomía superior de\npulmón derecho con diagnóstico de \"ADENOCARCINOMA INVASIVO EN PATRÓN MICROPAPILAR Y\nSÓLIDO\". Se ordenan los siguientes marcadores: TTF-1, Napsina, p40, CKAE1E3, CK7, CK20, CK19,\nCA19-9, CDX2, Sinaptofisina, GATA-3, PAX8, PSA, Hepatocito.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales son positivas para CKAE1E3, CK7, CK19 y GATA-3. Son negativas para\nCK20, TTF-1 (realizado en dos ocasiones), p40, Napsina, PAX8, CA19-9, CDX2, Hepatocito, PSA,\nSinaptofisina.\nDIAGNÓSTICO\nPulmón. Lóbulo superior derecho. Tumor (historia de neoplasia en glándula parótida). Lobectomía.\nEstudios de inmunohistoquímica:\nCARCINOMA METASTÁSICO\nCOMENTARIOS\nEl inmunoperfil para un origen pulmonar es negativo, dada la ausencia de inmunotinción con p40,\nTTF-1 (realizado en dos ocasiones) y Napsina-A. La marcación positiva con GATA-3, CK7,\nCKAE1/E3 y CK19 sugiere un probable origen en glándula salival, considerando el antecedente de\nneoplasia\nmaligna\nsegún\nlo\nreferido\nen\nla\nhistoria\nclínica.\nSin\nembargo,\nse\nrecomienda\ncorrelacionar estos hallazgos con la historia clínica y las imágenes diagnósticas, incluyendo\nestudios endoscópicos del tracto gastrointestinal.\nCaso revisado por la Dra. Natalia Aguirre, Neumopatóloga.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 85 ---\nIHQ250156\nCopia Pag. 2 de 2\nNombre : GUSTAVO ANDRES ARBOLEDA\nBALTAZAR\nN. peticion : IHQ250156\nN.Identificación : CC. 16843397\nGenero : MASCULINO\nEdad : 43 años 1 mes 18 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ESNEYDER ALEXANDER REYES\nServicio : MEDICA HOMBRES\nFecha Ingreso : 10/02/2025\nFecha Informe : 03/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 86 ---",
+    "hash_original": "2008d355e2f673721e177c2a92577893",
+    "estadisticas": {
+      "caracteres_totales": 173661,
+      "caracteres_consolidados": 3754,
+      "reduccion_porcentaje": 97.84
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 108 AL 159.pdf",
+      "numero_ihq": "IHQ250156",
+      "caso_num": 46,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_GATA3": "POSITIVO",
+      "nombre_completo": "GUSTAVO ANDRES ARBOLEDA BALTAZAR",
+      "numero_peticion": "IHQ250156",
+      "identificacion": "16843397",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "43",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "ESNEYDER ALEXANDER REYES",
+      "servicio": "MEDICA HOMBRES",
+      "fecha_ingreso": "10/02/2025",
+      "fecha_informe": "03/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250156",
+      "N. de identificación": "16843397",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "MEDICA HOMBRES",
+      "Médico tratante": "ESNEYDER ALEXANDER REYES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "10/02/2025",
+      "Fecha Informe": "03/03/2025",
+      "nombres": "GUSTAVO",
+      "Primer nombre": "GUSTAVO",
+      "Segundo nombre": "",
+      "apellidos": "ANDRES ARBOLEDA BALTAZAR",
+      "Primer apellido": "ANDRES",
+      "Segundo apellido": "ARBOLEDA BALTAZAR",
+      "nombre_formal": "ANDRES ARBOLEDA BALTAZAR, GUSTAVO",
+      "diagnostico": "Pulmón. Lóbulo superior derecho. Tumor (historia de neoplasia en glándula parótida). Lobectomía. Estudios de inmunohistoquímica: CARCINOMA METASTÁSICO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CK7, CK19 y GATA-3. Son negativas para CK20, TTF1 (realizado en dos ocasiones), p40, Napsina, PAX8, CA19-9, CDX2, Hepatocito, PSA, Synaptophysin.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2501080, el cual corresponde a lobectomía superior de pulmón derecho con diagnóstico de \"ADENOCARCINOMA INVASIVO EN PATRÓN MICROPAPILAR Y SÓLIDO\". Se ordenan los siguientes marcadores: TTF1, Napsina, p40, CKAE1E3, CK7, CK20, CK19, CA19-9, CDX2, Synaptophysin, GATA-3, PAX8, PSA, Hepatocito.",
+      "ihq_organo": "PULMÓN",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "TTF-1, NAPSINA, P40, CKAE1E3, CK7, CK20, CK19, CA19 9, CDX2, SINAPTOFISINA, GATA 3, PAX8, PSA, HEPATOCITO",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "El inmunoperfil para un origen pulmonar es negativo, dada la ausencia de inmunotinción con p40, TTF1 (realizado en dos ocasiones) y Napsina-A. La marcación positiva con GATA-3, CK7, CKAE1/E3 y CK19 sugiere un probable origen en glándula salival, considerando el antecedente de neoplasia maligna según lo referido en la historia clínica. Sin embargo, se recomienda correlacionar estos hallazgos con la historia clínica y las imágenes diagnósticas, incluyendo estudios endoscópicos del tracto gastrointestinal. Caso revisado por la Dra. Natalia Aguirre, Neumopatóloga. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 85 --- IHQ250156 Copia Pag. 2 de 2 Nombre : GUSTAVO ANDRES ARBOLEDA BALTAZAR N. peticion : IHQ250156 N.Identificación : CC. 16843397 Genero : MASCULINO Edad : 43 años 1 mes 18 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : ESNEYDER ALEXANDER REYES Servicio : MEDICA HOMBRES Fecha Ingreso : 10/02/2025 Fecha Informe : 03/03/2025",
+      "IHQ_ORGANO": "PULMÓN",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, NAPSINA, P40, CKAE1E3, CK7, CK20, CK19, CA19 9, CDX2, SINAPTOFISINA, GATA 3, PAX8, PSA, HEPATOCITO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_NAPSIN": ", PAX8, CA19-9, CDX2, HEPATOCITO, PSA,",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_CA19_9": "POSITIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-01-05T20:13:57.886839",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250156\nCopia Pag. 1 de 2\nNombre : GUSTAVO ANDRES ARBOLEDA\nBALTAZAR\nN. peticion : IHQ250156\nN.Identificación : CC. 16843397\nGenero : MASCULINO\nEdad : 43 años 1 mes 18 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ESNEYDER ALEXANDER REYES\nServicio : MEDICA HOMBRES\nFecha Ingreso : 10/02/2025\nFecha Informe : 03/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLOBULO SUPERIOR\nPULMON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2501080, el cual corresponde a lobectomía superior de\npulmón derecho con diagnóstico de \"ADENOCARCINOMA INVASIVO EN PATRÓN MICROPAPILAR Y\nSÓLIDO\". Se ordenan los siguientes marcadores: TTF-1, Napsina, p40, CKAE1E3, CK7, CK20, CK19,\nCA19-9, CDX2, Sinaptofisina, GATA-3, PAX8, PSA, Hepatocito.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células tumorales son positivas para CKAE1E3, CK7, CK19 y GATA-3. Son negativas para\nCK20, TTF-1 (realizado en dos ocasiones), p40, Napsina, PAX8, CA19-9, CDX2, Hepatocito, PSA,\nSinaptofisina.\nDIAGNÓSTICO\nPulmón. Lóbulo superior derecho. Tumor (historia de neoplasia en glándula parótida). Lobectomía.\nEstudios de inmunohistoquímica:\nCARCINOMA METASTÁSICO\nCOMENTARIOS\nEl inmunoperfil para un origen pulmonar es negativo, dada la ausencia de inmunotinción con p40,\nTTF-1 (realizado en dos ocasiones) y Napsina-A. La marcación positiva con GATA-3, CK7,\nCKAE1/E3 y CK19 sugiere un probable origen en glándula salival, considerando el antecedente de\nneoplasia\nmaligna\nsegún\nlo\nreferido\nen\nla\nhistoria\nclínica.\nSin\nembargo,\nse\nrecomienda\ncorrelacionar estos hallazgos con la historia clínica y las imágenes diagnósticas, incluyendo\nestudios endoscópicos del tracto gastrointestinal.\nCaso revisado por la Dra. Natalia Aguirre, Neumopatóloga.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 85 ---\nIHQ250156\nCopia Pag. 2 de 2\nNombre : GUSTAVO ANDRES ARBOLEDA\nBALTAZAR\nN. peticion : IHQ250156\nN.Identificación : CC. 16843397\nGenero : MASCULINO\nEdad : 43 años 1 mes 18 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ESNEYDER ALEXANDER REYES\nServicio : MEDICA HOMBRES\nFecha Ingreso : 10/02/2025\nFecha Informe : 03/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 86 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, NAPSINA, P40, CKAE1E3, CK7, CK20, CK19, CA19 9, CDX2, SINAPTOFISINA, GATA 3, PAX8, PSA, HEPATOCITO, CKAE1AE3, NAPSIN",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2501080, el cual corresponde a lobectomía superior de pulmón derecho con diagnóstico de \"ADENOCARCINOMA INVASIVO EN PATRÓN MICROPAPILAR Y SÓLIDO\". Se ordenan los siguientes marcadores: TTF-1, Napsina, p40, CKAE1E3, CK7, CK20, CK19, CA19-9, CDX2, Sinaptofisina, GATA-3, PAX8, PSA, Hepatocito.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CK7, CK19 y GATA-3. Son negativas para CK20, TTF-1 (realizado en dos ocasiones), p40, Napsina, PAX8, CA19-9, CDX2, Hepatocito, PSA, Sinaptofisina.",
+      "Descripcion Diagnostico": "Pulmón. Lóbulo superior derecho. Tumor (historia de neoplasia en glándula parótida). Lobectomía. Estudios de inmunohistoquímica: CARCINOMA METASTÁSICO",
+      "IHQ_ORGANO": "PULMÓN",
+      "Organo": "LOBULO SUPERIOR PULMON DERECHO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO EN PATRÓN MICROPAPILAR Y SÓLIDO",
+      "Diagnostico Principal": "CARCINOMA METASTÁSICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_TTF1": "NO MENCIONADO",
+      "IHQ_NAPSIN": ", PAX8, CA19-9, CDX2, HEPATOCITO, PSA,",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_CKAE1E3": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CA19_9": "POSITIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_SINAPTOFISINA": "NO MENCIONADO",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_PSA": "NO MENCIONADO",
+      "IHQ_HEPATOCITO": "NO MENCIONADO",
+      "IHQ_CKAE1AE3": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 168,
+      "campos_vacios": 117,
+      "campos_completos": 51,
+      "biomarcadores_encontrados": 16,
+      "completitud_porcentaje": 30.36
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 117,
+      "total_campos_completos": 51
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón. Lóbulo superior derecho. Tumor (historia de neoplasia en glándula parótida). Lobectomía.\nEstudios de inmunohistoquímica:\nCARCINOMA METASTÁSICO",
+      "valor_corregido": "Pulmón. Lóbulo superior derecho. Tumor (historia de neoplasia en glándula parótida). Lobectomía. Estudios de inmunohistoquímica: CARCINOMA METASTÁSICO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250156",
+      "timestamp": "2026-01-05T20:13:57.886551"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2501080, el cual corresponde a lobectomía superior de pulmón derecho con diagnóstico de \"ADENOCARCINOMA INVASIVO EN PATRÓN MICROPAPILAR Y SÓLIDO\". Se ordenan los siguientes marcadores: TTF-1, Napsina, p40, CKAE1E3, CK7, CK20, CK19, CA19-9, CDX2, Sinaptofisina, GATA-3, PAX8, PSA, Hepatocito.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2501080, el cual corresponde a lobectomía superior de pulmón derecho con diagnóstico de \"ADENOCARCINOMA INVASIVO EN PATRÓN MICROPAPILAR Y SÓLIDO\". Se ordenan los siguientes marcadores: TTF1, Napsina, p40, CKAE1E3, CK7, CK20, CK19, CA19-9, CDX2, Synaptophysin, GATA-3, PAX8, PSA, Hepatocito.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250156",
+      "timestamp": "2026-01-05T20:13:57.886557"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CK7, CK19 y GATA-3. Son negativas para CK20, TTF-1 (realizado en dos ocasiones), p40, Napsina, PAX8, CA19-9, CDX2, Hepatocito, PSA, Sinaptofisina.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CK7, CK19 y GATA-3. Son negativas para CK20, TTF1 (realizado en dos ocasiones), p40, Napsina, PAX8, CA19-9, CDX2, Hepatocito, PSA, Synaptophysin.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250156",
+      "timestamp": "2026-01-05T20:13:57.886559"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El inmunoperfil para un origen pulmonar es negativo, dada la ausencia de inmunotinción con p40,\nTTF-1 (realizado en dos ocasiones) y Napsina-A. La marcación positiva con GATA-3, CK7,\nCKAE1/E3 y CK19 sugiere un probable origen en glándula salival, considerando el antecedente de\nneoplasia\nmaligna\nsegún\nlo\nreferido\nen\nla\nhistoria\nclínica.\nSin\nembargo,\nse\nrecomienda\ncorrelacionar estos hallazgos con la historia clínica y las imágenes diagnósticas, incluyendo\nestudios endoscópicos del tracto gastrointestinal.\nCaso revisado por la Dra. Natalia Aguirre, Neumopatóloga.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 85 ---\nIHQ250156\nCopia Pag. 2 de 2\nNombre : GUSTAVO ANDRES ARBOLEDA\nBALTAZAR\nN. peticion : IHQ250156\nN.Identificación : CC. 16843397\nGenero : MASCULINO\nEdad : 43 años 1 mes 18 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ESNEYDER ALEXANDER REYES\nServicio : MEDICA HOMBRES\nFecha Ingreso : 10/02/2025\nFecha Informe : 03/03/2025",
+      "valor_corregido": "El inmunoperfil para un origen pulmonar es negativo, dada la ausencia de inmunotinción con p40, TTF1 (realizado en dos ocasiones) y Napsina-A. La marcación positiva con GATA-3, CK7, CKAE1/E3 y CK19 sugiere un probable origen en glándula salival, considerando el antecedente de neoplasia maligna según lo referido en la historia clínica. Sin embargo, se recomienda correlacionar estos hallazgos con la historia clínica y las imágenes diagnósticas, incluyendo estudios endoscópicos del tracto gastrointestinal. Caso revisado por la Dra. Natalia Aguirre, Neumopatóloga. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 85 --- IHQ250156 Copia Pag. 2 de 2 Nombre : GUSTAVO ANDRES ARBOLEDA BALTAZAR N. peticion : IHQ250156 N.Identificación : CC. 16843397 Genero : MASCULINO Edad : 43 años 1 mes 18 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : ESNEYDER ALEXANDER REYES Servicio : MEDICA HOMBRES Fecha Ingreso : 10/02/2025 Fecha Informe : 03/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250156",
+      "timestamp": "2026-01-05T20:13:57.886560"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 173661,
+    "campos_extraidos": 59
+  }
+}

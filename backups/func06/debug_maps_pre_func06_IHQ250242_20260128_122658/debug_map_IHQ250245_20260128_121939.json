@@ -1,0 +1,168 @@
+{
+  "session_id": "IHQ250245_20260128_121939",
+  "numero_peticion": "IHQ250245",
+  "timestamp": "2026-01-28T12:19:39.340081",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250245\nCopia Pag. 1 de 2\nNombre : LUIS CARLOS RAMOS GRUESO\nN. peticion : IHQ250245\nN.Identificación : CC. 1060800724\nGenero : MASCULINO\nEdad : 34 años 9 meses 28 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JORGE WILMAR TEJADA\nServicio : DERMATOLOGIA\nFecha Ingreso : 07/03/2025\nFecha Informe : 14/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR DE HIPOFISIS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2403199 que corresponde a resección de lesión en hipófisis. Se\nordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nRoche VENTANA©.\nLa mayor parte de la muestra corresponde necrosis con restos de células hipofisiarias sin\ninmunomarcación y presencia de histiocitos con marcación para CD68 y escasos linfocitos CD20 y\nCD3 positivos dispersos sin formación de acúmulos, en la muestra no hay inmunorreactividad\npara Sinaptofisina, ACTH, GH, FSH, LH, TSH, Prolactina, CAM5.2, Cromogranina.\nEl índice de proliferación celular presenta un Ki-67 menor del 1%. \nVER DESCRIPCION MICROSCOPICA Y COMENTARIO\nDIAGNÓSTICO\nHipófisis. Lesión. Resección. Estudios de inmunohistoquímica:\nCOMENTARIOS\nLa celularidad viable es inflamatoria, por lo que no es posible definir si esta muestra corresponde\no no a un adenoma productor, se sugiere correlacionar con la clínica, imágenes diagnósticas y\nestudios de laboratorio de la paciente. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---\nIHQ250245\nCopia Pag. 2 de 2\nNombre : LUIS CARLOS RAMOS GRUESO\nN. peticion : IHQ250245\nN.Identificación : CC. 1060800724\nGenero : MASCULINO\nEdad : 34 años 9 meses 28 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JORGE WILMAR TEJADA\nServicio : DERMATOLOGIA\nFecha Ingreso : 07/03/2025\nFecha Informe : 14/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---",
+    "hash_original": "dcf6b931bf6fc10c6d9d6e076086f5e9",
+    "estadisticas": {
+      "caracteres_totales": 179612,
+      "caracteres_consolidados": 3353,
+      "reduccion_porcentaje": 98.13
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 212 AL 262.pdf",
+      "numero_ihq": "IHQ250245",
+      "caso_num": 33,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "nombre_completo": "LUIS CARLOS RAMOS GRUESO",
+      "numero_peticion": "IHQ250245",
+      "identificacion": "1060800724",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "34",
+      "eps": "EPS FAMISANAR SAS",
+      "medico_tratante": "JORGE WILMAR TEJADA",
+      "servicio": "DERMATOLOGIA",
+      "fecha_ingreso": "07/03/2025",
+      "fecha_informe": "14/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250245",
+      "N. de identificación": "1060800724",
+      "Tipo de documento": "CC",
+      "EPS": "EPS FAMISANAR SAS",
+      "Servicio": "DERMATOLOGIA",
+      "Médico tratante": "JORGE WILMAR TEJADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/03/2025",
+      "Fecha Informe": "14/03/2025",
+      "nombres": "LUIS CARLOS",
+      "Primer nombre": "LUIS",
+      "Segundo nombre": "CARLOS",
+      "apellidos": "RAMOS GRUESO",
+      "Primer apellido": "RAMOS",
+      "Segundo apellido": "GRUESO",
+      "nombre_formal": "RAMOS GRUESO, LUIS CARLOS",
+      "diagnostico": "Hipófisis. Lesión. Resección. Estudios de inmunohistoquímica:",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La mayor parte de la muestra corresponde necrosis con restos de células hipofisiarias sin inmunomarcación y presencia de histiocitos con marcación para CD68 y escasos linfocitos CD20 y CD3 positivos dispersos sin formación de acúmulos, en la muestra no hay inmunorreactividad para Synaptophysin, ACTH, GH, FSH, LH, TSH, Prolactina, CAM5.2, Cromogranina. El índice de proliferación celular presenta un KI-67 menor del 1%. VER DESCRIPCION MICROSCOPICA Y COMENTARIO",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2403199 que corresponde a resección de lesión en hipófisis. Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "HIPÓFISIS",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "DERMATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "La celularidad viable es inflamatoria, por lo que no es posible definir si esta muestra corresponde o no a un adenoma productor, se sugiere correlacionar con la clínica, imágenes diagnósticas y estudios de laboratorio de la paciente. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 64 --- IHQ250245 Copia Pag. 2 de 2 Nombre : LUIS CARLOS RAMOS GRUESO N. peticion : IHQ250245 N.Identificación : CC. 1060800724 Genero : MASCULINO Edad : 34 años 9 meses 28 dias EPS : EPS FAMISANAR SAS Médico tratante : JORGE WILMAR TEJADA Servicio : DERMATOLOGIA Fecha Ingreso : 07/03/2025 Fecha Informe : 14/03/2025",
+      "IHQ_ORGANO": "HIPÓFISIS",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_ACTH": "NEGATIVO",
+      "IHQ_GH": "NEGATIVO",
+      "IHQ_FSH": "NEGATIVO",
+      "IHQ_LH": "NEGATIVO",
+      "IHQ_TSH": "NEGATIVO",
+      "IHQ_PROLACTINA": "NEGATIVO",
+      "IHQ_CAM5": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "POSITIVO",
+      "IHQ_KI-67": "<1%",
+      "extraction_timestamp": "2026-01-28T12:19:39.877297",
+      "extractor_version": "6.0.9_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250245\nCopia Pag. 1 de 2\nNombre : LUIS CARLOS RAMOS GRUESO\nN. peticion : IHQ250245\nN.Identificación : CC. 1060800724\nGenero : MASCULINO\nEdad : 34 años 9 meses 28 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JORGE WILMAR TEJADA\nServicio : DERMATOLOGIA\nFecha Ingreso : 07/03/2025\nFecha Informe : 14/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR DE HIPOFISIS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2403199 que corresponde a resección de lesión en hipófisis. Se\nordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nRoche VENTANA©.\nLa mayor parte de la muestra corresponde necrosis con restos de células hipofisiarias sin\ninmunomarcación y presencia de histiocitos con marcación para CD68 y escasos linfocitos CD20 y\nCD3 positivos dispersos sin formación de acúmulos, en la muestra no hay inmunorreactividad\npara Sinaptofisina, ACTH, GH, FSH, LH, TSH, Prolactina, CAM5.2, Cromogranina.\nEl índice de proliferación celular presenta un Ki-67 menor del 1%. \nVER DESCRIPCION MICROSCOPICA Y COMENTARIO\nDIAGNÓSTICO\nHipófisis. Lesión. Resección. Estudios de inmunohistoquímica:\nCOMENTARIOS\nLa celularidad viable es inflamatoria, por lo que no es posible definir si esta muestra corresponde\no no a un adenoma productor, se sugiere correlacionar con la clínica, imágenes diagnósticas y\nestudios de laboratorio de la paciente. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---\nIHQ250245\nCopia Pag. 2 de 2\nNombre : LUIS CARLOS RAMOS GRUESO\nN. peticion : IHQ250245\nN.Identificación : CC. 1060800724\nGenero : MASCULINO\nEdad : 34 años 9 meses 28 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JORGE WILMAR TEJADA\nServicio : DERMATOLOGIA\nFecha Ingreso : 07/03/2025\nFecha Informe : 14/03/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "ACTH, CD20, CD3, CD68, CROMOGRANINA, FSH, GH, Ki-67, LH, PROLACTINA, SYNAPTOFISINA, TSH",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2403199 que corresponde a resección de lesión en hipófisis. Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La mayor parte de la muestra corresponde necrosis con restos de células hipofisiarias sin inmunomarcación y presencia de histiocitos con marcación para CD68 y escasos linfocitos CD20 y CD3 positivos dispersos sin formación de acúmulos, en la muestra no hay inmunorreactividad para Sinaptofisina, ACTH, GH, FSH, LH, TSH, Prolactina, CAM5.2, Cromogranina. El índice de proliferación celular presenta un Ki-67 menor del 1%. VER DESCRIPCION MICROSCOPICA Y COMENTARIO",
+      "Descripcion Diagnostico": "Hipófisis. Lesión. Resección. Estudios de inmunohistoquímica:",
+      "IHQ_ORGANO": "HIPÓFISIS",
+      "Organo": "TUMOR DE HIPOFISIS",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "Hipófisis. Lesión. Resección. Estudios de inmunohistoquímica:",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_ACTH": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_CROMOGRANINA": "POSITIVO",
+      "IHQ_FSH": "NEGATIVO",
+      "IHQ_GH": "NEGATIVO",
+      "IHQ_KI-67": "<1%",
+      "IHQ_LH": "NEGATIVO",
+      "IHQ_PROLACTINA": "NEGATIVO",
+      "IHQ_TSH": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_CAM5": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 175,
+      "campos_vacios": 127,
+      "campos_completos": 48,
+      "biomarcadores_encontrados": 13,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 127,
+      "total_campos_completos": 48
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La mayor parte de la muestra corresponde necrosis con restos de células hipofisiarias sin inmunomarcación y presencia de histiocitos con marcación para CD68 y escasos linfocitos CD20 y CD3 positivos dispersos sin formación de acúmulos, en la muestra no hay inmunorreactividad para Sinaptofisina, ACTH, GH, FSH, LH, TSH, Prolactina, CAM5.2, Cromogranina. El índice de proliferación celular presenta un Ki-67 menor del 1%. VER DESCRIPCION MICROSCOPICA Y COMENTARIO",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA©. La mayor parte de la muestra corresponde necrosis con restos de células hipofisiarias sin inmunomarcación y presencia de histiocitos con marcación para CD68 y escasos linfocitos CD20 y CD3 positivos dispersos sin formación de acúmulos, en la muestra no hay inmunorreactividad para Synaptophysin, ACTH, GH, FSH, LH, TSH, Prolactina, CAM5.2, Cromogranina. El índice de proliferación celular presenta un KI-67 menor del 1%. VER DESCRIPCION MICROSCOPICA Y COMENTARIO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250245",
+      "timestamp": "2026-01-28T12:19:39.877008"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La celularidad viable es inflamatoria, por lo que no es posible definir si esta muestra corresponde\no no a un adenoma productor, se sugiere correlacionar con la clínica, imágenes diagnósticas y\nestudios de laboratorio de la paciente. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---\nIHQ250245\nCopia Pag. 2 de 2\nNombre : LUIS CARLOS RAMOS GRUESO\nN. peticion : IHQ250245\nN.Identificación : CC. 1060800724\nGenero : MASCULINO\nEdad : 34 años 9 meses 28 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : JORGE WILMAR TEJADA\nServicio : DERMATOLOGIA\nFecha Ingreso : 07/03/2025\nFecha Informe : 14/03/2025",
+      "valor_corregido": "La celularidad viable es inflamatoria, por lo que no es posible definir si esta muestra corresponde o no a un adenoma productor, se sugiere correlacionar con la clínica, imágenes diagnósticas y estudios de laboratorio de la paciente. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 64 --- IHQ250245 Copia Pag. 2 de 2 Nombre : LUIS CARLOS RAMOS GRUESO N. peticion : IHQ250245 N.Identificación : CC. 1060800724 Genero : MASCULINO Edad : 34 años 9 meses 28 dias EPS : EPS FAMISANAR SAS Médico tratante : JORGE WILMAR TEJADA Servicio : DERMATOLOGIA Fecha Ingreso : 07/03/2025 Fecha Informe : 14/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250245",
+      "timestamp": "2026-01-28T12:19:39.877015"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 179612,
+    "campos_extraidos": 60
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "func": "FUNC-06",
+  "caso": "IHQ250255",
+  "version": "v6.5.62",
+  "fecha": "2026-01-28T17:07:00",
+  "objetivo": "Validar correccion Ki-67 patron narrativo ESPERADO (foliculos linfoides)",
+  "pdf_reprocesado": "pdfs_patologia/IHQ DEL 212 AL 262.pdf",
+  "casos_afectados": 50,
+  "rango_casos": "IHQ250212-IHQ250262",
+  
+  "problema_detectado": {
+    "campo": "IHQ_KI-67",
+    "valor_anterior": "NO MENCIONADO",
+    "causa": "Patron anterior NO capturaba formato narrativo especial",
+    "texto_ocr": "El indice de proliferacion celular Ki67% es el esperado en los foliculos linfoides"
+  },
+  
+  "correccion_aplicada": {
+    "archivo": "core/extractors/biomarker_extractor.py",
+    "funcion": "_extract_ki67()",
+    "patron_agregado": "r'(?i)(?:el\s+)?(?:indice\s+de\s+proliferaci[oó]n\s+celular\s+)?ki-?67%?\s+(?:es\s+)?el\s+esperado\s+(?:en\s+)?(?:los?\s+)?(.+?)(?:\.|,|\n|$)'",
+    "normalizacion": "Captura contexto -> ESPERADO (contexto)"
+  },
+  
+  "resultado_caso_objetivo": {
+    "caso": "IHQ250255",
+    "score_antes": 77.8,
+    "score_despues": 100.0,
+    "mejora": 22.2,
+    "ihq_ki67_antes": "NO MENCIONADO",
+    "ihq_ki67_despues": "ESPERADO (folículos linfoides)",
+    "factor_pronostico": "Ki-67: ESPERADO (folículos linfoides)",
+    "estado": "OK",
+    "warnings": 0,
+    "errores": 0
+  },
+  
+  "validacion_anti_regresion": {
+    "casos_validados": [
+      {
+        "caso": "IHQ250212",
+        "score": 100.0,
+        "estado": "OK",
+        "ki67_formato": "normal (porcentaje)",
+        "regresion": false
+      },
+      {
+        "caso": "IHQ250213",
+        "score": 100.0,
+        "estado": "OK",
+        "ki67_formato": "normal (porcentaje)",
+        "regresion": false
+      },
+      {
+        "caso": "IHQ250220",
+        "score": 100.0,
+        "estado": "OK",
+        "ki67_formato": "normal (porcentaje)",
+        "regresion": false
+      },
+      {
+        "caso": "IHQ250230",
+        "score": 88.9,
+        "estado": "ADVERTENCIA",
+        "ki67_formato": "normal (porcentaje)",
+        "warning_tipo": "DIAGNOSTICO_PRINCIPAL",
+        "warning_relacionado_ki67": false,
+        "regresion": false
+      }
+    ],
+    "total_validados": 4,
+    "casos_100_pct": 3,
+    "casos_con_warnings": 1,
+    "warnings_ki67": 0,
+    "regresion_detectada": false
+  },
+  
+  "analisis": {
+    "patron_funcional": true,
+    "casos_normales_afectados": false,
+    "caso_narrativo_corregido": true,
+    "score_mejora": 22.2
+  },
+  
+  "conclusion": {
+    "estado": "EXITOSO",
+    "version_aprobada": "v6.5.62",
+    "patron_validado": true,
+    "sin_regresion": true,
+    "recomendacion": "Continuar con siguiente caso. Patron v6.5.62 confirmado como estable."
+  },
+  
+  "archivos_generados": [
+    "herramientas_ia/resultados/VALIDACION_FIX_v6.5.62_IHQ250255.json",
+    "herramientas_ia/resultados/RESUMEN_EJECUTIVO_v6.5.62_IHQ250255.txt",
+    "herramientas_ia/resultados/auditoria_inteligente_IHQ250212.json",
+    "herramientas_ia/resultados/auditoria_inteligente_IHQ250213.json",
+    "herramientas_ia/resultados/auditoria_inteligente_IHQ250220.json",
+    "herramientas_ia/resultados/auditoria_inteligente_IHQ250230.json",
+    "herramientas_ia/resultados/auditoria_inteligente_IHQ250255.json",
+    "herramientas_ia/resultados/VALIDACION_ANTI_REGRESION_v6.5.62.txt",
+    "herramientas_ia/resultados/FUNC-06_reprocesamiento_IHQ250255_v6.5.62.json"
+  ]
+}

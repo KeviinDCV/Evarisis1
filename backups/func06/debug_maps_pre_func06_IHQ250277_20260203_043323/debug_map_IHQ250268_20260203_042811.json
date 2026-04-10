@@ -1,0 +1,148 @@
+{
+  "session_id": "IHQ250268_20260203_042811",
+  "numero_peticion": "IHQ250268",
+  "timestamp": "2026-02-03T04:28:11.381874",
+  "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250268\nCopia Pag. 1 de 2\nNombre : JAIRO BARONA LOPEZ\nN. peticion : IHQ250268\nN.Identificación : CC. 16661303\nGenero : MASCULINO\nEdad : 62 años 7 meses 19 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : GINO ARBELAEZ\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 14/03/2025\nFecha Informe : 17/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PROSTATA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2405344” que corresponde a “biopsia de próstata derecha e izquierda” con\ndiagnóstico de “PROLIFERACIÓN ACINAR ATÍPICA EN LA LAMINA E (TERCIO MEDIO DEL LÓBULO\nIZQUIERDO)”. Previa revisión de la histología, se realizan niveles histológicos para tinción con\np63, 34BetaE12 y racemasa.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLamina E. Parénquima prostatico evaluado en esta lamina: 10 mm. En un área de 1 mm se\nreconocen glándulas atípicas que pierden expresión de células basales (p63 y CK34BETA\nnegativos), y son positivas para racemasa. Negativo para invasión perineural y linfovascular. \nD-F. PROTOCOLO COLEGIO AMERICANO DE PATÓLOGOS (V. 1.1.0.0).\nLocalización del espécimen: Izquierdo\nTipo histológico: Adenocarcinoma acinar.\nGrado histológico: Grupo 1 (Gleason 3 + 3 =6).\nCarcinoma intraductal: No identificado.\nPatrón cribiforme: No identificado.\nNúmero total de cilindros: 4.\nNúmero de cilindros positivos: 1.\nTécnica de medición: Continua.\nPorcentaje total de compromiso de tejido prostático: 5 %\nPorcentaje de tumor de cilindro de mayor compromiso: 10 %\nMedición lineal total de carcinoma (mm): 1 mm\nMedición lineal total de tejido prostático (mm): 20 mm\nInvasión de grasa periprostática: No puede ser determinado.\nInvasión de vesicular seminal: No puede ser determinado.\nInvasión linfovascular: No identificado.\nInvasión perineural: No identificada.\nHallazgos adicionales: Ninguno.\n- VER DESCRIPCIÓN MICROSCÓPICA.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nDIAGNÓSTICO\nE. Próstata, tercio medio del lóbulo izquierdo. Biopsia. Estudio de inmunohistoquímica:\n- ADECARCINOMA ACINAR GRUPO 1 (GLEASON 3 + 3 = 6).\n- COMPROMISO DEL PÁRENQUIMA EVALUADO: 1 MM.\n- INVASIÓN PERINEURAL NO IDENTIFICADA.\n- INVASIÓN LINFOVASCULAR NO IDENTIFICADA.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---\nIHQ250268\nCopia Pag. 2 de 2\nNombre : JAIRO BARONA LOPEZ\nN. peticion : IHQ250268\nN.Identificación : CC. 16661303\nGenero : MASCULINO\nEdad : 62 años 7 meses 19 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : GINO ARBELAEZ\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 14/03/2025\nFecha Informe : 17/03/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 4183,
+      "reduccion_porcentaje": 97.61
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\USUARIO\\Desktop\\DEBERES HUV\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250268",
+      "caso_num": 6,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_RACEMASA": "POSITIVO",
+      "nombre_completo": "JAIRO BARONA LOPEZ",
+      "numero_peticion": "IHQ250268",
+      "identificacion": "16661303",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "62",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "GINO ARBELAEZ",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "14/03/2025",
+      "fecha_informe": "17/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250268",
+      "N. de identificación": "16661303",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "GINO ARBELAEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/03/2025",
+      "Fecha Informe": "17/03/2025",
+      "nombres": "JAIRO BARONA",
+      "Primer nombre": "JAIRO",
+      "Segundo nombre": "BARONA",
+      "apellidos": "LOPEZ",
+      "Primer apellido": "LOPEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "LOPEZ, JAIRO BARONA",
+      "diagnostico": "E. Próstata, tercio medio del lóbulo izquierdo. Biopsia. Estudio de inmunohistoquímica: - ADECARCINOMA ACINAR GRUPO 1 (GLEASON 3 + 3 = 6). - COMPROMISO DEL PÁRENQUIMA EVALUADO: 1 MM. - INVASIÓN PERINEURAL NO IDENTIFICADA. - INVASIÓN LINFOVASCULAR NO IDENTIFICADA: 14/03/2025",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lamina E. Parénquima prostatico evaluado en esta lamina: 10 mm. En un área de 1 mm se reconocen glándulas atípicas que pierden expresión de células basales (p63 y CK34BETA negativos), y son positivas para racemasa. Negativo para invasión perineural y linfovascular. D-F. PROTOCOLO COLEGIO AMERICANO DE PATÓLOGOS (V. 1.1.0.0). Localización del espécimen: Izquierdo Tipo histológico: Adenocarcinoma acinar. Grado histológico: Grupo 1 (Gleason 3 + 3 =6). Carcinoma intraductal: No identificado. Patrón cribiforme: No identificado. Número total de cilindros: 4. Número de cilindros positivos: 1. Técnica de medición: Continua. Porcentaje total de compromiso de tejido prostático: 5 % Porcentaje de tumor de cilindro de mayor compromiso: 10 % Medición lineal total de carcinoma (mm): 1 mm Medición lineal total de tejido prostático (mm): 20 mm Invasión de grasa periprostática: No puede ser determinado. Invasión de vesicular seminal: No puede ser determinado. Invasión linfovascular: No identificado. Invasión perineural: No identificada. Hallazgos adicionales: Ninguno. - VER DESCRIPCIÓN MICROSCÓPICA. NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2405344\" que corresponde a \"biopsia de próstata derecha e izquierda\" con diagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA EN LA LAMINA E (TERCIO MEDIO DEL LÓBULO IZQUIERDO)\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p63, 34BetaE12 y racemasa.",
+      "ihq_organo": "PRÓSTATA, TERCIO MEDIO DEL LÓBULO IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P63, CK34BE12, RACEMASA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PRÓSTATA, TERCIO MEDIO DEL LÓBULO IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK34BE12, RACEMASA",
+      "IHQ_P63": "NEGATIVOS",
+      "IHQ_CK34BETAE12": "NEGATIVOS",
+      "extraction_timestamp": "2026-02-03T04:28:11.810127",
+      "extractor_version": "6.5.91_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250268\nCopia Pag. 1 de 2\nNombre : JAIRO BARONA LOPEZ\nN. peticion : IHQ250268\nN.Identificación : CC. 16661303\nGenero : MASCULINO\nEdad : 62 años 7 meses 19 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : GINO ARBELAEZ\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 14/03/2025\nFecha Informe : 17/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PROSTATA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2405344” que corresponde a “biopsia de próstata derecha e izquierda” con\ndiagnóstico de “PROLIFERACIÓN ACINAR ATÍPICA EN LA LAMINA E (TERCIO MEDIO DEL LÓBULO\nIZQUIERDO)”. Previa revisión de la histología, se realizan niveles histológicos para tinción con\np63, 34BetaE12 y racemasa.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLamina E. Parénquima prostatico evaluado en esta lamina: 10 mm. En un área de 1 mm se\nreconocen glándulas atípicas que pierden expresión de células basales (p63 y CK34BETA\nnegativos), y son positivas para racemasa. Negativo para invasión perineural y linfovascular. \nD-F. PROTOCOLO COLEGIO AMERICANO DE PATÓLOGOS (V. 1.1.0.0).\nLocalización del espécimen: Izquierdo\nTipo histológico: Adenocarcinoma acinar.\nGrado histológico: Grupo 1 (Gleason 3 + 3 =6).\nCarcinoma intraductal: No identificado.\nPatrón cribiforme: No identificado.\nNúmero total de cilindros: 4.\nNúmero de cilindros positivos: 1.\nTécnica de medición: Continua.\nPorcentaje total de compromiso de tejido prostático: 5 %\nPorcentaje de tumor de cilindro de mayor compromiso: 10 %\nMedición lineal total de carcinoma (mm): 1 mm\nMedición lineal total de tejido prostático (mm): 20 mm\nInvasión de grasa periprostática: No puede ser determinado.\nInvasión de vesicular seminal: No puede ser determinado.\nInvasión linfovascular: No identificado.\nInvasión perineural: No identificada.\nHallazgos adicionales: Ninguno.\n- VER DESCRIPCIÓN MICROSCÓPICA.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nDIAGNÓSTICO\nE. Próstata, tercio medio del lóbulo izquierdo. Biopsia. Estudio de inmunohistoquímica:\n- ADECARCINOMA ACINAR GRUPO 1 (GLEASON 3 + 3 = 6).\n- COMPROMISO DEL PÁRENQUIMA EVALUADO: 1 MM.\n- INVASIÓN PERINEURAL NO IDENTIFICADA.\n- INVASIÓN LINFOVASCULAR NO IDENTIFICADA.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---\nIHQ250268\nCopia Pag. 2 de 2\nNombre : JAIRO BARONA LOPEZ\nN. peticion : IHQ250268\nN.Identificación : CC. 16661303\nGenero : MASCULINO\nEdad : 62 años 7 meses 19 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : GINO ARBELAEZ\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 14/03/2025\nFecha Informe : 17/03/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK34BE12, RACEMASA, CK34BETAE12",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2405344” que corresponde a “biopsia de próstata derecha e izquierda” con diagnóstico de “PROLIFERACIÓN ACINAR ATÍPICA EN LA LAMINA E (TERCIO MEDIO DEL LÓBULO IZQUIERDO)”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p63, 34BetaE12 y racemasa.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lamina E. Parénquima prostatico evaluado en esta lamina: 10 mm. En un área de 1 mm se reconocen glándulas atípicas que pierden expresión de células basales (p63 y CK34BETA negativos), y son positivas para racemasa. Negativo para invasión perineural y linfovascular. D-F. PROTOCOLO COLEGIO AMERICANO DE PATÓLOGOS (V. 1.1.0.0). Localización del espécimen: Izquierdo Tipo histológico: Adenocarcinoma acinar. Grado histológico: Grupo 1 (Gleason 3 + 3 =6). Carcinoma intraductal: No identificado. Patrón cribiforme: No identificado. Número total de cilindros: 4. Número de cilindros positivos: 1. Técnica de medición: Continua. Porcentaje total de compromiso de tejido prostático: 5 % Porcentaje de tumor de cilindro de mayor compromiso: 10 % Medición lineal total de carcinoma (mm): 1 mm Medición lineal total de tejido prostático (mm): 20 mm Invasión de grasa periprostática: No puede ser determinado. Invasión de vesicular seminal: No puede ser determinado. Invasión linfovascular: No identificado. Invasión perineural: No identificada. Hallazgos adicionales: Ninguno. - VER DESCRIPCIÓN MICROSCÓPICA. NANCY MEJIA VARGAS Médica Patóloga RM: 76-0405/15 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas.",
+      "Descripcion Diagnostico": "E. Próstata, tercio medio del lóbulo izquierdo. Biopsia. Estudio de inmunohistoquímica: - ADECARCINOMA ACINAR GRUPO 1 (GLEASON 3 + 3 = 6). - COMPROMISO DEL PÁRENQUIMA EVALUADO: 1 MM. - INVASIÓN PERINEURAL NO IDENTIFICADA. - INVASIÓN LINFOVASCULAR NO IDENTIFICADA: 14/03/2025",
+      "IHQ_ORGANO": "PRÓSTATA, TERCIO MEDIO DEL LÓBULO IZQUIERDO",
+      "Organo": "BX PROSTATA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN ACINAR ATÍPICA EN LA LAMINA E (TERCIO MEDIO DEL LÓBULO IZQUIERDO)",
+      "Diagnostico Principal": "ADECARCINOMA ACINAR GRUPO 1 (GLEASON 3 + 3 = 6)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P63": "NEGATIVOS",
+      "IHQ_RACEMASA": "POSITIVO",
+      "IHQ_CK34BETAE12": "NEGATIVOS"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 176,
+      "campos_vacios": 139,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "E. Próstata, tercio medio del lóbulo izquierdo. Biopsia. Estudio de inmunohistoquímica:\n- ADECARCINOMA ACINAR GRUPO 1 (GLEASON 3 + 3 = 6).\n- COMPROMISO DEL PÁRENQUIMA EVALUADO: 1 MM.\n- INVASIÓN PERINEURAL NO IDENTIFICADA.\n- INVASIÓN LINFOVASCULAR NO IDENTIFICADA: 14/03/2025",
+      "valor_corregido": "E. Próstata, tercio medio del lóbulo izquierdo. Biopsia. Estudio de inmunohistoquímica: - ADECARCINOMA ACINAR GRUPO 1 (GLEASON 3 + 3 = 6). - COMPROMISO DEL PÁRENQUIMA EVALUADO: 1 MM. - INVASIÓN PERINEURAL NO IDENTIFICADA. - INVASIÓN LINFOVASCULAR NO IDENTIFICADA: 14/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250268",
+      "timestamp": "2026-02-03T04:28:11.809911"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2405344” que corresponde a “biopsia de próstata derecha e izquierda” con diagnóstico de “PROLIFERACIÓN ACINAR ATÍPICA EN LA LAMINA E (TERCIO MEDIO DEL LÓBULO IZQUIERDO)”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p63, 34BetaE12 y racemasa.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2405344\" que corresponde a \"biopsia de próstata derecha e izquierda\" con diagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA EN LA LAMINA E (TERCIO MEDIO DEL LÓBULO IZQUIERDO)\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p63, 34BetaE12 y racemasa.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250268",
+      "timestamp": "2026-02-03T04:28:11.809917"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 50
+  }
+}
