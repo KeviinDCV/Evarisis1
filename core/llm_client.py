@@ -1,24 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🤖 CLIENTE LLM - Multi-Proveedor Gratuito
-==========================================
+🤖 CLIENTE LLM - Local-First (LM Studio) + Cloud Fallback
+==========================================================
 
-Cliente con fallback automático entre múltiples proveedores de IA gratuitos:
-  1. Google Gemini  (1,500 req/día gratis)
-  2. Groq           (14,400 req/día gratis)
-  3. OpenRouter     (~10-20 req/día gratis)
+Prioridad de proveedores:
+  1. LM Studio LOCAL  (datos NUNCA salen del PC - HIPAA/Ley 1581 safe)
+  2. Google Gemini     (solo si LM Studio no disponible)
+  3. Groq              (fallback cloud)
+  4. OpenRouter        (último recurso cloud)
 
-Todos usan formato OpenAI-compatible (chat/completions).
-Si un proveedor se agota (HTTP 402), automáticamente prueba el siguiente.
+⚠️ DATOS MÉDICOS CONFIDENCIALES: Se recomienda usar SOLO LM Studio local.
+   Los proveedores cloud están deshabilitados por defecto.
+   Para habilitarlos, agregue api_key en config/config.ini.
 
-VERSION 4.0.0 - Multi-Proveedor (10 Abr 2026):
-- 3 proveedores gratuitos con fallback automático
-- ~16,000 requests/día combinados (gratis)
-- Suficiente para auditar cientos de casos sin costo
+VERSION 5.0.0 - Local-First (10 Abr 2026):
+- LM Studio como proveedor prioritario (datos locales)
+- Cloud providers deshabilitados por defecto para protección HC
+- 32GB RAM soporta modelos 7B-13B cómodamente
 
 Autor: Sistema EVARISIS
-Versión: 4.0.0
+Versión: 5.0.0
 Fecha: 10 de abril de 2026
 """
 
@@ -59,8 +61,20 @@ class LMStudioClient:
     _min_request_interval = 0.5  # 500ms entre peticiones
 
     # === CONFIGURACIÓN DE PROVEEDORES ===
-    # Orden = prioridad de uso. Si uno se agota, pasa al siguiente.
+    # Orden = prioridad de uso. LM Studio LOCAL primero (datos no salen del PC).
     PROVEEDORES_CONFIG = [
+        {
+            "nombre": "LM Studio (Local)",
+            "endpoint": "http://localhost:1234/v1",
+            "modelos": [
+                "local-model",  # LM Studio usa el modelo cargado actualmente
+            ],
+            "config_section": "lmstudio",
+            "headers_extra": {},
+            "descripcion": "LOCAL - datos nunca salen del PC",
+            "info_key": "Descargar: https://lmstudio.ai",
+            "es_local": True,
+        },
         {
             "nombre": "Gemini",
             "endpoint": "https://generativelanguage.googleapis.com/v1beta/openai",
@@ -125,9 +139,17 @@ class LMStudioClient:
         self.max_retries = max_retries
         self.session_history = []
 
-        # Cargar todos los proveedores que tengan API key configurada
+        # Cargar todos los proveedores que tengan API key configurada (o sean locales)
         self._proveedores_disponibles = []
         for prov_config in self.PROVEEDORES_CONFIG:
+            if prov_config.get("es_local"):
+                # LM Studio local: verificar si está corriendo
+                if self._verificar_lmstudio(prov_config["endpoint"]):
+                    self._proveedores_disponibles.append({**prov_config, "api_key": "local"})
+                else:
+                    logging.warning("⚠️ LM Studio no detectado en localhost:1234")
+                    logging.warning("   Inicia LM Studio y carga un modelo para usar IA local")
+                continue
             key = self._cargar_api_key(prov_config["config_section"])
             if key:
                 self._proveedores_disponibles.append({**prov_config, "api_key": key})
@@ -186,6 +208,25 @@ class LMStudioClient:
         key = self._cargar_api_key("openrouter")
         if key:
             self.api_key = key
+
+    def _verificar_lmstudio(self, endpoint: str) -> bool:
+        """Verifica si LM Studio está corriendo en el endpoint local"""
+        try:
+            resp = requests.get(f"{endpoint}/models", timeout=3)
+            if resp.status_code == 200:
+                data = resp.json()
+                modelos = data.get("data", [])
+                if modelos:
+                    modelo_id = modelos[0].get("id", "local-model")
+                    logging.info(f"✅ LM Studio detectado: {modelo_id}")
+                    return True
+                logging.info("✅ LM Studio activo pero sin modelo cargado")
+                return True
+            return False
+        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout):
+            return False
+        except Exception:
+            return False
 
     def _detectar_modelo(self):
         """Compatibilidad: no-op"""
@@ -285,18 +326,22 @@ class LMStudioClient:
         headers_extra = proveedor.get("headers_extra", {})
 
         headers = {
-            "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
             **headers_extra
         }
+        # Solo agregar Authorization para providers cloud (no local)
+        if not proveedor.get("es_local"):
+            headers["Authorization"] = f"Bearer {api_key}"
 
         payload = {
             "messages": messages,
             "temperature": temperature,
             "max_tokens": max_tokens,
             "stream": False,
-            "model": modelos[0]
         }
+        # LM Studio usa el modelo cargado, no necesita campo "model" explícito
+        if not proveedor.get("es_local"):
+            payload["model"] = modelos[0]
 
         last_error = None
         model_index = 0
