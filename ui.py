@@ -241,6 +241,7 @@ class App(ttk.Window):
         self.cmb_malig = None
         self.cmb_resp = None
         self.tree = None
+        self._ultimas_filas_seleccionadas = []
 
         # Inicializar sistema de exportación mejorado
         self.export_system = EnhancedExportSystem(self)
@@ -2336,39 +2337,16 @@ Disco {i}:
         )
         self.sheet.grid(row=1, column=0, columnspan=2, sticky="nsew", padx=10, pady=(0, 10))
 
-        # Habilitar funcionalidades tipo Excel
+        # Habilitar funcionalidades tipo Excel (NO usar "all" para evitar single_select)
         self.sheet.enable_bindings(
-            "all",  # Habilitar todos los bindings
-            "edit_cell",  # Permitir edición
             "copy",  # Ctrl+C
-            "cut",  # Ctrl+X
-            "paste",  # Ctrl+V
-            "delete",  # Suprimir
-            "undo",  # Ctrl+Z
             "row_select",  # Selección de filas
             "column_select",  # Selección de columnas
             "drag_select",  # Arrastrar para seleccionar
             "select_all",  # Ctrl+A
             "rc_select",  # Click derecho
             "arrowkeys",  # Navegación con flechas
-            "column_width_resize",  # Redimensionar columnas
-            "double_click_column_resize",  # Doble click para ajustar
-            "row_width_resize",  # Redimensionar filas
-            "column_height_resize",  # Altura de encabezados
-            "toggle_select",  # Ctrl+Click para multi-selección
-            "drag_and_drop",  # Arrastrar y soltar
-            "move_columns"  # Mover columnas
-        )
-
-        # Deshabilitar edición de celdas (solo lectura)
-        self.sheet.disable_bindings("edit_cell", "cut", "paste", "delete", "undo")
-
-        # V5.3.8: Deshabilitar redimensionamiento de columnas/filas (evita errores)
-        self.sheet.disable_bindings(
-            "column_width_resize",
-            "double_click_column_resize",
-            "row_width_resize",
-            "column_height_resize"
+            "toggle_select",  # Ctrl+Click / Shift+Click para multi-selección
         )
 
         # Evento de selección
@@ -2426,50 +2404,59 @@ Disco {i}:
         def _sheet_selection():
             """Emula tree.selection() - Retorna lista de índices de filas seleccionadas
 
-            v6.0.14: Enfoque híbrido que captura CUALQUIER tipo de selección:
-            - Filas completas (clic en índice de fila)
-            - Celdas individuales (clic en celda)
-            - Rangos (arrastrar selección)
+            v6.0.15: Lee selection_boxes del Sheet + fallback a últimas filas guardadas.
+            Cuando el usuario hace clic en un botón, el Sheet pierde selección interna,
+            así que usamos self._ultimas_filas_seleccionadas como caché confiable.
             """
             try:
-                logging.info("_sheet_selection: Llamado")  # Cambiado a INFO para ver en logs
                 rows = set()
 
-                # ESTRATEGIA 1: Intentar obtener filas completas seleccionadas
-                selected_rows = self.sheet.get_selected_rows()
-                logging.info(f"_sheet_selection: get_selected_rows() = {selected_rows}")
-                if selected_rows:
-                    rows.update(selected_rows)
-                    logging.info(f"_sheet_selection: Estrategia 1 (filas completas): {selected_rows}")
+                # ESTRATEGIA 1: Leer selection_boxes directamente del Sheet
+                # Esto captura rangos de celdas/filas seleccionadas
+                try:
+                    boxes = self.sheet.get_all_selection_boxes()
+                    if boxes:
+                        for box in boxes:
+                            # box es (from_r, from_c, upto_r, upto_c)
+                            if len(box) >= 4:
+                                from_r, _, upto_r, _ = box[0], box[1], box[2], box[3]
+                                for r in range(from_r, upto_r):
+                                    rows.add(r)
+                        if rows:
+                            logging.info(f"_sheet_selection: Estrategia 1 (selection_boxes): {sorted(rows)}")
+                except Exception:
+                    pass
 
-                # ESTRATEGIA 2: Obtener celdas seleccionadas y extraer filas únicas
-                # Esto captura cuando el usuario hace clic en una CELDA individual
-                selected_cells = self.sheet.get_selected_cells()
-                logging.info(f"_sheet_selection: get_selected_cells() = {selected_cells}")
-                if selected_cells:
-                    # Cada celda es una tupla (row, col), extraer solo las filas
-                    cell_rows = set(row for row, col in selected_cells)
-                    rows.update(cell_rows)
-                    logging.info(f"_sheet_selection: Estrategia 2 (celdas): {len(cell_rows)} fila(s) desde {len(selected_cells)} celda(s): {cell_rows}")
+                # ESTRATEGIA 2: get_selected_rows y get_selected_cells
+                if not rows:
+                    selected_rows = self.sheet.get_selected_rows()
+                    if selected_rows:
+                        rows.update(selected_rows)
+                    selected_cells = self.sheet.get_selected_cells()
+                    if selected_cells:
+                        rows.update(row for row, col in selected_cells)
+                    if rows:
+                        logging.info(f"_sheet_selection: Estrategia 2 (rows/cells): {sorted(rows)}")
 
-                # ESTRATEGIA 3: Fallback usando get_currently_selected()
-                # Para capturar casos especiales que las estrategias 1 y 2 no cubran
+                # ESTRATEGIA 3: get_currently_selected
                 if not rows:
                     selected = self.sheet.get_currently_selected()
-                    logging.info(f"_sheet_selection: get_currently_selected() = {selected}")
                     if selected and hasattr(selected, 'row') and selected.row is not None:
                         rows.add(selected.row)
-                        logging.info(f"_sheet_selection: Estrategia 3 (fallback): fila {selected.row}")
+                        logging.info(f"_sheet_selection: Estrategia 3 (currently_selected): fila {selected.row}")
 
-                # ESTRATEGIA 4: Usar ultima_seleccion si todas las anteriores fallaron
-                # Esto maneja el caso donde el evento indica una fila pero los métodos del sheet no la detectan
-                if not rows and hasattr(self, 'ultima_seleccion') and self.ultima_seleccion is not None:
-                    rows.add(self.ultima_seleccion)
-                    logging.info(f"_sheet_selection: Estrategia 4 (ultima_seleccion): fila {self.ultima_seleccion}")
+                # ESTRATEGIA 4: Fallback a últimas filas guardadas (crucial para multi-selección)
+                # Cuando el usuario hace clic en un botón, el Sheet pierde la selección
+                if not rows and hasattr(self, '_ultimas_filas_seleccionadas') and self._ultimas_filas_seleccionadas:
+                    rows.update(self._ultimas_filas_seleccionadas)
+                    logging.info(f"_sheet_selection: Estrategia 4 (caché): {sorted(rows)}")
 
-                # Convertir set a lista para compatibilidad con Treeview
+                # Actualizar caché si obtuvimos filas por estrategias 1-3
+                if rows and not (not rows and hasattr(self, '_ultimas_filas_seleccionadas')):
+                    self._ultimas_filas_seleccionadas = list(rows)
+
                 if rows:
-                    result = list(rows)
+                    result = sorted(rows)
                     logging.info(f"_sheet_selection: ✅ RETORNANDO {len(result)} fila(s): {result}")
                     return result
                 else:
@@ -4742,35 +4729,50 @@ Disco {i}:
         self._populate_treeview(df[mask])
 
     def mostrar_detalle_registro(self, event):
-        # v6.0.14: DEBUG - Logging exhaustivo para diagnosticar problema
+        # v6.0.15: Extraer TODAS las filas seleccionadas del evento y del Sheet
         logging.info("=" * 60)
         logging.info("mostrar_detalle_registro: EVENTO DISPARADO")
-        logging.info(f"Evento: {event}")
 
-        # NUEVO: Extraer selección directamente del evento (más confiable que get_currently_selected)
-        actual_row = None
-        if isinstance(event, dict) and 'selected' in event:
-            selected_info = event['selected']
-            if hasattr(selected_info, 'row') and selected_info.row is not None:
-                actual_row = selected_info.row
-                logging.info(f"mostrar_detalle_registro: Fila seleccionada desde EVENTO: {actual_row}")
+        # Extraer filas de selection_boxes del evento (captura multi-selección)
+        event_rows = set()
+        if isinstance(event, dict):
+            # Extraer de selection_boxes (contiene TODOS los rangos seleccionados)
+            sel_boxes = event.get('selection_boxes', {})
+            for box in sel_boxes:
+                # box es Box_nt(from_r, from_c, upto_r, upto_c)
+                if hasattr(box, 'from_r') and hasattr(box, 'upto_r'):
+                    for r in range(box.from_r, box.upto_r):
+                        event_rows.add(r)
+                elif isinstance(box, (tuple, list)) and len(box) >= 4:
+                    for r in range(box[0], box[2]):
+                        event_rows.add(r)
 
-        # Probar la función selection()
+            # Fallback: extraer de 'selected'
+            if not event_rows:
+                selected_info = event.get('selected', None)
+                if selected_info and hasattr(selected_info, 'row') and selected_info.row is not None:
+                    event_rows.add(selected_info.row)
+
+        if event_rows:
+            logging.info(f"mostrar_detalle_registro: {len(event_rows)} fila(s) desde evento: {sorted(event_rows)}")
+
+        # Obtener selección del Sheet (puede tener más filas si toggle_select)
         try:
             selection = self.tree.selection()
             logging.info(f"self.tree.selection() retornó: {selection}")
-            logging.info(f"Tipo: {type(selection)}, Longitud: {len(selection) if selection else 0}")
 
-            # Si obtuvimos la fila real del evento, actualizar la selección
-            if actual_row is not None and (not selection or selection[0] != actual_row):
-                logging.info(f"⚠️ CORRECCIÓN: selection() retornó {selection}, pero evento indica fila {actual_row}")
-                selection = [actual_row]
-                logging.info(f"✅ Usando fila del evento: {selection}")
+            # Combinar: si el evento tiene filas Y selection también, usar la unión
+            if event_rows and selection:
+                combined = set(selection) | event_rows
+                selection = sorted(combined)
+            elif event_rows and not selection:
+                selection = sorted(event_rows)
 
-            # Guardar última selección válida para uso en toggle_floating_details_panel
+            # Guardar TODAS las filas seleccionadas (para multi-selección en auditoría)
             if selection and len(selection) > 0:
                 self.ultima_seleccion = selection[0]
-                logging.info(f"💾 Guardada última selección válida: {self.ultima_seleccion}")
+                self._ultimas_filas_seleccionadas = list(selection)
+                logging.info(f"💾 Guardada selección: {len(selection)} fila(s): {selection}")
         except Exception as e:
             logging.error(f"ERROR al llamar self.tree.selection(): {e}", exc_info=True)
 
