@@ -130,8 +130,8 @@ class LMStudioClient:
         self,
         endpoint: str = "https://openrouter.ai/api/v1",
         model: Optional[str] = None,
-        timeout: int = 120,
-        max_retries: int = 3,
+        timeout: int = 300,
+        max_retries: int = 2,
         api_key: Optional[str] = None,
         **kwargs
     ):
