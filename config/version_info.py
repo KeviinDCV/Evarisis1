@@ -27,12 +27,14 @@ VERSION_INFO = {
 
 # Información del equipo de desarrollo
 TEAM_INFO = {
-    "desarrollador": {
-        "nombre": "Daniel Restrepo",
-        "cargo": "Ingeniero de Soluciones",
-        "departamento": "Innovación y Desarrollo",
-        "correo": "daniel.rr93g@gmail.com"
-    },
+    "desarrolladores": [
+        {
+            "nombre": "Oficina de Innovación y Desarrollo",
+            "cargo": "Ingenieros de Soluciones",
+            "departamento": "Innovación y Desarrollo",
+            "correo": "innovacionydesarrollo@correohuv.gov.co"
+        }
+    ],
     "lider_investigacion": {
         "nombre": "Dr. Juan Camilo Bayona",
         "cargo": "Coordinador del Área Cirugía Oncológica",

@@ -55,8 +55,8 @@ echo "✅ Archivo $PYTHON_SCRIPT encontrado en directorio raíz"
 echo ""
 echo "[PASO 4/4] Iniciando Gestor de Oncología HUV..."
 echo "ℹ️ Ejecutando con argumentos reales de EVARISIS:"
-echo "  --lanzado-por-evarisis --nombre 'Daniel Restrepo' --cargo 'Ingeniero de soluciones'"
-echo "  --foto '/Users/usuario/Desktop/DEBERES_HUV/ProyectoHUV1EVARISISDASHBOARD/base_de_usuarios/Daniel Restrepo.jpeg'"
+echo "  --lanzado-por-evarisis --nombre 'Innovación y Desarrollo' --cargo 'Ingenieros de soluciones'"
+echo "  --foto '/Users/usuario/Desktop/DEBERES_HUV/ProyectoHUV1EVARISISDASHBOARD/base_de_usuarios/Innovación y Desarrollo.jpeg'"
 echo "  --tema 'cosmo' --ruta-datos '/Users/usuario/Desktop/DEBERES_HUV/ProyectoHUV1EVARISISDASHBOARD'"
 echo "================================================================================"
 echo ""
@@ -64,9 +64,9 @@ echo ""
 # Ejecutar la aplicación con argumentos macOS desde el directorio raíz
 python3 "$WORK_DIR/$PYTHON_SCRIPT" \
     --lanzado-por-evarisis \
-    --nombre "Daniel Restrepo" \
-    --cargo "Ingeniero de soluciones" \
-    --foto "/Users/usuario/Desktop/DEBERES_HUV/ProyectoHUV1EVARISISDASHBOARD/base_de_usuarios/Daniel Restrepo.jpeg" \
+    --nombre "Innovación y Desarrollo" \
+    --cargo "Ingenieros de soluciones" \
+    --foto "/Users/usuario/Desktop/DEBERES_HUV/ProyectoHUV1EVARISISDASHBOARD/base_de_usuarios/Innovación y Desarrollo.jpeg" \
     --tema "cosmo" \
     --ruta-fotos "/Users/usuario/Desktop/DEBERES_HUV/ProyectoHUV1EVARISISDASHBOARD/base_de_usuarios"
 

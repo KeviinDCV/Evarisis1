@@ -270,13 +270,13 @@ class App(ttk.Window):
         self.after(50, self.show_welcome_screen)
 
     def _create_header(self, parent):
-        """Crear header institucional"""
-        self.header = ttk.Frame(parent, padding=(20, 10))
+        """Crear header institucional compacto y profesional"""
+        self.header = ttk.Frame(parent, padding=(15, 8))
         self.header.pack(fill=X)
 
-        # Logo izquierdo
+        # Logo izquierdo (compacto)
         left = ttk.Frame(self.header)
-        left.pack(side=LEFT, padx=(0, 16))
+        left.pack(side=LEFT, padx=(0, 12))
         if self.iconos.get("logo1"):
             ttk.Label(left, image=self.iconos["logo1"]).pack()
 
@@ -287,49 +287,49 @@ class App(ttk.Window):
         ttk.Label(
             center,
             text="EVARISIS CIRUGÍA ONCOLÓGICA",
-            font=self.FONT_TITULO,
+            font=("Segoe UI", 18, "bold"),
             anchor=W
         ).pack(fill=X)
         
         ttk.Label(
             center,
             text="Suite de procesamiento y análisis oncológico del Hospital Universitario del Valle",
-            font=self.FONT_NORMAL,
+            font=("Segoe UI", 10),
             anchor=W,
             bootstyle=SECONDARY
-        ).pack(fill=X, pady=(2, 0))
+        ).pack(fill=X, pady=(1, 0))
 
         # Perfil derecho
         right = ttk.Frame(self.header)
         right.pack(side=RIGHT)
 
-        # Tarjeta de perfil profesional
-        profile_card = ttk.Frame(right, padding=(10, 8), bootstyle="secondary")
-        profile_card.pack(side=RIGHT, padx=(10, 0))
+        # Tarjeta de perfil profesional (más compacta)
+        profile_card = ttk.Frame(right, padding=(10, 6), bootstyle="dark")
+        profile_card.pack(side=RIGHT, padx=(8, 0))
         
         # Foto del usuario si existe
         if self.foto_usuario:
-            ttk.Label(profile_card, image=self.foto_usuario).pack(side=LEFT, padx=(0, 10))
+            ttk.Label(profile_card, image=self.foto_usuario).pack(side=LEFT, padx=(0, 8))
         
         # Datos del usuario
         datos = ttk.Frame(profile_card)
         datos.pack(side=LEFT)
-        ttk.Label(datos, text=self.info_usuario.get("nombre", "Invitado"), font=self.FONT_NOMBRE_PERFIL).pack(anchor=W)
-        ttk.Label(datos, text=self.info_usuario.get("cargo", "N/A"), font=self.FONT_SUBTITULO, bootstyle=INFO).pack(anchor=W)
+        ttk.Label(datos, text=self.info_usuario.get("nombre", "Invitado"), font=("Segoe UI", 13, "bold")).pack(anchor=W)
+        ttk.Label(datos, text=self.info_usuario.get("cargo", "N/A"), font=("Segoe UI", 10), bootstyle=INFO).pack(anchor=W)
         
-        # Botón de información de versión
+        # Badge de versión (pill compacto)
         version_btn = ttk.Button(
             right,
             text=f"v{get_version_string().split('-')[0].replace('v', '')}",
             command=self._show_version_info,
             bootstyle="info-outline",
-            width=8
+            width=7
         )
-        version_btn.pack(side=RIGHT, padx=(10, 10))
+        version_btn.pack(side=RIGHT, padx=(8, 8))
         
-        # Logo derecho
+        # Logo derecho (compacto)
         if self.iconos.get("logo3"):
-            ttk.Label(right, image=self.iconos["logo3"]).pack(side=RIGHT, padx=(10, 0))
+            ttk.Label(right, image=self.iconos["logo3"]).pack(side=RIGHT, padx=(8, 0))
 
     def _create_main_content(self, parent):
         """Crear el contenido principal sin sidebar tradicional"""
@@ -3147,11 +3147,40 @@ Disco {i}:
         
         return card
 
-    def _create_welcome_screen(self):
-        """Crear la pantalla de bienvenida inicial"""
-        self.welcome_frame = ttk.Frame(self.content_container, padding=40)
+    def _draw_rounded_rect(self, canvas, x1, y1, x2, y2, radius, **kwargs):
+        """Dibujar un rectángulo con esquinas redondeadas en un Canvas"""
+        points = [
+            x1 + radius, y1,
+            x2 - radius, y1,
+            x2, y1,
+            x2, y1 + radius,
+            x2, y2 - radius,
+            x2, y2,
+            x2 - radius, y2,
+            x1 + radius, y2,
+            x1, y2,
+            x1, y2 - radius,
+            x1, y1 + radius,
+            x1, y1,
+            x1 + radius, y1,
+        ]
+        return canvas.create_polygon(points, smooth=True, **kwargs)
 
-        # Contenedor central
+    def _create_circle_icon(self, parent, icon_text, size=52, bg_color="#2d3075", fg_color="white"):
+        """Crear un icono circular con fondo coloreado usando Canvas"""
+        canvas = tk.Canvas(parent, width=size, height=size, highlightthickness=0, bg=parent["bg"] if isinstance(parent, tk.Canvas) else "#1e2152")
+        # Dibujar círculo de fondo
+        pad = 2
+        canvas.create_oval(pad, pad, size - pad, size - pad, fill=bg_color, outline="")
+        # Texto del icono centrado
+        canvas.create_text(size // 2, size // 2, text=icon_text, font=("Segoe UI", 16), fill=fg_color)
+        return canvas
+
+    def _create_welcome_screen(self):
+        """Crear la pantalla de bienvenida inicial con diseño profesional"""
+        self.welcome_frame = ttk.Frame(self.content_container, padding=20)
+
+        # Contenedor central con grid para centrado vertical
         center_container = ttk.Frame(self.welcome_frame)
         center_container.pack(expand=True, fill=BOTH)
         center_container.grid_rowconfigure(0, weight=1)
@@ -3162,95 +3191,147 @@ Disco {i}:
         # Espaciador superior
         ttk.Frame(center_container).grid(row=0, column=0)
 
-        # Contenido principal
-        main_content = ttk.Frame(center_container)
-        main_content.grid(row=1, column=0, pady=50)
+        # === TARJETA PRINCIPAL CON FONDO OSCURO Y ESQUINAS REDONDEADAS ===
+        card_width = 720
+        card_height = 460
+        card_radius = 28
+        card_bg = "#1e2152"  # Azul oscuro índigo
+        card_icon_bg = "#2d3075"  # Fondo de iconos circulares
 
-        # Título principal con emojis
-        title_frame = ttk.Frame(main_content)
-        title_frame.pack(pady=(0, 30))
+        # Canvas para la tarjeta redondeada
+        self._welcome_card_canvas = tk.Canvas(
+            center_container,
+            width=card_width,
+            height=card_height,
+            highlightthickness=0,
+            bd=0
+        )
+        self._welcome_card_canvas.grid(row=1, column=0, pady=10)
 
-        ttk.Label(
-            title_frame,
-            text="🏥 Bienvenido al Gestor Oncológico 🔬",
-            font=("Segoe UI", 28, "bold"),
+        # Obtener color de fondo del tema para el canvas exterior
+        try:
+            theme_bg = self.style.lookup("TFrame", "background")
+            if not theme_bg:
+                theme_bg = "#2b3e50"
+        except Exception:
+            theme_bg = "#2b3e50"
+        self._welcome_card_canvas.configure(bg=theme_bg)
+
+        # Dibujar tarjeta redondeada
+        self._draw_rounded_rect(
+            self._welcome_card_canvas,
+            0, 0, card_width, card_height,
+            card_radius,
+            fill=card_bg, outline=""
+        )
+
+        # --- Título principal ---
+        self._welcome_card_canvas.create_text(
+            card_width // 2, 80,
+            text="🏥  Bienvenido al Gestor Oncológico  🔬",
+            font=("Segoe UI", 26, "bold"),
+            fill="white",
             anchor="center"
-        ).pack()
+        )
 
-        # Subtítulo descriptivo
+        # --- Subtítulo ---
         subtitle_text = ("Enfocado en la investigación y mejora del área de oncología\n"
                         "del Hospital Universitario del Valle")
-        ttk.Label(
-            main_content,
+        self._welcome_card_canvas.create_text(
+            card_width // 2, 135,
             text=subtitle_text,
-            font=("Segoe UI", 16),
+            font=("Segoe UI", 13),
+            fill="#b8bedd",
             anchor="center",
             justify="center"
-        ).pack(pady=(0, 40))
+        )
 
-        # Iconos representativos
-        icons_frame = ttk.Frame(main_content)
-        icons_frame.pack(pady=(0, 40))
+        # --- Fila de iconos circulares ---
+        welcome_icons = ["📊", "📋", "🧬", "💡", "📅", "🔍", "⚕️"]
+        icon_size = 52
+        icon_spacing = 16
+        total_icons_width = len(welcome_icons) * icon_size + (len(welcome_icons) - 1) * icon_spacing
+        icon_start_x = (card_width - total_icons_width) // 2
+        icon_y = 200
 
-        # Crear una fila de iconos descriptivos
-        icons_text = "📊  📈  🧬  💡  📋  🔍  ⚕️"
-        ttk.Label(
-            icons_frame,
-            text=icons_text,
-            font=("Segoe UI", 24),
-            anchor="center"
-        ).pack()
+        for i, icon_text in enumerate(welcome_icons):
+            x = icon_start_x + i * (icon_size + icon_spacing)
+            # Dibujar círculo de fondo
+            self._welcome_card_canvas.create_oval(
+                x + 2, icon_y + 2, x + icon_size - 2, icon_y + icon_size - 2,
+                fill=card_icon_bg, outline=""
+            )
+            # Dibujar icono centrado
+            self._welcome_card_canvas.create_text(
+                x + icon_size // 2, icon_y + icon_size // 2,
+                text=icon_text,
+                font=("Segoe UI", 18),
+                fill="white"
+            )
 
-        # NUEVO: Verificar si hay datos, si no, mostrar botón de agregar información
+        # --- Verificar datos y mostrar contenido inferior ---
+        has_data = False
         try:
             from core.database_manager import get_all_records_as_dataframe
             df_check = get_all_records_as_dataframe()
-
-            if df_check.empty:
-                # Mensaje cuando no hay datos
-                no_data_msg = "No hay información en la base de datos"
-                ttk.Label(
-                    main_content,
-                    text=no_data_msg,
-                    font=("Segoe UI", 14),
-                    anchor="center",
-                    foreground="gray"
-                ).pack(pady=(0, 20))
-
-                # Botón para agregar información
-                add_btn = ttk.Button(
-                    main_content,
-                    text="📥 Agregar Información a la Base de Datos",
-                    command=self._goto_import_data_tab,
-                    bootstyle="success",
-                    width=40
-                )
-                add_btn.pack(pady=10)
-            else:
-                # Mensaje de instrucción normal cuando hay datos
-                instruction_text = ("Selecciona una opción del menú flotante para comenzar\n"
-                                   "a trabajar con los datos oncológicos")
-                ttk.Label(
-                    main_content,
-                    text=instruction_text,
-                    font=("Segoe UI", 14),
-                    anchor="center",
-                    justify="center",
-                    foreground="gray"
-                ).pack()
+            has_data = not df_check.empty
         except Exception as e:
             logging.error(f"Error verificando datos: {e}")
-            # Mensaje de instrucción por defecto
+
+        if not has_data:
+            # Texto "No hay información"
+            self._welcome_card_canvas.create_text(
+                card_width // 2, 310,
+                text="No hay información en la base de datos",
+                font=("Segoe UI", 13),
+                fill="#8890b5",
+                anchor="center"
+            )
+
+            # Botón "Agregar Información" con estilo outline sobre la card
+            btn_w = 380
+            btn_h = 48
+            btn_x = (card_width - btn_w) // 2
+            btn_y = 355
+            btn_radius = 24
+
+            # Borde redondeado del botón
+            self._draw_rounded_rect(
+                self._welcome_card_canvas,
+                btn_x, btn_y, btn_x + btn_w, btn_y + btn_h,
+                btn_radius,
+                fill="#252a6b", outline="#5b6abf", width=2
+            )
+
+            # Texto del botón
+            self._welcome_card_canvas.create_text(
+                card_width // 2, btn_y + btn_h // 2,
+                text="⊕  Agregar Información a la Base de Datos",
+                font=("Segoe UI", 13, "bold"),
+                fill="white",
+                anchor="center"
+            )
+
+            # Zona clickeable invisible sobre el botón
+            self._welcome_btn_hitbox = self._welcome_card_canvas.create_rectangle(
+                btn_x, btn_y, btn_x + btn_w, btn_y + btn_h,
+                fill="", outline="", tags="add_btn"
+            )
+            self._welcome_card_canvas.tag_bind("add_btn", "<Button-1>", lambda e: self._goto_import_data_tab())
+            self._welcome_card_canvas.tag_bind("add_btn", "<Enter>", lambda e: self._welcome_card_canvas.configure(cursor="hand2"))
+            self._welcome_card_canvas.tag_bind("add_btn", "<Leave>", lambda e: self._welcome_card_canvas.configure(cursor=""))
+        else:
+            # Mensaje de instrucción cuando hay datos
             instruction_text = ("Selecciona una opción del menú flotante para comenzar\n"
                                "a trabajar con los datos oncológicos")
-            ttk.Label(
-                main_content,
+            self._welcome_card_canvas.create_text(
+                card_width // 2, 320,
                 text=instruction_text,
-                font=("Segoe UI", 14),
+                font=("Segoe UI", 13),
+                fill="#8890b5",
                 anchor="center",
-                justify="center",
-                foreground="gray"
-            ).pack()
+                justify="center"
+            )
 
         # Espaciador inferior
         ttk.Frame(center_container).grid(row=2, column=0)
@@ -3447,7 +3528,7 @@ Disco {i}:
         try:
             ruta_foto = self.info_usuario.get("ruta_foto", "SIN_FOTO")
             if ruta_foto and ruta_foto != "SIN_FOTO" and os.path.exists(ruta_foto):
-                img = Image.open(ruta_foto).resize((72, 72), Image.Resampling.LANCZOS)
+                img = Image.open(ruta_foto).resize((50, 50), Image.Resampling.LANCZOS)
                 return ImageTk.PhotoImage(img)
             return None
         except Exception as e:
@@ -3466,12 +3547,14 @@ Disco {i}:
         for name, filename in icon_files.items():
             try:
                 path = self._get_path(os.path.join("imagenes", filename))
-                if name in ["logo1", "logo3"]:
-                    size = (110, 110)     # logos header
+                if name == "logo1":
+                    size = (55, 55)       # logo izquierdo header (compacto)
+                elif name == "logo3":
+                    size = (60, 60)       # logo derecho header (compacto)
                 elif name == "logo2":
                     size = (140, 140)
                 elif name == "usuario":
-                    size = (64, 64)       # foto usuario por defecto
+                    size = (48, 48)       # foto usuario por defecto
                 else:
                     size = (32, 32)
                 img = Image.open(path).resize(size, Image.Resampling.LANCZOS)

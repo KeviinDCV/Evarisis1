@@ -1,4 +1,5 @@
 # 🚀 PLAN MAESTRO DE MIGRACIÓN A PYSIDE6
+
 ## EVARISIS CIRUGÍA ONCOLÓGICA - Hospital Universitario del Valle
 
 **Versión Actual:** v6.0.9 (TTKBootstrap)
@@ -45,13 +46,13 @@ Total dependencias: 16
 
 ### Dependencias Críticas a Migrar
 
-| Dependencia Actual | Equivalente PySide6 | Acción |
-|-------------------|---------------------|--------|
-| `ttkbootstrap==1.10.1` | `PySide6>=6.6.0` | ✅ Reemplazar |
-| `tksheet>=7.5.0` | `QTableView + Model` | ✅ Refactorizar |
+| Dependencia Actual             | Equivalente PySide6       | Acción             |
+| ------------------------------ | ------------------------- | ------------------ |
+| `ttkbootstrap==1.10.1`         | `PySide6>=6.6.0`          | ✅ Reemplazar      |
+| `tksheet>=7.5.0`               | `QTableView + Model`      | ✅ Refactorizar    |
 | `matplotlib (Tkinter backend)` | `matplotlib (Qt backend)` | ✅ Cambiar backend |
-| `tkinter.messagebox` | `QMessageBox` | ✅ Migrar |
-| `tkinter.filedialog` | `QFileDialog` | ✅ Migrar |
+| `tkinter.messagebox`           | `QMessageBox`             | ✅ Migrar          |
+| `tkinter.filedialog`           | `QFileDialog`             | ✅ Migrar          |
 
 ### Métricas de Código Actual
 
@@ -86,10 +87,12 @@ Total dependencias: 16
 ## 📅 FASES DE MIGRACIÓN (10 SEMANAS)
 
 ### **FASE 0: PREPARACIÓN (Semana 1)**
+
 **Duración:** 5 días
 **Objetivo:** Configurar entorno y estructura base
 
 #### Tareas:
+
 - [x] ✅ Crear backup completo del proyecto
 - [ ] 🔧 Instalar PySide6 en entorno virtual separado
 - [ ] 📁 Crear estructura de carpetas modular
@@ -98,6 +101,7 @@ Total dependencias: 16
 - [ ] 📋 Crear documento de arquitectura
 
 **Entregables:**
+
 ```
 pyside6_migration/
 ├── requirements_pyside6.txt     ← Nuevas dependencias
@@ -113,12 +117,14 @@ pyside6_migration/
 ---
 
 ### **FASE 1: COMPONENTES BASE (Semanas 2-3)**
+
 **Duración:** 10 días
 **Objetivo:** Crear librería de componentes reutilizables
 
 #### Componentes a Desarrollar:
 
 ##### 1. Sistema de Temas (3 días)
+
 ```python
 # components/theme_manager.py
 class ThemeManager:
@@ -129,6 +135,7 @@ class ThemeManager:
 ```
 
 ##### 2. Componentes UI Base (7 días)
+
 ```python
 # components/kpi_card.py
 class KPICard(QFrame):
@@ -163,6 +170,7 @@ class DialogBase(QDialog):
 ```
 
 **Entregables:**
+
 - 5 componentes base funcionales
 - Tests unitarios para cada componente
 - Documentación inline
@@ -170,10 +178,12 @@ class DialogBase(QDialog):
 ---
 
 ### **FASE 2: VISTAS PRINCIPALES (Semanas 4-6)**
+
 **Duración:** 15 días
 **Objetivo:** Migrar las 4 pantallas principales
 
 #### Vista 1: Welcome Screen (3 días)
+
 ```python
 # views/welcome_view.py
 class WelcomeView(QWidget):
@@ -186,6 +196,7 @@ class WelcomeView(QWidget):
 **Migración desde:** ui.py:3121-3248
 
 #### Vista 2: Database View (5 días)
+
 ```python
 # views/database_view.py
 class DatabaseView(QWidget):
@@ -198,11 +209,13 @@ class DatabaseView(QWidget):
 **Migración desde:** ui.py:1906-2171
 
 **Componentes críticos:**
+
 - Sistema de importación OCR
 - Tabla virtualizada (tksheet → QTableView + QAbstractTableModel)
 - Filtros avanzados
 
 #### Vista 3: Dashboard View (4 días)
+
 ```python
 # views/dashboard_view.py
 class DashboardView(QWidget):
@@ -214,6 +227,7 @@ class DashboardView(QWidget):
 **Migración desde:** ui.py:2507-3109
 
 #### Vista 4: Auditoría IA View (3 días)
+
 ```python
 # views/audit_ia_view.py
 class AuditIAView(QWidget):
@@ -225,6 +239,7 @@ class AuditIAView(QWidget):
 **Migración desde:** ui.py:707-1562
 
 **Entregables:**
+
 - 4 vistas completas y funcionales
 - Integración con backend existente (core/)
 - Tests de integración
@@ -232,22 +247,26 @@ class AuditIAView(QWidget):
 ---
 
 ### **FASE 3: INTEGRACIÓN BACKEND (Semanas 7-8)**
+
 **Duración:** 10 días
 **Objetivo:** Conectar vistas con lógica de negocio
 
 #### Tareas por Módulo:
 
 ##### 1. Database Manager (2 días)
+
 - ✅ Mantener sin cambios
 - Crear signals Qt para notificaciones de BD
 - Wrapper para threading Qt (QThread)
 
 ##### 2. Unified Extractor (2 días)
+
 - ✅ Mantener sin cambios
 - Progress signals para QProgressBar
 - Error handling con QMessageBox
 
 ##### 3. Export System (2 días)
+
 ```python
 # Migrar de:
 EnhancedExportSystem(self)  # TTKBootstrap
@@ -260,6 +279,7 @@ EnhancedExportSystemQt(self)  # PySide6
 ```
 
 ##### 4. Helpers UI (2 días)
+
 ```python
 # ui_helpers/ocr_helpers.py → Migrar a Qt signals
 class OCRProcessor(QObject):
@@ -272,6 +292,7 @@ matplotlib.use('QtAgg')  # Cambiar backend
 ```
 
 ##### 5. Ventanas Modales (2 días)
+
 ```python
 # core/ventana_auditoria_ia.py → QDialog
 # core/ventana_selector_auditoria.py → QDialog
@@ -279,6 +300,7 @@ matplotlib.use('QtAgg')  # Cambiar backend
 ```
 
 **Entregables:**
+
 - Backend 100% compatible con PySide6
 - Sin cambios en lógica de negocio
 - Signals/slots Qt implementados
@@ -286,12 +308,14 @@ matplotlib.use('QtAgg')  # Cambiar backend
 ---
 
 ### **FASE 4: FEATURES AVANZADAS (Semana 9)**
+
 **Duración:** 5 días
 **Objetivo:** Implementar capacidades exclusivas de Qt
 
 #### Features a Implementar:
 
 ##### 1. Animaciones (2 días)
+
 ```python
 from PySide6.QtCore import QPropertyAnimation, QEasingCurve
 
@@ -302,6 +326,7 @@ from PySide6.QtCore import QPropertyAnimation, QEasingCurve
 ```
 
 ##### 2. Gráficos Real-Time (1 día)
+
 ```python
 import pyqtgraph as pg
 
@@ -311,6 +336,7 @@ import pyqtgraph as pg
 ```
 
 ##### 3. Sistema de Notificaciones (1 día)
+
 ```python
 from PySide6.QtWidgets import QSystemTrayIcon
 
@@ -320,6 +346,7 @@ from PySide6.QtWidgets import QSystemTrayIcon
 ```
 
 ##### 4. Shortcuts de Teclado (1 día)
+
 ```python
 from PySide6.QtGui import QShortcut, QKeySequence
 
@@ -330,6 +357,7 @@ from PySide6.QtGui import QShortcut, QKeySequence
 ```
 
 **Entregables:**
+
 - Animaciones fluidas en toda la app
 - Dashboard con gráficos real-time
 - Sistema de notificaciones funcional
@@ -338,12 +366,14 @@ from PySide6.QtGui import QShortcut, QKeySequence
 ---
 
 ### **FASE 5: TESTING Y OPTIMIZACIÓN (Semana 10)**
+
 **Duración:** 5 días
 **Objetivo:** Validación completa y pulido final
 
 #### Testing:
 
 ##### 1. Tests Unitarios (2 días)
+
 ```python
 # tests/test_components.py
 def test_kpi_card_creation()
@@ -359,6 +389,7 @@ def test_audit_ia_workflow()
 ```
 
 ##### 2. Tests de Integración (1 día)
+
 ```python
 # tests/integration/test_ocr_workflow.py
 def test_full_ocr_import_workflow()
@@ -371,17 +402,20 @@ def test_completa_audit()
 ```
 
 ##### 3. Optimización de Rendimiento (1 día)
+
 - Profiling con cProfile
 - Optimizar lazy loading
 - Cachear queries BD
 - Virtualización tablas grandes
 
 ##### 4. Validación de Usuario (1 día)
+
 - Testing con usuarios reales
 - Feedback UX
 - Ajustes finales
 
 **Entregables:**
+
 - Suite de tests completa (>80% cobertura)
 - Benchmarks de rendimiento
 - Reporte de validación de usuarios
@@ -493,16 +527,16 @@ ProyectoHUV9GESTOR_ONCOLOGIA/
 
 ### Tamaño Estimado de Archivos
 
-| Archivo | Líneas | Descripción |
-|---------|--------|-------------|
-| `main_pyside6.py` | ~50 | Entry point |
-| `pyside6_ui/app.py` | ~300 | Aplicación principal |
-| **Componentes (7 archivos)** | ~1,200 | Componentes reutilizables |
-| **Vistas (5 archivos)** | ~2,000 | Vistas principales |
-| **Dialogs (4 archivos)** | ~800 | Ventanas modales |
-| **Workers (3 archivos)** | ~400 | Threading |
-| **Models (2 archivos)** | ~300 | Modelos Qt |
-| **TOTAL NUEVO CÓDIGO** | ~5,050 | vs 6,550 actual (23% menos) |
+| Archivo                      | Líneas | Descripción                 |
+| ---------------------------- | ------ | --------------------------- |
+| `main_pyside6.py`            | ~50    | Entry point                 |
+| `pyside6_ui/app.py`          | ~300   | Aplicación principal        |
+| **Componentes (7 archivos)** | ~1,200 | Componentes reutilizables   |
+| **Vistas (5 archivos)**      | ~2,000 | Vistas principales          |
+| **Dialogs (4 archivos)**     | ~800   | Ventanas modales            |
+| **Workers (3 archivos)**     | ~400   | Threading                   |
+| **Models (2 archivos)**      | ~300   | Modelos Qt                  |
+| **TOTAL NUEVO CÓDIGO**       | ~5,050 | vs 6,550 actual (23% menos) |
 
 ---
 
@@ -593,62 +627,72 @@ pylint>=3.0.0                       # Linter
 ### Temas Predefinidos
 
 #### 1. Darkly (Modo Oscuro Profesional)
+
 ```css
 /* themes/darkly.qss */
 QMainWindow {
-    background-color: #1e1e2e;
+  background-color: #1e1e2e;
 }
 
 QFrame#SidebarFrame {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-        stop:0 #252538,
-        stop:1 #2a2a3e
-    );
-    border-right: 1px solid #3f3f55;
+  background: qlineargradient(
+    x1: 0,
+    y1: 0,
+    x2: 1,
+    y2: 0,
+    stop: 0 #252538,
+    stop: 1 #2a2a3e
+  );
+  border-right: 1px solid #3f3f55;
 }
 
 QPushButton.NavButton:checked {
-    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-        stop:0 #3b82f6,
-        stop:1 #2563eb
-    );
-    color: white;
-    border-left: 4px solid #60a5fa;
+  background-color: qlineargradient(
+    x1: 0,
+    y1: 0,
+    x2: 1,
+    y2: 0,
+    stop: 0 #3b82f6,
+    stop: 1 #2563eb
+  );
+  color: white;
+  border-left: 4px solid #60a5fa;
 }
 
 QFrame.KPICard {
-    background-color: #252538;
-    border-radius: 12px;
-    border: 1px solid #3f3f55;
+  background-color: #252538;
+  border-radius: 12px;
+  border: 1px solid #3f3f55;
 }
 
 QFrame.KPICard:hover {
-    border: 1px solid #3b82f6;
-    /* Animación via QPropertyAnimation en Python */
+  border: 1px solid #3b82f6;
+  /* Animación via QPropertyAnimation en Python */
 }
 ```
 
 #### 2. Medical (Tema Hospitalario)
+
 ```css
 /* themes/medical.qss */
 QMainWindow {
-    background-color: #f0f4f8;
+  background-color: #f0f4f8;
 }
 
 QFrame#SidebarFrame {
-    background-color: #ffffff;
-    border-right: 2px solid #0ea5e9;
+  background-color: #ffffff;
+  border-right: 2px solid #0ea5e9;
 }
 
 QPushButton.NavButton:checked {
-    background-color: #0ea5e9;
-    color: white;
+  background-color: #0ea5e9;
+  color: white;
 }
 
 QFrame.KPICard {
-    background-color: white;
-    border: 1px solid #e2e8f0;
-    border-left: 4px solid #0ea5e9;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #0ea5e9;
 }
 ```
 
@@ -813,15 +857,15 @@ def test_table_large_dataset_performance(qapp, benchmark):
 
 ### KPIs de Migración
 
-| Métrica | Objetivo | Cómo Medir |
-|---------|----------|------------|
-| **Reducción código UI** | -27% | Líneas de código |
-| **Mejora rendimiento tablas** | +50% | Benchmark loading 10k rows |
-| **Startup time** | -30% | Tiempo hasta UI visible |
-| **Memory footprint** | Igual o menor | psutil.Process().memory_info() |
-| **Test coverage** | >80% | pytest-cov |
-| **Bugs críticos** | 0 | GitHub Issues |
-| **Satisfacción usuario** | >4/5 | Encuesta post-migración |
+| Métrica                       | Objetivo      | Cómo Medir                     |
+| ----------------------------- | ------------- | ------------------------------ |
+| **Reducción código UI**       | -27%          | Líneas de código               |
+| **Mejora rendimiento tablas** | +50%          | Benchmark loading 10k rows     |
+| **Startup time**              | -30%          | Tiempo hasta UI visible        |
+| **Memory footprint**          | Igual o menor | psutil.Process().memory_info() |
+| **Test coverage**             | >80%          | pytest-cov                     |
+| **Bugs críticos**             | 0             | GitHub Issues                  |
+| **Satisfacción usuario**      | >4/5          | Encuesta post-migración        |
 
 ### Checklist de Calidad
 
@@ -842,14 +886,14 @@ def test_table_large_dataset_performance(qapp, benchmark):
 
 ### Riesgos Identificados
 
-| Riesgo | Probabilidad | Impacto | Mitigación |
-|--------|--------------|---------|------------|
-| **Incompatibilidad backend** | Baja | Alto | Mantener core/ sin cambios, adapters Qt |
-| **Curva aprendizaje Qt** | Media | Medio | Prototipo test_ui.py, documentación Qt |
-| **Bugs PySide6** | Media | Medio | Usar versión estable 6.6.0, tests exhaustivos |
-| **Rendimiento inferior** | Baja | Alto | Benchmarks continuos, optimización early |
-| **Tiempo excedido** | Media | Medio | Buffer 2 semanas, fases ajustables |
-| **Resistencia usuarios** | Baja | Medio | Demo early, feedback continuo |
+| Riesgo                       | Probabilidad | Impacto | Mitigación                                    |
+| ---------------------------- | ------------ | ------- | --------------------------------------------- |
+| **Incompatibilidad backend** | Baja         | Alto    | Mantener core/ sin cambios, adapters Qt       |
+| **Curva aprendizaje Qt**     | Media        | Medio   | Prototipo test_ui.py, documentación Qt        |
+| **Bugs PySide6**             | Media        | Medio   | Usar versión estable 6.6.0, tests exhaustivos |
+| **Rendimiento inferior**     | Baja         | Alto    | Benchmarks continuos, optimización early      |
+| **Tiempo excedido**          | Media        | Medio   | Buffer 2 semanas, fases ajustables            |
+| **Resistencia usuarios**     | Baja         | Medio   | Demo early, feedback continuo                 |
 
 ### Plan de Rollback
 
@@ -889,16 +933,16 @@ Si en Semana 8 se identifica que la migración no es viable:
 
 ### Roles Necesarios
 
-| Rol | Responsabilidad | Tiempo Dedicación |
-|-----|-----------------|-------------------|
-| **Desarrollador Principal** | Migración completa | 100% (10 semanas) |
-| **Revisor Técnico** | Code review, arquitectura | 20% |
-| **Tester QA** | Testing funcional, UX | 30% (semanas 8-10) |
-| **Usuario Alpha** | Feedback temprano | 5% (semanas 6-10) |
+| Rol                         | Responsabilidad           | Tiempo Dedicación  |
+| --------------------------- | ------------------------- | ------------------ |
+| **Desarrollador Principal** | Migración completa        | 100% (10 semanas)  |
+| **Revisor Técnico**         | Code review, arquitectura | 20%                |
+| **Tester QA**               | Testing funcional, UX     | 30% (semanas 8-10) |
+| **Usuario Alpha**           | Feedback temprano         | 5% (semanas 6-10)  |
 
 ### Equipo Actual
 
-- **Desarrollador:** Daniel Restrepo (Ingeniero de Soluciones)
+- **Desarrollador:** Innovación y Desarrollo (Ingenieros de soluciones)
 - **Líder Investigación:** Dr. Juan Camilo Bayona
 - **Jefe TI:** Ing. Diego Peña
 
@@ -936,6 +980,7 @@ Semana  | Fase                    | Entregables
 ### Semana 1 - Tareas Concretas
 
 #### Día 1-2: Setup Entorno
+
 ```bash
 # 1. Crear entorno virtual PySide6
 python -m venv venv_pyside6
@@ -952,6 +997,7 @@ copy test_ui.py pyside6_ui\app_base.py
 ```
 
 #### Día 3: Estructura de Carpetas
+
 ```bash
 # Crear estructura modular
 mkdir pyside6_ui
@@ -973,6 +1019,7 @@ type nul > pyside6_ui\views\__init__.py
 ```
 
 #### Día 4-5: Primer Tema QSS
+
 ```python
 # Crear themes/darkly.qss basado en test_ui.py
 # Crear components/theme_manager.py
@@ -1029,7 +1076,7 @@ type nul > pyside6_ui\views\__init__.py
 
 ### Durante Migración
 
-- **Developer:** Daniel Restrepo (daniel.rr93g@gmail.com)
+- **Developer:** Innovación y Desarrollo (innovacionydesarrollo@correohuv.gov.co)
 - **Issues GitHub:** ProyectoHUV9GESTOR_ONCOLOGIA/issues
 - **Slack Channel:** #pyside6-migration (crear)
 
@@ -1041,4 +1088,4 @@ type nul > pyside6_ui\views\__init__.py
 
 ---
 
-*Este documento es un plan vivo. Se actualizará semanalmente con progreso real.*
+_Este documento es un plan vivo. Se actualizará semanalmente con progreso real._

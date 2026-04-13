@@ -15,6 +15,7 @@
 **Archivo:** `pyside6_ui/workers/ocr_worker.py`
 
 **Problema:**
+
 ```python
 # ❌ INCORRECTO - La clase UnifiedExtractor NO existe
 from core.unified_extractor import UnifiedExtractor
@@ -22,6 +23,7 @@ extractor = UnifiedExtractor()
 ```
 
 **Solución:**
+
 ```python
 # ✅ CORRECTO - Usar la función process_ihq_paths()
 from core.unified_extractor import process_ihq_paths
@@ -37,12 +39,12 @@ casos_procesados = process_ihq_paths(
 
 ### Procesamiento de PDFs
 
-| Frontend (PySide6) | Backend (Existente) | Estado |
-|-------------------|---------------------|--------|
-| `OCRWorker.run()` | `process_ihq_paths()` | ✅ **CONECTADO** |
+| Frontend (PySide6)                       | Backend (Existente)              | Estado           |
+| ---------------------------------------- | -------------------------------- | ---------------- |
+| `OCRWorker.run()`                        | `process_ihq_paths()`            | ✅ **CONECTADO** |
 | `DatabaseView.load_data_from_database()` | `get_all_records_as_dataframe()` | ✅ **CONECTADO** |
-| `ExportWorker.run()` | `EnhancedExportSystem` | ⏳ Pendiente |
-| `AuditWorker.run()` | `AuditorSistema` (FUNC-01) | ⏳ Pendiente |
+| `ExportWorker.run()`                     | `EnhancedExportSystem`           | ⏳ Pendiente     |
+| `AuditWorker.run()`                      | `AuditorSistema` (FUNC-01)       | ⏳ Pendiente     |
 
 ---
 
@@ -147,6 +149,7 @@ Modificar backend para retornar resultados por archivo.
 ## 🚀 Próximos Pasos (Workers Pendientes)
 
 ### ExportWorker
+
 ```python
 # Conectar con:
 from core.enhanced_export_system import EnhancedExportSystem
@@ -156,6 +159,7 @@ export_system.export_to_excel(df, output_path)
 ```
 
 ### AuditWorker
+
 ```python
 # Conectar con:
 from herramientas_ia.auditor_sistema import AuditorSistema
@@ -165,6 +169,7 @@ resultado = auditor.auditar_caso_inteligente(case_id)
 ```
 
 ### RepairWorker
+
 ```python
 # Conectar con:
 from herramientas_ia.auditor_sistema import AuditorSistema
@@ -177,16 +182,16 @@ resultado = auditor.reprocesar_caso_completo(case_id)
 
 ## 📊 Estado de Integración Backend
 
-| Módulo Backend | Función/Clase | PySide6 Worker | Estado |
-|---------------|---------------|----------------|--------|
-| `unified_extractor` | `process_ihq_paths()` | `OCRWorker` | ✅ Conectado |
-| `database_manager` | `get_all_records_as_dataframe()` | `DatabaseView` | ✅ Conectado |
-| `database_manager` | `inicializar_base_datos()` | `OCRWorker` | ✅ Conectado |
-| `enhanced_export_system` | `EnhancedExportSystem` | `ExportWorker` | ⏳ Pendiente |
-| `auditor_sistema` | `AuditorSistema.auditar_caso_inteligente()` | `AuditWorker` | ⏳ Pendiente |
-| `auditor_sistema` | `AuditorSistema.reprocesar_caso_completo()` | `RepairWorker` | ⏳ Pendiente |
-| `llm_client` | `LLMClient` | `AuditWorker` | ⏳ Pendiente |
-| `huv_web_automation` | `automatizar_entrega_resultados()` | `WebWorker` | ⏳ Pendiente |
+| Módulo Backend           | Función/Clase                               | PySide6 Worker | Estado       |
+| ------------------------ | ------------------------------------------- | -------------- | ------------ |
+| `unified_extractor`      | `process_ihq_paths()`                       | `OCRWorker`    | ✅ Conectado |
+| `database_manager`       | `get_all_records_as_dataframe()`            | `DatabaseView` | ✅ Conectado |
+| `database_manager`       | `inicializar_base_datos()`                  | `OCRWorker`    | ✅ Conectado |
+| `enhanced_export_system` | `EnhancedExportSystem`                      | `ExportWorker` | ⏳ Pendiente |
+| `auditor_sistema`        | `AuditorSistema.auditar_caso_inteligente()` | `AuditWorker`  | ⏳ Pendiente |
+| `auditor_sistema`        | `AuditorSistema.reprocesar_caso_completo()` | `RepairWorker` | ⏳ Pendiente |
+| `llm_client`             | `LLMClient`                                 | `AuditWorker`  | ⏳ Pendiente |
+| `huv_web_automation`     | `automatizar_entrega_resultados()`          | `WebWorker`    | ⏳ Pendiente |
 
 **Progreso:** 3/8 conexiones completadas (37.5%)
 
@@ -197,6 +202,7 @@ resultado = auditor.reprocesar_caso_completo(case_id)
 ### Checklist de Testing
 
 - [ ] **Iniciar UI PySide6**
+
   ```bash
   iniciar_pyside6.bat
   ```
@@ -235,6 +241,7 @@ resultado = auditor.reprocesar_caso_completo(case_id)
 **Causa:** Ruta incorrecta o entorno virtual equivocado
 
 **Solución:**
+
 ```bash
 # Verificar que estás en la carpeta correcta
 cd ProyectoHUV9GESTOR_ONCOLOGIA
@@ -265,5 +272,5 @@ Verificar que `OCRWorker` hereda de `QThread` y se llama `.start()` (no `.run()`
 ---
 
 **Última Actualización:** 20 Noviembre 2025
-**Autor:** Sistema Claude + Daniel Restrepo
+**Autor:** Sistema Claude + Innovación y Desarrollo
 **Versión:** 1.0

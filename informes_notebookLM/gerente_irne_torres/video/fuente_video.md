@@ -1,4 +1,5 @@
 # EVARISIS - Sistema Inteligente de Gestión Oncológica
+
 ## Presentación Ejecutiva para Gerencia HUV
 
 **Audiencia:** Gerente Irne Torres - Hospital Universitario del Valle
@@ -12,6 +13,7 @@
 EVARISIS es un sistema de registro institucional de cáncer para el Hospital Universitario del Valle que procesa automáticamente informes de patología IHQ (Inmunohistoquímica).
 
 **Componentes principales:**
+
 - Sistema de procesamiento automatizado de PDFs de patología
 - Base de datos estructurada con 167 campos por caso
 - 5 agentes IA especializados para validación y auditoría
@@ -23,6 +25,7 @@ EVARISIS es un sistema de registro institucional de cáncer para el Hospital Uni
 ## 2. El Problema: Registro Institucional de Cáncer Manual
 
 **Situación actual:**
+
 - Informes de patología IHQ llegan en formato PDF
 - Requieren transcripción manual de datos complejos (biomarcadores, diagnósticos, etc.)
 - Los datos deben alimentar el sistema SERVINTE (sistema principal del HUV)
@@ -30,6 +33,7 @@ EVARISIS es un sistema de registro institucional de cáncer para el Hospital Uni
 - Falta de trazabilidad en el proceso de captura
 
 **¿Por qué es crítico el registro institucional de cáncer?**
+
 - **Trazabilidad clínica:** Seguimiento preciso de casos oncológicos
 - **Cumplimiento normativo:** Requerimientos del Ministerio de Salud
 - **Investigación clínica:** Base de datos estructurada para estudios
@@ -59,6 +63,7 @@ PDF de Patología IHQ
 ### 3.2 Sistema de Agentes IA Especializados
 
 **1. data-auditor** - Auditor Inteligente
+
 - Valida semánticamente 167 campos por caso
 - Calcula score de completitud (0-100%)
 - Detecta inconsistencias en biomarcadores
@@ -66,39 +71,46 @@ PDF de Patología IHQ
 - Puede agregar nuevos biomarcadores al sistema automáticamente
 
 **2. lm-studio-connector** - Validación IA Local
+
 - Valida consistencia semántica usando modelos de lenguaje locales
 - Datos NO salen del hospital (LM Studio local)
 - Análisis de calidad de extracciones
 
 **3. callery** - Orquestador de Lotes
+
 - Procesa múltiples casos simultáneamente
 - Genera reportes consolidados
 - Seguimiento de progreso en tiempo real
 
 **4. documentation-specialist-HUV** - Documentación
+
 - Versionado automático del sistema
 - Generación de CHANGELOG
 - Reportes institucionales
 
 **5. documentador-notebooklm** - Contenido Audiovisual
+
 - Genera insumos para presentaciones (como esta)
 - Adaptado a diferentes audiencias
 
 ### 3.3 Características Técnicas
 
 **Procesamiento:**
+
 - OCR híbrido optimizado para documentos médicos
 - 167 campos estructurados por caso
 - Base de datos SQLite normalizada
 - 1037 casos actualmente procesados
 
 **Validación:**
+
 - Sistema de auditoría inteligente
 - Trazabilidad completa (debug_maps con OCR + datos guardados)
 - Backup automático antes de modificaciones
 - Validación de biomarcadores críticos: ER, PR, HER2, Ki67, p53, etc.
 
 **Interfaz:**
+
 - Dashboard analítico con visualizaciones
 - Tabla virtualizada (86 columnas, manejo eficiente de grandes volúmenes)
 - Colores por completitud (Verde/Amarillo/Rojo)
@@ -137,12 +149,14 @@ PDF de Patología IHQ
 ```
 
 **Beneficios de la integración:**
+
 - Eliminación de doble captura de datos
 - Consistencia entre informes de patología y base de datos institucional
 - Trazabilidad completa del origen de cada dato
 - Reducción de errores humanos en transcripción
 
 **Próximos pasos:**
+
 - Integración API REST con SERVINTE (roadmap v6.5.0)
 - Sincronización bidireccional de datos
 
@@ -151,9 +165,11 @@ PDF de Patología IHQ
 ## 5. Casos de Uso Reales
 
 ### Caso 1: Procesamiento de Lote de Casos
+
 **Escenario:** Llegan 30 nuevos casos IHQ en un PDF consolidado
 
 **Con EVARISIS:**
+
 1. Procesamiento automático del PDF completo
 2. Validación en lote de los 30 casos (agente callery)
 3. Reporte consolidado identifica casos problemáticos
@@ -163,9 +179,11 @@ PDF de Patología IHQ
 **Resultado:** Proceso automatizado, 100% trazable, sin errores de transcripción
 
 ### Caso 2: Nuevo Biomarcador
+
 **Escenario:** Oncología comienza a solicitar un nuevo biomarcador (ej: CK19)
 
 **Con EVARISIS:**
+
 1. Agente data-auditor agrega el biomarcador (FUNC-03)
 2. Modifica automáticamente 6 archivos del sistema
 3. Casos futuros reconocen CK19 automáticamente
@@ -173,9 +191,11 @@ PDF de Patología IHQ
 **Resultado:** Implementación en minutos sin detener el sistema
 
 ### Caso 3: Auditoría de Calidad
+
 **Escenario:** Revisión trimestral de calidad de datos
 
 **Con EVARISIS:**
+
 1. Agente data-auditor analiza todos los casos (FUNC-05B)
 2. Identifica casos incompletos o inconsistentes
 3. Genera reporte detallado con biomarcadores faltantes
@@ -190,11 +210,13 @@ PDF de Patología IHQ
 El sistema incluye un módulo analítico que procesa tendencias de biomarcadores.
 
 **Ejemplo: Biomarcador HER2**
+
 - Sistema analiza casos históricos con HER2 positivo
 - Identifica tendencias temporales
 - Permite planificación de recursos y medicamentos asociados
 
 **Aplicación:**
+
 - Análisis de demanda de tratamientos específicos
 - Planificación anticipada de compras
 - Mejor gestión de inventario de medicamentos de alto costo
@@ -204,24 +226,28 @@ El sistema incluye un módulo analítico que procesa tendencias de biomarcadores
 ## 7. Valor para el HUV
 
 ### Precisión Absoluta
+
 - Validación automática de 167 campos
 - Score de completitud >90% en promedio
 - Eliminación de errores de transcripción manual
 - Trazabilidad completa con debug_maps
 
 ### Eficiencia Operativa
+
 - Automatización de proceso manual repetitivo
 - Reducción significativa de tiempo de procesamiento
 - Capacidad de procesar 100+ informes por hora
 - Sistema escalable a 10,000+ casos
 
 ### Cumplimiento Normativo
+
 - Registro institucional de cáncer confiable
 - Datos estructurados para reportes al Ministerio de Salud
 - Auditoría completa de cada caso procesado
 - Respaldo automático antes de modificaciones
 
 ### Transformación Digital
+
 - Posiciona al HUV como líder regional en gestión oncológica digitalizada
 - Uso de IA local sin dependencia de servicios externos
 - Arquitectura modular adaptable a otras especialidades
@@ -232,6 +258,7 @@ El sistema incluye un módulo analítico que procesa tendencias de biomarcadores
 ## 8. Arquitectura Modular y Escalable
 
 **6 Herramientas Especializadas:**
+
 1. auditor_sistema.py - Auditoría y gestión de biomarcadores
 2. gestor_ia_lm_studio.py - Gestión de IA local
 3. gestor_version.py - Versionado automático
@@ -240,6 +267,7 @@ El sistema incluye un módulo analítico que procesa tendencias de biomarcadores
 6. documentador_notebooklm.py - Contenido audiovisual
 
 **Tecnología:**
+
 - Python 3.x
 - SQLite (base de datos local segura)
 - PyMuPDF, Pytesseract (procesamiento PDFs)
@@ -251,22 +279,26 @@ El sistema incluye un módulo analítico que procesa tendencias de biomarcadores
 ## 9. Roadmap
 
 **v6.0.9 (Actual) - "Smart Validation"** ✅
+
 - Sistema de auditoría inteligente completo
 - 5 agentes IA especializados
 - Tabla virtualizada de alto rendimiento
 - 1037 casos en base de datos
 
 **v6.1.0 - Interfaz PySide6** 🔜
+
 - Rediseño completo de interfaz gráfica
 - Mayor integración con workflows
 - Panel de control unificado
 
 **v6.5.0 - Integración SERVINTE** 🔜
+
 - API REST para comunicación directa
 - Sincronización bidireccional
 - Webhooks para notificaciones
 
 **v7.0.0 - Machine Learning** 🔜
+
 - Módulo de predicción basado en biomarcadores
 - Análisis de tendencias epidemiológicas
 - Sistema de alertas
@@ -276,14 +308,17 @@ El sistema incluye un módulo analítico que procesa tendencias de biomarcadores
 ## 10. Equipo de Desarrollo
 
 **Desarrollador Principal:**
-- Daniel Restrepo - Ingeniero de Soluciones
+
+- Innovación y Desarrollo - Ingenieros de soluciones
 - Departamento de Innovación y Desarrollo
 
 **Líder de Investigación:**
+
 - Dr. Juan Camilo Bayona - Coordinador Cirugía Oncológica
 - Servicio de Oncología HUV
 
 **Jefe de Gestión de Información:**
+
 - Ing. Diego Peña
 - Departamento de Gestión de la Información HUV
 
@@ -292,24 +327,29 @@ El sistema incluye un módulo analítico que procesa tendencias de biomarcadores
 ## 11. Puntos Clave para Video
 
 ### Slide 1: El Problema
+
 **Antes (Manual):**
+
 - Transcripción manual de informes IHQ
 - Errores humanos en captura
 - Doble entrada de datos (patología → SERVINTE)
 - Sin trazabilidad
 
 **Ahora (Automatizado):**
+
 - Procesamiento automático
 - Validación IA (score >90%)
 - Integración directa SERVINTE
 - Trazabilidad completa
 
 ### Slide 2: Flujo Automatizado
+
 ```
 PDF → OCR → Extracción (167 campos) → Validación IA → BD → SERVINTE
 ```
 
 ### Slide 3: 5 Agentes IA
+
 - 🔍 data-auditor → Validación semántica
 - 🤖 lm-studio-connector → IA local
 - 📦 callery → Workflows en lote
@@ -317,6 +357,7 @@ PDF → OCR → Extracción (167 campos) → Validación IA → BD → SERVINTE
 - 🎬 documentador-notebooklm → Contenido
 
 ### Slide 4: Valor Estratégico
+
 - ✅ Precisión absoluta (eliminación de errores)
 - ✅ Registro institucional confiable
 - ✅ Cumplimiento normativo
@@ -324,6 +365,7 @@ PDF → OCR → Extracción (167 campos) → Validación IA → BD → SERVINTE
 - ✅ Escalable a otras especialidades
 
 ### Slide 5: Análisis Predictivo
+
 **Gráfico:** Tendencias de biomarcadores (HER2, ER, PR, Ki67) para planificación de recursos
 
 ---
