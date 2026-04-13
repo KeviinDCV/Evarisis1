@@ -1882,3 +1882,474 @@
 2026-04-13 07:36:34,442 - root - INFO -       📊 Actualizando stats: 0/1 casos, 0 correcciones
 2026-04-13 07:36:34,446 - root - INFO -    📏 Prompt completa: 2667 chars (~666 tokens)
 2026-04-13 07:36:34,447 - root - INFO -    🔄 [LM Studio (Local)] Request (local-model)...
+2026-04-13 07:38:36,492 - root - INFO - ⚠️ [LM Studio (Local)] Timeout - Reintentando...
+2026-04-13 07:38:37,492 - root - INFO -    🔄 [LM Studio (Local)] Request (local-model)...
+2026-04-13 07:40:10,902 - root - INFO -    ✅ [LM Studio (Local)] Respuesta (status=200)
+2026-04-13 07:40:10,911 - core.database_manager - INFO - ✅ Campo 'IHQ_CK7' actualizado para IHQ250103
+2026-04-13 07:40:10,915 - core.database_manager - INFO - ✅ Campo 'IHQ_CK19' actualizado para IHQ250103
+2026-04-13 07:40:10,918 - core.database_manager - INFO - ✅ Campo 'IHQ_CK20' actualizado para IHQ250103
+2026-04-13 07:40:10,922 - core.database_manager - INFO - ✅ Campo 'IHQ_CDX2' actualizado para IHQ250103
+2026-04-13 07:40:10,929 - core.database_manager - INFO - ✅ Campo 'IHQ_CKAE1AE3' actualizado para IHQ250103
+2026-04-13 07:40:10,935 - core.database_manager - INFO - ✅ Campo 'IHQ_CA19_9' actualizado para IHQ250103
+2026-04-13 07:40:10,938 - core.database_manager - INFO - ✅ Campo 'IHQ_HER2' actualizado para IHQ250103
+2026-04-13 07:40:10,950 - root - INFO -       ✓ Agregando corrección: IHQ250103 - IHQ_CK7 = POSITIVO
+2026-04-13 07:40:10,953 - root - INFO -       ✓ Agregando corrección: IHQ250103 - IHQ_CK19 = POSITIVO
+2026-04-13 07:40:10,957 - root - INFO -       ✓ Agregando corrección: IHQ250103 - IHQ_CK20 = NEGATIVO
+2026-04-13 07:40:10,959 - root - INFO -       ✓ Agregando corrección: IHQ250103 - IHQ_CDX2 = POSITIVO
+2026-04-13 07:40:10,974 - root - INFO -       ✓ Agregando corrección: IHQ250103 - IHQ_CKAE1AE3 = POSITIVO
+2026-04-13 07:40:10,978 - root - INFO -       ✓ Agregando corrección: IHQ250103 - IHQ_CA19_9 = NEGATIVO
+2026-04-13 07:40:10,990 - root - INFO -       ✓ Agregando corrección: IHQ250103 - IHQ_HER2 = NEGATIVO (SCORE 1+)
+2026-04-13 07:40:11,010 - root - INFO -       📊 Actualizando stats: 1/1 casos, 7 correcciones
+2026-04-13 07:40:11,017 - root - INFO - 
+💾 Guardando reporte automáticamente...
+2026-04-13 07:40:11,018 - root - INFO - Auditoria de seleccion completada
+2026-04-13 07:40:11,019 - root - INFO - Auditoria completada - Mostrando resultados
+2026-04-13 07:40:11,033 - core.database_manager - INFO - ✅ Estado de auditoría actualizado para IHQ250103: COMPLETA
+2026-04-13 07:40:11,034 - root - INFO - Estado actualizado: IHQ250103 -> COMPLETA
+2026-04-13 07:40:11,034 - root - INFO - 🔄 Iniciando refresh de datos...
+2026-04-13 07:40:11,034 - core.database_manager - INFO - Carpeta de base de datos verificada: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data
+2026-04-13 07:40:11,036 - core.database_manager - INFO - Iniciando migración de esquema: eliminando columnas obsoletas…
+2026-04-13 07:40:11,052 - core.database_manager - INFO - Migración completada correctamente.
+2026-04-13 07:40:11,053 - core.database_manager - INFO - Base de datos preparada correctamente: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data\huv_oncologia_NUEVO.db
+2026-04-13 07:40:11,061 - core.database_manager - INFO - Cargados 100 registros de la base de datos
+2026-04-13 07:40:11,078 - root - INFO - 📊 Datos cargados: 100 registros
+2026-04-13 07:40:11,137 - root - INFO - 🗂️ Tabla actualizada
+2026-04-13 07:40:11,141 - root - INFO - 📈 KPIs actualizados
+2026-04-13 07:40:11,149 - root - INFO - ✅ Refresh completado exitosamente
+2026-04-13 07:40:11,151 - root - INFO - Generando reporte Markdown...
+2026-04-13 07:40:11,151 - root - INFO - Generando reporte IA tipo: completa
+2026-04-13 07:40:11,154 - root - INFO - Reporte generado: data\reportes_ia\20260413_074011_COMPLETA_IHQ250103.md
+2026-04-13 07:40:11,154 - root - INFO - Reporte generado exitosamente: data\reportes_ia\20260413_074011_COMPLETA_IHQ250103.md
+2026-04-13 07:40:11,154 - root - INFO - Navegando a seccion Analisis IA...
+2026-04-13 07:40:11,157 - root - INFO - Navegacion exitosa
+2026-04-13 07:40:11,168 - root - INFO - Actualizando lista de reportes - Tipo: completo
+2026-04-13 07:40:11,170 - root - INFO - 14 reportes cargados
+2026-04-13 07:40:11,170 - root - INFO - Lista de reportes actualizada
+2026-04-13 07:40:11,171 - root - INFO - Auto-cargando reporte: data\reportes_ia\20260413_074011_COMPLETA_IHQ250103.md
+2026-04-13 07:40:11,178 - root - INFO - Reporte seleccionado automaticamente
+2026-04-13 07:40:11,179 - root - INFO - ✅ Reporte guardado correctamente
+2026-04-13 07:40:11,181 - root - INFO - Cargando reporte: data\reportes_ia\20260413_074011_COMPLETA_IHQ250103.md
+2026-04-13 07:40:11,183 - root - INFO - Cargando reporte: data\reportes_ia\20260413_074011_COMPLETA_IHQ250103.md
+2026-04-13 07:40:15,899 - root - INFO -    👁️ Usuario solicitó ver resultados
+2026-04-13 07:40:22,508 - root - INFO - ============================================================
+2026-04-13 07:40:22,509 - root - INFO - mostrar_detalle_registro: EVENTO DISPARADO
+2026-04-13 07:40:22,509 - root - INFO - Evento: {'eventname': 'select', 'sheetname': '!sheet', 'cells': {'table': {}, 'header': {}, 'index': {}}, 'moved': {'rows': {}, 'columns': {}}, 'added': {'rows': {}, 'columns': {}}, 'deleted': {'rows': {}, 'columns': {}, 'header': {}, 'index': {}, 'column_widths': {}, 'row_heights': {}}, 'named_spans': {}, 'options': {}, 'selection_boxes': {Box_nt(from_r=95, from_c=131, upto_r=96, upto_c=132): 'cells'}, 'selected': Selected(row=95, column=131, type_='cells', box=Box_nt(from_r=95, from_c=131, upto_r=96, upto_c=132), iid=620, fill_iid=2), 'being_selected': (), 'data': {}, 'key': '', 'value': None, 'loc': (), 'row': None, 'column': None, 'resized': {'rows': {}, 'columns': {}}, 'widget': None, 'sheet_state': {}, 'treeview': {'nodes': {}, 'renamed': {}, 'text': {}}}
+2026-04-13 07:40:22,509 - root - INFO - mostrar_detalle_registro: Fila seleccionada desde EVENTO: 95
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 95
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [95]
+2026-04-13 07:40:22,510 - root - INFO - self.tree.selection() retornó: [95]
+2026-04-13 07:40:22,510 - root - INFO - Tipo: <class 'list'>, Longitud: 1
+2026-04-13 07:40:22,510 - root - INFO - 💾 Guardada última selección válida: 95
+2026-04-13 07:40:22,510 - root - INFO - Llamando a _update_export_button_state()...
+2026-04-13 07:40:22,510 - root - INFO - _update_export_button_state: INICIANDO
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 95
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [95]
+2026-04-13 07:40:22,510 - root - INFO - _update_export_button_state: selection() = [95]
+2026-04-13 07:40:22,510 - root - INFO - _update_export_button_state: export_selection_btn existe
+2026-04-13 07:40:22,510 - root - INFO - _update_export_button_state: HAY SELECCIÓN -> Habilitando botón
+2026-04-13 07:40:22,510 - root - INFO - Llamando a _update_audit_buttons_state()...
+2026-04-13 07:40:22,510 - root - INFO - _update_audit_buttons_state: INICIANDO
+2026-04-13 07:40:22,510 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:40:22,511 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:40:22,511 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:40:22,511 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:40:22,511 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 95
+2026-04-13 07:40:22,511 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [95]
+2026-04-13 07:40:22,511 - root - INFO - _update_audit_buttons_state: selection() = [95]
+2026-04-13 07:40:22,511 - root - INFO - _update_audit_buttons_state: has_selection = True
+2026-04-13 07:40:22,511 - root - INFO - _update_audit_buttons_state: CHECKPOINT 1 - Antes del if
+2026-04-13 07:40:22,511 - root - INFO - _update_audit_buttons_state: CHECKPOINT 3 - Dentro del else (HAY SELECCIÓN)
+2026-04-13 07:40:22,511 - root - INFO - _update_audit_buttons_state: HAY SELECCIÓN -> Determinando estados...
+2026-04-13 07:40:22,511 - root - INFO - _update_audit_buttons_state: headers = ['Numero de caso', 'Procedimiento', 'Organo', 'Malignidad', 'Diagnostico Coloracion', 'Diagnostico Principal', 'Factor pronostico', 'IHQ_ORGANO', 'IHQ_ESTUDIOS_SOLICITADOS', 'IHQ_HER2', 'IHQ_KI-67', 'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA', 'IHQ_PDL-1', 'IHQ_P16_ESTADO', 'IHQ_P16_PORCENTAJE', 'IHQ_P40_ESTADO', 'IHQ_E_CADHERINA', 'IHQ_CK7', 'IHQ_CROMOGRAMINA', 'IHQ_DESMINA', 'IHQ_LCA', 'IHQ_CD11', 'IHQ_MIOGENINA', 'IHQ_MAMAGLOBINA', 'IHQ_TIROGLOBULINA', 'IHQ_CK34BETAE12', 'IHQ_CK34BETA12', 'IHQ_OCT4', 'IHQ_PODOPLANINA', 'IHQ_IDH', 'IHQ_GPC3', 'IHQ_AFP', 'IHQ_IGD', 'IHQ_BETACATENINA', 'IHQ_ACTINA_MUSCULO_ESPECIFICA', 'IHQ_MIELOPEROXIDASA', 'IHQ_CD7', 'IHQ_EBER', 'IHQ_SINAPTOFISINA', 'IHQ_CROMOGRANINA', 'IHQ_CK56', 'IHQ_CAM5', 'IHQ_GLICOFORINA', 'IHQ_TDT', 'IHQ_ATRX', 'IHQ_IDH1', 'IHQ_CMYC', 'IHQ_IGG4', 'IHQ_IGG', 'IHQ_MAMOGLOBINA', 'IHQ_HEPATOCITO', 'IHQ_CK19', 'IHQ_CK20', 'IHQ_CDX2', 'IHQ_EMA', 'IHQ_GATA3', 'IHQ_SOX10', 'IHQ_P53', 'IHQ_TTF1', 'IHQ_S100', 'IHQ_VIMENTINA', 'IHQ_MELAN_A', 'IHQ_CD2', 'IHQ_CD3', 'IHQ_CD5', 'IHQ_CD10', 'IHQ_CD20', 'IHQ_CD30', 'IHQ_CD34', 'IHQ_CD38', 'IHQ_CD45', 'IHQ_CD56', 'IHQ_CD61', 'IHQ_CD68', 'IHQ_CD117', 'IHQ_CD138', 'IHQ_KAPPA', 'IHQ_LAMBDA', 'IHQ_BCL2', 'IHQ_BCL6', 'IHQ_MUM1', 'IHQ_MUC1', 'IHQ_CD79A', 'IHQ_ALK', 'IHQ_CKAE1AE3', 'IHQ_NAPSIN', 'IHQ_CDK4', 'IHQ_MDM2', 'IHQ_PAX5', 'IHQ_ACTIN', 'IHQ_PAX8', 'IHQ_GFAP', 'IHQ_DOG1', 'IHQ_H_CALDESMON', 'IHQ_AML', 'IHQ_HHV8', 'IHQ_NEUN', 'IHQ_P63', 'IHQ_CALPONINA', 'IHQ_BER_EP4', 'IHQ_WT1', 'IHQ_MLH1', 'IHQ_MSH2', 'IHQ_MSH6', 'IHQ_PMS2', 'IHQ_CD23', 'IHQ_CD4', 'IHQ_CD8', 'IHQ_CD99', 'IHQ_CD1A', 'IHQ_C4D', 'IHQ_LMP1', 'IHQ_CITOMEGALOVIRUS', 'IHQ_SV40', 'IHQ_CEA', 'IHQ_CA19_9', 'IHQ_CALRETININA', 'IHQ_CK34BE12', 'IHQ_CK5_6', 'IHQ_HEPAR', 'IHQ_GLIPICAN', 'IHQ_ARGINASA', 'IHQ_HMB45', 'IHQ_PSA', 'IHQ_INHIBINA', 'IHQ_RACEMASA', 'IHQ_34BETA', 'IHQ_B2', 'IHQ_SALL4', 'IHQ_ALK1', 'Estado Auditoria IA', 'Fecha Ingreso Base de Datos']
+2026-04-13 07:40:22,511 - root - INFO - _update_audit_buttons_state: col_idx = 0
+2026-04-13 07:40:22,511 - root - INFO - _update_audit_buttons_state: Obteniendo estados para 1 items...
+2026-04-13 07:40:22,511 - root - INFO - _update_audit_buttons_state: item_id=95, values=['IHQ250103', 'BIOPSIA', 'MUCOSA GASTRICA DE CUERPO', 'MALIGNO', 'ADENOCARCINOMA BIEN DIFERENCIADO INVASIVO MÍNIMAMENTE REPRESENTADO', 'ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATOBILIAR', 'HER2: NEGATIVO (SCORE 1+)', 'MUCOSA GÁSTRICA DE CUERPO', 'CA19-9, CDX2, CK19, CK20, CK7, CKAE1AE3, HER2', 'NEGATIVO (SCORE 1+)', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'NEGATIVO', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'COMPLETA', '2026-04-10 15:18:52']
+2026-04-13 07:40:22,512 - root - INFO - _update_audit_buttons_state: numero_peticion=IHQ250103
+2026-04-13 07:40:22,512 - root - INFO - _update_audit_buttons_state: estado=COMPLETA
+2026-04-13 07:40:22,512 - root - INFO - _update_audit_buttons_state: estados recolectados = ['COMPLETA']
+2026-04-13 07:40:22,512 - root - INFO - _update_audit_buttons_state: TODOS COMPLETA -> Bloqueando ambos
+2026-04-13 07:40:22,512 - root - INFO - ============================================================
+2026-04-13 07:40:23,828 - root - INFO - Aplicacion cerrada. Hasta luego!
+2026-04-13 07:40:42,351 - core.unified_extractor - INFO - ✅ Extractores refactorizados cargados correctamente
+2026-04-13 07:40:42,552 - root - INFO - Iniciando EVARISIS Gestor H.U.V...
+2026-04-13 07:40:42,553 - root - INFO - Tesseract OCR configurado en: C:\Program Files\Tesseract-OCR\tesseract.exe
+2026-04-13 07:40:43,112 - core.database_manager - INFO - Carpeta de base de datos verificada: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data
+2026-04-13 07:40:43,113 - core.database_manager - INFO - Iniciando migración de esquema: eliminando columnas obsoletas…
+2026-04-13 07:40:43,127 - core.database_manager - INFO - Migración completada correctamente.
+2026-04-13 07:40:43,127 - core.database_manager - INFO - Base de datos preparada correctamente: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data\huv_oncologia_NUEVO.db
+2026-04-13 07:40:43,134 - core.database_manager - INFO - Cargados 100 registros de la base de datos
+2026-04-13 07:40:43,162 - root - INFO - Columnas de fecha encontradas: ['Fecha de toma (1. Fecha de la toma)', 'Fecha de ingreso (2. Fecha de la muestra)', 'Fecha Informe', 'Fecha Ingreso Base de Datos']
+2026-04-13 07:40:43,162 - root - INFO - Usando columna de fecha prioritaria: Fecha de toma (1. Fecha de la toma)
+2026-04-13 07:40:43,163 - root - INFO - Formato %d/%m/%Y: 0 fechas válidas de 100 totales
+2026-04-13 07:40:43,164 - root - INFO - Formato %Y-%m-%d: 0 fechas válidas de 100 totales
+2026-04-13 07:40:43,165 - root - INFO - Formato %d-%m-%Y: 0 fechas válidas de 100 totales
+2026-04-13 07:40:43,166 - root - INFO - Formato %m/%d/%Y: 0 fechas válidas de 100 totales
+2026-04-13 07:40:43,166 - root - INFO - Formato mixed: 0 fechas válidas de 100 totales
+2026-04-13 07:40:43,167 - core.enhanced_database_dashboard - WARNING - No se pudieron parsear fechas de columna 'Fecha de toma (1. Fecha de la toma)'
+2026-04-13 07:40:43,167 - core.enhanced_database_dashboard - WARNING - Muestras de datos en 'Fecha de toma (1. Fecha de la toma)': ['SIN DATO', 'SIN DATO', 'SIN DATO', 'SIN DATO', 'SIN DATO']
+2026-04-13 07:40:43,474 - core.database_manager - INFO - Carpeta de base de datos verificada: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data
+2026-04-13 07:40:43,475 - core.database_manager - INFO - Iniciando migración de esquema: eliminando columnas obsoletas…
+2026-04-13 07:40:43,490 - core.database_manager - INFO - Migración completada correctamente.
+2026-04-13 07:40:43,490 - core.database_manager - INFO - Base de datos preparada correctamente: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data\huv_oncologia_NUEVO.db
+2026-04-13 07:40:43,497 - core.database_manager - INFO - Cargados 100 registros de la base de datos
+2026-04-13 07:40:43,525 - root - INFO - Columnas de fecha encontradas: ['Fecha de toma (1. Fecha de la toma)', 'Fecha de ingreso (2. Fecha de la muestra)', 'Fecha Informe', 'Fecha Ingreso Base de Datos']
+2026-04-13 07:40:43,525 - root - INFO - Usando columna de fecha prioritaria: Fecha de toma (1. Fecha de la toma)
+2026-04-13 07:40:43,526 - root - INFO - Formato %d/%m/%Y: 0 fechas válidas de 100 totales
+2026-04-13 07:40:43,527 - root - INFO - Formato %Y-%m-%d: 0 fechas válidas de 100 totales
+2026-04-13 07:40:43,528 - root - INFO - Formato %d-%m-%Y: 0 fechas válidas de 100 totales
+2026-04-13 07:40:43,528 - root - INFO - Formato %m/%d/%Y: 0 fechas válidas de 100 totales
+2026-04-13 07:40:43,529 - root - INFO - Formato mixed: 0 fechas válidas de 100 totales
+2026-04-13 07:40:43,529 - core.enhanced_database_dashboard - WARNING - No se pudieron parsear fechas de columna 'Fecha de toma (1. Fecha de la toma)'
+2026-04-13 07:40:43,529 - core.enhanced_database_dashboard - WARNING - Muestras de datos en 'Fecha de toma (1. Fecha de la toma)': ['SIN DATO', 'SIN DATO', 'SIN DATO', 'SIN DATO', 'SIN DATO']
+2026-04-13 07:40:44,036 - root - INFO - ✅ Dashboard inicializado con datos de la base de datos
+2026-04-13 07:40:44,456 - root - INFO - 🔄 Iniciando refresh de datos...
+2026-04-13 07:40:44,457 - core.database_manager - INFO - Carpeta de base de datos verificada: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data
+2026-04-13 07:40:44,460 - core.database_manager - INFO - Iniciando migración de esquema: eliminando columnas obsoletas…
+2026-04-13 07:40:44,473 - core.database_manager - INFO - Migración completada correctamente.
+2026-04-13 07:40:44,476 - core.database_manager - INFO - Base de datos preparada correctamente: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data\huv_oncologia_NUEVO.db
+2026-04-13 07:40:44,485 - core.database_manager - INFO - Cargados 100 registros de la base de datos
+2026-04-13 07:40:44,515 - root - INFO - 📊 Datos cargados: 100 registros
+2026-04-13 07:40:44,519 - root - INFO - 📈 KPIs actualizados
+2026-04-13 07:40:44,524 - root - INFO - ✅ Refresh completado exitosamente
+2026-04-13 07:40:44,524 - root - INFO - ✅ Pestaña de visualizador COMPLETA poblada en el dashboard con tabla Sheet
+2026-04-13 07:40:44,641 - root - INFO - Handler de ordenamiento por encabezado bindeado correctamente
+2026-04-13 07:40:44,641 - root - INFO - Eventos de selección bindeados correctamente a Sheet
+2026-04-13 07:40:44,700 - root - INFO - Actualizando lista de reportes - Tipo: parcial
+2026-04-13 07:40:44,700 - root - INFO - 6 reportes cargados
+2026-04-13 07:40:44,775 - core.database_manager - INFO - Carpeta de base de datos verificada: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data
+2026-04-13 07:40:44,776 - core.database_manager - INFO - Iniciando migración de esquema: eliminando columnas obsoletas…
+2026-04-13 07:40:44,792 - core.database_manager - INFO - Migración completada correctamente.
+2026-04-13 07:40:44,792 - core.database_manager - INFO - Base de datos preparada correctamente: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data\huv_oncologia_NUEVO.db
+2026-04-13 07:40:44,799 - core.database_manager - INFO - Cargados 100 registros de la base de datos
+2026-04-13 07:40:44,817 - root - INFO - 🔄 Iniciando refresh de datos...
+2026-04-13 07:40:44,817 - core.database_manager - INFO - Carpeta de base de datos verificada: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data
+2026-04-13 07:40:44,818 - core.database_manager - INFO - Iniciando migración de esquema: eliminando columnas obsoletas…
+2026-04-13 07:40:44,832 - core.database_manager - INFO - Migración completada correctamente.
+2026-04-13 07:40:44,835 - core.database_manager - INFO - Base de datos preparada correctamente: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data\huv_oncologia_NUEVO.db
+2026-04-13 07:40:44,841 - core.database_manager - INFO - Cargados 100 registros de la base de datos
+2026-04-13 07:40:44,859 - root - INFO - 📊 Datos cargados: 100 registros
+2026-04-13 07:40:44,907 - root - INFO - 🗂️ Tabla actualizada
+2026-04-13 07:40:44,914 - root - INFO - 📈 KPIs actualizados
+2026-04-13 07:40:44,918 - root - INFO - ✅ Refresh completado exitosamente
+2026-04-13 07:40:53,167 - root - INFO - 📊 Navegando a pestaña Visualizador de Datos en Base de Datos
+2026-04-13 07:40:53,167 - root - ERROR - Error limpiando filtros: '_tkinter.tkapp' object has no attribute 'refresh_data'
+2026-04-13 07:41:03,539 - root - INFO - ============================================================
+2026-04-13 07:41:03,539 - root - INFO - mostrar_detalle_registro: EVENTO DISPARADO
+2026-04-13 07:41:03,540 - root - INFO - Evento: {'eventname': 'select', 'sheetname': '!sheet', 'cells': {'table': {}, 'header': {}, 'index': {}}, 'moved': {'rows': {}, 'columns': {}}, 'added': {'rows': {}, 'columns': {}}, 'deleted': {'rows': {}, 'columns': {}, 'header': {}, 'index': {}, 'column_widths': {}, 'row_heights': {}}, 'named_spans': {}, 'options': {}, 'selection_boxes': {Box_nt(from_r=0, from_c=0, upto_r=1, upto_c=133): 'rows'}, 'selected': Selected(row=0, column=0, type_='rows', box=Box_nt(from_r=0, from_c=0, upto_r=1, upto_c=133), iid=2, fill_iid=2), 'being_selected': (), 'data': {}, 'key': '', 'value': None, 'loc': (), 'row': None, 'column': None, 'resized': {'rows': {}, 'columns': {}}, 'widget': None, 'sheet_state': {}, 'treeview': {'nodes': {}, 'renamed': {}, 'text': {}}}
+2026-04-13 07:41:03,540 - root - INFO - mostrar_detalle_registro: Fila seleccionada desde EVENTO: 0
+2026-04-13 07:41:03,540 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:03,540 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:03,540 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:03,540 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:03,541 - root - INFO - _sheet_selection: ⚠️ Sin selección, retornando []
+2026-04-13 07:41:03,541 - root - INFO - self.tree.selection() retornó: []
+2026-04-13 07:41:03,541 - root - INFO - Tipo: <class 'list'>, Longitud: 0
+2026-04-13 07:41:03,541 - root - INFO - ⚠️ CORRECCIÓN: selection() retornó [], pero evento indica fila 0
+2026-04-13 07:41:03,541 - root - INFO - ✅ Usando fila del evento: [0]
+2026-04-13 07:41:03,541 - root - INFO - 💾 Guardada última selección válida: 0
+2026-04-13 07:41:03,541 - root - INFO - Llamando a _update_export_button_state()...
+2026-04-13 07:41:03,541 - root - INFO - _update_export_button_state: INICIANDO
+2026-04-13 07:41:03,541 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:03,542 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:03,542 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:03,542 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:03,542 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 0
+2026-04-13 07:41:03,542 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [0]
+2026-04-13 07:41:03,542 - root - INFO - _update_export_button_state: selection() = [0]
+2026-04-13 07:41:03,542 - root - INFO - _update_export_button_state: export_selection_btn existe
+2026-04-13 07:41:03,542 - root - INFO - _update_export_button_state: HAY SELECCIÓN -> Habilitando botón
+2026-04-13 07:41:03,543 - root - INFO - Llamando a _update_audit_buttons_state()...
+2026-04-13 07:41:03,543 - root - INFO - _update_audit_buttons_state: INICIANDO
+2026-04-13 07:41:03,543 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:03,543 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:03,543 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:03,543 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:03,543 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 0
+2026-04-13 07:41:03,543 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [0]
+2026-04-13 07:41:03,543 - root - INFO - _update_audit_buttons_state: selection() = [0]
+2026-04-13 07:41:03,543 - root - INFO - _update_audit_buttons_state: has_selection = True
+2026-04-13 07:41:03,543 - root - INFO - _update_audit_buttons_state: CHECKPOINT 1 - Antes del if
+2026-04-13 07:41:03,544 - root - INFO - _update_audit_buttons_state: CHECKPOINT 3 - Dentro del else (HAY SELECCIÓN)
+2026-04-13 07:41:03,544 - root - INFO - _update_audit_buttons_state: HAY SELECCIÓN -> Determinando estados...
+2026-04-13 07:41:03,544 - root - INFO - _update_audit_buttons_state: headers = ['Numero de caso', 'Procedimiento', 'Organo', 'Malignidad', 'Diagnostico Coloracion', 'Diagnostico Principal', 'Factor pronostico', 'IHQ_ORGANO', 'IHQ_ESTUDIOS_SOLICITADOS', 'IHQ_HER2', 'IHQ_KI-67', 'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA', 'IHQ_PDL-1', 'IHQ_P16_ESTADO', 'IHQ_P16_PORCENTAJE', 'IHQ_P40_ESTADO', 'IHQ_E_CADHERINA', 'IHQ_CK7', 'IHQ_CROMOGRAMINA', 'IHQ_DESMINA', 'IHQ_LCA', 'IHQ_CD11', 'IHQ_MIOGENINA', 'IHQ_MAMAGLOBINA', 'IHQ_TIROGLOBULINA', 'IHQ_CK34BETAE12', 'IHQ_CK34BETA12', 'IHQ_OCT4', 'IHQ_PODOPLANINA', 'IHQ_IDH', 'IHQ_GPC3', 'IHQ_AFP', 'IHQ_IGD', 'IHQ_BETACATENINA', 'IHQ_ACTINA_MUSCULO_ESPECIFICA', 'IHQ_MIELOPEROXIDASA', 'IHQ_CD7', 'IHQ_EBER', 'IHQ_SINAPTOFISINA', 'IHQ_CROMOGRANINA', 'IHQ_CK56', 'IHQ_CAM5', 'IHQ_GLICOFORINA', 'IHQ_TDT', 'IHQ_ATRX', 'IHQ_IDH1', 'IHQ_CMYC', 'IHQ_IGG4', 'IHQ_IGG', 'IHQ_MAMOGLOBINA', 'IHQ_HEPATOCITO', 'IHQ_CK19', 'IHQ_CK20', 'IHQ_CDX2', 'IHQ_EMA', 'IHQ_GATA3', 'IHQ_SOX10', 'IHQ_P53', 'IHQ_TTF1', 'IHQ_S100', 'IHQ_VIMENTINA', 'IHQ_MELAN_A', 'IHQ_CD2', 'IHQ_CD3', 'IHQ_CD5', 'IHQ_CD10', 'IHQ_CD20', 'IHQ_CD30', 'IHQ_CD34', 'IHQ_CD38', 'IHQ_CD45', 'IHQ_CD56', 'IHQ_CD61', 'IHQ_CD68', 'IHQ_CD117', 'IHQ_CD138', 'IHQ_KAPPA', 'IHQ_LAMBDA', 'IHQ_BCL2', 'IHQ_BCL6', 'IHQ_MUM1', 'IHQ_MUC1', 'IHQ_CD79A', 'IHQ_ALK', 'IHQ_CKAE1AE3', 'IHQ_NAPSIN', 'IHQ_CDK4', 'IHQ_MDM2', 'IHQ_PAX5', 'IHQ_ACTIN', 'IHQ_PAX8', 'IHQ_GFAP', 'IHQ_DOG1', 'IHQ_H_CALDESMON', 'IHQ_AML', 'IHQ_HHV8', 'IHQ_NEUN', 'IHQ_P63', 'IHQ_CALPONINA', 'IHQ_BER_EP4', 'IHQ_WT1', 'IHQ_MLH1', 'IHQ_MSH2', 'IHQ_MSH6', 'IHQ_PMS2', 'IHQ_CD23', 'IHQ_CD4', 'IHQ_CD8', 'IHQ_CD99', 'IHQ_CD1A', 'IHQ_C4D', 'IHQ_LMP1', 'IHQ_CITOMEGALOVIRUS', 'IHQ_SV40', 'IHQ_CEA', 'IHQ_CA19_9', 'IHQ_CALRETININA', 'IHQ_CK34BE12', 'IHQ_CK5_6', 'IHQ_HEPAR', 'IHQ_GLIPICAN', 'IHQ_ARGINASA', 'IHQ_HMB45', 'IHQ_PSA', 'IHQ_INHIBINA', 'IHQ_RACEMASA', 'IHQ_34BETA', 'IHQ_B2', 'IHQ_SALL4', 'IHQ_ALK1', 'Estado Auditoria IA', 'Fecha Ingreso Base de Datos']
+2026-04-13 07:41:03,544 - root - INFO - _update_audit_buttons_state: col_idx = 0
+2026-04-13 07:41:03,544 - root - INFO - _update_audit_buttons_state: Obteniendo estados para 1 items...
+2026-04-13 07:41:03,544 - root - INFO - _update_audit_buttons_state: item_id=0, values=['IHQ250001', 'CIRUGÍA', 'TUMOR REGION INTRADURAL', 'MALIGNO', 'CARCINOMA METASTÁSICO', 'CARCINOMA ESCAMOCELULAR METASTÁSICO P40 POSITIVO / P16 POSITIVO', 'NO APLICA', 'REGIÓN INTRADURAL (CAUDA EQUINA)', 'P16, P40', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'COMPLETA', '2026-04-10 14:24:02']
+2026-04-13 07:41:03,544 - root - INFO - _update_audit_buttons_state: numero_peticion=IHQ250001
+2026-04-13 07:41:03,545 - root - INFO - _update_audit_buttons_state: estado=COMPLETA
+2026-04-13 07:41:03,545 - root - INFO - _update_audit_buttons_state: estados recolectados = ['COMPLETA']
+2026-04-13 07:41:03,545 - root - INFO - _update_audit_buttons_state: TODOS COMPLETA -> Bloqueando ambos
+2026-04-13 07:41:03,545 - root - INFO - ============================================================
+2026-04-13 07:41:10,222 - root - INFO - ============================================================
+2026-04-13 07:41:10,223 - root - INFO - mostrar_detalle_registro: EVENTO DISPARADO
+2026-04-13 07:41:10,223 - root - INFO - Evento: {'eventname': 'select', 'sheetname': '!sheet', 'cells': {'table': {}, 'header': {}, 'index': {}}, 'moved': {'rows': {}, 'columns': {}}, 'added': {'rows': {}, 'columns': {}}, 'deleted': {'rows': {}, 'columns': {}, 'header': {}, 'index': {}, 'column_widths': {}, 'row_heights': {}}, 'named_spans': {}, 'options': {}, 'selection_boxes': {Box_nt(from_r=50, from_c=130, upto_r=51, upto_c=131): 'cells'}, 'selected': Selected(row=50, column=130, type_='cells', box=Box_nt(from_r=50, from_c=130, upto_r=51, upto_c=131), iid=2, fill_iid=2), 'being_selected': (), 'data': {}, 'key': '', 'value': None, 'loc': (), 'row': None, 'column': None, 'resized': {'rows': {}, 'columns': {}}, 'widget': None, 'sheet_state': {}, 'treeview': {'nodes': {}, 'renamed': {}, 'text': {}}}
+2026-04-13 07:41:10,223 - root - INFO - mostrar_detalle_registro: Fila seleccionada desde EVENTO: 50
+2026-04-13 07:41:10,223 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:10,223 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:10,223 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:10,223 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:10,223 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 0
+2026-04-13 07:41:10,223 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [0]
+2026-04-13 07:41:10,223 - root - INFO - self.tree.selection() retornó: [0]
+2026-04-13 07:41:10,223 - root - INFO - Tipo: <class 'list'>, Longitud: 1
+2026-04-13 07:41:10,223 - root - INFO - ⚠️ CORRECCIÓN: selection() retornó [0], pero evento indica fila 50
+2026-04-13 07:41:10,223 - root - INFO - ✅ Usando fila del evento: [50]
+2026-04-13 07:41:10,223 - root - INFO - 💾 Guardada última selección válida: 50
+2026-04-13 07:41:10,223 - root - INFO - Llamando a _update_export_button_state()...
+2026-04-13 07:41:10,224 - root - INFO - _update_export_button_state: INICIANDO
+2026-04-13 07:41:10,224 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:10,224 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:10,224 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:10,224 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:10,224 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:10,224 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:10,224 - root - INFO - _update_export_button_state: selection() = [50]
+2026-04-13 07:41:10,224 - root - INFO - _update_export_button_state: export_selection_btn existe
+2026-04-13 07:41:10,224 - root - INFO - _update_export_button_state: HAY SELECCIÓN -> Habilitando botón
+2026-04-13 07:41:10,224 - root - INFO - Llamando a _update_audit_buttons_state()...
+2026-04-13 07:41:10,224 - root - INFO - _update_audit_buttons_state: INICIANDO
+2026-04-13 07:41:10,224 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:10,224 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:10,224 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:10,224 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:10,225 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:10,225 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:10,225 - root - INFO - _update_audit_buttons_state: selection() = [50]
+2026-04-13 07:41:10,225 - root - INFO - _update_audit_buttons_state: has_selection = True
+2026-04-13 07:41:10,225 - root - INFO - _update_audit_buttons_state: CHECKPOINT 1 - Antes del if
+2026-04-13 07:41:10,225 - root - INFO - _update_audit_buttons_state: CHECKPOINT 3 - Dentro del else (HAY SELECCIÓN)
+2026-04-13 07:41:10,225 - root - INFO - _update_audit_buttons_state: HAY SELECCIÓN -> Determinando estados...
+2026-04-13 07:41:10,225 - root - INFO - _update_audit_buttons_state: headers = ['Numero de caso', 'Procedimiento', 'Organo', 'Malignidad', 'Diagnostico Coloracion', 'Diagnostico Principal', 'Factor pronostico', 'IHQ_ORGANO', 'IHQ_ESTUDIOS_SOLICITADOS', 'IHQ_HER2', 'IHQ_KI-67', 'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA', 'IHQ_PDL-1', 'IHQ_P16_ESTADO', 'IHQ_P16_PORCENTAJE', 'IHQ_P40_ESTADO', 'IHQ_E_CADHERINA', 'IHQ_CK7', 'IHQ_CROMOGRAMINA', 'IHQ_DESMINA', 'IHQ_LCA', 'IHQ_CD11', 'IHQ_MIOGENINA', 'IHQ_MAMAGLOBINA', 'IHQ_TIROGLOBULINA', 'IHQ_CK34BETAE12', 'IHQ_CK34BETA12', 'IHQ_OCT4', 'IHQ_PODOPLANINA', 'IHQ_IDH', 'IHQ_GPC3', 'IHQ_AFP', 'IHQ_IGD', 'IHQ_BETACATENINA', 'IHQ_ACTINA_MUSCULO_ESPECIFICA', 'IHQ_MIELOPEROXIDASA', 'IHQ_CD7', 'IHQ_EBER', 'IHQ_SINAPTOFISINA', 'IHQ_CROMOGRANINA', 'IHQ_CK56', 'IHQ_CAM5', 'IHQ_GLICOFORINA', 'IHQ_TDT', 'IHQ_ATRX', 'IHQ_IDH1', 'IHQ_CMYC', 'IHQ_IGG4', 'IHQ_IGG', 'IHQ_MAMOGLOBINA', 'IHQ_HEPATOCITO', 'IHQ_CK19', 'IHQ_CK20', 'IHQ_CDX2', 'IHQ_EMA', 'IHQ_GATA3', 'IHQ_SOX10', 'IHQ_P53', 'IHQ_TTF1', 'IHQ_S100', 'IHQ_VIMENTINA', 'IHQ_MELAN_A', 'IHQ_CD2', 'IHQ_CD3', 'IHQ_CD5', 'IHQ_CD10', 'IHQ_CD20', 'IHQ_CD30', 'IHQ_CD34', 'IHQ_CD38', 'IHQ_CD45', 'IHQ_CD56', 'IHQ_CD61', 'IHQ_CD68', 'IHQ_CD117', 'IHQ_CD138', 'IHQ_KAPPA', 'IHQ_LAMBDA', 'IHQ_BCL2', 'IHQ_BCL6', 'IHQ_MUM1', 'IHQ_MUC1', 'IHQ_CD79A', 'IHQ_ALK', 'IHQ_CKAE1AE3', 'IHQ_NAPSIN', 'IHQ_CDK4', 'IHQ_MDM2', 'IHQ_PAX5', 'IHQ_ACTIN', 'IHQ_PAX8', 'IHQ_GFAP', 'IHQ_DOG1', 'IHQ_H_CALDESMON', 'IHQ_AML', 'IHQ_HHV8', 'IHQ_NEUN', 'IHQ_P63', 'IHQ_CALPONINA', 'IHQ_BER_EP4', 'IHQ_WT1', 'IHQ_MLH1', 'IHQ_MSH2', 'IHQ_MSH6', 'IHQ_PMS2', 'IHQ_CD23', 'IHQ_CD4', 'IHQ_CD8', 'IHQ_CD99', 'IHQ_CD1A', 'IHQ_C4D', 'IHQ_LMP1', 'IHQ_CITOMEGALOVIRUS', 'IHQ_SV40', 'IHQ_CEA', 'IHQ_CA19_9', 'IHQ_CALRETININA', 'IHQ_CK34BE12', 'IHQ_CK5_6', 'IHQ_HEPAR', 'IHQ_GLIPICAN', 'IHQ_ARGINASA', 'IHQ_HMB45', 'IHQ_PSA', 'IHQ_INHIBINA', 'IHQ_RACEMASA', 'IHQ_34BETA', 'IHQ_B2', 'IHQ_SALL4', 'IHQ_ALK1', 'Estado Auditoria IA', 'Fecha Ingreso Base de Datos']
+2026-04-13 07:41:10,225 - root - INFO - _update_audit_buttons_state: col_idx = 0
+2026-04-13 07:41:10,225 - root - INFO - _update_audit_buttons_state: Obteniendo estados para 1 items...
+2026-04-13 07:41:10,225 - root - INFO - _update_audit_buttons_state: item_id=50, values=['IHQ250052', 'BIOPSIA', 'MASA RIÑON IZQUIERDO', 'MALIGNO', 'ADENOCARCINOMA RENAL DE CÉLULAS CLARAS', 'CARCINOMA RENAL DE CELULAS CLARAS', 'NO APLICA', 'RIÑON IZQUIERDO, POLO INFERIOR', 'CD10, CD117, CK7, CKAE1AE3, PAX8, RCC', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', '2026-04-10 15:18:52']
+2026-04-13 07:41:10,225 - root - INFO - _update_audit_buttons_state: numero_peticion=IHQ250052
+2026-04-13 07:41:10,226 - root - INFO - _update_audit_buttons_state: estado=N/A
+2026-04-13 07:41:10,226 - root - INFO - _update_audit_buttons_state: estados recolectados = ['N/A']
+2026-04-13 07:41:10,226 - root - INFO - _update_audit_buttons_state: MEZCLA DE ESTADOS -> Habilitando ambos
+2026-04-13 07:41:10,226 - root - INFO -   -> Habilitando audit_parcial_btn
+2026-04-13 07:41:10,226 - root - INFO -   -> Habilitando audit_completa_btn
+2026-04-13 07:41:10,226 - root - INFO - ============================================================
+2026-04-13 07:41:11,543 - root - INFO - ============================================================
+2026-04-13 07:41:11,543 - root - INFO - mostrar_detalle_registro: EVENTO DISPARADO
+2026-04-13 07:41:11,543 - root - INFO - Evento: {'eventname': 'select', 'sheetname': '!sheet', 'cells': {'table': {}, 'header': {}, 'index': {}}, 'moved': {'rows': {}, 'columns': {}}, 'added': {'rows': {}, 'columns': {}}, 'deleted': {'rows': {}, 'columns': {}, 'header': {}, 'index': {}, 'column_widths': {}, 'row_heights': {}}, 'named_spans': {}, 'options': {}, 'selection_boxes': {Box_nt(from_r=50, from_c=0, upto_r=51, upto_c=133): 'rows'}, 'selected': Selected(row=50, column=0, type_='rows', box=Box_nt(from_r=50, from_c=0, upto_r=51, upto_c=133), iid=2, fill_iid=2), 'being_selected': (), 'data': {}, 'key': '', 'value': None, 'loc': (), 'row': None, 'column': None, 'resized': {'rows': {}, 'columns': {}}, 'widget': None, 'sheet_state': {}, 'treeview': {'nodes': {}, 'renamed': {}, 'text': {}}}
+2026-04-13 07:41:11,543 - root - INFO - mostrar_detalle_registro: Fila seleccionada desde EVENTO: 50
+2026-04-13 07:41:11,543 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:11,543 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:11,543 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:11,543 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:11,543 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:11,544 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:11,544 - root - INFO - self.tree.selection() retornó: [50]
+2026-04-13 07:41:11,544 - root - INFO - Tipo: <class 'list'>, Longitud: 1
+2026-04-13 07:41:11,544 - root - INFO - 💾 Guardada última selección válida: 50
+2026-04-13 07:41:11,544 - root - INFO - Llamando a _update_export_button_state()...
+2026-04-13 07:41:11,544 - root - INFO - _update_export_button_state: INICIANDO
+2026-04-13 07:41:11,544 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:11,544 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:11,544 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:11,544 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:11,544 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:11,544 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:11,544 - root - INFO - _update_export_button_state: selection() = [50]
+2026-04-13 07:41:11,544 - root - INFO - _update_export_button_state: export_selection_btn existe
+2026-04-13 07:41:11,544 - root - INFO - _update_export_button_state: HAY SELECCIÓN -> Habilitando botón
+2026-04-13 07:41:11,544 - root - INFO - Llamando a _update_audit_buttons_state()...
+2026-04-13 07:41:11,545 - root - INFO - _update_audit_buttons_state: INICIANDO
+2026-04-13 07:41:11,545 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:11,545 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:11,545 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:11,545 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:11,545 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:11,545 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:11,545 - root - INFO - _update_audit_buttons_state: selection() = [50]
+2026-04-13 07:41:11,545 - root - INFO - _update_audit_buttons_state: has_selection = True
+2026-04-13 07:41:11,545 - root - INFO - _update_audit_buttons_state: CHECKPOINT 1 - Antes del if
+2026-04-13 07:41:11,545 - root - INFO - _update_audit_buttons_state: CHECKPOINT 3 - Dentro del else (HAY SELECCIÓN)
+2026-04-13 07:41:11,545 - root - INFO - _update_audit_buttons_state: HAY SELECCIÓN -> Determinando estados...
+2026-04-13 07:41:11,545 - root - INFO - _update_audit_buttons_state: headers = ['Numero de caso', 'Procedimiento', 'Organo', 'Malignidad', 'Diagnostico Coloracion', 'Diagnostico Principal', 'Factor pronostico', 'IHQ_ORGANO', 'IHQ_ESTUDIOS_SOLICITADOS', 'IHQ_HER2', 'IHQ_KI-67', 'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA', 'IHQ_PDL-1', 'IHQ_P16_ESTADO', 'IHQ_P16_PORCENTAJE', 'IHQ_P40_ESTADO', 'IHQ_E_CADHERINA', 'IHQ_CK7', 'IHQ_CROMOGRAMINA', 'IHQ_DESMINA', 'IHQ_LCA', 'IHQ_CD11', 'IHQ_MIOGENINA', 'IHQ_MAMAGLOBINA', 'IHQ_TIROGLOBULINA', 'IHQ_CK34BETAE12', 'IHQ_CK34BETA12', 'IHQ_OCT4', 'IHQ_PODOPLANINA', 'IHQ_IDH', 'IHQ_GPC3', 'IHQ_AFP', 'IHQ_IGD', 'IHQ_BETACATENINA', 'IHQ_ACTINA_MUSCULO_ESPECIFICA', 'IHQ_MIELOPEROXIDASA', 'IHQ_CD7', 'IHQ_EBER', 'IHQ_SINAPTOFISINA', 'IHQ_CROMOGRANINA', 'IHQ_CK56', 'IHQ_CAM5', 'IHQ_GLICOFORINA', 'IHQ_TDT', 'IHQ_ATRX', 'IHQ_IDH1', 'IHQ_CMYC', 'IHQ_IGG4', 'IHQ_IGG', 'IHQ_MAMOGLOBINA', 'IHQ_HEPATOCITO', 'IHQ_CK19', 'IHQ_CK20', 'IHQ_CDX2', 'IHQ_EMA', 'IHQ_GATA3', 'IHQ_SOX10', 'IHQ_P53', 'IHQ_TTF1', 'IHQ_S100', 'IHQ_VIMENTINA', 'IHQ_MELAN_A', 'IHQ_CD2', 'IHQ_CD3', 'IHQ_CD5', 'IHQ_CD10', 'IHQ_CD20', 'IHQ_CD30', 'IHQ_CD34', 'IHQ_CD38', 'IHQ_CD45', 'IHQ_CD56', 'IHQ_CD61', 'IHQ_CD68', 'IHQ_CD117', 'IHQ_CD138', 'IHQ_KAPPA', 'IHQ_LAMBDA', 'IHQ_BCL2', 'IHQ_BCL6', 'IHQ_MUM1', 'IHQ_MUC1', 'IHQ_CD79A', 'IHQ_ALK', 'IHQ_CKAE1AE3', 'IHQ_NAPSIN', 'IHQ_CDK4', 'IHQ_MDM2', 'IHQ_PAX5', 'IHQ_ACTIN', 'IHQ_PAX8', 'IHQ_GFAP', 'IHQ_DOG1', 'IHQ_H_CALDESMON', 'IHQ_AML', 'IHQ_HHV8', 'IHQ_NEUN', 'IHQ_P63', 'IHQ_CALPONINA', 'IHQ_BER_EP4', 'IHQ_WT1', 'IHQ_MLH1', 'IHQ_MSH2', 'IHQ_MSH6', 'IHQ_PMS2', 'IHQ_CD23', 'IHQ_CD4', 'IHQ_CD8', 'IHQ_CD99', 'IHQ_CD1A', 'IHQ_C4D', 'IHQ_LMP1', 'IHQ_CITOMEGALOVIRUS', 'IHQ_SV40', 'IHQ_CEA', 'IHQ_CA19_9', 'IHQ_CALRETININA', 'IHQ_CK34BE12', 'IHQ_CK5_6', 'IHQ_HEPAR', 'IHQ_GLIPICAN', 'IHQ_ARGINASA', 'IHQ_HMB45', 'IHQ_PSA', 'IHQ_INHIBINA', 'IHQ_RACEMASA', 'IHQ_34BETA', 'IHQ_B2', 'IHQ_SALL4', 'IHQ_ALK1', 'Estado Auditoria IA', 'Fecha Ingreso Base de Datos']
+2026-04-13 07:41:11,545 - root - INFO - _update_audit_buttons_state: col_idx = 0
+2026-04-13 07:41:11,545 - root - INFO - _update_audit_buttons_state: Obteniendo estados para 1 items...
+2026-04-13 07:41:11,546 - root - INFO - _update_audit_buttons_state: item_id=50, values=['IHQ250052', 'BIOPSIA', 'MASA RIÑON IZQUIERDO', 'MALIGNO', 'ADENOCARCINOMA RENAL DE CÉLULAS CLARAS', 'CARCINOMA RENAL DE CELULAS CLARAS', 'NO APLICA', 'RIÑON IZQUIERDO, POLO INFERIOR', 'CD10, CD117, CK7, CKAE1AE3, PAX8, RCC', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', '2026-04-10 15:18:52']
+2026-04-13 07:41:11,546 - root - INFO - _update_audit_buttons_state: numero_peticion=IHQ250052
+2026-04-13 07:41:11,546 - root - INFO - _update_audit_buttons_state: estado=N/A
+2026-04-13 07:41:11,546 - root - INFO - _update_audit_buttons_state: estados recolectados = ['N/A']
+2026-04-13 07:41:11,546 - root - INFO - _update_audit_buttons_state: MEZCLA DE ESTADOS -> Habilitando ambos
+2026-04-13 07:41:11,546 - root - INFO -   -> Habilitando audit_parcial_btn
+2026-04-13 07:41:11,546 - root - INFO -   -> Habilitando audit_completa_btn
+2026-04-13 07:41:11,546 - root - INFO - ============================================================
+2026-04-13 07:41:14,388 - root - INFO - ============================================================
+2026-04-13 07:41:14,388 - root - INFO - mostrar_detalle_registro: EVENTO DISPARADO
+2026-04-13 07:41:14,388 - root - INFO - Evento: {'eventname': 'select', 'sheetname': '!sheet', 'cells': {'table': {}, 'header': {}, 'index': {}}, 'moved': {'rows': {}, 'columns': {}}, 'added': {'rows': {}, 'columns': {}}, 'deleted': {'rows': {}, 'columns': {}, 'header': {}, 'index': {}, 'column_widths': {}, 'row_heights': {}}, 'named_spans': {}, 'options': {}, 'selection_boxes': {}, 'selected': (), 'being_selected': (), 'data': {}, 'key': '', 'value': None, 'loc': (), 'row': None, 'column': None, 'resized': {'rows': {}, 'columns': {}}, 'widget': None, 'sheet_state': {}, 'treeview': {'nodes': {}, 'renamed': {}, 'text': {}}}
+2026-04-13 07:41:14,389 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:14,389 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:14,389 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:14,389 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:14,389 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:14,389 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:14,389 - root - INFO - self.tree.selection() retornó: [50]
+2026-04-13 07:41:14,390 - root - INFO - Tipo: <class 'list'>, Longitud: 1
+2026-04-13 07:41:14,390 - root - INFO - 💾 Guardada última selección válida: 50
+2026-04-13 07:41:14,390 - root - INFO - Llamando a _update_export_button_state()...
+2026-04-13 07:41:14,390 - root - INFO - _update_export_button_state: INICIANDO
+2026-04-13 07:41:14,390 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:14,390 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:14,390 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:14,390 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:14,390 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:14,390 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:14,391 - root - INFO - _update_export_button_state: selection() = [50]
+2026-04-13 07:41:14,391 - root - INFO - _update_export_button_state: export_selection_btn existe
+2026-04-13 07:41:14,391 - root - INFO - _update_export_button_state: HAY SELECCIÓN -> Habilitando botón
+2026-04-13 07:41:14,391 - root - INFO - Llamando a _update_audit_buttons_state()...
+2026-04-13 07:41:14,391 - root - INFO - _update_audit_buttons_state: INICIANDO
+2026-04-13 07:41:14,391 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:14,391 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:14,391 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:14,391 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:14,391 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:14,391 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:14,392 - root - INFO - _update_audit_buttons_state: selection() = [50]
+2026-04-13 07:41:14,392 - root - INFO - _update_audit_buttons_state: has_selection = True
+2026-04-13 07:41:14,392 - root - INFO - _update_audit_buttons_state: CHECKPOINT 1 - Antes del if
+2026-04-13 07:41:14,392 - root - INFO - _update_audit_buttons_state: CHECKPOINT 3 - Dentro del else (HAY SELECCIÓN)
+2026-04-13 07:41:14,392 - root - INFO - _update_audit_buttons_state: HAY SELECCIÓN -> Determinando estados...
+2026-04-13 07:41:14,392 - root - INFO - _update_audit_buttons_state: headers = ['Numero de caso', 'Procedimiento', 'Organo', 'Malignidad', 'Diagnostico Coloracion', 'Diagnostico Principal', 'Factor pronostico', 'IHQ_ORGANO', 'IHQ_ESTUDIOS_SOLICITADOS', 'IHQ_HER2', 'IHQ_KI-67', 'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA', 'IHQ_PDL-1', 'IHQ_P16_ESTADO', 'IHQ_P16_PORCENTAJE', 'IHQ_P40_ESTADO', 'IHQ_E_CADHERINA', 'IHQ_CK7', 'IHQ_CROMOGRAMINA', 'IHQ_DESMINA', 'IHQ_LCA', 'IHQ_CD11', 'IHQ_MIOGENINA', 'IHQ_MAMAGLOBINA', 'IHQ_TIROGLOBULINA', 'IHQ_CK34BETAE12', 'IHQ_CK34BETA12', 'IHQ_OCT4', 'IHQ_PODOPLANINA', 'IHQ_IDH', 'IHQ_GPC3', 'IHQ_AFP', 'IHQ_IGD', 'IHQ_BETACATENINA', 'IHQ_ACTINA_MUSCULO_ESPECIFICA', 'IHQ_MIELOPEROXIDASA', 'IHQ_CD7', 'IHQ_EBER', 'IHQ_SINAPTOFISINA', 'IHQ_CROMOGRANINA', 'IHQ_CK56', 'IHQ_CAM5', 'IHQ_GLICOFORINA', 'IHQ_TDT', 'IHQ_ATRX', 'IHQ_IDH1', 'IHQ_CMYC', 'IHQ_IGG4', 'IHQ_IGG', 'IHQ_MAMOGLOBINA', 'IHQ_HEPATOCITO', 'IHQ_CK19', 'IHQ_CK20', 'IHQ_CDX2', 'IHQ_EMA', 'IHQ_GATA3', 'IHQ_SOX10', 'IHQ_P53', 'IHQ_TTF1', 'IHQ_S100', 'IHQ_VIMENTINA', 'IHQ_MELAN_A', 'IHQ_CD2', 'IHQ_CD3', 'IHQ_CD5', 'IHQ_CD10', 'IHQ_CD20', 'IHQ_CD30', 'IHQ_CD34', 'IHQ_CD38', 'IHQ_CD45', 'IHQ_CD56', 'IHQ_CD61', 'IHQ_CD68', 'IHQ_CD117', 'IHQ_CD138', 'IHQ_KAPPA', 'IHQ_LAMBDA', 'IHQ_BCL2', 'IHQ_BCL6', 'IHQ_MUM1', 'IHQ_MUC1', 'IHQ_CD79A', 'IHQ_ALK', 'IHQ_CKAE1AE3', 'IHQ_NAPSIN', 'IHQ_CDK4', 'IHQ_MDM2', 'IHQ_PAX5', 'IHQ_ACTIN', 'IHQ_PAX8', 'IHQ_GFAP', 'IHQ_DOG1', 'IHQ_H_CALDESMON', 'IHQ_AML', 'IHQ_HHV8', 'IHQ_NEUN', 'IHQ_P63', 'IHQ_CALPONINA', 'IHQ_BER_EP4', 'IHQ_WT1', 'IHQ_MLH1', 'IHQ_MSH2', 'IHQ_MSH6', 'IHQ_PMS2', 'IHQ_CD23', 'IHQ_CD4', 'IHQ_CD8', 'IHQ_CD99', 'IHQ_CD1A', 'IHQ_C4D', 'IHQ_LMP1', 'IHQ_CITOMEGALOVIRUS', 'IHQ_SV40', 'IHQ_CEA', 'IHQ_CA19_9', 'IHQ_CALRETININA', 'IHQ_CK34BE12', 'IHQ_CK5_6', 'IHQ_HEPAR', 'IHQ_GLIPICAN', 'IHQ_ARGINASA', 'IHQ_HMB45', 'IHQ_PSA', 'IHQ_INHIBINA', 'IHQ_RACEMASA', 'IHQ_34BETA', 'IHQ_B2', 'IHQ_SALL4', 'IHQ_ALK1', 'Estado Auditoria IA', 'Fecha Ingreso Base de Datos']
+2026-04-13 07:41:14,392 - root - INFO - _update_audit_buttons_state: col_idx = 0
+2026-04-13 07:41:14,392 - root - INFO - _update_audit_buttons_state: Obteniendo estados para 1 items...
+2026-04-13 07:41:14,392 - root - INFO - _update_audit_buttons_state: item_id=50, values=['IHQ250052', 'BIOPSIA', 'MASA RIÑON IZQUIERDO', 'MALIGNO', 'ADENOCARCINOMA RENAL DE CÉLULAS CLARAS', 'CARCINOMA RENAL DE CELULAS CLARAS', 'NO APLICA', 'RIÑON IZQUIERDO, POLO INFERIOR', 'CD10, CD117, CK7, CKAE1AE3, PAX8, RCC', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', '2026-04-10 15:18:52']
+2026-04-13 07:41:14,392 - root - INFO - _update_audit_buttons_state: numero_peticion=IHQ250052
+2026-04-13 07:41:14,393 - root - INFO - _update_audit_buttons_state: estado=N/A
+2026-04-13 07:41:14,393 - root - INFO - _update_audit_buttons_state: estados recolectados = ['N/A']
+2026-04-13 07:41:14,393 - root - INFO - _update_audit_buttons_state: MEZCLA DE ESTADOS -> Habilitando ambos
+2026-04-13 07:41:14,393 - root - INFO -   -> Habilitando audit_parcial_btn
+2026-04-13 07:41:14,393 - root - INFO -   -> Habilitando audit_completa_btn
+2026-04-13 07:41:14,393 - root - INFO - ============================================================
+2026-04-13 07:41:14,393 - root - INFO - ============================================================
+2026-04-13 07:41:14,393 - root - INFO - mostrar_detalle_registro: EVENTO DISPARADO
+2026-04-13 07:41:14,393 - root - INFO - Evento: {'eventname': 'select', 'sheetname': '!sheet', 'cells': {'table': {}, 'header': {}, 'index': {}}, 'moved': {'rows': {}, 'columns': {}}, 'added': {'rows': {}, 'columns': {}}, 'deleted': {'rows': {}, 'columns': {}, 'header': {}, 'index': {}, 'column_widths': {}, 'row_heights': {}}, 'named_spans': {}, 'options': {}, 'selection_boxes': {Box_nt(from_r=50, from_c=0, upto_r=60, upto_c=133): 'rows'}, 'selected': Selected(row=50, column=0, type_='rows', box=Box_nt(from_r=50, from_c=0, upto_r=60, upto_c=133), iid=2, fill_iid=2), 'being_selected': Box_t(from_r=50, from_c=0, upto_r=60, upto_c=133, type_='rows'), 'data': {}, 'key': '', 'value': None, 'loc': (), 'row': None, 'column': None, 'resized': {'rows': {}, 'columns': {}}, 'widget': None, 'sheet_state': {}, 'treeview': {'nodes': {}, 'renamed': {}, 'text': {}}}
+2026-04-13 07:41:14,394 - root - INFO - mostrar_detalle_registro: Fila seleccionada desde EVENTO: 50
+2026-04-13 07:41:14,395 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:14,395 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:14,395 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:14,395 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:14,395 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:14,395 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:14,395 - root - INFO - self.tree.selection() retornó: [50]
+2026-04-13 07:41:14,395 - root - INFO - Tipo: <class 'list'>, Longitud: 1
+2026-04-13 07:41:14,395 - root - INFO - 💾 Guardada última selección válida: 50
+2026-04-13 07:41:14,395 - root - INFO - Llamando a _update_export_button_state()...
+2026-04-13 07:41:14,395 - root - INFO - _update_export_button_state: INICIANDO
+2026-04-13 07:41:14,395 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:14,396 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:14,396 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:14,396 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:14,396 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:14,396 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:14,396 - root - INFO - _update_export_button_state: selection() = [50]
+2026-04-13 07:41:14,396 - root - INFO - _update_export_button_state: export_selection_btn existe
+2026-04-13 07:41:14,396 - root - INFO - _update_export_button_state: HAY SELECCIÓN -> Habilitando botón
+2026-04-13 07:41:14,396 - root - INFO - Llamando a _update_audit_buttons_state()...
+2026-04-13 07:41:14,396 - root - INFO - _update_audit_buttons_state: INICIANDO
+2026-04-13 07:41:14,396 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:14,396 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:14,396 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:14,396 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:14,397 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:14,397 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:14,397 - root - INFO - _update_audit_buttons_state: selection() = [50]
+2026-04-13 07:41:14,397 - root - INFO - _update_audit_buttons_state: has_selection = True
+2026-04-13 07:41:14,398 - root - INFO - _update_audit_buttons_state: CHECKPOINT 1 - Antes del if
+2026-04-13 07:41:14,398 - root - INFO - _update_audit_buttons_state: CHECKPOINT 3 - Dentro del else (HAY SELECCIÓN)
+2026-04-13 07:41:14,398 - root - INFO - _update_audit_buttons_state: HAY SELECCIÓN -> Determinando estados...
+2026-04-13 07:41:14,398 - root - INFO - _update_audit_buttons_state: headers = ['Numero de caso', 'Procedimiento', 'Organo', 'Malignidad', 'Diagnostico Coloracion', 'Diagnostico Principal', 'Factor pronostico', 'IHQ_ORGANO', 'IHQ_ESTUDIOS_SOLICITADOS', 'IHQ_HER2', 'IHQ_KI-67', 'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA', 'IHQ_PDL-1', 'IHQ_P16_ESTADO', 'IHQ_P16_PORCENTAJE', 'IHQ_P40_ESTADO', 'IHQ_E_CADHERINA', 'IHQ_CK7', 'IHQ_CROMOGRAMINA', 'IHQ_DESMINA', 'IHQ_LCA', 'IHQ_CD11', 'IHQ_MIOGENINA', 'IHQ_MAMAGLOBINA', 'IHQ_TIROGLOBULINA', 'IHQ_CK34BETAE12', 'IHQ_CK34BETA12', 'IHQ_OCT4', 'IHQ_PODOPLANINA', 'IHQ_IDH', 'IHQ_GPC3', 'IHQ_AFP', 'IHQ_IGD', 'IHQ_BETACATENINA', 'IHQ_ACTINA_MUSCULO_ESPECIFICA', 'IHQ_MIELOPEROXIDASA', 'IHQ_CD7', 'IHQ_EBER', 'IHQ_SINAPTOFISINA', 'IHQ_CROMOGRANINA', 'IHQ_CK56', 'IHQ_CAM5', 'IHQ_GLICOFORINA', 'IHQ_TDT', 'IHQ_ATRX', 'IHQ_IDH1', 'IHQ_CMYC', 'IHQ_IGG4', 'IHQ_IGG', 'IHQ_MAMOGLOBINA', 'IHQ_HEPATOCITO', 'IHQ_CK19', 'IHQ_CK20', 'IHQ_CDX2', 'IHQ_EMA', 'IHQ_GATA3', 'IHQ_SOX10', 'IHQ_P53', 'IHQ_TTF1', 'IHQ_S100', 'IHQ_VIMENTINA', 'IHQ_MELAN_A', 'IHQ_CD2', 'IHQ_CD3', 'IHQ_CD5', 'IHQ_CD10', 'IHQ_CD20', 'IHQ_CD30', 'IHQ_CD34', 'IHQ_CD38', 'IHQ_CD45', 'IHQ_CD56', 'IHQ_CD61', 'IHQ_CD68', 'IHQ_CD117', 'IHQ_CD138', 'IHQ_KAPPA', 'IHQ_LAMBDA', 'IHQ_BCL2', 'IHQ_BCL6', 'IHQ_MUM1', 'IHQ_MUC1', 'IHQ_CD79A', 'IHQ_ALK', 'IHQ_CKAE1AE3', 'IHQ_NAPSIN', 'IHQ_CDK4', 'IHQ_MDM2', 'IHQ_PAX5', 'IHQ_ACTIN', 'IHQ_PAX8', 'IHQ_GFAP', 'IHQ_DOG1', 'IHQ_H_CALDESMON', 'IHQ_AML', 'IHQ_HHV8', 'IHQ_NEUN', 'IHQ_P63', 'IHQ_CALPONINA', 'IHQ_BER_EP4', 'IHQ_WT1', 'IHQ_MLH1', 'IHQ_MSH2', 'IHQ_MSH6', 'IHQ_PMS2', 'IHQ_CD23', 'IHQ_CD4', 'IHQ_CD8', 'IHQ_CD99', 'IHQ_CD1A', 'IHQ_C4D', 'IHQ_LMP1', 'IHQ_CITOMEGALOVIRUS', 'IHQ_SV40', 'IHQ_CEA', 'IHQ_CA19_9', 'IHQ_CALRETININA', 'IHQ_CK34BE12', 'IHQ_CK5_6', 'IHQ_HEPAR', 'IHQ_GLIPICAN', 'IHQ_ARGINASA', 'IHQ_HMB45', 'IHQ_PSA', 'IHQ_INHIBINA', 'IHQ_RACEMASA', 'IHQ_34BETA', 'IHQ_B2', 'IHQ_SALL4', 'IHQ_ALK1', 'Estado Auditoria IA', 'Fecha Ingreso Base de Datos']
+2026-04-13 07:41:14,398 - root - INFO - _update_audit_buttons_state: col_idx = 0
+2026-04-13 07:41:14,398 - root - INFO - _update_audit_buttons_state: Obteniendo estados para 1 items...
+2026-04-13 07:41:14,398 - root - INFO - _update_audit_buttons_state: item_id=50, values=['IHQ250052', 'BIOPSIA', 'MASA RIÑON IZQUIERDO', 'MALIGNO', 'ADENOCARCINOMA RENAL DE CÉLULAS CLARAS', 'CARCINOMA RENAL DE CELULAS CLARAS', 'NO APLICA', 'RIÑON IZQUIERDO, POLO INFERIOR', 'CD10, CD117, CK7, CKAE1AE3, PAX8, RCC', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', '2026-04-10 15:18:52']
+2026-04-13 07:41:14,398 - root - INFO - _update_audit_buttons_state: numero_peticion=IHQ250052
+2026-04-13 07:41:14,399 - root - INFO - _update_audit_buttons_state: estado=N/A
+2026-04-13 07:41:14,399 - root - INFO - _update_audit_buttons_state: estados recolectados = ['N/A']
+2026-04-13 07:41:14,399 - root - INFO - _update_audit_buttons_state: MEZCLA DE ESTADOS -> Habilitando ambos
+2026-04-13 07:41:14,399 - root - INFO -   -> Habilitando audit_parcial_btn
+2026-04-13 07:41:14,400 - root - INFO -   -> Habilitando audit_completa_btn
+2026-04-13 07:41:14,400 - root - INFO - ============================================================
+2026-04-13 07:41:14,411 - root - INFO - ============================================================
+2026-04-13 07:41:14,411 - root - INFO - mostrar_detalle_registro: EVENTO DISPARADO
+2026-04-13 07:41:14,411 - root - INFO - Evento: {'eventname': 'select', 'sheetname': '!sheet', 'cells': {'table': {}, 'header': {}, 'index': {}}, 'moved': {'rows': {}, 'columns': {}}, 'added': {'rows': {}, 'columns': {}}, 'deleted': {'rows': {}, 'columns': {}, 'header': {}, 'index': {}, 'column_widths': {}, 'row_heights': {}}, 'named_spans': {}, 'options': {}, 'selection_boxes': {Box_nt(from_r=50, from_c=0, upto_r=60, upto_c=133): 'rows'}, 'selected': Selected(row=50, column=0, type_='rows', box=Box_nt(from_r=50, from_c=0, upto_r=60, upto_c=133), iid=2, fill_iid=2), 'being_selected': Box_t(from_r=50, from_c=0, upto_r=60, upto_c=133, type_='rows'), 'data': {}, 'key': '', 'value': None, 'loc': (), 'row': None, 'column': None, 'resized': {'rows': {}, 'columns': {}}, 'widget': None, 'sheet_state': {}, 'treeview': {'nodes': {}, 'renamed': {}, 'text': {}}}
+2026-04-13 07:41:14,411 - root - INFO - mostrar_detalle_registro: Fila seleccionada desde EVENTO: 50
+2026-04-13 07:41:14,411 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:14,411 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:14,411 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:14,411 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:14,411 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:14,411 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:14,412 - root - INFO - self.tree.selection() retornó: [50]
+2026-04-13 07:41:14,412 - root - INFO - Tipo: <class 'list'>, Longitud: 1
+2026-04-13 07:41:14,412 - root - INFO - 💾 Guardada última selección válida: 50
+2026-04-13 07:41:14,412 - root - INFO - Llamando a _update_export_button_state()...
+2026-04-13 07:41:14,412 - root - INFO - _update_export_button_state: INICIANDO
+2026-04-13 07:41:14,412 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:14,412 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:14,412 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:14,412 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:14,412 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:14,413 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:14,413 - root - INFO - _update_export_button_state: selection() = [50]
+2026-04-13 07:41:14,413 - root - INFO - _update_export_button_state: export_selection_btn existe
+2026-04-13 07:41:14,413 - root - INFO - _update_export_button_state: HAY SELECCIÓN -> Habilitando botón
+2026-04-13 07:41:14,413 - root - INFO - Llamando a _update_audit_buttons_state()...
+2026-04-13 07:41:14,414 - root - INFO - _update_audit_buttons_state: INICIANDO
+2026-04-13 07:41:14,414 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:14,414 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:14,414 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:14,414 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:14,414 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:14,414 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:14,414 - root - INFO - _update_audit_buttons_state: selection() = [50]
+2026-04-13 07:41:14,414 - root - INFO - _update_audit_buttons_state: has_selection = True
+2026-04-13 07:41:14,414 - root - INFO - _update_audit_buttons_state: CHECKPOINT 1 - Antes del if
+2026-04-13 07:41:14,414 - root - INFO - _update_audit_buttons_state: CHECKPOINT 3 - Dentro del else (HAY SELECCIÓN)
+2026-04-13 07:41:14,414 - root - INFO - _update_audit_buttons_state: HAY SELECCIÓN -> Determinando estados...
+2026-04-13 07:41:14,414 - root - INFO - _update_audit_buttons_state: headers = ['Numero de caso', 'Procedimiento', 'Organo', 'Malignidad', 'Diagnostico Coloracion', 'Diagnostico Principal', 'Factor pronostico', 'IHQ_ORGANO', 'IHQ_ESTUDIOS_SOLICITADOS', 'IHQ_HER2', 'IHQ_KI-67', 'IHQ_RECEPTOR_ESTROGENOS', 'IHQ_RECEPTOR_PROGESTERONA', 'IHQ_PDL-1', 'IHQ_P16_ESTADO', 'IHQ_P16_PORCENTAJE', 'IHQ_P40_ESTADO', 'IHQ_E_CADHERINA', 'IHQ_CK7', 'IHQ_CROMOGRAMINA', 'IHQ_DESMINA', 'IHQ_LCA', 'IHQ_CD11', 'IHQ_MIOGENINA', 'IHQ_MAMAGLOBINA', 'IHQ_TIROGLOBULINA', 'IHQ_CK34BETAE12', 'IHQ_CK34BETA12', 'IHQ_OCT4', 'IHQ_PODOPLANINA', 'IHQ_IDH', 'IHQ_GPC3', 'IHQ_AFP', 'IHQ_IGD', 'IHQ_BETACATENINA', 'IHQ_ACTINA_MUSCULO_ESPECIFICA', 'IHQ_MIELOPEROXIDASA', 'IHQ_CD7', 'IHQ_EBER', 'IHQ_SINAPTOFISINA', 'IHQ_CROMOGRANINA', 'IHQ_CK56', 'IHQ_CAM5', 'IHQ_GLICOFORINA', 'IHQ_TDT', 'IHQ_ATRX', 'IHQ_IDH1', 'IHQ_CMYC', 'IHQ_IGG4', 'IHQ_IGG', 'IHQ_MAMOGLOBINA', 'IHQ_HEPATOCITO', 'IHQ_CK19', 'IHQ_CK20', 'IHQ_CDX2', 'IHQ_EMA', 'IHQ_GATA3', 'IHQ_SOX10', 'IHQ_P53', 'IHQ_TTF1', 'IHQ_S100', 'IHQ_VIMENTINA', 'IHQ_MELAN_A', 'IHQ_CD2', 'IHQ_CD3', 'IHQ_CD5', 'IHQ_CD10', 'IHQ_CD20', 'IHQ_CD30', 'IHQ_CD34', 'IHQ_CD38', 'IHQ_CD45', 'IHQ_CD56', 'IHQ_CD61', 'IHQ_CD68', 'IHQ_CD117', 'IHQ_CD138', 'IHQ_KAPPA', 'IHQ_LAMBDA', 'IHQ_BCL2', 'IHQ_BCL6', 'IHQ_MUM1', 'IHQ_MUC1', 'IHQ_CD79A', 'IHQ_ALK', 'IHQ_CKAE1AE3', 'IHQ_NAPSIN', 'IHQ_CDK4', 'IHQ_MDM2', 'IHQ_PAX5', 'IHQ_ACTIN', 'IHQ_PAX8', 'IHQ_GFAP', 'IHQ_DOG1', 'IHQ_H_CALDESMON', 'IHQ_AML', 'IHQ_HHV8', 'IHQ_NEUN', 'IHQ_P63', 'IHQ_CALPONINA', 'IHQ_BER_EP4', 'IHQ_WT1', 'IHQ_MLH1', 'IHQ_MSH2', 'IHQ_MSH6', 'IHQ_PMS2', 'IHQ_CD23', 'IHQ_CD4', 'IHQ_CD8', 'IHQ_CD99', 'IHQ_CD1A', 'IHQ_C4D', 'IHQ_LMP1', 'IHQ_CITOMEGALOVIRUS', 'IHQ_SV40', 'IHQ_CEA', 'IHQ_CA19_9', 'IHQ_CALRETININA', 'IHQ_CK34BE12', 'IHQ_CK5_6', 'IHQ_HEPAR', 'IHQ_GLIPICAN', 'IHQ_ARGINASA', 'IHQ_HMB45', 'IHQ_PSA', 'IHQ_INHIBINA', 'IHQ_RACEMASA', 'IHQ_34BETA', 'IHQ_B2', 'IHQ_SALL4', 'IHQ_ALK1', 'Estado Auditoria IA', 'Fecha Ingreso Base de Datos']
+2026-04-13 07:41:14,415 - root - INFO - _update_audit_buttons_state: col_idx = 0
+2026-04-13 07:41:14,415 - root - INFO - _update_audit_buttons_state: Obteniendo estados para 1 items...
+2026-04-13 07:41:14,415 - root - INFO - _update_audit_buttons_state: item_id=50, values=['IHQ250052', 'BIOPSIA', 'MASA RIÑON IZQUIERDO', 'MALIGNO', 'ADENOCARCINOMA RENAL DE CÉLULAS CLARAS', 'CARCINOMA RENAL DE CELULAS CLARAS', 'NO APLICA', 'RIÑON IZQUIERDO, POLO INFERIOR', 'CD10, CD117, CK7, CKAE1AE3, PAX8, RCC', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'NEGATIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'POSITIVO', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', '2026-04-10 15:18:52']
+2026-04-13 07:41:14,415 - root - INFO - _update_audit_buttons_state: numero_peticion=IHQ250052
+2026-04-13 07:41:14,415 - root - INFO - _update_audit_buttons_state: estado=N/A
+2026-04-13 07:41:14,415 - root - INFO - _update_audit_buttons_state: estados recolectados = ['N/A']
+2026-04-13 07:41:14,415 - root - INFO - _update_audit_buttons_state: MEZCLA DE ESTADOS -> Habilitando ambos
+2026-04-13 07:41:14,416 - root - INFO -   -> Habilitando audit_parcial_btn
+2026-04-13 07:41:14,416 - root - INFO -   -> Habilitando audit_completa_btn
+2026-04-13 07:41:14,416 - root - INFO - ============================================================
+2026-04-13 07:41:16,372 - root - INFO - _sheet_selection: Llamado
+2026-04-13 07:41:16,373 - root - INFO - _sheet_selection: get_selected_rows() = set()
+2026-04-13 07:41:16,373 - root - INFO - _sheet_selection: get_selected_cells() = set()
+2026-04-13 07:41:16,373 - root - INFO - _sheet_selection: get_currently_selected() = ()
+2026-04-13 07:41:16,374 - root - INFO - _sheet_selection: Estrategia 4 (ultima_seleccion): fila 50
+2026-04-13 07:41:16,374 - root - INFO - _sheet_selection: ✅ RETORNANDO 1 fila(s): [50]
+2026-04-13 07:41:16,374 - root - INFO - Auditando 1 caso(s) seleccionado(s) (modo: COMPLETA)
+2026-04-13 07:41:16,375 - root - INFO - Preparando caso: IHQ250052
+2026-04-13 07:41:16,385 - root - INFO - Debug map cargado para IHQ250052
+2026-04-13 07:41:16,385 - root - INFO - 1 caso(s) preparado(s) para auditoria COMPLETA
+2026-04-13 07:41:16,386 - root - INFO - Procesamiento INDIVIDUAL (1 caso)
+2026-04-13 07:41:16,594 - root - INFO - Conectando con OpenRouter...
+2026-04-13 07:41:18,644 - root - INFO - ✅ LM Studio detectado: qwen2.5-7b-instruct
+2026-04-13 07:41:18,647 - root - INFO - ✅ LLM Multi-proveedor: LM Studio (Local)
+2026-04-13 07:41:18,647 - root - INFO -    📡 LM Studio (Local): local-model (LOCAL - datos nunca salen del PC)
+2026-04-13 07:41:18,648 - root - INFO - LM Studio client inicializado
+2026-04-13 07:41:18,648 - root - INFO - 
+🔍 Procesamiento INDIVIDUAL activado
+2026-04-13 07:41:18,648 - root - INFO -    Modo: COMPLETA
+2026-04-13 07:41:18,648 - root - INFO -    Total casos: 1
+
+2026-04-13 07:41:18,648 - root - INFO -       📊 Actualizando stats: 0/1 casos, 0 correcciones
+2026-04-13 07:41:18,652 - root - INFO -    📏 Prompt completa: 1386 chars (~346 tokens)
+2026-04-13 07:41:18,658 - root - INFO -    🔄 [LM Studio (Local)] Request (local-model)...

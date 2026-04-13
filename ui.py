@@ -2355,7 +2355,7 @@ Disco {i}:
             "double_click_column_resize",  # Doble click para ajustar
             "row_width_resize",  # Redimensionar filas
             "column_height_resize",  # Altura de encabezados
-            "single_select",  # Click simple
+            "toggle_select",  # Ctrl+Click para multi-selección
             "drag_and_drop",  # Arrastrar y soltar
             "move_columns"  # Mover columnas
         )
