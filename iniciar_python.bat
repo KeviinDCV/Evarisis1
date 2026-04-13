@@ -14,8 +14,8 @@ set "VENV_PATH=%WORK_DIR%venv0"
 set "PYTHON_SCRIPT=ui.py"
 
 REM Usuario y configuración
-set "USUARIO_NOMBRE=Daniel Restrepo"
-set "USUARIO_CARGO=Ingeniero de soluciones"
+set "USUARIO_NOMBRE=Innovación y Desarrollo"
+set "USUARIO_CARGO=Ingenieros de soluciones"
 set "TEMA_APP=cosmo"
 
 cd /d "%WORK_DIR%"

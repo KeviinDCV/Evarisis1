@@ -294,8 +294,8 @@ echo.
 
 echo   ℹ️ Argumentos de EVARISIS:
 echo     --lanzado-por-evarisis
-echo     --nombre "Daniel Restrepo"
-echo     --cargo "Ingeniero de soluciones"
+echo     --nombre "Innovación y Desarrollo"
+echo     --cargo "Desarrolladores"
 echo     --tema "cosmo"
 echo     --modo-independiente
 echo.
@@ -305,7 +305,7 @@ echo.
 echo ════════════════════════════════════════════════════════════════════════
 echo.
 
-"%VENV_PATH%\Scripts\python.exe" %PYTHON_SCRIPT% --lanzado-por-evarisis --nombre "Daniel Restrepo" --cargo "Ingeniero de soluciones" --foto "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV1EVARISISDASHBOARD\base_de_usuarios\Daniel Restrepo.jpeg" --tema "cosmo" --ruta-fotos "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV1EVARISISDASHBOARD\base_de_usuarios" --ruta-datos "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV1EVARISISDASHBOARD" --modo-independiente
+"%VENV_PATH%\Scripts\python.exe" %PYTHON_SCRIPT% --lanzado-por-evarisis --nombre "Innovación y Desarrollo" --cargo "Ingenieros de soluciones" --foto "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV1EVARISISDASHBOARD\base_de_usuarios\Innovación y Desarrollo.jpeg" --tema "cosmo" --ruta-fotos "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV1EVARISISDASHBOARD\base_de_usuarios" --ruta-datos "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV1EVARISISDASHBOARD" --modo-independiente
 
 :: ============================================================================
 :: FINALIZACIÓN

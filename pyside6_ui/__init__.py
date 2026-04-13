@@ -22,8 +22,8 @@ Fecha: Noviembre 2025
 """
 
 __version__ = "7.0.0-alpha"
-__author__ = "Daniel Restrepo"
-__email__ = "daniel.rr93g@gmail.com"
+__author__ = "Innovación y Desarrollo"
+__email__ = "innovacionydesarrollo@correohuv.gov.co"
 
 # Exportar clases principales para importación simplificada
 __all__ = [

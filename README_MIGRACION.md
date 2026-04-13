@@ -1,4 +1,5 @@
 # 🚀 MIGRACIÓN A PYSIDE6 - RESUMEN EJECUTIVO
+
 ## EVARISIS CIRUGÍA ONCOLÓGICA v7.0.0
 
 ---
@@ -17,17 +18,17 @@
 
 ### 1. Documentación Principal
 
-| Archivo | Descripción | Líneas | Estado |
-|---------|-------------|---------|--------|
-| **PLAN_MIGRACION_PYSIDE6.md** | Plan maestro completo (10 semanas) | 470 | ✅ Completo |
-| **docs/INICIO_RAPIDO.md** | Guía de inicio rápido | 280 | ✅ Completo |
-| **README_MIGRACION.md** | Este archivo - Resumen ejecutivo | ~150 | ✅ Completo |
+| Archivo                       | Descripción                        | Líneas | Estado      |
+| ----------------------------- | ---------------------------------- | ------ | ----------- |
+| **PLAN_MIGRACION_PYSIDE6.md** | Plan maestro completo (10 semanas) | 470    | ✅ Completo |
+| **docs/INICIO_RAPIDO.md**     | Guía de inicio rápido              | 280    | ✅ Completo |
+| **README_MIGRACION.md**       | Este archivo - Resumen ejecutivo   | ~150   | ✅ Completo |
 
 ### 2. Dependencias y Configuración
 
-| Archivo | Descripción | Estado |
-|---------|-------------|--------|
-| **requirements_pyside6.txt** | Nuevas dependencias Qt | ✅ Completo |
+| Archivo                          | Descripción             | Estado      |
+| -------------------------------- | ----------------------- | ----------- |
+| **requirements_pyside6.txt**     | Nuevas dependencias Qt  | ✅ Completo |
 | **pyside6_ui/themes/darkly.qss** | Tema oscuro profesional | ✅ Completo |
 
 ### 3. Estructura Modular
@@ -63,28 +64,28 @@ docs/                          ✅ Creada
 
 ### Arquitectura
 
-| Aspecto | TTKBootstrap (Actual) | PySide6 (Objetivo) | Mejora |
-|---------|----------------------|-------------------|---------|
-| **Líneas código UI** | 6,550 | ~4,800 | -27% |
-| **Archivos UI** | 1 monolito | 20+ modulares | +Mantenibilidad |
-| **Componentes** | Código duplicado | Reutilizables | +Eficiencia |
-| **Temas** | 18 fijos | ∞ custom QSS | +Flexibilidad |
-| **Animaciones** | Manual (`after()`) | GPU nativas | +Rendimiento |
-| **Tablas grandes** | tksheet custom | Qt nativo | +50% velocidad |
+| Aspecto              | TTKBootstrap (Actual) | PySide6 (Objetivo) | Mejora          |
+| -------------------- | --------------------- | ------------------ | --------------- |
+| **Líneas código UI** | 6,550                 | ~4,800             | -27%            |
+| **Archivos UI**      | 1 monolito            | 20+ modulares      | +Mantenibilidad |
+| **Componentes**      | Código duplicado      | Reutilizables      | +Eficiencia     |
+| **Temas**            | 18 fijos              | ∞ custom QSS       | +Flexibilidad   |
+| **Animaciones**      | Manual (`after()`)    | GPU nativas        | +Rendimiento    |
+| **Tablas grandes**   | tksheet custom        | Qt nativo          | +50% velocidad  |
 
 ### Capacidades Nuevas
 
-| Feature | TTKBootstrap | PySide6 |
-|---------|-------------|---------|
-| **CSS completo** | ❌ Limitado | ✅ QSS (como web) |
-| **Gradientes** | ❌ No | ✅ Nativos |
-| **Sombras** | ❌ No | ✅ QGraphicsDropShadowEffect |
-| **Animaciones** | ⚠️ Manual | ✅ QPropertyAnimation |
-| **Gráficos 60fps** | ❌ No | ✅ PyQtGraph |
-| **Real-time charts** | ❌ No | ✅ Sí |
-| **Plugins** | ❌ No | ✅ QPluginLoader |
-| **i18n** | ⚠️ Manual | ✅ QTranslator |
-| **Accesibilidad** | ⚠️ Limitada | ✅ WCAG 2.1 |
+| Feature              | TTKBootstrap | PySide6                      |
+| -------------------- | ------------ | ---------------------------- |
+| **CSS completo**     | ❌ Limitado  | ✅ QSS (como web)            |
+| **Gradientes**       | ❌ No        | ✅ Nativos                   |
+| **Sombras**          | ❌ No        | ✅ QGraphicsDropShadowEffect |
+| **Animaciones**      | ⚠️ Manual    | ✅ QPropertyAnimation        |
+| **Gráficos 60fps**   | ❌ No        | ✅ PyQtGraph                 |
+| **Real-time charts** | ❌ No        | ✅ Sí                        |
+| **Plugins**          | ❌ No        | ✅ QPluginLoader             |
+| **i18n**             | ⚠️ Manual    | ✅ QTranslator               |
+| **Accesibilidad**    | ⚠️ Limitada  | ✅ WCAG 2.1                  |
 
 ---
 
@@ -129,12 +130,14 @@ python -c "from PySide6.QtWidgets import QApplication; print('✅ OK')"
 ### 2️⃣ INICIAR VERSIÓN PYSIDE6 (2 opciones)
 
 **OPCIÓN A: Usando el lanzador (Recomendado)**
+
 ```bash
 # Doble clic en el archivo:
 iniciar_pyside6.bat
 ```
 
 **OPCIÓN B: Desde terminal**
+
 ```bash
 # Activar entorno
 venv0\Scripts\activate
@@ -144,6 +147,7 @@ python main_pyside6.py
 ```
 
 Deberías ver:
+
 - ✅ Aplicación PySide6 v7.0.0-alpha
 - ✅ Interfaz Qt6 (si ya existe `pyside6_ui/app.py`)
 - ⚠️ Si falta módulo, ver siguiente paso
@@ -249,11 +253,13 @@ Warning:    #f59e0b  /* Amber-500 */
 ## 🎓 RECURSOS DE APRENDIZAJE
 
 ### Documentación Oficial
+
 - [PySide6 Docs](https://doc.qt.io/qtforpython-6/)
 - [Qt6 QSS Reference](https://doc.qt.io/qt-6/stylesheet-reference.html)
 - [Qt Examples](https://github.com/qt/pyside-setup/tree/dev/examples)
 
 ### Tutoriales
+
 - [Python GUIs](https://www.pythonguis.com/) - Tutorial completo
 - [Real Python Qt](https://realpython.com/python-pyqt-gui-calculator/)
 - Qt Designer - Diseñador visual (incluido)
@@ -263,16 +269,19 @@ Warning:    #f59e0b  /* Amber-500 */
 ## ⚠️ ADVERTENCIAS
 
 ### NO MODIFICAR
+
 - ❌ `core/` - Backend intacto
 - ❌ `herramientas_ia/` - Herramientas IA
 - ❌ `ui.py` - Mantener como fallback
 - ❌ `requirements.txt` - Para TTKBootstrap
 
 ### MODIFICAR CON CUIDADO
+
 - ⚠️ `ui_helpers/` - Adaptar a Qt
 - ⚠️ `config/version_info.py` - Actualizar al final
 
 ### CREAR NUEVO
+
 - ✅ Todo en `pyside6_ui/`
 - ✅ `tests/`
 - ✅ `docs/`
@@ -299,8 +308,8 @@ Warning:    #f59e0b  /* Amber-500 */
 
 ## 📞 CONTACTO
 
-**Developer:** Daniel Restrepo
-**Email:** daniel.rr93g@gmail.com
+**Developer:** Innovación y Desarrollo
+**Email:** innovacionydesarrollo@correohuv.gov.co
 **Proyecto:** ProyectoHUV9GESTOR_ONCOLOGIA
 
 ---
@@ -330,4 +339,4 @@ Warning:    #f59e0b  /* Amber-500 */
 **Versión:** 1.0
 **Estado:** ✅ FASE 0 COMPLETADA
 
-*¡Excelente trabajo! La base está lista para comenzar la migración. 🚀*
+_¡Excelente trabajo! La base está lista para comenzar la migración. 🚀_
