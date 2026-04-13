@@ -879,15 +879,17 @@ class AuditoriaIA:
         que juntos suman ~9,600 tokens (demasiado para modelos gratuitos).
         """
         if modo == 'completa':
-            return """Auditor de informes IHQ del Hospital Universitario del Valle.
+            return """Auditor IHQ del Hospital Universitario del Valle.
 
-Compara datos del PDF con datos en BD. Detecta errores y datos faltantes.
+Compara PDF vs BD. Solo reporta ERRORES REALES.
 
-REGLAS:
-- Si un biomarcador NO está en el PDF, NO lo incluyas en correcciones
-- Estado: POSITIVO/NEGATIVO. Porcentaje: 0-100
-- Se MUY CONCISO en razon (máx 10 palabras)
-- NO incluyas campo evidencia
+REGLAS CRÍTICAS:
+- SOLO corrige campos donde el PDF tiene un valor DIFERENTE al de la BD
+- "NO MENCIONADO" o "N/A" = correcto si el biomarcador NO aparece en el PDF. NO cambiar a NEGATIVO
+- NEGATIVO = el PDF dice explícitamente "negativo" o "no se observa expresión"
+- NO incluyas campos donde BD y PDF coinciden
+- NO inventes valores. Si no está en el PDF, NO lo corrijas
+- Se MUY CONCISO. Máximo 5 correcciones reales
 
 RESPONDE SOLO JSON:
 {"correcciones":[{"campo_bd":"X","valor_actual":"Y","valor_corregido":"Z","confianza":0.9,"razon":"breve"}],"analisis_profundo":{"veracidad_porcentaje":85,"problemas_detectados":["prob1"]}}"""
@@ -949,9 +951,6 @@ RESPONDE SOLO JSON válido:
             if val and str(val).strip():
                 campos_con_datos[c] = str(val)
 
-        # Limitar campos vacíos reportados para ahorrar tokens
-        vacios_display = campos_vacios_ihq[:15]
-
         prompt = f"""CASO: {numero_peticion}
 
 DIAGNÓSTICO: {diag}
@@ -960,12 +959,10 @@ MICROSCOPÍA: {micro}
 
 COMENTARIOS: {comentarios}
 
-BD ({len(campos_con_datos)} campos):
+BD ({len(campos_con_datos)} campos con datos):
 {json.dumps(campos_con_datos, ensure_ascii=False, separators=(',', ':'))}
 
-VACÍOS ({len(campos_vacios_ihq)}): {', '.join(vacios_display)}
-
-Compara PDF vs BD. Responde SOLO JSON con correcciones."""
+Compara PDF vs BD. Solo reporta campos donde BD tiene valor INCORRECTO. Responde SOLO JSON."""
 
         return prompt
 

@@ -8028,3 +8028,47 @@
 2026-04-13 08:49:29,550 - root - INFO -    🔄 [LM Studio (Local)] Request (local-model)...
 2026-04-13 08:51:31,599 - root - INFO - ⚠️ [LM Studio (Local)] Timeout - Reintentando...
 2026-04-13 08:51:32,601 - root - INFO -    🔄 [LM Studio (Local)] Request (local-model)...
+2026-04-13 08:53:34,674 - root - INFO - ⚠️ [LM Studio (Local)] Timeout - Reintentando...
+2026-04-13 08:53:35,676 - root - INFO -    🔄 [LM Studio (Local)] Request (local-model)...
+2026-04-13 08:57:02,513 - core.unified_extractor - INFO - ✅ Extractores refactorizados cargados correctamente
+2026-04-13 08:57:02,723 - root - INFO - Iniciando EVARISIS Gestor H.U.V...
+2026-04-13 08:57:02,724 - root - INFO - Tesseract OCR configurado en: C:\Program Files\Tesseract-OCR\tesseract.exe
+2026-04-13 08:57:03,443 - core.database_manager - INFO - Carpeta de base de datos verificada: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data
+2026-04-13 08:57:03,444 - core.database_manager - INFO - Iniciando migración de esquema: eliminando columnas obsoletas…
+2026-04-13 08:57:03,463 - core.database_manager - INFO - Migración completada correctamente.
+2026-04-13 08:57:03,463 - core.database_manager - INFO - Base de datos preparada correctamente: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data\huv_oncologia_NUEVO.db
+2026-04-13 08:57:03,471 - core.database_manager - INFO - Cargados 100 registros de la base de datos
+2026-04-13 08:57:03,502 - root - INFO - Columnas de fecha encontradas: ['Fecha de toma (1. Fecha de la toma)', 'Fecha de ingreso (2. Fecha de la muestra)', 'Fecha Informe', 'Fecha Ingreso Base de Datos']
+2026-04-13 08:57:03,502 - root - INFO - Usando columna de fecha prioritaria: Fecha de toma (1. Fecha de la toma)
+2026-04-13 08:57:03,504 - root - INFO - Formato %d/%m/%Y: 0 fechas válidas de 100 totales
+2026-04-13 08:57:03,505 - root - INFO - Formato %Y-%m-%d: 0 fechas válidas de 100 totales
+2026-04-13 08:57:03,505 - root - INFO - Formato %d-%m-%Y: 0 fechas válidas de 100 totales
+2026-04-13 08:57:03,506 - root - INFO - Formato %m/%d/%Y: 0 fechas válidas de 100 totales
+2026-04-13 08:57:03,507 - root - INFO - Formato mixed: 0 fechas válidas de 100 totales
+2026-04-13 08:57:03,507 - core.enhanced_database_dashboard - WARNING - No se pudieron parsear fechas de columna 'Fecha de toma (1. Fecha de la toma)'
+2026-04-13 08:57:03,507 - core.enhanced_database_dashboard - WARNING - Muestras de datos en 'Fecha de toma (1. Fecha de la toma)': ['SIN DATO', 'SIN DATO', 'SIN DATO', 'SIN DATO', 'SIN DATO']
+2026-04-13 08:57:03,805 - core.database_manager - INFO - Carpeta de base de datos verificada: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data
+2026-04-13 08:57:03,806 - core.database_manager - INFO - Iniciando migración de esquema: eliminando columnas obsoletas…
+2026-04-13 08:57:03,817 - core.database_manager - INFO - Migración completada correctamente.
+2026-04-13 08:57:03,817 - core.database_manager - INFO - Base de datos preparada correctamente: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data\huv_oncologia_NUEVO.db
+2026-04-13 08:57:03,826 - core.database_manager - INFO - Cargados 100 registros de la base de datos
+2026-04-13 08:57:03,855 - root - INFO - Columnas de fecha encontradas: ['Fecha de toma (1. Fecha de la toma)', 'Fecha de ingreso (2. Fecha de la muestra)', 'Fecha Informe', 'Fecha Ingreso Base de Datos']
+2026-04-13 08:57:03,855 - root - INFO - Usando columna de fecha prioritaria: Fecha de toma (1. Fecha de la toma)
+2026-04-13 08:57:03,856 - root - INFO - Formato %d/%m/%Y: 0 fechas válidas de 100 totales
+2026-04-13 08:57:03,857 - root - INFO - Formato %Y-%m-%d: 0 fechas válidas de 100 totales
+2026-04-13 08:57:03,857 - root - INFO - Formato %d-%m-%Y: 0 fechas válidas de 100 totales
+2026-04-13 08:57:03,858 - root - INFO - Formato %m/%d/%Y: 0 fechas válidas de 100 totales
+2026-04-13 08:57:03,858 - root - INFO - Formato mixed: 0 fechas válidas de 100 totales
+2026-04-13 08:57:03,858 - core.enhanced_database_dashboard - WARNING - No se pudieron parsear fechas de columna 'Fecha de toma (1. Fecha de la toma)'
+2026-04-13 08:57:03,858 - core.enhanced_database_dashboard - WARNING - Muestras de datos en 'Fecha de toma (1. Fecha de la toma)': ['SIN DATO', 'SIN DATO', 'SIN DATO', 'SIN DATO', 'SIN DATO']
+2026-04-13 08:57:04,166 - root - INFO - ✅ Dashboard inicializado con datos de la base de datos
+2026-04-13 08:57:04,408 - root - INFO - 🔄 Iniciando refresh de datos...
+2026-04-13 08:57:04,408 - core.database_manager - INFO - Carpeta de base de datos verificada: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data
+2026-04-13 08:57:04,409 - core.database_manager - INFO - Iniciando migración de esquema: eliminando columnas obsoletas…
+2026-04-13 08:57:04,422 - core.database_manager - INFO - Migración completada correctamente.
+2026-04-13 08:57:04,423 - core.database_manager - INFO - Base de datos preparada correctamente: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data\huv_oncologia_NUEVO.db
+2026-04-13 08:57:04,431 - core.database_manager - INFO - Cargados 100 registros de la base de datos
+2026-04-13 08:57:04,448 - root - INFO - 📊 Datos cargados: 100 registros
+2026-04-13 08:57:04,450 - root - INFO - 📈 KPIs actualizados
+2026-04-13 08:57:04,458 - root - INFO - ✅ Refresh completado exitosamente
+2026-04-13 08:57:04,458 - root - INFO - ✅ Pestaña de visualizador COMPLETA poblada en el dashboard con tabla Sheet
