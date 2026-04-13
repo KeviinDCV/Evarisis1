@@ -1538,3 +1538,17 @@
   Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
   Value type: DESCRIPTIVE
   Normalized: 'EQUIVOCO (SCORE 2)'
+
+[HER2] Pattern 6 matched in DIAGNOSTICO
+  Pattern: (?i)expresi[oó]n\s+del?\s+(?:oncog[eé]n\s+)?her[^\w]*2[:\s]*-?\s*(.+?)(?:\.|$|\n)
+  Captured: '/NEU: EQUIVOCO (SCORE 2+)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (Score 2+)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'NEGATIVO (SCORE 1+)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 1+)'
