@@ -8072,3 +8072,22 @@
 2026-04-13 08:57:04,450 - root - INFO - 📈 KPIs actualizados
 2026-04-13 08:57:04,458 - root - INFO - ✅ Refresh completado exitosamente
 2026-04-13 08:57:04,458 - root - INFO - ✅ Pestaña de visualizador COMPLETA poblada en el dashboard con tabla Sheet
+2026-04-13 08:57:04,613 - root - INFO - Handler de ordenamiento por encabezado bindeado correctamente
+2026-04-13 08:57:04,613 - root - INFO - Eventos de selección bindeados correctamente a Sheet
+2026-04-13 08:57:04,682 - root - INFO - Actualizando lista de reportes - Tipo: parcial
+2026-04-13 08:57:04,683 - root - INFO - 6 reportes cargados
+2026-04-13 08:57:04,764 - core.database_manager - INFO - Carpeta de base de datos verificada: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data
+2026-04-13 08:57:04,765 - core.database_manager - INFO - Iniciando migración de esquema: eliminando columnas obsoletas…
+2026-04-13 08:57:04,780 - core.database_manager - INFO - Migración completada correctamente.
+2026-04-13 08:57:04,780 - core.database_manager - INFO - Base de datos preparada correctamente: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data\huv_oncologia_NUEVO.db
+2026-04-13 08:57:04,788 - core.database_manager - INFO - Cargados 100 registros de la base de datos
+2026-04-13 08:57:04,809 - root - INFO - 🔄 Iniciando refresh de datos...
+2026-04-13 08:57:04,809 - core.database_manager - INFO - Carpeta de base de datos verificada: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data
+2026-04-13 08:57:04,810 - core.database_manager - INFO - Iniciando migración de esquema: eliminando columnas obsoletas…
+2026-04-13 08:57:04,825 - core.database_manager - INFO - Migración completada correctamente.
+2026-04-13 08:57:04,826 - core.database_manager - INFO - Base de datos preparada correctamente: C:\Users\Kechavarro\Desktop\ProyectoHUV9GESTOR_ONCOLOGIA\data\huv_oncologia_NUEVO.db
+2026-04-13 08:57:04,833 - core.database_manager - INFO - Cargados 100 registros de la base de datos
+2026-04-13 08:57:04,855 - root - INFO - 📊 Datos cargados: 100 registros
+2026-04-13 08:57:04,916 - root - INFO - 🗂️ Tabla actualizada
+2026-04-13 08:57:04,917 - root - INFO - 📈 KPIs actualizados
+2026-04-13 08:57:04,921 - root - INFO - ✅ Refresh completado exitosamente
