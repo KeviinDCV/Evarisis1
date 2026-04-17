@@ -300,7 +300,7 @@ class AuditoriaIA:
     def __init__(
         self,
         llm_endpoint: str = "https://openrouter.ai/api/v1",
-        timeout: int = 120
+        timeout: int = 600
     ):
         """
         Inicializar sistema de auditoría
@@ -879,7 +879,8 @@ class AuditoriaIA:
         que juntos suman ~9,600 tokens (demasiado para modelos gratuitos).
         """
         if modo == 'completa':
-            return """Auditor IHQ del Hospital Universitario del Valle.
+            return """/no_think
+Auditor IHQ del Hospital Universitario del Valle.
 
 Compara PDF vs BD. Solo reporta ERRORES REALES.
 
@@ -891,16 +892,17 @@ REGLAS CRÍTICAS:
 - NO inventes valores. Si no está en el PDF, NO lo corrijas
 - Se MUY CONCISO. Máximo 5 correcciones reales
 
-RESPONDE SOLO JSON:
+RESPONDE SOLO JSON, SIN pensar ni razonar:
 {"correcciones":[{"campo_bd":"X","valor_actual":"Y","valor_corregido":"Z","confianza":0.9,"razon":"breve"}],"analisis_profundo":{"veracidad_porcentaje":85,"problemas_detectados":["prob1"]}}"""
         else:
-            return """Eres un auditor de informes IHQ. Busca SOLO los campos faltantes indicados.
+            return """/no_think
+Eres un auditor de informes IHQ. Busca SOLO los campos faltantes indicados.
 
 REGLAS:
 - Si el campo NO está en el texto del PDF, responde con correcciones vacías
 - Valores: POSITIVO/NEGATIVO para estados, número 0-100 para porcentajes
 
-RESPONDE SOLO JSON válido:
+RESPONDE SOLO JSON válido, SIN pensar ni razonar:
 {
   "numero_peticion": "IHQXXXXXX",
   "correcciones": [
