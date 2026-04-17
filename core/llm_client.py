@@ -407,6 +407,8 @@ class LMStudioClient:
                     respuesta = message_data.get("content", "")
                     finish_reason = data["choices"][0].get("finish_reason")
 
+                    if not respuesta and "reasoning_content" in message_data:
+                        respuesta = message_data.get("reasoning_content", "")
                     if not respuesta and "reasoning" in message_data:
                         respuesta = message_data.get("reasoning", "")
 
