@@ -4876,7 +4876,7 @@ Disco {i}:
         frame = ttk.Frame(overlay, padding=25)
         frame.pack(fill=BOTH, expand=True)
         ttk.Label(frame, text="📊 Generando resumen con IA…", font=("Segoe UI", 13, "bold")).pack(pady=(0, 8))
-        ttk.Label(frame, text="Esto puede tomar unos segundos.", font=("Segoe UI", 10)).pack()
+        ttk.Label(frame, text="Esto puede tomar varios minutos con modelos locales.", font=("Segoe UI", 10)).pack()
         pb = ttk.Progressbar(frame, mode="indeterminate", bootstyle="info-striped")
         pb.pack(fill=X, pady=(10, 0))
         pb.start(15)
@@ -4961,32 +4961,26 @@ Disco {i}:
         import json
         try:
             stats = self._compilar_estadisticas()
-            stats_json = json.dumps(stats, ensure_ascii=False, indent=2)
+            # JSON compacto (sin indent) para reducir tokens de prompt
+            stats_json = json.dumps(stats, ensure_ascii=False, separators=(",", ":"))
 
             system_prompt = (
                 "/no_think\n"
-                "Eres un analista clínico-oncológico experto del Hospital Universitario del Valle (HUV). "
-                "El usuario te proporcionará un JSON con estadísticas de la base de datos de Inmunohistoquímica (IHQ). "
-                "Genera un INFORME PROFESIONAL en español con las siguientes secciones:\n"
-                "1. **Resumen Ejecutivo** — Párrafo breve con hallazgos clave.\n"
-                "2. **Volumen y Temporalidad** — Total de casos, rango de fechas, tendencia si se puede inferir.\n"
-                "3. **Clasificación por Malignidad** — Desglose MALIGNO/BENIGNO/otros, porcentajes.\n"
-                "4. **Distribución Anatómica** — Órganos más frecuentes con conteos.\n"
-                "5. **Diagnósticos Principales** — Top diagnósticos y observaciones clínicas relevantes.\n"
-                "6. **Perfil de Biomarcadores** — Biomarcadores más solicitados, valores frecuentes, relevancia clínica.\n"
-                "7. **Servicios y Procedimientos** — Servicios solicitantes y tipos de procedimiento.\n"
-                "8. **Observaciones y Recomendaciones** — Hallazgos notables, posibles áreas de mejora.\n\n"
-                "Usa formato Markdown. Sé preciso con los números. "
-                "Si algún dato no está disponible, omítelo sin inventar."
+                "Eres analista clínico-oncológico del HUV. "
+                "Genera un informe en español Markdown con estas secciones: "
+                "1.Resumen Ejecutivo 2.Volumen y Temporalidad 3.Malignidad (porcentajes) "
+                "4.Distribución Anatómica 5.Diagnósticos Principales 6.Biomarcadores "
+                "7.Servicios y Procedimientos 8.Observaciones. "
+                "Sé conciso y preciso con los números. No inventes datos."
             )
 
             from core.llm_client import LMStudioClient
-            client = LMStudioClient(timeout=600)
+            client = LMStudioClient(timeout=900)
             resultado = client.completar(
-                prompt=f"Estadísticas de la base de datos IHQ del HUV:\n\n```json\n{stats_json}\n```",
+                prompt=f"Estadísticas IHQ del HUV:\n{stats_json}",
                 system_prompt=system_prompt,
                 temperature=0.3,
-                max_tokens=4000,
+                max_tokens=2500,
             )
 
             if resultado.get("exito"):
