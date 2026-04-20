@@ -4894,6 +4894,7 @@ Disco {i}:
         stats = {}
 
         stats["total_casos"] = len(df)
+        stats["nota"] = "Todos los casos son estudios de Inmunohistoquímica (IHQ)"
 
         # Rango de fechas
         for col in ["Fecha Informe", "Fecha de informe", "Fecha de ingreso"]:
@@ -4908,32 +4909,43 @@ Disco {i}:
         if "Malignidad" in df.columns:
             stats["malignidad"] = df["Malignidad"].fillna("SIN DATO").value_counts().head(10).to_dict()
 
-        # Distribución por órgano
+        # Distribución por órgano — UNIFICADO (MAMA DERECHA + MAMA IZQUIERDA → MAMA)
         if "Organo" in df.columns:
-            stats["organos"] = df["Organo"].fillna("SIN DATO").value_counts().head(15).to_dict()
+            organos = df["Organo"].fillna("SIN DATO").astype(str).str.upper().str.strip()
+            # Unificar lateralidades
+            organos = organos.str.replace(r'\s*(DERECH[AO]|IZQUIERD[AO])\s*', '', regex=True).str.strip()
+            # Unificar prefijos BX/BX DE
+            organos = organos.str.replace(r'^BX\s+DE\s+', 'BX ', regex=True)
+            stats["organos_unificados"] = organos.value_counts().head(15).to_dict()
 
-        # Distribución por procedimiento
+        # Distribución por procedimiento — filtrar "INMUNOHISTOQUIMICA" (no es procedimiento quirúrgico)
         if "Procedimiento" in df.columns:
-            stats["procedimientos"] = df["Procedimiento"].fillna("SIN DATO").value_counts().head(10).to_dict()
+            procs = df["Procedimiento"].fillna("SIN DATO").astype(str).str.upper().str.strip()
+            procs = procs[~procs.isin(["INMUNOHISTOQUIMICA", "INMUNOHISTOQUÍMICA"])]
+            stats["procedimientos"] = procs.value_counts().head(10).to_dict()
 
-        # Diagnósticos más frecuentes
+        # Diagnósticos — filtrar entradas genéricas que no son diagnósticos reales
+        filtro_diag = ["ESTUDIO DE INMUNOHISTOQUÍMICA", "INMUNOHISTOQUÍMICA",
+                       "ESTUDIO DE INMUNOHISTOQUIMICA", "INMUNOHISTOQUIMICA"]
         for diag_col in ["Diagnostico Principal", "Diagnostico Coloracion"]:
             if diag_col in df.columns:
-                vals = df[diag_col].dropna().astype(str)
-                vals = vals[vals.str.strip() != ""]
+                vals = df[diag_col].dropna().astype(str).str.strip()
+                vals = vals[(vals != "") & (~vals.str.upper().isin([f.upper() for f in filtro_diag]))]
                 if not vals.empty:
                     stats[f"top_{diag_col.lower().replace(' ', '_')}"] = vals.value_counts().head(10).to_dict()
 
-        # Biomarcadores principales — solo los top 20 con más datos, valores compactos
+        # Biomarcadores principales — top 15, valores compactos
         bio_cols = [c for c in df.columns if c.startswith("IHQ_")]
+        # Excluir columnas auxiliares (no son biomarcadores clínicos)
+        excluir = {"IHQ_ORGANO", "IHQ_ESTUDIOS_SOLICITADOS"}
+        bio_cols = [c for c in bio_cols if c not in excluir]
         bio_counts = {}
         for bc in bio_cols:
             serie = df[bc].dropna().astype(str).str.strip()
             serie = serie[(serie != "") & (serie.str.upper() != "N/A") & (serie.str.upper() != "NO MENCIONADO")]
             if len(serie) > 0:
                 bio_counts[bc] = len(serie)
-        # Top 20 biomarcadores por frecuencia, con sus 3 valores más comunes
-        top_bio = sorted(bio_counts.items(), key=lambda x: x[1], reverse=True)[:20]
+        top_bio = sorted(bio_counts.items(), key=lambda x: x[1], reverse=True)[:15]
         bio_summary = {}
         for bc, count in top_bio:
             serie = df[bc].dropna().astype(str).str.strip()
@@ -4943,16 +4955,22 @@ Disco {i}:
                 "top": serie.value_counts().head(3).to_dict()
             }
         if bio_summary:
-            stats["biomarcadores_top20"] = bio_summary
-        stats["total_biomarcadores_con_datos"] = len(bio_counts)
+            stats["biomarcadores_top15"] = bio_summary
+        stats["total_biomarcadores_distintos"] = len(bio_counts)
 
-        # Servicio solicitante
+        # Paneles más solicitados (estudios solicitados)
+        if "IHQ_ESTUDIOS_SOLICITADOS" in df.columns:
+            estudios = df["IHQ_ESTUDIOS_SOLICITADOS"].dropna().astype(str).str.strip()
+            estudios = estudios[(estudios != "") & (estudios.str.upper() != "N/A")]
+            if not estudios.empty:
+                stats["paneles_ihq_solicitados"] = estudios.value_counts().head(10).to_dict()
+
+        # Servicio solicitante — filtrar N/A y SIN DATO
         if "Servicio" in df.columns:
-            stats["servicios"] = df["Servicio"].fillna("SIN DATO").value_counts().head(10).to_dict()
-
-        # Archivos de origen (solo conteo total)
-        if "Archivo origen" in df.columns:
-            stats["total_archivos_origen"] = df["Archivo origen"].nunique()
+            servicios = df["Servicio"].fillna("").astype(str).str.strip()
+            servicios = servicios[(servicios != "") & (servicios.str.upper() != "N/A") & (servicios.str.upper() != "SIN DATO")]
+            if not servicios.empty:
+                stats["servicios"] = servicios.value_counts().head(10).to_dict()
 
         return stats
 
