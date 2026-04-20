@@ -4254,22 +4254,26 @@ Disco {i}:
             # Solo mostramos mensaje si no hay casos para auditar
             if num_records == 0:
                 self.log_to_widget(f"⚠️ No se procesaron registros.")
-                messagebox.showwarning("Advertencia", "No se encontraron casos IHQ válidos en los PDFs seleccionados.")
-                self.set_status("Sin datos procesados")
+                logging.warning("No se encontraron casos IHQ válidos en los PDFs seleccionados.")
             else:
                 # El mensaje final se mostrará después de la auditoría
                 self.log_to_widget(f"\n✅ Procesamiento completado: {num_records} registros")
-                self.set_status("Procesamiento completado - Auditando con IA...")
+                logging.info("Procesamiento completado - Auditando con IA...")
 
         except Exception as e:
             import traceback
             error_msg = f"ERROR: {e}\n{traceback.format_exc()}"
             self.log_to_widget(error_msg)
-            messagebox.showerror("Error", f"Ocurrió un error durante el procesamiento:\n{e}")
-            self.set_status("Error en el procesamiento.")
+            logging.error(f"Error durante el procesamiento: {e}")
         finally:
-            self.start_button.configure(state="normal")
-            self.select_files_button.configure(state="normal")
+            # V4.2.1 FIX: Usar after() para operaciones de UI desde thread
+            def _restore_buttons():
+                try:
+                    self.start_button.configure(state="normal")
+                    self.select_files_button.configure(state="normal")
+                except Exception:
+                    pass
+            self.after(0, _restore_buttons)
 
     def refresh_data_and_table(self):
         """Actualizar datos y tabla desde la base de datos"""
@@ -4587,74 +4591,14 @@ Disco {i}:
 
             self.sheet.column_width(column=idx, width=width, only_set_if_too_small=False, redraw=False)
 
-        # PASO 3: Obtener índices de columnas relevantes para colores
-        estado_col_idx = None
-        peticion_col_idx = None
-        if "Estado Auditoria IA" in df_display.columns:
-            estado_col_idx = list(df_display.columns).index("Estado Auditoria IA")
-        if "Numero de caso" in df_display.columns:
-            peticion_col_idx = list(df_display.columns).index("Numero de caso")
-
-        # PASO 4: Calcular completitud en batch (optimizado)
-        completitud_cache = {}
-        if peticion_col_idx is not None:
-            try:
-                from core.validation_checker import verificar_completitud_registro
-
-                # Extraer números de petición
-                numeros_peticion = df_display["Numero de caso"].dropna().unique()
-
-                # Calcular completitud
-                for numero in numeros_peticion:
-                    try:
-                        analisis = verificar_completitud_registro(numero)
-                        # V6.1.2: FIX - Usar campo 'completo' del análisis en lugar de recalcular
-                        # La lógica correcta está en validation_checker.py que considera biomarcadores NO MAPEADOS
-                        completitud_cache[numero] = analisis.get('completo', False)
-                    except Exception:
-                        completitud_cache[numero] = False
-            except Exception as e:
-                logging.warning(f"Error calculando completitud: {e}")
-
-        # PASO 5: Aplicar colores de filas según estado
-        # ============================================
-        # V5.3.8: Sheet usa highlight_rows() en lugar de tags
-
-        rows_auditoria_parcial = []
-        rows_auditoria_completa = []
-        rows_incompletos = []
-
-        for row_idx, row_data in df_display.iterrows():
-            # Índice de fila en Sheet (0-based)
-            sheet_row_idx = df_display.index.get_loc(row_idx)
-
-            # PRIORIDAD 1: Auditoría IA
-            if estado_col_idx is not None:
-                estado = row_data.iloc[estado_col_idx]
-                if estado == "PARCIAL":
-                    rows_auditoria_parcial.append(sheet_row_idx)
-                    continue
-                elif estado == "COMPLETA":
-                    rows_auditoria_completa.append(sheet_row_idx)
-                    continue
-
-            # PRIORIDAD 2: Completitud
-            if peticion_col_idx is not None:
-                numero_peticion = row_data.iloc[peticion_col_idx]
-                if numero_peticion in completitud_cache:
-                    if not completitud_cache[numero_peticion]:  # Incompleto
-                        rows_incompletos.append(sheet_row_idx)
-
-        # Aplicar highlighting por grupos
-        if rows_auditoria_parcial:
-            self.sheet.highlight_rows(rows=rows_auditoria_parcial, bg="#FFF3CD", fg="#856404", redraw=False)
-        if rows_auditoria_completa:
-            self.sheet.highlight_rows(rows=rows_auditoria_completa, bg="#D4EDDA", fg="#155724", redraw=False)
-        if rows_incompletos:
-            self.sheet.highlight_rows(rows=rows_incompletos, bg="#FFE5E5", fg="#721C24", redraw=False)
-
-        # PASO 6: Redibuja UNA SOLA VEZ (mega optimización)
+        # PASO 3: DIBUJAR DATOS INMEDIATAMENTE (no bloquear UI)
+        # ====================================================
+        # V4.2.1 FIX: Mostrar datos ANTES de calcular colores para evitar tabla en blanco
         self.sheet.refresh()
+
+        # PASO 4: Aplicar colores de fila de forma diferida (no bloquea UI)
+        # ================================================================
+        self.after(100, lambda: self._apply_row_colors(df_display, sheet_data))
 
         # PASO 7: Actualizar también sheet_dashboard si existe
         if hasattr(self, 'sheet_dashboard') and self.sheet_dashboard is not None:
@@ -4666,10 +4610,6 @@ Disco {i}:
                 for col_idx, width in column_widths.items():
                     self.sheet_dashboard.column_width(column=col_idx, width=width, only_set_if_too_small=False, redraw=False)
 
-                # Aplicar resaltado de incompletos
-                if rows_incompletos:
-                    self.sheet_dashboard.highlight_rows(rows=rows_incompletos, bg="#FFE5E5", fg="#721C24", redraw=False)
-
                 self.sheet_dashboard.refresh()
                 logging.debug("✅ sheet_dashboard actualizado")
             except Exception as e:
@@ -4680,6 +4620,72 @@ Disco {i}:
             self._render_kpis(df_display)
         except Exception:
             pass
+
+    def _apply_row_colors(self, df_display, sheet_data):
+        """V4.2.1: Aplicar colores de fila de forma diferida para no bloquear UI.
+        Se ejecuta via after() DESPUÉS de que los datos ya se muestran en la tabla."""
+        try:
+            estado_col_idx = None
+            peticion_col_idx = None
+            if "Estado Auditoria IA" in df_display.columns:
+                estado_col_idx = list(df_display.columns).index("Estado Auditoria IA")
+            if "Numero de caso" in df_display.columns:
+                peticion_col_idx = list(df_display.columns).index("Numero de caso")
+
+            # Calcular completitud en batch
+            completitud_cache = {}
+            if peticion_col_idx is not None:
+                try:
+                    from core.validation_checker import verificar_completitud_registro
+                    numeros_peticion = df_display["Numero de caso"].dropna().unique()
+                    for numero in numeros_peticion:
+                        try:
+                            analisis = verificar_completitud_registro(numero)
+                            completitud_cache[numero] = analisis.get('completo', False)
+                        except Exception:
+                            completitud_cache[numero] = False
+                except Exception as e:
+                    logging.warning(f"Error calculando completitud: {e}")
+
+            # Clasificar filas
+            rows_auditoria_parcial = []
+            rows_auditoria_completa = []
+            rows_incompletos = []
+
+            for row_idx, row_data in df_display.iterrows():
+                sheet_row_idx = df_display.index.get_loc(row_idx)
+                if estado_col_idx is not None:
+                    estado = row_data.iloc[estado_col_idx]
+                    if estado == "PARCIAL":
+                        rows_auditoria_parcial.append(sheet_row_idx)
+                        continue
+                    elif estado == "COMPLETA":
+                        rows_auditoria_completa.append(sheet_row_idx)
+                        continue
+                if peticion_col_idx is not None:
+                    numero_peticion = row_data.iloc[peticion_col_idx]
+                    if numero_peticion in completitud_cache:
+                        if not completitud_cache[numero_peticion]:
+                            rows_incompletos.append(sheet_row_idx)
+
+            # Aplicar highlighting
+            if rows_auditoria_parcial:
+                self.sheet.highlight_rows(rows=rows_auditoria_parcial, bg="#FFF3CD", fg="#856404", redraw=False)
+            if rows_auditoria_completa:
+                self.sheet.highlight_rows(rows=rows_auditoria_completa, bg="#D4EDDA", fg="#155724", redraw=False)
+            if rows_incompletos:
+                self.sheet.highlight_rows(rows=rows_incompletos, bg="#FFE5E5", fg="#721C24", redraw=False)
+
+            self.sheet.refresh()
+
+            # Aplicar también al dashboard sheet
+            if hasattr(self, 'sheet_dashboard') and self.sheet_dashboard is not None:
+                if rows_incompletos:
+                    self.sheet_dashboard.highlight_rows(rows=rows_incompletos, bg="#FFE5E5", fg="#721C24", redraw=False)
+                    self.sheet_dashboard.refresh()
+
+        except Exception as e:
+            logging.warning(f"⚠️ Error aplicando colores de fila: {e}")
 
     def _sort_treeview(self, col, reverse):
         """
@@ -6459,18 +6465,19 @@ Informes con malignidad: {malignant_count}"""
         """
         try:
             filename = os.path.basename(file_path)
-            self.set_status(f"Procesando {filename}...")
+            # V4.2.1 FIX: No llamar set_status desde worker thread (no es thread-safe en Python 3.13)
+            logging.info(f"Procesando {filename}...")
 
             # Determinar el tipo de archivo y procesarlo adecuadamente
             if self._is_ihq_file(filename, file_path):
                 # Procesar como archivo IHQ (biomarcadores)
                 records_processed = self._process_ihq_file(file_path)
                 correcciones = []  # IHQ no tiene validación aún
-                self.set_status(f"✅ {filename}: {records_processed} registros IHQ procesados")
+                logging.info(f"✅ {filename}: {records_processed} registros IHQ procesados")
             else:
                 # Procesar como archivo general de patología (retorna tuple)
                 records_processed, correcciones = self._process_general_file(file_path)
-                self.set_status(f"✅ {filename}: {records_processed} registros generales procesados")
+                logging.info(f"✅ {filename}: {records_processed} registros generales procesados")
 
             # V5.3.9: Usar logging en lugar de print (stdout puede estar cerrado)
             logging.info(f"✅ Procesamiento completado: {file_path} - {records_processed} registros")
@@ -6478,8 +6485,7 @@ Informes con malignidad: {malignant_count}"""
 
         except Exception as e:
             error_msg = f"Error procesando {filename}: {str(e)}"
-            self.set_status(f"❌ {error_msg}")
-            logging.error(error_msg)
+            logging.error(f"❌ {error_msg}")
             raise Exception(error_msg)
 
     def _is_ihq_file(self, filename, file_path):
@@ -6580,8 +6586,6 @@ Informes con malignidad: {malignant_count}"""
                 updated_count = update_incomplete_records_with_debug_data(debug_file_path)
                 if updated_count > 0:
                     logging.info(f"✅ Se actualizaron {updated_count} registros con datos completos del archivo actual")
-                    messagebox.showinfo("Actualización automática",
-                                      f"✅ Se actualizaron {updated_count} registros adicionales con datos completos.")
 
                 # NUEVO: Ahora aplicar mapeo específico de órganos usando parse_estudios_table_for_organo
                 logging.info("🔄 Aplicando mapeo avanzado de órganos...")
@@ -6592,8 +6596,6 @@ Informes con malignidad: {malignant_count}"""
             except Exception as e:
                 # No fallar el proceso principal si la actualización automática falla
                 logging.warning(f"⚠️ Advertencia en actualización automática: {str(e)}")
-                messagebox.showwarning("Actualización automática",
-                                     f"Advertencia: No se pudo completar la actualización automática: {str(e)}")
 
             # V5.3.9: Retornar tanto el conteo como las correcciones
             return saved_count, correcciones_aplicadas

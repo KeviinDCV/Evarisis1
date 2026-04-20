@@ -2063,3 +2063,122 @@
   Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
   Value type: DESCRIPTIVE
   Normalized: 'NEGATIVO (0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'NEGATIVO (1+)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (0)'
+
+[HER2] Pattern 6 matched in DIAGNOSTICO
+  Pattern: (?i)expresi[oó]n\s+del?\s+(?:oncog[eé]n\s+)?her[^\w]*2[:\s]*-?\s*(.+?)(?:\.|$|\n)
+  Captured: '/NEU: Negativo (SCORE 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (Score 0)'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: 'NEGATIVO (score 1+)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 1+)'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: 'NEGATIVO (SCORE 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'NEGATIVO (Score 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: '0 (NEGATIVO)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: '0 (NEGATIVO)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: '3+ (POSITIVO)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: '3+ (POSITIVO)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'NEGATIVO (SCORE 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUÍVOCO (SCORE 2+)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (SCORE 2+)'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: 'NEGATIVO (SCORE 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: 'NEGATIVO (SCORE 1+)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 1+)'
+
+[HER2] Pattern 6 matched in DIAGNOSTICO
+  Pattern: (?i)expresi[oó]n\s+del?\s+(?:oncog[eé]n\s+)?her[^\w]*2[:\s]*-?\s*(.+?)(?:\.|$|\n)
+  Captured: 'NEGATIVA (SCORE 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVA (SCORE 0)'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: 'y Ki67'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'y Ki67'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: '/Neu'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: '/Neu'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'NEGATIVO (SCORE 1+)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 1+)'
+
+[HER2] Pattern 6 matched in DIAGNOSTICO
+  Pattern: (?i)expresi[oó]n\s+del?\s+(?:oncog[eé]n\s+)?her[^\w]*2[:\s]*-?\s*(.+?)(?:\.|$|\n)
+  Captured: '/Neu'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: '/Neu'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: 'NEGATIVO (SCORE 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
