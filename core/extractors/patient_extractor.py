@@ -140,8 +140,10 @@ PATIENT_PATTERNS = {
     'servicio': {
         'descripcion': 'Servicio hospitalario (UCI, Ginecología, etc.)',
         'patrones': [
-            r'SERVICIO\s*:\s*([A-ZÁÉÍÓÚÑ\s]{3,30}?)(?:\s+FECHA|\s+Fecha|$)',
-            r'Servicio\s*:\s*([A-ZÁÉÍÓÚÑ\s]{3,30}?)(?:\s+FECHA|\s+Fecha|$)',
+            # V4.2.1 FIX: Ampliado char class para dígitos y paréntesis, límite 50
+            # Casos corregidos: UCI 5, UCI PEDIATRIA (CIPAF), HOSPITALIZACION TRANSPLANTE HPB 4 PISO
+            r'SERVICIO\s*:\s*([A-ZÁÉÍÓÚÑ\s0-9()\-/]{3,50}?)(?:\s+FECHA|\s+Fecha|$)',
+            r'Servicio\s*:\s*([A-ZÁÉÍÓÚÑ\s0-9()\-/]{3,50}?)(?:\s+FECHA|\s+Fecha|$)',
         ],
         'ejemplo': 'Servicio: CIRUGIA GENERAL → CIRUGIA GENERAL'
     },
