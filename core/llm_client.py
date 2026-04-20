@@ -67,7 +67,12 @@ class LMStudioClient:
             "nombre": "LM Studio (Local)",
             "endpoint": "http://localhost:1234/v1",
             "modelos": [
-                "local-model",  # LM Studio usa el modelo cargado actualmente
+                "qwen/qwen3-14b",
+                "qwen2.5-7b-instruct",
+                "google/gemma-3-4b",
+                "google/gemma-3n-e4b",
+                "nvidia/nemotron-3-nano-4b",
+                "openai/gpt-oss-20b",
             ],
             "config_section": "lmstudio",
             "headers_extra": {},
@@ -339,9 +344,8 @@ class LMStudioClient:
             "max_tokens": max_tokens,
             "stream": False,
         }
-        # LM Studio usa el modelo cargado, no necesita campo "model" explícito
-        if not proveedor.get("es_local"):
-            payload["model"] = modelos[0]
+        # Siempre enviar el modelo explícitamente (incluido LM Studio local)
+        payload["model"] = modelos[0]
 
         last_error = None
         model_index = 0

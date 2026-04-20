@@ -2069,6 +2069,14 @@ Disco {i}:
             bootstyle="warning"
         ).pack(side=RIGHT, padx=(0, 5))
 
+        # Botón Resumen IA
+        ttk.Button(
+            actions_frame,
+            text="📊 Resumen IA",
+            command=self._generar_resumen_ia,
+            bootstyle="dark"
+        ).pack(side=RIGHT, padx=(0, 5))
+
         ttk.Button(
             actions_frame,
             text="🔄 Actualizar Datos",
@@ -2102,15 +2110,18 @@ Disco {i}:
         table_frame.grid_columnconfigure(0, weight=1)
 
         # Campo de búsqueda
+        self._search_placeholder = "Buscar por N° Petición, Nombre o Apellido..."
         self.search_var_dashboard = tk.StringVar()
         self.search_var_dashboard.trace_add("write", self.filter_tabla)
-        search_entry = ttk.Entry(
+        self._search_entry_dashboard = ttk.Entry(
             table_frame,
             textvariable=self.search_var_dashboard,
             font=("Segoe UI", 11)
         )
-        search_entry.grid(row=0, column=0, sticky="ew", padx=10, pady=10)
-        search_entry.insert(0, "Buscar por N° Petición, Nombre o Apellido...")
+        self._search_entry_dashboard.grid(row=0, column=0, sticky="ew", padx=10, pady=10)
+        self._search_entry_dashboard.insert(0, self._search_placeholder)
+        self._search_entry_dashboard.bind("<FocusIn>", lambda e: self._on_search_focus_in(self._search_entry_dashboard, self.search_var_dashboard))
+        self._search_entry_dashboard.bind("<FocusOut>", lambda e: self._on_search_focus_out(self._search_entry_dashboard, self.search_var_dashboard))
 
         # Crear Sheet en el dashboard (compartiremos la misma instancia para sincronización)
         # IMPORTANTE: Usamos self.sheet para que sea la MISMA instancia que el visualizador original
@@ -2257,6 +2268,14 @@ Disco {i}:
             bootstyle="warning"
         ).pack(side=RIGHT, padx=(0, 5))
 
+        # Botón Resumen IA
+        ttk.Button(
+            actions_frame,
+            text="📊 Resumen IA",
+            command=self._generar_resumen_ia,
+            bootstyle="dark"
+        ).pack(side=RIGHT, padx=(0, 5))
+
         ttk.Button(
             actions_frame,
             text="🔄 Actualizar Datos",
@@ -2292,13 +2311,15 @@ Disco {i}:
         # Campo de búsqueda
         self.search_var = tk.StringVar()
         self.search_var.trace_add("write", self.filter_tabla)
-        search_entry = ttk.Entry(
+        self._search_entry = ttk.Entry(
             table_frame,
             textvariable=self.search_var,
             font=("Segoe UI", 11)
         )
-        search_entry.grid(row=0, column=0, sticky="ew", padx=10, pady=10)
-        search_entry.insert(0, "Buscar por N° Petición, Nombre o Apellido...")
+        self._search_entry.grid(row=0, column=0, sticky="ew", padx=10, pady=10)
+        self._search_entry.insert(0, self._search_placeholder)
+        self._search_entry.bind("<FocusIn>", lambda e: self._on_search_focus_in(self._search_entry, self.search_var))
+        self._search_entry.bind("<FocusOut>", lambda e: self._on_search_focus_out(self._search_entry, self.search_var))
 
         # V5.3.8: Sheet virtualizado tipo Excel (reemplaza Treeview)
         # VENTAJAS: Virtualización nativa, rendimiento profesional, comportamiento Excel
@@ -4701,7 +4722,20 @@ Disco {i}:
             logging.warning(f"Error ordenando por {col}: {e}")
 
     def filter_tabla(self, *args):
-        query = self.search_var.get().lower()
+        # Guardia: no filtrar si aún no hay datos cargados
+        if not hasattr(self, 'master_df') or self.master_df is None or self.master_df.empty:
+            return
+        # Leer de ambas search vars (dashboard y visualizador)
+        query = ""
+        placeholder = getattr(self, '_search_placeholder', '').lower()
+        if hasattr(self, 'search_var_dashboard'):
+            q = self.search_var_dashboard.get().strip().lower()
+            if q and q != placeholder:
+                query = q
+        if not query and hasattr(self, 'search_var'):
+            q = self.search_var.get().strip().lower()
+            if q and q != placeholder:
+                query = q
         if not query:
             self._populate_treeview(self.master_df)
             return
@@ -4727,6 +4761,16 @@ Disco {i}:
             mask |= df[search_cols[2]].str.lower().str.contains(query, na=False)
         
         self._populate_treeview(df[mask])
+
+    def _on_search_focus_in(self, entry_widget, string_var):
+        """Limpiar placeholder al enfocar el campo de búsqueda"""
+        if string_var.get() == self._search_placeholder:
+            string_var.set("")
+
+    def _on_search_focus_out(self, entry_widget, string_var):
+        """Restaurar placeholder si el campo queda vacío"""
+        if not string_var.get().strip():
+            string_var.set(self._search_placeholder)
 
     def mostrar_detalle_registro(self, event):
         # v6.0.15: Extraer TODAS las filas seleccionadas del evento y del Sheet
@@ -4804,6 +4848,254 @@ Disco {i}:
             self.export_system.export_full_database()
         except Exception as e:
             messagebox.showerror("Error de Exportación", f"Error al exportar la base de datos:\n{str(e)}")
+
+    # ================================================================
+    #  RESUMEN IA — Análisis profesional de la base de datos
+    # ================================================================
+
+    def _generar_resumen_ia(self):
+        """Genera un resumen profesional de la BD usando IA (en hilo aparte)."""
+        if not hasattr(self, 'master_df') or self.master_df is None or self.master_df.empty:
+            messagebox.showwarning("Sin Datos", "No hay datos en la base de datos para analizar.")
+            return
+
+        # Mostrar overlay mientras se genera
+        self._resumen_ia_overlay = tk.Toplevel(self)
+        overlay = self._resumen_ia_overlay
+        overlay.title("Generando Resumen IA...")
+        overlay.transient(self)
+        overlay.grab_set()
+        overlay.resizable(False, False)
+        overlay.protocol("WM_DELETE_WINDOW", lambda: None)
+
+        w, h = 420, 140
+        x = self.winfo_x() + (self.winfo_width() - w) // 2
+        y = self.winfo_y() + (self.winfo_height() - h) // 2
+        overlay.geometry(f"{w}x{h}+{x}+{y}")
+
+        frame = ttk.Frame(overlay, padding=25)
+        frame.pack(fill=BOTH, expand=True)
+        ttk.Label(frame, text="📊 Generando resumen con IA…", font=("Segoe UI", 13, "bold")).pack(pady=(0, 8))
+        ttk.Label(frame, text="Esto puede tomar unos segundos.", font=("Segoe UI", 10)).pack()
+        pb = ttk.Progressbar(frame, mode="indeterminate", bootstyle="info-striped")
+        pb.pack(fill=X, pady=(10, 0))
+        pb.start(15)
+
+        # Resultado compartido entre hilos
+        self._resumen_ia_result = {"done": False, "texto": "", "error": None}
+
+        thread = threading.Thread(target=self._resumen_ia_worker, daemon=True)
+        thread.start()
+        self.after(500, self._poll_resumen_ia)
+
+    def _compilar_estadisticas(self):
+        """Compila estadísticas locales del DataFrame para enviar a la IA."""
+        df = self.master_df.copy()
+        stats = {}
+
+        stats["total_casos"] = len(df)
+
+        # Rango de fechas
+        for col in ["Fecha Informe", "Fecha de informe", "Fecha de ingreso"]:
+            if col in df.columns:
+                fechas = pd.to_datetime(df[col], dayfirst=True, errors="coerce").dropna()
+                if not fechas.empty:
+                    stats["fecha_min"] = fechas.min().strftime("%d/%m/%Y")
+                    stats["fecha_max"] = fechas.max().strftime("%d/%m/%Y")
+                    break
+
+        # Distribución de malignidad
+        if "Malignidad" in df.columns:
+            stats["malignidad"] = df["Malignidad"].fillna("SIN DATO").value_counts().head(10).to_dict()
+
+        # Distribución por órgano
+        if "Organo" in df.columns:
+            stats["organos"] = df["Organo"].fillna("SIN DATO").value_counts().head(15).to_dict()
+
+        # Distribución por procedimiento
+        if "Procedimiento" in df.columns:
+            stats["procedimientos"] = df["Procedimiento"].fillna("SIN DATO").value_counts().head(10).to_dict()
+
+        # Diagnósticos más frecuentes
+        for diag_col in ["Diagnostico Principal", "Diagnostico Coloracion"]:
+            if diag_col in df.columns:
+                vals = df[diag_col].dropna().astype(str)
+                vals = vals[vals.str.strip() != ""]
+                if not vals.empty:
+                    stats[f"top_{diag_col.lower().replace(' ', '_')}"] = vals.value_counts().head(10).to_dict()
+
+        # Biomarcadores principales — solo los top 20 con más datos, valores compactos
+        bio_cols = [c for c in df.columns if c.startswith("IHQ_")]
+        bio_counts = {}
+        for bc in bio_cols:
+            serie = df[bc].dropna().astype(str).str.strip()
+            serie = serie[(serie != "") & (serie.str.upper() != "N/A") & (serie.str.upper() != "NO MENCIONADO")]
+            if len(serie) > 0:
+                bio_counts[bc] = len(serie)
+        # Top 20 biomarcadores por frecuencia, con sus 3 valores más comunes
+        top_bio = sorted(bio_counts.items(), key=lambda x: x[1], reverse=True)[:20]
+        bio_summary = {}
+        for bc, count in top_bio:
+            serie = df[bc].dropna().astype(str).str.strip()
+            serie = serie[(serie != "") & (serie.str.upper() != "N/A") & (serie.str.upper() != "NO MENCIONADO")]
+            bio_summary[bc] = {
+                "n": count,
+                "top": serie.value_counts().head(3).to_dict()
+            }
+        if bio_summary:
+            stats["biomarcadores_top20"] = bio_summary
+        stats["total_biomarcadores_con_datos"] = len(bio_counts)
+
+        # Servicio solicitante
+        if "Servicio" in df.columns:
+            stats["servicios"] = df["Servicio"].fillna("SIN DATO").value_counts().head(10).to_dict()
+
+        # Archivos de origen (solo conteo total)
+        if "Archivo origen" in df.columns:
+            stats["total_archivos_origen"] = df["Archivo origen"].nunique()
+
+        return stats
+
+    def _resumen_ia_worker(self):
+        """Hilo: compila estadísticas y llama a la IA."""
+        import json
+        try:
+            stats = self._compilar_estadisticas()
+            stats_json = json.dumps(stats, ensure_ascii=False, indent=2)
+
+            system_prompt = (
+                "/no_think\n"
+                "Eres un analista clínico-oncológico experto del Hospital Universitario del Valle (HUV). "
+                "El usuario te proporcionará un JSON con estadísticas de la base de datos de Inmunohistoquímica (IHQ). "
+                "Genera un INFORME PROFESIONAL en español con las siguientes secciones:\n"
+                "1. **Resumen Ejecutivo** — Párrafo breve con hallazgos clave.\n"
+                "2. **Volumen y Temporalidad** — Total de casos, rango de fechas, tendencia si se puede inferir.\n"
+                "3. **Clasificación por Malignidad** — Desglose MALIGNO/BENIGNO/otros, porcentajes.\n"
+                "4. **Distribución Anatómica** — Órganos más frecuentes con conteos.\n"
+                "5. **Diagnósticos Principales** — Top diagnósticos y observaciones clínicas relevantes.\n"
+                "6. **Perfil de Biomarcadores** — Biomarcadores más solicitados, valores frecuentes, relevancia clínica.\n"
+                "7. **Servicios y Procedimientos** — Servicios solicitantes y tipos de procedimiento.\n"
+                "8. **Observaciones y Recomendaciones** — Hallazgos notables, posibles áreas de mejora.\n\n"
+                "Usa formato Markdown. Sé preciso con los números. "
+                "Si algún dato no está disponible, omítelo sin inventar."
+            )
+
+            from core.llm_client import LMStudioClient
+            client = LMStudioClient(timeout=600)
+            resultado = client.completar(
+                prompt=f"Estadísticas de la base de datos IHQ del HUV:\n\n```json\n{stats_json}\n```",
+                system_prompt=system_prompt,
+                temperature=0.3,
+                max_tokens=4000,
+            )
+
+            if resultado.get("exito"):
+                self._resumen_ia_result["texto"] = resultado.get("respuesta", "Sin contenido.")
+            else:
+                self._resumen_ia_result["error"] = resultado.get("error", "Error desconocido de IA.")
+
+        except Exception as e:
+            self._resumen_ia_result["error"] = str(e)
+        finally:
+            self._resumen_ia_result["done"] = True
+
+    def _poll_resumen_ia(self):
+        """Polling main thread: espera a que el hilo de resumen IA termine."""
+        if not self._resumen_ia_result["done"]:
+            self.after(500, self._poll_resumen_ia)
+            return
+
+        # Cerrar overlay
+        if hasattr(self, '_resumen_ia_overlay') and self._resumen_ia_overlay:
+            self._resumen_ia_overlay.grab_release()
+            self._resumen_ia_overlay.destroy()
+            self._resumen_ia_overlay = None
+
+        error = self._resumen_ia_result.get("error")
+        if error:
+            messagebox.showerror("Error Resumen IA", f"No se pudo generar el resumen:\n{error}")
+            return
+
+        texto = self._resumen_ia_result["texto"]
+        self._mostrar_ventana_resumen_ia(texto)
+
+    def _mostrar_ventana_resumen_ia(self, texto: str):
+        """Muestra el resumen generado en una ventana con opción de exportar."""
+        win = tk.Toplevel(self)
+        win.title("📊 Resumen IA — Base de Datos IHQ")
+        win.geometry("900x700")
+        win.transient(self)
+
+        # Frame superior con título y botón exportar
+        top_frame = ttk.Frame(win, padding=10)
+        top_frame.pack(fill=X)
+
+        ttk.Label(
+            top_frame,
+            text="📊 Resumen Profesional generado por IA",
+            font=("Segoe UI", 14, "bold")
+        ).pack(side=LEFT)
+
+        ttk.Button(
+            top_frame,
+            text="💾 Exportar",
+            command=lambda: self._exportar_resumen_ia(texto),
+            bootstyle="success"
+        ).pack(side=RIGHT, padx=5)
+
+        ttk.Button(
+            top_frame,
+            text="📋 Copiar",
+            command=lambda: self._copiar_resumen_ia(texto, win),
+            bootstyle="info"
+        ).pack(side=RIGHT, padx=5)
+
+        # Texto con scroll
+        text_frame = ttk.Frame(win, padding=(10, 0, 10, 10))
+        text_frame.pack(fill=BOTH, expand=True)
+
+        text_widget = tk.Text(
+            text_frame,
+            wrap=tk.WORD,
+            font=("Consolas", 11),
+            padx=12,
+            pady=12,
+            relief="flat",
+            borderwidth=0
+        )
+        scrollbar = ttk.Scrollbar(text_frame, orient=tk.VERTICAL, command=text_widget.yview)
+        text_widget.configure(yscrollcommand=scrollbar.set)
+        scrollbar.pack(side=RIGHT, fill=Y)
+        text_widget.pack(fill=BOTH, expand=True)
+
+        text_widget.insert("1.0", texto)
+        text_widget.configure(state="disabled")
+
+    def _exportar_resumen_ia(self, texto: str):
+        """Guarda el resumen IA en un archivo .txt o .md."""
+        fecha_str = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+        default_name = f"Resumen_IA_HUV_{fecha_str}"
+
+        filepath = filedialog.asksaveasfilename(
+            title="Exportar Resumen IA",
+            defaultextension=".md",
+            initialfile=default_name,
+            filetypes=[
+                ("Markdown", "*.md"),
+                ("Texto plano", "*.txt"),
+                ("Todos los archivos", "*.*")
+            ]
+        )
+        if filepath:
+            with open(filepath, "w", encoding="utf-8") as f:
+                f.write(texto)
+            messagebox.showinfo("Exportación Exitosa", f"Resumen guardado en:\n{filepath}")
+
+    def _copiar_resumen_ia(self, texto: str, ventana: tk.Toplevel):
+        """Copia el resumen IA al portapapeles."""
+        ventana.clipboard_clear()
+        ventana.clipboard_append(texto)
+        messagebox.showinfo("Copiado", "Resumen copiado al portapapeles.")
 
     def _export_selected_data(self):
         """Exportar datos seleccionados usando el sistema mejorado (v6.0.12: con logging mejorado)"""
