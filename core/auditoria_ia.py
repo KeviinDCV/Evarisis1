@@ -380,7 +380,7 @@ class AuditoriaIA:
             max_tokens = 2000
         else:
             prompt = self._preparar_prompt_compacto(debug_map, datos_bd)
-            max_tokens = 2000
+            max_tokens = 4000
 
         # Log tamaño del prompt para diagnóstico
         prompt_chars = len(prompt)
@@ -437,6 +437,17 @@ class AuditoriaIA:
                         "correcciones_aplicadas": 0
                     }
                 correcciones_json = parsed
+
+            # Normalizar: si el modelo devolvió solo la lista de correcciones,
+            # envolverla en el dict esperado
+            if isinstance(correcciones_json, list):
+                correcciones_json = {"correcciones": correcciones_json}
+            elif not isinstance(correcciones_json, dict):
+                return {
+                    "exito": False,
+                    "error": f"Respuesta del LLM con tipo inesperado: {type(correcciones_json).__name__}",
+                    "correcciones_aplicadas": 0
+                }
 
             # 4. Aplicar correcciones a BD
             if progress_callback:
