@@ -424,31 +424,19 @@ class AuditoriaIA:
             correcciones_json = respuesta_llm["respuesta"]
 
             if isinstance(correcciones_json, str):
-                # Limpiar markdown si existe (```json ... ```)
-                respuesta_limpia = correcciones_json.strip()
-                if respuesta_limpia.startswith("```"):
-                    # Extraer JSON entre ```json y ```
-                    import re
-                    match = re.search(r'```(?:json)?\s*(\{.*\})\s*```', respuesta_limpia, re.DOTALL)
-                    if match:
-                        respuesta_limpia = match.group(1)
-                    else:
-                        # Intentar extraer todo entre ``` y ```
-                        match = re.search(r'```\s*(.*?)\s*```', respuesta_limpia, re.DOTALL)
-                        if match:
-                            respuesta_limpia = match.group(1)
-
-                try:
-                    correcciones_json = json.loads(respuesta_limpia)
-                except json.JSONDecodeError as e:
-                    # Intentar recuperar JSON truncado
-                    correcciones_json = self._recuperar_json_truncado(respuesta_limpia)
-                    if correcciones_json is None:
-                        return {
-                            "exito": False,
-                            "error": f"Respuesta del LLM no es JSON válido: {e}\nRespuesta: {respuesta_limpia[:200]}",
-                            "correcciones_aplicadas": 0
-                        }
+                # Usar extractor robusto (tolera <think>, prefacios, code fences)
+                from core.llm_client import _extraer_json_robusto
+                parsed = _extraer_json_robusto(correcciones_json)
+                if parsed is None:
+                    # Fallback: intentar recuperar JSON truncado
+                    parsed = self._recuperar_json_truncado(correcciones_json)
+                if parsed is None:
+                    return {
+                        "exito": False,
+                        "error": f"Respuesta del LLM no es JSON válido.\nRespuesta: {correcciones_json[:300]}",
+                        "correcciones_aplicadas": 0
+                    }
+                correcciones_json = parsed
 
             # 4. Aplicar correcciones a BD
             if progress_callback:
