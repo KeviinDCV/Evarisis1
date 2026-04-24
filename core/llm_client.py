@@ -52,6 +52,79 @@ if sys.platform.startswith('win'):
         pass
 
 
+def _extraer_json_robusto(texto: str) -> Optional[Union[Dict, List]]:
+    """
+    Extrae JSON de una respuesta LLM tolerando:
+    - Bloques de razonamiento <think>...</think> (Qwen3, DeepSeek, etc.)
+    - Prefacios "Thinking Process:", "Reasoning:", etc.
+    - Code fences ```json ... ```
+    - Texto libre alrededor del JSON
+
+    Devuelve el objeto parseado o None si no se pudo extraer.
+    """
+    import re as _re
+
+    if not texto or not isinstance(texto, str):
+        return None
+
+    t = texto.strip()
+
+    # 1) Eliminar bloques <think>...</think> (Qwen3 reasoning)
+    t = _re.sub(r'<think>.*?</think>', '', t, flags=_re.DOTALL | _re.IGNORECASE).strip()
+    # También si quedó <think> sin cierre, descartar hasta el final del bloque
+    t = _re.sub(r'<think>.*', '', t, flags=_re.DOTALL | _re.IGNORECASE).strip()
+
+    # 2) Intentar bloque fenced ```json ... ``` o ``` ... ```
+    m = _re.search(r'```(?:json)?\s*(\{.*?\}|\[.*?\])\s*```', t, _re.DOTALL)
+    candidatos: List[str] = []
+    if m:
+        candidatos.append(m.group(1))
+
+    # 3) Parse directo
+    candidatos.append(t)
+
+    # 4) Primer objeto/array balanceado
+    for abre, cierra in (('{', '}'), ('[', ']')):
+        idx = t.find(abre)
+        while idx != -1:
+            depth = 0
+            in_str = False
+            esc = False
+            for i in range(idx, len(t)):
+                ch = t[i]
+                if in_str:
+                    if esc:
+                        esc = False
+                    elif ch == '\\':
+                        esc = True
+                    elif ch == '"':
+                        in_str = False
+                    continue
+                if ch == '"':
+                    in_str = True
+                elif ch == abre:
+                    depth += 1
+                elif ch == cierra:
+                    depth -= 1
+                    if depth == 0:
+                        candidatos.append(t[idx:i + 1])
+                        break
+            idx = t.find(abre, idx + 1)
+            if len(candidatos) > 20:
+                break
+
+    for c in candidatos:
+        c = c.strip()
+        if not c:
+            continue
+        try:
+            return json.loads(c)
+        except (json.JSONDecodeError, ValueError):
+            continue
+
+    return None
+
+
 class LMStudioClient:
     """Cliente LLM multi-proveedor (Gemini, Groq, OpenRouter) - todos gratuitos"""
 
@@ -65,8 +138,9 @@ class LMStudioClient:
     PROVEEDORES_CONFIG = [
         {
             "nombre": "LM Studio (Local)",
-            "endpoint": "http://localhost:1234/v1",
+            "endpoint": "http://127.0.0.1:1234/v1",
             "modelos": [
+                "qwen/qwen3.5-9b",
                 "qwen/qwen3-14b",
                 "qwen2.5-7b-instruct",
                 "google/gemma-3-4b",
@@ -347,6 +421,12 @@ class LMStudioClient:
         # Siempre enviar el modelo explícitamente (incluido LM Studio local)
         payload["model"] = modelos[0]
 
+        # Desactivar "thinking mode" en modelos de razonamiento (Qwen3, etc.)
+        # para evitar que emitan el Chain-of-Thought dentro de `content`
+        # y rompan el parseo JSON. LM Studio soporta chat_template_kwargs.
+        if proveedor.get("es_local"):
+            payload["chat_template_kwargs"] = {"enable_thinking": False}
+
         last_error = None
         model_index = 0
         intentos_modelo = 0
@@ -436,15 +516,10 @@ class LMStudioClient:
                     tokens = data.get("usage", {})
                     contenido = respuesta
                     if formato_json:
-                        try:
-                            texto_limpio = respuesta.strip()
-                            if texto_limpio.startswith("```"):
-                                lineas = texto_limpio.split("\n")
-                                lineas = [l for l in lineas if not l.strip().startswith("```")]
-                                texto_limpio = "\n".join(lineas)
-                            contenido = json.loads(texto_limpio)
-                        except json.JSONDecodeError:
+                        contenido = _extraer_json_robusto(respuesta)
+                        if contenido is None:
                             logging.info("⚠️ Respuesta no es JSON válido, devolviendo texto plano")
+                            contenido = respuesta
 
                     return {
                         "exito": True,
