@@ -140,11 +140,12 @@ class LMStudioClient:
             "nombre": "LM Studio (Local)",
             "endpoint": "http://127.0.0.1:1234/v1",
             "modelos": [
+                "google/gemma-4-e4b",
+                "google/gemma-3n-e4b",
+                "google/gemma-3-4b",
                 "qwen/qwen3.5-9b",
                 "qwen/qwen3-14b",
                 "qwen2.5-7b-instruct",
-                "google/gemma-3-4b",
-                "google/gemma-3n-e4b",
                 "nvidia/nemotron-3-nano-4b",
                 "openai/gpt-oss-20b",
             ],
@@ -224,7 +225,13 @@ class LMStudioClient:
             if prov_config.get("es_local"):
                 # LM Studio local: verificar si está corriendo
                 if self._verificar_lmstudio(prov_config["endpoint"]):
-                    self._proveedores_disponibles.append({**prov_config, "api_key": "local"})
+                    # Usar SOLO modelos realmente cargados
+                    modelos_cargados = self._obtener_modelos_lmstudio(prov_config["endpoint"])
+                    cfg = {**prov_config, "api_key": "local"}
+                    if modelos_cargados:
+                        cfg["modelos"] = modelos_cargados
+                        logging.info(f"   📦 Modelos cargados en LM Studio: {modelos_cargados}")
+                    self._proveedores_disponibles.append(cfg)
                 else:
                     logging.warning("⚠️ LM Studio no detectado en localhost:1234")
                     logging.warning("   Inicia LM Studio y carga un modelo para usar IA local")
@@ -306,6 +313,20 @@ class LMStudioClient:
             return False
         except Exception:
             return False
+
+    def _obtener_modelos_lmstudio(self, endpoint: str) -> List[str]:
+        """Obtiene la lista de modelos CARGADOS actualmente en LM Studio"""
+        try:
+            resp = requests.get(f"{endpoint}/models", timeout=3)
+            if resp.status_code == 200:
+                data = resp.json()
+                ids = [m.get("id", "") for m in data.get("data", []) if m.get("id")]
+                # Filtrar modelos de embeddings (no sirven para chat)
+                ids = [i for i in ids if "embed" not in i.lower()]
+                return ids
+        except Exception as e:
+            logging.warning(f"No se pudieron listar modelos de LM Studio: {e}")
+        return []
 
     def _detectar_modelo(self):
         """Compatibilidad: no-op"""
@@ -420,6 +441,10 @@ class LMStudioClient:
         }
         # Siempre enviar el modelo explícitamente (incluido LM Studio local)
         payload["model"] = modelos[0]
+
+        # Forzar salida JSON cuando se pida (LM Studio / OpenAI compatible)
+        if formato_json:
+            payload["response_format"] = {"type": "json_object"}
 
         # Desactivar "thinking mode" en modelos de razonamiento (Qwen3, etc.)
         # para evitar que emitan el Chain-of-Thought dentro de `content`
@@ -538,6 +563,24 @@ class LMStudioClient:
                 # ---- HTTP 429/404/400: Rate limit o modelo no disponible ----
                 elif response.status_code in (429, 404, 400):
                     status = response.status_code
+
+                    # Capturar el body real del error para diagnóstico
+                    try:
+                        err_body = response.json()
+                        err_text = json.dumps(err_body)[:300]
+                    except Exception:
+                        err_text = response.text[:300]
+                    logging.warning(f"⚠️ [{nombre}] HTTP {status}: {err_text}")
+
+                    # 400 en LM Studio: probable incompatibilidad con response_format
+                    # o chat_template_kwargs. Reintentar SIN esos parámetros.
+                    if (status == 400 and proveedor.get("es_local")
+                            and ("response_format" in payload or "chat_template_kwargs" in payload)):
+                        logging.info(f"   🔄 [{nombre}] Reintentando sin response_format/chat_template_kwargs...")
+                        payload.pop("response_format", None)
+                        payload.pop("chat_template_kwargs", None)
+                        continue
+
                     if model_index < len(modelos) - 1:
                         model_index += 1
                         payload["model"] = modelos[model_index]
