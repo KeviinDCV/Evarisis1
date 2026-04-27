@@ -4915,15 +4915,25 @@ Disco {i}:
         if "Malignidad" in df.columns:
             stats["malignidad"] = df["Malignidad"].fillna("SIN DATO").value_counts().head(10).to_dict()
 
-        # Distribución por órgano — UNIFICADO (MAMA DERECHA + MAMA IZQUIERDA → MAMA)
-        if "Organo" in df.columns:
-            organos = df["Organo"].fillna("SIN DATO").astype(str).str.upper().str.strip()
-            # Unificar lateralidades
-            organos = organos.str.replace(r'\s*(DERECH[AO]|IZQUIERD[AO])\s*', '', regex=True).str.strip()
-            # Unificar prefijos BX/BX DE
-            organos = organos.str.replace(r'^BX\s+DE\s+', 'BX ', regex=True)
-            stats["organos_unificados"] = organos.value_counts().head(15).to_dict()
-
+        # Distribución por órgano — NORMALIZACIÓN CANÓNICA
+        # Usa core/normalizador_organos para agrupar por categoría anatómica
+        # real (MAMA, COLON, MEDULA OSEA, etc.) en lugar de strings literales.
+        # Prefiere IHQ_ORGANO (más limpio) sobre Organo.
+        from core.normalizador_organos import (
+            normalizar_organo,
+            elegir_columna_organo,
+        )
+        col_organo = elegir_columna_organo(df.columns)
+        if col_organo is not None:
+            serie_norm = df[col_organo].apply(normalizar_organo)
+            total_validos = int((serie_norm != "SIN DATO").sum())
+            top = serie_norm.value_counts()
+            # Excluir SIN DATO del ranking principal
+            top_sin_nulos = top[top.index != "SIN DATO"]
+            stats["organos_normalizados"] = top_sin_nulos.head(20).to_dict()
+            stats["organos_total_con_dato"] = total_validos
+            stats["organos_columna_fuente"] = col_organo
+            stats["organos_categorias_distintas"] = int(top_sin_nulos.shape[0])
         # Distribución por procedimiento — filtrar "INMUNOHISTOQUIMICA" (no es procedimiento quirúrgico)
         if "Procedimiento" in df.columns:
             procs = df["Procedimiento"].fillna("SIN DATO").astype(str).str.upper().str.strip()
@@ -4990,12 +5000,27 @@ Disco {i}:
 
             system_prompt = (
                 "/no_think\n"
-                "Eres analista clínico-oncológico del HUV. "
-                "Genera un informe en español Markdown con estas secciones: "
-                "1.Resumen Ejecutivo 2.Volumen y Temporalidad 3.Malignidad (porcentajes) "
-                "4.Distribución Anatómica 5.Diagnósticos Principales 6.Biomarcadores "
-                "7.Servicios y Procedimientos 8.Observaciones. "
-                "Sé conciso y preciso con los números. No inventes datos."
+                "Eres analista clínico-oncológico del HUV. Recibirás estadísticas "
+                "PRE-CALCULADAS y EXACTAS. NO debes recalcular ni redondear. "
+                "Reglas obligatorias:\n"
+                "1) Usa SOLO los números provistos. Cita conteos exactos.\n"
+                "2) Para 'Distribución Anatómica' usa el campo 'organos_normalizados' "
+                "(ya unificado: MAMA agrupa todas las variantes/lateralidades, "
+                "COLON incluye recto/sigmoide, etc.). Indica el total con dato "
+                "('organos_total_con_dato') y el número de categorías distintas.\n"
+                "3) Calcula porcentajes sobre 'total_casos' o el denominador "
+                "explícito. Muestra siempre el N usado.\n"
+                "4) Si un dato no está en las estadísticas, escribe 'no disponible'.\n"
+                "5) NO inventes diagnósticos, biomarcadores ni cifras.\n\n"
+                "Estructura del informe (Markdown español):\n"
+                "1. Resumen Ejecutivo\n"
+                "2. Volumen y Temporalidad\n"
+                "3. Malignidad (porcentajes con N)\n"
+                "4. Distribución Anatómica (top categorías canónicas)\n"
+                "5. Diagnósticos Principales\n"
+                "6. Biomarcadores (top 15 con N y resultado predominante)\n"
+                "7. Servicios y Procedimientos\n"
+                "8. Observaciones clínicas (sin sobre-interpretar)"
             )
 
             from core.llm_client import LMStudioClient
