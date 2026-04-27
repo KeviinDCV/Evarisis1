@@ -4950,6 +4950,23 @@ Disco {i}:
                 if not vals.empty:
                     stats[f"top_{diag_col.lower().replace(' ', '_')}"] = vals.value_counts().head(10).to_dict()
 
+        # Diagnósticos CATEGORIZADOS — agrupa los 883 diagnósticos literales
+        # distintos en categorías clínicas (CARCINOMA DUCTAL DE MAMA,
+        # ADENOCARCINOMA, LINFOMA, etc.). Esto refleja el volumen real
+        # del HUV en lugar de strings literales fragmentados.
+        from core.normalizador_diagnosticos import categorizar_diagnostico
+        if "Diagnostico Principal" in df.columns:
+            cat_serie = df["Diagnostico Principal"].apply(categorizar_diagnostico)
+            cat_top = cat_serie.value_counts()
+            cat_clinico = cat_top[~cat_top.index.isin(["SIN DATO", "ESTUDIO IHQ (SIN DIAGNOSTICO ESPECIFICO)"])]
+            stats["diagnosticos_categorizados"] = cat_clinico.head(20).to_dict()
+            stats["diagnosticos_total_categorizado"] = int(
+                cat_top[~cat_top.index.isin(["SIN DATO", "OTRO / NO CATEGORIZADO"])].sum()
+            )
+            stats["diagnosticos_otro_no_categorizado"] = int(cat_top.get("OTRO / NO CATEGORIZADO", 0))
+            stats["diagnosticos_estudio_ihq_sin_dx"] = int(cat_top.get("ESTUDIO IHQ (SIN DIAGNOSTICO ESPECIFICO)", 0))
+            stats["diagnosticos_sin_dato"] = int(cat_top.get("SIN DATO", 0))
+
         # Biomarcadores principales — top 15, valores compactos
         bio_cols = [c for c in df.columns if c.startswith("IHQ_")]
         # Excluir columnas auxiliares (no son biomarcadores clínicos)
@@ -4995,6 +5012,8 @@ Disco {i}:
         import json
         try:
             stats = self._compilar_estadisticas()
+            # Guardamos las estadísticas crudas para el dashboard de gráficos
+            self._resumen_ia_result["stats"] = stats
             # JSON compacto (sin indent) para reducir tokens de prompt
             stats_json = json.dumps(stats, ensure_ascii=False, separators=(",", ":"))
 
@@ -5008,17 +5027,29 @@ Disco {i}:
                 "(ya unificado: MAMA agrupa todas las variantes/lateralidades, "
                 "COLON incluye recto/sigmoide, etc.). Indica el total con dato "
                 "('organos_total_con_dato') y el número de categorías distintas.\n"
-                "3) Calcula porcentajes sobre 'total_casos' o el denominador "
+                "3) Para 'Diagnósticos Principales' usa SIEMPRE 'diagnosticos_categorizados' "
+                "(agrupa los diagnósticos literales fragmentados en categorías clínicas: "
+                "CARCINOMA DUCTAL DE MAMA, ADENOCARCINOMA, LINFOMA, etc.). NO uses "
+                "'top_diagnostico_principal' como fuente principal: solo cítalo como "
+                "ejemplo del literal más frecuente dentro de cada categoría. Reporta también "
+                "'diagnosticos_estudio_ihq_sin_dx' (casos cuyo diagnóstico es solo el "
+                "rótulo 'Estudio de IHQ' sin diagnóstico específico) y "
+                "'diagnosticos_otro_no_categorizado' (diagnósticos raros/únicos).\n"
+                "4) Calcula porcentajes sobre 'total_casos' o el denominador "
                 "explícito. Muestra siempre el N usado.\n"
-                "4) Si un dato no está en las estadísticas, escribe 'no disponible'.\n"
-                "5) NO inventes diagnósticos, biomarcadores ni cifras.\n\n"
+                "5) Para biomarcadores: 'biomarcadores_top15' es un dict {marcador: "
+                "{n: <casos evaluados>, top: {valor: conteo}}}. NO sumes los 'n' como "
+                "si fueran casos únicos: un mismo paciente aparece en varios marcadores. "
+                "El total de marcadores distintos está en 'total_biomarcadores_distintos'.\n"
+                "6) Si un dato no está en las estadísticas, escribe 'no disponible'.\n"
+                "7) NO inventes diagnósticos, biomarcadores ni cifras.\n\n"
                 "Estructura del informe (Markdown español):\n"
-                "1. Resumen Ejecutivo\n"
+                "1. Resumen Ejecutivo (volumen, periodo, hallazgos principales)\n"
                 "2. Volumen y Temporalidad\n"
-                "3. Malignidad (porcentajes con N)\n"
+                "3. Malignidad (porcentajes con N sobre total_casos)\n"
                 "4. Distribución Anatómica (top categorías canónicas)\n"
-                "5. Diagnósticos Principales\n"
-                "6. Biomarcadores (top 15 con N y resultado predominante)\n"
+                "5. Diagnósticos Principales (categorías clínicas + casos sin dx específico)\n"
+                "6. Biomarcadores (top 15 con N evaluados y resultado predominante)\n"
                 "7. Servicios y Procedimientos\n"
                 "8. Observaciones clínicas (sin sobre-interpretar)"
             )
@@ -5029,7 +5060,7 @@ Disco {i}:
                 prompt=f"Estadísticas IHQ del HUV:\n{stats_json}",
                 system_prompt=system_prompt,
                 temperature=0.3,
-                max_tokens=2500,
+                max_tokens=4000,
             )
 
             if resultado.get("exito"):
@@ -5060,59 +5091,353 @@ Disco {i}:
             return
 
         texto = self._resumen_ia_result["texto"]
-        self._mostrar_ventana_resumen_ia(texto)
+        stats = self._resumen_ia_result.get("stats", {})
+        self._mostrar_ventana_resumen_ia(texto, stats)
 
-    def _mostrar_ventana_resumen_ia(self, texto: str):
-        """Muestra el resumen generado en una ventana con opción de exportar."""
+    def _mostrar_ventana_resumen_ia(self, texto: str, stats: dict | None = None):
+        """Muestra el resumen IA con dashboard: Informe + Gráficos + Tablas."""
+        stats = stats or {}
         win = tk.Toplevel(self)
         win.title("📊 Resumen IA — Base de Datos IHQ")
-        win.geometry("900x700")
+        win.geometry("1200x800")
         win.transient(self)
 
-        # Frame superior con título y botón exportar
+        # ── Cabecera ──────────────────────────────────────────────
         top_frame = ttk.Frame(win, padding=10)
         top_frame.pack(fill=X)
 
         ttk.Label(
             top_frame,
             text="📊 Resumen Profesional generado por IA",
-            font=("Segoe UI", 14, "bold")
+            font=("Segoe UI", 14, "bold"),
         ).pack(side=LEFT)
 
         ttk.Button(
             top_frame,
             text="💾 Exportar",
             command=lambda: self._exportar_resumen_ia(texto),
-            bootstyle="success"
+            bootstyle="success",
         ).pack(side=RIGHT, padx=5)
 
         ttk.Button(
             top_frame,
             text="📋 Copiar",
             command=lambda: self._copiar_resumen_ia(texto, win),
-            bootstyle="info"
+            bootstyle="info",
         ).pack(side=RIGHT, padx=5)
 
-        # Texto con scroll
-        text_frame = ttk.Frame(win, padding=(10, 0, 10, 10))
+        # ── KPI cards ─────────────────────────────────────────────
+        kpi_frame = ttk.Frame(win, padding=(10, 0, 10, 10))
+        kpi_frame.pack(fill=X)
+        self._render_kpi_cards(kpi_frame, stats)
+
+        # ── Notebook con pestañas ─────────────────────────────────
+        notebook = ttk.Notebook(win)
+        notebook.pack(fill=BOTH, expand=True, padx=10, pady=(0, 10))
+
+        # Tab 1 — Informe IA (markdown con formato)
+        tab_informe = ttk.Frame(notebook)
+        notebook.add(tab_informe, text="📝 Informe IA")
+        self._render_informe_markdown(tab_informe, texto)
+
+        # Tab 2 — Gráficos (matplotlib)
+        tab_graficos = ttk.Frame(notebook)
+        notebook.add(tab_graficos, text="📊 Gráficos")
+        self._render_graficos_dashboard(tab_graficos, stats)
+
+        # Tab 3 — Tablas (Treeviews limpios)
+        tab_tablas = ttk.Frame(notebook)
+        notebook.add(tab_tablas, text="📋 Tablas")
+        self._render_tablas_dashboard(tab_tablas, stats)
+
+    # ──────────────────────────────────────────────────────────────
+    # Helpers de presentación del Resumen IA
+    # ──────────────────────────────────────────────────────────────
+
+    def _render_kpi_cards(self, parent, stats: dict):
+        """Tarjetas con métricas clave en la parte superior."""
+        if not stats:
+            return
+
+        total = stats.get("total_casos", 0)
+        malig = stats.get("malignidad", {}) or {}
+        n_malig = sum(v for k, v in malig.items() if "MALIGN" in str(k).upper() and "BENIG" not in str(k).upper())
+        # Si no se detectó por keyword, usa la primera clave
+        if n_malig == 0 and malig:
+            primera = next(iter(malig.keys()))
+            if "MALIGN" in primera.upper() and "BENIG" not in primera.upper():
+                n_malig = malig[primera]
+        pct_malig = (n_malig / total * 100) if total else 0
+
+        organos_dist = stats.get("organos_categorias_distintas", 0)
+        bio_total = stats.get("total_biomarcadores_distintos", 0)
+        dx_cat = stats.get("diagnosticos_total_categorizado", 0)
+
+        cards = [
+            ("Total casos", f"{total:,}", "primary"),
+            ("% Malignos", f"{pct_malig:.1f}%", "danger"),
+            ("Categorías anatómicas", f"{organos_dist}", "info"),
+            ("Biomarcadores distintos", f"{bio_total}", "warning"),
+            ("Diagnósticos categorizados", f"{dx_cat:,}", "success"),
+        ]
+
+        for titulo, valor, estilo in cards:
+            card = ttk.Frame(parent, padding=10, bootstyle=estilo)
+            card.pack(side=LEFT, fill=BOTH, expand=True, padx=4)
+            ttk.Label(
+                card, text=titulo, font=("Segoe UI", 9),
+                bootstyle=f"inverse-{estilo}",
+            ).pack(anchor="w")
+            ttk.Label(
+                card, text=valor, font=("Segoe UI", 18, "bold"),
+                bootstyle=f"inverse-{estilo}",
+            ).pack(anchor="w")
+
+    def _render_informe_markdown(self, parent, texto: str):
+        """Renderiza el markdown con tipografía y colores básicos."""
+        text_frame = ttk.Frame(parent, padding=10)
         text_frame.pack(fill=BOTH, expand=True)
 
         text_widget = tk.Text(
             text_frame,
             wrap=tk.WORD,
-            font=("Consolas", 11),
-            padx=12,
-            pady=12,
+            font=("Segoe UI", 11),
+            padx=20,
+            pady=15,
             relief="flat",
-            borderwidth=0
+            borderwidth=0,
+            spacing1=4,
+            spacing3=4,
         )
         scrollbar = ttk.Scrollbar(text_frame, orient=tk.VERTICAL, command=text_widget.yview)
         text_widget.configure(yscrollcommand=scrollbar.set)
         scrollbar.pack(side=RIGHT, fill=Y)
         text_widget.pack(fill=BOTH, expand=True)
 
-        text_widget.insert("1.0", texto)
+        # Tags de estilo
+        text_widget.tag_configure("h1", font=("Segoe UI", 18, "bold"), foreground="#0d6efd",
+                                  spacing1=12, spacing3=8)
+        text_widget.tag_configure("h2", font=("Segoe UI", 14, "bold"), foreground="#198754",
+                                  spacing1=10, spacing3=6)
+        text_widget.tag_configure("h3", font=("Segoe UI", 12, "bold"), foreground="#6c757d",
+                                  spacing1=8, spacing3=4)
+        text_widget.tag_configure("bold", font=("Segoe UI", 11, "bold"))
+        text_widget.tag_configure("bullet", lmargin1=20, lmargin2=40)
+        text_widget.tag_configure("table", font=("Consolas", 10), foreground="#212529")
+        text_widget.tag_configure("hr", foreground="#dee2e6")
+
+        # Parser sencillo de markdown línea a línea
+        import re as _re
+        for raw in texto.splitlines():
+            linea = raw.rstrip()
+            if linea.startswith("# "):
+                text_widget.insert("end", linea[2:] + "\n", "h1")
+            elif linea.startswith("## "):
+                text_widget.insert("end", linea[3:] + "\n", "h2")
+            elif linea.startswith("### "):
+                text_widget.insert("end", linea[4:] + "\n", "h3")
+            elif linea.strip() in {"---", "***"}:
+                text_widget.insert("end", "─" * 80 + "\n", "hr")
+            elif linea.lstrip().startswith(("* ", "- ")):
+                text_widget.insert("end", "  • " + linea.lstrip()[2:] + "\n", "bullet")
+            elif linea.startswith("|"):
+                text_widget.insert("end", linea + "\n", "table")
+            else:
+                # Sustituye **negritas** por tag
+                pos = 0
+                for m in _re.finditer(r"\*\*(.+?)\*\*", linea):
+                    text_widget.insert("end", linea[pos:m.start()])
+                    text_widget.insert("end", m.group(1), "bold")
+                    pos = m.end()
+                text_widget.insert("end", linea[pos:] + "\n")
+
         text_widget.configure(state="disabled")
+
+    def _render_graficos_dashboard(self, parent, stats: dict):
+        """Tablero matplotlib con 4 gráficos principales."""
+        if not stats:
+            ttk.Label(parent, text="No hay estadísticas disponibles para graficar.",
+                      font=("Segoe UI", 11)).pack(pady=40)
+            return
+
+        try:
+            import matplotlib
+            matplotlib.use("TkAgg")
+            from matplotlib.figure import Figure
+            from matplotlib.backends.backend_tkagg import (
+                FigureCanvasTkAgg, NavigationToolbar2Tk,
+            )
+        except Exception as e:  # matplotlib no disponible
+            ttk.Label(
+                parent,
+                text=f"Matplotlib no disponible: {e}",
+                font=("Segoe UI", 10),
+            ).pack(pady=40)
+            return
+
+        fig = Figure(figsize=(12, 9), dpi=100, tight_layout=True)
+        fig.patch.set_facecolor("#ffffff")
+
+        # 1) Malignidad — pie
+        ax1 = fig.add_subplot(2, 2, 1)
+        malig = stats.get("malignidad", {}) or {}
+        if malig:
+            etiquetas = list(malig.keys())[:5]
+            valores = [malig[k] for k in etiquetas]
+            colores = ["#dc3545", "#198754", "#ffc107", "#6c757d", "#0dcaf0"][:len(etiquetas)]
+            ax1.pie(valores, labels=etiquetas, autopct="%1.1f%%",
+                    colors=colores, startangle=90, textprops={"fontsize": 9})
+            ax1.set_title("Malignidad", fontsize=12, fontweight="bold")
+        else:
+            ax1.text(0.5, 0.5, "Sin datos", ha="center", va="center")
+            ax1.axis("off")
+
+        # 2) Top órganos — barra horizontal
+        ax2 = fig.add_subplot(2, 2, 2)
+        organos = stats.get("organos_normalizados", {}) or {}
+        if organos:
+            top = list(organos.items())[:10]
+            top.reverse()
+            etq = [k for k, _ in top]
+            val = [v for _, v in top]
+            ax2.barh(etq, val, color="#0d6efd")
+            ax2.set_title("Top 10 órganos (canónicos)", fontsize=12, fontweight="bold")
+            ax2.tick_params(axis="y", labelsize=9)
+            for i, v in enumerate(val):
+                ax2.text(v, i, f" {v}", va="center", fontsize=8)
+        else:
+            ax2.text(0.5, 0.5, "Sin datos", ha="center", va="center")
+            ax2.axis("off")
+
+        # 3) Top diagnósticos — barra horizontal
+        ax3 = fig.add_subplot(2, 2, 3)
+        dx = stats.get("diagnosticos_categorizados", {}) or {}
+        # Excluir "OTRO / NO CATEGORIZADO" del gráfico para ver categorías clínicas
+        dx = {k: v for k, v in dx.items() if k != "OTRO / NO CATEGORIZADO"}
+        if dx:
+            top = list(dx.items())[:10]
+            top.reverse()
+            etq = [k[:40] + ("…" if len(k) > 40 else "") for k, _ in top]
+            val = [v for _, v in top]
+            ax3.barh(etq, val, color="#198754")
+            ax3.set_title("Top 10 diagnósticos (categorías clínicas)", fontsize=12, fontweight="bold")
+            ax3.tick_params(axis="y", labelsize=8)
+            for i, v in enumerate(val):
+                ax3.text(v, i, f" {v}", va="center", fontsize=8)
+        else:
+            ax3.text(0.5, 0.5, "Sin datos", ha="center", va="center")
+            ax3.axis("off")
+
+        # 4) Top biomarcadores — barra horizontal
+        ax4 = fig.add_subplot(2, 2, 4)
+        bios = stats.get("biomarcadores_top15", {}) or {}
+        if bios:
+            items = sorted(bios.items(), key=lambda x: x[1].get("n", 0), reverse=True)[:10]
+            items.reverse()
+            etq = [k.replace("IHQ_", "")[:25] for k, _ in items]
+            val = [v.get("n", 0) for _, v in items]
+            ax4.barh(etq, val, color="#fd7e14")
+            ax4.set_title("Top 10 biomarcadores (N evaluados)", fontsize=12, fontweight="bold")
+            ax4.tick_params(axis="y", labelsize=9)
+            for i, v in enumerate(val):
+                ax4.text(v, i, f" {v}", va="center", fontsize=8)
+        else:
+            ax4.text(0.5, 0.5, "Sin datos", ha="center", va="center")
+            ax4.axis("off")
+
+        canvas = FigureCanvasTkAgg(fig, master=parent)
+        canvas.draw()
+        canvas.get_tk_widget().pack(fill=BOTH, expand=True, padx=8, pady=8)
+
+        toolbar_frame = ttk.Frame(parent)
+        toolbar_frame.pack(fill=X, padx=8)
+        toolbar = NavigationToolbar2Tk(canvas, toolbar_frame)
+        toolbar.update()
+
+    def _render_tablas_dashboard(self, parent, stats: dict):
+        """Tablas claras con scroll para cada bloque del informe."""
+        if not stats:
+            ttk.Label(parent, text="No hay estadísticas disponibles.",
+                      font=("Segoe UI", 11)).pack(pady=40)
+            return
+
+        # Scroll global
+        canvas = tk.Canvas(parent, highlightthickness=0)
+        vbar = ttk.Scrollbar(parent, orient="vertical", command=canvas.yview)
+        canvas.configure(yscrollcommand=vbar.set)
+        vbar.pack(side=RIGHT, fill=Y)
+        canvas.pack(side=LEFT, fill=BOTH, expand=True)
+
+        inner = ttk.Frame(canvas, padding=10)
+        canvas_window = canvas.create_window((0, 0), window=inner, anchor="nw")
+
+        def _on_inner_config(_e=None):
+            canvas.configure(scrollregion=canvas.bbox("all"))
+
+        def _on_canvas_config(e):
+            canvas.itemconfigure(canvas_window, width=e.width)
+
+        inner.bind("<Configure>", _on_inner_config)
+        canvas.bind("<Configure>", _on_canvas_config)
+
+        bloques = [
+            ("🧬 Distribución anatómica", stats.get("organos_normalizados", {}),
+             ("Órgano", "Casos")),
+            ("🩺 Diagnósticos (categorías clínicas)",
+             stats.get("diagnosticos_categorizados", {}),
+             ("Categoría", "Casos")),
+            ("⚕️ Procedimientos", stats.get("procedimientos", {}),
+             ("Procedimiento", "Casos")),
+            ("🏥 Servicios solicitantes", stats.get("servicios", {}),
+             ("Servicio", "Casos")),
+        ]
+
+        for titulo, data, (col1, col2) in bloques:
+            if not data:
+                continue
+            ttk.Label(inner, text=titulo, font=("Segoe UI", 12, "bold"),
+                      bootstyle="primary").pack(anchor="w", pady=(10, 4))
+
+            tv = ttk.Treeview(
+                inner, columns=("c1", "c2"), show="headings",
+                height=min(12, len(data)),
+                bootstyle="primary",
+            )
+            tv.heading("c1", text=col1)
+            tv.heading("c2", text=col2)
+            tv.column("c1", anchor="w", width=400)
+            tv.column("c2", anchor="e", width=100)
+            for k, v in data.items():
+                tv.insert("", "end", values=(k, v))
+            tv.pack(fill=X, pady=(0, 6))
+
+        # Bloque biomarcadores con N y resultado predominante
+        bios = stats.get("biomarcadores_top15", {}) or {}
+        if bios:
+            ttk.Label(inner, text="🔬 Biomarcadores (top 15)",
+                      font=("Segoe UI", 12, "bold"),
+                      bootstyle="primary").pack(anchor="w", pady=(10, 4))
+            tv = ttk.Treeview(
+                inner, columns=("m", "n", "top"),
+                show="headings",
+                height=min(15, len(bios)),
+                bootstyle="primary",
+            )
+            tv.heading("m", text="Biomarcador")
+            tv.heading("n", text="N evaluados")
+            tv.heading("top", text="Resultado predominante")
+            tv.column("m", anchor="w", width=240)
+            tv.column("n", anchor="e", width=110)
+            tv.column("top", anchor="w", width=420)
+            for marcador, info in sorted(bios.items(), key=lambda x: x[1].get("n", 0), reverse=True):
+                top = info.get("top", {}) or {}
+                if top:
+                    primer_valor, primer_n = next(iter(top.items()))
+                    resumen = f"{primer_valor} (N={primer_n})"
+                else:
+                    resumen = "—"
+                tv.insert("", "end", values=(marcador, info.get("n", 0), resumen))
+            tv.pack(fill=X, pady=(0, 6))
 
     def _exportar_resumen_ia(self, texto: str):
         """Guarda el resumen IA en un archivo .txt o .md."""
