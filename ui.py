@@ -5115,7 +5115,7 @@ Disco {i}:
         ttk.Button(
             top_frame,
             text="💾 Exportar",
-            command=lambda: self._exportar_resumen_ia(texto),
+            command=lambda: self._exportar_resumen_ia(texto, stats, win),
             bootstyle="success",
         ).pack(side=RIGHT, padx=5)
 
@@ -5439,25 +5439,614 @@ Disco {i}:
                 tv.insert("", "end", values=(marcador, info.get("n", 0), resumen))
             tv.pack(fill=X, pady=(0, 6))
 
-    def _exportar_resumen_ia(self, texto: str):
-        """Guarda el resumen IA en un archivo .txt o .md."""
-        fecha_str = datetime.now().strftime("%Y-%m-%d_%H%M%S")
-        default_name = f"Resumen_IA_HUV_{fecha_str}"
+    def _exportar_resumen_ia(self, texto: str, stats: dict | None = None, parent=None):
+        """Permite elegir entre Excel formateado o PDF profesional."""
+        stats = stats or {}
+        dlg = tk.Toplevel(parent or self)
+        dlg.title("Exportar Resumen IA")
+        dlg.geometry("420x200")
+        dlg.transient(parent or self)
+        dlg.grab_set()
+        dlg.resizable(False, False)
 
+        ttk.Label(
+            dlg, text="¿En qué formato deseas exportar el resumen?",
+            font=("Segoe UI", 11, "bold"), padding=15,
+        ).pack()
+
+        btn_frame = ttk.Frame(dlg, padding=10)
+        btn_frame.pack(fill=BOTH, expand=True)
+
+        def _hacer_excel():
+            dlg.destroy()
+            self._exportar_resumen_excel(texto, stats)
+
+        def _hacer_pdf():
+            dlg.destroy()
+            self._exportar_resumen_pdf(texto, stats)
+
+        ttk.Button(
+            btn_frame, text="📊  Excel (.xlsx)\ncon tablas y gráficos",
+            bootstyle="success", command=_hacer_excel, width=22,
+        ).pack(side=LEFT, expand=True, padx=8, ipady=8)
+
+        ttk.Button(
+            btn_frame, text="📄  PDF\nInforme profesional",
+            bootstyle="danger", command=_hacer_pdf, width=22,
+        ).pack(side=LEFT, expand=True, padx=8, ipady=8)
+
+    # ── Excel ─────────────────────────────────────────────────────────
+    def _exportar_resumen_excel(self, texto: str, stats: dict):
+        """Genera un .xlsx con KPIs, tablas formateadas y gráficos nativos."""
+        fecha_str = datetime.now().strftime("%Y-%m-%d_%H%M%S")
         filepath = filedialog.asksaveasfilename(
-            title="Exportar Resumen IA",
-            defaultextension=".md",
-            initialfile=default_name,
-            filetypes=[
-                ("Markdown", "*.md"),
-                ("Texto plano", "*.txt"),
-                ("Todos los archivos", "*.*")
-            ]
+            title="Exportar Resumen IA — Excel",
+            defaultextension=".xlsx",
+            initialfile=f"Resumen_IA_HUV_{fecha_str}.xlsx",
+            filetypes=[("Excel", "*.xlsx")],
         )
-        if filepath:
-            with open(filepath, "w", encoding="utf-8") as f:
-                f.write(texto)
-            messagebox.showinfo("Exportación Exitosa", f"Resumen guardado en:\n{filepath}")
+        if not filepath:
+            return
+
+        try:
+            from openpyxl import Workbook
+            from openpyxl.styles import (
+                Font, PatternFill, Alignment, Border, Side,
+            )
+            from openpyxl.chart import BarChart, PieChart, Reference
+            from openpyxl.utils import get_column_letter
+        except Exception as e:
+            messagebox.showerror("Error", f"openpyxl no disponible: {e}")
+            return
+
+        wb = Workbook()
+
+        # Estilos reutilizables
+        azul_huv = "0D6EFD"
+        verde_huv = "198754"
+        gris_claro = "F1F3F5"
+        thin = Side(style="thin", color="DEE2E6")
+        borde = Border(top=thin, bottom=thin, left=thin, right=thin)
+        font_titulo = Font(name="Calibri", size=18, bold=True, color="FFFFFF")
+        fill_titulo = PatternFill("solid", fgColor=azul_huv)
+        font_h2 = Font(name="Calibri", size=13, bold=True, color="FFFFFF")
+        fill_h2 = PatternFill("solid", fgColor=verde_huv)
+        font_th = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
+        fill_th = PatternFill("solid", fgColor=azul_huv)
+        fill_alt = PatternFill("solid", fgColor=gris_claro)
+        center = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        left = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        right = Alignment(horizontal="right", vertical="center")
+
+        def _aplicar_tabla(ws, fila_ini, col_ini, headers, filas):
+            for i, h in enumerate(headers):
+                c = ws.cell(row=fila_ini, column=col_ini + i, value=h)
+                c.font = font_th
+                c.fill = fill_th
+                c.alignment = center
+                c.border = borde
+            for r, row in enumerate(filas, start=1):
+                for j, val in enumerate(row):
+                    c = ws.cell(row=fila_ini + r, column=col_ini + j, value=val)
+                    c.alignment = right if isinstance(val, (int, float)) else left
+                    c.border = borde
+                    if r % 2 == 0:
+                        c.fill = fill_alt
+            return fila_ini + len(filas)
+
+        # ── Hoja 1: Resumen Ejecutivo (KPIs) ──────────────────────
+        ws1 = wb.active
+        ws1.title = "Resumen Ejecutivo"
+        ws1.merge_cells("A1:F1")
+        c = ws1["A1"]
+        c.value = "📊 RESUMEN IA — BASE DE DATOS IHQ HUV"
+        c.font = font_titulo
+        c.fill = fill_titulo
+        c.alignment = center
+        ws1.row_dimensions[1].height = 36
+
+        ws1["A2"] = "Generado:"
+        ws1["B2"] = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        ws1["A3"] = "Periodo cubierto:"
+        ws1["B3"] = f"{stats.get('fecha_min', '—')} → {stats.get('fecha_max', '—')}"
+        for r in (2, 3):
+            ws1.cell(row=r, column=1).font = Font(bold=True)
+
+        # KPIs
+        total = stats.get("total_casos", 0)
+        malig = stats.get("malignidad", {}) or {}
+        n_malig = next(
+            (v for k, v in malig.items()
+             if "MALIGN" in str(k).upper() and "BENIG" not in str(k).upper()),
+            0,
+        )
+        pct_malig = (n_malig / total * 100) if total else 0
+        kpis = [
+            ("Total casos", total),
+            ("% Malignos", f"{pct_malig:.1f}%"),
+            ("Categorías anatómicas", stats.get("organos_categorias_distintas", 0)),
+            ("Biomarcadores distintos", stats.get("total_biomarcadores_distintos", 0)),
+            ("Diagnósticos categorizados", stats.get("diagnosticos_total_categorizado", 0)),
+        ]
+        ws1.cell(row=5, column=1, value="Indicadores Clave").font = font_h2
+        ws1.cell(row=5, column=1).fill = fill_h2
+        ws1.cell(row=5, column=1).alignment = center
+        ws1.merge_cells("A5:F5")
+        ws1.row_dimensions[5].height = 24
+
+        for i, (k, v) in enumerate(kpis):
+            row = 6 + i
+            a = ws1.cell(row=row, column=1, value=k)
+            b = ws1.cell(row=row, column=2, value=v)
+            a.font = Font(bold=True)
+            a.fill = fill_alt
+            a.border = borde
+            b.border = borde
+            b.alignment = right
+            ws1.row_dimensions[row].height = 20
+
+        for col in range(1, 7):
+            ws1.column_dimensions[get_column_letter(col)].width = 24
+
+        # ── Hoja 2: Distribución Anatómica ─────────────────────────
+        ws2 = wb.create_sheet("Distribución Anatómica")
+        ws2.merge_cells("A1:C1")
+        ws2["A1"] = "🧬 Top categorías anatómicas (canónicas)"
+        ws2["A1"].font = font_titulo
+        ws2["A1"].fill = fill_titulo
+        ws2["A1"].alignment = center
+        ws2.row_dimensions[1].height = 30
+        organos = stats.get("organos_normalizados", {}) or {}
+        filas = [(k, v) for k, v in organos.items()]
+        end_row = _aplicar_tabla(ws2, 3, 1, ["Órgano", "Casos"], filas)
+        ws2.column_dimensions["A"].width = 38
+        ws2.column_dimensions["B"].width = 14
+
+        if filas:
+            chart = BarChart()
+            chart.type = "bar"
+            chart.style = 11
+            chart.title = "Top órganos"
+            chart.y_axis.title = "Órgano"
+            chart.x_axis.title = "Casos"
+            data = Reference(ws2, min_col=2, min_row=3, max_row=end_row, max_col=2)
+            cats = Reference(ws2, min_col=1, min_row=4, max_row=end_row)
+            chart.add_data(data, titles_from_data=True)
+            chart.set_categories(cats)
+            chart.height = 12
+            chart.width = 20
+            ws2.add_chart(chart, "E3")
+
+        # ── Hoja 3: Diagnósticos ──────────────────────────────────
+        ws3 = wb.create_sheet("Diagnósticos")
+        ws3.merge_cells("A1:C1")
+        ws3["A1"] = "🩺 Diagnósticos por categoría clínica"
+        ws3["A1"].font = font_titulo
+        ws3["A1"].fill = fill_titulo
+        ws3["A1"].alignment = center
+        ws3.row_dimensions[1].height = 30
+        dx = stats.get("diagnosticos_categorizados", {}) or {}
+        filas = [(k, v) for k, v in dx.items() if k != "OTRO / NO CATEGORIZADO"]
+        end_row = _aplicar_tabla(ws3, 3, 1, ["Categoría clínica", "Casos"], filas)
+        ws3.column_dimensions["A"].width = 50
+        ws3.column_dimensions["B"].width = 14
+
+        # Notas adicionales
+        nota_row = end_row + 2
+        ws3.cell(row=nota_row, column=1, value="Sin diagnóstico específico (Estudio IHQ):").font = Font(bold=True, italic=True)
+        ws3.cell(row=nota_row, column=2, value=stats.get("diagnosticos_estudio_ihq_sin_dx", 0))
+        ws3.cell(row=nota_row + 1, column=1, value="Otros (no categorizados):").font = Font(bold=True, italic=True)
+        ws3.cell(row=nota_row + 1, column=2, value=stats.get("diagnosticos_otro_no_categorizado", 0))
+        ws3.cell(row=nota_row + 2, column=1, value="Sin dato:").font = Font(bold=True, italic=True)
+        ws3.cell(row=nota_row + 2, column=2, value=stats.get("diagnosticos_sin_dato", 0))
+
+        if filas:
+            chart = BarChart()
+            chart.type = "bar"
+            chart.style = 12
+            chart.title = "Top diagnósticos clínicos"
+            data = Reference(ws3, min_col=2, min_row=3, max_row=end_row, max_col=2)
+            cats = Reference(ws3, min_col=1, min_row=4, max_row=end_row)
+            chart.add_data(data, titles_from_data=True)
+            chart.set_categories(cats)
+            chart.height = 12
+            chart.width = 22
+            ws3.add_chart(chart, "E3")
+
+        # ── Hoja 4: Biomarcadores ─────────────────────────────────
+        ws4 = wb.create_sheet("Biomarcadores")
+        ws4.merge_cells("A1:D1")
+        ws4["A1"] = "🔬 Top biomarcadores"
+        ws4["A1"].font = font_titulo
+        ws4["A1"].fill = fill_titulo
+        ws4["A1"].alignment = center
+        ws4.row_dimensions[1].height = 30
+        bios = stats.get("biomarcadores_top15", {}) or {}
+        filas = []
+        for marcador, info in sorted(bios.items(), key=lambda x: x[1].get("n", 0), reverse=True):
+            top = info.get("top", {}) or {}
+            if top:
+                primer_valor, primer_n = next(iter(top.items()))
+                resumen = f"{primer_valor} (N={primer_n})"
+            else:
+                resumen = "—"
+            filas.append((marcador, info.get("n", 0), resumen))
+        end_row = _aplicar_tabla(
+            ws4, 3, 1,
+            ["Biomarcador", "N evaluados", "Resultado predominante"], filas,
+        )
+        ws4.column_dimensions["A"].width = 32
+        ws4.column_dimensions["B"].width = 14
+        ws4.column_dimensions["C"].width = 42
+
+        if filas:
+            chart = BarChart()
+            chart.type = "bar"
+            chart.style = 13
+            chart.title = "Biomarcadores por N evaluados"
+            data = Reference(ws4, min_col=2, min_row=3, max_row=end_row, max_col=2)
+            cats = Reference(ws4, min_col=1, min_row=4, max_row=end_row)
+            chart.add_data(data, titles_from_data=True)
+            chart.set_categories(cats)
+            chart.height = 12
+            chart.width = 22
+            ws4.add_chart(chart, "E3")
+
+        # ── Hoja 5: Procedimientos & Servicios ────────────────────
+        ws5 = wb.create_sheet("Procedimientos & Servicios")
+        ws5.merge_cells("A1:E1")
+        ws5["A1"] = "⚕️ Procedimientos y servicios solicitantes"
+        ws5["A1"].font = font_titulo
+        ws5["A1"].fill = fill_titulo
+        ws5["A1"].alignment = center
+        ws5.row_dimensions[1].height = 30
+        procs = stats.get("procedimientos", {}) or {}
+        servs = stats.get("servicios", {}) or {}
+        _aplicar_tabla(ws5, 3, 1, ["Procedimiento", "Casos"],
+                       [(k, v) for k, v in procs.items()])
+        _aplicar_tabla(ws5, 3, 4, ["Servicio", "Casos"],
+                       [(k, v) for k, v in servs.items()])
+        ws5.column_dimensions["A"].width = 32
+        ws5.column_dimensions["B"].width = 12
+        ws5.column_dimensions["D"].width = 38
+        ws5.column_dimensions["E"].width = 12
+
+        # Pie de malignidad
+        if malig:
+            ws5.cell(row=20, column=1, value="Distribución de malignidad").font = font_h2
+            ws5.cell(row=20, column=1).fill = fill_h2
+            ws5.cell(row=20, column=1).alignment = center
+            ws5.merge_cells("A20:B20")
+            mfilas = [(k, v) for k, v in malig.items()]
+            mend = _aplicar_tabla(ws5, 21, 1, ["Categoría", "Casos"], mfilas)
+            chart = PieChart()
+            chart.title = "Malignidad"
+            chart.style = 10
+            data = Reference(ws5, min_col=2, min_row=21, max_row=mend)
+            cats = Reference(ws5, min_col=1, min_row=22, max_row=mend)
+            chart.add_data(data, titles_from_data=True)
+            chart.set_categories(cats)
+            chart.height = 9
+            chart.width = 13
+            ws5.add_chart(chart, "D20")
+
+        # ── Hoja 6: Informe IA en texto ───────────────────────────
+        ws6 = wb.create_sheet("Informe IA")
+        ws6.merge_cells("A1:H1")
+        ws6["A1"] = "📝 Informe redactado por IA"
+        ws6["A1"].font = font_titulo
+        ws6["A1"].fill = fill_titulo
+        ws6["A1"].alignment = center
+        ws6.row_dimensions[1].height = 30
+        ws6.column_dimensions["A"].width = 110
+
+        for i, linea in enumerate(texto.splitlines(), start=3):
+            cell = ws6.cell(row=i, column=1, value=linea)
+            if linea.startswith("# "):
+                cell.font = Font(size=14, bold=True, color=azul_huv)
+                cell.value = linea[2:]
+            elif linea.startswith("## "):
+                cell.font = Font(size=12, bold=True, color=verde_huv)
+                cell.value = linea[3:]
+            elif linea.startswith("### "):
+                cell.font = Font(size=11, bold=True)
+                cell.value = linea[4:]
+            else:
+                cell.font = Font(size=10)
+            cell.alignment = Alignment(wrap_text=True, vertical="top")
+
+        try:
+            wb.save(filepath)
+            messagebox.showinfo(
+                "Exportación exitosa",
+                f"Excel guardado en:\n{filepath}",
+            )
+        except Exception as e:
+            messagebox.showerror("Error", f"No se pudo guardar el Excel:\n{e}")
+
+    # ── PDF ───────────────────────────────────────────────────────────
+    def _exportar_resumen_pdf(self, texto: str, stats: dict):
+        """Genera un PDF profesional con KPIs, tablas y gráficos matplotlib."""
+        fecha_str = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+        filepath = filedialog.asksaveasfilename(
+            title="Exportar Resumen IA — PDF",
+            defaultextension=".pdf",
+            initialfile=f"Resumen_IA_HUV_{fecha_str}.pdf",
+            filetypes=[("PDF", "*.pdf")],
+        )
+        if not filepath:
+            return
+
+        try:
+            from reportlab.lib.pagesizes import A4
+            from reportlab.lib import colors
+            from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+            from reportlab.lib.units import cm, mm
+            from reportlab.platypus import (
+                SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle,
+                PageBreak, Image,
+            )
+        except Exception as e:
+            messagebox.showerror("Error", f"reportlab no disponible: {e}")
+            return
+
+        # Generar imágenes de gráficos con matplotlib
+        chart_paths = []
+        try:
+            import tempfile
+            import matplotlib
+            matplotlib.use("Agg")
+            import matplotlib.pyplot as plt
+
+            tmpdir = tempfile.mkdtemp(prefix="huv_pdf_")
+
+            def _save_bar(data: dict, titulo: str, color: str, fname: str, top_n=10):
+                if not data:
+                    return None
+                items = list(data.items())[:top_n]
+                items.reverse()
+                etq = [str(k)[:42] for k, _ in items]
+                val = [v for _, v in items]
+                fig, ax = plt.subplots(figsize=(7, 4.2), dpi=150)
+                ax.barh(etq, val, color=color)
+                ax.set_title(titulo, fontsize=12, fontweight="bold")
+                ax.tick_params(axis="y", labelsize=9)
+                for i, v in enumerate(val):
+                    ax.text(v, i, f" {v}", va="center", fontsize=8)
+                fig.tight_layout()
+                p = f"{tmpdir}/{fname}.png"
+                fig.savefig(p, bbox_inches="tight")
+                plt.close(fig)
+                return p
+
+            def _save_pie(data: dict, titulo: str, fname: str):
+                if not data:
+                    return None
+                etq = list(data.keys())[:5]
+                val = [data[k] for k in etq]
+                fig, ax = plt.subplots(figsize=(5, 4.2), dpi=150)
+                ax.pie(val, labels=etq, autopct="%1.1f%%",
+                       colors=["#dc3545", "#198754", "#ffc107", "#6c757d", "#0dcaf0"][:len(etq)],
+                       startangle=90, textprops={"fontsize": 9})
+                ax.set_title(titulo, fontsize=12, fontweight="bold")
+                fig.tight_layout()
+                p = f"{tmpdir}/{fname}.png"
+                fig.savefig(p, bbox_inches="tight")
+                plt.close(fig)
+                return p
+
+            chart_paths.append(_save_pie(stats.get("malignidad", {}), "Malignidad", "malig"))
+            chart_paths.append(_save_bar(stats.get("organos_normalizados", {}),
+                                         "Top 10 órganos", "#0d6efd", "organos"))
+            dx = {k: v for k, v in (stats.get("diagnosticos_categorizados", {}) or {}).items()
+                  if k != "OTRO / NO CATEGORIZADO"}
+            chart_paths.append(_save_bar(dx, "Top 10 diagnósticos clínicos", "#198754", "dx"))
+            bios_top = {k: v.get("n", 0) for k, v in
+                        sorted((stats.get("biomarcadores_top15", {}) or {}).items(),
+                               key=lambda x: x[1].get("n", 0), reverse=True)}
+            chart_paths.append(_save_bar(bios_top, "Top 10 biomarcadores (N evaluados)",
+                                         "#fd7e14", "bios"))
+        except Exception as e:
+            logging.warning(f"No se pudieron generar gráficos para PDF: {e}")
+
+        # Documento
+        doc = SimpleDocTemplate(
+            filepath, pagesize=A4,
+            leftMargin=2*cm, rightMargin=2*cm,
+            topMargin=2*cm, bottomMargin=2*cm,
+            title="Resumen IA HUV", author="EVARISIS",
+        )
+        styles = getSampleStyleSheet()
+        h1 = ParagraphStyle("h1", parent=styles["Heading1"],
+                            fontSize=20, textColor=colors.HexColor("#0D6EFD"),
+                            spaceAfter=12)
+        h2 = ParagraphStyle("h2", parent=styles["Heading2"],
+                            fontSize=14, textColor=colors.HexColor("#198754"),
+                            spaceBefore=12, spaceAfter=8)
+        h3 = ParagraphStyle("h3", parent=styles["Heading3"],
+                            fontSize=11, textColor=colors.HexColor("#6c757d"),
+                            spaceBefore=6, spaceAfter=4)
+        body = ParagraphStyle("body", parent=styles["Normal"],
+                              fontSize=10, leading=14, spaceAfter=6)
+
+        story = []
+
+        # Portada
+        story.append(Paragraph("📊 Resumen IA — Base de Datos IHQ", h1))
+        story.append(Paragraph(
+            "Hospital Universitario del Valle — EVARISIS Gestor Oncológico",
+            body))
+        story.append(Spacer(1, 6))
+        story.append(Paragraph(
+            f"<b>Generado:</b> {datetime.now().strftime('%d/%m/%Y %H:%M')}<br/>"
+            f"<b>Periodo cubierto:</b> {stats.get('fecha_min', '—')} → "
+            f"{stats.get('fecha_max', '—')}",
+            body))
+        story.append(Spacer(1, 12))
+
+        # KPIs
+        total = stats.get("total_casos", 0)
+        malig = stats.get("malignidad", {}) or {}
+        n_malig = next(
+            (v for k, v in malig.items()
+             if "MALIGN" in str(k).upper() and "BENIG" not in str(k).upper()),
+            0,
+        )
+        pct_malig = (n_malig / total * 100) if total else 0
+
+        kpi_data = [
+            ["Total casos", "% Malignos", "Cat. anatómicas",
+             "Biomarcadores", "Dx categorizados"],
+            [str(total), f"{pct_malig:.1f}%",
+             str(stats.get("organos_categorias_distintas", 0)),
+             str(stats.get("total_biomarcadores_distintos", 0)),
+             str(stats.get("diagnosticos_total_categorizado", 0))],
+        ]
+        kpi_tbl = Table(kpi_data, colWidths=[3.4*cm]*5)
+        kpi_tbl.setStyle(TableStyle([
+            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#0D6EFD")),
+            ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+            ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+            ("FONTSIZE", (0, 0), (-1, 0), 9),
+            ("ALIGN", (0, 0), (-1, -1), "CENTER"),
+            ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+            ("BACKGROUND", (0, 1), (-1, 1), colors.HexColor("#F1F3F5")),
+            ("FONTSIZE", (0, 1), (-1, 1), 14),
+            ("FONTNAME", (0, 1), (-1, 1), "Helvetica-Bold"),
+            ("TEXTCOLOR", (0, 1), (-1, 1), colors.HexColor("#212529")),
+            ("ROWBACKGROUNDS", (0, 1), (-1, 1), [colors.HexColor("#F1F3F5")]),
+            ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#DEE2E6")),
+            ("TOPPADDING", (0, 0), (-1, -1), 8),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+        ]))
+        story.append(kpi_tbl)
+        story.append(Spacer(1, 16))
+
+        # Helper para generar tablas de datos
+        def _tabla_datos(titulo, data, col1, col2, max_filas=15):
+            if not data:
+                return
+            story.append(Paragraph(titulo, h2))
+            rows = [[col1, col2]]
+            for k, v in list(data.items())[:max_filas]:
+                rows.append([str(k), str(v)])
+            t = Table(rows, colWidths=[12*cm, 3*cm])
+            t.setStyle(TableStyle([
+                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#0D6EFD")),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+                ("ALIGN", (1, 0), (1, -1), "RIGHT"),
+                ("FONTSIZE", (0, 0), (-1, -1), 9),
+                ("GRID", (0, 0), (-1, -1), 0.4, colors.HexColor("#DEE2E6")),
+                ("ROWBACKGROUNDS", (0, 1), (-1, -1),
+                 [colors.white, colors.HexColor("#F8F9FA")]),
+                ("TOPPADDING", (0, 0), (-1, -1), 5),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+            ]))
+            story.append(t)
+            story.append(Spacer(1, 10))
+
+        # Sección gráficos
+        story.append(Paragraph("Indicadores visuales", h2))
+        # Pares de gráficos en 2 columnas
+        valid_charts = [p for p in chart_paths if p]
+        for i in range(0, len(valid_charts), 2):
+            par = valid_charts[i:i+2]
+            row = []
+            for p in par:
+                row.append(Image(p, width=8*cm, height=5.5*cm))
+            if len(row) == 1:
+                row.append("")
+            t = Table([row], colWidths=[8.5*cm, 8.5*cm])
+            t.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "MIDDLE")]))
+            story.append(t)
+            story.append(Spacer(1, 8))
+
+        story.append(PageBreak())
+
+        # Tablas detalle
+        _tabla_datos("🧬 Top órganos (canónicos)",
+                     stats.get("organos_normalizados", {}), "Órgano", "Casos")
+        dx_clin = {k: v for k, v in (stats.get("diagnosticos_categorizados", {}) or {}).items()
+                   if k != "OTRO / NO CATEGORIZADO"}
+        _tabla_datos("🩺 Diagnósticos (categorías clínicas)",
+                     dx_clin, "Categoría", "Casos")
+        story.append(Paragraph(
+            f"<i>Sin diagnóstico específico (Estudio IHQ): {stats.get('diagnosticos_estudio_ihq_sin_dx', 0)} · "
+            f"Otros no categorizados: {stats.get('diagnosticos_otro_no_categorizado', 0)} · "
+            f"Sin dato: {stats.get('diagnosticos_sin_dato', 0)}</i>",
+            body))
+        story.append(Spacer(1, 8))
+
+        bios = stats.get("biomarcadores_top15", {}) or {}
+        if bios:
+            story.append(Paragraph("🔬 Top biomarcadores", h2))
+            rows = [["Biomarcador", "N evaluados", "Resultado predominante"]]
+            for marcador, info in sorted(bios.items(),
+                                         key=lambda x: x[1].get("n", 0), reverse=True):
+                top = info.get("top", {}) or {}
+                if top:
+                    primer_valor, primer_n = next(iter(top.items()))
+                    resumen = f"{primer_valor} (N={primer_n})"
+                else:
+                    resumen = "—"
+                rows.append([marcador, str(info.get("n", 0)), resumen])
+            t = Table(rows, colWidths=[5.5*cm, 2.5*cm, 9*cm])
+            t.setStyle(TableStyle([
+                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#0D6EFD")),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+                ("ALIGN", (1, 0), (1, -1), "RIGHT"),
+                ("FONTSIZE", (0, 0), (-1, -1), 8),
+                ("GRID", (0, 0), (-1, -1), 0.4, colors.HexColor("#DEE2E6")),
+                ("ROWBACKGROUNDS", (0, 1), (-1, -1),
+                 [colors.white, colors.HexColor("#F8F9FA")]),
+            ]))
+            story.append(t)
+            story.append(Spacer(1, 8))
+
+        _tabla_datos("⚕️ Procedimientos", stats.get("procedimientos", {}),
+                     "Procedimiento", "Casos")
+        _tabla_datos("🏥 Servicios solicitantes", stats.get("servicios", {}),
+                     "Servicio", "Casos")
+
+        story.append(PageBreak())
+
+        # Informe IA narrativo
+        story.append(Paragraph("📝 Informe redactado por IA", h1))
+        import re as _re
+        for raw in texto.splitlines():
+            linea = raw.rstrip()
+            if not linea:
+                story.append(Spacer(1, 4))
+                continue
+            if linea.startswith("# "):
+                story.append(Paragraph(linea[2:], h1))
+            elif linea.startswith("## "):
+                story.append(Paragraph(linea[3:], h2))
+            elif linea.startswith("### "):
+                story.append(Paragraph(linea[4:], h3))
+            elif linea.strip() in {"---", "***"}:
+                story.append(Spacer(1, 6))
+            elif linea.startswith("|"):
+                # Líneas de tabla markdown — las dejamos como código simple
+                story.append(Paragraph(
+                    f"<font face='Courier' size='8'>{linea.replace('<', '&lt;').replace('>', '&gt;')}</font>",
+                    body,
+                ))
+            else:
+                # Convertir **negritas**
+                txt = _re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", linea)
+                story.append(Paragraph(txt, body))
+
+        try:
+            doc.build(story)
+            messagebox.showinfo(
+                "Exportación exitosa",
+                f"PDF guardado en:\n{filepath}",
+            )
+        except Exception as e:
+            messagebox.showerror("Error", f"No se pudo generar el PDF:\n{e}")
 
     def _copiar_resumen_ia(self, texto: str, ventana: tk.Toplevel):
         """Copia el resumen IA al portapapeles."""

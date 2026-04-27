@@ -23,6 +23,7 @@ webdriver-manager>=4.0.0
 
 # === MANEJO DE ARCHIVOS EXCEL ===
 openpyxl>=3.1.0
+reportlab>=4.0.0
 
 # === FECHAS Y LOCALIZACIÓN ===
 python-dateutil>=2.8.0
