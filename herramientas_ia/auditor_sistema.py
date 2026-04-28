@@ -2453,12 +2453,24 @@ class AuditorSistema:
             # NIC 3/CIN 3 son lesiones de alto grado que clínicamente se manejan como potencialmente malignas
             'LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO', 'NIC 3', 'CIN 3',
             # V3.3.11 FIX IHQ250144: GLIOMA agregado (tumores cerebrales de alto grado malignos)
-            'GLIOMA'
-            # V3.3.6 FIX IHQ250061: GIST movido a keywords_word_boundary (evita falso positivo "PathologiSTs")
+            'GLIOMA',
+            # V3.3.12 FIX IHQ250033: Sincronización con keywords del extractor.
+            # El auditor antes no detectaba TUMOR NEUROENDOCRINO / CARCINOIDE como
+            # malignos, generando falsos warnings cuando la BD los clasificaba
+            # correctamente como MALIGNO. Estos son neoplasias malignas por
+            # convención WHO (carcinoide pulmonar, TNE digestivo, NET).
+            'TUMOR NEUROENDOCRINO', 'NEOPLASIA NEUROENDOCRINA',
+            'CARCINOIDE', 'CARCINOSARCOMA', 'CORIOCARCINOMA',
+            'OSTEOSARCOMA', 'CONDROSARCOMA', 'LIPOSARCOMA',
+            'CARCINOMATOSIS', 'HODGKIN', 'ANAPLÁSICO', 'ANAPLASICO',
+            'CARCINOMA IN SITU', 'NEOPLASIA INTRAEPITELIAL',
+            'WHO GRADO III', 'WHO GRADO IV', 'WHO GRADO 3', 'WHO GRADO 4',
+            'GRADO IV', 'GRADO III',
         ]
         # V3.3.6 FIX IHQ250061: Keywords que necesitan word boundary (palabras cortas que aparecen como substring)
         # Ejemplo: "GIST" aparece en "Pathologists" → falso positivo
-        keywords_maligno_word_boundary = ['GIST']
+        # V3.3.12 FIX IHQ250033: NET con word boundary (puede aparecer como substring en INTERNET, NETO, etc.)
+        keywords_maligno_word_boundary = ['GIST', 'NET']
 
         keywords_benigno = [
             'BENIGNO', 'HIPERPLASIA', 'ADENOMA', 'FIBROMA',
