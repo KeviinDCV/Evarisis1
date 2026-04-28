@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250021",
   "caso_num": 21,
   "total_casos": 50,
-  "timestamp": "2025-12-13T10:53:18.253992",
+  "timestamp": "2026-04-28T14:15:36.594789",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 1,
+      "total_detectado": 2,
       "estado": "OK"
     },
     "estado": "OK"
@@ -28,7 +28,7 @@
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "RIÑÓN (BIOPSIA POR PUNCIÓN): TÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL. TÉJIDO FIBROADIPOSO DE ARQUTIECTURA USUAL"
+      "valor_bd": "RIÑÓN (BIOPSIA POR PUNCIÓN): TÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL. TÉJIDO FIBROADIPOSO DE ARQUTIECTURA USUAL. VER COMENTARIO"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -74,18 +74,25 @@
     "ihq_organo": {
       "estado": "OK",
       "mensaje": "IHQ_ORGANO está limpio",
-      "valor_bd": "RIÑÓN (BIOPSIA POR PUNCIÓN):\nTÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL"
+      "valor_bd": "RIÑÓN (BIOPSIA POR PUNCIÓN): TÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL"
     },
     "malignidad": {
       "estado": "OK",
-      "mensaje": "Malignidad correcta: MALIGNO",
-      "valor_bd": "MALIGNO"
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 2,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 2,
+      "estado": "OK",
+      "mensaje": "2/2 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -95,8 +102,8 @@
   "metricas": {
     "score_validacion": 100.0,
     "score_final": 100.0,
-    "validaciones_ok": 9,
-    "total_validaciones": 9,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250041",
   "caso_num": 41,
   "total_casos": 50,
-  "timestamp": "2025-12-17T03:28:42.446107",
+  "timestamp": "2026-04-28T14:15:47.686366",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -28,7 +28,7 @@
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
-      "valor_bd": "PIEL DE CUERO CABELLUDO, REGIÓN FRONTOPARIETAL. LESIÓN. BIOPSIA. ESTUDIO DE INMUNOHISTOQUÍMICA: - PERFIL DE INMUNOHISTOQUÍMICA COMPATIBLE CON CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, P40 POSITIVO"
+      "valor_bd": "PERFIL DE INMUNOHISTOQUÍMICA COMPATIBLE CON CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, P40 POSITIVO"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -61,7 +61,7 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
     },
     "descripcion_microscopica": {
@@ -72,7 +72,7 @@
     "ihq_organo": {
       "estado": "OK",
       "mensaje": "IHQ_ORGANO está limpio",
-      "valor_bd": "PIEL\nDE\nCUERO\nCABELLUDO,\nREGIÓN\nFRONTOPARIETAL"
+      "valor_bd": "PIEL DE CUERO CABELLUDO, REGIÓN FRONTOPARIETAL"
     },
     "malignidad": {
       "estado": "OK",
@@ -84,6 +84,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -93,8 +100,8 @@
   "metricas": {
     "score_validacion": 100.0,
     "score_final": 100.0,
-    "validaciones_ok": 9,
-    "total_validaciones": 9,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250032",
   "caso_num": 32,
   "total_casos": 50,
-  "timestamp": "2025-12-15T11:09:09.966167",
+  "timestamp": "2026-04-28T14:15:42.827854",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -42,22 +42,26 @@
       "estado": "OK",
       "mensaje": "Todos los estudios mapeados (0/0)",
       "total_solicitado_ocr": 0,
-      "total_solicitado_bd": 5,
+      "total_solicitado_bd": 7,
       "estudios_ocr": [],
       "estudios_bd": [
         "CD20",
         "CD3",
+        "CK19",
         "CKAE1AE3",
         "Ki-67",
-        "P63"
+        "P63",
+        "TDT"
       ],
       "faltantes_en_bd": [],
       "extras_en_bd": [
         "CD20",
         "CD3",
+        "CK19",
         "CKAE1AE3",
         "Ki-67",
-        "P63"
+        "P63",
+        "TDT"
       ],
       "mapeados": 0,
       "no_mapeados": [],
@@ -72,7 +76,7 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se realizan niveles al bloque M2500011 que corresponde a biopsia de lesión en mediastino, con diagnó..."
     },
     "descripcion_microscopica": {
@@ -87,14 +91,21 @@
     },
     "malignidad": {
       "estado": "OK",
-      "mensaje": "Malignidad correcta: MALIGNO",
-      "valor_bd": "MALIGNO"
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -104,8 +115,8 @@
   "metricas": {
     "score_validacion": 100.0,
     "score_final": 100.0,
-    "validaciones_ok": 9,
-    "total_validaciones": 9,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250012",
   "caso_num": 12,
   "total_casos": 50,
-  "timestamp": "2025-12-05T00:03:43.987762",
+  "timestamp": "2026-04-28T14:15:31.526006",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 13,
+      "total_detectado": 14,
       "estado": "OK"
     },
     "estado": "OK"
@@ -23,7 +23,7 @@
     "diagnostico_coloracion": {
       "estado": "OK",
       "valor": "HIPERPLASIA MIELOIDE",
-      "mensaje": "Correcto (similitud parcial)"
+      "mensaje": "Correcto (coincidencia exacta)"
     },
     "diagnostico_principal": {
       "estado": "OK",
@@ -36,10 +36,10 @@
       "mensaje": "Correcto (no aplica)"
     },
     "biomarcadores": {
-      "estado": "ERROR",
-      "mensaje": "2 biomarcadores sin mapeo/vacíos",
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (13/13)",
       "total_solicitado_ocr": 13,
-      "total_solicitado_bd": 13,
+      "total_solicitado_bd": 14,
       "estudios_ocr": [
         "GLICOFORINA",
         "MIELOPEROXIDASA",
@@ -68,17 +68,15 @@
         "CD61",
         "KAPPA",
         "LAMBDA",
-        "CICLYNA D1"
+        "CICLYNA D1",
+        "CICLINA D1"
       ],
       "faltantes_en_bd": [],
       "extras_en_bd": [],
-      "mapeados": 11,
-      "no_mapeados": [
-        "MIELOPEROXIDASA (sin columna)",
-        "CICLYNA D1 (sin columna)"
-      ],
+      "mapeados": 13,
+      "no_mapeados": [],
       "valores_incorrectos": [],
-      "cobertura": 84.6
+      "cobertura": 100.0
     },
     "campos_obligatorios": {
       "errores": []
@@ -88,7 +86,7 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de esta institución co..."
     },
     "descripcion_microscopica": {
@@ -103,14 +101,22 @@
     },
     "malignidad": {
       "estado": "OK",
-      "mensaje": "Malignidad correcta: MALIGNO",
-      "valor_bd": "MALIGNO"
+      "mensaje": "Malignidad correcta: BENIGNO (diagnóstico benigno confirmado)",
+      "valor_bd": "BENIGNO",
+      "nota": "Keywords malignos ignorados por presencia de diagnóstico benigno específico"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 1,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 1,
+      "estado": "OK",
+      "mensaje": "1/1 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -118,10 +124,10 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 88.9,
-    "score_final": 88.9,
-    "validaciones_ok": 8,
-    "total_validaciones": 9,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

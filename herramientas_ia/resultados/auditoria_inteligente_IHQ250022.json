@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250022",
   "caso_num": 22,
   "total_casos": 50,
-  "timestamp": "2025-12-13T11:08:59.619793",
+  "timestamp": "2026-04-28T14:15:37.172908",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -26,15 +26,13 @@
       "mensaje": "Correcto (similitud parcial)"
     },
     "diagnostico_principal": {
-      "estado": "WARNING",
-      "mensaje": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
-      "valor_bd": "ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL",
-      "valor_ocr": "ADENOCARCINOMATOSO, CON ALGUNAS PROYECCIONES DE APARIENCIA PAPILAR, DICHA LESIÓN PRESENTA LA SIGUIENTE INMUNOMARCACIÓN: -RECEPTOR DE ESTRÓGENO POSITIVO DE MANERA FOCAL, WT1 NEGATIVO, P16 POSITIVO EN B",
-      "nota": "Puede ser válido si es una versión resumida del diagnóstico completo"
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
+      "valor_bd": "ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL"
     },
     "factor_pronostico": {
       "estado": "OK",
-      "valor": "Receptor de Estrógeno: POSITIVO DE MANERA FOCAL, Receptor de Progesterona: POSITIVO",
+      "valor": "Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: NEGATIVO",
       "mensaje": "Factor pronóstico con biomarcadores válidos",
       "biomarcadores_detectados": [
         "RE",
@@ -74,17 +72,13 @@
     "campos_obligatorios": {
       "errores": []
     },
-    "warnings": [
-      "Descripcion macroscopica coincide parcialmente con OCR (similitud: 70%)",
-      "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)"
-    ],
+    "warnings": [],
     "errores": [],
     "estado": "OK",
     "descripcion_macroscopica": {
-      "estado": "WARNING",
-      "mensaje": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 70%)",
-      "valor_bd": "Se recibe una lamina de H&E y un bloque de parafina que corresponden a biopsia de endometrio con dia...",
-      "valor_ocr": "Se recibe una lamina de H&E y un bloque de parafina que corresponden a biopsia de endometrio con"
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se recibe una lamina de H&E y un bloque de parafina que corresponden a biopsia de endometrio con dia..."
     },
     "descripcion_microscopica": {
       "estado": "OK",
@@ -106,6 +100,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -113,13 +114,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 77.8,
-    "score_final": 77.8,
-    "validaciones_ok": 7,
-    "total_validaciones": 9,
-    "warnings": 2,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
+    "warnings": 0,
     "errores": 0
   },
   "resumen": {},
-  "estado_final": "ADVERTENCIA"
+  "estado_final": "OK"
 }

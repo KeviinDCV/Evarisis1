@@ -9990,8 +9990,19 @@ def extract_narrative_biomarkers_list(texto_microscopica: str, biomarker_definit
                 # V6.4.3 FIX IHQ250120: Detectar estado negativo en patrón de un solo grupo (ej: son negativas)
                 # V6.5.13 FIX IHQ250235: Agregado "NO SE OBSERVA" para "No se observan células inmunorreactivas"
                 # V6.5.57 FIX IHQ250254: Agregado "SIN MARCACION" para "Sin marcación positiva para"
+                # V6.6.0 FIX IHQ250043: Limitar búsqueda de negación a la PRIMERA ORACIÓN del match.
+                # El patrón "positiv[oa]s? para X" puede capturar texto que cruza un punto
+                # hacia una oración siguiente independiente. Si esa oración siguiente
+                # contiene "No se observa..." (relacionada con OTRO marcador o con un
+                # hallazgo distinto), el match completo activaba erróneamente NEGATIVO.
+                # Caso real: "positiva para GFAP y de incremento ... CD68+. No se observan
+                # cambios displásicos ni lesión neoplásica." → GFAP debe ser POSITIVO.
+                # La negación legítima de los patrones V6.4.3/V6.5.13/V6.5.57 siempre
+                # aparece al INICIO del match (primera oración), por lo que el fix
+                # preserva su funcionalidad.
                 match_full = match.group(0).upper()
-                if 'NO SE DETECTA' in match_full or 'NEGATIV' in match_full or 'NO SE OBSERVA' in match_full or 'SIN MARCACION' in match_full or 'SIN MARCACIÓN' in match_full:
+                match_until_period = match_full.split('. ')[0]
+                if 'NO SE DETECTA' in match_until_period or 'NEGATIV' in match_until_period or 'NO SE OBSERVA' in match_until_period or 'SIN MARCACION' in match_until_period or 'SIN MARCACIÓN' in match_until_period:
                     estado_defecto = 'NEGATIVO'
                 else:
                     estado_defecto = 'POSITIVO'

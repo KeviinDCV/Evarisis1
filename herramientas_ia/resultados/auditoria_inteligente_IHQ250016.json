@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250016",
   "caso_num": 16,
   "total_casos": 50,
-  "timestamp": "2025-12-09T21:53:44.911140",
+  "timestamp": "2026-04-28T14:15:33.772591",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 2,
+      "total_detectado": 4,
       "estado": "OK"
     },
     "estado": "OK"
@@ -28,7 +28,7 @@
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "CARCINOMA ESCAMOCELULAR INVASIVO QUERATINIZANTE ( BIEN DIFERENCIADO )"
+      "valor_bd": "CARCINOMA ESCAMOCELULAR INVASIVO QUERATINIZANTE ( BIEN DIFERENCIADO ) P16 NEGATIVO"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -58,16 +58,13 @@
     "campos_obligatorios": {
       "errores": []
     },
-    "warnings": [
-      "Descripcion macroscopica coincide parcialmente con OCR (similitud: 56%)"
-    ],
+    "warnings": [],
     "errores": [],
     "estado": "OK",
     "descripcion_macroscopica": {
-      "estado": "WARNING",
-      "mensaje": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 56%)",
-      "valor_bd": "Se realizan niveles histológicos al bloque M2410007 con rótulo correspondiente a \" tumor paladar der...",
-      "valor_ocr": "Se realizan niveles histológicos al bloque M2410007 con rótulo correspondiente a \" tumor paladar\nder..."
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se realizan niveles histológicos al bloque M2410007 con rótulo correspondiente a \" tumor paladar der..."
     },
     "descripcion_microscopica": {
       "estado": "OK",
@@ -89,6 +86,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -96,13 +100,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 88.9,
-    "score_final": 88.9,
-    "validaciones_ok": 8,
-    "total_validaciones": 9,
-    "warnings": 1,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
+    "warnings": 0,
     "errores": 0
   },
   "resumen": {},
-  "estado_final": "ADVERTENCIA"
+  "estado_final": "OK"
 }

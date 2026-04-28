@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250050",
   "caso_num": 50,
   "total_casos": 50,
-  "timestamp": "2025-12-17T05:17:24.299922",
+  "timestamp": "2026-04-28T14:15:52.771499",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 1,
+      "total_detectado": 4,
       "estado": "OK"
     },
     "estado": "OK"
@@ -28,7 +28,7 @@
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
-      "valor_bd": "CARCINOMA ESCAMOSO NO QUERATINIZANTE"
+      "valor_bd": "CARCINOMA ESCAMOSO NO QUERATINIZANTE NEGATIVO PARA TINCIÓN CON LMP-1"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -36,24 +36,25 @@
       "mensaje": "Correcto (no aplica)"
     },
     "biomarcadores": {
-      "estado": "ERROR",
-      "mensaje": "1 biomarcadores sin mapeo/vacíos",
+      "estado": "WARNING",
+      "mensaje": "1 biomarcadores extras en BD",
       "total_solicitado_ocr": 1,
-      "total_solicitado_bd": 1,
+      "total_solicitado_bd": 2,
       "estudios_ocr": [
-        "EBER"
+        "LMP 1"
       ],
       "estudios_bd": [
-        "EBER"
+        "LMP 1",
+        "CD45"
       ],
       "faltantes_en_bd": [],
-      "extras_en_bd": [],
-      "mapeados": 0,
-      "no_mapeados": [
-        "EBER (sin columna)"
+      "extras_en_bd": [
+        "CD45"
       ],
+      "mapeados": 1,
+      "no_mapeados": [],
       "valores_incorrectos": [],
-      "cobertura": 0.0
+      "cobertura": 100.0
     },
     "campos_obligatorios": {
       "errores": []
@@ -63,7 +64,7 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se realizan niveles histológicos al bloque extrainstitucional 22FQ-20304, el cual corresponde a biop..."
     },
     "descripcion_microscopica": {
@@ -86,6 +87,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -93,10 +101,10 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 88.9,
-    "score_final": 88.9,
-    "validaciones_ok": 8,
-    "total_validaciones": 9,
+    "score_validacion": 90.0,
+    "score_final": 90.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

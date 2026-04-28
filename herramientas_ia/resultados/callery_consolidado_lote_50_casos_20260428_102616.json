@@ -1,0 +1,43 @@
+{
+  "lote_id": "lote_50_casos_20260428_102616",
+  "timestamp": "2026-04-28T10:26:54.536756",
+  "casos_procesados": 50,
+  "resumen_scores": {
+    "promedio": 95.8,
+    "mediana": 100.0,
+    "minimo": 80.0,
+    "maximo": 100.0
+  },
+  "casos_problematicos": [
+    {
+      "numero": "IHQ250002",
+      "score": 80.0,
+      "errores": 0,
+      "warnings": 1
+    },
+    {
+      "numero": "IHQ250007",
+      "score": 80.0,
+      "errores": 1,
+      "warnings": 0
+    },
+    {
+      "numero": "IHQ250033",
+      "score": 80.0,
+      "errores": 0,
+      "warnings": 1
+    },
+    {
+      "numero": "IHQ250043",
+      "score": 80.0,
+      "errores": 0,
+      "warnings": 1
+    }
+  ],
+  "biomarcadores_faltantes_comunes": [],
+  "errores_por_tipo": {},
+  "recomendaciones": [
+    "Validar 4 casos criticos con IA"
+  ],
+  "version_herramienta": "2.0.0"
+}

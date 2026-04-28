@@ -1,0 +1,17 @@
+{
+  "caso": "IHQ250010",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "casos_eliminados": 0,
+  "casos_reprocesados": 0,
+  "score_antes": 0,
+  "score_despues": 0,
+  "mejora_porcentaje": 0,
+  "auditoria_completa": {},
+  "estado": "ERROR_REPROCESAMIENTO_ROLLBACK_EXITOSO",
+  "errores": [
+    "No module named 'fitz'"
+  ],
+  "backup_db": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\func06\\huv_oncologia_pre_func06_IHQ250010_20260428_105035.db",
+  "backup_debug_maps": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\func06\\debug_maps_pre_func06_IHQ250010_20260428_105035",
+  "backup_timestamp": "20260428_105035"
+}

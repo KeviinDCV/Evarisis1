@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250003",
   "caso_num": 3,
   "total_casos": 50,
-  "timestamp": "2025-11-29T20:58:18.969643",
+  "timestamp": "2026-04-28T14:15:26.339457",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,18 +14,16 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 6,
+      "total_detectado": 7,
       "estado": "OK"
     },
     "estado": "OK"
   },
   "auditoria_bd": {
     "diagnostico_coloracion": {
-      "estado": "WARNING",
-      "mensaje": "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
-      "valor_bd": "NEOPLASIA INVASIVA EN PATRÓN SOLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA",
-      "valor_ocr": null,
-      "nota": "Verificar manualmente si el diagnóstico está en un formato no estándar"
+      "estado": "OK",
+      "valor": "NEOPLASIA INVASIVA EN PATRÓN SOLIDO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "mensaje": "Correcto (coincidencia exacta)"
     },
     "diagnostico_principal": {
       "estado": "OK",
@@ -46,14 +44,14 @@
         "CK7",
         "CK20",
         "TTF-1",
-        "NAPSINA A",
+        "NAPSIN",
         "P40"
       ],
       "estudios_bd": [
         "CK7",
         "CK20",
         "TTF-1",
-        "NAPSINA A",
+        "NAPSIN",
         "P40"
       ],
       "faltantes_en_bd": [],
@@ -66,14 +64,12 @@
     "campos_obligatorios": {
       "errores": []
     },
-    "warnings": [
-      "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR"
-    ],
+    "warnings": [],
     "errores": [],
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
     },
     "descripcion_microscopica": {
@@ -96,6 +92,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -103,12 +106,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 88.9,
-    "validaciones_ok": 8,
-    "total_validaciones": 9,
-    "warnings": 1,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
+    "warnings": 0,
     "errores": 0
   },
   "resumen": {},
-  "estado_final": "ADVERTENCIA"
+  "estado_final": "OK"
 }

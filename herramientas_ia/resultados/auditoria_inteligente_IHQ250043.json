@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250043",
   "caso_num": 43,
   "total_casos": 50,
-  "timestamp": "2025-12-17T03:59:30.619937",
+  "timestamp": "2026-04-28T15:40:00.770965",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -28,7 +28,7 @@
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "GLIOSIS REACTIVA. B. HIPOCAMPO DERECHO. HIPOCAMPECTOMÍA. ESTUDIO DE INMUNOHISTOQUÍMICA: - COMPATIBLE CON ESCLEROSIS HIPOCAMPAL. - CAMBIOS REACTIVOS GLIALES Y MICROGLIALES"
+      "valor_bd": "HALLAZGOS QUE FAVORECEN GLIOSIS REACTIVA"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -38,26 +38,28 @@
     "biomarcadores": {
       "estado": "ERROR",
       "mensaje": "1 valores NO coinciden con OCR",
-      "total_solicitado_ocr": 2,
-      "total_solicitado_bd": 2,
+      "total_solicitado_ocr": 3,
+      "total_solicitado_bd": 3,
       "estudios_ocr": [
         "NeuN",
-        "B2"
+        "GFAP",
+        "CD68"
       ],
       "estudios_bd": [
         "NeuN",
-        "B2"
+        "GFAP",
+        "CD68"
       ],
       "faltantes_en_bd": [],
       "extras_en_bd": [],
-      "mapeados": 2,
+      "mapeados": 3,
       "no_mapeados": [],
       "valores_incorrectos": [
         {
-          "biomarcador": "NeuN",
-          "columna": "IHQ_NEUN",
-          "valor_bd": "POSITIVO",
-          "valor_ocr": "-"
+          "biomarcador": "GFAP",
+          "columna": "IHQ_GFAP",
+          "valor_bd": "NEGATIVO",
+          "valor_ocr": "POSITIVO"
         }
       ],
       "cobertura": 100.0
@@ -85,14 +87,21 @@
     },
     "malignidad": {
       "estado": "OK",
-      "mensaje": "Malignidad correcta: MALIGNO",
-      "valor_bd": "MALIGNO"
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -100,10 +109,10 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 88.9,
-    "score_final": 88.9,
-    "validaciones_ok": 8,
-    "total_validaciones": 9,
+    "score_validacion": 90.0,
+    "score_final": 90.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

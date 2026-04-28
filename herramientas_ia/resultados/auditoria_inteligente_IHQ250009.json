@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250009",
   "caso_num": 9,
   "total_casos": 50,
-  "timestamp": "2025-12-01T01:48:47.215988",
+  "timestamp": "2026-04-28T14:15:29.881887",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,18 +14,16 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 5,
+      "total_detectado": 6,
       "estado": "OK"
     },
     "estado": "OK"
   },
   "auditoria_bd": {
     "diagnostico_coloracion": {
-      "estado": "WARNING",
-      "mensaje": "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
-      "valor_bd": "LESIÓN NEOPLÁSICA LIPOMATOSA CON ATIPIA",
-      "valor_ocr": null,
-      "nota": "Verificar manualmente si el diagnóstico está en un formato no estándar"
+      "estado": "OK",
+      "valor": "LESIÓN NEOPLÁSICA LIPOMATOSA CON ATIPIA",
+      "mensaje": "Correcto (coincidencia exacta)"
     },
     "diagnostico_principal": {
       "estado": "OK",
@@ -64,15 +62,12 @@
     "campos_obligatorios": {
       "errores": []
     },
-    "warnings": [
-      "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
-      "BD indica MALIGNO pero no se encontraron keywords malignos en OCR"
-    ],
+    "warnings": [],
     "errores": [],
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
     },
     "descripcion_microscopica": {
@@ -86,30 +81,22 @@
       "valor_bd": "MUSLO DERECHO"
     },
     "malignidad": {
-      "estado": "WARNING",
-      "mensaje": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
-      "valor_bd": "MALIGNO",
-      "keywords_buscados": [
-        "CARCINOMA",
-        "ADENOCARCINOMA",
-        "SARCOMA",
-        "MELANOMA",
-        "LINFOMA",
-        "LEUCEMIA",
-        "NEOPLASIA MALIGNA",
-        "TUMOR MALIGNO",
-        "METASTASIS",
-        "METASTÁSICO",
-        "INVASIVO",
-        "INFILTRANTE"
-      ],
-      "nota": "Revisar manualmente si la clasificación es correcta"
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -117,12 +104,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 77.8,
-    "validaciones_ok": 7,
-    "total_validaciones": 9,
-    "warnings": 2,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
+    "warnings": 0,
     "errores": 0
   },
   "resumen": {},
-  "estado_final": "ADVERTENCIA"
+  "estado_final": "OK"
 }

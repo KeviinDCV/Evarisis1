@@ -1,8 +1,8 @@
 {
-  "numero_caso": "IHQ250037",
-  "caso_num": 37,
+  "numero_caso": "IHQ250007",
+  "caso_num": 7,
   "total_casos": 50,
-  "timestamp": "2026-04-28T14:15:45.522813",
+  "timestamp": "2026-04-28T14:15:28.562409",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 4,
+      "total_detectado": 14,
       "estado": "OK"
     },
     "estado": "OK"
@@ -24,14 +24,14 @@
       "estado": "ERROR",
       "mensaje": "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
       "valor_bd": "NO APLICA",
-      "valor_ocr": "LESIÓN DE RECTO BAJO”",
+      "valor_ocr": "GANGLIO PROFUNDO METASTÁSICO”",
       "patron_encontrado": "bloque M + diagnóstico de \"...\"",
       "sugerencia": "Verificar medical_extractor.extract_diagnostico_coloracion()"
     },
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE FAVORECEN COLITIS AGUDA Y CRÓNICA NO ESPECÍFICA"
+      "valor_bd": "HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON CARCINOMA NEUROENDOCRINO METASTÁSICO"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -39,21 +39,46 @@
       "mensaje": "Correcto (no aplica)"
     },
     "biomarcadores": {
-      "estado": "OK",
-      "mensaje": "Todos los estudios mapeados (2/2)",
-      "total_solicitado_ocr": 2,
-      "total_solicitado_bd": 2,
+      "estado": "WARNING",
+      "mensaje": "1 biomarcadores extras en BD",
+      "total_solicitado_ocr": 13,
+      "total_solicitado_bd": 14,
       "estudios_ocr": [
-        "HHV8",
-        "CD34"
+        "CKAE1E3",
+        "CK7",
+        "CK20",
+        "CK19",
+        "CDX2",
+        "P40",
+        "CA19-9",
+        "CEA",
+        "SALL 4",
+        "CD56",
+        "SYNAPTOFISINA",
+        "CHROMOGRANINA",
+        "CD30"
       ],
       "estudios_bd": [
-        "HHV8",
-        "CD34"
+        "CKAE1AE3",
+        "CK7",
+        "CK20",
+        "CK19",
+        "CDX2",
+        "P40",
+        "CA19-9",
+        "CEA",
+        "SALL 4",
+        "CD56",
+        "SYNAPTOFISINA",
+        "CHROMOGRANINA",
+        "CD30",
+        "CROMOGRANINA"
       ],
       "faltantes_en_bd": [],
-      "extras_en_bd": [],
-      "mapeados": 2,
+      "extras_en_bd": [
+        "CROMOGRANINA"
+      ],
+      "mapeados": 13,
       "no_mapeados": [],
       "valores_incorrectos": [],
       "cobertura": 100.0
@@ -69,7 +94,7 @@
     "descripcion_macroscopica": {
       "estado": "OK",
       "mensaje": "Descripcion macroscopica correcta",
-      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional ro..."
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional pr..."
     },
     "descripcion_microscopica": {
       "estado": "OK",
@@ -79,12 +104,12 @@
     "ihq_organo": {
       "estado": "OK",
       "mensaje": "IHQ_ORGANO está limpio",
-      "valor_bd": "MUCOSA RECTAL"
+      "valor_bd": "GANGLIO LINFÁTICO PROFUNDO (SITIO NO ESPECIFICADO)"
     },
     "malignidad": {
       "estado": "OK",
-      "mensaje": "Malignidad correcta: BENIGNO",
-      "valor_bd": "BENIGNO"
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
@@ -93,11 +118,11 @@
       "estado": "OK"
     },
     "biomarcadores_no_mencionado": {
-      "total_revisados": 0,
+      "total_revisados": 1,
       "falsos_no_mencionado": [],
-      "biomarcadores_ok": 0,
+      "biomarcadores_ok": 1,
       "estado": "OK",
-      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
+      "mensaje": "1/1 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -105,9 +130,9 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 90.0,
-    "score_final": 90.0,
-    "validaciones_ok": 9,
+    "score_validacion": 80.0,
+    "score_final": 80.0,
+    "validaciones_ok": 8,
     "total_validaciones": 10,
     "warnings": 0,
     "errores": 1

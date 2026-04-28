@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250036",
   "caso_num": 36,
   "total_casos": 50,
-  "timestamp": "2025-12-16T04:50:46.975840",
+  "timestamp": "2026-04-28T14:15:44.973152",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 7,
+      "total_detectado": 8,
       "estado": "OK"
     },
     "estado": "OK"
@@ -28,7 +28,7 @@
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "CARCINOMA POCO COHESIVO"
+      "valor_bd": "⁠CARCINOMA POCO COHESIVO - ⁠PATRÓN MICROSATELITAL ESTABLE -"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -74,7 +74,7 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se realiza estudio de inmunohistoquímica al caso extrainstitucional con rotulo B24-800 (21/12/2024) ..."
     },
     "descripcion_microscopica": {
@@ -97,6 +97,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -106,8 +113,8 @@
   "metricas": {
     "score_validacion": 100.0,
     "score_final": 100.0,
-    "validaciones_ok": 9,
-    "total_validaciones": 9,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

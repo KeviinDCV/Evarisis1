@@ -409,6 +409,206 @@ Los siguientes archivos NO han sido procesados aún:
 | 20 | IHQ250127 | ✅ Procesado | ✅ Auditado | 2026-01-05 | Score: 100.0% - v6.4.3 (Fix CD34/CD117 negation, CD56 parenthetical, studies fallback). |
 | 21 | IHQ250128 | ✅ Procesado | ✅ Auditado | 2026-01-05 | Score: 100.0% - v6.4.4 (Fix end-of-macro studies list, clean organ ID/date prefix, normalize RE/RP). MAMA DERECHA. |
 | 22 | IHQ250129 | ✅ Auditado | ✅ Auditado | 2026-01-05 | Score: 100.0% - v6.4.5 (MMR nuclear intacto, HER2 score 0, malignidad MALIGNO corregida para Grado I). |
+| 23 | IHQ250001 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 24 | IHQ250002 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 25 | IHQ250003 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 26 | IHQ250004 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 27 | IHQ250005 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 28 | IHQ250006 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 29 | IHQ250007 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 30 | IHQ250008 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 31 | IHQ250009 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 32 | IHQ250010 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 33 | IHQ250011 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 34 | IHQ250012 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 35 | IHQ250013 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 36 | IHQ250014 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 37 | IHQ250015 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 38 | IHQ250016 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 39 | IHQ250017 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 40 | IHQ250018 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 41 | IHQ250019 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 42 | IHQ250020 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 43 | IHQ250021 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 44 | IHQ250022 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 45 | IHQ250023 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 46 | IHQ250024 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 47 | IHQ250025 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 48 | IHQ250026 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 49 | IHQ250027 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 50 | IHQ250028 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 51 | IHQ250029 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 52 | IHQ250030 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 53 | IHQ250031 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 54 | IHQ250032 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 55 | IHQ250033 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 56 | IHQ250034 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 57 | IHQ250035 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 58 | IHQ250036 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 59 | IHQ250037 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 60 | IHQ250038 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 61 | IHQ250039 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 62 | IHQ250040 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 63 | IHQ250041 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 64 | IHQ250042 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 65 | IHQ250043 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 66 | IHQ250044 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 67 | IHQ250045 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 68 | IHQ250046 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 69 | IHQ250047 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 70 | IHQ250048 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 71 | IHQ250049 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 72 | IHQ250050 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 73 | IHQ250001 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 74 | IHQ250002 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 75 | IHQ250003 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 76 | IHQ250004 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 77 | IHQ250005 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 78 | IHQ250006 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 79 | IHQ250007 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 80 | IHQ250008 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 81 | IHQ250009 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 82 | IHQ250010 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 83 | IHQ250011 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 84 | IHQ250012 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 85 | IHQ250013 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 86 | IHQ250014 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 87 | IHQ250015 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 88 | IHQ250016 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 89 | IHQ250017 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 90 | IHQ250018 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 91 | IHQ250019 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 92 | IHQ250020 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 93 | IHQ250021 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 94 | IHQ250022 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 95 | IHQ250023 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 96 | IHQ250024 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 97 | IHQ250025 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 98 | IHQ250026 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 99 | IHQ250027 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 100 | IHQ250028 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 101 | IHQ250029 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 102 | IHQ250030 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 103 | IHQ250031 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 104 | IHQ250032 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 105 | IHQ250033 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 106 | IHQ250034 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 107 | IHQ250035 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 108 | IHQ250036 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 109 | IHQ250037 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 110 | IHQ250038 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 111 | IHQ250039 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 112 | IHQ250040 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 113 | IHQ250041 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 114 | IHQ250042 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 115 | IHQ250043 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 116 | IHQ250044 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 117 | IHQ250045 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 118 | IHQ250046 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 119 | IHQ250047 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 120 | IHQ250048 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 121 | IHQ250049 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 122 | IHQ250050 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 123 | IHQ250001 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 124 | IHQ250002 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 125 | IHQ250003 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 126 | IHQ250004 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 127 | IHQ250005 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 128 | IHQ250006 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 129 | IHQ250007 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 130 | IHQ250008 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 131 | IHQ250009 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 132 | IHQ250010 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 133 | IHQ250011 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 134 | IHQ250012 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 135 | IHQ250013 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 136 | IHQ250014 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 137 | IHQ250015 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 138 | IHQ250016 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 139 | IHQ250017 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 140 | IHQ250018 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 141 | IHQ250019 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 142 | IHQ250020 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 143 | IHQ250021 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 144 | IHQ250022 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 145 | IHQ250023 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 146 | IHQ250024 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 147 | IHQ250025 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 148 | IHQ250026 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 149 | IHQ250027 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 150 | IHQ250028 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 151 | IHQ250029 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 152 | IHQ250030 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 153 | IHQ250031 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 154 | IHQ250032 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 155 | IHQ250033 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 156 | IHQ250034 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 157 | IHQ250035 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 158 | IHQ250036 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 159 | IHQ250037 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 160 | IHQ250038 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 161 | IHQ250039 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 162 | IHQ250040 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 163 | IHQ250041 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 164 | IHQ250042 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 165 | IHQ250043 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 166 | IHQ250044 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 167 | IHQ250045 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 168 | IHQ250046 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 169 | IHQ250047 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 170 | IHQ250048 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 171 | IHQ250049 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 172 | IHQ250050 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 173 | IHQ250001 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 174 | IHQ250002 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 175 | IHQ250003 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 176 | IHQ250004 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 177 | IHQ250005 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 178 | IHQ250006 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 179 | IHQ250007 | ✅ Auditado | 2026-04-28 | Score: 80.0% - Correcciones aplicadas |
+| 180 | IHQ250008 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 181 | IHQ250009 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 182 | IHQ250010 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 183 | IHQ250011 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 184 | IHQ250012 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 185 | IHQ250013 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 186 | IHQ250014 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 187 | IHQ250015 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 188 | IHQ250016 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 189 | IHQ250017 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 190 | IHQ250018 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 191 | IHQ250019 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 192 | IHQ250020 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 193 | IHQ250021 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 194 | IHQ250022 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 195 | IHQ250023 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 196 | IHQ250024 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 197 | IHQ250025 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 198 | IHQ250026 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 199 | IHQ250027 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 200 | IHQ250028 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 201 | IHQ250029 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 202 | IHQ250030 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 203 | IHQ250031 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 204 | IHQ250032 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 205 | IHQ250033 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 206 | IHQ250034 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 207 | IHQ250035 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 208 | IHQ250036 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 209 | IHQ250037 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 210 | IHQ250038 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 211 | IHQ250039 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 212 | IHQ250040 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 213 | IHQ250041 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 214 | IHQ250042 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 215 | IHQ250043 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 216 | IHQ250044 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 217 | IHQ250045 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 218 | IHQ250046 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 219 | IHQ250047 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 220 | IHQ250048 | ✅ Auditado | 2026-04-28 | Score: 100.0% |
+| 221 | IHQ250049 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
+| 222 | IHQ250050 | ✅ Auditado | 2026-04-28 | Score: 90.0% |
 | 23 | IHQ250130 | ❌ NO PROCESADO | ❌ No existe | - |
 | 24 | IHQ250131 | ✅ Procesado | ✅ Auditado | 2026-01-05 | Score: 100.0% - v6.4.5: Corregido ruido en biomarcadores narrativos, flip de Sinaptofisina y clasificación de malignidad para NET G1. |
 | 25 | IHQ250132 | ✅ Procesado | ✅ Auditado | 2026-01-05 | Score: 100.0% - v6.4.5: Corregida extracción fantasma de P63 y duplicación de PAX8 en estudios solicitados. |
@@ -593,7 +793,7 @@ Los siguientes casos NO fueron procesados (posiblemente no existen en el PDF o t
 **Rango procesado:** IHQ250212 - IHQ250262 (salto: IHQ250243)
 **Última auditoría:** 2026-01-29 - IHQ250262 (score 88.9%)
 
-### ✅ Casos Auditados (50/50)
+### ✅ Casos Auditados (250/50)
 
 <details>
 <summary>Ver casos auditados del rango 212-262</summary>

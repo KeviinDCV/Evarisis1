@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250040",
   "caso_num": 40,
   "total_casos": 50,
-  "timestamp": "2025-12-17T02:53:37.172152",
+  "timestamp": "2026-04-28T14:15:47.149097",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 6,
+      "total_detectado": 8,
       "estado": "OK"
     },
     "estado": "OK"
@@ -43,10 +43,12 @@
       "estado": "OK",
       "mensaje": "Todos los estudios mapeados (0/0)",
       "total_solicitado_ocr": 0,
-      "total_solicitado_bd": 5,
+      "total_solicitado_bd": 7,
       "estudios_ocr": [],
       "estudios_bd": [
         "CK7",
+        "EMA",
+        "GFAP",
         "Ki-67",
         "Receptor de Progesterona",
         "S100",
@@ -55,6 +57,8 @@
       "faltantes_en_bd": [],
       "extras_en_bd": [
         "CK7",
+        "EMA",
+        "GFAP",
         "Ki-67",
         "Receptor de Progesterona",
         "S100",
@@ -73,7 +77,7 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se realizan niveles al bloque M2409498 que corresponde a resección de lesión en la región del clivus..."
     },
     "descripcion_microscopica": {
@@ -96,6 +100,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -105,8 +116,8 @@
   "metricas": {
     "score_validacion": 100.0,
     "score_final": 100.0,
-    "validaciones_ok": 9,
-    "total_validaciones": 9,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

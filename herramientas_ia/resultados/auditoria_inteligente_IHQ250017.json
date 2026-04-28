@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250017",
   "caso_num": 17,
   "total_casos": 50,
-  "timestamp": "2025-12-10T00:27:04.961760",
+  "timestamp": "2026-04-28T14:15:34.322773",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -26,9 +26,11 @@
       "mensaje": "Correcto (similitud parcial)"
     },
     "diagnostico_principal": {
-      "estado": "OK",
-      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS)"
+      "estado": "WARNING",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+      "valor_bd": "07/01/2025 ADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS)",
+      "valor_ocr": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO (FRAGMENTOS).",
+      "nota": "Puede ser válido si es una versión resumida del diagnóstico completo"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -67,12 +69,14 @@
     "campos_obligatorios": {
       "errores": []
     },
-    "warnings": [],
+    "warnings": [
+      "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)"
+    ],
     "errores": [],
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2410475 correspondiente..."
     },
     "descripcion_microscopica": {
@@ -95,6 +99,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -102,13 +113,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 100.0,
-    "score_final": 100.0,
+    "score_validacion": 90.0,
+    "score_final": 90.0,
     "validaciones_ok": 9,
-    "total_validaciones": 9,
-    "warnings": 0,
+    "total_validaciones": 10,
+    "warnings": 1,
     "errores": 0
   },
   "resumen": {},
-  "estado_final": "OK"
+  "estado_final": "ADVERTENCIA"
 }

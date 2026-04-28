@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250049",
   "caso_num": 49,
   "total_casos": 50,
-  "timestamp": "2026-01-07T18:08:19.356335",
+  "timestamp": "2026-04-28T14:15:52.219467",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -63,16 +63,14 @@
       "errores": []
     },
     "warnings": [
-      "Descripcion macroscopica coincide parcialmente con OCR (similitud: 50%)",
       "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)"
     ],
     "errores": [],
     "estado": "OK",
     "descripcion_macroscopica": {
-      "estado": "WARNING",
-      "mensaje": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 50%)",
-      "valor_bd": "Se realizan niveles al bloque M2410121-bloque 13, que corresponde a nefrectomia radical izquierda, c...",
-      "valor_ocr": "Se realizan niveles al bloque\nM2410121-bloque 13, que corresponde a nefrectomia radical\nizquierda, c..."
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se realizan niveles al bloque M2410121-bloque 13, que corresponde a nefrectomia radical izquierda, c..."
     },
     "descripcion_microscopica": {
       "estado": "OK",
@@ -94,6 +92,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -101,11 +106,11 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 77.8,
-    "score_final": 77.8,
-    "validaciones_ok": 7,
-    "total_validaciones": 9,
-    "warnings": 2,
+    "score_validacion": 90.0,
+    "score_final": 90.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 10,
+    "warnings": 1,
     "errores": 0
   },
   "resumen": {},
