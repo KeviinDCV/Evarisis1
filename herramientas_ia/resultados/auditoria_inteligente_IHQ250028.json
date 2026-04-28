@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250028",
   "caso_num": 28,
   "total_casos": 50,
-  "timestamp": "2025-12-15T08:07:34.672503",
+  "timestamp": "2026-04-28T15:00:19.856791",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -22,13 +22,13 @@
   "auditoria_bd": {
     "diagnostico_coloracion": {
       "estado": "OK",
-      "valor": "ADENOCARCINOMA DE PROBABLE ORIGEN GASTROBILIAR",
-      "mensaje": "Correcto (similitud parcial)"
+      "valor": "ADENOCARCINOMA",
+      "mensaje": "Correcto (coincidencia exacta)"
     },
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "ADENOCARCINOMA SOBREEXPRESIÓN DE ONCOGEN HER-2: EQUIVOCO ("
+      "valor_bd": "ADENOCARCINOMA SOBREEXPRESIÓN DE ONCOGEN"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -67,7 +67,7 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se le realizan niveles al bloque M2408063que corresponde a biopsia de lesión de hígado, con diagnóst..."
     },
     "descripcion_microscopica": {
@@ -90,6 +90,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -99,8 +106,8 @@
   "metricas": {
     "score_validacion": 100.0,
     "score_final": 100.0,
-    "validaciones_ok": 9,
-    "total_validaciones": 9,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

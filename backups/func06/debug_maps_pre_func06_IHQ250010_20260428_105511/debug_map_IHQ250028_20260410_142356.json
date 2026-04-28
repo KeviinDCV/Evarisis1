@@ -1,0 +1,155 @@
+{
+  "session_id": "IHQ250028_20260410_142356",
+  "numero_peticion": "IHQ250028",
+  "timestamp": "2026-04-10T14:23:56.403777",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "Nombre : GERTRUDIS BRAVO VALENCIA\nN. peticion : IHQ250028\nN.Identificación : CC. 31847113\nGenero : FEMENINO\nEdad : 70 años 2 meses 19 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 10/01/2025\nFecha Informe : 17/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nIHQ250028\nESTUDIO DE\nINMUNOHISTOQUIMICA\n898807 Estudio anatomopatologico de marcacion\ninmunohistoquimica basica (especifico)\nBloques y laminas\nBIOPSIA DE LESION DE\nHIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe le realizan niveles al bloque M2408063que corresponde a biopsia de lesión de hígado, con diagnóstico\nde \"ADENOCARCINOMA\", con estudio de inmunohistoquímica previo número \"IHQ241139\" con\ndiagnóstico de \"ADENOCARCINOMA DE PROBABLE ORIGEN GASTROBILIAR\". Se ordenan estudio de HER-2\ny Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLesión adenocarcinomatosa de oncogén Se observan al menos 5 celulas cancerosas con reactividad\nlateral y basolateral debil del gen HER2:\n- EQUIVOCO ( Score 2+).\nÍndice de proliferación celular con Ki-67 del 50%.\nClonas utilizadas:\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nDIAGNÓSTICO\nHígado. Lesión. Biopsia. Estudios de inmunohistoquímica:\nADENOCARCINOMA \nSOBREEXPRESIÓN DE ONCOGEN HER-2: EQUIVOCO (SCORE 2+)\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 47 ---\nIHQ250028\nCopia Pag. 2 de 2\nNombre : GERTRUDIS BRAVO VALENCIA\nN. peticion : IHQ250028\nN.Identificación : CC. 31847113\nGenero : FEMENINO\nEdad : 70 años 2 meses 19 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 10/01/2025\nFecha Informe : 17/01/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3266,
+      "reduccion_porcentaje": 98.09
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250028",
+      "caso_num": 28,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "GERTRUDIS BRAVO VALENCIA",
+      "numero_peticion": "IHQ250028",
+      "identificacion": "31847113",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "70",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "10/01/2025",
+      "fecha_informe": "17/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250028",
+      "N. de identificación": "31847113",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "10/01/2025",
+      "Fecha Informe": "17/01/2025",
+      "nombres": "GERTRUDIS BRAVO",
+      "Primer nombre": "GERTRUDIS",
+      "Segundo nombre": "BRAVO",
+      "apellidos": "VALENCIA",
+      "Primer apellido": "VALENCIA",
+      "Segundo apellido": "",
+      "nombre_formal": "VALENCIA, GERTRUDIS BRAVO",
+      "diagnostico": "Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA SOBREEXPRESIÓN DE ONCOGEN HER-2: EQUIVOCO (SCORE 2+)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión adenocarcinomatosa de oncogén Se observan al menos 5 celulas cancerosas con reactividad lateral y basolateral debil del gen HER2: - EQUIVOCO ( Score 2+). Índice de proliferación celular con KI-67 del 50%. Clonas utilizadas: Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.",
+      "descripcion_macroscopica": "Se le realizan niveles al bloque M2408063 que corresponde a biopsia de lesión de hígado, con diagnóstico de \"ADENOCARCINOMA\", con estudio de inmunohistoquímica previo número \"IHQ241139\" con diagnóstico de \"ADENOCARCINOMA DE PROBABLE ORIGEN GASTROBILIAR\". Se ordenan estudio de HER-2 y KI-67.",
+      "ihq_organo": "HÍGADO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "HÍGADO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "Ki-67 del 50% / HER2 y Ki-67",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_HER2": "NO MENCIONADO",
+      "IHQ_KI-67": "50%",
+      "extraction_timestamp": "2026-04-10T14:23:56.613716",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "Nombre : GERTRUDIS BRAVO VALENCIA\nN. peticion : IHQ250028\nN.Identificación : CC. 31847113\nGenero : FEMENINO\nEdad : 70 años 2 meses 19 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 10/01/2025\nFecha Informe : 17/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nIHQ250028\nESTUDIO DE\nINMUNOHISTOQUIMICA\n898807 Estudio anatomopatologico de marcacion\ninmunohistoquimica basica (especifico)\nBloques y laminas\nBIOPSIA DE LESION DE\nHIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe le realizan niveles al bloque M2408063que corresponde a biopsia de lesión de hígado, con diagnóstico\nde \"ADENOCARCINOMA\", con estudio de inmunohistoquímica previo número \"IHQ241139\" con\ndiagnóstico de \"ADENOCARCINOMA DE PROBABLE ORIGEN GASTROBILIAR\". Se ordenan estudio de HER-2\ny Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLesión adenocarcinomatosa de oncogén Se observan al menos 5 celulas cancerosas con reactividad\nlateral y basolateral debil del gen HER2:\n- EQUIVOCO ( Score 2+).\nÍndice de proliferación celular con Ki-67 del 50%.\nClonas utilizadas:\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nDIAGNÓSTICO\nHígado. Lesión. Biopsia. Estudios de inmunohistoquímica:\nADENOCARCINOMA \nSOBREEXPRESIÓN DE ONCOGEN HER-2: EQUIVOCO (SCORE 2+)\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 47 ---\nIHQ250028\nCopia Pag. 2 de 2\nNombre : GERTRUDIS BRAVO VALENCIA\nN. peticion : IHQ250028\nN.Identificación : CC. 31847113\nGenero : FEMENINO\nEdad : 70 años 2 meses 19 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 10/01/2025\nFecha Informe : 17/01/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67",
+      "Descripcion macroscopica": "Se le realizan niveles al bloque M2408063que corresponde a biopsia de lesión de hígado, con diagnóstico de \"ADENOCARCINOMA\", con estudio de inmunohistoquímica previo número \"IHQ241139\" con diagnóstico de \"ADENOCARCINOMA DE PROBABLE ORIGEN GASTROBILIAR\". Se ordenan estudio de HER-2 y Ki-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión adenocarcinomatosa de oncogén Se observan al menos 5 celulas cancerosas con reactividad lateral y basolateral debil del gen HER2: - EQUIVOCO ( Score 2+). Índice de proliferación celular con Ki-67 del 50%. Clonas utilizadas: Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.",
+      "Descripcion Diagnostico": "Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA SOBREEXPRESIÓN DE ONCOGEN HER-2: EQUIVOCO (SCORE 2+)",
+      "IHQ_ORGANO": "HÍGADO",
+      "Organo": "BIOPSIA DE LESION DE HIGADO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA",
+      "Diagnostico Principal": "ADENOCARCINOMA SOBREEXPRESIÓN DE ONCOGEN",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 50% / HER2 y Ki-67",
+      "IHQ_KI-67": "50%",
+      "IHQ_HER2": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 142,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 142,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica:\nADENOCARCINOMA \nSOBREEXPRESIÓN DE ONCOGEN HER-2: EQUIVOCO (SCORE 2+)",
+      "valor_corregido": "Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA SOBREEXPRESIÓN DE ONCOGEN HER-2: EQUIVOCO (SCORE 2+)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250028",
+      "timestamp": "2026-04-10T14:23:56.613310"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se le realizan niveles al bloque M2408063que corresponde a biopsia de lesión de hígado, con diagnóstico de \"ADENOCARCINOMA\", con estudio de inmunohistoquímica previo número \"IHQ241139\" con diagnóstico de \"ADENOCARCINOMA DE PROBABLE ORIGEN GASTROBILIAR\". Se ordenan estudio de HER-2 y Ki-67.",
+      "valor_corregido": "Se le realizan niveles al bloque M2408063 que corresponde a biopsia de lesión de hígado, con diagnóstico de \"ADENOCARCINOMA\", con estudio de inmunohistoquímica previo número \"IHQ241139\" con diagnóstico de \"ADENOCARCINOMA DE PROBABLE ORIGEN GASTROBILIAR\". Se ordenan estudio de HER-2 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250028",
+      "timestamp": "2026-04-10T14:23:56.613315"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión adenocarcinomatosa de oncogén Se observan al menos 5 celulas cancerosas con reactividad lateral y basolateral debil del gen HER2: - EQUIVOCO ( Score 2+). Índice de proliferación celular con Ki-67 del 50%. Clonas utilizadas: Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Lesión adenocarcinomatosa de oncogén Se observan al menos 5 celulas cancerosas con reactividad lateral y basolateral debil del gen HER2: - EQUIVOCO ( Score 2+). Índice de proliferación celular con KI-67 del 50%. Clonas utilizadas: Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250028",
+      "timestamp": "2026-04-10T14:23:56.613316"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 47
+  }
+}

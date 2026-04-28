@@ -1,0 +1,811 @@
+{
+  "lote_id": "lote_50_casos_20260428_124822",
+  "timestamp_inicio": "2026-04-28T12:48:22.676152",
+  "timestamp_fin": "2026-04-28T12:49:01.396144",
+  "usuario": "kechavarro",
+  "descripcion": "Auditoria de 50 casos",
+  "casos": [
+    {
+      "numero": "IHQ250001",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:26.728723",
+      "timestamp_fin": "2026-04-28T12:48:27.857612",
+      "duracion_segundos": 1.128889,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250001.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250002",
+      "estado": "COMPLETADO",
+      "score": 80.0,
+      "timestamp_inicio": "2026-04-28T12:48:27.876861",
+      "timestamp_fin": "2026-04-28T12:48:28.503404",
+      "duracion_segundos": 0.626543,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250002.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250003",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:28.524847",
+      "timestamp_fin": "2026-04-28T12:48:29.116586",
+      "duracion_segundos": 0.591739,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250003.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250004",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:29.134602",
+      "timestamp_fin": "2026-04-28T12:48:29.747325",
+      "duracion_segundos": 0.612723,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250004.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250005",
+      "estado": "COMPLETADO",
+      "score": 90.0,
+      "timestamp_inicio": "2026-04-28T12:48:29.766793",
+      "timestamp_fin": "2026-04-28T12:48:30.417189",
+      "duracion_segundos": 0.650396,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250005.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250006",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:30.436362",
+      "timestamp_fin": "2026-04-28T12:48:31.040308",
+      "duracion_segundos": 0.603946,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250006.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250007",
+      "estado": "COMPLETADO",
+      "score": 80.0,
+      "timestamp_inicio": "2026-04-28T12:48:31.058477",
+      "timestamp_fin": "2026-04-28T12:48:31.708822",
+      "duracion_segundos": 0.650345,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250007.json",
+      "errores_criticos": 1,
+      "warnings": 0,
+      "errores_detectados": [
+        {
+          "tipo": "DIAGNOSTICO_COLORACION",
+          "severidad": "CRITICO",
+          "campo": "Diagnostico Coloracion",
+          "problema": "Campo NO APLICA pero existe diagnostico en OCR",
+          "sugerencia": "Verificar patron de extraccion en medical_extractor.py (linea ~665)",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "extract_diagnostico_coloracion()"
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250008",
+      "estado": "COMPLETADO",
+      "score": 90.0,
+      "timestamp_inicio": "2026-04-28T12:48:31.728948",
+      "timestamp_fin": "2026-04-28T12:48:32.527365",
+      "duracion_segundos": 0.798417,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250008.json",
+      "errores_criticos": 1,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250009",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:32.548921",
+      "timestamp_fin": "2026-04-28T12:48:33.169614",
+      "duracion_segundos": 0.620693,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250009.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250010",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:33.190215",
+      "timestamp_fin": "2026-04-28T12:48:33.911965",
+      "duracion_segundos": 0.72175,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250010.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250011",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:33.932507",
+      "timestamp_fin": "2026-04-28T12:48:34.633081",
+      "duracion_segundos": 0.700574,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250011.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250012",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:34.651830",
+      "timestamp_fin": "2026-04-28T12:48:35.398637",
+      "duracion_segundos": 0.746807,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250012.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250013",
+      "estado": "COMPLETADO",
+      "score": 90.0,
+      "timestamp_inicio": "2026-04-28T12:48:35.427602",
+      "timestamp_fin": "2026-04-28T12:48:36.236554",
+      "duracion_segundos": 0.808952,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250013.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250014",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:36.261870",
+      "timestamp_fin": "2026-04-28T12:48:36.988659",
+      "duracion_segundos": 0.726789,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250014.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250015",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:37.007958",
+      "timestamp_fin": "2026-04-28T12:48:37.599028",
+      "duracion_segundos": 0.59107,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250015.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250016",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:37.619819",
+      "timestamp_fin": "2026-04-28T12:48:38.214938",
+      "duracion_segundos": 0.595119,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250016.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250017",
+      "estado": "COMPLETADO",
+      "score": 90.0,
+      "timestamp_inicio": "2026-04-28T12:48:38.233075",
+      "timestamp_fin": "2026-04-28T12:48:38.824492",
+      "duracion_segundos": 0.591417,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250017.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250018",
+      "estado": "COMPLETADO",
+      "score": 90.0,
+      "timestamp_inicio": "2026-04-28T12:48:38.843263",
+      "timestamp_fin": "2026-04-28T12:48:39.453727",
+      "duracion_segundos": 0.610464,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250018.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": [
+        {
+          "tipo": "BIOMARCADOR_NO_MAPEADO",
+          "severidad": "WARNING",
+          "campo": "Biomarcador ACTINA DE MUSCULO LISO (sin columna)",
+          "problema": "Biomarcador 'ACTINA DE MUSCULO LISO (sin columna)' no esta en el sistema",
+          "sugerencia": "Ejecutar FUNC-03: auditor.agregar_biomarcador('ACTINA DE MUSCULO LISO (sin columna)')",
+          "archivos_afectados": [
+            "core/validation_checker.py"
+          ],
+          "funcion": "FUNC-03"
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250019",
+      "estado": "COMPLETADO",
+      "score": 90.0,
+      "timestamp_inicio": "2026-04-28T12:48:39.472989",
+      "timestamp_fin": "2026-04-28T12:48:40.085508",
+      "duracion_segundos": 0.612519,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250019.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250020",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:40.104428",
+      "timestamp_fin": "2026-04-28T12:48:40.680723",
+      "duracion_segundos": 0.576295,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250020.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250021",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:40.698879",
+      "timestamp_fin": "2026-04-28T12:48:41.359961",
+      "duracion_segundos": 0.661082,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250021.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250022",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:41.379403",
+      "timestamp_fin": "2026-04-28T12:48:42.021928",
+      "duracion_segundos": 0.642525,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250022.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250023",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:42.042999",
+      "timestamp_fin": "2026-04-28T12:48:42.741639",
+      "duracion_segundos": 0.69864,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250023.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250024",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:42.766545",
+      "timestamp_fin": "2026-04-28T12:48:43.475991",
+      "duracion_segundos": 0.709446,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250024.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250025",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:43.497210",
+      "timestamp_fin": "2026-04-28T12:48:44.259217",
+      "duracion_segundos": 0.762007,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250025.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250026",
+      "estado": "COMPLETADO",
+      "score": 90.0,
+      "timestamp_inicio": "2026-04-28T12:48:44.279918",
+      "timestamp_fin": "2026-04-28T12:48:45.138059",
+      "duracion_segundos": 0.858141,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250026.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": [
+        {
+          "tipo": "BIOMARCADOR_NO_MAPEADO",
+          "severidad": "WARNING",
+          "campo": "Biomarcador ACTINA (sin columna)",
+          "problema": "Biomarcador 'ACTINA (sin columna)' no esta en el sistema",
+          "sugerencia": "Ejecutar FUNC-03: auditor.agregar_biomarcador('ACTINA (sin columna)')",
+          "archivos_afectados": [
+            "core/validation_checker.py"
+          ],
+          "funcion": "FUNC-03"
+        },
+        {
+          "tipo": "VALOR_BIOMARCADOR_INCORRECTO",
+          "severidad": "CRITICO",
+          "campo": "Biomarcador CKAE1E3",
+          "problema": "Valor en BD no coincide con OCR",
+          "sugerencia": "Verificar extractor de CKAE1E3 o ejecutar FUNC-06",
+          "archivos_afectados": [
+            "core/extractors/biomarker_extractor.py"
+          ],
+          "funcion": "extract_biomarkers()"
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250027",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:45.162343",
+      "timestamp_fin": "2026-04-28T12:48:45.832952",
+      "duracion_segundos": 0.670609,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250027.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250028",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:45.851278",
+      "timestamp_fin": "2026-04-28T12:48:46.460104",
+      "duracion_segundos": 0.608826,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250028.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250029",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:46.477691",
+      "timestamp_fin": "2026-04-28T12:48:47.077630",
+      "duracion_segundos": 0.599939,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250029.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250030",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:47.094952",
+      "timestamp_fin": "2026-04-28T12:48:47.696862",
+      "duracion_segundos": 0.60191,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250030.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250031",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:47.715052",
+      "timestamp_fin": "2026-04-28T12:48:48.307876",
+      "duracion_segundos": 0.592824,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250031.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250032",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:48.328284",
+      "timestamp_fin": "2026-04-28T12:48:48.897748",
+      "duracion_segundos": 0.569464,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250032.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250033",
+      "estado": "COMPLETADO",
+      "score": 80.0,
+      "timestamp_inicio": "2026-04-28T12:48:48.919267",
+      "timestamp_fin": "2026-04-28T12:48:49.524870",
+      "duracion_segundos": 0.605603,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250033.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "MALIGNIDAD_WARNING",
+          "severidad": "WARNING",
+          "campo": "Malignidad",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar clasificacion manualmente o ajustar keywords en medical_extractor.py",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "determine_malignancy()"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250034",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:49.547167",
+      "timestamp_fin": "2026-04-28T12:48:50.123865",
+      "duracion_segundos": 0.576698,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250034.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250035",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:50.143039",
+      "timestamp_fin": "2026-04-28T12:48:50.857719",
+      "duracion_segundos": 0.71468,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250035.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250036",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:50.877671",
+      "timestamp_fin": "2026-04-28T12:48:51.580738",
+      "duracion_segundos": 0.703067,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250036.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250037",
+      "estado": "COMPLETADO",
+      "score": 90.0,
+      "timestamp_inicio": "2026-04-28T12:48:51.602794",
+      "timestamp_fin": "2026-04-28T12:48:52.341061",
+      "duracion_segundos": 0.738267,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250037.json",
+      "errores_criticos": 1,
+      "warnings": 0,
+      "errores_detectados": [
+        {
+          "tipo": "DIAGNOSTICO_COLORACION",
+          "severidad": "CRITICO",
+          "campo": "Diagnostico Coloracion",
+          "problema": "Campo NO APLICA pero existe diagnostico en OCR",
+          "sugerencia": "Verificar patron de extraccion en medical_extractor.py (linea ~665)",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "extract_diagnostico_coloracion()"
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250038",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:52.362218",
+      "timestamp_fin": "2026-04-28T12:48:53.177674",
+      "duracion_segundos": 0.815456,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250038.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250039",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:53.198709",
+      "timestamp_fin": "2026-04-28T12:48:54.005368",
+      "duracion_segundos": 0.806659,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250039.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250040",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:54.026935",
+      "timestamp_fin": "2026-04-28T12:48:54.647770",
+      "duracion_segundos": 0.620835,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250040.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250041",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:54.667534",
+      "timestamp_fin": "2026-04-28T12:48:55.283728",
+      "duracion_segundos": 0.616194,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250041.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250042",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:55.303834",
+      "timestamp_fin": "2026-04-28T12:48:56.004193",
+      "duracion_segundos": 0.700359,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250042.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250043",
+      "estado": "COMPLETADO",
+      "score": 80.0,
+      "timestamp_inicio": "2026-04-28T12:48:56.024546",
+      "timestamp_fin": "2026-04-28T12:48:56.655974",
+      "duracion_segundos": 0.631428,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250043.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "VALOR_BIOMARCADOR_INCORRECTO",
+          "severidad": "CRITICO",
+          "campo": "Biomarcador GFAP",
+          "problema": "Valor en BD no coincide con OCR",
+          "sugerencia": "Verificar extractor de GFAP o ejecutar FUNC-06",
+          "archivos_afectados": [
+            "core/extractors/biomarker_extractor.py"
+          ],
+          "funcion": "extract_biomarkers()"
+        },
+        {
+          "tipo": "MALIGNIDAD_WARNING",
+          "severidad": "WARNING",
+          "campo": "Malignidad",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar clasificacion manualmente o ajustar keywords en medical_extractor.py",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "determine_malignancy()"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250044",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:56.676654",
+      "timestamp_fin": "2026-04-28T12:48:57.277404",
+      "duracion_segundos": 0.60075,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250044.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250045",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:57.295782",
+      "timestamp_fin": "2026-04-28T12:48:57.904929",
+      "duracion_segundos": 0.609147,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250045.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250046",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:57.937803",
+      "timestamp_fin": "2026-04-28T12:48:58.534713",
+      "duracion_segundos": 0.59691,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250046.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250047",
+      "estado": "COMPLETADO",
+      "score": 90.0,
+      "timestamp_inicio": "2026-04-28T12:48:58.553206",
+      "timestamp_fin": "2026-04-28T12:48:59.170454",
+      "duracion_segundos": 0.617248,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250047.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "MALIGNIDAD_WARNING",
+          "severidad": "WARNING",
+          "campo": "Malignidad",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar clasificacion manualmente o ajustar keywords en medical_extractor.py",
+          "archivos_afectados": [
+            "core/extractors/medical_extractor.py"
+          ],
+          "funcion": "determine_malignancy()"
+        },
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250048",
+      "estado": "COMPLETADO",
+      "score": 100.0,
+      "timestamp_inicio": "2026-04-28T12:48:59.193629",
+      "timestamp_fin": "2026-04-28T12:48:59.881985",
+      "duracion_segundos": 0.688356,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250048.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    },
+    {
+      "numero": "IHQ250049",
+      "estado": "COMPLETADO",
+      "score": 90.0,
+      "timestamp_inicio": "2026-04-28T12:48:59.901056",
+      "timestamp_fin": "2026-04-28T12:49:00.616135",
+      "duracion_segundos": 0.715079,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250049.json",
+      "errores_criticos": 0,
+      "warnings": 1,
+      "errores_detectados": [
+        {
+          "tipo": "WARNING_GENERAL",
+          "severidad": "INFO",
+          "campo": "General",
+          "problema": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+          "sugerencia": "Revisar caso manualmente",
+          "archivos_afectados": [],
+          "funcion": ""
+        }
+      ]
+    },
+    {
+      "numero": "IHQ250050",
+      "estado": "COMPLETADO",
+      "score": 90.0,
+      "timestamp_inicio": "2026-04-28T12:49:00.636234",
+      "timestamp_fin": "2026-04-28T12:49:01.372115",
+      "duracion_segundos": 0.735881,
+      "reporte_path": "herramientas_ia\\resultados\\auditoria_inteligente_IHQ250050.json",
+      "errores_criticos": 0,
+      "warnings": 0,
+      "errores_detectados": []
+    }
+  ],
+  "resumen": {
+    "total": 50,
+    "completados": 50,
+    "en_proceso": 0,
+    "pendientes": 0,
+    "fallidos": 0,
+    "progreso_porcentaje": 100.0,
+    "tiempo_promedio_caso": 0.67266954,
+    "tiempo_estimado_restante": 0.0,
+    "promedio_score": 96.2,
+    "casos_criticos": [
+      "IHQ250002",
+      "IHQ250007",
+      "IHQ250033",
+      "IHQ250043"
+    ]
+  },
+  "interrupciones": [],
+  "version_herramienta": "2.0.0"
+}

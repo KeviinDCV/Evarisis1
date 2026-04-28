@@ -1,0 +1,146 @@
+{
+  "session_id": "IHQ250030_20260428_145854",
+  "numero_peticion": "IHQ250030",
+  "timestamp": "2026-04-28T14:58:54.890028",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250030\nCopia Pag. 1 de 1\nNombre : EDILBERTO MANRIQUE MONTOYA\nN. peticion : IHQ250030\nN.Identificación : CC. 96360709\nGenero : MASCULINO\nEdad : 50 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : AURA MARIA ECHEVERRY\nServicio : MEDICA HOMBRES\nFecha Ingreso : 13/01/2025\nFecha Informe : 16/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500127” que corresponde a “biopsia de medula ósea” con diagnósticos de “MIELOMA\nMÚLTIPLE”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CD56 y\nCD117.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nNo hay expresión para CD117 ni CD56.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquimica:\n- EXPRESIÓN DE CD117 Y CD56 NEGATIVA.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---",
+    "hash_original": "5455449752a5d72a018805382eb8a840",
+    "estadisticas": {
+      "caracteres_totales": 171184,
+      "caracteres_consolidados": 2253,
+      "reduccion_porcentaje": 98.68
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250030",
+      "caso_num": 30,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "EDILBERTO MANRIQUE MONTOYA",
+      "numero_peticion": "IHQ250030",
+      "identificacion": "96360709",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "50",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "AURA MARIA ECHEVERRY",
+      "servicio": "MEDICA HOMBRES",
+      "fecha_ingreso": "13/01/2025",
+      "fecha_informe": "16/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250030",
+      "N. de identificación": "96360709",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "MEDICA HOMBRES",
+      "Médico tratante": "AURA MARIA ECHEVERRY",
+      "Fecha de ingreso (2. Fecha de la muestra)": "13/01/2025",
+      "Fecha Informe": "16/01/2025",
+      "nombres": "EDILBERTO",
+      "Primer nombre": "EDILBERTO",
+      "Segundo nombre": "",
+      "apellidos": "MANRIQUE MONTOYA",
+      "Primer apellido": "MANRIQUE",
+      "Segundo apellido": "MONTOYA",
+      "nombre_formal": "MANRIQUE MONTOYA, EDILBERTO",
+      "diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: - EXPRESIÓN DE CD117 Y CD56 NEGATIVA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. No hay expresión para CD117 ni CD56.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2500127\" que corresponde a \"biopsia de medula ósea\" con diagnósticos de \"MIELOMA MÚLTIPLE\". Previa revisión de la histología, se realizan niveles histológicos para tinción con CD56 y CD117.",
+      "ihq_organo": "MEDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD56, CD117",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD56, CD117",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "extraction_timestamp": "2026-04-28T14:58:55.161729",
+      "extractor_version": "6.0.2_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250030\nCopia Pag. 1 de 1\nNombre : EDILBERTO MANRIQUE MONTOYA\nN. peticion : IHQ250030\nN.Identificación : CC. 96360709\nGenero : MASCULINO\nEdad : 50 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : AURA MARIA ECHEVERRY\nServicio : MEDICA HOMBRES\nFecha Ingreso : 13/01/2025\nFecha Informe : 16/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2500127” que corresponde a “biopsia de medula ósea” con diagnósticos de “MIELOMA\nMÚLTIPLE”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CD56 y\nCD117.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nNo hay expresión para CD117 ni CD56.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquimica:\n- EXPRESIÓN DE CD117 Y CD56 NEGATIVA.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD56, CD117",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500127” que corresponde a “biopsia de medula ósea” con diagnósticos de “MIELOMA MÚLTIPLE”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CD56 y CD117.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. No hay expresión para CD117 ni CD56.",
+      "Descripcion Diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: - EXPRESIÓN DE CD117 Y CD56 NEGATIVA.",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Organo": "BX HUESO",
+      "Diagnostico Coloracion": "MIELOMA MÚLTIPLE",
+      "Diagnostico Principal": "EXPRESIÓN DE CD117 Y CD56 NEGATIVA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD117": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 142,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 142,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula ósea. Biopsia. Estudio de inmunohistoquimica:\n- EXPRESIÓN DE CD117 Y CD56 NEGATIVA.",
+      "valor_corregido": "Medula ósea. Biopsia. Estudio de inmunohistoquimica: - EXPRESIÓN DE CD117 Y CD56 NEGATIVA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250030",
+      "timestamp": "2026-04-28T14:58:55.159660"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2500127” que corresponde a “biopsia de medula ósea” con diagnósticos de “MIELOMA MÚLTIPLE”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CD56 y CD117.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2500127\" que corresponde a \"biopsia de medula ósea\" con diagnósticos de \"MIELOMA MÚLTIPLE\". Previa revisión de la histología, se realizan niveles histológicos para tinción con CD56 y CD117.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250030",
+      "timestamp": "2026-04-28T14:58:55.159672"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171184,
+    "campos_extraidos": 49
+  }
+}

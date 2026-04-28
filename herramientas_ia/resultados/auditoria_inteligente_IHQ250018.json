@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250018",
   "caso_num": 18,
   "total_casos": 50,
-  "timestamp": "2025-12-11T03:51:29.121251",
+  "timestamp": "2026-04-28T14:15:34.877502",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 6,
+      "total_detectado": 7,
       "estado": "OK"
     },
     "estado": "OK"
@@ -28,7 +28,7 @@
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "TUMOR DEL ESTROMA GASTROINTESTINALFUSOCELULAR DE BAJO"
+      "valor_bd": "TUMOR DEL ESTROMA GASTROINTESTINAL FUSOCELULAR DE BAJO GRADO BORDE DE RESECCIÓN COMPROMETIDO"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -37,22 +37,20 @@
     },
     "biomarcadores": {
       "estado": "ERROR",
-      "mensaje": "2 biomarcadores sin mapeo/vacíos; 1 valores NO coinciden con OCR",
-      "total_solicitado_ocr": 6,
-      "total_solicitado_bd": 6,
+      "mensaje": "1 biomarcadores sin mapeo/vacíos",
+      "total_solicitado_ocr": 5,
+      "total_solicitado_bd": 5,
       "estudios_ocr": [
         "DOG1",
         "CD117",
-        "ACTINA",
-        "DE MUSCULO LISO",
+        "ACTINA DE MUSCULO LISO",
         "CD34",
         "S100"
       ],
       "estudios_bd": [
         "DOG1",
         "CD117",
-        "ACTINA",
-        "DE MUSCULO LISO",
+        "ACTINA DE MUSCULO LISO",
         "CD34",
         "S100"
       ],
@@ -60,30 +58,20 @@
       "extras_en_bd": [],
       "mapeados": 4,
       "no_mapeados": [
-        "ACTINA (sin columna)",
-        "DE MUSCULO LISO (sin columna)"
+        "ACTINA DE MUSCULO LISO (sin columna)"
       ],
-      "valores_incorrectos": [
-        {
-          "biomarcador": "DOG1",
-          "columna": "IHQ_DOG1",
-          "valor_bd": "POSITIVO",
-          "valor_ocr": "("
-        }
-      ],
-      "cobertura": 66.7
+      "valores_incorrectos": [],
+      "cobertura": 80.0
     },
     "campos_obligatorios": {
       "errores": []
     },
-    "warnings": [
-      "BD indica MALIGNO pero no se encontraron keywords malignos en OCR"
-    ],
+    "warnings": [],
     "errores": [],
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410694 que corresponde a..."
     },
     "descripcion_microscopica": {
@@ -97,33 +85,22 @@
       "valor_bd": "MUCOSA DE RECTO SUPERIOR"
     },
     "malignidad": {
-      "estado": "WARNING",
-      "mensaje": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
-      "valor_bd": "MALIGNO",
-      "keywords_buscados": [
-        "CARCINOMA",
-        "ADENOCARCINOMA",
-        "SARCOMA",
-        "MELANOMA",
-        "LINFOMA",
-        "LEUCEMIA",
-        "NEOPLASIA MALIGNA",
-        "TUMOR MALIGNO",
-        "METASTASIS",
-        "METASTÁSICO",
-        "INVASIVO",
-        "INFILTRANTE",
-        "NEOPLASIA",
-        "MIELOMA",
-        "PLASMOCITOMA"
-      ],
-      "nota": "Revisar manualmente si la clasificación es correcta"
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -131,13 +108,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 77.8,
-    "score_final": 77.8,
-    "validaciones_ok": 7,
-    "total_validaciones": 9,
-    "warnings": 1,
+    "score_validacion": 90.0,
+    "score_final": 90.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 10,
+    "warnings": 0,
     "errores": 0
   },
   "resumen": {},
-  "estado_final": "ADVERTENCIA"
+  "estado_final": "OK"
 }

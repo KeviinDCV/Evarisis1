@@ -1,0 +1,144 @@
+{
+  "numero_caso": "IHQ250008",
+  "caso_num": 8,
+  "total_casos": 50,
+  "timestamp": "2026-04-28T14:15:29.148844",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 2,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "OK",
+      "valor": "CELULARIDAD DE ASPECTO NEOPLÁSICO CON EXTENSA NECROSIS",
+      "mensaje": "Correcto (coincidencia exacta)"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN UNA NEOPLASIA DE CÉLULAS B MADURAS"
+    },
+    "factor_pronostico": {
+      "estado": "ERROR",
+      "valor_bd": "NO APLICA",
+      "mensaje": "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
+    },
+    "biomarcadores": {
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (17/17)",
+      "total_solicitado_ocr": 17,
+      "total_solicitado_bd": 17,
+      "estudios_ocr": [
+        "CKAE1E3",
+        "CD45",
+        "CD20",
+        "PAX 5",
+        "CD3",
+        "CD5",
+        "CD117",
+        "CD34",
+        "CD56",
+        "CD38",
+        "MUM 1",
+        "BCL2",
+        "BCL6",
+        "CD10",
+        "CD138",
+        "CMYC",
+        "Ki-67"
+      ],
+      "estudios_bd": [
+        "CKAE1AE3",
+        "CD45",
+        "CD20",
+        "PAX 5",
+        "CD3",
+        "CD5",
+        "CD117",
+        "CD34",
+        "CD56",
+        "CD38",
+        "MUM 1",
+        "BCL2",
+        "BCL6",
+        "CD10",
+        "CD138",
+        "CMYC",
+        "Ki-67"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 17,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [
+      "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "FÉMUR DISTAL DERECHO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 17,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 17,
+      "estado": "OK",
+      "mensaje": "17/17 biomarcadores \"NO MENCIONADO\" validados correctamente"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 90.0,
+    "score_final": 90.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 10,
+    "warnings": 0,
+    "errores": 1
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

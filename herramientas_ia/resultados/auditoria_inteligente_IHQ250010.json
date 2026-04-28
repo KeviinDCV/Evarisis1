@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250010",
   "caso_num": 10,
   "total_casos": 50,
-  "timestamp": "2025-12-02T14:56:17.221677",
+  "timestamp": "2026-04-28T15:39:16.205059",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -23,16 +23,16 @@
     "diagnostico_coloracion": {
       "estado": "OK",
       "valor": "MENINGIOMA MENINGOTELIAL, WHO GRADO 1",
-      "mensaje": "Correcto (validacion por componentes: 2/2)"
+      "mensaje": "Correcto (coincidencia exacta)"
     },
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "MENINGIOMA MENINGOTELIAL, WHO"
+      "valor_bd": "MENINGIOMA MENINGOTELIAL, WHO GRADO 1"
     },
     "factor_pronostico": {
       "estado": "OK",
-      "valor": "Ki-67: 5%, Receptor de Progesterona: POSITIVO",
+      "valor": "Ki-67: <5%, Receptor de Progesterona: POSITIVO",
       "mensaje": "Factor pronóstico con biomarcadores válidos",
       "biomarcadores_detectados": [
         "Ki-67",
@@ -41,27 +41,29 @@
     },
     "biomarcadores": {
       "estado": "OK",
-      "mensaje": "Todos los estudios mapeados (0/0)",
-      "total_solicitado_ocr": 0,
-      "total_solicitado_bd": 4,
-      "estudios_ocr": [],
-      "estudios_bd": [
-        "GFAP",
-        "Ki-67",
+      "mensaje": "Todos los estudios mapeados (5/5)",
+      "total_solicitado_ocr": 5,
+      "total_solicitado_bd": 5,
+      "estudios_ocr": [
         "Receptor de Progesterona",
-        "S100"
+        "Ki-67",
+        "GFAP",
+        "S100",
+        "EMA"
+      ],
+      "estudios_bd": [
+        "Receptor de Progesterona",
+        "Ki-67",
+        "GFAP",
+        "S100",
+        "EMA"
       ],
       "faltantes_en_bd": [],
-      "extras_en_bd": [
-        "GFAP",
-        "Ki-67",
-        "Receptor de Progesterona",
-        "S100"
-      ],
-      "mapeados": 0,
+      "extras_en_bd": [],
+      "mapeados": 5,
       "no_mapeados": [],
       "valores_incorrectos": [],
-      "cobertura": 0
+      "cobertura": 100.0
     },
     "campos_obligatorios": {
       "errores": []
@@ -71,7 +73,7 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M241..."
     },
     "descripcion_microscopica": {
@@ -94,6 +96,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 1,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 1,
+      "estado": "OK",
+      "mensaje": "1/1 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -103,8 +112,8 @@
   "metricas": {
     "score_validacion": 100.0,
     "score_final": 100.0,
-    "validaciones_ok": 9,
-    "total_validaciones": 9,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

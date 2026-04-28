@@ -1,0 +1,142 @@
+{
+  "numero_caso": "IHQ250007",
+  "caso_num": 7,
+  "total_casos": 50,
+  "timestamp": "2026-04-28T14:15:28.562409",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 14,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "ERROR",
+      "mensaje": "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
+      "valor_bd": "NO APLICA",
+      "valor_ocr": "GANGLIO PROFUNDO METASTÁSICO”",
+      "patron_encontrado": "bloque M + diagnóstico de \"...\"",
+      "sugerencia": "Verificar medical_extractor.extract_diagnostico_coloracion()"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON CARCINOMA NEUROENDOCRINO METASTÁSICO"
+    },
+    "factor_pronostico": {
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
+    },
+    "biomarcadores": {
+      "estado": "WARNING",
+      "mensaje": "1 biomarcadores extras en BD",
+      "total_solicitado_ocr": 13,
+      "total_solicitado_bd": 14,
+      "estudios_ocr": [
+        "CKAE1E3",
+        "CK7",
+        "CK20",
+        "CK19",
+        "CDX2",
+        "P40",
+        "CA19-9",
+        "CEA",
+        "SALL 4",
+        "CD56",
+        "SYNAPTOFISINA",
+        "CHROMOGRANINA",
+        "CD30"
+      ],
+      "estudios_bd": [
+        "CKAE1AE3",
+        "CK7",
+        "CK20",
+        "CK19",
+        "CDX2",
+        "P40",
+        "CA19-9",
+        "CEA",
+        "SALL 4",
+        "CD56",
+        "SYNAPTOFISINA",
+        "CHROMOGRANINA",
+        "CD30",
+        "CROMOGRANINA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [
+        "CROMOGRANINA"
+      ],
+      "mapeados": 13,
+      "no_mapeados": [],
+      "valores_incorrectos": [],
+      "cobertura": 100.0
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [
+      "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional pr..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "GANGLIO LINFÁTICO PROFUNDO (SITIO NO ESPECIFICADO)"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 1,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 1,
+      "estado": "OK",
+      "mensaje": "1/1 biomarcadores \"NO MENCIONADO\" validados correctamente"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 80.0,
+    "score_final": 80.0,
+    "validaciones_ok": 8,
+    "total_validaciones": 10,
+    "warnings": 0,
+    "errores": 1
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250006",
   "caso_num": 6,
   "total_casos": 50,
-  "timestamp": "2025-11-30T20:08:56.575743",
+  "timestamp": "2026-04-28T14:15:28.002777",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 6,
+      "total_detectado": 7,
       "estado": "OK"
     },
     "estado": "OK"
@@ -23,12 +23,12 @@
     "diagnostico_coloracion": {
       "estado": "OK",
       "valor": "ADENOCARCINOMA INVASIVO ULCERADO",
-      "mensaje": "Correcto (validacion por componentes: 1/1)"
+      "mensaje": "Correcto (coincidencia exacta)"
     },
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO"
+      "valor_bd": "⁠ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -39,8 +39,8 @@
       ]
     },
     "biomarcadores": {
-      "estado": "ERROR",
-      "mensaje": "2 valores NO coinciden con OCR",
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (5/5)",
       "total_solicitado_ocr": 5,
       "total_solicitado_bd": 5,
       "estudios_ocr": [
@@ -61,35 +61,19 @@
       "extras_en_bd": [],
       "mapeados": 5,
       "no_mapeados": [],
-      "valores_incorrectos": [
-        {
-          "biomarcador": "MLH 1",
-          "columna": "IHQ_MLH1",
-          "valor_bd": "NEGATIVO",
-          "valor_ocr": "P"
-        },
-        {
-          "biomarcador": "PMS2",
-          "columna": "IHQ_PMS2",
-          "valor_bd": "NEGATIVO",
-          "valor_ocr": "P"
-        }
-      ],
+      "valores_incorrectos": [],
       "cobertura": 100.0
     },
     "campos_obligatorios": {
       "errores": []
     },
-    "warnings": [
-      "Descripcion macroscopica coincide parcialmente con OCR (similitud: 68%)"
-    ],
+    "warnings": [],
     "errores": [],
     "estado": "OK",
     "descripcion_macroscopica": {
-      "estado": "WARNING",
-      "mensaje": "Descripcion macroscopica coincide parcialmente con OCR (similitud: 68%)",
-      "valor_bd": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410682 que corresponde a...",
-      "valor_ocr": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410682 que\ncorresponde a..."
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se realiza estudio de inmunohistoquímica al caso institucional con rotulo M2410682 que corresponde a..."
     },
     "descripcion_microscopica": {
       "estado": "OK",
@@ -111,6 +95,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -118,12 +109,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 77.8,
-    "validaciones_ok": 7,
-    "total_validaciones": 9,
-    "warnings": 1,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
+    "warnings": 0,
     "errores": 0
   },
   "resumen": {},
-  "estado_final": "ADVERTENCIA"
+  "estado_final": "OK"
 }

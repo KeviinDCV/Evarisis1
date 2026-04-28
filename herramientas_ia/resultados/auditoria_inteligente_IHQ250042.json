@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250042",
   "caso_num": 42,
   "total_casos": 50,
-  "timestamp": "2025-12-17T03:45:54.961161",
+  "timestamp": "2026-04-28T14:15:48.322988",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,24 +14,21 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 3,
+      "total_detectado": 4,
       "estado": "OK"
     },
     "estado": "OK"
   },
   "auditoria_bd": {
     "diagnostico_coloracion": {
-      "estado": "ERROR",
-      "mensaje": "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
-      "valor_bd": "NO APLICA",
-      "valor_ocr": "SER POSIBLE CON LA DETERMINACIÓN DE ADES",
-      "patron_encontrado": "bloque M + diagnóstico de \"...\"",
-      "sugerencia": "Verificar medical_extractor.extract_diagnostico_coloracion()"
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "No hay estudio M previo"
     },
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "BIOPSIA DEL INJERTO RENAL (12 DÍAS POSTRASPLANTE). - RECHAZO ACTIVO CON DATOS SUGERENTES DE COMPONENTE HUMORAL (G2, PTC3, V0) (SUGERENTE DE RECHAZO ACTIVO MEDIADO POR ANTICUERPOS, CATEGORIA 2 DE BANFF 2022). - FIBROSIS INTERSTICIAL Y ATROFIA TUBULAR GRADO 0 (<5%)"
+      "valor_bd": "RECHAZO ACTIVO CON DATOS SUGERENTES DE COMPONENTE HUMORAL (G2, PTC3, V0) (SUGERENTE DE RECHAZO ACTIVO MEDIADO POR ANTICUERPOS, CATEGORIA 2 DE BANFF 2022)"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -39,8 +36,8 @@
       "mensaje": "Correcto (no aplica)"
     },
     "biomarcadores": {
-      "estado": "ERROR",
-      "mensaje": "2 valores NO coinciden con OCR",
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (2/2)",
       "total_solicitado_ocr": 2,
       "total_solicitado_bd": 2,
       "estudios_ocr": [
@@ -55,31 +52,15 @@
       "extras_en_bd": [],
       "mapeados": 2,
       "no_mapeados": [],
-      "valores_incorrectos": [
-        {
-          "biomarcador": "SV40",
-          "columna": "IHQ_SV40",
-          "valor_bd": "NEGATIVO",
-          "valor_ocr": "("
-        },
-        {
-          "biomarcador": "C4D",
-          "columna": "IHQ_C4D",
-          "valor_bd": "POSITIVO",
-          "valor_ocr": "a"
-        }
-      ],
+      "valores_incorrectos": [],
       "cobertura": 100.0
     },
     "campos_obligatorios": {
       "errores": []
     },
     "warnings": [],
-    "errores": [
-      "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
-      "BD indica BENIGNO pero OCR contiene keywords MALIGNOS"
-    ],
-    "estado": "ERROR",
+    "errores": [],
+    "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
       "mensaje": "Descripcion macroscopica correcta",
@@ -96,19 +77,22 @@
       "valor_bd": "BIOPSIA DEL INJERTO RENAL (12 DÍAS POSTRASPLANTE)"
     },
     "malignidad": {
-      "estado": "ERROR",
-      "mensaje": "BD indica BENIGNO pero OCR contiene keywords MALIGNOS",
-      "valor_bd": "BENIGNO",
-      "keywords_encontrados": [
-        "GIST"
-      ],
-      "sugerencia": "Probable error de clasificación - verificar diagnóstico"
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -116,13 +100,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 66.7,
-    "score_final": 66.7,
-    "validaciones_ok": 6,
-    "total_validaciones": 9,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
-    "errores": 2
+    "errores": 0
   },
   "resumen": {},
-  "estado_final": "ERROR"
+  "estado_final": "OK"
 }

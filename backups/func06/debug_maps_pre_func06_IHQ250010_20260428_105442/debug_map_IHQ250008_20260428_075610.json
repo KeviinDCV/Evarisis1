@@ -1,0 +1,168 @@
+{
+  "session_id": "IHQ250008_20260428_075610",
+  "numero_peticion": "IHQ250008",
+  "timestamp": "2026-04-28T07:56:10.176355",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250008\nCopia Pag. 1 de 2\nNombre : OSCAR EUGENIO TAMAYO ALVAREZ\nN. peticion : IHQ250008\nN.Identificación : CC. 16219072\nGenero : MASCULINO\nEdad : 60 años 7 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ORTOPEDIA\nFecha Ingreso : 03/01/2025\nFecha Informe : 16/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX FEMUR DISTAL\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410659” que corresponde a “fémur distal derecho” con diagnósticos de “CELULARIDAD DE\nASPECTO NEOPLÁSICO CON EXTENSA NECROSIS”. Previa revisión de la histología, se realizan niveles\nhistológicos para tinción con CKAE1E3, CD45, CD20, PAX-5, CD3, CD5, CD117, CD34, CD56, CD38,\nMUM-1, BCL2, BCL6, CD10, CD138, C-MYC Y KI-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe observa expresión difusa para CD45 Y CD20 en la celularidad neoplásica.\nLos marcadores CKAE1E3, PAX-5, CD3, CD5, CD117, CD34, CD56, CD38, MUM-1, BCL2, BCL6, CD10,\nCD138, C-MYC Y KI-67 no son valorables por severos defectos de fase preanalitica.\nDIAGNÓSTICO\nFémur distal derecho. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN UNA NEOPLASIA DE CÉLULAS B MADURAS.\n- VER DESCRIPCIÓN Y COMENTARIO.\nCOMENTARIOS\nLa expresión difusa para CD45 y CD20 favorecen compromiso por una neoplasia de células B maduras,\nsin embargo, la muestra presenta extensos cambios por necrosis y adicional al proceso de calcificación\nse limita la expresión de marcadores de inmunohistoquímica restantes que permitan una adecuada\nclasificación.\nSe recomienda realizar este estudio en tejido susceptible de biopsia (adenomegalias\ninguinales reportados en la historia clínica).\nCaso valorado en conjunto con Dra. Maria Ximena Varela MD, patólogo.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---\nIHQ250008\nCopia Pag. 2 de 2\nNombre : OSCAR EUGENIO TAMAYO ALVAREZ\nN. peticion : IHQ250008\nN.Identificación : CC. 16219072\nGenero : MASCULINO\nEdad : 60 años 7 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ORTOPEDIA\nFecha Ingreso : 03/01/2025\nFecha Informe : 16/01/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 3825,
+      "reduccion_porcentaje": 97.77
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250008",
+      "caso_num": 8,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "OSCAR EUGENIO TAMAYO ALVAREZ",
+      "numero_peticion": "IHQ250008",
+      "identificacion": "16219072",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "60",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "ORTOPEDIA",
+      "fecha_ingreso": "03/01/2025",
+      "fecha_informe": "16/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250008",
+      "N. de identificación": "16219072",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "ORTOPEDIA",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/01/2025",
+      "Fecha Informe": "16/01/2025",
+      "nombres": "OSCAR EUGENIO TAMAYO",
+      "Primer nombre": "OSCAR",
+      "Segundo nombre": "EUGENIO TAMAYO",
+      "apellidos": "ALVAREZ",
+      "Primer apellido": "ALVAREZ",
+      "Segundo apellido": "",
+      "nombre_formal": "ALVAREZ, OSCAR EUGENIO TAMAYO",
+      "diagnostico": "Fémur distal derecho. Tumor. Biopsia. Estudio de inmunohistoquímica: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN UNA NEOPLASIA DE CÉLULAS B MADURAS. - VER DESCRIPCIÓN Y COMENTARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa expresión difusa para CD45 Y CD20 en la celularidad neoplásica. Los marcadores CKAE1E3, PAX-5, CD3, CD5, CD117, CD34, CD56, CD38, MUM-1, BCL2, BCL6, CD10, CD138, C-MYC Y KI-67 no son valorables por severos defectos de fase preanalitica.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2410659\" que corresponde a \"fémur distal derecho\" con diagnósticos de \"CELULARIDAD DE ASPECTO NEOPLÁSICO CON EXTENSA NECROSIS\". Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, CD45, CD20, PAX-5, CD3, CD5, CD117, CD34, CD56, CD38, MUM-1, BCL2, BCL6, CD10, CD138, C-MYC Y KI-67.",
+      "ihq_organo": "FÉMUR DISTAL DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, CD45, CD20, PAX 5, CD3, CD5, CD117, CD34, CD56, CD38, MUM 1, BCL2, BCL6, CD10, CD138, CMYC, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "La expresión difusa para CD45 y CD20 favorecen compromiso por una neoplasia de células B maduras, sin embargo, la muestra presenta extensos cambios por necrosis y adicional al proceso de calcificación se limita la expresión de marcadores de inmunohistoquímica restantes que permitan una adecuada clasificación. Se recomienda realizar este estudio en tejido susceptible de biopsia (adenomegalias inguinales reportados en la historia clínica). Caso valorado en conjunto con Dra. Maria Ximena Varela MD, patólogo. NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 15 --- IHQ250008 Copia Pag. 2 de 2 Nombre : OSCAR EUGENIO TAMAYO ALVAREZ N. peticion : IHQ250008 N.Identificación : CC. 16219072 Genero : MASCULINO Edad : 60 años 7 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : ALEJANDRO HIJUELOS Servicio : ORTOPEDIA Fecha Ingreso : 03/01/2025 Fecha Informe : 16/01/2025",
+      "IHQ_ORGANO": "FÉMUR DISTAL DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, CD45, CD20, PAX 5, CD3, CD5, CD117, CD34, CD56, CD38, MUM 1, BCL2, BCL6, CD10, CD138, CMYC, Ki-67",
+      "extraction_timestamp": "2026-04-28T07:56:10.506786",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250008\nCopia Pag. 1 de 2\nNombre : OSCAR EUGENIO TAMAYO ALVAREZ\nN. peticion : IHQ250008\nN.Identificación : CC. 16219072\nGenero : MASCULINO\nEdad : 60 años 7 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ORTOPEDIA\nFecha Ingreso : 03/01/2025\nFecha Informe : 16/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX FEMUR DISTAL\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2410659” que corresponde a “fémur distal derecho” con diagnósticos de “CELULARIDAD DE\nASPECTO NEOPLÁSICO CON EXTENSA NECROSIS”. Previa revisión de la histología, se realizan niveles\nhistológicos para tinción con CKAE1E3, CD45, CD20, PAX-5, CD3, CD5, CD117, CD34, CD56, CD38,\nMUM-1, BCL2, BCL6, CD10, CD138, C-MYC Y KI-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe observa expresión difusa para CD45 Y CD20 en la celularidad neoplásica.\nLos marcadores CKAE1E3, PAX-5, CD3, CD5, CD117, CD34, CD56, CD38, MUM-1, BCL2, BCL6, CD10,\nCD138, C-MYC Y KI-67 no son valorables por severos defectos de fase preanalitica.\nDIAGNÓSTICO\nFémur distal derecho. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN UNA NEOPLASIA DE CÉLULAS B MADURAS.\n- VER DESCRIPCIÓN Y COMENTARIO.\nCOMENTARIOS\nLa expresión difusa para CD45 y CD20 favorecen compromiso por una neoplasia de células B maduras,\nsin embargo, la muestra presenta extensos cambios por necrosis y adicional al proceso de calcificación\nse limita la expresión de marcadores de inmunohistoquímica restantes que permitan una adecuada\nclasificación.\nSe recomienda realizar este estudio en tejido susceptible de biopsia (adenomegalias\ninguinales reportados en la historia clínica).\nCaso valorado en conjunto con Dra. Maria Ximena Varela MD, patólogo.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---\nIHQ250008\nCopia Pag. 2 de 2\nNombre : OSCAR EUGENIO TAMAYO ALVAREZ\nN. peticion : IHQ250008\nN.Identificación : CC. 16219072\nGenero : MASCULINO\nEdad : 60 años 7 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ORTOPEDIA\nFecha Ingreso : 03/01/2025\nFecha Informe : 16/01/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, CD45, CD20, PAX 5, CD3, CD5, CD117, CD34, CD56, CD38, MUM 1, BCL2, BCL6, CD10, CD138, CMYC, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410659” que corresponde a “fémur distal derecho” con diagnósticos de “CELULARIDAD DE ASPECTO NEOPLÁSICO CON EXTENSA NECROSIS”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, CD45, CD20, PAX-5, CD3, CD5, CD117, CD34, CD56, CD38, MUM-1, BCL2, BCL6, CD10, CD138, C-MYC Y KI-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa expresión difusa para CD45 Y CD20 en la celularidad neoplásica. Los marcadores CKAE1E3, PAX-5, CD3, CD5, CD117, CD34, CD56, CD38, MUM-1, BCL2, BCL6, CD10, CD138, C-MYC Y KI-67 no son valorables por severos defectos de fase preanalitica.",
+      "Descripcion Diagnostico": "Fémur distal derecho. Tumor. Biopsia. Estudio de inmunohistoquímica: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN UNA NEOPLASIA DE CÉLULAS B MADURAS. - VER DESCRIPCIÓN Y COMENTARIO.",
+      "IHQ_ORGANO": "FÉMUR DISTAL DERECHO",
+      "Organo": "BX FEMUR DISTAL DERECHO",
+      "Diagnostico Coloracion": "CELULARIDAD DE ASPECTO NEOPLÁSICO CON EXTENSA NECROSIS",
+      "Diagnostico Principal": "LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN UNA NEOPLASIA DE CÉLULAS B MADURAS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "NO MENCIONADO",
+      "IHQ_CD45": "NO MENCIONADO",
+      "IHQ_CD20": "NO MENCIONADO",
+      "IHQ_PAX5": "NO MENCIONADO",
+      "IHQ_CD3": "NO MENCIONADO",
+      "IHQ_CD5": "NO MENCIONADO",
+      "IHQ_CD117": "NO MENCIONADO",
+      "IHQ_CD34": "NO MENCIONADO",
+      "IHQ_CD56": "NO MENCIONADO",
+      "IHQ_CD38": "NO MENCIONADO",
+      "IHQ_MUM1": "NO MENCIONADO",
+      "IHQ_BCL2": "NO MENCIONADO",
+      "IHQ_BCL6": "NO MENCIONADO",
+      "IHQ_CD10": "NO MENCIONADO",
+      "IHQ_CD138": "NO MENCIONADO",
+      "IHQ_CMYC": "NO MENCIONADO",
+      "IHQ_KI-67": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 127,
+      "campos_completos": 51,
+      "biomarcadores_encontrados": 17,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 127,
+      "total_campos_completos": 51
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Fémur distal derecho. Tumor. Biopsia. Estudio de inmunohistoquímica:\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN UNA NEOPLASIA DE CÉLULAS B MADURAS.\n- VER DESCRIPCIÓN Y COMENTARIO.",
+      "valor_corregido": "Fémur distal derecho. Tumor. Biopsia. Estudio de inmunohistoquímica: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN UNA NEOPLASIA DE CÉLULAS B MADURAS. - VER DESCRIPCIÓN Y COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250008",
+      "timestamp": "2026-04-28T07:56:10.506361"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2410659” que corresponde a “fémur distal derecho” con diagnósticos de “CELULARIDAD DE ASPECTO NEOPLÁSICO CON EXTENSA NECROSIS”. Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, CD45, CD20, PAX-5, CD3, CD5, CD117, CD34, CD56, CD38, MUM-1, BCL2, BCL6, CD10, CD138, C-MYC Y KI-67.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2410659\" que corresponde a \"fémur distal derecho\" con diagnósticos de \"CELULARIDAD DE ASPECTO NEOPLÁSICO CON EXTENSA NECROSIS\". Previa revisión de la histología, se realizan niveles histológicos para tinción con CKAE1E3, CD45, CD20, PAX-5, CD3, CD5, CD117, CD34, CD56, CD38, MUM-1, BCL2, BCL6, CD10, CD138, C-MYC Y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250008",
+      "timestamp": "2026-04-28T07:56:10.506370"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La expresión difusa para CD45 y CD20 favorecen compromiso por una neoplasia de células B maduras,\nsin embargo, la muestra presenta extensos cambios por necrosis y adicional al proceso de calcificación\nse limita la expresión de marcadores de inmunohistoquímica restantes que permitan una adecuada\nclasificación.\nSe recomienda realizar este estudio en tejido susceptible de biopsia (adenomegalias\ninguinales reportados en la historia clínica).\nCaso valorado en conjunto con Dra. Maria Ximena Varela MD, patólogo.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---\nIHQ250008\nCopia Pag. 2 de 2\nNombre : OSCAR EUGENIO TAMAYO ALVAREZ\nN. peticion : IHQ250008\nN.Identificación : CC. 16219072\nGenero : MASCULINO\nEdad : 60 años 7 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : ORTOPEDIA\nFecha Ingreso : 03/01/2025\nFecha Informe : 16/01/2025",
+      "valor_corregido": "La expresión difusa para CD45 y CD20 favorecen compromiso por una neoplasia de células B maduras, sin embargo, la muestra presenta extensos cambios por necrosis y adicional al proceso de calcificación se limita la expresión de marcadores de inmunohistoquímica restantes que permitan una adecuada clasificación. Se recomienda realizar este estudio en tejido susceptible de biopsia (adenomegalias inguinales reportados en la historia clínica). Caso valorado en conjunto con Dra. Maria Ximena Varela MD, patólogo. NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 15 --- IHQ250008 Copia Pag. 2 de 2 Nombre : OSCAR EUGENIO TAMAYO ALVAREZ N. peticion : IHQ250008 N.Identificación : CC. 16219072 Genero : MASCULINO Edad : 60 años 7 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : ALEJANDRO HIJUELOS Servicio : ORTOPEDIA Fecha Ingreso : 03/01/2025 Fecha Informe : 16/01/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250008",
+      "timestamp": "2026-04-28T07:56:10.506372"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 48
+  }
+}

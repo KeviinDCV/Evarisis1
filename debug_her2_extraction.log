@@ -2392,3 +2392,239 @@
   Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
   Value type: DESCRIPTIVE
   Normalized: 'EQUIVOCO (SCORE 2)'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: 'NEGATIVO (SCORE 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUÍVOCO'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (2+)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUIVOCO (SCORE 2)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (SCORE 2)'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: 'NEGATIVO (SCORE 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUIVOCO (SCORE 2+)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (SCORE 2+)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUÍVOCO'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (2+)'
+
+[HER2] Pattern 2 matched in DIAGNOSTICO
+  Pattern: (?i)HER\s*-?\s*2\s*/\s*Neu\s*:\s*([^K]+?)(?=\s*(?:PATHWAY|Rabbit|VENTANA|Clona|KI-67)|$)
+  Captured: 'Negativo (SCORE 0)
+B. Ganglio linfático axilar derecho. Biopsia. Estudio de inmunohistoquimica:
+CARCINOMA METASTASICO DE MAMA
+EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVOS
+EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVOS 
+SOBREEXPRESIÓN DE HER2/NEU: EQUIVOCO (SCORE 2+)
+NANCY MEJIA VARGAS
+Médica Patóloga
+RM: 76-0405/15'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUIVOCO (SCORE 2)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (SCORE 2)'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: 'NEGATIVO (SCORE 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUIVOCO (SCORE 2+)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (SCORE 2+)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUÍVOCO'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (2+)'
+
+[HER2] Pattern 2 matched in DIAGNOSTICO
+  Pattern: (?i)HER\s*-?\s*2\s*/\s*Neu\s*:\s*([^K]+?)(?=\s*(?:PATHWAY|Rabbit|VENTANA|Clona|KI-67)|$)
+  Captured: 'Negativo (SCORE 0)
+B. Ganglio linfático axilar derecho. Biopsia. Estudio de inmunohistoquimica:
+CARCINOMA METASTASICO DE MAMA
+EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVOS
+EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVOS 
+SOBREEXPRESIÓN DE HER2/NEU: EQUIVOCO (SCORE 2+)
+NANCY MEJIA VARGAS
+Médica Patóloga
+RM: 76-0405/15'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUIVOCO (SCORE 2)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (SCORE 2)'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: 'NEGATIVO (SCORE 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUIVOCO (SCORE 2+)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (SCORE 2+)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUÍVOCO'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (2+)'
+
+[HER2] Pattern 2 matched in DIAGNOSTICO
+  Pattern: (?i)HER\s*-?\s*2\s*/\s*Neu\s*:\s*([^K]+?)(?=\s*(?:PATHWAY|Rabbit|VENTANA|Clona|KI-67)|$)
+  Captured: 'Negativo (SCORE 0)
+B. Ganglio linfático axilar derecho. Biopsia. Estudio de inmunohistoquimica:
+CARCINOMA METASTASICO DE MAMA
+EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVOS
+EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVOS 
+SOBREEXPRESIÓN DE HER2/NEU: EQUIVOCO (SCORE 2+)
+NANCY MEJIA VARGAS
+Médica Patóloga
+RM: 76-0405/15'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUIVOCO (SCORE 2)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (SCORE 2)'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: 'NEGATIVO (SCORE 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUIVOCO (SCORE 2+)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (SCORE 2+)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUÍVOCO'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (2+)'
+
+[HER2] Pattern 2 matched in DIAGNOSTICO
+  Pattern: (?i)HER\s*-?\s*2\s*/\s*Neu\s*:\s*([^K]+?)(?=\s*(?:PATHWAY|Rabbit|VENTANA|Clona|KI-67)|$)
+  Captured: 'Negativo (SCORE 0)
+B. Ganglio linfático axilar derecho. Biopsia. Estudio de inmunohistoquimica:
+CARCINOMA METASTASICO DE MAMA
+EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVOS
+EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVOS 
+SOBREEXPRESIÓN DE HER2/NEU: EQUIVOCO (SCORE 2+)
+NANCY MEJIA VARGAS
+Médica Patóloga
+RM: 76-0405/15'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUIVOCO (SCORE 2)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (SCORE 2)'
+
+[HER2] Pattern 7 matched in DIAGNOSTICO
+  Pattern: (?i)her[^\w]*2[:\s]*-?\s*(?!(?:un\s+score|presenta|de\s+manera|y\b))([^,.\n\b]{1,20})(?:\.|$|\n)
+  Captured: 'NEGATIVO (SCORE 0)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUIVOCO (SCORE 2+)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (SCORE 2+)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUÍVOCO'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (2+)'
+
+[HER2] Pattern 2 matched in DIAGNOSTICO
+  Pattern: (?i)HER\s*-?\s*2\s*/\s*Neu\s*:\s*([^K]+?)(?=\s*(?:PATHWAY|Rabbit|VENTANA|Clona|KI-67)|$)
+  Captured: 'Negativo (SCORE 0)
+B. Ganglio linfático axilar derecho. Biopsia. Estudio de inmunohistoquimica:
+CARCINOMA METASTASICO DE MAMA
+EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVOS
+EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVOS 
+SOBREEXPRESIÓN DE HER2/NEU: EQUIVOCO (SCORE 2+)
+NANCY MEJIA VARGAS
+Médica Patóloga
+RM: 76-0405/15'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'NEGATIVO (SCORE 0)'
+
+[HER2] Pattern 5 matched in DIAGNOSTICO
+  Pattern: (?i)(?:SOBREEXPRESI[ÓO]N\s+DE\s+)?HER[^\w]*2\s*:\s*(.+?)(?=\s*\.|\s*\n|$)
+  Captured: 'EQUIVOCO (SCORE 2)'
+  Normalization map: {'equívoco': 'EQUIVOCO (2+)', 'equivoco': 'EQUIVOCO (2+)', 'positivo': 'POSITIVO (3+)', 'negativo': 'NEGATIVO (0)'}
+  Value type: DESCRIPTIVE
+  Normalized: 'EQUIVOCO (SCORE 2)'

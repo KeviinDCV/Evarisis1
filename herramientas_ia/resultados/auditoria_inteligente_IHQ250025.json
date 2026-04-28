@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250025",
   "caso_num": 25,
   "total_casos": 50,
-  "timestamp": "2026-01-07T16:40:00.778209",
+  "timestamp": "2026-04-28T14:15:38.786264",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -65,7 +65,7 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M241..."
     },
     "descripcion_microscopica": {
@@ -88,6 +88,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -97,8 +104,8 @@
   "metricas": {
     "score_validacion": 100.0,
     "score_final": 100.0,
-    "validaciones_ok": 9,
-    "total_validaciones": 9,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

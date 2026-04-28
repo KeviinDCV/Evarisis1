@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250048",
   "caso_num": 48,
   "total_casos": 50,
-  "timestamp": "2025-12-17T04:53:58.068450",
+  "timestamp": "2026-04-28T14:15:51.669356",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,19 +14,16 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 2,
+      "total_detectado": 3,
       "estado": "OK"
     },
     "estado": "OK"
   },
   "auditoria_bd": {
     "diagnostico_coloracion": {
-      "estado": "ERROR",
-      "mensaje": "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
-      "valor_bd": "NO APLICA",
-      "valor_ocr": "CÉLULAS GANGLIONARES PRESENTES, FILETES NERVIOSOS NORMALES",
-      "patron_encontrado": "bloque M + diagnóstico de \"...\"",
-      "sugerencia": "Verificar medical_extractor.extract_diagnostico_coloracion()"
+      "estado": "OK",
+      "valor": "CÉLULAS GANGLIONARES PRESENTES, FILETES NERVIOSOS NORMALES",
+      "mensaje": "Correcto (coincidencia exacta)"
     },
     "diagnostico_principal": {
       "estado": "OK",
@@ -42,12 +39,13 @@
       "estado": "OK",
       "mensaje": "Todos los estudios mapeados (1/1)",
       "total_solicitado_ocr": 1,
-      "total_solicitado_bd": 1,
+      "total_solicitado_bd": 2,
       "estudios_ocr": [
         "CALRRETININA"
       ],
       "estudios_bd": [
-        "CALRRETININA"
+        "CALRRETININA",
+        "CALRETININA"
       ],
       "faltantes_en_bd": [],
       "extras_en_bd": [],
@@ -60,10 +58,8 @@
       "errores": []
     },
     "warnings": [],
-    "errores": [
-      "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR"
-    ],
-    "estado": "ERROR",
+    "errores": [],
+    "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
       "mensaje": "Descripcion macroscopica correcta",
@@ -81,14 +77,21 @@
     },
     "malignidad": {
       "estado": "OK",
-      "mensaje": "Malignidad correcta: MALIGNO",
-      "valor_bd": "MALIGNO"
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -96,13 +99,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 88.9,
-    "score_final": 88.9,
-    "validaciones_ok": 8,
-    "total_validaciones": 9,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
-    "errores": 1
+    "errores": 0
   },
   "resumen": {},
-  "estado_final": "ERROR"
+  "estado_final": "OK"
 }

@@ -1,0 +1,84 @@
+{
+  "lote_anterior": "lote_50_casos_20260428_105804 (snapshot 10:58)",
+  "lote_nuevo": "lote_50_casos_20260428_124822",
+  "avg_before": 96.2,
+  "avg_after": 96.2,
+  "delta_avg": 0.0,
+  "mejoraron": [],
+  "empeoraron": [],
+  "mantuvieron_count": 50,
+  "distribucion_antes": {
+    "100": 35,
+    "90-99": 11,
+    "80-89": 4,
+    "<80": 0
+  },
+  "distribucion_despues": {
+    "100": 35,
+    "90-99": 11,
+    "80-89": 4,
+    "<80": 0
+  },
+  "casos_problematicos_despues": {
+    "IHQ250002": {
+      "score": 80.0,
+      "issues": []
+    },
+    "IHQ250005": {
+      "score": 90.0,
+      "issues": []
+    },
+    "IHQ250007": {
+      "score": 80.0,
+      "issues": []
+    },
+    "IHQ250008": {
+      "score": 90.0,
+      "issues": []
+    },
+    "IHQ250013": {
+      "score": 90.0,
+      "issues": []
+    },
+    "IHQ250017": {
+      "score": 90.0,
+      "issues": []
+    },
+    "IHQ250018": {
+      "score": 90.0,
+      "issues": []
+    },
+    "IHQ250019": {
+      "score": 90.0,
+      "issues": []
+    },
+    "IHQ250026": {
+      "score": 90.0,
+      "issues": []
+    },
+    "IHQ250033": {
+      "score": 80.0,
+      "issues": []
+    },
+    "IHQ250037": {
+      "score": 90.0,
+      "issues": []
+    },
+    "IHQ250043": {
+      "score": 80.0,
+      "issues": []
+    },
+    "IHQ250047": {
+      "score": 90.0,
+      "issues": []
+    },
+    "IHQ250049": {
+      "score": 90.0,
+      "issues": []
+    },
+    "IHQ250050": {
+      "score": 90.0,
+      "issues": []
+    }
+  }
+}

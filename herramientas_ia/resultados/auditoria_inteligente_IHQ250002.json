@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250002",
   "caso_num": 2,
   "total_casos": 50,
-  "timestamp": "2026-01-07T17:03:47.453472",
+  "timestamp": "2026-04-28T14:15:25.775660",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -92,7 +92,7 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se realiza estudio de inmunohistoquimica al caso institucional con rotulo M2410489 que corresponde a..."
     },
     "descripcion_microscopica": {
@@ -115,6 +115,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -122,10 +129,10 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 77.8,
-    "score_final": 77.8,
-    "validaciones_ok": 7,
-    "total_validaciones": 9,
+    "score_validacion": 80.0,
+    "score_final": 80.0,
+    "validaciones_ok": 8,
+    "total_validaciones": 10,
     "warnings": 1,
     "errores": 0
   },

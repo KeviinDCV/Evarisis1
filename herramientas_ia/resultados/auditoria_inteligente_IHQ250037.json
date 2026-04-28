@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250037",
   "caso_num": 37,
   "total_casos": 50,
-  "timestamp": "2025-12-16T03:53:56.898941",
+  "timestamp": "2026-04-28T14:15:45.522813",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,21 +14,24 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 1,
+      "total_detectado": 4,
       "estado": "OK"
     },
     "estado": "OK"
   },
   "auditoria_bd": {
     "diagnostico_coloracion": {
-      "estado": "OK",
-      "valor": "NO APLICA",
-      "mensaje": "No hay estudio M previo"
+      "estado": "ERROR",
+      "mensaje": "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
+      "valor_bd": "NO APLICA",
+      "valor_ocr": "LESIÓN DE RECTO BAJO”",
+      "patron_encontrado": "bloque M + diagnóstico de \"...\"",
+      "sugerencia": "Verificar medical_extractor.extract_diagnostico_coloracion()"
     },
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "MUCOSA RECTAL. LESIÓN. BIOPSIA ENDOSCÓPICA. ESTUDIO DE INMUNOHISTOQUÍMICA: - HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE FAVORECEN COLITIS AGUDA Y CRÓNICA NO ESPECÍFICA"
+      "valor_bd": "HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE FAVORECEN COLITIS AGUDA Y CRÓNICA NO ESPECÍFICA"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -36,8 +39,8 @@
       "mensaje": "Correcto (no aplica)"
     },
     "biomarcadores": {
-      "estado": "ERROR",
-      "mensaje": "1 valores NO coinciden con OCR",
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (2/2)",
       "total_solicitado_ocr": 2,
       "total_solicitado_bd": 2,
       "estudios_ocr": [
@@ -52,22 +55,17 @@
       "extras_en_bd": [],
       "mapeados": 2,
       "no_mapeados": [],
-      "valores_incorrectos": [
-        {
-          "biomarcador": "HHV8",
-          "columna": "IHQ_HHV8",
-          "valor_bd": "NO MENCIONADO",
-          "valor_ocr": "NEGATIVO"
-        }
-      ],
+      "valores_incorrectos": [],
       "cobertura": 100.0
     },
     "campos_obligatorios": {
       "errores": []
     },
     "warnings": [],
-    "errores": [],
-    "estado": "OK",
+    "errores": [
+      "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR"
+    ],
+    "estado": "ERROR",
     "descripcion_macroscopica": {
       "estado": "OK",
       "mensaje": "Descripcion macroscopica correcta",
@@ -85,14 +83,21 @@
     },
     "malignidad": {
       "estado": "OK",
-      "mensaje": "Malignidad correcta: MALIGNO",
-      "valor_bd": "MALIGNO"
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -100,13 +105,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 88.9,
-    "score_final": 88.9,
-    "validaciones_ok": 8,
-    "total_validaciones": 9,
+    "score_validacion": 90.0,
+    "score_final": 90.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 10,
     "warnings": 0,
-    "errores": 0
+    "errores": 1
   },
   "resumen": {},
-  "estado_final": "OK"
+  "estado_final": "ERROR"
 }

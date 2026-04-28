@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250026",
   "caso_num": 26,
   "total_casos": 50,
-  "timestamp": "2025-12-13T11:41:29.534938",
+  "timestamp": "2026-04-28T15:00:00.475465",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 12,
+      "total_detectado": 13,
       "estado": "OK"
     },
     "estado": "OK"
@@ -36,36 +36,46 @@
       "mensaje": "Correcto (no aplica)"
     },
     "biomarcadores": {
-      "estado": "OK",
-      "mensaje": "Todos los estudios mapeados (0/0)",
-      "total_solicitado_ocr": 0,
-      "total_solicitado_bd": 8,
-      "estudios_ocr": [],
+      "estado": "ERROR",
+      "mensaje": "1 biomarcadores faltantes en BD; 1 biomarcadores sin mapeo/vacíos",
+      "total_solicitado_ocr": 11,
+      "total_solicitado_bd": 11,
+      "estudios_ocr": [
+        "S100",
+        "SOX10",
+        "MELANA",
+        "ACTINA",
+        "HMB45",
+        "CKAE1E3",
+        "DESMINA",
+        "MYOD1",
+        "CD34",
+        "CROMOGRANINA",
+        "SYNAPTOFISINA"
+      ],
       "estudios_bd": [
-        "CD34",
-        "CHROMOGRANINA",
-        "CKAE1AE3",
-        "HMB45",
-        "MELAN-A",
         "S100",
         "SOX10",
-        "SYNAPTOPHYSIN"
-      ],
-      "faltantes_en_bd": [],
-      "extras_en_bd": [
-        "CD34",
-        "CHROMOGRANINA",
-        "CKAE1AE3",
+        "MELANA",
         "HMB45",
-        "MELAN-A",
-        "S100",
-        "SOX10",
-        "SYNAPTOPHYSIN"
+        "CKAE1AE3",
+        "DESMINA",
+        "MYOD1",
+        "CD34",
+        "CROMOGRANINA",
+        "SYNAPTOFISINA",
+        "DESMIN"
       ],
-      "mapeados": 0,
-      "no_mapeados": [],
+      "faltantes_en_bd": [
+        "ACTINA"
+      ],
+      "extras_en_bd": [],
+      "mapeados": 10,
+      "no_mapeados": [
+        "ACTINA (sin columna)"
+      ],
       "valores_incorrectos": [],
-      "cobertura": 0
+      "cobertura": 90.9
     },
     "campos_obligatorios": {
       "errores": []
@@ -75,7 +85,7 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M241..."
     },
     "descripcion_microscopica": {
@@ -98,6 +108,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -105,10 +122,10 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 100.0,
-    "score_final": 100.0,
+    "score_validacion": 90.0,
+    "score_final": 90.0,
     "validaciones_ok": 9,
-    "total_validaciones": 9,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

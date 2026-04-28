@@ -1,0 +1,148 @@
+{
+  "session_id": "IHQ250001_20260415_083741",
+  "numero_peticion": "IHQ250001",
+  "timestamp": "2026-04-15T08:37:41.480006",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250001\nCopia Pag. 1 de 1\nNombre : DIEGO HERNAN RUIZ IMBACHI\nN. peticion : IHQ250001\nN.Identificación : CC. 79541660\nGenero : MASCULINO\nEdad : 54 años 3 meses 23 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 02/01/2025\nFecha Informe : 07/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR REGION\nINTRADURAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2409633” que corresponde a “tumor intradural de la cauda equina” con diagnósticos de\n“CARCINOMA METASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción\ncon p16 y p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\np40 positivo.\np16 positivo en bloque.\nDIAGNÓSTICO\nRegión intradural (cauda equina). Tumor. Resección. Estudio de inmunohistoquímica:\n- CARCINOMA ESCAMOCELULAR METASTÁSICO p40 POSITIVO / p16 POSITIVO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---",
+    "hash_original": "cbc72566d1d2e1ff3392a4178ad13afd",
+    "estadisticas": {
+      "caracteres_totales": 171183,
+      "caracteres_consolidados": 2398,
+      "reduccion_porcentaje": 98.6
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250001",
+      "caso_num": 1,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "DIEGO HERNAN RUIZ IMBACHI",
+      "numero_peticion": "IHQ250001",
+      "identificacion": "79541660",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "54",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "02/01/2025",
+      "fecha_informe": "07/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250001",
+      "N. de identificación": "79541660",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/01/2025",
+      "Fecha Informe": "07/01/2025",
+      "nombres": "DIEGO HERNAN",
+      "Primer nombre": "DIEGO",
+      "Segundo nombre": "HERNAN",
+      "apellidos": "RUIZ IMBACHI",
+      "Primer apellido": "RUIZ",
+      "Segundo apellido": "IMBACHI",
+      "nombre_formal": "RUIZ IMBACHI, DIEGO HERNAN",
+      "diagnostico": "Región intradural (cauda equina). Tumor. Resección. Estudio de inmunohistoquímica: - CARCINOMA ESCAMOCELULAR METASTÁSICO p40 POSITIVO / p16 POSITIVO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. p40 positivo. p16 positivo en bloque.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2409633\" que corresponde a \"tumor intradural de la cauda equina\" con diagnósticos de \"CARCINOMA METASTÁSICO\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y p40.",
+      "ihq_organo": "REGIÓN INTRADURAL (CAUDA EQUINA)",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, P40",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN INTRADURAL (CAUDA EQUINA)",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "p16": "POSITIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-04-15T08:37:41.711539",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250001\nCopia Pag. 1 de 1\nNombre : DIEGO HERNAN RUIZ IMBACHI\nN. peticion : IHQ250001\nN.Identificación : CC. 79541660\nGenero : MASCULINO\nEdad : 54 años 3 meses 23 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 02/01/2025\nFecha Informe : 07/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR REGION\nINTRADURAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2409633” que corresponde a “tumor intradural de la cauda equina” con diagnósticos de\n“CARCINOMA METASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción\ncon p16 y p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\np40 positivo.\np16 positivo en bloque.\nDIAGNÓSTICO\nRegión intradural (cauda equina). Tumor. Resección. Estudio de inmunohistoquímica:\n- CARCINOMA ESCAMOCELULAR METASTÁSICO p40 POSITIVO / p16 POSITIVO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2409633” que corresponde a “tumor intradural de la cauda equina” con diagnósticos de “CARCINOMA METASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y p40.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. p40 positivo. p16 positivo en bloque.",
+      "Descripcion Diagnostico": "Región intradural (cauda equina). Tumor. Resección. Estudio de inmunohistoquímica: - CARCINOMA ESCAMOCELULAR METASTÁSICO p40 POSITIVO / p16 POSITIVO.",
+      "IHQ_ORGANO": "REGIÓN INTRADURAL (CAUDA EQUINA)",
+      "Organo": "TUMOR REGION INTRADURAL",
+      "Diagnostico Coloracion": "CARCINOMA METASTÁSICO",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR METASTÁSICO P40 POSITIVO / P16 POSITIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 141,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región intradural (cauda equina). Tumor. Resección. Estudio de inmunohistoquímica:\n- CARCINOMA ESCAMOCELULAR METASTÁSICO p40 POSITIVO / p16 POSITIVO.",
+      "valor_corregido": "Región intradural (cauda equina). Tumor. Resección. Estudio de inmunohistoquímica: - CARCINOMA ESCAMOCELULAR METASTÁSICO p40 POSITIVO / p16 POSITIVO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250001",
+      "timestamp": "2026-04-15T08:37:41.702333"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2409633” que corresponde a “tumor intradural de la cauda equina” con diagnósticos de “CARCINOMA METASTÁSICO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y p40.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2409633\" que corresponde a \"tumor intradural de la cauda equina\" con diagnósticos de \"CARCINOMA METASTÁSICO\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y p40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250001",
+      "timestamp": "2026-04-15T08:37:41.702339"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171183,
+    "campos_extraidos": 52
+  }
+}

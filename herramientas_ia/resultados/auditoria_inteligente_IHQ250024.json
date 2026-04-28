@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250024",
   "caso_num": 24,
   "total_casos": 50,
-  "timestamp": "2025-12-13T11:39:16.980534",
+  "timestamp": "2026-04-28T14:15:38.243509",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 5,
+      "total_detectado": 6,
       "estado": "OK"
     },
     "estado": "OK"
@@ -32,7 +32,7 @@
     },
     "factor_pronostico": {
       "estado": "OK",
-      "valor": "HER2: Equivoco (Score 2+), Ki-67: 90%, Receptor de Estrógeno: POSITIVO DÉBIL, 1%, Receptor de Progesterona: POSITIVO",
+      "valor": "HER2: EQUIVOCO (SCORE 2+), Ki-67: 90%, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
       "mensaje": "Factor pronóstico con biomarcadores válidos",
       "biomarcadores_detectados": [
         "Ki-67",
@@ -42,8 +42,8 @@
       ]
     },
     "biomarcadores": {
-      "estado": "ERROR",
-      "mensaje": "1 valores NO coinciden con OCR",
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (4/4)",
       "total_solicitado_ocr": 4,
       "total_solicitado_bd": 4,
       "estudios_ocr": [
@@ -62,14 +62,7 @@
       "extras_en_bd": [],
       "mapeados": 4,
       "no_mapeados": [],
-      "valores_incorrectos": [
-        {
-          "biomarcador": "Ki-67",
-          "columna": "IHQ_KI-67",
-          "valor_bd": "90%",
-          "valor_ocr": "a"
-        }
-      ],
+      "valores_incorrectos": [],
       "cobertura": 100.0
     },
     "campos_obligatorios": {
@@ -103,6 +96,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -110,10 +110,10 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 88.9,
-    "score_final": 88.9,
-    "validaciones_ok": 8,
-    "total_validaciones": 9,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

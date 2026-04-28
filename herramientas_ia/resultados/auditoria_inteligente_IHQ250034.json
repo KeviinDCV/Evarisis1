@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250034",
   "caso_num": 34,
   "total_casos": 50,
-  "timestamp": "2026-01-07T18:41:08.007425",
+  "timestamp": "2026-04-28T14:15:43.896063",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -28,11 +28,11 @@
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
-      "valor_bd": "LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL) CON: EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVOS EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVOS SOBREEXPRESIÓN DE HER2/NEU: NEGATIVO ("
+      "valor_bd": "LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL) CON: EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVOS EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVOS SOBREEXPRESIÓN DE HER2/NEU: NEGATIVO"
     },
     "factor_pronostico": {
       "estado": "OK",
-      "valor": "HER2: NO MENCIONADO, Ki-67: 15%, Receptor de Estrógeno: NEGATIVO (MENOR AL 1%), Receptor de Progesterona: NEGATIVO (MENOR AL 1%)",
+      "valor": "HER2: NEGATIVO (SCORE 0), Ki-67: 15%, Receptor de Estrógeno: NEGATIVO (MENOR AL 1%), Receptor de Progesterona: NEGATIVO (MENOR AL 1%)",
       "mensaje": "Factor pronóstico con biomarcadores válidos",
       "biomarcadores_detectados": [
         "Ki-67",
@@ -45,11 +45,12 @@
       "estado": "OK",
       "mensaje": "Todos los estudios mapeados (0/0)",
       "total_solicitado_ocr": 0,
-      "total_solicitado_bd": 5,
+      "total_solicitado_bd": 6,
       "estudios_ocr": [],
       "estudios_bd": [
         "CKAE1AE3",
         "GATA3",
+        "HER2",
         "Ki-67",
         "Receptor de Estrógeno",
         "Receptor de Progesterona"
@@ -58,6 +59,7 @@
       "extras_en_bd": [
         "CKAE1AE3",
         "GATA3",
+        "HER2",
         "Ki-67",
         "Receptor de Estrógeno",
         "Receptor de Progesterona"
@@ -75,7 +77,7 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
       "valor_bd": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M241..."
     },
     "descripcion_microscopica": {
@@ -98,6 +100,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -107,8 +116,8 @@
   "metricas": {
     "score_validacion": 100.0,
     "score_final": 100.0,
-    "validaciones_ok": 9,
-    "total_validaciones": 9,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

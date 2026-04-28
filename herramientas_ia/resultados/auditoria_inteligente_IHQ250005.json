@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250005",
   "caso_num": 5,
   "total_casos": 50,
-  "timestamp": "2025-11-30T17:46:33.759332",
+  "timestamp": "2026-04-28T14:15:27.451363",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,22 +14,23 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 11,
+      "total_detectado": 12,
       "estado": "OK"
     },
     "estado": "OK"
   },
   "auditoria_bd": {
     "diagnostico_coloracion": {
-      "estado": "ERROR",
-      "mensaje": "DIAGNOSTICO_COLORACION difiere entre BD y OCR",
-      "valor_bd": "LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO",
-      "valor_ocr": "\" LOS HALLAZGOS HISTOLÓGICOS SON"
+      "estado": "OK",
+      "valor": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO",
+      "mensaje": "Correcto (coincidencia exacta)"
     },
     "diagnostico_principal": {
-      "estado": "OK",
-      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO DE PROBABLE ORIGEN ENDOCERVICAL"
+      "estado": "WARNING",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
+      "valor_bd": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO DE PROBABLE ORIGEN ENDOCERVICAL: 02/01/2025",
+      "valor_ocr": "ÚTERO. CÉRVIX. LESIÓN. BIOPSIA. ESTUDIO DE INMUNOHISTOQUIMICA. LOS HALLAZGOS HISTOLÓGICOS SON COMPATIBLES CON ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO DE PROBABLE ORIGEN ENDOCERVICAL. TODOS ",
+      "nota": "Puede ser válido si es una versión resumida del diagnóstico completo"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -41,8 +42,8 @@
       ]
     },
     "biomarcadores": {
-      "estado": "ERROR",
-      "mensaje": "1 valores NO coinciden con OCR",
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (10/10)",
       "total_solicitado_ocr": 10,
       "total_solicitado_bd": 10,
       "estudios_ocr": [
@@ -73,24 +74,17 @@
       "extras_en_bd": [],
       "mapeados": 10,
       "no_mapeados": [],
-      "valores_incorrectos": [
-        {
-          "biomarcador": "WT1",
-          "columna": "IHQ_WT1",
-          "valor_bd": "NO MENCIONADO",
-          "valor_ocr": "NEGATIVO"
-        }
-      ],
+      "valores_incorrectos": [],
       "cobertura": 100.0
     },
     "campos_obligatorios": {
       "errores": []
     },
-    "warnings": [],
-    "errores": [
-      "DIAGNOSTICO_COLORACION difiere entre BD y OCR"
+    "warnings": [
+      "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)"
     ],
-    "estado": "ERROR",
+    "errores": [],
+    "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
       "mensaje": "Descripcion macroscopica correcta",
@@ -116,6 +110,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -123,12 +124,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 77.8,
-    "validaciones_ok": 7,
-    "total_validaciones": 9,
-    "warnings": 0,
-    "errores": 1
+    "score_validacion": 90.0,
+    "score_final": 90.0,
+    "validaciones_ok": 9,
+    "total_validaciones": 10,
+    "warnings": 1,
+    "errores": 0
   },
   "resumen": {},
-  "estado_final": "ERROR"
+  "estado_final": "ADVERTENCIA"
 }

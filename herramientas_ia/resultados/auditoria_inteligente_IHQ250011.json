@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250011",
   "caso_num": 11,
   "total_casos": 50,
-  "timestamp": "2025-12-02T23:33:46.854485",
+  "timestamp": "2026-04-28T15:39:21.627381",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 5,
+      "total_detectado": 6,
       "estado": "OK"
     },
     "estado": "OK"
@@ -22,13 +22,13 @@
   "auditoria_bd": {
     "diagnostico_coloracion": {
       "estado": "OK",
-      "valor": "NO APLICA",
-      "mensaje": "No hay estudio M previo"
+      "valor": "PARED ABDOMINAL",
+      "mensaje": "Correcto (coincidencia exacta)"
     },
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "TEJIDO ENDOMETRIAL ECTÓPICO DECIDUALIZADO"
+      "valor_bd": "HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON TEJIDO ENDOMETRIAL ECTÓPICO DECIDUALIZADO"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -66,9 +66,7 @@
     "campos_obligatorios": {
       "errores": []
     },
-    "warnings": [
-      "BD indica MALIGNO pero no se encontraron keywords malignos en OCR"
-    ],
+    "warnings": [],
     "errores": [],
     "estado": "OK",
     "descripcion_macroscopica": {
@@ -87,30 +85,22 @@
       "valor_bd": "PARED ABDOMINAL"
     },
     "malignidad": {
-      "estado": "WARNING",
-      "mensaje": "BD indica MALIGNO pero no se encontraron keywords malignos en OCR",
-      "valor_bd": "MALIGNO",
-      "keywords_buscados": [
-        "CARCINOMA",
-        "ADENOCARCINOMA",
-        "SARCOMA",
-        "MELANOMA",
-        "LINFOMA",
-        "LEUCEMIA",
-        "NEOPLASIA MALIGNA",
-        "TUMOR MALIGNO",
-        "METASTASIS",
-        "METASTÁSICO",
-        "INVASIVO",
-        "INFILTRANTE"
-      ],
-      "nota": "Revisar manualmente si la clasificación es correcta"
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -118,13 +108,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 88.9,
-    "score_final": 88.9,
-    "validaciones_ok": 8,
-    "total_validaciones": 9,
-    "warnings": 1,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
+    "warnings": 0,
     "errores": 0
   },
   "resumen": {},
-  "estado_final": "ADVERTENCIA"
+  "estado_final": "OK"
 }
