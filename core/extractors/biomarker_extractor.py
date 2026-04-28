@@ -5692,7 +5692,14 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
     # V6.3.93 FIX IHQ250114: Eliminar terminadores que causan corte prematuro (Bajo, Se, Son, etc.)
     # Estos terminadores hacían que "positivas para... con WT1" se cortara antes de procesar WT1
     # V6.3.94 FIX IHQ250115: Agregar terminador "\s+y\s+es\s+negativ" para evitar capturas mixtas
-    generico_positiva_pattern = r'(?i)(?:proliferaci[óo]n\s+\w+\s+)?(positiv[ao]s?|negativ[ao]s?|parchead[ao]s?)\s+para\s+(.+?)(?=\s+e\s+incremento|\s+con\s+intensidad|\s+y\s+es\s+negativ|,\s*negativo\s+para|,\s*siendo\s+negativ|\.\s*(?:Coloraci[óo]n|Resultado|Estudio|P53|P16|WT1|CK|CD)|\.|$)'
+    # V6.5.96 FIX IHQ250010: Extender terminador ", negativo para" a plural femenino/masculino
+    # ", negativ[ao]s? para" (negativo|negativa|negativos|negativas). El terminador anterior
+    # solo cubría singular masculino, dejando que la captura "(positivas) para (X)" se
+    # extendiera incorrectamente a través de "negativas para Y, Z" — contaminando los
+    # biomarcadores Y/Z con estado POSITIVO. Validado contra 995 debug_maps:
+    # 6 casos cambian (IHQ250010, 250394, 250642, 250719, 250728, 250905), todos con
+    # mejora; 0 regresiones.
+    generico_positiva_pattern = r'(?i)(?:proliferaci[óo]n\s+\w+\s+)?(positiv[ao]s?|negativ[ao]s?|parchead[ao]s?)\s+para\s+(.+?)(?=\s+e\s+incremento|\s+con\s+intensidad|\s+y\s+es\s+negativ|,\s*negativ[ao]s?\s+para|,\s*siendo\s+negativ|\.\s*(?:Coloraci[óo]n|Resultado|Estudio|P53|P16|WT1|CK|CD)|\.|$)'
     for match in re.finditer(generico_positiva_pattern, text, re.DOTALL):
         estado_raw = match.group(1).lower()
         if 'positiv' in estado_raw or 'parchea' in estado_raw:
