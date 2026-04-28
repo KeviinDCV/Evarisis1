@@ -5719,7 +5719,15 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
     # biomarcadores Y/Z con estado POSITIVO. Validado contra 995 debug_maps:
     # 6 casos cambian (IHQ250010, 250394, 250642, 250719, 250728, 250905), todos con
     # mejora; 0 regresiones.
-    generico_positiva_pattern = r'(?i)(?:proliferaci[óo]n\s+\w+\s+)?(positiv[ao]s?|negativ[ao]s?|parchead[ao]s?)\s+para\s+(.+?)(?=\s+e\s+incremento|\s+con\s+intensidad|\s+y\s+es\s+negativ|,\s*negativ[ao]s?\s+para|,\s*siendo\s+negativ|\.\s*(?:Coloraci[óo]n|Resultado|Estudio|P53|P16|WT1|CK|CD)|\.|$)'
+    # V6.5.99 FIX IHQ250026: Extender terminador "y es negativ" a "y (es|son|siendo) negativ"
+    # para cubrir plural ("y son negativas para") y forma con gerundio ("y siendo negativo").
+    # El terminador anterior solo cubría singular ("y es negativo") y omitía el plural muy
+    # frecuente en informes HUV (ej. "S100, SOX 10, MelanA y son negativas para Actina, HMB45,
+    # CKAE1E3, ..."). Validado contra 995 debug_maps: 14 casos cambian (IHQ250023, 250026,
+    # 250305, 250343, 250363, 250406, 250588, 250599, 250648, 250779, 250798, 250821, +2),
+    # todos con mejora (separan correctamente positivos de negativos en listas mixtas);
+    # 0 regresiones.
+    generico_positiva_pattern = r'(?i)(?:proliferaci[óo]n\s+\w+\s+)?(positiv[ao]s?|negativ[ao]s?|parchead[ao]s?)\s+para\s+(.+?)(?=\s+e\s+incremento|\s+con\s+intensidad|\s+y\s+(?:es|son|siendo)\s+negativ|,\s*negativ[ao]s?\s+para|,\s*siendo\s+negativ|\.\s*(?:Coloraci[óo]n|Resultado|Estudio|P53|P16|WT1|CK|CD)|\.|$)'
     for match in re.finditer(generico_positiva_pattern, text, re.DOTALL):
         estado_raw = match.group(1).lower()
         if 'positiv' in estado_raw or 'parchea' in estado_raw:
