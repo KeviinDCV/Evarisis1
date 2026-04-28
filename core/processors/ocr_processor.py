@@ -69,6 +69,35 @@ def _post_ocr_cleanup(txt: str) -> str:
     txt = re.sub(r'IH[O0lI]\s*(\d{5,7})', r'IHQ\1', txt, flags=re.IGNORECASE)
     # Variantes de "N. petición"
     txt = re.sub(r'(N[°.\s]*|No\.\s*|Nº\s*|N\s*)petici[oó]n\s*[:\-]?', 'N. peticion :', txt, flags=re.IGNORECASE)
+
+    # V6.5.95 FIX OCR: Tesseract a veces pierde el espacio entre dos palabras
+    # mayúsculas en diagnósticos finales (texto kerneado/baja calidad).
+    # Restaura el espacio entre raíces médicas conocidas pegadas.
+    # Casos detectados en BD HUV (995 casos analizados):
+    #   IHQ250018: GASTROINTESTINALFUSOCELULAR
+    #   IHQ250537: ADENOCARCINOMAMETASTÁSICO / CARCINOMAMETASTÁSICO
+    #   IHQ250776: MODERADAMENTEDIFERENCIADO
+    # NOTA: Lookahead `(?=...)` mantiene la palabra del sufijo intacta.
+    # NOTA: Solo se aplica a patrones EXACTOS conocidos para evitar
+    # romper palabras médicas legítimas largas (INMUNOHISTOQUIMICA,
+    # GASTROPANCREATOBILIAR, MICROCALCIFICACIONES, etc.).
+    _GLUED_OCR_PATTERNS = [
+        # Tipos histológicos pegados con descriptor morfológico
+        (r'\bGASTROINTESTINAL(?=(?:FUSOCELULAR|EPITELIOIDE|MIXTO))',
+         'GASTROINTESTINAL '),
+        # Carcinomas pegados con descriptor de comportamiento
+        (r'\bADENOCARCINOMA(?=(?:METAST[ÁA]SICO|INVASIVO|INVASOR|MUCINOSO|INFILTRANTE))',
+         'ADENOCARCINOMA '),
+        (r'\bCARCINOMA(?=(?:METAST[ÁA]SICO|INVASIVO|INVASOR|INFILTRANTE|EPITELIOIDE))',
+         'CARCINOMA '),
+        # Adverbios de diferenciación pegados con el participio
+        (r'\bMODERADAMENTE(?=DIFERENCIAD[OA])', 'MODERADAMENTE '),
+        (r'\bBIEN(?=DIFERENCIAD[OA])', 'BIEN '),
+        (r'\bPOBREMENTE(?=DIFERENCIAD[OA])', 'POBREMENTE '),
+    ]
+    for patron, repl in _GLUED_OCR_PATTERNS:
+        txt = re.sub(patron, repl, txt, flags=re.IGNORECASE)
+
     # Colapsa espacios múltiples, conserva saltos de línea
     txt = re.sub(r'[ \t]+', ' ', txt)
     return txt
