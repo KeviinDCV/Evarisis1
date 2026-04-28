@@ -60,6 +60,11 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "ENDOCERVIX NEGATIVO",
         "ENDOMETRIO NEGATIVO",
         "GANGLIO NEGATIVO",
+        # Resultados negativos por tipo de cambio celular
+        "NEGATIVO PARA CAMBIOS DISPLASICOS",
+        "NEGATIVO PARA DISPLASIA",
+        "SIN CAMBIOS DISPLASICOS",
+        "AUSENCIA DE CAMBIOS DISPLASICOS",
     ],
     "MUESTRA NO REPRESENTATIVA / NO DIAGNOSTICA": [
         "SIN REPRESENTACION DE PARENQUIMA",
@@ -107,6 +112,11 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "LINFOMA FOLICULAR", "LINFOMA DE LA ZONA MARGINAL", "LINFOMA MALT",
         "LINFOMA DE BURKITT", "LINFOMA DE CELULAS DEL MANTO",
         "LINFOMA LINFOCITICO", "LEUCEMIA LINFOCITICA CRONICA",
+        # Variantes adicionales de linfomas B
+        "LINFOMA DE CELULAS B MADURAS",
+        "LINFOMA DE CELULAS B",
+        "LINFOMA B MADURO",
+        "LINFOMA DE LINFOCITOS B",
     ],
     "LINFOMA T/NK": [
         "LINFOMA T", "LINFOMA DE CELULAS T", "LINFOMA NK", "LINFOMA ANAPLASICO",
@@ -134,20 +144,36 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     ],
 
     # === Mama ===
+    # IMPORTANTE: IN SITU debe evaluarse ANTES que DUCTAL DE MAMA porque
+    # "CARCINOMA DUCTAL IN SITU" contiene la subcadena "CARCINOMA DUCTAL"
+    # que matchearía DUCTAL DE MAMA (clínicamente incorrecto).
+    "CARCINOMA IN SITU DE MAMA (DCIS/LCIS)": [
+        "CARCINOMA DUCTAL IN SITU", "CARCINOMA LOBULILLAR IN SITU",
+        "DCIS", "LCIS", "CARCINOMA INTRADUCTAL",
+    ],
     "CARCINOMA DUCTAL DE MAMA": [
         "CARCINOMA INVASIVO DE TIPO NO ESPECIAL", "CARCINOMA DUCTAL INVASIVO",
         "CARCINOMA DUCTAL INFILTRANTE", "CARCINOMA INVASOR DE TIPO NO ESPECIAL",
         "CARCINOMA NST",
+        # Variantes con preposición "SIN" (CARCINOMA INVASIVO SIN TIPO ESPECIAL)
+        "CARCINOMA INVASIVO SIN TIPO ESPECIAL",
+        "CARCINOMA INVASOR SIN TIPO ESPECIAL",
+        "SIN TIPO ESPECIAL",
+        # CARCINOMA DUCTAL solo (sin INVASIVO/INFILTRANTE explícito) —
+        # va al final del array; IN SITU se evalúa antes (categoría
+        # superior) por lo que no hay riesgo de falso positivo en DCIS.
+        "CARCINOMA DUCTAL",
     ],
     "CARCINOMA LOBULILLAR DE MAMA": [
         "CARCINOMA LOBULILLAR", "CARCINOMA LOBULAR",
     ],
-    "CARCINOMA IN SITU DE MAMA (DCIS/LCIS)": [
-        "CARCINOMA DUCTAL IN SITU", "CARCINOMA LOBULILLAR IN SITU",
-        "DCIS", "LCIS",
-    ],
     "OTRO CARCINOMA DE MAMA": [
-        "CARCINOMA MUCINOSO", "CARCINOMA MEDULAR", "CARCINOMA TUBULAR",
+        # NOTA V6.5.95: Removido "CARCINOMA MUCINOSO" del set porque era
+        # demasiado genérico — causaba falsos positivos en mucinosos
+        # pulmonares (IHQ250046). Si se necesita capturar el mucinoso de
+        # mama, requiere contexto explícito (no inferible solo del dx).
+        "CARCINOMA MEDULAR DE MAMA",
+        "CARCINOMA MEDULAR", "CARCINOMA TUBULAR",
         "CARCINOMA METAPLASICO", "CARCINOMA APOCRINO",
     ],
 
@@ -261,10 +287,17 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "CARCINOMA DE CUELLO UTERINO", "CARCINOMA CERVICAL",
         "CARCINOMA ESCAMOCELULAR DE CERVIX",
         "ADENOCARCINOMA ENDOCERVICAL", "CARCINOMA DE CERVIX",
+        # Diagnósticos sugestivos / probables de origen cervical
+        "PROBABLE ORIGEN ENDOCERVICAL",
+        "ORIGEN ENDOCERVICAL",
+        "PROBABLE ORIGEN CERVICAL",
     ],
     "CARCINOMA DE ENDOMETRIO / UTERO": [
         "ADENOCARCINOMA ENDOMETRIAL", "CARCINOMA ENDOMETRIOIDE",
         "CARCINOMA SEROSO", "CARCINOMA DE ENDOMETRIO",
+        # Diagnósticos sugestivos / probables de origen endometrial
+        "PROBABLE ORIGEN ENDOMETRIAL",
+        "ORIGEN ENDOMETRIAL",
     ],
     "CARCINOMA DE OVARIO": [
         "CARCINOMA DE OVARIO", "ADENOCARCINOMA OVARICO",
@@ -276,6 +309,23 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "ADENOCARCINOMA DE PULMON", "ADENOCARCINOMA PULMONAR",
         "CARCINOMA ESCAMOCELULAR DE PULMON", "CARCINOMA NO MICROCITICO",
         "CARCINOMA NO DE CELULAS PEQUENAS",
+        # Variantes con orden invertido / patrones histológicos pulmonares
+        "ADENOCARCINOMA INVASIVO PULMONAR",
+        "ADENOCARCINOMA INVASIVO DE PULMON",
+        "CARCINOMA INVASIVO PULMONAR",
+        "INVASIVO PULMONAR",
+    ],
+
+    # === Carcinoma nasofaríngeo (entidad clínica distinta, EBV-asociada) ===
+    # Debe evaluarse ANTES que CARCINOMA ESCAMOCELULAR (OTRO) porque su
+    # diagnóstico típico es "CARCINOMA ESCAMOSO NO QUERATINIZANTE" que
+    # matchearía el escamoso genérico.
+    "CARCINOMA NASOFARINGEO": [
+        "CARCINOMA NASOFARINGEO",
+        "CARCINOMA DE NASOFARINGE",
+        "CARCINOMA ESCAMOSO NO QUERATINIZANTE",
+        "ESCAMOSO NO QUERATINIZANTE",
+        "CARCINOMA NO QUERATINIZANTE DE NASOFARINGE",
     ],
 
     # === Carcinomas escamosos en general ===
@@ -288,9 +338,27 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     "ADENOCARCINOMA COLORRECTAL": [
         "ADENOCARCINOMA DE COLON", "ADENOCARCINOMA COLORRECTAL",
         "ADENOCARCINOMA DE RECTO", "ADENOCARCINOMA COLONICO",
+        # Hallazgos de invasión pericólica (típico de cáncer colorrectal
+        # operado): el diagnóstico menciona "INVASIÓN DE TEJIDO PERICÓLICO"
+        # como característica patognomónica.
+        "INVASION DE TEJIDO PERICOLICO",
+        "TEJIDO PERICOLICO",
+        "PERICOLICO",
     ],
     "ADENOCARCINOMA GASTRICO": [
         "ADENOCARCINOMA GASTRICO", "ADENOCARCINOMA DE ESTOMAGO",
+    ],
+    # Carcinoma poco cohesivo / de células en anillo de sello —
+    # histología característicamente gástrica (también puede ser de mama
+    # lobulillar o de vesícula). Va aparte de ADENOCARCINOMA GASTRICO
+    # porque el diagnóstico no siempre menciona el órgano.
+    "CARCINOMA POCO COHESIVO / CELULAS EN ANILLO DE SELLO": [
+        "CARCINOMA POCO COHESIVO",
+        "POCO COHESIVO",
+        "CELULAS EN ANILLO DE SELLO",
+        "CARCINOMA DE CELULAS EN ANILLO",
+        "ANILLO DE SELLO",
+        "TIPO SELLO",
     ],
     "ADENOCARCINOMA DE PANCREAS / VIA BILIAR": [
         "ADENOCARCINOMA DE PANCREAS", "ADENOCARCINOMA PANCREATICO",
@@ -421,6 +489,30 @@ if __name__ == "__main__":
         ("HALLAZGOS QUE FAVORECEN GLIOSIS REACTIVA", "GLIOSIS / LESION REACTIVA SNC"),
         ("EXOCÉRVIX NEGATIVO", "NEGATIVO PARA MALIGNIDAD"),
         ("CÉLULAS GANGLIONARES PRESENTES", "HALLAZGO HISTOLOGICO NORMAL / NO PATOLOGICO"),
+        # === Refinamiento de categorías genéricas (V6.5.95) ===
+        # Adenocarcinomas con origen sugestivo
+        ("ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO DE PROBABLE ORIGEN ENDOCERVICAL",
+         "CARCINOMA DE CERVIX (ESCAMOCELULAR/ADENO)"),
+        ("ADENOCARCINOMA DE PROBABLE ORIGEN ENDOMETRIAL", "CARCINOMA DE ENDOMETRIO / UTERO"),
+        ("ADENOCARCINOMA INVASIVO PULMONAR EN PATRÓN SOLIDO", "CARCINOMA DE PULMON (NO MICROCITICO)"),
+        ("ADENOCARCINOMA MODERADAMENTE DIFERENCIADO CON INVASIÓN DE TEJIDO PERICÓLICO",
+         "ADENOCARCINOMA COLORRECTAL"),
+        # Carcinoma ductal de mama (variantes con/sin "INVASIVO")
+        ("CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL)", "CARCINOMA DUCTAL DE MAMA"),
+        ("CARCINOMA DUCTAL", "CARCINOMA DUCTAL DE MAMA"),
+        # IN SITU debe seguir matcheando IN SITU, no DUCTAL invasivo
+        ("CARCINOMA DUCTAL IN SITU DE ALTO GRADO", "CARCINOMA IN SITU DE MAMA (DCIS/LCIS)"),
+        ("CARCINOMA INTRADUCTAL", "CARCINOMA IN SITU DE MAMA (DCIS/LCIS)"),
+        # Linfoma B (variantes adicionales)
+        ("LINFOMA DE CELULAS B MADURAS", "LINFOMA NO HODGKIN B"),
+        # Carcinoma poco cohesivo (gástrico típico)
+        ("CARCINOMA POCO COHESIVO - PATRÓN MICROSATELITAL ESTABLE",
+         "CARCINOMA POCO COHESIVO / CELULAS EN ANILLO DE SELLO"),
+        # Carcinoma nasofaríngeo
+        ("CARCINOMA ESCAMOSO NO QUERATINIZANTE NEGATIVO PARA TINCIÓN CON LMP-1",
+         "CARCINOMA NASOFARINGEO"),
+        # No-regresión: ADENOCARCINOMA MUCINOSO sin contexto NO debe ir a OTRO CARCINOMA DE MAMA
+        ("ADENOCARCINOMA MUCINOSO", "ADENOCARCINOMA (SIN ORIGEN ESPECIFICADO)"),
     ]
 
     ok = 0
