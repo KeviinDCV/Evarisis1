@@ -3672,6 +3672,27 @@ def determine_malignancy(diagnostico: str, macroscopica: str, microscopica: str,
     if re.search(r'(?:NEGATIV[OA]\s+PARA|SIN\s+EVIDENCIA\s+DE|NO\s+SE\s+OBSERVA)\s+MELANOMA', combined_text):
         return 'BENIGNO'
 
+    # V6.5.98 FIX IHQ250043 / IHQ250047 / IHQ250840: Negaciones de displasia
+    # Casos donde la palabra "displásico" aparece dentro de una NEGACIÓN
+    # explícita (ej. "NO se observan cambios displásicos", "NEGATIVA para
+    # cambios displásicos"). Sin este patrón, el scoring de keywords
+    # detecta "DISPLÁSICO" y marca el caso MALIGNO erróneamente.
+    if re.search(r'NO\s+SE\s+OBSERVAN?\s+(?:CAMBIOS\s+)?DISPL[ÁA]SIC[OA]S?', combined_text):
+        return 'BENIGNO'
+    if re.search(r'NEGATIV[OA]S?\s+PARA\s+(?:CAMBIOS\s+)?DISPL[ÁA]SIC[OA]S?', combined_text):
+        return 'BENIGNO'
+    if re.search(r'NO\s+SE\s+OBSERVAN?\s+.*?LESI[ÓO]N\s+NEOPL[ÁA]SIC[OA]', combined_text):
+        return 'BENIGNO'
+
+    # V6.5.98 FIX IHQ250043: Gliosis reactiva / esclerosis hipocampal
+    # Lesiones reactivas no neoplásicas (típicas de cirugía de epilepsia).
+    # Guardrail: NO aplicar si el OCR también contiene tumor neuroglial real
+    # (CARCINOMA, GLIOMA, GLIOBLASTOMA, METÁSTASIS) — protege contra cambiar
+    # casos como IHQ250849 que tienen ambos términos coexistiendo.
+    if re.search(r'GLIOSIS\s+REACTIVA|ESCLEROSIS\s+HIPOCAMPAL|CAMBIOS\s+REACTIVOS\s+GLIALES', combined_text):
+        if not re.search(r'CARCINOMA|GLIOMA|GLIOBLASTOMA|METASTASIS|MET[ÁA]STASIS', combined_text):
+            return 'BENIGNO'
+
     # V6.3.56 FIX IHQ250065: HIPERPLASIA FOLICULAR/PARACORTICAL → BENIGNO
     # V6.4.75 FIX IHQ250208: Corregido lookbehind de ancho variable (causaba PatternError)
     # Hiperplasia ganglionar reactiva (no neoplásica)
