@@ -2168,30 +2168,16 @@ BIOMARKER_DEFINITIONS = {
         }
     },
 
-    # V6.5.92 FIX IHQ250277: DESMINA como entrada separada (FUNC-03 creó IHQ_DESMINA, pero DESMIN ya existía)
-    'DESMINA': {
-        'nombres_alternativos': ['DES', 'DESMINE'],
-        'descripcion': 'Desmina - Marcador de diferenciación muscular (variante español)',
-        'patrones': [
-            # V6.5.93 PRIORIDAD MÁXIMA: "no presentan inmunorreactividad para: ... Desmina" → NEGATIVO
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+.*?desmin[a]?',
-            # Patrones básicos (mismo que DESMIN)
-            r'(?i)desmin[a]?[:\s]*(positiv[ao]s?|negativ[ao]s?)',
-            r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para[:\s]+.*?desmin[a]?(?:\s|,|\.)',
-        ],
-        'valores_posibles': ['POSITIVO', 'NEGATIVO'],
-        'normalizacion': {
-            'positivo': 'POSITIVO',
-            'positiva': 'POSITIVO',
-            'positivos': 'POSITIVO',
-            'positivas': 'POSITIVO',
-            'negativo': 'NEGATIVO',
-            'negativa': 'NEGATIVO',
-            'negativos': 'NEGATIVO',
-            'negativas': 'NEGATIVO',
-            'no presentan inmunorreactividad': 'NEGATIVO',  # V6.5.93
-        }
-    },
+    # V6.6.5 FIX IHQ250026 (et al): Eliminada definición duplicada 'DESMINA' que
+    # generaba columna paralela IHQ_DESMINA con valores frecuentemente CONTRADICTORIOS
+    # vs IHQ_DESMIN (mismo regex, distintos contextos del informe). Casos afectados con
+    # corrupción de datos: IHQ250026, IHQ250087, IHQ250166, IHQ250169, IHQ250190.
+    # La entrada canónica 'DESMIN' (arriba, línea 2153) ya incluye 'DESMINA' y 'DESMINE'
+    # como nombres_alternativos y su regex `desmin[a]?` cubre ambas formas.
+    # El patrón específico V6.5.93 ("no presentan inmunorreactividad para: ... Desmina"
+    # → NEGATIVO) se reincorpora a la definición DESMIN canónica más abajo si necesario.
+    # NOTA: La columna IHQ_DESMINA queda en la BD como huérfana — su limpieza requiere
+    # un fix de schema separado (DROP COLUMN + migración de datos).
 
     'BER_EP4': {
         'nombres_alternativos': ['BER-EP4', 'BER EP4', 'BERRP4', 'EBERP4', 'BerEP4', 'Ber-EP4', 'EP-CAM', 'EPCAM', 'Ep-CAM'],
