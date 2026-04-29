@@ -1316,6 +1316,18 @@ class AuditorSistema:
             if len(diagnostico) > 10:
                 return self._limpiar_diagnostico_coloracion(diagnostico)
 
+        # ESTRATEGIA 2E: V3.3.14 FIX IHQ250013 - sincronizar con medical_extractor V6.4.0 PRIORIDAD -3.85
+        # Formato: "con diagnóstico con \"LESIÓN FUSOCELULAR BIEN DIFERENCIADA\""
+        # Note: doble preposición "con ... con" (no "con ... de"). El extractor ya
+        # captura este patrón pero el auditor antes no, generando WARNING falso de
+        # discrepancia BD vs OCR cuando ambos tenían el dato correcto.
+        patron2e = r'con\s+diagn[óo]stico\s+con\s*["\'“”](.+?)["\'“”]'
+        match = re.search(patron2e, ocr, re.IGNORECASE | re.DOTALL)
+        if match:
+            diagnostico = ' '.join(match.group(1).strip().split())
+            if len(diagnostico) > 10:
+                return self._limpiar_diagnostico_coloracion(diagnostico)
+
         # ESTRATEGIA 3: Tumores gliales - "LESIÓN" o "LESION" + tipo + "A CLASIFICAR"
         patron3 = r'LESI[ÓO]N\s+NEOPL[ÁA]SICA\s+DE\s+ORIGEN\s+(\w+)\s+A\s+CLASIFICAR'
         match = re.search(patron3, ocr, re.IGNORECASE)
@@ -1823,7 +1835,13 @@ class AuditorSistema:
         Complexity: CC ~6
         """
         BIOMARCADORES_FP = ['HER2', 'Ki-67', 'Receptor de Estrogeno', 'Receptor de Progesterona']
-        PLACEHOLDERS = ['N/A', 'NO APLICA', '', 'SIN DATO', None]
+        # V3.3.14 FIX IHQ250008: Agregar 'NO MENCIONADO' a PLACEHOLDERS.
+        # Cuando un biomarcador FP es solicitado pero no valorable (necrosis, defecto
+        # técnico, etc.), el extractor lo marca como "NO MENCIONADO". Sin este fix,
+        # el validador FP lo cuenta como "biomarcador presente" y emite ERROR falso
+        # "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes" cuando
+        # en realidad el campo Factor pronostico="NO APLICA" es semánticamente correcto.
+        PLACEHOLDERS = ['N/A', 'NO APLICA', '', 'SIN DATO', None, 'NO MENCIONADO']
 
         ihq_estudios = criticos.get('IHQ_ESTUDIOS_SOLICITADOS', '')
         her2 = criticos.get('IHQ_HER2', '')
