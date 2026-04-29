@@ -845,7 +845,9 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'IHQ_CDX2': 'IHQ_CDX2',  # V6.4.88 FIX IHQ250217: Support narrative extraction key
                 'CK7': 'IHQ_CK7',
                 'CROMOGRAMINA': 'IHQ_CROMOGRAMINA',
-                'DESMINA': 'IHQ_DESMINA',
+                # V6.6.5 FIX: DESMINA debe mapearse a IHQ_DESMIN (canónico),
+                # no a una columna paralela IHQ_DESMINA. Ver nota en biomarker_extractor.py:2171.
+                'DESMINA': 'IHQ_DESMIN',
                 'LCA': 'IHQ_LCA',
                 'CD11': 'IHQ_CD11',
                 'MIOGENINA': 'IHQ_MIOGENINA',
@@ -1949,7 +1951,8 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         # Biomarcadores v4.0
         'CK7': 'IHQ_CK7', 'ck7': 'IHQ_CK7',
         'CROMOGRAMINA': 'IHQ_CROMOGRAMINA', 'cromogramina': 'IHQ_CROMOGRAMINA',
-        'DESMINA': 'IHQ_DESMINA', 'desmina': 'IHQ_DESMINA',
+        # V6.6.5 FIX: DESMINA → IHQ_DESMIN (canónico). Ver biomarker_extractor.py:2171.
+        'DESMINA': 'IHQ_DESMIN', 'desmina': 'IHQ_DESMIN',
         'LCA': 'IHQ_LCA', 'lca': 'IHQ_LCA',
         'CD11': 'IHQ_CD11', 'cd11': 'IHQ_CD11',
         'MIOGENINA': 'IHQ_MIOGENINA', 'miogenina': 'IHQ_MIOGENINA',
