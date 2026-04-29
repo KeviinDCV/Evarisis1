@@ -376,7 +376,13 @@ PATTERNS_IHQ = {
     # Se aplica SIN re.IGNORECASE para detectar solo mayúsculas
     'descripcion_microscopica_final': r'(?i:DESCRIPCI\w+N\s+MICROSC\w+PICA)[:\s]+(.*?)(?=\nDIAGN[ÓO]STICO\s*\n|fin\s+del\s+informe|$)',
     # v5.3.1: CORREGIDO - Solo capturar DIAGNÓSTICO de sección (uppercase), NO "diagnóstico de" inline
-    'diagnostico_final_ihq': r'(?:^|\n)\s*DIAGN[OÓ]STICO\s*\n(.*?)(?=\s*(?:observaciones|responsable|fecha|FACTOR\s+PRONOSTICO|FACTOR\s+PRON\w+STICO|EXPRESI\w+N\s+HORMONAL|COMENTARIOS|fin\s+del\s+informe)|$)',
+    # V6.6.3 FIX IHQ250005/IHQ250017: Agregar terminadores específicos para evitar
+    # contaminación con metadatos de página 2 (Fecha Ingreso/Informe), pie de página
+    # ("Todos los análisis...") y separadores de página ("--- PÁGINA").
+    # Antes el lookahead solo tenía "fecha" minúsculas, pero el OCR usa "Fecha Ingreso"
+    # con mayúscula F → no matcheaba → regex capturaba múltiples páginas incluyendo
+    # fechas que terminaban contaminando el campo Diagnostico Principal.
+    'diagnostico_final_ihq': r'(?:^|\n)\s*DIAGN[OÓ]STICO\s*\n(.*?)(?=\s*(?:observaciones|responsable|Fecha\s+Ingreso|Fecha\s+Informe|fecha|FACTOR\s+PRONOSTICO|FACTOR\s+PRON\w+STICO|EXPRESI\w+N\s+HORMONAL|COMENTARIOS|fin\s+del\s+informe|Todos\s+los\s+an[áa]lisis|---\s*P[ÁA]GINA)|$)',
     'factor_pronostico': r'(?:FACTOR\s+PRONOSTICO|FACTOR\s+PRON\w+STICO)[:\s]+(.*?)(?=\s*(?:observaciones|responsable|fecha|COMENTARIOS|fin\s+del\s+informe)|$)',
     # V5.1.2: NUEVO - Extracción de sección COMENTARIOS
     'comentarios': r'(?:^|\n)\s*COMENTARIOS[:\s]+(.*?)(?=\s*(?:[A-ZÁÉÍÓÚÑ\s]{15,60}?\s*\n\s*(?:Responsable|M[ÉE]DIC[OA]\s+PAT[ÓO]LOG[OA]|RM:))|$)',

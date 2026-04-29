@@ -484,9 +484,15 @@ def limpiar_diagnostico(diagnostico: str) -> str:
         r'^LOS\s+HALLAZGOS\s+SON\s+COMPATIBLES\s+CON\s+',
         r'^LOS\s+HALLAZGOS\s+MORFOL[ÓO]GICOS\s+(?:SON\s+)?COMPATIBLES\s+CON\s+',
         r'^LOS\s+HALLAZGOS\s+FAVORECEN\s+(?:UN\s+)?',
+        # V6.6.2 FIX IHQ250049: cubrir verbo SUGIEREN en frases introductorias.
+        # El normalizador no removía "LOS HALLAZGOS ... SUGIEREN UN ..." dejando el
+        # diagnóstico contaminado con la frase preliminar interpretativa del patólogo.
+        r'^LOS\s+HALLAZGOS\s+MORFOL[ÓO]GICOS\s+Y\s+DE\s+INMUNOHISTOQU[ÍI]MICA\s+SUGIEREN\s+(?:UN[AO]?\s+)?',
+        r'^LOS\s+HALLAZGOS\s+(?:MORFOL[ÓO]GICOS\s+)?SUGIEREN\s+(?:UN[AO]?\s+)?',
         r'^HALLAZGOS\s+MORFOL[ÓO]GICOS\s+Y\s+DE\s+INMUNOHISTOQU[ÍI]MICA\s+COMPATIBLES\s+CON\s+',  # V6.5.26 FIX IHQ250237
         r'^HALLAZGOS\s+COMPATIBLES\s+CON\s+',
         r'^HALLAZGOS\s+FAVORECEN\s+',
+        r'^HALLAZGOS\s+SUGIEREN\s+(?:UN[AO]?\s+)?',  # V6.6.2 FIX IHQ250049
         r'^COMPATIBLE\s+CON\s+',
         r'^COMPATIBLES\s+CON\s+',
     ]
