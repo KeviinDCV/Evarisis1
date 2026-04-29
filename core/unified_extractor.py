@@ -2398,6 +2398,18 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
             'AE1 AE2': 'CKAE1AE3',  # AE1 AE2 con espacio
             'AE1/AE3': 'CKAE1AE3',  # AE1/AE3 (variante común)
             'CK AE1/AE2': 'CKAE1AE3',  # CK con espacio + AE1/AE2
+            # V6.6.6 FIX IHQ250007/IHQ250033: Alias inglés/español sincronizados con
+            # normalize_biomarker_name (biomarker_extractor.py:8373). Antes
+            # CHROMOGRANINA y CROMOGRANINA aparecían como entradas SEPARADAS en
+            # IHQ_ESTUDIOS_SOLICITADOS, generando WARNING falso de "biomarcador extra".
+            'CHROMOGRANINA': 'CROMOGRANINA',
+            'CROMOGRAMINA': 'CROMOGRANINA',  # OCR typo G→M
+            'CHROMOGRANIN': 'CROMOGRANINA',
+            'CHROMOGRANIN A': 'CROMOGRANINA',
+            'SYNAPTOPHYSIN': 'SINAPTOFISINA',
+            'SYNAPTOFISINA': 'SINAPTOFISINA',
+            'SINAPTOFISINA': 'SINAPTOFISINA',
+            'SYNAPTOFICINA': 'SINAPTOFISINA',  # OCR typo
         }
 
         return alias_map.get(nombre_upper, nombre)
