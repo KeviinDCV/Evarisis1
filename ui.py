@@ -5001,11 +5001,38 @@ Disco {i}:
             else:
                 cat_serie = df["Diagnostico Principal"].apply(categorizar_diagnostico)
             cat_top = cat_serie.value_counts()
-            cat_clinico = cat_top[~cat_top.index.isin(["SIN DATO", "ESTUDIO IHQ (SIN DIAGNOSTICO ESPECIFICO)"])]
-            stats["diagnosticos_categorizados"] = cat_clinico.head(20).to_dict()
-            stats["diagnosticos_total_categorizado"] = int(
-                cat_top[~cat_top.index.isin(["SIN DATO", "OTRO / NO CATEGORIZADO"])].sum()
-            )
+
+            # V6.6.9 FIX feedback clínico: separar DIAGNÓSTICOS ONCOLÓGICOS reales
+            # (neoplasias benignas o malignas) de HALLAZGOS NO-NEOPLÁSICOS
+            # (negativo para malignidad, muestra no representativa, gliosis,
+            # rechazo trasplante, malformaciones, etc.). Antes todas estas
+            # categorías aparecían mezcladas en "Diagnósticos Principales", lo
+            # cual el patólogo correctamente señaló como incorrecto: "Negativo
+            # para malignidad NO es un diagnóstico oncológico".
+            CATEGORIAS_NO_NEOPLASICAS = {
+                "NEGATIVO PARA MALIGNIDAD",
+                "MUESTRA NO REPRESENTATIVA / NO DIAGNOSTICA",
+                "HALLAZGO HISTOLOGICO NORMAL / NO PATOLOGICO",
+                "RESULTADO IHQ (SIN DIAGNOSTICO ESPECIFICO)",
+                "ESTUDIO IHQ (SIN DIAGNOSTICO ESPECIFICO)",
+                "GLIOSIS / LESION REACTIVA SNC",
+                "RECHAZO DE TRASPLANTE",
+                "MALFORMACION DEL DESARROLLO / HETEROTOPIA SNC",
+            }
+
+            EXCLUIR_DEL_TOP = (CATEGORIAS_NO_NEOPLASICAS | {"SIN DATO", "OTRO / NO CATEGORIZADO"})
+
+            # Diagnósticos oncológicos reales (para gráfico/tabla principal)
+            cat_oncologico = cat_top[~cat_top.index.isin(EXCLUIR_DEL_TOP)]
+            stats["diagnosticos_categorizados"] = cat_oncologico.head(20).to_dict()
+            stats["diagnosticos_total_categorizado"] = int(cat_oncologico.sum())
+
+            # Hallazgos NO neoplásicos (separados, para sección aparte)
+            hallazgos_no_neo = cat_top[cat_top.index.isin(CATEGORIAS_NO_NEOPLASICAS)]
+            stats["hallazgos_no_neoplasicos"] = hallazgos_no_neo.to_dict()
+            stats["hallazgos_no_neoplasicos_total"] = int(hallazgos_no_neo.sum())
+
+            # Métricas de control
             stats["diagnosticos_otro_no_categorizado"] = int(cat_top.get("OTRO / NO CATEGORIZADO", 0))
             stats["diagnosticos_estudio_ihq_sin_dx"] = int(cat_top.get("ESTUDIO IHQ (SIN DIAGNOSTICO ESPECIFICO)", 0))
             stats["diagnosticos_sin_dato"] = int(cat_top.get("SIN DATO", 0))
@@ -5076,13 +5103,22 @@ Disco {i}:
                 "COLON incluye recto/sigmoide, etc.). Indica el total con dato "
                 "('organos_total_con_dato') y el número de categorías distintas.\n"
                 "3) Para 'Diagnósticos Principales' usa SIEMPRE 'diagnosticos_categorizados' "
-                "(agrupa los diagnósticos literales fragmentados en categorías clínicas: "
-                "CARCINOMA DUCTAL DE MAMA, ADENOCARCINOMA, LINFOMA, etc.). NO uses "
-                "'top_diagnostico_principal' como fuente principal: solo cítalo como "
-                "ejemplo del literal más frecuente dentro de cada categoría. Reporta también "
-                "'diagnosticos_estudio_ihq_sin_dx' (casos cuyo diagnóstico es solo el "
-                "rótulo 'Estudio de IHQ' sin diagnóstico específico) y "
-                "'diagnosticos_otro_no_categorizado' (diagnósticos raros/únicos).\n"
+                "que contiene SOLO diagnósticos ONCOLÓGICOS reales (neoplasias benignas "
+                "o malignas: CARCINOMA DUCTAL DE MAMA, ADENOCARCINOMA COLORRECTAL, LINFOMA, "
+                "TIMOMA, MENINGIOMA, etc.). El total real de casos categorizados como "
+                "diagnóstico oncológico está en 'diagnosticos_total_categorizado'.\n"
+                "3B) IMPORTANTE — los HALLAZGOS NO-NEOPLÁSICOS se reportan APARTE en "
+                "'hallazgos_no_neoplasicos' (negativo para malignidad, muestra no "
+                "representativa, hallazgo histológico normal, resultado IHQ sin dx, "
+                "gliosis, rechazo de trasplante, malformación, etc.). NO los mezcles "
+                "en la lista de Diagnósticos Principales — son categorías clínicas "
+                "DIFERENTES (no son neoplasias). Crea una sección separada llamada "
+                "'Hallazgos No-Neoplásicos / Casos sin diagnóstico oncológico' usando "
+                "'hallazgos_no_neoplasicos_total' y la distribución detallada.\n"
+                "3C) NO uses 'top_diagnostico_principal' como fuente principal: solo "
+                "cítalo como ejemplo del literal más frecuente. Reporta "
+                "'diagnosticos_estudio_ihq_sin_dx' y 'diagnosticos_otro_no_categorizado' "
+                "como métricas de control de calidad.\n"
                 "4) Calcula porcentajes sobre 'total_casos' o el denominador "
                 "explícito. Muestra siempre el N usado.\n"
                 "5) Para biomarcadores: 'biomarcadores_top15' es un dict {marcador: "
@@ -5111,10 +5147,13 @@ Disco {i}:
                 "2. Volumen y Temporalidad\n"
                 "3. Malignidad (porcentajes con N sobre total_casos)\n"
                 "4. Distribución Anatómica (top categorías canónicas)\n"
-                "5. Diagnósticos Principales (categorías clínicas + casos sin dx específico)\n"
-                "6. Biomarcadores (top 15 con N evaluados y resultado predominante)\n"
-                "7. Servicios y Procedimientos\n"
-                "8. Observaciones clínicas (sin sobre-interpretar)"
+                "5. Diagnósticos Oncológicos Principales (SOLO neoplasias benignas/malignas, "
+                "usar 'diagnosticos_categorizados')\n"
+                "6. Hallazgos No-Neoplásicos (usar 'hallazgos_no_neoplasicos': negativos, "
+                "muestras no representativas, hallazgos reactivos, etc.) — sección SEPARADA\n"
+                "7. Biomarcadores (top 15 con N evaluados y resultado predominante)\n"
+                "8. Servicios y Procedimientos (con totales y categorización por tipo)\n"
+                "9. Observaciones clínicas (sin sobre-interpretar)"
             )
 
             from core.llm_client import LMStudioClient
@@ -5372,7 +5411,8 @@ Disco {i}:
             ax2.text(0.5, 0.5, "Sin datos", ha="center", va="center")
             ax2.axis("off")
 
-        # 3) Top diagnósticos — barra horizontal
+        # 3) Top diagnósticos oncológicos (V6.6.9: solo neoplasias, sin hallazgos
+        # no-neoplásicos como "negativo para malignidad")
         ax3 = fig.add_subplot(2, 2, 3)
         dx = stats.get("diagnosticos_categorizados", {}) or {}
         # Excluir "OTRO / NO CATEGORIZADO" del gráfico para ver categorías clínicas
@@ -5383,7 +5423,7 @@ Disco {i}:
             etq = [k[:40] + ("…" if len(k) > 40 else "") for k, _ in top]
             val = [v for _, v in top]
             ax3.barh(etq, val, color="#198754")
-            ax3.set_title("Top 10 diagnósticos (categorías clínicas)", fontsize=12, fontweight="bold")
+            ax3.set_title("Top 10 diagnósticos oncológicos", fontsize=12, fontweight="bold")
             ax3.tick_params(axis="y", labelsize=8)
             for i, v in enumerate(val):
                 ax3.text(v, i, f" {v}", va="center", fontsize=8)
@@ -5446,8 +5486,11 @@ Disco {i}:
         bloques = [
             ("🧬 Distribución anatómica", stats.get("organos_normalizados", {}),
              ("Órgano", "Casos")),
-            ("🩺 Diagnósticos (categorías clínicas)",
+            ("🩺 Diagnósticos oncológicos (neoplasias)",
              stats.get("diagnosticos_categorizados", {}),
+             ("Categoría neoplásica", "Casos")),
+            ("📋 Hallazgos no-neoplásicos (separados)",
+             stats.get("hallazgos_no_neoplasicos", {}),
              ("Categoría", "Casos")),
             ("⚕️ Procedimientos", stats.get("procedimientos", {}),
              ("Procedimiento", "Casos")),
