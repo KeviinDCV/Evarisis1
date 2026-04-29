@@ -106,7 +106,10 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     ],
 
     # === Hematolinfoides (deben evaluarse antes que carcinomas) ===
-    "LINFOMA HODGKIN": ["LINFOMA DE HODGKIN", "HODGKIN"],
+    # IMPORTANTE: LINFOMA NO HODGKIN B se evalúa ANTES que LINFOMA HODGKIN
+    # porque "LINFOMA NO HODGKIN" contiene la subcadena "HODGKIN" — sin este
+    # orden, casos NO Hodgkin se clasificarían erróneamente como Hodgkin.
+    # V6.6.8 FIX feedback clínico "linfoma especificar".
     "LINFOMA NO HODGKIN B": [
         "LINFOMA NO HODGKIN", "LINFOMA B DIFUSO", "LINFOMA DIFUSO DE CELULAS B",
         "LINFOMA FOLICULAR", "LINFOMA DE LA ZONA MARGINAL", "LINFOMA MALT",
@@ -121,6 +124,13 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     "LINFOMA T/NK": [
         "LINFOMA T", "LINFOMA DE CELULAS T", "LINFOMA NK", "LINFOMA ANAPLASICO",
         "MICOSIS FUNGOIDE",
+    ],
+    # LINFOMA HODGKIN evaluado DESPUÉS de NO HODGKIN para evitar matching
+    # falso. Ahora el patrón "HODGKIN" es seguro porque NO HODGKIN ya
+    # consumió esos casos.
+    "LINFOMA HODGKIN": [
+        "LINFOMA DE HODGKIN", "LINFOMA HODGKIN CLASICO",
+        "ENFERMEDAD DE HODGKIN", "HODGKIN CLASICO", "HODGKIN",
     ],
     "LINFOMA (OTRO/INESPECIFICO)": ["LINFOMA"],
     "LEUCEMIA MIELOIDE": [
@@ -328,7 +338,27 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "CARCINOMA NO QUERATINIZANTE DE NASOFARINGE",
     ],
 
-    # === Carcinomas escamosos en general ===
+    # === Carcinoma escamocelular de cabeza y cuello (entidad clínica común) ===
+    # Detecta solo cuando el diagnóstico explícitamente menciona cabeza/cuello.
+    # Si el dx es genérico, la inferencia por órgano (V6.6.8) refinará usando
+    # el campo Organo (LENGUA, PALADAR, etc.).
+    "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO": [
+        "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+        "CARCINOMA ESCAMOSO DE CABEZA Y CUELLO",
+        "CARCINOMA EPIDERMOIDE DE LENGUA",
+        "CARCINOMA EPIDERMOIDE DE LARINGE",
+        "CARCINOMA EPIDERMOIDE DE OROFARINGE",
+        "CARCINOMA ESCAMOCELULAR DE LENGUA",
+        "CARCINOMA ESCAMOCELULAR DE LARINGE",
+        "CARCINOMA ESCAMOCELULAR DE PALADAR",
+    ],
+    "CARCINOMA ESCAMOCELULAR DE PIEL": [
+        "CARCINOMA ESCAMOCELULAR DE PIEL",
+        "CARCINOMA EPIDERMOIDE DE PIEL",
+        "CARCINOMA ESCAMOCELULAR CUTANEO",
+    ],
+
+    # === Carcinomas escamosos en general (fallback) ===
     "CARCINOMA ESCAMOCELULAR (OTRO/SIN ESPECIFICAR)": [
         "CARCINOMA ESCAMOCELULAR", "CARCINOMA EPIDERMOIDE",
         "CARCINOMA DE CELULAS ESCAMOSAS",
@@ -439,6 +469,99 @@ def categorizar_diagnostico(valor: str) -> str:
                 return categoria
 
     return "OTRO / NO CATEGORIZADO"
+
+
+# Mapeo de inferencia órgano → categoría refinada cuando el dx es genérico
+# V6.6.8: Para casos donde el patólogo escribió un dx genérico ("ADENOCARCINOMA
+# INVASIVO" sin especificar origen), inferir la categoría usando el órgano.
+# Solo se aplica para 3 categorías genéricas:
+#   - "ADENOCARCINOMA (SIN ORIGEN ESPECIFICADO)"
+#   - "CARCINOMA (OTRO/INESPECIFICO)"
+#   - "CARCINOMA ESCAMOCELULAR (OTRO/SIN ESPECIFICAR)"
+INFERENCIA_POR_ORGANO_ADENO = {
+    # ADENOCARCINOMA + órgano → categoría específica
+    "COLON": "ADENOCARCINOMA COLORRECTAL",
+    "RECTO": "ADENOCARCINOMA COLORRECTAL",
+    "SIGMOIDES": "ADENOCARCINOMA COLORRECTAL",
+    "CIEGO": "ADENOCARCINOMA COLORRECTAL",
+    "ESTOMAGO": "ADENOCARCINOMA GASTRICO",
+    "PULMON": "CARCINOMA DE PULMON (NO MICROCITICO)",
+    "ENDOMETRIO": "CARCINOMA DE ENDOMETRIO / UTERO",
+    "UTERO": "CARCINOMA DE ENDOMETRIO / UTERO",
+    "CERVIX": "CARCINOMA DE CERVIX (ESCAMOCELULAR/ADENO)",
+    "PROSTATA": "CARCINOMA DE PROSTATA",
+    "RIÑON": "CARCINOMA RENAL",
+    "RINON": "CARCINOMA RENAL",
+    "PANCREAS": "ADENOCARCINOMA DE PANCREAS / VIA BILIAR",
+    "VIA BILIAR": "ADENOCARCINOMA DE PANCREAS / VIA BILIAR",
+    "VESICULA BILIAR": "ADENOCARCINOMA DE PANCREAS / VIA BILIAR",
+    "HIGADO": "HEPATOCARCINOMA",
+    "MAMA": "OTRO CARCINOMA DE MAMA",
+    "OVARIO": "CARCINOMA DE OVARIO",
+}
+
+INFERENCIA_POR_ORGANO_ESCAMO = {
+    # CARCINOMA ESCAMOCELULAR + órgano → categoría específica
+    "CERVIX": "CARCINOMA DE CERVIX (ESCAMOCELULAR/ADENO)",
+    "PULMON": "CARCINOMA DE PULMON (NO MICROCITICO)",
+    "LENGUA": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+    "PALADAR": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+    "AMIGDALA": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+    "AMIGDALAS": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+    "OROFARINGE": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+    "LARINGE": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+    "CAVIDAD ORAL": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+    "ENCIA": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+    "PIEL": "CARCINOMA ESCAMOCELULAR DE PIEL",
+}
+
+
+def categorizar_diagnostico_con_organo(valor_dx, valor_organo):
+    """Versión enriquecida que usa el órgano para refinar diagnósticos genéricos.
+
+    V6.6.8 — Implementa Opción β del feedback clínico: cuando el patólogo
+    escribió un diagnóstico genérico ("ADENOCARCINOMA INVASIVO" sin órgano),
+    pero el campo Organo está poblado, inferir la categoría específica.
+
+    NO sobrescribe categorías ya específicas — solo refina las 3 genéricas.
+
+    Args:
+        valor_dx: Diagnóstico libre del patólogo
+        valor_organo: Órgano canónico (ej: "COLON", "MAMA"; output de
+                      normalizador_organos.normalizar_organo)
+
+    Returns:
+        Categoría canónica refinada usando contexto de órgano cuando aplique.
+    """
+    base = categorizar_diagnostico(valor_dx)
+
+    # Solo refinar categorías genéricas
+    if base not in (
+        "ADENOCARCINOMA (SIN ORIGEN ESPECIFICADO)",
+        "CARCINOMA (OTRO/INESPECIFICO)",
+        "CARCINOMA ESCAMOCELULAR (OTRO/SIN ESPECIFICAR)",
+    ):
+        return base
+
+    if not valor_organo:
+        return base
+    organo_norm = normalizar_texto(str(valor_organo))
+    if not organo_norm or organo_norm == "SIN DATO":
+        return base
+
+    # Adenocarcinoma genérico → buscar inferencia
+    if base in ("ADENOCARCINOMA (SIN ORIGEN ESPECIFICADO)", "CARCINOMA (OTRO/INESPECIFICO)"):
+        for organo_key, categoria_refinada in INFERENCIA_POR_ORGANO_ADENO.items():
+            if organo_key in organo_norm:
+                return categoria_refinada
+
+    # Carcinoma escamocelular genérico → buscar inferencia
+    if base == "CARCINOMA ESCAMOCELULAR (OTRO/SIN ESPECIFICAR)":
+        for organo_key, categoria_refinada in INFERENCIA_POR_ORGANO_ESCAMO.items():
+            if organo_key in organo_norm:
+                return categoria_refinada
+
+    return base
 
 
 # --- self-test ----------------------------------------------------------

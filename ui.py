@@ -4935,10 +4935,33 @@ Disco {i}:
             stats["organos_columna_fuente"] = col_organo
             stats["organos_categorias_distintas"] = int(top_sin_nulos.shape[0])
         # Distribución por procedimiento — filtrar "INMUNOHISTOQUIMICA" (no es procedimiento quirúrgico)
+        # V6.6.8: Agregar totales y agrupación por tipo (biopsia/cirugía/etc.)
         if "Procedimiento" in df.columns:
             procs = df["Procedimiento"].fillna("SIN DATO").astype(str).str.upper().str.strip()
             procs = procs[~procs.isin(["INMUNOHISTOQUIMICA", "INMUNOHISTOQUÍMICA"])]
-            stats["procedimientos"] = procs.value_counts().head(10).to_dict()
+            procs_validos = procs[procs != "SIN DATO"]
+            stats["procedimientos"] = procs_validos.value_counts().head(10).to_dict()
+            stats["procedimientos_total_con_dato"] = int(len(procs_validos))
+            stats["procedimientos_categorias_distintas"] = int(procs_validos.nunique())
+            # Agrupar por tipo clínico: BIOPSIA / CIRUGIA / PUNCION
+            def _clasificar_proc(p: str) -> str:
+                p = p.upper()
+                if any(k in p for k in ["BIOPSIA", "BX ", "BIOP"]):
+                    return "BIOPSIA"
+                if any(k in p for k in ["ECTOMIA", "ECTOMÍA", "RESECCION", "RESECCIÓN",
+                                         "CIRUG", "MASTECTOM", "CUADRANTECT",
+                                         "HEMICOLECT", "APENDICECT", "NEFRECT",
+                                         "HISTERECT", "TIROIDECT", "PROSTATECT",
+                                         "GASTRECT", "SIGMOIDECT", "HEPATECT",
+                                         "SALPINGOOFOR", "ESPLENECT", "LARINGECT"]):
+                    return "CIRUGIA"
+                if any(k in p for k in ["PUNCION", "PUNCIÓN", "ASPIRADO", "PAAF"]):
+                    return "PUNCION/ASPIRADO"
+                if "LEGRADO" in p or "CURETAJE" in p:
+                    return "LEGRADO"
+                return "OTRO"
+            tipos = procs_validos.apply(_clasificar_proc)
+            stats["procedimientos_por_tipo"] = tipos.value_counts().to_dict()
 
         # Diagnósticos — filtrar entradas genéricas que no son diagnósticos reales
         filtro_diag = ["ESTUDIO DE INMUNOHISTOQUÍMICA", "INMUNOHISTOQUÍMICA",
@@ -4954,9 +4977,29 @@ Disco {i}:
         # distintos en categorías clínicas (CARCINOMA DUCTAL DE MAMA,
         # ADENOCARCINOMA, LINFOMA, etc.). Esto refleja el volumen real
         # del HUV en lugar de strings literales fragmentados.
-        from core.normalizador_diagnosticos import categorizar_diagnostico
+        # V6.6.8: Usar categorizar_diagnostico_con_organo para refinar diagnósticos
+        # genéricos ("ADENOCARCINOMA SIN ORIGEN", "CARCINOMA OTRO") usando el campo
+        # Organo del caso. Esto resuelve el feedback clínico: "Adenocarcinoma debe
+        # especificar ubicación", "Carcinoma escamocelular debe aclarar órgano".
+        from core.normalizador_diagnosticos import (
+            categorizar_diagnostico,
+            categorizar_diagnostico_con_organo,
+        )
+        from core.normalizador_organos import normalizar_organo as _norm_organo
         if "Diagnostico Principal" in df.columns:
-            cat_serie = df["Diagnostico Principal"].apply(categorizar_diagnostico)
+            # Pasar diagnóstico + órgano canónico para inferencia contextual
+            organo_col = col_organo if 'col_organo' in dir() and col_organo else None
+            if organo_col is not None and organo_col in df.columns:
+                organos_norm = df[organo_col].apply(_norm_organo)
+                cat_serie = df.apply(
+                    lambda row: categorizar_diagnostico_con_organo(
+                        row["Diagnostico Principal"],
+                        organos_norm.loc[row.name] if row.name in organos_norm.index else None
+                    ),
+                    axis=1
+                )
+            else:
+                cat_serie = df["Diagnostico Principal"].apply(categorizar_diagnostico)
             cat_top = cat_serie.value_counts()
             cat_clinico = cat_top[~cat_top.index.isin(["SIN DATO", "ESTUDIO IHQ (SIN DIAGNOSTICO ESPECIFICO)"])]
             stats["diagnosticos_categorizados"] = cat_clinico.head(20).to_dict()
@@ -4999,11 +5042,16 @@ Disco {i}:
                 stats["paneles_ihq_solicitados"] = estudios.value_counts().head(10).to_dict()
 
         # Servicio solicitante — filtrar N/A y SIN DATO
+        # V6.6.8 FIX: Agregar totales para que la IA sepa cuántos casos hay en
+        # total y cuántos servicios distintos. Antes solo enviaba top 10 sin
+        # contexto, generando reportes que aparentaban no sumar al total.
         if "Servicio" in df.columns:
             servicios = df["Servicio"].fillna("").astype(str).str.strip()
             servicios = servicios[(servicios != "") & (servicios.str.upper() != "N/A") & (servicios.str.upper() != "SIN DATO")]
             if not servicios.empty:
                 stats["servicios"] = servicios.value_counts().head(10).to_dict()
+                stats["servicios_total_con_dato"] = int(len(servicios))
+                stats["servicios_categorias_distintas"] = int(servicios.nunique())
 
         return stats
 
@@ -5042,7 +5090,22 @@ Disco {i}:
                 "si fueran casos únicos: un mismo paciente aparece en varios marcadores. "
                 "El total de marcadores distintos está en 'total_biomarcadores_distintos'.\n"
                 "6) Si un dato no está en las estadísticas, escribe 'no disponible'.\n"
-                "7) NO inventes diagnósticos, biomarcadores ni cifras.\n\n"
+                "7) NO inventes diagnósticos, biomarcadores ni cifras.\n"
+                "8) Para 'Servicios': usa 'servicios' (top 10), 'servicios_total_con_dato' "
+                "(suma real) y 'servicios_categorias_distintas'. SIEMPRE indica que la "
+                "tabla muestra los TOP 10 sobre el total real; si el top 10 no suma al "
+                "total, la diferencia son servicios menos frecuentes.\n"
+                "9) Para 'Procedimientos': usa 'procedimientos_por_tipo' (BIOPSIA/CIRUGIA/"
+                "PUNCION/LEGRADO/OTRO) como categorización clínica primaria. Cita además "
+                "los top específicos de 'procedimientos' como ejemplos. Cualquier "
+                "*ECTOMÍA (apendicectomía, mastectomía, hemicolectomía, etc.) ES una "
+                "CIRUGÍA, no un diagnóstico.\n"
+                "10) Para 'Diagnósticos': cuando una categoría sea 'ADENOCARCINOMA "
+                "(SIN ORIGEN ESPECIFICADO)' o 'CARCINOMA (OTRO/INESPECIFICO)' o "
+                "'CARCINOMA ESCAMOCELULAR (OTRO/SIN ESPECIFICAR)', explicar al lector "
+                "que el patólogo NO especificó el subtipo en el texto del informe. "
+                "Si aparecen, listar el órgano más frecuente asociado para dar contexto "
+                "(usa 'organos_normalizados').\n\n"
                 "Estructura del informe (Markdown español):\n"
                 "1. Resumen Ejecutivo (volumen, periodo, hallazgos principales)\n"
                 "2. Volumen y Temporalidad\n"
