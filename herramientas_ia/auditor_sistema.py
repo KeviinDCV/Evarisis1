@@ -1085,6 +1085,17 @@ class AuditorSistema:
         print("Validando completitud de biomarcadores...")
         estado_biomarcadores = self._validar_biomarcadores_completos(bd, criticos, ocr)
         auditoria['biomarcadores'] = estado_biomarcadores
+        # V3.3.13 FIX: Propagar estado WARNING/ERROR de biomarcadores a la lista raíz
+        # auditoria['warnings']/['errores']. Antes el campo biomarcadores marcaba
+        # estado=WARNING (por extras_en_bd) o ERROR (por valores incorrectos) pero el
+        # mensaje no se agregaba a la lista raíz, generando "warnings silenciosos":
+        # casos con score 90% sin razón visible en el resumen ejecutivo.
+        # Ejemplos: IHQ250019 (CKAE1AE3 extra), IHQ250050 (CD45 extra).
+        if estado_biomarcadores.get('estado') == 'ERROR':
+            auditoria['errores'].append(f"Biomarcadores: {estado_biomarcadores.get('mensaje', '')}")
+            auditoria['estado'] = 'ERROR'
+        elif estado_biomarcadores.get('estado') == 'WARNING':
+            auditoria['warnings'].append(f"Biomarcadores: {estado_biomarcadores.get('mensaje', '')}")
 
         # 3.5 MALIGNIDAD (v3.3.0)
         print("Validando MALIGNIDAD...")
