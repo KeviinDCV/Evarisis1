@@ -1192,7 +1192,12 @@ class AuditorSistema:
             texto_pagina2 = ocr[pos_despues_fecha:pos_despues_fecha+1000]
 
             # Buscar keywords de diagnóstico (ADENOCARCINOMA, CARCINOMA, etc.)
-            patron_diagnostico = r'((?:ADENOCARCINOMA|CARCINOMA|SARCOMA|MELANOMA|LINFOMA|TUMOR|PATRON|HER).*?)(?=\n\s*[A-ZÁÉÍÓÚÑ\s]{15,}\n|RESPONSABLE|MD\s+PAT|\Z)'
+            # V3.3.15 FIX IHQ250049: Agregar terminadores adicionales para evitar capturar
+            # bibliografía/comentarios/metadata. Antes el regex avanzaba hasta encontrar
+            # un encabezado mayúsculas y absorbía secciones como "EXPRESIÓN HORMONAL"
+            # (IHQ250002) o referencias bibliográficas tipo "TUMOR OF KIDNEY: A CASE
+            # REPORT. ASIAN J SURG..." (IHQ250049) que matchean el TUMOR keyword.
+            patron_diagnostico = r'((?:ADENOCARCINOMA|CARCINOMA|SARCOMA|MELANOMA|LINFOMA|TUMOR|PATRON|HER).*?)(?=\n\s*[A-ZÁÉÍÓÚÑ\s]{15,}\n|RESPONSABLE|MD\s+PAT|COMENTARIOS|EXPRESI[ÓO]N\s+HORMONAL|FACTORES\s+DE\s+TRANSCRIPCI|Asian\s+J|J\s+Surg|doi\s*:|PMID|PMCID|RM\s*:|Nota\s*:|Todos\s+los\s+an[áa]lisis|\Z)'
             match_diag = re.search(patron_diagnostico, texto_pagina2, re.IGNORECASE | re.DOTALL)
 
             if match_diag:
@@ -2088,7 +2093,14 @@ class AuditorSistema:
                 else:
                     no_mapeados.append(f"{biomarcador} (columna {columna} vacía)")
             else:
-                no_mapeados.append(f"{biomarcador} (sin columna)")
+                # V3.3.15: Verificar si el biomarcador SÍ tiene mapeo en BIOMARCADORES
+                # pero la columna está vacía/inexistente — distinguir de biomarcadores
+                # genuinamente sin columna asignada en el diccionario.
+                columna_mapeada = self.BIOMARCADORES.get(biomarcador.upper())
+                if columna_mapeada:
+                    no_mapeados.append(f"{biomarcador} (columna {columna_mapeada} vacía — no reportada en microscópica)")
+                else:
+                    no_mapeados.append(f"{biomarcador} (sin columna)")
 
         # PASO 3B: Validar VALORES de biomarcadores contra OCR (v3.3.0)
         # Prevenir "false completeness" - casos que reportan 100% pero tienen valores incorrectos
