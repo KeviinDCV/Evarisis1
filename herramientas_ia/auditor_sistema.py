@@ -380,14 +380,19 @@ class AuditorSistema:
     'CK AE1/AE3': 'IHQ_CKAE1AE3', 'CK AE1 AE3': 'IHQ_CKAE1AE3', 'CKAE1AE3': 'IHQ_CKAE1AE3',
     'CKA E1E2': 'IHQ_CKAE1AE3', 'CKA E1/E2': 'IHQ_CKAE1AE3',  # Variante OCR común con typo
     'CK7': 'IHQ_CK7', 'CK 7': 'IHQ_CK7', 'CK-7': 'IHQ_CK7', 'CITOQUERATINA 7': 'IHQ_CK7',
-    'CROMOGRAMINA': 'IHQ_CROMOGRAMINA',
-    'CHROMOGRANIN': 'IHQ_CROMOGRAMINA',
-    'CHROMOGRANIN A': 'IHQ_CROMOGRAMINA',
-    'CROMOGRANINA': 'IHQ_CROMOGRAMINA',
-    'CGA': 'IHQ_CROMOGRAMINA',
-    'DES': 'IHQ_DESMINA',
-    'DESMINA': 'IHQ_DESMINA',
-    'DESMIN': 'IHQ_DESMINA',
+    # V6.6.7 FIX IHQ250007/IHQ250033: Typo IHQ_CROMOGRAMINA (con M) corregido a
+    # IHQ_CROMOGRANINA (con N, columna canónica). El typo previo SOBRESCRIBÍA la
+    # asignación correcta de las líneas 313-314, generando comparación fallida BD vs OCR
+    # y reportando falsos warnings/errores de "biomarcador faltante/extra".
+    'CROMOGRAMINA': 'IHQ_CROMOGRANINA',
+    'CHROMOGRANIN': 'IHQ_CROMOGRANINA',
+    'CHROMOGRANIN A': 'IHQ_CROMOGRANINA',
+    'CROMOGRANINA': 'IHQ_CROMOGRANINA',
+    'CGA': 'IHQ_CROMOGRANINA',
+    # V6.6.7 FIX (consistente con V6.6.5): DESMIN/DESMINA → IHQ_DESMIN (canónico).
+    'DES': 'IHQ_DESMIN',
+    'DESMINA': 'IHQ_DESMIN',
+    'DESMIN': 'IHQ_DESMIN',
     'CD 45': 'IHQ_LCA',
     'CD-45': 'IHQ_LCA',
     'LCA': 'IHQ_LCA',
