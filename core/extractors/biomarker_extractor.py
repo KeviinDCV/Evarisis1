@@ -3377,7 +3377,10 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'LCA/CD45 - Antígeno leucocitario común (marcador panleucocitario)',
         'patrones': [
             # V6.5.93 PRIORIDAD MÁXIMA: "no presentan inmunorreactividad para: ... LCA" → NEGATIVO
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+.*?(?:LCA|CD[\s-]?45)',
+            # V6.6.6 FIX IHQ250050: Acotar `.*?` (con re.DOTALL hace match cross-section
+            # y captura "lca" dentro de "alcance" del disclaimer legal). Limitar a línea/oración
+            # actual y agregar word-boundaries \b para evitar substring spurio.
+            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+[^.\n]{0,200}\b(?:LCA|CD[\s-]?45)\b',
             # Patrones básicos
             r'(?i)LCA[:\s]*(positiv[ao]s?|negativ[ao]s?)',
             r'(?i)CD[\s-]?45[:\s]*(positiv[ao]s?|negativ[ao]s?)',
