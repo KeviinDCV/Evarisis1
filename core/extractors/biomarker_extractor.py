@@ -5889,7 +5889,22 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
                 'células normales', 'celulas normales',
                 'acompañante está compuesto', 'acompañante esta compuesto',
                 'estudios solicitados', 'para los siguientes marcadores',
-                'se realizan cortes', 'se realizan estudios'
+                'se realizan cortes', 'se realizan estudios',
+                # V6.6.1 FIX IHQ250043: Listas macroscópicas con guiones separadores.
+                # Los patrones tipo "para realizar inmunohistoquímica con NeuN - GFAP -
+                # CD68 en los bloques A4 Y B2" eran capturados como NeuN=NEGATIVO,
+                # GFAP=NEGATIVO porque el guión separador era interpretado como signo "-".
+                # Estos contextos son SOLICITUDES de tinción, no resultados.
+                # También cubre "hematoxilina-eosina" (técnica de tinción, no biomarcador):
+                # IHQ250485, IHQ250983.
+                'realizar inmunohistoquímica', 'realizar inmunohistoquimica',
+                'inmunohistoquímica con', 'inmunohistoquimica con',
+                'tinción con los marcadores', 'tincion con los marcadores',
+                'para tinción con', 'para tincion con',
+                'en los bloques', 'en el bloque',
+                'niveles histológicos', 'niveles histologicos',
+                'descripción macroscópica', 'descripcion macroscopica',
+                'hematoxilina-eosina', 'hematoxilina - eosina',
             ]
 
             if any(keyword in context_lower for keyword in exclude_keywords):
