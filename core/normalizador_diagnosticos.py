@@ -523,6 +523,10 @@ def categorizar_diagnostico_con_organo(valor_dx, valor_organo):
     escribió un diagnóstico genérico ("ADENOCARCINOMA INVASIVO" sin órgano),
     pero el campo Organo está poblado, inferir la categoría específica.
 
+    V6.6.10 — Agregada lógica para casos "ESCAMOCELULAR METASTÁSICO" que
+    deben categorizarse como CARCINOMA METASTÁSICO (la metástasis es lo
+    clínicamente más relevante; el sitio primario suele ser desconocido).
+
     NO sobrescribe categorías ya específicas — solo refina las 3 genéricas.
 
     Args:
@@ -542,6 +546,14 @@ def categorizar_diagnostico_con_organo(valor_dx, valor_organo):
         "CARCINOMA ESCAMOCELULAR (OTRO/SIN ESPECIFICAR)",
     ):
         return base
+
+    # V6.6.10: Si el dx menciona METÁSTASIS pero cayó en categoría genérica
+    # (ej. "CARCINOMA ESCAMOCELULAR METASTÁSICO" sin sitio primario claro),
+    # categorizar como CARCINOMA METASTASICO. La metástasis tiene prioridad
+    # clínica sobre la histología cuando el primario no está identificado.
+    dx_norm = normalizar_texto(str(valor_dx)) if valor_dx else ""
+    if any(kw in dx_norm for kw in ["METASTASICO", "METASTASIS", "METASTATICO"]):
+        return "CARCINOMA METASTASICO"
 
     if not valor_organo:
         return base
