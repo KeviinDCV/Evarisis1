@@ -912,6 +912,33 @@ def extract_diagnostico_coloracion(text: str) -> str:
             return diagnostico_m
 
     # ═══════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -2.63: V6.6.4 - FIX IHQ250007 / IHQ250037: Material extra-institucional sin prefijo M
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Casos donde el material proviene de OTRA institución (ej: COLCAN) y el
+    # código de bloque NO sigue el formato HUV "M\d{7}". Tienen códigos
+    # alfanuméricos arbitrarios como "24-59287" o "F24967 1 Y 2".
+    # Formato:
+    #   "...material extra-institucional ... rotulado como \"[CODIGO]\" que
+    #    corresponde a \"[DESCRIPCION/DIAGNOSTICO]\""
+    # Ejemplos:
+    #   IHQ250007: rotulado como "24-59287" que corresponde a "ganglio profundo metastásico"
+    #   IHQ250037: rotulado como "F24967 1 Y 2" que corresponde a "lesión de recto bajo"
+    # Guard-clause: SOLO aplica si el OCR menciona "extra-institucional" — protege
+    # contra falsos positivos en casos HUV con código M (cubiertos por -2.64).
+    patron_extra_institucional = (
+        r'extra[-\s]institucional[\s\S]{0,500}?'
+        r'rotulado\s+como\s+["\'“”]([^"\'“”]+)["\'“”]\s+'
+        r'que\s+corresponden?\s+a\s+["\'“”]([^"\'“”]{5,300})["\'“”]'
+    )
+    match_extra = re.search(patron_extra_institucional, text, re.IGNORECASE | re.DOTALL)
+    if match_extra:
+        descripcion_extra = match_extra.group(2).strip()
+        descripcion_extra = ' '.join(descripcion_extra.split())
+        descripcion_extra = descripcion_extra.upper().rstrip('.,').strip()
+        if len(descripcion_extra) >= 5:
+            return descripcion_extra
+
+    # ═══════════════════════════════════════════════════════════════════════════
     # PRIORIDAD -2.64: V6.5.14 - FIX IHQ250235: Código M entre comillas + que corresponde a "[DESCRIPCIÓN]"
     # ═══════════════════════════════════════════════════════════════════════════
     # Caso: Material con código M ENTRE COMILLAS seguido de descripción en comillas
