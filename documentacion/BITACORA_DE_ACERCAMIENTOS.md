@@ -6,6 +6,54 @@ Proposito
 Plantilla por entrada
 ---
 
+## Iteración 2 — Diagnosis Categorization Sprint V6.6.12 → V6.6.16 (04/05/2026)
+
+### Contexto de la iteración
+Sprint quirúrgico de seis fixes consecutivos sobre el motor de normalización de diagnósticos del HUV. Origen: detección sistemática (vía `data-auditor` FUNC-01) de casos del rango IHQ250001-200 que caían en categoría OTRO/NO CATEGORIZADO o que tenían malignidad mal asignada por contaminación del campo `combined_text` con historia clínica. Sprint coordinado por Claude orquestador, ejecutado con auditoría caso-por-caso anti-regresión (REGLA CRÍTICA #1 de `.claude/CLAUDE.md`).
+
+### Cambios implementados
+1. **V6.6.12 — Typo "CARICNOMA":** corrección en `normalizar_texto()` que recupera IHQ250060.
+2. **V6.6.13 — Categorías faltantes:** 4 nuevas categorías (TUMOR FILODES DE MAMA, CARCINOMA PAPILAR DE MAMA, NEOPLASIA DE CELULAS FUSIFORMES/FUSOCELULAR, LESION ESCAMOSA INTRAEPITELIAL/NIC) + extensión LINFOMA NO HODGKIN B con nomenclatura OMS 2022.
+3. **V6.6.14 — Stripping de preámbulos + reordenamientos de prioridad:** nueva `stripear_preambulos()` con 11 patrones; reordenadas ADENOCARCINOMA (SIN ORIGEN), CARCINOMA (OTRO), LEUCEMIA MIELOIDE y LEUCEMIA LINFOIDE AGUDA antes de patrones genéricos; nueva categoría CARCINOMA ANEXIAL CUTANEO; extensión LINFOMA NO HODGKIN B con "ZONA MARGINAL" y LEUCEMIA LINFOIDE AGUDA con "LEUCEMIA/LINFOMA LINFOBLASTICO".
+4. **V6.6.14b — Mini-fix RECTAL:** ajuste en `INFERENCIA_POR_ORGANO_ADENO` para que "RECTAL" matchee.
+5. **V6.6.15 — Fix CRÍTICO Malignidad:** nueva PRIORIDAD -2 en `determine_malignancy` que aísla negaciones explícitas en `Diagnostico Principal` (impide que la historia clínica "Historia de carcinoma de mama" contamine casos benignos como IHQ250106).
+6. **V6.6.16 — Audit-driven mini-fixes:** typo "HISTOLOGIOS" → "HISTOLOGICOS", nueva categoría INFLAMACION/PROCESO INFECCIOSO, ampliación de `INFERENCIA_POR_ORGANO_ESCAMO` con LABIO, BOCA, FARINGE, HIPOFARINGE, NASOFARINGE, ESOFAGO, ANO, VULVA, VAGINA.
+
+### Archivos modificados
+- `core/normalizador_diagnosticos.py` (cambios mayores).
+- `core/extractors/medical_extractor.py` función `determine_malignancy` líneas ~3641-3686 (1 cambio).
+- `config/version_info.py`: bump `6.5.94` → `6.6.16` ("Diagnosis Categorization Sprint").
+
+### Validación técnica
+- ✅ 75+ casos validados manualmente con resultado esperado.
+- ✅ 54/54 self-tests internos del normalizador.
+- ✅ 12/12 casos de regresión específicos para `determine_malignancy`.
+- ✅ Audit cuantitativo final sobre 188 casos del rango IHQ250001-200.
+
+### Resultados cuantitativos
+| Métrica | Antes | Después | Delta |
+|---|---|---|---|
+| Diagnósticos categorizados | 62/100 (62.0%) | 161/188 (85.6%) | **+23.6 pts** |
+| Casos problemáticos | 28/100 (28.0%) | 27/188 (14.4%) | **−13.6 pts** |
+| MALIGNO/BENIGNO | 73/27 | 75/25 | sin desbalance |
+| Regresiones | — | **0** | limpio |
+
+### Validación médica/funcional
+⏳ Pendiente firma del Dr. Juan Camilo Bayona sobre los casos piloto críticos (especialmente IHQ250106, donde el sistema antes etiquetaba como MALIGNO un caso de inflamación aguda sin evidencia de lesión neoplásica, con riesgo clínico real). Se recomienda agendar revisión específica de los 75+ casos piloto reclasificados.
+
+### Decisiones técnicas clave
+- **No reescribir patrones existentes.** Toda extensión se hizo como rama adicional o reordenamiento; ningún patrón vigente fue eliminado.
+- **Trazabilidad caso↔código.** Cada bloque modificado lleva comentario `V6.6.XX FIX IHQYYYYY` para auditoría futura.
+- **Cierre con audit cuantitativo, no muestreo.** Se evaluaron los 188 casos del período completo, no una muestra.
+
+### Próximos pasos identificados
+- [ ] Validación clínica formal con el Dr. Bayona sobre los casos piloto del sprint.
+- [ ] Auditar los 27 casos que aún caen en OTRO/SIN DX para identificar el siguiente lote de patrones no cubiertos.
+- [ ] Considerar promover algunas categorías nuevas (CARCINOMA ANEXIAL CUTANEO, INFLAMACION/PROCESO INFECCIOSO, TUMOR FILODES) a columnas dedicadas en el dashboard de patología.
+- [ ] Evaluar extender el tratamiento "PRIORIDAD -2" (aislar `Diagnostico Principal` de la contaminación por historia clínica) a otras heurísticas del extractor.
+
+---
+
 ## Iteración 1 — Ecosistema Consolidado 6+7 (20/10/2025)
 
 ### Contexto de la iteración

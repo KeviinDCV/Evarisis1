@@ -3641,6 +3641,49 @@ def determine_malignancy(diagnostico: str, macroscopica: str, microscopica: str,
     # Combinar todos los textos para análisis
     combined_text = f"{diagnostico} {macroscopica} {microscopica} {full_text}".upper()
 
+    # Keywords malignos de alta certeza — usados en varias prioridades.
+    keywords_malignos_alta_certeza = [
+        'ADENOCARCINOMA', 'CARCINOMA', 'SARCOMA', 'MELANOMA',
+        'LINFOMA', 'LEUCEMIA', 'MIELOMA', 'METÁSTASIS', 'METASTASIS'
+    ]
+
+    # ════════════════════════════════════════════════════════════════════════
+    # PRIORIDAD -2: Conclusión benigna explícita en el Dx Principal
+    # ════════════════════════════════════════════════════════════════════════
+    # V6.6.15 FIX IHQ250106 + IHQ250065: La PRIORIDAD -1 actual chequea
+    # `combined_text` (que incluye full_text del OCR) por keywords malignos
+    # como "CARCINOMA". Si la historia clínica menciona "Historia de
+    # carcinoma de mama", dispara MALIGNO aunque el Dx final sea benigno.
+    #
+    # Esta nueva PRIORIDAD -2 evalúa SOLO el Dx Principal final (la
+    # conclusión del patólogo). Si contiene una negación explícita de
+    # neoplasia/malignidad y NO contiene también un keyword maligno
+    # (caso multi-muestra como IHQ250178 con 'NEGATIVO + ADENOCARCINOMA'),
+    # retorna BENIGNO antes de evaluar el contexto histórico.
+    diagnostico_upper = (diagnostico or "").upper()
+    patrones_benignos_explicitos_dx = [
+        # Negaciones explícitas de neoplasia/malignidad
+        r'SIN\s+EVIDENCIA\s+DE\s+(?:CELULARIDAD\s+DE\s+ASPECTO\s+|LESI[ÓO]N\s+)?NEOPL[ÁA]SIC[OA]',
+        r'SIN\s+EVIDENCIA\s+DE\s+MALIGNIDAD',
+        r'SIN\s+EVIDENCIA\s+DE\s+NEOPLASIA',
+        r'NEGATIV[OA]\s+PARA\s+MALIGNIDAD',
+        r'NEGATIV[OA]\s+PARA\s+NEOPLASIA',
+        # Inflamaciones (clínicamente NO oncológicas)
+        r'INFLAMACI[ÓO]N\s+(?:AGUDA|CR[ÓO]NICA|GRANULOMATOSA)',
+        r'PERITONITIS\s+(?:AGUDA|CR[ÓO]NICA)',
+        # Hiperplasias reactivas (el guard `tiene_keyword_maligno_dx`
+        # protege contra casos donde HIPERPLASIA y LINFOMA coexisten en dx)
+        r'HIPERPLASIA\s+(?:FOLICULAR|PARACORTICAL|SINUSOIDAL|LINFOIDE|MIELOIDE)',
+    ]
+    tiene_negacion_explicita_dx = any(
+        re.search(p, diagnostico_upper) for p in patrones_benignos_explicitos_dx
+    )
+    tiene_keyword_maligno_en_dx = any(
+        kw in diagnostico_upper for kw in keywords_malignos_alta_certeza
+    )
+    if tiene_negacion_explicita_dx and not tiene_keyword_maligno_en_dx:
+        return 'BENIGNO'
+
     # ════════════════════════════════════════════════════════════════════════
     # PRIORIDAD -1: Casos con MÚLTIPLES muestras (una BENIGNA, otra MALIGNA)
     # ════════════════════════════════════════════════════════════════════════
@@ -3648,10 +3691,6 @@ def determine_malignancy(diagnostico: str, macroscopica: str, microscopica: str,
     # Caso: Próstata con 2 muestras: C="NEGATIVO PARA MALIGNIDAD", F="ADENOCARCINOMA ACINAR 3+3"
     # Regla médica: SI UNA muestra es maligna → CASO completo es MALIGNO
     # Debe prevalecer el ADENOCARCINOMA sobre el "NEGATIVO PARA MALIGNIDAD" de otra muestra
-    keywords_malignos_alta_certeza = [
-        'ADENOCARCINOMA', 'CARCINOMA', 'SARCOMA', 'MELANOMA',
-        'LINFOMA', 'LEUCEMIA', 'MIELOMA', 'METÁSTASIS', 'METASTASIS'
-    ]
     for kw in keywords_malignos_alta_certeza:
         if kw in combined_text:
             return 'MALIGNO'
