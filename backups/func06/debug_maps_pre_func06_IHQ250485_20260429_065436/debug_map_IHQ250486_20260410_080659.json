@@ -1,0 +1,148 @@
+{
+  "session_id": "IHQ250486_20260410_080659",
+  "numero_peticion": "IHQ250486",
+  "timestamp": "2026-04-10T08:06:59.891855",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250486\nCopia Pag. 1 de 2\nNombre : ANGELA MARIA BOCANEGRA CAÑAR\nN. peticion : IHQ250486\nN.Identificación : CC. 1006258260\nGenero : FEMENINO\nEdad : 23 años\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 05/05/2025\nFecha Informe : 22/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional\nrotulado como H25-625 que corresponde a \"biopsia de mama derecha\" con diagnóstico principal de\n\"CARCINOMA DUCTAL\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para\nmarcación con Calponina, S100 y p63.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los cortes histológicos teñidos con Hematoxilina & Eosina se identifica una proliferación acinar\nbenigna de estroma fibromuscular disperso conformada por ductos redondos, pequeños, uniformes y\ncompactos, revestidos por una capa interna de células epiteliales luminales y una capa externa de\ncélulas mioepiteliales, sin pleomorfismo, atipia o figuras mitóticas evidentes. Las células mioepiteliales\nson positivas para Calponina, S100 y p63.\nDIAGNÓSTICO\n Mama derecha. Lesión. Biopsia. Estudio de inmunohistoquimica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UN ADENOMA TUBULAR\nNEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA\nCOMENTARIOS\nEn caso de persistir sospecha de neoplasia maligna, se recomienda tomar nueva muestra, a criterio de\nmédico tratante.\nCaso valorado en conjunto con Dr. Diego Vargas, Patólogo.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 41 ---\nIHQ250486\nCopia Pag. 2 de 2\nNombre : ANGELA MARIA BOCANEGRA CAÑAR\nN. peticion : IHQ250486\nN.Identificación : CC. 1006258260\nGenero : FEMENINO\nEdad : 23 años\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 05/05/2025\nFecha Informe : 22/05/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3567,
+      "reduccion_porcentaje": 98.11
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250486",
+      "caso_num": 21,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "nombre_completo": "ANGELA MARIA BOCANEGRA CAÑAR",
+      "numero_peticion": "IHQ250486",
+      "identificacion": "1006258260",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "23",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "05/05/2025",
+      "fecha_informe": "22/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250486",
+      "N. de identificación": "1006258260",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "05/05/2025",
+      "Fecha Informe": "22/05/2025",
+      "nombres": "ANGELA MARIA BOCANEGRA",
+      "Primer nombre": "ANGELA",
+      "Segundo nombre": "MARIA BOCANEGRA",
+      "apellidos": "CAÑAR",
+      "Primer apellido": "CAÑAR",
+      "Segundo apellido": "",
+      "nombre_formal": "CAÑAR, ANGELA MARIA BOCANEGRA",
+      "diagnostico": "Mama derecha. Lesión. Biopsia. Estudio de inmunohistoquimica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UN ADENOMA TUBULAR NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos teñidos con Hematoxilina & Eosina se identifica una proliferación acinar benigna de estroma fibromuscular disperso conformada por ductos redondos, pequeños, uniformes y compactos, revestidos por una capa interna de células epiteliales luminales y una capa externa de células mioepiteliales, sin pleomorfismo, atipia o figuras mitóticas evidentes. Las células mioepiteliales son positivas para Calponina, S100 y p63.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como H25-625 que corresponde a \"biopsia de mama derecha\" con diagnóstico principal de \"CARCINOMA DUCTAL\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con Calponina, S100 y p63.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Calponina, S100, P63",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "En caso de persistir sospecha de neoplasia maligna, se recomienda tomar nueva muestra, a criterio de médico tratante. Caso valorado en conjunto con Dr. Diego Vargas, Patólogo.",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Calponina, S100, P63",
+      "extraction_timestamp": "2026-04-10T08:07:00.191479",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250486\nCopia Pag. 1 de 2\nNombre : ANGELA MARIA BOCANEGRA CAÑAR\nN. peticion : IHQ250486\nN.Identificación : CC. 1006258260\nGenero : FEMENINO\nEdad : 23 años\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 05/05/2025\nFecha Informe : 22/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional\nrotulado como H25-625 que corresponde a \"biopsia de mama derecha\" con diagnóstico principal de\n\"CARCINOMA DUCTAL\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para\nmarcación con Calponina, S100 y p63.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los cortes histológicos teñidos con Hematoxilina & Eosina se identifica una proliferación acinar\nbenigna de estroma fibromuscular disperso conformada por ductos redondos, pequeños, uniformes y\ncompactos, revestidos por una capa interna de células epiteliales luminales y una capa externa de\ncélulas mioepiteliales, sin pleomorfismo, atipia o figuras mitóticas evidentes. Las células mioepiteliales\nson positivas para Calponina, S100 y p63.\nDIAGNÓSTICO\n Mama derecha. Lesión. Biopsia. Estudio de inmunohistoquimica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UN ADENOMA TUBULAR\nNEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA\nCOMENTARIOS\nEn caso de persistir sospecha de neoplasia maligna, se recomienda tomar nueva muestra, a criterio de\nmédico tratante.\nCaso valorado en conjunto con Dr. Diego Vargas, Patólogo.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 41 ---\nIHQ250486\nCopia Pag. 2 de 2\nNombre : ANGELA MARIA BOCANEGRA CAÑAR\nN. peticion : IHQ250486\nN.Identificación : CC. 1006258260\nGenero : FEMENINO\nEdad : 23 años\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 05/05/2025\nFecha Informe : 22/05/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Calponina, S100, P63",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como H25-625 que corresponde a \"biopsia de mama derecha\" con diagnóstico principal de \"CARCINOMA DUCTAL\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con Calponina, S100 y p63.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos teñidos con Hematoxilina & Eosina se identifica una proliferación acinar benigna de estroma fibromuscular disperso conformada por ductos redondos, pequeños, uniformes y compactos, revestidos por una capa interna de células epiteliales luminales y una capa externa de células mioepiteliales, sin pleomorfismo, atipia o figuras mitóticas evidentes. Las células mioepiteliales son positivas para Calponina, S100 y p63.",
+      "Descripcion Diagnostico": "Mama derecha. Lesión. Biopsia. Estudio de inmunohistoquimica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UN ADENOMA TUBULAR NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "BX MAMA DERECHA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UN ADENOMA TUBULAR NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_P63": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 141,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Lesión. Biopsia. Estudio de inmunohistoquimica:\nLOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UN ADENOMA TUBULAR\nNEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "valor_corregido": "Mama derecha. Lesión. Biopsia. Estudio de inmunohistoquimica: LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUÍMICOS FAVORECEN UN ADENOMA TUBULAR NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250486",
+      "timestamp": "2026-04-10T08:07:00.191186"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "En caso de persistir sospecha de neoplasia maligna, se recomienda tomar nueva muestra, a criterio de\nmédico tratante.\nCaso valorado en conjunto con Dr. Diego Vargas, Patólogo.",
+      "valor_corregido": "En caso de persistir sospecha de neoplasia maligna, se recomienda tomar nueva muestra, a criterio de médico tratante. Caso valorado en conjunto con Dr. Diego Vargas, Patólogo.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250486",
+      "timestamp": "2026-04-10T08:07:00.191191"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 51
+  }
+}

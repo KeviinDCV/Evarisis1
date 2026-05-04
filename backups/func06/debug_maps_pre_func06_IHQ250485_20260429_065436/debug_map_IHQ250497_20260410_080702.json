@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250497_20260410_080702",
+  "numero_peticion": "IHQ250497",
+  "timestamp": "2026-04-10T08:07:02.952781",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250497\nCopia Pag. 1 de 2\nNombre : MERCEDES CASTAÑO\nN. peticion : IHQ250497\nN.Identificación : CC. 31136467\nGenero : FEMENINO\nEdad : 75 años 7 meses 15 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPIEL DE REGION VULVAR\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2504716-7 que corresponde a \"muestra de piel de vulva\" con\ndiagnóstico de \"CARCINOMA INVASIVO EN PATRÓN BASALOIDE\" para estudios de\ninmunohistoquímica por lo que se revisa marcación para p40, p16, BerEP4, EMA, BCL2 y CD10. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA®.\nLas células tumorales son positivas con tinción nuclear para p40 y citoplasmática para BerEP4 y\nBCL2.\nMarcación parchada para p16. Sin marcación para EMA ni CD10.\nDIAGNÓSTICO\nPiel de vulva. Lesión. Resección. Estudios de inmunohistoquímica.\nLOS\nHALLAZGOS\nMORFOLÓGICOS\nY\nDE\nINMUNOHISTOQUÍMICA\nFAVORECEN\nCARCINOMA\nESCAMOCELULAR RELACIONADO A VPH.\nCOMENTARIOS\nLa lesión tumoral presenta características típicas del carcinoma escamocelular con formación de\nalgunas perlas de queratina y un patrón infiltrante en la profundidad de la dermis. Sin embargo,\nes llamativo el patrón basaloide predominantemente en la superficie de la piel por lo que se\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---\nIHQ250497\nCopia Pag. 2 de 2\nNombre : MERCEDES CASTAÑO\nN. peticion : IHQ250497\nN.Identificación : CC. 31136467\nGenero : FEMENINO\nEdad : 75 años 7 meses 15 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\npensó como diagnóstico diferencial el carcinoma basoescamoso.\nLas tinciones de inmunohistoquímica no tienen la típica presentación de carcinoma escamocelular\nbasaloide por la falta de expresión de EMA, sin embargo, el p40 es positivo de manera fuerte y\ndifusa con expresión para p16, por lo que se considera más acertado el diagnóstico de carcinoma\nescamocelular en patrón basaloide relacionado a VPH dado la agresividad del tumor y en\nbeneficio de la paciente. \nCaso valorado en conjunto con el doctor Ricardo Rueda, Dermatopatólogo.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3846,
+      "reduccion_porcentaje": 97.96
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250497",
+      "caso_num": 32,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_BER_EP4": "NEGATIVO",
+      "IHQ_BCL2": "NEGATIVO",
+      "nombre_completo": "MERCEDES CASTAÑO",
+      "numero_peticion": "IHQ250497",
+      "identificacion": "31136467",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "75",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LUIS ALFONSO GONZALEZ",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "08/05/2025",
+      "fecha_informe": "23/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250497",
+      "N. de identificación": "31136467",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "LUIS ALFONSO GONZALEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/05/2025",
+      "Fecha Informe": "23/05/2025",
+      "nombres": "MERCEDES CASTAÑO",
+      "Primer nombre": "MERCEDES",
+      "Segundo nombre": "CASTAÑO",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "MERCEDES CASTAÑO",
+      "diagnostico": "Piel de vulva. Lesión. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA ESCAMOCELULAR RELACIONADO A VPH.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales son positivas con tinción nuclear para p40 y citoplasmática para BerEP4 y BCL2. Marcación parchada para p16. Sin marcación para EMA ni CD10.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2504716-7 que corresponde a \"muestra de piel de vulva\" con diagnóstico de \"CARCINOMA INVASIVO EN PATRÓN BASALOIDE\" para estudios de inmunohistoquímica por lo que se revisa marcación para p40, p16, BerEP4, EMA, BCL2 y CD10.",
+      "ihq_organo": "PIEL DE VULVA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P40, P16, BEREP4, EMA, BCL2, CD10",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "La lesión tumoral presenta características típicas del carcinoma escamocelular con formación de algunas perlas de queratina y un patrón infiltrante en la profundidad de la dermis. Sin embargo, es llamativo el patrón basaloide predominantemente en la superficie de la piel por lo que se Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 61 --- IHQ250497 Copia Pag. 2 de 2 Nombre : MERCEDES CASTAÑO N. peticion : IHQ250497 N.Identificación : CC. 31136467 Genero : FEMENINO Edad : 75 años 7 meses 15 dias EPS : NUEVA EPS Médico tratante : LUIS ALFONSO GONZALEZ Servicio : QUIROFANO CENTRAL Fecha Ingreso : 08/05/2025 Fecha Informe : 23/05/2025 pensó como diagnóstico diferencial el carcinoma basoescamoso. Las tinciones de inmunohistoquímica no tienen la típica presentación de carcinoma escamocelular basaloide por la falta de expresión de EMA, sin embargo, el p40 es positivo de manera fuerte y difusa con expresión para p16, por lo que se considera más acertado el diagnóstico de carcinoma escamocelular en patrón basaloide relacionado a VPH dado la agresividad del tumor y en beneficio de la paciente. Caso valorado en conjunto con el doctor Ricardo Rueda, Dermatopatólogo.",
+      "IHQ_ORGANO": "PIEL DE VULVA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, BEREP4, EMA, BCL2, CD10",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "p16": "NEGATIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-04-10T08:07:03.236813",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250497\nCopia Pag. 1 de 2\nNombre : MERCEDES CASTAÑO\nN. peticion : IHQ250497\nN.Identificación : CC. 31136467\nGenero : FEMENINO\nEdad : 75 años 7 meses 15 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPIEL DE REGION VULVAR\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2504716-7 que corresponde a \"muestra de piel de vulva\" con\ndiagnóstico de \"CARCINOMA INVASIVO EN PATRÓN BASALOIDE\" para estudios de\ninmunohistoquímica por lo que se revisa marcación para p40, p16, BerEP4, EMA, BCL2 y CD10. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA®.\nLas células tumorales son positivas con tinción nuclear para p40 y citoplasmática para BerEP4 y\nBCL2.\nMarcación parchada para p16. Sin marcación para EMA ni CD10.\nDIAGNÓSTICO\nPiel de vulva. Lesión. Resección. Estudios de inmunohistoquímica.\nLOS\nHALLAZGOS\nMORFOLÓGICOS\nY\nDE\nINMUNOHISTOQUÍMICA\nFAVORECEN\nCARCINOMA\nESCAMOCELULAR RELACIONADO A VPH.\nCOMENTARIOS\nLa lesión tumoral presenta características típicas del carcinoma escamocelular con formación de\nalgunas perlas de queratina y un patrón infiltrante en la profundidad de la dermis. Sin embargo,\nes llamativo el patrón basaloide predominantemente en la superficie de la piel por lo que se\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---\nIHQ250497\nCopia Pag. 2 de 2\nNombre : MERCEDES CASTAÑO\nN. peticion : IHQ250497\nN.Identificación : CC. 31136467\nGenero : FEMENINO\nEdad : 75 años 7 meses 15 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\npensó como diagnóstico diferencial el carcinoma basoescamoso.\nLas tinciones de inmunohistoquímica no tienen la típica presentación de carcinoma escamocelular\nbasaloide por la falta de expresión de EMA, sin embargo, el p40 es positivo de manera fuerte y\ndifusa con expresión para p16, por lo que se considera más acertado el diagnóstico de carcinoma\nescamocelular en patrón basaloide relacionado a VPH dado la agresividad del tumor y en\nbeneficio de la paciente. \nCaso valorado en conjunto con el doctor Ricardo Rueda, Dermatopatólogo.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, BEREP4, EMA, BCL2, CD10",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2504716-7 que corresponde a \"muestra de piel de vulva\" con diagnóstico de \"CARCINOMA INVASIVO EN PATRÓN BASALOIDE\" para estudios de inmunohistoquímica por lo que se revisa marcación para p40, p16, BerEP4, EMA, BCL2 y CD10.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales son positivas con tinción nuclear para p40 y citoplasmática para BerEP4 y BCL2. Marcación parchada para p16. Sin marcación para EMA ni CD10.",
+      "Descripcion Diagnostico": "Piel de vulva. Lesión. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA ESCAMOCELULAR RELACIONADO A VPH.",
+      "IHQ_ORGANO": "PIEL DE VULVA",
+      "Organo": "PIEL DE REGION VULVAR",
+      "Diagnostico Coloracion": "CARCINOMA INVASIVO EN PATRÓN BASALOIDE",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA ESCAMOCELULAR RELACIONADO A VPH",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_BCL2": "NEGATIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_BER_EP4": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Piel de vulva. Lesión. Resección. Estudios de inmunohistoquímica.\nLOS\nHALLAZGOS\nMORFOLÓGICOS\nY\nDE\nINMUNOHISTOQUÍMICA\nFAVORECEN\nCARCINOMA\nESCAMOCELULAR RELACIONADO A VPH.",
+      "valor_corregido": "Piel de vulva. Lesión. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA ESCAMOCELULAR RELACIONADO A VPH.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250497",
+      "timestamp": "2026-04-10T08:07:03.236547"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La lesión tumoral presenta características típicas del carcinoma escamocelular con formación de\nalgunas perlas de queratina y un patrón infiltrante en la profundidad de la dermis. Sin embargo,\nes llamativo el patrón basaloide predominantemente en la superficie de la piel por lo que se\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 61 ---\nIHQ250497\nCopia Pag. 2 de 2\nNombre : MERCEDES CASTAÑO\nN. peticion : IHQ250497\nN.Identificación : CC. 31136467\nGenero : FEMENINO\nEdad : 75 años 7 meses 15 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\npensó como diagnóstico diferencial el carcinoma basoescamoso.\nLas tinciones de inmunohistoquímica no tienen la típica presentación de carcinoma escamocelular\nbasaloide por la falta de expresión de EMA, sin embargo, el p40 es positivo de manera fuerte y\ndifusa con expresión para p16, por lo que se considera más acertado el diagnóstico de carcinoma\nescamocelular en patrón basaloide relacionado a VPH dado la agresividad del tumor y en\nbeneficio de la paciente. \nCaso valorado en conjunto con el doctor Ricardo Rueda, Dermatopatólogo.",
+      "valor_corregido": "La lesión tumoral presenta características típicas del carcinoma escamocelular con formación de algunas perlas de queratina y un patrón infiltrante en la profundidad de la dermis. Sin embargo, es llamativo el patrón basaloide predominantemente en la superficie de la piel por lo que se Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 61 --- IHQ250497 Copia Pag. 2 de 2 Nombre : MERCEDES CASTAÑO N. peticion : IHQ250497 N.Identificación : CC. 31136467 Genero : FEMENINO Edad : 75 años 7 meses 15 dias EPS : NUEVA EPS Médico tratante : LUIS ALFONSO GONZALEZ Servicio : QUIROFANO CENTRAL Fecha Ingreso : 08/05/2025 Fecha Informe : 23/05/2025 pensó como diagnóstico diferencial el carcinoma basoescamoso. Las tinciones de inmunohistoquímica no tienen la típica presentación de carcinoma escamocelular basaloide por la falta de expresión de EMA, sin embargo, el p40 es positivo de manera fuerte y difusa con expresión para p16, por lo que se considera más acertado el diagnóstico de carcinoma escamocelular en patrón basaloide relacionado a VPH dado la agresividad del tumor y en beneficio de la paciente. Caso valorado en conjunto con el doctor Ricardo Rueda, Dermatopatólogo.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250497",
+      "timestamp": "2026-04-10T08:07:03.236553"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 54
+  }
+}

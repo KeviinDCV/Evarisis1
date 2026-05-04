@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250043",
   "caso_num": 43,
   "total_casos": 50,
-  "timestamp": "2026-04-28T15:40:00.770965",
+  "timestamp": "2026-04-29T11:31:17.520105",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -36,8 +36,8 @@
       "mensaje": "Correcto (no aplica)"
     },
     "biomarcadores": {
-      "estado": "ERROR",
-      "mensaje": "1 valores NO coinciden con OCR",
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (3/3)",
       "total_solicitado_ocr": 3,
       "total_solicitado_bd": 3,
       "estudios_ocr": [
@@ -54,14 +54,7 @@
       "extras_en_bd": [],
       "mapeados": 3,
       "no_mapeados": [],
-      "valores_incorrectos": [
-        {
-          "biomarcador": "GFAP",
-          "columna": "IHQ_GFAP",
-          "valor_bd": "NEGATIVO",
-          "valor_ocr": "POSITIVO"
-        }
-      ],
+      "valores_incorrectos": [],
       "cobertura": 100.0
     },
     "campos_obligatorios": {
@@ -109,9 +102,9 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 90.0,
-    "score_final": 90.0,
-    "validaciones_ok": 9,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
     "total_validaciones": 10,
     "warnings": 0,
     "errores": 0

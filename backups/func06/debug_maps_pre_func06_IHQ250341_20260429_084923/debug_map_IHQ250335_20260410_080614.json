@@ -1,0 +1,180 @@
+{
+  "session_id": "IHQ250335_20260410_080614",
+  "numero_peticion": "IHQ250335",
+  "timestamp": "2026-04-10T08:06:14.213839",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250335\nCopia Pag. 1 de 1\nNombre : OFIR MULATO BALANTA\nN. peticion : IHQ250335\nN.Identificación : CC. 31532615\nGenero : FEMENINO\nEdad : 52 años\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : COEX UNIDAD DE TRASPLANTES\nFecha Ingreso : 03/04/2025\nFecha Informe : 09/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque externo Q-026526-25, el cual corresponde a biopsia hepática\ncon diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO\". Se ordenan los siguientes\nmarcadores: CK7, CK20, CKAE1E3, CA19-9, CEA, CDX-2, TTF-1, GATA-3, Napsina y Receptores de\nEstrógenos.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células neoplásicas presentan inmunorreactividad positiva para CKAE1E3, CK7 y CA19-9. Son\nnegativas para CK20, TTF-1, CEA, CDX-2, Napsina, GATA-3 y Receptores de Estrógenos.\nDIAGNÓSTICO\n Hígado. Tumor. Biopsia. Estudios de inmunohistoquímica:\nADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATICOBILIAR\nCOMENTARIOS\nSe recomienda correlacionar con historia clínica y estudios paraclínicos complementarios, incluyendo\nimágenes diagnósticas.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 2554,
+      "reduccion_porcentaje": 98.56
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250335",
+      "caso_num": 22,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CA19_9": "POSITIVO",
+      "nombre_completo": "OFIR MULATO BALANTA",
+      "numero_peticion": "IHQ250335",
+      "identificacion": "31532615",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "52",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "COEX UNIDAD DE TRASPLANTES",
+      "fecha_ingreso": "03/04/2025",
+      "fecha_informe": "09/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250335",
+      "N. de identificación": "31532615",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "COEX UNIDAD DE TRASPLANTES",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/04/2025",
+      "Fecha Informe": "09/04/2025",
+      "nombres": "OFIR",
+      "Primer nombre": "OFIR",
+      "Segundo nombre": "",
+      "apellidos": "MULATO BALANTA",
+      "Primer apellido": "MULATO",
+      "Segundo apellido": "BALANTA",
+      "nombre_formal": "MULATO BALANTA, OFIR",
+      "diagnostico": "Hígado. Tumor. Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATICOBILIAR",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas presentan inmunorreactividad positiva para CKAE1E3, CK7 y CA19-9. Son negativas para CK20, TTF1, CEA, CDX-2, Napsina, GATA-3 y Receptores de Estrógenos.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque externo Q-026526-25, el cual corresponde a biopsia hepática con diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO\". Se ordenan los siguientes marcadores: CK7, CK20, CKAE1E3, CA19-9, CEA, CDX-2, TTF1, GATA-3, Napsina y Receptores de Estrógenos.",
+      "ihq_organo": "HÍGADO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, CKAE1E3, CA19-9, CEA, CDX 2, TTF-1, GATA 3, NAPSIN, Receptor de Estrógeno",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se recomienda correlacionar con historia clínica y estudios paraclínicos complementarios, incluyendo imágenes diagnósticas.",
+      "IHQ_ORGANO": "HÍGADO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, CKAE1E3, CA19-9, CEA, CDX 2, TTF-1, GATA 3, NAPSIN, Receptor de Estrógeno",
+      "extraction_timestamp": "2026-04-10T08:06:14.439695",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250335\nCopia Pag. 1 de 1\nNombre : OFIR MULATO BALANTA\nN. peticion : IHQ250335\nN.Identificación : CC. 31532615\nGenero : FEMENINO\nEdad : 52 años\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : COEX UNIDAD DE TRASPLANTES\nFecha Ingreso : 03/04/2025\nFecha Informe : 09/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque externo Q-026526-25, el cual corresponde a biopsia hepática\ncon diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO\". Se ordenan los siguientes\nmarcadores: CK7, CK20, CKAE1E3, CA19-9, CEA, CDX-2, TTF-1, GATA-3, Napsina y Receptores de\nEstrógenos.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células neoplásicas presentan inmunorreactividad positiva para CKAE1E3, CK7 y CA19-9. Son\nnegativas para CK20, TTF-1, CEA, CDX-2, Napsina, GATA-3 y Receptores de Estrógenos.\nDIAGNÓSTICO\n Hígado. Tumor. Biopsia. Estudios de inmunohistoquímica:\nADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATICOBILIAR\nCOMENTARIOS\nSe recomienda correlacionar con historia clínica y estudios paraclínicos complementarios, incluyendo\nimágenes diagnósticas.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 42 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, CKAE1AE3, CA19-9, CEA, CDX 2, TTF-1, GATA 3, NAPSIN, Receptor de Estrógeno",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque externo Q-026526-25, el cual corresponde a biopsia hepática con diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO\". Se ordenan los siguientes marcadores: CK7, CK20, CKAE1E3, CA19-9, CEA, CDX-2, TTF-1, GATA-3, Napsina y Receptores de Estrógenos.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas presentan inmunorreactividad positiva para CKAE1E3, CK7 y CA19-9. Son negativas para CK20, TTF-1, CEA, CDX-2, Napsina, GATA-3 y Receptores de Estrógenos.",
+      "Descripcion Diagnostico": "Hígado. Tumor. Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATICOBILIAR",
+      "IHQ_ORGANO": "HÍGADO",
+      "Organo": "BX HIGADO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO",
+      "Diagnostico Principal": "ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATICOBILIAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CA19_9": "POSITIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 134,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hígado. Tumor. Biopsia. Estudios de inmunohistoquímica:\nADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATICOBILIAR",
+      "valor_corregido": "Hígado. Tumor. Biopsia. Estudios de inmunohistoquímica: ADENOCARCINOMA DE PROBABLE ORIGEN GASTROPANCREATICOBILIAR",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250335",
+      "timestamp": "2026-04-10T08:06:14.439341"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque externo Q-026526-25, el cual corresponde a biopsia hepática con diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO\". Se ordenan los siguientes marcadores: CK7, CK20, CKAE1E3, CA19-9, CEA, CDX-2, TTF-1, GATA-3, Napsina y Receptores de Estrógenos.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque externo Q-026526-25, el cual corresponde a biopsia hepática con diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO\". Se ordenan los siguientes marcadores: CK7, CK20, CKAE1E3, CA19-9, CEA, CDX-2, TTF1, GATA-3, Napsina y Receptores de Estrógenos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250335",
+      "timestamp": "2026-04-10T08:06:14.439347"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas presentan inmunorreactividad positiva para CKAE1E3, CK7 y CA19-9. Son negativas para CK20, TTF-1, CEA, CDX-2, Napsina, GATA-3 y Receptores de Estrógenos.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas presentan inmunorreactividad positiva para CKAE1E3, CK7 y CA19-9. Son negativas para CK20, TTF1, CEA, CDX-2, Napsina, GATA-3 y Receptores de Estrógenos.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250335",
+      "timestamp": "2026-04-10T08:06:14.439348"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se recomienda correlacionar con historia clínica y estudios paraclínicos complementarios, incluyendo\nimágenes diagnósticas.",
+      "valor_corregido": "Se recomienda correlacionar con historia clínica y estudios paraclínicos complementarios, incluyendo imágenes diagnósticas.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250335",
+      "timestamp": "2026-04-10T08:06:14.439350"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 58
+  }
+}

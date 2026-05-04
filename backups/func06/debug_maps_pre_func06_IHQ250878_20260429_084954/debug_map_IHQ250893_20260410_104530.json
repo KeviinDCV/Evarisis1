@@ -1,0 +1,163 @@
+{
+  "session_id": "IHQ250893_20260410_104530",
+  "numero_peticion": "IHQ250893",
+  "timestamp": "2026-04-10T10:45:30.398490",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250893\nCopia Pag. 1 de 2\nNombre : RUBEN SANCHEZ OROBIO\nN. peticion : IHQ250893\nN.Identificación : CC. 14949479\nGenero : MASCULINO\nEdad : 78 años 21 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALBERTO JUNIOR GUAGUA\nServicio : MEDICA HOMBRES\nFecha Ingreso : 15/08/2025\nFecha Informe : 29/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR VESICAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2508908\nbloque\n2”\nque\ncorresponde\na\n\"Cavidad\nvesical.\"\ny\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLa celularidad tumoral presenta marcación focal para: p40, p63 y GATA 3, CK7; hay marcación\nextensa en la muestra para Ck5/6, son negativas para CK20.\nMUESTRA: Procedimiento: Biopsia\nTUMOR \nSitio del tumor: No especificado\nTipo histológico: Carcinoma urotelial con diferenciación escamosa.\n+Especificar\nporcentajes\nde\nsubtipos\nhistológicos\ny\ndiferenciaciones\ndivergentes\npresentes (totalización 100%) \nCarcinoma urotelial invasivo (convencional): 60 %\nDiferenciación escamosa: 40 %\n+Comentario de tipo histológico: En el corte histológico se identifican áreas con marcación\npara p40 y p63 con formación de perlas de queratina. Y áreas más uroteliales con marcación para\nGATA 3.\nGrado histológico: Grado alto\nExtensión del tumor: Invade la muscular propia.\nInvasión linfática y/o vascular: No identificado\n+Configuración del tumor: Sólido / nódulo\nMuscularis Propria (músculo detrusor) : Presente, comprometido por el tumor\n+Comentario sobre el tumor:\nHALLAZGOS ADICIONALES \n+Lesiones epiteliales asociadas: Ninguno identificado\ndiagnóstico\nde\n“LOS\nHALLAZGOS MORFOLÓGICOS FAVORECEN CARCINOMA UROTELIAL DE ALTO GRADO”. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con: CK7, p63, CK 5/6, Gata\n3, p40, CK20.\nDIAGNÓSTICO\nCavidad vesical. Lesión. Biopsia. \nCARCINOMA UROTELIAL DE ALTO GRADO, CON FOCOS DE DIFERENCIACIÓN ESCAMOCELULAR.\n(INVASIVO HASTA LA MUSCULAR PROPIA).\nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Jorge Moreno y la Dra Nancy Mejía.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---\nIHQ250893\nCopia Pag. 2 de 2\nNombre : RUBEN SANCHEZ OROBIO\nN. peticion : IHQ250893\nN.Identificación : CC. 14949479\nGenero : MASCULINO\nEdad : 78 años 21 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALBERTO JUNIOR GUAGUA\nServicio : MEDICA HOMBRES\nFecha Ingreso : 15/08/2025\nFecha Informe : 29/08/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 4058,
+      "reduccion_porcentaje": 97.94
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250893",
+      "caso_num": 16,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "nombre_completo": "RUBEN SANCHEZ OROBIO",
+      "numero_peticion": "IHQ250893",
+      "identificacion": "14949479",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "78",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ALBERTO JUNIOR GUAGUA",
+      "servicio": "MEDICA HOMBRES",
+      "fecha_ingreso": "15/08/2025",
+      "fecha_informe": "29/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250893",
+      "N. de identificación": "14949479",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "MEDICA HOMBRES",
+      "Médico tratante": "ALBERTO JUNIOR GUAGUA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "15/08/2025",
+      "Fecha Informe": "29/08/2025",
+      "nombres": "RUBEN",
+      "Primer nombre": "RUBEN",
+      "Segundo nombre": "",
+      "apellidos": "SANCHEZ OROBIO",
+      "Primer apellido": "SANCHEZ",
+      "Segundo apellido": "OROBIO",
+      "nombre_formal": "SANCHEZ OROBIO, RUBEN",
+      "diagnostico": "Cavidad vesical. Lesión. Biopsia. CARCINOMA UROTELIAL DE ALTO GRADO, CON FOCOS DE DIFERENCIACIÓN ESCAMOCELULAR. (INVASIVO HASTA LA MUSCULAR PROPIA).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La celularidad tumoral presenta marcación focal para: p40, p63 y GATA 3, CK7; hay marcación extensa en la muestra para CK5/6, son negativas para CK20. MUESTRA: Procedimiento: Biopsia TUMOR Sitio del tumor: No especificado Tipo histológico: Carcinoma urotelial con diferenciación escamosa. +Especificar porcentajes de subtipos histológicos y diferenciaciones divergentes presentes (totalización 100%) Carcinoma urotelial invasivo (convencional): 60 % Diferenciación escamosa: 40 % +Comentario de tipo histológico: En el corte histológico se identifican áreas con marcación para p40 y p63 con formación de perlas de queratina. Y áreas más uroteliales con marcación para GATA 3. Grado histológico: Grado alto Extensión del tumor: Invade la muscular propia. Invasión linfática y/o vascular: No identificado +Configuración del tumor: Sólido / nódulo Muscularis Propria (músculo detrusor) : Presente, comprometido por el tumor +Comentario sobre el tumor: HALLAZGOS ADICIONALES +Lesiones epiteliales asociadas: Ninguno identificado",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2508908 bloque 2\" que corresponde a \"Cavidad vesical.\" y con diagnóstico de \"LOS HALLAZGOS MORFOLÓGICOS FAVORECEN CARCINOMA UROTELIAL DE ALTO GRADO\". Previa revisión de la histología se realizan niveles histológicos para tinción con: CK7, p63, CK5/6, Gata 3, p40, CK20.",
+      "ihq_organo": "CAVIDAD VESICAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, P63, CK5/6, GATA3, P40, CK20",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con el Dr. Jorge Moreno y la Dra Nancy Mejía.",
+      "IHQ_ORGANO": "CAVIDAD VESICAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, P63, CK5/6, GATA3, P40, CK20",
+      "IHQ_CK5_6": "POSITIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-04-10T10:45:30.711306",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250893\nCopia Pag. 1 de 2\nNombre : RUBEN SANCHEZ OROBIO\nN. peticion : IHQ250893\nN.Identificación : CC. 14949479\nGenero : MASCULINO\nEdad : 78 años 21 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALBERTO JUNIOR GUAGUA\nServicio : MEDICA HOMBRES\nFecha Ingreso : 15/08/2025\nFecha Informe : 29/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR VESICAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2508908\nbloque\n2”\nque\ncorresponde\na\n\"Cavidad\nvesical.\"\ny\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLa celularidad tumoral presenta marcación focal para: p40, p63 y GATA 3, CK7; hay marcación\nextensa en la muestra para Ck5/6, son negativas para CK20.\nMUESTRA: Procedimiento: Biopsia\nTUMOR \nSitio del tumor: No especificado\nTipo histológico: Carcinoma urotelial con diferenciación escamosa.\n+Especificar\nporcentajes\nde\nsubtipos\nhistológicos\ny\ndiferenciaciones\ndivergentes\npresentes (totalización 100%) \nCarcinoma urotelial invasivo (convencional): 60 %\nDiferenciación escamosa: 40 %\n+Comentario de tipo histológico: En el corte histológico se identifican áreas con marcación\npara p40 y p63 con formación de perlas de queratina. Y áreas más uroteliales con marcación para\nGATA 3.\nGrado histológico: Grado alto\nExtensión del tumor: Invade la muscular propia.\nInvasión linfática y/o vascular: No identificado\n+Configuración del tumor: Sólido / nódulo\nMuscularis Propria (músculo detrusor) : Presente, comprometido por el tumor\n+Comentario sobre el tumor:\nHALLAZGOS ADICIONALES \n+Lesiones epiteliales asociadas: Ninguno identificado\ndiagnóstico\nde\n“LOS\nHALLAZGOS MORFOLÓGICOS FAVORECEN CARCINOMA UROTELIAL DE ALTO GRADO”. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con: CK7, p63, CK 5/6, Gata\n3, p40, CK20.\nDIAGNÓSTICO\nCavidad vesical. Lesión. Biopsia. \nCARCINOMA UROTELIAL DE ALTO GRADO, CON FOCOS DE DIFERENCIACIÓN ESCAMOCELULAR.\n(INVASIVO HASTA LA MUSCULAR PROPIA).\nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Jorge Moreno y la Dra Nancy Mejía.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---\nIHQ250893\nCopia Pag. 2 de 2\nNombre : RUBEN SANCHEZ OROBIO\nN. peticion : IHQ250893\nN.Identificación : CC. 14949479\nGenero : MASCULINO\nEdad : 78 años 21 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALBERTO JUNIOR GUAGUA\nServicio : MEDICA HOMBRES\nFecha Ingreso : 15/08/2025\nFecha Informe : 29/08/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, P63, CK5/6, GATA3, P40, CK20",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2508908 bloque 2” que corresponde a \"Cavidad vesical.\" y con diagnóstico de “LOS HALLAZGOS MORFOLÓGICOS FAVORECEN CARCINOMA UROTELIAL DE ALTO GRADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con: CK7, p63, CK 5/6, Gata 3, p40, CK20.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La celularidad tumoral presenta marcación focal para: p40, p63 y GATA 3, CK7; hay marcación extensa en la muestra para Ck5/6, son negativas para CK20. MUESTRA: Procedimiento: Biopsia TUMOR Sitio del tumor: No especificado Tipo histológico: Carcinoma urotelial con diferenciación escamosa. +Especificar porcentajes de subtipos histológicos y diferenciaciones divergentes presentes (totalización 100%) Carcinoma urotelial invasivo (convencional): 60 % Diferenciación escamosa: 40 % +Comentario de tipo histológico: En el corte histológico se identifican áreas con marcación para p40 y p63 con formación de perlas de queratina. Y áreas más uroteliales con marcación para GATA 3. Grado histológico: Grado alto Extensión del tumor: Invade la muscular propia. Invasión linfática y/o vascular: No identificado +Configuración del tumor: Sólido / nódulo Muscularis Propria (músculo detrusor) : Presente, comprometido por el tumor +Comentario sobre el tumor: HALLAZGOS ADICIONALES +Lesiones epiteliales asociadas: Ninguno identificado",
+      "Descripcion Diagnostico": "Cavidad vesical. Lesión. Biopsia. CARCINOMA UROTELIAL DE ALTO GRADO, CON FOCOS DE DIFERENCIACIÓN ESCAMOCELULAR. (INVASIVO HASTA LA MUSCULAR PROPIA).",
+      "IHQ_ORGANO": "CAVIDAD VESICAL",
+      "Organo": "TUMOR VESICAL",
+      "Diagnostico Coloracion": "LOS HALLAZGOS MORFOLÓGICOS FAVORECEN CARCINOMA UROTELIAL DE ALTO GRADO",
+      "Diagnostico Principal": "CARCINOMA UROTELIAL DE ALTO GRADO, CON FOCOS DE DIFERENCIACIÓN ESCAMOCELULAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "NO MENCIONADO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK5_6": "POSITIVO",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cavidad vesical. Lesión. Biopsia. \nCARCINOMA UROTELIAL DE ALTO GRADO, CON FOCOS DE DIFERENCIACIÓN ESCAMOCELULAR.\n(INVASIVO HASTA LA MUSCULAR PROPIA).",
+      "valor_corregido": "Cavidad vesical. Lesión. Biopsia. CARCINOMA UROTELIAL DE ALTO GRADO, CON FOCOS DE DIFERENCIACIÓN ESCAMOCELULAR. (INVASIVO HASTA LA MUSCULAR PROPIA).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250893",
+      "timestamp": "2026-04-10T10:45:30.711053"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2508908 bloque 2” que corresponde a \"Cavidad vesical.\" y con diagnóstico de “LOS HALLAZGOS MORFOLÓGICOS FAVORECEN CARCINOMA UROTELIAL DE ALTO GRADO”. Previa revisión de la histología se realizan niveles histológicos para tinción con: CK7, p63, CK 5/6, Gata 3, p40, CK20.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2508908 bloque 2\" que corresponde a \"Cavidad vesical.\" y con diagnóstico de \"LOS HALLAZGOS MORFOLÓGICOS FAVORECEN CARCINOMA UROTELIAL DE ALTO GRADO\". Previa revisión de la histología se realizan niveles histológicos para tinción con: CK7, p63, CK5/6, Gata 3, p40, CK20.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250893",
+      "timestamp": "2026-04-10T10:45:30.711059"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La celularidad tumoral presenta marcación focal para: p40, p63 y GATA 3, CK7; hay marcación extensa en la muestra para Ck5/6, son negativas para CK20. MUESTRA: Procedimiento: Biopsia TUMOR Sitio del tumor: No especificado Tipo histológico: Carcinoma urotelial con diferenciación escamosa. +Especificar porcentajes de subtipos histológicos y diferenciaciones divergentes presentes (totalización 100%) Carcinoma urotelial invasivo (convencional): 60 % Diferenciación escamosa: 40 % +Comentario de tipo histológico: En el corte histológico se identifican áreas con marcación para p40 y p63 con formación de perlas de queratina. Y áreas más uroteliales con marcación para GATA 3. Grado histológico: Grado alto Extensión del tumor: Invade la muscular propia. Invasión linfática y/o vascular: No identificado +Configuración del tumor: Sólido / nódulo Muscularis Propria (músculo detrusor) : Presente, comprometido por el tumor +Comentario sobre el tumor: HALLAZGOS ADICIONALES +Lesiones epiteliales asociadas: Ninguno identificado",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La celularidad tumoral presenta marcación focal para: p40, p63 y GATA 3, CK7; hay marcación extensa en la muestra para CK5/6, son negativas para CK20. MUESTRA: Procedimiento: Biopsia TUMOR Sitio del tumor: No especificado Tipo histológico: Carcinoma urotelial con diferenciación escamosa. +Especificar porcentajes de subtipos histológicos y diferenciaciones divergentes presentes (totalización 100%) Carcinoma urotelial invasivo (convencional): 60 % Diferenciación escamosa: 40 % +Comentario de tipo histológico: En el corte histológico se identifican áreas con marcación para p40 y p63 con formación de perlas de queratina. Y áreas más uroteliales con marcación para GATA 3. Grado histológico: Grado alto Extensión del tumor: Invade la muscular propia. Invasión linfática y/o vascular: No identificado +Configuración del tumor: Sólido / nódulo Muscularis Propria (músculo detrusor) : Presente, comprometido por el tumor +Comentario sobre el tumor: HALLAZGOS ADICIONALES +Lesiones epiteliales asociadas: Ninguno identificado",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250893",
+      "timestamp": "2026-04-10T10:45:30.711060"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 52
+  }
+}

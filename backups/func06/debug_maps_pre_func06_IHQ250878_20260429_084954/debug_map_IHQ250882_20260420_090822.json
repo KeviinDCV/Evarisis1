@@ -1,0 +1,172 @@
+{
+  "session_id": "IHQ250882_20260420_090822",
+  "numero_peticion": "IHQ250882",
+  "timestamp": "2026-04-20T09:08:22.610115",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250882\nCopia Pag. 1 de 2\nNombre : YOLANDA GOMEZ GONZALEZ\nN. peticion : IHQ250882\nN.Identificación : CC. 31498503\nGenero : FEMENINO\nEdad : 52 años 11 meses\nEPS : EMSSANAR S.A.S\nMédico tratante : CARLOS ANDRES TREJOS RAMIREZ\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nENDOMETRIO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudio de inmunohistoquímica en material externo rotulado \"Z-10784\" y\ndiagnóstico \"PROLIFERACIÓN TÚBULO PAPILAR CON ATIPIA EPITELIAL\".\nPrevia revisión de la histología se solicitan estudios de inmunohistoquímica con los anticuerpos para CK7,\nCK20, WT1, RE, RP, p53 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nLesi´ón neoplásica invasiva de patrón papilar y presencia de displasia epitelial de alto grado. El epitelio\ntumoral muestra pleomorfismo nuclear, nucléolos prominentes y frecuente estratificación celular.\nLas células tumorales tiene un inmunofenotipo CK7+/CK20- con expresión fuerte y difusa para WT1 y\nreceptor de estrógenos. Además, con sobreexpresión fuerte y difusa nuclear de p53 (patrón mutado) y\nexpresión fuerte y difusa de progesterona en el estroma acompañante.\nEl índice de proliferación estimado por Ki-67 es del 70%\nDIAGNÓSTICO\n Cavidad endometrial. Historia de hemorragia uterina anormal. Curetaje. Inmunohistoquímica. \nLOS ESTUDIOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO.\nCOMENTARIOS\nLos hallazgos son compatibles con una neoplasia epitelial papilar compatible con carcinoma seroso. El\nperfil inmunohistoquímico (CK7+/CK20–, sobreexpresión de p53, positividad para WT1 y receptores\nhormonales) apoya un carcinoma de alto grado de origen mülleriano (endometrio, ovario o tubas)\nJOSE BRAVO BONILLA\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---\nIHQ250882\nCopia Pag. 2 de 2\nNombre : YOLANDA GOMEZ GONZALEZ\nN. peticion : IHQ250882\nN.Identificación : CC. 31498503\nGenero : FEMENINO\nEdad : 52 años 11 meses\nEPS : EMSSANAR S.A.S\nMédico tratante : CARLOS ANDRES TREJOS RAMIREZ\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3714,
+      "reduccion_porcentaje": 98.12
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250882",
+      "caso_num": 6,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "YOLANDA GOMEZ GONZALEZ",
+      "numero_peticion": "IHQ250882",
+      "identificacion": "31498503",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "52",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "CARLOS ANDRES TREJOS RAMIREZ",
+      "servicio": "INSTITUCION EXTERNA",
+      "fecha_ingreso": "13/08/2025",
+      "fecha_informe": "01/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250882",
+      "N. de identificación": "31498503",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "INSTITUCION EXTERNA",
+      "Médico tratante": "CARLOS ANDRES TREJOS RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "13/08/2025",
+      "Fecha Informe": "01/09/2025",
+      "nombres": "YOLANDA",
+      "Primer nombre": "YOLANDA",
+      "Segundo nombre": "",
+      "apellidos": "GOMEZ GONZALEZ",
+      "Primer apellido": "GOMEZ",
+      "Segundo apellido": "GONZALEZ",
+      "nombre_formal": "GOMEZ GONZALEZ, YOLANDA",
+      "diagnostico": "Cavidad endometrial. Historia de hemorragia uterina anormal. Curetaje. Inmunohistoquímica. LOS ESTUDIOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Lesi´ón neoplásica invasiva de patrón papilar y presencia de displasia epitelial de alto grado. El epitelio tumoral muestra pleomorfismo nuclear, nucléolos prominentes y frecuente estratificación celular. Las células tumorales tiene un inmunofenotipo CK7+/CK20- con expresión fuerte y difusa para WT1 y receptor de estrógenos. Además, con sobreexpresión fuerte y difusa nuclear de p53 (patrón mutado) y expresión fuerte y difusa de progesterona en el estroma acompañante. El índice de proliferación estimado por KI-67 es del 70%",
+      "descripcion_macroscopica": "Se recibe orden para realizar estudio de inmunohistoquímica en material externo rotulado \"Z-10784\" y diagnóstico \"PROLIFERACIÓN TÚBULO PAPILAR CON ATIPIA EPITELIAL\". Previa revisión de la histología se solicitan estudios de inmunohistoquímica con los anticuerpos para CK7, CK20, WT1, RE, RP, p53 y KI-67.",
+      "ihq_organo": "CAVIDAD ENDOMETRIAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "",
+      "comentarios": "Los hallazgos son compatibles con una neoplasia epitelial papilar compatible con carcinoma seroso. El perfil inmunohistoquímico (CK7+/CK20–, sobreexpresión de p53, positividad para WT1 y receptores hormonales) apoya un carcinoma de alto grado de origen mülleriano (endometrio, ovario o tubas) JOSE BRAVO BONILLA Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 13 --- IHQ250882 Copia Pag. 2 de 2 Nombre : YOLANDA GOMEZ GONZALEZ N. peticion : IHQ250882 N.Identificación : CC. 31498503 Genero : FEMENINO Edad : 52 años 11 meses EPS : EMSSANAR S.A.S Médico tratante : CARLOS ANDRES TREJOS RAMIREZ Servicio : INSTITUCION EXTERNA Fecha Ingreso : 13/08/2025 Fecha Informe : 01/09/2025 Responsable del análisis: MD Patólogo _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 14 ---",
+      "IHQ_ORGANO": "CAVIDAD ENDOMETRIAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "Receptor de Estrógeno: , RP, Receptor de Progesterona: , P53",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_P53": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": ", RP",
+      "IHQ_RECEPTOR_PROGESTERONA": ", P53",
+      "IHQ_WT1": "Y RECEPTOR DE ESTRÓGENOS",
+      "extraction_timestamp": "2026-04-20T09:08:23.034838",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250882\nCopia Pag. 1 de 2\nNombre : YOLANDA GOMEZ GONZALEZ\nN. peticion : IHQ250882\nN.Identificación : CC. 31498503\nGenero : FEMENINO\nEdad : 52 años 11 meses\nEPS : EMSSANAR S.A.S\nMédico tratante : CARLOS ANDRES TREJOS RAMIREZ\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nENDOMETRIO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudio de inmunohistoquímica en material externo rotulado \"Z-10784\" y\ndiagnóstico \"PROLIFERACIÓN TÚBULO PAPILAR CON ATIPIA EPITELIAL\".\nPrevia revisión de la histología se solicitan estudios de inmunohistoquímica con los anticuerpos para CK7,\nCK20, WT1, RE, RP, p53 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nLesi´ón neoplásica invasiva de patrón papilar y presencia de displasia epitelial de alto grado. El epitelio\ntumoral muestra pleomorfismo nuclear, nucléolos prominentes y frecuente estratificación celular.\nLas células tumorales tiene un inmunofenotipo CK7+/CK20- con expresión fuerte y difusa para WT1 y\nreceptor de estrógenos. Además, con sobreexpresión fuerte y difusa nuclear de p53 (patrón mutado) y\nexpresión fuerte y difusa de progesterona en el estroma acompañante.\nEl índice de proliferación estimado por Ki-67 es del 70%\nDIAGNÓSTICO\n Cavidad endometrial. Historia de hemorragia uterina anormal. Curetaje. Inmunohistoquímica. \nLOS ESTUDIOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO.\nCOMENTARIOS\nLos hallazgos son compatibles con una neoplasia epitelial papilar compatible con carcinoma seroso. El\nperfil inmunohistoquímico (CK7+/CK20–, sobreexpresión de p53, positividad para WT1 y receptores\nhormonales) apoya un carcinoma de alto grado de origen mülleriano (endometrio, ovario o tubas)\nJOSE BRAVO BONILLA\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---\nIHQ250882\nCopia Pag. 2 de 2\nNombre : YOLANDA GOMEZ GONZALEZ\nN. peticion : IHQ250882\nN.Identificación : CC. 31498503\nGenero : FEMENINO\nEdad : 52 años 11 meses\nEPS : EMSSANAR S.A.S\nMédico tratante : CARLOS ANDRES TREJOS RAMIREZ\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK20, CK7, P53, Receptor de Estrógeno, Receptor de Progesterona, WT1",
+      "Descripcion macroscopica": "Se recibe orden para realizar estudio de inmunohistoquímica en material externo rotulado \"Z-10784\" y diagnóstico \"PROLIFERACIÓN TÚBULO PAPILAR CON ATIPIA EPITELIAL\". Previa revisión de la histología se solicitan estudios de inmunohistoquímica con los anticuerpos para CK7, CK20, WT1, RE, RP, p53 y Ki-67.",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Lesi´ón neoplásica invasiva de patrón papilar y presencia de displasia epitelial de alto grado. El epitelio tumoral muestra pleomorfismo nuclear, nucléolos prominentes y frecuente estratificación celular. Las células tumorales tiene un inmunofenotipo CK7+/CK20- con expresión fuerte y difusa para WT1 y receptor de estrógenos. Además, con sobreexpresión fuerte y difusa nuclear de p53 (patrón mutado) y expresión fuerte y difusa de progesterona en el estroma acompañante. El índice de proliferación estimado por Ki-67 es del 70%",
+      "Descripcion Diagnostico": "Cavidad endometrial. Historia de hemorragia uterina anormal. Curetaje. Inmunohistoquímica. LOS ESTUDIOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO.",
+      "IHQ_ORGANO": "CAVIDAD ENDOMETRIAL",
+      "Organo": "ENDOMETRIO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CARCINOMA SEROSO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: , RP, Receptor de Progesterona: , P53",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_P53": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": ", RP",
+      "IHQ_RECEPTOR_PROGESTERONA": ", P53",
+      "IHQ_WT1": "Y RECEPTOR DE ESTRÓGENOS"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 138,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cavidad endometrial. Historia de hemorragia uterina anormal. Curetaje. Inmunohistoquímica. \nLOS ESTUDIOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO.",
+      "valor_corregido": "Cavidad endometrial. Historia de hemorragia uterina anormal. Curetaje. Inmunohistoquímica. LOS ESTUDIOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250882",
+      "timestamp": "2026-04-20T09:08:23.034557"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realizar estudio de inmunohistoquímica en material externo rotulado \"Z-10784\" y diagnóstico \"PROLIFERACIÓN TÚBULO PAPILAR CON ATIPIA EPITELIAL\". Previa revisión de la histología se solicitan estudios de inmunohistoquímica con los anticuerpos para CK7, CK20, WT1, RE, RP, p53 y Ki-67.",
+      "valor_corregido": "Se recibe orden para realizar estudio de inmunohistoquímica en material externo rotulado \"Z-10784\" y diagnóstico \"PROLIFERACIÓN TÚBULO PAPILAR CON ATIPIA EPITELIAL\". Previa revisión de la histología se solicitan estudios de inmunohistoquímica con los anticuerpos para CK7, CK20, WT1, RE, RP, p53 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250882",
+      "timestamp": "2026-04-20T09:08:23.034563"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Lesi´ón neoplásica invasiva de patrón papilar y presencia de displasia epitelial de alto grado. El epitelio tumoral muestra pleomorfismo nuclear, nucléolos prominentes y frecuente estratificación celular. Las células tumorales tiene un inmunofenotipo CK7+/CK20- con expresión fuerte y difusa para WT1 y receptor de estrógenos. Además, con sobreexpresión fuerte y difusa nuclear de p53 (patrón mutado) y expresión fuerte y difusa de progesterona en el estroma acompañante. El índice de proliferación estimado por Ki-67 es del 70%",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Lesi´ón neoplásica invasiva de patrón papilar y presencia de displasia epitelial de alto grado. El epitelio tumoral muestra pleomorfismo nuclear, nucléolos prominentes y frecuente estratificación celular. Las células tumorales tiene un inmunofenotipo CK7+/CK20- con expresión fuerte y difusa para WT1 y receptor de estrógenos. Además, con sobreexpresión fuerte y difusa nuclear de p53 (patrón mutado) y expresión fuerte y difusa de progesterona en el estroma acompañante. El índice de proliferación estimado por KI-67 es del 70%",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250882",
+      "timestamp": "2026-04-20T09:08:23.034565"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos son compatibles con una neoplasia epitelial papilar compatible con carcinoma seroso. El\nperfil inmunohistoquímico (CK7+/CK20–, sobreexpresión de p53, positividad para WT1 y receptores\nhormonales) apoya un carcinoma de alto grado de origen mülleriano (endometrio, ovario o tubas)\nJOSE BRAVO BONILLA\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---\nIHQ250882\nCopia Pag. 2 de 2\nNombre : YOLANDA GOMEZ GONZALEZ\nN. peticion : IHQ250882\nN.Identificación : CC. 31498503\nGenero : FEMENINO\nEdad : 52 años 11 meses\nEPS : EMSSANAR S.A.S\nMédico tratante : CARLOS ANDRES TREJOS RAMIREZ\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---",
+      "valor_corregido": "Los hallazgos son compatibles con una neoplasia epitelial papilar compatible con carcinoma seroso. El perfil inmunohistoquímico (CK7+/CK20–, sobreexpresión de p53, positividad para WT1 y receptores hormonales) apoya un carcinoma de alto grado de origen mülleriano (endometrio, ovario o tubas) JOSE BRAVO BONILLA Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 13 --- IHQ250882 Copia Pag. 2 de 2 Nombre : YOLANDA GOMEZ GONZALEZ N. peticion : IHQ250882 N.Identificación : CC. 31498503 Genero : FEMENINO Edad : 52 años 11 meses EPS : EMSSANAR S.A.S Médico tratante : CARLOS ANDRES TREJOS RAMIREZ Servicio : INSTITUCION EXTERNA Fecha Ingreso : 13/08/2025 Fecha Informe : 01/09/2025 Responsable del análisis: MD Patólogo _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 14 ---",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250882",
+      "timestamp": "2026-04-20T09:08:23.034566"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 51
+  }
+}

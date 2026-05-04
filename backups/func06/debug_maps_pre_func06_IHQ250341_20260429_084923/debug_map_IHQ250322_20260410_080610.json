@@ -1,0 +1,155 @@
+{
+  "session_id": "IHQ250322_20260410_080610",
+  "numero_peticion": "IHQ250322",
+  "timestamp": "2026-04-10T08:06:10.525955",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250322\nCopia Pag. 1 de 2\nNombre : ALCIDES SILVA VALDERRAMA\nN. peticion : IHQ250322\nN.Identificación : CC. 4938855\nGenero : MASCULINO\nEdad : 72 años 1 mes 7 dias\nEPS : NUEVA EPS\nMédico tratante : JANETH DEL PILAR VILLANUEVA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 01/04/2025\nFecha Informe : 03/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPIEL BRAZO DERECHO +\nPIEL MUSLO DERECHO +\nPIEL HIPOCONDRIO\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional M2502029 con fecha del\ninforme del 28/02/2025, corresponde a biopsias de piel de tres localizaciones distintas, todas con\ndiagnóstico histopatológico de \"DERMATITIS ATÓPICA\". Se analizan los cortes histológicos del\nbloque de parafina A: \"Piel de tercio medio del brazo derecho\", B:\"Piel de tecio distal,\ncara anterior del muslo derecho\" y C: \"Piel de hipocondrio derecho\" solicitando los\nsiguientes marcadores de inmunohistoquímica: CD2, CD3, CD4, CD7, CD8, CD20, CD30,\nKI67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADOS. \nBloque A,B y C. Hallazgos simularles. \nPiel de espesor parcial con una dermatitis en patrón psoriasiforme con un infiltrado linfoide en\npatrón liquenoide focal, este infiltrado está compuesto predominantemente por linfocitos T\nmaduros con expresión para CD3+ y CD7 predominantemente, atenuación de CD2 y una relación\nCD4: CD8 de 8:1 a favor de CD4. Hay escasos linfocitos B dispersos CD20+. El índice de\nproliferación células es bajo en el infiltrado inflamatorio (5%). \nDIAGNÓSTICO\nA. Piel del brazo derecho, tercio medio . B Piel del muslo derecho, cara anterior\ntercio distal. C. Piel de hipocondrio derecho. Lesión. Biopsia por sacabocado. Estudio\nde inmunohistoquímica. \nLOS HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS FAVORECEN DERMATITIS\nEXFOLIATIVA: ERITRODERMIA. \nCOMENTARIOS\nAnalizar el resultado de este estudio en conjunto con el informe de revisión con rótulo R250035. \nCaso valorado en conjunto con el Dr. Ricardo Rueda. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---\nIHQ250322\nCopia Pag. 2 de 2\nNombre : ALCIDES SILVA VALDERRAMA\nN. peticion : IHQ250322\nN.Identificación : CC. 4938855\nGenero : MASCULINO\nEdad : 72 años 1 mes 7 dias\nEPS : NUEVA EPS\nMédico tratante : JANETH DEL PILAR VILLANUEVA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 01/04/2025\nFecha Informe : 03/04/2025\nVER COMENTARIO. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 4011,
+      "reduccion_porcentaje": 97.75
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250322",
+      "caso_num": 9,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ALCIDES SILVA VALDERRAMA",
+      "numero_peticion": "IHQ250322",
+      "identificacion": "4938855",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "72",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JANETH DEL PILAR VILLANUEVA",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "01/04/2025",
+      "fecha_informe": "03/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250322",
+      "N. de identificación": "4938855",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "JANETH DEL PILAR VILLANUEVA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "01/04/2025",
+      "Fecha Informe": "03/04/2025",
+      "nombres": "ALCIDES",
+      "Primer nombre": "ALCIDES",
+      "Segundo nombre": "",
+      "apellidos": "ALCIDES SILVA VALDERRAMA",
+      "Primer apellido": "ALCIDES",
+      "Segundo apellido": "SILVA VALDERRAMA",
+      "nombre_formal": "ALCIDES SILVA VALDERRAMA, ALCIDES",
+      "diagnostico": "A. Piel del brazo derecho, tercio medio . B Piel del muslo derecho, cara anterior tercio distal. C. Piel de hipocondrio derecho. Lesión. Biopsia por sacabocado. Estudio de inmunohistoquímica. LOS HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS FAVORECEN DERMATITIS EXFOLIATIVA: ERITRODERMIA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADOS. Bloque A,B y C. Hallazgos simularles. Piel de espesor parcial con una dermatitis en patrón psoriasiforme con un infiltrado linfoide en patrón liquenoide focal, este infiltrado está compuesto predominantemente por linfocitos T maduros con expresión para CD3+ y CD7 predominantemente, atenuación de CD2 y una relación CD4: CD8 de 8:1 a favor de CD4. Hay escasos linfocitos B dispersos CD20+. El índice de proliferación células es bajo en el infiltrado inflamatorio (5%).",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional M2502029 con fecha del informe del 28/02/2025, corresponde a biopsias de piel de tres localizaciones distintas, todas con diagnóstico histopatológico de \"DERMATITIS ATÓPICA\". Se analizan los cortes histológicos del bloque de parafina A: \"Piel de tercio medio del brazo derecho\", B:\"Piel de tecio distal, cara anterior del muslo derecho\" y C: \"Piel de hipocondrio derecho\" solicitando los siguientes marcadores de inmunohistoquímica: CD2, CD3, CD4, CD7, CD8, CD20, CD30, KI-67.",
+      "ihq_organo": "PIEL DEL BRAZO DERECHO, TERCIO MEDIO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Analizar el resultado de este estudio en conjunto con el informe de revisión con rótulo R250035. Caso valorado en conjunto con el Dr. Ricardo Rueda.",
+      "IHQ_ORGANO": "PIEL DEL BRAZO DERECHO, TERCIO MEDIO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "extraction_timestamp": "2026-04-10T08:06:10.799908",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250322\nCopia Pag. 1 de 2\nNombre : ALCIDES SILVA VALDERRAMA\nN. peticion : IHQ250322\nN.Identificación : CC. 4938855\nGenero : MASCULINO\nEdad : 72 años 1 mes 7 dias\nEPS : NUEVA EPS\nMédico tratante : JANETH DEL PILAR VILLANUEVA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 01/04/2025\nFecha Informe : 03/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPIEL BRAZO DERECHO +\nPIEL MUSLO DERECHO +\nPIEL HIPOCONDRIO\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional M2502029 con fecha del\ninforme del 28/02/2025, corresponde a biopsias de piel de tres localizaciones distintas, todas con\ndiagnóstico histopatológico de \"DERMATITIS ATÓPICA\". Se analizan los cortes histológicos del\nbloque de parafina A: \"Piel de tercio medio del brazo derecho\", B:\"Piel de tecio distal,\ncara anterior del muslo derecho\" y C: \"Piel de hipocondrio derecho\" solicitando los\nsiguientes marcadores de inmunohistoquímica: CD2, CD3, CD4, CD7, CD8, CD20, CD30,\nKI67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADOS. \nBloque A,B y C. Hallazgos simularles. \nPiel de espesor parcial con una dermatitis en patrón psoriasiforme con un infiltrado linfoide en\npatrón liquenoide focal, este infiltrado está compuesto predominantemente por linfocitos T\nmaduros con expresión para CD3+ y CD7 predominantemente, atenuación de CD2 y una relación\nCD4: CD8 de 8:1 a favor de CD4. Hay escasos linfocitos B dispersos CD20+. El índice de\nproliferación células es bajo en el infiltrado inflamatorio (5%). \nDIAGNÓSTICO\nA. Piel del brazo derecho, tercio medio . B Piel del muslo derecho, cara anterior\ntercio distal. C. Piel de hipocondrio derecho. Lesión. Biopsia por sacabocado. Estudio\nde inmunohistoquímica. \nLOS HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS FAVORECEN DERMATITIS\nEXFOLIATIVA: ERITRODERMIA. \nCOMENTARIOS\nAnalizar el resultado de este estudio en conjunto con el informe de revisión con rótulo R250035. \nCaso valorado en conjunto con el Dr. Ricardo Rueda. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 18 ---\nIHQ250322\nCopia Pag. 2 de 2\nNombre : ALCIDES SILVA VALDERRAMA\nN. peticion : IHQ250322\nN.Identificación : CC. 4938855\nGenero : MASCULINO\nEdad : 72 años 1 mes 7 dias\nEPS : NUEVA EPS\nMédico tratante : JANETH DEL PILAR VILLANUEVA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 01/04/2025\nFecha Informe : 03/04/2025\nVER COMENTARIO. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 19 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD20, CD3",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional M2502029 con fecha del informe del 28/02/2025, corresponde a biopsias de piel de tres localizaciones distintas, todas con diagnóstico histopatológico de \"DERMATITIS ATÓPICA\". Se analizan los cortes histológicos del bloque de parafina A: \"Piel de tercio medio del brazo derecho\", B:\"Piel de tecio distal, cara anterior del muslo derecho\" y C: \"Piel de hipocondrio derecho\" solicitando los siguientes marcadores de inmunohistoquímica: CD2, CD3, CD4, CD7, CD8, CD20, CD30, KI67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADOS. Bloque A,B y C. Hallazgos simularles. Piel de espesor parcial con una dermatitis en patrón psoriasiforme con un infiltrado linfoide en patrón liquenoide focal, este infiltrado está compuesto predominantemente por linfocitos T maduros con expresión para CD3+ y CD7 predominantemente, atenuación de CD2 y una relación CD4: CD8 de 8:1 a favor de CD4. Hay escasos linfocitos B dispersos CD20+. El índice de proliferación células es bajo en el infiltrado inflamatorio (5%).",
+      "Descripcion Diagnostico": "A. Piel del brazo derecho, tercio medio . B Piel del muslo derecho, cara anterior tercio distal. C. Piel de hipocondrio derecho. Lesión. Biopsia por sacabocado. Estudio de inmunohistoquímica. LOS HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS FAVORECEN DERMATITIS EXFOLIATIVA: ERITRODERMIA.",
+      "IHQ_ORGANO": "PIEL DEL BRAZO DERECHO, TERCIO MEDIO",
+      "Organo": "PIEL BRAZO DERECHO + PIEL MUSLO DERECHO + PIEL HIPOCONDRIO DERECHO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS FAVORECEN DERMATITIS EXFOLIATIVA: ERITRODERMIA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 143,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 143,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Piel del brazo derecho, tercio medio . B Piel del muslo derecho, cara anterior\ntercio distal. C. Piel de hipocondrio derecho. Lesión. Biopsia por sacabocado. Estudio\nde inmunohistoquímica. \nLOS HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS FAVORECEN DERMATITIS\nEXFOLIATIVA: ERITRODERMIA.",
+      "valor_corregido": "A. Piel del brazo derecho, tercio medio . B Piel del muslo derecho, cara anterior tercio distal. C. Piel de hipocondrio derecho. Lesión. Biopsia por sacabocado. Estudio de inmunohistoquímica. LOS HALLAZGOS MORFOLOGICOS E INMUNOHISTOQUIMICOS FAVORECEN DERMATITIS EXFOLIATIVA: ERITRODERMIA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250322",
+      "timestamp": "2026-04-10T08:06:10.799525"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional M2502029 con fecha del informe del 28/02/2025, corresponde a biopsias de piel de tres localizaciones distintas, todas con diagnóstico histopatológico de \"DERMATITIS ATÓPICA\". Se analizan los cortes histológicos del bloque de parafina A: \"Piel de tercio medio del brazo derecho\", B:\"Piel de tecio distal, cara anterior del muslo derecho\" y C: \"Piel de hipocondrio derecho\" solicitando los siguientes marcadores de inmunohistoquímica: CD2, CD3, CD4, CD7, CD8, CD20, CD30, KI67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional M2502029 con fecha del informe del 28/02/2025, corresponde a biopsias de piel de tres localizaciones distintas, todas con diagnóstico histopatológico de \"DERMATITIS ATÓPICA\". Se analizan los cortes histológicos del bloque de parafina A: \"Piel de tercio medio del brazo derecho\", B:\"Piel de tecio distal, cara anterior del muslo derecho\" y C: \"Piel de hipocondrio derecho\" solicitando los siguientes marcadores de inmunohistoquímica: CD2, CD3, CD4, CD7, CD8, CD20, CD30, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250322",
+      "timestamp": "2026-04-10T08:06:10.799531"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Analizar el resultado de este estudio en conjunto con el informe de revisión con rótulo R250035. \nCaso valorado en conjunto con el Dr. Ricardo Rueda.",
+      "valor_corregido": "Analizar el resultado de este estudio en conjunto con el informe de revisión con rótulo R250035. Caso valorado en conjunto con el Dr. Ricardo Rueda.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250322",
+      "timestamp": "2026-04-10T08:06:10.799532"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 46
+  }
+}

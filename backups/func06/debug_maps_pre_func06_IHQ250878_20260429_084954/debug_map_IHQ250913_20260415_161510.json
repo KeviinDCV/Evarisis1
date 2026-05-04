@@ -1,0 +1,148 @@
+{
+  "session_id": "IHQ250913_20260415_161510",
+  "numero_peticion": "IHQ250913",
+  "timestamp": "2026-04-15T16:15:10.387978",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250913\nCopia Pag. 1 de 2\nNombre : FERNANDO MONSALVE\nN. peticion : IHQ250913\nN.Identificación : CC. 14993775\nGenero : MASCULINO\nEdad : 72 años 28 dias\nEPS : EMSSANAR E.S.S\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UNIDAD DE ONCOLOGIA\nFecha Ingreso : 21/08/2025\nFecha Informe : 01/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HUESO\n2025-08-12\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2508822, el cual corresponde a biopsia de médula ósea, con\ndiagnóstico de \"INCREMENTO DE CÉLULAS MONONUCLEARES\". Se ordenan los siguientes marcadores:\nCD5, CD23, CD20 y CyclinaD1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nEn los cortes histológicos se identifica médula ósea con incremento de células mononucleares redondas,\nazules y pequeñas de nucleolo conspicuo que representan el 70% de la celularidad total, las cuales\ncorresponden a linfocitos B CD20+, CD5+ y CD23+, sin expresión de CyclinaD1-\nDIAGNÓSTICO\n Médula ósea. Lesión. Biopsia. Estudio de inmunohistoquímica:\nLEUCEMIA/LINFOMA LINFOCÍTICO DE CÉLULAS B PEQUEÑAS (SLL)\nCOMENTARIOS\nSe recomienda correlacionar los hallazgos con la historia clínica, el mielograma, el resultado de la\ncitometría de flujo CF2500390, el estudio histológico de la biopsia de Médula ósea, las imágenes\nradiológicas y los paraclínicos complementarios (Citogenética y Biología Molecular).\nCaso revisado por Dra. Maria Ximena Varela, Patóloga.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---\nIHQ250913\nCopia Pag. 2 de 2\nNombre : FERNANDO MONSALVE\nN. peticion : IHQ250913\nN.Identificación : CC. 14993775\nGenero : MASCULINO\nEdad : 72 años 28 dias\nEPS : EMSSANAR E.S.S\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UNIDAD DE ONCOLOGIA\nFecha Ingreso : 21/08/2025\nFecha Informe : 01/09/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3396,
+      "reduccion_porcentaje": 98.28
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250913",
+      "caso_num": 35,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "FERNANDO MONSALVE",
+      "numero_peticion": "IHQ250913",
+      "identificacion": "14993775",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "72",
+      "eps": "EMSSANAR E.S.S",
+      "medico_tratante": "SILVIO ANDRES BOLAÑOS",
+      "servicio": "UNIDAD DE ONCOLOGIA",
+      "fecha_ingreso": "21/08/2025",
+      "fecha_informe": "01/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250913",
+      "N. de identificación": "14993775",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR E.S.S",
+      "Servicio": "UNIDAD DE ONCOLOGIA",
+      "Médico tratante": "SILVIO ANDRES BOLAÑOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/08/2025",
+      "Fecha Informe": "01/09/2025",
+      "nombres": "FERNANDO MONSALVE",
+      "Primer nombre": "FERNANDO",
+      "Segundo nombre": "MONSALVE",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "FERNANDO MONSALVE",
+      "diagnostico": "Médula ósea. Lesión. Biopsia. Estudio de inmunohistoquímica: LEUCEMIA/LINFOMA LINFOCÍTICO DE CÉLULAS B PEQUEÑAS (SLL)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica médula ósea con incremento de células mononucleares redondas, azules y pequeñas de nucleolo conspicuo que representan el 70% de la celularidad total, las cuales corresponden a linfocitos B CD20+, CD5+ y CD23+, sin expresión de CyclinaD1-",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2508822, el cual corresponde a biopsia de médula ósea, con diagnóstico de \"INCREMENTO DE CÉLULAS MONONUCLEARES\". Se ordenan los siguientes marcadores: CD5, CD23, CD20 y CyclinaD1.",
+      "ihq_organo": "MÉDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD5, CD23, CD20, CYCLINAD1",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se recomienda correlacionar los hallazgos con la historia clínica, el mielograma, el resultado de la citometría de flujo CF2500390, el estudio histológico de la biopsia de Médula ósea, las imágenes radiológicas y los paraclínicos complementarios (Citogenética y Biología Molecular). Caso revisado por Dra. Maria Ximena Varela, Patóloga.",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD5, CD23, CD20, CYCLINAD1",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "extraction_timestamp": "2026-04-15T16:15:10.613487",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250913\nCopia Pag. 1 de 2\nNombre : FERNANDO MONSALVE\nN. peticion : IHQ250913\nN.Identificación : CC. 14993775\nGenero : MASCULINO\nEdad : 72 años 28 dias\nEPS : EMSSANAR E.S.S\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UNIDAD DE ONCOLOGIA\nFecha Ingreso : 21/08/2025\nFecha Informe : 01/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HUESO\n2025-08-12\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2508822, el cual corresponde a biopsia de médula ósea, con\ndiagnóstico de \"INCREMENTO DE CÉLULAS MONONUCLEARES\". Se ordenan los siguientes marcadores:\nCD5, CD23, CD20 y CyclinaD1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nEn los cortes histológicos se identifica médula ósea con incremento de células mononucleares redondas,\nazules y pequeñas de nucleolo conspicuo que representan el 70% de la celularidad total, las cuales\ncorresponden a linfocitos B CD20+, CD5+ y CD23+, sin expresión de CyclinaD1-\nDIAGNÓSTICO\n Médula ósea. Lesión. Biopsia. Estudio de inmunohistoquímica:\nLEUCEMIA/LINFOMA LINFOCÍTICO DE CÉLULAS B PEQUEÑAS (SLL)\nCOMENTARIOS\nSe recomienda correlacionar los hallazgos con la historia clínica, el mielograma, el resultado de la\ncitometría de flujo CF2500390, el estudio histológico de la biopsia de Médula ósea, las imágenes\nradiológicas y los paraclínicos complementarios (Citogenética y Biología Molecular).\nCaso revisado por Dra. Maria Ximena Varela, Patóloga.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---\nIHQ250913\nCopia Pag. 2 de 2\nNombre : FERNANDO MONSALVE\nN. peticion : IHQ250913\nN.Identificación : CC. 14993775\nGenero : MASCULINO\nEdad : 72 años 28 dias\nEPS : EMSSANAR E.S.S\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UNIDAD DE ONCOLOGIA\nFecha Ingreso : 21/08/2025\nFecha Informe : 01/09/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD5, CD23, CD20, CYCLINAD1",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2508822, el cual corresponde a biopsia de médula ósea, con diagnóstico de \"INCREMENTO DE CÉLULAS MONONUCLEARES\". Se ordenan los siguientes marcadores: CD5, CD23, CD20 y CyclinaD1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica médula ósea con incremento de células mononucleares redondas, azules y pequeñas de nucleolo conspicuo que representan el 70% de la celularidad total, las cuales corresponden a linfocitos B CD20+, CD5+ y CD23+, sin expresión de CyclinaD1-",
+      "Descripcion Diagnostico": "Médula ósea. Lesión. Biopsia. Estudio de inmunohistoquímica: LEUCEMIA/LINFOMA LINFOCÍTICO DE CÉLULAS B PEQUEÑAS (SLL)",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Organo": "BX HUESO",
+      "Diagnostico Coloracion": "INCREMENTO DE CÉLULAS MONONUCLEARES",
+      "Diagnostico Principal": "LEUCEMIA/LINFOMA LINFOCÍTICO DE CÉLULAS B PEQUEÑAS (SLL)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_CD20": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 142,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 142,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula ósea. Lesión. Biopsia. Estudio de inmunohistoquímica:\nLEUCEMIA/LINFOMA LINFOCÍTICO DE CÉLULAS B PEQUEÑAS (SLL)",
+      "valor_corregido": "Médula ósea. Lesión. Biopsia. Estudio de inmunohistoquímica: LEUCEMIA/LINFOMA LINFOCÍTICO DE CÉLULAS B PEQUEÑAS (SLL)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250913",
+      "timestamp": "2026-04-15T16:15:10.613157"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se recomienda correlacionar los hallazgos con la historia clínica, el mielograma, el resultado de la\ncitometría de flujo CF2500390, el estudio histológico de la biopsia de Médula ósea, las imágenes\nradiológicas y los paraclínicos complementarios (Citogenética y Biología Molecular).\nCaso revisado por Dra. Maria Ximena Varela, Patóloga.",
+      "valor_corregido": "Se recomienda correlacionar los hallazgos con la historia clínica, el mielograma, el resultado de la citometría de flujo CF2500390, el estudio histológico de la biopsia de Médula ósea, las imágenes radiológicas y los paraclínicos complementarios (Citogenética y Biología Molecular). Caso revisado por Dra. Maria Ximena Varela, Patóloga.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250913",
+      "timestamp": "2026-04-15T16:15:10.613163"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 49
+  }
+}

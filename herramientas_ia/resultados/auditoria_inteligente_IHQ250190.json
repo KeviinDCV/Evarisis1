@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250190",
   "caso_num": 30,
   "total_casos": 50,
-  "timestamp": "2026-01-09T04:12:21.282129",
+  "timestamp": "2026-04-29T07:44:38.583000",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 19,
+      "total_detectado": 18,
       "estado": "OK"
     },
     "estado": "OK"
@@ -28,7 +28,7 @@
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "LOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN UN SARCOMA DE ALTO GRADO DE MORFOLOGÍA DE CÉLULA PEQUEÑA DE ALTO GRADO CON DIFERENCIACIÓN MIOGÉNICA (RABDOMIOSARCOMA NOS)"
+      "valor_bd": "SARCOMA DE ALTO GRADO DE MORFOLOGÍA DE CÉLULA PEQUEÑA DE ALTO GRADO CON DIFERENCIACIÓN MIOGÉNICA (RABDOMIOSARCOMA NOS)"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -119,6 +119,13 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 0,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 0,
+      "estado": "OK",
+      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},
@@ -128,8 +135,8 @@
   "metricas": {
     "score_validacion": 100.0,
     "score_final": 100.0,
-    "validaciones_ok": 9,
-    "total_validaciones": 9,
+    "validaciones_ok": 10,
+    "total_validaciones": 10,
     "warnings": 0,
     "errores": 0
   },

@@ -1,0 +1,149 @@
+{
+  "session_id": "IHQ250477_20260410_080657",
+  "numero_peticion": "IHQ250477",
+  "timestamp": "2026-04-10T08:06:57.804087",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250477\nCopia Pag. 1 de 2\nNombre : SARA VALENTINA PEÑA MEDINA\nN. peticion : IHQ250477\nN.Identificación : TI. 1061765240\nGenero : FEMENINO\nEdad : 13 años 1 mes 27 dias\nEPS : NUEVA EPS\nMédico tratante : JORGE LUIS RAMIREZ MELO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 02/05/2025\nFecha Informe : 14/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2502656-2 que corresponde a \"biopsia de hueso\" con diagnóstico\nde \"CELULARIDAD GLOBAL DEL 70%, RELACIÓN MIELOIDE ERITROIDE 4 A 1, MEGACARIOCITOS\nHASTA 4 POR CAMPO DE ALTO PODER\" para estudios de inmunohistoquímica por lo que se revisa\nmarcación para CD3, CD20, CD38, CD61, CD34, CD117, mieloperoxidasa, glicoforina. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nMedula ósea con celularidad global del 70% en la que se identifican células mieloides (MPO+) y\neritroides (Glicoforina +) con una relación de 3 a 1. Los linfocitos T (CD3 +), linfocitos B (CD20 + )\ny células plasmáticas (CD38+, CD56 -) acompañantes son inmunofenotipo esperado.\nHay\nmegacariocitos (CD61+) 1\na 6\npor campo de alto poder, sin formar acúmulos. No hay\nincremento de células inmaduras con CD34 y CD117 . Negativo para lesión tumoral en la muestra\nevaluada.\nDIAGNÓSTICO\nMédula ósea. Biopsia. Estudios de inmunohistoquímica.\nCELULARIDAD GLOBAL DEL 70%\nRELACIÓN MIELOPEROXIDASA/GLICOFORINA: 3: 1\nCÉLULAS PLASMÁTICAS SIN INMUNOFENOTIPO ABERRANTE, CORRESPONDEN AL 5% DE LA\nCELULARIDAD GLOBAL.\nMEGACARIOCITOS DE 1 A 6 POR CAMPO DE ALTO PODER.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250477\nCopia Pag. 2 de 2\nNombre : SARA VALENTINA PEÑA MEDINA\nN. peticion : IHQ250477\nN.Identificación : TI. 1061765240\nGenero : FEMENINO\nEdad : 13 años 1 mes 27 dias\nEPS : NUEVA EPS\nMédico tratante : JORGE LUIS RAMIREZ MELO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 02/05/2025\nFecha Informe : 14/05/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3538,
+      "reduccion_porcentaje": 98.13
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250477",
+      "caso_num": 13,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "SARA VALENTINA PEÑA MEDINA",
+      "numero_peticion": "IHQ250477",
+      "identificacion": "1061765240",
+      "tipo_documento": "TI",
+      "Genero": "FEMENINO",
+      "Edad": "13",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JORGE LUIS RAMIREZ MELO",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "02/05/2025",
+      "fecha_informe": "14/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250477",
+      "N. de identificación": "1061765240",
+      "Tipo de documento": "TI",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "JORGE LUIS RAMIREZ MELO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/05/2025",
+      "Fecha Informe": "14/05/2025",
+      "nombres": "SARA VALENTINA",
+      "Primer nombre": "SARA",
+      "Segundo nombre": "VALENTINA",
+      "apellidos": "PEÑA MEDINA",
+      "Primer apellido": "PEÑA",
+      "Segundo apellido": "MEDINA",
+      "nombre_formal": "PEÑA MEDINA, SARA VALENTINA",
+      "diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica. CELULARIDAD GLOBAL DEL 70% RELACIÓN MIELOPEROXIDASA/GLICOFORINA: 3: 1 CÉLULAS PLASMÁTICAS SIN INMUNOFENOTIPO ABERRANTE, CORRESPONDEN AL 5% DE LA CELULARIDAD GLOBAL. MEGACARIOCITOS DE 1 A 6 POR CAMPO DE ALTO PODER: 02/05/2025",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Medula ósea con celularidad global del 70% en la que se identifican células mieloides (MPO+) y eritroides (Glicoforina +) con una relación de 3 a 1. Los linfocitos T (CD3 +), linfocitos B (CD20 + ) y células plasmáticas (CD38+, CD56 -) acompañantes son inmunofenotipo esperado. Hay megacariocitos (CD61+) 1 a 6 por campo de alto poder, sin formar acúmulos. No hay incremento de células inmaduras con CD34 y CD117 . Negativo para lesión tumoral en la muestra evaluada.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2502656-2 que corresponde a \"biopsia de hueso\" con diagnóstico de \"CELULARIDAD GLOBAL DEL 70%, RELACIÓN MIELOIDE ERITROIDE 4 A 1, MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER\" para estudios de inmunohistoquímica por lo que se revisa marcación para CD3, CD20, CD38, CD61, CD34, CD117, mieloperoxidasa, glicoforina.",
+      "ihq_organo": "MÉDULA ÓSEA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD20, CD38, CD61, CD34, CD117, MIELOPEROXIDASA, GLICOFORINA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD20, CD38, CD61, CD34, CD117, MIELOPEROXIDASA, GLICOFORINA",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CD61": "POSITIVO",
+      "extraction_timestamp": "2026-04-10T08:06:58.088576",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250477\nCopia Pag. 1 de 2\nNombre : SARA VALENTINA PEÑA MEDINA\nN. peticion : IHQ250477\nN.Identificación : TI. 1061765240\nGenero : FEMENINO\nEdad : 13 años 1 mes 27 dias\nEPS : NUEVA EPS\nMédico tratante : JORGE LUIS RAMIREZ MELO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 02/05/2025\nFecha Informe : 14/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2502656-2 que corresponde a \"biopsia de hueso\" con diagnóstico\nde \"CELULARIDAD GLOBAL DEL 70%, RELACIÓN MIELOIDE ERITROIDE 4 A 1, MEGACARIOCITOS\nHASTA 4 POR CAMPO DE ALTO PODER\" para estudios de inmunohistoquímica por lo que se revisa\nmarcación para CD3, CD20, CD38, CD61, CD34, CD117, mieloperoxidasa, glicoforina. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nMedula ósea con celularidad global del 70% en la que se identifican células mieloides (MPO+) y\neritroides (Glicoforina +) con una relación de 3 a 1. Los linfocitos T (CD3 +), linfocitos B (CD20 + )\ny células plasmáticas (CD38+, CD56 -) acompañantes son inmunofenotipo esperado.\nHay\nmegacariocitos (CD61+) 1\na 6\npor campo de alto poder, sin formar acúmulos. No hay\nincremento de células inmaduras con CD34 y CD117 . Negativo para lesión tumoral en la muestra\nevaluada.\nDIAGNÓSTICO\nMédula ósea. Biopsia. Estudios de inmunohistoquímica.\nCELULARIDAD GLOBAL DEL 70%\nRELACIÓN MIELOPEROXIDASA/GLICOFORINA: 3: 1\nCÉLULAS PLASMÁTICAS SIN INMUNOFENOTIPO ABERRANTE, CORRESPONDEN AL 5% DE LA\nCELULARIDAD GLOBAL.\nMEGACARIOCITOS DE 1 A 6 POR CAMPO DE ALTO PODER.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250477\nCopia Pag. 2 de 2\nNombre : SARA VALENTINA PEÑA MEDINA\nN. peticion : IHQ250477\nN.Identificación : TI. 1061765240\nGenero : FEMENINO\nEdad : 13 años 1 mes 27 dias\nEPS : NUEVA EPS\nMédico tratante : JORGE LUIS RAMIREZ MELO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 02/05/2025\nFecha Informe : 14/05/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD20, CD38, CD61, CD34, CD117, MIELOPEROXIDASA, GLICOFORINA, CD56",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2502656-2 que corresponde a \"biopsia de hueso\" con diagnóstico de \"CELULARIDAD GLOBAL DEL 70%, RELACIÓN MIELOIDE ERITROIDE 4 A 1, MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER\" para estudios de inmunohistoquímica por lo que se revisa marcación para CD3, CD20, CD38, CD61, CD34, CD117, mieloperoxidasa, glicoforina.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Medula ósea con celularidad global del 70% en la que se identifican células mieloides (MPO+) y eritroides (Glicoforina +) con una relación de 3 a 1. Los linfocitos T (CD3 +), linfocitos B (CD20 + ) y células plasmáticas (CD38+, CD56 -) acompañantes son inmunofenotipo esperado. Hay megacariocitos (CD61+) 1 a 6 por campo de alto poder, sin formar acúmulos. No hay incremento de células inmaduras con CD34 y CD117 . Negativo para lesión tumoral en la muestra evaluada.",
+      "Descripcion Diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica. CELULARIDAD GLOBAL DEL 70% RELACIÓN MIELOPEROXIDASA/GLICOFORINA: 3: 1 CÉLULAS PLASMÁTICAS SIN INMUNOFENOTIPO ABERRANTE, CORRESPONDEN AL 5% DE LA CELULARIDAD GLOBAL. MEGACARIOCITOS DE 1 A 6 POR CAMPO DE ALTO PODER: 02/05/2025",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Organo": "BX DE HUESO",
+      "Diagnostico Coloracion": "CELULARIDAD GLOBAL DEL 70%, RELACIÓN MIELOIDE ERITROIDE 4 A 1, MEGACARIOCITOS HASTA 4 POR CAMPO DE ALTO PODER",
+      "Diagnostico Principal": "CELULARIDAD GLOBAL DEL 70% RELACIÓN MIELOPEROXIDASA/GLICOFORINA: 3: 1 CÉLULAS PLASMÁTICAS SIN INMUNOFENOTIPO ABERRANTE, CORRESPONDEN AL 5% DE LA CELULARIDAD GLOBAL",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD34": "NO MENCIONADO",
+      "IHQ_CD117": "NO MENCIONADO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 134,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula ósea. Biopsia. Estudios de inmunohistoquímica.\nCELULARIDAD GLOBAL DEL 70%\nRELACIÓN MIELOPEROXIDASA/GLICOFORINA: 3: 1\nCÉLULAS PLASMÁTICAS SIN INMUNOFENOTIPO ABERRANTE, CORRESPONDEN AL 5% DE LA\nCELULARIDAD GLOBAL.\nMEGACARIOCITOS DE 1 A 6 POR CAMPO DE ALTO PODER: 02/05/2025",
+      "valor_corregido": "Médula ósea. Biopsia. Estudios de inmunohistoquímica. CELULARIDAD GLOBAL DEL 70% RELACIÓN MIELOPEROXIDASA/GLICOFORINA: 3: 1 CÉLULAS PLASMÁTICAS SIN INMUNOFENOTIPO ABERRANTE, CORRESPONDEN AL 5% DE LA CELULARIDAD GLOBAL. MEGACARIOCITOS DE 1 A 6 POR CAMPO DE ALTO PODER: 02/05/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250477",
+      "timestamp": "2026-04-10T08:06:58.088292"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 55
+  }
+}

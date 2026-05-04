@@ -1,0 +1,143 @@
+{
+  "session_id": "IHQ250914_20260420_090831",
+  "numero_peticion": "IHQ250914",
+  "timestamp": "2026-04-20T09:08:31.824069",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250914\nCopia Pag. 1 de 2\nNombre : ADELAIDA VALLEJO GONZALEZ\nN. peticion : IHQ250914\nN.Identificación : CC. 66931913\nGenero : FEMENINO\nEdad : 45 años 3 meses 9 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JOSE OMAR ZORRILA\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 22/08/2025\nFecha Informe : 05/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPRODUCTO DE\nPROCTOSIGMOIDECTOMIA\n2025-06-12\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en el caso interno M2506117 con\ndiagnóstico \" ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO. GANGLIOS LINFÁTICOS\nREGIONALES POSITIVOS: ADENOCARCINOMA METASTÁICO (6/20).\"\nPrevia revisión de la arquitectura histológica, se solicita tinción con los anticuerpos para HER2/Neu y para\nlas proteína de reparación de desajuste (MMR por siglas en inglés): MSH2, MSH6, MLH1 y PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nMarcador\nResultado\nInterpretación\nMLH1\nPositivo (expresión nuclear\npreservada)\nProteína conservada\nMSH2\nPositivo (expresión nuclear\npreservada)\nProteína conservada\nMSH6\nPositivo (expresión nuclear\npreservada)\nProteína conservada\nPMS2\nPositivo (expresión nuclear\npreservada)\nProteína conservada\nInterpretación MMR\nPerfil conservado\nFenotipo MMR no deficiente; no\nse demuestra inestabilidad\nmicrosatelital\nHER2/Neu\nNegativo (Score 0)\nSin sobreexpresión/amplificación\nDIAGNÓSTICO\nColon sigmoides y recto. Tumor. Protosigmoidectomía. Inmunohistoquímica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---\nIHQ250914\nCopia Pag. 2 de 2\nNombre : ADELAIDA VALLEJO GONZALEZ\nN. peticion : IHQ250914\nN.Identificación : CC. 66931913\nGenero : FEMENINO\nEdad : 45 años 3 meses 9 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JOSE OMAR ZORRILA\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 22/08/2025\nFecha Informe : 05/09/2025\nADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO.\nPERFIL MMR CONSERVADO, PATRÓN MICROSATELITAL ESTABLE.\nNEGATIVO PARA HER2/Neu.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3597,
+      "reduccion_porcentaje": 98.17
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250914",
+      "caso_num": 36,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ADELAIDA VALLEJO GONZALEZ",
+      "numero_peticion": "IHQ250914",
+      "identificacion": "66931913",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "45",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "JOSE OMAR ZORRILA",
+      "servicio": "OTORRINO CONSULTA EXTERNA",
+      "fecha_ingreso": "22/08/2025",
+      "fecha_informe": "05/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250914",
+      "N. de identificación": "66931913",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "OTORRINO CONSULTA EXTERNA",
+      "Médico tratante": "JOSE OMAR ZORRILA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "22/08/2025",
+      "Fecha Informe": "05/09/2025",
+      "nombres": "ADELAIDA VALLEJO",
+      "Primer nombre": "ADELAIDA",
+      "Segundo nombre": "VALLEJO",
+      "apellidos": "GONZALEZ",
+      "Primer apellido": "GONZALEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "GONZALEZ, ADELAIDA VALLEJO",
+      "diagnostico": "Colon sigmoides y recto. Tumor. Protosigmoidectomía. Inmunohistoquímica: 22/08/2025 ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO. PERFIL MMR CONSERVADO, PATRÓN MICROSATELITAL ESTABLE. NEGATIVO PARA HER2/Neu.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Marcador Resultado Interpretación MLH1 Positivo (expresión nuclear preservada) Proteína conservada MSH2 Positivo (expresión nuclear preservada) Proteína conservada MSH6 Positivo (expresión nuclear preservada) Proteína conservada PMS2 Positivo (expresión nuclear preservada) Proteína conservada Interpretación MMR Perfil conservado Fenotipo MMR no deficiente; no se demuestra inestabilidad microsatelital HER2/Neu Negativo (Score 0) Sin sobreexpresión/amplificación",
+      "descripcion_macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en el caso interno M2506117 con diagnóstico \" ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO. GANGLIOS LINFÁTICOS REGIONALES POSITIVOS: ADENOCARCINOMA METASTÁICO (6/20).\" Previa revisión de la arquitectura histológica, se solicita tinción con los anticuerpos para HER2/Neu y para las proteína de reparación de desajuste (MMR por siglas en inglés): MSH2, MSH6, MLH1 y PMS2.",
+      "ihq_organo": "COLON SIGMOIDES Y RECTO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "COLON SIGMOIDES Y RECTO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "HER2: NEGATIVO (0)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_HER2": "NEGATIVO (0)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR",
+      "extraction_timestamp": "2026-04-20T09:08:32.095780",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250914\nCopia Pag. 1 de 2\nNombre : ADELAIDA VALLEJO GONZALEZ\nN. peticion : IHQ250914\nN.Identificación : CC. 66931913\nGenero : FEMENINO\nEdad : 45 años 3 meses 9 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JOSE OMAR ZORRILA\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 22/08/2025\nFecha Informe : 05/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPRODUCTO DE\nPROCTOSIGMOIDECTOMIA\n2025-06-12\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en el caso interno M2506117 con\ndiagnóstico \" ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO. GANGLIOS LINFÁTICOS\nREGIONALES POSITIVOS: ADENOCARCINOMA METASTÁICO (6/20).\"\nPrevia revisión de la arquitectura histológica, se solicita tinción con los anticuerpos para HER2/Neu y para\nlas proteína de reparación de desajuste (MMR por siglas en inglés): MSH2, MSH6, MLH1 y PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nMarcador\nResultado\nInterpretación\nMLH1\nPositivo (expresión nuclear\npreservada)\nProteína conservada\nMSH2\nPositivo (expresión nuclear\npreservada)\nProteína conservada\nMSH6\nPositivo (expresión nuclear\npreservada)\nProteína conservada\nPMS2\nPositivo (expresión nuclear\npreservada)\nProteína conservada\nInterpretación MMR\nPerfil conservado\nFenotipo MMR no deficiente; no\nse demuestra inestabilidad\nmicrosatelital\nHER2/Neu\nNegativo (Score 0)\nSin sobreexpresión/amplificación\nDIAGNÓSTICO\nColon sigmoides y recto. Tumor. Protosigmoidectomía. Inmunohistoquímica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---\nIHQ250914\nCopia Pag. 2 de 2\nNombre : ADELAIDA VALLEJO GONZALEZ\nN. peticion : IHQ250914\nN.Identificación : CC. 66931913\nGenero : FEMENINO\nEdad : 45 años 3 meses 9 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JOSE OMAR ZORRILA\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 22/08/2025\nFecha Informe : 05/09/2025\nADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO.\nPERFIL MMR CONSERVADO, PATRÓN MICROSATELITAL ESTABLE.\nNEGATIVO PARA HER2/Neu.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MLH1, MSH2, MSH6, PMS2",
+      "Descripcion macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en el caso interno M2506117 con diagnóstico \" ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO. GANGLIOS LINFÁTICOS REGIONALES POSITIVOS: ADENOCARCINOMA METASTÁICO (6/20).\" Previa revisión de la arquitectura histológica, se solicita tinción con los anticuerpos para HER2/Neu y para las proteína de reparación de desajuste (MMR por siglas en inglés): MSH2, MSH6, MLH1 y PMS2.",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Marcador Resultado Interpretación MLH1 Positivo (expresión nuclear preservada) Proteína conservada MSH2 Positivo (expresión nuclear preservada) Proteína conservada MSH6 Positivo (expresión nuclear preservada) Proteína conservada PMS2 Positivo (expresión nuclear preservada) Proteína conservada Interpretación MMR Perfil conservado Fenotipo MMR no deficiente; no se demuestra inestabilidad microsatelital HER2/Neu Negativo (Score 0) Sin sobreexpresión/amplificación",
+      "Descripcion Diagnostico": "Colon sigmoides y recto. Tumor. Protosigmoidectomía. Inmunohistoquímica: 22/08/2025 ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO. PERFIL MMR CONSERVADO, PATRÓN MICROSATELITAL ESTABLE. NEGATIVO PARA HER2/Neu.",
+      "IHQ_ORGANO": "COLON SIGMOIDES Y RECTO",
+      "Organo": "PRODUCTO DE PROCTOSIGMOIDECTOMIA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO (0)",
+      "IHQ_HER2": "NEGATIVO (0)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Colon sigmoides y recto. Tumor. Protosigmoidectomía. Inmunohistoquímica: 22/08/2025\nADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO.\nPERFIL MMR CONSERVADO, PATRÓN MICROSATELITAL ESTABLE.\nNEGATIVO PARA HER2/Neu.",
+      "valor_corregido": "Colon sigmoides y recto. Tumor. Protosigmoidectomía. Inmunohistoquímica: 22/08/2025 ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO. PERFIL MMR CONSERVADO, PATRÓN MICROSATELITAL ESTABLE. NEGATIVO PARA HER2/Neu.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250914",
+      "timestamp": "2026-04-20T09:08:32.095528"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 50
+  }
+}

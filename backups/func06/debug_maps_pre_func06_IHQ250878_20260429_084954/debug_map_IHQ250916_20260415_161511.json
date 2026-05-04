@@ -1,0 +1,160 @@
+{
+  "session_id": "IHQ250916_20260415_161511",
+  "numero_peticion": "IHQ250916",
+  "timestamp": "2026-04-15T16:15:11.191183",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250916\nCopia Pag. 1 de 1\nNombre : LUISA FERNANDA BANGUERO\nANGULO\nN. peticion : IHQ250916\nN.Identificación : CC. 1028161543\nGenero : FEMENINO\nEdad : 21 años 7 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO MERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 22/08/2025\nFecha Informe : 29/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR DE HIPOFISIS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2509975-1 que corresponde a “tumor de hipofisis” con diagnóstico de\n\"COMPATIBLE CON ASTROCITOMA PILOCITICO WHO 1\" para estudios de inmunohistoquímica por lo que se\nrevisa marcación para GFAP, IDH, CD34, p53 y Ki67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®. Las celulas tumorales presentan positividad citoplasmática para GFAP, con Ki67 del 2% y\nP53 con expresion usual (Wild type). Además, negatividad para IDH, CD34.\nDIAGNÓSTICO\n Hipofisis. Tumor. Reseccion. Estudio de inmunohistoquímica.\nLOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ASTROCITOMA PILOCITICO\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 2419,
+      "reduccion_porcentaje": 98.77
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250916",
+      "caso_num": 38,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GFAP": "POSITIVO",
+      "nombre_completo": "LUISA FERNANDA BANGUERO ANGULO",
+      "numero_peticion": "IHQ250916",
+      "identificacion": "1028161543",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "21",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JAVIER OROZCO MERA",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "22/08/2025",
+      "fecha_informe": "29/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250916",
+      "N. de identificación": "1028161543",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "JAVIER OROZCO MERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "22/08/2025",
+      "Fecha Informe": "29/08/2025",
+      "nombres": "LUISA FERNANDA",
+      "Primer nombre": "LUISA",
+      "Segundo nombre": "FERNANDA",
+      "apellidos": "BANGUERO ANGULO",
+      "Primer apellido": "BANGUERO",
+      "Segundo apellido": "ANGULO",
+      "nombre_formal": "BANGUERO ANGULO, LUISA FERNANDA",
+      "diagnostico": "Hipofisis. Tumor. Reseccion. Estudio de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ASTROCITOMA PILOCITICO",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las celulas tumorales presentan positividad citoplasmática para GFAP, con KI-67 del 2% y p53 con expresion usual (Wild type). Además, negatividad para IDH, CD34.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2509975-1 que corresponde a \"tumor de hipofisis\" con diagnóstico de \"COMPATIBLE CON ASTROCITOMA PILOCITICO WHO 1\" para estudios de inmunohistoquímica por lo que se revisa marcación para GFAP, IDH, CD34, p53 y KI-67.",
+      "ihq_organo": "HIPOFISIS",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "GFAP, IDH, CD34, P53, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "HIPOFISIS",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Ki-67 del 2%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "GFAP, IDH, CD34, P53, Ki-67",
+      "IHQ_IDH1": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_KI-67": "2%",
+      "extraction_timestamp": "2026-04-15T16:15:11.397779",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250916\nCopia Pag. 1 de 1\nNombre : LUISA FERNANDA BANGUERO\nANGULO\nN. peticion : IHQ250916\nN.Identificación : CC. 1028161543\nGenero : FEMENINO\nEdad : 21 años 7 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO MERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 22/08/2025\nFecha Informe : 29/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR DE HIPOFISIS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2509975-1 que corresponde a “tumor de hipofisis” con diagnóstico de\n\"COMPATIBLE CON ASTROCITOMA PILOCITICO WHO 1\" para estudios de inmunohistoquímica por lo que se\nrevisa marcación para GFAP, IDH, CD34, p53 y Ki67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®. Las celulas tumorales presentan positividad citoplasmática para GFAP, con Ki67 del 2% y\nP53 con expresion usual (Wild type). Además, negatividad para IDH, CD34.\nDIAGNÓSTICO\n Hipofisis. Tumor. Reseccion. Estudio de inmunohistoquímica.\nLOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ASTROCITOMA PILOCITICO\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "GFAP, IDH, CD34, P53, Ki-67",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2509975-1 que corresponde a “tumor de hipofisis” con diagnóstico de \"COMPATIBLE CON ASTROCITOMA PILOCITICO WHO 1\" para estudios de inmunohistoquímica por lo que se revisa marcación para GFAP, IDH, CD34, p53 y Ki67.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las celulas tumorales presentan positividad citoplasmática para GFAP, con Ki67 del 2% y P53 con expresion usual (Wild type). Además, negatividad para IDH, CD34.",
+      "Descripcion Diagnostico": "Hipofisis. Tumor. Reseccion. Estudio de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ASTROCITOMA PILOCITICO",
+      "IHQ_ORGANO": "HIPOFISIS",
+      "Organo": "TUMOR DE HIPOFISIS",
+      "Diagnostico Coloracion": "ASTROCITOMA PILOCITICO WHO 1",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ASTROCITOMA PILOCITICO",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67 del 2%",
+      "IHQ_GFAP": "POSITIVO",
+      "IHQ_IDH1": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_P53": "NO MENCIONADO",
+      "IHQ_KI-67": "2%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 138,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hipofisis. Tumor. Reseccion. Estudio de inmunohistoquímica.\nLOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ASTROCITOMA PILOCITICO",
+      "valor_corregido": "Hipofisis. Tumor. Reseccion. Estudio de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS E INMUNOHISTOQUÍMICOS FAVORECEN ASTROCITOMA PILOCITICO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250916",
+      "timestamp": "2026-04-15T16:15:11.397441"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2509975-1 que corresponde a “tumor de hipofisis” con diagnóstico de \"COMPATIBLE CON ASTROCITOMA PILOCITICO WHO 1\" para estudios de inmunohistoquímica por lo que se revisa marcación para GFAP, IDH, CD34, p53 y Ki67.",
+      "valor_corregido": "Se realizan niveles al bloque M2509975-1 que corresponde a \"tumor de hipofisis\" con diagnóstico de \"COMPATIBLE CON ASTROCITOMA PILOCITICO WHO 1\" para estudios de inmunohistoquímica por lo que se revisa marcación para GFAP, IDH, CD34, p53 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250916",
+      "timestamp": "2026-04-15T16:15:11.397447"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las celulas tumorales presentan positividad citoplasmática para GFAP, con Ki67 del 2% y P53 con expresion usual (Wild type). Además, negatividad para IDH, CD34.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las celulas tumorales presentan positividad citoplasmática para GFAP, con KI-67 del 2% y p53 con expresion usual (Wild type). Además, negatividad para IDH, CD34.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250916",
+      "timestamp": "2026-04-15T16:15:11.397448"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 52
+  }
+}

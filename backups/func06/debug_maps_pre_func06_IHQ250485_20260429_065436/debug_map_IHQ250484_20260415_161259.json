@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ250484_20260415_161259",
+  "numero_peticion": "IHQ250484",
+  "timestamp": "2026-04-15T16:12:59.783052",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250484\nCopia Pag. 1 de 1\nNombre : HUMBERTO DE JESUS ROMERO\nSUAREZ\nN. peticion : IHQ250484\nN.Identificación : CC. 4392255\nGenero : MASCULINO\nEdad : 67 años 8 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : MEDICA HOMBRES\nFecha Ingreso : 02/05/2025\nFecha Informe : 12/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPAROTIDA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2504603, el cual corresponde a biopsia de glándula parótida\nizquierda, con diagnóstico de \"ADENOMA PLEOMÓRFICO\". Se ordenan los siguientes marcadores:\nCKAE1E3, GFAP1, S100, SOX10, P63, CK5/6, CK7, CK20, Calponina, SMA. \nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales presentan inmunorreactividad positiva para: CKAE1E3, S100, SOX-10, p63, CK5/6 y\nCK7. Son negativas para CK20, Calponina y SMA.\nDIAGNÓSTICO\n Glándula salival parótida izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica:\nADENOMA PLEOMÓRFICO\nJORGE MORENO ACUÑA\nResponsable del análisis:\nMédico Patólogo\nPatólogo Clínico\nReg. Med. 10798-05\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 2410,
+      "reduccion_porcentaje": 98.72
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250484",
+      "caso_num": 19,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CALPONINA": "NEGATIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "nombre_completo": "HUMBERTO DE JESUS ROMERO SUAREZ",
+      "numero_peticion": "IHQ250484",
+      "identificacion": "4392255",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "67",
+      "eps": "ASMET SALUD EPS SAS",
+      "medico_tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "servicio": "MEDICA HOMBRES",
+      "fecha_ingreso": "02/05/2025",
+      "fecha_informe": "12/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250484",
+      "N. de identificación": "4392255",
+      "Tipo de documento": "CC",
+      "EPS": "ASMET SALUD EPS SAS",
+      "Servicio": "MEDICA HOMBRES",
+      "Médico tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/05/2025",
+      "Fecha Informe": "12/05/2025",
+      "nombres": "HUMBERTO DE JESUS ROMERO",
+      "Primer nombre": "HUMBERTO",
+      "Segundo nombre": "DE JESUS ROMERO",
+      "apellidos": "SUAREZ",
+      "Primer apellido": "SUAREZ",
+      "Segundo apellido": "",
+      "nombre_formal": "SUAREZ, HUMBERTO DE JESUS ROMERO",
+      "diagnostico": "Glándula salival parótida izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica: ADENOMA PLEOMÓRFICO JORGE MORENO ACUÑA Responsable del análisis: Médico Patólogo Patólogo Clínico Reg. Med. 10798-05 _________________________________________________________________________________________________",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva para: CKAE1E3, S100, SOX-10, p63, CK5/6 y CK7. Son negativas para CK20, Calponina y SMA.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2504603, el cual corresponde a biopsia de glándula parótida izquierda, con diagnóstico de \"ADENOMA PLEOMÓRFICO\". Se ordenan los siguientes marcadores: CKAE1E3, GFAP1, S100, SOX10, p63, CK5/6, CK7, CK20, Calponina, SMA.",
+      "ihq_organo": "GLÁNDULA SALIVAL PARÓTIDA IZQUIERDA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, GFAP1, S100, SOX10, P63, CK5/6, CK7, CK20, Calponina, SMA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GLÁNDULA SALIVAL PARÓTIDA IZQUIERDA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, GFAP1, S100, SOX10, P63, CK5/6, CK7, CK20, Calponina, SMA",
+      "IHQ_CK5_6": "NEGATIVO",
+      "extraction_timestamp": "2026-04-15T16:12:59.993675",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250484\nCopia Pag. 1 de 1\nNombre : HUMBERTO DE JESUS ROMERO\nSUAREZ\nN. peticion : IHQ250484\nN.Identificación : CC. 4392255\nGenero : MASCULINO\nEdad : 67 años 8 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : MEDICA HOMBRES\nFecha Ingreso : 02/05/2025\nFecha Informe : 12/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPAROTIDA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2504603, el cual corresponde a biopsia de glándula parótida\nizquierda, con diagnóstico de \"ADENOMA PLEOMÓRFICO\". Se ordenan los siguientes marcadores:\nCKAE1E3, GFAP1, S100, SOX10, P63, CK5/6, CK7, CK20, Calponina, SMA. \nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales presentan inmunorreactividad positiva para: CKAE1E3, S100, SOX-10, p63, CK5/6 y\nCK7. Son negativas para CK20, Calponina y SMA.\nDIAGNÓSTICO\n Glándula salival parótida izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica:\nADENOMA PLEOMÓRFICO\nJORGE MORENO ACUÑA\nResponsable del análisis:\nMédico Patólogo\nPatólogo Clínico\nReg. Med. 10798-05\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, GFAP1, S100, SOX10, P63, CK5/6, CK7, CK20, Calponina, SMA",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2504603, el cual corresponde a biopsia de glándula parótida izquierda, con diagnóstico de \"ADENOMA PLEOMÓRFICO\". Se ordenan los siguientes marcadores: CKAE1E3, GFAP1, S100, SOX10, P63, CK5/6, CK7, CK20, Calponina, SMA.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva para: CKAE1E3, S100, SOX-10, p63, CK5/6 y CK7. Son negativas para CK20, Calponina y SMA.",
+      "Descripcion Diagnostico": "Glándula salival parótida izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica: ADENOMA PLEOMÓRFICO JORGE MORENO ACUÑA Responsable del análisis: Médico Patólogo Patólogo Clínico Reg. Med. 10798-05 _________________________________________________________________________________________________",
+      "IHQ_ORGANO": "GLÁNDULA SALIVAL PARÓTIDA IZQUIERDA",
+      "Organo": "PAROTIDA IZQUIERDA",
+      "Diagnostico Coloracion": "ADENOMA PLEOMÓRFICO",
+      "Diagnostico Principal": "ADENOMA PLEOMÓRFICO JORGE MORENO ACUÑA RESPONSABLE DEL ANÁLISIS: MÉDICO PATÓLOGO PATÓLOGO CLÍNICO REG",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_GFAP": "",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK5_6": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CALPONINA": "NEGATIVO",
+      "IHQ_SMA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 136,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Glándula salival parótida izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica:\nADENOMA PLEOMÓRFICO\nJORGE MORENO ACUÑA\nResponsable del análisis:\nMédico Patólogo\nPatólogo Clínico\nReg. Med. 10798-05\n_________________________________________________________________________________________________",
+      "valor_corregido": "Glándula salival parótida izquierda. Lesión. Biopsia. Estudio de inmunohistoquímica: ADENOMA PLEOMÓRFICO JORGE MORENO ACUÑA Responsable del análisis: Médico Patólogo Patólogo Clínico Reg. Med. 10798-05 _________________________________________________________________________________________________",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250484",
+      "timestamp": "2026-04-15T16:12:59.993370"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2504603, el cual corresponde a biopsia de glándula parótida izquierda, con diagnóstico de \"ADENOMA PLEOMÓRFICO\". Se ordenan los siguientes marcadores: CKAE1E3, GFAP1, S100, SOX10, P63, CK5/6, CK7, CK20, Calponina, SMA.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2504603, el cual corresponde a biopsia de glándula parótida izquierda, con diagnóstico de \"ADENOMA PLEOMÓRFICO\". Se ordenan los siguientes marcadores: CKAE1E3, GFAP1, S100, SOX10, p63, CK5/6, CK7, CK20, Calponina, SMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250484",
+      "timestamp": "2026-04-15T16:12:59.993376"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 54
+  }
+}

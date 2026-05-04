@@ -1,0 +1,188 @@
+{
+  "session_id": "IHQ250321_20260410_080610",
+  "numero_peticion": "IHQ250321",
+  "timestamp": "2026-04-10T08:06:10.231629",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250321\nCopia Pag. 1 de 2\nNombre : GLADYS MARULANDA VALLADARES\nN. peticion : IHQ250321\nN.Identificación : CC. 31396271\nGenero : FEMENINO\nEdad : 69 años 13 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ENRIQUE HERRERA CASTAÑEDA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 01/04/2025\nFecha Informe : 09/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR PARED VAGINA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2503170” que corresponde a “tumor de pared de vagina” con diagnóstico de “CARCINOMA\nPOBREMENTE DIFERENCIADO ULCERADO E INFILTRANTE CON ABSCEDACIÓN SECUNDARIA”. Previa\nrevisión de la histología, se realizan niveles histológicos para tinción con p40, p16, SOX-10, CKAE1E3,\nPAX-8, estrógenos, Vimentina, CD10, napsina, RCC, TTF1, p53, CK7, CK20 y WT1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales muestran positividad para CKAE1E3, CK7, vimentina y PAX-8. \nLos marcadores CK20, WT1, TTF-1, RCC, napsina A, SOX-10, p40, p16 y receptores de estrógenos se\nencuentran negativos.\np53 no mutado (tipo Wild type). CD10 con marcación focal. \nDIAGNÓSTICO\nPared de vagina. Tumor. Biopsia. Estudio de inmunohistoquímica:\n-\nCARCINOMA\nPOBREMENTE\nDIFERENCIADO\nULCERADO\nE\nINFILTRANTE\nDE\nPROBABLE\nORIGEN\nGINECOLÓGICO.\nCOMENTARIOS\nLos hallazgos histopatológicos en asociación con resultados de inmunohistoquímica favorecen un\ncarcinoma pobremente diferenciado de origen ginecológico. Se recomienda correlacionar con el cuadro\nclínico y las imágenes diagnósticas.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250321\nCopia Pag. 2 de 2\nNombre : GLADYS MARULANDA VALLADARES\nN. peticion : IHQ250321\nN.Identificación : CC. 31396271\nGenero : FEMENINO\nEdad : 69 años 13 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ENRIQUE HERRERA CASTAÑEDA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 01/04/2025\nFecha Informe : 09/04/2025\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3611,
+      "reduccion_porcentaje": 97.97
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250321",
+      "caso_num": 8,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "nombre_completo": "GLADYS MARULANDA VALLADARES",
+      "numero_peticion": "IHQ250321",
+      "identificacion": "31396271",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "69",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "ENRIQUE HERRERA CASTAÑEDA",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "01/04/2025",
+      "fecha_informe": "09/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250321",
+      "N. de identificación": "31396271",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "ENRIQUE HERRERA CASTAÑEDA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "01/04/2025",
+      "Fecha Informe": "09/04/2025",
+      "nombres": "GLADYS MARULANDA",
+      "Primer nombre": "GLADYS",
+      "Segundo nombre": "MARULANDA",
+      "apellidos": "VALLADARES",
+      "Primer apellido": "VALLADARES",
+      "Segundo apellido": "",
+      "nombre_formal": "VALLADARES, GLADYS MARULANDA",
+      "diagnostico": "Pared de vagina. Tumor. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA POBREMENTE DIFERENCIADO ULCERADO E INFILTRANTE DE PROBABLE ORIGEN GINECOLÓGICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales muestran positividad para CKAE1E3, CK7, vimentina y PAX-8. Los marcadores CK20, WT1, TTF1, RCC, napsina A, SOX-10, p40, p16 y receptores de estrógenos se encuentran negativos. p53 no mutado (tipo Wild type). CD10 con marcación focal.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2503170\" que corresponde a \"tumor de pared de vagina\" con diagnóstico de \"CARCINOMA POBREMENTE DIFERENCIADO ULCERADO E INFILTRANTE CON ABSCEDACIÓN SECUNDARIA\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p40, p16, SOX-10, CKAE1E3, PAX-8, estrógenos, Vimentina, CD10, napsina, RCC, TTF1, p53, CK7, CK20 y WT1.",
+      "ihq_organo": "PARED DE VAGINA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P40, P16, SOX 10, CKAE1E3, PAX 8, Receptor de Estrógeno, VIMENTINA, CD10, NAPSIN, RCC, TTF-1, P53, CK7, CK20, WT1",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Los hallazgos histopatológicos en asociación con resultados de inmunohistoquímica favorecen un carcinoma pobremente diferenciado de origen ginecológico. Se recomienda correlacionar con el cuadro clínico y las imágenes diagnósticas.",
+      "IHQ_ORGANO": "PARED DE VAGINA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "Receptor de Estrógeno: SE ENCUENTRAN NEGATIVOS",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, SOX 10, CKAE1E3, PAX 8, Receptor de Estrógeno, VIMENTINA, CD10, NAPSIN, RCC, TTF-1, P53, CK7, CK20, WT1",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "SE ENCUENTRAN NEGATIVOS",
+      "p16": "NEGATIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-04-10T08:06:10.521654",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250321\nCopia Pag. 1 de 2\nNombre : GLADYS MARULANDA VALLADARES\nN. peticion : IHQ250321\nN.Identificación : CC. 31396271\nGenero : FEMENINO\nEdad : 69 años 13 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ENRIQUE HERRERA CASTAÑEDA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 01/04/2025\nFecha Informe : 09/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR PARED VAGINA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2503170” que corresponde a “tumor de pared de vagina” con diagnóstico de “CARCINOMA\nPOBREMENTE DIFERENCIADO ULCERADO E INFILTRANTE CON ABSCEDACIÓN SECUNDARIA”. Previa\nrevisión de la histología, se realizan niveles histológicos para tinción con p40, p16, SOX-10, CKAE1E3,\nPAX-8, estrógenos, Vimentina, CD10, napsina, RCC, TTF1, p53, CK7, CK20 y WT1.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales muestran positividad para CKAE1E3, CK7, vimentina y PAX-8. \nLos marcadores CK20, WT1, TTF-1, RCC, napsina A, SOX-10, p40, p16 y receptores de estrógenos se\nencuentran negativos.\np53 no mutado (tipo Wild type). CD10 con marcación focal. \nDIAGNÓSTICO\nPared de vagina. Tumor. Biopsia. Estudio de inmunohistoquímica:\n-\nCARCINOMA\nPOBREMENTE\nDIFERENCIADO\nULCERADO\nE\nINFILTRANTE\nDE\nPROBABLE\nORIGEN\nGINECOLÓGICO.\nCOMENTARIOS\nLos hallazgos histopatológicos en asociación con resultados de inmunohistoquímica favorecen un\ncarcinoma pobremente diferenciado de origen ginecológico. Se recomienda correlacionar con el cuadro\nclínico y las imágenes diagnósticas.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250321\nCopia Pag. 2 de 2\nNombre : GLADYS MARULANDA VALLADARES\nN. peticion : IHQ250321\nN.Identificación : CC. 31396271\nGenero : FEMENINO\nEdad : 69 años 13 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : ENRIQUE HERRERA CASTAÑEDA\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 01/04/2025\nFecha Informe : 09/04/2025\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, SOX 10, CKAE1AE3, PAX 8, Receptor de Estrógeno, VIMENTINA, CD10, NAPSIN, RCC, TTF-1, P53, CK7, CK20, WT1",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2503170” que corresponde a “tumor de pared de vagina” con diagnóstico de “CARCINOMA POBREMENTE DIFERENCIADO ULCERADO E INFILTRANTE CON ABSCEDACIÓN SECUNDARIA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p40, p16, SOX-10, CKAE1E3, PAX-8, estrógenos, Vimentina, CD10, napsina, RCC, TTF1, p53, CK7, CK20 y WT1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales muestran positividad para CKAE1E3, CK7, vimentina y PAX-8. Los marcadores CK20, WT1, TTF-1, RCC, napsina A, SOX-10, p40, p16 y receptores de estrógenos se encuentran negativos. p53 no mutado (tipo Wild type). CD10 con marcación focal.",
+      "Descripcion Diagnostico": "Pared de vagina. Tumor. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA POBREMENTE DIFERENCIADO ULCERADO E INFILTRANTE DE PROBABLE ORIGEN GINECOLÓGICO.",
+      "IHQ_ORGANO": "PARED DE VAGINA",
+      "Organo": "BX TUMOR PARED VAGINA",
+      "Diagnostico Coloracion": "CARCINOMA POBREMENTE DIFERENCIADO ULCERADO E INFILTRANTE CON ABSCEDACIÓN SECUNDARIA",
+      "Diagnostico Principal": "CARCINOMA POBREMENTE DIFERENCIADO ULCERADO E INFILTRANTE DE PROBABLE ORIGEN GINECOLÓGICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: SE ENCUENTRAN NEGATIVOS",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "SE ENCUENTRAN NEGATIVOS",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "IHQ_CD10": "NO MENCIONADO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_RCC": "NO MENCIONADO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_P53": "NO MENCIONADO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NO MENCIONADO",
+      "IHQ_WT1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 129,
+      "campos_completos": 49,
+      "biomarcadores_encontrados": 15,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 49
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pared de vagina. Tumor. Biopsia. Estudio de inmunohistoquímica:\n-\nCARCINOMA\nPOBREMENTE\nDIFERENCIADO\nULCERADO\nE\nINFILTRANTE\nDE\nPROBABLE\nORIGEN\nGINECOLÓGICO.",
+      "valor_corregido": "Pared de vagina. Tumor. Biopsia. Estudio de inmunohistoquímica: - CARCINOMA POBREMENTE DIFERENCIADO ULCERADO E INFILTRANTE DE PROBABLE ORIGEN GINECOLÓGICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250321",
+      "timestamp": "2026-04-10T08:06:10.521313"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2503170” que corresponde a “tumor de pared de vagina” con diagnóstico de “CARCINOMA POBREMENTE DIFERENCIADO ULCERADO E INFILTRANTE CON ABSCEDACIÓN SECUNDARIA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p40, p16, SOX-10, CKAE1E3, PAX-8, estrógenos, Vimentina, CD10, napsina, RCC, TTF1, p53, CK7, CK20 y WT1.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2503170\" que corresponde a \"tumor de pared de vagina\" con diagnóstico de \"CARCINOMA POBREMENTE DIFERENCIADO ULCERADO E INFILTRANTE CON ABSCEDACIÓN SECUNDARIA\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p40, p16, SOX-10, CKAE1E3, PAX-8, estrógenos, Vimentina, CD10, napsina, RCC, TTF1, p53, CK7, CK20 y WT1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250321",
+      "timestamp": "2026-04-10T08:06:10.521319"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales muestran positividad para CKAE1E3, CK7, vimentina y PAX-8. Los marcadores CK20, WT1, TTF-1, RCC, napsina A, SOX-10, p40, p16 y receptores de estrógenos se encuentran negativos. p53 no mutado (tipo Wild type). CD10 con marcación focal.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales muestran positividad para CKAE1E3, CK7, vimentina y PAX-8. Los marcadores CK20, WT1, TTF1, RCC, napsina A, SOX-10, p40, p16 y receptores de estrógenos se encuentran negativos. p53 no mutado (tipo Wild type). CD10 con marcación focal.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250321",
+      "timestamp": "2026-04-10T08:06:10.521321"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos histopatológicos en asociación con resultados de inmunohistoquímica favorecen un\ncarcinoma pobremente diferenciado de origen ginecológico. Se recomienda correlacionar con el cuadro\nclínico y las imágenes diagnósticas.",
+      "valor_corregido": "Los hallazgos histopatológicos en asociación con resultados de inmunohistoquímica favorecen un carcinoma pobremente diferenciado de origen ginecológico. Se recomienda correlacionar con el cuadro clínico y las imágenes diagnósticas.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250321",
+      "timestamp": "2026-04-10T08:06:10.521322"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 61
+  }
+}

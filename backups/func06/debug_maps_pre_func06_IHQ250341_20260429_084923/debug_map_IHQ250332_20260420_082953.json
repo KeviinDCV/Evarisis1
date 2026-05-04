@@ -1,0 +1,148 @@
+{
+  "session_id": "IHQ250332_20260420_082953",
+  "numero_peticion": "IHQ250332",
+  "timestamp": "2026-04-20T08:29:53.572642",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250332\nCopia Pag. 1 de 2\nNombre : OLGA LILIANA BUITRAGO DELGADO\nN. peticion : IHQ250332\nN.Identificación : CC. 29621840\nGenero : FEMENINO\nEdad : 60 años 1 mes 3 dias\nEPS : FOMAG\nMédico tratante : SANDRA CHAVARRIAGA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 02/04/2025\nFecha Informe : 05/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nUTERO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2502363-1 que corresponde a histerectomia, con diagnóstico de\n\"CARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, NOS; TAMAÑO TUMORAL: 22x17milímetros\n(MICROSCOPICO); MODERADAMENTE DIFERENCIADO; BORDE EXOCERVICAL\nCOMPROMETIDO; PARAMETRIOS E ISTMO NEGATIVOS PARA NEOPLASIA; NEGATIVO PARA INVASION\nLINFOVASCULAR; NEGATIVO PARA INVASION PERINEURAL; ENDOMETRIO ATROFICO; ADENOMIOSIS\". Se\nrealizan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©\nLas células tumorales presentan diferenciación escamosa siendo positivas de manera difusa para p40 y\npresentan marcación en bloque nuclear y citoplasmática para p16.\nDIAGNÓSTICO\nÚtero. Histerectomia. Estudios de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, p16 POSITIVO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 37 ---\nIHQ250332\nCopia Pag. 2 de 2\nNombre : OLGA LILIANA BUITRAGO DELGADO\nN. peticion : IHQ250332\nN.Identificación : CC. 29621840\nGenero : FEMENINO\nEdad : 60 años 1 mes 3 dias\nEPS : FOMAG\nMédico tratante : SANDRA CHAVARRIAGA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 02/04/2025\nFecha Informe : 05/04/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3139,
+      "reduccion_porcentaje": 98.24
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250332",
+      "caso_num": 19,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO (difusa)",
+      "nombre_completo": "OLGA LILIANA BUITRAGO DELGADO",
+      "numero_peticion": "IHQ250332",
+      "identificacion": "29621840",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "60",
+      "eps": "FOMAG",
+      "medico_tratante": "SANDRA CHAVARRIAGA",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "02/04/2025",
+      "fecha_informe": "05/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250332",
+      "N. de identificación": "29621840",
+      "Tipo de documento": "CC",
+      "EPS": "FOMAG",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "SANDRA CHAVARRIAGA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/04/2025",
+      "Fecha Informe": "05/04/2025",
+      "nombres": "OLGA LILIANA",
+      "Primer nombre": "OLGA",
+      "Segundo nombre": "LILIANA",
+      "apellidos": "BUITRAGO DELGADO",
+      "Primer apellido": "BUITRAGO",
+      "Segundo apellido": "DELGADO",
+      "nombre_formal": "BUITRAGO DELGADO, OLGA LILIANA",
+      "diagnostico": "Útero. Histerectomia. Estudios de inmunohistoquímica: CARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, p16 POSITIVO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© Las células tumorales presentan diferenciación escamosa siendo positivas de manera difusa para p40 y presentan marcación en bloque nuclear y citoplasmática para p16.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2502363-1 que corresponde a histerectomia, con diagnóstico de \"CARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, NOS; TAMAÑO TUMORAL: 22 x17 milímetros (MICROSCOPICO); MODERADAMENTE DIFERENCIADO; BORDE EXOCERVICAL COMPROMETIDO; PARAMETRIOS E ISTMO NEGATIVOS PARA NEOPLASIA; NEGATIVO PARA INVASION LINFOVASCULAR; NEGATIVO PARA INVASION PERINEURAL; ENDOMETRIO ATROFICO; ADENOMIOSIS\". Se realizan estudios de inmunohistoquímica.",
+      "ihq_organo": "ÚTERO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ÚTERO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "p16": "POSITIVO",
+      "p40": "POSITIVO (difusa)",
+      "extraction_timestamp": "2026-04-20T08:29:53.820519",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250332\nCopia Pag. 1 de 2\nNombre : OLGA LILIANA BUITRAGO DELGADO\nN. peticion : IHQ250332\nN.Identificación : CC. 29621840\nGenero : FEMENINO\nEdad : 60 años 1 mes 3 dias\nEPS : FOMAG\nMédico tratante : SANDRA CHAVARRIAGA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 02/04/2025\nFecha Informe : 05/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nUTERO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2502363-1 que corresponde a histerectomia, con diagnóstico de\n\"CARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, NOS; TAMAÑO TUMORAL: 22x17milímetros\n(MICROSCOPICO); MODERADAMENTE DIFERENCIADO; BORDE EXOCERVICAL\nCOMPROMETIDO; PARAMETRIOS E ISTMO NEGATIVOS PARA NEOPLASIA; NEGATIVO PARA INVASION\nLINFOVASCULAR; NEGATIVO PARA INVASION PERINEURAL; ENDOMETRIO ATROFICO; ADENOMIOSIS\". Se\nrealizan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©\nLas células tumorales presentan diferenciación escamosa siendo positivas de manera difusa para p40 y\npresentan marcación en bloque nuclear y citoplasmática para p16.\nDIAGNÓSTICO\nÚtero. Histerectomia. Estudios de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, p16 POSITIVO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 37 ---\nIHQ250332\nCopia Pag. 2 de 2\nNombre : OLGA LILIANA BUITRAGO DELGADO\nN. peticion : IHQ250332\nN.Identificación : CC. 29621840\nGenero : FEMENINO\nEdad : 60 años 1 mes 3 dias\nEPS : FOMAG\nMédico tratante : SANDRA CHAVARRIAGA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 02/04/2025\nFecha Informe : 05/04/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 38 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2502363-1 que corresponde a histerectomia, con diagnóstico de \"CARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, NOS; TAMAÑO TUMORAL: 22x17milímetros (MICROSCOPICO); MODERADAMENTE DIFERENCIADO; BORDE EXOCERVICAL COMPROMETIDO; PARAMETRIOS E ISTMO NEGATIVOS PARA NEOPLASIA; NEGATIVO PARA INVASION LINFOVASCULAR; NEGATIVO PARA INVASION PERINEURAL; ENDOMETRIO ATROFICO; ADENOMIOSIS\". Se realizan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© Las células tumorales presentan diferenciación escamosa siendo positivas de manera difusa para p40 y presentan marcación en bloque nuclear y citoplasmática para p16.",
+      "Descripcion Diagnostico": "Útero. Histerectomia. Estudios de inmunohistoquímica: CARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, p16 POSITIVO.",
+      "IHQ_ORGANO": "ÚTERO",
+      "Organo": "UTERO",
+      "Diagnostico Coloracion": "CARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, NOS; TAMAÑO TUMORAL: 22X17MILÍMETROS (MICROSCOPICO); MODERADAMENTE DIFERENCIADO; BORDE EXOCERVICAL COMPROMETIDO; PARAMETRIOS E ISTMO NEGATIVOS PARA NEOPLASIA; NEGATIVO PARA INVASION LINFOVASCULAR; NEGATIVO PARA INVASION PERINEURAL; ENDOMETRIO ATROFICO; ADENOMIOSIS",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, P16 POSITIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO (difusa)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 141,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Útero. Histerectomia. Estudios de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, p16 POSITIVO.",
+      "valor_corregido": "Útero. Histerectomia. Estudios de inmunohistoquímica: CARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, p16 POSITIVO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250332",
+      "timestamp": "2026-04-20T08:29:53.820073"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2502363-1 que corresponde a histerectomia, con diagnóstico de \"CARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, NOS; TAMAÑO TUMORAL: 22x17milímetros (MICROSCOPICO); MODERADAMENTE DIFERENCIADO; BORDE EXOCERVICAL COMPROMETIDO; PARAMETRIOS E ISTMO NEGATIVOS PARA NEOPLASIA; NEGATIVO PARA INVASION LINFOVASCULAR; NEGATIVO PARA INVASION PERINEURAL; ENDOMETRIO ATROFICO; ADENOMIOSIS\". Se realizan estudios de inmunohistoquímica.",
+      "valor_corregido": "Se realizan niveles al bloque M2502363-1 que corresponde a histerectomia, con diagnóstico de \"CARCINOMA ESCAMOCELULAR INVASIVO EN CERVIX, NOS; TAMAÑO TUMORAL: 22 x17 milímetros (MICROSCOPICO); MODERADAMENTE DIFERENCIADO; BORDE EXOCERVICAL COMPROMETIDO; PARAMETRIOS E ISTMO NEGATIVOS PARA NEOPLASIA; NEGATIVO PARA INVASION LINFOVASCULAR; NEGATIVO PARA INVASION PERINEURAL; ENDOMETRIO ATROFICO; ADENOMIOSIS\". Se realizan estudios de inmunohistoquímica.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250332",
+      "timestamp": "2026-04-20T08:29:53.820078"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 50
+  }
+}

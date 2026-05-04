@@ -1,0 +1,145 @@
+{
+  "session_id": "IHQ250481_20260415_161259",
+  "numero_peticion": "IHQ250481",
+  "timestamp": "2026-04-15T16:12:59.248157",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250481\nCopia Pag. 1 de 2\nNombre : CECILIA FERREROSA DE MOLINA\nN. peticion : IHQ250481\nN.Identificación : CC. 29692686\nGenero : FEMENINO\nEdad : 73 años 1 mes 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 02/05/2025\nFecha Informe : 06/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PARED ABDOMINAL +\nOMENTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para revisión del caso M2502630 que corresponde a A.\"pared abdominal\" y B. \"omento\"\ncon diagnóstico de \"SIN EVIDENCIA DE MALIGNIDAD\" que consiste en tres láminas de H&E y tres bloques\nde parafina, por lo que se hace revisión del material y se realizan niveles para marcación\ninmunohistoquímica para CKAE1E3 y calretinina.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nA. Toda la muestra corresponde a fascículos de fibras de músculo esquelético de arquitectura histológica\nusual sin presencia de celularidad neoplásica ni marcación para calretinina ni CKAE1E3.\nB. Se observa tejido adiposo maduro con recubrimiento por mesotelio positivo para calretinina sin\nmarcación para CKAE1E3 con algunos focos de células mesoteliales reactivas, sin evidencia de\ncelularidad neoplásica.\nDIAGNÓSTICO\n A. Pared abdominal. Biopsia. Estudios de inmunohistoquímica.\nMÚSCULO ESQUELÉTICO SIN EVIDENCIA DE MALIGNIDAD.\nB.Omento. Omentectomía parcial. Estudios de inmunohistoquímica.\nTEJIDO ADIPOSO MADURO SIN EVIDENCIA DE MALIGNIDAD.\nCOMENTARIOS\nDado la sospecha de malignidad indicada por el médico tratante se realizó procesamiento de todo el\ntejido, múltiples niveles a los bloques de parafina y estudios de inmunohistoquímica sin evidencia de\ncelularidad neoplásica.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---\nIHQ250481\nCopia Pag. 2 de 2\nNombre : CECILIA FERREROSA DE MOLINA\nN. peticion : IHQ250481\nN.Identificación : CC. 29692686\nGenero : FEMENINO\nEdad : 73 años 1 mes 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 02/05/2025\nFecha Informe : 06/05/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3666,
+      "reduccion_porcentaje": 98.06
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250481",
+      "caso_num": 17,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "nombre_completo": "CECILIA FERREROSA DE MOLINA",
+      "numero_peticion": "IHQ250481",
+      "identificacion": "29692686",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "73",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "02/05/2025",
+      "fecha_informe": "06/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250481",
+      "N. de identificación": "29692686",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/05/2025",
+      "Fecha Informe": "06/05/2025",
+      "nombres": "CECILIA FERREROSA",
+      "Primer nombre": "CECILIA",
+      "Segundo nombre": "FERREROSA",
+      "apellidos": "DE MOLINA",
+      "Primer apellido": "DE",
+      "Segundo apellido": "MOLINA",
+      "nombre_formal": "DE MOLINA, CECILIA FERREROSA",
+      "diagnostico": "A. Pared abdominal. Biopsia. Estudios de inmunohistoquímica. MÚSCULO ESQUELÉTICO SIN EVIDENCIA DE MALIGNIDAD. B.Omento. Omentectomía parcial. Estudios de inmunohistoquímica. TEJIDO ADIPOSO MADURO SIN EVIDENCIA DE MALIGNIDAD.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A. Toda la muestra corresponde a fascículos de fibras de músculo esquelético de arquitectura histológica usual sin presencia de celularidad neoplásica ni marcación para calretinina ni CKAE1E3. B. Se observa tejido adiposo maduro con recubrimiento por mesotelio positivo para calretinina sin marcación para CKAE1E3 con algunos focos de células mesoteliales reactivas, sin evidencia de celularidad neoplásica.",
+      "descripcion_macroscopica": "Se recibe orden para revisión del caso M2502630 que corresponde a A.\"pared abdominal\" y B. \"omento\" con diagnóstico de \"SIN EVIDENCIA DE MALIGNIDAD\" que consiste en tres láminas de H&E y tres bloques de parafina, por lo que se hace revisión del material y se realizan niveles para marcación inmunohistoquímica para CKAE1E3 y calretinina.",
+      "ihq_organo": "PARED ABDOMINAL",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, CALRETININA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Dado la sospecha de malignidad indicada por el médico tratante se realizó procesamiento de todo el tejido, múltiples niveles a los bloques de parafina y estudios de inmunohistoquímica sin evidencia de celularidad neoplásica. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 34 --- IHQ250481 Copia Pag. 2 de 2 Nombre : CECILIA FERREROSA DE MOLINA N. peticion : IHQ250481 N.Identificación : CC. 29692686 Genero : FEMENINO Edad : 73 años 1 mes 28 dias EPS : NUEVA EPS Médico tratante : LISBETH PATRICIA RAMIREZ Servicio : UNIDAD DE ONCOLOGIA COEX Fecha Ingreso : 02/05/2025 Fecha Informe : 06/05/2025",
+      "IHQ_ORGANO": "PARED ABDOMINAL",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, CALRETININA",
+      "extraction_timestamp": "2026-04-15T16:12:59.538898",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250481\nCopia Pag. 1 de 2\nNombre : CECILIA FERREROSA DE MOLINA\nN. peticion : IHQ250481\nN.Identificación : CC. 29692686\nGenero : FEMENINO\nEdad : 73 años 1 mes 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 02/05/2025\nFecha Informe : 06/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PARED ABDOMINAL +\nOMENTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para revisión del caso M2502630 que corresponde a A.\"pared abdominal\" y B. \"omento\"\ncon diagnóstico de \"SIN EVIDENCIA DE MALIGNIDAD\" que consiste en tres láminas de H&E y tres bloques\nde parafina, por lo que se hace revisión del material y se realizan niveles para marcación\ninmunohistoquímica para CKAE1E3 y calretinina.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nA. Toda la muestra corresponde a fascículos de fibras de músculo esquelético de arquitectura histológica\nusual sin presencia de celularidad neoplásica ni marcación para calretinina ni CKAE1E3.\nB. Se observa tejido adiposo maduro con recubrimiento por mesotelio positivo para calretinina sin\nmarcación para CKAE1E3 con algunos focos de células mesoteliales reactivas, sin evidencia de\ncelularidad neoplásica.\nDIAGNÓSTICO\n A. Pared abdominal. Biopsia. Estudios de inmunohistoquímica.\nMÚSCULO ESQUELÉTICO SIN EVIDENCIA DE MALIGNIDAD.\nB.Omento. Omentectomía parcial. Estudios de inmunohistoquímica.\nTEJIDO ADIPOSO MADURO SIN EVIDENCIA DE MALIGNIDAD.\nCOMENTARIOS\nDado la sospecha de malignidad indicada por el médico tratante se realizó procesamiento de todo el\ntejido, múltiples niveles a los bloques de parafina y estudios de inmunohistoquímica sin evidencia de\ncelularidad neoplásica.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---\nIHQ250481\nCopia Pag. 2 de 2\nNombre : CECILIA FERREROSA DE MOLINA\nN. peticion : IHQ250481\nN.Identificación : CC. 29692686\nGenero : FEMENINO\nEdad : 73 años 1 mes 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 02/05/2025\nFecha Informe : 06/05/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, CALRETININA",
+      "Descripcion macroscopica": "Se recibe orden para revisión del caso M2502630 que corresponde a A.\"pared abdominal\" y B. \"omento\" con diagnóstico de \"SIN EVIDENCIA DE MALIGNIDAD\" que consiste en tres láminas de H&E y tres bloques de parafina, por lo que se hace revisión del material y se realizan niveles para marcación inmunohistoquímica para CKAE1E3 y calretinina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. A. Toda la muestra corresponde a fascículos de fibras de músculo esquelético de arquitectura histológica usual sin presencia de celularidad neoplásica ni marcación para calretinina ni CKAE1E3. B. Se observa tejido adiposo maduro con recubrimiento por mesotelio positivo para calretinina sin marcación para CKAE1E3 con algunos focos de células mesoteliales reactivas, sin evidencia de celularidad neoplásica.",
+      "Descripcion Diagnostico": "A. Pared abdominal. Biopsia. Estudios de inmunohistoquímica. MÚSCULO ESQUELÉTICO SIN EVIDENCIA DE MALIGNIDAD. B.Omento. Omentectomía parcial. Estudios de inmunohistoquímica. TEJIDO ADIPOSO MADURO SIN EVIDENCIA DE MALIGNIDAD.",
+      "IHQ_ORGANO": "PARED ABDOMINAL",
+      "Organo": "BX PARED ABDOMINAL + OMENTO",
+      "Diagnostico Coloracion": "SIN EVIDENCIA DE MALIGNIDAD",
+      "Diagnostico Principal": "MÚSCULO ESQUELÉTICO SIN EVIDENCIA DE MALIGNIDAD",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CALRETININA": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 141,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Pared abdominal. Biopsia. Estudios de inmunohistoquímica.\nMÚSCULO ESQUELÉTICO SIN EVIDENCIA DE MALIGNIDAD.\nB.Omento. Omentectomía parcial. Estudios de inmunohistoquímica.\nTEJIDO ADIPOSO MADURO SIN EVIDENCIA DE MALIGNIDAD.",
+      "valor_corregido": "A. Pared abdominal. Biopsia. Estudios de inmunohistoquímica. MÚSCULO ESQUELÉTICO SIN EVIDENCIA DE MALIGNIDAD. B.Omento. Omentectomía parcial. Estudios de inmunohistoquímica. TEJIDO ADIPOSO MADURO SIN EVIDENCIA DE MALIGNIDAD.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250481",
+      "timestamp": "2026-04-15T16:12:59.538513"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Dado la sospecha de malignidad indicada por el médico tratante se realizó procesamiento de todo el\ntejido, múltiples niveles a los bloques de parafina y estudios de inmunohistoquímica sin evidencia de\ncelularidad neoplásica.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---\nIHQ250481\nCopia Pag. 2 de 2\nNombre : CECILIA FERREROSA DE MOLINA\nN. peticion : IHQ250481\nN.Identificación : CC. 29692686\nGenero : FEMENINO\nEdad : 73 años 1 mes 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 02/05/2025\nFecha Informe : 06/05/2025",
+      "valor_corregido": "Dado la sospecha de malignidad indicada por el médico tratante se realizó procesamiento de todo el tejido, múltiples niveles a los bloques de parafina y estudios de inmunohistoquímica sin evidencia de celularidad neoplásica. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 34 --- IHQ250481 Copia Pag. 2 de 2 Nombre : CECILIA FERREROSA DE MOLINA N. peticion : IHQ250481 N.Identificación : CC. 29692686 Genero : FEMENINO Edad : 73 años 1 mes 28 dias EPS : NUEVA EPS Médico tratante : LISBETH PATRICIA RAMIREZ Servicio : UNIDAD DE ONCOLOGIA COEX Fecha Ingreso : 02/05/2025 Fecha Informe : 06/05/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250481",
+      "timestamp": "2026-04-15T16:12:59.538519"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 50
+  }
+}

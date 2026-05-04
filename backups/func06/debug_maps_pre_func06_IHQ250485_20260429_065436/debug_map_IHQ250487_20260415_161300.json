@@ -1,0 +1,145 @@
+{
+  "session_id": "IHQ250487_20260415_161300",
+  "numero_peticion": "IHQ250487",
+  "timestamp": "2026-04-15T16:13:00.570804",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250487\nCopia Pag. 1 de 1\nNombre : CARLOS JULIO VALVERDE\nDOMINGUEZ\nN. peticion : IHQ250487\nN.Identificación : CC. 14755139\nGenero : MASCULINO\nEdad : 64 años 2 meses 21 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 05/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nAMIGDALA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional\nrotulado como \" M2400967 \" correspondiente a “Amígdala derecha\". con diagnóstico de \" CARCINOMA\nESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO.\". Previa revisión de la histología se\nrealizan niveles histológicos al bloque para tinción con p16\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales tienen marcación positiva en bloque para p16\nDIAGNÓSTICO\n Amígdala derecha. Lesión. Biopsia. Estudio de inmunohistoquimica:\nCARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO\nP16 POSITIVO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 43 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 2450,
+      "reduccion_porcentaje": 98.7
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250487",
+      "caso_num": 22,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "nombre_completo": "CARLOS JULIO VALVERDE DOMINGUEZ",
+      "numero_peticion": "IHQ250487",
+      "identificacion": "14755139",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "64",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "05/05/2025",
+      "fecha_informe": "16/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250487",
+      "N. de identificación": "14755139",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "05/05/2025",
+      "Fecha Informe": "16/05/2025",
+      "nombres": "CARLOS JULIO VALVERDE",
+      "Primer nombre": "CARLOS",
+      "Segundo nombre": "JULIO VALVERDE",
+      "apellidos": "DOMINGUEZ",
+      "Primer apellido": "DOMINGUEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "DOMINGUEZ, CARLOS JULIO VALVERDE",
+      "diagnostico": "Amígdala derecha. Lesión. Biopsia. Estudio de inmunohistoquimica: CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO p16 POSITIVO",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales tienen marcación positiva en bloque para p16",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \" M2400967 \" correspondiente a \"Amígdala derecha\". con diagnóstico de \" CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO.\". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con p16",
+      "ihq_organo": "AMÍGDALA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "AMÍGDALA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2026-04-15T16:13:00.782629",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250487\nCopia Pag. 1 de 1\nNombre : CARLOS JULIO VALVERDE\nDOMINGUEZ\nN. peticion : IHQ250487\nN.Identificación : CC. 14755139\nGenero : MASCULINO\nEdad : 64 años 2 meses 21 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 05/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nAMIGDALA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional\nrotulado como \" M2400967 \" correspondiente a “Amígdala derecha\". con diagnóstico de \" CARCINOMA\nESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO.\". Previa revisión de la histología se\nrealizan niveles histológicos al bloque para tinción con p16\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales tienen marcación positiva en bloque para p16\nDIAGNÓSTICO\n Amígdala derecha. Lesión. Biopsia. Estudio de inmunohistoquimica:\nCARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO\nP16 POSITIVO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 43 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \" M2400967 \" correspondiente a “Amígdala derecha\". con diagnóstico de \" CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO.\". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con p16",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales tienen marcación positiva en bloque para p16",
+      "Descripcion Diagnostico": "Amígdala derecha. Lesión. Biopsia. Estudio de inmunohistoquimica: CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO p16 POSITIVO",
+      "IHQ_ORGANO": "AMÍGDALA DERECHA",
+      "Organo": "AMIGDALA DERECHA",
+      "Diagnostico Coloracion": "CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO P16 POSITIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 143,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 1,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 143,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Amígdala derecha. Lesión. Biopsia. Estudio de inmunohistoquimica:\nCARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO\nP16 POSITIVO",
+      "valor_corregido": "Amígdala derecha. Lesión. Biopsia. Estudio de inmunohistoquimica: CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO p16 POSITIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250487",
+      "timestamp": "2026-04-15T16:13:00.782332"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \" M2400967 \" correspondiente a “Amígdala derecha\". con diagnóstico de \" CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO.\". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con p16",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \" M2400967 \" correspondiente a \"Amígdala derecha\". con diagnóstico de \" CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO, INVASIVO.\". Previa revisión de la histología se realizan niveles histológicos al bloque para tinción con p16",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250487",
+      "timestamp": "2026-04-15T16:13:00.782338"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 47
+  }
+}

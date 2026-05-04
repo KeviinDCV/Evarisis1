@@ -1,0 +1,145 @@
+{
+  "session_id": "IHQ250905_20260410_104533",
+  "numero_peticion": "IHQ250905",
+  "timestamp": "2026-04-10T10:45:33.725895",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250905\nCopia Pag. 1 de 2\nNombre : MARIA ESTHER VASQUEZ VELA\nN. peticion : IHQ250905\nN.Identificación : CC. 31142100\nGenero : FEMENINO\nEdad : 72 años 1 mes 19 dias\nEPS : S.O.S\nMédico tratante : EULER JAVIER BURBANO\nServicio : GINECOLOGIA\nFecha Ingreso : 20/08/2025\nFecha Informe : 26/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPRODUCTO DE\nVULVECTOMIA\n2025-07-28\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de Inmunohistoquímica\nCaso institucional: M2507766\nÓrgano: Producto de vulvectomía. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nRESULTADO DE INMUNOHISTOQUÍMICA.\nEn las inmunotinciones, las células neoplásicas son fuertemente positivas para CK7 y GATA 3 y\nEMA, negativas para CK20, SOX10 y CDX2, lo que respalda el diagnóstico.\nDiagnóstico Inicial: \n-ENFERMEDAD DE PAGET EXTRAMAMARIA, REQUIERE ESTUDIOS DE\nINMUNOHISTOQUÍMICA. \n-TAMAÑO TUMORAL: 5 x 4 CENTÍMETROS. \n-BORDES DE RESECCIÓN LIBRES. \nFecha de diagnóstico: 08-07-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos\nal bloque 3 y 5.\nEstudios Solicitados:\nSe realizó tinción especial para CK7, CK20, CDX2, EMA, SOX 10, GATA 3.\nDIAGNÓSTICO\nVulva. Historia de enfermedad de paget extramamaria. Resección. Estudio de\ninmunohistoquímica. \nENFERMEDAD DE PAGET EXTRAMAMARIA.\nTAMAÑO TUMORAL: 5 x 4 CENTÍMETROS. \nBORDES DE RESECCIÓN LIBRES.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---\nIHQ250905\nCopia Pag. 2 de 2\nNombre : MARIA ESTHER VASQUEZ VELA\nN. peticion : IHQ250905\nN.Identificación : CC. 31142100\nGenero : FEMENINO\nEdad : 72 años 1 mes 19 dias\nEPS : S.O.S\nMédico tratante : EULER JAVIER BURBANO\nServicio : GINECOLOGIA\nFecha Ingreso : 20/08/2025\nFecha Informe : 26/08/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 57 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3336,
+      "reduccion_porcentaje": 98.31
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250905",
+      "caso_num": 27,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_GATA3": "POSITIVO",
+      "IHQ_EMA": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "nombre_completo": "MARIA ESTHER VASQUEZ VELA",
+      "numero_peticion": "IHQ250905",
+      "identificacion": "31142100",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "72",
+      "eps": "S.O.S",
+      "medico_tratante": "EULER JAVIER BURBANO",
+      "servicio": "GINECOLOGIA",
+      "fecha_ingreso": "20/08/2025",
+      "fecha_informe": "26/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250905",
+      "N. de identificación": "31142100",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S",
+      "Servicio": "GINECOLOGIA",
+      "Médico tratante": "EULER JAVIER BURBANO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/08/2025",
+      "Fecha Informe": "26/08/2025",
+      "nombres": "MARIA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "",
+      "apellidos": "ESTHER VASQUEZ VELA",
+      "Primer apellido": "ESTHER",
+      "Segundo apellido": "VASQUEZ VELA",
+      "nombre_formal": "ESTHER VASQUEZ VELA, MARIA",
+      "diagnostico": "Vulva. Historia de enfermedad de paget extramamaria. Resección. Estudio de inmunohistoquímica. ENFERMEDAD DE PAGET EXTRAMAMARIA. TAMAÑO TUMORAL: 5 x 4 CENTÍMETROS. BORDES DE RESECCIÓN LIBRES: 20/08/2025",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. RESULTADO DE INMUNOHISTOQUÍMICA. En las inmunotinciones, las células neoplásicas son fuertemente positivas para CK7 y GATA 3 y EMA, negativas para CK20, SOX10 y CDX2, lo que respalda el diagnóstico. Diagnóstico Inicial: -ENFERMEDAD DE PAGET EXTRAMAMARIA, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA. -TAMAÑO TUMORAL: 5 x 4 CENTÍMETROS. -BORDES DE RESECCIÓN LIBRES. Fecha de diagnóstico: 08-07-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al bloque 3 y 5. Estudios Solicitados: Se realizó tinción especial para CK7, CK20, CDX2, EMA, SOX 10, GATA 3.",
+      "descripcion_macroscopica": "Informe de Estudios de Inmunohistoquímica Caso institucional: M2507766 Órgano: Producto de vulvectomía.",
+      "ihq_organo": "VULVA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "GINECOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, CDX2, EMA, SOX10, GATA3",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "VULVA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, CDX2, EMA, SOX10, GATA3",
+      "IHQ_SOX10": "POSITIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "extraction_timestamp": "2026-04-10T10:45:34.060446",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250905\nCopia Pag. 1 de 2\nNombre : MARIA ESTHER VASQUEZ VELA\nN. peticion : IHQ250905\nN.Identificación : CC. 31142100\nGenero : FEMENINO\nEdad : 72 años 1 mes 19 dias\nEPS : S.O.S\nMédico tratante : EULER JAVIER BURBANO\nServicio : GINECOLOGIA\nFecha Ingreso : 20/08/2025\nFecha Informe : 26/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPRODUCTO DE\nVULVECTOMIA\n2025-07-28\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de Inmunohistoquímica\nCaso institucional: M2507766\nÓrgano: Producto de vulvectomía. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nRESULTADO DE INMUNOHISTOQUÍMICA.\nEn las inmunotinciones, las células neoplásicas son fuertemente positivas para CK7 y GATA 3 y\nEMA, negativas para CK20, SOX10 y CDX2, lo que respalda el diagnóstico.\nDiagnóstico Inicial: \n-ENFERMEDAD DE PAGET EXTRAMAMARIA, REQUIERE ESTUDIOS DE\nINMUNOHISTOQUÍMICA. \n-TAMAÑO TUMORAL: 5 x 4 CENTÍMETROS. \n-BORDES DE RESECCIÓN LIBRES. \nFecha de diagnóstico: 08-07-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos\nal bloque 3 y 5.\nEstudios Solicitados:\nSe realizó tinción especial para CK7, CK20, CDX2, EMA, SOX 10, GATA 3.\nDIAGNÓSTICO\nVulva. Historia de enfermedad de paget extramamaria. Resección. Estudio de\ninmunohistoquímica. \nENFERMEDAD DE PAGET EXTRAMAMARIA.\nTAMAÑO TUMORAL: 5 x 4 CENTÍMETROS. \nBORDES DE RESECCIÓN LIBRES.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---\nIHQ250905\nCopia Pag. 2 de 2\nNombre : MARIA ESTHER VASQUEZ VELA\nN. peticion : IHQ250905\nN.Identificación : CC. 31142100\nGenero : FEMENINO\nEdad : 72 años 1 mes 19 dias\nEPS : S.O.S\nMédico tratante : EULER JAVIER BURBANO\nServicio : GINECOLOGIA\nFecha Ingreso : 20/08/2025\nFecha Informe : 26/08/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 57 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, CDX2, EMA, SOX10, GATA3",
+      "Descripcion macroscopica": "Informe de Estudios de Inmunohistoquímica Caso institucional: M2507766 Órgano: Producto de vulvectomía.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. RESULTADO DE INMUNOHISTOQUÍMICA. En las inmunotinciones, las células neoplásicas son fuertemente positivas para CK7 y GATA 3 y EMA, negativas para CK20, SOX10 y CDX2, lo que respalda el diagnóstico. Diagnóstico Inicial: -ENFERMEDAD DE PAGET EXTRAMAMARIA, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA. -TAMAÑO TUMORAL: 5 x 4 CENTÍMETROS. -BORDES DE RESECCIÓN LIBRES. Fecha de diagnóstico: 08-07-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al bloque 3 y 5. Estudios Solicitados: Se realizó tinción especial para CK7, CK20, CDX2, EMA, SOX 10, GATA 3.",
+      "Descripcion Diagnostico": "Vulva. Historia de enfermedad de paget extramamaria. Resección. Estudio de inmunohistoquímica. ENFERMEDAD DE PAGET EXTRAMAMARIA. TAMAÑO TUMORAL: 5 x 4 CENTÍMETROS. BORDES DE RESECCIÓN LIBRES: 20/08/2025",
+      "IHQ_ORGANO": "VULVA",
+      "Organo": "PRODUCTO DE VULVECTOMIA",
+      "Diagnostico Coloracion": "-ENFERMEDAD DE PAGET EXTRAMAMARIA, REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA. -TAMAÑO TUMORAL: 5 X 4 CENTÍMETROS. -BORDES DE RESECCIÓN LIBRES",
+      "Diagnostico Principal": "ENFERMEDAD DE PAGET EXTRAMAMARIA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_EMA": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO",
+      "IHQ_GATA3": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 138,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Vulva. Historia de enfermedad de paget extramamaria. Resección. Estudio de\ninmunohistoquímica. \nENFERMEDAD DE PAGET EXTRAMAMARIA.\nTAMAÑO TUMORAL: 5 x 4 CENTÍMETROS. \nBORDES DE RESECCIÓN LIBRES: 20/08/2025",
+      "valor_corregido": "Vulva. Historia de enfermedad de paget extramamaria. Resección. Estudio de inmunohistoquímica. ENFERMEDAD DE PAGET EXTRAMAMARIA. TAMAÑO TUMORAL: 5 x 4 CENTÍMETROS. BORDES DE RESECCIÓN LIBRES: 20/08/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250905",
+      "timestamp": "2026-04-10T10:45:34.060103"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 53
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "session_id": "IHQ250506_20260410_080705",
+  "numero_peticion": "IHQ250506",
+  "timestamp": "2026-04-10T08:07:05.441382",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250506\nCopia Pag. 1 de 2\nNombre : ISLANIA NIETO GRANOBLES\nN. peticion : IHQ250506\nN.Identificación : CC. 29684306\nGenero : FEMENINO\nEdad : 55 años 7 meses 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MARIA FERNANDA LEDESMA\nServicio : MEDICA MUJERES\nFecha Ingreso : 09/05/2025\nFecha Informe : 23/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGLANDULA LAGRIMAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2504910 bloque A y B” que corresponde a “A y B. Biopsia glandula lacrimal,\nmusculo periorbitario.\" con diagnóstico de “VASCULITIS AGUDA Y CRONICA. ”. Previa revisión de\nla histología, se realizan niveles histológicos para tinción con: CD3, CD38, CD68, CD20, IgG4, IgG.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células inflamatorias perivasculares muestran marcación positiva en algunas células de\nlinfocitos B (CD20+) y T (CD3+). Asimismo, se observa expresión de CD38+ en células\nplasmáticas perivasculares. La presencia de CD68 indica la existencia de histiocitos y monocitos\nperivasculares, así como en el tejido circundante. Además, se identifica marcación positiva para\nIgG en ciertas células plasmáticas, mientras que la expresión de IgG4 es negativa.\nDIAGNÓSTICO\nA y B. glándula lacrimal, musculo periorbitaria. Biopsia. Estudios de inmunohistoquímica.\nVASCULITIS AGUDA Y CRÓNICA.\nLOS HALLAZGOS HISTOLÓGICOS MUESTRAN MARCACION POLICLONAL PERIVASCULAR, SIN\nMARCION DE IGG4 .\n INFLAMACIÓN POLICLONAL REACTIVA.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---\nIHQ250506\nCopia Pag. 2 de 2\nNombre : ISLANIA NIETO GRANOBLES\nN. peticion : IHQ250506\nN.Identificación : CC. 29684306\nGenero : FEMENINO\nEdad : 55 años 7 meses 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MARIA FERNANDA LEDESMA\nServicio : MEDICA MUJERES\nFecha Ingreso : 09/05/2025\nFecha Informe : 23/05/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3501,
+      "reduccion_porcentaje": 98.15
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250506",
+      "caso_num": 41,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ISLANIA NIETO GRANOBLES",
+      "numero_peticion": "IHQ250506",
+      "identificacion": "29684306",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "55",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "MARIA FERNANDA LEDESMA",
+      "servicio": "MEDICA MUJERES",
+      "fecha_ingreso": "09/05/2025",
+      "fecha_informe": "23/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250506",
+      "N. de identificación": "29684306",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "MEDICA MUJERES",
+      "Médico tratante": "MARIA FERNANDA LEDESMA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/05/2025",
+      "Fecha Informe": "23/05/2025",
+      "nombres": "ISLANIA NIETO",
+      "Primer nombre": "ISLANIA",
+      "Segundo nombre": "NIETO",
+      "apellidos": "GRANOBLES",
+      "Primer apellido": "GRANOBLES",
+      "Segundo apellido": "",
+      "nombre_formal": "GRANOBLES, ISLANIA NIETO",
+      "diagnostico": "A y B. glándula lacrimal, musculo periorbitaria. Biopsia. Estudios de inmunohistoquímica. VASCULITIS AGUDA Y CRÓNICA. LOS HALLAZGOS HISTOLÓGICOS MUESTRAN MARCACION POLICLONAL PERIVASCULAR, SIN MARCION DE IGG4 . INFLAMACIÓN POLICLONAL REACTIVA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células inflamatorias perivasculares muestran marcación positiva en algunas células de linfocitos B (CD20+) y T (CD3+). Asimismo, se observa expresión de CD38+ en células plasmáticas perivasculares. La presencia de CD68 indica la existencia de histiocitos y monocitos perivasculares, así como en el tejido circundante. Además, se identifica marcación positiva para IgG en ciertas células plasmáticas, mientras que la expresión de IgG4 es negativa.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2504910 bloque A y B\" que corresponde a \"A y B. Biopsia glandula lacrimal, musculo periorbitario.\" con diagnóstico de \"VASCULITIS AGUDA Y CRONICA. \". Previa revisión de la histología, se realizan niveles histológicos para tinción con: CD3, CD38, CD68, CD20, IgG4, IgG.",
+      "ihq_organo": "GLÁNDULA LACRIMAL, MUSCULO PERIORBITARIA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD38, CD68, CD20, IGG4, IGG",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GLÁNDULA LACRIMAL, MUSCULO PERIORBITARIA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD38, CD68, CD20, IGG4, IGG",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "extraction_timestamp": "2026-04-10T08:07:05.739248",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250506\nCopia Pag. 1 de 2\nNombre : ISLANIA NIETO GRANOBLES\nN. peticion : IHQ250506\nN.Identificación : CC. 29684306\nGenero : FEMENINO\nEdad : 55 años 7 meses 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MARIA FERNANDA LEDESMA\nServicio : MEDICA MUJERES\nFecha Ingreso : 09/05/2025\nFecha Informe : 23/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGLANDULA LAGRIMAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2504910 bloque A y B” que corresponde a “A y B. Biopsia glandula lacrimal,\nmusculo periorbitario.\" con diagnóstico de “VASCULITIS AGUDA Y CRONICA. ”. Previa revisión de\nla histología, se realizan niveles histológicos para tinción con: CD3, CD38, CD68, CD20, IgG4, IgG.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células inflamatorias perivasculares muestran marcación positiva en algunas células de\nlinfocitos B (CD20+) y T (CD3+). Asimismo, se observa expresión de CD38+ en células\nplasmáticas perivasculares. La presencia de CD68 indica la existencia de histiocitos y monocitos\nperivasculares, así como en el tejido circundante. Además, se identifica marcación positiva para\nIgG en ciertas células plasmáticas, mientras que la expresión de IgG4 es negativa.\nDIAGNÓSTICO\nA y B. glándula lacrimal, musculo periorbitaria. Biopsia. Estudios de inmunohistoquímica.\nVASCULITIS AGUDA Y CRÓNICA.\nLOS HALLAZGOS HISTOLÓGICOS MUESTRAN MARCACION POLICLONAL PERIVASCULAR, SIN\nMARCION DE IGG4 .\n INFLAMACIÓN POLICLONAL REACTIVA.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---\nIHQ250506\nCopia Pag. 2 de 2\nNombre : ISLANIA NIETO GRANOBLES\nN. peticion : IHQ250506\nN.Identificación : CC. 29684306\nGenero : FEMENINO\nEdad : 55 años 7 meses 11 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MARIA FERNANDA LEDESMA\nServicio : MEDICA MUJERES\nFecha Ingreso : 09/05/2025\nFecha Informe : 23/05/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD38, CD68, CD20, IGG4, IGG",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2504910 bloque A y B” que corresponde a “A y B. Biopsia glandula lacrimal, musculo periorbitario.\" con diagnóstico de “VASCULITIS AGUDA Y CRONICA. ”. Previa revisión de la histología, se realizan niveles histológicos para tinción con: CD3, CD38, CD68, CD20, IgG4, IgG.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células inflamatorias perivasculares muestran marcación positiva en algunas células de linfocitos B (CD20+) y T (CD3+). Asimismo, se observa expresión de CD38+ en células plasmáticas perivasculares. La presencia de CD68 indica la existencia de histiocitos y monocitos perivasculares, así como en el tejido circundante. Además, se identifica marcación positiva para IgG en ciertas células plasmáticas, mientras que la expresión de IgG4 es negativa.",
+      "Descripcion Diagnostico": "A y B. glándula lacrimal, musculo periorbitaria. Biopsia. Estudios de inmunohistoquímica. VASCULITIS AGUDA Y CRÓNICA. LOS HALLAZGOS HISTOLÓGICOS MUESTRAN MARCACION POLICLONAL PERIVASCULAR, SIN MARCION DE IGG4 . INFLAMACIÓN POLICLONAL REACTIVA.",
+      "IHQ_ORGANO": "GLÁNDULA LACRIMAL, MUSCULO PERIORBITARIA",
+      "Organo": "GLANDULA LAGRIMAL",
+      "Diagnostico Coloracion": "VASCULITIS AGUDA Y CRONICA",
+      "Diagnostico Principal": "VASCULITIS AGUDA Y CRÓNICA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD68": "NO MENCIONADO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_IGG4": "",
+      "IHQ_IGG": ""
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A y B. glándula lacrimal, musculo periorbitaria. Biopsia. Estudios de inmunohistoquímica.\nVASCULITIS AGUDA Y CRÓNICA.\nLOS HALLAZGOS HISTOLÓGICOS MUESTRAN MARCACION POLICLONAL PERIVASCULAR, SIN\nMARCION DE IGG4 .\n INFLAMACIÓN POLICLONAL REACTIVA.",
+      "valor_corregido": "A y B. glándula lacrimal, musculo periorbitaria. Biopsia. Estudios de inmunohistoquímica. VASCULITIS AGUDA Y CRÓNICA. LOS HALLAZGOS HISTOLÓGICOS MUESTRAN MARCACION POLICLONAL PERIVASCULAR, SIN MARCION DE IGG4 . INFLAMACIÓN POLICLONAL REACTIVA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250506",
+      "timestamp": "2026-04-10T08:07:05.738997"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2504910 bloque A y B” que corresponde a “A y B. Biopsia glandula lacrimal, musculo periorbitario.\" con diagnóstico de “VASCULITIS AGUDA Y CRONICA. ”. Previa revisión de la histología, se realizan niveles histológicos para tinción con: CD3, CD38, CD68, CD20, IgG4, IgG.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2504910 bloque A y B\" que corresponde a \"A y B. Biopsia glandula lacrimal, musculo periorbitario.\" con diagnóstico de \"VASCULITIS AGUDA Y CRONICA. \". Previa revisión de la histología, se realizan niveles histológicos para tinción con: CD3, CD38, CD68, CD20, IgG4, IgG.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250506",
+      "timestamp": "2026-04-10T08:07:05.739003"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 50
+  }
+}

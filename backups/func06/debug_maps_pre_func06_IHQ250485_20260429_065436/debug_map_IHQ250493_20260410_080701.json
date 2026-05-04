@@ -1,0 +1,134 @@
+{
+  "session_id": "IHQ250493_20260410_080701",
+  "numero_peticion": "IHQ250493",
+  "timestamp": "2026-04-10T08:07:01.877128",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250493\nCopia Pag. 1 de 2\nNombre : PABLO EMILIO SALAZAR CUBIDES\nN. peticion : IHQ250493\nN.Identificación : CC. 1006016123\nGenero : MASCULINO\nEdad : 22 años 2 meses 27 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LUIS MIGUEL BENAVIDES\nServicio : MEDICA HOMBRES\nFecha Ingreso : 08/05/2025\nFecha Informe : 08/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX COLON TRANSVERSO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504828 que\ncorresponde a biopsia de \"colon ascendente\" con fecha del informe del 07 de mayo del\n2025. Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina.\nPrevia revisión de la histología se solicitan niveles para los siguientes marcadores: \nCITOMEGALOVIRUS.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO DE MARCADORES DE INMUNOHISTOQUÍMICA:\nMucosa colónica con un proceso inflamatorio mixto, úlcera y lecho ulceroso que muestra tejido de\ngranulación y presencia de células con cambios citopáticos virales positivas para marcador de\nCITOMEGALOVIRUS. \nDIAGNÓSTICO\nMucosa de colon ascendente. Lesión. Biopsia endoscópica. Estudio de\ninmunohistoquímica.\nCOLITIS AGUDA CON ULCERACIÓN DEBIDO A INFECCIÓN POR CITOMEGALOVIRUS.\nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---\nIHQ250493\nCopia Pag. 2 de 2\nNombre : PABLO EMILIO SALAZAR CUBIDES\nN. peticion : IHQ250493\nN.Identificación : CC. 1006016123\nGenero : MASCULINO\nEdad : 22 años 2 meses 27 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LUIS MIGUEL BENAVIDES\nServicio : MEDICA HOMBRES\nFecha Ingreso : 08/05/2025\nFecha Informe : 08/05/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3255,
+      "reduccion_porcentaje": 98.28
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250493",
+      "caso_num": 28,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "PABLO EMILIO SALAZAR CUBIDES",
+      "numero_peticion": "IHQ250493",
+      "identificacion": "1006016123",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "22",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "LUIS MIGUEL BENAVIDES",
+      "servicio": "MEDICA HOMBRES",
+      "fecha_ingreso": "08/05/2025",
+      "fecha_informe": "08/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250493",
+      "N. de identificación": "1006016123",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "MEDICA HOMBRES",
+      "Médico tratante": "LUIS MIGUEL BENAVIDES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/05/2025",
+      "Fecha Informe": "08/05/2025",
+      "nombres": "PABLO EMILIO",
+      "Primer nombre": "PABLO",
+      "Segundo nombre": "EMILIO",
+      "apellidos": "SALAZAR CUBIDES",
+      "Primer apellido": "SALAZAR",
+      "Segundo apellido": "CUBIDES",
+      "nombre_formal": "SALAZAR CUBIDES, PABLO EMILIO",
+      "diagnostico": "Mucosa de colon ascendente. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. COLITIS AGUDA CON ULCERACIÓN DEBIDO A INFECCIÓN POR CITOMEGALOVIRUS.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO DE MARCADORES DE INMUNOHISTOQUÍMICA: Mucosa colónica con un proceso inflamatorio mixto, úlcera y lecho ulceroso que muestra tejido de granulación y presencia de células con cambios citopáticos virales positivas para marcador de CITOMEGALOVIRUS.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504828 que corresponde a biopsia de \"colon ascendente\" con fecha del informe del 07 de mayo del 2025. Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: CITOMEGALOVIRUS.",
+      "ihq_organo": "MUCOSA DE COLON ASCENDENTE",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CITOMEGALOVIRUS",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA DE COLON ASCENDENTE",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CITOMEGALOVIRUS",
+      "extraction_timestamp": "2026-04-10T08:07:02.175692",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250493\nCopia Pag. 1 de 2\nNombre : PABLO EMILIO SALAZAR CUBIDES\nN. peticion : IHQ250493\nN.Identificación : CC. 1006016123\nGenero : MASCULINO\nEdad : 22 años 2 meses 27 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LUIS MIGUEL BENAVIDES\nServicio : MEDICA HOMBRES\nFecha Ingreso : 08/05/2025\nFecha Informe : 08/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX COLON TRANSVERSO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504828 que\ncorresponde a biopsia de \"colon ascendente\" con fecha del informe del 07 de mayo del\n2025. Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina.\nPrevia revisión de la histología se solicitan niveles para los siguientes marcadores: \nCITOMEGALOVIRUS.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADO DE MARCADORES DE INMUNOHISTOQUÍMICA:\nMucosa colónica con un proceso inflamatorio mixto, úlcera y lecho ulceroso que muestra tejido de\ngranulación y presencia de células con cambios citopáticos virales positivas para marcador de\nCITOMEGALOVIRUS. \nDIAGNÓSTICO\nMucosa de colon ascendente. Lesión. Biopsia endoscópica. Estudio de\ninmunohistoquímica.\nCOLITIS AGUDA CON ULCERACIÓN DEBIDO A INFECCIÓN POR CITOMEGALOVIRUS.\nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---\nIHQ250493\nCopia Pag. 2 de 2\nNombre : PABLO EMILIO SALAZAR CUBIDES\nN. peticion : IHQ250493\nN.Identificación : CC. 1006016123\nGenero : MASCULINO\nEdad : 22 años 2 meses 27 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : LUIS MIGUEL BENAVIDES\nServicio : MEDICA HOMBRES\nFecha Ingreso : 08/05/2025\nFecha Informe : 08/05/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CITOMEGALOVIRUS",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504828 que corresponde a biopsia de \"colon ascendente\" con fecha del informe del 07 de mayo del 2025. Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: CITOMEGALOVIRUS.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADO DE MARCADORES DE INMUNOHISTOQUÍMICA: Mucosa colónica con un proceso inflamatorio mixto, úlcera y lecho ulceroso que muestra tejido de granulación y presencia de células con cambios citopáticos virales positivas para marcador de CITOMEGALOVIRUS.",
+      "Descripcion Diagnostico": "Mucosa de colon ascendente. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. COLITIS AGUDA CON ULCERACIÓN DEBIDO A INFECCIÓN POR CITOMEGALOVIRUS.",
+      "IHQ_ORGANO": "MUCOSA DE COLON ASCENDENTE",
+      "Organo": "BX COLON TRANSVERSO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "COLITIS AGUDA CON ULCERACIÓN DEBIDO A INFECCIÓN POR CITOMEGALOVIRUS",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CITOMEGALOVIRUS": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 142,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 1,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 142,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa de colon ascendente. Lesión. Biopsia endoscópica. Estudio de\ninmunohistoquímica.\nCOLITIS AGUDA CON ULCERACIÓN DEBIDO A INFECCIÓN POR CITOMEGALOVIRUS.",
+      "valor_corregido": "Mucosa de colon ascendente. Lesión. Biopsia endoscópica. Estudio de inmunohistoquímica. COLITIS AGUDA CON ULCERACIÓN DEBIDO A INFECCIÓN POR CITOMEGALOVIRUS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250493",
+      "timestamp": "2026-04-10T08:07:02.175282"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 48
+  }
+}

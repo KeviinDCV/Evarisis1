@@ -1,0 +1,143 @@
+{
+  "session_id": "IHQ250505_20260414_064757",
+  "numero_peticion": "IHQ250505",
+  "timestamp": "2026-04-14T06:47:57.138716",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250505\nCopia Pag. 1 de 2\nNombre : BANY ELIAS ARGUELLO PRIETO\nN. peticion : IHQ250505\nN.Identificación : SV. 8135211\nGenero : MASCULINO\nEdad : 58 años 4 meses 25 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CATALINA GUERRERO NILO\nServicio : UNIDAD CUIDADO INTERMEDIO\nFecha Ingreso : 09/05/2025\nFecha Informe : 22/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION MUCOSA GASTRICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2504557 que corresponde a \"LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA\nGÁSTRICO DE TIPO MIXTO (PATRÓN INTESTINAL Y DIFUSO)\". Previa revisión de la histología, se\nrealizan niveles histológicos al bloque 1 para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\n- HER-2 : Positivo 3+ en más de 5 células cancerosas.\nLos controles positivos de tejido conocido y los controles internos tienen una marcación\nsatisfactoria.\nDIAGNÓSTICO\nMucosa gastrica. Biopsia endoscopica. Estudios de inmunohistoquimica:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---\nIHQ250505\nCopia Pag. 2 de 2\nNombre : BANY ELIAS ARGUELLO PRIETO\nN. peticion : IHQ250505\nN.Identificación : SV. 8135211\nGenero : MASCULINO\nEdad : 58 años 4 meses 25 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CATALINA GUERRERO NILO\nServicio : UNIDAD CUIDADO INTERMEDIO\nFecha Ingreso : 09/05/2025\nFecha Informe : 22/05/2025\n- LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA GÁSTRICO DE TIPO MIXTO\n(PATRÓN INTESTINAL Y DIFUSO).\n- PATRÓN MICROSATELITAL ESTABLE\n- HER-2: POSITIVO.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3499,
+      "reduccion_porcentaje": 98.15
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250505",
+      "caso_num": 40,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "BANY ELIAS ARGUELLO PRIETO",
+      "numero_peticion": "IHQ250505",
+      "identificacion": "8135211",
+      "tipo_documento": "SV",
+      "Genero": "MASCULINO",
+      "Edad": "58",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "CATALINA GUERRERO NILO",
+      "servicio": "UNIDAD CUIDADO INTERMEDIO",
+      "fecha_ingreso": "09/05/2025",
+      "fecha_informe": "22/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250505",
+      "N. de identificación": "8135211",
+      "Tipo de documento": "SV",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "UNIDAD CUIDADO INTERMEDIO",
+      "Médico tratante": "CATALINA GUERRERO NILO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/05/2025",
+      "Fecha Informe": "22/05/2025",
+      "nombres": "BANY",
+      "Primer nombre": "BANY",
+      "Segundo nombre": "",
+      "apellidos": "ELIAS ARGUELLO PRIETO",
+      "Primer apellido": "ELIAS",
+      "Segundo apellido": "ARGUELLO PRIETO",
+      "nombre_formal": "ELIAS ARGUELLO PRIETO, BANY",
+      "diagnostico": "Mucosa gastrica. Biopsia endoscopica. Estudios de inmunohistoquimica:: 09/05/2025 - LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA GÁSTRICO DE TIPO MIXTO (PATRÓN INTESTINAL Y DIFUSO). - PATRÓN MICROSATELITAL ESTABLE - HER-2: POSITIVO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable - HER-2 : Positivo 3+ en más de 5 células cancerosas. Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2504557 que corresponde a \"LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA GÁSTRICO DE TIPO MIXTO (PATRÓN INTESTINAL Y DIFUSO)\". Previa revisión de la histología, se realizan niveles histológicos al bloque 1 para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "ihq_organo": "MUCOSA GASTRICA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA GASTRICA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "HER2 , MSH6 , MSH2 , MLH1 , PMS2",
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "IHQ_HER2": "POSITIVO",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "extraction_timestamp": "2026-04-14T06:47:57.372243",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250505\nCopia Pag. 1 de 2\nNombre : BANY ELIAS ARGUELLO PRIETO\nN. peticion : IHQ250505\nN.Identificación : SV. 8135211\nGenero : MASCULINO\nEdad : 58 años 4 meses 25 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CATALINA GUERRERO NILO\nServicio : UNIDAD CUIDADO INTERMEDIO\nFecha Ingreso : 09/05/2025\nFecha Informe : 22/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION MUCOSA GASTRICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2504557 que corresponde a \"LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA\nGÁSTRICO DE TIPO MIXTO (PATRÓN INTESTINAL Y DIFUSO)\". Previa revisión de la histología, se\nrealizan niveles histológicos al bloque 1 para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\n- HER-2 : Positivo 3+ en más de 5 células cancerosas.\nLos controles positivos de tejido conocido y los controles internos tienen una marcación\nsatisfactoria.\nDIAGNÓSTICO\nMucosa gastrica. Biopsia endoscopica. Estudios de inmunohistoquimica:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---\nIHQ250505\nCopia Pag. 2 de 2\nNombre : BANY ELIAS ARGUELLO PRIETO\nN. peticion : IHQ250505\nN.Identificación : SV. 8135211\nGenero : MASCULINO\nEdad : 58 años 4 meses 25 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : CATALINA GUERRERO NILO\nServicio : UNIDAD CUIDADO INTERMEDIO\nFecha Ingreso : 09/05/2025\nFecha Informe : 22/05/2025\n- LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA GÁSTRICO DE TIPO MIXTO\n(PATRÓN INTESTINAL Y DIFUSO).\n- PATRÓN MICROSATELITAL ESTABLE\n- HER-2: POSITIVO.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 78 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2504557 que corresponde a \"LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA GÁSTRICO DE TIPO MIXTO (PATRÓN INTESTINAL Y DIFUSO)\". Previa revisión de la histología, se realizan niveles histológicos al bloque 1 para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable - HER-2 : Positivo 3+ en más de 5 células cancerosas. Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.",
+      "Descripcion Diagnostico": "Mucosa gastrica. Biopsia endoscopica. Estudios de inmunohistoquimica:: 09/05/2025 - LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA GÁSTRICO DE TIPO MIXTO (PATRÓN INTESTINAL Y DIFUSO). - PATRÓN MICROSATELITAL ESTABLE - HER-2: POSITIVO.",
+      "IHQ_ORGANO": "MUCOSA GASTRICA",
+      "Organo": "LESION MUCOSA GASTRICA",
+      "Diagnostico Coloracion": "ADENOCARCINOMA GÁSTRICO DE TIPO MIXTO (PATRÓN INTESTINAL Y DIFUSO)",
+      "Diagnostico Principal": "- LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA GÁSTRICO DE TIPO MIXTO (PATRÓN INTESTINAL Y DIFUSO)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 , MSH6 , MSH2 , MLH1 , PMS2",
+      "IHQ_HER2": "POSITIVO",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa gastrica. Biopsia endoscopica. Estudios de inmunohistoquimica:: 09/05/2025\n- LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA GÁSTRICO DE TIPO MIXTO\n(PATRÓN INTESTINAL Y DIFUSO).\n- PATRÓN MICROSATELITAL ESTABLE\n- HER-2: POSITIVO.",
+      "valor_corregido": "Mucosa gastrica. Biopsia endoscopica. Estudios de inmunohistoquimica:: 09/05/2025 - LOS HALLAZGOS SON COMPATIBLES CON ADENOCARCINOMA GÁSTRICO DE TIPO MIXTO (PATRÓN INTESTINAL Y DIFUSO). - PATRÓN MICROSATELITAL ESTABLE - HER-2: POSITIVO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250505",
+      "timestamp": "2026-04-14T06:47:57.371641"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 52
+  }
+}

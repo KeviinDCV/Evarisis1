@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250489_20260420_084340",
+  "numero_peticion": "IHQ250489",
+  "timestamp": "2026-04-20T08:43:40.453716",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250489\nCopia Pag. 1 de 2\nNombre : MARIA ELENA CERON MARTINEZ\nN. peticion : IHQ250489\nN.Identificación : CC. 31958914\nGenero : FEMENINO\nEdad : 58 años 11 meses\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : EULER JAVIER BURBANO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 07/05/2025\nFecha Informe : 09/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2503912 que\ncorresponde a “biopsia de cérvix” con fecha del informe del 08 de abril del 2025 y diagnóstico\nde \"CERVICITIS CRÓNICA CON CAMBIOS INDEFINIDOS PARA DISPLASIA\". Consiste en un bloque de\nparafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se\nsolicitan niveles para los siguientes marcadores: p40, p16 y Ki 67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nControles externos con adecuada marcación. \nEVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA:\nCérvix con epitelio escamoso que demuestra una tinción para p 40 y Ki 67 limitados a la capa\nbasal con negatividad para p16. Esta mucosa tapiza un estroma con infiltrado inflamatorio\ncrónico. \nDIAGNÓSTICO\nExocérvix. Lesión. Biopsia. Estudio de inmunohistoquímica. \nNEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA. \nJOSE BRAVO BONILLA\nResponsable del análisis:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 46 ---\nIHQ250489\nCopia Pag. 2 de 2\nNombre : MARIA ELENA CERON MARTINEZ\nN. peticion : IHQ250489\nN.Identificación : CC. 31958914\nGenero : FEMENINO\nEdad : 58 años 11 meses\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : EULER JAVIER BURBANO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 07/05/2025\nFecha Informe : 09/05/2025\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 47 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3305,
+      "reduccion_porcentaje": 98.25
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250489",
+      "caso_num": 24,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MARIA ELENA CERON MARTINEZ",
+      "numero_peticion": "IHQ250489",
+      "identificacion": "31958914",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "58",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "EULER JAVIER BURBANO",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "07/05/2025",
+      "fecha_informe": "09/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250489",
+      "N. de identificación": "31958914",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "EULER JAVIER BURBANO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/05/2025",
+      "Fecha Informe": "09/05/2025",
+      "nombres": "MARIA ELENA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "ELENA",
+      "apellidos": "CERON MARTINEZ",
+      "Primer apellido": "CERON",
+      "Segundo apellido": "MARTINEZ",
+      "nombre_formal": "CERON MARTINEZ, MARIA ELENA",
+      "diagnostico": "Exocérvix. Lesión. Biopsia. Estudio de inmunohistoquímica. NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Cérvix con epitelio escamoso que demuestra una tinción para p40 y KI-67 limitados a la capa basal con negatividad para p16. Esta mucosa tapiza un estroma con infiltrado inflamatorio crónico.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2503912 que corresponde a \"biopsia de cérvix\" con fecha del informe del 08 de abril del 2025 y diagnóstico de \"CERVICITIS CRÓNICA CON CAMBIOS INDEFINIDOS PARA DISPLASIA\". Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: p40, p16 y KI-67.",
+      "ihq_organo": "EXOCÉRVIX",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P40, P16, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "EXOCÉRVIX",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, Ki-67",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "p16": "NEGATIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-04-20T08:43:40.723280",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250489\nCopia Pag. 1 de 2\nNombre : MARIA ELENA CERON MARTINEZ\nN. peticion : IHQ250489\nN.Identificación : CC. 31958914\nGenero : FEMENINO\nEdad : 58 años 11 meses\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : EULER JAVIER BURBANO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 07/05/2025\nFecha Informe : 09/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2503912 que\ncorresponde a “biopsia de cérvix” con fecha del informe del 08 de abril del 2025 y diagnóstico\nde \"CERVICITIS CRÓNICA CON CAMBIOS INDEFINIDOS PARA DISPLASIA\". Consiste en un bloque de\nparafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se\nsolicitan niveles para los siguientes marcadores: p40, p16 y Ki 67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nControles externos con adecuada marcación. \nEVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA:\nCérvix con epitelio escamoso que demuestra una tinción para p 40 y Ki 67 limitados a la capa\nbasal con negatividad para p16. Esta mucosa tapiza un estroma con infiltrado inflamatorio\ncrónico. \nDIAGNÓSTICO\nExocérvix. Lesión. Biopsia. Estudio de inmunohistoquímica. \nNEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA. \nJOSE BRAVO BONILLA\nResponsable del análisis:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 46 ---\nIHQ250489\nCopia Pag. 2 de 2\nNombre : MARIA ELENA CERON MARTINEZ\nN. peticion : IHQ250489\nN.Identificación : CC. 31958914\nGenero : FEMENINO\nEdad : 58 años 11 meses\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : EULER JAVIER BURBANO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 07/05/2025\nFecha Informe : 09/05/2025\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 47 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, Ki-67",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2503912 que corresponde a “biopsia de cérvix” con fecha del informe del 08 de abril del 2025 y diagnóstico de \"CERVICITIS CRÓNICA CON CAMBIOS INDEFINIDOS PARA DISPLASIA\". Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: p40, p16 y Ki 67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Cérvix con epitelio escamoso que demuestra una tinción para p 40 y Ki 67 limitados a la capa basal con negatividad para p16. Esta mucosa tapiza un estroma con infiltrado inflamatorio crónico.",
+      "Descripcion Diagnostico": "Exocérvix. Lesión. Biopsia. Estudio de inmunohistoquímica. NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA.",
+      "IHQ_ORGANO": "EXOCÉRVIX",
+      "Organo": "BX CERVIX",
+      "Diagnostico Coloracion": "CERVICITIS CRÓNICA CON CAMBIOS INDEFINIDOS PARA DISPLASIA",
+      "Diagnostico Principal": "NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Exocérvix. Lesión. Biopsia. Estudio de inmunohistoquímica. \nNEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA.",
+      "valor_corregido": "Exocérvix. Lesión. Biopsia. Estudio de inmunohistoquímica. NEGATIVO PARA LESIÓN ESCAMOSA PREINVASIVA O INVASIVA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250489",
+      "timestamp": "2026-04-20T08:43:40.722964"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2503912 que corresponde a “biopsia de cérvix” con fecha del informe del 08 de abril del 2025 y diagnóstico de \"CERVICITIS CRÓNICA CON CAMBIOS INDEFINIDOS PARA DISPLASIA\". Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: p40, p16 y Ki 67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2503912 que corresponde a \"biopsia de cérvix\" con fecha del informe del 08 de abril del 2025 y diagnóstico de \"CERVICITIS CRÓNICA CON CAMBIOS INDEFINIDOS PARA DISPLASIA\". Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: p40, p16 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250489",
+      "timestamp": "2026-04-20T08:43:40.722969"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Cérvix con epitelio escamoso que demuestra una tinción para p 40 y Ki 67 limitados a la capa basal con negatividad para p16. Esta mucosa tapiza un estroma con infiltrado inflamatorio crónico.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Cérvix con epitelio escamoso que demuestra una tinción para p40 y KI-67 limitados a la capa basal con negatividad para p16. Esta mucosa tapiza un estroma con infiltrado inflamatorio crónico.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250489",
+      "timestamp": "2026-04-20T08:43:40.722970"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 52
+  }
+}

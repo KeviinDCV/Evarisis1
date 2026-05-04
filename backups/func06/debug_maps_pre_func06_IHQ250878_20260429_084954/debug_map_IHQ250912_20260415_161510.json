@@ -1,0 +1,165 @@
+{
+  "session_id": "IHQ250912_20260415_161510",
+  "numero_peticion": "IHQ250912",
+  "timestamp": "2026-04-15T16:15:10.099962",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250912\nCopia Pag. 1 de 2\nNombre : MILLER ENRIQUE CALAMBAS\nMASAGUALLI\nN. peticion : IHQ250912\nN.Identificación : CC. 10722391\nGenero : MASCULINO\nEdad : 47 años 3 meses 13 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : LUIS ALFONSO GONZALEZ DELGADO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 21/08/2025\nFecha Informe : 28/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPAROTIDA DERECHA\n2025-07-17\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al caso con matrícula M2507627, el cual corresponde a biopsia de\nlesión en tejido fibroadiposo, con diagnóstico de (NEOPLASIA EN PATRÓN FUSOCELULAR). Se\nrealiza estudio de inmunohistoquímica con los siguientes marcadores: desmina, vimentina, Actina\nde Músculo Liso, Ki-67, CKAE1AE3, CD34, S100, SOX 10, CD117.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEn los cortes histológicos se identifica una neoplasia de origen mesenquimal constituida por una\nproliferación de células fusiformes con leve variabilidad en el tamaño dispuestas en haces\narremolinados, inmersas en téjido adiposo y sin incremento en la actividad mitótica evidente. Las\ncélulas tumorales en mención presentan inmunorreactividad positiva para CD34 y Vimentina. Son\nnegativas para Actina de Músculo Liso, CKAE1AE3, S100, SOX10 y CD117. El índice de\nproliferación medido por Ki-67 es del 20%.\nDIAGNÓSTICO\nTejido fibroadiposo. Lesión (historia de Dermatofibrosarcoma protuberans en parótida derecha).\nBiopsia: Estudio de inmunohistoquímica:\nLOS HALLAZGOS INMUNOHISTOQUÍMICOS SON COMPATIBLES CON DERMATOFIBROSARCOMA\nPROTUBERANS\nCOMENTARIOS\nSe recomienda correlacionar con historia clínica y demás estudios complementarios. \nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 70 ---\nIHQ250912\nCopia Pag. 2 de 2\nNombre : MILLER ENRIQUE CALAMBAS\nMASAGUALLI\nN. peticion : IHQ250912\nN.Identificación : CC. 10722391\nGenero : MASCULINO\nEdad : 47 años 3 meses 13 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : LUIS ALFONSO GONZALEZ DELGADO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 21/08/2025\nFecha Informe : 28/08/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3693,
+      "reduccion_porcentaje": 98.13
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250912",
+      "caso_num": 34,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "nombre_completo": "MILLER ENRIQUE CALAMBAS MASAGUALLI",
+      "numero_peticion": "IHQ250912",
+      "identificacion": "10722391",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "47",
+      "eps": "E.P.S. INDIGENA MALLAMAS GUACH",
+      "medico_tratante": "LUIS ALFONSO GONZALEZ DELGADO",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "21/08/2025",
+      "fecha_informe": "28/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250912",
+      "N. de identificación": "10722391",
+      "Tipo de documento": "CC",
+      "EPS": "E.P.S. INDIGENA MALLAMAS GUACH",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LUIS ALFONSO GONZALEZ DELGADO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/08/2025",
+      "Fecha Informe": "28/08/2025",
+      "nombres": "MILLER ENRIQUE",
+      "Primer nombre": "MILLER",
+      "Segundo nombre": "ENRIQUE",
+      "apellidos": "CALAMBAS MASAGUALLI",
+      "Primer apellido": "CALAMBAS",
+      "Segundo apellido": "MASAGUALLI",
+      "nombre_formal": "CALAMBAS MASAGUALLI, MILLER ENRIQUE",
+      "diagnostico": "Tejido fibroadiposo. Lesión (historia de Dermatofibrosarcoma protuberans en parótida derecha). Biopsia: Estudio de inmunohistoquímica: LOS HALLAZGOS INMUNOHISTOQUÍMICOS SON COMPATIBLES CON DERMATOFIBROSARCOMA PROTUBERANS",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica una neoplasia de origen mesenquimal constituida por una proliferación de células fusiformes con leve variabilidad en el tamaño dispuestas en haces arremolinados, inmersas en téjido adiposo y sin incremento en la actividad mitótica evidente. Las células tumorales en mención presentan inmunorreactividad positiva para CD34 y Vimentina. Son negativas para Actina de Músculo Liso, CKAE1AE3, S100, SOX10 y CD117. El índice de proliferación medido por KI-67 es del 20%.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al caso con matrícula M2507627, el cual corresponde a biopsia de lesión en tejido fibroadiposo, con diagnóstico de (NEOPLASIA EN PATRÓN FUSOCELULAR). Se realiza estudio de inmunohistoquímica con los siguientes marcadores: desmina, vimentina, Actina de Músculo Liso, KI-67, CKAE1AE3, CD34, S100, SOX 10, CD117.",
+      "ihq_organo": "TEJIDO FIBROADIPOSO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se recomienda correlacionar con historia clínica y demás estudios complementarios.",
+      "IHQ_ORGANO": "TEJIDO FIBROADIPOSO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_CD117": "NEGATIVO",
+      "extraction_timestamp": "2026-04-15T16:15:10.381889",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250912\nCopia Pag. 1 de 2\nNombre : MILLER ENRIQUE CALAMBAS\nMASAGUALLI\nN. peticion : IHQ250912\nN.Identificación : CC. 10722391\nGenero : MASCULINO\nEdad : 47 años 3 meses 13 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : LUIS ALFONSO GONZALEZ DELGADO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 21/08/2025\nFecha Informe : 28/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPAROTIDA DERECHA\n2025-07-17\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al caso con matrícula M2507627, el cual corresponde a biopsia de\nlesión en tejido fibroadiposo, con diagnóstico de (NEOPLASIA EN PATRÓN FUSOCELULAR). Se\nrealiza estudio de inmunohistoquímica con los siguientes marcadores: desmina, vimentina, Actina\nde Músculo Liso, Ki-67, CKAE1AE3, CD34, S100, SOX 10, CD117.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEn los cortes histológicos se identifica una neoplasia de origen mesenquimal constituida por una\nproliferación de células fusiformes con leve variabilidad en el tamaño dispuestas en haces\narremolinados, inmersas en téjido adiposo y sin incremento en la actividad mitótica evidente. Las\ncélulas tumorales en mención presentan inmunorreactividad positiva para CD34 y Vimentina. Son\nnegativas para Actina de Músculo Liso, CKAE1AE3, S100, SOX10 y CD117. El índice de\nproliferación medido por Ki-67 es del 20%.\nDIAGNÓSTICO\nTejido fibroadiposo. Lesión (historia de Dermatofibrosarcoma protuberans en parótida derecha).\nBiopsia: Estudio de inmunohistoquímica:\nLOS HALLAZGOS INMUNOHISTOQUÍMICOS SON COMPATIBLES CON DERMATOFIBROSARCOMA\nPROTUBERANS\nCOMENTARIOS\nSe recomienda correlacionar con historia clínica y demás estudios complementarios. \nNANCY MEJIA VARGAS\nMédica Patóloga\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 70 ---\nIHQ250912\nCopia Pag. 2 de 2\nNombre : MILLER ENRIQUE CALAMBAS\nMASAGUALLI\nN. peticion : IHQ250912\nN.Identificación : CC. 10722391\nGenero : MASCULINO\nEdad : 47 años 3 meses 13 dias\nEPS : E.P.S. INDIGENA MALLAMAS GUACH\nMédico tratante : LUIS ALFONSO GONZALEZ DELGADO\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 21/08/2025\nFecha Informe : 28/08/2025\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "ACTINA DE MUSCULO LISO, CD117, CD34, CKAE1AE3, S100, SOX10, VIMENTINA",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al caso con matrícula M2507627, el cual corresponde a biopsia de lesión en tejido fibroadiposo, con diagnóstico de (NEOPLASIA EN PATRÓN FUSOCELULAR). Se realiza estudio de inmunohistoquímica con los siguientes marcadores: desmina, vimentina, Actina de Músculo Liso, Ki-67, CKAE1AE3, CD34, S100, SOX 10, CD117.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica una neoplasia de origen mesenquimal constituida por una proliferación de células fusiformes con leve variabilidad en el tamaño dispuestas en haces arremolinados, inmersas en téjido adiposo y sin incremento en la actividad mitótica evidente. Las células tumorales en mención presentan inmunorreactividad positiva para CD34 y Vimentina. Son negativas para Actina de Músculo Liso, CKAE1AE3, S100, SOX10 y CD117. El índice de proliferación medido por Ki-67 es del 20%.",
+      "Descripcion Diagnostico": "Tejido fibroadiposo. Lesión (historia de Dermatofibrosarcoma protuberans en parótida derecha). Biopsia: Estudio de inmunohistoquímica: LOS HALLAZGOS INMUNOHISTOQUÍMICOS SON COMPATIBLES CON DERMATOFIBROSARCOMA PROTUBERANS",
+      "IHQ_ORGANO": "TEJIDO FIBROADIPOSO",
+      "Organo": "PAROTIDA DERECHA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "LOS HALLAZGOS INMUNOHISTOQUÍMICOS SON COMPATIBLES CON DERMATOFIBROSARCOMA PROTUBERANS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+      "IHQ_CD117": "NEGATIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_VIMENTINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 136,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Tejido fibroadiposo. Lesión (historia de Dermatofibrosarcoma protuberans en parótida derecha).\nBiopsia: Estudio de inmunohistoquímica:\nLOS HALLAZGOS INMUNOHISTOQUÍMICOS SON COMPATIBLES CON DERMATOFIBROSARCOMA\nPROTUBERANS",
+      "valor_corregido": "Tejido fibroadiposo. Lesión (historia de Dermatofibrosarcoma protuberans en parótida derecha). Biopsia: Estudio de inmunohistoquímica: LOS HALLAZGOS INMUNOHISTOQUÍMICOS SON COMPATIBLES CON DERMATOFIBROSARCOMA PROTUBERANS",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250912",
+      "timestamp": "2026-04-15T16:15:10.381593"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al caso con matrícula M2507627, el cual corresponde a biopsia de lesión en tejido fibroadiposo, con diagnóstico de (NEOPLASIA EN PATRÓN FUSOCELULAR). Se realiza estudio de inmunohistoquímica con los siguientes marcadores: desmina, vimentina, Actina de Músculo Liso, Ki-67, CKAE1AE3, CD34, S100, SOX 10, CD117.",
+      "valor_corregido": "Se realizan niveles histológicos al caso con matrícula M2507627, el cual corresponde a biopsia de lesión en tejido fibroadiposo, con diagnóstico de (NEOPLASIA EN PATRÓN FUSOCELULAR). Se realiza estudio de inmunohistoquímica con los siguientes marcadores: desmina, vimentina, Actina de Músculo Liso, KI-67, CKAE1AE3, CD34, S100, SOX 10, CD117.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250912",
+      "timestamp": "2026-04-15T16:15:10.381599"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica una neoplasia de origen mesenquimal constituida por una proliferación de células fusiformes con leve variabilidad en el tamaño dispuestas en haces arremolinados, inmersas en téjido adiposo y sin incremento en la actividad mitótica evidente. Las células tumorales en mención presentan inmunorreactividad positiva para CD34 y Vimentina. Son negativas para Actina de Músculo Liso, CKAE1AE3, S100, SOX10 y CD117. El índice de proliferación medido por Ki-67 es del 20%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica una neoplasia de origen mesenquimal constituida por una proliferación de células fusiformes con leve variabilidad en el tamaño dispuestas en haces arremolinados, inmersas en téjido adiposo y sin incremento en la actividad mitótica evidente. Las células tumorales en mención presentan inmunorreactividad positiva para CD34 y Vimentina. Son negativas para Actina de Músculo Liso, CKAE1AE3, S100, SOX10 y CD117. El índice de proliferación medido por KI-67 es del 20%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250912",
+      "timestamp": "2026-04-15T16:15:10.381600"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 54
+  }
+}

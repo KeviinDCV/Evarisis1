@@ -1,0 +1,186 @@
+{
+  "session_id": "IHQ250898_20260415_161505",
+  "numero_peticion": "IHQ250898",
+  "timestamp": "2026-04-15T16:15:05.920935",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250898\nCopia Pag. 1 de 2\nNombre : WALDINA GIRALDO GIRALDO\nN. peticion : IHQ250898\nN.Identificación : CC. 43664838\nGenero : FEMENINO\nEdad : 63 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 15/08/2025\nFecha Informe : 05/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO DE CUELLO\n2025-08-13\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"P252272\"\ncon diagnóstico \"INFILTRACIÓN LINFOMATOSA PSEUDONODULAR A CLASIFICAR MEDIENTE ESTUDIOS DE\nINMUNOHISTOQUÍMICA\".\nPrevia revisión de la histología, se solicitan coloraciones con los anticuerpos para: CD3, CD20, CD23,\nCD38, BCL2, BCL6, C-Myc, LMP-1. Ki-67, PAX-5, CD10, CD30 y MUM-1\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nGanglio linfático con alteración de la estructura principalmente por una expansión de los folículos por\ncélulas de tamaño mediano, núcleo con cromatina dispersa, nucléolo prominente y ocasional crecimiento\nsincitial. Hay aumento de la actividad mitótica, hasta 5 por CAP, sin mitosis atípicas. Estas células tienen\nun inmunofenotipo CD20+/PAX5+/CD10-/MUM1-/BCL6+/BCL2-, negativo para sobreexpresión de LMP-1.\nSon negativas para c-Myc y con expresión CD23+ en las células dendríticas foliculares, aunque tienden a\nreducir su densidad en algunos de los focos linfomatosos más grandes..\nTiene un índice de proliferación celular estimada por Ki-67 del 90%. \nLás celulas T (CD3+/BCL2+) y los plasmocitos (CD38+) con distribución normal acompañante.\nNo se observan células CD30+.\nDIAGNÓSTICO\n INFORME PRELIMINAR.\nGanglio linfático cervical. Escisión. Inmunohistoquímica.\nLINFOMA DE CÉLULAS B MADURAS DE ALTO GRADO.\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---\nIHQ250898\nCopia Pag. 2 de 2\nNombre : WALDINA GIRALDO GIRALDO\nN. peticion : IHQ250898\nN.Identificación : CC. 43664838\nGenero : FEMENINO\nEdad : 63 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 15/08/2025\nFecha Informe : 05/09/2025\nRequiere estudios inmunohistoquímicos adicionales para el diagnóstico definitivo. Se encuentran en\nproceso.\nCaso comentado con la Dra. María Ximena Varela.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3901,
+      "reduccion_porcentaje": 98.02
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250898",
+      "caso_num": 20,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_PAX5": "NEGATIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD20": "NEGATIVO",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_MUM1": "NEGATIVO",
+      "IHQ_LMP1": "POSITIVO",
+      "nombre_completo": "WALDINA GIRALDO GIRALDO",
+      "numero_peticion": "IHQ250898",
+      "identificacion": "43664838",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "63",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "15/08/2025",
+      "fecha_informe": "05/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250898",
+      "N. de identificación": "43664838",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "15/08/2025",
+      "Fecha Informe": "05/09/2025",
+      "nombres": "WALDINA",
+      "Primer nombre": "WALDINA",
+      "Segundo nombre": "",
+      "apellidos": "GIRALDO GIRALDO",
+      "Primer apellido": "GIRALDO",
+      "Segundo apellido": "GIRALDO",
+      "nombre_formal": "GIRALDO GIRALDO, WALDINA",
+      "diagnostico": "INFORME PRELIMINAR. Ganglio linfático cervical. Escisión. Inmunohistoquímica. LINFOMA DE CÉLULAS B MADURAS DE ALTO GRADO.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Ganglio linfático con alteración de la estructura principalmente por una expansión de los folículos por células de tamaño mediano, núcleo con cromatina dispersa, nucléolo prominente y ocasional crecimiento sincitial. Hay aumento de la actividad mitótica, hasta 5 por CAP, sin mitosis atípicas. Estas células tienen un inmunofenotipo CD20+/PAX5+/CD10-/MUM1-/BCL6+/BCL2-, negativo para sobreexpresión de LMP-1. Son negativas para c-Myc y con expresión CD23+ en las células dendríticas foliculares, aunque tienden a reducir su densidad en algunos de los focos linfomatosos más grandes.. Tiene un índice de proliferación celular estimada por KI-67 del 90%. Lás celulas T (CD3+/BCL2+) y los plasmocitos (CD38+) con distribución normal acompañante. No se observan células CD30+.",
+      "descripcion_macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"P252272\" con diagnóstico \"INFILTRACIÓN LINFOMATOSA PSEUDONODULAR A CLASIFICAR MEDIENTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se solicitan coloraciones con los anticuerpos para: CD3, CD20, CD23, CD38, BCL2, BCL6, C-Myc, LMP-1. KI-67, PAX-5, CD10, CD30 y MUM-1",
+      "ihq_organo": "GANGLIO LINFÁTICO CERVICAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "",
+      "comentarios": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 44 --- IHQ250898 Copia Pag. 2 de 2 Nombre : WALDINA GIRALDO GIRALDO N. peticion : IHQ250898 N.Identificación : CC. 43664838 Genero : FEMENINO Edad : 63 años EPS : REGIONAL EN ASEGURAMIENTO DE SALUD N4 Médico tratante : ALEJANDRO HIJUELOS Servicio : UNIDAD DE ONCOLOGIA COEX Fecha Ingreso : 15/08/2025 Fecha Informe : 05/09/2025 Requiere estudios inmunohistoquímicos adicionales para el diagnóstico definitivo. Se encuentran en proceso. Caso comentado con la Dra. María Ximena Varela.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "Ki-67 del 90%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_CD30": "POSITIVO",
+      "IHQ_KI-67": "90%",
+      "extraction_timestamp": "2026-04-15T16:15:06.242031",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250898\nCopia Pag. 1 de 2\nNombre : WALDINA GIRALDO GIRALDO\nN. peticion : IHQ250898\nN.Identificación : CC. 43664838\nGenero : FEMENINO\nEdad : 63 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 15/08/2025\nFecha Informe : 05/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO DE CUELLO\n2025-08-13\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"P252272\"\ncon diagnóstico \"INFILTRACIÓN LINFOMATOSA PSEUDONODULAR A CLASIFICAR MEDIENTE ESTUDIOS DE\nINMUNOHISTOQUÍMICA\".\nPrevia revisión de la histología, se solicitan coloraciones con los anticuerpos para: CD3, CD20, CD23,\nCD38, BCL2, BCL6, C-Myc, LMP-1. Ki-67, PAX-5, CD10, CD30 y MUM-1\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nGanglio linfático con alteración de la estructura principalmente por una expansión de los folículos por\ncélulas de tamaño mediano, núcleo con cromatina dispersa, nucléolo prominente y ocasional crecimiento\nsincitial. Hay aumento de la actividad mitótica, hasta 5 por CAP, sin mitosis atípicas. Estas células tienen\nun inmunofenotipo CD20+/PAX5+/CD10-/MUM1-/BCL6+/BCL2-, negativo para sobreexpresión de LMP-1.\nSon negativas para c-Myc y con expresión CD23+ en las células dendríticas foliculares, aunque tienden a\nreducir su densidad en algunos de los focos linfomatosos más grandes..\nTiene un índice de proliferación celular estimada por Ki-67 del 90%. \nLás celulas T (CD3+/BCL2+) y los plasmocitos (CD38+) con distribución normal acompañante.\nNo se observan células CD30+.\nDIAGNÓSTICO\n INFORME PRELIMINAR.\nGanglio linfático cervical. Escisión. Inmunohistoquímica.\nLINFOMA DE CÉLULAS B MADURAS DE ALTO GRADO.\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---\nIHQ250898\nCopia Pag. 2 de 2\nNombre : WALDINA GIRALDO GIRALDO\nN. peticion : IHQ250898\nN.Identificación : CC. 43664838\nGenero : FEMENINO\nEdad : 63 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 15/08/2025\nFecha Informe : 05/09/2025\nRequiere estudios inmunohistoquímicos adicionales para el diagnóstico definitivo. Se encuentran en\nproceso.\nCaso comentado con la Dra. María Ximena Varela.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 45 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "BCL2, BCL6, CD10, CD20, CD23, CD3, CD30, CD38, CMYC, Ki-67, LMP-1, MUM1, PAX5",
+      "Descripcion macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"P252272\" con diagnóstico \"INFILTRACIÓN LINFOMATOSA PSEUDONODULAR A CLASIFICAR MEDIENTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se solicitan coloraciones con los anticuerpos para: CD3, CD20, CD23, CD38, BCL2, BCL6, C-Myc, LMP-1. Ki-67, PAX-5, CD10, CD30 y MUM-1",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Ganglio linfático con alteración de la estructura principalmente por una expansión de los folículos por células de tamaño mediano, núcleo con cromatina dispersa, nucléolo prominente y ocasional crecimiento sincitial. Hay aumento de la actividad mitótica, hasta 5 por CAP, sin mitosis atípicas. Estas células tienen un inmunofenotipo CD20+/PAX5+/CD10-/MUM1-/BCL6+/BCL2-, negativo para sobreexpresión de LMP-1. Son negativas para c-Myc y con expresión CD23+ en las células dendríticas foliculares, aunque tienden a reducir su densidad en algunos de los focos linfomatosos más grandes.. Tiene un índice de proliferación celular estimada por Ki-67 del 90%. Lás celulas T (CD3+/BCL2+) y los plasmocitos (CD38+) con distribución normal acompañante. No se observan células CD30+.",
+      "Descripcion Diagnostico": "INFORME PRELIMINAR. Ganglio linfático cervical. Escisión. Inmunohistoquímica. LINFOMA DE CÉLULAS B MADURAS DE ALTO GRADO.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL",
+      "Organo": "GANGLIO DE CUELLO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "LINFOMA DE CÉLULAS B MADURAS DE ALTO GRADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 90%",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD20": "NEGATIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD30": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_KI-67": "90%",
+      "IHQ_MUM1": "NEGATIVO",
+      "IHQ_PAX5": "NEGATIVO",
+      "IHQ_LMP1": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 131,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 13,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 131,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "INFORME PRELIMINAR.\nGanglio linfático cervical. Escisión. Inmunohistoquímica.\nLINFOMA DE CÉLULAS B MADURAS DE ALTO GRADO.",
+      "valor_corregido": "INFORME PRELIMINAR. Ganglio linfático cervical. Escisión. Inmunohistoquímica. LINFOMA DE CÉLULAS B MADURAS DE ALTO GRADO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250898",
+      "timestamp": "2026-04-15T16:15:06.241736"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"P252272\" con diagnóstico \"INFILTRACIÓN LINFOMATOSA PSEUDONODULAR A CLASIFICAR MEDIENTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se solicitan coloraciones con los anticuerpos para: CD3, CD20, CD23, CD38, BCL2, BCL6, C-Myc, LMP-1. Ki-67, PAX-5, CD10, CD30 y MUM-1",
+      "valor_corregido": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"P252272\" con diagnóstico \"INFILTRACIÓN LINFOMATOSA PSEUDONODULAR A CLASIFICAR MEDIENTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se solicitan coloraciones con los anticuerpos para: CD3, CD20, CD23, CD38, BCL2, BCL6, C-Myc, LMP-1. KI-67, PAX-5, CD10, CD30 y MUM-1",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250898",
+      "timestamp": "2026-04-15T16:15:06.241743"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Ganglio linfático con alteración de la estructura principalmente por una expansión de los folículos por células de tamaño mediano, núcleo con cromatina dispersa, nucléolo prominente y ocasional crecimiento sincitial. Hay aumento de la actividad mitótica, hasta 5 por CAP, sin mitosis atípicas. Estas células tienen un inmunofenotipo CD20+/PAX5+/CD10-/MUM1-/BCL6+/BCL2-, negativo para sobreexpresión de LMP-1. Son negativas para c-Myc y con expresión CD23+ en las células dendríticas foliculares, aunque tienden a reducir su densidad en algunos de los focos linfomatosos más grandes.. Tiene un índice de proliferación celular estimada por Ki-67 del 90%. Lás celulas T (CD3+/BCL2+) y los plasmocitos (CD38+) con distribución normal acompañante. No se observan células CD30+.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Ganglio linfático con alteración de la estructura principalmente por una expansión de los folículos por células de tamaño mediano, núcleo con cromatina dispersa, nucléolo prominente y ocasional crecimiento sincitial. Hay aumento de la actividad mitótica, hasta 5 por CAP, sin mitosis atípicas. Estas células tienen un inmunofenotipo CD20+/PAX5+/CD10-/MUM1-/BCL6+/BCL2-, negativo para sobreexpresión de LMP-1. Son negativas para c-Myc y con expresión CD23+ en las células dendríticas foliculares, aunque tienden a reducir su densidad en algunos de los focos linfomatosos más grandes.. Tiene un índice de proliferación celular estimada por KI-67 del 90%. Lás celulas T (CD3+/BCL2+) y los plasmocitos (CD38+) con distribución normal acompañante. No se observan células CD30+.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250898",
+      "timestamp": "2026-04-15T16:15:06.241745"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 44 ---\nIHQ250898\nCopia Pag. 2 de 2\nNombre : WALDINA GIRALDO GIRALDO\nN. peticion : IHQ250898\nN.Identificación : CC. 43664838\nGenero : FEMENINO\nEdad : 63 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 15/08/2025\nFecha Informe : 05/09/2025\nRequiere estudios inmunohistoquímicos adicionales para el diagnóstico definitivo. Se encuentran en\nproceso.\nCaso comentado con la Dra. María Ximena Varela.",
+      "valor_corregido": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 44 --- IHQ250898 Copia Pag. 2 de 2 Nombre : WALDINA GIRALDO GIRALDO N. peticion : IHQ250898 N.Identificación : CC. 43664838 Genero : FEMENINO Edad : 63 años EPS : REGIONAL EN ASEGURAMIENTO DE SALUD N4 Médico tratante : ALEJANDRO HIJUELOS Servicio : UNIDAD DE ONCOLOGIA COEX Fecha Ingreso : 15/08/2025 Fecha Informe : 05/09/2025 Requiere estudios inmunohistoquímicos adicionales para el diagnóstico definitivo. Se encuentran en proceso. Caso comentado con la Dra. María Ximena Varela.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250898",
+      "timestamp": "2026-04-15T16:15:06.241746"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 58
+  }
+}

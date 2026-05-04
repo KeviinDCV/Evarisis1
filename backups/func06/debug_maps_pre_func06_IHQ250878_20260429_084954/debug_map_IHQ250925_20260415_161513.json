@@ -1,0 +1,148 @@
+{
+  "session_id": "IHQ250925_20260415_161513",
+  "numero_peticion": "IHQ250925",
+  "timestamp": "2026-04-15T16:15:13.138194",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250925\nCopia Pag. 1 de 2\nNombre : CESAR AUGUSTO GOMEZ GIRALDO\nN. peticion : IHQ250925\nN.Identificación : CC. 16545448\nGenero : MASCULINO\nEdad : 68 años 10 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : ORTOPEDIA\nFecha Ingreso : 25/08/2025\nFecha Informe : 01/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX FEMUR DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe\nrecibe\norden\npara\nrealizar\nestudios\nde\ninmunohistoquímica\nen\nmaterial\nexterno\nrotulado\n\"Q-113755-25\" y diagnóstico \"NEOPLASIA OSTEOBLÁSTICA Y CONDROBLÁSTICA CON ÁRES DE NECROSIS\nTUMORAL Y SIN EVIDENCIA DE INVASIÓN VASCULAR. SE FAVORECE DIAGNÓSTICO DE OSTEOSARCOMA\".\nPrevia revisión de la histología, se observa escaso material forme, del cual se toman 4 niveles para\ncoloraciones, con escaso material evaluable en el cual se solicitan coloraciónes con los marcadores S100,\nMDM2 y CDK4.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nProliferación fusocelular de disposición fasciculada, con células de núcleos ovalados e hipercromáticos,\nsin atipia, actividad mitótica no evidente. No se observa diferenciación con fragementos sueltos de tejido\ncondral inmaduro, sin diferenciación lipoblástica evidente en los fragmentos examinados. Estas células\npresentan un inmunofenotipo S100-, MDM2+ y CDK4-. \nDIAGNÓSTICO\nFémur derecho. Tumor. Biopsia escisional. Inmunohistoquímica\nLESIÓN FUSOCELULAR POSITIVO PARA AMPLIFICACIÓN MDM2.\nCOMENTARIOS\nSe recomienda ampliar el muestreo de la lesión para ampliar los estudios de inmunohistoquímica y\nclasificar la lesión.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---\nIHQ250925\nCopia Pag. 2 de 2\nNombre : CESAR AUGUSTO GOMEZ GIRALDO\nN. peticion : IHQ250925\nN.Identificación : CC. 16545448\nGenero : MASCULINO\nEdad : 68 años 10 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : ORTOPEDIA\nFecha Ingreso : 25/08/2025\nFecha Informe : 01/09/2025\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 90 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3507,
+      "reduccion_porcentaje": 98.22
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250925",
+      "caso_num": 46,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "CESAR AUGUSTO GOMEZ GIRALDO",
+      "numero_peticion": "IHQ250925",
+      "identificacion": "16545448",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "68",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ANDRES FELIPE VARELA",
+      "servicio": "ORTOPEDIA",
+      "fecha_ingreso": "25/08/2025",
+      "fecha_informe": "01/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250925",
+      "N. de identificación": "16545448",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "ORTOPEDIA",
+      "Médico tratante": "ANDRES FELIPE VARELA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "25/08/2025",
+      "Fecha Informe": "01/09/2025",
+      "nombres": "CESAR AUGUSTO",
+      "Primer nombre": "CESAR",
+      "Segundo nombre": "AUGUSTO",
+      "apellidos": "GOMEZ GIRALDO",
+      "Primer apellido": "GOMEZ",
+      "Segundo apellido": "GIRALDO",
+      "nombre_formal": "GOMEZ GIRALDO, CESAR AUGUSTO",
+      "diagnostico": "Fémur derecho. Tumor. Biopsia escisional. Inmunohistoquímica LESIÓN FUSOCELULAR POSITIVO PARA AMPLIFICACIÓN MDM2.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Proliferación fusocelular de disposición fasciculada, con células de núcleos ovalados e hipercromáticos, sin atipia, actividad mitótica no evidente. No se observa diferenciación con fragementos sueltos de tejido condral inmaduro, sin diferenciación lipoblástica evidente en los fragmentos examinados. Estas células presentan un inmunofenotipo S100-, MDM2+ y CDK4-.",
+      "descripcion_macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"Q-113755-25\" y diagnóstico \"NEOPLASIA OSTEOBLÁSTICA Y CONDROBLÁSTICA CON ÁRES DE NECROSIS TUMORAL Y SIN EVIDENCIA DE INVASIÓN VASCULAR. SE FAVORECE DIAGNÓSTICO DE OSTEOSARCOMA\". Previa revisión de la histología, se observa escaso material forme, del cual se toman 4 niveles para coloraciones, con escaso material evaluable en el cual se solicitan coloraciónes con los marcadores S100, MDM2 y CDK4.",
+      "ihq_organo": "FÉMUR DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se recomienda ampliar el muestreo de la lesión para ampliar los estudios de inmunohistoquímica y clasificar la lesión. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 89 --- IHQ250925 Copia Pag. 2 de 2 Nombre : CESAR AUGUSTO GOMEZ GIRALDO N. peticion : IHQ250925 N.Identificación : CC. 16545448 Genero : MASCULINO Edad : 68 años 10 meses 14 dias EPS : NUEVA EPS Médico tratante : ANDRES FELIPE VARELA Servicio : ORTOPEDIA Fecha Ingreso : 25/08/2025 Fecha Informe : 01/09/2025",
+      "IHQ_ORGANO": "FÉMUR DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_MDM2": "POSITIVO",
+      "IHQ_CDK4": "NEGATIVO",
+      "extraction_timestamp": "2026-04-15T16:15:13.428041",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250925\nCopia Pag. 1 de 2\nNombre : CESAR AUGUSTO GOMEZ GIRALDO\nN. peticion : IHQ250925\nN.Identificación : CC. 16545448\nGenero : MASCULINO\nEdad : 68 años 10 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : ORTOPEDIA\nFecha Ingreso : 25/08/2025\nFecha Informe : 01/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX FEMUR DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe\nrecibe\norden\npara\nrealizar\nestudios\nde\ninmunohistoquímica\nen\nmaterial\nexterno\nrotulado\n\"Q-113755-25\" y diagnóstico \"NEOPLASIA OSTEOBLÁSTICA Y CONDROBLÁSTICA CON ÁRES DE NECROSIS\nTUMORAL Y SIN EVIDENCIA DE INVASIÓN VASCULAR. SE FAVORECE DIAGNÓSTICO DE OSTEOSARCOMA\".\nPrevia revisión de la histología, se observa escaso material forme, del cual se toman 4 niveles para\ncoloraciones, con escaso material evaluable en el cual se solicitan coloraciónes con los marcadores S100,\nMDM2 y CDK4.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nProliferación fusocelular de disposición fasciculada, con células de núcleos ovalados e hipercromáticos,\nsin atipia, actividad mitótica no evidente. No se observa diferenciación con fragementos sueltos de tejido\ncondral inmaduro, sin diferenciación lipoblástica evidente en los fragmentos examinados. Estas células\npresentan un inmunofenotipo S100-, MDM2+ y CDK4-. \nDIAGNÓSTICO\nFémur derecho. Tumor. Biopsia escisional. Inmunohistoquímica\nLESIÓN FUSOCELULAR POSITIVO PARA AMPLIFICACIÓN MDM2.\nCOMENTARIOS\nSe recomienda ampliar el muestreo de la lesión para ampliar los estudios de inmunohistoquímica y\nclasificar la lesión.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---\nIHQ250925\nCopia Pag. 2 de 2\nNombre : CESAR AUGUSTO GOMEZ GIRALDO\nN. peticion : IHQ250925\nN.Identificación : CC. 16545448\nGenero : MASCULINO\nEdad : 68 años 10 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : ORTOPEDIA\nFecha Ingreso : 25/08/2025\nFecha Informe : 01/09/2025\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 90 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CDK4, MDM2, S100",
+      "Descripcion macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"Q-113755-25\" y diagnóstico \"NEOPLASIA OSTEOBLÁSTICA Y CONDROBLÁSTICA CON ÁRES DE NECROSIS TUMORAL Y SIN EVIDENCIA DE INVASIÓN VASCULAR. SE FAVORECE DIAGNÓSTICO DE OSTEOSARCOMA\". Previa revisión de la histología, se observa escaso material forme, del cual se toman 4 niveles para coloraciones, con escaso material evaluable en el cual se solicitan coloraciónes con los marcadores S100, MDM2 y CDK4.",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Proliferación fusocelular de disposición fasciculada, con células de núcleos ovalados e hipercromáticos, sin atipia, actividad mitótica no evidente. No se observa diferenciación con fragementos sueltos de tejido condral inmaduro, sin diferenciación lipoblástica evidente en los fragmentos examinados. Estas células presentan un inmunofenotipo S100-, MDM2+ y CDK4-.",
+      "Descripcion Diagnostico": "Fémur derecho. Tumor. Biopsia escisional. Inmunohistoquímica LESIÓN FUSOCELULAR POSITIVO PARA AMPLIFICACIÓN MDM2.",
+      "IHQ_ORGANO": "FÉMUR DERECHO",
+      "Organo": "BX FEMUR DERECHO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "Fémur derecho. Tumor. Biopsia escisional. Inmunohistoquímica LESIÓN FUSOCELULAR POSITIVO PARA AMPLIFICACIÓN MDM2",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CDK4": "NEGATIVO",
+      "IHQ_MDM2": "POSITIVO",
+      "IHQ_S100": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Fémur derecho. Tumor. Biopsia escisional. Inmunohistoquímica\nLESIÓN FUSOCELULAR POSITIVO PARA AMPLIFICACIÓN MDM2.",
+      "valor_corregido": "Fémur derecho. Tumor. Biopsia escisional. Inmunohistoquímica LESIÓN FUSOCELULAR POSITIVO PARA AMPLIFICACIÓN MDM2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250925",
+      "timestamp": "2026-04-15T16:15:13.427760"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se recomienda ampliar el muestreo de la lesión para ampliar los estudios de inmunohistoquímica y\nclasificar la lesión.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---\nIHQ250925\nCopia Pag. 2 de 2\nNombre : CESAR AUGUSTO GOMEZ GIRALDO\nN. peticion : IHQ250925\nN.Identificación : CC. 16545448\nGenero : MASCULINO\nEdad : 68 años 10 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : ANDRES FELIPE VARELA\nServicio : ORTOPEDIA\nFecha Ingreso : 25/08/2025\nFecha Informe : 01/09/2025",
+      "valor_corregido": "Se recomienda ampliar el muestreo de la lesión para ampliar los estudios de inmunohistoquímica y clasificar la lesión. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 89 --- IHQ250925 Copia Pag. 2 de 2 Nombre : CESAR AUGUSTO GOMEZ GIRALDO N. peticion : IHQ250925 N.Identificación : CC. 16545448 Genero : MASCULINO Edad : 68 años 10 meses 14 dias EPS : NUEVA EPS Médico tratante : ANDRES FELIPE VARELA Servicio : ORTOPEDIA Fecha Ingreso : 25/08/2025 Fecha Informe : 01/09/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250925",
+      "timestamp": "2026-04-15T16:15:13.427765"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 50
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "session_id": "IHQ250924_20260415_161512",
+  "numero_peticion": "IHQ250924",
+  "timestamp": "2026-04-15T16:15:12.893230",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250924\nCopia Pag. 1 de 2\nNombre : MARIA ANA ROSA CARDENAS LOZANON. peticion : IHQ250924\nN.Identificación : CC. 35810044\nGenero : FEMENINO\nEdad : 69 años 13 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS EDUARDO GALLEGO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 25/08/2025\nFecha Informe : 05/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO INGUINAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2509861-2 que corresponde a GANGLIO INGUINAL IZQUIERDO, con\ndiagnóstico de \"COMPATIBLE CON MELANOMA METASTÁSICO. REQUIERE ESTUDIOS DE\nINMUNOHISTOQUÍMICA.\" por lo que se realiza marcación para S100, SOX10, MART-1 y HMB45.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEn los niveles histológicos se observa una neoplasia maligna en patrón sólido compuesta por\ncélulas tumorales, pleomórficas y nucleolo prominente rojo. Presentan marcación positiva fuerte y\ndifusa para S100, SOX 10, MART 1 y HMB45.\nDIAGNÓSTICO\nGanglio inguinal izquierdo, historia de melanoma estadío IV. Lesión. Biopsia escisional.\nEstudios de inmunohistoquímica.\nCOMPATIBLE CON MELANOMA METASTÁSICO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---\nIHQ250924\nCopia Pag. 2 de 2\nNombre : MARIA ANA ROSA CARDENAS LOZANON. peticion : IHQ250924\nN.Identificación : CC. 35810044\nGenero : FEMENINO\nEdad : 69 años 13 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS EDUARDO GALLEGO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 25/08/2025\nFecha Informe : 05/09/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3092,
+      "reduccion_porcentaje": 98.43
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250924",
+      "caso_num": 45,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO",
+      "IHQ_MELAN_A": "POSITIVO",
+      "IHQ_HMB45": "POSITIVO",
+      "nombre_completo": "MARIA ANA ROSA CARDENAS LOZANO",
+      "numero_peticion": "IHQ250924",
+      "identificacion": "35810044",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "69",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "CARLOS EDUARDO GALLEGO",
+      "servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "fecha_ingreso": "25/08/2025",
+      "fecha_informe": "05/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250924",
+      "N. de identificación": "35810044",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "Médico tratante": "CARLOS EDUARDO GALLEGO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "25/08/2025",
+      "Fecha Informe": "05/09/2025",
+      "nombres": "MARIA ANA ROSA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "ANA ROSA",
+      "apellidos": "CARDENAS LOZANO",
+      "Primer apellido": "CARDENAS",
+      "Segundo apellido": "LOZANO",
+      "nombre_formal": "CARDENAS LOZANO, MARIA ANA ROSA",
+      "diagnostico": "Ganglio inguinal izquierdo, historia de melanoma estadío IV. Lesión. Biopsia escisional. Estudios de inmunohistoquímica. COMPATIBLE CON MELANOMA METASTÁSICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los niveles histológicos se observa una neoplasia maligna en patrón sólido compuesta por células tumorales, pleomórficas y nucleolo prominente rojo. Presentan marcación positiva fuerte y difusa para S100, SOX 10, MART 1 y HMB45.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2509861-2 que corresponde a GANGLIO INGUINAL IZQUIERDO, con diagnóstico de \"COMPATIBLE CON MELANOMA METASTÁSICO. REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA.\" por lo que se realiza marcación para S100, SOX10, MART-1 y HMB45.",
+      "ihq_organo": "GANGLIO INGUINAL IZQUIERDO, HISTORIA DE MELANOMA ESTADÍO IV",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GANGLIO INGUINAL IZQUIERDO, HISTORIA DE MELANOMA ESTADÍO IV",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-04-15T16:15:13.133559",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250924\nCopia Pag. 1 de 2\nNombre : MARIA ANA ROSA CARDENAS LOZANON. peticion : IHQ250924\nN.Identificación : CC. 35810044\nGenero : FEMENINO\nEdad : 69 años 13 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS EDUARDO GALLEGO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 25/08/2025\nFecha Informe : 05/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nGANGLIO INGUINAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2509861-2 que corresponde a GANGLIO INGUINAL IZQUIERDO, con\ndiagnóstico de \"COMPATIBLE CON MELANOMA METASTÁSICO. REQUIERE ESTUDIOS DE\nINMUNOHISTOQUÍMICA.\" por lo que se realiza marcación para S100, SOX10, MART-1 y HMB45.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEn los niveles histológicos se observa una neoplasia maligna en patrón sólido compuesta por\ncélulas tumorales, pleomórficas y nucleolo prominente rojo. Presentan marcación positiva fuerte y\ndifusa para S100, SOX 10, MART 1 y HMB45.\nDIAGNÓSTICO\nGanglio inguinal izquierdo, historia de melanoma estadío IV. Lesión. Biopsia escisional.\nEstudios de inmunohistoquímica.\nCOMPATIBLE CON MELANOMA METASTÁSICO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---\nIHQ250924\nCopia Pag. 2 de 2\nNombre : MARIA ANA ROSA CARDENAS LOZANON. peticion : IHQ250924\nN.Identificación : CC. 35810044\nGenero : FEMENINO\nEdad : 69 años 13 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS EDUARDO GALLEGO\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 25/08/2025\nFecha Informe : 05/09/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HMB45, MELAN-A, S100, SOX10",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2509861-2 que corresponde a GANGLIO INGUINAL IZQUIERDO, con diagnóstico de \"COMPATIBLE CON MELANOMA METASTÁSICO. REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA.\" por lo que se realiza marcación para S100, SOX10, MART-1 y HMB45.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los niveles histológicos se observa una neoplasia maligna en patrón sólido compuesta por células tumorales, pleomórficas y nucleolo prominente rojo. Presentan marcación positiva fuerte y difusa para S100, SOX 10, MART 1 y HMB45.",
+      "Descripcion Diagnostico": "Ganglio inguinal izquierdo, historia de melanoma estadío IV. Lesión. Biopsia escisional. Estudios de inmunohistoquímica. COMPATIBLE CON MELANOMA METASTÁSICO.",
+      "IHQ_ORGANO": "GANGLIO INGUINAL IZQUIERDO, HISTORIA DE MELANOMA ESTADÍO IV",
+      "Organo": "GANGLIO INGUINAL IZQUIERDO",
+      "Diagnostico Coloracion": "MELANOMA METASTÁSICO. REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "MELANOMA METASTÁSICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_HMB45": "POSITIVO",
+      "IHQ_MELAN_A": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio inguinal izquierdo, historia de melanoma estadío IV. Lesión. Biopsia escisional.\nEstudios de inmunohistoquímica.\nCOMPATIBLE CON MELANOMA METASTÁSICO.",
+      "valor_corregido": "Ganglio inguinal izquierdo, historia de melanoma estadío IV. Lesión. Biopsia escisional. Estudios de inmunohistoquímica. COMPATIBLE CON MELANOMA METASTÁSICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250924",
+      "timestamp": "2026-04-15T16:15:13.133188"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 50
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "session_id": "IHQ250315_20260420_082948",
+  "numero_peticion": "IHQ250315",
+  "timestamp": "2026-04-20T08:29:48.781391",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250315\nCopia Pag. 1 de 1\nNombre : LUIS CARLOS ORTIZ JIMENEZ\nN. peticion : IHQ250315\nN.Identificación : CC. 16361364\nGenero : MASCULINO\nEdad : 59 años 6 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : MEDICA HOMBRES\nFecha Ingreso : 31/03/2025\nFecha Informe : 08/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX GANGLIO CERVICAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2503376, el cual corresponde a resección de ganglio linfático\ncervical izquierdo con diagnóstico de \"CARCINOMA METASTÁSICO\". Se ordenan los siguientes\nmarcadores: CKAE1E3, CK7, CK20, p16, p40, Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CKAE1E3, CK7, p40 y p16 en bloque. Son negativas para CK20.\nEl índice de proliferación celular medido por Ki-67 es del 90%.\nDIAGNÓSTICO\n Ganglio linfático cervical izquierdo. Tumor. Linfadenectomía. Estudios de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR METASTÁSICO, P16 POSITIVO\nCOMENTARIOS\nSe recomienda correlacionar con historia clínica e imágenes diagnósticas.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 5 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 2505,
+      "reduccion_porcentaje": 98.59
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250315",
+      "caso_num": 2,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "nombre_completo": "LUIS CARLOS ORTIZ JIMENEZ",
+      "numero_peticion": "IHQ250315",
+      "identificacion": "16361364",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "59",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "MEDICA HOMBRES",
+      "fecha_ingreso": "31/03/2025",
+      "fecha_informe": "08/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250315",
+      "N. de identificación": "16361364",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "MEDICA HOMBRES",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "31/03/2025",
+      "Fecha Informe": "08/04/2025",
+      "nombres": "LUIS CARLOS ORTIZ",
+      "Primer nombre": "LUIS",
+      "Segundo nombre": "CARLOS ORTIZ",
+      "apellidos": "JIMENEZ",
+      "Primer apellido": "JIMENEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "JIMENEZ, LUIS CARLOS ORTIZ",
+      "diagnostico": "Ganglio linfático cervical izquierdo. Tumor. Linfadenectomía. Estudios de inmunohistoquímica: CARCINOMA ESCAMOCELULAR METASTÁSICO, p16 POSITIVO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CK7, p40 y p16 en bloque. Son negativas para CK20. El índice de proliferación celular medido por KI-67 es del 90%.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2503376, el cual corresponde a resección de ganglio linfático cervical izquierdo con diagnóstico de \"CARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CKAE1E3, CK7, CK20, p16, p40, KI-67.",
+      "ihq_organo": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1E3, CK7, CK20, P16, P40, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Se recomienda correlacionar con historia clínica e imágenes diagnósticas.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1E3, CK7, CK20, P16, P40, Ki-67",
+      "IHQ_KI-67": "90%",
+      "p16": "POSITIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-04-20T08:29:49.026952",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250315\nCopia Pag. 1 de 1\nNombre : LUIS CARLOS ORTIZ JIMENEZ\nN. peticion : IHQ250315\nN.Identificación : CC. 16361364\nGenero : MASCULINO\nEdad : 59 años 6 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : MEDICA HOMBRES\nFecha Ingreso : 31/03/2025\nFecha Informe : 08/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX GANGLIO CERVICAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2503376, el cual corresponde a resección de ganglio linfático\ncervical izquierdo con diagnóstico de \"CARCINOMA METASTÁSICO\". Se ordenan los siguientes\nmarcadores: CKAE1E3, CK7, CK20, p16, p40, Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CKAE1E3, CK7, p40 y p16 en bloque. Son negativas para CK20.\nEl índice de proliferación celular medido por Ki-67 es del 90%.\nDIAGNÓSTICO\n Ganglio linfático cervical izquierdo. Tumor. Linfadenectomía. Estudios de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR METASTÁSICO, P16 POSITIVO\nCOMENTARIOS\nSe recomienda correlacionar con historia clínica e imágenes diagnósticas.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 5 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, CK7, CK20, P16, P40, Ki-67",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2503376, el cual corresponde a resección de ganglio linfático cervical izquierdo con diagnóstico de \"CARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CKAE1E3, CK7, CK20, p16, p40, Ki-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CK7, p40 y p16 en bloque. Son negativas para CK20. El índice de proliferación celular medido por Ki-67 es del 90%.",
+      "Descripcion Diagnostico": "Ganglio linfático cervical izquierdo. Tumor. Linfadenectomía. Estudios de inmunohistoquímica: CARCINOMA ESCAMOCELULAR METASTÁSICO, p16 POSITIVO",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "Organo": "BX GANGLIO CERVICAL IZQUIERDO",
+      "Diagnostico Coloracion": "CARCINOMA METASTÁSICO",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR METASTÁSICO, P16 POSITIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 90%",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_KI-67": "90%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 138,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático cervical izquierdo. Tumor. Linfadenectomía. Estudios de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR METASTÁSICO, P16 POSITIVO",
+      "valor_corregido": "Ganglio linfático cervical izquierdo. Tumor. Linfadenectomía. Estudios de inmunohistoquímica: CARCINOMA ESCAMOCELULAR METASTÁSICO, p16 POSITIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250315",
+      "timestamp": "2026-04-20T08:29:49.026709"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2503376, el cual corresponde a resección de ganglio linfático cervical izquierdo con diagnóstico de \"CARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CKAE1E3, CK7, CK20, p16, p40, Ki-67.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2503376, el cual corresponde a resección de ganglio linfático cervical izquierdo con diagnóstico de \"CARCINOMA METASTÁSICO\". Se ordenan los siguientes marcadores: CKAE1E3, CK7, CK20, p16, p40, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250315",
+      "timestamp": "2026-04-20T08:29:49.026715"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CK7, p40 y p16 en bloque. Son negativas para CK20. El índice de proliferación celular medido por Ki-67 es del 90%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CKAE1E3, CK7, p40 y p16 en bloque. Son negativas para CK20. El índice de proliferación celular medido por KI-67 es del 90%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250315",
+      "timestamp": "2026-04-20T08:29:49.026716"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 56
+  }
+}

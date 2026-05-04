@@ -1,0 +1,162 @@
+{
+  "session_id": "IHQ250900_20260420_090827",
+  "numero_peticion": "IHQ250900",
+  "timestamp": "2026-04-20T09:08:27.988584",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250900\nCopia Pag. 1 de 2\nNombre : ADRIANA PINO DIAZ\nN. peticion : IHQ250900\nN.Identificación : CC. 29581783\nGenero : FEMENINO\nEdad : 55 años 6 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : DERMATOLOGIA\nFecha Ingreso : 15/08/2025\nFecha Informe : 29/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMUCOSA GASTRICA\nANTRAL, CORPORAL Y\nDUODENAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2507875 bloques A, B1, B2” que corresponde a \"biopsia de mucosa gastrica \" y con\ndiagnóstico de “GASTRITIS CRÓNICA NO ATRÓFICA, CAMBIOS DISPLASICOS FOCAL DEL EPITELIO\nDUODENAL DE BAJO GRADO, INFLAMACIÓN AGUDA NEGATIVA, Helicobacter pylori AUSENTE.”.\nPrevia revisión de la histología se realizan niveles histológicos para tinción con: Cd79a, CD20,\nPAX5, CD38, CD3, CD38, BCL2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLos cortes histológicos de la mucosa gastrica muestran marcación para linfocitos CD79a y PAX 5,\nCD3 y CD38, BCL2 de forma dispersa sin distorsionar la arquitectura. Hay marcación negativa\npara CD20, CD23. \nDIAGNÓSTICO\nMucosa gastrica. Biopsia. Estudios de inmunohistoquímica. \nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA NO EVIDENCIAN CELULARIDAD\nLINFOIDE ABERRANTE. \nCOMENTARIOS\nCaso valorado en conjunto con la Dra Maria Ximena Varela (patóloga) \nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---\nIHQ250900\nCopia Pag. 2 de 2\nNombre : ADRIANA PINO DIAZ\nN. peticion : IHQ250900\nN.Identificación : CC. 29581783\nGenero : FEMENINO\nEdad : 55 años 6 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : DERMATOLOGIA\nFecha Ingreso : 15/08/2025\nFecha Informe : 29/08/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3373,
+      "reduccion_porcentaje": 98.29
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250900",
+      "caso_num": 22,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD79A": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_CD20": "NEGATIVO",
+      "nombre_completo": "ADRIANA PINO DIAZ",
+      "numero_peticion": "IHQ250900",
+      "identificacion": "29581783",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "55",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "servicio": "DERMATOLOGIA",
+      "fecha_ingreso": "15/08/2025",
+      "fecha_informe": "29/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250900",
+      "N. de identificación": "29581783",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "DERMATOLOGIA",
+      "Médico tratante": "JUAN CARLOS ALVIR ENRIQUEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "15/08/2025",
+      "Fecha Informe": "29/08/2025",
+      "nombres": "ADRIANA",
+      "Primer nombre": "ADRIANA",
+      "Segundo nombre": "",
+      "apellidos": "PINO DIAZ",
+      "Primer apellido": "PINO",
+      "Segundo apellido": "DIAZ",
+      "nombre_formal": "PINO DIAZ, ADRIANA",
+      "diagnostico": "Mucosa gastrica. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA NO EVIDENCIAN CELULARIDAD LINFOIDE ABERRANTE.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Los cortes histológicos de la mucosa gastrica muestran marcación para linfocitos CD79 a y PAX 5, CD3 y CD38, BCL2 de forma dispersa sin distorsionar la arquitectura. Hay marcación negativa para CD20, CD23.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2507875 bloques A, B1, B2\" que corresponde a \"biopsia de mucosa gastrica \" y con diagnóstico de \"GASTRITIS CRÓNICA NO ATRÓFICA, CAMBIOS DISPLASICOS FOCAL DEL EPITELIO DUODENAL DE BAJO GRADO, INFLAMACIÓN AGUDA NEGATIVA, Helicobacter pylori AUSENTE.\". Previa revisión de la histología se realizan niveles histológicos para tinción con: Cd79 a, CD20, PAX5, CD38, CD3, CD38, BCL2.",
+      "ihq_organo": "MUCOSA GASTRICA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "DERMATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD79A, CD20, PAX5, CD38, CD3, BCL2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con la Dra Maria Ximena Varela (patóloga)",
+      "IHQ_ORGANO": "MUCOSA GASTRICA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD79A, CD20, PAX5, CD38, CD3, BCL2",
+      "IHQ_CD23": "NEGATIVO",
+      "extraction_timestamp": "2026-04-20T09:08:28.233994",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250900\nCopia Pag. 1 de 2\nNombre : ADRIANA PINO DIAZ\nN. peticion : IHQ250900\nN.Identificación : CC. 29581783\nGenero : FEMENINO\nEdad : 55 años 6 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : DERMATOLOGIA\nFecha Ingreso : 15/08/2025\nFecha Informe : 29/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMUCOSA GASTRICA\nANTRAL, CORPORAL Y\nDUODENAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2507875 bloques A, B1, B2” que corresponde a \"biopsia de mucosa gastrica \" y con\ndiagnóstico de “GASTRITIS CRÓNICA NO ATRÓFICA, CAMBIOS DISPLASICOS FOCAL DEL EPITELIO\nDUODENAL DE BAJO GRADO, INFLAMACIÓN AGUDA NEGATIVA, Helicobacter pylori AUSENTE.”.\nPrevia revisión de la histología se realizan niveles histológicos para tinción con: Cd79a, CD20,\nPAX5, CD38, CD3, CD38, BCL2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLos cortes histológicos de la mucosa gastrica muestran marcación para linfocitos CD79a y PAX 5,\nCD3 y CD38, BCL2 de forma dispersa sin distorsionar la arquitectura. Hay marcación negativa\npara CD20, CD23. \nDIAGNÓSTICO\nMucosa gastrica. Biopsia. Estudios de inmunohistoquímica. \nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA NO EVIDENCIAN CELULARIDAD\nLINFOIDE ABERRANTE. \nCOMENTARIOS\nCaso valorado en conjunto con la Dra Maria Ximena Varela (patóloga) \nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---\nIHQ250900\nCopia Pag. 2 de 2\nNombre : ADRIANA PINO DIAZ\nN. peticion : IHQ250900\nN.Identificación : CC. 29581783\nGenero : FEMENINO\nEdad : 55 años 6 meses 14 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN CARLOS ALVIR ENRIQUEZ\nServicio : DERMATOLOGIA\nFecha Ingreso : 15/08/2025\nFecha Informe : 29/08/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD79A, CD20, PAX5, CD38, CD3, BCL2, CD23",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2507875 bloques A, B1, B2” que corresponde a \"biopsia de mucosa gastrica \" y con diagnóstico de “GASTRITIS CRÓNICA NO ATRÓFICA, CAMBIOS DISPLASICOS FOCAL DEL EPITELIO DUODENAL DE BAJO GRADO, INFLAMACIÓN AGUDA NEGATIVA, Helicobacter pylori AUSENTE.”. Previa revisión de la histología se realizan niveles histológicos para tinción con: Cd79a, CD20, PAX5, CD38, CD3, CD38, BCL2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Los cortes histológicos de la mucosa gastrica muestran marcación para linfocitos CD79a y PAX 5, CD3 y CD38, BCL2 de forma dispersa sin distorsionar la arquitectura. Hay marcación negativa para CD20, CD23.",
+      "Descripcion Diagnostico": "Mucosa gastrica. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA NO EVIDENCIAN CELULARIDAD LINFOIDE ABERRANTE.",
+      "IHQ_ORGANO": "MUCOSA GASTRICA",
+      "Organo": "MUCOSA GASTRICA ANTRAL, CORPORAL Y DUODENAL",
+      "Diagnostico Coloracion": "GASTRITIS CRÓNICA NO ATRÓFICA, CAMBIOS DISPLASICOS FOCAL DEL EPITELIO DUODENAL DE BAJO GRADO, INFLAMACIÓN AGUDA NEGATIVA, HELICOBACTER PYLORI AUSENTE",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA NO EVIDENCIAN CELULARIDAD LINFOIDE ABERRANTE",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD79A": "POSITIVO",
+      "IHQ_CD20": "NEGATIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_CD38": "NO MENCIONADO",
+      "IHQ_CD3": "NO MENCIONADO",
+      "IHQ_BCL2": "NO MENCIONADO",
+      "IHQ_CD23": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 137,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa gastrica. Biopsia. Estudios de inmunohistoquímica. \nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA NO EVIDENCIAN CELULARIDAD\nLINFOIDE ABERRANTE.",
+      "valor_corregido": "Mucosa gastrica. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA NO EVIDENCIAN CELULARIDAD LINFOIDE ABERRANTE.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250900",
+      "timestamp": "2026-04-20T09:08:28.233587"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2507875 bloques A, B1, B2” que corresponde a \"biopsia de mucosa gastrica \" y con diagnóstico de “GASTRITIS CRÓNICA NO ATRÓFICA, CAMBIOS DISPLASICOS FOCAL DEL EPITELIO DUODENAL DE BAJO GRADO, INFLAMACIÓN AGUDA NEGATIVA, Helicobacter pylori AUSENTE.”. Previa revisión de la histología se realizan niveles histológicos para tinción con: Cd79a, CD20, PAX5, CD38, CD3, CD38, BCL2.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2507875 bloques A, B1, B2\" que corresponde a \"biopsia de mucosa gastrica \" y con diagnóstico de \"GASTRITIS CRÓNICA NO ATRÓFICA, CAMBIOS DISPLASICOS FOCAL DEL EPITELIO DUODENAL DE BAJO GRADO, INFLAMACIÓN AGUDA NEGATIVA, Helicobacter pylori AUSENTE.\". Previa revisión de la histología se realizan niveles histológicos para tinción con: Cd79 a, CD20, PAX5, CD38, CD3, CD38, BCL2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250900",
+      "timestamp": "2026-04-20T09:08:28.233593"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Los cortes histológicos de la mucosa gastrica muestran marcación para linfocitos CD79a y PAX 5, CD3 y CD38, BCL2 de forma dispersa sin distorsionar la arquitectura. Hay marcación negativa para CD20, CD23.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Los cortes histológicos de la mucosa gastrica muestran marcación para linfocitos CD79 a y PAX 5, CD3 y CD38, BCL2 de forma dispersa sin distorsionar la arquitectura. Hay marcación negativa para CD20, CD23.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250900",
+      "timestamp": "2026-04-20T09:08:28.233594"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 52
+  }
+}

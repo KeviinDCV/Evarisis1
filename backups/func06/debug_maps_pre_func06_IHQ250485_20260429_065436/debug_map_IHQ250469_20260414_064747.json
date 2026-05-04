@@ -1,0 +1,139 @@
+{
+  "session_id": "IHQ250469_20260414_064747",
+  "numero_peticion": "IHQ250469",
+  "timestamp": "2026-04-14T06:47:47.150865",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250469\nCopia Pag. 1 de 2\nNombre : JESUSA GUMERCINDA SALAZAR\nARIAS\nN. peticion : IHQ250469\nN.Identificación : CC. 31206210\nGenero : FEMENINO\nEdad : 75 años 3 meses 9 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 02/05/2025\nFecha Informe : 07/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nHEPATECTOMIA IZQUIERDA\n+ COLECISTECTOMIA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2500826 que\ncorresponde a muestra de \" A. Hepatectomía izquierda\" con diagnóstico de \"CARCINOMA\nHEPATOCELULAR. GRADO DE DIFERENCIACIÓN MIXTO: GRADO 2 (90%) Y GRADO 3\n(10%). TAMAÑO TUMORAL: 15 X 8,1 CENTÍMETROS. BORDE DE RESECCIÓN\nQUIRÚRGICA LIBRE (0.1 centímetro). NEGATIVO PARA INVASIÓN LINFOVASCULAR.\nNEGATIVO PARA INVASION PERINEURAL \" con fecha del informe del 03 de febrero del\n2025. Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina.\nPrevia revisión de la histología se solicitan niveles al bloque A4 para los siguientes\nmarcadores: CKAE1/AE3, GLIPICAN, HEPAR y ARGINASA. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nControles externos con adecuada marcación. \nEVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA:\nSe identifica parénquima hepático que demuestra una expresión homogénea para CKAE1/AE3\ntanto en el parénquima no lesional como en el tumoral. \nHay una marcación fuerte en las células tumorales para los marcadores GLIPICAN 3 y HEPAR con\natenuación en la intensidad de expresión para ARGINASA. \nLos hepatocitos normales son negativos para GLIPICAN3 y positivos para ARGINASA. \nDIAGNÓSTICO\nHígado, lóbulo izquierdo. Masa. Hepatectomía izquierda. Estudio de\ninmunohistoquímica.\nCARCINOMA HEPATOCELULAR \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---\nIHQ250469\nCopia Pag. 2 de 2\nNombre : JESUSA GUMERCINDA SALAZAR\nARIAS\nN. peticion : IHQ250469\nN.Identificación : CC. 31206210\nGenero : FEMENINO\nEdad : 75 años 3 meses 9 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 02/05/2025\nFecha Informe : 07/05/2025\nGRADO DE DIFERENCIACIÓN MIXTO: GRADO 2 (90%) Y GRADO 3 (10%). \nTAMAÑO TUMORAL: 15 X 8,1 CENTÍMETROS. \nBORDE DE RESECCIÓN QUIRÚRGICA LIBRE (0.1 centímetro).\nNEGATIVO PARA INVASIÓN LINFOVASCULAR. \nNEGATIVO PARA INVASION PERINEURAL. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3984,
+      "reduccion_porcentaje": 97.89
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250469",
+      "caso_num": 6,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_ARGINASA": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "nombre_completo": "JESUSA GUMERCINDA SALAZAR ARIAS",
+      "numero_peticion": "IHQ250469",
+      "identificacion": "31206210",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "75",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "CARLOS ANDRES MUÑOZ",
+      "servicio": "HOSPITALIZACION TRASPLANTE HPB",
+      "fecha_ingreso": "02/05/2025",
+      "fecha_informe": "07/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250469",
+      "N. de identificación": "31206210",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HOSPITALIZACION TRASPLANTE HPB",
+      "Médico tratante": "CARLOS ANDRES MUÑOZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/05/2025",
+      "Fecha Informe": "07/05/2025",
+      "nombres": "JESUSA GUMERCINDA",
+      "Primer nombre": "JESUSA",
+      "Segundo nombre": "GUMERCINDA",
+      "apellidos": "SALAZAR ARIAS",
+      "Primer apellido": "SALAZAR",
+      "Segundo apellido": "ARIAS",
+      "nombre_formal": "SALAZAR ARIAS, JESUSA GUMERCINDA",
+      "diagnostico": "Hígado, lóbulo izquierdo. Masa. Hepatectomía izquierda. Estudio de inmunohistoquímica. CARCINOMA HEPATOCELULAR: 02/05/2025 GRADO DE DIFERENCIACIÓN MIXTO: GRADO 2 (90%) Y GRADO 3 (10%). TAMAÑO TUMORAL: 15 X 8,1 CENTÍMETROS. BORDE DE RESECCIÓN QUIRÚRGICA LIBRE (0.1 centímetro). NEGATIVO PARA INVASIÓN LINFOVASCULAR. NEGATIVO PARA INVASION PERINEURAL.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Se identifica parénquima hepático que demuestra una expresión homogénea para CKAE1/AE3 tanto en el parénquima no lesional como en el tumoral. Hay una marcación fuerte en las células tumorales para los marcadores GLIPICAN 3 y HEPAR con atenuación en la intensidad de expresión para ARGINASA. Los hepatocitos normales son negativos para GLIPICAN3 y positivos para ARGINASA.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2500826 que corresponde a muestra de \" A. Hepatectomía izquierda\" con diagnóstico de \"CARCINOMA HEPATOCELULAR. GRADO DE DIFERENCIACIÓN MIXTO: GRADO 2 (90%) Y GRADO 3 (10%). TAMAÑO TUMORAL: 15 X 8,1 CENTÍMETROS. BORDE DE RESECCIÓN QUIRÚRGICA LIBRE (0.1 centímetro). NEGATIVO PARA INVASIÓN LINFOVASCULAR. NEGATIVO PARA INVASION PERINEURAL \" con fecha del informe del 03 de febrero del 2025. Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles al bloque A4 para los siguientes marcadores: CKAE1/AE3, GLIPICAN, HEPAR y ARGINASA.",
+      "ihq_organo": "HÍGADO, LÓBULO IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1AE3, GLIPICAN, HEPAR, ARGINASA",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "HÍGADO, LÓBULO IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, GLIPICAN, HEPAR, ARGINASA",
+      "extraction_timestamp": "2026-04-14T06:47:47.467277",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250469\nCopia Pag. 1 de 2\nNombre : JESUSA GUMERCINDA SALAZAR\nARIAS\nN. peticion : IHQ250469\nN.Identificación : CC. 31206210\nGenero : FEMENINO\nEdad : 75 años 3 meses 9 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 02/05/2025\nFecha Informe : 07/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nHEPATECTOMIA IZQUIERDA\n+ COLECISTECTOMIA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2500826 que\ncorresponde a muestra de \" A. Hepatectomía izquierda\" con diagnóstico de \"CARCINOMA\nHEPATOCELULAR. GRADO DE DIFERENCIACIÓN MIXTO: GRADO 2 (90%) Y GRADO 3\n(10%). TAMAÑO TUMORAL: 15 X 8,1 CENTÍMETROS. BORDE DE RESECCIÓN\nQUIRÚRGICA LIBRE (0.1 centímetro). NEGATIVO PARA INVASIÓN LINFOVASCULAR.\nNEGATIVO PARA INVASION PERINEURAL \" con fecha del informe del 03 de febrero del\n2025. Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina.\nPrevia revisión de la histología se solicitan niveles al bloque A4 para los siguientes\nmarcadores: CKAE1/AE3, GLIPICAN, HEPAR y ARGINASA. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nControles externos con adecuada marcación. \nEVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA:\nSe identifica parénquima hepático que demuestra una expresión homogénea para CKAE1/AE3\ntanto en el parénquima no lesional como en el tumoral. \nHay una marcación fuerte en las células tumorales para los marcadores GLIPICAN 3 y HEPAR con\natenuación en la intensidad de expresión para ARGINASA. \nLos hepatocitos normales son negativos para GLIPICAN3 y positivos para ARGINASA. \nDIAGNÓSTICO\nHígado, lóbulo izquierdo. Masa. Hepatectomía izquierda. Estudio de\ninmunohistoquímica.\nCARCINOMA HEPATOCELULAR \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---\nIHQ250469\nCopia Pag. 2 de 2\nNombre : JESUSA GUMERCINDA SALAZAR\nARIAS\nN. peticion : IHQ250469\nN.Identificación : CC. 31206210\nGenero : FEMENINO\nEdad : 75 años 3 meses 9 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS ANDRES MUÑOZ\nServicio : HOSPITALIZACION TRASPLANTE HPB\nFecha Ingreso : 02/05/2025\nFecha Informe : 07/05/2025\nGRADO DE DIFERENCIACIÓN MIXTO: GRADO 2 (90%) Y GRADO 3 (10%). \nTAMAÑO TUMORAL: 15 X 8,1 CENTÍMETROS. \nBORDE DE RESECCIÓN QUIRÚRGICA LIBRE (0.1 centímetro).\nNEGATIVO PARA INVASIÓN LINFOVASCULAR. \nNEGATIVO PARA INVASION PERINEURAL. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, GLIPICAN, HEPAR, ARGINASA",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2500826 que corresponde a muestra de \" A. Hepatectomía izquierda\" con diagnóstico de \"CARCINOMA HEPATOCELULAR. GRADO DE DIFERENCIACIÓN MIXTO: GRADO 2 (90%) Y GRADO 3 (10%). TAMAÑO TUMORAL: 15 X 8,1 CENTÍMETROS. BORDE DE RESECCIÓN QUIRÚRGICA LIBRE (0.1 centímetro). NEGATIVO PARA INVASIÓN LINFOVASCULAR. NEGATIVO PARA INVASION PERINEURAL \" con fecha del informe del 03 de febrero del 2025. Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles al bloque A4 para los siguientes marcadores: CKAE1/AE3, GLIPICAN, HEPAR y ARGINASA.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Se identifica parénquima hepático que demuestra una expresión homogénea para CKAE1/AE3 tanto en el parénquima no lesional como en el tumoral. Hay una marcación fuerte en las células tumorales para los marcadores GLIPICAN 3 y HEPAR con atenuación en la intensidad de expresión para ARGINASA. Los hepatocitos normales son negativos para GLIPICAN3 y positivos para ARGINASA.",
+      "Descripcion Diagnostico": "Hígado, lóbulo izquierdo. Masa. Hepatectomía izquierda. Estudio de inmunohistoquímica. CARCINOMA HEPATOCELULAR: 02/05/2025 GRADO DE DIFERENCIACIÓN MIXTO: GRADO 2 (90%) Y GRADO 3 (10%). TAMAÑO TUMORAL: 15 X 8,1 CENTÍMETROS. BORDE DE RESECCIÓN QUIRÚRGICA LIBRE (0.1 centímetro). NEGATIVO PARA INVASIÓN LINFOVASCULAR. NEGATIVO PARA INVASION PERINEURAL.",
+      "IHQ_ORGANO": "HÍGADO, LÓBULO IZQUIERDO",
+      "Organo": "HEPATECTOMIA IZQUIERDA",
+      "Diagnostico Coloracion": "CARCINOMA HEPATOCELULAR. GRADO DE DIFERENCIACIÓN MIXTO: GRADO 2 (90%) Y GRADO 3 (10%). TAMAÑO TUMORAL: 15 X 8,1 CENTÍMETROS. BORDE DE RESECCIÓN QUIRÚRGICA LIBRE (0.1 CENTÍMETRO). NEGATIVO PARA INVASIÓN LINFOVASCULAR. NEGATIVO PARA INVASION PERINEURAL",
+      "Diagnostico Principal": "CARCINOMA HEPATOCELULAR: 02/05/2025 GRADO DE DIFERENCIACIÓN MIXTO: GRADO 2 (90%) Y GRADO 3 (10%)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_GLIPICAN": "NO MENCIONADO",
+      "IHQ_HEPAR": "NO MENCIONADO",
+      "IHQ_ARGINASA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hígado, lóbulo izquierdo. Masa. Hepatectomía izquierda. Estudio de\ninmunohistoquímica.\nCARCINOMA HEPATOCELULAR: 02/05/2025\nGRADO DE DIFERENCIACIÓN MIXTO: GRADO 2 (90%) Y GRADO 3 (10%). \nTAMAÑO TUMORAL: 15 X 8,1 CENTÍMETROS. \nBORDE DE RESECCIÓN QUIRÚRGICA LIBRE (0.1 centímetro).\nNEGATIVO PARA INVASIÓN LINFOVASCULAR. \nNEGATIVO PARA INVASION PERINEURAL.",
+      "valor_corregido": "Hígado, lóbulo izquierdo. Masa. Hepatectomía izquierda. Estudio de inmunohistoquímica. CARCINOMA HEPATOCELULAR: 02/05/2025 GRADO DE DIFERENCIACIÓN MIXTO: GRADO 2 (90%) Y GRADO 3 (10%). TAMAÑO TUMORAL: 15 X 8,1 CENTÍMETROS. BORDE DE RESECCIÓN QUIRÚRGICA LIBRE (0.1 centímetro). NEGATIVO PARA INVASIÓN LINFOVASCULAR. NEGATIVO PARA INVASION PERINEURAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250469",
+      "timestamp": "2026-04-14T06:47:47.466760"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 50
+  }
+}

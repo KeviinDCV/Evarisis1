@@ -1,0 +1,143 @@
+{
+  "session_id": "IHQ250888_20260410_104529",
+  "numero_peticion": "IHQ250888",
+  "timestamp": "2026-04-10T10:45:29.150161",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250888\nCopia Pag. 1 de 2\nNombre : LUZ MARINA VARGAS AGUDELO\nN. peticion : IHQ250888\nN.Identificación : CC. 29532619\nGenero : FEMENINO\nEdad : 67 años 23 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 14/08/2025\nFecha Informe : 21/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPRODUCTO DE\nHEMICOLECTOMIA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2508894-3 el cual corresponde a \"Ileocolectomía derecha\" con diagnóstico\nde \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE\". Se revisan placas para\nmarcación de HER2, MSH2, MSH6, MLH1 y PMS2.\nDESCRIPCIÓN MICROSCÓPICA\n EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nLos controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.\nLas células tumorales no presentan expresión para HER2 (score 0).\nDIAGNÓSTICO\n Colon derecho, ileon y apendice cecal. Lesión. Ileocolectomía derecha. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE, CON PATRÓN MICROSATELITAL\nESTABLE.\n- SIN EXPRESIÓN PARA HER2.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---\nIHQ250888\nCopia Pag. 2 de 2\nNombre : LUZ MARINA VARGAS AGUDELO\nN. peticion : IHQ250888\nN.Identificación : CC. 29532619\nGenero : FEMENINO\nEdad : 67 años 23 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 14/08/2025\nFecha Informe : 21/08/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3145,
+      "reduccion_porcentaje": 98.4
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250888",
+      "caso_num": 12,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "LUZ MARINA VARGAS AGUDELO",
+      "numero_peticion": "IHQ250888",
+      "identificacion": "29532619",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "67",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "14/08/2025",
+      "fecha_informe": "21/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250888",
+      "N. de identificación": "29532619",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/08/2025",
+      "Fecha Informe": "21/08/2025",
+      "nombres": "LUZ MARINA",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "MARINA",
+      "apellidos": "VARGAS AGUDELO",
+      "Primer apellido": "VARGAS",
+      "Segundo apellido": "AGUDELO",
+      "nombre_formal": "VARGAS AGUDELO, LUZ MARINA",
+      "diagnostico": "Colon derecho, ileon y apendice cecal. Lesión. Ileocolectomía derecha. Estudio de inmunohistoquímica: - ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE, CON PATRÓN MICROSATELITAL ESTABLE. - SIN EXPRESIÓN PARA HER2.",
+      "descripcion_microscopica": "EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria. Las células tumorales no presentan expresión para HER2 (score 0).",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2508894-3 el cual corresponde a \"Ileocolectomía derecha\" con diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE\". Se revisan placas para marcación de HER2, MSH2, MSH6, MLH1 y PMS2.",
+      "ihq_organo": "COLON DERECHO, ILEON Y APENDICE CECAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2, MSH2, MSH6, MLH1, PMS2",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "COLON DERECHO, ILEON Y APENDICE CECAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "HER2 (score 0)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH2, MSH6, MLH1, PMS2",
+      "IHQ_HER2": "(SCORE 0)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "extraction_timestamp": "2026-04-10T10:45:29.369144",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250888\nCopia Pag. 1 de 2\nNombre : LUZ MARINA VARGAS AGUDELO\nN. peticion : IHQ250888\nN.Identificación : CC. 29532619\nGenero : FEMENINO\nEdad : 67 años 23 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 14/08/2025\nFecha Informe : 21/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPRODUCTO DE\nHEMICOLECTOMIA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2508894-3 el cual corresponde a \"Ileocolectomía derecha\" con diagnóstico\nde \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE\". Se revisan placas para\nmarcación de HER2, MSH2, MSH6, MLH1 y PMS2.\nDESCRIPCIÓN MICROSCÓPICA\n EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nLos controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria.\nLas células tumorales no presentan expresión para HER2 (score 0).\nDIAGNÓSTICO\n Colon derecho, ileon y apendice cecal. Lesión. Ileocolectomía derecha. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE, CON PATRÓN MICROSATELITAL\nESTABLE.\n- SIN EXPRESIÓN PARA HER2.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---\nIHQ250888\nCopia Pag. 2 de 2\nNombre : LUZ MARINA VARGAS AGUDELO\nN. peticion : IHQ250888\nN.Identificación : CC. 29532619\nGenero : FEMENINO\nEdad : 67 años 23 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 14/08/2025\nFecha Informe : 21/08/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 27 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH2, MSH6, MLH1, PMS2",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2508894-3 el cual corresponde a \"Ileocolectomía derecha\" con diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE\". Se revisan placas para marcación de HER2, MSH2, MSH6, MLH1 y PMS2.",
+      "Descripcion microscopica": "EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable Los controles positivos de tejido conocido y los controles internos tienen una marcación satisfactoria. Las células tumorales no presentan expresión para HER2 (score 0).",
+      "Descripcion Diagnostico": "Colon derecho, ileon y apendice cecal. Lesión. Ileocolectomía derecha. Estudio de inmunohistoquímica: - ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE, CON PATRÓN MICROSATELITAL ESTABLE. - SIN EXPRESIÓN PARA HER2.",
+      "IHQ_ORGANO": "COLON DERECHO, ILEON Y APENDICE CECAL",
+      "Organo": "PRODUCTO DE HEMICOLECTOMIA DERECHA",
+      "Diagnostico Coloracion": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE",
+      "Diagnostico Principal": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE, CON PATRÓN MICROSATELITAL ESTABLE",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 (score 0)",
+      "IHQ_HER2": "(SCORE 0)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 138,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Colon derecho, ileon y apendice cecal. Lesión. Ileocolectomía derecha. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE, CON PATRÓN MICROSATELITAL\nESTABLE.\n- SIN EXPRESIÓN PARA HER2.",
+      "valor_corregido": "Colon derecho, ileon y apendice cecal. Lesión. Ileocolectomía derecha. Estudio de inmunohistoquímica: - ADENOCARCINOMA MODERADAMENTE DIFERENCIADO INFILTRANTE, CON PATRÓN MICROSATELITAL ESTABLE. - SIN EXPRESIÓN PARA HER2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250888",
+      "timestamp": "2026-04-10T10:45:29.368746"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 53
+  }
+}

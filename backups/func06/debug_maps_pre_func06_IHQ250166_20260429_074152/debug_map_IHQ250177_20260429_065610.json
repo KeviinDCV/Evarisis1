@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ250177_20260429_065610",
+  "numero_peticion": "IHQ250177",
+  "timestamp": "2026-04-29T06:56:10.895762",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250177\nCopia Pag. 1 de 1\nNombre : MERARDO ROJAS HURTADO\nN. peticion : IHQ250177\nN.Identificación : CC. 82390314\nGenero : MASCULINO\nEdad : 49 años 6 meses 3 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 17/02/2025\nFecha Informe : 04/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBAZO + GANGLIO\nPERITONEAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2501535” correspondiente a “Bazo” con diagnósticos de \"celularidad mononuclear dispersa sin\ncambios atípicos aparentes“. Previa revisión de la histología se realizan niveles histológicos en el bloque\nA7 para tinción con los marcadores: CD 20, PAX 5, CD 79ª, CD 23, CD 5, CD 3, CD 10, CD 30, BCL2, BCL\n6, MUM 1, C- MYC,\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa celularidad tiene marcación negativa para CD 20 , CD 79a, PAX 5. CD 10, MUM 1, BCL 6 y C MYC. CD\n3, BCL2 y CD 5 de distribución usual en parénquima esplénico\nDIAGNÓSTICO\n Bazo. Esplenectomia. Estudio de inmunohistoquimica:\n- SIN EVIDENCIA DE COMPROMISO POR LINFOMA B\nCOMENTARIOS\nCaso valorado en conjunto con la Dra Ximena Varela (Patologa)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2611,
+      "reduccion_porcentaje": 98.42
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250177",
+      "caso_num": 17,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD20": "NEGATIVO",
+      "nombre_completo": "MERARDO ROJAS HURTADO",
+      "numero_peticion": "IHQ250177",
+      "identificacion": "82390314",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "49",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "17/02/2025",
+      "fecha_informe": "04/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250177",
+      "N. de identificación": "82390314",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "17/02/2025",
+      "Fecha Informe": "04/03/2025",
+      "nombres": "MERARDO",
+      "Primer nombre": "MERARDO",
+      "Segundo nombre": "",
+      "apellidos": "ROJAS HURTADO",
+      "Primer apellido": "ROJAS",
+      "Segundo apellido": "HURTADO",
+      "nombre_formal": "ROJAS HURTADO, MERARDO",
+      "diagnostico": "Bazo. Esplenectomia. Estudio de inmunohistoquimica: - SIN EVIDENCIA DE COMPROMISO POR LINFOMA B",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad tiene marcación negativa para CD 20 , CD 79 a, PAX 5. CD 10, MUM 1, BCL 6 y C MYC. CD 3, BCL2 y CD 5 de distribución usual en parénquima esplénico",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2501535\" correspondiente a \"Bazo\" con diagnósticos de \"celularidad mononuclear dispersa sin cambios atípicos aparentes\". Previa revisión de la histología se realizan niveles histológicos en el bloque A7 para tinción con los marcadores: CD 20, PAX 5, CD 79ª, CD 23, CD 5, CD 3, CD 10, CD 30, BCL2, BCL 6, MUM 1, C- MYC,",
+      "ihq_organo": "BAZO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "",
+      "comentarios": "Caso valorado en conjunto con la Dra Ximena Varela (Patologa)",
+      "IHQ_ORGANO": "BAZO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_PAX5": "NEGATIVO",
+      "IHQ_CD79A": "NEGATIVO",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_MUM1": "NEGATIVO",
+      "extraction_timestamp": "2026-04-29T06:56:11.196579",
+      "extractor_version": "6.0.2_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250177\nCopia Pag. 1 de 1\nNombre : MERARDO ROJAS HURTADO\nN. peticion : IHQ250177\nN.Identificación : CC. 82390314\nGenero : MASCULINO\nEdad : 49 años 6 meses 3 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 17/02/2025\nFecha Informe : 04/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBAZO + GANGLIO\nPERITONEAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2501535” correspondiente a “Bazo” con diagnósticos de \"celularidad mononuclear dispersa sin\ncambios atípicos aparentes“. Previa revisión de la histología se realizan niveles histológicos en el bloque\nA7 para tinción con los marcadores: CD 20, PAX 5, CD 79ª, CD 23, CD 5, CD 3, CD 10, CD 30, BCL2, BCL\n6, MUM 1, C- MYC,\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa celularidad tiene marcación negativa para CD 20 , CD 79a, PAX 5. CD 10, MUM 1, BCL 6 y C MYC. CD\n3, BCL2 y CD 5 de distribución usual en parénquima esplénico\nDIAGNÓSTICO\n Bazo. Esplenectomia. Estudio de inmunohistoquimica:\n- SIN EVIDENCIA DE COMPROMISO POR LINFOMA B\nCOMENTARIOS\nCaso valorado en conjunto con la Dra Ximena Varela (Patologa)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "BCL6, CD20, CD79A, MUM1, PAX5",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2501535” correspondiente a “Bazo” con diagnósticos de \"celularidad mononuclear dispersa sin cambios atípicos aparentes“. Previa revisión de la histología se realizan niveles histológicos en el bloque A7 para tinción con los marcadores: CD 20, PAX 5, CD 79ª, CD 23, CD 5, CD 3, CD 10, CD 30, BCL2, BCL 6, MUM 1, C- MYC,",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad tiene marcación negativa para CD 20 , CD 79a, PAX 5. CD 10, MUM 1, BCL 6 y C MYC. CD 3, BCL2 y CD 5 de distribución usual en parénquima esplénico",
+      "Descripcion Diagnostico": "Bazo. Esplenectomia. Estudio de inmunohistoquimica: - SIN EVIDENCIA DE COMPROMISO POR LINFOMA B",
+      "IHQ_ORGANO": "BAZO",
+      "Organo": "BAZO + GANGLIO PERITONEAL",
+      "Diagnostico Coloracion": "CELULARIDAD MONONUCLEAR DISPERSA SIN CAMBIOS ATÍPICOS APARENTES",
+      "Diagnostico Principal": "SIN EVIDENCIA DE COMPROMISO POR LINFOMA B",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_BCL6": "NEGATIVO",
+      "IHQ_CD20": "NEGATIVO",
+      "IHQ_CD79A": "NEGATIVO",
+      "IHQ_MUM1": "NEGATIVO",
+      "IHQ_PAX5": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Bazo. Esplenectomia. Estudio de inmunohistoquimica:\n- SIN EVIDENCIA DE COMPROMISO POR LINFOMA B",
+      "valor_corregido": "Bazo. Esplenectomia. Estudio de inmunohistoquimica: - SIN EVIDENCIA DE COMPROMISO POR LINFOMA B",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250177",
+      "timestamp": "2026-04-29T06:56:11.194927"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2501535” correspondiente a “Bazo” con diagnósticos de \"celularidad mononuclear dispersa sin cambios atípicos aparentes“. Previa revisión de la histología se realizan niveles histológicos en el bloque A7 para tinción con los marcadores: CD 20, PAX 5, CD 79ª, CD 23, CD 5, CD 3, CD 10, CD 30, BCL2, BCL 6, MUM 1, C- MYC,",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2501535\" correspondiente a \"Bazo\" con diagnósticos de \"celularidad mononuclear dispersa sin cambios atípicos aparentes\". Previa revisión de la histología se realizan niveles histológicos en el bloque A7 para tinción con los marcadores: CD 20, PAX 5, CD 79ª, CD 23, CD 5, CD 3, CD 10, CD 30, BCL2, BCL 6, MUM 1, C- MYC,",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250177",
+      "timestamp": "2026-04-29T06:56:11.194933"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad tiene marcación negativa para CD 20 , CD 79a, PAX 5. CD 10, MUM 1, BCL 6 y C MYC. CD 3, BCL2 y CD 5 de distribución usual en parénquima esplénico",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad tiene marcación negativa para CD 20 , CD 79 a, PAX 5. CD 10, MUM 1, BCL 6 y C MYC. CD 3, BCL2 y CD 5 de distribución usual en parénquima esplénico",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250177",
+      "timestamp": "2026-04-29T06:56:11.194935"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 50
+  }
+}

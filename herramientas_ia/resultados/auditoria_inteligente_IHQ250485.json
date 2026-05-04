@@ -1,0 +1,132 @@
+{
+  "numero_caso": "IHQ250485",
+  "caso_num": 20,
+  "total_casos": 50,
+  "timestamp": "2026-04-29T06:56:38.934457",
+  "nivel": "completo",
+  "auditoria_unified": {
+    "descripciones": {
+      "macroscopica": "OK: Extraida",
+      "microscopica": "OK: Extraida"
+    },
+    "diagnostico": {
+      "estado": "OK: Extraido"
+    },
+    "metadatos": {},
+    "biomarcadores": {
+      "total_detectado": 6,
+      "estado": "OK"
+    },
+    "estado": "OK"
+  },
+  "auditoria_bd": {
+    "diagnostico_coloracion": {
+      "estado": "ERROR",
+      "mensaje": "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
+      "valor_bd": "NO APLICA",
+      "valor_ocr": "TUMOR ANEXO DERECHO\" CON DIAGNÓSTICO DE “TERATOMA QUÍSTICO MADURO COMPROMETIDO POR NEOPLASIA QUE REQUIERE ESTUDIO COMPLEMENTARIO EN INMUNOHISTOQUÍMICA. SE RECIBEN 28 BLOQUES Y LÁMINAS DE HEMATOXILINA-",
+      "patron_encontrado": "bloque M + diagnóstico de \"...\"",
+      "sugerencia": "Verificar medical_extractor.extract_diagnostico_coloracion()"
+    },
+    "diagnostico_principal": {
+      "estado": "OK",
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "OVARIO COMPROMETIDO CON TERATOMA QUÍSTICO MONODÉRMICO CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO"
+    },
+    "factor_pronostico": {
+      "estado": "ERROR",
+      "valor_bd": "NO APLICA",
+      "mensaje": "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
+    },
+    "biomarcadores": {
+      "estado": "ERROR",
+      "mensaje": "1 biomarcadores sin mapeo/vacíos",
+      "total_solicitado_ocr": 8,
+      "total_solicitado_bd": 8,
+      "estudios_ocr": [
+        "CALRETININA",
+        "CD99",
+        "WT1",
+        "SALL4",
+        "PAX8",
+        "Ki-67",
+        "INHIBINA",
+        "SYNAPTOFISINA"
+      ],
+      "estudios_bd": [
+        "CALRETININA",
+        "CD99",
+        "WT1",
+        "SALL4",
+        "PAX8",
+        "Ki-67",
+        "INHIBINA",
+        "SYNAPTOFISINA"
+      ],
+      "faltantes_en_bd": [],
+      "extras_en_bd": [],
+      "mapeados": 7,
+      "no_mapeados": [
+        "INHIBINA (sin columna)"
+      ],
+      "valores_incorrectos": [],
+      "cobertura": 87.5
+    },
+    "campos_obligatorios": {
+      "errores": []
+    },
+    "warnings": [],
+    "errores": [
+      "DIAGNOSTICO_COLORACION marcado como \"NO APLICA\" pero existe en OCR",
+      "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
+    ],
+    "estado": "ERROR",
+    "descripcion_macroscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del Hospital unive..."
+    },
+    "descripcion_microscopica": {
+      "estado": "OK",
+      "mensaje": "Descripcion microscopica correcta",
+      "valor_bd": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e in..."
+    },
+    "ihq_organo": {
+      "estado": "OK",
+      "mensaje": "IHQ_ORGANO está limpio",
+      "valor_bd": "ANEXO DERECHO"
+    },
+    "malignidad": {
+      "estado": "OK",
+      "mensaje": "Malignidad correcta: MALIGNO",
+      "valor_bd": "MALIGNO"
+    },
+    "campos_exhaustivos": {
+      "total_campos_validados": 1,
+      "campos_con_problemas": [],
+      "campos_ok": 1,
+      "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 3,
+      "falsos_no_mencionado": [],
+      "biomarcadores_ok": 3,
+      "estado": "OK",
+      "mensaje": "3/3 biomarcadores \"NO MENCIONADO\" validados correctamente"
+    }
+  },
+  "detecciones": {},
+  "validaciones": {},
+  "diagnosticos": {},
+  "sugerencias": {},
+  "metricas": {
+    "score_validacion": 70.0,
+    "score_final": 70.0,
+    "validaciones_ok": 7,
+    "total_validaciones": 10,
+    "warnings": 0,
+    "errores": 2
+  },
+  "resumen": {},
+  "estado_final": "ERROR"
+}

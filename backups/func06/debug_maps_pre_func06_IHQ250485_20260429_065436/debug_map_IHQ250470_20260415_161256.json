@@ -1,0 +1,165 @@
+{
+  "session_id": "IHQ250470_20260415_161256",
+  "numero_peticion": "IHQ250470",
+  "timestamp": "2026-04-15T16:12:56.579754",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250470\nCopia Pag. 1 de 2\nNombre : ALICIA ARIAS MARIN\nN. peticion : IHQ250470\nN.Identificación : CC. 29312838\nGenero : FEMENINO\nEdad : 58 años 7 meses 9 dias\nEPS : NUEVA EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 02/05/2025\nFecha Informe : 22/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2504525 bloque 1” que corresponde a “Mama derecha. Biopsia por TRU- CUT. \"\nCon diagnóstico de “CARCINOMA INVASIVO DE ALTO GRADO NOTTINGHAM (6) REQUIERE\nESTUDIOS DE INMUNOHISTOQUIMICA PARA CLASIFICACION.”. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con: ESTROGENOS, PROGESTERONA, HER2, Calponina. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEVALUACION DE BIOMARCADORES POR INMUNOHISTOQUÍMICA EN CARCINOMA DE MAMA\nExpresión de receptores de estrógeno:\n-POSITIVO (80%). \nExpresión de receptores de progesterona\n- POSITIVO (0%)\nSobreexpresión de oncogén HER2:\n- EQUIVOCO (Score 2+).\nÍndice de proliferación celular (Ki67): 40%.\nMarcación de células mioepiteliales Calponina: NEGATIVO EN EL TUMOR. marca algunos ductos\nocasional. \nLas células tumorales presenta marcación positiva para Beta-catenina y E-cadherina. \nDIAGNÓSTICO\nMama derecha. Biopsia por TRU- CUT. . Estudios de inmunohistoquímica\n CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL).\nExpresión molecular: \n- RECEPTORES DE ESTRÓGENOS: POSITIVOS (80%).\n- RECEPTORES DE PROGESTERONA: NEGATIVO (0%).\n- SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250470\nCopia Pag. 2 de 2\nNombre : ALICIA ARIAS MARIN\nN. peticion : IHQ250470\nN.Identificación : CC. 29312838\nGenero : FEMENINO\nEdad : 58 años 7 meses 9 dias\nEPS : NUEVA EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 02/05/2025\nFecha Informe : 22/05/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3572,
+      "reduccion_porcentaje": 98.11
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250470",
+      "caso_num": 7,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_BETACATENINA": "POSITIVO",
+      "IHQ_E_CADHERINA": "POSITIVO",
+      "nombre_completo": "ALICIA ARIAS MARIN",
+      "numero_peticion": "IHQ250470",
+      "identificacion": "29312838",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "58",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "NATHALY PRADA",
+      "servicio": "RADIOLOGIA",
+      "fecha_ingreso": "02/05/2025",
+      "fecha_informe": "22/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250470",
+      "N. de identificación": "29312838",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "RADIOLOGIA",
+      "Médico tratante": "NATHALY PRADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/05/2025",
+      "Fecha Informe": "22/05/2025",
+      "nombres": "ALICIA",
+      "Primer nombre": "ALICIA",
+      "Segundo nombre": "",
+      "apellidos": "ARIAS MARIN",
+      "Primer apellido": "ARIAS",
+      "Segundo apellido": "MARIN",
+      "nombre_formal": "ARIAS MARIN, ALICIA",
+      "diagnostico": "Mama derecha. Biopsia por TRU- CUT. . Estudios de inmunohistoquímica CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). Expresión molecular: - RECEPTORES DE ESTRÓGENOS: POSITIVOS (80%). - RECEPTORES DE PROGESTERONA: NEGATIVO (0%). - SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+): 02/05/2025",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACION DE BIOMARCADORES POR INMUNOHISTOQUÍMICA EN CARCINOMA DE MAMA Expresión de receptores de estrógeno: -POSITIVO (80%). Expresión de receptores de progesterona - POSITIVO (0%) Sobreexpresión de oncogén HER2: - EQUIVOCO (Score 2+). Índice de proliferación celular (KI-67): 40%. Marcación de células mioepiteliales Calponina: NEGATIVO EN EL TUMOR. marca algunos ductos ocasional. Las células tumorales presenta marcación positiva para Beta-catenina y E-cadherina.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2504525 bloque 1\" que corresponde a \"Mama derecha. Biopsia por TRU- CUT. \" Con diagnóstico de \"CARCINOMA INVASIVO DE ALTO GRADO NOTTINGHAM (6) REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA CLASIFICACION.\". Previa revisión de la histología, se realizan niveles histológicos para tinción con: ESTROGENOS, PROGESTERONA, HER2, Calponina.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Receptor de Estrógeno, Receptor de Progesterona, HER2, Calponina",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: NEGATIVO (0), Ki-67: 40%, Receptor de Estrógeno: POSITIVOS (80%), Receptor de Progesterona: NEGATIVO (0%)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, Receptor de Progesterona, HER2, Calponina",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO (0%)",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVOS (80%)",
+      "IHQ_HER2": "NEGATIVO (0)",
+      "IHQ_KI-67": "40%",
+      "IHQ_CALPONINA": "NEGATIVO",
+      "extraction_timestamp": "2026-04-15T16:12:56.828393",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250470\nCopia Pag. 1 de 2\nNombre : ALICIA ARIAS MARIN\nN. peticion : IHQ250470\nN.Identificación : CC. 29312838\nGenero : FEMENINO\nEdad : 58 años 7 meses 9 dias\nEPS : NUEVA EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 02/05/2025\nFecha Informe : 22/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2504525 bloque 1” que corresponde a “Mama derecha. Biopsia por TRU- CUT. \"\nCon diagnóstico de “CARCINOMA INVASIVO DE ALTO GRADO NOTTINGHAM (6) REQUIERE\nESTUDIOS DE INMUNOHISTOQUIMICA PARA CLASIFICACION.”. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con: ESTROGENOS, PROGESTERONA, HER2, Calponina. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEVALUACION DE BIOMARCADORES POR INMUNOHISTOQUÍMICA EN CARCINOMA DE MAMA\nExpresión de receptores de estrógeno:\n-POSITIVO (80%). \nExpresión de receptores de progesterona\n- POSITIVO (0%)\nSobreexpresión de oncogén HER2:\n- EQUIVOCO (Score 2+).\nÍndice de proliferación celular (Ki67): 40%.\nMarcación de células mioepiteliales Calponina: NEGATIVO EN EL TUMOR. marca algunos ductos\nocasional. \nLas células tumorales presenta marcación positiva para Beta-catenina y E-cadherina. \nDIAGNÓSTICO\nMama derecha. Biopsia por TRU- CUT. . Estudios de inmunohistoquímica\n CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL).\nExpresión molecular: \n- RECEPTORES DE ESTRÓGENOS: POSITIVOS (80%).\n- RECEPTORES DE PROGESTERONA: NEGATIVO (0%).\n- SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+).\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 16 ---\nIHQ250470\nCopia Pag. 2 de 2\nNombre : ALICIA ARIAS MARIN\nN. peticion : IHQ250470\nN.Identificación : CC. 29312838\nGenero : FEMENINO\nEdad : 58 años 7 meses 9 dias\nEPS : NUEVA EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 02/05/2025\nFecha Informe : 22/05/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 17 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, Receptor de Progesterona, HER2, Calponina, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2504525 bloque 1” que corresponde a “Mama derecha. Biopsia por TRU- CUT. \" Con diagnóstico de “CARCINOMA INVASIVO DE ALTO GRADO NOTTINGHAM (6) REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA CLASIFICACION.”. Previa revisión de la histología, se realizan niveles histológicos para tinción con: ESTROGENOS, PROGESTERONA, HER2, Calponina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACION DE BIOMARCADORES POR INMUNOHISTOQUÍMICA EN CARCINOMA DE MAMA Expresión de receptores de estrógeno: -POSITIVO (80%). Expresión de receptores de progesterona - POSITIVO (0%) Sobreexpresión de oncogén HER2: - EQUIVOCO (Score 2+). Índice de proliferación celular (Ki67): 40%. Marcación de células mioepiteliales Calponina: NEGATIVO EN EL TUMOR. marca algunos ductos ocasional. Las células tumorales presenta marcación positiva para Beta-catenina y E-cadherina.",
+      "Descripcion Diagnostico": "Mama derecha. Biopsia por TRU- CUT. . Estudios de inmunohistoquímica CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). Expresión molecular: - RECEPTORES DE ESTRÓGENOS: POSITIVOS (80%). - RECEPTORES DE PROGESTERONA: NEGATIVO (0%). - SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+): 02/05/2025",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "BX DE MAMA DERECHA",
+      "Diagnostico Coloracion": "CARCINOMA INVASIVO DE ALTO GRADO NOTTINGHAM (6) REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA CLASIFICACION",
+      "Diagnostico Principal": "CUT",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO (0), Ki-67: 40%, Receptor de Estrógeno: POSITIVOS (80%), Receptor de Progesterona: NEGATIVO (0%)",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVOS (80%)",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO (0%)",
+      "IHQ_HER2": "NEGATIVO (0)",
+      "IHQ_CALPONINA": "NEGATIVO",
+      "IHQ_KI-67": "40%",
+      "IHQ_BETACATENINA": "POSITIVO",
+      "IHQ_E_CADHERINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 137,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Biopsia por TRU- CUT. . Estudios de inmunohistoquímica\n CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL).\nExpresión molecular: \n- RECEPTORES DE ESTRÓGENOS: POSITIVOS (80%).\n- RECEPTORES DE PROGESTERONA: NEGATIVO (0%).\n- SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+): 02/05/2025",
+      "valor_corregido": "Mama derecha. Biopsia por TRU- CUT. . Estudios de inmunohistoquímica CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL). Expresión molecular: - RECEPTORES DE ESTRÓGENOS: POSITIVOS (80%). - RECEPTORES DE PROGESTERONA: NEGATIVO (0%). - SOBREEXPRESIÓN DE HER-2: EQUIVOCO (SCORE 2+): 02/05/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250470",
+      "timestamp": "2026-04-15T16:12:56.828053"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2504525 bloque 1” que corresponde a “Mama derecha. Biopsia por TRU- CUT. \" Con diagnóstico de “CARCINOMA INVASIVO DE ALTO GRADO NOTTINGHAM (6) REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA CLASIFICACION.”. Previa revisión de la histología, se realizan niveles histológicos para tinción con: ESTROGENOS, PROGESTERONA, HER2, Calponina.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2504525 bloque 1\" que corresponde a \"Mama derecha. Biopsia por TRU- CUT. \" Con diagnóstico de \"CARCINOMA INVASIVO DE ALTO GRADO NOTTINGHAM (6) REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA PARA CLASIFICACION.\". Previa revisión de la histología, se realizan niveles histológicos para tinción con: ESTROGENOS, PROGESTERONA, HER2, Calponina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250470",
+      "timestamp": "2026-04-15T16:12:56.828059"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACION DE BIOMARCADORES POR INMUNOHISTOQUÍMICA EN CARCINOMA DE MAMA Expresión de receptores de estrógeno: -POSITIVO (80%). Expresión de receptores de progesterona - POSITIVO (0%) Sobreexpresión de oncogén HER2: - EQUIVOCO (Score 2+). Índice de proliferación celular (Ki67): 40%. Marcación de células mioepiteliales Calponina: NEGATIVO EN EL TUMOR. marca algunos ductos ocasional. Las células tumorales presenta marcación positiva para Beta-catenina y E-cadherina.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACION DE BIOMARCADORES POR INMUNOHISTOQUÍMICA EN CARCINOMA DE MAMA Expresión de receptores de estrógeno: -POSITIVO (80%). Expresión de receptores de progesterona - POSITIVO (0%) Sobreexpresión de oncogén HER2: - EQUIVOCO (Score 2+). Índice de proliferación celular (KI-67): 40%. Marcación de células mioepiteliales Calponina: NEGATIVO EN EL TUMOR. marca algunos ductos ocasional. Las células tumorales presenta marcación positiva para Beta-catenina y E-cadherina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250470",
+      "timestamp": "2026-04-15T16:12:56.828060"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 54
+  }
+}

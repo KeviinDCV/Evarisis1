@@ -1,0 +1,139 @@
+{
+  "session_id": "IHQ250908_20260415_161508",
+  "numero_peticion": "IHQ250908",
+  "timestamp": "2026-04-15T16:15:08.902308",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250908\nCopia Pag. 1 de 2\nNombre : EFRAIN CARVAJAL FERNANDEZ\nN. peticion : IHQ250908\nN.Identificación : CC. 16639215\nGenero : MASCULINO\nEdad : 64 años 3 meses 7 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : ANDRES MANUEL DIAZ HUNG\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 21/08/2025\nFecha Informe : 04/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE PROSTATA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2509026 que corresponde a G. \"Base izquierda posterior periférica\" con\ndiagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA\" y K. \"Ápex izquierda paramediano periférico\" con\ndiagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA\". Se revisan placas para marcación de p63,\nCK34BETA12 y racemasa.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los dos bloques evaluados, los acinos prostáticos presentan marcación positiva nuclear de p63 y\ncitoplasmática de CK34BETA12 en células basales.\nSin marcación para racemasa.\nDIAGNÓSTICO\n G. Base izquierda posterior periférica, lóbulo izquierdo de la próstata. Biopsia. Estudios de\ninmunohistoquímica.\nNEGATIVO PARA MALIGNIDAD.\nK. Ápex izquierda paramediano periférico, lóbulo izquierdo de la próstata. Biopsia. Estudios\nde inmunohistoquímica.\nNEGATIVO PARA MALIGNIDAD.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---\nIHQ250908\nCopia Pag. 2 de 2\nNombre : EFRAIN CARVAJAL FERNANDEZ\nN. peticion : IHQ250908\nN.Identificación : CC. 16639215\nGenero : MASCULINO\nEdad : 64 años 3 meses 7 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : ANDRES MANUEL DIAZ HUNG\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 21/08/2025\nFecha Informe : 04/09/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3212,
+      "reduccion_porcentaje": 98.37
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250908",
+      "caso_num": 30,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P63": "POSITIVO",
+      "IHQ_CK34BETAE12": "POSITIVO",
+      "IHQ_RACEMASA": "NEGATIVO",
+      "nombre_completo": "EFRAIN CARVAJAL FERNANDEZ",
+      "numero_peticion": "IHQ250908",
+      "identificacion": "16639215",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "64",
+      "eps": "EPS FAMISANAR SAS",
+      "medico_tratante": "ANDRES MANUEL DIAZ HUNG",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "21/08/2025",
+      "fecha_informe": "04/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250908",
+      "N. de identificación": "16639215",
+      "Tipo de documento": "CC",
+      "EPS": "EPS FAMISANAR SAS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "ANDRES MANUEL DIAZ HUNG",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/08/2025",
+      "Fecha Informe": "04/09/2025",
+      "nombres": "EFRAIN",
+      "Primer nombre": "EFRAIN",
+      "Segundo nombre": "",
+      "apellidos": "CARVAJAL FERNANDEZ",
+      "Primer apellido": "CARVAJAL",
+      "Segundo apellido": "FERNANDEZ",
+      "nombre_formal": "CARVAJAL FERNANDEZ, EFRAIN",
+      "diagnostico": "G. Base izquierda posterior periférica, lóbulo izquierdo de la próstata. Biopsia. Estudios de inmunohistoquímica. NEGATIVO PARA MALIGNIDAD. K. Ápex izquierda paramediano periférico, lóbulo izquierdo de la próstata. Biopsia. Estudios de inmunohistoquímica. NEGATIVO PARA MALIGNIDAD.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los dos bloques evaluados, los acinos prostáticos presentan marcación positiva nuclear de p63 y citoplasmática de CK34BETA12 en células basales. Sin marcación para racemasa.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2509026 que corresponde a G. \"Base izquierda posterior periférica\" con diagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA\" y K. \"Ápex izquierda paramediano periférico\" con diagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA\". Se revisan placas para marcación de p63, CK34BETA12 y racemasa.",
+      "ihq_organo": "BASE IZQUIERDA POSTERIOR PERIFÉRICA, LÓBULO IZQUIERDO DE LA PRÓSTATA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P63, CK34BE12, RACEMASA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "BASE IZQUIERDA POSTERIOR PERIFÉRICA, LÓBULO IZQUIERDO DE LA PRÓSTATA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK34BE12, RACEMASA",
+      "extraction_timestamp": "2026-04-15T16:15:09.180714",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250908\nCopia Pag. 1 de 2\nNombre : EFRAIN CARVAJAL FERNANDEZ\nN. peticion : IHQ250908\nN.Identificación : CC. 16639215\nGenero : MASCULINO\nEdad : 64 años 3 meses 7 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : ANDRES MANUEL DIAZ HUNG\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 21/08/2025\nFecha Informe : 04/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE PROSTATA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2509026 que corresponde a G. \"Base izquierda posterior periférica\" con\ndiagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA\" y K. \"Ápex izquierda paramediano periférico\" con\ndiagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA\". Se revisan placas para marcación de p63,\nCK34BETA12 y racemasa.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los dos bloques evaluados, los acinos prostáticos presentan marcación positiva nuclear de p63 y\ncitoplasmática de CK34BETA12 en células basales.\nSin marcación para racemasa.\nDIAGNÓSTICO\n G. Base izquierda posterior periférica, lóbulo izquierdo de la próstata. Biopsia. Estudios de\ninmunohistoquímica.\nNEGATIVO PARA MALIGNIDAD.\nK. Ápex izquierda paramediano periférico, lóbulo izquierdo de la próstata. Biopsia. Estudios\nde inmunohistoquímica.\nNEGATIVO PARA MALIGNIDAD.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 62 ---\nIHQ250908\nCopia Pag. 2 de 2\nNombre : EFRAIN CARVAJAL FERNANDEZ\nN. peticion : IHQ250908\nN.Identificación : CC. 16639215\nGenero : MASCULINO\nEdad : 64 años 3 meses 7 dias\nEPS : EPS FAMISANAR SAS\nMédico tratante : ANDRES MANUEL DIAZ HUNG\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 21/08/2025\nFecha Informe : 04/09/2025\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, CK34BE12, RACEMASA, CK34BETAE12",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2509026 que corresponde a G. \"Base izquierda posterior periférica\" con diagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA\" y K. \"Ápex izquierda paramediano periférico\" con diagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA\". Se revisan placas para marcación de p63, CK34BETA12 y racemasa.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los dos bloques evaluados, los acinos prostáticos presentan marcación positiva nuclear de p63 y citoplasmática de CK34BETA12 en células basales. Sin marcación para racemasa.",
+      "Descripcion Diagnostico": "G. Base izquierda posterior periférica, lóbulo izquierdo de la próstata. Biopsia. Estudios de inmunohistoquímica. NEGATIVO PARA MALIGNIDAD. K. Ápex izquierda paramediano periférico, lóbulo izquierdo de la próstata. Biopsia. Estudios de inmunohistoquímica. NEGATIVO PARA MALIGNIDAD.",
+      "IHQ_ORGANO": "BASE IZQUIERDA POSTERIOR PERIFÉRICA, LÓBULO IZQUIERDO DE LA PRÓSTATA",
+      "Organo": "BX DE PROSTATA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN ACINAR ATÍPICA",
+      "Diagnostico Principal": "NEGATIVO PARA MALIGNIDAD",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RACEMASA": "NEGATIVO",
+      "IHQ_CK34BETAE12": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 141,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "G. Base izquierda posterior periférica, lóbulo izquierdo de la próstata. Biopsia. Estudios de\ninmunohistoquímica.\nNEGATIVO PARA MALIGNIDAD.\nK. Ápex izquierda paramediano periférico, lóbulo izquierdo de la próstata. Biopsia. Estudios\nde inmunohistoquímica.\nNEGATIVO PARA MALIGNIDAD.",
+      "valor_corregido": "G. Base izquierda posterior periférica, lóbulo izquierdo de la próstata. Biopsia. Estudios de inmunohistoquímica. NEGATIVO PARA MALIGNIDAD. K. Ápex izquierda paramediano periférico, lóbulo izquierdo de la próstata. Biopsia. Estudios de inmunohistoquímica. NEGATIVO PARA MALIGNIDAD.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250908",
+      "timestamp": "2026-04-15T16:15:09.180329"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 50
+  }
+}

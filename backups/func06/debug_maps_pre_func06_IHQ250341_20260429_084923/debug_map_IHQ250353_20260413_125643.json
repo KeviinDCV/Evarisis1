@@ -1,0 +1,184 @@
+{
+  "session_id": "IHQ250353_20260413_125643",
+  "numero_peticion": "IHQ250353",
+  "timestamp": "2026-04-13T12:56:43.908218",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250353\nCopia Pag. 1 de 2\nNombre : LUZ MARINA GUERRERO OSORIO\nN. peticion : IHQ250353\nN.Identificación : CC. 38863857\nGenero : FEMENINO\nEdad : 62 años 4 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 21/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION RETROPERITONEAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque\nM2503828, el cual corresponde a biopsia de tumor\nretroperitoneal con diagnóstico de \"NEOPLASIA DE CÉLULAS PEQUEÑAS, REDONDAS Y AZULES. Se\nordenan los siguientes marcadores de inmunohistoquímica: CD20, BCL2, BCL6, PAX-5, CD3, CD5,\nCD10, CD23, cMYC, MUM1, CD30, Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEn los cortes histológicos se identifica una lesión neoplásica compuesta por células redondas\nmonótonas,\nde\ntamaño\nintermedio\na\ngrande,\ncon\nescaso\ncitoplasma\ny\nnúcleo\nredondo\nhipercromático con nucleolo conspicuo, que se organizan en patrón sólido difuso con actividad\nmitótica de 5 en 10 campos de alto poder y extensas áreas de necrosis evidente. Se acompaña\nde macrófagos, algunos de ellos con cuerpos tingibles. Dichas células tumorales expresan\ninmunomarcación positiva a CD20+, PAX-5+, BCL2+, BCL6+ y MUM1+.; El índice de proliferación\ncelular medido por Ki-67 es del 95%. Son negativas para CD23-, CD3-, CD5- CD10-, cMYC- (30%\nde las células tumorales) y CD30-.\nDIAGNÓSTICO\nRetroperitoneo. Tumor. Biopsia. Estudio de inmunohistoquímica:\nLINFOMA DIFUSO DE CÉLULAS B GRANDES NOS, SUBTIPO CD20+ NO CENTRO GERMINAL\nCOMENTARIOS\nSe sugiere correlacionar con estudios moleculares.\nCaso revisado por Dra. Maria Ximena Varela, patóloga. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---\nIHQ250353\nCopia Pag. 2 de 2\nNombre : LUZ MARINA GUERRERO OSORIO\nN. peticion : IHQ250353\nN.Identificación : CC. 38863857\nGenero : FEMENINO\nEdad : 62 años 4 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 21/04/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3660,
+      "reduccion_porcentaje": 97.94
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250353",
+      "caso_num": 40,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD23": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "nombre_completo": "LUZ MARINA GUERRERO OSORIO",
+      "numero_peticion": "IHQ250353",
+      "identificacion": "38863857",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "62",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "07/04/2025",
+      "fecha_informe": "21/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250353",
+      "N. de identificación": "38863857",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/04/2025",
+      "Fecha Informe": "21/04/2025",
+      "nombres": "LUZ MARINA",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "MARINA",
+      "apellidos": "GUERRERO OSORIO",
+      "Primer apellido": "GUERRERO",
+      "Segundo apellido": "OSORIO",
+      "nombre_formal": "GUERRERO OSORIO, LUZ MARINA",
+      "diagnostico": "Retroperitoneo. Tumor. Biopsia. Estudio de inmunohistoquímica: LINFOMA DIFUSO DE CÉLULAS B GRANDES NOS, SUBTIPO CD20+ NO CENTRO GERMINAL",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica una lesión neoplásica compuesta por células redondas monótonas, de tamaño intermedio a grande, con escaso citoplasma y núcleo redondo hipercromático con nucleolo conspicuo, que se organizan en patrón sólido difuso con actividad mitótica de 5 en 10 campos de alto poder y extensas áreas de necrosis evidente. Se acompaña de macrófagos, algunos de ellos con cuerpos tingibles. Dichas células tumorales expresan inmunomarcación positiva a CD20+, PAX-5+, BCL2+, BCL6+ y MUM1+.; El índice de proliferación celular medido por KI-67 es del 95%. Son negativas para CD23-, CD3-, CD5- CD10-, cMYC- (30% de las células tumorales) y CD30-.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2503828, el cual corresponde a biopsia de tumor retroperitoneal con diagnóstico de \"NEOPLASIA DE CÉLULAS PEQUEÑAS, REDONDAS Y AZULES. Se ordenan los siguientes marcadores de inmunohistoquímica: CD20, BCL2, BCL6, PAX-5, CD3, CD5, CD10, CD23, cMYC, MUM1, CD30, KI-67.",
+      "ihq_organo": "RETROPERITONEO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se sugiere correlacionar con estudios moleculares. Caso revisado por Dra. Maria Ximena Varela, patóloga. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 73 --- IHQ250353 Copia Pag. 2 de 2 Nombre : LUZ MARINA GUERRERO OSORIO N. peticion : IHQ250353 N.Identificación : CC. 38863857 Genero : FEMENINO Edad : 62 años 4 dias EPS : NUEVA EPS Médico tratante : JOSE OMAR ZORRILA LARA Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 07/04/2025 Fecha Informe : 21/04/2025",
+      "IHQ_ORGANO": "RETROPERITONEO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: 95%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CD3": "NEGATIVO",
+      "IHQ_CD5": "NEGATIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_KI-67": "95%",
+      "extraction_timestamp": "2026-04-13T12:56:44.209349",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250353\nCopia Pag. 1 de 2\nNombre : LUZ MARINA GUERRERO OSORIO\nN. peticion : IHQ250353\nN.Identificación : CC. 38863857\nGenero : FEMENINO\nEdad : 62 años 4 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 21/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION RETROPERITONEAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque\nM2503828, el cual corresponde a biopsia de tumor\nretroperitoneal con diagnóstico de \"NEOPLASIA DE CÉLULAS PEQUEÑAS, REDONDAS Y AZULES. Se\nordenan los siguientes marcadores de inmunohistoquímica: CD20, BCL2, BCL6, PAX-5, CD3, CD5,\nCD10, CD23, cMYC, MUM1, CD30, Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEn los cortes histológicos se identifica una lesión neoplásica compuesta por células redondas\nmonótonas,\nde\ntamaño\nintermedio\na\ngrande,\ncon\nescaso\ncitoplasma\ny\nnúcleo\nredondo\nhipercromático con nucleolo conspicuo, que se organizan en patrón sólido difuso con actividad\nmitótica de 5 en 10 campos de alto poder y extensas áreas de necrosis evidente. Se acompaña\nde macrófagos, algunos de ellos con cuerpos tingibles. Dichas células tumorales expresan\ninmunomarcación positiva a CD20+, PAX-5+, BCL2+, BCL6+ y MUM1+.; El índice de proliferación\ncelular medido por Ki-67 es del 95%. Son negativas para CD23-, CD3-, CD5- CD10-, cMYC- (30%\nde las células tumorales) y CD30-.\nDIAGNÓSTICO\nRetroperitoneo. Tumor. Biopsia. Estudio de inmunohistoquímica:\nLINFOMA DIFUSO DE CÉLULAS B GRANDES NOS, SUBTIPO CD20+ NO CENTRO GERMINAL\nCOMENTARIOS\nSe sugiere correlacionar con estudios moleculares.\nCaso revisado por Dra. Maria Ximena Varela, patóloga. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---\nIHQ250353\nCopia Pag. 2 de 2\nNombre : LUZ MARINA GUERRERO OSORIO\nN. peticion : IHQ250353\nN.Identificación : CC. 38863857\nGenero : FEMENINO\nEdad : 62 años 4 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 21/04/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 74 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "BCL2, BCL6, CD10, CD20, CD23, CD3, CD30, CD5, CMYC, Ki-67, MUM1, PAX5",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2503828, el cual corresponde a biopsia de tumor retroperitoneal con diagnóstico de \"NEOPLASIA DE CÉLULAS PEQUEÑAS, REDONDAS Y AZULES. Se ordenan los siguientes marcadores de inmunohistoquímica: CD20, BCL2, BCL6, PAX-5, CD3, CD5, CD10, CD23, cMYC, MUM1, CD30, Ki-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica una lesión neoplásica compuesta por células redondas monótonas, de tamaño intermedio a grande, con escaso citoplasma y núcleo redondo hipercromático con nucleolo conspicuo, que se organizan en patrón sólido difuso con actividad mitótica de 5 en 10 campos de alto poder y extensas áreas de necrosis evidente. Se acompaña de macrófagos, algunos de ellos con cuerpos tingibles. Dichas células tumorales expresan inmunomarcación positiva a CD20+, PAX-5+, BCL2+, BCL6+ y MUM1+.; El índice de proliferación celular medido por Ki-67 es del 95%. Son negativas para CD23-, CD3-, CD5- CD10-, cMYC- (30% de las células tumorales) y CD30-.",
+      "Descripcion Diagnostico": "Retroperitoneo. Tumor. Biopsia. Estudio de inmunohistoquímica: LINFOMA DIFUSO DE CÉLULAS B GRANDES NOS, SUBTIPO CD20+ NO CENTRO GERMINAL",
+      "IHQ_ORGANO": "RETROPERITONEO",
+      "Organo": "LESION RETROPERITONEAL",
+      "Diagnostico Coloracion": "NEOPLASIA DE CÉLULAS PEQUEÑAS, REDONDAS Y AZULES",
+      "Diagnostico Principal": "LINFOMA DIFUSO DE CÉLULAS B GRANDES NOS, SUBTIPO CD20+ NO CENTRO GERMINAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 95%",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD10": "NEGATIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD23": "NEGATIVO",
+      "IHQ_CD3": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_CD5": "NEGATIVO",
+      "IHQ_CMYC": "NEGATIVO",
+      "IHQ_KI-67": "95%",
+      "IHQ_MUM1": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 131,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 12,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 131,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Retroperitoneo. Tumor. Biopsia. Estudio de inmunohistoquímica:\nLINFOMA DIFUSO DE CÉLULAS B GRANDES NOS, SUBTIPO CD20+ NO CENTRO GERMINAL",
+      "valor_corregido": "Retroperitoneo. Tumor. Biopsia. Estudio de inmunohistoquímica: LINFOMA DIFUSO DE CÉLULAS B GRANDES NOS, SUBTIPO CD20+ NO CENTRO GERMINAL",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250353",
+      "timestamp": "2026-04-13T12:56:44.208974"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2503828, el cual corresponde a biopsia de tumor retroperitoneal con diagnóstico de \"NEOPLASIA DE CÉLULAS PEQUEÑAS, REDONDAS Y AZULES. Se ordenan los siguientes marcadores de inmunohistoquímica: CD20, BCL2, BCL6, PAX-5, CD3, CD5, CD10, CD23, cMYC, MUM1, CD30, Ki-67.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2503828, el cual corresponde a biopsia de tumor retroperitoneal con diagnóstico de \"NEOPLASIA DE CÉLULAS PEQUEÑAS, REDONDAS Y AZULES. Se ordenan los siguientes marcadores de inmunohistoquímica: CD20, BCL2, BCL6, PAX-5, CD3, CD5, CD10, CD23, cMYC, MUM1, CD30, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250353",
+      "timestamp": "2026-04-13T12:56:44.208986"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica una lesión neoplásica compuesta por células redondas monótonas, de tamaño intermedio a grande, con escaso citoplasma y núcleo redondo hipercromático con nucleolo conspicuo, que se organizan en patrón sólido difuso con actividad mitótica de 5 en 10 campos de alto poder y extensas áreas de necrosis evidente. Se acompaña de macrófagos, algunos de ellos con cuerpos tingibles. Dichas células tumorales expresan inmunomarcación positiva a CD20+, PAX-5+, BCL2+, BCL6+ y MUM1+.; El índice de proliferación celular medido por Ki-67 es del 95%. Son negativas para CD23-, CD3-, CD5- CD10-, cMYC- (30% de las células tumorales) y CD30-.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica una lesión neoplásica compuesta por células redondas monótonas, de tamaño intermedio a grande, con escaso citoplasma y núcleo redondo hipercromático con nucleolo conspicuo, que se organizan en patrón sólido difuso con actividad mitótica de 5 en 10 campos de alto poder y extensas áreas de necrosis evidente. Se acompaña de macrófagos, algunos de ellos con cuerpos tingibles. Dichas células tumorales expresan inmunomarcación positiva a CD20+, PAX-5+, BCL2+, BCL6+ y MUM1+.; El índice de proliferación celular medido por KI-67 es del 95%. Son negativas para CD23-, CD3-, CD5- CD10-, cMYC- (30% de las células tumorales) y CD30-.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250353",
+      "timestamp": "2026-04-13T12:56:44.208987"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se sugiere correlacionar con estudios moleculares.\nCaso revisado por Dra. Maria Ximena Varela, patóloga. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 73 ---\nIHQ250353\nCopia Pag. 2 de 2\nNombre : LUZ MARINA GUERRERO OSORIO\nN. peticion : IHQ250353\nN.Identificación : CC. 38863857\nGenero : FEMENINO\nEdad : 62 años 4 dias\nEPS : NUEVA EPS\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 21/04/2025",
+      "valor_corregido": "Se sugiere correlacionar con estudios moleculares. Caso revisado por Dra. Maria Ximena Varela, patóloga. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 73 --- IHQ250353 Copia Pag. 2 de 2 Nombre : LUZ MARINA GUERRERO OSORIO N. peticion : IHQ250353 N.Identificación : CC. 38863857 Genero : FEMENINO Edad : 62 años 4 dias EPS : NUEVA EPS Médico tratante : JOSE OMAR ZORRILA LARA Servicio : CONSULTORIOS URGENCIAS Fecha Ingreso : 07/04/2025 Fecha Informe : 21/04/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250353",
+      "timestamp": "2026-04-13T12:56:44.208988"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 59
+  }
+}

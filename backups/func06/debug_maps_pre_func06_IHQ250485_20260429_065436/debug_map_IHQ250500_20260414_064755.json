@@ -1,0 +1,141 @@
+{
+  "session_id": "IHQ250500_20260414_064755",
+  "numero_peticion": "IHQ250500",
+  "timestamp": "2026-04-14T06:47:55.625100",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250500\nCopia Pag. 1 de 2\nNombre : WILLMAR DE JESUS SANCHEZ\nHURTADO\nN. peticion : IHQ250500\nN.Identificación : CC. 14889436\nGenero : MASCULINO\nEdad : 58 años 3 meses 2 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 08/05/2025\nFecha Informe : 21/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501394 que corresponde a \"ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO\nCON EXTENSIÓN HASTA LA MUSCULAR PROPIA\". Previa revisión de la histología, se realizan\nniveles histológicos al bloque 6 para tinción con MSH6 , MSH2 , MLH1 , PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nDIAGNÓSTICO\nRecto. Tumor. Proctectomía. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON EXTENSIÓN HASTA LA\nMUSCULAR PROPIA.\n- PATRÓN MICROSATELITAL ESTABLE\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---\nIHQ250500\nCopia Pag. 2 de 2\nNombre : WILLMAR DE JESUS SANCHEZ\nHURTADO\nN. peticion : IHQ250500\nN.Identificación : CC. 14889436\nGenero : MASCULINO\nEdad : 58 años 3 meses 2 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 08/05/2025\nFecha Informe : 21/05/2025\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3294,
+      "reduccion_porcentaje": 98.26
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250500",
+      "caso_num": 35,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "WILLMAR DE JESUS SANCHEZ HURTADO",
+      "numero_peticion": "IHQ250500",
+      "identificacion": "14889436",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "58",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "GINECOLOGIA COEX",
+      "fecha_ingreso": "08/05/2025",
+      "fecha_informe": "21/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250500",
+      "N. de identificación": "14889436",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "GINECOLOGIA COEX",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/05/2025",
+      "Fecha Informe": "21/05/2025",
+      "nombres": "WILLMAR DE JESUS",
+      "Primer nombre": "WILLMAR",
+      "Segundo nombre": "DE JESUS",
+      "apellidos": "SANCHEZ HURTADO",
+      "Primer apellido": "SANCHEZ",
+      "Segundo apellido": "HURTADO",
+      "nombre_formal": "SANCHEZ HURTADO, WILLMAR DE JESUS",
+      "diagnostico": "Recto. Tumor. Proctectomía. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON EXTENSIÓN HASTA LA MUSCULAR PROPIA. - PATRÓN MICROSATELITAL ESTABLE: 08/05/2025 MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501394 que corresponde a \"ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON EXTENSIÓN HASTA LA MUSCULAR PROPIA\". Previa revisión de la histología, se realizan niveles histológicos al bloque 6 para tinción con MSH6 , MSH2 , MLH1 , PMS2.",
+      "ihq_organo": "RECTO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "GINECOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MSH6, MSH2, MLH1, PMS2",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "RECTO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "MSH6, MSH2, MLH1, PMS2",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "extraction_timestamp": "2026-04-14T06:47:55.866604",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250500\nCopia Pag. 1 de 2\nNombre : WILLMAR DE JESUS SANCHEZ\nHURTADO\nN. peticion : IHQ250500\nN.Identificación : CC. 14889436\nGenero : MASCULINO\nEdad : 58 años 3 meses 2 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 08/05/2025\nFecha Informe : 21/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR RECTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501394 que corresponde a \"ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO\nCON EXTENSIÓN HASTA LA MUSCULAR PROPIA\". Previa revisión de la histología, se realizan\nniveles histológicos al bloque 6 para tinción con MSH6 , MSH2 , MLH1 , PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nMARCADORES DE INESTABILIDAD MICROSATELITAL: \nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nDIAGNÓSTICO\nRecto. Tumor. Proctectomía. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON EXTENSIÓN HASTA LA\nMUSCULAR PROPIA.\n- PATRÓN MICROSATELITAL ESTABLE\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---\nIHQ250500\nCopia Pag. 2 de 2\nNombre : WILLMAR DE JESUS SANCHEZ\nHURTADO\nN. peticion : IHQ250500\nN.Identificación : CC. 14889436\nGenero : MASCULINO\nEdad : 58 años 3 meses 2 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : GINECOLOGIA COEX\nFecha Ingreso : 08/05/2025\nFecha Informe : 21/05/2025\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MSH6, MSH2, MLH1, PMS2",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501394 que corresponde a \"ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON EXTENSIÓN HASTA LA MUSCULAR PROPIA\". Previa revisión de la histología, se realizan niveles histológicos al bloque 6 para tinción con MSH6 , MSH2 , MLH1 , PMS2.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. MARCADORES DE INESTABILIDAD MICROSATELITAL: MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable",
+      "Descripcion Diagnostico": "Recto. Tumor. Proctectomía. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON EXTENSIÓN HASTA LA MUSCULAR PROPIA. - PATRÓN MICROSATELITAL ESTABLE: 08/05/2025 MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "IHQ_ORGANO": "RECTO",
+      "Organo": "BX TUMOR RECTO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON EXTENSIÓN HASTA LA MUSCULAR PROPIA",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON EXTENSIÓN HASTA LA MUSCULAR PROPIA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Recto. Tumor. Proctectomía. Estudio de inmunohistoquímica:\n- ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON EXTENSIÓN HASTA LA\nMUSCULAR PROPIA.\n- PATRÓN MICROSATELITAL ESTABLE: 08/05/2025\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________",
+      "valor_corregido": "Recto. Tumor. Proctectomía. Estudio de inmunohistoquímica: - ADENOCARCINOMA INVASIVO MODERADAMENTE DIFERENCIADO CON EXTENSIÓN HASTA LA MUSCULAR PROPIA. - PATRÓN MICROSATELITAL ESTABLE: 08/05/2025 MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250500",
+      "timestamp": "2026-04-14T06:47:55.861040"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 50
+  }
+}

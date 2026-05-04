@@ -1,0 +1,137 @@
+{
+  "session_id": "IHQ250093_20260410_151848",
+  "numero_peticion": "IHQ250093",
+  "timestamp": "2026-04-10T15:18:48.888993",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250093\nCopia Pag. 1 de 2\nNombre : ALEJANDRO VALENCIA ARIAS\nN. peticion : IHQ250093\nN.Identificación : CC. 1144135001\nGenero : MASCULINO\nEdad : 34 años 2 meses 2 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 27/01/2025\nFecha Informe : 31/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR DE ORBITA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos a los bloques M2409280-A y B, los cuales corresponden a biopsia de\nórbita izquierda, con diagnóstico de \"CAMBIOS REPARATIVOS, FIBROSIS, INFLAMACIÓN\nCRÓNICA, CICATRIZ ANTIGUA, NEGATIVO PARA TUMOR\". Se ordenan los siguientes marcadores: IgG4 y\nCD38.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nEn los cortes histológicos se observa un proceso fibroblástico reparativo con acúmulo de linfocitos\nrodeando glándulas lacrimales histológicamente normales. No se observa tumor en la muestra evaluada.\nNo hay inmunorreactividad para IgG4 ni CD38.\nDIAGNÓSTICO\n Órbita izquierda. Biopsia. Estudio de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS EVIDENCIAN:\nCAMBIOS REPARATIVOS\nFIBROSIS\nINFLAMACIÓN CRÓNICA\nCICATRIZ ANTIGUA\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---\nIHQ250093\nCopia Pag. 2 de 2\nNombre : ALEJANDRO VALENCIA ARIAS\nN. peticion : IHQ250093\nN.Identificación : CC. 1144135001\nGenero : MASCULINO\nEdad : 34 años 2 meses 2 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 27/01/2025\nFecha Informe : 31/01/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---",
+    "hash_original": "43aa3620ef8b209d72a819ecd32f6156",
+    "estadisticas": {
+      "caracteres_totales": 187103,
+      "caracteres_consolidados": 3175,
+      "reduccion_porcentaje": 98.3
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 052 AL 107.pdf",
+      "numero_ihq": "IHQ250093",
+      "caso_num": 37,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ALEJANDRO VALENCIA ARIAS",
+      "numero_peticion": "IHQ250093",
+      "identificacion": "1144135001",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "34",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "CATHERINE GONZALIAS DUQUE",
+      "servicio": "CIRUGIA HOMBRES",
+      "fecha_ingreso": "27/01/2025",
+      "fecha_informe": "31/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250093",
+      "N. de identificación": "1144135001",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "CIRUGIA HOMBRES",
+      "Médico tratante": "CATHERINE GONZALIAS DUQUE",
+      "Fecha de ingreso (2. Fecha de la muestra)": "27/01/2025",
+      "Fecha Informe": "31/01/2025",
+      "nombres": "ALEJANDRO",
+      "Primer nombre": "ALEJANDRO",
+      "Segundo nombre": "",
+      "apellidos": "VALENCIA ARIAS",
+      "Primer apellido": "VALENCIA",
+      "Segundo apellido": "ARIAS",
+      "nombre_formal": "VALENCIA ARIAS, ALEJANDRO",
+      "diagnostico": "Órbita izquierda. Biopsia. Estudio de inmunohistoquímica: LOS HALLAZGOS MORFOLÓGICOS EVIDENCIAN: CAMBIOS REPARATIVOS FIBROSIS INFLAMACIÓN CRÓNICA CICATRIZ ANTIGUA",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se observa un proceso fibroblástico reparativo con acúmulo de linfocitos rodeando glándulas lacrimales histológicamente normales. No se observa tumor en la muestra evaluada. No hay inmunorreactividad para IgG4 ni CD38.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos a los bloques M2409280-A y B, los cuales corresponden a biopsia de órbita izquierda, con diagnóstico de \"CAMBIOS REPARATIVOS, FIBROSIS, INFLAMACIÓN CRÓNICA, CICATRIZ ANTIGUA, NEGATIVO PARA TUMOR\". Se ordenan los siguientes marcadores: IgG4 y CD38.",
+      "ihq_organo": "ÓRBITA IZQUIERDA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "IGG4, CD38",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ÓRBITA IZQUIERDA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "IGG4, CD38",
+      "IHQ_IGG4": "NEGATIVO",
+      "IHQ_CD38": "NEGATIVO",
+      "extraction_timestamp": "2026-04-10T15:18:49.118111",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250093\nCopia Pag. 1 de 2\nNombre : ALEJANDRO VALENCIA ARIAS\nN. peticion : IHQ250093\nN.Identificación : CC. 1144135001\nGenero : MASCULINO\nEdad : 34 años 2 meses 2 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 27/01/2025\nFecha Informe : 31/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR DE ORBITA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos a los bloques M2409280-A y B, los cuales corresponden a biopsia de\nórbita izquierda, con diagnóstico de \"CAMBIOS REPARATIVOS, FIBROSIS, INFLAMACIÓN\nCRÓNICA, CICATRIZ ANTIGUA, NEGATIVO PARA TUMOR\". Se ordenan los siguientes marcadores: IgG4 y\nCD38.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nEn los cortes histológicos se observa un proceso fibroblástico reparativo con acúmulo de linfocitos\nrodeando glándulas lacrimales histológicamente normales. No se observa tumor en la muestra evaluada.\nNo hay inmunorreactividad para IgG4 ni CD38.\nDIAGNÓSTICO\n Órbita izquierda. Biopsia. Estudio de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS EVIDENCIAN:\nCAMBIOS REPARATIVOS\nFIBROSIS\nINFLAMACIÓN CRÓNICA\nCICATRIZ ANTIGUA\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---\nIHQ250093\nCopia Pag. 2 de 2\nNombre : ALEJANDRO VALENCIA ARIAS\nN. peticion : IHQ250093\nN.Identificación : CC. 1144135001\nGenero : MASCULINO\nEdad : 34 años 2 meses 2 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : CATHERINE GONZALIAS DUQUE\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 27/01/2025\nFecha Informe : 31/01/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "IGG4, CD38",
+      "Descripcion macroscopica": "Se realizan niveles histológicos a los bloques M2409280-A y B, los cuales corresponden a biopsia de órbita izquierda, con diagnóstico de \"CAMBIOS REPARATIVOS, FIBROSIS, INFLAMACIÓN CRÓNICA, CICATRIZ ANTIGUA, NEGATIVO PARA TUMOR\". Se ordenan los siguientes marcadores: IgG4 y CD38.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se observa un proceso fibroblástico reparativo con acúmulo de linfocitos rodeando glándulas lacrimales histológicamente normales. No se observa tumor en la muestra evaluada. No hay inmunorreactividad para IgG4 ni CD38.",
+      "Descripcion Diagnostico": "Órbita izquierda. Biopsia. Estudio de inmunohistoquímica: LOS HALLAZGOS MORFOLÓGICOS EVIDENCIAN: CAMBIOS REPARATIVOS FIBROSIS INFLAMACIÓN CRÓNICA CICATRIZ ANTIGUA",
+      "IHQ_ORGANO": "ÓRBITA IZQUIERDA",
+      "Organo": "TUMOR DE ORBITA IZQUIERDA",
+      "Diagnostico Coloracion": "CAMBIOS REPARATIVOS, FIBROSIS, INFLAMACIÓN CRÓNICA, CICATRIZ ANTIGUA, NEGATIVO PARA TUMOR",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS EVIDENCIAN: CAMBIOS REPARATIVOS FIBROSIS INFLAMACIÓN CRÓNICA CICATRIZ ANTIGUA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_IGG4": "NEGATIVO",
+      "IHQ_CD38": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 142,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 142,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Órbita izquierda. Biopsia. Estudio de inmunohistoquímica:\nLOS HALLAZGOS MORFOLÓGICOS EVIDENCIAN:\nCAMBIOS REPARATIVOS\nFIBROSIS\nINFLAMACIÓN CRÓNICA\nCICATRIZ ANTIGUA",
+      "valor_corregido": "Órbita izquierda. Biopsia. Estudio de inmunohistoquímica: LOS HALLAZGOS MORFOLÓGICOS EVIDENCIAN: CAMBIOS REPARATIVOS FIBROSIS INFLAMACIÓN CRÓNICA CICATRIZ ANTIGUA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250093",
+      "timestamp": "2026-04-10T15:18:49.117761"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 187103,
+    "campos_extraidos": 49
+  }
+}

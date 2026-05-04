@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ250346_20260415_113915",
+  "numero_peticion": "IHQ250346",
+  "timestamp": "2026-04-15T11:39:15.407176",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250346\nCopia Pag. 1 de 1\nNombre : ELOISMAR SUSEJ DAZA QUERO\nN. peticion : IHQ250346\nN.Identificación : PPT. 6306581\nGenero : FEMENINO\nEdad : 4 años 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ANDRES FELIPE VARELA\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 04/04/2025\nFecha Informe : 22/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE MUSLO IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2503812 ” correspondiente a “ Tumor de muslo izquierdo ”. Previa revisión de la histología se realizan\nniveles histológicos al bloque A3 para tinción con los marcadores: HHV8, CD31,CD34, KI 67,\nEMA, CKAE1/E3.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa proliferación vascular es negativa para CKAE1/E3, HHV8. La marcación de CD 34, CD 31 es positiva en\nlos vasos. El indice proliferativo ki 67 es menor al 3%\nDIAGNÓSTICO\n Muslo izquierdo. Tumor. Biopsia\nHEMANGIOMA INTRAMUSCULAR\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 2381,
+      "reduccion_porcentaje": 98.66
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250346",
+      "caso_num": 33,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_HHV8": "NEGATIVO",
+      "IHQ_CD31": "NEGATIVO",
+      "nombre_completo": "ELOISMAR SUSEJ DAZA QUERO",
+      "numero_peticion": "IHQ250346",
+      "identificacion": "6306581",
+      "tipo_documento": "PPT",
+      "Genero": "FEMENINO",
+      "Edad": "4",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ANDRES FELIPE VARELA",
+      "servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "fecha_ingreso": "04/04/2025",
+      "fecha_informe": "22/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250346",
+      "N. de identificación": "6306581",
+      "Tipo de documento": "PPT",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "HEMATO ONCOLOGIA HOSP PEDIAT",
+      "Médico tratante": "ANDRES FELIPE VARELA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "04/04/2025",
+      "Fecha Informe": "22/04/2025",
+      "nombres": "ELOISMAR",
+      "Primer nombre": "ELOISMAR",
+      "Segundo nombre": "",
+      "apellidos": "ELOISMAR SUSEJ DAZA QUERO",
+      "Primer apellido": "ELOISMAR",
+      "Segundo apellido": "SUSEJ DAZA QUERO",
+      "nombre_formal": "ELOISMAR SUSEJ DAZA QUERO, ELOISMAR",
+      "diagnostico": "Muslo izquierdo. Tumor. Biopsia HEMANGIOMA INTRAMUSCULAR",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La proliferación vascular es negativa para CKAE1/E3, HHV8. La marcación de CD 34, CD 31 es positiva en los vasos. El indice proliferativo KI-67 es menor al 3%",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2503812 \" correspondiente a \" Tumor de muslo izquierdo \". Previa revisión de la histología se realizan niveles histológicos al bloque A3 para tinción con los marcadores: HHV8, CD31,CD34, KI-67, EMA, CKAE1/E3.",
+      "ihq_organo": "MUSLO IZQUIERDO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HHV8, CD31, CD34, Ki-67, EMA, CKAE1E3",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUSLO IZQUIERDO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "HHV8, CD31, CD34, Ki-67, EMA, CKAE1E3",
+      "extraction_timestamp": "2026-04-15T11:39:15.720730",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250346\nCopia Pag. 1 de 1\nNombre : ELOISMAR SUSEJ DAZA QUERO\nN. peticion : IHQ250346\nN.Identificación : PPT. 6306581\nGenero : FEMENINO\nEdad : 4 años 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ANDRES FELIPE VARELA\nServicio : HEMATO ONCOLOGIA HOSP PEDIAT\nFecha Ingreso : 04/04/2025\nFecha Informe : 22/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE MUSLO IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2503812 ” correspondiente a “ Tumor de muslo izquierdo ”. Previa revisión de la histología se realizan\nniveles histológicos al bloque A3 para tinción con los marcadores: HHV8, CD31,CD34, KI 67,\nEMA, CKAE1/E3.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa proliferación vascular es negativa para CKAE1/E3, HHV8. La marcación de CD 34, CD 31 es positiva en\nlos vasos. El indice proliferativo ki 67 es menor al 3%\nDIAGNÓSTICO\n Muslo izquierdo. Tumor. Biopsia\nHEMANGIOMA INTRAMUSCULAR\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HHV8, CD31, CD34, Ki-67, EMA, CKAE1AE3",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2503812 ” correspondiente a “ Tumor de muslo izquierdo ”. Previa revisión de la histología se realizan niveles histológicos al bloque A3 para tinción con los marcadores: HHV8, CD31,CD34, KI 67, EMA, CKAE1/E3.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La proliferación vascular es negativa para CKAE1/E3, HHV8. La marcación de CD 34, CD 31 es positiva en los vasos. El indice proliferativo ki 67 es menor al 3%",
+      "Descripcion Diagnostico": "Muslo izquierdo. Tumor. Biopsia HEMANGIOMA INTRAMUSCULAR",
+      "IHQ_ORGANO": "MUSLO IZQUIERDO",
+      "Organo": "BX DE MUSLO IZQUIERDO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "Muslo izquierdo. Tumor. Biopsia HEMANGIOMA INTRAMUSCULAR",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_HHV8": "NEGATIVO",
+      "IHQ_CD3": "",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_EMA": "NO MENCIONADO",
+      "IHQ_CKAE1AE3": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Muslo izquierdo. Tumor. Biopsia\nHEMANGIOMA INTRAMUSCULAR",
+      "valor_corregido": "Muslo izquierdo. Tumor. Biopsia HEMANGIOMA INTRAMUSCULAR",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250346",
+      "timestamp": "2026-04-15T11:39:15.719955"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2503812 ” correspondiente a “ Tumor de muslo izquierdo ”. Previa revisión de la histología se realizan niveles histológicos al bloque A3 para tinción con los marcadores: HHV8, CD31,CD34, KI 67, EMA, CKAE1/E3.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2503812 \" correspondiente a \" Tumor de muslo izquierdo \". Previa revisión de la histología se realizan niveles histológicos al bloque A3 para tinción con los marcadores: HHV8, CD31,CD34, KI-67, EMA, CKAE1/E3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250346",
+      "timestamp": "2026-04-15T11:39:15.719961"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La proliferación vascular es negativa para CKAE1/E3, HHV8. La marcación de CD 34, CD 31 es positiva en los vasos. El indice proliferativo ki 67 es menor al 3%",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La proliferación vascular es negativa para CKAE1/E3, HHV8. La marcación de CD 34, CD 31 es positiva en los vasos. El indice proliferativo KI-67 es menor al 3%",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250346",
+      "timestamp": "2026-04-15T11:39:15.719962"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 51
+  }
+}

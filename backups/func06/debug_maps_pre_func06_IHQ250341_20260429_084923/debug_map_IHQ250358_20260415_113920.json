@@ -1,0 +1,150 @@
+{
+  "session_id": "IHQ250358_20260415_113920",
+  "numero_peticion": "IHQ250358",
+  "timestamp": "2026-04-15T11:39:20.800787",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250358\nCopia Pag. 1 de 2\nNombre : RUBY ELENA GOMEZ\nN. peticion : IHQ250358\nN.Identificación : CC. 66714611\nGenero : FEMENINO\nEdad : 59 años\nEPS : NUEVA EPS\nMédico tratante : AYMER FERNANDO OSPINA TASCON\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/04/2025\nFecha Informe : 23/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional\nrotulado como “P250731” que corresponde a “biopsia mama derecha\" con diagnóstico de\n“CARCINOMA DUCTAL INFILTRANTE CON AREAS MICROPAPILARES”. Previa revisión de la\nhistología, se realizan niveles histológicos para tinción con: E Cadherina, Ki67, HER2,\nESTROGENO, PROGESTERONA.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nPROTOCOLO COLEGIO AMERICANO DE PATOLOGIA VERSION 1.2.0.0\nMUESTRA\nProcedimiento: Biopsia con aguja\nLateralidad de la muestra: Derecha.\n+Sitio del tumor: No especificado \nTipo histológico: Carcinoma invasivo con componente de áreas micropapilares.\nGrado histológico: (puntuación histológica de Nottingham 6)\n_Diferenciación glandular (acinar) / tubular: Puntuación 2 \nPleomorfismo nuclear: Puntuación 3 \nTasa mitótica: Puntuación 2\nCalificación general: Grado 2 (puntuaciones de 6 o 7)\nCarcinoma ductal in situ: No identificado \nNecrosis: No identificado \n+Invasión linfática y/o vascular: Presente\n+Microcalcificaciones: No identificado. \nESTUDIOS DE INMUNOHISTOQUIMICA: \nreceptores de estrógenos positivos intensidad fuerte del 90%.\nDIAGNÓSTICO\nMama derecha. Lesión. Biopsia. Estudios de inmunohistoquímica. \nCARCINOMA DE MAMA INVASIVO CON COMPONENTE MICROPAPILAR (NOTTINGHAM 6). \nINVASIÓN A VASOS LINFOVASCULAR : PRESENTE. \nRECEPTORES DE ESTRÓGENOS POSITIVO.\nPROGESTÁGENOS POSITIVO.\nHER2 POSITIVO ( SCORE 3+).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---\nIHQ250358\nCopia Pag. 2 de 2\nNombre : RUBY ELENA GOMEZ\nN. peticion : IHQ250358\nN.Identificación : CC. 66714611\nGenero : FEMENINO\nEdad : 59 años\nEPS : NUEVA EPS\nMédico tratante : AYMER FERNANDO OSPINA TASCON\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/04/2025\nFecha Informe : 23/04/2025\nprogestágenos positivo débil 2% \nreceptor de estrógenos HER2 positivo ( 3+)\nki67 (indice de proliferación) : 80% \nE cadherina no valorable por fragmentación del tejido.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 83 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3927,
+      "reduccion_porcentaje": 97.79
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250358",
+      "caso_num": 45,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "RUBY ELENA GOMEZ",
+      "numero_peticion": "IHQ250358",
+      "identificacion": "66714611",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "59",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "AYMER FERNANDO OSPINA TASCON",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "07/04/2025",
+      "fecha_informe": "23/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250358",
+      "N. de identificación": "66714611",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "AYMER FERNANDO OSPINA TASCON",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/04/2025",
+      "Fecha Informe": "23/04/2025",
+      "nombres": "RUBY ELENA",
+      "Primer nombre": "RUBY",
+      "Segundo nombre": "ELENA",
+      "apellidos": "GOMEZ",
+      "Primer apellido": "GOMEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "GOMEZ, RUBY ELENA",
+      "diagnostico": "Mama derecha. Lesión. Biopsia. Estudios de inmunohistoquímica. CARCINOMA DE MAMA INVASIVO CON COMPONENTE MICROPAPILAR (NOTTINGHAM 6). INVASIÓN A VASOS LINFOVASCULAR : PRESENTE. RECEPTORES DE ESTRÓGENOS POSITIVO. PROGESTÁGENOS POSITIVO. HER2 POSITIVO ( SCORE 3+).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. PROTOCOLO COLEGIO AMERICANO DE PATOLOGIA VERSION 1.2.0.0 MUESTRA Procedimiento: Biopsia con aguja Lateralidad de la muestra: Derecha. +Sitio del tumor: No especificado Tipo histológico: Carcinoma invasivo con componente de áreas micropapilares. Grado histológico: (puntuación histológica de Nottingham 6) _Diferenciación glandular (acinar) / tubular: Puntuación 2 Pleomorfismo nuclear: Puntuación 3 Tasa mitótica: Puntuación 2 Calificación general: Grado 2 (puntuaciones de 6 o 7) Carcinoma ductal in situ: No identificado Necrosis: No identificado +Invasión linfática y/o vascular: Presente +Microcalcificaciones: No identificado. ESTUDIOS DE INMUNOHISTOQUIMICA: receptores de estrógenos positivos intensidad fuerte del 90%.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como \"P250731\" que corresponde a \"biopsia mama derecha\" con diagnóstico de \"CARCINOMA DUCTAL INFILTRANTE CON AREAS MICROPAPILARES\". Previa revisión de la histología, se realizan niveles histológicos para tinción con: E Cadherina, KI-67, HER2, ESTROGENO, PROGESTERONA.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "E-Cadherina, Ki-67, HER2, Receptor de Estrógeno, Receptor de Progesterona",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: POSITIVO (SCORE 3+), Ki-67: 80%, Receptor de Estrógeno: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "E-Cadherina, Ki-67, HER2, Receptor de Estrógeno, Receptor de Progesterona",
+      "IHQ_HER2": "POSITIVO (SCORE 3+)",
+      "IHQ_KI-67": "80%",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "extraction_timestamp": "2026-04-15T11:39:21.195906",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250358\nCopia Pag. 1 de 2\nNombre : RUBY ELENA GOMEZ\nN. peticion : IHQ250358\nN.Identificación : CC. 66714611\nGenero : FEMENINO\nEdad : 59 años\nEPS : NUEVA EPS\nMédico tratante : AYMER FERNANDO OSPINA TASCON\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/04/2025\nFecha Informe : 23/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional\nrotulado como “P250731” que corresponde a “biopsia mama derecha\" con diagnóstico de\n“CARCINOMA DUCTAL INFILTRANTE CON AREAS MICROPAPILARES”. Previa revisión de la\nhistología, se realizan niveles histológicos para tinción con: E Cadherina, Ki67, HER2,\nESTROGENO, PROGESTERONA.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nPROTOCOLO COLEGIO AMERICANO DE PATOLOGIA VERSION 1.2.0.0\nMUESTRA\nProcedimiento: Biopsia con aguja\nLateralidad de la muestra: Derecha.\n+Sitio del tumor: No especificado \nTipo histológico: Carcinoma invasivo con componente de áreas micropapilares.\nGrado histológico: (puntuación histológica de Nottingham 6)\n_Diferenciación glandular (acinar) / tubular: Puntuación 2 \nPleomorfismo nuclear: Puntuación 3 \nTasa mitótica: Puntuación 2\nCalificación general: Grado 2 (puntuaciones de 6 o 7)\nCarcinoma ductal in situ: No identificado \nNecrosis: No identificado \n+Invasión linfática y/o vascular: Presente\n+Microcalcificaciones: No identificado. \nESTUDIOS DE INMUNOHISTOQUIMICA: \nreceptores de estrógenos positivos intensidad fuerte del 90%.\nDIAGNÓSTICO\nMama derecha. Lesión. Biopsia. Estudios de inmunohistoquímica. \nCARCINOMA DE MAMA INVASIVO CON COMPONENTE MICROPAPILAR (NOTTINGHAM 6). \nINVASIÓN A VASOS LINFOVASCULAR : PRESENTE. \nRECEPTORES DE ESTRÓGENOS POSITIVO.\nPROGESTÁGENOS POSITIVO.\nHER2 POSITIVO ( SCORE 3+).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---\nIHQ250358\nCopia Pag. 2 de 2\nNombre : RUBY ELENA GOMEZ\nN. peticion : IHQ250358\nN.Identificación : CC. 66714611\nGenero : FEMENINO\nEdad : 59 años\nEPS : NUEVA EPS\nMédico tratante : AYMER FERNANDO OSPINA TASCON\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 07/04/2025\nFecha Informe : 23/04/2025\nprogestágenos positivo débil 2% \nreceptor de estrógenos HER2 positivo ( 3+)\nki67 (indice de proliferación) : 80% \nE cadherina no valorable por fragmentación del tejido.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 83 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "E-Cadherina, Ki-67, HER2, Receptor de Estrógeno, Receptor de Progesterona",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como “P250731” que corresponde a “biopsia mama derecha\" con diagnóstico de “CARCINOMA DUCTAL INFILTRANTE CON AREAS MICROPAPILARES”. Previa revisión de la histología, se realizan niveles histológicos para tinción con: E Cadherina, Ki67, HER2, ESTROGENO, PROGESTERONA.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. PROTOCOLO COLEGIO AMERICANO DE PATOLOGIA VERSION 1.2.0.0 MUESTRA Procedimiento: Biopsia con aguja Lateralidad de la muestra: Derecha. +Sitio del tumor: No especificado Tipo histológico: Carcinoma invasivo con componente de áreas micropapilares. Grado histológico: (puntuación histológica de Nottingham 6) _Diferenciación glandular (acinar) / tubular: Puntuación 2 Pleomorfismo nuclear: Puntuación 3 Tasa mitótica: Puntuación 2 Calificación general: Grado 2 (puntuaciones de 6 o 7) Carcinoma ductal in situ: No identificado Necrosis: No identificado +Invasión linfática y/o vascular: Presente +Microcalcificaciones: No identificado. ESTUDIOS DE INMUNOHISTOQUIMICA: receptores de estrógenos positivos intensidad fuerte del 90%.",
+      "Descripcion Diagnostico": "Mama derecha. Lesión. Biopsia. Estudios de inmunohistoquímica. CARCINOMA DE MAMA INVASIVO CON COMPONENTE MICROPAPILAR (NOTTINGHAM 6). INVASIÓN A VASOS LINFOVASCULAR : PRESENTE. RECEPTORES DE ESTRÓGENOS POSITIVO. PROGESTÁGENOS POSITIVO. HER2 POSITIVO ( SCORE 3+).",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "BX MAMA DERECHA",
+      "Diagnostico Coloracion": "CARCINOMA DUCTAL INFILTRANTE CON AREAS MICROPAPILARES",
+      "Diagnostico Principal": "CARCINOMA DE MAMA INVASIVO CON COMPONENTE MICROPAPILAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: POSITIVO (SCORE 3+), Ki-67: 80%, Receptor de Estrógeno: POSITIVO",
+      "IHQ_E_CADHERINA": "",
+      "IHQ_KI-67": "80%",
+      "IHQ_HER2": "POSITIVO (SCORE 3+)",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Lesión. Biopsia. Estudios de inmunohistoquímica. \nCARCINOMA DE MAMA INVASIVO CON COMPONENTE MICROPAPILAR (NOTTINGHAM 6). \nINVASIÓN A VASOS LINFOVASCULAR : PRESENTE. \nRECEPTORES DE ESTRÓGENOS POSITIVO.\nPROGESTÁGENOS POSITIVO.\nHER2 POSITIVO ( SCORE 3+).",
+      "valor_corregido": "Mama derecha. Lesión. Biopsia. Estudios de inmunohistoquímica. CARCINOMA DE MAMA INVASIVO CON COMPONENTE MICROPAPILAR (NOTTINGHAM 6). INVASIÓN A VASOS LINFOVASCULAR : PRESENTE. RECEPTORES DE ESTRÓGENOS POSITIVO. PROGESTÁGENOS POSITIVO. HER2 POSITIVO ( SCORE 3+).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250358",
+      "timestamp": "2026-04-15T11:39:21.195664"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como “P250731” que corresponde a “biopsia mama derecha\" con diagnóstico de “CARCINOMA DUCTAL INFILTRANTE CON AREAS MICROPAPILARES”. Previa revisión de la histología, se realizan niveles histológicos para tinción con: E Cadherina, Ki67, HER2, ESTROGENO, PROGESTERONA.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material extrainstitucional rotulado como \"P250731\" que corresponde a \"biopsia mama derecha\" con diagnóstico de \"CARCINOMA DUCTAL INFILTRANTE CON AREAS MICROPAPILARES\". Previa revisión de la histología, se realizan niveles histológicos para tinción con: E Cadherina, KI-67, HER2, ESTROGENO, PROGESTERONA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250358",
+      "timestamp": "2026-04-15T11:39:21.195669"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 50
+  }
+}

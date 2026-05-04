@@ -1,0 +1,138 @@
+{
+  "session_id": "IHQ250901_20260420_090828",
+  "numero_peticion": "IHQ250901",
+  "timestamp": "2026-04-20T09:08:28.240517",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250901\nCopia Pag. 1 de 1\nNombre : AURA LOZANO\nN. peticion : IHQ250901\nN.Identificación : CC. 31919044\nGenero : FEMENINO\nEdad : 82 años 26 dias\nEPS : NUEVA EPS\nMédico tratante : EDUARDO GUTIERREZ MARTIN\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 19/08/2025\nFecha Informe : 26/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASA SUPRACLAVICULAR\nDERECHA\n2025-06-11\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2508858, el cual corresponde a biopsia de región\nsupraclavicular derecha, con diagnóstico de \"REACCIÓN GIGANTOCELULAR A CUERPO EXTRAÑO. NO SE\nIDENTIFICA NEOPLASIA O ATIPIA EN LA MUESTRA EVALUADAD\". Se ordenan los siguientes marcadores:\nCKAE1AE3 y Desmina.\nDESCRIPCIÓN MICROSCÓPICA\n En los cortes histológicos se identifica tejido fibroconectivo con estructuras amorfas basófilas irregulares\nasociado a material de cuerpo extraño y reacción gigantocelular con tendencia a la calcificación, en\npresencia de músculo esquelético. No se observa neoplasia o atipia en la muestra evaluada. No hay\ninmunotinción para Desmina ni CKAE1AE3.\nDIAGNÓSTICO\n Región supraclavicular derecha. Lesión. Biopsia. Estudio de inmunohistoquímica:\nNEGATIVO PARA ATIPIA O MALIGNIDAD EN LA MUESTRA EVALUADA\nCOMENTARIOS\nSe recomienda correlacionar con historia clínica e imágenes diagnósticas.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 2534,
+      "reduccion_porcentaje": 98.71
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250901",
+      "caso_num": 23,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "AURA LOZANO",
+      "numero_peticion": "IHQ250901",
+      "identificacion": "31919044",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "82",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "EDUARDO GUTIERREZ MARTIN",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "19/08/2025",
+      "fecha_informe": "26/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250901",
+      "N. de identificación": "31919044",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "EDUARDO GUTIERREZ MARTIN",
+      "Fecha de ingreso (2. Fecha de la muestra)": "19/08/2025",
+      "Fecha Informe": "26/08/2025",
+      "nombres": "AURA LOZANO",
+      "Primer nombre": "AURA",
+      "Segundo nombre": "LOZANO",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "AURA LOZANO",
+      "diagnostico": "Región supraclavicular derecha. Lesión. Biopsia. Estudio de inmunohistoquímica: NEGATIVO PARA ATIPIA O MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "descripcion_microscopica": "En los cortes histológicos se identifica tejido fibroconectivo con estructuras amorfas basófilas irregulares asociado a material de cuerpo extraño y reacción gigantocelular con tendencia a la calcificación, en presencia de músculo esquelético. No se observa neoplasia o atipia en la muestra evaluada. No hay inmunotinción para Desmina ni CKAE1AE3.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2508858, el cual corresponde a biopsia de región supraclavicular derecha, con diagnóstico de \"REACCIÓN GIGANTOCELULAR A CUERPO EXTRAÑO. NO SE IDENTIFICA NEOPLASIA O ATIPIA EN LA MUESTRA EVALUADAD\". Se ordenan los siguientes marcadores: CKAE1AE3 y Desmina.",
+      "ihq_organo": "REGIÓN SUPRACLAVICULAR DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1AE3, DESMINA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se recomienda correlacionar con historia clínica e imágenes diagnósticas.",
+      "IHQ_ORGANO": "REGIÓN SUPRACLAVICULAR DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, DESMINA",
+      "IHQ_DESMIN": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "extraction_timestamp": "2026-04-20T09:08:28.478024",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250901\nCopia Pag. 1 de 1\nNombre : AURA LOZANO\nN. peticion : IHQ250901\nN.Identificación : CC. 31919044\nGenero : FEMENINO\nEdad : 82 años 26 dias\nEPS : NUEVA EPS\nMédico tratante : EDUARDO GUTIERREZ MARTIN\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 19/08/2025\nFecha Informe : 26/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASA SUPRACLAVICULAR\nDERECHA\n2025-06-11\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2508858, el cual corresponde a biopsia de región\nsupraclavicular derecha, con diagnóstico de \"REACCIÓN GIGANTOCELULAR A CUERPO EXTRAÑO. NO SE\nIDENTIFICA NEOPLASIA O ATIPIA EN LA MUESTRA EVALUADAD\". Se ordenan los siguientes marcadores:\nCKAE1AE3 y Desmina.\nDESCRIPCIÓN MICROSCÓPICA\n En los cortes histológicos se identifica tejido fibroconectivo con estructuras amorfas basófilas irregulares\nasociado a material de cuerpo extraño y reacción gigantocelular con tendencia a la calcificación, en\npresencia de músculo esquelético. No se observa neoplasia o atipia en la muestra evaluada. No hay\ninmunotinción para Desmina ni CKAE1AE3.\nDIAGNÓSTICO\n Región supraclavicular derecha. Lesión. Biopsia. Estudio de inmunohistoquímica:\nNEGATIVO PARA ATIPIA O MALIGNIDAD EN LA MUESTRA EVALUADA\nCOMENTARIOS\nSe recomienda correlacionar con historia clínica e imágenes diagnósticas.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, DESMINA, DESMIN",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2508858, el cual corresponde a biopsia de región supraclavicular derecha, con diagnóstico de \"REACCIÓN GIGANTOCELULAR A CUERPO EXTRAÑO. NO SE IDENTIFICA NEOPLASIA O ATIPIA EN LA MUESTRA EVALUADAD\". Se ordenan los siguientes marcadores: CKAE1AE3 y Desmina.",
+      "Descripcion microscopica": "En los cortes histológicos se identifica tejido fibroconectivo con estructuras amorfas basófilas irregulares asociado a material de cuerpo extraño y reacción gigantocelular con tendencia a la calcificación, en presencia de músculo esquelético. No se observa neoplasia o atipia en la muestra evaluada. No hay inmunotinción para Desmina ni CKAE1AE3.",
+      "Descripcion Diagnostico": "Región supraclavicular derecha. Lesión. Biopsia. Estudio de inmunohistoquímica: NEGATIVO PARA ATIPIA O MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "IHQ_ORGANO": "REGIÓN SUPRACLAVICULAR DERECHA",
+      "Organo": "MASA SUPRACLAVICULAR DERECHA",
+      "Diagnostico Coloracion": "REACCIÓN GIGANTOCELULAR A CUERPO EXTRAÑO. NO SE IDENTIFICA NEOPLASIA O ATIPIA EN LA MUESTRA EVALUADAD",
+      "Diagnostico Principal": "NEGATIVO PARA ATIPIA O MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_DESMINA": "",
+      "IHQ_DESMIN": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 143,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 143,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región supraclavicular derecha. Lesión. Biopsia. Estudio de inmunohistoquímica:\nNEGATIVO PARA ATIPIA O MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "valor_corregido": "Región supraclavicular derecha. Lesión. Biopsia. Estudio de inmunohistoquímica: NEGATIVO PARA ATIPIA O MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250901",
+      "timestamp": "2026-04-20T09:08:28.477591"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 48
+  }
+}

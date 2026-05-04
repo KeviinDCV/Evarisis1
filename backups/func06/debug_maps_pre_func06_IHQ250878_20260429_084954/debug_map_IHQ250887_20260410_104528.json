@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250887_20260410_104528",
+  "numero_peticion": "IHQ250887",
+  "timestamp": "2026-04-10T10:45:28.889742",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250887\nCopia Pag. 1 de 2\nNombre : ISABEL FRANCO HINCAPIE\nN. peticion : IHQ250887\nN.Identificación : CC. 29813132\nGenero : FEMENINO\nEdad : 60 años 8 meses 11 dias\nEPS : NUEVA EPS\nMédico tratante : GUILLERMO URQUIA DELGADO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"BH-65829\" y\ndiagnóstico \"CARCINOMA MAMARIO INVASOR DE TIPO NO ESPECIAL (DUCTAL-CONVENCIONAL)\"\nPrevia revisión de la histología, se solicitan estudios de inmunohistoquímica con los anticuerpos para\nReceptor de estrógenos, Receptor de progesterona, Ki-67 y HER2/Neu.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nReceptor de estrógeno:\nNEGATIVO.\nControl interno ausente, control externo tiñe adecuadamente.\nNo hay controles internos, pero los controles externos son adecuadamente positivos. De\nser necesario, podría justificarse el análisis de otra muestra que contenga controles\ninternos para confirmar el estado de RE.\nReceptor de progesterona:\nNEGATIVO.\nControl interno ausente, control externo tiñe adecuadamente\nHER2/Neu:\nPOSITIVO (3+)\nTinción de membrana circunferencial que es completa, intensa y en más del 10% del\ntumor.\nKi-67:\nPOSITIVO EN EL 70% DE LAS CÉLULAS.\nMÉTODOS\nTiempo de isquemia fría: desconocido.\nTiempo de fijación: desconocido.\nFijador: formalina.\nMétodo para RE: \nDIAGNÓSTICO\n Mama derecha. Lesión a las 11 horas. Biopsia con aguja gruesa. Inmunohistoquímica.\nPERFIL INMUNOFENOTÍPICO COMPATIBLE CON CARCINOMA DUCTAL INVASIVO DE MAMA, HER2\nPOSITIVO.\nNEGATIVIDAD DE RECEPTORES HORMONALES (ER Y PR).\nÍNDICE DE PROLLIFERACIÓN CELULAR ESTIMADO POR KI-67: 70%.\nCOMENTARIOS\nEste perfil corresponde a un subtipo intrínseco molecular: HER2-enriquecido.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 24 ---\nIHQ250887\nCopia Pag. 2 de 2\nNombre : ISABEL FRANCO HINCAPIE\nN. peticion : IHQ250887\nN.Identificación : CC. 29813132\nGenero : FEMENINO\nEdad : 60 años 8 meses 11 dias\nEPS : NUEVA EPS\nMédico tratante : GUILLERMO URQUIA DELGADO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: SP1.\nMétodo para RP: \nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: 1E2.\nMétodo para HER2/Neu: \nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: 4B5.\nMétodo para Ki-67: \nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: 30-9.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 4100,
+      "reduccion_porcentaje": 97.92
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250887",
+      "caso_num": 11,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ISABEL FRANCO HINCAPIE",
+      "numero_peticion": "IHQ250887",
+      "identificacion": "29813132",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "60",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "GUILLERMO URQUIA DELGADO",
+      "servicio": "INSTITUCION EXTERNA",
+      "fecha_ingreso": "13/08/2025",
+      "fecha_informe": "01/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250887",
+      "N. de identificación": "29813132",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "INSTITUCION EXTERNA",
+      "Médico tratante": "GUILLERMO URQUIA DELGADO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "13/08/2025",
+      "Fecha Informe": "01/09/2025",
+      "nombres": "ISABEL",
+      "Primer nombre": "ISABEL",
+      "Segundo nombre": "",
+      "apellidos": "FRANCO HINCAPIE",
+      "Primer apellido": "FRANCO",
+      "Segundo apellido": "HINCAPIE",
+      "nombre_formal": "FRANCO HINCAPIE, ISABEL",
+      "diagnostico": "Mama derecha. Lesión a las 11 horas. Biopsia con aguja gruesa. Inmunohistoquímica. PERFIL INMUNOFENOTÍPICO COMPATIBLE CON CARCINOMA DUCTAL INVASIVO DE MAMA, HER2 POSITIVO. NEGATIVIDAD DE RECEPTORES HORMONALES (ER Y PR). ÍNDICE DE PROLLIFERACIÓN CELULAR ESTIMADO POR KI-67: 70%.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Receptor de estrógeno: NEGATIVO. Control interno ausente, control externo tiñe adecuadamente. No hay controles internos, pero los controles externos son adecuadamente positivos. De ser necesario, podría justificarse el análisis de otra muestra que contenga controles internos para confirmar el estado de RE. Receptor de progesterona: NEGATIVO. Control interno ausente, control externo tiñe adecuadamente HER2/Neu: POSITIVO (3+) Tinción de membrana circunferencial que es completa, intensa y en más del 10% del tumor. KI-67: POSITIVO EN EL 70% DE LAS CÉLULAS. MÉTODOS Tiempo de isquemia fría: desconocido. Tiempo de fijación: desconocido. Fijador: formalina. Método para RE:",
+      "descripcion_macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"BH-65829\" y diagnóstico \"CARCINOMA MAMARIO INVASOR DE TIPO NO ESPECIAL (DUCTAL-CONVENCIONAL)\" Previa revisión de la histología, se solicitan estudios de inmunohistoquímica con los anticuerpos para Receptor de estrógenos, Receptor de progesterona, KI-67 y HER2/Neu.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Este perfil corresponde a un subtipo intrínseco molecular: HER2-enriquecido.",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "Ki-67: 70% / HER2 POSITIVO / Receptor de estrógeno: NEGATIVO / Receptor de progesterona: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_KI-67": "70%",
+      "IHQ_HER2": "/Neu",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "extraction_timestamp": "2026-04-10T10:45:29.145876",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250887\nCopia Pag. 1 de 2\nNombre : ISABEL FRANCO HINCAPIE\nN. peticion : IHQ250887\nN.Identificación : CC. 29813132\nGenero : FEMENINO\nEdad : 60 años 8 meses 11 dias\nEPS : NUEVA EPS\nMédico tratante : GUILLERMO URQUIA DELGADO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MAMA DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"BH-65829\" y\ndiagnóstico \"CARCINOMA MAMARIO INVASOR DE TIPO NO ESPECIAL (DUCTAL-CONVENCIONAL)\"\nPrevia revisión de la histología, se solicitan estudios de inmunohistoquímica con los anticuerpos para\nReceptor de estrógenos, Receptor de progesterona, Ki-67 y HER2/Neu.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nReceptor de estrógeno:\nNEGATIVO.\nControl interno ausente, control externo tiñe adecuadamente.\nNo hay controles internos, pero los controles externos son adecuadamente positivos. De\nser necesario, podría justificarse el análisis de otra muestra que contenga controles\ninternos para confirmar el estado de RE.\nReceptor de progesterona:\nNEGATIVO.\nControl interno ausente, control externo tiñe adecuadamente\nHER2/Neu:\nPOSITIVO (3+)\nTinción de membrana circunferencial que es completa, intensa y en más del 10% del\ntumor.\nKi-67:\nPOSITIVO EN EL 70% DE LAS CÉLULAS.\nMÉTODOS\nTiempo de isquemia fría: desconocido.\nTiempo de fijación: desconocido.\nFijador: formalina.\nMétodo para RE: \nDIAGNÓSTICO\n Mama derecha. Lesión a las 11 horas. Biopsia con aguja gruesa. Inmunohistoquímica.\nPERFIL INMUNOFENOTÍPICO COMPATIBLE CON CARCINOMA DUCTAL INVASIVO DE MAMA, HER2\nPOSITIVO.\nNEGATIVIDAD DE RECEPTORES HORMONALES (ER Y PR).\nÍNDICE DE PROLLIFERACIÓN CELULAR ESTIMADO POR KI-67: 70%.\nCOMENTARIOS\nEste perfil corresponde a un subtipo intrínseco molecular: HER2-enriquecido.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 24 ---\nIHQ250887\nCopia Pag. 2 de 2\nNombre : ISABEL FRANCO HINCAPIE\nN. peticion : IHQ250887\nN.Identificación : CC. 29813132\nGenero : FEMENINO\nEdad : 60 años 8 meses 11 dias\nEPS : NUEVA EPS\nMédico tratante : GUILLERMO URQUIA DELGADO\nServicio : INSTITUCION EXTERNA\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: SP1.\nMétodo para RP: \nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: 1E2.\nMétodo para HER2/Neu: \nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: 4B5.\nMétodo para Ki-67: \nFDA aprobado: ROCHE/VENTANA.\nAnticuerpo primario: 30-9.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona",
+      "Descripcion macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"BH-65829\" y diagnóstico \"CARCINOMA MAMARIO INVASOR DE TIPO NO ESPECIAL (DUCTAL-CONVENCIONAL)\" Previa revisión de la histología, se solicitan estudios de inmunohistoquímica con los anticuerpos para Receptor de estrógenos, Receptor de progesterona, Ki-67 y HER2/Neu.",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Receptor de estrógeno: NEGATIVO. Control interno ausente, control externo tiñe adecuadamente. No hay controles internos, pero los controles externos son adecuadamente positivos. De ser necesario, podría justificarse el análisis de otra muestra que contenga controles internos para confirmar el estado de RE. Receptor de progesterona: NEGATIVO. Control interno ausente, control externo tiñe adecuadamente HER2/Neu: POSITIVO (3+) Tinción de membrana circunferencial que es completa, intensa y en más del 10% del tumor. Ki-67: POSITIVO EN EL 70% DE LAS CÉLULAS. MÉTODOS Tiempo de isquemia fría: desconocido. Tiempo de fijación: desconocido. Fijador: formalina. Método para RE:",
+      "Descripcion Diagnostico": "Mama derecha. Lesión a las 11 horas. Biopsia con aguja gruesa. Inmunohistoquímica. PERFIL INMUNOFENOTÍPICO COMPATIBLE CON CARCINOMA DUCTAL INVASIVO DE MAMA, HER2 POSITIVO. NEGATIVIDAD DE RECEPTORES HORMONALES (ER Y PR). ÍNDICE DE PROLLIFERACIÓN CELULAR ESTIMADO POR KI-67: 70%.",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "BX MAMA DERECHA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "INMUNOHISTOQUÍMICA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 70% / HER2 POSITIVO / Receptor de estrógeno: NEGATIVO / Receptor de progesterona: NEGATIVO",
+      "IHQ_HER2": "/NEU",
+      "IHQ_KI-67": "70%",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Lesión a las 11 horas. Biopsia con aguja gruesa. Inmunohistoquímica.\nPERFIL INMUNOFENOTÍPICO COMPATIBLE CON CARCINOMA DUCTAL INVASIVO DE MAMA, HER2\nPOSITIVO.\nNEGATIVIDAD DE RECEPTORES HORMONALES (ER Y PR).\nÍNDICE DE PROLLIFERACIÓN CELULAR ESTIMADO POR KI-67: 70%.",
+      "valor_corregido": "Mama derecha. Lesión a las 11 horas. Biopsia con aguja gruesa. Inmunohistoquímica. PERFIL INMUNOFENOTÍPICO COMPATIBLE CON CARCINOMA DUCTAL INVASIVO DE MAMA, HER2 POSITIVO. NEGATIVIDAD DE RECEPTORES HORMONALES (ER Y PR). ÍNDICE DE PROLLIFERACIÓN CELULAR ESTIMADO POR KI-67: 70%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250887",
+      "timestamp": "2026-04-10T10:45:29.145368"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"BH-65829\" y diagnóstico \"CARCINOMA MAMARIO INVASOR DE TIPO NO ESPECIAL (DUCTAL-CONVENCIONAL)\" Previa revisión de la histología, se solicitan estudios de inmunohistoquímica con los anticuerpos para Receptor de estrógenos, Receptor de progesterona, Ki-67 y HER2/Neu.",
+      "valor_corregido": "Se recibe orden para realizar estudios de inmunohistoquímica en material externo rotulado \"BH-65829\" y diagnóstico \"CARCINOMA MAMARIO INVASOR DE TIPO NO ESPECIAL (DUCTAL-CONVENCIONAL)\" Previa revisión de la histología, se solicitan estudios de inmunohistoquímica con los anticuerpos para Receptor de estrógenos, Receptor de progesterona, KI-67 y HER2/Neu.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250887",
+      "timestamp": "2026-04-10T10:45:29.145373"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Receptor de estrógeno: NEGATIVO. Control interno ausente, control externo tiñe adecuadamente. No hay controles internos, pero los controles externos son adecuadamente positivos. De ser necesario, podría justificarse el análisis de otra muestra que contenga controles internos para confirmar el estado de RE. Receptor de progesterona: NEGATIVO. Control interno ausente, control externo tiñe adecuadamente HER2/Neu: POSITIVO (3+) Tinción de membrana circunferencial que es completa, intensa y en más del 10% del tumor. Ki-67: POSITIVO EN EL 70% DE LAS CÉLULAS. MÉTODOS Tiempo de isquemia fría: desconocido. Tiempo de fijación: desconocido. Fijador: formalina. Método para RE:",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Receptor de estrógeno: NEGATIVO. Control interno ausente, control externo tiñe adecuadamente. No hay controles internos, pero los controles externos son adecuadamente positivos. De ser necesario, podría justificarse el análisis de otra muestra que contenga controles internos para confirmar el estado de RE. Receptor de progesterona: NEGATIVO. Control interno ausente, control externo tiñe adecuadamente HER2/Neu: POSITIVO (3+) Tinción de membrana circunferencial que es completa, intensa y en más del 10% del tumor. KI-67: POSITIVO EN EL 70% DE LAS CÉLULAS. MÉTODOS Tiempo de isquemia fría: desconocido. Tiempo de fijación: desconocido. Fijador: formalina. Método para RE:",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250887",
+      "timestamp": "2026-04-10T10:45:29.145374"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 50
+  }
+}

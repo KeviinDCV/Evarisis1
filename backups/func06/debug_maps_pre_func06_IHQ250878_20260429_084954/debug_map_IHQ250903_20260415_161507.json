@@ -1,0 +1,173 @@
+{
+  "session_id": "IHQ250903_20260415_161507",
+  "numero_peticion": "IHQ250903",
+  "timestamp": "2026-04-15T16:15:07.397709",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250903\nCopia Pag. 1 de 2\nNombre : VIZNNY DE LOS ANGELES GARCIA\nGUZMAN\nN. peticion : IHQ250903\nN.Identificación : CC. 1118289544\nGenero : FEMENINO\nEdad : 36 años 13 dias\nEPS : COMFENALCO VALLE\nMédico tratante : ESTEBAN LIBARDO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 19/08/2025\nFecha Informe : 03/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASA PALMA DE LA MANO\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2509532 que corresponde a “masa palma de la mano derecha” con\ndiagnóstico de \"PROLIFERACIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA.\"\npara estudios de inmunohistoquímica por lo que se revisa marcación para S100, SOX10, Sinaptofisina,\nP16, P53, Ki67, CD34, Desmina, Actina de Musculo Liso y Beta-Catenina.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas celulas tumorales presentan positividad difusa para S100, nuclear para SOX10 y focal para p16.\nAusencia de expresion para CD34, P53, Sinaptofisina, Desmina, SMA y Beta-catenina. El KI67 alcanza de\nmanera focal el 3%.\nDIAGNÓSTICO\n Mano izquierda, región palmar. Lesión. Resección. Estudio de inmunohistoquímica.\n- Hallazgos que favorecen un Schwannoma celular \nComentario: se recomienda la correlacion clinica y de estudios realizados por el medico tratante.\nDIEGO VARGAS GALVAN\nResponsable del análisis:\nMD Patólogo\nRM 761086\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---\nIHQ250903\nCopia Pag. 2 de 2\nNombre : VIZNNY DE LOS ANGELES GARCIA\nGUZMAN\nN. peticion : IHQ250903\nN.Identificación : CC. 1118289544\nGenero : FEMENINO\nEdad : 36 años 13 dias\nEPS : COMFENALCO VALLE\nMédico tratante : ESTEBAN LIBARDO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 19/08/2025\nFecha Informe : 03/09/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3290,
+      "reduccion_porcentaje": 98.33
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250903",
+      "caso_num": 25,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_S100": "POSITIVO",
+      "nombre_completo": "VIZNNY DE LOS ANGELES GARCIA GUZMAN",
+      "numero_peticion": "IHQ250903",
+      "identificacion": "1118289544",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "36",
+      "eps": "COMFENALCO VALLE",
+      "medico_tratante": "ESTEBAN LIBARDO",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "19/08/2025",
+      "fecha_informe": "03/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250903",
+      "N. de identificación": "1118289544",
+      "Tipo de documento": "CC",
+      "EPS": "COMFENALCO VALLE",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "ESTEBAN LIBARDO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "19/08/2025",
+      "Fecha Informe": "03/09/2025",
+      "nombres": "VIZNNY DE LOS",
+      "Primer nombre": "VIZNNY",
+      "Segundo nombre": "DE LOS",
+      "apellidos": "ANGELES GARCIA GUZMAN",
+      "Primer apellido": "ANGELES",
+      "Segundo apellido": "GARCIA GUZMAN",
+      "nombre_formal": "ANGELES GARCIA GUZMAN, VIZNNY DE LOS",
+      "diagnostico": "Mano izquierda, región palmar. Lesión. Resección. Estudio de inmunohistoquímica. - Hallazgos que favorecen un Schwannoma celular Comentario: se recomienda la correlacion clinica y de estudios realizados por el medico tratante. DIEGO VARGAS GALVAN Responsable del análisis: MD Patólogo RM 761086 _________________________________________________________________________________________________",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las celulas tumorales presentan positividad difusa para S100, nuclear para SOX10 y focal para p16. Ausencia de expresion para CD34, p53, Synaptophysin, Desmina, SMA y Beta-catenina. El KI-67 alcanza de manera focal el 3%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2509532 que corresponde a \"masa palma de la mano derecha\" con diagnóstico de \"PROLIFERACIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA.\" para estudios de inmunohistoquímica por lo que se revisa marcación para S100, SOX10, Synaptophysin, p16, p53, KI-67, CD34, Desmina, Actina de Musculo Liso y Beta-Catenina.",
+      "ihq_organo": "MANO IZQUIERDA, REGIÓN PALMAR",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "S100, SOX10, SYNAPTOFISINA, P16, P53, Ki-67, CD34, DESMINA, ACTINA DE MUSCULO LISO, BETA CATENINA",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MANO IZQUIERDA, REGIÓN PALMAR",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "S100, SOX10, SYNAPTOFISINA, P16, P53, Ki-67, CD34, DESMINA, ACTINA DE MUSCULO LISO, BETA CATENINA",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_P53": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_BETACATENINA": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2026-04-15T16:15:07.651635",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250903\nCopia Pag. 1 de 2\nNombre : VIZNNY DE LOS ANGELES GARCIA\nGUZMAN\nN. peticion : IHQ250903\nN.Identificación : CC. 1118289544\nGenero : FEMENINO\nEdad : 36 años 13 dias\nEPS : COMFENALCO VALLE\nMédico tratante : ESTEBAN LIBARDO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 19/08/2025\nFecha Informe : 03/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASA PALMA DE LA MANO\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2509532 que corresponde a “masa palma de la mano derecha” con\ndiagnóstico de \"PROLIFERACIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA.\"\npara estudios de inmunohistoquímica por lo que se revisa marcación para S100, SOX10, Sinaptofisina,\nP16, P53, Ki67, CD34, Desmina, Actina de Musculo Liso y Beta-Catenina.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas celulas tumorales presentan positividad difusa para S100, nuclear para SOX10 y focal para p16.\nAusencia de expresion para CD34, P53, Sinaptofisina, Desmina, SMA y Beta-catenina. El KI67 alcanza de\nmanera focal el 3%.\nDIAGNÓSTICO\n Mano izquierda, región palmar. Lesión. Resección. Estudio de inmunohistoquímica.\n- Hallazgos que favorecen un Schwannoma celular \nComentario: se recomienda la correlacion clinica y de estudios realizados por el medico tratante.\nDIEGO VARGAS GALVAN\nResponsable del análisis:\nMD Patólogo\nRM 761086\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---\nIHQ250903\nCopia Pag. 2 de 2\nNombre : VIZNNY DE LOS ANGELES GARCIA\nGUZMAN\nN. peticion : IHQ250903\nN.Identificación : CC. 1118289544\nGenero : FEMENINO\nEdad : 36 años 13 dias\nEPS : COMFENALCO VALLE\nMédico tratante : ESTEBAN LIBARDO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 19/08/2025\nFecha Informe : 03/09/2025\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "S100, SOX10, SYNAPTOFISINA, P16, P53, Ki-67, CD34, DESMINA, ACTINA DE MUSCULO LISO, BETA CATENINA, DESMIN, SMA",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2509532 que corresponde a “masa palma de la mano derecha” con diagnóstico de \"PROLIFERACIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA.\" para estudios de inmunohistoquímica por lo que se revisa marcación para S100, SOX10, Sinaptofisina, P16, P53, Ki67, CD34, Desmina, Actina de Musculo Liso y Beta-Catenina.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las celulas tumorales presentan positividad difusa para S100, nuclear para SOX10 y focal para p16. Ausencia de expresion para CD34, P53, Sinaptofisina, Desmina, SMA y Beta-catenina. El KI67 alcanza de manera focal el 3%.",
+      "Descripcion Diagnostico": "Mano izquierda, región palmar. Lesión. Resección. Estudio de inmunohistoquímica. - Hallazgos que favorecen un Schwannoma celular Comentario: se recomienda la correlacion clinica y de estudios realizados por el medico tratante. DIEGO VARGAS GALVAN Responsable del análisis: MD Patólogo RM 761086 _________________________________________________________________________________________________",
+      "IHQ_ORGANO": "MANO IZQUIERDA, REGIÓN PALMAR",
+      "Organo": "MASA PALMA DE LA MANO IZQUIERDA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "HALLAZGOS QUE FAVORECEN UN SCHWANNOMA CELULAR COMENTARIO: SE RECOMIENDA LA CORRELACION CLINICA Y DE ESTUDIOS REALIZADOS POR EL MEDICO TRATANTE",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P53": "NEGATIVO",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_DESMINA": "",
+      "IHQ_ACTINA_MUSCULO_LISO": "NO MENCIONADO",
+      "IHQ_BETACATENINA": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 133,
+      "campos_completos": 45,
+      "biomarcadores_encontrados": 11,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 133,
+      "total_campos_completos": 45
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mano izquierda, región palmar. Lesión. Resección. Estudio de inmunohistoquímica.\n- Hallazgos que favorecen un Schwannoma celular \nComentario: se recomienda la correlacion clinica y de estudios realizados por el medico tratante.\nDIEGO VARGAS GALVAN\nResponsable del análisis:\nMD Patólogo\nRM 761086\n_________________________________________________________________________________________________",
+      "valor_corregido": "Mano izquierda, región palmar. Lesión. Resección. Estudio de inmunohistoquímica. - Hallazgos que favorecen un Schwannoma celular Comentario: se recomienda la correlacion clinica y de estudios realizados por el medico tratante. DIEGO VARGAS GALVAN Responsable del análisis: MD Patólogo RM 761086 _________________________________________________________________________________________________",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250903",
+      "timestamp": "2026-04-15T16:15:07.651342"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2509532 que corresponde a “masa palma de la mano derecha” con diagnóstico de \"PROLIFERACIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA.\" para estudios de inmunohistoquímica por lo que se revisa marcación para S100, SOX10, Sinaptofisina, P16, P53, Ki67, CD34, Desmina, Actina de Musculo Liso y Beta-Catenina.",
+      "valor_corregido": "Se realizan niveles al bloque M2509532 que corresponde a \"masa palma de la mano derecha\" con diagnóstico de \"PROLIFERACIÓN FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA.\" para estudios de inmunohistoquímica por lo que se revisa marcación para S100, SOX10, Synaptophysin, p16, p53, KI-67, CD34, Desmina, Actina de Musculo Liso y Beta-Catenina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250903",
+      "timestamp": "2026-04-15T16:15:07.651347"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las celulas tumorales presentan positividad difusa para S100, nuclear para SOX10 y focal para p16. Ausencia de expresion para CD34, P53, Sinaptofisina, Desmina, SMA y Beta-catenina. El KI67 alcanza de manera focal el 3%.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las celulas tumorales presentan positividad difusa para S100, nuclear para SOX10 y focal para p16. Ausencia de expresion para CD34, p53, Synaptophysin, Desmina, SMA y Beta-catenina. El KI-67 alcanza de manera focal el 3%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250903",
+      "timestamp": "2026-04-15T16:15:07.651348"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 56
+  }
+}

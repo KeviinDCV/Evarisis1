@@ -1,0 +1,153 @@
+{
+  "session_id": "IHQ250919_20260415_161511",
+  "numero_peticion": "IHQ250919",
+  "timestamp": "2026-04-15T16:15:11.905296",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250919\nCopia Pag. 1 de 2\nNombre : LUZDELA LUNA RIVERA\nN. peticion : IHQ250919\nN.Identificación : CC. 31196984\nGenero : FEMENINO\nEdad : 64 años 16 dias\nEPS : PARTICULAR\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO SEPTICO\nFecha Ingreso : 25/08/2025\nFecha Informe : 27/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPERITONEO PARIETAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2509673 que corresponde a \"peritoneo parietal\" con diagnóstico de \"CARCINOMA METASTÁSICO\nA CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA\" . Previa revisión de la histología, se realizan\nniveles histológicos al bloque para tinción con WT1 , PAX 8 , HER2, CK7, CK20, p53 y receptores de\nestrogenos.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos\nse\nanalizan\ntinciones\nde\nInmunohistoquímica\nrealizadas\nen\nla\nplataforma\nautomatizada\nVENTANA. \nLas células tumorales muestran inmunorreactividad para CK7, WT1y PAX8 con sobreexpresión para p53\n(mutado), Receptores de estrógenos con marcación positiva fuerte en un 90% de la celularidad tumoral.\nSon negativos para CK20.\nDIAGNÓSTICO\n Peritoneo parietal. Historia de masa anexial. Biopsia.estudios de inmunohistoquímica.\n- HALLAZGOS QUE FAVORECEN UN CARCINOMA SEROSO DE OVARICO METASTÁSICO. \nCOMENTARIOS\nSe sugiere correlación con imágenes diagnósticas e historia clínica.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---\nIHQ250919\nCopia Pag. 2 de 2\nNombre : LUZDELA LUNA RIVERA\nN. peticion : IHQ250919\nN.Identificación : CC. 31196984\nGenero : FEMENINO\nEdad : 64 años 16 dias\nEPS : PARTICULAR\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO SEPTICO\nFecha Ingreso : 25/08/2025\nFecha Informe : 27/08/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 83 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3281,
+      "reduccion_porcentaje": 98.33
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250919",
+      "caso_num": 41,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK20": "NEGATIVO",
+      "nombre_completo": "LUZDELA LUNA RIVERA",
+      "numero_peticion": "IHQ250919",
+      "identificacion": "31196984",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "64",
+      "eps": "PARTICULAR",
+      "medico_tratante": "ADRIANA MAYOR BARRERA",
+      "servicio": "ALTO RIESGO SEPTICO",
+      "fecha_ingreso": "25/08/2025",
+      "fecha_informe": "27/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250919",
+      "N. de identificación": "31196984",
+      "Tipo de documento": "CC",
+      "EPS": "PARTICULAR",
+      "Servicio": "ALTO RIESGO SEPTICO",
+      "Médico tratante": "ADRIANA MAYOR BARRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "25/08/2025",
+      "Fecha Informe": "27/08/2025",
+      "nombres": "LUZDELA LUNA",
+      "Primer nombre": "LUZDELA",
+      "Segundo nombre": "LUNA",
+      "apellidos": "RIVERA",
+      "Primer apellido": "RIVERA",
+      "Segundo apellido": "",
+      "nombre_formal": "RIVERA, LUZDELA LUNA",
+      "diagnostico": "Peritoneo parietal. Historia de masa anexial. Biopsia.estudios de inmunohistoquímica. - HALLAZGOS QUE FAVORECEN UN CARCINOMA SEROSO DE OVARICO METASTÁSICO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales muestran inmunorreactividad para CK7, WT1 y PAX8 con sobreexpresión para p53 (mutado), Receptores de estrógenos con marcación positiva fuerte en un 90% de la celularidad tumoral. Son negativos para CK20.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2509673 que corresponde a \"peritoneo parietal\" con diagnóstico de \"CARCINOMA METASTÁSICO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA\" . Previa revisión de la histología, se realizan niveles histológicos al bloque para tinción con WT1 , PAX 8 , HER2, CK7, CK20, p53 y receptores de estrogenos.",
+      "ihq_organo": "PERITONEO PARIETAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "WT1, PAX 8, HER2, CK7, CK20, P53, Receptor de Estrógeno",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se sugiere correlación con imágenes diagnósticas e historia clínica.",
+      "IHQ_ORGANO": "PERITONEO PARIETAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (marcación positiva fuerte en un 90% de la celularidad tumoral)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "WT1, PAX 8, HER2, CK7, CK20, P53, Receptor de Estrógeno",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (marcación positiva fuerte en un 90% de la celularidad tumoral)",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_WT1": "POSITIVO",
+      "extraction_timestamp": "2026-04-15T16:15:12.148759",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250919\nCopia Pag. 1 de 2\nNombre : LUZDELA LUNA RIVERA\nN. peticion : IHQ250919\nN.Identificación : CC. 31196984\nGenero : FEMENINO\nEdad : 64 años 16 dias\nEPS : PARTICULAR\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO SEPTICO\nFecha Ingreso : 25/08/2025\nFecha Informe : 27/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPERITONEO PARIETAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2509673 que corresponde a \"peritoneo parietal\" con diagnóstico de \"CARCINOMA METASTÁSICO\nA CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA\" . Previa revisión de la histología, se realizan\nniveles histológicos al bloque para tinción con WT1 , PAX 8 , HER2, CK7, CK20, p53 y receptores de\nestrogenos.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos\nse\nanalizan\ntinciones\nde\nInmunohistoquímica\nrealizadas\nen\nla\nplataforma\nautomatizada\nVENTANA. \nLas células tumorales muestran inmunorreactividad para CK7, WT1y PAX8 con sobreexpresión para p53\n(mutado), Receptores de estrógenos con marcación positiva fuerte en un 90% de la celularidad tumoral.\nSon negativos para CK20.\nDIAGNÓSTICO\n Peritoneo parietal. Historia de masa anexial. Biopsia.estudios de inmunohistoquímica.\n- HALLAZGOS QUE FAVORECEN UN CARCINOMA SEROSO DE OVARICO METASTÁSICO. \nCOMENTARIOS\nSe sugiere correlación con imágenes diagnósticas e historia clínica.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---\nIHQ250919\nCopia Pag. 2 de 2\nNombre : LUZDELA LUNA RIVERA\nN. peticion : IHQ250919\nN.Identificación : CC. 31196984\nGenero : FEMENINO\nEdad : 64 años 16 dias\nEPS : PARTICULAR\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : ALTO RIESGO SEPTICO\nFecha Ingreso : 25/08/2025\nFecha Informe : 27/08/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 83 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "WT1, PAX 8, HER2, CK7, CK20, P53, Receptor de Estrógeno",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2509673 que corresponde a \"peritoneo parietal\" con diagnóstico de \"CARCINOMA METASTÁSICO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA\" . Previa revisión de la histología, se realizan niveles histológicos al bloque para tinción con WT1 , PAX 8 , HER2, CK7, CK20, p53 y receptores de estrogenos.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales muestran inmunorreactividad para CK7, WT1y PAX8 con sobreexpresión para p53 (mutado), Receptores de estrógenos con marcación positiva fuerte en un 90% de la celularidad tumoral. Son negativos para CK20.",
+      "Descripcion Diagnostico": "Peritoneo parietal. Historia de masa anexial. Biopsia.estudios de inmunohistoquímica. - HALLAZGOS QUE FAVORECEN UN CARCINOMA SEROSO DE OVARICO METASTÁSICO.",
+      "IHQ_ORGANO": "PERITONEO PARIETAL",
+      "Organo": "PERITONEO PARIETAL",
+      "Diagnostico Coloracion": "CARCINOMA METASTÁSICO A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "HALLAZGOS QUE FAVORECEN UN CARCINOMA SEROSO DE OVARICO METASTÁSICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: POSITIVO (marcación positiva fuerte en un 90% de la celularidad tumoral)",
+      "IHQ_WT1": "POSITIVO",
+      "IHQ_PAX8": "NO MENCIONADO",
+      "IHQ_HER2": "NO MENCIONADO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_P53": "NO MENCIONADO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (marcación positiva fuerte en un 90% de la celularidad tumoral)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 137,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Peritoneo parietal. Historia de masa anexial. Biopsia.estudios de inmunohistoquímica.\n- HALLAZGOS QUE FAVORECEN UN CARCINOMA SEROSO DE OVARICO METASTÁSICO.",
+      "valor_corregido": "Peritoneo parietal. Historia de masa anexial. Biopsia.estudios de inmunohistoquímica. - HALLAZGOS QUE FAVORECEN UN CARCINOMA SEROSO DE OVARICO METASTÁSICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250919",
+      "timestamp": "2026-04-15T16:15:12.148376"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales muestran inmunorreactividad para CK7, WT1y PAX8 con sobreexpresión para p53 (mutado), Receptores de estrógenos con marcación positiva fuerte en un 90% de la celularidad tumoral. Son negativos para CK20.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales muestran inmunorreactividad para CK7, WT1 y PAX8 con sobreexpresión para p53 (mutado), Receptores de estrógenos con marcación positiva fuerte en un 90% de la celularidad tumoral. Son negativos para CK20.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250919",
+      "timestamp": "2026-04-15T16:15:12.148383"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 52
+  }
+}

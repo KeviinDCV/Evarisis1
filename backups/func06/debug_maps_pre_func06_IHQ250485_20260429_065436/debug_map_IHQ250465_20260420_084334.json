@@ -1,0 +1,149 @@
+{
+  "session_id": "IHQ250465_20260420_084334",
+  "numero_peticion": "IHQ250465",
+  "timestamp": "2026-04-20T08:43:34.317849",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250465\nCopia Pag. 1 de 2\nNombre : ANA JULIA RIVERA RUBIO\nN. peticion : IHQ250465\nN.Identificación : CC. 66702354\nGenero : FEMENINO\nEdad : 58 años 1 mes 12 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 30/04/2025\nFecha Informe : 14/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nUTERO + ANEXOS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2503164-A6, que corresponde a tumor de útero con anexos bilaterales,\ncon diagnóstico de \"ADENOCARCINOMA DE CÉLULAS CLARAS DE OVARIO DERECHO (SUPERFICIE\nLIBRE); CÉRVIX NORMAL; ENDOMETRIO ATRÓFICO; TUBAS UTERINAS DE ARQUITECTURA USUAL; OVARIO\nIZQUIERDO NORMAL. Se realizaron estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CK7, PAX-8, Racemasa, Napsina-A y Vimentina con positividad\nfocal; siendo negativas para CK20, GATA-3, CD10, RCC, Receptor de Estrógeno, Receptor de\nProgesterona y WT1.\nEl p53 presenta una marcación salvaje; el p16 marcación en bloque focal en menos del 10% de la\ncelularidad.\nDIAGNÓSTICO\nÚtero con anexos bilaterales. Tumor. Histerectomía con anexectomía bilateral:\nLOA HALLAZGOS DE INMUNOHISTOQUIMICA SON COMPATIBLES CON ADENOCARCINOMA DE CÉLULAS\nCLARAS DE PROBABLE ORIGEN OVARICO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---\nIHQ250465\nCopia Pag. 2 de 2\nNombre : ANA JULIA RIVERA RUBIO\nN. peticion : IHQ250465\nN.Identificación : CC. 66702354\nGenero : FEMENINO\nEdad : 58 años 1 mes 12 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 30/04/2025\nFecha Informe : 14/05/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3257,
+      "reduccion_porcentaje": 98.28
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250465",
+      "caso_num": 2,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "nombre_completo": "ANA JULIA RIVERA RUBIO",
+      "numero_peticion": "IHQ250465",
+      "identificacion": "66702354",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "58",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "EULER JAVIER BURBANO",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "30/04/2025",
+      "fecha_informe": "14/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250465",
+      "N. de identificación": "66702354",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "EULER JAVIER BURBANO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "30/04/2025",
+      "Fecha Informe": "14/05/2025",
+      "nombres": "ANA JULIA",
+      "Primer nombre": "ANA",
+      "Segundo nombre": "JULIA",
+      "apellidos": "RIVERA RUBIO",
+      "Primer apellido": "RIVERA",
+      "Segundo apellido": "RUBIO",
+      "nombre_formal": "RIVERA RUBIO, ANA JULIA",
+      "diagnostico": "Útero con anexos bilaterales. Tumor. Histerectomía con anexectomía bilateral: LOA HALLAZGOS DE INMUNOHISTOQUIMICA SON COMPATIBLES CON ADENOCARCINOMA DE CÉLULAS CLARAS DE PROBABLE ORIGEN OVARICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, PAX-8, Racemasa, Napsina-A y Vimentina con positividad focal; siendo negativas para CK20, GATA-3, CD10, RCC, Receptor de Estrógeno, Receptor de Progesterona y WT1. El p53 presenta una marcación salvaje; el p16 marcación en bloque focal en menos del 10% de la celularidad.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2503164-A6, que corresponde a tumor de útero con anexos bilaterales, con diagnóstico de \"ADENOCARCINOMA DE CÉLULAS CLARAS DE OVARIO DERECHO (SUPERFICIE LIBRE); CÉRVIX NORMAL; ENDOMETRIO ATRÓFICO; TUBAS UTERINAS DE ARQUITECTURA USUAL; OVARIO IZQUIERDO NORMAL. Se realizaron estudios de inmunohistoquímica.",
+      "ihq_organo": "ÚTERO CON ANEXOS BILATERALES",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ÚTERO CON ANEXOS BILATERALES",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "positivo para: negativo para CK20, GATA-3, CD10, RCC, Receptor de Estrógeno, Receptor de Progesterona y WT1 / Negativo para CK20",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RACEMASA": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "Y WT1",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "IHQ_NAPSIN": "-A Y VIMENTINA CON POSITIVIDAD",
+      "extraction_timestamp": "2026-04-20T08:43:34.580093",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250465\nCopia Pag. 1 de 2\nNombre : ANA JULIA RIVERA RUBIO\nN. peticion : IHQ250465\nN.Identificación : CC. 66702354\nGenero : FEMENINO\nEdad : 58 años 1 mes 12 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 30/04/2025\nFecha Informe : 14/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nUTERO + ANEXOS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2503164-A6, que corresponde a tumor de útero con anexos bilaterales,\ncon diagnóstico de \"ADENOCARCINOMA DE CÉLULAS CLARAS DE OVARIO DERECHO (SUPERFICIE\nLIBRE); CÉRVIX NORMAL; ENDOMETRIO ATRÓFICO; TUBAS UTERINAS DE ARQUITECTURA USUAL; OVARIO\nIZQUIERDO NORMAL. Se realizaron estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para CK7, PAX-8, Racemasa, Napsina-A y Vimentina con positividad\nfocal; siendo negativas para CK20, GATA-3, CD10, RCC, Receptor de Estrógeno, Receptor de\nProgesterona y WT1.\nEl p53 presenta una marcación salvaje; el p16 marcación en bloque focal en menos del 10% de la\ncelularidad.\nDIAGNÓSTICO\nÚtero con anexos bilaterales. Tumor. Histerectomía con anexectomía bilateral:\nLOA HALLAZGOS DE INMUNOHISTOQUIMICA SON COMPATIBLES CON ADENOCARCINOMA DE CÉLULAS\nCLARAS DE PROBABLE ORIGEN OVARICO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---\nIHQ250465\nCopia Pag. 2 de 2\nNombre : ANA JULIA RIVERA RUBIO\nN. peticion : IHQ250465\nN.Identificación : CC. 66702354\nGenero : FEMENINO\nEdad : 58 años 1 mes 12 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 30/04/2025\nFecha Informe : 14/05/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK20, CK7, NAPSIN, PAX8, RACEMASA, Receptor de Estrógeno, Receptor de Progesterona, VIMENTINA",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2503164-A6, que corresponde a tumor de útero con anexos bilaterales, con diagnóstico de \"ADENOCARCINOMA DE CÉLULAS CLARAS DE OVARIO DERECHO (SUPERFICIE LIBRE); CÉRVIX NORMAL; ENDOMETRIO ATRÓFICO; TUBAS UTERINAS DE ARQUITECTURA USUAL; OVARIO IZQUIERDO NORMAL. Se realizaron estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, PAX-8, Racemasa, Napsina-A y Vimentina con positividad focal; siendo negativas para CK20, GATA-3, CD10, RCC, Receptor de Estrógeno, Receptor de Progesterona y WT1. El p53 presenta una marcación salvaje; el p16 marcación en bloque focal en menos del 10% de la celularidad.",
+      "Descripcion Diagnostico": "Útero con anexos bilaterales. Tumor. Histerectomía con anexectomía bilateral: LOA HALLAZGOS DE INMUNOHISTOQUIMICA SON COMPATIBLES CON ADENOCARCINOMA DE CÉLULAS CLARAS DE PROBABLE ORIGEN OVARICO.",
+      "IHQ_ORGANO": "ÚTERO CON ANEXOS BILATERALES",
+      "Organo": "UTERO + ANEXOS",
+      "Diagnostico Coloracion": "ADENOCARCINOMA DE CÉLULAS CLARAS DE OVARIO DERECHO (SUPERFICIE LIBRE); CÉRVIX NORMAL; ENDOMETRIO ATRÓFICO; TUBAS UTERINAS DE ARQUITECTURA USUAL; OVARIO IZQUIERDO NORMAL",
+      "Diagnostico Principal": "ADENOCARCINOMA DE CÉLULAS CLARAS DE PROBABLE ORIGEN OVARICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "positivo para: negativo para CK20, GATA-3, CD10, RCC, Receptor de Estrógeno, Receptor de Progesterona y WT1 / Negativo para CK20",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_NAPSIN": "-A Y VIMENTINA CON POSITIVIDAD",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_RACEMASA": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "Y WT1",
+      "IHQ_VIMENTINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 135,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 8,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Útero con anexos bilaterales. Tumor. Histerectomía con anexectomía bilateral:\nLOA HALLAZGOS DE INMUNOHISTOQUIMICA SON COMPATIBLES CON ADENOCARCINOMA DE CÉLULAS\nCLARAS DE PROBABLE ORIGEN OVARICO.",
+      "valor_corregido": "Útero con anexos bilaterales. Tumor. Histerectomía con anexectomía bilateral: LOA HALLAZGOS DE INMUNOHISTOQUIMICA SON COMPATIBLES CON ADENOCARCINOMA DE CÉLULAS CLARAS DE PROBABLE ORIGEN OVARICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250465",
+      "timestamp": "2026-04-20T08:43:34.579750"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 54
+  }
+}

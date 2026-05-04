@@ -1,0 +1,147 @@
+{
+  "session_id": "IHQ250357_20260413_125645",
+  "numero_peticion": "IHQ250357",
+  "timestamp": "2026-04-13T12:56:45.065498",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250357\nCopia Pag. 1 de 1\nNombre : NUBIA DE JESUS CUENU MANCILLA\nN. peticion : IHQ250357\nN.Identificación : CC. 1059446059\nGenero : FEMENINO\nEdad : 38 años 2 meses 6 dias\nEPS : NUEVA EPS\nMédico tratante : FERNANDO JAVIER RUIZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 07/04/2025\nFecha Informe : 09/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX EXOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2501153” que corresponde a “exocérvix” con diagnósticos de “CAMBIOS\nREACTIVOS INDEFINIDOS PARA DISPLASIA”. Previa revisión de la histología, se realizan niveles\nhistológicos para tinción con p16 y KI-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\np16 negativo.\nKI-67 expresión limitada a la capa basal (usual).\nDIAGNÓSTICO\nExocérvix. Biopsia. Estudio de inmunohistoquímica:\n- SIN EVIDENCIA DE CAMBIOS DISPLÁSICOS EN LA MUESTRA EVALUADA.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 2327,
+      "reduccion_porcentaje": 98.69
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250357",
+      "caso_num": 44,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "NUBIA DE JESUS CUENU MANCILLA",
+      "numero_peticion": "IHQ250357",
+      "identificacion": "1059446059",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "38",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "FERNANDO JAVIER RUIZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "07/04/2025",
+      "fecha_informe": "09/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250357",
+      "N. de identificación": "1059446059",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "FERNANDO JAVIER RUIZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/04/2025",
+      "Fecha Informe": "09/04/2025",
+      "nombres": "NUBIA DE JESUS",
+      "Primer nombre": "NUBIA",
+      "Segundo nombre": "DE JESUS",
+      "apellidos": "CUENU MANCILLA",
+      "Primer apellido": "CUENU",
+      "Segundo apellido": "MANCILLA",
+      "nombre_formal": "CUENU MANCILLA, NUBIA DE JESUS",
+      "diagnostico": "Exocérvix. Biopsia. Estudio de inmunohistoquímica: - SIN EVIDENCIA DE CAMBIOS DISPLÁSICOS EN LA MUESTRA EVALUADA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. p16 negativo. KI-67 expresión limitada a la capa basal (usual).",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2501153\" que corresponde a \"exocérvix\" con diagnósticos de \"CAMBIOS REACTIVOS INDEFINIDOS PARA DISPLASIA\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y KI-67.",
+      "ihq_organo": "EXOCÉRVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "EXOCÉRVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: EXPRESIÓN LIMITADA A CAPA BASAL",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, Ki-67",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "EXPRESIÓN LIMITADA A CAPA BASAL",
+      "p16": "NEGATIVO",
+      "extraction_timestamp": "2026-04-13T12:56:45.262117",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250357\nCopia Pag. 1 de 1\nNombre : NUBIA DE JESUS CUENU MANCILLA\nN. peticion : IHQ250357\nN.Identificación : CC. 1059446059\nGenero : FEMENINO\nEdad : 38 años 2 meses 6 dias\nEPS : NUEVA EPS\nMédico tratante : FERNANDO JAVIER RUIZ\nServicio : UNIDAD DE ONCOLOGIA COEX\nFecha Ingreso : 07/04/2025\nFecha Informe : 09/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX EXOCERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2501153” que corresponde a “exocérvix” con diagnósticos de “CAMBIOS\nREACTIVOS INDEFINIDOS PARA DISPLASIA”. Previa revisión de la histología, se realizan niveles\nhistológicos para tinción con p16 y KI-67.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\np16 negativo.\nKI-67 expresión limitada a la capa basal (usual).\nDIAGNÓSTICO\nExocérvix. Biopsia. Estudio de inmunohistoquímica:\n- SIN EVIDENCIA DE CAMBIOS DISPLÁSICOS EN LA MUESTRA EVALUADA.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501153” que corresponde a “exocérvix” con diagnósticos de “CAMBIOS REACTIVOS INDEFINIDOS PARA DISPLASIA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y KI-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. p16 negativo. KI-67 expresión limitada a la capa basal (usual).",
+      "Descripcion Diagnostico": "Exocérvix. Biopsia. Estudio de inmunohistoquímica: - SIN EVIDENCIA DE CAMBIOS DISPLÁSICOS EN LA MUESTRA EVALUADA.",
+      "IHQ_ORGANO": "EXOCÉRVIX",
+      "Organo": "BX EXOCERVIX",
+      "Diagnostico Coloracion": "CAMBIOS REACTIVOS INDEFINIDOS PARA DISPLASIA",
+      "Diagnostico Principal": "SIN EVIDENCIA DE CAMBIOS DISPLÁSICOS EN LA MUESTRA EVALUADA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: EXPRESIÓN LIMITADA A CAPA BASAL",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "EXPRESIÓN LIMITADA A CAPA BASAL"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 141,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Exocérvix. Biopsia. Estudio de inmunohistoquímica:\n- SIN EVIDENCIA DE CAMBIOS DISPLÁSICOS EN LA MUESTRA EVALUADA.",
+      "valor_corregido": "Exocérvix. Biopsia. Estudio de inmunohistoquímica: - SIN EVIDENCIA DE CAMBIOS DISPLÁSICOS EN LA MUESTRA EVALUADA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250357",
+      "timestamp": "2026-04-13T12:56:45.261853"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501153” que corresponde a “exocérvix” con diagnósticos de “CAMBIOS REACTIVOS INDEFINIDOS PARA DISPLASIA”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y KI-67.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2501153\" que corresponde a \"exocérvix\" con diagnósticos de \"CAMBIOS REACTIVOS INDEFINIDOS PARA DISPLASIA\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p16 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250357",
+      "timestamp": "2026-04-13T12:56:45.261858"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 51
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "session_id": "IHQ250341_20260415_113913",
+  "numero_peticion": "IHQ250341",
+  "timestamp": "2026-04-15T11:39:13.410799",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250341\nCopia Pag. 1 de 2\nNombre : IBETH CAROLINA TRASLAVIÑA\nLLANOS\nN. peticion : IHQ250341\nN.Identificación : CC. 52916325\nGenero : FEMENINO\nEdad : 40 años 1 mes 4 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : RAFAEL RICARDO REALES\nServicio : UNIDAD EXTENSION HOSPITALARIA\nFecha Ingreso : 03/04/2025\nFecha Informe : 08/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA VAGINA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2502378 que corresponde a biopsia de masa en vagina, con diagnóstico\nde \"HALLAZGOS MORFOLOGICOS COMPATIBLES CON FORMACIONES ACINARES CON CAMBIOS ATIPICOS\".\nSe ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©\nLa celularidad descrita en H&E no presenta inmunorreactividad para p40, Receptor de Estrógeno, PAX-8,\np16. La marcación para ki67 (indice de proliferación) es la usual.\nDIAGNÓSTICO\nVagina. Masa. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON CAMBIOS CELULARES\nREACTIVOS.\nCOMENTARIOS\nLa celularidad que se describio en H&E que aparentaba presentar cambios atípicos, no presenta\ninmunorreactividad alguna en la inmunohistoquímica, por lo que se considera celularidad con cambios\nreactivos; por lo que ante continuar con la sospecha de malignidad en dicha zona se recomienda en\nnuevo muestreo de acuerdo a criterio del medico tratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---\nIHQ250341\nCopia Pag. 2 de 2\nNombre : IBETH CAROLINA TRASLAVIÑA\nLLANOS\nN. peticion : IHQ250341\nN.Identificación : CC. 52916325\nGenero : FEMENINO\nEdad : 40 años 1 mes 4 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : RAFAEL RICARDO REALES\nServicio : UNIDAD EXTENSION HOSPITALARIA\nFecha Ingreso : 03/04/2025\nFecha Informe : 08/04/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3415,
+      "reduccion_porcentaje": 98.08
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250341",
+      "caso_num": 28,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "IBETH CAROLINA TRASLAVIÑA LLANOS",
+      "numero_peticion": "IHQ250341",
+      "identificacion": "52916325",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "40",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "RAFAEL RICARDO REALES",
+      "servicio": "UNIDAD EXTENSION HOSPITALARIA",
+      "fecha_ingreso": "03/04/2025",
+      "fecha_informe": "08/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250341",
+      "N. de identificación": "52916325",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "UNIDAD EXTENSION HOSPITALARIA",
+      "Médico tratante": "RAFAEL RICARDO REALES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/04/2025",
+      "Fecha Informe": "08/04/2025",
+      "nombres": "IBETH CAROLINA TRASLAVIÑA",
+      "Primer nombre": "IBETH",
+      "Segundo nombre": "CAROLINA TRASLAVIÑA",
+      "apellidos": "LLANOS",
+      "Primer apellido": "LLANOS",
+      "Segundo apellido": "",
+      "nombre_formal": "LLANOS, IBETH CAROLINA TRASLAVIÑA",
+      "diagnostico": "Vagina. Masa. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON CAMBIOS CELULARES REACTIVOS.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© La celularidad descrita en H&E no presenta inmunorreactividad para p40, Receptor de Estrógeno, PAX-8, p16. La marcación para KI-67 (indice de proliferación) es la usual.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2502378 que corresponde a biopsia de masa en vagina, con diagnóstico de \"HALLAZGOS MORFOLOGICOS COMPATIBLES CON FORMACIONES ACINARES CON CAMBIOS ATIPICOS\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "VAGINA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "La celularidad que se describio en H&E que aparentaba presentar cambios atípicos, no presenta inmunorreactividad alguna en la inmunohistoquímica, por lo que se considera celularidad con cambios reactivos; por lo que ante continuar con la sospecha de malignidad en dicha zona se recomienda en nuevo muestreo de acuerdo a criterio del medico tratante.",
+      "IHQ_ORGANO": "VAGINA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "P40, Receptor De Estrógeno, Pax-8,: Positivo",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_LCA": "POSITIVO (NO PRESENTA INMUNORREACTIVIDAD PARA P40, RECEPTOR DE ESTRÓGENO, PAX-8, P16. LA MARCACIÓN PARA KI67 (INDICE DE PROLIFERACIÓN) ES LA USUAL. DIAGNÓSTICO VAGINA. MASA. BIOPSIA. ESTUDIOS DE INMUNOHISTOQUÍMICA: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON CAMBIOS CELULARES REACTIVOS. COMENTARIOS LA CELULARIDAD QUE SE DESCRIBIO EN H&E QUE APARENTABA PRESENTAR CAMBIOS ATÍPICOS, NO PRESENTA INMUNORREACTIVIDAD ALGUNA EN LA INMUNOHISTOQUÍMICA, POR LO QUE SE CONSIDERA CELULARIDAD CON CAMBIOS REACTIVOS; POR LO QUE ANTE CONTINUAR CON LA SOSPECHA DE MALIGNIDAD EN DICHA ZONA SE RECOMIENDA EN NUEVO MUESTREO DE ACUERDO A CRITERIO DEL MEDICO TRATANTE. NANCY MEJIA VARGAS MÉDICA PATÓLOGA RM: 76-0405/15 _________________________________________________________________________________________________ TODOS LOS ANÁLISIS SON AVALADOS FRENTE A LOS PROGRAMAS DE CONTROL DE CALIDAD EXTERNO ACREDITADOS POR LA ISO 17043:2010; COLEGIO AMERICANO DE PATÓLOGOS (CAP), THE ROYAL COLLEGE OF PATHOLOGISTS OF AUSTRALASIA QUALITY ASSURANCE PROGRAMS (RCPAQAP), ONEWORLD ACCURACY (1WA) --- PÁGINA 52 --- IHQ250341 COPIA PAG. 2 DE 2 NOMBRE : IBETH CAROLINA TRASLAVIÑA LLANOS N. PETICION : IHQ250341 N.IDENTIFICACIÓN : CC. 52916325 GENERO : FEMENINO EDAD : 40 AÑOS 1 MES 4 DIAS EPS : COOSALUD ENTIDAD PROMOTORA DE MÉDICO TRATANTE : RAFAEL RICARDO REALES SERVICIO : UNIDAD EXTENSION HOSPITALARIA FECHA INGRESO : 03/04/2025 FECHA INFORME : 08/04/2025 NOTA: ESTE INFORME SE CIÑE A LAS MEJORES PRÁCTICAS ACTUALES EN PATOLOGÍA A NUESTRO ALCA)",
+      "p16": "NEGATIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-04-15T11:39:13.811494",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250341\nCopia Pag. 1 de 2\nNombre : IBETH CAROLINA TRASLAVIÑA\nLLANOS\nN. peticion : IHQ250341\nN.Identificación : CC. 52916325\nGenero : FEMENINO\nEdad : 40 años 1 mes 4 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : RAFAEL RICARDO REALES\nServicio : UNIDAD EXTENSION HOSPITALARIA\nFecha Ingreso : 03/04/2025\nFecha Informe : 08/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA VAGINA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2502378 que corresponde a biopsia de masa en vagina, con diagnóstico\nde \"HALLAZGOS MORFOLOGICOS COMPATIBLES CON FORMACIONES ACINARES CON CAMBIOS ATIPICOS\".\nSe ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©\nLa celularidad descrita en H&E no presenta inmunorreactividad para p40, Receptor de Estrógeno, PAX-8,\np16. La marcación para ki67 (indice de proliferación) es la usual.\nDIAGNÓSTICO\nVagina. Masa. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON CAMBIOS CELULARES\nREACTIVOS.\nCOMENTARIOS\nLa celularidad que se describio en H&E que aparentaba presentar cambios atípicos, no presenta\ninmunorreactividad alguna en la inmunohistoquímica, por lo que se considera celularidad con cambios\nreactivos; por lo que ante continuar con la sospecha de malignidad en dicha zona se recomienda en\nnuevo muestreo de acuerdo a criterio del medico tratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 52 ---\nIHQ250341\nCopia Pag. 2 de 2\nNombre : IBETH CAROLINA TRASLAVIÑA\nLLANOS\nN. peticion : IHQ250341\nN.Identificación : CC. 52916325\nGenero : FEMENINO\nEdad : 40 años 1 mes 4 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : RAFAEL RICARDO REALES\nServicio : UNIDAD EXTENSION HOSPITALARIA\nFecha Ingreso : 03/04/2025\nFecha Informe : 08/04/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 53 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD45, P16, P40, PAX8, Receptor de Estrógeno",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2502378 que corresponde a biopsia de masa en vagina, con diagnóstico de \"HALLAZGOS MORFOLOGICOS COMPATIBLES CON FORMACIONES ACINARES CON CAMBIOS ATIPICOS\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© La celularidad descrita en H&E no presenta inmunorreactividad para p40, Receptor de Estrógeno, PAX-8, p16. La marcación para ki67 (indice de proliferación) es la usual.",
+      "Descripcion Diagnostico": "Vagina. Masa. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON CAMBIOS CELULARES REACTIVOS.",
+      "IHQ_ORGANO": "VAGINA",
+      "Organo": "BX MASA VAGINA",
+      "Diagnostico Coloracion": "HALLAZGOS MORFOLOGICOS COMPATIBLES CON FORMACIONES ACINARES CON CAMBIOS ATIPICOS",
+      "Diagnostico Principal": "CAMBIOS CELULARES REACTIVOS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "P40, Receptor De Estrógeno, Pax-8,: Positivo",
+      "IHQ_CD45": "POSITIVO (NO PRESENTA INMUNORREACTIVIDAD PARA P40, RECEPTOR DE ESTRÓGENO, PAX-8, P16. LA MARCACIÓN PARA KI67 (INDICE DE PROLIFERACIÓN) ES LA USUAL. DIAGNÓSTICO VAGINA. MASA. BIOPSIA. ESTUDIOS DE INMUNOHISTOQUÍMICA: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON CAMBIOS CELULARES REACTIVOS. COMENTARIOS LA CELULARIDAD QUE SE DESCRIBIO EN H&E QUE APARENTABA PRESENTAR CAMBIOS ATÍPICOS, NO PRESENTA INMUNORREACTIVIDAD ALGUNA EN LA INMUNOHISTOQUÍMICA, POR LO QUE SE CONSIDERA CELULARIDAD CON CAMBIOS REACTIVOS; POR LO QUE ANTE CONTINUAR CON LA SOSPECHA DE MALIGNIDAD EN DICHA ZONA SE RECOMIENDA EN NUEVO MUESTREO DE ACUERDO A CRITERIO DEL MEDICO TRATANTE. NANCY MEJIA VARGAS MÉDICA PATÓLOGA RM: 76-0405/15 _________________________________________________________________________________________________ TODOS LOS ANÁLISIS SON AVALADOS FRENTE A LOS PROGRAMAS DE CONTROL DE CALIDAD EXTERNO ACREDITADOS POR LA ISO 17043:2010; COLEGIO AMERICANO DE PATÓLOGOS (CAP), THE ROYAL COLLEGE OF PATHOLOGISTS OF AUSTRALASIA QUALITY ASSURANCE PROGRAMS (RCPAQAP), ONEWORLD ACCURACY (1WA) --- PÁGINA 52 --- IHQ250341 COPIA PAG. 2 DE 2 NOMBRE : IBETH CAROLINA TRASLAVIÑA LLANOS N. PETICION : IHQ250341 N.IDENTIFICACIÓN : CC. 52916325 GENERO : FEMENINO EDAD : 40 AÑOS 1 MES 4 DIAS EPS : COOSALUD ENTIDAD PROMOTORA DE MÉDICO TRATANTE : RAFAEL RICARDO REALES SERVICIO : UNIDAD EXTENSION HOSPITALARIA FECHA INGRESO : 03/04/2025 FECHA INFORME : 08/04/2025 NOTA: ESTE INFORME SE CIÑE A LAS MEJORES PRÁCTICAS ACTUALES EN PATOLOGÍA A NUESTRO ALCA)",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Vagina. Masa. Biopsia. Estudios de inmunohistoquímica:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON CAMBIOS CELULARES\nREACTIVOS.",
+      "valor_corregido": "Vagina. Masa. Biopsia. Estudios de inmunohistoquímica: HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON CAMBIOS CELULARES REACTIVOS.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250341",
+      "timestamp": "2026-04-15T11:39:13.810781"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© La celularidad descrita en H&E no presenta inmunorreactividad para p40, Receptor de Estrógeno, PAX-8, p16. La marcación para ki67 (indice de proliferación) es la usual.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© La celularidad descrita en H&E no presenta inmunorreactividad para p40, Receptor de Estrógeno, PAX-8, p16. La marcación para KI-67 (indice de proliferación) es la usual.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250341",
+      "timestamp": "2026-04-15T11:39:13.810790"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La celularidad que se describio en H&E que aparentaba presentar cambios atípicos, no presenta\ninmunorreactividad alguna en la inmunohistoquímica, por lo que se considera celularidad con cambios\nreactivos; por lo que ante continuar con la sospecha de malignidad en dicha zona se recomienda en\nnuevo muestreo de acuerdo a criterio del medico tratante.",
+      "valor_corregido": "La celularidad que se describio en H&E que aparentaba presentar cambios atípicos, no presenta inmunorreactividad alguna en la inmunohistoquímica, por lo que se considera celularidad con cambios reactivos; por lo que ante continuar con la sospecha de malignidad en dicha zona se recomienda en nuevo muestreo de acuerdo a criterio del medico tratante.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250341",
+      "timestamp": "2026-04-15T11:39:13.810793"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 53
+  }
+}

@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250018",
   "caso_num": 18,
   "total_casos": 50,
-  "timestamp": "2026-04-28T14:15:34.877502",
+  "timestamp": "2026-04-29T11:31:03.317610",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -36,8 +36,8 @@
       "mensaje": "Correcto (no aplica)"
     },
     "biomarcadores": {
-      "estado": "ERROR",
-      "mensaje": "1 biomarcadores sin mapeo/vacíos",
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (5/5)",
       "total_solicitado_ocr": 5,
       "total_solicitado_bd": 5,
       "estudios_ocr": [
@@ -56,12 +56,10 @@
       ],
       "faltantes_en_bd": [],
       "extras_en_bd": [],
-      "mapeados": 4,
-      "no_mapeados": [
-        "ACTINA DE MUSCULO LISO (sin columna)"
-      ],
+      "mapeados": 5,
+      "no_mapeados": [],
       "valores_incorrectos": [],
-      "cobertura": 80.0
+      "cobertura": 100.0
     },
     "campos_obligatorios": {
       "errores": []
@@ -108,9 +106,9 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 90.0,
-    "score_final": 90.0,
-    "validaciones_ok": 9,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
     "total_validaciones": 10,
     "warnings": 0,
     "errores": 0

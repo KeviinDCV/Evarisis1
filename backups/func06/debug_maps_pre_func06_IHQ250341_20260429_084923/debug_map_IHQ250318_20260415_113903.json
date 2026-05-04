@@ -1,0 +1,150 @@
+{
+  "session_id": "IHQ250318_20260415_113903",
+  "numero_peticion": "IHQ250318",
+  "timestamp": "2026-04-15T11:39:03.446966",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250318\nCopia Pag. 1 de 2\nNombre : WALINTON GONZALEZ SAAVEDRA\nN. peticion : IHQ250318\nN.Identificación : CC. 16713322\nGenero : MASCULINO\nEdad : 59 años 1 mes 25 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 31/03/2025\nFecha Informe : 07/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR PALADAR\nBLANDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501341 que corresponde a \"LOS HALLAZGOS MORFOLÒGICOS FAVORECEN CARCINOMA\nINFILTRANTE\". Previa revisión de la histología, se realizan niveles histológicos al bloque para\ntinción con p63, p16 y p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLas células tumorales presentan inmunorreactividad positiva para p16 en bloque ( citoplasmática\ny nuclear ) ,tinción nuclear positiva para p63 y p40 en el 100% de las células tumorales. \nControl externo e interno para p40 y p63 con expresión adecuada.\nDIAGNÓSTICO\nPaladar blando. Tumor. Biopsia. Estudios de inmunohistoquimica:\n- CARCINOMA EPIDERMOIDE INVASIVO Y ULCERADO, p16 POSITIVO.\n- GRADO DE DIFERENCIACIÓN : GRADO 3 (POBREMENTE DIFERENCIADO).\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---\nIHQ250318\nCopia Pag. 2 de 2\nNombre : WALINTON GONZALEZ SAAVEDRA\nN. peticion : IHQ250318\nN.Identificación : CC. 16713322\nGenero : MASCULINO\nEdad : 59 años 1 mes 25 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 31/03/2025\nFecha Informe : 07/04/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3204,
+      "reduccion_porcentaje": 98.2
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250318",
+      "caso_num": 5,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO (POSITIVA PARA p16 EN BLOQUE ( CITOPLASMÁTICA Y NUCLEAR ) ,TINCIÓN NUCLEAR POSITIVA PARA p63 Y p40)",
+      "nombre_completo": "WALINTON GONZALEZ SAAVEDRA",
+      "numero_peticion": "IHQ250318",
+      "identificacion": "16713322",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "59",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "31/03/2025",
+      "fecha_informe": "07/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250318",
+      "N. de identificación": "16713322",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "31/03/2025",
+      "Fecha Informe": "07/04/2025",
+      "nombres": "WALINTON",
+      "Primer nombre": "WALINTON",
+      "Segundo nombre": "",
+      "apellidos": "GONZALEZ SAAVEDRA",
+      "Primer apellido": "GONZALEZ",
+      "Segundo apellido": "SAAVEDRA",
+      "nombre_formal": "GONZALEZ SAAVEDRA, WALINTON",
+      "diagnostico": "Paladar blando. Tumor. Biopsia. Estudios de inmunohistoquimica: - CARCINOMA EPIDERMOIDE INVASIVO Y ULCERADO, p16 POSITIVO. - GRADO DE DIFERENCIACIÓN : GRADO 3 (POBREMENTE DIFERENCIADO). MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________: 31/03/2025",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales presentan inmunorreactividad positiva para p16 en bloque ( citoplasmática y nuclear ) ,tinción nuclear positiva para p63 y p40 en el 100% de las células tumorales. Control externo e interno para p40 y p63 con expresión adecuada.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501341 que corresponde a \"LOS HALLAZGOS MORFOLÒGICOS FAVORECEN CARCINOMA INFILTRANTE\". Previa revisión de la histología, se realizan niveles histológicos al bloque para tinción con p63, p16 y p40.",
+      "ihq_organo": "PALADAR BLANDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P63, P16, P40",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PALADAR BLANDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, P16, P40",
+      "p16": "POSITIVO",
+      "p40": "POSITIVO (POSITIVA PARA P16 EN BLOQUE ( CITOPLASMÁTICA Y NUCLEAR ) ,TINCIÓN NUCLEAR POSITIVA PARA P63 Y P40)",
+      "extraction_timestamp": "2026-04-15T11:39:03.876260",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250318\nCopia Pag. 1 de 2\nNombre : WALINTON GONZALEZ SAAVEDRA\nN. peticion : IHQ250318\nN.Identificación : CC. 16713322\nGenero : MASCULINO\nEdad : 59 años 1 mes 25 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 31/03/2025\nFecha Informe : 07/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR PALADAR\nBLANDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con número de registro:\nM2501341 que corresponde a \"LOS HALLAZGOS MORFOLÒGICOS FAVORECEN CARCINOMA\nINFILTRANTE\". Previa revisión de la histología, se realizan niveles histológicos al bloque para\ntinción con p63, p16 y p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLas células tumorales presentan inmunorreactividad positiva para p16 en bloque ( citoplasmática\ny nuclear ) ,tinción nuclear positiva para p63 y p40 en el 100% de las células tumorales. \nControl externo e interno para p40 y p63 con expresión adecuada.\nDIAGNÓSTICO\nPaladar blando. Tumor. Biopsia. Estudios de inmunohistoquimica:\n- CARCINOMA EPIDERMOIDE INVASIVO Y ULCERADO, p16 POSITIVO.\n- GRADO DE DIFERENCIACIÓN : GRADO 3 (POBREMENTE DIFERENCIADO).\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 10 ---\nIHQ250318\nCopia Pag. 2 de 2\nNombre : WALINTON GONZALEZ SAAVEDRA\nN. peticion : IHQ250318\nN.Identificación : CC. 16713322\nGenero : MASCULINO\nEdad : 59 años 1 mes 25 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 31/03/2025\nFecha Informe : 07/04/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 11 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P63, P16, P40",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con número de registro: M2501341 que corresponde a \"LOS HALLAZGOS MORFOLÒGICOS FAVORECEN CARCINOMA INFILTRANTE\". Previa revisión de la histología, se realizan niveles histológicos al bloque para tinción con p63, p16 y p40.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales presentan inmunorreactividad positiva para p16 en bloque ( citoplasmática y nuclear ) ,tinción nuclear positiva para p63 y p40 en el 100% de las células tumorales. Control externo e interno para p40 y p63 con expresión adecuada.",
+      "Descripcion Diagnostico": "Paladar blando. Tumor. Biopsia. Estudios de inmunohistoquimica: - CARCINOMA EPIDERMOIDE INVASIVO Y ULCERADO, p16 POSITIVO. - GRADO DE DIFERENCIACIÓN : GRADO 3 (POBREMENTE DIFERENCIADO). MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________: 31/03/2025",
+      "IHQ_ORGANO": "PALADAR BLANDO",
+      "Organo": "BX TUMOR PALADAR BLANDO",
+      "Diagnostico Coloracion": "LOS HALLAZGOS MORFOLÒGICOS FAVORECEN CARCINOMA INFILTRANTE",
+      "Diagnostico Principal": "CARCINOMA EPIDERMOIDE INVASIVO Y ULCERADO, P16 POSITIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO (POSITIVA PARA p16 EN BLOQUE ( CITOPLASMÁTICA Y NUCLEAR ) ,TINCIÓN NUCLEAR POSITIVA PARA p63 Y p40)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 142,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 142,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Paladar blando. Tumor. Biopsia. Estudios de inmunohistoquimica:\n- CARCINOMA EPIDERMOIDE INVASIVO Y ULCERADO, p16 POSITIVO.\n- GRADO DE DIFERENCIACIÓN : GRADO 3 (POBREMENTE DIFERENCIADO).\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________: 31/03/2025",
+      "valor_corregido": "Paladar blando. Tumor. Biopsia. Estudios de inmunohistoquimica: - CARCINOMA EPIDERMOIDE INVASIVO Y ULCERADO, p16 POSITIVO. - GRADO DE DIFERENCIACIÓN : GRADO 3 (POBREMENTE DIFERENCIADO). MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________: 31/03/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250318",
+      "timestamp": "2026-04-15T11:39:03.875791"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "IHQ_P40_ESTADO",
+      "valor_original": "POSITIVO (POSITIVA PARA P16 EN BLOQUE ( CITOPLASMÁTICA Y NUCLEAR ) ,TINCIÓN NUCLEAR POSITIVA PARA P63 Y P40)",
+      "valor_corregido": "POSITIVO (POSITIVA PARA p16 EN BLOQUE ( CITOPLASMÁTICA Y NUCLEAR ) ,TINCIÓN NUCLEAR POSITIVA PARA p63 Y p40)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250318",
+      "timestamp": "2026-04-15T11:39:03.875796"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 50
+  }
+}

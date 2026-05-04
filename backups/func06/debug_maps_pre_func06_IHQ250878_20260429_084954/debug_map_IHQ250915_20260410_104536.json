@@ -1,0 +1,154 @@
+{
+  "session_id": "IHQ250915_20260410_104536",
+  "numero_peticion": "IHQ250915",
+  "timestamp": "2026-04-10T10:45:36.625947",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250915\nCopia Pag. 1 de 2\nNombre : JUANA CAVICHE ULCUE\nN. peticion : IHQ250915\nN.Identificación : CC. 25653748\nGenero : FEMENINO\nEdad : 83 años 2 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : CARLOS ALBERTO MORA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 22/08/2025\nFecha Informe : 29/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nOMENTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2510114” que corresponde a \"biopsia de omento \" y con diagnóstico de “CARCINOMA\nMETASTASICO A ESTABLECER PRIMARIO MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con: HER2, CDX2, CK19,\nCA19,9, CK7, CKAE1/AE3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales en el omento presentan marcación positiva para CKAE1/AE3, CA19-9 y\nCK19, CK7. son negativas para HER2 y CDX2. \nDIAGNÓSTICO\nOmento. Lesión. Biopsia. Estudios de inmunohistoquímica.\nLOS\nESTUDIOS\nHISTOLÓGICOS\nY\nDE\nINMUNOHISTOQUÍMICA\nFAVORECEN\nUN\nCARCINOMA\nMETASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILAR.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---\nIHQ250915\nCopia Pag. 2 de 2\nNombre : JUANA CAVICHE ULCUE\nN. peticion : IHQ250915\nN.Identificación : CC. 25653748\nGenero : FEMENINO\nEdad : 83 años 2 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : CARLOS ALBERTO MORA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 22/08/2025\nFecha Informe : 29/08/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3112,
+      "reduccion_porcentaje": 98.42
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250915",
+      "caso_num": 37,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_HER2": "NEGATIVO (0)",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CA19_9": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "nombre_completo": "JUANA CAVICHE ULCUE",
+      "numero_peticion": "IHQ250915",
+      "identificacion": "25653748",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "83",
+      "eps": "ASMET SALUD EPS SAS",
+      "medico_tratante": "CARLOS ALBERTO MORA",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "22/08/2025",
+      "fecha_informe": "29/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250915",
+      "N. de identificación": "25653748",
+      "Tipo de documento": "CC",
+      "EPS": "ASMET SALUD EPS SAS",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "CARLOS ALBERTO MORA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "22/08/2025",
+      "Fecha Informe": "29/08/2025",
+      "nombres": "JUANA",
+      "Primer nombre": "JUANA",
+      "Segundo nombre": "",
+      "apellidos": "CAVICHE ULCUE",
+      "Primer apellido": "CAVICHE",
+      "Segundo apellido": "ULCUE",
+      "nombre_formal": "CAVICHE ULCUE, JUANA",
+      "diagnostico": "Omento. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS ESTUDIOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN CARCINOMA METASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILAR.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales en el omento presentan marcación positiva para CKAE1/AE3, CA19-9 y CK19, CK7. son negativas para HER2 y CDX2.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2510114\" que corresponde a \"biopsia de omento \" y con diagnóstico de \"CARCINOMA METASTASICO A ESTABLECER PRIMARIO MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología se realizan niveles histológicos para tinción con: HER2, CDX2, CK19, CA19,9, CK7, CKAE1/AE3.",
+      "ihq_organo": "OMENTO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2, CDX2, CK19, CA19, CK7, CKAE1AE3",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "OMENTO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "positivo para: negativo para HER2 y CDX2 / Negativo para HER2",
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, CDX2, CK19, CA19, CK7, CKAE1AE3",
+      "extraction_timestamp": "2026-04-10T10:45:36.865693",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250915\nCopia Pag. 1 de 2\nNombre : JUANA CAVICHE ULCUE\nN. peticion : IHQ250915\nN.Identificación : CC. 25653748\nGenero : FEMENINO\nEdad : 83 años 2 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : CARLOS ALBERTO MORA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 22/08/2025\nFecha Informe : 29/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nOMENTO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2510114” que corresponde a \"biopsia de omento \" y con diagnóstico de “CARCINOMA\nMETASTASICO A ESTABLECER PRIMARIO MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa\nrevisión de la histología se realizan niveles histológicos para tinción con: HER2, CDX2, CK19,\nCA19,9, CK7, CKAE1/AE3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales en el omento presentan marcación positiva para CKAE1/AE3, CA19-9 y\nCK19, CK7. son negativas para HER2 y CDX2. \nDIAGNÓSTICO\nOmento. Lesión. Biopsia. Estudios de inmunohistoquímica.\nLOS\nESTUDIOS\nHISTOLÓGICOS\nY\nDE\nINMUNOHISTOQUÍMICA\nFAVORECEN\nUN\nCARCINOMA\nMETASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILAR.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---\nIHQ250915\nCopia Pag. 2 de 2\nNombre : JUANA CAVICHE ULCUE\nN. peticion : IHQ250915\nN.Identificación : CC. 25653748\nGenero : FEMENINO\nEdad : 83 años 2 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : CARLOS ALBERTO MORA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 22/08/2025\nFecha Informe : 29/08/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 77 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, CDX2, CK19, CA19, CK7, CKAE1AE3, CA19-9",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2510114” que corresponde a \"biopsia de omento \" y con diagnóstico de “CARCINOMA METASTASICO A ESTABLECER PRIMARIO MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa revisión de la histología se realizan niveles histológicos para tinción con: HER2, CDX2, CK19, CA19,9, CK7, CKAE1/AE3.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales en el omento presentan marcación positiva para CKAE1/AE3, CA19-9 y CK19, CK7. son negativas para HER2 y CDX2.",
+      "Descripcion Diagnostico": "Omento. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS ESTUDIOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN CARCINOMA METASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILAR.",
+      "IHQ_ORGANO": "OMENTO",
+      "Organo": "OMENTO",
+      "Diagnostico Coloracion": "CARCINOMA METASTASICO A ESTABLECER PRIMARIO MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LOS ESTUDIOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN CARCINOMA METASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "positivo para: negativo para HER2 y CDX2 / Negativo para HER2",
+      "IHQ_HER2": "NEGATIVO (0)",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CA19_9": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 138,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Omento. Lesión. Biopsia. Estudios de inmunohistoquímica.\nLOS\nESTUDIOS\nHISTOLÓGICOS\nY\nDE\nINMUNOHISTOQUÍMICA\nFAVORECEN\nUN\nCARCINOMA\nMETASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILAR.",
+      "valor_corregido": "Omento. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS ESTUDIOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN CARCINOMA METASTASICO DE PROBABLE ORIGEN GASTROPANCREATOBILAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250915",
+      "timestamp": "2026-04-10T10:45:36.865442"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2510114” que corresponde a \"biopsia de omento \" y con diagnóstico de “CARCINOMA METASTASICO A ESTABLECER PRIMARIO MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA”. Previa revisión de la histología se realizan niveles histológicos para tinción con: HER2, CDX2, CK19, CA19,9, CK7, CKAE1/AE3.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2510114\" que corresponde a \"biopsia de omento \" y con diagnóstico de \"CARCINOMA METASTASICO A ESTABLECER PRIMARIO MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología se realizan niveles histológicos para tinción con: HER2, CDX2, CK19, CA19,9, CK7, CKAE1/AE3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250915",
+      "timestamp": "2026-04-10T10:45:36.865448"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 53
+  }
+}

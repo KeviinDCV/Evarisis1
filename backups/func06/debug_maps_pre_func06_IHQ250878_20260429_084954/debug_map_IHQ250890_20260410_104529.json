@@ -1,0 +1,150 @@
+{
+  "session_id": "IHQ250890_20260410_104529",
+  "numero_peticion": "IHQ250890",
+  "timestamp": "2026-04-10T10:45:29.373735",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250890\nCopia Pag. 1 de 2\nNombre : LUZ EIDY RAMIREZ\nN. peticion : IHQ250890\nN.Identificación : CC. 38436213\nGenero : FEMENINO\nEdad : 71 años 12 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : MEDICA MUJERES\nFecha Ingreso : 14/08/2025\nFecha Informe : 21/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de Inmunohistoquímica\nCaso institucional: M2509575\nÓrgano: Médula ósea.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nRESULTADO DE ESTUDIO DE INMUNOHISTOQUÍMICA:\nMédula ósea con celularidad hematopoyética triliteral del 35-40%.\nSe compone de megacariocitos con inmunotinción positiva para CD61, encontrándose de 1-7 por\ncampo de alto poder sin formar cúmulos. \nAdicionalmente hay linfocitos B (CD20+) y T (CD3+), dispersos y corresponden al 4% de la\nDiagnóstico Inicial: \nCALIDAD INSUFICIENTE\nCELULARIDAD HEMATOPOYETICA TRILINEAL DEL 35%\nMEGACARIOCITOS DE 1-6 POR CAP\nRELACIÓN MIELOIDE ERITROIDE ADECUADA\nSIN INCREMENTO DE BLASTOS NI CELULARIDAD PLASMOCITOIDE\nFecha de diagnóstico: 14-08-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al único\nbloque.\nEstudios Solicitados:\nSe realizó tincion especial para CD3, CD20, CD34, CD38, CD61, CD117, CD138,\nGLICOFORINA, MIELOPEROXIDASA.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquímica\n- TRILINEAL CON CELULARIDAD DEL 35-40% \n- MEGACARIOCITOS DE 1-7 POR CAP.\n- LINEA MIELOIDE CON MADURACIÓN\n- RELACIÓN MIELOIDE ERITROIDE 3:1\n- CORRELACIONAR CON CITOMETRIA DE FLUJO (CF2500433)\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250890\nCopia Pag. 2 de 2\nNombre : LUZ EIDY RAMIREZ\nN. peticion : IHQ250890\nN.Identificación : CC. 38436213\nGenero : FEMENINO\nEdad : 71 años 12 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : MEDICA MUJERES\nFecha Ingreso : 14/08/2025\nFecha Informe : 21/08/2025\ncelularidad, sin formar cúmulos. \nLas células plasmáticas son CD38+ y CD138+, se agrupan de 2 a 4 plasmocitos y son menores al\n5% de la celularidad. \nSe observan blastos que expresan CD34+ y CD117+ menor al 1% de la celularidad total. \nLa línea mieloide representada con maduración con expresión de MIELOPEROXIADASA.\nLa línea eritroide está adecuadamente representada con expresión positiva para GLICOFORINA.\nLa relación mieloide eritroide es 3:1. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 4009,
+      "reduccion_porcentaje": 97.97
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250890",
+      "caso_num": 13,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD61": "POSITIVO",
+      "nombre_completo": "LUZ EIDY RAMIREZ",
+      "numero_peticion": "IHQ250890",
+      "identificacion": "38436213",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "71",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "SILVIO ANDRES BOLAÑOS",
+      "servicio": "MEDICA MUJERES",
+      "fecha_ingreso": "14/08/2025",
+      "fecha_informe": "21/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250890",
+      "N. de identificación": "38436213",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "MEDICA MUJERES",
+      "Médico tratante": "SILVIO ANDRES BOLAÑOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/08/2025",
+      "Fecha Informe": "21/08/2025",
+      "nombres": "LUZ EIDY",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "EIDY",
+      "apellidos": "RAMIREZ",
+      "Primer apellido": "RAMIREZ",
+      "Segundo apellido": "",
+      "nombre_formal": "RAMIREZ, LUZ EIDY",
+      "diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquímica - TRILINEAL CON CELULARIDAD DEL 35-40% - MEGACARIOCITOS DE 1-7 POR CAP. - LINEA MIELOIDE CON MADURACIÓN - RELACIÓN MIELOIDE ERITROIDE 3:1 - CORRELACIONAR CON CITOMETRIA DE FLUJO (CF2500433) MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas: 14/08/2025 celularidad, sin formar cúmulos. Las células plasmáticas son CD38+ y CD138+, se agrupan de 2 a 4 plasmocitos y son menores al 5% de la celularidad. Se observan blastos que expresan CD34+ y CD117+ menor al 1% de la celularidad total. La línea mieloide representada con maduración con expresión de MIELOPEROXIADASA. La línea eritroide está adecuadamente representada con expresión positiva para GLICOFORINA. La relación mieloide eritroide es 3:1.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. RESULTADO DE ESTUDIO DE INMUNOHISTOQUÍMICA: Médula ósea con celularidad hematopoyética triliteral del 35-40%. Se compone de megacariocitos con inmunotinción positiva para CD61, encontrándose de 1-7 por campo de alto poder sin formar cúmulos. Adicionalmente hay linfocitos B (CD20+) y T (CD3+), dispersos y corresponden al 4% de la Diagnóstico Inicial: CALIDAD INSUFICIENTE CELULARIDAD HEMATOPOYETICA TRILINEAL DEL 35% MEGACARIOCITOS DE 1-6 POR CAP RELACIÓN MIELOIDE ERITROIDE ADECUADA SIN INCREMENTO DE BLASTOS NI CELULARIDAD PLASMOCITOIDE Fecha de diagnóstico: 14-08-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al único bloque. Estudios Solicitados: Se realizó tincion especial para CD3, CD20, CD34, CD38, CD61, CD117, CD138, GLICOFORINA, MIELOPEROXIDASA.",
+      "descripcion_macroscopica": "Informe de Estudios de Inmunohistoquímica Caso institucional: M2509575 Órgano: Médula ósea.",
+      "ihq_organo": "MEDULA ÓSEA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD20, CD34, CD38, CD61, CD117, CD138, GLICOFORINA, MIELOPEROXIDASA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD20, CD34, CD38, CD61, CD117, CD138, GLICOFORINA, MIELOPEROXIDASA",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "extraction_timestamp": "2026-04-10T10:45:29.683009",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250890\nCopia Pag. 1 de 2\nNombre : LUZ EIDY RAMIREZ\nN. peticion : IHQ250890\nN.Identificación : CC. 38436213\nGenero : FEMENINO\nEdad : 71 años 12 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : MEDICA MUJERES\nFecha Ingreso : 14/08/2025\nFecha Informe : 21/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de Inmunohistoquímica\nCaso institucional: M2509575\nÓrgano: Médula ósea.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nRESULTADO DE ESTUDIO DE INMUNOHISTOQUÍMICA:\nMédula ósea con celularidad hematopoyética triliteral del 35-40%.\nSe compone de megacariocitos con inmunotinción positiva para CD61, encontrándose de 1-7 por\ncampo de alto poder sin formar cúmulos. \nAdicionalmente hay linfocitos B (CD20+) y T (CD3+), dispersos y corresponden al 4% de la\nDiagnóstico Inicial: \nCALIDAD INSUFICIENTE\nCELULARIDAD HEMATOPOYETICA TRILINEAL DEL 35%\nMEGACARIOCITOS DE 1-6 POR CAP\nRELACIÓN MIELOIDE ERITROIDE ADECUADA\nSIN INCREMENTO DE BLASTOS NI CELULARIDAD PLASMOCITOIDE\nFecha de diagnóstico: 14-08-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al único\nbloque.\nEstudios Solicitados:\nSe realizó tincion especial para CD3, CD20, CD34, CD38, CD61, CD117, CD138,\nGLICOFORINA, MIELOPEROXIDASA.\nDIAGNÓSTICO\nMedula ósea. Biopsia. Estudio de inmunohistoquímica\n- TRILINEAL CON CELULARIDAD DEL 35-40% \n- MEGACARIOCITOS DE 1-7 POR CAP.\n- LINEA MIELOIDE CON MADURACIÓN\n- RELACIÓN MIELOIDE ERITROIDE 3:1\n- CORRELACIONAR CON CITOMETRIA DE FLUJO (CF2500433)\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 28 ---\nIHQ250890\nCopia Pag. 2 de 2\nNombre : LUZ EIDY RAMIREZ\nN. peticion : IHQ250890\nN.Identificación : CC. 38436213\nGenero : FEMENINO\nEdad : 71 años 12 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : MEDICA MUJERES\nFecha Ingreso : 14/08/2025\nFecha Informe : 21/08/2025\ncelularidad, sin formar cúmulos. \nLas células plasmáticas son CD38+ y CD138+, se agrupan de 2 a 4 plasmocitos y son menores al\n5% de la celularidad. \nSe observan blastos que expresan CD34+ y CD117+ menor al 1% de la celularidad total. \nLa línea mieloide representada con maduración con expresión de MIELOPEROXIADASA.\nLa línea eritroide está adecuadamente representada con expresión positiva para GLICOFORINA.\nLa relación mieloide eritroide es 3:1. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 29 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD20, CD34, CD38, CD61, CD117, CD138, GLICOFORINA, MIELOPEROXIDASA",
+      "Descripcion macroscopica": "Informe de Estudios de Inmunohistoquímica Caso institucional: M2509575 Órgano: Médula ósea.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. RESULTADO DE ESTUDIO DE INMUNOHISTOQUÍMICA: Médula ósea con celularidad hematopoyética triliteral del 35-40%. Se compone de megacariocitos con inmunotinción positiva para CD61, encontrándose de 1-7 por campo de alto poder sin formar cúmulos. Adicionalmente hay linfocitos B (CD20+) y T (CD3+), dispersos y corresponden al 4% de la Diagnóstico Inicial: CALIDAD INSUFICIENTE CELULARIDAD HEMATOPOYETICA TRILINEAL DEL 35% MEGACARIOCITOS DE 1-6 POR CAP RELACIÓN MIELOIDE ERITROIDE ADECUADA SIN INCREMENTO DE BLASTOS NI CELULARIDAD PLASMOCITOIDE Fecha de diagnóstico: 14-08-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al único bloque. Estudios Solicitados: Se realizó tincion especial para CD3, CD20, CD34, CD38, CD61, CD117, CD138, GLICOFORINA, MIELOPEROXIDASA.",
+      "Descripcion Diagnostico": "Medula ósea. Biopsia. Estudio de inmunohistoquímica - TRILINEAL CON CELULARIDAD DEL 35-40% - MEGACARIOCITOS DE 1-7 POR CAP. - LINEA MIELOIDE CON MADURACIÓN - RELACIÓN MIELOIDE ERITROIDE 3:1 - CORRELACIONAR CON CITOMETRIA DE FLUJO (CF2500433) MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas: 14/08/2025 celularidad, sin formar cúmulos. Las células plasmáticas son CD38+ y CD138+, se agrupan de 2 a 4 plasmocitos y son menores al 5% de la celularidad. Se observan blastos que expresan CD34+ y CD117+ menor al 1% de la celularidad total. La línea mieloide representada con maduración con expresión de MIELOPEROXIADASA. La línea eritroide está adecuadamente representada con expresión positiva para GLICOFORINA. La relación mieloide eritroide es 3:1.",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Organo": "BX HUESO",
+      "Diagnostico Coloracion": "CALIDAD INSUFICIENTE CELULARIDAD HEMATOPOYETICA TRILINEAL DEL 35% MEGACARIOCITOS DE 1-6 POR CAP RELACIÓN MIELOIDE ERITROIDE ADECUADA SIN INCREMENTO DE BLASTOS NI CELULARIDAD PLASMOCITOIDE",
+      "Diagnostico Principal": "ESTUDIO DE INMUNOHISTOQUÍMICA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 136,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula ósea. Biopsia. Estudio de inmunohistoquímica\n- TRILINEAL CON CELULARIDAD DEL 35-40% \n- MEGACARIOCITOS DE 1-7 POR CAP.\n- LINEA MIELOIDE CON MADURACIÓN\n- RELACIÓN MIELOIDE ERITROIDE 3:1\n- CORRELACIONAR CON CITOMETRIA DE FLUJO (CF2500433)\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas: 14/08/2025\ncelularidad, sin formar cúmulos. \nLas células plasmáticas son CD38+ y CD138+, se agrupan de 2 a 4 plasmocitos y son menores al\n5% de la celularidad. \nSe observan blastos que expresan CD34+ y CD117+ menor al 1% de la celularidad total. \nLa línea mieloide representada con maduración con expresión de MIELOPEROXIADASA.\nLa línea eritroide está adecuadamente representada con expresión positiva para GLICOFORINA.\nLa relación mieloide eritroide es 3:1.",
+      "valor_corregido": "Medula ósea. Biopsia. Estudio de inmunohistoquímica - TRILINEAL CON CELULARIDAD DEL 35-40% - MEGACARIOCITOS DE 1-7 POR CAP. - LINEA MIELOIDE CON MADURACIÓN - RELACIÓN MIELOIDE ERITROIDE 3:1 - CORRELACIONAR CON CITOMETRIA DE FLUJO (CF2500433) MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas: 14/08/2025 celularidad, sin formar cúmulos. Las células plasmáticas son CD38+ y CD138+, se agrupan de 2 a 4 plasmocitos y son menores al 5% de la celularidad. Se observan blastos que expresan CD34+ y CD117+ menor al 1% de la celularidad total. La línea mieloide representada con maduración con expresión de MIELOPEROXIADASA. La línea eritroide está adecuadamente representada con expresión positiva para GLICOFORINA. La relación mieloide eritroide es 3:1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250890",
+      "timestamp": "2026-04-10T10:45:29.682698"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 53
+  }
+}

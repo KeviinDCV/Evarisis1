@@ -1,0 +1,138 @@
+{
+  "session_id": "IHQ250206_20260410_080536",
+  "numero_peticion": "IHQ250206",
+  "timestamp": "2026-04-10T08:05:36.741421",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250206\nCopia Pag. 1 de 1\nNombre : JAIRO OSPINA\nN. peticion : IHQ250206\nN.Identificación : CC. 96328685\nGenero : MASCULINO\nEdad : 69 años 5 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : NATHALIE TORRES GAVIRIA\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 25/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2502009-1 que corresponden a \"biopsia de pumón\" con diagnóstico de\n\"COMPROMISO POR ADENOCARCINOMA\" para estudios de inmunohistoquímica por lo que se ordenan los\nsiguientes marcadores: TTF1 Y p40.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe observa marcación positiva difusa para TTF1, sin marcación para p40.\nDIAGNÓSTICO\n Pulmón derecho. Tumor. Biopsia percutánea con aguja gruesa. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA PATRÓN\nACINAR Y MICROPAPILAR. \nGRADO HISTOLÓGICO G2 (MODERADAMENTE DIFERENCIADO)\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2396,
+      "reduccion_porcentaje": 98.55
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250206",
+      "caso_num": 45,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "nombre_completo": "JAIRO OSPINA",
+      "numero_peticion": "IHQ250206",
+      "identificacion": "96328685",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "69",
+      "eps": "ASMET SALUD EPS SAS",
+      "medico_tratante": "NATHALIE TORRES GAVIRIA",
+      "servicio": "TRAUMA Y REANIMACION",
+      "fecha_ingreso": "25/02/2025",
+      "fecha_informe": "05/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250206",
+      "N. de identificación": "96328685",
+      "Tipo de documento": "CC",
+      "EPS": "ASMET SALUD EPS SAS",
+      "Servicio": "TRAUMA Y REANIMACION",
+      "Médico tratante": "NATHALIE TORRES GAVIRIA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "25/02/2025",
+      "Fecha Informe": "05/03/2025",
+      "nombres": "JAIRO OSPINA",
+      "Primer nombre": "JAIRO",
+      "Segundo nombre": "OSPINA",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "JAIRO OSPINA",
+      "diagnostico": "Pulmón derecho. Tumor. Biopsia percutánea con aguja gruesa. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA PATRÓN ACINAR Y MICROPAPILAR. GRADO HISTOLÓGICO G2 (MODERADAMENTE DIFERENCIADO)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa marcación positiva difusa para TTF1, sin marcación para p40.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2502009-1 que corresponden a \"biopsia de pumón\" con diagnóstico de \"COMPROMISO POR ADENOCARCINOMA\" para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: TTF1 Y p40.",
+      "ihq_organo": "PULMÓN DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "TTF-1, P40",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PULMÓN DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, P40",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-04-10T08:05:36.959311",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250206\nCopia Pag. 1 de 1\nNombre : JAIRO OSPINA\nN. peticion : IHQ250206\nN.Identificación : CC. 96328685\nGenero : MASCULINO\nEdad : 69 años 5 dias\nEPS : ASMET SALUD EPS SAS\nMédico tratante : NATHALIE TORRES GAVIRIA\nServicio : TRAUMA Y REANIMACION\nFecha Ingreso : 25/02/2025\nFecha Informe : 05/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PULMON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2502009-1 que corresponden a \"biopsia de pumón\" con diagnóstico de\n\"COMPROMISO POR ADENOCARCINOMA\" para estudios de inmunohistoquímica por lo que se ordenan los\nsiguientes marcadores: TTF1 Y p40.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nSe observa marcación positiva difusa para TTF1, sin marcación para p40.\nDIAGNÓSTICO\n Pulmón derecho. Tumor. Biopsia percutánea con aguja gruesa. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA PATRÓN\nACINAR Y MICROPAPILAR. \nGRADO HISTOLÓGICO G2 (MODERADAMENTE DIFERENCIADO)\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, P40",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2502009-1 que corresponden a \"biopsia de pumón\" con diagnóstico de \"COMPROMISO POR ADENOCARCINOMA\" para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: TTF1 Y p40.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Se observa marcación positiva difusa para TTF1, sin marcación para p40.",
+      "Descripcion Diagnostico": "Pulmón derecho. Tumor. Biopsia percutánea con aguja gruesa. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA PATRÓN ACINAR Y MICROPAPILAR. GRADO HISTOLÓGICO G2 (MODERADAMENTE DIFERENCIADO)",
+      "IHQ_ORGANO": "PULMÓN DERECHO",
+      "Organo": "BX PULMON DERECHO",
+      "Diagnostico Coloracion": "COMPROMISO POR ADENOCARCINOMA",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA PATRÓN ACINAR Y MICROPAPILAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 143,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 143,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón derecho. Tumor. Biopsia percutánea con aguja gruesa. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA PATRÓN\nACINAR Y MICROPAPILAR. \nGRADO HISTOLÓGICO G2 (MODERADAMENTE DIFERENCIADO)",
+      "valor_corregido": "Pulmón derecho. Tumor. Biopsia percutánea con aguja gruesa. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA PATRÓN ACINAR Y MICROPAPILAR. GRADO HISTOLÓGICO G2 (MODERADAMENTE DIFERENCIADO)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250206",
+      "timestamp": "2026-04-10T08:05:36.959009"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 48
+  }
+}

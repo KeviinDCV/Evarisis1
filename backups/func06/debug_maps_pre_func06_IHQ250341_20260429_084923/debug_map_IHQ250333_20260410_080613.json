@@ -1,0 +1,135 @@
+{
+  "session_id": "IHQ250333_20260410_080613",
+  "numero_peticion": "IHQ250333",
+  "timestamp": "2026-04-10T08:06:13.714329",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250333\nCopia Pag. 1 de 2\nNombre : JUAN CARLOS ORDOÑEZ VARGAS\nN. peticion : IHQ250333\nN.Identificación : CC. 94424381\nGenero : MASCULINO\nEdad : 50 años 13 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ESTEFANIA GARTNER\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 02/04/2025\nFecha Informe : 08/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MUCOSA GASTRICA\nANTRAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extra institucional proveniente del laboratorio\nde patología Collazos con rótulo 168938-250470 que corresponde a \"mucosa de antro\", consiste\nen dos bloques de parafina y dos láminas coloreadas con Hematoxilina - Eosina con diagnostico\nde \"ADENOCARCINOMA GÁSTRICO INFILTRANTE EN LA LÁMINA PROPIA, TIPO INTESTINAL\nTUBULAR, BIEN DIFERENCIADO. HAY METAPLASIA INTESTINAL EN UN FRAGMENTO SIN DISPLASIA.\nPRESNEICA DE ÉMBOLO TUMORAL \" del 17 de marzo 2025. Previa valoración de la coloración\nbásica se realizan niveles histológicos ambos bloques para el biomarcador: HER 2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nRESULTADO: \nLa lesión adenocarcinomatosa demuestra un grupo de al menos 5 células cancerosas con una\nleve reactividad de membrana basolateral. (Score 1+). \nEstado de HER2 por IHQ: Negativo. \nEstado del control interno y externo adecuado. \nDIAGNÓSTICO\nMucosa gástrica de antro. Lesión Biopsia endoscópica. Estudio de\ninmunohistoquímica. \nADENOCARCINOMA INFILTRANTE DE TIPO INTESTINAL\nHER 2 NEGATIVO (Score 1+). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---\nIHQ250333\nCopia Pag. 2 de 2\nNombre : JUAN CARLOS ORDOÑEZ VARGAS\nN. peticion : IHQ250333\nN.Identificación : CC. 94424381\nGenero : MASCULINO\nEdad : 50 años 13 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ESTEFANIA GARTNER\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 02/04/2025\nFecha Informe : 08/04/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 40 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3580,
+      "reduccion_porcentaje": 97.99
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250333",
+      "caso_num": 20,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "JUAN CARLOS ORDOÑEZ VARGAS",
+      "numero_peticion": "IHQ250333",
+      "identificacion": "94424381",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "50",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ESTEFANIA GARTNER",
+      "servicio": "UNIDAD DE CUIDADO ESPECIAL",
+      "fecha_ingreso": "02/04/2025",
+      "fecha_informe": "08/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250333",
+      "N. de identificación": "94424381",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "UNIDAD DE CUIDADO ESPECIAL",
+      "Médico tratante": "ESTEFANIA GARTNER",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/04/2025",
+      "Fecha Informe": "08/04/2025",
+      "nombres": "JUAN CARLOS",
+      "Primer nombre": "JUAN",
+      "Segundo nombre": "CARLOS",
+      "apellidos": "ORDOÑEZ VARGAS",
+      "Primer apellido": "ORDOÑEZ",
+      "Segundo apellido": "VARGAS",
+      "nombre_formal": "ORDOÑEZ VARGAS, JUAN CARLOS",
+      "diagnostico": "Mucosa gástrica de antro. Lesión Biopsia endoscópica. Estudio de inmunohistoquímica. ADENOCARCINOMA INFILTRANTE DE TIPO INTESTINAL HER 2 NEGATIVO (Score 1+): 02/04/2025",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. RESULTADO: La lesión adenocarcinomatosa demuestra un grupo de al menos 5 células cancerosas con una leve reactividad de membrana basolateral. (Score 1+). Estado de HER2 por IHQ: Negativo. Estado del control interno y externo adecuado.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso extra institucional proveniente del laboratorio de patología Collazos con rótulo 168938-250470 que corresponde a \"mucosa de antro\", consiste en dos bloques de parafina y dos láminas coloreadas con Hematoxilina - Eosina con diagnostico de \"ADENOCARCINOMA GÁSTRICO INFILTRANTE EN LA LÁMINA PROPIA, TIPO INTESTINAL TUBULAR, BIEN DIFERENCIADO. HAY METAPLASIA INTESTINAL EN UN FRAGMENTO SIN DISPLASIA. PRESNEICA DE ÉMBOLO TUMORAL \" del 17 de marzo 2025. Previa valoración de la coloración básica se realizan niveles histológicos ambos bloques para el biomarcador: HER 2.",
+      "ihq_organo": "MUCOSA GÁSTRICA DE ANTRO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA DE ANTRO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "HER2 por IHQ: Negativo",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_HER2": "por IHQ: Negativo",
+      "extraction_timestamp": "2026-04-10T08:06:13.973877",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250333\nCopia Pag. 1 de 2\nNombre : JUAN CARLOS ORDOÑEZ VARGAS\nN. peticion : IHQ250333\nN.Identificación : CC. 94424381\nGenero : MASCULINO\nEdad : 50 años 13 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ESTEFANIA GARTNER\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 02/04/2025\nFecha Informe : 08/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MUCOSA GASTRICA\nANTRAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extra institucional proveniente del laboratorio\nde patología Collazos con rótulo 168938-250470 que corresponde a \"mucosa de antro\", consiste\nen dos bloques de parafina y dos láminas coloreadas con Hematoxilina - Eosina con diagnostico\nde \"ADENOCARCINOMA GÁSTRICO INFILTRANTE EN LA LÁMINA PROPIA, TIPO INTESTINAL\nTUBULAR, BIEN DIFERENCIADO. HAY METAPLASIA INTESTINAL EN UN FRAGMENTO SIN DISPLASIA.\nPRESNEICA DE ÉMBOLO TUMORAL \" del 17 de marzo 2025. Previa valoración de la coloración\nbásica se realizan niveles histológicos ambos bloques para el biomarcador: HER 2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nAnticuerpos:\nHer2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493.\nRESULTADO: \nLa lesión adenocarcinomatosa demuestra un grupo de al menos 5 células cancerosas con una\nleve reactividad de membrana basolateral. (Score 1+). \nEstado de HER2 por IHQ: Negativo. \nEstado del control interno y externo adecuado. \nDIAGNÓSTICO\nMucosa gástrica de antro. Lesión Biopsia endoscópica. Estudio de\ninmunohistoquímica. \nADENOCARCINOMA INFILTRANTE DE TIPO INTESTINAL\nHER 2 NEGATIVO (Score 1+). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---\nIHQ250333\nCopia Pag. 2 de 2\nNombre : JUAN CARLOS ORDOÑEZ VARGAS\nN. peticion : IHQ250333\nN.Identificación : CC. 94424381\nGenero : MASCULINO\nEdad : 50 años 13 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ESTEFANIA GARTNER\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 02/04/2025\nFecha Informe : 08/04/2025\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 40 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso extra institucional proveniente del laboratorio de patología Collazos con rótulo 168938-250470 que corresponde a \"mucosa de antro\", consiste en dos bloques de parafina y dos láminas coloreadas con Hematoxilina - Eosina con diagnostico de \"ADENOCARCINOMA GÁSTRICO INFILTRANTE EN LA LÁMINA PROPIA, TIPO INTESTINAL TUBULAR, BIEN DIFERENCIADO. HAY METAPLASIA INTESTINAL EN UN FRAGMENTO SIN DISPLASIA. PRESNEICA DE ÉMBOLO TUMORAL \" del 17 de marzo 2025. Previa valoración de la coloración básica se realizan niveles histológicos ambos bloques para el biomarcador: HER 2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Anticuerpos: Her2/Neu: PATHWAY anti-HER-2/Neu (4B5) Rabbit Monoclonal Antibody. VENTANA Ref. 790-4493. RESULTADO: La lesión adenocarcinomatosa demuestra un grupo de al menos 5 células cancerosas con una leve reactividad de membrana basolateral. (Score 1+). Estado de HER2 por IHQ: Negativo. Estado del control interno y externo adecuado.",
+      "Descripcion Diagnostico": "Mucosa gástrica de antro. Lesión Biopsia endoscópica. Estudio de inmunohistoquímica. ADENOCARCINOMA INFILTRANTE DE TIPO INTESTINAL HER 2 NEGATIVO (Score 1+): 02/04/2025",
+      "IHQ_ORGANO": "MUCOSA GÁSTRICA DE ANTRO",
+      "Organo": "BX MUCOSA GASTRICA ANTRAL",
+      "Diagnostico Coloracion": "ADENOCARCINOMA GÁSTRICO INFILTRANTE EN LA LÁMINA PROPIA, TIPO INTESTINAL TUBULAR, BIEN DIFERENCIADO. HAY METAPLASIA INTESTINAL EN UN FRAGMENTO SIN DISPLASIA. PRESNEICA DE ÉMBOLO TUMORAL",
+      "Diagnostico Principal": "ADENOCARCINOMA INFILTRANTE DE TIPO INTESTINAL HER 2 NEGATIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 por IHQ: Negativo",
+      "IHQ_HER2": "POR IHQ: NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 142,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 1,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 142,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa gástrica de antro. Lesión Biopsia endoscópica. Estudio de\ninmunohistoquímica. \nADENOCARCINOMA INFILTRANTE DE TIPO INTESTINAL\nHER 2 NEGATIVO (Score 1+): 02/04/2025",
+      "valor_corregido": "Mucosa gástrica de antro. Lesión Biopsia endoscópica. Estudio de inmunohistoquímica. ADENOCARCINOMA INFILTRANTE DE TIPO INTESTINAL HER 2 NEGATIVO (Score 1+): 02/04/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250333",
+      "timestamp": "2026-04-10T08:06:13.973450"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 47
+  }
+}

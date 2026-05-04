@@ -1,0 +1,193 @@
+{
+  "session_id": "IHQ250320_20260410_080609",
+  "numero_peticion": "IHQ250320",
+  "timestamp": "2026-04-10T08:06:09.917371",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250320\nCopia Pag. 1 de 2\nNombre : ADELA MUÑOZ\nN. peticion : IHQ250320\nN.Identificación : CC. 59120050\nGenero : FEMENINO\nEdad : 57 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : WILLIAM RICARDO VARGAS\nServicio : NEUROCIRUGIA\nFecha Ingreso : 31/03/2025\nFecha Informe : 16/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR EPIDURAL +\nLAMINA C7 + ESPINAL C7\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2503460 \" correspondiente a “ Tumor epidural, lamina y apófisis de C7” con diagnóstico de \"\nCARCINOMA METASTASICO QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión\nde\nla\nhistología\nse\nrealizan\nniveles\nhistológicos\nen\nel\nbloque\nA2\npara\ntinción\ncon\nlos\nmarcadores:CK7, CK19, CK 20, TFF 1 , napsina A, GATA 3, WT1, R.Estrógeno, Pax 8, hepatocito,\nVimentina, p16, p53, cromogranina, CEA, CDX2. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nLa celularidad maligna se distribuye en un patrón glandular con marcación positiva fuerte y difusa\npara CK7 y CK19. Son negativas para CK 20, TFF 1 , napsina A, GATA 3, WT1, R.Estrógeno, Pax 8,\nhepatocito, Vimentina, p16, p53, cromogranina, CEA, CDX2. \nVER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO. \nDIAGNÓSTICO\nRegión epidural. Lesión. Biopsia. Estudios de inmunohistoquimica :\nCARCINOMA PORBEMENTE DIFERENCIADO PROBABLEMENTE METASTÁSICO.\nCOMENTARIOS\nDentro de las posibilidades diagnósticas, se debe considerar el colangiocarcinoma metastásico,\ncorrelacionando los hallazgos con estudios de imágenes y la historia clínica del paciente. Además,\nse realizarán estudios complementarios de inmunohistoquímica para la muestra rotulada como\nM2503552.\nPor\nlo\ntanto,\nse\nrecomienda\ncorrelacionar\nestos\nresultados\ncon\nel\ninforme\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---\nIHQ250320\nCopia Pag. 2 de 2\nNombre : ADELA MUÑOZ\nN. peticion : IHQ250320\nN.Identificación : CC. 59120050\nGenero : FEMENINO\nEdad : 57 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : WILLIAM RICARDO VARGAS\nServicio : NEUROCIRUGIA\nFecha Ingreso : 31/03/2025\nFecha Informe : 16/04/2025\ncorrespondiente para lograr un mejor enfoque diagnóstico.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3782,
+      "reduccion_porcentaje": 97.87
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250320",
+      "caso_num": 7,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_HEPATOCITO": "NEGATIVO",
+      "IHQ_VIMENTINA": "NEGATIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P53": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "nombre_completo": "ADELA MUÑOZ",
+      "numero_peticion": "IHQ250320",
+      "identificacion": "59120050",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "57",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "WILLIAM RICARDO VARGAS",
+      "servicio": "NEUROCIRUGIA",
+      "fecha_ingreso": "31/03/2025",
+      "fecha_informe": "16/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250320",
+      "N. de identificación": "59120050",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "NEUROCIRUGIA",
+      "Médico tratante": "WILLIAM RICARDO VARGAS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "31/03/2025",
+      "Fecha Informe": "16/04/2025",
+      "nombres": "ADELA MUÑOZ",
+      "Primer nombre": "ADELA",
+      "Segundo nombre": "MUÑOZ",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "ADELA MUÑOZ",
+      "diagnostico": "Región epidural. Lesión. Biopsia. Estudios de inmunohistoquimica : CARCINOMA PORBEMENTE DIFERENCIADO PROBABLEMENTE METASTÁSICO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad maligna se distribuye en un patrón glandular con marcación positiva fuerte y difusa para CK7 y CK19. Son negativas para CK20, TFF 1 , napsina A, GATA 3, WT1, R.Estrógeno, Pax 8, hepatocito, Vimentina, p16, p53, cromogranina, CEA, CDX2. VER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2503460 \" correspondiente a \" Tumor epidural, lamina y apófisis de C7\" con diagnóstico de \" CARCINOMA METASTASICO QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque A2 para tinción con los marcadores:CK7, CK19, CK20, TFF 1 , napsina A, GATA 3, WT1, R.Estrógeno, Pax 8, hepatocito, Vimentina, p16, p53, cromogranina, CEA, CDX2.",
+      "ihq_organo": "REGIÓN EPIDURAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Dentro de las posibilidades diagnósticas, se debe considerar el colangiocarcinoma metastásico, correlacionando los hallazgos con estudios de imágenes y la historia clínica del paciente. Además, se realizarán estudios complementarios de inmunohistoquímica para la muestra rotulada como M2503552. Por lo tanto, se recomienda correlacionar estos resultados con el informe Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 14 --- IHQ250320 Copia Pag. 2 de 2 Nombre : ADELA MUÑOZ N. peticion : IHQ250320 N.Identificación : CC. 59120050 Genero : FEMENINO Edad : 57 años 5 dias EPS : EMSSANAR S.A.S Médico tratante : WILLIAM RICARDO VARGAS Servicio : NEUROCIRUGIA Fecha Ingreso : 31/03/2025 Fecha Informe : 16/04/2025 correspondiente para lograr un mejor enfoque diagnóstico.",
+      "IHQ_ORGANO": "REGIÓN EPIDURAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "p16": "NEGATIVO",
+      "extraction_timestamp": "2026-04-10T08:06:10.226172",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250320\nCopia Pag. 1 de 2\nNombre : ADELA MUÑOZ\nN. peticion : IHQ250320\nN.Identificación : CC. 59120050\nGenero : FEMENINO\nEdad : 57 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : WILLIAM RICARDO VARGAS\nServicio : NEUROCIRUGIA\nFecha Ingreso : 31/03/2025\nFecha Informe : 16/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR EPIDURAL +\nLAMINA C7 + ESPINAL C7\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2503460 \" correspondiente a “ Tumor epidural, lamina y apófisis de C7” con diagnóstico de \"\nCARCINOMA METASTASICO QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión\nde\nla\nhistología\nse\nrealizan\nniveles\nhistológicos\nen\nel\nbloque\nA2\npara\ntinción\ncon\nlos\nmarcadores:CK7, CK19, CK 20, TFF 1 , napsina A, GATA 3, WT1, R.Estrógeno, Pax 8, hepatocito,\nVimentina, p16, p53, cromogranina, CEA, CDX2. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA ®.\nLa celularidad maligna se distribuye en un patrón glandular con marcación positiva fuerte y difusa\npara CK7 y CK19. Son negativas para CK 20, TFF 1 , napsina A, GATA 3, WT1, R.Estrógeno, Pax 8,\nhepatocito, Vimentina, p16, p53, cromogranina, CEA, CDX2. \nVER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO. \nDIAGNÓSTICO\nRegión epidural. Lesión. Biopsia. Estudios de inmunohistoquimica :\nCARCINOMA PORBEMENTE DIFERENCIADO PROBABLEMENTE METASTÁSICO.\nCOMENTARIOS\nDentro de las posibilidades diagnósticas, se debe considerar el colangiocarcinoma metastásico,\ncorrelacionando los hallazgos con estudios de imágenes y la historia clínica del paciente. Además,\nse realizarán estudios complementarios de inmunohistoquímica para la muestra rotulada como\nM2503552.\nPor\nlo\ntanto,\nse\nrecomienda\ncorrelacionar\nestos\nresultados\ncon\nel\ninforme\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---\nIHQ250320\nCopia Pag. 2 de 2\nNombre : ADELA MUÑOZ\nN. peticion : IHQ250320\nN.Identificación : CC. 59120050\nGenero : FEMENINO\nEdad : 57 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : WILLIAM RICARDO VARGAS\nServicio : NEUROCIRUGIA\nFecha Ingreso : 31/03/2025\nFecha Informe : 16/04/2025\ncorrespondiente para lograr un mejor enfoque diagnóstico.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 15 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CDX2, CEA, CK19, CK20, CK7, CKAE1AE3, CROMOGRANINA, GATA3, HEPATOCITO, NAPSIN, P16, P53, PAX8, Receptor de Estrógeno, VIMENTINA, WT1",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2503460 \" correspondiente a “ Tumor epidural, lamina y apófisis de C7” con diagnóstico de \" CARCINOMA METASTASICO QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque A2 para tinción con los marcadores:CK7, CK19, CK 20, TFF 1 , napsina A, GATA 3, WT1, R.Estrógeno, Pax 8, hepatocito, Vimentina, p16, p53, cromogranina, CEA, CDX2.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad maligna se distribuye en un patrón glandular con marcación positiva fuerte y difusa para CK7 y CK19. Son negativas para CK 20, TFF 1 , napsina A, GATA 3, WT1, R.Estrógeno, Pax 8, hepatocito, Vimentina, p16, p53, cromogranina, CEA, CDX2. VER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO.",
+      "Descripcion Diagnostico": "Región epidural. Lesión. Biopsia. Estudios de inmunohistoquimica : CARCINOMA PORBEMENTE DIFERENCIADO PROBABLEMENTE METASTÁSICO.",
+      "IHQ_ORGANO": "REGIÓN EPIDURAL",
+      "Organo": "TUMOR EPIDURAL + LAMINA C7 + ESPINAL C7",
+      "Diagnostico Coloracion": "CARCINOMA METASTASICO QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "ESTUDIOS DE INMUNOHISTOQUIMICA : CARCINOMA PORBEMENTE DIFERENCIADO PROBABLEMENTE METASTÁSICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_HEPATOCITO": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P53": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_VIMENTINA": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 129,
+      "campos_completos": 49,
+      "biomarcadores_encontrados": 16,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 129,
+      "total_campos_completos": 49
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región epidural. Lesión. Biopsia. Estudios de inmunohistoquimica :\nCARCINOMA PORBEMENTE DIFERENCIADO PROBABLEMENTE METASTÁSICO.",
+      "valor_corregido": "Región epidural. Lesión. Biopsia. Estudios de inmunohistoquimica : CARCINOMA PORBEMENTE DIFERENCIADO PROBABLEMENTE METASTÁSICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250320",
+      "timestamp": "2026-04-10T08:06:10.225842"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2503460 \" correspondiente a “ Tumor epidural, lamina y apófisis de C7” con diagnóstico de \" CARCINOMA METASTASICO QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque A2 para tinción con los marcadores:CK7, CK19, CK 20, TFF 1 , napsina A, GATA 3, WT1, R.Estrógeno, Pax 8, hepatocito, Vimentina, p16, p53, cromogranina, CEA, CDX2.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2503460 \" correspondiente a \" Tumor epidural, lamina y apófisis de C7\" con diagnóstico de \" CARCINOMA METASTASICO QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque A2 para tinción con los marcadores:CK7, CK19, CK20, TFF 1 , napsina A, GATA 3, WT1, R.Estrógeno, Pax 8, hepatocito, Vimentina, p16, p53, cromogranina, CEA, CDX2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250320",
+      "timestamp": "2026-04-10T08:06:10.225848"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad maligna se distribuye en un patrón glandular con marcación positiva fuerte y difusa para CK7 y CK19. Son negativas para CK 20, TFF 1 , napsina A, GATA 3, WT1, R.Estrógeno, Pax 8, hepatocito, Vimentina, p16, p53, cromogranina, CEA, CDX2. VER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad maligna se distribuye en un patrón glandular con marcación positiva fuerte y difusa para CK7 y CK19. Son negativas para CK20, TFF 1 , napsina A, GATA 3, WT1, R.Estrógeno, Pax 8, hepatocito, Vimentina, p16, p53, cromogranina, CEA, CDX2. VER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250320",
+      "timestamp": "2026-04-10T08:06:10.225849"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Dentro de las posibilidades diagnósticas, se debe considerar el colangiocarcinoma metastásico,\ncorrelacionando los hallazgos con estudios de imágenes y la historia clínica del paciente. Además,\nse realizarán estudios complementarios de inmunohistoquímica para la muestra rotulada como\nM2503552.\nPor\nlo\ntanto,\nse\nrecomienda\ncorrelacionar\nestos\nresultados\ncon\nel\ninforme\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 14 ---\nIHQ250320\nCopia Pag. 2 de 2\nNombre : ADELA MUÑOZ\nN. peticion : IHQ250320\nN.Identificación : CC. 59120050\nGenero : FEMENINO\nEdad : 57 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : WILLIAM RICARDO VARGAS\nServicio : NEUROCIRUGIA\nFecha Ingreso : 31/03/2025\nFecha Informe : 16/04/2025\ncorrespondiente para lograr un mejor enfoque diagnóstico.",
+      "valor_corregido": "Dentro de las posibilidades diagnósticas, se debe considerar el colangiocarcinoma metastásico, correlacionando los hallazgos con estudios de imágenes y la historia clínica del paciente. Además, se realizarán estudios complementarios de inmunohistoquímica para la muestra rotulada como M2503552. Por lo tanto, se recomienda correlacionar estos resultados con el informe Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 14 --- IHQ250320 Copia Pag. 2 de 2 Nombre : ADELA MUÑOZ N. peticion : IHQ250320 N.Identificación : CC. 59120050 Genero : FEMENINO Edad : 57 años 5 dias EPS : EMSSANAR S.A.S Médico tratante : WILLIAM RICARDO VARGAS Servicio : NEUROCIRUGIA Fecha Ingreso : 31/03/2025 Fecha Informe : 16/04/2025 correspondiente para lograr un mejor enfoque diagnóstico.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250320",
+      "timestamp": "2026-04-10T08:06:10.225851"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 61
+  }
+}

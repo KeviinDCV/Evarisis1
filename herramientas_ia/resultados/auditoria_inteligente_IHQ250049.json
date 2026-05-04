@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250049",
   "caso_num": 49,
   "total_casos": 50,
-  "timestamp": "2026-04-28T14:15:52.219467",
+  "timestamp": "2026-04-29T11:31:20.933592",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -28,8 +28,8 @@
     "diagnostico_principal": {
       "estado": "WARNING",
       "mensaje": "DIAGNOSTICO_PRINCIPAL difiere de OCR (verificar manualmente)",
-      "valor_bd": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUIMICA SUGIEREN UN NEOPLASIA PAPILAR ONCOCÍTICA CON DATOS HISTOMORFOLÓGICOS DE BAJO GRADO (TAMAÑO 3 X2 X2 MILIMETROS) QUISTE SIMPLE ASOCIADO A HEMATOMA ORGANIZADO",
-      "valor_ocr": "TUMOR OF KIDNEY: A CASE REPORT. ASIAN J SURG. 2023 OCT;46(10):4580-4581",
+      "valor_bd": "NEOPLASIA PAPILAR ONCOCÍTICA CON DATOS HISTOMORFOLÓGICOS DE BAJO GRADO (TAMAÑO 3 X2 X2 MILIMETROS) QUISTE SIMPLE ASOCIADO A HEMATOMA ORGANIZADO",
+      "valor_ocr": "TUMOR OF KIDNEY: A CASE REPORT.",
       "nota": "Puede ser válido si es una versión resumida del diagnóstico completo"
     },
     "factor_pronostico": {

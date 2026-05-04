@@ -1,0 +1,153 @@
+{
+  "session_id": "IHQ250350_20260415_113917",
+  "numero_peticion": "IHQ250350",
+  "timestamp": "2026-04-15T11:39:17.056300",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250350\nCopia Pag. 1 de 2\nNombre : JOSE ANTONIO LEON\nN. peticion : IHQ250350\nN.Identificación : CC. 6367522\nGenero : MASCULINO\nEdad : 89 años 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MARIA ISABEL SANCLEMENTE\nServicio : MEDICA HOMBRES\nFecha Ingreso : 04/04/2025\nFecha Informe : 11/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PLEURA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2503593 que corresponde a biopsia de pleura en el lado izquierdo, con\ndiagnóstico de \"COMPROMISO POR ADENOCARCINOMA, PROBABLEMENTE METASTASICO\". Se ordenan\nestudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©\nLa muestra de tejido es escasa y la representación tumoral en los cortes para inmunohistoquímica es\nmínima y fragmentada, con marcación en un grupo de cinco células para PSA siendo negativa para TTF-1.\nVER DESCRIPCION MICROSCOPICA Y COMENTARIO\nDIAGNÓSTICO\nPleura, lado izquierdo. Biopsia\nCOMPROMISO POR ADENOCARCINOMA, PROBABLE ORIGEN EN PROSTATA.\nCOMENTARIOS\nComo se ha descrito tanto en el informe de H&E como en este, la representación tumoral es muy escasa\ny lo que se logra representar en la inmunomarcación presenta positividad para PSA y negativo para\nTTF-1, sin poder realizar otros marcadores por desgaste del tejido, esta marcación sugiere que se trate\nde un adenocarcinoma metastásico de origen en próstata, sin embargo se requiere correlación con la\nclínica del paciente, imágenes diagnósticas y PSA en suero.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---\nIHQ250350\nCopia Pag. 2 de 2\nNombre : JOSE ANTONIO LEON\nN. peticion : IHQ250350\nN.Identificación : CC. 6367522\nGenero : MASCULINO\nEdad : 89 años 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MARIA ISABEL SANCLEMENTE\nServicio : MEDICA HOMBRES\nFecha Ingreso : 04/04/2025\nFecha Informe : 11/04/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3473,
+      "reduccion_porcentaje": 98.05
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250350",
+      "caso_num": 37,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_TTF1": "NEGATIVO",
+      "nombre_completo": "JOSE ANTONIO LEON",
+      "numero_peticion": "IHQ250350",
+      "identificacion": "6367522",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "89",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "MARIA ISABEL SANCLEMENTE",
+      "servicio": "MEDICA HOMBRES",
+      "fecha_ingreso": "04/04/2025",
+      "fecha_informe": "11/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250350",
+      "N. de identificación": "6367522",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "MEDICA HOMBRES",
+      "Médico tratante": "MARIA ISABEL SANCLEMENTE",
+      "Fecha de ingreso (2. Fecha de la muestra)": "04/04/2025",
+      "Fecha Informe": "11/04/2025",
+      "nombres": "JOSE",
+      "Primer nombre": "JOSE",
+      "Segundo nombre": "",
+      "apellidos": "ANTONIO LEON",
+      "Primer apellido": "ANTONIO",
+      "Segundo apellido": "LEON",
+      "nombre_formal": "ANTONIO LEON, JOSE",
+      "diagnostico": "Pleura, lado izquierdo. Biopsia COMPROMISO POR ADENOCARCINOMA, PROBABLE ORIGEN EN PROSTATA.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© La muestra de tejido es escasa y la representación tumoral en los cortes para inmunohistoquímica es mínima y fragmentada, con marcación en un grupo de cinco células para PSA siendo negativa para TTF1. VER DESCRIPCION MICROSCOPICA Y COMENTARIO",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2503593 que corresponde a biopsia de pleura en el lado izquierdo, con diagnóstico de \"COMPROMISO POR ADENOCARCINOMA, PROBABLEMENTE METASTASICO\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "PLEURA, LADO IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Como se ha descrito tanto en el informe de H&E como en este, la representación tumoral es muy escasa y lo que se logra representar en la inmunomarcación presenta positividad para PSA y negativo para TTF1, sin poder realizar otros marcadores por desgaste del tejido, esta marcación sugiere que se trate de un adenocarcinoma metastásico de origen en próstata, sin embargo se requiere correlación con la clínica del paciente, imágenes diagnósticas y PSA en suero.",
+      "IHQ_ORGANO": "PLEURA, LADO IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-04-15T11:39:17.556369",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250350\nCopia Pag. 1 de 2\nNombre : JOSE ANTONIO LEON\nN. peticion : IHQ250350\nN.Identificación : CC. 6367522\nGenero : MASCULINO\nEdad : 89 años 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MARIA ISABEL SANCLEMENTE\nServicio : MEDICA HOMBRES\nFecha Ingreso : 04/04/2025\nFecha Informe : 11/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PLEURA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2503593 que corresponde a biopsia de pleura en el lado izquierdo, con\ndiagnóstico de \"COMPROMISO POR ADENOCARCINOMA, PROBABLEMENTE METASTASICO\". Se ordenan\nestudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©\nLa muestra de tejido es escasa y la representación tumoral en los cortes para inmunohistoquímica es\nmínima y fragmentada, con marcación en un grupo de cinco células para PSA siendo negativa para TTF-1.\nVER DESCRIPCION MICROSCOPICA Y COMENTARIO\nDIAGNÓSTICO\nPleura, lado izquierdo. Biopsia\nCOMPROMISO POR ADENOCARCINOMA, PROBABLE ORIGEN EN PROSTATA.\nCOMENTARIOS\nComo se ha descrito tanto en el informe de H&E como en este, la representación tumoral es muy escasa\ny lo que se logra representar en la inmunomarcación presenta positividad para PSA y negativo para\nTTF-1, sin poder realizar otros marcadores por desgaste del tejido, esta marcación sugiere que se trate\nde un adenocarcinoma metastásico de origen en próstata, sin embargo se requiere correlación con la\nclínica del paciente, imágenes diagnósticas y PSA en suero.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 67 ---\nIHQ250350\nCopia Pag. 2 de 2\nNombre : JOSE ANTONIO LEON\nN. peticion : IHQ250350\nN.Identificación : CC. 6367522\nGenero : MASCULINO\nEdad : 89 años 15 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : MARIA ISABEL SANCLEMENTE\nServicio : MEDICA HOMBRES\nFecha Ingreso : 04/04/2025\nFecha Informe : 11/04/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF1",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2503593 que corresponde a biopsia de pleura en el lado izquierdo, con diagnóstico de \"COMPROMISO POR ADENOCARCINOMA, PROBABLEMENTE METASTASICO\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© La muestra de tejido es escasa y la representación tumoral en los cortes para inmunohistoquímica es mínima y fragmentada, con marcación en un grupo de cinco células para PSA siendo negativa para TTF-1. VER DESCRIPCION MICROSCOPICA Y COMENTARIO",
+      "Descripcion Diagnostico": "Pleura, lado izquierdo. Biopsia COMPROMISO POR ADENOCARCINOMA, PROBABLE ORIGEN EN PROSTATA.",
+      "IHQ_ORGANO": "PLEURA, LADO IZQUIERDO",
+      "Organo": "BX PLEURA IZQUIERDA",
+      "Diagnostico Coloracion": "COMPROMISO POR ADENOCARCINOMA, PROBABLEMENTE METASTASICO",
+      "Diagnostico Principal": "ADENOCARCINOMA, PROBABLE ORIGEN EN PROSTATA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_TTF1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 144,
+      "campos_completos": 34,
+      "biomarcadores_encontrados": 1,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 144,
+      "total_campos_completos": 34
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pleura, lado izquierdo. Biopsia\nCOMPROMISO POR ADENOCARCINOMA, PROBABLE ORIGEN EN PROSTATA.",
+      "valor_corregido": "Pleura, lado izquierdo. Biopsia COMPROMISO POR ADENOCARCINOMA, PROBABLE ORIGEN EN PROSTATA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250350",
+      "timestamp": "2026-04-15T11:39:17.556053"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© La muestra de tejido es escasa y la representación tumoral en los cortes para inmunohistoquímica es mínima y fragmentada, con marcación en un grupo de cinco células para PSA siendo negativa para TTF-1. VER DESCRIPCION MICROSCOPICA Y COMENTARIO",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© La muestra de tejido es escasa y la representación tumoral en los cortes para inmunohistoquímica es mínima y fragmentada, con marcación en un grupo de cinco células para PSA siendo negativa para TTF1. VER DESCRIPCION MICROSCOPICA Y COMENTARIO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250350",
+      "timestamp": "2026-04-15T11:39:17.556059"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Como se ha descrito tanto en el informe de H&E como en este, la representación tumoral es muy escasa\ny lo que se logra representar en la inmunomarcación presenta positividad para PSA y negativo para\nTTF-1, sin poder realizar otros marcadores por desgaste del tejido, esta marcación sugiere que se trate\nde un adenocarcinoma metastásico de origen en próstata, sin embargo se requiere correlación con la\nclínica del paciente, imágenes diagnósticas y PSA en suero.",
+      "valor_corregido": "Como se ha descrito tanto en el informe de H&E como en este, la representación tumoral es muy escasa y lo que se logra representar en la inmunomarcación presenta positividad para PSA y negativo para TTF1, sin poder realizar otros marcadores por desgaste del tejido, esta marcación sugiere que se trate de un adenocarcinoma metastásico de origen en próstata, sin embargo se requiere correlación con la clínica del paciente, imágenes diagnósticas y PSA en suero.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250350",
+      "timestamp": "2026-04-15T11:39:17.556060"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 45
+  }
+}

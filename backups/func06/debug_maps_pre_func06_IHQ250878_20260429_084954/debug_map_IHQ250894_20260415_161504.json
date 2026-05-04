@@ -1,0 +1,151 @@
+{
+  "session_id": "IHQ250894_20260415_161504",
+  "numero_peticion": "IHQ250894",
+  "timestamp": "2026-04-15T16:15:04.898131",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250894\nCopia Pag. 1 de 2\nNombre : TERESA MENESES GONZALEZ\nN. peticion : IHQ250894\nN.Identificación : CC. 31470691\nGenero : FEMENINO\nEdad : 65 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 15/08/2025\nFecha Informe : 26/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR FALCOTENTORIAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de Inmunohistoquímica\nCaso institucional: M2509609\nÓrgano: Región falcotentorial.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nRESULTADO DE INMUNOHISTOQUÍMICA.\nSe reconoce una proliferación de células fuso celulares de aspecto blando con núcleos que\npresentan psudoinclusiones y citoplasma indistinto, se organizan en un patrón estoreiforme con\nhaces gruesos de colágeno que separan estos nidos, dispersos hay frecuentes calcificaciones\npsamomatosas. \nEstás células presentan una inmunotinción positiva difusa para S100, heterogénea para EMA y\nRECEPTOR DE PROGESTERONA. Son negativas para SOX 10. Y el índice de proliferación celular\nmedido con Ki-67 es del 1-2%. \nDiagnóstico Inicial: MENINGIOMA. \nFecha de diagnóstico: 14-08-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al \nbloque 3\nEstudios Solicitados:\nSe realizó tinción especial para EMA, RECEPTOR DE PROGESTERONA, S100, SOX 10, Ki 67. \nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---\nIHQ250894\nCopia Pag. 2 de 2\nNombre : TERESA MENESES GONZALEZ\nN. peticion : IHQ250894\nN.Identificación : CC. 31470691\nGenero : FEMENINO\nEdad : 65 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 15/08/2025\nFecha Informe : 26/08/2025\nRegión falcotentorial. Lesión. Resección. \nMENINGIOMA FIBROBLÁSTICO, WHO 1. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 37 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3422,
+      "reduccion_porcentaje": 98.26
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250894",
+      "caso_num": 17,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_EMA": "POSITIVO HETEROGÉNEO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "nombre_completo": "TERESA MENESES GONZALEZ",
+      "numero_peticion": "IHQ250894",
+      "identificacion": "31470691",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "65",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ALEJANDRO HERRERA",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "15/08/2025",
+      "fecha_informe": "26/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250894",
+      "N. de identificación": "31470691",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "ALEJANDRO HERRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "15/08/2025",
+      "Fecha Informe": "26/08/2025",
+      "nombres": "TERESA",
+      "Primer nombre": "TERESA",
+      "Segundo nombre": "",
+      "apellidos": "MENESES GONZALEZ",
+      "Primer apellido": "MENESES",
+      "Segundo apellido": "GONZALEZ",
+      "nombre_formal": "MENESES GONZALEZ, TERESA",
+      "diagnostico": ": 15/08/2025 Región falcotentorial. Lesión. Resección. MENINGIOMA FIBROBLÁSTICO, WHO 1. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. RESULTADO DE INMUNOHISTOQUÍMICA. Se reconoce una proliferación de células fuso celulares de aspecto blando con núcleos que presentan psudoinclusiones y citoplasma indistinto, se organizan en un patrón estoreiforme con haces gruesos de colágeno que separan estos nidos, dispersos hay frecuentes calcificaciones psamomatosas. Estás células presentan una inmunotinción positiva difusa para S100, heterogénea para EMA y RECEPTOR DE PROGESTERONA. Son negativas para SOX 10. Y el índice de proliferación celular medido con KI-67 es del 1-2%. Diagnóstico Inicial: MENINGIOMA. Fecha de diagnóstico: 14-08-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al bloque 3 Estudios Solicitados: Se realizó tinción especial para EMA, RECEPTOR DE PROGESTERONA, S100, SOX 10, KI-67.",
+      "descripcion_macroscopica": "Informe de Estudios de Inmunohistoquímica Caso institucional: M2509609 Órgano: Región falcotentorial.",
+      "ihq_organo": "REGIÓN FALCOTENTORIAL",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "EMA, Receptor de Progesterona, S100, SOX10, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN FALCOTENTORIAL",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Receptor de Progesterona: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "EMA, Receptor de Progesterona, S100, SOX10, Ki-67",
+      "extraction_timestamp": "2026-04-15T16:15:05.252428",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250894\nCopia Pag. 1 de 2\nNombre : TERESA MENESES GONZALEZ\nN. peticion : IHQ250894\nN.Identificación : CC. 31470691\nGenero : FEMENINO\nEdad : 65 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 15/08/2025\nFecha Informe : 26/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR FALCOTENTORIAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de Inmunohistoquímica\nCaso institucional: M2509609\nÓrgano: Región falcotentorial.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nRESULTADO DE INMUNOHISTOQUÍMICA.\nSe reconoce una proliferación de células fuso celulares de aspecto blando con núcleos que\npresentan psudoinclusiones y citoplasma indistinto, se organizan en un patrón estoreiforme con\nhaces gruesos de colágeno que separan estos nidos, dispersos hay frecuentes calcificaciones\npsamomatosas. \nEstás células presentan una inmunotinción positiva difusa para S100, heterogénea para EMA y\nRECEPTOR DE PROGESTERONA. Son negativas para SOX 10. Y el índice de proliferación celular\nmedido con Ki-67 es del 1-2%. \nDiagnóstico Inicial: MENINGIOMA. \nFecha de diagnóstico: 14-08-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al \nbloque 3\nEstudios Solicitados:\nSe realizó tinción especial para EMA, RECEPTOR DE PROGESTERONA, S100, SOX 10, Ki 67. \nDIAGNÓSTICO\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---\nIHQ250894\nCopia Pag. 2 de 2\nNombre : TERESA MENESES GONZALEZ\nN. peticion : IHQ250894\nN.Identificación : CC. 31470691\nGenero : FEMENINO\nEdad : 65 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : ALEJANDRO HERRERA\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 15/08/2025\nFecha Informe : 26/08/2025\nRegión falcotentorial. Lesión. Resección. \nMENINGIOMA FIBROBLÁSTICO, WHO 1. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 37 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "EMA, Receptor de Progesterona, S100, SOX10, Ki-67",
+      "Descripcion macroscopica": "Informe de Estudios de Inmunohistoquímica Caso institucional: M2509609 Órgano: Región falcotentorial.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. RESULTADO DE INMUNOHISTOQUÍMICA. Se reconoce una proliferación de células fuso celulares de aspecto blando con núcleos que presentan psudoinclusiones y citoplasma indistinto, se organizan en un patrón estoreiforme con haces gruesos de colágeno que separan estos nidos, dispersos hay frecuentes calcificaciones psamomatosas. Estás células presentan una inmunotinción positiva difusa para S100, heterogénea para EMA y RECEPTOR DE PROGESTERONA. Son negativas para SOX 10. Y el índice de proliferación celular medido con Ki-67 es del 1-2%. Diagnóstico Inicial: MENINGIOMA. Fecha de diagnóstico: 14-08-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al bloque 3 Estudios Solicitados: Se realizó tinción especial para EMA, RECEPTOR DE PROGESTERONA, S100, SOX 10, Ki 67.",
+      "Descripcion Diagnostico": ": 15/08/2025 Región falcotentorial. Lesión. Resección. MENINGIOMA FIBROBLÁSTICO, WHO 1. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "IHQ_ORGANO": "REGIÓN FALCOTENTORIAL",
+      "Organo": "TUMOR FALCOTENTORIAL",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "MENINGIOMA FIBROBLÁSTICO, WHO 1",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Receptor de Progesterona: POSITIVO",
+      "IHQ_EMA": "POSITIVO HETEROGÉNEO",
+      "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_KI-67": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": ": 15/08/2025\nRegión falcotentorial. Lesión. Resección. \nMENINGIOMA FIBROBLÁSTICO, WHO 1. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________",
+      "valor_corregido": ": 15/08/2025 Región falcotentorial. Lesión. Resección. MENINGIOMA FIBROBLÁSTICO, WHO 1. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250894",
+      "timestamp": "2026-04-15T16:15:05.252111"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. RESULTADO DE INMUNOHISTOQUÍMICA. Se reconoce una proliferación de células fuso celulares de aspecto blando con núcleos que presentan psudoinclusiones y citoplasma indistinto, se organizan en un patrón estoreiforme con haces gruesos de colágeno que separan estos nidos, dispersos hay frecuentes calcificaciones psamomatosas. Estás células presentan una inmunotinción positiva difusa para S100, heterogénea para EMA y RECEPTOR DE PROGESTERONA. Son negativas para SOX 10. Y el índice de proliferación celular medido con Ki-67 es del 1-2%. Diagnóstico Inicial: MENINGIOMA. Fecha de diagnóstico: 14-08-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al bloque 3 Estudios Solicitados: Se realizó tinción especial para EMA, RECEPTOR DE PROGESTERONA, S100, SOX 10, Ki 67.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. RESULTADO DE INMUNOHISTOQUÍMICA. Se reconoce una proliferación de células fuso celulares de aspecto blando con núcleos que presentan psudoinclusiones y citoplasma indistinto, se organizan en un patrón estoreiforme con haces gruesos de colágeno que separan estos nidos, dispersos hay frecuentes calcificaciones psamomatosas. Estás células presentan una inmunotinción positiva difusa para S100, heterogénea para EMA y RECEPTOR DE PROGESTERONA. Son negativas para SOX 10. Y el índice de proliferación celular medido con KI-67 es del 1-2%. Diagnóstico Inicial: MENINGIOMA. Fecha de diagnóstico: 14-08-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al bloque 3 Estudios Solicitados: Se realizó tinción especial para EMA, RECEPTOR DE PROGESTERONA, S100, SOX 10, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250894",
+      "timestamp": "2026-04-15T16:15:05.252117"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 49
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "session_id": "IHQ250511_20260415_161306",
+  "numero_peticion": "IHQ250511",
+  "timestamp": "2026-04-15T16:13:06.991582",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250511\nCopia Pag. 1 de 2\nNombre : LUZ MYRIAM REYES SAAVEDRA\nN. peticion : IHQ250511\nN.Identificación : CC. 29532616\nGenero : FEMENINO\nEdad : 64 años 4 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 09/05/2025\nFecha Informe : 20/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA\nMAMARIA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2504932 bloques 1-2-5-7-12” que corresponde a “Mama izquierda. Lesion.\nCuadrantectomía.\". lesion. Biopsia.\" con diagnóstico de “PROLIFERACIÓN INTRADUCTAL\nMULTIFOCAL QUE REQUIERE CLASIFICACIÓN MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción con: ESTROGENOS,\nCalponina, p63. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEVALUACION DE BIOMARCADORES POR INMUNOHISTOQUÍMICA:\nParénquima mamario con fibrosis estromal en donde se reconoce lesión intraductal en patrón\npapilar, con tractos fibrovasculares y sin atipia que presenta marcación positiva en células\nmioepiteliales para calponina y p63, además es positiva para receptores de estrógenos en\nmosaico. En otras áreas se observa ectasia ductal e hiperplasia intraductal usual con marcación\nde células mioepiteliales con calponica y p63, con receptores de estrógenos positivos en mosaico.\nSe observa metaplasia apocrina, adenosis simple focal y microcalcificaciones.\nDIAGNÓSTICO\nMama izquierda. Lesion. Cuadrantectomía. Estudios de inmunohistoquímica. \nLOS HALLAZGOS HISTOLOGICOS Y ESTUDIO DE INMUNOHISTOQUIMCA SUGIEREN:\nPAPILOMA INTRADUC TAL.\nHIPERPLASIA DUCTAL USUAL. \nECTASIA DUCTAL. \nADENOSIS SIMPLE.\nMETAPLASIA APOCRINA.\nMICROCALCIFICACIONES.\nBORDES DE RESECCIÓN LIBRES.\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---\nIHQ250511\nCopia Pag. 2 de 2\nNombre : LUZ MYRIAM REYES SAAVEDRA\nN. peticion : IHQ250511\nN.Identificación : CC. 29532616\nGenero : FEMENINO\nEdad : 64 años 4 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 09/05/2025\nFecha Informe : 20/05/2025\nLa lesión descrita en el informe de patología anterior pudo haberse resecado por completo\ndurante el procedimiento de biopsia, lo que podría explicar que no se haya reconocido en el\nespécimen de resección.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 90 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 4010,
+      "reduccion_porcentaje": 97.88
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250511",
+      "caso_num": 46,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "nombre_completo": "LUZ MYRIAM REYES SAAVEDRA",
+      "numero_peticion": "IHQ250511",
+      "identificacion": "29532616",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "64",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LUIS ALFONSO GONZALEZ",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "09/05/2025",
+      "fecha_informe": "20/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250511",
+      "N. de identificación": "29532616",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "LUIS ALFONSO GONZALEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/05/2025",
+      "Fecha Informe": "20/05/2025",
+      "nombres": "LUZ MYRIAM",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "MYRIAM",
+      "apellidos": "REYES SAAVEDRA",
+      "Primer apellido": "REYES",
+      "Segundo apellido": "SAAVEDRA",
+      "nombre_formal": "REYES SAAVEDRA, LUZ MYRIAM",
+      "diagnostico": "Mama izquierda. Lesion. Cuadrantectomía. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS Y ESTUDIO DE INMUNOHISTOQUIMCA SUGIEREN: PAPILOMA INTRADUC TAL. HIPERPLASIA DUCTAL USUAL. ECTASIA DUCTAL. ADENOSIS SIMPLE. METAPLASIA APOCRINA. MICROCALCIFICACIONES. BORDES DE RESECCIÓN LIBRES.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACION DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Parénquima mamario con fibrosis estromal en donde se reconoce lesión intraductal en patrón papilar, con tractos fibrovasculares y sin atipia que presenta marcación positiva en células mioepiteliales para calponina y p63, además es positiva para receptores de estrógenos en mosaico. En otras áreas se observa ectasia ductal e hiperplasia intraductal usual con marcación de células mioepiteliales con calponica y p63, con receptores de estrógenos positivos en mosaico. Se observa metaplasia apocrina, adenosis simple focal y microcalcificaciones.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2504932 bloques 1-2-5-7-12\" que corresponde a \"Mama izquierda. Lesion. Cuadrantectomía.\". lesion. Biopsia.\" con diagnóstico de \"PROLIFERACIÓN INTRADUCTAL MULTIFOCAL QUE REQUIERE CLASIFICACIÓN MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.\". Previa revisión de la histología, se realizan niveles histológicos para tinción con: ESTROGENOS, Calponina, p63.",
+      "ihq_organo": "MAMA IZQUIERDA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "Receptor de Estrógeno, Calponina, P63",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 89 --- IHQ250511 Copia Pag. 2 de 2 Nombre : LUZ MYRIAM REYES SAAVEDRA N. peticion : IHQ250511 N.Identificación : CC. 29532616 Genero : FEMENINO Edad : 64 años 4 meses 23 dias EPS : NUEVA EPS Médico tratante : LUIS ALFONSO GONZALEZ Servicio : QUIROFANO CENTRAL Fecha Ingreso : 09/05/2025 Fecha Informe : 20/05/2025 La lesión descrita en el informe de patología anterior pudo haberse resecado por completo durante el procedimiento de biopsia, lo que podría explicar que no se haya reconocido en el espécimen de resección.",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Receptor de Estrógeno: EN MOSAICO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, Calponina, P63",
+      "IHQ_RECEPTOR_ESTROGENOS": "EN MOSAICO",
+      "extraction_timestamp": "2026-04-15T16:13:07.303013",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250511\nCopia Pag. 1 de 2\nNombre : LUZ MYRIAM REYES SAAVEDRA\nN. peticion : IHQ250511\nN.Identificación : CC. 29532616\nGenero : FEMENINO\nEdad : 64 años 4 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 09/05/2025\nFecha Informe : 20/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA\nMAMARIA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2504932 bloques 1-2-5-7-12” que corresponde a “Mama izquierda. Lesion.\nCuadrantectomía.\". lesion. Biopsia.\" con diagnóstico de “PROLIFERACIÓN INTRADUCTAL\nMULTIFOCAL QUE REQUIERE CLASIFICACIÓN MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.”.\nPrevia revisión de la histología, se realizan niveles histológicos para tinción con: ESTROGENOS,\nCalponina, p63. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEVALUACION DE BIOMARCADORES POR INMUNOHISTOQUÍMICA:\nParénquima mamario con fibrosis estromal en donde se reconoce lesión intraductal en patrón\npapilar, con tractos fibrovasculares y sin atipia que presenta marcación positiva en células\nmioepiteliales para calponina y p63, además es positiva para receptores de estrógenos en\nmosaico. En otras áreas se observa ectasia ductal e hiperplasia intraductal usual con marcación\nde células mioepiteliales con calponica y p63, con receptores de estrógenos positivos en mosaico.\nSe observa metaplasia apocrina, adenosis simple focal y microcalcificaciones.\nDIAGNÓSTICO\nMama izquierda. Lesion. Cuadrantectomía. Estudios de inmunohistoquímica. \nLOS HALLAZGOS HISTOLOGICOS Y ESTUDIO DE INMUNOHISTOQUIMCA SUGIEREN:\nPAPILOMA INTRADUC TAL.\nHIPERPLASIA DUCTAL USUAL. \nECTASIA DUCTAL. \nADENOSIS SIMPLE.\nMETAPLASIA APOCRINA.\nMICROCALCIFICACIONES.\nBORDES DE RESECCIÓN LIBRES.\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---\nIHQ250511\nCopia Pag. 2 de 2\nNombre : LUZ MYRIAM REYES SAAVEDRA\nN. peticion : IHQ250511\nN.Identificación : CC. 29532616\nGenero : FEMENINO\nEdad : 64 años 4 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 09/05/2025\nFecha Informe : 20/05/2025\nLa lesión descrita en el informe de patología anterior pudo haberse resecado por completo\ndurante el procedimiento de biopsia, lo que podría explicar que no se haya reconocido en el\nespécimen de resección.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 90 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Receptor de Estrógeno, Calponina, P63",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2504932 bloques 1-2-5-7-12” que corresponde a “Mama izquierda. Lesion. Cuadrantectomía.\". lesion. Biopsia.\" con diagnóstico de “PROLIFERACIÓN INTRADUCTAL MULTIFOCAL QUE REQUIERE CLASIFICACIÓN MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.”. Previa revisión de la histología, se realizan niveles histológicos para tinción con: ESTROGENOS, Calponina, p63.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACION DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Parénquima mamario con fibrosis estromal en donde se reconoce lesión intraductal en patrón papilar, con tractos fibrovasculares y sin atipia que presenta marcación positiva en células mioepiteliales para calponina y p63, además es positiva para receptores de estrógenos en mosaico. En otras áreas se observa ectasia ductal e hiperplasia intraductal usual con marcación de células mioepiteliales con calponica y p63, con receptores de estrógenos positivos en mosaico. Se observa metaplasia apocrina, adenosis simple focal y microcalcificaciones.",
+      "Descripcion Diagnostico": "Mama izquierda. Lesion. Cuadrantectomía. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS Y ESTUDIO DE INMUNOHISTOQUIMCA SUGIEREN: PAPILOMA INTRADUC TAL. HIPERPLASIA DUCTAL USUAL. ECTASIA DUCTAL. ADENOSIS SIMPLE. METAPLASIA APOCRINA. MICROCALCIFICACIONES. BORDES DE RESECCIÓN LIBRES.",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Organo": "CUADRANTECTOMIA MAMARIA IZQUIERDA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN INTRADUCTAL MULTIFOCAL QUE REQUIERE CLASIFICACIÓN MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLOGICOS Y ESTUDIO DE INMUNOHISTOQUIMCA SUGIEREN: PAPILOMA INTRADUC TAL",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Receptor de Estrógeno: EN MOSAICO",
+      "IHQ_RECEPTOR_ESTROGENOS": "EN MOSAICO",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_P63": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama izquierda. Lesion. Cuadrantectomía. Estudios de inmunohistoquímica. \nLOS HALLAZGOS HISTOLOGICOS Y ESTUDIO DE INMUNOHISTOQUIMCA SUGIEREN:\nPAPILOMA INTRADUC TAL.\nHIPERPLASIA DUCTAL USUAL. \nECTASIA DUCTAL. \nADENOSIS SIMPLE.\nMETAPLASIA APOCRINA.\nMICROCALCIFICACIONES.\nBORDES DE RESECCIÓN LIBRES.",
+      "valor_corregido": "Mama izquierda. Lesion. Cuadrantectomía. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS Y ESTUDIO DE INMUNOHISTOQUIMCA SUGIEREN: PAPILOMA INTRADUC TAL. HIPERPLASIA DUCTAL USUAL. ECTASIA DUCTAL. ADENOSIS SIMPLE. METAPLASIA APOCRINA. MICROCALCIFICACIONES. BORDES DE RESECCIÓN LIBRES.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250511",
+      "timestamp": "2026-04-15T16:13:07.302420"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2504932 bloques 1-2-5-7-12” que corresponde a “Mama izquierda. Lesion. Cuadrantectomía.\". lesion. Biopsia.\" con diagnóstico de “PROLIFERACIÓN INTRADUCTAL MULTIFOCAL QUE REQUIERE CLASIFICACIÓN MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.”. Previa revisión de la histología, se realizan niveles histológicos para tinción con: ESTROGENOS, Calponina, p63.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2504932 bloques 1-2-5-7-12\" que corresponde a \"Mama izquierda. Lesion. Cuadrantectomía.\". lesion. Biopsia.\" con diagnóstico de \"PROLIFERACIÓN INTRADUCTAL MULTIFOCAL QUE REQUIERE CLASIFICACIÓN MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.\". Previa revisión de la histología, se realizan niveles histológicos para tinción con: ESTROGENOS, Calponina, p63.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250511",
+      "timestamp": "2026-04-15T16:13:07.302426"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---\nIHQ250511\nCopia Pag. 2 de 2\nNombre : LUZ MYRIAM REYES SAAVEDRA\nN. peticion : IHQ250511\nN.Identificación : CC. 29532616\nGenero : FEMENINO\nEdad : 64 años 4 meses 23 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 09/05/2025\nFecha Informe : 20/05/2025\nLa lesión descrita en el informe de patología anterior pudo haberse resecado por completo\ndurante el procedimiento de biopsia, lo que podría explicar que no se haya reconocido en el\nespécimen de resección.",
+      "valor_corregido": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 89 --- IHQ250511 Copia Pag. 2 de 2 Nombre : LUZ MYRIAM REYES SAAVEDRA N. peticion : IHQ250511 N.Identificación : CC. 29532616 Genero : FEMENINO Edad : 64 años 4 meses 23 dias EPS : NUEVA EPS Médico tratante : LUIS ALFONSO GONZALEZ Servicio : QUIROFANO CENTRAL Fecha Ingreso : 09/05/2025 Fecha Informe : 20/05/2025 La lesión descrita en el informe de patología anterior pudo haberse resecado por completo durante el procedimiento de biopsia, lo que podría explicar que no se haya reconocido en el espécimen de resección.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250511",
+      "timestamp": "2026-04-15T16:13:07.302427"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 52
+  }
+}

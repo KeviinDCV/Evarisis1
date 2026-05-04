@@ -1,0 +1,147 @@
+{
+  "session_id": "IHQ250479_20260414_064749",
+  "numero_peticion": "IHQ250479",
+  "timestamp": "2026-04-14T06:47:49.948832",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250479\nCopia Pag. 1 de 1\nNombre : FABIAN ORLANDO GONZALEZ GARCIA N. peticion : IHQ250479\nN.Identificación : CC. 1130589497\nGenero : MASCULINO\nEdad : 38 años 4 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JHON SANDOVAL\nServicio : UNIDAD SALUD MENTAL\nFecha Ingreso : 02/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nSEGMENTO APICAL LOBULO\nSUPERIOR DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2504772-A2 que corresponden a \"segmento apical lóbulo superior\nderecho\" con diagnóstico de \"ADENOCARCINOMA INVASIVO\" para estudios de inmunohistoquímica por lo\nque se revisa CK7, CK20, CK19, CDX2, PSA, PAX8, napsina, TTF1, CA19-9.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA®.\nLas células tumorales presentan marcación positiva nuclear para TTF1 y citoplasmática para CK7, CK19 y\nnapsina. Marcación focal en algunas células tumorales para CA19-9.\nSin marcación para CK20, CDX2, PSA y PAX8.\nDIAGNÓSTICO\n Segmento apical lóbulo superior derecho. Lesión. Resección. Estudios de inmunohistoquímica. \nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA DE\nORIGEN PULMONAR.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 2548,
+      "reduccion_porcentaje": 98.65
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250479",
+      "caso_num": 15,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_PSA": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "nombre_completo": "FABIAN ORLANDO GONZALEZ GARCIA",
+      "numero_peticion": "IHQ250479",
+      "identificacion": "1130589497",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "38",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "JHON SANDOVAL",
+      "servicio": "UNIDAD SALUD MENTAL",
+      "fecha_ingreso": "02/05/2025",
+      "fecha_informe": "16/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250479",
+      "N. de identificación": "1130589497",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "UNIDAD SALUD MENTAL",
+      "Médico tratante": "JHON SANDOVAL",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/05/2025",
+      "Fecha Informe": "16/05/2025",
+      "nombres": "FABIAN ORLANDO",
+      "Primer nombre": "FABIAN",
+      "Segundo nombre": "ORLANDO",
+      "apellidos": "GONZALEZ GARCIA",
+      "Primer apellido": "GONZALEZ",
+      "Segundo apellido": "GARCIA",
+      "nombre_formal": "GONZALEZ GARCIA, FABIAN ORLANDO",
+      "diagnostico": "Segmento apical lóbulo superior derecho. Lesión. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA DE ORIGEN PULMONAR.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales presentan marcación positiva nuclear para TTF1 y citoplasmática para CK7, CK19 y napsina. Marcación focal en algunas células tumorales para CA19-9. Sin marcación para CK20, CDX2, PSA y PAX8.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2504772-A2 que corresponden a \"segmento apical lóbulo superior derecho\" con diagnóstico de \"ADENOCARCINOMA INVASIVO\" para estudios de inmunohistoquímica por lo que se revisa CK7, CK20, CK19, CDX2, PSA, PAX8, napsina, TTF1, CA19-9.",
+      "ihq_organo": "SEGMENTO APICAL LÓBULO SUPERIOR DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "SEGMENTO APICAL LÓBULO SUPERIOR DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_NAPSIN": "POSITIVO (MARCACIÓN FOCAL EN ALGUNAS CÉLULAS TUMORALES PARA CA19-9)",
+      "extraction_timestamp": "2026-04-14T06:47:50.188992",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250479\nCopia Pag. 1 de 1\nNombre : FABIAN ORLANDO GONZALEZ GARCIA N. peticion : IHQ250479\nN.Identificación : CC. 1130589497\nGenero : MASCULINO\nEdad : 38 años 4 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : JHON SANDOVAL\nServicio : UNIDAD SALUD MENTAL\nFecha Ingreso : 02/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nSEGMENTO APICAL LOBULO\nSUPERIOR DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2504772-A2 que corresponden a \"segmento apical lóbulo superior\nderecho\" con diagnóstico de \"ADENOCARCINOMA INVASIVO\" para estudios de inmunohistoquímica por lo\nque se revisa CK7, CK20, CK19, CDX2, PSA, PAX8, napsina, TTF1, CA19-9.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA®.\nLas células tumorales presentan marcación positiva nuclear para TTF1 y citoplasmática para CK7, CK19 y\nnapsina. Marcación focal en algunas células tumorales para CA19-9.\nSin marcación para CK20, CDX2, PSA y PAX8.\nDIAGNÓSTICO\n Segmento apical lóbulo superior derecho. Lesión. Resección. Estudios de inmunohistoquímica. \nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA DE\nORIGEN PULMONAR.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CA19-9, CDX2, CK20, CK7, NAPSIN, PAX8, PSA",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2504772-A2 que corresponden a \"segmento apical lóbulo superior derecho\" con diagnóstico de \"ADENOCARCINOMA INVASIVO\" para estudios de inmunohistoquímica por lo que se revisa CK7, CK20, CK19, CDX2, PSA, PAX8, napsina, TTF1, CA19-9.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales presentan marcación positiva nuclear para TTF1 y citoplasmática para CK7, CK19 y napsina. Marcación focal en algunas células tumorales para CA19-9. Sin marcación para CK20, CDX2, PSA y PAX8.",
+      "Descripcion Diagnostico": "Segmento apical lóbulo superior derecho. Lesión. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA DE ORIGEN PULMONAR.",
+      "IHQ_ORGANO": "SEGMENTO APICAL LÓBULO SUPERIOR DERECHO",
+      "Organo": "SEGMENTO APICAL LOBULO SUPERIOR DERECHO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA DE ORIGEN PULMONAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_NAPSIN": "POSITIVO (MARCACIÓN FOCAL EN ALGUNAS CÉLULAS TUMORALES PARA CA19-9)",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_PSA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 136,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Segmento apical lóbulo superior derecho. Lesión. Resección. Estudios de inmunohistoquímica. \nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA DE\nORIGEN PULMONAR.",
+      "valor_corregido": "Segmento apical lóbulo superior derecho. Lesión. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN ADENOCARCINOMA DE ORIGEN PULMONAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250479",
+      "timestamp": "2026-04-14T06:47:50.186065"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 53
+  }
+}

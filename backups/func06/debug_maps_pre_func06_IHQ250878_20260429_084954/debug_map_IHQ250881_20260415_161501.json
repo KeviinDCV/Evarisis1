@@ -1,0 +1,168 @@
+{
+  "session_id": "IHQ250881_20260415_161501",
+  "numero_peticion": "IHQ250881",
+  "timestamp": "2026-04-15T16:15:01.078873",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250881\nCopia Pag. 1 de 1\nNombre : AYDA LUCIA SERNA REINA\nN. peticion : IHQ250881\nN.Identificación : CC. 29401266\nGenero : FEMENINO\nEdad : 55 años 8 meses 7 dias\nEPS : NUEVA EPS\nMédico tratante : ADOLFO GONZALEZ HADAD\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 13/08/2025\nFecha Informe : 19/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPERICARDIO + GRASA DE\nPERICARDIO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2508870-B que corresponde a biopsia en grasa de pericardio con diagnóstico principal de\n\"ESCASOS GRUPOS DE CÉLULAS ATIPICAS\". Previa revisión de la histología, se procesa estudio de\ninmunohistoquímica para marcación con: CK7, CK20, p40, GATA-3, Napsina, TTF-1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los cortes histológicos se identifica tejido fibroconectivo con infiltrado inflamatorio mononuclear\nlinfoplasmocitario crónico, fibrosis y acúmulos linfocitarios con presencia de escasos grupos de células\nque presentan núcleos de tamaño intermedio y escasa actividad mitótica, sin inmunotinción para CK7-,\nCK20-, p40-, GATA3-, Napsina- ni TTF-1-.\nDIAGNÓSTICO\n B. Grasa de pericardio. Biopsia. Estudio de inmunohistoquímica:\nNEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA\nCOMENTARIOS\nSe recomienda correlacionar con historia clínica, imágenes diagnósticas y demás estudios\ncomplementarios.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 2809,
+      "reduccion_porcentaje": 98.57
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250881",
+      "caso_num": 5,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "AYDA LUCIA SERNA REINA",
+      "numero_peticion": "IHQ250881",
+      "identificacion": "29401266",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "55",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "ADOLFO GONZALEZ HADAD",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "13/08/2025",
+      "fecha_informe": "19/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250881",
+      "N. de identificación": "29401266",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "ADOLFO GONZALEZ HADAD",
+      "Fecha de ingreso (2. Fecha de la muestra)": "13/08/2025",
+      "Fecha Informe": "19/08/2025",
+      "nombres": "AYDA LUCIA",
+      "Primer nombre": "AYDA",
+      "Segundo nombre": "LUCIA",
+      "apellidos": "SERNA REINA",
+      "Primer apellido": "SERNA",
+      "Segundo apellido": "REINA",
+      "nombre_formal": "SERNA REINA, AYDA LUCIA",
+      "diagnostico": "B. Grasa de pericardio. Biopsia. Estudio de inmunohistoquímica: NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica tejido fibroconectivo con infiltrado inflamatorio mononuclear linfoplasmocitario crónico, fibrosis y acúmulos linfocitarios con presencia de escasos grupos de células que presentan núcleos de tamaño intermedio y escasa actividad mitótica, sin inmunotinción para CK7-, CK20-, p40-, GATA3-, Napsina- ni TTF1-.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2508870-B que corresponde a biopsia en grasa de pericardio con diagnóstico principal de \"ESCASOS GRUPOS DE CÉLULAS ATIPICAS\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con: CK7, CK20, p40, GATA-3, Napsina, TTF1.",
+      "ihq_organo": "GRASA DE PERICARDIO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se recomienda correlacionar con historia clínica, imágenes diagnósticas y demás estudios complementarios.",
+      "IHQ_ORGANO": "GRASA DE PERICARDIO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "extraction_timestamp": "2026-04-15T16:15:01.339827",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250881\nCopia Pag. 1 de 1\nNombre : AYDA LUCIA SERNA REINA\nN. peticion : IHQ250881\nN.Identificación : CC. 29401266\nGenero : FEMENINO\nEdad : 55 años 8 meses 7 dias\nEPS : NUEVA EPS\nMédico tratante : ADOLFO GONZALEZ HADAD\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 13/08/2025\nFecha Informe : 19/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPERICARDIO + GRASA DE\nPERICARDIO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2508870-B que corresponde a biopsia en grasa de pericardio con diagnóstico principal de\n\"ESCASOS GRUPOS DE CÉLULAS ATIPICAS\". Previa revisión de la histología, se procesa estudio de\ninmunohistoquímica para marcación con: CK7, CK20, p40, GATA-3, Napsina, TTF-1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los cortes histológicos se identifica tejido fibroconectivo con infiltrado inflamatorio mononuclear\nlinfoplasmocitario crónico, fibrosis y acúmulos linfocitarios con presencia de escasos grupos de células\nque presentan núcleos de tamaño intermedio y escasa actividad mitótica, sin inmunotinción para CK7-,\nCK20-, p40-, GATA3-, Napsina- ni TTF-1-.\nDIAGNÓSTICO\n B. Grasa de pericardio. Biopsia. Estudio de inmunohistoquímica:\nNEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA\nCOMENTARIOS\nSe recomienda correlacionar con historia clínica, imágenes diagnósticas y demás estudios\ncomplementarios.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK20, CK7, GATA3, NAPSIN",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2508870-B que corresponde a biopsia en grasa de pericardio con diagnóstico principal de \"ESCASOS GRUPOS DE CÉLULAS ATIPICAS\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con: CK7, CK20, p40, GATA-3, Napsina, TTF-1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica tejido fibroconectivo con infiltrado inflamatorio mononuclear linfoplasmocitario crónico, fibrosis y acúmulos linfocitarios con presencia de escasos grupos de células que presentan núcleos de tamaño intermedio y escasa actividad mitótica, sin inmunotinción para CK7-, CK20-, p40-, GATA3-, Napsina- ni TTF-1-.",
+      "Descripcion Diagnostico": "B. Grasa de pericardio. Biopsia. Estudio de inmunohistoquímica: NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "IHQ_ORGANO": "GRASA DE PERICARDIO",
+      "Organo": "PERICARDIO + GRASA DE PERICARDIO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "B. Grasa de pericardio. Biopsia. Estudio de inmunohistoquímica:\nNEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "valor_corregido": "B. Grasa de pericardio. Biopsia. Estudio de inmunohistoquímica: NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250881",
+      "timestamp": "2026-04-15T16:15:01.339506"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2508870-B que corresponde a biopsia en grasa de pericardio con diagnóstico principal de \"ESCASOS GRUPOS DE CÉLULAS ATIPICAS\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con: CK7, CK20, p40, GATA-3, Napsina, TTF-1.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2508870-B que corresponde a biopsia en grasa de pericardio con diagnóstico principal de \"ESCASOS GRUPOS DE CÉLULAS ATIPICAS\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con: CK7, CK20, p40, GATA-3, Napsina, TTF1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250881",
+      "timestamp": "2026-04-15T16:15:01.339515"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica tejido fibroconectivo con infiltrado inflamatorio mononuclear linfoplasmocitario crónico, fibrosis y acúmulos linfocitarios con presencia de escasos grupos de células que presentan núcleos de tamaño intermedio y escasa actividad mitótica, sin inmunotinción para CK7-, CK20-, p40-, GATA3-, Napsina- ni TTF-1-.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se identifica tejido fibroconectivo con infiltrado inflamatorio mononuclear linfoplasmocitario crónico, fibrosis y acúmulos linfocitarios con presencia de escasos grupos de células que presentan núcleos de tamaño intermedio y escasa actividad mitótica, sin inmunotinción para CK7-, CK20-, p40-, GATA3-, Napsina- ni TTF1-.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250881",
+      "timestamp": "2026-04-15T16:15:01.339516"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se recomienda correlacionar con historia clínica, imágenes diagnósticas y demás estudios\ncomplementarios.",
+      "valor_corregido": "Se recomienda correlacionar con historia clínica, imágenes diagnósticas y demás estudios complementarios.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250881",
+      "timestamp": "2026-04-15T16:15:01.339518"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 51
+  }
+}

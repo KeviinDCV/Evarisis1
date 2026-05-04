@@ -1,0 +1,139 @@
+{
+  "session_id": "IHQ250902_20260410_104532",
+  "numero_peticion": "IHQ250902",
+  "timestamp": "2026-04-10T10:45:32.899026",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250902\nCopia Pag. 1 de 1\nNombre : OTONIEL CERON TOCOCHE\nN. peticion : IHQ250902\nN.Identificación : CC. 4784107\nGenero : MASCULINO\nEdad : 63 años 1 mes 1 dia\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : CARLOS HERNAN ABONIA\nServicio : UROLOGIA COEX\nFecha Ingreso : 19/08/2025\nFecha Informe : 29/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPROSTATA TRANSRECTAL\n2025-08-08\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2508552- A y B, el cual corresponde a biopsia prosátitca\ntransrectal lado derecho e izquierdo, con diagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA (ASAP) Y\nATROFIA\". Se ordenan los siguientes marcadores: CK34Beta12, p63 y Racemasa.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los cortes histológicos se observa parénquima prostático con áreas de atrofia glandular y un aumento\ndel componente estromal con presencia de glándulas dilatadas de tamaño variable sin cambios\ndisplásicos. Dichas glándulas tienen marcación positiva de células basales con CK34Beta12 y p63, sin\ninmunotinción para Racemasa.\nDIAGNÓSTICO\n A y B. Próstata, lado derecho e izquierdo. Biopsia transrrectal. Estudio de inmunohistoquímica:\nNEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 2609,
+      "reduccion_porcentaje": 98.68
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250902",
+      "caso_num": 24,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK34BETAE12": "POSITIVO",
+      "IHQ_P63": "POSITIVO",
+      "nombre_completo": "OTONIEL CERON TOCOCHE",
+      "numero_peticion": "IHQ250902",
+      "identificacion": "4784107",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "63",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "CARLOS HERNAN ABONIA",
+      "servicio": "UROLOGIA COEX",
+      "fecha_ingreso": "19/08/2025",
+      "fecha_informe": "29/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250902",
+      "N. de identificación": "4784107",
+      "Tipo de documento": "CC",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "UROLOGIA COEX",
+      "Médico tratante": "CARLOS HERNAN ABONIA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "19/08/2025",
+      "Fecha Informe": "29/08/2025",
+      "nombres": "OTONIEL",
+      "Primer nombre": "OTONIEL",
+      "Segundo nombre": "",
+      "apellidos": "CERON TOCOCHE",
+      "Primer apellido": "CERON",
+      "Segundo apellido": "TOCOCHE",
+      "nombre_formal": "CERON TOCOCHE, OTONIEL",
+      "diagnostico": "A y B. Próstata, lado derecho e izquierdo. Biopsia transrrectal. Estudio de inmunohistoquímica: NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se observa parénquima prostático con áreas de atrofia glandular y un aumento del componente estromal con presencia de glándulas dilatadas de tamaño variable sin cambios displásicos. Dichas glándulas tienen marcación positiva de células basales con CK34Beta12 y p63, sin inmunotinción para Racemasa.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2508552- A y B, el cual corresponde a biopsia prosátitca transrectal lado derecho e izquierdo, con diagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA (ASAP) Y ATROFIA\". Se ordenan los siguientes marcadores: CK34Beta12, p63 y Racemasa.",
+      "ihq_organo": "PRÓSTATA, LADO DERECHO E IZQUIERDO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "UROLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK34BE12, P63, RACEMASA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PRÓSTATA, LADO DERECHO E IZQUIERDO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK34BE12, P63, RACEMASA",
+      "IHQ_RACEMASA": "POSITIVO",
+      "extraction_timestamp": "2026-04-10T10:45:33.172349",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250902\nCopia Pag. 1 de 1\nNombre : OTONIEL CERON TOCOCHE\nN. peticion : IHQ250902\nN.Identificación : CC. 4784107\nGenero : MASCULINO\nEdad : 63 años 1 mes 1 dia\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : CARLOS HERNAN ABONIA\nServicio : UROLOGIA COEX\nFecha Ingreso : 19/08/2025\nFecha Informe : 29/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPROSTATA TRANSRECTAL\n2025-08-08\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2508552- A y B, el cual corresponde a biopsia prosátitca\ntransrectal lado derecho e izquierdo, con diagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA (ASAP) Y\nATROFIA\". Se ordenan los siguientes marcadores: CK34Beta12, p63 y Racemasa.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los cortes histológicos se observa parénquima prostático con áreas de atrofia glandular y un aumento\ndel componente estromal con presencia de glándulas dilatadas de tamaño variable sin cambios\ndisplásicos. Dichas glándulas tienen marcación positiva de células basales con CK34Beta12 y p63, sin\ninmunotinción para Racemasa.\nDIAGNÓSTICO\n A y B. Próstata, lado derecho e izquierdo. Biopsia transrrectal. Estudio de inmunohistoquímica:\nNEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK34BE12, P63, RACEMASA, CK34BETAE12",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2508552- A y B, el cual corresponde a biopsia prosátitca transrectal lado derecho e izquierdo, con diagnóstico de \"PROLIFERACIÓN ACINAR ATÍPICA (ASAP) Y ATROFIA\". Se ordenan los siguientes marcadores: CK34Beta12, p63 y Racemasa.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los cortes histológicos se observa parénquima prostático con áreas de atrofia glandular y un aumento del componente estromal con presencia de glándulas dilatadas de tamaño variable sin cambios displásicos. Dichas glándulas tienen marcación positiva de células basales con CK34Beta12 y p63, sin inmunotinción para Racemasa.",
+      "Descripcion Diagnostico": "A y B. Próstata, lado derecho e izquierdo. Biopsia transrrectal. Estudio de inmunohistoquímica: NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "IHQ_ORGANO": "PRÓSTATA, LADO DERECHO E IZQUIERDO",
+      "Organo": "PROSTATA TRANSRECTAL",
+      "Diagnostico Coloracion": "PROLIFERACIÓN ACINAR ATÍPICA (ASAP) Y ATROFIA",
+      "Diagnostico Principal": "NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P63": "POSITIVO",
+      "IHQ_RACEMASA": "POSITIVO",
+      "IHQ_CK34BETAE12": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 141,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A y B. Próstata, lado derecho e izquierdo. Biopsia transrrectal. Estudio de inmunohistoquímica:\nNEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "valor_corregido": "A y B. Próstata, lado derecho e izquierdo. Biopsia transrrectal. Estudio de inmunohistoquímica: NEGATIVO PARA MALIGNIDAD EN LA MUESTRA EVALUADA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250902",
+      "timestamp": "2026-04-10T10:45:33.172077"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 50
+  }
+}

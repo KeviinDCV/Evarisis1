@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250514_20260410_080707",
+  "numero_peticion": "IHQ250514",
+  "timestamp": "2026-04-10T08:07:07.824942",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250514\nCopia Pag. 1 de 2\nNombre : CECILIA LONDOÑO DE VALENCIA\nN. peticion : IHQ250514\nN.Identificación : CC. 29803426\nGenero : FEMENINO\nEdad : 84 años 6 meses 30 dias\nEPS : NUEVA EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 09/05/2025\nFecha Informe : 20/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2504986-2 que corresponde a biopsia percutánea de lesión en hígado, con\ndiagnóstico de \"LOS HALLAZGOS MORFOLOGICOS SON CONSISTENTES CON COMPROMISO POR\nCARCINOMA\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nLas células tumorales son inmunorreactivas para GATA-3, Receptor de Estrógeno, CK7 y focalmente\npositiva para Mamaglobina; presentando negatividad para CK20, Arginasa, Hepar-1, CA19-9 y CDX-2.\nEl índice de proliferación celular presenta un Ki-67 del 60%.\nDIAGNÓSTICO\nHígado. Lesión. Biopsia percutánea. Estudios de inmunohistoquímica:\nCARCINOMA METASTÁSICO\nVER COMENTARIO\nCOMENTARIOS\nEl perfil de inmunohistoquímica es compatible con carcinoma metastásico de origen mamario.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 95 ---\nIHQ250514\nCopia Pag. 2 de 2\nNombre : CECILIA LONDOÑO DE VALENCIA\nN. peticion : IHQ250514\nN.Identificación : CC. 29803426\nGenero : FEMENINO\nEdad : 84 años 6 meses 30 dias\nEPS : NUEVA EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 09/05/2025\nFecha Informe : 20/05/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 96 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3165,
+      "reduccion_porcentaje": 98.32
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250514",
+      "caso_num": 49,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_MAMAGLOBINA": "POSITIVO",
+      "nombre_completo": "CECILIA LONDOÑO DE VALENCIA",
+      "numero_peticion": "IHQ250514",
+      "identificacion": "29803426",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "84",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "NATHALY PRADA",
+      "servicio": "RADIOLOGIA",
+      "fecha_ingreso": "09/05/2025",
+      "fecha_informe": "20/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250514",
+      "N. de identificación": "29803426",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "RADIOLOGIA",
+      "Médico tratante": "NATHALY PRADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/05/2025",
+      "Fecha Informe": "20/05/2025",
+      "nombres": "CECILIA LONDOÑO DE",
+      "Primer nombre": "CECILIA",
+      "Segundo nombre": "LONDOÑO DE",
+      "apellidos": "VALENCIA",
+      "Primer apellido": "VALENCIA",
+      "Segundo apellido": "",
+      "nombre_formal": "VALENCIA, CECILIA LONDOÑO DE",
+      "diagnostico": "Hígado. Lesión. Biopsia percutánea. Estudios de inmunohistoquímica: CARCINOMA METASTÁSICO VER COMENTARIO",
+      "descripcion_microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Las células tumorales son inmunorreactivas para GATA-3, Receptor de Estrógeno, CK7 y focalmente positiva para Mamaglobina; presentando negatividad para CK20, Arginasa, Hepar-1, CA19-9 y CDX-2. El índice de proliferación celular presenta un KI-67 del 60%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2504986-2 que corresponde a biopsia percutánea de lesión en hígado, con diagnóstico de \"LOS HALLAZGOS MORFOLOGICOS SON CONSISTENTES CON COMPROMISO POR CARCINOMA\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "HÍGADO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "El perfil de inmunohistoquímica es compatible con carcinoma metastásico de origen mamario.",
+      "IHQ_ORGANO": "HÍGADO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Ki-67 del 60%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_ARGINASA": "NEGATIVO",
+      "IHQ_HEPAR": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_KI-67": "60%",
+      "extraction_timestamp": "2026-04-10T08:07:08.092812",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250514\nCopia Pag. 1 de 2\nNombre : CECILIA LONDOÑO DE VALENCIA\nN. peticion : IHQ250514\nN.Identificación : CC. 29803426\nGenero : FEMENINO\nEdad : 84 años 6 meses 30 dias\nEPS : NUEVA EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 09/05/2025\nFecha Informe : 20/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2504986-2 que corresponde a biopsia percutánea de lesión en hígado, con\ndiagnóstico de \"LOS HALLAZGOS MORFOLOGICOS SON CONSISTENTES CON COMPROMISO POR\nCARCINOMA\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nLas células tumorales son inmunorreactivas para GATA-3, Receptor de Estrógeno, CK7 y focalmente\npositiva para Mamaglobina; presentando negatividad para CK20, Arginasa, Hepar-1, CA19-9 y CDX-2.\nEl índice de proliferación celular presenta un Ki-67 del 60%.\nDIAGNÓSTICO\nHígado. Lesión. Biopsia percutánea. Estudios de inmunohistoquímica:\nCARCINOMA METASTÁSICO\nVER COMENTARIO\nCOMENTARIOS\nEl perfil de inmunohistoquímica es compatible con carcinoma metastásico de origen mamario.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 95 ---\nIHQ250514\nCopia Pag. 2 de 2\nNombre : CECILIA LONDOÑO DE VALENCIA\nN. peticion : IHQ250514\nN.Identificación : CC. 29803426\nGenero : FEMENINO\nEdad : 84 años 6 meses 30 dias\nEPS : NUEVA EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 09/05/2025\nFecha Informe : 20/05/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 96 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "ARGINASA, CA19-9, CDX2, CK20, HEPAR, Ki-67",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2504986-2 que corresponde a biopsia percutánea de lesión en hígado, con diagnóstico de \"LOS HALLAZGOS MORFOLOGICOS SON CONSISTENTES CON COMPROMISO POR CARCINOMA\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Las células tumorales son inmunorreactivas para GATA-3, Receptor de Estrógeno, CK7 y focalmente positiva para Mamaglobina; presentando negatividad para CK20, Arginasa, Hepar-1, CA19-9 y CDX-2. El índice de proliferación celular presenta un Ki-67 del 60%.",
+      "Descripcion Diagnostico": "Hígado. Lesión. Biopsia percutánea. Estudios de inmunohistoquímica: CARCINOMA METASTÁSICO VER COMENTARIO",
+      "IHQ_ORGANO": "HÍGADO",
+      "Organo": "BX DE HIGADO",
+      "Diagnostico Coloracion": "LOS HALLAZGOS MORFOLOGICOS SON CONSISTENTES CON COMPROMISO POR CARCINOMA",
+      "Diagnostico Principal": "CARCINOMA METASTÁSICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 60%",
+      "IHQ_ARGINASA": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_HEPAR": "NEGATIVO",
+      "IHQ_KI-67": "60%",
+      "IHQ_MAMAGLOBINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 138,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hígado. Lesión. Biopsia percutánea. Estudios de inmunohistoquímica:\nCARCINOMA METASTÁSICO\nVER COMENTARIO",
+      "valor_corregido": "Hígado. Lesión. Biopsia percutánea. Estudios de inmunohistoquímica: CARCINOMA METASTÁSICO VER COMENTARIO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250514",
+      "timestamp": "2026-04-10T08:07:08.092465"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Las células tumorales son inmunorreactivas para GATA-3, Receptor de Estrógeno, CK7 y focalmente positiva para Mamaglobina; presentando negatividad para CK20, Arginasa, Hepar-1, CA19-9 y CDX-2. El índice de proliferación celular presenta un Ki-67 del 60%.",
+      "valor_corregido": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Las células tumorales son inmunorreactivas para GATA-3, Receptor de Estrógeno, CK7 y focalmente positiva para Mamaglobina; presentando negatividad para CK20, Arginasa, Hepar-1, CA19-9 y CDX-2. El índice de proliferación celular presenta un KI-67 del 60%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250514",
+      "timestamp": "2026-04-10T08:07:08.092469"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 51
+  }
+}

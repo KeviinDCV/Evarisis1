@@ -1,0 +1,145 @@
+{
+  "session_id": "IHQ250334_20260415_113910",
+  "numero_peticion": "IHQ250334",
+  "timestamp": "2026-04-15T11:39:10.414184",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250334\nCopia Pag. 1 de 1\nNombre : JAVIER FRANCISCO MONTOYA\nGIRALDO\nN. peticion : IHQ250334\nN.Identificación : CC. 14877587\nGenero : MASCULINO\nEdad : 67 años 17 dias\nEPS : COC COLOMBIA S.A\nMédico tratante : MARIA CAMILA LOPEZ\nServicio : CARTAGO HOSPITALIZACION 3\nFecha Ingreso : 03/04/2025\nFecha Informe : 10/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR ALA SACRA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2503092-1 que corresponde a \"tumor de ala sacra\" con diagnóstico de\n\"TUMOR MALIGNO MAL DIFERENCIADO\" para estudios de inmunohistoquímica por lo que se solicita CK7,\nCK20, GATA-3 y TTF1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nLas células tumorales presentan tinción citoplasmática fuerte y difusa para CK7, con marcación positiva\nnuclear para TTF1 y granular citoplasmática para Napsina A. Sin marcación para CK20 y GATA-3.\nDIAGNÓSTICO\n Ala sacra izquierda. Tumor. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS FAVORECEN ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 41 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 2466,
+      "reduccion_porcentaje": 98.61
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250334",
+      "caso_num": 21,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "nombre_completo": "JAVIER FRANCISCO MONTOYA GIRALDO",
+      "numero_peticion": "IHQ250334",
+      "identificacion": "14877587",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "67",
+      "eps": "COC COLOMBIA S.A",
+      "medico_tratante": "MARIA CAMILA LOPEZ",
+      "servicio": "",
+      "fecha_ingreso": "03/04/2025",
+      "fecha_informe": "10/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250334",
+      "N. de identificación": "14877587",
+      "Tipo de documento": "CC",
+      "EPS": "COC COLOMBIA S.A",
+      "Servicio": "",
+      "Médico tratante": "MARIA CAMILA LOPEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/04/2025",
+      "Fecha Informe": "10/04/2025",
+      "nombres": "JAVIER",
+      "Primer nombre": "JAVIER",
+      "Segundo nombre": "",
+      "apellidos": "JAVIER FRANCISCO MONTOYA GIRALDO",
+      "Primer apellido": "JAVIER",
+      "Segundo apellido": "FRANCISCO MONTOYA GIRALDO",
+      "nombre_formal": "JAVIER FRANCISCO MONTOYA GIRALDO, JAVIER",
+      "diagnostico": "Ala sacra izquierda. Tumor. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS FAVORECEN ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR.",
+      "descripcion_microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan tinción citoplasmática fuerte y difusa para CK7, con marcación positiva nuclear para TTF1 y granular citoplasmática para Napsina A. Sin marcación para CK20 y GATA-3.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2503092-1 que corresponde a \"tumor de ala sacra\" con diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO\" para estudios de inmunohistoquímica por lo que se solicita CK7, CK20, GATA-3 y TTF1.",
+      "ihq_organo": "ALA SACRA IZQUIERDA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ALA SACRA IZQUIERDA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "extraction_timestamp": "2026-04-15T11:39:10.761021",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250334\nCopia Pag. 1 de 1\nNombre : JAVIER FRANCISCO MONTOYA\nGIRALDO\nN. peticion : IHQ250334\nN.Identificación : CC. 14877587\nGenero : MASCULINO\nEdad : 67 años 17 dias\nEPS : COC COLOMBIA S.A\nMédico tratante : MARIA CAMILA LOPEZ\nServicio : CARTAGO HOSPITALIZACION 3\nFecha Ingreso : 03/04/2025\nFecha Informe : 10/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR ALA SACRA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2503092-1 que corresponde a \"tumor de ala sacra\" con diagnóstico de\n\"TUMOR MALIGNO MAL DIFERENCIADO\" para estudios de inmunohistoquímica por lo que se solicita CK7,\nCK20, GATA-3 y TTF1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nLas células tumorales presentan tinción citoplasmática fuerte y difusa para CK7, con marcación positiva\nnuclear para TTF1 y granular citoplasmática para Napsina A. Sin marcación para CK20 y GATA-3.\nDIAGNÓSTICO\n Ala sacra izquierda. Tumor. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS FAVORECEN ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 41 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK20, CK7, CKAE1AE3, GATA3, NAPSIN, TTF1",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2503092-1 que corresponde a \"tumor de ala sacra\" con diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO\" para estudios de inmunohistoquímica por lo que se solicita CK7, CK20, GATA-3 y TTF1.",
+      "Descripcion microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan tinción citoplasmática fuerte y difusa para CK7, con marcación positiva nuclear para TTF1 y granular citoplasmática para Napsina A. Sin marcación para CK20 y GATA-3.",
+      "Descripcion Diagnostico": "Ala sacra izquierda. Tumor. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS FAVORECEN ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR.",
+      "IHQ_ORGANO": "ALA SACRA IZQUIERDA",
+      "Organo": "BX TUMOR ALA SACRA IZQUIERDA",
+      "Diagnostico Coloracion": "TUMOR MALIGNO MAL DIFERENCIADO",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_TTF1": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ala sacra izquierda. Tumor. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS FAVORECEN ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR.",
+      "valor_corregido": "Ala sacra izquierda. Tumor. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS FAVORECEN ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN PULMONAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250334",
+      "timestamp": "2026-04-15T11:39:10.760441"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 48
+  }
+}

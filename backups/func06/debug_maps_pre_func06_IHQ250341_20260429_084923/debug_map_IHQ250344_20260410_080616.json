@@ -1,0 +1,162 @@
+{
+  "session_id": "IHQ250344_20260410_080616",
+  "numero_peticion": "IHQ250344",
+  "timestamp": "2026-04-10T08:06:16.741837",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250344\nCopia Pag. 1 de 2\nNombre : SIXTO CHANDILLO URBANO\nN. peticion : IHQ250344\nN.Identificación : CC. 76226447\nGenero : MASCULINO\nEdad : 54 años 22 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 03/04/2025\nFecha Informe : 16/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPARED ABDOMINAL +\nCONGLOMERADO\nGANGLIONAR LINFATICO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe\nrealizan\nniveles\nhistológicos\nal\nbloque\nM2502940,\nel\ncual\ncorresponde\na\nbiopsia\nde\nconglomerado ganglionar linfático con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\" . Se\nordenan los siguientes marcadores de inmunohistoquímica: HER2, CA19-9, CDX2, MLH1, MSH2,\nMSH6, PMS2, CK20, CK7, CK19.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células neoplásicas presentan inmunorreactividad positiva para CDX2, CK20, CK19. HER2: 2+\n(equívoco). Son negativas para CK7 y CA19-9.\nPROTOCOLO CAP PARA REPORTE DE INESTABILIDAD MICROSATELITAL EN PROTEÍNAS MMR\nSitio del especimen: peritoneo\nResultado de MLH1: expresión nuclear \nResultado de MSH2: expresión nuclear intacta\nResultado de MSH6: expresión nuclear intacta\nResultado de PMS2: expresión nuclear granular nuclear\nDIAGNÓSTICO\nConglomerado ganglionar linfático. Tumor . Biopsia. Estudio de inmunohistoquímica:\nADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROINTESTINAL.\nEXPRESIÓN NUCLEAR INTACTA PARA LAS PROTEÍNAS MMR (MLH1, MLH2, PMS2 Y MSH6)\nHER2: 2+ (EQUÍVOCO)\nCOMENTARIOS\nSe sugiere correlacionar con historia clínica y repetir inmunohistoquímica con proteínas MMR y\nHER2 en el especimen de resecció, a criterio del médico tratante.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---\nIHQ250344\nCopia Pag. 2 de 2\nNombre : SIXTO CHANDILLO URBANO\nN. peticion : IHQ250344\nN.Identificación : CC. 76226447\nGenero : MASCULINO\nEdad : 54 años 22 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 03/04/2025\nFecha Informe : 16/04/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 57 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3601,
+      "reduccion_porcentaje": 97.98
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250344",
+      "caso_num": 31,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CK20": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "nombre_completo": "SIXTO CHANDILLO URBANO",
+      "numero_peticion": "IHQ250344",
+      "identificacion": "76226447",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "54",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "JOSE OMAR ZORILLA",
+      "servicio": "CIRUGIA HOMBRES",
+      "fecha_ingreso": "03/04/2025",
+      "fecha_informe": "16/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250344",
+      "N. de identificación": "76226447",
+      "Tipo de documento": "CC",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "CIRUGIA HOMBRES",
+      "Médico tratante": "JOSE OMAR ZORILLA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/04/2025",
+      "Fecha Informe": "16/04/2025",
+      "nombres": "SIXTO",
+      "Primer nombre": "SIXTO",
+      "Segundo nombre": "",
+      "apellidos": "CHANDILLO URBANO",
+      "Primer apellido": "CHANDILLO",
+      "Segundo apellido": "URBANO",
+      "nombre_formal": "CHANDILLO URBANO, SIXTO",
+      "diagnostico": "Conglomerado ganglionar linfático. Tumor . Biopsia. Estudio de inmunohistoquímica: ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROINTESTINAL. EXPRESIÓN NUCLEAR INTACTA PARA LAS PROTEÍNAS MMR (MLH1, MLH2, PMS2 Y MSH6) HER2: 2+ (EQUÍVOCO)",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas presentan inmunorreactividad positiva para CDX2, CK20, CK19. HER2: 2+ (equívoco). Son negativas para CK7 y CA19-9. PROTOCOLO CAP PARA REPORTE DE INESTABILIDAD MICROSATELITAL EN PROTEÍNAS MMR Sitio del especimen: peritoneo Resultado de MLH1: expresión nuclear Resultado de MSH2: expresión nuclear intacta Resultado de MSH6: expresión nuclear intacta Resultado de PMS2: expresión nuclear granular nuclear",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2502940, el cual corresponde a biopsia de conglomerado ganglionar linfático con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\" . Se ordenan los siguientes marcadores de inmunohistoquímica: HER2, CA19-9, CDX2, MLH1, MSH2, MSH6, PMS2, CK20, CK7, CK19.",
+      "ihq_organo": "CONGLOMERADO GANGLIONAR LINFÁTICO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se sugiere correlacionar con historia clínica y repetir inmunohistoquímica con proteínas MMR y HER2 en el especimen de resecció, a criterio del médico tratante. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 56 --- IHQ250344 Copia Pag. 2 de 2 Nombre : SIXTO CHANDILLO URBANO N. peticion : IHQ250344 N.Identificación : CC. 76226447 Genero : MASCULINO Edad : 54 años 22 dias EPS : ASOCIACION INDIGENA DEL CAUCA Médico tratante : JOSE OMAR ZORILLA Servicio : CIRUGIA HOMBRES Fecha Ingreso : 03/04/2025 Fecha Informe : 16/04/2025",
+      "IHQ_ORGANO": "CONGLOMERADO GANGLIONAR LINFÁTICO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: EQUIVOCO (Score 2+)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_HER2": "EQUIVOCO (Score 2+)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR GRANULAR NUCLEAR)",
+      "extraction_timestamp": "2026-04-10T08:06:17.012982",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250344\nCopia Pag. 1 de 2\nNombre : SIXTO CHANDILLO URBANO\nN. peticion : IHQ250344\nN.Identificación : CC. 76226447\nGenero : MASCULINO\nEdad : 54 años 22 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 03/04/2025\nFecha Informe : 16/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPARED ABDOMINAL +\nCONGLOMERADO\nGANGLIONAR LINFATICO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe\nrealizan\nniveles\nhistológicos\nal\nbloque\nM2502940,\nel\ncual\ncorresponde\na\nbiopsia\nde\nconglomerado ganglionar linfático con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\" . Se\nordenan los siguientes marcadores de inmunohistoquímica: HER2, CA19-9, CDX2, MLH1, MSH2,\nMSH6, PMS2, CK20, CK7, CK19.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células neoplásicas presentan inmunorreactividad positiva para CDX2, CK20, CK19. HER2: 2+\n(equívoco). Son negativas para CK7 y CA19-9.\nPROTOCOLO CAP PARA REPORTE DE INESTABILIDAD MICROSATELITAL EN PROTEÍNAS MMR\nSitio del especimen: peritoneo\nResultado de MLH1: expresión nuclear \nResultado de MSH2: expresión nuclear intacta\nResultado de MSH6: expresión nuclear intacta\nResultado de PMS2: expresión nuclear granular nuclear\nDIAGNÓSTICO\nConglomerado ganglionar linfático. Tumor . Biopsia. Estudio de inmunohistoquímica:\nADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROINTESTINAL.\nEXPRESIÓN NUCLEAR INTACTA PARA LAS PROTEÍNAS MMR (MLH1, MLH2, PMS2 Y MSH6)\nHER2: 2+ (EQUÍVOCO)\nCOMENTARIOS\nSe sugiere correlacionar con historia clínica y repetir inmunohistoquímica con proteínas MMR y\nHER2 en el especimen de resecció, a criterio del médico tratante.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---\nIHQ250344\nCopia Pag. 2 de 2\nNombre : SIXTO CHANDILLO URBANO\nN. peticion : IHQ250344\nN.Identificación : CC. 76226447\nGenero : MASCULINO\nEdad : 54 años 22 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 03/04/2025\nFecha Informe : 16/04/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 57 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CA19-9, CDX2, CK19, CK20, CK7, HER2, MLH1, MSH2, MSH6, PMS2",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2502940, el cual corresponde a biopsia de conglomerado ganglionar linfático con diagnóstico de \"ADENOCARCINOMA METASTÁSICO\" . Se ordenan los siguientes marcadores de inmunohistoquímica: HER2, CA19-9, CDX2, MLH1, MSH2, MSH6, PMS2, CK20, CK7, CK19.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células neoplásicas presentan inmunorreactividad positiva para CDX2, CK20, CK19. HER2: 2+ (equívoco). Son negativas para CK7 y CA19-9. PROTOCOLO CAP PARA REPORTE DE INESTABILIDAD MICROSATELITAL EN PROTEÍNAS MMR Sitio del especimen: peritoneo Resultado de MLH1: expresión nuclear Resultado de MSH2: expresión nuclear intacta Resultado de MSH6: expresión nuclear intacta Resultado de PMS2: expresión nuclear granular nuclear",
+      "Descripcion Diagnostico": "Conglomerado ganglionar linfático. Tumor . Biopsia. Estudio de inmunohistoquímica: ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROINTESTINAL. EXPRESIÓN NUCLEAR INTACTA PARA LAS PROTEÍNAS MMR (MLH1, MLH2, PMS2 Y MSH6) HER2: 2+ (EQUÍVOCO)",
+      "IHQ_ORGANO": "CONGLOMERADO GANGLIONAR LINFÁTICO",
+      "Organo": "PARED ABDOMINAL + CONGLOMERADO GANGLIONAR LINFATICO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA METASTÁSICO",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROINTESTINAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: EQUIVOCO (Score 2+)",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "POSITIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_HER2": "EQUIVOCO (Score 2+)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR GRANULAR NUCLEAR)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 134,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Conglomerado ganglionar linfático. Tumor . Biopsia. Estudio de inmunohistoquímica:\nADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROINTESTINAL.\nEXPRESIÓN NUCLEAR INTACTA PARA LAS PROTEÍNAS MMR (MLH1, MLH2, PMS2 Y MSH6)\nHER2: 2+ (EQUÍVOCO)",
+      "valor_corregido": "Conglomerado ganglionar linfático. Tumor . Biopsia. Estudio de inmunohistoquímica: ADENOCARCINOMA METASTÁSICO DE PROBABLE ORIGEN GASTROINTESTINAL. EXPRESIÓN NUCLEAR INTACTA PARA LAS PROTEÍNAS MMR (MLH1, MLH2, PMS2 Y MSH6) HER2: 2+ (EQUÍVOCO)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250344",
+      "timestamp": "2026-04-10T08:06:17.012671"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se sugiere correlacionar con historia clínica y repetir inmunohistoquímica con proteínas MMR y\nHER2 en el especimen de resecció, a criterio del médico tratante.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 56 ---\nIHQ250344\nCopia Pag. 2 de 2\nNombre : SIXTO CHANDILLO URBANO\nN. peticion : IHQ250344\nN.Identificación : CC. 76226447\nGenero : MASCULINO\nEdad : 54 años 22 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : JOSE OMAR ZORILLA\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 03/04/2025\nFecha Informe : 16/04/2025",
+      "valor_corregido": "Se sugiere correlacionar con historia clínica y repetir inmunohistoquímica con proteínas MMR y HER2 en el especimen de resecció, a criterio del médico tratante. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 56 --- IHQ250344 Copia Pag. 2 de 2 Nombre : SIXTO CHANDILLO URBANO N. peticion : IHQ250344 N.Identificación : CC. 76226447 Genero : MASCULINO Edad : 54 años 22 dias EPS : ASOCIACION INDIGENA DEL CAUCA Médico tratante : JOSE OMAR ZORILLA Servicio : CIRUGIA HOMBRES Fecha Ingreso : 03/04/2025 Fecha Informe : 16/04/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250344",
+      "timestamp": "2026-04-10T08:06:17.012678"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 56
+  }
+}

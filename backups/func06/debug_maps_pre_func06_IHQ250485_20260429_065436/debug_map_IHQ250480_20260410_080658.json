@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250480_20260410_080658",
+  "numero_peticion": "IHQ250480",
+  "timestamp": "2026-04-10T08:06:58.576733",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250480\nCopia Pag. 1 de 1\nNombre : CARLOS ANDRES MELO BASTIDAS\nN. peticion : IHQ250480\nN.Identificación : CC. 1113623764\nGenero : MASCULINO\nEdad : 38 años 29 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO MERA\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 02/05/2025\nFecha Informe : 20/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR CEREBRAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional\nrotulado\ncomo\n\"\nM2504277\n\"\ncorresponde\na\n“Region\nsupracelar.”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa lesión descrita tiene tinción positiva y difusa para CK7 y focal para EMA. El índice de proliferación Ki 67\nmenor al 5%\ndiagnóstico\nde\n“ CRANEOFARINGIOMA ADAMANTINOMATOSO\". Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores EMA, CK7, Ki 67\nDIAGNÓSTICO\n Región supracelar. Lesión. Resección. Estudio de inmunohistoquimica\n CRANEOFARINGIOMA ADAMANTINOMATOSO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 2408,
+      "reduccion_porcentaje": 98.73
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250480",
+      "caso_num": 16,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_EMA": "POSITIVO FOCAL",
+      "IHQ_CK7": "POSITIVO",
+      "nombre_completo": "CARLOS ANDRES MELO BASTIDAS",
+      "numero_peticion": "IHQ250480",
+      "identificacion": "1113623764",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "38",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "JAVIER OROZCO MERA",
+      "servicio": "UCI NEUROCIRUGIA",
+      "fecha_ingreso": "02/05/2025",
+      "fecha_informe": "20/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250480",
+      "N. de identificación": "1113623764",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "UCI NEUROCIRUGIA",
+      "Médico tratante": "JAVIER OROZCO MERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/05/2025",
+      "Fecha Informe": "20/05/2025",
+      "nombres": "CARLOS",
+      "Primer nombre": "CARLOS",
+      "Segundo nombre": "",
+      "apellidos": "ANDRES MELO BASTIDAS",
+      "Primer apellido": "ANDRES",
+      "Segundo apellido": "MELO BASTIDAS",
+      "nombre_formal": "ANDRES MELO BASTIDAS, CARLOS",
+      "diagnostico": "Región supracelar. Lesión. Resección. Estudio de inmunohistoquimica CRANEOFARINGIOMA ADAMANTINOMATOSO",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La lesión descrita tiene tinción positiva y difusa para CK7 y focal para EMA. El índice de proliferación KI-67 menor al 5% diagnóstico de \" CRANEOFARINGIOMA ADAMANTINOMATOSO\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores EMA, CK7, KI-67",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \" M2504277 \" corresponde a \"Region supracelar.\" con",
+      "ihq_organo": "REGIÓN SUPRACELAR",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN SUPRACELAR",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: <5%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_KI-67": "<5%",
+      "extraction_timestamp": "2026-04-10T08:06:58.801769",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250480\nCopia Pag. 1 de 1\nNombre : CARLOS ANDRES MELO BASTIDAS\nN. peticion : IHQ250480\nN.Identificación : CC. 1113623764\nGenero : MASCULINO\nEdad : 38 años 29 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : JAVIER OROZCO MERA\nServicio : UCI NEUROCIRUGIA\nFecha Ingreso : 02/05/2025\nFecha Informe : 20/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TUMOR CEREBRAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional\nrotulado\ncomo\n\"\nM2504277\n\"\ncorresponde\na\n“Region\nsupracelar.”\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa lesión descrita tiene tinción positiva y difusa para CK7 y focal para EMA. El índice de proliferación Ki 67\nmenor al 5%\ndiagnóstico\nde\n“ CRANEOFARINGIOMA ADAMANTINOMATOSO\". Previa revisión de la histología se realizan niveles\nhistológicos para tinción con los marcadores EMA, CK7, Ki 67\nDIAGNÓSTICO\n Región supracelar. Lesión. Resección. Estudio de inmunohistoquimica\n CRANEOFARINGIOMA ADAMANTINOMATOSO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CKAE1AE3, EMA, Ki-67",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \" M2504277 \" corresponde a “Region supracelar.” con",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La lesión descrita tiene tinción positiva y difusa para CK7 y focal para EMA. El índice de proliferación Ki 67 menor al 5% diagnóstico de “ CRANEOFARINGIOMA ADAMANTINOMATOSO\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores EMA, CK7, Ki 67",
+      "Descripcion Diagnostico": "Región supracelar. Lesión. Resección. Estudio de inmunohistoquimica CRANEOFARINGIOMA ADAMANTINOMATOSO",
+      "IHQ_ORGANO": "REGIÓN SUPRACELAR",
+      "Organo": "BX TUMOR CEREBRAL",
+      "Diagnostico Coloracion": "CRANEOFARINGIOMA ADAMANTINOMATOSO",
+      "Diagnostico Principal": "CRANEOFARINGIOMA ADAMANTINOMATOSO",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: <5%",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_EMA": "POSITIVO FOCAL",
+      "IHQ_KI-67": "<5%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región supracelar. Lesión. Resección. Estudio de inmunohistoquimica\n CRANEOFARINGIOMA ADAMANTINOMATOSO",
+      "valor_corregido": "Región supracelar. Lesión. Resección. Estudio de inmunohistoquimica CRANEOFARINGIOMA ADAMANTINOMATOSO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250480",
+      "timestamp": "2026-04-10T08:06:58.801450"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \" M2504277 \" corresponde a “Region supracelar.” con",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \" M2504277 \" corresponde a \"Region supracelar.\" con",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250480",
+      "timestamp": "2026-04-10T08:06:58.801456"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La lesión descrita tiene tinción positiva y difusa para CK7 y focal para EMA. El índice de proliferación Ki 67 menor al 5% diagnóstico de “ CRANEOFARINGIOMA ADAMANTINOMATOSO\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores EMA, CK7, Ki 67",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La lesión descrita tiene tinción positiva y difusa para CK7 y focal para EMA. El índice de proliferación KI-67 menor al 5% diagnóstico de \" CRANEOFARINGIOMA ADAMANTINOMATOSO\". Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores EMA, CK7, KI-67",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250480",
+      "timestamp": "2026-04-10T08:06:58.801457"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 49
+  }
+}

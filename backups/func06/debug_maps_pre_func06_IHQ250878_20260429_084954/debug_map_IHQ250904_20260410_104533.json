@@ -1,0 +1,175 @@
+{
+  "session_id": "IHQ250904_20260410_104533",
+  "numero_peticion": "IHQ250904",
+  "timestamp": "2026-04-10T10:45:33.435661",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250904\nCopia Pag. 1 de 2\nNombre : DULCE MARIA VIVAS CHURI\nN. peticion : IHQ250904\nN.Identificación : RC. 1061440283\nGenero : FEMENINO\nEdad : 6 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA CAMILA HOYOS\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 20/08/2025\nFecha Informe : 28/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX GANGLIO INGUINAL\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2509905, el cual corresponde a \"Ganglio inguinal derecho\",\ncon diagnóstico de \"TUMOR PRIMITIVO NEUROECTODERMICO A CARACTERIZAR POR\nINMUNOHISTOQUIMICA \". Se ordenan los siguientes marcadores: CKAE1/AE3, SINAPTOFISINA, DESMINA,\nWT1, CD99, NSE, GFAP, SALL4, EMA. \nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas celulas tumorales presenta inmunorreactiva a: SALL4. Son negativas para la marcación con:\nCKAE1/AE3, SINAPTOFISINA, DESMINA, WT1, CD99, NSE, GFAP, EMA. \nDIAGNÓSTICO\n Ganglio linfático inguinal derecho. Biopsia aguja gruesa. Estudio de inmunohistoquímica. \n-TUMOR MALIGNO METASTASICO DE POSIBLE ORIGEN GERMINAL. \nCOMENTARIOS\nA pesar de la escasez de tejido tumoral viable, resulta llamativa la tinción positiva para SALL4, un\nmarcador inmunohistoquímico asociado a tumores de células germinales. Este hallazgo es altamente\nsugestivo de una lesión metastásica de origen en una neoplasia de células germinales. Se recomienda\nenfáticamente correlacionar este resultado con los hallazgos de la historia clínica del paciente, estudios\nde imágenes y la morfología histológica de otras muestras disponibles para confirmar el diagnóstico y\nestablecer el origen primario.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---\nIHQ250904\nCopia Pag. 2 de 2\nNombre : DULCE MARIA VIVAS CHURI\nN. peticion : IHQ250904\nN.Identificación : RC. 1061440283\nGenero : FEMENINO\nEdad : 6 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA CAMILA HOYOS\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 20/08/2025\nFecha Informe : 28/08/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3592,
+      "reduccion_porcentaje": 98.18
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250904",
+      "caso_num": 26,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_SALL4": "POSITIVO",
+      "nombre_completo": "DULCE MARIA VIVAS CHURI",
+      "numero_peticion": "IHQ250904",
+      "identificacion": "1061440283",
+      "tipo_documento": "RC",
+      "Genero": "FEMENINO",
+      "Edad": "6",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "MARIA CAMILA HOYOS",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "20/08/2025",
+      "fecha_informe": "28/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250904",
+      "N. de identificación": "1061440283",
+      "Tipo de documento": "RC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "MARIA CAMILA HOYOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "20/08/2025",
+      "Fecha Informe": "28/08/2025",
+      "nombres": "DULCE MARIA",
+      "Primer nombre": "DULCE",
+      "Segundo nombre": "MARIA",
+      "apellidos": "VIVAS CHURI",
+      "Primer apellido": "VIVAS",
+      "Segundo apellido": "CHURI",
+      "nombre_formal": "VIVAS CHURI, DULCE MARIA",
+      "diagnostico": "Ganglio linfático inguinal derecho. Biopsia aguja gruesa. Estudio de inmunohistoquímica. -TUMOR MALIGNO METASTASICO DE POSIBLE ORIGEN GERMINAL.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las celulas tumorales presenta inmunorreactiva a: SALL4. Son negativas para la marcación con: CKAE1/AE3, SYNAPTOPHYSIN, DESMINA, WT1, CD99, NSE, GFAP, EMA.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2509905, el cual corresponde a \"Ganglio inguinal derecho\", con diagnóstico de \"TUMOR PRIMITIVO NEUROECTODERMICO A CARACTERIZAR POR INMUNOHISTOQUIMICA \". Se ordenan los siguientes marcadores: CKAE1/AE3, SYNAPTOPHYSIN, DESMINA, WT1, CD99, NSE, GFAP, SALL4, EMA.",
+      "ihq_organo": "GANGLIO LINFÁTICO INGUINAL DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1AE3, SYNAPTOFISINA, DESMINA, WT1, CD99, NSE, GFAP, SALL4, EMA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "A pesar de la escasez de tejido tumoral viable, resulta llamativa la tinción positiva para SALL4, un marcador inmunohistoquímico asociado a tumores de células germinales. Este hallazgo es altamente sugestivo de una lesión metastásica de origen en una neoplasia de células germinales. Se recomienda enfáticamente correlacionar este resultado con los hallazgos de la historia clínica del paciente, estudios de imágenes y la morfología histológica de otras muestras disponibles para confirmar el diagnóstico y establecer el origen primario.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO INGUINAL DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, SYNAPTOFISINA, DESMINA, WT1, CD99, NSE, GFAP, SALL4, EMA",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_GFAP": "NEGATIVO",
+      "IHQ_DESMINA": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "POSITIVO (NEGATIVAS PARA LA MARCACIÓN CON: CKAE1/AE3, SINAPTOFISINA)",
+      "IHQ_DESMIN": "POSITIVO (NEGATIVAS PARA LA MARCACIÓN CON: CKAE1/AE3, SINAPTOFISINA, DESMINA)",
+      "extraction_timestamp": "2026-04-10T10:45:33.720756",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250904\nCopia Pag. 1 de 2\nNombre : DULCE MARIA VIVAS CHURI\nN. peticion : IHQ250904\nN.Identificación : RC. 1061440283\nGenero : FEMENINO\nEdad : 6 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA CAMILA HOYOS\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 20/08/2025\nFecha Informe : 28/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX GANGLIO INGUINAL\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2509905, el cual corresponde a \"Ganglio inguinal derecho\",\ncon diagnóstico de \"TUMOR PRIMITIVO NEUROECTODERMICO A CARACTERIZAR POR\nINMUNOHISTOQUIMICA \". Se ordenan los siguientes marcadores: CKAE1/AE3, SINAPTOFISINA, DESMINA,\nWT1, CD99, NSE, GFAP, SALL4, EMA. \nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas celulas tumorales presenta inmunorreactiva a: SALL4. Son negativas para la marcación con:\nCKAE1/AE3, SINAPTOFISINA, DESMINA, WT1, CD99, NSE, GFAP, EMA. \nDIAGNÓSTICO\n Ganglio linfático inguinal derecho. Biopsia aguja gruesa. Estudio de inmunohistoquímica. \n-TUMOR MALIGNO METASTASICO DE POSIBLE ORIGEN GERMINAL. \nCOMENTARIOS\nA pesar de la escasez de tejido tumoral viable, resulta llamativa la tinción positiva para SALL4, un\nmarcador inmunohistoquímico asociado a tumores de células germinales. Este hallazgo es altamente\nsugestivo de una lesión metastásica de origen en una neoplasia de células germinales. Se recomienda\nenfáticamente correlacionar este resultado con los hallazgos de la historia clínica del paciente, estudios\nde imágenes y la morfología histológica de otras muestras disponibles para confirmar el diagnóstico y\nestablecer el origen primario.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---\nIHQ250904\nCopia Pag. 2 de 2\nNombre : DULCE MARIA VIVAS CHURI\nN. peticion : IHQ250904\nN.Identificación : RC. 1061440283\nGenero : FEMENINO\nEdad : 6 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA CAMILA HOYOS\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 20/08/2025\nFecha Informe : 28/08/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, SYNAPTOFISINA, DESMINA, WT1, CD99, NSE, GFAP, SALL4, EMA, DESMIN",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2509905, el cual corresponde a \"Ganglio inguinal derecho\", con diagnóstico de \"TUMOR PRIMITIVO NEUROECTODERMICO A CARACTERIZAR POR INMUNOHISTOQUIMICA \". Se ordenan los siguientes marcadores: CKAE1/AE3, SINAPTOFISINA, DESMINA, WT1, CD99, NSE, GFAP, SALL4, EMA.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las celulas tumorales presenta inmunorreactiva a: SALL4. Son negativas para la marcación con: CKAE1/AE3, SINAPTOFISINA, DESMINA, WT1, CD99, NSE, GFAP, EMA.",
+      "Descripcion Diagnostico": "Ganglio linfático inguinal derecho. Biopsia aguja gruesa. Estudio de inmunohistoquímica. -TUMOR MALIGNO METASTASICO DE POSIBLE ORIGEN GERMINAL.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO INGUINAL DERECHO",
+      "Organo": "BX GANGLIO INGUINAL DERECHO",
+      "Diagnostico Coloracion": "TUMOR PRIMITIVO NEUROECTODERMICO A CARACTERIZAR POR INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "TUMOR MALIGNO METASTASICO DE POSIBLE ORIGEN GERMINAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_DESMINA": "NEGATIVO",
+      "IHQ_WT1": "NO MENCIONADO",
+      "IHQ_CD99": "NO MENCIONADO",
+      "IHQ_GFAP": "NEGATIVO",
+      "IHQ_SALL4": "POSITIVO",
+      "IHQ_EMA": "NO MENCIONADO",
+      "IHQ_DESMIN": "POSITIVO (NEGATIVAS PARA LA MARCACIÓN CON: CKAE1/AE3, SINAPTOFISINA, DESMINA)",
+      "IHQ_SINAPTOFISINA": "POSITIVO (NEGATIVAS PARA LA MARCACIÓN CON: CKAE1/AE3, SINAPTOFISINA)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 134,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático inguinal derecho. Biopsia aguja gruesa. Estudio de inmunohistoquímica. \n-TUMOR MALIGNO METASTASICO DE POSIBLE ORIGEN GERMINAL.",
+      "valor_corregido": "Ganglio linfático inguinal derecho. Biopsia aguja gruesa. Estudio de inmunohistoquímica. -TUMOR MALIGNO METASTASICO DE POSIBLE ORIGEN GERMINAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250904",
+      "timestamp": "2026-04-10T10:45:33.720450"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles histológicos al bloque M2509905, el cual corresponde a \"Ganglio inguinal derecho\", con diagnóstico de \"TUMOR PRIMITIVO NEUROECTODERMICO A CARACTERIZAR POR INMUNOHISTOQUIMICA \". Se ordenan los siguientes marcadores: CKAE1/AE3, SINAPTOFISINA, DESMINA, WT1, CD99, NSE, GFAP, SALL4, EMA.",
+      "valor_corregido": "Se realizan niveles histológicos al bloque M2509905, el cual corresponde a \"Ganglio inguinal derecho\", con diagnóstico de \"TUMOR PRIMITIVO NEUROECTODERMICO A CARACTERIZAR POR INMUNOHISTOQUIMICA \". Se ordenan los siguientes marcadores: CKAE1/AE3, SYNAPTOPHYSIN, DESMINA, WT1, CD99, NSE, GFAP, SALL4, EMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250904",
+      "timestamp": "2026-04-10T10:45:33.720456"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las celulas tumorales presenta inmunorreactiva a: SALL4. Son negativas para la marcación con: CKAE1/AE3, SINAPTOFISINA, DESMINA, WT1, CD99, NSE, GFAP, EMA.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las celulas tumorales presenta inmunorreactiva a: SALL4. Son negativas para la marcación con: CKAE1/AE3, SYNAPTOPHYSIN, DESMINA, WT1, CD99, NSE, GFAP, EMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250904",
+      "timestamp": "2026-04-10T10:45:33.720457"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "A pesar de la escasez de tejido tumoral viable, resulta llamativa la tinción positiva para SALL4, un\nmarcador inmunohistoquímico asociado a tumores de células germinales. Este hallazgo es altamente\nsugestivo de una lesión metastásica de origen en una neoplasia de células germinales. Se recomienda\nenfáticamente correlacionar este resultado con los hallazgos de la historia clínica del paciente, estudios\nde imágenes y la morfología histológica de otras muestras disponibles para confirmar el diagnóstico y\nestablecer el origen primario.",
+      "valor_corregido": "A pesar de la escasez de tejido tumoral viable, resulta llamativa la tinción positiva para SALL4, un marcador inmunohistoquímico asociado a tumores de células germinales. Este hallazgo es altamente sugestivo de una lesión metastásica de origen en una neoplasia de células germinales. Se recomienda enfáticamente correlacionar este resultado con los hallazgos de la historia clínica del paciente, estudios de imágenes y la morfología histológica de otras muestras disponibles para confirmar el diagnóstico y establecer el origen primario.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250904",
+      "timestamp": "2026-04-10T10:45:33.720458"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 55
+  }
+}

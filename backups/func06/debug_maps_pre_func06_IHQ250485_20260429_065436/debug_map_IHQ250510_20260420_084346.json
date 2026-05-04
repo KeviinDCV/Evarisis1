@@ -1,0 +1,153 @@
+{
+  "session_id": "IHQ250510_20260420_084346",
+  "numero_peticion": "IHQ250510",
+  "timestamp": "2026-04-20T08:43:46.146612",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250510\nCopia Pag. 1 de 2\nNombre : MARIA EUGENIA MUÑOZ VELEZ\nN. peticion : IHQ250510\nN.Identificación : CC. 29158066\nGenero : FEMENINO\nEdad : 53 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA OSORIO MORALES\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 09/05/2025\nFecha Informe : 17/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2504950 que corresponde a biopsia de médula ósea, con diagnóstico de\n\"HIPERPLASIA CON CELULARIDAD AUMENTADA PARA LA EDAD DEL 70%; NEOPLASIA DE CELULAS\nPLASMATICAS\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nMédula ósea donde se encuentran numerosas células plasmáticas CD38 negativo pero son CD138\npositivos correspondientes al 40% del total de la celularidad. Estas células muestran inmunorreactividad\npara Cadenas Livianas Lambda y menor inmunorreactividad para Cadenas Livianas Kappa, con formación\nde acúmulos, estás células son positivas para CD56 de manera focal, pero difusa marcación para CD117\ny Ciclina-D1. Hay escasos linfocitos T (CD3+) y linfocitos B (CD20+) acompañantes. No hay expresión\npara p53.\nDIAGNÓSTICO\nMédula ósea. Biopsia. Estudios de inmunohistoquímica\nHALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON NEOPLASIA DE CELULAS PLASMATICAS CON\nRESTRICCION DE CADENAS LIVIANAS LAMBDA.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---\nIHQ250510\nCopia Pag. 2 de 2\nNombre : MARIA EUGENIA MUÑOZ VELEZ\nN. peticion : IHQ250510\nN.Identificación : CC. 29158066\nGenero : FEMENINO\nEdad : 53 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA OSORIO MORALES\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 09/05/2025\nFecha Informe : 17/05/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3389,
+      "reduccion_porcentaje": 98.21
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250510",
+      "caso_num": 45,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_LAMBDA": "POSITIVO",
+      "IHQ_KAPPA": "POSITIVO",
+      "nombre_completo": "MARIA EUGENIA MUÑOZ VELEZ",
+      "numero_peticion": "IHQ250510",
+      "identificacion": "29158066",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "53",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "DANIELA OSORIO MORALES",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "09/05/2025",
+      "fecha_informe": "17/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250510",
+      "N. de identificación": "29158066",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "DANIELA OSORIO MORALES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/05/2025",
+      "Fecha Informe": "17/05/2025",
+      "nombres": "MARIA EUGENIA MUÑOZ",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "EUGENIA MUÑOZ",
+      "apellidos": "VELEZ",
+      "Primer apellido": "VELEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "VELEZ, MARIA EUGENIA MUÑOZ",
+      "diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Médula ósea donde se encuentran numerosas células plasmáticas CD38 negativo pero son CD138 positivos correspondientes al 40% del total de la celularidad. Estas células muestran inmunorreactividad para Cadenas Livianas Lambda y menor inmunorreactividad para Cadenas Livianas Kappa, con formación de acúmulos, estás células son positivas para CD56 de manera focal, pero difusa marcación para CD117 y Ciclina-D1. Hay escasos linfocitos T (CD3+) y linfocitos B (CD20+) acompañantes. No hay expresión para p53.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2504950 que corresponde a biopsia de médula ósea, con diagnóstico de \"HIPERPLASIA CON CELULARIDAD AUMENTADA PARA LA EDAD DEL 70%; NEOPLASIA DE CELULAS PLASMATICAS\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "MÉDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_P53": "NEGATIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "NEGATIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CICLINA_D1": "POSITIVO (CD56 DE MANERA FOCAL, PERO DIFUSA MARCACIÓN PARA CD117 Y)",
+      "extraction_timestamp": "2026-04-20T08:43:46.439517",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250510\nCopia Pag. 1 de 2\nNombre : MARIA EUGENIA MUÑOZ VELEZ\nN. peticion : IHQ250510\nN.Identificación : CC. 29158066\nGenero : FEMENINO\nEdad : 53 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA OSORIO MORALES\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 09/05/2025\nFecha Informe : 17/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2504950 que corresponde a biopsia de médula ósea, con diagnóstico de\n\"HIPERPLASIA CON CELULARIDAD AUMENTADA PARA LA EDAD DEL 70%; NEOPLASIA DE CELULAS\nPLASMATICAS\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nMédula ósea donde se encuentran numerosas células plasmáticas CD38 negativo pero son CD138\npositivos correspondientes al 40% del total de la celularidad. Estas células muestran inmunorreactividad\npara Cadenas Livianas Lambda y menor inmunorreactividad para Cadenas Livianas Kappa, con formación\nde acúmulos, estás células son positivas para CD56 de manera focal, pero difusa marcación para CD117\ny Ciclina-D1. Hay escasos linfocitos T (CD3+) y linfocitos B (CD20+) acompañantes. No hay expresión\npara p53.\nDIAGNÓSTICO\nMédula ósea. Biopsia. Estudios de inmunohistoquímica\nHALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON NEOPLASIA DE CELULAS PLASMATICAS CON\nRESTRICCION DE CADENAS LIVIANAS LAMBDA.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 87 ---\nIHQ250510\nCopia Pag. 2 de 2\nNombre : MARIA EUGENIA MUÑOZ VELEZ\nN. peticion : IHQ250510\nN.Identificación : CC. 29158066\nGenero : FEMENINO\nEdad : 53 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : DANIELA OSORIO MORALES\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 09/05/2025\nFecha Informe : 17/05/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD117, CD138, CD20, CD3, CD38, CD56, CICLINA D1, Kappa, Lambda, P53",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2504950 que corresponde a biopsia de médula ósea, con diagnóstico de \"HIPERPLASIA CON CELULARIDAD AUMENTADA PARA LA EDAD DEL 70%; NEOPLASIA DE CELULAS PLASMATICAS\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Médula ósea donde se encuentran numerosas células plasmáticas CD38 negativo pero son CD138 positivos correspondientes al 40% del total de la celularidad. Estas células muestran inmunorreactividad para Cadenas Livianas Lambda y menor inmunorreactividad para Cadenas Livianas Kappa, con formación de acúmulos, estás células son positivas para CD56 de manera focal, pero difusa marcación para CD117 y Ciclina-D1. Hay escasos linfocitos T (CD3+) y linfocitos B (CD20+) acompañantes. No hay expresión para p53.",
+      "Descripcion Diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Organo": "BX DE HUESO",
+      "Diagnostico Coloracion": "HIPERPLASIA CON CELULARIDAD AUMENTADA PARA LA EDAD DEL 70%; NEOPLASIA DE CELULAS PLASMATICAS",
+      "Diagnostico Principal": "ESTUDIOS DE INMUNOHISTOQUÍMICA HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD38": "NEGATIVO",
+      "IHQ_CD56": "POSITIVO",
+      "IHQ_CICLINA_D1": "POSITIVO (CD56 DE MANERA FOCAL, PERO DIFUSA MARCACIÓN PARA CD117 Y)",
+      "IHQ_KAPPA": "POSITIVO",
+      "IHQ_LAMBDA": "POSITIVO",
+      "IHQ_P53": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 135,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula ósea. Biopsia. Estudios de inmunohistoquímica\nHALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON NEOPLASIA DE CELULAS PLASMATICAS CON\nRESTRICCION DE CADENAS LIVIANAS LAMBDA.\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________",
+      "valor_corregido": "Médula ósea. Biopsia. Estudios de inmunohistoquímica HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON NEOPLASIA DE CELULAS PLASMATICAS CON RESTRICCION DE CADENAS LIVIANAS LAMBDA. MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250510",
+      "timestamp": "2026-04-20T08:43:46.439057"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 53
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "session_id": "IHQ250478_20260410_080658",
+  "numero_peticion": "IHQ250478",
+  "timestamp": "2026-04-10T08:06:58.093280",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250478\nCopia Pag. 1 de 2\nNombre : ANA XIMENA ARTUNDUAGA CORREA\nN. peticion : IHQ250478\nN.Identificación : CC. 1083889618\nGenero : FEMENINO\nEdad : 34 años 4 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS ALBERTO HERNANDEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION FRONTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2504751-A que corresponde a \"lesión frontal\" con diagnóstico de \"TUMOR\nMALIGNO EN PATRÓN SÓLIDO A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\" para\nestudios de inmunohistoquímica por lo que se revisa marcación para GFAP, HCG, CD30, CD117, SALL-4,\nOCT-4 y ki67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA®.\nLas células tumorales presentan marcación positiva nuclear difusa para SALL4 y OCT4, además de\nmarcación citoplasmática difusa con acentuación de la membrana celular para CD117.\nSin marcación para HCG, CD30 y GFAP.\nÍndice de proliferación ki67 del 70%.\nDIAGNÓSTICO\n Lóbulo frontal derecho. Lesión. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN GERMINOMA DEL SISTEMA\nNERVIOSO CENTRAL.\nCOMENTARIOS\nSe requiere la correlación por el médico tratante con los datos clínicos completos, patologías previas y\ncaracteristícas en las imágenes diagnosticas para su adecuada conclusión.\nCaso valorado en conjunto con el Dr Diego Vargas, patólogo.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---\nIHQ250478\nCopia Pag. 2 de 2\nNombre : ANA XIMENA ARTUNDUAGA CORREA\nN. peticion : IHQ250478\nN.Identificación : CC. 1083889618\nGenero : FEMENINO\nEdad : 34 años 4 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS ALBERTO HERNANDEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/05/2025\nFecha Informe : 16/05/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3427,
+      "reduccion_porcentaje": 98.19
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250478",
+      "caso_num": 14,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD117": "POSITIVO (difusa)",
+      "IHQ_HCG": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_SALL4": "POSITIVO (difusa)",
+      "IHQ_OCT4": "POSITIVO (difusa)",
+      "nombre_completo": "ANA XIMENA ARTUNDUAGA CORREA",
+      "numero_peticion": "IHQ250478",
+      "identificacion": "1083889618",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "34",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "CARLOS ALBERTO HERNANDEZ",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "02/05/2025",
+      "fecha_informe": "16/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250478",
+      "N. de identificación": "1083889618",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "CARLOS ALBERTO HERNANDEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/05/2025",
+      "Fecha Informe": "16/05/2025",
+      "nombres": "ANA XIMENA",
+      "Primer nombre": "ANA",
+      "Segundo nombre": "XIMENA",
+      "apellidos": "ARTUNDUAGA CORREA",
+      "Primer apellido": "ARTUNDUAGA",
+      "Segundo apellido": "CORREA",
+      "nombre_formal": "ARTUNDUAGA CORREA, ANA XIMENA",
+      "diagnostico": "Lóbulo frontal derecho. Lesión. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN GERMINOMA DEL SISTEMA NERVIOSO CENTRAL.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales presentan marcación positiva nuclear difusa para SALL4 y OCT4, además de marcación citoplasmática difusa con acentuación de la membrana celular para CD117. Sin marcación para HCG, CD30 y GFAP. Índice de proliferación KI-67 del 70%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2504751-A que corresponde a \"lesión frontal\" con diagnóstico de \"TUMOR MALIGNO EN PATRÓN SÓLIDO A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\" para estudios de inmunohistoquímica por lo que se revisa marcación para GFAP, HCG, CD30, CD117, SALL-4, OCT-4 y KI-67.",
+      "ihq_organo": "LÓBULO FRONTAL DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "GFAP, HCG, CD30, CD117, SALL 4, OCT 4, Ki-67",
+      "procedimiento": "",
+      "comentarios": "Se requiere la correlación por el médico tratante con los datos clínicos completos, patologías previas y caracteristícas en las imágenes diagnosticas para su adecuada conclusión. Caso valorado en conjunto con el Dr Diego Vargas, patólogo.",
+      "IHQ_ORGANO": "LÓBULO FRONTAL DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67 del 70%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "GFAP, HCG, CD30, CD117, SALL 4, OCT 4, Ki-67",
+      "IHQ_GFAP": "NEGATIVO",
+      "IHQ_KI-67": "70%",
+      "extraction_timestamp": "2026-04-10T08:06:58.345399",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250478\nCopia Pag. 1 de 2\nNombre : ANA XIMENA ARTUNDUAGA CORREA\nN. peticion : IHQ250478\nN.Identificación : CC. 1083889618\nGenero : FEMENINO\nEdad : 34 años 4 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS ALBERTO HERNANDEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION FRONTAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2504751-A que corresponde a \"lesión frontal\" con diagnóstico de \"TUMOR\nMALIGNO EN PATRÓN SÓLIDO A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\" para\nestudios de inmunohistoquímica por lo que se revisa marcación para GFAP, HCG, CD30, CD117, SALL-4,\nOCT-4 y ki67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA®.\nLas células tumorales presentan marcación positiva nuclear difusa para SALL4 y OCT4, además de\nmarcación citoplasmática difusa con acentuación de la membrana celular para CD117.\nSin marcación para HCG, CD30 y GFAP.\nÍndice de proliferación ki67 del 70%.\nDIAGNÓSTICO\n Lóbulo frontal derecho. Lesión. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN GERMINOMA DEL SISTEMA\nNERVIOSO CENTRAL.\nCOMENTARIOS\nSe requiere la correlación por el médico tratante con los datos clínicos completos, patologías previas y\ncaracteristícas en las imágenes diagnosticas para su adecuada conclusión.\nCaso valorado en conjunto con el Dr Diego Vargas, patólogo.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 30 ---\nIHQ250478\nCopia Pag. 2 de 2\nNombre : ANA XIMENA ARTUNDUAGA CORREA\nN. peticion : IHQ250478\nN.Identificación : CC. 1083889618\nGenero : FEMENINO\nEdad : 34 años 4 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS ALBERTO HERNANDEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/05/2025\nFecha Informe : 16/05/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 31 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "GFAP, HCG, CD30, CD117, SALL 4, OCT 4, Ki-67",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2504751-A que corresponde a \"lesión frontal\" con diagnóstico de \"TUMOR MALIGNO EN PATRÓN SÓLIDO A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\" para estudios de inmunohistoquímica por lo que se revisa marcación para GFAP, HCG, CD30, CD117, SALL-4, OCT-4 y ki67.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales presentan marcación positiva nuclear difusa para SALL4 y OCT4, además de marcación citoplasmática difusa con acentuación de la membrana celular para CD117. Sin marcación para HCG, CD30 y GFAP. Índice de proliferación ki67 del 70%.",
+      "Descripcion Diagnostico": "Lóbulo frontal derecho. Lesión. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN GERMINOMA DEL SISTEMA NERVIOSO CENTRAL.",
+      "IHQ_ORGANO": "LÓBULO FRONTAL DERECHO",
+      "Organo": "LESION FRONTAL",
+      "Diagnostico Coloracion": "TUMOR MALIGNO EN PATRÓN SÓLIDO A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN GERMINOMA DEL SISTEMA NERVIOSO CENTRAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 70%",
+      "IHQ_GFAP": "NEGATIVO",
+      "IHQ_HCG": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_CD117": "POSITIVO (difusa)",
+      "IHQ_SALL4": "POSITIVO (difusa)",
+      "IHQ_OCT4": "POSITIVO (difusa)",
+      "IHQ_KI-67": "70%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 136,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Lóbulo frontal derecho. Lesión. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN GERMINOMA DEL SISTEMA\nNERVIOSO CENTRAL.",
+      "valor_corregido": "Lóbulo frontal derecho. Lesión. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN GERMINOMA DEL SISTEMA NERVIOSO CENTRAL.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250478",
+      "timestamp": "2026-04-10T08:06:58.344579"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2504751-A que corresponde a \"lesión frontal\" con diagnóstico de \"TUMOR MALIGNO EN PATRÓN SÓLIDO A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\" para estudios de inmunohistoquímica por lo que se revisa marcación para GFAP, HCG, CD30, CD117, SALL-4, OCT-4 y ki67.",
+      "valor_corregido": "Se realizan niveles al bloque M2504751-A que corresponde a \"lesión frontal\" con diagnóstico de \"TUMOR MALIGNO EN PATRÓN SÓLIDO A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\" para estudios de inmunohistoquímica por lo que se revisa marcación para GFAP, HCG, CD30, CD117, SALL-4, OCT-4 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250478",
+      "timestamp": "2026-04-10T08:06:58.344585"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales presentan marcación positiva nuclear difusa para SALL4 y OCT4, además de marcación citoplasmática difusa con acentuación de la membrana celular para CD117. Sin marcación para HCG, CD30 y GFAP. Índice de proliferación ki67 del 70%.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales presentan marcación positiva nuclear difusa para SALL4 y OCT4, además de marcación citoplasmática difusa con acentuación de la membrana celular para CD117. Sin marcación para HCG, CD30 y GFAP. Índice de proliferación KI-67 del 70%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250478",
+      "timestamp": "2026-04-10T08:06:58.344586"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se requiere la correlación por el médico tratante con los datos clínicos completos, patologías previas y\ncaracteristícas en las imágenes diagnosticas para su adecuada conclusión.\nCaso valorado en conjunto con el Dr Diego Vargas, patólogo.",
+      "valor_corregido": "Se requiere la correlación por el médico tratante con los datos clínicos completos, patologías previas y caracteristícas en las imágenes diagnosticas para su adecuada conclusión. Caso valorado en conjunto con el Dr Diego Vargas, patólogo.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250478",
+      "timestamp": "2026-04-10T08:06:58.344587"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 55
+  }
+}

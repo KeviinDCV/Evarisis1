@@ -1,0 +1,145 @@
+{
+  "session_id": "IHQ250464_20260415_161254",
+  "numero_peticion": "IHQ250464",
+  "timestamp": "2026-04-15T16:12:54.815327",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250464\nCopia Pag. 1 de 1\nNombre : LINNG KAREN RUIZ MERO\nN. peticion : IHQ250464\nN.Identificación : CC. 59685732\nGenero : FEMENINO\nEdad : 40 años 16 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 30/04/2025\nFecha Informe : 05/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nUTERO Y TROMPAS\nUTERINAS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional\nrotulado como \"M2504302\" corresponde a“producto de histerectomía y salpingectomia\" con diagnóstico\nde \"CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL \".\nPrevia revisión de la histología se realizan niveles histológicos al bloqu A8 para tinción con p16\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nEl carcinoma cervical presenta tinción positiva y en bloque para p16\nDIAGNÓSTICO\n Útero y trompas uterinas. Tumor. Histerectomia y salpingectomia. Estudio de inmunohistoquimica :\nCARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL\nPOSITIVO PARA p16\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 2498,
+      "reduccion_porcentaje": 98.68
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250464",
+      "caso_num": 1,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "nombre_completo": "LINNG KAREN RUIZ MERO",
+      "numero_peticion": "IHQ250464",
+      "identificacion": "59685732",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "40",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "EULER JAVIER BURBANO",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "30/04/2025",
+      "fecha_informe": "05/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250464",
+      "N. de identificación": "59685732",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "EULER JAVIER BURBANO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "30/04/2025",
+      "Fecha Informe": "05/05/2025",
+      "nombres": "LINNG KAREN",
+      "Primer nombre": "LINNG",
+      "Segundo nombre": "KAREN",
+      "apellidos": "RUIZ MERO",
+      "Primer apellido": "RUIZ",
+      "Segundo apellido": "MERO",
+      "nombre_formal": "RUIZ MERO, LINNG KAREN",
+      "diagnostico": "Útero y trompas uterinas. Tumor. Histerectomia y salpingectomia. Estudio de inmunohistoquimica : CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL POSITIVO PARA p16",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. El carcinoma cervical presenta tinción positiva y en bloque para p16",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \"M2504302\" corresponde a\"producto de histerectomía y salpingectomia\" con diagnóstico de \"CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL \". Previa revisión de la histología se realizan niveles histológicos al bloqu A8 para tinción con p16",
+      "ihq_organo": "ÚTERO Y TROMPAS UTERINAS",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "ÚTERO Y TROMPAS UTERINAS",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2026-04-15T16:12:55.061232",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250464\nCopia Pag. 1 de 1\nNombre : LINNG KAREN RUIZ MERO\nN. peticion : IHQ250464\nN.Identificación : CC. 59685732\nGenero : FEMENINO\nEdad : 40 años 16 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 30/04/2025\nFecha Informe : 05/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nUTERO Y TROMPAS\nUTERINAS\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional\nrotulado como \"M2504302\" corresponde a“producto de histerectomía y salpingectomia\" con diagnóstico\nde \"CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL \".\nPrevia revisión de la histología se realizan niveles histológicos al bloqu A8 para tinción con p16\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nEl carcinoma cervical presenta tinción positiva y en bloque para p16\nDIAGNÓSTICO\n Útero y trompas uterinas. Tumor. Histerectomia y salpingectomia. Estudio de inmunohistoquimica :\nCARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL\nPOSITIVO PARA p16\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \"M2504302\" corresponde a“producto de histerectomía y salpingectomia\" con diagnóstico de \"CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL \". Previa revisión de la histología se realizan niveles histológicos al bloqu A8 para tinción con p16",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. El carcinoma cervical presenta tinción positiva y en bloque para p16",
+      "Descripcion Diagnostico": "Útero y trompas uterinas. Tumor. Histerectomia y salpingectomia. Estudio de inmunohistoquimica : CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL POSITIVO PARA p16",
+      "IHQ_ORGANO": "ÚTERO Y TROMPAS UTERINAS",
+      "Organo": "UTERO Y TROMPAS UTERINAS",
+      "Diagnostico Coloracion": "CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 142,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 1,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 142,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Útero y trompas uterinas. Tumor. Histerectomia y salpingectomia. Estudio de inmunohistoquimica :\nCARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL\nPOSITIVO PARA p16",
+      "valor_corregido": "Útero y trompas uterinas. Tumor. Histerectomia y salpingectomia. Estudio de inmunohistoquimica : CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL POSITIVO PARA p16",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250464",
+      "timestamp": "2026-04-15T16:12:55.060846"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \"M2504302\" corresponde a“producto de histerectomía y salpingectomia\" con diagnóstico de \"CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL \". Previa revisión de la histología se realizan niveles histológicos al bloqu A8 para tinción con p16",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \"M2504302\" corresponde a\"producto de histerectomía y salpingectomia\" con diagnóstico de \"CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO CON EXTENSION ENDOCERVICAL \". Previa revisión de la histología se realizan niveles histológicos al bloqu A8 para tinción con p16",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250464",
+      "timestamp": "2026-04-15T16:12:55.060851"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 48
+  }
+}

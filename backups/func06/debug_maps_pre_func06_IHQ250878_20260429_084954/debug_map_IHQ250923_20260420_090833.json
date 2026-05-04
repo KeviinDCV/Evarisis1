@@ -1,0 +1,139 @@
+{
+  "session_id": "IHQ250923_20260420_090833",
+  "numero_peticion": "IHQ250923",
+  "timestamp": "2026-04-20T09:08:33.747866",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250923\nCopia Pag. 1 de 1\nNombre : JESUS MARIA OCORO SOLIS\nN. peticion : IHQ250923\nN.Identificación : CC. 10387800\nGenero : MASCULINO\nEdad : 47 años 12 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN CARLOS JARAMILLO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 25/08/2025\nFecha Informe : 04/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR AMIGDALA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2509849-1 que corresponden a biopsia de tumor en orofaringe con\ndiagnostico de \"CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO\", para\nestudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: p40 y p16.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales de apariencia escamosa son positivas de manera difusa y fuerte con marcación\nnuclear para p40 y expresión difusa en bloque, positiva para p16.\nDIAGNÓSTICO\n Amígdala. Tumor. Biopsia. Estudios de inmunohistoquímica.\nCARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO ASOCIADO A VPH.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 86 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 2389,
+      "reduccion_porcentaje": 98.79
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250923",
+      "caso_num": 44,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P40_ESTADO": "POSITIVO (difusa)",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "nombre_completo": "JESUS MARIA OCORO SOLIS",
+      "numero_peticion": "IHQ250923",
+      "identificacion": "10387800",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "47",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JUAN CARLOS JARAMILLO",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "25/08/2025",
+      "fecha_informe": "04/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250923",
+      "N. de identificación": "10387800",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "JUAN CARLOS JARAMILLO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "25/08/2025",
+      "Fecha Informe": "04/09/2025",
+      "nombres": "JESUS MARIA OCORO",
+      "Primer nombre": "JESUS",
+      "Segundo nombre": "MARIA OCORO",
+      "apellidos": "SOLIS",
+      "Primer apellido": "SOLIS",
+      "Segundo apellido": "",
+      "nombre_formal": "SOLIS, JESUS MARIA OCORO",
+      "diagnostico": "Amígdala. Tumor. Biopsia. Estudios de inmunohistoquímica. CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO ASOCIADO A VPH.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales de apariencia escamosa son positivas de manera difusa y fuerte con marcación nuclear para p40 y expresión difusa en bloque, positiva para p16.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2509849-1 que corresponden a biopsia de tumor en orofaringe con diagnostico de \"CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO\", para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: p40 y p16.",
+      "ihq_organo": "AMÍGDALA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P40, P16",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "AMÍGDALA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16",
+      "p16": "POSITIVO",
+      "p40": "POSITIVO (difusa)",
+      "extraction_timestamp": "2026-04-20T09:08:33.973127",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250923\nCopia Pag. 1 de 1\nNombre : JESUS MARIA OCORO SOLIS\nN. peticion : IHQ250923\nN.Identificación : CC. 10387800\nGenero : MASCULINO\nEdad : 47 años 12 dias\nEPS : NUEVA EPS\nMédico tratante : JUAN CARLOS JARAMILLO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 25/08/2025\nFecha Informe : 04/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR AMIGDALA\nDERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2509849-1 que corresponden a biopsia de tumor en orofaringe con\ndiagnostico de \"CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO\", para\nestudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: p40 y p16.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales de apariencia escamosa son positivas de manera difusa y fuerte con marcación\nnuclear para p40 y expresión difusa en bloque, positiva para p16.\nDIAGNÓSTICO\n Amígdala. Tumor. Biopsia. Estudios de inmunohistoquímica.\nCARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO ASOCIADO A VPH.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 86 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2509849-1 que corresponden a biopsia de tumor en orofaringe con diagnostico de \"CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO\", para estudios de inmunohistoquímica por lo que se ordenan los siguientes marcadores: p40 y p16.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales de apariencia escamosa son positivas de manera difusa y fuerte con marcación nuclear para p40 y expresión difusa en bloque, positiva para p16.",
+      "Descripcion Diagnostico": "Amígdala. Tumor. Biopsia. Estudios de inmunohistoquímica. CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO ASOCIADO A VPH.",
+      "IHQ_ORGANO": "AMÍGDALA",
+      "Organo": "TUMOR AMIGDALA DERECHA",
+      "Diagnostico Coloracion": "CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO ASOCIADO A VPH",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P40_ESTADO": "POSITIVO (difusa)",
+      "IHQ_P16_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 142,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 142,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Amígdala. Tumor. Biopsia. Estudios de inmunohistoquímica.\nCARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO ASOCIADO A VPH.",
+      "valor_corregido": "Amígdala. Tumor. Biopsia. Estudios de inmunohistoquímica. CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO ASOCIADO A VPH.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250923",
+      "timestamp": "2026-04-20T09:08:33.972861"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 51
+  }
+}

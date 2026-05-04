@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250180_20260420_082910",
+  "numero_peticion": "IHQ250180",
+  "timestamp": "2026-04-20T08:29:10.231756",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250180\nCopia Pag. 1 de 1\nNombre : RUBEN DARIO ESCOBAR ORTIZ\nN. peticion : IHQ250180\nN.Identificación : CC. 14884660\nGenero : MASCULINO\nEdad : 63 años 1 mes 2 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 18/02/2025\nFecha Informe : 27/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE PLEURA PARIETAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2501637 que corresponde a biopsia de pleura parietal con historia de carcinoma escamocelular\nprimario en pulmón izquierdo con diagnóstico principal de\"CARCINOMA METASTÁSICO A CLASIFICAR\nMEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se procesa estudio de\ninmunohistoquímica para marcación con p40, p16 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para p40 fuerte y difuso y p16 en bloque. El índice de proliferación\ncelular medido por Ki-67 es del 70%.\nDIAGNÓSTICO\n Pleura parietal. Tumor (historia de carcinoma escamocelular primario en pulmón izquierdo). Biopsia.\nEstudios de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR METASTÁSICO, p16 POSITIVO\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 2622,
+      "reduccion_porcentaje": 98.42
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250180",
+      "caso_num": 20,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "nombre_completo": "RUBEN DARIO ESCOBAR ORTIZ",
+      "numero_peticion": "IHQ250180",
+      "identificacion": "14884660",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "63",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ISABEL CRISTINA TORRES",
+      "servicio": "CIRUGIA HOMBRES",
+      "fecha_ingreso": "18/02/2025",
+      "fecha_informe": "27/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250180",
+      "N. de identificación": "14884660",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CIRUGIA HOMBRES",
+      "Médico tratante": "ISABEL CRISTINA TORRES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "18/02/2025",
+      "Fecha Informe": "27/02/2025",
+      "nombres": "RUBEN DARIO",
+      "Primer nombre": "RUBEN",
+      "Segundo nombre": "DARIO",
+      "apellidos": "ESCOBAR ORTIZ",
+      "Primer apellido": "ESCOBAR",
+      "Segundo apellido": "ORTIZ",
+      "nombre_formal": "ESCOBAR ORTIZ, RUBEN DARIO",
+      "diagnostico": "Pleura parietal. Tumor (historia de carcinoma escamocelular primario en pulmón izquierdo). Biopsia. Estudios de inmunohistoquímica: CARCINOMA ESCAMOCELULAR METASTÁSICO, p16 POSITIVO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para p40 fuerte y difuso y p16 en bloque. El índice de proliferación celular medido por KI-67 es del 70%.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2501637 que corresponde a biopsia de pleura parietal con historia de carcinoma escamocelular primario en pulmón izquierdo con diagnóstico principal de\"CARCINOMA METASTÁSICO A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con p40, p16 y KI-67.",
+      "ihq_organo": "PLEURA PARIETAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P40, P16, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PLEURA PARIETAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "Ki-67: 70%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, Ki-67",
+      "IHQ_KI-67": "70%",
+      "p16": "POSITIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-04-20T08:29:10.513913",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250180\nCopia Pag. 1 de 1\nNombre : RUBEN DARIO ESCOBAR ORTIZ\nN. peticion : IHQ250180\nN.Identificación : CC. 14884660\nGenero : MASCULINO\nEdad : 63 años 1 mes 2 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ISABEL CRISTINA TORRES\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 18/02/2025\nFecha Informe : 27/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE PLEURA PARIETAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2501637 que corresponde a biopsia de pleura parietal con historia de carcinoma escamocelular\nprimario en pulmón izquierdo con diagnóstico principal de\"CARCINOMA METASTÁSICO A CLASIFICAR\nMEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se procesa estudio de\ninmunohistoquímica para marcación con p40, p16 y Ki-67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para p40 fuerte y difuso y p16 en bloque. El índice de proliferación\ncelular medido por Ki-67 es del 70%.\nDIAGNÓSTICO\n Pleura parietal. Tumor (historia de carcinoma escamocelular primario en pulmón izquierdo). Biopsia.\nEstudios de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR METASTÁSICO, p16 POSITIVO\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, Ki-67",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2501637 que corresponde a biopsia de pleura parietal con historia de carcinoma escamocelular primario en pulmón izquierdo con diagnóstico principal de\"CARCINOMA METASTÁSICO A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con p40, p16 y Ki-67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para p40 fuerte y difuso y p16 en bloque. El índice de proliferación celular medido por Ki-67 es del 70%.",
+      "Descripcion Diagnostico": "Pleura parietal. Tumor (historia de carcinoma escamocelular primario en pulmón izquierdo). Biopsia. Estudios de inmunohistoquímica: CARCINOMA ESCAMOCELULAR METASTÁSICO, p16 POSITIVO",
+      "IHQ_ORGANO": "PLEURA PARIETAL",
+      "Organo": "BX DE PLEURA PARIETAL",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR METASTÁSICO, P16 POSITIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 70%",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_KI-67": "70%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pleura parietal. Tumor (historia de carcinoma escamocelular primario en pulmón izquierdo). Biopsia.\nEstudios de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR METASTÁSICO, p16 POSITIVO",
+      "valor_corregido": "Pleura parietal. Tumor (historia de carcinoma escamocelular primario en pulmón izquierdo). Biopsia. Estudios de inmunohistoquímica: CARCINOMA ESCAMOCELULAR METASTÁSICO, p16 POSITIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250180",
+      "timestamp": "2026-04-20T08:29:10.513678"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2501637 que corresponde a biopsia de pleura parietal con historia de carcinoma escamocelular primario en pulmón izquierdo con diagnóstico principal de\"CARCINOMA METASTÁSICO A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con p40, p16 y Ki-67.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2501637 que corresponde a biopsia de pleura parietal con historia de carcinoma escamocelular primario en pulmón izquierdo con diagnóstico principal de\"CARCINOMA METASTÁSICO A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se procesa estudio de inmunohistoquímica para marcación con p40, p16 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250180",
+      "timestamp": "2026-04-20T08:29:10.513684"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para p40 fuerte y difuso y p16 en bloque. El índice de proliferación celular medido por Ki-67 es del 70%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para p40 fuerte y difuso y p16 en bloque. El índice de proliferación celular medido por KI-67 es del 70%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250180",
+      "timestamp": "2026-04-20T08:29:10.513685"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 53
+  }
+}

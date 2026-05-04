@@ -1,0 +1,146 @@
+{
+  "session_id": "IHQ250502_20260410_080704",
+  "numero_peticion": "IHQ250502",
+  "timestamp": "2026-04-10T08:07:04.358189",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250502\nCopia Pag. 1 de 2\nNombre : MISAEL GUTIERREZ QUIROGA\nN. peticion : IHQ250502\nN.Identificación : CC. 2680395\nGenero : MASCULINO\nEdad : 71 años 28 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JULIANA BURBANO LUNA\nServicio : CARTAGO HOSPITALIZACION 3\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBORDES DE COLON\nSIGMOIDE\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2504150” que corresponde a “Mucosa colónica. Biopsia endoscópica.\" con\ndiagnóstico de “COLITIS AGUDA Y CRÓNICA SEVERA. CELULARIDAD ATÍPICA FOCAL A CLASIFICAR\nMEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.” Previa revisión de la histología, se realizan\nniveles histológicos para tinción con: CD68, CKAE1E3. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLos estudios de inmunohistoquímica en el tejido: \nMuestran marcación focal para CKAE1E3 en epitelio glnadular usual. CD68 marca el infiltrado\nhistiocitario predominante en la muestra. \nDIAGNÓSTICO\nMucosa colónica. Biopsia endoscópica. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN PROCESO\nINFLAMATORIO MIXTO CON PREDOMINIO DE HISTIOCITOS. \nNEGATIVO PARA LESIÓN NEOPLÁSICA.\nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Edwin Carrascal. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---\nIHQ250502\nCopia Pag. 2 de 2\nNombre : MISAEL GUTIERREZ QUIROGA\nN. peticion : IHQ250502\nN.Identificación : CC. 2680395\nGenero : MASCULINO\nEdad : 71 años 28 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JULIANA BURBANO LUNA\nServicio : CARTAGO HOSPITALIZACION 3\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3355,
+      "reduccion_porcentaje": 98.22
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250502",
+      "caso_num": 37,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD68": "POSITIVO (focal)",
+      "IHQ_CKAE1AE3": "POSITIVO (focal)",
+      "nombre_completo": "MISAEL GUTIERREZ QUIROGA",
+      "numero_peticion": "IHQ250502",
+      "identificacion": "2680395",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "71",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JULIANA BURBANO LUNA",
+      "servicio": "",
+      "fecha_ingreso": "08/05/2025",
+      "fecha_informe": "23/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250502",
+      "N. de identificación": "2680395",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "",
+      "Médico tratante": "JULIANA BURBANO LUNA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/05/2025",
+      "Fecha Informe": "23/05/2025",
+      "nombres": "MISAEL",
+      "Primer nombre": "MISAEL",
+      "Segundo nombre": "",
+      "apellidos": "GUTIERREZ QUIROGA",
+      "Primer apellido": "GUTIERREZ",
+      "Segundo apellido": "QUIROGA",
+      "nombre_formal": "GUTIERREZ QUIROGA, MISAEL",
+      "diagnostico": "Mucosa colónica. Biopsia endoscópica. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN PROCESO INFLAMATORIO MIXTO CON PREDOMINIO DE HISTIOCITOS. NEGATIVO PARA LESIÓN NEOPLÁSICA.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Los estudios de inmunohistoquímica en el tejido: Muestran marcación focal para CKAE1E3 en epitelio glnadular usual. CD68 marca el infiltrado histiocitario predominante en la muestra.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2504150\" que corresponde a \"Mucosa colónica. Biopsia endoscópica.\" con diagnóstico de \"COLITIS AGUDA Y CRÓNICA SEVERA. CELULARIDAD ATÍPICA FOCAL A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.\" Previa revisión de la histología, se realizan niveles histológicos para tinción con: CD68, CKAE1E3.",
+      "ihq_organo": "MUCOSA COLÓNICA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD68, CKAE1E3",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con el Dr. Edwin Carrascal.",
+      "IHQ_ORGANO": "MUCOSA COLÓNICA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD68, CKAE1E3",
+      "extraction_timestamp": "2026-04-10T08:07:04.656521",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250502\nCopia Pag. 1 de 2\nNombre : MISAEL GUTIERREZ QUIROGA\nN. peticion : IHQ250502\nN.Identificación : CC. 2680395\nGenero : MASCULINO\nEdad : 71 años 28 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JULIANA BURBANO LUNA\nServicio : CARTAGO HOSPITALIZACION 3\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBORDES DE COLON\nSIGMOIDE\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2504150” que corresponde a “Mucosa colónica. Biopsia endoscópica.\" con\ndiagnóstico de “COLITIS AGUDA Y CRÓNICA SEVERA. CELULARIDAD ATÍPICA FOCAL A CLASIFICAR\nMEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.” Previa revisión de la histología, se realizan\nniveles histológicos para tinción con: CD68, CKAE1E3. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLos estudios de inmunohistoquímica en el tejido: \nMuestran marcación focal para CKAE1E3 en epitelio glnadular usual. CD68 marca el infiltrado\nhistiocitario predominante en la muestra. \nDIAGNÓSTICO\nMucosa colónica. Biopsia endoscópica. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN PROCESO\nINFLAMATORIO MIXTO CON PREDOMINIO DE HISTIOCITOS. \nNEGATIVO PARA LESIÓN NEOPLÁSICA.\nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Edwin Carrascal. \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---\nIHQ250502\nCopia Pag. 2 de 2\nNombre : MISAEL GUTIERREZ QUIROGA\nN. peticion : IHQ250502\nN.Identificación : CC. 2680395\nGenero : MASCULINO\nEdad : 71 años 28 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JULIANA BURBANO LUNA\nServicio : CARTAGO HOSPITALIZACION 3\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD68, CKAE1AE3",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2504150” que corresponde a “Mucosa colónica. Biopsia endoscópica.\" con diagnóstico de “COLITIS AGUDA Y CRÓNICA SEVERA. CELULARIDAD ATÍPICA FOCAL A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.” Previa revisión de la histología, se realizan niveles histológicos para tinción con: CD68, CKAE1E3.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Los estudios de inmunohistoquímica en el tejido: Muestran marcación focal para CKAE1E3 en epitelio glnadular usual. CD68 marca el infiltrado histiocitario predominante en la muestra.",
+      "Descripcion Diagnostico": "Mucosa colónica. Biopsia endoscópica. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN PROCESO INFLAMATORIO MIXTO CON PREDOMINIO DE HISTIOCITOS. NEGATIVO PARA LESIÓN NEOPLÁSICA.",
+      "IHQ_ORGANO": "MUCOSA COLÓNICA",
+      "Organo": "BORDES DE COLON SIGMOIDE",
+      "Diagnostico Coloracion": "COLITIS AGUDA Y CRÓNICA SEVERA. CELULARIDAD ATÍPICA FOCAL A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN PROCESO INFLAMATORIO MIXTO CON PREDOMINIO DE HISTIOCITOS",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD68": "POSITIVO (focal)",
+      "IHQ_CKAE1AE3": "POSITIVO (focal)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 143,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 143,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa colónica. Biopsia endoscópica. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN PROCESO\nINFLAMATORIO MIXTO CON PREDOMINIO DE HISTIOCITOS. \nNEGATIVO PARA LESIÓN NEOPLÁSICA.",
+      "valor_corregido": "Mucosa colónica. Biopsia endoscópica. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN PROCESO INFLAMATORIO MIXTO CON PREDOMINIO DE HISTIOCITOS. NEGATIVO PARA LESIÓN NEOPLÁSICA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250502",
+      "timestamp": "2026-04-10T08:07:04.656057"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2504150” que corresponde a “Mucosa colónica. Biopsia endoscópica.\" con diagnóstico de “COLITIS AGUDA Y CRÓNICA SEVERA. CELULARIDAD ATÍPICA FOCAL A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.” Previa revisión de la histología, se realizan niveles histológicos para tinción con: CD68, CKAE1E3.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2504150\" que corresponde a \"Mucosa colónica. Biopsia endoscópica.\" con diagnóstico de \"COLITIS AGUDA Y CRÓNICA SEVERA. CELULARIDAD ATÍPICA FOCAL A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.\" Previa revisión de la histología, se realizan niveles histológicos para tinción con: CD68, CKAE1E3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250502",
+      "timestamp": "2026-04-10T08:07:04.656063"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 47
+  }
+}

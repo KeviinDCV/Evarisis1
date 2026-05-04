@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250509_20260414_064758",
+  "numero_peticion": "IHQ250509",
+  "timestamp": "2026-04-14T06:47:58.315882",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250509\nCopia Pag. 1 de 2\nNombre : MILENA INES CAICEDO GOMEZ\nN. peticion : IHQ250509\nN.Identificación : CC. 67004037\nGenero : FEMENINO\nEdad : 47 años 3 meses 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : MEDICA MUJERES\nFecha Ingreso : 09/05/2025\nFecha Informe : 17/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2504960 que corresponde a biopsia de médula ósea, con diagnóstico de\n\"CELULARIDAD GLOBAL DEL 40%; REPRESENTACION Y MADURACION DE LAS TRES LINEAS\nCELULARES; NO SE IDENTIFICAN AUMENTO DE CELULAS BLÁSTICAS NI PLASMOCITOIDES\". Se ordenan\nestudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nSe observan las tres líneas celulares con adecuada maduración, hay células mieloides (MPO+) y\neritroides (Glicoforina +), con una relación mieloide / eritroide de 2 a 1. Se cuentan de 6-8\nmegacariocitos (CD61+) por campo de alto poder, sin cambios morfológicos. Hay predominio de\nlinfocitos T (CD3+) de manera difusa con escasos linfocitos B (CD20+). Hay células plasmáticas (CD38+)\nque son de aproximadamente al 20% de la celularidad de manera difusa con formación de acúmulos de\nhasta 10 células plasmáticas, pero no presentan expresión aberrante de CD56. No hay incremento del\nnúmero de blastos CD34 menor al 1%.\nDIAGNÓSTICO\nMédula ósea. Biopsia. Estudios de inmunohistoquímica:\nREPRESENTACION Y MADURACION DE LAS TRES LINEAS CELULARES\nAUMENTO DIFUSO DE LAS CÉLULAS PLASMÁTICAS (20%) SIN MARCACION ABERRANTE\nSIN INCREMENTO DE CELULAS BLÁSTICAS \nCOMENTARIOS\nPaciente con antecedente de inmunodeficiencia adquirida por lo que los hallazgos de aumento de los\nlinfocitos T CD3+ y de las células plasmáticas, sin marcacion aberrante, son cambios esperados para su\ncomorbilidad. \nEste estudio debe ser correlacionado con la clínica y citometría de la paciente.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 85 ---\nIHQ250509\nCopia Pag. 2 de 2\nNombre : MILENA INES CAICEDO GOMEZ\nN. peticion : IHQ250509\nN.Identificación : CC. 67004037\nGenero : FEMENINO\nEdad : 47 años 3 meses 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : MEDICA MUJERES\nFecha Ingreso : 09/05/2025\nFecha Informe : 17/05/2025\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 86 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3935,
+      "reduccion_porcentaje": 97.92
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250509",
+      "caso_num": 44,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MILENA INES CAICEDO GOMEZ",
+      "numero_peticion": "IHQ250509",
+      "identificacion": "67004037",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "47",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "SILVIO ANDRES BOLAÑOS",
+      "servicio": "MEDICA MUJERES",
+      "fecha_ingreso": "09/05/2025",
+      "fecha_informe": "17/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250509",
+      "N. de identificación": "67004037",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "MEDICA MUJERES",
+      "Médico tratante": "SILVIO ANDRES BOLAÑOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/05/2025",
+      "Fecha Informe": "17/05/2025",
+      "nombres": "MILENA INES",
+      "Primer nombre": "MILENA",
+      "Segundo nombre": "INES",
+      "apellidos": "CAICEDO GOMEZ",
+      "Primer apellido": "CAICEDO",
+      "Segundo apellido": "GOMEZ",
+      "nombre_formal": "CAICEDO GOMEZ, MILENA INES",
+      "diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica: REPRESENTACION Y MADURACION DE LAS TRES LINEAS CELULARES AUMENTO DIFUSO DE LAS CÉLULAS PLASMÁTICAS (20%) SIN MARCACION ABERRANTE SIN INCREMENTO DE CELULAS BLÁSTICAS",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Se observan las tres líneas celulares con adecuada maduración, hay células mieloides (MPO+) y eritroides (Glicoforina +), con una relación mieloide / eritroide de 2 a 1. Se cuentan de 6-8 megacariocitos (CD61+) por campo de alto poder, sin cambios morfológicos. Hay predominio de linfocitos T (CD3+) de manera difusa con escasos linfocitos B (CD20+). Hay células plasmáticas (CD38+) que son de aproximadamente al 20% de la celularidad de manera difusa con formación de acúmulos de hasta 10 células plasmáticas, pero no presentan expresión aberrante de CD56. No hay incremento del número de blastos CD34 menor al 1%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2504960 que corresponde a biopsia de médula ósea, con diagnóstico de \"CELULARIDAD GLOBAL DEL 40%; REPRESENTACION Y MADURACION DE LAS TRES LINEAS CELULARES; NO SE IDENTIFICAN AUMENTO DE CELULAS BLÁSTICAS NI PLASMOCITOIDES\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "MÉDULA ÓSEA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Paciente con antecedente de inmunodeficiencia adquirida por lo que los hallazgos de aumento de los linfocitos T CD3+ y de las células plasmáticas, sin marcacion aberrante, son cambios esperados para su comorbilidad. Este estudio debe ser correlacionado con la clínica y citometría de la paciente. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 85 --- IHQ250509 Copia Pag. 2 de 2 Nombre : MILENA INES CAICEDO GOMEZ N. peticion : IHQ250509 N.Identificación : CC. 67004037 Genero : FEMENINO Edad : 47 años 3 meses 3 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : SILVIO ANDRES BOLAÑOS Servicio : MEDICA MUJERES Fecha Ingreso : 09/05/2025 Fecha Informe : 17/05/2025",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "extraction_timestamp": "2026-04-14T06:47:58.599980",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250509\nCopia Pag. 1 de 2\nNombre : MILENA INES CAICEDO GOMEZ\nN. peticion : IHQ250509\nN.Identificación : CC. 67004037\nGenero : FEMENINO\nEdad : 47 años 3 meses 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : MEDICA MUJERES\nFecha Ingreso : 09/05/2025\nFecha Informe : 17/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2504960 que corresponde a biopsia de médula ósea, con diagnóstico de\n\"CELULARIDAD GLOBAL DEL 40%; REPRESENTACION Y MADURACION DE LAS TRES LINEAS\nCELULARES; NO SE IDENTIFICAN AUMENTO DE CELULAS BLÁSTICAS NI PLASMOCITOIDES\". Se ordenan\nestudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nSe observan las tres líneas celulares con adecuada maduración, hay células mieloides (MPO+) y\neritroides (Glicoforina +), con una relación mieloide / eritroide de 2 a 1. Se cuentan de 6-8\nmegacariocitos (CD61+) por campo de alto poder, sin cambios morfológicos. Hay predominio de\nlinfocitos T (CD3+) de manera difusa con escasos linfocitos B (CD20+). Hay células plasmáticas (CD38+)\nque son de aproximadamente al 20% de la celularidad de manera difusa con formación de acúmulos de\nhasta 10 células plasmáticas, pero no presentan expresión aberrante de CD56. No hay incremento del\nnúmero de blastos CD34 menor al 1%.\nDIAGNÓSTICO\nMédula ósea. Biopsia. Estudios de inmunohistoquímica:\nREPRESENTACION Y MADURACION DE LAS TRES LINEAS CELULARES\nAUMENTO DIFUSO DE LAS CÉLULAS PLASMÁTICAS (20%) SIN MARCACION ABERRANTE\nSIN INCREMENTO DE CELULAS BLÁSTICAS \nCOMENTARIOS\nPaciente con antecedente de inmunodeficiencia adquirida por lo que los hallazgos de aumento de los\nlinfocitos T CD3+ y de las células plasmáticas, sin marcacion aberrante, son cambios esperados para su\ncomorbilidad. \nEste estudio debe ser correlacionado con la clínica y citometría de la paciente.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 85 ---\nIHQ250509\nCopia Pag. 2 de 2\nNombre : MILENA INES CAICEDO GOMEZ\nN. peticion : IHQ250509\nN.Identificación : CC. 67004037\nGenero : FEMENINO\nEdad : 47 años 3 meses 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : MEDICA MUJERES\nFecha Ingreso : 09/05/2025\nFecha Informe : 17/05/2025\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 86 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD138, CD20, CD3, CD38, CD61, GLICOFORINA, MIELOPEROXIDASA",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2504960 que corresponde a biopsia de médula ósea, con diagnóstico de \"CELULARIDAD GLOBAL DEL 40%; REPRESENTACION Y MADURACION DE LAS TRES LINEAS CELULARES; NO SE IDENTIFICAN AUMENTO DE CELULAS BLÁSTICAS NI PLASMOCITOIDES\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Se observan las tres líneas celulares con adecuada maduración, hay células mieloides (MPO+) y eritroides (Glicoforina +), con una relación mieloide / eritroide de 2 a 1. Se cuentan de 6-8 megacariocitos (CD61+) por campo de alto poder, sin cambios morfológicos. Hay predominio de linfocitos T (CD3+) de manera difusa con escasos linfocitos B (CD20+). Hay células plasmáticas (CD38+) que son de aproximadamente al 20% de la celularidad de manera difusa con formación de acúmulos de hasta 10 células plasmáticas, pero no presentan expresión aberrante de CD56. No hay incremento del número de blastos CD34 menor al 1%.",
+      "Descripcion Diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica: REPRESENTACION Y MADURACION DE LAS TRES LINEAS CELULARES AUMENTO DIFUSO DE LAS CÉLULAS PLASMÁTICAS (20%) SIN MARCACION ABERRANTE SIN INCREMENTO DE CELULAS BLÁSTICAS",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Organo": "BX DE HUESO",
+      "Diagnostico Coloracion": "CELULARIDAD GLOBAL DEL 40%; REPRESENTACION Y MADURACION DE LAS TRES LINEAS CELULARES; NO SE IDENTIFICAN AUMENTO DE CELULAS BLÁSTICAS NI PLASMOCITOIDES",
+      "Diagnostico Principal": "REPRESENTACION Y MADURACION DE LAS TRES LINEAS CELULARES AUMENTO DIFUSO DE LAS CÉLULAS PLASMÁTICAS (20%) SIN MARCACION ABERRANTE SIN INCREMENTO DE CELULAS BLÁSTICAS",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 137,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula ósea. Biopsia. Estudios de inmunohistoquímica:\nREPRESENTACION Y MADURACION DE LAS TRES LINEAS CELULARES\nAUMENTO DIFUSO DE LAS CÉLULAS PLASMÁTICAS (20%) SIN MARCACION ABERRANTE\nSIN INCREMENTO DE CELULAS BLÁSTICAS",
+      "valor_corregido": "Médula ósea. Biopsia. Estudios de inmunohistoquímica: REPRESENTACION Y MADURACION DE LAS TRES LINEAS CELULARES AUMENTO DIFUSO DE LAS CÉLULAS PLASMÁTICAS (20%) SIN MARCACION ABERRANTE SIN INCREMENTO DE CELULAS BLÁSTICAS",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250509",
+      "timestamp": "2026-04-14T06:47:58.599726"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Paciente con antecedente de inmunodeficiencia adquirida por lo que los hallazgos de aumento de los\nlinfocitos T CD3+ y de las células plasmáticas, sin marcacion aberrante, son cambios esperados para su\ncomorbilidad. \nEste estudio debe ser correlacionado con la clínica y citometría de la paciente.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 85 ---\nIHQ250509\nCopia Pag. 2 de 2\nNombre : MILENA INES CAICEDO GOMEZ\nN. peticion : IHQ250509\nN.Identificación : CC. 67004037\nGenero : FEMENINO\nEdad : 47 años 3 meses 3 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : MEDICA MUJERES\nFecha Ingreso : 09/05/2025\nFecha Informe : 17/05/2025",
+      "valor_corregido": "Paciente con antecedente de inmunodeficiencia adquirida por lo que los hallazgos de aumento de los linfocitos T CD3+ y de las células plasmáticas, sin marcacion aberrante, son cambios esperados para su comorbilidad. Este estudio debe ser correlacionado con la clínica y citometría de la paciente. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 85 --- IHQ250509 Copia Pag. 2 de 2 Nombre : MILENA INES CAICEDO GOMEZ N. peticion : IHQ250509 N.Identificación : CC. 67004037 Genero : FEMENINO Edad : 47 años 3 meses 3 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : SILVIO ANDRES BOLAÑOS Servicio : MEDICA MUJERES Fecha Ingreso : 09/05/2025 Fecha Informe : 17/05/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250509",
+      "timestamp": "2026-04-14T06:47:58.599731"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 52
+  }
+}

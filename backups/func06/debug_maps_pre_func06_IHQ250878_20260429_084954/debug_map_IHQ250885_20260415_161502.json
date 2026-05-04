@@ -1,0 +1,137 @@
+{
+  "session_id": "IHQ250885_20260415_161502",
+  "numero_peticion": "IHQ250885",
+  "timestamp": "2026-04-15T16:15:02.347352",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250885\nCopia Pag. 1 de 2\nNombre : ISABEL CRISTINA RESTREPO ANGEL\nN. peticion : IHQ250885\nN.Identificación : CC. 22128160\nGenero : FEMENINO\nEdad : 73 años 30 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA\nCENTRAL DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en material institucional con matrícula\n\"M2508385\" y diagnóstico \" LESIONES PAPILARES A CARACTERIZAR MEDIANTE INMUNOHISTOQUÍMICA\n(#3). PAPILOMAS INTRADUCTALES (#2). HIPERPLASIA DUCTAL USUAL. METAPLASIA APOCRINA. ECTASIA\nDUCTAL.\"\nPrevia revisión de la histología, se solicitan estudios con los ancituerpos para CK5/6, p63, Calponina y\nReceptor de estrógenos.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nLa muestra corresponde a tejido mamario con proliferación papilar, constituida por tallos fibrovasculares\nrecubiertos por células epiteliales con arquitectura ordenada. Sin necrosis. Se acompaña de metaplasia\napocrina, con cambios fibroquísticos.\nLás lesiones papilares de interés están tapizadas tanto en los bordes de la lesión como en los tallos\nfibrovasculares por células mioepiteliales (p56+, calponina+, CK5/6+) y las células epiteliales expresan\nreceptor de estrógenos fuerte, pero parcheado. \nDIAGNÓSTICO\nMama derecha. Lesión. Cuadrantectomía. Inmunhistoquímica.\nPAPILOMAS INTRADUCTALES.\nNEGATIVO PARA CARCINOMA.\nJOSE BRAVO BONILLA\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 20 ---\nIHQ250885\nCopia Pag. 2 de 2\nNombre : ISABEL CRISTINA RESTREPO ANGEL\nN. peticion : IHQ250885\nN.Identificación : CC. 22128160\nGenero : FEMENINO\nEdad : 73 años 30 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3469,
+      "reduccion_porcentaje": 98.24
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250885",
+      "caso_num": 9,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (fuerte)",
+      "nombre_completo": "ISABEL CRISTINA RESTREPO ANGEL",
+      "numero_peticion": "IHQ250885",
+      "identificacion": "22128160",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "73",
+      "eps": "COMFENALCO VALLE",
+      "medico_tratante": "LUIS ALFONSO GONZALEZ",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "13/08/2025",
+      "fecha_informe": "01/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250885",
+      "N. de identificación": "22128160",
+      "Tipo de documento": "CC",
+      "EPS": "COMFENALCO VALLE",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "LUIS ALFONSO GONZALEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "13/08/2025",
+      "Fecha Informe": "01/09/2025",
+      "nombres": "ISABEL CRISTINA",
+      "Primer nombre": "ISABEL",
+      "Segundo nombre": "CRISTINA",
+      "apellidos": "RESTREPO ANGEL",
+      "Primer apellido": "RESTREPO",
+      "Segundo apellido": "ANGEL",
+      "nombre_formal": "RESTREPO ANGEL, ISABEL CRISTINA",
+      "diagnostico": "Mama derecha. Lesión. Cuadrantectomía. Inmunhistoquímica. PAPILOMAS INTRADUCTALES. NEGATIVO PARA CARCINOMA.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: La muestra corresponde a tejido mamario con proliferación papilar, constituida por tallos fibrovasculares recubiertos por células epiteliales con arquitectura ordenada. Sin necrosis. Se acompaña de metaplasia apocrina, con cambios fibroquísticos. Lás lesiones papilares de interés están tapizadas tanto en los bordes de la lesión como en los tallos fibrovasculares por células mioepiteliales (p56+, calponina+, CK5/6+) y las células epiteliales expresan receptor de estrógenos fuerte, pero parcheado.",
+      "descripcion_macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material institucional con matrícula \"M2508385\" y diagnóstico \" LESIONES PAPILARES A CARACTERIZAR MEDIANTE INMUNOHISTOQUÍMICA (#3). PAPILOMAS INTRADUCTALES (#2). HIPERPLASIA DUCTAL USUAL. METAPLASIA APOCRINA. ECTASIA DUCTAL.\" Previa revisión de la histología, se solicitan estudios con los ancituerpos para CK5/6, p63, Calponina y Receptor de estrógenos.",
+      "ihq_organo": "MAMA DERECHA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "receptor de estrógenos fuerte, pero parcheado",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CALPONINA": "POSITIVO",
+      "extraction_timestamp": "2026-04-15T16:15:02.655149",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250885\nCopia Pag. 1 de 2\nNombre : ISABEL CRISTINA RESTREPO ANGEL\nN. peticion : IHQ250885\nN.Identificación : CC. 22128160\nGenero : FEMENINO\nEdad : 73 años 30 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nCUADRANTECTOMIA\nCENTRAL DERECHA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en material institucional con matrícula\n\"M2508385\" y diagnóstico \" LESIONES PAPILARES A CARACTERIZAR MEDIANTE INMUNOHISTOQUÍMICA\n(#3). PAPILOMAS INTRADUCTALES (#2). HIPERPLASIA DUCTAL USUAL. METAPLASIA APOCRINA. ECTASIA\nDUCTAL.\"\nPrevia revisión de la histología, se solicitan estudios con los ancituerpos para CK5/6, p63, Calponina y\nReceptor de estrógenos.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nLa muestra corresponde a tejido mamario con proliferación papilar, constituida por tallos fibrovasculares\nrecubiertos por células epiteliales con arquitectura ordenada. Sin necrosis. Se acompaña de metaplasia\napocrina, con cambios fibroquísticos.\nLás lesiones papilares de interés están tapizadas tanto en los bordes de la lesión como en los tallos\nfibrovasculares por células mioepiteliales (p56+, calponina+, CK5/6+) y las células epiteliales expresan\nreceptor de estrógenos fuerte, pero parcheado. \nDIAGNÓSTICO\nMama derecha. Lesión. Cuadrantectomía. Inmunhistoquímica.\nPAPILOMAS INTRADUCTALES.\nNEGATIVO PARA CARCINOMA.\nJOSE BRAVO BONILLA\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 20 ---\nIHQ250885\nCopia Pag. 2 de 2\nNombre : ISABEL CRISTINA RESTREPO ANGEL\nN. peticion : IHQ250885\nN.Identificación : CC. 22128160\nGenero : FEMENINO\nEdad : 73 años 30 dias\nEPS : COMFENALCO VALLE\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 13/08/2025\nFecha Informe : 01/09/2025\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Calponina, Receptor de Estrógeno",
+      "Descripcion macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material institucional con matrícula \"M2508385\" y diagnóstico \" LESIONES PAPILARES A CARACTERIZAR MEDIANTE INMUNOHISTOQUÍMICA (#3). PAPILOMAS INTRADUCTALES (#2). HIPERPLASIA DUCTAL USUAL. METAPLASIA APOCRINA. ECTASIA DUCTAL.\" Previa revisión de la histología, se solicitan estudios con los ancituerpos para CK5/6, p63, Calponina y Receptor de estrógenos.",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: La muestra corresponde a tejido mamario con proliferación papilar, constituida por tallos fibrovasculares recubiertos por células epiteliales con arquitectura ordenada. Sin necrosis. Se acompaña de metaplasia apocrina, con cambios fibroquísticos. Lás lesiones papilares de interés están tapizadas tanto en los bordes de la lesión como en los tallos fibrovasculares por células mioepiteliales (p56+, calponina+, CK5/6+) y las células epiteliales expresan receptor de estrógenos fuerte, pero parcheado.",
+      "Descripcion Diagnostico": "Mama derecha. Lesión. Cuadrantectomía. Inmunhistoquímica. PAPILOMAS INTRADUCTALES. NEGATIVO PARA CARCINOMA.",
+      "IHQ_ORGANO": "MAMA DERECHA",
+      "Organo": "CUADRANTECTOMIA CENTRAL DERECHA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "Mama derecha. Lesión. Cuadrantectomía. Inmunhistoquímica. PAPILOMAS INTRADUCTALES. NEGATIVO PARA CARCINOMA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "receptor de estrógenos fuerte, pero parcheado",
+      "IHQ_CALPONINA": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO (fuerte)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 141,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama derecha. Lesión. Cuadrantectomía. Inmunhistoquímica.\nPAPILOMAS INTRADUCTALES.\nNEGATIVO PARA CARCINOMA.",
+      "valor_corregido": "Mama derecha. Lesión. Cuadrantectomía. Inmunhistoquímica. PAPILOMAS INTRADUCTALES. NEGATIVO PARA CARCINOMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250885",
+      "timestamp": "2026-04-15T16:15:02.654721"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 48
+  }
+}

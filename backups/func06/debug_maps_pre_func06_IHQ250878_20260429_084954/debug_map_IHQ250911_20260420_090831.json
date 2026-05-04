@@ -1,0 +1,150 @@
+{
+  "session_id": "IHQ250911_20260420_090831",
+  "numero_peticion": "IHQ250911",
+  "timestamp": "2026-04-20T09:08:31.065993",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250911\nCopia Pag. 1 de 2\nNombre : ELIZABETH CRUZ LOZANO\nN. peticion : IHQ250911\nN.Identificación : CC. 31946312\nGenero : FEMENINO\nEdad : 59 años\nEPS : NUEVA EPS\nMédico tratante : JORGE MORENO\nServicio : DERMATOLOGIA\nFecha Ingreso : 21/08/2025\nFecha Informe : 05/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION TEMPORAL\nIZQUIERDA\n2025-08-21\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en material extrainstitucional rotulado\n\"P241212148\" con diagnóstico \"HALLAZGOS HISTOMORFOLÓGICOS QUE FAVORECEN PARA DERMATITIS\nCRÓNICA, PERIVASCULAR SUPERFICIAL Y PROFUNDA DE TIPO LIMFOPLASMOCITARIO A CARACTERIZACIÓN\nMEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\"\nPrevia revisión de la histología se solicitan coloraciones con los anticuerpos para CD3, CD4, CD8, CD38,\nKappa, Lambda, CD56 y PAX-5.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nFragmentos\nde\npiel\nque\nmuestran\nepidermis\ncon\nhiperqueratosis\nacompañada\nde\nfocos\nde\nparaqueratosis. Se observa acantólisis focal y presencia de agregados de polimorfonucleares neutrófilos\nen el estrato córneo y en áreas intraepidérmicas. La dermis superficial exhibe infiltrado inflamatorio\ncrónico leve a moderado, de disposición perivascular.\nEl infiltrado inflamatorio corresponde a una población mixta de linfocitos T (CD3+, con predominio CD4\nsobre CD8), linfocitos B escasos (PAX5+), y plasmocitos policlonales (CD38+ sin restricción de\ncadenas\nligeras\nkappa/lambda).\nNo\nse\nevidencia\nmonoclonalidad\nni\nexpresión\naberrante\nen\nlos\nmarcadores aplicados.\nDIAGNÓSTICO\nPiel. Lesiones en la región temporal izquierda. Biopsia por sacabocado #3. Inmunohistoquímica.\nHALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE SUGIEREN DERMATITIS\nACANTOLÍTICA.\nCOMENTARIOS\nEl perfil inmunohistoquímico del infiltrado inflamatorio cutáneo es compatible con un proceso reactivo,\ndado el predominio de linfocitos T CD4+, la presencia de escasos linfocitos B y plasmocitos policlonales,\nsin evidencia de restricción de cadenas ligeras ni de fenotipo aberrante.\nNo se identifican características de linfoproliferación clonal en la muestra analizada.\nSe recomienda correlacionar con los hallazgos clínicos e histológicos y, de persistir la sospecha de\nproceso linfoproliferativo, considerar estudios adicionales.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---\nIHQ250911\nCopia Pag. 2 de 2\nNombre : ELIZABETH CRUZ LOZANO\nN. peticion : IHQ250911\nN.Identificación : CC. 31946312\nGenero : FEMENINO\nEdad : 59 años\nEPS : NUEVA EPS\nMédico tratante : JORGE MORENO\nServicio : DERMATOLOGIA\nFecha Ingreso : 21/08/2025\nFecha Informe : 05/09/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 69 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 4207,
+      "reduccion_porcentaje": 97.87
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250911",
+      "caso_num": 33,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ELIZABETH CRUZ LOZANO",
+      "numero_peticion": "IHQ250911",
+      "identificacion": "31946312",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "59",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JORGE MORENO",
+      "servicio": "DERMATOLOGIA",
+      "fecha_ingreso": "21/08/2025",
+      "fecha_informe": "05/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250911",
+      "N. de identificación": "31946312",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "DERMATOLOGIA",
+      "Médico tratante": "JORGE MORENO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/08/2025",
+      "Fecha Informe": "05/09/2025",
+      "nombres": "ELIZABETH",
+      "Primer nombre": "ELIZABETH",
+      "Segundo nombre": "",
+      "apellidos": "CRUZ LOZANO",
+      "Primer apellido": "CRUZ",
+      "Segundo apellido": "LOZANO",
+      "nombre_formal": "CRUZ LOZANO, ELIZABETH",
+      "diagnostico": "Piel. Lesiones en la región temporal izquierda. Biopsia por sacabocado #3. Inmunohistoquímica. HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE SUGIEREN DERMATITIS ACANTOLÍTICA.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Fragmentos de piel que muestran epidermis con hiperqueratosis acompañada de focos de paraqueratosis. Se observa acantólisis focal y presencia de agregados de polimorfonucleares neutrófilos en el estrato córneo y en áreas intraepidérmicas. La dermis superficial exhibe infiltrado inflamatorio crónico leve a moderado, de disposición perivascular. El infiltrado inflamatorio corresponde a una población mixta de linfocitos T (CD3+, con predominio CD4 sobre CD8), linfocitos B escasos (PAX5+), y plasmocitos policlonales (CD38+ sin restricción de cadenas ligeras kappa/lambda). No se evidencia monoclonalidad ni expresión aberrante en los marcadores aplicados.",
+      "descripcion_macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material extrainstitucional rotulado \"P241212148\" con diagnóstico \"HALLAZGOS HISTOMORFOLÓGICOS QUE FAVORECEN PARA DERMATITIS CRÓNICA, PERIVASCULAR SUPERFICIAL Y PROFUNDA DE TIPO LIMFOPLASMOCITARIO A CARACTERIZACIÓN MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\" Previa revisión de la histología se solicitan coloraciones con los anticuerpos para CD3, CD4, CD8, CD38, Kappa, Lambda, CD56 y PAX-5.",
+      "ihq_organo": "PIEL",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "DERMATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "El perfil inmunohistoquímico del infiltrado inflamatorio cutáneo es compatible con un proceso reactivo, dado el predominio de linfocitos T CD4+, la presencia de escasos linfocitos B y plasmocitos policlonales, sin evidencia de restricción de cadenas ligeras ni de fenotipo aberrante. No se identifican características de linfoproliferación clonal en la muestra analizada. Se recomienda correlacionar con los hallazgos clínicos e histológicos y, de persistir la sospecha de proceso linfoproliferativo, considerar estudios adicionales.",
+      "IHQ_ORGANO": "PIEL",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_LAMBDA": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD4": "POSITIVO",
+      "extraction_timestamp": "2026-04-20T09:08:31.324376",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250911\nCopia Pag. 1 de 2\nNombre : ELIZABETH CRUZ LOZANO\nN. peticion : IHQ250911\nN.Identificación : CC. 31946312\nGenero : FEMENINO\nEdad : 59 años\nEPS : NUEVA EPS\nMédico tratante : JORGE MORENO\nServicio : DERMATOLOGIA\nFecha Ingreso : 21/08/2025\nFecha Informe : 05/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION TEMPORAL\nIZQUIERDA\n2025-08-21\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizar estudios de inmunohistoquímica en material extrainstitucional rotulado\n\"P241212148\" con diagnóstico \"HALLAZGOS HISTOMORFOLÓGICOS QUE FAVORECEN PARA DERMATITIS\nCRÓNICA, PERIVASCULAR SUPERFICIAL Y PROFUNDA DE TIPO LIMFOPLASMOCITARIO A CARACTERIZACIÓN\nMEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\"\nPrevia revisión de la histología se solicitan coloraciones con los anticuerpos para CD3, CD4, CD8, CD38,\nKappa, Lambda, CD56 y PAX-5.\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nFragmentos\nde\npiel\nque\nmuestran\nepidermis\ncon\nhiperqueratosis\nacompañada\nde\nfocos\nde\nparaqueratosis. Se observa acantólisis focal y presencia de agregados de polimorfonucleares neutrófilos\nen el estrato córneo y en áreas intraepidérmicas. La dermis superficial exhibe infiltrado inflamatorio\ncrónico leve a moderado, de disposición perivascular.\nEl infiltrado inflamatorio corresponde a una población mixta de linfocitos T (CD3+, con predominio CD4\nsobre CD8), linfocitos B escasos (PAX5+), y plasmocitos policlonales (CD38+ sin restricción de\ncadenas\nligeras\nkappa/lambda).\nNo\nse\nevidencia\nmonoclonalidad\nni\nexpresión\naberrante\nen\nlos\nmarcadores aplicados.\nDIAGNÓSTICO\nPiel. Lesiones en la región temporal izquierda. Biopsia por sacabocado #3. Inmunohistoquímica.\nHALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE SUGIEREN DERMATITIS\nACANTOLÍTICA.\nCOMENTARIOS\nEl perfil inmunohistoquímico del infiltrado inflamatorio cutáneo es compatible con un proceso reactivo,\ndado el predominio de linfocitos T CD4+, la presencia de escasos linfocitos B y plasmocitos policlonales,\nsin evidencia de restricción de cadenas ligeras ni de fenotipo aberrante.\nNo se identifican características de linfoproliferación clonal en la muestra analizada.\nSe recomienda correlacionar con los hallazgos clínicos e histológicos y, de persistir la sospecha de\nproceso linfoproliferativo, considerar estudios adicionales.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 68 ---\nIHQ250911\nCopia Pag. 2 de 2\nNombre : ELIZABETH CRUZ LOZANO\nN. peticion : IHQ250911\nN.Identificación : CC. 31946312\nGenero : FEMENINO\nEdad : 59 años\nEPS : NUEVA EPS\nMédico tratante : JORGE MORENO\nServicio : DERMATOLOGIA\nFecha Ingreso : 21/08/2025\nFecha Informe : 05/09/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 69 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD38, CD4, Lambda, PAX5",
+      "Descripcion macroscopica": "Se recibe orden para realizar estudios de inmunohistoquímica en material extrainstitucional rotulado \"P241212148\" con diagnóstico \"HALLAZGOS HISTOMORFOLÓGICOS QUE FAVORECEN PARA DERMATITIS CRÓNICA, PERIVASCULAR SUPERFICIAL Y PROFUNDA DE TIPO LIMFOPLASMOCITARIO A CARACTERIZACIÓN MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\" Previa revisión de la histología se solicitan coloraciones con los anticuerpos para CD3, CD4, CD8, CD38, Kappa, Lambda, CD56 y PAX-5.",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Fragmentos de piel que muestran epidermis con hiperqueratosis acompañada de focos de paraqueratosis. Se observa acantólisis focal y presencia de agregados de polimorfonucleares neutrófilos en el estrato córneo y en áreas intraepidérmicas. La dermis superficial exhibe infiltrado inflamatorio crónico leve a moderado, de disposición perivascular. El infiltrado inflamatorio corresponde a una población mixta de linfocitos T (CD3+, con predominio CD4 sobre CD8), linfocitos B escasos (PAX5+), y plasmocitos policlonales (CD38+ sin restricción de cadenas ligeras kappa/lambda). No se evidencia monoclonalidad ni expresión aberrante en los marcadores aplicados.",
+      "Descripcion Diagnostico": "Piel. Lesiones en la región temporal izquierda. Biopsia por sacabocado #3. Inmunohistoquímica. HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE SUGIEREN DERMATITIS ACANTOLÍTICA.",
+      "IHQ_ORGANO": "PIEL",
+      "Organo": "LESION TEMPORAL IZQUIERDA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "Piel. Lesiones en la región temporal izquierda. Biopsia por sacabocado #3. Inmunohistoquímica. HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE SUGIEREN DERMATITIS ACANTOLÍTICA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD4": "POSITIVO",
+      "IHQ_LAMBDA": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Piel. Lesiones en la región temporal izquierda. Biopsia por sacabocado #3. Inmunohistoquímica.\nHALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE SUGIEREN DERMATITIS\nACANTOLÍTICA.",
+      "valor_corregido": "Piel. Lesiones en la región temporal izquierda. Biopsia por sacabocado #3. Inmunohistoquímica. HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA QUE SUGIEREN DERMATITIS ACANTOLÍTICA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250911",
+      "timestamp": "2026-04-20T09:08:31.323939"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El perfil inmunohistoquímico del infiltrado inflamatorio cutáneo es compatible con un proceso reactivo,\ndado el predominio de linfocitos T CD4+, la presencia de escasos linfocitos B y plasmocitos policlonales,\nsin evidencia de restricción de cadenas ligeras ni de fenotipo aberrante.\nNo se identifican características de linfoproliferación clonal en la muestra analizada.\nSe recomienda correlacionar con los hallazgos clínicos e histológicos y, de persistir la sospecha de\nproceso linfoproliferativo, considerar estudios adicionales.",
+      "valor_corregido": "El perfil inmunohistoquímico del infiltrado inflamatorio cutáneo es compatible con un proceso reactivo, dado el predominio de linfocitos T CD4+, la presencia de escasos linfocitos B y plasmocitos policlonales, sin evidencia de restricción de cadenas ligeras ni de fenotipo aberrante. No se identifican características de linfoproliferación clonal en la muestra analizada. Se recomienda correlacionar con los hallazgos clínicos e histológicos y, de persistir la sospecha de proceso linfoproliferativo, considerar estudios adicionales.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250911",
+      "timestamp": "2026-04-20T09:08:31.323945"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 50
+  }
+}

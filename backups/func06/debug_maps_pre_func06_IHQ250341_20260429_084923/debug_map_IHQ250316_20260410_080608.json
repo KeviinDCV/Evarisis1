@@ -1,0 +1,160 @@
+{
+  "session_id": "IHQ250316_20260410_080608",
+  "numero_peticion": "IHQ250316",
+  "timestamp": "2026-04-10T08:06:08.768602",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250316\nCopia Pag. 1 de 2\nNombre : MARIA LUCIA LASSO GAVIRIA\nN. peticion : IHQ250316\nN.Identificación : CC. 30733370\nGenero : FEMENINO\nEdad : 63 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UCI 5\nFecha Ingreso : 31/03/2025\nFecha Informe : 02/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2503311” al bloque 1 que corresponde a “biopsia hepática” con diagnóstico de\n“ADENOCARCINOMA MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con TTF1,Ck7, Ck20, CDX2, GATA3, PAX8, CEA, CA19-9,\nCk19.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales son:\nPOSITIVAS PARA: CK7, TTF1. \nNEGATIVAS PARA: CK20, CK19, CA19-9, PAX8, GATA3, CEA, CDX2.\nDIAGNÓSTICO\nHígado. Lesión. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS FAVORECEN UN ADENOCARCINOMA METASTASICO DE ORIGEN PULMONAR.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---\nIHQ250316\nCopia Pag. 2 de 2\nNombre : MARIA LUCIA LASSO GAVIRIA\nN. peticion : IHQ250316\nN.Identificación : CC. 30733370\nGenero : FEMENINO\nEdad : 63 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UCI 5\nFecha Ingreso : 31/03/2025\nFecha Informe : 02/04/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3014,
+      "reduccion_porcentaje": 98.31
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250316",
+      "caso_num": 3,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK19": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "nombre_completo": "MARIA LUCIA LASSO GAVIRIA",
+      "numero_peticion": "IHQ250316",
+      "identificacion": "30733370",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "63",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "",
+      "fecha_ingreso": "31/03/2025",
+      "fecha_informe": "02/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250316",
+      "N. de identificación": "30733370",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "31/03/2025",
+      "Fecha Informe": "02/04/2025",
+      "nombres": "MARIA LUCIA",
+      "Primer nombre": "MARIA",
+      "Segundo nombre": "LUCIA",
+      "apellidos": "LASSO GAVIRIA",
+      "Primer apellido": "LASSO",
+      "Segundo apellido": "GAVIRIA",
+      "nombre_formal": "LASSO GAVIRIA, MARIA LUCIA",
+      "diagnostico": "Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS FAVORECEN UN ADENOCARCINOMA METASTASICO DE ORIGEN PULMONAR.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son: POSITIVAS PARA: CK7, TTF1. NEGATIVAS PARA: CK20, CK19, CA19-9, PAX8, GATA3, CEA, CDX2.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2503311\" al bloque 1 que corresponde a \"biopsia hepática\" con diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO\". Previa revisión de la histología, se realizan niveles histológicos para tinción con TTF1,CK7, CK20, CDX2, GATA3, PAX8, CEA, CA19-9, Ck19.",
+      "ihq_organo": "HÍGADO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "TTF-1, CK7, CK20, CDX2, GATA3, PAX8, CEA, CA19-9, CK19",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "HÍGADO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, CK7, CK20, CDX2, GATA3, PAX8, CEA, CA19-9, CK19",
+      "extraction_timestamp": "2026-04-10T08:06:09.013966",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250316\nCopia Pag. 1 de 2\nNombre : MARIA LUCIA LASSO GAVIRIA\nN. peticion : IHQ250316\nN.Identificación : CC. 30733370\nGenero : FEMENINO\nEdad : 63 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UCI 5\nFecha Ingreso : 31/03/2025\nFecha Informe : 02/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como “M2503311” al bloque 1 que corresponde a “biopsia hepática” con diagnóstico de\n“ADENOCARCINOMA MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con TTF1,Ck7, Ck20, CDX2, GATA3, PAX8, CEA, CA19-9,\nCk19.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales son:\nPOSITIVAS PARA: CK7, TTF1. \nNEGATIVAS PARA: CK20, CK19, CA19-9, PAX8, GATA3, CEA, CDX2.\nDIAGNÓSTICO\nHígado. Lesión. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS FAVORECEN UN ADENOCARCINOMA METASTASICO DE ORIGEN PULMONAR.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---\nIHQ250316\nCopia Pag. 2 de 2\nNombre : MARIA LUCIA LASSO GAVIRIA\nN. peticion : IHQ250316\nN.Identificación : CC. 30733370\nGenero : FEMENINO\nEdad : 63 años 10 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : UCI 5\nFecha Ingreso : 31/03/2025\nFecha Informe : 02/04/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "TTF-1, CK7, CK20, CDX2, GATA3, PAX8, CEA, CA19-9, CK19",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2503311” al bloque 1 que corresponde a “biopsia hepática” con diagnóstico de “ADENOCARCINOMA MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con TTF1,Ck7, Ck20, CDX2, GATA3, PAX8, CEA, CA19-9, Ck19.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son: POSITIVAS PARA: CK7, TTF1. NEGATIVAS PARA: CK20, CK19, CA19-9, PAX8, GATA3, CEA, CDX2.",
+      "Descripcion Diagnostico": "Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS FAVORECEN UN ADENOCARCINOMA METASTASICO DE ORIGEN PULMONAR.",
+      "IHQ_ORGANO": "HÍGADO",
+      "Organo": "BX HIGADO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTASICO DE ORIGEN PULMONAR",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CK19": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 135,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica.\nLOS HALLAZGOS FAVORECEN UN ADENOCARCINOMA METASTASICO DE ORIGEN PULMONAR.",
+      "valor_corregido": "Hígado. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS FAVORECEN UN ADENOCARCINOMA METASTASICO DE ORIGEN PULMONAR.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250316",
+      "timestamp": "2026-04-10T08:06:09.013680"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2503311” al bloque 1 que corresponde a “biopsia hepática” con diagnóstico de “ADENOCARCINOMA MODERADAMENTE DIFERENCIADO”. Previa revisión de la histología, se realizan niveles histológicos para tinción con TTF1,Ck7, Ck20, CDX2, GATA3, PAX8, CEA, CA19-9, Ck19.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2503311\" al bloque 1 que corresponde a \"biopsia hepática\" con diagnóstico de \"ADENOCARCINOMA MODERADAMENTE DIFERENCIADO\". Previa revisión de la histología, se realizan niveles histológicos para tinción con TTF1,CK7, CK20, CDX2, GATA3, PAX8, CEA, CA19-9, Ck19.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250316",
+      "timestamp": "2026-04-10T08:06:09.013686"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 54
+  }
+}

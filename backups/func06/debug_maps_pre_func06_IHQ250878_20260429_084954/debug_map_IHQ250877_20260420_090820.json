@@ -1,0 +1,182 @@
+{
+  "session_id": "IHQ250877_20260420_090820",
+  "numero_peticion": "IHQ250877",
+  "timestamp": "2026-04-20T09:08:20.262447",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250877\nCopia Pag. 1 de 2\nNombre : ANA ELIZABETH CAICEDO CAICEDO\nN. peticion : IHQ250877\nN.Identificación : CC. 41107841\nGenero : FEMENINO\nEdad : 49 años 12 dias\nEPS : NUEVA EPS\nMédico tratante : DIEGO JARAMILLO VELASQUEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 12/08/2025\nFecha Informe : 21/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nOVARIOS + TUBAS\nBILATERALES\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2509367 que corresponde a A. “Trompa + tumor ovario derecho” y B. “Trompa + tumor ovario\nizquierdo”\ncon diagnóstico de \" NEOPLASIA EN PATRÓN SÓLIDO DE CÉLULAS REDONDAS Y AZULES A\nCLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se realizan\nniveles histológicos al bloque A y B para tinción con CD3 , CD5, CD10 , CD15 , CD20 , PAX-5, BCL6 , BCL2,\nMUM-1 , Ki67, CD38, C-MYC, Cyclina, CD34, CD30 y TDT.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos\nse\nanalizan\ntinciones\nde\nInmunohistoquímica\nrealizadas\nen\nla\nplataforma\nautomatizada\nVENTANA.\nLas células neoplásicas muestran un perfil inmunofenotípico positivo para los marcadores de estirpe B\nCD20 y PAX-5, con positividad fuerte y difusa para BCL2 (>80%) y positiva heterogénea para BCL6\n(30%); se observa una población acompañante de linfocitos T positivos para CD3 y CD5; por el contrario,\nresultan negativos los marcadores CD10, MUM-1, CD15, CD30, CD34, CD38, ciclina D1 y TDT, así como la\ntinción para CMYC; el índice de proliferación Ki-67 es alto, alcanzando el 80%.\nDIAGNÓSTICO\nAnexo derecho e izquierdo. Salpingooforectomía Bilateral. Estudio de inmunohistoquímica.\n- LINFOMA DIFUSO DE CELULAS B FENOTIOO CENTROGERMINAL\nCOMENTARIOS\nEl\nresultado\nde\neste\nestudio\ndebe\nestar\nen\nestricta\ncorrelación\ncon\ncuadro\nclínico\ny\nestudios\nhematológicos completarios por biología molecular para reordenamientos en MYC y BCL2.\nCaso valorado en conjunto con Dra. María Ximena Varela (patóloga). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---\nIHQ250877\nCopia Pag. 2 de 2\nNombre : ANA ELIZABETH CAICEDO CAICEDO\nN. peticion : IHQ250877\nN.Identificación : CC. 41107841\nGenero : FEMENINO\nEdad : 49 años 12 dias\nEPS : NUEVA EPS\nMédico tratante : DIEGO JARAMILLO VELASQUEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 12/08/2025\nFecha Informe : 21/08/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3893,
+      "reduccion_porcentaje": 98.02
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250877",
+      "caso_num": 1,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_BCL2": "POSITIVO (fuerte y difusa)",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "NEGATIVO",
+      "IHQ_BCL6": "POSITIVO HETEROGÉNEO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "nombre_completo": "ANA ELIZABETH CAICEDO CAICEDO",
+      "numero_peticion": "IHQ250877",
+      "identificacion": "41107841",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "49",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "DIEGO JARAMILLO VELASQUEZ",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "12/08/2025",
+      "fecha_informe": "21/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250877",
+      "N. de identificación": "41107841",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "DIEGO JARAMILLO VELASQUEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "12/08/2025",
+      "Fecha Informe": "21/08/2025",
+      "nombres": "ANA ELIZABETH",
+      "Primer nombre": "ANA",
+      "Segundo nombre": "ELIZABETH",
+      "apellidos": "CAICEDO CAICEDO",
+      "Primer apellido": "CAICEDO",
+      "Segundo apellido": "CAICEDO",
+      "nombre_formal": "CAICEDO CAICEDO, ANA ELIZABETH",
+      "diagnostico": "Anexo derecho e izquierdo. Salpingooforectomía Bilateral. Estudio de inmunohistoquímica. - LINFOMA DIFUSO DE CELULAS B FENOTIOO CENTROGERMINAL",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células neoplásicas muestran un perfil inmunofenotípico positivo para los marcadores de estirpe B CD20 y PAX-5, con positividad fuerte y difusa para BCL2 (>80%) y positiva heterogénea para BCL6 (30%); se observa una población acompañante de linfocitos T positivos para CD3 y CD5; por el contrario, resultan negativos los marcadores CD10, MUM-1, CD15, CD30, CD34, CD38, ciclina D1 y TDT, así como la tinción para CMYC; el índice de proliferación KI-67 es alto, alcanzando el 80%.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2509367 que corresponde a A. \"Trompa + tumor ovario derecho\" y B. \"Trompa + tumor ovario izquierdo\" con diagnóstico de \" NEOPLASIA EN PATRÓN SÓLIDO DE CÉLULAS REDONDAS Y AZULES A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se realizan niveles histológicos al bloque A y B para tinción con CD3 , CD5, CD10 , CD15 , CD20 , PAX-5, BCL6 , BCL2, MUM-1 , KI-67, CD38, C-MYC, Cyclina, CD34, CD30 y TDT.",
+      "ihq_organo": "ANEXO DERECHO E IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD5, CD10, CD15, CD20, PAX 5, BCL6, BCL2, MUM 1, Ki-67, CD38, CMYC, CYCLINA, CD34, CD30, TDT",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "El resultado de este estudio debe estar en estricta correlación con cuadro clínico y estudios hematológicos completarios por biología molecular para reordenamientos en MYC y BCL2. Caso valorado en conjunto con Dra. María Ximena Varela (patóloga). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 2 --- IHQ250877 Copia Pag. 2 de 2 Nombre : ANA ELIZABETH CAICEDO CAICEDO N. peticion : IHQ250877 N.Identificación : CC. 41107841 Genero : FEMENINO Edad : 49 años 12 dias EPS : NUEVA EPS Médico tratante : DIEGO JARAMILLO VELASQUEZ Servicio : HEMATO ONCOLOGIA HOSP ADULTO Fecha Ingreso : 12/08/2025 Fecha Informe : 21/08/2025",
+      "IHQ_ORGANO": "ANEXO DERECHO E IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD5, CD10, CD15, CD20, PAX 5, BCL6, BCL2, MUM 1, Ki-67, CD38, CMYC, CYCLINA, CD34, CD30, TDT",
+      "IHQ_CD34": "POSITIVO",
+      "extraction_timestamp": "2026-04-20T09:08:20.779625",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250877\nCopia Pag. 1 de 2\nNombre : ANA ELIZABETH CAICEDO CAICEDO\nN. peticion : IHQ250877\nN.Identificación : CC. 41107841\nGenero : FEMENINO\nEdad : 49 años 12 dias\nEPS : NUEVA EPS\nMédico tratante : DIEGO JARAMILLO VELASQUEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 12/08/2025\nFecha Informe : 21/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nOVARIOS + TUBAS\nBILATERALES\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo M2509367 que corresponde a A. “Trompa + tumor ovario derecho” y B. “Trompa + tumor ovario\nizquierdo”\ncon diagnóstico de \" NEOPLASIA EN PATRÓN SÓLIDO DE CÉLULAS REDONDAS Y AZULES A\nCLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se realizan\nniveles histológicos al bloque A y B para tinción con CD3 , CD5, CD10 , CD15 , CD20 , PAX-5, BCL6 , BCL2,\nMUM-1 , Ki67, CD38, C-MYC, Cyclina, CD34, CD30 y TDT.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos\nse\nanalizan\ntinciones\nde\nInmunohistoquímica\nrealizadas\nen\nla\nplataforma\nautomatizada\nVENTANA.\nLas células neoplásicas muestran un perfil inmunofenotípico positivo para los marcadores de estirpe B\nCD20 y PAX-5, con positividad fuerte y difusa para BCL2 (>80%) y positiva heterogénea para BCL6\n(30%); se observa una población acompañante de linfocitos T positivos para CD3 y CD5; por el contrario,\nresultan negativos los marcadores CD10, MUM-1, CD15, CD30, CD34, CD38, ciclina D1 y TDT, así como la\ntinción para CMYC; el índice de proliferación Ki-67 es alto, alcanzando el 80%.\nDIAGNÓSTICO\nAnexo derecho e izquierdo. Salpingooforectomía Bilateral. Estudio de inmunohistoquímica.\n- LINFOMA DIFUSO DE CELULAS B FENOTIOO CENTROGERMINAL\nCOMENTARIOS\nEl\nresultado\nde\neste\nestudio\ndebe\nestar\nen\nestricta\ncorrelación\ncon\ncuadro\nclínico\ny\nestudios\nhematológicos completarios por biología molecular para reordenamientos en MYC y BCL2.\nCaso valorado en conjunto con Dra. María Ximena Varela (patóloga). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---\nIHQ250877\nCopia Pag. 2 de 2\nNombre : ANA ELIZABETH CAICEDO CAICEDO\nN. peticion : IHQ250877\nN.Identificación : CC. 41107841\nGenero : FEMENINO\nEdad : 49 años 12 dias\nEPS : NUEVA EPS\nMédico tratante : DIEGO JARAMILLO VELASQUEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 12/08/2025\nFecha Informe : 21/08/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 3 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD5, CD10, CD15, CD20, PAX 5, BCL6, BCL2, MUM 1, Ki-67, CD38, CMYC, CYCLINA, CD34, CD30, TDT",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2509367 que corresponde a A. “Trompa + tumor ovario derecho” y B. “Trompa + tumor ovario izquierdo” con diagnóstico de \" NEOPLASIA EN PATRÓN SÓLIDO DE CÉLULAS REDONDAS Y AZULES A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se realizan niveles histológicos al bloque A y B para tinción con CD3 , CD5, CD10 , CD15 , CD20 , PAX-5, BCL6 , BCL2, MUM-1 , Ki67, CD38, C-MYC, Cyclina, CD34, CD30 y TDT.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células neoplásicas muestran un perfil inmunofenotípico positivo para los marcadores de estirpe B CD20 y PAX-5, con positividad fuerte y difusa para BCL2 (>80%) y positiva heterogénea para BCL6 (30%); se observa una población acompañante de linfocitos T positivos para CD3 y CD5; por el contrario, resultan negativos los marcadores CD10, MUM-1, CD15, CD30, CD34, CD38, ciclina D1 y TDT, así como la tinción para CMYC; el índice de proliferación Ki-67 es alto, alcanzando el 80%.",
+      "Descripcion Diagnostico": "Anexo derecho e izquierdo. Salpingooforectomía Bilateral. Estudio de inmunohistoquímica. - LINFOMA DIFUSO DE CELULAS B FENOTIOO CENTROGERMINAL",
+      "IHQ_ORGANO": "ANEXO DERECHO E IZQUIERDO",
+      "Organo": "OVARIOS + TUBAS BILATERALES",
+      "Diagnostico Coloracion": "NEOPLASIA EN PATRÓN SÓLIDO DE CÉLULAS REDONDAS Y AZULES A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "LINFOMA DIFUSO DE CELULAS B FENOTIOO CENTROGERMINAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD10": "NO MENCIONADO",
+      "IHQ_CD15": "NO MENCIONADO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "NEGATIVO",
+      "IHQ_BCL6": "POSITIVO HETEROGÉNEO",
+      "IHQ_BCL2": "POSITIVO (fuerte y difusa)",
+      "IHQ_MUM1": "NO MENCIONADO",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_CD38": "NO MENCIONADO",
+      "IHQ_CMYC": "NO MENCIONADO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD30": "NO MENCIONADO",
+      "IHQ_TDT": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 128,
+      "campos_completos": 50,
+      "biomarcadores_encontrados": 15,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 128,
+      "total_campos_completos": 50
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Anexo derecho e izquierdo. Salpingooforectomía Bilateral. Estudio de inmunohistoquímica.\n- LINFOMA DIFUSO DE CELULAS B FENOTIOO CENTROGERMINAL",
+      "valor_corregido": "Anexo derecho e izquierdo. Salpingooforectomía Bilateral. Estudio de inmunohistoquímica. - LINFOMA DIFUSO DE CELULAS B FENOTIOO CENTROGERMINAL",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250877",
+      "timestamp": "2026-04-20T09:08:20.779163"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2509367 que corresponde a A. “Trompa + tumor ovario derecho” y B. “Trompa + tumor ovario izquierdo” con diagnóstico de \" NEOPLASIA EN PATRÓN SÓLIDO DE CÉLULAS REDONDAS Y AZULES A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se realizan niveles histológicos al bloque A y B para tinción con CD3 , CD5, CD10 , CD15 , CD20 , PAX-5, BCL6 , BCL2, MUM-1 , Ki67, CD38, C-MYC, Cyclina, CD34, CD30 y TDT.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como M2509367 que corresponde a A. \"Trompa + tumor ovario derecho\" y B. \"Trompa + tumor ovario izquierdo\" con diagnóstico de \" NEOPLASIA EN PATRÓN SÓLIDO DE CÉLULAS REDONDAS Y AZULES A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA\". Previa revisión de la histología, se realizan niveles histológicos al bloque A y B para tinción con CD3 , CD5, CD10 , CD15 , CD20 , PAX-5, BCL6 , BCL2, MUM-1 , KI-67, CD38, C-MYC, Cyclina, CD34, CD30 y TDT.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250877",
+      "timestamp": "2026-04-20T09:08:20.779169"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células neoplásicas muestran un perfil inmunofenotípico positivo para los marcadores de estirpe B CD20 y PAX-5, con positividad fuerte y difusa para BCL2 (>80%) y positiva heterogénea para BCL6 (30%); se observa una población acompañante de linfocitos T positivos para CD3 y CD5; por el contrario, resultan negativos los marcadores CD10, MUM-1, CD15, CD30, CD34, CD38, ciclina D1 y TDT, así como la tinción para CMYC; el índice de proliferación Ki-67 es alto, alcanzando el 80%.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células neoplásicas muestran un perfil inmunofenotípico positivo para los marcadores de estirpe B CD20 y PAX-5, con positividad fuerte y difusa para BCL2 (>80%) y positiva heterogénea para BCL6 (30%); se observa una población acompañante de linfocitos T positivos para CD3 y CD5; por el contrario, resultan negativos los marcadores CD10, MUM-1, CD15, CD30, CD34, CD38, ciclina D1 y TDT, así como la tinción para CMYC; el índice de proliferación KI-67 es alto, alcanzando el 80%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250877",
+      "timestamp": "2026-04-20T09:08:20.779170"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El\nresultado\nde\neste\nestudio\ndebe\nestar\nen\nestricta\ncorrelación\ncon\ncuadro\nclínico\ny\nestudios\nhematológicos completarios por biología molecular para reordenamientos en MYC y BCL2.\nCaso valorado en conjunto con Dra. María Ximena Varela (patóloga). \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 2 ---\nIHQ250877\nCopia Pag. 2 de 2\nNombre : ANA ELIZABETH CAICEDO CAICEDO\nN. peticion : IHQ250877\nN.Identificación : CC. 41107841\nGenero : FEMENINO\nEdad : 49 años 12 dias\nEPS : NUEVA EPS\nMédico tratante : DIEGO JARAMILLO VELASQUEZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 12/08/2025\nFecha Informe : 21/08/2025",
+      "valor_corregido": "El resultado de este estudio debe estar en estricta correlación con cuadro clínico y estudios hematológicos completarios por biología molecular para reordenamientos en MYC y BCL2. Caso valorado en conjunto con Dra. María Ximena Varela (patóloga). Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 2 --- IHQ250877 Copia Pag. 2 de 2 Nombre : ANA ELIZABETH CAICEDO CAICEDO N. peticion : IHQ250877 N.Identificación : CC. 41107841 Genero : FEMENINO Edad : 49 años 12 dias EPS : NUEVA EPS Médico tratante : DIEGO JARAMILLO VELASQUEZ Servicio : HEMATO ONCOLOGIA HOSP ADULTO Fecha Ingreso : 12/08/2025 Fecha Informe : 21/08/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250877",
+      "timestamp": "2026-04-20T09:08:20.779171"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 56
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "session_id": "IHQ250495_20260420_084342",
+  "numero_peticion": "IHQ250495",
+  "timestamp": "2026-04-20T08:43:42.075592",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250495\nCopia Pag. 1 de 1\nNombre : MONICA ANDREA VALAREZO DE LA\nCRUZ\nN. peticion : IHQ250495\nN.Identificación : CC. 66742775\nGenero : FEMENINO\nEdad : 54 años 14 dias\nEPS : NUEVA EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 08/05/2025\nFecha Informe : 15/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE GANGLIO AXILAR\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2504601, el cual corresponde a biopsia de ganglio linfático\naxilar derecho, con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes\nmarcadores: CD15, CD20, CD30 y MUM-1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nGanglio linfático con pérdida de su arquitectura por una proliferación linfoide consistente en células\ngrandes binucleadas con nucleolo prominente que recuerdan a células de Reed-Sternberg y células\nmomificadas, acompañadas de abundantes eosinófilos. Estas células grandes tienen inmunorreactividad\npara CD30+, CD15+ y MUM-1+, sin expresión de CD20-.\nDIAGNÓSTICO\n Ganglio linfático axilar derecho. Lesión. Biopsia. Estudio de inmunohistoquímica:\nLOS HALLAZGOS INMUNOHISTOQUÍMICOS Y MORFOLÓGICOS SUGIEREN UN LINFOMA DE HODGKIN,\nVARIANTE CLÁSICA\nCOMENTARIOS\nCaso revisado por Dra. Maria Ximena Varela, Hematopatóloga.\nJORGE MORENO ACUÑA\nResponsable del análisis:\nMédico Patólogo\nPatólogo Clínico\nReg. Med. 10798-05\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 58 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 2716,
+      "reduccion_porcentaje": 98.56
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250495",
+      "caso_num": 30,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "MONICA ANDREA VALAREZO DE LA CRUZ",
+      "numero_peticion": "IHQ250495",
+      "identificacion": "66742775",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "54",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "NATHALY PRADA",
+      "servicio": "RADIOLOGIA",
+      "fecha_ingreso": "08/05/2025",
+      "fecha_informe": "15/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250495",
+      "N. de identificación": "66742775",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "RADIOLOGIA",
+      "Médico tratante": "NATHALY PRADA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/05/2025",
+      "Fecha Informe": "15/05/2025",
+      "nombres": "MONICA ANDREA VALAREZO DE",
+      "Primer nombre": "MONICA",
+      "Segundo nombre": "ANDREA VALAREZO DE",
+      "apellidos": "LA CRUZ",
+      "Primer apellido": "LA",
+      "Segundo apellido": "CRUZ",
+      "nombre_formal": "LA CRUZ, MONICA ANDREA VALAREZO DE",
+      "diagnostico": "Ganglio linfático axilar derecho. Lesión. Biopsia. Estudio de inmunohistoquímica: LOS HALLAZGOS INMUNOHISTOQUÍMICOS Y MORFOLÓGICOS SUGIEREN UN LINFOMA DE HODGKIN, VARIANTE CLÁSICA",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Ganglio linfático con pérdida de su arquitectura por una proliferación linfoide consistente en células grandes binucleadas con nucleolo prominente que recuerdan a células de Reed-Sternberg y células momificadas, acompañadas de abundantes eosinófilos. Estas células grandes tienen inmunorreactividad para CD30+, CD15+ y MUM-1+, sin expresión de CD20-.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2504601, el cual corresponde a biopsia de ganglio linfático axilar derecho, con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes marcadores: CD15, CD20, CD30 y MUM-1.",
+      "ihq_organo": "GANGLIO LINFÁTICO AXILAR DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD15, CD20, CD30, MUM 1",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso revisado por Dra. Maria Ximena Varela, Hematopatóloga.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO AXILAR DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD15, CD20, CD30, MUM 1",
+      "IHQ_CD30": "POSITIVO",
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_CD20": "NEGATIVO",
+      "extraction_timestamp": "2026-04-20T08:43:42.291617",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250495\nCopia Pag. 1 de 1\nNombre : MONICA ANDREA VALAREZO DE LA\nCRUZ\nN. peticion : IHQ250495\nN.Identificación : CC. 66742775\nGenero : FEMENINO\nEdad : 54 años 14 dias\nEPS : NUEVA EPS\nMédico tratante : NATHALY PRADA\nServicio : RADIOLOGIA\nFecha Ingreso : 08/05/2025\nFecha Informe : 15/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE GANGLIO AXILAR\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2504601, el cual corresponde a biopsia de ganglio linfático\naxilar derecho, con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes\nmarcadores: CD15, CD20, CD30 y MUM-1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nGanglio linfático con pérdida de su arquitectura por una proliferación linfoide consistente en células\ngrandes binucleadas con nucleolo prominente que recuerdan a células de Reed-Sternberg y células\nmomificadas, acompañadas de abundantes eosinófilos. Estas células grandes tienen inmunorreactividad\npara CD30+, CD15+ y MUM-1+, sin expresión de CD20-.\nDIAGNÓSTICO\n Ganglio linfático axilar derecho. Lesión. Biopsia. Estudio de inmunohistoquímica:\nLOS HALLAZGOS INMUNOHISTOQUÍMICOS Y MORFOLÓGICOS SUGIEREN UN LINFOMA DE HODGKIN,\nVARIANTE CLÁSICA\nCOMENTARIOS\nCaso revisado por Dra. Maria Ximena Varela, Hematopatóloga.\nJORGE MORENO ACUÑA\nResponsable del análisis:\nMédico Patólogo\nPatólogo Clínico\nReg. Med. 10798-05\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 58 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD15, CD20, CD30, MUM 1",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2504601, el cual corresponde a biopsia de ganglio linfático axilar derecho, con diagnóstico de \"PROLIFERACIÓN HEMATOLINFOIDE\". Se ordenan los siguientes marcadores: CD15, CD20, CD30 y MUM-1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Ganglio linfático con pérdida de su arquitectura por una proliferación linfoide consistente en células grandes binucleadas con nucleolo prominente que recuerdan a células de Reed-Sternberg y células momificadas, acompañadas de abundantes eosinófilos. Estas células grandes tienen inmunorreactividad para CD30+, CD15+ y MUM-1+, sin expresión de CD20-.",
+      "Descripcion Diagnostico": "Ganglio linfático axilar derecho. Lesión. Biopsia. Estudio de inmunohistoquímica: LOS HALLAZGOS INMUNOHISTOQUÍMICOS Y MORFOLÓGICOS SUGIEREN UN LINFOMA DE HODGKIN, VARIANTE CLÁSICA",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO AXILAR DERECHO",
+      "Organo": "BX DE GANGLIO AXILAR DERECHO",
+      "Diagnostico Coloracion": "PROLIFERACIÓN HEMATOLINFOIDE",
+      "Diagnostico Principal": "LOS HALLAZGOS INMUNOHISTOQUÍMICOS Y MORFOLÓGICOS SUGIEREN UN LINFOMA DE HODGKIN, VARIANTE CLÁSICA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_CD20": "NEGATIVO",
+      "IHQ_CD30": "POSITIVO",
+      "IHQ_MUM1": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático axilar derecho. Lesión. Biopsia. Estudio de inmunohistoquímica:\nLOS HALLAZGOS INMUNOHISTOQUÍMICOS Y MORFOLÓGICOS SUGIEREN UN LINFOMA DE HODGKIN,\nVARIANTE CLÁSICA",
+      "valor_corregido": "Ganglio linfático axilar derecho. Lesión. Biopsia. Estudio de inmunohistoquímica: LOS HALLAZGOS INMUNOHISTOQUÍMICOS Y MORFOLÓGICOS SUGIEREN UN LINFOMA DE HODGKIN, VARIANTE CLÁSICA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250495",
+      "timestamp": "2026-04-20T08:43:42.291137"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 50
+  }
+}

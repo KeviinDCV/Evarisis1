@@ -1,0 +1,150 @@
+{
+  "session_id": "IHQ250491_20260415_161301",
+  "numero_peticion": "IHQ250491",
+  "timestamp": "2026-04-15T16:13:01.598272",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250491\nCopia Pag. 1 de 2\nNombre : YENIFFER DEL CARMEN ORELLANA\nCOLMENAREZ\nN. peticion : IHQ250491\nN.Identificación : SV. 7920957\nGenero : FEMENINO\nEdad : 43 años 25 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 07/05/2025\nFecha Informe : 22/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION COLON ASCEDENTE\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2504236” correspondiente a “ Lesión en colon ascendente” con diagnóstico de “INFILTRACIÓN POR\nADENOCARCINOMA GRADO HISTOLOGICO: G1 (BIEN DIFERENCIADO)” Previa revisión de la histología se\nrealizan niveles histológicos para tinción con los marcadores: MLH1, MSH2, PMS2, MSH6.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa revisión de las láminas de H&E evidencian un pequeño fragmento de adenocarcinoma invasivo en\nrelación a un lesión adenomatosa tubulo velloso con displasia de alto grado. En la realización de los\ncortes adicionales para las tinciones de inmunohistoquimica el fragmento de adenocarcinoma se pierde.\nLa marcación que se reporta es en relación al adenoma tubulo veolloso\nPrueba de Reparación de Desajuste de ADN\nSitio de la Muestra: Colon ascendente\nPruebas Realizadas en el bloque No. 1\nResultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste\n+Resultado de MLH1: Expresión nuclear intacta\n+Resultado de MSH2: Pérdida de expresión nuclear. El tejido no neoplásico de fondo / control interno\nmuestra expresión nuclear intacta\n+Resultado de MSH6: Pérdida de expresión nuclear. El tejido no neoplásico de fondo / control interno\nmuestra expresión nuclear intacta\n+Resultado de PMS2: Pérdida de expresión nuclear\n+Interpretación de Reparación de Desajuste (MMR)\nVER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.\nDIAGNÓSTICO\nMucosa de colon ascendente. Masa . Biopsia endoscópica:\nCOMENTARIOS\nLa muestra presenta un pequeño fragmento con adenocarcinoma invasivo, el cual no se conserva en los\ncortes adicionales requeridos para el estudio de inmunohistoquímica. Por ello, la marcación reportada\ncorresponde al adenoma túbulo velloso con displasia de alto grado con perdida de la expresión núclear\nMSH6, MSH2 ,PMS2. Se recomienda realizar estudios de MMR en el espécimen de resección a criterio del\nmédico tratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---\nIHQ250491\nCopia Pag. 2 de 2\nNombre : YENIFFER DEL CARMEN ORELLANA\nCOLMENAREZ\nN. peticion : IHQ250491\nN.Identificación : SV. 7920957\nGenero : FEMENINO\nEdad : 43 años 25 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 07/05/2025\nFecha Informe : 22/05/2025\n___ Pérdida de expresión nuclear de una o más proteínas MMR: reparación de desajuste deficiente\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 4477,
+      "reduccion_porcentaje": 97.63
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250491",
+      "caso_num": 26,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "YENIFFER DEL CARMEN ORELLANA COLMENAREZ",
+      "numero_peticion": "IHQ250491",
+      "identificacion": "7920957",
+      "tipo_documento": "SV",
+      "Genero": "FEMENINO",
+      "Edad": "43",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JOSE OMAR ZORRILA LARA",
+      "servicio": "CIRUGIA MUJERES",
+      "fecha_ingreso": "07/05/2025",
+      "fecha_informe": "22/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250491",
+      "N. de identificación": "7920957",
+      "Tipo de documento": "SV",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CIRUGIA MUJERES",
+      "Médico tratante": "JOSE OMAR ZORRILA LARA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/05/2025",
+      "Fecha Informe": "22/05/2025",
+      "nombres": "YENIFFER DEL CARMEN ORELLANA",
+      "Primer nombre": "YENIFFER",
+      "Segundo nombre": "DEL CARMEN ORELLANA",
+      "apellidos": "COLMENAREZ",
+      "Primer apellido": "COLMENAREZ",
+      "Segundo apellido": "",
+      "nombre_formal": "COLMENAREZ, YENIFFER DEL CARMEN ORELLANA",
+      "diagnostico": "Mucosa de colon ascendente. Masa . Biopsia endoscópica:",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La revisión de las láminas de H&E evidencian un pequeño fragmento de adenocarcinoma invasivo en relación a un lesión adenomatosa tubulo velloso con displasia de alto grado. En la realización de los cortes adicionales para las tinciones de inmunohistoquimica el fragmento de adenocarcinoma se pierde. La marcación que se reporta es en relación al adenoma tubulo veolloso Prueba de Reparación de Desajuste de ADN Sitio de la Muestra: Colon ascendente Pruebas Realizadas en el bloque No. 1 Resultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste +Resultado de MLH1: Expresión nuclear intacta +Resultado de MSH2: Pérdida de expresión nuclear. El tejido no neoplásico de fondo / control interno muestra expresión nuclear intacta +Resultado de MSH6: Pérdida de expresión nuclear. El tejido no neoplásico de fondo / control interno muestra expresión nuclear intacta +Resultado de PMS2: Pérdida de expresión nuclear +Interpretación de Reparación de Desajuste (MMR) VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2504236\" correspondiente a \" Lesión en colon ascendente\" con diagnóstico de \"INFILTRACIÓN POR ADENOCARCINOMA GRADO HISTOLOGICO: G1 (BIEN DIFERENCIADO)\" Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MLH1, MSH2, PMS2, MSH6.",
+      "ihq_organo": "MUCOSA DE COLON ASCENDENTE",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MLH1, MSH2, PMS2, MSH6",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "La muestra presenta un pequeño fragmento con adenocarcinoma invasivo, el cual no se conserva en los cortes adicionales requeridos para el estudio de inmunohistoquímica. Por ello, la marcación reportada corresponde al adenoma túbulo velloso con displasia de alto grado con perdida de la expresión núclear MSH6, MSH2 ,PMS2. Se recomienda realizar estudios de MMR en el espécimen de resección a criterio del médico tratante.",
+      "IHQ_ORGANO": "MUCOSA DE COLON ASCENDENTE",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "MLH1, MSH2, PMS2, MSH6",
+      "IHQ_MSH2": "POSITIVO (PÉRDIDA DE EXPRESIÓN NUCLEAR. EL TEJIDO NO NEOPLÁSICO DE FONDO / CONTROL INTERNO)",
+      "IHQ_MSH6": "POSITIVO (PÉRDIDA DE EXPRESIÓN NUCLEAR. EL TEJIDO NO NEOPLÁSICO DE FONDO / CONTROL INTERNO)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (PÉRDIDA DE EXPRESIÓN NUCLEAR)",
+      "extraction_timestamp": "2026-04-15T16:13:01.880547",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250491\nCopia Pag. 1 de 2\nNombre : YENIFFER DEL CARMEN ORELLANA\nCOLMENAREZ\nN. peticion : IHQ250491\nN.Identificación : SV. 7920957\nGenero : FEMENINO\nEdad : 43 años 25 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 07/05/2025\nFecha Informe : 22/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION COLON ASCEDENTE\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2504236” correspondiente a “ Lesión en colon ascendente” con diagnóstico de “INFILTRACIÓN POR\nADENOCARCINOMA GRADO HISTOLOGICO: G1 (BIEN DIFERENCIADO)” Previa revisión de la histología se\nrealizan niveles histológicos para tinción con los marcadores: MLH1, MSH2, PMS2, MSH6.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa revisión de las láminas de H&E evidencian un pequeño fragmento de adenocarcinoma invasivo en\nrelación a un lesión adenomatosa tubulo velloso con displasia de alto grado. En la realización de los\ncortes adicionales para las tinciones de inmunohistoquimica el fragmento de adenocarcinoma se pierde.\nLa marcación que se reporta es en relación al adenoma tubulo veolloso\nPrueba de Reparación de Desajuste de ADN\nSitio de la Muestra: Colon ascendente\nPruebas Realizadas en el bloque No. 1\nResultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste\n+Resultado de MLH1: Expresión nuclear intacta\n+Resultado de MSH2: Pérdida de expresión nuclear. El tejido no neoplásico de fondo / control interno\nmuestra expresión nuclear intacta\n+Resultado de MSH6: Pérdida de expresión nuclear. El tejido no neoplásico de fondo / control interno\nmuestra expresión nuclear intacta\n+Resultado de PMS2: Pérdida de expresión nuclear\n+Interpretación de Reparación de Desajuste (MMR)\nVER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.\nDIAGNÓSTICO\nMucosa de colon ascendente. Masa . Biopsia endoscópica:\nCOMENTARIOS\nLa muestra presenta un pequeño fragmento con adenocarcinoma invasivo, el cual no se conserva en los\ncortes adicionales requeridos para el estudio de inmunohistoquímica. Por ello, la marcación reportada\ncorresponde al adenoma túbulo velloso con displasia de alto grado con perdida de la expresión núclear\nMSH6, MSH2 ,PMS2. Se recomienda realizar estudios de MMR en el espécimen de resección a criterio del\nmédico tratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 50 ---\nIHQ250491\nCopia Pag. 2 de 2\nNombre : YENIFFER DEL CARMEN ORELLANA\nCOLMENAREZ\nN. peticion : IHQ250491\nN.Identificación : SV. 7920957\nGenero : FEMENINO\nEdad : 43 años 25 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JOSE OMAR ZORRILA LARA\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 07/05/2025\nFecha Informe : 22/05/2025\n___ Pérdida de expresión nuclear de una o más proteínas MMR: reparación de desajuste deficiente\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 51 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MLH1, MSH2, PMS2, MSH6",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2504236” correspondiente a “ Lesión en colon ascendente” con diagnóstico de “INFILTRACIÓN POR ADENOCARCINOMA GRADO HISTOLOGICO: G1 (BIEN DIFERENCIADO)” Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MLH1, MSH2, PMS2, MSH6.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La revisión de las láminas de H&E evidencian un pequeño fragmento de adenocarcinoma invasivo en relación a un lesión adenomatosa tubulo velloso con displasia de alto grado. En la realización de los cortes adicionales para las tinciones de inmunohistoquimica el fragmento de adenocarcinoma se pierde. La marcación que se reporta es en relación al adenoma tubulo veolloso Prueba de Reparación de Desajuste de ADN Sitio de la Muestra: Colon ascendente Pruebas Realizadas en el bloque No. 1 Resultados de Inmunohistoquímica (IHC) para Proteínas de Reparación de Desajuste +Resultado de MLH1: Expresión nuclear intacta +Resultado de MSH2: Pérdida de expresión nuclear. El tejido no neoplásico de fondo / control interno muestra expresión nuclear intacta +Resultado de MSH6: Pérdida de expresión nuclear. El tejido no neoplásico de fondo / control interno muestra expresión nuclear intacta +Resultado de PMS2: Pérdida de expresión nuclear +Interpretación de Reparación de Desajuste (MMR) VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+      "Descripcion Diagnostico": "Mucosa de colon ascendente. Masa . Biopsia endoscópica:",
+      "IHQ_ORGANO": "MUCOSA DE COLON ASCENDENTE",
+      "Organo": "LESION COLON ASCEDENTE",
+      "Diagnostico Coloracion": "INFILTRACIÓN POR ADENOCARCINOMA GRADO HISTOLOGICO: G1 (BIEN DIFERENCIADO)",
+      "Diagnostico Principal": "INFILTRACIÓN POR ADENOCARCINOMA GRADO HISTOLOGICO: G1 (BIEN DIFERENCIADO)",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH2": "POSITIVO (PÉRDIDA DE EXPRESIÓN NUCLEAR. EL TEJIDO NO NEOPLÁSICO DE FONDO / CONTROL INTERNO)",
+      "IHQ_PMS2": "POSITIVO (PÉRDIDA DE EXPRESIÓN NUCLEAR)",
+      "IHQ_MSH6": "POSITIVO (PÉRDIDA DE EXPRESIÓN NUCLEAR. EL TEJIDO NO NEOPLÁSICO DE FONDO / CONTROL INTERNO)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2504236” correspondiente a “ Lesión en colon ascendente” con diagnóstico de “INFILTRACIÓN POR ADENOCARCINOMA GRADO HISTOLOGICO: G1 (BIEN DIFERENCIADO)” Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MLH1, MSH2, PMS2, MSH6.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2504236\" correspondiente a \" Lesión en colon ascendente\" con diagnóstico de \"INFILTRACIÓN POR ADENOCARCINOMA GRADO HISTOLOGICO: G1 (BIEN DIFERENCIADO)\" Previa revisión de la histología se realizan niveles histológicos para tinción con los marcadores: MLH1, MSH2, PMS2, MSH6.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250491",
+      "timestamp": "2026-04-15T16:13:01.880115"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La muestra presenta un pequeño fragmento con adenocarcinoma invasivo, el cual no se conserva en los\ncortes adicionales requeridos para el estudio de inmunohistoquímica. Por ello, la marcación reportada\ncorresponde al adenoma túbulo velloso con displasia de alto grado con perdida de la expresión núclear\nMSH6, MSH2 ,PMS2. Se recomienda realizar estudios de MMR en el espécimen de resección a criterio del\nmédico tratante.",
+      "valor_corregido": "La muestra presenta un pequeño fragmento con adenocarcinoma invasivo, el cual no se conserva en los cortes adicionales requeridos para el estudio de inmunohistoquímica. Por ello, la marcación reportada corresponde al adenoma túbulo velloso con displasia de alto grado con perdida de la expresión núclear MSH6, MSH2 ,PMS2. Se recomienda realizar estudios de MMR en el espécimen de resección a criterio del médico tratante.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250491",
+      "timestamp": "2026-04-15T16:13:01.880122"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 52
+  }
+}

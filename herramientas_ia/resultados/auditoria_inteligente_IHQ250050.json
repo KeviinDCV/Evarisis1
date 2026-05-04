@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250050",
   "caso_num": 50,
   "total_casos": 50,
-  "timestamp": "2026-04-28T14:15:52.771499",
+  "timestamp": "2026-04-29T11:31:21.484662",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 4,
+      "total_detectado": 3,
       "estado": "OK"
     },
     "estado": "OK"
@@ -36,21 +36,18 @@
       "mensaje": "Correcto (no aplica)"
     },
     "biomarcadores": {
-      "estado": "WARNING",
-      "mensaje": "1 biomarcadores extras en BD",
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (1/1)",
       "total_solicitado_ocr": 1,
-      "total_solicitado_bd": 2,
+      "total_solicitado_bd": 1,
       "estudios_ocr": [
         "LMP 1"
       ],
       "estudios_bd": [
-        "LMP 1",
-        "CD45"
+        "LMP 1"
       ],
       "faltantes_en_bd": [],
-      "extras_en_bd": [
-        "CD45"
-      ],
+      "extras_en_bd": [],
       "mapeados": 1,
       "no_mapeados": [],
       "valores_incorrectos": [],
@@ -101,9 +98,9 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 90.0,
-    "score_final": 90.0,
-    "validaciones_ok": 9,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
     "total_validaciones": 10,
     "warnings": 0,
     "errores": 0

@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250205",
   "caso_num": 44,
   "total_casos": 50,
-  "timestamp": "2026-01-12T17:48:27.705301",
+  "timestamp": "2026-04-29T06:56:38.310357",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 19,
+      "total_detectado": 20,
       "estado": "OK"
     },
     "estado": "OK"
@@ -102,7 +102,8 @@
     },
     "warnings": [],
     "errores": [
-      "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
+      "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes",
+      "CD4: CD4: Extraído como \"NO MENCIONADO\" pero encontrado en OCR como \"NEGATIVO\""
     ],
     "estado": "ERROR",
     "descripcion_macroscopica": {
@@ -130,6 +131,24 @@
       "campos_con_problemas": [],
       "campos_ok": 1,
       "estado": "OK"
+    },
+    "biomarcadores_no_mencionado": {
+      "total_revisados": 5,
+      "falsos_no_mencionado": [
+        {
+          "columna": "IHQ_CD4",
+          "biomarcador": "CD4",
+          "valor_bd": "NO MENCIONADO",
+          "valor_ocr": "NEGATIVO",
+          "severidad": "ERROR",
+          "mensaje": "CD4: Extraído como \"NO MENCIONADO\" pero encontrado en OCR como \"NEGATIVO\"",
+          "tipo_error": "EXTRACCIÓN FALLIDA (biomarcador presente en PDF)",
+          "sugerencia": "Reprocesar caso con FUNC-06 para corregir extracción"
+        }
+      ],
+      "biomarcadores_ok": 4,
+      "estado": "ERROR",
+      "mensaje": "1 falsos \"NO MENCIONADO\" detectados"
     }
   },
   "detecciones": {},
@@ -137,12 +156,12 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 77.8,
-    "score_final": 77.8,
+    "score_validacion": 70.0,
+    "score_final": 70.0,
     "validaciones_ok": 7,
-    "total_validaciones": 9,
+    "total_validaciones": 10,
     "warnings": 0,
-    "errores": 1
+    "errores": 2
   },
   "resumen": {},
   "estado_final": "ERROR"

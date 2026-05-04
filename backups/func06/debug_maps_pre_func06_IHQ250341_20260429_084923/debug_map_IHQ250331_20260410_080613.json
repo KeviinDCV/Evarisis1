@@ -1,0 +1,148 @@
+{
+  "session_id": "IHQ250331_20260410_080613",
+  "numero_peticion": "IHQ250331",
+  "timestamp": "2026-04-10T08:06:13.195171",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250331\nCopia Pag. 1 de 2\nNombre : FRANCISCO GOMEZ\nN. peticion : IHQ250331\nN.Identificación : CC. 4618486\nGenero : MASCULINO\nEdad : 78 años 10 meses 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ANGEL ARTURO ROBERTY\nServicio : CIRUGIA COEX\nFecha Ingreso : 02/04/2025\nFecha Informe : 10/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION CANAL ANAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2403632 que\ncorresponde a \"pólipo canal anal\", consiste en dos bloques de parafina y cuatro láminas\ncoloreadas con Hematoxilina - Eosina con diagnostico de \"ADENOMA TUBULOVELLOSO CON\nDISPLASIA DE ALTO GRADO FOCAL\" con fecha de informe del 30/05/2024. Previa valoración de la\ncoloración básica se realizan niveles histológicos a ambos bloques para los siguientes\nmarcadores: CK20, BETACATENINA, p53, CDX2, Ki67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADOS. \nLos cortes histológicos demuestran una lesión polipoide de arquitectura tubulovellosa con\ndisplasia usual y un foco de displasia de alto grado sin observarse diferencias en el patrón de\nmarcación de estudios de inmunohistoquímica. La marcación es homogénea en toda la lesión\npara CK20, CDX2 y BETACATENINA con un p53 no mutado (heterogéneo) y un índice de\nproliferación heterogéneo en toda la lesión. No se identifican áreas de invasión. \nDIAGNÓSTICO\nCanal anal. Lesión. Resección. Estudio de inmunohistoquímica. \nADENOMA TUBULOVELLOSO CON DISPLASIA DE ALTO GRADO FOCAL. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---\nIHQ250331\nCopia Pag. 2 de 2\nNombre : FRANCISCO GOMEZ\nN. peticion : IHQ250331\nN.Identificación : CC. 4618486\nGenero : MASCULINO\nEdad : 78 años 10 meses 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ANGEL ARTURO ROBERTY\nServicio : CIRUGIA COEX\nFecha Ingreso : 02/04/2025\nFecha Informe : 10/04/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3465,
+      "reduccion_porcentaje": 98.05
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250331",
+      "caso_num": 18,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK20": "POSITIVO",
+      "nombre_completo": "FRANCISCO GOMEZ",
+      "numero_peticion": "IHQ250331",
+      "identificacion": "4618486",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "78",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ANGEL ARTURO ROBERTY",
+      "servicio": "CIRUGIA COEX",
+      "fecha_ingreso": "02/04/2025",
+      "fecha_informe": "10/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250331",
+      "N. de identificación": "4618486",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CIRUGIA COEX",
+      "Médico tratante": "ANGEL ARTURO ROBERTY",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/04/2025",
+      "Fecha Informe": "10/04/2025",
+      "nombres": "FRANCISCO",
+      "Primer nombre": "FRANCISCO",
+      "Segundo nombre": "",
+      "apellidos": "GOMEZ",
+      "Primer apellido": "GOMEZ",
+      "Segundo apellido": "",
+      "nombre_formal": "GOMEZ, FRANCISCO",
+      "diagnostico": "Canal anal. Lesión. Resección. Estudio de inmunohistoquímica. ADENOMA TUBULOVELLOSO CON DISPLASIA DE ALTO GRADO FOCAL: 02/04/2025",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADOS. Los cortes histológicos demuestran una lesión polipoide de arquitectura tubulovellosa con displasia usual y un foco de displasia de alto grado sin observarse diferencias en el patrón de marcación de estudios de inmunohistoquímica. La marcación es homogénea en toda la lesión para CK20, CDX2 y BETACATENINA con un p53 no mutado (heterogéneo) y un índice de proliferación heterogéneo en toda la lesión. No se identifican áreas de invasión.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2403632 que corresponde a \"pólipo canal anal\", consiste en dos bloques de parafina y cuatro láminas coloreadas con Hematoxilina - Eosina con diagnostico de \"ADENOMA TUBULOVELLOSO CON DISPLASIA DE ALTO GRADO FOCAL\" con fecha de informe del 30/05/2024. Previa valoración de la coloración básica se realizan niveles histológicos a ambos bloques para los siguientes marcadores: CK20, BETACATENINA, p53, CDX2, KI-67.",
+      "ihq_organo": "CANAL ANAL",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK20, BETACATENINA, P53, CDX2, Ki-67",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CANAL ANAL",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK20, BETACATENINA, P53, CDX2, Ki-67",
+      "extraction_timestamp": "2026-04-10T08:06:13.459158",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250331\nCopia Pag. 1 de 2\nNombre : FRANCISCO GOMEZ\nN. peticion : IHQ250331\nN.Identificación : CC. 4618486\nGenero : MASCULINO\nEdad : 78 años 10 meses 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ANGEL ARTURO ROBERTY\nServicio : CIRUGIA COEX\nFecha Ingreso : 02/04/2025\nFecha Informe : 10/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION CANAL ANAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rótulo M2403632 que\ncorresponde a \"pólipo canal anal\", consiste en dos bloques de parafina y cuatro láminas\ncoloreadas con Hematoxilina - Eosina con diagnostico de \"ADENOMA TUBULOVELLOSO CON\nDISPLASIA DE ALTO GRADO FOCAL\" con fecha de informe del 30/05/2024. Previa valoración de la\ncoloración básica se realizan niveles histológicos a ambos bloques para los siguientes\nmarcadores: CK20, BETACATENINA, p53, CDX2, Ki67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nRESULTADOS. \nLos cortes histológicos demuestran una lesión polipoide de arquitectura tubulovellosa con\ndisplasia usual y un foco de displasia de alto grado sin observarse diferencias en el patrón de\nmarcación de estudios de inmunohistoquímica. La marcación es homogénea en toda la lesión\npara CK20, CDX2 y BETACATENINA con un p53 no mutado (heterogéneo) y un índice de\nproliferación heterogéneo en toda la lesión. No se identifican áreas de invasión. \nDIAGNÓSTICO\nCanal anal. Lesión. Resección. Estudio de inmunohistoquímica. \nADENOMA TUBULOVELLOSO CON DISPLASIA DE ALTO GRADO FOCAL. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 35 ---\nIHQ250331\nCopia Pag. 2 de 2\nNombre : FRANCISCO GOMEZ\nN. peticion : IHQ250331\nN.Identificación : CC. 4618486\nGenero : MASCULINO\nEdad : 78 años 10 meses 6 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ANGEL ARTURO ROBERTY\nServicio : CIRUGIA COEX\nFecha Ingreso : 02/04/2025\nFecha Informe : 10/04/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK20, BETACATENINA, P53, CDX2, Ki-67",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2403632 que corresponde a \"pólipo canal anal\", consiste en dos bloques de parafina y cuatro láminas coloreadas con Hematoxilina - Eosina con diagnostico de \"ADENOMA TUBULOVELLOSO CON DISPLASIA DE ALTO GRADO FOCAL\" con fecha de informe del 30/05/2024. Previa valoración de la coloración básica se realizan niveles histológicos a ambos bloques para los siguientes marcadores: CK20, BETACATENINA, p53, CDX2, Ki67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. RESULTADOS. Los cortes histológicos demuestran una lesión polipoide de arquitectura tubulovellosa con displasia usual y un foco de displasia de alto grado sin observarse diferencias en el patrón de marcación de estudios de inmunohistoquímica. La marcación es homogénea en toda la lesión para CK20, CDX2 y BETACATENINA con un p53 no mutado (heterogéneo) y un índice de proliferación heterogéneo en toda la lesión. No se identifican áreas de invasión.",
+      "Descripcion Diagnostico": "Canal anal. Lesión. Resección. Estudio de inmunohistoquímica. ADENOMA TUBULOVELLOSO CON DISPLASIA DE ALTO GRADO FOCAL: 02/04/2025",
+      "IHQ_ORGANO": "CANAL ANAL",
+      "Organo": "LESION CANAL ANAL",
+      "Diagnostico Coloracion": "ADENOMA TUBULOVELLOSO CON DISPLASIA DE ALTO GRADO FOCAL",
+      "Diagnostico Principal": "ADENOMA TUBULOVELLOSO CON DISPLASIA DE ALTO GRADO FOCAL: 02/04/2025",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK20": "POSITIVO",
+      "IHQ_BETACATENINA": "",
+      "IHQ_P53": "NO MENCIONADO",
+      "IHQ_CDX2": "NO MENCIONADO",
+      "IHQ_KI-67": "NO MENCIONADO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 141,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Canal anal. Lesión. Resección. Estudio de inmunohistoquímica. \nADENOMA TUBULOVELLOSO CON DISPLASIA DE ALTO GRADO FOCAL: 02/04/2025",
+      "valor_corregido": "Canal anal. Lesión. Resección. Estudio de inmunohistoquímica. ADENOMA TUBULOVELLOSO CON DISPLASIA DE ALTO GRADO FOCAL: 02/04/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250331",
+      "timestamp": "2026-04-10T08:06:13.458751"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2403632 que corresponde a \"pólipo canal anal\", consiste en dos bloques de parafina y cuatro láminas coloreadas con Hematoxilina - Eosina con diagnostico de \"ADENOMA TUBULOVELLOSO CON DISPLASIA DE ALTO GRADO FOCAL\" con fecha de informe del 30/05/2024. Previa valoración de la coloración básica se realizan niveles histológicos a ambos bloques para los siguientes marcadores: CK20, BETACATENINA, p53, CDX2, Ki67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rótulo M2403632 que corresponde a \"pólipo canal anal\", consiste en dos bloques de parafina y cuatro láminas coloreadas con Hematoxilina - Eosina con diagnostico de \"ADENOMA TUBULOVELLOSO CON DISPLASIA DE ALTO GRADO FOCAL\" con fecha de informe del 30/05/2024. Previa valoración de la coloración básica se realizan niveles histológicos a ambos bloques para los siguientes marcadores: CK20, BETACATENINA, p53, CDX2, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250331",
+      "timestamp": "2026-04-10T08:06:13.458757"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 47
+  }
+}

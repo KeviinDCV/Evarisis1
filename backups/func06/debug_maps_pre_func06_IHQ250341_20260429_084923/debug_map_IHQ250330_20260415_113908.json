@@ -1,0 +1,161 @@
+{
+  "session_id": "IHQ250330_20260415_113908",
+  "numero_peticion": "IHQ250330",
+  "timestamp": "2026-04-15T11:39:08.683175",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250330\nCopia Pag. 1 de 2\nNombre : CECILIA FERREROSA DE MOLINA\nN. peticion : IHQ250330\nN.Identificación : CC. 29692686\nGenero : FEMENINO\nEdad : 73 años 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/04/2025\nFecha Informe : 09/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE COLON\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de Laboratorio\nDra.Nora Ayala como “H25-439\" que corresponde a “ Mucosa de colon\" consiste en un bloque\nde parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de\n\"ADENOCARCINOMA BIEN DIFERENCIADO ULCERADO INFILTRANTE MUCOSA DE COLON”. Previa\nrevisión de la histología, se realizan niveles histológicos en el bloque para tinción con HER-2 ,\nMSH6 , MSH2 , MLH1 , PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nREPORTE:\nMLH1: Pérdida de la expresión nuclear. \nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Pérdida de la expresión nuclear (tinción citoplasmática granular).\nInterpretación de la reparación de desajustes (MMR): \n+ Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de\ndesajustes).\nSobreexpresión de oncogén HER2: Negativo (Score 0).\nDIAGNÓSTICO\nMucosa colónica. Lesión. Biopsia. Estudios de inmunohistoquimica:\n- ADENOCARCINOMA INVASIVO ULCERADO.\n- PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.\n- HER-2: NEGATIVO (SCORE 0).\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---\nIHQ250330\nCopia Pag. 2 de 2\nNombre : CECILIA FERREROSA DE MOLINA\nN. peticion : IHQ250330\nN.Identificación : CC. 29692686\nGenero : FEMENINO\nEdad : 73 años 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/04/2025\nFecha Informe : 09/04/2025\nSe sugiere correlacionar con pruebas moleculares y repetir estudios de inmunohistoquímica para\nevaluar inestabilidad microsatelite en el especimen de resección, lo anterior a criterio del médico\ntratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3860,
+      "reduccion_porcentaje": 97.83
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250330",
+      "caso_num": 17,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "CECILIA FERREROSA DE MOLINA",
+      "numero_peticion": "IHQ250330",
+      "identificacion": "29692686",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "73",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "02/04/2025",
+      "fecha_informe": "09/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250330",
+      "N. de identificación": "29692686",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/04/2025",
+      "Fecha Informe": "09/04/2025",
+      "nombres": "CECILIA FERREROSA",
+      "Primer nombre": "CECILIA",
+      "Segundo nombre": "FERREROSA",
+      "apellidos": "DE MOLINA",
+      "Primer apellido": "DE",
+      "Segundo apellido": "MOLINA",
+      "nombre_formal": "DE MOLINA, CECILIA FERREROSA",
+      "diagnostico": "Mucosa colónica. Lesión. Biopsia. Estudios de inmunohistoquimica: - ADENOCARCINOMA INVASIVO ULCERADO. - PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2. - HER-2: NEGATIVO (SCORE 0).",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). REPORTE: MLH1: Pérdida de la expresión nuclear. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Pérdida de la expresión nuclear (tinción citoplasmática granular). Interpretación de la reparación de desajustes (MMR): + Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de desajustes). Sobreexpresión de oncogén HER2: Negativo (Score 0).",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de Laboratorio Dra.Nora Ayala como \"H25-439\" que corresponde a \" Mucosa de colon\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO ULCERADO INFILTRANTE MUCOSA DE COLON\". Previa revisión de la histología, se realizan niveles histológicos en el bloque para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "ihq_organo": "MUCOSA COLÓNICA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 33 --- IHQ250330 Copia Pag. 2 de 2 Nombre : CECILIA FERREROSA DE MOLINA N. peticion : IHQ250330 N.Identificación : CC. 29692686 Genero : FEMENINO Edad : 73 años 28 dias EPS : NUEVA EPS Médico tratante : LISBETH PATRICIA RAMIREZ Servicio : HEMATO ONCOLOGIA HOSP ADULTO Fecha Ingreso : 02/04/2025 Fecha Informe : 09/04/2025 Se sugiere correlacionar con pruebas moleculares y repetir estudios de inmunohistoquímica para evaluar inestabilidad microsatelite en el especimen de resección, lo anterior a criterio del médico tratante.",
+      "IHQ_ORGANO": "MUCOSA COLÓNICA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2 ,",
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (PÉRDIDA DE LA EXPRESIÓN NUCLEAR)",
+      "IHQ_PMS2": "POSITIVO (PÉRDIDA DE LA EXPRESIÓN NUCLEAR)",
+      "extraction_timestamp": "2026-04-15T11:39:09.150188",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250330\nCopia Pag. 1 de 2\nNombre : CECILIA FERREROSA DE MOLINA\nN. peticion : IHQ250330\nN.Identificación : CC. 29692686\nGenero : FEMENINO\nEdad : 73 años 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/04/2025\nFecha Informe : 09/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE COLON\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de Laboratorio\nDra.Nora Ayala como “H25-439\" que corresponde a “ Mucosa de colon\" consiste en un bloque\nde parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de\n\"ADENOCARCINOMA BIEN DIFERENCIADO ULCERADO INFILTRANTE MUCOSA DE COLON”. Previa\nrevisión de la histología, se realizan niveles histológicos en el bloque para tinción con HER-2 ,\nMSH6 , MSH2 , MLH1 , PMS2.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nProtocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación\nde errores de emparejamiento (MMR). \nREPORTE:\nMLH1: Pérdida de la expresión nuclear. \nMSH2: Expresión nuclear intacta.\nMSH6: Expresión nuclear intacta.\nPMS2: Pérdida de la expresión nuclear (tinción citoplasmática granular).\nInterpretación de la reparación de desajustes (MMR): \n+ Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de\ndesajustes).\nSobreexpresión de oncogén HER2: Negativo (Score 0).\nDIAGNÓSTICO\nMucosa colónica. Lesión. Biopsia. Estudios de inmunohistoquimica:\n- ADENOCARCINOMA INVASIVO ULCERADO.\n- PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.\n- HER-2: NEGATIVO (SCORE 0).\nCOMENTARIOS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---\nIHQ250330\nCopia Pag. 2 de 2\nNombre : CECILIA FERREROSA DE MOLINA\nN. peticion : IHQ250330\nN.Identificación : CC. 29692686\nGenero : FEMENINO\nEdad : 73 años 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/04/2025\nFecha Informe : 09/04/2025\nSe sugiere correlacionar con pruebas moleculares y repetir estudios de inmunohistoquímica para\nevaluar inestabilidad microsatelite en el especimen de resección, lo anterior a criterio del médico\ntratante.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HER2, MSH6, MSH2, MLH1, PMS2",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de Laboratorio Dra.Nora Ayala como “H25-439\" que corresponde a “ Mucosa de colon\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO ULCERADO INFILTRANTE MUCOSA DE COLON”. Previa revisión de la histología, se realizan niveles histológicos en el bloque para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Protocolo CAP (v1.0.0.2). Resultados de inmunohistoquímica (IHC) para proteínas de reparación de errores de emparejamiento (MMR). REPORTE: MLH1: Pérdida de la expresión nuclear. MSH2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. PMS2: Pérdida de la expresión nuclear (tinción citoplasmática granular). Interpretación de la reparación de desajustes (MMR): + Pérdida de la expresión nuclear de una o más proteínas MMR (reparación deficiente de desajustes). Sobreexpresión de oncogén HER2: Negativo (Score 0).",
+      "Descripcion Diagnostico": "Mucosa colónica. Lesión. Biopsia. Estudios de inmunohistoquimica: - ADENOCARCINOMA INVASIVO ULCERADO. - PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2. - HER-2: NEGATIVO (SCORE 0).",
+      "IHQ_ORGANO": "MUCOSA COLÓNICA",
+      "Organo": "BX DE COLON",
+      "Diagnostico Coloracion": "ADENOCARCINOMA BIEN DIFERENCIADO ULCERADO INFILTRANTE MUCOSA DE COLON",
+      "Diagnostico Principal": "ADENOCARCINOMA INVASIVO ULCERADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2 ,",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (PÉRDIDA DE LA EXPRESIÓN NUCLEAR)",
+      "IHQ_PMS2": "POSITIVO (PÉRDIDA DE LA EXPRESIÓN NUCLEAR)"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 138,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 5,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mucosa colónica. Lesión. Biopsia. Estudios de inmunohistoquimica:\n- ADENOCARCINOMA INVASIVO ULCERADO.\n- PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2.\n- HER-2: NEGATIVO (SCORE 0).",
+      "valor_corregido": "Mucosa colónica. Lesión. Biopsia. Estudios de inmunohistoquimica: - ADENOCARCINOMA INVASIVO ULCERADO. - PATRÓN MICROSATELITAL INESTABLE: PERDIDA DE EXPRESIÓN NUCLEAR DE MLH1 Y PMS2. - HER-2: NEGATIVO (SCORE 0).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250330",
+      "timestamp": "2026-04-15T11:39:09.149887"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de Laboratorio Dra.Nora Ayala como “H25-439\" que corresponde a “ Mucosa de colon\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO ULCERADO INFILTRANTE MUCOSA DE COLON”. Previa revisión de la histología, se realizan niveles histológicos en el bloque para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente de Laboratorio Dra.Nora Ayala como \"H25-439\" que corresponde a \" Mucosa de colon\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"ADENOCARCINOMA BIEN DIFERENCIADO ULCERADO INFILTRANTE MUCOSA DE COLON\". Previa revisión de la histología, se realizan niveles histológicos en el bloque para tinción con HER-2 , MSH6 , MSH2 , MLH1 , PMS2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250330",
+      "timestamp": "2026-04-15T11:39:09.149893"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---\nIHQ250330\nCopia Pag. 2 de 2\nNombre : CECILIA FERREROSA DE MOLINA\nN. peticion : IHQ250330\nN.Identificación : CC. 29692686\nGenero : FEMENINO\nEdad : 73 años 28 dias\nEPS : NUEVA EPS\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/04/2025\nFecha Informe : 09/04/2025\nSe sugiere correlacionar con pruebas moleculares y repetir estudios de inmunohistoquímica para\nevaluar inestabilidad microsatelite en el especimen de resección, lo anterior a criterio del médico\ntratante.",
+      "valor_corregido": "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 33 --- IHQ250330 Copia Pag. 2 de 2 Nombre : CECILIA FERREROSA DE MOLINA N. peticion : IHQ250330 N.Identificación : CC. 29692686 Genero : FEMENINO Edad : 73 años 28 dias EPS : NUEVA EPS Médico tratante : LISBETH PATRICIA RAMIREZ Servicio : HEMATO ONCOLOGIA HOSP ADULTO Fecha Ingreso : 02/04/2025 Fecha Informe : 09/04/2025 Se sugiere correlacionar con pruebas moleculares y repetir estudios de inmunohistoquímica para evaluar inestabilidad microsatelite en el especimen de resección, lo anterior a criterio del médico tratante.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250330",
+      "timestamp": "2026-04-15T11:39:09.149894"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 54
+  }
+}

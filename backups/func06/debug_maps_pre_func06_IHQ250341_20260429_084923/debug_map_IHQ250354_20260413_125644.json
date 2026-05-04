@@ -1,0 +1,167 @@
+{
+  "session_id": "IHQ250354_20260413_125644",
+  "numero_peticion": "IHQ250354",
+  "timestamp": "2026-04-13T12:56:44.214040",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250354\nCopia Pag. 1 de 2\nNombre : PAOLA IDORA ZUÑIGA KLINJER\nN. peticion : IHQ250354\nN.Identificación : CC. 66844822\nGenero : FEMENINO\nEdad : 55 años 12 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 15/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PULMON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2503456” correspondiente a “ biopsia de pulmón derecho” con diagnóstico de “ADENOCARCINOMA DE\nPATRON\nSOLIDO\nCON\nCOMPONENTES\nACINAR\nY\nPAPILAR\nREQUIERE\nESTUDIOS\nDE\nINMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan niveles histológicos al bloque 2 para\ntinción con los marcadores: Napsina, TTF 1, p 40.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para Napsina, TTF 1 con positividad focal para p40.\nDIAGNÓSTICO\n Pulmón derecho. Lesión. Biopsia. Estudio de inmunohistoquimica\nCARCINOMA DE CÉLULAS NO PEQUEÑAS, FAVORECE ADENOCARCINOMA\nCOMENTARIOS\nHay una marcación heterogénea de p40 en los mismos núcleos que marcan TTF 1, no se puede descartar\nel diagnostico de un carcinoma adenoescamosos dado que la biopsia es pequeña\nCaso valorado en conjunto con Dra. Natalia Aguirre (patologa)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---\nIHQ250354\nCopia Pag. 2 de 2\nNombre : PAOLA IDORA ZUÑIGA KLINJER\nN. peticion : IHQ250354\nN.Identificación : CC. 66844822\nGenero : FEMENINO\nEdad : 55 años 12 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 15/04/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3318,
+      "reduccion_porcentaje": 98.13
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250354",
+      "caso_num": 41,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P40_ESTADO": "POSITIVO FOCAL",
+      "IHQ_NAPSIN": "POSITIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "nombre_completo": "PAOLA IDORA ZUÑIGA KLINJER",
+      "numero_peticion": "IHQ250354",
+      "identificacion": "66844822",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "55",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "07/04/2025",
+      "fecha_informe": "15/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250354",
+      "N. de identificación": "66844822",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/04/2025",
+      "Fecha Informe": "15/04/2025",
+      "nombres": "PAOLA IDORA ZUÑIGA",
+      "Primer nombre": "PAOLA",
+      "Segundo nombre": "IDORA ZUÑIGA",
+      "apellidos": "KLINJER",
+      "Primer apellido": "KLINJER",
+      "Segundo apellido": "",
+      "nombre_formal": "KLINJER, PAOLA IDORA ZUÑIGA",
+      "diagnostico": "Pulmón derecho. Lesión. Biopsia. Estudio de inmunohistoquimica CARCINOMA DE CÉLULAS NO PEQUEÑAS, FAVORECE ADENOCARCINOMA",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para Napsina, TTF1 con positividad focal para p40.",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2503456\" correspondiente a \" biopsia de pulmón derecho\" con diagnóstico de \"ADENOCARCINOMA DE PATRON SOLIDO CON COMPONENTES ACINAR Y PAPILAR REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología se realizan niveles histológicos al bloque 2 para tinción con los marcadores: Napsina, TTF1, p40.",
+      "ihq_organo": "PULMÓN DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "NAPSIN, TTF-1, P 40",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Hay una marcación heterogénea de p40 en los mismos núcleos que marcan TTF1, no se puede descartar el diagnostico de un carcinoma adenoescamosos dado que la biopsia es pequeña Caso valorado en conjunto con Dra. Natalia Aguirre (patologa)",
+      "IHQ_ORGANO": "PULMÓN DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "NAPSIN, TTF-1, P 40",
+      "p40": "POSITIVO FOCAL",
+      "extraction_timestamp": "2026-04-13T12:56:44.477516",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250354\nCopia Pag. 1 de 2\nNombre : PAOLA IDORA ZUÑIGA KLINJER\nN. peticion : IHQ250354\nN.Identificación : CC. 66844822\nGenero : FEMENINO\nEdad : 55 años 12 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 15/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLESION PULMON DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2503456” correspondiente a “ biopsia de pulmón derecho” con diagnóstico de “ADENOCARCINOMA DE\nPATRON\nSOLIDO\nCON\nCOMPONENTES\nACINAR\nY\nPAPILAR\nREQUIERE\nESTUDIOS\nDE\nINMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan niveles histológicos al bloque 2 para\ntinción con los marcadores: Napsina, TTF 1, p 40.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLas células tumorales son positivas para Napsina, TTF 1 con positividad focal para p40.\nDIAGNÓSTICO\n Pulmón derecho. Lesión. Biopsia. Estudio de inmunohistoquimica\nCARCINOMA DE CÉLULAS NO PEQUEÑAS, FAVORECE ADENOCARCINOMA\nCOMENTARIOS\nHay una marcación heterogénea de p40 en los mismos núcleos que marcan TTF 1, no se puede descartar\nel diagnostico de un carcinoma adenoescamosos dado que la biopsia es pequeña\nCaso valorado en conjunto con Dra. Natalia Aguirre (patologa)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 75 ---\nIHQ250354\nCopia Pag. 2 de 2\nNombre : PAOLA IDORA ZUÑIGA KLINJER\nN. peticion : IHQ250354\nN.Identificación : CC. 66844822\nGenero : FEMENINO\nEdad : 55 años 12 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 15/04/2025\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 76 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "NAPSIN, TTF-1, P 40",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2503456” correspondiente a “ biopsia de pulmón derecho” con diagnóstico de “ADENOCARCINOMA DE PATRON SOLIDO CON COMPONENTES ACINAR Y PAPILAR REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan niveles histológicos al bloque 2 para tinción con los marcadores: Napsina, TTF 1, p 40.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para Napsina, TTF 1 con positividad focal para p40.",
+      "Descripcion Diagnostico": "Pulmón derecho. Lesión. Biopsia. Estudio de inmunohistoquimica CARCINOMA DE CÉLULAS NO PEQUEÑAS, FAVORECE ADENOCARCINOMA",
+      "IHQ_ORGANO": "PULMÓN DERECHO",
+      "Organo": "LESION PULMON DERECHO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA DE PATRON SOLIDO CON COMPONENTES ACINAR Y PAPILAR REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "ESTUDIO DE INMUNOHISTOQUIMICA CARCINOMA DE CÉLULAS NO PEQUEÑAS, FAVORECE ADENOCARCINOMA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_NAPSIN": "POSITIVO",
+      "IHQ_TTF1": "POSITIVO",
+      "IHQ_P40_ESTADO": "POSITIVO FOCAL"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 141,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón derecho. Lesión. Biopsia. Estudio de inmunohistoquimica\nCARCINOMA DE CÉLULAS NO PEQUEÑAS, FAVORECE ADENOCARCINOMA",
+      "valor_corregido": "Pulmón derecho. Lesión. Biopsia. Estudio de inmunohistoquimica CARCINOMA DE CÉLULAS NO PEQUEÑAS, FAVORECE ADENOCARCINOMA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250354",
+      "timestamp": "2026-04-13T12:56:44.477271"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “M2503456” correspondiente a “ biopsia de pulmón derecho” con diagnóstico de “ADENOCARCINOMA DE PATRON SOLIDO CON COMPONENTES ACINAR Y PAPILAR REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA”. Previa revisión de la histología se realizan niveles histológicos al bloque 2 para tinción con los marcadores: Napsina, TTF 1, p 40.",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \"M2503456\" correspondiente a \" biopsia de pulmón derecho\" con diagnóstico de \"ADENOCARCINOMA DE PATRON SOLIDO CON COMPONENTES ACINAR Y PAPILAR REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología se realizan niveles histológicos al bloque 2 para tinción con los marcadores: Napsina, TTF1, p40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250354",
+      "timestamp": "2026-04-13T12:56:44.477276"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para Napsina, TTF 1 con positividad focal para p40.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. Las células tumorales son positivas para Napsina, TTF1 con positividad focal para p40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250354",
+      "timestamp": "2026-04-13T12:56:44.477277"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Hay una marcación heterogénea de p40 en los mismos núcleos que marcan TTF 1, no se puede descartar\nel diagnostico de un carcinoma adenoescamosos dado que la biopsia es pequeña\nCaso valorado en conjunto con Dra. Natalia Aguirre (patologa)",
+      "valor_corregido": "Hay una marcación heterogénea de p40 en los mismos núcleos que marcan TTF1, no se puede descartar el diagnostico de un carcinoma adenoescamosos dado que la biopsia es pequeña Caso valorado en conjunto con Dra. Natalia Aguirre (patologa)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250354",
+      "timestamp": "2026-04-13T12:56:44.477278"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 52
+  }
+}

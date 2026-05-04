@@ -1,0 +1,172 @@
+{
+  "session_id": "IHQ250485_20260415_161259",
+  "numero_peticion": "IHQ250485",
+  "timestamp": "2026-04-15T16:12:59.997951",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250485\nCopia Pag. 1 de 2\nNombre : RUDENID MONTANO CASSO\nN. peticion : IHQ250485\nN.Identificación : CC. 29705520\nGenero : FEMENINO\nEdad : 42 años 4 meses\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : GINECOLOGIA\nFecha Ingreso : 05/05/2025\nFecha Informe : 29/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nANEXO DERECHO +\nHISTERECTOMIA +\nSALPINGECTOMIA IZQ\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del Hospital\nuniversitario san Ignacio rotulado como 05228 que corresponde a “Tumor anexo derecho\" con\ndiagnóstico de “Teratoma quístico maduro comprometido por neoplasia que requiere estudio\ncomplementario en inmunohistoquímica. Se reciben 28 bloques y láminas de hematoxilina-\neosina. Previa revisión de la histología, se realizan niveles histológicos en el bloque 5 y 6 para\ntinción con: Calretinina,CD99 WT1, SALL4, PAX8, Ki67, Inhibina, sinaptofisina. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLa mayor parte de la lesión corresponde a una formnación quística revestida en tramos por\nepitelio escamoso maduro queratinizante, adicionalmente se identifica una lesión tumoral del\nestroma de los cordones sexuales compuesto por células pequeñas, cuboidales a poligonales, con\ncitoplasma escaso y núcleos pálido cuya mayor dimensión mayor es de aproximadamente de\n0.9 cm. Estas células tumorales presentan inmunoreactividad para calretinina, WT1 e inhibina con\nmarcación heterogénea de predominio en la periferia de la lesión, el índice de proliferación\ncelular Ki-67 es del 8%. El resto de marcadores sinaptofisina,SALL4, PAX8 y C99 son negativos..\nDIAGNÓSTICO\nAnexo derecho. Salpingooforectomía. Estudios de inmunohistoquímica: \n- LOS HALLAZGOS SON COMPATIBLES CON OVARIO COMPROMETIDO CON TERATOMA QUÍSTICO\nMONODÉRMICO CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO.\nCOMENTARIOS\nBorak SG, Ross JR, Bell WC. Granular Cell Tumor Within an Ovarian Mature Cystic Teratoma:\nReport\nof\na\nUnique\nCase\nand\nReview\nof\nthe\nLiterature.\nInt\nJ\nGynecol\nPathol.\n2017\nSep;36(5):453-458. doi: 10.1097/PGP.0000000000000332. PMID: 27750257.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---\nIHQ250485\nCopia Pag. 2 de 2\nNombre : RUDENID MONTANO CASSO\nN. peticion : IHQ250485\nN.Identificación : CC. 29705520\nGenero : FEMENINO\nEdad : 42 años 4 meses\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : GINECOLOGIA\nFecha Ingreso : 05/05/2025\nFecha Informe : 29/05/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 40 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 4114,
+      "reduccion_porcentaje": 97.82
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250485",
+      "caso_num": 20,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_SALL4": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "nombre_completo": "RUDENID MONTANO CASSO",
+      "numero_peticion": "IHQ250485",
+      "identificacion": "29705520",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "42",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "ADRIANA MAYOR BARRERA",
+      "servicio": "GINECOLOGIA",
+      "fecha_ingreso": "05/05/2025",
+      "fecha_informe": "29/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250485",
+      "N. de identificación": "29705520",
+      "Tipo de documento": "CC",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "GINECOLOGIA",
+      "Médico tratante": "ADRIANA MAYOR BARRERA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "05/05/2025",
+      "Fecha Informe": "29/05/2025",
+      "nombres": "RUDENID",
+      "Primer nombre": "RUDENID",
+      "Segundo nombre": "",
+      "apellidos": "MONTANO CASSO",
+      "Primer apellido": "MONTANO",
+      "Segundo apellido": "CASSO",
+      "nombre_formal": "MONTANO CASSO, RUDENID",
+      "diagnostico": "Anexo derecho. Salpingooforectomía. Estudios de inmunohistoquímica: - LOS HALLAZGOS SON COMPATIBLES CON OVARIO COMPROMETIDO CON TERATOMA QUÍSTICO MONODÉRMICO CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La mayor parte de la lesión corresponde a una formnación quística revestida en tramos por epitelio escamoso maduro queratinizante, adicionalmente se identifica una lesión tumoral del estroma de los cordones sexuales compuesto por células pequeñas, cuboidales a poligonales, con citoplasma escaso y núcleos pálido cuya mayor dimensión mayor es de aproximadamente de 0.9 cm. Estas células tumorales presentan inmunoreactividad para calretinina, WT1 e inhibina con marcación heterogénea de predominio en la periferia de la lesión, el índice de proliferación celular KI-67 es del 8%. El resto de marcadores synaptophysin,SALL4, PAX8 y C99 son negativos..",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del Hospital universitario san Ignacio rotulado como 05228 que corresponde a \"Tumor anexo derecho\" con diagnóstico de \"Teratoma quístico maduro comprometido por neoplasia que requiere estudio complementario en inmunohistoquímica. Se reciben 28 bloques y láminas de hematoxilina- eosina. Previa revisión de la histología, se realizan niveles histológicos en el bloque 5 y 6 para tinción con: Calretinina,CD99 WT1, SALL4, PAX8, KI-67, Inhibina, synaptophysin.",
+      "ihq_organo": "ANEXO DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "GINECOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CALRETININA, CD99, WT1, SALL4, PAX8, Ki-67, INHIBINA, SYNAPTOFISINA",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Borak SG, Ross JR, Bell WC. Granular Cell Tumor Within an Ovarian Mature Cystic Teratoma: Report of a Unique Case and Review of the Literature. Int J Gynecol Pathol. 2017 Sep;36(5):453-458. doi: 10.1097/PGP.0000000000000332. PMID: 27750257. NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 39 --- IHQ250485 Copia Pag. 2 de 2 Nombre : RUDENID MONTANO CASSO N. peticion : IHQ250485 N.Identificación : CC. 29705520 Genero : FEMENINO Edad : 42 años 4 meses EPS : ASOCIACION INDIGENA DEL CAUCA Médico tratante : ADRIANA MAYOR BARRERA Servicio : GINECOLOGIA Fecha Ingreso : 05/05/2025 Fecha Informe : 29/05/2025",
+      "IHQ_ORGANO": "ANEXO DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CALRETININA, CD99, WT1, SALL4, PAX8, Ki-67, INHIBINA, SYNAPTOFISINA",
+      "IHQ_WT1": "E INHIBINA CON",
+      "extraction_timestamp": "2026-04-15T16:13:00.286384",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250485\nCopia Pag. 1 de 2\nNombre : RUDENID MONTANO CASSO\nN. peticion : IHQ250485\nN.Identificación : CC. 29705520\nGenero : FEMENINO\nEdad : 42 años 4 meses\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : GINECOLOGIA\nFecha Ingreso : 05/05/2025\nFecha Informe : 29/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nANEXO DERECHO +\nHISTERECTOMIA +\nSALPINGECTOMIA IZQ\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del Hospital\nuniversitario san Ignacio rotulado como 05228 que corresponde a “Tumor anexo derecho\" con\ndiagnóstico de “Teratoma quístico maduro comprometido por neoplasia que requiere estudio\ncomplementario en inmunohistoquímica. Se reciben 28 bloques y láminas de hematoxilina-\neosina. Previa revisión de la histología, se realizan niveles histológicos en el bloque 5 y 6 para\ntinción con: Calretinina,CD99 WT1, SALL4, PAX8, Ki67, Inhibina, sinaptofisina. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLa mayor parte de la lesión corresponde a una formnación quística revestida en tramos por\nepitelio escamoso maduro queratinizante, adicionalmente se identifica una lesión tumoral del\nestroma de los cordones sexuales compuesto por células pequeñas, cuboidales a poligonales, con\ncitoplasma escaso y núcleos pálido cuya mayor dimensión mayor es de aproximadamente de\n0.9 cm. Estas células tumorales presentan inmunoreactividad para calretinina, WT1 e inhibina con\nmarcación heterogénea de predominio en la periferia de la lesión, el índice de proliferación\ncelular Ki-67 es del 8%. El resto de marcadores sinaptofisina,SALL4, PAX8 y C99 son negativos..\nDIAGNÓSTICO\nAnexo derecho. Salpingooforectomía. Estudios de inmunohistoquímica: \n- LOS HALLAZGOS SON COMPATIBLES CON OVARIO COMPROMETIDO CON TERATOMA QUÍSTICO\nMONODÉRMICO CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO.\nCOMENTARIOS\nBorak SG, Ross JR, Bell WC. Granular Cell Tumor Within an Ovarian Mature Cystic Teratoma:\nReport\nof\na\nUnique\nCase\nand\nReview\nof\nthe\nLiterature.\nInt\nJ\nGynecol\nPathol.\n2017\nSep;36(5):453-458. doi: 10.1097/PGP.0000000000000332. PMID: 27750257.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---\nIHQ250485\nCopia Pag. 2 de 2\nNombre : RUDENID MONTANO CASSO\nN. peticion : IHQ250485\nN.Identificación : CC. 29705520\nGenero : FEMENINO\nEdad : 42 años 4 meses\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : GINECOLOGIA\nFecha Ingreso : 05/05/2025\nFecha Informe : 29/05/2025\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 40 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CALRETININA, CD99, WT1, SALL4, PAX8, Ki-67, INHIBINA, SYNAPTOFISINA",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del Hospital universitario san Ignacio rotulado como 05228 que corresponde a “Tumor anexo derecho\" con diagnóstico de “Teratoma quístico maduro comprometido por neoplasia que requiere estudio complementario en inmunohistoquímica. Se reciben 28 bloques y láminas de hematoxilina- eosina. Previa revisión de la histología, se realizan niveles histológicos en el bloque 5 y 6 para tinción con: Calretinina,CD99 WT1, SALL4, PAX8, Ki67, Inhibina, sinaptofisina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La mayor parte de la lesión corresponde a una formnación quística revestida en tramos por epitelio escamoso maduro queratinizante, adicionalmente se identifica una lesión tumoral del estroma de los cordones sexuales compuesto por células pequeñas, cuboidales a poligonales, con citoplasma escaso y núcleos pálido cuya mayor dimensión mayor es de aproximadamente de 0.9 cm. Estas células tumorales presentan inmunoreactividad para calretinina, WT1 e inhibina con marcación heterogénea de predominio en la periferia de la lesión, el índice de proliferación celular Ki-67 es del 8%. El resto de marcadores sinaptofisina,SALL4, PAX8 y C99 son negativos..",
+      "Descripcion Diagnostico": "Anexo derecho. Salpingooforectomía. Estudios de inmunohistoquímica: - LOS HALLAZGOS SON COMPATIBLES CON OVARIO COMPROMETIDO CON TERATOMA QUÍSTICO MONODÉRMICO CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO.",
+      "IHQ_ORGANO": "ANEXO DERECHO",
+      "Organo": "ANEXO DERECHO + HISTERECTOMIA + SALPINGECTOMIA IZQ",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "OVARIO COMPROMETIDO CON TERATOMA QUÍSTICO MONODÉRMICO CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CALRETININA": "NO MENCIONADO",
+      "IHQ_CD99": "NO MENCIONADO",
+      "IHQ_WT1": "E INHIBINA CON",
+      "IHQ_SALL4": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_INHIBINA": "",
+      "IHQ_SINAPTOFISINA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 137,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Anexo derecho. Salpingooforectomía. Estudios de inmunohistoquímica: \n- LOS HALLAZGOS SON COMPATIBLES CON OVARIO COMPROMETIDO CON TERATOMA QUÍSTICO\nMONODÉRMICO CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO.",
+      "valor_corregido": "Anexo derecho. Salpingooforectomía. Estudios de inmunohistoquímica: - LOS HALLAZGOS SON COMPATIBLES CON OVARIO COMPROMETIDO CON TERATOMA QUÍSTICO MONODÉRMICO CON TUMOR DE CÉLULAS DE LA GRANULOSA DEL ADULTO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250485",
+      "timestamp": "2026-04-15T16:13:00.286007"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del Hospital universitario san Ignacio rotulado como 05228 que corresponde a “Tumor anexo derecho\" con diagnóstico de “Teratoma quístico maduro comprometido por neoplasia que requiere estudio complementario en inmunohistoquímica. Se reciben 28 bloques y láminas de hematoxilina- eosina. Previa revisión de la histología, se realizan niveles histológicos en el bloque 5 y 6 para tinción con: Calretinina,CD99 WT1, SALL4, PAX8, Ki67, Inhibina, sinaptofisina.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del Hospital universitario san Ignacio rotulado como 05228 que corresponde a \"Tumor anexo derecho\" con diagnóstico de \"Teratoma quístico maduro comprometido por neoplasia que requiere estudio complementario en inmunohistoquímica. Se reciben 28 bloques y láminas de hematoxilina- eosina. Previa revisión de la histología, se realizan niveles histológicos en el bloque 5 y 6 para tinción con: Calretinina,CD99 WT1, SALL4, PAX8, KI-67, Inhibina, synaptophysin.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250485",
+      "timestamp": "2026-04-15T16:13:00.286013"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La mayor parte de la lesión corresponde a una formnación quística revestida en tramos por epitelio escamoso maduro queratinizante, adicionalmente se identifica una lesión tumoral del estroma de los cordones sexuales compuesto por células pequeñas, cuboidales a poligonales, con citoplasma escaso y núcleos pálido cuya mayor dimensión mayor es de aproximadamente de 0.9 cm. Estas células tumorales presentan inmunoreactividad para calretinina, WT1 e inhibina con marcación heterogénea de predominio en la periferia de la lesión, el índice de proliferación celular Ki-67 es del 8%. El resto de marcadores sinaptofisina,SALL4, PAX8 y C99 son negativos..",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. La mayor parte de la lesión corresponde a una formnación quística revestida en tramos por epitelio escamoso maduro queratinizante, adicionalmente se identifica una lesión tumoral del estroma de los cordones sexuales compuesto por células pequeñas, cuboidales a poligonales, con citoplasma escaso y núcleos pálido cuya mayor dimensión mayor es de aproximadamente de 0.9 cm. Estas células tumorales presentan inmunoreactividad para calretinina, WT1 e inhibina con marcación heterogénea de predominio en la periferia de la lesión, el índice de proliferación celular KI-67 es del 8%. El resto de marcadores synaptophysin,SALL4, PAX8 y C99 son negativos..",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250485",
+      "timestamp": "2026-04-15T16:13:00.286014"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Borak SG, Ross JR, Bell WC. Granular Cell Tumor Within an Ovarian Mature Cystic Teratoma:\nReport\nof\na\nUnique\nCase\nand\nReview\nof\nthe\nLiterature.\nInt\nJ\nGynecol\nPathol.\n2017\nSep;36(5):453-458. doi: 10.1097/PGP.0000000000000332. PMID: 27750257.\nNANCY MEJIA VARGAS\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 39 ---\nIHQ250485\nCopia Pag. 2 de 2\nNombre : RUDENID MONTANO CASSO\nN. peticion : IHQ250485\nN.Identificación : CC. 29705520\nGenero : FEMENINO\nEdad : 42 años 4 meses\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : ADRIANA MAYOR BARRERA\nServicio : GINECOLOGIA\nFecha Ingreso : 05/05/2025\nFecha Informe : 29/05/2025",
+      "valor_corregido": "Borak SG, Ross JR, Bell WC. Granular Cell Tumor Within an Ovarian Mature Cystic Teratoma: Report of a Unique Case and Review of the Literature. Int J Gynecol Pathol. 2017 Sep;36(5):453-458. doi: 10.1097/PGP.0000000000000332. PMID: 27750257. NANCY MEJIA VARGAS Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 39 --- IHQ250485 Copia Pag. 2 de 2 Nombre : RUDENID MONTANO CASSO N. peticion : IHQ250485 N.Identificación : CC. 29705520 Genero : FEMENINO Edad : 42 años 4 meses EPS : ASOCIACION INDIGENA DEL CAUCA Médico tratante : ADRIANA MAYOR BARRERA Servicio : GINECOLOGIA Fecha Ingreso : 05/05/2025 Fecha Informe : 29/05/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250485",
+      "timestamp": "2026-04-15T16:13:00.286015"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 52
+  }
+}

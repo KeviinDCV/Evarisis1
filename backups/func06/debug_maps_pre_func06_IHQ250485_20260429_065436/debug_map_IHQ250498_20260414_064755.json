@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250498_20260414_064755",
+  "numero_peticion": "IHQ250498",
+  "timestamp": "2026-04-14T06:47:55.053709",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250498\nCopia Pag. 1 de 2\nNombre : PABLO ERAZO IBARRA\nN. peticion : IHQ250498\nN.Identificación : CC. 94380766\nGenero : MASCULINO\nEdad : 58 años 10 dias\nEPS : NUEVA EPS\nMédico tratante : IVO SILIC BILIC\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 31/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nVACIAMIENTO\nGANGLIONAR CUELLO\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2504759 el cual corresponde a \"vaciamiento ganglionar cuello\nderecho\" con diagnóstico de \"NEOPLASIA EN PATRÓN SÓLIDO Y ACINAR A CLASIFICAR MEDIANTES\nESTUDIOS DE INMUNOHISTOQUÍMICA\" por lo que se realiza marcación para CK7, CK20, CK19,\nCDX2, PSA, TTF1, napsina, GATA3, p63, CA19-9 y CEA.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA®.\nLas células tumorales presentan tinción positiva membranosa para CK7, CK19 y CEA, granular\ncitoplasmática para CA19-9.\nSin marcación para CK20, CDX2, napsina, TTF1, PSA, GATA3 y p63.\nDIAGNÓSTICO\nGanglios cervicales derechos. Vaciamiento ganglionar. Estudios de inmunohistoquímica.\nADENOCARCINOMA METASTÁSICO.\nVER COMENTARIO.\nCOMENTARIOS\nLos hallazgos morfológicos y de inmunohistoquímica sugieren posible origen gastrointestinal\nversus pancreatobiliar por lo que se sugiere correlacionar con hallazgos imagenologicos e historia\nclínica.\nEl origen primario es poco probable para los siguientes órganos por no reactividad de PSA para\norigen en próstata, TTF1 para origen en tiroides y pulmón, napsina para origen pulmonar, GATA 3\npara origen de glándula salival y renal, p63 para origen escamoso y de glandula salival.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ250498\nCopia Pag. 2 de 2\nNombre : PABLO ERAZO IBARRA\nN. peticion : IHQ250498\nN.Identificación : CC. 94380766\nGenero : MASCULINO\nEdad : 58 años 10 dias\nEPS : NUEVA EPS\nMédico tratante : IVO SILIC BILIC\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 31/05/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3542,
+      "reduccion_porcentaje": 98.12
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250498",
+      "caso_num": 33,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_PSA": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "nombre_completo": "PABLO ERAZO IBARRA",
+      "numero_peticion": "IHQ250498",
+      "identificacion": "94380766",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "58",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "IVO SILIC BILIC",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "08/05/2025",
+      "fecha_informe": "31/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250498",
+      "N. de identificación": "94380766",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "IVO SILIC BILIC",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/05/2025",
+      "Fecha Informe": "31/05/2025",
+      "nombres": "PABLO",
+      "Primer nombre": "PABLO",
+      "Segundo nombre": "",
+      "apellidos": "ERAZO IBARRA",
+      "Primer apellido": "ERAZO",
+      "Segundo apellido": "IBARRA",
+      "nombre_formal": "ERAZO IBARRA, PABLO",
+      "diagnostico": "Ganglios cervicales derechos. Vaciamiento ganglionar. Estudios de inmunohistoquímica. ADENOCARCINOMA METASTÁSICO. VER COMENTARIO.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales presentan tinción positiva membranosa para CK7, CK19 y CEA, granular citoplasmática para CA19-9. Sin marcación para CK20, CDX2, napsina, TTF1, PSA, GATA3 y p63.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2504759 el cual corresponde a \"vaciamiento ganglionar cuello derecho\" con diagnóstico de \"NEOPLASIA EN PATRÓN SÓLIDO Y ACINAR A CLASIFICAR MEDIANTES ESTUDIOS DE INMUNOHISTOQUÍMICA\" por lo que se realiza marcación para CK7, CK20, CK19, CDX2, PSA, TTF1, napsina, GATA3, p63, CA19-9 y CEA.",
+      "ihq_organo": "GANGLIOS CERVICALES DERECHOS",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Los hallazgos morfológicos y de inmunohistoquímica sugieren posible origen gastrointestinal versus pancreatobiliar por lo que se sugiere correlacionar con hallazgos imagenologicos e historia clínica. El origen primario es poco probable para los siguientes órganos por no reactividad de PSA para origen en próstata, TTF1 para origen en tiroides y pulmón, napsina para origen pulmonar, GATA 3 para origen de glándula salival y renal, p63 para origen escamoso y de glandula salival. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 63 --- IHQ250498 Copia Pag. 2 de 2 Nombre : PABLO ERAZO IBARRA N. peticion : IHQ250498 N.Identificación : CC. 94380766 Genero : MASCULINO Edad : 58 años 10 dias EPS : NUEVA EPS Médico tratante : IVO SILIC BILIC Servicio : QUIROFANO CENTRAL Fecha Ingreso : 08/05/2025 Fecha Informe : 31/05/2025",
+      "IHQ_ORGANO": "GANGLIOS CERVICALES DERECHOS",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_P63": "NEGATIVO",
+      "extraction_timestamp": "2026-04-14T06:47:55.330531",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250498\nCopia Pag. 1 de 2\nNombre : PABLO ERAZO IBARRA\nN. peticion : IHQ250498\nN.Identificación : CC. 94380766\nGenero : MASCULINO\nEdad : 58 años 10 dias\nEPS : NUEVA EPS\nMédico tratante : IVO SILIC BILIC\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 31/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nVACIAMIENTO\nGANGLIONAR CUELLO\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2504759 el cual corresponde a \"vaciamiento ganglionar cuello\nderecho\" con diagnóstico de \"NEOPLASIA EN PATRÓN SÓLIDO Y ACINAR A CLASIFICAR MEDIANTES\nESTUDIOS DE INMUNOHISTOQUÍMICA\" por lo que se realiza marcación para CK7, CK20, CK19,\nCDX2, PSA, TTF1, napsina, GATA3, p63, CA19-9 y CEA.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nROCHE VENTANA®.\nLas células tumorales presentan tinción positiva membranosa para CK7, CK19 y CEA, granular\ncitoplasmática para CA19-9.\nSin marcación para CK20, CDX2, napsina, TTF1, PSA, GATA3 y p63.\nDIAGNÓSTICO\nGanglios cervicales derechos. Vaciamiento ganglionar. Estudios de inmunohistoquímica.\nADENOCARCINOMA METASTÁSICO.\nVER COMENTARIO.\nCOMENTARIOS\nLos hallazgos morfológicos y de inmunohistoquímica sugieren posible origen gastrointestinal\nversus pancreatobiliar por lo que se sugiere correlacionar con hallazgos imagenologicos e historia\nclínica.\nEl origen primario es poco probable para los siguientes órganos por no reactividad de PSA para\norigen en próstata, TTF1 para origen en tiroides y pulmón, napsina para origen pulmonar, GATA 3\npara origen de glándula salival y renal, p63 para origen escamoso y de glandula salival.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ250498\nCopia Pag. 2 de 2\nNombre : PABLO ERAZO IBARRA\nN. peticion : IHQ250498\nN.Identificación : CC. 94380766\nGenero : MASCULINO\nEdad : 58 años 10 dias\nEPS : NUEVA EPS\nMédico tratante : IVO SILIC BILIC\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 31/05/2025\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CDX2, CK20, CK7, GATA3, NAPSIN, P63, PSA, TTF1",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2504759 el cual corresponde a \"vaciamiento ganglionar cuello derecho\" con diagnóstico de \"NEOPLASIA EN PATRÓN SÓLIDO Y ACINAR A CLASIFICAR MEDIANTES ESTUDIOS DE INMUNOHISTOQUÍMICA\" por lo que se realiza marcación para CK7, CK20, CK19, CDX2, PSA, TTF1, napsina, GATA3, p63, CA19-9 y CEA.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales presentan tinción positiva membranosa para CK7, CK19 y CEA, granular citoplasmática para CA19-9. Sin marcación para CK20, CDX2, napsina, TTF1, PSA, GATA3 y p63.",
+      "Descripcion Diagnostico": "Ganglios cervicales derechos. Vaciamiento ganglionar. Estudios de inmunohistoquímica. ADENOCARCINOMA METASTÁSICO. VER COMENTARIO.",
+      "IHQ_ORGANO": "GANGLIOS CERVICALES DERECHOS",
+      "Organo": "VACIAMIENTO GANGLIONAR CUELLO DERECHO",
+      "Diagnostico Coloracion": "NEOPLASIA EN PATRÓN SÓLIDO Y ACINAR A CLASIFICAR MEDIANTES ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "ADENOCARCINOMA METASTÁSICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_NAPSIN": "NEGATIVO",
+      "IHQ_P63": "NEGATIVO",
+      "IHQ_PSA": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 136,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 8,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglios cervicales derechos. Vaciamiento ganglionar. Estudios de inmunohistoquímica.\nADENOCARCINOMA METASTÁSICO.\nVER COMENTARIO.",
+      "valor_corregido": "Ganglios cervicales derechos. Vaciamiento ganglionar. Estudios de inmunohistoquímica. ADENOCARCINOMA METASTÁSICO. VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250498",
+      "timestamp": "2026-04-14T06:47:55.324584"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los hallazgos morfológicos y de inmunohistoquímica sugieren posible origen gastrointestinal\nversus pancreatobiliar por lo que se sugiere correlacionar con hallazgos imagenologicos e historia\nclínica.\nEl origen primario es poco probable para los siguientes órganos por no reactividad de PSA para\norigen en próstata, TTF1 para origen en tiroides y pulmón, napsina para origen pulmonar, GATA 3\npara origen de glándula salival y renal, p63 para origen escamoso y de glandula salival.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 63 ---\nIHQ250498\nCopia Pag. 2 de 2\nNombre : PABLO ERAZO IBARRA\nN. peticion : IHQ250498\nN.Identificación : CC. 94380766\nGenero : MASCULINO\nEdad : 58 años 10 dias\nEPS : NUEVA EPS\nMédico tratante : IVO SILIC BILIC\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 31/05/2025",
+      "valor_corregido": "Los hallazgos morfológicos y de inmunohistoquímica sugieren posible origen gastrointestinal versus pancreatobiliar por lo que se sugiere correlacionar con hallazgos imagenologicos e historia clínica. El origen primario es poco probable para los siguientes órganos por no reactividad de PSA para origen en próstata, TTF1 para origen en tiroides y pulmón, napsina para origen pulmonar, GATA 3 para origen de glándula salival y renal, p63 para origen escamoso y de glandula salival. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 63 --- IHQ250498 Copia Pag. 2 de 2 Nombre : PABLO ERAZO IBARRA N. peticion : IHQ250498 N.Identificación : CC. 94380766 Genero : MASCULINO Edad : 58 años 10 dias EPS : NUEVA EPS Médico tratante : IVO SILIC BILIC Servicio : QUIROFANO CENTRAL Fecha Ingreso : 08/05/2025 Fecha Informe : 31/05/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250498",
+      "timestamp": "2026-04-14T06:47:55.324591"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 54
+  }
+}

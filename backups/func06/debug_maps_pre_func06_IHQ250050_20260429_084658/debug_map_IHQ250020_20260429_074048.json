@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250020_20260429_074048",
+  "numero_peticion": "IHQ250020",
+  "timestamp": "2026-04-29T07:40:48.409731",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250020\nCopia Pag. 1 de 1\nNombre : ROBERT LENIS SANCHEZ\nN. peticion : IHQ250020\nN.Identificación : CC. 16756086\nGenero : MASCULINO\nEdad : 56 años\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : NUTRICION Y DIETETICA COEX\nFecha Ingreso : 07/01/2025\nFecha Informe : 09/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLENGUA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nrotulado como “24FQ-27640” que corresponde a “lengua, parte posterior y anterior” con diagnósticos de\n“CARCINOMA ESCAMOCELULAR ORAL NO QUERATINIZANTE”. Previa revisión de la histología, se realizan\nniveles histológicos al bloque B para tinción con p16 y p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\np16 negativo.\np40 positivo.\nDIAGNÓSTICO\nLengua. Tumor. Escisión. Estudio de inmunohistoquimica:\n- CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, p16 NEGATIVO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---",
+    "hash_original": "5455449752a5d72a018805382eb8a840",
+    "estadisticas": {
+      "caracteres_totales": 171184,
+      "caracteres_consolidados": 2368,
+      "reduccion_porcentaje": 98.62
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 001 AL 050.pdf",
+      "numero_ihq": "IHQ250020",
+      "caso_num": 20,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ROBERT LENIS SANCHEZ",
+      "numero_peticion": "IHQ250020",
+      "identificacion": "16756086",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "56",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "LUIS ALFONSO GONZALEZ",
+      "servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "fecha_ingreso": "07/01/2025",
+      "fecha_informe": "09/01/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250020",
+      "N. de identificación": "16756086",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "UNIDAD DE ONCOLOGIA COEX",
+      "Médico tratante": "LUIS ALFONSO GONZALEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/01/2025",
+      "Fecha Informe": "09/01/2025",
+      "nombres": "ROBERT",
+      "Primer nombre": "ROBERT",
+      "Segundo nombre": "",
+      "apellidos": "LENIS SANCHEZ",
+      "Primer apellido": "LENIS",
+      "Segundo apellido": "SANCHEZ",
+      "nombre_formal": "LENIS SANCHEZ, ROBERT",
+      "diagnostico": "Lengua. Tumor. Escisión. Estudio de inmunohistoquimica: - CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, p16 NEGATIVO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. p16 negativo. p40 positivo.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como \"24FQ-27640\" que corresponde a \"lengua, parte posterior y anterior\" con diagnósticos de \"CARCINOMA ESCAMOCELULAR ORAL NO QUERATINIZANTE\". Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción con p16 y p40.",
+      "ihq_organo": "LENGUA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, P40",
+      "procedimiento": "",
+      "comentarios": "",
+      "IHQ_ORGANO": "LENGUA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "p16": "NEGATIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-04-29T07:40:48.673620",
+      "extractor_version": "6.0.2_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250020\nCopia Pag. 1 de 1\nNombre : ROBERT LENIS SANCHEZ\nN. peticion : IHQ250020\nN.Identificación : CC. 16756086\nGenero : MASCULINO\nEdad : 56 años\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : LUIS ALFONSO GONZALEZ\nServicio : NUTRICION Y DIETETICA COEX\nFecha Ingreso : 07/01/2025\nFecha Informe : 09/01/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLENGUA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional\nrotulado como “24FQ-27640” que corresponde a “lengua, parte posterior y anterior” con diagnósticos de\n“CARCINOMA ESCAMOCELULAR ORAL NO QUERATINIZANTE”. Previa revisión de la histología, se realizan\nniveles histológicos al bloque B para tinción con p16 y p40.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\np16 negativo.\np40 positivo.\nDIAGNÓSTICO\nLengua. Tumor. Escisión. Estudio de inmunohistoquimica:\n- CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, p16 NEGATIVO.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 34 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como “24FQ-27640” que corresponde a “lengua, parte posterior y anterior” con diagnósticos de “CARCINOMA ESCAMOCELULAR ORAL NO QUERATINIZANTE”. Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción con p16 y p40.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. p16 negativo. p40 positivo.",
+      "Descripcion Diagnostico": "Lengua. Tumor. Escisión. Estudio de inmunohistoquimica: - CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, p16 NEGATIVO.",
+      "IHQ_ORGANO": "LENGUA",
+      "Organo": "LENGUA",
+      "Diagnostico Coloracion": "CARCINOMA ESCAMOCELULAR ORAL NO QUERATINIZANTE",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, P16 NEGATIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P40_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 177,
+      "campos_vacios": 141,
+      "campos_completos": 36,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 36
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Lengua. Tumor. Escisión. Estudio de inmunohistoquimica:\n- CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, p16 NEGATIVO.",
+      "valor_corregido": "Lengua. Tumor. Escisión. Estudio de inmunohistoquimica: - CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, p16 NEGATIVO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250020",
+      "timestamp": "2026-04-29T07:40:48.671903"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como “24FQ-27640” que corresponde a “lengua, parte posterior y anterior” con diagnósticos de “CARCINOMA ESCAMOCELULAR ORAL NO QUERATINIZANTE”. Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción con p16 y p40.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material extra-institucional rotulado como \"24FQ-27640\" que corresponde a \"lengua, parte posterior y anterior\" con diagnósticos de \"CARCINOMA ESCAMOCELULAR ORAL NO QUERATINIZANTE\". Previa revisión de la histología, se realizan niveles histológicos al bloque B para tinción con p16 y p40.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250020",
+      "timestamp": "2026-04-29T07:40:48.671910"
+    },
+    {
+      "tipo": "medico_servicio",
+      "campo": "Servicio",
+      "valor_original": "NUTRICION Y DIETETICA COEX",
+      "valor_corregido": "UNIDAD DE ONCOLOGIA COEX",
+      "razon": "El médico LUIS ALFONSO GONZALEZ es Cirujano Oncólogo. El servicio 'NUTRICION Y DIETETICA COEX' es inconsistente. Servicio correcto: 'UNIDAD DE ONCOLOGIA COEX'",
+      "timestamp": "2026-04-29T07:40:48.674355",
+      "confianza": 1.0,
+      "numero_caso": "IHQ250020"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 2,
+      "medico_servicio": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 171184,
+    "campos_extraidos": 50
+  }
+}

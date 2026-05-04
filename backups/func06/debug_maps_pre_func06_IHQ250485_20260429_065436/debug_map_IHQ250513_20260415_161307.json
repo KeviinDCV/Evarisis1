@@ -1,0 +1,150 @@
+{
+  "session_id": "IHQ250513_20260415_161307",
+  "numero_peticion": "IHQ250513",
+  "timestamp": "2026-04-15T16:13:07.636887",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250513\nCopia Pag. 1 de 1\nNombre : ANABOLENA MUÑOZ VARELA\nN. peticion : IHQ250513\nN.Identificación : CC. 31285928\nGenero : FEMENINO\nEdad : 67 años 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : CARLOS ALBERTO MORIONES\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 09/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR MASA EN CUELLO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional\nrotulado como \" M2504684 \" corresponde a “biopsia de masa en cuello”, con diagnostico “INFILTRADO\nINFLAMATORIO AGUDO Y CRÓNICO CON CELULARIDAD ATÍPICA FOCAL.”. Previa revisión de la histología\nse realizan niveles histológicos para la marcación con CD34, CKAE1/E3, CD30, CD3 y CD 20\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa celularidad atípica descrita tiene tinción positiva para CD34, negativo para CD 30 y CKAE1/AE3, hay un\ninfiltrado inflamatorio con marcación para CD3+ y CD 20+\nDIAGNÓSTICO\n Cuello. Masa. Biopsia. Estudio de inmunohistoquimica\nCAMBIOS REACTIVOS ASOCIADO A PROCESO INFLAMATORIO AGUDO Y CRÓNICO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 94 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 2523,
+      "reduccion_porcentaje": 98.66
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250513",
+      "caso_num": 48,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "nombre_completo": "ANABOLENA MUÑOZ VARELA",
+      "numero_peticion": "IHQ250513",
+      "identificacion": "31285928",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "67",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "CARLOS ALBERTO MORIONES",
+      "servicio": "OTORRINO CONSULTA EXTERNA",
+      "fecha_ingreso": "09/05/2025",
+      "fecha_informe": "16/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250513",
+      "N. de identificación": "31285928",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "OTORRINO CONSULTA EXTERNA",
+      "Médico tratante": "CARLOS ALBERTO MORIONES",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/05/2025",
+      "Fecha Informe": "16/05/2025",
+      "nombres": "ANABOLENA",
+      "Primer nombre": "ANABOLENA",
+      "Segundo nombre": "",
+      "apellidos": "MUÑOZ VARELA",
+      "Primer apellido": "MUÑOZ",
+      "Segundo apellido": "VARELA",
+      "nombre_formal": "MUÑOZ VARELA, ANABOLENA",
+      "diagnostico": "Cuello. Masa. Biopsia. Estudio de inmunohistoquimica CAMBIOS REACTIVOS ASOCIADO A PROCESO INFLAMATORIO AGUDO Y CRÓNICO",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad atípica descrita tiene tinción positiva para CD34, negativo para CD 30 y CKAE1/AE3, hay un infiltrado inflamatorio con marcación para CD3+ y CD 20+",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \" M2504684 \" corresponde a \"biopsia de masa en cuello\", con diagnostico \"INFILTRADO INFLAMATORIO AGUDO Y CRÓNICO CON CELULARIDAD ATÍPICA FOCAL.\". Previa revisión de la histología se realizan niveles histológicos para la marcación con CD34, CKAE1/E3, CD30, CD3 y CD 20",
+      "ihq_organo": "CUELLO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CUELLO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "extraction_timestamp": "2026-04-15T16:13:07.893069",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250513\nCopia Pag. 1 de 1\nNombre : ANABOLENA MUÑOZ VARELA\nN. peticion : IHQ250513\nN.Identificación : CC. 31285928\nGenero : FEMENINO\nEdad : 67 años 14 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : CARLOS ALBERTO MORIONES\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 09/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR MASA EN CUELLO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional\nrotulado como \" M2504684 \" corresponde a “biopsia de masa en cuello”, con diagnostico “INFILTRADO\nINFLAMATORIO AGUDO Y CRÓNICO CON CELULARIDAD ATÍPICA FOCAL.”. Previa revisión de la histología\nse realizan niveles histológicos para la marcación con CD34, CKAE1/E3, CD30, CD3 y CD 20\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa celularidad atípica descrita tiene tinción positiva para CD34, negativo para CD 30 y CKAE1/AE3, hay un\ninfiltrado inflamatorio con marcación para CD3+ y CD 20+\nDIAGNÓSTICO\n Cuello. Masa. Biopsia. Estudio de inmunohistoquimica\nCAMBIOS REACTIVOS ASOCIADO A PROCESO INFLAMATORIO AGUDO Y CRÓNICO\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 94 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD30, CD34, CKAE1AE3",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \" M2504684 \" corresponde a “biopsia de masa en cuello”, con diagnostico “INFILTRADO INFLAMATORIO AGUDO Y CRÓNICO CON CELULARIDAD ATÍPICA FOCAL.”. Previa revisión de la histología se realizan niveles histológicos para la marcación con CD34, CKAE1/E3, CD30, CD3 y CD 20",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad atípica descrita tiene tinción positiva para CD34, negativo para CD 30 y CKAE1/AE3, hay un infiltrado inflamatorio con marcación para CD3+ y CD 20+",
+      "Descripcion Diagnostico": "Cuello. Masa. Biopsia. Estudio de inmunohistoquimica CAMBIOS REACTIVOS ASOCIADO A PROCESO INFLAMATORIO AGUDO Y CRÓNICO",
+      "IHQ_ORGANO": "CUELLO",
+      "Organo": "TUMOR MASA EN CUELLO",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "ESTUDIO DE INMUNOHISTOQUIMICA CAMBIOS REACTIVOS ASOCIADO A PROCESO INFLAMATORIO AGUDO Y CRÓNICO",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD30": "NEGATIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cuello. Masa. Biopsia. Estudio de inmunohistoquimica\nCAMBIOS REACTIVOS ASOCIADO A PROCESO INFLAMATORIO AGUDO Y CRÓNICO",
+      "valor_corregido": "Cuello. Masa. Biopsia. Estudio de inmunohistoquimica CAMBIOS REACTIVOS ASOCIADO A PROCESO INFLAMATORIO AGUDO Y CRÓNICO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250513",
+      "timestamp": "2026-04-15T16:13:07.892713"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \" M2504684 \" corresponde a “biopsia de masa en cuello”, con diagnostico “INFILTRADO INFLAMATORIO AGUDO Y CRÓNICO CON CELULARIDAD ATÍPICA FOCAL.”. Previa revisión de la histología se realizan niveles histológicos para la marcación con CD34, CKAE1/E3, CD30, CD3 y CD 20",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \" M2504684 \" corresponde a \"biopsia de masa en cuello\", con diagnostico \"INFILTRADO INFLAMATORIO AGUDO Y CRÓNICO CON CELULARIDAD ATÍPICA FOCAL.\". Previa revisión de la histología se realizan niveles histológicos para la marcación con CD34, CKAE1/E3, CD30, CD3 y CD 20",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250513",
+      "timestamp": "2026-04-15T16:13:07.892719"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 49
+  }
+}

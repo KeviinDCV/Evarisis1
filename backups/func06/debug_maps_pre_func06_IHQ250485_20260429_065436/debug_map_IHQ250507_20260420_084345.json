@@ -1,0 +1,147 @@
+{
+  "session_id": "IHQ250507_20260420_084345",
+  "numero_peticion": "IHQ250507",
+  "timestamp": "2026-04-20T08:43:45.291974",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250507\nCopia Pag. 1 de 2\nNombre : WILLIAM ARLEY NOSCUE VELASCO\nN. peticion : IHQ250507\nN.Identificación : CC. 1067522874\nGenero : MASCULINO\nEdad : 19 años 11 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UCI TRASPLANTES\nFecha Ingreso : 09/05/2025\nFecha Informe : 21/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2504942 que corresponde a biopsia de médula ósea, con diagnóstico de\n\"HIPOPLASIA (CELULARIDAD DISMINUIDA PARA LA EDAD DEL 10%); MINIMA REPRESENTACION DE LAS\nTRES LINEAS CELULARES; SIN INCREMENTOS DE BLASTOS NI AGREGADOS MONONUCLEARES; SIN\nEVIDENCIA MORFOLOGICA DE CELULARIDAD NO HEMATOPOYETICA\". Se realizan estudios de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nMédula ósea con escasa celularidad; con presencia de las tres líneas celulares, la serie mieloide está\nmínimamente representada MPO positiva así mismo la línea eritroide es inmunorreactiva para\nGlicoforina, con una relación 1 a 1. Hay linfocitos T CD3+ así como linfocitos B CD20+ de manera\ndispersa y sin acúmulos; las células plasmáticas corresponden al 10% de la celularidad que son CD38+ y\nsin expresión aberrante para CD56. Se identifican blastos que corresponden a menos del 1% y son\nCD34+. No hay expresión de células no hematolinfoides con CKAE1/AE3 negativo.\nDIAGNÓSTICO\nMédula ósea. Biopsia. Estudios de inmunohistoquímica:\nHIPOPLASIA (CELULARIDAD DISMINUIDA PARA LA EDAD DEL 10%)\nREPRESENTACION DE LAS TRES LINEAS CELULARES\nSIN INCREMENTOS DE BLASTOS\nSIN EVIDENCIA DE CELULARIDAD NO HEMATOPOYETICA\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---\nIHQ250507\nCopia Pag. 2 de 2\nNombre : WILLIAM ARLEY NOSCUE VELASCO\nN. peticion : IHQ250507\nN.Identificación : CC. 1067522874\nGenero : MASCULINO\nEdad : 19 años 11 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UCI TRASPLANTES\nFecha Ingreso : 09/05/2025\nFecha Informe : 21/05/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3645,
+      "reduccion_porcentaje": 98.07
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250507",
+      "caso_num": 42,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "nombre_completo": "WILLIAM ARLEY NOSCUE VELASCO",
+      "numero_peticion": "IHQ250507",
+      "identificacion": "1067522874",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "19",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "SILVIO ANDRES BOLAÑOS",
+      "servicio": "UCI TRASPLANTES",
+      "fecha_ingreso": "09/05/2025",
+      "fecha_informe": "21/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250507",
+      "N. de identificación": "1067522874",
+      "Tipo de documento": "CC",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "UCI TRASPLANTES",
+      "Médico tratante": "SILVIO ANDRES BOLAÑOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "09/05/2025",
+      "Fecha Informe": "21/05/2025",
+      "nombres": "WILLIAM ARLEY",
+      "Primer nombre": "WILLIAM",
+      "Segundo nombre": "ARLEY",
+      "apellidos": "NOSCUE VELASCO",
+      "Primer apellido": "NOSCUE",
+      "Segundo apellido": "VELASCO",
+      "nombre_formal": "NOSCUE VELASCO, WILLIAM ARLEY",
+      "diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica: HIPOPLASIA (CELULARIDAD DISMINUIDA PARA LA EDAD DEL 10%) REPRESENTACION DE LAS TRES LINEAS CELULARES SIN INCREMENTOS DE BLASTOS SIN EVIDENCIA DE CELULARIDAD NO HEMATOPOYETICA MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________: 09/05/2025",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Médula ósea con escasa celularidad; con presencia de las tres líneas celulares, la serie mieloide está mínimamente representada MPO positiva así mismo la línea eritroide es inmunorreactiva para Glicoforina, con una relación 1 a 1. Hay linfocitos T CD3+ así como linfocitos B CD20+ de manera dispersa y sin acúmulos; las células plasmáticas corresponden al 10% de la celularidad que son CD38+ y sin expresión aberrante para CD56. Se identifican blastos que corresponden a menos del 1% y son CD34+. No hay expresión de células no hematolinfoides con CKAE1/AE3 negativo.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2504942 que corresponde a biopsia de médula ósea, con diagnóstico de \"HIPOPLASIA (CELULARIDAD DISMINUIDA PARA LA EDAD DEL 10%); MINIMA REPRESENTACION DE LAS TRES LINEAS CELULARES; SIN INCREMENTOS DE BLASTOS NI AGREGADOS MONONUCLEARES; SIN EVIDENCIA MORFOLOGICA DE CELULARIDAD NO HEMATOPOYETICA\". Se realizan estudios de inmunohistoquímica.",
+      "ihq_organo": "MÉDULA ÓSEA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CD56": "POSITIVO (aberrante)",
+      "extraction_timestamp": "2026-04-20T08:43:45.542936",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250507\nCopia Pag. 1 de 2\nNombre : WILLIAM ARLEY NOSCUE VELASCO\nN. peticion : IHQ250507\nN.Identificación : CC. 1067522874\nGenero : MASCULINO\nEdad : 19 años 11 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UCI TRASPLANTES\nFecha Ingreso : 09/05/2025\nFecha Informe : 21/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2504942 que corresponde a biopsia de médula ósea, con diagnóstico de\n\"HIPOPLASIA (CELULARIDAD DISMINUIDA PARA LA EDAD DEL 10%); MINIMA REPRESENTACION DE LAS\nTRES LINEAS CELULARES; SIN INCREMENTOS DE BLASTOS NI AGREGADOS MONONUCLEARES; SIN\nEVIDENCIA MORFOLOGICA DE CELULARIDAD NO HEMATOPOYETICA\". Se realizan estudios de\ninmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nMédula ósea con escasa celularidad; con presencia de las tres líneas celulares, la serie mieloide está\nmínimamente representada MPO positiva así mismo la línea eritroide es inmunorreactiva para\nGlicoforina, con una relación 1 a 1. Hay linfocitos T CD3+ así como linfocitos B CD20+ de manera\ndispersa y sin acúmulos; las células plasmáticas corresponden al 10% de la celularidad que son CD38+ y\nsin expresión aberrante para CD56. Se identifican blastos que corresponden a menos del 1% y son\nCD34+. No hay expresión de células no hematolinfoides con CKAE1/AE3 negativo.\nDIAGNÓSTICO\nMédula ósea. Biopsia. Estudios de inmunohistoquímica:\nHIPOPLASIA (CELULARIDAD DISMINUIDA PARA LA EDAD DEL 10%)\nREPRESENTACION DE LAS TRES LINEAS CELULARES\nSIN INCREMENTOS DE BLASTOS\nSIN EVIDENCIA DE CELULARIDAD NO HEMATOPOYETICA\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 81 ---\nIHQ250507\nCopia Pag. 2 de 2\nNombre : WILLIAM ARLEY NOSCUE VELASCO\nN. peticion : IHQ250507\nN.Identificación : CC. 1067522874\nGenero : MASCULINO\nEdad : 19 años 11 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : UCI TRASPLANTES\nFecha Ingreso : 09/05/2025\nFecha Informe : 21/05/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 82 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD20, CD3, CD34, CD38, CD56, CKAE1AE3, GLICOFORINA",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2504942 que corresponde a biopsia de médula ósea, con diagnóstico de \"HIPOPLASIA (CELULARIDAD DISMINUIDA PARA LA EDAD DEL 10%); MINIMA REPRESENTACION DE LAS TRES LINEAS CELULARES; SIN INCREMENTOS DE BLASTOS NI AGREGADOS MONONUCLEARES; SIN EVIDENCIA MORFOLOGICA DE CELULARIDAD NO HEMATOPOYETICA\". Se realizan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Médula ósea con escasa celularidad; con presencia de las tres líneas celulares, la serie mieloide está mínimamente representada MPO positiva así mismo la línea eritroide es inmunorreactiva para Glicoforina, con una relación 1 a 1. Hay linfocitos T CD3+ así como linfocitos B CD20+ de manera dispersa y sin acúmulos; las células plasmáticas corresponden al 10% de la celularidad que son CD38+ y sin expresión aberrante para CD56. Se identifican blastos que corresponden a menos del 1% y son CD34+. No hay expresión de células no hematolinfoides con CKAE1/AE3 negativo.",
+      "Descripcion Diagnostico": "Médula ósea. Biopsia. Estudios de inmunohistoquímica: HIPOPLASIA (CELULARIDAD DISMINUIDA PARA LA EDAD DEL 10%) REPRESENTACION DE LAS TRES LINEAS CELULARES SIN INCREMENTOS DE BLASTOS SIN EVIDENCIA DE CELULARIDAD NO HEMATOPOYETICA MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________: 09/05/2025",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Organo": "BX DE HUESO",
+      "Diagnostico Coloracion": "HIPOPLASIA (CELULARIDAD DISMINUIDA PARA LA EDAD DEL 10%); MINIMA REPRESENTACION DE LAS TRES LINEAS CELULARES; SIN INCREMENTOS DE BLASTOS NI AGREGADOS MONONUCLEARES; SIN EVIDENCIA MORFOLOGICA DE CELULARIDAD NO HEMATOPOYETICA",
+      "Diagnostico Principal": "HIPOPLASIA (CELULARIDAD DISMINUIDA PARA LA EDAD DEL 10%) REPRESENTACION DE LAS TRES LINEAS CELULARES SIN INCREMENTOS DE BLASTOS SIN EVIDENCIA DE CELULARIDAD NO HEMATOPOYETICA MARIA XIMENA VARELA QUEVEDO RESPONSABLE DEL ANÁLISIS: MD PATÓLOGA RM 761520 _________________________________________________________________________________________________: 09/05/2025",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "POSITIVO (aberrante)",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_GLICOFORINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 137,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula ósea. Biopsia. Estudios de inmunohistoquímica:\nHIPOPLASIA (CELULARIDAD DISMINUIDA PARA LA EDAD DEL 10%)\nREPRESENTACION DE LAS TRES LINEAS CELULARES\nSIN INCREMENTOS DE BLASTOS\nSIN EVIDENCIA DE CELULARIDAD NO HEMATOPOYETICA\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________: 09/05/2025",
+      "valor_corregido": "Médula ósea. Biopsia. Estudios de inmunohistoquímica: HIPOPLASIA (CELULARIDAD DISMINUIDA PARA LA EDAD DEL 10%) REPRESENTACION DE LAS TRES LINEAS CELULARES SIN INCREMENTOS DE BLASTOS SIN EVIDENCIA DE CELULARIDAD NO HEMATOPOYETICA MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________: 09/05/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250507",
+      "timestamp": "2026-04-20T08:43:45.542585"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 51
+  }
+}

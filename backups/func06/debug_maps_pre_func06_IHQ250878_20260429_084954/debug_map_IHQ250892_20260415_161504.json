@@ -1,0 +1,158 @@
+{
+  "session_id": "IHQ250892_20260415_161504",
+  "numero_peticion": "IHQ250892",
+  "timestamp": "2026-04-15T16:15:04.202981",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250892\nCopia Pag. 1 de 2\nNombre : ELSA MARY RENGIFO MOSQUERA\nN. peticion : IHQ250892\nN.Identificación : CC. 34373432\nGenero : FEMENINO\nEdad : 48 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 14/08/2025\nFecha Informe : 29/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de Inmunohistoquímica\nCaso institucional: M2509573\nÓrgano: Médula ósea\nDiagnóstico Inicial: INFILTRACIÓN LEUCEMICA (MIELOIDE POR CITOMETRIA DE FLUJO). \nFecha de diagnóstico: 14-08-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al único\nbloque.\nEstudios Solicitados: \nSe realizó tinción especial para CD3, CD10, CD15, CD20, CD34, CD38, CD61, CD138, CD117,\nMPO, GLICOFORINA, Kappa, Lamda. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nRESULTADO DE INMUNOHISTOQUÍMICA.\nLa médula ósea evaluada presenta una celularidad global cercana al 95%.\nMás del 80% de la celularidad corresponde a células neoplásicas de estirpe mieloide, con\ninmunofenotipo compatible con leucemia mieloide aguda con maduración. Estas células expresan\nCD117 y CD34, con evidencia de maduración parcial en una baja proporción, marcada por la\npositividad para CD15, MPO y CD10.\nSe identifican plasmocitos CD38+ y CD138+, agrupados en cúmulos de más de 10 células (5% de\nla celularidad global), sin fenotipo aberrante (CD56 negativo), con expresión policlonal de\ncadenas livianas kappa y lambda, en relación aproximada de 2:1.\nLos megacariocitos CD61+ son escasos, con morfología hipolobulada (0–1 por campo de alto\npoder).\nSe reconoce la presencia de la línea eritroide, positiva para glicoforina.\nDIAGNÓSTICO\nMedula ósea. Historia de leucemia mieloide aguda (CF2500426). Biopsia con aguda\ngruesa. Estudio de inmunohistoquímica. \nLEUCEMIA MIELOIDE AGUDA\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---\nIHQ250892\nCopia Pag. 2 de 2\nNombre : ELSA MARY RENGIFO MOSQUERA\nN. peticion : IHQ250892\nN.Identificación : CC. 34373432\nGenero : FEMENINO\nEdad : 48 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 14/08/2025\nFecha Informe : 29/08/2025\nAsimismo, se observan linfocitos T (CD3+) y B (CD20+) dispersos, que representan\naproximadamente el 3% y 1% de la celularidad, respectivamente.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 4038,
+      "reduccion_porcentaje": 97.95
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250892",
+      "caso_num": 15,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "nombre_completo": "ELSA MARY RENGIFO MOSQUERA",
+      "numero_peticion": "IHQ250892",
+      "identificacion": "34373432",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "48",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "GERARDO ANDRES DEL CASTILLO",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "14/08/2025",
+      "fecha_informe": "29/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250892",
+      "N. de identificación": "34373432",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "GERARDO ANDRES DEL CASTILLO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "14/08/2025",
+      "Fecha Informe": "29/08/2025",
+      "nombres": "ELSA MARY",
+      "Primer nombre": "ELSA",
+      "Segundo nombre": "MARY",
+      "apellidos": "RENGIFO MOSQUERA",
+      "Primer apellido": "RENGIFO",
+      "Segundo apellido": "MOSQUERA",
+      "nombre_formal": "RENGIFO MOSQUERA, ELSA MARY",
+      "diagnostico": "Medula ósea. Historia de leucemia mieloide aguda (CF2500426). Biopsia con aguda gruesa. Estudio de inmunohistoquímica. LEUCEMIA MIELOIDE AGUDA MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas: 14/08/2025 Asimismo, se observan linfocitos T (CD3+) y B (CD20+) dispersos, que representan aproximadamente el 3% y 1% de la celularidad, respectivamente.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. RESULTADO DE INMUNOHISTOQUÍMICA. La médula ósea evaluada presenta una celularidad global cercana al 95%. Más del 80% de la celularidad corresponde a células neoplásicas de estirpe mieloide, con inmunofenotipo compatible con leucemia mieloide aguda con maduración. Estas células expresan CD117 y CD34, con evidencia de maduración parcial en una baja proporción, marcada por la positividad para CD15, MPO y CD10. Se identifican plasmocitos CD38+ y CD138+, agrupados en cúmulos de más de 10 células (5% de la celularidad global), sin fenotipo aberrante (CD56 negativo), con expresión policlonal de cadenas livianas kappa y lambda, en relación aproximada de 2:1. Los megacariocitos CD61+ son escasos, con morfología hipolobulada (0–1 por campo de alto poder). Se reconoce la presencia de la línea eritroide, positiva para glicoforina.",
+      "descripcion_macroscopica": "Informe de Estudios de Inmunohistoquímica Caso institucional: M2509573 Órgano: Médula ósea Diagnóstico Inicial: INFILTRACIÓN LEUCEMICA (MIELOIDE POR CITOMETRIA DE FLUJO). Fecha de diagnóstico: 14-08-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al único bloque. Estudios Solicitados: Se realizó tinción especial para CD3, CD10, CD15, CD20, CD34, CD38, CD61, CD138, CD117, MPO, GLICOFORINA, Kappa, Lamda.",
+      "ihq_organo": "MEDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD10, CD15, CD20, CD34, CD38, CD61, CD138, CD117, MPO, GLICOFORINA, KAPPA, LAMDA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD10, CD15, CD20, CD34, CD38, CD61, CD138, CD117, MPO, GLICOFORINA, KAPPA, LAMDA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "extraction_timestamp": "2026-04-15T16:15:04.559271",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250892\nCopia Pag. 1 de 2\nNombre : ELSA MARY RENGIFO MOSQUERA\nN. peticion : IHQ250892\nN.Identificación : CC. 34373432\nGenero : FEMENINO\nEdad : 48 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 14/08/2025\nFecha Informe : 29/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nInforme de Estudios de Inmunohistoquímica\nCaso institucional: M2509573\nÓrgano: Médula ósea\nDiagnóstico Inicial: INFILTRACIÓN LEUCEMICA (MIELOIDE POR CITOMETRIA DE FLUJO). \nFecha de diagnóstico: 14-08-2025\nTras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al único\nbloque.\nEstudios Solicitados: \nSe realizó tinción especial para CD3, CD10, CD15, CD20, CD34, CD38, CD61, CD138, CD117,\nMPO, GLICOFORINA, Kappa, Lamda. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®️.\nRESULTADO DE INMUNOHISTOQUÍMICA.\nLa médula ósea evaluada presenta una celularidad global cercana al 95%.\nMás del 80% de la celularidad corresponde a células neoplásicas de estirpe mieloide, con\ninmunofenotipo compatible con leucemia mieloide aguda con maduración. Estas células expresan\nCD117 y CD34, con evidencia de maduración parcial en una baja proporción, marcada por la\npositividad para CD15, MPO y CD10.\nSe identifican plasmocitos CD38+ y CD138+, agrupados en cúmulos de más de 10 células (5% de\nla celularidad global), sin fenotipo aberrante (CD56 negativo), con expresión policlonal de\ncadenas livianas kappa y lambda, en relación aproximada de 2:1.\nLos megacariocitos CD61+ son escasos, con morfología hipolobulada (0–1 por campo de alto\npoder).\nSe reconoce la presencia de la línea eritroide, positiva para glicoforina.\nDIAGNÓSTICO\nMedula ósea. Historia de leucemia mieloide aguda (CF2500426). Biopsia con aguda\ngruesa. Estudio de inmunohistoquímica. \nLEUCEMIA MIELOIDE AGUDA\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 32 ---\nIHQ250892\nCopia Pag. 2 de 2\nNombre : ELSA MARY RENGIFO MOSQUERA\nN. peticion : IHQ250892\nN.Identificación : CC. 34373432\nGenero : FEMENINO\nEdad : 48 años 8 dias\nEPS : NUEVA EPS\nMédico tratante : GERARDO ANDRES DEL CASTILLO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 14/08/2025\nFecha Informe : 29/08/2025\nAsimismo, se observan linfocitos T (CD3+) y B (CD20+) dispersos, que representan\naproximadamente el 3% y 1% de la celularidad, respectivamente.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 33 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD10, CD15, CD20, CD34, CD38, CD61, CD138, CD117, MPO, GLICOFORINA, KAPPA, LAMDA, CD56, MIELOPEROXIDASA",
+      "Descripcion macroscopica": "Informe de Estudios de Inmunohistoquímica Caso institucional: M2509573 Órgano: Médula ósea Diagnóstico Inicial: INFILTRACIÓN LEUCEMICA (MIELOIDE POR CITOMETRIA DE FLUJO). Fecha de diagnóstico: 14-08-2025 Tras la valoración inicial de las láminas teñidas con H&E, se realizan niveles histológicos al único bloque. Estudios Solicitados: Se realizó tinción especial para CD3, CD10, CD15, CD20, CD34, CD38, CD61, CD138, CD117, MPO, GLICOFORINA, Kappa, Lamda.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®️. RESULTADO DE INMUNOHISTOQUÍMICA. La médula ósea evaluada presenta una celularidad global cercana al 95%. Más del 80% de la celularidad corresponde a células neoplásicas de estirpe mieloide, con inmunofenotipo compatible con leucemia mieloide aguda con maduración. Estas células expresan CD117 y CD34, con evidencia de maduración parcial en una baja proporción, marcada por la positividad para CD15, MPO y CD10. Se identifican plasmocitos CD38+ y CD138+, agrupados en cúmulos de más de 10 células (5% de la celularidad global), sin fenotipo aberrante (CD56 negativo), con expresión policlonal de cadenas livianas kappa y lambda, en relación aproximada de 2:1. Los megacariocitos CD61+ son escasos, con morfología hipolobulada (0–1 por campo de alto poder). Se reconoce la presencia de la línea eritroide, positiva para glicoforina.",
+      "Descripcion Diagnostico": "Medula ósea. Historia de leucemia mieloide aguda (CF2500426). Biopsia con aguda gruesa. Estudio de inmunohistoquímica. LEUCEMIA MIELOIDE AGUDA MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas: 14/08/2025 Asimismo, se observan linfocitos T (CD3+) y B (CD20+) dispersos, que representan aproximadamente el 3% y 1% de la celularidad, respectivamente.",
+      "IHQ_ORGANO": "MEDULA ÓSEA",
+      "Organo": "BX HUESO",
+      "Diagnostico Coloracion": "INFILTRACIÓN LEUCEMICA (MIELOIDE POR CITOMETRIA DE FLUJO)",
+      "Diagnostico Principal": "LEUCEMIA MIELOIDE AGUDA MARIA XIMENA VARELA QUEVEDO RESPONSABLE DEL ANÁLISIS: MD PATÓLOGA RM 761520 _________________________________________________________________________________________________ NOTA: ESTE INFORME SE CIÑE A LAS MEJORES PRÁCTICAS ACTUALES EN PATOLOGÍA A NUESTRO ALCANCE",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD138": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_GLICOFORINA": "POSITIVO",
+      "IHQ_KAPPA": "NO MENCIONADO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_MIELOPEROXIDASA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 131,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 13,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 131,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Medula ósea. Historia de leucemia mieloide aguda (CF2500426). Biopsia con aguda\ngruesa. Estudio de inmunohistoquímica. \nLEUCEMIA MIELOIDE AGUDA\nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas: 14/08/2025\nAsimismo, se observan linfocitos T (CD3+) y B (CD20+) dispersos, que representan\naproximadamente el 3% y 1% de la celularidad, respectivamente.",
+      "valor_corregido": "Medula ósea. Historia de leucemia mieloide aguda (CF2500426). Biopsia con aguda gruesa. Estudio de inmunohistoquímica. LEUCEMIA MIELOIDE AGUDA MARIA XIMENA VARELA QUEVEDO Responsable del análisis: MD Patóloga RM 761520 _________________________________________________________________________________________________ Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe depende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento actual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis patológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica del paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir el diagnóstico y manejo clínico dentro de su especialidadillas: 14/08/2025 Asimismo, se observan linfocitos T (CD3+) y B (CD20+) dispersos, que representan aproximadamente el 3% y 1% de la celularidad, respectivamente.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250892",
+      "timestamp": "2026-04-15T16:15:04.558916"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 58
+  }
+}

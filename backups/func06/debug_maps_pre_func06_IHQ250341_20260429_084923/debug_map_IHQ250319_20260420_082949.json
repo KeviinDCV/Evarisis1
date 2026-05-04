@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250319_20260420_082949",
+  "numero_peticion": "IHQ250319",
+  "timestamp": "2026-04-20T08:29:49.858531",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250319\nCopia Pag. 1 de 2\nNombre : HECTOR CAICEDO PONCES\nN. peticion : IHQ250319\nN.Identificación : CC. 6156512\nGenero : MASCULINO\nEdad : 79 años 5 dias\nEPS : COSMITET FERROCARRILES\nMédico tratante : INGRID MARCELA MARTINEZ\nServicio : UNIDAD SALUD MENTAL\nFecha Ingreso : 31/03/2025\nFecha Informe : 11/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “\nM2503458\" correspondiente a “ biopsia de percutánea de hígado\" con diagnóstico de \"PROLIFERACIÓN\nCÉLULAR QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología se\nrealizan niveles histológicos en el bloque A1 para tinción con los marcadores: CK7, CK20, PSA, KI 67\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa celularidad atípica es positiva para CK7 en la que se evidencia la formación de conductos, Es negativa\npara CK 20, PSA, Ki 67 es del 15 %\nDIAGNÓSTICO\n Hígado. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:\nLA MUESTRA EVALUADA ES NEGATIVA PARA MALIGNIDAD\nHEPATITIS CRÓNICA CON ACTIVIDAD INFLAMATORIA PORTAL Y PERIPORTAL\nDILATACIÓN SINUSOIDAL\nCOMENTARIOS\nSi la sospecha de lesión de mayor grado histológico persiste, se recomienda nuevo muestreo\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---\nIHQ250319\nCopia Pag. 2 de 2\nNombre : HECTOR CAICEDO PONCES\nN. peticion : IHQ250319\nN.Identificación : CC. 6156512\nGenero : MASCULINO\nEdad : 79 años 5 dias\nEPS : COSMITET FERROCARRILES\nMédico tratante : INGRID MARCELA MARTINEZ\nServicio : UNIDAD SALUD MENTAL\nFecha Ingreso : 31/03/2025\nFecha Informe : 11/04/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3281,
+      "reduccion_porcentaje": 98.16
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250319",
+      "caso_num": 6,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "nombre_completo": "HECTOR CAICEDO PONCES",
+      "numero_peticion": "IHQ250319",
+      "identificacion": "6156512",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "79",
+      "eps": "COSMITET FERROCARRILES",
+      "medico_tratante": "INGRID MARCELA MARTINEZ",
+      "servicio": "UNIDAD SALUD MENTAL",
+      "fecha_ingreso": "31/03/2025",
+      "fecha_informe": "11/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250319",
+      "N. de identificación": "6156512",
+      "Tipo de documento": "CC",
+      "EPS": "COSMITET FERROCARRILES",
+      "Servicio": "UNIDAD SALUD MENTAL",
+      "Médico tratante": "INGRID MARCELA MARTINEZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "31/03/2025",
+      "Fecha Informe": "11/04/2025",
+      "nombres": "HECTOR",
+      "Primer nombre": "HECTOR",
+      "Segundo nombre": "",
+      "apellidos": "CAICEDO PONCES",
+      "Primer apellido": "CAICEDO",
+      "Segundo apellido": "PONCES",
+      "nombre_formal": "CAICEDO PONCES, HECTOR",
+      "diagnostico": "Hígado. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: LA MUESTRA EVALUADA ES NEGATIVA PARA MALIGNIDAD HEPATITIS CRÓNICA CON ACTIVIDAD INFLAMATORIA PORTAL Y PERIPORTAL DILATACIÓN SINUSOIDAL",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad atípica es positiva para CK7 en la que se evidencia la formación de conductos, Es negativa para CK20, PSA, KI-67 es del 15 %",
+      "descripcion_macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \" M2503458\" correspondiente a \" biopsia de percutánea de hígado\" con diagnóstico de \"PROLIFERACIÓN CÉLULAR QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque A1 para tinción con los marcadores: CK7, CK20, PSA, KI-67",
+      "ihq_organo": "HÍGADO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Si la sospecha de lesión de mayor grado histológico persiste,",
+      "IHQ_ORGANO": "HÍGADO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_PSA": "POSITIVO",
+      "extraction_timestamp": "2026-04-20T08:29:50.144553",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250319\nCopia Pag. 1 de 2\nNombre : HECTOR CAICEDO PONCES\nN. peticion : IHQ250319\nN.Identificación : CC. 6156512\nGenero : MASCULINO\nEdad : 79 años 5 dias\nEPS : COSMITET FERROCARRILES\nMédico tratante : INGRID MARCELA MARTINEZ\nServicio : UNIDAD SALUD MENTAL\nFecha Ingreso : 31/03/2025\nFecha Informe : 11/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “\nM2503458\" correspondiente a “ biopsia de percutánea de hígado\" con diagnóstico de \"PROLIFERACIÓN\nCÉLULAR QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología se\nrealizan niveles histológicos en el bloque A1 para tinción con los marcadores: CK7, CK20, PSA, KI 67\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa celularidad atípica es positiva para CK7 en la que se evidencia la formación de conductos, Es negativa\npara CK 20, PSA, Ki 67 es del 15 %\nDIAGNÓSTICO\n Hígado. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:\nLA MUESTRA EVALUADA ES NEGATIVA PARA MALIGNIDAD\nHEPATITIS CRÓNICA CON ACTIVIDAD INFLAMATORIA PORTAL Y PERIPORTAL\nDILATACIÓN SINUSOIDAL\nCOMENTARIOS\nSi la sospecha de lesión de mayor grado histológico persiste, se recomienda nuevo muestreo\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 12 ---\nIHQ250319\nCopia Pag. 2 de 2\nNombre : HECTOR CAICEDO PONCES\nN. peticion : IHQ250319\nN.Identificación : CC. 6156512\nGenero : MASCULINO\nEdad : 79 años 5 dias\nEPS : COSMITET FERROCARRILES\nMédico tratante : INGRID MARCELA MARTINEZ\nServicio : UNIDAD SALUD MENTAL\nFecha Ingreso : 31/03/2025\nFecha Informe : 11/04/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 13 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK20, CK7, CKAE1AE3, PSA",
+      "Descripcion macroscopica": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “ M2503458\" correspondiente a “ biopsia de percutánea de hígado\" con diagnóstico de \"PROLIFERACIÓN CÉLULAR QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque A1 para tinción con los marcadores: CK7, CK20, PSA, KI 67",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad atípica es positiva para CK7 en la que se evidencia la formación de conductos, Es negativa para CK 20, PSA, Ki 67 es del 15 %",
+      "Descripcion Diagnostico": "Hígado. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: LA MUESTRA EVALUADA ES NEGATIVA PARA MALIGNIDAD HEPATITIS CRÓNICA CON ACTIVIDAD INFLAMATORIA PORTAL Y PERIPORTAL DILATACIÓN SINUSOIDAL",
+      "IHQ_ORGANO": "HÍGADO",
+      "Organo": "BX HIGADO",
+      "Diagnostico Coloracion": "PROLIFERACIÓN CÉLULAR QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "LA MUESTRA EVALUADA ES NEGATIVA PARA MALIGNIDAD HEPATITIS CRÓNICA CON ACTIVIDAD INFLAMATORIA PORTAL Y PERIPORTAL DILATACIÓN SINUSOIDAL",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_PSA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Hígado. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:\nLA MUESTRA EVALUADA ES NEGATIVA PARA MALIGNIDAD\nHEPATITIS CRÓNICA CON ACTIVIDAD INFLAMATORIA PORTAL Y PERIPORTAL\nDILATACIÓN SINUSOIDAL",
+      "valor_corregido": "Hígado. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica: LA MUESTRA EVALUADA ES NEGATIVA PARA MALIGNIDAD HEPATITIS CRÓNICA CON ACTIVIDAD INFLAMATORIA PORTAL Y PERIPORTAL DILATACIÓN SINUSOIDAL",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250319",
+      "timestamp": "2026-04-20T08:29:50.144100"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como “ M2503458\" correspondiente a “ biopsia de percutánea de hígado\" con diagnóstico de \"PROLIFERACIÓN CÉLULAR QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque A1 para tinción con los marcadores: CK7, CK20, PSA, KI 67",
+      "valor_corregido": "Se recibe orden para realización de inmunohistoquímica en material institucional rotulado como \" M2503458\" correspondiente a \" biopsia de percutánea de hígado\" con diagnóstico de \"PROLIFERACIÓN CÉLULAR QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUIMICA\". Previa revisión de la histología se realizan niveles histológicos en el bloque A1 para tinción con los marcadores: CK7, CK20, PSA, KI-67",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250319",
+      "timestamp": "2026-04-20T08:29:50.144106"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad atípica es positiva para CK7 en la que se evidencia la formación de conductos, Es negativa para CK 20, PSA, Ki 67 es del 15 %",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La celularidad atípica es positiva para CK7 en la que se evidencia la formación de conductos, Es negativa para CK20, PSA, KI-67 es del 15 %",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250319",
+      "timestamp": "2026-04-20T08:29:50.144107"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 50
+  }
+}

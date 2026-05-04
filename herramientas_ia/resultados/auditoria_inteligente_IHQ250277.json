@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250277",
   "caso_num": 14,
   "total_casos": 49,
-  "timestamp": "2026-02-03T05:17:58.032873",
+  "timestamp": "2026-04-29T08:51:12.162831",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 13,
+      "total_detectado": 12,
       "estado": "OK"
     },
     "estado": "OK"
@@ -31,13 +31,13 @@
       "valor_bd": "LOS HALLAZGOS MORFOLÓGICOS Y ESTUDIOS DE INMUNOHISTOQUIMICA FAVORECEN UN ANGIOSARCOMA"
     },
     "factor_pronostico": {
-      "estado": "ERROR",
-      "valor_bd": "NO APLICA",
-      "mensaje": "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
     },
     "biomarcadores": {
       "estado": "ERROR",
-      "mensaje": "4 biomarcadores sin mapeo/vacíos; 2 biomarcadores extras en BD",
+      "mensaje": "5 biomarcadores sin mapeo/vacíos; 2 biomarcadores extras en BD",
       "total_solicitado_ocr": 26,
       "total_solicitado_bd": 29,
       "estudios_ocr": [
@@ -104,22 +104,23 @@
         "H_CALDESMON",
         "ALK"
       ],
-      "mapeados": 22,
+      "mapeados": 21,
       "no_mapeados": [
         "CD31 (sin columna)",
         "LCA (sin columna)",
+        "DESMINA (sin columna)",
         "CROMOGRAMINA (sin columna)",
         "ALK 01 (sin columna)"
       ],
       "valores_incorrectos": [],
-      "cobertura": 84.6
+      "cobertura": 80.8
     },
     "campos_obligatorios": {
       "errores": []
     },
     "warnings": [],
     "errores": [
-      "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
+      "Biomarcadores: 5 biomarcadores sin mapeo/vacíos; 2 biomarcadores extras en BD"
     ],
     "estado": "ERROR",
     "descripcion_macroscopica": {
@@ -161,9 +162,9 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 80.0,
-    "score_final": 80.0,
-    "validaciones_ok": 8,
+    "score_validacion": 90.0,
+    "score_final": 90.0,
+    "validaciones_ok": 9,
     "total_validaciones": 10,
     "warnings": 0,
     "errores": 1

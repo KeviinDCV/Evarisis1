@@ -1,0 +1,139 @@
+{
+  "session_id": "IHQ250909_20260410_104534",
+  "numero_peticion": "IHQ250909",
+  "timestamp": "2026-04-10T10:45:34.941790",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250909\nCopia Pag. 1 de 2\nNombre : ADELAIDA MORENO\nN. peticion : IHQ250909\nN.Identificación : CC. 38985996\nGenero : FEMENINO\nEdad : 78 años 5 meses 22 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 21/08/2025\nFecha Informe : 05/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE LENGUA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizazr estudios de inmunohistoquímica en material institucional rotulado\n\"M2502341\"\ny\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nCarcinoma escamocelular invasivo con marcación positiva para p40, sin expresión aberrante de p16.\ndiagnóstico\n\"CARCINOMA\nESCAMOCELULAR\nINFILTRANTE\nMODERADAMENTE\nDIFERENCIADO.\nINVASION\nPERINEURAL:\nNO\nIDENTIFICADA.\nINVASIÓN\nLINFOVASCULAR:\nNO\nIDENTIFICADA\".\nPrevia revisión de la histología, se solicitan coloraciones con los anticuerpos para p40 y p16.\nDIAGNÓSTICO\nLengua, borde lateral derecho. Lesión. Biopsia. Inmunohistoquímica.\nCARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO P16 NEGATIVO.\nINVASION PERINEURAL: NO IDENTIFICADA.\nINVASIÓN LINFOVASCULAR: NO IDENTIFICADA.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---\nIHQ250909\nCopia Pag. 2 de 2\nNombre : ADELAIDA MORENO\nN. peticion : IHQ250909\nN.Identificación : CC. 38985996\nGenero : FEMENINO\nEdad : 78 años 5 meses 22 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 21/08/2025\nFecha Informe : 05/09/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3092,
+      "reduccion_porcentaje": 98.43
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250909",
+      "caso_num": 31,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "nombre_completo": "ADELAIDA MORENO",
+      "numero_peticion": "IHQ250909",
+      "identificacion": "38985996",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "78",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ALEJANDRO HIJUELOS",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "21/08/2025",
+      "fecha_informe": "05/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250909",
+      "N. de identificación": "38985996",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "ALEJANDRO HIJUELOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "21/08/2025",
+      "Fecha Informe": "05/09/2025",
+      "nombres": "ADELAIDA MORENO",
+      "Primer nombre": "ADELAIDA",
+      "Segundo nombre": "MORENO",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "ADELAIDA MORENO",
+      "diagnostico": "Lengua, borde lateral derecho. Lesión. Biopsia. Inmunohistoquímica. CARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO p16 NEGATIVO. INVASION PERINEURAL: NO IDENTIFICADA. INVASIÓN LINFOVASCULAR: NO IDENTIFICADA.",
+      "descripcion_microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Carcinoma escamocelular invasivo con marcación positiva para p40, sin expresión aberrante de p16.",
+      "descripcion_macroscopica": "Se recibe orden para realizazr estudios de inmunohistoquímica en material institucional rotulado \"M2502341\" y diagnóstico \"CARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO. INVASION PERINEURAL: NO IDENTIFICADA. INVASIÓN LINFOVASCULAR: NO IDENTIFICADA\". Previa revisión de la histología, se solicitan coloraciones con los anticuerpos para p40 y p16.",
+      "ihq_organo": "LENGUA, BORDE LATERAL DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "JOSE BRAVO BONILLA",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "LENGUA, BORDE LATERAL DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "JOSE BRAVO BONILLA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "p16": "NEGATIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-04-10T10:45:35.211359",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250909\nCopia Pag. 1 de 2\nNombre : ADELAIDA MORENO\nN. peticion : IHQ250909\nN.Identificación : CC. 38985996\nGenero : FEMENINO\nEdad : 78 años 5 meses 22 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 21/08/2025\nFecha Informe : 05/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE LENGUA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realizazr estudios de inmunohistoquímica en material institucional rotulado\n\"M2502341\"\ny\nDESCRIPCIÓN MICROSCÓPICA\nSe realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE\nVENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa:\nCarcinoma escamocelular invasivo con marcación positiva para p40, sin expresión aberrante de p16.\ndiagnóstico\n\"CARCINOMA\nESCAMOCELULAR\nINFILTRANTE\nMODERADAMENTE\nDIFERENCIADO.\nINVASION\nPERINEURAL:\nNO\nIDENTIFICADA.\nINVASIÓN\nLINFOVASCULAR:\nNO\nIDENTIFICADA\".\nPrevia revisión de la histología, se solicitan coloraciones con los anticuerpos para p40 y p16.\nDIAGNÓSTICO\nLengua, borde lateral derecho. Lesión. Biopsia. Inmunohistoquímica.\nCARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO P16 NEGATIVO.\nINVASION PERINEURAL: NO IDENTIFICADA.\nINVASIÓN LINFOVASCULAR: NO IDENTIFICADA.\nJOSE BRAVO BONILLA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 64 ---\nIHQ250909\nCopia Pag. 2 de 2\nNombre : ADELAIDA MORENO\nN. peticion : IHQ250909\nN.Identificación : CC. 38985996\nGenero : FEMENINO\nEdad : 78 años 5 meses 22 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ALEJANDRO HIJUELOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 21/08/2025\nFecha Informe : 05/09/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P40",
+      "Descripcion macroscopica": "Se recibe orden para realizazr estudios de inmunohistoquímica en material institucional rotulado \"M2502341\" y diagnóstico \"CARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO. INVASION PERINEURAL: NO IDENTIFICADA. INVASIÓN LINFOVASCULAR: NO IDENTIFICADA\". Previa revisión de la histología, se solicitan coloraciones con los anticuerpos para p40 y p16.",
+      "Descripcion microscopica": "Se realizan estudios de inmunohistoquímica con el método inmunoperoxidasa en el sistema ROCHE VENTANA®. Se verifica el rendimiento de los controles externos e internos y se observa: Carcinoma escamocelular invasivo con marcación positiva para p40, sin expresión aberrante de p16.",
+      "Descripcion Diagnostico": "Lengua, borde lateral derecho. Lesión. Biopsia. Inmunohistoquímica. CARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO p16 NEGATIVO. INVASION PERINEURAL: NO IDENTIFICADA. INVASIÓN LINFOVASCULAR: NO IDENTIFICADA.",
+      "IHQ_ORGANO": "LENGUA, BORDE LATERAL DERECHO",
+      "Organo": "BX DE LENGUA",
+      "Diagnostico Coloracion": "NO APLICA",
+      "Diagnostico Principal": "INMUNOHISTOQUÍMICA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P40_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 143,
+      "campos_completos": 35,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 143,
+      "total_campos_completos": 35
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Lengua, borde lateral derecho. Lesión. Biopsia. Inmunohistoquímica.\nCARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO P16 NEGATIVO.\nINVASION PERINEURAL: NO IDENTIFICADA.\nINVASIÓN LINFOVASCULAR: NO IDENTIFICADA.",
+      "valor_corregido": "Lengua, borde lateral derecho. Lesión. Biopsia. Inmunohistoquímica. CARCINOMA ESCAMOCELULAR INFILTRANTE MODERADAMENTE DIFERENCIADO p16 NEGATIVO. INVASION PERINEURAL: NO IDENTIFICADA. INVASIÓN LINFOVASCULAR: NO IDENTIFICADA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250909",
+      "timestamp": "2026-04-10T10:45:35.211000"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 47
+  }
+}

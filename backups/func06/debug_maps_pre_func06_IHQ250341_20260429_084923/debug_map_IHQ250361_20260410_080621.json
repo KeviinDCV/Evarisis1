@@ -1,0 +1,163 @@
+{
+  "session_id": "IHQ250361_20260410_080621",
+  "numero_peticion": "IHQ250361",
+  "timestamp": "2026-04-10T08:06:21.794018",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250361\nCopia Pag. 1 de 2\nNombre : LUZ MARINA LEMOS AGUIRRE\nN. peticion : IHQ250361\nN.Identificación : CC. 66727944\nGenero : FEMENINO\nEdad : 48 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : VANESSA DEL VECCHIO FERRER\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 08/04/2025\nFecha Informe : 16/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TEJIDOS BLANDOS\nPARED ABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del laboratorio\nTomas uribe como “Q243446\" que corresponde a “ Mucosa de colon\" consiste en un bloque de\nparafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"TUMOR\nESTROMAL FUSOCELULAR CON ATIPIA CITOLOGICA LEVE POSIBLES ORIGENES FIBOHISTIOCITICO\nVS NEURAL”. Previa revisión de la histología, se realizan niveles histológicos en el bloque para\ntinción con Betacatenina,CD34 , SMA, S100, Ki67, Desmina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLas células tumorales presentan inmunorreactividad positiva nuclear para b-catenina . La\ncelularidad es negativa para CD34 , SMA, S100, Desmina. El ki 67 (indice de proliferación) es\n<2% .\nDIAGNÓSTICO\nPared abdominal. Lesión. Biopsia. Estudio de inmunohistoquimica:\nLOS HALLAZGOS FAVORECEN UNA FIBROMATOSIS DESMOIDE.\nCOMENTARIOS\nCaso valorado en conjunto con Dr. Jorge Moreno (patologo).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---\nIHQ250361\nCopia Pag. 2 de 2\nNombre : LUZ MARINA LEMOS AGUIRRE\nN. peticion : IHQ250361\nN.Identificación : CC. 66727944\nGenero : FEMENINO\nEdad : 48 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : VANESSA DEL VECCHIO FERRER\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 08/04/2025\nFecha Informe : 16/04/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3365,
+      "reduccion_porcentaje": 98.11
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250361",
+      "caso_num": 48,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "nombre_completo": "LUZ MARINA LEMOS AGUIRRE",
+      "numero_peticion": "IHQ250361",
+      "identificacion": "66727944",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "48",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "VANESSA DEL VECCHIO FERRER",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "08/04/2025",
+      "fecha_informe": "16/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250361",
+      "N. de identificación": "66727944",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "VANESSA DEL VECCHIO FERRER",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/04/2025",
+      "Fecha Informe": "16/04/2025",
+      "nombres": "LUZ MARINA",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "MARINA",
+      "apellidos": "LEMOS AGUIRRE",
+      "Primer apellido": "LEMOS",
+      "Segundo apellido": "AGUIRRE",
+      "nombre_formal": "LEMOS AGUIRRE, LUZ MARINA",
+      "diagnostico": "Pared abdominal. Lesión. Biopsia. Estudio de inmunohistoquimica: LOS HALLAZGOS FAVORECEN UNA FIBROMATOSIS DESMOIDE.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales presentan inmunorreactividad positiva nuclear para b-catenina . La celularidad es negativa para CD34 , SMA, S100, Desmina. El KI-67 (indice de proliferación) es <2% .",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del laboratorio Tomas uribe como \"Q243446\" que corresponde a \" Mucosa de colon\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"TUMOR ESTROMAL FUSOCELULAR CON ATIPIA CITOLOGICA LEVE POSIBLES ORIGENES FIBOHISTIOCITICO VS NEURAL\". Previa revisión de la histología, se realizan niveles histológicos en el bloque para tinción con Betacatenina,CD34 , SMA, S100, KI-67, Desmina.",
+      "ihq_organo": "PARED ABDOMINAL",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "BETACATENINA, CD34, SMA, S100, Ki-67, DESMINA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con Dr. Jorge Moreno (patologo).",
+      "IHQ_ORGANO": "PARED ABDOMINAL",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "BETACATENINA, CD34, SMA, S100, Ki-67, DESMINA",
+      "IHQ_DESMINA": "NEGATIVO",
+      "extraction_timestamp": "2026-04-10T08:06:22.057656",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250361\nCopia Pag. 1 de 2\nNombre : LUZ MARINA LEMOS AGUIRRE\nN. peticion : IHQ250361\nN.Identificación : CC. 66727944\nGenero : FEMENINO\nEdad : 48 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : VANESSA DEL VECCHIO FERRER\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 08/04/2025\nFecha Informe : 16/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX TEJIDOS BLANDOS\nPARED ABDOMINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del laboratorio\nTomas uribe como “Q243446\" que corresponde a “ Mucosa de colon\" consiste en un bloque de\nparafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"TUMOR\nESTROMAL FUSOCELULAR CON ATIPIA CITOLOGICA LEVE POSIBLES ORIGENES FIBOHISTIOCITICO\nVS NEURAL”. Previa revisión de la histología, se realizan niveles histológicos en el bloque para\ntinción con Betacatenina,CD34 , SMA, S100, Ki67, Desmina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos\ne internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada\nVENTANA.\nLas células tumorales presentan inmunorreactividad positiva nuclear para b-catenina . La\ncelularidad es negativa para CD34 , SMA, S100, Desmina. El ki 67 (indice de proliferación) es\n<2% .\nDIAGNÓSTICO\nPared abdominal. Lesión. Biopsia. Estudio de inmunohistoquimica:\nLOS HALLAZGOS FAVORECEN UNA FIBROMATOSIS DESMOIDE.\nCOMENTARIOS\nCaso valorado en conjunto con Dr. Jorge Moreno (patologo).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 88 ---\nIHQ250361\nCopia Pag. 2 de 2\nNombre : LUZ MARINA LEMOS AGUIRRE\nN. peticion : IHQ250361\nN.Identificación : CC. 66727944\nGenero : FEMENINO\nEdad : 48 años\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : VANESSA DEL VECCHIO FERRER\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 08/04/2025\nFecha Informe : 16/04/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 89 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "BETACATENINA, CD34, SMA, S100, Ki-67, DESMINA, DESMIN",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del laboratorio Tomas uribe como “Q243446\" que corresponde a “ Mucosa de colon\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"TUMOR ESTROMAL FUSOCELULAR CON ATIPIA CITOLOGICA LEVE POSIBLES ORIGENES FIBOHISTIOCITICO VS NEURAL”. Previa revisión de la histología, se realizan niveles histológicos en el bloque para tinción con Betacatenina,CD34 , SMA, S100, Ki67, Desmina.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales presentan inmunorreactividad positiva nuclear para b-catenina . La celularidad es negativa para CD34 , SMA, S100, Desmina. El ki 67 (indice de proliferación) es <2% .",
+      "Descripcion Diagnostico": "Pared abdominal. Lesión. Biopsia. Estudio de inmunohistoquimica: LOS HALLAZGOS FAVORECEN UNA FIBROMATOSIS DESMOIDE.",
+      "IHQ_ORGANO": "PARED ABDOMINAL",
+      "Organo": "BX TEJIDOS BLANDOS PARED ABDOMINAL",
+      "Diagnostico Coloracion": "TUMOR ESTROMAL FUSOCELULAR CON ATIPIA CITOLOGICA LEVE POSIBLES ORIGENES FIBOHISTIOCITICO VS NEURAL",
+      "Diagnostico Principal": "UNA FIBROMATOSIS DESMOIDE",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_BETACATENINA": "",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_KI-67": "NO MENCIONADO",
+      "IHQ_DESMINA": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 137,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pared abdominal. Lesión. Biopsia. Estudio de inmunohistoquimica:\nLOS HALLAZGOS FAVORECEN UNA FIBROMATOSIS DESMOIDE.",
+      "valor_corregido": "Pared abdominal. Lesión. Biopsia. Estudio de inmunohistoquimica: LOS HALLAZGOS FAVORECEN UNA FIBROMATOSIS DESMOIDE.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250361",
+      "timestamp": "2026-04-10T08:06:22.057310"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del laboratorio Tomas uribe como “Q243446\" que corresponde a “ Mucosa de colon\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"TUMOR ESTROMAL FUSOCELULAR CON ATIPIA CITOLOGICA LEVE POSIBLES ORIGENES FIBOHISTIOCITICO VS NEURAL”. Previa revisión de la histología, se realizan niveles histológicos en el bloque para tinción con Betacatenina,CD34 , SMA, S100, Ki67, Desmina.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso extrainstitucional proveniente del laboratorio Tomas uribe como \"Q243446\" que corresponde a \" Mucosa de colon\" consiste en un bloque de parafina y una lámina coloreadas con Hematoxilina - Eosina con diagnóstico de \"TUMOR ESTROMAL FUSOCELULAR CON ATIPIA CITOLOGICA LEVE POSIBLES ORIGENES FIBOHISTIOCITICO VS NEURAL\". Previa revisión de la histología, se realizan niveles histológicos en el bloque para tinción con Betacatenina,CD34 , SMA, S100, KI-67, Desmina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250361",
+      "timestamp": "2026-04-10T08:06:22.057317"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales presentan inmunorreactividad positiva nuclear para b-catenina . La celularidad es negativa para CD34 , SMA, S100, Desmina. El ki 67 (indice de proliferación) es <2% .",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada VENTANA. Las células tumorales presentan inmunorreactividad positiva nuclear para b-catenina . La celularidad es negativa para CD34 , SMA, S100, Desmina. El KI-67 (indice de proliferación) es <2% .",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250361",
+      "timestamp": "2026-04-10T08:06:22.057318"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 54
+  }
+}

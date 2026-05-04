@@ -1,0 +1,139 @@
+{
+  "session_id": "IHQ250878_20260420_090820",
+  "numero_peticion": "IHQ250878",
+  "timestamp": "2026-04-20T09:08:20.788513",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250878\nCopia Pag. 1 de 1\nNombre : KELY JHOJANA DIAZ VALENZUELA\nN. peticion : IHQ250878\nN.Identificación : CC. 1077440474\nGenero : FEMENINO\nEdad : 36 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : JHON JAIRO OSORIO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 12/08/2025\nFecha Informe : 22/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE LESION MAXILAR\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2509476, el cual corresponde a \"Biopsia de lesión maxilar\nizquierda\", con diagnóstico de \"PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA\nFIBROSA\". Se ordenan los siguientes marcadores: MDM2, Y CDK4.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales NO presentan inmunorreactividad para: MDM2 Y CDK4. \nDIAGNÓSTICO\n Maxilar izquierdo.Lesion.Biopsia. Estudio de inmunohistoquimica. \n-PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 2312,
+      "reduccion_porcentaje": 98.83
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250878",
+      "caso_num": 2,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "KELY JHOJANA DIAZ VALENZUELA",
+      "numero_peticion": "IHQ250878",
+      "identificacion": "1077440474",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "36",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "JHON JAIRO OSORIO",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "12/08/2025",
+      "fecha_informe": "22/08/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250878",
+      "N. de identificación": "1077440474",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "JHON JAIRO OSORIO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "12/08/2025",
+      "Fecha Informe": "22/08/2025",
+      "nombres": "KELY JHOJANA",
+      "Primer nombre": "KELY",
+      "Segundo nombre": "JHOJANA",
+      "apellidos": "DIAZ VALENZUELA",
+      "Primer apellido": "DIAZ",
+      "Segundo apellido": "VALENZUELA",
+      "nombre_formal": "DIAZ VALENZUELA, KELY JHOJANA",
+      "diagnostico": "Maxilar izquierdo.Lesion.Biopsia. Estudio de inmunohistoquimica. -PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales NO presentan inmunorreactividad para: MDM2 Y CDK4.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2509476, el cual corresponde a \"Biopsia de lesión maxilar izquierda\", con diagnóstico de \"PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA\". Se ordenan los siguientes marcadores: MDM2, Y CDK4.",
+      "ihq_organo": "MAXILAR IZQUIERDO",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "MDM2, CDK4",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAXILAR IZQUIERDO",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "MDM2, CDK4",
+      "IHQ_MDM2": "NEGATIVO",
+      "IHQ_CDK4": "NEGATIVO",
+      "IHQ_LCA": "NO PRESENTAN INMUNORREACTIVIDAD PARA: MDM2 Y CDK4. DIAGNÓSTICO MAXILAR IZQUIERDO.LESION.BIOPSIA. ESTUDIO DE INMUNOHISTOQUIMICA. -PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA CARLOS CAICEDO ESTRADA RESPONSABLE DEL ANÁLISIS: MD PATÓLOGO _________________________________________________________________________________________________ NOTA: ESTE INFORME SE CIÑE A LAS MEJORES PRÁCTICAS ACTUALES EN PATOLOGÍA A NUESTRO ALCA",
+      "extraction_timestamp": "2026-04-20T09:08:21.131358",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250878\nCopia Pag. 1 de 1\nNombre : KELY JHOJANA DIAZ VALENZUELA\nN. peticion : IHQ250878\nN.Identificación : CC. 1077440474\nGenero : FEMENINO\nEdad : 36 años 7 dias\nEPS : NUEVA EPS\nMédico tratante : JHON JAIRO OSORIO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 12/08/2025\nFecha Informe : 22/08/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE LESION MAXILAR\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2509476, el cual corresponde a \"Biopsia de lesión maxilar\nizquierda\", con diagnóstico de \"PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA\nFIBROSA\". Se ordenan los siguientes marcadores: MDM2, Y CDK4.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales NO presentan inmunorreactividad para: MDM2 Y CDK4. \nDIAGNÓSTICO\n Maxilar izquierdo.Lesion.Biopsia. Estudio de inmunohistoquimica. \n-PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 4 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "MDM2, CDK4, CD45",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2509476, el cual corresponde a \"Biopsia de lesión maxilar izquierda\", con diagnóstico de \"PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA\". Se ordenan los siguientes marcadores: MDM2, Y CDK4.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales NO presentan inmunorreactividad para: MDM2 Y CDK4.",
+      "Descripcion Diagnostico": "Maxilar izquierdo.Lesion.Biopsia. Estudio de inmunohistoquimica. -PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA",
+      "IHQ_ORGANO": "MAXILAR IZQUIERDO",
+      "Organo": "BX DE LESION MAXILAR IZQUIERDA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA",
+      "Diagnostico Principal": "PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_MDM2": "NEGATIVO",
+      "IHQ_CDK4": "NEGATIVO",
+      "IHQ_CD45": "NO PRESENTAN INMUNORREACTIVIDAD PARA: MDM2 Y CDK4. DIAGNÓSTICO MAXILAR IZQUIERDO.LESION.BIOPSIA. ESTUDIO DE INMUNOHISTOQUIMICA. -PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA CARLOS CAICEDO ESTRADA RESPONSABLE DEL ANÁLISIS: MD PATÓLOGO _________________________________________________________________________________________________ NOTA: ESTE INFORME SE CIÑE A LAS MEJORES PRÁCTICAS ACTUALES EN PATOLOGÍA A NUESTRO ALCA"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Maxilar izquierdo.Lesion.Biopsia. Estudio de inmunohistoquimica. \n-PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA",
+      "valor_corregido": "Maxilar izquierdo.Lesion.Biopsia. Estudio de inmunohistoquimica. -PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250878",
+      "timestamp": "2026-04-20T09:08:21.131047"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 51
+  }
+}

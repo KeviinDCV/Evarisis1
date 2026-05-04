@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250039",
   "caso_num": 39,
   "total_casos": 50,
-  "timestamp": "2026-04-28T14:15:46.597913",
+  "timestamp": "2026-04-29T11:31:15.341501",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -28,7 +28,7 @@
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
-      "valor_bd": "CARCINOMA DUCTAL"
+      "valor_bd": "CARCINOMA DUCTAL IN SITU DE BAJO GRADO MULTIFOCAL"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -79,7 +79,7 @@
     "ihq_organo": {
       "estado": "OK",
       "mensaje": "IHQ_ORGANO está limpio",
-      "valor_bd": "MAMA DERECHA"
+      "valor_bd": "CUADRANTECTOMIA MAMA DERECHA"
     },
     "malignidad": {
       "estado": "OK",

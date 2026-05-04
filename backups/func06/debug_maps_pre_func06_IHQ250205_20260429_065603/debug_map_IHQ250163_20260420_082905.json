@@ -1,0 +1,172 @@
+{
+  "session_id": "IHQ250163_20260420_082905",
+  "numero_peticion": "IHQ250163",
+  "timestamp": "2026-04-20T08:29:05.327249",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250163\nCopia Pag. 1 de 2\nNombre : JOSE LUIS GUERRERO FAJARDO\nN. peticion : IHQ250163\nN.Identificación : CC. 4652710\nGenero : MASCULINO\nEdad : 58 años 16 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : QUIMIOTERAPIA\nFecha Ingreso : 12/02/2025\nFecha Informe : 24/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPANCREATODUODENECTO\nMIA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2300650-A7 que corresponde a pancreatoduodenectomia, con diagnóstico\nde \"ADENOCARCINOMA DUCTAL INVASIVO, MODERADAMENTE DIFERENCIADO; EXTENSIÓN TUMORAL\nFOCAL A LA GRASA PERIPANCREÁTICA; INVASIÓN LINFOVASCULAR IDENTIFICADA; INVASIÓN PERINEURAL\nIDENTIFICADA; BORDES DE RESECCIÓN NEGATIVOS (TODOS); GANGLIOS LINFÁTICOS\nPERIPANCREÁTICOS: ADENOCARCINOMA METASTÁSICO (1/10), CON EXTENSIÓN A GRASA\nPERIGANGLIONAR; COLECISITITS CRÓNICA; COLELITIASIS; DUODENO Y PAPILA DE VATER SIN\nALTERACIONES\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nLas células tumorales presentan inmunorreactividad para CK7, CK19, CA-19-9 y focalmente positivo para\nCEA y EMA; siendo negativo para CK20, Cromogranina, Sinaptofisina, MUC-2.\nLa expresión de p53 es en mosaico (patrón salvaje).\nSobreexpresión para HER-2: NEGATIVO (SCORE 0)\nEVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nDIAGNÓSTICO\nPáncreas, intestino delgado y vesícula biliar. Tumor. Pancreatoduodenectomía. Estudios de\ninmunohistoquímica:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---\nIHQ250163\nCopia Pag. 2 de 2\nNombre : JOSE LUIS GUERRERO FAJARDO\nN. peticion : IHQ250163\nN.Identificación : CC. 4652710\nGenero : MASCULINO\nEdad : 58 años 16 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : QUIMIOTERAPIA\nFecha Ingreso : 12/02/2025\nFecha Informe : 24/02/2025\nADENOCARCINOMA DUCTAL INVASIVO, MODERADAMENTE DIFERENCIADO\nPERFIL DE INMUNOHISTOQUIMICA COMPATIBLE CON ORIGEN PANCREATICO\nPATRON MICROSATELITAL ESTABLE\nHER-2 NEGATIVO (SCORE 0)\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---",
+    "hash_original": "fd2f8b57a51967071318490154ca0545",
+    "estadisticas": {
+      "caracteres_totales": 165757,
+      "caracteres_consolidados": 3938,
+      "reduccion_porcentaje": 97.62
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 160 AL 211.pdf",
+      "numero_ihq": "IHQ250163",
+      "caso_num": 3,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CEA": "POSITIVO",
+      "IHQ_EMA": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "nombre_completo": "JOSE LUIS GUERRERO FAJARDO",
+      "numero_peticion": "IHQ250163",
+      "identificacion": "4652710",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "58",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "LISBETH PATRICIA RAMIREZ",
+      "servicio": "QUIMIOTERAPIA",
+      "fecha_ingreso": "12/02/2025",
+      "fecha_informe": "24/02/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250163",
+      "N. de identificación": "4652710",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "QUIMIOTERAPIA",
+      "Médico tratante": "LISBETH PATRICIA RAMIREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "12/02/2025",
+      "Fecha Informe": "24/02/2025",
+      "nombres": "JOSE LUIS",
+      "Primer nombre": "JOSE",
+      "Segundo nombre": "LUIS",
+      "apellidos": "GUERRERO FAJARDO",
+      "Primer apellido": "GUERRERO",
+      "Segundo apellido": "FAJARDO",
+      "nombre_formal": "GUERRERO FAJARDO, JOSE LUIS",
+      "diagnostico": "Páncreas, intestino delgado y vesícula biliar. Tumor. Pancreatoduodenectomía. Estudios de inmunohistoquímica:: 12/02/2025 ADENOCARCINOMA DUCTAL INVASIVO, MODERADAMENTE DIFERENCIADO PERFIL DE INMUNOHISTOQUIMICA COMPATIBLE CON ORIGEN PANCREATICO PATRON MICROSATELITAL ESTABLE HER-2 NEGATIVO (SCORE 0)",
+      "descripcion_microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad para CK7, CK19, CA-19-9 y focalmente positivo para CEA y EMA; siendo negativo para CK20, Cromogranina, Synaptophysin, MUC-2. La expresión de p53 es en mosaico (patrón salvaje). Sobreexpresión para HER-2: NEGATIVO (SCORE 0) EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2300650-A7 que corresponde a pancreatoduodenectomia, con diagnóstico de \"ADENOCARCINOMA DUCTAL INVASIVO, MODERADAMENTE DIFERENCIADO; EXTENSIÓN TUMORAL FOCAL A LA GRASA PERIPANCREÁTICA; INVASIÓN LINFOVASCULAR IDENTIFICADA; INVASIÓN PERINEURAL IDENTIFICADA; BORDES DE RESECCIÓN NEGATIVOS (TODOS); GANGLIOS LINFÁTICOS PERIPANCREÁTICOS: ADENOCARCINOMA METASTÁSICO (1/10), CON EXTENSIÓN A GRASA PERIGANGLIONAR; COLECISITITS CRÓNICA; COLELITIASIS; DUODENO Y PAPILA DE VATER SIN ALTERACIONES\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "PÁNCREAS, INTESTINO DELGADO Y VESÍCULA BILIAR",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "PÁNCREAS, INTESTINO DELGADO Y VESÍCULA BILIAR",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "HER2: NEGATIVO (SCORE 0)",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_MUC2": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CA19_9": "POSITIVO",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_P53": "POSITIVO (patrón salvaje - mosaico)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "extraction_timestamp": "2026-04-20T08:29:05.608498",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250163\nCopia Pag. 1 de 2\nNombre : JOSE LUIS GUERRERO FAJARDO\nN. peticion : IHQ250163\nN.Identificación : CC. 4652710\nGenero : MASCULINO\nEdad : 58 años 16 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : QUIMIOTERAPIA\nFecha Ingreso : 12/02/2025\nFecha Informe : 24/02/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nPANCREATODUODENECTO\nMIA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2300650-A7 que corresponde a pancreatoduodenectomia, con diagnóstico\nde \"ADENOCARCINOMA DUCTAL INVASIVO, MODERADAMENTE DIFERENCIADO; EXTENSIÓN TUMORAL\nFOCAL A LA GRASA PERIPANCREÁTICA; INVASIÓN LINFOVASCULAR IDENTIFICADA; INVASIÓN PERINEURAL\nIDENTIFICADA; BORDES DE RESECCIÓN NEGATIVOS (TODOS); GANGLIOS LINFÁTICOS\nPERIPANCREÁTICOS: ADENOCARCINOMA METASTÁSICO (1/10), CON EXTENSIÓN A GRASA\nPERIGANGLIONAR; COLECISITITS CRÓNICA; COLELITIASIS; DUODENO Y PAPILA DE VATER SIN\nALTERACIONES\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nLas células tumorales presentan inmunorreactividad para CK7, CK19, CA-19-9 y focalmente positivo para\nCEA y EMA; siendo negativo para CK20, Cromogranina, Sinaptofisina, MUC-2.\nLa expresión de p53 es en mosaico (patrón salvaje).\nSobreexpresión para HER-2: NEGATIVO (SCORE 0)\nEVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA\nMLH1: Expresión nuclear intacta.\nPMS2: Expresión nuclear intacta. \nMSH6: Expresión nuclear intacta.\nMSH2: Expresión nuclear intacta.\nINTERPRETACIÓN MMR: Estable\nGEN INACTIVADO: Ninguno\nPATRÓN MICROSATELITAL: Estable\nDIAGNÓSTICO\nPáncreas, intestino delgado y vesícula biliar. Tumor. Pancreatoduodenectomía. Estudios de\ninmunohistoquímica:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 6 ---\nIHQ250163\nCopia Pag. 2 de 2\nNombre : JOSE LUIS GUERRERO FAJARDO\nN. peticion : IHQ250163\nN.Identificación : CC. 4652710\nGenero : MASCULINO\nEdad : 58 años 16 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : LISBETH PATRICIA RAMIREZ\nServicio : QUIMIOTERAPIA\nFecha Ingreso : 12/02/2025\nFecha Informe : 24/02/2025\nADENOCARCINOMA DUCTAL INVASIVO, MODERADAMENTE DIFERENCIADO\nPERFIL DE INMUNOHISTOQUIMICA COMPATIBLE CON ORIGEN PANCREATICO\nPATRON MICROSATELITAL ESTABLE\nHER-2 NEGATIVO (SCORE 0)\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CA19-9, CEA, CK19, CK20, CK7, CROMOGRANINA, EMA, HER2, MLH1, MSH2, MSH6, MUC2, P53, PMS2, SYNAPTOFISINA",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2300650-A7 que corresponde a pancreatoduodenectomia, con diagnóstico de \"ADENOCARCINOMA DUCTAL INVASIVO, MODERADAMENTE DIFERENCIADO; EXTENSIÓN TUMORAL FOCAL A LA GRASA PERIPANCREÁTICA; INVASIÓN LINFOVASCULAR IDENTIFICADA; INVASIÓN PERINEURAL IDENTIFICADA; BORDES DE RESECCIÓN NEGATIVOS (TODOS); GANGLIOS LINFÁTICOS PERIPANCREÁTICOS: ADENOCARCINOMA METASTÁSICO (1/10), CON EXTENSIÓN A GRASA PERIGANGLIONAR; COLECISITITS CRÓNICA; COLELITIASIS; DUODENO Y PAPILA DE VATER SIN ALTERACIONES\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad para CK7, CK19, CA-19-9 y focalmente positivo para CEA y EMA; siendo negativo para CK20, Cromogranina, Sinaptofisina, MUC-2. La expresión de p53 es en mosaico (patrón salvaje). Sobreexpresión para HER-2: NEGATIVO (SCORE 0) EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable",
+      "Descripcion Diagnostico": "Páncreas, intestino delgado y vesícula biliar. Tumor. Pancreatoduodenectomía. Estudios de inmunohistoquímica:: 12/02/2025 ADENOCARCINOMA DUCTAL INVASIVO, MODERADAMENTE DIFERENCIADO PERFIL DE INMUNOHISTOQUIMICA COMPATIBLE CON ORIGEN PANCREATICO PATRON MICROSATELITAL ESTABLE HER-2 NEGATIVO (SCORE 0)",
+      "IHQ_ORGANO": "PÁNCREAS, INTESTINO DELGADO Y VESÍCULA BILIAR",
+      "Organo": "PANCREATODUODENECTO MIA",
+      "Diagnostico Coloracion": "ADENOCARCINOMA DUCTAL INVASIVO, MODERADAMENTE DIFERENCIADO; EXTENSIÓN TUMORAL FOCAL A LA GRASA PERIPANCREÁTICA; INVASIÓN LINFOVASCULAR IDENTIFICADA; INVASIÓN PERINEURAL IDENTIFICADA; BORDES DE RESECCIÓN NEGATIVOS (TODOS); GANGLIOS LINFÁTICOS PERIPANCREÁTICOS: ADENOCARCINOMA METASTÁSICO (1/10), CON EXTENSIÓN A GRASA PERIGANGLIONAR; COLECISITITS CRÓNICA; COLELITIASIS; DUODENO Y PAPILA DE VATER SIN ALTERACIONES",
+      "Diagnostico Principal": "ADENOCARCINOMA DUCTAL INVASIVO, MODERADAMENTE DIFERENCIADO PERFIL DE INMUNOHISTOQUIMICA COMPATIBLE CON ORIGEN PANCREATICO PATRON MICROSATELITAL ESTABLE",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO (SCORE 0)",
+      "IHQ_CA19_9": "POSITIVO",
+      "IHQ_CEA": "POSITIVO",
+      "IHQ_CK19": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_EMA": "POSITIVO",
+      "IHQ_HER2": "NEGATIVO (SCORE 0)",
+      "IHQ_MLH1": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MSH6": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_MUC2": "NEGATIVO",
+      "IHQ_P53": "POSITIVO (patrón salvaje - mosaico)",
+      "IHQ_PMS2": "POSITIVO (EXPRESIÓN NUCLEAR INTACTA)",
+      "IHQ_SINAPTOFISINA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 128,
+      "campos_completos": 50,
+      "biomarcadores_encontrados": 15,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 128,
+      "total_campos_completos": 50
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Páncreas, intestino delgado y vesícula biliar. Tumor. Pancreatoduodenectomía. Estudios de\ninmunohistoquímica:: 12/02/2025\nADENOCARCINOMA DUCTAL INVASIVO, MODERADAMENTE DIFERENCIADO\nPERFIL DE INMUNOHISTOQUIMICA COMPATIBLE CON ORIGEN PANCREATICO\nPATRON MICROSATELITAL ESTABLE\nHER-2 NEGATIVO (SCORE 0)",
+      "valor_corregido": "Páncreas, intestino delgado y vesícula biliar. Tumor. Pancreatoduodenectomía. Estudios de inmunohistoquímica:: 12/02/2025 ADENOCARCINOMA DUCTAL INVASIVO, MODERADAMENTE DIFERENCIADO PERFIL DE INMUNOHISTOQUIMICA COMPATIBLE CON ORIGEN PANCREATICO PATRON MICROSATELITAL ESTABLE HER-2 NEGATIVO (SCORE 0)",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250163",
+      "timestamp": "2026-04-20T08:29:05.608180"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad para CK7, CK19, CA-19-9 y focalmente positivo para CEA y EMA; siendo negativo para CK20, Cromogranina, Sinaptofisina, MUC-2. La expresión de p53 es en mosaico (patrón salvaje). Sobreexpresión para HER-2: NEGATIVO (SCORE 0) EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable",
+      "valor_corregido": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. Las células tumorales presentan inmunorreactividad para CK7, CK19, CA-19-9 y focalmente positivo para CEA y EMA; siendo negativo para CK20, Cromogranina, Synaptophysin, MUC-2. La expresión de p53 es en mosaico (patrón salvaje). Sobreexpresión para HER-2: NEGATIVO (SCORE 0) EVALUACIÓN DE INESTABILIDAD MICROSATELITAL POR INMUNOHISTOQUÍMICA MLH1: Expresión nuclear intacta. PMS2: Expresión nuclear intacta. MSH6: Expresión nuclear intacta. MSH2: Expresión nuclear intacta. INTERPRETACIÓN MMR: Estable GEN INACTIVADO: Ninguno PATRÓN MICROSATELITAL: Estable",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250163",
+      "timestamp": "2026-04-20T08:29:05.608186"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 165757,
+    "campos_extraidos": 61
+  }
+}

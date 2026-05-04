@@ -1,0 +1,159 @@
+{
+  "session_id": "IHQ250496_20260410_080702",
+  "numero_peticion": "IHQ250496",
+  "timestamp": "2026-04-10T08:07:02.696322",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250496\nCopia Pag. 1 de 2\nNombre : MEDARDO OSORIO RUIZ\nN. peticion : IHQ250496\nN.Identificación : CC. 1286849\nGenero : MASCULINO\nEdad : 75 años 1 mes 11 dias\nEPS : NUEVA EPS\nMédico tratante : INGRID VIVIANA PEREZ\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLOBULO SUPERIOR\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504797 que\ncorresponde a “biopsia de lóbulo superior izquierdo” con fecha del informe del \n05/05/2025 con diagnóstico de \"ADENOCARCINOMA MUCINOSO\" . Consiste en un bloque de\nparafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se\nsolicitan niveles para los siguientes marcadores: CK+, CK20, CDX2, TTF1. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nControles externos con adecuada marcación. \nRESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. \nParénquima pulmonar comprometido por una lesión adecocarcinomatosa productora de mucina,\nestas células neoplásicas demuestran expresión para CK7, son negativas para CK20, TTF1 y\nCDX2. \nDIAGNÓSTICO\nPulmón. Lóbulo superior izquierdo. Masa. Biopsia transtorácica. Estudio de\ninmunohistoquímica. \nADENOCARCINOMA MUCINOSO. \nCOMENTARIOS\nSe sugiere correlacionar con imágenes diagnósticas e historia clínica en la busqueda de lesiones\nmucinosas en otros sitios diferentes a pulmón. \nCaso valorado en conjunto con la Dra. Natalia Aguirre (patóloga pulmonar). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---\nIHQ250496\nCopia Pag. 2 de 2\nNombre : MEDARDO OSORIO RUIZ\nN. peticion : IHQ250496\nN.Identificación : CC. 1286849\nGenero : MASCULINO\nEdad : 75 años 1 mes 11 dias\nEPS : NUEVA EPS\nMédico tratante : INGRID VIVIANA PEREZ\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 16/05/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3485,
+      "reduccion_porcentaje": 98.15
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250496",
+      "caso_num": 31,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "nombre_completo": "MEDARDO OSORIO RUIZ",
+      "numero_peticion": "IHQ250496",
+      "identificacion": "1286849",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "75",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "INGRID VIVIANA PEREZ",
+      "servicio": "UNIDAD DE CUIDADO ESPECIAL",
+      "fecha_ingreso": "08/05/2025",
+      "fecha_informe": "16/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250496",
+      "N. de identificación": "1286849",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "UNIDAD DE CUIDADO ESPECIAL",
+      "Médico tratante": "INGRID VIVIANA PEREZ",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/05/2025",
+      "Fecha Informe": "16/05/2025",
+      "nombres": "MEDARDO",
+      "Primer nombre": "MEDARDO",
+      "Segundo nombre": "",
+      "apellidos": "OSORIO RUIZ",
+      "Primer apellido": "OSORIO",
+      "Segundo apellido": "RUIZ",
+      "nombre_formal": "OSORIO RUIZ, MEDARDO",
+      "diagnostico": "Pulmón. Lóbulo superior izquierdo. Masa. Biopsia transtorácica. Estudio de inmunohistoquímica. ADENOCARCINOMA MUCINOSO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. RESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. Parénquima pulmonar comprometido por una lesión adecocarcinomatosa productora de mucina, estas células neoplásicas demuestran expresión para CK7, son negativas para CK20, TTF1 y CDX2.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504797 que corresponde a \"biopsia de lóbulo superior izquierdo\" con fecha del informe del 05/05/2025 con diagnóstico de \"ADENOCARCINOMA MUCINOSO\" . Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: CK+, CK20, CDX2, TTF1.",
+      "ihq_organo": "PULMÓN",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Se sugiere correlacionar con imágenes diagnósticas e historia clínica en la busqueda de lesiones mucinosas en otros sitios diferentes a pulmón. Caso valorado en conjunto con la Dra. Natalia Aguirre (patóloga pulmonar).",
+      "IHQ_ORGANO": "PULMÓN",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "extraction_timestamp": "2026-04-10T08:07:02.948262",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250496\nCopia Pag. 1 de 2\nNombre : MEDARDO OSORIO RUIZ\nN. peticion : IHQ250496\nN.Identificación : CC. 1286849\nGenero : MASCULINO\nEdad : 75 años 1 mes 11 dias\nEPS : NUEVA EPS\nMédico tratante : INGRID VIVIANA PEREZ\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nLOBULO SUPERIOR\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504797 que\ncorresponde a “biopsia de lóbulo superior izquierdo” con fecha del informe del \n05/05/2025 con diagnóstico de \"ADENOCARCINOMA MUCINOSO\" . Consiste en un bloque de\nparafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se\nsolicitan niveles para los siguientes marcadores: CK+, CK20, CDX2, TTF1. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nControles externos con adecuada marcación. \nRESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. \nParénquima pulmonar comprometido por una lesión adecocarcinomatosa productora de mucina,\nestas células neoplásicas demuestran expresión para CK7, son negativas para CK20, TTF1 y\nCDX2. \nDIAGNÓSTICO\nPulmón. Lóbulo superior izquierdo. Masa. Biopsia transtorácica. Estudio de\ninmunohistoquímica. \nADENOCARCINOMA MUCINOSO. \nCOMENTARIOS\nSe sugiere correlacionar con imágenes diagnósticas e historia clínica en la busqueda de lesiones\nmucinosas en otros sitios diferentes a pulmón. \nCaso valorado en conjunto con la Dra. Natalia Aguirre (patóloga pulmonar). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 59 ---\nIHQ250496\nCopia Pag. 2 de 2\nNombre : MEDARDO OSORIO RUIZ\nN. peticion : IHQ250496\nN.Identificación : CC. 1286849\nGenero : MASCULINO\nEdad : 75 años 1 mes 11 dias\nEPS : NUEVA EPS\nMédico tratante : INGRID VIVIANA PEREZ\nServicio : UNIDAD DE CUIDADO ESPECIAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 16/05/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 60 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CDX2, CK20, CK7, TTF1",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504797 que corresponde a “biopsia de lóbulo superior izquierdo” con fecha del informe del 05/05/2025 con diagnóstico de \"ADENOCARCINOMA MUCINOSO\" . Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: CK+, CK20, CDX2, TTF1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. RESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. Parénquima pulmonar comprometido por una lesión adecocarcinomatosa productora de mucina, estas células neoplásicas demuestran expresión para CK7, son negativas para CK20, TTF1 y CDX2.",
+      "Descripcion Diagnostico": "Pulmón. Lóbulo superior izquierdo. Masa. Biopsia transtorácica. Estudio de inmunohistoquímica. ADENOCARCINOMA MUCINOSO.",
+      "IHQ_ORGANO": "PULMÓN",
+      "Organo": "LOBULO SUPERIOR IZQUIERDO",
+      "Diagnostico Coloracion": "ADENOCARCINOMA MUCINOSO",
+      "Diagnostico Principal": "ADENOCARCINOMA MUCINOSO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_CK7": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 4,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pulmón. Lóbulo superior izquierdo. Masa. Biopsia transtorácica. Estudio de\ninmunohistoquímica. \nADENOCARCINOMA MUCINOSO.",
+      "valor_corregido": "Pulmón. Lóbulo superior izquierdo. Masa. Biopsia transtorácica. Estudio de inmunohistoquímica. ADENOCARCINOMA MUCINOSO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250496",
+      "timestamp": "2026-04-10T08:07:02.947973"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504797 que corresponde a “biopsia de lóbulo superior izquierdo” con fecha del informe del 05/05/2025 con diagnóstico de \"ADENOCARCINOMA MUCINOSO\" . Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: CK+, CK20, CDX2, TTF1.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504797 que corresponde a \"biopsia de lóbulo superior izquierdo\" con fecha del informe del 05/05/2025 con diagnóstico de \"ADENOCARCINOMA MUCINOSO\" . Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: CK+, CK20, CDX2, TTF1.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250496",
+      "timestamp": "2026-04-10T08:07:02.947979"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Se sugiere correlacionar con imágenes diagnósticas e historia clínica en la busqueda de lesiones\nmucinosas en otros sitios diferentes a pulmón. \nCaso valorado en conjunto con la Dra. Natalia Aguirre (patóloga pulmonar).",
+      "valor_corregido": "Se sugiere correlacionar con imágenes diagnósticas e historia clínica en la busqueda de lesiones mucinosas en otros sitios diferentes a pulmón. Caso valorado en conjunto con la Dra. Natalia Aguirre (patóloga pulmonar).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250496",
+      "timestamp": "2026-04-10T08:07:02.947980"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 50
+  }
+}

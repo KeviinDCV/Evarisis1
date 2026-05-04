@@ -1,0 +1,167 @@
+{
+  "session_id": "IHQ250927_20260420_090834",
+  "numero_peticion": "IHQ250927",
+  "timestamp": "2026-04-20T09:08:34.939444",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250927\nCopia Pag. 1 de 2\nNombre : GLORIA EUGENIA SARASTY\nN. peticion : IHQ250927\nN.Identificación : CC. 29304402\nGenero : FEMENINO\nEdad : 71 años 13 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 26/08/2025\nFecha Informe : 09/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTROMPA TUMOR OVARIO\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2509797 A6 que corresponde a ovario derecho, con diagnóstico de\n\"NEOPLASIA MALIGNA CON COMPONENTE EPITELIAL MUCINOSO Y SARCOMATOSO QUE REQUIERE\nESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN. NECROSIS TUMORAL\nEXTENSA. NEGATIVO PARA INVASIÓN LINFOVASCULAR.\" por lo que se realiza marcación\ninmunohistoquímica para vimentina, desmina, CKAE1E3, CK7, actina músculo específica, actina de\nmúsculo liso, miogenina, p53 y ki67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los niveles realizados no se observa parénquima ovárico, pero se reconoce una neoplásica bifásica de\ncomponente epitelial y sarcomatoso. El componente epitelial, se compone de células mucinosas positivas\npara CKAE1E3 y CK7, p53 sobreexpresado e índice de proliferación ki67 del 70%. El componente\nsarcomatoso presenta células pleomórficas positivas para vimentina, sin marcación para desmina, actina\nde músculo liso, actina músculo específica ni miogenina, la expresión de p53 es de tipo salvaje y el índice\nde proliferación ki67 es del 60-70%.\nDIAGNÓSTICO\n Ovario derecho. Tumor. Ooforectomía. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON\nCARCINOSARCOMA DE OVARIO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 95 ---\nIHQ250927\nCopia Pag. 2 de 2\nNombre : GLORIA EUGENIA SARASTY\nN. peticion : IHQ250927\nN.Identificación : CC. 29304402\nGenero : FEMENINO\nEdad : 71 años 13 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 26/08/2025\nFecha Informe : 09/09/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 96 ---",
+    "hash_original": "62c1e9db6d33f63f29056a2a61129978",
+    "estadisticas": {
+      "caracteres_totales": 197055,
+      "caracteres_consolidados": 3611,
+      "reduccion_porcentaje": 98.17
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 877 AL 929.pdf",
+      "numero_ihq": "IHQ250927",
+      "caso_num": 48,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_DESMIN": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "nombre_completo": "GLORIA EUGENIA SARASTY",
+      "numero_peticion": "IHQ250927",
+      "identificacion": "29304402",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "71",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "EULER JAVIER BURBANO",
+      "servicio": "ADMISION Y SALA DE PARTOS",
+      "fecha_ingreso": "26/08/2025",
+      "fecha_informe": "09/09/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250927",
+      "N. de identificación": "29304402",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "ADMISION Y SALA DE PARTOS",
+      "Médico tratante": "EULER JAVIER BURBANO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "26/08/2025",
+      "Fecha Informe": "09/09/2025",
+      "nombres": "GLORIA",
+      "Primer nombre": "GLORIA",
+      "Segundo nombre": "",
+      "apellidos": "EUGENIA SARASTY",
+      "Primer apellido": "EUGENIA",
+      "Segundo apellido": "SARASTY",
+      "nombre_formal": "EUGENIA SARASTY, GLORIA",
+      "diagnostico": "Ovario derecho. Tumor. Ooforectomía. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON CARCINOSARCOMA DE OVARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los niveles realizados no se observa parénquima ovárico, pero se reconoce una neoplásica bifásica de componente epitelial y sarcomatoso. El componente epitelial, se compone de células mucinosas positivas para CKAE1E3 y CK7, p53 sobreexpresado e índice de proliferación KI-67 del 70%. El componente sarcomatoso presenta células pleomórficas positivas para vimentina, sin marcación para desmina, actina de músculo liso, actina músculo específica ni miogenina, la expresión de p53 es de tipo salvaje y el índice de proliferación KI-67 es del 60-70%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2509797 A6 que corresponde a ovario derecho, con diagnóstico de \"NEOPLASIA MALIGNA CON COMPONENTE EPITELIAL MUCINOSO Y SARCOMATOSO QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN. NECROSIS TUMORAL EXTENSA. NEGATIVO PARA INVASIÓN LINFOVASCULAR.\" por lo que se realiza marcación inmunohistoquímica para vimentina, desmina, CKAE1E3, CK7, actina músculo específica, actina de músculo liso, miogenina, p53 y KI-67.",
+      "ihq_organo": "OVARIO DERECHO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "OVARIO DERECHO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67 del 70%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_P53": "POSITIVO (SOBREEXPRESADO)",
+      "IHQ_ACTINA_MUSCULO_LISO": "POSITIVO",
+      "IHQ_KI-67": "70%",
+      "IHQ_DESMINA": "POSITIVO",
+      "extraction_timestamp": "2026-04-20T09:08:35.248760",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250927\nCopia Pag. 1 de 2\nNombre : GLORIA EUGENIA SARASTY\nN. peticion : IHQ250927\nN.Identificación : CC. 29304402\nGenero : FEMENINO\nEdad : 71 años 13 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 26/08/2025\nFecha Informe : 09/09/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTROMPA TUMOR OVARIO\nDERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2509797 A6 que corresponde a ovario derecho, con diagnóstico de\n\"NEOPLASIA MALIGNA CON COMPONENTE EPITELIAL MUCINOSO Y SARCOMATOSO QUE REQUIERE\nESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN. NECROSIS TUMORAL\nEXTENSA. NEGATIVO PARA INVASIÓN LINFOVASCULAR.\" por lo que se realiza marcación\ninmunohistoquímica para vimentina, desmina, CKAE1E3, CK7, actina músculo específica, actina de\nmúsculo liso, miogenina, p53 y ki67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nEn los niveles realizados no se observa parénquima ovárico, pero se reconoce una neoplásica bifásica de\ncomponente epitelial y sarcomatoso. El componente epitelial, se compone de células mucinosas positivas\npara CKAE1E3 y CK7, p53 sobreexpresado e índice de proliferación ki67 del 70%. El componente\nsarcomatoso presenta células pleomórficas positivas para vimentina, sin marcación para desmina, actina\nde músculo liso, actina músculo específica ni miogenina, la expresión de p53 es de tipo salvaje y el índice\nde proliferación ki67 es del 60-70%.\nDIAGNÓSTICO\n Ovario derecho. Tumor. Ooforectomía. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON\nCARCINOSARCOMA DE OVARIO.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 95 ---\nIHQ250927\nCopia Pag. 2 de 2\nNombre : GLORIA EUGENIA SARASTY\nN. peticion : IHQ250927\nN.Identificación : CC. 29304402\nGenero : FEMENINO\nEdad : 71 años 13 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : ADMISION Y SALA DE PARTOS\nFecha Ingreso : 26/08/2025\nFecha Informe : 09/09/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 96 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "ACTINA DE MUSCULO LISO, CK7, CKAE1AE3, DESMIN, Ki-67, P53, VIMENTINA",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2509797 A6 que corresponde a ovario derecho, con diagnóstico de \"NEOPLASIA MALIGNA CON COMPONENTE EPITELIAL MUCINOSO Y SARCOMATOSO QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN. NECROSIS TUMORAL EXTENSA. NEGATIVO PARA INVASIÓN LINFOVASCULAR.\" por lo que se realiza marcación inmunohistoquímica para vimentina, desmina, CKAE1E3, CK7, actina músculo específica, actina de músculo liso, miogenina, p53 y ki67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los niveles realizados no se observa parénquima ovárico, pero se reconoce una neoplásica bifásica de componente epitelial y sarcomatoso. El componente epitelial, se compone de células mucinosas positivas para CKAE1E3 y CK7, p53 sobreexpresado e índice de proliferación ki67 del 70%. El componente sarcomatoso presenta células pleomórficas positivas para vimentina, sin marcación para desmina, actina de músculo liso, actina músculo específica ni miogenina, la expresión de p53 es de tipo salvaje y el índice de proliferación ki67 es del 60-70%.",
+      "Descripcion Diagnostico": "Ovario derecho. Tumor. Ooforectomía. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON CARCINOSARCOMA DE OVARIO.",
+      "IHQ_ORGANO": "OVARIO DERECHO",
+      "Organo": "TROMPA TUMOR OVARIO DERECHO",
+      "Diagnostico Coloracion": "NEOPLASIA MALIGNA CON COMPONENTE EPITELIAL MUCINOSO Y SARCOMATOSO QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN. NECROSIS TUMORAL EXTENSA. NEGATIVO PARA INVASIÓN LINFOVASCULAR",
+      "Diagnostico Principal": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON CARCINOSARCOMA DE OVARIO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 70%",
+      "IHQ_ACTINA_MUSCULO_LISO": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_DESMIN": "POSITIVO",
+      "IHQ_KI-67": "70%",
+      "IHQ_P53": "POSITIVO (SOBREEXPRESADO)",
+      "IHQ_VIMENTINA": "POSITIVO",
+      "IHQ_DESMINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 136,
+      "campos_completos": 42,
+      "biomarcadores_encontrados": 8,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 136,
+      "total_campos_completos": 42
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ovario derecho. Tumor. Ooforectomía. Estudios de inmunohistoquímica.\nLOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON\nCARCINOSARCOMA DE OVARIO.",
+      "valor_corregido": "Ovario derecho. Tumor. Ooforectomía. Estudios de inmunohistoquímica. LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SON COMPATIBLES CON CARCINOSARCOMA DE OVARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250927",
+      "timestamp": "2026-04-20T09:08:35.248454"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2509797 A6 que corresponde a ovario derecho, con diagnóstico de \"NEOPLASIA MALIGNA CON COMPONENTE EPITELIAL MUCINOSO Y SARCOMATOSO QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN. NECROSIS TUMORAL EXTENSA. NEGATIVO PARA INVASIÓN LINFOVASCULAR.\" por lo que se realiza marcación inmunohistoquímica para vimentina, desmina, CKAE1E3, CK7, actina músculo específica, actina de músculo liso, miogenina, p53 y ki67.",
+      "valor_corregido": "Se realizan niveles al bloque M2509797 A6 que corresponde a ovario derecho, con diagnóstico de \"NEOPLASIA MALIGNA CON COMPONENTE EPITELIAL MUCINOSO Y SARCOMATOSO QUE REQUIERE ESTUDIOS DE INMUNOHISTOQUÍMICA PARA SU ADECUADA CLASIFICACIÓN. NECROSIS TUMORAL EXTENSA. NEGATIVO PARA INVASIÓN LINFOVASCULAR.\" por lo que se realiza marcación inmunohistoquímica para vimentina, desmina, CKAE1E3, CK7, actina músculo específica, actina de músculo liso, miogenina, p53 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250927",
+      "timestamp": "2026-04-20T09:08:35.248460"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los niveles realizados no se observa parénquima ovárico, pero se reconoce una neoplásica bifásica de componente epitelial y sarcomatoso. El componente epitelial, se compone de células mucinosas positivas para CKAE1E3 y CK7, p53 sobreexpresado e índice de proliferación ki67 del 70%. El componente sarcomatoso presenta células pleomórficas positivas para vimentina, sin marcación para desmina, actina de músculo liso, actina músculo específica ni miogenina, la expresión de p53 es de tipo salvaje y el índice de proliferación ki67 es del 60-70%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. En los niveles realizados no se observa parénquima ovárico, pero se reconoce una neoplásica bifásica de componente epitelial y sarcomatoso. El componente epitelial, se compone de células mucinosas positivas para CKAE1E3 y CK7, p53 sobreexpresado e índice de proliferación KI-67 del 70%. El componente sarcomatoso presenta células pleomórficas positivas para vimentina, sin marcación para desmina, actina de músculo liso, actina músculo específica ni miogenina, la expresión de p53 es de tipo salvaje y el índice de proliferación KI-67 es del 60-70%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250927",
+      "timestamp": "2026-04-20T09:08:35.248461"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 197055,
+    "campos_extraidos": 53
+  }
+}

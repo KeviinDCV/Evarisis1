@@ -1,0 +1,164 @@
+{
+  "session_id": "IHQ250474_20260420_084337",
+  "numero_peticion": "IHQ250474",
+  "timestamp": "2026-04-20T08:43:37.070379",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250474\nCopia Pag. 1 de 2\nNombre : LUZ MARINA GUERRERO OSORIO\nN. peticion : IHQ250474\nN.Identificación : CC. 38863857\nGenero : FEMENINO\nEdad : 62 años 29 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS FERNANDO PACHECO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/05/2025\nFecha Informe : 15/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504423 que\ncorresponde a “biopsia de hueso” con fecha del informe del 24/04/2025 con diagnóstico de\n\"MUESTRA OPTIMA, CELULARIDAD GLOBAL DEL 50%. - RELACIÓN MIELOIDE - ERITROIDE\n3:1. - MEGACARIOCITOS DE 1 - 5 POR CAMPO DE ALTO PODER. SIN EVIDENCIA DE\nAGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE ASPECTO\nPLASMOCITOIDE NI BLÁSTICO\" . Consiste en un bloque de parafina y una lámina coloreadas\ncon hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes\nmarcadores: CD3, CD5, CD15, CD20, CD34, CD38, CD56, CD61, MPO, CD117,\nGLICOFORINA. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nControles externos con adecuada marcación. \nRESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. \nSe identifican escasos linfocitos B (CD20+) y linfocitos T (CD3+, CD5+) que corresponden al 5%. \nLa población eritroide demuestra expresión para glicoforina con adecuada maduración. Se\nobserva mecagaricitos (CD61+) de 5-7 por campo de alto poder sin formar cúmulos. Los\ngranulocitos presentan asincronía en la maduración por marcación ocasional y escasa de CD10+\ny difusa para CD15+ y Mieloperoxidasa negativo. La población de células plasmáticas expresa\nCD38+, sin expresión para CD56, sin formar cúmulos y corresponde al 5% de la celularidad. La\npoblación de blastos presenta expresión (CD34+, CD117+) y corresponde a menos del 3% de la\npoblación con distribución dispersa.\nVER DESCRIPCIÓN MICROSCOPICA.\nDIAGNÓSTICO\nMédula ósea. Biopsia con aguja gruesa. Estudio de inmunohistoquímica. \nNEGATIVO PARA COMPROMISO POR LINFOMA DE CÉLULAS B. \nCOMENTARIOS\nCaso valorado en conjuto con la Dra. Maria Ximena (patóloga). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---\nIHQ250474\nCopia Pag. 2 de 2\nNombre : LUZ MARINA GUERRERO OSORIO\nN. peticion : IHQ250474\nN.Identificación : CC. 38863857\nGenero : FEMENINO\nEdad : 62 años 29 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS FERNANDO PACHECO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/05/2025\nFecha Informe : 15/05/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 4088,
+      "reduccion_porcentaje": 97.84
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250474",
+      "caso_num": 11,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD10": "POSITIVO",
+      "nombre_completo": "LUZ MARINA GUERRERO OSORIO",
+      "numero_peticion": "IHQ250474",
+      "identificacion": "38863857",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "62",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LUIS FERNANDO PACHECO",
+      "servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "fecha_ingreso": "02/05/2025",
+      "fecha_informe": "15/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250474",
+      "N. de identificación": "38863857",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "HEMATO ONCOLOGIA HOSP ADULTO",
+      "Médico tratante": "LUIS FERNANDO PACHECO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/05/2025",
+      "Fecha Informe": "15/05/2025",
+      "nombres": "LUZ MARINA",
+      "Primer nombre": "LUZ",
+      "Segundo nombre": "MARINA",
+      "apellidos": "GUERRERO OSORIO",
+      "Primer apellido": "GUERRERO",
+      "Segundo apellido": "OSORIO",
+      "nombre_formal": "GUERRERO OSORIO, LUZ MARINA",
+      "diagnostico": "Médula ósea. Biopsia con aguja gruesa. Estudio de inmunohistoquímica. NEGATIVO PARA COMPROMISO POR LINFOMA DE CÉLULAS B.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. RESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. Se identifican escasos linfocitos B (CD20+) y linfocitos T (CD3+, CD5+) que corresponden al 5%. La población eritroide demuestra expresión para glicoforina con adecuada maduración. Se observa mecagaricitos (CD61+) de 5-7 por campo de alto poder sin formar cúmulos. Los granulocitos presentan asincronía en la maduración por marcación ocasional y escasa de CD10+ y difusa para CD15+ y Mieloperoxidasa negativo. La población de células plasmáticas expresa CD38+, sin expresión para CD56, sin formar cúmulos y corresponde al 5% de la celularidad. La población de blastos presenta expresión (CD34+, CD117+) y corresponde a menos del 3% de la población con distribución dispersa. VER DESCRIPCIÓN MICROSCOPICA.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504423 que corresponde a \"biopsia de hueso\" con fecha del informe del 24/04/2025 con diagnóstico de \"MUESTRA OPTIMA, CELULARIDAD GLOBAL DEL 50%. - RELACIÓN MIELOIDE - ERITROIDE 3:1. - MEGACARIOCITOS DE 1 - 5 POR CAMPO DE ALTO PODER. SIN EVIDENCIA DE AGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE ASPECTO PLASMOCITOIDE NI BLÁSTICO\" . Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: CD3, CD5, CD15, CD20, CD34, CD38, CD56, CD61, MPO, CD117, GLICOFORINA.",
+      "ihq_organo": "MÉDULA ÓSEA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "ONCOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CD3, CD5, CD15, CD20, CD34, CD38, CD56, CD61, MPO, CD117, GLICOFORINA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjuto con la Dra. Maria Ximena (patóloga).",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD5, CD15, CD20, CD34, CD38, CD56, CD61, MPO, CD117, GLICOFORINA",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "NEGATIVO",
+      "extraction_timestamp": "2026-04-20T08:43:37.358078",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250474\nCopia Pag. 1 de 2\nNombre : LUZ MARINA GUERRERO OSORIO\nN. peticion : IHQ250474\nN.Identificación : CC. 38863857\nGenero : FEMENINO\nEdad : 62 años 29 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS FERNANDO PACHECO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/05/2025\nFecha Informe : 15/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE HUESO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504423 que\ncorresponde a “biopsia de hueso” con fecha del informe del 24/04/2025 con diagnóstico de\n\"MUESTRA OPTIMA, CELULARIDAD GLOBAL DEL 50%. - RELACIÓN MIELOIDE - ERITROIDE\n3:1. - MEGACARIOCITOS DE 1 - 5 POR CAMPO DE ALTO PODER. SIN EVIDENCIA DE\nAGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE ASPECTO\nPLASMOCITOIDE NI BLÁSTICO\" . Consiste en un bloque de parafina y una lámina coloreadas\ncon hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes\nmarcadores: CD3, CD5, CD15, CD20, CD34, CD38, CD56, CD61, MPO, CD117,\nGLICOFORINA. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nControles externos con adecuada marcación. \nRESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. \nSe identifican escasos linfocitos B (CD20+) y linfocitos T (CD3+, CD5+) que corresponden al 5%. \nLa población eritroide demuestra expresión para glicoforina con adecuada maduración. Se\nobserva mecagaricitos (CD61+) de 5-7 por campo de alto poder sin formar cúmulos. Los\ngranulocitos presentan asincronía en la maduración por marcación ocasional y escasa de CD10+\ny difusa para CD15+ y Mieloperoxidasa negativo. La población de células plasmáticas expresa\nCD38+, sin expresión para CD56, sin formar cúmulos y corresponde al 5% de la celularidad. La\npoblación de blastos presenta expresión (CD34+, CD117+) y corresponde a menos del 3% de la\npoblación con distribución dispersa.\nVER DESCRIPCIÓN MICROSCOPICA.\nDIAGNÓSTICO\nMédula ósea. Biopsia con aguja gruesa. Estudio de inmunohistoquímica. \nNEGATIVO PARA COMPROMISO POR LINFOMA DE CÉLULAS B. \nCOMENTARIOS\nCaso valorado en conjuto con la Dra. Maria Ximena (patóloga). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 25 ---\nIHQ250474\nCopia Pag. 2 de 2\nNombre : LUZ MARINA GUERRERO OSORIO\nN. peticion : IHQ250474\nN.Identificación : CC. 38863857\nGenero : FEMENINO\nEdad : 62 años 29 dias\nEPS : NUEVA EPS\nMédico tratante : LUIS FERNANDO PACHECO\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 02/05/2025\nFecha Informe : 15/05/2025\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 26 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD3, CD5, CD15, CD20, CD34, CD38, CD56, CD61, MPO, CD117, GLICOFORINA, CD10, MIELOPEROXIDASA",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504423 que corresponde a “biopsia de hueso” con fecha del informe del 24/04/2025 con diagnóstico de \"MUESTRA OPTIMA, CELULARIDAD GLOBAL DEL 50%. - RELACIÓN MIELOIDE - ERITROIDE 3:1. - MEGACARIOCITOS DE 1 - 5 POR CAMPO DE ALTO PODER. SIN EVIDENCIA DE AGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE ASPECTO PLASMOCITOIDE NI BLÁSTICO\" . Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: CD3, CD5, CD15, CD20, CD34, CD38, CD56, CD61, MPO, CD117, GLICOFORINA.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. RESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. Se identifican escasos linfocitos B (CD20+) y linfocitos T (CD3+, CD5+) que corresponden al 5%. La población eritroide demuestra expresión para glicoforina con adecuada maduración. Se observa mecagaricitos (CD61+) de 5-7 por campo de alto poder sin formar cúmulos. Los granulocitos presentan asincronía en la maduración por marcación ocasional y escasa de CD10+ y difusa para CD15+ y Mieloperoxidasa negativo. La población de células plasmáticas expresa CD38+, sin expresión para CD56, sin formar cúmulos y corresponde al 5% de la celularidad. La población de blastos presenta expresión (CD34+, CD117+) y corresponde a menos del 3% de la población con distribución dispersa. VER DESCRIPCIÓN MICROSCOPICA.",
+      "Descripcion Diagnostico": "Médula ósea. Biopsia con aguja gruesa. Estudio de inmunohistoquímica. NEGATIVO PARA COMPROMISO POR LINFOMA DE CÉLULAS B.",
+      "IHQ_ORGANO": "MÉDULA ÓSEA",
+      "Organo": "BX DE HUESO",
+      "Diagnostico Coloracion": "MUESTRA OPTIMA, CELULARIDAD GLOBAL DEL 50%. - RELACIÓN MIELOIDE - ERITROIDE 3:1. - MEGACARIOCITOS DE 1 - 5 POR CAMPO DE ALTO PODER. SIN EVIDENCIA DE AGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE ASPECTO PLASMOCITOIDE NI BLÁSTICO",
+      "Diagnostico Principal": "ESTUDIO DE INMUNOHISTOQUÍMICA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CD15": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD56": "NO MENCIONADO",
+      "IHQ_CD61": "POSITIVO",
+      "IHQ_CD117": "POSITIVO",
+      "IHQ_GLICOFORINA": "NO MENCIONADO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_MIELOPEROXIDASA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 131,
+      "campos_completos": 47,
+      "biomarcadores_encontrados": 12,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 131,
+      "total_campos_completos": 47
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Médula ósea. Biopsia con aguja gruesa. Estudio de inmunohistoquímica. \nNEGATIVO PARA COMPROMISO POR LINFOMA DE CÉLULAS B.",
+      "valor_corregido": "Médula ósea. Biopsia con aguja gruesa. Estudio de inmunohistoquímica. NEGATIVO PARA COMPROMISO POR LINFOMA DE CÉLULAS B.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250474",
+      "timestamp": "2026-04-20T08:43:37.357751"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504423 que corresponde a “biopsia de hueso” con fecha del informe del 24/04/2025 con diagnóstico de \"MUESTRA OPTIMA, CELULARIDAD GLOBAL DEL 50%. - RELACIÓN MIELOIDE - ERITROIDE 3:1. - MEGACARIOCITOS DE 1 - 5 POR CAMPO DE ALTO PODER. SIN EVIDENCIA DE AGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE ASPECTO PLASMOCITOIDE NI BLÁSTICO\" . Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: CD3, CD5, CD15, CD20, CD34, CD38, CD56, CD61, MPO, CD117, GLICOFORINA.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504423 que corresponde a \"biopsia de hueso\" con fecha del informe del 24/04/2025 con diagnóstico de \"MUESTRA OPTIMA, CELULARIDAD GLOBAL DEL 50%. - RELACIÓN MIELOIDE - ERITROIDE 3:1. - MEGACARIOCITOS DE 1 - 5 POR CAMPO DE ALTO PODER. SIN EVIDENCIA DE AGREGADOS LINFOIDES NI INCREMENTO DEL NÚMERO DE CÉLULAS DE ASPECTO PLASMOCITOIDE NI BLÁSTICO\" . Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: CD3, CD5, CD15, CD20, CD34, CD38, CD56, CD61, MPO, CD117, GLICOFORINA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250474",
+      "timestamp": "2026-04-20T08:43:37.357757"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 59
+  }
+}

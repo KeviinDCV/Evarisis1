@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250033",
   "caso_num": 33,
   "total_casos": 50,
-  "timestamp": "2026-04-28T14:15:43.353340",
+  "timestamp": "2026-04-29T11:31:11.989829",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -39,8 +39,8 @@
       ]
     },
     "biomarcadores": {
-      "estado": "WARNING",
-      "mensaje": "1 biomarcadores extras en BD",
+      "estado": "OK",
+      "mensaje": "Todos los estudios mapeados (8/8)",
       "total_solicitado_ocr": 8,
       "total_solicitado_bd": 9,
       "estudios_ocr": [
@@ -60,14 +60,12 @@
         "NAPSIN",
         "Ki-67",
         "P40",
-        "CHROMOGRANINA",
-        "SYNAPTOFISINA",
-        "CROMOGRANINA"
+        "CROMOGRANINA",
+        "SINAPTOFISINA",
+        "SYNAPTOFISINA"
       ],
       "faltantes_en_bd": [],
-      "extras_en_bd": [
-        "CROMOGRANINA"
-      ],
+      "extras_en_bd": [],
       "mapeados": 8,
       "no_mapeados": [],
       "valores_incorrectos": [],
@@ -118,9 +116,9 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 90.0,
-    "score_final": 90.0,
-    "validaciones_ok": 9,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
     "total_validaciones": 10,
     "warnings": 0,
     "errores": 0

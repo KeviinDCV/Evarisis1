@@ -1,0 +1,172 @@
+{
+  "session_id": "IHQ250499_20260415_161303",
+  "numero_peticion": "IHQ250499",
+  "timestamp": "2026-04-15T16:13:03.716884",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250499\nCopia Pag. 1 de 2\nNombre : INGRID PAOLA ASPRILLA GARCES\nN. peticion : IHQ250499\nN.Identificación : RC. 1115463304\nGenero : FEMENINO\nEdad : 7 años 23 dias\nEPS : NUEVA EPS\nMédico tratante : LINA MARIA PARDO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASA EN TEJIDO BLANDOS\nDE PARED TORAXICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2504356 el cual corresponde a \"masa en tejidos blandos de pared\ntorácica\" con diagnóstico de \"NEOPLASIA FUSIFORME SIN ATIPIA A CLASIFICAR CON ESTUDIOS DE\nINMUNOHISTOQUÍMICA. BORDE DE RESECCIÓN LIBRE.\" por lo que se realiza marcación para CKAE1E3,\nCD34, CD68,CD10, CD31, SMA, EMA, SOX 10, podoplanina, S100 y ki67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA®.\nLas células tumorales presentan una morfología fusiforme y presenta marcación positiva para CD10,\npodoplanina y CD68.\nSin marcación para EMA, SMA, CKAE1E3, CD34, CD31, S100 y SOX10.\nÍndice de proliferación ki67 del 10%.\nDIAGNÓSTICO\n Pared torácica. Tumor. Resección. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN NEUROTEQUEOMA.\nCOMENTARIOS\nCaso valorado en conjunto con el doctor Edwin Carrascal, Patólogo.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---\nIHQ250499\nCopia Pag. 2 de 2\nNombre : INGRID PAOLA ASPRILLA GARCES\nN. peticion : IHQ250499\nN.Identificación : RC. 1115463304\nGenero : FEMENINO\nEdad : 7 años 23 dias\nEPS : NUEVA EPS\nMédico tratante : LINA MARIA PARDO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3236,
+      "reduccion_porcentaje": 98.29
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250499",
+      "caso_num": 34,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD31": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_PODOPLANINA": "POSITIVO",
+      "IHQ_CD68": "POSITIVO",
+      "nombre_completo": "INGRID PAOLA ASPRILLA GARCES",
+      "numero_peticion": "IHQ250499",
+      "identificacion": "1115463304",
+      "tipo_documento": "RC",
+      "Genero": "FEMENINO",
+      "Edad": "7",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "LINA MARIA PARDO",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "08/05/2025",
+      "fecha_informe": "23/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250499",
+      "N. de identificación": "1115463304",
+      "Tipo de documento": "RC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "LINA MARIA PARDO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/05/2025",
+      "Fecha Informe": "23/05/2025",
+      "nombres": "INGRID PAOLA ASPRILLA",
+      "Primer nombre": "INGRID",
+      "Segundo nombre": "PAOLA ASPRILLA",
+      "apellidos": "GARCES",
+      "Primer apellido": "GARCES",
+      "Segundo apellido": "",
+      "nombre_formal": "GARCES, INGRID PAOLA ASPRILLA",
+      "diagnostico": "Pared torácica. Tumor. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN NEUROTEQUEOMA.",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales presentan una morfología fusiforme y presenta marcación positiva para CD10, podoplanina y CD68. Sin marcación para EMA, SMA, CKAE1E3, CD34, CD31, S100 y SOX10. Índice de proliferación KI-67 del 10%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2504356 el cual corresponde a \"masa en tejidos blandos de pared torácica\" con diagnóstico de \"NEOPLASIA FUSIFORME SIN ATIPIA A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA. BORDE DE RESECCIÓN LIBRE.\" por lo que se realiza marcación para CKAE1E3, CD34, CD68,CD10, CD31, SMA, EMA, SOX 10, podoplanina, S100 y KI-67.",
+      "ihq_organo": "PARED TORÁCICA",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "Caso valorado en conjunto con el doctor Edwin Carrascal, Patólogo.",
+      "IHQ_ORGANO": "PARED TORÁCICA",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67 del 10%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_KI-67": "10%",
+      "extraction_timestamp": "2026-04-15T16:13:03.946005",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250499\nCopia Pag. 1 de 2\nNombre : INGRID PAOLA ASPRILLA GARCES\nN. peticion : IHQ250499\nN.Identificación : RC. 1115463304\nGenero : FEMENINO\nEdad : 7 años 23 dias\nEPS : NUEVA EPS\nMédico tratante : LINA MARIA PARDO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nMASA EN TEJIDO BLANDOS\nDE PARED TORAXICA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles al bloque M2504356 el cual corresponde a \"masa en tejidos blandos de pared\ntorácica\" con diagnóstico de \"NEOPLASIA FUSIFORME SIN ATIPIA A CLASIFICAR CON ESTUDIOS DE\nINMUNOHISTOQUÍMICA. BORDE DE RESECCIÓN LIBRE.\" por lo que se realiza marcación para CKAE1E3,\nCD34, CD68,CD10, CD31, SMA, EMA, SOX 10, podoplanina, S100 y ki67.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA®.\nLas células tumorales presentan una morfología fusiforme y presenta marcación positiva para CD10,\npodoplanina y CD68.\nSin marcación para EMA, SMA, CKAE1E3, CD34, CD31, S100 y SOX10.\nÍndice de proliferación ki67 del 10%.\nDIAGNÓSTICO\n Pared torácica. Tumor. Resección. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN NEUROTEQUEOMA.\nCOMENTARIOS\nCaso valorado en conjunto con el doctor Edwin Carrascal, Patólogo.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 65 ---\nIHQ250499\nCopia Pag. 2 de 2\nNombre : INGRID PAOLA ASPRILLA GARCES\nN. peticion : IHQ250499\nN.Identificación : RC. 1115463304\nGenero : FEMENINO\nEdad : 7 años 23 dias\nEPS : NUEVA EPS\nMédico tratante : LINA MARIA PARDO\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 08/05/2025\nFecha Informe : 23/05/2025\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 66 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD10, CD34, CD68, CKAE1AE3, EMA, Ki-67, S100, SMA, SOX10",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2504356 el cual corresponde a \"masa en tejidos blandos de pared torácica\" con diagnóstico de \"NEOPLASIA FUSIFORME SIN ATIPIA A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA. BORDE DE RESECCIÓN LIBRE.\" por lo que se realiza marcación para CKAE1E3, CD34, CD68,CD10, CD31, SMA, EMA, SOX 10, podoplanina, S100 y ki67.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales presentan una morfología fusiforme y presenta marcación positiva para CD10, podoplanina y CD68. Sin marcación para EMA, SMA, CKAE1E3, CD34, CD31, S100 y SOX10. Índice de proliferación ki67 del 10%.",
+      "Descripcion Diagnostico": "Pared torácica. Tumor. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN NEUROTEQUEOMA.",
+      "IHQ_ORGANO": "PARED TORÁCICA",
+      "Organo": "MASA EN TEJIDO BLANDOS DE PARED TORAXICA",
+      "Diagnostico Coloracion": "NEOPLASIA FUSIFORME SIN ATIPIA A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA. BORDE DE RESECCIÓN LIBRE",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN NEUROTEQUEOMA",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67 del 10%",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_CD68": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_EMA": "NEGATIVO",
+      "IHQ_KI-67": "10%",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_PODOPLANINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 134,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Pared torácica. Tumor. Resección. Estudios de inmunohistoquímica.\nLOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN NEUROTEQUEOMA.",
+      "valor_corregido": "Pared torácica. Tumor. Resección. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLÓGICOS Y DE INMUNOHISTOQUÍMICA FAVORECEN UN NEUROTEQUEOMA.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250499",
+      "timestamp": "2026-04-15T16:13:03.945747"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan niveles al bloque M2504356 el cual corresponde a \"masa en tejidos blandos de pared torácica\" con diagnóstico de \"NEOPLASIA FUSIFORME SIN ATIPIA A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA. BORDE DE RESECCIÓN LIBRE.\" por lo que se realiza marcación para CKAE1E3, CD34, CD68,CD10, CD31, SMA, EMA, SOX 10, podoplanina, S100 y ki67.",
+      "valor_corregido": "Se realizan niveles al bloque M2504356 el cual corresponde a \"masa en tejidos blandos de pared torácica\" con diagnóstico de \"NEOPLASIA FUSIFORME SIN ATIPIA A CLASIFICAR CON ESTUDIOS DE INMUNOHISTOQUÍMICA. BORDE DE RESECCIÓN LIBRE.\" por lo que se realiza marcación para CKAE1E3, CD34, CD68,CD10, CD31, SMA, EMA, SOX 10, podoplanina, S100 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250499",
+      "timestamp": "2026-04-15T16:13:03.945753"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales presentan una morfología fusiforme y presenta marcación positiva para CD10, podoplanina y CD68. Sin marcación para EMA, SMA, CKAE1E3, CD34, CD31, S100 y SOX10. Índice de proliferación ki67 del 10%.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA®. Las células tumorales presentan una morfología fusiforme y presenta marcación positiva para CD10, podoplanina y CD68. Sin marcación para EMA, SMA, CKAE1E3, CD34, CD31, S100 y SOX10. Índice de proliferación KI-67 del 10%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250499",
+      "timestamp": "2026-04-15T16:13:03.945755"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 57
+  }
+}

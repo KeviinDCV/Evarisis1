@@ -1,0 +1,154 @@
+{
+  "session_id": "IHQ250323_20260410_080610",
+  "numero_peticion": "IHQ250323",
+  "timestamp": "2026-04-10T08:06:10.804246",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250323\nCopia Pag. 1 de 2\nNombre : MAGALY ARBOLEDA\nN. peticion : IHQ250323\nN.Identificación : CC. 31588192\nGenero : FEMENINO\nEdad : 44 años 1 mes 2 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : DANIEL EMILIO PIMIENTA\nServicio : DERMATOLOGIA\nFecha Ingreso : 01/04/2025\nFecha Informe : 08/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PIEL CEJA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2502333 que corresponde a biopsia de lesión en piel de ceja izquierda,\ncon diagnóstico de \"HALLAZGOS COMPATIBLES CON PROLIFERACION FUSOCELULAR A CLASIFICAR POR\nESTUDIOS DE INMUNOHISTOQUIMICA\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©\nFocos de proliferación dérmica nodular y bien circunscrita de células fusiformes que presentan\npositividad para S100, SOX-10 y marcación en forma de huella dactilar para CD34; siendo negativas para\nDesmina y SMA.\nEl índice de proliferación celular presenta un Ki-67 menor del 1%.\nDIAGNÓSTICO\nPiel de ceja izquierda. Lesión. Biopsia por sacabocado. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON NEUROMA ENCAPSULADO EN EMPALIZADA\nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Ricardo Rueda (Dermatopatologo)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 20 ---\nIHQ250323\nCopia Pag. 2 de 2\nNombre : MAGALY ARBOLEDA\nN. peticion : IHQ250323\nN.Identificación : CC. 31588192\nGenero : FEMENINO\nEdad : 44 años 1 mes 2 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : DANIEL EMILIO PIMIENTA\nServicio : DERMATOLOGIA\nFecha Ingreso : 01/04/2025\nFecha Informe : 08/04/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3227,
+      "reduccion_porcentaje": 98.19
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250323",
+      "caso_num": 10,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "nombre_completo": "MAGALY ARBOLEDA",
+      "numero_peticion": "IHQ250323",
+      "identificacion": "31588192",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "44",
+      "eps": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "medico_tratante": "DANIEL EMILIO PIMIENTA",
+      "servicio": "DERMATOLOGIA",
+      "fecha_ingreso": "01/04/2025",
+      "fecha_informe": "08/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250323",
+      "N. de identificación": "31588192",
+      "Tipo de documento": "CC",
+      "EPS": "S.O.S. SERV.OCCID.DE SALUD EPS",
+      "Servicio": "DERMATOLOGIA",
+      "Médico tratante": "DANIEL EMILIO PIMIENTA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "01/04/2025",
+      "Fecha Informe": "08/04/2025",
+      "nombres": "MAGALY ARBOLEDA",
+      "Primer nombre": "MAGALY",
+      "Segundo nombre": "ARBOLEDA",
+      "apellidos": "",
+      "Primer apellido": "",
+      "Segundo apellido": "",
+      "nombre_formal": "MAGALY ARBOLEDA",
+      "diagnostico": "Piel de ceja izquierda. Lesión. Biopsia por sacabocado. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON NEUROMA ENCAPSULADO EN EMPALIZADA",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© Focos de proliferación dérmica nodular y bien circunscrita de células fusiformes que presentan positividad para S100, SOX-10 y marcación en forma de huella dactilar para CD34; siendo negativas para Desmina y SMA. El índice de proliferación celular presenta un KI-67 menor del 1%.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2502333 que corresponde a biopsia de lesión en piel de ceja izquierda, con diagnóstico de \"HALLAZGOS COMPATIBLES CON PROLIFERACION FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "PIEL DE CEJA IZQUIERDA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "DERMATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Caso valorado en conjunto con el Dr. Ricardo Rueda (Dermatopatologo)",
+      "IHQ_ORGANO": "PIEL DE CEJA IZQUIERDA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_KI-67": "<1%",
+      "IHQ_DESMINA": "NEGATIVO",
+      "extraction_timestamp": "2026-04-10T08:06:11.077309",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250323\nCopia Pag. 1 de 2\nNombre : MAGALY ARBOLEDA\nN. peticion : IHQ250323\nN.Identificación : CC. 31588192\nGenero : FEMENINO\nEdad : 44 años 1 mes 2 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : DANIEL EMILIO PIMIENTA\nServicio : DERMATOLOGIA\nFecha Ingreso : 01/04/2025\nFecha Informe : 08/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX PIEL CEJA IZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2502333 que corresponde a biopsia de lesión en piel de ceja izquierda,\ncon diagnóstico de \"HALLAZGOS COMPATIBLES CON PROLIFERACION FUSOCELULAR A CLASIFICAR POR\nESTUDIOS DE INMUNOHISTOQUIMICA\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche\nVENTANA©\nFocos de proliferación dérmica nodular y bien circunscrita de células fusiformes que presentan\npositividad para S100, SOX-10 y marcación en forma de huella dactilar para CD34; siendo negativas para\nDesmina y SMA.\nEl índice de proliferación celular presenta un Ki-67 menor del 1%.\nDIAGNÓSTICO\nPiel de ceja izquierda. Lesión. Biopsia por sacabocado. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON NEUROMA ENCAPSULADO EN EMPALIZADA\nCOMENTARIOS\nCaso valorado en conjunto con el Dr. Ricardo Rueda (Dermatopatologo)\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 20 ---\nIHQ250323\nCopia Pag. 2 de 2\nNombre : MAGALY ARBOLEDA\nN. peticion : IHQ250323\nN.Identificación : CC. 31588192\nGenero : FEMENINO\nEdad : 44 años 1 mes 2 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : DANIEL EMILIO PIMIENTA\nServicio : DERMATOLOGIA\nFecha Ingreso : 01/04/2025\nFecha Informe : 08/04/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 21 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CD34, DESMIN, Ki-67, S100, SMA",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2502333 que corresponde a biopsia de lesión en piel de ceja izquierda, con diagnóstico de \"HALLAZGOS COMPATIBLES CON PROLIFERACION FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© Focos de proliferación dérmica nodular y bien circunscrita de células fusiformes que presentan positividad para S100, SOX-10 y marcación en forma de huella dactilar para CD34; siendo negativas para Desmina y SMA. El índice de proliferación celular presenta un Ki-67 menor del 1%.",
+      "Descripcion Diagnostico": "Piel de ceja izquierda. Lesión. Biopsia por sacabocado. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON NEUROMA ENCAPSULADO EN EMPALIZADA",
+      "IHQ_ORGANO": "PIEL DE CEJA IZQUIERDA",
+      "Organo": "BX PIEL CEJA IZQUIERDA",
+      "Diagnostico Coloracion": "PROLIFERACION FUSOCELULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUIMICA",
+      "Diagnostico Principal": "NEUROMA ENCAPSULADO EN EMPALIZADA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "Ki-67: <1%",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_KI-67": "<1%",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SMA": "NEGATIVO",
+      "IHQ_DESMINA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 139,
+      "campos_completos": 39,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 139,
+      "total_campos_completos": 39
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Piel de ceja izquierda. Lesión. Biopsia por sacabocado. Estudios de inmunohistoquímica:\nHALLAZGOS COMPATIBLES CON NEUROMA ENCAPSULADO EN EMPALIZADA",
+      "valor_corregido": "Piel de ceja izquierda. Lesión. Biopsia por sacabocado. Estudios de inmunohistoquímica: HALLAZGOS COMPATIBLES CON NEUROMA ENCAPSULADO EN EMPALIZADA",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250323",
+      "timestamp": "2026-04-10T08:06:11.076368"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© Focos de proliferación dérmica nodular y bien circunscrita de células fusiformes que presentan positividad para S100, SOX-10 y marcación en forma de huella dactilar para CD34; siendo negativas para Desmina y SMA. El índice de proliferación celular presenta un Ki-67 menor del 1%.",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada Roche VENTANA© Focos de proliferación dérmica nodular y bien circunscrita de células fusiformes que presentan positividad para S100, SOX-10 y marcación en forma de huella dactilar para CD34; siendo negativas para Desmina y SMA. El índice de proliferación celular presenta un KI-67 menor del 1%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250323",
+      "timestamp": "2026-04-10T08:06:11.076384"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 50
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "session_id": "IHQ250501_20260414_064755",
+  "numero_peticion": "IHQ250501",
+  "timestamp": "2026-04-14T06:47:55.871139",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250501\nCopia Pag. 1 de 2\nNombre : JULIAN ANDRES GARCIA LOBOA\nN. peticion : IHQ250501\nN.Identificación : CC. 10498622\nGenero : MASCULINO\nEdad : 41 años 5 meses 5 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JHON SANDOVAL\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 08/05/2025\nFecha Informe : 21/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR MEDIASTINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2503179-A que corresponde a biopsia de ganglio linfático mediastinal con\ndiagnóstico de \"PROLIFERACIÓN MONONUCLEAR NODULAR Y PSEUDONODULAR A CLASIFICAR POR\nESTUDIOS DE INMUNOHISTOQUÍMICA\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nEn los cortes histológicos se identifica ganglio linfático con cambios hiperplásicos con aumento en el\nnúmero de folículos con centros germinales con formación de nódulos y expansión de la paracorteza.En\nla muestra evaluada no se encuentra necrosis, microorganismos patógenos, cambios citopáticos ni\nformas grandes, como tampoco infiltración bien definida ni masiva por células de aspecto neoplásico\nepitelial.\nEl estudio de inmunohistoquímica documenta ganglio linfático sin inmunorreactividad para CKAE1/AE3, y\nse identifican linfocitos B positivos para el marcador CD20 y PAX-5 formando cúmulos con centros\ngerminales positivas para los marcadores CD10 y Bcl-6 sin expresión de Bcl-2 y con presencia\nde abundantes células dendríticas foliculares positivas para el marcador CD23; hay células plasmáticas\npositivas para CD38 y MUM-1. Hay una expansión de linfocitos T de morfología e inmunofenotipo maduro\ncon clara expresión de CD3, CD5 y Bcl-2 positivos, sin un patrón infiltrativo. \nEl índice de proliferación celular evaluado con el marcador Ki-67 en los centros germinales es del 95%\ny menor al 5% en las demás zonas.\nDIAGNÓSTICO\nCOMENTARIOS\nLa muestra presenta cambios que por inmunohistoquímica son compatibles con hallazgos reactivos, no\nse documenta expresión de marcadores epiteliales, sin embargo ante la sospecha de malignidad, se\nrecomienda nuevo muestreo de acuerdo a criterio del medico tratante.\nCaso valorado en conjunto con la Dra. María Ximena Varela.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 69 ---\nIHQ250501\nCopia Pag. 2 de 2\nNombre : JULIAN ANDRES GARCIA LOBOA\nN. peticion : IHQ250501\nN.Identificación : CC. 10498622\nGenero : MASCULINO\nEdad : 41 años 5 meses 5 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JHON SANDOVAL\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 08/05/2025\nFecha Informe : 21/05/2025\nGanglio linfático mediastinal. Biopsia:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON:\n-HIPERPLASIA FOLICULAR Y PARAFOLICULAR REACTIVA.\n-NEGATIVO PARA NEOPLASIA EN LA MUESTRA ENVIADA.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 70 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 4452,
+      "reduccion_porcentaje": 97.64
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250501",
+      "caso_num": 36,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "nombre_completo": "JULIAN ANDRES GARCIA LOBOA",
+      "numero_peticion": "IHQ250501",
+      "identificacion": "10498622",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "41",
+      "eps": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "medico_tratante": "JHON SANDOVAL",
+      "servicio": "OTORRINO CONSULTA EXTERNA",
+      "fecha_ingreso": "08/05/2025",
+      "fecha_informe": "21/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250501",
+      "N. de identificación": "10498622",
+      "Tipo de documento": "CC",
+      "EPS": "REGIONAL EN ASEGURAMIENTO DE SALUD N4",
+      "Servicio": "OTORRINO CONSULTA EXTERNA",
+      "Médico tratante": "JHON SANDOVAL",
+      "Fecha de ingreso (2. Fecha de la muestra)": "08/05/2025",
+      "Fecha Informe": "21/05/2025",
+      "nombres": "JULIAN",
+      "Primer nombre": "JULIAN",
+      "Segundo nombre": "",
+      "apellidos": "ANDRES GARCIA LOBOA",
+      "Primer apellido": "ANDRES",
+      "Segundo apellido": "GARCIA LOBOA",
+      "nombre_formal": "ANDRES GARCIA LOBOA, JULIAN",
+      "diagnostico": "",
+      "descripcion_microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los cortes histológicos se identifica ganglio linfático con cambios hiperplásicos con aumento en el número de folículos con centros germinales con formación de nódulos y expansión de la paracorteza.En la muestra evaluada no se encuentra necrosis, microorganismos patógenos, cambios citopáticos ni formas grandes, como tampoco infiltración bien definida ni masiva por células de aspecto neoplásico epitelial. El estudio de inmunohistoquímica documenta ganglio linfático sin inmunorreactividad para CKAE1/AE3, y se identifican linfocitos B positivos para el marcador CD20 y PAX-5 formando cúmulos con centros germinales positivas para los marcadores CD10 y Bcl-6 sin expresión de Bcl-2 y con presencia de abundantes células dendríticas foliculares positivas para el marcador CD23; hay células plasmáticas positivas para CD38 y MUM-1. Hay una expansión de linfocitos T de morfología e inmunofenotipo maduro con clara expresión de CD3, CD5 y Bcl-2 positivos, sin un patrón infiltrativo. El índice de proliferación celular evaluado con el marcador KI-67 en los centros germinales es del 95% y menor al 5% en las demás zonas.",
+      "descripcion_macroscopica": "Se realizan niveles al bloque M2503179-A que corresponde a biopsia de ganglio linfático mediastinal con diagnóstico de \"PROLIFERACIÓN MONONUCLEAR NODULAR Y PSEUDONODULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA\". Se ordenan estudios de inmunohistoquímica.",
+      "ihq_organo": "",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "La muestra presenta cambios que por inmunohistoquímica son compatibles con hallazgos reactivos, no se documenta expresión de marcadores epiteliales, sin embargo ante la sospecha de malignidad, se recomienda nuevo muestreo de acuerdo a criterio del medico tratante. Caso valorado en conjunto con la Dra. María Ximena Varela.",
+      "IHQ_ORGANO": "TUMOR MEDIASTINAL",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "extraction_timestamp": "2026-04-14T06:47:56.272992",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250501\nCopia Pag. 1 de 2\nNombre : JULIAN ANDRES GARCIA LOBOA\nN. peticion : IHQ250501\nN.Identificación : CC. 10498622\nGenero : MASCULINO\nEdad : 41 años 5 meses 5 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JHON SANDOVAL\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 08/05/2025\nFecha Informe : 21/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR MEDIASTINAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles al bloque M2503179-A que corresponde a biopsia de ganglio linfático mediastinal con\ndiagnóstico de \"PROLIFERACIÓN MONONUCLEAR NODULAR Y PSEUDONODULAR A CLASIFICAR POR\nESTUDIOS DE INMUNOHISTOQUÍMICA\". Se ordenan estudios de inmunohistoquímica.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos,\nse analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la\nplataforma automatizada Roche VENTANA©.\nEn los cortes histológicos se identifica ganglio linfático con cambios hiperplásicos con aumento en el\nnúmero de folículos con centros germinales con formación de nódulos y expansión de la paracorteza.En\nla muestra evaluada no se encuentra necrosis, microorganismos patógenos, cambios citopáticos ni\nformas grandes, como tampoco infiltración bien definida ni masiva por células de aspecto neoplásico\nepitelial.\nEl estudio de inmunohistoquímica documenta ganglio linfático sin inmunorreactividad para CKAE1/AE3, y\nse identifican linfocitos B positivos para el marcador CD20 y PAX-5 formando cúmulos con centros\ngerminales positivas para los marcadores CD10 y Bcl-6 sin expresión de Bcl-2 y con presencia\nde abundantes células dendríticas foliculares positivas para el marcador CD23; hay células plasmáticas\npositivas para CD38 y MUM-1. Hay una expansión de linfocitos T de morfología e inmunofenotipo maduro\ncon clara expresión de CD3, CD5 y Bcl-2 positivos, sin un patrón infiltrativo. \nEl índice de proliferación celular evaluado con el marcador Ki-67 en los centros germinales es del 95%\ny menor al 5% en las demás zonas.\nDIAGNÓSTICO\nCOMENTARIOS\nLa muestra presenta cambios que por inmunohistoquímica son compatibles con hallazgos reactivos, no\nse documenta expresión de marcadores epiteliales, sin embargo ante la sospecha de malignidad, se\nrecomienda nuevo muestreo de acuerdo a criterio del medico tratante.\nCaso valorado en conjunto con la Dra. María Ximena Varela.\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 69 ---\nIHQ250501\nCopia Pag. 2 de 2\nNombre : JULIAN ANDRES GARCIA LOBOA\nN. peticion : IHQ250501\nN.Identificación : CC. 10498622\nGenero : MASCULINO\nEdad : 41 años 5 meses 5 dias\nEPS : REGIONAL EN ASEGURAMIENTO DE\nSALUD N4\nMédico tratante : JHON SANDOVAL\nServicio : OTORRINO CONSULTA EXTERNA\nFecha Ingreso : 08/05/2025\nFecha Informe : 21/05/2025\nGanglio linfático mediastinal. Biopsia:\nHALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLES CON:\n-HIPERPLASIA FOLICULAR Y PARAFOLICULAR REACTIVA.\n-NEGATIVO PARA NEOPLASIA EN LA MUESTRA ENVIADA.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 70 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "BCL2, BCL6, CD10, CD20, CD23, CD3, CD38, CD5, CKAE1AE3, MUM1, PAX5",
+      "Descripcion macroscopica": "Se realizan niveles al bloque M2503179-A que corresponde a biopsia de ganglio linfático mediastinal con diagnóstico de \"PROLIFERACIÓN MONONUCLEAR NODULAR Y PSEUDONODULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA\". Se ordenan estudios de inmunohistoquímica.",
+      "Descripcion microscopica": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los cortes histológicos se identifica ganglio linfático con cambios hiperplásicos con aumento en el número de folículos con centros germinales con formación de nódulos y expansión de la paracorteza.En la muestra evaluada no se encuentra necrosis, microorganismos patógenos, cambios citopáticos ni formas grandes, como tampoco infiltración bien definida ni masiva por células de aspecto neoplásico epitelial. El estudio de inmunohistoquímica documenta ganglio linfático sin inmunorreactividad para CKAE1/AE3, y se identifican linfocitos B positivos para el marcador CD20 y PAX-5 formando cúmulos con centros germinales positivas para los marcadores CD10 y Bcl-6 sin expresión de Bcl-2 y con presencia de abundantes células dendríticas foliculares positivas para el marcador CD23; hay células plasmáticas positivas para CD38 y MUM-1. Hay una expansión de linfocitos T de morfología e inmunofenotipo maduro con clara expresión de CD3, CD5 y Bcl-2 positivos, sin un patrón infiltrativo. El índice de proliferación celular evaluado con el marcador Ki-67 en los centros germinales es del 95% y menor al 5% en las demás zonas.",
+      "Descripcion Diagnostico": "N/A",
+      "IHQ_ORGANO": "TUMOR MEDIASTINAL",
+      "Organo": "TUMOR MEDIASTINAL",
+      "Diagnostico Coloracion": "PROLIFERACIÓN MONONUCLEAR NODULAR Y PSEUDONODULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Diagnostico Principal": "PROLIFERACIÓN MONONUCLEAR NODULAR Y PSEUDONODULAR A CLASIFICAR POR ESTUDIOS DE INMUNOHISTOQUÍMICA",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_BCL2": "POSITIVO",
+      "IHQ_BCL6": "POSITIVO",
+      "IHQ_CD10": "POSITIVO",
+      "IHQ_CD20": "POSITIVO",
+      "IHQ_CD23": "POSITIVO",
+      "IHQ_CD3": "POSITIVO",
+      "IHQ_CD38": "POSITIVO",
+      "IHQ_CD5": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_MUM1": "POSITIVO",
+      "IHQ_PAX5": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 134,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 11,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 9,
+      "completitud_porcentaje": 90.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [
+      "Descripcion Diagnostico"
+    ],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los cortes histológicos se identifica ganglio linfático con cambios hiperplásicos con aumento en el número de folículos con centros germinales con formación de nódulos y expansión de la paracorteza.En la muestra evaluada no se encuentra necrosis, microorganismos patógenos, cambios citopáticos ni formas grandes, como tampoco infiltración bien definida ni masiva por células de aspecto neoplásico epitelial. El estudio de inmunohistoquímica documenta ganglio linfático sin inmunorreactividad para CKAE1/AE3, y se identifican linfocitos B positivos para el marcador CD20 y PAX-5 formando cúmulos con centros germinales positivas para los marcadores CD10 y Bcl-6 sin expresión de Bcl-2 y con presencia de abundantes células dendríticas foliculares positivas para el marcador CD23; hay células plasmáticas positivas para CD38 y MUM-1. Hay una expansión de linfocitos T de morfología e inmunofenotipo maduro con clara expresión de CD3, CD5 y Bcl-2 positivos, sin un patrón infiltrativo. El índice de proliferación celular evaluado con el marcador Ki-67 en los centros germinales es del 95% y menor al 5% en las demás zonas.",
+      "valor_corregido": "Previa revisión de la técnica y verificación del adecuado rendimiento de los controles internos y externos, se analizan tinciones de Inmunohistoquímica realizadas con técnica de inmunoperoxidasa en la plataforma automatizada Roche VENTANA©. En los cortes histológicos se identifica ganglio linfático con cambios hiperplásicos con aumento en el número de folículos con centros germinales con formación de nódulos y expansión de la paracorteza.En la muestra evaluada no se encuentra necrosis, microorganismos patógenos, cambios citopáticos ni formas grandes, como tampoco infiltración bien definida ni masiva por células de aspecto neoplásico epitelial. El estudio de inmunohistoquímica documenta ganglio linfático sin inmunorreactividad para CKAE1/AE3, y se identifican linfocitos B positivos para el marcador CD20 y PAX-5 formando cúmulos con centros germinales positivas para los marcadores CD10 y Bcl-6 sin expresión de Bcl-2 y con presencia de abundantes células dendríticas foliculares positivas para el marcador CD23; hay células plasmáticas positivas para CD38 y MUM-1. Hay una expansión de linfocitos T de morfología e inmunofenotipo maduro con clara expresión de CD3, CD5 y Bcl-2 positivos, sin un patrón infiltrativo. El índice de proliferación celular evaluado con el marcador KI-67 en los centros germinales es del 95% y menor al 5% en las demás zonas.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250501",
+      "timestamp": "2026-04-14T06:47:56.267543"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "La muestra presenta cambios que por inmunohistoquímica son compatibles con hallazgos reactivos, no\nse documenta expresión de marcadores epiteliales, sin embargo ante la sospecha de malignidad, se\nrecomienda nuevo muestreo de acuerdo a criterio del medico tratante.\nCaso valorado en conjunto con la Dra. María Ximena Varela.",
+      "valor_corregido": "La muestra presenta cambios que por inmunohistoquímica son compatibles con hallazgos reactivos, no se documenta expresión de marcadores epiteliales, sin embargo ante la sospecha de malignidad, se recomienda nuevo muestreo de acuerdo a criterio del medico tratante. Caso valorado en conjunto con la Dra. María Ximena Varela.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250501",
+      "timestamp": "2026-04-14T06:47:56.267548"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 55
+  }
+}

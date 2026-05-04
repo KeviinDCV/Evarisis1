@@ -1,0 +1,181 @@
+{
+  "session_id": "IHQ250352_20260410_080619",
+  "numero_peticion": "IHQ250352",
+  "timestamp": "2026-04-10T08:06:19.086452",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250352\nCopia Pag. 1 de 2\nNombre : MAVIL SINISTERRA CAMBINDO\nN. peticion : IHQ250352\nN.Identificación : CC. 34371556\nGenero : FEMENINO\nEdad : 57 años 9 meses 22 dias\nEPS : NUEVA EPS\nMédico tratante : MANUEL DAVID MAYORAL\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 05/04/2025\nFecha Informe : 26/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX GANGLIO CERVICAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como como “M2503273” que corresponde a “biopsia de ganglio cervical izquierdo\" con\ndiagnóstico de “CARCINOMA METASTASICO.” Previa revisión de la histología, se realizan niveles\nhistológicos para tinción con: SYNAPTOFISINA, CKAE1E3, CROMOGRAMINA A, GATA 3, CK 5/6, TTF\n1, p16, p40, CD56.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células marcan positividad fuerte para CKAE1/E3 y marcacion debil nuclear para GATA 3.\nMarcación negativas para SYNAPTOFISINA, CROMOGRANINA A, CK 5/6, TTF-1, CD56, P40, p16\nmenor al 30%. \nDIAGNÓSTICO\nGanglio linfático cervical izquierdo. Lesión. Biopsia. Estudios de inmunohistoquímica. \nLOS HALLAZGOS HISTOLOGICOS Y DE INMUNOHISTOQUIMICA SUGIEREN UN CARCINOMA\nMETASTASICO. \nCOMENTARIOS\nDurante el procesamiento para la realización de los marcadores de inmunohistoquímica, se agotó\nel tejido en el bloque de parafina, por lo que no es posible realizar más estudios. Sin embargo,\ncon los hallazgos obtenidos, se concluye que se trata de un carcinoma metastásico. Se sugiere\ncorrelacionar con imágenes diagnósticas e historia clínica.\nCaso revisado por la Dra. Natalia Aguirre(patóloga).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---\nIHQ250352\nCopia Pag. 2 de 2\nNombre : MAVIL SINISTERRA CAMBINDO\nN. peticion : IHQ250352\nN.Identificación : CC. 34371556\nGenero : FEMENINO\nEdad : 57 años 9 meses 22 dias\nEPS : NUEVA EPS\nMédico tratante : MANUEL DAVID MAYORAL\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 05/04/2025\nFecha Informe : 26/04/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 3611,
+      "reduccion_porcentaje": 97.97
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250352",
+      "caso_num": 39,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "nombre_completo": "MAVIL SINISTERRA CAMBINDO",
+      "numero_peticion": "IHQ250352",
+      "identificacion": "34371556",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "57",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "MANUEL DAVID MAYORAL",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "05/04/2025",
+      "fecha_informe": "26/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250352",
+      "N. de identificación": "34371556",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "MANUEL DAVID MAYORAL",
+      "Fecha de ingreso (2. Fecha de la muestra)": "05/04/2025",
+      "Fecha Informe": "26/04/2025",
+      "nombres": "MAVIL",
+      "Primer nombre": "MAVIL",
+      "Segundo nombre": "",
+      "apellidos": "SINISTERRA CAMBINDO",
+      "Primer apellido": "SINISTERRA",
+      "Segundo apellido": "CAMBINDO",
+      "nombre_formal": "SINISTERRA CAMBINDO, MAVIL",
+      "diagnostico": "Ganglio linfático cervical izquierdo. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS Y DE INMUNOHISTOQUIMICA SUGIEREN UN CARCINOMA METASTASICO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células marcan positividad fuerte para CKAE1/E3 y marcacion debil nuclear para GATA 3. Marcación negativas para SYNAPTOPHYSIN, CROMOGRANINA A, CK5/6, TTF1, CD56, p40, p16 menor al 30%.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como como \"M2503273\" que corresponde a \"biopsia de ganglio cervical izquierdo\" con diagnóstico de \"CARCINOMA METASTASICO.\" Previa revisión de la histología, se realizan niveles histológicos para tinción con: SYNAPTOPHYSIN, CKAE1E3, CROMOGRAMINA A, GATA 3, CK5/6, TTF1, p16, p40, CD56.",
+      "ihq_organo": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "SYNAPTOFISINA, CKAE1E3, CROMOGRAMINA A, GATA3, CK5/6, TTF-1, P16, P40, CD56",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Durante el procesamiento para la realización de los marcadores de inmunohistoquímica, se agotó el tejido en el bloque de parafina, por lo que no es posible realizar más estudios. Sin embargo, con los hallazgos obtenidos, se concluye que se trata de un carcinoma metastásico. Se sugiere correlacionar con imágenes diagnósticas e historia clínica. Caso revisado por la Dra. Natalia Aguirre(patóloga).",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "SYNAPTOFISINA, CKAE1E3, CROMOGRAMINA A, GATA3, CK5/6, TTF-1, P16, P40, CD56",
+      "IHQ_CK5_6": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "p16": "NEGATIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-04-10T08:06:19.425724",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250352\nCopia Pag. 1 de 2\nNombre : MAVIL SINISTERRA CAMBINDO\nN. peticion : IHQ250352\nN.Identificación : CC. 34371556\nGenero : FEMENINO\nEdad : 57 años 9 meses 22 dias\nEPS : NUEVA EPS\nMédico tratante : MANUEL DAVID MAYORAL\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 05/04/2025\nFecha Informe : 26/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX GANGLIO CERVICAL\nIZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional\nrotulado como como “M2503273” que corresponde a “biopsia de ganglio cervical izquierdo\" con\ndiagnóstico de “CARCINOMA METASTASICO.” Previa revisión de la histología, se realizan niveles\nhistológicos para tinción con: SYNAPTOFISINA, CKAE1E3, CROMOGRAMINA A, GATA 3, CK 5/6, TTF\n1, p16, p40, CD56.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nLas células marcan positividad fuerte para CKAE1/E3 y marcacion debil nuclear para GATA 3.\nMarcación negativas para SYNAPTOFISINA, CROMOGRANINA A, CK 5/6, TTF-1, CD56, P40, p16\nmenor al 30%. \nDIAGNÓSTICO\nGanglio linfático cervical izquierdo. Lesión. Biopsia. Estudios de inmunohistoquímica. \nLOS HALLAZGOS HISTOLOGICOS Y DE INMUNOHISTOQUIMICA SUGIEREN UN CARCINOMA\nMETASTASICO. \nCOMENTARIOS\nDurante el procesamiento para la realización de los marcadores de inmunohistoquímica, se agotó\nel tejido en el bloque de parafina, por lo que no es posible realizar más estudios. Sin embargo,\ncon los hallazgos obtenidos, se concluye que se trata de un carcinoma metastásico. Se sugiere\ncorrelacionar con imágenes diagnósticas e historia clínica.\nCaso revisado por la Dra. Natalia Aguirre(patóloga).\nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 71 ---\nIHQ250352\nCopia Pag. 2 de 2\nNombre : MAVIL SINISTERRA CAMBINDO\nN. peticion : IHQ250352\nN.Identificación : CC. 34371556\nGenero : FEMENINO\nEdad : 57 años 9 meses 22 dias\nEPS : NUEVA EPS\nMédico tratante : MANUEL DAVID MAYORAL\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 05/04/2025\nFecha Informe : 26/04/2025\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 72 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "SYNAPTOFISINA, CKAE1AE3, CROMOGRAMINA A, GATA3, CK5/6, TTF-1, P16, P40, CD56, CROMOGRANINA",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como como “M2503273” que corresponde a “biopsia de ganglio cervical izquierdo\" con diagnóstico de “CARCINOMA METASTASICO.” Previa revisión de la histología, se realizan niveles histológicos para tinción con: SYNAPTOFISINA, CKAE1E3, CROMOGRAMINA A, GATA 3, CK 5/6, TTF 1, p16, p40, CD56.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células marcan positividad fuerte para CKAE1/E3 y marcacion debil nuclear para GATA 3. Marcación negativas para SYNAPTOFISINA, CROMOGRANINA A, CK 5/6, TTF-1, CD56, P40, p16 menor al 30%.",
+      "Descripcion Diagnostico": "Ganglio linfático cervical izquierdo. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS Y DE INMUNOHISTOQUIMICA SUGIEREN UN CARCINOMA METASTASICO.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "Organo": "BX GANGLIO CERVICAL IZQUIERDO",
+      "Diagnostico Coloracion": "CARCINOMA METASTASICO",
+      "Diagnostico Principal": "LOS HALLAZGOS HISTOLOGICOS Y DE INMUNOHISTOQUIMICA SUGIEREN UN CARCINOMA METASTASICO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CROMOGRAMINA": "",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CK5_6": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_SINAPTOFISINA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 135,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático cervical izquierdo. Lesión. Biopsia. Estudios de inmunohistoquímica. \nLOS HALLAZGOS HISTOLOGICOS Y DE INMUNOHISTOQUIMICA SUGIEREN UN CARCINOMA\nMETASTASICO.",
+      "valor_corregido": "Ganglio linfático cervical izquierdo. Lesión. Biopsia. Estudios de inmunohistoquímica. LOS HALLAZGOS HISTOLOGICOS Y DE INMUNOHISTOQUIMICA SUGIEREN UN CARCINOMA METASTASICO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250352",
+      "timestamp": "2026-04-10T08:06:19.425451"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como como “M2503273” que corresponde a “biopsia de ganglio cervical izquierdo\" con diagnóstico de “CARCINOMA METASTASICO.” Previa revisión de la histología, se realizan niveles histológicos para tinción con: SYNAPTOFISINA, CKAE1E3, CROMOGRAMINA A, GATA 3, CK 5/6, TTF 1, p16, p40, CD56.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como como \"M2503273\" que corresponde a \"biopsia de ganglio cervical izquierdo\" con diagnóstico de \"CARCINOMA METASTASICO.\" Previa revisión de la histología, se realizan niveles histológicos para tinción con: SYNAPTOPHYSIN, CKAE1E3, CROMOGRAMINA A, GATA 3, CK5/6, TTF1, p16, p40, CD56.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250352",
+      "timestamp": "2026-04-10T08:06:19.425458"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células marcan positividad fuerte para CKAE1/E3 y marcacion debil nuclear para GATA 3. Marcación negativas para SYNAPTOFISINA, CROMOGRANINA A, CK 5/6, TTF-1, CD56, P40, p16 menor al 30%.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células marcan positividad fuerte para CKAE1/E3 y marcacion debil nuclear para GATA 3. Marcación negativas para SYNAPTOPHYSIN, CROMOGRANINA A, CK5/6, TTF1, CD56, p40, p16 menor al 30%.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250352",
+      "timestamp": "2026-04-10T08:06:19.425460"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Durante el procesamiento para la realización de los marcadores de inmunohistoquímica, se agotó\nel tejido en el bloque de parafina, por lo que no es posible realizar más estudios. Sin embargo,\ncon los hallazgos obtenidos, se concluye que se trata de un carcinoma metastásico. Se sugiere\ncorrelacionar con imágenes diagnósticas e historia clínica.\nCaso revisado por la Dra. Natalia Aguirre(patóloga).",
+      "valor_corregido": "Durante el procesamiento para la realización de los marcadores de inmunohistoquímica, se agotó el tejido en el bloque de parafina, por lo que no es posible realizar más estudios. Sin embargo, con los hallazgos obtenidos, se concluye que se trata de un carcinoma metastásico. Se sugiere correlacionar con imágenes diagnósticas e historia clínica. Caso revisado por la Dra. Natalia Aguirre(patóloga).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250352",
+      "timestamp": "2026-04-10T08:06:19.425461"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 59
+  }
+}

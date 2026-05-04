@@ -1,0 +1,25 @@
+{
+  "lote_id": "lote_50_casos_20260429_113048",
+  "timestamp": "2026-04-29T11:31:24.372473",
+  "casos_procesados": 50,
+  "resumen_scores": {
+    "promedio": 98.8,
+    "mediana": 100.0,
+    "minimo": 80.0,
+    "maximo": 100.0
+  },
+  "casos_problematicos": [
+    {
+      "numero": "IHQ250002",
+      "score": 80.0,
+      "errores": 0,
+      "warnings": 2
+    }
+  ],
+  "biomarcadores_faltantes_comunes": [],
+  "errores_por_tipo": {},
+  "recomendaciones": [
+    "Validar 1 casos criticos con IA"
+  ],
+  "version_herramienta": "2.0.0"
+}

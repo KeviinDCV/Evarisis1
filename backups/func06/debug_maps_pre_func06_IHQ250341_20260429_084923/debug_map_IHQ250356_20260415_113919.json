@@ -1,0 +1,196 @@
+{
+  "session_id": "IHQ250356_20260415_113919",
+  "numero_peticion": "IHQ250356",
+  "timestamp": "2026-04-15T11:39:19.931178",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250356\nCopia Pag. 1 de 2\nNombre : TRIFONIA VANEGAS SOLIS\nN. peticion : IHQ250356\nN.Identificación : CC. 31386121\nGenero : FEMENINO\nEdad : 70 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : HUGO ALEJANDRO BURGOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 29/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2503906 que\ncorresponde a \"biopsia de hígado\" con diagnóstico principal de \"NEOPLASIA INVASIVA EN\nPATRÓN ACINAR Y SÓLIDO CON NECROSIS A CLASIFICAR MEDIANTE ESTUDIOS DE\nINMUNOHSITOQUÍMICA\" del 08 de abril 2025. consiste en dos bloques de parafina y dos\nláminas coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan los\nniveles histológicos al bloque 1 para marcar con : CKAE1/AE3, CK7, CK20, ARGINASA, TTF-1,\nCK19, CEA, GATA3, PAX8, Ca19-9, CDX2, MAMAGLOBINA, RECEPTORE DE ESTROGENOS,\nRECEPTOR DE PROGESTERONA, HER 2, SINAPTOFISINA, CROMOGRANINA, CD56, Ki 67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA:\nParénquima hepático infiltrado por una lesión de aspecto carcinomatosa invasiva con extensa\nnecrosis. Las células son de tamaño grande con citoplasma sincitial eosinófilo, núcleos grandes\nhipercromáticos y pleomórficos con actividad mitótica atípica, las células se organizan en patrón\nsólido y pseudoacinar. \nEstas células tumorales presentan inmunorreactividad positiva para marcadores epiteliales\nCKAE1/AE3, CK7, GATA3 con diferenciación neuroendocrina por la expresión heterogénea de\nSINAPTOFINSA y CD56 con negatividad para CROMOGRANINA. El índice de proliferación celular\nmedido mediante Ki 67 es del 80%. \nLas células tumorales son negativas para CK20, ARGINASA, TTF-1, CK19, CEA, PAX8, Ca19-9,\nCDX2, MAMAGLOBINA, RECEPTORES DE ESTROGENOS, RECEPTOR DE PROGESTERONA, HER 2. \nDIAGNÓSTICO\nCOMENTARIOS\nEl resultado de este estudio se debe analizar y correlación con datos de historia clínica y estudios\nimagenológicos. \nCaso valorado en conjunto con el Dr. Jorge Moreno (patólogo). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---\nIHQ250356\nCopia Pag. 2 de 2\nNombre : TRIFONIA VANEGAS SOLIS\nN. peticion : IHQ250356\nN.Identificación : CC. 31386121\nGenero : FEMENINO\nEdad : 70 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : HUGO ALEJANDRO BURGOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 29/04/2025\nHígado. Lesión. Biopsia. Estudio de inmunohistoquímica. \nCARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE CON EXTENSA NECROSIS. \nKI67: 80%. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 4240,
+      "reduccion_porcentaje": 97.62
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250356",
+      "caso_num": 43,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_ARGINASA": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_CK19": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_MAMAGLOBINA": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "nombre_completo": "TRIFONIA VANEGAS SOLIS",
+      "numero_peticion": "IHQ250356",
+      "identificacion": "31386121",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "70",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "HUGO ALEJANDRO BURGOS",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "07/04/2025",
+      "fecha_informe": "29/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250356",
+      "N. de identificación": "31386121",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "HUGO ALEJANDRO BURGOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/04/2025",
+      "Fecha Informe": "29/04/2025",
+      "nombres": "TRIFONIA",
+      "Primer nombre": "TRIFONIA",
+      "Segundo nombre": "",
+      "apellidos": "VANEGAS SOLIS",
+      "Primer apellido": "VANEGAS",
+      "Segundo apellido": "SOLIS",
+      "nombre_formal": "VANEGAS SOLIS, TRIFONIA",
+      "diagnostico": "carcinomatosa invasiva con extensa necrosis",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Parénquima hepático infiltrado por una lesión de aspecto carcinomatosa invasiva con extensa necrosis. Las células son de tamaño grande con citoplasma sincitial eosinófilo, núcleos grandes hipercromáticos y pleomórficos con actividad mitótica atípica, las células se organizan en patrón sólido y pseudoacinar. Estas células tumorales presentan inmunorreactividad positiva para marcadores epiteliales CKAE1/AE3, CK7, GATA3 con diferenciación neuroendocrina por la expresión heterogénea de SINAPTOFINSA y CD56 con negatividad para CROMOGRANINA. El índice de proliferación celular medido mediante KI-67 es del 80%. Las células tumorales son negativas para CK20, ARGINASA, TTF1, CK19, CEA, PAX8, Ca19-9, CDX2, MAMAGLOBINA, RECEPTORES DE ESTROGENOS, RECEPTOR DE PROGESTERONA, HER 2.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2503906 que corresponde a \"biopsia de hígado\" con diagnóstico principal de \"NEOPLASIA INVASIVA EN PATRÓN ACINAR Y SÓLIDO CON NECROSIS A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHSITOQUÍMICA\" del 08 de abril 2025. consiste en dos bloques de parafina y dos láminas coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan los niveles histológicos al bloque 1 para marcar con : CKAE1/AE3, CK7, CK20, ARGINASA, TTF1, CK19, CEA, GATA3, PAX8, Ca19-9, CDX2, MAMAGLOBINA, RECEPTORE DE ESTROGENOS, RECEPTOR DE PROGESTERONA, HER 2, SYNAPTOPHYSIN, CROMOGRANINA, CD56, KI-67.",
+      "ihq_organo": "",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NANCY MEJIA VARGAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CKAE1AE3, CK7, CK20, ARGINASA, TTF-1",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "El resultado de este estudio se debe analizar y correlación con datos de historia clínica y estudios imagenológicos. Caso valorado en conjunto con el Dr. Jorge Moreno (patólogo).",
+      "IHQ_ORGANO": "BX HIGADO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NANCY MEJIA VARGAS",
+      "Factor pronostico": "HER2: NEGATIVO, Ki-67: 80%, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, CK7, CK20, ARGINASA, TTF-1",
+      "IHQ_KI-67": "80%",
+      "extraction_timestamp": "2026-04-15T11:39:20.459117",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250356\nCopia Pag. 1 de 2\nNombre : TRIFONIA VANEGAS SOLIS\nN. peticion : IHQ250356\nN.Identificación : CC. 31386121\nGenero : FEMENINO\nEdad : 70 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : HUGO ALEJANDRO BURGOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 29/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2503906 que\ncorresponde a \"biopsia de hígado\" con diagnóstico principal de \"NEOPLASIA INVASIVA EN\nPATRÓN ACINAR Y SÓLIDO CON NECROSIS A CLASIFICAR MEDIANTE ESTUDIOS DE\nINMUNOHSITOQUÍMICA\" del 08 de abril 2025. consiste en dos bloques de parafina y dos\nláminas coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan los\nniveles histológicos al bloque 1 para marcar con : CKAE1/AE3, CK7, CK20, ARGINASA, TTF-1,\nCK19, CEA, GATA3, PAX8, Ca19-9, CDX2, MAMAGLOBINA, RECEPTORE DE ESTROGENOS,\nRECEPTOR DE PROGESTERONA, HER 2, SINAPTOFISINA, CROMOGRANINA, CD56, Ki 67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nEVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA:\nParénquima hepático infiltrado por una lesión de aspecto carcinomatosa invasiva con extensa\nnecrosis. Las células son de tamaño grande con citoplasma sincitial eosinófilo, núcleos grandes\nhipercromáticos y pleomórficos con actividad mitótica atípica, las células se organizan en patrón\nsólido y pseudoacinar. \nEstas células tumorales presentan inmunorreactividad positiva para marcadores epiteliales\nCKAE1/AE3, CK7, GATA3 con diferenciación neuroendocrina por la expresión heterogénea de\nSINAPTOFINSA y CD56 con negatividad para CROMOGRANINA. El índice de proliferación celular\nmedido mediante Ki 67 es del 80%. \nLas células tumorales son negativas para CK20, ARGINASA, TTF-1, CK19, CEA, PAX8, Ca19-9,\nCDX2, MAMAGLOBINA, RECEPTORES DE ESTROGENOS, RECEPTOR DE PROGESTERONA, HER 2. \nDIAGNÓSTICO\nCOMENTARIOS\nEl resultado de este estudio se debe analizar y correlación con datos de historia clínica y estudios\nimagenológicos. \nCaso valorado en conjunto con el Dr. Jorge Moreno (patólogo). \nNANCY MEJIA VARGAS\nMédica Patóloga\nRM: 76-0405/15\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 79 ---\nIHQ250356\nCopia Pag. 2 de 2\nNombre : TRIFONIA VANEGAS SOLIS\nN. peticion : IHQ250356\nN.Identificación : CC. 31386121\nGenero : FEMENINO\nEdad : 70 años 5 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : HUGO ALEJANDRO BURGOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 07/04/2025\nFecha Informe : 29/04/2025\nHígado. Lesión. Biopsia. Estudio de inmunohistoquímica. \nCARCINOMA NEUROENDOCRINO DE CÉLULA GRANDE CON EXTENSA NECROSIS. \nKI67: 80%. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 80 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CKAE1AE3, CK7, CK20, ARGINASA, TTF-1, HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona, CD56, PAX8, GATA3, CROMOGRANINA, CDX2, CEA, CA19-9, CK19",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2503906 que corresponde a \"biopsia de hígado\" con diagnóstico principal de \"NEOPLASIA INVASIVA EN PATRÓN ACINAR Y SÓLIDO CON NECROSIS A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHSITOQUÍMICA\" del 08 de abril 2025. consiste en dos bloques de parafina y dos láminas coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan los niveles histológicos al bloque 1 para marcar con : CKAE1/AE3, CK7, CK20, ARGINASA, TTF-1, CK19, CEA, GATA3, PAX8, Ca19-9, CDX2, MAMAGLOBINA, RECEPTORE DE ESTROGENOS, RECEPTOR DE PROGESTERONA, HER 2, SINAPTOFISINA, CROMOGRANINA, CD56, Ki 67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Parénquima hepático infiltrado por una lesión de aspecto carcinomatosa invasiva con extensa necrosis. Las células son de tamaño grande con citoplasma sincitial eosinófilo, núcleos grandes hipercromáticos y pleomórficos con actividad mitótica atípica, las células se organizan en patrón sólido y pseudoacinar. Estas células tumorales presentan inmunorreactividad positiva para marcadores epiteliales CKAE1/AE3, CK7, GATA3 con diferenciación neuroendocrina por la expresión heterogénea de SINAPTOFINSA y CD56 con negatividad para CROMOGRANINA. El índice de proliferación celular medido mediante Ki 67 es del 80%. Las células tumorales son negativas para CK20, ARGINASA, TTF-1, CK19, CEA, PAX8, Ca19-9, CDX2, MAMAGLOBINA, RECEPTORES DE ESTROGENOS, RECEPTOR DE PROGESTERONA, HER 2.",
+      "Descripcion Diagnostico": "carcinomatosa invasiva con extensa necrosis",
+      "IHQ_ORGANO": "BX HIGADO",
+      "Organo": "BX HIGADO",
+      "Diagnostico Coloracion": "BIOPSIA DE HÍGADO",
+      "Diagnostico Principal": "CARCINOMATOSA INVASIVA CON EXTENSA NECROSIS",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "HER2: NEGATIVO, Ki-67: 80%, Receptor de Estrógeno: NEGATIVO, Receptor de Progesterona: NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_ARGINASA": "NEGATIVO",
+      "IHQ_TTF1": "NEGATIVO",
+      "IHQ_HER2": "NEGATIVO",
+      "IHQ_KI-67": "80%",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_CD56": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_GATA3": "NEGATIVO",
+      "IHQ_CROMOGRANINA": "NEGATIVO",
+      "IHQ_CDX2": "NEGATIVO",
+      "IHQ_CEA": "NEGATIVO",
+      "IHQ_CA19_9": "NEGATIVO",
+      "IHQ_CK19": "NEGATIVO",
+      "IHQ_MAMAGLOBINA": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 126,
+      "campos_completos": 52,
+      "biomarcadores_encontrados": 18,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 126,
+      "total_campos_completos": 52
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "carcinomatosa invasiva con extensa\nnecrosis",
+      "valor_corregido": "carcinomatosa invasiva con extensa necrosis",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250356",
+      "timestamp": "2026-04-15T11:39:20.458577"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2503906 que corresponde a \"biopsia de hígado\" con diagnóstico principal de \"NEOPLASIA INVASIVA EN PATRÓN ACINAR Y SÓLIDO CON NECROSIS A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHSITOQUÍMICA\" del 08 de abril 2025. consiste en dos bloques de parafina y dos láminas coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan los niveles histológicos al bloque 1 para marcar con : CKAE1/AE3, CK7, CK20, ARGINASA, TTF-1, CK19, CEA, GATA3, PAX8, Ca19-9, CDX2, MAMAGLOBINA, RECEPTORE DE ESTROGENOS, RECEPTOR DE PROGESTERONA, HER 2, SINAPTOFISINA, CROMOGRANINA, CD56, Ki 67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2503906 que corresponde a \"biopsia de hígado\" con diagnóstico principal de \"NEOPLASIA INVASIVA EN PATRÓN ACINAR Y SÓLIDO CON NECROSIS A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHSITOQUÍMICA\" del 08 de abril 2025. consiste en dos bloques de parafina y dos láminas coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan los niveles histológicos al bloque 1 para marcar con : CKAE1/AE3, CK7, CK20, ARGINASA, TTF1, CK19, CEA, GATA3, PAX8, Ca19-9, CDX2, MAMAGLOBINA, RECEPTORE DE ESTROGENOS, RECEPTOR DE PROGESTERONA, HER 2, SYNAPTOPHYSIN, CROMOGRANINA, CD56, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250356",
+      "timestamp": "2026-04-15T11:39:20.458582"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Parénquima hepático infiltrado por una lesión de aspecto carcinomatosa invasiva con extensa necrosis. Las células son de tamaño grande con citoplasma sincitial eosinófilo, núcleos grandes hipercromáticos y pleomórficos con actividad mitótica atípica, las células se organizan en patrón sólido y pseudoacinar. Estas células tumorales presentan inmunorreactividad positiva para marcadores epiteliales CKAE1/AE3, CK7, GATA3 con diferenciación neuroendocrina por la expresión heterogénea de SINAPTOFINSA y CD56 con negatividad para CROMOGRANINA. El índice de proliferación celular medido mediante Ki 67 es del 80%. Las células tumorales son negativas para CK20, ARGINASA, TTF-1, CK19, CEA, PAX8, Ca19-9, CDX2, MAMAGLOBINA, RECEPTORES DE ESTROGENOS, RECEPTOR DE PROGESTERONA, HER 2.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. EVALUACIÓN DE BIOMARCADORES POR INMUNOHISTOQUÍMICA: Parénquima hepático infiltrado por una lesión de aspecto carcinomatosa invasiva con extensa necrosis. Las células son de tamaño grande con citoplasma sincitial eosinófilo, núcleos grandes hipercromáticos y pleomórficos con actividad mitótica atípica, las células se organizan en patrón sólido y pseudoacinar. Estas células tumorales presentan inmunorreactividad positiva para marcadores epiteliales CKAE1/AE3, CK7, GATA3 con diferenciación neuroendocrina por la expresión heterogénea de SINAPTOFINSA y CD56 con negatividad para CROMOGRANINA. El índice de proliferación celular medido mediante KI-67 es del 80%. Las células tumorales son negativas para CK20, ARGINASA, TTF1, CK19, CEA, PAX8, Ca19-9, CDX2, MAMAGLOBINA, RECEPTORES DE ESTROGENOS, RECEPTOR DE PROGESTERONA, HER 2.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250356",
+      "timestamp": "2026-04-15T11:39:20.458583"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "El resultado de este estudio se debe analizar y correlación con datos de historia clínica y estudios\nimagenológicos. \nCaso valorado en conjunto con el Dr. Jorge Moreno (patólogo).",
+      "valor_corregido": "El resultado de este estudio se debe analizar y correlación con datos de historia clínica y estudios imagenológicos. Caso valorado en conjunto con el Dr. Jorge Moreno (patólogo).",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250356",
+      "timestamp": "2026-04-15T11:39:20.458584"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 65
+  }
+}

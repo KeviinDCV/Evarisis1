@@ -1,0 +1,172 @@
+{
+  "session_id": "IHQ250266_20260410_080554",
+  "numero_peticion": "IHQ250266",
+  "timestamp": "2026-04-10T08:05:54.501751",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250266\nCopia Pag. 1 de 2\nNombre : LIDIA MARINA CORTES DELGADO\nN. peticion : IHQ250266\nN.Identificación : CC. 31919322\nGenero : FEMENINO\nEdad : 60 años 27 dias\nEPS : NUEVA EPS\nMédico tratante : PIEDAD SOFIA BRYAN\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 13/03/2025\nFecha Informe : 18/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2501756” que corresponde a “biopsia de masa en cérvix”. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con p16, p63, p40, p53, SOX-10, CKAE1E3, KI-67, PAX-8,\nestrógenos y vimentina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para vimentina, y de manera focál heterogénea para CKAE1E3 y\nreceptores de estrógenos. \nHay tinción en bloque con el p16+ y el p53 se encuentra mutado (sobreexpresado). \nÍndice de proliferación KI-67 del 80%.\nLos marcadores SOX-10, p40, p63 y PAX-8 son negativos.\nDIAGNÓSTICO\nCérvix. Masa. Biopsia. Estudio de inmunohistoquímica:\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO DE ALTO GRADO.\n- VER COMENTARIO.\nCOMENTARIOS\nLos\nhallazgos\nhistopatológicos\nen\nasociación\ncon\nel\nperfil\nde\ninmunohistoquímica\nque\ndemuestra negatividad para p40 y p63 descartan una lesión de origen escamocelular. La positividad en\nbloque para p16, aberrante de p53 y la morfología favorecen carcinoma seroso de alto grado de origen\nginecológico, correlacionar con datos de la historia y resultado de imágenes diagnósticas. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---\nIHQ250266\nCopia Pag. 2 de 2\nNombre : LIDIA MARINA CORTES DELGADO\nN. peticion : IHQ250266\nN.Identificación : CC. 31919322\nGenero : FEMENINO\nEdad : 60 años 27 dias\nEPS : NUEVA EPS\nMédico tratante : PIEDAD SOFIA BRYAN\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 13/03/2025\nFecha Informe : 18/03/2025\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 8 ---",
+    "hash_original": "953f99e5074b84abab7247c6f7c41ba7",
+    "estadisticas": {
+      "caracteres_totales": 174671,
+      "caracteres_consolidados": 3604,
+      "reduccion_porcentaje": 97.94
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 263 AL 313.pdf",
+      "numero_ihq": "IHQ250266",
+      "caso_num": 4,
+      "total_casos": 49
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_VIMENTINA": "POSITIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_P63": "NEGATIVO",
+      "IHQ_PAX8": "NEGATIVO",
+      "nombre_completo": "LIDIA MARINA CORTES DELGADO",
+      "numero_peticion": "IHQ250266",
+      "identificacion": "31919322",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "60",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "PIEDAD SOFIA BRYAN",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "13/03/2025",
+      "fecha_informe": "18/03/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250266",
+      "N. de identificación": "31919322",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "PIEDAD SOFIA BRYAN",
+      "Fecha de ingreso (2. Fecha de la muestra)": "13/03/2025",
+      "Fecha Informe": "18/03/2025",
+      "nombres": "LIDIA MARINA",
+      "Primer nombre": "LIDIA",
+      "Segundo nombre": "MARINA",
+      "apellidos": "CORTES DELGADO",
+      "Primer apellido": "CORTES",
+      "Segundo apellido": "DELGADO",
+      "nombre_formal": "CORTES DELGADO, LIDIA MARINA",
+      "diagnostico": "Cérvix. Masa. Biopsia. Estudio de inmunohistoquímica: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO DE ALTO GRADO. - VER COMENTARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para vimentina, y de manera focál heterogénea para CKAE1E3 y receptores de estrógenos. Hay tinción en bloque con el p16+ y el p53 se encuentra mutado (sobreexpresado). Índice de proliferación KI-67 del 80%. Los marcadores SOX-10, p40, p63 y PAX-8 son negativos.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2501756\" que corresponde a \"biopsia de masa en cérvix\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p16, p63, p40, p53, SOX-10, CKAE1E3, KI-67, PAX-8, estrógenos y vimentina.",
+      "ihq_organo": "CÉRVIX",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P16, P63, P40, P53, SOX 10, CKAE1E3, Ki-67, PAX 8, Receptor de Estrógeno, VIMENTINA",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Los hallazgos histopatológicos en asociación con el perfil de inmunohistoquímica que demuestra negatividad para p40 y p63 descartan una lesión de origen escamocelular. La positividad en bloque para p16, aberrante de p53 y la morfología favorecen carcinoma seroso de alto grado de origen ginecológico, correlacionar con datos de la historia y resultado de imágenes diagnósticas.",
+      "IHQ_ORGANO": "CÉRVIX",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "",
+      "Factor pronostico": "Ki-67: 80%, Receptor de Estrógeno: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P63, P40, P53, SOX 10, CKAE1E3, Ki-67, PAX 8, Receptor de Estrógeno, VIMENTINA",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_KI-67": "80%",
+      "p16": "POSITIVO",
+      "p40": "NEGATIVO",
+      "extraction_timestamp": "2026-04-10T08:05:54.787289",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250266\nCopia Pag. 1 de 2\nNombre : LIDIA MARINA CORTES DELGADO\nN. peticion : IHQ250266\nN.Identificación : CC. 31919322\nGenero : FEMENINO\nEdad : 60 años 27 dias\nEPS : NUEVA EPS\nMédico tratante : PIEDAD SOFIA BRYAN\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 13/03/2025\nFecha Informe : 18/03/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX MASA CERVIX\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2501756” que corresponde a “biopsia de masa en cérvix”. Previa revisión de la histología, se\nrealizan niveles histológicos para tinción con p16, p63, p40, p53, SOX-10, CKAE1E3, KI-67, PAX-8,\nestrógenos y vimentina.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para vimentina, y de manera focál heterogénea para CKAE1E3 y\nreceptores de estrógenos. \nHay tinción en bloque con el p16+ y el p53 se encuentra mutado (sobreexpresado). \nÍndice de proliferación KI-67 del 80%.\nLos marcadores SOX-10, p40, p63 y PAX-8 son negativos.\nDIAGNÓSTICO\nCérvix. Masa. Biopsia. Estudio de inmunohistoquímica:\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO DE ALTO GRADO.\n- VER COMENTARIO.\nCOMENTARIOS\nLos\nhallazgos\nhistopatológicos\nen\nasociación\ncon\nel\nperfil\nde\ninmunohistoquímica\nque\ndemuestra negatividad para p40 y p63 descartan una lesión de origen escamocelular. La positividad en\nbloque para p16, aberrante de p53 y la morfología favorecen carcinoma seroso de alto grado de origen\nginecológico, correlacionar con datos de la historia y resultado de imágenes diagnósticas. \nMARIA XIMENA VARELA QUEVEDO\nResponsable del análisis:\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 7 ---\nIHQ250266\nCopia Pag. 2 de 2\nNombre : LIDIA MARINA CORTES DELGADO\nN. peticion : IHQ250266\nN.Identificación : CC. 31919322\nGenero : FEMENINO\nEdad : 60 años 27 dias\nEPS : NUEVA EPS\nMédico tratante : PIEDAD SOFIA BRYAN\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 13/03/2025\nFecha Informe : 18/03/2025\nMD Patóloga\nRM 761520\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 8 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P16, P63, P40, P53, SOX 10, CKAE1AE3, Ki-67, PAX 8, Receptor de Estrógeno, VIMENTINA",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501756” que corresponde a “biopsia de masa en cérvix”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p16, p63, p40, p53, SOX-10, CKAE1E3, KI-67, PAX-8, estrógenos y vimentina.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para vimentina, y de manera focál heterogénea para CKAE1E3 y receptores de estrógenos. Hay tinción en bloque con el p16+ y el p53 se encuentra mutado (sobreexpresado). Índice de proliferación KI-67 del 80%. Los marcadores SOX-10, p40, p63 y PAX-8 son negativos.",
+      "Descripcion Diagnostico": "Cérvix. Masa. Biopsia. Estudio de inmunohistoquímica: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO DE ALTO GRADO. - VER COMENTARIO.",
+      "IHQ_ORGANO": "CÉRVIX",
+      "Organo": "BX MASA CERVIX",
+      "Diagnostico Coloracion": "BIOPSIA DE MASA EN CÉRVIX",
+      "Diagnostico Principal": "LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO DE ALTO GRADO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 80%, Receptor de Estrógeno: POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P63": "NEGATIVO",
+      "IHQ_P40_ESTADO": "NEGATIVO",
+      "IHQ_P53": "NO MENCIONADO",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_CKAE1AE3": "POSITIVO",
+      "IHQ_KI-67": "80%",
+      "IHQ_PAX8": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+      "IHQ_VIMENTINA": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 134,
+      "campos_completos": 44,
+      "biomarcadores_encontrados": 10,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 134,
+      "total_campos_completos": 44
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Cérvix. Masa. Biopsia. Estudio de inmunohistoquímica:\n- LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO DE ALTO GRADO.\n- VER COMENTARIO.",
+      "valor_corregido": "Cérvix. Masa. Biopsia. Estudio de inmunohistoquímica: - LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN CARCINOMA SEROSO DE ALTO GRADO. - VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250266",
+      "timestamp": "2026-04-10T08:05:54.787061"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2501756” que corresponde a “biopsia de masa en cérvix”. Previa revisión de la histología, se realizan niveles histológicos para tinción con p16, p63, p40, p53, SOX-10, CKAE1E3, KI-67, PAX-8, estrógenos y vimentina.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2501756\" que corresponde a \"biopsia de masa en cérvix\". Previa revisión de la histología, se realizan niveles histológicos para tinción con p16, p63, p40, p53, SOX-10, CKAE1E3, KI-67, PAX-8, estrógenos y vimentina.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250266",
+      "timestamp": "2026-04-10T08:05:54.787067"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Los\nhallazgos\nhistopatológicos\nen\nasociación\ncon\nel\nperfil\nde\ninmunohistoquímica\nque\ndemuestra negatividad para p40 y p63 descartan una lesión de origen escamocelular. La positividad en\nbloque para p16, aberrante de p53 y la morfología favorecen carcinoma seroso de alto grado de origen\nginecológico, correlacionar con datos de la historia y resultado de imágenes diagnósticas.",
+      "valor_corregido": "Los hallazgos histopatológicos en asociación con el perfil de inmunohistoquímica que demuestra negatividad para p40 y p63 descartan una lesión de origen escamocelular. La positividad en bloque para p16, aberrante de p53 y la morfología favorecen carcinoma seroso de alto grado de origen ginecológico, correlacionar con datos de la historia y resultado de imágenes diagnósticas.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250266",
+      "timestamp": "2026-04-10T08:05:54.787068"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 174671,
+    "campos_extraidos": 58
+  }
+}

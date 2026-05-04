@@ -1,0 +1,150 @@
+{
+  "session_id": "IHQ250473_20260410_080657",
+  "numero_peticion": "IHQ250473",
+  "timestamp": "2026-04-10T08:06:57.009344",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250473\nCopia Pag. 1 de 2\nNombre : EVELIO CEDEÑO ROJAS\nN. peticion : IHQ250473\nN.Identificación : CC. 6477649\nGenero : MASCULINO\nEdad : 72 años 2 meses 9 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA ALEJANDRA CAICEDO\nServicio : QUIROFANO CARTAGO\nFecha Ingreso : 02/05/2025\nFecha Informe : 12/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE GLANDE\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2502079, el cual corresponde a biopsia excisional de\ntumor\nen\nglande,\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales presentan inmunorreactividad positiva para p40 y negativa para p16. El\nKi-67 es del 60%.\ndiagnóstico\nde\n\"CARCINOMA\nESCAMOCELULAR\nMODERADAMENTE\nDIFERENCIADO (NOS)\". Se ordenan los siguientes marcadores: p40, p16 y Ki-67.\nDIAGNÓSTICO\nGlande. Tumor. Biopsia escisional. Estudio de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR MODERAMENTE DIFERENCIADO (NOS) , P16 NEGATIVO\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 23 ---\nIHQ250473\nCopia Pag. 2 de 2\nNombre : EVELIO CEDEÑO ROJAS\nN. peticion : IHQ250473\nN.Identificación : CC. 6477649\nGenero : MASCULINO\nEdad : 72 años 2 meses 9 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA ALEJANDRA CAICEDO\nServicio : QUIROFANO CARTAGO\nFecha Ingreso : 02/05/2025\nFecha Informe : 12/05/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 24 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 2918,
+      "reduccion_porcentaje": 98.46
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250473",
+      "caso_num": 10,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "nombre_completo": "EVELIO CEDEÑO ROJAS",
+      "numero_peticion": "IHQ250473",
+      "identificacion": "6477649",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "72",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "MARIA ALEJANDRA CAICEDO",
+      "servicio": "QUIROFANO CARTAGO",
+      "fecha_ingreso": "02/05/2025",
+      "fecha_informe": "12/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250473",
+      "N. de identificación": "6477649",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "QUIROFANO CARTAGO",
+      "Médico tratante": "MARIA ALEJANDRA CAICEDO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/05/2025",
+      "Fecha Informe": "12/05/2025",
+      "nombres": "EVELIO CEDEÑO",
+      "Primer nombre": "EVELIO",
+      "Segundo nombre": "CEDEÑO",
+      "apellidos": "ROJAS",
+      "Primer apellido": "ROJAS",
+      "Segundo apellido": "",
+      "nombre_formal": "ROJAS, EVELIO CEDEÑO",
+      "diagnostico": "Glande. Tumor. Biopsia escisional. Estudio de inmunohistoquímica: CARCINOMA ESCAMOCELULAR MODERAMENTE DIFERENCIADO (NOS) , p16 NEGATIVO",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva para p40 y negativa para p16. El KI-67 es del 60%. diagnóstico de \"CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO (NOS)\". Se ordenan los siguientes marcadores: p40, p16 y KI-67.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2502079, el cual corresponde a biopsia excisional de tumor en glande, con",
+      "ihq_organo": "GLANDE",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "P40, P16, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GLANDE",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "Ki-67: 60%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, Ki-67",
+      "IHQ_KI-67": "60%",
+      "p16": "NEGATIVO",
+      "p40": "POSITIVO",
+      "extraction_timestamp": "2026-04-10T08:06:57.264456",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250473\nCopia Pag. 1 de 2\nNombre : EVELIO CEDEÑO ROJAS\nN. peticion : IHQ250473\nN.Identificación : CC. 6477649\nGenero : MASCULINO\nEdad : 72 años 2 meses 9 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA ALEJANDRA CAICEDO\nServicio : QUIROFANO CARTAGO\nFecha Ingreso : 02/05/2025\nFecha Informe : 12/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX DE GLANDE\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan niveles histológicos al bloque M2502079, el cual corresponde a biopsia excisional de\ntumor\nen\nglande,\ncon\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células tumorales presentan inmunorreactividad positiva para p40 y negativa para p16. El\nKi-67 es del 60%.\ndiagnóstico\nde\n\"CARCINOMA\nESCAMOCELULAR\nMODERADAMENTE\nDIFERENCIADO (NOS)\". Se ordenan los siguientes marcadores: p40, p16 y Ki-67.\nDIAGNÓSTICO\nGlande. Tumor. Biopsia escisional. Estudio de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR MODERAMENTE DIFERENCIADO (NOS) , P16 NEGATIVO\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 23 ---\nIHQ250473\nCopia Pag. 2 de 2\nNombre : EVELIO CEDEÑO ROJAS\nN. peticion : IHQ250473\nN.Identificación : CC. 6477649\nGenero : MASCULINO\nEdad : 72 años 2 meses 9 dias\nEPS : NUEVA EPS\nMédico tratante : MARIA ALEJANDRA CAICEDO\nServicio : QUIROFANO CARTAGO\nFecha Ingreso : 02/05/2025\nFecha Informe : 12/05/2025\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 24 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "P40, P16, Ki-67",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2502079, el cual corresponde a biopsia excisional de tumor en glande, con",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva para p40 y negativa para p16. El Ki-67 es del 60%. diagnóstico de \"CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO (NOS)\". Se ordenan los siguientes marcadores: p40, p16 y Ki-67.",
+      "Descripcion Diagnostico": "Glande. Tumor. Biopsia escisional. Estudio de inmunohistoquímica: CARCINOMA ESCAMOCELULAR MODERAMENTE DIFERENCIADO (NOS) , p16 NEGATIVO",
+      "IHQ_ORGANO": "GLANDE",
+      "Organo": "BX DE GLANDE",
+      "Diagnostico Coloracion": "CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO (NOS)",
+      "Diagnostico Principal": "CARCINOMA ESCAMOCELULAR MODERAMENTE DIFERENCIADO (NOS) , P16 NEGATIVO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 60%",
+      "IHQ_P40_ESTADO": "POSITIVO",
+      "IHQ_P16_ESTADO": "NEGATIVO",
+      "IHQ_KI-67": "60%"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 141,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Glande. Tumor. Biopsia escisional. Estudio de inmunohistoquímica:\nCARCINOMA ESCAMOCELULAR MODERAMENTE DIFERENCIADO (NOS) , P16 NEGATIVO",
+      "valor_corregido": "Glande. Tumor. Biopsia escisional. Estudio de inmunohistoquímica: CARCINOMA ESCAMOCELULAR MODERAMENTE DIFERENCIADO (NOS) , p16 NEGATIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250473",
+      "timestamp": "2026-04-10T08:06:57.264247"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva para p40 y negativa para p16. El Ki-67 es del 60%. diagnóstico de \"CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO (NOS)\". Se ordenan los siguientes marcadores: p40, p16 y Ki-67.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales presentan inmunorreactividad positiva para p40 y negativa para p16. El KI-67 es del 60%. diagnóstico de \"CARCINOMA ESCAMOCELULAR MODERADAMENTE DIFERENCIADO (NOS)\". Se ordenan los siguientes marcadores: p40, p16 y KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250473",
+      "timestamp": "2026-04-10T08:06:57.264253"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 52
+  }
+}

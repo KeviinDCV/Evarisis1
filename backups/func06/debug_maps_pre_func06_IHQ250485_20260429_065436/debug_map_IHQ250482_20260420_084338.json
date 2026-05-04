@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250482_20260420_084338",
+  "numero_peticion": "IHQ250482",
+  "timestamp": "2026-04-20T08:43:38.897285",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250482\nCopia Pag. 1 de 2\nNombre : ALBA NUBIA VARGAS DE LOPEZ\nN. peticion : IHQ250482\nN.Identificación : CC. 25654900\nGenero : FEMENINO\nEdad : 74 años 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ANGEL ARTURO ROBERTY\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 02/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION CANAL ANAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional\nrotulado como \"M2504269 \" corresponde a “A. Canal anal y B. papila anal” con diagnóstico de \"LESIÓN\nESCAMOSA INTRAEPITELIAL\nDE ALTO GRADO\n(AIN III) en A y B \". Previa revisión de la histología se\nrealizan niveles histológicos para A y B.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa lesión descrita tiene tinción positiva y en bloque para p16 y el ki 67 es positivo en todo el espesor del\nepitelio\nDIAGNÓSTICO\n A. Canal anal. Lesión. Resección:\nLESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) p16 POSITIVO\nB Papila anal. Lesión. Resección:\nLESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) p16 POSITIVO\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---\nIHQ250482\nCopia Pag. 2 de 2\nNombre : ALBA NUBIA VARGAS DE LOPEZ\nN. peticion : IHQ250482\nN.Identificación : CC. 25654900\nGenero : FEMENINO\nEdad : 74 años 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ANGEL ARTURO ROBERTY\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 02/05/2025\nFecha Informe : 16/05/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 37 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3114,
+      "reduccion_porcentaje": 98.35
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250482",
+      "caso_num": 18,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ALBA NUBIA VARGAS DE LOPEZ",
+      "numero_peticion": "IHQ250482",
+      "identificacion": "25654900",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "74",
+      "eps": "EMSSANAR S.A.S",
+      "medico_tratante": "ANGEL ARTURO ROBERTY",
+      "servicio": "QUIROFANO CENTRAL",
+      "fecha_ingreso": "02/05/2025",
+      "fecha_informe": "16/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250482",
+      "N. de identificación": "25654900",
+      "Tipo de documento": "CC",
+      "EPS": "EMSSANAR S.A.S",
+      "Servicio": "QUIROFANO CENTRAL",
+      "Médico tratante": "ANGEL ARTURO ROBERTY",
+      "Fecha de ingreso (2. Fecha de la muestra)": "02/05/2025",
+      "Fecha Informe": "16/05/2025",
+      "nombres": "ALBA NUBIA",
+      "Primer nombre": "ALBA",
+      "Segundo nombre": "NUBIA",
+      "apellidos": "VARGAS DE LOPEZ",
+      "Primer apellido": "VARGAS",
+      "Segundo apellido": "DE LOPEZ",
+      "nombre_formal": "VARGAS DE LOPEZ, ALBA NUBIA",
+      "diagnostico": "A. Canal anal. Lesión. Resección: LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) p16 POSITIVO B Papila anal. Lesión. Resección: LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) p16 POSITIVO",
+      "descripcion_microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La lesión descrita tiene tinción positiva y en bloque para p16 y el KI-67 es positivo en todo el espesor del epitelio",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \"M2504269 \" corresponde a \"A. Canal anal y B. papila anal\" con diagnóstico de \"LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) en A y B \". Previa revisión de la histología se realizan niveles histológicos para A y B.",
+      "ihq_organo": "CANAL ANAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "",
+      "procedimiento": "CIRUGÍA",
+      "comentarios": "",
+      "IHQ_ORGANO": "CANAL ANAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "Ki-67: POSITIVO",
+      "IHQ_ESTUDIOS_SOLICITADOS": "",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_KI-67": "POSITIVO",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2026-04-20T08:43:39.139363",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250482\nCopia Pag. 1 de 2\nNombre : ALBA NUBIA VARGAS DE LOPEZ\nN. peticion : IHQ250482\nN.Identificación : CC. 25654900\nGenero : FEMENINO\nEdad : 74 años 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ANGEL ARTURO ROBERTY\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 02/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION CANAL ANAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional\nrotulado como \"M2504269 \" corresponde a “A. Canal anal y B. papila anal” con diagnóstico de \"LESIÓN\nESCAMOSA INTRAEPITELIAL\nDE ALTO GRADO\n(AIN III) en A y B \". Previa revisión de la histología se\nrealizan niveles histológicos para A y B.\nDESCRIPCIÓN MICROSCÓPICA\n Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e\ninternos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE\nVENTANA ®.\nLa lesión descrita tiene tinción positiva y en bloque para p16 y el ki 67 es positivo en todo el espesor del\nepitelio\nDIAGNÓSTICO\n A. Canal anal. Lesión. Resección:\nLESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) p16 POSITIVO\nB Papila anal. Lesión. Resección:\nLESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) p16 POSITIVO\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 36 ---\nIHQ250482\nCopia Pag. 2 de 2\nNombre : ALBA NUBIA VARGAS DE LOPEZ\nN. peticion : IHQ250482\nN.Identificación : CC. 25654900\nGenero : FEMENINO\nEdad : 74 años 18 dias\nEPS : EMSSANAR S.A.S\nMédico tratante : ANGEL ARTURO ROBERTY\nServicio : QUIROFANO CENTRAL\nFecha Ingreso : 02/05/2025\nFecha Informe : 16/05/2025\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 37 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "Ki-67, P16",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \"M2504269 \" corresponde a “A. Canal anal y B. papila anal” con diagnóstico de \"LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) en A y B \". Previa revisión de la histología se realizan niveles histológicos para A y B.",
+      "Descripcion microscopica": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La lesión descrita tiene tinción positiva y en bloque para p16 y el ki 67 es positivo en todo el espesor del epitelio",
+      "Descripcion Diagnostico": "A. Canal anal. Lesión. Resección: LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) p16 POSITIVO B Papila anal. Lesión. Resección: LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) p16 POSITIVO",
+      "IHQ_ORGANO": "CANAL ANAL",
+      "Organo": "BX LESION CANAL ANAL",
+      "Diagnostico Coloracion": "LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) EN A Y B",
+      "Diagnostico Principal": "LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) EN A Y B",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: POSITIVO",
+      "IHQ_KI-67": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 141,
+      "campos_completos": 37,
+      "biomarcadores_encontrados": 2,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 141,
+      "total_campos_completos": 37
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "A. Canal anal. Lesión. Resección:\nLESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) p16 POSITIVO\nB Papila anal. Lesión. Resección:\nLESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) p16 POSITIVO",
+      "valor_corregido": "A. Canal anal. Lesión. Resección: LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) p16 POSITIVO B Papila anal. Lesión. Resección: LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) p16 POSITIVO",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250482",
+      "timestamp": "2026-04-20T08:43:39.139078"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \"M2504269 \" corresponde a “A. Canal anal y B. papila anal” con diagnóstico de \"LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) en A y B \". Previa revisión de la histología se realizan niveles histológicos para A y B.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica en bloques de parafina procedentes de material institucional rotulado como \"M2504269 \" corresponde a \"A. Canal anal y B. papila anal\" con diagnóstico de \"LESIÓN ESCAMOSA INTRAEPITELIAL DE ALTO GRADO (AIN III) en A y B \". Previa revisión de la histología se realizan niveles histológicos para A y B.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250482",
+      "timestamp": "2026-04-20T08:43:39.139083"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La lesión descrita tiene tinción positiva y en bloque para p16 y el ki 67 es positivo en todo el espesor del epitelio",
+      "valor_corregido": "Previa validación de la técnica y verificación del adecuado rendimiento de los controles externos e internos se analizan tinciones de Inmunohistoquímica realizadas en la plataforma automatizada ROCHE VENTANA ®. La lesión descrita tiene tinción positiva y en bloque para p16 y el KI-67 es positivo en todo el espesor del epitelio",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250482",
+      "timestamp": "2026-04-20T08:43:39.139084"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 3,
+    "correcciones_por_tipo": {
+      "ortografica": 3
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 49
+  }
+}

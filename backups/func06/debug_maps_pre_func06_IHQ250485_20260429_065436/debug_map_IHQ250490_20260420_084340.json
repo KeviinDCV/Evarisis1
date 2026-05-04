@@ -1,0 +1,175 @@
+{
+  "session_id": "IHQ250490_20260420_084340",
+  "numero_peticion": "IHQ250490",
+  "timestamp": "2026-04-20T08:43:40.727693",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250490\nCopia Pag. 1 de 2\nNombre : ISAREL POVEDA MURILLO\nN. peticion : IHQ250490\nN.Identificación : CC. 16801905\nGenero : MASCULINO\nEdad : 56 años 8 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JHONNY ANDRES GOMEZ AREVALO\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 07/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR EN COLUMNA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504827 que\ncorresponde a “tumor en columna” con diagnóstico de \"schawannoma\" con fecha del\ninforme del 05/05/2025 . Consiste en un bloque de parafina y una lámina coloreadas con\nhematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes\nmarcadores: SOX 10, S100, DESMINA, ACTINA MUSCULO LISO, CKAE1/AE3, CD34, Ki67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nControles externos con adecuada marcación. \nRESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. \nLesión neoplásica en patrón fusiforme organizadas en fascículos cortos con celularidad variable\n(hipo e hipercelulares) dispuestas en un estroma colágeno denso, otras hialinizadas y otras\nmixoides. Estas células presentan un índice de proliferación celular elevado (Ki67: 60%) con\nausencia de expresión para SOX10, S100, CD34, AML, DESMINA y CKAE1/AE3. \nDIAGNÓSTICO\nColumna vertebral. Sitio no especificado. Lesión. Biopsia. Estudio de\ninmunohistoquímica. \nSCHAWANNOMA MALIGNO.\nVER COMENTARIO. \nCOMENTARIOS\nActualmente en la última actualización de la OMS los Schawannomas malignos son llamados\nTUMOR MALIGNO DE LA VAINA NERVIOSA, que son más frecuentemente encontrados en\nel mediastino posterior. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---\nIHQ250490\nCopia Pag. 2 de 2\nNombre : ISAREL POVEDA MURILLO\nN. peticion : IHQ250490\nN.Identificación : CC. 16801905\nGenero : MASCULINO\nEdad : 56 años 8 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JHONNY ANDRES GOMEZ AREVALO\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 07/05/2025\nFecha Informe : 16/05/2025\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---",
+    "hash_original": "a070a6c25809ff3e5549e9e0f6a99d91",
+    "estadisticas": {
+      "caracteres_totales": 188885,
+      "caracteres_consolidados": 3669,
+      "reduccion_porcentaje": 98.06
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 464 AL 515.pdf",
+      "numero_ihq": "IHQ250490",
+      "caso_num": 25,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "nombre_completo": "ISAREL POVEDA MURILLO",
+      "numero_peticion": "IHQ250490",
+      "identificacion": "16801905",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "56",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "JHONNY ANDRES GOMEZ AREVALO",
+      "servicio": "CIRUGIA HOMBRES",
+      "fecha_ingreso": "07/05/2025",
+      "fecha_informe": "16/05/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250490",
+      "N. de identificación": "16801905",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CIRUGIA HOMBRES",
+      "Médico tratante": "JHONNY ANDRES GOMEZ AREVALO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "07/05/2025",
+      "Fecha Informe": "16/05/2025",
+      "nombres": "ISAREL",
+      "Primer nombre": "ISAREL",
+      "Segundo nombre": "",
+      "apellidos": "POVEDA MURILLO",
+      "Primer apellido": "POVEDA",
+      "Segundo apellido": "MURILLO",
+      "nombre_formal": "POVEDA MURILLO, ISAREL",
+      "diagnostico": "Columna vertebral. Sitio no especificado. Lesión. Biopsia. Estudio de inmunohistoquímica. SCHAWANNOMA MALIGNO. VER COMENTARIO.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. RESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. Lesión neoplásica en patrón fusiforme organizadas en fascículos cortos con celularidad variable (hipo e hipercelulares) dispuestas en un estroma colágeno denso, otras hialinizadas y otras mixoides. Estas células presentan un índice de proliferación celular elevado (KI-67: 60%) con ausencia de expresión para SOX10, S100, CD34, AML, DESMINA y CKAE1/AE3.",
+      "descripcion_macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504827 que corresponde a \"tumor en columna\" con diagnóstico de \"schawannoma\" con fecha del informe del 05/05/2025 . Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: SOX 10, S100, DESMINA, ACTINA MUSCULO LISO, CKAE1/AE3, CD34, KI-67.",
+      "ihq_organo": "COLUMNA VERTEBRAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "CARLOS CAICEDO ESTRADA",
+      "especialidad_deducida": "CIRUGIA_GENERAL",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "SOX10, S100, DESMINA, ACTINA DE MUSCULO LISO, CKAE1AE3, CD34, Ki-67",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "Actualmente en la última actualización de la OMS los Schawannomas malignos son llamados TUMOR MALIGNO DE LA VAINA NERVIOSA, que son más frecuentemente encontrados en el mediastino posterior. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 48 --- IHQ250490 Copia Pag. 2 de 2 Nombre : ISAREL POVEDA MURILLO N. peticion : IHQ250490 N.Identificación : CC. 16801905 Genero : MASCULINO Edad : 56 años 8 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : JHONNY ANDRES GOMEZ AREVALO Servicio : CIRUGIA HOMBRES Fecha Ingreso : 07/05/2025 Fecha Informe : 16/05/2025",
+      "IHQ_ORGANO": "COLUMNA VERTEBRAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "CARLOS CAICEDO ESTRADA",
+      "Factor pronostico": "Ki-67: 60%",
+      "IHQ_ESTUDIOS_SOLICITADOS": "SOX10, S100, DESMINA, ACTINA DE MUSCULO LISO, CKAE1AE3, CD34, Ki-67",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_KI-67": "60%",
+      "extraction_timestamp": "2026-04-20T08:43:40.977336",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250490\nCopia Pag. 1 de 2\nNombre : ISAREL POVEDA MURILLO\nN. peticion : IHQ250490\nN.Identificación : CC. 16801905\nGenero : MASCULINO\nEdad : 56 años 8 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JHONNY ANDRES GOMEZ AREVALO\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 07/05/2025\nFecha Informe : 16/05/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nTUMOR EN COLUMNA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504827 que\ncorresponde a “tumor en columna” con diagnóstico de \"schawannoma\" con fecha del\ninforme del 05/05/2025 . Consiste en un bloque de parafina y una lámina coloreadas con\nhematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes\nmarcadores: SOX 10, S100, DESMINA, ACTINA MUSCULO LISO, CKAE1/AE3, CD34, Ki67. \nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nControles externos con adecuada marcación. \nRESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. \nLesión neoplásica en patrón fusiforme organizadas en fascículos cortos con celularidad variable\n(hipo e hipercelulares) dispuestas en un estroma colágeno denso, otras hialinizadas y otras\nmixoides. Estas células presentan un índice de proliferación celular elevado (Ki67: 60%) con\nausencia de expresión para SOX10, S100, CD34, AML, DESMINA y CKAE1/AE3. \nDIAGNÓSTICO\nColumna vertebral. Sitio no especificado. Lesión. Biopsia. Estudio de\ninmunohistoquímica. \nSCHAWANNOMA MALIGNO.\nVER COMENTARIO. \nCOMENTARIOS\nActualmente en la última actualización de la OMS los Schawannomas malignos son llamados\nTUMOR MALIGNO DE LA VAINA NERVIOSA, que son más frecuentemente encontrados en\nel mediastino posterior. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---\nIHQ250490\nCopia Pag. 2 de 2\nNombre : ISAREL POVEDA MURILLO\nN. peticion : IHQ250490\nN.Identificación : CC. 16801905\nGenero : MASCULINO\nEdad : 56 años 8 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JHONNY ANDRES GOMEZ AREVALO\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 07/05/2025\nFecha Informe : 16/05/2025\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 49 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "SOX10, S100, DESMINA, ACTINA DE MUSCULO LISO, CKAE1AE3, CD34, Ki-67, DESMIN",
+      "Descripcion macroscopica": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504827 que corresponde a “tumor en columna” con diagnóstico de \"schawannoma\" con fecha del informe del 05/05/2025 . Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: SOX 10, S100, DESMINA, ACTINA MUSCULO LISO, CKAE1/AE3, CD34, Ki67.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. RESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. Lesión neoplásica en patrón fusiforme organizadas en fascículos cortos con celularidad variable (hipo e hipercelulares) dispuestas en un estroma colágeno denso, otras hialinizadas y otras mixoides. Estas células presentan un índice de proliferación celular elevado (Ki67: 60%) con ausencia de expresión para SOX10, S100, CD34, AML, DESMINA y CKAE1/AE3.",
+      "Descripcion Diagnostico": "Columna vertebral. Sitio no especificado. Lesión. Biopsia. Estudio de inmunohistoquímica. SCHAWANNOMA MALIGNO. VER COMENTARIO.",
+      "IHQ_ORGANO": "COLUMNA VERTEBRAL",
+      "Organo": "TUMOR EN COLUMNA",
+      "Diagnostico Coloracion": "SCHAWANNOMA",
+      "Diagnostico Principal": "SCHAWANNOMA MALIGNO",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "Ki-67: 60%",
+      "IHQ_SOX10": "NEGATIVO",
+      "IHQ_S100": "NEGATIVO",
+      "IHQ_DESMINA": "",
+      "IHQ_ACTINA_MUSCULO_LISO": "NEGATIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CD34": "NEGATIVO",
+      "IHQ_KI-67": "60%",
+      "IHQ_DESMIN": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 137,
+      "campos_completos": 41,
+      "biomarcadores_encontrados": 7,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 137,
+      "total_campos_completos": 41
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Columna vertebral. Sitio no especificado. Lesión. Biopsia. Estudio de\ninmunohistoquímica. \nSCHAWANNOMA MALIGNO.\nVER COMENTARIO.",
+      "valor_corregido": "Columna vertebral. Sitio no especificado. Lesión. Biopsia. Estudio de inmunohistoquímica. SCHAWANNOMA MALIGNO. VER COMENTARIO.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250490",
+      "timestamp": "2026-04-20T08:43:40.977053"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504827 que corresponde a “tumor en columna” con diagnóstico de \"schawannoma\" con fecha del informe del 05/05/2025 . Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: SOX 10, S100, DESMINA, ACTINA MUSCULO LISO, CKAE1/AE3, CD34, Ki67.",
+      "valor_corregido": "Se realizan estudios de inmunohistoquímica al caso institucional con rotulo M2504827 que corresponde a \"tumor en columna\" con diagnóstico de \"schawannoma\" con fecha del informe del 05/05/2025 . Consiste en un bloque de parafina y una lámina coloreadas con hematoxilina & Eosina. Previa revisión de la histología se solicitan niveles para los siguientes marcadores: SOX 10, S100, DESMINA, ACTINA MUSCULO LISO, CKAE1/AE3, CD34, KI-67.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250490",
+      "timestamp": "2026-04-20T08:43:40.977059"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_microscopica",
+      "valor_original": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. RESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. Lesión neoplásica en patrón fusiforme organizadas en fascículos cortos con celularidad variable (hipo e hipercelulares) dispuestas en un estroma colágeno denso, otras hialinizadas y otras mixoides. Estas células presentan un índice de proliferación celular elevado (Ki67: 60%) con ausencia de expresión para SOX10, S100, CD34, AML, DESMINA y CKAE1/AE3.",
+      "valor_corregido": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Controles externos con adecuada marcación. RESULTADOS DE ESTUDIO DE INMUNOHISTOQUÍMICA. Lesión neoplásica en patrón fusiforme organizadas en fascículos cortos con celularidad variable (hipo e hipercelulares) dispuestas en un estroma colágeno denso, otras hialinizadas y otras mixoides. Estas células presentan un índice de proliferación celular elevado (KI-67: 60%) con ausencia de expresión para SOX10, S100, CD34, AML, DESMINA y CKAE1/AE3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250490",
+      "timestamp": "2026-04-20T08:43:40.977060"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "comentarios",
+      "valor_original": "Actualmente en la última actualización de la OMS los Schawannomas malignos son llamados\nTUMOR MALIGNO DE LA VAINA NERVIOSA, que son más frecuentemente encontrados en\nel mediastino posterior. \nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 48 ---\nIHQ250490\nCopia Pag. 2 de 2\nNombre : ISAREL POVEDA MURILLO\nN. peticion : IHQ250490\nN.Identificación : CC. 16801905\nGenero : MASCULINO\nEdad : 56 años 8 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : JHONNY ANDRES GOMEZ AREVALO\nServicio : CIRUGIA HOMBRES\nFecha Ingreso : 07/05/2025\nFecha Informe : 16/05/2025",
+      "valor_corregido": "Actualmente en la última actualización de la OMS los Schawannomas malignos son llamados TUMOR MALIGNO DE LA VAINA NERVIOSA, que son más frecuentemente encontrados en el mediastino posterior. Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de Patólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA) --- PÁGINA 48 --- IHQ250490 Copia Pag. 2 de 2 Nombre : ISAREL POVEDA MURILLO N. peticion : IHQ250490 N.Identificación : CC. 16801905 Genero : MASCULINO Edad : 56 años 8 dias EPS : COOSALUD ENTIDAD PROMOTORA DE Médico tratante : JHONNY ANDRES GOMEZ AREVALO Servicio : CIRUGIA HOMBRES Fecha Ingreso : 07/05/2025 Fecha Informe : 16/05/2025",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250490",
+      "timestamp": "2026-04-20T08:43:40.977061"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 4,
+    "correcciones_por_tipo": {
+      "ortografica": 4
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 188885,
+    "campos_extraidos": 55
+  }
+}

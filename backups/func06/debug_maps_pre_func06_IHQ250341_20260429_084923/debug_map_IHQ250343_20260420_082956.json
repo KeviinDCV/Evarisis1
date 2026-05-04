@@ -1,0 +1,156 @@
+{
+  "session_id": "IHQ250343_20260420_082956",
+  "numero_peticion": "IHQ250343",
+  "timestamp": "2026-04-20T08:29:56.671536",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250343\nCopia Pag. 1 de 1\nNombre : EYDER DANIEL POTOSI GARZON\nN. peticion : IHQ250343\nN.Identificación : CC. 16943048\nGenero : MASCULINO\nEdad : 43 años 5 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 03/04/2025\nFecha Informe : 09/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE GANGLIO\nCERVICAL IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2503668” que corresponde a “ganglio cervical izquierdo” con diagnóstico de “SARCOMA DE\nKAPOSI”. Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción con\nHHV-8, CD34, CD31, S100, desmina, CKAE1E3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para HHV-8, CD31 y CD34, y son negativas con CKAE1E3, S100 y\ndesmina. \nDIAGNÓSTICO\nGanglio linfático cervical izquierdo. Biopsia escisional. Estudio de inmunohistoquímica:\n- SARCOMA DE KAPOSI.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 2449,
+      "reduccion_porcentaje": 98.62
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250343",
+      "caso_num": 30,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_HHV8": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_CD31": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "nombre_completo": "EYDER DANIEL POTOSI GARZON",
+      "numero_peticion": "IHQ250343",
+      "identificacion": "16943048",
+      "tipo_documento": "CC",
+      "Genero": "MASCULINO",
+      "Edad": "43",
+      "eps": "COOSALUD ENTIDAD PROMOTORA DE",
+      "medico_tratante": "SILVIO ANDRES BOLAÑOS",
+      "servicio": "CONSULTORIOS URGENCIAS",
+      "fecha_ingreso": "03/04/2025",
+      "fecha_informe": "09/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250343",
+      "N. de identificación": "16943048",
+      "Tipo de documento": "CC",
+      "EPS": "COOSALUD ENTIDAD PROMOTORA DE",
+      "Servicio": "CONSULTORIOS URGENCIAS",
+      "Médico tratante": "SILVIO ANDRES BOLAÑOS",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/04/2025",
+      "Fecha Informe": "09/04/2025",
+      "nombres": "EYDER DANIEL POTOSI",
+      "Primer nombre": "EYDER",
+      "Segundo nombre": "DANIEL POTOSI",
+      "apellidos": "GARZON",
+      "Primer apellido": "GARZON",
+      "Segundo apellido": "",
+      "nombre_formal": "GARZON, EYDER DANIEL POTOSI",
+      "diagnostico": "Ganglio linfático cervical izquierdo. Biopsia escisional. Estudio de inmunohistoquímica: - SARCOMA DE KAPOSI.",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para HHV-8, CD31 y CD34, y son negativas con CKAE1E3, S100 y desmina.",
+      "descripcion_macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2503668\" que corresponde a \"ganglio cervical izquierdo\" con diagnóstico de \"SARCOMA DE KAPOSI\". Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción con HHV-8, CD34, CD31, S100, desmina, CKAE1E3.",
+      "ihq_organo": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "ARMANDO CORTES BUELVAS",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "HHV 8, CD34, CD31, S100, DESMINA, CKAE1E3",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "ARMANDO CORTES BUELVAS",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "HHV 8, CD34, CD31, S100, DESMINA, CKAE1E3",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_DESMIN": "NEGATIVO",
+      "IHQ_DESMINA": "POSITIVO",
+      "extraction_timestamp": "2026-04-20T08:29:56.927061",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250343\nCopia Pag. 1 de 1\nNombre : EYDER DANIEL POTOSI GARZON\nN. peticion : IHQ250343\nN.Identificación : CC. 16943048\nGenero : MASCULINO\nEdad : 43 años 5 dias\nEPS : COOSALUD ENTIDAD PROMOTORA DE\nMédico tratante : SILVIO ANDRES BOLAÑOS\nServicio : CONSULTORIOS URGENCIAS\nFecha Ingreso : 03/04/2025\nFecha Informe : 09/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBIOPSIA DE GANGLIO\nCERVICAL IZQUIERDO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\nSe recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado\ncomo “M2503668” que corresponde a “ganglio cervical izquierdo” con diagnóstico de “SARCOMA DE\nKAPOSI”. Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción con\nHHV-8, CD34, CD31, S100, desmina, CKAE1E3.\nDESCRIPCIÓN MICROSCÓPICA\nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para HHV-8, CD31 y CD34, y son negativas con CKAE1E3, S100 y\ndesmina. \nDIAGNÓSTICO\nGanglio linfático cervical izquierdo. Biopsia escisional. Estudio de inmunohistoquímica:\n- SARCOMA DE KAPOSI.\nARMANDO CORTES BUELVAS\nResponsable del análisis:\nMD Patólogo\nRM 12135\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 55 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "HHV 8, CD34, CD31, S100, DESMINA, CKAE1AE3, DESMIN",
+      "Descripcion macroscopica": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2503668” que corresponde a “ganglio cervical izquierdo” con diagnóstico de “SARCOMA DE KAPOSI”. Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción con HHV-8, CD34, CD31, S100, desmina, CKAE1E3.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para HHV-8, CD31 y CD34, y son negativas con CKAE1E3, S100 y desmina.",
+      "Descripcion Diagnostico": "Ganglio linfático cervical izquierdo. Biopsia escisional. Estudio de inmunohistoquímica: - SARCOMA DE KAPOSI.",
+      "IHQ_ORGANO": "GANGLIO LINFÁTICO CERVICAL IZQUIERDO",
+      "Organo": "BIOPSIA DE GANGLIO CERVICAL IZQUIERDO",
+      "Diagnostico Coloracion": "SARCOMA DE KAPOSI",
+      "Diagnostico Principal": "SARCOMA DE KAPOSI",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_HHV8": "POSITIVO",
+      "IHQ_CD34": "POSITIVO",
+      "IHQ_CD3": "",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_DESMINA": "POSITIVO",
+      "IHQ_CKAE1AE3": "NEGATIVO",
+      "IHQ_DESMIN": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 138,
+      "campos_completos": 40,
+      "biomarcadores_encontrados": 6,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 138,
+      "total_campos_completos": 40
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Ganglio linfático cervical izquierdo. Biopsia escisional. Estudio de inmunohistoquímica:\n- SARCOMA DE KAPOSI.",
+      "valor_corregido": "Ganglio linfático cervical izquierdo. Biopsia escisional. Estudio de inmunohistoquímica: - SARCOMA DE KAPOSI.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250343",
+      "timestamp": "2026-04-20T08:29:56.926665"
+    },
+    {
+      "tipo": "ortografica",
+      "campo": "descripcion_macroscopica",
+      "valor_original": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como “M2503668” que corresponde a “ganglio cervical izquierdo” con diagnóstico de “SARCOMA DE KAPOSI”. Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción con HHV-8, CD34, CD31, S100, desmina, CKAE1E3.",
+      "valor_corregido": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado como \"M2503668\" que corresponde a \"ganglio cervical izquierdo\" con diagnóstico de \"SARCOMA DE KAPOSI\". Previa revisión de la histología, se realizan niveles histológicos al bloque 2 para tinción con HHV-8, CD34, CD31, S100, desmina, CKAE1E3.",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250343",
+      "timestamp": "2026-04-20T08:29:56.926671"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 2,
+    "correcciones_por_tipo": {
+      "ortografica": 2
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 54
+  }
+}

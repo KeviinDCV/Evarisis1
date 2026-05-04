@@ -1,0 +1,139 @@
+{
+  "session_id": "IHQ250342_20260413_125641",
+  "numero_peticion": "IHQ250342",
+  "timestamp": "2026-04-13T12:56:41.030305",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250342\nCopia Pag. 1 de 1\nNombre : ROSANA PIEDAD ASCUE ASCUE\nN. peticion : IHQ250342\nN.Identificación : CC. 34770660\nGenero : FEMENINO\nEdad : 43 años 9 meses 9 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : JULIANA OSPINA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 03/04/2025\nFecha Informe : 16/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION MAMA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2500740, el cual corresponde a biopsia trucut de mama\nizquierda con diagnóstico de \"PROLIFERACIÓN CELULAR\". Se ordenan los siguientes marcadores: S100,\nSOX-10 y CD68.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para S100, SOX10 y CD68.\nDIAGNÓSTICO\n Mama izquierda. Lesión. Biopsia por trucut. Estudios de inmunohistoquímica:\nTUMOR DE CÉLULAS GRANULARES\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 2281,
+      "reduccion_porcentaje": 98.72
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250342",
+      "caso_num": 29,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO",
+      "IHQ_CD68": "POSITIVO",
+      "nombre_completo": "ROSANA PIEDAD ASCUE ASCUE",
+      "numero_peticion": "IHQ250342",
+      "identificacion": "34770660",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "43",
+      "eps": "ASOCIACION INDIGENA DEL CAUCA",
+      "medico_tratante": "JULIANA OSPINA",
+      "servicio": "CONSULTA EXTERNA",
+      "fecha_ingreso": "03/04/2025",
+      "fecha_informe": "16/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250342",
+      "N. de identificación": "34770660",
+      "Tipo de documento": "CC",
+      "EPS": "ASOCIACION INDIGENA DEL CAUCA",
+      "Servicio": "CONSULTA EXTERNA",
+      "Médico tratante": "JULIANA OSPINA",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/04/2025",
+      "Fecha Informe": "16/04/2025",
+      "nombres": "ROSANA PIEDAD",
+      "Primer nombre": "ROSANA",
+      "Segundo nombre": "PIEDAD",
+      "apellidos": "ASCUE ASCUE",
+      "Primer apellido": "ASCUE",
+      "Segundo apellido": "ASCUE",
+      "nombre_formal": "ASCUE ASCUE, ROSANA PIEDAD",
+      "diagnostico": "Mama izquierda. Lesión. Biopsia por trucut. Estudios de inmunohistoquímica: TUMOR DE CÉLULAS GRANULARES",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para S100, SOX10 y CD68.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2500740, el cual corresponde a biopsia trucut de mama izquierda con diagnóstico de \"PROLIFERACIÓN CELULAR\". Se ordenan los siguientes marcadores: S100, SOX-10 y CD68.",
+      "ihq_organo": "MAMA IZQUIERDA",
+      "malignidad": "BENIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "S100, SOX 10, CD68",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Malignidad": "BENIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_ESTUDIOS_SOLICITADOS": "S100, SOX 10, CD68",
+      "extraction_timestamp": "2026-04-13T12:56:41.222538",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250342\nCopia Pag. 1 de 1\nNombre : ROSANA PIEDAD ASCUE ASCUE\nN. peticion : IHQ250342\nN.Identificación : CC. 34770660\nGenero : FEMENINO\nEdad : 43 años 9 meses 9 dias\nEPS : ASOCIACION INDIGENA DEL CAUCA\nMédico tratante : JULIANA OSPINA\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 03/04/2025\nFecha Informe : 16/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX LESION MAMA\nIZQUIERDA\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2500740, el cual corresponde a biopsia trucut de mama\nizquierda con diagnóstico de \"PROLIFERACIÓN CELULAR\". Se ordenan los siguientes marcadores: S100,\nSOX-10 y CD68.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nLas células tumorales son positivas para S100, SOX10 y CD68.\nDIAGNÓSTICO\n Mama izquierda. Lesión. Biopsia por trucut. Estudios de inmunohistoquímica:\nTUMOR DE CÉLULAS GRANULARES\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 54 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "S100, SOX 10, CD68",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2500740, el cual corresponde a biopsia trucut de mama izquierda con diagnóstico de \"PROLIFERACIÓN CELULAR\". Se ordenan los siguientes marcadores: S100, SOX-10 y CD68.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para S100, SOX10 y CD68.",
+      "Descripcion Diagnostico": "Mama izquierda. Lesión. Biopsia por trucut. Estudios de inmunohistoquímica: TUMOR DE CÉLULAS GRANULARES",
+      "IHQ_ORGANO": "MAMA IZQUIERDA",
+      "Organo": "BX LESION MAMA IZQUIERDA",
+      "Diagnostico Coloracion": "PROLIFERACIÓN CELULAR",
+      "Diagnostico Principal": "TUMOR DE CÉLULAS GRANULARES",
+      "Malignidad": "BENIGNO",
+      "Factor pronostico": "NO APLICA",
+      "IHQ_S100": "POSITIVO",
+      "IHQ_SOX10": "POSITIVO",
+      "IHQ_CD68": "POSITIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 140,
+      "campos_completos": 38,
+      "biomarcadores_encontrados": 3,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 140,
+      "total_campos_completos": 38
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Mama izquierda. Lesión. Biopsia por trucut. Estudios de inmunohistoquímica:\nTUMOR DE CÉLULAS GRANULARES",
+      "valor_corregido": "Mama izquierda. Lesión. Biopsia por trucut. Estudios de inmunohistoquímica: TUMOR DE CÉLULAS GRANULARES",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250342",
+      "timestamp": "2026-04-13T12:56:41.222232"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 51
+  }
+}

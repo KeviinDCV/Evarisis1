@@ -1,0 +1,152 @@
+{
+  "session_id": "IHQ250338_20260420_082955",
+  "numero_peticion": "IHQ250338",
+  "timestamp": "2026-04-20T08:29:55.209874",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+  "ocr": {
+    "texto_consolidado": "IHQ250338\nCopia Pag. 1 de 1\nNombre : OMAIRA DELGADO URBANO\nN. peticion : IHQ250338\nN.Identificación : CC. 59823671\nGenero : FEMENINO\nEdad : 55 años 20 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 03/04/2025\nFecha Informe : 16/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX REGION UMBILICAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2503362-2, el cual corresponde a biopsia de masa en región\numbilical, con diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO\". Se ordenan los siguientes\nmarcadores: CK7, CK20, Receptores de Estrógenos, Receptores de Progesterona, Vimentina, PAX-8, p16,\np53, WT1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para CK7, p16 en bloque PAX-8, Vimentina (patrón heterogéneo). Son\nnegativas para CK20, WT1, p53 en patrón aberrante (nula tinción), Receptores de Estrógeno, Receptores\nde Progesterona.\nDIAGNÓSTICO\n Región umbilical. Tumor (historia de carcinoma seroso de endometrial). Biopsia. Estudios de\ninmunohistoquímica:\nCARCINOMA METASTASICO DE ORIGEN ENDOMETRIAL\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 47 ---",
+    "hash_original": "7e1ad3b00d33f2e901e903dbf892cf70",
+    "estadisticas": {
+      "caracteres_totales": 177904,
+      "caracteres_consolidados": 2563,
+      "reduccion_porcentaje": 98.56
+    },
+    "metadata": {
+      "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\IHQ DEL 314 AL 363.pdf",
+      "numero_ihq": "IHQ250338",
+      "caso_num": 25,
+      "total_casos": 50
+    }
+  },
+  "extraccion": {
+    "unified_extractor": {
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO",
+      "IHQ_P53": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_VIMENTINA": "NEGATIVO",
+      "nombre_completo": "OMAIRA DELGADO URBANO",
+      "numero_peticion": "IHQ250338",
+      "identificacion": "59823671",
+      "tipo_documento": "CC",
+      "Genero": "FEMENINO",
+      "Edad": "55",
+      "eps": "NUEVA EPS",
+      "medico_tratante": "EULER JAVIER BURBANO",
+      "servicio": "ALTO RIESGO OBSTETRICO",
+      "fecha_ingreso": "03/04/2025",
+      "fecha_informe": "16/04/2025",
+      "procedencia": "",
+      "historia_clinica": "",
+      "N. peticion (0. Numero de biopsia)": "IHQ250338",
+      "N. de identificación": "59823671",
+      "Tipo de documento": "CC",
+      "EPS": "NUEVA EPS",
+      "Servicio": "ALTO RIESGO OBSTETRICO",
+      "Médico tratante": "EULER JAVIER BURBANO",
+      "Fecha de ingreso (2. Fecha de la muestra)": "03/04/2025",
+      "Fecha Informe": "16/04/2025",
+      "nombres": "OMAIRA",
+      "Primer nombre": "OMAIRA",
+      "Segundo nombre": "",
+      "apellidos": "DELGADO URBANO",
+      "Primer apellido": "DELGADO",
+      "Segundo apellido": "URBANO",
+      "nombre_formal": "DELGADO URBANO, OMAIRA",
+      "diagnostico": "Región umbilical. Tumor (historia de carcinoma seroso de endometrial). Biopsia. Estudios de inmunohistoquímica: CARCINOMA METASTASICO DE ORIGEN ENDOMETRIAL",
+      "descripcion_microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, p16 en bloque PAX-8, Vimentina (patrón heterogéneo). Son negativas para CK20, WT1, p53 en patrón aberrante (nula tinción), Receptores de Estrógeno, Receptores de Progesterona.",
+      "descripcion_macroscopica": "Se realizan niveles histológicos al bloque M2503362-2, el cual corresponde a biopsia de masa en región umbilical, con diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO\". Se ordenan los siguientes marcadores: CK7, CK20, Receptores de Estrógenos, Receptores de Progesterona, Vimentina, PAX-8, p16, p53, WT1.",
+      "ihq_organo": "REGIÓN UMBILICAL",
+      "malignidad": "MALIGNO",
+      "fecha_toma": "SIN DATO",
+      "responsable_final": "NATALIA AGUIRRE VASQUEZ",
+      "especialidad_deducida": "PATOLOGIA",
+      "tipo_informe": "INMUNOHISTOQUIMICA",
+      "hospitalizado": "NO",
+      "estudios_solicitados_tabla": "CK7, CK20, Receptor de Estrógeno, Receptor de Progesterona, VIMENTINA, PAX 8, P16, P53, WT1",
+      "procedimiento": "BIOPSIA",
+      "comentarios": "",
+      "IHQ_ORGANO": "REGIÓN UMBILICAL",
+      "Malignidad": "MALIGNO",
+      "Fecha de toma (1. Fecha de la toma)": "SIN DATO",
+      "Patologo": "NATALIA AGUIRRE VASQUEZ",
+      "Factor pronostico": "positivo para: negativo para CK20, WT1, p53 en patrón aberrante (nula tinción), Receptores de Estrógeno, Receptores de Progesterona / Negativo para CK20",
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, Receptor de Estrógeno, Receptor de Progesterona, VIMENTINA, PAX 8, P16, P53, WT1",
+      "p16": "POSITIVO",
+      "extraction_timestamp": "2026-04-20T08:29:55.487631",
+      "extractor_version": "6.5.94_unified_corrections",
+      "processing_method": "modular_extractors_with_corrections",
+      "_full_text": "IHQ250338\nCopia Pag. 1 de 1\nNombre : OMAIRA DELGADO URBANO\nN. peticion : IHQ250338\nN.Identificación : CC. 59823671\nGenero : FEMENINO\nEdad : 55 años 20 dias\nEPS : NUEVA EPS\nMédico tratante : EULER JAVIER BURBANO\nServicio : ALTO RIESGO OBSTETRICO\nFecha Ingreso : 03/04/2025\nFecha Informe : 16/04/2025\nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nESTUDIO DE\n898807 Estudio anatomopatologico de marcacion\nBloques y laminas\nBX REGION UMBILICAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se realizan niveles histológicos al bloque M2503362-2, el cual corresponde a biopsia de masa en región\numbilical, con diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO\". Se ordenan los siguientes\nmarcadores: CK7, CK20, Receptores de Estrógenos, Receptores de Progesterona, Vimentina, PAX-8, p16,\np53, WT1.\nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. \nLas células tumorales son positivas para CK7, p16 en bloque PAX-8, Vimentina (patrón heterogéneo). Son\nnegativas para CK20, WT1, p53 en patrón aberrante (nula tinción), Receptores de Estrógeno, Receptores\nde Progesterona.\nDIAGNÓSTICO\n Región umbilical. Tumor (historia de carcinoma seroso de endometrial). Biopsia. Estudios de\ninmunohistoquímica:\nCARCINOMA METASTASICO DE ORIGEN ENDOMETRIAL\nNATALIA AGUIRRE VASQUEZ\nResponsable del análisis:\nRM 1716212-08\nPatología Quirúgica\nPatología Pulmonar\n_________________________________________________________________________________________________\nNota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe\ndepende de la representatividad y calidad técnica del espécimen disponible para estudio, del conocimiento\nactual sobre la condición en estudio y de la información clínica suministradas en la solicitud de análisis\npatológico. La relevancia de este informe de patología debe ser correlacionada con la información clínica\ndel paciente y de las ayudas diagnósticas complementarias, siendo competencia del médico tratante definir\nel diagnóstico y manejo clínico dentro de su especialidadillas.\nTodos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de\nPatólogos (CAP), The Royal College of Pathologists of Australasia Quality Assurance Programs (RCPAQAP), Oneworld Accuracy (1WA)\n--- PÁGINA 47 ---"
+    }
+  },
+  "base_datos": {
+    "campos_criticos": {
+      "IHQ_ESTUDIOS_SOLICITADOS": "CK7, CK20, Receptor de Estrógeno, Receptor de Progesterona, VIMENTINA, PAX 8, P16, P53, WT1",
+      "Descripcion macroscopica": "Se realizan niveles histológicos al bloque M2503362-2, el cual corresponde a biopsia de masa en región umbilical, con diagnóstico de \"TUMOR MALIGNO MAL DIFERENCIADO\". Se ordenan los siguientes marcadores: CK7, CK20, Receptores de Estrógenos, Receptores de Progesterona, Vimentina, PAX-8, p16, p53, WT1.",
+      "Descripcion microscopica": "Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®. Las células tumorales son positivas para CK7, p16 en bloque PAX-8, Vimentina (patrón heterogéneo). Son negativas para CK20, WT1, p53 en patrón aberrante (nula tinción), Receptores de Estrógeno, Receptores de Progesterona.",
+      "Descripcion Diagnostico": "Región umbilical. Tumor (historia de carcinoma seroso de endometrial). Biopsia. Estudios de inmunohistoquímica: CARCINOMA METASTASICO DE ORIGEN ENDOMETRIAL",
+      "IHQ_ORGANO": "REGIÓN UMBILICAL",
+      "Organo": "BX REGION UMBILICAL",
+      "Diagnostico Coloracion": "TUMOR MALIGNO MAL DIFERENCIADO",
+      "Diagnostico Principal": "CARCINOMA METASTASICO DE ORIGEN ENDOMETRIAL",
+      "Malignidad": "MALIGNO",
+      "Factor pronostico": "positivo para: negativo para CK20, WT1, p53 en patrón aberrante (nula tinción), Receptores de Estrógeno, Receptores de Progesterona / Negativo para CK20",
+      "IHQ_CK7": "POSITIVO",
+      "IHQ_CK20": "NEGATIVO",
+      "IHQ_RECEPTOR_ESTROGENOS": "NEGATIVO",
+      "IHQ_RECEPTOR_PROGESTERONA": "NEGATIVO",
+      "IHQ_VIMENTINA": "NEGATIVO",
+      "IHQ_PAX8": "POSITIVO",
+      "IHQ_P16_ESTADO": "POSITIVO",
+      "IHQ_P53": "NEGATIVO",
+      "IHQ_WT1": "NEGATIVO"
+    },
+    "estadisticas": {
+      "total_campos_guardados": 178,
+      "campos_vacios": 135,
+      "campos_completos": 43,
+      "biomarcadores_encontrados": 9,
+      "campos_criticos_total": 10,
+      "campos_criticos_completos": 10,
+      "completitud_porcentaje": 100.0
+    },
+    "columnas_mapeadas": {}
+  },
+  "validacion": {
+    "estadisticas": {
+      "total_campos_vacios": 135,
+      "total_campos_completos": 43
+    },
+    "top_campos_criticos_vacios": [],
+    "warnings": [],
+    "errores": []
+  },
+  "correcciones_aplicadas": [
+    {
+      "tipo": "ortografica",
+      "campo": "diagnostico",
+      "valor_original": "Región umbilical. Tumor (historia de carcinoma seroso de endometrial). Biopsia. Estudios de\ninmunohistoquímica:\nCARCINOMA METASTASICO DE ORIGEN ENDOMETRIAL",
+      "valor_corregido": "Región umbilical. Tumor (historia de carcinoma seroso de endometrial). Biopsia. Estudios de inmunohistoquímica: CARCINOMA METASTASICO DE ORIGEN ENDOMETRIAL",
+      "razon": "Corrección automática",
+      "numero_caso": "IHQ250338",
+      "timestamp": "2026-04-20T08:29:55.487368"
+    }
+  ],
+  "metadata": {
+    "correcciones_totales": 1,
+    "correcciones_por_tipo": {
+      "ortografica": 1
+    }
+  },
+  "metricas": {
+    "tiempo_ocr_segundos": 0,
+    "tiempo_extraccion_segundos": 0,
+    "tiempo_total_segundos": 0,
+    "caracteres_procesados": 177904,
+    "campos_extraidos": 57
+  }
+}

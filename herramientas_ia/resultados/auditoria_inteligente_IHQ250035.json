@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250035",
   "caso_num": 35,
   "total_casos": 50,
-  "timestamp": "2026-04-28T14:15:44.426563",
+  "timestamp": "2026-04-29T11:31:13.138255",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -28,7 +28,7 @@
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
-      "valor_bd": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO CON INVASIÓN DE TEJIDO PERICÓLICO SIN COMPROMISO DE SEROSA"
+      "valor_bd": "ADENOCARCINOMA MODERADAMENTE DIFERENCIADO CON INVASIÓN DE TEJIDO PERICÓLICO SIN COMPROMISO DE SEROSA:"
     },
     "factor_pronostico": {
       "estado": "OK",
