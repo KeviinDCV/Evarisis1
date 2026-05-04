@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250008",
   "caso_num": 8,
   "total_casos": 50,
-  "timestamp": "2026-04-28T14:15:29.148844",
+  "timestamp": "2026-04-29T11:30:57.547261",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -31,9 +31,9 @@
       "valor_bd": "LOS HALLAZGOS DE INMUNOHISTOQUÍMICA FAVORECEN UNA NEOPLASIA DE CÉLULAS B MADURAS"
     },
     "factor_pronostico": {
-      "estado": "ERROR",
-      "valor_bd": "NO APLICA",
-      "mensaje": "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
+      "estado": "OK",
+      "valor": "NO APLICA",
+      "mensaje": "Correcto (no aplica)"
     },
     "biomarcadores": {
       "estado": "OK",
@@ -89,10 +89,8 @@
       "errores": []
     },
     "warnings": [],
-    "errores": [
-      "FACTOR_PRONOSTICO está vacío pero hay 1 biomarcadores presentes"
-    ],
-    "estado": "ERROR",
+    "errores": [],
+    "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
       "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
@@ -132,13 +130,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 90.0,
-    "score_final": 90.0,
-    "validaciones_ok": 9,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
     "total_validaciones": 10,
     "warnings": 0,
-    "errores": 1
+    "errores": 0
   },
   "resumen": {},
-  "estado_final": "ERROR"
+  "estado_final": "OK"
 }

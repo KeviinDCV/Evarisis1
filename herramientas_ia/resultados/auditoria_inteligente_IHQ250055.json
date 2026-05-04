@@ -1,8 +1,8 @@
 {
-  "numero_caso": "IHQ250041",
-  "caso_num": 41,
+  "numero_caso": "IHQ250055",
+  "caso_num": 3,
   "total_casos": 50,
-  "timestamp": "2026-04-29T11:31:16.406218",
+  "timestamp": "2026-04-29T06:56:37.711558",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 3,
+      "total_detectado": 13,
       "estado": "OK"
     },
     "estado": "OK"
@@ -22,33 +22,55 @@
   "auditoria_bd": {
     "diagnostico_coloracion": {
       "estado": "OK",
-      "valor": "TUMOR MALIGNO MAL DIFERENCIADO ESCASAMENTE REPRESENTADO",
-      "mensaje": "Correcto (coincidencia exacta)"
+      "valor": "HIPERPLASIA SINUSOIDAL Y ANTRACOSIS",
+      "mensaje": "Correcto (similitud parcial)"
     },
     "diagnostico_principal": {
       "estado": "OK",
-      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
-      "valor_bd": "PERFIL DE INMUNOHISTOQUÍMICA COMPATIBLE CON CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, P40 POSITIVO"
+      "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (similitud parcial)",
+      "valor_bd": "LOS HALLAZGOS MORFOLÓGICOS SUGIEREN: HIPERPLASIA SINUSOIDAL"
     },
     "factor_pronostico": {
       "estado": "OK",
       "valor": "NO APLICA",
-      "mensaje": "Correcto (no aplica)"
+      "mensaje": "Correcto (diagnóstico benigno - Ki-67 no es factor pronóstico)"
     },
     "biomarcadores": {
       "estado": "OK",
-      "mensaje": "Todos los estudios mapeados (1/1)",
-      "total_solicitado_ocr": 1,
-      "total_solicitado_bd": 1,
+      "mensaje": "Todos los estudios mapeados (12/12)",
+      "total_solicitado_ocr": 12,
+      "total_solicitado_bd": 12,
       "estudios_ocr": [
-        "P40"
+        "CD3",
+        "CD10",
+        "CD20",
+        "CD23",
+        "BCL2",
+        "BCL6",
+        "Ki-67",
+        "S100",
+        "CD4",
+        "ALK",
+        "CD1A",
+        "CD68"
       ],
       "estudios_bd": [
-        "P40"
+        "CD3",
+        "CD10",
+        "CD20",
+        "CD23",
+        "BCL2",
+        "BCL6",
+        "Ki-67",
+        "S100",
+        "CD4",
+        "ALK",
+        "CD1A",
+        "CD68"
       ],
       "faltantes_en_bd": [],
       "extras_en_bd": [],
-      "mapeados": 1,
+      "mapeados": 12,
       "no_mapeados": [],
       "valores_incorrectos": [],
       "cobertura": 100.0
@@ -61,8 +83,8 @@
     "estado": "OK",
     "descripcion_macroscopica": {
       "estado": "OK",
-      "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
-      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+      "mensaje": "Descripcion macroscopica correcta",
+      "valor_bd": "Se realizan estudios de inmunohistoquímica a caso institucional (21/01/2025) con rótulo M2500429 que..."
     },
     "descripcion_microscopica": {
       "estado": "OK",
@@ -72,12 +94,13 @@
     "ihq_organo": {
       "estado": "OK",
       "mensaje": "IHQ_ORGANO está limpio",
-      "valor_bd": "PIEL DE CUERO CABELLUDO, REGIÓN FRONTOPARIETAL"
+      "valor_bd": "GANGLIOS LINFÁTICOS MEDIASTINALES"
     },
     "malignidad": {
       "estado": "OK",
-      "mensaje": "Malignidad correcta: MALIGNO",
-      "valor_bd": "MALIGNO"
+      "mensaje": "Malignidad correcta: BENIGNO (diagnóstico benigno confirmado)",
+      "valor_bd": "BENIGNO",
+      "nota": "Keywords malignos ignorados por presencia de diagnóstico benigno específico"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
@@ -86,11 +109,11 @@
       "estado": "OK"
     },
     "biomarcadores_no_mencionado": {
-      "total_revisados": 0,
+      "total_revisados": 1,
       "falsos_no_mencionado": [],
-      "biomarcadores_ok": 0,
+      "biomarcadores_ok": 1,
       "estado": "OK",
-      "mensaje": "0/0 biomarcadores \"NO MENCIONADO\" validados correctamente"
+      "mensaje": "1/1 biomarcadores \"NO MENCIONADO\" validados correctamente"
     }
   },
   "detecciones": {},

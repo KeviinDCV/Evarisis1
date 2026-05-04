@@ -2,7 +2,7 @@
   "numero_caso": "IHQ250013",
   "caso_num": 13,
   "total_casos": 50,
-  "timestamp": "2026-04-28T14:15:32.115020",
+  "timestamp": "2026-04-29T11:31:00.512385",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -21,11 +21,9 @@
   },
   "auditoria_bd": {
     "diagnostico_coloracion": {
-      "estado": "WARNING",
-      "mensaje": "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR",
-      "valor_bd": "LESIÓN FUSOCELULAR BIEN DIFERENCIADA",
-      "valor_ocr": null,
-      "nota": "Verificar manualmente si el diagnóstico está en un formato no estándar"
+      "estado": "OK",
+      "valor": "LESIÓN FUSOCELULAR BIEN DIFERENCIADA",
+      "mensaje": "Correcto (coincidencia exacta)"
     },
     "diagnostico_principal": {
       "estado": "OK",
@@ -71,9 +69,7 @@
     "campos_obligatorios": {
       "errores": []
     },
-    "warnings": [
-      "DIAGNOSTICO_COLORACION en BD pero no encontrado en OCR"
-    ],
+    "warnings": [],
     "errores": [],
     "estado": "OK",
     "descripcion_macroscopica": {
@@ -115,13 +111,13 @@
   "diagnosticos": {},
   "sugerencias": {},
   "metricas": {
-    "score_validacion": 90.0,
-    "score_final": 90.0,
-    "validaciones_ok": 9,
+    "score_validacion": 100.0,
+    "score_final": 100.0,
+    "validaciones_ok": 10,
     "total_validaciones": 10,
-    "warnings": 1,
+    "warnings": 0,
     "errores": 0
   },
   "resumen": {},
-  "estado_final": "ADVERTENCIA"
+  "estado_final": "OK"
 }

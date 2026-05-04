@@ -1,8 +1,8 @@
 {
-  "numero_caso": "IHQ250041",
-  "caso_num": 41,
+  "numero_caso": "IHQ250878",
+  "caso_num": 2,
   "total_casos": 50,
-  "timestamp": "2026-04-29T11:31:16.406218",
+  "timestamp": "2026-04-29T08:50:56.046374",
   "nivel": "completo",
   "auditoria_unified": {
     "descripciones": {
@@ -14,7 +14,7 @@
     },
     "metadatos": {},
     "biomarcadores": {
-      "total_detectado": 3,
+      "total_detectado": 4,
       "estado": "OK"
     },
     "estado": "OK"
@@ -22,13 +22,13 @@
   "auditoria_bd": {
     "diagnostico_coloracion": {
       "estado": "OK",
-      "valor": "TUMOR MALIGNO MAL DIFERENCIADO ESCASAMENTE REPRESENTADO",
+      "valor": "PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA",
       "mensaje": "Correcto (coincidencia exacta)"
     },
     "diagnostico_principal": {
       "estado": "OK",
       "mensaje": "DIAGNOSTICO_PRINCIPAL correcto (encontrado en descripción macroscópica)",
-      "valor_bd": "PERFIL DE INMUNOHISTOQUÍMICA COMPATIBLE CON CARCINOMA ESCAMOCELULAR INVASIVO MODERADAMENTE DIFERENCIADO, P40 POSITIVO"
+      "valor_bd": "PROLIFERACIÓN FIBRO-ÓSEA BENIGNA CONSISTENTE CON DISPLASIA FIBROSA"
     },
     "factor_pronostico": {
       "estado": "OK",
@@ -37,18 +37,20 @@
     },
     "biomarcadores": {
       "estado": "OK",
-      "mensaje": "Todos los estudios mapeados (1/1)",
-      "total_solicitado_ocr": 1,
-      "total_solicitado_bd": 1,
+      "mensaje": "Todos los estudios mapeados (2/2)",
+      "total_solicitado_ocr": 2,
+      "total_solicitado_bd": 2,
       "estudios_ocr": [
-        "P40"
+        "MDM2",
+        "CDK4"
       ],
       "estudios_bd": [
-        "P40"
+        "MDM2",
+        "CDK4"
       ],
       "faltantes_en_bd": [],
       "extras_en_bd": [],
-      "mapeados": 1,
+      "mapeados": 2,
       "no_mapeados": [],
       "valores_incorrectos": [],
       "cobertura": 100.0
@@ -62,7 +64,7 @@
     "descripcion_macroscopica": {
       "estado": "OK",
       "mensaje": "Descripcion macroscopica correcta (palabras clave coinciden)",
-      "valor_bd": "Se recibe orden para realización de estudio de inmunohistoquímica en material institucional rotulado..."
+      "valor_bd": "Se realizan niveles histológicos al bloque M2509476, el cual corresponde a \"Biopsia de lesión maxila..."
     },
     "descripcion_microscopica": {
       "estado": "OK",
@@ -72,12 +74,12 @@
     "ihq_organo": {
       "estado": "OK",
       "mensaje": "IHQ_ORGANO está limpio",
-      "valor_bd": "PIEL DE CUERO CABELLUDO, REGIÓN FRONTOPARIETAL"
+      "valor_bd": "MAXILAR IZQUIERDO"
     },
     "malignidad": {
       "estado": "OK",
-      "mensaje": "Malignidad correcta: MALIGNO",
-      "valor_bd": "MALIGNO"
+      "mensaje": "Malignidad correcta: BENIGNO",
+      "valor_bd": "BENIGNO"
     },
     "campos_exhaustivos": {
       "total_campos_validados": 1,
