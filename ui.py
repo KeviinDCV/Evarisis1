@@ -1978,6 +1978,7 @@ Disco {i}:
             dashboard.select_pdf_file = self._select_pdf_file
             dashboard.select_pdf_folder = self._select_pdf_folder
             dashboard.process_selected_files = self._process_selected_files
+            dashboard.process_selected_files_ia = self._process_selected_files_ia
 
             # Crear referencia al listbox del dashboard para que los métodos antiguos funcionen
             if hasattr(dashboard, 'import_files_listbox'):
@@ -7326,6 +7327,1410 @@ Informes con malignidad: {malignant_count}"""
 
         # Polling desde main thread para actualizar progreso
         self._poll_processing_progress()
+
+    # ════════════════════════════════════════════════════════════════════
+    # V6.7.0 — Procesar con IA: diagnóstico de cobertura del OCR
+    # ════════════════════════════════════════════════════════════════════
+    # Pipeline alternativo paralelo al tradicional. Para cada PDF:
+    #   1. OCR completo (sin segmentación) → texto del PDF entero
+    #   2. Texto entero → LLM con prompt de extracción de TODOS los IHQ
+    #   3. LLM devuelve JSON con array de diagnósticos identificados
+    #   4. Resultado se guarda en informes_ia/ para comparar con BD
+    #
+    # Objetivo: si el extractor tradicional procesó 588 casos pero el LLM
+    # encuentra 995, el problema está en la segmentación/extractores. Si
+    # el LLM también encuentra 588, el OCR sí está perdiendo casos.
+    #
+    # NO modifica BD, NO toca extractores existentes. Es solo lectura +
+    # generación de un reporte separado.
+
+    _PROMPT_SYSTEM_IA_OCR = (
+        "Eres analista patológico. Recibirás texto OCR con varios informes IHQ "
+        "concatenados. Cada informe empieza con 'N. peticion : IHQXXXXXX'.\n\n"
+        "TAREA: Para CADA informe IHQ del texto, devolvé en JSON:\n"
+        "  numero_peticion: el código IHQ tal cual aparece (ej: IHQ250001)\n"
+        "  diagnostico: el dx clínico directo de la sección DIAGNÓSTICO\n"
+        "  organo: el órgano de la columna 'Organo' del header\n\n"
+        "REGLA #1 — INCLUÍ TODOS los IHQ del texto. Si el texto tiene 8 IHQ,\n"
+        "el array debe tener 8 entradas. NUNCA omitas IHQ. Si el dx no está\n"
+        "claro, copiá lo que veas en la sección DIAGNÓSTICO tal cual.\n\n"
+        "REGLA #2 — diagnóstico DIRECTO. La sección DIAGNÓSTICO suele empezar\n"
+        "con una frase tipo 'Órgano. Lesión. Biopsia. Estudio de IHQ:' seguida\n"
+        "de la entidad clínica real (en bullets o líneas). Devolvé la entidad,\n"
+        "NO la frase introductoria.\n"
+        "  Ejemplo: 'Mucosa de estomago. Biopsia. Estudio de IHQ:\n"
+        "            - CARCINOMA POCO COHESIVO'\n"
+        "  → diagnostico = 'CARCINOMA POCO COHESIVO'\n\n"
+        "REGLA #3 — órgano DEBE SER SOLO UN ÓRGANO ANATÓMICO en MAYÚSCULAS.\n"
+        "  Sin 'LESION', 'BX', 'TUMOR', 'MUCOSA DE'.\n"
+        "  Sin nombre de PROCEDIMIENTO ('CUADRANTECTOMIA', 'NEFRECTOMIA').\n"
+        "  Sin MODIFICADORES clínicos ('METASTÁSICO', 'INVASIVO').\n"
+        "  Sin idioma extranjero ('ENDOMETRIUM' es latín → escribí 'ENDOMETRIO').\n"
+        "  Ejemplos:\n"
+        "    'LESION ESTOMAGO'         → 'ESTOMAGO'\n"
+        "    'BX MEDULA OSEA'          → 'MEDULA OSEA'\n"
+        "    'CUADRANTECTOMIA MAMA DERECHA' → 'MAMA DERECHA'\n"
+        "    'NEFRECTOMIA RADICAL IZQUIERDA' → 'RIÑON IZQUIERDO'\n"
+        "    'GANGLIO PROFUNDO METASTÁSICO' → 'GANGLIO LINFATICO'\n"
+        "    'CUELLO ESTACION 4 Y 5' → 'GANGLIO LINFATICO'\n"
+        "    'MEDULA HUESO'            → 'MEDULA OSEA'\n\n"
+        "REGLA #4 — copiá las palabras EXACTAS del PDF. NO inventes letras.\n\n"
+        "FORMATO JSON OBLIGATORIO — claves exactas en minúscula sin tildes:\n"
+        '{"diagnosticos":[\n'
+        '  {"numero_peticion":"IHQ250001","diagnostico":"...","organo":"..."},\n'
+        '  {"numero_peticion":"IHQ250002","diagnostico":"...","organo":"..."}\n'
+        ']}\n\n'
+        "Devolvé SOLO el JSON, sin markdown, sin comentarios, sin ```json."
+    )
+
+    def _process_selected_files_ia(self):
+        """V6.7.0 — Procesa PDFs seleccionados con OCR completo + LLM para
+        diagnosticar cobertura del extractor tradicional.
+
+        Para cada PDF: OCR → texto completo → LLM extrae todos los IHQ.
+        Resultado guardado en informes_ia/extraccion_ia_<pdf>.json
+        """
+        if not hasattr(self, 'files_listbox') or self.files_listbox is None:
+            messagebox.showerror("Error", "El visor de archivos no está disponible.")
+            return
+
+        selected_indices = self.files_listbox.curselection()
+        if not selected_indices:
+            messagebox.showwarning(
+                "Sin selección",
+                "Por favor seleccione uno o más archivos para procesar con IA."
+            )
+            return
+
+        # Confirmación: este pipeline es lento (1-5 min por PDF)
+        n = len(selected_indices)
+        respuesta = messagebox.askyesno(
+            "Procesar con IA",
+            f"Vas a procesar {n} PDF(s) con el pipeline alternativo de IA.\n\n"
+            f"Para cada PDF:\n"
+            f"  1. Se hace OCR completo (texto entero)\n"
+            f"  2. El texto se envía al LLM (LM Studio o proveedor cloud)\n"
+            f"  3. El LLM identifica TODOS los IHQ y sus diagnósticos\n"
+            f"  4. Resultado se guarda en informes_ia/\n\n"
+            f"Tiempo estimado: ~2-5 minutos por PDF.\n"
+            f"NO modifica la BD ni los extractores. Solo genera un reporte.\n\n"
+            f"¿Continuar?"
+        )
+        if not respuesta:
+            return
+
+        pdfs_path = os.path.join(os.getcwd(), "pdfs_patologia")
+        files_to_process = []
+        for index in selected_indices:
+            filename = self.files_listbox.get(index)
+            if filename == "(No hay archivos PDF)" or filename.startswith("Error:"):
+                continue
+            file_path = os.path.join(pdfs_path, filename)
+            if os.path.exists(file_path):
+                files_to_process.append((file_path, filename))
+
+        if not files_to_process:
+            messagebox.showinfo("Sin archivos", "Ningún archivo válido para procesar.")
+            return
+
+        # Crear directorio de salida
+        out_dir = os.path.join(os.getcwd(), "informes_ia")
+        os.makedirs(out_dir, exist_ok=True)
+
+        # Estado compartido con worker
+        self._processing_result_ia = {
+            "done": False,
+            "cancelled": False,
+            "current_index": 0,
+            "total_files": len(files_to_process),
+            "current_file": "",
+            "current_stage": "Inicializando...",
+            "current_chunk": 0,
+            "total_chunks": 0,
+            "live_diagnosticos": [],   # lista compartida — worker hace append
+            "results": [],
+            "errors": [],
+        }
+        # Cuántos diagnósticos en vivo ya pintamos en el treeview
+        self._ia_diagnosticos_pintados = 0
+
+        # Mostrar ventana de progreso con tabla en vivo
+        self._show_ia_progress_window(len(files_to_process))
+
+        thread = threading.Thread(
+            target=self._process_files_ia_worker,
+            args=(files_to_process, out_dir),
+            daemon=True
+        )
+        thread.start()
+        self._poll_processing_progress_ia()
+
+    def _show_ia_progress_window(self, num_files):
+        """V6.7.0 — Ventana grande con barra de progreso + tabla en vivo de
+        diagnósticos identificados por la IA mientras procesa los chunks."""
+        win = tk.Toplevel(self)
+        self._ia_progress_win = win
+        win.title("🤖 Procesando con IA — análisis en vivo")
+        win.transient(self)
+        win.protocol("WM_DELETE_WINDOW", lambda: None)  # Solo se cierra al terminar
+
+        # Centrar (más grande que el overlay normal)
+        w, h = 920, 600
+        x = self.winfo_x() + (self.winfo_width() - w) // 2
+        y = self.winfo_y() + (self.winfo_height() - h) // 2
+        win.geometry(f"{w}x{h}+{max(0, x)}+{max(0, y)}")
+        win.minsize(700, 450)
+
+        # Cabecera con info de PDF actual
+        header = ttk.Frame(win, padding=15)
+        header.pack(fill=X)
+
+        self._ia_lbl_pdf = ttk.Label(
+            header,
+            text=f"Iniciando procesamiento de {num_files} PDF(s)...",
+            font=("Segoe UI", 11, "bold")
+        )
+        self._ia_lbl_pdf.pack(anchor=W)
+
+        self._ia_lbl_chunk = ttk.Label(
+            header,
+            text="",
+            font=("Segoe UI", 9),
+            foreground="#555"
+        )
+        self._ia_lbl_chunk.pack(anchor=W, pady=(3, 0))
+
+        # Barras de progreso (PDF y chunk)
+        progress_frame = ttk.Frame(win, padding=(15, 5, 15, 10))
+        progress_frame.pack(fill=X)
+
+        ttk.Label(progress_frame, text="PDFs:", font=("Segoe UI", 9)).grid(row=0, column=0, sticky=W, padx=(0, 8))
+        self._ia_progress_pdfs = ttk.Progressbar(
+            progress_frame, mode="determinate", maximum=num_files
+        )
+        self._ia_progress_pdfs.grid(row=0, column=1, sticky="ew", pady=2)
+        progress_frame.grid_columnconfigure(1, weight=1)
+
+        ttk.Label(progress_frame, text="Chunks:", font=("Segoe UI", 9)).grid(row=1, column=0, sticky=W, padx=(0, 8), pady=(4, 0))
+        self._ia_progress_chunks = ttk.Progressbar(
+            progress_frame, mode="determinate", maximum=1
+        )
+        self._ia_progress_chunks.grid(row=1, column=1, sticky="ew", pady=(4, 0))
+
+        # Contadores: esta sesión + acumulado en BD
+        counter_frame = ttk.Frame(win, padding=(15, 0, 15, 5))
+        counter_frame.pack(fill=X)
+        self._ia_lbl_counter = ttk.Label(
+            counter_frame,
+            text="Diagnósticos en esta sesión: 0",
+            font=("Segoe UI", 10, "bold"),
+            foreground="#0a7"
+        )
+        self._ia_lbl_counter.pack(anchor=W)
+
+        # Total acumulado en BD (todas las sesiones previas + actual)
+        try:
+            from core.diagnosticos_ia_db import count_total as _ia_count_total
+            total_acumulado = _ia_count_total()
+        except Exception:
+            total_acumulado = 0
+        self._ia_lbl_acumulado = ttk.Label(
+            counter_frame,
+            text=f"Total acumulado en BD (todas las sesiones): {total_acumulado}",
+            font=("Segoe UI", 9),
+            foreground="#555"
+        )
+        self._ia_lbl_acumulado.pack(anchor=W, pady=(2, 0))
+
+        # Tabla en vivo
+        table_frame = ttk.Frame(win, padding=(15, 5, 15, 10))
+        table_frame.pack(fill=BOTH, expand=True)
+
+        columns = ("ihq", "diagnostico", "organo")
+        self._ia_treeview = ttk.Treeview(
+            table_frame, columns=columns, show="headings", height=15
+        )
+        self._ia_treeview.heading("ihq", text="N° IHQ")
+        self._ia_treeview.heading("diagnostico", text="Diagnóstico")
+        self._ia_treeview.heading("organo", text="Órgano")
+        self._ia_treeview.column("ihq", width=110, anchor=W, stretch=False)
+        self._ia_treeview.column("diagnostico", width=550, anchor=W)
+        self._ia_treeview.column("organo", width=180, anchor=W)
+
+        scroll_y = ttk.Scrollbar(table_frame, orient="vertical", command=self._ia_treeview.yview)
+        self._ia_treeview.configure(yscrollcommand=scroll_y.set)
+        self._ia_treeview.pack(side=LEFT, fill=BOTH, expand=True)
+        scroll_y.pack(side=RIGHT, fill=Y)
+
+        # V6.7.2 — Soporte de copia: shortcuts + menú contextual derecho
+        self._ia_treeview.bind("<Control-c>", lambda e: self._ia_copy_selected_to_clipboard())
+        self._ia_treeview.bind("<Control-C>", lambda e: self._ia_copy_selected_to_clipboard())
+        self._ia_treeview.bind("<Control-a>", lambda e: self._ia_select_all_rows())
+        self._ia_treeview.bind("<Control-A>", lambda e: self._ia_select_all_rows())
+        # Menú contextual al click derecho
+        self._ia_context_menu = tk.Menu(win, tearoff=0)
+        self._ia_context_menu.add_command(
+            label="Copiar selección (Ctrl+C)",
+            command=self._ia_copy_selected_to_clipboard
+        )
+        self._ia_context_menu.add_command(
+            label="Copiar todo",
+            command=self._ia_copy_all_to_clipboard
+        )
+        self._ia_context_menu.add_separator()
+        self._ia_context_menu.add_command(
+            label="Seleccionar todo (Ctrl+A)",
+            command=self._ia_select_all_rows
+        )
+        self._ia_context_menu.add_separator()
+        self._ia_context_menu.add_command(
+            label="Exportar todo a CSV...",
+            command=self._ia_export_to_csv
+        )
+        self._ia_treeview.bind("<Button-3>", self._ia_show_context_menu)
+
+        # Footer con botones de copia + estado + cerrar
+        footer = ttk.Frame(win, padding=(15, 5, 15, 15))
+        footer.pack(fill=X)
+
+        self._ia_lbl_status = ttk.Label(
+            footer, text="🔄 OCR del PDF...", font=("Segoe UI", 9), foreground="#06b"
+        )
+        self._ia_lbl_status.pack(side=LEFT)
+
+        self._ia_btn_cerrar = ttk.Button(
+            footer, text="Cerrar", state="disabled",
+            command=lambda: self._ia_progress_win.destroy()
+        )
+        self._ia_btn_cerrar.pack(side=RIGHT)
+
+        ttk.Button(
+            footer, text="📋 Copiar todo",
+            command=self._ia_copy_all_to_clipboard,
+            bootstyle="secondary-outline"
+        ).pack(side=RIGHT, padx=(0, 8))
+
+        ttk.Button(
+            footer, text="💾 Exportar CSV",
+            command=self._ia_export_to_csv,
+            bootstyle="secondary-outline"
+        ).pack(side=RIGHT, padx=(0, 8))
+
+        win.update_idletasks()
+
+    # V6.7.3 — Patrones de limpieza post-LLM
+    # El LLM a veces devuelve dx con frases introductorias del patólogo
+    # ("Muslo derecho. Lesión. Biopsia. Estudio de inmunohistoquímica:")
+    # o preámbulos ("LOS HALLAZGOS COMPATIBLES CON..."), y órganos con
+    # palabras-ruido ("LESION ESTOMAGO", "BX MEDULA OSEA", "TUMOR PALADAR").
+    # Estos patrones limpian la salida del LLM antes de pintarla.
+    # NOTA: usamos `re` (importado a nivel de módulo, línea 22) en vez de
+    # un alias local porque list comprehensions en class body tienen su
+    # propio scope y no ven los nombres del class body.
+    _IA_PREFIJOS_ORGANO_RUIDO = re.compile(
+        r'^(?:LESI[ÓO]N|LESION|BX|BIOPSIA|TUMOR(?:ACI[ÓO]N)?|MASA|PIEZA|MUESTRA|'
+        r'N[ÓO]DULO|ESP[ÉE]CIMEN|FRAGMENTO|RESECCI[ÓO]N|CIRUG[ÍI]A)\s+(?:DE\s+)?',
+        re.IGNORECASE
+    )
+    # V6.7.11 — Procedimientos quirúrgicos comunes que el patólogo escribe
+    # como "tipo de pieza" en vez del órgano. Mapeo procedimiento→órgano
+    # canónico para que "NEFRECTOMIA RADICAL IZQUIERDA" → "RIÑON IZQUIERDO".
+    # NOTA: cada regex usa [ÍI] / [ÁA] para tolerar variantes con/sin tilde
+    # del LLM (ej: "NEFRECTOMÍA" con tilde vs "NEFRECTOMIA" sin tilde).
+    _IA_MAPEO_PROCEDIMIENTO_ORGANO = [
+        (re.compile(r'^CUADRANTECTOM[ÍI]A(?:\s+DE)?\s*', re.IGNORECASE), 'MAMA'),
+        (re.compile(r'^MASTECTOM[ÍI]A(?:\s+RADICAL)?(?:\s+DE)?\s*', re.IGNORECASE), 'MAMA'),
+        (re.compile(r'^NEFRECTOM[ÍI]A(?:\s+RADICAL)?(?:\s+DE)?\s*', re.IGNORECASE), 'RIÑON'),
+        (re.compile(r'^HEMICOLECTOM[ÍI]A(?:\s+DE)?\s*', re.IGNORECASE), 'COLON'),
+        (re.compile(r'^SIGMOIDECTOM[ÍI]A(?:\s+DE)?\s*', re.IGNORECASE), 'SIGMOIDES'),
+        (re.compile(r'^HISTERECTOM[ÍI]A(?:\s+VAGINAL|\s+TOTAL|\s+RADICAL)?(?:\s+DE)?\s*', re.IGNORECASE), 'UTERO'),
+        (re.compile(r'^PROSTATECTOM[ÍI]A(?:\s+DE)?\s*', re.IGNORECASE), 'PROSTATA'),
+        (re.compile(r'^TIROIDECTOM[ÍI]A(?:\s+DE)?\s*', re.IGNORECASE), 'TIROIDES'),
+        (re.compile(r'^GASTRECTOM[ÍI]A(?:\s+DE)?\s*', re.IGNORECASE), 'ESTOMAGO'),
+        (re.compile(r'^COLECISTECTOM[ÍI]A(?:\s+DE)?\s*', re.IGNORECASE), 'VESICULA BILIAR'),
+        (re.compile(r'^APENDICECTOM[ÍI]A(?:\s+DE)?\s*', re.IGNORECASE), 'APENDICE'),
+        (re.compile(r'^(?:LOBECTOM[ÍI]A|NEUMONECTOM[ÍI]A)(?:\s+DE)?\s*', re.IGNORECASE), 'PULMON'),
+        (re.compile(r'^HEPATECTOM[ÍI]A(?:\s+DE)?\s*', re.IGNORECASE), 'HIGADO'),
+        (re.compile(r'^POLIPECTOM[ÍI]A(?:\s+DE)?\s*', re.IGNORECASE), 'COLON'),
+        (re.compile(r'^TRUCUT(?:\s+DE)?\s*', re.IGNORECASE), ''),
+    ]
+    # Regex auxiliar para detectar lateralidad
+    _IA_LATERALIDAD = re.compile(
+        r'\b(IZQUIERD[OA]|DERECH[OA]|BILATERAL)\b', re.IGNORECASE
+    )
+    # V6.7.11 — Modificadores clínicos al FINAL del órgano que sobran
+    # (ej: "GANGLIO PROFUNDO METASTÁSICO" → "GANGLIO PROFUNDO").
+    _IA_SUFIJOS_MODIFICADOR_ORGANO = re.compile(
+        r'\s+(?:METAST[ÁA]SIC[OA]|METAST[ÁA]SIS|INVASIV[OA]|'
+        r'INFILTRANTE|MALIGN[OA])\s*$',
+        re.IGNORECASE
+    )
+    _IA_PREFIJO_MUCOSA = re.compile(
+        r'^MUCOSA\s+(?:DE\s+)?', re.IGNORECASE
+    )
+    _IA_PREFIJO_TEJIDO = re.compile(
+        r'^(?:TEJIDO|PIEL)\s+(?:DE\s+)?(?=\w)', re.IGNORECASE
+    )
+    # "Estudio de inmunohistoquímica:" como separador entre frase
+    # introductoria y el diagnóstico real
+    _IA_SEP_ESTUDIO = re.compile(
+        r'estudios?\s+de\s+inmunohistoqu[ií]mica\s*[:.]?\s*',
+        re.IGNORECASE
+    )
+    # Preámbulos del patólogo que preceden al dx real.
+    # NOTA: HISTOL[ÓO]GIC?[OA]S? cubre el typo OCR "HISTOLOGIOS" (falta C).
+    _IA_PREAMBULOS_DX = [
+        re.compile(p, re.IGNORECASE) for p in (
+            # V6.7.11 — IHQ250005: variante simple "LOS HALLAZGOS
+            # HISTOLÓGICOS SON COMPATIBLES CON" (SIN "Y DE INMUNOHISTOQUIMICA")
+            r'^LOS\s+HALLAZGOS\s+HISTOL[ÓO]GIC?[OA]S?\s+SON\s+COMPATIBLES?\s+CON\s+',
+            r'^LOS\s+HALLAZGOS\s+HISTOL[ÓO]GIC?[OA]S?\s+(?:Y\s+(?:DE\s+)?INMUNOHISTOQU[ÍI]MIC[OA])?\s+(?:SON\s+)?COMPATIBLES?\s+CON\s+',
+            r'^LOS\s+HALLAZGOS\s+MORFOL[ÓO]GICOS?(?:\s+E\s+INMUNOHISTOQU[ÍI]MIC[OA]S?)?(?:\s+Y\s+(?:DE\s+)?INMUNOHISTOQU[ÍI]MIC[OA])?\s+(?:FAVORECEN|SON\s+COMPATIBLES?\s+CON|FAVORECE\s+EL\s+DIAGN[ÓO]STICO\s+DE)\s+',
+            r'^LOS\s+HALLAZGOS\s+SON\s+(?:COMPATIBLES?\s+CON|SUGESTIVOS\s+DE)\s+',
+            r'^HALLAZGOS\s+CONSISTENTES\s+CON\s+',
+            r'^HALLAZGOS\s+(?:DE\s+)?INMUNOHISTOQU[ÍI]MIC[OA]\s+COMPATIBLES?\s+CON\s+',
+            # V6.7.6 — Variante "HALLAZGOS DE MORFOLOGIA E INMUNOHISTOQUIMICA
+            # COMPATIBLES CON" (sustantivo MORFOLOGIA en vez de adjetivo)
+            r'^HALLAZGOS\s+DE\s+MORFOLOG[ÍI]A\s+(?:E\s+|Y\s+(?:DE\s+)?)INMUNOHISTOQU[ÍI]MIC[OA]\s+COMPATIBLES?\s+CON\s+',
+            r'^HALLAZGOS\s+MORFOL[ÓO]GICOS?\s+(?:Y\s+(?:DE\s+)?INMUNOHISTOQU[ÍI]MIC[OA])?\s+COMPATIBLES?\s+CON\s+',
+            # V6.7.7 — Variante "HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA
+            # QUE FAVORECEN" (combina MORFOLOGICOS + IHQ + QUE FAVORECEN)
+            r'^HALLAZGOS\s+MORFOL[ÓO]GICOS?\s+Y\s+(?:DE\s+)?INMUNOHISTOQU[ÍI]MIC[OA]\s+QUE\s+FAVORECEN\s+',
+            r'^HALLAZGOS\s+(?:MORFOL[ÓO]GICOS?\s+)?QUE\s+FAVORECEN\s+',
+            r'^PERFIL\s+(?:DE\s+EXPRESI[ÓO]N\s+)?DE\s+INMUNOHISTOQU[ÍI]MIC[OA]\s+(?:COMPATIBLE\s+CON|QUE\s+FAVORECE)\s+',
+            # V6.7.7 — Variante simple "HALLAZGOS COMPATIBLES CON"
+            # (sin morfológicos / IHQ / etc. en medio)
+            r'^HALLAZGOS\s+COMPATIBLES?\s+CON\s+',
+            r'^COMPATIBLES?\s+CON\s+',
+        )
+    ]
+    # Artículos que pueden quedar colgando después del preámbulo
+    # (ej: "LOS HALLAZGOS SON SUGESTIVOS DE UNA NEOPLASIA..." → "UNA NEOPLASIA...")
+    _IA_ARTICULOS_COLGANTES = re.compile(
+        r'^(?:UNA?|EL|LA|LOS|LAS)\s+', re.IGNORECASE
+    )
+
+    # V6.7.6 — Mapping de adjetivos médicos → sustantivos canónicos para
+    # órganos. El LLM a veces devuelve el órgano como adjetivo (RENAL,
+    # ENDOMETRIAL, RECTAL, PULMONAR, GASTRICA, CERVICAL) — más útil tener
+    # el sustantivo (RIÑON, ENDOMETRIO, RECTO, PULMON, ESTOMAGO, CERVIX).
+    # NOTA: aplica solo a la palabra COMPLETA (palabra exacta o seguida de
+    # lateralidad como IZQUIERDA/DERECHA). NO toca casos como "PULMON
+    # IZQUIERDO" donde ya está bien.
+    _IA_MAPEO_ADJETIVOS_ORGANO = [
+        # (regex_palabra_completa_a_reemplazar, sustantivo_canonico)
+        (re.compile(r'\bRENAL\b(?:\s+(IZQUIERD[OA]|DERECH[OA]))?', re.IGNORECASE), 'RIÑON'),
+        (re.compile(r'\bENDOMETRIAL\b', re.IGNORECASE), 'ENDOMETRIO'),
+        (re.compile(r'\bRECTAL\b', re.IGNORECASE), 'RECTO'),
+        (re.compile(r'\bPULMONAR\b(?:\s+(IZQUIERD[OA]|DERECH[OA]))?', re.IGNORECASE), 'PULMON'),
+        (re.compile(r'\bG[ÁA]STRIC[OA]\b', re.IGNORECASE), 'ESTOMAGO'),
+        (re.compile(r'\bCERVICAL\b', re.IGNORECASE), 'CERVIX'),
+        (re.compile(r'\bHEP[ÁA]TIC[OA]\b', re.IGNORECASE), 'HIGADO'),
+        (re.compile(r'\b[OÓ]SE[OA]\b', re.IGNORECASE), 'HUESO'),
+    ]
+
+    # V6.7.6 — Diccionario de typos comunes del LLM detectados en producción.
+    # Aplicado al órgano y al diagnóstico para corregir alucinaciones.
+    _IA_CORRECCIONES_TYPOS = [
+        (re.compile(r'\bABOMINAL\b', re.IGNORECASE), 'ABDOMINAL'),
+        (re.compile(r'\bABOMBIAL\b', re.IGNORECASE), 'ABDOMINAL'),
+        (re.compile(r'\bPADRE\s+ABDOMINAL\b', re.IGNORECASE), 'PARED ABDOMINAL'),
+        (re.compile(r'\bPARITEO\b', re.IGNORECASE), 'PARIETO'),
+        (re.compile(r'\bADANTIMOMATOSO\b', re.IGNORECASE), 'ADAMANTINOMATOSO'),
+        (re.compile(r'\bNUEROENDOCRINO\b', re.IGNORECASE), 'NEUROENDOCRINO'),
+        (re.compile(r'\bHIPOFISIARIO\b', re.IGNORECASE), 'HIPOFISARIO'),
+        (re.compile(r'\bLUNGA\b', re.IGNORECASE), 'PULMON'),
+        # V6.7.11 — Typos detectados en producción (LLM corta letras finales
+        # o usa idioma extranjero)
+        (re.compile(r'\bPULMO\b', re.IGNORECASE), 'PULMON'),
+        (re.compile(r'\bRECTA\b(?!L|R)', re.IGNORECASE), 'RECTO'),  # "RECTA" pero no "RECTAL" o "RECTAR"
+        (re.compile(r'\bENDOMETRIUM\b', re.IGNORECASE), 'ENDOMETRIO'),
+        (re.compile(r'\bMEDULA\s+HUESO\b', re.IGNORECASE), 'MEDULA OSEA'),
+        (re.compile(r'\bARQUTIECTURA\b', re.IGNORECASE), 'ARQUITECTURA'),
+        # V6.7.12 — Typos detectados con nemotron-3-nano-omni
+        (re.compile(r'\bHIPOFISIA\b', re.IGNORECASE), 'HIPOFISIS'),
+    ]
+    # V6.7.12 — Bullet-prefix del LLM. Algunos modelos (nemotron) preservan
+    # el guión inicial cuando el dx viene como bullet en el PDF.
+    # Lo aplicamos al inicio del dx para limpiar "- EXPRESIÓN DE CD117..."
+    _IA_BULLET_PREFIX = re.compile(r'^\s*[-•·]\s*', re.UNICODE)
+
+    def _aplicar_correcciones_typos(self, texto: str) -> str:
+        """V6.7.6 — Aplica el diccionario de typos comunes del LLM."""
+        if not texto:
+            return texto
+        for pat, repl in self._IA_CORRECCIONES_TYPOS:
+            texto = pat.sub(repl, texto)
+        return texto
+
+    def _normalizar_organo_adjetivo(self, org: str) -> str:
+        """V6.7.6 — Convierte adjetivos médicos a sustantivos canónicos."""
+        if not org:
+            return org
+        for pat, sustantivo in self._IA_MAPEO_ADJETIVOS_ORGANO:
+            m = pat.search(org)
+            if m:
+                # Reemplazar manteniendo lateralidad si aplica
+                lateralidad = m.group(1) if m.lastindex and m.group(1) else ""
+                if lateralidad:
+                    repl = f"{sustantivo} {lateralidad.upper()}"
+                else:
+                    repl = sustantivo
+                org = pat.sub(repl, org, count=1)
+                break  # solo un mapping por órgano
+        return org
+
+    def _limpiar_resultado_ia(self, dx: str, organo: str) -> tuple[str, str]:
+        """V6.7.5 — Post-procesa la respuesta del LLM. Quita palabras-ruido
+        del órgano y preámbulos del dx.
+
+        Estrategia para el diagnóstico:
+        1. Si tiene 'Estudio de inmunohistoquímica:' → tomar lo de DESPUÉS
+        2. Si tiene preámbulo 'LOS HALLAZGOS COMPATIBLES CON' → strippear
+        3. Si después del cleanup queda vacío → mostrar el RAW del LLM
+           con marcador '(REVISAR DX)' para transparencia. NUNCA usamos
+           'NO IDENTIFICADO' a menos que el LLM no haya devuelto nada.
+
+        Returns: (dx_para_mostrar, organo_limpio).
+        """
+        # ─── ÓRGANO ────────────────────────────────────────────────────
+        org = (organo or "").strip()
+        if org:
+            # V6.7.11 — Detectar procedimiento al inicio. Si lo hay, intentar
+            # extraer el órgano residual; si solo queda lateralidad, usar el
+            # órgano canónico mapeado del procedimiento.
+            for pat_proc, organo_canon in self._IA_MAPEO_PROCEDIMIENTO_ORGANO:
+                m_proc = pat_proc.match(org)
+                if m_proc:
+                    residual = org[m_proc.end():].strip()
+                    # Detectar si el residual es solo lateralidad o vacío
+                    es_solo_lateralidad = bool(re.match(
+                        r'^(?:IZQUIERD[OA]|DERECH[OA]|BILATERAL)?\s*$',
+                        residual, re.IGNORECASE
+                    ))
+                    if not residual or es_solo_lateralidad:
+                        # Usar órgano canónico + lateralidad si existe
+                        if organo_canon:
+                            lat = self._IA_LATERALIDAD.search(residual)
+                            if lat:
+                                org = f"{organo_canon} {lat.group(0).upper()}"
+                            else:
+                                org = organo_canon
+                        else:
+                            org = residual or org
+                    else:
+                        # Hay órgano sustantivo después del procedimiento,
+                        # quedarse con eso (ej: "CUADRANTECTOMIA MAMA DERECHA"
+                        # → "MAMA DERECHA")
+                        org = residual
+                    break
+
+            # Strip palabras-ruido (LESION, BX, TUMOR, MUCOSA DE) en cascada
+            for _ in range(3):
+                prev = org
+                org = self._IA_PREFIJOS_ORGANO_RUIDO.sub('', org, count=1)
+                org = self._IA_PREFIJO_MUCOSA.sub('', org, count=1)
+                if org == prev:
+                    break
+            org_test = self._IA_PREFIJO_TEJIDO.sub('', org, count=1).strip()
+            if org_test and len(org_test.split()) >= 1 and org_test != org:
+                org = org_test
+
+            # V6.7.11 — Strip modificadores clínicos al final
+            # (ej: "GANGLIO PROFUNDO METASTÁSICO" → "GANGLIO PROFUNDO")
+            org = self._IA_SUFIJOS_MODIFICADOR_ORGANO.sub('', org).strip()
+
+            org = org.strip().rstrip('.,;')
+            # V6.7.6 — Aplicar correcciones de typos + adjetivo→sustantivo
+            org = self._aplicar_correcciones_typos(org)
+            org = self._normalizar_organo_adjetivo(org)
+
+            # V6.7.11 — Normalizar a MAYÚSCULAS para consistencia
+            # (el LLM a veces devuelve "Vertebra L1", "Mediastino",
+            # "Pulmón izquierdo" en mixed-case)
+            org = org.upper()
+
+            if not org:
+                org = (organo or "").strip().upper()
+
+        # ─── DIAGNÓSTICO ───────────────────────────────────────────────
+        d = (dx or "").strip()
+        # V6.7.12 — Quitar bullet-prefix "- " que algunos modelos
+        # (nemotron) preservan del PDF original
+        d = self._IA_BULLET_PREFIX.sub('', d)
+        original_dx = d
+
+        # Si el LLM no devolvió nada, ahí sí NO IDENTIFICADO
+        if not d:
+            return ("NO IDENTIFICADO", org)
+
+        # 1. Si contiene "Estudio de inmunohistoquímica:" tomar lo de DESPUÉS
+        m = self._IA_SEP_ESTUDIO.search(d)
+        if m:
+            despues = d[m.end():].strip()
+            if despues and len(despues) > 3:
+                d = despues
+            else:
+                # No hay nada significativo después → mostrar el raw del
+                # LLM con marcador para transparencia (V6.7.5)
+                raw_corto = self._truncar_raw(original_dx, 120)
+                return (f"(REVISAR DX) {raw_corto}", org)
+
+        # 2. Strippear preámbulos del patólogo
+        for pat in self._IA_PREAMBULOS_DX:
+            d_new = pat.sub('', d, count=1)
+            if d_new != d:
+                d = d_new.strip()
+                d = self._IA_ARTICULOS_COLGANTES.sub('', d, count=1).strip()
+                break
+
+        # 3. Limpiar punto final + espacios sobrantes
+        d = d.strip().rstrip('.').strip()
+
+        # 4. V6.7.6 — Aplicar correcciones de typos del LLM
+        d = self._aplicar_correcciones_typos(d)
+
+        # Si después del cleanup queda muy corto, recuperar raw original
+        if not d or len(d) < 3:
+            if original_dx and len(original_dx) >= 5:
+                raw_corto = self._truncar_raw(original_dx, 120)
+                return (f"(REVISAR DX) {raw_corto}", org)
+            return ("NO IDENTIFICADO", org)
+
+        return (d, org)
+
+    @staticmethod
+    def _truncar_raw(texto: str, max_chars: int) -> str:
+        """Trunca un texto raw (sin saltos de línea) preservando legibilidad."""
+        t = (texto or "").replace("\n", " ").replace("\r", "").strip()
+        # Colapsar múltiples espacios en uno solo
+        t = re.sub(r"\s+", " ", t)
+        if len(t) > max_chars:
+            t = t[:max_chars].rstrip() + "…"
+        return t
+
+    def _ia_show_context_menu(self, event):
+        """Muestra el menú contextual sobre el treeview en la posición del click."""
+        try:
+            self._ia_context_menu.tk_popup(event.x_root, event.y_root)
+        finally:
+            self._ia_context_menu.grab_release()
+
+    def _ia_select_all_rows(self):
+        """Selecciona todas las filas del treeview."""
+        try:
+            children = self._ia_treeview.get_children()
+            self._ia_treeview.selection_set(children)
+        except Exception:
+            pass
+        return "break"  # evita propagación del shortcut
+
+    def _ia_get_table_rows(self, only_selected: bool):
+        """Devuelve las filas del treeview como lista de tuplas (ihq, dx, organo).
+
+        Args:
+            only_selected: si True, solo las filas seleccionadas; si False, todas.
+        """
+        try:
+            iids = (
+                self._ia_treeview.selection() if only_selected
+                else self._ia_treeview.get_children()
+            )
+            rows = []
+            for iid in iids:
+                values = self._ia_treeview.item(iid, "values")
+                # values es una tupla (ihq, dx, organo)
+                if values:
+                    rows.append(tuple(str(v) for v in values))
+            return rows
+        except Exception as e:
+            logging.warning(f"[IA copy] Error leyendo treeview: {e}")
+            return []
+
+    def _ia_copy_selected_to_clipboard(self):
+        """Copia las filas SELECCIONADAS al clipboard en formato TSV.
+        Si no hay selección, copia todo."""
+        rows = self._ia_get_table_rows(only_selected=True)
+        if not rows:
+            # Si no hay selección, copiar todo
+            rows = self._ia_get_table_rows(only_selected=False)
+        if not rows:
+            return
+        self._ia_copy_rows_to_clipboard(rows)
+
+    def _ia_copy_all_to_clipboard(self):
+        """Copia TODAS las filas al clipboard en formato TSV."""
+        rows = self._ia_get_table_rows(only_selected=False)
+        if not rows:
+            messagebox.showinfo(
+                "Sin datos",
+                "No hay diagnósticos en la tabla para copiar."
+            )
+            return
+        self._ia_copy_rows_to_clipboard(rows, mostrar_aviso=True)
+
+    def _ia_copy_rows_to_clipboard(self, rows, mostrar_aviso: bool = False):
+        """Copia filas al clipboard en TSV (con cabecera). Formato amigable
+        para pegar en Excel, Google Sheets o un mensaje de texto."""
+        try:
+            # Cabecera + filas en TSV
+            lines = ["N° IHQ\tDiagnóstico\tÓrgano"]
+            for r in rows:
+                # Limpiar tabs y newlines internos para que el TSV no se rompa
+                clean = [
+                    (c or "").replace("\t", " ").replace("\n", " ").replace("\r", "")
+                    for c in r
+                ]
+                # Pad a 3 columnas si viene corta
+                while len(clean) < 3:
+                    clean.append("")
+                lines.append("\t".join(clean[:3]))
+            tsv = "\n".join(lines)
+
+            # Copiar via tkinter clipboard
+            self._ia_progress_win.clipboard_clear()
+            self._ia_progress_win.clipboard_append(tsv)
+            self._ia_progress_win.update()  # asegura que el clipboard se persista
+
+            if mostrar_aviso:
+                messagebox.showinfo(
+                    "Copiado al portapapeles",
+                    f"{len(rows)} fila(s) copiadas en formato tabla.\n\n"
+                    f"Pegalo directamente en Excel, Google Sheets, o un mensaje "
+                    f"de texto."
+                )
+        except Exception as e:
+            logging.error(f"[IA copy] Falló: {e}")
+            messagebox.showerror("Error", f"No se pudo copiar al portapapeles:\n{e}")
+
+    def _ia_export_to_csv(self):
+        """Exporta todas las filas a un archivo CSV elegido por el usuario."""
+        rows = self._ia_get_table_rows(only_selected=False)
+        if not rows:
+            messagebox.showinfo(
+                "Sin datos", "No hay diagnósticos en la tabla para exportar."
+            )
+            return
+
+        from tkinter import filedialog
+        from datetime import datetime as _dt
+        default_name = f"diagnosticos_ia_{_dt.now().strftime('%Y%m%d_%H%M%S')}.csv"
+        path = filedialog.asksaveasfilename(
+            title="Guardar CSV",
+            defaultextension=".csv",
+            initialfile=default_name,
+            filetypes=[("CSV (separado por comas)", "*.csv"), ("Todos", "*.*")]
+        )
+        if not path:
+            return
+
+        import csv as _csv
+        try:
+            with open(path, "w", newline="", encoding="utf-8-sig") as f:
+                writer = _csv.writer(f)
+                writer.writerow(["numero_peticion", "diagnostico", "organo"])
+                for r in rows:
+                    clean = [(c or "").replace("\n", " ") for c in r]
+                    while len(clean) < 3:
+                        clean.append("")
+                    writer.writerow(clean[:3])
+            messagebox.showinfo(
+                "Exportado",
+                f"{len(rows)} fila(s) exportadas a:\n{path}"
+            )
+        except Exception as e:
+            messagebox.showerror("Error", f"No se pudo guardar el CSV:\n{e}")
+
+    def _process_files_ia_worker(self, files_to_process, out_dir):
+        """Worker thread: para cada PDF hace OCR + LLM (con chunking) y guarda."""
+        import json as _json
+        import re as _re
+        import time as _time
+        from datetime import datetime as _dt
+
+        try:
+            from core.processors.ocr_processor import pdf_to_text_enhanced
+            from core.llm_client import LMStudioClient, _extraer_json_robusto
+            from core.diagnosticos_ia_db import init_db as _init_ia_db, save_diagnostico as _save_dx_ia
+        except Exception as e:
+            self._processing_result_ia["errors"].append(f"Imports fallaron: {e}")
+            self._processing_result_ia["done"] = True
+            return
+
+        # Inicializar BD acumulativa de diagnósticos IA (idempotente)
+        try:
+            _init_ia_db()
+        except Exception as e:
+            logging.warning(f"[IA] No se pudo inicializar BD de diagnósticos IA: {e}")
+
+        client = LMStudioClient()
+
+        # V6.7.1 — Chunking por LÍMITES DE IHQ (no por páginas).
+        # V6.7.8 — Reducido a 20k chars (antes 30k) porque gpt-oss-20b se
+        # confundía con chunks grandes y omitía IHQ. Con chunks más
+        # pequeños (~5-7 IHQ por chunk) el LLM responde más confiablemente.
+        TARGET_CHARS_PER_CHUNK = 20000
+
+        def _split_by_ihq_boundaries(texto: str):
+            """Divide texto OCR en chunks donde cada IHQ queda íntegro."""
+            header_pat = _re.compile(
+                r'N\.?\s*petici[oó]n\s*:?\s*(IHQ\s*\d{5,7})',
+                _re.IGNORECASE
+            )
+            matches = list(header_pat.finditer(texto))
+
+            if not matches:
+                logging.warning(
+                    "[IA] No se detectaron headers 'N. peticion : IHQ...' — "
+                    "usando fallback por páginas"
+                )
+                page_marker = _re.compile(r'\n--- PÁGINA \d+ ---\n')
+                parts = page_marker.split(texto)
+                if not parts:
+                    return [texto] if texto.strip() else []
+                chunks = []
+                current = ""
+                for p in parts:
+                    if current and len(current) + len(p) > TARGET_CHARS_PER_CHUNK:
+                        chunks.append(current)
+                        current = p
+                    else:
+                        current += p
+                if current:
+                    chunks.append(current)
+                return chunks
+
+            # Detectar boundaries por cambio de número IHQ
+            # (un mismo IHQ puede repetir header en cada página de su informe)
+            def _normalizar_ihq(s):
+                return _re.sub(r'\s+', '', s).upper()
+
+            boundaries = [0]
+            last_ihq = None
+            for m in matches:
+                ihq_num = _normalizar_ihq(m.group(1))
+                if last_ihq is None:
+                    last_ihq = ihq_num
+                    continue
+                if ihq_num != last_ihq:
+                    boundaries.append(m.start())
+                    last_ihq = ihq_num
+            boundaries.append(len(texto))
+
+            # Segmentos = un IHQ completo cada uno
+            segments = []
+            for i in range(len(boundaries) - 1):
+                seg = texto[boundaries[i]:boundaries[i + 1]]
+                if seg.strip():
+                    segments.append(seg)
+
+            # Agrupar segmentos en chunks de ~TARGET_CHARS_PER_CHUNK
+            # SIN partir un segmento (cada IHQ queda completo)
+            chunks = []
+            current = ""
+            for seg in segments:
+                if len(seg) > TARGET_CHARS_PER_CHUNK:
+                    # IHQ enorme: va solo en su chunk
+                    if current:
+                        chunks.append(current)
+                        current = ""
+                    chunks.append(seg)
+                    continue
+                if current and len(current) + len(seg) > TARGET_CHARS_PER_CHUNK:
+                    chunks.append(current)
+                    current = seg
+                else:
+                    current += seg
+            if current:
+                chunks.append(current)
+
+            logging.info(
+                f"[IA] Chunking IHQ-aware: {len(matches)} headers detectados → "
+                f"{len(segments)} IHQ únicos → {len(chunks)} chunks"
+            )
+            return chunks
+
+        # Alias retrocompatible
+        _split_in_chunks = _split_by_ihq_boundaries
+
+        def _norm_dx_entry(d):
+            if not isinstance(d, dict):
+                return None
+            lookup = {k.lower(): v for k, v in d.items() if isinstance(k, str)}
+            return {
+                "numero_peticion": (
+                    lookup.get("numero_peticion")
+                    or lookup.get("ihq")
+                    or lookup.get("peticion")
+                    or lookup.get("numero")
+                    or ""
+                ),
+                "diagnostico": (
+                    lookup.get("diagnostico")
+                    or lookup.get("dx")
+                    or lookup.get("diagnosis")
+                    or ""
+                ),
+                "organo": (
+                    lookup.get("organo")
+                    or lookup.get("organ")
+                    or lookup.get("sitio")
+                    or ""
+                ),
+            }
+
+        # Set de números de petición ya pintados en la tabla (deduplicación
+        # global, evita duplicados por chunk-overlap o repeticiones del LLM)
+        ihq_vistos = set()
+
+        for idx, (pdf_path, filename) in enumerate(files_to_process):
+            self._processing_result_ia["current_index"] = idx + 1
+            self._processing_result_ia["current_file"] = filename
+            self._processing_result_ia["current_stage"] = "OCR del PDF..."
+            self._processing_result_ia["current_chunk"] = 0
+            self._processing_result_ia["total_chunks"] = 0
+
+            try:
+                texto_ocr = pdf_to_text_enhanced(pdf_path)
+                ocr_chars = len(texto_ocr)
+                logging.info(f"[IA] {filename}: OCR completo ({ocr_chars} chars)")
+            except Exception as e:
+                self._processing_result_ia["errors"].append(f"{filename}: OCR falló — {e}")
+                continue
+
+            chunks = _split_in_chunks(texto_ocr)
+            n_chunks = len(chunks)
+            self._processing_result_ia["total_chunks"] = n_chunks
+
+            # V6.7.7 — Contar cuántos IHQ debería haber según headers en el
+            # texto OCR. Si al final faltan, lo reportamos al user.
+            _header_pat_count = _re.compile(
+                r'N\.?\s*petici[oó]n\s*:?\s*(IHQ\s*\d{5,7})', _re.IGNORECASE
+            )
+            _ihq_esperados = set()
+            for m in _header_pat_count.finditer(texto_ocr):
+                num = _re.sub(r'\s+', '', m.group(1)).upper()
+                _ihq_esperados.add(num)
+            n_ihq_esperados = len(_ihq_esperados)
+            logging.info(
+                f"[IA] {filename}: dividido en {n_chunks} chunks · "
+                f"{n_ihq_esperados} IHQ únicos detectados en OCR"
+            )
+
+            todos_diagnosticos = []
+            chunks_exitosos = 0
+            errores_chunks = []
+
+            # V6.7.7 — Helper de llamada al LLM con retry automático.
+            # V6.7.10 — max_tokens reducido a 4000 (antes 8000). Razón:
+            # un chunk de ~5-7 IHQ produce ~1500-2000 tokens de output.
+            # 4000 da margen sin que el LLM tarde 4-5 min generando.
+            # Si falla, reintenta con max_tokens aún más bajo (2500).
+            def _llamar_llm_con_retry(chunk_text, intento_max_tokens=4000):
+                last_error = None
+                for intento in (1, 2):
+                    try:
+                        max_tok = intento_max_tokens if intento == 1 else 2500
+                        resp = client.completar(
+                            prompt=chunk_text,
+                            system_prompt=self._PROMPT_SYSTEM_IA_OCR,
+                            temperature=0.1,
+                            max_tokens=max_tok,
+                            formato_json=True,
+                        )
+                        if resp.get("exito"):
+                            return resp, None
+                        last_error = resp.get("error", "?")[:200]
+                        logging.warning(
+                            f"[IA] Intento {intento} falló: {last_error[:100]}"
+                        )
+                    except Exception as e:
+                        last_error = str(e)[:200]
+                        logging.warning(f"[IA] Intento {intento} excepción: {last_error[:100]}")
+                return None, last_error
+
+            for chunk_idx, chunk_text in enumerate(chunks):
+                self._processing_result_ia["current_chunk"] = chunk_idx + 1
+                # V6.7.10 — Marcar timestamp para que el polling pueda
+                # mostrar tiempo transcurrido mientras el LLM responde
+                self._processing_result_ia["chunk_start_time"] = _time.time()
+                self._processing_result_ia["current_stage"] = (
+                    f"LLM analizando chunk {chunk_idx + 1}/{n_chunks} "
+                    f"({len(chunk_text):,} chars)..."
+                )
+                # V6.7.8 — Logging detallado: qué IHQ están EN este chunk
+                ihq_en_chunk = sorted(set(
+                    _re.sub(r'\s+', '', m.group(1)).upper()
+                    for m in _header_pat_count.finditer(chunk_text)
+                ))
+                logging.info(
+                    f"[IA] {filename}: chunk {chunk_idx + 1}/{n_chunks} "
+                    f"({len(chunk_text)} chars) — IHQ esperados: "
+                    f"{', '.join(ihq_en_chunk[:8])}"
+                    f"{f' (+{len(ihq_en_chunk) - 8} más)' if len(ihq_en_chunk) > 8 else ''}"
+                )
+
+                resp, err = _llamar_llm_con_retry(chunk_text)
+                # V6.7.10 — Limpiar timestamp después de la respuesta
+                self._processing_result_ia["chunk_start_time"] = None
+                if resp is None:
+                    err_msg = f"chunk {chunk_idx + 1}/{n_chunks}: LLM falló tras 2 intentos — {err}"
+                    errores_chunks.append(err_msg)
+                    logging.error(f"[IA] {filename}: {err_msg}")
+                    # CRÍTICO: agregar a errors top-level para que el user lo vea
+                    self._processing_result_ia["errors"].append(
+                        f"{filename}: {err_msg}"
+                    )
+                    continue
+
+                contenido = resp.get("respuesta") or resp.get("contenido")
+                if isinstance(contenido, dict):
+                    data = contenido
+                elif isinstance(contenido, str) and contenido.strip():
+                    data = _extraer_json_robusto(contenido)
+                else:
+                    data = None
+
+                if not data or not isinstance(data, dict):
+                    err_msg = f"chunk {chunk_idx + 1}/{n_chunks}: JSON no parseable"
+                    errores_chunks.append(err_msg)
+                    self._processing_result_ia["errors"].append(
+                        f"{filename}: {err_msg}"
+                    )
+                    logging.error(f"[IA] {filename}: {err_msg}")
+                    continue
+
+                raw_dx = data.get("diagnosticos", [])
+                if not isinstance(raw_dx, list):
+                    raw_dx = []
+                normalizados = [d for d in (_norm_dx_entry(x) for x in raw_dx) if d]
+                todos_diagnosticos.extend(normalizados)
+                chunks_exitosos += 1
+
+                # V6.7.8 — Logging del response: ¿cuántos IHQ devolvió y
+                # cuáles? Si el LLM omitió alguno del chunk, vamos a verlo.
+                ihq_devueltos = sorted(set(
+                    _re.sub(r'\s+', '', (n.get("numero_peticion") or "")).upper()
+                    for n in normalizados
+                    if n.get("numero_peticion")
+                ))
+                ihq_omitidos_chunk = [x for x in ihq_en_chunk if x not in ihq_devueltos]
+                logging.info(
+                    f"[IA] {filename}: chunk {chunk_idx + 1}/{n_chunks} "
+                    f"LLM devolvió {len(ihq_devueltos)}/{len(ihq_en_chunk)} IHQ"
+                    + (f" — omitidos: {', '.join(ihq_omitidos_chunk[:5])}" if ihq_omitidos_chunk else "")
+                )
+
+                # Emitir diagnósticos NUEVOS al estado compartido para
+                # que el polling los pinte en la tabla en vivo, Y persistir
+                # cada uno en la BD acumulativa de diagnósticos IA.
+                # V6.7.3 — Aplicar limpieza post-LLM (dx sin frases
+                # introductorias, órgano sin palabras-ruido).
+                # V6.7.4 — Validar que numero_peticion tenga formato IHQ
+                # válido. El LLM a veces alucina filas con numero_peticion
+                # = "NO IDENTIFICADO" o vacío — descartarlas.
+                _fecha_iso = _dt.now().isoformat()
+                _modelo = resp.get("modelo", "desconocido")
+                _valid_ihq_pat = _re.compile(r'^IHQ\d{4,7}$')
+                for d in normalizados:
+                    raw_key = (d.get("numero_peticion") or "").strip().upper()
+                    # Normalizar espacios internos ("IHQ 250036" → "IHQ250036")
+                    key = _re.sub(r'\s+', '', raw_key)
+                    if not key or not _valid_ihq_pat.match(key):
+                        # Fila fantasma del LLM (ej: numero_peticion="NO IDENTIFICADO",
+                        # numero alucinado, o vacío). Descartar.
+                        logging.info(
+                            f"[IA] Descartando fila con numero_peticion inválido: {raw_key!r}"
+                        )
+                        continue
+                    if key in ihq_vistos:
+                        continue
+                    ihq_vistos.add(key)
+
+                    # Limpiar dx y órgano antes de pintar/guardar
+                    dx_raw = d.get("diagnostico", "")
+                    organo_raw = d.get("organo", "")
+                    dx_limpio, organo_limpio = self._limpiar_resultado_ia(
+                        dx_raw, organo_raw
+                    )
+
+                    entry = {
+                        "numero_peticion": key,
+                        "diagnostico": dx_limpio,
+                        "organo": organo_limpio,
+                        "pdf_origen": filename,
+                    }
+                    self._processing_result_ia["live_diagnosticos"].append(entry)
+
+                    # Persistir en BD acumulativa (INSERT OR REPLACE — si el
+                    # mismo IHQ se reprocesa después, se actualiza)
+                    try:
+                        _save_dx_ia(
+                            numero_peticion=key,
+                            diagnostico=dx_limpio,
+                            organo=organo_limpio,
+                            pdf_origen=filename,
+                            fecha_procesamiento=_fecha_iso,
+                            modelo_utilizado=_modelo,
+                            ocr_caracteres_pdf=ocr_chars,
+                        )
+                    except Exception as _e:
+                        logging.warning(f"[IA] No se persistió {key}: {_e}")
+
+            # Deduplicar por numero_peticion (los chunks pueden solaparse o el
+            # mismo IHQ aparecer en 2 chunks si una página repite el header)
+            vistos = {}
+            for d in todos_diagnosticos:
+                key = (d.get("numero_peticion") or "").strip().upper()
+                if not key:
+                    continue
+                if key not in vistos:
+                    vistos[key] = d
+
+            diagnosticos_finales = list(vistos.values())
+            n_dx = len(diagnosticos_finales)
+            logging.info(
+                f"[IA] {filename}: LLM identificó {n_dx} dx únicos "
+                f"({chunks_exitosos}/{n_chunks} chunks OK)"
+            )
+
+            # V6.7.7 — Verificar IHQ esperados vs encontrados.
+            ihq_encontrados = {(d.get("numero_peticion") or "").strip().upper()
+                               for d in diagnosticos_finales}
+            ihq_encontrados_norm = {_re.sub(r'\s+', '', k) for k in ihq_encontrados}
+            ihq_faltantes = sorted(_ihq_esperados - ihq_encontrados_norm)
+
+            # V6.7.9 — SEGUNDA PASADA: Reintentar IHQ faltantes individualmente.
+            # Cuando el LLM omite IHQ en un chunk con varios casos, mandarle
+            # el IHQ AISLADO suele recuperarlo (sin distracciones de otros).
+            if ihq_faltantes:
+                logging.info(
+                    f"[IA] {filename}: 🔁 Segunda pasada — reintentando "
+                    f"{len(ihq_faltantes)} IHQ faltantes individualmente..."
+                )
+                self._processing_result_ia["current_stage"] = (
+                    f"Segunda pasada: reintentando {len(ihq_faltantes)} IHQ faltantes..."
+                )
+
+                # Construir mapping IHQ → segmento de texto del OCR
+                matches_all = list(_header_pat_count.finditer(texto_ocr))
+                boundaries_ihq = {}  # {ihq_num: (start, end)}
+                for i, m in enumerate(matches_all):
+                    ihq_num = _re.sub(r'\s+', '', m.group(1)).upper()
+                    if ihq_num in boundaries_ihq:
+                        continue  # ya tiene first occurrence
+                    end_pos = len(texto_ocr)
+                    for j in range(i + 1, len(matches_all)):
+                        other = _re.sub(r'\s+', '', matches_all[j].group(1)).upper()
+                        if other != ihq_num:
+                            end_pos = matches_all[j].start()
+                            break
+                    boundaries_ihq[ihq_num] = (m.start(), end_pos)
+
+                recuperados_segunda_pasada = 0
+                for ihq_falt in ihq_faltantes:
+                    if ihq_falt not in boundaries_ihq:
+                        continue
+                    s, e = boundaries_ihq[ihq_falt]
+                    segmento = texto_ocr[s:e]
+                    if len(segmento) < 50:
+                        continue
+
+                    self._processing_result_ia["current_stage"] = (
+                        f"Segunda pasada: reintentando {ihq_falt}..."
+                    )
+                    logging.info(
+                        f"[IA] Reintentando {ihq_falt} aislado ({len(segmento)} chars)"
+                    )
+
+                    resp_f, err_f = _llamar_llm_con_retry(segmento)
+                    if resp_f is None:
+                        logging.warning(f"[IA] {ihq_falt}: reintento individual falló")
+                        continue
+
+                    contenido_f = resp_f.get("respuesta") or resp_f.get("contenido")
+                    if isinstance(contenido_f, dict):
+                        data_f = contenido_f
+                    elif isinstance(contenido_f, str) and contenido_f.strip():
+                        data_f = _extraer_json_robusto(contenido_f)
+                    else:
+                        data_f = None
+
+                    if not data_f or not isinstance(data_f, dict):
+                        continue
+
+                    raw_dx_f = data_f.get("diagnosticos", [])
+                    if not isinstance(raw_dx_f, list):
+                        raw_dx_f = []
+                    normalizados_f = [d for d in (_norm_dx_entry(x) for x in raw_dx_f) if d]
+
+                    for d in normalizados_f:
+                        raw_key_f = (d.get("numero_peticion") or "").strip().upper()
+                        key_f = _re.sub(r'\s+', '', raw_key_f)
+                        if not key_f or not _valid_ihq_pat.match(key_f):
+                            continue
+                        if key_f in ihq_vistos:
+                            continue
+                        ihq_vistos.add(key_f)
+
+                        dx_raw_f = d.get("diagnostico", "")
+                        organo_raw_f = d.get("organo", "")
+                        dx_limpio_f, organo_limpio_f = self._limpiar_resultado_ia(
+                            dx_raw_f, organo_raw_f
+                        )
+
+                        entry_f = {
+                            "numero_peticion": key_f,
+                            "diagnostico": dx_limpio_f,
+                            "organo": organo_limpio_f,
+                            "pdf_origen": filename,
+                        }
+                        self._processing_result_ia["live_diagnosticos"].append(entry_f)
+                        diagnosticos_finales.append(entry_f)
+                        recuperados_segunda_pasada += 1
+
+                        try:
+                            _save_dx_ia(
+                                numero_peticion=key_f,
+                                diagnostico=dx_limpio_f,
+                                organo=organo_limpio_f,
+                                pdf_origen=filename,
+                                fecha_procesamiento=_fecha_iso,
+                                modelo_utilizado=resp_f.get("modelo", "desconocido"),
+                                ocr_caracteres_pdf=ocr_chars,
+                            )
+                        except Exception as _e:
+                            logging.warning(
+                                f"[IA] No se persistió {key_f} (reintento): {_e}"
+                            )
+
+                logging.info(
+                    f"[IA] {filename}: Segunda pasada recuperó "
+                    f"{recuperados_segunda_pasada}/{len(ihq_faltantes)} IHQ"
+                )
+
+                # Re-evaluar faltantes después de segunda pasada
+                ihq_encontrados2 = {(d.get("numero_peticion") or "").strip().upper()
+                                    for d in diagnosticos_finales}
+                ihq_encontrados2_norm = {_re.sub(r'\s+', '', k) for k in ihq_encontrados2}
+                ihq_faltantes_finales = sorted(_ihq_esperados - ihq_encontrados2_norm)
+
+                if ihq_faltantes_finales:
+                    msg = (
+                        f"{filename}: ⚠️ Tras segunda pasada, "
+                        f"{len(ihq_faltantes_finales)} IHQ siguen faltando: "
+                        f"{', '.join(ihq_faltantes_finales[:10])}"
+                        + (f" (+{len(ihq_faltantes_finales) - 10} más)" if len(ihq_faltantes_finales) > 10 else "")
+                    )
+                    self._processing_result_ia["errors"].append(msg)
+                    logging.warning(f"[IA] {msg}")
+                elif recuperados_segunda_pasada > 0:
+                    logging.info(
+                        f"[IA] {filename}: ✅ Segunda pasada recuperó TODOS los faltantes"
+                    )
+
+                # Actualizar n_dx
+                n_dx = len(diagnosticos_finales)
+
+            # Guardar resultado
+            out_filename = f"extraccion_ia_{os.path.splitext(filename)[0].replace(' ', '_')}.json"
+            out_path = os.path.join(out_dir, out_filename)
+            payload = {
+                "pdf_origen": filename,
+                "fecha_procesamiento": _dt.now().isoformat(),
+                "modelo_utilizado": resp.get("modelo", "desconocido") if 'resp' in dir() else "desconocido",
+                "ocr_caracteres": ocr_chars,
+                "chunks_total": n_chunks,
+                "chunks_exitosos": chunks_exitosos,
+                "diagnosticos_identificados": n_dx,
+                "diagnosticos": diagnosticos_finales,
+                "errores_chunks": errores_chunks,
+            }
+            try:
+                with open(out_path, 'w', encoding='utf-8') as f:
+                    _json.dump(payload, f, ensure_ascii=False, indent=2)
+                self._processing_result_ia["results"].append({
+                    "pdf": filename,
+                    "ocr_chars": ocr_chars,
+                    "n_dx": n_dx,
+                    "n_chunks": n_chunks,
+                    "chunks_ok": chunks_exitosos,
+                    "out_path": out_path,
+                })
+            except Exception as e:
+                self._processing_result_ia["errors"].append(
+                    f"{filename}: guardar JSON falló — {e}"
+                )
+
+            if errores_chunks and chunks_exitosos == 0:
+                self._processing_result_ia["errors"].append(
+                    f"{filename}: TODOS los chunks fallaron — {errores_chunks[0]}"
+                )
+
+        self._processing_result_ia["done"] = True
+
+    def _poll_processing_progress_ia(self):
+        """V6.7.0 — Polling: actualiza barras + tabla en vivo + counter."""
+        state = self._processing_result_ia
+
+        # Solo manejar UI si la ventana sigue existiendo
+        win_alive = (
+            hasattr(self, '_ia_progress_win')
+            and self._ia_progress_win is not None
+        )
+        if win_alive:
+            try:
+                win_alive = bool(self._ia_progress_win.winfo_exists())
+            except Exception:
+                win_alive = False
+
+        if win_alive:
+            try:
+                # Header — PDF actual
+                idx = state["current_index"]
+                total = state["total_files"]
+                fname = state["current_file"] or "—"
+                self._ia_lbl_pdf.config(
+                    text=f"PDF {idx}/{total}: {fname}"
+                )
+
+                # Header — chunk + stage + tiempo transcurrido en chunk actual
+                cidx = state.get("current_chunk", 0)
+                ctot = state.get("total_chunks", 0)
+                stage_text = state['current_stage']
+                # V6.7.10 — Si hay timestamp activo, mostrar elapsed
+                chunk_start = state.get("chunk_start_time")
+                if chunk_start:
+                    import time as _time_local
+                    elapsed = int(_time_local.time() - chunk_start)
+                    if elapsed >= 3:  # solo mostrar si lleva 3+ seg esperando
+                        m, s = divmod(elapsed, 60)
+                        elapsed_str = f"{m}:{s:02d}" if m > 0 else f"{s}s"
+                        stage_text = f"{stage_text} ⏱ {elapsed_str}"
+
+                if ctot > 0:
+                    self._ia_lbl_chunk.config(
+                        text=f"Chunk {cidx}/{ctot} — {stage_text}"
+                    )
+                else:
+                    self._ia_lbl_chunk.config(text=stage_text)
+
+                # Barras
+                self._ia_progress_pdfs['value'] = max(0, idx - 1) if not state["done"] else total
+                self._ia_progress_chunks['maximum'] = max(1, ctot)
+                self._ia_progress_chunks['value'] = cidx if ctot > 0 else 0
+
+                # Status footer
+                if state["done"]:
+                    self._ia_lbl_status.config(
+                        text="✅ Procesamiento completo",
+                        foreground="#0a7"
+                    )
+                else:
+                    self._ia_lbl_status.config(
+                        text=f"🔄 {stage_text}",
+                        foreground="#06b"
+                    )
+
+                # Tabla en vivo: pintar diagnósticos nuevos
+                live = state.get("live_diagnosticos", [])
+                already_painted = self._ia_diagnosticos_pintados
+                new_count = len(live) - already_painted
+                if new_count > 0:
+                    for entry in live[already_painted:]:
+                        ihq = entry.get("numero_peticion", "")
+                        dx = (entry.get("diagnostico", "") or "").replace("\n", " ")
+                        if len(dx) > 200:
+                            dx = dx[:200] + "..."
+                        organo = entry.get("organo", "")
+                        self._ia_treeview.insert(
+                            "", "end", values=(ihq, dx, organo)
+                        )
+                    # Auto-scroll al final
+                    children = self._ia_treeview.get_children()
+                    if children:
+                        self._ia_treeview.see(children[-1])
+                    self._ia_diagnosticos_pintados = len(live)
+
+                # Counter de la sesión actual
+                self._ia_lbl_counter.config(
+                    text=f"Diagnósticos en esta sesión: {len(live)}"
+                )
+
+                # Total acumulado en BD (refrescado cada poll para reflejar
+                # los inserts del worker en tiempo real)
+                try:
+                    from core.diagnosticos_ia_db import count_total as _ia_count_total
+                    total_acum = _ia_count_total()
+                    self._ia_lbl_acumulado.config(
+                        text=f"Total acumulado en BD (todas las sesiones): {total_acum}"
+                    )
+                except Exception:
+                    pass
+            except Exception as e:
+                logging.warning(f"[IA UI] Error actualizando UI: {e}")
+
+        # Si terminó, mostrar resumen y habilitar botón de cierre
+        if state["done"]:
+            if win_alive:
+                try:
+                    self._ia_btn_cerrar.config(state="normal")
+                except Exception:
+                    pass
+            # Mostrar resumen en messagebox (puede convivir con la ventana)
+            self._show_ia_results_summary()
+            return
+
+        self.after(500, self._poll_processing_progress_ia)
+
+    def _show_ia_results_summary(self):
+        """Muestra ventana con resumen de resultados del procesamiento IA."""
+        state = self._processing_result_ia
+        results = state.get("results", [])
+        errors = state.get("errors", [])
+
+        total_dx = sum(r["n_dx"] for r in results)
+        total_pdfs = len(results)
+
+        msg_lines = [
+            f"✅ Procesamiento IA completado",
+            f"",
+            f"PDFs procesados: {total_pdfs}",
+            f"Total de diagnósticos identificados por la IA: {total_dx}",
+            f"",
+        ]
+
+        if results:
+            msg_lines.append("Detalle por PDF:")
+            for r in results:
+                chunks_info = ""
+                if "n_chunks" in r:
+                    chunks_info = f", {r['chunks_ok']}/{r['n_chunks']} chunks OK"
+                msg_lines.append(
+                    f"  • {r['pdf']}: {r['n_dx']} diagnósticos "
+                    f"(OCR: {r['ocr_chars']:,} chars{chunks_info})"
+                )
+            msg_lines.append("")
+            msg_lines.append("Persistencia:")
+            msg_lines.append("  • JSON por PDF en: informes_ia/")
+            try:
+                from core.diagnosticos_ia_db import count_total as _ia_count_total, count_by_pdf as _ia_count_by_pdf
+                msg_lines.append(
+                    f"  • BD acumulativa: data/diagnosticos_ia.db ({_ia_count_total()} dx totales)"
+                )
+                pdfs_db = _ia_count_by_pdf()
+                if pdfs_db:
+                    msg_lines.append(f"  • PDFs en BD: {len(pdfs_db)}")
+            except Exception:
+                pass
+
+        if errors:
+            msg_lines.append("")
+            msg_lines.append(f"⚠️ Errores: {len(errors)}")
+            for err in errors[:5]:
+                msg_lines.append(f"  • {err[:150]}")
+
+        messagebox.showinfo("Procesamiento con IA — resultados", "\n".join(msg_lines))
 
     def _show_processing_overlay(self, num_files):
         """Mostrar overlay con barra de progreso sobre la UI"""

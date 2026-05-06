@@ -1484,20 +1484,32 @@ class EnhancedDatabaseDashboard:
         control_frame.pack(fill=X, pady=(10, 0))
         control_frame.grid_columnconfigure(0, weight=1)
         control_frame.grid_columnconfigure(1, weight=1)
+        control_frame.grid_columnconfigure(2, weight=1)
 
         ttk.Button(
             control_frame,
             text="🔄 Actualizar Lista",
             command=lambda: self.refresh_files_list(),
             bootstyle="secondary"
-        ).grid(row=0, column=0, sticky="ew", padx=(0, 10))
+        ).grid(row=0, column=0, sticky="ew", padx=(0, 5))
 
         ttk.Button(
             control_frame,
             text="⚡ Procesar Seleccionados",
             command=lambda: self.process_selected_files(),
             bootstyle="success"
-        ).grid(row=0, column=1, sticky="ew", padx=(10, 0))
+        ).grid(row=0, column=1, sticky="ew", padx=5)
+
+        # V6.7.0: Procesar con IA — diagnóstico de cobertura del OCR.
+        # Toma cada PDF, hace OCR completo (sin segmentación) y le pasa el
+        # texto entero al LLM para que identifique TODOS los IHQ presentes.
+        # Sirve para verificar si el extractor tradicional pierde casos.
+        ttk.Button(
+            control_frame,
+            text="🤖 Procesar con IA",
+            command=lambda: self.process_selected_files_ia(),
+            bootstyle="info"
+        ).grid(row=0, column=2, sticky="ew", padx=(5, 0))
 
         # v6.0.12: ELIMINADO - Sección "Estado del Procesamiento" (innecesaria, redundante con logs)
         # self.progress_section = ttk.LabelFrame(button_container, text="📊 Estado del Procesamiento", padding=20)
@@ -1537,6 +1549,14 @@ class EnhancedDatabaseDashboard:
         logging.debug("DEBUG: Dashboard.process_selected_files() llamado (PLACEHOLDER - NO DEBERÍA VERSE)")
         import tkinter.messagebox as mb
         mb.showwarning("No conectado", "El método process_selected_files no fue reasignado correctamente")
+
+    def process_selected_files_ia(self):
+        """V6.7.0: Procesa los PDFs seleccionados pasando el OCR completo al LLM
+        para verificar la cobertura del pipeline tradicional. Placeholder - será
+        reasignado por la UI principal."""
+        logging.debug("DEBUG: Dashboard.process_selected_files_ia() llamado (PLACEHOLDER)")
+        import tkinter.messagebox as mb
+        mb.showwarning("No conectado", "El método process_selected_files_ia no fue reasignado correctamente")
 
     def create_export_tab(self):
         """Crear pestaña de exportaciones con visor de archivos"""
