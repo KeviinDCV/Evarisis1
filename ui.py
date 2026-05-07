@@ -7345,42 +7345,59 @@ Informes con malignidad: {malignant_count}"""
     # generación de un reporte separado.
 
     _PROMPT_SYSTEM_IA_OCR = (
-        "Eres analista patológico. Recibirás texto OCR con varios informes IHQ "
-        "concatenados. Cada informe empieza con 'N. peticion : IHQXXXXXX'.\n\n"
-        "TAREA: Para CADA informe IHQ del texto, devolvé en JSON:\n"
-        "  numero_peticion: el código IHQ tal cual aparece (ej: IHQ250001)\n"
-        "  diagnostico: el dx clínico directo de la sección DIAGNÓSTICO\n"
-        "  organo: el órgano de la columna 'Organo' del header\n\n"
-        "REGLA #1 — INCLUÍ TODOS los IHQ del texto. Si el texto tiene 8 IHQ,\n"
-        "el array debe tener 8 entradas. NUNCA omitas IHQ. Si el dx no está\n"
-        "claro, copiá lo que veas en la sección DIAGNÓSTICO tal cual.\n\n"
-        "REGLA #2 — diagnóstico DIRECTO. La sección DIAGNÓSTICO suele empezar\n"
-        "con una frase tipo 'Órgano. Lesión. Biopsia. Estudio de IHQ:' seguida\n"
-        "de la entidad clínica real (en bullets o líneas). Devolvé la entidad,\n"
-        "NO la frase introductoria.\n"
-        "  Ejemplo: 'Mucosa de estomago. Biopsia. Estudio de IHQ:\n"
-        "            - CARCINOMA POCO COHESIVO'\n"
-        "  → diagnostico = 'CARCINOMA POCO COHESIVO'\n\n"
-        "REGLA #3 — órgano DEBE SER SOLO UN ÓRGANO ANATÓMICO en MAYÚSCULAS.\n"
-        "  Sin 'LESION', 'BX', 'TUMOR', 'MUCOSA DE'.\n"
-        "  Sin nombre de PROCEDIMIENTO ('CUADRANTECTOMIA', 'NEFRECTOMIA').\n"
-        "  Sin MODIFICADORES clínicos ('METASTÁSICO', 'INVASIVO').\n"
-        "  Sin idioma extranjero ('ENDOMETRIUM' es latín → escribí 'ENDOMETRIO').\n"
+        "Eres analista patológico. Recibirás texto OCR de UN informe IHQ.\n"
+        "El texto SIEMPRE contiene EXACTAMENTE 1 informe — nunca está vacío.\n"
+        "Devolvé un JSON con 'diagnosticos' = array de EXACTAMENTE 1 entrada.\n"
+        "NUNCA devolvas array vacío. Si no ves dx claro, copiá lo que aparece\n"
+        "en la sección DIAGNÓSTICO tal cual (incluso si es descriptivo).\n\n"
+        "Cada entrada tiene 3 campos:\n\n"
+        "• numero_peticion: el código 'IHQXXXXXX' del header 'N. peticion :'.\n"
+        "  Solo formato 'IHQ' + dígitos. Sin espacios.\n\n"
+        "• diagnostico: la entidad clínica COMPLETA de la sección DIAGNÓSTICO\n"
+        "  (al final del informe, después de 'Órgano. Biopsia. Estudio IHQ:').\n"
+        "  Devolvé la primera línea sustantiva COMPLETA, con calificadores\n"
+        "  ('CON DATOS DE...', 'WHO GRADO X', '(g2, ptc3, v0)', 'p40 POSITIVO').\n"
+        "  Descartá solo bullets que SON sub-items distintos (PATRÓN\n"
+        "  MICROSATELITAL, biomarcadores HER-2: NEG, etc).\n\n"
         "  Ejemplos:\n"
-        "    'LESION ESTOMAGO'         → 'ESTOMAGO'\n"
-        "    'BX MEDULA OSEA'          → 'MEDULA OSEA'\n"
+        "    'CARCINOMA POCO COHESIVO' + '- PATRÓN MICROSATELITAL ESTABLE'\n"
+        "      → 'CARCINOMA POCO COHESIVO'\n"
+        "    'RECHAZO ACTIVO CON DATOS SUGERENTES... (g2, ptc3, v0)'\n"
+        "      → 'RECHAZO ACTIVO CON DATOS SUGERENTES... (g2, ptc3, v0)' (completo)\n"
+        "    'MENINGIOMA MENINGOTELIAL, WHO GRADO 1'\n"
+        "      → 'MENINGIOMA MENINGOTELIAL, WHO GRADO 1' (con grado)\n\n"
+        "  REGLA IMPORTANTE — SALTAR PREÁMBULOS DEL PATÓLOGO:\n"
+        "  Si el dx empieza con frases como 'LOS HALLAZGOS HISTOLÓGICOS Y DE\n"
+        "  INMUNOHISTOQUÍMICA SON COMPATIBLES CON X', 'LOS HALLAZGOS SUGIEREN\n"
+        "  X', 'FAVORECE X', 'LOS HALLAZGOS FAVORECEN X', 'COMPATIBLE CON X',\n"
+        "  extraé SOLO la entidad X (descartá la frase introductoria).\n"
+        "  Ejemplos de stripping:\n"
+        "    'LOS HALLAZGOS COMPATIBLES CON MELANOMA' → 'MELANOMA'\n"
+        "    'LOS HALLAZGOS SUGIEREN UN ADENOCARCINOMA DE TRACTO GENITAL'\n"
+        "      → 'ADENOCARCINOMA DE TRACTO GENITAL'\n"
+        "    'HALLAZGOS COMPATIBLES CON LINFOMA DIFUSO B GRANDES, CENTRO GERMINAL'\n"
+        "      → 'LINFOMA DIFUSO B GRANDES, CENTRO GERMINAL'\n"
+        "    'LOS HALLAZGOS FAVORECEN UN LINFOMA LINFOBLÁSTICO T'\n"
+        "      → 'LINFOMA LINFOBLÁSTICO T'\n"
+        "    'FAVORECE CARCINOMA ESCAMOCELULAR p16+' → mantenelo si 'FAVORECE'\n"
+        "      es parte clínica importante (cuando el patólogo no es definitivo).\n\n"
+        "  EXCEPCIONES — copiá la frase COMPLETA tal cual cuando:\n"
+        "  • El patólogo redirige ('VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO').\n"
+        "  • No hay dx claro pero describe ('TEJIDO SIN REPRESENTACIÓN DE\n"
+        "    PARENQUIMA RENAL', 'CÉLULAS GANGLIONARES PRESENTES').\n\n"
+        "  Copiá palabras EXACTAS del PDF, incluso typos ('CARICNOMA').\n\n"
+        "• organo: UN órgano anatómico en MAYÚSCULAS, derivado del header\n"
+        "  'Organo' de Estudios solicitados.\n"
+        "  Transformaciones:\n"
+        "    'LESION ESTOMAGO'              → 'ESTOMAGO'\n"
+        "    'BX MEDULA OSEA'               → 'MEDULA OSEA'\n"
         "    'CUADRANTECTOMIA MAMA DERECHA' → 'MAMA DERECHA'\n"
-        "    'NEFRECTOMIA RADICAL IZQUIERDA' → 'RIÑON IZQUIERDO'\n"
+        "    'NEFRECTOMIA RADICAL IZQUIERDA'→ 'RIÑON IZQUIERDO'\n"
         "    'GANGLIO PROFUNDO METASTÁSICO' → 'GANGLIO LINFATICO'\n"
-        "    'CUELLO ESTACION 4 Y 5' → 'GANGLIO LINFATICO'\n"
-        "    'MEDULA HUESO'            → 'MEDULA OSEA'\n\n"
-        "REGLA #4 — copiá las palabras EXACTAS del PDF. NO inventes letras.\n\n"
-        "FORMATO JSON OBLIGATORIO — claves exactas en minúscula sin tildes:\n"
-        '{"diagnosticos":[\n'
-        '  {"numero_peticion":"IHQ250001","diagnostico":"...","organo":"..."},\n'
-        '  {"numero_peticion":"IHQ250002","diagnostico":"...","organo":"..."}\n'
-        ']}\n\n'
-        "Devolvé SOLO el JSON, sin markdown, sin comentarios, sin ```json."
+        "    'MEDULA HUESO'                 → 'MEDULA OSEA'\n"
+        "    'ENDOMETRIUM'                  → 'ENDOMETRIO'\n"
+        "  SIN: 'LESION', 'BX', 'TUMOR', 'MUCOSA DE', procedimientos,\n"
+        "  modificadores ('METASTÁSICO', 'INVASIVO'), idiomas extranjeros."
     )
 
     def _process_selected_files_ia(self):
@@ -7689,6 +7706,8 @@ Informes con malignidad: {malignant_count}"""
             r'^LOS\s+HALLAZGOS\s+SON\s+(?:COMPATIBLES?\s+CON|SUGESTIVOS\s+DE)\s+',
             r'^HALLAZGOS\s+CONSISTENTES\s+CON\s+',
             r'^HALLAZGOS\s+(?:DE\s+)?INMUNOHISTOQU[ÍI]MIC[OA]\s+COMPATIBLES?\s+CON\s+',
+            # V6.7.14 IHQ250008: variante con FAVORECEN
+            r'^(?:LOS\s+)?HALLAZGOS\s+(?:DE\s+)?INMUNOHISTOQU[ÍI]MIC[OA]\s+FAVORECEN\s+(?:UNA?\s+)?',
             # V6.7.6 — Variante "HALLAZGOS DE MORFOLOGIA E INMUNOHISTOQUIMICA
             # COMPATIBLES CON" (sustantivo MORFOLOGIA en vez de adjetivo)
             r'^HALLAZGOS\s+DE\s+MORFOLOG[ÍI]A\s+(?:E\s+|Y\s+(?:DE\s+)?)INMUNOHISTOQU[ÍI]MIC[OA]\s+COMPATIBLES?\s+CON\s+',
@@ -7727,6 +7746,8 @@ Informes con malignidad: {malignant_count}"""
         (re.compile(r'\bCERVICAL\b', re.IGNORECASE), 'CERVIX'),
         (re.compile(r'\bHEP[ÁA]TIC[OA]\b', re.IGNORECASE), 'HIGADO'),
         (re.compile(r'\b[OÓ]SE[OA]\b', re.IGNORECASE), 'HUESO'),
+        # V6.7.14 IHQ250050: "NASOFARINGEA" (adjetivo) → "NASOFARINGE"
+        (re.compile(r'\bNASOFAR[ÍI]NGE[OA]\b', re.IGNORECASE), 'NASOFARINGE'),
     ]
 
     # V6.7.6 — Diccionario de typos comunes del LLM detectados en producción.
@@ -7749,6 +7770,9 @@ Informes con malignidad: {malignant_count}"""
         (re.compile(r'\bARQUTIECTURA\b', re.IGNORECASE), 'ARQUITECTURA'),
         # V6.7.12 — Typos detectados con nemotron-3-nano-omni
         (re.compile(r'\bHIPOFISIA\b', re.IGNORECASE), 'HIPOFISIS'),
+        # V6.7.16 — Typos detectados con gpt-oss-20b (truncamientos del modelo)
+        (re.compile(r'\bMEDIANTE\b', re.IGNORECASE), 'MEDIASTINO'),
+        (re.compile(r'\bMEDIASTI\b', re.IGNORECASE), 'MEDIASTINO'),
     ]
     # V6.7.12 — Bullet-prefix del LLM. Algunos modelos (nemotron) preservan
     # el guión inicial cuando el dx viene como bullet en el PDF.
@@ -7850,6 +7874,21 @@ Informes con malignidad: {malignant_count}"""
             # "Pulmón izquierdo" en mixed-case)
             org = org.upper()
 
+            # V6.7.16 — Quitar tildes en órganos (HÍGADO → HIGADO,
+            # PULMÓN → PULMON, RIÑÓN → RINON pero mantener Ñ → Ñ).
+            # Solo elimina acentos en vocales (Á É Í Ó Ú), preserva Ñ.
+            import unicodedata as _ud
+            _normalized = []
+            for ch in org:
+                if ch == 'Ñ':
+                    _normalized.append(ch)
+                else:
+                    _normalized.append(
+                        ''.join(c for c in _ud.normalize('NFD', ch)
+                                if _ud.category(c) != 'Mn')
+                    )
+            org = ''.join(_normalized)
+
             if not org:
                 org = (organo or "").strip().upper()
 
@@ -7876,6 +7915,20 @@ Informes con malignidad: {malignant_count}"""
                 raw_corto = self._truncar_raw(original_dx, 120)
                 return (f"(REVISAR DX) {raw_corto}", org)
 
+        # V6.7.14 IHQ250040: si el dx empieza con frase introductoria
+        # tipo "Región/Mucosa/Tumor X. Lesión. [Resección/Biopsia]" sin
+        # un "Estudio IHQ:" en medio, strippear hasta encontrar HALLAZGOS
+        # o la primera entidad clínica en MAYÚSCULAS.
+        m_intro = re.match(
+            r'^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+\.\s+[A-Za-zÁÉÍÓÚáéíóúñÑ]+\.\s+'
+            r'(?:Resecci[óo]n|Biopsia|Excisional|Cuadrantectom[íi]a|Mastectom[íi]a|Nefrectom[íi]a)\s+',
+            d
+        )
+        if m_intro:
+            despues = d[m_intro.end():].strip()
+            if despues and len(despues) > 3:
+                d = despues
+
         # 2. Strippear preámbulos del patólogo
         for pat in self._IA_PREAMBULOS_DX:
             d_new = pat.sub('', d, count=1)
@@ -7884,8 +7937,12 @@ Informes con malignidad: {malignant_count}"""
                 d = self._IA_ARTICULOS_COLGANTES.sub('', d, count=1).strip()
                 break
 
-        # 3. Limpiar punto final + espacios sobrantes
+        # 3. Limpiar puntuación final + espacios sobrantes
+        # V6.7.14: incluir ':' y "CON" colgante (cuando LLM trunca)
         d = d.strip().rstrip('.').strip()
+        # Si termina con ":" o "CON:" o ", CON" colgante, quitar
+        d = re.sub(r'[\s,]*(?:CON)?\s*:\s*$', '', d, flags=re.IGNORECASE).strip()
+        d = re.sub(r'[,\s]+CON\s*$', '', d, flags=re.IGNORECASE).strip()
 
         # 4. V6.7.6 — Aplicar correcciones de typos del LLM
         d = self._aplicar_correcciones_typos(d)
@@ -8065,14 +8122,17 @@ Informes con malignidad: {malignant_count}"""
 
         client = LMStudioClient()
 
-        # V6.7.1 — Chunking por LÍMITES DE IHQ (no por páginas).
-        # V6.7.8 — Reducido a 20k chars (antes 30k) porque gpt-oss-20b se
-        # confundía con chunks grandes y omitía IHQ. Con chunks más
-        # pequeños (~5-7 IHQ por chunk) el LLM responde más confiablemente.
-        TARGET_CHARS_PER_CHUNK = 20000
+        # V6.7.13 — Chunking 1 IHQ = 1 chunk = 1 llamada al LLM.
+        # Cambio arquitectural: en vez de agrupar 5-7 IHQ por chunk,
+        # cada IHQ se procesa individualmente. Más llamadas (~50 vs 10)
+        # pero cada respuesta del LLM es trivial (1 dx + 1 órgano), lo
+        # que elimina alucinaciones, omisiones y confusiones entre IHQs.
+        # Tradeoff: ~15-25 min por PDF (vs 5-10 min antes) pero calidad
+        # esperada de ~99% (vs ~95% con chunking grupal).
 
         def _split_by_ihq_boundaries(texto: str):
-            """Divide texto OCR en chunks donde cada IHQ queda íntegro."""
+            """Divide texto OCR en 1 chunk por IHQ. Cada chunk contiene
+            UN solo informe IHQ completo (header + descripciones + dx)."""
             header_pat = _re.compile(
                 r'N\.?\s*petici[oó]n\s*:?\s*(IHQ\s*\d{5,7})',
                 _re.IGNORECASE
@@ -8082,26 +8142,12 @@ Informes con malignidad: {malignant_count}"""
             if not matches:
                 logging.warning(
                     "[IA] No se detectaron headers 'N. peticion : IHQ...' — "
-                    "usando fallback por páginas"
+                    "fallback: texto entero como un chunk"
                 )
-                page_marker = _re.compile(r'\n--- PÁGINA \d+ ---\n')
-                parts = page_marker.split(texto)
-                if not parts:
-                    return [texto] if texto.strip() else []
-                chunks = []
-                current = ""
-                for p in parts:
-                    if current and len(current) + len(p) > TARGET_CHARS_PER_CHUNK:
-                        chunks.append(current)
-                        current = p
-                    else:
-                        current += p
-                if current:
-                    chunks.append(current)
-                return chunks
+                return [texto] if texto.strip() else []
 
             # Detectar boundaries por cambio de número IHQ
-            # (un mismo IHQ puede repetir header en cada página de su informe)
+            # (un mismo IHQ repite header en cada página de su informe)
             def _normalizar_ihq(s):
                 return _re.sub(r'\s+', '', s).upper()
 
@@ -8117,36 +8163,16 @@ Informes con malignidad: {malignant_count}"""
                     last_ihq = ihq_num
             boundaries.append(len(texto))
 
-            # Segmentos = un IHQ completo cada uno
-            segments = []
+            # 1 segmento = 1 IHQ completo = 1 chunk
+            chunks = []
             for i in range(len(boundaries) - 1):
                 seg = texto[boundaries[i]:boundaries[i + 1]]
                 if seg.strip():
-                    segments.append(seg)
-
-            # Agrupar segmentos en chunks de ~TARGET_CHARS_PER_CHUNK
-            # SIN partir un segmento (cada IHQ queda completo)
-            chunks = []
-            current = ""
-            for seg in segments:
-                if len(seg) > TARGET_CHARS_PER_CHUNK:
-                    # IHQ enorme: va solo en su chunk
-                    if current:
-                        chunks.append(current)
-                        current = ""
                     chunks.append(seg)
-                    continue
-                if current and len(current) + len(seg) > TARGET_CHARS_PER_CHUNK:
-                    chunks.append(current)
-                    current = seg
-                else:
-                    current += seg
-            if current:
-                chunks.append(current)
 
             logging.info(
-                f"[IA] Chunking IHQ-aware: {len(matches)} headers detectados → "
-                f"{len(segments)} IHQ únicos → {len(chunks)} chunks"
+                f"[IA] Chunking 1-IHQ-por-chunk: {len(matches)} headers → "
+                f"{len(chunks)} chunks (cada uno = 1 IHQ)"
             )
             return chunks
 
@@ -8222,11 +8248,53 @@ Informes con malignidad: {malignant_count}"""
             errores_chunks = []
 
             # V6.7.7 — Helper de llamada al LLM con retry automático.
-            # V6.7.10 — max_tokens reducido a 4000 (antes 8000). Razón:
-            # un chunk de ~5-7 IHQ produce ~1500-2000 tokens de output.
-            # 4000 da margen sin que el LLM tarde 4-5 min generando.
-            # Si falla, reintenta con max_tokens aún más bajo (2500).
-            def _llamar_llm_con_retry(chunk_text, intento_max_tokens=4000):
+            # V6.7.13 — max_tokens reducido a 800 (antes 4000). Razón:
+            # ahora cada chunk = 1 solo IHQ → output esperado ~100-200 tokens
+            # (1 entrada de JSON con 3 campos). 800 da margen 4x sin que
+            # el LLM gaste tiempo generando reasoning innecesario.
+            # V6.7.15 — Pasar json_schema (más robusto que json_object).
+            # gpt-oss-20b en LM Studio rechaza json_object pero acepta
+            # json_schema, y con strict=true fuerza al modelo a generar
+            # exactamente la estructura esperada (sin razonamiento previo).
+            # V6.7.16 — minItems/maxItems = 1: cada chunk contiene
+            # exactamente 1 IHQ. Forzar al modelo a extraer 1 entrada
+            # (antes devolvía [] cuando no encontraba dx claro y se rendía).
+            _IA_JSON_SCHEMA = {
+                "name": "extraccion_ihq",
+                "strict": True,
+                "schema": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "properties": {
+                        "diagnosticos": {
+                            "type": "array",
+                            "minItems": 1,
+                            "maxItems": 1,
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": False,
+                                "properties": {
+                                    "numero_peticion": {"type": "string"},
+                                    "diagnostico": {"type": "string"},
+                                    "organo": {"type": "string"},
+                                },
+                                "required": ["numero_peticion", "diagnostico", "organo"],
+                            },
+                        }
+                    },
+                    "required": ["diagnosticos"],
+                },
+            }
+
+            # V6.7.17 — max_tokens aumentado de 800 a 1200 (intento 1) y de
+            # 1500 a 2000 (intento 2). Razón: dx con scoring Banff completo
+            # (RECHAZO ACTIVO con clasificaciones g/ptc/i/t/v) pueden requerir
+            # ~1000-1200 tokens. Caso testigo: IHQ250100.
+            # V6.7.18 — Aumentado a 1500/2500 para cubrir descripciones
+            # extensas de médula ósea (celularidad, relación M/E, blastos)
+            # y dx prostáticos con Gleason + grupo + cores + %.
+            # Casos testigo: IHQ250160 (médula), IHQ250178 (próstata).
+            def _llamar_llm_con_retry(chunk_text, intento_max_tokens=1500):
                 last_error = None
                 for intento in (1, 2):
                     try:
@@ -8237,6 +8305,7 @@ Informes con malignidad: {malignant_count}"""
                             temperature=0.1,
                             max_tokens=max_tok,
                             formato_json=True,
+                            json_schema=_IA_JSON_SCHEMA,
                         )
                         if resp.get("exito"):
                             return resp, None

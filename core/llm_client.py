@@ -56,6 +56,7 @@ def _extraer_json_robusto(texto: str) -> Optional[Union[Dict, List]]:
     """
     Extrae JSON de una respuesta LLM tolerando:
     - Bloques de razonamiento <think>...</think> (Qwen3, DeepSeek, etc.)
+    - Tokens harmony de gpt-oss (<|channel|>analysis|...|<|message|>...<|end|>)
     - Prefacios "Thinking Process:", "Reasoning:", etc.
     - Code fences ```json ... ```
     - Texto libre alrededor del JSON
@@ -73,6 +74,26 @@ def _extraer_json_robusto(texto: str) -> Optional[Union[Dict, List]]:
     t = _re.sub(r'<think>.*?</think>', '', t, flags=_re.DOTALL | _re.IGNORECASE).strip()
     # También si quedó <think> sin cierre, descartar hasta el final del bloque
     t = _re.sub(r'<think>.*', '', t, flags=_re.DOTALL | _re.IGNORECASE).strip()
+
+    # V6.7.15 — Limpiar tokens harmony de gpt-oss-20b. Cuando LM Studio no
+    # parsea bien el chat template, el reasoning channel puede leakear como:
+    #   <|channel|>analysis<|message|>...thinking...<|end|>
+    #   <|channel|>final<|message|>{"diagnosticos":...}<|return|>
+    # Quedarnos solo con el contenido del channel "final".
+    final_match = _re.search(
+        r'<\|channel\|>final<\|message\|>(.*?)(?:<\|return\|>|<\|end\|>|$)',
+        t, _re.DOTALL,
+    )
+    if final_match:
+        t = final_match.group(1).strip()
+    else:
+        # Si no hay final channel pero hay tokens harmony, quitarlos todos
+        t = _re.sub(r'<\|[^|]*\|>', '', t).strip()
+        # También quitar bloques analysis/commentary completos
+        t = _re.sub(
+            r'<\|channel\|>(?:analysis|commentary)<\|message\|>.*?(?:<\|end\|>|<\|channel\|>)',
+            '', t, flags=_re.DOTALL,
+        ).strip()
 
     # 2) Intentar bloque fenced ```json ... ``` o ``` ... ```
     m = _re.search(r'```(?:json)?\s*(\{.*?\}|\[.*?\])\s*```', t, _re.DOTALL)
@@ -110,7 +131,7 @@ def _extraer_json_robusto(texto: str) -> Optional[Union[Dict, List]]:
                         candidatos.append(t[idx:i + 1])
                         break
             idx = t.find(abre, idx + 1)
-            if len(candidatos) > 20:
+            if len(candidatos) > 50:
                 break
 
     for c in candidatos:
@@ -342,12 +363,17 @@ class LMStudioClient:
         temperature: float = 0.1,
         max_tokens: int = 2000,
         formato_json: bool = False,
-        enable_reasoning: bool = False
+        enable_reasoning: bool = False,
+        json_schema: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
         """
         Genera una completación usando proveedores gratuitos con fallback automático.
 
         Flujo: Gemini → Groq → OpenRouter (si uno se agota, prueba el siguiente)
+
+        json_schema: Si se pasa, fuerza al LLM a devolver JSON que cumpla ese
+        esquema (más robusto que formato_json, especialmente con gpt-oss-20b
+        en LM Studio que no acepta json_object).
         """
         if not self._proveedores_disponibles:
             secciones = "\n".join(
@@ -371,7 +397,8 @@ class LMStudioClient:
         errores_proveedores = []
         for proveedor in self._proveedores_disponibles:
             resultado = self._intentar_proveedor(
-                proveedor, messages, temperature, max_tokens, formato_json
+                proveedor, messages, temperature, max_tokens, formato_json,
+                json_schema=json_schema,
             )
 
             if resultado.get("exito"):
@@ -416,7 +443,8 @@ class LMStudioClient:
         messages: List[Dict],
         temperature: float,
         max_tokens: int,
-        formato_json: bool
+        formato_json: bool,
+        json_schema: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
         """Intenta completar con un proveedor específico, ciclando entre sus modelos"""
         endpoint = proveedor["endpoint"]
@@ -443,7 +471,19 @@ class LMStudioClient:
         payload["model"] = modelos[0]
 
         # Forzar salida JSON cuando se pida (LM Studio / OpenAI compatible)
-        if formato_json:
+        # V6.7.15 — Si se pasa json_schema, usarlo (más robusto, soportado por
+        # gpt-oss-20b en LM Studio que rechaza json_object). Si no, fallback a
+        # json_object para compatibilidad con providers cloud.
+        if json_schema:
+            payload["response_format"] = {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": json_schema.get("name", "response"),
+                    "strict": json_schema.get("strict", True),
+                    "schema": json_schema["schema"],
+                },
+            }
+        elif formato_json:
             payload["response_format"] = {"type": "json_object"}
 
         # Desactivar "thinking mode" en modelos de razonamiento (Qwen3, etc.)

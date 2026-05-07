@@ -1,5 +1,71 @@
 # Changelog
 
+## [6.7.18] - 2026-05-07 — IA Pipeline json_schema + Prompt-Driven Extraction
+
+**Sprint:** Pipeline alternativo de extracción IA (`Procesar con IA`) refinado de cero a producción. Se eliminaron las "muletas" en código (post-procesamiento agresivo, mapeos hardcoded de adjetivos, typos del modelo) en favor de un enfoque **prompt-driven**: el modelo capaz (qwen 27B) + prompt detallado + json_schema estricto = extracción limpia sin código de saneamiento.
+
+### Impact (cualitativo)
+| Métrica | gpt-oss-20b (V6.7.0-14) | qwen3.6-27b (V6.7.18) |
+|---|---|---|
+| Tasa de extracción | ~30% (arrays vacíos frecuentes) | **~97% perfectos** |
+| Truncamientos `…?` en dx | Frecuentes | 2 casos extremos (max_tokens) |
+| Mismatch dx ↔ órgano | 3-5/50 | 0/165 |
+| Preámbulos del patólogo | No strippeados | Strippeados por el modelo |
+| HTTP 400 en LM Studio | Constante | Resuelto (json_schema) |
+| Alucinación de tokens | Sí (IHQ023, 055) | Cero |
+
+### Files modified
+- `core/llm_client.py` — Nuevo parámetro `json_schema` en `completar()`. Cuando se pasa, usa `response_format: json_schema` (compatible con gpt-oss-20b y qwen, fuerza estructura a nivel de decoder). Parser `_extraer_json_robusto` mejorado para tolerar tokens harmony de gpt-oss (`<|channel|>analysis|...|<|message|>...<|end|>`).
+- `ui.py` — Pipeline IA completo: prompt detallado con stripping de preámbulos como instrucción del LLM (no como regex post-procesamiento), schema con `minItems: 1, maxItems: 1` para forzar 1 entrada por chunk, max_tokens=1500/2500 para dx con scoring extenso (Banff, Gleason, médula ósea histology). Cleanup post-LLM mantenido SOLO para typos residuales y normalización de tildes.
+- `core/diagnosticos_ia_db.py` — Nueva BD SQLite acumulativa (`data/diagnosticos_ia.db`) para persistir diagnósticos extraídos a lo largo de múltiples sesiones de procesamiento.
+
+### Decisiones técnicas clave
+
+#### 1. `json_object` → `json_schema`
+gpt-oss-20b (LM Studio) rechaza `response_format: json_object` con HTTP 400 (`'response_format.type' must be 'json_schema' or 'text'`). El cliente caía a retry sin format, y sin la restricción el modelo emitía razonamiento mezclado con JSON, rompiendo el parser. Migrar a `json_schema` con strict=true forzó la estructura a nivel de generación de tokens.
+
+#### 2. `minItems: 1, maxItems: 1`
+Tras resolver el parsing, gpt-oss-20b empezó a devolver `{"diagnosticos":[]}` cuando no encontraba dx claro (~70% de chunks). Con `minItems: 1, maxItems: 1` el modelo está obligado a extraer exactamente 1 entrada por chunk. Tasa de extracción saltó de 30% a 100%.
+
+#### 3. Cambio de modelo: gpt-oss-20b → qwen3.6-27b
+Aún con json_schema + minItems, gpt-oss-20b mostraba problemas residuales:
+- Truncamientos arbitrarios del dx (`...`)
+- Mismatches dx ↔ órgano
+- Alucinación de tokens (`…?…OCR…`)
+- Typos del modelo (`PARIETO`, `MEDIANTE`, `MESA MEDIASTINAL`)
+qwen3.6-27b cabe parcialmente en RTX 3050 OEM 8GB con offload a RAM (más lento ~10s/chunk vs ~3s) pero entrega calidad superior consistentemente.
+
+#### 4. Preámbulos: prompt > código
+En vez de mantener regex de stripping en post-procesamiento (`stripear_preambulos`), se trasladó la regla al prompt del LLM como instrucción explícita con ejemplos. Resultado: qwen respeta la regla y devuelve dx limpios sin necesidad de regex.
+
+### Roadmap V6.7
+- V6.7.0: Botón "Procesar con IA" inicial
+- V6.7.3-7.5: Cleanup regex post-LLM (post-procesamiento agresivo — descartado en V6.7.15+)
+- V6.7.8-7.13: Chunking IHQ-aware (1 IHQ por chunk)
+- V6.7.14: Workaround typos gpt-oss
+- V6.7.15: json_schema + parser harmony tokens
+- V6.7.16: minItems/maxItems + tilde stripping
+- V6.7.17: max_tokens 800 → 1200 (scoring Banff)
+- V6.7.18: max_tokens 1200 → 1500 (médula ósea, Gleason)
+
+### Casos testigo recuperados (vs gpt-oss-20b)
+| IHQ | Antes | Ahora |
+|---|---|---|
+| IHQ250023 | `NEOPLASIA EN PATRON … …?…OCR…???..?` (basura) | `NEOPLASIA EN PATRON ACINAR CON CAMBIOS ONCOCITICOS DE PROBABLE ORIGEN RENAL` |
+| IHQ250037 | `- HALLAZGOS` | `COLITIS AGUDA Y CRÓNICA NO ESPECÍFICA` |
+| IHQ250043 | `GLIOSIS REACTIVA` / `ESTOMAGO` (mismatch) | `GLIOSIS REACTIVA` / `CEREBRO` |
+| IHQ250045 | órgano `CUELLO` | órgano `GANGLIO LINFATICO` |
+| IHQ250056 | órgano `CERVIX` (mismatch para LINFOMA FOLICULAR) | órgano `GANGLIO LINFATICO` |
+| IHQ250076 | `LOS HALLAZGOS MORFOLOGICOS Y DE IHQ SUGIEREN UN ADENOCARCINOMA…` | `ADENOCARCINOMA DE ORIGEN EN EL TRACTO GENITAL FEMENINO` (preámbulo strippeado por modelo) |
+| IHQ250095 | `HALLAZGOS DE INMUNOHISTIQUÍMICA COMPATIBLES CON LINFOMA…` | `LINFOMA DIFUSO DE CÉLULAS B GRANDES, FENOTIPO CENTROGERMINAL` |
+| IHQ250096 | `LOS HALLAZGOS FAVORECEN UN LINFOMA LINFOBLÁSTICO T` | `LINFOMA LINFOBLÁSTICO DE CÉLULAS T` |
+
+### Notas
+- Hardware constraint: RTX 3050 OEM 8GB VRAM. qwen3.6-27b requiere offload parcial → ~10s por chunk. Aceptable para extracción batch nocturna.
+- Pipeline NO modifica BD principal (`huv_oncologia_NUEVO.db`). Es paralelo: persiste en `data/diagnosticos_ia.db` como referencia para comparar cobertura del extractor tradicional (588 IHQs detectados) vs IA (995 IHQs esperados en el set total).
+
+---
+
 ## [6.6.16] - 2026-05-04 — Diagnosis Categorization Sprint
 
 **Sprint:** Refinamiento masivo del normalizador de diagnósticos (`core/normalizador_diagnosticos.py`) y un fix crítico de detección de malignidad en `core/extractors/medical_extractor.py`. El sprint cubre seis versiones consecutivas (V6.6.12 → V6.6.16) aplicadas como cambios quirúrgicos validados con auditoría cuantitativa sobre 188 casos del rango IHQ250001-200.

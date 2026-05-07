@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.6.16",
-    "version_name": "Diagnosis Categorization Sprint",
-    "build_date": "04/05/2026",
-    "build_number": "202605040949",
+    "version": "6.7.18",
+    "version_name": "IA Pipeline json_schema + Prompt-Driven",
+    "build_date": "07/05/2026",
+    "build_number": "202605071400",
     "release_type": "Stable",
-    "codename": "Smart Validation",
+    "codename": "No-Crutches Extraction",
 }
 
 # Información del equipo de desarrollo
