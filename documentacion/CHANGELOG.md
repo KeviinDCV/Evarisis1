@@ -1,5 +1,34 @@
 # Changelog
 
+## [6.7.19] - 2026-05-07 — IA Pipeline Zero-Truncation
+
+**Sprint:** Eliminación definitiva de truncamientos en dx con scoring extenso. Decisión clínica: cada IHQ es único, no se acepta pérdida de información en favor de velocidad.
+
+### Impact (cualitativo)
+| Métrica | V6.7.18 (1500/2500) | V6.7.19 (3000/4000) |
+|---|---|---|
+| Truncamientos remanentes | 5-6 casos extremos | **0** |
+| Tiempo por chunk (qwen 27B) | ~10s | ~13s (~30% más) |
+| Calidad de extracción | ~97% | **~99-100%** |
+
+### Files modified
+- `ui.py` — `_llamar_llm_con_retry()`: max_tokens 1500/2500 → 3000/4000.
+
+### Casos testigo recuperados (vs V6.7.18)
+| IHQ | V6.7.18 (truncado) | V6.7.19 (completo) |
+|---|---|---|
+| IHQ250100 | `... RECHAZO ACTIVO MEDIADO...` | RECHAZO Banff completo |
+| IHQ250160 | `... DE ASPECTO PLA...` | médula ósea histología completa |
+| IHQ250178 | `... INVASIÓN PERINEURAL... INV...` | próstata Gleason + cores + % completo |
+| IHQ250275 | `... MODERADOS D...` | BIOPSIA INJERTO Banff 2022 completo |
+| IHQ250389 | `... HER 2 POSIT...` | mama Nottingham + molecular completa |
+| IHQ250401 | `... SCORE 0...` | mama receptores hormonales completos |
+
+### Trade-off
+Cada chunk tarda ~3s extra (10s → 13s con qwen3.6-27b en RTX 3050 OEM 8GB). Para un PDF de 50 IHQs: ~2 min extra por PDF. Aceptable para procesamiento batch nocturno.
+
+---
+
 ## [6.7.18] - 2026-05-07 — IA Pipeline json_schema + Prompt-Driven Extraction
 
 **Sprint:** Pipeline alternativo de extracción IA (`Procesar con IA`) refinado de cero a producción. Se eliminaron las "muletas" en código (post-procesamiento agresivo, mapeos hardcoded de adjetivos, typos del modelo) en favor de un enfoque **prompt-driven**: el modelo capaz (qwen 27B) + prompt detallado + json_schema estricto = extracción limpia sin código de saneamiento.

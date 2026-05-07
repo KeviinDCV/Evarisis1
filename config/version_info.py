@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.7.18",
-    "version_name": "IA Pipeline json_schema + Prompt-Driven",
+    "version": "6.7.19",
+    "version_name": "IA Pipeline Zero-Truncation",
     "build_date": "07/05/2026",
-    "build_number": "202605071400",
+    "build_number": "202605071600",
     "release_type": "Stable",
-    "codename": "No-Crutches Extraction",
+    "codename": "Every IHQ Matters",
 }
 
 # Información del equipo de desarrollo
