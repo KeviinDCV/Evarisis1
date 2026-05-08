@@ -8709,6 +8709,12 @@ Informes con malignidad: {malignant_count}"""
                     )
 
                 # Tabla en vivo: pintar diagnósticos nuevos
+                # V6.7.20 — Mostrar dx COMPLETO en la tabla (antes truncaba
+                # a 200 chars + "..."). El LLM ya extrae todo correctamente
+                # y la BD guarda completo; el truncamiento visual hacía
+                # parecer que la extracción estaba rota cuando no lo estaba.
+                # Casos testigo recuperados visualmente: IHQ250100 (262 chars),
+                # IHQ250160 (222 chars), IHQ250178 (235 chars).
                 live = state.get("live_diagnosticos", [])
                 already_painted = self._ia_diagnosticos_pintados
                 new_count = len(live) - already_painted
@@ -8716,8 +8722,6 @@ Informes con malignidad: {malignant_count}"""
                     for entry in live[already_painted:]:
                         ihq = entry.get("numero_peticion", "")
                         dx = (entry.get("diagnostico", "") or "").replace("\n", " ")
-                        if len(dx) > 200:
-                            dx = dx[:200] + "..."
                         organo = entry.get("organo", "")
                         self._ia_treeview.insert(
                             "", "end", values=(ihq, dx, organo)
