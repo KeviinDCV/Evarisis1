@@ -1,4 +1,4 @@
-"""BD SQLite dedicada para acumular diagnósticos extraídos por la IA.
+"""BD dedicada para acumular diagnósticos extraídos por la IA.
 
 V6.7.0 — Pipeline alternativo: el botón "🤖 Procesar con IA" pasa el OCR
 completo de cada PDF al LLM, que identifica todos los IHQ presentes con
@@ -9,9 +9,14 @@ V6.8.0 — Schema expandido a 184 columnas (todas las de la BD principal).
 La IA extrae el caso COMPLETO con todos los biomarcadores. Si un campo
 no aparece en el informe, se guarda "N/A".
 
-Esta BD es PARALELA a la BD principal `huv_oncologia_NUEVO.db` — no la
-modifica ni la reemplaza. Sirve como referencia para comparar lo que el
-extractor tradicional capturó vs lo que el LLM detecta.
+V6.9.0 — Soporte MySQL/MariaDB via db_adapter para compartir datos en
+red LAN del HUV (multi-usuario). Si config.ini tiene tipo=mysql, todas
+las operaciones van a la tabla `diagnosticos_ia` dentro de la misma BD
+`huv_oncologia`. Si tipo=sqlite, sigue usando el archivo .db legacy.
+
+Esta tabla es PARALELA a `informes_ihq` (principal del Visualizador) —
+no la modifica ni la reemplaza. Sirve como histórico/audit de lo que la
+IA detectó por separado.
 """
 
 from __future__ import annotations
@@ -23,8 +28,33 @@ from typing import Optional, Dict, Any
 
 from core.columnas_huv_ia import COLUMNAS_IA
 
+# V6.9.0 — Adapter para soportar MySQL/SQLite transparentemente
+try:
+    from core.db_adapter import (
+        get_connection as _adapter_get_connection,
+        cursor_ctx as _adapter_cursor,
+        dialect as _adapter_dialect,
+        quote_ident as _adapter_q,
+        get_existing_columns as _adapter_existing_cols,
+        add_column_if_missing as _adapter_add_col,
+    )
+    _ADAPTER_AVAILABLE = True
+except Exception as _e:
+    _ADAPTER_AVAILABLE = False
+    logging.warning(f"[diagnosticos_ia_db] db_adapter no disponible: {_e}")
+
+
+def _use_mysql() -> bool:
+    if not _ADAPTER_AVAILABLE:
+        return False
+    try:
+        return _adapter_dialect() == "mysql"
+    except Exception:
+        return False
+
 
 _DB_PATH = os.path.join(os.getcwd(), "data", "diagnosticos_ia.db")
+_TABLE_NAME = "diagnosticos_ia"
 
 # Columnas extra (metadata del proceso IA, no vienen del LLM)
 _META_COLUMNS = [
@@ -45,14 +75,68 @@ def _quote_col(col: str) -> str:
     return f'"{safe}"'
 
 
+def _init_db_mysql() -> str:
+    """V6.9.0 — Crea tabla diagnosticos_ia en MySQL/MariaDB."""
+    col_defs = []
+    for col in COLUMNAS_IA:
+        quoted = _adapter_q(col)
+        if col == "Numero de caso":
+            col_defs.append(f"{quoted} VARCHAR(50) NOT NULL PRIMARY KEY")
+        else:
+            col_defs.append(f"{quoted} TEXT")
+    col_defs.append("`pdf_origen` VARCHAR(255)")
+    col_defs.append("`fecha_procesamiento` VARCHAR(50)")
+    col_defs.append("`modelo_utilizado` VARCHAR(100)")
+    col_defs.append("`ocr_caracteres_pdf` INT")
+
+    ddl = (
+        f"CREATE TABLE IF NOT EXISTS {_adapter_q(_TABLE_NAME)} (\n  "
+        + ",\n  ".join(col_defs)
+        + "\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"
+    )
+
+    with _adapter_cursor() as (conn, cur):
+        cur.execute(ddl)
+        # Índice por pdf_origen (prefijo de 100 chars)
+        try:
+            cur.execute(
+                f"CREATE INDEX idx_pdf_origen ON {_adapter_q(_TABLE_NAME)}(`pdf_origen`(100))"
+            )
+        except Exception:
+            pass  # ya existe
+        conn.commit()
+
+    # Migración soft: agregar columnas que falten
+    existing = _adapter_existing_cols(_TABLE_NAME)
+    expected = set(COLUMNAS_IA) | set(_META_COLUMNS)
+    missing = expected - existing
+    for col in missing:
+        col_type = "VARCHAR(50)" if col == "Numero de caso" else "TEXT"
+        if col == "ocr_caracteres_pdf":
+            col_type = "INT"
+        elif col in ("pdf_origen",):
+            col_type = "VARCHAR(255)"
+        elif col in ("fecha_procesamiento",):
+            col_type = "VARCHAR(50)"
+        elif col in ("modelo_utilizado",):
+            col_type = "VARCHAR(100)"
+        _adapter_add_col(_TABLE_NAME, col, col_type)
+
+    logging.info(f"[diagnosticos_ia_db MySQL] Tabla {_TABLE_NAME} preparada")
+    return f"mysql://{_TABLE_NAME}"
+
+
 def init_db() -> str:
     """Crea la BD y la tabla con TODAS las columnas (184 + metadata).
-    Idempotente. Si la tabla ya existe con esquema antiguo, agrega las
-    columnas faltantes con ALTER TABLE.
+    Idempotente. V6.9.0 — soporta MySQL via adapter.
 
     Returns:
-        Ruta absoluta de la BD.
+        Ruta absoluta de la BD (SQLite) o identificador MySQL.
     """
+    if _use_mysql():
+        return _init_db_mysql()
+
+    # === Flujo SQLite legacy ===
     db_path = _get_db_path()
     os.makedirs(os.path.dirname(db_path), exist_ok=True)
     conn = sqlite3.connect(db_path)
@@ -111,13 +195,11 @@ def save_caso_completo(
 ) -> bool:
     """Persiste un caso IHQ completo (184 columnas) en la BD.
 
-    INSERT OR REPLACE por "Numero de caso". Si el mismo IHQ ya existe,
-    sobrescribe.
+    UPSERT por "Numero de caso". Si el mismo IHQ ya existe, sobrescribe.
+    V6.9.0 — Soporta MySQL via adapter.
 
     Args:
-        datos_columnas: dict con keys = nombres de columnas BD originales
-                        (ver COLUMNAS_IA), values = strings extraídos del LLM.
-                        Si falta una columna, se guarda "N/A".
+        datos_columnas: dict con keys = nombres de columnas BD originales.
         pdf_origen: nombre del PDF de origen.
         fecha_procesamiento: ISO timestamp.
         modelo_utilizado: nombre del modelo LLM usado.
@@ -143,9 +225,31 @@ def save_caso_completo(
     valores.append(modelo_utilizado or "")
     valores.append(int(ocr_caracteres_pdf) if ocr_caracteres_pdf is not None else 0)
 
+    # === V6.9.0: branch MySQL ===
+    if _use_mysql():
+        try:
+            cols_quoted = [_adapter_q(c) for c in cols_finales]
+            placeholders = ", ".join(["%s"] * len(cols_finales))
+            update_parts = [
+                f"{_adapter_q(c)} = VALUES({_adapter_q(c)})"
+                for c in cols_finales if c != "Numero de caso"
+            ]
+            sql = (
+                f"INSERT INTO {_adapter_q(_TABLE_NAME)} "
+                f"({', '.join(cols_quoted)}) VALUES ({placeholders}) "
+                f"ON DUPLICATE KEY UPDATE {', '.join(update_parts)}"
+            )
+            with _adapter_cursor() as (conn, cur):
+                cur.execute(sql, valores)
+                conn.commit()
+            return True
+        except Exception as e:
+            logging.error(f"[diagnosticos_ia_db MySQL] Error guardando {numero_caso}: {e}")
+            return False
+
+    # === SQLite legacy ===
     placeholders = ",".join(["?"] * len(cols_finales))
     cols_sql = ",".join(_quote_col(c) for c in cols_finales)
-
     conn = sqlite3.connect(_get_db_path())
     try:
         conn.execute(
@@ -190,7 +294,15 @@ def save_diagnostico(
 
 
 def count_total() -> int:
-    """Cuenta cuántos casos únicos hay acumulados en la BD."""
+    """Cuenta cuántos casos únicos hay acumulados en la BD.
+    V6.9.0 — soporta MySQL."""
+    if _use_mysql():
+        try:
+            with _adapter_cursor() as (conn, cur):
+                cur.execute(f"SELECT COUNT(*) FROM {_adapter_q(_TABLE_NAME)}")
+                return int(cur.fetchone()[0])
+        except Exception:
+            return 0
     if not os.path.exists(_get_db_path()):
         return 0
     conn = sqlite3.connect(_get_db_path())
@@ -204,7 +316,18 @@ def count_total() -> int:
 
 
 def count_by_pdf() -> dict:
-    """Devuelve {pdf_origen: cantidad} para resumen."""
+    """Devuelve {pdf_origen: cantidad} para resumen.
+    V6.9.0 — soporta MySQL."""
+    if _use_mysql():
+        try:
+            with _adapter_cursor() as (conn, cur):
+                cur.execute(
+                    f"SELECT pdf_origen, COUNT(*) as n FROM {_adapter_q(_TABLE_NAME)} "
+                    f"GROUP BY pdf_origen ORDER BY pdf_origen"
+                )
+                return {row[0]: row[1] for row in cur.fetchall()}
+        except Exception:
+            return {}
     if not os.path.exists(_get_db_path()):
         return {}
     conn = sqlite3.connect(_get_db_path())
@@ -220,9 +343,25 @@ def count_by_pdf() -> dict:
         conn.close()
 
 
-def get_all_diagnosticos() -> list[dict]:
-    """Devuelve todos los casos acumulados como dicts (con todas las
-    columnas, para visualizador o export)."""
+def get_all_diagnosticos() -> list:
+    """Devuelve todos los casos acumulados como dicts.
+    V6.9.0 — soporta MySQL."""
+    if _use_mysql():
+        try:
+            import pymysql.cursors
+            conn = _adapter_get_connection()
+            try:
+                cur = conn.cursor(pymysql.cursors.DictCursor)
+                cur.execute(
+                    f"SELECT * FROM {_adapter_q(_TABLE_NAME)} "
+                    f"ORDER BY `Numero de caso`"
+                )
+                return [dict(row) for row in cur.fetchall()]
+            finally:
+                conn.close()
+        except Exception as e:
+            logging.error(f"[diagnosticos_ia_db MySQL] get_all error: {e}")
+            return []
     if not os.path.exists(_get_db_path()):
         return []
     conn = sqlite3.connect(_get_db_path())

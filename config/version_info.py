@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.8.0",
-    "version_name": "IA Pipeline 184-Column Full Schema + BD Unification",
-    "build_date": "08/05/2026",
-    "build_number": "202605081500",
+    "version": "6.9.0",
+    "version_name": "MySQL/MariaDB Multi-User LAN Support",
+    "build_date": "11/05/2026",
+    "build_number": "202605110800",
     "release_type": "Stable",
-    "codename": "Unified Pipeline",
+    "codename": "Shared Database",
 }
 
 # Información del equipo de desarrollo

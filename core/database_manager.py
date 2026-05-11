@@ -7,6 +7,38 @@ from pathlib import Path
 from typing import List, Dict, Optional, Any
 import pandas as pd
 
+# V6.9.0 — Soporte MySQL/MariaDB (red LAN multi-usuario) via db_adapter.
+# El sistema decide SQLite vs MySQL leyendo config/config.ini sección
+# [database]. Si tipo = mysql, todas las operaciones usan pymysql; si
+# tipo = sqlite (legacy o desarrollo), el flujo original con archivo
+# huv_oncologia_NUEVO.db sigue funcionando.
+try:
+    from core.db_adapter import (
+        get_connection as _adapter_get_connection,
+        cursor_ctx as _adapter_cursor,
+        dialect as _adapter_dialect,
+        ph as _adapter_ph,
+        quote_ident as _adapter_q,
+        upsert_sql as _adapter_upsert,
+        column_type as _adapter_coltype,
+        get_existing_columns as _adapter_existing_cols,
+        add_column_if_missing as _adapter_add_col,
+    )
+    _ADAPTER_AVAILABLE = True
+except Exception as _e:
+    _ADAPTER_AVAILABLE = False
+    logging.warning(f"[database_manager] db_adapter no disponible: {_e}")
+
+
+def _use_mysql() -> bool:
+    """True si la config dice usar MySQL/MariaDB (adapter activo)."""
+    if not _ADAPTER_AVAILABLE:
+        return False
+    try:
+        return _adapter_dialect() == "mysql"
+    except Exception:
+        return False
+
 # Configuración
 # Construir ruta absoluta a la base de datos
 # CORREGIDO: Detectar si estamos en un ejecutable empaquetado (PyInstaller)
@@ -477,8 +509,98 @@ def _add_new_biomarker_columns(conn: sqlite3.Connection, cursor: sqlite3.Cursor)
 
     conn.commit()
 
+def _create_table_mysql():
+    """V6.9.0 — Crea la tabla informes_ihq en MySQL con TODAS las 186 columnas.
+
+    Toma la lista canónica de COLUMNAS_IA (184 clínicas) + 2 metadata del
+    sistema. PK = "Numero de caso" (VARCHAR(50)). Resto TEXT.
+    Charset utf8mb4 para acentos médicos.
+    """
+    try:
+        from core.columnas_huv_ia import COLUMNAS_IA
+    except Exception as e:
+        logger.error(f"[init_db MySQL] No se pudo importar COLUMNAS_IA: {e}")
+        return
+
+    # V6.9.0 — TODAS las columnas excepto la PK se declaran como TEXT.
+    # Razón: 184 columnas × VARCHAR(500) × 4 bytes (utf8mb4) supera el límite
+    # de 65,535 bytes por fila de MariaDB. TEXT se almacena fuera de la fila
+    # principal y no cuenta contra ese límite. Solo "Numero de caso" es
+    # VARCHAR(50) porque debe ser PK indexable.
+    col_defs = []
+    for col in COLUMNAS_IA:
+        quoted = _adapter_q(col)
+        if col == "Numero de caso":
+            col_defs.append(f"{quoted} VARCHAR(50) NOT NULL PRIMARY KEY")
+        else:
+            col_defs.append(f"{quoted} TEXT")
+    # Columnas metadata del sistema (no provienen del LLM/extractor)
+    col_defs.append('`Estado Auditoria IA` VARCHAR(50) DEFAULT NULL')
+    col_defs.append('`Fecha Ingreso Base de Datos` TIMESTAMP DEFAULT CURRENT_TIMESTAMP')
+
+    ddl = (
+        f"CREATE TABLE IF NOT EXISTS {_adapter_q(TABLE_NAME)} (\n  "
+        + ",\n  ".join(col_defs)
+        + "\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"
+    )
+
+    with _adapter_cursor() as (conn, cur):
+        cur.execute(ddl)
+        # Índices con prefijo (TEXT solo se puede indexar con N caracteres)
+        try:
+            cur.execute(
+                f"CREATE INDEX idx_malignidad ON {_adapter_q(TABLE_NAME)}(`Malignidad`(20))"
+            )
+        except Exception:
+            pass  # ya existe
+        try:
+            cur.execute(
+                f"CREATE INDEX idx_servicio ON {_adapter_q(TABLE_NAME)}(`Servicio`(100))"
+            )
+        except Exception:
+            pass
+        conn.commit()
+    logger.info(f"[init_db MySQL] Tabla {TABLE_NAME} creada/verificada con 186 columnas (TEXT-based)")
+
+
+def _migrate_columns_mysql():
+    """V6.9.0 — Agrega columnas faltantes en MySQL (migración soft).
+    Compara COLUMNAS_IA con las columnas existentes y agrega lo que falte.
+    """
+    try:
+        from core.columnas_huv_ia import COLUMNAS_IA
+    except Exception:
+        return
+    existing = _adapter_existing_cols(TABLE_NAME)
+    expected = set(COLUMNAS_IA) | {"Estado Auditoria IA", "Fecha Ingreso Base de Datos"}
+    missing = expected - existing
+    for col in missing:
+        col_type = "VARCHAR(500)"
+        if col in ("Descripcion macroscopica", "Descripcion microscopica",
+                   "Descripcion Diagnostico", "Datos Clinicos"):
+            col_type = "TEXT"
+        elif col == "Fecha Ingreso Base de Datos":
+            col_type = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+        _adapter_add_col(TABLE_NAME, col, col_type)
+
+
 def init_db():
-    """Crea o migra la base de datos al nuevo esquema sin columnas obsoletas."""
+    """V6.9.0 — Crea/migra la BD según el dialecto configurado.
+
+    Si tipo = mysql → crea tabla en MariaDB/MySQL via db_adapter.
+    Si tipo = sqlite → flujo legacy con archivo .db local.
+    """
+    if _use_mysql():
+        try:
+            _create_table_mysql()
+            _migrate_columns_mysql()
+            logger.info("Base de datos MySQL/MariaDB preparada correctamente")
+            return
+        except Exception as e:
+            logger.error(f"Error inicializando BD MySQL: {e}")
+            raise
+
+    # Flujo legacy SQLite (sin cambios)
     conn: Optional[sqlite3.Connection] = None
     try:
         # CORREGIDO: Crear la carpeta data/ si no existe
@@ -491,10 +613,10 @@ def init_db():
         _create_table_if_not_exists(cursor)  # Garantiza existencia
         conn.commit()
         _migrate_schema(conn, cursor)
-        
+
         # Agregar nuevas columnas de biomarcadores
         _add_new_biomarker_columns(conn, cursor)
-        
+
         logger.info(f"Base de datos preparada correctamente: {DB_FILE}")
     except sqlite3.Error as e:
         logger.error(f"Error inicializando/migrando base de datos: {e}")
@@ -507,7 +629,9 @@ def init_db():
 
 def get_registro_by_peticion(numero_peticion: str) -> Optional[Dict[str, Any]]:
     """
-    Obtiene un registro de la BD por número de petición
+    Obtiene un registro de la BD por número de petición.
+
+    V6.9.0 — Soporta SQLite y MySQL via db_adapter.
 
     Args:
         numero_peticion: Número de petición IHQ
@@ -516,21 +640,32 @@ def get_registro_by_peticion(numero_peticion: str) -> Optional[Dict[str, Any]]:
         Dict con el registro o None si no existe
     """
     try:
+        if _use_mysql():
+            import pymysql.cursors
+            conn = _adapter_get_connection()
+            try:
+                cur = conn.cursor(pymysql.cursors.DictCursor)
+                cur.execute(
+                    f"SELECT * FROM {_adapter_q(TABLE_NAME)} "
+                    f"WHERE `Numero de caso` = %s",
+                    (numero_peticion,)
+                )
+                row = cur.fetchone()
+                return dict(row) if row else None
+            finally:
+                conn.close()
+
+        # SQLite legacy
         conn = sqlite3.connect(DB_FILE)
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
-
         cursor.execute(
             f'SELECT * FROM {TABLE_NAME} WHERE "Numero de caso" = ?',
             (numero_peticion,)
         )
-
         row = cursor.fetchone()
         conn.close()
-
-        if row:
-            return dict(row)
-        return None
+        return dict(row) if row else None
 
     except Exception as e:
         logger.error(f"Error obteniendo registro {numero_peticion}: {e}")
@@ -778,19 +913,108 @@ def _normalize_column_name(column_name: str) -> str:
     return normalized
 
 
+def _save_records_mysql(records: List[Dict[str, Any]]) -> int:
+    """V6.9.0 — Variante MySQL de save_records.
+
+    Usa UPSERT (INSERT ... ON DUPLICATE KEY UPDATE) por "Numero de caso".
+    Solo actualiza columnas que vienen en el record (preserva las demás).
+    """
+    saved_count = 0
+    skipped_count = 0
+    try:
+        with _adapter_cursor() as (conn, cur):
+            # Obtener columnas existentes (excluyendo timestamp auto)
+            existing_cols = _adapter_existing_cols(TABLE_NAME)
+            table_columns = [c for c in existing_cols
+                             if c not in ("Fecha Ingreso Base de Datos",)]
+
+            for record in records:
+                try:
+                    peticion_col = "Numero de caso"
+                    normalized_peticion_col = _normalize_column_name(peticion_col)
+                    peticion = str(
+                        record.get(normalized_peticion_col, record.get(peticion_col, "")) or ""
+                    ).strip()
+                    if not peticion:
+                        logger.warning("Registro sin 'Numero de caso', omitiendo")
+                        skipped_count += 1
+                        continue
+
+                    record = _apply_default_values(record)
+
+                    # Construir dict con SOLO columnas presentes en record
+                    # (preservar las demás vía UPSERT)
+                    cols_present = []
+                    values_present = []
+                    for col in table_columns:
+                        normalized_col = _normalize_column_name(col)
+                        value = None
+                        if normalized_col in record:
+                            value = record[normalized_col]
+                        elif col in record:
+                            value = record[col]
+                        if value is not None and str(value).strip() != "":
+                            cols_present.append(col)
+                            values_present.append(value)
+
+                    if not cols_present:
+                        logger.warning(f"No hay columnas a guardar para {peticion}")
+                        skipped_count += 1
+                        continue
+
+                    # Asegurar que "Numero de caso" esté en cols
+                    if peticion_col not in cols_present:
+                        cols_present.insert(0, peticion_col)
+                        values_present.insert(0, peticion)
+
+                    # UPSERT MySQL
+                    cols_quoted = [_adapter_q(c) for c in cols_present]
+                    placeholders = ", ".join(["%s"] * len(cols_present))
+                    update_parts = [
+                        f"{_adapter_q(c)} = VALUES({_adapter_q(c)})"
+                        for c in cols_present if c != peticion_col
+                    ]
+                    if not update_parts:
+                        update_parts = [f"{_adapter_q(peticion_col)} = {_adapter_q(peticion_col)}"]
+                    sql = (
+                        f"INSERT INTO {_adapter_q(TABLE_NAME)} "
+                        f"({', '.join(cols_quoted)}) VALUES ({placeholders}) "
+                        f"ON DUPLICATE KEY UPDATE {', '.join(update_parts)}"
+                    )
+                    cur.execute(sql, values_present)
+                    saved_count += 1
+                except Exception as e:
+                    logger.error(f"Error procesando registro {peticion if peticion else '?'}: {e}")
+                    skipped_count += 1
+                    continue
+            conn.commit()
+        logger.info(f"[MySQL] Guardado: {saved_count} registros, {skipped_count} omitidos")
+    except Exception as e:
+        logger.error(f"[MySQL] Error guardando registros: {e}")
+        raise
+    return saved_count
+
+
 def save_records(records: List[Dict[str, Any]]) -> int:
     """Guarda una lista de registros (diccionarios) en la base de datos.
-    
+
+    V6.9.0 — Detecta dialecto (sqlite/mysql) y usa el adapter para MySQL.
+
     Args:
         records: Lista de diccionarios con los datos a guardar
-        
+
     Returns:
         int: Número de registros guardados exitosamente
     """
     if not records:
         logger.warning("No se proporcionaron registros para guardar")
         return 0
-    
+
+    # === V6.9.0: Branch MySQL via adapter (multi-usuario LAN) ===
+    if _use_mysql():
+        return _save_records_mysql(records)
+
+    # === Flujo SQLite legacy ===
     saved_count = 0
     skipped_count = 0
 
@@ -950,7 +1174,9 @@ def save_records(records: List[Dict[str, Any]]) -> int:
 
 def get_all_records_as_dataframe() -> pd.DataFrame:
     """Obtiene todos los registros de la BD y los devuelve como un DataFrame de Pandas.
-    
+
+    V6.9.0 — Funciona con SQLite y MySQL via db_adapter.
+
     Returns:
         pd.DataFrame: DataFrame con todos los registros de la base de datos
     """
@@ -960,10 +1186,21 @@ def get_all_records_as_dataframe() -> pd.DataFrame:
     except Exception as e:
         logger.error(f"No se pudo inicializar la base de datos antes de la consulta: {e}")
         return pd.DataFrame()
-    conn: Optional[sqlite3.Connection] = None
+    conn = None
     try:
-        conn = sqlite3.connect(DB_FILE)
-        df = pd.read_sql_query(f'SELECT * FROM {TABLE_NAME} ORDER BY "Fecha Ingreso Base de Datos" DESC', conn)
+        if _use_mysql():
+            conn = _adapter_get_connection()
+            df = pd.read_sql_query(
+                f"SELECT * FROM {_adapter_q(TABLE_NAME)} "
+                f"ORDER BY `Fecha Ingreso Base de Datos` DESC",
+                conn,
+            )
+        else:
+            conn = sqlite3.connect(DB_FILE)
+            df = pd.read_sql_query(
+                f'SELECT * FROM {TABLE_NAME} ORDER BY "Fecha Ingreso Base de Datos" DESC',
+                conn,
+            )
         logger.info(f"Cargados {len(df)} registros de la base de datos")
 
         # V5.3.9.3: Agregar columna "Nombre Completo" sin N/A para visualización

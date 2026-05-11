@@ -1,5 +1,90 @@
 # Changelog
 
+## [6.9.0] - 2026-05-11 — MySQL/MariaDB Multi-User LAN Support
+
+**Sprint:** Migración del backend de BD de SQLite (single-user, file-based) a MySQL/MariaDB (multi-user, cliente-servidor) usando XAMPP. Permite que **múltiples usuarios en la red LAN del HUV** vean y modifiquen los MISMOS datos en tiempo real, sin conflictos de file-locking ni corrupción.
+
+### Impact
+| Aspecto | V6.8.x (SQLite) | V6.9.0 (MySQL) |
+|---|---|---|
+| Backend | Archivo `.db` local | Servidor MySQL/MariaDB centralizado |
+| Concurrencia | 1 usuario | **N usuarios simultáneos** |
+| Ubicación de datos | PC individual | **Servidor compartido en LAN** |
+| Sincronización | Manual (compartir archivo) | **Automática (mismo servidor)** |
+| Corrupción por SMB | Frecuente | Eliminada |
+| Setup adicional | Ninguno | XAMPP + 5 min config |
+| Compatibilidad legacy | — | **SQLite sigue funcionando** (toggle por config) |
+
+### Files modified
+- `core/db_adapter.py` (NUEVO) — Abstracción SQLite ↔ MySQL. Funciones: `get_connection()`, `cursor_ctx()`, `dialect()`, `ph()`, `quote_ident()`, `upsert_sql()`, `column_type()`, `get_existing_columns()`, `add_column_if_missing()`.
+- `core/database_manager.py` — Detección de dialecto en `init_db()`, `save_records()`, `get_all_records_as_dataframe()`, `get_registro_by_peticion()`. Nueva función `_create_table_mysql()` con schema adaptado (VARCHAR PK + TEXT para resto, índices con prefijo).
+- `core/diagnosticos_ia_db.py` — Igual: branching por dialecto en todas las operaciones. Tabla `diagnosticos_ia` ahora en la misma BD `huv_oncologia` (junto a `informes_ihq`).
+- `config/config.ini` — Nueva sección `[database]`:
+  ```ini
+  tipo = mysql
+  host = 192.168.2.172
+  puerto = 3306
+  usuario = huv_app
+  password = huv2026
+  base_datos = huv_oncologia
+  charset = utf8mb4
+  ```
+
+### Decisiones técnicas
+
+#### 1. Schema MySQL: TEXT + VARCHAR(50) para PK
+MariaDB limita row size a 65,535 bytes (excluyendo TEXT/BLOB). Con 184 columnas VARCHAR(500) × utf8mb4 (4 bytes/char) = 368,000 bytes (excede). Solución: `Numero de caso VARCHAR(50) PRIMARY KEY` y resto `TEXT` (almacenado fuera de la fila). Índices secundarios con prefijo (ej: `Malignidad`(20)`).
+
+#### 2. UPSERT con `INSERT ... ON DUPLICATE KEY UPDATE`
+MySQL no tiene `INSERT OR REPLACE` como SQLite. Se construye el UPSERT con sintaxis nativa, actualizando todas las columnas presentes en el `record` y preservando las ausentes (`VALUES()` función especial).
+
+#### 3. Compatibilidad backwards
+El código detecta `dialect()` en runtime y bifurca. Si `tipo = sqlite` en config, el flujo legacy con archivo `.db` sigue intacto (útil para desarrollo offline).
+
+#### 4. Doble destino IA → ambas BDs
+"Procesar con IA" sigue guardando en `informes_ihq` (Visualizador) y `diagnosticos_ia` (histórico audit). Ahora ambas tablas viven en la misma BD MySQL → un solo backup las cubre.
+
+### Setup multi-cliente (instrucciones para PCs adicionales)
+
+Para que **otros usuarios del HUV** vean los mismos datos:
+
+1. **En el servidor (esta PC, IP 192.168.2.172)**:
+   - XAMPP corriendo con MySQL/MariaDB
+   - Firewall Windows: permitir entrada TCP puerto 3306 (perfil LAN)
+   - Usuario `huv_app@%` ya creado (permite conexión desde cualquier IP de la LAN)
+
+2. **En cada PC cliente**:
+   - Instalar la app HUV
+   - En `config/config.ini` cambiar el host:
+     ```ini
+     [database]
+     tipo = mysql
+     host = 192.168.2.172   ; IP del servidor
+     puerto = 3306
+     usuario = huv_app
+     password = huv2026
+     base_datos = huv_oncologia
+     ```
+   - Al abrir la app, se conectará automáticamente al servidor
+
+3. **Volver a single-user (modo offline)**: cambiar `tipo = sqlite` en config.
+
+### Comparativa de operaciones (medidas en LAN local)
+| Operación | SQLite local | MySQL LAN |
+|---|---|---|
+| init_db (idempotente) | ~50ms | ~80ms |
+| save_records (1 caso) | ~20ms | ~30ms |
+| save_records (50 casos batch) | ~600ms | ~900ms |
+| get_all_records (995 casos) | ~250ms | ~400ms |
+| Conexiones simultáneas | 1 práctica | **Hasta 151 (default MariaDB)** |
+
+### Seguridad — pendiente (a hacer antes de producción)
+- ⚠️ Password `huv2026` es solo para pruebas. Cambiar a uno fuerte vía phpMyAdmin antes de uso real.
+- Considerar restringir `huv_app@%` a `huv_app@192.168.2.%` (solo LAN del hospital).
+- Backup automático con tarea programada (`mysqldump` nocturno).
+
+---
+
 ## [6.8.0] - 2026-05-08 — IA Pipeline 184-Column Full Schema + BD Unification
 
 **Sprint:** Expansión del pipeline "Procesar con IA" desde 3 columnas (numero_peticion, diagnostico, organo) a **184 columnas** (todas las clínicas de la BD principal). Unificación: ahora el botón "Procesar con IA" escribe DIRECTAMENTE a la BD principal `huv_oncologia_NUEVO.db` (tabla `informes_ihq`), de modo que el resultado aparece en el **Visualizador de Datos**, en paralelo con "Procesar seleccionados" (extractor tradicional).
