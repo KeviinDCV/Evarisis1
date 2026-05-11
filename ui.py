@@ -7344,60 +7344,105 @@ Informes con malignidad: {malignant_count}"""
     # NO modifica BD, NO toca extractores existentes. Es solo lectura +
     # generación de un reporte separado.
 
+    # V6.8.0 — Prompt expandido a 184 campos. El LLM debe rellenar TODAS
+    # las columnas del informe (paciente, procedimiento, dx, biomarcadores).
+    # Si un campo NO está en el informe → devolver literalmente "N/A".
+    # El JSON schema fuerza la estructura; el prompt solo guía el contenido.
     _PROMPT_SYSTEM_IA_OCR = (
-        "Eres analista patológico. Recibirás texto OCR de UN informe IHQ.\n"
-        "El texto SIEMPRE contiene EXACTAMENTE 1 informe — nunca está vacío.\n"
-        "Devolvé un JSON con 'diagnosticos' = array de EXACTAMENTE 1 entrada.\n"
-        "NUNCA devolvas array vacío. Si no ves dx claro, copiá lo que aparece\n"
-        "en la sección DIAGNÓSTICO tal cual (incluso si es descriptivo).\n\n"
-        "Cada entrada tiene 3 campos:\n\n"
-        "• numero_peticion: el código 'IHQXXXXXX' del header 'N. peticion :'.\n"
-        "  Solo formato 'IHQ' + dígitos. Sin espacios.\n\n"
-        "• diagnostico: la entidad clínica COMPLETA de la sección DIAGNÓSTICO\n"
-        "  (al final del informe, después de 'Órgano. Biopsia. Estudio IHQ:').\n"
-        "  Devolvé la primera línea sustantiva COMPLETA, con calificadores\n"
-        "  ('CON DATOS DE...', 'WHO GRADO X', '(g2, ptc3, v0)', 'p40 POSITIVO').\n"
-        "  Descartá solo bullets que SON sub-items distintos (PATRÓN\n"
-        "  MICROSATELITAL, biomarcadores HER-2: NEG, etc).\n\n"
-        "  Ejemplos:\n"
-        "    'CARCINOMA POCO COHESIVO' + '- PATRÓN MICROSATELITAL ESTABLE'\n"
-        "      → 'CARCINOMA POCO COHESIVO'\n"
-        "    'RECHAZO ACTIVO CON DATOS SUGERENTES... (g2, ptc3, v0)'\n"
-        "      → 'RECHAZO ACTIVO CON DATOS SUGERENTES... (g2, ptc3, v0)' (completo)\n"
-        "    'MENINGIOMA MENINGOTELIAL, WHO GRADO 1'\n"
-        "      → 'MENINGIOMA MENINGOTELIAL, WHO GRADO 1' (con grado)\n\n"
-        "  REGLA IMPORTANTE — SALTAR PREÁMBULOS DEL PATÓLOGO:\n"
-        "  Si el dx empieza con frases como 'LOS HALLAZGOS HISTOLÓGICOS Y DE\n"
-        "  INMUNOHISTOQUÍMICA SON COMPATIBLES CON X', 'LOS HALLAZGOS SUGIEREN\n"
-        "  X', 'FAVORECE X', 'LOS HALLAZGOS FAVORECEN X', 'COMPATIBLE CON X',\n"
-        "  extraé SOLO la entidad X (descartá la frase introductoria).\n"
-        "  Ejemplos de stripping:\n"
-        "    'LOS HALLAZGOS COMPATIBLES CON MELANOMA' → 'MELANOMA'\n"
-        "    'LOS HALLAZGOS SUGIEREN UN ADENOCARCINOMA DE TRACTO GENITAL'\n"
-        "      → 'ADENOCARCINOMA DE TRACTO GENITAL'\n"
-        "    'HALLAZGOS COMPATIBLES CON LINFOMA DIFUSO B GRANDES, CENTRO GERMINAL'\n"
-        "      → 'LINFOMA DIFUSO B GRANDES, CENTRO GERMINAL'\n"
-        "    'LOS HALLAZGOS FAVORECEN UN LINFOMA LINFOBLÁSTICO T'\n"
-        "      → 'LINFOMA LINFOBLÁSTICO T'\n"
-        "    'FAVORECE CARCINOMA ESCAMOCELULAR p16+' → mantenelo si 'FAVORECE'\n"
-        "      es parte clínica importante (cuando el patólogo no es definitivo).\n\n"
-        "  EXCEPCIONES — copiá la frase COMPLETA tal cual cuando:\n"
-        "  • El patólogo redirige ('VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO').\n"
-        "  • No hay dx claro pero describe ('TEJIDO SIN REPRESENTACIÓN DE\n"
-        "    PARENQUIMA RENAL', 'CÉLULAS GANGLIONARES PRESENTES').\n\n"
-        "  Copiá palabras EXACTAS del PDF, incluso typos ('CARICNOMA').\n\n"
-        "• organo: UN órgano anatómico en MAYÚSCULAS, derivado del header\n"
-        "  'Organo' de Estudios solicitados.\n"
-        "  Transformaciones:\n"
-        "    'LESION ESTOMAGO'              → 'ESTOMAGO'\n"
-        "    'BX MEDULA OSEA'               → 'MEDULA OSEA'\n"
-        "    'CUADRANTECTOMIA MAMA DERECHA' → 'MAMA DERECHA'\n"
-        "    'NEFRECTOMIA RADICAL IZQUIERDA'→ 'RIÑON IZQUIERDO'\n"
-        "    'GANGLIO PROFUNDO METASTÁSICO' → 'GANGLIO LINFATICO'\n"
-        "    'MEDULA HUESO'                 → 'MEDULA OSEA'\n"
-        "    'ENDOMETRIUM'                  → 'ENDOMETRIO'\n"
-        "  SIN: 'LESION', 'BX', 'TUMOR', 'MUCOSA DE', procedimientos,\n"
-        "  modificadores ('METASTÁSICO', 'INVASIVO'), idiomas extranjeros."
+        "Eres analista patológico expertx en informes IHQ del HUV. Recibirás\n"
+        "texto OCR de UN informe IHQ y debés extraer EXACTAMENTE 184 campos.\n"
+        "El texto SIEMPRE contiene 1 informe completo — nunca está vacío.\n\n"
+        "REGLA UNIVERSAL: Si un campo NO aparece en el informe, devolvé el\n"
+        "string literal 'N/A' (sin comillas dentro del JSON, solo la cadena).\n"
+        "NUNCA inventes datos. NUNCA dejes un campo en blanco.\n"
+        "Copiá los valores TAL CUAL aparecen en el PDF (incluso typos como\n"
+        "'CARICNOMA' o 'NOTHINGHAM').\n\n"
+        "════════ CAMPOS A EXTRAER (agrupados por categoría) ════════\n\n"
+        "▶ IDENTIFICACIÓN ADMINISTRATIVA (header del PDF):\n"
+        "  numero_de_caso       → 'IHQXXXXXX' de 'N. peticion :'. Solo IHQ+dígitos.\n"
+        "  hospitalizado        → 'SI'/'NO'/'N/A' (campo Hospitalizado).\n"
+        "  sede                 → sede del hospital (ej: 'HUV', 'PRINCIPAL').\n"
+        "  eps                  → nombre EPS del paciente.\n"
+        "  servicio             → servicio clínico solicitante.\n"
+        "  medico_tratante      → nombre del médico que pidió el estudio.\n"
+        "  especialidad         → especialidad del médico.\n"
+        "  datos_clinicos       → 'Datos Clínicos:' (texto completo del párrafo).\n"
+        "  tipo_de_documento    → CC/TI/CE/RC/PA/N/A.\n"
+        "  n_de_identificacion  → número de cédula/documento.\n"
+        "  primer_nombre / segundo_nombre / primer_apellido / segundo_apellido.\n"
+        "  edad                 → solo número (ej: '45'). N/A si no aparece.\n"
+        "  genero               → 'M'/'F'/'MASCULINO'/'FEMENINO'/N/A.\n"
+        "  departamento         → departamento del paciente (ej: 'VALLE DEL CAUCA').\n"
+        "  municipio            → municipio (ej: 'CALI').\n"
+        "  cups                 → código CUPS del procedimiento.\n\n"
+        "▶ PROCEDIMIENTO (header de Estudios solicitados):\n"
+        "  tipo_de_examen       → 'INMUNOHISTOQUIMICA' o lo que diga.\n"
+        "  procedimiento        → procedimiento (ej: 'BIOPSIA', 'RESECCIÓN').\n"
+        "  organo               → órgano anatómico LIMPIO en MAYÚSCULAS.\n"
+        "    Reglas: SIN 'LESION'/'BX'/'TUMOR'/'MUCOSA DE'/procedimientos.\n"
+        "    Ejemplos: 'LESION ESTOMAGO'→'ESTOMAGO', 'BX MEDULA OSEA'→'MEDULA OSEA',\n"
+        "    'NEFRECTOMIA RADICAL IZQUIERDA'→'RIÑON IZQUIERDO',\n"
+        "    'GANGLIO PROFUNDO METASTÁSICO'→'GANGLIO LINFATICO'.\n"
+        "  fecha_de_toma_1_fecha_de_la_toma            → fecha (DD/MM/YYYY).\n"
+        "  fecha_de_ingreso_2_fecha_de_la_muestra      → fecha.\n"
+        "  fecha_informe                               → fecha del informe.\n"
+        "  patologo                                    → nombre del patólogo firmante.\n\n"
+        "▶ DIAGNÓSTICO CLÍNICO (sección DIAGNÓSTICO al final del informe):\n"
+        "  malignidad           → 'MALIGNO' / 'BENIGNO' / 'PRE-MALIGNO' / 'N/A'.\n"
+        "    Inferí del dx: carcinoma/sarcoma/linfoma/melanoma=MALIGNO;\n"
+        "    inflamación/hiperplasia reactiva/lipoma/adenoma/fibroadenoma=BENIGNO.\n"
+        "    'NEGATIVO PARA NEOPLASIA' o 'NEGATIVO PARA MALIGNIDAD'=BENIGNO.\n"
+        "    'LESIÓN INTRAEPITELIAL ALTO GRADO/NIC 3' = PRE-MALIGNO.\n"
+        "  descripcion_macroscopica → texto completo de DESCRIPCIÓN MACROSCÓPICA.\n"
+        "  descripcion_microscopica → texto completo de DESCRIPCIÓN MICROSCÓPICA.\n"
+        "  descripcion_diagnostico  → texto del párrafo final 'Diagnóstico:'\n"
+        "                             si existe (alternativo a Diagnóstico Principal).\n"
+        "  diagnostico_coloracion   → texto sobre la coloración usada (HE, etc).\n"
+        "  diagnostico_principal    → la entidad clínica COMPLETA (regla principal):\n"
+        "    • Devolvé la primera línea sustantiva con calificadores\n"
+        "      ('WHO GRADO X', 'NOTTINGHAM 7/9', 'p40 POSITIVO', '(g2, ptc3, v0)').\n"
+        "    • Descartá bullets que SON sub-items distintos (PATRÓN MICROSATELITAL,\n"
+        "      HER-2: NEG, etc) — esos van en sus campos específicos.\n"
+        "    • SALTAR PREÁMBULOS: 'LOS HALLAZGOS COMPATIBLES CON X'→X,\n"
+        "      'SUGIEREN UN X'→X, 'FAVORECEN UN X'→X.\n"
+        "      EXCEPCIÓN: 'FAVORECE CARCINOMA...' (sin 'LOS HALLAZGOS') sí mantenelo\n"
+        "      cuando el patólogo no es definitivo.\n"
+        "    • EXCEPCIONES — copiá frase completa: 'VER DESCRIPCIÓN MICROSCÓPICA',\n"
+        "      'TEJIDO SIN REPRESENTACIÓN...', 'CÉLULAS GANGLIONARES PRESENTES'.\n"
+        "  factor_pronostico    → texto sobre pronóstico/grado/estadio si aparece.\n\n"
+        "▶ ESTUDIOS IHQ GENERALES:\n"
+        "  ihq_estudios_solicitados → lista de marcadores solicitados (raw text).\n"
+        "  ihq_organo               → órgano del estudio IHQ (puede ser igual a 'organo').\n"
+        "  congelaciones_otros_estudios → texto sobre congelaciones si hay.\n"
+        "  liquidos_5_tipo_histologico  → líquidos analizados (raw).\n"
+        "  citometria_de_flujo_5_tipo_histologico → resultado de citometría si hay.\n\n"
+        "▶ BIOMARCADORES (formato esperado en cada campo):\n"
+        "  Estados típicos: 'POSITIVO', 'NEGATIVO', 'EQUÍVOCO', 'POSITIVO 30%',\n"
+        "  'NEGATIVO (SCORE 0)', 'PERDIDA DE EXPRESIÓN', 'CONSERVADO', etc.\n"
+        "  Si el biomarcador NO se mencionó en el informe → 'N/A'.\n"
+        "  Buscá menciones tipo: 'HER-2: POSITIVO (SCORE 3+)', 'Ki-67: 25%',\n"
+        "  'p16 POSITIVO', 'CD20: NEGATIVO', etc.\n"
+        "  Biomarcadores comunes a buscar:\n"
+        "    ihq_her2, ihq_ki_67, ihq_receptor_estrogenos, ihq_receptor_progesterona,\n"
+        "    ihq_pdl_1, ihq_p16_estado (POSITIVO/NEGATIVO), ihq_p16_porcentaje (% si aparece),\n"
+        "    ihq_p40_estado, ihq_ck7, ihq_ck20, ihq_cdx2, ihq_gata3, ihq_p53, ihq_p63,\n"
+        "    ihq_ttf1, ihq_napsin, ihq_s100, ihq_melan_a, ihq_hmb45, ihq_sox10,\n"
+        "    ihq_cd3, ihq_cd5, ihq_cd10, ihq_cd20, ihq_cd23, ihq_cd30, ihq_cd45,\n"
+        "    ihq_cd56, ihq_cd99, ihq_cd117, ihq_cd138, ihq_kappa, ihq_lambda,\n"
+        "    ihq_bcl2, ihq_bcl6, ihq_mum1, ihq_mlh1, ihq_msh2, ihq_msh6, ihq_pms2,\n"
+        "    ihq_synaptofisina, ihq_cromogranina, ihq_calretinin, ihq_dog1, ihq_alk,\n"
+        "    ihq_psa, ihq_idh, ihq_atrx, ihq_gfap, ihq_olig2, ihq_e_cadherina,\n"
+        "    ihq_vimentina, ihq_ema, ihq_pax8, ihq_pax5, ihq_wt1, ihq_inhibina,\n"
+        "    ihq_actina_musculo_liso (SMA), ihq_actina_musculo_especifica,\n"
+        "    ihq_desmin, ihq_myogenin, ihq_hcg, ihq_afp, ihq_oct4, ihq_sall4,\n"
+        "    ihq_hepar, ihq_arginasa, ihq_cea, ihq_ca19_9, ihq_eber, ihq_cmv,\n"
+        "    ihq_lmp1, ihq_hhv8, ihq_ber_ep4, ihq_h_caldesmon, etc.\n"
+        "  Si en el OCR ves un biomarcador que NO está en este alias-list,\n"
+        "  ignoralo (no inventes alias).\n\n"
+        "════════ FORMATO DE SALIDA ════════\n"
+        "Devolvé JSON con UNA SOLA entrada en 'diagnosticos' que contenga\n"
+        "TODOS los 184 campos. El schema strict lo valida — todos los\n"
+        "campos son obligatorios, los que no apliquen = 'N/A'."
     )
 
     def _process_selected_files_ia(self):
@@ -7560,24 +7605,59 @@ Informes con malignidad: {malignant_count}"""
         self._ia_lbl_acumulado.pack(anchor=W, pady=(2, 0))
 
         # Tabla en vivo
+        # V6.8.0 — Tabla expandida a TODAS las 184 columnas que extrae la IA
+        # (mismas que la BD principal). Usa scroll horizontal + vertical.
+        # Para no romper compat, las 3 primeras columnas siguen siendo
+        # numero_peticion / dx / organo (alias visibles), después vienen
+        # todas las columnas reales en el orden de COLUMNAS_IA.
+        try:
+            from core.columnas_huv_ia import COLUMNAS_IA as _COLS_IA
+        except Exception:
+            _COLS_IA = []
         table_frame = ttk.Frame(win, padding=(15, 5, 15, 10))
         table_frame.pack(fill=BOTH, expand=True)
 
-        columns = ("ihq", "diagnostico", "organo")
+        # Construir lista de columnas: 3 visibles primero + todas las BD
+        # Cada column id = índice en _COLS_IA (col_0, col_1, ...)
+        # Los 3 primeros son alias rápidos para visualizar el dato más relevante
+        columns = ["ihq", "diagnostico", "organo"]
+        col_headers = {"ihq": "N° IHQ", "diagnostico": "Diagnóstico", "organo": "Órgano"}
+        col_widths = {"ihq": 110, "diagnostico": 400, "organo": 160}
+        # Agregar todas las columnas de la BD
+        self._ia_columnas_bd = list(_COLS_IA)
+        for idx, bd_col in enumerate(_COLS_IA):
+            col_id = f"c{idx}"
+            columns.append(col_id)
+            col_headers[col_id] = bd_col
+            # Anchos por categoría (admin grandes, biomarcadores chicos)
+            if idx < 19:           # Admin
+                col_widths[col_id] = 130
+            elif idx < 26:         # Procedimiento
+                col_widths[col_id] = 130
+            elif idx < 33:         # Dx clínico
+                col_widths[col_id] = 200
+            elif idx < 38:         # Estudios IHQ
+                col_widths[col_id] = 180
+            else:                  # Biomarcadores
+                col_widths[col_id] = 110
+
         self._ia_treeview = ttk.Treeview(
             table_frame, columns=columns, show="headings", height=15
         )
-        self._ia_treeview.heading("ihq", text="N° IHQ")
-        self._ia_treeview.heading("diagnostico", text="Diagnóstico")
-        self._ia_treeview.heading("organo", text="Órgano")
-        self._ia_treeview.column("ihq", width=110, anchor=W, stretch=False)
-        self._ia_treeview.column("diagnostico", width=550, anchor=W)
-        self._ia_treeview.column("organo", width=180, anchor=W)
+        for c in columns:
+            self._ia_treeview.heading(c, text=col_headers[c])
+            self._ia_treeview.column(c, width=col_widths.get(c, 120), anchor=W, stretch=False)
 
         scroll_y = ttk.Scrollbar(table_frame, orient="vertical", command=self._ia_treeview.yview)
-        self._ia_treeview.configure(yscrollcommand=scroll_y.set)
-        self._ia_treeview.pack(side=LEFT, fill=BOTH, expand=True)
-        scroll_y.pack(side=RIGHT, fill=Y)
+        scroll_x = ttk.Scrollbar(table_frame, orient="horizontal", command=self._ia_treeview.xview)
+        self._ia_treeview.configure(yscrollcommand=scroll_y.set, xscrollcommand=scroll_x.set)
+
+        # Layout con scroll en ambas direcciones
+        self._ia_treeview.grid(row=0, column=0, sticky="nsew")
+        scroll_y.grid(row=0, column=1, sticky="ns")
+        scroll_x.grid(row=1, column=0, sticky="ew")
+        table_frame.grid_rowconfigure(0, weight=1)
+        table_frame.grid_columnconfigure(0, weight=1)
 
         # V6.7.2 — Soporte de copia: shortcuts + menú contextual derecho
         self._ia_treeview.bind("<Control-c>", lambda e: self._ia_copy_selected_to_clipboard())
@@ -8027,41 +8107,42 @@ Informes con malignidad: {malignant_count}"""
         self._ia_copy_rows_to_clipboard(rows, mostrar_aviso=True)
 
     def _ia_copy_rows_to_clipboard(self, rows, mostrar_aviso: bool = False):
-        """Copia filas al clipboard en TSV (con cabecera). Formato amigable
-        para pegar en Excel, Google Sheets o un mensaje de texto."""
+        """Copia filas al clipboard en TSV con TODAS las columnas (3 alias
+        + 184 BD). V6.8.0 — pega directo en Excel reproduciendo el schema
+        completo de la BD principal."""
         try:
-            # Cabecera + filas en TSV
-            lines = ["N° IHQ\tDiagnóstico\tÓrgano"]
+            # Header completo: 3 alias + 184 columnas BD
+            cols_bd = getattr(self, "_ia_columnas_bd", [])
+            header = ["N° IHQ", "Diagnóstico", "Órgano"] + list(cols_bd)
+            lines = ["\t".join(header)]
+            n_cols = len(header)
             for r in rows:
-                # Limpiar tabs y newlines internos para que el TSV no se rompa
                 clean = [
                     (c or "").replace("\t", " ").replace("\n", " ").replace("\r", "")
                     for c in r
                 ]
-                # Pad a 3 columnas si viene corta
-                while len(clean) < 3:
+                while len(clean) < n_cols:
                     clean.append("")
-                lines.append("\t".join(clean[:3]))
+                lines.append("\t".join(clean[:n_cols]))
             tsv = "\n".join(lines)
 
-            # Copiar via tkinter clipboard
             self._ia_progress_win.clipboard_clear()
             self._ia_progress_win.clipboard_append(tsv)
-            self._ia_progress_win.update()  # asegura que el clipboard se persista
+            self._ia_progress_win.update()
 
             if mostrar_aviso:
                 messagebox.showinfo(
                     "Copiado al portapapeles",
-                    f"{len(rows)} fila(s) copiadas en formato tabla.\n\n"
-                    f"Pegalo directamente en Excel, Google Sheets, o un mensaje "
-                    f"de texto."
+                    f"{len(rows)} fila(s) × {n_cols} columnas copiadas.\n\n"
+                    f"Pegalo en Excel — reproduce el schema completo de "
+                    f"la BD del HUV."
                 )
         except Exception as e:
             logging.error(f"[IA copy] Falló: {e}")
             messagebox.showerror("Error", f"No se pudo copiar al portapapeles:\n{e}")
 
     def _ia_export_to_csv(self):
-        """Exporta todas las filas a un archivo CSV elegido por el usuario."""
+        """Exporta todas las filas a CSV con las 184 columnas + 3 alias."""
         rows = self._ia_get_table_rows(only_selected=False)
         if not rows:
             messagebox.showinfo(
@@ -8083,17 +8164,20 @@ Informes con malignidad: {malignant_count}"""
 
         import csv as _csv
         try:
+            cols_bd = getattr(self, "_ia_columnas_bd", [])
+            header = ["N° IHQ", "Diagnostico (alias)", "Organo (alias)"] + list(cols_bd)
+            n_cols = len(header)
             with open(path, "w", newline="", encoding="utf-8-sig") as f:
                 writer = _csv.writer(f)
-                writer.writerow(["numero_peticion", "diagnostico", "organo"])
+                writer.writerow(header)
                 for r in rows:
                     clean = [(c or "").replace("\n", " ") for c in r]
-                    while len(clean) < 3:
+                    while len(clean) < n_cols:
                         clean.append("")
-                    writer.writerow(clean[:3])
+                    writer.writerow(clean[:n_cols])
             messagebox.showinfo(
                 "Exportado",
-                f"{len(rows)} fila(s) exportadas a:\n{path}"
+                f"{len(rows)} fila(s) × {n_cols} columnas exportadas a:\n{path}"
             )
         except Exception as e:
             messagebox.showerror("Error", f"No se pudo guardar el CSV:\n{e}")
@@ -8108,7 +8192,25 @@ Informes con malignidad: {malignant_count}"""
         try:
             from core.processors.ocr_processor import pdf_to_text_enhanced
             from core.llm_client import LMStudioClient, _extraer_json_robusto
-            from core.diagnosticos_ia_db import init_db as _init_ia_db, save_diagnostico as _save_dx_ia
+            from core.diagnosticos_ia_db import (
+                init_db as _init_ia_db,
+                save_caso_completo as _save_caso_ia,
+            )
+            from core.columnas_huv_ia import (
+                COLUMNAS_IA,
+                ALIAS_TO_COLUMN,
+                build_json_schema,
+                build_prompt_field_list,
+                llm_response_to_db_dict,
+            )
+            # V6.8.0 — También escribir a la BD principal (informes_ihq)
+            # para que el Visualizador de datos refleje los casos extraídos
+            # por IA. Mismo comportamiento que "Procesar seleccionados":
+            # UPSERT por "Numero de caso" (reemplaza si existe).
+            from core.database_manager import (
+                init_db as _init_main_db,
+                save_records as _save_records_main,
+            )
         except Exception as e:
             self._processing_result_ia["errors"].append(f"Imports fallaron: {e}")
             self._processing_result_ia["done"] = True
@@ -8119,6 +8221,15 @@ Informes con malignidad: {malignant_count}"""
             _init_ia_db()
         except Exception as e:
             logging.warning(f"[IA] No se pudo inicializar BD de diagnósticos IA: {e}")
+
+        # V6.8.0 — Inicializar también la BD principal (idempotente).
+        # Los casos extraídos por IA se persisten EN AMBAS BDs:
+        #   • diagnosticos_ia.db → histórico de extracciones IA (debug/audit)
+        #   • huv_oncologia_NUEVO.db → BD principal que ve el Visualizador
+        try:
+            _init_main_db()
+        except Exception as e:
+            logging.warning(f"[IA] No se pudo inicializar BD principal: {e}")
 
         client = LMStudioClient()
 
@@ -8180,30 +8291,59 @@ Informes con malignidad: {malignant_count}"""
         _split_in_chunks = _split_by_ihq_boundaries
 
         def _norm_dx_entry(d):
+            """V6.8.0 — Normaliza una entrada del LLM (con 184 aliases JSON)
+            a un dict con keys = nombres de columnas BD.
+
+            Devuelve el dict completo (188 keys con N/A en faltantes) o None
+            si el input no es válido.
+
+            Mantiene compat con keys 'numero_peticion'/'diagnostico'/'organo'
+            para código legacy (se inyectan tomando los nombres BD).
+            """
             if not isinstance(d, dict):
                 return None
             lookup = {k.lower(): v for k, v in d.items() if isinstance(k, str)}
-            return {
-                "numero_peticion": (
-                    lookup.get("numero_peticion")
-                    or lookup.get("ihq")
-                    or lookup.get("peticion")
-                    or lookup.get("numero")
-                    or ""
-                ),
-                "diagnostico": (
-                    lookup.get("diagnostico")
-                    or lookup.get("dx")
-                    or lookup.get("diagnosis")
-                    or ""
-                ),
-                "organo": (
-                    lookup.get("organo")
-                    or lookup.get("organ")
-                    or lookup.get("sitio")
-                    or ""
-                ),
-            }
+
+            # Caso 1: respuesta nueva V6.8.0 — tiene los 184 aliases.
+            # Detectamos por presencia de 'numero_de_caso' (nombre BD nuevo).
+            if "numero_de_caso" in lookup:
+                # Mapear todos los aliases → nombres BD
+                db_dict = llm_response_to_db_dict(lookup)
+                # Aliases legacy (compat con código viejo del worker)
+                db_dict["__numero_peticion__"] = (db_dict.get("Numero de caso") or "").strip()
+                db_dict["__diagnostico__"] = db_dict.get("Diagnostico Principal", "N/A")
+                db_dict["__organo__"] = db_dict.get("Organo", "N/A")
+                return db_dict
+
+            # Caso 2: respuesta legacy V6.7.x — solo 3 campos.
+            # Convertimos a estructura completa con N/A en el resto.
+            numero = (
+                lookup.get("numero_peticion")
+                or lookup.get("ihq")
+                or lookup.get("peticion")
+                or lookup.get("numero")
+                or ""
+            )
+            dx = (
+                lookup.get("diagnostico")
+                or lookup.get("dx")
+                or lookup.get("diagnosis")
+                or ""
+            )
+            organo = (
+                lookup.get("organo")
+                or lookup.get("organ")
+                or lookup.get("sitio")
+                or ""
+            )
+            db_dict = {col: "N/A" for col in COLUMNAS_IA}
+            db_dict["Numero de caso"] = numero
+            db_dict["Diagnostico Principal"] = dx
+            db_dict["Organo"] = organo
+            db_dict["__numero_peticion__"] = numero
+            db_dict["__diagnostico__"] = dx
+            db_dict["__organo__"] = organo
+            return db_dict
 
         # Set de números de petición ya pintados en la tabla (deduplicación
         # global, evita duplicados por chunk-overlap o repeticiones del LLM)
@@ -8259,32 +8399,11 @@ Informes con malignidad: {malignant_count}"""
             # V6.7.16 — minItems/maxItems = 1: cada chunk contiene
             # exactamente 1 IHQ. Forzar al modelo a extraer 1 entrada
             # (antes devolvía [] cuando no encontraba dx claro y se rendía).
-            _IA_JSON_SCHEMA = {
-                "name": "extraccion_ihq",
-                "strict": True,
-                "schema": {
-                    "type": "object",
-                    "additionalProperties": False,
-                    "properties": {
-                        "diagnosticos": {
-                            "type": "array",
-                            "minItems": 1,
-                            "maxItems": 1,
-                            "items": {
-                                "type": "object",
-                                "additionalProperties": False,
-                                "properties": {
-                                    "numero_peticion": {"type": "string"},
-                                    "diagnostico": {"type": "string"},
-                                    "organo": {"type": "string"},
-                                },
-                                "required": ["numero_peticion", "diagnostico", "organo"],
-                            },
-                        }
-                    },
-                    "required": ["diagnosticos"],
-                },
-            }
+            # V6.8.0 — Schema EXPANDIDO a 184 campos (ver
+            # core/columnas_huv_ia.py). El LLM extrae el caso COMPLETO,
+            # no solo dx/organo. Para campos no presentes en el informe,
+            # el prompt instruye devolver "N/A".
+            _IA_JSON_SCHEMA = build_json_schema()
 
             # V6.7.17 — max_tokens aumentado de 800 a 1200 (intento 1) y de
             # 1500 a 2000 (intento 2). Razón: dx con scoring Banff completo
@@ -8385,10 +8504,13 @@ Informes con malignidad: {malignant_count}"""
 
                 # V6.7.8 — Logging del response: ¿cuántos IHQ devolvió y
                 # cuáles? Si el LLM omitió alguno del chunk, vamos a verlo.
+                # V6.8.0 — Ahora cada `n` contiene un dict completo con 184
+                # campos. Las keys legacy (__numero_peticion__) ayudan a
+                # mantener este logging sin reescribirlo.
                 ihq_devueltos = sorted(set(
-                    _re.sub(r'\s+', '', (n.get("numero_peticion") or "")).upper()
+                    _re.sub(r'\s+', '', (n.get("__numero_peticion__") or "")).upper()
                     for n in normalizados
-                    if n.get("numero_peticion")
+                    if n.get("__numero_peticion__")
                 ))
                 ihq_omitidos_chunk = [x for x in ihq_en_chunk if x not in ihq_devueltos]
                 logging.info(
@@ -8397,59 +8519,72 @@ Informes con malignidad: {malignant_count}"""
                     + (f" — omitidos: {', '.join(ihq_omitidos_chunk[:5])}" if ihq_omitidos_chunk else "")
                 )
 
-                # Emitir diagnósticos NUEVOS al estado compartido para
-                # que el polling los pinte en la tabla en vivo, Y persistir
-                # cada uno en la BD acumulativa de diagnósticos IA.
-                # V6.7.3 — Aplicar limpieza post-LLM (dx sin frases
-                # introductorias, órgano sin palabras-ruido).
-                # V6.7.4 — Validar que numero_peticion tenga formato IHQ
-                # válido. El LLM a veces alucina filas con numero_peticion
-                # = "NO IDENTIFICADO" o vacío — descartarlas.
+                # Emitir caso COMPLETO al estado compartido para pintarlo
+                # en la tabla en vivo, Y persistirlo (184 columnas) en BD.
+                # V6.7.4 — Validar que numero_peticion tenga formato IHQ.
+                # V6.8.0 — Persistir todas las 184 columnas del LLM con
+                # save_caso_completo. La limpieza post-LLM se sigue aplicando
+                # a Dx y Organo principal (los 2 campos más visibles).
                 _fecha_iso = _dt.now().isoformat()
                 _modelo = resp.get("modelo", "desconocido")
                 _valid_ihq_pat = _re.compile(r'^IHQ\d{4,7}$')
                 for d in normalizados:
-                    raw_key = (d.get("numero_peticion") or "").strip().upper()
+                    raw_key = (d.get("__numero_peticion__") or "").strip().upper()
                     # Normalizar espacios internos ("IHQ 250036" → "IHQ250036")
                     key = _re.sub(r'\s+', '', raw_key)
                     if not key or not _valid_ihq_pat.match(key):
-                        # Fila fantasma del LLM (ej: numero_peticion="NO IDENTIFICADO",
-                        # numero alucinado, o vacío). Descartar.
                         logging.info(
-                            f"[IA] Descartando fila con numero_peticion inválido: {raw_key!r}"
+                            f"[IA] Descartando fila con numero inválido: {raw_key!r}"
                         )
                         continue
                     if key in ihq_vistos:
                         continue
                     ihq_vistos.add(key)
 
-                    # Limpiar dx y órgano antes de pintar/guardar
-                    dx_raw = d.get("diagnostico", "")
-                    organo_raw = d.get("organo", "")
+                    # Limpiar Dx Principal y Órgano (los 2 campos visibles).
+                    # El resto de columnas se guarda tal cual el LLM las
+                    # devolvió (ya con N/A en faltantes por el schema strict).
+                    dx_raw = d.get("Diagnostico Principal", "") or ""
+                    organo_raw = d.get("Organo", "") or ""
                     dx_limpio, organo_limpio = self._limpiar_resultado_ia(
                         dx_raw, organo_raw
                     )
+                    # Sobrescribir en el dict para que la BD también guarde lo limpio
+                    d["Numero de caso"] = key
+                    d["Diagnostico Principal"] = dx_limpio
+                    d["Organo"] = organo_limpio
 
-                    entry = {
-                        "numero_peticion": key,
-                        "diagnostico": dx_limpio,
-                        "organo": organo_limpio,
-                        "pdf_origen": filename,
-                    }
+                    # Construir el dict que se entrega al polling/UI.
+                    # Compat: mantener las 3 keys legacy + el dict completo.
+                    entry = dict(d)  # copia con todas las 184 columnas
+                    entry["numero_peticion"] = key
+                    entry["diagnostico"] = dx_limpio
+                    entry["organo"] = organo_limpio
+                    entry["pdf_origen"] = filename
                     self._processing_result_ia["live_diagnosticos"].append(entry)
 
-                    # Persistir en BD acumulativa (INSERT OR REPLACE — si el
-                    # mismo IHQ se reprocesa después, se actualiza)
+                    # Persistir en BD acumulativa con TODAS las 184 columnas
                     try:
-                        _save_dx_ia(
-                            numero_peticion=key,
-                            diagnostico=dx_limpio,
-                            organo=organo_limpio,
+                        # Filtrar keys legacy que empiezan con __
+                        datos_para_bd = {
+                            k: v for k, v in d.items()
+                            if not k.startswith("__")
+                        }
+                        _save_caso_ia(
+                            datos_columnas=datos_para_bd,
                             pdf_origen=filename,
                             fecha_procesamiento=_fecha_iso,
                             modelo_utilizado=_modelo,
                             ocr_caracteres_pdf=ocr_chars,
                         )
+                        # V6.8.0 — También a BD principal (Visualizador).
+                        # UPSERT por "Numero de caso": reemplaza si existe.
+                        try:
+                            _save_records_main([datos_para_bd])
+                        except Exception as _e_main:
+                            logging.warning(
+                                f"[IA] BD principal: no se persistió {key}: {_e_main}"
+                            )
                     except Exception as _e:
                         logging.warning(f"[IA] No se persistió {key}: {_e}")
 
@@ -8541,7 +8676,7 @@ Informes con malignidad: {malignant_count}"""
                     normalizados_f = [d for d in (_norm_dx_entry(x) for x in raw_dx_f) if d]
 
                     for d in normalizados_f:
-                        raw_key_f = (d.get("numero_peticion") or "").strip().upper()
+                        raw_key_f = (d.get("__numero_peticion__") or "").strip().upper()
                         key_f = _re.sub(r'\s+', '', raw_key_f)
                         if not key_f or not _valid_ihq_pat.match(key_f):
                             continue
@@ -8549,32 +8684,43 @@ Informes con malignidad: {malignant_count}"""
                             continue
                         ihq_vistos.add(key_f)
 
-                        dx_raw_f = d.get("diagnostico", "")
-                        organo_raw_f = d.get("organo", "")
+                        dx_raw_f = d.get("Diagnostico Principal", "") or ""
+                        organo_raw_f = d.get("Organo", "") or ""
                         dx_limpio_f, organo_limpio_f = self._limpiar_resultado_ia(
                             dx_raw_f, organo_raw_f
                         )
+                        d["Numero de caso"] = key_f
+                        d["Diagnostico Principal"] = dx_limpio_f
+                        d["Organo"] = organo_limpio_f
 
-                        entry_f = {
-                            "numero_peticion": key_f,
-                            "diagnostico": dx_limpio_f,
-                            "organo": organo_limpio_f,
-                            "pdf_origen": filename,
-                        }
+                        entry_f = dict(d)
+                        entry_f["numero_peticion"] = key_f
+                        entry_f["diagnostico"] = dx_limpio_f
+                        entry_f["organo"] = organo_limpio_f
+                        entry_f["pdf_origen"] = filename
                         self._processing_result_ia["live_diagnosticos"].append(entry_f)
                         diagnosticos_finales.append(entry_f)
                         recuperados_segunda_pasada += 1
 
                         try:
-                            _save_dx_ia(
-                                numero_peticion=key_f,
-                                diagnostico=dx_limpio_f,
-                                organo=organo_limpio_f,
+                            datos_para_bd_f = {
+                                k: v for k, v in d.items()
+                                if not k.startswith("__")
+                            }
+                            _save_caso_ia(
+                                datos_columnas=datos_para_bd_f,
                                 pdf_origen=filename,
                                 fecha_procesamiento=_fecha_iso,
                                 modelo_utilizado=resp_f.get("modelo", "desconocido"),
                                 ocr_caracteres_pdf=ocr_chars,
                             )
+                            # V6.8.0 — También a BD principal (Visualizador)
+                            try:
+                                _save_records_main([datos_para_bd_f])
+                            except Exception as _e_main:
+                                logging.warning(
+                                    f"[IA] BD principal: no se persistió {key_f} (reintento): {_e_main}"
+                                )
                         except Exception as _e:
                             logging.warning(
                                 f"[IA] No se persistió {key_f} (reintento): {_e}"
@@ -8644,6 +8790,18 @@ Informes con malignidad: {malignant_count}"""
                 )
 
         self._processing_result_ia["done"] = True
+
+        # V6.8.0 — Refrescar el Visualizador de datos al finalizar todo
+        # el procesamiento IA. Los casos extraídos ya están en la BD
+        # principal (informes_ihq), solo falta recargar el DataFrame
+        # maestro y repintar la tabla del visualizador.
+        # La llamada va por self.after() porque estamos en thread worker;
+        # refresh_data_and_table() toca UI y debe correr en el main thread.
+        try:
+            self.after(100, self.refresh_data_and_table)
+            logging.info("[IA] Refresh del Visualizador de datos disparado")
+        except Exception as e:
+            logging.warning(f"[IA] No se pudo disparar refresh del visualizador: {e}")
 
     def _poll_processing_progress_ia(self):
         """V6.7.0 — Polling: actualiza barras + tabla en vivo + counter."""
@@ -8719,13 +8877,22 @@ Informes con malignidad: {malignant_count}"""
                 already_painted = self._ia_diagnosticos_pintados
                 new_count = len(live) - already_painted
                 if new_count > 0:
+                    cols_bd = getattr(self, "_ia_columnas_bd", [])
                     for entry in live[already_painted:]:
                         ihq = entry.get("numero_peticion", "")
                         dx = (entry.get("diagnostico", "") or "").replace("\n", " ")
                         organo = entry.get("organo", "")
-                        self._ia_treeview.insert(
-                            "", "end", values=(ihq, dx, organo)
-                        )
+                        # V6.8.0 — Construir tupla con TODAS las columnas:
+                        # 3 alias visibles + 184 columnas BD en orden
+                        values_full = [ihq, dx, organo]
+                        for bd_col in cols_bd:
+                            v = entry.get(bd_col, "N/A")
+                            if isinstance(v, str):
+                                v = v.replace("\n", " ")
+                            else:
+                                v = str(v) if v is not None else "N/A"
+                            values_full.append(v)
+                        self._ia_treeview.insert("", "end", values=tuple(values_full))
                     # Auto-scroll al final
                     children = self._ia_treeview.get_children()
                     if children:

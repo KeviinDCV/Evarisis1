@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.7.20",
-    "version_name": "IA Pipeline UI Show-Full-Dx",
+    "version": "6.8.0",
+    "version_name": "IA Pipeline 184-Column Full Schema + BD Unification",
     "build_date": "08/05/2026",
-    "build_number": "202605080900",
+    "build_number": "202605081500",
     "release_type": "Stable",
-    "codename": "What You Extract Is What You See",
+    "codename": "Unified Pipeline",
 }
 
 # Información del equipo de desarrollo

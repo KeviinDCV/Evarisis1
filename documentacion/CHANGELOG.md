@@ -1,5 +1,53 @@
 # Changelog
 
+## [6.8.0] - 2026-05-08 — IA Pipeline 184-Column Full Schema + BD Unification
+
+**Sprint:** Expansión del pipeline "Procesar con IA" desde 3 columnas (numero_peticion, diagnostico, organo) a **184 columnas** (todas las clínicas de la BD principal). Unificación: ahora el botón "Procesar con IA" escribe DIRECTAMENTE a la BD principal `huv_oncologia_NUEVO.db` (tabla `informes_ihq`), de modo que el resultado aparece en el **Visualizador de Datos**, en paralelo con "Procesar seleccionados" (extractor tradicional).
+
+### Impact
+| Aspecto | V6.7.x | V6.8.0 |
+|---|---|---|
+| Columnas extraídas por IA | 3 | **184** |
+| Schema JSON LLM | 3 campos | **184 campos** |
+| BD `diagnosticos_ia.db` | 7 cols | **188 cols** (184 + 4 metadata) |
+| Tabla del modal IA | 3 cols visibles | **187 cols** (3 alias + 184 BD) con scroll H+V |
+| Copia/CSV export | 3 cols | 187 cols con headers BD |
+| Destino BD | Solo `diagnosticos_ia.db` | **Doble: `diagnosticos_ia.db` + `informes_ihq` (principal)** |
+| Visualizador de Datos | No reflejaba casos IA | **Refresh automático tras procesar IA** |
+
+### Files modified
+- `core/columnas_huv_ia.py` (NUEVO) — Mapeo de 184 columnas BD ↔ aliases JSON-safe del LLM. Funciones: `build_json_schema()`, `build_json_schema_pasada_1/2()`, `detectar_biomarcadores_en_ocr()`, `llm_response_to_db_dict()`.
+- `core/diagnosticos_ia_db.py` — Schema expandido a 188 columnas. Nueva función `save_caso_completo(datos_columnas, ...)` que recibe dict completo. PK cambió de `numero_peticion` → `Numero de caso`. ALTER TABLE para migrar BDs viejas.
+- `ui.py` — Prompt del LLM expandido con instrucciones por categoría (admin, dx, biomarcadores). Worker `_process_files_ia_worker` ahora guarda en AMBAS BDs (acumulativa IA + principal) y dispara `refresh_data_and_table()` al finalizar. Tabla del modal con scroll H+V mostrando las 187 columnas. Copia/CSV adaptados.
+
+### Decisiones técnicas
+
+#### 1. Modelo recomendado: `qwen2.5-14b-instruct`
+Tras pruebas con varios modelos:
+- `qwen3.6-27b` (reasoning) → todo va a `reasoning_content`, requiere esperar reasoning largo, ~30 min/IHQ con 184 campos (no viable)
+- `qwen2.5-32b-instruct` → no cabe en 8GB VRAM (offload masivo), timeout >10 min
+- `qwen2.5-14b-instruct` → cabe casi completo, **~7 min/IHQ con schema strict de 184 campos** (~5 días para 995 casos) ✓
+
+#### 2. Schema `strict: True, additionalProperties: False`
+`additionalProperties: True` con 184 fields rompe el grammar engine de llama.cpp ("number of rules exceeds sane defaults"). Strict es obligatorio.
+
+#### 3. Doble persistencia (IA + principal)
+La IA escribe en `diagnosticos_ia.db` (histórico/audit) Y en `informes_ihq` (BD principal). UPSERT por "Numero de caso" en ambas: si el caso ya existe, se reemplaza. Permite usar "Procesar con IA" y "Procesar seleccionados" sobre los mismos casos para comparar o iterar.
+
+### Workflow del usuario
+1. Selecciona PDFs → click "🤖 Procesar con IA"
+2. Modal muestra tabla con 187 columnas en vivo
+3. Cada caso se guarda en `informes_ihq` mientras se procesa
+4. Al finalizar, el Visualizador de Datos se refresca automáticamente
+5. Si después corre "Procesar seleccionados" sobre los mismos PDFs, esos datos REEMPLAZAN los de IA (y viceversa)
+
+### Notas
+- Tiempo total para 995 IHQs con qwen2.5-14b-instruct: ~5 días (procesamiento batch nocturno o fin de semana)
+- Calidad observada: ~80% campos correctos en una sola pasada. Algunos errores ocasionales (alucinaciones en edad, mismatches entre descripcion_microscopica/diagnostico_principal) que requieren post-procesamiento o revisión humana.
+- BD `data/diagnosticos_ia.db` puede borrarse en cualquier momento sin afectar la BD principal — es solo un histórico.
+
+---
+
 ## [6.7.20] - 2026-05-08 — IA Pipeline UI Show-Full-Dx
 
 **Sprint:** Bug fix de presentación. La V6.7.19 ya extraía y guardaba todos los dx completos en BD, pero la UI los truncaba visualmente a 200 chars + "..." haciendo parecer que la extracción estaba rota. Esto era un falso positivo que generaba percepción equivocada de calidad.
