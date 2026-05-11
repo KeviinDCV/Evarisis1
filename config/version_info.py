@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.1",
-    "version_name": "MySQL/MariaDB + Disabled Slow Second Pass",
+    "version": "6.9.2",
+    "version_name": "Timeout 900s for Reasoning Models (Nemotron)",
     "build_date": "11/05/2026",
-    "build_number": "202605111000",
+    "build_number": "202605111600",
     "release_type": "Stable",
-    "codename": "No More Waiting",
+    "codename": "Patient Client",
 }
 
 # Información del equipo de desarrollo

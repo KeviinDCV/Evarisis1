@@ -8231,7 +8231,13 @@ Informes con malignidad: {malignant_count}"""
         except Exception as e:
             logging.warning(f"[IA] No se pudo inicializar BD principal: {e}")
 
-        client = LMStudioClient()
+        # V6.9.2 — Timeout aumentado a 900s (15 min) para soportar modelos
+        # de reasoning como nvidia/nemotron-3-nano que generan mucho
+        # razonamiento interno antes de devolver el JSON. El default de
+        # 300s era insuficiente y causaba "Timeout — Reintentando..." en
+        # bucle. Modelos rápidos (qwen2.5-14b/7b) responden en <60s y
+        # no se ven afectados por este timeout más largo.
+        client = LMStudioClient(timeout=900)
 
         # V6.7.13 — Chunking 1 IHQ = 1 chunk = 1 llamada al LLM.
         # Cambio arquitectural: en vez de agrupar 5-7 IHQ por chunk,
@@ -8776,10 +8782,21 @@ Informes con malignidad: {malignant_count}"""
             # Guardar resultado
             out_filename = f"extraccion_ia_{os.path.splitext(filename)[0].replace(' ', '_')}.json"
             out_path = os.path.join(out_dir, out_filename)
+            # V6.9.2 — Fix bug: resp puede ser None si TODOS los chunks fallaron.
+            # El check 'resp in dir()' no detecta None (solo si la variable
+            # no existe). Necesitamos chequeo explícito.
+            try:
+                _modelo_payload = (
+                    resp.get("modelo", "desconocido")
+                    if 'resp' in dir() and resp is not None and hasattr(resp, 'get')
+                    else "desconocido"
+                )
+            except Exception:
+                _modelo_payload = "desconocido"
             payload = {
                 "pdf_origen": filename,
                 "fecha_procesamiento": _dt.now().isoformat(),
-                "modelo_utilizado": resp.get("modelo", "desconocido") if 'resp' in dir() else "desconocido",
+                "modelo_utilizado": _modelo_payload,
                 "ocr_caracteres": ocr_chars,
                 "chunks_total": n_chunks,
                 "chunks_exitosos": chunks_exitosos,
