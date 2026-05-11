@@ -41,6 +41,8 @@ pip install --upgrade Babel
 pip install --upgrade holidays
 pip install --upgrade cryptography
 pip install --upgrade psutil
+REM V6.9.0 - MySQL/MariaDB driver para BD compartida en LAN
+pip install --upgrade pymysql
 
 echo.
 echo [STEP 3/9] Verificando instalación de dependencias críticas...
@@ -62,6 +64,8 @@ python -c "import holidays; print('✅ Holidays OK')"
 python -c "import cryptography; print('✅ Cryptography OK')"
 python -c "import psutil; print('✅ PSUtil OK')"
 python -c "import sqlite3; print('✅ SQLite3 OK')"
+REM V6.9.0 - Driver MySQL
+python -c "import pymysql; print('✅ PyMySQL OK')"
 
 echo.
 echo [STEP 4/9] Limpiando compilaciones anteriores...
@@ -119,6 +123,7 @@ echo     ('requirements.txt', '.'^)
 echo ]
 echo.
 echo # Importaciones ocultas para Gestor Oncología
+echo # V6.9.0 - Agregado pymysql (MySQL driver) + nuevos modulos core
 echo hiddenimports = [
 echo     'numpy',
 echo     'pandas',
@@ -138,8 +143,15 @@ echo     'holidays',
 echo     'sqlite3',
 echo     'psutil',
 echo     'cryptography',
+echo     'pymysql',
+echo     'pymysql.cursors',
+echo     'pymysql.constants',
 echo     'core.calendario',
 echo     'core.database_manager',
+echo     'core.db_adapter',
+echo     'core.diagnosticos_ia_db',
+echo     'core.columnas_huv_ia',
+echo     'core.llm_client',
 echo     'core.huv_web_automation',
 echo     'core.ocr_processing',
 echo     'core.procesador_ihq',
@@ -267,6 +279,27 @@ if exist "dist\%EXE_NAME%.exe" (
     pause
     exit /b 1
 )
+
+echo.
+echo [STEP 8.5/9] V6.9.0 - Copiando config.ini EXTERNO al lado del .exe
+echo               (para que cada PC cliente edite su host de MySQL)
+if not exist "dist\config" mkdir "dist\config"
+copy /Y "config\config.ini" "dist\config\config.ini" >nul
+if exist "dist\config\config.ini" (
+    echo ✅ config.ini copiado a dist\config\ (editable post-instalacion)
+) else (
+    echo ⚠️ No se pudo copiar config.ini externo - usuario debera copiarlo manualmente
+)
+
+REM Crear también carpeta data\ vacía para SQLite legacy (solo si tipo=sqlite)
+if not exist "dist\data" mkdir "dist\data"
+echo. > "dist\data\.gitkeep"
+echo ✅ Carpeta dist\data\ creada (BD local SQLite si aplica)
+
+REM Carpeta pdfs_patologia\ vacía para que usuario meta sus PDFs
+if not exist "dist\pdfs_patologia" mkdir "dist\pdfs_patologia"
+echo. > "dist\pdfs_patologia\README.txt"
+echo ✅ Carpeta dist\pdfs_patologia\ creada
 
 echo.
 echo [STEP 9/9] Verificando empaquetado completo...

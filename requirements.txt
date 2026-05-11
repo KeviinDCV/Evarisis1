@@ -33,6 +33,11 @@ holidays>=0.34
 # === SEGURIDAD ===
 cryptography>=41.0.0
 
+# === BASE DE DATOS MULTI-USUARIO LAN (V6.9.0) ===
+# pymysql: driver Python para MySQL/MariaDB (XAMPP)
+# Permite que multiples PCs del HUV vean los mismos datos en tiempo real
+pymysql>=1.1.0
+
 # === INFORMACIÓN DEL SISTEMA ===
 psutil>=5.9.0
 

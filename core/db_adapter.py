@@ -28,9 +28,11 @@ Uso:
 from __future__ import annotations
 
 import os
+import sys
 import logging
 import sqlite3
 import configparser
+from pathlib import Path
 from typing import Optional, Dict, Any
 from contextlib import contextmanager
 
@@ -39,28 +41,48 @@ from contextlib import contextmanager
 _CONFIG_CACHE: Optional[Dict[str, Any]] = None
 
 
+def _get_base_path() -> Path:
+    """Retorna el directorio base de la app.
+
+    Soporta tanto modo script (desarrollo) como modo PyInstaller onefile
+    (cuando la app está empaquetada como .exe).
+
+    - En .exe: el config.ini DEBE estar al lado del .exe (editable por usuario)
+    - En script: usa el directorio del proyecto
+    """
+    if getattr(sys, 'frozen', False):
+        # PyInstaller .exe: directorio del ejecutable (editable)
+        return Path(sys.executable).parent
+    # Modo script: directorio del proyecto (2 niveles arriba de core/)
+    return Path(__file__).resolve().parent.parent
+
+
 def _load_config() -> Dict[str, Any]:
     """Lee config/config.ini → devuelve dict con la sección [database].
 
+    V6.9.0 — En .exe busca config.ini AL LADO del .exe (editable post-instalación).
     Si la sección no existe, asume SQLite legacy con el archivo histórico.
     """
     global _CONFIG_CACHE
     if _CONFIG_CACHE is not None:
         return _CONFIG_CACHE
 
-    cfg_path = os.path.join(os.getcwd(), "config", "config.ini")
+    base = _get_base_path()
+    cfg_path = base / "config" / "config.ini"
     parser = configparser.ConfigParser()
-    if os.path.exists(cfg_path):
+    if cfg_path.exists():
         try:
-            parser.read(cfg_path, encoding="utf-8")
+            parser.read(str(cfg_path), encoding="utf-8")
         except Exception as e:
             logging.warning(f"[db_adapter] No se pudo leer config.ini: {e}")
+    else:
+        logging.warning(f"[db_adapter] config.ini NO encontrado en: {cfg_path}")
 
     if not parser.has_section("database"):
         # Modo legacy: SQLite con el archivo original
         _CONFIG_CACHE = {
             "tipo": "sqlite",
-            "archivo": os.path.join(os.getcwd(), "data", "huv_oncologia_NUEVO.db"),
+            "archivo": str(base / "data" / "huv_oncologia_NUEVO.db"),
         }
         return _CONFIG_CACHE
 
@@ -77,10 +99,15 @@ def _load_config() -> Dict[str, Any]:
             "charset": sec.get("charset", "utf8mb4"),
         })
     else:
-        cfg["archivo"] = sec.get(
-            "archivo",
-            os.path.join(os.getcwd(), "data", "huv_oncologia_NUEVO.db"),
-        )
+        archivo_cfg = sec.get("archivo", "")
+        if archivo_cfg:
+            # Si el path no es absoluto, resolverlo relativo al base path
+            archivo_path = Path(archivo_cfg)
+            if not archivo_path.is_absolute():
+                archivo_path = base / archivo_path
+            cfg["archivo"] = str(archivo_path)
+        else:
+            cfg["archivo"] = str(base / "data" / "huv_oncologia_NUEVO.db")
 
     _CONFIG_CACHE = cfg
     return cfg
