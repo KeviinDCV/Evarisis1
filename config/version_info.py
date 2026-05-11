@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.0",
-    "version_name": "MySQL/MariaDB Multi-User LAN Support",
+    "version": "6.9.1",
+    "version_name": "MySQL/MariaDB + Disabled Slow Second Pass",
     "build_date": "11/05/2026",
-    "build_number": "202605110800",
+    "build_number": "202605111000",
     "release_type": "Stable",
-    "codename": "Shared Database",
+    "codename": "No More Waiting",
 }
 
 # Información del equipo de desarrollo

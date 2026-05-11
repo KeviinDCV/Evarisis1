@@ -1,5 +1,5 @@
 # -*- mode: python ; coding: utf-8 -*-
-# V6.9.0 - Generado para soportar MySQL/MariaDB multi-usuario LAN
+# V6.9.1 - MySQL/MariaDB multi-usuario + segunda pasada deshabilitada
 from PyInstaller.utils.hooks import collect_submodules
 
 ttkbootstrap_modules = collect_submodules('ttkbootstrap')
@@ -7,9 +7,6 @@ matplotlib_modules = collect_submodules('matplotlib')
 selenium_modules = collect_submodules('selenium')
 numpy_modules = collect_submodules('numpy')
 
-# IMPORTANTE V6.9.0: incluimos 'config' como fallback, pero el COMPILADOR
-# copia tambien una version EXTERNA a dist/config/ para que cada cliente
-# pueda editar host/password sin recompilar.
 added_files = [
     ('imagenes', 'imagenes'),
     ('config', 'config'),

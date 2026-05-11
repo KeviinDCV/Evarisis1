@@ -8614,7 +8614,26 @@ Informes con malignidad: {malignant_count}"""
             # V6.7.9 — SEGUNDA PASADA: Reintentar IHQ faltantes individualmente.
             # Cuando el LLM omite IHQ en un chunk con varios casos, mandarle
             # el IHQ AISLADO suele recuperarlo (sin distracciones de otros).
+            #
+            # V6.9.1 — DESHABILITADA POR DEFAULT. Razón: con el schema de 184
+            # campos (V6.8.0+), cada reintento tarda ~5-7 min. Para 4 IHQ
+            # faltantes son 20-30 min EXTRA después de que ya terminó la
+            # primera pasada — UX inaceptable.
+            #
+            # Si querés recuperar los IHQ faltantes:
+            #   1. Mirá los logs (se imprime la lista al final)
+            #   2. Reprocesá el mismo PDF (UPSERT no duplica los ya capturados)
+            #   3. O usá "Procesar seleccionados" (extractor tradicional)
+            #
+            # Para reactivar: cambiá HABILITAR_SEGUNDA_PASADA = True
+            HABILITAR_SEGUNDA_PASADA = False
             if ihq_faltantes:
+                logging.info(
+                    f"[IA] {filename}: {len(ihq_faltantes)} IHQ no fueron "
+                    f"capturados en primera pasada: {', '.join(ihq_faltantes[:10])}"
+                    + (f' (+{len(ihq_faltantes)-10} más)' if len(ihq_faltantes) > 10 else '')
+                )
+            if ihq_faltantes and HABILITAR_SEGUNDA_PASADA:
                 logging.info(
                     f"[IA] {filename}: 🔁 Segunda pasada — reintentando "
                     f"{len(ihq_faltantes)} IHQ faltantes individualmente..."
