@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.3",
-    "version_name": "max_tokens 6000 for Nemotron Reasoning",
+    "version": "6.9.4",
+    "version_name": "Real-Time Refresh + Periodic Auto-Refresh (LAN clients)",
     "build_date": "12/05/2026",
-    "build_number": "202605120700",
+    "build_number": "202605120800",
     "release_type": "Stable",
-    "codename": "Enough Room To Think",
+    "codename": "Always In Sync",
 }
 
 # Información del equipo de desarrollo

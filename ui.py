@@ -2540,7 +2540,50 @@ Disco {i}:
         # Cargar datos automáticamente al inicializar el visualizador
         self.after(100, lambda: self.refresh_data_and_table() if hasattr(self, 'refresh_data_and_table') else None)
 
+        # V6.9.4 — Auto-refresh periódico del Visualizador cada 60 segundos.
+        # Necesario para que las PCs cliente (que solo CONSULTAN la BD MySQL
+        # central) vean en tiempo real los datos que el servidor procesa con
+        # IA. Sin esto, los clientes tienen que cerrar/abrir la app o pulsar
+        # "Refrescar" manualmente para ver cambios.
+        # 60s es un balance: refresca a tiempo sin sobrecargar la BD ni la UI.
+        self._auto_refresh_enabled = True
+        self.after(60_000, self._auto_refresh_tick)
+
         # El panel de detalles ahora será flotante (se crea en demanda)
+
+    def _auto_refresh_tick(self):
+        """V6.9.4 — Tick periódico que refresca el Visualizador desde la BD.
+        Se re-programa cada 60 segundos mientras la app esté abierta.
+
+        Se desactiva automáticamente durante operaciones críticas (como
+        procesamiento IA en curso) para evitar contención de UI. El propio
+        worker IA dispara refresh por su cuenta cuando agrega registros.
+        """
+        try:
+            if not getattr(self, '_auto_refresh_enabled', True):
+                # Re-programar igual por si el flag se vuelve True luego
+                self.after(60_000, self._auto_refresh_tick)
+                return
+
+            # No refrescar si hay un procesamiento IA activo (el worker
+            # IA ya dispara refresh por chunk procesado)
+            ia_activo = (
+                hasattr(self, '_processing_result_ia')
+                and self._processing_result_ia
+                and not self._processing_result_ia.get('done', True)
+            )
+            if not ia_activo:
+                if hasattr(self, 'refresh_data_and_table'):
+                    logging.info("[auto-refresh] Refrescando Visualizador (tick 60s)")
+                    self.refresh_data_and_table()
+        except Exception as e:
+            logging.warning(f"[auto-refresh] Error: {e}")
+        finally:
+            # Re-programar siempre (incluso si hubo error)
+            try:
+                self.after(60_000, self._auto_refresh_tick)
+            except Exception:
+                pass
 
     def _create_dashboard_content(self):
         """Crear contenido del panel de dashboard"""
@@ -8941,6 +8984,21 @@ Informes con malignidad: {malignant_count}"""
                     if children:
                         self._ia_treeview.see(children[-1])
                     self._ia_diagnosticos_pintados = len(live)
+
+                    # V6.9.4 — REFRESH EN TIEMPO REAL del Visualizador de Datos.
+                    # Cada vez que se agrega un IHQ nuevo a la tabla del modal,
+                    # también refrescamos el Visualizador (background) para que
+                    # los datos aparezcan en la tabla principal sin esperar a
+                    # que termine TODO el procesamiento. self.after() lo programa
+                    # en el main thread (el poll ya corre ahí, pero igual usamos
+                    # after para no bloquear el render del modal).
+                    try:
+                        if hasattr(self, 'refresh_data_and_table'):
+                            self.after(50, self.refresh_data_and_table)
+                    except Exception as _e_refresh:
+                        logging.warning(
+                            f"[IA] No se pudo refrescar Visualizador: {_e_refresh}"
+                        )
 
                 # Counter de la sesión actual
                 self._ia_lbl_counter.config(
