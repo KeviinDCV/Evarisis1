@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.2",
-    "version_name": "Timeout 900s for Reasoning Models (Nemotron)",
-    "build_date": "11/05/2026",
-    "build_number": "202605111600",
+    "version": "6.9.3",
+    "version_name": "max_tokens 6000 for Nemotron Reasoning",
+    "build_date": "12/05/2026",
+    "build_number": "202605120700",
     "release_type": "Stable",
-    "codename": "Patient Client",
+    "codename": "Enough Room To Think",
 }
 
 # Información del equipo de desarrollo

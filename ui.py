@@ -8426,11 +8426,18 @@ Informes con malignidad: {malignant_count}"""
             # Casos testigo: IHQ250275 (Banff 2022 BIOPSIA INJERTO),
             # IHQ250389 (Nottingham + molecular HER2/triple-negativo),
             # IHQ250401 (receptores hormonales completos).
-            def _llamar_llm_con_retry(chunk_text, intento_max_tokens=3000):
+            # V6.9.3 — max_tokens aumentado de 3000 a 6000 para soportar
+            # modelos REASONING (nvidia/nemotron-3-nano, qwen3.6, etc.) que
+            # generan 1500-2700 tokens de razonamiento interno ANTES del
+            # JSON final. Con 3000 tokens, el JSON quedaba truncado a la
+            # mitad y resultaba "no parseable".
+            # Modelos no-reasoning (qwen2.5-instruct) usan ~2500 tokens
+            # totales, así que 6000 no los afecta.
+            def _llamar_llm_con_retry(chunk_text, intento_max_tokens=6000):
                 last_error = None
                 for intento in (1, 2):
                     try:
-                        max_tok = intento_max_tokens if intento == 1 else 4000
+                        max_tok = intento_max_tokens if intento == 1 else 8000
                         resp = client.completar(
                             prompt=chunk_text,
                             system_prompt=self._PROMPT_SYSTEM_IA_OCR,
