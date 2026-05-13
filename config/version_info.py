@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.4",
-    "version_name": "Real-Time Refresh + Periodic Auto-Refresh (LAN clients)",
-    "build_date": "12/05/2026",
-    "build_number": "202605120800",
+    "version": "6.9.5",
+    "version_name": "Fix Race Condition: Save Before Refresh",
+    "build_date": "13/05/2026",
+    "build_number": "202605130700",
     "release_type": "Stable",
-    "codename": "Always In Sync",
+    "codename": "Save First, Then Notify",
 }
 
 # Información del equipo de desarrollo

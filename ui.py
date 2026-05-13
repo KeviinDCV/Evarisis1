@@ -8612,16 +8612,20 @@ Informes con malignidad: {malignant_count}"""
 
                     # Construir el dict que se entrega al polling/UI.
                     # Compat: mantener las 3 keys legacy + el dict completo.
+                    # V6.9.5 — FIX RACE CONDITION del refresh en tiempo real.
+                    # ANTES: append al estado ANTES del save → polling refrescaba
+                    # el Visualizador pero MySQL aún no tenía los datos.
+                    # AHORA: primero MySQL (síncrono), luego append al estado.
+                    # Cuando el polling detecte el nuevo IHQ, MySQL ya lo tendrá.
                     entry = dict(d)  # copia con todas las 184 columnas
                     entry["numero_peticion"] = key
                     entry["diagnostico"] = dx_limpio
                     entry["organo"] = organo_limpio
                     entry["pdf_origen"] = filename
-                    self._processing_result_ia["live_diagnosticos"].append(entry)
 
-                    # Persistir en BD acumulativa con TODAS las 184 columnas
+                    # PASO 1: Persistir en BD (SÍNCRONO, antes del append)
+                    save_exitoso = False
                     try:
-                        # Filtrar keys legacy que empiezan con __
                         datos_para_bd = {
                             k: v for k, v in d.items()
                             if not k.startswith("__")
@@ -8633,16 +8637,24 @@ Informes con malignidad: {malignant_count}"""
                             modelo_utilizado=_modelo,
                             ocr_caracteres_pdf=ocr_chars,
                         )
-                        # V6.8.0 — También a BD principal (Visualizador).
-                        # UPSERT por "Numero de caso": reemplaza si existe.
+                        # BD principal (Visualizador). UPSERT por "Numero de caso".
                         try:
                             _save_records_main([datos_para_bd])
+                            save_exitoso = True
+                            logging.info(
+                                f"[IA] {key}: guardado en MySQL (informes_ihq + diagnosticos_ia)"
+                            )
                         except Exception as _e_main:
                             logging.warning(
                                 f"[IA] BD principal: no se persistió {key}: {_e_main}"
                             )
                     except Exception as _e:
                         logging.warning(f"[IA] No se persistió {key}: {_e}")
+
+                    # PASO 2: Append al estado (DESPUÉS del save).
+                    # El polling verá esto y refrescará el Visualizador
+                    # con la certeza de que MySQL ya tiene los datos.
+                    self._processing_result_ia["live_diagnosticos"].append(entry)
 
             # Deduplicar por numero_peticion (los chunks pueden solaparse o el
             # mismo IHQ aparecer en 2 chunks si una página repite el header)
@@ -8768,15 +8780,14 @@ Informes con malignidad: {malignant_count}"""
                         d["Diagnostico Principal"] = dx_limpio_f
                         d["Organo"] = organo_limpio_f
 
+                        # V6.9.5 — Mismo fix race condition aquí
                         entry_f = dict(d)
                         entry_f["numero_peticion"] = key_f
                         entry_f["diagnostico"] = dx_limpio_f
                         entry_f["organo"] = organo_limpio_f
                         entry_f["pdf_origen"] = filename
-                        self._processing_result_ia["live_diagnosticos"].append(entry_f)
-                        diagnosticos_finales.append(entry_f)
-                        recuperados_segunda_pasada += 1
 
+                        # PASO 1: Guardar en MySQL ANTES del append
                         try:
                             datos_para_bd_f = {
                                 k: v for k, v in d.items()
@@ -8789,9 +8800,11 @@ Informes con malignidad: {malignant_count}"""
                                 modelo_utilizado=resp_f.get("modelo", "desconocido"),
                                 ocr_caracteres_pdf=ocr_chars,
                             )
-                            # V6.8.0 — También a BD principal (Visualizador)
                             try:
                                 _save_records_main([datos_para_bd_f])
+                                logging.info(
+                                    f"[IA] {key_f}: guardado en MySQL (reintento)"
+                                )
                             except Exception as _e_main:
                                 logging.warning(
                                     f"[IA] BD principal: no se persistió {key_f} (reintento): {_e_main}"
@@ -8800,6 +8813,11 @@ Informes con malignidad: {malignant_count}"""
                             logging.warning(
                                 f"[IA] No se persistió {key_f} (reintento): {_e}"
                             )
+
+                        # PASO 2: Append DESPUÉS del save (polling refresca Visualizador)
+                        self._processing_result_ia["live_diagnosticos"].append(entry_f)
+                        diagnosticos_finales.append(entry_f)
+                        recuperados_segunda_pasada += 1
 
                 logging.info(
                     f"[IA] {filename}: Segunda pasada recuperó "
