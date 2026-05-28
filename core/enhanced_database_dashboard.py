@@ -70,8 +70,9 @@ class EnhancedDatabaseDashboard:
 
         ttk.Label(
             title_frame,
-            text="🗄️ Gestión de la Base de Datos",
-            font=("Segoe UI", 18, "bold")
+            text="Gestión de la base de datos",
+            font=("Segoe UI Semibold", 20),
+            bootstyle="primary"
         ).pack(side=LEFT)
 
         # Crear contenedor con pestañas
@@ -147,19 +148,17 @@ class EnhancedDatabaseDashboard:
         # Contenedor principal
         main_frame = scrollable_frame
 
-        # Sección 1: Métricas Principales
-        metrics_section = ttk.LabelFrame(main_frame, text="📈 Métricas Principales", padding=20)
-        metrics_section.pack(fill=X, padx=20, pady=10)
+        # ===== Seccion 1: Metricas principales (header limpio, sin LabelFrame) =====
+        ttk.Label(
+            main_frame, text="Métricas principales",
+            font=("Segoe UI Semibold", 14), bootstyle="primary"
+        ).pack(anchor=W, padx=24, pady=(22, 6))
 
-        # Grid de métricas
-        metrics_grid = ttk.Frame(metrics_section)
-        metrics_grid.pack(fill=X)
-
-        # Configurar grid
+        metrics_grid = ttk.Frame(main_frame)
+        metrics_grid.pack(fill=X, padx=20)
         for i in range(4):
             metrics_grid.grid_columnconfigure(i, weight=1)
 
-        # Métricas principales
         self.metric_cards = {}
         metrics_data = [
             ("📊", "Total Registros", "0", "primary"),
@@ -167,45 +166,46 @@ class EnhancedDatabaseDashboard:
             ("⚠️", "Casos Malignos", "0", "danger"),
             ("📅", "Días de Datos", "0", "info")
         ]
-
         for i, (icon, title, value, style) in enumerate(metrics_data):
             card = self.create_metric_card(metrics_grid, icon, title, value, style)
-            card.grid(row=0, column=i, padx=10, pady=10, sticky="ew")
+            card.grid(row=0, column=i, padx=8, pady=10, sticky="ew")
             self.metric_cards[title] = card
 
-        # Sección 2: Distribución por Tipos de Diagnóstico
-        diagnosis_section = ttk.LabelFrame(main_frame, text="🏥 Distribución por Diagnósticos", padding=20)
-        diagnosis_section.pack(fill=X, padx=20, pady=10)
+        # ===== Seccion 2: Distribucion por diagnosticos =====
+        ttk.Label(
+            main_frame, text="Distribución por diagnósticos",
+            font=("Segoe UI Semibold", 14), bootstyle="primary"
+        ).pack(anchor=W, padx=24, pady=(26, 6))
 
-        # Frame para gráfico de diagnósticos
-        self.diagnosis_chart_frame = ttk.Frame(diagnosis_section)
-        self.diagnosis_chart_frame.pack(fill=X, pady=10)
+        self.diagnosis_chart_frame = ttk.Frame(main_frame)
+        self.diagnosis_chart_frame.pack(fill=X, padx=24, pady=(0, 6))
 
-        # Sección 3: Top Diagnósticos Principales
-        top_diagnosis_section = ttk.LabelFrame(main_frame, text="🔝 Top 10 Diagnósticos Principales", padding=20)
-        top_diagnosis_section.pack(fill=X, padx=20, pady=10)
+        # ===== Seccion 3: Top 10 diagnosticos principales =====
+        ttk.Label(
+            main_frame, text="Top 10 diagnósticos principales",
+            font=("Segoe UI Semibold", 14), bootstyle="primary"
+        ).pack(anchor=W, padx=24, pady=(26, 6))
 
-        # Treeview para top diagnósticos principales
+        top_wrap = ttk.Frame(main_frame)
+        top_wrap.pack(fill=X, padx=24, pady=(0, 22))
+
         self.top_diagnosis_tree = ttk.Treeview(
-            top_diagnosis_section,
+            top_wrap,
             columns=("Diagnóstico Principal", "Frecuencia", "Porcentaje"),
             show="headings",
-            height=10
+            height=10,
+            style="Custom.Treeview"
         )
-
         self.top_diagnosis_tree.heading("Diagnóstico Principal", text="Diagnóstico Principal")
         self.top_diagnosis_tree.heading("Frecuencia", text="Frecuencia")
         self.top_diagnosis_tree.heading("Porcentaje", text="% del Total")
-
         self.top_diagnosis_tree.column("Diagnóstico Principal", width=400)
         self.top_diagnosis_tree.column("Frecuencia", width=100, anchor="center")
         self.top_diagnosis_tree.column("Porcentaje", width=100, anchor="center")
 
-        self.top_diagnosis_tree.pack(fill=X, padx=10, pady=10)
-
-        # Scrollbar para la tabla
-        diagnosis_scrollbar = ttk.Scrollbar(top_diagnosis_section, orient="vertical", command=self.top_diagnosis_tree.yview)
+        diagnosis_scrollbar = ttk.Scrollbar(top_wrap, orient="vertical", command=self.top_diagnosis_tree.yview)
         diagnosis_scrollbar.pack(side="right", fill="y")
+        self.top_diagnosis_tree.pack(side="left", fill=X, expand=True)
         self.top_diagnosis_tree.configure(yscrollcommand=diagnosis_scrollbar.set)
 
     def create_visualizar_tab(self):
@@ -457,21 +457,31 @@ class EnhancedDatabaseDashboard:
         self.malignancy_biomarker_tree.pack(fill=X, padx=10, pady=10)
 
     def create_metric_card(self, parent, icon, title, value, style):
-        """Crear una tarjeta de métrica"""
-        card = ttk.Frame(parent, padding=15, relief="solid", borderwidth=1)
+        """Crear una tarjeta de metrica (V6.9.16) estilo dashboard moderno:
+        barra de acento de color a la izquierda, etiqueta gris en mayuscula y
+        el numero grande en azul institucional. Minimalista y de alto contraste."""
+        card = ttk.Frame(parent, relief="solid", borderwidth=1)
 
-        # Header con icono
-        header = ttk.Frame(card)
-        header.pack(fill=X, pady=(0, 10))
+        # Barra de acento de color (diferencia visual de cada metrica)
+        bar = ttk.Frame(card, bootstyle=style, width=4)
+        bar.pack(side=LEFT, fill=Y)
 
-        ttk.Label(header, text=icon, font=("Segoe UI", 24)).pack()
+        # Cuerpo de la tarjeta
+        body = ttk.Frame(card, padding=(18, 16))
+        body.pack(side=LEFT, fill=BOTH, expand=True)
 
-        # Valor principal
-        value_label = ttk.Label(card, text=value, font=("Segoe UI", 20, "bold"))
-        value_label.pack()
+        # Etiqueta (gris, mayuscula, pequena)
+        ttk.Label(
+            body, text=title.upper(), font=("Segoe UI Semibold", 9),
+            bootstyle="secondary", anchor=W
+        ).pack(anchor=W)
 
-        # Título
-        ttk.Label(card, text=title, font=("Segoe UI", 10)).pack()
+        # Valor principal (numero grande en navy)
+        value_label = ttk.Label(
+            body, text=value, font=("Segoe UI", 26, "bold"),
+            bootstyle="primary", anchor=W
+        )
+        value_label.pack(anchor=W, pady=(6, 0))
 
         # Guardar referencia del label de valor para actualizaciones
         card.value_label = value_label

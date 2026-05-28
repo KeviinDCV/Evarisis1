@@ -121,8 +121,9 @@ def configure_tesseract():
 
 # Mapeo de argumentos de tema a temas TTKBootstrap
 THEME_MAP = {
+    "huv": "huv",  # V6.9.16 - Tema institucional HUV claro (#2d3e5e)
     "dark": "darkly",
-    "light": "flatly", 
+    "light": "flatly",
     "blue": "cosmo",
     "professional": "litera",
     "medical": "pulse",
@@ -179,6 +180,41 @@ import core.unified_extractor as procesador_ihq_biomarcadores
 import core.database_manager as database_manager
 
 
+# ======================================================================
+# V6.9.16 - TEMA INSTITUCIONAL HUV (UI/UX)
+# Paleta minimalista construida sobre el azul institucional #2d3e5e.
+# Se registra como tema ttkbootstrap 'huv'. Al estar definido a nivel
+# modulo, queda disponible ANTES de instanciar la ventana (App).
+# Filosofia: limpio, ordenado, fondos claros, acentos desaturados.
+# ======================================================================
+try:
+    from ttkbootstrap.themes.standard import STANDARD_THEMES as _STD_THEMES
+
+    _HUV_COLORS = {
+        "primary":   "#2d3e5e",  # Azul institucional HUV (botones/acentos/headers)
+        "secondary": "#8a909c",  # Gris neutro
+        "success":   "#2f8f6b",  # Verde apagado (estados OK)
+        "info":      "#4a6da7",  # Azul medio, armonico con el primary
+        "warning":   "#d99a4e",  # Ambar suave
+        "danger":    "#c75c6e",  # Rojo apagado (no estridente)
+        "light":     "#f4f6f9",  # Gris muy claro (fondos de tarjeta/seccion)
+        "dark":      "#2d3e5e",  # Mismo navy para superficies oscuras
+        "bg":        "#ffffff",  # Fondo base limpio
+        "fg":        "#2a2f3a",  # Texto principal (gris oscuro, no negro puro)
+        "selectbg":  "#2d3e5e",  # Seleccion = azul institucional
+        "selectfg":  "#ffffff",
+        "border":    "#e4e7ec",  # Bordes sutiles
+        "inputfg":   "#2a2f3a",
+        "inputbg":   "#ffffff",
+        "active":    "#eef1f6",  # Hover/activo muy claro
+    }
+    # Registrar solo si no existe (idempotente ante reimports)
+    if "huv" not in _STD_THEMES:
+        _STD_THEMES["huv"] = {"type": "light", "colors": _HUV_COLORS}
+except Exception as _e:
+    logging.warning(f"[tema] No se pudo registrar el tema institucional 'huv': {_e}")
+
+
 class App(ttk.Window):
     def __init__(self, info_usuario=None, tema="superhero"):
         # Inicializar TTKBootstrap Window con el tema
@@ -201,8 +237,9 @@ class App(ttk.Window):
         # Configurar tema actual
         self.current_theme = tema
         self.temas_disponibles = [
-            'superhero', 'flatly', 'cyborg', 'journal', 'solar', 'darkly', 
-            'minty', 'pulse', 'sandstone', 'united', 'morph', 'vapor', 
+            'huv',  # V6.9.16 - Tema institucional HUV (#2d3e5e), primero por defecto
+            'superhero', 'flatly', 'cyborg', 'journal', 'solar', 'darkly',
+            'minty', 'pulse', 'sandstone', 'united', 'morph', 'vapor',
             'yeti', 'cosmo', 'litera', 'lumen', 'simplex', 'zephyr'
         ]
         
@@ -251,9 +288,10 @@ class App(ttk.Window):
         self.details_panel = None
         self.filters_panel = None
 
-        # ===== Separador =====
-        self.header_separator = ttk.Separator(main_frame, orient=HORIZONTAL)
-        self.header_separator.pack(fill=X, padx=20, pady=5)
+        # ===== Separador eliminado (V6.9.16 - diseno minimalista sin linea) =====
+        # Se mantiene como Frame invisible (height=0) para no romper las
+        # referencias de _show_header / _hide_header. NO se empaqueta al inicio.
+        self.header_separator = ttk.Frame(main_frame, height=0)
 
         # ===== Contenido principal (sin sidebar tradicional) =====
         self._create_main_content(main_frame)
@@ -264,6 +302,10 @@ class App(ttk.Window):
         # ===== Botón flotante =====
         self._create_floating_button()
 
+        # ===== Atajo de teclado: Ctrl+B abre/cierra el menu de navegacion (V6.9.16) =====
+        self.bind_all("<Control-b>", lambda e: self._toggle_floating_menu())
+        self.bind_all("<Control-B>", lambda e: self._toggle_floating_menu())
+
         # Inicializar estilo de treeview
         self._init_treeview_style()
         
@@ -272,66 +314,54 @@ class App(ttk.Window):
         self.after(50, self.show_welcome_screen)
 
     def _create_header(self, parent):
-        """Crear header institucional compacto y profesional"""
-        self.header = ttk.Frame(parent, padding=(15, 8))
+        """Header institucional minimalista (V6.9.16).
+        Solo titulo en azul institucional + perfil limpio a la derecha.
+        Sin logos cuadrados, sin subtitulo gris, sin linea separadora."""
+        self.header = ttk.Frame(parent, padding=(28, 16))
         self.header.pack(fill=X)
 
-        # Logo izquierdo (compacto)
-        left = ttk.Frame(self.header)
-        left.pack(side=LEFT, padx=(0, 12))
-        if self.iconos.get("logo1"):
-            ttk.Label(left, image=self.iconos["logo1"]).pack()
-
-        # Centro - Título y subtítulo
+        # --- Titulo (izquierda) en azul institucional #2d3e5e ---
         center = ttk.Frame(self.header)
-        center.pack(side=LEFT, expand=True)
-        
+        center.pack(side=LEFT, expand=True, anchor=W)
         ttk.Label(
             center,
             text="EVARISIS CIRUGÍA ONCOLÓGICA",
-            font=("Segoe UI", 18, "bold"),
+            font=("Segoe UI Semibold", 19),
+            bootstyle="primary",
             anchor=W
-        ).pack(fill=X)
-        
-        ttk.Label(
-            center,
-            text="Suite de procesamiento y análisis oncológico del Hospital Universitario del Valle",
-            font=("Segoe UI", 10),
-            anchor=W,
-            bootstyle=SECONDARY
-        ).pack(fill=X, pady=(1, 0))
+        ).pack(anchor=W)
 
-        # Perfil derecho
+        # --- Perfil (derecha): version + datos de usuario, estilo claro ---
         right = ttk.Frame(self.header)
         right.pack(side=RIGHT)
 
-        # Tarjeta de perfil profesional (más compacta)
-        profile_card = ttk.Frame(right, padding=(10, 6), bootstyle="dark")
-        profile_card.pack(side=RIGHT, padx=(8, 0))
-        
-        # Foto del usuario si existe
-        if self.foto_usuario:
-            ttk.Label(profile_card, image=self.foto_usuario).pack(side=LEFT, padx=(0, 8))
-        
-        # Datos del usuario
-        datos = ttk.Frame(profile_card)
-        datos.pack(side=LEFT)
-        ttk.Label(datos, text=self.info_usuario.get("nombre", "Invitado"), font=("Segoe UI", 13, "bold")).pack(anchor=W)
-        ttk.Label(datos, text=self.info_usuario.get("cargo", "N/A"), font=("Segoe UI", 10), bootstyle=INFO).pack(anchor=W)
-        
-        # Badge de versión (pill compacto)
+        # Badge de version (pill outline)
         version_btn = ttk.Button(
             right,
             text=f"v{get_version_string().split('-')[0].replace('v', '')}",
             command=self._show_version_info,
-            bootstyle="info-outline",
+            bootstyle="primary-outline",
             width=7
         )
-        version_btn.pack(side=RIGHT, padx=(8, 8))
-        
-        # Logo derecho (compacto)
-        if self.iconos.get("logo3"):
-            ttk.Label(right, image=self.iconos["logo3"]).pack(side=RIGHT, padx=(8, 0))
+        version_btn.pack(side=RIGHT, padx=(14, 0))
+
+        # Datos del usuario (texto plano, sin tarjeta oscura)
+        datos = ttk.Frame(right)
+        datos.pack(side=RIGHT)
+        ttk.Label(
+            datos,
+            text=self.info_usuario.get("nombre", "Invitado"),
+            font=("Segoe UI Semibold", 12),
+            bootstyle="dark",
+            anchor=E
+        ).pack(anchor=E)
+        ttk.Label(
+            datos,
+            text=self.info_usuario.get("cargo", "N/A"),
+            font=("Segoe UI", 9),
+            bootstyle="secondary",
+            anchor=E
+        ).pack(anchor=E)
 
     def _create_main_content(self, parent):
         """Crear el contenido principal sin sidebar tradicional"""
@@ -343,89 +373,106 @@ class App(ttk.Window):
         self._create_content_panels()
 
     def _create_floating_menu(self):
-        """Crear el menú flotante con diseño profesional y sombras"""
-        # Frame principal del menú con sombra
-        self.floating_menu = ttk.Frame(
-            self, 
-            padding=5,
-            relief="raised",
-            borderwidth=3
+        """Menu de navegacion lateral minimalista y cohesivo (V6.9.16).
+        Items uniformes estilo sidebar moderno: el item activo se resalta en
+        azul institucional y el hover es sutil. Sin colores de semaforo ni
+        relieve 3D. Header con el logo del hospital."""
+        # --- Estilos propios de navegacion (sidebar) ---
+        st = self.style
+        st.configure(
+            "Nav.TButton", font=("Segoe UI", 11), anchor="w",
+            foreground="#2a2f3a", background="#ffffff",
+            bordercolor="#ffffff", borderwidth=0, focusthickness=0,
+            focuscolor="", relief="flat", padding=(18, 12)
         )
-        self.floating_menu.place(x=-300, y=20, width=280, height=420)  # Inicialmente oculto, más arriba
-        
-        # Header del menú con gradiente visual
-        header_frame = ttk.Frame(self.floating_menu, bootstyle="primary", padding=10)
-        header_frame.pack(fill=X, pady=(0, 5))
-        
-        # Título con mejor diseño
+        st.map(
+            "Nav.TButton",
+            background=[("active", "#eef1f6"), ("pressed", "#e4e9f1")],
+            foreground=[("active", "#2d3e5e")],
+            relief=[("pressed", "flat"), ("active", "flat")]
+        )
+        st.configure(
+            "NavActive.TButton", font=("Segoe UI Semibold", 11), anchor="w",
+            foreground="#ffffff", background="#2d3e5e",
+            bordercolor="#2d3e5e", borderwidth=0, focusthickness=0,
+            focuscolor="", relief="flat", padding=(18, 12)
+        )
+        st.map(
+            "NavActive.TButton",
+            background=[("active", "#34466b"), ("pressed", "#26344f")],
+            foreground=[("active", "#ffffff")],
+            relief=[("pressed", "flat"), ("active", "flat")]
+        )
+
+        # --- Panel del menu (limpio, borde sutil, sin relieve 3D) ---
+        self.floating_menu = ttk.Frame(self, padding=0, relief="solid", borderwidth=1)
+        self.floating_menu.place(x=-320, y=20, width=300, height=500)
+
+        # --- Header: logo del hospital + nombre ---
+        header = ttk.Frame(self.floating_menu, padding=(22, 24, 22, 18))
+        header.pack(fill=X)
+        self._menu_logo_ref = self._cargar_logo_bienvenida(target=42, tinte="#2d3e5e")
+        if self._menu_logo_ref is not None:
+            ttk.Label(header, image=self._menu_logo_ref).pack(anchor="w")
         ttk.Label(
-            header_frame,
-            text="🏥 HUV ONCOLOGÍA",
-            font=("Segoe UI", 13, "bold"),
-            bootstyle="inverse-primary",
-            anchor="center"
-        ).pack(expand=True)
-        
+            header, text="HUV ONCOLOGÍA",
+            font=("Segoe UI Semibold", 15), bootstyle="primary", anchor="w"
+        ).pack(anchor="w", pady=(10, 0))
         ttk.Label(
-            header_frame,
-            text="Panel de Navegación",
-            font=("Segoe UI", 9),
-            bootstyle="inverse-primary",
-            anchor="center"
-        ).pack()
-        
-        # Separador elegante
-        separator = ttk.Separator(self.floating_menu, orient="horizontal")
-        separator.pack(fill=X, padx=10, pady=5)
-        
-        # Frame para botones de navegación
-        nav_frame = ttk.Frame(self.floating_menu, padding=5)
+            header, text="Panel de navegación",
+            font=("Segoe UI", 9), bootstyle="secondary", anchor="w"
+        ).pack(anchor="w")
+
+        # --- Items de navegacion (cohesivos) ---
+        nav_frame = ttk.Frame(self.floating_menu, padding=(12, 6))
         nav_frame.pack(fill=BOTH, expand=True)
-        
-        # Botones de navegación con mejor espaciado y diseño
+
         self.nav_buttons = {}
         nav_items = [
-            ("🏠 Inicio", "home", "success-outline", self._nav_to_welcome),
-            ("🗄️ Base de Datos", "database", "primary", self._nav_to_database),
-            ("📈 Dashboard", "dashboard", "warning", self._nav_to_dashboard),
-            ("📋 Análisis IA", "analisis", "danger-outline", self._nav_to_analisis_ia),
-            ("🔗 Interoperabilidad QHORTE", "web", "secondary", self._nav_to_web_auto),
+            ("Inicio", "home", self._nav_to_welcome),
+            ("Base de Datos", "database", self._nav_to_database),
+            ("Dashboard", "dashboard", self._nav_to_dashboard),
+            ("Análisis IA", "analisis", self._nav_to_analisis_ia),
+            ("Interoperabilidad QHORTE", "web", self._nav_to_web_auto),
         ]
-        
-        for text, icon_key, style, callback in nav_items:
-            # Frame para cada botón con efecto hover
-            btn_frame = ttk.Frame(nav_frame, padding=2)
-            btn_frame.pack(fill=X, pady=3)
-            
+        for text, view_id, callback in nav_items:
             btn = ttk.Button(
-                btn_frame,
-                text=text,
-                command=callback,
-                bootstyle=style,
-                width=28
+                nav_frame, text=text, style="Nav.TButton",
+                command=lambda v=view_id, c=callback: self._on_nav_click(v, c),
+                cursor="hand2", takefocus=False
             )
-            btn.pack(fill=X)
-            self.nav_buttons[text] = btn
-            
-            # Agregar efectos hover
-            btn.bind("<Enter>", lambda e, b=btn: self._on_menu_btn_hover(b, True))
-            btn.bind("<Leave>", lambda e, b=btn: self._on_menu_btn_hover(b, False))
-        
-        # Footer con botón de cerrar
-        footer_frame = ttk.Frame(self.floating_menu, bootstyle="secondary", padding=5)
-        footer_frame.pack(fill=X, side=BOTTOM, pady=(5, 0))
-        
-        close_btn = ttk.Button(
-            footer_frame,
-            text="✕ Cerrar Menú",
-            command=self._toggle_floating_menu,
-            bootstyle="danger-outline",
-            width=25
-        )
-        close_btn.pack()
-        
-        # Variable para controlar estado del menú
+            btn.pack(fill=X, pady=2)
+            self.nav_buttons[view_id] = btn
+
+        # --- Footer: cerrar discreto ---
+        footer = ttk.Frame(self.floating_menu, padding=(16, 12, 16, 18))
+        footer.pack(fill=X, side=BOTTOM)
+        ttk.Button(
+            footer, text="✕   Cerrar menú", bootstyle="secondary-link",
+            command=self._toggle_floating_menu, cursor="hand2", takefocus=False
+        ).pack(anchor="w")
+
         self.menu_is_open = False
+        # Marcar la vista inicial (bienvenida) como activa
+        self._set_active_nav("home")
+
+    def _on_nav_click(self, view_id, callback):
+        """Marca el item como activo y ejecuta la navegacion."""
+        self._set_active_nav(view_id)
+        try:
+            callback()
+        except Exception as e:
+            logging.error(f"[menu] Error navegando a {view_id}: {e}")
+
+    def _set_active_nav(self, view_id):
+        """Resalta en azul el item de navegacion activo; el resto queda neutro."""
+        if not hasattr(self, "nav_buttons"):
+            return
+        for vid, btn in self.nav_buttons.items():
+            try:
+                btn.configure(style="NavActive.TButton" if vid == view_id else "Nav.TButton")
+            except Exception:
+                pass
 
     def _on_menu_btn_hover(self, button, entering):
         """Efectos hover para botones del menú"""
@@ -438,40 +485,61 @@ class App(ttk.Window):
             button.configure(cursor="")
 
     def _create_floating_button(self):
-        """Crear el botón flotante circular, compacto y natural"""
-        # Frame contenedor circular más pequeño
-        self.floating_btn_container = ttk.Frame(
-            self,
-            relief="raised",
-            borderwidth=2
+        """Boton flotante circular navy para abrir el menu (V6.9.16).
+        Cohesivo con el menu: circulo azul institucional con icono de menu
+        (hamburguesa) en blanco y hover suave. Sin relieve 3D, sin vibracion
+        ni cambio a naranja."""
+        size = 50
+        self._float_btn_size = size
+        self._float_btn_color = "#2d3e5e"   # navy institucional (igual que el menu)
+        self._float_btn_hover = "#34466b"   # navy ligeramente mas claro para hover
+        self._float_btn_x = 20              # margen izquierdo
+        self._float_btn_yoff = 80           # px desde el borde INFERIOR (FAB)
+
+        self.floating_btn_container = ttk.Frame(self, borderwidth=0)
+        # V6.9.16: posicion FIJA abajo-izquierda (anchor sw) para no tapar
+        # titulos ni contenido en ninguna vista. Coherente con el menu lateral.
+        self.floating_btn_container.place(
+            x=self._float_btn_x, rely=1.0, y=-self._float_btn_yoff,
+            anchor="sw", width=size, height=size
         )
-        self.floating_btn_container.place(x=15, y=150, width=50, height=50)
-        
-        # Botón flotante circular y compacto
-        self.floating_btn = ttk.Button(
-            self.floating_btn_container,
-            text="⚡",  # Icono más compacto y moderno
-            command=self._toggle_floating_menu,
-            bootstyle="info-outline",  # Estilo outline para apariencia más suave
-            width=2,  # Más compacto
-            cursor="hand2"
+
+        # El area fuera del circulo se funde con el fondo del tema (claro)
+        try:
+            canvas_bg = self.style.lookup("TFrame", "background") or "#ffffff"
+        except Exception:
+            canvas_bg = "#ffffff"
+
+        self.floating_btn = tk.Canvas(
+            self.floating_btn_container, width=size, height=size,
+            highlightthickness=0, bd=0, bg=canvas_bg, cursor="hand2"
         )
-        self.floating_btn.pack(expand=True, fill=BOTH, padx=3, pady=3)
-        
-        # Variables para animaciones con nueva posición
+        self.floating_btn.pack(expand=True, fill=BOTH)
+        self._draw_floating_button(self._float_btn_color)
+
+        # Eventos: click alterna el menu; hover cambia el color del circulo
+        self.floating_btn.bind("<Button-1>", lambda e: self._toggle_floating_menu())
+        self.floating_btn.bind("<Enter>", self._on_btn_hover_enter)
+        self.floating_btn.bind("<Leave>", self._on_btn_hover_leave)
+
+        # Animacion flotante eliminada (el FAB queda fijo, sin sube-y-baja)
         self.floating_btn_base_y = 150
         self.floating_animation_running = False
         self.hover_animation_running = False
-        
-        # Configurar eventos de hover
-        self.floating_btn.bind("<Enter>", self._on_btn_hover_enter)
-        self.floating_btn.bind("<Leave>", self._on_btn_hover_leave)
-        
-        # Agregar tooltip visual
-        self.floating_btn.bind("<Button-1>", lambda e: self.floating_btn.configure(text="✕" if not self.floating_menu_visible else "☰"))
-        
-        # Iniciar animación flotante continua
-        self._start_floating_animation()
+
+    def _draw_floating_button(self, color):
+        """Dibuja el circulo navy con el icono de menu (3 lineas) en blanco."""
+        if not hasattr(self, "floating_btn"):
+            return
+        c = self.floating_btn
+        s = self._float_btn_size
+        c.delete("all")
+        pad = 3
+        c.create_oval(pad, pad, s - pad, s - pad, fill=color, outline="")
+        cx, cy = s // 2, s // 2
+        for dy in (-6, 0, 6):
+            c.create_line(cx - 9, cy + dy, cx + 9, cy + dy,
+                          fill="white", width=2, capstyle="round")
 
     def _start_floating_animation(self):
         """Iniciar animación flotante continua sutil"""
@@ -498,18 +566,12 @@ class App(ttk.Window):
             self.floating_animation_running = False
 
     def _on_btn_hover_enter(self, event):
-        """Efecto al pasar el mouse - vibración y cambio de color"""
-        if not self.hover_animation_running:
-            self.hover_animation_running = True
-            # Cambiar a color más vibrante
-            self.floating_btn.configure(bootstyle="warning")
-            self._start_hover_vibration()
+        """Hover: aclara suavemente el circulo (sin vibracion ni naranja)."""
+        self._draw_floating_button(self._float_btn_hover)
 
     def _on_btn_hover_leave(self, event):
-        """Efecto al salir el mouse - restaurar estado normal"""
-        self.hover_animation_running = False
-        # Restaurar color original
-        self.floating_btn.configure(bootstyle="info")
+        """Restaura el color navy original del boton."""
+        self._draw_floating_button(self._float_btn_color)
 
     def _start_hover_vibration(self):
         """Animación de vibración cuando el mouse está encima"""
@@ -536,73 +598,38 @@ class App(ttk.Window):
             self.after(100, lambda: self._vibrate_button(0))
 
     def _hide_floating_button(self):
-        """Ocultar el botón flotante con animación de desvanecimiento"""
+        """Oculta el boton flotante al instante (queda cubierto por el menu
+        que entra). V6.9.16: sin animacion de escala que recortaba el circulo."""
+        self.floating_animation_running = False
+        self.hover_animation_running = False
         if hasattr(self, 'floating_btn_container'):
-            # Detener animaciones actuales
-            self.floating_animation_running = False
-            self.hover_animation_running = False
-            
-            # Animación de desvanecimiento (escala hacia 0)
-            def fade_out(step=0):
-                if step <= 10:
-                    # Reducir tamaño gradualmente
-                    scale = 1 - (step / 10)
-                    new_width = int(50 * scale)
-                    new_height = int(50 * scale)
-                    
-                    if new_width > 0 and new_height > 0:
-                        # Centrar el botón mientras se reduce
-                        offset_x = (50 - new_width) // 2
-                        offset_y = (50 - new_height) // 2
-                        current_y = self.floating_btn_base_y if hasattr(self, 'floating_btn_base_y') else 150
-                        
-                        self.floating_btn_container.place(
-                            x=15 + offset_x, 
-                            y=current_y + offset_y, 
-                            width=new_width, 
-                            height=new_height
-                        )
-                    
-                    self.after(20, lambda: fade_out(step + 1))
-                else:
-                    # Ocultar completamente
-                    self.floating_btn_container.place_forget()
-            
-            fade_out()
+            self.floating_btn_container.place_forget()
 
     def _show_floating_button(self):
-        """Mostrar el botón flotante con animación de aparición"""
-        if hasattr(self, 'floating_btn_container'):
-            # Determinar posición correcta según si el header está visible
-            current_y = self.floating_btn_base_y if hasattr(self, 'floating_btn_base_y') else 150
-            
-            # Animación de aparición (escala desde 0)
-            def fade_in(step=0):
-                if step <= 10:
-                    # Aumentar tamaño gradualmente
-                    scale = step / 10
-                    new_width = int(50 * scale)
-                    new_height = int(50 * scale)
-                    
-                    if new_width > 0 and new_height > 0:
-                        # Centrar el botón mientras crece
-                        offset_x = (50 - new_width) // 2
-                        offset_y = (50 - new_height) // 2
-                        
-                        self.floating_btn_container.place(
-                            x=15 + offset_x, 
-                            y=current_y + offset_y, 
-                            width=new_width, 
-                            height=new_height
-                        )
-                    
-                    self.after(20, lambda: fade_in(step + 1))
-                else:
-                    # Restaurar tamaño completo y reactivar animaciones
-                    self.floating_btn_container.place(x=15, y=current_y, width=50, height=50)
-                    self._start_floating_animation()
-            
-            fade_in()
+        """Muestra el FAB deslizandolo suavemente desde la izquierda (ease-out),
+        en su posicion fija abajo-izquierda. Sin recorte del circulo."""
+        if not hasattr(self, 'floating_btn_container'):
+            return
+        size = getattr(self, '_float_btn_size', 50)
+        yoff = getattr(self, '_float_btn_yoff', 80)
+        end_x = getattr(self, '_float_btn_x', 20)
+        start_x = -(size + 12)
+
+        def slide_in_btn(step=0):
+            if step <= 12:
+                progress = step / 12
+                eased = 1 - (1 - progress) ** 3  # ease-out cubica
+                x = int(start_x + (end_x - start_x) * eased)
+                self.floating_btn_container.place(
+                    x=x, rely=1.0, y=-yoff, anchor="sw", width=size, height=size
+                )
+                self.after(12, lambda: slide_in_btn(step + 1))
+            else:
+                self.floating_btn_container.place(
+                    x=end_x, rely=1.0, y=-yoff, anchor="sw", width=size, height=size
+                )
+
+        slide_in_btn()
 
     def _toggle_floating_menu(self):
         """Alternar visibilidad del menú flotante con animación"""
@@ -626,7 +653,7 @@ class App(ttk.Window):
                 eased_progress = 1 - (1 - progress) ** 2
                 x_pos = -300 + (eased_progress * 300)  # De -300 a 0
                 
-                self.floating_menu.place(x=int(x_pos), y=20, width=280, height=420)
+                self.floating_menu.place(x=int(x_pos), y=20, width=300, height=500)
                 self.after(12, lambda: slide_in(step + 1))
         
         slide_in()
@@ -643,7 +670,7 @@ class App(ttk.Window):
                 eased_progress = progress ** 2
                 x_pos = 0 - (eased_progress * 300)  # De 0 a -300
                 
-                self.floating_menu.place(x=int(x_pos), y=20, width=280, height=420)
+                self.floating_menu.place(x=int(x_pos), y=20, width=300, height=500)
                 self.after(12, lambda: slide_out(step + 1))
             else:
                 # Cuando la animación termine, mostrar el botón flotante
@@ -1717,13 +1744,9 @@ Disco {i}:
         """Mostrar header (solo para pantalla de bienvenida)"""
         if not self.header_visible:
             self.header.pack(fill=X, before=self.content_container)
-            self.header_separator.pack(fill=X, padx=20, pady=5, before=self.content_container)
             self.header_visible = True
-            # Reajustar posición base del botón flotante con header visible
-            self.floating_btn_base_y = 150
-            # Reposicionar inmediatamente el botón
-            if hasattr(self, 'floating_btn_container'):
-                self.floating_btn_container.place(x=15, y=150, width=50, height=50)
+            # V6.9.16: el FAB tiene posicion fija abajo-izquierda; ya no se
+            # reposiciona segun el header, y el separador fue eliminado del diseno.
 
     def _create_sidebar(self):
         """Crear la barra lateral de navegación"""
@@ -1804,8 +1827,11 @@ Disco {i}:
 
     def _create_content_panels(self):
         """Crear los paneles de contenido principal con scroll"""
-        # Panel de base de datos con scroll
-        self.database_frame = self._create_scrollable_frame(self.content_container)
+        # Panel de base de datos SIN scroll externo (V6.9.16): el notebook y el
+        # scroll interno de cada seccion ya gestionan el desplazamiento. Esto evita
+        # el doble scroll y el espacio en blanco arriba de las secciones.
+        self.database_frame = ttk.Frame(self.content_container)
+        self.database_frame.scrollable_frame = self.database_frame  # compat (_create_database_content)
         self._create_database_content()
 
         # Panel de visualización con scroll
@@ -2027,58 +2053,62 @@ Disco {i}:
 
         ttk.Label(
             title_frame,
-            text="📊 Visualizador de Datos",
-            font=self.FONT_TITULO
+            text="Visualizador de datos",
+            font=("Segoe UI Semibold", 20),
+            bootstyle="primary"
         ).pack(side=LEFT)
 
         # Botones de acción en el header
         actions_frame = ttk.Frame(title_frame)
         actions_frame.pack(side=RIGHT)
 
-        # Botón de filtros avanzados
+        # Botones de accion unificados (V6.9.16): paleta sobria navy/gris.
+        # Accion principal en navy solido; el resto en outline. Sin colores dispares.
+        # Boton de filtros avanzados
         self.filter_btn_dashboard = ttk.Button(
             actions_frame,
             text="🔍 Filtros",
             command=self._toggle_advanced_filters,
-            bootstyle="info"
+            bootstyle="secondary-outline"
         )
         self.filter_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
 
-        # Botón de detalles flotante
+        # Boton de detalles flotante
         self.details_btn_dashboard = ttk.Button(
             actions_frame,
             text="📋 Detalles",
             command=self._toggle_details_panel,
-            bootstyle="secondary"
+            bootstyle="secondary-outline"
         )
         self.details_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
 
-        # Botón exportar selección (inicialmente deshabilitado)
+        # Boton exportar seleccion (inicialmente deshabilitado)
         self.export_selection_btn_dashboard = ttk.Button(
             actions_frame,
             text="📤 Exportar Selección",
             command=self._export_selected_data,
-            bootstyle="success",
+            bootstyle="primary-outline",
             state="disabled"
         )
         self.export_selection_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
 
-        # Botón exportar toda la base de datos
+        # Boton exportar toda la base de datos
         ttk.Button(
             actions_frame,
             text="💾 Exportar Todo",
             command=self._export_full_database,
-            bootstyle="warning"
+            bootstyle="primary-outline"
         ).pack(side=RIGHT, padx=(0, 5))
 
-        # Botón Resumen IA
+        # Boton Resumen IA
         ttk.Button(
             actions_frame,
             text="📊 Resumen IA",
             command=self._generar_resumen_ia,
-            bootstyle="dark"
+            bootstyle="primary-outline"
         ).pack(side=RIGHT, padx=(0, 5))
 
+        # Accion principal: Actualizar datos (navy solido)
         ttk.Button(
             actions_frame,
             text="🔄 Actualizar Datos",
@@ -2086,12 +2116,12 @@ Disco {i}:
             bootstyle="primary"
         ).pack(side=RIGHT, padx=(0, 5))
 
-        # V3.2.4: Botones de auditoría IA
+        # V3.2.4: Botones de auditoria IA
         self.audit_parcial_btn_dashboard = ttk.Button(
             actions_frame,
             text="🔍 Auditoría PARCIAL",
             command=self._auditar_seleccion_parcial,
-            bootstyle="info-outline",
+            bootstyle="secondary-outline",
             state="disabled"
         )
         self.audit_parcial_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
@@ -2100,7 +2130,7 @@ Disco {i}:
             actions_frame,
             text="✅ Auditoría COMPLETA",
             command=self._auditar_seleccion_completa,
-            bootstyle="success-outline",
+            bootstyle="primary-outline",
             state="disabled"
         )
         self.audit_completa_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
@@ -2146,19 +2176,24 @@ Disco {i}:
             empty_vertical=0,
             header_font=("Segoe UI", 10, "bold"),
             font=("Segoe UI", 10, "normal"),
-            header_bg="#E8F5E9",
-            header_fg="#1B5E20",
-            table_bg="white",
-            table_fg="black",
-            table_selected_cells_bg="#BBDEFB",
-            table_selected_cells_fg="black",
-            table_selected_rows_bg="#E3F2FD",
-            table_selected_rows_fg="black",
-            top_left_bg="#E8F5E9",
-            index_bg="#F5F5F5",
-            index_fg="#424242",
-            index_selected_cells_bg="#CFD8DC",
-            index_selected_rows_bg="#B0BEC5"
+            header_bg="#e9edf3",                 # gris azulado claro (header sutil)
+            header_fg="#2d3e5e",                 # texto NAVY legible (alto contraste)
+            header_grid_fg="#d2d9e6",            # lineas de la cabecera sutiles
+            header_selected_cells_bg="#2d3e5e",  # al seleccionar columna -> navy
+            header_selected_cells_fg="#ffffff",
+            header_selected_columns_bg="#2d3e5e",
+            header_selected_columns_fg="#ffffff",
+            table_bg="#ffffff",
+            table_fg="#2a2f3a",
+            table_selected_cells_bg="#d7deea",   # seleccion azul-gris suave
+            table_selected_cells_fg="#2a2f3a",
+            table_selected_rows_bg="#eef1f6",
+            table_selected_rows_fg="#2a2f3a",
+            top_left_bg="#e9edf3",
+            index_bg="#f4f6f9",                  # indice gris muy claro
+            index_fg="#5a6172",
+            index_selected_cells_bg="#d7deea",
+            index_selected_rows_bg="#dfe4ee"
         )
         self.sheet_dashboard.grid(row=1, column=0, columnspan=2, sticky="nsew", padx=10, pady=(0, 10))
 
@@ -2226,8 +2261,9 @@ Disco {i}:
 
         ttk.Label(
             title_frame,
-            text="📊 Visualizador de Datos",
-            font=self.FONT_TITULO
+            text="Visualizador de datos",
+            font=("Segoe UI Semibold", 20),
+            bootstyle="primary"
         ).pack(side=LEFT)
 
         # Botones de acción en el header
@@ -3229,100 +3265,77 @@ Disco {i}:
         canvas.create_text(size // 2, size // 2, text=icon_text, font=("Segoe UI", 16), fill=fg_color)
         return canvas
 
-    def _create_welcome_screen(self):
-        """Crear la pantalla de bienvenida inicial con diseño profesional"""
-        self.welcome_frame = ttk.Frame(self.content_container, padding=20)
+    def _cargar_logo_bienvenida(self, target=150, tinte="#2d3e5e"):
+        """Carga el logo del hospital (favicon.png) para la pantalla de bienvenida.
+        Busca en imagenes/favicon.png y en la raiz del proyecto. Lo redimensiona
+        a 'target' px de alto manteniendo proporcion.
 
-        # Contenedor central con grid para centrado vertical
-        center_container = ttk.Frame(self.welcome_frame)
-        center_container.pack(expand=True, fill=BOTH)
-        center_container.grid_rowconfigure(0, weight=1)
-        center_container.grid_rowconfigure(1, weight=0)
-        center_container.grid_rowconfigure(2, weight=1)
-        center_container.grid_columnconfigure(0, weight=1)
-
-        # Espaciador superior
-        ttk.Frame(center_container).grid(row=0, column=0)
-
-        # === TARJETA PRINCIPAL CON FONDO OSCURO Y ESQUINAS REDONDEADAS ===
-        card_width = 720
-        card_height = 460
-        card_radius = 28
-        card_bg = "#1e2152"  # Azul oscuro índigo
-        card_icon_bg = "#2d3075"  # Fondo de iconos circulares
-
-        # Canvas para la tarjeta redondeada
-        self._welcome_card_canvas = tk.Canvas(
-            center_container,
-            width=card_width,
-            height=card_height,
-            highlightthickness=0,
-            bd=0
-        )
-        self._welcome_card_canvas.grid(row=1, column=0, pady=10)
-
-        # Obtener color de fondo del tema para el canvas exterior
+        Si 'tinte' no es None, recolorea la silueta del logo a ese color usando
+        el canal alpha como mascara (el favicon es blanco con transparencia y se
+        perderia sobre el fondo claro; lo pasamos a azul institucional #2d3e5e).
+        Devuelve ImageTk.PhotoImage o None si la imagen no existe todavia."""
         try:
-            theme_bg = self.style.lookup("TFrame", "background")
-            if not theme_bg:
-                theme_bg = "#2b3e50"
-        except Exception:
-            theme_bg = "#2b3e50"
-        self._welcome_card_canvas.configure(bg=theme_bg)
+            base = database_manager.get_base_path()
+            candidatos = [
+                base / "imagenes" / "favicon.png",
+                base / "favicon.png",
+            ]
+            ruta = next((p for p in candidatos if p.exists()), None)
+            if ruta is None:
+                return None
+            img = Image.open(ruta).convert("RGBA")
+            if tinte:
+                rgb = tuple(int(tinte.lstrip('#')[i:i+2], 16) for i in (0, 2, 4))
+                solido = Image.new("RGBA", img.size, rgb + (0,))
+                solido.putalpha(img.getchannel("A"))  # conserva la forma del logo
+                img = solido
+            w, h = img.size
+            if h > 0:
+                escala = target / float(h)
+                img = img.resize((max(1, int(w * escala)), target), Image.LANCZOS)
+            return ImageTk.PhotoImage(img)
+        except Exception as e:
+            logging.warning(f"[welcome] No se pudo cargar favicon.png: {e}")
+            return None
 
-        # Dibujar tarjeta redondeada
-        self._draw_rounded_rect(
-            self._welcome_card_canvas,
-            0, 0, card_width, card_height,
-            card_radius,
-            fill=card_bg, outline=""
-        )
+    def _create_welcome_screen(self):
+        """Pantalla de bienvenida minimalista clara (V6.9.16).
+        Sin tarjeta oscura 'pegada': contenido centrado que respira sobre el
+        fondo del tema. Logo del hospital grande, titulo en azul institucional
+        y texto de alto contraste."""
+        self.welcome_frame = ttk.Frame(self.content_container, padding=40)
 
-        # --- Título principal ---
-        self._welcome_card_canvas.create_text(
-            card_width // 2, 80,
-            text="🏥  Bienvenido al Gestor Oncológico  🔬",
-            font=("Segoe UI", 26, "bold"),
-            fill="white",
-            anchor="center"
-        )
+        # Contenedor centrado (pack expand sin fill -> se centra en ambos ejes)
+        center = ttk.Frame(self.welcome_frame)
+        center.pack(expand=True)
 
-        # --- Subtítulo ---
-        subtitle_text = ("Enfocado en la investigación y mejora del área de oncología\n"
-                        "del Hospital Universitario del Valle")
-        self._welcome_card_canvas.create_text(
-            card_width // 2, 135,
-            text=subtitle_text,
-            font=("Segoe UI", 13),
-            fill="#b8bedd",
+        # --- Logo del hospital (favicon.png) grande y centrado ---
+        logo_img = self._cargar_logo_bienvenida(target=150)
+        if logo_img is not None:
+            self._welcome_logo_ref = logo_img  # mantener referencia (evita GC)
+            ttk.Label(center, image=logo_img).pack(pady=(0, 24))
+
+        # --- Titulo en azul institucional ---
+        ttk.Label(
+            center,
+            text="Bienvenido al Gestor Oncológico",
+            font=("Segoe UI Semibold", 30),
+            bootstyle="primary",
             anchor="center",
             justify="center"
-        )
+        ).pack()
 
-        # --- Fila de iconos circulares ---
-        welcome_icons = ["📊", "📋", "🧬", "💡", "📅", "🔍", "⚕️"]
-        icon_size = 52
-        icon_spacing = 16
-        total_icons_width = len(welcome_icons) * icon_size + (len(welcome_icons) - 1) * icon_spacing
-        icon_start_x = (card_width - total_icons_width) // 2
-        icon_y = 200
+        # --- Subtitulo de alto contraste ---
+        ttk.Label(
+            center,
+            text="Investigación y mejora del área de oncología\ndel Hospital Universitario del Valle",
+            font=("Segoe UI", 13),
+            bootstyle="secondary",
+            anchor="center",
+            justify="center"
+        ).pack(pady=(12, 30))
 
-        for i, icon_text in enumerate(welcome_icons):
-            x = icon_start_x + i * (icon_size + icon_spacing)
-            # Dibujar círculo de fondo
-            self._welcome_card_canvas.create_oval(
-                x + 2, icon_y + 2, x + icon_size - 2, icon_y + icon_size - 2,
-                fill=card_icon_bg, outline=""
-            )
-            # Dibujar icono centrado
-            self._welcome_card_canvas.create_text(
-                x + icon_size // 2, icon_y + icon_size // 2,
-                text=icon_text,
-                font=("Segoe UI", 18),
-                fill="white"
-            )
-
-        # --- Verificar datos y mostrar contenido inferior ---
+        # --- Accion segun haya datos o no ---
         has_data = False
         try:
             from core.database_manager import get_all_records_as_dataframe
@@ -3332,62 +3345,38 @@ Disco {i}:
             logging.error(f"Error verificando datos: {e}")
 
         if not has_data:
-            # Texto "No hay información"
-            self._welcome_card_canvas.create_text(
-                card_width // 2, 310,
-                text="No hay información en la base de datos",
-                font=("Segoe UI", 13),
-                fill="#8890b5",
+            ttk.Label(
+                center,
+                text="Aún no hay información en la base de datos",
+                font=("Segoe UI", 12),
+                bootstyle="secondary",
                 anchor="center"
-            )
-
-            # Botón "Agregar Información" con estilo outline sobre la card
-            btn_w = 380
-            btn_h = 48
-            btn_x = (card_width - btn_w) // 2
-            btn_y = 355
-            btn_radius = 24
-
-            # Borde redondeado del botón
-            self._draw_rounded_rect(
-                self._welcome_card_canvas,
-                btn_x, btn_y, btn_x + btn_w, btn_y + btn_h,
-                btn_radius,
-                fill="#252a6b", outline="#5b6abf", width=2
-            )
-
-            # Texto del botón
-            self._welcome_card_canvas.create_text(
-                card_width // 2, btn_y + btn_h // 2,
-                text="⊕  Agregar Información a la Base de Datos",
-                font=("Segoe UI", 13, "bold"),
-                fill="white",
-                anchor="center"
-            )
-
-            # Zona clickeable invisible sobre el botón
-            self._welcome_btn_hitbox = self._welcome_card_canvas.create_rectangle(
-                btn_x, btn_y, btn_x + btn_w, btn_y + btn_h,
-                fill="", outline="", tags="add_btn"
-            )
-            self._welcome_card_canvas.tag_bind("add_btn", "<Button-1>", lambda e: self._goto_import_data_tab())
-            self._welcome_card_canvas.tag_bind("add_btn", "<Enter>", lambda e: self._welcome_card_canvas.configure(cursor="hand2"))
-            self._welcome_card_canvas.tag_bind("add_btn", "<Leave>", lambda e: self._welcome_card_canvas.configure(cursor=""))
+            ).pack(pady=(0, 16))
+            ttk.Button(
+                center,
+                text="+   Agregar información a la base de datos",
+                bootstyle="primary",
+                padding=(22, 12),
+                command=self._goto_import_data_tab
+            ).pack()
         else:
-            # Mensaje de instrucción cuando hay datos
-            instruction_text = ("Selecciona una opción del menú flotante para comenzar\n"
-                               "a trabajar con los datos oncológicos")
-            self._welcome_card_canvas.create_text(
-                card_width // 2, 320,
-                text=instruction_text,
-                font=("Segoe UI", 13),
-                fill="#8890b5",
+            ttk.Label(
+                center,
+                text="Seleccioná una opción del menú para comenzar\na trabajar con los datos oncológicos",
+                font=("Segoe UI", 12),
+                bootstyle="secondary",
                 anchor="center",
                 justify="center"
-            )
+            ).pack()
 
-        # Espaciador inferior
-        ttk.Frame(center_container).grid(row=2, column=0)
+        # Aviso del atajo de teclado para abrir el menu (V6.9.16)
+        ttk.Label(
+            center,
+            text="💡  Presioná   Ctrl + B   para abrir el menú de navegación",
+            font=("Segoe UI", 10),
+            bootstyle="secondary",
+            anchor="center"
+        ).pack(pady=(38, 0))
 
     def _goto_import_data_tab(self):
         """Navegar directamente a la pestaña de importar datos del dashboard"""
@@ -10101,8 +10090,29 @@ Informes con malignidad: {malignant_count}"""
                 relief="flat",
                 padding=6,
             )
+
+            # V6.9.16 - Selector de secciones (Notebook) cohesivo y minimalista.
+            # Tab activa en azul institucional, inactivas claras, hover sutil.
+            # Afecta a todos los Notebook de la app (Base de Datos, etc.).
+            s.configure("TNotebook", background=bg_color, borderwidth=0,
+                        tabmargins=(0, 6, 0, 0))
+            s.configure(
+                "TNotebook.Tab",
+                font=("Segoe UI", 10),
+                padding=(20, 10),
+                background="#eef1f6",
+                foreground="#5a6172",
+                borderwidth=0,
+                focuscolor="",
+            )
+            s.map(
+                "TNotebook.Tab",
+                background=[("selected", primary_color), ("active", "#dfe4ee")],
+                foreground=[("selected", "#ffffff"), ("active", primary_color)],
+                padding=[("selected", (20, 11))],
+            )
         except Exception as e:
-            logging.warning(f"No se pudo configurar Custom.Treeview: {e}")
+            logging.warning(f"No se pudo configurar estilos (Treeview/Notebook): {e}")
 
 def main():
     """
