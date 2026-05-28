@@ -1,44 +1,79 @@
 # ===================================================================
 # .gitignore para Proyecto HUV - Gestor de Oncología
-# ENFOQUE: Incluir TODO excepto lo especificado
 # ===================================================================
 
-# ===============================================
-# EXCLUSIONES ESPECÍFICAS SOLICITADAS
-# ===============================================
+# ===================================================================
+# 🚨 BLOQUE CRÍTICO - DATOS MÉDICOS CONFIDENCIALES (Ley 1581)
+# NUNCA subir datos de pacientes a ningún repositorio remoto.
+# Estas reglas son OBLIGATORIAS y no deben eliminarse.
+# ===================================================================
 
-# 1. LEGACY de bases de datos
-LEGACY/**/*.db
-LEGACY/**/*.sqlite
-LEGACY/**/*.sqlite3
-Legacy de bases de datos/
-# 2. Entorno virtual específico venv0
+# Bases de datos (contienen datos de pacientes) - TODAS, en cualquier ruta
+*.db
+*.sqlite
+*.sqlite3
+
+# Backups (BD + JSON de respaldo con OCR y datos de pacientes)
+backups/
+**/backups/
+
+# Salidas de extracción IA (datos de pacientes extraídos)
+informes_ia/
+informes_json/
+debug_maps/
+
+# Resultados exportados (Excel/CSV con datos de pacientes)
+resultados_ihq/
+*.xlsx
+*.xls
+*.csv
+
+# PDFs de patología (datos médicos crudos)
+pdfs_patologia/
+*.pdf
+
+# Comprimidos (suelen empaquetar BD/PDFs/proyecto completo y exceder 100MB)
+*.rar
+*.zip
+*.7z
+
+# Logs (pueden contener datos de pacientes y son pesados)
+*.log
+
+# Carpeta data (base de datos principal en producción)
+data/
+
+# Archivos temporales de sincronización (Google Drive, etc.)
+.tmp.driveupload/
+**/.tmp.driveupload/
+
+# ===================================================================
+# ENTORNO Y CACHE
+# ===================================================================
+
+# Entorno virtual
 venv0/
+venv/
+.venv/
+
+# Orquestador Claude (worktrees, config local)
 .claude/
-# 3. Cache de Python (__pycache__)
+
+# Cache de Python
 **/__pycache__/
 **/*.pyc
 **/*.pyo
-
-# 4. Carpetas build (compilación)
-**/build/
-
-# 5. Carpetas dist (distribución)
-**/dist/
-
-# 6. PDFs de patología (datos médicos)
-pdfs_patologia/
-
-# 7. Data (base de datos con datos de pacientes)
-data/
-
-# ===============================================
-# EXCLUSIONES ESTÁNDAR DE PYTHON (RECOMENDADAS)
-# ===============================================
-
-# Archivos compilados Python adicionales
 *.py[cod]
 *$py.class
+
+# Compilación / distribución
+**/build/
+**/dist/
+*.spec.bak
+
+# LEGACY
+LEGACY/
+Legacy de bases de datos/
 
 # Archivos de sistema (Windows/Mac)
 .DS_Store
@@ -46,26 +81,12 @@ Thumbs.db
 *.tmp
 *.swp
 
-# ===============================================
-# TODO LO DEMÁS SE INCLUYE AUTOMÁTICAMENTE
-# ===============================================
-#
-# Esto incluye:
-# ✅ Todas las carpetas (config, core, herramientas_ia, documentacion, etc.)
-# ✅ Todos los archivos Python (.py)
-# ✅ Bases de datos (.db) EXCEPTO en LEGACY/
-# ✅ Documentación completa
-# ✅ EXCEL, imagenes, data, etc.
-# ✅ requirements.txt, README.md, ui.py
-# ✅ Scripts .bat, .sh
-# ✅ Todos los archivos del proyecto
-#
-# ❌ EXCLUYE solo:
-#    - LEGACY/**/*.db (bases de datos legacy)
-#    - venv0/ (entorno virtual)
-#    - __pycache__/ (cache Python)
-#    - build/ (carpetas de compilación)
-#    - dist/ (carpetas de distribución)
-#    - pdfs_patologia/ (PDFs con datos médicos)
-#
+# ===================================================================
+# RESUMEN
+# ===================================================================
+# ✅ SE INCLUYE: código (.py), config/, core/, herramientas_ia/,
+#    imagenes/, documentacion/ (.docx/.md), requirements.txt, .bat
+# ❌ SE EXCLUYE (CRÍTICO): *.db, backups/, informes_ia/, pdfs_patologia/,
+#    *.pdf, *.rar/.zip, *.log, *.xlsx/.csv, data/ → datos de pacientes
+#    y archivos pesados. NUNCA quitar el bloque crítico de arriba.
 # ===================================================================
