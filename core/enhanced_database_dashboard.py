@@ -280,19 +280,16 @@ class EnhancedDatabaseDashboard:
         # Contenedor principal
         main_frame = scrollable_frame
 
-        # Sección 1: Resumen de Biomarcadores
-        biomarker_summary = ttk.LabelFrame(main_frame, text="🧬 Resumen de Biomarcadores", padding=20)
-        biomarker_summary.pack(fill=X, padx=20, pady=10)
+        # ===== Seccion 1: Resumen de biomarcadores (header limpio) =====
+        ttk.Label(main_frame, text="Resumen de biomarcadores",
+                  font=("Segoe UI Semibold", 14), bootstyle="primary").pack(
+                  anchor=W, padx=24, pady=(22, 6))
 
-        # Grid de biomarcadores con más espacio horizontal
-        biomarker_grid = ttk.Frame(biomarker_summary)
-        biomarker_grid.pack(fill=BOTH, expand=True)
-
-        # Configurar grid para biomarcadores - 6 columnas para evitar cortes
+        biomarker_grid = ttk.Frame(main_frame)
+        biomarker_grid.pack(fill=X, padx=20)
         for i in range(6):
-            biomarker_grid.grid_columnconfigure(i, weight=1, minsize=150)
+            biomarker_grid.grid_columnconfigure(i, weight=1, minsize=140)
 
-        # Cards de biomarcadores principales
         self.biomarker_cards = {}
         biomarker_data = [
             ("HER2", "0", "danger"),
@@ -302,73 +299,60 @@ class EnhancedDatabaseDashboard:
             ("PDL-1", "0", "secondary"),
             ("Otros", "0", "dark")
         ]
-
-        # Distribuir en una sola fila horizontal para evitar cortes
         for i, (name, value, style) in enumerate(biomarker_data):
             card = self.create_biomarker_card(biomarker_grid, name, value, style)
-            card.grid(row=0, column=i, padx=5, pady=10, sticky="ew")
+            card.grid(row=0, column=i, padx=6, pady=10, sticky="ew")
             self.biomarker_cards[name] = card
 
-        # Sección 2: Distribución de Valores de Biomarcadores
-        values_section = ttk.LabelFrame(main_frame, text="📊 Distribución de Valores", padding=20)
-        values_section.pack(fill=X, padx=20, pady=10)
+        # ===== Seccion 2: Distribucion de valores =====
+        ttk.Label(main_frame, text="Distribución de valores",
+                  font=("Segoe UI Semibold", 14), bootstyle="primary").pack(
+                  anchor=W, padx=24, pady=(26, 6))
+        self.biomarker_charts_frame = ttk.Frame(main_frame)
+        self.biomarker_charts_frame.pack(fill=X, padx=24, pady=(0, 6))
 
-        # Frame para gráficos de distribución
-        self.biomarker_charts_frame = ttk.Frame(values_section)
-        self.biomarker_charts_frame.pack(fill=X, pady=10)
+        # ===== Seccion 3: Correlaciones entre biomarcadores =====
+        ttk.Label(main_frame, text="Correlaciones entre biomarcadores",
+                  font=("Segoe UI Semibold", 14), bootstyle="primary").pack(
+                  anchor=W, padx=24, pady=(26, 6))
+        self.correlation_frame = ttk.Frame(main_frame)
+        self.correlation_frame.pack(fill=X, padx=24, pady=(0, 6))
 
-        # Sección 3: Correlaciones entre Biomarcadores
-        correlation_section = ttk.LabelFrame(main_frame, text="🔗 Correlaciones entre Biomarcadores", padding=20)
-        correlation_section.pack(fill=X, padx=20, pady=10)
+        # ===== Seccion 4: Estadisticas detalladas =====
+        ttk.Label(main_frame, text="Estadísticas detalladas",
+                  font=("Segoe UI Semibold", 14), bootstyle="primary").pack(
+                  anchor=W, padx=24, pady=(26, 6))
+        stats_wrap = ttk.Frame(main_frame)
+        stats_wrap.pack(fill=X, padx=24, pady=(0, 6))
 
-        # Frame para matriz de correlación
-        self.correlation_frame = ttk.Frame(correlation_section)
-        self.correlation_frame.pack(fill=X, pady=10)
-
-        # Sección 4: Estadísticas Avanzadas por Biomarcador
-        advanced_stats_section = ttk.LabelFrame(main_frame, text="🔍 Estadísticas Detalladas", padding=20)
-        advanced_stats_section.pack(fill=X, padx=20, pady=10)
-
-        # Treeview para estadísticas detalladas
         self.biomarker_stats_tree = ttk.Treeview(
-            advanced_stats_section,
+            stats_wrap,
             columns=("Biomarcador", "Total", "Positivos", "Negativos", "% Positividad", "Media", "Desv.Std"),
             show="headings",
-            height=8
+            height=8,
+            style="Custom.Treeview"
         )
-
         headers = ["Biomarcador", "Total", "Positivos", "Negativos", "% Positividad", "Media", "Desv.Std"]
         for header in headers:
             self.biomarker_stats_tree.heading(header, text=header)
             self.biomarker_stats_tree.column(header, width=120, anchor="center")
+        self.biomarker_stats_tree.pack(fill=X, pady=6)
 
-        self.biomarker_stats_tree.pack(fill=X, padx=10, pady=10)
+        # Nota informativa sobre interpretacion de HER2 (cohesiva)
+        her2_info_frame = ttk.Frame(stats_wrap)
+        her2_info_frame.pack(fill=X, pady=(12, 6))
+        ttk.Label(her2_info_frame, text="ℹ️  Interpretación de HER2",
+                  font=("Segoe UI Semibold", 10), bootstyle="primary").pack(anchor="w")
+        ttk.Label(her2_info_frame,
+                  text="0 y 1+ = NEGATIVO      ·      2+ = INDETERMINADO      ·      3+ = POSITIVO",
+                  font=("Segoe UI", 9), bootstyle="secondary").pack(anchor="w", pady=(2, 0))
 
-        # Nota informativa sobre interpretación de HER2
-        her2_info_frame = ttk.Frame(advanced_stats_section, style="info.TFrame")
-        her2_info_frame.pack(fill=X, padx=10, pady=(15, 10))
-
-        ttk.Label(
-            her2_info_frame,
-            text="ℹ️ Interpretación de HER2:",
-            font=("Segoe UI", 10, "bold"),
-            foreground="#2196F3"
-        ).pack(anchor="w", padx=10, pady=(5, 2))
-
-        ttk.Label(
-            her2_info_frame,
-            text="• 0 y 1+ = NEGATIVO    • 2+ = INDETERMINADO    • 3+ = POSITIVO",
-            font=("Segoe UI", 9),
-            foreground="#555555"
-        ).pack(anchor="w", padx=25, pady=(0, 5))
-
-        # Sección 5: Distribución de RE/RP por Rangos de Positividad
-        er_pr_distribution_section = ttk.LabelFrame(main_frame, text="🎯 Distribución de RE/RP por % de Positividad", padding=20)
-        er_pr_distribution_section.pack(fill=X, padx=20, pady=10)
-
-        # Frame para gráfico de distribución RE/RP
-        self.er_pr_chart_frame = ttk.Frame(er_pr_distribution_section)
-        self.er_pr_chart_frame.pack(fill=X, pady=10)
+        # ===== Seccion 5: Distribucion de RE/RP por % de positividad =====
+        ttk.Label(main_frame, text="Distribución de RE/RP por % de positividad",
+                  font=("Segoe UI Semibold", 14), bootstyle="primary").pack(
+                  anchor=W, padx=24, pady=(26, 6))
+        self.er_pr_chart_frame = ttk.Frame(main_frame)
+        self.er_pr_chart_frame.pack(fill=X, padx=24, pady=(0, 22))
 
     def create_malignancy_analysis_tab(self):
         """Crear pestaña de análisis de malignidad"""
@@ -489,19 +473,30 @@ class EnhancedDatabaseDashboard:
         return card
 
     def create_biomarker_card(self, parent, name, value, style):
-        """Crear una tarjeta específica para biomarcadores"""
-        card = ttk.Frame(parent, padding=15, relief="solid", borderwidth=1)
+        """Tarjeta de biomarcador (V6.9.16): barra de acento de color + nombre
+        gris en mayuscula + numero navy. Coherente con las KPI de Estadisticas."""
+        card = ttk.Frame(parent, relief="solid", borderwidth=1)
 
-        # Nombre del biomarcador
-        ttk.Label(card, text=name, font=("Segoe UI", 14, "bold")).pack()
+        # Barra de acento de color
+        bar = ttk.Frame(card, bootstyle=style, width=4)
+        bar.pack(side=LEFT, fill=Y)
 
-        # Valor
-        value_label = ttk.Label(card, text=value, font=("Segoe UI", 18, "bold"))
-        value_label.pack(pady=(5, 0))
+        body = ttk.Frame(card, padding=(14, 12))
+        body.pack(side=LEFT, fill=BOTH, expand=True)
 
-        # Descripción
-        desc_label = ttk.Label(card, text="casos", font=("Segoe UI", 9))
-        desc_label.pack()
+        # Nombre del biomarcador (gris, mayuscula)
+        ttk.Label(body, text=name.upper(), font=("Segoe UI Semibold", 9),
+                  bootstyle="secondary", anchor=W).pack(anchor=W)
+
+        # Valor (numero grande navy)
+        value_label = ttk.Label(body, text=value, font=("Segoe UI", 22, "bold"),
+                                 bootstyle="primary", anchor=W)
+        value_label.pack(anchor=W, pady=(4, 0))
+
+        # Descripcion
+        desc_label = ttk.Label(body, text="casos", font=("Segoe UI", 8),
+                               bootstyle="secondary", anchor=W)
+        desc_label.pack(anchor=W)
 
         # Guardar referencias
         card.value_label = value_label

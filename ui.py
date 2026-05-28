@@ -215,6 +215,40 @@ except Exception as _e:
     logging.warning(f"[tema] No se pudo registrar el tema institucional 'huv': {_e}")
 
 
+# ======================================================================
+# V6.9.16 - ESTILO INSTITUCIONAL PARA GRAFICOS MATPLOTLIB (paleta navy)
+# Afecta a TODOS los graficos del dashboard de una sola vez: fondo limpio,
+# titulos navy, ejes sutiles, sin bordes superior/derecho (look minimalista),
+# grid muy suave y ciclo de colores cohesivo (navy primero).
+# ======================================================================
+try:
+    import matplotlib as _mpl
+    _mpl.rcParams.update({
+        "figure.facecolor": "#ffffff",
+        "axes.facecolor": "#ffffff",
+        "axes.edgecolor": "#d2d9e6",
+        "axes.linewidth": 0.8,
+        "axes.labelcolor": "#2a2f3a",
+        "axes.titlecolor": "#2d3e5e",
+        "axes.titlesize": 11,
+        "axes.titleweight": "bold",
+        "axes.grid": True,
+        "axes.axisbelow": True,
+        "grid.color": "#eef1f6",
+        "grid.linewidth": 0.8,
+        "axes.spines.top": False,
+        "axes.spines.right": False,
+        "xtick.color": "#5a6172",
+        "ytick.color": "#5a6172",
+        "text.color": "#2a2f3a",
+        "axes.prop_cycle": _mpl.cycler(
+            color=["#2d3e5e", "#9aa6bf", "#4a6da7", "#2f8f6b", "#d99a4e", "#c75c6e"]
+        ),
+    })
+except Exception as _e:
+    logging.warning(f"[graficos] No se pudo aplicar estilo matplotlib institucional: {_e}")
+
+
 class App(ttk.Window):
     def __init__(self, info_usuario=None, tema="superhero"):
         # Inicializar TTKBootstrap Window con el tema
@@ -489,12 +523,17 @@ class App(ttk.Window):
         Cohesivo con el menu: circulo azul institucional con icono de menu
         (hamburguesa) en blanco y hover suave. Sin relieve 3D, sin vibracion
         ni cambio a naranja."""
-        size = 50
+        size = 42
         self._float_btn_size = size
-        self._float_btn_color = "#2d3e5e"   # navy institucional (igual que el menu)
-        self._float_btn_hover = "#34466b"   # navy ligeramente mas claro para hover
-        self._float_btn_x = 20              # margen izquierdo
-        self._float_btn_yoff = 80           # px desde el borde INFERIOR (FAB)
+        # V6.9.16: FAB DISCRETO. En reposo, gris muy claro con icono gris y
+        # borde sutil (casi se funde con el fondo). Al pasar el mouse se tine
+        # de navy. La via principal para abrir el menu es el atajo Ctrl+B.
+        self._float_btn_color = "#eef1f6"    # reposo: gris azulado muy claro
+        self._float_btn_icon = "#6c757d"     # reposo: icono gris medio
+        self._float_btn_outline = "#d2d9e6"  # reposo: borde sutil
+        self._float_btn_hover = "#2d3e5e"    # hover: navy institucional
+        self._float_btn_x = 20               # margen izquierdo
+        self._float_btn_yoff = 80            # px desde el borde INFERIOR (FAB)
 
         self.floating_btn_container = ttk.Frame(self, borderwidth=0)
         # V6.9.16: posicion FIJA abajo-izquierda (anchor sw) para no tapar
@@ -515,7 +554,9 @@ class App(ttk.Window):
             highlightthickness=0, bd=0, bg=canvas_bg, cursor="hand2"
         )
         self.floating_btn.pack(expand=True, fill=BOTH)
-        self._draw_floating_button(self._float_btn_color)
+        self._draw_floating_button(self._float_btn_color,
+                                   icon_color=self._float_btn_icon,
+                                   outline=self._float_btn_outline)
 
         # Eventos: click alterna el menu; hover cambia el color del circulo
         self.floating_btn.bind("<Button-1>", lambda e: self._toggle_floating_menu())
@@ -527,19 +568,22 @@ class App(ttk.Window):
         self.floating_animation_running = False
         self.hover_animation_running = False
 
-    def _draw_floating_button(self, color):
-        """Dibuja el circulo navy con el icono de menu (3 lineas) en blanco."""
+    def _draw_floating_button(self, color, icon_color="#ffffff", outline=""):
+        """Dibuja el circulo del FAB con el icono de menu (3 lineas).
+        color = relleno del circulo; icon_color = color de las lineas del icono;
+        outline = color del borde (cadena vacia = sin borde)."""
         if not hasattr(self, "floating_btn"):
             return
         c = self.floating_btn
         s = self._float_btn_size
         c.delete("all")
         pad = 3
-        c.create_oval(pad, pad, s - pad, s - pad, fill=color, outline="")
+        c.create_oval(pad, pad, s - pad, s - pad, fill=color,
+                      outline=outline, width=1)
         cx, cy = s // 2, s // 2
         for dy in (-6, 0, 6):
-            c.create_line(cx - 9, cy + dy, cx + 9, cy + dy,
-                          fill="white", width=2, capstyle="round")
+            c.create_line(cx - 8, cy + dy, cx + 8, cy + dy,
+                          fill=icon_color, width=2, capstyle="round")
 
     def _start_floating_animation(self):
         """Iniciar animación flotante continua sutil"""
@@ -566,12 +610,14 @@ class App(ttk.Window):
             self.floating_animation_running = False
 
     def _on_btn_hover_enter(self, event):
-        """Hover: aclara suavemente el circulo (sin vibracion ni naranja)."""
-        self._draw_floating_button(self._float_btn_hover)
+        """Hover: el FAB discreto se tine de navy con icono blanco."""
+        self._draw_floating_button(self._float_btn_hover, icon_color="#ffffff", outline="")
 
     def _on_btn_hover_leave(self, event):
-        """Restaura el color navy original del boton."""
-        self._draw_floating_button(self._float_btn_color)
+        """Reposo: vuelve al estilo discreto (gris claro, icono gris, borde sutil)."""
+        self._draw_floating_button(self._float_btn_color,
+                                   icon_color=self._float_btn_icon,
+                                   outline=self._float_btn_outline)
 
     def _start_hover_vibration(self):
         """Animación de vibración cuando el mouse está encima"""
@@ -1838,8 +1884,11 @@ Disco {i}:
         self.visualizar_frame = self._create_scrollable_frame(self.content_container)
         self._create_visualizar_content()
 
-        # Panel de análisis gráfico con scroll
-        self.dashboard_frame = self._create_scrollable_frame(self.content_container)
+        # Panel de analisis grafico SIN scroll externo (V6.9.16): los graficos
+        # usan grid 2x2 responsive (se ajustan al espacio disponible), por lo que
+        # el scroll externo solo generaba el espacio vacio arriba.
+        self.dashboard_frame = ttk.Frame(self.content_container)
+        self.dashboard_frame.scrollable_frame = self.dashboard_frame  # compat (_create_dashboard_content)
         self._create_dashboard_content()
 
         # Panel de análisis IA con scroll
@@ -2692,10 +2741,11 @@ Disco {i}:
         toolbar = ttk.Frame(main_area, padding=(5, 5))
         toolbar.grid(row=0, column=0, sticky="ew", pady=(0, 10))
         
-        self.btn_toggle_sidebar = ttk.Button(toolbar, text="≡ Mostrar filtros", command=self._toggle_db_sidebar)
-        self.btn_toggle_sidebar.pack(side=LEFT, padx=(0, 10))
-        
-        ttk.Button(toolbar, text="Filtros…", command=self._open_filters_sheet).pack(side=LEFT)
+        # V6.9.16: se conserva SOLO el modal 'Filtros…' (el panel lateral y su
+        # boton '≡ Mostrar filtros' se removieron por redundantes). El db_sidebar
+        # sigue creado pero oculto; sus combos alimentan los 'values' del modal.
+        ttk.Button(toolbar, text="Filtros…", command=self._open_filters_sheet,
+                   bootstyle="primary-outline").pack(side=LEFT)
 
         # Notebook con las pestañas del dashboard
         self.tabs = ttk.Notebook(main_area)
@@ -3795,61 +3845,55 @@ Disco {i}:
         self.db_sidebar_collapsed = not self.db_sidebar_collapsed
 
     def _open_filters_sheet(self):
-        # Modal de filtros (para no robar ancho)
+        # Modal de filtros (para no robar ancho). V6.9.16: cada campo se crea
+        # con su propia fila como parent (antes se usaba pack(in_=...) con master
+        # distinto, lo que dejaba los campos ocultos detras del frame).
         top = tk.Toplevel(self)
         top.title("Filtros")
-        top.geometry("420x420")
+        top.geometry("460x380")
         top.grab_set()
         top.transient(self)
-        
-        wrap = ttk.Frame(top, padding=12)
+
+        wrap = ttk.Frame(top, padding=16)
         wrap.pack(fill="both", expand=True)
 
-        def row(lbl, widget):
+        # Opciones de los combos (tomadas de los combos del panel oculto)
+        def _vals(combo, default=None):
+            if combo is not None:
+                try:
+                    return list(combo.cget("values"))
+                except Exception:
+                    pass
+            return default if default is not None else []
+        servicio_vals = _vals(self.cmb_servicio)
+        malig_vals = _vals(self.cmb_malig, ["", "PRESENTE", "AUSENTE"])
+        resp_vals = _vals(self.cmb_resp)
+
+        campos = [
+            ("Fecha desde (dd/mm/aaaa)", "entry", "fecha_desde", None),
+            ("Fecha hasta (dd/mm/aaaa)", "entry", "fecha_hasta", None),
+            ("Servicio", "combo", "servicio", servicio_vals),
+            ("Malignidad", "combo", "malignidad", malig_vals),
+            ("Responsable", "combo", "responsable", resp_vals),
+        ]
+        for lbl, tipo, key, vals in campos:
             r = ttk.Frame(wrap)
-            r.pack(fill="x", pady=6)
-            ttk.Label(r, text=lbl, width=20, anchor="w").pack(side="left")
-            widget.pack(in_=r, side="left", fill="x", expand=True)
-
-        e1 = ttk.Entry(wrap, textvariable=self.db_filters["fecha_desde"])
-        e2 = ttk.Entry(wrap, textvariable=self.db_filters["fecha_hasta"])
-        
-        # Verificar si los componentes existen antes de obtener sus valores
-        servicio_vals = []
-        if self.cmb_servicio is not None:
-            try:
-                servicio_vals = list(self.cmb_servicio.cget("values"))
-            except:
-                servicio_vals = []
-        
-        malig_vals = ["", "PRESENTE", "AUSENTE"]
-        if self.cmb_malig is not None:
-            try:
-                malig_vals = list(self.cmb_malig.cget("values"))
-            except:
-                malig_vals = ["", "PRESENTE", "AUSENTE"]
-        
-        resp_vals = []
-        if self.cmb_resp is not None:
-            try:
-                resp_vals = list(self.cmb_resp.cget("values"))
-            except:
-                resp_vals = []
-        
-        cb1 = ttk.Combobox(wrap, values=servicio_vals, textvariable=self.db_filters["servicio"])
-        cb2 = ttk.Combobox(wrap, values=malig_vals, textvariable=self.db_filters["malignidad"])
-        cb3 = ttk.Combobox(wrap, values=resp_vals, textvariable=self.db_filters["responsable"])
-
-        row("Fecha desde (dd/mm/aaaa)", e1)
-        row("Fecha hasta (dd/mm/aaaa)", e2)
-        row("Servicio", cb1)
-        row("Malignidad", cb2)
-        row("Responsable", cb3)
+            r.pack(fill="x", pady=7)
+            ttk.Label(r, text=lbl, width=22, anchor="w").pack(side="left")
+            if tipo == "entry":
+                w = ttk.Entry(r, textvariable=self.db_filters[key])
+            else:
+                w = ttk.Combobox(r, values=vals, textvariable=self.db_filters[key])
+            w.pack(side="left", fill="x", expand=True)
 
         btns = ttk.Frame(wrap)
-        btns.pack(fill="x", pady=(10,0))
-        ttk.Button(btns, text="Aplicar", command=lambda:(self._refresh_dashboard(), top.destroy())).pack(side="left", expand=True, fill="x", padx=(0,6))
-        ttk.Button(btns, text="Limpiar", command=self._clear_filters).pack(side="left", expand=True, fill="x", padx=(6,0))
+        btns.pack(fill="x", pady=(18, 0))
+        ttk.Button(btns, text="Aplicar", bootstyle="primary",
+                   command=lambda: (self._refresh_dashboard(), top.destroy())).pack(
+                   side="left", expand=True, fill="x", padx=(0, 6))
+        ttk.Button(btns, text="Limpiar", bootstyle="secondary-outline",
+                   command=self._clear_filters).pack(
+                   side="left", expand=True, fill="x", padx=(6, 0))
 
     def _open_fullscreen_figure(self, render_fn, title, dff):
         # Ventana a pantalla completa con inspector lateral
@@ -3947,10 +3991,31 @@ Disco {i}:
             return None
         ser = df["Malignidad"].astype(str).str.upper().replace({"": "DESCONOCIDO"}).value_counts()
         if ser.empty: return None
-        fig = Figure(figsize=(5.6, 3.2), dpi=100)
+        # V6.9.16: agrupar categorias pequenas (<2.5%) en "OTROS" para que las
+        # etiquetas no se amontonen; leyenda lateral en vez de texto sobre el pie;
+        # formato donut con la paleta navy.
+        total = ser.sum()
+        umbral = 0.025 * total
+        grandes = ser[ser >= umbral]
+        resto = int(ser[ser < umbral].sum())
+        if resto > 0:
+            grandes = pd.concat([grandes, pd.Series({"OTROS": resto})])
+        labels = [self._trunc_label(x, 28) for x in grandes.index]
+        colores = ["#2d3e5e", "#b08d57", "#4a6da7", "#2f8f6b", "#9aa6bf",
+                   "#c75c6e", "#d99a4e", "#6c757d"]
+        fig = Figure(figsize=(6.4, 3.6), dpi=100)
         ax = fig.add_subplot(111)
-        ax.pie(ser.values, labels=ser.index, autopct="%1.1f%%", startangle=90)
+        wedges, _t, _autotexts = ax.pie(
+            grandes.values, autopct="%1.1f%%", startangle=90, pctdistance=0.78,
+            colors=colores[:len(grandes)],
+            textprops={"fontsize": 8, "color": "white"},
+            wedgeprops={"width": 0.45, "edgecolor": "white", "linewidth": 1},
+        )
+        ax.legend(wedges, labels, loc="center left", bbox_to_anchor=(0.98, 0.5),
+                  fontsize=8, frameon=False)
         ax.set_title("Distribución de Malignidad")
+        ax.set_aspect("equal")
+        ax.grid(False)
         fig.tight_layout()
         return fig
 
@@ -4023,25 +4088,36 @@ Disco {i}:
         fig.tight_layout()
         return fig
 
+    @staticmethod
+    def _trunc_label(s, n=42):
+        """Trunca una etiqueta larga para que no desborde el grafico."""
+        s = str(s)
+        return s if len(s) <= n else s[:n - 1] + "…"
+
     def _g_bar_re_rp(self, df):
         cols = [c for c in ["IHQ_RECEPTOR_ESTROGENOS", "IHQ_RECEPTOR_PROGESTERONA"] if c in df.columns]
         if not cols: return None
-        fig = Figure(figsize=(5.6, 3.2), dpi=100); ax = fig.add_subplot(111)
         data = []
         labels = []
         for c in cols:
             ser = df[c].astype(str).str.upper().replace({"": "ND"}).value_counts()
             data.append(ser)
-            labels.append(c.replace("IHQ_", ""))
-        # Normaliza categorías
-        cats = sorted(set().union(*[d.index for d in data]))
+            labels.append(c.replace("IHQ_RECEPTOR_", "").title())
+        # Top 8 categorias combinadas (evita amontonar valores sucios poco frecuentes)
+        total = pd.concat(data, axis=1).fillna(0).sum(axis=1).sort_values(ascending=True)
+        cats = list(total.tail(8).index)
         mat = np.array([[d.get(k, 0) for k in cats] for d in data])
-        for i, row in enumerate(mat):
-            ax.bar(np.arange(len(cats))+i*0.35, row, width=0.35, label=labels[i])
-        ax.set_xticks(np.arange(len(cats))+0.35/2)
-        ax.set_xticklabels(cats, rotation=0)
+        fig = Figure(figsize=(5.6, 3.6), dpi=100); ax = fig.add_subplot(111)
+        y = np.arange(len(cats)); h = 0.38
+        colores = ["#2d3e5e", "#9aa6bf"]
+        for i, rowv in enumerate(mat):
+            ax.barh(y + i * h, rowv, height=h, label=labels[i],
+                    color=colores[i % len(colores)])
+        ax.set_yticks(y + h / 2)
+        ax.set_yticklabels([self._trunc_label(k, 30) for k in cats], fontsize=8)
         ax.set_title("RE / RP (estado)")
-        ax.legend()
+        ax.set_xlabel("Informes")
+        ax.legend(fontsize=8)
         fig.tight_layout()
         return fig
 
@@ -4053,13 +4129,13 @@ Disco {i}:
                 break
         else:
             return None
-        ser = s.replace({"": "ND"}).value_counts()
+        ser = s.replace({"": "ND"}).value_counts().head(12).iloc[::-1]
         if ser.empty: return None
-        fig = Figure(figsize=(5.6, 3.2), dpi=100); ax = fig.add_subplot(111)
-        ax.bar(ser.index, ser.values)
+        fig = Figure(figsize=(5.6, 3.6), dpi=100); ax = fig.add_subplot(111)
+        ax.barh([self._trunc_label(x, 38) for x in ser.index], ser.values, color="#2d3e5e")
         ax.set_title("PD-L1")
-        ax.set_ylabel("Informes")
-        ax.tick_params(axis="x", rotation=0)
+        ax.set_xlabel("Informes")
+        ax.tick_params(axis="y", labelsize=8)
         fig.tight_layout()
         return fig
 
@@ -4132,23 +4208,29 @@ Disco {i}:
     def _g_bar_top_responsables(self, df, top=10):
         col = "Patologo"
         if col not in df.columns: return None
-        ser = df[col].astype(str).value_counts().head(top)
-        fig = Figure(figsize=(5.6, 3.2), dpi=100); ax = fig.add_subplot(111)
-        ax.bar(ser.index, ser.values)
+        ser = df[col].astype(str).value_counts().head(top).iloc[::-1]
+        if ser.empty: return None
+        fig = Figure(figsize=(5.6, 3.6), dpi=100); ax = fig.add_subplot(111)
+        ax.barh([self._trunc_label(x, 38) for x in ser.index], ser.values, color="#2d3e5e")
         ax.set_title("Productividad por responsable (Top)")
-        ax.set_ylabel("Informes")
-        ax.tick_params(axis="x", rotation=25)
+        ax.set_xlabel("Informes")
+        ax.tick_params(axis="y", labelsize=8)
         fig.tight_layout()
         return fig
 
     def _g_bar_largos_texto(self, df):
-        col = "Descripcion Diagnostico (5,6,7 Tipo histológico, subtipo histológico, margenes tumorales)"
-        if col not in df.columns: return None
+        # V6.9.16: el nombre real de la columna es "Descripcion Diagnostico"
+        # (antes se buscaba un nombre largo con parentesis que ya no existe).
+        # Busqueda flexible para tolerar variaciones del nombre.
+        col = next((c for c in df.columns
+                    if c.strip().lower().startswith("descripcion diagnostico")), None)
+        if col is None: return None
         s = df[col].astype(str).str.len()
         bins = [0, 50, 150, 300, 600, 1200, np.inf]
         ser = pd.cut(s, bins=bins, labels=["<50", "50–150", "150–300", "300–600", "600–1200", "1200+"], include_lowest=True).value_counts().sort_index()
+        if ser.sum() == 0: return None
         fig = Figure(figsize=(5.6, 3.2), dpi=100); ax = fig.add_subplot(111)
-        ax.bar(ser.index.astype(str), ser.values)
+        ax.bar(ser.index.astype(str), ser.values, color="#2d3e5e")
         ax.set_title("Longitud del diagnóstico (bins)")
         ax.set_ylabel("Informes")
         fig.tight_layout()
@@ -4187,22 +4269,23 @@ Disco {i}:
         met = self._compare_controls["met"].get()
         if not dim or df.empty: return None
 
-        fig = Figure(figsize=(11.6, 3.2), dpi=100); ax = fig.add_subplot(111)
+        fig = Figure(figsize=(11.6, 5.6), dpi=100); ax = fig.add_subplot(111)
 
         if agg == "conteo":
-            ser = df[dim].astype(str).value_counts()
-            ax.bar(ser.index, ser.values)
-            ax.set_title(f"Conteo por {dim}")
-            ax.tick_params(axis="x", rotation=25)
+            ser = df[dim].astype(str).value_counts().head(20).iloc[::-1]
+            ax.barh([self._trunc_label(x, 48) for x in ser.index], ser.values, color="#2d3e5e")
+            ax.set_title(f"Conteo por {dim} (top 20)")
+            ax.set_xlabel("Informes")
         else:
             if not met or met not in df.columns:
                 return None
             s = pd.to_numeric(df[met], errors="coerce")
-            grp = df.assign(_metric=s).groupby(dim)["_metric"].mean().dropna()
-            ax.bar(grp.index, grp.values)
-            ax.set_title(f"Promedio de {met} por {dim}")
-            ax.tick_params(axis="x", rotation=25)
+            grp = df.assign(_metric=s).groupby(dim)["_metric"].mean().dropna().sort_values().tail(20)
+            ax.barh([self._trunc_label(x, 48) for x in grp.index], grp.values, color="#2d3e5e")
+            ax.set_title(f"Promedio de {met} por {dim} (top 20)")
+            ax.set_xlabel(met)
 
+        ax.tick_params(axis="y", labelsize=8)
         fig.tight_layout()
         return fig
 
@@ -10305,7 +10388,11 @@ def _clear_filters(self):
     except Exception as e:
         logging.error(f"Error limpiando filtros: {e}")
 
-App._clear_filters = _clear_filters
+# V6.9.16: monkey-patch ELIMINADO. La version a nivel modulo de _clear_filters
+# llamaba a self.refresh_data() (metodo inexistente) y rompia el boton 'Limpiar'
+# del modal de filtros. Se usa el metodo correcto de la clase App._clear_filters
+# (lineas ~3753): limpia todas las variables db_filters y llama _refresh_dashboard.
+# (La funcion a nivel modulo de arriba queda sin uso, no se asigna a la clase.)
 
 def _crear_footer_inteligente(self):
     """
