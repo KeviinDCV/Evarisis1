@@ -18,6 +18,7 @@ from tkinter import filedialog, messagebox
 import tkinter as tk
 from tksheet import Sheet  # V5.3.8: Tabla virtualizada tipo Excel
 import threading
+import concurrent.futures  # V6.9.10 PARALELO: ThreadPoolExecutor para procesar chunks en simultaneo
 import os
 import re
 import pandas as pd
@@ -7441,7 +7442,9 @@ Informes con malignidad: {malignant_count}"""
         "  descripcion_diagnostico  → texto del párrafo final 'Diagnóstico:'\n"
         "                             si existe (alternativo a Diagnóstico Principal).\n"
         "  diagnostico_coloracion   → texto sobre la coloración usada (HE, etc).\n"
-        "  diagnostico_principal    → la entidad clínica COMPLETA (regla principal):\n"
+        "  diagnostico_principal    → el contenido sustantivo de la sección\n"
+        "    DIAGNÓSTICO del informe. NO es solo para tumores con nombre — es\n"
+        "    para CUALQUIER conclusión diagnóstica del patólogo.\n"
         "    • Devolvé la primera línea sustantiva con calificadores\n"
         "      ('WHO GRADO X', 'NOTTINGHAM 7/9', 'p40 POSITIVO', '(g2, ptc3, v0)').\n"
         "    • Descartá bullets que SON sub-items distintos (PATRÓN MICROSATELITAL,\n"
@@ -7452,6 +7455,29 @@ Informes con malignidad: {malignant_count}"""
         "      cuando el patólogo no es definitivo.\n"
         "    • EXCEPCIONES — copiá frase completa: 'VER DESCRIPCIÓN MICROSCÓPICA',\n"
         "      'TEJIDO SIN REPRESENTACIÓN...', 'CÉLULAS GANGLIONARES PRESENTES'.\n"
+        "    # V6.9.9 FIX: diagnósticos no-tumorales — el campo NO debe quedar\n"
+        "    # en N/A cuando el dx no es un tumor con nombre de entidad.\n"
+        "    • REGLA ANTI-N/A: diagnostico_principal SOLO puede ser 'N/A' si la\n"
+        "      sección DIAGNÓSTICO está literalmente ausente o vacía. Si tiene\n"
+        "      CUALQUIER texto sustantivo, copialo — aunque NO sea el nombre de\n"
+        "      un tumor (carcinoma/linfoma/sarcoma/etc.).\n"
+        "    • DIAGNÓSTICOS NEGATIVOS — son diagnósticos válidos, copialos TAL CUAL:\n"
+        "      'NEGATIVO PARA MALIGNIDAD', 'NEGATIVO PARA NEOPLASIA',\n"
+        "      'MUESTRA NEGATIVA PARA DISPLASIA', 'NEGATIVO PARA DISPLASIA',\n"
+        "      'NEGATIVO PARA COMPROMISO POR LINFOMA DE CÉLULAS B', etc.\n"
+        "    • MÉDULA ÓSEA DESCRIPTIVA — el dx puede ser una descripción de la\n"
+        "      celularidad sin nombre de entidad; copiá la conclusión completa:\n"
+        "      'CELULARIDAD GLOBAL DEL 60%. RELACIÓN MIELOIDE-ERITROIDE...',\n"
+        "      'HIPOPLASIA (CELULARIDAD DISMINUIDA...)', 'HIPERPLASIA...',\n"
+        "      'APLASIA...', 'MADURACIÓN ADECUADA DE LAS TRES LÍNEAS CELULARES'.\n"
+        "    • REDIRECCIÓN — si la sección DIAGNÓSTICO dice únicamente que el dx\n"
+        "      está en otra sección, copiá esa frase TAL CUAL (NO la conviertas\n"
+        "      en N/A): 'VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO'.\n"
+        "    • LESIONES BENIGNAS / INFLAMATORIAS — son diagnósticos válidos aunque\n"
+        "      no sean cáncer; copialos completos: dermatitis (p.ej. 'DERMATITIS\n"
+        "      PERIVASCULAR Y PERIANEXIAL SUPERFICIAL Y PROFUNDA...'), gastritis,\n"
+        "      colitis, fibrosis, cambios reparativos, hiperplasia reactiva,\n"
+        "      'TEJIDO SIN REPRESENTACIÓN DE PARÉNQUIMA RENAL', etc.\n"
         "  factor_pronostico    → texto sobre pronóstico/grado/estadio si aparece.\n\n"
         "▶ ESTUDIOS IHQ GENERALES:\n"
         "  ihq_estudios_solicitados → lista de marcadores solicitados (raw text).\n"
@@ -8500,20 +8526,179 @@ Informes con malignidad: {malignant_count}"""
                         logging.warning(f"[IA] Intento {intento} excepción: {last_error[:100]}")
                 return None, last_error
 
-            for chunk_idx, chunk_text in enumerate(chunks):
-                self._processing_result_ia["current_chunk"] = chunk_idx + 1
-                # V6.7.10 — Marcar timestamp para que el polling pueda
-                # mostrar tiempo transcurrido mientras el LLM responde
-                self._processing_result_ia["chunk_start_time"] = _time.time()
-                self._processing_result_ia["current_stage"] = (
-                    f"LLM analizando chunk {chunk_idx + 1}/{n_chunks} "
-                    f"({len(chunk_text):,} chars)..."
+            # V6.9.10 PARALELO: leer paralelo_max desde config.ini ([llm] -> paralelo_max).
+            # Default 1 = secuencial (retrocompatible). Si se sube a N>1 → ThreadPoolExecutor.
+            # NOTA: el cliente LM Studio (requests) es thread-safe, las llamadas HTTP son
+            # independientes y los slots del backend (n_parallel=4) procesan en paralelo.
+            try:
+                _cfg_paralelo = configparser.ConfigParser()
+                _cfg_paralelo.read(
+                    os.path.join(os.getcwd(), "config", "config.ini"),
+                    encoding="utf-8",
                 )
-                # V6.7.8 — Logging detallado: qué IHQ están EN este chunk
+                paralelo_max = max(1, int(_cfg_paralelo.get("llm", "paralelo_max", fallback="1")))
+            except Exception as _e_cfg:
+                logging.warning(f"[IA] paralelo_max no se pudo leer ({_e_cfg}); usando 1 (secuencial)")
+                paralelo_max = 1
+
+            # V6.9.11 FILTRO: leer filtrar_secciones desde config.ini ([llm] -> filtrar_secciones).
+            # Si true, se aplica _filtrar_secciones_relevantes() al chunk_text ANTES de
+            # enviarlo al LLM, reduciendo ~70% el texto (cabecera + DESCRIPCION MICROSCOPICA + DIAGNOSTICO).
+            # Si false, comportamiento V6.9.10 (chunk completo).
+            try:
+                filtrar_secciones_habilitado = _cfg_paralelo.getboolean(
+                    "llm", "filtrar_secciones", fallback=False
+                )
+            except Exception as _e_cfg_filt:
+                logging.warning(
+                    f"[IA] filtrar_secciones no se pudo leer ({_e_cfg_filt}); usando False"
+                )
+                filtrar_secciones_habilitado = False
+            logging.info(
+                f"[IA] V6.9.11 filtrar_secciones = {filtrar_secciones_habilitado}"
+            )
+
+            def _filtrar_secciones_relevantes(chunk_text: str) -> str:
+                """V6.9.11 — Reduce el texto enviado al LLM a SOLO las secciones útiles:
+                  1. Cabecera del paciente + "Estudios solicitados"
+                  2. DESCRIPCION MICROSCOPICA (resultados de biomarcadores)
+                  3. DIAGNOSTICO (conclusión del patólogo)
+
+                Elimina ruido como: notas legales, sello ISO, DESCRIPCION MACROSCOPICA,
+                tabla LABORATORIO CLINICO (otros pacientes — causa de contaminación cruzada),
+                headers repetidos en pág 2, firmas, líneas separadoras.
+
+                Si NO se detectan las secciones críticas (DIAGNOSTICO o DESCRIPCION
+                MICROSCOPICA), devuelve el chunk completo como fallback seguro
+                (NO rompe el flujo).
+
+                Patrones tolerantes a:
+                  - Con/sin tildes ('DIAGNÓSTICO' o 'DIAGNOSTICO')
+                  - Mayúsculas mezcladas
+                  - Espacios extra entre palabras
+                """
+                if not chunk_text or not chunk_text.strip():
+                    return chunk_text
+
+                partes = []
+
+                # 1) CABECERA + ESTUDIOS SOLICITADOS:
+                # Desde inicio hasta antes de "INFORME DE ANATOM..." o "DESCRIPCION MACROSC..."
+                m_cab = _re.search(
+                    r'^(.+?)(?=INFORME\s+DE\s+ANATOM|DESCRIPCI[OÓ]N\s+MACROSC)',
+                    chunk_text,
+                    _re.IGNORECASE | _re.DOTALL,
+                )
+                if m_cab:
+                    cabecera = m_cab.group(1).strip()
+                    if cabecera:
+                        partes.append(cabecera)
+
+                # 2) DESCRIPCION MICROSCOPICA:
+                # Desde "DESCRIPCION MICROSCOPICA" hasta antes de "DIAGNOSTICO"
+                # o "Todos los analisis" (nota ISO) o fin.
+                m_micro = _re.search(
+                    r'DESCRIPCI[OÓ]N\s+MICROSC[OÓ]PICA\b(.+?)(?=\bDIAGN[OÓ]STICO\b|Todos\s+los\s+an[aá]lisis|$)',
+                    chunk_text,
+                    _re.IGNORECASE | _re.DOTALL,
+                )
+                # 3) DIAGNOSTICO:
+                # Desde la palabra DIAGNOSTICO (línea propia) hasta firma del patólogo
+                # o nota ISO o LABORATORIO CLINICO o fin.
+                m_dx = _re.search(
+                    r'\bDIAGN[OÓ]STICO\b\s*\n(.+?)(?=Todos\s+los\s+an[aá]lisis|RM:|M[eé]dic[ao]\s+Pat[oó]log[ao]|_______|LABORATORIO\s+CLINICO|$)',
+                    chunk_text,
+                    _re.IGNORECASE | _re.DOTALL,
+                )
+
+                # Si NO se detectan las secciones críticas, fallback al chunk completo
+                if not m_micro or not m_dx:
+                    logging.warning(
+                        f"[FILTRO] V6.9.11: secciones criticas no detectadas "
+                        f"(micro={bool(m_micro)}, dx={bool(m_dx)}); usando chunk completo "
+                        f"({len(chunk_text)} chars)"
+                    )
+                    return chunk_text
+
+                # Concatenar con encabezados claros para el LLM
+                micro_text = m_micro.group(1).strip()
+                dx_text = m_dx.group(1).strip()
+                if micro_text:
+                    partes.append("DESCRIPCION MICROSCOPICA\n" + micro_text)
+                if dx_text:
+                    partes.append("DIAGNOSTICO\n" + dx_text)
+
+                filtrado = "\n\n".join(partes).strip()
+
+                # Si el filtrado quedó vacío o casi vacío, fallback al chunk completo
+                if not filtrado or len(filtrado) < 100:
+                    logging.warning(
+                        f"[FILTRO] V6.9.11: filtrado vacio o muy corto "
+                        f"({len(filtrado)} chars); usando chunk completo"
+                    )
+                    return chunk_text
+
+                # Log del ratio de reducción
+                try:
+                    orig_len = len(chunk_text)
+                    new_len = len(filtrado)
+                    pct = (1 - new_len / orig_len) * 100 if orig_len > 0 else 0
+                    logging.debug(
+                        f"[FILTRO] {orig_len} → {new_len} chars ({pct:.1f}% reduccion)"
+                    )
+                except Exception:
+                    pass
+
+                return filtrado
+
+            # Locks para estado compartido y BD (creados por cada PDF para no contaminar entre archivos)
+            _ia_state_lock = threading.Lock()  # protege live_diagnosticos, errors, current_chunk, ihq_vistos
+            _ia_db_lock = threading.Lock()     # serializa las 3 escrituras BD por caso (atómico por IHQ)
+
+            # Pre-calcular constantes usadas dentro de cada chunk (read-only, thread-safe)
+            _fecha_iso = _dt.now().isoformat()
+            _valid_ihq_pat = _re.compile(r'^IHQ\d{4,7}$')
+
+            # Acumulador de resultados por chunk (se llenan en threads, se consolidan al final)
+            chunks_resultados = [None] * n_chunks  # cada slot: dict con 'normalizados', 'err', 'chunks_exitoso'
+            chunks_completados_counter = [0]       # mutable int compartido (con lock)
+
+            def _procesar_chunk_individual(chunk_idx, chunk_text):
+                """V6.9.10 PARALELO: procesa UN chunk completo y guarda en BD.
+
+                Encapsula la MISMA lógica que el bucle secuencial original:
+                  1. Llama al LLM con retry
+                  2. Parsea JSON, normaliza, deduplica
+                  3. Aplica _limpiar_resultado_ia a Dx + Organo
+                  4. Persiste en BD (diagnosticos_ia + informes_ihq) bajo lock
+                  5. Append a live_diagnosticos bajo lock (manteniendo orden save→append)
+
+                Devuelve un dict con resultados para que el bucle exterior
+                actualice todos_diagnosticos, chunks_exitosos y errores_chunks.
+                """
+                result = {
+                    "chunk_idx": chunk_idx,
+                    "normalizados": [],
+                    "err": None,
+                    "exitoso": False,
+                    "modelo": None,  # V6.9.10: propagar nombre del modelo al payload
+                }
+
+                # Logging detallado: qué IHQ están EN este chunk (sin lock, solo lectura local)
                 ihq_en_chunk = sorted(set(
                     _re.sub(r'\s+', '', m.group(1)).upper()
                     for m in _header_pat_count.finditer(chunk_text)
                 ))
+
+                # Actualizar progreso bajo lock (current_chunk, current_stage, chunk_start_time)
+                with _ia_state_lock:
+                    self._processing_result_ia["current_chunk"] = chunks_completados_counter[0] + 1
+                    self._processing_result_ia["chunk_start_time"] = _time.time()
+                    self._processing_result_ia["current_stage"] = (
+                        f"LLM analizando chunk {chunks_completados_counter[0] + 1}/{n_chunks} "
+                        f"({len(chunk_text):,} chars)..."
+                    )
+
                 logging.info(
                     f"[IA] {filename}: chunk {chunk_idx + 1}/{n_chunks} "
                     f"({len(chunk_text)} chars) — IHQ esperados: "
@@ -8521,18 +8706,29 @@ Informes con malignidad: {malignant_count}"""
                     f"{f' (+{len(ihq_en_chunk) - 8} más)' if len(ihq_en_chunk) > 8 else ''}"
                 )
 
-                resp, err = _llamar_llm_con_retry(chunk_text)
-                # V6.7.10 — Limpiar timestamp después de la respuesta
-                self._processing_result_ia["chunk_start_time"] = None
+                # V6.9.11: filtrar secciones relevantes si está habilitado.
+                # Si el filtro detecta DESCRIPCION MICROSCOPICA + DIAGNOSTICO,
+                # envía solo cabecera + esas dos secciones (~70% menos texto).
+                # Si NO las detecta (formato no estándar), hace fallback al chunk completo.
+                if filtrar_secciones_habilitado:
+                    chunk_text_para_llm = _filtrar_secciones_relevantes(chunk_text)
+                else:
+                    chunk_text_para_llm = chunk_text
+
+                # === MISMA llamada al LLM que la versión secuencial ===
+                resp, err = _llamar_llm_con_retry(chunk_text_para_llm)
+
+                # Limpiar chunk_start_time SOLO si somos el último en terminar (best-effort, no crítico)
+                # En modo paralelo, varios chunks pueden estar in-flight; este flag es solo cosmético.
+
                 if resp is None:
                     err_msg = f"chunk {chunk_idx + 1}/{n_chunks}: LLM falló tras 2 intentos — {err}"
-                    errores_chunks.append(err_msg)
                     logging.error(f"[IA] {filename}: {err_msg}")
-                    # CRÍTICO: agregar a errors top-level para que el user lo vea
-                    self._processing_result_ia["errors"].append(
-                        f"{filename}: {err_msg}"
-                    )
-                    continue
+                    with _ia_state_lock:
+                        self._processing_result_ia["errors"].append(f"{filename}: {err_msg}")
+                        self._processing_result_ia["chunk_start_time"] = None
+                    result["err"] = err_msg
+                    return result
 
                 contenido = resp.get("respuesta") or resp.get("contenido")
                 if isinstance(contenido, dict):
@@ -8544,29 +8740,25 @@ Informes con malignidad: {malignant_count}"""
 
                 if not data or not isinstance(data, dict):
                     err_msg = f"chunk {chunk_idx + 1}/{n_chunks}: JSON no parseable"
-                    errores_chunks.append(err_msg)
-                    self._processing_result_ia["errors"].append(
-                        f"{filename}: {err_msg}"
-                    )
                     logging.error(f"[IA] {filename}: {err_msg}")
-                    continue
+                    with _ia_state_lock:
+                        self._processing_result_ia["errors"].append(f"{filename}: {err_msg}")
+                        self._processing_result_ia["chunk_start_time"] = None
+                    result["err"] = err_msg
+                    return result
 
                 raw_dx = data.get("diagnosticos", [])
                 if not isinstance(raw_dx, list):
                     raw_dx = []
                 normalizados = [d for d in (_norm_dx_entry(x) for x in raw_dx) if d]
-                todos_diagnosticos.extend(normalizados)
-                chunks_exitosos += 1
+                result["normalizados"] = normalizados
+                result["exitoso"] = True
 
-                # V6.7.8 — Logging del response: ¿cuántos IHQ devolvió y
-                # cuáles? Si el LLM omitió alguno del chunk, vamos a verlo.
-                # V6.8.0 — Ahora cada `n` contiene un dict completo con 184
-                # campos. Las keys legacy (__numero_peticion__) ayudan a
-                # mantener este logging sin reescribirlo.
+                # Logging del response: cuántos IHQ devolvió
                 ihq_devueltos = sorted(set(
-                    _re.sub(r'\s+', '', (n.get("__numero_peticion__") or "")).upper()
-                    for n in normalizados
-                    if n.get("__numero_peticion__")
+                    _re.sub(r'\s+', '', (nd.get("__numero_peticion__") or "")).upper()
+                    for nd in normalizados
+                    if nd.get("__numero_peticion__")
                 ))
                 ihq_omitidos_chunk = [x for x in ihq_en_chunk if x not in ihq_devueltos]
                 logging.info(
@@ -8575,86 +8767,147 @@ Informes con malignidad: {malignant_count}"""
                     + (f" — omitidos: {', '.join(ihq_omitidos_chunk[:5])}" if ihq_omitidos_chunk else "")
                 )
 
-                # Emitir caso COMPLETO al estado compartido para pintarlo
-                # en la tabla en vivo, Y persistirlo (184 columnas) en BD.
-                # V6.7.4 — Validar que numero_peticion tenga formato IHQ.
-                # V6.8.0 — Persistir todas las 184 columnas del LLM con
-                # save_caso_completo. La limpieza post-LLM se sigue aplicando
-                # a Dx y Organo principal (los 2 campos más visibles).
-                _fecha_iso = _dt.now().isoformat()
                 _modelo = resp.get("modelo", "desconocido")
-                _valid_ihq_pat = _re.compile(r'^IHQ\d{4,7}$')
+                result["modelo"] = _modelo  # V6.9.10: propagar modelo al consolidador
+
+                # === Persistencia + append a live (idéntica lógica a la versión secuencial) ===
+                # Por cada IHQ del chunk: dedupe (lock), limpiar, BD bajo lock, append bajo lock.
+                # Mantenemos el invariante CRÍTICO V6.9.5: save→append (polling refresca después de MySQL).
                 for d in normalizados:
                     raw_key = (d.get("__numero_peticion__") or "").strip().upper()
-                    # Normalizar espacios internos ("IHQ 250036" → "IHQ250036")
                     key = _re.sub(r'\s+', '', raw_key)
                     if not key or not _valid_ihq_pat.match(key):
-                        logging.info(
-                            f"[IA] Descartando fila con numero inválido: {raw_key!r}"
-                        )
+                        logging.info(f"[IA] Descartando fila con numero inválido: {raw_key!r}")
                         continue
-                    if key in ihq_vistos:
-                        continue
-                    ihq_vistos.add(key)
 
-                    # Limpiar Dx Principal y Órgano (los 2 campos visibles).
-                    # El resto de columnas se guarda tal cual el LLM las
-                    # devolvió (ya con N/A en faltantes por el schema strict).
+                    # Dedupe atómico bajo lock (ihq_vistos es set compartido)
+                    with _ia_state_lock:
+                        if key in ihq_vistos:
+                            continue
+                        ihq_vistos.add(key)
+
+                    # Limpiar Dx + Organo (las funciones helper son puras, sin estado)
                     dx_raw = d.get("Diagnostico Principal", "") or ""
                     organo_raw = d.get("Organo", "") or ""
-                    dx_limpio, organo_limpio = self._limpiar_resultado_ia(
-                        dx_raw, organo_raw
-                    )
-                    # Sobrescribir en el dict para que la BD también guarde lo limpio
+                    dx_limpio, organo_limpio = self._limpiar_resultado_ia(dx_raw, organo_raw)
                     d["Numero de caso"] = key
                     d["Diagnostico Principal"] = dx_limpio
                     d["Organo"] = organo_limpio
 
-                    # Construir el dict que se entrega al polling/UI.
-                    # Compat: mantener las 3 keys legacy + el dict completo.
-                    # V6.9.5 — FIX RACE CONDITION del refresh en tiempo real.
-                    # ANTES: append al estado ANTES del save → polling refrescaba
-                    # el Visualizador pero MySQL aún no tenía los datos.
-                    # AHORA: primero MySQL (síncrono), luego append al estado.
-                    # Cuando el polling detecte el nuevo IHQ, MySQL ya lo tendrá.
-                    entry = dict(d)  # copia con todas las 184 columnas
+                    entry = dict(d)
                     entry["numero_peticion"] = key
                     entry["diagnostico"] = dx_limpio
                     entry["organo"] = organo_limpio
                     entry["pdf_origen"] = filename
 
-                    # PASO 1: Persistir en BD (SÍNCRONO, antes del append)
-                    save_exitoso = False
-                    try:
-                        datos_para_bd = {
-                            k: v for k, v in d.items()
-                            if not k.startswith("__")
-                        }
-                        _save_caso_ia(
-                            datos_columnas=datos_para_bd,
-                            pdf_origen=filename,
-                            fecha_procesamiento=_fecha_iso,
-                            modelo_utilizado=_modelo,
-                            ocr_caracteres_pdf=ocr_chars,
-                        )
-                        # BD principal (Visualizador). UPSERT por "Numero de caso".
+                    # PASO 1: BD bajo lock (SQLite/MySQL: las 3 escrituras del caso deben ser atómicas)
+                    with _ia_db_lock:
                         try:
-                            _save_records_main([datos_para_bd])
-                            save_exitoso = True
-                            logging.info(
-                                f"[IA] {key}: guardado en MySQL (informes_ihq + diagnosticos_ia)"
+                            datos_para_bd = {
+                                k: v for k, v in d.items()
+                                if not k.startswith("__")
+                            }
+                            _save_caso_ia(
+                                datos_columnas=datos_para_bd,
+                                pdf_origen=filename,
+                                fecha_procesamiento=_fecha_iso,
+                                modelo_utilizado=_modelo,
+                                ocr_caracteres_pdf=ocr_chars,
                             )
-                        except Exception as _e_main:
-                            logging.warning(
-                                f"[IA] BD principal: no se persistió {key}: {_e_main}"
-                            )
-                    except Exception as _e:
-                        logging.warning(f"[IA] No se persistió {key}: {_e}")
+                            try:
+                                _save_records_main([datos_para_bd])
+                                logging.info(
+                                    f"[IA] {key}: guardado en MySQL (informes_ihq + diagnosticos_ia)"
+                                )
+                            except Exception as _e_main:
+                                logging.warning(
+                                    f"[IA] BD principal: no se persistió {key}: {_e_main}"
+                                )
+                        except Exception as _e:
+                            logging.warning(f"[IA] No se persistió {key}: {_e}")
 
-                    # PASO 2: Append al estado (DESPUÉS del save).
-                    # El polling verá esto y refrescará el Visualizador
-                    # con la certeza de que MySQL ya tiene los datos.
-                    self._processing_result_ia["live_diagnosticos"].append(entry)
+                    # PASO 2: append al estado DESPUÉS del save (invariante V6.9.5)
+                    with _ia_state_lock:
+                        self._processing_result_ia["live_diagnosticos"].append(entry)
+
+                # Actualizar contador de chunks completados (progreso visible)
+                with _ia_state_lock:
+                    chunks_completados_counter[0] += 1
+                    self._processing_result_ia["current_chunk"] = chunks_completados_counter[0]
+                    if chunks_completados_counter[0] >= n_chunks:
+                        self._processing_result_ia["chunk_start_time"] = None
+
+                return result
+
+            # === BRANCHING SECUENCIAL vs PARALELO ===
+            if paralelo_max == 1:
+                # PATH SECUENCIAL: comportamiento original retrocompatible.
+                # Reutiliza la misma función helper para que no haya dos
+                # implementaciones de la lógica de procesamiento.
+                logging.info(f"[IA] {filename}: procesando {n_chunks} chunks en MODO SECUENCIAL (paralelo_max=1)")
+                for chunk_idx, chunk_text in enumerate(chunks):
+                    res = _procesar_chunk_individual(chunk_idx, chunk_text)
+                    chunks_resultados[chunk_idx] = res
+            else:
+                # PATH PARALELO: ThreadPoolExecutor con paralelo_max workers.
+                # Aprovecha los n_parallel slots de LM Studio (n_parallel=4 por default).
+                # Cada thread es independiente; las únicas zonas críticas son el lock
+                # de estado compartido y el lock de BD. La calidad del output es idéntica
+                # (mismo prompt, mismo schema, mismo cliente, mismo retry).
+                logging.info(
+                    f"[IA] {filename}: procesando {n_chunks} chunks en MODO PARALELO "
+                    f"(paralelo_max={paralelo_max}) — aprovecha n_parallel de LM Studio"
+                )
+                with concurrent.futures.ThreadPoolExecutor(
+                    max_workers=paralelo_max,
+                    thread_name_prefix="ia_chunk"
+                ) as executor:
+                    futures = {
+                        executor.submit(_procesar_chunk_individual, idx, ctxt): idx
+                        for idx, ctxt in enumerate(chunks)
+                    }
+                    for fut in concurrent.futures.as_completed(futures):
+                        cidx = futures[fut]
+                        try:
+                            res = fut.result()
+                            chunks_resultados[cidx] = res
+                        except Exception as _e_thread:
+                            err_msg = f"chunk {cidx + 1}/{n_chunks}: thread excepción — {_e_thread}"
+                            logging.error(f"[IA] {filename}: {err_msg}")
+                            with _ia_state_lock:
+                                self._processing_result_ia["errors"].append(f"{filename}: {err_msg}")
+                            chunks_resultados[cidx] = {
+                                "chunk_idx": cidx, "normalizados": [],
+                                "err": err_msg, "exitoso": False,
+                            }
+
+            # === Consolidación de resultados (orden estable: por chunk_idx) ===
+            # Equivalente al estado que tenía la versión secuencial al final del bucle.
+            _modelo_pdf = "desconocido"  # V6.9.10: derivado del primer chunk exitoso
+            for res in chunks_resultados:
+                if res is None:
+                    continue
+                if res.get("exitoso"):
+                    chunks_exitosos += 1
+                    todos_diagnosticos.extend(res.get("normalizados", []))
+                    if _modelo_pdf == "desconocido" and res.get("modelo"):
+                        _modelo_pdf = res["modelo"]
+                if res.get("err"):
+                    errores_chunks.append(res["err"])
+
+            # V6.9.10 COMPAT: el bloque de payload (abajo) usa `resp` para extraer
+            # el modelo. Como en el path paralelo `resp` no queda en el scope local
+            # del bucle externo, sintetizamos un objeto-stub mínimo que cumple el
+            # contrato esperado: `.get("modelo", default)`. Si ningún chunk fue
+            # exitoso, _modelo_pdf="desconocido" y el payload usará ese valor.
+            class _RespStub:
+                __slots__ = ("_m",)
+                def __init__(self, modelo):
+                    self._m = modelo
+                def get(self, k, default=None):
+                    return self._m if k == "modelo" else default
+            resp = _RespStub(_modelo_pdf)
+            _modelo = _modelo_pdf  # usado por segunda pasada (deshabilitada por default)
 
             # Deduplicar por numero_peticion (los chunks pueden solaparse o el
             # mismo IHQ aparecer en 2 chunks si una página repite el header)

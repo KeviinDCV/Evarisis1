@@ -1,0 +1,65 @@
+{
+  "IHQ250232": {
+    "etiqueta": "FALLIDO->arreglar",
+    "esperado": "NEGATIVO PARA MALIGNIDAD",
+    "organo": "PROSTATA",
+    "diagnostico_principal": "NEGATIVO PARA MALIGNIDAD",
+    "tiempo_s": 24.8,
+    "chunk_chars": 3188,
+    "finish_reason": "stop"
+  },
+  "IHQ250829": {
+    "etiqueta": "FALLIDO->arreglar",
+    "esperado": "DERMATITIS PERIVASCULAR",
+    "organo": "MAMA IZQUIERDA",
+    "diagnostico_principal": "DERMATITIS PERIVASCULAR Y PERIANEXIAL SUPERFICIAL Y PROFUNDA. NEGATIVO PARA COMPROMISO POR CARCINOMA EN ESTA MUESTRA.",
+    "tiempo_s": 31.1,
+    "chunk_chars": 3486,
+    "finish_reason": "stop"
+  },
+  "IHQ250127": {
+    "etiqueta": "FALLIDO->arreglar",
+    "esperado": "medula osea descriptiva",
+    "organo": "MEDULA ÓSEA",
+    "diagnostico_principal": "MEDULA ÓSEA. Biopsia. Estudio de inmunohistoquimica: CELULARIDAD HEMATOPOYETICA REPRESENTADA DEFECTO POR EXPRIMIDO DE LA MUESTA SIN CELULARIDAD TUMORAL REPRESENTADA POR ESTE METODO (VER CITOMETRIA DE FLUJO CF2500042)",
+    "tiempo_s": 39.3,
+    "chunk_chars": 3597,
+    "finish_reason": "stop"
+  },
+  "IHQ250408": {
+    "etiqueta": "FALLIDO->arreglar",
+    "esperado": "MUESTRA NEGATIVA PARA DISPLASIA",
+    "organo": "CERVIX",
+    "diagnostico_principal": "MUESTRA NEGATIVA PARA DISPLASIA",
+    "tiempo_s": 23.4,
+    "chunk_chars": 2479,
+    "finish_reason": "stop"
+  },
+  "IHQ250001": {
+    "etiqueta": "BUENO-anti-regresion",
+    "esperado": "CARCINOMA ESCAMOCELULAR METASTASICO",
+    "organo": "CAUDA EQUILINA",
+    "diagnostico_principal": "CARCINOMA ESCAMOCELULAR METASTÁSICO p40 POSITIVO / p16 POSITIVO",
+    "tiempo_s": 27.4,
+    "chunk_chars": 2531,
+    "finish_reason": "stop"
+  },
+  "IHQ250036": {
+    "etiqueta": "BUENO-anti-regresion",
+    "esperado": "CARCINOMA POCO COHESIVO",
+    "organo": "ESTOMAGO",
+    "diagnostico_principal": "CARCINOMA POCO COHESIVO",
+    "tiempo_s": 25.2,
+    "chunk_chars": 3777,
+    "finish_reason": "stop"
+  },
+  "IHQ250078": {
+    "etiqueta": "BUENO-anti-regresion",
+    "esperado": "LINFOMA DIFUSO DE CELULAS B MADURAS",
+    "organo": "GANGLIO SUPRACLAVIO IZQUIERDO",
+    "diagnostico_principal": "LINFOMA DIFUSO DE CELULAS B MADURAS",
+    "tiempo_s": 27.8,
+    "chunk_chars": 3695,
+    "finish_reason": "stop"
+  }
+}
