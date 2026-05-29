@@ -1,0 +1,13 @@
+{
+  "fp_col": "Factor pronostico",
+  "columnas_individuales": {
+    "IHQ_HER2": "EQUIVOCO",
+    "IHQ_KI-67": "40%",
+    "IHQ_RECEPTOR_ESTROGENOS": "POSITIVO",
+    "IHQ_RECEPTOR_PROGESTERONA": "POSITIVO"
+  },
+  "antes": "HER2: EQUIVOCO, RECEPTOR DE ESTRÓGENO: Positivo con una tinción heterogénea entre moderada y fuerte en el",
+  "nuevo": "HER2: EQUIVOCO, Ki-67: 40%, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+  "despues_bd": "HER2: EQUIVOCO, Ki-67: 40%, Receptor de Estrógeno: POSITIVO, Receptor de Progesterona: POSITIVO",
+  "ok": true
+}

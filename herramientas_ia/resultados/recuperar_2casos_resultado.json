@@ -1,0 +1,24 @@
+{
+  "total_registros": 1462,
+  "estados": {
+    "IHQ250740": [
+      "OK",
+      1,
+      "IHQ250740"
+    ],
+    "IHQ251036": [
+      "NO_SEGMENTO",
+      "48 segmentos, ninguno IHQ251036",
+      ""
+    ]
+  },
+  "detalle_bd": {
+    "IHQ250740": [
+      "IHQ250740",
+      "CARCINOMA INVASIVO DE TIPO NO ESPECIAL",
+      "MALIGNO",
+      "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona"
+    ],
+    "IHQ251036": null
+  }
+}

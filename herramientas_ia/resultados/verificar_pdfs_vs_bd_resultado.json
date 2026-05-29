@@ -1,0 +1,164 @@
+{
+  "db_file": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\data\\huv_oncologia_NUEVO.db",
+  "por_pdf": {
+    "IHQ DEL 001 AL 050.pdf": {
+      "segmentos": 51,
+      "casos": 50
+    },
+    "IHQ DEL 052 AL 107.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ DEL 108 AL 159.pdf": {
+      "segmentos": 49,
+      "casos": 49
+    },
+    "IHQ DEL 160 AL 211.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ DEL 212 AL 262.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ DEL 263 AL 313.pdf": {
+      "segmentos": 49,
+      "casos": 49
+    },
+    "IHQ DEL 314 AL 363.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ DEL 364 AL 413.pdf": {
+      "segmentos": 51,
+      "casos": 51
+    },
+    "IHQ DEL 414 AL 463.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ DEL 464 AL 515.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ DEL 517 AL 568.pdf": {
+      "segmentos": 51,
+      "casos": 50
+    },
+    "IHQ DEL 569 AL 619.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ DEL 620 AL 671.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ DEL 672 AL 722.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ DEL 723 AL 774.pdf": {
+      "segmentos": 51,
+      "casos": 50
+    },
+    "IHQ DEL 775 AL 826.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ DEL 827 AL 876.pdf": {
+      "segmentos": 51,
+      "casos": 50
+    },
+    "IHQ DEL 877 AL 929.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ DEL 930 AL 979.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ DEL 980 AL 1037.pdf": {
+      "segmentos": 48,
+      "casos": 47
+    },
+    "IHQ251038 AL IHQ251088.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ251090 AL IHQ251138.pdf": {
+      "segmentos": 48,
+      "casos": 48
+    },
+    "IHQ251139 AL IHQ251188.pdf": {
+      "segmentos": 50,
+      "casos": 49
+    },
+    "IHQ251189 AL IHQ251238.pdf": {
+      "segmentos": 49,
+      "casos": 49
+    },
+    "IHQ251239 AL IHQ251288.pdf": {
+      "segmentos": 49,
+      "casos": 48
+    },
+    "IHQ251289 AL IHQ251338.pdf": {
+      "segmentos": 45,
+      "casos": 45
+    },
+    "IHQ251339 AL IHQ251388.pdf": {
+      "segmentos": 45,
+      "casos": 45
+    },
+    "IHQ251389 AL IHQ251438.pdf": {
+      "segmentos": 36,
+      "casos": 35
+    },
+    "IHQ251391.pdf": {
+      "segmentos": 1,
+      "casos": 1
+    },
+    "IHQ251409.pdf": {
+      "segmentos": 1,
+      "casos": 1
+    },
+    "IHQ251411.pdf": {
+      "segmentos": 1,
+      "casos": 1
+    },
+    "IHQ251420.pdf": {
+      "segmentos": 1,
+      "casos": 1
+    },
+    "IHQ251424.pdf": {
+      "segmentos": 1,
+      "casos": 1
+    },
+    "IHQ251427 AL IHQ251429.pdf": {
+      "segmentos": 3,
+      "casos": 3
+    },
+    "IHQ251433 AL IHQ251434.pdf": {
+      "segmentos": 2,
+      "casos": 2
+    },
+    "IHQ251436.pdf": {
+      "segmentos": 1,
+      "casos": 1
+    },
+    "IHQ251439 AL IHQ251489.pdf": {
+      "segmentos": 50,
+      "casos": 50
+    },
+    "IHQ251490 AL IHQ251526.pdf": {
+      "segmentos": 37,
+      "casos": 37
+    }
+  },
+  "errores_pdf": {},
+  "total_casos_en_pdfs": 1462,
+  "total_registros_bd": 1462,
+  "faltan_en_bd": [],
+  "faltan_en_bd_detalle": {},
+  "en_bd_sin_pdf": [],
+  "en_bd_sin_pdf_count": 0
+}

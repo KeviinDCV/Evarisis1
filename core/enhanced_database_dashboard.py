@@ -388,18 +388,16 @@ class EnhancedDatabaseDashboard:
         # Contenedor principal
         main_frame = scrollable_frame
 
-        # Sección 1: Resumen de Malignidad
-        malignancy_summary = ttk.LabelFrame(main_frame, text="⚠️ Resumen de Malignidad", padding=20)
-        malignancy_summary.pack(fill=X, padx=20, pady=10)
+        # ===== Seccion 1: Resumen de malignidad (header limpio) =====
+        ttk.Label(main_frame, text="Resumen de malignidad",
+                  font=("Segoe UI Semibold", 14), bootstyle="primary").pack(
+                  anchor=W, padx=24, pady=(22, 6))
 
-        # Grid de estadísticas de malignidad
-        malignancy_grid = ttk.Frame(malignancy_summary)
-        malignancy_grid.pack(fill=X)
-
+        malignancy_grid = ttk.Frame(main_frame)
+        malignancy_grid.pack(fill=X, padx=20)
         for i in range(4):
             malignancy_grid.grid_columnconfigure(i, weight=1)
 
-        # Cards de malignidad
         self.malignancy_cards = {}
         malignancy_data = [
             ("⚠️", "Casos Malignos", "0", "danger"),
@@ -407,38 +405,37 @@ class EnhancedDatabaseDashboard:
             ("❓", "Indeterminados", "0", "warning"),
             ("📊", "% Malignidad", "0%", "info")
         ]
-
         for i, (icon, title, value, style) in enumerate(malignancy_data):
             card = self.create_metric_card(malignancy_grid, icon, title, value, style)
-            card.grid(row=0, column=i, padx=10, pady=10, sticky="ew")
+            card.grid(row=0, column=i, padx=8, pady=10, sticky="ew")
             self.malignancy_cards[title] = card
 
-        # Sección 2: Distribución por Tipo de Malignidad
-        malignancy_types_section = ttk.LabelFrame(main_frame, text="🔍 Tipos de Malignidad", padding=20)
-        malignancy_types_section.pack(fill=X, padx=20, pady=10)
+        # ===== Seccion 2: Tipos de malignidad =====
+        ttk.Label(main_frame, text="Tipos de malignidad",
+                  font=("Segoe UI Semibold", 14), bootstyle="primary").pack(
+                  anchor=W, padx=24, pady=(26, 6))
+        self.malignancy_chart_frame = ttk.Frame(main_frame)
+        self.malignancy_chart_frame.pack(fill=X, padx=24, pady=(0, 6))
 
-        # Frame para gráfico de tipos de malignidad
-        self.malignancy_chart_frame = ttk.Frame(malignancy_types_section)
-        self.malignancy_chart_frame.pack(fill=X, pady=10)
+        # ===== Seccion 3: Biomarcadores vs malignidad =====
+        ttk.Label(main_frame, text="Biomarcadores vs malignidad",
+                  font=("Segoe UI Semibold", 14), bootstyle="primary").pack(
+                  anchor=W, padx=24, pady=(26, 6))
+        corr_wrap = ttk.Frame(main_frame)
+        corr_wrap.pack(fill=X, padx=24, pady=(0, 22))
 
-        # Sección 3: Correlación Malignidad vs Biomarcadores
-        correlation_malignancy_section = ttk.LabelFrame(main_frame, text="🧬 Biomarcadores vs Malignidad", padding=20)
-        correlation_malignancy_section.pack(fill=X, padx=20, pady=10)
-
-        # Treeview para correlación biomarcadores-malignidad
         self.malignancy_biomarker_tree = ttk.Treeview(
-            correlation_malignancy_section,
+            corr_wrap,
             columns=("Biomarcador", "Malignos Positivos", "Malignos Negativos", "Benignos Positivos", "Benignos Negativos"),
             show="headings",
-            height=8
+            height=8,
+            style="Custom.Treeview"
         )
-
         headers = ["Biomarcador", "Malignos Positivos", "Malignos Negativos", "Benignos Positivos", "Benignos Negativos"]
         for header in headers:
             self.malignancy_biomarker_tree.heading(header, text=header)
             self.malignancy_biomarker_tree.column(header, width=120, anchor="center")
-
-        self.malignancy_biomarker_tree.pack(fill=X, padx=10, pady=10)
+        self.malignancy_biomarker_tree.pack(fill=X, pady=6)
 
     def create_metric_card(self, parent, icon, title, value, style):
         """Crear una tarjeta de metrica (V6.9.16) estilo dashboard moderno:
@@ -1412,71 +1409,61 @@ class EnhancedDatabaseDashboard:
                 pass
 
     def create_import_tab(self):
-        """Crear pestaña de importación de datos"""
+        """Crear pestaña de importación de datos (rediseño minimalista navy V6.9.16)"""
         # Frame principal con padding
         main_frame = ttk.Frame(self.import_tab, padding=30)
         main_frame.pack(expand=True, fill=BOTH)
 
-        # Título de la sección
+        # ===== Encabezado de página =====
+        ttk.Label(
+            main_frame, text="Importación de datos",
+            font=("Segoe UI Semibold", 18), bootstyle="primary"
+        ).pack(anchor=W)
         ttk.Label(
             main_frame,
-            text="📥 Importación de Datos",
-            font=("Segoe UI", 16, "bold")
-        ).pack(pady=(0, 30))
+            text="Seleccioná archivos PDF o carpetas para procesar e importar a la base de datos.",
+            font=("Segoe UI", 10), bootstyle="secondary"
+        ).pack(anchor=W, pady=(3, 24))
 
-        # Descripción
+        # ===== Sección 1: Importar archivos =====
         ttk.Label(
-            main_frame,
-            text="Selecciona archivos PDF o carpetas para procesar e importar a la base de datos",
-            font=("Segoe UI", 11),
-            foreground="gray"
-        ).pack(pady=(0, 20))
+            main_frame, text="Importar archivos",
+            font=("Segoe UI Semibold", 14), bootstyle="primary"
+        ).pack(anchor=W, pady=(0, 8))
 
-        # Contenedor centralizado para botones
-        button_container = ttk.Frame(main_frame)
-        button_container.pack(expand=True)
-
-        # Grid para centrar botones
-        button_container.grid_rowconfigure(0, weight=1)
-        button_container.grid_rowconfigure(1, weight=0)
-        button_container.grid_rowconfigure(2, weight=0)
-        button_container.grid_rowconfigure(3, weight=0)
-        button_container.grid_rowconfigure(4, weight=1)
-        button_container.grid_columnconfigure(0, weight=1)
-
-        # Sección de importación de archivos
-        import_section = ttk.LabelFrame(button_container, text="📄 Importar Archivos", padding=30)
-        import_section.grid(row=1, column=0, pady=20, padx=50, sticky="ew")
-
+        sel_row = ttk.Frame(main_frame)
+        sel_row.pack(fill=X, pady=(0, 24))
         ttk.Button(
-            import_section,
-            text="📄 Seleccionar Archivo PDF",
+            sel_row, text="📄  Seleccionar archivo PDF",
             command=lambda: self.select_pdf_file(),
-            bootstyle="primary",
-            width=30
-        ).pack(pady=10, fill=X)
-
+            bootstyle="primary", width=30
+        ).pack(side=LEFT, padx=(0, 12))
         ttk.Button(
-            import_section,
-            text="📁 Seleccionar Carpeta de PDFs",
+            sel_row, text="📁  Seleccionar carpeta de PDFs",
             command=lambda: self.select_pdf_folder(),
-            bootstyle="primary",
-            width=30
-        ).pack(pady=10, fill=X)
+            bootstyle="primary-outline", width=30
+        ).pack(side=LEFT)
 
-        # Sección de archivos disponibles
-        files_section = ttk.LabelFrame(button_container, text="📂 Archivos Disponibles", padding=30)
-        files_section.grid(row=2, column=0, pady=20, padx=50, sticky="ew")
+        # ===== Sección 2: Archivos disponibles =====
+        ttk.Label(
+            main_frame, text="Archivos disponibles",
+            font=("Segoe UI Semibold", 14), bootstyle="primary"
+        ).pack(anchor=W, pady=(0, 8))
 
-        # Lista de archivos
-        list_frame = ttk.Frame(files_section)
-        list_frame.pack(fill=X, pady=10)
+        # Lista de archivos (estilo limpio, selección navy)
+        list_frame = ttk.Frame(main_frame)
+        list_frame.pack(fill=BOTH, expand=True)
 
         self.import_files_listbox = tk.Listbox(
             list_frame,
             selectmode=tk.EXTENDED,
             font=("Segoe UI", 10),
-            height=8
+            height=10,
+            bg="#ffffff", fg="#2a2f3a",
+            relief="flat", borderwidth=0,
+            highlightthickness=1, highlightbackground="#d2d9e6", highlightcolor="#2d3e5e",
+            selectbackground="#2d3e5e", selectforeground="#ffffff",
+            activestyle="none"
         )
         self.import_files_listbox.pack(side=LEFT, expand=True, fill=BOTH)
 
@@ -1485,25 +1472,22 @@ class EnhancedDatabaseDashboard:
         self.import_files_listbox.configure(yscrollcommand=import_scrollbar.set)
 
         # Botones de control
-        control_frame = ttk.Frame(files_section)
-        control_frame.pack(fill=X, pady=(10, 0))
-        control_frame.grid_columnconfigure(0, weight=1)
-        control_frame.grid_columnconfigure(1, weight=1)
-        control_frame.grid_columnconfigure(2, weight=1)
+        control_frame = ttk.Frame(main_frame)
+        control_frame.pack(fill=X, pady=(14, 0))
 
         ttk.Button(
             control_frame,
-            text="🔄 Actualizar Lista",
+            text="🔄  Actualizar lista",
             command=lambda: self.refresh_files_list(),
-            bootstyle="secondary"
-        ).grid(row=0, column=0, sticky="ew", padx=(0, 5))
+            bootstyle="secondary-outline"
+        ).pack(side=LEFT, padx=(0, 10))
 
         ttk.Button(
             control_frame,
-            text="⚡ Procesar Seleccionados",
+            text="⚡  Procesar seleccionados",
             command=lambda: self.process_selected_files(),
             bootstyle="success"
-        ).grid(row=0, column=1, sticky="ew", padx=5)
+        ).pack(side=LEFT, padx=(0, 10))
 
         # V6.7.0: Procesar con IA — diagnóstico de cobertura del OCR.
         # Toma cada PDF, hace OCR completo (sin segmentación) y le pasa el
@@ -1511,21 +1495,10 @@ class EnhancedDatabaseDashboard:
         # Sirve para verificar si el extractor tradicional pierde casos.
         ttk.Button(
             control_frame,
-            text="🤖 Procesar con IA",
+            text="🤖  Procesar con IA",
             command=lambda: self.process_selected_files_ia(),
-            bootstyle="info"
-        ).grid(row=0, column=2, sticky="ew", padx=(5, 0))
-
-        # v6.0.12: ELIMINADO - Sección "Estado del Procesamiento" (innecesaria, redundante con logs)
-        # self.progress_section = ttk.LabelFrame(button_container, text="📊 Estado del Procesamiento", padding=20)
-        # self.progress_section.grid(row=3, column=0, pady=20, padx=50, sticky="ew")
-        #
-        # self.progress_label = ttk.Label(
-        #     self.progress_section,
-        #     text="Listo para procesar archivos",
-        #     font=("Segoe UI", 10)
-        # )
-        # self.progress_label.pack()
+            bootstyle="info-outline"
+        ).pack(side=LEFT)
 
         # Nota: No llamamos a refresh_files_list() aquí porque se llamará
         # después de que la UI principal conecte los métodos en _connect_import_functionality()
@@ -1564,46 +1537,52 @@ class EnhancedDatabaseDashboard:
         mb.showwarning("No conectado", "El método process_selected_files_ia no fue reasignado correctamente")
 
     def create_export_tab(self):
-        """Crear pestaña de exportaciones con visor de archivos"""
+        """Crear pestaña de exportaciones con visor de archivos (rediseño minimalista navy V6.9.16)"""
         # Frame principal con padding
         main_frame = ttk.Frame(self.export_tab, padding=30)
         main_frame.pack(expand=True, fill=BOTH)
 
-        # Título de la sección
+        # ===== Encabezado de página =====
+        ttk.Label(
+            main_frame, text="Exportaciones realizadas",
+            font=("Segoe UI Semibold", 18), bootstyle="primary"
+        ).pack(anchor=W)
         ttk.Label(
             main_frame,
-            text="📤 Exportaciones Realizadas",
-            font=("Segoe UI", 16, "bold")
-        ).pack(pady=(0, 30))
+            text="Visualizá, editá y auditá el contenido de las exportaciones generadas.",
+            font=("Segoe UI", 10), bootstyle="secondary"
+        ).pack(anchor=W, pady=(3, 24))
 
-        # Descripción
-        ttk.Label(
-            main_frame,
-            text="Aquí se muestran todas las exportaciones realizadas. Puedes ver, editar y auditar el contenido.",
-            font=("Segoe UI", 11),
-            foreground="gray"
-        ).pack(pady=(0, 20))
-
-        # Contenedor principal
+        # Contenedor principal (col0=lista, col1=visor | row0=headers, row1=contenido)
         content_container = ttk.Frame(main_frame)
         content_container.pack(expand=True, fill=BOTH)
         content_container.grid_columnconfigure(0, weight=1)
         content_container.grid_columnconfigure(1, weight=2)
-        content_container.grid_rowconfigure(0, weight=1)
+        content_container.grid_rowconfigure(1, weight=1)
 
-        # Panel izquierdo - Lista de archivos exportados
-        files_section = ttk.LabelFrame(content_container, text="📁 Archivos Exportados", padding=20)
-        files_section.grid(row=0, column=0, sticky="nsew", padx=(0, 10))
+        # ----- Panel izquierdo: Archivos exportados -----
+        ttk.Label(
+            content_container, text="Archivos exportados",
+            font=("Segoe UI Semibold", 14), bootstyle="primary"
+        ).grid(row=0, column=0, sticky=W, pady=(0, 8), padx=(0, 16))
 
-        # Lista de archivos
-        list_frame = ttk.Frame(files_section)
-        list_frame.pack(fill=BOTH, expand=True, pady=10)
+        left_panel = ttk.Frame(content_container)
+        left_panel.grid(row=1, column=0, sticky="nsew", padx=(0, 16))
+
+        # Lista de archivos (estilo limpio, selección navy)
+        list_frame = ttk.Frame(left_panel)
+        list_frame.pack(fill=BOTH, expand=True)
 
         self.exports_listbox = tk.Listbox(
             list_frame,
             selectmode=tk.SINGLE,
             font=("Segoe UI", 10),
-            height=15
+            height=15,
+            bg="#ffffff", fg="#2a2f3a",
+            relief="flat", borderwidth=0,
+            highlightthickness=1, highlightbackground="#d2d9e6", highlightcolor="#2d3e5e",
+            selectbackground="#2d3e5e", selectforeground="#ffffff",
+            activestyle="none"
         )
         self.exports_listbox.pack(side=LEFT, expand=True, fill=BOTH)
         self.exports_listbox.bind("<<ListboxSelect>>", self.on_export_file_select)
@@ -1613,40 +1592,45 @@ class EnhancedDatabaseDashboard:
         self.exports_listbox.configure(yscrollcommand=exports_scrollbar.set)
 
         # Botones de control
-        export_control_frame = ttk.Frame(files_section)
-        export_control_frame.pack(fill=X, pady=(10, 0))
+        export_control_frame = ttk.Frame(left_panel)
+        export_control_frame.pack(fill=X, pady=(12, 0))
 
         ttk.Button(
             export_control_frame,
-            text="🔄 Actualizar Lista",
+            text="🔄  Actualizar lista",
             command=self.refresh_exports_list,
-            bootstyle="secondary"
+            bootstyle="secondary-outline"
         ).pack(side=LEFT, padx=(0, 10))
 
         ttk.Button(
             export_control_frame,
-            text="📂 Abrir Carpeta",
+            text="📂  Abrir carpeta",
             command=self.open_exports_folder,
-            bootstyle="info"
+            bootstyle="info-outline"
         ).pack(side=LEFT)
 
-        # Panel derecho - Visor/Editor de contenido
-        viewer_section = ttk.LabelFrame(content_container, text="👁️ Visor de Contenido", padding=20)
-        viewer_section.grid(row=0, column=1, sticky="nsew", padx=(10, 0))
-        viewer_section.grid_rowconfigure(2, weight=1)  # CORREGIDO: row 2 para el contenido
-        viewer_section.grid_columnconfigure(0, weight=1)
+        # ----- Panel derecho: Visor de contenido -----
+        ttk.Label(
+            content_container, text="Visor de contenido",
+            font=("Segoe UI Semibold", 14), bootstyle="primary"
+        ).grid(row=0, column=1, sticky=W, pady=(0, 8))
+
+        right_panel = ttk.Frame(content_container)
+        right_panel.grid(row=1, column=1, sticky="nsew")
+        right_panel.grid_rowconfigure(2, weight=1)  # row 2 = contenido (más espacio)
+        right_panel.grid_columnconfigure(0, weight=1)
 
         # Información del archivo seleccionado
         self.file_info_label = ttk.Label(
-            viewer_section,
-            text="Selecciona un archivo para ver su contenido",
-            font=("Segoe UI", 12),
-            foreground="gray"
+            right_panel,
+            text="Seleccioná un archivo para ver su contenido",
+            font=("Segoe UI", 11),
+            bootstyle="secondary"
         )
         self.file_info_label.grid(row=0, column=0, pady=(0, 10), sticky="w")
 
-        # CORREGIDO: Frame para botones justo debajo del título
-        self.viewer_buttons_frame = ttk.Frame(viewer_section)
+        # Frame para botones justo debajo del título
+        self.viewer_buttons_frame = ttk.Frame(right_panel)
         self.viewer_buttons_frame.grid(row=1, column=0, pady=(0, 10), sticky="w")
 
         # Botón Atrás (inicialmente oculto)
@@ -1654,13 +1638,13 @@ class EnhancedDatabaseDashboard:
             self.viewer_buttons_frame,
             text="← Atrás",
             command=self.clear_export_viewer,
-            bootstyle="secondary"
+            bootstyle="secondary-outline"
         )
 
         # V5.3.8: Botón Abrir en Excel (inicialmente oculto)
         self.open_excel_button = ttk.Button(
             self.viewer_buttons_frame,
-            text="📊 Abrir en Excel",
+            text="📊  Abrir en Excel",
             command=self.open_in_excel,
             bootstyle="success"
         )
@@ -1668,16 +1652,16 @@ class EnhancedDatabaseDashboard:
         # V5.3.8: Botón Abrir Carpeta (inicialmente oculto)
         self.open_folder_button = ttk.Button(
             self.viewer_buttons_frame,
-            text="📂 Abrir Carpeta",
+            text="📂  Abrir carpeta",
             command=self.open_file_location,
-            bootstyle="info"
+            bootstyle="info-outline"
         )
 
         # Variable para guardar el archivo actual
         self.current_export_file = None
 
-        # CORREGIDO: Área de contenido ahora en row 2 (más espacio)
-        self.content_frame = ttk.Frame(viewer_section)
+        # Área de contenido en row 2 (más espacio)
+        self.content_frame = ttk.Frame(right_panel)
         self.content_frame.grid(row=2, column=0, sticky="nsew")
         self.content_frame.grid_rowconfigure(0, weight=1)
         self.content_frame.grid_columnconfigure(0, weight=1)
@@ -1685,9 +1669,9 @@ class EnhancedDatabaseDashboard:
         # Mensaje inicial cuando no hay archivo seleccionado
         self.empty_viewer_label = ttk.Label(
             self.content_frame,
-            text="👆 Selecciona un archivo de la lista para visualizar su contenido",
+            text="👆 Seleccioná un archivo de la lista para visualizar su contenido",
             font=("Segoe UI", 11),
-            foreground="gray"
+            bootstyle="secondary"
         )
         self.empty_viewer_label.pack(expand=True)
 
@@ -1768,16 +1752,16 @@ class EnhancedDatabaseDashboard:
                 empty_vertical=0,
                 header_font=("Segoe UI", 9, "bold"),
                 font=("Segoe UI", 9, "normal"),
-                header_bg="#E3F2FD",  # Azul muy claro
-                header_fg="#0D47A1",  # Azul oscuro
+                header_bg="#e9edf3",  # Gris azulado claro (institucional)
+                header_fg="#2d3e5e",  # Navy institucional
                 table_bg="white",
-                table_fg="black",
-                table_selected_cells_bg="#BBDEFB",
-                table_selected_cells_fg="black",
-                table_selected_rows_bg="#E3F2FD",
-                table_selected_rows_fg="black",
-                index_bg="#F5F5F5",
-                index_fg="#424242"
+                table_fg="#2a2f3a",
+                table_selected_cells_bg="#dbe2f0",
+                table_selected_cells_fg="#1f2733",
+                table_selected_rows_bg="#eef1f6",
+                table_selected_rows_fg="#1f2733",
+                index_bg="#f4f6fa",
+                index_fg="#2d3e5e"
             )
             sheet.grid(row=0, column=0, sticky="nsew")
 
@@ -2092,9 +2076,9 @@ class EnhancedDatabaseDashboard:
             # CORREGIDO: Restaurar el mensaje inicial
             self.empty_viewer_label = ttk.Label(
                 self.content_frame,
-                text="👆 Selecciona un archivo de la lista para visualizar su contenido",
+                text="👆 Seleccioná un archivo de la lista para visualizar su contenido",
                 font=("Segoe UI", 11),
-                foreground="gray"
+                bootstyle="secondary"
             )
             self.empty_viewer_label.pack(expand=True)
 
@@ -2104,8 +2088,8 @@ class EnhancedDatabaseDashboard:
 
             # Restablecer etiqueta de información
             self.file_info_label.config(
-                text="Selecciona un archivo para ver su contenido",
-                foreground="gray"
+                text="Seleccioná un archivo para ver su contenido",
+                bootstyle="secondary"
             )
 
             # Limpiar selección actual
