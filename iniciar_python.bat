@@ -16,7 +16,8 @@ set "PYTHON_SCRIPT=ui.py"
 REM Usuario y configuración
 set "USUARIO_NOMBRE=Innovación y Desarrollo"
 set "USUARIO_CARGO=Ingenieros de soluciones"
-set "TEMA_APP=cosmo"
+REM V6.9.16 - Tema institucional HUV (navy #2d3e5e). Antes: cosmo.
+set "TEMA_APP=huv"
 
 cd /d "%WORK_DIR%"
 

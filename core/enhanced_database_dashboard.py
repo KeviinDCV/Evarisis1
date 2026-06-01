@@ -654,20 +654,27 @@ class EnhancedDatabaseDashboard:
         if self.df is None or self.df.empty:
             return
 
-        # Analizar cada tipo de biomarcador con validación robusta
+        # Biomarcadores destacados (tarjetas con nombre propio)
+        # V6.9.17 FIX:
+        #   - ER/PR: antes ['er','pr','receptor']. 'er'/'pr' como substring matcheaban por
+        #     error HER2, Genero, Primer nombre/apellido, Servicio, Procedimiento, Diagnostico,
+        #     Factor pronostico, E-Cadherina, EBER... (inflaba a 859). Ahora SOLO 'receptor'
+        #     -> columnas IHQ_RECEPTOR_ESTROGENOS / IHQ_RECEPTOR_PROGESTERONA (real ~283).
+        #   - PDL-1: antes ['pdl1','pd-l1'] NUNCA coincidian con la columna real IHQ_PDL-1
+        #     (siempre mostraba 0). Ahora incluye 'pdl-1'.
         biomarkers = {
             'HER2': ['her2'],
             'Ki-67': ['ki67', 'ki-67'],
-            'ER/PR': ['er', 'pr', 'receptor'],
+            'ER/PR': ['receptor'],
             'P16': ['p16'],
-            'PDL-1': ['pdl1', 'pd-l1'],
-            'Otros': []
+            'PDL-1': ['pdl-1', 'pdl1', 'pd-l1'],
         }
 
-        total_other = 0
+        # Columnas ya representadas por las tarjetas con nombre (se excluyen de "Otros")
+        columnas_destacadas = set()
         for bio_name, keywords in biomarkers.items():
-            if bio_name == 'Otros':
-                continue
+            cols = [c for c in self.df.columns if any(kw in c.lower() for kw in keywords)]
+            columnas_destacadas.update(cols)
 
             count = self._count_valid_biomarkers(keywords)
 
@@ -675,9 +682,15 @@ class EnhancedDatabaseDashboard:
             if bio_name in self.biomarker_cards:
                 self.biomarker_cards[bio_name].value_label.config(text=str(count))
 
-        # Contar otros biomarcadores con validación
-        other_keywords = ['gata', 's100', 'cd', 'cromogranina', 'sinaptofisina']
-        total_other = self._count_valid_biomarkers(other_keywords)
+        # V6.9.17 FIX "Otros": antes era un subconjunto fijo (gata, s100, cd, cromogranina,
+        # sinaptofisina) que dejaba ~106 biomarcadores invisibles. Ahora cuenta los casos con
+        # resultado valido en CUALQUIER otro biomarcador IHQ_ no destacado arriba.
+        NO_SON_BIOMARCADOR = {'IHQ_ORGANO', 'IHQ_ESTUDIOS_SOLICITADOS'}
+        otros_cols = [c for c in self.df.columns
+                      if c.upper().startswith('IHQ_')
+                      and c not in columnas_destacadas
+                      and c.upper() not in NO_SON_BIOMARCADOR]
+        total_other = self._count_valid_biomarkers_cols(otros_cols)
 
         if 'Otros' in self.biomarker_cards:
             self.biomarker_cards['Otros'].value_label.config(text=str(total_other))
@@ -710,6 +723,23 @@ class EnhancedDatabaseDashboard:
 
             if has_valid_biomarker:
                 count += 1
+
+        return count
+
+    def _count_valid_biomarkers_cols(self, bio_cols):
+        """V6.9.17: Igual que _count_valid_biomarkers pero recibe columnas EXPLICITAS
+        (en vez de keywords). Cuenta casos con resultado valido en alguna de esas columnas.
+        Se usa para la tarjeta 'Otros' (cualquier biomarcador no destacado)."""
+        if not bio_cols:
+            return 0
+
+        count = 0
+        for index, row in self.df.iterrows():
+            for col in bio_cols:
+                value = str(row[col]) if pd.notna(row[col]) else ""
+                if self._is_valid_biomarker_result(value):
+                    count += 1
+                    break
 
         return count
 
@@ -1835,7 +1865,7 @@ class EnhancedDatabaseDashboard:
             conn.close()
 
             # Crear Treeview para mostrar datos - OPTIMIZADO
-            tree = ttk.Treeview(self.content_frame, show="headings")
+            tree = ttk.Treeview(self.content_frame, show="headings", style="Custom.Treeview")
             tree.grid(row=0, column=0, sticky="nsew")
 
             # Configurar columnas (mostrar solo las más importantes)
@@ -2156,7 +2186,7 @@ class EnhancedDatabaseDashboard:
             df = pd.read_excel(self.current_export_file)
 
             # Crear Treeview editable MEJORADO
-            tree = ttk.Treeview(table_frame, show="headings")
+            tree = ttk.Treeview(table_frame, show="headings", style="Custom.Treeview")
             tree.grid(row=0, column=0, sticky="nsew")
 
             # Configurar columnas

@@ -4517,7 +4517,6 @@ Disco {i}:
             "IHQ_E_CADHERINA",  # v6.0.3 - E-Cadherina
             # Biomarcadores adicionales v4.0/v4.1
             "IHQ_CK7",
-            "IHQ_CROMOGRAMINA",
             "IHQ_DESMINA",
             "IHQ_LCA",
             "IHQ_CD11",

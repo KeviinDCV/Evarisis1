@@ -1,0 +1,66 @@
+{
+  "before": {
+    "n_cols": 186,
+    "cromogramina_existe": true,
+    "cromogranina_existe": true,
+    "cromogranina_valid": 83,
+    "rows": 1462,
+    "ref": {
+      "IHQ250072": [
+        "POSITIVO",
+        "ADENOMA HIPOFISARIO PRODUCTOR DE GONADOTROFINAS",
+        "N/A"
+      ],
+      "IHQ250082": [
+        "POSITIVO",
+        "ADENOMA HIPOFISARIO PRODUCTOR DE GONADOTROPINAS",
+        "POSITIVO (SCORE)"
+      ],
+      "IHQ250097": [
+        "NEGATIVO",
+        "ADENOMA HIPOFISARIO PRODUCTOR DE PROLACTINA",
+        "N/A"
+      ],
+      "IHQ250740": [
+        "N/A",
+        "CARCINOMA INVASIVO DE TIPO NO ESPECIAL",
+        "EQUIVOCO"
+      ]
+    }
+  },
+  "after": {
+    "n_cols": 185,
+    "cromogramina_existe": false,
+    "cromogranina_existe": true,
+    "cromogranina_valid": 83,
+    "rows": 1462,
+    "ref": {
+      "IHQ250072": [
+        "POSITIVO",
+        "ADENOMA HIPOFISARIO PRODUCTOR DE GONADOTROFINAS",
+        "N/A"
+      ],
+      "IHQ250082": [
+        "POSITIVO",
+        "ADENOMA HIPOFISARIO PRODUCTOR DE GONADOTROPINAS",
+        "POSITIVO (SCORE)"
+      ],
+      "IHQ250097": [
+        "NEGATIVO",
+        "ADENOMA HIPOFISARIO PRODUCTOR DE PROLACTINA",
+        "N/A"
+      ],
+      "IHQ250740": [
+        "N/A",
+        "CARCINOMA INVASIVO DE TIPO NO ESPECIAL",
+        "EQUIVOCO"
+      ]
+    }
+  },
+  "OK_columna_typo_eliminada": true,
+  "OK_canonica_presente": true,
+  "OK_cromogranina_intacta_83": true,
+  "OK_filas_1462_intactas": true,
+  "OK_refs_sin_regresion": true,
+  "TODO_OK": true
+}

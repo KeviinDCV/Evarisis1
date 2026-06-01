@@ -1,0 +1,320 @@
+{
+  "Calretinina": {
+    "canonica": "IHQ_CALRETININA",
+    "existen": {
+      "IHQ_CALRETININA": true,
+      "IHQ_CALRETININ": true,
+      "IHQ_CALRRETININA": true
+    },
+    "counts": {
+      "IHQ_CALRETININA": 58,
+      "IHQ_CALRETININ": 51,
+      "IHQ_CALRRETININA": 46
+    },
+    "union_real": 60,
+    "n_solo_variante": 2,
+    "solo_variante_ejemplos": [
+      [
+        "IHQ250048",
+        {
+          "IHQ_CALRRETININA": "POSITIVO"
+        }
+      ],
+      [
+        "IHQ250598",
+        {
+          "IHQ_CALRRETININA": "POSITIVO para vimentina"
+        }
+      ]
+    ],
+    "n_conflictos": 4,
+    "conflictos_ejemplos": [
+      [
+        "IHQ250326",
+        "IHQ_CALRETININA",
+        "CALRETININA",
+        "IHQ_CALRETININ",
+        "CALRETININ"
+      ],
+      [
+        "IHQ250621",
+        "IHQ_CALRETININA",
+        "CALRETININ POSITIVO",
+        "IHQ_CALRRETININA",
+        "S100 POSITIVO"
+      ],
+      [
+        "IHQ251324",
+        "IHQ_CALRETININA",
+        "CALRETININA",
+        "IHQ_CALRETININ",
+        "CALRETININ"
+      ],
+      [
+        "IHQ251417",
+        "IHQ_CALRETININA",
+        "CALRETININA: N/A",
+        "IHQ_CALRETININ",
+        "CALRETININ: N/A"
+      ]
+    ]
+  },
+  "Desmina": {
+    "canonica": "IHQ_DESMINA",
+    "existen": {
+      "IHQ_DESMINA": true,
+      "IHQ_DESMIN": true
+    },
+    "counts": {
+      "IHQ_DESMINA": 54,
+      "IHQ_DESMIN": 77
+    },
+    "union_real": 77,
+    "n_solo_variante": 23,
+    "solo_variante_ejemplos": [
+      [
+        "IHQ250013",
+        {
+          "IHQ_DESMIN": "POSITIVO"
+        }
+      ],
+      [
+        "IHQ250143",
+        {
+          "IHQ_DESMIN": "SMA"
+        }
+      ],
+      [
+        "IHQ250326",
+        {
+          "IHQ_DESMIN": "DESMIN"
+        }
+      ],
+      [
+        "IHQ250380",
+        {
+          "IHQ_DESMIN": "CD31 Y CD34 resaltan el endotelio vascular."
+        }
+      ],
+      [
+        "IHQ250427",
+        {
+          "IHQ_DESMIN": "NEGATIVO"
+        }
+      ],
+      [
+        "IHQ250445",
+        {
+          "IHQ_DESMIN": "SMA"
+        }
+      ],
+      [
+        "IHQ250607",
+        {
+          "IHQ_DESMIN": "SMA"
+        }
+      ],
+      [
+        "IHQ250618",
+        {
+          "IHQ_DESMIN": "NEGATIVO"
+        }
+      ],
+      [
+        "IHQ250638",
+        {
+          "IHQ_DESMIN": "POSITIVO"
+        }
+      ],
+      [
+        "IHQ250714",
+        {
+          "IHQ_DESMIN": "SMA"
+        }
+      ]
+    ],
+    "n_conflictos": 1,
+    "conflictos_ejemplos": [
+      [
+        "IHQ250696",
+        "IHQ_DESMINA",
+        "PRESENTE",
+        "IHQ_DESMIN",
+        "PRESENTE EN LAS CÉLULAS DE MÚSCULO ESQUELÉTICO."
+      ]
+    ]
+  },
+  "CK34betaE12": {
+    "canonica": "IHQ_CK34BETAE12",
+    "existen": {
+      "IHQ_CK34BETAE12": true,
+      "IHQ_CK34BE12": true,
+      "IHQ_CK34BETA12": true
+    },
+    "counts": {
+      "IHQ_CK34BETAE12": 46,
+      "IHQ_CK34BE12": 51,
+      "IHQ_CK34BETA12": 31
+    },
+    "union_real": 52,
+    "n_solo_variante": 6,
+    "solo_variante_ejemplos": [
+      [
+        "IHQ250326",
+        {
+          "IHQ_CK34BE12": "CK34BE12"
+        }
+      ],
+      [
+        "IHQ251324",
+        {
+          "IHQ_CK34BE12": "CK34BE12"
+        }
+      ],
+      [
+        "IHQ251417",
+        {
+          "IHQ_CK34BE12": "CK34BE12: N/A"
+        }
+      ],
+      [
+        "IHQ251436",
+        {
+          "IHQ_CK34BE12": "CK34BE12: N/A"
+        }
+      ],
+      [
+        "IHQ251478",
+        {
+          "IHQ_CK34BE12": "CK34βE12"
+        }
+      ],
+      [
+        "IHQ251485",
+        {
+          "IHQ_CK34BE12": "CK34βE12: Negativo."
+        }
+      ]
+    ],
+    "n_conflictos": 3,
+    "conflictos_ejemplos": [
+      [
+        "IHQ250097",
+        "IHQ_CK34BETAE12",
+        "TSH",
+        "IHQ_CK34BE12",
+        "CK34betaE12"
+      ],
+      [
+        "IHQ250097",
+        "IHQ_CK34BETAE12",
+        "TSH",
+        "IHQ_CK34BETA12",
+        "p53"
+      ],
+      [
+        "IHQ251422",
+        "IHQ_CK34BETAE12",
+        "CD79a+",
+        "IHQ_CK34BETA12",
+        "CD34+/-"
+      ]
+    ]
+  },
+  "Mamoglobina": {
+    "canonica": "IHQ_MAMOGLOBINA",
+    "existen": {
+      "IHQ_MAMOGLOBINA": true,
+      "IHQ_MAMAGLOBINA": true
+    },
+    "counts": {
+      "IHQ_MAMOGLOBINA": 21,
+      "IHQ_MAMAGLOBINA": 23
+    },
+    "union_real": 23,
+    "n_solo_variante": 2,
+    "solo_variante_ejemplos": [
+      [
+        "IHQ250446",
+        {
+          "IHQ_MAMAGLOBINA": "CKAE1/AE3"
+        }
+      ],
+      [
+        "IHQ250742",
+        {
+          "IHQ_MAMAGLOBINA": "CKAE1/AE3+"
+        }
+      ]
+    ],
+    "n_conflictos": 1,
+    "conflictos_ejemplos": [
+      [
+        "IHQ250097",
+        "IHQ_MAMOGLOBINA",
+        "Sinaptofisina",
+        "IHQ_MAMAGLOBINA",
+        "FSH"
+      ]
+    ]
+  },
+  "Miogenina": {
+    "canonica": "IHQ_MIOGENINA",
+    "existen": {
+      "IHQ_MIOGENINA": true,
+      "IHQ_MYOGENIN": true
+    },
+    "counts": {
+      "IHQ_MIOGENINA": 10,
+      "IHQ_MYOGENIN": 17
+    },
+    "union_real": 17,
+    "n_solo_variante": 7,
+    "solo_variante_ejemplos": [
+      [
+        "IHQ250326",
+        {
+          "IHQ_MYOGENIN": "MYOGENIN"
+        }
+      ],
+      [
+        "IHQ250726",
+        {
+          "IHQ_MYOGENIN": "MYOGENIN"
+        }
+      ],
+      [
+        "IHQ251324",
+        {
+          "IHQ_MYOGENIN": "MYOGENIN"
+        }
+      ],
+      [
+        "IHQ251417",
+        {
+          "IHQ_MYOGENIN": "MYOGENIN: N/A"
+        }
+      ],
+      [
+        "IHQ251457",
+        {
+          "IHQ_MYOGENIN": "MYOGENIN"
+        }
+      ],
+      [
+        "IHQ251485",
+        {
+          "IHQ_MYOGENIN": "Myogenin: Negativo."
+        }
+      ],
+      [
+        "IHQ251490",
+        {
+          "IHQ_MYOGENIN": "SMA"
+        }
+      ]
+    ],
+    "n_conflictos": 0,
+    "conflictos_ejemplos": []
+  }
+}

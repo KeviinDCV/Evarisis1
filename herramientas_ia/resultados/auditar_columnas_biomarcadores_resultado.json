@@ -1,0 +1,113 @@
+{
+  "total_columnas_biomarcador": 146,
+  "pobladas": 146,
+  "muertas_0_casos": 0,
+  "lista_muertas": [],
+  "clusters_duplicados": [
+    {
+      "variantes": [
+        "IHQ_CALRETININA",
+        "IHQ_CALRETININ",
+        "IHQ_CALRRETININA"
+      ],
+      "conteos": {
+        "IHQ_CALRETININA": 58,
+        "IHQ_CALRETININ": 51,
+        "IHQ_CALRRETININA": 46
+      },
+      "casos_total_si_se_unen": 155
+    },
+    {
+      "variantes": [
+        "IHQ_CROMOGRANINA",
+        "IHQ_CROMOGRAMINA"
+      ],
+      "conteos": {
+        "IHQ_CROMOGRANINA": 83,
+        "IHQ_CROMOGRAMINA": 61
+      },
+      "casos_total_si_se_unen": 144
+    },
+    {
+      "variantes": [
+        "IHQ_DESMIN",
+        "IHQ_DESMINA"
+      ],
+      "conteos": {
+        "IHQ_DESMIN": 77,
+        "IHQ_DESMINA": 54
+      },
+      "casos_total_si_se_unen": 131
+    },
+    {
+      "variantes": [
+        "IHQ_CK34BE12",
+        "IHQ_CK34BETAE12",
+        "IHQ_CK34BETA12"
+      ],
+      "conteos": {
+        "IHQ_CK34BE12": 51,
+        "IHQ_CK34BETAE12": 46,
+        "IHQ_CK34BETA12": 31
+      },
+      "casos_total_si_se_unen": 128
+    },
+    {
+      "variantes": [
+        "IHQ_ACTINA_MUSCULO_LISO",
+        "IHQ_ACTIN",
+        "IHQ_ACTINA_MUSCULO_ESPECIFICA"
+      ],
+      "conteos": {
+        "IHQ_ACTINA_MUSCULO_LISO": 40,
+        "IHQ_ACTIN": 34,
+        "IHQ_ACTINA_MUSCULO_ESPECIFICA": 16
+      },
+      "casos_total_si_se_unen": 90
+    },
+    {
+      "variantes": [
+        "IHQ_SOX10",
+        "IHQ_SOX11"
+      ],
+      "conteos": {
+        "IHQ_SOX10": 76,
+        "IHQ_SOX11": 4
+      },
+      "casos_total_si_se_unen": 80
+    },
+    {
+      "variantes": [
+        "IHQ_MAMAGLOBINA",
+        "IHQ_MAMOGLOBINA"
+      ],
+      "conteos": {
+        "IHQ_MAMAGLOBINA": 23,
+        "IHQ_MAMOGLOBINA": 21
+      },
+      "casos_total_si_se_unen": 44
+    },
+    {
+      "variantes": [
+        "IHQ_MELAN_A",
+        "IHQ_MELANOMA"
+      ],
+      "conteos": {
+        "IHQ_MELAN_A": 22,
+        "IHQ_MELANOMA": 11
+      },
+      "casos_total_si_se_unen": 33
+    },
+    {
+      "variantes": [
+        "IHQ_MYOGENIN",
+        "IHQ_MIOGENINA"
+      ],
+      "conteos": {
+        "IHQ_MYOGENIN": 17,
+        "IHQ_MIOGENINA": 10
+      },
+      "casos_total_si_se_unen": 27
+    }
+  ]
+}
