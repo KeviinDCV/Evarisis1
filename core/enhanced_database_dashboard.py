@@ -825,64 +825,65 @@ class EnhancedDatabaseDashboard:
             for widget in self.diagnosis_chart_frame.winfo_children():
                 widget.destroy()
 
-            # Encontrar columna de diagnóstico
-            diag_cols = [col for col in self.df.columns if 'diagnostico' in col.lower()]
-            if not diag_cols:
+            # Elegir columna de diagnóstico (preferir 'Diagnostico Principal')
+            diag_col = None
+            for col in self.df.columns:
+                if col.lower() == 'diagnostico principal':
+                    diag_col = col
+                    break
+            if diag_col is None:
+                diag_cols = [col for col in self.df.columns if 'diagnostico' in col.lower()]
+                if not diag_cols:
+                    return
+                diag_col = diag_cols[0]
+
+            # V6.9.21: Categorización clínica GRANULAR (la misma del Resumen IA),
+            # en vez de 5 buckets gruesos que metían casi todo en 'Otros' (964).
+            try:
+                from core.normalizador_diagnosticos import (
+                    categorizar_diagnostico, categorizar_diagnostico_con_organo,
+                )
+                from core.normalizador_organos import normalizar_organo, elegir_columna_organo
+                col_org = elegir_columna_organo(self.df.columns)
+                if col_org is not None:
+                    org_norm = self.df[col_org].apply(normalizar_organo)
+                    cat_serie = self.df.apply(
+                        lambda row: categorizar_diagnostico_con_organo(
+                            row[diag_col],
+                            org_norm.loc[row.name] if row.name in org_norm.index else None),
+                        axis=1)
+                else:
+                    cat_serie = self.df[diag_col].apply(categorizar_diagnostico)
+            except Exception as e_cat:
+                logging.warning(f"Categorizador no disponible, usando conteo literal: {e_cat}")
+                cat_serie = self.df[diag_col].dropna().astype(str)
+
+            cat_top = cat_serie.value_counts()
+            cat_top = cat_top[~cat_top.index.isin(['SIN DATO', '', 'N/A', 'NAN'])]
+            top = cat_top.head(20)
+            if top.empty:
                 return
 
-            diag_col = diag_cols[0]
-
-            # Crear figura
-            fig = Figure(figsize=(12, 6), dpi=100)
+            # Barras horizontales: caben nombres largos y muchas categorías (con scroll)
+            n = len(top)
+            fig = Figure(figsize=(11, max(4.5, 0.42 * n + 1.2)), dpi=100)
             ax = fig.add_subplot(111)
-
-            # Contar diagnósticos por tipo (simplificado)
-            diagnosticos = self.df[diag_col].dropna()
-
-            # Clasificar en categorías principales
-            categorias = {
-                'Carcinomas': 0,
-                'Adenocarcinomas': 0,
-                'Lesiones Benignas': 0,
-                'Procesos Inflamatorios': 0,
-                'Otros': 0
-            }
-
-            for diag in diagnosticos:
-                diag_upper = str(diag).upper()
-                if 'CARCINOMA' in diag_upper and 'ADENOCARCINOMA' not in diag_upper:
-                    categorias['Carcinomas'] += 1
-                elif 'ADENOCARCINOMA' in diag_upper:
-                    categorias['Adenocarcinomas'] += 1
-                elif any(word in diag_upper for word in ['BENIGNO', 'HIPERPLASIA', 'ADENOMA']):
-                    categorias['Lesiones Benignas'] += 1
-                elif any(word in diag_upper for word in ['INFLAMATORIO', 'INFLAMACION']):
-                    categorias['Procesos Inflamatorios'] += 1
-                else:
-                    categorias['Otros'] += 1
-
-            # Crear gráfico de barras
-            labels = list(categorias.keys())
-            values = list(categorias.values())
-
-            bars = ax.bar(labels, values, color=['#ff6b6b', '#ffa726', '#66bb6a', '#42a5f5', '#ab47bc'])
-
-            # Personalizar gráfico
-            ax.set_title('Distribución por Tipos de Diagnóstico', fontsize=14, fontweight='bold')
-            ax.set_ylabel('Número de Casos')
-
-            # Agregar valores en las barras
-            for bar, value in zip(bars, values):
-                height = bar.get_height()
-                ax.text(bar.get_x() + bar.get_width()/2., height + 0.5,
-                       f'{value}', ha='center', va='bottom')
-
+            etiquetas = [str(k)[:48] for k in top.index][::-1]
+            valores = list(top.values)[::-1]
+            barras = ax.barh(etiquetas, valores, color="#2d3e5e")
+            ax.set_title(f'Distribución por diagnóstico (top {n})', fontsize=14, fontweight='bold')
+            ax.set_xlabel('Número de casos')
+            ax.tick_params(axis='y', labelsize=9)
+            ax.margins(x=0.12)
+            for b, v in zip(barras, valores):
+                ax.text(b.get_width(), b.get_y() + b.get_height() / 2, f' {v}',
+                        va='center', fontsize=8)
             fig.tight_layout()
 
             # Mostrar en la interfaz
             canvas = FigureCanvasTkAgg(fig, self.diagnosis_chart_frame)
             canvas.draw()
-            canvas.get_tk_widget().pack(fill=X, expand=True)
+            canvas.get_tk_widget().pack(fill=BOTH, expand=True)
 
         except Exception as e:
             logging.error(f"Error creando gráfico de diagnósticos: {e}")

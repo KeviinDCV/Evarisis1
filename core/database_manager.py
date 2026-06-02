@@ -1519,6 +1519,7 @@ def get_fecha_range_registros() -> Dict[str, str]:
                     COUNT(*) as total
                 FROM {TABLE_NAME}
                 WHERE "Fecha Informe" IS NOT NULL AND "Fecha Informe" != '' AND LENGTH("Fecha Informe") = 10
+                  AND "Fecha Informe" LIKE '__/__/____'
             """)
 
             result = cursor.fetchone()

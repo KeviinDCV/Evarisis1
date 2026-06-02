@@ -577,7 +577,9 @@ class App(ttk.Window):
         c = self.floating_btn
         s = self._float_btn_size
         c.delete("all")
-        pad = 3
+        # V6.9.22: pad mínimo -> el círculo llena casi todo el canvas, reduciendo
+        # el "cuadro" del fondo a esquinas casi imperceptibles.
+        pad = 1
         c.create_oval(pad, pad, s - pad, s - pad, fill=color,
                       outline=outline, width=1)
         cx, cy = s // 2, s // 2
@@ -5134,6 +5136,13 @@ Disco {i}:
                 "GLIOSIS / LESION REACTIVA SNC",
                 "RECHAZO DE TRASPLANTE",
                 "MALFORMACION DEL DESARROLLO / HETEROTOPIA SNC",
+                # V6.9.23: nuevas categorías NO oncológicas del categorizador
+                "PROCESO INFLAMATORIO / INFECCIOSO (NO NEOPLASICO)",
+                "HALLAZGO NO NEOPLASICO / NEGATIVO (OTRO)",
+                "ESTUDIO DE MEDULA OSEA (MORFOLOGIA)",
+                "MUESTRA INSUFICIENTE / LIMITADA (OTRO)",
+                "SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)",
+                "ENFERMEDAD DE HIRSCHSPRUNG / CELULAS GANGLIONARES",
             }
 
             EXCLUIR_DEL_TOP = (CATEGORIAS_NO_NEOPLASICAS | {"SIN DATO", "OTRO / NO CATEGORIZADO"})
@@ -5198,103 +5207,160 @@ Disco {i}:
 
         return stats
 
+    def _construir_resumen_factual(self, stats: dict) -> str:
+        """V6.9.19: Secciones FACTUALES del resumen generadas de forma DETERMINISTA
+        desde las estadísticas (cifras y nombres EXACTOS, sin IA). Evita que un modelo
+        pequeño invente cifras o copie las instrucciones del prompt. La IA solo redacta
+        el 'Resumen Ejecutivo' y las 'Observaciones clínicas'."""
+        total = stats.get("total_casos", 0) or 0
+        def lst(d, n=None):
+            items = list((d or {}).items())
+            if n:
+                items = items[:n]
+            return [f"- {k}: {v}" for k, v in items]
+        L = []
+        L.append("# Volumen y Temporalidad")
+        L.append(f"- Total de casos (IHQ): {total}")
+        if stats.get("fecha_min"):
+            L.append(f"- Periodo: {stats.get('fecha_min')} a {stats.get('fecha_max', '?')}")
+        mal = stats.get("malignidad") or {}
+        if mal:
+            L.append("")
+            L.append("# Malignidad")
+            for k, v in mal.items():
+                p = f"{(100.0 * v / total):.1f}%" if total else "0.0%"
+                L.append(f"- {k}: {v} ({p})")
+        org = stats.get("organos_normalizados") or {}
+        if org:
+            L.append("")
+            L.append("# Distribución Anatómica")
+            L.append(f"- (Total con dato: {stats.get('organos_total_con_dato', '?')} · categorías distintas: {stats.get('organos_categorias_distintas', '?')})")
+            L += lst(org)
+        dx = stats.get("diagnosticos_categorizados") or {}
+        if dx:
+            L.append("")
+            L.append("# Diagnósticos Oncológicos Principales (neoplasias)")
+            L.append(f"- (Total categorizado como oncológico: {stats.get('diagnosticos_total_categorizado', '?')})")
+            L += lst(dx)
+        hno = stats.get("hallazgos_no_neoplasicos") or {}
+        if hno:
+            L.append("")
+            L.append("# Hallazgos No-Neoplásicos (sección separada — no son neoplasias)")
+            L.append(f"- (Total: {stats.get('hallazgos_no_neoplasicos_total', '?')})")
+            L += lst(hno)
+        bios = stats.get("biomarcadores_top15") or {}
+        if bios:
+            L.append("")
+            L.append("# Biomarcadores (top 15 por N evaluados)")
+            L.append(f"- (Biomarcadores distintos con dato: {stats.get('total_biomarcadores_distintos', '?')})")
+            for marc, info in sorted(bios.items(), key=lambda x: x[1].get("n", 0), reverse=True):
+                top = info.get("top") or {}
+                if top:
+                    val, n = next(iter(top.items()))
+                    pred = f"{val} (N={n})"
+                else:
+                    pred = "—"
+                L.append(f"- {str(marc).replace('IHQ_', '')}: N={info.get('n', 0)}, predominante {pred}")
+        serv = stats.get("servicios") or {}
+        if serv:
+            L.append("")
+            L.append("# Servicios Solicitantes (top 10)")
+            L.append(f"- (Total con dato: {stats.get('servicios_total_con_dato', '?')} · servicios distintos: {stats.get('servicios_categorias_distintas', '?')})")
+            L += lst(serv)
+        ptipo = stats.get("procedimientos_por_tipo") or {}
+        if ptipo:
+            L.append("")
+            L.append("# Procedimientos por Tipo")
+            L += lst(ptipo)
+            ptop = stats.get("procedimientos") or {}
+            if ptop:
+                L.append("- Específicos más frecuentes:")
+                L += [f"  - {k}: {v}" for k, v in list(ptop.items())[:10]]
+        L.append("")
+        L.append("# Control de Calidad de Categorización")
+        L.append(f"- Sin categorizar (otro): {stats.get('diagnosticos_otro_no_categorizado', 0)}")
+        L.append(f"- Estudio IHQ sin diagnóstico específico: {stats.get('diagnosticos_estudio_ihq_sin_dx', 0)}")
+        L.append(f"- Sin dato: {stats.get('diagnosticos_sin_dato', 0)}")
+        return "\n".join(L)
+
     def _resumen_ia_worker(self):
-        """Hilo: compila estadísticas y llama a la IA."""
+        """Hilo: compila estadísticas y arma el resumen.
+        V6.9.19 HÍBRIDO: secciones factuales deterministas + IA solo para prosa."""
         import json
+        import re
         try:
             stats = self._compilar_estadisticas()
             # Guardamos las estadísticas crudas para el dashboard de gráficos
             self._resumen_ia_result["stats"] = stats
-            # JSON compacto (sin indent) para reducir tokens de prompt
-            stats_json = json.dumps(stats, ensure_ascii=False, separators=(",", ":"))
+            # 1) Secciones FACTUALES deterministas (fuente de verdad: cifras exactas)
+            factual = self._construir_resumen_factual(stats)
 
+            # 2) Contexto compacto para la IA (solo cifras clave -> prompt pequeño)
+            total = stats.get("total_casos", 0)
+            def _top(d, n=5):
+                return ", ".join(f"{k} ({v})" for k, v in list((d or {}).items())[:n]) or "no disponible"
+            contexto = (
+                f"Total casos IHQ: {total}\n"
+                f"Periodo: {stats.get('fecha_min', '?')} a {stats.get('fecha_max', '?')}\n"
+                f"Malignidad: {_top(stats.get('malignidad'), 6)}\n"
+                f"Top organos: {_top(stats.get('organos_normalizados'))}\n"
+                f"Top diagnosticos oncologicos: {_top(stats.get('diagnosticos_categorizados'))}\n"
+                f"Diagnosticos oncologicos totales: {stats.get('diagnosticos_total_categorizado', '?')}\n"
+                f"Hallazgos no-neoplasicos totales: {stats.get('hallazgos_no_neoplasicos_total', '?')}\n"
+                f"Biomarcadores distintos: {stats.get('total_biomarcadores_distintos', '?')}\n"
+            )
             system_prompt = (
-                "/no_think\n"
-                "Eres analista clínico-oncológico del HUV. Recibirás estadísticas "
-                "PRE-CALCULADAS y EXACTAS. NO debes recalcular ni redondear. "
-                "Reglas obligatorias:\n"
-                "1) Usa SOLO los números provistos. Cita conteos exactos.\n"
-                "2) Para 'Distribución Anatómica' usa el campo 'organos_normalizados' "
-                "(ya unificado: MAMA agrupa todas las variantes/lateralidades, "
-                "COLON incluye recto/sigmoide, etc.). Indica el total con dato "
-                "('organos_total_con_dato') y el número de categorías distintas.\n"
-                "3) Para 'Diagnósticos Principales' usa SIEMPRE 'diagnosticos_categorizados' "
-                "que contiene SOLO diagnósticos ONCOLÓGICOS reales (neoplasias benignas "
-                "o malignas: CARCINOMA DUCTAL DE MAMA, ADENOCARCINOMA COLORRECTAL, LINFOMA, "
-                "TIMOMA, MENINGIOMA, etc.). El total real de casos categorizados como "
-                "diagnóstico oncológico está en 'diagnosticos_total_categorizado'.\n"
-                "3B) IMPORTANTE — los HALLAZGOS NO-NEOPLÁSICOS se reportan APARTE en "
-                "'hallazgos_no_neoplasicos' (negativo para malignidad, muestra no "
-                "representativa, hallazgo histológico normal, resultado IHQ sin dx, "
-                "gliosis, rechazo de trasplante, malformación, etc.). NO los mezcles "
-                "en la lista de Diagnósticos Principales — son categorías clínicas "
-                "DIFERENTES (no son neoplasias). Crea una sección separada llamada "
-                "'Hallazgos No-Neoplásicos / Casos sin diagnóstico oncológico' usando "
-                "'hallazgos_no_neoplasicos_total' y la distribución detallada.\n"
-                "3C) NO uses 'top_diagnostico_principal' como fuente principal: solo "
-                "cítalo como ejemplo del literal más frecuente. Reporta "
-                "'diagnosticos_estudio_ihq_sin_dx' y 'diagnosticos_otro_no_categorizado' "
-                "como métricas de control de calidad.\n"
-                "4) Calcula porcentajes sobre 'total_casos' o el denominador "
-                "explícito. Muestra siempre el N usado.\n"
-                "5) Para biomarcadores: 'biomarcadores_top15' es un dict {marcador: "
-                "{n: <casos evaluados>, top: {valor: conteo}}}. NO sumes los 'n' como "
-                "si fueran casos únicos: un mismo paciente aparece en varios marcadores. "
-                "El total de marcadores distintos está en 'total_biomarcadores_distintos'.\n"
-                "6) Si un dato no está en las estadísticas, escribe 'no disponible'.\n"
-                "7) NO inventes diagnósticos, biomarcadores ni cifras.\n"
-                "7B) ORTOGRAFÍA MÉDICA — REGLA CRÍTICA: copia los nombres de "
-                "categorías, biomarcadores, órganos y servicios EXACTAMENTE como "
-                "aparecen en las estadísticas (case-sensitive). NO los modifiques, "
-                "traduzcas, ni 'corrijas' tú mismo. Ejemplos prohibidos: "
-                "'MICROCITICO' → NO escribir 'MICROCIÓTICO' o 'MICROCÍTICO'; "
-                "'NEUROENDOCRINO' → NO escribir 'NEURO ENDOCRINO'; "
-                "'CKAE1AE3' → NO escribir 'CKAE1/AE3' o 'CK AE1AE3'; "
-                "'PATOLOGICO' → NO escribir 'PATÓLOGICO' (acentuado distinto). "
-                "Si una palabra te parece mal escrita, usa la versión original "
-                "del dato — el patólogo ya la validó.\n"
-                "8) Para 'Servicios': usa 'servicios' (top 10), 'servicios_total_con_dato' "
-                "(suma real) y 'servicios_categorias_distintas'. SIEMPRE indica que la "
-                "tabla muestra los TOP 10 sobre el total real; si el top 10 no suma al "
-                "total, la diferencia son servicios menos frecuentes.\n"
-                "9) Para 'Procedimientos': usa 'procedimientos_por_tipo' (BIOPSIA/CIRUGIA/"
-                "PUNCION/LEGRADO/OTRO) como categorización clínica primaria. Cita además "
-                "los top específicos de 'procedimientos' como ejemplos. Cualquier "
-                "*ECTOMÍA (apendicectomía, mastectomía, hemicolectomía, etc.) ES una "
-                "CIRUGÍA, no un diagnóstico.\n"
-                "10) Para 'Diagnósticos': cuando una categoría sea 'ADENOCARCINOMA "
-                "(SIN ORIGEN ESPECIFICADO)' o 'CARCINOMA (OTRO/INESPECIFICO)' o "
-                "'CARCINOMA ESCAMOCELULAR (OTRO/SIN ESPECIFICAR)', explicar al lector "
-                "que el patólogo NO especificó el subtipo en el texto del informe. "
-                "Si aparecen, listar el órgano más frecuente asociado para dar contexto "
-                "(usa 'organos_normalizados').\n\n"
-                "Estructura del informe (Markdown español):\n"
-                "1. Resumen Ejecutivo (volumen, periodo, hallazgos principales)\n"
-                "2. Volumen y Temporalidad\n"
-                "3. Malignidad (porcentajes con N sobre total_casos)\n"
-                "4. Distribución Anatómica (top categorías canónicas)\n"
-                "5. Diagnósticos Oncológicos Principales (SOLO neoplasias benignas/malignas, "
-                "usar 'diagnosticos_categorizados')\n"
-                "6. Hallazgos No-Neoplásicos (usar 'hallazgos_no_neoplasicos': negativos, "
-                "muestras no representativas, hallazgos reactivos, etc.) — sección SEPARADA\n"
-                "7. Biomarcadores (top 15 con N evaluados y resultado predominante)\n"
-                "8. Servicios y Procedimientos (con totales y categorización por tipo)\n"
-                "9. Observaciones clínicas (sin sobre-interpretar)"
+                "Eres analista clínico-oncológico del Hospital Universitario del Valle. "
+                "Te entrego cifras YA CALCULADAS y EXACTAS de un periodo de patología "
+                "(inmunohistoquímica). Escribe en español, SIN inventar ni recalcular "
+                "cifras y SIN repetir estas instrucciones. Devuelve EXACTAMENTE estos dos "
+                "bloques en Markdown y NADA MÁS:\n\n"
+                "# Resumen Ejecutivo\n"
+                "- (3 a 4 viñetas con lo más relevante: volumen y periodo, malignidad, "
+                "órganos y diagnósticos predominantes)\n\n"
+                "# Observaciones clínicas\n"
+                "- (2 a 3 frases prudentes de interpretación general, sin sobre-interpretar "
+                "ni diagnosticar casos individuales)\n\n"
+                "No agregues otras secciones: el resto del informe ya está hecho."
             )
 
-            from core.llm_client import LMStudioClient
-            client = LMStudioClient(timeout=900)
-            resultado = client.completar(
-                prompt=f"Estadísticas IHQ del HUV:\n{stats_json}",
-                system_prompt=system_prompt,
-                temperature=0.3,
-                max_tokens=4000,
-            )
+            exec_block, obs_block = "", ""
+            try:
+                from core.llm_client import LMStudioClient
+                client = LMStudioClient(timeout=900)
+                resultado = client.completar(
+                    prompt=f"Cifras del periodo:\n{contexto}",
+                    system_prompt=system_prompt,
+                    temperature=0.3,
+                    max_tokens=700,
+                )
+                if resultado.get("exito"):
+                    llm = (resultado.get("respuesta") or "").strip()
+                    partes = re.split(r'(?im)^\s*#+\s*Observaciones', llm, maxsplit=1)
+                    exec_block = partes[0].strip()
+                    if len(partes) > 1:
+                        obs_block = "# Observaciones" + partes[1].rstrip()
+                    if exec_block and not re.match(r'(?im)^\s*#', exec_block):
+                        exec_block = "# Resumen Ejecutivo\n" + exec_block
+            except Exception:
+                pass  # la IA es opcional: si falla, entregamos el informe factual
 
-            if resultado.get("exito"):
-                self._resumen_ia_result["texto"] = resultado.get("respuesta", "Sin contenido.")
-            else:
-                self._resumen_ia_result["error"] = resultado.get("error", "Error desconocido de IA.")
+            # 3) Fallback determinista del Resumen Ejecutivo si la IA no respondió
+            if not exec_block:
+                org0 = next(iter((stats.get("organos_normalizados", {}) or {}).items()), ("no disponible", 0))
+                dx0 = next(iter((stats.get("diagnosticos_categorizados", {}) or {}).items()), ("no disponible", 0))
+                exec_block = "\n".join([
+                    "# Resumen Ejecutivo",
+                    f"- Volumen: {total} casos de inmunohistoquímica ({stats.get('fecha_min', '?')} a {stats.get('fecha_max', '?')}).",
+                    f"- Diagnósticos categorizados como oncológicos: {stats.get('diagnosticos_total_categorizado', '?')}; hallazgos no-neoplásicos: {stats.get('hallazgos_no_neoplasicos_total', '?')}.",
+                    f"- Órgano más frecuente: {org0[0]} ({org0[1]}). Diagnóstico oncológico más frecuente: {dx0[0]} ({dx0[1]}).",
+                ])
+
+            # 4) Ensamblar: Resumen Ejecutivo (IA) -> Secciones factuales -> Observaciones (IA)
+            secciones = [exec_block, factual]
+            if obs_block:
+                secciones.append(obs_block)
+            self._resumen_ia_result["texto"] = "\n\n".join(s for s in secciones if s)
 
         except Exception as e:
             self._resumen_ia_result["error"] = str(e)
@@ -5506,16 +5572,28 @@ Disco {i}:
         fig = Figure(figsize=(12, 9), dpi=100, tight_layout=True)
         fig.patch.set_facecolor("#ffffff")
 
-        # 1) Malignidad — pie
+        # 1) Malignidad — pie (V6.9.20: agrupa rebanadas pequeñas (<4%) en OTROS
+        # para evitar etiquetas montadas; antes el top-5 incluía slices <2% solapados)
         ax1 = fig.add_subplot(2, 2, 1)
         malig = stats.get("malignidad", {}) or {}
         if malig:
-            etiquetas = list(malig.keys())[:5]
-            valores = [malig[k] for k in etiquetas]
-            colores = ["#dc3545", "#198754", "#ffc107", "#6c757d", "#0dcaf0"][:len(etiquetas)]
+            total_m = sum(malig.values()) or 1
+            grandes, otros = {}, 0
+            for k, v in sorted(malig.items(), key=lambda x: x[1], reverse=True):
+                if v / total_m >= 0.04:
+                    grandes[k] = v
+                else:
+                    otros += v
+            if otros:
+                grandes["OTROS"] = otros
+            etiquetas = list(grandes.keys())
+            valores = list(grandes.values())
+            paleta = ["#dc3545", "#198754", "#ffc107", "#6c757d", "#0dcaf0", "#2d3e5e"]
+            colores = [paleta[i % len(paleta)] for i in range(len(etiquetas))]
             ax1.pie(valores, labels=etiquetas, autopct="%1.1f%%",
-                    colors=colores, startangle=90, textprops={"fontsize": 9})
-            ax1.set_title("Malignidad", fontsize=12, fontweight="bold")
+                    colors=colores, startangle=90, pctdistance=0.78,
+                    labeldistance=1.06, textprops={"fontsize": 8})
+            ax1.set_title("Malignidad", fontsize=12, fontweight="bold", pad=12)
         else:
             ax1.text(0.5, 0.5, "Sin datos", ha="center", va="center")
             ax1.axis("off")
@@ -5583,6 +5661,25 @@ Disco {i}:
         toolbar = NavigationToolbar2Tk(canvas, toolbar_frame)
         toolbar.update()
 
+    def _copiar_tabla_resumen(self, tv, headers, btn=None):
+        """V6.9.19: Copia el contenido de un Treeview como TSV (pegable en Excel/Word).
+        Incluye encabezados; da feedback breve en el botón."""
+        lineas = ["\t".join(str(h) for h in headers)]
+        for iid in tv.get_children():
+            lineas.append("\t".join(str(v) for v in tv.item(iid, "values")))
+        try:
+            self.clipboard_clear()
+            self.clipboard_append("\n".join(lineas))
+        except Exception:
+            pass
+        if btn is not None:
+            try:
+                _orig = btn.cget("text")
+                btn.configure(text="✓ Copiado")
+                btn.after(1300, lambda: btn.configure(text=_orig))
+            except Exception:
+                pass
+
     def _render_tablas_dashboard(self, parent, stats: dict):
         """Tablas claras con scroll para cada bloque del informe."""
         if not stats:
@@ -5627,8 +5724,10 @@ Disco {i}:
         for titulo, data, (col1, col2) in bloques:
             if not data:
                 continue
-            ttk.Label(inner, text=titulo, font=("Segoe UI", 12, "bold"),
-                      bootstyle="primary").pack(anchor="w", pady=(10, 4))
+            hdr = ttk.Frame(inner)
+            hdr.pack(fill=X, pady=(10, 4))
+            ttk.Label(hdr, text=titulo, font=("Segoe UI", 12, "bold"),
+                      bootstyle="primary").pack(side=LEFT, anchor="w")
 
             tv = ttk.Treeview(
                 inner, columns=("c1", "c2"), show="headings",
@@ -5641,14 +5740,27 @@ Disco {i}:
             tv.column("c2", anchor="e", width=100)
             for k, v in data.items():
                 tv.insert("", "end", values=(k, v))
+            # V6.9.22: fila TOTAL (suma de la columna de casos)
+            try:
+                tv.insert("", "end", values=("TOTAL", sum(int(x) for x in data.values())), tags=("tot",))
+                tv.tag_configure("tot", font=("Segoe UI Semibold", 10))
+            except Exception:
+                pass
+
+            btn_cp = ttk.Button(hdr, text="📋 Copiar", bootstyle="secondary-outline", width=12)
+            btn_cp.configure(command=lambda t=tv, h=(col1, col2), b=btn_cp: self._copiar_tabla_resumen(t, h, b))
+            btn_cp.pack(side=RIGHT)
+
             tv.pack(fill=X, pady=(0, 6))
 
         # Bloque biomarcadores con N y resultado predominante
         bios = stats.get("biomarcadores_top15", {}) or {}
         if bios:
-            ttk.Label(inner, text="🔬 Biomarcadores (top 15)",
+            hdr_bio = ttk.Frame(inner)
+            hdr_bio.pack(fill=X, pady=(10, 4))
+            ttk.Label(hdr_bio, text="🔬 Biomarcadores (top 15)",
                       font=("Segoe UI", 12, "bold"),
-                      bootstyle="primary").pack(anchor="w", pady=(10, 4))
+                      bootstyle="primary").pack(side=LEFT, anchor="w")
             tv = ttk.Treeview(
                 inner, columns=("m", "n", "top"),
                 show="headings",
@@ -5669,6 +5781,16 @@ Disco {i}:
                 else:
                     resumen = "—"
                 tv.insert("", "end", values=(marcador, info.get("n", 0), resumen))
+            # V6.9.22: fila TOTAL (suma de N evaluados de los biomarcadores mostrados)
+            try:
+                tv.insert("", "end", values=("TOTAL", sum(int(i.get("n", 0)) for i in bios.values()), ""), tags=("tot",))
+                tv.tag_configure("tot", font=("Segoe UI Semibold", 10))
+            except Exception:
+                pass
+            btn_bio = ttk.Button(hdr_bio, text="📋 Copiar", bootstyle="secondary-outline", width=12)
+            btn_bio.configure(command=lambda t=tv, b=btn_bio: self._copiar_tabla_resumen(
+                t, ("Biomarcador", "N evaluados", "Resultado predominante"), b))
+            btn_bio.pack(side=RIGHT)
             tv.pack(fill=X, pady=(0, 6))
 
     def _exportar_resumen_ia(self, texto: str, stats: dict | None = None, parent=None):
@@ -6054,13 +6176,25 @@ Disco {i}:
             def _save_pie(data: dict, titulo: str, fname: str):
                 if not data:
                     return None
-                etq = list(data.keys())[:5]
-                val = [data[k] for k in etq]
+                # V6.9.20: agrupar rebanadas pequeñas (<4%) en OTROS (evita etiquetas montadas)
+                total_p = sum(data.values()) or 1
+                grandes, otros = {}, 0
+                for k, v in sorted(data.items(), key=lambda x: x[1], reverse=True):
+                    if v / total_p >= 0.04:
+                        grandes[k] = v
+                    else:
+                        otros += v
+                if otros:
+                    grandes["OTROS"] = otros
+                etq = list(grandes.keys())
+                val = list(grandes.values())
+                paleta = ["#dc3545", "#198754", "#ffc107", "#6c757d", "#0dcaf0", "#2d3e5e"]
                 fig, ax = plt.subplots(figsize=(5, 4.2), dpi=150)
                 ax.pie(val, labels=etq, autopct="%1.1f%%",
-                       colors=["#dc3545", "#198754", "#ffc107", "#6c757d", "#0dcaf0"][:len(etq)],
-                       startangle=90, textprops={"fontsize": 9})
-                ax.set_title(titulo, fontsize=12, fontweight="bold")
+                       colors=[paleta[i % len(paleta)] for i in range(len(etq))],
+                       startangle=90, pctdistance=0.78, labeldistance=1.06,
+                       textprops={"fontsize": 9})
+                ax.set_title(titulo, fontsize=12, fontweight="bold", pad=12)
                 fig.tight_layout()
                 p = f"{tmpdir}/{fname}.png"
                 fig.savefig(p, bbox_inches="tight")
@@ -7204,8 +7338,8 @@ Informes con malignidad: {malignant_count}"""
             initialdir=os.path.join(os.getcwd(), "pdfs_patologia") if os.path.exists("pdfs_patologia") else os.getcwd()
         )
         if folder_path:
-            # Usar helper para obtener PDFs (retorna rutas completas)
-            pdf_files = ocr_helpers.obtener_pdfs_en_carpeta(folder_path)
+            # V6.9.22: recursivo=True -> incluye PDFs en subcarpetas (cualquier nivel)
+            pdf_files = ocr_helpers.obtener_pdfs_en_carpeta(folder_path, recursivo=True)
             if pdf_files:
                 # NUEVO: Limpiar lista de registros procesados y obtener peticiones existentes antes del procesamiento
                 self._ultimos_registros_procesados = []
