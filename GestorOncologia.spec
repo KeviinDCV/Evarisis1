@@ -34,6 +34,9 @@ hiddenimports = [
     'core.procesador_ihq', 'core.procesador_ihq_biomarcadores',
     'core.enhanced_export_system', 'core.enhanced_database_dashboard',
     'config.version_info',
+    # V6.9.25 - módulos nuevos: informe estadístico (fact-sheet) + categorizadores
+    'core.informe_estadistico', 'core.normalizador_diagnosticos', 'core.normalizador_organos',
+    'reportlab', 'reportlab.platypus', 'reportlab.lib', 'reportlab.pdfgen', 'reportlab.graphics',
 ] + ttkbootstrap_modules + matplotlib_modules + selenium_modules + numpy_modules
 
 a = Analysis(

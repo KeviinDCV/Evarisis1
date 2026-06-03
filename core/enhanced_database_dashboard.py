@@ -148,6 +148,19 @@ class EnhancedDatabaseDashboard:
         # Contenedor principal
         main_frame = scrollable_frame
 
+        # ===== Barra de acciones (V6.9.24) — Informe estadístico determinista =====
+        _acciones = ttk.Frame(main_frame)
+        _acciones.pack(fill=X, padx=24, pady=(16, 0))
+        ttk.Button(
+            _acciones, text="📄  Informe estadístico (PDF)",
+            command=self.exportar_informe_estadistico, bootstyle="primary"
+        ).pack(side=LEFT)
+        ttk.Label(
+            _acciones,
+            text='Informe "de un vistazo": KPIs, distribución por sexo y diagnósticos (sin IA).',
+            font=("Segoe UI", 9), bootstyle="secondary"
+        ).pack(side=LEFT, padx=10)
+
         # ===== Seccion 1: Metricas principales (header limpio, sin LabelFrame) =====
         ttk.Label(
             main_frame, text="Métricas principales",
@@ -207,6 +220,43 @@ class EnhancedDatabaseDashboard:
         diagnosis_scrollbar.pack(side="right", fill="y")
         self.top_diagnosis_tree.pack(side="left", fill=X, expand=True)
         self.top_diagnosis_tree.configure(yscrollcommand=diagnosis_scrollbar.set)
+
+    def exportar_informe_estadistico(self):
+        """V6.9.24: Genera el informe estadístico (fact-sheet) en PDF de forma
+        DETERMINISTA (sin IA): KPIs, distribución por sexo, donas por sexo y tabla
+        maestra de diagnósticos. Pide ruta y abre el PDF al terminar."""
+        import os
+        from tkinter import filedialog, messagebox
+        if getattr(self, "df", None) is None or self.df.empty:
+            messagebox.showwarning("Sin datos", "No hay datos cargados para generar el informe.")
+            return
+        base = os.path.join(os.path.expanduser("~"), "Documents",
+                            "EVARISIS Cirugía Oncológica", "Exportaciones Base de datos",
+                            "Informes estadísticos")
+        try:
+            os.makedirs(base, exist_ok=True)
+        except Exception:
+            base = os.path.expanduser("~")
+        path = filedialog.asksaveasfilename(
+            title="Guardar informe estadístico (PDF)",
+            defaultextension=".pdf", initialdir=base,
+            initialfile="Informe_estadistico_EVARISIS.pdf",
+            filetypes=[("PDF", "*.pdf")])
+        if not path:
+            return
+        try:
+            from core.informe_estadistico import generar_informe_estadistico_pdf
+            generar_informe_estadistico_pdf(self.df, path)
+            try:
+                os.startfile(path)  # Windows: abrir en el visor por defecto
+            except Exception:
+                pass
+            messagebox.showinfo("Informe generado",
+                                f"Informe estadístico creado correctamente:\n{path}")
+        except Exception as e:
+            import logging, traceback
+            logging.error(f"Error generando informe estadístico: {e}\n{traceback.format_exc()}")
+            messagebox.showerror("Error", f"No se pudo generar el informe:\n{e}")
 
     def create_visualizar_tab(self):
         """Crear pestaña de visualizador de datos completo
@@ -1475,32 +1525,30 @@ class EnhancedDatabaseDashboard:
             bootstyle="primary-outline", width=30
         ).pack(side=LEFT)
 
-        # ===== Sección 2: Archivos disponibles =====
+        # ===== Sección 2: Archivos disponibles (explorador navegable) =====
         ttk.Label(
             main_frame, text="Archivos disponibles",
             font=("Segoe UI Semibold", 14), bootstyle="primary"
+        ).pack(anchor=W, pady=(0, 2))
+        ttk.Label(
+            main_frame,
+            text="Doble clic para abrir/cerrar carpetas · seleccioná PDFs (o una carpeta completa) y pulsá «Procesar».",
+            font=("Segoe UI", 9), bootstyle="secondary"
         ).pack(anchor=W, pady=(0, 8))
 
-        # Lista de archivos (estilo limpio, selección navy)
+        # V6.9.25: Explorador NAVEGABLE (árbol) de carpetas/subcarpetas con PDFs.
+        # Permite entrar a las subcarpetas y seleccionar los PDFs (o carpetas completas).
         list_frame = ttk.Frame(main_frame)
         list_frame.pack(fill=BOTH, expand=True)
 
-        self.import_files_listbox = tk.Listbox(
-            list_frame,
-            selectmode=tk.EXTENDED,
-            font=("Segoe UI", 10),
-            height=10,
-            bg="#ffffff", fg="#2a2f3a",
-            relief="flat", borderwidth=0,
-            highlightthickness=1, highlightbackground="#d2d9e6", highlightcolor="#2d3e5e",
-            selectbackground="#2d3e5e", selectforeground="#ffffff",
-            activestyle="none"
+        self.import_files_tree = ttk.Treeview(
+            list_frame, show="tree", selectmode="extended", height=13, style="Custom.Treeview"
         )
-        self.import_files_listbox.pack(side=LEFT, expand=True, fill=BOTH)
+        self.import_files_tree.pack(side=LEFT, expand=True, fill=BOTH)
 
-        import_scrollbar = ttk.Scrollbar(list_frame, orient="vertical", command=self.import_files_listbox.yview)
+        import_scrollbar = ttk.Scrollbar(list_frame, orient="vertical", command=self.import_files_tree.yview)
         import_scrollbar.pack(side=RIGHT, fill=Y)
-        self.import_files_listbox.configure(yscrollcommand=import_scrollbar.set)
+        self.import_files_tree.configure(yscrollcommand=import_scrollbar.set)
 
         # Botones de control
         control_frame = ttk.Frame(main_frame)

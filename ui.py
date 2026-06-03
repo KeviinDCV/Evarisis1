@@ -2058,9 +2058,9 @@ Disco {i}:
             dashboard.process_selected_files = self._process_selected_files
             dashboard.process_selected_files_ia = self._process_selected_files_ia
 
-            # Crear referencia al listbox del dashboard para que los métodos antiguos funcionen
-            if hasattr(dashboard, 'import_files_listbox'):
-                self.files_listbox = dashboard.import_files_listbox
+            # V6.9.25: referencia al ÁRBOL navegable del dashboard (carpetas/subcarpetas)
+            if hasattr(dashboard, 'import_files_tree'):
+                self.files_tree = dashboard.import_files_tree
                 dashboard.refresh_files_list = self._refresh_files_list
 
                 # Actualizar la lista de archivos después de conectar
@@ -2291,11 +2291,10 @@ Disco {i}:
         logging.info("✅ Pestaña de visualizador COMPLETA poblada en el dashboard con tabla Sheet")
 
     def _refresh_files_list_for_dashboard(self):
-        """Actualizar lista de archivos específicamente para el dashboard con detección de estado"""
-        if hasattr(self, 'enhanced_dashboard') and hasattr(self.enhanced_dashboard, 'import_files_listbox'):
-            # Usar la nueva función de actualización con estado
-            self.files_listbox = self.enhanced_dashboard.import_files_listbox
-            self._actualizar_lista_archivos_con_estado()
+        """V6.9.25: Reconstruye el árbol navegable de archivos del dashboard."""
+        if hasattr(self, 'enhanced_dashboard') and hasattr(self.enhanced_dashboard, 'import_files_tree'):
+            self.files_tree = self.enhanced_dashboard.import_files_tree
+            self._refresh_files_list()
 
     def _create_visualizar_content(self):
         """Crear contenido del panel de visualización mejorado - FULL SCREEN"""
@@ -7332,7 +7331,33 @@ Informes con malignidad: {malignant_count}"""
                 messagebox.showerror("Error", f"❌ Error procesando el archivo:\n{str(e)}")
 
     def _select_pdf_folder(self):
-        """Seleccionar una carpeta con archivos PDF con flujo completo de análisis"""
+        """V6.9.25: Carga la carpeta (con subcarpetas) en el explorador NAVEGABLE
+        'Archivos disponibles'. NO procesa: el usuario navega, selecciona los PDFs
+        (o carpetas completas) y luego pulsa «Procesar seleccionados»."""
+        folder_path = filedialog.askdirectory(
+            title="Seleccionar carpeta con PDFs",
+            initialdir=os.path.join(os.getcwd(), "pdfs_patologia") if os.path.exists("pdfs_patologia") else os.getcwd()
+        )
+        if not folder_path:
+            return
+        self._import_root_folder = folder_path
+        n = self._build_import_tree(folder_path)
+        nombre = os.path.basename(folder_path.rstrip(os.sep)) or folder_path
+        if n == 0:
+            messagebox.showwarning(
+                "Sin archivos",
+                f"No se encontraron PDFs en '{nombre}' (ni en sus subcarpetas).")
+        else:
+            messagebox.showinfo(
+                "Carpeta cargada",
+                f"Se cargaron {n} PDF(s) de '{nombre}' (incluyendo subcarpetas).\n\n"
+                f"En «Archivos disponibles» navegá las subcarpetas (doble clic para abrirlas), "
+                f"seleccioná los PDFs —o una carpeta completa— y pulsá «Procesar seleccionados».")
+        return
+
+    def _select_pdf_folder_LEGACY_procesar_todo(self):
+        """[Obsoleto V6.9.25] Procesaba TODA la carpeta recursivamente. Conservado por
+        referencia; ya no se invoca (reemplazado por el explorador navegable)."""
         folder_path = filedialog.askdirectory(
             title="Seleccionar carpeta con PDFs",
             initialdir=os.path.join(os.getcwd(), "pdfs_patologia") if os.path.exists("pdfs_patologia") else os.getcwd()
@@ -7459,61 +7484,102 @@ Informes con malignidad: {malignant_count}"""
             else:
                 messagebox.showwarning("Sin archivos", "No se encontraron archivos PDF en la carpeta seleccionada.")
 
-    def _refresh_files_list(self):
-        """Actualizar la lista de archivos en la carpeta pdfs_patologia"""
-        # Verificar que existe el listbox
-        if not hasattr(self, 'files_listbox') or self.files_listbox is None:
-            logging.warning("Advertencia: files_listbox no está disponible")
-            return
-
-        pdfs_path = os.path.join(os.getcwd(), "pdfs_patologia")
-
-        # Crear la carpeta si no existe
-        if not os.path.exists(pdfs_path):
-            os.makedirs(pdfs_path)
-
-        # Limpiar la lista actual
-        self.files_listbox.delete(0, tk.END)
-
-        # Obtener archivos PDF usando helper
+    def _build_import_tree(self, root_folder):
+        """V6.9.25: Construye el árbol navegable (carpetas/subcarpetas + PDFs) en
+        'Archivos disponibles'. Guarda iid->ruta en self._tree_paths. Devuelve el
+        número de PDFs encontrados."""
+        tree = getattr(self, 'files_tree', None)
+        if tree is None:
+            return 0
         try:
-            pdf_paths = ocr_helpers.obtener_pdfs_en_carpeta(pdfs_path)
-            pdf_files = [os.path.basename(p) for p in pdf_paths]
-            pdf_files.sort()
+            tree.delete(*tree.get_children())
+        except Exception:
+            pass
+        self._tree_paths = {}
+        if not root_folder or not os.path.isdir(root_folder):
+            return 0
+        n_pdfs = [0]
 
-            for pdf_file in pdf_files:
-                self.files_listbox.insert(tk.END, pdf_file)
+        def _insert(parent, path, depth):
+            try:
+                entradas = sorted(os.listdir(path), key=lambda s: s.lower())
+            except Exception:
+                return
+            dirs = [e for e in entradas if os.path.isdir(os.path.join(path, e))]
+            pdfs = [e for e in entradas if e.lower().endswith('.pdf')
+                    and os.path.isfile(os.path.join(path, e))]
+            for d in dirs:
+                full = os.path.join(path, d)
+                iid = tree.insert(parent, 'end', text=f"  📁 {d}", open=(depth == 0))
+                self._tree_paths[iid] = full
+                _insert(iid, full, depth + 1)
+            for p in pdfs:
+                full = os.path.join(path, p)
+                iid = tree.insert(parent, 'end', text=f"  📄 {p}")
+                self._tree_paths[iid] = full
+                n_pdfs[0] += 1
 
-            if not pdf_files:
-                self.files_listbox.insert(tk.END, "(No hay archivos PDF)")
+        nombre = os.path.basename(root_folder.rstrip(os.sep)) or root_folder
+        root_iid = tree.insert('', 'end', text=f"📂 {nombre}", open=True)
+        self._tree_paths[root_iid] = root_folder
+        _insert(root_iid, root_folder, 0)
+        return n_pdfs[0]
 
-        except Exception as e:
-            self.files_listbox.insert(tk.END, f"Error: {str(e)}")
+    def _recolectar_pdfs_seleccionados(self):
+        """V6.9.25: Rutas de PDFs según la selección del árbol (PDFs seleccionados +
+        todos los PDFs bajo carpetas seleccionadas). Sin duplicados y en orden."""
+        tree = getattr(self, 'files_tree', None)
+        if tree is None:
+            return []
+        paths = getattr(self, '_tree_paths', {})
+        rutas = []
+
+        def _colectar(iid):
+            p = paths.get(iid)
+            if p and p.lower().endswith('.pdf') and os.path.isfile(p):
+                rutas.append(p)
+            for hijo in tree.get_children(iid):
+                _colectar(hijo)
+
+        for iid in tree.selection():
+            _colectar(iid)
+        vistos = set()
+        return [p for p in rutas if not (p in vistos or vistos.add(p))]
+
+    def _refresh_files_list(self):
+        """V6.9.25: Reconstruye el árbol navegable. Usa la última carpeta cargada
+        (si se eligió en «Seleccionar carpeta») o, por defecto, pdfs_patologia."""
+        if not hasattr(self, 'files_tree') or self.files_tree is None:
+            logging.warning("Advertencia: files_tree no está disponible")
+            return
+        root = getattr(self, '_import_root_folder', None)
+        if not root or not os.path.isdir(root):
+            root = os.path.join(os.getcwd(), "pdfs_patologia")
+            if not os.path.exists(root):
+                try:
+                    os.makedirs(root, exist_ok=True)
+                except Exception:
+                    pass
+        self._build_import_tree(root)
 
     def _process_selected_files(self):
         """Procesar los archivos seleccionados de la lista (con barra de progreso)"""
-        # Verificar que existe el listbox
-        if not hasattr(self, 'files_listbox') or self.files_listbox is None:
-            messagebox.showerror("Error", "El visor de archivos no está disponible.")
+        # V6.9.25: verificar que existe el árbol navegable
+        if not hasattr(self, 'files_tree') or self.files_tree is None:
+            messagebox.showerror("Error", "El explorador de archivos no está disponible.")
             return
 
-        selected_indices = self.files_listbox.curselection()
-        if not selected_indices:
-            messagebox.showwarning("Sin selección", "Por favor seleccione uno o más archivos para procesar.")
+        rutas_pdf = self._recolectar_pdfs_seleccionados()
+        if not rutas_pdf:
+            messagebox.showwarning(
+                "Sin selección",
+                "Seleccioná uno o más PDFs (o una carpeta completa) en «Archivos disponibles».")
             return
-
-        pdfs_path = os.path.join(os.getcwd(), "pdfs_patologia")
 
         # Pre-validar archivos y verificar duplicados (rápido, main thread)
         files_to_process = []
-        for index in selected_indices:
-            filename = self.files_listbox.get(index)
-            if filename == "(No hay archivos PDF)" or filename.startswith("Error:"):
-                continue
-            file_path = os.path.join(pdfs_path, filename)
-            if not os.path.exists(file_path):
-                continue
-
+        for file_path in rutas_pdf:
+            filename = os.path.basename(file_path)
             duplicado_info = self._verificar_archivo_duplicado(file_path, filename)
             if duplicado_info["es_duplicado"]:
                 respuesta = messagebox.askyesno(
@@ -7726,20 +7792,20 @@ Informes con malignidad: {malignant_count}"""
         Para cada PDF: OCR → texto completo → LLM extrae todos los IHQ.
         Resultado guardado en informes_ia/extraccion_ia_<pdf>.json
         """
-        if not hasattr(self, 'files_listbox') or self.files_listbox is None:
-            messagebox.showerror("Error", "El visor de archivos no está disponible.")
+        if not hasattr(self, 'files_tree') or self.files_tree is None:
+            messagebox.showerror("Error", "El explorador de archivos no está disponible.")
             return
 
-        selected_indices = self.files_listbox.curselection()
-        if not selected_indices:
+        rutas_pdf = self._recolectar_pdfs_seleccionados()
+        if not rutas_pdf:
             messagebox.showwarning(
                 "Sin selección",
-                "Por favor seleccione uno o más archivos para procesar con IA."
+                "Seleccioná uno o más PDFs (o una carpeta) para procesar con IA."
             )
             return
 
         # Confirmación: este pipeline es lento (1-5 min por PDF)
-        n = len(selected_indices)
+        n = len(rutas_pdf)
         respuesta = messagebox.askyesno(
             "Procesar con IA",
             f"Vas a procesar {n} PDF(s) con el pipeline alternativo de IA.\n\n"
@@ -7755,16 +7821,7 @@ Informes con malignidad: {malignant_count}"""
         if not respuesta:
             return
 
-        pdfs_path = os.path.join(os.getcwd(), "pdfs_patologia")
-        files_to_process = []
-        for index in selected_indices:
-            filename = self.files_listbox.get(index)
-            if filename == "(No hay archivos PDF)" or filename.startswith("Error:"):
-                continue
-            file_path = os.path.join(pdfs_path, filename)
-            if os.path.exists(file_path):
-                files_to_process.append((file_path, filename))
-
+        files_to_process = [(p, os.path.basename(p)) for p in rutas_pdf]
         if not files_to_process:
             messagebox.showinfo("Sin archivos", "Ningún archivo válido para procesar.")
             return
@@ -10461,42 +10518,11 @@ def _redirigir_a_visualizador_con_filtro(self, numero_peticion):
 App._redirigir_a_visualizador_con_filtro = _redirigir_a_visualizador_con_filtro
 
 def _actualizar_lista_archivos_con_estado(self):
-    """
-    Actualiza la lista de archivos mostrando en ROJO los ya importados
-    """
+    """V6.9.25: Compat — ahora delega en _refresh_files_list (árbol navegable).
+    El marcado 🔴/🟢 por archivo se omite; los duplicados se detectan al procesar."""
     try:
-        if not hasattr(self, 'files_listbox') or self.files_listbox is None:
-            return
-            
-        # Limpiar lista actual
-        self.files_listbox.delete(0, tk.END)
-        
-        pdfs_path = os.path.join(os.getcwd(), "pdfs_patologia")
-        if not os.path.exists(pdfs_path):
-            self.files_listbox.insert(tk.END, "(No existe la carpeta pdfs_patologia)")
-            return
-        
-        # Usar helper para obtener PDFs
-        pdf_paths = ocr_helpers.obtener_pdfs_en_carpeta(pdfs_path)
-
-        if not pdf_paths:
-            self.files_listbox.insert(tk.END, "(No hay archivos PDF)")
-            return
-
-        # Procesar cada archivo para verificar estado
-        for file_path in sorted(pdf_paths):
-            archivo = os.path.basename(file_path)
-            duplicado_info = self._verificar_archivo_duplicado(file_path, archivo)
-            
-            if duplicado_info.get("es_duplicado", False):
-                # Marcar como duplicado en rojo
-                display_text = f"🔴 {archivo} (YA IMPORTADO)"
-                self.files_listbox.insert(tk.END, display_text)
-            else:
-                # Archivo nuevo en verde
-                display_text = f"🟢 {archivo}"
-                self.files_listbox.insert(tk.END, display_text)
-                
+        if hasattr(self, '_refresh_files_list'):
+            self._refresh_files_list()
     except Exception as e:
         logging.error(f"Error actualizando lista de archivos: {e}")
 

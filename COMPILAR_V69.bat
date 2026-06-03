@@ -83,6 +83,9 @@ echo     'core.huv_web_automation', 'core.ocr_processing',
 echo     'core.procesador_ihq', 'core.procesador_ihq_biomarcadores',
 echo     'core.enhanced_export_system', 'core.enhanced_database_dashboard',
 echo     'config.version_info',
+echo     # V6.9.25 - modulos nuevos: informe estadistico + categorizadores
+echo     'core.informe_estadistico', 'core.normalizador_diagnosticos', 'core.normalizador_organos',
+echo     'reportlab', 'reportlab.platypus', 'reportlab.lib', 'reportlab.pdfgen', 'reportlab.graphics',
 echo ] + ttkbootstrap_modules + matplotlib_modules + selenium_modules + numpy_modules
 echo.
 echo a = Analysis^(
