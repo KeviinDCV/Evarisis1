@@ -17,7 +17,7 @@ CAPACIDADES:
 7. Edición inteligente de prompts y configuraciones IA
 8. Generación de reportes técnicos detallados
 
-Autor: Sistema EVARISIS
+Autor: Sistema ONCONOVA
 Versión: 2.0.0
 Fecha: 20 de octubre de 2025
 """
@@ -66,7 +66,7 @@ except ImportError as e:
 
 
 class GestorIALMStudio:
-    """Gestor integral de infraestructura IA para EVARISIS"""
+    """Gestor integral de infraestructura IA para ONCONOVA"""
 
     # Endpoints por defecto para LM Studio
     DEFAULT_ENDPOINTS = [
@@ -1993,7 +1993,7 @@ class GestorIALMStudio:
 
     def _cargar_conocimiento_sistema(self) -> Dict[str, Any]:
         """
-        Carga conocimiento completo del sistema EVARISIS.
+        Carga conocimiento completo del sistema ONCONOVA.
 
         Returns:
             Dict con:
@@ -2263,7 +2263,7 @@ class GestorIALMStudio:
         """
         Analiza prompts actuales y detecta conocimiento faltante.
 
-        Compara prompts con conocimiento del sistema EVARISIS para detectar:
+        Compara prompts con conocimiento del sistema ONCONOVA para detectar:
         - Si mencionan DIAGNOSTICO_COLORACION
         - Si explican Study M vs Study IHQ
         - Si tienen reglas anti-contaminación
@@ -2401,7 +2401,7 @@ class GestorIALMStudio:
         # Template para system_prompt_comun.txt
         seccion_conocimiento_comun = """
 ═══════════════════════════════════════════════════════════════
-🧠 CONOCIMIENTO MÉDICO ONCOLÓGICO - EVARISIS v6.1.0
+🧠 CONOCIMIENTO MÉDICO ONCOLÓGICO - ONCONOVA v6.1.0
 ═══════════════════════════════════════════════════════════════
 
 IMPORTANTE: Existen DOS estudios diferentes en patología oncológica:
@@ -2494,7 +2494,7 @@ Al buscar biomarcadores IHQ (HER2, Ki-67, ER, PR, etc.), usar PRIORIDAD:
 🎯 DETECCIÓN SEMÁNTICA (ENFOQUE INTELIGENTE)
 ---
 
-El sistema EVARISIS usa detección basada en CONTENIDO, no en posiciones fijas:
+El sistema ONCONOVA usa detección basada en CONTENIDO, no en posiciones fijas:
 
 ✅ **Buscar por keywords contextuales**:
    - "Grado Nottingham" → DIAGNOSTICO_COLORACION (componente 2)
@@ -2594,8 +2594,8 @@ El sistema EVARISIS usa detección basada en CONTENIDO, no en posiciones fijas:
 
 
 def comando_entender_sistema(gestor):
-    """Muestra conocimiento del sistema EVARISIS"""
-    print("\n🧠 CONOCIMIENTO DEL SISTEMA EVARISIS")
+    """Muestra conocimiento del sistema ONCONOVA"""
+    print("\n🧠 CONOCIMIENTO DEL SISTEMA ONCONOVA")
     print("=" * 80)
 
     conocimiento = gestor._cargar_conocimiento_sistema()
@@ -2784,7 +2784,7 @@ def comando_sugerir_mejoras_prompts(gestor):
     4. Guarda reporte detallado para que core-editor lo implemente
     """
     print("\n" + "="*70)
-    print("🔍 ANÁLISIS DE PROMPTS IA - EVARISIS v6.1.0")
+    print("🔍 ANÁLISIS DE PROMPTS IA - ONCONOVA v6.1.0")
     print("="*70 + "\n")
 
     # PASO 1: Analizar cobertura
@@ -2856,7 +2856,7 @@ def comando_sugerir_mejoras_prompts(gestor):
     with open(reporte_md_path, 'w', encoding='utf-8') as f:
         f.write("# 🔧 SUGERENCIAS DE MEJORA PARA PROMPTS IA\n\n")
         f.write(f"**Generado**: {sugerencias['timestamp']}\n")
-        f.write(f"**Sistema**: EVARISIS v6.1.0\n\n")
+        f.write(f"**Sistema**: ONCONOVA v6.1.0\n\n")
 
         f.write("---\n\n")
         f.write("## 📊 RESUMEN DE ANÁLISIS\n\n")
@@ -3126,7 +3126,7 @@ NOTAS:
     parser.add_argument(
         "--entender-sistema",
         action="store_true",
-        help="Muestra conocimiento completo del sistema EVARISIS"
+        help="Muestra conocimiento completo del sistema ONCONOVA"
     )
 
     parser.add_argument(

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🔍 AUDITOR DE SISTEMA - Auditoría Inteligente EVARISIS
+🔍 AUDITOR DE SISTEMA - Auditoría Inteligente ONCONOVA
 =======================================================
 
 FUNCIONALIDADES:
@@ -28,7 +28,7 @@ Uso:
 Salida:
   herramientas_ia/resultados/auditoria_inteligente_IHQ250980.json
 
-Autor: Sistema EVARISIS
+Autor: Sistema ONCONOVA
 Versión: 3.7.0 - AUTO-CORRECCIÓN COMPLETA: FUNC-01 + FUNC-03/FUNC-08 + FUNC-06 automáticos
 Fecha: 8 de enero de 2026
 
@@ -275,7 +275,7 @@ from core.utils.utf8_fixer import clean_text_comprehensive
 
 
 class AuditorSistema:
-    """Auditor de Sistema EVARISIS - SOLO Auditoría Inteligente (FUNC-01)"""
+    """Auditor de Sistema ONCONOVA - SOLO Auditoría Inteligente (FUNC-01)"""
 
     # Mapeo completo de biomarcadores conocidos
     BIOMARCADORES = {
@@ -5578,7 +5578,7 @@ CHANGELOG v{version_nueva} ({datetime.now().strftime('%-d %B %Y').replace('Janua
 def main():
     """CLI principal - Auditoría inteligente con auto-corrección"""
     parser = argparse.ArgumentParser(
-        description="🔍 Auditor EVARISIS - FUNC-01: Auditoría con auto-corrección | FUNC-06: Reprocesar | FUNC-08: Mapeo",
+        description="🔍 Auditor ONCONOVA - FUNC-01: Auditoría con auto-corrección | FUNC-06: Reprocesar | FUNC-08: Mapeo",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Ejemplos de uso:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🔍 SISTEMA DE AUDITORÍA CON IA - EVARISIS CIRUGÍA ONCOLÓGICA
+🔍 SISTEMA DE AUDITORÍA CON IA - ONCONOVA CIRUGÍA ONCOLÓGICA
 =============================================================
 
 Módulo integrado para auditoría automática con IA después del procesamiento.
@@ -23,7 +23,7 @@ VERSION 2.1.2 - Control Dinámico de Reasoning (7 Oct 2025):
 - Max tokens aumentados: 2000/4000/6000 según modo
 - Dual system prompts para control preciso
 
-Autor: Sistema EVARISIS CIRUGÍA ONCOLÓGICA
+Autor: Sistema ONCONOVA CIRUGÍA ONCOLÓGICA
 Versión: 2.1.2
 Fecha: 7 de octubre de 2025
 """

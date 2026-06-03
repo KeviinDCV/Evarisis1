@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 >nul
 :: ============================================================================
-:: LIMPIAR CACHE DE PYTHON - EVARISIS ONCOLOGIA
+:: LIMPIAR CACHE DE PYTHON - ONCONOVA ONCOLOGIA
 :: Version: 3.2.5.1
 :: Descripcion: Elimina todas las carpetas __pycache__ del proyecto
 :: ============================================================================

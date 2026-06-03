@@ -128,7 +128,7 @@ CHANGELOG v4.2.5:
   - ✅ LIMPIEZA CRÍTICA: DIAGNOSTICO_PRINCIPAL ahora NO contiene datos del estudio M
   - ✅ Patrón mejorado: Detiene captura ANTES de GRADO, SCORE, NOTTINGHAM
   - ✅ Elimina contaminación: INVASIÓN LINFOVASCULAR, IN SITU, etc.
-  - ✅ Aplica REGLA DE ORO #4 del sistema EVARISIS
+  - ✅ Aplica REGLA DE ORO #4 del sistema ONCONOVA
   - ✅ Fix IHQ250981: Diagnóstico limpio sin duplicación
   - 📝 Backups: unified_extractor_backup_20251026_limpieza_diagnostico.py
 

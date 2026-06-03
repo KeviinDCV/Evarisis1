@@ -15,7 +15,7 @@ CAPACIDADES v2.0:
 7. 🆕 Detectar errores comunes y sugerir soluciones
 
 Version: 2.0.0
-Autor: Sistema EVARISIS
+Autor: Sistema ONCONOVA
 Fecha: 2025-12-02
 
 CHANGELOG v2.0.0 (FASE 1):

@@ -7,7 +7,7 @@
 Ventana modal que muestra el progreso de auditoría con IA.
 Se muestra automáticamente después del procesamiento normal.
 
-Autor: Sistema EVARISIS
+Autor: Sistema ONCONOVA
 Versión: 1.0.0
 Fecha: 5 de octubre de 2025
 """
@@ -50,7 +50,7 @@ class VentanaAuditoriaIA(tk.Toplevel):
         self.modo = modo  # NUEVO: Guardar modo de auditoría
 
         # Configurar ventana
-        self.title("EVARISIS CIRUGÍA ONCOLÓGICA - Auditoría con IA")
+        self.title("ONCONOVA CIRUGÍA ONCOLÓGICA - Auditoría con IA")
         self.resizable(True, True)
 
         # Hacer modal
@@ -113,7 +113,7 @@ class VentanaAuditoriaIA(tk.Toplevel):
 
         titulo = ttkb.Label(
             header_frame,
-            text="Realizando auditoría con EVARISIS Cirugía Oncológica",
+            text="Realizando auditoría con ONCONOVA Cirugía Oncológica",
             font=("Segoe UI", 14, "bold"),
             bootstyle="primary"
         )

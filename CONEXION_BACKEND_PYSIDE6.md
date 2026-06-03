@@ -267,7 +267,7 @@ Verificar que `OCRWorker` hereda de `QThread` y se llama `.start()` (no `.run()`
 - **Plan de migración:** `PLAN_MIGRACION_PYSIDE6.md`
 - **Estado actual:** `README_MIGRACION.md`
 - **Cómo iniciar:** `COMO_INICIAR.md`
-- **Backend EVARISIS:** `.claude/CLAUDE.md`
+- **Backend ONCONOVA:** `.claude/CLAUDE.md`
 
 ---
 

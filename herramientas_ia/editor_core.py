@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-✏️ EDITOR CORE - Editor Inteligente con Conocimiento Profundo EVARISIS
+✏️ EDITOR CORE - Editor Inteligente con Conocimiento Profundo ONCONOVA
 ========================================================================
 
 Herramienta SÚPER DENSA que:
@@ -14,7 +14,7 @@ Herramienta SÚPER DENSA que:
 
 Esta es la herramienta MÁS COMPLEJA del sistema.
 
-Autor: Sistema EVARISIS
+Autor: Sistema ONCONOVA
 Versión: 1.0.0
 Fecha: 20 de octubre de 2025
 """
@@ -1089,7 +1089,7 @@ if __name__ == '__main__':
 def main():
     """CLI principal"""
     parser = argparse.ArgumentParser(
-        description="✏️ Editor Core EVARISIS - Editor Inteligente",
+        description="✏️ Editor Core ONCONOVA - Editor Inteligente",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Ejemplos de uso:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🔍 INSPECTOR DE SISTEMA - Herramienta de Diagnóstico Completo EVARISIS
+🔍 INSPECTOR DE SISTEMA - Herramienta de Diagnóstico Completo ONCONOVA
 ========================================================================
 
 Herramienta súper densa que consolida:
@@ -15,7 +15,7 @@ Herramienta súper densa que consolida:
    - Análisis de imports y dependencias
    - Trazabilidad completa de flujo
 
-Autor: Sistema EVARISIS
+Autor: Sistema ONCONOVA
 Versión: 1.0.0
 Fecha: 20 de octubre de 2025
 """
@@ -61,7 +61,7 @@ class InspectorSistema:
     def verificar_salud_completa(self):
         """Health check completo del sistema"""
         print(f"\n{'='*80}")
-        print("🏥 VERIFICACIÓN DE SALUD DEL SISTEMA EVARISIS")
+        print("🏥 VERIFICACIÓN DE SALUD DEL SISTEMA ONCONOVA")
         print(f"{'='*80}\n")
 
         # 1. Entorno Python
@@ -190,7 +190,7 @@ class InspectorSistema:
             'Debug maps': self.debug_maps_dir,
             'Core modules': self.core_dir,
             'Herramientas IA': PROJECT_ROOT / 'herramientas_ia',
-            'Exportaciones': Path.home() / 'Documents' / 'EVARISIS Exportaciones',
+            'Exportaciones': Path.home() / 'Documents' / 'ONCONOVA Exportaciones',
         }
 
         for nombre, path in paths_criticos.items():
@@ -1163,12 +1163,12 @@ class InspectorSistema:
     def generar_diagrama_flujo(self, exportar: bool = False):
         """Genera diagrama de flujo del sistema"""
         print(f"\n{'='*80}")
-        print("📊 DIAGRAMA DE FLUJO DEL SISTEMA EVARISIS")
+        print("📊 DIAGRAMA DE FLUJO DEL SISTEMA ONCONOVA")
         print(f"{'='*80}\n")
 
         diagrama = """
 ┌─────────────────────────────────────────────────────────────────────┐
-│                         FLUJO EVARISIS V5                           │
+│                         FLUJO ONCONOVA V5                           │
 └─────────────────────────────────────────────────────────────────────┘
 
 1. ENTRADA DE DATOS
@@ -1275,7 +1275,7 @@ class InspectorSistema:
 def main():
     """CLI principal"""
     parser = argparse.ArgumentParser(
-        description="🔍 Inspector de Sistema EVARISIS - Diagnóstico Completo",
+        description="🔍 Inspector de Sistema ONCONOVA - Diagnóstico Completo",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Ejemplos de uso:

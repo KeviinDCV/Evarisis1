@@ -1,0 +1,620 @@
+{
+  "changed": [
+    {
+      "file": "auditoria_realizada.md",
+      "replacements": 1
+    },
+    {
+      "file": "CLIENTE_SETUP.md",
+      "replacements": 1
+    },
+    {
+      "file": "COMPILADOR.bat",
+      "replacements": 5
+    },
+    {
+      "file": "CONEXION_BACKEND_PYSIDE6.md",
+      "replacements": 1
+    },
+    {
+      "file": "DISCREPANCIAS_MIGRACION.md",
+      "replacements": 1
+    },
+    {
+      "file": "iniciar_DEV.bat",
+      "replacements": 5
+    },
+    {
+      "file": "iniciar_python.bat",
+      "replacements": 1
+    },
+    {
+      "file": "limpiar_cache.bat",
+      "replacements": 1
+    },
+    {
+      "file": "PLAN_MIGRACION_PYSIDE6.md",
+      "replacements": 3
+    },
+    {
+      "file": "PROGRESO_MIGRACION.md",
+      "replacements": 5
+    },
+    {
+      "file": "README.md",
+      "replacements": 4
+    },
+    {
+      "file": "README_MIGRACION.md",
+      "replacements": 1
+    },
+    {
+      "file": "reinicio.bat",
+      "replacements": 9
+    },
+    {
+      "file": "REPORTE_MIGRACION_PYSIDE6.md",
+      "replacements": 5
+    },
+    {
+      "file": "ui.py",
+      "replacements": 22
+    },
+    {
+      "file": ".github\\copilot-instructions.md",
+      "replacements": 5
+    },
+    {
+      "file": ".github\\README.md",
+      "replacements": 1
+    },
+    {
+      "file": "config\\version_info.py",
+      "replacements": 5
+    },
+    {
+      "file": "config\\__init__.py",
+      "replacements": 1
+    },
+    {
+      "file": "core\\auditoria_ia.py",
+      "replacements": 2
+    },
+    {
+      "file": "core\\auditoria_parcial.py",
+      "replacements": 2
+    },
+    {
+      "file": "core\\auto_validador.py",
+      "replacements": 2
+    },
+    {
+      "file": "core\\correction_tracker.py",
+      "replacements": 2
+    },
+    {
+      "file": "core\\database_manager.py",
+      "replacements": 2
+    },
+    {
+      "file": "core\\debug_mapper.py",
+      "replacements": 1
+    },
+    {
+      "file": "core\\enhanced_database_dashboard.py",
+      "replacements": 6
+    },
+    {
+      "file": "core\\enhanced_export_system.py",
+      "replacements": 1
+    },
+    {
+      "file": "core\\informe_estadistico.py",
+      "replacements": 5
+    },
+    {
+      "file": "core\\llm_client.py",
+      "replacements": 3
+    },
+    {
+      "file": "core\\procesamiento_con_ia.py",
+      "replacements": 1
+    },
+    {
+      "file": "core\\process_with_audit.py",
+      "replacements": 1
+    },
+    {
+      "file": "core\\REGLAS_EXTRACCION_SISTEMA.md",
+      "replacements": 1
+    },
+    {
+      "file": "core\\REGLAS_EXTRACCION_SISTEMA_RESUMIDO.md",
+      "replacements": 1
+    },
+    {
+      "file": "core\\unified_extractor.py",
+      "replacements": 1
+    },
+    {
+      "file": "core\\validacion_cruzada.py",
+      "replacements": 2
+    },
+    {
+      "file": "core\\validador_medico_servicio.py",
+      "replacements": 2
+    },
+    {
+      "file": "core\\validation_checker.py",
+      "replacements": 1
+    },
+    {
+      "file": "core\\ventana_auditoria_ia.py",
+      "replacements": 3
+    },
+    {
+      "file": "core\\ventana_resultados_importacion.py",
+      "replacements": 1
+    },
+    {
+      "file": "core\\ventana_selector_auditoria.py",
+      "replacements": 1
+    },
+    {
+      "file": "core\\visor_reportes_importacion.py",
+      "replacements": 1
+    },
+    {
+      "file": "core\\__init__.py",
+      "replacements": 2
+    },
+    {
+      "file": "core\\extractors\\medical_extractor.py",
+      "replacements": 1
+    },
+    {
+      "file": "core\\prompts\\system_prompt_comun.txt",
+      "replacements": 7
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_084303_COMPLETA_1_casos.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_102122_COMPLETA_IHQ250934_IHQ250976.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_102345_COMPLETA_IHQ250934_IHQ250976.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_104947_PARCIAL_IHQ250880_IHQ250915.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_105620_PARCIAL_IHQ250845_IHQ250869.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_110109_COMPLETA_IHQ250001.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_111925_PARCIAL_IHQ250428.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_113135_PARCIAL_IHQ250723_IHQ250770.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_113529_PARCIAL_IHQ250633.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_120545_COMPLETA_IHQ250672_IHQ250722.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_120953_PARCIAL_IHQ250301.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_121131_COMPLETA_IHQ250301.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_121310_COMPLETA_IHQ250980.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_141905_COMPLETA_IHQ250002.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_151601_COMPLETA_IHQ250001_IHQ250050.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260410_152113_COMPLETA_IHQ250064_IHQ250105.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_072626_COMPLETA_IHQ250104.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_073104_COMPLETA_IHQ250104.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_073216_COMPLETA_IHQ250106.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_074011_COMPLETA_IHQ250103.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_074200_COMPLETA_IHQ250052.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_074610_COMPLETA_IHQ250054.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_074748_COMPLETA_IHQ250055.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_080334_COMPLETA_IHQ250056_IHQ250063.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_083827_COMPLETA_IHQ250065_IHQ250089.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_084801_COMPLETA_IHQ250107.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_090931_COMPLETA_IHQ250089_IHQ250102.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_100010_COMPLETA_IHQ250108_IHQ250159.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_105626_COMPLETA_IHQ250160_IHQ250211.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_115641_COMPLETA_IHQ250212_IHQ250262.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_125314_COMPLETA_IHQ250263_IHQ250313.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_134918_COMPLETA_IHQ250314_IHQ250363.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_150342_COMPLETA_IHQ250364_IHQ250413.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260413_164046_COMPLETA_IHQ250414_IHQ250463.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260414_073910_COMPLETA_IHQ250464_IHQ250515.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260414_101844_COMPLETA_IHQ250569_IHQ250619.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260415_071741_COMPLETA_IHQ250001_IHQ250050.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260415_113448_COMPLETA_IHQ250001_IHQ250211.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260415_145949_COMPLETA_IHQ250212_IHQ250413.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260416_151335_COMPLETA_IHQ250414_IHQ250854.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260416_152856_COMPLETA_IHQ250487.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260416_154327_COMPLETA_IHQ250487_IHQ250854.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260416_160229_COMPLETA_IHQ250854_IHQ250859.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260417_094404_COMPLETA_IHQ250859.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260417_095019_COMPLETA_IHQ250859.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260417_101051_COMPLETA_IHQ251030_IHQ251037.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260417_103419_COMPLETA_IHQ250859_IHQ250868.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260417_132423_COMPLETA_IHQ250868_IHQ251029.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260421_134434_COMPLETA_IHQ250001_IHQ250191.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260421_174857_COMPLETA_IHQ250192_IHQ250295.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260424_073921_COMPLETA_IHQ250296_IHQ250301.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260424_075114_COMPLETA_6_casos.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260424_080200_COMPLETA_IHQ250297_IHQ250298.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260424_081046_COMPLETA_IHQ250297_IHQ250298.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260424_081141_COMPLETA_IHQ250296.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260424_083604_COMPLETA_IHQ250296.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260424_085102_COMPLETA_IHQ250296_IHQ250297.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260424_100752_COMPLETA_IHQ250298_IHQ250396.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260424_101830_COMPLETA_IHQ250397_IHQ250405.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260424_224933_COMPLETA_IHQ250402_IHQ251037.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260428_080834_COMPLETA_IHQ250001_IHQ250050.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260428_090150_COMPLETA_5_casos.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260428_091434_COMPLETA_IHQ250001_IHQ250050.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260429_114046_COMPLETA_IHQ250052_IHQ250063.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260429_115721_COMPLETA_IHQ250001_IHQ250050.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260429_123329_COMPLETA_IHQ250004.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260429_124953_COMPLETA_IHQ250001_IHQ250050.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260429_131058_COMPLETA_IHQ250001_IHQ250050.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260429_141047_COMPLETA_IHQ250008_IHQ250020.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260429_142532_COMPLETA_IHQ250001_IHQ250050.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260504_062319_COMPLETA_IHQ250052_IHQ250107.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260504_101541_COMPLETA_IHQ250001_IHQ250050.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260504_105408_COMPLETA_IHQ250052_IHQ250107.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260504_134517_COMPLETA_IHQ250108_IHQ250413.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260504_164201_COMPLETA_IHQ250414_IHQ250826.md",
+      "replacements": 2
+    },
+    {
+      "file": "data\\reportes_ia\\20260505_072706_COMPLETA_IHQ250827_IHQ251037.md",
+      "replacements": 2
+    },
+    {
+      "file": "dist\\CLIENTE_SETUP.md",
+      "replacements": 1
+    },
+    {
+      "file": "docs\\INICIO_RAPIDO.md",
+      "replacements": 2
+    },
+    {
+      "file": "documentacion\\BITACORA_DE_ACERCAMIENTOS.md",
+      "replacements": 2
+    },
+    {
+      "file": "documentacion\\CHANGELOG.md",
+      "replacements": 2
+    },
+    {
+      "file": "documentacion\\CHANGELOG_CLAUDE.md",
+      "replacements": 3
+    },
+    {
+      "file": "documentacion\\generar_informe.js",
+      "replacements": 7
+    },
+    {
+      "file": "herramientas_ia\\auditor_sistema.py",
+      "replacements": 4
+    },
+    {
+      "file": "herramientas_ia\\callery_workflow.py",
+      "replacements": 1
+    },
+    {
+      "file": "herramientas_ia\\detectar_lm_studio.py",
+      "replacements": 1
+    },
+    {
+      "file": "herramientas_ia\\documentador_notebooklm.py",
+      "replacements": 1
+    },
+    {
+      "file": "herramientas_ia\\editor_core.py",
+      "replacements": 3
+    },
+    {
+      "file": "herramientas_ia\\generador_documentacion.py",
+      "replacements": 3
+    },
+    {
+      "file": "herramientas_ia\\gestor_ia_lm_studio.py",
+      "replacements": 11
+    },
+    {
+      "file": "herramientas_ia\\gestor_version.py",
+      "replacements": 5
+    },
+    {
+      "file": "herramientas_ia\\inspector_sistema.py",
+      "replacements": 7
+    },
+    {
+      "file": "informes_notebookLM\\dr_bayona\\audio\\breve\\fuente_audio_breve.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\dr_bayona\\audio\\critica\\fuente_audio_critica.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\dr_bayona\\audio\\debate\\fuente_audio_debate.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\dr_bayona\\audio\\informacion_detallada\\fuente_audio_informacion_detallada.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\dr_bayona\\cuestionario\\fuente_cuestionario.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\dr_bayona\\reporte\\fuente_reporte.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\dr_bayona\\video\\fuente_video.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\gerente_irne_torres\\audio\\breve\\fuente_audio_breve.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\gerente_irne_torres\\audio\\critica\\fuente_audio_critica.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\gerente_irne_torres\\audio\\debate\\fuente_audio_debate.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\gerente_irne_torres\\audio\\informacion_detallada\\fuente_audio_informacion_detallada.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\gerente_irne_torres\\cuestionario\\fuente_cuestionario.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\gerente_irne_torres\\reporte\\fuente_reporte.md",
+      "replacements": 1
+    },
+    {
+      "file": "informes_notebookLM\\gerente_irne_torres\\video\\fuente_video.md",
+      "replacements": 8
+    },
+    {
+      "file": "Presentaciones\\Primer version.html",
+      "replacements": 2
+    },
+    {
+      "file": "tests\\__init__.py",
+      "replacements": 1
+    },
+    {
+      "file": "ui_helpers\\export_helpers.py",
+      "replacements": 1
+    }
+  ],
+  "errors": [],
+  "skipped_excluded_with_match": [
+    "main_pyside6.py",
+    "requirements_pyside6.txt",
+    "ui copy.py"
+  ],
+  "total_files": 152,
+  "total_replacements": 359
+}

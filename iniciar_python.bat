@@ -115,7 +115,7 @@ set PYTHONUTF8=1
 
 REM Ejecutar la aplicación en modo independiente (sin rutas hardcodeadas)
 echo [DEBUG] Ejecutando: "%VENV_PATH%\Scripts\python.exe" %PYTHON_SCRIPT%
-"%VENV_PATH%\Scripts\python.exe" %PYTHON_SCRIPT% --lanzado-por-evarisis --nombre "%USUARIO_NOMBRE%" --cargo "%USUARIO_CARGO%" --tema "%TEMA_APP%" --modo-independiente 2>&1
+"%VENV_PATH%\Scripts\python.exe" %PYTHON_SCRIPT% --lanzado-por-onconova --nombre "%USUARIO_NOMBRE%" --cargo "%USUARIO_CARGO%" --tema "%TEMA_APP%" --modo-independiente 2>&1
 
 REM Capturar código de salida
 set EXIT_CODE=%ERRORLEVEL%

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-GENERADOR DE DOCUMENTACIÓN - EVARISIS
+GENERADOR DE DOCUMENTACIÓN - ONCONOVA
 Herramienta para generar documentación profesional automática usando los 6 prompts especializados
 
 Basado en el sistema de prompts adaptativos ubicado en:
@@ -26,7 +26,7 @@ PROJECT_ROOT = Path(__file__).parent.parent
 
 
 class GeneradorDocumentacion:
-    """Generador automático de documentación profesional para EVARISIS"""
+    """Generador automático de documentación profesional para ONCONOVA"""
 
     def __init__(self):
         self.project_root = PROJECT_ROOT
@@ -458,7 +458,7 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(
-        description='GENERADOR DE DOCUMENTACIÓN - EVARISIS',
+        description='GENERADOR DE DOCUMENTACIÓN - ONCONOVA',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 EJEMPLOS DE USO:

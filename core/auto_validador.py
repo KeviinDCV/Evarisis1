@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🔄 AUTO-VALIDADOR - EVARISIS CIRUGÍA ONCOLÓGICA
+🔄 AUTO-VALIDADOR - ONCONOVA CIRUGÍA ONCOLÓGICA
 ================================================
 
 Módulo que se integra automáticamente en el proceso de guardado
@@ -9,7 +9,7 @@ para validar y corregir inconsistencias médico-servicio en tiempo real.
 
 Se ejecuta automáticamente después de guardar casos en la BD.
 
-Autor: Sistema EVARISIS CIRUGÍA ONCOLÓGICA
+Autor: Sistema ONCONOVA CIRUGÍA ONCOLÓGICA
 Versión: 5.3.9.3
 Fecha: 19 de octubre de 2025
 """

@@ -46,4 +46,4 @@ El archivo existe en dos ubicaciones para compatibilidad:
 ---
 
 **Última actualización**: 4 de octubre de 2025  
-**Sistema**: EVARISIS Gestor Oncológico HUV v4.2.1
+**Sistema**: ONCONOVA Gestor Oncológico HUV v4.2.1

@@ -27,7 +27,7 @@ class EnhancedExportSystem:
         self.export_base_path = os.path.join(
             os.path.expanduser("~"),
             "Documents",
-            "EVARISIS Cirug\u00eda Oncol\u00f3gica",
+            "ONCONOVA Cirug\u00eda Oncol\u00f3gica",
             "Exportaciones Base de datos"
         )
         self.ensure_export_directories()

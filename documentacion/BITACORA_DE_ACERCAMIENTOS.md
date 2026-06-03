@@ -1,4 +1,4 @@
-Bitacora de Acercamientos - EVARISIS Gestor H.U.V
+Bitacora de Acercamientos - ONCONOVA Gestor H.U.V
 
 Proposito
 - Registro formal y auditable de la evolucion del proyecto. Documenta cada sesion de trabajo y validacion con el Dr. Juan Camilo Bayona, el Jefe de Gestion de la Informacion (Ing. Diego Pena) y otros stakeholders.
@@ -167,7 +167,7 @@ Version del Proyecto Presentada: v2.5 - Plataforma Persistente y Dashboard Integ
 Metodología Aplicada: SYSTEMPROMPT - Análisis Técnico Modular Exhaustivo
 
 1. Resumen y Objetivos
-- Aplicación completa del protocolo SYSTEMPROMPT para documentación técnica evidence-based del sistema EVARISIS Gestor H.U.V v2.5.
+- Aplicación completa del protocolo SYSTEMPROMPT para documentación técnica evidence-based del sistema ONCONOVA Gestor H.U.V v2.5.
 - Análisis detallado de 10 componentes críticos con 12 secciones estandarizadas por componente: rol, resumen técnico, estructura interna, entradas/salidas, dependencias, errores/resiliencia, seguridad, rendimiento, extensibilidad, testing, riesgos y evidencias.
 - Generación de arquitectura técnica completa con referencias exactas archivo:línea para mantenibilidad futura.
 

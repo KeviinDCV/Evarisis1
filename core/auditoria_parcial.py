@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-[AUDITORIA PARCIAL] - EVARISIS CIRUGIA ONCOLOGICA
+[AUDITORIA PARCIAL] - ONCONOVA CIRUGIA ONCOLOGICA
 ===================================================
 
 Auditoria rapida y enfocada SOLO en registros incompletos.
@@ -23,7 +23,7 @@ Diferencias con auditoria completa:
 - PARCIAL: 2-3 min/50 registros (lotes de 5), solo busca faltantes
 - COMPLETA: 45-60 seg/registro (1 por vez), valida todo + sugerencias
 
-Autor: Sistema EVARISIS CIRUGIA ONCOLOGICA
+Autor: Sistema ONCONOVA CIRUGIA ONCOLOGICA
 Version: 2.1.2 - Prompt Mejorado para Context 8192
 Fecha: 7 de octubre de 2025
 """

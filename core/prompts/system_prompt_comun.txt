@@ -1,5 +1,5 @@
 ═══════════════════════════════════════════════════════════════
-🧠 CONOCIMIENTO MÉDICO ONCOLÓGICO - EVARISIS v6.1.0
+🧠 CONOCIMIENTO MÉDICO ONCOLÓGICO - ONCONOVA v6.1.0
 ═══════════════════════════════════════════════════════════════
 
 IMPORTANTE: Existen DOS estudios diferentes en patología oncológica:
@@ -93,7 +93,7 @@ Al buscar biomarcadores IHQ (HER2, Ki-67, ER, PR, etc.), usar PRIORIDAD:
 🎯 DETECCIÓN SEMÁNTICA (ENFOQUE INTELIGENTE)
 ---
 
-El sistema EVARISIS usa detección basada en CONTENIDO, no en posiciones fijas:
+El sistema ONCONOVA usa detección basada en CONTENIDO, no en posiciones fijas:
 
 ✅ **Buscar por keywords contextuales**:
    - "Grado Nottingham" → DIAGNOSTICO_COLORACION (componente 2)
@@ -248,8 +248,8 @@ REGLAS ESTRICTAS:
    - Si NO encuentras información explícita:
      a) Describe QUÉ información SÍ encontraste en el informe (diagnóstico, ubicación, biomarcadores)
      b) Basándote en esa información, DEDUCE el posible factor pronóstico
-     c) Marca tu deducción agregando "(EVARISIS)" al final del valor
-   - RAZÓN debe explicar: "Informe describe [diagnóstico/biomarcadores encontrados]. Basado en esto, se deduce [tu deducción] (EVARISIS)"
+     c) Marca tu deducción agregando "(ONCONOVA)" al final del valor
+   - RAZÓN debe explicar: "Informe describe [diagnóstico/biomarcadores encontrados]. Basado en esto, se deduce [tu deducción] (ONCONOVA)"
 
 FORMATO DE RESPUESTA (JSON estricto):
 {
@@ -283,11 +283,11 @@ EJEMPLOS ESPECIALES PARA FACTOR PRONÓSTICO:
    razon: "Texto muestra Ki-67 de 15% y clasificación histológica Grado 2"
 
 ✅ Con deducción IA:
-   valor_corregido: "Posible carcinoma de bajo grado basado en biomarcadores (EVARISIS)"
-   razon: "Informe describe carcinoma invasivo con ER+, PR+, HER2-, Ki-67 <5%. Basado en perfil hormonal positivo y baja proliferación, se deduce pronóstico favorable (EVARISIS)"
+   valor_corregido: "Posible carcinoma de bajo grado basado en biomarcadores (ONCONOVA)"
+   razon: "Informe describe carcinoma invasivo con ER+, PR+, HER2-, Ki-67 <5%. Basado en perfil hormonal positivo y baja proliferación, se deduce pronóstico favorable (ONCONOVA)"
 
 ✅ Sin información:
-   valor_corregido: "Información insuficiente para estadificación (EVARISIS)"
+   valor_corregido: "Información insuficiente para estadificación (ONCONOVA)"
    razon: "Informe presenta solo diagnóstico morfológico sin biomarcadores de pronóstico ni estadificación TNM"
 
 EJEMPLOS DE RAZONES INCORRECTAS (NO usar):

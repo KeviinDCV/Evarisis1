@@ -37,7 +37,7 @@ V6.9.7 - Fix Ollama provider not detected (13 May 2026):
   el sondeo inicial falle (la petición real fallará limpiamente si
   el servidor sí está caído, en vez de fallar en bloque al constructor).
 
-Autor: Sistema EVARISIS
+Autor: Sistema ONCONOVA
 Versión: 6.9.7
 Fecha: 13 de mayo de 2026
 """
@@ -306,8 +306,8 @@ class LMStudioClient:
             ],
             "config_section": "openrouter",
             "headers_extra": {
-                "HTTP-Referer": "https://evarisis-huv.local",
-                "X-Title": "EVARISIS Gestor Oncologico"
+                "HTTP-Referer": "https://onconova-huv.local",
+                "X-Title": "ONCONOVA Gestor Oncologico"
             },
             "descripcion": "~10-20 req/dia gratis",
             "info_key": "Gratis en: https://openrouter.ai/keys",

@@ -277,7 +277,7 @@ def crear_metadata_exportacion(
     metadata = {
         'fecha_exportacion': datetime.now().isoformat(),
         'tipo_exportacion': tipo_exportacion,
-        'sistema': 'EVARISIS CIRUGÍA ONCOLÓGICA',
+        'sistema': 'ONCONOVA CIRUGÍA ONCOLÓGICA',
         'version': '4.2.0'
     }
 

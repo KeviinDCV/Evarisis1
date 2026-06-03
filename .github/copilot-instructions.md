@@ -1,4 +1,4 @@
-# 🤖 GitHub Copilot - Instrucciones del Proyecto EVARISIS Gestor Oncológico HUV
+# 🤖 GitHub Copilot - Instrucciones del Proyecto ONCONOVA Gestor Oncológico HUV
 
 **Sistema**: Gestor de Oncología - Hospital Universitario del Valle
 **Versión**: 4.2.1
@@ -241,7 +241,7 @@ ProyectoHUV9GESTOR_ONCOLOGIA/
 ### 📤 enhanced_export_system.py
 
 - Exportación avanzada a Excel
-- Directorio: `Documents/EVARISIS Gestor Oncologico/Exportaciones Base de datos/`
+- Directorio: `Documents/ONCONOVA Gestor Oncologico/Exportaciones Base de datos/`
 
 ---
 
@@ -361,10 +361,10 @@ python cli_herramientas.py bd -b IHQ250001
 
 **CORRECTO**: Usar `iniciar_python.bat` (Windows) o script en `VERSION_MAC/` (macOS)
 
-### Argumentos obligatorios EVARISIS:
+### Argumentos obligatorios ONCONOVA:
 
 ```bash
---lanzado-por-evarisis
+--lanzado-por-onconova
 --nombre "Innovación y Desarrollo"
 --cargo "Ingenieros de soluciones"
 --foto "ruta/a/foto.jpeg"
@@ -533,4 +533,4 @@ Si un código sugestionado las viola:
 **Versión**: 4.2.1  
 **Última actualización**: 4 de octubre de 2025  
 **Estado**: ACTIVO Y OBLIGATORIO  
-**Sistema**: EVARISIS Gestor Oncológico - Hospital Universitario del Valle
+**Sistema**: ONCONOVA Gestor Oncológico - Hospital Universitario del Valle

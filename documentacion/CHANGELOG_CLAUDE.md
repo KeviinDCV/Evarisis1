@@ -1,8 +1,8 @@
 # 📝 CHANGELOG CLAUDE - Agentes y Herramientas IA
 
-**Propósito:** Historial de cambios de agentes y herramientas de inteligencia artificial del ecosistema EVARISIS.
+**Propósito:** Historial de cambios de agentes y herramientas de inteligencia artificial del ecosistema ONCONOVA.
 
-**Nota:** Para cambios del programa principal (EVARISIS), ver `CHANGELOG.md`
+**Nota:** Para cambios del programa principal (ONCONOVA), ver `CHANGELOG.md`
 
 ---
 
@@ -14,7 +14,7 @@
 
 ---
 
-## [Sprint EVARISIS V6.6.12 → V6.6.16] - 2026-05-04 — Diagnosis Categorization Sprint
+## [Sprint ONCONOVA V6.6.12 → V6.6.16] - 2026-05-04 — Diagnosis Categorization Sprint
 
 **Orquestador:** Claude (Opus 4.7, 1M context)
 **Agente delegado:** `data-auditor` (FUNC-01 auditoría inteligente, FUNC-06 reprocesamiento)

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Dashboard Avanzado de Base de Datos - Sistema EVARISIS
+Dashboard Avanzado de Base de Datos - Sistema ONCONOVA
 Panel super robusto con estadísticas profundas de biomarcadores
 """
 
@@ -231,7 +231,7 @@ class EnhancedDatabaseDashboard:
             messagebox.showwarning("Sin datos", "No hay datos cargados para generar el informe.")
             return
         base = os.path.join(os.path.expanduser("~"), "Documents",
-                            "EVARISIS Cirugía Oncológica", "Exportaciones Base de datos",
+                            "ONCONOVA Cirugía Oncológica", "Exportaciones Base de datos",
                             "Informes estadísticos")
         try:
             os.makedirs(base, exist_ok=True)
@@ -240,7 +240,7 @@ class EnhancedDatabaseDashboard:
         path = filedialog.asksaveasfilename(
             title="Guardar informe estadístico (PDF)",
             defaultextension=".pdf", initialdir=base,
-            initialfile="Informe_estadistico_EVARISIS.pdf",
+            initialfile="Informe_estadistico_ONCONOVA.pdf",
             filetypes=[("PDF", "*.pdf")])
         if not path:
             return
@@ -1770,7 +1770,7 @@ class EnhancedDatabaseDashboard:
         """Cargar contenido del archivo de exportación"""
         try:
             import os
-            export_base_path = os.path.join(os.path.expanduser("~"), "Documents", "EVARISIS Cirugía Oncológica", "Exportaciones Base de datos")
+            export_base_path = os.path.join(os.path.expanduser("~"), "Documents", "ONCONOVA Cirugía Oncológica", "Exportaciones Base de datos")
 
             if filename.endswith('.xlsx'):
                 file_path = os.path.join(export_base_path, "Excel", filename)
@@ -2042,7 +2042,7 @@ class EnhancedDatabaseDashboard:
             # Limpiar lista
             self.exports_listbox.delete(0, tk.END)
 
-            export_base_path = os.path.join(os.path.expanduser("~"), "Documents", "EVARISIS Cirugía Oncológica", "Exportaciones Base de datos")
+            export_base_path = os.path.join(os.path.expanduser("~"), "Documents", "ONCONOVA Cirugía Oncológica", "Exportaciones Base de datos")
 
             files_found = False
 
@@ -2075,7 +2075,7 @@ class EnhancedDatabaseDashboard:
             import os
             import subprocess
 
-            export_path = os.path.join(os.path.expanduser("~"), "Documents", "EVARISIS Cirugía Oncológica", "Exportaciones Base de datos")
+            export_path = os.path.join(os.path.expanduser("~"), "Documents", "ONCONOVA Cirugía Oncológica", "Exportaciones Base de datos")
 
             if os.path.exists(export_path):
                 subprocess.Popen(f'explorer "{export_path}"')

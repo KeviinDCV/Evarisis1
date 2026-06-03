@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Informe estadístico (fact-sheet) en PDF — EVARISIS Gestor Oncológico HUV.
+Informe estadístico (fact-sheet) en PDF — ONCONOVA Gestor Oncológico HUV.
 
 Informe DETERMINISTA (sin IA) con maqueta institucional decorada:
 encabezado navy con logo, KPIs como tarjetas de colores, bandas de sección,
@@ -252,7 +252,7 @@ def generar_informe_estadistico_pdf(df, out_path,
     bio_top = sorted(bio_counts.items(), key=lambda x: -x[1])[:12]
 
     # ---------- gráficos a temp ----------
-    tmp = tempfile.mkdtemp(prefix="evarisis_fs_")
+    tmp = tempfile.mkdtemp(prefix="onconova_fs_")
     p_dh, p_dm = os.path.join(tmp, "dh.png"), os.path.join(tmp, "dm.png")
     p_mal, p_bar, p_trend = os.path.join(tmp, "mal.png"), os.path.join(tmp, "bar.png"), os.path.join(tmp, "trend.png")
     lab_h = vals_h = lab_m = vals_m = None
@@ -285,7 +285,7 @@ def generar_informe_estadistico_pdf(df, out_path,
     fav = _logo("favicon.png")
     titulo_par = [
         Paragraph('<font color="white" size=18><b>Estadísticas de Inmunohistoquímica</b></font>', cell),
-        Paragraph('<font color="#cfd8e6" size=11>Informe de un vistazo · EVARISIS Gestor Oncológico</font>', cell),
+        Paragraph('<font color="#cfd8e6" size=11>Informe de un vistazo · ONCONOVA Gestor Oncológico</font>', cell),
         Spacer(1, 3),
         Paragraph(f'<font color="#cfd8e6" size=8.5>{institucion} · {area}</font>', cell),
     ]
@@ -518,7 +518,7 @@ def generar_informe_estadistico_pdf(df, out_path,
         canvas.line(1.6 * cm, 1.35 * cm, w - 1.6 * cm, 1.35 * cm)
         canvas.setFont("Helvetica-Oblique", 7); canvas.setFillColor(grey)
         canvas.drawString(1.6 * cm, 1.02 * cm,
-                          "Documento confidencial — Ley 1581 (Habeas Data). EVARISIS Gestor Oncológico HUV.")
+                          "Documento confidencial — Ley 1581 (Habeas Data). ONCONOVA Gestor Oncológico HUV.")
         canvas.drawRightString(w - 1.6 * cm, 1.02 * cm, f"Página {doc_.page}")
         if logo_color:
             try:
@@ -531,7 +531,7 @@ def generar_informe_estadistico_pdf(df, out_path,
     doc = SimpleDocTemplate(out_path, pagesize=A4,
                             leftMargin=1.6 * cm, rightMargin=1.6 * cm,
                             topMargin=1.4 * cm, bottomMargin=1.9 * cm,
-                            title="Informe estadístico EVARISIS")
+                            title="Informe estadístico ONCONOVA")
     doc.build(story, onFirstPage=_footer, onLaterPages=_footer)
 
     for p in (p_dh, p_dm, p_mal, p_bar, p_trend):

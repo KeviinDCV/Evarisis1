@@ -50,7 +50,7 @@ La migración PySide6 **NO es una copia 1:1** de la funcionalidad TTKBootstrap. 
 **Contenido:**
 1. ❌ **Sin header institucional** (no se ve logo, usuario, versión)
 
-2. ✅ Título: "Bienvenido a EVARISIS" (diferente, menos descriptivo)
+2. ✅ Título: "Bienvenido a ONCONOVA" (diferente, menos descriptivo)
 
 3. ✅ Subtítulo: 1 línea genérica
 

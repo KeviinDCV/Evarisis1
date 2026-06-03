@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-EVARISIS Gestor HUV - Configuración del Sistema
+ONCONOVA Gestor HUV - Configuración del Sistema
 Contiene solo configuración de sistema (rutas OCR, versión)
 
 NOTA: Todas las constantes de comportamiento fueron movidas a core/

@@ -311,8 +311,8 @@ echo.
 echo [TEST] Pruebas finales del ejecutable...
 
 echo.
-echo [TEST 1] Prueba básica con argumentos de EVARISIS...
-start /wait "" "dist\%EXE_NAME%.exe" --lanzado-por-evarisis --nombre "Test Oncología" --cargo "Médico" --tema "superhero" && (
+echo [TEST 1] Prueba básica con argumentos de ONCONOVA...
+start /wait "" "dist\%EXE_NAME%.exe" --lanzado-por-onconova --nombre "Test Oncología" --cargo "Médico" --tema "superhero" && (
     echo ✅ Test 1 exitoso
 ) || (
     echo ❌ Test 1 falló - Revisar argumentos requeridos
@@ -338,11 +338,11 @@ echo.
 echo ✅ Ejecutable: dist\%EXE_NAME%.exe
 echo ✅ Con soporte completo para OCR, análisis gráfico y automatización web
 echo ✅ Incluye base de datos SQLite y archivos de configuración
-echo ✅ Validado para integración con EVARISIS Dashboard
+echo ✅ Validado para integración con ONCONOVA Dashboard
 echo ✅ Modo ONEFILE - Archivo ejecutable único (portable)
 echo.
-echo 🚀 COMANDO PARA EVARISIS:
-echo   %EXE_NAME%.exe --lanzado-por-evarisis --nombre "NOMBRE" --cargo "CARGO" --foto "RUTA_FOTO" --tema "TEMA"
+echo 🚀 COMANDO PARA ONCONOVA:
+echo   %EXE_NAME%.exe --lanzado-por-onconova --nombre "NOMBRE" --cargo "CARGO" --foto "RUTA_FOTO" --tema "TEMA"
 echo.
 echo 📂 El ejecutable está listo en: dist\%EXE_NAME%.exe
 echo.

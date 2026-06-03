@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-EVARISIS CIRUGÍA ONCOLÓGICA - Información de Versión
+ONCONOVA CIRUGÍA ONCOLÓGICA - Información de Versión
 Constantes de versión y configuración del sistema
 """
 
@@ -216,12 +216,12 @@ PERFORMANCE_METRICS = {
 
 # Información del proyecto
 PROJECT_INFO = {
-    "name": "EVARISIS CIRUGÍA ONCOLÓGICA",
-    "full_name": "EVARISIS CIRUGÍA ONCOLÓGICA - Hospital Universitario del Valle",
+    "name": "ONCONOVA CIRUGÍA ONCOLÓGICA",
+    "full_name": "ONCONOVA CIRUGÍA ONCOLÓGICA - Hospital Universitario del Valle",
     "description": "Sistema de Gestión Oncológica Inteligente",
     "organization": "Hospital Universitario del Valle",
     "license": "MIT License",
-    "contact": "Equipo de Desarrollo EVARISIS CIRUGÍA ONCOLÓGICA",
+    "contact": "Equipo de Desarrollo ONCONOVA CIRUGÍA ONCOLÓGICA",
     "repository": "ProyectoHUV9GESTOR_ONCOLOGIA"
 }
 
@@ -337,7 +337,7 @@ def get_dependencies_actual():
 
 if __name__ == "__main__":
     # Test de la información de versión
-    print("=== EVARISIS CIRUGÍA ONCOLÓGICA - Información de Versión ===")
+    print("=== ONCONOVA CIRUGÍA ONCOLÓGICA - Información de Versión ===")
     print(f"Versión: {get_version_string()}")
     print(f"Build: {get_build_info()}")
     print(f"Python: {SYSTEM_INFO['python_version']}")

@@ -2,7 +2,7 @@
 
 **Fecha de inicio:** 2025-12-02
 **Responsable:** Equipo HUV
-**Sistema:** EVARISIS - Gestión Oncológica
+**Sistema:** ONCONOVA - Gestión Oncológica
 
 ---
 

@@ -1,4 +1,4 @@
-# 📋 REGLAS DE EXTRACCIÓN - SISTEMA EVARISIS
+# 📋 REGLAS DE EXTRACCIÓN - SISTEMA ONCONOVA
 
 **Propósito**: Guía para auditoría IA - explica cómo el sistema extrae datos del PDF a la base de datos
 

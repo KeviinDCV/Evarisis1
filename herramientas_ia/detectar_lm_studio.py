@@ -7,7 +7,7 @@
 Detecta y valida la configuración de LM Studio corriendo localmente.
 Obtiene información del modelo, capacidades y conectividad.
 
-Autor: Sistema EVARISIS
+Autor: Sistema ONCONOVA
 Versión: 1.0.0
 Fecha: 5 de octubre de 2025
 """

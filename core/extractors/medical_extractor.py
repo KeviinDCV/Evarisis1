@@ -323,7 +323,7 @@ CHANGELOG v4.2.1:
 - ✅ NORMALIZACIÓN Ki-67: Elimina "Índice de proliferación celular" automáticamente
 - ✅ NORMALIZACIÓN HER2: Elimina "SOBREEXPRESIÓN DE" y estandariza a "HER2" (sin guión)
 - ✅ NORMALIZACIÓN Receptores: Elimina guiones iniciales, formato estándar "Receptores de..."
-- ✅ Aplica REGLAS DE ORO #1 y #2 del sistema EVARISIS
+- ✅ Aplica REGLAS DE ORO #1 y #2 del sistema ONCONOVA
 - 📝 Backups: medical_extractor_backup_20251026_normalizacion_fp.py
 
 Migrado de: core/procesador_ihq.py (funciones extract_ihq_data, patrones PATTERNS_IHQ)

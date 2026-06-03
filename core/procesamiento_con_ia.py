@@ -9,7 +9,7 @@ Wrapper del procesamiento normal que agrega:
 2. Validación con IA
 3. Correcciones automáticas (opcional)
 
-Autor: Sistema EVARISIS
+Autor: Sistema ONCONOVA
 Versión: 1.0.0
 Fecha: 5 de octubre de 2025
 """

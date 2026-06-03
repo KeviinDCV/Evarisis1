@@ -1,5 +1,5 @@
 # 🎉 PROGRESO DE MIGRACIÓN A PYSIDE6
-## EVARISIS CIRUGÍA ONCOLÓGICA
+## ONCONOVA CIRUGÍA ONCOLÓGICA
 
 **Fecha:** 19 Noviembre 2025
 **Estado:** ✅ FASE 1 INICIADA - COMPONENTES BASE COMPLETADOS
@@ -97,7 +97,7 @@ sidebar.nav_changed.connect(on_nav_changed)  # ✅ Funciona
 
 ### 4. Aplicación Principal
 
-#### ✅ EvarisisApp
+#### ✅ OnconovaApp
 **Archivo:** `pyside6_ui/app.py`
 **Líneas:** ~180
 
@@ -141,7 +141,7 @@ python main_pyside6.py
 
 **Output del log:**
 ```
-2025-11-19 20:51:20 - INFO - EVARISIS CIRUGÍA ONCOLÓGICA v7.0.0-alpha (PySide6)
+2025-11-19 20:51:20 - INFO - ONCONOVA CIRUGÍA ONCOLÓGICA v7.0.0-alpha (PySide6)
 2025-11-19 20:51:20 - INFO - Hospital Universitario del Valle
 2025-11-19 20:51:20 - INFO - Iniciando aplicación PySide6...
 2025-11-19 20:51:20 - INFO - ThemeManager inicializado
@@ -161,7 +161,7 @@ python main_pyside6.py
 | SidebarNav | sidebar_nav.py | 250 | ✅ Completo |
 | WelcomeView | welcome_view.py | 50 | ✅ Completo |
 | DashboardView | dashboard_view.py | 80 | ✅ Completo |
-| EvarisisApp | app.py | 180 | ✅ Completo |
+| OnconovaApp | app.py | 180 | ✅ Completo |
 | Main Entry | main_pyside6.py | 50 | ✅ Completo |
 | **TOTAL** | **7 archivos** | **~1,320** | **100%** |
 
@@ -200,7 +200,7 @@ Progreso Total: ████████░░░░░░░░░░░░ 25%
 ### Header Institucional
 ```
 ┌────────────────────────────────────────────────────┐
-│  EVARISIS                      👤 Dr. Usuario      │
+│  ONCONOVA                      👤 Dr. Usuario      │
 │  Hospital Universitario Valle                      │
 └────────────────────────────────────────────────────┘
 ```

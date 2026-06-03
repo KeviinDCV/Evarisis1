@@ -1,6 +1,6 @@
 # Reporte de Migración PySide6
 
-**EVARISIS - Sistema Inteligente de Gestión Oncológica**
+**ONCONOVA - Sistema Inteligente de Gestión Oncológica**
 Hospital Universitario del Valle
 
 ---
@@ -13,7 +13,7 @@ Hospital Universitario del Valle
 
 ### Objetivo
 
-Migrar la interfaz gráfica de EVARISIS de **TTKBootstrap** (Tkinter) a **PySide6** (Qt6) para obtener:
+Migrar la interfaz gráfica de ONCONOVA de **TTKBootstrap** (Tkinter) a **PySide6** (Qt6) para obtener:
 
 - Mayor rendimiento en manejo de grandes volúmenes de datos
 - Diseño más profesional y moderno
@@ -668,9 +668,9 @@ def test_filter_proxy_search():
 **test_integration.py**:
 ```python
 def test_navigation_flow(qtbot):
-    from pyside6_ui.app import EvarisisApp
+    from pyside6_ui.app import OnconovaApp
 
-    app = EvarisisApp()
+    app = OnconovaApp()
     qtbot.addWidget(app)
 
     # Simular click en botón Dashboard
@@ -888,5 +888,5 @@ El esfuerzo invertido (5,200 líneas en 18 archivos) ha creado una base sólida 
 ---
 
 **Reporte generado**: 19 de Noviembre, 2025
-**Versión**: EVARISIS 7.0.0-alpha (PySide6)
+**Versión**: ONCONOVA 7.0.0-alpha (PySide6)
 **Próxima revisión**: Al completar Phase 3

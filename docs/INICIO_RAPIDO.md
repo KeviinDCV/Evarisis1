@@ -1,6 +1,6 @@
 # 🚀 GUÍA DE INICIO RÁPIDO - MIGRACIÓN PYSIDE6
 
-## EVARISIS CIRUGÍA ONCOLÓGICA
+## ONCONOVA CIRUGÍA ONCOLÓGICA
 
 **Fecha:** 19 Noviembre 2025
 **Estado:** Fase 0 - Preparación Completada ✅
@@ -77,7 +77,7 @@ python test_ui.py
 **Deberías ver:**
 
 - Aplicación con tema oscuro profesional
-- Header institucional "EVARISIS"
+- Header institucional "ONCONOVA"
 - Sidebar con 5 botones de navegación
 - 3 páginas funcionales (Welcome, Database, Dashboard)
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-EVARISIS Gestor HUV - Módulos Principales (Core)
+ONCONOVA Gestor HUV - Módulos Principales (Core)
 Arquitectura modular refactorizada v4.1
 
 Módulos disponibles:
@@ -16,7 +16,7 @@ Módulos disponibles:
 """
 
 __version__ = "4.1.0"
-__author__ = "EVARISIS Team"
+__author__ = "ONCONOVA Team"
 
 # Imports principales para facilitar el acceso
 from .database_manager import *

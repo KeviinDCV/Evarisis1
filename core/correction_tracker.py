@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🔧 CORRECTION TRACKER - EVARISIS CIRUGÍA ONCOLÓGICA
+🔧 CORRECTION TRACKER - ONCONOVA CIRUGÍA ONCOLÓGICA
 ===================================================
 
 Sistema centralizado para tracking de correcciones automáticas aplicadas
@@ -12,7 +12,7 @@ Tipos de correcciones soportadas:
 - Médico-Servicio (validación especialidad)
 - Normalización de biomarcadores
 
-Autor: Sistema EVARISIS CIRUGÍA ONCOLÓGICA
+Autor: Sistema ONCONOVA CIRUGÍA ONCOLÓGICA
 Versión: 5.3.9
 Fecha: 19 de octubre de 2025
 """

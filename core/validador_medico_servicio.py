@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🩺 VALIDADOR DE CONSISTENCIA MÉDICO-SERVICIO - EVARISIS CIRUGÍA ONCOLÓGICA
+🩺 VALIDADOR DE CONSISTENCIA MÉDICO-SERVICIO - ONCONOVA CIRUGÍA ONCOLÓGICA
 ===========================================================================
 
 Módulo que detecta inconsistencias entre el médico tratante y el servicio asignado,
@@ -12,7 +12,7 @@ Ejemplo de error detectado:
 - Servicio: NEUROCIRUGIA (❌ INCORRECTO)
 - Corrección: UNIDAD DE ONCOLOGIA COEX (✅ CORRECTO)
 
-Autor: Sistema EVARISIS CIRUGÍA ONCOLÓGICA
+Autor: Sistema ONCONOVA CIRUGÍA ONCOLÓGICA
 Versión: 5.3.8
 Fecha: 19 de octubre de 2025
 """

@@ -1,4 +1,4 @@
-// Generador de informe profesional EVARISIS Gestor Oncológico (HUV)
+// Generador de informe profesional ONCONOVA Gestor Oncológico (HUV)
 // Genera: Informe_Avance_Proyecto_HUV.docx
 
 const fs = require('fs');
@@ -134,7 +134,7 @@ content.push(
     new Paragraph({ spacing: { before: 600, after: 200 }, alignment: AlignmentType.CENTER,
         children: [new TextRun({ text: 'INFORME DE AVANCE', bold: true, size: 48, color: NAVY })] }),
     new Paragraph({ spacing: { after: 600 }, alignment: AlignmentType.CENTER,
-        children: [new TextRun({ text: 'Proyecto EVARISIS Gestor Oncológico', bold: true, size: 36, color: BLUE })] }),
+        children: [new TextRun({ text: 'Proyecto ONCONOVA Gestor Oncológico', bold: true, size: 36, color: BLUE })] }),
     new Paragraph({ spacing: { after: 1200 }, alignment: AlignmentType.CENTER,
         children: [new TextRun({ text: 'Sistema Inteligente de Gestión Oncológica con Inteligencia Artificial', italics: true, size: 22, color: '595959' })] }),
 
@@ -154,7 +154,7 @@ content.push(
 // ---- 1. RESUMEN EJECUTIVO ----
 content.push(h1('1. Resumen Ejecutivo'));
 content.push(p(
-    'El presente informe documenta el avance del proyecto EVARISIS Gestor Oncológico, una herramienta interna del Hospital Universitario del Valle (HUV) destinada a digitalizar, normalizar y centralizar la información clínica derivada de informes de inmunohistoquímica (IHQ) y patología oncológica. Durante el periodo cubierto por este informe, el sistema ha evolucionado desde un extractor tradicional basado en expresiones regulares hacia una plataforma híbrida que combina procesamiento de texto clásico con modelos de lenguaje de inteligencia artificial ejecutados localmente, garantizando en todo momento la confidencialidad de los datos médicos.'
+    'El presente informe documenta el avance del proyecto ONCONOVA Gestor Oncológico, una herramienta interna del Hospital Universitario del Valle (HUV) destinada a digitalizar, normalizar y centralizar la información clínica derivada de informes de inmunohistoquímica (IHQ) y patología oncológica. Durante el periodo cubierto por este informe, el sistema ha evolucionado desde un extractor tradicional basado en expresiones regulares hacia una plataforma híbrida que combina procesamiento de texto clásico con modelos de lenguaje de inteligencia artificial ejecutados localmente, garantizando en todo momento la confidencialidad de los datos médicos.'
 ));
 content.push(p(
     'Los principales hitos alcanzados incluyen: la expansión del pipeline de extracción asistida por IA de tres a ciento ochenta y cuatro columnas clínicas, la migración de la base de datos desde un archivo local en SQLite hacia un servidor MySQL/MariaDB compartido en la red interna del hospital, y la generación de un ejecutable distribuible que permite a varios usuarios del HUV trabajar simultáneamente sobre el mismo conjunto de datos. Estos avances representan un salto cualitativo en la capacidad operativa del sistema, aunque persisten retos vinculados al hardware disponible y a las condiciones de suministro eléctrico, los cuales se documentan en las secciones correspondientes.'
@@ -335,7 +335,7 @@ content.push(bullet('Documentar formalmente para los demás equipos del HUV el p
 // ---- 9. CONCLUSIONES ----
 content.push(h1('9. Conclusiones'));
 content.push(p(
-    'El proyecto EVARISIS Gestor Oncológico ha experimentado una evolución técnica significativa durante el periodo cubierto por este informe. Desde una herramienta de extracción local con cobertura parcial, se ha consolidado como una plataforma de procesamiento clínico asistido por inteligencia artificial, con capacidad de operación multi-usuario en la red interna del hospital y mecanismos de control de calidad incorporados al flujo de trabajo.'
+    'El proyecto ONCONOVA Gestor Oncológico ha experimentado una evolución técnica significativa durante el periodo cubierto por este informe. Desde una herramienta de extracción local con cobertura parcial, se ha consolidado como una plataforma de procesamiento clínico asistido por inteligencia artificial, con capacidad de operación multi-usuario en la red interna del hospital y mecanismos de control de calidad incorporados al flujo de trabajo.'
 ));
 content.push(p(
     'Los principales avances no se limitan al plano técnico: la sustitución de un esquema de tres campos por uno de ciento ochenta y cuatro columnas clínicas habilita por primera vez el aprovechamiento integral de los informes IHQ del HUV para tareas de investigación, generación de indicadores oncológicos y construcción de tableros de mando para la dirección del hospital. La centralización de la base de datos elimina los silos de información que existían cuando cada usuario trabajaba sobre su propio archivo local.'
@@ -369,8 +369,8 @@ content.push(new Paragraph({
 
 const doc = new Document({
     creator: 'Oficina de Innovación y Desarrollo - HUV',
-    title: 'Informe de Avance - Proyecto EVARISIS Gestor Oncológico',
-    description: 'Informe ejecutivo sobre el estado del proyecto EVARISIS, mejoras implementadas, modelos de IA evaluados y dificultades operativas encontradas.',
+    title: 'Informe de Avance - Proyecto ONCONOVA Gestor Oncológico',
+    description: 'Informe ejecutivo sobre el estado del proyecto ONCONOVA, mejoras implementadas, modelos de IA evaluados y dificultades operativas encontradas.',
     styles: {
         default: {
             document: { run: { font: 'Calibri', size: 22 } },
@@ -410,7 +410,7 @@ const doc = new Document({
             default: new Header({
                 children: [new Paragraph({
                     alignment: AlignmentType.RIGHT,
-                    children: [new TextRun({ text: 'Hospital Universitario del Valle — Proyecto EVARISIS', size: 18, color: '595959', italics: true })],
+                    children: [new TextRun({ text: 'Hospital Universitario del Valle — Proyecto ONCONOVA', size: 18, color: '595959', italics: true })],
                     border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: BLUE, space: 1 } },
                 })],
             }),

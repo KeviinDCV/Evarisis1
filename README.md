@@ -1,4 +1,4 @@
-# 🏥 EVARISIS CIRUGÍA ONCOLÓGICA
+# 🏥 ONCONOVA CIRUGÍA ONCOLÓGICA
 
 **Sistema de Gestión Oncológica Inteligente**
 Hospital Universitario del Valle - Cali, Colombia
@@ -12,7 +12,7 @@ Hospital Universitario del Valle - Cali, Colombia
 
 ## 🎯 Descripción del Proyecto
 
-EVARISIS CIRUGÍA ONCOLÓGICA es un sistema avanzado de procesamiento de informes de inmunohistoquímica (IHQ) que utiliza OCR, extracción inteligente de datos y auditoría con IA para automatizar la gestión de casos oncológicos.
+ONCONOVA CIRUGÍA ONCOLÓGICA es un sistema avanzado de procesamiento de informes de inmunohistoquímica (IHQ) que utiliza OCR, extracción inteligente de datos y auditoría con IA para automatizar la gestión de casos oncológicos.
 
 ### Características Principales
 
@@ -184,7 +184,7 @@ ProyectoHUV9GESTOR_ONCOLOGIA_automatizado/
 ├── data/                         # Datos persistentes
 │   ├── reportes_ia/             # Reportes Markdown
 │   ├── auditorias_ia/           # (legacy)
-│   └── evarisis.db              # Base de datos SQLite
+│   └── onconova.db              # Base de datos SQLite
 │
 ├── pdfs_patologia/              # PDFs de entrada
 ├── EXCEL/                        # Exports generados
@@ -304,7 +304,7 @@ Uso exclusivo para fines médicos y de investigación oncológica.
 
 ### V4.5.0 (12 Oct 2025) - **✅ ACTUAL - UNIFICACIÓN DE AUDITORÍA IA**
 - 🎯 Sistema de auditoría IA unificado y estable
-- 🏥 Actualización de branding: EVARISIS Cirugía Oncológica
+- 🏥 Actualización de branding: ONCONOVA Cirugía Oncológica
 - 📧 Actualización de contactos del equipo médico
 - 🔧 Optimización de context window (8K tokens)
 - ⚡ Procesamiento por lotes mejorado

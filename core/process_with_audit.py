@@ -9,7 +9,7 @@ automáticamente en el flujo normal de procesamiento.
 
 ESTE ARCHIVO SE USA DESDE UI.PY
 
-Autor: Sistema EVARISIS
+Autor: Sistema ONCONOVA
 Versión: 1.0.0
 Fecha: 5 de octubre de 2025
 """

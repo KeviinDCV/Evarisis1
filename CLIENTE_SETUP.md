@@ -1,4 +1,4 @@
-# 🏥 EVARISIS Gestor Oncología — Setup Cliente HUV (V6.9.0)
+# 🏥 ONCONOVA Gestor Oncología — Setup Cliente HUV (V6.9.0)
 
 ## Para administradores: compilar el .exe
 

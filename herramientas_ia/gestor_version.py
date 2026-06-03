@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-GESTOR DE VERSIONES - EVARISIS
+GESTOR DE VERSIONES - ONCONOVA
 Herramienta para actualizar la versión del sistema en todos los archivos relevantes
 
 IMPORTANTE: Solo actualiza la versión cuando el usuario lo solicita explícitamente.
@@ -54,7 +54,7 @@ Documenta cada iteración de trabajo y validación con stakeholders del Hospital
 
 
 class GestorVersion:
-    """Gestor centralizado de versiones del sistema EVARISIS"""
+    """Gestor centralizado de versiones del sistema ONCONOVA"""
 
     def __init__(self):
         self.project_root = PROJECT_ROOT
@@ -531,7 +531,7 @@ class GestorVersion:
                 print(f"✅ BITÁCORA copiada desde {resultado_copia['version_legacy']}")
             elif resultado_copia['status'] == 'no_encontrado':
                 # Crear desde template inicial
-                nombre_proyecto = "EVARISIS CIRUGÍA ONCOLÓGICA"
+                nombre_proyecto = "ONCONOVA CIRUGÍA ONCOLÓGICA"
                 if not dry_run:
                     with open(self.bitacora_file, 'w', encoding='utf-8') as f:
                         f.write(TEMPLATE_BITACORA_INICIAL.format(nombre_proyecto=nombre_proyecto))
@@ -542,7 +542,7 @@ class GestorVersion:
             with open(self.bitacora_file, 'r', encoding='utf-8') as f:
                 content_actual = f.read()
         else:
-            nombre_proyecto = "EVARISIS CIRUGÍA ONCOLÓGICA"
+            nombre_proyecto = "ONCONOVA CIRUGÍA ONCOLÓGICA"
             content_actual = TEMPLATE_BITACORA_INICIAL.format(nombre_proyecto=nombre_proyecto)
 
         # Autodetectar número de iteración si no se especificó
@@ -728,7 +728,7 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(
-        description='GESTOR DE VERSIONES - EVARISIS',
+        description='GESTOR DE VERSIONES - ONCONOVA',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 EJEMPLOS DE USO:

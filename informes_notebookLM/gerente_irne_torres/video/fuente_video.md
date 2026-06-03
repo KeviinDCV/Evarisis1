@@ -1,4 +1,4 @@
-# EVARISIS - Sistema Inteligente de Gestión Oncológica
+# ONCONOVA - Sistema Inteligente de Gestión Oncológica
 
 ## Presentación Ejecutiva para Gerencia HUV
 
@@ -10,7 +10,7 @@
 
 ## 1. Contexto del Proyecto
 
-EVARISIS es un sistema de registro institucional de cáncer para el Hospital Universitario del Valle que procesa automáticamente informes de patología IHQ (Inmunohistoquímica).
+ONCONOVA es un sistema de registro institucional de cáncer para el Hospital Universitario del Valle que procesa automáticamente informes de patología IHQ (Inmunohistoquímica).
 
 **Componentes principales:**
 
@@ -132,7 +132,7 @@ PDF de Patología IHQ
                │
                ▼
 ┌──────────────────────────────────────┐
-│           EVARISIS                   │
+│           ONCONOVA                   │
 │  • Procesamiento automático          │
 │  • Validación IA (score >90%)        │
 │  • 167 campos estructurados          │
@@ -168,7 +168,7 @@ PDF de Patología IHQ
 
 **Escenario:** Llegan 30 nuevos casos IHQ en un PDF consolidado
 
-**Con EVARISIS:**
+**Con ONCONOVA:**
 
 1. Procesamiento automático del PDF completo
 2. Validación en lote de los 30 casos (agente callery)
@@ -182,7 +182,7 @@ PDF de Patología IHQ
 
 **Escenario:** Oncología comienza a solicitar un nuevo biomarcador (ej: CK19)
 
-**Con EVARISIS:**
+**Con ONCONOVA:**
 
 1. Agente data-auditor agrega el biomarcador (FUNC-03)
 2. Modifica automáticamente 6 archivos del sistema
@@ -194,7 +194,7 @@ PDF de Patología IHQ
 
 **Escenario:** Revisión trimestral de calidad de datos
 
-**Con EVARISIS:**
+**Con ONCONOVA:**
 
 1. Agente data-auditor analiza todos los casos (FUNC-05B)
 2. Identifica casos incompletos o inconsistentes
@@ -372,7 +372,7 @@ PDF → OCR → Extracción (167 campos) → Validación IA → BD → SERVINTE
 
 ## Mensajes Clave
 
-**EVARISIS** transforma el registro institucional de cáncer del HUV:
+**ONCONOVA** transforma el registro institucional de cáncer del HUV:
 
 1. **Precisión absoluta** mediante validación IA automática
 2. **Automatización de SERVINTE** eliminando doble captura
@@ -385,4 +385,4 @@ PDF → OCR → Extracción (167 campos) → Validación IA → BD → SERVINTE
 ---
 
 **Versión:** v6.0.9 "Smart Validation"
-**Contacto:** Equipo de Desarrollo EVARISIS - HUV
+**Contacto:** Equipo de Desarrollo ONCONOVA - HUV

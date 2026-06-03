@@ -2,14 +2,14 @@
 chcp 65001 >nul
 color 0E
 :: ============================================================================
-:: REINICIO COMPLETO - EVARISIS ONCOLOGÍA
+:: REINICIO COMPLETO - ONCONOVA ONCOLOGÍA
 :: Version: 5.3.8
 :: Descripción: Limpia caché, datos y reinicia la aplicación
 :: ============================================================================
 
 echo.
 echo ╔════════════════════════════════════════════════════════════════════════╗
-echo ║          🔄 REINICIO COMPLETO - EVARISIS CIRUGÍA ONCOLÓGICA           ║
+echo ║          🔄 REINICIO COMPLETO - ONCONOVA CIRUGÍA ONCOLÓGICA           ║
 echo ║              Limpieza total + Arranque desde cero                      ║
 echo ╚════════════════════════════════════════════════════════════════════════╝
 echo.
@@ -288,12 +288,12 @@ echo   ✅ Archivo %PYTHON_SCRIPT% encontrado
 :: ============================================================================
 echo.
 echo ════════════════════════════════════════════════════════════════════════
-echo [PASO 5/5] 🚀 INICIANDO EVARISIS CIRUGÍA ONCOLÓGICA
+echo [PASO 5/5] 🚀 INICIANDO ONCONOVA CIRUGÍA ONCOLÓGICA
 echo ════════════════════════════════════════════════════════════════════════
 echo.
 
-echo   ℹ️ Argumentos de EVARISIS:
-echo     --lanzado-por-evarisis
+echo   ℹ️ Argumentos de ONCONOVA:
+echo     --lanzado-por-onconova
 echo     --nombre "Innovación y Desarrollo"
 echo     --cargo "Desarrolladores"
 echo     --tema "cosmo"
@@ -305,7 +305,7 @@ echo.
 echo ════════════════════════════════════════════════════════════════════════
 echo.
 
-"%VENV_PATH%\Scripts\python.exe" %PYTHON_SCRIPT% --lanzado-por-evarisis --nombre "Innovación y Desarrollo" --cargo "Ingenieros de soluciones" --foto "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV1EVARISISDASHBOARD\base_de_usuarios\Innovación y Desarrollo.jpeg" --tema "cosmo" --ruta-fotos "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV1EVARISISDASHBOARD\base_de_usuarios" --ruta-datos "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV1EVARISISDASHBOARD" --modo-independiente
+"%VENV_PATH%\Scripts\python.exe" %PYTHON_SCRIPT% --lanzado-por-onconova --nombre "Innovación y Desarrollo" --cargo "Ingenieros de soluciones" --foto "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV1ONCONOVADASHBOARD\base_de_usuarios\Innovación y Desarrollo.jpeg" --tema "cosmo" --ruta-fotos "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV1ONCONOVADASHBOARD\base_de_usuarios" --ruta-datos "C:\Users\USUARIO\Desktop\DEBERES HUV\ProyectoHUV1ONCONOVADASHBOARD" --modo-independiente
 
 :: ============================================================================
 :: FINALIZACIÓN

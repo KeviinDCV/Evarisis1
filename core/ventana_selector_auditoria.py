@@ -26,7 +26,7 @@ class VentanaSelectorAuditoria(tk.Toplevel):
 
     def _configurar_ventana(self):
         """Configurar ventana"""
-        self.title("EVARISIS CIRUGÍA ONCOLÓGICA - Seleccionar Tipo de Auditoría")
+        self.title("ONCONOVA CIRUGÍA ONCOLÓGICA - Seleccionar Tipo de Auditoría")
         self.geometry("950x850")
         self.resizable(False, False)
 

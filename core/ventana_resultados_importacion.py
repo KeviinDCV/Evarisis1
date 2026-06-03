@@ -65,7 +65,7 @@ class VentanaResultadosImportacion(tk.Toplevel):
 
     def _configurar_ventana(self):
         """Configurar ventana maximizada (V5.3.9)"""
-        self.title("EVARISIS CIRUGÍA ONCOLÓGICA - Resultados de Importación")
+        self.title("ONCONOVA CIRUGÍA ONCOLÓGICA - Resultados de Importación")
 
         # V5.3.9: Maximizar ventana como la UI principal
         self.state('zoomed')  # Windows

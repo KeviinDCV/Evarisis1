@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🔍 VALIDACIÓN CRUZADA POR TIPO DE TUMOR - EVARISIS CIRUGÍA ONCOLÓGICA
+🔍 VALIDACIÓN CRUZADA POR TIPO DE TUMOR - ONCONOVA CIRUGÍA ONCOLÓGICA
 =====================================================================
 
 Módulo para validar que los biomarcadores extraídos sean consistentes
 con el tipo de tumor diagnosticado. Previene errores como confundir
 receptores hormonales en meningiomas con marcadores de cáncer de mama.
 
-Autor: Sistema EVARISIS CIRUGÍA ONCOLÓGICA
+Autor: Sistema ONCONOVA CIRUGÍA ONCOLÓGICA
 Versión: 3.2.2
 Fecha: 11 de octubre de 2025
 """

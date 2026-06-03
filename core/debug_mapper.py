@@ -54,7 +54,7 @@ V3.2.0 FIX BIOMARCADORES NARRATIVOS (IHQ250188):
 - Efecto: GPC3, AFP, HEPAR ahora aparecen en campos_criticos aunque no estén solicitados formalmente
 - Nota: Esto permite auditar biomarcadores incidentales detectados en descripción microscópica
 
-Autor: Sistema EVARISIS
+Autor: Sistema ONCONOVA
 Versión: 3.2.0 (Biomarcadores narrativos incluidos en campos_criticos)
 Fecha: 8 de enero de 2026
 """

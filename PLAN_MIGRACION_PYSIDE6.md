@@ -1,6 +1,6 @@
 # 🚀 PLAN MAESTRO DE MIGRACIÓN A PYSIDE6
 
-## EVARISIS CIRUGÍA ONCOLÓGICA - Hospital Universitario del Valle
+## ONCONOVA CIRUGÍA ONCOLÓGICA - Hospital Universitario del Valle
 
 **Versión Actual:** v6.0.9 (TTKBootstrap)
 **Versión Objetivo:** v7.0.0 (PySide6)
@@ -797,13 +797,13 @@ def test_kpi_card_update_value(qapp):
 # tests/integration/test_ocr_workflow.py
 import pytest
 from pathlib import Path
-from pyside6_ui.app import EvarisisApp
+from pyside6_ui.app import OnconovaApp
 from core.ihq_processor import process_pdf
 
 @pytest.fixture
 def app(qapp, tmp_path):
     """Fixture para aplicación completa"""
-    return EvarisisApp()
+    return OnconovaApp()
 
 def test_full_ocr_import_workflow(app, tmp_path):
     """Test workflow completo de importación OCR"""

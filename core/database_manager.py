@@ -56,12 +56,12 @@ def get_base_path():
         # Estamos ejecutando como script Python
         return Path(__file__).resolve().parent.parent
 
-# V6.9.16 - BD configurable por variable de entorno EVARISIS_DB_OVERRIDE.
+# V6.9.16 - BD configurable por variable de entorno ONCONOVA_DB_OVERRIDE.
 # Permite lanzar una instancia de desarrollo/UI apuntando a una copia de la BD
 # (ej. huv_oncologia_DEV.db) sin tocar la BD de produccion ni provocar
 # "database is locked" cuando otra instancia esta procesando.
 # Si la variable NO esta definida, usa la BD normal (comportamiento original).
-DB_FILE = os.environ.get("EVARISIS_DB_OVERRIDE") or str(get_base_path() / "data" / "huv_oncologia_NUEVO.db")
+DB_FILE = os.environ.get("ONCONOVA_DB_OVERRIDE") or str(get_base_path() / "data" / "huv_oncologia_NUEVO.db")
 TABLE_NAME = "informes_ihq"
 
 # Configurar logging

@@ -28,7 +28,7 @@ class VisorReportesImportacion(tk.Toplevel):
     def __init__(self, parent):
         super().__init__(parent)
 
-        self.title("EVARISIS - Visor de Reportes de Importación")
+        self.title("ONCONOVA - Visor de Reportes de Importación")
         self.geometry("1200x800")
         self.resizable(True, True)
 

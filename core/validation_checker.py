@@ -6,7 +6,7 @@ Verifica si los registros importados tienen todos los campos requeridos
 
 Versión: 1.0.10 - FIX IHQ250221: Agregado alias ESTROGÉNOS → IHQ_RECEPTOR_ESTROGENOS
 Fecha: 19 de enero de 2026
-Autor: Sistema EVARISIS
+Autor: Sistema ONCONOVA
 
 CHANGELOG v1.0.10 (19 enero 2026):
 - FIX IHQ250221: Agregado alias ESTROGÉNOS → IHQ_RECEPTOR_ESTROGENOS

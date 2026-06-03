@@ -357,7 +357,7 @@ Este proyecto sigue versionamiento semantico.
   - `10_test_sistema.py.md` - Suite pruebas automatizadas con fixtures médicas
 - **Gestión técnica**: Identificación riesgos médicos críticos, deuda técnica, puntos extensión y estrategias optimización por componente.
 - **Cobertura completa**: Desde entry point hasta testing, incluyendo seguridad datos médicos, performance OCR y mantenibilidad arquitectura.
-- **Documentación EVARISIS**: Actualización README.md, INFORME_GLOBAL_PROYECTO.md, INICIO_RAPIDO.md con nueva arquitectura v2.5.
+- **Documentación ONCONOVA**: Actualización README.md, INFORME_GLOBAL_PROYECTO.md, INICIO_RAPIDO.md con nueva arquitectura v2.5.
 
 2025-09-20 — docs
 - Generado/actualizado `documentacion/REPORTE_CHATGPT.md` con el mapa del proyecto.
@@ -380,7 +380,7 @@ Este proyecto sigue versionamiento semantico.
 - Documentacion actualizada: `INFORME_GLOBAL_PROYECTO.md`, `README.md`, `INICIO_RAPIDO.md` y bitacora.
 
 2025-09-10
-- Rebranding y reestructuracion documental al ecosistema "EVARISIS Gestor H.U.V".
+- Rebranding y reestructuracion documental al ecosistema "ONCONOVA Gestor H.U.V".
 - Creacion de `BITACORA_DE_ACERCAMIENTOS.md` y carpeta `comunicados/` (cinco artefactos).
 - Ajustes de analisis: documentacion de extensiones IHQ y activos de datos.
 
