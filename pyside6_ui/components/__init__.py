@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Componentes Reutilizables PySide6
-Librería de widgets custom para EVARISIS
+Librería de widgets custom para ONCONOVA
 """
 
 from .theme_manager import ThemeManager, get_theme_manager

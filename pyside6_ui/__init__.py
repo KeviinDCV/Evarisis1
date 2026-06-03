@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-EVARISIS CIRUGÍA ONCOLÓGICA - PySide6 UI Module
+ONCONOVA CIRUGÍA ONCOLÓGICA - PySide6 UI Module
 Interfaz de usuario moderna basada en Qt6
 
-Este módulo contiene toda la capa de presentación del sistema EVARISIS
+Este módulo contiene toda la capa de presentación del sistema ONCONOVA
 migrada desde TTKBootstrap a PySide6 para obtener mejor rendimiento,
 diseño profesional y capacidades avanzadas.
 
@@ -27,7 +27,7 @@ __email__ = "innovacionydesarrollo@correohuv.gov.co"
 
 # Exportar clases principales para importación simplificada
 __all__ = [
-    "EvarisisApp",
+    "OnconovaApp",
     "ThemeManager",
     "KPICard",
     "SidebarNav",

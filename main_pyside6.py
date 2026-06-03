@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-EVARISIS CIRUGÍA ONCOLÓGICA - Punto de Entrada PySide6
+ONCONOVA CIRUGÍA ONCOLÓGICA - Punto de Entrada PySide6
 Sistema de Gestión Oncológica Inteligente - Versión Qt6
 
 Hospital Universitario del Valle
@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 def main():
     """Función principal de entrada"""
     logger.info("="*60)
-    logger.info("EVARISIS CIRUGÍA ONCOLÓGICA v7.0.0-alpha (PySide6)")
+    logger.info("ONCONOVA CIRUGÍA ONCOLÓGICA v7.0.0-alpha (PySide6)")
     logger.info("Hospital Universitario del Valle")
     logger.info("="*60)
 

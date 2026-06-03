@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Vistas Principales - PySide6
-Pantallas principales de la aplicación EVARISIS
+Pantallas principales de la aplicación ONCONOVA
 """
 
 from .welcome_view import WelcomeView

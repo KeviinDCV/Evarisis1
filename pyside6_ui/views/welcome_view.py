@@ -115,7 +115,7 @@ class WelcomeView(QWidget):
         # Icono y texto
         text_layout = QVBoxLayout()
 
-        title = QLabel("🏥 EVARISIS")
+        title = QLabel("🏥 ONCONOVA")
         title.setStyleSheet("font-size: 42pt; font-weight: bold; color: white; background: transparent;")
 
         subtitle = QLabel("Sistema Inteligente de Gestión Oncológica")
@@ -378,7 +378,7 @@ class WelcomeView(QWidget):
         # Alert de información
         info_alert = self._create_alert(
             "ℹ️ Sistema Actualizado",
-            "EVARISIS v6.2.14 instalado correctamente",
+            "ONCONOVA v6.2.14 instalado correctamente",
             "#3b82f6"
         )
         self.alerts_container.addWidget(info_alert)

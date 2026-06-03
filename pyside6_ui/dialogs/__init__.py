@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Ventanas Modales - PySide6
-Dialogs reutilizables para EVARISIS
+Dialogs reutilizables para ONCONOVA
 """
 
 __all__ = [

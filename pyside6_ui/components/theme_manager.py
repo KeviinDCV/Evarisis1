@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-ThemeManager - Sistema de Temas Dinámicos para EVARISIS
+ThemeManager - Sistema de Temas Dinámicos para ONCONOVA
 Gestiona la carga y aplicación de temas QSS (Qt Style Sheets)
 
 Características:

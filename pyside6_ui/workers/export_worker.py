@@ -350,7 +350,7 @@ class MultiFormatExportWorker(QThread):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVARISIS - Datos Exportados</title>
+    <title>ONCONOVA - Datos Exportados</title>
     <style>
         body {{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -389,7 +389,7 @@ class MultiFormatExportWorker(QThread):
     </style>
 </head>
 <body>
-    <h1>EVARISIS - Datos Exportados</h1>
+    <h1>ONCONOVA - Datos Exportados</h1>
     <div class="export-info">
         Generado: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}<br>
         Total de registros: {len(self.dataframe)}

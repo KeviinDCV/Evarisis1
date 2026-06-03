@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-EVARISIS - Aplicación Principal PySide6
-Aplicación principal del sistema EVARISIS Cirugía Oncológica
+ONCONOVA - Aplicación Principal PySide6
+Aplicación principal del sistema ONCONOVA Cirugía Oncológica
 
 Este es el punto de entrada principal de la interfaz PySide6
 """
@@ -12,7 +12,7 @@ from pathlib import Path
 from PySide6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
                                QLabel, QStackedWidget, QFrame)
 from PySide6.QtCore import Qt
-from PySide6.QtGui import QFont
+from PySide6.QtGui import QFont, QIcon
 
 # Importar componentes
 from pyside6_ui.components.theme_manager import get_theme_manager
@@ -27,9 +27,9 @@ from pyside6_ui.views.web_view import WebAutoView
 from pyside6_ui.workers import OCRWorker, ExportWorker, AuditWorker, RepairWorker
 
 
-class EvarisisApp(QMainWindow):
+class OnconovaApp(QMainWindow):
     """
-    Aplicación principal de EVARISIS
+    Aplicación principal de ONCONOVA
 
     Arquitectura:
         - Header institucional fijo
@@ -42,7 +42,11 @@ class EvarisisApp(QMainWindow):
         super().__init__()
 
         # Configuración de la ventana
-        self.setWindowTitle("EVARISIS - Cirugía Oncológica (PySide6)")
+        self.setWindowTitle("ONCONOVA - Cirugía Oncológica (PySide6)")
+        # Icono institucional ONCONOVA (barra de título / barra de tareas)
+        _icono = Path(__file__).resolve().parent.parent / "imagenes" / "branding" / "onconova.ico"
+        if _icono.exists():
+            self.setWindowIcon(QIcon(str(_icono)))
         self.resize(1400, 850)
 
         # Cargar tema inicial
@@ -74,7 +78,7 @@ class EvarisisApp(QMainWindow):
         # Logo y título (izquierda)
         logo_layout = QVBoxLayout()
 
-        logo_title = QLabel("EVARISIS")
+        logo_title = QLabel("ONCONOVA")
         logo_title.setObjectName("LogoTexto")
 
         logo_sub = QLabel("Hospital Universitario del Valle")
@@ -256,7 +260,7 @@ class EvarisisApp(QMainWindow):
         from datetime import datetime
 
         # Solicitar ubicación de archivo
-        default_name = f"evarisis_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
+        default_name = f"onconova_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
 
         file_path, _ = QFileDialog.getSaveFileName(
             self,
@@ -511,12 +515,17 @@ def run_app():
 
     app = QApplication(sys.argv)
 
+    # Icono institucional ONCONOVA (nivel aplicación: barra de tareas)
+    _ic = Path(__file__).resolve().parent.parent / "imagenes" / "branding" / "onconova.ico"
+    if _ic.exists():
+        app.setWindowIcon(QIcon(str(_ic)))
+
     # Aplicar estilos globales
     theme_mgr = get_theme_manager()
     theme_mgr.load_theme('darkly')
 
     # Crear y mostrar ventana principal
-    window = EvarisisApp()
+    window = OnconovaApp()
     window.show()
 
     sys.exit(app.exec())

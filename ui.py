@@ -159,20 +159,64 @@ COLORS = {
     "muted": "#6c757d"
 }
 
-# Estilo visual para seaborn/mpl dentro de Tk
-sns.set_theme(
-    style="darkgrid",
-    rc={
-        "axes.facecolor": "#343638",
-        "grid.color": "#4a4d50",
-        "figure.facecolor": "#2b2b2b",
-        "text.color": "white",
-        "xtick.color": "white",
-        "ytick.color": "white",
-        "axes.labelcolor": "white",
-        "axes.titlecolor": "white",
-    },
-)
+# ======================================================================
+# V6.9.27 - ESTILO DE GRAFICOS THEME-AWARE (oscuro / claro)
+# Antes habia dos bloques fijos (seaborn oscuro + matplotlib claro) y el
+# claro pisaba al oscuro -> los graficos quedaban SIEMPRE blancos, lo que
+# en tema oscuro daba un contraste horrible. Ahora una sola funcion aplica
+# el estilo correcto segun el tema activo. Se llama al inicio y al cambiar
+# de tema desde el menu.
+# ======================================================================
+DARK_THEMES = {"darkly", "superhero", "cyborg", "solar", "vapor"}
+
+def aplicar_estilo_graficos(es_oscuro: bool):
+    """Aplica rcParams de matplotlib/seaborn coherentes con el tema activo.
+    es_oscuro=True  -> fondos gris oscuro + texto/ejes claros (combina con 'darkly').
+    es_oscuro=False -> fondos blancos + titulos navy (tema 'huv' claro).
+    """
+    try:
+        import matplotlib as _mpl
+        if es_oscuro:
+            sns.set_theme(style="darkgrid", rc={
+                "axes.facecolor": "#2b2f36", "grid.color": "#3a3f47",
+                "figure.facecolor": "#23262b", "text.color": "#e6e8ec",
+                "xtick.color": "#c2c7d0", "ytick.color": "#c2c7d0",
+                "axes.labelcolor": "#e6e8ec", "axes.titlecolor": "#eef1f6",
+            })
+            _mpl.rcParams.update({
+                "figure.facecolor": "#23262b", "axes.facecolor": "#2b2f36",
+                "savefig.facecolor": "#23262b", "axes.edgecolor": "#3a3f47",
+                "axes.linewidth": 0.8, "axes.labelcolor": "#e6e8ec",
+                "axes.titlecolor": "#eef1f6", "axes.titlesize": 11, "axes.titleweight": "bold",
+                "axes.grid": True, "axes.axisbelow": True,
+                "grid.color": "#3a3f47", "grid.linewidth": 0.8,
+                "axes.spines.top": False, "axes.spines.right": False,
+                "xtick.color": "#c2c7d0", "ytick.color": "#c2c7d0", "text.color": "#e6e8ec",
+                "axes.prop_cycle": _mpl.cycler(
+                    color=["#5b8def", "#4ecb8d", "#e0a458", "#d9647a", "#9aa6bf", "#7c8cff"]),
+            })
+        else:
+            sns.set_theme(style="whitegrid", rc={
+                "axes.facecolor": "#ffffff", "figure.facecolor": "#ffffff",
+                "text.color": "#2a2f3a",
+            })
+            _mpl.rcParams.update({
+                "figure.facecolor": "#ffffff", "axes.facecolor": "#ffffff",
+                "savefig.facecolor": "#ffffff", "axes.edgecolor": "#d2d9e6",
+                "axes.linewidth": 0.8, "axes.labelcolor": "#2a2f3a",
+                "axes.titlecolor": "#2d3e5e", "axes.titlesize": 11, "axes.titleweight": "bold",
+                "axes.grid": True, "axes.axisbelow": True,
+                "grid.color": "#eef1f6", "grid.linewidth": 0.8,
+                "axes.spines.top": False, "axes.spines.right": False,
+                "xtick.color": "#5a6172", "ytick.color": "#5a6172", "text.color": "#2a2f3a",
+                "axes.prop_cycle": _mpl.cycler(
+                    color=["#2d3e5e", "#9aa6bf", "#4a6da7", "#2f8f6b", "#d99a4e", "#c75c6e"]),
+            })
+    except Exception as _e:
+        logging.warning(f"[graficos] No se pudo aplicar estilo ({'oscuro' if es_oscuro else 'claro'}): {_e}")
+
+# V6.9.28 - La app usa SOLO tema claro (navy HUV). Graficos siempre en claro.
+aplicar_estilo_graficos(es_oscuro=False)
 
 # Módulos del proyecto
 # Importar módulo unificado de extractores refactorizados
@@ -215,47 +259,20 @@ except Exception as _e:
     logging.warning(f"[tema] No se pudo registrar el tema institucional 'huv': {_e}")
 
 
-# ======================================================================
-# V6.9.16 - ESTILO INSTITUCIONAL PARA GRAFICOS MATPLOTLIB (paleta navy)
-# Afecta a TODOS los graficos del dashboard de una sola vez: fondo limpio,
-# titulos navy, ejes sutiles, sin bordes superior/derecho (look minimalista),
-# grid muy suave y ciclo de colores cohesivo (navy primero).
-# ======================================================================
-try:
-    import matplotlib as _mpl
-    _mpl.rcParams.update({
-        "figure.facecolor": "#ffffff",
-        "axes.facecolor": "#ffffff",
-        "axes.edgecolor": "#d2d9e6",
-        "axes.linewidth": 0.8,
-        "axes.labelcolor": "#2a2f3a",
-        "axes.titlecolor": "#2d3e5e",
-        "axes.titlesize": 11,
-        "axes.titleweight": "bold",
-        "axes.grid": True,
-        "axes.axisbelow": True,
-        "grid.color": "#eef1f6",
-        "grid.linewidth": 0.8,
-        "axes.spines.top": False,
-        "axes.spines.right": False,
-        "xtick.color": "#5a6172",
-        "ytick.color": "#5a6172",
-        "text.color": "#2a2f3a",
-        "axes.prop_cycle": _mpl.cycler(
-            color=["#2d3e5e", "#9aa6bf", "#4a6da7", "#2f8f6b", "#d99a4e", "#c75c6e"]
-        ),
-    })
-except Exception as _e:
-    logging.warning(f"[graficos] No se pudo aplicar estilo matplotlib institucional: {_e}")
+# V6.9.27 - El estilo de graficos matplotlib ahora lo maneja la funcion
+# aplicar_estilo_graficos() (theme-aware, definida mas arriba), que ya fue
+# invocada con el estilo inicial. No se fija un estilo claro fijo aqui para
+# no pisar el oscuro.
 
 
 class App(ttk.Window):
-    def __init__(self, info_usuario=None, tema="superhero"):
+    def __init__(self, info_usuario=None, tema="huv"):
         # Inicializar TTKBootstrap Window con el tema
         super().__init__(themename=tema)
         
         self.title("ONCONOVA · Gestión Oncológica Inteligente")
         self._configurar_icono_app()  # Icono institucional ONCONOVA
+        aplicar_estilo_graficos(es_oscuro=False)  # V6.9.28 - app SOLO en claro (navy HUV)
         self.state('zoomed')  # Maximizar ventana
 
         # Información del usuario
@@ -358,13 +375,17 @@ class App(ttk.Window):
         # --- Titulo (izquierda) en azul institucional #2d3e5e ---
         center = ttk.Frame(self.header)
         center.pack(side=LEFT, expand=True, anchor=W)
+        # Isotipo ONCONOVA a la izquierda del título
+        self._header_logo_ref = self._cargar_logo_onconova(target=34)
+        if self._header_logo_ref is not None:
+            ttk.Label(center, image=self._header_logo_ref).pack(side=LEFT, padx=(0, 12))
         ttk.Label(
             center,
             text="ONCONOVA CIRUGÍA ONCOLÓGICA",
             font=("Segoe UI Semibold", 19),
             bootstyle="primary",
             anchor=W
-        ).pack(anchor=W)
+        ).pack(side=LEFT, anchor=W)
 
         # --- Perfil (derecha): version + datos de usuario, estilo claro ---
         right = ttk.Frame(self.header)
@@ -1556,15 +1577,22 @@ class App(ttk.Window):
                 'jefe_gestion_informacion': '👨‍💼 Jefe de Gestión de la Información'
             }
 
+            # FIX: role_info puede ser un dict (un miembro) o una lista de dicts
+            # (p. ej. 'desarrolladores'). Antes se indexaba la lista con string ->
+            # "list indices must be integers or slices, not str".
             for role_key, role_info in version_info['team'].items():
-                role_data = [
-                    ("Nombre", role_info['nombre']),
-                    ("Cargo", role_info['cargo']),
-                    ("Departamento", role_info['departamento']),
-                    ("Correo", role_info['correo'])
-                ]
-                title = role_titles.get(role_key, role_info['cargo'])
-                self._create_info_section(team_center, title, role_data)
+                personas = role_info if isinstance(role_info, list) else [role_info]
+                for persona in personas:
+                    if not isinstance(persona, dict):
+                        continue
+                    role_data = [
+                        ("Nombre", persona.get('nombre', 'No disponible')),
+                        ("Cargo", persona.get('cargo', 'No disponible')),
+                        ("Departamento", persona.get('departamento', 'No disponible')),
+                        ("Correo", persona.get('correo', 'No disponible'))
+                    ]
+                    title = role_titles.get(role_key, persona.get('cargo', role_key))
+                    self._create_info_section(team_center, title, role_data)
 
             # Frame de botones
             buttons_frame = ttk.Frame(main_frame, padding=10)
@@ -3350,6 +3378,24 @@ Disco {i}:
             logging.warning(f"[welcome] No se pudo cargar favicon.png: {e}")
             return None
 
+    def _cargar_logo_onconova(self, target=160):
+        """Carga el isotipo ONCONOVA a color (imagenes/branding/onconova_isotipo.png),
+        redimensionado a 'target' px de alto manteniendo proporción.
+        Devuelve ImageTk.PhotoImage o None si no existe."""
+        try:
+            ruta = self._get_path(os.path.join("imagenes", "branding", "onconova_isotipo.png"))
+            if not os.path.exists(ruta):
+                return None
+            img = Image.open(ruta).convert("RGBA")
+            w, h = img.size
+            if h > 0:
+                escala = target / float(h)
+                img = img.resize((max(1, int(w * escala)), target), Image.LANCZOS)
+            return ImageTk.PhotoImage(img)
+        except Exception as e:
+            logging.warning(f"[welcome] No se pudo cargar onconova_isotipo.png: {e}")
+            return None
+
     def _create_welcome_screen(self):
         """Pantalla de bienvenida minimalista clara (V6.9.16).
         Sin tarjeta oscura 'pegada': contenido centrado que respira sobre el
@@ -3361,8 +3407,10 @@ Disco {i}:
         center = ttk.Frame(self.welcome_frame)
         center.pack(expand=True)
 
-        # --- Logo del hospital (favicon.png) grande y centrado ---
-        logo_img = self._cargar_logo_bienvenida(target=150)
+        # --- Logo ONCONOVA (isotipo a color) grande y centrado ---
+        logo_img = self._cargar_logo_onconova(target=170)
+        if logo_img is None:
+            logo_img = self._cargar_logo_bienvenida(target=150)  # fallback: logo HUV
         if logo_img is not None:
             self._welcome_logo_ref = logo_img  # mantener referencia (evita GC)
             ttk.Label(center, image=logo_img).pack(pady=(0, 24))
@@ -3370,7 +3418,7 @@ Disco {i}:
         # --- Titulo en azul institucional ---
         ttk.Label(
             center,
-            text="Bienvenido al Gestor Oncológico",
+            text="Bienvenido a ONCONOVA",
             font=("Segoe UI Semibold", 30),
             bootstyle="primary",
             anchor="center",
@@ -3623,6 +3671,13 @@ Disco {i}:
         Usa el .ico multi-resolucion en Windows; si falla, recurre al PNG via
         iconphoto (multiplataforma). Nunca interrumpe el arranque de la app.
         """
+        # Windows: darle identidad propia en la barra de tareas para que use el
+        # icono de la app y NO el de python.exe / PyInstaller por defecto.
+        try:
+            import ctypes
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("HUV.Onconova.GestorOncologia")
+        except Exception:
+            pass
         try:
             ico = self._get_path(os.path.join("imagenes", "branding", "onconova.ico"))
             if os.path.exists(ico):
@@ -3639,6 +3694,39 @@ Disco {i}:
         except Exception as e:
             logging.warning(f"No se pudo aplicar el icono PNG de ONCONOVA: {e}")
     
+    def _crear_menu_tema(self):
+        """V6.9.27 - Barra de menu minima con selector de tema (oscuro/claro)."""
+        try:
+            import tkinter as tk
+            menubar = tk.Menu(self)
+            m = tk.Menu(menubar, tearoff=0)
+            m.add_command(label="\U0001f319 Oscuro (Onconova)", command=lambda: self._cambiar_tema("darkly"))
+            m.add_command(label="☀ Claro (navy HUV)", command=lambda: self._cambiar_tema("huv"))
+            menubar.add_cascade(label="\U0001f3a8 Tema", menu=m)
+            self.config(menu=menubar)
+        except Exception as e:
+            logging.warning(f"[tema] No se pudo crear el menu de tema: {e}")
+
+    def _cambiar_tema(self, nombre):
+        """V6.9.27 - Cambia el tema ttkbootstrap en caliente + ajusta los graficos."""
+        try:
+            self.style.theme_use(nombre)
+            self.current_theme = nombre
+            aplicar_estilo_graficos(es_oscuro=(nombre in DARK_THEMES))
+            try:
+                self._init_treeview_style()  # re-aplica estilo de tablas al nuevo tema
+            except Exception:
+                pass
+            try:
+                from tkinter import messagebox
+                messagebox.showinfo(
+                    "Tema",
+                    f"Tema aplicado: {nombre}.\n\nLos graficos del dashboard se repintan al usar 'Refrescar'.")
+            except Exception:
+                pass
+        except Exception as e:
+            logging.warning(f"[tema] No se pudo cambiar a {nombre}: {e}")
+
     def _cargar_foto_usuario(self):
         """Cargar foto del usuario desde la ruta especificada"""
         try:
@@ -10422,7 +10510,7 @@ def main():
     parser.add_argument("--nombre", type=str, default="Usuario Sistema", help="Nombre del usuario logueado.")
     parser.add_argument("--cargo", type=str, default="Administrador", help="Cargo del usuario logueado.")
     parser.add_argument("--foto", type=str, default="SIN_FOTO", help="Ruta a la foto de perfil del usuario.")
-    parser.add_argument("--tema", type=str, default="dark", help="Tema visual de la aplicación.")
+    parser.add_argument("--tema", type=str, default="huv", help="Tema visual (la app usa SOLO el claro navy HUV).")
     parser.add_argument("--ruta-fotos", type=str, default="", help="Ruta al directorio base de fotos de usuarios.")
     parser.add_argument("--ruta-datos", type=str, default="", help="Ruta a datos de ONCONOVA.")
     parser.add_argument(
@@ -10453,7 +10541,7 @@ def main():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     
     # Mapear tema del argumento a tema TTKBootstrap
-    tema_ttk = THEME_MAP.get(args.tema, "darkly")
+    tema_ttk = THEME_MAP.get(args.tema, "huv")  # V6.9.28 - fallback claro (no oscuro)
     
     # Crear y ejecutar la aplicación
     app = App(info_usuario=info_usuario_recibida, tema=tema_ttk)

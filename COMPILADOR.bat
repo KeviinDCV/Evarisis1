@@ -194,7 +194,7 @@ echo     argv_emulation=False,
 echo     target_arch=None,
 echo     codesign_identity=None,
 echo     entitlements_file=None,
-echo     icon=None
+echo     icon='imagenes/branding/onconova.ico'
 echo ^)
 ) > "%EXE_NAME%.spec"
 
