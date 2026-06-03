@@ -1,0 +1,29 @@
+{
+  "127.0.0.1_root": {
+    "ok": true,
+    "root_pw": "(vacia)",
+    "databases": [
+      "evarisbot",
+      "glpi",
+      "huv_oncologia",
+      "information_schema",
+      "mis",
+      "mysql",
+      "performance_schema",
+      "phpmyadmin",
+      "test",
+      "turnero_huv"
+    ],
+    "casos_mysql": 187,
+    "cuentas_huv_app": [
+      [
+        "huv_app",
+        "%"
+      ],
+      [
+        "huv_app",
+        "localhost"
+      ]
+    ]
+  }
+}

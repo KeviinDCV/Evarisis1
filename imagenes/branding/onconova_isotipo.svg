@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="hexgrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#142642"/>
+      <stop offset="45%" stop-color="#2B6CB0"/>
+      <stop offset="100%" stop-color="#2EC8EB"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <path d="M 458.55,286.51 L 383.69,416.16 Q 366.08,446.66 330.85,446.66 L 181.15,446.66 Q 145.92,446.66 128.31,416.16 L 53.45,286.51 Q 35.84,256.00 53.45,225.49 L 128.31,95.84 Q 145.92,65.34 181.15,65.34 L 330.85,65.34 Q 366.08,65.34 383.69,95.84 L 458.55,225.49 Q 476.16,256.00 458.55,286.51 Z" fill="url(#hexgrad)" stroke="#78DCFA" stroke-width="4" stroke-linejoin="round" opacity="1"/>
+    <polyline points="97.48,256.00 163.53,256.00 185.55,276.61 208.67,176.74 231.78,297.21 251.60,256.00 286.82,256.00" fill="none" stroke="#FFFFFF" stroke-width="13.31" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="286.82" y1="256.00" x2="359.48" y2="187.75" stroke="#FFFFFF" stroke-width="7.17" stroke-linecap="round"/>
+    <line x1="286.82" y1="256.00" x2="383.69" y2="260.40" stroke="#FFFFFF" stroke-width="7.17" stroke-linecap="round"/>
+    <line x1="286.82" y1="256.00" x2="355.07" y2="328.65" stroke="#FFFFFF" stroke-width="7.17" stroke-linecap="round"/>
+    <line x1="359.48" y1="187.75" x2="383.69" y2="260.40" stroke="#FFFFFF" stroke-width="5.02" stroke-linecap="round" opacity="0.62"/>
+    <line x1="383.69" y1="260.40" x2="355.07" y2="328.65" stroke="#FFFFFF" stroke-width="5.02" stroke-linecap="round" opacity="0.62"/>
+    <circle cx="359.48" cy="187.75" r="18.48" fill="#78DCFA" opacity="0.30"/>
+    <circle cx="359.48" cy="187.75" r="9.73" fill="#FFFFFF"/>
+    <circle cx="383.69" cy="260.40" r="20.43" fill="#78DCFA" opacity="0.30"/>
+    <circle cx="383.69" cy="260.40" r="10.75" fill="#FFFFFF"/>
+    <circle cx="355.07" cy="328.65" r="18.48" fill="#78DCFA" opacity="0.30"/>
+    <circle cx="355.07" cy="328.65" r="9.73" fill="#FFFFFF"/>
+    <circle cx="286.82" cy="256.00" r="32.77" fill="#78DCFA" opacity="0.35"/>
+    <circle cx="286.82" cy="256.00" r="16.38" fill="#FFFFFF"/>
+  </g>
+</svg>

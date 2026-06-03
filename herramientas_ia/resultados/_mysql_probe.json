@@ -1,0 +1,10 @@
+{
+  "127.0.0.1": {
+    "ok": false,
+    "error": "(1044, \"Access denied for user 'huv_app'@'localhost' to database 'huv_oncologia'\")"
+  },
+  "192.168.2.172": {
+    "ok": false,
+    "error": "(1044, \"Access denied for user 'huv_app'@'%' to database 'huv_oncologia'\")"
+  }
+}

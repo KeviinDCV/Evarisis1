@@ -1,0 +1,1134 @@
+{
+  "sqlite_cols": [
+    {
+      "name": "Numero de caso",
+      "type": "TEXT",
+      "notnull": 1,
+      "pk": 1
+    },
+    {
+      "name": "Hospitalizado",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Sede",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "EPS",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Servicio",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Médico tratante",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Especialidad",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Datos Clinicos",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Tipo de documento",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "N. de identificación",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Primer nombre",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Segundo nombre",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Primer apellido",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Segundo apellido",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Edad",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Genero",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Departamento",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Municipio",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "CUPS",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Tipo de examen",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Procedimiento",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Organo",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Fecha de toma (1. Fecha de la toma)",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Fecha de ingreso (2. Fecha de la muestra)",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Fecha Informe",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Patologo",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Malignidad",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Descripcion macroscopica",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Descripcion microscopica",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Descripcion Diagnostico",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Diagnostico Coloracion",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Diagnostico Principal",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Factor pronostico",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_ESTUDIOS_SOLICITADOS",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_ORGANO",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Congelaciones /Otros estudios",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Liquidos (5 Tipo histologico)",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Citometria de flujo (5 Tipo histologico)",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_HER2",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_KI-67",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_RECEPTOR_ESTROGENOS",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_RECEPTOR_PROGESTERONA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_PDL-1",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_P16_ESTADO",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_P16_PORCENTAJE",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_P40_ESTADO",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_E_CADHERINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CK7",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MAMOGLOBINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_DESMINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_LCA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD11",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MIOGENINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MAMAGLOBINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_TIROGLOBULINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CK34BETAE12",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CK34BETA12",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_OCT4",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_PODOPLANINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_IDH",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_GPC3",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_AFP",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_IGD",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_BETACATENINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_ACTINA_MUSCULO_ESPECIFICA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MIELOPEROXIDASA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD7",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_HCG",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_ACTINA_MUSCULO_LISO",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_EBER",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CALRRETININA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_SINAPTOFISINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CROMOGRANINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CK56",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CAM5",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_GLICOFORINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_TDT",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_ATRX",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_IDH1",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CMYC",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_IGG4",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_IGG",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_HEPATOCITO",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_PSA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_RCC",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CK19",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CK20",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CDX2",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_EMA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_GATA3",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_SOX10",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_SOX11",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_P53",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_TTF1",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_S100",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_VIMENTINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MELAN_A",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD2",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD3",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD5",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD10",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD20",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD30",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD34",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD38",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD45",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD56",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD61",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD68",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD117",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD138",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_KAPPA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_LAMBDA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CICLINA_D1",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_PAX8",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_PAX5",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_WT1",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_NAPSIN",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_P63",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CALPONINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CDK4",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MDM2",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MLH1",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MSH2",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MSH6",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_PMS2",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_DOG1",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_HHV8",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_ACTIN",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_GFAP",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CKAE1AE3",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_NEUN",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD15",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD79A",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_ALK",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_DESMIN",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MYOGENIN",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MYOD1",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_SMA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MSA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CALRETININ",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD31",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_FACTOR_VIII",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_BCL2",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_BCL6",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MUM1",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MUC1",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MUC2",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_HMB45",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_TYROSINASE",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_MELANOMA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_BER_EP4",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_H_CALDESMON",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_AML",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_PROLACTINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_ACTH",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_GH",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_FSH",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_LH",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_TSH",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_INHIBINA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD23",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD4",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD8",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD99",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CD1A",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_C4D",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_LMP1",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CITOMEGALOVIRUS",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_SV40",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CEA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CA19_9",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CALRETININA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CK34BE12",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_CK5_6",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_HEPAR",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_GLIPICAN",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_ARGINASA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_RACEMASA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_34BETA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_B2",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_SALL4",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "IHQ_ALK1",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Estado Auditoria IA",
+      "type": "TEXT",
+      "notnull": 0,
+      "pk": 0
+    },
+    {
+      "name": "Fecha Ingreso Base de Datos",
+      "type": "TIMESTAMP",
+      "notnull": 0,
+      "pk": 0
+    }
+  ],
+  "sqlite_ncols": 185,
+  "sqlite_pk_cols": [
+    "Numero de caso"
+  ],
+  "sqlite_count": 2073,
+  "sqlite_tables": [
+    "informes_ihq"
+  ],
+  "sqlite_diagnosticos_ia_count": "NO_EXISTE",
+  "mysql_count": 187,
+  "mysql_tables": [
+    "diagnosticos_ia",
+    "informes_ihq"
+  ],
+  "solo_en_mysql_total": 0,
+  "solo_en_mysql_muestra": [],
+  "en_ambos": 187,
+  "solo_en_sqlite_total": 1886,
+  "mysqldump_path": "C:\\xampp\\mysql\\bin\\mysqldump.exe",
+  "mysqldump_exists": true
+}

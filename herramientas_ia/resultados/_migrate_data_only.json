@@ -1,0 +1,12 @@
+{
+  "pasos": [
+    "SQLite: 2073 filas, 185 cols",
+    "informes_ihq: 187 -> 2073"
+  ],
+  "antes": 187,
+  "despues": 2073,
+  "grant_rows_huv": 2,
+  "huv_app_count": 2073,
+  "huv_app_rw": "OK lee 2073 y escribe",
+  "OK": true
+}

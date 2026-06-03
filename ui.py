@@ -254,7 +254,8 @@ class App(ttk.Window):
         # Inicializar TTKBootstrap Window con el tema
         super().__init__(themename=tema)
         
-        self.title("EVARISIS CIRUGÍA ONCOLÓGICA")
+        self.title("ONCONOVA · Gestión Oncológica Inteligente")
+        self._configurar_icono_app()  # Icono institucional ONCONOVA
         self.state('zoomed')  # Maximizar ventana
 
         # Información del usuario
@@ -3610,11 +3611,33 @@ Disco {i}:
     # Métodos de utilidad (conservando la lógica de carga de archivos)
     def _get_path(self, relative_path):
         """Obtiene la ruta absoluta de un archivo, compatible con PyInstaller"""
-        try: 
+        try:
             base_path = sys._MEIPASS
-        except Exception: 
+        except Exception:
             base_path = os.path.abspath(os.path.dirname(__file__))
         return os.path.join(base_path, relative_path)
+
+    def _configurar_icono_app(self):
+        """Establece el icono institucional ONCONOVA en la ventana y barra de tareas.
+
+        Usa el .ico multi-resolucion en Windows; si falla, recurre al PNG via
+        iconphoto (multiplataforma). Nunca interrumpe el arranque de la app.
+        """
+        try:
+            ico = self._get_path(os.path.join("imagenes", "branding", "onconova.ico"))
+            if os.path.exists(ico):
+                self.iconbitmap(default=ico)
+                return
+        except Exception as e:
+            logging.warning(f"No se pudo aplicar onconova.ico: {e}")
+        try:
+            png = self._get_path(os.path.join("imagenes", "branding", "onconova_icono_app.png"))
+            if os.path.exists(png):
+                # Se conserva la referencia para evitar que el GC libere la imagen.
+                self._app_icon_img = ImageTk.PhotoImage(Image.open(png))
+                self.iconphoto(True, self._app_icon_img)
+        except Exception as e:
+            logging.warning(f"No se pudo aplicar el icono PNG de ONCONOVA: {e}")
     
     def _cargar_foto_usuario(self):
         """Cargar foto del usuario desde la ruta especificada"""

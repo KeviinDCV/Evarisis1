@@ -1,0 +1,124 @@
+{
+  "huv_app": "FALLO: (1044, \"Access denied for user 'huv_app'@'localhost' to database 'huv_oncologia'\")",
+  "grants_pct": [
+    "GRANT USAGE ON *.* TO `huv_app`@`%` IDENTIFIED BY PASSWORD '*B5A1AC5DC6713A0C31EF2EA626D441E3760CD412'"
+  ],
+  "grants_local": [
+    "GRANT USAGE ON *.* TO `huv_app`@`localhost` IDENTIFIED BY PASSWORD '*B5A1AC5DC6713A0C31EF2EA626D441E3760CD412'"
+  ],
+  "check_table": {
+    "mysql.user": [
+      [
+        "mysql.user",
+        "check",
+        "status",
+        "OK"
+      ]
+    ],
+    "mysql.db": [
+      [
+        "mysql.db",
+        "check",
+        "warning",
+        "Size of datafile is: 16802       Expected: 16384"
+      ],
+      [
+        "mysql.db",
+        "check",
+        "error",
+        "Page 0:  Got error: 176 when reading datafile"
+      ],
+      [
+        "mysql.db",
+        "check",
+        "error",
+        "Corrupt"
+      ]
+    ],
+    "mysql.tables_priv": [
+      [
+        "mysql.tables_priv",
+        "check",
+        "warning",
+        "Size of datafile is: 8490       Expected: 8192"
+      ],
+      [
+        "mysql.tables_priv",
+        "check",
+        "error",
+        "Page 0:  Got error: 176 when reading datafile"
+      ],
+      [
+        "mysql.tables_priv",
+        "check",
+        "error",
+        "Corrupt"
+      ]
+    ],
+    "mysql.columns_priv": [
+      [
+        "mysql.columns_priv",
+        "check",
+        "status",
+        "OK"
+      ]
+    ],
+    "mysql.procs_priv": [
+      [
+        "mysql.procs_priv",
+        "check",
+        "status",
+        "OK"
+      ]
+    ],
+    "mysql.global_priv": [
+      [
+        "mysql.global_priv",
+        "check",
+        "status",
+        "OK"
+      ]
+    ],
+    "mysql.proxies_priv": [
+      [
+        "mysql.proxies_priv",
+        "check",
+        "warning",
+        "Size of indexfile is: 32768       Expected: 24576"
+      ],
+      [
+        "mysql.proxies_priv",
+        "check",
+        "warning",
+        "Size of datafile is: 16697       Expected: 16384"
+      ],
+      [
+        "mysql.proxies_priv",
+        "check",
+        "status",
+        "OK"
+      ]
+    ],
+    "mysql.servers": [
+      [
+        "mysql.servers",
+        "check",
+        "status",
+        "OK"
+      ]
+    ],
+    "mysql.roles_mapping": [
+      [
+        "mysql.roles_mapping",
+        "check",
+        "status",
+        "OK"
+      ]
+    ]
+  },
+  "server": [
+    "10.4.32-MariaDB",
+    "BACKUP,QUICK",
+    "C:\\xampp\\mysql\\data\\"
+  ]
+}

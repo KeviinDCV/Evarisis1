@@ -1,0 +1,13 @@
+{
+  "use_mysql": true,
+  "DB_FILE_local": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\data\\huv_oncologia_NUEVO.db",
+  "init_db": "OK",
+  "visualizador_rows": 2073,
+  "visualizador_cols": 187,
+  "fecha_range": {
+    "fecha_min": "07/01/2025",
+    "fecha_max": "02/06/2026",
+    "total_registros": 2072
+  },
+  "OK": true
+}
